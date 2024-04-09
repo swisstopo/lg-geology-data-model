@@ -43,7 +43,7 @@ def main(config_file):
                         type = att.get('type')
                         value = att.get('value')
                         desc = att.get('desc', '')
-                        print(f"**Attribute {name}** _{desc}_")
+                        print(f"**Attribute {name.upper()}** _{desc}_")
 
                         if type == 'CD' and value is not None:
                             pairs = get_coded_values(value)
