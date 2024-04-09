@@ -1,3 +1,5 @@
+# Datenmodell Geologie
+
 themes:
   - name: Rock_Bodies
     classes:
@@ -111,8 +113,7 @@ themes:
             type: CD
             value: GC_CHRONO_CD
             desc: >-
-              Chronostratigraphische Zuordnung der Obergrenze der Kartiereinheit
-              (Top)
+              Chronostratigraphische Zuordnung der Obergrenze der Kartiereinheit (Top)
           - name: chrono_b
             type: CD
             value: GC_CHRONO_CD
@@ -191,20 +192,91 @@ themes:
   - name: Geomorphology
     classes:
       - name: Instability_Structures_PT
+        desc: |
+          Die Klasse Instability_Structures_PT enthält lokal beobachtete Hinweise auf Hanginstabilitäten 
+          (Rutschungen), die räumlich nicht abgegrenzt werden können. Wenn möglich, sollen instabile 
+          Gesteinsmassen durch Polygone erfasst werden (Klasse Instabilities_within_Unconsolidated_ 
+          Deposits_PLG), die punktförmige Aufnahme ist zu vermeiden und vorwiegend für die Vektorisierung älterer
+          gedruckter Karten gedacht.
       - name: Instability_Structures_L
+        desc: |
+          Die Klasse Instability_Structures_L umfasst linienförmige Morphologien, die sich als Folge von 
+          Hanginstabilitäten an der Oberfläche ausgebildet haben. Beim Abrissrand handelt es sich um den 
+          oberen Rand der durch das Abgleiten der bewegten Masse freigelegten Gleitfläche einer 
+          Rutschung oder Sackung (Abrissnische)
       - name: Instabilities_within_Unconsolidated_Deposits_PLG
+        desc: |
+          Die Klasse Instabilities_within_Unconsolidated_Deposits_PLG beinhaltet alle Polygone, die Gebiete 
+          mit instabilen Lockergesteinen begrenzen. In dieser Klasse werden die Prozessräume der 
+          verschiedenen Typen von gleitenden Massenbewegungsprozessen ausgeschieden; die 
+          eigentlichen Gesteinskörper und Ablagerungen, die von Massenbewegungsprozessen betroffen 
+          bzw. gebildet worden sind, werden in der Klasse Unconsolidated_Deposits_PLG beschrieben. Zur 
+          näheren Erklärung der verschiedenen Objektarten sind im Anhang A einige Fallbeispiele 
+          abgebildet.
       - name: Instabilities_within_Bedrock_PLG
+        desc: |
+          Die Klasse Instabilities_within_Bedrock_PLG beinhaltet alle Polygone, die Gebiete mit instabilen 
+          Festgesteinen begrenzen. In dieser Klasse werden die Prozessräume der verschiedenen Typen von 
+          gleitenden Massenbewegungsprozessen ausgeschieden; die eigentlichen Gesteinskörper, die von 
+          Massenbewegungsprozessen betroffen sind, werden in der Klasse Bedrock_PLG beschrieben. Zur 
+          näheren Erklärung der verschiedenen Objektarten sind im Anhang A einige Fallbeispiele 
+          abgebildet.
       - name: Glacial_Structures_PT
+        desc: |
+          Die Klasse Glacial_Structures_PT enthält Objektarten, welche die ehemalige Anwesenheit eines 
+          Gletschers punktuell dokumentieren (Gletscherschliff ist ein räumlich orientiertes Objekt und 
+          befindet sich deshalb in der Klasse Lineation_PT).
       - name: Glacial_and_Periglacial_Structures_L
+        desc: |
+          Die Klasse Glacial_and_Periglacial_Structures_L enthält linienförmige Strukturen, die auf ein 
+          glaziales oder periglaziales Bildungsmilieu hindeuten. Mit Ausnahme der Schliffgrenze handelt es 
+          sich in dieser Klasse ausschliesslich um akkummulative Landschaftsformen wie Moränenwälle oder 
+          Blockwülste im Blockgletscher.
       - name: Glacial_Structures_PLG
+        desc: |
+          Die Klasse Glacial_Structures_PLG umfasst flächenhafte glaziale Landschaftsformen, die durch
+          basales Fliessen des Gletschereises oder dessen Abschmelzen entstanden sind.
       - name: Erosional_Structures_PT
+        desc: |
+          Die Klasse Erosional_Structures_PT beinhaltet lokale Landschaftselemente, die sich im Laufe der 
+          Zeit unter Einwirkung von diversen Erosionsprozessen gebildet haben.
       - name: Erosional_Structures_L
+        desc: |
+          Die Klasse Erosional_Structures_L enthält linienförmige erosive Formen wie Erosionsränder im 
+          Allgemeinen oder Terrassenkanten. 
+          Auf älteren gedruckten Karten wurden Erosionsränder und Terrassenkanten oftmals nicht 
+          unterschieden. In den Vektordaten wird diese Unterscheidung jedoch konsequent vollzogen. Dies
+          bedingt, dass im Rahmen der Vektorisierung älterer gedruckter Karten Erosionsränder und 
+          Terrassenkanten aufgeteilt werden müssen. Terrassenkanten werden nur dann als solche 
+          attributiert, wenn sie durch ihre Lage und entsprechende Schotterterrassen eindeutig zugeordnet
+          werden können. Zweifelhafte Fälle werden als Erosionsränder aufgenommen.
+
       - name: Karstic_Structures_PT
+        desc: |
+          Die Klasse Karstic_Structures_PT beinhaltet Karstphänomene, die punktförmig dargestellt werden. 
+          Darunter fallen u.a. der Ponor oder der Eingang zu einer Höhle.
       - name: Karstic_Structures_PLG
+        desc: |
+          Die Klasse Karstic_Structures_PLG umfasst flächenhafte Karstformen wie Dolinen oder Poljen. 
+          Dolinen werden immer als Polygone erfasst (das) bildet dafür eine wichtige Grundlage). Kleine 
+          Dolinen (Durchmesser < 25 m), werden durch eine definierte Einheitsfläche von 500 m²
+          dargestellt.
       - name: Alluvial_and_Lacustrine_Structures_L
+        desc: |
+          Die Klasse Alluvial_and_Lacustrine_Structures_L beinhaltet linienförmige Morphologien 
+          fluviatilen oder lakustrischen Ursprungs.
+
   - name: Tectonics
     classes:
       - name: Deformation_Structures_PT
+        desc: |
+          Die Klasse Deformation_Structures_PT beinhaltet punktuell beobachtete tektonische 
+          Deformationsstrukturen wie lokal stark verfaltete Stellen (Fältelung) oder Orte mit ausgeprägter 
+          Klüftung. Ebenfalls in dieser Klasse befinden sich konstruierte Punkte wie z.B. die Orientierung 
+          der Faltenachsenfläche. Die Darstellung der Spur einer Achsenfläche entspricht der Symbolisierung 
+          eines konstruierten Faltenscharniers, in einem Punkt der Intersektion einer Achsenfläche und der 
+          Topografie. Diese beiden letzterwähnten Objektarten sind im Anhang A zur besseren 
+          Verständlichkeit abgebildet.
       - name: Deformation_Structures_L
       - name: Deformation_Structures_PLG
       - name: Tectonic_Boundaries_L
