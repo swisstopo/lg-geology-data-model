@@ -1,0 +1,75 @@
+
+#Comment: This is a supermarket list using YAML
+#Note that - character represents the list
+---
+
+
+
+Rock_Bodies:
+  - Unconsolidated_Deposits_PT
+  - Unconsolidated_Deposits_PLG
+  - Bedrock_PLG
+
+Geomorphology:
+  - Instability_Structures_PT
+  - Instability_Structures_L
+  - Instabilities_within_Unconsolidated_Deposits_PLG
+  - Instabilities_within_Bedrock_PLG
+  - Glacial_Structures_PT
+  - Glacial_and_Periglacial_Structures_L
+  - Glacial_Structures_PLG
+  - Erosional_Structures_PT
+  - Erosional_Structures_L
+  - Karstic_Structures_PT
+  - Karstic_Structures_PLG
+  - Alluvial_and_Lacustrine_Structures_L
+
+Tectonics:
+  - Deformation_Structures_PT
+  - Deformation_Structures_L
+  - Deformation_Structures_PLG
+  - Tectonic_Boundaries_L
+
+Measurements_Spatial_Orientation:
+  - Folds_PT
+  - Lineation_PT
+  - Planar_Structures_PT
+
+Local_Additional_Information:
+  - Anomalies_PT
+  - Fossils_PT
+  - Indication_of_Resources_PT
+  - Mineralised_Zone_L
+  - Sedimentary_Structures_PT
+  - Type_Localities_PT
+  - Prominent_Lithological_Features_L
+  - Miscellaneous_PT
+  - Geological_Outlines_L7
+
+Parameter_and_Modelling:
+  - Slope_Bedrock_PT
+  - Contour_Lines_Bedrock_L
+  - Modelled_Water_Table_PT
+  - Contour_Lines_Hydro_L
+
+Anthropogenic_Features:
+  - Archaeology_PT
+  - Archaeology_L
+  - Archaeology_PLG
+  - Exploitation_Geomaterials_PT
+  - Exploitation_Geomaterials_L
+  - Exploitation_Geomaterials_PLG
+  - Boreholes_PT
+  - Artificial_Surface_Modifications_PLG
+
+Hydrogeology:
+  - Construction_PT
+  - Construction_L
+  - Palaeohydrology_L
+  - Subsurface_Water_L
+  - Surface_Water_PT
+  - Surface_Water_L
+  - Surface_Water_PLG
+
+Meta_Data:
+  - Mapsheet
