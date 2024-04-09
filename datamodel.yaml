@@ -9,11 +9,10 @@ themes:
           (Korngrösse: Steine bis Blöcke), die durch gravitative, glaziale oder
           anthropogene Transportprozesse an ihren heutigen Ort gelangten,
           respektive sich an Ort und Stelle durch Verwitterung des umliegenden
-          Gesteins 
-
-          gebildet haben.
+          Gesteins gebildet haben.
         attributes:
           - name: kind
+            type: subtype
             value: 14401
           - name: status
             type: CD
@@ -43,6 +42,7 @@ themes:
           Fallbeispiele abgebildet.
         attributes:
           - name: kind
+            type: subtype
             value: 14517
           - name: litstrat
             type: CD
@@ -97,7 +97,7 @@ themes:
           Klasse Instabilities_within_Bedrock_PLG (Thema Geomorphology) hervor.
         attributes:
           - name: kind
-            type: unique
+            type: subtype
             value: 14334001
           - name: fm_homog
             desc: Gesteinsaufbau

@@ -6,11 +6,23 @@
 
 **Attribute KIND**
 
+
+|GeolCode|Deutsch|Français|
+|----------|--------------------|--------------------|
+|      14401001| Runc erratischer Block|bloc erratique|
+|      14401002| Runc Schwarm erratischer Blöcke|accumulation de blocs erratiques|
+|      14401003| Runc anthropogene Ansammlung von erratischen Blöcken|amas anthropique de blocs erratiques|
+|      14401004| Runc Wanderblock|bloc laboureur|
+|      14401005| Runc Geschiebe|cailloutis glaciaire|
+|      14401006| Runc Sturzblock|bloc éboulé|
+|      14401007| Runc Lesesteinhaufen|dépôt d'épierrage|
+|      14401008| Runc Verwitterungsrückstände (Gerölle und/oder Konkretionen)|éléments résiduels (galets et/ou rognons)|
+
 **Attribute STATUS**
 _Zustand der Objektart._
 
 
-|Geolcode|German|French|
+|GeolCode|Deutsch|Français|
 |----------|--------------------|--------------------|
 |      14402001| versetzt|déplacé artificiellement|
 |      14402002| zerstört|détruit|
@@ -23,7 +35,7 @@ _Zustand der Objektart._
 _Gesteinstyp (Kristallingestein / Sedimentgestein)._
 
 
-|Geolcode|German|French|
+|GeolCode|Deutsch|Français|
 |----------|--------------------|--------------------|
 |      14403001| Kristallingestein|roche cristalline|
 |      14403002| Sedimentgestein|roche sédimentaire|
@@ -35,7 +47,7 @@ _Gesteinstyp (Kristallingestein / Sedimentgestein)._
 _Bezeichnung des Leitgesteins_
 
 
-|Geolcode|German|French|
+|GeolCode|Deutsch|Français|
 |----------|--------------------|--------------------|
 |      14404001| Vallorcine-Konglomerat||
 |      14404002| Allalin-Gabbro||
@@ -70,10 +82,15 @@ _Bezeichnung des Leitgesteins_
 
 **Attribute KIND**
 
+
+|GeolCode|Deutsch|Français|
+|----------|--------------------|--------------------|
+|      14517001| Runc Lockergestein|roche meuble|
+
 **Attribute LITSTRAT**
 
 
-|Geolcode|German|French|
+|GeolCode|Deutsch|Français|
 |----------|--------------------|--------------------|
 |      15201001| Ältere Ablagerungen, undifferenziert|Dépôts indifférenciés précédant le Dernier Maximum Glaciaire|
 |      15201002| Niederterrasse|Niederterrasse|
@@ -531,7 +548,7 @@ _Bezeichnung des Leitgesteins_
 **Attribute LITHO**
 
 
-|Geolcode|German|French|
+|GeolCode|Deutsch|Français|
 |----------|--------------------|--------------------|
 |      15101001| Lockergestein|roche meuble|
 |      15101003| gravitative Sedimente und Verwitterungsbildungen, undifferenziert|dépôts gravitaires et d'altération, indifférenciés|
@@ -900,7 +917,7 @@ _Bezeichnung des Leitgesteins_
 **Attribute CHRONO_T**
 
 
-|Geolcode|German|French|
+|GeolCode|Deutsch|Français|
 |----------|--------------------|--------------------|
 |      15001001| Phanerozoikum|Phanérozoïque|
 |      15001002| Känozoikum|Cénozoïque|
@@ -1045,7 +1062,7 @@ _Bezeichnung des Leitgesteins_
 **Attribute CHRONO_B**
 
 
-|Geolcode|German|French|
+|GeolCode|Deutsch|Français|
 |----------|--------------------|--------------------|
 |      15001001| Phanerozoikum|Phanérozoïque|
 |      15001002| Känozoikum|Cénozoïque|
@@ -1199,7 +1216,7 @@ _Bezeichnung des Leitgesteins_
 _Textur des Lockergesteins_
 
 
-|Geolcode|German|French|
+|GeolCode|Deutsch|Français|
 |----------|--------------------|--------------------|
 |      14510001| texturlos|sans structure|
 |      14510002| geschichtet|stratifié|
@@ -1223,7 +1240,7 @@ _Spezifische Eigenschaft_
 _Morphologie der Lockergesteinseinheit_
 
 
-|Geolcode|German|French|
+|GeolCode|Deutsch|Français|
 |----------|--------------------|--------------------|
 |      14512001| Kegel / Fächer|cône|
 |      14512002| Schleier|voile|
@@ -1239,7 +1256,7 @@ _Morphologie der Lockergesteinseinheit_
 **Attribute GLAC_TYPE**
 
 
-|Geolcode|German|French|
+|GeolCode|Deutsch|Français|
 |----------|--------------------|--------------------|
 |      14513001| Lokalgletscher|glacier local|
 |      14513002| grosse Tal- und Vorlandgletscher|grands glaciers de vallées et de piedmont|
@@ -1262,7 +1279,7 @@ _Morphologie der Lockergesteinseinheit_
 **Attribute THIN_COVER**
 
 
-|Geolcode|German|French|
+|GeolCode|Deutsch|Français|
 |----------|--------------------|--------------------|
 |      14515001| geringmächtige Lockergesteinsbedeckung, undifferenziert|couverture de roches meubles peu épaisse, indifférenciée|
 |      14515002| geringmächtige Moränenbedeckung|couverture morainique peu épaisse|
@@ -1276,7 +1293,7 @@ _Morphologie der Lockergesteinseinheit_
 **Attribute STRUCTUR**
 
 
-|Geolcode|German|French|
+|GeolCode|Deutsch|Français|
 |----------|--------------------|--------------------|
 |      14510001| texturlos|sans structure|
 |      14510002| geschichtet|stratifié|
@@ -1297,6 +1314,11 @@ _Morphologie der Lockergesteinseinheit_
 
 **Attribute KIND**
 
+
+|GeolCode|Deutsch|Français|
+|----------|--------------------|--------------------|
+|      14334001| Rbed Festgestein|roche consolidée|
+
 **Attribute FM_HOMOG**
 _Gesteinsaufbau_
 
@@ -1304,7 +1326,7 @@ _Gesteinsaufbau_
 _Lithostratigraphische Einheit._
 
 
-|Geolcode|German|French|
+|GeolCode|Deutsch|Français|
 |----------|--------------------|--------------------|
 |      15200001| Twannbach-Formation|Formation du Twannbach|
 |      15200002| Reuchenette-Formation|Formation de Reuchenette|
@@ -3525,7 +3547,7 @@ _Lithostratigraphische Einheit._
 _Lithologische Beschreibung._
 
 
-|Geolcode|German|French|
+|GeolCode|Deutsch|Français|
 |----------|--------------------|--------------------|
 |      15101001| Lockergestein|roche meuble|
 |      15101003| gravitative Sedimente und Verwitterungsbildungen, undifferenziert|dépôts gravitaires et d'altération, indifférenciés|
@@ -3895,7 +3917,7 @@ _Lithologische Beschreibung._
 _Chronostratigraphische Zuordnung der Obergrenze der Kartiereinheit (Top)_
 
 
-|Geolcode|German|French|
+|GeolCode|Deutsch|Français|
 |----------|--------------------|--------------------|
 |      15001001| Phanerozoikum|Phanérozoïque|
 |      15001002| Känozoikum|Cénozoïque|
@@ -4041,7 +4063,7 @@ _Chronostratigraphische Zuordnung der Obergrenze der Kartiereinheit (Top)_
 _Chronostratigraphische Zuordnung der Untergrenze der Kartiereinheit (Basis)_
 
 
-|Geolcode|German|French|
+|GeolCode|Deutsch|Français|
 |----------|--------------------|--------------------|
 |      15001001| Phanerozoikum|Phanérozoïque|
 |      15001002| Känozoikum|Cénozoïque|
@@ -4186,7 +4208,7 @@ _Chronostratigraphische Zuordnung der Untergrenze der Kartiereinheit (Basis)_
 **Attribute TECTO**
 
 
-|Geolcode|German|French|
+|GeolCode|Deutsch|Français|
 |----------|--------------------|--------------------|
 |      15301001| Abgeschertes Nordalpines Vorland|Avant-pays nord-alpin décollé|
 |      15301022| Avant-Monts-Zone|Zone des Avant-monts|
@@ -4597,7 +4619,7 @@ _Farbe des Gesteins. Präzisieren ob es sich um die Bruchfarbe, die Verwitterung
 _Hauptgesteinskomponente des klastischen Sedimentgesteins. D_
 
 
-|Geolcode|German|French|
+|GeolCode|Deutsch|Français|
 |----------|--------------------|--------------------|
 |      15602001| Gesteinsbruchstück undifferenziert|fragments de roches indifférenciés|
 |      15602002| kieselige Gesteine (Quarzit, Quarz (Mineralisch), Radiolarit, Kieselkalk, Quarzsandstein, Hornstein)|roches siliceuses (quartzite, quartz (minéral), radiolarite, calcaire siliceux, grès siliceux, silex)|
@@ -4616,7 +4638,7 @@ _Hauptgesteinskomponente des klastischen Sedimentgesteins. D_
 _Nebengesteinskomponente des Sedimentgesteins_
 
 
-|Geolcode|German|French|
+|GeolCode|Deutsch|Français|
 |----------|--------------------|--------------------|
 |      20001001| Gesteinsbruchstück undifferenziert|fragments de roches indifférenciées|
 |      20001002| Sedimentgestein undifferenziert|roche sédimentaire indifférenciée|
@@ -4651,7 +4673,7 @@ _Nebengesteinskomponente des Sedimentgesteins_
 _Bindemittel des Sedimentgesteins._
 
 
-|Geolcode|German|French|
+|GeolCode|Deutsch|Français|
 |----------|--------------------|--------------------|
 |      14313001| kalkiger Zement|à ciment calcaire|
 |      14313002| dolomitischer Zement|à ciment dolomitique|
@@ -4670,7 +4692,7 @@ _Bindemittel des Sedimentgesteins._
 _Schichtung des Sedimentgesteins_
 
 
-|Geolcode|German|French|
+|GeolCode|Deutsch|Français|
 |----------|--------------------|--------------------|
 |      20101001| massig|massif|
 |      20101002| gebankt|lité|
@@ -4687,7 +4709,7 @@ _Schichtung des Sedimentgesteins_
 _Textur des Sedimentgesteins_
 
 
-|Geolcode|German|French|
+|GeolCode|Deutsch|Français|
 |----------|--------------------|--------------------|
 |      20201001| texturlos|sans structure|
 |      20201002| geschichtet|stratifié|
@@ -4704,7 +4726,7 @@ _Textur des Sedimentgesteins_
 _Sedimentstruktur_
 
 
-|Geolcode|German|French|
+|GeolCode|Deutsch|Français|
 |----------|--------------------|--------------------|
 |      20301001| monomikt|monomicte|
 |      20301002| polymikt|polymicte|
@@ -4722,7 +4744,7 @@ _Sedimentstruktur_
 _Struktur des magmatischen Gesteins._
 
 
-|Geolcode|German|French|
+|GeolCode|Deutsch|Français|
 |----------|--------------------|--------------------|
 |      14317001| gleichkörnig|équigranulaire|
 |      14317002| ungleichkörnig|hétérogranulaire|
@@ -4734,7 +4756,7 @@ _Struktur des magmatischen Gesteins._
 _Korngrösse des magmatischen Gesteins_
 
 
-|Geolcode|German|French|
+|GeolCode|Deutsch|Français|
 |----------|--------------------|--------------------|
 |      14318001| grobkörnig|grossière|
 |      14318002| feinkörnig|fine|
@@ -4746,7 +4768,7 @@ _Korngrösse des magmatischen Gesteins_
 _Affinität zu einer magmatischen Serie._
 
 
-|Geolcode|German|French|
+|GeolCode|Deutsch|Français|
 |----------|--------------------|--------------------|
 |      15733001| alkalisch|alcalin|
 |      15733002| kalkalkalisch|calco-alcalin|
@@ -4761,7 +4783,7 @@ _Bezeichnung des metamorphen Gesteins._
 _Wichtiges Mineral des metamorphen Gesteins_
 
 
-|Geolcode|German|French|
+|GeolCode|Deutsch|Français|
 |----------|--------------------|--------------------|
 |      20401001| Aktinolith|actinote|
 |      20401002| Albit|albite|
@@ -4853,7 +4875,7 @@ _Wichtiges Mineral des metamorphen Gesteins_
 _Textur des metamorphen Gesteins._
 
 
-|Geolcode|German|French|
+|GeolCode|Deutsch|Français|
 |----------|--------------------|--------------------|
 |      20501001| massig|massif|
 |      20501002| gebändert|rubané|
