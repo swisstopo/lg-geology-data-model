@@ -18,6 +18,7 @@ themes:
             value: GC_PNT_RUNC_STATUS_CD
             desc: Zustand der Objektart.
           - name: rock_type
+            type: CD
             value: GC_PNT_RUNC_ROCK_TYP_CD
             desc: Gesteinstyp (Kristallingestein / Sedimentgestein).
           - name: rock_spe
@@ -42,12 +43,16 @@ themes:
           - name: kind
             value: 14517
           - name: litstrat
+            type: CD
             value: GC_LITSTRAT_UNCO_CD
           - name: litho
+            type: CD
             value: GC_LITHO_CD
           - name: chrono_t
+            type: CD
             value: GC_CHRONO_CD
           - name: chrono_b
+            type: CD
             value: GC_CHRONO_CD
           - name: mat_type
             value: Lithostratigraphic_Units_Litho
@@ -95,22 +100,27 @@ themes:
           - name: fm_homog
             desc: Gesteinsaufbau
           - name: listrat
+            type: CD
             value: GC_LITSTRAT_BED_CD
             desc: Lithostratigraphische Einheit.
           - name: litho
+            type: CD
             value: GC_LITHO_CD
             desc: Lithologische Beschreibung.
           - name: chrono_t
+            type: CD
             value: GC_CHRONO_CD
             desc: >-
               Chronostratigraphische Zuordnung der Obergrenze der Kartiereinheit
               (Top)
           - name: chrono_b
+            type: CD
             value: GC_CHRONO_CD
             desc: >-
               Chronostratigraphische Zuordnung der Untergrenze der
               Kartiereinheit (Basis)
           - name: tecto
+            type: CD
             value: GC_TECTO_CD
             descr: Tektonische Zugehörigkeit.
           - name: orig_descr
@@ -132,39 +142,50 @@ themes:
               Farbe des Gesteins. Präzisieren ob es sich um die Bruchfarbe, die
               Verwitterungsfarbe, etc. handelt; z.B.Verwitterungsfarbe grau.
           - name: sedi_main_com
+            type: CD
             value: GC_MAIN_COM_CD
             desc: Hauptgesteinskomponente des klastischen Sedimentgesteins. D
           - name: sedi_seco_com
+            type: CD
             value: GC_SECO_COM_CD
             desc: Nebengesteinskomponente des Sedimentgesteins
           - name: sedi_bond_mat
+            type: CD
             value: GC_BOND_MAT_CD
             desc: Bindemittel des Sedimentgesteins.
           - name: sedi_bedding
+            type: CD
             value: GC_BEDDING_CD
             desc: Schichtung des Sedimentgesteins
           - name: sedi_str
+            type: CD
             value: GC_SEDI_STR_CD
             desc: Textur des Sedimentgesteins
           - name: sedi_tex
+            type: CD
             value: GC_SEDI_TEX_CD
             desc: Sedimentstruktur
           - name: igne_text
+            type: CD
             value: GC_IGNE_TEX_CD
             desc: Struktur des magmatischen Gesteins.
           - name: igne_grain_si
+            type: CD
             value: GC_GRAIN_SI_CD
             desc: Korngrösse des magmatischen Gesteins
           - name: igne_affinity
+            type: CD
             value: GC_AFFINITY_CD
             desc: Affinität zu einer magmatischen Serie.
           - name: meta_full_
             type: string
             desc: Bezeichnung des metamorphen Gesteins.
           - name: meta_mineral
+            type: CD
             value: GC_MINERAL_CD
             desc: Wichtiges Mineral des metamorphen Gesteins
           - name: meta_str
+            type: CD
             value: GC_META_STR_CD
             desc: Textur des metamorphen Gesteins.
   - name: Geomorphology
