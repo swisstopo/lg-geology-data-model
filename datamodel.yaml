@@ -17,15 +17,15 @@ themes:
           - name: status
             type: CD
             value: GC_PNT_RUNC_STATUS_CD
-            desc: Zustand der Objektart.
+            description: Zustand der Objektart.
           - name: rock_type
             type: CD
             value: GC_PNT_RUNC_ROCK_TYP_CD
-            desc: Gesteinstyp (Kristallingestein / Sedimentgestein).
+            description: Gesteinstyp (Kristallingestein / Sedimentgestein).
           - name: rock_spe
             type: CD
             value: GC_PNT_RUNC_ROCK_SPE_CD
-            desc: Bezeichnung des Leitgesteins
+            description: Bezeichnung des Leitgesteins
       - name: Unconsolidated_Deposits_PLG
         description: >
           Die Klasse Unconsolidated_Deposits_PLG beinhaltet alle flächenhaft
@@ -69,15 +69,15 @@ themes:
           - name: structur
             type: CD
             value: GC_UN_DEP_RUNC_STRUCTUR_CD
-            desc: Textur des Lockergesteins
+            description: Textur des Lockergesteins
           - name: charact
             type: table
             value: gc_charcat
-            desc: Spezifische Eigenschaft
+            description: Spezifische Eigenschaft
           - name: morpholo
             type: CD
             value: GC_UN_DEP_RUNC_MORPHOLO_CD
-            desc: Morphologie der Lockergesteinseinheit
+            description: Morphologie der Lockergesteinseinheit
           - name: glac_type
             type: CD
             value: GC_UN_DEP_RUNC_GLAC_TYP_CD
@@ -90,7 +90,7 @@ themes:
             type: CD
             value: GC_UN_DEP_RUNC_STRUCTUR_CD
       - name: Bedrock_PLG
-        descr: >
+        description: >
           Die Klasse Bedrock_PLG enthält alle flächenbildenden
           lithostratigraphischen Festgesteinseinheiten. Die Angabe,  ob ein
           Festgestein bewegt (durch Gravitation versetzt) wurde, geht aus der
@@ -100,112 +100,112 @@ themes:
             type: subtype
             value: 14334001
           - name: fm_homog
-            desc: Gesteinsaufbau
+            description: Gesteinsaufbau
           - name: listrat
             type: CD
             value: GC_LITSTRAT_BED_CD
-            desc: Lithostratigraphische Einheit.
+            description: Lithostratigraphische Einheit.
           - name: litho
             type: CD
             value: GC_LITHO_CD
-            desc: Lithologische Beschreibung.
+            description: Lithologische Beschreibung.
           - name: chrono_t
             type: CD
             value: GC_CHRONO_CD
-            desc: >-
+            description: >-
               Chronostratigraphische Zuordnung der Obergrenze der Kartiereinheit (Top)
           - name: chrono_b
             type: CD
             value: GC_CHRONO_CD
-            desc: >-
+            description: >-
               Chronostratigraphische Zuordnung der Untergrenze der
               Kartiereinheit (Basis)
           - name: tecto
             type: CD
             value: GC_TECTO_CD
-            descr: Tektonische Zugehörigkeit.
+            description: Tektonische Zugehörigkeit.
           - name: orig_descr
             type: string
-            desc: >-
+            description: >-
               lbezeichnung gemäss der Legende der zugrundeliegenden geologischen
               Karte.
           - name: buried_out
             type: boolean
-            desc: Wurde das Festgestein wieder verdeckt (ja / nein)?
+            description: Wurde das Festgestein wieder verdeckt (ja / nein)?
           - name: exotic_ele
             value: boolean
-            desc: >-
+            description: >-
               Handelt es sich bei der Objektart um ein exotisches Element; z.B.
               Einschluss, Linse, Tasche, Olistholith (ja / nein)?
           - name: colour
             type: string
-            desc: >-
+            description: >-
               Farbe des Gesteins. Präzisieren ob es sich um die Bruchfarbe, die
               Verwitterungsfarbe, etc. handelt; z.B.Verwitterungsfarbe grau.
           - name: sedi_main_com
             type: CD
             value: GC_MAIN_COM_CD
-            desc: Hauptgesteinskomponente des klastischen Sedimentgesteins. D
+            description: Hauptgesteinskomponente des klastischen Sedimentgesteins. D
           - name: sedi_seco_com
             type: CD
             value: GC_SECO_COM_CD
-            desc: Nebengesteinskomponente des Sedimentgesteins
+            description: Nebengesteinskomponente des Sedimentgesteins
           - name: sedi_bond_mat
             type: CD
             value: GC_BOND_MAT_CD
-            desc: Bindemittel des Sedimentgesteins.
+            description: Bindemittel des Sedimentgesteins.
           - name: sedi_bedding
             type: CD
             value: GC_BEDDING_CD
-            desc: Schichtung des Sedimentgesteins
+            description: Schichtung des Sedimentgesteins
           - name: sedi_str
             type: CD
             value: GC_SEDI_STR_CD
-            desc: Textur des Sedimentgesteins
+            description: Textur des Sedimentgesteins
           - name: sedi_tex
             type: CD
             value: GC_SEDI_TEX_CD
-            desc: Sedimentstruktur
+            description: Sedimentstruktur
           - name: igne_text
             type: CD
             value: GC_IGNE_TEX_CD
-            desc: Struktur des magmatischen Gesteins.
+            description: Struktur des magmatischen Gesteins.
           - name: igne_grain_si
             type: CD
             value: GC_GRAIN_SI_CD
-            desc: Korngrösse des magmatischen Gesteins
+            description: Korngrösse des magmatischen Gesteins
           - name: igne_affinity
             type: CD
             value: GC_AFFINITY_CD
-            desc: Affinität zu einer magmatischen Serie.
+            description: Affinität zu einer magmatischen Serie.
           - name: meta_full_
             type: string
-            desc: Bezeichnung des metamorphen Gesteins.
+            description: Bezeichnung des metamorphen Gesteins.
           - name: meta_mineral
             type: CD
             value: GC_MINERAL_CD
-            desc: Wichtiges Mineral des metamorphen Gesteins
+            description: Wichtiges Mineral des metamorphen Gesteins
           - name: meta_str
             type: CD
             value: GC_META_STR_CD
-            desc: Textur des metamorphen Gesteins.
+            description: Textur des metamorphen Gesteins.
   - name: Geomorphology
     classes:
       - name: Instability_Structures_PT
-        desc: |
+        description: |
           Die Klasse Instability_Structures_PT enthält lokal beobachtete Hinweise auf Hanginstabilitäten 
           (Rutschungen), die räumlich nicht abgegrenzt werden können. Wenn möglich, sollen instabile 
           Gesteinsmassen durch Polygone erfasst werden (Klasse Instabilities_within_Unconsolidated_ 
           Deposits_PLG), die punktförmige Aufnahme ist zu vermeiden und vorwiegend für die Vektorisierung älterer
           gedruckter Karten gedacht.
       - name: Instability_Structures_L
-        desc: |
+        description: |
           Die Klasse Instability_Structures_L umfasst linienförmige Morphologien, die sich als Folge von 
           Hanginstabilitäten an der Oberfläche ausgebildet haben. Beim Abrissrand handelt es sich um den 
           oberen Rand der durch das Abgleiten der bewegten Masse freigelegten Gleitfläche einer 
           Rutschung oder Sackung (Abrissnische)
       - name: Instabilities_within_Unconsolidated_Deposits_PLG
-        desc: |
+        description: |
           Die Klasse Instabilities_within_Unconsolidated_Deposits_PLG beinhaltet alle Polygone, die Gebiete 
           mit instabilen Lockergesteinen begrenzen. In dieser Klasse werden die Prozessräume der 
           verschiedenen Typen von gleitenden Massenbewegungsprozessen ausgeschieden; die 
@@ -214,7 +214,7 @@ themes:
           näheren Erklärung der verschiedenen Objektarten sind im Anhang A einige Fallbeispiele 
           abgebildet.
       - name: Instabilities_within_Bedrock_PLG
-        desc: |
+        description: |
           Die Klasse Instabilities_within_Bedrock_PLG beinhaltet alle Polygone, die Gebiete mit instabilen 
           Festgesteinen begrenzen. In dieser Klasse werden die Prozessräume der verschiedenen Typen von 
           gleitenden Massenbewegungsprozessen ausgeschieden; die eigentlichen Gesteinskörper, die von 
@@ -222,26 +222,26 @@ themes:
           näheren Erklärung der verschiedenen Objektarten sind im Anhang A einige Fallbeispiele 
           abgebildet.
       - name: Glacial_Structures_PT
-        desc: |
+        description: |
           Die Klasse Glacial_Structures_PT enthält Objektarten, welche die ehemalige Anwesenheit eines 
           Gletschers punktuell dokumentieren (Gletscherschliff ist ein räumlich orientiertes Objekt und 
           befindet sich deshalb in der Klasse Lineation_PT).
       - name: Glacial_and_Periglacial_Structures_L
-        desc: |
+        description: |
           Die Klasse Glacial_and_Periglacial_Structures_L enthält linienförmige Strukturen, die auf ein 
           glaziales oder periglaziales Bildungsmilieu hindeuten. Mit Ausnahme der Schliffgrenze handelt es 
           sich in dieser Klasse ausschliesslich um akkummulative Landschaftsformen wie Moränenwälle oder 
           Blockwülste im Blockgletscher.
       - name: Glacial_Structures_PLG
-        desc: |
+        description: |
           Die Klasse Glacial_Structures_PLG umfasst flächenhafte glaziale Landschaftsformen, die durch
           basales Fliessen des Gletschereises oder dessen Abschmelzen entstanden sind.
       - name: Erosional_Structures_PT
-        desc: |
+        description: |
           Die Klasse Erosional_Structures_PT beinhaltet lokale Landschaftselemente, die sich im Laufe der 
           Zeit unter Einwirkung von diversen Erosionsprozessen gebildet haben.
       - name: Erosional_Structures_L
-        desc: |
+        description: |
           Die Klasse Erosional_Structures_L enthält linienförmige erosive Formen wie Erosionsränder im 
           Allgemeinen oder Terrassenkanten. 
           Auf älteren gedruckten Karten wurden Erosionsränder und Terrassenkanten oftmals nicht 
@@ -252,24 +252,24 @@ themes:
           werden können. Zweifelhafte Fälle werden als Erosionsränder aufgenommen.
 
       - name: Karstic_Structures_PT
-        desc: |
+        description: |
           Die Klasse Karstic_Structures_PT beinhaltet Karstphänomene, die punktförmig dargestellt werden. 
           Darunter fallen u.a. der Ponor oder der Eingang zu einer Höhle.
       - name: Karstic_Structures_PLG
-        desc: |
+        description: |
           Die Klasse Karstic_Structures_PLG umfasst flächenhafte Karstformen wie Dolinen oder Poljen. 
           Dolinen werden immer als Polygone erfasst (das) bildet dafür eine wichtige Grundlage). Kleine 
           Dolinen (Durchmesser < 25 m), werden durch eine definierte Einheitsfläche von 500 m²
           dargestellt.
       - name: Alluvial_and_Lacustrine_Structures_L
-        desc: |
+        description: |
           Die Klasse Alluvial_and_Lacustrine_Structures_L beinhaltet linienförmige Morphologien 
           fluviatilen oder lakustrischen Ursprungs.
 
   - name: Tectonics
     classes:
       - name: Deformation_Structures_PT
-        desc: |
+        description: |
           Die Klasse Deformation_Structures_PT beinhaltet punktuell beobachtete tektonische 
           Deformationsstrukturen wie lokal stark verfaltete Stellen (Fältelung) oder Orte mit ausgeprägter 
           Klüftung. Ebenfalls in dieser Klasse befinden sich konstruierte Punkte wie z.B. die Orientierung 

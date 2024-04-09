@@ -61,7 +61,7 @@ def main(config_file):
             print(f"## Thema {theme.get('name','').replace('_', ' ')}")
             for cls in theme.get("classes"):
                 print(f"### Klasse {cls.get('name')}")
-                desc = cls.get("desc", None)
+                desc = cls.get("description", None)
                 if desc is not None:
                     print(f"_{desc}_")
                 print("")
@@ -71,7 +71,7 @@ def main(config_file):
                         name = att.get("name")
                         type = att.get("type")
                         value = att.get("value")
-                        desc = att.get("desc", None)
+                        desc = att.get("description", None)
                         print(f"**Attribute {name.upper()}**")
                         if desc is not None:
                             print(f"_{desc}_")

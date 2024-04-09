@@ -1,8 +1,10 @@
-# Datenmodel GeoCover (04/09/24)
+# Datenmodel GeoCover (04/10/24)
 ![geocover](geocover.png "GeoCover")
 
 ## Thema Rock Bodies
 ### Klasse Unconsolidated_Deposits_PT
+_Die Klasse Unconsolidated_Deposits_PT umfasst einzelne Gesteine (Korngrösse: Steine bis Blöcke), die durch gravitative, glaziale oder anthropogene Transportprozesse an ihren heutigen Ort gelangten, respektive sich an Ort und Stelle durch Verwitterung des umliegenden Gesteins gebildet haben.
+_
 
 **Attribute KIND**
 
@@ -79,6 +81,8 @@ _Bezeichnung des Leitgesteins_
 |        999998| Not applicable|not applicable|
 
 ### Klasse Unconsolidated_Deposits_PLG
+_Die Klasse Unconsolidated_Deposits_PLG beinhaltet alle flächenhaft ausgeschiedenen Lockergesteine. Die Angabe, ob eine Lockergesteinsmasse bewegt (durch Gravitation versetzt) wurde, geht aus der Klasse Instabilities_within_Unconsolidated_Deposits_PLG (Thema Geomorphology) hervor. Eine Ausnahme bilden Lockergesteinsmassen, welche unter dem Einfluss der Schwerkraft bewegt wurden und keine Angaben zum Ausgangsmaterial enthalten (Rutschmassen oder zerrüttete Gesteinsmassen «Sackungsmassen»). Solche Lockergesteine werden sowohl in der Klasse Unconsolidated_Deposits_PLG als auch in der Klasse Instabilities_with_in_Unconsolidated_Deposits_PLG erfasst. Zur näheren Erklärung der verschiedenen Objektarten sind im Anhang A einige Fallbeispiele abgebildet.
+_
 
 **Attribute KIND**
 
@@ -1311,6 +1315,8 @@ _Morphologie der Lockergesteinseinheit_
 |        999998| Not applicable|not applicable|
 
 ### Klasse Bedrock_PLG
+_Die Klasse Bedrock_PLG enthält alle flächenbildenden lithostratigraphischen Festgesteinseinheiten. Die Angabe,  ob ein Festgestein bewegt (durch Gravitation versetzt) wurde, geht aus der Klasse Instabilities_within_Bedrock_PLG (Thema Geomorphology) hervor.
+_
 
 **Attribute KIND**
 
@@ -4206,6 +4212,7 @@ _Chronostratigraphische Zuordnung der Untergrenze der Kartiereinheit (Basis)_
 |        999998| Not applicable|not applicable|
 
 **Attribute TECTO**
+_Tektonische Zugehörigkeit._
 
 
 |GeolCode|Deutsch|Français|
