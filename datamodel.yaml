@@ -6,9 +6,165 @@
 
 
 Rock_Bodies:
-  - Unconsolidated_Deposits_PT
-  - Unconsolidated_Deposits_PLG
-  - Bedrock_PLG
+  - Unconsolidated_Deposits_PT:
+      description: |
+          Die Klasse Unconsolidated_Deposits_PT umfasst einzelne Gesteine (Korngrösse: Steine bis Blöcke), 
+          die durch gravitative, glaziale oder anthropogene Transportprozesse an ihren heutigen Ort 
+          gelangten, respektive sich an Ort und Stelle durch Verwitterung des umliegenden Gesteins 
+          gebildet haben.
+      attributes:
+        - name: kind
+          value: 14401
+        - name: status
+          type: CD
+          value: GC_PNT_RUNC_STATUS_CD #14402
+          desc: Zustand der Objektart.
+        - name: rock_type
+          value: GC_PNT_RUNC_ROCK_TYP_CD #14403
+          desc: Gesteinstyp (Kristallingestein / Sedimentgestein).
+        - name: rock_spe
+          type: CD
+          value: GC_PNT_RUNC_ROCK_SPE_CD #14404
+          desc: Bezeichnung des Leitgesteins
+
+
+  - Unconsolidated_Deposits_PLG:
+      description: |
+        Die Klasse Unconsolidated_Deposits_PLG beinhaltet alle flächenhaft ausgeschiedenen 
+        Lockergesteine. Die Angabe, ob eine Lockergesteinsmasse bewegt (durch Gravitation versetzt)
+        wurde, geht aus der Klasse Instabilities_within_Unconsolidated_Deposits_PLG (Thema Geomorphology) hervor. Eine
+        Ausnahme bilden Lockergesteinsmassen, welche unter dem Einfluss der Schwerkraft bewegt wurden und keine Angaben
+        zum Ausgangsmaterial enthalten (Rutschmassen oder zerrüttete Gesteinsmassen «Sackungsmassen»). Solche
+        Lockergesteine werden sowohl in der Klasse Unconsolidated_Deposits_PLG als auch in der Klasse
+        Instabilities_with_in_Unconsolidated_Deposits_PLG erfasst. Zur näheren Erklärung der verschiedenen Objektarten 
+        sind im Anhang A einige Fallbeispiele abgebildet.
+      attributes:
+        - name: kind
+          value: 14517
+        - name: litstrat
+          value: GC_LITSTRAT_UNCO_CD
+        - name: litho
+          value: GC_LITHO_CD
+        - name: chrono_t
+          value: GC_CHRONO_CD
+        - name: chrono_b
+          value: GC_CHRONO_CD
+        - name: mat_type
+          value: Lithostratigraphic_Units_Litho  # TODO
+        - name: buried_out
+          type: boolean
+        - name: composit #    14508
+          type: table
+          value: gc_composit
+        - name: admixture # 14509
+          type: table
+          value: gc_admixture
+        - name: structur
+          type: CD
+          value: GC_UN_DEP_RUNC_STRUCTUR_CD
+          desc: Textur des Lockergesteins
+        - name: charact # 14511
+          type: table
+          value: gc_charcat # sic!
+          desc: Spezifische Eigenschaft
+
+        - name: morpholo # 14512
+          type: CD
+          value: GC_UN_DEP_RUNC_MORPHOLO_CD
+          desc: Morphologie der Lockergesteinseinheit
+        - name: glac_type #14513
+          type: CD
+          value: GC_UN_DEP_RUNC_GLAC_TYP_CD
+        - name: ref_year
+          type: string
+        - name : thin_cover #  14515
+          type: CD
+          value: GC_UN_DEP_RUNC_THIN_COV_CD
+        - name: structur  # 14510
+          type: CD
+          value: GC_UN_DEP_RUNC_STRUCTUR_CD
+
+
+  - Bedrock_PLG:
+      descr: |
+        Die Klasse Bedrock_PLG enthält alle flächenbildenden lithostratigraphischen Festgesteinseinheiten. Die Angabe,
+        ob ein Festgestein bewegt (durch Gravitation versetzt) wurde, geht aus der Klasse Instabilities_within_Bedrock_PLG
+        (Thema Geomorphology) hervor.
+      attributes:
+        - name: kind # 14334
+          type: unique
+          value: 14334001
+        - name: fm_homog #14302  TODO  not used anymore??
+          desc: Gesteinsaufbau
+        - name: listrat
+          value: GC_LITSTRAT_BED_CD
+          desc: Lithostratigraphische Einheit.
+        - name: litho
+          value: GC_LITHO_CD
+          desc: Lithologische Beschreibung.
+        - name: chrono_t
+          value: GC_CHRONO_CD
+          desc: Chronostratigraphische Zuordnung der Obergrenze der Kartiereinheit (Top)
+        - name: chrono_b
+          value: GC_CHRONO_CD
+          desc: Chronostratigraphische Zuordnung der Untergrenze der Kartiereinheit (Basis)
+        - name: tecto
+          value: GC_TECTO_CD
+          descr: Tektonische Zugehörigkeit.
+        - name: orig_descr
+          type: string
+          desc: lbezeichnung gemäss der Legende der zugrundeliegenden geologischen Karte.
+        - name: buried_out
+          type: boolean
+          desc: Wurde das Festgestein wieder verdeckt (ja / nein)?
+        - name: exotic_ele
+          value: boolean
+          desc: Handelt es sich bei der Objektart um ein exotisches Element; z.B. Einschluss, Linse, Tasche, Olistholith
+              (ja / nein)?
+        - name: colour
+          type: string
+          desc: Farrbe des Gesteins. Präzisieren ob es sich um die Bruchfarbe, die Verwitterungsfarbe, etc. handelt;
+                z.B.Verwitterungsfarbe grau.
+        - name: sedi_main_com
+          value: GC_MAIN_COM_CD #  15602
+          desc: Hauptgesteinskomponente des klastischen Sedimentgesteins. D
+        - name: sedi_seco_com
+          value: GC_SECO_COM_CD #20001
+          desc: Nebengesteinskomponente des Sedimentgesteins
+        - name: sedi_bond_mat
+          value: GC_BOND_MAT_CD # 14313
+          desc: Bindemittel des Sedimentgesteins.
+        - name: sedi_bedding
+          value: GC_BEDDING_CD # 20101
+          desc: Schichtung des Sedimentgesteins
+        - name: sedi_str
+          value: GC_SEDI_STR_CD # 20201
+          desc: Textur des Sedimentgesteins
+        - name: sedi_tex
+          value: GC_SEDI_TEX_CD #20301
+          desc: Sedimentstruktur
+        - name: igne_text
+          value: GC_IGNE_TEX_CD #14317
+          desc: Struktur des magmatischen Gesteins.
+        - name: igne_grain_si
+          value: GC_GRAIN_SI_CD #14318
+          desc: Korngrösse des magmatischen Gesteins
+        - name: igne_affinity
+          value: GC_AFFINITY_CD #15733
+          desc: Affinität zu einer magmatischen Serie.
+        - name: meta_full_
+          type: string
+          desc: Bezeichnung des metamorphen Gesteins.
+        - name: meta_mineral
+          value: GC_MINERAL_CD #20401
+          desc: Wichtiges Mineral des metamorphen Gesteins
+        - name: meta_str
+          value: GC_META_STR_CD  #20501
+          desc: Textur des metamorphen Gesteins.
+
+
+
+
 
 Geomorphology:
   - Instability_Structures_PT
