@@ -340,7 +340,7 @@ themes:
             value: GC_LIN_GGLA_MORAI_MO_CD
             cardinality: 0..1
           - name: glac_typ
-            descr: Gletschertyp, auf welchen die Objektart bezogen ist
+            description: Gletschertyp, auf welchen die Objektart bezogen ist
             type: CD
             value: GC_LIN_GGLA_GLAC_TYP_CD
             cardinality: 0..1
@@ -558,7 +558,7 @@ themes:
             type: TODO  # TODO: no coded domain
             cardinality: 0..1
           - name: meta_sta
-            descriptipn: Tektonometamorphe Chronologie der Objektart
+            description: Tektonometamorphe Chronologie der Objektart
             type: CD
             value: GC_LIN_TTEC_META_STA_CD
             cardinality: 0..1
@@ -719,37 +719,148 @@ themes:
             type: boolean
             cardinality: 0..1
       - name: Indication_of_Resources_PT
+        description: |
+            Die Klasse Indication_of_Resources_PT beinhaltet Fundstellen von vulkanischen, mineralischen
+und nicht-mineralischen Rohstoffen.
       - name: Mineralised_Zone_L
+        descriptipn: Die Klasse Mineralised_Zone_L beinhaltet Vererzungszonen.
       - name: Sedimentary_Structures_PT
+        descriptipn: Die Klasse Sedimentary_Structures_PT enthält beobachtete Sedimentstrukturen.
       - name: Type_Localities_PT
+        description: |
+            Die Klasse Type_Localities_PT beinhaltet diejenigen Objektarten, die Typlokalitäten oder wichtige
+            geologische Aufschlüsse beschreiben.
       - name: Prominent_Lithological_Features_L
+        description: |
+            In der Klasse Prominent_Lithological_Features_L befinden sich linienförmige Gesteinshorizonte.
+            Diese Gesteinshorizonte haben bloss Hinweischarakter (z.B. «markante Sandsteinbank» innerhalb
+            von Wechsellagerungen von Sandstein und Mergel) und sind von den Leithorizonten (z.B.
+            «Spatkalk im Hauptrogenstein») zu unterschieden. Leithorizonte befinden sich im Thema Rock Bodies.
       - name: Miscellaneous_PT
-      - name: Geological_Outlines_L7
+        description: |
+            Die Klasse Miscellaneous_PT ist für lokale, sehr spezielle geologische Objekte reserviert, die für die
+            Gesamtheit der geologischen Daten irrelevant sind und deshalb im Datenmodell Geologie nicht
+            standardisiert werden
+      - name: Geological_Outlines_L
+        description: |
+            Die Klasse Geological_Outlines_L beinhaltet geologische Konturen. Darunter fallen die Umrisse
+            von Fest- und Lockergesteinen, von tektonisierten Zonen, sowie die Umgrenzungen von
+            Rutschungs- und Sackungsmassen, welche nicht durch andere Konturarten (z.B. tektonische
+            Grenzen) abgegrenzt werden.
+            Eine geologische Kontur mit Status im Allgemeinen umfasst stratigraphische und petrographische
+            Grenzen. Geologische Konturen, welche von quartären Ablagerungen, Gewässern oder
+            Gletschern bedeckt sind oder graduelle Übergänge in Locker- und Festgesteinen (keine klaren
+            lithologischen Grenzen; im Sinne der Signaturgrenze nach dem Zeichenverzeichnis (ZV)), haben
+            den Status vermutet. Künstliche geologische Konturen sind Konturen, welche Gebiete mit
+            detaillierter Information von Gebieten mit geringerer Informationsdichte aufgrund fehlender
+            Informationen oder aus darstellerischen Gründen (Digitalisierungsmassstab)
+            ab-grenzen (Abgrenzungskontur nach dem ZV).
   - name: Parameter_and_Modelling
     classes:
       - name: Slope_Bedrock_PT
+        description: |
+            Die Klasse Slope_Bedrock_PT enthält Punktinformationen aus Modellierungen des Festgestein-
+            verlaufs im Untergrund.
       - name: Contour_Lines_Bedrock_L
+        description: |
+            Die Klasse Contour_Lines_Bedrock_L beinhaltet Isohypsen, die sich auf den Verlauf des Fest-
+            gesteins beziehen und die das Resultat von Modellierungen darstellen. U.a. befinden sich die Iso-
+            hypsen der Felsoberfläche in dieser Klasse.
       - name: Modelled_Water_Table_PT
+        description: |
+            Die Klasse Modelled_Water_Table_PT enthält Punktinformationen aus Modellierungen des
+            Grundwasserspiegels.
       - name: Contour_Lines_Hydro_L
+        description: |
+            In der Klasse Contour_Lines_Hydro_L befinden sich die Isohypsen, die sich auf das Grundwasser
+            beziehen.
   - name: Anthropogenic_Features
     classes:
       - name: Archaeology_PT
+        description: Die Klasse Archaeology_PT enthält Objektarten zu einzelnen archäologischen Relikten.
       - name: Archaeology_L
+        description: |
+            Die Klasse Archaeology_L umfasst linienförmige archäologische Elemente. Historische Strassen,
+            Hohlwege oder Befestigungsgräben sind Teile dieser Klasse.
       - name: Archaeology_PLG
+        description: |
+            Die Klasse Archaeology_PLG beinhaltet archäologische Relikte (z.B. römisches Castrum), die ein
+            grösseres Gebiet (Fläche) abdecken.
       - name: Exploitation_Geomaterials_PT
+        description: |
+            Die Klasse Exploitation_Geomaterials_PT enthält punktförmige Angaben zu Abbaustellen von
+            Geomaterialien.
       - name: Exploitation_Geomaterials_L
+        description: |
+            Die Klasse Exploitation_Geomaterials_L beinhaltet linienförmige Informationen zum Abbau von
+            Geomaterialien (z.B. Verlauf der Abbaufront).
       - name: Exploitation_Geomaterials_PLG
+        description: |
+            Die Klasse Exploitation_Geomaterials_PLG enthält Flächen, wo zur Zeit der geologischen
+            Aufnahmen Geomaterialien abgebaut wurden.
       - name: Boreholes_PT
+        description: |
+            Die Klasse Boreholes_PT beinhaltet Bohrungen und Sondierungen. (Auf alten gedruckten Karten
+            wurde die Art der Sondierung nicht immer unterschieden. Es kann daher sein, dass in alten Karten
+            Rammkernsondierungen als Bohrungen aufgenommen wurden.)
       - name: Artificial_Surface_Modifications_PLG
+        description: |
+            Die Klasse Artificial_Surface_Modifications_PLG enthält bedeutende künstliche Veränderungen
+            des Geländes (Golfplatz, Skigebiet, etc.), die zur Folge haben, dass das ursprüngliche Relief nicht
+            mehr zu erkennen ist, was bei einer geomorphologischen Deutung zu falschen Schlüssen führen könnte.
   - name: Hydrogeology
     classes:
       - name: Construction_PT
+        description: |
+            Die Klasse Construction_PT beinhaltet Wasserbauten wie Grundwasserfassungen und Zisternen.
+            Desweiteren kommen in dieser Klasse auch Messgeräte wie Piezometer und Limnigraphen vor.
       - name: Construction_L
+        description: |
+            Die Klasse Construction_L enthält linienförmige Wasserbauten wie den Wasserfassungsstollen,
+            welcher mit Objektarten der Klasse Surface_Water_PT kombiniert werden kann.
       - name: Palaeohydrology_L
+        description: |
+            In der Klasse Palaeohydrology_L befinden sich alle linienförmigen Objektarten, welche einen
+            gewissen Bezug zu einem ehemaligen Gewässer aufweisen.
       - name: Subsurface_Water_L
+        description: |
+            In der Klasse Subsurface_Water_L befinden sich linienförmigen Objektarten, welche einen
+            unterirdischen Gewässerlauf anzeigen. Der genaue Verlauf des unterirdischen Gewässerlaufes ist
+            in fast jedem Fall vermutet, mit wenigen Ausnahmen von erforschten Höhlensystemen. Liegen
+            Färbversuche vor, so werden diese in den Erläuterungen erwähnt, sofern diese existieren. Der
+            unterirdische Gewässerlauf kann mit Objeken aus der Klasse Surface_Water_PT kombiniert werden.
       - name: Surface_Water_PT
+        description: |
+            Die Klasse Surface_Water_PT umfasst lokal (punktuell) beobachtete Oberflächengewässer, wie
+            natürliche Wasseraustritts- und Versickerungsstellen. Zudem befindet sich die Objektart Steilstufe
+            in Bachrinne, Wasserfall in dieser Klasse, die eine spezielle Stelle in Fliessgewässern markiert und
+            die durch die darunterliegende Geologie bedingt ist.
+            Eine Quelle wird als «Thermalquelle» bezeichnet, wenn das Wasser eine mittlere Jahrestem-
+            20°C aufweist. Für diesen Quelltyp ist das Attribut «Temp» vorgesehen und
+            beschränkt sich i.d.R. auf die mittlere Wassertemperatur. Deshalb wird für dieses Attribut auch
+            kein Datum einer Analyse angegeben. Um eine Mineralquelle handelt es sich bei einer Quelle mit
+            einer Mineralkonzentration 1g / l Wasser oder einer CO2- 250 mg / l Wasser.
+            Für diesen Quelltyp ist das Attribut «Chemistry» vorgesehen. D.h. unter diesem Attribut wird das
+            charakteristische chemische Element im Mineralwasser angegeben und nicht die komplette
+            Wasserchemie.
       - name: Surface_Water_L
+        description: |
+            In der Klasse Surface_Water_L sind linienförmige Oberflächengewässer (Quellhorizonte)
+            beschrieben.
       - name: Surface_Water_PLG
+        description: |
+            Die Klasse Surface_Water_PLG beinhaltet oberflächliche Wasserspeicher wie Gletscher, Seen und
+            Flüsse, welche geologische Einheiten bedecken und oftmals eine Interpretation der darunter-
+            liegenden Geologie verunmöglichen. Das vollständige Gewässernetz ist nicht Teil des Daten-
+            modells Geologie
   - name: Meta_Data
     classes:
-      - name: Mapsheet
+      - name: Mapsheet  desci
+        description: |
+            Die Klasse Mapsheet ist eine geometrielose Klasse. Sie beinhaltet alle Metadaten zur Objektart
+            (Kartengrundlage). Neben der Kartenart sind Angaben wie der Titel, Massstab, Autor, Datenherr,
+            Publikationsjahr und über die öffentliche Verfügbarkeit der Karte grundlegend. Verfügt die Karte
+            (wie z.B. die Karten der Landesgeologie) über eine Kartennummer, kann dies bei «Map_Nbr»
+            angegeben werden, während bei «Mapping_Period» die Zeitspanne der Datenaufnahme
+            (Kartierung) erfasst wird. Das Attribut «Basis_Topo» beschreibt die topographische Grundlage
+            und «Basis_Vect» den Vektordatensatz.
