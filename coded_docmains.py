@@ -9,9 +9,9 @@ dom_dict = {}
 
 for d in doms:
     dom_dict[d.name] = {
-        'type': d.domainType,
-        'codedValues': d.codedValues,
-        'range': d.range
+        "type": d.domainType,
+        "codedValues": d.codedValues,
+        "range": d.range,
     }
 
 with open(r"H:/model_reporting/coded_domains.json", "w") as f:
