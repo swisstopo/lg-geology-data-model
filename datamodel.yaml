@@ -258,12 +258,24 @@ themes:
           Gesteinsmassen durch Polygone erfasst werden (Klasse Instabilities_within_Unconsolidated_ 
           Deposits_PLG), die punktförmige Aufnahme ist zu vermeiden und vorwiegend für die Vektorisierung älterer
           gedruckter Karten gedacht.
+        attributes:
+          - name: kind
+            description: Spezifische Eigenschaft
+            type: subtype
+            value: 11601
+            cardinality: 1
       - name: Instability_Structures_L
         description: |
           Die Klasse Instability_Structures_L umfasst linienförmige Morphologien, die sich als Folge von 
           Hanginstabilitäten an der Oberfläche ausgebildet haben. Beim Abrissrand handelt es sich um den 
           oberen Rand der durch das Abgleiten der bewegten Masse freigelegten Gleitfläche einer 
           Rutschung oder Sackung (Abrissnische)
+        attributes:
+          - name: kind
+            description: Spezifische Eigenschaft
+            type: subtype
+            value: 11701
+            cardinality: 1
       - name: Instabilities_within_Unconsolidated_Deposits_PLG
         description: |
           Die Klasse Instabilities_within_Unconsolidated_Deposits_PLG beinhaltet alle Polygone, die Gebiete 
@@ -273,6 +285,12 @@ themes:
           bzw. gebildet worden sind, werden in der Klasse Unconsolidated_Deposits_PLG beschrieben. Zur 
           näheren Erklärung der verschiedenen Objektarten sind im Anhang A einige Fallbeispiele 
           abgebildet.
+        attributes:
+          - name: kind
+            description: Spezifische Eigenschaft
+            type: subtype
+            value: 11801
+            cardinality: 1
       - name: Instabilities_within_Bedrock_PLG
         description: |
           Die Klasse Instabilities_within_Bedrock_PLG beinhaltet alle Polygone, die Gebiete mit instabilen 
@@ -281,25 +299,89 @@ themes:
           Massenbewegungsprozessen betroffen sind, werden in der Klasse Bedrock_PLG beschrieben. Zur 
           näheren Erklärung der verschiedenen Objektarten sind im Anhang A einige Fallbeispiele 
           abgebildet.
+        attributes:
+          - name: kind
+            description: Spezifische Eigenschaft
+            type: subtype
+            value: 11501
+            cardinality: 1
+          - name: main_mov
+            description: Hauptbewegungsphase
+            type: CD
+            value: GC_SURF_GINS_MAIN_MOV_CD
+            cardinality: 0..1
+
       - name: Glacial_Structures_PT
         description: |
           Die Klasse Glacial_Structures_PT enthält Objektarten, welche die ehemalige Anwesenheit eines 
           Gletschers punktuell dokumentieren (Gletscherschliff ist ein räumlich orientiertes Objekt und 
           befindet sich deshalb in der Klasse Lineation_PT).
+        attributes:
+          - name: kind
+            description: Spezifische Eigenschaft
+            type: subtype
+            value: 11201
+            cardinality: 1
       - name: Glacial_and_Periglacial_Structures_L
         description: |
           Die Klasse Glacial_and_Periglacial_Structures_L enthält linienförmige Strukturen, die auf ein 
           glaziales oder periglaziales Bildungsmilieu hindeuten. Mit Ausnahme der Schliffgrenze handelt es 
           sich in dieser Klasse ausschliesslich um akkummulative Landschaftsformen wie Moränenwälle oder 
           Blockwülste im Blockgletscher.
+        attributes:
+          - name: kind
+            description: Objektart
+            type: subtype
+            value: 11301
+            cardinality: 1
+          - name: morai_mo
+            description: Morphologie der Moräne
+            type: CD
+            value: GC_LIN_GGLA_MORAI_MO_CD
+            cardinality: 0..1
+          - name: glac_typ
+            descr: Gletschertyp, auf welchen die Objektart bezogen ist
+            type: CD
+            value: GC_LIN_GGLA_GLAC_TYP_CD
+            cardinality: 0..1
+          - name: ice_m_p
+            description: Räumlicher Gletscherstand
+            type: CD
+            value: GC_LIN_GGLA_ICE_M_P_CD
+            cardinality: 0..1
+          - name: quat_str
+            description: Zeitliche quartärstratigraphische Zuordnung des Moränenwälls
+            type: CD
+            value: GC_LIN_GGLA_QUAT_STR_CD
+            cardinality: 0..1
+          - name: ref_year
+            description: Referenzjahr des älteren Gletscherstandes.
+            type: integer
+            cardinality: 0..1
+          - name: source
+            description: Quellenangabe der historischen Unterlagen
+            type: string
+            cardinality: 0..1
       - name: Glacial_Structures_PLG
         description: |
           Die Klasse Glacial_Structures_PLG umfasst flächenhafte glaziale Landschaftsformen, die durch
           basales Fliessen des Gletschereises oder dessen Abschmelzen entstanden sind.
+        attributes:
+          - name: kind
+            description: Objektart
+            type: subtype
+            value: 11401
+            cardinality: 1
       - name: Erosional_Structures_PT
         description: |
           Die Klasse Erosional_Structures_PT beinhaltet lokale Landschaftselemente, die sich im Laufe der 
           Zeit unter Einwirkung von diversen Erosionsprozessen gebildet haben.
+        attributes:
+          - name: kind
+            description: Objektart
+            type: subtype
+            value: 11001
+            cardinality: 1
       - name: Erosional_Structures_L
         description: |
           Die Klasse Erosional_Structures_L enthält linienförmige erosive Formen wie Erosionsränder im 
@@ -310,21 +392,57 @@ themes:
           Terrassenkanten aufgeteilt werden müssen. Terrassenkanten werden nur dann als solche 
           attributiert, wenn sie durch ihre Lage und entsprechende Schotterterrassen eindeutig zugeordnet
           werden können. Zweifelhafte Fälle werden als Erosionsränder aufgenommen.
+        attributes:
+          - name: kind
+            description: Objektart
+            type: subtype
+            value: 11101
+            cardinality: 1
 
       - name: Karstic_Structures_PT
         description: |
           Die Klasse Karstic_Structures_PT beinhaltet Karstphänomene, die punktförmig dargestellt werden. 
           Darunter fallen u.a. der Ponor oder der Eingang zu einer Höhle.
+        attributes:
+          - name: kind
+            description: Objektart
+            type: subtype
+            value: 11301
+            cardinality: 1
+          - name: ice_cave
+            description: |
+              Handelt es sich bei der Höhle um eine Eisgrotte («glacière», aussergewöhnlich kalte Höhle in der sich
+              durch die winterlichen Schneefälle oder durch das Gefrieren von eingedrungenem Wasser Eis akkumuliert
+              und das auch die warme Jahreszeit überdauert) (ja / nein)?
+            type: boolean
+            cardinality: 0..1
       - name: Karstic_Structures_PLG
         description: |
           Die Klasse Karstic_Structures_PLG umfasst flächenhafte Karstformen wie Dolinen oder Poljen. 
           Dolinen werden immer als Polygone erfasst (das) bildet dafür eine wichtige Grundlage). Kleine 
           Dolinen (Durchmesser < 25 m), werden durch eine definierte Einheitsfläche von 500 m²
           dargestellt.
+        attributes:
+          - name: kind
+            description: Objektart
+            type: subtype
+            value: 12001
+            cardinality: 1
       - name: Alluvial_and_Lacustrine_Structures_L
         description: |
           Die Klasse Alluvial_and_Lacustrine_Structures_L beinhaltet linienförmige Morphologien 
           fluviatilen oder lakustrischen Ursprungs.
+        attributes:
+          - name: kind
+            description: Objektart
+            type: subtype
+            value: 10901
+            cardinality: 1
+          - name: age
+            description: Alter der Objektart.
+            type: CD
+            value: GC_LIN_GALL_AGE_CD
+            cardinality: 0..1
 
   - name: Tectonics
     classes:
@@ -337,9 +455,117 @@ themes:
           eines konstruierten Faltenscharniers, in einem Punkt der Intersektion einer Achsenfläche und der 
           Topografie. Diese beiden letzterwähnten Objektarten sind im Anhang A zur besseren 
           Verständlichkeit abgebildet.
+        attributes:
+          - name: kind
+            description: Objektart
+            type: subtype
+            value: 14601
+            cardinality: 1
+          - name: azimuth
+            description: Fallrichtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad (0° 359°) im Uhrzeigersinn gemessen.
+            type: integer
+            cardinality: 0..1
+          - name: dip
+            description: |
+               Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die
+               Vertikale (90°).
+            type: integer
+            cardinality: 0..1
+          - name: fold_typ
+            description: Objekttyp
+            type: CD
+            value: GC_PNT_TDEF_FOLD_TYP_CD
+            cardinality: 0..1
+          - name: fold_for
+            description: Objektform
+            type: CD
+            value: GC_PNT_TDEF_FOLD_FOR_CD
+            cardinality: 0..1
+
       - name: Deformation_Structures_L
+        description: |
+            Die Klasse Deformation_Structures_L enthält linienförmige tektonische Deformationsstrukturen,
+            wie den Verlauf des Faltenscharniers. Ein Beispiel der Objektart ist zur Veranschaulichung im
+            Anhang A abgebildet.
+        attributes:
+          - name: kind
+            description: Objektart
+            type: subtype
+            value: 14701
+            cardinality: 1
       - name: Deformation_Structures_PLG
+        description: |
+            In der Klasse Deformation_Structures_PLG befinden sich tektonisch geprägte Zonen wie
+            tektonisierte Zonen oder Kluftzonen.
+        attributes:
+          - name: kind
+            description: Objektart
+            type: subtype
+            value: 14801
+            cardinality: 1
+          - name: type
+            description: Charakteristik der Objektarten
+            type: CD
+            value: GC_SURF_TDEF_TYPE_CD
+            cardinality: 0..1
+          - name: gen_rela
+            description: Genetische Beziehung.
+            type: CDD # TODO: where is the domain
+            value:
+            cardinality: 0..1
       - name: Tectonic_Boundaries_L
+        description: |
+            Die Klasse Tectonic_Boundaries_L umfasst alle tektonischen Verwerfungen. Die Horizontal-
+            verschiebungen in der Schweiz können als «Bruch, (Attribut «Fault_Mo» (Fault Movement))
+            parallel zur Streichrichtung» abgebildet werden. Als Pendant zu «Überschiebung» oder
+            «Abschiebung» gibt es in der Schweiz keine «Horizontalverschiebung» mit vergleichbarer
+            Grössenausdehnung. Ein Abscherhorizont wird als «Überschiebung» oder als «Abschiebung»
+            dargestellt. Wenn die Bewegungsrichtung nicht bekannt ist, wird er zur «tektonischen Grenze mit
+            unbekannter Bewegungsrichtung». Zur näheren Erklärung der verschiedenen Objektarten sind im
+            Anhang A Beispiele abgebildet.
+        attributes:
+          - name: kind
+            description: Objektart
+            type: subtype
+            value: 14901
+            cardinality: 1
+          - name: fault_mo
+            description: Bewegungsrichtung des Bruchs
+            type: CD
+            value: GC_LIN_TTEC_FAULT_MO_CD
+            cardinality: 0..1
+          - name: verti_mo
+            description: Bewegung parallel zur Fallrichtung der Bruchfläche.
+            type: CD
+            value: GC_LIN_TTEC_VERTI_MO_CD
+            cardinality: 0..1
+          - name: horiz_mo
+            description: Bewegung parallel zur Streichrichtung der Bruch- oder Scherfläche
+            type: CD
+            value: GC_LIN_TTEC_HORIZ_MO_CD
+            cardinality: 0..1
+          - name: lim_tect_b
+            description: Grenze einer tektonischen Einheit wie Deckengrenze,Schuppengrenze, Zonengrenze, etc. (ja / nein)?
+            type: boolean
+            cardinality: 1
+          - name: status
+            description: Zustand der Objektart
+            type: CD
+            value: GC_LIN_TTEC_STATUS_CD
+            cardinality: 1
+          - name: activity
+            description: Aktivität der Objektart
+            type: TODO  # TODO: no coded domain
+            cardinality: 0..1
+          - name: meta_sta
+            descriptipn: Tektonometamorphe Chronologie der Objektart
+            type: CD
+            value: GC_LIN_TTEC_META_STA_CD
+            cardinality: 0..1
+          - name: name
+            description: Spezifischer Name der Objektart.
+            type: string
+            cardinality: 0..1
   - name: Measurements_Spatial_Orientation
     classes:
       - name: Folds_PT
