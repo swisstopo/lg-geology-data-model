@@ -7,6 +7,7 @@ _Die Klasse Unconsolidated_Deposits_PT umfasst einzelne Gesteine (Korngrösse: S
 _
 
 **Attribute KIND**
+_Objektart_
 
 
 |GeolCode|Deutsch|Français|
@@ -21,7 +22,7 @@ _
 |      14401008| Runc Verwitterungsrückstände (Gerölle und/oder Konkretionen)|éléments résiduels (galets et/ou rognons)|
 
 **Attribute STATUS**
-_Zustand der Objektart._
+_Zustand der Objektart_
 
 
 |GeolCode|Deutsch|Français|
@@ -34,7 +35,7 @@ _Zustand der Objektart._
 |        999998| Not applicable|not applicable|
 
 **Attribute ROCK_TYPE**
-_Gesteinstyp (Kristallingestein / Sedimentgestein)._
+_Gesteinstyp (Kristallingestein / Sedimentgestein)_
 
 
 |GeolCode|Deutsch|Français|
@@ -80,11 +81,21 @@ _Bezeichnung des Leitgesteins_
 |        999997| Unknown|inconnu|
 |        999998| Not applicable|not applicable|
 
+**Attribute MAT_TYPE**
+_Materialbezeichnung (lithologische Einheit)_
+
+**Attribute ORIG_DESCR**
+_Originalbezeichnung gemäss der Legende der zugrundeliegenden geologischen Karte_
+
+**Attribute PROTECTED**
+_Geschütztes geologisches Objekt_
+
 ### Klasse Unconsolidated_Deposits_PLG
 _Die Klasse Unconsolidated_Deposits_PLG beinhaltet alle flächenhaft ausgeschiedenen Lockergesteine. Die Angabe, ob eine Lockergesteinsmasse bewegt (durch Gravitation versetzt) wurde, geht aus der Klasse Instabilities_within_Unconsolidated_Deposits_PLG (Thema Geomorphology) hervor. Eine Ausnahme bilden Lockergesteinsmassen, welche unter dem Einfluss der Schwerkraft bewegt wurden und keine Angaben zum Ausgangsmaterial enthalten (Rutschmassen oder zerrüttete Gesteinsmassen «Sackungsmassen»). Solche Lockergesteine werden sowohl in der Klasse Unconsolidated_Deposits_PLG als auch in der Klasse Instabilities_with_in_Unconsolidated_Deposits_PLG erfasst. Zur näheren Erklärung der verschiedenen Objektarten sind im Anhang A einige Fallbeispiele abgebildet.
 _
 
 **Attribute KIND**
+_Objektart_
 
 
 |GeolCode|Deutsch|Français|
@@ -1258,6 +1269,7 @@ _Morphologie der Lockergesteinseinheit_
 |        999998| Not applicable|not applicable|
 
 **Attribute GLAC_TYPE**
+_Gletschertyp; Attribut nur für Moränen_
 
 
 |GeolCode|Deutsch|Français|
@@ -1279,8 +1291,10 @@ _Morphologie der Lockergesteinseinheit_
 |        999998| Not applicable|not applicable|
 
 **Attribute REF_YEAR**
+_Zeitpunkt oder Zeitperiode. Zum Beispiel «1940 1943, Periode der Drainage» (muss präzisiert werden)_
 
 **Attribute THIN_COVER**
+_Lockermaterialbedeckung, wenn vorhanden._
 
 
 |GeolCode|Deutsch|Français|
@@ -1294,31 +1308,15 @@ _Morphologie der Lockergesteinseinheit_
 |        999997| Unknown|inconnu|
 |        999998| Not applicable|not applicable|
 
-**Attribute STRUCTUR**
-
-
-|GeolCode|Deutsch|Français|
-|----------|--------------------|--------------------|
-|      14510001| texturlos|sans structure|
-|      14510002| geschichtet|stratifié|
-|      14510003| schräg-/kreuzgeschichtet|à stratification oblique/entrecroisée|
-|      14510004| grossmassstäbliche Schrägschichtung (z.B. Deltaschichtung)|stratification oblique à grande échelle (p.ex. stratification deltaïque)|
-|      14510005| glaziale Überprägung (Glazitektonik)|soumis à des déformations glaciotectoniques|
-|      14510006| periglazial gestörte Schichtung (Diapir, Eiskeil, etc.)|affecté par la cryoturbation (diapir, coin de glace, etc.)|
-|      14510007| laminiert|laminé|
-|      14510008| mit Warven|varvé|
-|      14510009| normal gradiert|à granoclassement normal|
-|      14510010| invers gradiert|à granoclassement inverse|
-|      14510011| bioturbiert|bioturbé|
-|      14510012| pedogen überprägt|pédogénétisé|
-|        999997| Unknown|inconnu|
-|        999998| Not applicable|not applicable|
+**Attribute ORIG_DESCR**
+_Originalbezeichnung gemäss der Legende der zugrundeliegenden geologischen Karte_
 
 ### Klasse Bedrock_PLG
 _Die Klasse Bedrock_PLG enthält alle flächenbildenden lithostratigraphischen Festgesteinseinheiten. Die Angabe,  ob ein Festgestein bewegt (durch Gravitation versetzt) wurde, geht aus der Klasse Instabilities_within_Bedrock_PLG (Thema Geomorphology) hervor.
 _
 
 **Attribute KIND**
+_Spezifische Eigenschaft_
 
 
 |GeolCode|Deutsch|Français|
@@ -1329,7 +1327,7 @@ _
 _Gesteinsaufbau_
 
 **Attribute LISTRAT**
-_Lithostratigraphische Einheit._
+_Lithostratigraphische Einhei_
 
 
 |GeolCode|Deutsch|Français|
@@ -3550,7 +3548,7 @@ _Lithostratigraphische Einheit._
 |        999998| Not applicable|not applicable|
 
 **Attribute LITHO**
-_Lithologische Beschreibung._
+_Lithologische Beschreibung_
 
 
 |GeolCode|Deutsch|Français|
@@ -4212,7 +4210,7 @@ _Chronostratigraphische Zuordnung der Untergrenze der Kartiereinheit (Basis)_
 |        999998| Not applicable|not applicable|
 
 **Attribute TECTO**
-_Tektonische Zugehörigkeit._
+_Tektonische Zugehörigkeit_
 
 
 |GeolCode|Deutsch|Français|
@@ -4611,7 +4609,7 @@ _Tektonische Zugehörigkeit._
 |        999998| Not applicable|not applicable|
 
 **Attribute ORIG_DESCR**
-_lbezeichnung gemäss der Legende der zugrundeliegenden geologischen Karte._
+_Originalbezeichnung gemäss der Legende der zugrundeliegenden geologischen Karte_
 
 **Attribute BURIED_OUT**
 _Wurde das Festgestein wieder verdeckt (ja / nein)?_
@@ -4623,7 +4621,7 @@ _Handelt es sich bei der Objektart um ein exotisches Element; z.B. Einschluss, L
 _Farbe des Gesteins. Präzisieren ob es sich um die Bruchfarbe, die Verwitterungsfarbe, etc. handelt; z.B.Verwitterungsfarbe grau._
 
 **Attribute SEDI_MAIN_COM**
-_Hauptgesteinskomponente des klastischen Sedimentgesteins. D_
+_Hauptgesteinskomponente des klastischen Sedimentgesteins_
 
 
 |GeolCode|Deutsch|Français|
@@ -4677,7 +4675,7 @@ _Nebengesteinskomponente des Sedimentgesteins_
 |        999998| Not applicable|not applicable|
 
 **Attribute SEDI_BOND_MAT**
-_Bindemittel des Sedimentgesteins._
+_Bindemittel des Sedimentgesteins_
 
 
 |GeolCode|Deutsch|Français|
@@ -4748,7 +4746,7 @@ _Sedimentstruktur_
 |        999998| Not applicable|not applicable|
 
 **Attribute IGNE_TEXT**
-_Struktur des magmatischen Gesteins._
+_Struktur des magmatischen Gesteins_
 
 
 |GeolCode|Deutsch|Français|
@@ -4783,8 +4781,8 @@ _Affinität zu einer magmatischen Serie._
 |        999997| Unknown|inconnu|
 |        999998| Not applicable|not applicable|
 
-**Attribute META_FULL_**
-_Bezeichnung des metamorphen Gesteins._
+**Attribute META_FULL_NAME**
+_Bezeichnung des metamorphen Gesteins_
 
 **Attribute META_MINERAL**
 _Wichtiges Mineral des metamorphen Gesteins_
@@ -4879,7 +4877,7 @@ _Wichtiges Mineral des metamorphen Gesteins_
 |        999998| Not applicable|not applicable|
 
 **Attribute META_STR**
-_Textur des metamorphen Gesteins._
+_Textur des metamorphen Gesteins_
 
 
 |GeolCode|Deutsch|Français|

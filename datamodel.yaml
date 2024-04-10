@@ -14,18 +14,34 @@ themes:
           - name: kind
             type: subtype
             value: 14401
+            description: Objektart
+            cardinality: 1
           - name: status
             type: CD
             value: GC_PNT_RUNC_STATUS_CD
-            description: Zustand der Objektart.
+            description: Zustand der Objektart
+            cardinality: 1
           - name: rock_type
             type: CD
             value: GC_PNT_RUNC_ROCK_TYP_CD
-            description: Gesteinstyp (Kristallingestein / Sedimentgestein).
+            description: Gesteinstyp (Kristallingestein / Sedimentgestein)
+            cardinality: 0..1
           - name: rock_spe
             type: CD
             value: GC_PNT_RUNC_ROCK_SPE_CD
             description: Bezeichnung des Leitgesteins
+            cardinality: 0..1
+          - name: mat_type  # TODO type
+            type:
+            description: Materialbezeichnung (lithologische Einheit)
+          - name: orig_descr
+            description: Originalbezeichnung gemäss der Legende der zugrundeliegenden geologischen Karte
+            type: string
+            cardinality: 0..1
+          - name: protected
+            description: Geschütztes geologisches Objekt
+            type: boolean
+            cardinality: 0..1
       - name: Unconsolidated_Deposits_PLG
         description: >
           Die Klasse Unconsolidated_Deposits_PLG beinhaltet alle flächenhaft
@@ -44,51 +60,74 @@ themes:
           - name: kind
             type: subtype
             value: 14517
+            description: Objektart
+            cardinality: 1
           - name: litstrat
             type: CD
             value: GC_LITSTRAT_UNCO_CD
+            cardinality: 1
           - name: litho
             type: CD
             value: GC_LITHO_CD
+            cardinality: 1..3
           - name: chrono_t
             type: CD
             value: GC_CHRONO_CD
+            cardinality: 1
           - name: chrono_b
             type: CD
             value: GC_CHRONO_CD
+            cardinality: 1
           - name: mat_type
             value: Lithostratigraphic_Units_Litho
+            cardinality: 0..3
           - name: buried_out
             type: boolean
+            cardinality: 1
           - name: composit
             type: table
             value: gc_composit
+            cardinality: 0..3
           - name: admixture
             type: table
             value: gc_admixture
+            cardinality: 0..2
           - name: structur
             type: CD
             value: GC_UN_DEP_RUNC_STRUCTUR_CD
             description: Textur des Lockergesteins
+            cardinality: 0..1
           - name: charact
+            # Achtung charact is sometime charcat
+            description: Spezifische Eigenschaft
             type: table
             value: gc_charcat
+            cardinality: 0..3
             description: Spezifische Eigenschaft
           - name: morpholo
             type: CD
             value: GC_UN_DEP_RUNC_MORPHOLO_CD
             description: Morphologie der Lockergesteinseinheit
+            cardinality: 0..1
           - name: glac_type
             type: CD
             value: GC_UN_DEP_RUNC_GLAC_TYP_CD
+            description: Gletschertyp; Attribut nur für Moränen
+            cardinality: 0..1
           - name: ref_year
             type: string
+            description: Zeitpunkt oder Zeitperiode. Zum Beispiel «1940 1943, Periode der Drainage» (muss präzisiert werden)
+            cardinality: 0..1
           - name: thin_cover
             type: CD
             value: GC_UN_DEP_RUNC_THIN_COV_CD
-          - name: structur
-            type: CD
-            value: GC_UN_DEP_RUNC_STRUCTUR_CD
+            description: Lockermaterialbedeckung, wenn vorhanden.
+            cardinality: 0..1
+          - name: orig_descr
+            description: Originalbezeichnung gemäss der Legende der zugrundeliegenden geologischen Karte
+            value: string
+            cardinality: 1
+
       - name: Bedrock_PLG
         description: >
           Die Klasse Bedrock_PLG enthält alle flächenbildenden
@@ -97,98 +136,119 @@ themes:
           Klasse Instabilities_within_Bedrock_PLG (Thema Geomorphology) hervor.
         attributes:
           - name: kind
+            description: Spezifische Eigenschaft
             type: subtype
             value: 14334001
-          - name: fm_homog
+            cardinality: 1
+          - name: fm_homog  # TODO still in use?
             description: Gesteinsaufbau
           - name: listrat
+            description: Lithostratigraphische Einhei
             type: CD
             value: GC_LITSTRAT_BED_CD
-            description: Lithostratigraphische Einheit.
+            cardinality: 1
           - name: litho
             type: CD
             value: GC_LITHO_CD
-            description: Lithologische Beschreibung.
+            description: Lithologische Beschreibung
+            cardinality: 1..3
           - name: chrono_t
             type: CD
             value: GC_CHRONO_CD
             description: >-
               Chronostratigraphische Zuordnung der Obergrenze der Kartiereinheit (Top)
+            cardinality: 1
           - name: chrono_b
             type: CD
             value: GC_CHRONO_CD
             description: >-
               Chronostratigraphische Zuordnung der Untergrenze der
               Kartiereinheit (Basis)
+            cardinality: 1
           - name: tecto
             type: CD
             value: GC_TECTO_CD
-            description: Tektonische Zugehörigkeit.
+            description: Tektonische Zugehörigkeit
+            cardinality: 1
           - name: orig_descr
             type: string
             description: >-
-              lbezeichnung gemäss der Legende der zugrundeliegenden geologischen
-              Karte.
+              Originalbezeichnung gemäss der Legende der zugrundeliegenden geologischen
+              Karte
+            cardinality: 1
           - name: buried_out
             type: boolean
             description: Wurde das Festgestein wieder verdeckt (ja / nein)?
+            cardinality: 1
           - name: exotic_ele
             value: boolean
             description: >-
               Handelt es sich bei der Objektart um ein exotisches Element; z.B.
               Einschluss, Linse, Tasche, Olistholith (ja / nein)?
+            cardinality: 1
           - name: colour
             type: string
             description: >-
               Farbe des Gesteins. Präzisieren ob es sich um die Bruchfarbe, die
               Verwitterungsfarbe, etc. handelt; z.B.Verwitterungsfarbe grau.
+            cardinality: 0..1
           - name: sedi_main_com
             type: CD
             value: GC_MAIN_COM_CD
-            description: Hauptgesteinskomponente des klastischen Sedimentgesteins. D
+            description: Hauptgesteinskomponente des klastischen Sedimentgesteins
+            cardinality: 0..1
           - name: sedi_seco_com
             type: CD
             value: GC_SECO_COM_CD
             description: Nebengesteinskomponente des Sedimentgesteins
+            cardinality: 0..2
           - name: sedi_bond_mat
             type: CD
             value: GC_BOND_MAT_CD
-            description: Bindemittel des Sedimentgesteins.
+            description: Bindemittel des Sedimentgesteins
+            cardinality: 0..1
           - name: sedi_bedding
             type: CD
             value: GC_BEDDING_CD
             description: Schichtung des Sedimentgesteins
+            cardinality: 0..2
           - name: sedi_str
             type: CD
             value: GC_SEDI_STR_CD
-            description: Textur des Sedimentgesteins
+            description: Textur des Sedimentgesteins # TODO really textur?
+            cardinality: 0..2
           - name: sedi_tex
             type: CD
             value: GC_SEDI_TEX_CD
-            description: Sedimentstruktur
+            description: Sedimentstruktur  # TODO: really struktur?
           - name: igne_text
             type: CD
             value: GC_IGNE_TEX_CD
-            description: Struktur des magmatischen Gesteins.
+            description: Struktur des magmatischen Gesteins
+            cardinality: 0..1
           - name: igne_grain_si
             type: CD
             value: GC_GRAIN_SI_CD
+            cardinality: 0..1
             description: Korngrösse des magmatischen Gesteins
           - name: igne_affinity
             type: CD
             value: GC_AFFINITY_CD
             description: Affinität zu einer magmatischen Serie.
-          - name: meta_full_
+          - name: meta_full_name
             type: string
-            description: Bezeichnung des metamorphen Gesteins.
+            description: Bezeichnung des metamorphen Gesteins
+            cardinality: 0..1
           - name: meta_mineral
             type: CD
             value: GC_MINERAL_CD
             description: Wichtiges Mineral des metamorphen Gesteins
+            cardinality: 0..3
           - name: meta_str
             type: CD
             value: GC_META_STR_CD
-            description: Textur des metamorphen Gesteins.
+            description: Textur des metamorphen Gesteins #TODO really textur
+            cardinality: 0..3
   - name: Geomorphology
     classes:
       - name: Instability_Structures_PT
