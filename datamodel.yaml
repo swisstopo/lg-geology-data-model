@@ -722,25 +722,123 @@ themes:
         description: |
             Die Klasse Indication_of_Resources_PT beinhaltet Fundstellen von vulkanischen, mineralischen
             und nicht-mineralischen Rohstoffen.
+        attributes:
+          - name: kind
+            description: Objektart
+            type: subtype
+            value: 13201
+            cardinality: 1
+          - name: status
+            description: Zustand der Objektart
+            type: CD
+            value: GC_PNT_LRES_STATUS_CD
+            cardinality: 0..1
+          - name: material
+            description: Material, das mit der Objektart in Verbindung steht
+            type: CD
+            value: GC_PNT_LRES_MATERIAL_CD
+            cardinality: 0..1
+          - name: chemistry
+            description: Chemische Komponente(n) oder Mineralien, welche die Natur der Objektart charakterisieren.
+            type: string
+            cardinality: 0..1
       - name: Mineralised_Zone_L
         descriptipn: Die Klasse Mineralised_Zone_L beinhaltet Vererzungszonen.
+        attributes:
+          - name: kind
+            description: Objektart
+            type: subtype
+            value: 13301
+            cardinality: 1
+          - name: chemistry
+            description: Chemische Komponente(n), welche die Natur der Objektart charakterisieren.
+            type: string
+            cardinality: 0..1
       - name: Sedimentary_Structures_PT
         descriptipn: Die Klasse Sedimentary_Structures_PT enthält beobachtete Sedimentstrukturen.
+        attributes:
+          - name: kind
+            description: Objektart
+            type: subtype
+            value: 13401
+            cardinality: 1
+          - name: azimuth
+            description: Orientierung des Symbols. Wert in Grad (0° 359°) im Uhrzeigersinn gemessen.
+            type: integer
+            cardinality: 0..1
       - name: Type_Localities_PT
         description: |
             Die Klasse Type_Localities_PT beinhaltet diejenigen Objektarten, die Typlokalitäten oder wichtige
             geologische Aufschlüsse beschreiben.
+        attributes:
+          - name: kind
+            description: Objektart
+            type: subtype
+            value: 13501
+            cardinality: 1
+         - name: strati
+           desc: Lithostratigraphischer Zusatz zum Objekt
+           type: Cd
+           value: GC_PNT_LTYP_STRATI_CD
+           cardinality: 0..1
+         - name: name
+           desc: Name der Typlokalität. / Beschreibung des geologisch relevanten Aufschlusses
+           type: string
+           cardinality: 0..1
+         - name: accessibil
+           desc: Ist die Objektart zum Zeitpunkt der Aufnahme aufgeschlossen (ja / nein)?
+           type: boolean
+           cardinality: 0..1
+         - name: protected
+           desc: Geschütztes geologisches Objekt (ja / nein)?
+           type: boolean
+           cardinality: 0..1
+
       - name: Prominent_Lithological_Features_L
         description: |
             In der Klasse Prominent_Lithological_Features_L befinden sich linienförmige Gesteinshorizonte.
             Diese Gesteinshorizonte haben bloss Hinweischarakter (z.B. «markante Sandsteinbank» innerhalb
             von Wechsellagerungen von Sandstein und Mergel) und sind von den Leithorizonten (z.B.
             «Spatkalk im Hauptrogenstein») zu unterschieden. Leithorizonte befinden sich im Thema Rock Bodies.
+        attributes:
+          - name: kind
+            description: Objektart
+            type: subtype
+            value: 13101
+            cardinality: 1
+          - name: cong_spe
+            desc: Charakterisation der Konglomerate nach ihrem Geröllspektrum.
+            type: CD
+            value: GC_LIN_LPRO_CONG_SPE_CD
+            cardinality: 0..1
+          - name: name_horiz
+            desc: Name des Bentonit-Leithorizonts.
+            value: 13103  # TODO: no CD found
+            cardinality: 0..1
+          - name: orig_descr
+            desc: Originalbezeichnung gemäss der Legende der zugrundeliegenden geologischen Karte.
+            type: string
+            cardinality: 0..1
+          - name: litho
+            desc: Materialbezeichnung (lithologische Einheit).
+            type: table
+            value: gc_litho  # TODO: really or CD
+            cardinality: 1
       - name: Miscellaneous_PT
         description: |
             Die Klasse Miscellaneous_PT ist für lokale, sehr spezielle geologische Objekte reserviert, die für die
             Gesamtheit der geologischen Daten irrelevant sind und deshalb im Datenmodell Geologie nicht
             standardisiert werden
+        attributes:
+          - name: kind
+            description: Objektart
+            type: subtype
+            value: 15501
+            cardinality: 1
+          - name: orig_name
+            desc: Ursprüngliche Bezeichnung des Objektes.
+            type: string
+            cardinality: 1
       - name: Geological_Outlines_L
         description: |
             Die Klasse Geological_Outlines_L beinhaltet geologische Konturen. Darunter fallen die Umrisse
@@ -755,25 +853,126 @@ themes:
             detaillierter Information von Gebieten mit geringerer Informationsdichte aufgrund fehlender
             Informationen oder aus darstellerischen Gründen (Digitalisierungsmassstab)
             ab-grenzen (Abgrenzungskontur nach dem ZV).
+        attributes:
+          - name: kind
+            description: Objektart
+            type: subtype
+            value: 13001
+            cardinality: 1
+          - name: status
+            desc: Zustand der Objektart.
+            type: CD
+            value: GC_LIN_LGEO_STATUS_CD
+            cardinality: 0..1
   - name: Parameter_and_Modelling
     classes:
       - name: Slope_Bedrock_PT
         description: |
             Die Klasse Slope_Bedrock_PT enthält Punktinformationen aus Modellierungen des Festgestein-
             verlaufs im Untergrund.
+        attributes:
+          - name: kind
+            description: Objektart
+            type: subtype
+            value: 14201
+            cardinality: 1
+          - name: type
+            desc: Referenzoberfläche.
+            type: CD
+            value: GC_PNT_PSLO_TYPE_CD
+            cardinality: 1
+          - name: azimuth
+            description: Fallrichtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad (0° 359°) im Uhrzeigersinn gemessen.
+            type: integer
+            cardinality: 0..1
+          - name: dip
+            description: |
+               Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die
+               Vertikale (90°).
+            type: integer
+            cardinality: 0..1
+          - name: litstrat
+            desc: Lithostratigraphische Einheit der modellierten Formation
+            type: table
+            value: gc_litstrat_bed  # TODO: or coded domain
+            cardinality: 1
+
       - name: Contour_Lines_Bedrock_L
         description: |
             Die Klasse Contour_Lines_Bedrock_L beinhaltet Isohypsen, die sich auf den Verlauf des Fest-
             gesteins beziehen und die das Resultat von Modellierungen darstellen. U.a. befinden sich die Iso-
             hypsen der Felsoberfläche in dieser Klasse.
+        attributes:
+          - name: kind
+            description: Objektart
+            type: subtype
+            value: 13901
+            cardinality: 1
+          - name: type
+            desc: Referenzoberfläche.
+            type: CD
+            value: GC_LIN_PCOB_TYPE_CD
+            cardinality: 1
+          - name: altitude
+            desc: Höhenangabe (m ü.M.) von Isohypsen.
+            type: float
+            cardinality: 1
+          - name: litstrat
+            desc: Lithostratigraphische Einheit der modellierten Formation
+            type: table
+            value: gc_litstrat_bed  # TODO: or coded domain
+            cardinality: 1
       - name: Modelled_Water_Table_PT
         description: |
             Die Klasse Modelled_Water_Table_PT enthält Punktinformationen aus Modellierungen des
             Grundwasserspiegels.
+        attributes:
+          - name: kind
+            description: Objektart
+            type: subtype
+            value: 14101
+            cardinality: 1
+          - name: azimuth
+            description: Fallrichtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad (0° 359°) im Uhrzeigersinn gemessen.
+            type: integer
+            cardinality: 0..1
+          - name: dip
+            description: |
+               Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die
+               Vertikale (90°).
+            type: integer
+            cardinality: 0..1
+          - name: height
+            desc: Kote des Grundwasserspiegels (m ü.M.).
+            type: float
+            cardinality: 0..1
+          - name: mea_period
+            desc: Messperiode.
+            type: range  # TODO
+            cardinality: 0..1
       - name: Contour_Lines_Hydro_L
         description: |
             In der Klasse Contour_Lines_Hydro_L befinden sich die Isohypsen, die sich auf das Grundwasser
             beziehen.
+        attributes:
+          - name: kind
+            description: Objektart
+            type: subtype
+            value: 14001
+            cardinality: 1
+          - name: confine
+            desc: Druckzustand im Grundwasserleiter.
+            type: CD
+            value: GC_LIN_PCOH_CONFINE_CD
+            cardinality: 0..1
+          - name: altitude
+            desc: Höhenangabe (m ü.M.) von Isohypsen.
+            cardinality: 1
+          - name: wa_table
+            desc: Wasserstand.
+            type: CD
+            value: GC_LIN_PCOH_WA_TABLE_CD
+            cardinality: 0..1
   - name: Anthropogenic_Features
     classes:
       - name: Archaeology_PT
