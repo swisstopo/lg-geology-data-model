@@ -977,26 +977,151 @@ themes:
     classes:
       - name: Archaeology_PT
         description: Die Klasse Archaeology_PT enthält Objektarten zu einzelnen archäologischen Relikten.
+        attributes:
+          - name: kind
+            description: Objektart
+            type: subtype
+            value: 10101
+          - name: epoch
+            desc: Archäologische Epoche der Objektart
+            type: CD
+            value: GC_AARC_EPOCH_CD  # value wrong in PDF
+            cardinality: 0..1
+          - name: period
+            desc: Archäologische Periode der Objektart.
+            type: CD
+            value: GC_AARC_PERIOD_CD # GeolCode wrong in PDF
+            cardinality: 0..1
+          - name: age
+            desc: Archäologisches Alter der Objektart.
+            type: CD
+            value: GC_AARC_AGE_CD
+            cardinality: 0..1
+          - name: type
+            desc: Art des Kultsteins.
+            type: CD
+            value: GC_PNT_AARC_TYPE_CD
+            cardinality: 0..1
       - name: Archaeology_L
         description: |
             Die Klasse Archaeology_L umfasst linienförmige archäologische Elemente. Historische Strassen,
             Hohlwege oder Befestigungsgräben sind Teile dieser Klasse.
+        attributes:
+          - name: kind
+            description: Objektart
+            type: subtype
+            value: 10201
+          - name: epoch
+            desc: Archäologische Epoche der Objektart
+            type: CD
+            value: GC_AARC_EPOCH_CD  # value wrong in PDF
+            cardinality: 0..1
+          - name: period
+            desc: Archäologische Periode der Objektart.
+            type: CD
+            value: GC_AARC_PERIOD_CD # GeolCode wrong in PDF
+            cardinality: 0..1
+          - name: age
+            desc: Archäologisches Alter der Objektart.
+            type: CD
+            value: GC_AARC_AGE_CD
+            cardinality: 0..1
       - name: Archaeology_PLG
         description: |
             Die Klasse Archaeology_PLG beinhaltet archäologische Relikte (z.B. römisches Castrum), die ein
             grösseres Gebiet (Fläche) abdecken.
+        attributes:
+          - name: kind
+            description: Objektart
+            type: subtype
+            value: 10301
+          - name: epoch
+            desc: Archäologische Epoche der Objektart
+            type: CD
+            value: GC_AARC_EPOCH_CD  # value wrong in PDF
+            cardinality: 0..1
+          - name: period
+            desc: Archäologische Periode der Objektart.
+            type: CD
+            value: GC_AARC_PERIOD_CD # GeolCode wrong in PDF
+            cardinality: 0..1
+          - name: age
+            desc: Archäologisches Alter der Objektart.
+            type: CD
+            value: GC_AARC_AGE_CD
+            cardinality: 0..1
       - name: Exploitation_Geomaterials_PT
         description: |
             Die Klasse Exploitation_Geomaterials_PT enthält punktförmige Angaben zu Abbaustellen von
             Geomaterialien.
+        attributes:
+          - name: kind
+            description: Objektart
+            type: subtype
+            value: 10601
+          - name: exp_unit
+            desc: Abgebaute lithostratigraphische Einheit.
+            type: table
+            value: gc_litstrat_bed # TODO
+            cardinality: 0..*
+          - name: status
+            desc: Abbaustatus.
+            type: Cd
+            value: GC_EX_GEO_PNT_AEXP_STATUS_CD
+            cardinality: 0..1
+          - name: depth_tot
+            desc: Endtiefe (m ab Terrainoberfläche) der Objektart.
+            type: float
+            cardinality: 0..1
+          - name: targ_mat
+            desc: Abgebautes Material.
+            type: CD
+            value: GC_EX_GEO_PNT_AEXP_TARG_MAT_CD
+            cardinality: 0..1
+
       - name: Exploitation_Geomaterials_L
         description: |
             Die Klasse Exploitation_Geomaterials_L beinhaltet linienförmige Informationen zum Abbau von
             Geomaterialien (z.B. Verlauf der Abbaufront).
+        attributes:
+          - name: kind
+            description: Objektart
+            type: subtype
+            value: 10701
+          - name: status
+            desc: Abbaustatus.
+            type: Cd
+            value: GC_LIN_AEXP_STATUS_CD
+            cardinality: 0..1
+
       - name: Exploitation_Geomaterials_PLG
         description: |
             Die Klasse Exploitation_Geomaterials_PLG enthält Flächen, wo zur Zeit der geologischen
             Aufnahmen Geomaterialien abgebaut wurden.
+        attributes:
+          - name: kind
+            description: Objektart
+            type: subtype
+            value: 10801
+          - name: exp_unit
+            desc: Abgebaute lithostratigraphische Einheit.
+            type: table
+            value: gc_litstrat_bed # TODO
+            cardinality: 1..*
+          - name: status
+            desc: Abbaustatus.
+            type: Cd
+            value: GC_EX_GEO_PLG_AEXP_STATUS_CD
+            cardinality: 0..1
+          - name: depth_tot
+            desc: Endtiefe (m ab Terrainoberfläche) der Objektart.
+            type: float
+            cardinality: 0..1
+          - name: targ_mat
+            desc: Abgebautes Material.
+            type: CD
+            value: GC_EX_GEO_PLG_AEXP_TARG_MAT_CD
+            cardinality: 0..1
       - name: Boreholes_PT
         description: |
             Die Klasse Boreholes_PT beinhaltet Bohrungen und Sondierungen. (Auf alten gedruckten Karten
