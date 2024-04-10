@@ -89,7 +89,7 @@ def main(config_file):
                             print("")
                             print("|GeolCode|Deutsch|Français|")
                             print(
-                                "|----------|--------------------|--------------------|"
+                                "|---------------|------------------------------|------------------------------|"
                             )
                             for k in sorted(pairs):
                                 de = pairs[k]

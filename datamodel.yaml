@@ -1423,7 +1423,7 @@ themes:
             cardinality: 0..1
           - name: map_scale
             description: Massstab der Objektart (Kartenmassstab).
-            type: string  # TODO really
+            type: string  # TODO really a string for scale?
             cardinality: 1
           - name: basis_topo
             description: |
