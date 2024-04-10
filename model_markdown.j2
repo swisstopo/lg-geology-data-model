@@ -1,0 +1,25 @@
+{% for theme in themes -%}
+
+# Datenmodel GeoCover #
+
+![Extrait GeoCover vers le Moléson](geocover.png "Moléson")
+
+## Theme {{ theme.name |upper}} ##
+{% for cls in theme.classes -%}
+### Class {{ cls.name }} ###
+{{ cls.description| trim }}
+
+{% for attr in cls.attributes -%}
+{{ attr.name }}   _{{ attr.description|trim}}_
+
+{% if 'pairs' in attr -%}
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+{% for key, value in attr.pairs.items() -%}
+|{{key}} | {{value}} | {{value}}     |
+{% endfor %}
+{% endif %}
+   
+{% endfor %}
+{% endfor %}
+{% endfor %}

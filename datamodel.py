@@ -46,17 +46,48 @@ def get_subtype(value):
     return res
 
 
-def main(config_file):
-    now = datetime.datetime.now()
+class Report:
+    def __init__(self, config_file):
+        self.config_file = config_file
+        self._model = None
 
-    with open(config_file, "rt", encoding="utf8") as f:
-        model = yaml.load(f, Loader=yaml.FullLoader)
+    @property
+    def model(self):
+        if self._model:
+            return self._model
+        else:
+            with open(self.config_file, "rt", encoding="utf8") as f:
+                self._model = yaml.load(f, Loader=yaml.FullLoader)
+            return self._model
+
+    def to_json(self):
+        model = self.model.copy()
+        for theme in model["themes"]:
+            for cls in theme.get("classes"):
+                attributes = cls.get("attributes")
+                if attributes:
+                    for att in attributes:
+                        type = att.get("type")
+                        value = att.get("value")
+                        pairs = None
+
+                        if type == "CD" and value is not None:
+                            pairs = get_coded_values(value)
+                        if type == "subtype" and value is not None:
+                            pairs = get_subtype(value)
+
+                        if pairs is not None:
+                            att["pairs"] = pairs
+        return model
+
+    def to_markdown(self):
+        now = datetime.datetime.now()
 
         # print(json.dumps(model, indent=4))
         print(f"# Datenmodel GeoCover ({now.strftime('%x')})")
         print(f'![geocover](geocover.png "GeoCover")')
 
-        for theme in model["themes"]:
+        for theme in self.model["themes"]:
             print("")
             print(f"## Thema {theme.get('name','').replace('_', ' ')}")
             for cls in theme.get("classes"):
@@ -105,4 +136,18 @@ def main(config_file):
 
 
 if __name__ == "__main__":
-    main("datamodel.yaml")
+    model = Report("datamodel.yaml")
+
+    # model.to_markdown()
+
+    data = model.to_json()
+
+    with open("toto.json", "w") as f:
+        f.write(json.dumps(data, indent=4))
+
+    from jinja2 import Template
+
+    with open("model_markdown.j2") as f:
+        template = Template(f.read())
+
+        print(template.render(data))
