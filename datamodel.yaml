@@ -721,7 +721,7 @@ themes:
       - name: Indication_of_Resources_PT
         description: |
             Die Klasse Indication_of_Resources_PT beinhaltet Fundstellen von vulkanischen, mineralischen
-und nicht-mineralischen Rohstoffen.
+            und nicht-mineralischen Rohstoffen.
       - name: Mineralised_Zone_L
         descriptipn: Die Klasse Mineralised_Zone_L beinhaltet Vererzungszonen.
       - name: Sedimentary_Structures_PT

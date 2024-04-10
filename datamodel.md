@@ -4912,12 +4912,31 @@ Deposits_PLG), die punktförmige Aufnahme ist zu vermeiden und vorwiegend für d
 gedruckter Karten gedacht.
 _
 
+**Attribute KIND**
+_Spezifische Eigenschaft_
+
+
+|GeolCode|Deutsch|Français|
+|----------|--------------------|--------------------|
+|      11601001| Gins Hinweis auf Hanginstabilität|indice d'instabilité|
+
 ### Klasse Instability_Structures_L
 _Die Klasse Instability_Structures_L umfasst linienförmige Morphologien, die sich als Folge von 
 Hanginstabilitäten an der Oberfläche ausgebildet haben. Beim Abrissrand handelt es sich um den 
 oberen Rand der durch das Abgleiten der bewegten Masse freigelegten Gleitfläche einer 
 Rutschung oder Sackung (Abrissnische)
 _
+
+**Attribute KIND**
+_Spezifische Eigenschaft_
+
+
+|GeolCode|Deutsch|Français|
+|----------|--------------------|--------------------|
+|      11701001| Gins Stauchwulst|bourrelet de glissement|
+|      11701002| Gins Nackentälchen, Zerrstruktur|limite de contrepente|
+|      11701003| Gins Abrissrand|niche d´arrachement|
+|      11701004| Gins offene Spalte|fissure ouverte|
 
 ### Klasse Instabilities_within_Unconsolidated_Deposits_PLG
 _Die Klasse Instabilities_within_Unconsolidated_Deposits_PLG beinhaltet alle Polygone, die Gebiete 
@@ -4929,6 +4948,13 @@ näheren Erklärung der verschiedenen Objektarten sind im Anhang A einige Fallbe
 abgebildet.
 _
 
+**Attribute KIND**
+_Spezifische Eigenschaft_
+
+
+|GeolCode|Deutsch|Français|
+|----------|--------------------|--------------------|
+
 ### Klasse Instabilities_within_Bedrock_PLG
 _Die Klasse Instabilities_within_Bedrock_PLG beinhaltet alle Polygone, die Gebiete mit instabilen 
 Festgesteinen begrenzen. In dieser Klasse werden die Prozessräume der verschiedenen Typen von 
@@ -4938,11 +4964,38 @@ näheren Erklärung der verschiedenen Objektarten sind im Anhang A einige Fallbe
 abgebildet.
 _
 
+**Attribute KIND**
+_Spezifische Eigenschaft_
+
+
+|GeolCode|Deutsch|Français|
+|----------|--------------------|--------------------|
+
+**Attribute MAIN_MOV**
+_Hauptbewegungsphase_
+
+
+|GeolCode|Deutsch|Français|
+|----------|--------------------|--------------------|
+|      11502001| Hauptbewegungsphase vor dem letzteiszeitlichen Maximum|phase principale du mouvement avant le Dernier Maximum Glaciaire|
+|      11502002| Hauptbewegungsphase nach dem letzteiszeitlichen Maximum|phase principale du mouvement après le Dernier Maximum Glaciaire|
+|        999997| Unknown|inconnu|
+|        999998| Not applicable|not applicable|
+
 ### Klasse Glacial_Structures_PT
 _Die Klasse Glacial_Structures_PT enthält Objektarten, welche die ehemalige Anwesenheit eines 
 Gletschers punktuell dokumentieren (Gletscherschliff ist ein räumlich orientiertes Objekt und 
 befindet sich deshalb in der Klasse Lineation_PT).
 _
+
+**Attribute KIND**
+_Spezifische Eigenschaft_
+
+
+|GeolCode|Deutsch|Français|
+|----------|--------------------|--------------------|
+|      11201001| Ggla glazitektonische Deformation|déformation glaciotectonique|
+|      11201002| Ggla Gletschermühle, Strudelloch|marmite glaciaire, cavité d´érosion|
 
 ### Klasse Glacial_and_Periglacial_Structures_L
 _Die Klasse Glacial_and_Periglacial_Structures_L enthält linienförmige Strukturen, die auf ein 
@@ -4951,15 +5004,162 @@ sich in dieser Klasse ausschliesslich um akkummulative Landschaftsformen wie Mor
 Blockwülste im Blockgletscher.
 _
 
+**Attribute KIND**
+_Objektart_
+
+
+|GeolCode|Deutsch|Français|
+|----------|--------------------|--------------------|
+|      11301001| Ggla Moränenwall|vallum morainique|
+|      11301002| Ggla Moränenwall auf Gletscher oder auf Toteis|cordon morainique sur glacier ou sur glace morte|
+|      11301003| Ggla Kameterrassenkante|bord de terrasse de kame|
+|      11301004| Ggla älterer Gletscherstand, basierend auf historischen Daten|ancien stade glaciaire, déduit de données historiques|
+|      11301005| Ggla Schliffgrenze|limite supérieure de l'érosion glaciaire (trimline)|
+|      11301006| Ggla Protalus Rampart Wulst|bourrelet de protalus rampart|
+|      11301007| Ggla Blockwulst im Blockgletscher|bourrelet de glacier rocheux|
+|      11301008| Ggla Schneehaldenmoränenwall|vallum de moraine de névé|
+|      11301009| Ggla Verbreitungsgrenze von Geschiebe|limite de l'étendue des blocs|
+
+**Attribute MORAI_MO**
+_Morphologie der Moräne_
+
+
+|GeolCode|Deutsch|Français|
+|----------|--------------------|--------------------|
+|      11302001| symmetrisch|symétrique|
+|      11302002| einseitig abfallend|unilatéral|
+|        999997| Unknown|inconnu|
+|        999998| Not applicable|not applicable|
+
+**Attribute GLAC_TYP**
+_Gletschertyp, auf welchen die Objektart bezogen ist_
+
+
+|GeolCode|Deutsch|Français|
+|----------|--------------------|--------------------|
+|      11303001| Lokalgletscher|glacier local|
+|      11303002| grosse Tal- und Vorlandgletscher|grands glaciers de vallées et de piedmont|
+|        999997| Unknown|inconnu|
+|        999998| Not applicable|not applicable|
+
+**Attribute ICE_M_P**
+_Räumlicher Gletscherstand_
+
+
+|GeolCode|Deutsch|Français|
+|----------|--------------------|--------------------|
+|      11304001| Maximalstand, undifferenziert|stade maximal, indifférencié|
+|      11304002| Bern|Berne|
+|      11304003| Bremgarten, undifferenziert|Bremgarten, indifferencié|
+|      11304004| Konstanz|Constance|
+|      11304005| Feuerthalen, undifferenziert|Feuerthalen, indifferencié|
+|      11304006| Gurten|Gurten|
+|      11304007| Hurden|Hurden|
+|      11304008| Killwangen|Killwangen|
+|      11304009| Mellingen|Mellingen|
+|      11304010| Muri|Muri|
+|      11304011| Rotkreuz|Rotkreuz|
+|      11304012| Schaffhausen, undifferenziert|Schaffhouse, indifferencié|
+|      11304013| Schlieren, undifferenziert|Schlieren, indifferencié|
+|      11304014| Schosshalde|Schosshalde|
+|      11304015| Seftigschwand|Seftigschwand|
+|      11304016| Solothurn|Soleure|
+|      11304017| Spreitenbach|Spreitenbach|
+|      11304018| Spreitenbach-Killwangen|Spreitenbach-Killwangen|
+|      11304019| Stein am Rhein, undifferenziert|Stein am Rhein, indifferencié|
+|      11304020| Stetten, undifferenziert|Stetten|
+|      11304021| Wangen I|Wangen I|
+|      11304022| Wangen II|Wangen II|
+|      11304023| Wittigkofen|Wittigkofen|
+|      11304024| Zürich, undifferenziert|Zurich, indifferencié|
+|      11304025| Stein-am-Rhein I|Stein am Rhein I|
+|      11304026| Stein-am-Rhein II|Stein am Rhein II|
+|      11304027| Stein-am-Rhein III|Stein am Rhein III|
+|      11304028| Feuerthalen I|Feuerthalen I|
+|      11304029| Feuerthalen II|Feuerthalen II|
+|      11304030| Schaffausen I|Schaffhouse I|
+|      11304031| Schaffausen II|Schaffhouse II|
+|      11304035| Küblis|Küblis|
+|      11304036| Lunden|Lunden|
+|      11304037| Chur|Coire|
+|      11304038| Sargans|Sargans|
+|      11304039| Koblach|Koblach|
+|      11304040| Fideris|Fideris|
+|      11304041| Serneus|Serneus|
+|      11304042| Wangen, undifferenziert|Wangen, indifferencié|
+|      11304043| Sursee|Sursee|
+|      11304044| Triengen|Triengen|
+|      11304045| Staffelbach-Stand||
+|      11304046| Zürich I||
+|      11304047| Zürich II||
+|      11304048| Schlieren I||
+|      11304049| Schlieren II||
+|      11304050| Bremgarten I|Bremgarten I|
+|      11304051| Bremgarten II|Bremgarten II|
+|      11304052| Bülach I|Bülach I|
+|      11304053| Bülach II|Bülach II|
+|      11304054| Bülach, undifferenziert|Bülach, indifferencié|
+|      11304055| Dättikon|Dättikon|
+|      11304056| Regensdorf|Regensdorf|
+|      11304057| Seeb|Seeb|
+|      11304058| Stetten I|Stetten I|
+|      11304059| Stetten II|Stetten II|
+|      11304060| Würenlos I|Würenlos I|
+|      11304061| Würenlos II|Würenlos II|
+|      11304062| Würenlos, undifferenziert|Würenlos, indifferencié|
+|        999997| Unknown|inconnu|
+|        999998| Not applicable|not applicable|
+
+**Attribute QUAT_STR**
+_Zeitliche quartärstratigraphische Zuordnung des Moränenwälls_
+
+
+|GeolCode|Deutsch|Français|
+|----------|--------------------|--------------------|
+|      11305001| 1. Vergletscherung der letzten Eiszeit (MIS 5d)|1ère glaciation de la Dernière Période glaciaire (MIS 5d)|
+|      11305002| 2. Vergletscherung der letzten Eiszeit (MIS 4)|2ème glaciation de la Dernière Période glaciaire (MIS 4)|
+|      11305003| 3. Vergletscherung der letzten Eiszeit (LGM, MIS 2)|3ème glaciation de la Dernière Période glaciaire (LGM, MIS 2)|
+|      11305004| Gschnitz|Gschnitz|
+|      11305005| Clavadel|Clavadel|
+|      11305006| Daun|Daun|
+|      11305007| Egesen|Egesen|
+|      11305008| Mittleres Pleistozän|Pléistocène moyen|
+|        999997| Unknown|inconnu|
+|        999998| Not applicable|not applicable|
+
+**Attribute REF_YEAR**
+_Referenzjahr des älteren Gletscherstandes._
+
+**Attribute SOURCE**
+_Quellenangabe der historischen Unterlagen_
+
 ### Klasse Glacial_Structures_PLG
 _Die Klasse Glacial_Structures_PLG umfasst flächenhafte glaziale Landschaftsformen, die durch
 basales Fliessen des Gletschereises oder dessen Abschmelzen entstanden sind.
 _
 
+**Attribute KIND**
+_Objektart_
+
+
+|GeolCode|Deutsch|Français|
+|----------|--------------------|--------------------|
+|      11401001| Ggla Drumlin, drumlinartige Kieskuppe|drumlin, croupe graveleuse en forme de drumlin|
+|      11401003| Ggla Rundhöcker|roches moutonnées|
+|      11401004| Ggla Toteisloch, Soll|doline glaciaire, soll|
+
 ### Klasse Erosional_Structures_PT
 _Die Klasse Erosional_Structures_PT beinhaltet lokale Landschaftselemente, die sich im Laufe der 
 Zeit unter Einwirkung von diversen Erosionsprozessen gebildet haben.
 _
+
+**Attribute KIND**
+_Objektart_
+
+
+|GeolCode|Deutsch|Français|
+|----------|--------------------|--------------------|
+|      11001001| Gero Erdpyramide|demoiselle coiffée|
 
 ### Klasse Erosional_Structures_L
 _Die Klasse Erosional_Structures_L enthält linienförmige erosive Formen wie Erosionsränder im 
@@ -4972,9 +5172,41 @@ attributiert, wenn sie durch ihre Lage und entsprechende Schotterterrassen einde
 werden können. Zweifelhafte Fälle werden als Erosionsränder aufgenommen.
 _
 
+**Attribute KIND**
+_Objektart_
+
+
+|GeolCode|Deutsch|Français|
+|----------|--------------------|--------------------|
+|      11101001| Gero Erosionsrand|bord d´érosion|
+|      11101002| Gero Terrassenkante|bord de terrasse|
+|      11101003| Gero Schichtstufenkante|escarpement en tête de banc|
+
 ### Klasse Karstic_Structures_PT
 _Die Klasse Karstic_Structures_PT beinhaltet Karstphänomene, die punktförmig dargestellt werden. 
 Darunter fallen u.a. der Ponor oder der Eingang zu einer Höhle.
+_
+
+**Attribute KIND**
+_Objektart_
+
+
+|GeolCode|Deutsch|Français|
+|----------|--------------------|--------------------|
+|      11301001| Ggla Moränenwall|vallum morainique|
+|      11301002| Ggla Moränenwall auf Gletscher oder auf Toteis|cordon morainique sur glacier ou sur glace morte|
+|      11301003| Ggla Kameterrassenkante|bord de terrasse de kame|
+|      11301004| Ggla älterer Gletscherstand, basierend auf historischen Daten|ancien stade glaciaire, déduit de données historiques|
+|      11301005| Ggla Schliffgrenze|limite supérieure de l'érosion glaciaire (trimline)|
+|      11301006| Ggla Protalus Rampart Wulst|bourrelet de protalus rampart|
+|      11301007| Ggla Blockwulst im Blockgletscher|bourrelet de glacier rocheux|
+|      11301008| Ggla Schneehaldenmoränenwall|vallum de moraine de névé|
+|      11301009| Ggla Verbreitungsgrenze von Geschiebe|limite de l'étendue des blocs|
+
+**Attribute ICE_CAVE**
+_Handelt es sich bei der Höhle um eine Eisgrotte («glacière», aussergewöhnlich kalte Höhle in der sich
+durch die winterlichen Schneefälle oder durch das Gefrieren von eingedrungenem Wasser Eis akkumuliert
+und das auch die warme Jahreszeit überdauert) (ja / nein)?
 _
 
 ### Klasse Karstic_Structures_PLG
@@ -4984,10 +5216,41 @@ Dolinen (Durchmesser < 25 m), werden durch eine definierte Einheitsfläche von 5
 dargestellt.
 _
 
+**Attribute KIND**
+_Objektart_
+
+
+|GeolCode|Deutsch|Français|
+|----------|--------------------|--------------------|
+|      12001001| Gkar Senke ohne oberirdischen Abfluss|dépression sans exutoire superficiel|
+|      12001002| Gkar Doline|doline|
+|      12001003| Gkar Karrenfeld|lapiez|
+|      12001004| Gkar Polje|poljé|
+
 ### Klasse Alluvial_and_Lacustrine_Structures_L
 _Die Klasse Alluvial_and_Lacustrine_Structures_L beinhaltet linienförmige Morphologien 
 fluviatilen oder lakustrischen Ursprungs.
 _
+
+**Attribute KIND**
+_Objektart_
+
+
+|GeolCode|Deutsch|Français|
+|----------|--------------------|--------------------|
+|      10901001| Gall Strandwall|cordon littoral|
+|      10901002| Gall Achse einer Murgangrinne|axe d'un chenal de lave torrentielle|
+
+**Attribute AGE**
+_Alter der Objektart._
+
+
+|GeolCode|Deutsch|Français|
+|----------|--------------------|--------------------|
+|      10902001| fossil|fossile|
+|      10902002| rezent|récent|
+|        999997| Unknown|inconnu|
+|        999998| Not applicable|not applicable|
 
 
 ## Thema Tectonics
@@ -5001,85 +5264,565 @@ Topografie. Diese beiden letzterwähnten Objektarten sind im Anhang A zur besser
 Verständlichkeit abgebildet.
 _
 
+**Attribute KIND**
+_Objektart_
+
+
+|GeolCode|Deutsch|Français|
+|----------|--------------------|--------------------|
+|      14601001| Tdef punktuell beobachtete tektonische Brekzie|brèche tectonique observée ponctuellement|
+|      14601002| Tdef ausgeprägte Klüftung|diaclases bien marquées|
+|      14601003| Tdef tektonische Diskordanz|discordance tectonique|
+|      14601004| Tdef Orientierung der Faltenachsenfläche|orientation de la surface axiale d'un pli|
+|      14601005| Tdef Fältelung|plissotement (plis)|
+|      14601006| Tdef Darstellung der Spur einer Achsenfläche|représentation de la trace d'une surface axiale|
+|      14601007| Tdef Chevron-Falte, Kink Fold|plis en chevron, Kink Fold|
+
+**Attribute AZIMUTH**
+_Fallrichtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad (0° 359°) im Uhrzeigersinn gemessen._
+
+**Attribute DIP**
+_Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die
+Vertikale (90°).
+_
+
+**Attribute FOLD_TYP**
+_Objekttyp_
+
+
+|GeolCode|Deutsch|Français|
+|----------|--------------------|--------------------|
+|      14604001| Antiklinale|anticlinal|
+|      14604002| Synklinale|synclinal|
+|        999997| Unknown|inconnu|
+|        999998| Not applicable|not applicable|
+
+**Attribute FOLD_FOR**
+_Objektform_
+
+
+|GeolCode|Deutsch|Français|
+|----------|--------------------|--------------------|
+|      14605001| Antiform|antiforme|
+|      14605002| Synform|synforme|
+|        999997| Unknown|inconnu|
+|        999998| Not applicable|not applicable|
+
 ### Klasse Deformation_Structures_L
+_Die Klasse Deformation_Structures_L enthält linienförmige tektonische Deformationsstrukturen,
+wie den Verlauf des Faltenscharniers. Ein Beispiel der Objektart ist zur Veranschaulichung im
+Anhang A abgebildet.
+_
+
+**Attribute KIND**
+_Objektart_
+
+
+|GeolCode|Deutsch|Français|
+|----------|--------------------|--------------------|
+|      14701001| Tdef Faltenscharnier|charnière de pli|
 
 ### Klasse Deformation_Structures_PLG
+_In der Klasse Deformation_Structures_PLG befinden sich tektonisch geprägte Zonen wie
+tektonisierte Zonen oder Kluftzonen.
+_
+
+**Attribute KIND**
+_Objektart_
+
+
+|GeolCode|Deutsch|Français|
+|----------|--------------------|--------------------|
+|      14801001| Tdef Kluftzone|zone diaclasée|
+|      14801002| Tdef tektonisierte Zone|zone tectonisée|
+
+**Attribute TYPE**
+_Charakteristik der Objektarten_
+
+
+|GeolCode|Deutsch|Français|
+|----------|--------------------|--------------------|
+|      14802001| kataklastisch|cataclastique|
+|      14802002| kakiritisch|kakiritique|
+|      14802003| mylonitisch|mylonitique|
+|      14802004| pseudotachylitisch|pseudotachylitique|
+|        999997| Unknown|inconnu|
+|        999998| Not applicable|not applicable|
+
+**Attribute GEN_RELA**
+_Genetische Beziehung._
 
 ### Klasse Tectonic_Boundaries_L
+_Die Klasse Tectonic_Boundaries_L umfasst alle tektonischen Verwerfungen. Die Horizontal-
+verschiebungen in der Schweiz können als «Bruch, (Attribut «Fault_Mo» (Fault Movement))
+parallel zur Streichrichtung» abgebildet werden. Als Pendant zu «Überschiebung» oder
+«Abschiebung» gibt es in der Schweiz keine «Horizontalverschiebung» mit vergleichbarer
+Grössenausdehnung. Ein Abscherhorizont wird als «Überschiebung» oder als «Abschiebung»
+dargestellt. Wenn die Bewegungsrichtung nicht bekannt ist, wird er zur «tektonischen Grenze mit
+unbekannter Bewegungsrichtung». Zur näheren Erklärung der verschiedenen Objektarten sind im
+Anhang A Beispiele abgebildet.
+_
+
+**Attribute KIND**
+_Objektart_
+
+
+|GeolCode|Deutsch|Français|
+|----------|--------------------|--------------------|
+|      14901001| Ttec Überschiebung|chevauchement|
+|      14901002| Ttec Abschiebung|détachement (faille normale de grande extension et faible pendage)|
+|      14901004| Ttec Bruch|faille|
+|      14901005| Ttec Aufschiebung|faille inverse|
+|      14901006| Ttec Blattverschiebung|décrochement|
+|      14901007| Ttec komplexe Störung|accident tectonique complexe|
+|      14901008| Ttec Störung i. Allg.|accident tectonique en général|
+
+**Attribute FAULT_MO**
+_Bewegungsrichtung des Bruchs_
+
+
+|GeolCode|Deutsch|Français|
+|----------|--------------------|--------------------|
+|      14902001| schrägverschiebend (oblique slip)|oblique (oblique slip)|
+|      14902002| parallel zur Streichrichtung (Horizontalverschiebung)|parallèle à la direction|
+|      14902003| parallel zur Fallrichtung (strike slip)|parallèle au pendage (strike slip)|
+|        999997| Unknown|inconnu|
+|        999998| Not applicable|not applicable|
+
+**Attribute VERTI_MO**
+_Bewegung parallel zur Fallrichtung der Bruchfläche._
+
+
+|GeolCode|Deutsch|Français|
+|----------|--------------------|--------------------|
+|      14903001| aufschiebend||
+|      14903002| abschiebend||
+|        999997| Unknown|inconnu|
+|        999998| Not applicable|not applicable|
+
+**Attribute HORIZ_MO**
+_Bewegung parallel zur Streichrichtung der Bruch- oder Scherfläche_
+
+
+|GeolCode|Deutsch|Français|
+|----------|--------------------|--------------------|
+|      14904001| dextral|dextre|
+|      14904002| sinistral|sénestre|
+|        999997| Unknown|inconnu|
+|        999998| Not applicable|not applicable|
+
+**Attribute LIM_TECT_B**
+_Grenze einer tektonischen Einheit wie Deckengrenze,Schuppengrenze, Zonengrenze, etc. (ja / nein)?_
+
+**Attribute STATUS**
+_Zustand der Objektart_
+
+
+|GeolCode|Deutsch|Français|
+|----------|--------------------|--------------------|
+|      14906001| gesichert, im Allgemeinen|certain, en général|
+|      14906002| gesichert, unter Tage festgestellt|certain, mis en évidence dans des travaux souterrains|
+|      14906003| vermutet|probable|
+|      14906004| aus Seismikdaten interpretiert|interprété de données sismiques|
+|        999997| Unknown|inconnu|
+|        999998| Not applicable|not applicable|
+
+**Attribute ACTIVITY**
+_Aktivität der Objektart_
+
+**Attribute META_STA**
+_Tektonometamorphe Chronologie der Objektart_
+
+
+|GeolCode|Deutsch|Français|
+|----------|--------------------|--------------------|
+|      14908001| vor der Platznahme der Decken|anté-nappe|
+|      14908002| während der Platznahme der Decken|syn-nappe|
+|      14908003| nach der Platznahme der Decken|post-nappe|
+|        999997| Unknown|inconnu|
+|        999998| Not applicable|not applicable|
+
+**Attribute NAME**
+_Spezifischer Name der Objektart._
 
 
 ## Thema Measurements Spatial Orientation
 ### Klasse Folds_PT
+_Die Klasse Folds_PT enthält Objektarten, welche die räumliche Lage von verfalteten geologischen
+Objekten (mit direkten Feldmessungen) beschreiben. Beispiele der Objektarten Orientierung der
+Faltenachse und der Scheitellinie sind im Anhang A zur besseren Verständlichkeit abgebildet.
+_
+
+**Attribute KIND**
+_Objektart_
+
+
+|GeolCode|Deutsch|Français|
+|----------|--------------------|--------------------|
+|      13601001| Mfol Orientierung der Faltenachse|orientation d'un axe de pli|
+|      13601002| Mfol Orientierung der Scheitellinie|orientation d'une ligne de crête|
+|      13601003| Mfol Orientierung der Muldenlinie|orientation d'une ligne de creux|
+
+**Attribute FOLD_TYP**
+_Objekttyp_
+
+
+|GeolCode|Deutsch|Français|
+|----------|--------------------|--------------------|
+|      13602001| Antiklinale|anticlinal|
+|      13602002| Synklinale|synclinal|
+|        999997| Unknown|inconnu|
+|        999998| Not applicable|not applicable|
+
+**Attribute FOLD_FOR**
+_Form der Objektart_
+
+**Attribute PHASE**
+_Deformationsphase._
+
+
+|GeolCode|Deutsch|Français|
+|----------|--------------------|--------------------|
+|      13604001| F1 (1. Phase)|F1 (1ère phase)|
+|      13604002| F2 (2. Phase)|F2 (2ème phase)|
+|      13604003| F3 (3. Phase)|F3 (3ème phase)|
+|        999997| Unknown|inconnu|
+|        999998| Not applicable|not applicable|
+
+**Attribute PHASE_REF**
+_Referenz für die Angabe der Deformationsphase._
+
+**Attribute AZIMUTH**
+_Einfallsrichtung (Azimut) der jeweiligen Punktobjektart (z.B. Scheitellinie, Faltenachse).
+Wert in Grad (0° 359°) im Uhrzeigersinn gemessen
+_
+
+**Attribute DIP**
+_Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die
+Vertikale (90°).
+_
 
 ### Klasse Lineation_PT
+_In der Klasse Lineation_PT finden sich Objektarten, welche die räumliche Lage von diversen
+Linearen mit direkten Feldmessungen beschreiben. Die räumliche Lage u.a. von Gletscherschliffen
+und Rutschharnischen ist ebenso Teil dieser Klasse wie die Orientierung von Streckungs- oder
+Intersektionslineationen.
+_
+
+**Attribute KIND**
+_Objektart_
+
+
+|GeolCode|Deutsch|Français|
+|----------|--------------------|--------------------|
+|      13701001| Mlin Orientierung der Intersektionslineation|orientation de la linéation d´intersection|
+|      13701002| Mlin Orientierung der Streckungslineation|orientation de la linéation d'étirement|
+|      13701003| Mlin Orientierung von Rutschharnischen|orientation des tectoglyphes|
+|      13701004| Mlin Orientierung von Gletscherschliffen|orientation des stries glaciaires|
+
+**Attribute AZIMUTH**
+_Einfallsrichtung (Azimut) der jeweiligen Punktobjektart (z.B. Scheitellinie, Faltenachse).
+Wert in Grad (0° 359°) im Uhrzeigersinn gemessen
+_
+
+**Attribute DIP**
+_Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die
+Vertikale (90°).
+_
 
 ### Klasse Planar_Structures_PT
+_Die Klasse Planar_Structures_PT enthält Objektarten, welche die räumliche Lage von planaren
+Strukturen mit direkten Feldmessungen beschreiben. Ein Beispiel der Objektart Orientierung der
+Schieferung ist im Anhang A zur Veranschaulichung abgebildet.
+_
+
+**Attribute KIND**
+_Objektart_
+
+
+|GeolCode|Deutsch|Français|
+|----------|--------------------|--------------------|
+|      13801001| Mpla Orientierung der Schichten|orientation des couches|
+|      13801002| Mpla Orientierung eines Ganges|orientation d'un filon|
+|      13801003| Mpla Orientierung einer Bruchfläche|orientation d'un plan de faille|
+|      13801004| Mpla Orientierung der Schieferung|orientation d'une schistosité|
+|      13801005| Mpla Orientierung einer Schichtung oder Schieferung|orientation d'une couche ou d'une schistosité|
+|      13801006| Mpla Schüttungsrichtung|direction de transport sédimentaire|
+
+**Attribute POLARITY**
+_Position der Objektart im Raum_
+
+
+|GeolCode|Deutsch|Français|
+|----------|--------------------|--------------------|
+|      13802001| normal|normale|
+|      13802002| überkippt|renversée|
+|        999997| Unknown|inconnu|
+|        999998| Not applicable|not applicable|
+
+**Attribute PHASE**
+_Deformationsphase_
+
+
+|GeolCode|Deutsch|Français|
+|----------|--------------------|--------------------|
+|      13803001| S1 (1. Phase)|S1 (1ère phase)|
+|      13803002| S2 (2. Phase)|S2 (2ème phase)|
+|      13803003| S3 (3. Phase)|S3 (3ème phase)|
+|        999997| Unknown|inconnu|
+|        999998| Not applicable|not applicable|
+
+**Attribute PHASE_REF**
+_Referenz für die Angabe der Deformationsphase._
+
+**Attribute OB_DIP_SLO**
+_Dip slope beobachtet (ja / nein)?_
+
+**Attribute AZIMUTH**
+_Einfallsrichtung (Azimut) der jeweiligen Punktobjektart (z.B. Scheitellinie, Faltenachse).
+Wert in Grad (0° 359°) im Uhrzeigersinn gemessen
+_
+
+**Attribute DIP**
+_Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die
+Vertikale (90°).
+_
 
 
 ## Thema Local Additional Information
 ### Klasse Anomalies_PT
+_Die Klasse Anomalies_PT beinhaltet lokal beobachtete und / oder gemessene Anomalien._
+
+**Attribute KIND**
+_Objektart_
+
+
+|GeolCode|Deutsch|Français|
+|----------|--------------------|--------------------|
+
+**Attribute TYPE**
+_Charakteristik der Objektart._
 
 ### Klasse Fossils_PT
+_Die Klasse Fossils_PT enthält alle Fossilfundstellen._
+
+**Attribute KIND**
+_Objektart_
+
+
+|GeolCode|Deutsch|Français|
+|----------|--------------------|--------------------|
+|      12901001| Lfos Fossilfundstelle|gisement fossilifère|
+
+**Attribute DIVISION**
+_Fossilienkategorie, zu welcher die Objektinstanz gehört._
+
+
+|GeolCode|Deutsch|Français|
+|----------|--------------------|--------------------|
+|      12902001| Tierreste|faune|
+|      12902002| Pflanzen- und Tierreste|faune et flore|
+|      12902003| Pflanzenreste|flore|
+|      12902004| Spuren|traces|
+|      12902006| Einzeller|unicellulaires|
+|        999997| Unknown|inconnu|
+|        999998| Not applicable|not applicable|
+
+**Attribute SYSTEM**
+_Fossiliengruppe._
+
+**Attribute DAT_METH**
+_Datierungsmethode._
+
+
+|GeolCode|Deutsch|Français|
+|----------|--------------------|--------------------|
+|      12904001| radiometrisch datiert|daté radiométriquement|
+|        999997| Unknown|inconnu|
+|        999998| Not applicable|not applicable|
+
+**Attribute STATUS**
+_Zustand der Objektart_
+
+
+|GeolCode|Deutsch|Français|
+|----------|--------------------|--------------------|
+|      12905001| aufgeschlossen|affleurant|
+|      12905002| wieder verdeckt|recouvert|
+|        999997| Unknown|inconnu|
+|        999998| Not applicable|not applicable|
+
+**Attribute PROTECTED**
+_Geschützte Fossilfundstelle (ja / nein)?_
 
 ### Klasse Indication_of_Resources_PT
+_Die Klasse Indication_of_Resources_PT beinhaltet Fundstellen von vulkanischen, mineralischen
+und nicht-mineralischen Rohstoffen.
+_
 
 ### Klasse Mineralised_Zone_L
 
 ### Klasse Sedimentary_Structures_PT
 
 ### Klasse Type_Localities_PT
+_Die Klasse Type_Localities_PT beinhaltet diejenigen Objektarten, die Typlokalitäten oder wichtige
+geologische Aufschlüsse beschreiben.
+_
 
 ### Klasse Prominent_Lithological_Features_L
+_In der Klasse Prominent_Lithological_Features_L befinden sich linienförmige Gesteinshorizonte.
+Diese Gesteinshorizonte haben bloss Hinweischarakter (z.B. «markante Sandsteinbank» innerhalb
+von Wechsellagerungen von Sandstein und Mergel) und sind von den Leithorizonten (z.B.
+«Spatkalk im Hauptrogenstein») zu unterschieden. Leithorizonte befinden sich im Thema Rock Bodies.
+_
 
 ### Klasse Miscellaneous_PT
+_Die Klasse Miscellaneous_PT ist für lokale, sehr spezielle geologische Objekte reserviert, die für die
+Gesamtheit der geologischen Daten irrelevant sind und deshalb im Datenmodell Geologie nicht
+standardisiert werden
+_
 
-### Klasse Geological_Outlines_L7
+### Klasse Geological_Outlines_L
+_Die Klasse Geological_Outlines_L beinhaltet geologische Konturen. Darunter fallen die Umrisse
+von Fest- und Lockergesteinen, von tektonisierten Zonen, sowie die Umgrenzungen von
+Rutschungs- und Sackungsmassen, welche nicht durch andere Konturarten (z.B. tektonische
+Grenzen) abgegrenzt werden.
+Eine geologische Kontur mit Status im Allgemeinen umfasst stratigraphische und petrographische
+Grenzen. Geologische Konturen, welche von quartären Ablagerungen, Gewässern oder
+Gletschern bedeckt sind oder graduelle Übergänge in Locker- und Festgesteinen (keine klaren
+lithologischen Grenzen; im Sinne der Signaturgrenze nach dem Zeichenverzeichnis (ZV)), haben
+den Status vermutet. Künstliche geologische Konturen sind Konturen, welche Gebiete mit
+detaillierter Information von Gebieten mit geringerer Informationsdichte aufgrund fehlender
+Informationen oder aus darstellerischen Gründen (Digitalisierungsmassstab)
+ab-grenzen (Abgrenzungskontur nach dem ZV).
+_
 
 
 ## Thema Parameter and Modelling
 ### Klasse Slope_Bedrock_PT
+_Die Klasse Slope_Bedrock_PT enthält Punktinformationen aus Modellierungen des Festgestein-
+verlaufs im Untergrund.
+_
 
 ### Klasse Contour_Lines_Bedrock_L
+_Die Klasse Contour_Lines_Bedrock_L beinhaltet Isohypsen, die sich auf den Verlauf des Fest-
+gesteins beziehen und die das Resultat von Modellierungen darstellen. U.a. befinden sich die Iso-
+hypsen der Felsoberfläche in dieser Klasse.
+_
 
 ### Klasse Modelled_Water_Table_PT
+_Die Klasse Modelled_Water_Table_PT enthält Punktinformationen aus Modellierungen des
+Grundwasserspiegels.
+_
 
 ### Klasse Contour_Lines_Hydro_L
+_In der Klasse Contour_Lines_Hydro_L befinden sich die Isohypsen, die sich auf das Grundwasser
+beziehen.
+_
 
 
 ## Thema Anthropogenic Features
 ### Klasse Archaeology_PT
+_Die Klasse Archaeology_PT enthält Objektarten zu einzelnen archäologischen Relikten._
 
 ### Klasse Archaeology_L
+_Die Klasse Archaeology_L umfasst linienförmige archäologische Elemente. Historische Strassen,
+Hohlwege oder Befestigungsgräben sind Teile dieser Klasse.
+_
 
 ### Klasse Archaeology_PLG
+_Die Klasse Archaeology_PLG beinhaltet archäologische Relikte (z.B. römisches Castrum), die ein
+grösseres Gebiet (Fläche) abdecken.
+_
 
 ### Klasse Exploitation_Geomaterials_PT
+_Die Klasse Exploitation_Geomaterials_PT enthält punktförmige Angaben zu Abbaustellen von
+Geomaterialien.
+_
 
 ### Klasse Exploitation_Geomaterials_L
+_Die Klasse Exploitation_Geomaterials_L beinhaltet linienförmige Informationen zum Abbau von
+Geomaterialien (z.B. Verlauf der Abbaufront).
+_
 
 ### Klasse Exploitation_Geomaterials_PLG
+_Die Klasse Exploitation_Geomaterials_PLG enthält Flächen, wo zur Zeit der geologischen
+Aufnahmen Geomaterialien abgebaut wurden.
+_
 
 ### Klasse Boreholes_PT
+_Die Klasse Boreholes_PT beinhaltet Bohrungen und Sondierungen. (Auf alten gedruckten Karten
+wurde die Art der Sondierung nicht immer unterschieden. Es kann daher sein, dass in alten Karten
+Rammkernsondierungen als Bohrungen aufgenommen wurden.)
+_
 
 ### Klasse Artificial_Surface_Modifications_PLG
+_Die Klasse Artificial_Surface_Modifications_PLG enthält bedeutende künstliche Veränderungen
+des Geländes (Golfplatz, Skigebiet, etc.), die zur Folge haben, dass das ursprüngliche Relief nicht
+mehr zu erkennen ist, was bei einer geomorphologischen Deutung zu falschen Schlüssen führen könnte.
+_
 
 
 ## Thema Hydrogeology
 ### Klasse Construction_PT
+_Die Klasse Construction_PT beinhaltet Wasserbauten wie Grundwasserfassungen und Zisternen.
+Desweiteren kommen in dieser Klasse auch Messgeräte wie Piezometer und Limnigraphen vor.
+_
 
 ### Klasse Construction_L
+_Die Klasse Construction_L enthält linienförmige Wasserbauten wie den Wasserfassungsstollen,
+welcher mit Objektarten der Klasse Surface_Water_PT kombiniert werden kann.
+_
 
 ### Klasse Palaeohydrology_L
+_In der Klasse Palaeohydrology_L befinden sich alle linienförmigen Objektarten, welche einen
+gewissen Bezug zu einem ehemaligen Gewässer aufweisen.
+_
 
 ### Klasse Subsurface_Water_L
+_In der Klasse Subsurface_Water_L befinden sich linienförmigen Objektarten, welche einen
+unterirdischen Gewässerlauf anzeigen. Der genaue Verlauf des unterirdischen Gewässerlaufes ist
+in fast jedem Fall vermutet, mit wenigen Ausnahmen von erforschten Höhlensystemen. Liegen
+Färbversuche vor, so werden diese in den Erläuterungen erwähnt, sofern diese existieren. Der
+unterirdische Gewässerlauf kann mit Objeken aus der Klasse Surface_Water_PT kombiniert werden.
+_
 
 ### Klasse Surface_Water_PT
+_Die Klasse Surface_Water_PT umfasst lokal (punktuell) beobachtete Oberflächengewässer, wie
+natürliche Wasseraustritts- und Versickerungsstellen. Zudem befindet sich die Objektart Steilstufe
+in Bachrinne, Wasserfall in dieser Klasse, die eine spezielle Stelle in Fliessgewässern markiert und
+die durch die darunterliegende Geologie bedingt ist.
+Eine Quelle wird als «Thermalquelle» bezeichnet, wenn das Wasser eine mittlere Jahrestem-
+20°C aufweist. Für diesen Quelltyp ist das Attribut «Temp» vorgesehen und
+beschränkt sich i.d.R. auf die mittlere Wassertemperatur. Deshalb wird für dieses Attribut auch
+kein Datum einer Analyse angegeben. Um eine Mineralquelle handelt es sich bei einer Quelle mit
+einer Mineralkonzentration 1g / l Wasser oder einer CO2- 250 mg / l Wasser.
+Für diesen Quelltyp ist das Attribut «Chemistry» vorgesehen. D.h. unter diesem Attribut wird das
+charakteristische chemische Element im Mineralwasser angegeben und nicht die komplette
+Wasserchemie.
+_
 
 ### Klasse Surface_Water_L
+_In der Klasse Surface_Water_L sind linienförmige Oberflächengewässer (Quellhorizonte)
+beschrieben.
+_
 
 ### Klasse Surface_Water_PLG
+_Die Klasse Surface_Water_PLG beinhaltet oberflächliche Wasserspeicher wie Gletscher, Seen und
+Flüsse, welche geologische Einheiten bedecken und oftmals eine Interpretation der darunter-
+liegenden Geologie verunmöglichen. Das vollständige Gewässernetz ist nicht Teil des Daten-
+modells Geologie
+_
 
 
 ## Thema Meta Data
-### Klasse Mapsheet
+### Klasse Mapsheet  desci
+_Die Klasse Mapsheet ist eine geometrielose Klasse. Sie beinhaltet alle Metadaten zur Objektart
+(Kartengrundlage). Neben der Kartenart sind Angaben wie der Titel, Massstab, Autor, Datenherr,
+Publikationsjahr und über die öffentliche Verfügbarkeit der Karte grundlegend. Verfügt die Karte
+(wie z.B. die Karten der Landesgeologie) über eine Kartennummer, kann dies bei «Map_Nbr»
+angegeben werden, während bei «Mapping_Period» die Zeitspanne der Datenaufnahme
+(Kartierung) erfasst wird. Das Attribut «Basis_Topo» beschreibt die topographische Grundlage
+und «Basis_Vect» den Vektordatensatz.
+_
 
