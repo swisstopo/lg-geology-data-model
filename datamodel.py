@@ -72,12 +72,14 @@ def main(config_file):
                         type = att.get("type")
                         value = att.get("value")
                         desc = att.get("description", None)
-                        print(f"**Attribute {name.upper()}**")
+                        print(f"**Attribute {name.upper()}** \n")
                         if desc is not None:
-                            print(f"_{desc}_")
-                        print("")
+                            print(f"_{desc}_ \n")
+
                         pairs = None
 
+                        if type in ("integer", "range", "string", "float"):
+                            print(f"Type: {type}\n")
                         if type == "CD" and value is not None:
                             pairs = get_coded_values(value)
                         if type == "subtype" and value is not None:
@@ -99,6 +101,7 @@ def main(config_file):
 
                                 print(f"|    {k:>10}| {de}|{fr}|")
                             print("")
+                        print("")
 
 
 if __name__ == "__main__":
