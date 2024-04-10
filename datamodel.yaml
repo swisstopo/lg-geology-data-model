@@ -569,12 +569,155 @@ themes:
   - name: Measurements_Spatial_Orientation
     classes:
       - name: Folds_PT
+        description: |
+           Die Klasse Folds_PT enthält Objektarten, welche die räumliche Lage von verfalteten geologischen
+           Objekten (mit direkten Feldmessungen) beschreiben. Beispiele der Objektarten Orientierung der
+           Faltenachse und der Scheitellinie sind im Anhang A zur besseren Verständlichkeit abgebildet.
+        attributes:
+          - name: kind
+            description: Objektart
+            type: subtype
+            value: 13601
+            cardinality: 1
+          - name: fold_typ
+            description: Objekttyp
+            type: CD
+            value: GC_PNT_MFOL_FOLD_TYP_CD
+            cardinality: 0..1
+          - name: fold_for
+            description: Form der Objektart
+            value: 13603  # TODO: CD not found (but approaching)
+            cardinality: 0..1
+          - name: phase
+            description: Deformationsphase.
+            type: CD
+            value: GC_PNT_MFOL_PHASE_CD
+            cardinality: 0..1
+          - name: phase_ref
+            description: Referenz für die Angabe der Deformationsphase.
+            type: string
+            cardinality: 0..1
+          - name: azimuth
+            description: |
+                Einfallsrichtung (Azimut) der jeweiligen Punktobjektart (z.B. Scheitellinie, Faltenachse).
+                Wert in Grad (0° 359°) im Uhrzeigersinn gemessen
+            type: integer
+            cardinality: 1
+          - name: dip
+            description: |
+               Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die
+               Vertikale (90°).
+            type: integer
+            cardinality: 0..1
       - name: Lineation_PT
+        description: |
+            In der Klasse Lineation_PT finden sich Objektarten, welche die räumliche Lage von diversen
+            Linearen mit direkten Feldmessungen beschreiben. Die räumliche Lage u.a. von Gletscherschliffen
+            und Rutschharnischen ist ebenso Teil dieser Klasse wie die Orientierung von Streckungs- oder
+            Intersektionslineationen.
+        attributes:
+          - name: kind
+            description: Objektart
+            type: subtype
+            value: 13701
+            cardinality: 1
+          - name: azimuth
+            description: |
+                Einfallsrichtung (Azimut) der jeweiligen Punktobjektart (z.B. Scheitellinie, Faltenachse).
+                Wert in Grad (0° 359°) im Uhrzeigersinn gemessen
+            type: integer
+            cardinality: 1
+          - name: dip
+            description: |
+               Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die
+               Vertikale (90°).
+            cardinatity: 0..1
       - name: Planar_Structures_PT
+        description: |
+            Die Klasse Planar_Structures_PT enthält Objektarten, welche die räumliche Lage von planaren
+            Strukturen mit direkten Feldmessungen beschreiben. Ein Beispiel der Objektart Orientierung der
+            Schieferung ist im Anhang A zur Veranschaulichung abgebildet.
+        attributes:
+          - name: kind
+            description: Objektart
+            type: subtype
+            value: 13801
+            cardinality: 1
+          - name: polarity
+            description: Position der Objektart im Raum
+            type: CD
+            value: GC_PNT_MPLA_POLARITY_CD
+            cardinality: 0..1
+          - name: phase
+            description: Deformationsphase
+            type: CD
+            value: GC_PNT_MPLA_PHASE_CD
+            polarity: 0..1
+          - name: phase_ref
+            description: Referenz für die Angabe der Deformationsphase.
+            type: string
+            cardinality: 0..1
+          - name: ob_dip_slo
+            description: Dip slope beobachtet (ja / nein)?
+            type: boolean
+            cardinality: 0..1
+          - name: azimuth
+            description: |
+                Einfallsrichtung (Azimut) der jeweiligen Punktobjektart (z.B. Scheitellinie, Faltenachse).
+                Wert in Grad (0° 359°) im Uhrzeigersinn gemessen
+            type: integer
+            cardinality: 1
+          - name: dip
+            description: |
+               Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die
+               Vertikale (90°).
+            cardinatity: 0..1
+
   - name: Local_Additional_Information
     classes:
       - name: Anomalies_PT
+        description: Die Klasse Anomalies_PT beinhaltet lokal beobachtete und / oder gemessene Anomalien.
+        attributes:
+          - name: kind
+            description: Objektart
+            type: subtype
+            value: 128001
+            cardinality: 1
+          - name: type
+            description: Charakteristik der Objektart.
+            value: 128002  # TODO: no CD
       - name: Fossils_PT
+        description: Die Klasse Fossils_PT enthält alle Fossilfundstellen.
+        attributes:
+          - name: kind
+            description: Objektart
+            type: subtype
+            value: 12901
+            cardinality: 1
+          - name: division
+            description: Fossilienkategorie, zu welcher die Objektinstanz gehört.
+            type: CD
+            value: GC_FOSS_LFOS_DIVISION_CD
+            cardinality: 0..1
+          - name: system
+            description: Fossiliengruppe.
+            type: table
+            value: gc_system
+            cardinality: 0..1
+          - name: dat_meth
+            description: Datierungsmethode.
+            type: CD
+            value: GC_FOSS_LFOS_DAT_METH_CD
+            cardinality: 0..1
+          - name: status
+            description: Zustand der Objektart
+            type: CD
+            value: GC_FOSS_LFOS_STATUS_CD
+            cardinality: 0..1
+          - name: protected
+            description: Geschützte Fossilfundstelle (ja / nein)?
+            type: boolean
+            cardinality: 0..1
       - name: Indication_of_Resources_PT
       - name: Mineralised_Zone_L
       - name: Sedimentary_Structures_PT
