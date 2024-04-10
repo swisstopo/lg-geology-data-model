@@ -1127,25 +1127,176 @@ themes:
             Die Klasse Boreholes_PT beinhaltet Bohrungen und Sondierungen. (Auf alten gedruckten Karten
             wurde die Art der Sondierung nicht immer unterschieden. Es kann daher sein, dass in alten Karten
             Rammkernsondierungen als Bohrungen aufgenommen wurden.)
+        attributes:
+          - name: kind
+            description: Objektart
+            type: subtype
+            value: 10501
+          - name: drill_mo
+            desc: Bohrmethode.
+            value: 10502 # TODO no CD
+            cardinality: 0..1
+          - name: depth_bedrock
+            desc: |
+                Tiefe (in Meter ab Terrainoberfläche) der Felsober-
+                fläche. (Sofern die Bohrung das Festgestein nicht
+                Depth_Bedrock erreicht, z.B. «Bohrung, Fels nicht erreicht», beträgt der
+                Wert -9999, falls die Bohrung bereits im Festgestein beginnt, beträgt
+                der Wert 0). Falls Festgestein erreicht wurde, aber nicht klar ist,
+                dass es sich um die Felsoberfläche handelt, beträgt der Wert -8888.
+            type: float
+            cardinality: 0..1
+          - name: d_c_underg
+            desc: Bohransatzpunkt unter Terrain (ja / nein)
+            type: boolean
+            cardinality: 1
+          - name: main_tar
+            desc: Ziel der Sondierung.
+            type: CD
+            value: GC_PNT_ABOR_MAIN_TAR_CD
+            cardinality: 0..1
+          - name: targ_mat
+            desc: Durch die Sondierung gefördertes Material.
+            type: CD
+            value: GC_PNT_ABOR_TARG_MAT_CD
+            cardinality: 0..1
+          - name: depth_tot
+            desc: |
+                Gemessene Länge (Measured Depth) der Bohrung. Vgl.
+                DM Bohrdaten. Die tatsächliche Tiefe (True Vertical
+                Depth) ist oft nicht bekannt.
+            type: float
+            cardinality: 0..1
+          - name: fm_a
+            desc: Lithostratigraphische Einheit der erreichten Formation A
+            type: table
+            value: gc_litstrat_bed # TODO
+            cardinality: 0..1
+          - name: depth_fm_a
+            desc: Tiefe (m ab Terrainoberfläche) der erreichten Formation A.
+            type: float
+            cardinality: 0..1
+          - name: fm_b
+            desc: Lithostratigraphische Einheit der erreichten Formation B
+            type: table
+            value: gc_litstrat_bed # TODO
+            cardinality: 0..1
+          - name: depth_fm_b
+            desc: Tiefe (m ab Terrainoberfläche) der erreichten Formation B.
+            type: float
+            cardinality: 0..1
+          - name: depth_wt
+            desc: Tiefe (m ab Terrainoberfläche) des Grundwasserspiegels.
+            type: float
+            cardinality: 0..1
+          - name: azimuth
+            description: Fallrichtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad (0° 359°) im Uhrzeigersinn gemessen.
+            type: integer
+            cardinality: 0..1
+          - name: dip
+            description: |   # TODO text!!!
+               Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die
+               Vertikale (90°).
+            type: integer
+            cardinality: 0..1
+          - name: ref_number
+            desc: Bohrungs-ID der Objektart in einem zusätzlichen Dokument (Erläuterungen, ...).
+            type: integer
+            cardinality: 0..1
+          - name: link
+            desc: Objektnummer in der Datenbank von INFOGEOL.
+            type: integer
+            cardinality: 0..1
+
       - name: Artificial_Surface_Modifications_PLG
         description: |
             Die Klasse Artificial_Surface_Modifications_PLG enthält bedeutende künstliche Veränderungen
             des Geländes (Golfplatz, Skigebiet, etc.), die zur Folge haben, dass das ursprüngliche Relief nicht
             mehr zu erkennen ist, was bei einer geomorphologischen Deutung zu falschen Schlüssen führen könnte.
+        attributes:
+          - name: kind
+            description: Objektart
+            type: subtype
+            value: 10401
+            cardinality: 1
   - name: Hydrogeology
     classes:
       - name: Construction_PT
         description: |
             Die Klasse Construction_PT beinhaltet Wasserbauten wie Grundwasserfassungen und Zisternen.
             Desweiteren kommen in dieser Klasse auch Messgeräte wie Piezometer und Limnigraphen vor.
+        attributes:
+          - name: kind
+            description: Objektart
+            type: subtype
+            value: 12101
+            cardinality: 1
+          - name: status
+            desc: Zustand der Objektart.
+            type: Cd
+            value: GC_PNT_HCON_STATUS_CD
+            cardinality: 0..1
+          - name: epoch
+            desc: Epoche der Erbauung der Objektart.
+            type: Cd
+            value: GC_PNT_HCON_EPOCH_CD
+            cardinality: 0..1
+          - name: depth
+            desc: Tiefe der Objektart (m ab Terrainoberfläche).
+            type: float
+            cardinality: 0..1
+          - name: depth_wt
+            desc: Tiefe (m ab Terrainoberfläche) des Grundwasserspiegels (Mittelwert).
+            type: float
+            cardinality: 0..1
+          - name: mea_period
+            desc: Messperiode.
+            type: range  # TODO
+            cardinality: 0..1
       - name: Construction_L
         description: |
             Die Klasse Construction_L enthält linienförmige Wasserbauten wie den Wasserfassungsstollen,
             welcher mit Objektarten der Klasse Surface_Water_PT kombiniert werden kann.
+        attributes:
+          - name: kind
+            description: Objektart
+            type: subtype
+            value: 12201
+            cardinality: 1
+          - name: combi
+            desc: Objektart einer anderen Klasse, die mit der Objektart in Kombination vorkommen kann
+            type: CD
+            value: GC_LIN_HCON_COMBI_CD
+            cardinality: 0..1
       - name: Palaeohydrology_L
         description: |
             In der Klasse Palaeohydrology_L befinden sich alle linienförmigen Objektarten, welche einen
             gewissen Bezug zu einem ehemaligen Gewässer aufweisen.
+        attributes:
+          - name: kind
+            description: Objektart
+            type: subtype
+            value: 12301
+            cardinality: 1
+          - name: rel_age
+            desc: Relatives Alter der Objektart
+            type: CD
+            value: GC_LIN_HPAL_REL_AGE_CD
+            cardinality: 0..1
+          - name: chrono
+            desc: Chronostratigraphische Zuordnung.
+            type: table
+            value: gc_chrono  # TODO really
+            cardinality: 0..1
+          - name: ref_year
+            desc: Referenzjahr der ehemaligen Uferlinie.
+            type: integer
+            cardinality: 1
+          - name: source
+            desc: Datenquelle der historischen Unterlagen.
+            type: string
+            cardinality: 0..1
+
       - name: Subsurface_Water_L
         description: |
             In der Klasse Subsurface_Water_L befinden sich linienförmigen Objektarten, welche einen
@@ -1153,6 +1304,17 @@ themes:
             in fast jedem Fall vermutet, mit wenigen Ausnahmen von erforschten Höhlensystemen. Liegen
             Färbversuche vor, so werden diese in den Erläuterungen erwähnt, sofern diese existieren. Der
             unterirdische Gewässerlauf kann mit Objeken aus der Klasse Surface_Water_PT kombiniert werden.
+        attributes:
+          - name: kind
+            description: Objektart
+            type: subtype
+            value: 12401
+            cardinality: 1
+          - name: combi
+            desc: Objektart einer anderen Klasse, die mit der Objektart in Kombination vorkommen kann
+            type: CD
+            value: GC_LIN_HSUB_COMBI_CD
+            cardinality: 0..1
       - name: Surface_Water_PT
         description: |
             Die Klasse Surface_Water_PT umfasst lokal (punktuell) beobachtete Oberflächengewässer, wie
@@ -1167,16 +1329,73 @@ themes:
             Für diesen Quelltyp ist das Attribut «Chemistry» vorgesehen. D.h. unter diesem Attribut wird das
             charakteristische chemische Element im Mineralwasser angegeben und nicht die komplette
             Wasserchemie.
+        attributes:
+          - name: kind
+            description: Objektart
+            type: subtype
+            value: 12501
+            cardinality: 1
+          - name: status
+            desc: Zustand der Objektart.
+            type: Cd
+            value: GC_PNT_HSUR_STATUS_CD
+            cardinality: 0..1
+          - name: flow_con
+            desc: Wasserfluss Bedingungen.
+            type: CD
+            value: GC_PNT_HSUR_FLOW_CON_CD
+            cardinality: 0..1
+          - name: type
+            desc: Charakteristik der Objektart
+            type: CD
+            value: GC_PNT_HSUR_TYPE_CD
+            cardinality: 0..1
+          - name: dis_loca
+            desc: Ort des Wasserausflusses.
+            type: CD
+            value: GC_PNT_HSUR_DIS_LOCA_CD
+            cardinality: 0..1
+          - name: combi
+            desc: Objektart einer anderen Klasse, die mit der Objektart in Kombination vorkommen kann
+            type: CD
+            value: GC_PNT_HSUR_COMBI_CD
+            cardinality: 0..1
+          - name: temp
+            desc: Mittlere Wassertemperatur (°C).
+            type: integer
+            cardinality: 0..1
+          - name: chemistry
+            description: Charakteristisches chemisches Element im Mineralwasser (z.B. Fe).
+            type: string
+            cardinality: 0..1
+          - name: azimuth
+            description: |
+                Richtung (Azimut) der jeweiligen Punktobjektart. Wert in
+                Grad (0° 359°) im Uhrzeigersinn gemessen.
+            type: integer
+            cardinality: 0..1
       - name: Surface_Water_L
         description: |
             In der Klasse Surface_Water_L sind linienförmige Oberflächengewässer (Quellhorizonte)
             beschrieben.
+        attributes:
+          - name: kind
+            description: Objektart
+            type: subtype
+            value: 12601
+            cardinality: 1
       - name: Surface_Water_PLG
         description: |
             Die Klasse Surface_Water_PLG beinhaltet oberflächliche Wasserspeicher wie Gletscher, Seen und
             Flüsse, welche geologische Einheiten bedecken und oftmals eine Interpretation der darunter-
             liegenden Geologie verunmöglichen. Das vollständige Gewässernetz ist nicht Teil des Daten-
             modells Geologie
+        attributes:
+          - name: kind
+            description: Objektart
+            type: subtype
+            value: 12701
+            cardinality: 1
   - name: Meta_Data
     classes:
       - name: Mapsheet  desci
