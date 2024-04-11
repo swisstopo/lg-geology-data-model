@@ -1,16 +1,13 @@
 
-# Datenmodell Geologie #
+# Datenmodell Geologie, Version 3.5 #
 
-Beschreibung und Objektkatalog, Version 3.5
-
-2024-04-11
 
 ![Extrait GeoCover vers le Moléson](geocover.png "Moléson")
 
 
 
 
-Bundesamt für Landestopographie swisstopo
+
 \pagebreak
 
 
