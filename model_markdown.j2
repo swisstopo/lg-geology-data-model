@@ -34,6 +34,9 @@ Bundesamt für Landestopographie swisstopo
 {% for attr in cls.attributes -%}
 **{{ attr.name }}**
 _{{ attr.description|trim}}_
+{% if attr.att_type in ('boolean', 'string', 'float', 'range', 'integer') %}
+_Datentyp:  {{ attr.att_type  }}_
+{% endif %}
 
 {% if 'pairs' in attr -%}
 |GeolCode|Deutsch|Français|

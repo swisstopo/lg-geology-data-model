@@ -5,7 +5,7 @@ themes:
   - name: Rock_Bodies
     classes:
       - name: Unconsolidated_Deposits_PT
-        description: >
+        description: >+
           Die Klasse Unconsolidated_Deposits_PT umfasst einzelne Gesteine
           (Korngrösse: Steine bis Blöcke), die durch gravitative, glaziale oder
           anthropogene Transportprozesse an ihren heutigen Ort gelangten,
@@ -46,15 +46,15 @@ themes:
             att_type: boolean
             cardinality: 0..1
       - name: Unconsolidated_Deposits_PLG
-        description: >
+        description: |
           Die Klasse Unconsolidated_Deposits_PLG beinhaltet alle flächenhaft
-          ausgeschiedenen Lockergesteine.
+          ausgeschiedenen Lockergesteine.\
           Die Angabe, ob eine Lockergesteinsmasse bewegt (durch Gravitation versetzt) wurde, geht
           aus der Klasse Instabilities_within_Unconsolidated_Deposits_PLG (Thema
           Geomorphology) hervor. Eine Ausnahme bilden Lockergesteinsmassen,
           welche unter dem Einfluss der Schwerkraft bewegt wurden und keine
           Angaben zum Ausgangsmaterial enthalten (Rutschmassen oder zerrüttete
-          Gesteinsmassen «Sackungsmassen»).
+          Gesteinsmassen «Sackungsmassen»).\
           Solche Lockergesteine werden sowohl in der Klasse Unconsolidated_Deposits_PLG als auch in der Klasse
           Instabilities_with_in_Unconsolidated_Deposits_PLG erfasst. Zur näheren
           Erklärung der verschiedenen Objektarten sind im Anhang A einige
@@ -132,7 +132,7 @@ themes:
             cardinality: 1
 
       - name: Bedrock_PLG
-        description: >
+        description: >+
           Die Klasse Bedrock_PLG enthält alle flächenbildenden
           lithostratigraphischen Festgesteinseinheiten. Die Angabe,  ob ein
           Festgestein bewegt (durch Gravitation versetzt) wurde, geht aus der
