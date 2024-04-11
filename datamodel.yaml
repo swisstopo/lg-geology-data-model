@@ -34,7 +34,7 @@ themes:
             cardinality: 0..1
           - name: mat_type  # TODO type
             description: Materialbezeichnung (lithologische Einheit)
-            type: CD
+            att_type: CD
             value: GC_LITHO_UNCO_CD  # TODO  check with Stephan
             cardinality: 0..1
           - name: orig_descr
