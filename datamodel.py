@@ -28,7 +28,7 @@ def get_coded_values(value):
     if value in domains.keys():
         domain = domains.get(value)
         # print(f"  {name}, {att_type} , {value}")
-        if domain.get("att_type") == "CodedValue":
+        if domain.get("type") == "CodedValue":
             return domain.get("codedValues")
 
     return {}
@@ -51,6 +51,7 @@ class Report:
         self.config_file = config_file
         self._model = None
 
+
     @property
     def model(self):
         if self._model:
@@ -58,6 +59,7 @@ class Report:
         else:
             with open(self.config_file, "rt", encoding="utf8") as f:
                 self._model = yaml.load(f, Loader=yaml.FullLoader)
+                self._model['date'] = str(datetime.date.today())
             return self._model
 
     def to_json(self):
@@ -73,6 +75,7 @@ class Report:
 
                         if att_type == "CD" and value is not None:
                             pairs = get_coded_values(value)
+
                         if att_type == "subtype" and value is not None:
                             pairs = get_subtype(value)
 
@@ -136,18 +139,29 @@ class Report:
 
 
 if __name__ == "__main__":
-    model = Report("datamodel.yaml")
+    import datetime
+    import os
+    from jinja2 import Template
+    from pathlib import Path
+
+    yaml_file = "datamodel.yaml"
+    project_name = Path(yaml_file).stem
+    model = Report(yaml_file)
+
 
     # model.to_markdown()
 
     data = model.to_json()
 
-    with open("toto.json", "w") as f:
+    with open(f"{project_name}.json", "w") as f:
         f.write(json.dumps(data, indent=4))
 
-    from jinja2 import Template
+
 
     with open("model_markdown.j2") as f:
         template = Template(f.read())
 
-        print(template.render(data))
+
+
+    with open(f"{project_name}.md", "w") as f:
+        f.write(template.render(data))

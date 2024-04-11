@@ -1,19 +1,30 @@
-{% for theme in themes -%}
 
-# Datenmodel GeoCover #
+# Datenmodell Geologie #
+Beschreibung und Objektkatalog, Version 3.5
+{{ date }}
 
 ![Extrait GeoCover vers le Moléson](geocover.png "Moléson")
+
+
+Bundesamt für Landestopographie swisstopo
+\pagebreak
+
+
+{% for theme in themes -%}
 
 ## Theme {{ theme.name |upper}} ##
 {% for cls in theme.classes -%}
 ### Class {{ cls.name }} ###
 {{ cls.description| trim }}
 
-|Name|Type|Description|
-|---------------|----------------------------------------|----------------------------------------|
+
+
+
+Name                    | Type                                   | Description
+------------------------|----------------------------------------|---------------------------------
 {% for attr in cls.attributes -%}
-| {{ attr.name  }}   | {{ attr.att_type}}               |  {{ attr.description   }}                             |
-| [{{ attr.cardinality  }}]  | {{ attr.value}}               |                             |
+{{ attr.name  }}        | {{attr.att_type}}                      | {{ attr.description   }}
+[{{ attr.cardinality}}] |{{attr.value}}                        |
 {% endfor %}
 
 

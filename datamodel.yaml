@@ -1,4 +1,5 @@
 # Datenmodell Geologie
+version: 3.5
 
 themes:
   - name: Rock_Bodies
@@ -32,8 +33,10 @@ themes:
             description: Bezeichnung des Leitgesteins
             cardinality: 0..1
           - name: mat_type  # TODO type
-            type:
             description: Materialbezeichnung (lithologische Einheit)
+            type: CD
+            value: GC_LITHO_UNCO_CD  # TODO  check with Stephan
+            cardinality: 0..1
           - name: orig_descr
             description: Originalbezeichnung gemäss der Legende der zugrundeliegenden geologischen Karte
             att_type: string
@@ -45,14 +48,14 @@ themes:
       - name: Unconsolidated_Deposits_PLG
         description: >
           Die Klasse Unconsolidated_Deposits_PLG beinhaltet alle flächenhaft
-          ausgeschiedenen Lockergesteine. Die Angabe, ob eine
-          Lockergesteinsmasse bewegt (durch Gravitation versetzt) wurde, geht
+          ausgeschiedenen Lockergesteine.
+          Die Angabe, ob eine Lockergesteinsmasse bewegt (durch Gravitation versetzt) wurde, geht
           aus der Klasse Instabilities_within_Unconsolidated_Deposits_PLG (Thema
           Geomorphology) hervor. Eine Ausnahme bilden Lockergesteinsmassen,
           welche unter dem Einfluss der Schwerkraft bewegt wurden und keine
           Angaben zum Ausgangsmaterial enthalten (Rutschmassen oder zerrüttete
-          Gesteinsmassen «Sackungsmassen»). Solche Lockergesteine werden sowohl
-          in der Klasse Unconsolidated_Deposits_PLG als auch in der Klasse
+          Gesteinsmassen «Sackungsmassen»).
+          Solche Lockergesteine werden sowohl in der Klasse Unconsolidated_Deposits_PLG als auch in der Klasse
           Instabilities_with_in_Unconsolidated_Deposits_PLG erfasst. Zur näheren
           Erklärung der verschiedenen Objektarten sind im Anhang A einige
           Fallbeispiele abgebildet.
