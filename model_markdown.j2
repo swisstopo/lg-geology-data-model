@@ -22,17 +22,18 @@ Bundesamt für Landestopographie swisstopo
 
 
 
-Name                    | Type                                   | Description
-------------------------|----------------------------------------|---------------------------------
+    | Name                    | Type                                   | Description
+----|-------------------------|----------------------------------------|---------------------------------
 {% for attr in cls.attributes -%}
-{{ attr.name  }}        | {{attr.att_type}}                      | {{ attr.description   }}
-[{{ attr.cardinality}}] |{{attr.value}}                        |
+{{loop.index}} | {{ attr.name  }}        | {{attr.att_type}}                      | {{ attr.description   }}
+               | [{{ attr.cardinality}}] |{{attr.value}}                          |
 {% endfor %}
 
 
 
 {% for attr in cls.attributes -%}
-{{ attr.name }}   _{{ attr.description|trim}}_
+**{{ attr.name }}**
+_{{ attr.description|trim}}_
 
 {% if 'pairs' in attr -%}
 |GeolCode|Deutsch|Français|

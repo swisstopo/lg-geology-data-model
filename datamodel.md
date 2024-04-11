@@ -19,27 +19,28 @@ Die Klasse Unconsolidated_Deposits_PT umfasst einzelne Gesteine (Korngrösse: St
 
 
 
-Name                    | Type                                   | Description
-------------------------|----------------------------------------|---------------------------------
-kind        | subtype                      | Objektart
-[1] |14401                        |
-status        | CD                      | Zustand der Objektart
-[1] |GC_PNT_RUNC_STATUS_CD                        |
-rock_type        | CD                      | Gesteinstyp (Kristallingestein / Sedimentgestein)
-[0..1] |GC_PNT_RUNC_ROCK_TYP_CD                        |
-rock_spe        | CD                      | Bezeichnung des Leitgesteins
-[0..1] |GC_PNT_RUNC_ROCK_SPE_CD                        |
-mat_type        |                       | Materialbezeichnung (lithologische Einheit)
-[0..1] |GC_LITHO_UNCO_CD                        |
-orig_descr        | string                      | Originalbezeichnung gemäss der Legende der zugrundeliegenden geologischen Karte
-[0..1] |                        |
-protected        | boolean                      | Geschütztes geologisches Objekt
-[0..1] |                        |
+    | Name                    | Type                                   | Description
+----|-------------------------|----------------------------------------|---------------------------------
+1 | kind        | subtype                      | Objektart
+               | [1] |14401                          |
+2 | status        | CD                      | Zustand der Objektart
+               | [1] |GC_PNT_RUNC_STATUS_CD                          |
+3 | rock_type        | CD                      | Gesteinstyp (Kristallingestein / Sedimentgestein)
+               | [0..1] |GC_PNT_RUNC_ROCK_TYP_CD                          |
+4 | rock_spe        | CD                      | Bezeichnung des Leitgesteins
+               | [0..1] |GC_PNT_RUNC_ROCK_SPE_CD                          |
+5 | mat_type        |                       | Materialbezeichnung (lithologische Einheit)
+               | [0..1] |GC_LITHO_UNCO_CD                          |
+6 | orig_descr        | string                      | Originalbezeichnung gemäss der Legende der zugrundeliegenden geologischen Karte
+               | [0..1] |                          |
+7 | protected        | boolean                      | Geschütztes geologisches Objekt
+               | [0..1] |                          |
 
 
 
 
-kind   _Objektart_
+**kind**
+_Objektart_
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -54,7 +55,8 @@ kind   _Objektart_
 
 
    
-status   _Zustand der Objektart_
+**status**
+_Zustand der Objektart_
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -67,7 +69,8 @@ status   _Zustand der Objektart_
 
 
    
-rock_type   _Gesteinstyp (Kristallingestein / Sedimentgestein)_
+**rock_type**
+_Gesteinstyp (Kristallingestein / Sedimentgestein)_
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -79,7 +82,8 @@ rock_type   _Gesteinstyp (Kristallingestein / Sedimentgestein)_
 
 
    
-rock_spe   _Bezeichnung des Leitgesteins_
+**rock_spe**
+_Bezeichnung des Leitgesteins_
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -114,15 +118,18 @@ rock_spe   _Bezeichnung des Leitgesteins_
 
 
    
-mat_type   _Materialbezeichnung (lithologische Einheit)_
+**mat_type**
+_Materialbezeichnung (lithologische Einheit)_
 
 
    
-orig_descr   _Originalbezeichnung gemäss der Legende der zugrundeliegenden geologischen Karte_
+**orig_descr**
+_Originalbezeichnung gemäss der Legende der zugrundeliegenden geologischen Karte_
 
 
    
-protected   _Geschütztes geologisches Objekt_
+**protected**
+_Geschütztes geologisches Objekt_
 
 
    
@@ -133,45 +140,46 @@ Die Klasse Unconsolidated_Deposits_PLG beinhaltet alle flächenhaft ausgeschiede
 
 
 
-Name                    | Type                                   | Description
-------------------------|----------------------------------------|---------------------------------
-kind        | subtype                      | Objektart
-[1] |14517                        |
-litstrat        | CD                      | 
-[1] |GC_LITSTRAT_UNCO_CD                        |
-litho        | CD                      | 
-[1..3] |GC_LITHO_CD                        |
-chrono_t        | CD                      | 
-[1] |GC_CHRONO_CD                        |
-chrono_b        | CD                      | 
-[1] |GC_CHRONO_CD                        |
-mat_type        |                       | 
-[0..3] |Lithostratigraphic_Units_Litho                        |
-buried_out        | boolean                      | 
-[1] |                        |
-composit        | table                      | 
-[0..3] |gc_composit                        |
-admixture        | table                      | 
-[0..2] |gc_admixture                        |
-structur        | CD                      | Textur des Lockergesteins
-[0..1] |GC_UN_DEP_RUNC_STRUCTUR_CD                        |
-charact        | table                      | Spezifische Eigenschaft
-[0..3] |gc_charcat                        |
-morpholo        | CD                      | Morphologie der Lockergesteinseinheit
-[0..1] |GC_UN_DEP_RUNC_MORPHOLO_CD                        |
-glac_type        | CD                      | Gletschertyp; Attribut nur für Moränen
-[0..1] |GC_UN_DEP_RUNC_GLAC_TYP_CD                        |
-ref_year        | string                      | Zeitpunkt oder Zeitperiode. Zum Beispiel «1940 1943, Periode der Drainage» (muss präzisiert werden)
-[0..1] |                        |
-thin_cover        | CD                      | Lockermaterialbedeckung, wenn vorhanden.
-[0..1] |GC_UN_DEP_RUNC_THIN_COV_CD                        |
-orig_descr        |                       | Originalbezeichnung gemäss der Legende der zugrundeliegenden geologischen Karte
-[1] |string                        |
+    | Name                    | Type                                   | Description
+----|-------------------------|----------------------------------------|---------------------------------
+1 | kind        | subtype                      | Objektart
+               | [1] |14517                          |
+2 | litstrat        | CD                      | 
+               | [1] |GC_LITSTRAT_UNCO_CD                          |
+3 | litho        | CD                      | 
+               | [1..3] |GC_LITHO_CD                          |
+4 | chrono_t        | CD                      | 
+               | [1] |GC_CHRONO_CD                          |
+5 | chrono_b        | CD                      | 
+               | [1] |GC_CHRONO_CD                          |
+6 | mat_type        |                       | 
+               | [0..3] |Lithostratigraphic_Units_Litho                          |
+7 | buried_out        | boolean                      | 
+               | [1] |                          |
+8 | composit        | table                      | 
+               | [0..3] |gc_composit                          |
+9 | admixture        | table                      | 
+               | [0..2] |gc_admixture                          |
+10 | structur        | CD                      | Textur des Lockergesteins
+               | [0..1] |GC_UN_DEP_RUNC_STRUCTUR_CD                          |
+11 | charact        | table                      | Spezifische Eigenschaft
+               | [0..3] |gc_charcat                          |
+12 | morpholo        | CD                      | Morphologie der Lockergesteinseinheit
+               | [0..1] |GC_UN_DEP_RUNC_MORPHOLO_CD                          |
+13 | glac_type        | CD                      | Gletschertyp; Attribut nur für Moränen
+               | [0..1] |GC_UN_DEP_RUNC_GLAC_TYP_CD                          |
+14 | ref_year        | string                      | Zeitpunkt oder Zeitperiode. Zum Beispiel «1940 1943, Periode der Drainage» (muss präzisiert werden)
+               | [0..1] |                          |
+15 | thin_cover        | CD                      | Lockermaterialbedeckung, wenn vorhanden.
+               | [0..1] |GC_UN_DEP_RUNC_THIN_COV_CD                          |
+16 | orig_descr        |                       | Originalbezeichnung gemäss der Legende der zugrundeliegenden geologischen Karte
+               | [1] |string                          |
 
 
 
 
-kind   _Objektart_
+**kind**
+_Objektart_
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -179,7 +187,8 @@ kind   _Objektart_
 
 
    
-litstrat   __
+**litstrat**
+__
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -638,7 +647,8 @@ litstrat   __
 
 
    
-litho   __
+**litho**
+__
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -1008,7 +1018,8 @@ litho   __
 
 
    
-chrono_t   __
+**chrono_t**
+__
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -1154,7 +1165,8 @@ chrono_t   __
 
 
    
-chrono_b   __
+**chrono_b**
+__
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -1300,23 +1312,28 @@ chrono_b   __
 
 
    
-mat_type   __
+**mat_type**
+__
 
 
    
-buried_out   __
+**buried_out**
+__
 
 
    
-composit   __
+**composit**
+__
 
 
    
-admixture   __
+**admixture**
+__
 
 
    
-structur   _Textur des Lockergesteins_
+**structur**
+_Textur des Lockergesteins_
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -1337,11 +1354,13 @@ structur   _Textur des Lockergesteins_
 
 
    
-charact   _Spezifische Eigenschaft_
+**charact**
+_Spezifische Eigenschaft_
 
 
    
-morpholo   _Morphologie der Lockergesteinseinheit_
+**morpholo**
+_Morphologie der Lockergesteinseinheit_
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -1358,7 +1377,8 @@ morpholo   _Morphologie der Lockergesteinseinheit_
 
 
    
-glac_type   _Gletschertyp; Attribut nur für Moränen_
+**glac_type**
+_Gletschertyp; Attribut nur für Moränen_
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -1380,11 +1400,13 @@ glac_type   _Gletschertyp; Attribut nur für Moränen_
 
 
    
-ref_year   _Zeitpunkt oder Zeitperiode. Zum Beispiel «1940 1943, Periode der Drainage» (muss präzisiert werden)_
+**ref_year**
+_Zeitpunkt oder Zeitperiode. Zum Beispiel «1940 1943, Periode der Drainage» (muss präzisiert werden)_
 
 
    
-thin_cover   _Lockermaterialbedeckung, wenn vorhanden._
+**thin_cover**
+_Lockermaterialbedeckung, wenn vorhanden._
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -1399,7 +1421,8 @@ thin_cover   _Lockermaterialbedeckung, wenn vorhanden._
 
 
    
-orig_descr   _Originalbezeichnung gemäss der Legende der zugrundeliegenden geologischen Karte_
+**orig_descr**
+_Originalbezeichnung gemäss der Legende der zugrundeliegenden geologischen Karte_
 
 
    
@@ -1410,59 +1433,60 @@ Die Klasse Bedrock_PLG enthält alle flächenbildenden lithostratigraphischen Fe
 
 
 
-Name                    | Type                                   | Description
-------------------------|----------------------------------------|---------------------------------
-kind        | subtype                      | Spezifische Eigenschaft
-[1] |14334001                        |
-fm_homog        |                       | Gesteinsaufbau
-[] |                        |
-listrat        | CD                      | Lithostratigraphische Einhei
-[1] |GC_LITSTRAT_BED_CD                        |
-litho        | CD                      | Lithologische Beschreibung
-[1..3] |GC_LITHO_CD                        |
-chrono_t        | CD                      | Chronostratigraphische Zuordnung der Obergrenze der Kartiereinheit (Top)
-[1] |GC_CHRONO_CD                        |
-chrono_b        | CD                      | Chronostratigraphische Zuordnung der Untergrenze der Kartiereinheit (Basis)
-[1] |GC_CHRONO_CD                        |
-tecto        | CD                      | Tektonische Zugehörigkeit
-[1] |GC_TECTO_CD                        |
-orig_descr        | string                      | Originalbezeichnung gemäss der Legende der zugrundeliegenden geologischen Karte
-[1] |                        |
-buried_out        | boolean                      | Wurde das Festgestein wieder verdeckt (ja / nein)?
-[1] |                        |
-exotic_ele        |                       | Handelt es sich bei der Objektart um ein exotisches Element; z.B. Einschluss, Linse, Tasche, Olistholith (ja / nein)?
-[1] |boolean                        |
-colour        | string                      | Farbe des Gesteins. Präzisieren ob es sich um die Bruchfarbe, die Verwitterungsfarbe, etc. handelt; z.B.Verwitterungsfarbe grau.
-[0..1] |                        |
-sedi_main_com        | CD                      | Hauptgesteinskomponente des klastischen Sedimentgesteins
-[0..1] |GC_MAIN_COM_CD                        |
-sedi_seco_com        | CD                      | Nebengesteinskomponente des Sedimentgesteins
-[0..2] |GC_SECO_COM_CD                        |
-sedi_bond_mat        | CD                      | Bindemittel des Sedimentgesteins
-[0..1] |GC_BOND_MAT_CD                        |
-sedi_bedding        | CD                      | Schichtung des Sedimentgesteins
-[0..2] |GC_BEDDING_CD                        |
-sedi_str        | CD                      | Textur des Sedimentgesteins
-[0..2] |GC_SEDI_STR_CD                        |
-sedi_tex        | CD                      | Sedimentstruktur
-[] |GC_SEDI_TEX_CD                        |
-igne_text        | CD                      | Struktur des magmatischen Gesteins
-[0..1] |GC_IGNE_TEX_CD                        |
-igne_grain_si        | CD                      | Korngrösse des magmatischen Gesteins
-[0..1] |GC_GRAIN_SI_CD                        |
-igne_affinity        | CD                      | Affinität zu einer magmatischen Serie.
-[] |GC_AFFINITY_CD                        |
-meta_full_name        | string                      | Bezeichnung des metamorphen Gesteins
-[0..1] |                        |
-meta_mineral        | CD                      | Wichtiges Mineral des metamorphen Gesteins
-[0..3] |GC_MINERAL_CD                        |
-meta_str        | CD                      | Textur des metamorphen Gesteins
-[0..3] |GC_META_STR_CD                        |
+    | Name                    | Type                                   | Description
+----|-------------------------|----------------------------------------|---------------------------------
+1 | kind        | subtype                      | Spezifische Eigenschaft
+               | [1] |14334001                          |
+2 | fm_homog        |                       | Gesteinsaufbau
+               | [] |                          |
+3 | listrat        | CD                      | Lithostratigraphische Einhei
+               | [1] |GC_LITSTRAT_BED_CD                          |
+4 | litho        | CD                      | Lithologische Beschreibung
+               | [1..3] |GC_LITHO_CD                          |
+5 | chrono_t        | CD                      | Chronostratigraphische Zuordnung der Obergrenze der Kartiereinheit (Top)
+               | [1] |GC_CHRONO_CD                          |
+6 | chrono_b        | CD                      | Chronostratigraphische Zuordnung der Untergrenze der Kartiereinheit (Basis)
+               | [1] |GC_CHRONO_CD                          |
+7 | tecto        | CD                      | Tektonische Zugehörigkeit
+               | [1] |GC_TECTO_CD                          |
+8 | orig_descr        | string                      | Originalbezeichnung gemäss der Legende der zugrundeliegenden geologischen Karte
+               | [1] |                          |
+9 | buried_out        | boolean                      | Wurde das Festgestein wieder verdeckt (ja / nein)?
+               | [1] |                          |
+10 | exotic_ele        |                       | Handelt es sich bei der Objektart um ein exotisches Element; z.B. Einschluss, Linse, Tasche, Olistholith (ja / nein)?
+               | [1] |boolean                          |
+11 | colour        | string                      | Farbe des Gesteins. Präzisieren ob es sich um die Bruchfarbe, die Verwitterungsfarbe, etc. handelt; z.B.Verwitterungsfarbe grau.
+               | [0..1] |                          |
+12 | sedi_main_com        | CD                      | Hauptgesteinskomponente des klastischen Sedimentgesteins
+               | [0..1] |GC_MAIN_COM_CD                          |
+13 | sedi_seco_com        | CD                      | Nebengesteinskomponente des Sedimentgesteins
+               | [0..2] |GC_SECO_COM_CD                          |
+14 | sedi_bond_mat        | CD                      | Bindemittel des Sedimentgesteins
+               | [0..1] |GC_BOND_MAT_CD                          |
+15 | sedi_bedding        | CD                      | Schichtung des Sedimentgesteins
+               | [0..2] |GC_BEDDING_CD                          |
+16 | sedi_str        | CD                      | Textur des Sedimentgesteins
+               | [0..2] |GC_SEDI_STR_CD                          |
+17 | sedi_tex        | CD                      | Sedimentstruktur
+               | [] |GC_SEDI_TEX_CD                          |
+18 | igne_text        | CD                      | Struktur des magmatischen Gesteins
+               | [0..1] |GC_IGNE_TEX_CD                          |
+19 | igne_grain_si        | CD                      | Korngrösse des magmatischen Gesteins
+               | [0..1] |GC_GRAIN_SI_CD                          |
+20 | igne_affinity        | CD                      | Affinität zu einer magmatischen Serie.
+               | [] |GC_AFFINITY_CD                          |
+21 | meta_full_name        | string                      | Bezeichnung des metamorphen Gesteins
+               | [0..1] |                          |
+22 | meta_mineral        | CD                      | Wichtiges Mineral des metamorphen Gesteins
+               | [0..3] |GC_MINERAL_CD                          |
+23 | meta_str        | CD                      | Textur des metamorphen Gesteins
+               | [0..3] |GC_META_STR_CD                          |
 
 
 
 
-kind   _Spezifische Eigenschaft_
+**kind**
+_Spezifische Eigenschaft_
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -1470,11 +1494,13 @@ kind   _Spezifische Eigenschaft_
 
 
    
-fm_homog   _Gesteinsaufbau_
+**fm_homog**
+_Gesteinsaufbau_
 
 
    
-listrat   _Lithostratigraphische Einhei_
+**listrat**
+_Lithostratigraphische Einhei_
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -3695,7 +3721,8 @@ listrat   _Lithostratigraphische Einhei_
 
 
    
-litho   _Lithologische Beschreibung_
+**litho**
+_Lithologische Beschreibung_
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -4065,7 +4092,8 @@ litho   _Lithologische Beschreibung_
 
 
    
-chrono_t   _Chronostratigraphische Zuordnung der Obergrenze der Kartiereinheit (Top)_
+**chrono_t**
+_Chronostratigraphische Zuordnung der Obergrenze der Kartiereinheit (Top)_
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -4211,7 +4239,8 @@ chrono_t   _Chronostratigraphische Zuordnung der Obergrenze der Kartiereinheit (
 
 
    
-chrono_b   _Chronostratigraphische Zuordnung der Untergrenze der Kartiereinheit (Basis)_
+**chrono_b**
+_Chronostratigraphische Zuordnung der Untergrenze der Kartiereinheit (Basis)_
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -4357,7 +4386,8 @@ chrono_b   _Chronostratigraphische Zuordnung der Untergrenze der Kartiereinheit 
 
 
    
-tecto   _Tektonische Zugehörigkeit_
+**tecto**
+_Tektonische Zugehörigkeit_
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -4756,23 +4786,28 @@ tecto   _Tektonische Zugehörigkeit_
 
 
    
-orig_descr   _Originalbezeichnung gemäss der Legende der zugrundeliegenden geologischen Karte_
+**orig_descr**
+_Originalbezeichnung gemäss der Legende der zugrundeliegenden geologischen Karte_
 
 
    
-buried_out   _Wurde das Festgestein wieder verdeckt (ja / nein)?_
+**buried_out**
+_Wurde das Festgestein wieder verdeckt (ja / nein)?_
 
 
    
-exotic_ele   _Handelt es sich bei der Objektart um ein exotisches Element; z.B. Einschluss, Linse, Tasche, Olistholith (ja / nein)?_
+**exotic_ele**
+_Handelt es sich bei der Objektart um ein exotisches Element; z.B. Einschluss, Linse, Tasche, Olistholith (ja / nein)?_
 
 
    
-colour   _Farbe des Gesteins. Präzisieren ob es sich um die Bruchfarbe, die Verwitterungsfarbe, etc. handelt; z.B.Verwitterungsfarbe grau._
+**colour**
+_Farbe des Gesteins. Präzisieren ob es sich um die Bruchfarbe, die Verwitterungsfarbe, etc. handelt; z.B.Verwitterungsfarbe grau._
 
 
    
-sedi_main_com   _Hauptgesteinskomponente des klastischen Sedimentgesteins_
+**sedi_main_com**
+_Hauptgesteinskomponente des klastischen Sedimentgesteins_
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -4791,7 +4826,8 @@ sedi_main_com   _Hauptgesteinskomponente des klastischen Sedimentgesteins_
 
 
    
-sedi_seco_com   _Nebengesteinskomponente des Sedimentgesteins_
+**sedi_seco_com**
+_Nebengesteinskomponente des Sedimentgesteins_
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -4826,7 +4862,8 @@ sedi_seco_com   _Nebengesteinskomponente des Sedimentgesteins_
 
 
    
-sedi_bond_mat   _Bindemittel des Sedimentgesteins_
+**sedi_bond_mat**
+_Bindemittel des Sedimentgesteins_
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -4845,7 +4882,8 @@ sedi_bond_mat   _Bindemittel des Sedimentgesteins_
 
 
    
-sedi_bedding   _Schichtung des Sedimentgesteins_
+**sedi_bedding**
+_Schichtung des Sedimentgesteins_
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -4862,7 +4900,8 @@ sedi_bedding   _Schichtung des Sedimentgesteins_
 
 
    
-sedi_str   _Textur des Sedimentgesteins_
+**sedi_str**
+_Textur des Sedimentgesteins_
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -4879,7 +4918,8 @@ sedi_str   _Textur des Sedimentgesteins_
 
 
    
-sedi_tex   _Sedimentstruktur_
+**sedi_tex**
+_Sedimentstruktur_
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -4897,7 +4937,8 @@ sedi_tex   _Sedimentstruktur_
 
 
    
-igne_text   _Struktur des magmatischen Gesteins_
+**igne_text**
+_Struktur des magmatischen Gesteins_
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -4909,7 +4950,8 @@ igne_text   _Struktur des magmatischen Gesteins_
 
 
    
-igne_grain_si   _Korngrösse des magmatischen Gesteins_
+**igne_grain_si**
+_Korngrösse des magmatischen Gesteins_
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -4921,7 +4963,8 @@ igne_grain_si   _Korngrösse des magmatischen Gesteins_
 
 
    
-igne_affinity   _Affinität zu einer magmatischen Serie._
+**igne_affinity**
+_Affinität zu einer magmatischen Serie._
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -4933,11 +4976,13 @@ igne_affinity   _Affinität zu einer magmatischen Serie._
 
 
    
-meta_full_name   _Bezeichnung des metamorphen Gesteins_
+**meta_full_name**
+_Bezeichnung des metamorphen Gesteins_
 
 
    
-meta_mineral   _Wichtiges Mineral des metamorphen Gesteins_
+**meta_mineral**
+_Wichtiges Mineral des metamorphen Gesteins_
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -5029,7 +5074,8 @@ meta_mineral   _Wichtiges Mineral des metamorphen Gesteins_
 
 
    
-meta_str   _Textur des metamorphen Gesteins_
+**meta_str**
+_Textur des metamorphen Gesteins_
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -5068,15 +5114,16 @@ gedruckter Karten gedacht.
 
 
 
-Name                    | Type                                   | Description
-------------------------|----------------------------------------|---------------------------------
-kind        | subtype                      | Spezifische Eigenschaft
-[1] |11601                        |
+    | Name                    | Type                                   | Description
+----|-------------------------|----------------------------------------|---------------------------------
+1 | kind        | subtype                      | Spezifische Eigenschaft
+               | [1] |11601                          |
 
 
 
 
-kind   _Spezifische Eigenschaft_
+**kind**
+_Spezifische Eigenschaft_
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -5094,15 +5141,16 @@ Rutschung oder Sackung (Abrissnische)
 
 
 
-Name                    | Type                                   | Description
-------------------------|----------------------------------------|---------------------------------
-kind        | subtype                      | Spezifische Eigenschaft
-[1] |11701                        |
+    | Name                    | Type                                   | Description
+----|-------------------------|----------------------------------------|---------------------------------
+1 | kind        | subtype                      | Spezifische Eigenschaft
+               | [1] |11701                          |
 
 
 
 
-kind   _Spezifische Eigenschaft_
+**kind**
+_Spezifische Eigenschaft_
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -5126,15 +5174,16 @@ abgebildet.
 
 
 
-Name                    | Type                                   | Description
-------------------------|----------------------------------------|---------------------------------
-kind        | subtype                      | Spezifische Eigenschaft
-[1] |11801                        |
+    | Name                    | Type                                   | Description
+----|-------------------------|----------------------------------------|---------------------------------
+1 | kind        | subtype                      | Spezifische Eigenschaft
+               | [1] |11801                          |
 
 
 
 
-kind   _Spezifische Eigenschaft_
+**kind**
+_Spezifische Eigenschaft_
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -5153,24 +5202,26 @@ abgebildet.
 
 
 
-Name                    | Type                                   | Description
-------------------------|----------------------------------------|---------------------------------
-kind        | subtype                      | Spezifische Eigenschaft
-[1] |11501                        |
-main_mov        | CD                      | Hauptbewegungsphase
-[0..1] |GC_SURF_GINS_MAIN_MOV_CD                        |
+    | Name                    | Type                                   | Description
+----|-------------------------|----------------------------------------|---------------------------------
+1 | kind        | subtype                      | Spezifische Eigenschaft
+               | [1] |11501                          |
+2 | main_mov        | CD                      | Hauptbewegungsphase
+               | [0..1] |GC_SURF_GINS_MAIN_MOV_CD                          |
 
 
 
 
-kind   _Spezifische Eigenschaft_
+**kind**
+_Spezifische Eigenschaft_
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
 
 
    
-main_mov   _Hauptbewegungsphase_
+**main_mov**
+_Hauptbewegungsphase_
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -5190,15 +5241,16 @@ befindet sich deshalb in der Klasse Lineation_PT).
 
 
 
-Name                    | Type                                   | Description
-------------------------|----------------------------------------|---------------------------------
-kind        | subtype                      | Spezifische Eigenschaft
-[1] |11201                        |
+    | Name                    | Type                                   | Description
+----|-------------------------|----------------------------------------|---------------------------------
+1 | kind        | subtype                      | Spezifische Eigenschaft
+               | [1] |11201                          |
 
 
 
 
-kind   _Spezifische Eigenschaft_
+**kind**
+_Spezifische Eigenschaft_
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -5217,27 +5269,28 @@ Blockwülste im Blockgletscher.
 
 
 
-Name                    | Type                                   | Description
-------------------------|----------------------------------------|---------------------------------
-kind        | subtype                      | Objektart
-[1] |11301                        |
-morai_mo        | CD                      | Morphologie der Moräne
-[0..1] |GC_LIN_GGLA_MORAI_MO_CD                        |
-glac_typ        | CD                      | Gletschertyp, auf welchen die Objektart bezogen ist
-[0..1] |GC_LIN_GGLA_GLAC_TYP_CD                        |
-ice_m_p        | CD                      | Räumlicher Gletscherstand
-[0..1] |GC_LIN_GGLA_ICE_M_P_CD                        |
-quat_str        | CD                      | Zeitliche quartärstratigraphische Zuordnung des Moränenwälls
-[0..1] |GC_LIN_GGLA_QUAT_STR_CD                        |
-ref_year        | integer                      | Referenzjahr des älteren Gletscherstandes.
-[0..1] |                        |
-source        | string                      | Quellenangabe der historischen Unterlagen
-[0..1] |                        |
+    | Name                    | Type                                   | Description
+----|-------------------------|----------------------------------------|---------------------------------
+1 | kind        | subtype                      | Objektart
+               | [1] |11301                          |
+2 | morai_mo        | CD                      | Morphologie der Moräne
+               | [0..1] |GC_LIN_GGLA_MORAI_MO_CD                          |
+3 | glac_typ        | CD                      | Gletschertyp, auf welchen die Objektart bezogen ist
+               | [0..1] |GC_LIN_GGLA_GLAC_TYP_CD                          |
+4 | ice_m_p        | CD                      | Räumlicher Gletscherstand
+               | [0..1] |GC_LIN_GGLA_ICE_M_P_CD                          |
+5 | quat_str        | CD                      | Zeitliche quartärstratigraphische Zuordnung des Moränenwälls
+               | [0..1] |GC_LIN_GGLA_QUAT_STR_CD                          |
+6 | ref_year        | integer                      | Referenzjahr des älteren Gletscherstandes.
+               | [0..1] |                          |
+7 | source        | string                      | Quellenangabe der historischen Unterlagen
+               | [0..1] |                          |
 
 
 
 
-kind   _Objektart_
+**kind**
+_Objektart_
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -5253,7 +5306,8 @@ kind   _Objektart_
 
 
    
-morai_mo   _Morphologie der Moräne_
+**morai_mo**
+_Morphologie der Moräne_
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -5264,7 +5318,8 @@ morai_mo   _Morphologie der Moräne_
 
 
    
-glac_typ   _Gletschertyp, auf welchen die Objektart bezogen ist_
+**glac_typ**
+_Gletschertyp, auf welchen die Objektart bezogen ist_
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -5275,7 +5330,8 @@ glac_typ   _Gletschertyp, auf welchen die Objektart bezogen ist_
 
 
    
-ice_m_p   _Räumlicher Gletscherstand_
+**ice_m_p**
+_Räumlicher Gletscherstand_
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -5343,7 +5399,8 @@ ice_m_p   _Räumlicher Gletscherstand_
 
 
    
-quat_str   _Zeitliche quartärstratigraphische Zuordnung des Moränenwälls_
+**quat_str**
+_Zeitliche quartärstratigraphische Zuordnung des Moränenwälls_
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -5360,11 +5417,13 @@ quat_str   _Zeitliche quartärstratigraphische Zuordnung des Moränenwälls_
 
 
    
-ref_year   _Referenzjahr des älteren Gletscherstandes._
+**ref_year**
+_Referenzjahr des älteren Gletscherstandes._
 
 
    
-source   _Quellenangabe der historischen Unterlagen_
+**source**
+_Quellenangabe der historischen Unterlagen_
 
 
    
@@ -5376,15 +5435,16 @@ basales Fliessen des Gletschereises oder dessen Abschmelzen entstanden sind.
 
 
 
-Name                    | Type                                   | Description
-------------------------|----------------------------------------|---------------------------------
-kind        | subtype                      | Objektart
-[1] |11401                        |
+    | Name                    | Type                                   | Description
+----|-------------------------|----------------------------------------|---------------------------------
+1 | kind        | subtype                      | Objektart
+               | [1] |11401                          |
 
 
 
 
-kind   _Objektart_
+**kind**
+_Objektart_
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -5402,15 +5462,16 @@ Zeit unter Einwirkung von diversen Erosionsprozessen gebildet haben.
 
 
 
-Name                    | Type                                   | Description
-------------------------|----------------------------------------|---------------------------------
-kind        | subtype                      | Objektart
-[1] |11001                        |
+    | Name                    | Type                                   | Description
+----|-------------------------|----------------------------------------|---------------------------------
+1 | kind        | subtype                      | Objektart
+               | [1] |11001                          |
 
 
 
 
-kind   _Objektart_
+**kind**
+_Objektart_
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -5432,15 +5493,16 @@ werden können. Zweifelhafte Fälle werden als Erosionsränder aufgenommen.
 
 
 
-Name                    | Type                                   | Description
-------------------------|----------------------------------------|---------------------------------
-kind        | subtype                      | Objektart
-[1] |11101                        |
+    | Name                    | Type                                   | Description
+----|-------------------------|----------------------------------------|---------------------------------
+1 | kind        | subtype                      | Objektart
+               | [1] |11101                          |
 
 
 
 
-kind   _Objektart_
+**kind**
+_Objektart_
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -5458,20 +5520,21 @@ Darunter fallen u.a. der Ponor oder der Eingang zu einer Höhle.
 
 
 
-Name                    | Type                                   | Description
-------------------------|----------------------------------------|---------------------------------
-kind        | subtype                      | Objektart
-[1] |11301                        |
-ice_cave        | boolean                      | Handelt es sich bei der Höhle um eine Eisgrotte («glacière», aussergewöhnlich kalte Höhle in der sich
+    | Name                    | Type                                   | Description
+----|-------------------------|----------------------------------------|---------------------------------
+1 | kind        | subtype                      | Objektart
+               | [1] |11301                          |
+2 | ice_cave        | boolean                      | Handelt es sich bei der Höhle um eine Eisgrotte («glacière», aussergewöhnlich kalte Höhle in der sich
 durch die winterlichen Schneefälle oder durch das Gefrieren von eingedrungenem Wasser Eis akkumuliert
 und das auch die warme Jahreszeit überdauert) (ja / nein)?
 
-[0..1] |                        |
+               | [0..1] |                          |
 
 
 
 
-kind   _Objektart_
+**kind**
+_Objektart_
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -5487,7 +5550,8 @@ kind   _Objektart_
 
 
    
-ice_cave   _Handelt es sich bei der Höhle um eine Eisgrotte («glacière», aussergewöhnlich kalte Höhle in der sich
+**ice_cave**
+_Handelt es sich bei der Höhle um eine Eisgrotte («glacière», aussergewöhnlich kalte Höhle in der sich
 durch die winterlichen Schneefälle oder durch das Gefrieren von eingedrungenem Wasser Eis akkumuliert
 und das auch die warme Jahreszeit überdauert) (ja / nein)?_
 
@@ -5503,15 +5567,16 @@ dargestellt.
 
 
 
-Name                    | Type                                   | Description
-------------------------|----------------------------------------|---------------------------------
-kind        | subtype                      | Objektart
-[1] |12001                        |
+    | Name                    | Type                                   | Description
+----|-------------------------|----------------------------------------|---------------------------------
+1 | kind        | subtype                      | Objektart
+               | [1] |12001                          |
 
 
 
 
-kind   _Objektart_
+**kind**
+_Objektart_
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -5530,17 +5595,18 @@ fluviatilen oder lakustrischen Ursprungs.
 
 
 
-Name                    | Type                                   | Description
-------------------------|----------------------------------------|---------------------------------
-kind        | subtype                      | Objektart
-[1] |10901                        |
-age        | CD                      | Alter der Objektart.
-[0..1] |GC_LIN_GALL_AGE_CD                        |
+    | Name                    | Type                                   | Description
+----|-------------------------|----------------------------------------|---------------------------------
+1 | kind        | subtype                      | Objektart
+               | [1] |10901                          |
+2 | age        | CD                      | Alter der Objektart.
+               | [0..1] |GC_LIN_GALL_AGE_CD                          |
 
 
 
 
-kind   _Objektart_
+**kind**
+_Objektart_
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -5549,7 +5615,8 @@ kind   _Objektart_
 
 
    
-age   _Alter der Objektart._
+**age**
+_Alter der Objektart._
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -5575,25 +5642,26 @@ Verständlichkeit abgebildet.
 
 
 
-Name                    | Type                                   | Description
-------------------------|----------------------------------------|---------------------------------
-kind        | subtype                      | Objektart
-[1] |14601                        |
-azimuth        | integer                      | Fallrichtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad (0° 359°) im Uhrzeigersinn gemessen.
-[0..1] |                        |
-dip        | integer                      | Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die
+    | Name                    | Type                                   | Description
+----|-------------------------|----------------------------------------|---------------------------------
+1 | kind        | subtype                      | Objektart
+               | [1] |14601                          |
+2 | azimuth        | integer                      | Fallrichtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad (0° 359°) im Uhrzeigersinn gemessen.
+               | [0..1] |                          |
+3 | dip        | integer                      | Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die
 Vertikale (90°).
 
-[0..1] |                        |
-fold_typ        | CD                      | Objekttyp
-[0..1] |GC_PNT_TDEF_FOLD_TYP_CD                        |
-fold_for        | CD                      | Objektform
-[0..1] |GC_PNT_TDEF_FOLD_FOR_CD                        |
+               | [0..1] |                          |
+4 | fold_typ        | CD                      | Objekttyp
+               | [0..1] |GC_PNT_TDEF_FOLD_TYP_CD                          |
+5 | fold_for        | CD                      | Objektform
+               | [0..1] |GC_PNT_TDEF_FOLD_FOR_CD                          |
 
 
 
 
-kind   _Objektart_
+**kind**
+_Objektart_
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -5607,16 +5675,19 @@ kind   _Objektart_
 
 
    
-azimuth   _Fallrichtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad (0° 359°) im Uhrzeigersinn gemessen._
+**azimuth**
+_Fallrichtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad (0° 359°) im Uhrzeigersinn gemessen._
 
 
    
-dip   _Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die
+**dip**
+_Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die
 Vertikale (90°)._
 
 
    
-fold_typ   _Objekttyp_
+**fold_typ**
+_Objekttyp_
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -5627,7 +5698,8 @@ fold_typ   _Objekttyp_
 
 
    
-fold_for   _Objektform_
+**fold_for**
+_Objektform_
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -5647,15 +5719,16 @@ Anhang A abgebildet.
 
 
 
-Name                    | Type                                   | Description
-------------------------|----------------------------------------|---------------------------------
-kind        | subtype                      | Objektart
-[1] |14701                        |
+    | Name                    | Type                                   | Description
+----|-------------------------|----------------------------------------|---------------------------------
+1 | kind        | subtype                      | Objektart
+               | [1] |14701                          |
 
 
 
 
-kind   _Objektart_
+**kind**
+_Objektart_
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -5671,19 +5744,20 @@ tektonisierte Zonen oder Kluftzonen.
 
 
 
-Name                    | Type                                   | Description
-------------------------|----------------------------------------|---------------------------------
-kind        | subtype                      | Objektart
-[1] |14801                        |
-type        | CD                      | Charakteristik der Objektarten
-[0..1] |GC_SURF_TDEF_TYPE_CD                        |
-gen_rela        | CDD                      | Genetische Beziehung.
-[0..1] |None                        |
+    | Name                    | Type                                   | Description
+----|-------------------------|----------------------------------------|---------------------------------
+1 | kind        | subtype                      | Objektart
+               | [1] |14801                          |
+2 | type        | CD                      | Charakteristik der Objektarten
+               | [0..1] |GC_SURF_TDEF_TYPE_CD                          |
+3 | gen_rela        | CDD                      | Genetische Beziehung.
+               | [0..1] |None                          |
 
 
 
 
-kind   _Objektart_
+**kind**
+_Objektart_
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -5692,7 +5766,8 @@ kind   _Objektart_
 
 
    
-type   _Charakteristik der Objektarten_
+**type**
+_Charakteristik der Objektarten_
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -5705,7 +5780,8 @@ type   _Charakteristik der Objektarten_
 
 
    
-gen_rela   _Genetische Beziehung._
+**gen_rela**
+_Genetische Beziehung._
 
 
    
@@ -5723,31 +5799,32 @@ Anhang A Beispiele abgebildet.
 
 
 
-Name                    | Type                                   | Description
-------------------------|----------------------------------------|---------------------------------
-kind        | subtype                      | Objektart
-[1] |14901                        |
-fault_mo        | CD                      | Bewegungsrichtung des Bruchs
-[0..1] |GC_LIN_TTEC_FAULT_MO_CD                        |
-verti_mo        | CD                      | Bewegung parallel zur Fallrichtung der Bruchfläche.
-[0..1] |GC_LIN_TTEC_VERTI_MO_CD                        |
-horiz_mo        | CD                      | Bewegung parallel zur Streichrichtung der Bruch- oder Scherfläche
-[0..1] |GC_LIN_TTEC_HORIZ_MO_CD                        |
-lim_tect_b        | boolean                      | Grenze einer tektonischen Einheit wie Deckengrenze,Schuppengrenze, Zonengrenze, etc. (ja / nein)?
-[1] |                        |
-status        | CD                      | Zustand der Objektart
-[1] |GC_LIN_TTEC_STATUS_CD                        |
-activity        | TODO                      | Aktivität der Objektart
-[0..1] |                        |
-meta_sta        | CD                      | Tektonometamorphe Chronologie der Objektart
-[0..1] |GC_LIN_TTEC_META_STA_CD                        |
-name        | string                      | Spezifischer Name der Objektart.
-[0..1] |                        |
+    | Name                    | Type                                   | Description
+----|-------------------------|----------------------------------------|---------------------------------
+1 | kind        | subtype                      | Objektart
+               | [1] |14901                          |
+2 | fault_mo        | CD                      | Bewegungsrichtung des Bruchs
+               | [0..1] |GC_LIN_TTEC_FAULT_MO_CD                          |
+3 | verti_mo        | CD                      | Bewegung parallel zur Fallrichtung der Bruchfläche.
+               | [0..1] |GC_LIN_TTEC_VERTI_MO_CD                          |
+4 | horiz_mo        | CD                      | Bewegung parallel zur Streichrichtung der Bruch- oder Scherfläche
+               | [0..1] |GC_LIN_TTEC_HORIZ_MO_CD                          |
+5 | lim_tect_b        | boolean                      | Grenze einer tektonischen Einheit wie Deckengrenze,Schuppengrenze, Zonengrenze, etc. (ja / nein)?
+               | [1] |                          |
+6 | status        | CD                      | Zustand der Objektart
+               | [1] |GC_LIN_TTEC_STATUS_CD                          |
+7 | activity        | TODO                      | Aktivität der Objektart
+               | [0..1] |                          |
+8 | meta_sta        | CD                      | Tektonometamorphe Chronologie der Objektart
+               | [0..1] |GC_LIN_TTEC_META_STA_CD                          |
+9 | name        | string                      | Spezifischer Name der Objektart.
+               | [0..1] |                          |
 
 
 
 
-kind   _Objektart_
+**kind**
+_Objektart_
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -5761,7 +5838,8 @@ kind   _Objektart_
 
 
    
-fault_mo   _Bewegungsrichtung des Bruchs_
+**fault_mo**
+_Bewegungsrichtung des Bruchs_
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -5773,7 +5851,8 @@ fault_mo   _Bewegungsrichtung des Bruchs_
 
 
    
-verti_mo   _Bewegung parallel zur Fallrichtung der Bruchfläche._
+**verti_mo**
+_Bewegung parallel zur Fallrichtung der Bruchfläche._
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -5784,7 +5863,8 @@ verti_mo   _Bewegung parallel zur Fallrichtung der Bruchfläche._
 
 
    
-horiz_mo   _Bewegung parallel zur Streichrichtung der Bruch- oder Scherfläche_
+**horiz_mo**
+_Bewegung parallel zur Streichrichtung der Bruch- oder Scherfläche_
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -5795,11 +5875,13 @@ horiz_mo   _Bewegung parallel zur Streichrichtung der Bruch- oder Scherfläche_
 
 
    
-lim_tect_b   _Grenze einer tektonischen Einheit wie Deckengrenze,Schuppengrenze, Zonengrenze, etc. (ja / nein)?_
+**lim_tect_b**
+_Grenze einer tektonischen Einheit wie Deckengrenze,Schuppengrenze, Zonengrenze, etc. (ja / nein)?_
 
 
    
-status   _Zustand der Objektart_
+**status**
+_Zustand der Objektart_
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -5812,11 +5894,13 @@ status   _Zustand der Objektart_
 
 
    
-activity   _Aktivität der Objektart_
+**activity**
+_Aktivität der Objektart_
 
 
    
-meta_sta   _Tektonometamorphe Chronologie der Objektart_
+**meta_sta**
+_Tektonometamorphe Chronologie der Objektart_
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -5828,7 +5912,8 @@ meta_sta   _Tektonometamorphe Chronologie der Objektart_
 
 
    
-name   _Spezifischer Name der Objektart._
+**name**
+_Spezifischer Name der Objektart._
 
 
    
@@ -5843,31 +5928,32 @@ Faltenachse und der Scheitellinie sind im Anhang A zur besseren Verständlichkei
 
 
 
-Name                    | Type                                   | Description
-------------------------|----------------------------------------|---------------------------------
-kind        | subtype                      | Objektart
-[1] |13601                        |
-fold_typ        | CD                      | Objekttyp
-[0..1] |GC_PNT_MFOL_FOLD_TYP_CD                        |
-fold_for        |                       | Form der Objektart
-[0..1] |13603                        |
-phase        | CD                      | Deformationsphase.
-[0..1] |GC_PNT_MFOL_PHASE_CD                        |
-phase_ref        | string                      | Referenz für die Angabe der Deformationsphase.
-[0..1] |                        |
-azimuth        | integer                      | Einfallsrichtung (Azimut) der jeweiligen Punktobjektart (z.B. Scheitellinie, Faltenachse).
+    | Name                    | Type                                   | Description
+----|-------------------------|----------------------------------------|---------------------------------
+1 | kind        | subtype                      | Objektart
+               | [1] |13601                          |
+2 | fold_typ        | CD                      | Objekttyp
+               | [0..1] |GC_PNT_MFOL_FOLD_TYP_CD                          |
+3 | fold_for        |                       | Form der Objektart
+               | [0..1] |13603                          |
+4 | phase        | CD                      | Deformationsphase.
+               | [0..1] |GC_PNT_MFOL_PHASE_CD                          |
+5 | phase_ref        | string                      | Referenz für die Angabe der Deformationsphase.
+               | [0..1] |                          |
+6 | azimuth        | integer                      | Einfallsrichtung (Azimut) der jeweiligen Punktobjektart (z.B. Scheitellinie, Faltenachse).
 Wert in Grad (0° 359°) im Uhrzeigersinn gemessen
 
-[1] |                        |
-dip        | integer                      | Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die
+               | [1] |                          |
+7 | dip        | integer                      | Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die
 Vertikale (90°).
 
-[0..1] |                        |
+               | [0..1] |                          |
 
 
 
 
-kind   _Objektart_
+**kind**
+_Objektart_
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -5877,7 +5963,8 @@ kind   _Objektart_
 
 
    
-fold_typ   _Objekttyp_
+**fold_typ**
+_Objekttyp_
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -5888,11 +5975,13 @@ fold_typ   _Objekttyp_
 
 
    
-fold_for   _Form der Objektart_
+**fold_for**
+_Form der Objektart_
 
 
    
-phase   _Deformationsphase._
+**phase**
+_Deformationsphase._
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -5904,16 +5993,19 @@ phase   _Deformationsphase._
 
 
    
-phase_ref   _Referenz für die Angabe der Deformationsphase._
+**phase_ref**
+_Referenz für die Angabe der Deformationsphase._
 
 
    
-azimuth   _Einfallsrichtung (Azimut) der jeweiligen Punktobjektart (z.B. Scheitellinie, Faltenachse).
+**azimuth**
+_Einfallsrichtung (Azimut) der jeweiligen Punktobjektart (z.B. Scheitellinie, Faltenachse).
 Wert in Grad (0° 359°) im Uhrzeigersinn gemessen_
 
 
    
-dip   _Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die
+**dip**
+_Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die
 Vertikale (90°)._
 
 
@@ -5928,23 +6020,24 @@ Intersektionslineationen.
 
 
 
-Name                    | Type                                   | Description
-------------------------|----------------------------------------|---------------------------------
-kind        | subtype                      | Objektart
-[1] |13701                        |
-azimuth        | integer                      | Einfallsrichtung (Azimut) der jeweiligen Punktobjektart (z.B. Scheitellinie, Faltenachse).
+    | Name                    | Type                                   | Description
+----|-------------------------|----------------------------------------|---------------------------------
+1 | kind        | subtype                      | Objektart
+               | [1] |13701                          |
+2 | azimuth        | integer                      | Einfallsrichtung (Azimut) der jeweiligen Punktobjektart (z.B. Scheitellinie, Faltenachse).
 Wert in Grad (0° 359°) im Uhrzeigersinn gemessen
 
-[1] |                        |
-dip        |                       | Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die
+               | [1] |                          |
+3 | dip        |                       | Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die
 Vertikale (90°).
 
-[] |                        |
+               | [] |                          |
 
 
 
 
-kind   _Objektart_
+**kind**
+_Objektart_
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -5955,12 +6048,14 @@ kind   _Objektart_
 
 
    
-azimuth   _Einfallsrichtung (Azimut) der jeweiligen Punktobjektart (z.B. Scheitellinie, Faltenachse).
+**azimuth**
+_Einfallsrichtung (Azimut) der jeweiligen Punktobjektart (z.B. Scheitellinie, Faltenachse).
 Wert in Grad (0° 359°) im Uhrzeigersinn gemessen_
 
 
    
-dip   _Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die
+**dip**
+_Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die
 Vertikale (90°)._
 
 
@@ -5974,31 +6069,32 @@ Schieferung ist im Anhang A zur Veranschaulichung abgebildet.
 
 
 
-Name                    | Type                                   | Description
-------------------------|----------------------------------------|---------------------------------
-kind        | subtype                      | Objektart
-[1] |13801                        |
-polarity        | CD                      | Position der Objektart im Raum
-[0..1] |GC_PNT_MPLA_POLARITY_CD                        |
-phase        | CD                      | Deformationsphase
-[] |GC_PNT_MPLA_PHASE_CD                        |
-phase_ref        | string                      | Referenz für die Angabe der Deformationsphase.
-[0..1] |                        |
-ob_dip_slo        | boolean                      | Dip slope beobachtet (ja / nein)?
-[0..1] |                        |
-azimuth        | integer                      | Einfallsrichtung (Azimut) der jeweiligen Punktobjektart (z.B. Scheitellinie, Faltenachse).
+    | Name                    | Type                                   | Description
+----|-------------------------|----------------------------------------|---------------------------------
+1 | kind        | subtype                      | Objektart
+               | [1] |13801                          |
+2 | polarity        | CD                      | Position der Objektart im Raum
+               | [0..1] |GC_PNT_MPLA_POLARITY_CD                          |
+3 | phase        | CD                      | Deformationsphase
+               | [] |GC_PNT_MPLA_PHASE_CD                          |
+4 | phase_ref        | string                      | Referenz für die Angabe der Deformationsphase.
+               | [0..1] |                          |
+5 | ob_dip_slo        | boolean                      | Dip slope beobachtet (ja / nein)?
+               | [0..1] |                          |
+6 | azimuth        | integer                      | Einfallsrichtung (Azimut) der jeweiligen Punktobjektart (z.B. Scheitellinie, Faltenachse).
 Wert in Grad (0° 359°) im Uhrzeigersinn gemessen
 
-[1] |                        |
-dip        |                       | Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die
+               | [1] |                          |
+7 | dip        |                       | Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die
 Vertikale (90°).
 
-[] |                        |
+               | [] |                          |
 
 
 
 
-kind   _Objektart_
+**kind**
+_Objektart_
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -6011,7 +6107,8 @@ kind   _Objektart_
 
 
    
-polarity   _Position der Objektart im Raum_
+**polarity**
+_Position der Objektart im Raum_
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -6022,7 +6119,8 @@ polarity   _Position der Objektart im Raum_
 
 
    
-phase   _Deformationsphase_
+**phase**
+_Deformationsphase_
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -6034,20 +6132,24 @@ phase   _Deformationsphase_
 
 
    
-phase_ref   _Referenz für die Angabe der Deformationsphase._
+**phase_ref**
+_Referenz für die Angabe der Deformationsphase._
 
 
    
-ob_dip_slo   _Dip slope beobachtet (ja / nein)?_
+**ob_dip_slo**
+_Dip slope beobachtet (ja / nein)?_
 
 
    
-azimuth   _Einfallsrichtung (Azimut) der jeweiligen Punktobjektart (z.B. Scheitellinie, Faltenachse).
+**azimuth**
+_Einfallsrichtung (Azimut) der jeweiligen Punktobjektart (z.B. Scheitellinie, Faltenachse).
 Wert in Grad (0° 359°) im Uhrzeigersinn gemessen_
 
 
    
-dip   _Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die
+**dip**
+_Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die
 Vertikale (90°)._
 
 
@@ -6061,24 +6163,26 @@ Die Klasse Anomalies_PT beinhaltet lokal beobachtete und / oder gemessene Anomal
 
 
 
-Name                    | Type                                   | Description
-------------------------|----------------------------------------|---------------------------------
-kind        | subtype                      | Objektart
-[1] |128001                        |
-type        |                       | Charakteristik der Objektart.
-[] |128002                        |
+    | Name                    | Type                                   | Description
+----|-------------------------|----------------------------------------|---------------------------------
+1 | kind        | subtype                      | Objektart
+               | [1] |128001                          |
+2 | type        |                       | Charakteristik der Objektart.
+               | [] |128002                          |
 
 
 
 
-kind   _Objektart_
+**kind**
+_Objektart_
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
 
 
    
-type   _Charakteristik der Objektart._
+**type**
+_Charakteristik der Objektart._
 
 
    
@@ -6089,25 +6193,26 @@ Die Klasse Fossils_PT enthält alle Fossilfundstellen.
 
 
 
-Name                    | Type                                   | Description
-------------------------|----------------------------------------|---------------------------------
-kind        | subtype                      | Objektart
-[1] |12901                        |
-division        | CD                      | Fossilienkategorie, zu welcher die Objektinstanz gehört.
-[0..1] |GC_FOSS_LFOS_DIVISION_CD                        |
-system        | table                      | Fossiliengruppe.
-[0..1] |gc_system                        |
-dat_meth        | CD                      | Datierungsmethode.
-[0..1] |GC_FOSS_LFOS_DAT_METH_CD                        |
-status        | CD                      | Zustand der Objektart
-[0..1] |GC_FOSS_LFOS_STATUS_CD                        |
-protected        | boolean                      | Geschützte Fossilfundstelle (ja / nein)?
-[0..1] |                        |
+    | Name                    | Type                                   | Description
+----|-------------------------|----------------------------------------|---------------------------------
+1 | kind        | subtype                      | Objektart
+               | [1] |12901                          |
+2 | division        | CD                      | Fossilienkategorie, zu welcher die Objektinstanz gehört.
+               | [0..1] |GC_FOSS_LFOS_DIVISION_CD                          |
+3 | system        | table                      | Fossiliengruppe.
+               | [0..1] |gc_system                          |
+4 | dat_meth        | CD                      | Datierungsmethode.
+               | [0..1] |GC_FOSS_LFOS_DAT_METH_CD                          |
+5 | status        | CD                      | Zustand der Objektart
+               | [0..1] |GC_FOSS_LFOS_STATUS_CD                          |
+6 | protected        | boolean                      | Geschützte Fossilfundstelle (ja / nein)?
+               | [0..1] |                          |
 
 
 
 
-kind   _Objektart_
+**kind**
+_Objektart_
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -6115,7 +6220,8 @@ kind   _Objektart_
 
 
    
-division   _Fossilienkategorie, zu welcher die Objektinstanz gehört._
+**division**
+_Fossilienkategorie, zu welcher die Objektinstanz gehört._
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -6129,11 +6235,13 @@ division   _Fossilienkategorie, zu welcher die Objektinstanz gehört._
 
 
    
-system   _Fossiliengruppe._
+**system**
+_Fossiliengruppe._
 
 
    
-dat_meth   _Datierungsmethode._
+**dat_meth**
+_Datierungsmethode._
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -6143,7 +6251,8 @@ dat_meth   _Datierungsmethode._
 
 
    
-status   _Zustand der Objektart_
+**status**
+_Zustand der Objektart_
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -6154,7 +6263,8 @@ status   _Zustand der Objektart_
 
 
    
-protected   _Geschützte Fossilfundstelle (ja / nein)?_
+**protected**
+_Geschützte Fossilfundstelle (ja / nein)?_
 
 
    
@@ -6166,21 +6276,22 @@ und nicht-mineralischen Rohstoffen.
 
 
 
-Name                    | Type                                   | Description
-------------------------|----------------------------------------|---------------------------------
-kind        | subtype                      | Objektart
-[1] |13201                        |
-status        | CD                      | Zustand der Objektart
-[0..1] |GC_PNT_LRES_STATUS_CD                        |
-material        | CD                      | Material, das mit der Objektart in Verbindung steht
-[0..1] |GC_PNT_LRES_MATERIAL_CD                        |
-chemistry        | string                      | Chemische Komponente(n) oder Mineralien, welche die Natur der Objektart charakterisieren.
-[0..1] |                        |
+    | Name                    | Type                                   | Description
+----|-------------------------|----------------------------------------|---------------------------------
+1 | kind        | subtype                      | Objektart
+               | [1] |13201                          |
+2 | status        | CD                      | Zustand der Objektart
+               | [0..1] |GC_PNT_LRES_STATUS_CD                          |
+3 | material        | CD                      | Material, das mit der Objektart in Verbindung steht
+               | [0..1] |GC_PNT_LRES_MATERIAL_CD                          |
+4 | chemistry        | string                      | Chemische Komponente(n) oder Mineralien, welche die Natur der Objektart charakterisieren.
+               | [0..1] |                          |
 
 
 
 
-kind   _Objektart_
+**kind**
+_Objektart_
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -6196,7 +6307,8 @@ kind   _Objektart_
 
 
    
-status   _Zustand der Objektart_
+**status**
+_Zustand der Objektart_
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -6207,7 +6319,8 @@ status   _Zustand der Objektart_
 
 
    
-material   _Material, das mit der Objektart in Verbindung steht_
+**material**
+_Material, das mit der Objektart in Verbindung steht_
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -6221,7 +6334,8 @@ material   _Material, das mit der Objektart in Verbindung steht_
 
 
    
-chemistry   _Chemische Komponente(n) oder Mineralien, welche die Natur der Objektart charakterisieren._
+**chemistry**
+_Chemische Komponente(n) oder Mineralien, welche die Natur der Objektart charakterisieren._
 
 
    
@@ -6232,17 +6346,18 @@ chemistry   _Chemische Komponente(n) oder Mineralien, welche die Natur der Objek
 
 
 
-Name                    | Type                                   | Description
-------------------------|----------------------------------------|---------------------------------
-kind        | subtype                      | Objektart
-[1] |13301                        |
-chemistry        | string                      | Chemische Komponente(n), welche die Natur der Objektart charakterisieren.
-[0..1] |                        |
+    | Name                    | Type                                   | Description
+----|-------------------------|----------------------------------------|---------------------------------
+1 | kind        | subtype                      | Objektart
+               | [1] |13301                          |
+2 | chemistry        | string                      | Chemische Komponente(n), welche die Natur der Objektart charakterisieren.
+               | [0..1] |                          |
 
 
 
 
-kind   _Objektart_
+**kind**
+_Objektart_
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -6250,7 +6365,8 @@ kind   _Objektart_
 
 
    
-chemistry   _Chemische Komponente(n), welche die Natur der Objektart charakterisieren._
+**chemistry**
+_Chemische Komponente(n), welche die Natur der Objektart charakterisieren._
 
 
    
@@ -6261,17 +6377,18 @@ chemistry   _Chemische Komponente(n), welche die Natur der Objektart charakteris
 
 
 
-Name                    | Type                                   | Description
-------------------------|----------------------------------------|---------------------------------
-kind        | subtype                      | Objektart
-[1] |13401                        |
-azimuth        | integer                      | Orientierung des Symbols. Wert in Grad (0° 359°) im Uhrzeigersinn gemessen.
-[0..1] |                        |
+    | Name                    | Type                                   | Description
+----|-------------------------|----------------------------------------|---------------------------------
+1 | kind        | subtype                      | Objektart
+               | [1] |13401                          |
+2 | azimuth        | integer                      | Orientierung des Symbols. Wert in Grad (0° 359°) im Uhrzeigersinn gemessen.
+               | [0..1] |                          |
 
 
 
 
-kind   _Objektart_
+**kind**
+_Objektart_
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -6284,7 +6401,8 @@ kind   _Objektart_
 
 
    
-azimuth   _Orientierung des Symbols. Wert in Grad (0° 359°) im Uhrzeigersinn gemessen._
+**azimuth**
+_Orientierung des Symbols. Wert in Grad (0° 359°) im Uhrzeigersinn gemessen._
 
 
    
@@ -6296,23 +6414,24 @@ geologische Aufschlüsse beschreiben.
 
 
 
-Name                    | Type                                   | Description
-------------------------|----------------------------------------|---------------------------------
-kind        | subtype                      | Objektart
-[1] |13501                        |
-strati        | Cd                      | Lithostratigraphischer Zusatz zum Objekt
-[0..1] |GC_PNT_LTYP_STRATI_CD                        |
-name        | string                      | Name der Typlokalität. / Beschreibung des geologisch relevanten Aufschlusses
-[0..1] |                        |
-accessibil        | boolean                      | Ist die Objektart zum Zeitpunkt der Aufnahme aufgeschlossen (ja / nein)?
-[0..1] |                        |
-protected        | boolean                      | Geschütztes geologisches Objekt (ja / nein)?
-[0..1] |                        |
+    | Name                    | Type                                   | Description
+----|-------------------------|----------------------------------------|---------------------------------
+1 | kind        | subtype                      | Objektart
+               | [1] |13501                          |
+2 | strati        | Cd                      | Lithostratigraphischer Zusatz zum Objekt
+               | [0..1] |GC_PNT_LTYP_STRATI_CD                          |
+3 | name        | string                      | Name der Typlokalität. / Beschreibung des geologisch relevanten Aufschlusses
+               | [0..1] |                          |
+4 | accessibil        | boolean                      | Ist die Objektart zum Zeitpunkt der Aufnahme aufgeschlossen (ja / nein)?
+               | [0..1] |                          |
+5 | protected        | boolean                      | Geschütztes geologisches Objekt (ja / nein)?
+               | [0..1] |                          |
 
 
 
 
-kind   _Objektart_
+**kind**
+_Objektart_
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -6321,19 +6440,23 @@ kind   _Objektart_
 
 
    
-strati   _Lithostratigraphischer Zusatz zum Objekt_
+**strati**
+_Lithostratigraphischer Zusatz zum Objekt_
 
 
    
-name   _Name der Typlokalität. / Beschreibung des geologisch relevanten Aufschlusses_
+**name**
+_Name der Typlokalität. / Beschreibung des geologisch relevanten Aufschlusses_
 
 
    
-accessibil   _Ist die Objektart zum Zeitpunkt der Aufnahme aufgeschlossen (ja / nein)?_
+**accessibil**
+_Ist die Objektart zum Zeitpunkt der Aufnahme aufgeschlossen (ja / nein)?_
 
 
    
-protected   _Geschütztes geologisches Objekt (ja / nein)?_
+**protected**
+_Geschütztes geologisches Objekt (ja / nein)?_
 
 
    
@@ -6347,23 +6470,24 @@ von Wechsellagerungen von Sandstein und Mergel) und sind von den Leithorizonten 
 
 
 
-Name                    | Type                                   | Description
-------------------------|----------------------------------------|---------------------------------
-kind        | subtype                      | Objektart
-[1] |13101                        |
-cong_spe        | CD                      | Charakterisation der Konglomerate nach ihrem Geröllspektrum.
-[0..1] |GC_LIN_LPRO_CONG_SPE_CD                        |
-name_horiz        |                       | Name des Bentonit-Leithorizonts.
-[0..1] |13103                        |
-orig_descr        | string                      | Originalbezeichnung gemäss der Legende der zugrundeliegenden geologischen Karte.
-[0..1] |                        |
-litho        | table                      | Materialbezeichnung (lithologische Einheit).
-[1] |gc_litho                        |
+    | Name                    | Type                                   | Description
+----|-------------------------|----------------------------------------|---------------------------------
+1 | kind        | subtype                      | Objektart
+               | [1] |13101                          |
+2 | cong_spe        | CD                      | Charakterisation der Konglomerate nach ihrem Geröllspektrum.
+               | [0..1] |GC_LIN_LPRO_CONG_SPE_CD                          |
+3 | name_horiz        |                       | Name des Bentonit-Leithorizonts.
+               | [0..1] |13103                          |
+4 | orig_descr        | string                      | Originalbezeichnung gemäss der Legende der zugrundeliegenden geologischen Karte.
+               | [0..1] |                          |
+5 | litho        | table                      | Materialbezeichnung (lithologische Einheit).
+               | [1] |gc_litho                          |
 
 
 
 
-kind   _Objektart_
+**kind**
+_Objektart_
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -6371,7 +6495,8 @@ kind   _Objektart_
 
 
    
-cong_spe   _Charakterisation der Konglomerate nach ihrem Geröllspektrum._
+**cong_spe**
+_Charakterisation der Konglomerate nach ihrem Geröllspektrum._
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -6384,15 +6509,18 @@ cong_spe   _Charakterisation der Konglomerate nach ihrem Geröllspektrum._
 
 
    
-name_horiz   _Name des Bentonit-Leithorizonts._
+**name_horiz**
+_Name des Bentonit-Leithorizonts._
 
 
    
-orig_descr   _Originalbezeichnung gemäss der Legende der zugrundeliegenden geologischen Karte._
+**orig_descr**
+_Originalbezeichnung gemäss der Legende der zugrundeliegenden geologischen Karte._
 
 
    
-litho   _Materialbezeichnung (lithologische Einheit)._
+**litho**
+_Materialbezeichnung (lithologische Einheit)._
 
 
    
@@ -6405,17 +6533,18 @@ standardisiert werden
 
 
 
-Name                    | Type                                   | Description
-------------------------|----------------------------------------|---------------------------------
-kind        | subtype                      | Objektart
-[1] |15501                        |
-orig_name        | string                      | Ursprüngliche Bezeichnung des Objektes.
-[1] |                        |
+    | Name                    | Type                                   | Description
+----|-------------------------|----------------------------------------|---------------------------------
+1 | kind        | subtype                      | Objektart
+               | [1] |15501                          |
+2 | orig_name        | string                      | Ursprüngliche Bezeichnung des Objektes.
+               | [1] |                          |
 
 
 
 
-kind   _Objektart_
+**kind**
+_Objektart_
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -6423,7 +6552,8 @@ kind   _Objektart_
 
 
    
-orig_name   _Ursprüngliche Bezeichnung des Objektes._
+**orig_name**
+_Ursprüngliche Bezeichnung des Objektes._
 
 
    
@@ -6445,17 +6575,18 @@ ab-grenzen (Abgrenzungskontur nach dem ZV).
 
 
 
-Name                    | Type                                   | Description
-------------------------|----------------------------------------|---------------------------------
-kind        | subtype                      | Objektart
-[1] |13001                        |
-status        | CD                      | Zustand der Objektart.
-[0..1] |GC_LIN_LGEO_STATUS_CD                        |
+    | Name                    | Type                                   | Description
+----|-------------------------|----------------------------------------|---------------------------------
+1 | kind        | subtype                      | Objektart
+               | [1] |13001                          |
+2 | status        | CD                      | Zustand der Objektart.
+               | [0..1] |GC_LIN_LGEO_STATUS_CD                          |
 
 
 
 
-kind   _Objektart_
+**kind**
+_Objektart_
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -6463,7 +6594,8 @@ kind   _Objektart_
 
 
    
-status   _Zustand der Objektart._
+**status**
+_Zustand der Objektart._
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -6488,25 +6620,26 @@ verlaufs im Untergrund.
 
 
 
-Name                    | Type                                   | Description
-------------------------|----------------------------------------|---------------------------------
-kind        | subtype                      | Objektart
-[1] |14201                        |
-type        | CD                      | Referenzoberfläche.
-[1] |GC_PNT_PSLO_TYPE_CD                        |
-azimuth        | integer                      | Fallrichtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad (0° 359°) im Uhrzeigersinn gemessen.
-[0..1] |                        |
-dip        | integer                      | Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die
+    | Name                    | Type                                   | Description
+----|-------------------------|----------------------------------------|---------------------------------
+1 | kind        | subtype                      | Objektart
+               | [1] |14201                          |
+2 | type        | CD                      | Referenzoberfläche.
+               | [1] |GC_PNT_PSLO_TYPE_CD                          |
+3 | azimuth        | integer                      | Fallrichtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad (0° 359°) im Uhrzeigersinn gemessen.
+               | [0..1] |                          |
+4 | dip        | integer                      | Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die
 Vertikale (90°).
 
-[0..1] |                        |
-litstrat        | table                      | Lithostratigraphische Einheit der modellierten Formation
-[1] |gc_litstrat_bed                        |
+               | [0..1] |                          |
+5 | litstrat        | table                      | Lithostratigraphische Einheit der modellierten Formation
+               | [1] |gc_litstrat_bed                          |
 
 
 
 
-kind   _Objektart_
+**kind**
+_Objektart_
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -6514,7 +6647,8 @@ kind   _Objektart_
 
 
    
-type   _Referenzoberfläche._
+**type**
+_Referenzoberfläche._
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -6525,16 +6659,19 @@ type   _Referenzoberfläche._
 
 
    
-azimuth   _Fallrichtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad (0° 359°) im Uhrzeigersinn gemessen._
+**azimuth**
+_Fallrichtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad (0° 359°) im Uhrzeigersinn gemessen._
 
 
    
-dip   _Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die
+**dip**
+_Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die
 Vertikale (90°)._
 
 
    
-litstrat   _Lithostratigraphische Einheit der modellierten Formation_
+**litstrat**
+_Lithostratigraphische Einheit der modellierten Formation_
 
 
    
@@ -6547,21 +6684,22 @@ hypsen der Felsoberfläche in dieser Klasse.
 
 
 
-Name                    | Type                                   | Description
-------------------------|----------------------------------------|---------------------------------
-kind        | subtype                      | Objektart
-[1] |13901                        |
-type        | CD                      | Referenzoberfläche.
-[1] |GC_LIN_PCOB_TYPE_CD                        |
-altitude        | float                      | Höhenangabe (m ü.M.) von Isohypsen.
-[1] |                        |
-litstrat        | table                      | Lithostratigraphische Einheit der modellierten Formation
-[1] |gc_litstrat_bed                        |
+    | Name                    | Type                                   | Description
+----|-------------------------|----------------------------------------|---------------------------------
+1 | kind        | subtype                      | Objektart
+               | [1] |13901                          |
+2 | type        | CD                      | Referenzoberfläche.
+               | [1] |GC_LIN_PCOB_TYPE_CD                          |
+3 | altitude        | float                      | Höhenangabe (m ü.M.) von Isohypsen.
+               | [1] |                          |
+4 | litstrat        | table                      | Lithostratigraphische Einheit der modellierten Formation
+               | [1] |gc_litstrat_bed                          |
 
 
 
 
-kind   _Objektart_
+**kind**
+_Objektart_
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -6569,7 +6707,8 @@ kind   _Objektart_
 
 
    
-type   _Referenzoberfläche._
+**type**
+_Referenzoberfläche._
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -6581,11 +6720,13 @@ type   _Referenzoberfläche._
 
 
    
-altitude   _Höhenangabe (m ü.M.) von Isohypsen._
+**altitude**
+_Höhenangabe (m ü.M.) von Isohypsen._
 
 
    
-litstrat   _Lithostratigraphische Einheit der modellierten Formation_
+**litstrat**
+_Lithostratigraphische Einheit der modellierten Formation_
 
 
    
@@ -6597,25 +6738,26 @@ Grundwasserspiegels.
 
 
 
-Name                    | Type                                   | Description
-------------------------|----------------------------------------|---------------------------------
-kind        | subtype                      | Objektart
-[1] |14101                        |
-azimuth        | integer                      | Fallrichtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad (0° 359°) im Uhrzeigersinn gemessen.
-[0..1] |                        |
-dip        | integer                      | Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die
+    | Name                    | Type                                   | Description
+----|-------------------------|----------------------------------------|---------------------------------
+1 | kind        | subtype                      | Objektart
+               | [1] |14101                          |
+2 | azimuth        | integer                      | Fallrichtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad (0° 359°) im Uhrzeigersinn gemessen.
+               | [0..1] |                          |
+3 | dip        | integer                      | Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die
 Vertikale (90°).
 
-[0..1] |                        |
-height        | float                      | Kote des Grundwasserspiegels (m ü.M.).
-[0..1] |                        |
-mea_period        | range                      | Messperiode.
-[0..1] |                        |
+               | [0..1] |                          |
+4 | height        | float                      | Kote des Grundwasserspiegels (m ü.M.).
+               | [0..1] |                          |
+5 | mea_period        | range                      | Messperiode.
+               | [0..1] |                          |
 
 
 
 
-kind   _Objektart_
+**kind**
+_Objektart_
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -6624,20 +6766,24 @@ kind   _Objektart_
 
 
    
-azimuth   _Fallrichtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad (0° 359°) im Uhrzeigersinn gemessen._
+**azimuth**
+_Fallrichtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad (0° 359°) im Uhrzeigersinn gemessen._
 
 
    
-dip   _Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die
+**dip**
+_Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die
 Vertikale (90°)._
 
 
    
-height   _Kote des Grundwasserspiegels (m ü.M.)._
+**height**
+_Kote des Grundwasserspiegels (m ü.M.)._
 
 
    
-mea_period   _Messperiode._
+**mea_period**
+_Messperiode._
 
 
    
@@ -6649,21 +6795,22 @@ beziehen.
 
 
 
-Name                    | Type                                   | Description
-------------------------|----------------------------------------|---------------------------------
-kind        | subtype                      | Objektart
-[1] |14001                        |
-confine        | CD                      | Druckzustand im Grundwasserleiter.
-[0..1] |GC_LIN_PCOH_CONFINE_CD                        |
-altitude        |                       | Höhenangabe (m ü.M.) von Isohypsen.
-[1] |                        |
-wa_table        | CD                      | Wasserstand.
-[0..1] |GC_LIN_PCOH_WA_TABLE_CD                        |
+    | Name                    | Type                                   | Description
+----|-------------------------|----------------------------------------|---------------------------------
+1 | kind        | subtype                      | Objektart
+               | [1] |14001                          |
+2 | confine        | CD                      | Druckzustand im Grundwasserleiter.
+               | [0..1] |GC_LIN_PCOH_CONFINE_CD                          |
+3 | altitude        |                       | Höhenangabe (m ü.M.) von Isohypsen.
+               | [1] |                          |
+4 | wa_table        | CD                      | Wasserstand.
+               | [0..1] |GC_LIN_PCOH_WA_TABLE_CD                          |
 
 
 
 
-kind   _Objektart_
+**kind**
+_Objektart_
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -6671,7 +6818,8 @@ kind   _Objektart_
 
 
    
-confine   _Druckzustand im Grundwasserleiter._
+**confine**
+_Druckzustand im Grundwasserleiter._
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -6683,11 +6831,13 @@ confine   _Druckzustand im Grundwasserleiter._
 
 
    
-altitude   _Höhenangabe (m ü.M.) von Isohypsen._
+**altitude**
+_Höhenangabe (m ü.M.) von Isohypsen._
 
 
    
-wa_table   _Wasserstand._
+**wa_table**
+_Wasserstand._
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -6707,23 +6857,24 @@ Die Klasse Archaeology_PT enthält Objektarten zu einzelnen archäologischen Rel
 
 
 
-Name                    | Type                                   | Description
-------------------------|----------------------------------------|---------------------------------
-kind        | subtype                      | Objektart
-[] |10101                        |
-epoch        | CD                      | Archäologische Epoche der Objektart
-[0..1] |GC_AARC_EPOCH_CD                        |
-period        | CD                      | Archäologische Periode der Objektart.
-[0..1] |GC_AARC_PERIOD_CD                        |
-age        | CD                      | Archäologisches Alter der Objektart.
-[0..1] |GC_AARC_AGE_CD                        |
-type        | CD                      | Art des Kultsteins.
-[0..1] |GC_PNT_AARC_TYPE_CD                        |
+    | Name                    | Type                                   | Description
+----|-------------------------|----------------------------------------|---------------------------------
+1 | kind        | subtype                      | Objektart
+               | [] |10101                          |
+2 | epoch        | CD                      | Archäologische Epoche der Objektart
+               | [0..1] |GC_AARC_EPOCH_CD                          |
+3 | period        | CD                      | Archäologische Periode der Objektart.
+               | [0..1] |GC_AARC_PERIOD_CD                          |
+4 | age        | CD                      | Archäologisches Alter der Objektart.
+               | [0..1] |GC_AARC_AGE_CD                          |
+5 | type        | CD                      | Art des Kultsteins.
+               | [0..1] |GC_PNT_AARC_TYPE_CD                          |
 
 
 
 
-kind   _Objektart_
+**kind**
+_Objektart_
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -6744,7 +6895,8 @@ kind   _Objektart_
 
 
    
-epoch   _Archäologische Epoche der Objektart_
+**epoch**
+_Archäologische Epoche der Objektart_
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -6755,7 +6907,8 @@ epoch   _Archäologische Epoche der Objektart_
 
 
    
-period   _Archäologische Periode der Objektart._
+**period**
+_Archäologische Periode der Objektart._
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -6770,7 +6923,8 @@ period   _Archäologische Periode der Objektart._
 
 
    
-age   _Archäologisches Alter der Objektart._
+**age**
+_Archäologisches Alter der Objektart._
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -6787,7 +6941,8 @@ age   _Archäologisches Alter der Objektart._
 
 
    
-type   _Art des Kultsteins._
+**type**
+_Art des Kultsteins._
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -6806,21 +6961,22 @@ Hohlwege oder Befestigungsgräben sind Teile dieser Klasse.
 
 
 
-Name                    | Type                                   | Description
-------------------------|----------------------------------------|---------------------------------
-kind        | subtype                      | Objektart
-[] |10201                        |
-epoch        | CD                      | Archäologische Epoche der Objektart
-[0..1] |GC_AARC_EPOCH_CD                        |
-period        | CD                      | Archäologische Periode der Objektart.
-[0..1] |GC_AARC_PERIOD_CD                        |
-age        | CD                      | Archäologisches Alter der Objektart.
-[0..1] |GC_AARC_AGE_CD                        |
+    | Name                    | Type                                   | Description
+----|-------------------------|----------------------------------------|---------------------------------
+1 | kind        | subtype                      | Objektart
+               | [] |10201                          |
+2 | epoch        | CD                      | Archäologische Epoche der Objektart
+               | [0..1] |GC_AARC_EPOCH_CD                          |
+3 | period        | CD                      | Archäologische Periode der Objektart.
+               | [0..1] |GC_AARC_PERIOD_CD                          |
+4 | age        | CD                      | Archäologisches Alter der Objektart.
+               | [0..1] |GC_AARC_AGE_CD                          |
 
 
 
 
-kind   _Objektart_
+**kind**
+_Objektart_
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -6834,7 +6990,8 @@ kind   _Objektart_
 
 
    
-epoch   _Archäologische Epoche der Objektart_
+**epoch**
+_Archäologische Epoche der Objektart_
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -6845,7 +7002,8 @@ epoch   _Archäologische Epoche der Objektart_
 
 
    
-period   _Archäologische Periode der Objektart._
+**period**
+_Archäologische Periode der Objektart._
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -6860,7 +7018,8 @@ period   _Archäologische Periode der Objektart._
 
 
    
-age   _Archäologisches Alter der Objektart._
+**age**
+_Archäologisches Alter der Objektart._
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -6885,21 +7044,22 @@ grösseres Gebiet (Fläche) abdecken.
 
 
 
-Name                    | Type                                   | Description
-------------------------|----------------------------------------|---------------------------------
-kind        | subtype                      | Objektart
-[] |10301                        |
-epoch        | CD                      | Archäologische Epoche der Objektart
-[0..1] |GC_AARC_EPOCH_CD                        |
-period        | CD                      | Archäologische Periode der Objektart.
-[0..1] |GC_AARC_PERIOD_CD                        |
-age        | CD                      | Archäologisches Alter der Objektart.
-[0..1] |GC_AARC_AGE_CD                        |
+    | Name                    | Type                                   | Description
+----|-------------------------|----------------------------------------|---------------------------------
+1 | kind        | subtype                      | Objektart
+               | [] |10301                          |
+2 | epoch        | CD                      | Archäologische Epoche der Objektart
+               | [0..1] |GC_AARC_EPOCH_CD                          |
+3 | period        | CD                      | Archäologische Periode der Objektart.
+               | [0..1] |GC_AARC_PERIOD_CD                          |
+4 | age        | CD                      | Archäologisches Alter der Objektart.
+               | [0..1] |GC_AARC_AGE_CD                          |
 
 
 
 
-kind   _Objektart_
+**kind**
+_Objektart_
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -6908,7 +7068,8 @@ kind   _Objektart_
 
 
    
-epoch   _Archäologische Epoche der Objektart_
+**epoch**
+_Archäologische Epoche der Objektart_
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -6919,7 +7080,8 @@ epoch   _Archäologische Epoche der Objektart_
 
 
    
-period   _Archäologische Periode der Objektart._
+**period**
+_Archäologische Periode der Objektart._
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -6934,7 +7096,8 @@ period   _Archäologische Periode der Objektart._
 
 
    
-age   _Archäologisches Alter der Objektart._
+**age**
+_Archäologisches Alter der Objektart._
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -6959,23 +7122,24 @@ Geomaterialien.
 
 
 
-Name                    | Type                                   | Description
-------------------------|----------------------------------------|---------------------------------
-kind        | subtype                      | Objektart
-[] |10601                        |
-exp_unit        | table                      | Abgebaute lithostratigraphische Einheit.
-[0..*] |gc_litstrat_bed                        |
-status        | Cd                      | Abbaustatus.
-[0..1] |GC_EX_GEO_PNT_AEXP_STATUS_CD                        |
-depth_tot        | float                      | Endtiefe (m ab Terrainoberfläche) der Objektart.
-[0..1] |                        |
-targ_mat        | CD                      | Abgebautes Material.
-[0..1] |GC_EX_GEO_PNT_AEXP_TARG_MAT_CD                        |
+    | Name                    | Type                                   | Description
+----|-------------------------|----------------------------------------|---------------------------------
+1 | kind        | subtype                      | Objektart
+               | [] |10601                          |
+2 | exp_unit        | table                      | Abgebaute lithostratigraphische Einheit.
+               | [0..*] |gc_litstrat_bed                          |
+3 | status        | Cd                      | Abbaustatus.
+               | [0..1] |GC_EX_GEO_PNT_AEXP_STATUS_CD                          |
+4 | depth_tot        | float                      | Endtiefe (m ab Terrainoberfläche) der Objektart.
+               | [0..1] |                          |
+5 | targ_mat        | CD                      | Abgebautes Material.
+               | [0..1] |GC_EX_GEO_PNT_AEXP_TARG_MAT_CD                          |
 
 
 
 
-kind   _Objektart_
+**kind**
+_Objektart_
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -6988,19 +7152,23 @@ kind   _Objektart_
 
 
    
-exp_unit   _Abgebaute lithostratigraphische Einheit._
+**exp_unit**
+_Abgebaute lithostratigraphische Einheit._
 
 
    
-status   _Abbaustatus._
+**status**
+_Abbaustatus._
 
 
    
-depth_tot   _Endtiefe (m ab Terrainoberfläche) der Objektart._
+**depth_tot**
+_Endtiefe (m ab Terrainoberfläche) der Objektart._
 
 
    
-targ_mat   _Abgebautes Material._
+**targ_mat**
+_Abgebautes Material._
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -7057,17 +7225,18 @@ Geomaterialien (z.B. Verlauf der Abbaufront).
 
 
 
-Name                    | Type                                   | Description
-------------------------|----------------------------------------|---------------------------------
-kind        | subtype                      | Objektart
-[] |10701                        |
-status        | Cd                      | Abbaustatus.
-[0..1] |GC_LIN_AEXP_STATUS_CD                        |
+    | Name                    | Type                                   | Description
+----|-------------------------|----------------------------------------|---------------------------------
+1 | kind        | subtype                      | Objektart
+               | [] |10701                          |
+2 | status        | Cd                      | Abbaustatus.
+               | [0..1] |GC_LIN_AEXP_STATUS_CD                          |
 
 
 
 
-kind   _Objektart_
+**kind**
+_Objektart_
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -7076,7 +7245,8 @@ kind   _Objektart_
 
 
    
-status   _Abbaustatus._
+**status**
+_Abbaustatus._
 
 
    
@@ -7088,23 +7258,24 @@ Aufnahmen Geomaterialien abgebaut wurden.
 
 
 
-Name                    | Type                                   | Description
-------------------------|----------------------------------------|---------------------------------
-kind        | subtype                      | Objektart
-[] |10801                        |
-exp_unit        | table                      | Abgebaute lithostratigraphische Einheit.
-[1..*] |gc_litstrat_bed                        |
-status        | Cd                      | Abbaustatus.
-[0..1] |GC_EX_GEO_PLG_AEXP_STATUS_CD                        |
-depth_tot        | float                      | Endtiefe (m ab Terrainoberfläche) der Objektart.
-[0..1] |                        |
-targ_mat        | CD                      | Abgebautes Material.
-[0..1] |GC_EX_GEO_PLG_AEXP_TARG_MAT_CD                        |
+    | Name                    | Type                                   | Description
+----|-------------------------|----------------------------------------|---------------------------------
+1 | kind        | subtype                      | Objektart
+               | [] |10801                          |
+2 | exp_unit        | table                      | Abgebaute lithostratigraphische Einheit.
+               | [1..*] |gc_litstrat_bed                          |
+3 | status        | Cd                      | Abbaustatus.
+               | [0..1] |GC_EX_GEO_PLG_AEXP_STATUS_CD                          |
+4 | depth_tot        | float                      | Endtiefe (m ab Terrainoberfläche) der Objektart.
+               | [0..1] |                          |
+5 | targ_mat        | CD                      | Abgebautes Material.
+               | [0..1] |GC_EX_GEO_PLG_AEXP_TARG_MAT_CD                          |
 
 
 
 
-kind   _Objektart_
+**kind**
+_Objektart_
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -7113,19 +7284,23 @@ kind   _Objektart_
 
 
    
-exp_unit   _Abgebaute lithostratigraphische Einheit._
+**exp_unit**
+_Abgebaute lithostratigraphische Einheit._
 
 
    
-status   _Abbaustatus._
+**status**
+_Abbaustatus._
 
 
    
-depth_tot   _Endtiefe (m ab Terrainoberfläche) der Objektart._
+**depth_tot**
+_Endtiefe (m ab Terrainoberfläche) der Objektart._
 
 
    
-targ_mat   _Abgebautes Material._
+**targ_mat**
+_Abgebautes Material._
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -7164,56 +7339,57 @@ Rammkernsondierungen als Bohrungen aufgenommen wurden.)
 
 
 
-Name                    | Type                                   | Description
-------------------------|----------------------------------------|---------------------------------
-kind        | subtype                      | Objektart
-[] |10501                        |
-drill_mo        |                       | Bohrmethode.
-[0..1] |10502                        |
-depth_bedrock        | float                      | Tiefe (in Meter ab Terrainoberfläche) der Felsober-
+    | Name                    | Type                                   | Description
+----|-------------------------|----------------------------------------|---------------------------------
+1 | kind        | subtype                      | Objektart
+               | [] |10501                          |
+2 | drill_mo        |                       | Bohrmethode.
+               | [0..1] |10502                          |
+3 | depth_bedrock        | float                      | Tiefe (in Meter ab Terrainoberfläche) der Felsober-
 fläche. (Sofern die Bohrung das Festgestein nicht
 Depth_Bedrock erreicht, z.B. «Bohrung, Fels nicht erreicht», beträgt der
 Wert -9999, falls die Bohrung bereits im Festgestein beginnt, beträgt
 der Wert 0). Falls Festgestein erreicht wurde, aber nicht klar ist,
 dass es sich um die Felsoberfläche handelt, beträgt der Wert -8888.
 
-[0..1] |                        |
-d_c_underg        | boolean                      | Bohransatzpunkt unter Terrain (ja / nein)
-[1] |                        |
-main_tar        | CD                      | Ziel der Sondierung.
-[0..1] |GC_PNT_ABOR_MAIN_TAR_CD                        |
-targ_mat        | CD                      | Durch die Sondierung gefördertes Material.
-[0..1] |GC_PNT_ABOR_TARG_MAT_CD                        |
-depth_tot        | float                      | Gemessene Länge (Measured Depth) der Bohrung. Vgl.
+               | [0..1] |                          |
+4 | d_c_underg        | boolean                      | Bohransatzpunkt unter Terrain (ja / nein)
+               | [1] |                          |
+5 | main_tar        | CD                      | Ziel der Sondierung.
+               | [0..1] |GC_PNT_ABOR_MAIN_TAR_CD                          |
+6 | targ_mat        | CD                      | Durch die Sondierung gefördertes Material.
+               | [0..1] |GC_PNT_ABOR_TARG_MAT_CD                          |
+7 | depth_tot        | float                      | Gemessene Länge (Measured Depth) der Bohrung. Vgl.
 DM Bohrdaten. Die tatsächliche Tiefe (True Vertical
 Depth) ist oft nicht bekannt.
 
-[0..1] |                        |
-fm_a        | table                      | Lithostratigraphische Einheit der erreichten Formation A
-[0..1] |gc_litstrat_bed                        |
-depth_fm_a        | float                      | Tiefe (m ab Terrainoberfläche) der erreichten Formation A.
-[0..1] |                        |
-fm_b        | table                      | Lithostratigraphische Einheit der erreichten Formation B
-[0..1] |gc_litstrat_bed                        |
-depth_fm_b        | float                      | Tiefe (m ab Terrainoberfläche) der erreichten Formation B.
-[0..1] |                        |
-depth_wt        | float                      | Tiefe (m ab Terrainoberfläche) des Grundwasserspiegels.
-[0..1] |                        |
-azimuth        | integer                      | Fallrichtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad (0° 359°) im Uhrzeigersinn gemessen.
-[0..1] |                        |
-dip        | integer                      | Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die
+               | [0..1] |                          |
+8 | fm_a        | table                      | Lithostratigraphische Einheit der erreichten Formation A
+               | [0..1] |gc_litstrat_bed                          |
+9 | depth_fm_a        | float                      | Tiefe (m ab Terrainoberfläche) der erreichten Formation A.
+               | [0..1] |                          |
+10 | fm_b        | table                      | Lithostratigraphische Einheit der erreichten Formation B
+               | [0..1] |gc_litstrat_bed                          |
+11 | depth_fm_b        | float                      | Tiefe (m ab Terrainoberfläche) der erreichten Formation B.
+               | [0..1] |                          |
+12 | depth_wt        | float                      | Tiefe (m ab Terrainoberfläche) des Grundwasserspiegels.
+               | [0..1] |                          |
+13 | azimuth        | integer                      | Fallrichtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad (0° 359°) im Uhrzeigersinn gemessen.
+               | [0..1] |                          |
+14 | dip        | integer                      | Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die
 Vertikale (90°).
 
-[0..1] |                        |
-ref_number        | integer                      | Bohrungs-ID der Objektart in einem zusätzlichen Dokument (Erläuterungen, ...).
-[0..1] |                        |
-link        | integer                      | Objektnummer in der Datenbank von INFOGEOL.
-[0..1] |                        |
+               | [0..1] |                          |
+15 | ref_number        | integer                      | Bohrungs-ID der Objektart in einem zusätzlichen Dokument (Erläuterungen, ...).
+               | [0..1] |                          |
+16 | link        | integer                      | Objektnummer in der Datenbank von INFOGEOL.
+               | [0..1] |                          |
 
 
 
 
-kind   _Objektart_
+**kind**
+_Objektart_
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -7225,11 +7401,13 @@ kind   _Objektart_
 
 
    
-drill_mo   _Bohrmethode._
+**drill_mo**
+_Bohrmethode._
 
 
    
-depth_bedrock   _Tiefe (in Meter ab Terrainoberfläche) der Felsober-
+**depth_bedrock**
+_Tiefe (in Meter ab Terrainoberfläche) der Felsober-
 fläche. (Sofern die Bohrung das Festgestein nicht
 Depth_Bedrock erreicht, z.B. «Bohrung, Fels nicht erreicht», beträgt der
 Wert -9999, falls die Bohrung bereits im Festgestein beginnt, beträgt
@@ -7238,11 +7416,13 @@ dass es sich um die Felsoberfläche handelt, beträgt der Wert -8888._
 
 
    
-d_c_underg   _Bohransatzpunkt unter Terrain (ja / nein)_
+**d_c_underg**
+_Bohransatzpunkt unter Terrain (ja / nein)_
 
 
    
-main_tar   _Ziel der Sondierung._
+**main_tar**
+_Ziel der Sondierung._
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -7260,7 +7440,8 @@ main_tar   _Ziel der Sondierung._
 
 
    
-targ_mat   _Durch die Sondierung gefördertes Material._
+**targ_mat**
+_Durch die Sondierung gefördertes Material._
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -7276,46 +7457,56 @@ targ_mat   _Durch die Sondierung gefördertes Material._
 
 
    
-depth_tot   _Gemessene Länge (Measured Depth) der Bohrung. Vgl.
+**depth_tot**
+_Gemessene Länge (Measured Depth) der Bohrung. Vgl.
 DM Bohrdaten. Die tatsächliche Tiefe (True Vertical
 Depth) ist oft nicht bekannt._
 
 
    
-fm_a   _Lithostratigraphische Einheit der erreichten Formation A_
+**fm_a**
+_Lithostratigraphische Einheit der erreichten Formation A_
 
 
    
-depth_fm_a   _Tiefe (m ab Terrainoberfläche) der erreichten Formation A._
+**depth_fm_a**
+_Tiefe (m ab Terrainoberfläche) der erreichten Formation A._
 
 
    
-fm_b   _Lithostratigraphische Einheit der erreichten Formation B_
+**fm_b**
+_Lithostratigraphische Einheit der erreichten Formation B_
 
 
    
-depth_fm_b   _Tiefe (m ab Terrainoberfläche) der erreichten Formation B._
+**depth_fm_b**
+_Tiefe (m ab Terrainoberfläche) der erreichten Formation B._
 
 
    
-depth_wt   _Tiefe (m ab Terrainoberfläche) des Grundwasserspiegels._
+**depth_wt**
+_Tiefe (m ab Terrainoberfläche) des Grundwasserspiegels._
 
 
    
-azimuth   _Fallrichtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad (0° 359°) im Uhrzeigersinn gemessen._
+**azimuth**
+_Fallrichtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad (0° 359°) im Uhrzeigersinn gemessen._
 
 
    
-dip   _Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die
+**dip**
+_Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die
 Vertikale (90°)._
 
 
    
-ref_number   _Bohrungs-ID der Objektart in einem zusätzlichen Dokument (Erläuterungen, ...)._
+**ref_number**
+_Bohrungs-ID der Objektart in einem zusätzlichen Dokument (Erläuterungen, ...)._
 
 
    
-link   _Objektnummer in der Datenbank von INFOGEOL._
+**link**
+_Objektnummer in der Datenbank von INFOGEOL._
 
 
    
@@ -7328,15 +7519,16 @@ mehr zu erkennen ist, was bei einer geomorphologischen Deutung zu falschen Schl�
 
 
 
-Name                    | Type                                   | Description
-------------------------|----------------------------------------|---------------------------------
-kind        | subtype                      | Objektart
-[1] |10401                        |
+    | Name                    | Type                                   | Description
+----|-------------------------|----------------------------------------|---------------------------------
+1 | kind        | subtype                      | Objektart
+               | [1] |10401                          |
 
 
 
 
-kind   _Objektart_
+**kind**
+_Objektart_
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -7359,25 +7551,26 @@ Desweiteren kommen in dieser Klasse auch Messgeräte wie Piezometer und Limnigra
 
 
 
-Name                    | Type                                   | Description
-------------------------|----------------------------------------|---------------------------------
-kind        | subtype                      | Objektart
-[1] |12101                        |
-status        | Cd                      | Zustand der Objektart.
-[0..1] |GC_PNT_HCON_STATUS_CD                        |
-epoch        | Cd                      | Epoche der Erbauung der Objektart.
-[0..1] |GC_PNT_HCON_EPOCH_CD                        |
-depth        | float                      | Tiefe der Objektart (m ab Terrainoberfläche).
-[0..1] |                        |
-depth_wt        | float                      | Tiefe (m ab Terrainoberfläche) des Grundwasserspiegels (Mittelwert).
-[0..1] |                        |
-mea_period        | range                      | Messperiode.
-[0..1] |                        |
+    | Name                    | Type                                   | Description
+----|-------------------------|----------------------------------------|---------------------------------
+1 | kind        | subtype                      | Objektart
+               | [1] |12101                          |
+2 | status        | Cd                      | Zustand der Objektart.
+               | [0..1] |GC_PNT_HCON_STATUS_CD                          |
+3 | epoch        | Cd                      | Epoche der Erbauung der Objektart.
+               | [0..1] |GC_PNT_HCON_EPOCH_CD                          |
+4 | depth        | float                      | Tiefe der Objektart (m ab Terrainoberfläche).
+               | [0..1] |                          |
+5 | depth_wt        | float                      | Tiefe (m ab Terrainoberfläche) des Grundwasserspiegels (Mittelwert).
+               | [0..1] |                          |
+6 | mea_period        | range                      | Messperiode.
+               | [0..1] |                          |
 
 
 
 
-kind   _Objektart_
+**kind**
+_Objektart_
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -7391,23 +7584,28 @@ kind   _Objektart_
 
 
    
-status   _Zustand der Objektart._
+**status**
+_Zustand der Objektart._
 
 
    
-epoch   _Epoche der Erbauung der Objektart._
+**epoch**
+_Epoche der Erbauung der Objektart._
 
 
    
-depth   _Tiefe der Objektart (m ab Terrainoberfläche)._
+**depth**
+_Tiefe der Objektart (m ab Terrainoberfläche)._
 
 
    
-depth_wt   _Tiefe (m ab Terrainoberfläche) des Grundwasserspiegels (Mittelwert)._
+**depth_wt**
+_Tiefe (m ab Terrainoberfläche) des Grundwasserspiegels (Mittelwert)._
 
 
    
-mea_period   _Messperiode._
+**mea_period**
+_Messperiode._
 
 
    
@@ -7419,17 +7617,18 @@ welcher mit Objektarten der Klasse Surface_Water_PT kombiniert werden kann.
 
 
 
-Name                    | Type                                   | Description
-------------------------|----------------------------------------|---------------------------------
-kind        | subtype                      | Objektart
-[1] |12201                        |
-combi        | CD                      | Objektart einer anderen Klasse, die mit der Objektart in Kombination vorkommen kann
-[0..1] |GC_LIN_HCON_COMBI_CD                        |
+    | Name                    | Type                                   | Description
+----|-------------------------|----------------------------------------|---------------------------------
+1 | kind        | subtype                      | Objektart
+               | [1] |12201                          |
+2 | combi        | CD                      | Objektart einer anderen Klasse, die mit der Objektart in Kombination vorkommen kann
+               | [0..1] |GC_LIN_HCON_COMBI_CD                          |
 
 
 
 
-kind   _Objektart_
+**kind**
+_Objektart_
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -7438,7 +7637,8 @@ kind   _Objektart_
 
 
    
-combi   _Objektart einer anderen Klasse, die mit der Objektart in Kombination vorkommen kann_
+**combi**
+_Objektart einer anderen Klasse, die mit der Objektart in Kombination vorkommen kann_
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -7458,23 +7658,24 @@ gewissen Bezug zu einem ehemaligen Gewässer aufweisen.
 
 
 
-Name                    | Type                                   | Description
-------------------------|----------------------------------------|---------------------------------
-kind        | subtype                      | Objektart
-[1] |12301                        |
-rel_age        | CD                      | Relatives Alter der Objektart
-[0..1] |GC_LIN_HPAL_REL_AGE_CD                        |
-chrono        | table                      | Chronostratigraphische Zuordnung.
-[0..1] |gc_chrono                        |
-ref_year        | integer                      | Referenzjahr der ehemaligen Uferlinie.
-[1] |                        |
-source        | string                      | Datenquelle der historischen Unterlagen.
-[0..1] |                        |
+    | Name                    | Type                                   | Description
+----|-------------------------|----------------------------------------|---------------------------------
+1 | kind        | subtype                      | Objektart
+               | [1] |12301                          |
+2 | rel_age        | CD                      | Relatives Alter der Objektart
+               | [0..1] |GC_LIN_HPAL_REL_AGE_CD                          |
+3 | chrono        | table                      | Chronostratigraphische Zuordnung.
+               | [0..1] |gc_chrono                          |
+4 | ref_year        | integer                      | Referenzjahr der ehemaligen Uferlinie.
+               | [1] |                          |
+5 | source        | string                      | Datenquelle der historischen Unterlagen.
+               | [0..1] |                          |
 
 
 
 
-kind   _Objektart_
+**kind**
+_Objektart_
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -7488,7 +7689,8 @@ kind   _Objektart_
 
 
    
-rel_age   _Relatives Alter der Objektart_
+**rel_age**
+_Relatives Alter der Objektart_
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -7500,15 +7702,18 @@ rel_age   _Relatives Alter der Objektart_
 
 
    
-chrono   _Chronostratigraphische Zuordnung._
+**chrono**
+_Chronostratigraphische Zuordnung._
 
 
    
-ref_year   _Referenzjahr der ehemaligen Uferlinie._
+**ref_year**
+_Referenzjahr der ehemaligen Uferlinie._
 
 
    
-source   _Datenquelle der historischen Unterlagen._
+**source**
+_Datenquelle der historischen Unterlagen._
 
 
    
@@ -7523,17 +7728,18 @@ unterirdische Gewässerlauf kann mit Objeken aus der Klasse Surface_Water_PT kom
 
 
 
-Name                    | Type                                   | Description
-------------------------|----------------------------------------|---------------------------------
-kind        | subtype                      | Objektart
-[1] |12401                        |
-combi        | CD                      | Objektart einer anderen Klasse, die mit der Objektart in Kombination vorkommen kann
-[0..1] |GC_LIN_HSUB_COMBI_CD                        |
+    | Name                    | Type                                   | Description
+----|-------------------------|----------------------------------------|---------------------------------
+1 | kind        | subtype                      | Objektart
+               | [1] |12401                          |
+2 | combi        | CD                      | Objektart einer anderen Klasse, die mit der Objektart in Kombination vorkommen kann
+               | [0..1] |GC_LIN_HSUB_COMBI_CD                          |
 
 
 
 
-kind   _Objektart_
+**kind**
+_Objektart_
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -7541,7 +7747,8 @@ kind   _Objektart_
 
 
    
-combi   _Objektart einer anderen Klasse, die mit der Objektart in Kombination vorkommen kann_
+**combi**
+_Objektart einer anderen Klasse, die mit der Objektart in Kombination vorkommen kann_
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -7570,33 +7777,34 @@ Wasserchemie.
 
 
 
-Name                    | Type                                   | Description
-------------------------|----------------------------------------|---------------------------------
-kind        | subtype                      | Objektart
-[1] |12501                        |
-status        | Cd                      | Zustand der Objektart.
-[0..1] |GC_PNT_HSUR_STATUS_CD                        |
-flow_con        | CD                      | Wasserfluss Bedingungen.
-[0..1] |GC_PNT_HSUR_FLOW_CON_CD                        |
-type        | CD                      | Charakteristik der Objektart
-[0..1] |GC_PNT_HSUR_TYPE_CD                        |
-dis_loca        | CD                      | Ort des Wasserausflusses.
-[0..1] |GC_PNT_HSUR_DIS_LOCA_CD                        |
-combi        | CD                      | Objektart einer anderen Klasse, die mit der Objektart in Kombination vorkommen kann
-[0..1] |GC_PNT_HSUR_COMBI_CD                        |
-temp        | integer                      | Mittlere Wassertemperatur (°C).
-[0..1] |                        |
-chemistry        | string                      | Charakteristisches chemisches Element im Mineralwasser (z.B. Fe).
-[0..1] |                        |
-azimuth        | integer                      | Richtung (Azimut) der jeweiligen Punktobjektart. Wert in
+    | Name                    | Type                                   | Description
+----|-------------------------|----------------------------------------|---------------------------------
+1 | kind        | subtype                      | Objektart
+               | [1] |12501                          |
+2 | status        | Cd                      | Zustand der Objektart.
+               | [0..1] |GC_PNT_HSUR_STATUS_CD                          |
+3 | flow_con        | CD                      | Wasserfluss Bedingungen.
+               | [0..1] |GC_PNT_HSUR_FLOW_CON_CD                          |
+4 | type        | CD                      | Charakteristik der Objektart
+               | [0..1] |GC_PNT_HSUR_TYPE_CD                          |
+5 | dis_loca        | CD                      | Ort des Wasserausflusses.
+               | [0..1] |GC_PNT_HSUR_DIS_LOCA_CD                          |
+6 | combi        | CD                      | Objektart einer anderen Klasse, die mit der Objektart in Kombination vorkommen kann
+               | [0..1] |GC_PNT_HSUR_COMBI_CD                          |
+7 | temp        | integer                      | Mittlere Wassertemperatur (°C).
+               | [0..1] |                          |
+8 | chemistry        | string                      | Charakteristisches chemisches Element im Mineralwasser (z.B. Fe).
+               | [0..1] |                          |
+9 | azimuth        | integer                      | Richtung (Azimut) der jeweiligen Punktobjektart. Wert in
 Grad (0° 359°) im Uhrzeigersinn gemessen.
 
-[0..1] |                        |
+               | [0..1] |                          |
 
 
 
 
-kind   _Objektart_
+**kind**
+_Objektart_
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -7609,11 +7817,13 @@ kind   _Objektart_
 
 
    
-status   _Zustand der Objektart._
+**status**
+_Zustand der Objektart._
 
 
    
-flow_con   _Wasserfluss Bedingungen._
+**flow_con**
+_Wasserfluss Bedingungen._
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -7625,7 +7835,8 @@ flow_con   _Wasserfluss Bedingungen._
 
 
    
-type   _Charakteristik der Objektart_
+**type**
+_Charakteristik der Objektart_
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -7637,7 +7848,8 @@ type   _Charakteristik der Objektart_
 
 
    
-dis_loca   _Ort des Wasserausflusses._
+**dis_loca**
+_Ort des Wasserausflusses._
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -7647,7 +7859,8 @@ dis_loca   _Ort des Wasserausflusses._
 
 
    
-combi   _Objektart einer anderen Klasse, die mit der Objektart in Kombination vorkommen kann_
+**combi**
+_Objektart einer anderen Klasse, die mit der Objektart in Kombination vorkommen kann_
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -7658,15 +7871,18 @@ combi   _Objektart einer anderen Klasse, die mit der Objektart in Kombination vo
 
 
    
-temp   _Mittlere Wassertemperatur (°C)._
+**temp**
+_Mittlere Wassertemperatur (°C)._
 
 
    
-chemistry   _Charakteristisches chemisches Element im Mineralwasser (z.B. Fe)._
+**chemistry**
+_Charakteristisches chemisches Element im Mineralwasser (z.B. Fe)._
 
 
    
-azimuth   _Richtung (Azimut) der jeweiligen Punktobjektart. Wert in
+**azimuth**
+_Richtung (Azimut) der jeweiligen Punktobjektart. Wert in
 Grad (0° 359°) im Uhrzeigersinn gemessen._
 
 
@@ -7679,15 +7895,16 @@ beschrieben.
 
 
 
-Name                    | Type                                   | Description
-------------------------|----------------------------------------|---------------------------------
-kind        | subtype                      | Objektart
-[1] |12601                        |
+    | Name                    | Type                                   | Description
+----|-------------------------|----------------------------------------|---------------------------------
+1 | kind        | subtype                      | Objektart
+               | [1] |12601                          |
 
 
 
 
-kind   _Objektart_
+**kind**
+_Objektart_
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -7706,15 +7923,16 @@ modells Geologie
 
 
 
-Name                    | Type                                   | Description
-------------------------|----------------------------------------|---------------------------------
-kind        | subtype                      | Objektart
-[1] |12701                        |
+    | Name                    | Type                                   | Description
+----|-------------------------|----------------------------------------|---------------------------------
+1 | kind        | subtype                      | Objektart
+               | [1] |12701                          |
 
 
 
 
-kind   _Objektart_
+**kind**
+_Objektart_
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -7739,81 +7957,92 @@ und «Basis_Vect» den Vektordatensatz.
 
 
 
-Name                    | Type                                   | Description
-------------------------|----------------------------------------|---------------------------------
-kind        | subtype                      | Objektart
-[1] |15410                        |
-map_title        | string                      | Originaltitel (Kartentitel) der Objektart.
-[1] |                        |
-map_nbr        | integer                      | Originalnummer (Kartennummer) der Objektart.
-[0..1] |                        |
-map_scale        | string                      | Massstab der Objektart (Kartenmassstab).
-[1] |                        |
-basis_topo        |                       | Angabe zur topographischen Grundlage der Objektart.
+    | Name                    | Type                                   | Description
+----|-------------------------|----------------------------------------|---------------------------------
+1 | kind        | subtype                      | Objektart
+               | [1] |15410                          |
+2 | map_title        | string                      | Originaltitel (Kartentitel) der Objektart.
+               | [1] |                          |
+3 | map_nbr        | integer                      | Originalnummer (Kartennummer) der Objektart.
+               | [0..1] |                          |
+4 | map_scale        | string                      | Massstab der Objektart (Kartenmassstab).
+               | [1] |                          |
+5 | basis_topo        |                       | Angabe zur topographischen Grundlage der Objektart.
 Wird vor allem bei Karten der Landesgeologie angegeben.
 
-[0..1] |                        |
-author        | string                      | Autor oder Autoren der Objektart.
-[1..*] |                        |
-owner        | string                      | Angabe zum Datenherr / zu den Datenherren der Objektart.
-[1..*] |                        |
-map_period        | string                      | Angabe zum Kartierzeitraum der Objektart.
-[0..1] |                        |
-publ_year        | integer                      | Publikationsjahr der Objektart.
-[1] |                        |
-basis_vect        | string                      | Grundlage Vektordatensatz.
-[0..1] |                        |
-restriction        | boolean                      | Angabe darüber, ob die Objektart öffentlich verfügbar ist (ja) oder einer Beschränkung (nein) unterliegt
-[1] |                        |
+               | [0..1] |                          |
+6 | author        | string                      | Autor oder Autoren der Objektart.
+               | [1..*] |                          |
+7 | owner        | string                      | Angabe zum Datenherr / zu den Datenherren der Objektart.
+               | [1..*] |                          |
+8 | map_period        | string                      | Angabe zum Kartierzeitraum der Objektart.
+               | [0..1] |                          |
+9 | publ_year        | integer                      | Publikationsjahr der Objektart.
+               | [1] |                          |
+10 | basis_vect        | string                      | Grundlage Vektordatensatz.
+               | [0..1] |                          |
+11 | restriction        | boolean                      | Angabe darüber, ob die Objektart öffentlich verfügbar ist (ja) oder einer Beschränkung (nein) unterliegt
+               | [1] |                          |
 
 
 
 
-kind   _Objektart_
+**kind**
+_Objektart_
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
 
 
    
-map_title   _Originaltitel (Kartentitel) der Objektart._
+**map_title**
+_Originaltitel (Kartentitel) der Objektart._
 
 
    
-map_nbr   _Originalnummer (Kartennummer) der Objektart._
+**map_nbr**
+_Originalnummer (Kartennummer) der Objektart._
 
 
    
-map_scale   _Massstab der Objektart (Kartenmassstab)._
+**map_scale**
+_Massstab der Objektart (Kartenmassstab)._
 
 
    
-basis_topo   _Angabe zur topographischen Grundlage der Objektart.
+**basis_topo**
+_Angabe zur topographischen Grundlage der Objektart.
 Wird vor allem bei Karten der Landesgeologie angegeben._
 
 
    
-author   _Autor oder Autoren der Objektart._
+**author**
+_Autor oder Autoren der Objektart._
 
 
    
-owner   _Angabe zum Datenherr / zu den Datenherren der Objektart._
+**owner**
+_Angabe zum Datenherr / zu den Datenherren der Objektart._
 
 
    
-map_period   _Angabe zum Kartierzeitraum der Objektart._
+**map_period**
+_Angabe zum Kartierzeitraum der Objektart._
 
 
    
-publ_year   _Publikationsjahr der Objektart._
+**publ_year**
+_Publikationsjahr der Objektart._
 
 
    
-basis_vect   _Grundlage Vektordatensatz._
+**basis_vect**
+_Grundlage Vektordatensatz._
 
 
    
-restriction   _Angabe darüber, ob die Objektart öffentlich verfügbar ist (ja) oder einer Beschränkung (nein) unterliegt_
+**restriction**
+_Angabe darüber, ob die Objektart öffentlich verfügbar ist (ja) oder einer Beschränkung (nein) unterliegt_
 
 
    
