@@ -21,8 +21,8 @@ Bundesamt für Landestopographie swisstopo
 ## Theme {{ theme.name |upper}} ##
 
 {% for cls in theme.classes -%}
-{% set clsloop = loop %}
-{% set idx = "%s-%s" % (themeloop.index, clsloop.index) %}
+
+
 
 ### Class {{ cls.name }} ###
 {{ cls.description| trim }}
@@ -30,21 +30,28 @@ Bundesamt für Landestopographie swisstopo
 
 
 
-    | Name                    | Type                                   | Description
-----|-------------------------|----------------------------------------|---------------------------------
+    | Name                         | Type                              | Description
+----|------------------------------|-----------------------------------|--------------------------------------
 {% for attr in cls.attributes -%}
-
-{{loop.index}} | {{ attr.name  }}        | {{attr.att_type}}                      | {{ attr.description|trim   }}
-               | [{{ attr.cardinality}}] |{{attr.value}}                          |
+{% set slug = "%s-%s" % (cls.name, attr.name) %}
+{%- if attr.att_type == 'CD' -%}
+{{loop.index}} | **{{ attr.name  }}**                | [CodedDomain](#{{slug| slugify}})                    | {{ attr.description|trim }} 
+[]()           | Cardinality [{{ attr.cardinality}}] |                                                      |  
+{% else -%}
+{{loop.index}} | **{{ attr.name  }}**                | {{attr.att_type}}                                    | {{ attr.description|trim }} 
+[]()           | Cardinality [{{ attr.cardinality}}] | {{attr.value}}                                       |  
+{% endif -%}
+                       
 {% endfor %}
 
 
 
 {% for attr in cls.attributes -%}
+{% set slug = "%s-%s" % (cls.name, attr.name) %}
 #### Attribute {{ attr.name }}
-{%- if attr.att_type == 'CD' -%}{{- '{#'}}{{idx}}-{{ attr.name| slugify}}{{'}'}}{% endif %}
+{%- if attr.att_type == 'CD' -%}{{ '{#'}}{{slug| slugify}}{{'}'}}{% endif %}
 _{{ attr.description|trim}}_
-{% if attr.att_type in ('boolean', 'string', 'float', 'range', 'integer') %}
+{%- if attr.att_type in ('boolean', 'string', 'float', 'range', 'integer') -%}
 _Datentyp:  {{ attr.att_type  }}_
 {% endif %}
 
