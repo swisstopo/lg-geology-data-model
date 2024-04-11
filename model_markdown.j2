@@ -8,14 +8,22 @@ Beschreibung und Objektkatalog, Version 3.5
 ![Extrait GeoCover vers le Moléson](geocover.png "Moléson")
 
 
+
+
 Bundesamt für Landestopographie swisstopo
 \pagebreak
 
 
 {% for theme in themes -%}
+{% set themeloop = loop %}
+
 
 ## Theme {{ theme.name |upper}} ##
+
 {% for cls in theme.classes -%}
+{% set clsloop = loop %}
+{% set idx = "%s-%s" % (themeloop.index, clsloop.index) %}
+
 ### Class {{ cls.name }} ###
 {{ cls.description| trim }}
 
@@ -25,14 +33,16 @@ Bundesamt für Landestopographie swisstopo
     | Name                    | Type                                   | Description
 ----|-------------------------|----------------------------------------|---------------------------------
 {% for attr in cls.attributes -%}
-{{loop.index}} | {{ attr.name  }}        | {{attr.att_type}}                      | {{ attr.description   }}
+
+{{loop.index}} | {{ attr.name  }}        | {{attr.att_type}}                      | {{ attr.description|trim   }}
                | [{{ attr.cardinality}}] |{{attr.value}}                          |
 {% endfor %}
 
 
 
 {% for attr in cls.attributes -%}
-**{{ attr.name }}**
+#### Attribute {{ attr.name }}
+{%- if attr.att_type == 'CD' -%}{{- '{#'}}{{idx}}-{{ attr.name| slugify}}{{'}'}}{% endif %}
 _{{ attr.description|trim}}_
 {% if attr.att_type in ('boolean', 'string', 'float', 'range', 'integer') %}
 _Datentyp:  {{ attr.att_type  }}_

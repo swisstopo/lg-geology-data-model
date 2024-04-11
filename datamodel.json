@@ -7251,7 +7251,8 @@
                         },
                         {
                             "name": "basis_topo",
-                            "description": "Angabe zur topographischen Grundlage der Objektart.\nWird vor allem bei Karten der Landesgeologie angegeben.\n",
+                            "description": "Angabe zur topographischen Grundlage der Objektart.",
+                            "att_type": "string",
                             "cardinality": "0..1"
                         },
                         {

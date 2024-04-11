@@ -9,5 +9,11 @@ keywords:
 - 'Model'
 - 'GIS'
 - 'Vector data'
+- 'Switzerland'
 subject: "Geologische Landesaufnahme der Schweiz"
+
+fontsize: 10pt
+title: |
+  ![](geocover.png){width=1in}
+  Adding a Logo to LaTeX Title
 ---

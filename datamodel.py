@@ -141,9 +141,13 @@ if __name__ == "__main__":
     import datetime
     import os
     from jinja2 import Template
+    import jinja2
     from pathlib import Path
+    import re
 
     yaml_file = "datamodel.yaml"
+    yaml_dir = os.path.dirname(os.path.realpath(__file__))
+
     project_name = Path(yaml_file).stem
     model = Report(yaml_file)
 
@@ -151,11 +155,23 @@ if __name__ == "__main__":
 
     data = model.to_json()
 
+    loader = jinja2.FileSystemLoader(yaml_dir)
+    env = jinja2.Environment(autoescape=True, loader=loader)
+
+    def slugify(input):
+        """Custom filter"""
+        return re.sub(r'[\W_]+', '-', input.lower())
+
+    env.filters['slugify'] = slugify
+    temp = env.get_template("model_markdown.j2")
+    #temp.render(data)
+
     with open(f"{project_name}.json", "w") as f:
         f.write(json.dumps(data, indent=4))
 
-    with open("model_markdown.j2") as f:
-        template = Template(f.read())
+    #with open("model_markdown.j2") as f:
+    #    template = Template(f.read())
 
     with open(f"{project_name}.md", "w") as f:
-        f.write(template.render(data))
+        #f.write(template.render(data))
+        f.write(temp.render(data))

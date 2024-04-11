@@ -8,11 +8,20 @@ Beschreibung und Objektkatalog, Version 3.5
 ![Extrait GeoCover vers le Moléson](geocover.png "Moléson")
 
 
+
+
 Bundesamt für Landestopographie swisstopo
 \pagebreak
 
 
+
+
+
 ## Theme ROCK_BODIES ##
+
+
+
+
 ### Class Unconsolidated_Deposits_PT ###
 Die Klasse Unconsolidated_Deposits_PT umfasst einzelne Gesteine (Korngrösse: Steine bis Blöcke), die durch gravitative, glaziale oder anthropogene Transportprozesse an ihren heutigen Ort gelangten, respektive sich an Ort und Stelle durch Verwitterung des umliegenden Gesteins gebildet haben.
 
@@ -39,7 +48,7 @@ Die Klasse Unconsolidated_Deposits_PT umfasst einzelne Gesteine (Korngrösse: St
 
 
 
-**kind**
+#### Attribute kind
 _Objektart_
 
 
@@ -56,7 +65,7 @@ _Objektart_
 
 
    
-**status**
+#### Attribute status{#1-1-status}
 _Zustand der Objektart_
 
 
@@ -71,7 +80,7 @@ _Zustand der Objektart_
 
 
    
-**rock_type**
+#### Attribute rock_type{#1-1-rock-type}
 _Gesteinstyp (Kristallingestein / Sedimentgestein)_
 
 
@@ -85,7 +94,7 @@ _Gesteinstyp (Kristallingestein / Sedimentgestein)_
 
 
    
-**rock_spe**
+#### Attribute rock_spe{#1-1-rock-spe}
 _Bezeichnung des Leitgesteins_
 
 
@@ -122,13 +131,13 @@ _Bezeichnung des Leitgesteins_
 
 
    
-**mat_type**
+#### Attribute mat_type
 _Materialbezeichnung (lithologische Einheit)_
 
 
 
    
-**orig_descr**
+#### Attribute orig_descr
 _Originalbezeichnung gemäss der Legende der zugrundeliegenden geologischen Karte_
 
 _Datentyp:  string_
@@ -136,7 +145,7 @@ _Datentyp:  string_
 
 
    
-**protected**
+#### Attribute protected
 _Geschütztes geologisches Objekt_
 
 _Datentyp:  boolean_
@@ -144,6 +153,9 @@ _Datentyp:  boolean_
 
 
    
+
+
+
 
 ### Class Unconsolidated_Deposits_PLG ###
 Die Klasse Unconsolidated_Deposits_PLG beinhaltet alle flächenhaft
@@ -200,7 +212,7 @@ Fallbeispiele abgebildet.
 
 
 
-**kind**
+#### Attribute kind
 _Objektart_
 
 
@@ -210,7 +222,7 @@ _Objektart_
 
 
    
-**litstrat**
+#### Attribute litstrat{#1-2-litstrat}
 __
 
 
@@ -671,7 +683,7 @@ __
 
 
    
-**litho**
+#### Attribute litho{#1-2-litho}
 __
 
 
@@ -948,7 +960,7 @@ __
 |15104019 | Protomylonit | Protomylonit     |
 |15104025 | Pseudotachylit | Pseudotachylit     |
 |15103055 | Pyroklastische Brekzie | Pyroklastische Brekzie     |
-|15103053 | pyroklastisches Gestein, undifferenziert (vulkanischer Tuff, > 75 % pyroklast. Komp.) | pyroklastisches Gestein, undifferenziert (vulkanischer Tuff, > 75 % pyroklast. Komp.)     |
+|15103053 | pyroklastisches Gestein, undifferenziert (vulkanischer Tuff, &gt; 75 % pyroklast. Komp.) | pyroklastisches Gestein, undifferenziert (vulkanischer Tuff, &gt; 75 % pyroklast. Komp.)     |
 |15103020 | Pyroxenit (Intrusivgestein) | Pyroxenit (Intrusivgestein)     |
 |15104088 | Pyroxenit (monomineralischer Metamorphit) | Pyroxenit (monomineralischer Metamorphit)     |
 |15103044 | Quarzandesit | Quarzandesit     |
@@ -1043,7 +1055,7 @@ __
 
 
    
-**chrono_t**
+#### Attribute chrono_t{#1-2-chrono-t}
 __
 
 
@@ -1191,7 +1203,7 @@ __
 
 
    
-**chrono_b**
+#### Attribute chrono_b{#1-2-chrono-b}
 __
 
 
@@ -1339,13 +1351,13 @@ __
 
 
    
-**mat_type**
+#### Attribute mat_type
 __
 
 
 
    
-**buried_out**
+#### Attribute buried_out
 __
 
 _Datentyp:  boolean_
@@ -1353,19 +1365,19 @@ _Datentyp:  boolean_
 
 
    
-**composit**
+#### Attribute composit
 __
 
 
 
    
-**admixture**
+#### Attribute admixture
 __
 
 
 
    
-**structur**
+#### Attribute structur{#1-2-structur}
 _Textur des Lockergesteins_
 
 
@@ -1388,13 +1400,13 @@ _Textur des Lockergesteins_
 
 
    
-**charact**
+#### Attribute charact
 _Spezifische Eigenschaft_
 
 
 
    
-**morpholo**
+#### Attribute morpholo{#1-2-morpholo}
 _Morphologie der Lockergesteinseinheit_
 
 
@@ -1413,7 +1425,7 @@ _Morphologie der Lockergesteinseinheit_
 
 
    
-**glac_type**
+#### Attribute glac_type{#1-2-glac-type}
 _Gletschertyp; Attribut nur für Moränen_
 
 
@@ -1437,7 +1449,7 @@ _Gletschertyp; Attribut nur für Moränen_
 
 
    
-**ref_year**
+#### Attribute ref_year
 _Zeitpunkt oder Zeitperiode. Zum Beispiel «1940 1943, Periode der Drainage» (muss präzisiert werden)_
 
 _Datentyp:  string_
@@ -1445,7 +1457,7 @@ _Datentyp:  string_
 
 
    
-**thin_cover**
+#### Attribute thin_cover{#1-2-thin-cover}
 _Lockermaterialbedeckung, wenn vorhanden._
 
 
@@ -1462,12 +1474,15 @@ _Lockermaterialbedeckung, wenn vorhanden._
 
 
    
-**orig_descr**
+#### Attribute orig_descr
 _Originalbezeichnung gemäss der Legende der zugrundeliegenden geologischen Karte_
 
 
 
    
+
+
+
 
 ### Class Bedrock_PLG ###
 Die Klasse Bedrock_PLG enthält alle flächenbildenden lithostratigraphischen Festgesteinseinheiten. Die Angabe,  ob ein Festgestein bewegt (durch Gravitation versetzt) wurde, geht aus der Klasse Instabilities_within_Bedrock_PLG (Thema Geomorphology) hervor.
@@ -1527,7 +1542,7 @@ Die Klasse Bedrock_PLG enthält alle flächenbildenden lithostratigraphischen Fe
 
 
 
-**kind**
+#### Attribute kind
 _Spezifische Eigenschaft_
 
 
@@ -1537,13 +1552,13 @@ _Spezifische Eigenschaft_
 
 
    
-**fm_homog**
+#### Attribute fm_homog
 _Gesteinsaufbau_
 
 
 
    
-**listrat**
+#### Attribute listrat{#1-3-listrat}
 _Lithostratigraphische Einhei_
 
 
@@ -1607,7 +1622,7 @@ _Lithostratigraphische Einhei_
 |15203058 | Agreblierai-Member | Agreblierai-Member     |
 |15202291 | Ahornen-Member | Ahornen-Member     |
 |15203334 | Aigremont-Brekzie | Aigremont-Brekzie     |
-|15203416 | Aiguilles-Rouges-d'Arolla-Metagabbro | Aiguilles-Rouges-d'Arolla-Metagabbro     |
+|15203416 | Aiguilles-Rouges-d&#39;Arolla-Metagabbro | Aiguilles-Rouges-d&#39;Arolla-Metagabbro     |
 |15200373 | Ajoie-Gompholit | Ajoie-Gompholit     |
 |15200384 | Ajoie-Member | Ajoie-Member     |
 |15200459 | Akzessorische Mumienbänke | Akzessorische Mumienbänke     |
@@ -1681,7 +1696,7 @@ _Lithostratigraphische Einhei_
 |15200155 | Arzier-Mergel | Arzier-Mergel     |
 |15200131 | Asp-Member | Asp-Member     |
 |15200450 | Astieria-Mergel | Astieria-Mergel     |
-|15202358 | Au-d'Arbignon-Schiefer | Au-d'Arbignon-Schiefer     |
+|15202358 | Au-d&#39;Arbignon-Schiefer | Au-d&#39;Arbignon-Schiefer     |
 |15202055 | Aubrig-Schichten | Aubrig-Schichten     |
 |15203401 | Augengneis der Berisal-Decke | Augengneis der Berisal-Decke     |
 |15203478 | Augengneis der Maggia-Decke | Augengneis der Maggia-Decke     |
@@ -1823,7 +1838,7 @@ _Lithostratigraphische Einhei_
 |15202064 | Brisi-Member | Brisi-Member     |
 |15202066 | Brisi-Sandstein | Brisi-Sandstein     |
 |15202190 | Bristenstock-Syenit | Bristenstock-Syenit     |
-|15205044 | Broccatello d'Arzo | Broccatello d'Arzo     |
+|15205044 | Broccatello d&#39;Arzo | Broccatello d&#39;Arzo     |
 |15200204 | Brot-Schichten | Brot-Schichten     |
 |15200065 | Brüggli-Member | Brüggli-Member     |
 |15203183 | Bruneggjoch-Formation | Bruneggjoch-Formation     |
@@ -1936,7 +1951,7 @@ _Lithostratigraphische Einhei_
 |15202419 | Col-du-Jorat-Member | Col-du-Jorat-Member     |
 |15205025 | Coldrerio-Flysch | Coldrerio-Flysch     |
 |15203344 | Colerin-Konglomerat | Colerin-Konglomerat     |
-|15203036 | Comba-d'Avau-Member | Comba-d'Avau-Member     |
+|15203036 | Comba-d&#39;Avau-Member | Comba-d&#39;Avau-Member     |
 |15203049 | Combe-du-Pissot-Formation | Combe-du-Pissot-Formation     |
 |15200304 | Combe-Girard-Bentonit | Combe-Girard-Bentonit     |
 |15200625 | Combe-Girard-Member | Combe-Girard-Member     |
@@ -1968,7 +1983,7 @@ _Lithostratigraphische Einhei_
 |15200306 | Crêt-du-Locle-Formation, Gompholitfazies | Crêt-du-Locle-Formation, Gompholitfazies     |
 |15200627 | Crêt-du-Locle-Formation, Mergelfazies | Crêt-du-Locle-Formation, Mergelfazies     |
 |15200022 | Creugenat-Schichten | Creugenat-Schichten     |
-|15203051 | Creux-de-l'Ours-Member | Creux-de-l'Ours-Member     |
+|15203051 | Creux-de-l&#39;Ours-Member | Creux-de-l&#39;Ours-Member     |
 |15202227 | Cristallina-Granodiorit | Cristallina-Granodiorit     |
 |15200334 | Cuarny-Sandstein | Cuarny-Sandstein     |
 |15200355 | Cucloz-Sandstein | Cucloz-Sandstein     |
@@ -2099,7 +2114,7 @@ _Lithostratigraphische Einhei_
 |15200275 | Fellitobel-Süsswasserkalk | Fellitobel-Süsswasserkalk     |
 |15203372 | Ferret-Schiefer | Ferret-Schiefer     |
 |15200196 | Ferrugineus-Oolith | Ferrugineus-Oolith     |
-|15203228 | Fêta-d'Août-Flysch | Fêta-d'Août-Flysch     |
+|15203228 | Fêta-d&#39;Août-Flysch | Fêta-d&#39;Août-Flysch     |
 |15202230 | Fibbia-Granit | Fibbia-Granit     |
 |15203138 | Filamentkalk | Filamentkalk     |
 |15205133 | Finero-Peridotit | Finero-Peridotit     |
@@ -2126,7 +2141,7 @@ _Lithostratigraphische Einhei_
 |15200330 | Formation der Granitischen Molasse | Formation der Granitischen Molasse     |
 |15205095 | Fornale-Gabbro | Fornale-Gabbro     |
 |15203342 | Forno-Amphibolit | Forno-Amphibolit     |
-|15200651 | Fort-de-l'Ecluse-Member | Fort-de-l'Ecluse-Member     |
+|15200651 | Fort-de-l&#39;Ecluse-Member | Fort-de-l&#39;Ecluse-Member     |
 |15204117 | Forun-Augengneis | Forun-Augengneis     |
 |15202277 | Fossilmarmor | Fossilmarmor     |
 |15203134 | Fouyet-Formation | Fouyet-Formation     |
@@ -2234,12 +2249,12 @@ _Lithostratigraphische Einhei_
 |15200156 | Goldberg-Formation | Goldberg-Formation     |
 |15200410 | Goldbrunnen-Schichten | Goldbrunnen-Schichten     |
 |15200361 | Goldegg-Sandstein | Goldegg-Sandstein     |
-|15203190 | Goli-d'Aget-Member | Goli-d'Aget-Member     |
+|15203190 | Goli-d&#39;Aget-Member | Goli-d&#39;Aget-Member     |
 |15202256 | Goltschenried-Formation | Goltschenried-Formation     |
 |15202267 | Goms-Gneiskomplex | Goms-Gneiskomplex     |
 |15202510 | Gonzen-Eisenerzhorizont | Gonzen-Eisenerzhorizont     |
-|15200092 | Gorges-de-l'Orbe- und Vallorbe-Formation, undifferenziert | Gorges-de-l'Orbe- und Vallorbe-Formation, undifferenziert     |
-|15200096 | Gorges-de-l'Orbe-Formation | Gorges-de-l'Orbe-Formation     |
+|15200092 | Gorges-de-l&#39;Orbe- und Vallorbe-Formation, undifferenziert | Gorges-de-l&#39;Orbe- und Vallorbe-Formation, undifferenziert     |
+|15200096 | Gorges-de-l&#39;Orbe-Formation | Gorges-de-l&#39;Orbe-Formation     |
 |15204115 | Gosau-Gruppe | Gosau-Gruppe     |
 |15200488 | Gosheim-Formation | Gosheim-Formation     |
 |15203187 | Gouille-Verte-Member | Gouille-Verte-Member     |
@@ -3026,8 +3041,8 @@ _Lithostratigraphische Einhei_
 |15202203 | Plex-Aboyeu-Rhyodazit | Plex-Aboyeu-Rhyodazit     |
 |15202519 | Pliensbachien-Spatkalk | Pliensbachien-Spatkalk     |
 |15200444 | Poet-Bank | Poet-Bank     |
-|15205087 | Pointe-d'Otemma-Granodiorit | Pointe-d'Otemma-Granodiorit     |
-|15203264 | Pointe-de-l'Au-Brekzie | Pointe-de-l'Au-Brekzie     |
+|15205087 | Pointe-d&#39;Otemma-Granodiorit | Pointe-d&#39;Otemma-Granodiorit     |
+|15203264 | Pointe-de-l&#39;Au-Brekzie | Pointe-de-l&#39;Au-Brekzie     |
 |15200390 | Polygene Nagelfluh | Polygene Nagelfluh     |
 |15200436 | Poncin-Member | Poncin-Member     |
 |15200667 | Pont-des-Pierres-Bank | Pont-des-Pierres-Bank     |
@@ -3149,7 +3164,7 @@ _Lithostratigraphische Einhei_
 |15206045 | Rhétien, undifferenziert | Rhétien, undifferenziert     |
 |15200145 | Rhötton | Rhötton     |
 |15206035 | Rhyolit, undifferenziert | Rhyolit, undifferenziert     |
-|15203362 | Ri-d'Antabia-Konglomerat | Ri-d'Antabia-Konglomerat     |
+|15203362 | Ri-d&#39;Antabia-Konglomerat | Ri-d&#39;Antabia-Konglomerat     |
 |15203388 | Ricard-Rhyolit | Ricard-Rhyolit     |
 |15200077 | Rickenbach-Member | Rickenbach-Member     |
 |15202373 | Riein-Schichten | Riein-Schichten     |
@@ -3310,7 +3325,7 @@ _Lithostratigraphische Einhei_
 |15200658 | Schwarzbach-Schichten | Schwarzbach-Schichten     |
 |15202114 | Schwarzhorn-Member | Schwarzhorn-Member     |
 |15200441 | Scie-Besse-Sandstein | Scie-Besse-Sandstein     |
-|15203038 | Sciernes-d'Albeuve-Formation | Sciernes-d'Albeuve-Formation     |
+|15203038 | Sciernes-d&#39;Albeuve-Formation | Sciernes-d&#39;Albeuve-Formation     |
 |15203363 | Scisti bruni (Lebendun) | Scisti bruni (Lebendun)     |
 |15206054 | Sedimentäre Brekzie, undifferenziert | Sedimentäre Brekzie, undifferenziert     |
 |15206030 | Sedimentgestein, undifferenziert | Sedimentgestein, undifferenziert     |
@@ -3603,7 +3618,7 @@ _Lithostratigraphische Einhei_
 |15203151 | Vaduz-Flysch | Vaduz-Flysch     |
 |15202212 | Val-Bérard-Gneiskomplex | Val-Bérard-Gneiskomplex     |
 |15203513 | Val-Chironico-Gneis | Val-Chironico-Gneis     |
-|15202289 | Val-d'Illiez-Sandstein | Val-d'Illiez-Sandstein     |
+|15202289 | Val-d&#39;Illiez-Sandstein | Val-d&#39;Illiez-Sandstein     |
 |15202488 | Val-da-Surplattas-Diorit | Val-da-Surplattas-Diorit     |
 |15202192 | Val-Gliems-Formation | Val-Gliems-Formation     |
 |15205013 | Val-Grande-Sandstein | Val-Grande-Sandstein     |
@@ -3766,7 +3781,7 @@ _Lithostratigraphische Einhei_
 
 
    
-**litho**
+#### Attribute litho{#1-3-litho}
 _Lithologische Beschreibung_
 
 
@@ -4043,7 +4058,7 @@ _Lithologische Beschreibung_
 |15104019 | Protomylonit | Protomylonit     |
 |15104025 | Pseudotachylit | Pseudotachylit     |
 |15103055 | Pyroklastische Brekzie | Pyroklastische Brekzie     |
-|15103053 | pyroklastisches Gestein, undifferenziert (vulkanischer Tuff, > 75 % pyroklast. Komp.) | pyroklastisches Gestein, undifferenziert (vulkanischer Tuff, > 75 % pyroklast. Komp.)     |
+|15103053 | pyroklastisches Gestein, undifferenziert (vulkanischer Tuff, &gt; 75 % pyroklast. Komp.) | pyroklastisches Gestein, undifferenziert (vulkanischer Tuff, &gt; 75 % pyroklast. Komp.)     |
 |15103020 | Pyroxenit (Intrusivgestein) | Pyroxenit (Intrusivgestein)     |
 |15104088 | Pyroxenit (monomineralischer Metamorphit) | Pyroxenit (monomineralischer Metamorphit)     |
 |15103044 | Quarzandesit | Quarzandesit     |
@@ -4138,7 +4153,7 @@ _Lithologische Beschreibung_
 
 
    
-**chrono_t**
+#### Attribute chrono_t{#1-3-chrono-t}
 _Chronostratigraphische Zuordnung der Obergrenze der Kartiereinheit (Top)_
 
 
@@ -4286,7 +4301,7 @@ _Chronostratigraphische Zuordnung der Obergrenze der Kartiereinheit (Top)_
 
 
    
-**chrono_b**
+#### Attribute chrono_b{#1-3-chrono-b}
 _Chronostratigraphische Zuordnung der Untergrenze der Kartiereinheit (Basis)_
 
 
@@ -4434,7 +4449,7 @@ _Chronostratigraphische Zuordnung der Untergrenze der Kartiereinheit (Basis)_
 
 
    
-**tecto**
+#### Attribute tecto{#1-3-tecto}
 _Tektonische Zugehörigkeit_
 
 
@@ -4695,7 +4710,7 @@ _Tektonische Zugehörigkeit_
 |15304033 | Petit-St-Bernard-Schuppe | Petit-St-Bernard-Schuppe     |
 |15304032 | Pierre-Avoi-Schuppe | Pierre-Avoi-Schuppe     |
 |15303103 | Piora-Peiden-Schuppenkomplex | Piora-Peiden-Schuppenkomplex     |
-|15303111 | Piz-d'Artgas-Decke | Piz-d'Artgas-Decke     |
+|15303111 | Piz-d&#39;Artgas-Decke | Piz-d&#39;Artgas-Decke     |
 |15304005 | Piz-Terri-Lunschania-Decke | Piz-Terri-Lunschania-Decke     |
 |15303137 | Pizalun-Schuppe | Pizalun-Schuppe     |
 |15304013 | Pizzo-del-Vallone-Decke | Pizzo-del-Vallone-Decke     |
@@ -4835,7 +4850,7 @@ _Tektonische Zugehörigkeit_
 
 
    
-**orig_descr**
+#### Attribute orig_descr
 _Originalbezeichnung gemäss der Legende der zugrundeliegenden geologischen Karte_
 
 _Datentyp:  string_
@@ -4843,7 +4858,7 @@ _Datentyp:  string_
 
 
    
-**buried_out**
+#### Attribute buried_out
 _Wurde das Festgestein wieder verdeckt (ja / nein)?_
 
 _Datentyp:  boolean_
@@ -4851,13 +4866,13 @@ _Datentyp:  boolean_
 
 
    
-**exotic_ele**
+#### Attribute exotic_ele
 _Handelt es sich bei der Objektart um ein exotisches Element; z.B. Einschluss, Linse, Tasche, Olistholith (ja / nein)?_
 
 
 
    
-**colour**
+#### Attribute colour
 _Farbe des Gesteins. Präzisieren ob es sich um die Bruchfarbe, die Verwitterungsfarbe, etc. handelt; z.B.Verwitterungsfarbe grau._
 
 _Datentyp:  string_
@@ -4865,7 +4880,7 @@ _Datentyp:  string_
 
 
    
-**sedi_main_com**
+#### Attribute sedi_main_com{#1-3-sedi-main-com}
 _Hauptgesteinskomponente des klastischen Sedimentgesteins_
 
 
@@ -4886,7 +4901,7 @@ _Hauptgesteinskomponente des klastischen Sedimentgesteins_
 
 
    
-**sedi_seco_com**
+#### Attribute sedi_seco_com{#1-3-sedi-seco-com}
 _Nebengesteinskomponente des Sedimentgesteins_
 
 
@@ -4923,7 +4938,7 @@ _Nebengesteinskomponente des Sedimentgesteins_
 
 
    
-**sedi_bond_mat**
+#### Attribute sedi_bond_mat{#1-3-sedi-bond-mat}
 _Bindemittel des Sedimentgesteins_
 
 
@@ -4944,14 +4959,14 @@ _Bindemittel des Sedimentgesteins_
 
 
    
-**sedi_bedding**
+#### Attribute sedi_bedding{#1-3-sedi-bedding}
 _Schichtung des Sedimentgesteins_
 
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
 |20101005 | blätterig | blätterig     |
-|20101003 | dickbankig (>30cm) | dickbankig (>30cm)     |
+|20101003 | dickbankig (&gt;30cm) | dickbankig (&gt;30cm)     |
 |20101004 | dünnbankig (1-10cm) | dünnbankig (1-10cm)     |
 |20101002 | gebankt | gebankt     |
 |20101006 | knauerig | knauerig     |
@@ -4963,7 +4978,7 @@ _Schichtung des Sedimentgesteins_
 
 
    
-**sedi_str**
+#### Attribute sedi_str{#1-3-sedi-str}
 _Textur des Sedimentgesteins_
 
 
@@ -4982,7 +4997,7 @@ _Textur des Sedimentgesteins_
 
 
    
-**sedi_tex**
+#### Attribute sedi_tex{#1-3-sedi-tex}
 _Sedimentstruktur_
 
 
@@ -5002,7 +5017,7 @@ _Sedimentstruktur_
 
 
    
-**igne_text**
+#### Attribute igne_text{#1-3-igne-text}
 _Struktur des magmatischen Gesteins_
 
 
@@ -5016,7 +5031,7 @@ _Struktur des magmatischen Gesteins_
 
 
    
-**igne_grain_si**
+#### Attribute igne_grain_si{#1-3-igne-grain-si}
 _Korngrösse des magmatischen Gesteins_
 
 
@@ -5030,7 +5045,7 @@ _Korngrösse des magmatischen Gesteins_
 
 
    
-**igne_affinity**
+#### Attribute igne_affinity{#1-3-igne-affinity}
 _Affinität zu einer magmatischen Serie._
 
 
@@ -5044,7 +5059,7 @@ _Affinität zu einer magmatischen Serie._
 
 
    
-**meta_full_name**
+#### Attribute meta_full_name
 _Bezeichnung des metamorphen Gesteins_
 
 _Datentyp:  string_
@@ -5052,7 +5067,7 @@ _Datentyp:  string_
 
 
    
-**meta_mineral**
+#### Attribute meta_mineral{#1-3-meta-mineral}
 _Wichtiges Mineral des metamorphen Gesteins_
 
 
@@ -5146,7 +5161,7 @@ _Wichtiges Mineral des metamorphen Gesteins_
 
 
    
-**meta_str**
+#### Attribute meta_str{#1-3-meta-str}
 _Textur des metamorphen Gesteins_
 
 
@@ -5176,7 +5191,14 @@ _Textur des metamorphen Gesteins_
    
 
 
+
+
+
 ## Theme GEOMORPHOLOGY ##
+
+
+
+
 ### Class Instability_Structures_PT ###
 Die Klasse Instability_Structures_PT enthält lokal beobachtete Hinweise auf Hanginstabilitäten 
 (Rutschungen), die räumlich nicht abgegrenzt werden können. Wenn möglich, sollen instabile 
@@ -5195,7 +5217,7 @@ gedruckter Karten gedacht.
 
 
 
-**kind**
+#### Attribute kind
 _Spezifische Eigenschaft_
 
 
@@ -5205,6 +5227,9 @@ _Spezifische Eigenschaft_
 
 
    
+
+
+
 
 ### Class Instability_Structures_L ###
 Die Klasse Instability_Structures_L umfasst linienförmige Morphologien, die sich als Folge von 
@@ -5223,7 +5248,7 @@ Rutschung oder Sackung (Abrissnische)
 
 
 
-**kind**
+#### Attribute kind
 _Spezifische Eigenschaft_
 
 
@@ -5236,6 +5261,9 @@ _Spezifische Eigenschaft_
 
 
    
+
+
+
 
 ### Class Instabilities_within_Unconsolidated_Deposits_PLG ###
 Die Klasse Instabilities_within_Unconsolidated_Deposits_PLG beinhaltet alle Polygone, die Gebiete 
@@ -5257,7 +5285,7 @@ abgebildet.
 
 
 
-**kind**
+#### Attribute kind
 _Spezifische Eigenschaft_
 
 
@@ -5266,6 +5294,9 @@ _Spezifische Eigenschaft_
 
 
    
+
+
+
 
 ### Class Instabilities_within_Bedrock_PLG ###
 Die Klasse Instabilities_within_Bedrock_PLG beinhaltet alle Polygone, die Gebiete mit instabilen 
@@ -5288,7 +5319,7 @@ abgebildet.
 
 
 
-**kind**
+#### Attribute kind
 _Spezifische Eigenschaft_
 
 
@@ -5297,7 +5328,7 @@ _Spezifische Eigenschaft_
 
 
    
-**main_mov**
+#### Attribute main_mov{#2-4-main-mov}
 _Hauptbewegungsphase_
 
 
@@ -5310,6 +5341,9 @@ _Hauptbewegungsphase_
 
 
    
+
+
+
 
 ### Class Glacial_Structures_PT ###
 Die Klasse Glacial_Structures_PT enthält Objektarten, welche die ehemalige Anwesenheit eines 
@@ -5327,7 +5361,7 @@ befindet sich deshalb in der Klasse Lineation_PT).
 
 
 
-**kind**
+#### Attribute kind
 _Spezifische Eigenschaft_
 
 
@@ -5338,6 +5372,9 @@ _Spezifische Eigenschaft_
 
 
    
+
+
+
 
 ### Class Glacial_and_Periglacial_Structures_L ###
 Die Klasse Glacial_and_Periglacial_Structures_L enthält linienförmige Strukturen, die auf ein 
@@ -5368,7 +5405,7 @@ Blockwülste im Blockgletscher.
 
 
 
-**kind**
+#### Attribute kind
 _Objektart_
 
 
@@ -5386,7 +5423,7 @@ _Objektart_
 
 
    
-**morai_mo**
+#### Attribute morai_mo{#2-6-morai-mo}
 _Morphologie der Moräne_
 
 
@@ -5399,7 +5436,7 @@ _Morphologie der Moräne_
 
 
    
-**glac_typ**
+#### Attribute glac_typ{#2-6-glac-typ}
 _Gletschertyp, auf welchen die Objektart bezogen ist_
 
 
@@ -5412,7 +5449,7 @@ _Gletschertyp, auf welchen die Objektart bezogen ist_
 
 
    
-**ice_m_p**
+#### Attribute ice_m_p{#2-6-ice-m-p}
 _Räumlicher Gletscherstand_
 
 
@@ -5482,7 +5519,7 @@ _Räumlicher Gletscherstand_
 
 
    
-**quat_str**
+#### Attribute quat_str{#2-6-quat-str}
 _Zeitliche quartärstratigraphische Zuordnung des Moränenwälls_
 
 
@@ -5501,7 +5538,7 @@ _Zeitliche quartärstratigraphische Zuordnung des Moränenwälls_
 
 
    
-**ref_year**
+#### Attribute ref_year
 _Referenzjahr des älteren Gletscherstandes._
 
 _Datentyp:  integer_
@@ -5509,7 +5546,7 @@ _Datentyp:  integer_
 
 
    
-**source**
+#### Attribute source
 _Quellenangabe der historischen Unterlagen_
 
 _Datentyp:  string_
@@ -5517,6 +5554,9 @@ _Datentyp:  string_
 
 
    
+
+
+
 
 ### Class Glacial_Structures_PLG ###
 Die Klasse Glacial_Structures_PLG umfasst flächenhafte glaziale Landschaftsformen, die durch
@@ -5533,7 +5573,7 @@ basales Fliessen des Gletschereises oder dessen Abschmelzen entstanden sind.
 
 
 
-**kind**
+#### Attribute kind
 _Objektart_
 
 
@@ -5545,6 +5585,9 @@ _Objektart_
 
 
    
+
+
+
 
 ### Class Erosional_Structures_PT ###
 Die Klasse Erosional_Structures_PT beinhaltet lokale Landschaftselemente, die sich im Laufe der 
@@ -5561,7 +5604,7 @@ Zeit unter Einwirkung von diversen Erosionsprozessen gebildet haben.
 
 
 
-**kind**
+#### Attribute kind
 _Objektart_
 
 
@@ -5571,6 +5614,9 @@ _Objektart_
 
 
    
+
+
+
 
 ### Class Erosional_Structures_L ###
 Die Klasse Erosional_Structures_L enthält linienförmige erosive Formen wie Erosionsränder im 
@@ -5593,7 +5639,7 @@ werden können. Zweifelhafte Fälle werden als Erosionsränder aufgenommen.
 
 
 
-**kind**
+#### Attribute kind
 _Objektart_
 
 
@@ -5605,6 +5651,9 @@ _Objektart_
 
 
    
+
+
+
 
 ### Class Karstic_Structures_PT ###
 Die Klasse Karstic_Structures_PT beinhaltet Karstphänomene, die punktförmig dargestellt werden. 
@@ -5620,13 +5669,12 @@ Darunter fallen u.a. der Ponor oder der Eingang zu einer Höhle.
 2 | ice_cave        | boolean                      | Handelt es sich bei der Höhle um eine Eisgrotte («glacière», aussergewöhnlich kalte Höhle in der sich
 durch die winterlichen Schneefälle oder durch das Gefrieren von eingedrungenem Wasser Eis akkumuliert
 und das auch die warme Jahreszeit überdauert) (ja / nein)?
-
                | [0..1] |                          |
 
 
 
 
-**kind**
+#### Attribute kind
 _Objektart_
 
 
@@ -5644,7 +5692,7 @@ _Objektart_
 
 
    
-**ice_cave**
+#### Attribute ice_cave
 _Handelt es sich bei der Höhle um eine Eisgrotte («glacière», aussergewöhnlich kalte Höhle in der sich
 durch die winterlichen Schneefälle oder durch das Gefrieren von eingedrungenem Wasser Eis akkumuliert
 und das auch die warme Jahreszeit überdauert) (ja / nein)?_
@@ -5655,10 +5703,13 @@ _Datentyp:  boolean_
 
    
 
+
+
+
 ### Class Karstic_Structures_PLG ###
 Die Klasse Karstic_Structures_PLG umfasst flächenhafte Karstformen wie Dolinen oder Poljen. 
 Dolinen werden immer als Polygone erfasst (das) bildet dafür eine wichtige Grundlage). Kleine 
-Dolinen (Durchmesser < 25 m), werden durch eine definierte Einheitsfläche von 500 m²
+Dolinen (Durchmesser &lt; 25 m), werden durch eine definierte Einheitsfläche von 500 m²
 dargestellt.
 
 
@@ -5672,7 +5723,7 @@ dargestellt.
 
 
 
-**kind**
+#### Attribute kind
 _Objektart_
 
 
@@ -5685,6 +5736,9 @@ _Objektart_
 
 
    
+
+
+
 
 ### Class Alluvial_and_Lacustrine_Structures_L ###
 Die Klasse Alluvial_and_Lacustrine_Structures_L beinhaltet linienförmige Morphologien 
@@ -5703,7 +5757,7 @@ fluviatilen oder lakustrischen Ursprungs.
 
 
 
-**kind**
+#### Attribute kind
 _Objektart_
 
 
@@ -5714,7 +5768,7 @@ _Objektart_
 
 
    
-**age**
+#### Attribute age{#2-12-age}
 _Alter der Objektart._
 
 
@@ -5729,7 +5783,14 @@ _Alter der Objektart._
    
 
 
+
+
+
 ## Theme TECTONICS ##
+
+
+
+
 ### Class Deformation_Structures_PT ###
 Die Klasse Deformation_Structures_PT beinhaltet punktuell beobachtete tektonische 
 Deformationsstrukturen wie lokal stark verfaltete Stellen (Fältelung) oder Orte mit ausgeprägter 
@@ -5750,7 +5811,6 @@ Verständlichkeit abgebildet.
                | [0..1] |                          |
 3 | dip        | integer                      | Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die
 Vertikale (90°).
-
                | [0..1] |                          |
 4 | fold_typ        | CD                      | Objekttyp
                | [0..1] |GC_PNT_TDEF_FOLD_TYP_CD                          |
@@ -5760,7 +5820,7 @@ Vertikale (90°).
 
 
 
-**kind**
+#### Attribute kind
 _Objektart_
 
 
@@ -5776,7 +5836,7 @@ _Objektart_
 
 
    
-**azimuth**
+#### Attribute azimuth
 _Fallrichtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad (0° 359°) im Uhrzeigersinn gemessen._
 
 _Datentyp:  integer_
@@ -5784,7 +5844,7 @@ _Datentyp:  integer_
 
 
    
-**dip**
+#### Attribute dip
 _Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die
 Vertikale (90°)._
 
@@ -5793,7 +5853,7 @@ _Datentyp:  integer_
 
 
    
-**fold_typ**
+#### Attribute fold_typ{#3-1-fold-typ}
 _Objekttyp_
 
 
@@ -5806,7 +5866,7 @@ _Objekttyp_
 
 
    
-**fold_for**
+#### Attribute fold_for{#3-1-fold-for}
 _Objektform_
 
 
@@ -5819,6 +5879,9 @@ _Objektform_
 
 
    
+
+
+
 
 ### Class Deformation_Structures_L ###
 Die Klasse Deformation_Structures_L enthält linienförmige tektonische Deformationsstrukturen,
@@ -5836,7 +5899,7 @@ Anhang A abgebildet.
 
 
 
-**kind**
+#### Attribute kind
 _Objektart_
 
 
@@ -5846,6 +5909,9 @@ _Objektart_
 
 
    
+
+
+
 
 ### Class Deformation_Structures_PLG ###
 In der Klasse Deformation_Structures_PLG befinden sich tektonisch geprägte Zonen wie
@@ -5866,7 +5932,7 @@ tektonisierte Zonen oder Kluftzonen.
 
 
 
-**kind**
+#### Attribute kind
 _Objektart_
 
 
@@ -5877,7 +5943,7 @@ _Objektart_
 
 
    
-**type**
+#### Attribute type{#3-3-type}
 _Charakteristik der Objektarten_
 
 
@@ -5892,12 +5958,15 @@ _Charakteristik der Objektarten_
 
 
    
-**gen_rela**
+#### Attribute gen_rela
 _Genetische Beziehung._
 
 
 
    
+
+
+
 
 ### Class Tectonic_Boundaries_L ###
 Die Klasse Tectonic_Boundaries_L umfasst alle tektonischen Verwerfungen. Die Horizontal-
@@ -5936,7 +6005,7 @@ Anhang A Beispiele abgebildet.
 
 
 
-**kind**
+#### Attribute kind
 _Objektart_
 
 
@@ -5952,7 +6021,7 @@ _Objektart_
 
 
    
-**fault_mo**
+#### Attribute fault_mo{#3-4-fault-mo}
 _Bewegungsrichtung des Bruchs_
 
 
@@ -5966,7 +6035,7 @@ _Bewegungsrichtung des Bruchs_
 
 
    
-**verti_mo**
+#### Attribute verti_mo{#3-4-verti-mo}
 _Bewegung parallel zur Fallrichtung der Bruchfläche._
 
 
@@ -5979,7 +6048,7 @@ _Bewegung parallel zur Fallrichtung der Bruchfläche._
 
 
    
-**horiz_mo**
+#### Attribute horiz_mo{#3-4-horiz-mo}
 _Bewegung parallel zur Streichrichtung der Bruch- oder Scherfläche_
 
 
@@ -5992,7 +6061,7 @@ _Bewegung parallel zur Streichrichtung der Bruch- oder Scherfläche_
 
 
    
-**lim_tect_b**
+#### Attribute lim_tect_b
 _Grenze einer tektonischen Einheit wie Deckengrenze,Schuppengrenze, Zonengrenze, etc. (ja / nein)?_
 
 _Datentyp:  boolean_
@@ -6000,7 +6069,7 @@ _Datentyp:  boolean_
 
 
    
-**status**
+#### Attribute status{#3-4-status}
 _Zustand der Objektart_
 
 
@@ -6015,13 +6084,13 @@ _Zustand der Objektart_
 
 
    
-**activity**
+#### Attribute activity
 _Aktivität der Objektart_
 
 
 
    
-**meta_sta**
+#### Attribute meta_sta{#3-4-meta-sta}
 _Tektonometamorphe Chronologie der Objektart_
 
 
@@ -6035,7 +6104,7 @@ _Tektonometamorphe Chronologie der Objektart_
 
 
    
-**name**
+#### Attribute name
 _Spezifischer Name der Objektart._
 
 _Datentyp:  string_
@@ -6045,7 +6114,14 @@ _Datentyp:  string_
    
 
 
+
+
+
 ## Theme MEASUREMENTS_SPATIAL_ORIENTATION ##
+
+
+
+
 ### Class Folds_PT ###
 Die Klasse Folds_PT enthält Objektarten, welche die räumliche Lage von verfalteten geologischen
 Objekten (mit direkten Feldmessungen) beschreiben. Beispiele der Objektarten Orientierung der
@@ -6068,17 +6144,15 @@ Faltenachse und der Scheitellinie sind im Anhang A zur besseren Verständlichkei
                | [0..1] |                          |
 6 | azimuth        | integer                      | Einfallsrichtung (Azimut) der jeweiligen Punktobjektart (z.B. Scheitellinie, Faltenachse).
 Wert in Grad (0° 359°) im Uhrzeigersinn gemessen
-
                | [1] |                          |
 7 | dip        | integer                      | Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die
 Vertikale (90°).
-
                | [0..1] |                          |
 
 
 
 
-**kind**
+#### Attribute kind
 _Objektart_
 
 
@@ -6090,7 +6164,7 @@ _Objektart_
 
 
    
-**fold_typ**
+#### Attribute fold_typ{#4-1-fold-typ}
 _Objekttyp_
 
 
@@ -6103,13 +6177,13 @@ _Objekttyp_
 
 
    
-**fold_for**
+#### Attribute fold_for
 _Form der Objektart_
 
 
 
    
-**phase**
+#### Attribute phase{#4-1-phase}
 _Deformationsphase._
 
 
@@ -6123,7 +6197,7 @@ _Deformationsphase._
 
 
    
-**phase_ref**
+#### Attribute phase_ref
 _Referenz für die Angabe der Deformationsphase._
 
 _Datentyp:  string_
@@ -6131,7 +6205,7 @@ _Datentyp:  string_
 
 
    
-**azimuth**
+#### Attribute azimuth
 _Einfallsrichtung (Azimut) der jeweiligen Punktobjektart (z.B. Scheitellinie, Faltenachse).
 Wert in Grad (0° 359°) im Uhrzeigersinn gemessen_
 
@@ -6140,7 +6214,7 @@ _Datentyp:  integer_
 
 
    
-**dip**
+#### Attribute dip
 _Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die
 Vertikale (90°)._
 
@@ -6149,6 +6223,9 @@ _Datentyp:  integer_
 
 
    
+
+
+
 
 ### Class Lineation_PT ###
 In der Klasse Lineation_PT finden sich Objektarten, welche die räumliche Lage von diversen
@@ -6165,17 +6242,15 @@ Intersektionslineationen.
                | [1] |13701                          |
 2 | azimuth        | integer                      | Einfallsrichtung (Azimut) der jeweiligen Punktobjektart (z.B. Scheitellinie, Faltenachse).
 Wert in Grad (0° 359°) im Uhrzeigersinn gemessen
-
                | [1] |                          |
 3 | dip        |                       | Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die
 Vertikale (90°).
-
                | [] |                          |
 
 
 
 
-**kind**
+#### Attribute kind
 _Objektart_
 
 
@@ -6188,7 +6263,7 @@ _Objektart_
 
 
    
-**azimuth**
+#### Attribute azimuth
 _Einfallsrichtung (Azimut) der jeweiligen Punktobjektart (z.B. Scheitellinie, Faltenachse).
 Wert in Grad (0° 359°) im Uhrzeigersinn gemessen_
 
@@ -6197,13 +6272,16 @@ _Datentyp:  integer_
 
 
    
-**dip**
+#### Attribute dip
 _Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die
 Vertikale (90°)._
 
 
 
    
+
+
+
 
 ### Class Planar_Structures_PT ###
 Die Klasse Planar_Structures_PT enthält Objektarten, welche die räumliche Lage von planaren
@@ -6227,17 +6305,15 @@ Schieferung ist im Anhang A zur Veranschaulichung abgebildet.
                | [0..1] |                          |
 6 | azimuth        | integer                      | Einfallsrichtung (Azimut) der jeweiligen Punktobjektart (z.B. Scheitellinie, Faltenachse).
 Wert in Grad (0° 359°) im Uhrzeigersinn gemessen
-
                | [1] |                          |
 7 | dip        |                       | Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die
 Vertikale (90°).
-
                | [] |                          |
 
 
 
 
-**kind**
+#### Attribute kind
 _Objektart_
 
 
@@ -6252,7 +6328,7 @@ _Objektart_
 
 
    
-**polarity**
+#### Attribute polarity{#4-3-polarity}
 _Position der Objektart im Raum_
 
 
@@ -6265,7 +6341,7 @@ _Position der Objektart im Raum_
 
 
    
-**phase**
+#### Attribute phase{#4-3-phase}
 _Deformationsphase_
 
 
@@ -6279,7 +6355,7 @@ _Deformationsphase_
 
 
    
-**phase_ref**
+#### Attribute phase_ref
 _Referenz für die Angabe der Deformationsphase._
 
 _Datentyp:  string_
@@ -6287,7 +6363,7 @@ _Datentyp:  string_
 
 
    
-**ob_dip_slo**
+#### Attribute ob_dip_slo
 _Dip slope beobachtet (ja / nein)?_
 
 _Datentyp:  boolean_
@@ -6295,7 +6371,7 @@ _Datentyp:  boolean_
 
 
    
-**azimuth**
+#### Attribute azimuth
 _Einfallsrichtung (Azimut) der jeweiligen Punktobjektart (z.B. Scheitellinie, Faltenachse).
 Wert in Grad (0° 359°) im Uhrzeigersinn gemessen_
 
@@ -6304,7 +6380,7 @@ _Datentyp:  integer_
 
 
    
-**dip**
+#### Attribute dip
 _Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die
 Vertikale (90°)._
 
@@ -6313,7 +6389,14 @@ Vertikale (90°)._
    
 
 
+
+
+
 ## Theme LOCAL_ADDITIONAL_INFORMATION ##
+
+
+
+
 ### Class Anomalies_PT ###
 Die Klasse Anomalies_PT beinhaltet lokal beobachtete und / oder gemessene Anomalien.
 
@@ -6330,7 +6413,7 @@ Die Klasse Anomalies_PT beinhaltet lokal beobachtete und / oder gemessene Anomal
 
 
 
-**kind**
+#### Attribute kind
 _Objektart_
 
 
@@ -6339,12 +6422,15 @@ _Objektart_
 
 
    
-**type**
+#### Attribute type
 _Charakteristik der Objektart._
 
 
 
    
+
+
+
 
 ### Class Fossils_PT ###
 Die Klasse Fossils_PT enthält alle Fossilfundstellen.
@@ -6370,7 +6456,7 @@ Die Klasse Fossils_PT enthält alle Fossilfundstellen.
 
 
 
-**kind**
+#### Attribute kind
 _Objektart_
 
 
@@ -6380,7 +6466,7 @@ _Objektart_
 
 
    
-**division**
+#### Attribute division{#5-2-division}
 _Fossilienkategorie, zu welcher die Objektinstanz gehört._
 
 
@@ -6396,13 +6482,13 @@ _Fossilienkategorie, zu welcher die Objektinstanz gehört._
 
 
    
-**system**
+#### Attribute system
 _Fossiliengruppe._
 
 
 
    
-**dat_meth**
+#### Attribute dat_meth{#5-2-dat-meth}
 _Datierungsmethode._
 
 
@@ -6414,7 +6500,7 @@ _Datierungsmethode._
 
 
    
-**status**
+#### Attribute status{#5-2-status}
 _Zustand der Objektart_
 
 
@@ -6427,7 +6513,7 @@ _Zustand der Objektart_
 
 
    
-**protected**
+#### Attribute protected
 _Geschützte Fossilfundstelle (ja / nein)?_
 
 _Datentyp:  boolean_
@@ -6435,6 +6521,9 @@ _Datentyp:  boolean_
 
 
    
+
+
+
 
 ### Class Indication_of_Resources_PT ###
 Die Klasse Indication_of_Resources_PT beinhaltet Fundstellen von vulkanischen, mineralischen
@@ -6457,7 +6546,7 @@ und nicht-mineralischen Rohstoffen.
 
 
 
-**kind**
+#### Attribute kind
 _Objektart_
 
 
@@ -6475,7 +6564,7 @@ _Objektart_
 
 
    
-**status**
+#### Attribute status{#5-3-status}
 _Zustand der Objektart_
 
 
@@ -6488,7 +6577,7 @@ _Zustand der Objektart_
 
 
    
-**material**
+#### Attribute material{#5-3-material}
 _Material, das mit der Objektart in Verbindung steht_
 
 
@@ -6504,7 +6593,7 @@ _Material, das mit der Objektart in Verbindung steht_
 
 
    
-**chemistry**
+#### Attribute chemistry
 _Chemische Komponente(n) oder Mineralien, welche die Natur der Objektart charakterisieren._
 
 _Datentyp:  string_
@@ -6512,6 +6601,9 @@ _Datentyp:  string_
 
 
    
+
+
+
 
 ### Class Mineralised_Zone_L ###
 
@@ -6529,7 +6621,7 @@ _Datentyp:  string_
 
 
 
-**kind**
+#### Attribute kind
 _Objektart_
 
 
@@ -6539,7 +6631,7 @@ _Objektart_
 
 
    
-**chemistry**
+#### Attribute chemistry
 _Chemische Komponente(n), welche die Natur der Objektart charakterisieren._
 
 _Datentyp:  string_
@@ -6547,6 +6639,9 @@ _Datentyp:  string_
 
 
    
+
+
+
 
 ### Class Sedimentary_Structures_PT ###
 
@@ -6564,7 +6659,7 @@ _Datentyp:  string_
 
 
 
-**kind**
+#### Attribute kind
 _Objektart_
 
 
@@ -6579,7 +6674,7 @@ _Objektart_
 
 
    
-**azimuth**
+#### Attribute azimuth
 _Orientierung des Symbols. Wert in Grad (0° 359°) im Uhrzeigersinn gemessen._
 
 _Datentyp:  integer_
@@ -6587,6 +6682,9 @@ _Datentyp:  integer_
 
 
    
+
+
+
 
 ### Class Type_Localities_PT ###
 Die Klasse Type_Localities_PT beinhaltet diejenigen Objektarten, die Typlokalitäten oder wichtige
@@ -6611,7 +6709,7 @@ geologische Aufschlüsse beschreiben.
 
 
 
-**kind**
+#### Attribute kind
 _Objektart_
 
 
@@ -6622,13 +6720,13 @@ _Objektart_
 
 
    
-**strati**
+#### Attribute strati
 _Lithostratigraphischer Zusatz zum Objekt_
 
 
 
    
-**name**
+#### Attribute name
 _Name der Typlokalität. / Beschreibung des geologisch relevanten Aufschlusses_
 
 _Datentyp:  string_
@@ -6636,7 +6734,7 @@ _Datentyp:  string_
 
 
    
-**accessibil**
+#### Attribute accessibil
 _Ist die Objektart zum Zeitpunkt der Aufnahme aufgeschlossen (ja / nein)?_
 
 _Datentyp:  boolean_
@@ -6644,7 +6742,7 @@ _Datentyp:  boolean_
 
 
    
-**protected**
+#### Attribute protected
 _Geschütztes geologisches Objekt (ja / nein)?_
 
 _Datentyp:  boolean_
@@ -6652,6 +6750,9 @@ _Datentyp:  boolean_
 
 
    
+
+
+
 
 ### Class Prominent_Lithological_Features_L ###
 In der Klasse Prominent_Lithological_Features_L befinden sich linienförmige Gesteinshorizonte.
@@ -6678,7 +6779,7 @@ von Wechsellagerungen von Sandstein und Mergel) und sind von den Leithorizonten 
 
 
 
-**kind**
+#### Attribute kind
 _Objektart_
 
 
@@ -6688,7 +6789,7 @@ _Objektart_
 
 
    
-**cong_spe**
+#### Attribute cong_spe{#5-7-cong-spe}
 _Charakterisation der Konglomerate nach ihrem Geröllspektrum._
 
 
@@ -6703,13 +6804,13 @@ _Charakterisation der Konglomerate nach ihrem Geröllspektrum._
 
 
    
-**name_horiz**
+#### Attribute name_horiz
 _Name des Bentonit-Leithorizonts._
 
 
 
    
-**orig_descr**
+#### Attribute orig_descr
 _Originalbezeichnung gemäss der Legende der zugrundeliegenden geologischen Karte._
 
 _Datentyp:  string_
@@ -6717,12 +6818,15 @@ _Datentyp:  string_
 
 
    
-**litho**
+#### Attribute litho
 _Materialbezeichnung (lithologische Einheit)._
 
 
 
    
+
+
+
 
 ### Class Miscellaneous_PT ###
 Die Klasse Miscellaneous_PT ist für lokale, sehr spezielle geologische Objekte reserviert, die für die
@@ -6742,7 +6846,7 @@ standardisiert werden
 
 
 
-**kind**
+#### Attribute kind
 _Objektart_
 
 
@@ -6752,7 +6856,7 @@ _Objektart_
 
 
    
-**orig_name**
+#### Attribute orig_name
 _Ursprüngliche Bezeichnung des Objektes._
 
 _Datentyp:  string_
@@ -6760,6 +6864,9 @@ _Datentyp:  string_
 
 
    
+
+
+
 
 ### Class Geological_Outlines_L ###
 Die Klasse Geological_Outlines_L beinhaltet geologische Konturen. Darunter fallen die Umrisse
@@ -6788,7 +6895,7 @@ ab-grenzen (Abgrenzungskontur nach dem ZV).
 
 
 
-**kind**
+#### Attribute kind
 _Objektart_
 
 
@@ -6798,7 +6905,7 @@ _Objektart_
 
 
    
-**status**
+#### Attribute status{#5-9-status}
 _Zustand der Objektart._
 
 
@@ -6817,7 +6924,14 @@ _Zustand der Objektart._
    
 
 
+
+
+
 ## Theme PARAMETER_AND_MODELLING ##
+
+
+
+
 ### Class Slope_Bedrock_PT ###
 Die Klasse Slope_Bedrock_PT enthält Punktinformationen aus Modellierungen des Festgestein-
 verlaufs im Untergrund.
@@ -6835,7 +6949,6 @@ verlaufs im Untergrund.
                | [0..1] |                          |
 4 | dip        | integer                      | Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die
 Vertikale (90°).
-
                | [0..1] |                          |
 5 | litstrat        | table                      | Lithostratigraphische Einheit der modellierten Formation
                | [1] |gc_litstrat_bed                          |
@@ -6843,7 +6956,7 @@ Vertikale (90°).
 
 
 
-**kind**
+#### Attribute kind
 _Objektart_
 
 
@@ -6853,7 +6966,7 @@ _Objektart_
 
 
    
-**type**
+#### Attribute type{#6-1-type}
 _Referenzoberfläche._
 
 
@@ -6866,7 +6979,7 @@ _Referenzoberfläche._
 
 
    
-**azimuth**
+#### Attribute azimuth
 _Fallrichtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad (0° 359°) im Uhrzeigersinn gemessen._
 
 _Datentyp:  integer_
@@ -6874,7 +6987,7 @@ _Datentyp:  integer_
 
 
    
-**dip**
+#### Attribute dip
 _Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die
 Vertikale (90°)._
 
@@ -6883,12 +6996,15 @@ _Datentyp:  integer_
 
 
    
-**litstrat**
+#### Attribute litstrat
 _Lithostratigraphische Einheit der modellierten Formation_
 
 
 
    
+
+
+
 
 ### Class Contour_Lines_Bedrock_L ###
 Die Klasse Contour_Lines_Bedrock_L beinhaltet Isohypsen, die sich auf den Verlauf des Fest-
@@ -6912,7 +7028,7 @@ hypsen der Felsoberfläche in dieser Klasse.
 
 
 
-**kind**
+#### Attribute kind
 _Objektart_
 
 
@@ -6922,7 +7038,7 @@ _Objektart_
 
 
    
-**type**
+#### Attribute type{#6-2-type}
 _Referenzoberfläche._
 
 
@@ -6936,7 +7052,7 @@ _Referenzoberfläche._
 
 
    
-**altitude**
+#### Attribute altitude
 _Höhenangabe (m ü.M.) von Isohypsen._
 
 _Datentyp:  float_
@@ -6944,12 +7060,15 @@ _Datentyp:  float_
 
 
    
-**litstrat**
+#### Attribute litstrat
 _Lithostratigraphische Einheit der modellierten Formation_
 
 
 
    
+
+
+
 
 ### Class Modelled_Water_Table_PT ###
 Die Klasse Modelled_Water_Table_PT enthält Punktinformationen aus Modellierungen des
@@ -6966,7 +7085,6 @@ Grundwasserspiegels.
                | [0..1] |                          |
 3 | dip        | integer                      | Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die
 Vertikale (90°).
-
                | [0..1] |                          |
 4 | height        | float                      | Kote des Grundwasserspiegels (m ü.M.).
                | [0..1] |                          |
@@ -6976,7 +7094,7 @@ Vertikale (90°).
 
 
 
-**kind**
+#### Attribute kind
 _Objektart_
 
 
@@ -6987,7 +7105,7 @@ _Objektart_
 
 
    
-**azimuth**
+#### Attribute azimuth
 _Fallrichtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad (0° 359°) im Uhrzeigersinn gemessen._
 
 _Datentyp:  integer_
@@ -6995,7 +7113,7 @@ _Datentyp:  integer_
 
 
    
-**dip**
+#### Attribute dip
 _Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die
 Vertikale (90°)._
 
@@ -7004,7 +7122,7 @@ _Datentyp:  integer_
 
 
    
-**height**
+#### Attribute height
 _Kote des Grundwasserspiegels (m ü.M.)._
 
 _Datentyp:  float_
@@ -7012,7 +7130,7 @@ _Datentyp:  float_
 
 
    
-**mea_period**
+#### Attribute mea_period
 _Messperiode._
 
 _Datentyp:  range_
@@ -7020,6 +7138,9 @@ _Datentyp:  range_
 
 
    
+
+
+
 
 ### Class Contour_Lines_Hydro_L ###
 In der Klasse Contour_Lines_Hydro_L befinden sich die Isohypsen, die sich auf das Grundwasser
@@ -7042,7 +7163,7 @@ beziehen.
 
 
 
-**kind**
+#### Attribute kind
 _Objektart_
 
 
@@ -7052,7 +7173,7 @@ _Objektart_
 
 
    
-**confine**
+#### Attribute confine{#6-4-confine}
 _Druckzustand im Grundwasserleiter._
 
 
@@ -7066,13 +7187,13 @@ _Druckzustand im Grundwasserleiter._
 
 
    
-**altitude**
+#### Attribute altitude
 _Höhenangabe (m ü.M.) von Isohypsen._
 
 
 
    
-**wa_table**
+#### Attribute wa_table{#6-4-wa-table}
 _Wasserstand._
 
 
@@ -7087,7 +7208,14 @@ _Wasserstand._
    
 
 
+
+
+
 ## Theme ANTHROPOGENIC_FEATURES ##
+
+
+
+
 ### Class Archaeology_PT ###
 Die Klasse Archaeology_PT enthält Objektarten zu einzelnen archäologischen Relikten.
 
@@ -7110,7 +7238,7 @@ Die Klasse Archaeology_PT enthält Objektarten zu einzelnen archäologischen Rel
 
 
 
-**kind**
+#### Attribute kind
 _Objektart_
 
 
@@ -7133,7 +7261,7 @@ _Objektart_
 
 
    
-**epoch**
+#### Attribute epoch{#7-1-epoch}
 _Archäologische Epoche der Objektart_
 
 
@@ -7146,7 +7274,7 @@ _Archäologische Epoche der Objektart_
 
 
    
-**period**
+#### Attribute period{#7-1-period}
 _Archäologische Periode der Objektart._
 
 
@@ -7163,7 +7291,7 @@ _Archäologische Periode der Objektart._
 
 
    
-**age**
+#### Attribute age{#7-1-age}
 _Archäologisches Alter der Objektart._
 
 
@@ -7182,7 +7310,7 @@ _Archäologisches Alter der Objektart._
 
 
    
-**type**
+#### Attribute type{#7-1-type}
 _Art des Kultsteins._
 
 
@@ -7195,6 +7323,9 @@ _Art des Kultsteins._
 
 
    
+
+
+
 
 ### Class Archaeology_L ###
 Die Klasse Archaeology_L umfasst linienförmige archäologische Elemente. Historische Strassen,
@@ -7217,7 +7348,7 @@ Hohlwege oder Befestigungsgräben sind Teile dieser Klasse.
 
 
 
-**kind**
+#### Attribute kind
 _Objektart_
 
 
@@ -7233,7 +7364,7 @@ _Objektart_
 
 
    
-**epoch**
+#### Attribute epoch{#7-2-epoch}
 _Archäologische Epoche der Objektart_
 
 
@@ -7246,7 +7377,7 @@ _Archäologische Epoche der Objektart_
 
 
    
-**period**
+#### Attribute period{#7-2-period}
 _Archäologische Periode der Objektart._
 
 
@@ -7263,7 +7394,7 @@ _Archäologische Periode der Objektart._
 
 
    
-**age**
+#### Attribute age{#7-2-age}
 _Archäologisches Alter der Objektart._
 
 
@@ -7282,6 +7413,9 @@ _Archäologisches Alter der Objektart._
 
 
    
+
+
+
 
 ### Class Archaeology_PLG ###
 Die Klasse Archaeology_PLG beinhaltet archäologische Relikte (z.B. römisches Castrum), die ein
@@ -7304,7 +7438,7 @@ grösseres Gebiet (Fläche) abdecken.
 
 
 
-**kind**
+#### Attribute kind
 _Objektart_
 
 
@@ -7315,7 +7449,7 @@ _Objektart_
 
 
    
-**epoch**
+#### Attribute epoch{#7-3-epoch}
 _Archäologische Epoche der Objektart_
 
 
@@ -7328,7 +7462,7 @@ _Archäologische Epoche der Objektart_
 
 
    
-**period**
+#### Attribute period{#7-3-period}
 _Archäologische Periode der Objektart._
 
 
@@ -7345,7 +7479,7 @@ _Archäologische Periode der Objektart._
 
 
    
-**age**
+#### Attribute age{#7-3-age}
 _Archäologisches Alter der Objektart._
 
 
@@ -7364,6 +7498,9 @@ _Archäologisches Alter der Objektart._
 
 
    
+
+
+
 
 ### Class Exploitation_Geomaterials_PT ###
 Die Klasse Exploitation_Geomaterials_PT enthält punktförmige Angaben zu Abbaustellen von
@@ -7388,7 +7525,7 @@ Geomaterialien.
 
 
 
-**kind**
+#### Attribute kind
 _Objektart_
 
 
@@ -7403,19 +7540,19 @@ _Objektart_
 
 
    
-**exp_unit**
+#### Attribute exp_unit
 _Abgebaute lithostratigraphische Einheit._
 
 
 
    
-**status**
+#### Attribute status
 _Abbaustatus._
 
 
 
    
-**depth_tot**
+#### Attribute depth_tot
 _Endtiefe (m ab Terrainoberfläche) der Objektart._
 
 _Datentyp:  float_
@@ -7423,7 +7560,7 @@ _Datentyp:  float_
 
 
    
-**targ_mat**
+#### Attribute targ_mat{#7-4-targ-mat}
 _Abgebautes Material._
 
 
@@ -7475,6 +7612,9 @@ _Abgebautes Material._
 
    
 
+
+
+
 ### Class Exploitation_Geomaterials_L ###
 Die Klasse Exploitation_Geomaterials_L beinhaltet linienförmige Informationen zum Abbau von
 Geomaterialien (z.B. Verlauf der Abbaufront).
@@ -7492,7 +7632,7 @@ Geomaterialien (z.B. Verlauf der Abbaufront).
 
 
 
-**kind**
+#### Attribute kind
 _Objektart_
 
 
@@ -7503,12 +7643,15 @@ _Objektart_
 
 
    
-**status**
+#### Attribute status
 _Abbaustatus._
 
 
 
    
+
+
+
 
 ### Class Exploitation_Geomaterials_PLG ###
 Die Klasse Exploitation_Geomaterials_PLG enthält Flächen, wo zur Zeit der geologischen
@@ -7533,7 +7676,7 @@ Aufnahmen Geomaterialien abgebaut wurden.
 
 
 
-**kind**
+#### Attribute kind
 _Objektart_
 
 
@@ -7544,19 +7687,19 @@ _Objektart_
 
 
    
-**exp_unit**
+#### Attribute exp_unit
 _Abgebaute lithostratigraphische Einheit._
 
 
 
    
-**status**
+#### Attribute status
 _Abbaustatus._
 
 
 
    
-**depth_tot**
+#### Attribute depth_tot
 _Endtiefe (m ab Terrainoberfläche) der Objektart._
 
 _Datentyp:  float_
@@ -7564,7 +7707,7 @@ _Datentyp:  float_
 
 
    
-**targ_mat**
+#### Attribute targ_mat{#7-6-targ-mat}
 _Abgebautes Material._
 
 
@@ -7597,6 +7740,9 @@ _Abgebautes Material._
 
    
 
+
+
+
 ### Class Boreholes_PT ###
 Die Klasse Boreholes_PT beinhaltet Bohrungen und Sondierungen. (Auf alten gedruckten Karten
 wurde die Art der Sondierung nicht immer unterschieden. Es kann daher sein, dass in alten Karten
@@ -7617,7 +7763,6 @@ Depth_Bedrock erreicht, z.B. «Bohrung, Fels nicht erreicht», beträgt der
 Wert -9999, falls die Bohrung bereits im Festgestein beginnt, beträgt
 der Wert 0). Falls Festgestein erreicht wurde, aber nicht klar ist,
 dass es sich um die Felsoberfläche handelt, beträgt der Wert -8888.
-
                | [0..1] |                          |
 4 | d_c_underg        | boolean                      | Bohransatzpunkt unter Terrain (ja / nein)
                | [1] |                          |
@@ -7628,7 +7773,6 @@ dass es sich um die Felsoberfläche handelt, beträgt der Wert -8888.
 7 | depth_tot        | float                      | Gemessene Länge (Measured Depth) der Bohrung. Vgl.
 DM Bohrdaten. Die tatsächliche Tiefe (True Vertical
 Depth) ist oft nicht bekannt.
-
                | [0..1] |                          |
 8 | fm_a        | table                      | Lithostratigraphische Einheit der erreichten Formation A
                | [0..1] |gc_litstrat_bed                          |
@@ -7644,7 +7788,6 @@ Depth) ist oft nicht bekannt.
                | [0..1] |                          |
 14 | dip        | integer                      | Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die
 Vertikale (90°).
-
                | [0..1] |                          |
 15 | ref_number        | integer                      | Bohrungs-ID der Objektart in einem zusätzlichen Dokument (Erläuterungen, ...).
                | [0..1] |                          |
@@ -7654,7 +7797,7 @@ Vertikale (90°).
 
 
 
-**kind**
+#### Attribute kind
 _Objektart_
 
 
@@ -7668,13 +7811,13 @@ _Objektart_
 
 
    
-**drill_mo**
+#### Attribute drill_mo
 _Bohrmethode._
 
 
 
    
-**depth_bedrock**
+#### Attribute depth_bedrock
 _Tiefe (in Meter ab Terrainoberfläche) der Felsober-
 fläche. (Sofern die Bohrung das Festgestein nicht
 Depth_Bedrock erreicht, z.B. «Bohrung, Fels nicht erreicht», beträgt der
@@ -7687,7 +7830,7 @@ _Datentyp:  float_
 
 
    
-**d_c_underg**
+#### Attribute d_c_underg
 _Bohransatzpunkt unter Terrain (ja / nein)_
 
 _Datentyp:  boolean_
@@ -7695,7 +7838,7 @@ _Datentyp:  boolean_
 
 
    
-**main_tar**
+#### Attribute main_tar{#7-7-main-tar}
 _Ziel der Sondierung._
 
 
@@ -7715,7 +7858,7 @@ _Ziel der Sondierung._
 
 
    
-**targ_mat**
+#### Attribute targ_mat{#7-7-targ-mat}
 _Durch die Sondierung gefördertes Material._
 
 
@@ -7733,7 +7876,7 @@ _Durch die Sondierung gefördertes Material._
 
 
    
-**depth_tot**
+#### Attribute depth_tot
 _Gemessene Länge (Measured Depth) der Bohrung. Vgl.
 DM Bohrdaten. Die tatsächliche Tiefe (True Vertical
 Depth) ist oft nicht bekannt._
@@ -7743,13 +7886,13 @@ _Datentyp:  float_
 
 
    
-**fm_a**
+#### Attribute fm_a
 _Lithostratigraphische Einheit der erreichten Formation A_
 
 
 
    
-**depth_fm_a**
+#### Attribute depth_fm_a
 _Tiefe (m ab Terrainoberfläche) der erreichten Formation A._
 
 _Datentyp:  float_
@@ -7757,13 +7900,13 @@ _Datentyp:  float_
 
 
    
-**fm_b**
+#### Attribute fm_b
 _Lithostratigraphische Einheit der erreichten Formation B_
 
 
 
    
-**depth_fm_b**
+#### Attribute depth_fm_b
 _Tiefe (m ab Terrainoberfläche) der erreichten Formation B._
 
 _Datentyp:  float_
@@ -7771,7 +7914,7 @@ _Datentyp:  float_
 
 
    
-**depth_wt**
+#### Attribute depth_wt
 _Tiefe (m ab Terrainoberfläche) des Grundwasserspiegels._
 
 _Datentyp:  float_
@@ -7779,7 +7922,7 @@ _Datentyp:  float_
 
 
    
-**azimuth**
+#### Attribute azimuth
 _Fallrichtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad (0° 359°) im Uhrzeigersinn gemessen._
 
 _Datentyp:  integer_
@@ -7787,7 +7930,7 @@ _Datentyp:  integer_
 
 
    
-**dip**
+#### Attribute dip
 _Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die
 Vertikale (90°)._
 
@@ -7796,7 +7939,7 @@ _Datentyp:  integer_
 
 
    
-**ref_number**
+#### Attribute ref_number
 _Bohrungs-ID der Objektart in einem zusätzlichen Dokument (Erläuterungen, ...)._
 
 _Datentyp:  integer_
@@ -7804,7 +7947,7 @@ _Datentyp:  integer_
 
 
    
-**link**
+#### Attribute link
 _Objektnummer in der Datenbank von INFOGEOL._
 
 _Datentyp:  integer_
@@ -7812,6 +7955,9 @@ _Datentyp:  integer_
 
 
    
+
+
+
 
 ### Class Artificial_Surface_Modifications_PLG ###
 Die Klasse Artificial_Surface_Modifications_PLG enthält bedeutende künstliche Veränderungen
@@ -7829,7 +7975,7 @@ mehr zu erkennen ist, was bei einer geomorphologischen Deutung zu falschen Schl�
 
 
 
-**kind**
+#### Attribute kind
 _Objektart_
 
 
@@ -7846,7 +7992,14 @@ _Objektart_
    
 
 
+
+
+
 ## Theme HYDROGEOLOGY ##
+
+
+
+
 ### Class Construction_PT ###
 Die Klasse Construction_PT beinhaltet Wasserbauten wie Grundwasserfassungen und Zisternen.
 Desweiteren kommen in dieser Klasse auch Messgeräte wie Piezometer und Limnigraphen vor.
@@ -7872,7 +8025,7 @@ Desweiteren kommen in dieser Klasse auch Messgeräte wie Piezometer und Limnigra
 
 
 
-**kind**
+#### Attribute kind
 _Objektart_
 
 
@@ -7888,19 +8041,19 @@ _Objektart_
 
 
    
-**status**
+#### Attribute status
 _Zustand der Objektart._
 
 
 
    
-**epoch**
+#### Attribute epoch
 _Epoche der Erbauung der Objektart._
 
 
 
    
-**depth**
+#### Attribute depth
 _Tiefe der Objektart (m ab Terrainoberfläche)._
 
 _Datentyp:  float_
@@ -7908,7 +8061,7 @@ _Datentyp:  float_
 
 
    
-**depth_wt**
+#### Attribute depth_wt
 _Tiefe (m ab Terrainoberfläche) des Grundwasserspiegels (Mittelwert)._
 
 _Datentyp:  float_
@@ -7916,7 +8069,7 @@ _Datentyp:  float_
 
 
    
-**mea_period**
+#### Attribute mea_period
 _Messperiode._
 
 _Datentyp:  range_
@@ -7924,6 +8077,9 @@ _Datentyp:  range_
 
 
    
+
+
+
 
 ### Class Construction_L ###
 Die Klasse Construction_L enthält linienförmige Wasserbauten wie den Wasserfassungsstollen,
@@ -7942,7 +8098,7 @@ welcher mit Objektarten der Klasse Surface_Water_PT kombiniert werden kann.
 
 
 
-**kind**
+#### Attribute kind
 _Objektart_
 
 
@@ -7953,7 +8109,7 @@ _Objektart_
 
 
    
-**combi**
+#### Attribute combi{#8-2-combi}
 _Objektart einer anderen Klasse, die mit der Objektart in Kombination vorkommen kann_
 
 
@@ -7967,6 +8123,9 @@ _Objektart einer anderen Klasse, die mit der Objektart in Kombination vorkommen 
 
 
    
+
+
+
 
 ### Class Palaeohydrology_L ###
 In der Klasse Palaeohydrology_L befinden sich alle linienförmigen Objektarten, welche einen
@@ -7991,7 +8150,7 @@ gewissen Bezug zu einem ehemaligen Gewässer aufweisen.
 
 
 
-**kind**
+#### Attribute kind
 _Objektart_
 
 
@@ -8007,7 +8166,7 @@ _Objektart_
 
 
    
-**rel_age**
+#### Attribute rel_age{#8-3-rel-age}
 _Relatives Alter der Objektart_
 
 
@@ -8021,13 +8180,13 @@ _Relatives Alter der Objektart_
 
 
    
-**chrono**
+#### Attribute chrono
 _Chronostratigraphische Zuordnung._
 
 
 
    
-**ref_year**
+#### Attribute ref_year
 _Referenzjahr der ehemaligen Uferlinie._
 
 _Datentyp:  integer_
@@ -8035,7 +8194,7 @@ _Datentyp:  integer_
 
 
    
-**source**
+#### Attribute source
 _Datenquelle der historischen Unterlagen._
 
 _Datentyp:  string_
@@ -8043,6 +8202,9 @@ _Datentyp:  string_
 
 
    
+
+
+
 
 ### Class Subsurface_Water_L ###
 In der Klasse Subsurface_Water_L befinden sich linienförmigen Objektarten, welche einen
@@ -8064,7 +8226,7 @@ unterirdische Gewässerlauf kann mit Objeken aus der Klasse Surface_Water_PT kom
 
 
 
-**kind**
+#### Attribute kind
 _Objektart_
 
 
@@ -8074,7 +8236,7 @@ _Objektart_
 
 
    
-**combi**
+#### Attribute combi{#8-4-combi}
 _Objektart einer anderen Klasse, die mit der Objektart in Kombination vorkommen kann_
 
 
@@ -8087,6 +8249,9 @@ _Objektart einer anderen Klasse, die mit der Objektart in Kombination vorkommen 
 
 
    
+
+
+
 
 ### Class Surface_Water_PT ###
 Die Klasse Surface_Water_PT umfasst lokal (punktuell) beobachtete Oberflächengewässer, wie
@@ -8125,13 +8290,12 @@ Wasserchemie.
                | [0..1] |                          |
 9 | azimuth        | integer                      | Richtung (Azimut) der jeweiligen Punktobjektart. Wert in
 Grad (0° 359°) im Uhrzeigersinn gemessen.
-
                | [0..1] |                          |
 
 
 
 
-**kind**
+#### Attribute kind
 _Objektart_
 
 
@@ -8146,13 +8310,13 @@ _Objektart_
 
 
    
-**status**
+#### Attribute status
 _Zustand der Objektart._
 
 
 
    
-**flow_con**
+#### Attribute flow_con{#8-5-flow-con}
 _Wasserfluss Bedingungen._
 
 
@@ -8166,7 +8330,7 @@ _Wasserfluss Bedingungen._
 
 
    
-**type**
+#### Attribute type{#8-5-type}
 _Charakteristik der Objektart_
 
 
@@ -8180,7 +8344,7 @@ _Charakteristik der Objektart_
 
 
    
-**dis_loca**
+#### Attribute dis_loca{#8-5-dis-loca}
 _Ort des Wasserausflusses._
 
 
@@ -8192,7 +8356,7 @@ _Ort des Wasserausflusses._
 
 
    
-**combi**
+#### Attribute combi{#8-5-combi}
 _Objektart einer anderen Klasse, die mit der Objektart in Kombination vorkommen kann_
 
 
@@ -8205,7 +8369,7 @@ _Objektart einer anderen Klasse, die mit der Objektart in Kombination vorkommen 
 
 
    
-**temp**
+#### Attribute temp
 _Mittlere Wassertemperatur (°C)._
 
 _Datentyp:  integer_
@@ -8213,7 +8377,7 @@ _Datentyp:  integer_
 
 
    
-**chemistry**
+#### Attribute chemistry
 _Charakteristisches chemisches Element im Mineralwasser (z.B. Fe)._
 
 _Datentyp:  string_
@@ -8221,7 +8385,7 @@ _Datentyp:  string_
 
 
    
-**azimuth**
+#### Attribute azimuth
 _Richtung (Azimut) der jeweiligen Punktobjektart. Wert in
 Grad (0° 359°) im Uhrzeigersinn gemessen._
 
@@ -8230,6 +8394,9 @@ _Datentyp:  integer_
 
 
    
+
+
+
 
 ### Class Surface_Water_L ###
 In der Klasse Surface_Water_L sind linienförmige Oberflächengewässer (Quellhorizonte)
@@ -8246,7 +8413,7 @@ beschrieben.
 
 
 
-**kind**
+#### Attribute kind
 _Objektart_
 
 
@@ -8257,6 +8424,9 @@ _Objektart_
 
 
    
+
+
+
 
 ### Class Surface_Water_PLG ###
 Die Klasse Surface_Water_PLG beinhaltet oberflächliche Wasserspeicher wie Gletscher, Seen und
@@ -8275,7 +8445,7 @@ modells Geologie
 
 
 
-**kind**
+#### Attribute kind
 _Objektart_
 
 
@@ -8289,7 +8459,14 @@ _Objektart_
    
 
 
+
+
+
 ## Theme META_DATA ##
+
+
+
+
 ### Class Mapsheet ###
 Die Klasse Mapsheet ist eine geometrielose Klasse. Sie beinhaltet alle Metadaten zur Objektart
 (Kartengrundlage). Neben der Kartenart sind Angaben wie der Titel, Massstab, Autor, Datenherr,
@@ -8312,9 +8489,7 @@ und «Basis_Vect» den Vektordatensatz.
                | [0..1] |                          |
 4 | map_scale        | string                      | Massstab der Objektart (Kartenmassstab).
                | [1] |                          |
-5 | basis_topo        |                       | Angabe zur topographischen Grundlage der Objektart.
-Wird vor allem bei Karten der Landesgeologie angegeben.
-
+5 | basis_topo        | string                      | Angabe zur topographischen Grundlage der Objektart.
                | [0..1] |                          |
 6 | author        | string                      | Autor oder Autoren der Objektart.
                | [1..*] |                          |
@@ -8332,7 +8507,7 @@ Wird vor allem bei Karten der Landesgeologie angegeben.
 
 
 
-**kind**
+#### Attribute kind
 _Objektart_
 
 
@@ -8341,7 +8516,7 @@ _Objektart_
 
 
    
-**map_title**
+#### Attribute map_title
 _Originaltitel (Kartentitel) der Objektart._
 
 _Datentyp:  string_
@@ -8349,7 +8524,7 @@ _Datentyp:  string_
 
 
    
-**map_nbr**
+#### Attribute map_nbr
 _Originalnummer (Kartennummer) der Objektart._
 
 _Datentyp:  integer_
@@ -8357,7 +8532,7 @@ _Datentyp:  integer_
 
 
    
-**map_scale**
+#### Attribute map_scale
 _Massstab der Objektart (Kartenmassstab)._
 
 _Datentyp:  string_
@@ -8365,14 +8540,15 @@ _Datentyp:  string_
 
 
    
-**basis_topo**
-_Angabe zur topographischen Grundlage der Objektart.
-Wird vor allem bei Karten der Landesgeologie angegeben._
+#### Attribute basis_topo
+_Angabe zur topographischen Grundlage der Objektart._
+
+_Datentyp:  string_
 
 
 
    
-**author**
+#### Attribute author
 _Autor oder Autoren der Objektart._
 
 _Datentyp:  string_
@@ -8380,7 +8556,7 @@ _Datentyp:  string_
 
 
    
-**owner**
+#### Attribute owner
 _Angabe zum Datenherr / zu den Datenherren der Objektart._
 
 _Datentyp:  string_
@@ -8388,7 +8564,7 @@ _Datentyp:  string_
 
 
    
-**map_period**
+#### Attribute map_period
 _Angabe zum Kartierzeitraum der Objektart._
 
 _Datentyp:  string_
@@ -8396,7 +8572,7 @@ _Datentyp:  string_
 
 
    
-**publ_year**
+#### Attribute publ_year
 _Publikationsjahr der Objektart._
 
 _Datentyp:  integer_
@@ -8404,7 +8580,7 @@ _Datentyp:  integer_
 
 
    
-**basis_vect**
+#### Attribute basis_vect
 _Grundlage Vektordatensatz._
 
 _Datentyp:  string_
@@ -8412,7 +8588,7 @@ _Datentyp:  string_
 
 
    
-**restriction**
+#### Attribute restriction
 _Angabe darüber, ob die Objektart öffentlich verfügbar ist (ja) oder einer Beschränkung (nein) unterliegt_
 
 _Datentyp:  boolean_
