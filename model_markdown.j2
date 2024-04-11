@@ -9,6 +9,15 @@
 ### Class {{ cls.name }} ###
 {{ cls.description| trim }}
 
+|Name|Type|Description|
+|---------------|----------------------------------------|----------------------------------------|
+{% for attr in cls.attributes -%}
+| {{ attr.name  }}   | {{ attr.att_type}}               |  {{ attr.description   }}                             |
+| [{{ attr.cardinality  }}]  | {{ attr.value}}               |                             |
+{% endfor %}
+
+
+
 {% for attr in cls.attributes -%}
 {{ attr.name }}   _{{ attr.description|trim}}_
 

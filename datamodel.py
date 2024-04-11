@@ -27,8 +27,8 @@ df = df.set_index(["GeolCodeInt"])
 def get_coded_values(value):
     if value in domains.keys():
         domain = domains.get(value)
-        # print(f"  {name}, {type} , {value}")
-        if domain.get("type") == "CodedValue":
+        # print(f"  {name}, {att_type} , {value}")
+        if domain.get("att_type") == "CodedValue":
             return domain.get("codedValues")
 
     return {}
@@ -67,13 +67,13 @@ class Report:
                 attributes = cls.get("attributes")
                 if attributes:
                     for att in attributes:
-                        type = att.get("type")
+                        att_type = att.get("att_type")
                         value = att.get("value")
                         pairs = None
 
-                        if type == "CD" and value is not None:
+                        if att_type == "CD" and value is not None:
                             pairs = get_coded_values(value)
-                        if type == "subtype" and value is not None:
+                        if att_type == "subtype" and value is not None:
                             pairs = get_subtype(value)
 
                         if pairs is not None:
@@ -100,7 +100,7 @@ class Report:
                 if attributes:
                     for att in attributes:
                         name = att.get("name")
-                        type = att.get("type")
+                        att_type = att.get("att_type")
                         value = att.get("value")
                         desc = att.get("description", None)
                         print(f"**Attribute {name.upper()}** \n")
@@ -109,11 +109,11 @@ class Report:
 
                         pairs = None
 
-                        if type in ("integer", "range", "string", "float"):
-                            print(f"Type: {type}\n")
-                        if type == "CD" and value is not None:
+                        if att_type in ("integer", "range", "string", "float"):
+                            print(f"Type: {att_type}\n")
+                        if att_type == "CD" and value is not None:
                             pairs = get_coded_values(value)
-                        if type == "subtype" and value is not None:
+                        if att_type == "subtype" and value is not None:
                             pairs = get_subtype(value)
 
                         if pairs is not None:

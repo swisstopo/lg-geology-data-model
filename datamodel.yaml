@@ -12,22 +12,22 @@ themes:
           Gesteins gebildet haben.
         attributes:
           - name: kind
-            type: subtype
+            att_type: subtype
             value: 14401
             description: Objektart
             cardinality: 1
           - name: status
-            type: CD
+            att_type: CD
             value: GC_PNT_RUNC_STATUS_CD
             description: Zustand der Objektart
             cardinality: 1
           - name: rock_type
-            type: CD
+            att_type: CD
             value: GC_PNT_RUNC_ROCK_TYP_CD
             description: Gesteinstyp (Kristallingestein / Sedimentgestein)
             cardinality: 0..1
           - name: rock_spe
-            type: CD
+            att_type: CD
             value: GC_PNT_RUNC_ROCK_SPE_CD
             description: Bezeichnung des Leitgesteins
             cardinality: 0..1
@@ -36,11 +36,11 @@ themes:
             description: Materialbezeichnung (lithologische Einheit)
           - name: orig_descr
             description: Originalbezeichnung gemäss der Legende der zugrundeliegenden geologischen Karte
-            type: string
+            att_type: string
             cardinality: 0..1
           - name: protected
             description: Geschütztes geologisches Objekt
-            type: boolean
+            att_type: boolean
             cardinality: 0..1
       - name: Unconsolidated_Deposits_PLG
         description: >
@@ -58,68 +58,68 @@ themes:
           Fallbeispiele abgebildet.
         attributes:
           - name: kind
-            type: subtype
+            att_type: subtype
             value: 14517
             description: Objektart
             cardinality: 1
           - name: litstrat
-            type: CD
+            att_type: CD
             value: GC_LITSTRAT_UNCO_CD
             cardinality: 1
           - name: litho
-            type: CD
+            att_type: CD
             value: GC_LITHO_CD
             cardinality: 1..3
           - name: chrono_t
-            type: CD
+            att_type: CD
             value: GC_CHRONO_CD
             cardinality: 1
           - name: chrono_b
-            type: CD
+            att_type: CD
             value: GC_CHRONO_CD
             cardinality: 1
           - name: mat_type
             value: Lithostratigraphic_Units_Litho
             cardinality: 0..3
           - name: buried_out
-            type: boolean
+            att_type: boolean
             cardinality: 1
           - name: composit
-            type: table
+            att_type: table
             value: gc_composit
             cardinality: 0..3
           - name: admixture
-            type: table
+            att_type: table
             value: gc_admixture
             cardinality: 0..2
           - name: structur
-            type: CD
+            att_type: CD
             value: GC_UN_DEP_RUNC_STRUCTUR_CD
             description: Textur des Lockergesteins
             cardinality: 0..1
           - name: charact
             # Achtung charact is sometime charcat
             description: Spezifische Eigenschaft
-            type: table
+            att_type: table
             value: gc_charcat
             cardinality: 0..3
             description: Spezifische Eigenschaft
           - name: morpholo
-            type: CD
+            att_type: CD
             value: GC_UN_DEP_RUNC_MORPHOLO_CD
             description: Morphologie der Lockergesteinseinheit
             cardinality: 0..1
           - name: glac_type
-            type: CD
+            att_type: CD
             value: GC_UN_DEP_RUNC_GLAC_TYP_CD
             description: Gletschertyp; Attribut nur für Moränen
             cardinality: 0..1
           - name: ref_year
-            type: string
+            att_type: string
             description: Zeitpunkt oder Zeitperiode. Zum Beispiel «1940 1943, Periode der Drainage» (muss präzisiert werden)
             cardinality: 0..1
           - name: thin_cover
-            type: CD
+            att_type: CD
             value: GC_UN_DEP_RUNC_THIN_COV_CD
             description: Lockermaterialbedeckung, wenn vorhanden.
             cardinality: 0..1
@@ -137,47 +137,47 @@ themes:
         attributes:
           - name: kind
             description: Spezifische Eigenschaft
-            type: subtype
+            att_type: subtype
             value: 14334001
             cardinality: 1
           - name: fm_homog  # TODO still in use?
             description: Gesteinsaufbau
           - name: listrat
             description: Lithostratigraphische Einhei
-            type: CD
+            att_type: CD
             value: GC_LITSTRAT_BED_CD
             cardinality: 1
           - name: litho
-            type: CD
+            att_type: CD
             value: GC_LITHO_CD
             description: Lithologische Beschreibung
             cardinality: 1..3
           - name: chrono_t
-            type: CD
+            att_type: CD
             value: GC_CHRONO_CD
             description: >-
               Chronostratigraphische Zuordnung der Obergrenze der Kartiereinheit (Top)
             cardinality: 1
           - name: chrono_b
-            type: CD
+            att_type: CD
             value: GC_CHRONO_CD
             description: >-
               Chronostratigraphische Zuordnung der Untergrenze der
               Kartiereinheit (Basis)
             cardinality: 1
           - name: tecto
-            type: CD
+            att_type: CD
             value: GC_TECTO_CD
             description: Tektonische Zugehörigkeit
             cardinality: 1
           - name: orig_descr
-            type: string
+            att_type: string
             description: >-
               Originalbezeichnung gemäss der Legende der zugrundeliegenden geologischen
               Karte
             cardinality: 1
           - name: buried_out
-            type: boolean
+            att_type: boolean
             description: Wurde das Festgestein wieder verdeckt (ja / nein)?
             cardinality: 1
           - name: exotic_ele
@@ -187,65 +187,65 @@ themes:
               Einschluss, Linse, Tasche, Olistholith (ja / nein)?
             cardinality: 1
           - name: colour
-            type: string
+            att_type: string
             description: >-
               Farbe des Gesteins. Präzisieren ob es sich um die Bruchfarbe, die
               Verwitterungsfarbe, etc. handelt; z.B.Verwitterungsfarbe grau.
             cardinality: 0..1
           - name: sedi_main_com
-            type: CD
+            att_type: CD
             value: GC_MAIN_COM_CD
             description: Hauptgesteinskomponente des klastischen Sedimentgesteins
             cardinality: 0..1
           - name: sedi_seco_com
-            type: CD
+            att_type: CD
             value: GC_SECO_COM_CD
             description: Nebengesteinskomponente des Sedimentgesteins
             cardinality: 0..2
           - name: sedi_bond_mat
-            type: CD
+            att_type: CD
             value: GC_BOND_MAT_CD
             description: Bindemittel des Sedimentgesteins
             cardinality: 0..1
           - name: sedi_bedding
-            type: CD
+            att_type: CD
             value: GC_BEDDING_CD
             description: Schichtung des Sedimentgesteins
             cardinality: 0..2
           - name: sedi_str
-            type: CD
+            att_type: CD
             value: GC_SEDI_STR_CD
             description: Textur des Sedimentgesteins # TODO really textur?
             cardinality: 0..2
           - name: sedi_tex
-            type: CD
+            att_type: CD
             value: GC_SEDI_TEX_CD
             description: Sedimentstruktur  # TODO: really struktur?
           - name: igne_text
-            type: CD
+            att_type: CD
             value: GC_IGNE_TEX_CD
             description: Struktur des magmatischen Gesteins
             cardinality: 0..1
           - name: igne_grain_si
-            type: CD
+            att_type: CD
             value: GC_GRAIN_SI_CD
             cardinality: 0..1
             description: Korngrösse des magmatischen Gesteins
           - name: igne_affinity
-            type: CD
+            att_type: CD
             value: GC_AFFINITY_CD
             description: Affinität zu einer magmatischen Serie.
           - name: meta_full_name
-            type: string
+            att_type: string
             description: Bezeichnung des metamorphen Gesteins
             cardinality: 0..1
           - name: meta_mineral
-            type: CD
+            att_type: CD
             value: GC_MINERAL_CD
             description: Wichtiges Mineral des metamorphen Gesteins
             cardinality: 0..3
           - name: meta_str
-            type: CD
+            att_type: CD
             value: GC_META_STR_CD
             description: Textur des metamorphen Gesteins #TODO really textur
             cardinality: 0..3
@@ -261,7 +261,7 @@ themes:
         attributes:
           - name: kind
             description: Spezifische Eigenschaft
-            type: subtype
+            att_type: subtype
             value: 11601
             cardinality: 1
       - name: Instability_Structures_L
@@ -273,7 +273,7 @@ themes:
         attributes:
           - name: kind
             description: Spezifische Eigenschaft
-            type: subtype
+            att_type: subtype
             value: 11701
             cardinality: 1
       - name: Instabilities_within_Unconsolidated_Deposits_PLG
@@ -288,7 +288,7 @@ themes:
         attributes:
           - name: kind
             description: Spezifische Eigenschaft
-            type: subtype
+            att_type: subtype
             value: 11801
             cardinality: 1
       - name: Instabilities_within_Bedrock_PLG
@@ -302,12 +302,12 @@ themes:
         attributes:
           - name: kind
             description: Spezifische Eigenschaft
-            type: subtype
+            att_type: subtype
             value: 11501
             cardinality: 1
           - name: main_mov
             description: Hauptbewegungsphase
-            type: CD
+            att_type: CD
             value: GC_SURF_GINS_MAIN_MOV_CD
             cardinality: 0..1
 
@@ -319,7 +319,7 @@ themes:
         attributes:
           - name: kind
             description: Spezifische Eigenschaft
-            type: subtype
+            att_type: subtype
             value: 11201
             cardinality: 1
       - name: Glacial_and_Periglacial_Structures_L
@@ -331,36 +331,36 @@ themes:
         attributes:
           - name: kind
             description: Objektart
-            type: subtype
+            att_type: subtype
             value: 11301
             cardinality: 1
           - name: morai_mo
             description: Morphologie der Moräne
-            type: CD
+            att_type: CD
             value: GC_LIN_GGLA_MORAI_MO_CD
             cardinality: 0..1
           - name: glac_typ
             description: Gletschertyp, auf welchen die Objektart bezogen ist
-            type: CD
+            att_type: CD
             value: GC_LIN_GGLA_GLAC_TYP_CD
             cardinality: 0..1
           - name: ice_m_p
             description: Räumlicher Gletscherstand
-            type: CD
+            att_type: CD
             value: GC_LIN_GGLA_ICE_M_P_CD
             cardinality: 0..1
           - name: quat_str
             description: Zeitliche quartärstratigraphische Zuordnung des Moränenwälls
-            type: CD
+            att_type: CD
             value: GC_LIN_GGLA_QUAT_STR_CD
             cardinality: 0..1
           - name: ref_year
             description: Referenzjahr des älteren Gletscherstandes.
-            type: integer
+            att_type: integer
             cardinality: 0..1
           - name: source
             description: Quellenangabe der historischen Unterlagen
-            type: string
+            att_type: string
             cardinality: 0..1
       - name: Glacial_Structures_PLG
         description: |
@@ -369,7 +369,7 @@ themes:
         attributes:
           - name: kind
             description: Objektart
-            type: subtype
+            att_type: subtype
             value: 11401
             cardinality: 1
       - name: Erosional_Structures_PT
@@ -379,7 +379,7 @@ themes:
         attributes:
           - name: kind
             description: Objektart
-            type: subtype
+            att_type: subtype
             value: 11001
             cardinality: 1
       - name: Erosional_Structures_L
@@ -395,7 +395,7 @@ themes:
         attributes:
           - name: kind
             description: Objektart
-            type: subtype
+            att_type: subtype
             value: 11101
             cardinality: 1
 
@@ -406,7 +406,7 @@ themes:
         attributes:
           - name: kind
             description: Objektart
-            type: subtype
+            att_type: subtype
             value: 11301
             cardinality: 1
           - name: ice_cave
@@ -414,7 +414,7 @@ themes:
               Handelt es sich bei der Höhle um eine Eisgrotte («glacière», aussergewöhnlich kalte Höhle in der sich
               durch die winterlichen Schneefälle oder durch das Gefrieren von eingedrungenem Wasser Eis akkumuliert
               und das auch die warme Jahreszeit überdauert) (ja / nein)?
-            type: boolean
+            att_type: boolean
             cardinality: 0..1
       - name: Karstic_Structures_PLG
         description: |
@@ -425,7 +425,7 @@ themes:
         attributes:
           - name: kind
             description: Objektart
-            type: subtype
+            att_type: subtype
             value: 12001
             cardinality: 1
       - name: Alluvial_and_Lacustrine_Structures_L
@@ -435,12 +435,12 @@ themes:
         attributes:
           - name: kind
             description: Objektart
-            type: subtype
+            att_type: subtype
             value: 10901
             cardinality: 1
           - name: age
             description: Alter der Objektart.
-            type: CD
+            att_type: CD
             value: GC_LIN_GALL_AGE_CD
             cardinality: 0..1
 
@@ -458,27 +458,27 @@ themes:
         attributes:
           - name: kind
             description: Objektart
-            type: subtype
+            att_type: subtype
             value: 14601
             cardinality: 1
           - name: azimuth
             description: Fallrichtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad (0° 359°) im Uhrzeigersinn gemessen.
-            type: integer
+            att_type: integer
             cardinality: 0..1
           - name: dip
             description: |
                Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die
                Vertikale (90°).
-            type: integer
+            att_type: integer
             cardinality: 0..1
           - name: fold_typ
             description: Objekttyp
-            type: CD
+            att_type: CD
             value: GC_PNT_TDEF_FOLD_TYP_CD
             cardinality: 0..1
           - name: fold_for
             description: Objektform
-            type: CD
+            att_type: CD
             value: GC_PNT_TDEF_FOLD_FOR_CD
             cardinality: 0..1
 
@@ -490,7 +490,7 @@ themes:
         attributes:
           - name: kind
             description: Objektart
-            type: subtype
+            att_type: subtype
             value: 14701
             cardinality: 1
       - name: Deformation_Structures_PLG
@@ -500,17 +500,17 @@ themes:
         attributes:
           - name: kind
             description: Objektart
-            type: subtype
+            att_type: subtype
             value: 14801
             cardinality: 1
           - name: type
             description: Charakteristik der Objektarten
-            type: CD
+            att_type: CD
             value: GC_SURF_TDEF_TYPE_CD
             cardinality: 0..1
           - name: gen_rela
             description: Genetische Beziehung.
-            type: CDD # TODO: where is the domain
+            att_type: CDD # TODO: where is the domain
             value:
             cardinality: 0..1
       - name: Tectonic_Boundaries_L
@@ -526,45 +526,45 @@ themes:
         attributes:
           - name: kind
             description: Objektart
-            type: subtype
+            att_type: subtype
             value: 14901
             cardinality: 1
           - name: fault_mo
             description: Bewegungsrichtung des Bruchs
-            type: CD
+            att_type: CD
             value: GC_LIN_TTEC_FAULT_MO_CD
             cardinality: 0..1
           - name: verti_mo
             description: Bewegung parallel zur Fallrichtung der Bruchfläche.
-            type: CD
+            att_type: CD
             value: GC_LIN_TTEC_VERTI_MO_CD
             cardinality: 0..1
           - name: horiz_mo
             description: Bewegung parallel zur Streichrichtung der Bruch- oder Scherfläche
-            type: CD
+            att_type: CD
             value: GC_LIN_TTEC_HORIZ_MO_CD
             cardinality: 0..1
           - name: lim_tect_b
             description: Grenze einer tektonischen Einheit wie Deckengrenze,Schuppengrenze, Zonengrenze, etc. (ja / nein)?
-            type: boolean
+            att_type: boolean
             cardinality: 1
           - name: status
             description: Zustand der Objektart
-            type: CD
+            att_type: CD
             value: GC_LIN_TTEC_STATUS_CD
             cardinality: 1
           - name: activity
             description: Aktivität der Objektart
-            type: TODO  # TODO: no coded domain
+            att_type: TODO  # TODO: no coded domain
             cardinality: 0..1
           - name: meta_sta
             description: Tektonometamorphe Chronologie der Objektart
-            type: CD
+            att_type: CD
             value: GC_LIN_TTEC_META_STA_CD
             cardinality: 0..1
           - name: name
             description: Spezifischer Name der Objektart.
-            type: string
+            att_type: string
             cardinality: 0..1
   - name: Measurements_Spatial_Orientation
     classes:
@@ -576,12 +576,12 @@ themes:
         attributes:
           - name: kind
             description: Objektart
-            type: subtype
+            att_type: subtype
             value: 13601
             cardinality: 1
           - name: fold_typ
             description: Objekttyp
-            type: CD
+            att_type: CD
             value: GC_PNT_MFOL_FOLD_TYP_CD
             cardinality: 0..1
           - name: fold_for
@@ -590,24 +590,24 @@ themes:
             cardinality: 0..1
           - name: phase
             description: Deformationsphase.
-            type: CD
+            att_type: CD
             value: GC_PNT_MFOL_PHASE_CD
             cardinality: 0..1
           - name: phase_ref
             description: Referenz für die Angabe der Deformationsphase.
-            type: string
+            att_type: string
             cardinality: 0..1
           - name: azimuth
             description: |
                 Einfallsrichtung (Azimut) der jeweiligen Punktobjektart (z.B. Scheitellinie, Faltenachse).
                 Wert in Grad (0° 359°) im Uhrzeigersinn gemessen
-            type: integer
+            att_type: integer
             cardinality: 1
           - name: dip
             description: |
                Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die
                Vertikale (90°).
-            type: integer
+            att_type: integer
             cardinality: 0..1
       - name: Lineation_PT
         description: |
@@ -618,14 +618,14 @@ themes:
         attributes:
           - name: kind
             description: Objektart
-            type: subtype
+            att_type: subtype
             value: 13701
             cardinality: 1
           - name: azimuth
             description: |
                 Einfallsrichtung (Azimut) der jeweiligen Punktobjektart (z.B. Scheitellinie, Faltenachse).
                 Wert in Grad (0° 359°) im Uhrzeigersinn gemessen
-            type: integer
+            att_type: integer
             cardinality: 1
           - name: dip
             description: |
@@ -640,32 +640,32 @@ themes:
         attributes:
           - name: kind
             description: Objektart
-            type: subtype
+            att_type: subtype
             value: 13801
             cardinality: 1
           - name: polarity
             description: Position der Objektart im Raum
-            type: CD
+            att_type: CD
             value: GC_PNT_MPLA_POLARITY_CD
             cardinality: 0..1
           - name: phase
             description: Deformationsphase
-            type: CD
+            att_type: CD
             value: GC_PNT_MPLA_PHASE_CD
             polarity: 0..1
           - name: phase_ref
             description: Referenz für die Angabe der Deformationsphase.
-            type: string
+            att_type: string
             cardinality: 0..1
           - name: ob_dip_slo
             description: Dip slope beobachtet (ja / nein)?
-            type: boolean
+            att_type: boolean
             cardinality: 0..1
           - name: azimuth
             description: |
                 Einfallsrichtung (Azimut) der jeweiligen Punktobjektart (z.B. Scheitellinie, Faltenachse).
                 Wert in Grad (0° 359°) im Uhrzeigersinn gemessen
-            type: integer
+            att_type: integer
             cardinality: 1
           - name: dip
             description: |
@@ -680,7 +680,7 @@ themes:
         attributes:
           - name: kind
             description: Objektart
-            type: subtype
+            att_type: subtype
             value: 128001
             cardinality: 1
           - name: type
@@ -691,32 +691,32 @@ themes:
         attributes:
           - name: kind
             description: Objektart
-            type: subtype
+            att_type: subtype
             value: 12901
             cardinality: 1
           - name: division
             description: Fossilienkategorie, zu welcher die Objektinstanz gehört.
-            type: CD
+            att_type: CD
             value: GC_FOSS_LFOS_DIVISION_CD
             cardinality: 0..1
           - name: system
             description: Fossiliengruppe.
-            type: table
+            att_type: table
             value: gc_system
             cardinality: 0..1
           - name: dat_meth
             description: Datierungsmethode.
-            type: CD
+            att_type: CD
             value: GC_FOSS_LFOS_DAT_METH_CD
             cardinality: 0..1
           - name: status
             description: Zustand der Objektart
-            type: CD
+            att_type: CD
             value: GC_FOSS_LFOS_STATUS_CD
             cardinality: 0..1
           - name: protected
             description: Geschützte Fossilfundstelle (ja / nein)?
-            type: boolean
+            att_type: boolean
             cardinality: 0..1
       - name: Indication_of_Resources_PT
         description: |
@@ -725,46 +725,46 @@ themes:
         attributes:
           - name: kind
             description: Objektart
-            type: subtype
+            att_type: subtype
             value: 13201
             cardinality: 1
           - name: status
             description: Zustand der Objektart
-            type: CD
+            att_type: CD
             value: GC_PNT_LRES_STATUS_CD
             cardinality: 0..1
           - name: material
             description: Material, das mit der Objektart in Verbindung steht
-            type: CD
+            att_type: CD
             value: GC_PNT_LRES_MATERIAL_CD
             cardinality: 0..1
           - name: chemistry
             description: Chemische Komponente(n) oder Mineralien, welche die Natur der Objektart charakterisieren.
-            type: string
+            att_type: string
             cardinality: 0..1
       - name: Mineralised_Zone_L
         descriptipn: Die Klasse Mineralised_Zone_L beinhaltet Vererzungszonen.
         attributes:
           - name: kind
             description: Objektart
-            type: subtype
+            att_type: subtype
             value: 13301
             cardinality: 1
           - name: chemistry
             description: Chemische Komponente(n), welche die Natur der Objektart charakterisieren.
-            type: string
+            att_type: string
             cardinality: 0..1
       - name: Sedimentary_Structures_PT
         descriptipn: Die Klasse Sedimentary_Structures_PT enthält beobachtete Sedimentstrukturen.
         attributes:
           - name: kind
             description: Objektart
-            type: subtype
+            att_type: subtype
             value: 13401
             cardinality: 1
           - name: azimuth
             description: Orientierung des Symbols. Wert in Grad (0° 359°) im Uhrzeigersinn gemessen.
-            type: integer
+            att_type: integer
             cardinality: 0..1
       - name: Type_Localities_PT
         description: |
@@ -773,25 +773,25 @@ themes:
         attributes:
         - name: kind
           description: Objektart
-          type: subtype
+          att_type: subtype
           value: 13501
           cardinality: 1
         - name: strati
           description: Lithostratigraphischer Zusatz zum Objekt
-          type: Cd
+          att_type: Cd
           value: GC_PNT_LTYP_STRATI_CD
           cardinality: 0..1
         - name: name
           description: Name der Typlokalität. / Beschreibung des geologisch relevanten Aufschlusses
-          type: string
+          att_type: string
           cardinality: 0..1
         - name: accessibil
           description: Ist die Objektart zum Zeitpunkt der Aufnahme aufgeschlossen (ja / nein)?
-          type: boolean
+          att_type: boolean
           cardinality: 0..1
         - name: protected
           description: Geschütztes geologisches Objekt (ja / nein)?
-          type: boolean
+          att_type: boolean
           cardinality: 0..1
 
       - name: Prominent_Lithological_Features_L
@@ -803,12 +803,12 @@ themes:
         attributes:
           - name: kind
             description: Objektart
-            type: subtype
+            att_type: subtype
             value: 13101
             cardinality: 1
           - name: cong_spe
             description: Charakterisation der Konglomerate nach ihrem Geröllspektrum.
-            type: CD
+            att_type: CD
             value: GC_LIN_LPRO_CONG_SPE_CD
             cardinality: 0..1
           - name: name_horiz
@@ -817,11 +817,11 @@ themes:
             cardinality: 0..1
           - name: orig_descr
             description: Originalbezeichnung gemäss der Legende der zugrundeliegenden geologischen Karte.
-            type: string
+            att_type: string
             cardinality: 0..1
           - name: litho
             description: Materialbezeichnung (lithologische Einheit).
-            type: table
+            att_type: table
             value: gc_litho  # TODO: really or CD
             cardinality: 1
       - name: Miscellaneous_PT
@@ -832,12 +832,12 @@ themes:
         attributes:
           - name: kind
             description: Objektart
-            type: subtype
+            att_type: subtype
             value: 15501
             cardinality: 1
           - name: orig_name
             description: Ursprüngliche Bezeichnung des Objektes.
-            type: string
+            att_type: string
             cardinality: 1
       - name: Geological_Outlines_L
         description: |
@@ -856,12 +856,12 @@ themes:
         attributes:
           - name: kind
             description: Objektart
-            type: subtype
+            att_type: subtype
             value: 13001
             cardinality: 1
           - name: status
             description: Zustand der Objektart.
-            type: CD
+            att_type: CD
             value: GC_LIN_LGEO_STATUS_CD
             cardinality: 0..1
   - name: Parameter_and_Modelling
@@ -873,27 +873,27 @@ themes:
         attributes:
           - name: kind
             description: Objektart
-            type: subtype
+            att_type: subtype
             value: 14201
             cardinality: 1
           - name: type
             description: Referenzoberfläche.
-            type: CD
+            att_type: CD
             value: GC_PNT_PSLO_TYPE_CD
             cardinality: 1
           - name: azimuth
             description: Fallrichtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad (0° 359°) im Uhrzeigersinn gemessen.
-            type: integer
+            att_type: integer
             cardinality: 0..1
           - name: dip
             description: |
                Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die
                Vertikale (90°).
-            type: integer
+            att_type: integer
             cardinality: 0..1
           - name: litstrat
             description: Lithostratigraphische Einheit der modellierten Formation
-            type: table
+            att_type: table
             value: gc_litstrat_bed  # TODO: or coded domain
             cardinality: 1
 
@@ -905,21 +905,21 @@ themes:
         attributes:
           - name: kind
             description: Objektart
-            type: subtype
+            att_type: subtype
             value: 13901
             cardinality: 1
           - name: type
             description: Referenzoberfläche.
-            type: CD
+            att_type: CD
             value: GC_LIN_PCOB_TYPE_CD
             cardinality: 1
           - name: altitude
             description: Höhenangabe (m ü.M.) von Isohypsen.
-            type: float
+            att_type: float
             cardinality: 1
           - name: litstrat
             description: Lithostratigraphische Einheit der modellierten Formation
-            type: table
+            att_type: table
             value: gc_litstrat_bed  # TODO: or coded domain
             cardinality: 1
       - name: Modelled_Water_Table_PT
@@ -929,26 +929,26 @@ themes:
         attributes:
           - name: kind
             description: Objektart
-            type: subtype
+            att_type: subtype
             value: 14101
             cardinality: 1
           - name: azimuth
             description: Fallrichtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad (0° 359°) im Uhrzeigersinn gemessen.
-            type: integer
+            att_type: integer
             cardinality: 0..1
           - name: dip
             description: |
                Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die
                Vertikale (90°).
-            type: integer
+            att_type: integer
             cardinality: 0..1
           - name: height
             description: Kote des Grundwasserspiegels (m ü.M.).
-            type: float
+            att_type: float
             cardinality: 0..1
           - name: mea_period
             description: Messperiode.
-            type: range  # TODO
+            att_type: range  # TODO
             cardinality: 0..1
       - name: Contour_Lines_Hydro_L
         description: |
@@ -957,12 +957,12 @@ themes:
         attributes:
           - name: kind
             description: Objektart
-            type: subtype
+            att_type: subtype
             value: 14001
             cardinality: 1
           - name: confine
             description: Druckzustand im Grundwasserleiter.
-            type: CD
+            att_type: CD
             value: GC_LIN_PCOH_CONFINE_CD
             cardinality: 0..1
           - name: altitude
@@ -970,7 +970,7 @@ themes:
             cardinality: 1
           - name: wa_table
             description: Wasserstand.
-            type: CD
+            att_type: CD
             value: GC_LIN_PCOH_WA_TABLE_CD
             cardinality: 0..1
   - name: Anthropogenic_Features
@@ -980,26 +980,26 @@ themes:
         attributes:
           - name: kind
             description: Objektart
-            type: subtype
+            att_type: subtype
             value: 10101
           - name: epoch
             description: Archäologische Epoche der Objektart
-            type: CD
+            att_type: CD
             value: GC_AARC_EPOCH_CD  # value wrong in PDF
             cardinality: 0..1
           - name: period
             description: Archäologische Periode der Objektart.
-            type: CD
+            att_type: CD
             value: GC_AARC_PERIOD_CD # GeolCode wrong in PDF
             cardinality: 0..1
           - name: age
             description: Archäologisches Alter der Objektart.
-            type: CD
+            att_type: CD
             value: GC_AARC_AGE_CD
             cardinality: 0..1
           - name: type
             description: Art des Kultsteins.
-            type: CD
+            att_type: CD
             value: GC_PNT_AARC_TYPE_CD
             cardinality: 0..1
       - name: Archaeology_L
@@ -1009,21 +1009,21 @@ themes:
         attributes:
           - name: kind
             description: Objektart
-            type: subtype
+            att_type: subtype
             value: 10201
           - name: epoch
             description: Archäologische Epoche der Objektart
-            type: CD
+            att_type: CD
             value: GC_AARC_EPOCH_CD  # value wrong in PDF
             cardinality: 0..1
           - name: period
             description: Archäologische Periode der Objektart.
-            type: CD
+            att_type: CD
             value: GC_AARC_PERIOD_CD # GeolCode wrong in PDF
             cardinality: 0..1
           - name: age
             description: Archäologisches Alter der Objektart.
-            type: CD
+            att_type: CD
             value: GC_AARC_AGE_CD
             cardinality: 0..1
       - name: Archaeology_PLG
@@ -1033,21 +1033,21 @@ themes:
         attributes:
           - name: kind
             description: Objektart
-            type: subtype
+            att_type: subtype
             value: 10301
           - name: epoch
             description: Archäologische Epoche der Objektart
-            type: CD
+            att_type: CD
             value: GC_AARC_EPOCH_CD  # value wrong in PDF
             cardinality: 0..1
           - name: period
             description: Archäologische Periode der Objektart.
-            type: CD
+            att_type: CD
             value: GC_AARC_PERIOD_CD # GeolCode wrong in PDF
             cardinality: 0..1
           - name: age
             description: Archäologisches Alter der Objektart.
-            type: CD
+            att_type: CD
             value: GC_AARC_AGE_CD
             cardinality: 0..1
       - name: Exploitation_Geomaterials_PT
@@ -1057,25 +1057,25 @@ themes:
         attributes:
           - name: kind
             description: Objektart
-            type: subtype
+            att_type: subtype
             value: 10601
           - name: exp_unit
             description: Abgebaute lithostratigraphische Einheit.
-            type: table
+            att_type: table
             value: gc_litstrat_bed # TODO
             cardinality: 0..*
           - name: status
             description: Abbaustatus.
-            type: Cd
+            att_type: Cd
             value: GC_EX_GEO_PNT_AEXP_STATUS_CD
             cardinality: 0..1
           - name: depth_tot
             description: Endtiefe (m ab Terrainoberfläche) der Objektart.
-            type: float
+            att_type: float
             cardinality: 0..1
           - name: targ_mat
             description: Abgebautes Material.
-            type: CD
+            att_type: CD
             value: GC_EX_GEO_PNT_AEXP_TARG_MAT_CD
             cardinality: 0..1
 
@@ -1086,11 +1086,11 @@ themes:
         attributes:
           - name: kind
             description: Objektart
-            type: subtype
+            att_type: subtype
             value: 10701
           - name: status
             description: Abbaustatus.
-            type: Cd
+            att_type: Cd
             value: GC_LIN_AEXP_STATUS_CD
             cardinality: 0..1
 
@@ -1101,25 +1101,25 @@ themes:
         attributes:
           - name: kind
             description: Objektart
-            type: subtype
+            att_type: subtype
             value: 10801
           - name: exp_unit
             description: Abgebaute lithostratigraphische Einheit.
-            type: table
+            att_type: table
             value: gc_litstrat_bed # TODO
             cardinality: 1..*
           - name: status
             description: Abbaustatus.
-            type: Cd
+            att_type: Cd
             value: GC_EX_GEO_PLG_AEXP_STATUS_CD
             cardinality: 0..1
           - name: depth_tot
             description: Endtiefe (m ab Terrainoberfläche) der Objektart.
-            type: float
+            att_type: float
             cardinality: 0..1
           - name: targ_mat
             description: Abgebautes Material.
-            type: CD
+            att_type: CD
             value: GC_EX_GEO_PLG_AEXP_TARG_MAT_CD
             cardinality: 0..1
       - name: Boreholes_PT
@@ -1130,7 +1130,7 @@ themes:
         attributes:
           - name: kind
             description: Objektart
-            type: subtype
+            att_type: subtype
             value: 10501
           - name: drill_mo
             description: Bohrmethode.
@@ -1144,20 +1144,20 @@ themes:
                 Wert -9999, falls die Bohrung bereits im Festgestein beginnt, beträgt
                 der Wert 0). Falls Festgestein erreicht wurde, aber nicht klar ist,
                 dass es sich um die Felsoberfläche handelt, beträgt der Wert -8888.
-            type: float
+            att_type: float
             cardinality: 0..1
           - name: d_c_underg
             description: Bohransatzpunkt unter Terrain (ja / nein)
-            type: boolean
+            att_type: boolean
             cardinality: 1
           - name: main_tar
             description: Ziel der Sondierung.
-            type: CD
+            att_type: CD
             value: GC_PNT_ABOR_MAIN_TAR_CD
             cardinality: 0..1
           - name: targ_mat
             description: Durch die Sondierung gefördertes Material.
-            type: CD
+            att_type: CD
             value: GC_PNT_ABOR_TARG_MAT_CD
             cardinality: 0..1
           - name: depth_tot
@@ -1165,47 +1165,47 @@ themes:
                 Gemessene Länge (Measured Depth) der Bohrung. Vgl.
                 DM Bohrdaten. Die tatsächliche Tiefe (True Vertical
                 Depth) ist oft nicht bekannt.
-            type: float
+            att_type: float
             cardinality: 0..1
           - name: fm_a
             description: Lithostratigraphische Einheit der erreichten Formation A
-            type: table
+            att_type: table
             value: gc_litstrat_bed # TODO
             cardinality: 0..1
           - name: depth_fm_a
             description: Tiefe (m ab Terrainoberfläche) der erreichten Formation A.
-            type: float
+            att_type: float
             cardinality: 0..1
           - name: fm_b
             description: Lithostratigraphische Einheit der erreichten Formation B
-            type: table
+            att_type: table
             value: gc_litstrat_bed # TODO
             cardinality: 0..1
           - name: depth_fm_b
             description: Tiefe (m ab Terrainoberfläche) der erreichten Formation B.
-            type: float
+            att_type: float
             cardinality: 0..1
           - name: depth_wt
             description: Tiefe (m ab Terrainoberfläche) des Grundwasserspiegels.
-            type: float
+            att_type: float
             cardinality: 0..1
           - name: azimuth
             description: Fallrichtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad (0° 359°) im Uhrzeigersinn gemessen.
-            type: integer
+            att_type: integer
             cardinality: 0..1
           - name: dip
             description: |   # TODO text!!!
                Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die
                Vertikale (90°).
-            type: integer
+            att_type: integer
             cardinality: 0..1
           - name: ref_number
             description: Bohrungs-ID der Objektart in einem zusätzlichen Dokument (Erläuterungen, ...).
-            type: integer
+            att_type: integer
             cardinality: 0..1
           - name: link
             description: Objektnummer in der Datenbank von INFOGEOL.
-            type: integer
+            att_type: integer
             cardinality: 0..1
 
       - name: Artificial_Surface_Modifications_PLG
@@ -1216,7 +1216,7 @@ themes:
         attributes:
           - name: kind
             description: Objektart
-            type: subtype
+            att_type: subtype
             value: 10401
             cardinality: 1
   - name: Hydrogeology
@@ -1228,30 +1228,30 @@ themes:
         attributes:
           - name: kind
             description: Objektart
-            type: subtype
+            att_type: subtype
             value: 12101
             cardinality: 1
           - name: status
             description: Zustand der Objektart.
-            type: Cd
+            att_type: Cd
             value: GC_PNT_HCON_STATUS_CD
             cardinality: 0..1
           - name: epoch
             description: Epoche der Erbauung der Objektart.
-            type: Cd
+            att_type: Cd
             value: GC_PNT_HCON_EPOCH_CD
             cardinality: 0..1
           - name: depth
             description: Tiefe der Objektart (m ab Terrainoberfläche).
-            type: float
+            att_type: float
             cardinality: 0..1
           - name: depth_wt
             description: Tiefe (m ab Terrainoberfläche) des Grundwasserspiegels (Mittelwert).
-            type: float
+            att_type: float
             cardinality: 0..1
           - name: mea_period
             description: Messperiode.
-            type: range  # TODO
+            att_type: range  # TODO
             cardinality: 0..1
       - name: Construction_L
         description: |
@@ -1260,12 +1260,12 @@ themes:
         attributes:
           - name: kind
             description: Objektart
-            type: subtype
+            att_type: subtype
             value: 12201
             cardinality: 1
           - name: combi
             description: Objektart einer anderen Klasse, die mit der Objektart in Kombination vorkommen kann
-            type: CD
+            att_type: CD
             value: GC_LIN_HCON_COMBI_CD
             cardinality: 0..1
       - name: Palaeohydrology_L
@@ -1275,26 +1275,26 @@ themes:
         attributes:
           - name: kind
             description: Objektart
-            type: subtype
+            att_type: subtype
             value: 12301
             cardinality: 1
           - name: rel_age
             description: Relatives Alter der Objektart
-            type: CD
+            att_type: CD
             value: GC_LIN_HPAL_REL_AGE_CD
             cardinality: 0..1
           - name: chrono
             description: Chronostratigraphische Zuordnung.
-            type: table
+            att_type: table
             value: gc_chrono  # TODO really
             cardinality: 0..1
           - name: ref_year
             description: Referenzjahr der ehemaligen Uferlinie.
-            type: integer
+            att_type: integer
             cardinality: 1
           - name: source
             description: Datenquelle der historischen Unterlagen.
-            type: string
+            att_type: string
             cardinality: 0..1
 
       - name: Subsurface_Water_L
@@ -1307,12 +1307,12 @@ themes:
         attributes:
           - name: kind
             description: Objektart
-            type: subtype
+            att_type: subtype
             value: 12401
             cardinality: 1
           - name: combi
             description: Objektart einer anderen Klasse, die mit der Objektart in Kombination vorkommen kann
-            type: CD
+            att_type: CD
             value: GC_LIN_HSUB_COMBI_CD
             cardinality: 0..1
       - name: Surface_Water_PT
@@ -1332,47 +1332,47 @@ themes:
         attributes:
           - name: kind
             description: Objektart
-            type: subtype
+            att_type: subtype
             value: 12501
             cardinality: 1
           - name: status
             description: Zustand der Objektart.
-            type: Cd
+            att_type: Cd
             value: GC_PNT_HSUR_STATUS_CD
             cardinality: 0..1
           - name: flow_con
             description: Wasserfluss Bedingungen.
-            type: CD
+            att_type: CD
             value: GC_PNT_HSUR_FLOW_CON_CD
             cardinality: 0..1
           - name: type
             description: Charakteristik der Objektart
-            type: CD
+            att_type: CD
             value: GC_PNT_HSUR_TYPE_CD
             cardinality: 0..1
           - name: dis_loca
             description: Ort des Wasserausflusses.
-            type: CD
+            att_type: CD
             value: GC_PNT_HSUR_DIS_LOCA_CD
             cardinality: 0..1
           - name: combi
             description: Objektart einer anderen Klasse, die mit der Objektart in Kombination vorkommen kann
-            type: CD
+            att_type: CD
             value: GC_PNT_HSUR_COMBI_CD
             cardinality: 0..1
           - name: temp
             description: Mittlere Wassertemperatur (°C).
-            type: integer
+            att_type: integer
             cardinality: 0..1
           - name: chemistry
             description: Charakteristisches chemisches Element im Mineralwasser (z.B. Fe).
-            type: string
+            att_type: string
             cardinality: 0..1
           - name: azimuth
             description: |
                 Richtung (Azimut) der jeweiligen Punktobjektart. Wert in
                 Grad (0° 359°) im Uhrzeigersinn gemessen.
-            type: integer
+            att_type: integer
             cardinality: 0..1
       - name: Surface_Water_L
         description: |
@@ -1381,7 +1381,7 @@ themes:
         attributes:
           - name: kind
             description: Objektart
-            type: subtype
+            att_type: subtype
             value: 12601
             cardinality: 1
       - name: Surface_Water_PLG
@@ -1393,7 +1393,7 @@ themes:
         attributes:
           - name: kind
             description: Objektart
-            type: subtype
+            att_type: subtype
             value: 12701
             cardinality: 1
   - name: Meta_Data
@@ -1410,20 +1410,20 @@ themes:
         attributes:
           - name: kind
             description: Objektart
-            type: subtype
+            att_type: subtype
             value: 15410
             cardinality: 1
           - name: map_title
             description: Originaltitel (Kartentitel) der Objektart.
-            type: string
+            att_type: string
             cardinality: 1
           - name: map_nbr
             description: Originalnummer (Kartennummer) der Objektart.
-            type: integer
+            att_type: integer
             cardinality: 0..1
           - name: map_scale
             description: Massstab der Objektart (Kartenmassstab).
-            type: string  # TODO really a string for scale?
+            att_type: string  # TODO really a string for scale?
             cardinality: 1
           - name: basis_topo
             description: |
@@ -1432,25 +1432,25 @@ themes:
             cardinality: 0..1
           - name: author
             description: Autor oder Autoren der Objektart.
-            type: string
+            att_type: string
             cardinality: 1..*
           - name: owner
             description: Angabe zum Datenherr / zu den Datenherren der Objektart.
-            type: string
+            att_type: string
             cardinality: 1..*
           - name: map_period
             description: Angabe zum Kartierzeitraum der Objektart.
-            type: string
+            att_type: string
             cardinality: 0..1
           - name: publ_year
             description: Publikationsjahr der Objektart.
-            type: integer
+            att_type: integer
             cardinality: 1
           - name: basis_vect
             description: Grundlage Vektordatensatz.
-            type: string
+            att_type: string
             cardinality: 0..1
           - name: restriction
             description: Angabe darüber, ob die Objektart öffentlich verfügbar ist (ja) oder einer Beschränkung (nein) unterliegt
-            type: boolean
+            att_type: boolean
             cardinality: 1
