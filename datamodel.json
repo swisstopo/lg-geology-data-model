@@ -5495,13 +5495,13 @@
                         },
                         {
                             "name": "azimuth",
-                            "description": "Fallrichtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad (0\u00b0 359\u00b0) im Uhrzeigersinn gemessen.",
+                            "description": "Fallrichtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad (0\u00b0 359\u00b0) im Uhrzeigersinn gemessen.\n",
                             "att_type": "integer",
                             "cardinality": "0..1"
                         },
                         {
                             "name": "dip",
-                            "description": "Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0\u00b0) nach unten bis in die\nVertikale (90\u00b0).\n",
+                            "description": "Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0\u00b0) nach unten bis in die Vertikale (90\u00b0).\n",
                             "att_type": "integer",
                             "cardinality": "0..1"
                         },
@@ -5759,7 +5759,7 @@
                         },
                         {
                             "name": "azimuth",
-                            "description": "Einfallsrichtung (Azimut) der jeweiligen Punktobjektart (z.B. Scheitellinie, Faltenachse).\nWert in Grad (0\u00b0 359\u00b0) im Uhrzeigersinn gemessen\n",
+                            "description": "Einfallsrichtung (Azimut) der jeweiligen Punktobjektart (z.B. Scheitellinie, Faltenachse). Wert in Grad (0\u00b0 359\u00b0) im Uhrzeigersinn gemessen\n",
                             "att_type": "integer",
                             "cardinality": 1
                         },
@@ -5790,13 +5790,13 @@
                         },
                         {
                             "name": "azimuth",
-                            "description": "Einfallsrichtung (Azimut) der jeweiligen Punktobjektart (z.B. Scheitellinie, Faltenachse).\nWert in Grad (0\u00b0 359\u00b0) im Uhrzeigersinn gemessen\n",
+                            "description": "Einfallsrichtung (Azimut) der jeweiligen Punktobjektart (z.B. Scheitellinie, Faltenachse). Wert in Grad (0\u00b0 359\u00b0) im Uhrzeigersinn gemessen\n",
                             "att_type": "integer",
                             "cardinality": 1
                         },
                         {
                             "name": "dip",
-                            "description": "Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0\u00b0) nach unten bis in die\nVertikale (90\u00b0).\n",
+                            "description": "Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0\u00b0) nach unten bis in die Vertikale (90\u00b0).\n",
                             "cardinatity": "0..1"
                         }
                     ]
@@ -5861,13 +5861,13 @@
                         },
                         {
                             "name": "azimuth",
-                            "description": "Einfallsrichtung (Azimut) der jeweiligen Punktobjektart (z.B. Scheitellinie, Faltenachse).\nWert in Grad (0\u00b0 359\u00b0) im Uhrzeigersinn gemessen\n",
+                            "description": "Einfallsrichtung (Azimut) der jeweiligen Punktobjektart (z.B. Scheitellinie, Faltenachse). Wert in Grad (0\u00b0 359\u00b0) im Uhrzeigersinn gemessen\n",
                             "att_type": "integer",
                             "cardinality": 1
                         },
                         {
                             "name": "dip",
-                            "description": "Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0\u00b0) nach unten bis in die\nVertikale (90\u00b0).\n",
+                            "description": "Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0\u00b0) nach unten bis in die Vertikale (90\u00b0).\n",
                             "cardinatity": "0..1"
                         }
                     ]
@@ -7296,7 +7296,7 @@
                         },
                         {
                             "name": "azimuth",
-                            "description": "Richtung (Azimut) der jeweiligen Punktobjektart. Wert in\nGrad (0\u00b0 359\u00b0) im Uhrzeigersinn gemessen.\n",
+                            "description": "Richtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad (0\u00b0 359\u00b0) im Uhrzeigersinn gemessen.\n",
                             "att_type": "integer",
                             "cardinality": "0..1"
                         }

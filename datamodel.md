@@ -5829,8 +5829,7 @@ Verständlichkeit abgebildet.
 []()           | Cardinality [1] | 14601                                       |
 2 | **azimuth**                | integer                                    | Fallrichtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad (0° 359°) im Uhrzeigersinn gemessen.
 []()           | Cardinality [0..1] |                                        |
-3 | **dip**                | integer                                    | Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die
-Vertikale (90°).
+3 | **dip**                | integer                                    | Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die Vertikale (90°).
 []()           | Cardinality [0..1] |                                        |
 4 | **fold_typ**                | [CodedDomain](#deformation-structures-pt-fold-typ)                    | Objekttyp
 []()           | Cardinality [0..1] |                                                      |
@@ -5866,8 +5865,7 @@ _Datentyp:  integer_
 
 
 #### Attribute dip
-_Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die
-Vertikale (90°)._
+_Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die Vertikale (90°)._
 _Datentyp:  integer_
 
 
@@ -6150,8 +6148,7 @@ Faltenachse und der Scheitellinie sind im Anhang A zur besseren Verständlichkei
 []()           | Cardinality [0..1] |                                                      |
 5 | **phase_ref**                | string                                    | Referenz für die Angabe der Deformationsphase.
 []()           | Cardinality [0..1] |                                        |
-6 | **azimuth**                | integer                                    | Einfallsrichtung (Azimut) der jeweiligen Punktobjektart (z.B. Scheitellinie, Faltenachse).
-Wert in Grad (0° 359°) im Uhrzeigersinn gemessen
+6 | **azimuth**                | integer                                    | Einfallsrichtung (Azimut) der jeweiligen Punktobjektart (z.B. Scheitellinie, Faltenachse). Wert in Grad (0° 359°) im Uhrzeigersinn gemessen
 []()           | Cardinality [1] |                                        |
 7 | **dip**                | integer                                    | Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die
 Vertikale (90°).
@@ -6215,8 +6212,7 @@ _Datentyp:  string_
 
 
 #### Attribute azimuth
-_Einfallsrichtung (Azimut) der jeweiligen Punktobjektart (z.B. Scheitellinie, Faltenachse).
-Wert in Grad (0° 359°) im Uhrzeigersinn gemessen_
+_Einfallsrichtung (Azimut) der jeweiligen Punktobjektart (z.B. Scheitellinie, Faltenachse). Wert in Grad (0° 359°) im Uhrzeigersinn gemessen_
 _Datentyp:  integer_
 
 
@@ -6245,11 +6241,9 @@ Intersektionslineationen.
 ----|------------------------------|-----------------------------------|--------------------------------------
 1 | **kind**                | subtype                                    | Objektart
 []()           | Cardinality [1] | 13701                                       |
-2 | **azimuth**                | integer                                    | Einfallsrichtung (Azimut) der jeweiligen Punktobjektart (z.B. Scheitellinie, Faltenachse).
-Wert in Grad (0° 359°) im Uhrzeigersinn gemessen
+2 | **azimuth**                | integer                                    | Einfallsrichtung (Azimut) der jeweiligen Punktobjektart (z.B. Scheitellinie, Faltenachse). Wert in Grad (0° 359°) im Uhrzeigersinn gemessen
 []()           | Cardinality [1] |                                        |
-3 | **dip**                |                                     | Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die
-Vertikale (90°).
+3 | **dip**                |                                     | Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die Vertikale (90°).
 []()           | Cardinality [] |                                        |
 
 
@@ -6270,8 +6264,7 @@ _Objektart_
 
 
 #### Attribute azimuth
-_Einfallsrichtung (Azimut) der jeweiligen Punktobjektart (z.B. Scheitellinie, Faltenachse).
-Wert in Grad (0° 359°) im Uhrzeigersinn gemessen_
+_Einfallsrichtung (Azimut) der jeweiligen Punktobjektart (z.B. Scheitellinie, Faltenachse). Wert in Grad (0° 359°) im Uhrzeigersinn gemessen_
 _Datentyp:  integer_
 
 
@@ -6279,8 +6272,7 @@ _Datentyp:  integer_
 
 
 #### Attribute dip
-_Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die
-Vertikale (90°)._
+_Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die Vertikale (90°)._
 
 
 
@@ -6305,11 +6297,9 @@ Schieferung ist im Anhang A zur Veranschaulichung abgebildet.
 []()           | Cardinality [0..1] |                                        |
 5 | **ob_dip_slo**                | boolean                                    | Dip slope beobachtet (ja / nein)?
 []()           | Cardinality [0..1] |                                        |
-6 | **azimuth**                | integer                                    | Einfallsrichtung (Azimut) der jeweiligen Punktobjektart (z.B. Scheitellinie, Faltenachse).
-Wert in Grad (0° 359°) im Uhrzeigersinn gemessen
+6 | **azimuth**                | integer                                    | Einfallsrichtung (Azimut) der jeweiligen Punktobjektart (z.B. Scheitellinie, Faltenachse). Wert in Grad (0° 359°) im Uhrzeigersinn gemessen
 []()           | Cardinality [1] |                                        |
-7 | **dip**                |                                     | Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die
-Vertikale (90°).
+7 | **dip**                |                                     | Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die Vertikale (90°).
 []()           | Cardinality [] |                                        |
 
 
@@ -6375,8 +6365,7 @@ _Datentyp:  boolean_
 
 
 #### Attribute azimuth
-_Einfallsrichtung (Azimut) der jeweiligen Punktobjektart (z.B. Scheitellinie, Faltenachse).
-Wert in Grad (0° 359°) im Uhrzeigersinn gemessen_
+_Einfallsrichtung (Azimut) der jeweiligen Punktobjektart (z.B. Scheitellinie, Faltenachse). Wert in Grad (0° 359°) im Uhrzeigersinn gemessen_
 _Datentyp:  integer_
 
 
@@ -6384,8 +6373,7 @@ _Datentyp:  integer_
 
 
 #### Attribute dip
-_Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die
-Vertikale (90°)._
+_Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die Vertikale (90°)._
 
 
 
@@ -8267,8 +8255,7 @@ Wasserchemie.
 []()           | Cardinality [0..1] |                                        |
 8 | **chemistry**                | string                                    | Charakteristisches chemisches Element im Mineralwasser (z.B. Fe).
 []()           | Cardinality [0..1] |                                        |
-9 | **azimuth**                | integer                                    | Richtung (Azimut) der jeweiligen Punktobjektart. Wert in
-Grad (0° 359°) im Uhrzeigersinn gemessen.
+9 | **azimuth**                | integer                                    | Richtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad (0° 359°) im Uhrzeigersinn gemessen.
 []()           | Cardinality [0..1] |                                        |
 
 
@@ -8373,8 +8360,7 @@ _Datentyp:  string_
 
 
 #### Attribute azimuth
-_Richtung (Azimut) der jeweiligen Punktobjektart. Wert in
-Grad (0° 359°) im Uhrzeigersinn gemessen._
+_Richtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad (0° 359°) im Uhrzeigersinn gemessen._
 _Datentyp:  integer_
 
 
