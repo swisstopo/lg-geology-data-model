@@ -15,13 +15,13 @@
 {% set themeloop = loop %}
 
 
-## Theme {{ theme.name |upper}} ##
+## Theme {{ theme.name |upper}}
 
 {% for cls in theme.classes -%}
 
 
 
-### Class {{ cls.name }} ### {{ '{#'}}{{cls.name | slugify}}{{'}'}}
+### Class {{ cls.name }} {{ '{#'}}{{cls.name | slugify}}{{'}'}}
 {{ cls.description| trim|highlight}}
 
 
@@ -32,13 +32,13 @@
 {% for attr in cls.attributes -%}
 {% set slug = "%s-%s" % (cls.name, attr.name) %}
 {%- if attr.att_type == 'CD' -%}
-{{loop.index}} | **{{ attr.name  }}**                | [CodedDomain](#{{slug| slugify}})                    | {{ attr.description|trim }} 
-[]()           | Cardinality [{{ attr.cardinality}}] |                                                      |  
+{{loop.index}} | **{{ attr.name  }}**                | [CodedDomain](#{{slug| slugify}})                    | {{ attr.description|trim }}
+[]()           | Cardinality [{{ attr.cardinality}}] |                                                      |
 {% else -%}
-{{loop.index}} | **{{ attr.name  }}**                | {{attr.att_type}}                                    | {{ attr.description|trim }} 
-[]()           | Cardinality [{{ attr.cardinality}}] | {{attr.value}}                                       |  
+{{loop.index}} | **{{ attr.name  }}**                | {{attr.att_type}}                                    | {{ attr.description|trim }}
+[]()           | Cardinality [{{ attr.cardinality}}] | {{attr.value}}                                       |
 {% endif -%}
-                       
+
 {% endfor %}
 
 
@@ -46,7 +46,7 @@
 {% for attr in cls.attributes -%}
 {% set slug = "%s-%s" % (cls.name, attr.name) %}
 #### Attribute {{ attr.name }}
-{%- if attr.att_type == 'CD' -%}{{ '{#'}}{{slug| slugify}}{{'}'}}{% endif %}
+{%- if attr.att_type == 'CD' %} {{ '{#'}}{{slug| slugify}}{{'}'}}{% endif %}
 _{{ attr.description|trim|highlight}}_
 {%- if attr.att_type in ('boolean', 'string', 'float', 'range', 'integer') %}
 _Datentyp:  {{ attr.att_type  }}_
@@ -59,7 +59,7 @@ _Datentyp:  {{ attr.att_type  }}_
 |{{key}} | {{value}} | {{value}}     |
 {% endfor %}
 {% endif %}
-   
+
 {% endfor %}
 {% endfor %}
 {% endfor %}

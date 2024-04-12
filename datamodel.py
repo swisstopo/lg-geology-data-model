@@ -175,15 +175,23 @@ if __name__ == "__main__":
         return re.sub(r"[\W_]+", "-", input.lower())
 
     def highlight(input, words=classe_names, linkify=True):
-        pattern = "({})".format("|".join(words))
-        p = re.compile(pattern, re.MULTILINE)
+        words.sort(key=len, reverse=True)  # longer first
+        pattern = "({})".format(r"\b|\b".join(words))
+
+        p = re.compile(pattern)
         if linkify:
-            matches = re.finditer(p, input)
             output = input
-            if matches:
-                for m in matches:
+            if re.search(pattern, input) is not None:
+                matches = re.finditer(p, input)
+
+                print("---")
+                print(input)
+                for i, m in enumerate(matches):
                     word = m.group(1)
-                    output = output.replace(word, f"[{word}](#{slugify(word)})")
+                    print(i, word)
+                    output = output.replace(
+                        f" {word} ", f" [{word}](#{slugify(word)}) "
+                    )
             return output
 
         return p.sub(r"**\1**", input)
