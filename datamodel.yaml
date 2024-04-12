@@ -35,7 +35,7 @@ themes:
           - name: mat_type  # TODO type
             description: Materialbezeichnung (lithologische Einheit)
             att_type: CD
-            value: GC_LITHO_UNCO_CD  # TODO  check with Stephan
+            value: GC_LITHO_UNCO_CD  # TODO  check with Stephan # Table: GC_POINT_OBJECTS, field: RUNC_MAT_TYPE, domain:GC_LITHO_CD
             cardinality: 0..1
           - name: orig_descr
             description: Originalbezeichnung gemäss der Legende der zugrundeliegenden geologischen Karte
@@ -291,7 +291,7 @@ themes:
         attributes:
           - name: kind
             description: Spezifische Eigenschaft
-            att_type: subtype
+            att_type: subtype # TODO: subtyp not found
             value: 11801
             cardinality: 1
       - name: Instabilities_within_Bedrock_PLG
@@ -515,7 +515,7 @@ themes:
             cardinality: 0..1
           - name: gen_rela
             description: Genetische Beziehung.
-            att_type: CDD # TODO: where is the domain
+            att_type: CD # TODO: where is the domain
             value:
             cardinality: 0..1
       - name: Tectonic_Boundaries_L
@@ -609,7 +609,7 @@ themes:
             att_type: integer
             cardinality: 1
           - name: dip
-            description: |
+            description: >
                Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die
                Vertikale (90°).
             att_type: integer
@@ -638,7 +638,7 @@ themes:
                unten bis in die Vertikale (90°).
             cardinatity: 0..1
       - name: Planar_Structures_PT
-        description: |
+        description: >
             Die Klasse Planar_Structures_PT enthält Objektarten, welche die räumliche Lage von planaren
             Strukturen mit direkten Feldmessungen beschreiben. Ein Beispiel der Objektart Orientierung der
             Schieferung ist im Anhang A zur Veranschaulichung abgebildet.
@@ -818,16 +818,19 @@ themes:
             cardinality: 0..1
           - name: name_horiz
             description: Name des Bentonit-Leithorizonts.
-            value: 13103  # TODO: no CD found
+            att_type: CD
+            value: GC_LITSTRAT_BED_CD  # TODO: was 13103, now field: LPRO_NAME_HORIZ
             cardinality: 0..1
+            change: new
           - name: orig_descr
             description: Originalbezeichnung gemäss der Legende der zugrundeliegenden geologischen Karte.
             att_type: string
             cardinality: 0..1
-          - name: litho
+          - name: lpro_litho
             description: Materialbezeichnung (lithologische Einheit).
-            att_type: table
-            value: gc_litho  # TODO: really or CD
+            att_type: CD
+            value: GC_LITHO_CD  # TODO: really or CD field: "LPRO_LITHO", 
+            change: renamed  # 'ltiho' -> LPRO_LITHO
             cardinality: 1
       - name: Miscellaneous_PT
         description: |
@@ -896,11 +899,12 @@ themes:
                Vertikale (90°).
             att_type: integer
             cardinality: 0..1
-          - name: litstrat
+          - name: pslo_formatio
             description: Lithostratigraphische Einheit der modellierten Formation
-            att_type: table
-            value: gc_litstrat_bed  # TODO: or coded domain
+            att_type: CD
+            value: GC_LITSTRAT_BED_CD  # TODO:  coded domain field; PSLO_FORMATIO", CD:  "GC_LITSTRAT_BED_CD"
             cardinality: 1
+            change: renamed  # from litstrat to PSLO_FORMATIO
 
       - name: Contour_Lines_Bedrock_L
         description: |
@@ -924,8 +928,8 @@ themes:
             cardinality: 1
           - name: litstrat
             description: Lithostratigraphische Einheit der modellierten Formation
-            att_type: table
-            value: gc_litstrat_bed  # TODO: or coded domain
+            att_type: CD
+            value: GC_LITSTRAT_BED_CD  # TODO: renammed? field: "PCOB_FORMATIO", CD "GC_LITSTRAT_BED_CD"
             cardinality: 1
       - name: Modelled_Water_Table_PT
         description: |
@@ -942,7 +946,7 @@ themes:
             att_type: integer
             cardinality: 0..1
           - name: dip
-            description: |
+            description: >
                Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die
                Vertikale (90°).
             att_type: integer
@@ -1142,7 +1146,7 @@ themes:
             value: 10502 # TODO no CD
             cardinality: 0..1
           - name: depth_bedrock
-            description: |
+            description: >
                 Tiefe (in Meter ab Terrainoberfläche) der Felsober-
                 fläche. (Sofern die Bohrung das Festgestein nicht
                 Depth_Bedrock erreicht, z.B. «Bohrung, Fels nicht erreicht», beträgt der
@@ -1174,8 +1178,8 @@ themes:
             cardinality: 0..1
           - name: fm_a
             description: Lithostratigraphische Einheit der erreichten Formation A
-            att_type: table
-            value: gc_litstrat_bed # TODO
+            att_type: CD
+            value: GC_LITSTRAT_BED_CD # TODO
             cardinality: 0..1
           - name: depth_fm_a
             description: Tiefe (m ab Terrainoberfläche) der erreichten Formation A.
@@ -1183,8 +1187,8 @@ themes:
             cardinality: 0..1
           - name: fm_b
             description: Lithostratigraphische Einheit der erreichten Formation B
-            att_type: table
-            value: gc_litstrat_bed # TODO
+            att_type: CD
+            value: GC_LITSTRAT_BED_CD # TODO
             cardinality: 0..1
           - name: depth_fm_b
             description: Tiefe (m ab Terrainoberfläche) der erreichten Formation B.
@@ -1199,7 +1203,7 @@ themes:
             att_type: integer
             cardinality: 0..1
           - name: dip
-            description: |   # TODO text!!!
+            description: >   # TODO text!!!
                Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die
                Vertikale (90°).
             att_type: integer
@@ -1288,11 +1292,12 @@ themes:
             att_type: CD
             value: GC_LIN_HPAL_REL_AGE_CD
             cardinality: 0..1
-          - name: chrono
+          - name: hpal_chrono
             description: Chronostratigraphische Zuordnung.
-            att_type: table
-            value: gc_chrono  # TODO really
+            att_type: CD
+            value: GC_CHRONO_CD  # TODO field "HPAL_CHRONO", CD:  "GC_CHRONO_CD"
             cardinality: 0..1
+            change: renamed  # chrono -> HPAL_CHRONO
           - name: ref_year
             description: Referenzjahr der ehemaligen Uferlinie.
             att_type: integer
