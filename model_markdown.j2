@@ -22,7 +22,7 @@
 
 
 ### Class {{ cls.name }} ### {{ '{#'}}{{cls.name | slugify}}{{'}'}}
-{{ cls.description| trim }}
+{{ cls.description| trim|highlight}}
 
 
 
@@ -47,7 +47,7 @@
 {% set slug = "%s-%s" % (cls.name, attr.name) %}
 #### Attribute {{ attr.name }}
 {%- if attr.att_type == 'CD' -%}{{ '{#'}}{{slug| slugify}}{{'}'}}{% endif %}
-_{{ attr.description|trim}}_
+_{{ attr.description|trim|highlight}}_
 {%- if attr.att_type in ('boolean', 'string', 'float', 'range', 'integer') %}
 _Datentyp:  {{ attr.att_type  }}_
 {% endif %}

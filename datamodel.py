@@ -4,6 +4,7 @@ import pprint
 import pandas as pd
 import sys
 import datetime
+import re
 
 
 from loguru import logger
@@ -45,13 +46,14 @@ def get_subtype(value):
             res[key] = value
     return res
 
+
 def get_classes(model):
     classes = []
-    for theme in model['themes']:
-        for cls in theme['classes']:
-            classes.append(cls.get('name'))
+    for theme in model["themes"]:
+        for cls in theme["classes"]:
+            classes.append(cls.get("name"))
     return classes
-        
+
 
 class Report:
     def __init__(self, config_file):
@@ -160,12 +162,8 @@ if __name__ == "__main__":
     model = Report(yaml_file)
 
     # model.to_markdown()
-    
+
     classe_names = get_classes(model.model)
-    
-    print(classe_names)
-    
-    sys.exit()
 
     data = model.to_json()
 
@@ -174,18 +172,35 @@ if __name__ == "__main__":
 
     def slugify(input):
         """Custom filter"""
-        return re.sub(r'[\W_]+', '-', input.lower())
+        return re.sub(r"[\W_]+", "-", input.lower())
 
-    env.filters['slugify'] = slugify
+    def highlight(input, words=classe_names, linkify=True):
+        pattern = "({})".format("|".join(words))
+        p = re.compile(pattern, re.MULTILINE)
+        if linkify:
+            matches = re.finditer(p, input)
+            output = input
+            if matches:
+                for m in matches:
+                    word = m.group(1)
+                    output = output.replace(word, f"[{word}](#{slugify(word)})")
+            return output
+
+        return p.sub(r"**\1**", input)
+
+    env.filters["slugify"] = slugify
+    env.filters["highlight"] = highlight
     temp = env.get_template("model_markdown.j2")
-    #temp.render(data)
+    # temp.render(data)
 
     with open(f"{project_name}.json", "w") as f:
         f.write(json.dumps(data, indent=4))
 
-    #with open("model_markdown.j2") as f:
+    # with open("model_markdown.j2") as f:
     #    template = Template(f.read())
 
+    print(temp.render(data))
+
     with open(f"{project_name}.md", "w") as f:
-        #f.write(template.render(data))
+        # f.write(template.render(data))
         f.write(temp.render(data))
