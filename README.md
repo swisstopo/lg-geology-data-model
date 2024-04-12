@@ -1,24 +1,46 @@
-Datenmodell
-===========
+Modèle de donnée géologie
+=========================
+
+Le but de ces outils est de créer de manière plus au moins automatique le _modèle de donnée géologie_ GeoCover, en
+particulier la liste des valeurs attributaires possibles.
 
 
-    python datamodel.py > datamodel.md
+# Installation
 
-    pandoc -s --pdf-engine=xelatex   --variable mainfont="DejaVu Sans" -o datamodel.pdf datamodel.md
-
-
-Adding PDF metadata and A4 paper
-
-    pandoc -s --pdf-engine=xelatex  -V papersize:a4  --metadata-file=metadata.yaml --variable mainfont="DejaVu Sans" -o datamodel.pdf datamodel.md
+Uniquement des librairies de base pour _datamodel.py_ . Evidemment, _coded_domain.py_ et _subtype.py_ doivent être 
+excécuté dans un projet ESRI ArcGis Pro avec une connection sur la base SDE GCOVER.
 
 
-Adding chapter numbering
+# Utilisation
 
-    pandoc -s --pdf-engine=xelatex  -V papersize:a4  --number-sections --shift-heading-level-by=-1  --metadata-file=metadata.yaml --variable mainfont="DejaVu Sans" -o datamodel.pdf datamodel.md
+Creation des fichiers JSON contenant les _coded domains_ et la liste des _subtypes_
+
+Dans ue fenêtre Python ou un notebook _Jupyter_ exécuter les deux scripts _coded_domains.py_ et
+_subtypes.py_ . Le résultat sont deux fichiers JSON _coded_domains.json_ et _subtypes.json_
+
+Creation des fichiers _markdown_ et JSON
+
+    python datamodel.py
 
 
-    
-    pandoc 2.5
-Compiled with pandoc-types 1.17.5.4, texmath 0.11.2.2, skylighting 0.7.7
+Creation d'un fichier PDF
 
- pandoc -s --pdf-engine=xelatex  -V linkcolor:teal -V monofont="DejaVu Sans Mono"   -V papersize:a4  --number-sections --base-header-level=1  --metadata-file=metadata.yaml --variable mainfont="DejaVu Sans" -o datamodel.pdf datamodel.md
+    pandoc -s --pdf-engine=xelatex  \
+         -V papersize:a4  \
+         --number-sections \
+         --shift-heading-level-by=-1  \
+         --metadata-file=metadata.yaml \
+         --variable mainfont="DejaVu Sans" \
+         -o datamodel.pdf datamodel.md
+
+Idem, mais pour un fichier Microsoft Word
+
+    pandoc -s --pdf-engine=xelatex  \
+                   -V papersize:a4  \
+                  --number-sections   \
+                  --shift-heading-level-by=-1 \
+                  --metadata-file=metadata.yaml  \
+                  --variable mainfont="DejaVu Sans" \
+                  -o datamodel.docx datamodel.md
+
+
