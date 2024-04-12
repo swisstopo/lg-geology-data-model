@@ -45,6 +45,13 @@ def get_subtype(value):
             res[key] = value
     return res
 
+def get_classes(model):
+    classes = []
+    for theme in model['themes']:
+        for cls in theme['classes']:
+            classes.append(cls.get('name'))
+    return classes
+        
 
 class Report:
     def __init__(self, config_file):
@@ -140,6 +147,7 @@ class Report:
 if __name__ == "__main__":
     import datetime
     import os
+    import sys
     from jinja2 import Template
     import jinja2
     from pathlib import Path
@@ -152,6 +160,12 @@ if __name__ == "__main__":
     model = Report(yaml_file)
 
     # model.to_markdown()
+    
+    classe_names = get_classes(model.model)
+    
+    print(classe_names)
+    
+    sys.exit()
 
     data = model.to_json()
 
