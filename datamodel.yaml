@@ -1303,10 +1303,12 @@ themes:
       - name: Subsurface_Water_L
         description: |
             In der Klasse Subsurface_Water_L befinden sich linienförmigen Objektarten, welche einen
-            unterirdischen Gewässerlauf anzeigen. Der genaue Verlauf des unterirdischen Gewässerlaufes ist
-            in fast jedem Fall vermutet, mit wenigen Ausnahmen von erforschten Höhlensystemen. Liegen
-            Färbversuche vor, so werden diese in den Erläuterungen erwähnt, sofern diese existieren. Der
-            unterirdische Gewässerlauf kann mit Objeken aus der Klasse Surface_Water_PT kombiniert werden.
+            unterirdischen Gewässerlauf anzeigen.
+            
+            Der genaue Verlauf des unterirdischen Gewässerlaufes ist in fast jedem Fall vermutet, mit
+            wenigen Ausnahmen von erforschten Höhlensystemen. Liegen Färbversuche vor, so werden diese
+            in den Erläuterungen erwähnt, sofern diese existieren. Der unterirdische Gewässerlauf
+            kann mit Objeken aus der Klasse Surface_Water_PT kombiniert werden.
         attributes:
           - name: kind
             description: Objektart

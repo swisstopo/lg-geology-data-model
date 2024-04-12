@@ -6092,9 +6092,19 @@
                         {
                             "name": "strati",
                             "description": "Lithostratigraphischer Zusatz zum Objekt",
-                            "att_type": "Cd",
+                            "att_type": "CD",
                             "value": "GC_PNT_LTYP_STRATI_CD",
-                            "cardinality": "0..1"
+                            "cardinality": "0..1",
+                            "pairs": {
+                                "13502005": "Bank",
+                                "13502003": "Formation",
+                                "13502001": "Gruppe",
+                                "13502004": "Member",
+                                "13502006": "Stufe",
+                                "13502002": "Subgruppe",
+                                "999997": "Unknown",
+                                "999998": "Not applicable"
+                            }
                         },
                         {
                             "name": "name",
@@ -6664,9 +6674,17 @@
                         {
                             "name": "status",
                             "description": "Abbaustatus.",
-                            "att_type": "Cd",
+                            "att_type": "CD",
                             "value": "GC_EX_GEO_PNT_AEXP_STATUS_CD",
-                            "cardinality": "0..1"
+                            "cardinality": "0..1",
+                            "pairs": {
+                                "10603003": "aufgef\u00fcllt",
+                                "10603001": "in Betrieb",
+                                "10603002": "stillgelegt",
+                                "10603004": "verfallen",
+                                "999997": "Unknown",
+                                "999998": "Not applicable"
+                            }
                         },
                         {
                             "name": "depth_tot",
@@ -6744,9 +6762,17 @@
                         {
                             "name": "status",
                             "description": "Abbaustatus.",
-                            "att_type": "Cd",
+                            "att_type": "CD",
                             "value": "GC_LIN_AEXP_STATUS_CD",
-                            "cardinality": "0..1"
+                            "cardinality": "0..1",
+                            "pairs": {
+                                "10702003": "aufgef\u00fcllt",
+                                "10702001": "in Betrieb",
+                                "10702002": "stillgelegt",
+                                "10702004": "verfallen",
+                                "999997": "Unknown",
+                                "999998": "Not applicable"
+                            }
                         }
                     ]
                 },
@@ -6774,9 +6800,17 @@
                         {
                             "name": "status",
                             "description": "Abbaustatus.",
-                            "att_type": "Cd",
+                            "att_type": "CD",
                             "value": "GC_EX_GEO_PLG_AEXP_STATUS_CD",
-                            "cardinality": "0..1"
+                            "cardinality": "0..1",
+                            "pairs": {
+                                "10802003": "aufgef\u00fcllt",
+                                "10802001": "in Betrieb",
+                                "10802002": "stillgelegt",
+                                "10802004": "verfallen",
+                                "999997": "Unknown",
+                                "999998": "Not applicable"
+                            }
                         },
                         {
                             "name": "depth_tot",
@@ -7004,16 +7038,29 @@
                         {
                             "name": "status",
                             "description": "Zustand der Objektart.",
-                            "att_type": "Cd",
+                            "att_type": "CD",
                             "value": "GC_PNT_HCON_STATUS_CD",
-                            "cardinality": "0..1"
+                            "cardinality": "0..1",
+                            "pairs": {
+                                "12102001": "in Betrieb",
+                                "12102002": "stillgelegt",
+                                "999997": "Unknown",
+                                "999998": "Not applicable"
+                            }
                         },
                         {
                             "name": "epoch",
                             "description": "Epoche der Erbauung der Objektart.",
-                            "att_type": "Cd",
+                            "att_type": "CD",
                             "value": "GC_PNT_HCON_EPOCH_CD",
-                            "cardinality": "0..1"
+                            "cardinality": "0..1",
+                            "pairs": {
+                                "12103001": "Mittelalter",
+                                "12103003": "pr\u00e4historisch",
+                                "12103002": "R\u00f6merzeit",
+                                "999997": "Unknown",
+                                "999998": "Not applicable"
+                            }
                         },
                         {
                             "name": "depth",
@@ -7123,7 +7170,7 @@
                 },
                 {
                     "name": "Subsurface_Water_L",
-                    "description": "In der Klasse Subsurface_Water_L befinden sich linienf\u00f6rmigen Objektarten, welche einen\nunterirdischen Gew\u00e4sserlauf anzeigen. Der genaue Verlauf des unterirdischen Gew\u00e4sserlaufes ist\nin fast jedem Fall vermutet, mit wenigen Ausnahmen von erforschten H\u00f6hlensystemen. Liegen\nF\u00e4rbversuche vor, so werden diese in den Erl\u00e4uterungen erw\u00e4hnt, sofern diese existieren. Der\nunterirdische Gew\u00e4sserlauf kann mit Objeken aus der Klasse Surface_Water_PT kombiniert werden.\n",
+                    "description": "In der Klasse Subsurface_Water_L befinden sich linienf\u00f6rmigen Objektarten, welche einen\nunterirdischen Gew\u00e4sserlauf anzeigen.\n\nDer genaue Verlauf des unterirdischen Gew\u00e4sserlaufes ist in fast jedem Fall vermutet, mit\nwenigen Ausnahmen von erforschten H\u00f6hlensystemen. Liegen F\u00e4rbversuche vor, so werden diese\nin den Erl\u00e4uterungen erw\u00e4hnt, sofern diese existieren. Der unterirdische Gew\u00e4sserlauf\nkann mit Objeken aus der Klasse Surface_Water_PT kombiniert werden.\n",
                     "attributes": [
                         {
                             "name": "kind",
@@ -7172,9 +7219,15 @@
                         {
                             "name": "status",
                             "description": "Zustand der Objektart.",
-                            "att_type": "Cd",
+                            "att_type": "CD",
                             "value": "GC_PNT_HSUR_STATUS_CD",
-                            "cardinality": "0..1"
+                            "cardinality": "0..1",
+                            "pairs": {
+                                "12502001": "gefasst",
+                                "12502002": "nicht gefasst",
+                                "999997": "Unknown",
+                                "999998": "Not applicable"
+                            }
                         },
                         {
                             "name": "flow_con",
@@ -7365,5 +7418,5 @@
             ]
         }
     ],
-    "date": "2024-04-11"
+    "date": "2024-04-12"
 }

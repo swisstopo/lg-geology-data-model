@@ -204,14 +204,16 @@ _Materialbezeichnung (lithologische Einheit)_
    
 
 #### Attribute orig_descr
-_Originalbezeichnung gemäss der Legende der zugrundeliegenden geologischen Karte__Datentyp:  string_
+_Originalbezeichnung gemäss der Legende der zugrundeliegenden geologischen Karte_
+_Datentyp:  string_
 
 
 
    
 
 #### Attribute protected
-_Geschütztes geologisches Objekt__Datentyp:  boolean_
+_Geschütztes geologisches Objekt_
+_Datentyp:  boolean_
 
 
 
@@ -1419,7 +1421,8 @@ __
    
 
 #### Attribute buried_out
-___Datentyp:  boolean_
+__
+_Datentyp:  boolean_
 
 
 
@@ -1510,7 +1513,8 @@ _Gletschertyp; Attribut nur für Moränen_
    
 
 #### Attribute ref_year
-_Zeitpunkt oder Zeitperiode. Zum Beispiel «1940 1943, Periode der Drainage» (muss präzisiert werden)__Datentyp:  string_
+_Zeitpunkt oder Zeitperiode. Zum Beispiel «1940 1943, Periode der Drainage» (muss präzisiert werden)_
+_Datentyp:  string_
 
 
 
@@ -4907,14 +4911,16 @@ _Tektonische Zugehörigkeit_
    
 
 #### Attribute orig_descr
-_Originalbezeichnung gemäss der Legende der zugrundeliegenden geologischen Karte__Datentyp:  string_
+_Originalbezeichnung gemäss der Legende der zugrundeliegenden geologischen Karte_
+_Datentyp:  string_
 
 
 
    
 
 #### Attribute buried_out
-_Wurde das Festgestein wieder verdeckt (ja / nein)?__Datentyp:  boolean_
+_Wurde das Festgestein wieder verdeckt (ja / nein)?_
+_Datentyp:  boolean_
 
 
 
@@ -4927,7 +4933,8 @@ _Handelt es sich bei der Objektart um ein exotisches Element; z.B. Einschluss, L
    
 
 #### Attribute colour
-_Farbe des Gesteins. Präzisieren ob es sich um die Bruchfarbe, die Verwitterungsfarbe, etc. handelt; z.B.Verwitterungsfarbe grau.__Datentyp:  string_
+_Farbe des Gesteins. Präzisieren ob es sich um die Bruchfarbe, die Verwitterungsfarbe, etc. handelt; z.B.Verwitterungsfarbe grau._
+_Datentyp:  string_
 
 
 
@@ -5113,7 +5120,8 @@ _Affinität zu einer magmatischen Serie._
    
 
 #### Attribute meta_full_name
-_Bezeichnung des metamorphen Gesteins__Datentyp:  string_
+_Bezeichnung des metamorphen Gesteins_
+_Datentyp:  string_
 
 
 
@@ -5573,14 +5581,16 @@ _Zeitliche quartärstratigraphische Zuordnung des Moränenwälls_
    
 
 #### Attribute ref_year
-_Referenzjahr des älteren Gletscherstandes.__Datentyp:  integer_
+_Referenzjahr des älteren Gletscherstandes._
+_Datentyp:  integer_
 
 
 
    
 
 #### Attribute source
-_Quellenangabe der historischen Unterlagen__Datentyp:  string_
+_Quellenangabe der historischen Unterlagen_
+_Datentyp:  string_
 
 
 
@@ -5715,7 +5725,8 @@ _Objektart_
 #### Attribute ice_cave
 _Handelt es sich bei der Höhle um eine Eisgrotte («glacière», aussergewöhnlich kalte Höhle in der sich
 durch die winterlichen Schneefälle oder durch das Gefrieren von eingedrungenem Wasser Eis akkumuliert
-und das auch die warme Jahreszeit überdauert) (ja / nein)?__Datentyp:  boolean_
+und das auch die warme Jahreszeit überdauert) (ja / nein)?_
+_Datentyp:  boolean_
 
 
 
@@ -5847,7 +5858,8 @@ _Objektart_
    
 
 #### Attribute azimuth
-_Fallrichtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad (0° 359°) im Uhrzeigersinn gemessen.__Datentyp:  integer_
+_Fallrichtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad (0° 359°) im Uhrzeigersinn gemessen._
+_Datentyp:  integer_
 
 
 
@@ -5855,7 +5867,8 @@ _Fallrichtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad (0° 359°) i
 
 #### Attribute dip
 _Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die
-Vertikale (90°).__Datentyp:  integer_
+Vertikale (90°)._
+_Datentyp:  integer_
 
 
 
@@ -6061,7 +6074,8 @@ _Bewegung parallel zur Streichrichtung der Bruch- oder Scherfläche_
    
 
 #### Attribute lim_tect_b
-_Grenze einer tektonischen Einheit wie Deckengrenze,Schuppengrenze, Zonengrenze, etc. (ja / nein)?__Datentyp:  boolean_
+_Grenze einer tektonischen Einheit wie Deckengrenze,Schuppengrenze, Zonengrenze, etc. (ja / nein)?_
+_Datentyp:  boolean_
 
 
 
@@ -6103,7 +6117,8 @@ _Tektonometamorphe Chronologie der Objektart_
    
 
 #### Attribute name
-_Spezifischer Name der Objektart.__Datentyp:  string_
+_Spezifischer Name der Objektart._
+_Datentyp:  string_
 
 
 
@@ -6192,7 +6207,8 @@ _Deformationsphase._
    
 
 #### Attribute phase_ref
-_Referenz für die Angabe der Deformationsphase.__Datentyp:  string_
+_Referenz für die Angabe der Deformationsphase._
+_Datentyp:  string_
 
 
 
@@ -6200,7 +6216,8 @@ _Referenz für die Angabe der Deformationsphase.__Datentyp:  string_
 
 #### Attribute azimuth
 _Einfallsrichtung (Azimut) der jeweiligen Punktobjektart (z.B. Scheitellinie, Faltenachse).
-Wert in Grad (0° 359°) im Uhrzeigersinn gemessen__Datentyp:  integer_
+Wert in Grad (0° 359°) im Uhrzeigersinn gemessen_
+_Datentyp:  integer_
 
 
 
@@ -6208,7 +6225,8 @@ Wert in Grad (0° 359°) im Uhrzeigersinn gemessen__Datentyp:  integer_
 
 #### Attribute dip
 _Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die
-Vertikale (90°).__Datentyp:  integer_
+Vertikale (90°)._
+_Datentyp:  integer_
 
 
 
@@ -6253,7 +6271,8 @@ _Objektart_
 
 #### Attribute azimuth
 _Einfallsrichtung (Azimut) der jeweiligen Punktobjektart (z.B. Scheitellinie, Faltenachse).
-Wert in Grad (0° 359°) im Uhrzeigersinn gemessen__Datentyp:  integer_
+Wert in Grad (0° 359°) im Uhrzeigersinn gemessen_
+_Datentyp:  integer_
 
 
 
@@ -6340,14 +6359,16 @@ _Deformationsphase_
    
 
 #### Attribute phase_ref
-_Referenz für die Angabe der Deformationsphase.__Datentyp:  string_
+_Referenz für die Angabe der Deformationsphase._
+_Datentyp:  string_
 
 
 
    
 
 #### Attribute ob_dip_slo
-_Dip slope beobachtet (ja / nein)?__Datentyp:  boolean_
+_Dip slope beobachtet (ja / nein)?_
+_Datentyp:  boolean_
 
 
 
@@ -6355,7 +6376,8 @@ _Dip slope beobachtet (ja / nein)?__Datentyp:  boolean_
 
 #### Attribute azimuth
 _Einfallsrichtung (Azimut) der jeweiligen Punktobjektart (z.B. Scheitellinie, Faltenachse).
-Wert in Grad (0° 359°) im Uhrzeigersinn gemessen__Datentyp:  integer_
+Wert in Grad (0° 359°) im Uhrzeigersinn gemessen_
+_Datentyp:  integer_
 
 
 
@@ -6489,7 +6511,8 @@ _Zustand der Objektart_
    
 
 #### Attribute protected
-_Geschützte Fossilfundstelle (ja / nein)?__Datentyp:  boolean_
+_Geschützte Fossilfundstelle (ja / nein)?_
+_Datentyp:  boolean_
 
 
 
@@ -6565,7 +6588,8 @@ _Material, das mit der Objektart in Verbindung steht_
    
 
 #### Attribute chemistry
-_Chemische Komponente(n) oder Mineralien, welche die Natur der Objektart charakterisieren.__Datentyp:  string_
+_Chemische Komponente(n) oder Mineralien, welche die Natur der Objektart charakterisieren._
+_Datentyp:  string_
 
 
 
@@ -6599,7 +6623,8 @@ _Objektart_
    
 
 #### Attribute chemistry
-_Chemische Komponente(n), welche die Natur der Objektart charakterisieren.__Datentyp:  string_
+_Chemische Komponente(n), welche die Natur der Objektart charakterisieren._
+_Datentyp:  string_
 
 
 
@@ -6638,7 +6663,8 @@ _Objektart_
    
 
 #### Attribute azimuth
-_Orientierung des Symbols. Wert in Grad (0° 359°) im Uhrzeigersinn gemessen.__Datentyp:  integer_
+_Orientierung des Symbols. Wert in Grad (0° 359°) im Uhrzeigersinn gemessen._
+_Datentyp:  integer_
 
 
 
@@ -6655,8 +6681,8 @@ geologische Aufschlüsse beschreiben.
 ----|------------------------------|-----------------------------------|--------------------------------------
 1 | **kind**                | subtype                                    | Objektart 
 []()           | Cardinality [1] | 13501                                       |  
-2 | **strati**                | Cd                                    | Lithostratigraphischer Zusatz zum Objekt 
-[]()           | Cardinality [0..1] | GC_PNT_LTYP_STRATI_CD                                       |  
+2 | **strati**                | [CodedDomain](#type-localities-pt-strati)                    | Lithostratigraphischer Zusatz zum Objekt 
+[]()           | Cardinality [0..1] |                                                      |  
 3 | **name**                | string                                    | Name der Typlokalität. / Beschreibung des geologisch relevanten Aufschlusses 
 []()           | Cardinality [0..1] |                                        |  
 4 | **accessibil**                | boolean                                    | Ist die Objektart zum Zeitpunkt der Aufnahme aufgeschlossen (ja / nein)? 
@@ -6679,28 +6705,42 @@ _Objektart_
 
    
 
-#### Attribute strati
+#### Attribute strati{#type-localities-pt-strati}
 _Lithostratigraphischer Zusatz zum Objekt_
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|13502005 | Bank | Bank     |
+|13502003 | Formation | Formation     |
+|13502001 | Gruppe | Gruppe     |
+|13502004 | Member | Member     |
+|13502006 | Stufe | Stufe     |
+|13502002 | Subgruppe | Subgruppe     |
+|999997 | Unknown | Unknown     |
+|999998 | Not applicable | Not applicable     |
 
 
    
 
 #### Attribute name
-_Name der Typlokalität. / Beschreibung des geologisch relevanten Aufschlusses__Datentyp:  string_
+_Name der Typlokalität. / Beschreibung des geologisch relevanten Aufschlusses_
+_Datentyp:  string_
 
 
 
    
 
 #### Attribute accessibil
-_Ist die Objektart zum Zeitpunkt der Aufnahme aufgeschlossen (ja / nein)?__Datentyp:  boolean_
+_Ist die Objektart zum Zeitpunkt der Aufnahme aufgeschlossen (ja / nein)?_
+_Datentyp:  boolean_
 
 
 
    
 
 #### Attribute protected
-_Geschütztes geologisches Objekt (ja / nein)?__Datentyp:  boolean_
+_Geschütztes geologisches Objekt (ja / nein)?_
+_Datentyp:  boolean_
 
 
 
@@ -6764,7 +6804,8 @@ _Name des Bentonit-Leithorizonts._
    
 
 #### Attribute orig_descr
-_Originalbezeichnung gemäss der Legende der zugrundeliegenden geologischen Karte.__Datentyp:  string_
+_Originalbezeichnung gemäss der Legende der zugrundeliegenden geologischen Karte._
+_Datentyp:  string_
 
 
 
@@ -6806,7 +6847,8 @@ _Objektart_
    
 
 #### Attribute orig_name
-_Ursprüngliche Bezeichnung des Objektes.__Datentyp:  string_
+_Ursprüngliche Bezeichnung des Objektes._
+_Datentyp:  string_
 
 
 
@@ -6922,7 +6964,8 @@ _Referenzoberfläche._
    
 
 #### Attribute azimuth
-_Fallrichtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad (0° 359°) im Uhrzeigersinn gemessen.__Datentyp:  integer_
+_Fallrichtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad (0° 359°) im Uhrzeigersinn gemessen._
+_Datentyp:  integer_
 
 
 
@@ -6930,7 +6973,8 @@ _Fallrichtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad (0° 359°) i
 
 #### Attribute dip
 _Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die
-Vertikale (90°).__Datentyp:  integer_
+Vertikale (90°)._
+_Datentyp:  integer_
 
 
 
@@ -6990,7 +7034,8 @@ _Referenzoberfläche._
    
 
 #### Attribute altitude
-_Höhenangabe (m ü.M.) von Isohypsen.__Datentyp:  float_
+_Höhenangabe (m ü.M.) von Isohypsen._
+_Datentyp:  float_
 
 
 
@@ -7039,7 +7084,8 @@ _Objektart_
    
 
 #### Attribute azimuth
-_Fallrichtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad (0° 359°) im Uhrzeigersinn gemessen.__Datentyp:  integer_
+_Fallrichtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad (0° 359°) im Uhrzeigersinn gemessen._
+_Datentyp:  integer_
 
 
 
@@ -7047,21 +7093,24 @@ _Fallrichtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad (0° 359°) i
 
 #### Attribute dip
 _Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die
-Vertikale (90°).__Datentyp:  integer_
+Vertikale (90°)._
+_Datentyp:  integer_
 
 
 
    
 
 #### Attribute height
-_Kote des Grundwasserspiegels (m ü.M.).__Datentyp:  float_
+_Kote des Grundwasserspiegels (m ü.M.)._
+_Datentyp:  float_
 
 
 
    
 
 #### Attribute mea_period
-_Messperiode.__Datentyp:  range_
+_Messperiode._
+_Datentyp:  range_
 
 
 
@@ -7428,8 +7477,8 @@ Geomaterialien.
 []()           | Cardinality [] | 10601                                       |  
 2 | **exp_unit**                | table                                    | Abgebaute lithostratigraphische Einheit. 
 []()           | Cardinality [0..*] | gc_litstrat_bed                                       |  
-3 | **status**                | Cd                                    | Abbaustatus. 
-[]()           | Cardinality [0..1] | GC_EX_GEO_PNT_AEXP_STATUS_CD                                       |  
+3 | **status**                | [CodedDomain](#exploitation-geomaterials-pt-status)                    | Abbaustatus. 
+[]()           | Cardinality [0..1] |                                                      |  
 4 | **depth_tot**                | float                                    | Endtiefe (m ab Terrainoberfläche) der Objektart. 
 []()           | Cardinality [0..1] |                                        |  
 5 | **targ_mat**                | [CodedDomain](#exploitation-geomaterials-pt-targ-mat)                    | Abgebautes Material. 
@@ -7460,14 +7509,24 @@ _Abgebaute lithostratigraphische Einheit._
 
    
 
-#### Attribute status
+#### Attribute status{#exploitation-geomaterials-pt-status}
 _Abbaustatus._
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|10603003 | aufgefüllt | aufgefüllt     |
+|10603001 | in Betrieb | in Betrieb     |
+|10603002 | stillgelegt | stillgelegt     |
+|10603004 | verfallen | verfallen     |
+|999997 | Unknown | Unknown     |
+|999998 | Not applicable | Not applicable     |
 
 
    
 
 #### Attribute depth_tot
-_Endtiefe (m ab Terrainoberfläche) der Objektart.__Datentyp:  float_
+_Endtiefe (m ab Terrainoberfläche) der Objektart._
+_Datentyp:  float_
 
 
 
@@ -7535,8 +7594,8 @@ Geomaterialien (z.B. Verlauf der Abbaufront).
 ----|------------------------------|-----------------------------------|--------------------------------------
 1 | **kind**                | subtype                                    | Objektart 
 []()           | Cardinality [] | 10701                                       |  
-2 | **status**                | Cd                                    | Abbaustatus. 
-[]()           | Cardinality [0..1] | GC_LIN_AEXP_STATUS_CD                                       |  
+2 | **status**                | [CodedDomain](#exploitation-geomaterials-l-status)                    | Abbaustatus. 
+[]()           | Cardinality [0..1] |                                                      |  
 
 
 
@@ -7553,8 +7612,17 @@ _Objektart_
 
    
 
-#### Attribute status
+#### Attribute status{#exploitation-geomaterials-l-status}
 _Abbaustatus._
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|10702003 | aufgefüllt | aufgefüllt     |
+|10702001 | in Betrieb | in Betrieb     |
+|10702002 | stillgelegt | stillgelegt     |
+|10702004 | verfallen | verfallen     |
+|999997 | Unknown | Unknown     |
+|999998 | Not applicable | Not applicable     |
 
 
    
@@ -7572,8 +7640,8 @@ Aufnahmen Geomaterialien abgebaut wurden.
 []()           | Cardinality [] | 10801                                       |  
 2 | **exp_unit**                | table                                    | Abgebaute lithostratigraphische Einheit. 
 []()           | Cardinality [1..*] | gc_litstrat_bed                                       |  
-3 | **status**                | Cd                                    | Abbaustatus. 
-[]()           | Cardinality [0..1] | GC_EX_GEO_PLG_AEXP_STATUS_CD                                       |  
+3 | **status**                | [CodedDomain](#exploitation-geomaterials-plg-status)                    | Abbaustatus. 
+[]()           | Cardinality [0..1] |                                                      |  
 4 | **depth_tot**                | float                                    | Endtiefe (m ab Terrainoberfläche) der Objektart. 
 []()           | Cardinality [0..1] |                                        |  
 5 | **targ_mat**                | [CodedDomain](#exploitation-geomaterials-plg-targ-mat)                    | Abgebautes Material. 
@@ -7600,14 +7668,24 @@ _Abgebaute lithostratigraphische Einheit._
 
    
 
-#### Attribute status
+#### Attribute status{#exploitation-geomaterials-plg-status}
 _Abbaustatus._
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|10802003 | aufgefüllt | aufgefüllt     |
+|10802001 | in Betrieb | in Betrieb     |
+|10802002 | stillgelegt | stillgelegt     |
+|10802004 | verfallen | verfallen     |
+|999997 | Unknown | Unknown     |
+|999998 | Not applicable | Not applicable     |
 
 
    
 
 #### Attribute depth_tot
-_Endtiefe (m ab Terrainoberfläche) der Objektart.__Datentyp:  float_
+_Endtiefe (m ab Terrainoberfläche) der Objektart._
+_Datentyp:  float_
 
 
 
@@ -7726,14 +7804,16 @@ fläche. (Sofern die Bohrung das Festgestein nicht
 Depth_Bedrock erreicht, z.B. «Bohrung, Fels nicht erreicht», beträgt der
 Wert -9999, falls die Bohrung bereits im Festgestein beginnt, beträgt
 der Wert 0). Falls Festgestein erreicht wurde, aber nicht klar ist,
-dass es sich um die Felsoberfläche handelt, beträgt der Wert -8888.__Datentyp:  float_
+dass es sich um die Felsoberfläche handelt, beträgt der Wert -8888._
+_Datentyp:  float_
 
 
 
    
 
 #### Attribute d_c_underg
-_Bohransatzpunkt unter Terrain (ja / nein)__Datentyp:  boolean_
+_Bohransatzpunkt unter Terrain (ja / nein)_
+_Datentyp:  boolean_
 
 
 
@@ -7780,7 +7860,8 @@ _Durch die Sondierung gefördertes Material._
 #### Attribute depth_tot
 _Gemessene Länge (Measured Depth) der Bohrung. Vgl.
 DM Bohrdaten. Die tatsächliche Tiefe (True Vertical
-Depth) ist oft nicht bekannt.__Datentyp:  float_
+Depth) ist oft nicht bekannt._
+_Datentyp:  float_
 
 
 
@@ -7793,7 +7874,8 @@ _Lithostratigraphische Einheit der erreichten Formation A_
    
 
 #### Attribute depth_fm_a
-_Tiefe (m ab Terrainoberfläche) der erreichten Formation A.__Datentyp:  float_
+_Tiefe (m ab Terrainoberfläche) der erreichten Formation A._
+_Datentyp:  float_
 
 
 
@@ -7806,21 +7888,24 @@ _Lithostratigraphische Einheit der erreichten Formation B_
    
 
 #### Attribute depth_fm_b
-_Tiefe (m ab Terrainoberfläche) der erreichten Formation B.__Datentyp:  float_
+_Tiefe (m ab Terrainoberfläche) der erreichten Formation B._
+_Datentyp:  float_
 
 
 
    
 
 #### Attribute depth_wt
-_Tiefe (m ab Terrainoberfläche) des Grundwasserspiegels.__Datentyp:  float_
+_Tiefe (m ab Terrainoberfläche) des Grundwasserspiegels._
+_Datentyp:  float_
 
 
 
    
 
 #### Attribute azimuth
-_Fallrichtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad (0° 359°) im Uhrzeigersinn gemessen.__Datentyp:  integer_
+_Fallrichtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad (0° 359°) im Uhrzeigersinn gemessen._
+_Datentyp:  integer_
 
 
 
@@ -7828,21 +7913,24 @@ _Fallrichtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad (0° 359°) i
 
 #### Attribute dip
 _Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die
-Vertikale (90°).__Datentyp:  integer_
+Vertikale (90°)._
+_Datentyp:  integer_
 
 
 
    
 
 #### Attribute ref_number
-_Bohrungs-ID der Objektart in einem zusätzlichen Dokument (Erläuterungen, ...).__Datentyp:  integer_
+_Bohrungs-ID der Objektart in einem zusätzlichen Dokument (Erläuterungen, ...)._
+_Datentyp:  integer_
 
 
 
    
 
 #### Attribute link
-_Objektnummer in der Datenbank von INFOGEOL.__Datentyp:  integer_
+_Objektnummer in der Datenbank von INFOGEOL._
+_Datentyp:  integer_
 
 
 
@@ -7897,10 +7985,10 @@ Desweiteren kommen in dieser Klasse auch Messgeräte wie Piezometer und Limnigra
 ----|------------------------------|-----------------------------------|--------------------------------------
 1 | **kind**                | subtype                                    | Objektart 
 []()           | Cardinality [1] | 12101                                       |  
-2 | **status**                | Cd                                    | Zustand der Objektart. 
-[]()           | Cardinality [0..1] | GC_PNT_HCON_STATUS_CD                                       |  
-3 | **epoch**                | Cd                                    | Epoche der Erbauung der Objektart. 
-[]()           | Cardinality [0..1] | GC_PNT_HCON_EPOCH_CD                                       |  
+2 | **status**                | [CodedDomain](#construction-pt-status)                    | Zustand der Objektart. 
+[]()           | Cardinality [0..1] |                                                      |  
+3 | **epoch**                | [CodedDomain](#construction-pt-epoch)                    | Epoche der Erbauung der Objektart. 
+[]()           | Cardinality [0..1] |                                                      |  
 4 | **depth**                | float                                    | Tiefe der Objektart (m ab Terrainoberfläche). 
 []()           | Cardinality [0..1] |                                        |  
 5 | **depth_wt**                | float                                    | Tiefe (m ab Terrainoberfläche) des Grundwasserspiegels (Mittelwert). 
@@ -7928,34 +8016,52 @@ _Objektart_
 
    
 
-#### Attribute status
+#### Attribute status{#construction-pt-status}
 _Zustand der Objektart._
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|12102001 | in Betrieb | in Betrieb     |
+|12102002 | stillgelegt | stillgelegt     |
+|999997 | Unknown | Unknown     |
+|999998 | Not applicable | Not applicable     |
 
 
    
 
-#### Attribute epoch
+#### Attribute epoch{#construction-pt-epoch}
 _Epoche der Erbauung der Objektart._
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|12103001 | Mittelalter | Mittelalter     |
+|12103003 | prähistorisch | prähistorisch     |
+|12103002 | Römerzeit | Römerzeit     |
+|999997 | Unknown | Unknown     |
+|999998 | Not applicable | Not applicable     |
 
 
    
 
 #### Attribute depth
-_Tiefe der Objektart (m ab Terrainoberfläche).__Datentyp:  float_
+_Tiefe der Objektart (m ab Terrainoberfläche)._
+_Datentyp:  float_
 
 
 
    
 
 #### Attribute depth_wt
-_Tiefe (m ab Terrainoberfläche) des Grundwasserspiegels (Mittelwert).__Datentyp:  float_
+_Tiefe (m ab Terrainoberfläche) des Grundwasserspiegels (Mittelwert)._
+_Datentyp:  float_
 
 
 
    
 
 #### Attribute mea_period
-_Messperiode.__Datentyp:  range_
+_Messperiode._
+_Datentyp:  range_
 
 
 
@@ -8065,14 +8171,16 @@ _Chronostratigraphische Zuordnung._
    
 
 #### Attribute ref_year
-_Referenzjahr der ehemaligen Uferlinie.__Datentyp:  integer_
+_Referenzjahr der ehemaligen Uferlinie._
+_Datentyp:  integer_
 
 
 
    
 
 #### Attribute source
-_Datenquelle der historischen Unterlagen.__Datentyp:  string_
+_Datenquelle der historischen Unterlagen._
+_Datentyp:  string_
 
 
 
@@ -8080,10 +8188,12 @@ _Datenquelle der historischen Unterlagen.__Datentyp:  string_
 
 ### Class Subsurface_Water_L ###
 In der Klasse Subsurface_Water_L befinden sich linienförmigen Objektarten, welche einen
-unterirdischen Gewässerlauf anzeigen. Der genaue Verlauf des unterirdischen Gewässerlaufes ist
-in fast jedem Fall vermutet, mit wenigen Ausnahmen von erforschten Höhlensystemen. Liegen
-Färbversuche vor, so werden diese in den Erläuterungen erwähnt, sofern diese existieren. Der
-unterirdische Gewässerlauf kann mit Objeken aus der Klasse Surface_Water_PT kombiniert werden.
+unterirdischen Gewässerlauf anzeigen.
+
+Der genaue Verlauf des unterirdischen Gewässerlaufes ist in fast jedem Fall vermutet, mit
+wenigen Ausnahmen von erforschten Höhlensystemen. Liegen Färbversuche vor, so werden diese
+in den Erläuterungen erwähnt, sofern diese existieren. Der unterirdische Gewässerlauf
+kann mit Objeken aus der Klasse Surface_Water_PT kombiniert werden.
 
 
 
@@ -8143,8 +8253,8 @@ Wasserchemie.
 ----|------------------------------|-----------------------------------|--------------------------------------
 1 | **kind**                | subtype                                    | Objektart 
 []()           | Cardinality [1] | 12501                                       |  
-2 | **status**                | Cd                                    | Zustand der Objektart. 
-[]()           | Cardinality [0..1] | GC_PNT_HSUR_STATUS_CD                                       |  
+2 | **status**                | [CodedDomain](#surface-water-pt-status)                    | Zustand der Objektart. 
+[]()           | Cardinality [0..1] |                                                      |  
 3 | **flow_con**                | [CodedDomain](#surface-water-pt-flow-con)                    | Wasserfluss Bedingungen. 
 []()           | Cardinality [0..1] |                                                      |  
 4 | **type**                | [CodedDomain](#surface-water-pt-type)                    | Charakteristik der Objektart 
@@ -8180,8 +8290,15 @@ _Objektart_
 
    
 
-#### Attribute status
+#### Attribute status{#surface-water-pt-status}
 _Zustand der Objektart._
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|12502001 | gefasst | gefasst     |
+|12502002 | nicht gefasst | nicht gefasst     |
+|999997 | Unknown | Unknown     |
+|999998 | Not applicable | Not applicable     |
 
 
    
@@ -8240,14 +8357,16 @@ _Objektart einer anderen Klasse, die mit der Objektart in Kombination vorkommen 
    
 
 #### Attribute temp
-_Mittlere Wassertemperatur (°C).__Datentyp:  integer_
+_Mittlere Wassertemperatur (°C)._
+_Datentyp:  integer_
 
 
 
    
 
 #### Attribute chemistry
-_Charakteristisches chemisches Element im Mineralwasser (z.B. Fe).__Datentyp:  string_
+_Charakteristisches chemisches Element im Mineralwasser (z.B. Fe)._
+_Datentyp:  string_
 
 
 
@@ -8255,7 +8374,8 @@ _Charakteristisches chemisches Element im Mineralwasser (z.B. Fe).__Datentyp:  s
 
 #### Attribute azimuth
 _Richtung (Azimut) der jeweiligen Punktobjektart. Wert in
-Grad (0° 359°) im Uhrzeigersinn gemessen.__Datentyp:  integer_
+Grad (0° 359°) im Uhrzeigersinn gemessen._
+_Datentyp:  integer_
 
 
 
@@ -8376,21 +8496,24 @@ _Objektart_
    
 
 #### Attribute map_title
-_Originaltitel (Kartentitel) der Objektart.__Datentyp:  string_
+_Originaltitel (Kartentitel) der Objektart._
+_Datentyp:  string_
 
 
 
    
 
 #### Attribute map_nbr
-_Originalnummer (Kartennummer) der Objektart.__Datentyp:  integer_
+_Originalnummer (Kartennummer) der Objektart._
+_Datentyp:  integer_
 
 
 
    
 
 #### Attribute map_scale
-_Massstab der Objektart (Kartenmassstab).__Datentyp:  string_
+_Massstab der Objektart (Kartenmassstab)._
+_Datentyp:  string_
 
 
 
@@ -8404,42 +8527,48 @@ Wird vor allem bei Karten der Landesgeologie angegeben._
    
 
 #### Attribute author
-_Autor oder Autoren der Objektart.__Datentyp:  string_
+_Autor oder Autoren der Objektart._
+_Datentyp:  string_
 
 
 
    
 
 #### Attribute owner
-_Angabe zum Datenherr / zu den Datenherren der Objektart.__Datentyp:  string_
+_Angabe zum Datenherr / zu den Datenherren der Objektart._
+_Datentyp:  string_
 
 
 
    
 
 #### Attribute map_period
-_Angabe zum Kartierzeitraum der Objektart.__Datentyp:  string_
+_Angabe zum Kartierzeitraum der Objektart._
+_Datentyp:  string_
 
 
 
    
 
 #### Attribute publ_year
-_Publikationsjahr der Objektart.__Datentyp:  integer_
+_Publikationsjahr der Objektart._
+_Datentyp:  integer_
 
 
 
    
 
 #### Attribute basis_vect
-_Grundlage Vektordatensatz.__Datentyp:  string_
+_Grundlage Vektordatensatz._
+_Datentyp:  string_
 
 
 
    
 
 #### Attribute restriction
-_Angabe darüber, ob die Objektart öffentlich verfügbar ist (ja) oder einer Beschränkung (nein) unterliegt__Datentyp:  boolean_
+_Angabe darüber, ob die Objektart öffentlich verfügbar ist (ja) oder einer Beschränkung (nein) unterliegt_
+_Datentyp:  boolean_
 
 
 

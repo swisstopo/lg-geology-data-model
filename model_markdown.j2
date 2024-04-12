@@ -48,7 +48,7 @@
 #### Attribute {{ attr.name }}
 {%- if attr.att_type == 'CD' -%}{{ '{#'}}{{slug| slugify}}{{'}'}}{% endif %}
 _{{ attr.description|trim}}_
-{%- if attr.att_type in ('boolean', 'string', 'float', 'range', 'integer') -%}
+{%- if attr.att_type in ('boolean', 'string', 'float', 'range', 'integer') %}
 _Datentyp:  {{ attr.att_type  }}_
 {% endif %}
 
