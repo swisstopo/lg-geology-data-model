@@ -30,8 +30,9 @@
     | Name                         | Type                              | Description
 ----|------------------------------|-----------------------------------|--------------------------------------
 {% for attr in cls.attributes -%}
-{% set slug = "%s-%s" % (cls.name, attr.name) %}
-{%- if attr.att_type == 'CD' -%}
+{%- if attr.att_type == 'CD' -%}{% set slug = "%s-%s" % (cls.name, attr.name) -%}
+{%- elif attr.att_type == 'annex' -%}{% set slug = attr.value %}{%- else -%}{% set slug = None %}{% endif -%}
+{%- if slug != None -%}
 {{loop.index}} | **{{ attr.name  }}**                | [CodedDomain](#{{slug| slugify}})                    | {{ attr.description|trim }}
 []()           | Cardinality [{{ attr.cardinality}}] |                                                      |
 {% else -%}
@@ -51,6 +52,9 @@ _{{ attr.description|trim|highlight}}_
 {%- if attr.att_type in ('boolean', 'string', 'float', 'range', 'integer') %}
 _Datentyp:  {{ attr.att_type  }}_
 {% endif %}
+{%- if attr.att_type == 'annex' %}
+Siehe die CodedDomain [{{attr.value}}](#{{attr.value| slugify}}) in Ahhang
+{% endif %}
 
 {% if 'pairs' in attr -%}
 |GeolCode|Deutsch|Français|
@@ -62,4 +66,19 @@ _Datentyp:  {{ attr.att_type  }}_
 
 {% endfor %}
 {% endfor %}
+{% endfor %}
+
+
+{% for annex in annexes -%}
+
+
+## Anhang {{ annex.name |upper}} {{ '{#'}}{{annex.name | slugify}}{{'}'}}
+
+{% if 'pairs' in annex -%}
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+{% for key, value in annex.pairs.items() -%}
+|{{key}} | {{value}} | {{value}}     |
+{% endfor %}
+{% endif %}
 {% endfor %}

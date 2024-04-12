@@ -34,7 +34,7 @@ themes:
             cardinality: 0..1
           - name: mat_type  # TODO type
             description: Materialbezeichnung (lithologische Einheit)
-            att_type: CD
+            att_type: annex
             value: GC_LITHO_UNCO_CD  # TODO  check with Stephan # Table: GC_POINT_OBJECTS, field: RUNC_MAT_TYPE, domain:GC_LITHO_CD
             cardinality: 0..1
           - name: orig_descr
@@ -66,19 +66,19 @@ themes:
             description: Objektart
             cardinality: 1
           - name: litstrat
-            att_type: CD
+            att_type: annex
             value: GC_LITSTRAT_UNCO_CD
             cardinality: 1
           - name: litho
-            att_type: CD
+            att_type: annex
             value: GC_LITHO_CD
             cardinality: 1..3
           - name: chrono_t
-            att_type: CD
+            att_type: annex
             value: GC_CHRONO_CD
             cardinality: 1
           - name: chrono_b
-            att_type: CD
+            att_type: annex
             value: GC_CHRONO_CD
             cardinality: 1
           - name: mat_type
@@ -147,29 +147,29 @@ themes:
             description: Gesteinsaufbau
           - name: listrat
             description: Lithostratigraphische Einhei
-            att_type: CD
+            att_type: annex
             value: GC_LITSTRAT_BED_CD
             cardinality: 1
           - name: litho
-            att_type: CD
+            att_type: annex
             value: GC_LITHO_CD
             description: Lithologische Beschreibung
             cardinality: 1..3
           - name: chrono_t
-            att_type: CD
+            att_type: annex
             value: GC_CHRONO_CD
             description: >-
               Chronostratigraphische Zuordnung der Obergrenze der Kartiereinheit (Top)
             cardinality: 1
           - name: chrono_b
-            att_type: CD
+            att_type: annex
             value: GC_CHRONO_CD
             description: >-
               Chronostratigraphische Zuordnung der Untergrenze der
               Kartiereinheit (Basis)
             cardinality: 1
           - name: tecto
-            att_type: CD
+            att_type: annex
             value: GC_TECTO_CD
             description: Tektonische Zugehörigkeit
             cardinality: 1
@@ -243,7 +243,7 @@ themes:
             description: Bezeichnung des metamorphen Gesteins
             cardinality: 0..1
           - name: meta_mineral
-            att_type: CD
+            att_type: annex
             value: GC_MINERAL_CD
             description: Wichtiges Mineral des metamorphen Gesteins
             cardinality: 0..3
@@ -818,7 +818,7 @@ themes:
             cardinality: 0..1
           - name: name_horiz
             description: Name des Bentonit-Leithorizonts.
-            att_type: CD
+            att_type: annex
             value: GC_LITSTRAT_BED_CD  # TODO: was 13103, now field: LPRO_NAME_HORIZ
             cardinality: 0..1
             change: new
@@ -828,7 +828,7 @@ themes:
             cardinality: 0..1
           - name: lpro_litho
             description: Materialbezeichnung (lithologische Einheit).
-            att_type: CD
+            att_type: annex
             value: GC_LITHO_CD  # TODO: really or CD field: "LPRO_LITHO", 
             change: renamed  # 'ltiho' -> LPRO_LITHO
             cardinality: 1
@@ -901,7 +901,7 @@ themes:
             cardinality: 0..1
           - name: pslo_formatio
             description: Lithostratigraphische Einheit der modellierten Formation
-            att_type: CD
+            att_type: annex
             value: GC_LITSTRAT_BED_CD  # TODO:  coded domain field; PSLO_FORMATIO", CD:  "GC_LITSTRAT_BED_CD"
             cardinality: 1
             change: renamed  # from litstrat to PSLO_FORMATIO
@@ -928,7 +928,7 @@ themes:
             cardinality: 1
           - name: litstrat
             description: Lithostratigraphische Einheit der modellierten Formation
-            att_type: CD
+            att_type: annex
             value: GC_LITSTRAT_BED_CD  # TODO: renammed? field: "PCOB_FORMATIO", CD "GC_LITSTRAT_BED_CD"
             cardinality: 1
       - name: Modelled_Water_Table_PT
@@ -1178,7 +1178,7 @@ themes:
             cardinality: 0..1
           - name: fm_a
             description: Lithostratigraphische Einheit der erreichten Formation A
-            att_type: CD
+            att_type: annex
             value: GC_LITSTRAT_BED_CD # TODO
             cardinality: 0..1
           - name: depth_fm_a
@@ -1187,7 +1187,7 @@ themes:
             cardinality: 0..1
           - name: fm_b
             description: Lithostratigraphische Einheit der erreichten Formation B
-            att_type: CD
+            att_type: annex
             value: GC_LITSTRAT_BED_CD # TODO
             cardinality: 0..1
           - name: depth_fm_b
@@ -1294,7 +1294,7 @@ themes:
             cardinality: 0..1
           - name: hpal_chrono
             description: Chronostratigraphische Zuordnung.
-            att_type: CD
+            att_type: annex
             value: GC_CHRONO_CD  # TODO field "HPAL_CHRONO", CD:  "GC_CHRONO_CD"
             cardinality: 0..1
             change: renamed  # chrono -> HPAL_CHRONO
@@ -1465,3 +1465,12 @@ themes:
             description: Angabe darüber, ob die Objektart öffentlich verfügbar ist (ja) oder einer Beschränkung (nein) unterliegt
             att_type: boolean
             cardinality: 1
+            
+annexes:
+    - name: GC_LITSTRAT_BED_CD
+    - name: GC_LITSTRAT_UNCO_CD
+    - name: GC_LITHO_CD
+    - name: GC_LITHO_UNCO_CD
+    - name: GC_CHRONO_CD
+    - name: GC_TECTO_CD
+    - name: GC_MINERAL_CD
