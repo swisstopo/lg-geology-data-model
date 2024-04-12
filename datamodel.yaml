@@ -465,13 +465,15 @@ themes:
             value: 14601
             cardinality: 1
           - name: azimuth
-            description: Fallrichtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad (0° 359°) im Uhrzeigersinn gemessen.
+            description: >
+              Fallrichtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad (0° 359°) im Uhrzeigersinn
+              gemessen.
             att_type: integer
             cardinality: 0..1
           - name: dip
-            description: |
-               Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die
-               Vertikale (90°).
+            description: >
+               Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach
+               unten bis in die Vertikale (90°).
             att_type: integer
             cardinality: 0..1
           - name: fold_typ
@@ -601,7 +603,7 @@ themes:
             att_type: string
             cardinality: 0..1
           - name: azimuth
-            description: |
+            description: >
                 Einfallsrichtung (Azimut) der jeweiligen Punktobjektart (z.B. Scheitellinie, Faltenachse).
                 Wert in Grad (0° 359°) im Uhrzeigersinn gemessen
             att_type: integer
@@ -625,15 +627,15 @@ themes:
             value: 13701
             cardinality: 1
           - name: azimuth
-            description: |
+            description: >
                 Einfallsrichtung (Azimut) der jeweiligen Punktobjektart (z.B. Scheitellinie, Faltenachse).
                 Wert in Grad (0° 359°) im Uhrzeigersinn gemessen
             att_type: integer
             cardinality: 1
           - name: dip
-            description: |
-               Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die
-               Vertikale (90°).
+            description: >
+               Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach
+               unten bis in die Vertikale (90°).
             cardinatity: 0..1
       - name: Planar_Structures_PT
         description: |
@@ -665,15 +667,15 @@ themes:
             att_type: boolean
             cardinality: 0..1
           - name: azimuth
-            description: |
-                Einfallsrichtung (Azimut) der jeweiligen Punktobjektart (z.B. Scheitellinie, Faltenachse).
-                Wert in Grad (0° 359°) im Uhrzeigersinn gemessen
+            description: >
+                Einfallsrichtung (Azimut) der jeweiligen Punktobjektart (z.B. Scheitellinie, Faltenachse). Wert in Grad
+                (0° 359°) im Uhrzeigersinn gemessen
             att_type: integer
             cardinality: 1
           - name: dip
-            description: |
-               Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die
-               Vertikale (90°).
+            description: >
+               Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°)
+               nach unten bis in die Vertikale (90°).
             cardinatity: 0..1
 
   - name: Local_Additional_Information
@@ -1374,9 +1376,8 @@ themes:
             att_type: string
             cardinality: 0..1
           - name: azimuth
-            description: |
-                Richtung (Azimut) der jeweiligen Punktobjektart. Wert in
-                Grad (0° 359°) im Uhrzeigersinn gemessen.
+            description: >
+                Richtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad (0° 359°) im Uhrzeigersinn gemessen.
             att_type: integer
             cardinality: 0..1
       - name: Surface_Water_L
