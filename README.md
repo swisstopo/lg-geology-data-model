@@ -7,6 +7,8 @@ particulier la liste des valeurs attributaires possibles.
 
 # Installation
 
+    conda install jinja2 pyyaml pandas
+
 Uniquement des librairies de base pour _datamodel.py_ . Evidemment, _coded_domain.py_ et _subtype.py_ doivent être 
 excécuté dans un projet ESRI ArcGis Pro avec une connection sur la base SDE GCOVER.
 
@@ -31,12 +33,15 @@ Creation d'un fichier PDF
          --shift-heading-level-by=-1  \
          --metadata-file=metadata.yaml \
          --variable mainfont="DejaVu Sans" \
+         -V colorlinks=true \
+         -V linkcolor=teal \
+         -V urlcolor=teal \
+         -V toccolor=gray \
          -o datamodel.pdf datamodel.md
 
 Idem, mais pour un fichier Microsoft Word
 
-    pandoc -s --pdf-engine=xelatex  \
-                   -V papersize:a4  \
+    pandoc -s   -V papersize:a4  \
                   --number-sections   \
                   --shift-heading-level-by=-1 \
                   --metadata-file=metadata.yaml  \
