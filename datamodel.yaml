@@ -781,7 +781,7 @@ themes:
           cardinality: 1
         - name: strati
           description: Lithostratigraphischer Zusatz zum Objekt
-          att_type: Cd
+          att_type: CD
           value: GC_PNT_LTYP_STRATI_CD
           cardinality: 0..1
         - name: name
@@ -1069,7 +1069,7 @@ themes:
             cardinality: 0..*
           - name: status
             description: Abbaustatus.
-            att_type: Cd
+            att_type: CD
             value: GC_EX_GEO_PNT_AEXP_STATUS_CD
             cardinality: 0..1
           - name: depth_tot
@@ -1093,7 +1093,7 @@ themes:
             value: 10701
           - name: status
             description: Abbaustatus.
-            att_type: Cd
+            att_type: CD
             value: GC_LIN_AEXP_STATUS_CD
             cardinality: 0..1
 
@@ -1113,7 +1113,7 @@ themes:
             cardinality: 1..*
           - name: status
             description: Abbaustatus.
-            att_type: Cd
+            att_type: CD
             value: GC_EX_GEO_PLG_AEXP_STATUS_CD
             cardinality: 0..1
           - name: depth_tot
@@ -1236,12 +1236,12 @@ themes:
             cardinality: 1
           - name: status
             description: Zustand der Objektart.
-            att_type: Cd
+            att_type: CD
             value: GC_PNT_HCON_STATUS_CD
             cardinality: 0..1
           - name: epoch
             description: Epoche der Erbauung der Objektart.
-            att_type: Cd
+            att_type: CD
             value: GC_PNT_HCON_EPOCH_CD
             cardinality: 0..1
           - name: depth
@@ -1340,7 +1340,7 @@ themes:
             cardinality: 1
           - name: status
             description: Zustand der Objektart.
-            att_type: Cd
+            att_type: CD
             value: GC_PNT_HSUR_STATUS_CD
             cardinality: 0..1
           - name: flow_con
