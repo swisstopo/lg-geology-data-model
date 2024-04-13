@@ -7,155 +7,8 @@
   <meta name="author" content="Bundesamt für Landestopographie swisstopo" />
   <meta name="keywords" content="Geocover, Metadata, Model, GIS, Vector
 data, Switzerland" />
-  <title>Datenmodell Geologie, Version 3.5</title>
+  <title>Datenmodell Geologie, Version</title>
   <style>
-    html {
-      font-family: DejaVu Sans;
-      font-size: 10pt;
-      color: #1a1a1a;
-      background-color: #fdfdfd;
-    }
-    body {
-      margin: 0 auto;
-      max-width: 36em;
-      padding-left: 50px;
-      padding-right: 50px;
-      padding-top: 50px;
-      padding-bottom: 50px;
-      hyphens: auto;
-      overflow-wrap: break-word;
-      text-rendering: optimizeLegibility;
-      font-kerning: normal;
-    }
-    @media (max-width: 600px) {
-      body {
-        font-size: 0.9em;
-        padding: 12px;
-      }
-      h1 {
-        font-size: 1.8em;
-      }
-    }
-    @media print {
-      html {
-        background-color: white;
-      }
-      body {
-        background-color: transparent;
-        color: black;
-        font-size: 12pt;
-      }
-      p, h2, h3 {
-        orphans: 3;
-        widows: 3;
-      }
-      h2, h3, h4 {
-        page-break-after: avoid;
-      }
-    }
-    p {
-      margin: 1em 0;
-    }
-    a {
-      color: teal;
-    }
-    a:visited {
-      color: teal;
-    }
-    img {
-      max-width: 100%;
-    }
-    svg {
-      height: auto;
-      max-width: 100%;
-    }
-    h1, h2, h3, h4, h5, h6 {
-      margin-top: 1.4em;
-    }
-    h5, h6 {
-      font-size: 1em;
-      font-style: italic;
-    }
-    h6 {
-      font-weight: normal;
-    }
-    ol, ul {
-      padding-left: 1.7em;
-      margin-top: 1em;
-    }
-    li > ol, li > ul {
-      margin-top: 0;
-    }
-    blockquote {
-      margin: 1em 0 1em 1.7em;
-      padding-left: 1em;
-      border-left: 2px solid #e6e6e6;
-      color: #606060;
-    }
-    code {
-      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
-      font-size: 85%;
-      margin: 0;
-      hyphens: manual;
-    }
-    pre {
-      margin: 1em 0;
-      overflow: auto;
-    }
-    pre code {
-      padding: 0;
-      overflow: visible;
-      overflow-wrap: normal;
-    }
-    .sourceCode {
-     background-color: transparent;
-     overflow: visible;
-    }
-    hr {
-      background-color: #1a1a1a;
-      border: none;
-      height: 1px;
-      margin: 1em 0;
-    }
-    table {
-      margin: 1em 0;
-      border-collapse: collapse;
-      width: 100%;
-      overflow-x: auto;
-      display: block;
-      font-variant-numeric: lining-nums tabular-nums;
-    }
-    table caption {
-      margin-bottom: 0.75em;
-    }
-    tbody {
-      margin-top: 0.5em;
-      border-top: 1px solid #1a1a1a;
-      border-bottom: 1px solid #1a1a1a;
-    }
-    th {
-      border-top: 1px solid #1a1a1a;
-      padding: 0.25em 0.5em 0.25em 0.5em;
-    }
-    td {
-      padding: 0.125em 0.5em 0.25em 0.5em;
-    }
-    header {
-      margin-bottom: 4em;
-      text-align: center;
-    }
-    #TOC li {
-      list-style: none;
-    }
-    #TOC ul {
-      padding-left: 1.3em;
-    }
-    #TOC > ul {
-      padding-left: 0;
-    }
-    #TOC a:not(:hover) {
-      text-decoration: none;
-    }
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -172,10 +25,11 @@ data, Switzerland" />
     }
     .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
+  <link rel="stylesheet" href="datamodel.css" />
 </head>
 <body>
 <header id="title-block-header">
-<h1 class="title">Datenmodell Geologie, Version 3.5</h1>
+<h1 class="title">Datenmodell Geologie, Version</h1>
 <p class="author">Bundesamt für Landestopographie swisstopo</p>
 <p class="date">April 2024</p>
 </header>
@@ -675,8 +529,8 @@ Anhang A einige Fallbeispiele abgebildet.</p>
 <td>2</td>
 <td><strong>litstrat</strong></td>
 <td><a href="#gc-litstrat-unco-cd">CodedDomain</a></td>
-<td>. Die möglichen Werte sind in der Tabelle GC_LITSTRAT_UNCO_CD im
-Anhang dieses Dokumentes verfügbar.</td>
+<td>Lithostratigraphische Einheit.. Die möglichen Werte sind in der
+Tabelle GC_LITSTRAT_UNCO_CD im Anhang dieses Dokumentes verfügbar.</td>
 </tr>
 <tr class="even">
 <td><a href=""></a></td>
@@ -688,8 +542,8 @@ Anhang dieses Dokumentes verfügbar.</td>
 <td>3</td>
 <td><strong>litho</strong></td>
 <td><a href="#gc-litho-cd">CodedDomain</a></td>
-<td>. Die möglichen Werte sind in der Tabelle GC_LITHO_CD im Anhang
-dieses Dokumentes verfügbar.</td>
+<td>Lithologische Beschreibung. Die möglichen Werte sind in der Tabelle
+GC_LITHO_CD im Anhang dieses Dokumentes verfügbar.</td>
 </tr>
 <tr class="even">
 <td><a href=""></a></td>
@@ -701,7 +555,8 @@ dieses Dokumentes verfügbar.</td>
 <td>4</td>
 <td><strong>chrono_t</strong></td>
 <td><a href="#gc-chrono-cd">CodedDomain</a></td>
-<td>. Die möglichen Werte sind in der Tabelle GC_CHRONO_CD im Anhang
+<td>Chronostratigraphische Zuordnung der Obergrenze der Kartiereinheit
+(Top). Die möglichen Werte sind in der Tabelle GC_CHRONO_CD im Anhang
 dieses Dokumentes verfügbar.</td>
 </tr>
 <tr class="even">
@@ -714,7 +569,8 @@ dieses Dokumentes verfügbar.</td>
 <td>5</td>
 <td><strong>chrono_b</strong></td>
 <td><a href="#gc-chrono-cd">CodedDomain</a></td>
-<td>. Die möglichen Werte sind in der Tabelle GC_CHRONO_CD im Anhang
+<td>Chronostratigraphische Zuordnung der Untergrenze der Kartiereinheit
+(Basis). Die möglichen Werte sind in der Tabelle GC_CHRONO_CD im Anhang
 dieses Dokumentes verfügbar.</td>
 </tr>
 <tr class="even">
@@ -727,7 +583,7 @@ dieses Dokumentes verfügbar.</td>
 <td>6</td>
 <td><strong>mat_type</strong></td>
 <td></td>
-<td></td>
+<td>Materialbezeichnung (lithologische Einheit)</td>
 </tr>
 <tr class="even">
 <td><a href=""></a></td>
@@ -739,7 +595,7 @@ dieses Dokumentes verfügbar.</td>
 <td>7</td>
 <td><strong>buried_out</strong></td>
 <td>boolean</td>
-<td></td>
+<td>Wurde das Lockergestein wieder verdeckt</td>
 </tr>
 <tr class="even">
 <td><a href=""></a></td>
@@ -751,7 +607,7 @@ dieses Dokumentes verfügbar.</td>
 <td>8</td>
 <td><strong>composit</strong></td>
 <td>table</td>
-<td></td>
+<td>Zusammensetzung des Lockergesteins</td>
 </tr>
 <tr class="even">
 <td><a href=""></a></td>
@@ -763,7 +619,7 @@ dieses Dokumentes verfügbar.</td>
 <td>9</td>
 <td><strong>admixture</strong></td>
 <td>table</td>
-<td></td>
+<td>Beimengung</td>
 </tr>
 <tr class="even">
 <td><a href=""></a></td>
@@ -787,7 +643,7 @@ dieses Dokumentes verfügbar.</td>
 <td>11</td>
 <td><strong>charact</strong></td>
 <td>table</td>
-<td>Spezifische Eigenschaft</td>
+<td>Spezifische Eigenschaft.</td>
 </tr>
 <tr class="even">
 <td><a href=""></a></td>
@@ -825,7 +681,7 @@ href="#unconsolidated-deposits-plg-glac-type">CodedDomain</a></td>
 <td><strong>ref_year</strong></td>
 <td>string</td>
 <td>Zeitpunkt oder Zeitperiode. Zum Beispiel «1940 1943, Periode der
-Drainage» (muss präzisiert werden)</td>
+Drainage» (muss präzisiert werden).</td>
 </tr>
 <tr class="even">
 <td><a href=""></a></td>
@@ -887,32 +743,35 @@ class="header-section-number">1.2.1</span> Attribute kind</h3>
 </table>
 <h3 data-number="1.2.2" id="attribute-litstrat"><span
 class="header-section-number">1.2.2</span> Attribute litstrat</h3>
-<p>__ Siehe die CodedDomain <a
+<p><em>Lithostratigraphische Einheit.</em> Siehe die CodedDomain <a
 href="#gc-litstrat-unco-cd">GC_LITSTRAT_UNCO_CD</a> in Ahhang</p>
 <h3 data-number="1.2.3" id="attribute-litho"><span
 class="header-section-number">1.2.3</span> Attribute litho</h3>
-<p>__ Siehe die CodedDomain <a href="#gc-litho-cd">GC_LITHO_CD</a> in
-Ahhang</p>
+<p><em>Lithologische Beschreibung</em> Siehe die CodedDomain <a
+href="#gc-litho-cd">GC_LITHO_CD</a> in Ahhang</p>
 <h3 data-number="1.2.4" id="attribute-chrono_t"><span
 class="header-section-number">1.2.4</span> Attribute chrono_t</h3>
-<p>__ Siehe die CodedDomain <a href="#gc-chrono-cd">GC_CHRONO_CD</a> in
-Ahhang</p>
+<p><em>Chronostratigraphische Zuordnung der Obergrenze der
+Kartiereinheit (Top)</em> Siehe die CodedDomain <a
+href="#gc-chrono-cd">GC_CHRONO_CD</a> in Ahhang</p>
 <h3 data-number="1.2.5" id="attribute-chrono_b"><span
 class="header-section-number">1.2.5</span> Attribute chrono_b</h3>
-<p>__ Siehe die CodedDomain <a href="#gc-chrono-cd">GC_CHRONO_CD</a> in
-Ahhang</p>
+<p><em>Chronostratigraphische Zuordnung der Untergrenze der
+Kartiereinheit (Basis)</em> Siehe die CodedDomain <a
+href="#gc-chrono-cd">GC_CHRONO_CD</a> in Ahhang</p>
 <h3 data-number="1.2.6" id="attribute-mat_type-1"><span
 class="header-section-number">1.2.6</span> Attribute mat_type</h3>
-<p>__</p>
+<p><em>Materialbezeichnung (lithologische Einheit)</em></p>
 <h3 data-number="1.2.7" id="attribute-buried_out"><span
 class="header-section-number">1.2.7</span> Attribute buried_out</h3>
-<p>__ <em>Datentyp: boolean</em></p>
+<p><em>Wurde das Lockergestein wieder verdeckt</em> <em>Datentyp:
+boolean</em></p>
 <h3 data-number="1.2.8" id="attribute-composit"><span
 class="header-section-number">1.2.8</span> Attribute composit</h3>
-<p>__</p>
+<p><em>Zusammensetzung des Lockergesteins</em></p>
 <h3 data-number="1.2.9" id="attribute-admixture"><span
 class="header-section-number">1.2.9</span> Attribute admixture</h3>
-<p>__</p>
+<p><em>Beimengung</em></p>
 <h3 data-number="1.2.10" id="unconsolidated-deposits-plg-structur"><span
 class="header-section-number">1.2.10</span> Attribute structur</h3>
 <p><em>Textur des Lockergesteins</em></p>
@@ -1005,7 +864,7 @@ deltaïque)</td>
 </table>
 <h3 data-number="1.2.11" id="attribute-charact"><span
 class="header-section-number">1.2.11</span> Attribute charact</h3>
-<p><em>Spezifische Eigenschaft</em></p>
+<p><em>Spezifische Eigenschaft.</em></p>
 <h3 data-number="1.2.12" id="unconsolidated-deposits-plg-morpholo"><span
 class="header-section-number">1.2.12</span> Attribute morpholo</h3>
 <p><em>Morphologie der Lockergesteinseinheit</em></p>
@@ -1173,7 +1032,7 @@ class="header-section-number">1.2.13</span> Attribute glac_type</h3>
 <h3 data-number="1.2.14" id="attribute-ref_year"><span
 class="header-section-number">1.2.14</span> Attribute ref_year</h3>
 <p><em>Zeitpunkt oder Zeitperiode. Zum Beispiel «1940 1943, Periode der
-Drainage» (muss präzisiert werden)</em> <em>Datentyp: string</em></p>
+Drainage» (muss präzisiert werden).</em> <em>Datentyp: string</em></p>
 <h3 data-number="1.2.15"
 id="unconsolidated-deposits-plg-thin-cover"><span
 class="header-section-number">1.2.15</span> Attribute thin_cover</h3>
@@ -1282,7 +1141,7 @@ href="#instabilities-within-bedrock-plg">Instabilities_within_Bedrock_PLG</a>
 </tr>
 <tr class="even">
 <td><a href=""></a></td>
-<td>Cardinality []</td>
+<td>Cardinality [1]</td>
 <td></td>
 <td></td>
 </tr>
@@ -1290,7 +1149,7 @@ href="#instabilities-within-bedrock-plg">Instabilities_within_Bedrock_PLG</a>
 <td>3</td>
 <td><strong>listrat</strong></td>
 <td><a href="#gc-litstrat-bed-cd">CodedDomain</a></td>
-<td>Lithostratigraphische Einhei. Die möglichen Werte sind in der
+<td>Lithostratigraphische Einheit. Die möglichen Werte sind in der
 Tabelle GC_LITSTRAT_BED_CD im Anhang dieses Dokumentes verfügbar.</td>
 </tr>
 <tr class="even">
@@ -1580,7 +1439,7 @@ class="header-section-number">1.3.2</span> Attribute fm_homog</h3>
 <p><em>Gesteinsaufbau</em></p>
 <h3 data-number="1.3.3" id="attribute-listrat"><span
 class="header-section-number">1.3.3</span> Attribute listrat</h3>
-<p><em>Lithostratigraphische Einhei</em> Siehe die CodedDomain <a
+<p><em>Lithostratigraphische Einheit</em> Siehe die CodedDomain <a
 href="#gc-litstrat-bed-cd">GC_LITSTRAT_BED_CD</a> in Ahhang</p>
 <h3 data-number="1.3.4" id="attribute-litho-1"><span
 class="header-section-number">1.3.4</span> Attribute litho</h3>
@@ -6033,6 +5892,8 @@ class="header-section-number">5.3.4</span> Attribute chemistry</h3>
 Objektart charakterisieren.</em> <em>Datentyp: string</em></p>
 <h2 data-number="5.4" id="mineralised-zone-l"><span
 class="header-section-number">5.4</span> Class Mineralised_Zone_L</h2>
+<p>Die Klasse <a href="#mineralised-zone-l">Mineralised_Zone_L</a>
+beinhaltet Vererzungszonen.</p>
 <table>
 <colgroup>
 <col style="width: 3%" />
@@ -6107,6 +5968,9 @@ charakterisieren.</em> <em>Datentyp: string</em></p>
 <h2 data-number="5.5" id="sedimentary-structures-pt"><span
 class="header-section-number">5.5</span> Class
 Sedimentary_Structures_PT</h2>
+<p>Die Klasse <a
+href="#sedimentary-structures-pt">Sedimentary_Structures_PT</a> enthält
+beobachtete Sedimentstrukturen.</p>
 <table>
 <colgroup>
 <col style="width: 3%" />

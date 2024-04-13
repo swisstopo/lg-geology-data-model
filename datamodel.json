@@ -1,5 +1,10 @@
 {
-    "version": 3.5,
+    "model": [
+        {
+            "revision": 3.5,
+            "revision_date": "2024-04-30"
+        }
+    ],
     "themes": [
         {
             "name": "Rock_Bodies",
@@ -128,55 +133,63 @@
                         },
                         {
                             "name": "litstrat",
+                            "description": "Lithostratigraphische Einheit.",
                             "att_type": "annex",
                             "value": "GC_LITSTRAT_UNCO_CD",
                             "cardinality": 1
                         },
                         {
                             "name": "litho",
+                            "description": "Lithologische Beschreibung",
                             "att_type": "annex",
                             "value": "GC_LITHO_CD",
                             "cardinality": "1..3"
                         },
                         {
                             "name": "chrono_t",
+                            "description": "Chronostratigraphische Zuordnung der Obergrenze der Kartiereinheit (Top)\n",
                             "att_type": "annex",
                             "value": "GC_CHRONO_CD",
                             "cardinality": 1
                         },
                         {
                             "name": "chrono_b",
+                            "description": "Chronostratigraphische Zuordnung der Untergrenze der Kartiereinheit (Basis)\n",
                             "att_type": "annex",
                             "value": "GC_CHRONO_CD",
                             "cardinality": 1
                         },
                         {
                             "name": "mat_type",
+                            "description": "Materialbezeichnung (lithologische Einheit)",
                             "value": "Lithostratigraphic_Units_Litho",
                             "cardinality": "0..3"
                         },
                         {
                             "name": "buried_out",
+                            "description": "Wurde das Lockergestein wieder verdeckt",
                             "att_type": "boolean",
                             "cardinality": 1
                         },
                         {
                             "name": "composit",
+                            "description": "Zusammensetzung des Lockergesteins",
                             "att_type": "table",
                             "value": "gc_composit",
                             "cardinality": "0..3"
                         },
                         {
                             "name": "admixture",
+                            "description": "Beimengung",
                             "att_type": "table",
                             "value": "gc_admixture",
                             "cardinality": "0..2"
                         },
                         {
                             "name": "structur",
+                            "description": "Textur des Lockergesteins",
                             "att_type": "CD",
                             "value": "GC_UN_DEP_RUNC_STRUCTUR_CD",
-                            "description": "Textur des Lockergesteins",
                             "cardinality": "0..1",
                             "pairs": {
                                 "14510011": "bioturbiert",
@@ -197,16 +210,16 @@
                         },
                         {
                             "name": "charact",
-                            "description": "Spezifische Eigenschaft",
+                            "description": "Spezifische Eigenschaft.",
                             "att_type": "table",
                             "value": "gc_charcat",
                             "cardinality": "0..3"
                         },
                         {
                             "name": "morpholo",
+                            "description": "Morphologie der Lockergesteinseinheit",
                             "att_type": "CD",
                             "value": "GC_UN_DEP_RUNC_MORPHOLO_CD",
-                            "description": "Morphologie der Lockergesteinseinheit",
                             "cardinality": "0..1",
                             "pairs": {
                                 "14512008": "Bastion",
@@ -223,9 +236,9 @@
                         },
                         {
                             "name": "glac_type",
+                            "description": "Gletschertyp; Attribut nur f\u00fcr Mor\u00e4nen",
                             "att_type": "CD",
                             "value": "GC_UN_DEP_RUNC_GLAC_TYP_CD",
-                            "description": "Gletschertyp; Attribut nur f\u00fcr Mor\u00e4nen",
                             "cardinality": "0..1",
                             "pairs": {
                                 "14513009": "Aaregletscher",
@@ -247,8 +260,8 @@
                         },
                         {
                             "name": "ref_year",
+                            "description": "Zeitpunkt oder Zeitperiode. Zum Beispiel \u00ab1940 1943, Periode der Drainage\u00bb (muss pr\u00e4zisiert werden).\n",
                             "att_type": "string",
-                            "description": "Zeitpunkt oder Zeitperiode. Zum Beispiel \u00ab1940 1943, Periode der Drainage\u00bb (muss pr\u00e4zisiert werden)",
                             "cardinality": "0..1"
                         },
                         {
@@ -292,11 +305,13 @@
                         },
                         {
                             "name": "fm_homog",
-                            "description": "Gesteinsaufbau"
+                            "description": "Gesteinsaufbau",
+                            "cardinality": 1,
+                            "change": "removed"
                         },
                         {
                             "name": "listrat",
-                            "description": "Lithostratigraphische Einhei",
+                            "description": "Lithostratigraphische Einheit",
                             "att_type": "annex",
                             "value": "GC_LITSTRAT_BED_CD",
                             "cardinality": 1
@@ -1512,7 +1527,7 @@
                 },
                 {
                     "name": "Mineralised_Zone_L",
-                    "descriptipn": "Die Klasse Mineralised_Zone_L beinhaltet Vererzungszonen.",
+                    "description": "Die Klasse Mineralised_Zone_L beinhaltet Vererzungszonen.",
                     "attributes": [
                         {
                             "name": "kind",
@@ -1534,7 +1549,7 @@
                 },
                 {
                     "name": "Sedimentary_Structures_PT",
-                    "descriptipn": "Die Klasse Sedimentary_Structures_PT enth\u00e4lt beobachtete Sedimentstrukturen.",
+                    "description": "Die Klasse Sedimentary_Structures_PT enth\u00e4lt beobachtete Sedimentstrukturen.",
                     "attributes": [
                         {
                             "name": "kind",

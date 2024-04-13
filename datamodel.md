@@ -1,5 +1,5 @@
 
-# Datenmodell Geologie, Version 3.5 #
+# Datenmodell Geologie, Version #
 
 
 ![Extrait GeoCover vers le Moléson](geocover.png "Moléson")
@@ -171,31 +171,31 @@ Fallbeispiele abgebildet.
 ----|------------------------------|-----------------------------------|--------------------------------------
 1 | **kind**                | subtype                                    | Objektart
 []()           | Cardinality [1] | 14517                                       |
-2 | **litstrat**                | [CodedDomain](#gc-litstrat-unco-cd)  | . Die möglichen Werte sind in der Tabelle GC_LITSTRAT_UNCO_CD im Anhang dieses Dokumentes verfügbar.
+2 | **litstrat**                | [CodedDomain](#gc-litstrat-unco-cd)  | Lithostratigraphische Einheit.. Die möglichen Werte sind in der Tabelle GC_LITSTRAT_UNCO_CD im Anhang dieses Dokumentes verfügbar.
 []()           | Cardinality [1] |                                                      |
-3 | **litho**                | [CodedDomain](#gc-litho-cd)  | . Die möglichen Werte sind in der Tabelle GC_LITHO_CD im Anhang dieses Dokumentes verfügbar.
+3 | **litho**                | [CodedDomain](#gc-litho-cd)  | Lithologische Beschreibung. Die möglichen Werte sind in der Tabelle GC_LITHO_CD im Anhang dieses Dokumentes verfügbar.
 []()           | Cardinality [1..3] |                                                      |
-4 | **chrono_t**                | [CodedDomain](#gc-chrono-cd)  | . Die möglichen Werte sind in der Tabelle GC_CHRONO_CD im Anhang dieses Dokumentes verfügbar.
+4 | **chrono_t**                | [CodedDomain](#gc-chrono-cd)  | Chronostratigraphische Zuordnung der Obergrenze der Kartiereinheit (Top). Die möglichen Werte sind in der Tabelle GC_CHRONO_CD im Anhang dieses Dokumentes verfügbar.
 []()           | Cardinality [1] |                                                      |
-5 | **chrono_b**                | [CodedDomain](#gc-chrono-cd)  | . Die möglichen Werte sind in der Tabelle GC_CHRONO_CD im Anhang dieses Dokumentes verfügbar.
+5 | **chrono_b**                | [CodedDomain](#gc-chrono-cd)  | Chronostratigraphische Zuordnung der Untergrenze der Kartiereinheit (Basis). Die möglichen Werte sind in der Tabelle GC_CHRONO_CD im Anhang dieses Dokumentes verfügbar.
 []()           | Cardinality [1] |                                                      |
-6 | **mat_type**                |                                     | 
+6 | **mat_type**                |                                     | Materialbezeichnung (lithologische Einheit)
 []()           | Cardinality [0..3] | Lithostratigraphic_Units_Litho                                       |
-7 | **buried_out**                | boolean                                    | 
+7 | **buried_out**                | boolean                                    | Wurde das Lockergestein wieder verdeckt
 []()           | Cardinality [1] |                                        |
-8 | **composit**                | table                                    | 
+8 | **composit**                | table                                    | Zusammensetzung des Lockergesteins
 []()           | Cardinality [0..3] | gc_composit                                       |
-9 | **admixture**                | table                                    | 
+9 | **admixture**                | table                                    | Beimengung
 []()           | Cardinality [0..2] | gc_admixture                                       |
 10 | **structur**                | [CodedDomain](#unconsolidated-deposits-plg-structur)  | Textur des Lockergesteins. 
 []()           | Cardinality [0..1] |                                                      |
-11 | **charact**                | table                                    | Spezifische Eigenschaft
+11 | **charact**                | table                                    | Spezifische Eigenschaft.
 []()           | Cardinality [0..3] | gc_charcat                                       |
 12 | **morpholo**                | [CodedDomain](#unconsolidated-deposits-plg-morpholo)  | Morphologie der Lockergesteinseinheit. 
 []()           | Cardinality [0..1] |                                                      |
 13 | **glac_type**                | [CodedDomain](#unconsolidated-deposits-plg-glac-type)  | Gletschertyp; Attribut nur für Moränen. 
 []()           | Cardinality [0..1] |                                                      |
-14 | **ref_year**                | string                                    | Zeitpunkt oder Zeitperiode. Zum Beispiel «1940 1943, Periode der Drainage» (muss präzisiert werden)
+14 | **ref_year**                | string                                    | Zeitpunkt oder Zeitperiode. Zum Beispiel «1940 1943, Periode der Drainage» (muss präzisiert werden).
 []()           | Cardinality [0..1] |                                        |
 15 | **thin_cover**                | [CodedDomain](#unconsolidated-deposits-plg-thin-cover)  | Lockermaterialbedeckung, wenn vorhanden.. 
 []()           | Cardinality [0..1] |                                                      |
@@ -217,7 +217,7 @@ _Objektart_
 
 
 #### Attribute litstrat
-__
+_Lithostratigraphische Einheit._
 Siehe die CodedDomain [GC_LITSTRAT_UNCO_CD](#gc-litstrat-unco-cd) in Ahhang
 
 
@@ -225,7 +225,7 @@ Siehe die CodedDomain [GC_LITSTRAT_UNCO_CD](#gc-litstrat-unco-cd) in Ahhang
 
 
 #### Attribute litho
-__
+_Lithologische Beschreibung_
 Siehe die CodedDomain [GC_LITHO_CD](#gc-litho-cd) in Ahhang
 
 
@@ -233,7 +233,7 @@ Siehe die CodedDomain [GC_LITHO_CD](#gc-litho-cd) in Ahhang
 
 
 #### Attribute chrono_t
-__
+_Chronostratigraphische Zuordnung der Obergrenze der Kartiereinheit (Top)_
 Siehe die CodedDomain [GC_CHRONO_CD](#gc-chrono-cd) in Ahhang
 
 
@@ -241,7 +241,7 @@ Siehe die CodedDomain [GC_CHRONO_CD](#gc-chrono-cd) in Ahhang
 
 
 #### Attribute chrono_b
-__
+_Chronostratigraphische Zuordnung der Untergrenze der Kartiereinheit (Basis)_
 Siehe die CodedDomain [GC_CHRONO_CD](#gc-chrono-cd) in Ahhang
 
 
@@ -249,13 +249,13 @@ Siehe die CodedDomain [GC_CHRONO_CD](#gc-chrono-cd) in Ahhang
 
 
 #### Attribute mat_type
-__
+_Materialbezeichnung (lithologische Einheit)_
 
 
 
 
 #### Attribute buried_out
-__
+_Wurde das Lockergestein wieder verdeckt_
 _Datentyp:  boolean_
 
 
@@ -263,13 +263,13 @@ _Datentyp:  boolean_
 
 
 #### Attribute composit
-__
+_Zusammensetzung des Lockergesteins_
 
 
 
 
 #### Attribute admixture
-__
+_Beimengung_
 
 
 
@@ -298,7 +298,7 @@ _Textur des Lockergesteins_
 
 
 #### Attribute charact
-_Spezifische Eigenschaft_
+_Spezifische Eigenschaft._
 
 
 
@@ -347,7 +347,7 @@ _Gletschertyp; Attribut nur für Moränen_
 
 
 #### Attribute ref_year
-_Zeitpunkt oder Zeitperiode. Zum Beispiel «1940 1943, Periode der Drainage» (muss präzisiert werden)_
+_Zeitpunkt oder Zeitperiode. Zum Beispiel «1940 1943, Periode der Drainage» (muss präzisiert werden)._
 _Datentyp:  string_
 
 
@@ -388,8 +388,8 @@ Die Klasse [Bedrock_PLG](#bedrock-plg) enthält alle flächenbildenden lithostra
 1 | **kind**                | subtype                                    | Spezifische Eigenschaft
 []()           | Cardinality [1] | 14334001                                       |
 2 | **fm_homog**                |                                     | Gesteinsaufbau
-[]()           | Cardinality [] |                                        |
-3 | **listrat**                | [CodedDomain](#gc-litstrat-bed-cd)  | Lithostratigraphische Einhei. Die möglichen Werte sind in der Tabelle GC_LITSTRAT_BED_CD im Anhang dieses Dokumentes verfügbar.
+[]()           | Cardinality [1] |                                        |
+3 | **listrat**                | [CodedDomain](#gc-litstrat-bed-cd)  | Lithostratigraphische Einheit. Die möglichen Werte sind in der Tabelle GC_LITSTRAT_BED_CD im Anhang dieses Dokumentes verfügbar.
 []()           | Cardinality [1] |                                                      |
 4 | **litho**                | [CodedDomain](#gc-litho-cd)  | Lithologische Beschreibung. Die möglichen Werte sind in der Tabelle GC_LITHO_CD im Anhang dieses Dokumentes verfügbar.
 []()           | Cardinality [1..3] |                                                      |
@@ -453,7 +453,7 @@ _Gesteinsaufbau_
 
 
 #### Attribute listrat
-_Lithostratigraphische Einhei_
+_Lithostratigraphische Einheit_
 Siehe die CodedDomain [GC_LITSTRAT_BED_CD](#gc-litstrat-bed-cd) in Ahhang
 
 
@@ -2076,7 +2076,7 @@ _Datentyp:  string_
 
 
 ### Class Mineralised_Zone_L {#mineralised-zone-l}
-
+Die Klasse [Mineralised_Zone_L](#mineralised-zone-l) beinhaltet Vererzungszonen.
 
 
 
@@ -2111,7 +2111,7 @@ _Datentyp:  string_
 
 
 ### Class Sedimentary_Structures_PT {#sedimentary-structures-pt}
-
+Die Klasse [Sedimentary_Structures_PT](#sedimentary-structures-pt) enthält beobachtete Sedimentstrukturen.
 
 
 
