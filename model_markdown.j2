@@ -30,9 +30,10 @@
     | Name                         | Type                              | Description
 ----|------------------------------|-----------------------------------|--------------------------------------
 {% for attr in cls.attributes -%}
-{% set slug = "%s-%s" % (cls.name, attr.name) %}
-{%- if attr.att_type == 'CD' -%}
-{{loop.index}} | **{{ attr.name  }}**                | [CodedDomain](#{{slug| slugify}})                    | {{ attr.description|trim }}
+{%- if attr.att_type == 'CD' -%}{% set slug = "%s-%s" % (cls.name, attr.name) -%}
+{%- elif attr.att_type == 'annex' -%}{% set slug, location = attr.value, 'vgl. Anhang %s' % attr.value %}{% set see_annex = 'Die möglichen Werte sind in der Tabelle %s im Anhang dieses Dokumentes verfügbar.' % attr.value %}{%- else -%}{% set slug = None %}{% endif -%}
+{%- if slug != None -%}
+{{loop.index}} | **{{ attr.name  }}**                | [CodedDomain](#{{slug| slugify}})  | {{ attr.description|trim }}. {{ see_annex }}
 []()           | Cardinality [{{ attr.cardinality}}] |                                                      |
 {% else -%}
 {{loop.index}} | **{{ attr.name  }}**                | {{attr.att_type}}                                    | {{ attr.description|trim }}
@@ -51,6 +52,9 @@ _{{ attr.description|trim|highlight}}_
 {%- if attr.att_type in ('boolean', 'string', 'float', 'range', 'integer') %}
 _Datentyp:  {{ attr.att_type  }}_
 {% endif %}
+{%- if attr.att_type == 'annex' %}
+Siehe die CodedDomain [{{attr.value}}](#{{attr.value| slugify}}) in Ahhang
+{% endif %}
 
 {% if 'pairs' in attr -%}
 |GeolCode|Deutsch|Français|
@@ -62,4 +66,20 @@ _Datentyp:  {{ attr.att_type  }}_
 
 {% endfor %}
 {% endfor %}
+{% endfor %}
+
+
+{% for annex in annexes -%}
+
+
+## Anhang {{ annex.name |upper}} {{ '{#'}}{{annex.name | slugify}}{{'}'}}
+{{ annex.description }}
+
+{% if 'pairs' in annex -%}
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+{% for key, value in annex.pairs.items() -%}
+|{{key}} | {{value}} | {{value}}     |
+{% endfor %}
+{% endif %}
 {% endfor %}

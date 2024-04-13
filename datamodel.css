@@ -1,0 +1,65 @@
+/*
+ * I add this to html files generated with pandoc.
+ */
+
+@import "pandoc.css";
+
+html {
+  font-size: 100%;
+  overflow-y: scroll;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+body {
+  color: #444;
+  font-family: Sans, Arial, Helvetica, Frutiger;
+  font-size: 14px;
+  line-height: 1.7;
+  padding: 1em;
+  margin: auto;
+  max-width: 50em;
+  background: #fefefe;
+}
+
+@media screen and (min-width: 600px) {
+//For Tablets
+    body {
+        width: 100;
+    }
+}
+
+@media screen and (min-width: 768px) {
+//For Laptops
+    body {
+        width: 738px;
+    }
+}
+
+@media screen and (min-width: 992px) {
+//For Large Laptops
+    body {
+        width: 962px;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+//For Big TV's (HD Screens) 
+    body {
+        width: 1250px;
+    }
+}
+
+
+@media screen and (min-width: 1920px) {
+//For Projectors or Higher Resolution Screens (Full HD)
+    body {
+        width: 1890px;
+    }
+}
+@media screen and (min-width: 3840px) {
+//For 4K Displays (Ultra HD)
+    body {
+        width: 3810px;
+    }
+}

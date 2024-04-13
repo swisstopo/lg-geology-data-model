@@ -26,13 +26,13 @@ Die Klasse [Unconsolidated_Deposits_PT](#unconsolidated-deposits-pt) umfasst ein
 ----|------------------------------|-----------------------------------|--------------------------------------
 1 | **kind**                | subtype                                    | Objektart
 []()           | Cardinality [1] | 14401                                       |
-2 | **status**                | [CodedDomain](#unconsolidated-deposits-pt-status)                    | Zustand der Objektart
+2 | **status**                | [CodedDomain](#unconsolidated-deposits-pt-status)  | Zustand der Objektart. 
 []()           | Cardinality [1] |                                                      |
-3 | **rock_type**                | [CodedDomain](#unconsolidated-deposits-pt-rock-type)                    | Gesteinstyp (Kristallingestein / Sedimentgestein)
+3 | **rock_type**                | [CodedDomain](#unconsolidated-deposits-pt-rock-type)  | Gesteinstyp (Kristallingestein / Sedimentgestein). 
 []()           | Cardinality [0..1] |                                                      |
-4 | **rock_spe**                | [CodedDomain](#unconsolidated-deposits-pt-rock-spe)                    | Bezeichnung des Leitgesteins
+4 | **rock_spe**                | [CodedDomain](#unconsolidated-deposits-pt-rock-spe)  | Bezeichnung des Leitgesteins. 
 []()           | Cardinality [0..1] |                                                      |
-5 | **mat_type**                | [CodedDomain](#unconsolidated-deposits-pt-mat-type)                    | Materialbezeichnung (lithologische Einheit)
+5 | **mat_type**                | [CodedDomain](#gc-litho-unco-cd)  | Materialbezeichnung (lithologische Einheit). Die möglichen Werte sind in der Tabelle GC_LITHO_UNCO_CD im Anhang dieses Dokumentes verfügbar.
 []()           | Cardinality [0..1] |                                                      |
 6 | **orig_descr**                | string                                    | Originalbezeichnung gemäss der Legende der zugrundeliegenden geologischen Karte
 []()           | Cardinality [0..1] |                                        |
@@ -126,79 +126,10 @@ _Bezeichnung des Leitgesteins_
 
 
 
-#### Attribute mat_type {#unconsolidated-deposits-pt-mat-type}
+#### Attribute mat_type
 _Materialbezeichnung (lithologische Einheit)_
+Siehe die CodedDomain [GC_LITHO_UNCO_CD](#gc-litho-unco-cd) in Ahhang
 
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|15101039 | Alluvion, undifferenziert | Alluvion, undifferenziert     |
-|15101067 | anthropogene Elemente, undifferenziert | anthropogene Elemente, undifferenziert     |
-|15101062 | äolischer Sand, Flugsand | äolischer Sand, Flugsand     |
-|15101061 | äolisches Sediment, undifferenziert | äolisches Sediment, undifferenziert     |
-|15101071 | Auffüllung | Auffüllung     |
-|15101070 | Aufschüttung, Damm | Aufschüttung, Damm     |
-|15101041 | Bachschutt | Bachschutt     |
-|15101006 | Bergsturzablagerung | Bergsturzablagerung     |
-|15101015 | Blockgletscher | Blockgletscher     |
-|15101010 | Blockschutt | Blockschutt     |
-|15101072 | Deponie | Deponie     |
-|15101049 | detritische Verlandungsbildung | detritische Verlandungsbildung     |
-|15101075 | dünne Lockermaterialbedeckung | dünne Lockermaterialbedeckung     |
-|15101086 | Entwässerungssediment | Entwässerungssediment     |
-|15101007 | Felssturzablagerung | Felssturzablagerung     |
-|15101040 | fluviatiler Schotter | fluviatiler Schotter     |
-|15101026 | fluviatiles Sediment, undifferenziert | fluviatiles Sediment, undifferenziert     |
-|15101035 | gemischter Schutt | gemischter Schutt     |
-|15101076 | geringmächtige Lockergesteinsbedeckung | geringmächtige Lockergesteinsbedeckung     |
-|15101031 | glazifluviatiler Schotter | glazifluviatiler Schotter     |
-|15101028 | glazifluviatiles Sediment, undifferenziert | glazifluviatiles Sediment, undifferenziert     |
-|15101019 | glazigenes Sediment, undifferenziert | glazigenes Sediment, undifferenziert     |
-|15101047 | glazilakustrisches Deltasediment | glazilakustrisches Deltasediment     |
-|15101046 | glazilakustrisches Sediment, undifferenziert | glazilakustrisches Sediment, undifferenziert     |
-|15101003 | gravitative Sedimente und Verwitterungsbildungen, undifferenziert | gravitative Sedimente und Verwitterungsbildungen, undifferenziert     |
-|15101079 | Gyttja | Gyttja     |
-|15101073 | Halde | Halde     |
-|15101014 | Hanglehm, Schwemmlehm | Hanglehm, Schwemmlehm     |
-|15101009 | Hangschutt | Hangschutt     |
-|15101081 | hydrochemische Bildungen (Kalksinter) | hydrochemische Bildungen (Kalksinter)     |
-|15101083 | In-situ-Verwitterungsschutt | In-situ-Verwitterungsschutt     |
-|15101069 | künstliche Ablagerung, undifferenziert | künstliche Ablagerung, undifferenziert     |
-|15101057 | lakustrisches Deltasediment | lakustrisches Deltasediment     |
-|15101044 | lakustrisches Sediment, undifferenziert | lakustrisches Sediment, undifferenziert     |
-|15101008 | Lawinenschutt | Lawinenschutt     |
-|15101054 | Lignit (palustrisches Sediment) | Lignit (palustrisches Sediment)     |
-|15101001 | Lockergestein | Lockergestein     |
-|15101063 | Löss, Lösslehm | Löss, Lösslehm     |
-|15101021 | Moräne (Till), undifferenziert | Moräne (Till), undifferenziert     |
-|15101024 | Moräne auf Gletscher oder Toteis (Glacier or Dead Ice covered by Till) | Moräne auf Gletscher oder Toteis (Glacier or Dead Ice covered by Till)     |
-|15101037 | Murgangablagerung | Murgangablagerung     |
-|15101050 | palustrisches Sediment | palustrisches Sediment     |
-|15101051 | palustrisches Sediment, undifferenziert | palustrisches Sediment, undifferenziert     |
-|15101013 | Plateaulehm | Plateaulehm     |
-|15101080 | Quelltuff (Kalksinter, Lockergestein) | Quelltuff (Kalksinter, Lockergestein)     |
-|15101030 | randglazialer Schotter | randglazialer Schotter     |
-|15101033 | Rückzugsschotter | Rückzugsschotter     |
-|15101017 | Rutschmasse | Rutschmasse     |
-|15101087 | Sedimentärer Gang (clastic dike) | Sedimentärer Gang (clastic dike)     |
-|15101058 | Seebodensediment | Seebodensediment     |
-|15101059 | Seekreide | Seekreide     |
-|15101034 | Stauschotter | Stauschotter     |
-|15101056 | Strandablagerungen | Strandablagerungen     |
-|15101084 | strukturierter Hangschutt | strukturierter Hangschutt     |
-|15101005 | Sturzablagerung, undifferenziert | Sturzablagerung, undifferenziert     |
-|15101048 | subaquatisch abgelagerte Moräne (Waterlaid Till) | subaquatisch abgelagerte Moräne (Waterlaid Till)     |
-|15101052 | Sumpf | Sumpf     |
-|15101078 | tiefgründige Verwitterungsdecke | tiefgründige Verwitterungsdecke     |
-|15101053 | Torfmoor, Torf | Torfmoor, Torf     |
-|15101082 | Travertin (Kalksinter, Lockergestein) | Travertin (Kalksinter, Lockergestein)     |
-|15101085 | Tsunamiablagerung | Tsunamiablagerung     |
-|15101042 | Überschwemmungssediment | Überschwemmungssediment     |
-|15101012 | Verwitterungslehm, undifferenziert | Verwitterungslehm, undifferenziert     |
-|15101032 | Vorstossschotter | Vorstossschotter     |
-|15101065 | vulkanische Asche | vulkanische Asche     |
-|15101016 | zerrüttete Sackungsmasse | zerrüttete Sackungsmasse     |
-|999997 | Unknown | Unknown     |
-|999998 | Not applicable | Not applicable     |
 
 
 
@@ -240,13 +171,13 @@ Fallbeispiele abgebildet.
 ----|------------------------------|-----------------------------------|--------------------------------------
 1 | **kind**                | subtype                                    | Objektart
 []()           | Cardinality [1] | 14517                                       |
-2 | **litstrat**                | [CodedDomain](#unconsolidated-deposits-plg-litstrat)                    | 
+2 | **litstrat**                | [CodedDomain](#gc-litstrat-unco-cd)  | . Die möglichen Werte sind in der Tabelle GC_LITSTRAT_UNCO_CD im Anhang dieses Dokumentes verfügbar.
 []()           | Cardinality [1] |                                                      |
-3 | **litho**                | [CodedDomain](#unconsolidated-deposits-plg-litho)                    | 
+3 | **litho**                | [CodedDomain](#gc-litho-cd)  | . Die möglichen Werte sind in der Tabelle GC_LITHO_CD im Anhang dieses Dokumentes verfügbar.
 []()           | Cardinality [1..3] |                                                      |
-4 | **chrono_t**                | [CodedDomain](#unconsolidated-deposits-plg-chrono-t)                    | 
+4 | **chrono_t**                | [CodedDomain](#gc-chrono-cd)  | . Die möglichen Werte sind in der Tabelle GC_CHRONO_CD im Anhang dieses Dokumentes verfügbar.
 []()           | Cardinality [1] |                                                      |
-5 | **chrono_b**                | [CodedDomain](#unconsolidated-deposits-plg-chrono-b)                    | 
+5 | **chrono_b**                | [CodedDomain](#gc-chrono-cd)  | . Die möglichen Werte sind in der Tabelle GC_CHRONO_CD im Anhang dieses Dokumentes verfügbar.
 []()           | Cardinality [1] |                                                      |
 6 | **mat_type**                |                                     | 
 []()           | Cardinality [0..3] | Lithostratigraphic_Units_Litho                                       |
@@ -256,17 +187,17 @@ Fallbeispiele abgebildet.
 []()           | Cardinality [0..3] | gc_composit                                       |
 9 | **admixture**                | table                                    | 
 []()           | Cardinality [0..2] | gc_admixture                                       |
-10 | **structur**                | [CodedDomain](#unconsolidated-deposits-plg-structur)                    | Textur des Lockergesteins
+10 | **structur**                | [CodedDomain](#unconsolidated-deposits-plg-structur)  | Textur des Lockergesteins. 
 []()           | Cardinality [0..1] |                                                      |
 11 | **charact**                | table                                    | Spezifische Eigenschaft
 []()           | Cardinality [0..3] | gc_charcat                                       |
-12 | **morpholo**                | [CodedDomain](#unconsolidated-deposits-plg-morpholo)                    | Morphologie der Lockergesteinseinheit
+12 | **morpholo**                | [CodedDomain](#unconsolidated-deposits-plg-morpholo)  | Morphologie der Lockergesteinseinheit. 
 []()           | Cardinality [0..1] |                                                      |
-13 | **glac_type**                | [CodedDomain](#unconsolidated-deposits-plg-glac-type)                    | Gletschertyp; Attribut nur für Moränen
+13 | **glac_type**                | [CodedDomain](#unconsolidated-deposits-plg-glac-type)  | Gletschertyp; Attribut nur für Moränen. 
 []()           | Cardinality [0..1] |                                                      |
 14 | **ref_year**                | string                                    | Zeitpunkt oder Zeitperiode. Zum Beispiel «1940 1943, Periode der Drainage» (muss präzisiert werden)
 []()           | Cardinality [0..1] |                                        |
-15 | **thin_cover**                | [CodedDomain](#unconsolidated-deposits-plg-thin-cover)                    | Lockermaterialbedeckung, wenn vorhanden.
+15 | **thin_cover**                | [CodedDomain](#unconsolidated-deposits-plg-thin-cover)  | Lockermaterialbedeckung, wenn vorhanden.. 
 []()           | Cardinality [0..1] |                                                      |
 16 | **orig_descr**                |                                     | Originalbezeichnung gemäss der Legende der zugrundeliegenden geologischen Karte
 []()           | Cardinality [1] | string                                       |
@@ -285,1131 +216,34 @@ _Objektart_
 
 
 
-#### Attribute litstrat {#unconsolidated-deposits-plg-litstrat}
+#### Attribute litstrat
 __
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|15201044 | 1. letzteiszeitlischs Vorstoss | 1. letzteiszeitlischs Vorstoss     |
-|15201043 | 2. letzteiszeitlischs Vorstoss | 2. letzteiszeitlischs Vorstoss     |
-|15201210 | Aabach-Schotter | Aabach-Schotter     |
-|15201055 | Aarau-Schotter | Aarau-Schotter     |
-|15201167 | Aarburg-Schotter | Aarburg-Schotter     |
-|15201136 | Aare-Schotter | Aare-Schotter     |
-|15201271 | Aatal-Seebodenlehm | Aatal-Seebodenlehm     |
-|15201075 | Aathal-Schotter | Aathal-Schotter     |
-|15201540 | Alluvion von Ransun | Alluvion von Ransun     |
-|15201012 | Altberg-Till | Altberg-Till     |
-|15201183 | Alte Doubsschotter | Alte Doubsschotter     |
-|15201135 | Altenburg-Fulach-Terrasse | Altenburg-Fulach-Terrasse     |
-|15201001 | Ältere Ablagerungen, undifferenziert | Ältere Ablagerungen, undifferenziert     |
-|15201071 | Ältere Beckenfüllungen | Ältere Beckenfüllungen     |
-|15201189 | Alterswil-Schotter | Alterswil-Schotter     |
-|15201028 | Ämmert-Schotter | Ämmert-Schotter     |
-|15201029 | Ämmert-Till | Ämmert-Till     |
-|15201512 | Ämmet-Schotter | Ämmet-Schotter     |
-|15201160 | Attiswil-Schotter | Attiswil-Schotter     |
-|15201326 | Bachschutt der Gamsa | Bachschutt der Gamsa     |
-|15201331 | Bachschutt der Gürbe | Bachschutt der Gürbe     |
-|15201328 | Bachschutt der Lonza | Bachschutt der Lonza     |
-|15201329 | Bachschutt der Saltina | Bachschutt der Saltina     |
-|15201330 | Bachschutt der Vispa | Bachschutt der Vispa     |
-|15201323 | Bachschutt des Baltschiederbachs | Bachschutt des Baltschiederbachs     |
-|15201324 | Bachschutt des Bietschbachs | Bachschutt des Bietschbachs     |
-|15201325 | Bachschutt des Chelchbachs | Bachschutt des Chelchbachs     |
-|15201327 | Bachschutt des Jolibachs | Bachschutt des Jolibachs     |
-|15201332 | Bachschutt des Lombachs | Bachschutt des Lombachs     |
-|15201550 | Balm-Schotter | Balm-Schotter     |
-|15201248 | Bänkel-Schotter | Bänkel-Schotter     |
-|15201548 | Bannhalden-Schotter | Bannhalden-Schotter     |
-|15201256 | Bannholz-Schotter | Bannholz-Schotter     |
-|15201097 | Bärengraben-Schotter und -Till | Bärengraben-Schotter und -Till     |
-|15201336 | Bärenholz-Till | Bärenholz-Till     |
-|15201194 | Bennau-Schotter | Bennau-Schotter     |
-|15201017 | Berg-Schotter | Berg-Schotter     |
-|15201532 | Bergsturzablagerung von Bargis | Bergsturzablagerung von Bargis     |
-|15201533 | Bergsturzablagerung von Fidaz | Bergsturzablagerung von Fidaz     |
-|15201531 | Bergsturzablagerung von Ralligen (im Thunersee) | Bergsturzablagerung von Ralligen (im Thunersee)     |
-|15201299 | Bergsturzablagerungen vom Chapf | Bergsturzablagerungen vom Chapf     |
-|15201302 | Bergsturzablagerungen vom Delenwald | Bergsturzablagerungen vom Delenwald     |
-|15201301 | Bergsturzablagerungen vom Drussetschawald | Bergsturzablagerungen vom Drussetschawald     |
-|15201306 | Bergsturzablagerungen vom Kernwald | Bergsturzablagerungen vom Kernwald     |
-|15201460 | Bergsturzablagerungen vom Stützwald | Bergsturzablagerungen vom Stützwald     |
-|15201296 | Bergsturzablagerungen von Brienz | Bergsturzablagerungen von Brienz     |
-|15201298 | Bergsturzablagerungen von Brüsis | Bergsturzablagerungen von Brüsis     |
-|15201291 | Bergsturzablagerungen von Castasegna | Bergsturzablagerungen von Castasegna     |
-|15201288 | Bergsturzablagerungen von Chessel-Noville | Bergsturzablagerungen von Chessel-Noville     |
-|15201287 | Bergsturzablagerungen von Chiètres | Bergsturzablagerungen von Chiètres     |
-|15201300 | Bergsturzablagerungen von Derborence | Bergsturzablagerungen von Derborence     |
-|15201303 | Bergsturzablagerungen von Elm | Bergsturzablagerungen von Elm     |
-|15201297 | Bergsturzablagerungen von Flims | Bergsturzablagerungen von Flims     |
-|15201304 | Bergsturzablagerungen von Goldau | Bergsturzablagerungen von Goldau     |
-|15201290 | Bergsturzablagerungen von Gwelber-Laui-Weid | Bergsturzablagerungen von Gwelber-Laui-Weid     |
-|15201305 | Bergsturzablagerungen von Iragell | Bergsturzablagerungen von Iragell     |
-|15201295 | Bergsturzablagerungen von Mutta | Bergsturzablagerungen von Mutta     |
-|15201289 | Bergsturzablagerungen von Novalles-Vugelles | Bergsturzablagerungen von Novalles-Vugelles     |
-|15201293 | Bergsturzablagerungen von Prapan | Bergsturzablagerungen von Prapan     |
-|15201294 | Bergsturzablagerungen von Schaingels | Bergsturzablagerungen von Schaingels     |
-|15201286 | Bergsturzablagerungen von Sierre | Bergsturzablagerungen von Sierre     |
-|15201292 | Bergsturzablagerungen von Sogno | Bergsturzablagerungen von Sogno     |
-|15201310 | Bergsturzablagerungen von Tamins | Bergsturzablagerungen von Tamins     |
-|15201307 | Bergsturzablagerungen von Triesenberg | Bergsturzablagerungen von Triesenberg     |
-|15201053 | Beringen-Eiszeit | Beringen-Eiszeit     |
-|15201164 | Berken-Sand | Berken-Sand     |
-|15201163 | Berken-Schotter | Berken-Schotter     |
-|15201156 | Bersturzmasse von Selzach | Bersturzmasse von Selzach     |
-|15201523 | Beuggen-Schotter | Beuggen-Schotter     |
-|15201153 | Bick-Till | Bick-Till     |
-|15201263 | Bire-Bergsturzablagerungen | Bire-Bergsturzablagerungen     |
-|15201462 | Birkenhof-Formation | Birkenhof-Formation     |
-|15201009 | Birmenstorf-Vergletscherung (2. LGM-Vorstoss) | Birmenstorf-Vergletscherung (2. LGM-Vorstoss)     |
-|15201013 | Birmenstorf-Vorstoss | Birmenstorf-Vorstoss     |
-|15201014 | Birr-Schotter | Birr-Schotter     |
-|15201052 | Birrfeld- und Klettgau-Paläoböden | Birrfeld- und Klettgau-Paläoböden     |
-|15201006 | Birrfeld-Eiszeit (Letzte Eiszeit) | Birrfeld-Eiszeit (Letzte Eiszeit)     |
-|15201255 | Bohlingen-Schotter | Bohlingen-Schotter     |
-|15201308 | Bonaduz-Formation | Bonaduz-Formation     |
-|15201309 | Bonfol-Ton | Bonfol-Ton     |
-|15201465 | Böschmatt-Schotter | Böschmatt-Schotter     |
-|15201466 | Bramegg-Schotter | Bramegg-Schotter     |
-|15201221 | Brandflue-Schotter | Brandflue-Schotter     |
-|15201150 | Breite-Terrasse | Breite-Terrasse     |
-|15201520 | Bruderhäusle-Schotter | Bruderhäusle-Schotter     |
-|15201339 | Brüggstutz-Schotter | Brüggstutz-Schotter     |
-|15201120 | Buechen-Formation | Buechen-Formation     |
-|15201470 | Büel-Schotter | Büel-Schotter     |
-|15201469 | Büelm-Schotter | Büelm-Schotter     |
-|15201085 | Buerfeld-Schotter | Buerfeld-Schotter     |
-|15201471 | Bünten-Schotter | Bünten-Schotter     |
-|15201094 | Bünten-Till | Bünten-Till     |
-|15201558 | Burgacher-Schotter | Burgacher-Schotter     |
-|15201243 | Butteberg-Schotter | Butteberg-Schotter     |
-|15201458 | Ceppo | Ceppo     |
-|15201233 | Chälen-Schotter | Chälen-Schotter     |
-|15201234 | Chälen-Till | Chälen-Till     |
-|15201559 | Chatzenstig-Schotter | Chatzenstig-Schotter     |
-|15201223 | Chatzenstrick-Schotter | Chatzenstrick-Schotter     |
-|15201258 | Chilchstapfen-Schotter | Chilchstapfen-Schotter     |
-|15201191 | Chisetal-Schotter | Chisetal-Schotter     |
-|15201242 | Chräjeloch-Schotter | Chräjeloch-Schotter     |
-|15201214 | Dagmersellen-Vorstoss | Dagmersellen-Vorstoss     |
-|15201250 | Deckenschotter, undifferenziert | Deckenschotter, undifferenziert     |
-|15201116 | Degermoos-Schotter | Degermoos-Schotter     |
-|15201115 | Dürn-Formation | Dürn-Formation     |
-|15201472 | Durnagel-Schotter | Durnagel-Schotter     |
-|15201473 | Dürrenroth-Schotter | Dürrenroth-Schotter     |
-|15201117 | Ebnet-Schotter | Ebnet-Schotter     |
-|15201123 | Egg-Schotter | Egg-Schotter     |
-|15201119 | Egghalden-Schotter | Egghalden-Schotter     |
-|15201547 | Eggholz-Formation | Eggholz-Formation     |
-|15201474 | Egghüsli-Schotter | Egghüsli-Schotter     |
-|15201197 | Einsiedeln-Lehm | Einsiedeln-Lehm     |
-|15201546 | Ellikerholz-Formation | Ellikerholz-Formation     |
-|15201284 | Embrach-Seeablagerungen | Embrach-Seeablagerungen     |
-|15201144 | Emme-Schotter | Emme-Schotter     |
-|15201475 | Emmental-Schotter | Emmental-Schotter     |
-|15201030 | Emmet-Vorstoss | Emmet-Vorstoss     |
-|15201180 | Endingen-Schotter | Endingen-Schotter     |
-|15201159 | Enge-Schotter | Enge-Schotter     |
-|15201065 | Engiwald-Vorstoss | Engiwald-Vorstoss     |
-|15201054 | Entfelden-Schotter | Entfelden-Schotter     |
-|15201476 | Ergolztal-Schotter | Ergolztal-Schotter     |
-|15201510 | Ermensee-Schotter | Ermensee-Schotter     |
-|15201272 | Eschenbach-Formation | Eschenbach-Formation     |
-|15201265 | Fankhusgrabe-Schotter | Fankhusgrabe-Schotter     |
-|15201524 | Feldhof-Schotter | Feldhof-Schotter     |
-|15201121 | Feusi-Schotter | Feusi-Schotter     |
-|15201096 | Fisibach-Schotter | Fisibach-Schotter     |
-|15201262 | Fisistock-Bergsturzablagerungen | Fisistock-Bergsturzablagerungen     |
-|15201174 | Fislisbach-Schotter | Fislisbach-Schotter     |
-|15201154 | Flüe-Till | Flüe-Till     |
-|15201011 | Flüefeld-Schotter | Flüefeld-Schotter     |
-|15201146 | Flumenthal-Lehm | Flumenthal-Lehm     |
-|15201051 | Flurlingen-Quelltuff | Flurlingen-Quelltuff     |
-|15201106 | Forenirchel-Schotter | Forenirchel-Schotter     |
-|15201105 | Fornech-Schotter | Fornech-Schotter     |
-|15201018 | Fornholz-Till | Fornholz-Till     |
-|15201217 | Forst-Schotter | Forst-Schotter     |
-|15201477 | Gammenthal-Schotter | Gammenthal-Schotter     |
-|15201145 | Gäu-Schotter | Gäu-Schotter     |
-|15201079 | Geisslingen-Schotter | Geisslingen-Schotter     |
-|15201251 | Girenbad-Schotter | Girenbad-Schotter     |
-|15201047 | Glazi-lakustrische Serie | Glazi-lakustrische Serie     |
-|15201343 | Glütschtal-Formation | Glütschtal-Formation     |
-|15201478 | Gondiswil-Formation | Gondiswil-Formation     |
-|15201050 | Gondiswil-Interglazial (Letztes Integlazial) | Gondiswil-Interglazial (Letztes Integlazial)     |
-|15201203 | Gontenschwil-Lehm | Gontenschwil-Lehm     |
-|15201020 | Gontenschwil-Till | Gontenschwil-Till     |
-|15201019 | Gontenschwil-Vorstoss | Gontenschwil-Vorstoss     |
-|15201038 | Gossau-Interstadial | Gossau-Interstadial     |
-|15201169 | Grandson-Formation | Grandson-Formation     |
-|15201083 | Gränichen-Schotter | Gränichen-Schotter     |
-|15201192 | Grauholz-Schotter | Grauholz-Schotter     |
-|15201267 | Grundtal-Schotter | Grundtal-Schotter     |
-|15201232 | Gubel-Schotter | Gubel-Schotter     |
-|15201275 | Gublen-Schotter | Gublen-Schotter     |
-|15201031 | Gündelmoos-Lehm | Gündelmoos-Lehm     |
-|15201341 | Guntelsei-Schotter | Guntelsei-Schotter     |
-|15201340 | Guntelsei-Till | Guntelsei-Till     |
-|15201274 | Günterstall-Schotter | Günterstall-Schotter     |
-|15201240 | Gutsch-Schotter | Gutsch-Schotter     |
-|15201082 | Habsburg-Eiszeit | Habsburg-Eiszeit     |
-|15201080 | Habsburg-Hagenholz-Interglazial | Habsburg-Hagenholz-Interglazial     |
-|15201088 | Habsburg-Schotter | Habsburg-Schotter     |
-|15201086 | Habsburg-Vergletscherung | Habsburg-Vergletscherung     |
-|15201087 | Habsburg-Vorstoss | Habsburg-Vorstoss     |
-|15201072 | Hagenholz-Eiszeit | Hagenholz-Eiszeit     |
-|15201073 | Hagenholz-Vergletscherung | Hagenholz-Vergletscherung     |
-|15201074 | Hagenholz-Vorstoss | Hagenholz-Vorstoss     |
-|15201506 | Hagnau-Niveau | Hagnau-Niveau     |
-|15201344 | Hahni-Schotter | Hahni-Schotter     |
-|15201530 | Hahni-Till | Hahni-Till     |
-|15201278 | Halden-Seeablagerungen | Halden-Seeablagerungen     |
-|15201208 | Haselbach-Schotter | Haselbach-Schotter     |
-|15201479 | Hasewald-Schotter | Hasewald-Schotter     |
-|15201264 | Hasle-Schotter | Hasle-Schotter     |
-|15201270 | Haslentobel-Schotter | Haslentobel-Schotter     |
-|15201564 | Hasli-Formation | Hasli-Formation     |
-|15201177 | Hausen-Lehm | Hausen-Lehm     |
-|15201178 | Hausen-Moräne | Hausen-Moräne     |
-|15201245 | Heitere-Schotter | Heitere-Schotter     |
-|15201515 | Heubeerihübel-Schotter | Heubeerihübel-Schotter     |
-|15201480 | Hirzmatt-Schotter | Hirzmatt-Schotter     |
-|15201244 | Höchi-Schotter | Höchi-Schotter     |
-|15201003 | Hochterrasse | Hochterrasse     |
-|15201464 | Höhenschotter | Höhenschotter     |
-|15201005 | Höhere Deckenschotter | Höhere Deckenschotter     |
-|15201246 | Holziken-Schotter | Holziken-Schotter     |
-|15201513 | Homberg-Till | Homberg-Till     |
-|15201041 | Hombrechtikon-Vergletscherung (Frühletzteiszeitliche Vergl.) | Hombrechtikon-Vergletscherung (Frühletzteiszeitliche Vergl.)     |
-|15201257 | Hungerbol-Schotter | Hungerbol-Schotter     |
-|15201195 | Hütten-Schotter | Hütten-Schotter     |
-|15201098 | Iberig-Schotterkomplex | Iberig-Schotterkomplex     |
-|15201032 | Igliste-Schotter | Igliste-Schotter     |
-|15201311 | Informell benannte Bergsturzablagerungen | Informell benannte Bergsturzablagerungen     |
-|15201319 | Informell benannte fluviatile Schotter | Informell benannte fluviatile Schotter     |
-|15201312 | Informell benannte künstliche Ablagerungen | Informell benannte künstliche Ablagerungen     |
-|15201317 | Informell benannte Sackungsmassen | Informell benannte Sackungsmassen     |
-|15201322 | Informell benannter Bachschutt | Informell benannter Bachschutt     |
-|15201111 | Irchel-Dolomitschotter | Irchel-Dolomitschotter     |
-|15201108 | Irchel-Schotterkomplex | Irchel-Schotterkomplex     |
-|15201077 | Ittingen-Schotter | Ittingen-Schotter     |
-|15201209 | Jonen-Schotter | Jonen-Schotter     |
-|15201241 | Junkerenwald-Schotter | Junkerenwald-Schotter     |
-|15201182 | Juraschotter | Juraschotter     |
-|15201467 | Kaltenegg-Schotter | Kaltenegg-Schotter     |
-|15201166 | Käppelihof-Schotter | Käppelihof-Schotter     |
-|15201190 | Karlsruhe-Schotter | Karlsruhe-Schotter     |
-|15201142 | Kiessande von Madretsch | Kiessande von Madretsch     |
-|15201147 | Killwangen-Schaffhausen-Mellingen-Stadium | Killwangen-Schaffhausen-Mellingen-Stadium     |
-|15201037 | Kirchleerau-Till | Kirchleerau-Till     |
-|15201036 | Kirchleerau-Vorstoss | Kirchleerau-Vorstoss     |
-|15201219 | Kleinhöchstetten-Kies-Sand-Komplex | Kleinhöchstetten-Kies-Sand-Komplex     |
-|15201045 | Klettgau-Schotter | Klettgau-Schotter     |
-|15201236 | Kollbrunn-Schotter | Kollbrunn-Schotter     |
-|15201220 | Krauchthal-Schotter | Krauchthal-Schotter     |
-|15201539 | Kunkels-Formation | Kunkels-Formation     |
-|15201315 | Künstliche Ablagerungen der Gamsenried-Deponie | Künstliche Ablagerungen der Gamsenried-Deponie     |
-|15201313 | Künstliche Ablagerungen des Bahnhofs Brig | Künstliche Ablagerungen des Bahnhofs Brig     |
-|15201316 | Künstliche Ablagerungen des Riedertals | Künstliche Ablagerungen des Riedertals     |
-|15201314 | Künstliche Ablagerungen Golar | Künstliche Ablagerungen Golar     |
-|15201222 | Küsnacht-Schotter | Küsnacht-Schotter     |
-|15201158 | La-Côte-Schotter | La-Côte-Schotter     |
-|15201202 | La-Tuffière-Schotter | La-Tuffière-Schotter     |
-|15201114 | Langacher-Schotter | Langacher-Schotter     |
-|15201059 | Langwiesen-Vergletscherung | Langwiesen-Vergletscherung     |
-|15201060 | Langwiesen-Vorstoss | Langwiesen-Vorstoss     |
-|15201007 | Last Glacial Maximum (LGM), undiff. | Last Glacial Maximum (LGM), undiff.     |
-|15201008 | LGM-Rückzug | LGM-Rückzug     |
-|15201514 | Lindenberg-Till | Lindenberg-Till     |
-|15201122 | Lindenhau-Schotter | Lindenhau-Schotter     |
-|15201024 | Lindmühle-Vergletscherung (1. LGM-Vorstoss) | Lindmühle-Vergletscherung (1. LGM-Vorstoss)     |
-|15201027 | Lindmühle-Vorstoss | Lindmühle-Vorstoss     |
-|15201064 | Löhningen-Engiwald-Vergletscherung | Löhningen-Engiwald-Vergletscherung     |
-|15201067 | Löhningen-Vorstoss | Löhningen-Vorstoss     |
-|15201161 | Lommiswil-Schotter | Lommiswil-Schotter     |
-|15201444 | Löss, undifferenziert | Löss, undifferenziert     |
-|15201063 | Lupfig-Schotter | Lupfig-Schotter     |
-|15201186 | Malmkalk-Schotter der Randen-Täler | Malmkalk-Schotter der Randen-Täler     |
-|15201151 | Maximalstand (Kilwangen-Schaffhausen-Stadium) | Maximalstand (Kilwangen-Schaffhausen-Stadium)     |
-|15201070 | Meikirch-Interglazial | Meikirch-Interglazial     |
-|15201141 | Mély-Formation | Mély-Formation     |
-|15201201 | Menzingen-Schotter | Menzingen-Schotter     |
-|15201185 | Merenbach-Schotter | Merenbach-Schotter     |
-|15201481 | Mettlen-Schotter | Mettlen-Schotter     |
-|15201125 | Mischschotter | Mischschotter     |
-|15201101 | Mittlere Iberigschotter | Mittlere Iberigschotter     |
-|15201112 | Mittlere Irchelschotter | Mittlere Irchelschotter     |
-|15201048 | Mittlere Klettgauschotter | Mittlere Klettgauschotter     |
-|15201091 | Möhlin-Eiszeit (Grösste Eiszeit) | Möhlin-Eiszeit (Grösste Eiszeit)     |
-|15201092 | Möhlin-Vergletscherung | Möhlin-Vergletscherung     |
-|15201093 | Möhlin-Vorstoss | Möhlin-Vorstoss     |
-|15201081 | Möhlinerfeld-Paläoboden | Möhlinerfeld-Paläoboden     |
-|15201482 | Möhlinerfeld-Schotter | Möhlinerfeld-Schotter     |
-|15201511 | Mooretal-Schotter | Mooretal-Schotter     |
-|15201204 | Mooslerau-Lehm | Mooslerau-Lehm     |
-|15201039 | Mülligen-Paläoboden | Mülligen-Paläoboden     |
-|15201042 | Mülligen-Schotter | Mülligen-Schotter     |
-|15201521 | Mumpf-Schotter | Mumpf-Schotter     |
-|15201148 | Munot-Terrasse | Munot-Terrasse     |
-|15201188 | Münsingen-Schotterkomplex | Münsingen-Schotterkomplex     |
-|15201268 | Murg-Schieferkohle | Murg-Schieferkohle     |
-|15201483 | Muttenfeld-Schotter | Muttenfeld-Schotter     |
-|15201033 | Niderholz-Till | Niderholz-Till     |
-|15201527 | Niderstalden-Schotter | Niderstalden-Schotter     |
-|15201484 | Nidfurn-Schotter | Nidfurn-Schotter     |
-|15201002 | Niederterrasse | Niederterrasse     |
-|15201536 | Niederterrassenschotter, oberste Terrasse | Niederterrassenschotter, oberste Terrasse     |
-|15201534 | Niederterrassenschotter, tiefere Niveaus | Niederterrassenschotter, tiefere Niveaus     |
-|15201535 | Niederterrassenschotter, zweitoberste Terrasse | Niederterrassenschotter, zweitoberste Terrasse     |
-|15201040 | Niederweningen-Formation | Niederweningen-Formation     |
-|15201542 | Niklaushalden-Formation | Niklaushalden-Formation     |
-|15201134 | Nohl-Terrasse | Nohl-Terrasse     |
-|15201459 | Novazzano-Sand | Novazzano-Sand     |
-|15201099 | Obere Iberigschotter | Obere Iberigschotter     |
-|15201109 | Obere Irchelschotter | Obere Irchelschotter     |
-|15201046 | Obere Klettgauschotter | Obere Klettgauschotter     |
-|15201132 | Obere Singen-Terrasse | Obere Singen-Terrasse     |
-|15201100 | Oberer Till | Oberer Till     |
-|15201015 | Oberhard-Till | Oberhard-Till     |
-|15201485 | Oberhöhe-Grundmoräne | Oberhöhe-Grundmoräne     |
-|15201273 | Oberkirch-Seebodenlehm | Oberkirch-Seebodenlehm     |
-|15201486 | Obermoos-Schotter | Obermoos-Schotter     |
-|15201269 | Oberricken-Schotter | Oberricken-Schotter     |
-|15201162 | Oensingen-Moos-Lehm | Oensingen-Moos-Lehm     |
-|15201261 | Oeschinensee-Bergsturzablagerungen | Oeschinensee-Bergsturzablagerungen     |
-|15201259 | Ofenloch-Karstfüllung | Ofenloch-Karstfüllung     |
-|15201487 | Öflingen-Schotter | Öflingen-Schotter     |
-|15201215 | Oftringen-Schotter | Oftringen-Schotter     |
-|15201138 | Orvin-Schotter | Orvin-Schotter     |
-|15201025 | Otelfingen-Vorstoss | Otelfingen-Vorstoss     |
-|15201561 | Paradiesgärtli-Schotter | Paradiesgärtli-Schotter     |
-|15201076 | Pfyn-Vorstoss | Pfyn-Vorstoss     |
-|15201566 | Plaffeien-Seetone | Plaffeien-Seetone     |
-|15201567 | Plasselb-Stauschotter | Plasselb-Stauschotter     |
-|15201157 | Plateauschotter | Plateauschotter     |
-|15201333 | Pliozäne Ablagerungen | Pliozäne Ablagerungen     |
-|15201170 | Poissine-Formation | Poissine-Formation     |
-|15201212 | Port-Stauschotter | Port-Stauschotter     |
-|15201249 | Quartär, undifferenziert | Quartär, undifferenziert     |
-|15201224 | Rabennest-Schotter | Rabennest-Schotter     |
-|15201218 | Raintal-Deltaschotter | Raintal-Deltaschotter     |
-|15201225 | Ratengütsch-Schotter | Ratengütsch-Schotter     |
-|15201277 | Regelstein-Till | Regelstein-Till     |
-|15201230 | Reidbach-Schotter | Reidbach-Schotter     |
-|15201069 | Remigen-Schotter | Remigen-Schotter     |
-|15201068 | Remigen-Vorstoss | Remigen-Vorstoss     |
-|15201213 | Rempen-Stauschotter | Rempen-Stauschotter     |
-|15201062 | Reuenthal-Vorstoss | Reuenthal-Vorstoss     |
-|15201505 | Reuss-Schotterkomplex | Reuss-Schotterkomplex     |
-|15201176 | Reusstal-Lehm | Reusstal-Lehm     |
-|15201175 | Reusstal-Sand | Reusstal-Sand     |
-|15201507 | Reusstal-Seebodensediment | Reusstal-Seebodensediment     |
-|15201181 | Rhein- und Aareschotter | Rhein- und Aareschotter     |
-|15201133 | Rheinau-Terrasse | Rheinau-Terrasse     |
-|15201545 | Rheinau-Till | Rheinau-Till     |
-|15201228 | Richterswil-Seeton | Richterswil-Seeton     |
-|15201509 | Rickenbach-Schotter | Rickenbach-Schotter     |
-|15201522 | Riedmatt-Schotter | Riedmatt-Schotter     |
-|15201554 | Risibüel-Schotter | Risibüel-Schotter     |
-|15201238 | Ritteren-Schotterkomplex | Ritteren-Schotterkomplex     |
-|15201516 | Ritzhans-Schotter | Ritzhans-Schotter     |
-|15201084 | Roggehuse-Schotter | Roggehuse-Schotter     |
-|15201266 | Rossgaden-Schotter | Rossgaden-Schotter     |
-|15201488 | Rottal-Schotter | Rottal-Schotter     |
-|15201179 | Ruckfeld-Schotter | Ruckfeld-Schotter     |
-|15201489 | Rüdelwald-Schotter | Rüdelwald-Schotter     |
-|15201541 | Rüdlingen-Till | Rüdlingen-Till     |
-|15201247 | Ruedertal-Schotter | Ruedertal-Schotter     |
-|15201066 | Rüfenach-Vorstoss | Rüfenach-Vorstoss     |
-|15201490 | Rufswil-Schotter | Rufswil-Schotter     |
-|15201491 | Rütimatt-Schotter | Rütimatt-Schotter     |
-|15201078 | Ryhirt-Formation | Ryhirt-Formation     |
-|15201519 | Säckingen-Schotter | Säckingen-Schotter     |
-|15201318 | Sackungsmasse des Heinzenbergs | Sackungsmasse des Heinzenbergs     |
-|15201252 | Sagenbach-Schotter | Sagenbach-Schotter     |
-|15201556 | Saxegrabe-Schotter | Saxegrabe-Schotter     |
-|15201279 | Schafbüel-Formation | Schafbüel-Formation     |
-|15201061 | Schaffhausen-Schotter | Schaffhausen-Schotter     |
-|15201226 | Scherenspitz-Schotter | Scherenspitz-Schotter     |
-|15201095 | Schleitheim-Vorstoss | Schleitheim-Vorstoss     |
-|15201131 | Schlieren-Diessenhofen-Stetten-Stadien | Schlieren-Diessenhofen-Stetten-Stadien     |
-|15201553 | Schlossbuck-Schotter | Schlossbuck-Schotter     |
-|15201338 | Schlyffi-Till | Schlyffi-Till     |
-|15201555 | Schmerlet- und Toktri-Formation, undifferenziert | Schmerlet- und Toktri-Formation, undifferenziert     |
-|15201196 | Schnabelsberg-Stauchotter | Schnabelsberg-Stauchotter     |
-|15201518 | Schönegg-Formation | Schönegg-Formation     |
-|15201320 | Schotter und Sand der Rhône | Schotter und Sand der Rhône     |
-|15201321 | Schotter und Sand der Vispa | Schotter und Sand der Vispa     |
-|15201253 | Schrotzburg-Schotter | Schrotzburg-Schotter     |
-|15201254 | Schrotzburg-Till | Schrotzburg-Till     |
-|15201137 | Schüss-Schotter | Schüss-Schotter     |
-|15201493 | Schwande-Seebodensedimente | Schwande-Seebodensedimente     |
-|15201229 | Schwanden-Schotter | Schwanden-Schotter     |
-|15201492 | Schwanderholzwald-Schotter | Schwanderholzwald-Schotter     |
-|15201165 | Schwarzhäusern-Lehm | Schwarzhäusern-Lehm     |
-|15201139 | Seeablagerungen von Frinvillier und Rondchâtel | Seeablagerungen von Frinvillier und Rondchâtel     |
-|15201143 | Seeland-Schotter | Seeland-Schotter     |
-|15201016 | Seon-Vorstoss | Seon-Vorstoss     |
-|15201207 | Sihl-Schotter | Sihl-Schotter     |
-|15201235 | Sihlsprung-Schotter | Sihlsprung-Schotter     |
-|15201187 | Solothurn-Stadium | Solothurn-Stadium     |
-|15201494 | Soppensee-Seebodensedimente | Soppensee-Seebodensedimente     |
-|15201525 | Spärgacher-Schotter | Spärgacher-Schotter     |
-|15201495 | Speicherboden-Lokalmoräne | Speicherboden-Lokalmoräne     |
-|15201529 | Spiez-Schotter | Spiez-Schotter     |
-|15201543 | Stadel-Till | Stadel-Till     |
-|15201022 | Staffelbach-Schotter | Staffelbach-Schotter     |
-|15201023 | Staffelbach-Till | Staffelbach-Till     |
-|15201021 | Staffelbach-Vorstoss | Staffelbach-Vorstoss     |
-|15201211 | Starrberg-Schotter | Starrberg-Schotter     |
-|15201140 | Stauschotter von Diessbach | Stauschotter von Diessbach     |
-|15201342 | Steghalden-Schotter | Steghalden-Schotter     |
-|15201107 | Steig-Schotter | Steig-Schotter     |
-|15201468 | Steinhuserberg-Schotter | Steinhuserberg-Schotter     |
-|15201565 | Stetten-Schotter | Stetten-Schotter     |
-|15201334 | Stockesee-Sediment | Stockesee-Sediment     |
-|15201149 | Stokar-Terrasse | Stokar-Terrasse     |
-|15201335 | Strätligen-Till | Strätligen-Till     |
-|15201058 | Stüsslingen-Schotter | Stüsslingen-Schotter     |
-|15201552 | Südranden-Till | Südranden-Till     |
-|15201056 | Suhr-Schotter | Suhr-Schotter     |
-|15201124 | Sundgau-Schotter | Sundgau-Schotter     |
-|15201171 | Surbtal-Lehm | Surbtal-Lehm     |
-|15201173 | Surbtal-Schotter | Surbtal-Schotter     |
-|15201172 | Surbtal-Till | Surbtal-Till     |
-|15201026 | Tägerhard-Schotter | Tägerhard-Schotter     |
-|15201496 | terrasse lémanique de 10 m | terrasse lémanique de 10 m     |
-|15201497 | terrasse lémanique de 3 m | terrasse lémanique de 3 m     |
-|15201090 | Thalgut-Interglazial | Thalgut-Interglazial     |
-|15201282 | Tiefenwinkel-Seebodensedimente | Tiefenwinkel-Seebodensedimente     |
-|15201004 | Tiefere Deckenschotter | Tiefere Deckenschotter     |
-|15201538 | Tiefere Deckenschotter, oberes Niveau | Tiefere Deckenschotter, oberes Niveau     |
-|15201537 | Tiefere Deckenschotter, unteres Niveau | Tiefere Deckenschotter, unteres Niveau     |
-|15201193 | Trachslau-Schotter | Trachslau-Schotter     |
-|15201206 | Triengen-Lehm | Triengen-Lehm     |
-|15201205 | Triengen-Schotter | Triengen-Schotter     |
-|15201562 | Tubeschwanz-Schotter | Tubeschwanz-Schotter     |
-|15201168 | Tuileries-Formation | Tuileries-Formation     |
-|15201276 | Unter-Buechwald-Schotter | Unter-Buechwald-Schotter     |
-|15201517 | Unterdorf-Schotter | Unterdorf-Schotter     |
-|15201102 | Untere Iberigschotter | Untere Iberigschotter     |
-|15201113 | Untere Irchelschotter | Untere Irchelschotter     |
-|15201049 | Untere Klettgauschotter | Untere Klettgauschotter     |
-|15201130 | Untere Singen-Terrasse | Untere Singen-Terrasse     |
-|15201498 | Untere Zeller Schotter | Untere Zeller Schotter     |
-|15201103 | Unterer Till | Unterer Till     |
-|15201280 | Unteres-Huttenbüel-Schotter | Unteres-Huttenbüel-Schotter     |
-|15201499 | Untergrabehüsli-Schotter | Untergrabehüsli-Schotter     |
-|15201089 | Unterschlatt-Vorstoss | Unterschlatt-Vorstoss     |
-|15201500 | Untertreie-Schotter | Untertreie-Schotter     |
-|15201283 | Uznach-Schieferkohle | Uznach-Schieferkohle     |
-|15201057 | Veltheim-Schotter | Veltheim-Schotter     |
-|15201544 | Volken-Lehm | Volken-Lehm     |
-|15201239 | Vorholz-Schotter | Vorholz-Schotter     |
-|15201526 | Wagenmoos-Till | Wagenmoos-Till     |
-|15201237 | Walenberg-Schotter | Walenberg-Schotter     |
-|15201501 | Wallbach-Schotter | Wallbach-Schotter     |
-|15201227 | Walsenhaus-Schotter | Walsenhaus-Schotter     |
-|15201118 | Wannen-Schotter | Wannen-Schotter     |
-|15201337 | Wässerifluh-Formation | Wässerifluh-Formation     |
-|15201560 | Wasterkingen-Schotter | Wasterkingen-Schotter     |
-|15201152 | Wehntal-Schotter | Wehntal-Schotter     |
-|15201549 | Weiach-Schotter | Weiach-Schotter     |
-|15201126 | Weisse Serie | Weisse Serie     |
-|15201563 | Weisweil-Schotter | Weisweil-Schotter     |
-|15201502 | Werthenstein-Schotter | Werthenstein-Schotter     |
-|15201155 | Wettingen-Schotter | Wettingen-Schotter     |
-|15201010 | Wettingen-Vorstoss | Wettingen-Vorstoss     |
-|15201200 | Wiggen-Schotter | Wiggen-Schotter     |
-|15201503 | Willburg-Formation | Willburg-Formation     |
-|15201198 | Willisau-Schotter | Willisau-Schotter     |
-|15201504 | Wilzigen-Seebodensedimente | Wilzigen-Seebodensedimente     |
-|15201281 | Winden-Schieferkohle | Winden-Schieferkohle     |
-|15201551 | Windlach-Till | Windlach-Till     |
-|15201104 | Wolfacher-Schotter und -Till | Wolfacher-Schotter und -Till     |
-|15201199 | Wolhusen-Schotter | Wolhusen-Schotter     |
-|15201260 | Wurmsbach-Deltaablagerungen | Wurmsbach-Deltaablagerungen     |
-|15201184 | Wutach-Schotter | Wutach-Schotter     |
-|15201508 | Wyna-Schotter | Wyna-Schotter     |
-|15201463 | Zeiningen-Till | Zeiningen-Till     |
-|15201216 | Zelg-Schotter | Zelg-Schotter     |
-|15201231 | Zell-Schotterkomplex | Zell-Schotterkomplex     |
-|15201035 | Zetzwil-Till | Zetzwil-Till     |
-|15201034 | Zetzwil-Vorstoss | Zetzwil-Vorstoss     |
-|15201528 | Zulgtal-Schotter | Zulgtal-Schotter     |
-|15201129 | Zürich-Stein-Bremgarten-Stadien | Zürich-Stein-Bremgarten-Stadien     |
-|15201557 | Zweidlen-Schotter | Zweidlen-Schotter     |
-|999997 | Unknown | Unknown     |
-|999998 | Not applicable | Not applicable     |
+Siehe die CodedDomain [GC_LITSTRAT_UNCO_CD](#gc-litstrat-unco-cd) in Ahhang
 
 
 
 
-#### Attribute litho {#unconsolidated-deposits-plg-litho}
+
+#### Attribute litho
 __
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|15104015 | (Meso)Kataklasit | (Meso)Kataklasit     |
-|15104044 | Adergneis | Adergneis     |
-|15104046 | agmatischer Gneis | agmatischer Gneis     |
-|15104087 | Albitit | Albitit     |
-|15103040 | Alkalirhyolith | Alkalirhyolith     |
-|15103013 | Alkalisyenit | Alkalisyenit     |
-|15103046 | Alkalitrachyt | Alkalitrachyt     |
-|15103006 | Alkalogranit | Alkalogranit     |
-|15101039 | Alluvion, undifferenziert | Alluvion, undifferenziert     |
-|15104060 | Amphibolit | Amphibolit     |
-|15104063 | Amphibolitgneis | Amphibolitgneis     |
-|15104074 | Anatexit, undifferenziert | Anatexit, undifferenziert     |
-|15103045 | Andesit | Andesit     |
-|15102071 | Anhydrit | Anhydrit     |
-|15102059 | Anthrazit | Anthrazit     |
-|15101067 | anthropogene Elemente, undifferenziert | anthropogene Elemente, undifferenziert     |
-|15101062 | äolischer Sand, Flugsand | äolischer Sand, Flugsand     |
-|15101061 | äolisches Sediment, undifferenziert | äolisches Sediment, undifferenziert     |
-|15103030 | Aplit | Aplit     |
-|15102044 | Aptychenkalk | Aptychenkalk     |
-|15102038 | Arenit | Arenit     |
-|15102016 | Arkose | Arkose     |
-|15103058 | Aschentuff | Aschentuff     |
-|15101071 | Auffüllung | Auffüllung     |
-|15101070 | Aufschüttung, Damm | Aufschüttung, Damm     |
-|15104042 | Augengneis | Augengneis     |
-|15101041 | Bachschutt | Bachschutt     |
-|15104061 | Bänderamphibolit | Bänderamphibolit     |
-|15104043 | Bändergneis | Bändergneis     |
-|15103048 | Basalt | Basalt     |
-|15103068 | basisches Ganggestein | basisches Ganggestein     |
-|15103069 | Basisches Gestein | Basisches Gestein     |
-|15103066 | Bentonit | Bentonit     |
-|15101006 | Bergsturzablagerung | Bergsturzablagerung     |
-|15102045 | biogener Kalkstein, undifferenziert | biogener Kalkstein, undifferenziert     |
-|15102032 | biogenes / biochemisches / organisches Sedimentgestein, undifferenziert | biogenes / biochemisches / organisches Sedimentgestein, undifferenziert     |
-|15102106 | bioklastischer Kalk | bioklastischer Kalk     |
-|15104085 | Biotitit | Biotitit     |
-|15101015 | Blockgletscher | Blockgletscher     |
-|15101010 | Blockschutt | Blockschutt     |
-|15102082 | Bohnerz | Bohnerz     |
-|15102087 | Boluston | Boluston     |
-|15102006 | Brekzie | Brekzie     |
-|15102093 | Caliche | Caliche     |
-|15102068 | chemisches Sedimentgestein, undifferenziert | chemisches Sedimentgestein, undifferenziert     |
-|15104089 | Chloritit | Chloritit     |
-|15104034 | Chloritschiefer | Chloritschiefer     |
-|15103043 | Dazit | Dazit     |
-|15101072 | Deponie | Deponie     |
-|15101049 | detritische Verlandungsbildung | detritische Verlandungsbildung     |
-|15102046 | detritischer Kalk | detritischer Kalk     |
-|15104079 | Diatexit mit nebulitischer Textur | Diatexit mit nebulitischer Textur     |
-|15104080 | Diatexit mit Schlierentextur | Diatexit mit Schlierentextur     |
-|15104081 | Diatexit mit Schollentextur | Diatexit mit Schollentextur     |
-|15103011 | Diorit | Diorit     |
-|15103035 | Dolerit | Dolerit     |
-|15102049 | Dolomit | Dolomit     |
-|15102109 | Dolomitbrekzie | Dolomitbrekzie     |
-|15104216 | dolomitischer Marmor | dolomitischer Marmor     |
-|15102012 | Dolomitsandstein | Dolomitsandstein     |
-|15101075 | dünne Lockermaterialbedeckung | dünne Lockermaterialbedeckung     |
-|15102100 | Echinodermenkalk | Echinodermenkalk     |
-|15102061 | Eisenoolith | Eisenoolith     |
-|15102103 | Eisensandstein | Eisensandstein     |
-|15102108 | eisenschüssiger Kalk | eisenschüssiger Kalk     |
-|15104064 | Eklogit | Eklogit     |
-|15101086 | Entwässerungssediment | Entwässerungssediment     |
-|15103039 | Ergussgestein, undifferenziert | Ergussgestein, undifferenziert     |
-|15103023 | Essexit | Essexit     |
-|15102070 | Evaporit, undifferenziert | Evaporit, undifferenziert     |
-|15103037 | Extrusivgestein, undifferenziert | Extrusivgestein, undifferenziert     |
-|15104053 | Fels, undifferenziert | Fels, undifferenziert     |
-|15101007 | Felssturzablagerung | Felssturzablagerung     |
-|15101040 | fluviatiler Schotter | fluviatiler Schotter     |
-|15101026 | fluviatiles Sediment, undifferenziert | fluviatiles Sediment, undifferenziert     |
-|15102017 | Flyschsandstein, Grauwacke | Flyschsandstein, Grauwacke     |
-|15103015 | Gabbro | Gabbro     |
-|15103026 | Ganggestein, undifferenziert | Ganggestein, undifferenziert     |
-|15101035 | gemischter Schutt | gemischter Schutt     |
-|15101076 | geringmächtige Lockergesteinsbedeckung | geringmächtige Lockergesteinsbedeckung     |
-|15104210 | Geröll führender Metasandstein | Geröll führender Metasandstein     |
-|15102018 | Geröll führender Sandstein | Geröll führender Sandstein     |
-|15104027 | Gestein der Regional- und Kontaktmetamorphose, undifferenziert | Gestein der Regional- und Kontaktmetamorphose, undifferenziert     |
-|15104002 | Gestein der Störungszone | Gestein der Störungszone     |
-|15104003 | Gestein der Störungszone, undifferenziert | Gestein der Störungszone, undifferenziert     |
-|15104006 | Gesteinsmehl | Gesteinsmehl     |
-|15102072 | Gips | Gips     |
-|15102101 | glaukonitischer Kalkstein | glaukonitischer Kalkstein     |
-|15102104 | glaukonitischer Mergel | glaukonitischer Mergel     |
-|15102020 | Glaukonitsandstein | Glaukonitsandstein     |
-|15104036 | Glaukophanschiefer | Glaukophanschiefer     |
-|15101031 | glazifluviatiler Schotter | glazifluviatiler Schotter     |
-|15101028 | glazifluviatiles Sediment, undifferenziert | glazifluviatiles Sediment, undifferenziert     |
-|15101019 | glazigenes Sediment, undifferenziert | glazigenes Sediment, undifferenziert     |
-|15101047 | glazilakustrisches Deltasediment | glazilakustrisches Deltasediment     |
-|15101046 | glazilakustrisches Sediment, undifferenziert | glazilakustrisches Sediment, undifferenziert     |
-|15102019 | Glimmersandstein | Glimmersandstein     |
-|15104035 | Glimmerschiefer | Glimmerschiefer     |
-|15104072 | Gneis mit Feldspatblasten | Gneis mit Feldspatblasten     |
-|15104041 | Gneis, undifferenziert | Gneis, undifferenziert     |
-|15104097 | Granat-Glimmerschiefer | Granat-Glimmerschiefer     |
-|15103007 | Granit | Granit     |
-|15103008 | Granodiorit | Granodiorit     |
-|15103024 | Granophyr | Granophyr     |
-|15104058 | Granulit | Granulit     |
-|15101003 | gravitative Sedimente und Verwitterungsbildungen, undifferenziert | gravitative Sedimente und Verwitterungsbildungen, undifferenziert     |
-|15104071 | Greisen | Greisen     |
-|15104098 | Grünschiefer | Grünschiefer     |
-|15101079 | Gyttja | Gyttja     |
-|15101073 | Halde | Halde     |
-|15101014 | Hanglehm, Schwemmlehm | Hanglehm, Schwemmlehm     |
-|15101009 | Hangschutt | Hangschutt     |
-|15104086 | Hornblenditit | Hornblenditit     |
-|15104067 | Hornfels | Hornfels     |
-|15102054 | Hornstein, Chert | Hornstein, Chert     |
-|15102088 | Huppererde | Huppererde     |
-|15101081 | hydrochemische Bildungen (Kalksinter) | hydrochemische Bildungen (Kalksinter)     |
-|15103054 | Ignimbrit | Ignimbrit     |
-|15101083 | In-situ-Verwitterungsschutt | In-situ-Verwitterungsschutt     |
-|15103003 | Intrusivgestein, undifferenziert | Intrusivgestein, undifferenziert     |
-|15104005 | Kakirit, undifferenziert | Kakirit, undifferenziert     |
-|15102041 | Kalkbrekzie | Kalkbrekzie     |
-|15102029 | Kalkmergelstein | Kalkmergelstein     |
-|15102042 | Kalkoolith | Kalkoolith     |
-|15102011 | Kalksandstein | Kalksandstein     |
-|15104037 | Kalkschiefer | Kalkschiefer     |
-|15104054 | Kalksilikatfels | Kalksilikatfels     |
-|15102034 | Kalkstein, undifferenziert | Kalkstein, undifferenziert     |
-|15104056 | Karbonat- und Silikat führendes Gestein | Karbonat- und Silikat führendes Gestein     |
-|15102075 | Karbonat, undifferenziert | Karbonat, undifferenziert     |
-|15103051 | Karbonatit | Karbonatit     |
-|15104010 | Kataklasit, undifferenziert | Kataklasit, undifferenziert     |
-|15102013 | kieseliger Sandstein | kieseliger Sandstein     |
-|15102051 | kieseliges Gestein, undifferenziert | kieseliges Gestein, undifferenziert     |
-|15102035 | Kieselkalk | Kieselkalk     |
-|15104051 | Kinzigit | Kinzigit     |
-|15102003 | klastisches Sedimentgestein, undifferenziert | klastisches Sedimentgestein, undifferenziert     |
-|15104007 | Kluftletten | Kluftletten     |
-|15102056 | Kohle, undifferenziert | Kohle, undifferenziert     |
-|15102007 | Konglomerat | Konglomerat     |
-|15102005 | Konglomerat und Brekzie, undifferenziert (Psephit, Korngrösse: Kies, Steine und Blöcke) | Konglomerat und Brekzie, undifferenziert (Psephit, Korngrösse: Kies, Steine und Blöcke)     |
-|15102105 | kreidiger Kalk | kreidiger Kalk     |
-|15103057 | Kristalltuff | Kristalltuff     |
-|15102094 | Krustenkalk | Krustenkalk     |
-|15101069 | künstliche Ablagerung, undifferenziert | künstliche Ablagerung, undifferenziert     |
-|15101057 | lakustrisches Deltasediment | lakustrisches Deltasediment     |
-|15101044 | lakustrisches Sediment, undifferenziert | lakustrisches Sediment, undifferenziert     |
-|15103033 | Lamprophyr | Lamprophyr     |
-|15103056 | Lapillituff | Lapillituff     |
-|15101008 | Lawinenschutt | Lawinenschutt     |
-|15104047 | Leptinit | Leptinit     |
-|15102057 | Lignit (organisches Sedimentgestein) | Lignit (organisches Sedimentgestein)     |
-|15101054 | Lignit (palustrisches Sediment) | Lignit (palustrisches Sediment)     |
-|15102102 | Lithothamniensandstein | Lithothamniensandstein     |
-|15101001 | Lockergestein | Lockergestein     |
-|15101063 | Löss, Lösslehm | Löss, Lösslehm     |
-|15103001 | Magmatit | Magmatit     |
-|15104055 | Marmor (Fels) | Marmor (Fels)     |
-|15104215 | Marmor (sedimentärer Protolith) | Marmor (sedimentärer Protolith)     |
-|15102014 | mergeliger Sandstein | mergeliger Sandstein     |
-|15102107 | Mergelkalk | Mergelkalk     |
-|15102027 | Mergelstein | Mergelstein     |
-|15104433 | Metaalkalirhyolith | Metaalkalirhyolith     |
-|15104411 | Metaalkalisyenit | Metaalkalisyenit     |
-|15104439 | Metaalkalitrachyt | Metaalkalitrachyt     |
-|15104404 | Metaalkalogranit | Metaalkalogranit     |
-|15104438 | Metaandesit | Metaandesit     |
-|15104427 | Metaaplit | Metaaplit     |
-|15104208 | Metaarkose | Metaarkose     |
-|15104441 | Metabasalt | Metabasalt     |
-|15104203 | Metabrekzie | Metabrekzie     |
-|15104436 | Metadazit | Metadazit     |
-|15104409 | Metadiorit | Metadiorit     |
-|15104432 | Metadolerit | Metadolerit     |
-|15104421 | Metaessexit | Metaessexit     |
-|15104413 | Metagabbro | Metagabbro     |
-|15104423 | Metaganggestein | Metaganggestein     |
-|15104405 | Metagranit | Metagranit     |
-|15104406 | Metagranodiorit | Metagranodiorit     |
-|15104422 | Metagranophyr | Metagranophyr     |
-|15104209 | Metagrauwacke | Metagrauwacke     |
-|15104445 | Metaignimbrit | Metaignimbrit     |
-|15104218 | Metakarbonat | Metakarbonat     |
-|15104204 | Metakonglomerat | Metakonglomerat     |
-|15104430 | Metalamprophyr | Metalamprophyr     |
-|15104401 | Metamagmatit | Metamagmatit     |
-|15104214 | Metamergel | Metamergel     |
-|15104428 | Metamikrodiorit | Metamikrodiorit     |
-|15104429 | Metamikrogabbro | Metamikrogabbro     |
-|15104424 | Metamikrogranit | Metamikrogranit     |
-|15104415 | Metamonzodiorit | Metamonzodiorit     |
-|15104416 | Metamonzogabbro | Metamonzogabbro     |
-|15104417 | Metamonzonit | Metamonzonit     |
-|15104402 | metamorph überprägtes Intrusivgestein | metamorph überprägtes Intrusivgestein     |
-|15104444 | metamorph überprägtes pyroklastisches Gestein | metamorph überprägtes pyroklastisches Gestein     |
-|15104001 | Metamorphit | Metamorphit     |
-|15104095 | Metamorphit (magmatischer Protolith erkennbar) | Metamorphit (magmatischer Protolith erkennbar)     |
-|15104092 | Metamorphit (Protolith erkennbar) | Metamorphit (Protolith erkennbar)     |
-|15104093 | Metamorphit (sedimentärer Protolith erkennbar) | Metamorphit (sedimentärer Protolith erkennbar)     |
-|15104414 | Metanorit | Metanorit     |
-|15104426 | Metapegmatit | Metapegmatit     |
-|15104211 | Metapelit | Metapelit     |
-|15104419 | Metaperidotit | Metaperidotit     |
-|15104443 | Metaphonolit | Metaphonolit     |
-|15104431 | Metapikrit | Metapikrit     |
-|15104403 | Metaplutonit | Metaplutonit     |
-|15104207 | Metapsammit | Metapsammit     |
-|15104202 | Metapsephit | Metapsephit     |
-|15104418 | Metapyroxenit | Metapyroxenit     |
-|15104437 | Metaquarzandesit | Metaquarzandesit     |
-|15104407 | Metaquarzdiorit | Metaquarzdiorit     |
-|15104412 | Metaquarzgabbro | Metaquarzgabbro     |
-|15104217 | Metaradiolarit | Metaradiolarit     |
-|15104435 | Metarhyodazit | Metarhyodazit     |
-|15104434 | Metarhyolith | Metarhyolith     |
-|15104205 | Metasandstein | Metasandstein     |
-|15104201 | Metasediment | Metasediment     |
-|15104212 | Metasiltstein | Metasiltstein     |
-|15104069 | Metasomatit, undifferenziert | Metasomatit, undifferenziert     |
-|15104410 | Metasyenit | Metasyenit     |
-|15104076 | Metatexit mit Fleckentextur | Metatexit mit Fleckentextur     |
-|15104078 | Metatexit mit Netztextur | Metatexit mit Netztextur     |
-|15104077 | Metatexit mit stromatitischer Textur | Metatexit mit stromatitischer Textur     |
-|15104408 | Metatonalit | Metatonalit     |
-|15104440 | Metatrachyt | Metatrachyt     |
-|15104446 | Metavulkanit | Metavulkanit     |
-|15104075 | Migmatit | Migmatit     |
-|15102037 | Mikrit | Mikrit     |
-|15103031 | Mikrodiorit | Mikrodiorit     |
-|15103032 | Mikrogabbro | Mikrogabbro     |
-|15103027 | Mikrogranit | Mikrogranit     |
-|15104084 | monomineralischer Metamorphit, undifferenziert | monomineralischer Metamorphit, undifferenziert     |
-|15103017 | Monzodiorit | Monzodiorit     |
-|15103018 | Monzogabbro | Monzogabbro     |
-|15103019 | Monzonit | Monzonit     |
-|15101021 | Moräne (Till), undifferenziert | Moräne (Till), undifferenziert     |
-|15101024 | Moräne auf Gletscher oder Toteis (Glacier or Dead Ice covered by Till) | Moräne auf Gletscher oder Toteis (Glacier or Dead Ice covered by Till)     |
-|15101037 | Murgangablagerung | Murgangablagerung     |
-|15102022 | Muschelsandstein | Muschelsandstein     |
-|15104020 | Mylonit | Mylonit     |
-|15104018 | Mylonit, undifferenziert | Mylonit, undifferenziert     |
-|15104420 | nephelinitischer Metasyenit | nephelinitischer Metasyenit     |
-|15103022 | nephelinitischer Syenit | nephelinitischer Syenit     |
-|15103016 | Norit | Norit     |
-|15102043 | Nummulitenkalk | Nummulitenkalk     |
-|15102021 | Nummulitensandstein | Nummulitensandstein     |
-|15104099 | Ophikalzit | Ophikalzit     |
-|15104049 | Orthogneis | Orthogneis     |
-|15101050 | palustrisches Sediment | palustrisches Sediment     |
-|15101051 | palustrisches Sediment, undifferenziert | palustrisches Sediment, undifferenziert     |
-|15104048 | Paragneis | Paragneis     |
-|15102092 | pedogenes Karbonat, undifferenziert | pedogenes Karbonat, undifferenziert     |
-|15103029 | Pegmatit | Pegmatit     |
-|15102024 | Pelit, undifferenziert | Pelit, undifferenziert     |
-|15103021 | Peridotit (Intrusivgestein) | Peridotit (Intrusivgestein)     |
-|15104065 | Peridotit (Metamorphit) | Peridotit (Metamorphit)     |
-|15103050 | Phonolith | Phonolith     |
-|15102065 | phosphoritreicher Kalkstein | phosphoritreicher Kalkstein     |
-|15102066 | phosphoritreicher Mergelstein | phosphoritreicher Mergelstein     |
-|15102064 | phosphoritreicher Sandstein | phosphoritreicher Sandstein     |
-|15102063 | phosphoritreiches Gestein, undifferenziert | phosphoritreiches Gestein, undifferenziert     |
-|15104029 | Phyllit | Phyllit     |
-|15104023 | Phyllonit | Phyllonit     |
-|15103049 | Pikrit (Effusiva) | Pikrit (Effusiva)     |
-|15103034 | Pikrit (Intrusivgestein) | Pikrit (Intrusivgestein)     |
-|15101013 | Plateaulehm | Plateaulehm     |
-|15104038 | Prasinit | Prasinit     |
-|15104014 | Protokataklasit | Protokataklasit     |
-|15104019 | Protomylonit | Protomylonit     |
-|15104025 | Pseudotachylit | Pseudotachylit     |
-|15103055 | Pyroklastische Brekzie | Pyroklastische Brekzie     |
-|15103053 | pyroklastisches Gestein, undifferenziert (vulkanischer Tuff, &gt; 75 % pyroklast. Komp.) | pyroklastisches Gestein, undifferenziert (vulkanischer Tuff, &gt; 75 % pyroklast. Komp.)     |
-|15103020 | Pyroxenit (Intrusivgestein) | Pyroxenit (Intrusivgestein)     |
-|15104088 | Pyroxenit (monomineralischer Metamorphit) | Pyroxenit (monomineralischer Metamorphit)     |
-|15103044 | Quarzandesit | Quarzandesit     |
-|15103009 | Quarzdiorit | Quarzdiorit     |
-|15103014 | Quarzgabbro | Quarzgabbro     |
-|15104091 | Quarzit (monomineralischer Metamorphit) | Quarzit (monomineralischer Metamorphit)     |
-|15104206 | Quarzit (sedimentärer Protolith) | Quarzit (sedimentärer Protolith)     |
-|15102089 | Quarzsand | Quarzsand     |
-|15102010 | Quarzsandstein | Quarzsandstein     |
-|15104096 | Quarzschiefer | Quarzschiefer     |
-|15101080 | Quelltuff (Kalksinter, Lockergestein) | Quelltuff (Kalksinter, Lockergestein)     |
-|15102077 | Quelltuff (Kalksinter, Sedimentgestein) | Quelltuff (Kalksinter, Sedimentgestein)     |
-|15102052 | Radiolarit | Radiolarit     |
-|15101030 | randglazialer Schotter | randglazialer Schotter     |
-|15104011 | Rauwacke (Kataklasit) | Rauwacke (Kataklasit)     |
-|15102076 | Rauwacke (Sedimentgestein) | Rauwacke (Sedimentgestein)     |
-|15102080 | Residualgestein / pedogen überprägtes Gestein, undifferenziert | Residualgestein / pedogen überprägtes Gestein, undifferenziert     |
-|15103042 | Rhyodazit | Rhyodazit     |
-|15103041 | Rhyolith | Rhyolith     |
-|15103028 | Rhyolithporphyr | Rhyolithporphyr     |
-|15102040 | Riffkalk | Riffkalk     |
-|15104059 | Rodingit | Rodingit     |
-|15101033 | Rückzugsschotter | Rückzugsschotter     |
-|15102039 | Rudit | Rudit     |
-|15101017 | Rutschmasse | Rutschmasse     |
-|15102009 | Sandstein, undifferenziert (Psammit: Sandkorngrösse) | Sandstein, undifferenziert (Psammit: Sandkorngrösse)     |
-|15103067 | saures Ganggestein | saures Ganggestein     |
-|15104031 | Schiefer, undifferenziert | Schiefer, undifferenziert     |
-|15102030 | Schlammstein | Schlammstein     |
-|15104062 | Schollenamphibolit | Schollenamphibolit     |
-|15101087 | Sedimentärer Gang (clastic dike) | Sedimentärer Gang (clastic dike)     |
-|15102001 | Sedimentgestein | Sedimentgestein     |
-|15101058 | Seebodensediment | Seebodensediment     |
-|15101059 | Seekreide | Seekreide     |
-|15104033 | Serizitschiefer | Serizitschiefer     |
-|15104090 | Serpentinit | Serpentinit     |
-|15102084 | siderolithische Verwitterungsbildungen | siderolithische Verwitterungsbildungen     |
-|15102090 | Silcrete | Silcrete     |
-|15104057 | silikatreicher Marmor | silikatreicher Marmor     |
-|15102086 | silikatreiches Gestein, undifferenziert | silikatreiches Gestein, undifferenziert     |
-|15102025 | Siltstein | Siltstein     |
-|15104070 | Skarn | Skarn     |
-|15102036 | Spatkalk | Spatkalk     |
-|15102053 | Spiculit | Spiculit     |
-|15101034 | Stauschotter | Stauschotter     |
-|15102058 | Steinkohle | Steinkohle     |
-|15102073 | Steinsalz | Steinsalz     |
-|15101056 | Strandablagerungen | Strandablagerungen     |
-|15104050 | Stronalit | Stronalit     |
-|15101084 | strukturierter Hangschutt | strukturierter Hangschutt     |
-|15101005 | Sturzablagerung, undifferenziert | Sturzablagerung, undifferenziert     |
-|15101048 | subaquatisch abgelagerte Moräne (Waterlaid Till) | subaquatisch abgelagerte Moräne (Waterlaid Till)     |
-|15101052 | Sumpf | Sumpf     |
-|15102047 | Süsswasserkalk | Süsswasserkalk     |
-|15103012 | Syenit | Syenit     |
-|15104039 | Talkschiefer | Talkschiefer     |
-|15104008 | tektonische Brekzie (kohäsionslos) | tektonische Brekzie (kohäsionslos)     |
-|15104013 | tektonische Brekzie (mit Kohäsion) | tektonische Brekzie (mit Kohäsion)     |
-|15104012 | tektonische Dolomitbrekzie | tektonische Dolomitbrekzie     |
-|15104448 | tektonische Kalkbrekzie | tektonische Kalkbrekzie     |
-|15103005 | Tiefengestein, undifferenziert | Tiefengestein, undifferenziert     |
-|15101078 | tiefgründige Verwitterungsdecke | tiefgründige Verwitterungsdecke     |
-|15103010 | Tonalit | Tonalit     |
-|15102015 | toniger Sandstein | toniger Sandstein     |
-|15102028 | Tonmergelstein | Tonmergelstein     |
-|15104032 | Tonschiefer (Schiefer) | Tonschiefer (Schiefer)     |
-|15104213 | Tonschiefer (sedimentärer Protolith) | Tonschiefer (sedimentärer Protolith)     |
-|15102026 | Tonstein | Tonstein     |
-|15101053 | Torfmoor, Torf | Torfmoor, Torf     |
-|15103047 | Trachyt | Trachyt     |
-|15101082 | Travertin (Kalksinter, Lockergestein) | Travertin (Kalksinter, Lockergestein)     |
-|15102078 | Travertin (Kalksinter, Sedimentgestein) | Travertin (Kalksinter, Sedimentgestein)     |
-|15101085 | Tsunamiablagerung | Tsunamiablagerung     |
-|15103060 | Tuffit, undifferenziert (pyroklast. und nicht vulk. Sedimente, 75-25 % pyroklast. Komp.) | Tuffit, undifferenziert (pyroklast. und nicht vulk. Sedimente, 75-25 % pyroklast. Komp.)     |
-|15103061 | tuffitische Brekzie | tuffitische Brekzie     |
-|15103063 | tuffitischer Sandstein | tuffitischer Sandstein     |
-|15103064 | tuffitischer Siltstein | tuffitischer Siltstein     |
-|15103065 | tuffitischer Tonstein | tuffitischer Tonstein     |
-|15103062 | tuffitisches Konglomerat | tuffitisches Konglomerat     |
-|15101042 | Überschwemmungssediment | Überschwemmungssediment     |
-|15103070 | Ultrabasisches Gestein | Ultrabasisches Gestein     |
-|15104016 | Ultrakataklasit | Ultrakataklasit     |
-|15104447 | ultramafisches Gestein | ultramafisches Gestein     |
-|15104021 | Ultramylonit | Ultramylonit     |
-|15101012 | Verwitterungslehm, undifferenziert | Verwitterungslehm, undifferenziert     |
-|15101032 | Vorstossschotter | Vorstossschotter     |
-|15101065 | vulkanische Asche | vulkanische Asche     |
-|15101016 | zerrüttete Sackungsmasse | zerrüttete Sackungsmasse     |
-|15104045 | Zweiglimmergneis | Zweiglimmergneis     |
-|999997 | Unknown | Unknown     |
-|999998 | Not applicable | Not applicable     |
+Siehe die CodedDomain [GC_LITHO_CD](#gc-litho-cd) in Ahhang
 
 
 
 
-#### Attribute chrono_t {#unconsolidated-deposits-plg-chrono-t}
+
+#### Attribute chrono_t
 __
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|15001074 | Aalénien | Aalénien     |
-|15001059 | Albien | Albien     |
-|15001087 | Anisien | Anisien     |
-|15001060 | Aptien | Aptien     |
-|15001028 | Aquitanien | Aquitanien     |
-|15001153 | Archaikum | Archaikum     |
-|15001113 | Artinskien | Artinskien     |
-|15001117 | Asselien | Asselien     |
-|15001073 | Bajocien | Bajocien     |
-|15001061 | Barrémien | Barrémien     |
-|15001041 | Bartonien | Bartonien     |
-|15001140 | Bashkirien | Bashkirien     |
-|15001072 | Bathonien | Bathonien     |
-|15001064 | Berriasien | Berriasien     |
-|15001025 | Burdigalien | Burdigalien     |
-|15001010 | Calabrien | Calabrien     |
-|15001071 | Callovien | Callovien     |
-|15001053 | Campanien | Campanien     |
-|15001102 | Capitanien | Capitanien     |
-|15001084 | Carnien | Carnien     |
-|15001057 | Cénomanien | Cénomanien     |
-|15001096 | Changhsingien | Changhsingien     |
-|15001031 | Chattien | Chattien     |
-|15001151 | Chibanien | Chibanien     |
-|15001110 | Cisuralien | Cisuralien     |
-|15001055 | Coniacien | Coniacien     |
-|15001048 | Danien | Danien     |
-|15001128 | Devon | Devon     |
-|15001035 | Eozän | Eozän     |
-|15001058 | Frühe Kreide | Frühe Kreide     |
-|15001088 | Frühe Trias | Frühe Trias     |
-|15001075 | Früher Jura | Früher Jura     |
-|15001027 | frühes Burdigalien | frühes Burdigalien     |
-|15001033 | frühes Chattien | frühes Chattien     |
-|15001129 | Frühes Devon | Frühes Devon     |
-|15001043 | Frühes Eozän | Frühes Eozän     |
-|15001024 | Frühes Miozän | Frühes Miozän     |
-|15001127 | Frühes Mississippien | Frühes Mississippien     |
-|15001150 | Frühes Ordovizium | Frühes Ordovizium     |
-|15001123 | Frühes Pennsylvanien | Frühes Pennsylvanien     |
-|15001009 | Frühes Pleistozän | Frühes Pleistozän     |
-|15001039 | frühes Priabonien | frühes Priabonien     |
-|15001011 | Gélasien | Gélasien     |
-|15001101 | Guadalupien | Guadalupien     |
-|15001137 | Gzhélien | Gzhélien     |
-|15001062 | Hauterivien | Hauterivien     |
-|15001079 | Hettangien | Hettangien     |
-|15001004 | Holozän | Holozän     |
-|15001090 | Indusien | Indusien     |
-|15001065 | Jura | Jura     |
-|15001135 | Kambrium | Kambrium     |
-|15001002 | Känozoikum | Känozoikum     |
-|15001119 | Karbon | Karbon     |
-|15001138 | Kasimovien | Kasimovien     |
-|15001068 | Kimméridgien | Kimméridgien     |
-|15001050 | Kreide | Kreide     |
-|15001111 | Kungurien | Kungurien     |
-|15001086 | Ladinien | Ladinien     |
-|15001023 | Langhien | Langhien     |
-|15001147 | Llandovery | Llandovery     |
-|15001095 | Lopingien | Lopingien     |
-|15001145 | Ludlow | Ludlow     |
-|15001042 | Lutétien | Lutétien     |
-|15001052 | Maastrichtien | Maastrichtien     |
-|15001049 | Mesozoikum | Mesozoikum     |
-|15001019 | Messinien | Messinien     |
-|15001017 | Miozän | Miozän     |
-|15001124 | Mississippien | Mississippien     |
-|15001085 | Mittlere Trias | Mittlere Trias     |
-|15001070 | Mittlerer Jura | Mittlerer Jura     |
-|15001130 | Mittleres Devon | Mittleres Devon     |
-|15001040 | Mittleres Eozän | Mittleres Eozän     |
-|15001021 | Mittleres Miozän | Mittleres Miozän     |
-|15001126 | Mittleres Mississippien | Mittleres Mississippien     |
-|15001149 | Mittleres Ordovizium | Mittleres Ordovizium     |
-|15001122 | Mittleres Pennsylvanien | Mittleres Pennsylvanien     |
-|15001007 | Mittleres Pleistozän | Mittleres Pleistozän     |
-|15001139 | Moscovien | Moscovien     |
-|15001013 | Neogen | Neogen     |
-|15001083 | Norien | Norien     |
-|15001089 | Olénékien | Olénékien     |
-|15001030 | Oligozän | Oligozän     |
-|15001134 | Ordovizium | Ordovizium     |
-|15001069 | Oxfordien | Oxfordien     |
-|15001029 | Paläogen | Paläogen     |
-|15001091 | Paläozoikum | Paläozoikum     |
-|15001045 | Paleozän | Paleozän     |
-|15001120 | Pennsylvanien | Pennsylvanien     |
-|15001093 | Perm | Perm     |
-|15001001 | Phanerozoikum | Phanerozoikum     |
-|15001015 | Plaisancien | Plaisancien     |
-|15001005 | Pleistozän | Pleistozän     |
-|15001077 | Pliensbachien | Pliensbachien     |
-|15001014 | Pliozän | Pliozän     |
-|15001152 | Präkambrium | Präkambrium     |
-|15001037 | Priabonien | Priabonien     |
-|15001144 | Pridoli | Pridoli     |
-|15001136 | Proterozoikum | Proterozoikum     |
-|15001003 | Quartär | Quartär     |
-|15001082 | Rhät | Rhät     |
-|15001108 | Roadien | Roadien     |
-|15001034 | Rupélien | Rupélien     |
-|15001115 | Sakmarien | Sakmarien     |
-|15001054 | Santonien | Santonien     |
-|15001047 | Sélandien | Sélandien     |
-|15001141 | Serpukhovien | Serpukhovien     |
-|15001022 | Serravallien | Serravallien     |
-|15001133 | Silur | Silur     |
-|15001078 | Sinémurien | Sinémurien     |
-|15001051 | Späte Kreide | Späte Kreide     |
-|15001081 | Späte Trias | Späte Trias     |
-|15001066 | Später Jura | Später Jura     |
-|15001026 | spätes Burdigalien | spätes Burdigalien     |
-|15001032 | spätes Chattien | spätes Chattien     |
-|15001131 | Spätes Devon | Spätes Devon     |
-|15001036 | Spätes Eozän | Spätes Eozän     |
-|15001018 | Spätes Miozän | Spätes Miozän     |
-|15001125 | Spätes Mississippien | Spätes Mississippien     |
-|15001148 | Spätes Ordovizium | Spätes Ordovizium     |
-|15001121 | Spätes Pennsylvanien | Spätes Pennsylvanien     |
-|15001006 | Spätes Pleistozän | Spätes Pleistozän     |
-|15001038 | spätes Priabonien | spätes Priabonien     |
-|15001012 | Tertiär | Tertiär     |
-|15001046 | Thanétien | Thanétien     |
-|15001067 | Tithonien | Tithonien     |
-|15001076 | Toarcien | Toarcien     |
-|15001020 | Tortonien | Tortonien     |
-|15001143 | Tournaisien | Tournaisien     |
-|15001080 | Trias | Trias     |
-|15001056 | Turonien | Turonien     |
-|15001063 | Valanginien | Valanginien     |
-|15001142 | Viséen | Viséen     |
-|15001146 | Wenlock | Wenlock     |
-|15001106 | Wordien | Wordien     |
-|15001098 | Wuchiapingien | Wuchiapingien     |
-|15001044 | Yprésien | Yprésien     |
-|15001016 | Zancléen | Zancléen     |
-|999997 | Unknown | Unknown     |
-|999998 | Not applicable | Not applicable     |
+Siehe die CodedDomain [GC_CHRONO_CD](#gc-chrono-cd) in Ahhang
 
 
 
 
-#### Attribute chrono_b {#unconsolidated-deposits-plg-chrono-b}
+
+#### Attribute chrono_b
 __
+Siehe die CodedDomain [GC_CHRONO_CD](#gc-chrono-cd) in Ahhang
 
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|15001074 | Aalénien | Aalénien     |
-|15001059 | Albien | Albien     |
-|15001087 | Anisien | Anisien     |
-|15001060 | Aptien | Aptien     |
-|15001028 | Aquitanien | Aquitanien     |
-|15001153 | Archaikum | Archaikum     |
-|15001113 | Artinskien | Artinskien     |
-|15001117 | Asselien | Asselien     |
-|15001073 | Bajocien | Bajocien     |
-|15001061 | Barrémien | Barrémien     |
-|15001041 | Bartonien | Bartonien     |
-|15001140 | Bashkirien | Bashkirien     |
-|15001072 | Bathonien | Bathonien     |
-|15001064 | Berriasien | Berriasien     |
-|15001025 | Burdigalien | Burdigalien     |
-|15001010 | Calabrien | Calabrien     |
-|15001071 | Callovien | Callovien     |
-|15001053 | Campanien | Campanien     |
-|15001102 | Capitanien | Capitanien     |
-|15001084 | Carnien | Carnien     |
-|15001057 | Cénomanien | Cénomanien     |
-|15001096 | Changhsingien | Changhsingien     |
-|15001031 | Chattien | Chattien     |
-|15001151 | Chibanien | Chibanien     |
-|15001110 | Cisuralien | Cisuralien     |
-|15001055 | Coniacien | Coniacien     |
-|15001048 | Danien | Danien     |
-|15001128 | Devon | Devon     |
-|15001035 | Eozän | Eozän     |
-|15001058 | Frühe Kreide | Frühe Kreide     |
-|15001088 | Frühe Trias | Frühe Trias     |
-|15001075 | Früher Jura | Früher Jura     |
-|15001027 | frühes Burdigalien | frühes Burdigalien     |
-|15001033 | frühes Chattien | frühes Chattien     |
-|15001129 | Frühes Devon | Frühes Devon     |
-|15001043 | Frühes Eozän | Frühes Eozän     |
-|15001024 | Frühes Miozän | Frühes Miozän     |
-|15001127 | Frühes Mississippien | Frühes Mississippien     |
-|15001150 | Frühes Ordovizium | Frühes Ordovizium     |
-|15001123 | Frühes Pennsylvanien | Frühes Pennsylvanien     |
-|15001009 | Frühes Pleistozän | Frühes Pleistozän     |
-|15001039 | frühes Priabonien | frühes Priabonien     |
-|15001011 | Gélasien | Gélasien     |
-|15001101 | Guadalupien | Guadalupien     |
-|15001137 | Gzhélien | Gzhélien     |
-|15001062 | Hauterivien | Hauterivien     |
-|15001079 | Hettangien | Hettangien     |
-|15001004 | Holozän | Holozän     |
-|15001090 | Indusien | Indusien     |
-|15001065 | Jura | Jura     |
-|15001135 | Kambrium | Kambrium     |
-|15001002 | Känozoikum | Känozoikum     |
-|15001119 | Karbon | Karbon     |
-|15001138 | Kasimovien | Kasimovien     |
-|15001068 | Kimméridgien | Kimméridgien     |
-|15001050 | Kreide | Kreide     |
-|15001111 | Kungurien | Kungurien     |
-|15001086 | Ladinien | Ladinien     |
-|15001023 | Langhien | Langhien     |
-|15001147 | Llandovery | Llandovery     |
-|15001095 | Lopingien | Lopingien     |
-|15001145 | Ludlow | Ludlow     |
-|15001042 | Lutétien | Lutétien     |
-|15001052 | Maastrichtien | Maastrichtien     |
-|15001049 | Mesozoikum | Mesozoikum     |
-|15001019 | Messinien | Messinien     |
-|15001017 | Miozän | Miozän     |
-|15001124 | Mississippien | Mississippien     |
-|15001085 | Mittlere Trias | Mittlere Trias     |
-|15001070 | Mittlerer Jura | Mittlerer Jura     |
-|15001130 | Mittleres Devon | Mittleres Devon     |
-|15001040 | Mittleres Eozän | Mittleres Eozän     |
-|15001021 | Mittleres Miozän | Mittleres Miozän     |
-|15001126 | Mittleres Mississippien | Mittleres Mississippien     |
-|15001149 | Mittleres Ordovizium | Mittleres Ordovizium     |
-|15001122 | Mittleres Pennsylvanien | Mittleres Pennsylvanien     |
-|15001007 | Mittleres Pleistozän | Mittleres Pleistozän     |
-|15001139 | Moscovien | Moscovien     |
-|15001013 | Neogen | Neogen     |
-|15001083 | Norien | Norien     |
-|15001089 | Olénékien | Olénékien     |
-|15001030 | Oligozän | Oligozän     |
-|15001134 | Ordovizium | Ordovizium     |
-|15001069 | Oxfordien | Oxfordien     |
-|15001029 | Paläogen | Paläogen     |
-|15001091 | Paläozoikum | Paläozoikum     |
-|15001045 | Paleozän | Paleozän     |
-|15001120 | Pennsylvanien | Pennsylvanien     |
-|15001093 | Perm | Perm     |
-|15001001 | Phanerozoikum | Phanerozoikum     |
-|15001015 | Plaisancien | Plaisancien     |
-|15001005 | Pleistozän | Pleistozän     |
-|15001077 | Pliensbachien | Pliensbachien     |
-|15001014 | Pliozän | Pliozän     |
-|15001152 | Präkambrium | Präkambrium     |
-|15001037 | Priabonien | Priabonien     |
-|15001144 | Pridoli | Pridoli     |
-|15001136 | Proterozoikum | Proterozoikum     |
-|15001003 | Quartär | Quartär     |
-|15001082 | Rhät | Rhät     |
-|15001108 | Roadien | Roadien     |
-|15001034 | Rupélien | Rupélien     |
-|15001115 | Sakmarien | Sakmarien     |
-|15001054 | Santonien | Santonien     |
-|15001047 | Sélandien | Sélandien     |
-|15001141 | Serpukhovien | Serpukhovien     |
-|15001022 | Serravallien | Serravallien     |
-|15001133 | Silur | Silur     |
-|15001078 | Sinémurien | Sinémurien     |
-|15001051 | Späte Kreide | Späte Kreide     |
-|15001081 | Späte Trias | Späte Trias     |
-|15001066 | Später Jura | Später Jura     |
-|15001026 | spätes Burdigalien | spätes Burdigalien     |
-|15001032 | spätes Chattien | spätes Chattien     |
-|15001131 | Spätes Devon | Spätes Devon     |
-|15001036 | Spätes Eozän | Spätes Eozän     |
-|15001018 | Spätes Miozän | Spätes Miozän     |
-|15001125 | Spätes Mississippien | Spätes Mississippien     |
-|15001148 | Spätes Ordovizium | Spätes Ordovizium     |
-|15001121 | Spätes Pennsylvanien | Spätes Pennsylvanien     |
-|15001006 | Spätes Pleistozän | Spätes Pleistozän     |
-|15001038 | spätes Priabonien | spätes Priabonien     |
-|15001012 | Tertiär | Tertiär     |
-|15001046 | Thanétien | Thanétien     |
-|15001067 | Tithonien | Tithonien     |
-|15001076 | Toarcien | Toarcien     |
-|15001020 | Tortonien | Tortonien     |
-|15001143 | Tournaisien | Tournaisien     |
-|15001080 | Trias | Trias     |
-|15001056 | Turonien | Turonien     |
-|15001063 | Valanginien | Valanginien     |
-|15001142 | Viséen | Viséen     |
-|15001146 | Wenlock | Wenlock     |
-|15001106 | Wordien | Wordien     |
-|15001098 | Wuchiapingien | Wuchiapingien     |
-|15001044 | Yprésien | Yprésien     |
-|15001016 | Zancléen | Zancléen     |
-|999997 | Unknown | Unknown     |
-|999998 | Not applicable | Not applicable     |
 
 
 
@@ -1555,15 +389,15 @@ Die Klasse [Bedrock_PLG](#bedrock-plg) enthält alle flächenbildenden lithostra
 []()           | Cardinality [1] | 14334001                                       |
 2 | **fm_homog**                |                                     | Gesteinsaufbau
 []()           | Cardinality [] |                                        |
-3 | **listrat**                | [CodedDomain](#bedrock-plg-listrat)                    | Lithostratigraphische Einhei
+3 | **listrat**                | [CodedDomain](#gc-litstrat-bed-cd)  | Lithostratigraphische Einhei. Die möglichen Werte sind in der Tabelle GC_LITSTRAT_BED_CD im Anhang dieses Dokumentes verfügbar.
 []()           | Cardinality [1] |                                                      |
-4 | **litho**                | [CodedDomain](#bedrock-plg-litho)                    | Lithologische Beschreibung
+4 | **litho**                | [CodedDomain](#gc-litho-cd)  | Lithologische Beschreibung. Die möglichen Werte sind in der Tabelle GC_LITHO_CD im Anhang dieses Dokumentes verfügbar.
 []()           | Cardinality [1..3] |                                                      |
-5 | **chrono_t**                | [CodedDomain](#bedrock-plg-chrono-t)                    | Chronostratigraphische Zuordnung der Obergrenze der Kartiereinheit (Top)
+5 | **chrono_t**                | [CodedDomain](#gc-chrono-cd)  | Chronostratigraphische Zuordnung der Obergrenze der Kartiereinheit (Top). Die möglichen Werte sind in der Tabelle GC_CHRONO_CD im Anhang dieses Dokumentes verfügbar.
 []()           | Cardinality [1] |                                                      |
-6 | **chrono_b**                | [CodedDomain](#bedrock-plg-chrono-b)                    | Chronostratigraphische Zuordnung der Untergrenze der Kartiereinheit (Basis)
+6 | **chrono_b**                | [CodedDomain](#gc-chrono-cd)  | Chronostratigraphische Zuordnung der Untergrenze der Kartiereinheit (Basis). Die möglichen Werte sind in der Tabelle GC_CHRONO_CD im Anhang dieses Dokumentes verfügbar.
 []()           | Cardinality [1] |                                                      |
-7 | **tecto**                | [CodedDomain](#bedrock-plg-tecto)                    | Tektonische Zugehörigkeit
+7 | **tecto**                | [CodedDomain](#gc-tecto-cd)  | Tektonische Zugehörigkeit. Die möglichen Werte sind in der Tabelle GC_TECTO_CD im Anhang dieses Dokumentes verfügbar.
 []()           | Cardinality [1] |                                                      |
 8 | **orig_descr**                | string                                    | Originalbezeichnung gemäss der Legende der zugrundeliegenden geologischen Karte
 []()           | Cardinality [1] |                                        |
@@ -1573,29 +407,29 @@ Die Klasse [Bedrock_PLG](#bedrock-plg) enthält alle flächenbildenden lithostra
 []()           | Cardinality [1] | boolean                                       |
 11 | **colour**                | string                                    | Farbe des Gesteins. Präzisieren ob es sich um die Bruchfarbe, die Verwitterungsfarbe, etc. handelt; z.B.Verwitterungsfarbe grau.
 []()           | Cardinality [0..1] |                                        |
-12 | **sedi_main_com**                | [CodedDomain](#bedrock-plg-sedi-main-com)                    | Hauptgesteinskomponente des klastischen Sedimentgesteins
+12 | **sedi_main_com**                | [CodedDomain](#bedrock-plg-sedi-main-com)  | Hauptgesteinskomponente des klastischen Sedimentgesteins. 
 []()           | Cardinality [0..1] |                                                      |
-13 | **sedi_seco_com**                | [CodedDomain](#bedrock-plg-sedi-seco-com)                    | Nebengesteinskomponente des Sedimentgesteins
+13 | **sedi_seco_com**                | [CodedDomain](#bedrock-plg-sedi-seco-com)  | Nebengesteinskomponente des Sedimentgesteins. 
 []()           | Cardinality [0..2] |                                                      |
-14 | **sedi_bond_mat**                | [CodedDomain](#bedrock-plg-sedi-bond-mat)                    | Bindemittel des Sedimentgesteins
+14 | **sedi_bond_mat**                | [CodedDomain](#bedrock-plg-sedi-bond-mat)  | Bindemittel des Sedimentgesteins. 
 []()           | Cardinality [0..1] |                                                      |
-15 | **sedi_bedding**                | [CodedDomain](#bedrock-plg-sedi-bedding)                    | Schichtung des Sedimentgesteins
+15 | **sedi_bedding**                | [CodedDomain](#bedrock-plg-sedi-bedding)  | Schichtung des Sedimentgesteins. 
 []()           | Cardinality [0..2] |                                                      |
-16 | **sedi_str**                | [CodedDomain](#bedrock-plg-sedi-str)                    | Textur des Sedimentgesteins
+16 | **sedi_str**                | [CodedDomain](#bedrock-plg-sedi-str)  | Textur des Sedimentgesteins. 
 []()           | Cardinality [0..2] |                                                      |
-17 | **sedi_tex**                | [CodedDomain](#bedrock-plg-sedi-tex)                    | Sedimentstruktur
+17 | **sedi_tex**                | [CodedDomain](#bedrock-plg-sedi-tex)  | Sedimentstruktur. 
 []()           | Cardinality [] |                                                      |
-18 | **igne_text**                | [CodedDomain](#bedrock-plg-igne-text)                    | Struktur des magmatischen Gesteins
+18 | **igne_text**                | [CodedDomain](#bedrock-plg-igne-text)  | Struktur des magmatischen Gesteins. 
 []()           | Cardinality [0..1] |                                                      |
-19 | **igne_grain_si**                | [CodedDomain](#bedrock-plg-igne-grain-si)                    | Korngrösse des magmatischen Gesteins
+19 | **igne_grain_si**                | [CodedDomain](#bedrock-plg-igne-grain-si)  | Korngrösse des magmatischen Gesteins. 
 []()           | Cardinality [0..1] |                                                      |
-20 | **igne_affinity**                | [CodedDomain](#bedrock-plg-igne-affinity)                    | Affinität zu einer magmatischen Serie.
+20 | **igne_affinity**                | [CodedDomain](#bedrock-plg-igne-affinity)  | Affinität zu einer magmatischen Serie.. 
 []()           | Cardinality [] |                                                      |
 21 | **meta_full_name**                | string                                    | Bezeichnung des metamorphen Gesteins
 []()           | Cardinality [0..1] |                                        |
-22 | **meta_mineral**                | [CodedDomain](#bedrock-plg-meta-mineral)                    | Wichtiges Mineral des metamorphen Gesteins
+22 | **meta_mineral**                | [CodedDomain](#gc-mineral-cd)  | Wichtiges Mineral des metamorphen Gesteins. Die möglichen Werte sind in der Tabelle GC_MINERAL_CD im Anhang dieses Dokumentes verfügbar.
 []()           | Cardinality [0..3] |                                                      |
-23 | **meta_str**                | [CodedDomain](#bedrock-plg-meta-str)                    | Textur des metamorphen Gesteins
+23 | **meta_str**                | [CodedDomain](#bedrock-plg-meta-str)  | Textur des metamorphen Gesteins. 
 []()           | Cardinality [0..3] |                                                      |
 
 
@@ -1618,8 +452,3612 @@ _Gesteinsaufbau_
 
 
 
-#### Attribute listrat {#bedrock-plg-listrat}
+#### Attribute listrat
 _Lithostratigraphische Einhei_
+Siehe die CodedDomain [GC_LITSTRAT_BED_CD](#gc-litstrat-bed-cd) in Ahhang
+
+
+
+
+
+#### Attribute litho
+_Lithologische Beschreibung_
+Siehe die CodedDomain [GC_LITHO_CD](#gc-litho-cd) in Ahhang
+
+
+
+
+
+#### Attribute chrono_t
+_Chronostratigraphische Zuordnung der Obergrenze der Kartiereinheit (Top)_
+Siehe die CodedDomain [GC_CHRONO_CD](#gc-chrono-cd) in Ahhang
+
+
+
+
+
+#### Attribute chrono_b
+_Chronostratigraphische Zuordnung der Untergrenze der Kartiereinheit (Basis)_
+Siehe die CodedDomain [GC_CHRONO_CD](#gc-chrono-cd) in Ahhang
+
+
+
+
+
+#### Attribute tecto
+_Tektonische Zugehörigkeit_
+Siehe die CodedDomain [GC_TECTO_CD](#gc-tecto-cd) in Ahhang
+
+
+
+
+
+#### Attribute orig_descr
+_Originalbezeichnung gemäss der Legende der zugrundeliegenden geologischen Karte_
+_Datentyp:  string_
+
+
+
+
+
+#### Attribute buried_out
+_Wurde das Festgestein wieder verdeckt (ja / nein)?_
+_Datentyp:  boolean_
+
+
+
+
+
+#### Attribute exotic_ele
+_Handelt es sich bei der Objektart um ein exotisches Element; z.B. Einschluss, Linse, Tasche, Olistholith (ja / nein)?_
+
+
+
+
+#### Attribute colour
+_Farbe des Gesteins. Präzisieren ob es sich um die Bruchfarbe, die Verwitterungsfarbe, etc. handelt; z.B.Verwitterungsfarbe grau._
+_Datentyp:  string_
+
+
+
+
+
+#### Attribute sedi_main_com {#bedrock-plg-sedi-main-com}
+_Hauptgesteinskomponente des klastischen Sedimentgesteins_
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|15602006 | Dolomitstein | Dolomitstein     |
+|15602001 | Gesteinsbruchstück undifferenziert | Gesteinsbruchstück undifferenziert     |
+|15602005 | Kalkstein | Kalkstein     |
+|15602002 | kieselige Gesteine (Quarzit, Quarz (Mineralisch), Radiolarit, Kieselkalk, Quarzsandstein, Hornstein) | kieselige Gesteine (Quarzit, Quarz (Mineralisch), Radiolarit, Kieselkalk, Quarzsandstein, Hornstein)     |
+|15602007 | Kristallingestein undifferenziert | Kristallingestein undifferenziert     |
+|15602010 | Mergelstein | Mergelstein     |
+|15602009 | Metamorphit | Metamorphit     |
+|15602003 | Sedimentgestein undifferenziert | Sedimentgestein undifferenziert     |
+|15602004 | Tonstein | Tonstein     |
+|15602008 | Vulkanit | Vulkanit     |
+|999997 | Unknown | Unknown     |
+|999998 | Not applicable | Not applicable     |
+
+
+
+
+#### Attribute sedi_seco_com {#bedrock-plg-sedi-seco-com}
+_Nebengesteinskomponente des Sedimentgesteins_
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|20001019 | biogene Komponenten | biogene Komponenten     |
+|20001024 | Bitumen | Bitumen     |
+|20001005 | Dolomitstein | Dolomitstein     |
+|20001026 | Eisenmineralien | Eisenmineralien     |
+|20001025 | Evaporit | Evaporit     |
+|20001012 | Feldspat | Feldspat     |
+|20001001 | Gesteinsbruchstück undifferenziert | Gesteinsbruchstück undifferenziert     |
+|20001013 | Glaukonit | Glaukonit     |
+|20001014 | Glimmer | Glimmer     |
+|20001015 | intraformationelle Gerölle | intraformationelle Gerölle     |
+|20001016 | Kalkkonkretionen | Kalkkonkretionen     |
+|20001004 | Kalkstein | Kalkstein     |
+|20001023 | Kohle | Kohle     |
+|20001006 | Kristallingestein undifferenziert | Kristallingestein undifferenziert     |
+|20001022 | Mergelstein | Mergelstein     |
+|20001008 | Metamorphit | Metamorphit     |
+|20001021 | Phosphorit | Phosphorit     |
+|20001010 | pyroklastische Komponenten | pyroklastische Komponenten     |
+|20001011 | Quarz | Quarz     |
+|20001009 | Quarzit | Quarzit     |
+|20001002 | Sedimentgestein undifferenziert | Sedimentgestein undifferenziert     |
+|20001017 | Sideritkonkretionen | Sideritkonkretionen     |
+|20001018 | Silexkonkretionen | Silexkonkretionen     |
+|20001020 | terrigener Detritus | terrigener Detritus     |
+|20001003 | Tonstein | Tonstein     |
+|20001007 | Vulkanit | Vulkanit     |
+|999997 | Unknown | Unknown     |
+|999998 | Not applicable | Not applicable     |
+
+
+
+
+#### Attribute sedi_bond_mat {#bedrock-plg-sedi-bond-mat}
+_Bindemittel des Sedimentgesteins_
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|14313008 | dolomitische Matrix | dolomitische Matrix     |
+|14313002 | dolomitischer Zement | dolomitischer Zement     |
+|14313007 | kalkige Matrix | kalkige Matrix     |
+|14313001 | kalkiger Zement | kalkiger Zement     |
+|14313003 | kieseliger Zement | kieseliger Zement     |
+|14313010 | mineralische Imprägnierung | mineralische Imprägnierung     |
+|14313009 | organische Imprägnierung (Asphalt) | organische Imprägnierung (Asphalt)     |
+|14313006 | sandige Matrix | sandige Matrix     |
+|14313005 | siltige Matrix | siltige Matrix     |
+|14313004 | tonige Matrix | tonige Matrix     |
+|999997 | Unknown | Unknown     |
+|999998 | Not applicable | Not applicable     |
+
+
+
+
+#### Attribute sedi_bedding {#bedrock-plg-sedi-bedding}
+_Schichtung des Sedimentgesteins_
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|20101005 | blätterig | blätterig     |
+|20101003 | dickbankig (&gt;30cm) | dickbankig (&gt;30cm)     |
+|20101004 | dünnbankig (1-10cm) | dünnbankig (1-10cm)     |
+|20101002 | gebankt | gebankt     |
+|20101006 | knauerig | knauerig     |
+|20101007 | knollig | knollig     |
+|20101008 | linsenförmig | linsenförmig     |
+|20101001 | massig | massig     |
+|999997 | Unknown | Unknown     |
+|999998 | Not applicable | Not applicable     |
+
+
+
+
+#### Attribute sedi_str {#bedrock-plg-sedi-str}
+_Textur des Sedimentgesteins_
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|20201007 | bioturbiert | bioturbiert     |
+|20201002 | geschichtet | geschichtet     |
+|20201006 | invers gradiert | invers gradiert     |
+|20201004 | laminiert | laminiert     |
+|20201005 | normal gradiert | normal gradiert     |
+|20201003 | schräg-/kreuzgeschichtet | schräg-/kreuzgeschichtet     |
+|20201008 | stromatolitisch | stromatolitisch     |
+|20201001 | texturlos | texturlos     |
+|999997 | Unknown | Unknown     |
+|999998 | Not applicable | Not applicable     |
+
+
+
+
+#### Attribute sedi_tex {#bedrock-plg-sedi-tex}
+_Sedimentstruktur_
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|20301005 | bioklastisch | bioklastisch     |
+|20301003 | mikritisch | mikritisch     |
+|20301001 | monomikt | monomikt     |
+|20301007 | onkolithisch | onkolithisch     |
+|20301008 | oolithisch | oolithisch     |
+|20301009 | pelitisch | pelitisch     |
+|20301010 | pisolithisch | pisolithisch     |
+|20301002 | polymikt | polymikt     |
+|20301004 | spätig | spätig     |
+|999997 | Unknown | Unknown     |
+|999998 | Not applicable | Not applicable     |
+
+
+
+
+#### Attribute igne_text {#bedrock-plg-igne-text}
+_Struktur des magmatischen Gesteins_
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|14317001 | gleichkörnig | gleichkörnig     |
+|14317003 | porphyrisch | porphyrisch     |
+|14317002 | ungleichkörnig | ungleichkörnig     |
+|999997 | Unknown | Unknown     |
+|999998 | Not applicable | Not applicable     |
+
+
+
+
+#### Attribute igne_grain_si {#bedrock-plg-igne-grain-si}
+_Korngrösse des magmatischen Gesteins_
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|14318003 | aphanitisch | aphanitisch     |
+|14318002 | feinkörnig | feinkörnig     |
+|14318001 | grobkörnig | grobkörnig     |
+|999997 | Unknown | Unknown     |
+|999998 | Not applicable | Not applicable     |
+
+
+
+
+#### Attribute igne_affinity {#bedrock-plg-igne-affinity}
+_Affinität zu einer magmatischen Serie._
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|15733001 | alkalisch | alkalisch     |
+|15733002 | kalkalkalisch | kalkalkalisch     |
+|15733003 | tholeiitisch | tholeiitisch     |
+|999997 | Unknown | Unknown     |
+|999998 | Not applicable | Not applicable     |
+
+
+
+
+#### Attribute meta_full_name
+_Bezeichnung des metamorphen Gesteins_
+_Datentyp:  string_
+
+
+
+
+
+#### Attribute meta_mineral
+_Wichtiges Mineral des metamorphen Gesteins_
+Siehe die CodedDomain [GC_MINERAL_CD](#gc-mineral-cd) in Ahhang
+
+
+
+
+
+#### Attribute meta_str {#bedrock-plg-meta-str}
+_Textur des metamorphen Gesteins_
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|20501016 | agmatitisch (migmatitisch) | agmatitisch (migmatitisch)     |
+|20501003 | augig | augig     |
+|20501017 | brekziös | brekziös     |
+|20501015 | flaserig | flaserig     |
+|20501012 | geadert | geadert     |
+|20501002 | gebändert | gebändert     |
+|20501010 | gebankt | gebankt     |
+|20501011 | gefältelt | gefältelt     |
+|20501008 | lagig | lagig     |
+|20501007 | laminiert | laminiert     |
+|20501014 | linsig | linsig     |
+|20501001 | massig | massig     |
+|20501004 | mit Schollen | mit Schollen     |
+|20501006 | phyllitisch | phyllitisch     |
+|20501009 | plattig | plattig     |
+|20501005 | schiefrig | schiefrig     |
+|20501013 | schlierig | schlierig     |
+|999997 | Unknown | Unknown     |
+|999998 | Not applicable | Not applicable     |
+
+
+
+
+
+
+
+
+## Theme GEOMORPHOLOGY
+
+### Class Instability_Structures_PT {#instability-structures-pt}
+Die Klasse [Instability_Structures_PT](#instability-structures-pt) enthält lokal beobachtete Hinweise auf Hanginstabilitäten 
+(Rutschungen), die räumlich nicht abgegrenzt werden können. Wenn möglich, sollen instabile 
+Gesteinsmassen durch Polygone erfasst werden (Klasse Instabilities_within_Unconsolidated_ 
+Deposits_PLG), die punktförmige Aufnahme ist zu vermeiden und vorwiegend für die Vektorisierung älterer
+gedruckter Karten gedacht.
+
+
+
+
+    | Name                         | Type                              | Description
+----|------------------------------|-----------------------------------|--------------------------------------
+1 | **kind**                | subtype                                    | Spezifische Eigenschaft
+[]()           | Cardinality [1] | 11601                                       |
+
+
+
+
+
+#### Attribute kind
+_Spezifische Eigenschaft_
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|11601001 | Gins Hinweis auf Hanginstabilität | Gins Hinweis auf Hanginstabilität     |
+
+
+
+
+### Class Instability_Structures_L {#instability-structures-l}
+Die Klasse [Instability_Structures_L](#instability-structures-l) umfasst linienförmige Morphologien, die sich als Folge von 
+Hanginstabilitäten an der Oberfläche ausgebildet haben. Beim Abrissrand handelt es sich um den 
+oberen Rand der durch das Abgleiten der bewegten Masse freigelegten Gleitfläche einer 
+Rutschung oder Sackung (Abrissnische)
+
+
+
+
+    | Name                         | Type                              | Description
+----|------------------------------|-----------------------------------|--------------------------------------
+1 | **kind**                | subtype                                    | Spezifische Eigenschaft
+[]()           | Cardinality [1] | 11701                                       |
+
+
+
+
+
+#### Attribute kind
+_Spezifische Eigenschaft_
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|11701001 | Gins Stauchwulst | Gins Stauchwulst     |
+|11701002 | Gins Nackentälchen, Zerrstruktur | Gins Nackentälchen, Zerrstruktur     |
+|11701003 | Gins Abrissrand | Gins Abrissrand     |
+|11701004 | Gins offene Spalte | Gins offene Spalte     |
+
+
+
+
+### Class Instabilities_within_Unconsolidated_Deposits_PLG {#instabilities-within-unconsolidated-deposits-plg}
+Die Klasse [Instabilities_within_Unconsolidated_Deposits_PLG](#instabilities-within-unconsolidated-deposits-plg) beinhaltet alle Polygone, die Gebiete 
+mit instabilen Lockergesteinen begrenzen. In dieser Klasse werden die Prozessräume der 
+verschiedenen Typen von gleitenden Massenbewegungsprozessen ausgeschieden; die 
+eigentlichen Gesteinskörper und Ablagerungen, die von Massenbewegungsprozessen betroffen 
+bzw. gebildet worden sind, werden in der Klasse [Unconsolidated_Deposits_PLG](#unconsolidated-deposits-plg) beschrieben. Zur 
+näheren Erklärung der verschiedenen Objektarten sind im Anhang A einige Fallbeispiele 
+abgebildet.
+
+
+
+
+    | Name                         | Type                              | Description
+----|------------------------------|-----------------------------------|--------------------------------------
+1 | **kind**                | subtype                                    | Spezifische Eigenschaft
+[]()           | Cardinality [1] | 11801                                       |
+
+
+
+
+
+#### Attribute kind
+_Spezifische Eigenschaft_
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+
+
+
+
+### Class Instabilities_within_Bedrock_PLG {#instabilities-within-bedrock-plg}
+Die Klasse [Instabilities_within_Bedrock_PLG](#instabilities-within-bedrock-plg) beinhaltet alle Polygone, die Gebiete mit instabilen 
+Festgesteinen begrenzen. In dieser Klasse werden die Prozessräume der verschiedenen Typen von 
+gleitenden Massenbewegungsprozessen ausgeschieden; die eigentlichen Gesteinskörper, die von 
+Massenbewegungsprozessen betroffen sind, werden in der Klasse [Bedrock_PLG](#bedrock-plg) beschrieben. Zur 
+näheren Erklärung der verschiedenen Objektarten sind im Anhang A einige Fallbeispiele 
+abgebildet.
+
+
+
+
+    | Name                         | Type                              | Description
+----|------------------------------|-----------------------------------|--------------------------------------
+1 | **kind**                | subtype                                    | Spezifische Eigenschaft
+[]()           | Cardinality [1] | 11501                                       |
+2 | **main_mov**                | [CodedDomain](#instabilities-within-bedrock-plg-main-mov)  | Hauptbewegungsphase. 
+[]()           | Cardinality [0..1] |                                                      |
+
+
+
+
+
+#### Attribute kind
+_Spezifische Eigenschaft_
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+
+
+
+
+#### Attribute main_mov {#instabilities-within-bedrock-plg-main-mov}
+_Hauptbewegungsphase_
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|11502002 | Hauptbewegungsphase nach dem letzteiszeitlichen Maximum | Hauptbewegungsphase nach dem letzteiszeitlichen Maximum     |
+|11502001 | Hauptbewegungsphase vor dem letzteiszeitlichen Maximum | Hauptbewegungsphase vor dem letzteiszeitlichen Maximum     |
+|999997 | Unknown | Unknown     |
+|999998 | Not applicable | Not applicable     |
+
+
+
+
+### Class Glacial_Structures_PT {#glacial-structures-pt}
+Die Klasse [Glacial_Structures_PT](#glacial-structures-pt) enthält Objektarten, welche die ehemalige Anwesenheit eines 
+Gletschers punktuell dokumentieren (Gletscherschliff ist ein räumlich orientiertes Objekt und 
+befindet sich deshalb in der Klasse Lineation_PT).
+
+
+
+
+    | Name                         | Type                              | Description
+----|------------------------------|-----------------------------------|--------------------------------------
+1 | **kind**                | subtype                                    | Spezifische Eigenschaft
+[]()           | Cardinality [1] | 11201                                       |
+
+
+
+
+
+#### Attribute kind
+_Spezifische Eigenschaft_
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|11201002 | Ggla Gletschermühle, Strudelloch | Ggla Gletschermühle, Strudelloch     |
+|11201001 | Ggla glazitektonische Deformation | Ggla glazitektonische Deformation     |
+
+
+
+
+### Class Glacial_and_Periglacial_Structures_L {#glacial-and-periglacial-structures-l}
+Die Klasse [Glacial_and_Periglacial_Structures_L](#glacial-and-periglacial-structures-l) enthält linienförmige Strukturen, die auf ein 
+glaziales oder periglaziales Bildungsmilieu hindeuten. Mit Ausnahme der Schliffgrenze handelt es 
+sich in dieser Klasse ausschliesslich um akkummulative Landschaftsformen wie Moränenwälle oder 
+Blockwülste im Blockgletscher.
+
+
+
+
+    | Name                         | Type                              | Description
+----|------------------------------|-----------------------------------|--------------------------------------
+1 | **kind**                | subtype                                    | Objektart
+[]()           | Cardinality [1] | 11301                                       |
+2 | **morai_mo**                | [CodedDomain](#glacial-and-periglacial-structures-l-morai-mo)  | Morphologie der Moräne. 
+[]()           | Cardinality [0..1] |                                                      |
+3 | **glac_typ**                | [CodedDomain](#glacial-and-periglacial-structures-l-glac-typ)  | Gletschertyp, auf welchen die Objektart bezogen ist. 
+[]()           | Cardinality [0..1] |                                                      |
+4 | **ice_m_p**                | [CodedDomain](#glacial-and-periglacial-structures-l-ice-m-p)  | Räumlicher Gletscherstand. 
+[]()           | Cardinality [0..1] |                                                      |
+5 | **quat_str**                | [CodedDomain](#glacial-and-periglacial-structures-l-quat-str)  | Zeitliche quartärstratigraphische Zuordnung des Moränenwälls. 
+[]()           | Cardinality [0..1] |                                                      |
+6 | **ref_year**                | integer                                    | Referenzjahr des älteren Gletscherstandes.
+[]()           | Cardinality [0..1] |                                        |
+7 | **source**                | string                                    | Quellenangabe der historischen Unterlagen
+[]()           | Cardinality [0..1] |                                        |
+
+
+
+
+
+#### Attribute kind
+_Objektart_
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|11301001 | Ggla Moränenwall | Ggla Moränenwall     |
+|11301002 | Ggla Moränenwall auf Gletscher oder auf Toteis | Ggla Moränenwall auf Gletscher oder auf Toteis     |
+|11301003 | Ggla Kameterrassenkante | Ggla Kameterrassenkante     |
+|11301004 | Ggla älterer Gletscherstand, basierend auf historischen Daten | Ggla älterer Gletscherstand, basierend auf historischen Daten     |
+|11301005 | Ggla Schliffgrenze | Ggla Schliffgrenze     |
+|11301006 | Ggla Protalus Rampart Wulst | Ggla Protalus Rampart Wulst     |
+|11301007 | Ggla Blockwulst im Blockgletscher | Ggla Blockwulst im Blockgletscher     |
+|11301008 | Ggla Schneehaldenmoränenwall | Ggla Schneehaldenmoränenwall     |
+|11301009 | Ggla Verbreitungsgrenze von Geschiebe | Ggla Verbreitungsgrenze von Geschiebe     |
+
+
+
+
+#### Attribute morai_mo {#glacial-and-periglacial-structures-l-morai-mo}
+_Morphologie der Moräne_
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|11302002 | einseitig abfallend | einseitig abfallend     |
+|11302001 | symmetrisch | symmetrisch     |
+|999997 | Unknown | Unknown     |
+|999998 | Not applicable | Not applicable     |
+
+
+
+
+#### Attribute glac_typ {#glacial-and-periglacial-structures-l-glac-typ}
+_Gletschertyp, auf welchen die Objektart bezogen ist_
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|11303002 | grosse Tal- und Vorlandgletscher | grosse Tal- und Vorlandgletscher     |
+|11303001 | Lokalgletscher | Lokalgletscher     |
+|999997 | Unknown | Unknown     |
+|999998 | Not applicable | Not applicable     |
+
+
+
+
+#### Attribute ice_m_p {#glacial-and-periglacial-structures-l-ice-m-p}
+_Räumlicher Gletscherstand_
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|11304002 | Bern | Bern     |
+|11304050 | Bremgarten I | Bremgarten I     |
+|11304051 | Bremgarten II | Bremgarten II     |
+|11304003 | Bremgarten, undifferenziert | Bremgarten, undifferenziert     |
+|11304052 | Bülach I | Bülach I     |
+|11304053 | Bülach II | Bülach II     |
+|11304054 | Bülach, undifferenziert | Bülach, undifferenziert     |
+|11304037 | Chur | Chur     |
+|11304055 | Dättikon | Dättikon     |
+|11304028 | Feuerthalen I | Feuerthalen I     |
+|11304029 | Feuerthalen II | Feuerthalen II     |
+|11304005 | Feuerthalen, undifferenziert | Feuerthalen, undifferenziert     |
+|11304040 | Fideris | Fideris     |
+|11304006 | Gurten | Gurten     |
+|11304007 | Hurden | Hurden     |
+|11304008 | Killwangen | Killwangen     |
+|11304039 | Koblach | Koblach     |
+|11304004 | Konstanz | Konstanz     |
+|11304035 | Küblis | Küblis     |
+|11304036 | Lunden | Lunden     |
+|11304001 | Maximalstand, undifferenziert | Maximalstand, undifferenziert     |
+|11304009 | Mellingen | Mellingen     |
+|11304010 | Muri | Muri     |
+|11304056 | Regensdorf | Regensdorf     |
+|11304011 | Rotkreuz | Rotkreuz     |
+|11304038 | Sargans | Sargans     |
+|11304030 | Schaffausen I | Schaffausen I     |
+|11304031 | Schaffausen II | Schaffausen II     |
+|11304012 | Schaffhausen, undifferenziert | Schaffhausen, undifferenziert     |
+|11304048 | Schlieren I | Schlieren I     |
+|11304049 | Schlieren II | Schlieren II     |
+|11304013 | Schlieren, undifferenziert | Schlieren, undifferenziert     |
+|11304014 | Schosshalde | Schosshalde     |
+|11304057 | Seeb | Seeb     |
+|11304015 | Seftigschwand | Seftigschwand     |
+|11304041 | Serneus | Serneus     |
+|11304016 | Solothurn | Solothurn     |
+|11304017 | Spreitenbach | Spreitenbach     |
+|11304018 | Spreitenbach-Killwangen | Spreitenbach-Killwangen     |
+|11304045 | Staffelbach-Stand | Staffelbach-Stand     |
+|11304025 | Stein-am-Rhein I | Stein-am-Rhein I     |
+|11304026 | Stein-am-Rhein II | Stein-am-Rhein II     |
+|11304027 | Stein-am-Rhein III | Stein-am-Rhein III     |
+|11304019 | Stein am Rhein, undifferenziert | Stein am Rhein, undifferenziert     |
+|11304058 | Stetten I | Stetten I     |
+|11304059 | Stetten II | Stetten II     |
+|11304020 | Stetten, undifferenziert | Stetten, undifferenziert     |
+|11304043 | Sursee | Sursee     |
+|11304044 | Triengen | Triengen     |
+|11304021 | Wangen I | Wangen I     |
+|11304022 | Wangen II | Wangen II     |
+|11304042 | Wangen, undifferenziert | Wangen, undifferenziert     |
+|11304023 | Wittigkofen | Wittigkofen     |
+|11304060 | Würenlos I | Würenlos I     |
+|11304061 | Würenlos II | Würenlos II     |
+|11304062 | Würenlos, undifferenziert | Würenlos, undifferenziert     |
+|11304046 | Zürich I | Zürich I     |
+|11304047 | Zürich II | Zürich II     |
+|11304024 | Zürich, undifferenziert | Zürich, undifferenziert     |
+|999997 | Unknown | Unknown     |
+|999998 | Not applicable | Not applicable     |
+
+
+
+
+#### Attribute quat_str {#glacial-and-periglacial-structures-l-quat-str}
+_Zeitliche quartärstratigraphische Zuordnung des Moränenwälls_
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|11305001 | 1. Vergletscherung der letzten Eiszeit (MIS 5d) | 1. Vergletscherung der letzten Eiszeit (MIS 5d)     |
+|11305002 | 2. Vergletscherung der letzten Eiszeit (MIS 4) | 2. Vergletscherung der letzten Eiszeit (MIS 4)     |
+|11305003 | 3. Vergletscherung der letzten Eiszeit (LGM, MIS 2) | 3. Vergletscherung der letzten Eiszeit (LGM, MIS 2)     |
+|11305005 | Clavadel | Clavadel     |
+|11305006 | Daun | Daun     |
+|11305007 | Egesen | Egesen     |
+|11305004 | Gschnitz | Gschnitz     |
+|11305008 | Mittleres Pleistozän | Mittleres Pleistozän     |
+|999997 | Unknown | Unknown     |
+|999998 | Not applicable | Not applicable     |
+
+
+
+
+#### Attribute ref_year
+_Referenzjahr des älteren Gletscherstandes._
+_Datentyp:  integer_
+
+
+
+
+
+#### Attribute source
+_Quellenangabe der historischen Unterlagen_
+_Datentyp:  string_
+
+
+
+
+
+### Class Glacial_Structures_PLG {#glacial-structures-plg}
+Die Klasse [Glacial_Structures_PLG](#glacial-structures-plg) umfasst flächenhafte glaziale Landschaftsformen, die durch
+basales Fliessen des Gletschereises oder dessen Abschmelzen entstanden sind.
+
+
+
+
+    | Name                         | Type                              | Description
+----|------------------------------|-----------------------------------|--------------------------------------
+1 | **kind**                | subtype                                    | Objektart
+[]()           | Cardinality [1] | 11401                                       |
+
+
+
+
+
+#### Attribute kind
+_Objektart_
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|11401001 | Ggla Drumlin, drumlinartige Kieskuppe | Ggla Drumlin, drumlinartige Kieskuppe     |
+|11401003 | Ggla Rundhöcker | Ggla Rundhöcker     |
+|11401004 | Ggla Toteisloch, Soll | Ggla Toteisloch, Soll     |
+
+
+
+
+### Class Erosional_Structures_PT {#erosional-structures-pt}
+Die Klasse [Erosional_Structures_PT](#erosional-structures-pt) beinhaltet lokale Landschaftselemente, die sich im Laufe der 
+Zeit unter Einwirkung von diversen Erosionsprozessen gebildet haben.
+
+
+
+
+    | Name                         | Type                              | Description
+----|------------------------------|-----------------------------------|--------------------------------------
+1 | **kind**                | subtype                                    | Objektart
+[]()           | Cardinality [1] | 11001                                       |
+
+
+
+
+
+#### Attribute kind
+_Objektart_
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|11001001 | Gero Erdpyramide | Gero Erdpyramide     |
+
+
+
+
+### Class Erosional_Structures_L {#erosional-structures-l}
+Die Klasse [Erosional_Structures_L](#erosional-structures-l) enthält linienförmige erosive Formen wie Erosionsränder im 
+Allgemeinen oder Terrassenkanten. 
+Auf älteren gedruckten Karten wurden Erosionsränder und Terrassenkanten oftmals nicht 
+unterschieden. In den Vektordaten wird diese Unterscheidung jedoch konsequent vollzogen. Dies
+bedingt, dass im Rahmen der Vektorisierung älterer gedruckter Karten Erosionsränder und 
+Terrassenkanten aufgeteilt werden müssen. Terrassenkanten werden nur dann als solche 
+attributiert, wenn sie durch ihre Lage und entsprechende Schotterterrassen eindeutig zugeordnet
+werden können. Zweifelhafte Fälle werden als Erosionsränder aufgenommen.
+
+
+
+
+    | Name                         | Type                              | Description
+----|------------------------------|-----------------------------------|--------------------------------------
+1 | **kind**                | subtype                                    | Objektart
+[]()           | Cardinality [1] | 11101                                       |
+
+
+
+
+
+#### Attribute kind
+_Objektart_
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|11101001 | Gero Erosionsrand | Gero Erosionsrand     |
+|11101002 | Gero Terrassenkante | Gero Terrassenkante     |
+|11101003 | Gero Schichtstufenkante | Gero Schichtstufenkante     |
+
+
+
+
+### Class Karstic_Structures_PT {#karstic-structures-pt}
+Die Klasse [Karstic_Structures_PT](#karstic-structures-pt) beinhaltet Karstphänomene, die punktförmig dargestellt werden. 
+Darunter fallen u.a. der Ponor oder der Eingang zu einer Höhle.
+
+
+
+
+    | Name                         | Type                              | Description
+----|------------------------------|-----------------------------------|--------------------------------------
+1 | **kind**                | subtype                                    | Objektart
+[]()           | Cardinality [1] | 11301                                       |
+2 | **ice_cave**                | boolean                                    | Handelt es sich bei der Höhle um eine Eisgrotte («glacière», aussergewöhnlich kalte Höhle in der sich
+durch die winterlichen Schneefälle oder durch das Gefrieren von eingedrungenem Wasser Eis akkumuliert
+und das auch die warme Jahreszeit überdauert) (ja / nein)?
+[]()           | Cardinality [0..1] |                                        |
+
+
+
+
+
+#### Attribute kind
+_Objektart_
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|11301001 | Ggla Moränenwall | Ggla Moränenwall     |
+|11301002 | Ggla Moränenwall auf Gletscher oder auf Toteis | Ggla Moränenwall auf Gletscher oder auf Toteis     |
+|11301003 | Ggla Kameterrassenkante | Ggla Kameterrassenkante     |
+|11301004 | Ggla älterer Gletscherstand, basierend auf historischen Daten | Ggla älterer Gletscherstand, basierend auf historischen Daten     |
+|11301005 | Ggla Schliffgrenze | Ggla Schliffgrenze     |
+|11301006 | Ggla Protalus Rampart Wulst | Ggla Protalus Rampart Wulst     |
+|11301007 | Ggla Blockwulst im Blockgletscher | Ggla Blockwulst im Blockgletscher     |
+|11301008 | Ggla Schneehaldenmoränenwall | Ggla Schneehaldenmoränenwall     |
+|11301009 | Ggla Verbreitungsgrenze von Geschiebe | Ggla Verbreitungsgrenze von Geschiebe     |
+
+
+
+
+#### Attribute ice_cave
+_Handelt es sich bei der Höhle um eine Eisgrotte («glacière», aussergewöhnlich kalte Höhle in der sich
+durch die winterlichen Schneefälle oder durch das Gefrieren von eingedrungenem Wasser Eis akkumuliert
+und das auch die warme Jahreszeit überdauert) (ja / nein)?_
+_Datentyp:  boolean_
+
+
+
+
+
+### Class Karstic_Structures_PLG {#karstic-structures-plg}
+Die Klasse [Karstic_Structures_PLG](#karstic-structures-plg) umfasst flächenhafte Karstformen wie Dolinen oder Poljen. 
+Dolinen werden immer als Polygone erfasst (das) bildet dafür eine wichtige Grundlage). Kleine 
+Dolinen (Durchmesser &lt; 25 m), werden durch eine definierte Einheitsfläche von 500 m²
+dargestellt.
+
+
+
+
+    | Name                         | Type                              | Description
+----|------------------------------|-----------------------------------|--------------------------------------
+1 | **kind**                | subtype                                    | Objektart
+[]()           | Cardinality [1] | 12001                                       |
+
+
+
+
+
+#### Attribute kind
+_Objektart_
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|12001001 | Gkar Senke ohne oberirdischen Abfluss | Gkar Senke ohne oberirdischen Abfluss     |
+|12001002 | Gkar Doline | Gkar Doline     |
+|12001003 | Gkar Karrenfeld | Gkar Karrenfeld     |
+|12001004 | Gkar Polje | Gkar Polje     |
+
+
+
+
+### Class Alluvial_and_Lacustrine_Structures_L {#alluvial-and-lacustrine-structures-l}
+Die Klasse [Alluvial_and_Lacustrine_Structures_L](#alluvial-and-lacustrine-structures-l) beinhaltet linienförmige Morphologien 
+fluviatilen oder lakustrischen Ursprungs.
+
+
+
+
+    | Name                         | Type                              | Description
+----|------------------------------|-----------------------------------|--------------------------------------
+1 | **kind**                | subtype                                    | Objektart
+[]()           | Cardinality [1] | 10901                                       |
+2 | **age**                | [CodedDomain](#alluvial-and-lacustrine-structures-l-age)  | Alter der Objektart.. 
+[]()           | Cardinality [0..1] |                                                      |
+
+
+
+
+
+#### Attribute kind
+_Objektart_
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|10901001 | Gall Strandwall | Gall Strandwall     |
+|10901002 | Gall Achse einer Murgangrinne | Gall Achse einer Murgangrinne     |
+
+
+
+
+#### Attribute age {#alluvial-and-lacustrine-structures-l-age}
+_Alter der Objektart._
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|10902001 | fossil | fossil     |
+|10902002 | rezent | rezent     |
+|999997 | Unknown | Unknown     |
+|999998 | Not applicable | Not applicable     |
+
+
+
+
+
+
+
+
+## Theme TECTONICS
+
+### Class Deformation_Structures_PT {#deformation-structures-pt}
+Die Klasse [Deformation_Structures_PT](#deformation-structures-pt) beinhaltet punktuell beobachtete tektonische 
+Deformationsstrukturen wie lokal stark verfaltete Stellen (Fältelung) oder Orte mit ausgeprägter 
+Klüftung. Ebenfalls in dieser Klasse befinden sich konstruierte Punkte wie z.B. die Orientierung 
+der Faltenachsenfläche. Die Darstellung der Spur einer Achsenfläche entspricht der Symbolisierung 
+eines konstruierten Faltenscharniers, in einem Punkt der Intersektion einer Achsenfläche und der 
+Topografie. Diese beiden letzterwähnten Objektarten sind im Anhang A zur besseren 
+Verständlichkeit abgebildet.
+
+
+
+
+    | Name                         | Type                              | Description
+----|------------------------------|-----------------------------------|--------------------------------------
+1 | **kind**                | subtype                                    | Objektart
+[]()           | Cardinality [1] | 14601                                       |
+2 | **azimuth**                | integer                                    | Fallrichtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad (0° 359°) im Uhrzeigersinn gemessen.
+[]()           | Cardinality [0..1] |                                        |
+3 | **dip**                | integer                                    | Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die Vertikale (90°).
+[]()           | Cardinality [0..1] |                                        |
+4 | **fold_typ**                | [CodedDomain](#deformation-structures-pt-fold-typ)  | Objekttyp. 
+[]()           | Cardinality [0..1] |                                                      |
+5 | **fold_for**                | [CodedDomain](#deformation-structures-pt-fold-for)  | Objektform. 
+[]()           | Cardinality [0..1] |                                                      |
+
+
+
+
+
+#### Attribute kind
+_Objektart_
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|14601001 | Tdef punktuell beobachtete tektonische Brekzie | Tdef punktuell beobachtete tektonische Brekzie     |
+|14601002 | Tdef ausgeprägte Klüftung | Tdef ausgeprägte Klüftung     |
+|14601003 | Tdef tektonische Diskordanz | Tdef tektonische Diskordanz     |
+|14601004 | Tdef Orientierung der Faltenachsenfläche | Tdef Orientierung der Faltenachsenfläche     |
+|14601005 | Tdef Fältelung | Tdef Fältelung     |
+|14601006 | Tdef Darstellung der Spur einer Achsenfläche | Tdef Darstellung der Spur einer Achsenfläche     |
+|14601007 | Tdef Chevron-Falte, Kink Fold | Tdef Chevron-Falte, Kink Fold     |
+
+
+
+
+#### Attribute azimuth
+_Fallrichtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad (0° 359°) im Uhrzeigersinn gemessen._
+_Datentyp:  integer_
+
+
+
+
+
+#### Attribute dip
+_Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die Vertikale (90°)._
+_Datentyp:  integer_
+
+
+
+
+
+#### Attribute fold_typ {#deformation-structures-pt-fold-typ}
+_Objekttyp_
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|14604001 | Antiklinale | Antiklinale     |
+|14604002 | Synklinale | Synklinale     |
+|999997 | Unknown | Unknown     |
+|999998 | Not applicable | Not applicable     |
+
+
+
+
+#### Attribute fold_for {#deformation-structures-pt-fold-for}
+_Objektform_
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|14605001 | Antiform | Antiform     |
+|14605002 | Synform | Synform     |
+|999997 | Unknown | Unknown     |
+|999998 | Not applicable | Not applicable     |
+
+
+
+
+### Class Deformation_Structures_L {#deformation-structures-l}
+Die Klasse [Deformation_Structures_L](#deformation-structures-l) enthält linienförmige tektonische Deformationsstrukturen,
+wie den Verlauf des Faltenscharniers. Ein Beispiel der Objektart ist zur Veranschaulichung im
+Anhang A abgebildet.
+
+
+
+
+    | Name                         | Type                              | Description
+----|------------------------------|-----------------------------------|--------------------------------------
+1 | **kind**                | subtype                                    | Objektart
+[]()           | Cardinality [1] | 14701                                       |
+
+
+
+
+
+#### Attribute kind
+_Objektart_
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|14701001 | Tdef Faltenscharnier | Tdef Faltenscharnier     |
+
+
+
+
+### Class Deformation_Structures_PLG {#deformation-structures-plg}
+In der Klasse [Deformation_Structures_PLG](#deformation-structures-plg) befinden sich tektonisch geprägte Zonen wie
+tektonisierte Zonen oder Kluftzonen.
+
+
+
+
+    | Name                         | Type                              | Description
+----|------------------------------|-----------------------------------|--------------------------------------
+1 | **kind**                | subtype                                    | Objektart
+[]()           | Cardinality [1] | 14801                                       |
+2 | **type**                | [CodedDomain](#deformation-structures-plg-type)  | Charakteristik der Objektarten. 
+[]()           | Cardinality [0..1] |                                                      |
+3 | **gen_rela**                | [CodedDomain](#deformation-structures-plg-gen-rela)  | Genetische Beziehung.. 
+[]()           | Cardinality [0..1] |                                                      |
+
+
+
+
+
+#### Attribute kind
+_Objektart_
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|14801001 | Tdef Kluftzone | Tdef Kluftzone     |
+|14801002 | Tdef tektonisierte Zone | Tdef tektonisierte Zone     |
+
+
+
+
+#### Attribute type {#deformation-structures-plg-type}
+_Charakteristik der Objektarten_
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|14802002 | kakiritisch | kakiritisch     |
+|14802001 | kataklastisch | kataklastisch     |
+|14802003 | mylonitisch | mylonitisch     |
+|14802004 | pseudotachylitisch | pseudotachylitisch     |
+|999997 | Unknown | Unknown     |
+|999998 | Not applicable | Not applicable     |
+
+
+
+
+#### Attribute gen_rela {#deformation-structures-plg-gen-rela}
+_Genetische Beziehung._
+
+
+
+
+### Class Tectonic_Boundaries_L {#tectonic-boundaries-l}
+Die Klasse [Tectonic_Boundaries_L](#tectonic-boundaries-l) umfasst alle tektonischen Verwerfungen. Die Horizontal-
+verschiebungen in der Schweiz können als «Bruch, (Attribut «Fault_Mo» (Fault Movement))
+parallel zur Streichrichtung» abgebildet werden. Als Pendant zu «Überschiebung» oder
+«Abschiebung» gibt es in der Schweiz keine «Horizontalverschiebung» mit vergleichbarer
+Grössenausdehnung. Ein Abscherhorizont wird als «Überschiebung» oder als «Abschiebung»
+dargestellt. Wenn die Bewegungsrichtung nicht bekannt ist, wird er zur «tektonischen Grenze mit
+unbekannter Bewegungsrichtung». Zur näheren Erklärung der verschiedenen Objektarten sind im
+Anhang A Beispiele abgebildet.
+
+
+
+
+    | Name                         | Type                              | Description
+----|------------------------------|-----------------------------------|--------------------------------------
+1 | **kind**                | subtype                                    | Objektart
+[]()           | Cardinality [1] | 14901                                       |
+2 | **fault_mo**                | [CodedDomain](#tectonic-boundaries-l-fault-mo)  | Bewegungsrichtung des Bruchs. 
+[]()           | Cardinality [0..1] |                                                      |
+3 | **verti_mo**                | [CodedDomain](#tectonic-boundaries-l-verti-mo)  | Bewegung parallel zur Fallrichtung der Bruchfläche.. 
+[]()           | Cardinality [0..1] |                                                      |
+4 | **horiz_mo**                | [CodedDomain](#tectonic-boundaries-l-horiz-mo)  | Bewegung parallel zur Streichrichtung der Bruch- oder Scherfläche. 
+[]()           | Cardinality [0..1] |                                                      |
+5 | **lim_tect_b**                | boolean                                    | Grenze einer tektonischen Einheit wie Deckengrenze,Schuppengrenze, Zonengrenze, etc. (ja / nein)?
+[]()           | Cardinality [1] |                                        |
+6 | **status**                | [CodedDomain](#tectonic-boundaries-l-status)  | Zustand der Objektart. 
+[]()           | Cardinality [1] |                                                      |
+7 | **activity**                | TODO                                    | Aktivität der Objektart
+[]()           | Cardinality [0..1] |                                        |
+8 | **meta_sta**                | [CodedDomain](#tectonic-boundaries-l-meta-sta)  | Tektonometamorphe Chronologie der Objektart. 
+[]()           | Cardinality [0..1] |                                                      |
+9 | **name**                | string                                    | Spezifischer Name der Objektart.
+[]()           | Cardinality [0..1] |                                        |
+
+
+
+
+
+#### Attribute kind
+_Objektart_
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|14901001 | Ttec Überschiebung | Ttec Überschiebung     |
+|14901002 | Ttec Abschiebung | Ttec Abschiebung     |
+|14901004 | Ttec Bruch | Ttec Bruch     |
+|14901005 | Ttec Aufschiebung | Ttec Aufschiebung     |
+|14901006 | Ttec Blattverschiebung | Ttec Blattverschiebung     |
+|14901007 | Ttec komplexe Störung | Ttec komplexe Störung     |
+|14901008 | Ttec Störung i. Allg. | Ttec Störung i. Allg.     |
+
+
+
+
+#### Attribute fault_mo {#tectonic-boundaries-l-fault-mo}
+_Bewegungsrichtung des Bruchs_
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|14902003 | parallel zur Fallrichtung (strike slip) | parallel zur Fallrichtung (strike slip)     |
+|14902002 | parallel zur Streichrichtung (Horizontalverschiebung) | parallel zur Streichrichtung (Horizontalverschiebung)     |
+|14902001 | schrägverschiebend (oblique slip) | schrägverschiebend (oblique slip)     |
+|999997 | Unknown | Unknown     |
+|999998 | Not applicable | Not applicable     |
+
+
+
+
+#### Attribute verti_mo {#tectonic-boundaries-l-verti-mo}
+_Bewegung parallel zur Fallrichtung der Bruchfläche._
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|14903002 | abschiebend | abschiebend     |
+|14903001 | aufschiebend | aufschiebend     |
+|999997 | Unknown | Unknown     |
+|999998 | Not applicable | Not applicable     |
+
+
+
+
+#### Attribute horiz_mo {#tectonic-boundaries-l-horiz-mo}
+_Bewegung parallel zur Streichrichtung der Bruch- oder Scherfläche_
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|14904001 | dextral | dextral     |
+|14904002 | sinistral | sinistral     |
+|999997 | Unknown | Unknown     |
+|999998 | Not applicable | Not applicable     |
+
+
+
+
+#### Attribute lim_tect_b
+_Grenze einer tektonischen Einheit wie Deckengrenze,Schuppengrenze, Zonengrenze, etc. (ja / nein)?_
+_Datentyp:  boolean_
+
+
+
+
+
+#### Attribute status {#tectonic-boundaries-l-status}
+_Zustand der Objektart_
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|14906004 | aus Seismikdaten interpretiert | aus Seismikdaten interpretiert     |
+|14906001 | gesichert, im Allgemeinen | gesichert, im Allgemeinen     |
+|14906002 | gesichert, unter Tage festgestellt | gesichert, unter Tage festgestellt     |
+|14906003 | vermutet | vermutet     |
+|999997 | Unknown | Unknown     |
+|999998 | Not applicable | Not applicable     |
+
+
+
+
+#### Attribute activity
+_Aktivität der Objektart_
+
+
+
+
+#### Attribute meta_sta {#tectonic-boundaries-l-meta-sta}
+_Tektonometamorphe Chronologie der Objektart_
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|14908003 | nach der Platznahme der Decken | nach der Platznahme der Decken     |
+|14908001 | vor der Platznahme der Decken | vor der Platznahme der Decken     |
+|14908002 | während der Platznahme der Decken | während der Platznahme der Decken     |
+|999997 | Unknown | Unknown     |
+|999998 | Not applicable | Not applicable     |
+
+
+
+
+#### Attribute name
+_Spezifischer Name der Objektart._
+_Datentyp:  string_
+
+
+
+
+
+
+
+
+
+## Theme MEASUREMENTS_SPATIAL_ORIENTATION
+
+### Class Folds_PT {#folds-pt}
+Die Klasse [Folds_PT](#folds-pt) enthält Objektarten, welche die räumliche Lage von verfalteten geologischen
+Objekten (mit direkten Feldmessungen) beschreiben. Beispiele der Objektarten Orientierung der
+Faltenachse und der Scheitellinie sind im Anhang A zur besseren Verständlichkeit abgebildet.
+
+
+
+
+    | Name                         | Type                              | Description
+----|------------------------------|-----------------------------------|--------------------------------------
+1 | **kind**                | subtype                                    | Objektart
+[]()           | Cardinality [1] | 13601                                       |
+2 | **fold_typ**                | [CodedDomain](#folds-pt-fold-typ)  | Objekttyp. 
+[]()           | Cardinality [0..1] |                                                      |
+3 | **fold_for**                |                                     | Form der Objektart
+[]()           | Cardinality [0..1] | 13603                                       |
+4 | **phase**                | [CodedDomain](#folds-pt-phase)  | Deformationsphase.. 
+[]()           | Cardinality [0..1] |                                                      |
+5 | **phase_ref**                | string                                    | Referenz für die Angabe der Deformationsphase.
+[]()           | Cardinality [0..1] |                                        |
+6 | **azimuth**                | integer                                    | Einfallsrichtung (Azimut) der jeweiligen Punktobjektart (z.B. Scheitellinie, Faltenachse). Wert in Grad (0° 359°) im Uhrzeigersinn gemessen
+[]()           | Cardinality [1] |                                        |
+7 | **dip**                | integer                                    | Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die Vertikale (90°).
+[]()           | Cardinality [0..1] |                                        |
+
+
+
+
+
+#### Attribute kind
+_Objektart_
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|13601001 | Mfol Orientierung der Faltenachse | Mfol Orientierung der Faltenachse     |
+|13601002 | Mfol Orientierung der Scheitellinie | Mfol Orientierung der Scheitellinie     |
+|13601003 | Mfol Orientierung der Muldenlinie | Mfol Orientierung der Muldenlinie     |
+
+
+
+
+#### Attribute fold_typ {#folds-pt-fold-typ}
+_Objekttyp_
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|13602001 | Antiklinale | Antiklinale     |
+|13602002 | Synklinale | Synklinale     |
+|999997 | Unknown | Unknown     |
+|999998 | Not applicable | Not applicable     |
+
+
+
+
+#### Attribute fold_for
+_Form der Objektart_
+
+
+
+
+#### Attribute phase {#folds-pt-phase}
+_Deformationsphase._
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|13604001 | F1 (1. Phase) | F1 (1. Phase)     |
+|13604002 | F2 (2. Phase) | F2 (2. Phase)     |
+|13604003 | F3 (3. Phase) | F3 (3. Phase)     |
+|999997 | Unknown | Unknown     |
+|999998 | Not applicable | Not applicable     |
+
+
+
+
+#### Attribute phase_ref
+_Referenz für die Angabe der Deformationsphase._
+_Datentyp:  string_
+
+
+
+
+
+#### Attribute azimuth
+_Einfallsrichtung (Azimut) der jeweiligen Punktobjektart (z.B. Scheitellinie, Faltenachse). Wert in Grad (0° 359°) im Uhrzeigersinn gemessen_
+_Datentyp:  integer_
+
+
+
+
+
+#### Attribute dip
+_Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die Vertikale (90°)._
+_Datentyp:  integer_
+
+
+
+
+
+### Class Lineation_PT {#lineation-pt}
+In der Klasse [Lineation_PT](#lineation-pt) finden sich Objektarten, welche die räumliche Lage von diversen
+Linearen mit direkten Feldmessungen beschreiben. Die räumliche Lage u.a. von Gletscherschliffen
+und Rutschharnischen ist ebenso Teil dieser Klasse wie die Orientierung von Streckungs- oder
+Intersektionslineationen.
+
+
+
+
+    | Name                         | Type                              | Description
+----|------------------------------|-----------------------------------|--------------------------------------
+1 | **kind**                | subtype                                    | Objektart
+[]()           | Cardinality [1] | 13701                                       |
+2 | **azimuth**                | integer                                    | Einfallsrichtung (Azimut) der jeweiligen Punktobjektart (z.B. Scheitellinie, Faltenachse). Wert in Grad (0° 359°) im Uhrzeigersinn gemessen
+[]()           | Cardinality [1] |                                        |
+3 | **dip**                |                                     | Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die Vertikale (90°).
+[]()           | Cardinality [] |                                        |
+
+
+
+
+
+#### Attribute kind
+_Objektart_
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|13701001 | Mlin Orientierung der Intersektionslineation | Mlin Orientierung der Intersektionslineation     |
+|13701002 | Mlin Orientierung der Streckungslineation | Mlin Orientierung der Streckungslineation     |
+|13701003 | Mlin Orientierung von Rutschharnischen | Mlin Orientierung von Rutschharnischen     |
+|13701004 | Mlin Orientierung von Gletscherschliffen | Mlin Orientierung von Gletscherschliffen     |
+
+
+
+
+#### Attribute azimuth
+_Einfallsrichtung (Azimut) der jeweiligen Punktobjektart (z.B. Scheitellinie, Faltenachse). Wert in Grad (0° 359°) im Uhrzeigersinn gemessen_
+_Datentyp:  integer_
+
+
+
+
+
+#### Attribute dip
+_Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die Vertikale (90°)._
+
+
+
+
+### Class Planar_Structures_PT {#planar-structures-pt}
+Die Klasse [Planar_Structures_PT](#planar-structures-pt) enthält Objektarten, welche die räumliche Lage von planaren Strukturen mit direkten Feldmessungen beschreiben. Ein Beispiel der Objektart Orientierung der Schieferung ist im Anhang A zur Veranschaulichung abgebildet.
+
+
+
+
+    | Name                         | Type                              | Description
+----|------------------------------|-----------------------------------|--------------------------------------
+1 | **kind**                | subtype                                    | Objektart
+[]()           | Cardinality [1] | 13801                                       |
+2 | **polarity**                | [CodedDomain](#planar-structures-pt-polarity)  | Position der Objektart im Raum. 
+[]()           | Cardinality [0..1] |                                                      |
+3 | **phase**                | [CodedDomain](#planar-structures-pt-phase)  | Deformationsphase. 
+[]()           | Cardinality [] |                                                      |
+4 | **phase_ref**                | string                                    | Referenz für die Angabe der Deformationsphase.
+[]()           | Cardinality [0..1] |                                        |
+5 | **ob_dip_slo**                | boolean                                    | Dip slope beobachtet (ja / nein)?
+[]()           | Cardinality [0..1] |                                        |
+6 | **azimuth**                | integer                                    | Einfallsrichtung (Azimut) der jeweiligen Punktobjektart (z.B. Scheitellinie, Faltenachse). Wert in Grad (0° 359°) im Uhrzeigersinn gemessen
+[]()           | Cardinality [1] |                                        |
+7 | **dip**                |                                     | Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die Vertikale (90°).
+[]()           | Cardinality [] |                                        |
+
+
+
+
+
+#### Attribute kind
+_Objektart_
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|13801002 | Mpla Orientierung eines Ganges | Mpla Orientierung eines Ganges     |
+|13801003 | Mpla Orientierung einer Bruchfläche | Mpla Orientierung einer Bruchfläche     |
+|13801004 | Mpla Orientierung der Schieferung | Mpla Orientierung der Schieferung     |
+|13801005 | Mpla Orientierung einer Schichtung oder Schieferung | Mpla Orientierung einer Schichtung oder Schieferung     |
+|13801001 | Mpla Orientierung der Schichten | Mpla Orientierung der Schichten     |
+|13801006 | Mpla Schüttungsrichtung | Mpla Schüttungsrichtung     |
+
+
+
+
+#### Attribute polarity {#planar-structures-pt-polarity}
+_Position der Objektart im Raum_
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|13802001 | normal | normal     |
+|13802002 | überkippt | überkippt     |
+|999997 | Unknown | Unknown     |
+|999998 | Not applicable | Not applicable     |
+
+
+
+
+#### Attribute phase {#planar-structures-pt-phase}
+_Deformationsphase_
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|13803001 | S1 (1. Phase) | S1 (1. Phase)     |
+|13803002 | S2 (2. Phase) | S2 (2. Phase)     |
+|13803003 | S3 (3. Phase) | S3 (3. Phase)     |
+|999997 | Unknown | Unknown     |
+|999998 | Not applicable | Not applicable     |
+
+
+
+
+#### Attribute phase_ref
+_Referenz für die Angabe der Deformationsphase._
+_Datentyp:  string_
+
+
+
+
+
+#### Attribute ob_dip_slo
+_Dip slope beobachtet (ja / nein)?_
+_Datentyp:  boolean_
+
+
+
+
+
+#### Attribute azimuth
+_Einfallsrichtung (Azimut) der jeweiligen Punktobjektart (z.B. Scheitellinie, Faltenachse). Wert in Grad (0° 359°) im Uhrzeigersinn gemessen_
+_Datentyp:  integer_
+
+
+
+
+
+#### Attribute dip
+_Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die Vertikale (90°)._
+
+
+
+
+
+
+
+
+## Theme LOCAL_ADDITIONAL_INFORMATION
+
+### Class Anomalies_PT {#anomalies-pt}
+Die Klasse [Anomalies_PT](#anomalies-pt) beinhaltet lokal beobachtete und / oder gemessene Anomalien.
+
+
+
+
+    | Name                         | Type                              | Description
+----|------------------------------|-----------------------------------|--------------------------------------
+1 | **kind**                | subtype                                    | Objektart
+[]()           | Cardinality [1] | 128001                                       |
+2 | **type**                |                                     | Charakteristik der Objektart.
+[]()           | Cardinality [] | 128002                                       |
+
+
+
+
+
+#### Attribute kind
+_Objektart_
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+
+
+
+
+#### Attribute type
+_Charakteristik der Objektart._
+
+
+
+
+### Class Fossils_PT {#fossils-pt}
+Die Klasse [Fossils_PT](#fossils-pt) enthält alle Fossilfundstellen.
+
+
+
+
+    | Name                         | Type                              | Description
+----|------------------------------|-----------------------------------|--------------------------------------
+1 | **kind**                | subtype                                    | Objektart
+[]()           | Cardinality [1] | 12901                                       |
+2 | **division**                | [CodedDomain](#fossils-pt-division)  | Fossilienkategorie, zu welcher die Objektinstanz gehört.. 
+[]()           | Cardinality [0..1] |                                                      |
+3 | **system**                | table                                    | Fossiliengruppe.
+[]()           | Cardinality [0..1] | gc_system                                       |
+4 | **dat_meth**                | [CodedDomain](#fossils-pt-dat-meth)  | Datierungsmethode.. 
+[]()           | Cardinality [0..1] |                                                      |
+5 | **status**                | [CodedDomain](#fossils-pt-status)  | Zustand der Objektart. 
+[]()           | Cardinality [0..1] |                                                      |
+6 | **protected**                | boolean                                    | Geschützte Fossilfundstelle (ja / nein)?
+[]()           | Cardinality [0..1] |                                        |
+
+
+
+
+
+#### Attribute kind
+_Objektart_
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|12901001 | Lfos Fossilfundstelle | Lfos Fossilfundstelle     |
+
+
+
+
+#### Attribute division {#fossils-pt-division}
+_Fossilienkategorie, zu welcher die Objektinstanz gehört._
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|12902006 | Einzeller | Einzeller     |
+|12902002 | Pflanzen- und Tierreste | Pflanzen- und Tierreste     |
+|12902003 | Pflanzenreste | Pflanzenreste     |
+|12902004 | Spuren | Spuren     |
+|12902001 | Tierreste | Tierreste     |
+|999997 | Unknown | Unknown     |
+|999998 | Not applicable | Not applicable     |
+
+
+
+
+#### Attribute system
+_Fossiliengruppe._
+
+
+
+
+#### Attribute dat_meth {#fossils-pt-dat-meth}
+_Datierungsmethode._
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|12904001 | radiometrisch datiert | radiometrisch datiert     |
+|999997 | Unknown | Unknown     |
+|999998 | Not applicable | Not applicable     |
+
+
+
+
+#### Attribute status {#fossils-pt-status}
+_Zustand der Objektart_
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|12905001 | aufgeschlossen | aufgeschlossen     |
+|12905002 | wieder verdeckt | wieder verdeckt     |
+|999997 | Unknown | Unknown     |
+|999998 | Not applicable | Not applicable     |
+
+
+
+
+#### Attribute protected
+_Geschützte Fossilfundstelle (ja / nein)?_
+_Datentyp:  boolean_
+
+
+
+
+
+### Class Indication_of_Resources_PT {#indication-of-resources-pt}
+Die Klasse [Indication_of_Resources_PT](#indication-of-resources-pt) beinhaltet Fundstellen von vulkanischen, mineralischen
+und nicht-mineralischen Rohstoffen.
+
+
+
+
+    | Name                         | Type                              | Description
+----|------------------------------|-----------------------------------|--------------------------------------
+1 | **kind**                | subtype                                    | Objektart
+[]()           | Cardinality [1] | 13201                                       |
+2 | **status**                | [CodedDomain](#indication-of-resources-pt-status)  | Zustand der Objektart. 
+[]()           | Cardinality [0..1] |                                                      |
+3 | **material**                | [CodedDomain](#indication-of-resources-pt-material)  | Material, das mit der Objektart in Verbindung steht. 
+[]()           | Cardinality [0..1] |                                                      |
+4 | **chemistry**                | string                                    | Chemische Komponente(n) oder Mineralien, welche die Natur der Objektart charakterisieren.
+[]()           | Cardinality [0..1] |                                        |
+
+
+
+
+
+#### Attribute kind
+_Objektart_
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|13201001 | Lres Mineralfundstelle | Lres Mineralfundstelle     |
+|13201002 | Lres Gasquelle | Lres Gasquelle     |
+|13201003 | Lres Anzeichen auf Öl | Lres Anzeichen auf Öl     |
+|13201006 | Lres Fundstelle vulkanischer Auswürflinge (Tephra) | Lres Fundstelle vulkanischer Auswürflinge (Tephra)     |
+|13201007 | Lres Fundstelle von Ries-Auswürflingen | Lres Fundstelle von Ries-Auswürflingen     |
+|13201008 | Lres Asphalt, vereinzeltes Vorkommen | Lres Asphalt, vereinzeltes Vorkommen     |
+|13201005 | Lres Fundstelle von vulkanischem Tuffit | Lres Fundstelle von vulkanischem Tuffit     |
+|13201004 | Lres Tasche, Karsttasche, Kluft, mit Füllung von siderolithischem Sediment | Lres Tasche, Karsttasche, Kluft, mit Füllung von siderolithischem Sediment     |
+|13201009 | Lres Meteoritenfundstelle | Lres Meteoritenfundstelle     |
+
+
+
+
+#### Attribute status {#indication-of-resources-pt-status}
+_Zustand der Objektart_
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|13202001 | aufgeschlossen | aufgeschlossen     |
+|13202002 | wieder verdeckt | wieder verdeckt     |
+|999997 | Unknown | Unknown     |
+|999998 | Not applicable | Not applicable     |
+
+
+
+
+#### Attribute material {#indication-of-resources-pt-material}
+_Material, das mit der Objektart in Verbindung steht_
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|13203003 | Bohnerz | Bohnerz     |
+|13203001 | Boluston | Boluston     |
+|13203004 | Glas- / Quarzsand | Glas- / Quarzsand     |
+|13203002 | Huppererde | Huppererde     |
+|13203005 | Walkerde | Walkerde     |
+|999997 | Unknown | Unknown     |
+|999998 | Not applicable | Not applicable     |
+
+
+
+
+#### Attribute chemistry
+_Chemische Komponente(n) oder Mineralien, welche die Natur der Objektart charakterisieren._
+_Datentyp:  string_
+
+
+
+
+
+### Class Mineralised_Zone_L {#mineralised-zone-l}
+
+
+
+
+
+    | Name                         | Type                              | Description
+----|------------------------------|-----------------------------------|--------------------------------------
+1 | **kind**                | subtype                                    | Objektart
+[]()           | Cardinality [1] | 13301                                       |
+2 | **chemistry**                | string                                    | Chemische Komponente(n), welche die Natur der Objektart charakterisieren.
+[]()           | Cardinality [0..1] |                                        |
+
+
+
+
+
+#### Attribute kind
+_Objektart_
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|13301001 | Lmin Vererzungszone | Lmin Vererzungszone     |
+
+
+
+
+#### Attribute chemistry
+_Chemische Komponente(n), welche die Natur der Objektart charakterisieren._
+_Datentyp:  string_
+
+
+
+
+
+### Class Sedimentary_Structures_PT {#sedimentary-structures-pt}
+
+
+
+
+
+    | Name                         | Type                              | Description
+----|------------------------------|-----------------------------------|--------------------------------------
+1 | **kind**                | subtype                                    | Objektart
+[]()           | Cardinality [1] | 13401                                       |
+2 | **azimuth**                | integer                                    | Orientierung des Symbols. Wert in Grad (0° 359°) im Uhrzeigersinn gemessen.
+[]()           | Cardinality [0..1] |                                        |
+
+
+
+
+
+#### Attribute kind
+_Objektart_
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|13401001 | Lsed Sedimentstrukturen | Lsed Sedimentstrukturen     |
+|13401002 | Lsed Riffstrukturen | Lsed Riffstrukturen     |
+|13401003 | Lsed Erosions- oder Omissionsfläche, Hartgrund, Kondensationshorizont | Lsed Erosions- oder Omissionsfläche, Hartgrund, Kondensationshorizont     |
+|13401004 | Lsed stratigraphische Lage (Polarität) einer Schichtserie | Lsed stratigraphische Lage (Polarität) einer Schichtserie     |
+|13401005 | Lsed Winkeldiskordanz | Lsed Winkeldiskordanz     |
+|13401006 | Lsed Entwässerungstrichter (blow-out structure) | Lsed Entwässerungstrichter (blow-out structure)     |
+
+
+
+
+#### Attribute azimuth
+_Orientierung des Symbols. Wert in Grad (0° 359°) im Uhrzeigersinn gemessen._
+_Datentyp:  integer_
+
+
+
+
+
+### Class Type_Localities_PT {#type-localities-pt}
+Die Klasse [Type_Localities_PT](#type-localities-pt) beinhaltet diejenigen Objektarten, die Typlokalitäten oder wichtige
+geologische Aufschlüsse beschreiben.
+
+
+
+
+    | Name                         | Type                              | Description
+----|------------------------------|-----------------------------------|--------------------------------------
+1 | **kind**                | subtype                                    | Objektart
+[]()           | Cardinality [1] | 13501                                       |
+2 | **strati**                | [CodedDomain](#type-localities-pt-strati)  | Lithostratigraphischer Zusatz zum Objekt. 
+[]()           | Cardinality [0..1] |                                                      |
+3 | **name**                | string                                    | Name der Typlokalität. / Beschreibung des geologisch relevanten Aufschlusses
+[]()           | Cardinality [0..1] |                                        |
+4 | **accessibil**                | boolean                                    | Ist die Objektart zum Zeitpunkt der Aufnahme aufgeschlossen (ja / nein)?
+[]()           | Cardinality [0..1] |                                        |
+5 | **protected**                | boolean                                    | Geschütztes geologisches Objekt (ja / nein)?
+[]()           | Cardinality [0..1] |                                        |
+
+
+
+
+
+#### Attribute kind
+_Objektart_
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|13501001 | Ltyp geologisch relevanter Aufschluss | Ltyp geologisch relevanter Aufschluss     |
+|13501003 | Ltyp Typusprofil | Ltyp Typusprofil     |
+
+
+
+
+#### Attribute strati {#type-localities-pt-strati}
+_Lithostratigraphischer Zusatz zum Objekt_
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|13502005 | Bank | Bank     |
+|13502003 | Formation | Formation     |
+|13502001 | Gruppe | Gruppe     |
+|13502004 | Member | Member     |
+|13502006 | Stufe | Stufe     |
+|13502002 | Subgruppe | Subgruppe     |
+|999997 | Unknown | Unknown     |
+|999998 | Not applicable | Not applicable     |
+
+
+
+
+#### Attribute name
+_Name der Typlokalität. / Beschreibung des geologisch relevanten Aufschlusses_
+_Datentyp:  string_
+
+
+
+
+
+#### Attribute accessibil
+_Ist die Objektart zum Zeitpunkt der Aufnahme aufgeschlossen (ja / nein)?_
+_Datentyp:  boolean_
+
+
+
+
+
+#### Attribute protected
+_Geschütztes geologisches Objekt (ja / nein)?_
+_Datentyp:  boolean_
+
+
+
+
+
+### Class Prominent_Lithological_Features_L {#prominent-lithological-features-l}
+In der Klasse [Prominent_Lithological_Features_L](#prominent-lithological-features-l) befinden sich linienförmige Gesteinshorizonte.
+Diese Gesteinshorizonte haben bloss Hinweischarakter (z.B. «markante Sandsteinbank» innerhalb
+von Wechsellagerungen von Sandstein und Mergel) und sind von den Leithorizonten (z.B.
+«Spatkalk im Hauptrogenstein») zu unterschieden. Leithorizonte befinden sich im Thema Rock Bodies.
+
+
+
+
+    | Name                         | Type                              | Description
+----|------------------------------|-----------------------------------|--------------------------------------
+1 | **kind**                | subtype                                    | Objektart
+[]()           | Cardinality [1] | 13101                                       |
+2 | **cong_spe**                | [CodedDomain](#prominent-lithological-features-l-cong-spe)  | Charakterisation der Konglomerate nach ihrem Geröllspektrum.. 
+[]()           | Cardinality [0..1] |                                                      |
+3 | **name_horiz**                | [CodedDomain](#gc-litstrat-bed-cd)  | Name des Bentonit-Leithorizonts.. Die möglichen Werte sind in der Tabelle GC_LITSTRAT_BED_CD im Anhang dieses Dokumentes verfügbar.
+[]()           | Cardinality [0..1] |                                                      |
+4 | **orig_descr**                | string                                    | Originalbezeichnung gemäss der Legende der zugrundeliegenden geologischen Karte.
+[]()           | Cardinality [0..1] |                                        |
+5 | **lpro_litho**                | [CodedDomain](#gc-litho-cd)  | Materialbezeichnung (lithologische Einheit).. Die möglichen Werte sind in der Tabelle GC_LITHO_CD im Anhang dieses Dokumentes verfügbar.
+[]()           | Cardinality [1] |                                                      |
+
+
+
+
+
+#### Attribute kind
+_Objektart_
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|13101001 | Lpro Gesteinshorizont | Lpro Gesteinshorizont     |
+
+
+
+
+#### Attribute cong_spe {#prominent-lithological-features-l-cong-spe}
+_Charakterisation der Konglomerate nach ihrem Geröllspektrum._
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|13102003 | bunte bis polygene Nagelfluh | bunte bis polygene Nagelfluh     |
+|13102004 | Flyschsandstein-Nagelfluh, Riesenkonglomerat | Flyschsandstein-Nagelfluh, Riesenkonglomerat     |
+|13102001 | kristallinfreie bis -arme (Kalk-)Nagelfluh | kristallinfreie bis -arme (Kalk-)Nagelfluh     |
+|13102002 | kristallinführende (Kalk-)Nagelfluh | kristallinführende (Kalk-)Nagelfluh     |
+|999997 | Unknown | Unknown     |
+|999998 | Not applicable | Not applicable     |
+
+
+
+
+#### Attribute name_horiz
+_Name des Bentonit-Leithorizonts._
+Siehe die CodedDomain [GC_LITSTRAT_BED_CD](#gc-litstrat-bed-cd) in Ahhang
+
+
+
+
+
+#### Attribute orig_descr
+_Originalbezeichnung gemäss der Legende der zugrundeliegenden geologischen Karte._
+_Datentyp:  string_
+
+
+
+
+
+#### Attribute lpro_litho
+_Materialbezeichnung (lithologische Einheit)._
+Siehe die CodedDomain [GC_LITHO_CD](#gc-litho-cd) in Ahhang
+
+
+
+
+
+### Class Miscellaneous_PT {#miscellaneous-pt}
+Die Klasse [Miscellaneous_PT](#miscellaneous-pt) ist für lokale, sehr spezielle geologische Objekte reserviert, die für die
+Gesamtheit der geologischen Daten irrelevant sind und deshalb im Datenmodell Geologie nicht
+standardisiert werden
+
+
+
+
+    | Name                         | Type                              | Description
+----|------------------------------|-----------------------------------|--------------------------------------
+1 | **kind**                | subtype                                    | Objektart
+[]()           | Cardinality [1] | 15501                                       |
+2 | **orig_name**                | string                                    | Ursprüngliche Bezeichnung des Objektes.
+[]()           | Cardinality [1] |                                        |
+
+
+
+
+
+#### Attribute kind
+_Objektart_
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|15501001 | Lmis Diverse | Lmis Diverse     |
+
+
+
+
+#### Attribute orig_name
+_Ursprüngliche Bezeichnung des Objektes._
+_Datentyp:  string_
+
+
+
+
+
+### Class Geological_Outlines_L {#geological-outlines-l}
+Die Klasse [Geological_Outlines_L](#geological-outlines-l) beinhaltet geologische Konturen. Darunter fallen die Umrisse
+von Fest- und Lockergesteinen, von tektonisierten Zonen, sowie die Umgrenzungen von
+Rutschungs- und Sackungsmassen, welche nicht durch andere Konturarten (z.B. tektonische
+Grenzen) abgegrenzt werden.
+Eine geologische Kontur mit Status im Allgemeinen umfasst stratigraphische und petrographische
+Grenzen. Geologische Konturen, welche von quartären Ablagerungen, Gewässern oder
+Gletschern bedeckt sind oder graduelle Übergänge in Locker- und Festgesteinen (keine klaren
+lithologischen Grenzen; im Sinne der Signaturgrenze nach dem Zeichenverzeichnis (ZV)), haben
+den Status vermutet. Künstliche geologische Konturen sind Konturen, welche Gebiete mit
+detaillierter Information von Gebieten mit geringerer Informationsdichte aufgrund fehlender
+Informationen oder aus darstellerischen Gründen (Digitalisierungsmassstab)
+ab-grenzen (Abgrenzungskontur nach dem ZV).
+
+
+
+
+    | Name                         | Type                              | Description
+----|------------------------------|-----------------------------------|--------------------------------------
+1 | **kind**                | subtype                                    | Objektart
+[]()           | Cardinality [1] | 13001                                       |
+2 | **status**                | [CodedDomain](#geological-outlines-l-status)  | Zustand der Objektart.. 
+[]()           | Cardinality [0..1] |                                                      |
+
+
+
+
+
+#### Attribute kind
+_Objektart_
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|13001001 | Lgeo geologische Kontur | Lgeo geologische Kontur     |
+
+
+
+
+#### Attribute status {#geological-outlines-l-status}
+_Zustand der Objektart._
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|13002004 | gesichert, tektonisch überprägt | gesichert, tektonisch überprägt     |
+|13002001 | im Allgemeinen | im Allgemeinen     |
+|13002003 | künstlich | künstlich     |
+|13002002 | vermutet | vermutet     |
+|13002005 | vermutet, tektonisch überprägt | vermutet, tektonisch überprägt     |
+|999997 | Unknown | Unknown     |
+|999998 | Not applicable | Not applicable     |
+|13002006 | Gewässerlinie | Gewässerlinie     |
+
+
+
+
+
+
+
+
+## Theme PARAMETER_AND_MODELLING
+
+### Class Slope_Bedrock_PT {#slope-bedrock-pt}
+Die Klasse [Slope_Bedrock_PT](#slope-bedrock-pt) enthält Punktinformationen aus Modellierungen des Festgestein-
+verlaufs im Untergrund.
+
+
+
+
+    | Name                         | Type                              | Description
+----|------------------------------|-----------------------------------|--------------------------------------
+1 | **kind**                | subtype                                    | Objektart
+[]()           | Cardinality [1] | 14201                                       |
+2 | **type**                | [CodedDomain](#slope-bedrock-pt-type)  | Referenzoberfläche.. 
+[]()           | Cardinality [1] |                                                      |
+3 | **azimuth**                | integer                                    | Fallrichtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad (0° 359°) im Uhrzeigersinn gemessen.
+[]()           | Cardinality [0..1] |                                        |
+4 | **dip**                | integer                                    | Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die
+Vertikale (90°).
+[]()           | Cardinality [0..1] |                                        |
+5 | **pslo_formatio**                | [CodedDomain](#gc-litstrat-bed-cd)  | Lithostratigraphische Einheit der modellierten Formation. Die möglichen Werte sind in der Tabelle GC_LITSTRAT_BED_CD im Anhang dieses Dokumentes verfügbar.
+[]()           | Cardinality [1] |                                                      |
+
+
+
+
+
+#### Attribute kind
+_Objektart_
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|14201001 | Pslo Neigungsrichtung | Pslo Neigungsrichtung     |
+
+
+
+
+#### Attribute type {#slope-bedrock-pt-type}
+_Referenzoberfläche._
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|14202001 | Felsoberfläche | Felsoberfläche     |
+|14202002 | Obergrenze einer gegebenen Formation | Obergrenze einer gegebenen Formation     |
+|999997 | Unknown | Unknown     |
+|999998 | Not applicable | Not applicable     |
+
+
+
+
+#### Attribute azimuth
+_Fallrichtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad (0° 359°) im Uhrzeigersinn gemessen._
+_Datentyp:  integer_
+
+
+
+
+
+#### Attribute dip
+_Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die
+Vertikale (90°)._
+_Datentyp:  integer_
+
+
+
+
+
+#### Attribute pslo_formatio
+_Lithostratigraphische Einheit der modellierten Formation_
+Siehe die CodedDomain [GC_LITSTRAT_BED_CD](#gc-litstrat-bed-cd) in Ahhang
+
+
+
+
+
+### Class Contour_Lines_Bedrock_L {#contour-lines-bedrock-l}
+Die Klasse [Contour_Lines_Bedrock_L](#contour-lines-bedrock-l) beinhaltet Isohypsen, die sich auf den Verlauf des Fest-
+gesteins beziehen und die das Resultat von Modellierungen darstellen. U.a. befinden sich die Iso-
+hypsen der Felsoberfläche in dieser Klasse.
+
+
+
+
+    | Name                         | Type                              | Description
+----|------------------------------|-----------------------------------|--------------------------------------
+1 | **kind**                | subtype                                    | Objektart
+[]()           | Cardinality [1] | 13901                                       |
+2 | **type**                | [CodedDomain](#contour-lines-bedrock-l-type)  | Referenzoberfläche.. 
+[]()           | Cardinality [1] |                                                      |
+3 | **altitude**                | float                                    | Höhenangabe (m ü.M.) von Isohypsen.
+[]()           | Cardinality [1] |                                        |
+4 | **litstrat**                | [CodedDomain](#gc-litstrat-bed-cd)  | Lithostratigraphische Einheit der modellierten Formation. Die möglichen Werte sind in der Tabelle GC_LITSTRAT_BED_CD im Anhang dieses Dokumentes verfügbar.
+[]()           | Cardinality [1] |                                                      |
+
+
+
+
+
+#### Attribute kind
+_Objektart_
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|13901001 | Pcob Isohypse | Pcob Isohypse     |
+
+
+
+
+#### Attribute type {#contour-lines-bedrock-l-type}
+_Referenzoberfläche._
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|13902001 | Felsoberfläche | Felsoberfläche     |
+|13902002 | Obergrenze einer gegebenen Formation | Obergrenze einer gegebenen Formation     |
+|13902003 | Untergrenze einer gegebenen Formation | Untergrenze einer gegebenen Formation     |
+|999997 | Unknown | Unknown     |
+|999998 | Not applicable | Not applicable     |
+
+
+
+
+#### Attribute altitude
+_Höhenangabe (m ü.M.) von Isohypsen._
+_Datentyp:  float_
+
+
+
+
+
+#### Attribute litstrat
+_Lithostratigraphische Einheit der modellierten Formation_
+Siehe die CodedDomain [GC_LITSTRAT_BED_CD](#gc-litstrat-bed-cd) in Ahhang
+
+
+
+
+
+### Class Modelled_Water_Table_PT {#modelled-water-table-pt}
+Die Klasse [Modelled_Water_Table_PT](#modelled-water-table-pt) enthält Punktinformationen aus Modellierungen des
+Grundwasserspiegels.
+
+
+
+
+    | Name                         | Type                              | Description
+----|------------------------------|-----------------------------------|--------------------------------------
+1 | **kind**                | subtype                                    | Objektart
+[]()           | Cardinality [1] | 14101                                       |
+2 | **azimuth**                | integer                                    | Fallrichtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad (0° 359°) im Uhrzeigersinn gemessen.
+[]()           | Cardinality [0..1] |                                        |
+3 | **dip**                | integer                                    | Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die Vertikale (90°).
+[]()           | Cardinality [0..1] |                                        |
+4 | **height**                | float                                    | Kote des Grundwasserspiegels (m ü.M.).
+[]()           | Cardinality [0..1] |                                        |
+5 | **mea_period**                | range                                    | Messperiode.
+[]()           | Cardinality [0..1] |                                        |
+
+
+
+
+
+#### Attribute kind
+_Objektart_
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|14101001 | Pmod Grundwasserfliessrichtung | Pmod Grundwasserfliessrichtung     |
+|14101002 | Pmod mittlere Höhe des Grundwasserspiegels | Pmod mittlere Höhe des Grundwasserspiegels     |
+
+
+
+
+#### Attribute azimuth
+_Fallrichtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad (0° 359°) im Uhrzeigersinn gemessen._
+_Datentyp:  integer_
+
+
+
+
+
+#### Attribute dip
+_Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die Vertikale (90°)._
+_Datentyp:  integer_
+
+
+
+
+
+#### Attribute height
+_Kote des Grundwasserspiegels (m ü.M.)._
+_Datentyp:  float_
+
+
+
+
+
+#### Attribute mea_period
+_Messperiode._
+_Datentyp:  range_
+
+
+
+
+
+### Class Contour_Lines_Hydro_L {#contour-lines-hydro-l}
+In der Klasse [Contour_Lines_Hydro_L](#contour-lines-hydro-l) befinden sich die Isohypsen, die sich auf das Grundwasser
+beziehen.
+
+
+
+
+    | Name                         | Type                              | Description
+----|------------------------------|-----------------------------------|--------------------------------------
+1 | **kind**                | subtype                                    | Objektart
+[]()           | Cardinality [1] | 14001                                       |
+2 | **confine**                | [CodedDomain](#contour-lines-hydro-l-confine)  | Druckzustand im Grundwasserleiter.. 
+[]()           | Cardinality [0..1] |                                                      |
+3 | **altitude**                |                                     | Höhenangabe (m ü.M.) von Isohypsen.
+[]()           | Cardinality [1] |                                        |
+4 | **wa_table**                | [CodedDomain](#contour-lines-hydro-l-wa-table)  | Wasserstand.. 
+[]()           | Cardinality [0..1] |                                                      |
+
+
+
+
+
+#### Attribute kind
+_Objektart_
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|14001001 | Pcoh Isohypse des Grundwasserspiegels | Pcoh Isohypse des Grundwasserspiegels     |
+
+
+
+
+#### Attribute confine {#contour-lines-hydro-l-confine}
+_Druckzustand im Grundwasserleiter._
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|14002003 | artesisch | artesisch     |
+|14002001 | frei | frei     |
+|14002002 | gespannt | gespannt     |
+|999997 | Unknown | Unknown     |
+|999998 | Not applicable | Not applicable     |
+
+
+
+
+#### Attribute altitude
+_Höhenangabe (m ü.M.) von Isohypsen._
+
+
+
+
+#### Attribute wa_table {#contour-lines-hydro-l-wa-table}
+_Wasserstand._
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|14004002 | mittlere Höhe des Hochwasserstands | mittlere Höhe des Hochwasserstands     |
+|14004001 | mittlere Höhe des Niedrigwasserstands | mittlere Höhe des Niedrigwasserstands     |
+|999997 | Unknown | Unknown     |
+|999998 | Not applicable | Not applicable     |
+
+
+
+
+
+
+
+
+## Theme ANTHROPOGENIC_FEATURES
+
+### Class Archaeology_PT {#archaeology-pt}
+Die Klasse [Archaeology_PT](#archaeology-pt) enthält Objektarten zu einzelnen archäologischen Relikten.
+
+
+
+
+    | Name                         | Type                              | Description
+----|------------------------------|-----------------------------------|--------------------------------------
+1 | **kind**                | subtype                                    | Objektart
+[]()           | Cardinality [] | 10101                                       |
+2 | **epoch**                | [CodedDomain](#archaeology-pt-epoch)  | Archäologische Epoche der Objektart. 
+[]()           | Cardinality [0..1] |                                                      |
+3 | **period**                | [CodedDomain](#archaeology-pt-period)  | Archäologische Periode der Objektart.. 
+[]()           | Cardinality [0..1] |                                                      |
+4 | **age**                | [CodedDomain](#archaeology-pt-age)  | Archäologisches Alter der Objektart.. 
+[]()           | Cardinality [0..1] |                                                      |
+5 | **type**                | [CodedDomain](#archaeology-pt-type)  | Art des Kultsteins.. 
+[]()           | Cardinality [0..1] |                                                      |
+
+
+
+
+
+#### Attribute kind
+_Objektart_
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|10101001 | Aarc archäologische Fundstelle, Anlage, Siedlungsreste | Aarc archäologische Fundstelle, Anlage, Siedlungsreste     |
+|10101005 | Aarc Gräber, Gräberfeld | Aarc Gräber, Gräberfeld     |
+|10101007 | Aarc Grabhügel, Dolmengrab | Aarc Grabhügel, Dolmengrab     |
+|10101008 | Aarc Kultstein | Aarc Kultstein     |
+|10101009 | Aarc Kalkofen | Aarc Kalkofen     |
+|10101010 | Aarc Felsenkeller | Aarc Felsenkeller     |
+|10101011 | Aarc Schlackenhalde | Aarc Schlackenhalde     |
+|10101012 | Aarc Glashütte | Aarc Glashütte     |
+|10101013 | Aarc Schmelzofen | Aarc Schmelzofen     |
+|10101004 | Aarc Burgstelle, Burghügel, Wachtturm | Aarc Burgstelle, Burghügel, Wachtturm     |
+|10101002 | Aarc Höhlensiedlung, Abri | Aarc Höhlensiedlung, Abri     |
+|10101003 | Aarc Pfahlbauten | Aarc Pfahlbauten     |
+|10101006 | Aarc Steinplattengrab | Aarc Steinplattengrab     |
+|10101015 | Aarc Abbaustelle | Aarc Abbaustelle     |
+
+
+
+
+#### Attribute epoch {#archaeology-pt-epoch}
+_Archäologische Epoche der Objektart_
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|10002001 | historisch | historisch     |
+|10002002 | prähistorisch | prähistorisch     |
+|999997 | Unknown | Unknown     |
+|999998 | Not applicable | Not applicable     |
+
+
+
+
+#### Attribute period {#archaeology-pt-period}
+_Archäologische Periode der Objektart._
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|10003005 | Bronzezeit | Bronzezeit     |
+|10003004 | Eisenzeit | Eisenzeit     |
+|10003002 | Mittelalter | Mittelalter     |
+|10003001 | Neuzeit | Neuzeit     |
+|10003003 | Römerzeit | Römerzeit     |
+|10003006 | Steinzeit | Steinzeit     |
+|999997 | Unknown | Unknown     |
+|999998 | Not applicable | Not applicable     |
+
+
+
+
+#### Attribute age {#archaeology-pt-age}
+_Archäologisches Alter der Objektart._
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|10004005 | Altbronzezeit | Altbronzezeit     |
+|10004002 | Hallstattzeit | Hallstattzeit     |
+|10004003 | Jungbronzezeit | Jungbronzezeit     |
+|10004001 | Latènezeit | Latènezeit     |
+|10004007 | Mesolithikum | Mesolithikum     |
+|10004004 | Mittelbronzezeit | Mittelbronzezeit     |
+|10004006 | Neolithikum | Neolithikum     |
+|10004008 | Paläolithikum | Paläolithikum     |
+|999997 | Unknown | Unknown     |
+|999998 | Not applicable | Not applicable     |
+
+
+
+
+#### Attribute type {#archaeology-pt-type}
+_Art des Kultsteins._
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|10105001 | Menhir | Menhir     |
+|10105002 | Schalenstein | Schalenstein     |
+|999997 | Unknown | Unknown     |
+|999998 | Not applicable | Not applicable     |
+
+
+
+
+### Class Archaeology_L {#archaeology-l}
+Die Klasse [Archaeology_L](#archaeology-l) umfasst linienförmige archäologische Elemente. Historische Strassen,
+Hohlwege oder Befestigungsgräben sind Teile dieser Klasse.
+
+
+
+
+    | Name                         | Type                              | Description
+----|------------------------------|-----------------------------------|--------------------------------------
+1 | **kind**                | subtype                                    | Objektart
+[]()           | Cardinality [] | 10201                                       |
+2 | **epoch**                | [CodedDomain](#archaeology-l-epoch)  | Archäologische Epoche der Objektart. 
+[]()           | Cardinality [0..1] |                                                      |
+3 | **period**                | [CodedDomain](#archaeology-l-period)  | Archäologische Periode der Objektart.. 
+[]()           | Cardinality [0..1] |                                                      |
+4 | **age**                | [CodedDomain](#archaeology-l-age)  | Archäologisches Alter der Objektart.. 
+[]()           | Cardinality [0..1] |                                                      |
+
+
+
+
+
+#### Attribute kind
+_Objektart_
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|10201001 | Aarc Verkehrsweg | Aarc Verkehrsweg     |
+|10201002 | Aarc Hohlweg | Aarc Hohlweg     |
+|10201003 | Aarc künstlicher Graben, Befestigungsgraben | Aarc künstlicher Graben, Befestigungsgraben     |
+|10201004 | Aarc künstlicher Erdwall | Aarc künstlicher Erdwall     |
+|10201005 | Aarc Wasserleitung | Aarc Wasserleitung     |
+|10201006 | Aarc Steinreihe | Aarc Steinreihe     |
+|10201007 | Aarc Schützengraben | Aarc Schützengraben     |
+
+
+
+
+#### Attribute epoch {#archaeology-l-epoch}
+_Archäologische Epoche der Objektart_
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|10002001 | historisch | historisch     |
+|10002002 | prähistorisch | prähistorisch     |
+|999997 | Unknown | Unknown     |
+|999998 | Not applicable | Not applicable     |
+
+
+
+
+#### Attribute period {#archaeology-l-period}
+_Archäologische Periode der Objektart._
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|10003005 | Bronzezeit | Bronzezeit     |
+|10003004 | Eisenzeit | Eisenzeit     |
+|10003002 | Mittelalter | Mittelalter     |
+|10003001 | Neuzeit | Neuzeit     |
+|10003003 | Römerzeit | Römerzeit     |
+|10003006 | Steinzeit | Steinzeit     |
+|999997 | Unknown | Unknown     |
+|999998 | Not applicable | Not applicable     |
+
+
+
+
+#### Attribute age {#archaeology-l-age}
+_Archäologisches Alter der Objektart._
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|10004005 | Altbronzezeit | Altbronzezeit     |
+|10004002 | Hallstattzeit | Hallstattzeit     |
+|10004003 | Jungbronzezeit | Jungbronzezeit     |
+|10004001 | Latènezeit | Latènezeit     |
+|10004007 | Mesolithikum | Mesolithikum     |
+|10004004 | Mittelbronzezeit | Mittelbronzezeit     |
+|10004006 | Neolithikum | Neolithikum     |
+|10004008 | Paläolithikum | Paläolithikum     |
+|999997 | Unknown | Unknown     |
+|999998 | Not applicable | Not applicable     |
+
+
+
+
+### Class Archaeology_PLG {#archaeology-plg}
+Die Klasse [Archaeology_PLG](#archaeology-plg) beinhaltet archäologische Relikte (z.B. römisches Castrum), die ein
+grösseres Gebiet (Fläche) abdecken.
+
+
+
+
+    | Name                         | Type                              | Description
+----|------------------------------|-----------------------------------|--------------------------------------
+1 | **kind**                | subtype                                    | Objektart
+[]()           | Cardinality [] | 10301                                       |
+2 | **epoch**                | [CodedDomain](#archaeology-plg-epoch)  | Archäologische Epoche der Objektart. 
+[]()           | Cardinality [0..1] |                                                      |
+3 | **period**                | [CodedDomain](#archaeology-plg-period)  | Archäologische Periode der Objektart.. 
+[]()           | Cardinality [0..1] |                                                      |
+4 | **age**                | [CodedDomain](#archaeology-plg-age)  | Archäologisches Alter der Objektart.. 
+[]()           | Cardinality [0..1] |                                                      |
+
+
+
+
+
+#### Attribute kind
+_Objektart_
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|10301001 | Aarc Castrum | Aarc Castrum     |
+|10301002 | Aarc Refugium, Höhensiedlung, Erdwerk | Aarc Refugium, Höhensiedlung, Erdwerk     |
+
+
+
+
+#### Attribute epoch {#archaeology-plg-epoch}
+_Archäologische Epoche der Objektart_
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|10002001 | historisch | historisch     |
+|10002002 | prähistorisch | prähistorisch     |
+|999997 | Unknown | Unknown     |
+|999998 | Not applicable | Not applicable     |
+
+
+
+
+#### Attribute period {#archaeology-plg-period}
+_Archäologische Periode der Objektart._
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|10003005 | Bronzezeit | Bronzezeit     |
+|10003004 | Eisenzeit | Eisenzeit     |
+|10003002 | Mittelalter | Mittelalter     |
+|10003001 | Neuzeit | Neuzeit     |
+|10003003 | Römerzeit | Römerzeit     |
+|10003006 | Steinzeit | Steinzeit     |
+|999997 | Unknown | Unknown     |
+|999998 | Not applicable | Not applicable     |
+
+
+
+
+#### Attribute age {#archaeology-plg-age}
+_Archäologisches Alter der Objektart._
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|10004005 | Altbronzezeit | Altbronzezeit     |
+|10004002 | Hallstattzeit | Hallstattzeit     |
+|10004003 | Jungbronzezeit | Jungbronzezeit     |
+|10004001 | Latènezeit | Latènezeit     |
+|10004007 | Mesolithikum | Mesolithikum     |
+|10004004 | Mittelbronzezeit | Mittelbronzezeit     |
+|10004006 | Neolithikum | Neolithikum     |
+|10004008 | Paläolithikum | Paläolithikum     |
+|999997 | Unknown | Unknown     |
+|999998 | Not applicable | Not applicable     |
+
+
+
+
+### Class Exploitation_Geomaterials_PT {#exploitation-geomaterials-pt}
+Die Klasse [Exploitation_Geomaterials_PT](#exploitation-geomaterials-pt) enthält punktförmige Angaben zu Abbaustellen von
+Geomaterialien.
+
+
+
+
+    | Name                         | Type                              | Description
+----|------------------------------|-----------------------------------|--------------------------------------
+1 | **kind**                | subtype                                    | Objektart
+[]()           | Cardinality [] | 10601                                       |
+2 | **exp_unit**                | table                                    | Abgebaute lithostratigraphische Einheit.
+[]()           | Cardinality [0..*] | gc_litstrat_bed                                       |
+3 | **status**                | [CodedDomain](#exploitation-geomaterials-pt-status)  | Abbaustatus.. 
+[]()           | Cardinality [0..1] |                                                      |
+4 | **depth_tot**                | float                                    | Endtiefe (m ab Terrainoberfläche) der Objektart.
+[]()           | Cardinality [0..1] |                                        |
+5 | **targ_mat**                | [CodedDomain](#exploitation-geomaterials-pt-targ-mat)  | Abgebautes Material.. 
+[]()           | Cardinality [0..1] |                                                      |
+
+
+
+
+
+#### Attribute kind
+_Objektart_
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|10601001 | Aexp Bergwerk, Untertageabbau | Aexp Bergwerk, Untertageabbau     |
+|10601002 | Aexp Stolleneingang | Aexp Stolleneingang     |
+|10601003 | Aexp Schacht | Aexp Schacht     |
+|10601004 | Aexp Pinge (dolinenartiger Stolleneinbruch) | Aexp Pinge (dolinenartiger Stolleneinbruch)     |
+|10601005 | Aexp Schürfloch | Aexp Schürfloch     |
+|10601006 | Aexp ausgeräumte Bohnerztasche | Aexp ausgeräumte Bohnerztasche     |
+
+
+
+
+#### Attribute exp_unit
+_Abgebaute lithostratigraphische Einheit._
+
+
+
+
+#### Attribute status {#exploitation-geomaterials-pt-status}
+_Abbaustatus._
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|10603003 | aufgefüllt | aufgefüllt     |
+|10603001 | in Betrieb | in Betrieb     |
+|10603002 | stillgelegt | stillgelegt     |
+|10603004 | verfallen | verfallen     |
+|999997 | Unknown | Unknown     |
+|999998 | Not applicable | Not applicable     |
+
+
+
+
+#### Attribute depth_tot
+_Endtiefe (m ab Terrainoberfläche) der Objektart._
+_Datentyp:  float_
+
+
+
+
+
+#### Attribute targ_mat {#exploitation-geomaterials-pt-targ-mat}
+_Abgebautes Material._
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|10605010 | Antimon | Antimon     |
+|10605023 | Asbest | Asbest     |
+|10605029 | Asphalt / Bitumen | Asphalt / Bitumen     |
+|10605011 | Baryt | Baryt     |
+|10605006 | Blei-Zink | Blei-Zink     |
+|10605022 | Bohnerz | Bohnerz     |
+|10605007 | Chrom-Nickel, z.T. mit Kobalt | Chrom-Nickel, z.T. mit Kobalt     |
+|10605031 | Dachschiefer / Tafelschiefer | Dachschiefer / Tafelschiefer     |
+|10605005 | Eisen / Eisenoolith | Eisen / Eisenoolith     |
+|10605001 | Erze allgemein | Erze allgemein     |
+|10605013 | Fluorit | Fluorit     |
+|10605034 | Gips | Gips     |
+|10605002 | Gold | Gold     |
+|10605027 | Graphit | Graphit     |
+|10605030 | Hartgestein | Hartgestein     |
+|10605012 | Kalzit | Kalzit     |
+|10605015 | Kaolin | Kaolin     |
+|10605040 | Kies | Kies     |
+|10605024 | Kohle allgemein | Kohle allgemein     |
+|10605004 | Kupfer, z.T. mit Silber, Wismut und Arsen | Kupfer, z.T. mit Silber, Wismut und Arsen     |
+|10605026 | Lignit | Lignit     |
+|10605016 | Magnesit | Magnesit     |
+|10605017 | Magnesium | Magnesium     |
+|10605008 | Mangan | Mangan     |
+|10605009 | Molybdän und Wolfram | Molybdän und Wolfram     |
+|10605028 | Ölschiefer | Ölschiefer     |
+|10605018 | Phosphorit, Apatit | Phosphorit, Apatit     |
+|10605039 | Pyrit | Pyrit     |
+|10605014 | Quarz | Quarz     |
+|10605035 | Salz / Steinsalz | Salz / Steinsalz     |
+|10605037 | Sand | Sand     |
+|10605038 | Sand und Kies | Sand und Kies     |
+|10605020 | Schwefel | Schwefel     |
+|10605032 | Serpentin | Serpentin     |
+|10605003 | Silber | Silber     |
+|10605033 | Speckstein | Speckstein     |
+|10605025 | Steinkohle / Anthrazit | Steinkohle / Anthrazit     |
+|10605019 | Talk | Talk     |
+|10605036 | Ton / Ton und Silt (Lehm) | Ton / Ton und Silt (Lehm)     |
+|10605021 | Uran | Uran     |
+|999997 | Unknown | Unknown     |
+|999998 | Not applicable | Not applicable     |
+
+
+
+
+### Class Exploitation_Geomaterials_L {#exploitation-geomaterials-l}
+Die Klasse [Exploitation_Geomaterials_L](#exploitation-geomaterials-l) beinhaltet linienförmige Informationen zum Abbau von
+Geomaterialien (z.B. Verlauf der Abbaufront).
+
+
+
+
+    | Name                         | Type                              | Description
+----|------------------------------|-----------------------------------|--------------------------------------
+1 | **kind**                | subtype                                    | Objektart
+[]()           | Cardinality [] | 10701                                       |
+2 | **status**                | [CodedDomain](#exploitation-geomaterials-l-status)  | Abbaustatus.. 
+[]()           | Cardinality [0..1] |                                                      |
+
+
+
+
+
+#### Attribute kind
+_Objektart_
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|10701001 | Aexp Abbaufront | Aexp Abbaufront     |
+|10701002 | Aexp Bergwerksstollen | Aexp Bergwerksstollen     |
+
+
+
+
+#### Attribute status {#exploitation-geomaterials-l-status}
+_Abbaustatus._
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|10702003 | aufgefüllt | aufgefüllt     |
+|10702001 | in Betrieb | in Betrieb     |
+|10702002 | stillgelegt | stillgelegt     |
+|10702004 | verfallen | verfallen     |
+|999997 | Unknown | Unknown     |
+|999998 | Not applicable | Not applicable     |
+
+
+
+
+### Class Exploitation_Geomaterials_PLG {#exploitation-geomaterials-plg}
+Die Klasse [Exploitation_Geomaterials_PLG](#exploitation-geomaterials-plg) enthält Flächen, wo zur Zeit der geologischen
+Aufnahmen Geomaterialien abgebaut wurden.
+
+
+
+
+    | Name                         | Type                              | Description
+----|------------------------------|-----------------------------------|--------------------------------------
+1 | **kind**                | subtype                                    | Objektart
+[]()           | Cardinality [] | 10801                                       |
+2 | **exp_unit**                | table                                    | Abgebaute lithostratigraphische Einheit.
+[]()           | Cardinality [1..*] | gc_litstrat_bed                                       |
+3 | **status**                | [CodedDomain](#exploitation-geomaterials-plg-status)  | Abbaustatus.. 
+[]()           | Cardinality [0..1] |                                                      |
+4 | **depth_tot**                | float                                    | Endtiefe (m ab Terrainoberfläche) der Objektart.
+[]()           | Cardinality [0..1] |                                        |
+5 | **targ_mat**                | [CodedDomain](#exploitation-geomaterials-plg-targ-mat)  | Abgebautes Material.. 
+[]()           | Cardinality [0..1] |                                                      |
+
+
+
+
+
+#### Attribute kind
+_Objektart_
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|10801001 | Aexp Steinbruch | Aexp Steinbruch     |
+|10801002 | Aexp Grube (Lockergesteinsabbau) | Aexp Grube (Lockergesteinsabbau)     |
+
+
+
+
+#### Attribute exp_unit
+_Abgebaute lithostratigraphische Einheit._
+
+
+
+
+#### Attribute status {#exploitation-geomaterials-plg-status}
+_Abbaustatus._
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|10802003 | aufgefüllt | aufgefüllt     |
+|10802001 | in Betrieb | in Betrieb     |
+|10802002 | stillgelegt | stillgelegt     |
+|10802004 | verfallen | verfallen     |
+|999997 | Unknown | Unknown     |
+|999998 | Not applicable | Not applicable     |
+
+
+
+
+#### Attribute depth_tot
+_Endtiefe (m ab Terrainoberfläche) der Objektart._
+_Datentyp:  float_
+
+
+
+
+
+#### Attribute targ_mat {#exploitation-geomaterials-plg-targ-mat}
+_Abgebautes Material._
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|10804015 | Asbest | Asbest     |
+|10804010 | Baryt | Baryt     |
+|10804016 | Bohnerz | Bohnerz     |
+|10804005 | Dachschiefer / Tafelschiefer | Dachschiefer / Tafelschiefer     |
+|10804012 | Eisen / Eisenoolithe | Eisen / Eisenoolithe     |
+|10804006 | Gips | Gips     |
+|10804004 | Hartgestein | Hartgestein     |
+|10804011 | Kalzit / Kalk | Kalzit / Kalk     |
+|10804013 | Kaolin | Kaolin     |
+|10804021 | Kies | Kies     |
+|10804019 | Kohle | Kohle     |
+|10804018 | Mergel | Mergel     |
+|10804014 | Quarz / Quarzit | Quarz / Quarzit     |
+|10804020 | Salz / Steinsalz | Salz / Steinsalz     |
+|10804002 | Sand | Sand     |
+|10804003 | Sand und Kies | Sand und Kies     |
+|10804007 | Serpentin | Serpentin     |
+|10804008 | Speckstein | Speckstein     |
+|10804009 | Talk | Talk     |
+|10804001 | Ton / Ton und Silt (Lehm) | Ton / Ton und Silt (Lehm)     |
+|10804017 | Torf | Torf     |
+|999997 | Unknown | Unknown     |
+|999998 | Not applicable | Not applicable     |
+
+
+
+
+### Class Boreholes_PT {#boreholes-pt}
+Die Klasse [Boreholes_PT](#boreholes-pt) beinhaltet Bohrungen und Sondierungen. (Auf alten gedruckten Karten
+wurde die Art der Sondierung nicht immer unterschieden. Es kann daher sein, dass in alten Karten
+Rammkernsondierungen als Bohrungen aufgenommen wurden.)
+
+
+
+
+    | Name                         | Type                              | Description
+----|------------------------------|-----------------------------------|--------------------------------------
+1 | **kind**                | subtype                                    | Objektart
+[]()           | Cardinality [] | 10501                                       |
+2 | **drill_mo**                |                                     | Bohrmethode.
+[]()           | Cardinality [0..1] | 10502                                       |
+3 | **depth_bedrock**                | float                                    | Tiefe (in Meter ab Terrainoberfläche) der Felsober- fläche. (Sofern die Bohrung das Festgestein nicht Depth_Bedrock erreicht, z.B. «Bohrung, Fels nicht erreicht», beträgt der Wert -9999, falls die Bohrung bereits im Festgestein beginnt, beträgt der Wert 0). Falls Festgestein erreicht wurde, aber nicht klar ist, dass es sich um die Felsoberfläche handelt, beträgt der Wert -8888.
+[]()           | Cardinality [0..1] |                                        |
+4 | **d_c_underg**                | boolean                                    | Bohransatzpunkt unter Terrain (ja / nein)
+[]()           | Cardinality [1] |                                        |
+5 | **main_tar**                | [CodedDomain](#boreholes-pt-main-tar)  | Ziel der Sondierung.. 
+[]()           | Cardinality [0..1] |                                                      |
+6 | **targ_mat**                | [CodedDomain](#boreholes-pt-targ-mat)  | Durch die Sondierung gefördertes Material.. 
+[]()           | Cardinality [0..1] |                                                      |
+7 | **depth_tot**                | float                                    | Gemessene Länge (Measured Depth) der Bohrung. Vgl.
+DM Bohrdaten. Die tatsächliche Tiefe (True Vertical
+Depth) ist oft nicht bekannt.
+[]()           | Cardinality [0..1] |                                        |
+8 | **fm_a**                | [CodedDomain](#gc-litstrat-bed-cd)  | Lithostratigraphische Einheit der erreichten Formation A. Die möglichen Werte sind in der Tabelle GC_LITSTRAT_BED_CD im Anhang dieses Dokumentes verfügbar.
+[]()           | Cardinality [0..1] |                                                      |
+9 | **depth_fm_a**                | float                                    | Tiefe (m ab Terrainoberfläche) der erreichten Formation A.
+[]()           | Cardinality [0..1] |                                        |
+10 | **fm_b**                | [CodedDomain](#gc-litstrat-bed-cd)  | Lithostratigraphische Einheit der erreichten Formation B. Die möglichen Werte sind in der Tabelle GC_LITSTRAT_BED_CD im Anhang dieses Dokumentes verfügbar.
+[]()           | Cardinality [0..1] |                                                      |
+11 | **depth_fm_b**                | float                                    | Tiefe (m ab Terrainoberfläche) der erreichten Formation B.
+[]()           | Cardinality [0..1] |                                        |
+12 | **depth_wt**                | float                                    | Tiefe (m ab Terrainoberfläche) des Grundwasserspiegels.
+[]()           | Cardinality [0..1] |                                        |
+13 | **azimuth**                | integer                                    | Fallrichtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad (0° 359°) im Uhrzeigersinn gemessen.
+[]()           | Cardinality [0..1] |                                        |
+14 | **dip**                | integer                                    | Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die Vertikale (90°).
+[]()           | Cardinality [0..1] |                                        |
+15 | **ref_number**                | integer                                    | Bohrungs-ID der Objektart in einem zusätzlichen Dokument (Erläuterungen, ...).
+[]()           | Cardinality [0..1] |                                        |
+16 | **link**                | integer                                    | Objektnummer in der Datenbank von INFOGEOL.
+[]()           | Cardinality [0..1] |                                        |
+
+
+
+
+
+#### Attribute kind
+_Objektart_
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|10501001 | Abor Bohrung | Abor Bohrung     |
+|10501002 | Abor Sondierschlitz | Abor Sondierschlitz     |
+|10501003 | Abor Handsondierung | Abor Handsondierung     |
+|10501004 | Abor Rammsondierung | Abor Rammsondierung     |
+|10501005 | Abor Rammkernsondierung | Abor Rammkernsondierung     |
+
+
+
+
+#### Attribute drill_mo
+_Bohrmethode._
+
+
+
+
+#### Attribute depth_bedrock
+_Tiefe (in Meter ab Terrainoberfläche) der Felsober- fläche. (Sofern die Bohrung das Festgestein nicht Depth_Bedrock erreicht, z.B. «Bohrung, Fels nicht erreicht», beträgt der Wert -9999, falls die Bohrung bereits im Festgestein beginnt, beträgt der Wert 0). Falls Festgestein erreicht wurde, aber nicht klar ist, dass es sich um die Felsoberfläche handelt, beträgt der Wert -8888._
+_Datentyp:  float_
+
+
+
+
+
+#### Attribute d_c_underg
+_Bohransatzpunkt unter Terrain (ja / nein)_
+_Datentyp:  boolean_
+
+
+
+
+
+#### Attribute main_tar {#boreholes-pt-main-tar}
+_Ziel der Sondierung._
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|10505006 | belasteter Standort | belasteter Standort     |
+|10505012 | Forschung | Forschung     |
+|10505001 | Geotechnik | Geotechnik     |
+|10505008 | Geothermie | Geothermie     |
+|10505002 | Hydrogeologie | Hydrogeologie     |
+|10505005 | Kohlenwasserstoffe | Kohlenwasserstoffe     |
+|10505004 | mineralische Rohstoffe | mineralische Rohstoffe     |
+|10505013 | Naturgefahren | Naturgefahren     |
+|10505007 | Seismik | Seismik     |
+|999997 | Unknown | Unknown     |
+|999998 | Not applicable | Not applicable     |
+
+
+
+
+#### Attribute targ_mat {#boreholes-pt-targ-mat}
+_Durch die Sondierung gefördertes Material._
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|10506003 | Erdgas | Erdgas     |
+|10506002 | Erdöl | Erdöl     |
+|10506004 | Erdwärme | Erdwärme     |
+|10506006 | Grundwasser | Grundwasser     |
+|10506007 | Mineralwasser | Mineralwasser     |
+|10506001 | Salz / Steinsalz | Salz / Steinsalz     |
+|10506005 | Thermalwasser | Thermalwasser     |
+|999997 | Unknown | Unknown     |
+|999998 | Not applicable | Not applicable     |
+
+
+
+
+#### Attribute depth_tot
+_Gemessene Länge (Measured Depth) der Bohrung. Vgl.
+DM Bohrdaten. Die tatsächliche Tiefe (True Vertical
+Depth) ist oft nicht bekannt._
+_Datentyp:  float_
+
+
+
+
+
+#### Attribute fm_a
+_Lithostratigraphische Einheit der erreichten Formation A_
+Siehe die CodedDomain [GC_LITSTRAT_BED_CD](#gc-litstrat-bed-cd) in Ahhang
+
+
+
+
+
+#### Attribute depth_fm_a
+_Tiefe (m ab Terrainoberfläche) der erreichten Formation A._
+_Datentyp:  float_
+
+
+
+
+
+#### Attribute fm_b
+_Lithostratigraphische Einheit der erreichten Formation B_
+Siehe die CodedDomain [GC_LITSTRAT_BED_CD](#gc-litstrat-bed-cd) in Ahhang
+
+
+
+
+
+#### Attribute depth_fm_b
+_Tiefe (m ab Terrainoberfläche) der erreichten Formation B._
+_Datentyp:  float_
+
+
+
+
+
+#### Attribute depth_wt
+_Tiefe (m ab Terrainoberfläche) des Grundwasserspiegels._
+_Datentyp:  float_
+
+
+
+
+
+#### Attribute azimuth
+_Fallrichtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad (0° 359°) im Uhrzeigersinn gemessen._
+_Datentyp:  integer_
+
+
+
+
+
+#### Attribute dip
+_Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die Vertikale (90°)._
+_Datentyp:  integer_
+
+
+
+
+
+#### Attribute ref_number
+_Bohrungs-ID der Objektart in einem zusätzlichen Dokument (Erläuterungen, ...)._
+_Datentyp:  integer_
+
+
+
+
+
+#### Attribute link
+_Objektnummer in der Datenbank von INFOGEOL._
+_Datentyp:  integer_
+
+
+
+
+
+### Class Artificial_Surface_Modifications_PLG {#artificial-surface-modifications-plg}
+Die Klasse [Artificial_Surface_Modifications_PLG](#artificial-surface-modifications-plg) enthält bedeutende künstliche Veränderungen
+des Geländes (Golfplatz, Skigebiet, etc.), die zur Folge haben, dass das ursprüngliche Relief nicht
+mehr zu erkennen ist, was bei einer geomorphologischen Deutung zu falschen Schlüssen führen könnte.
+
+
+
+
+    | Name                         | Type                              | Description
+----|------------------------------|-----------------------------------|--------------------------------------
+1 | **kind**                | subtype                                    | Objektart
+[]()           | Cardinality [1] | 10401                                       |
+
+
+
+
+
+#### Attribute kind
+_Objektart_
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|10401001 | Aart künstlich verändertes Gelände | Aart künstlich verändertes Gelände     |
+|10401002 | Aart künstliche Ablagerung, undifferenziert | Aart künstliche Ablagerung, undifferenziert     |
+|10401003 | Aart Aufschüttung, Damm | Aart Aufschüttung, Damm     |
+|10401004 | Aart Auffüllung | Aart Auffüllung     |
+|10401005 | Aart Deponie | Aart Deponie     |
+|10401006 | Aart Halde | Aart Halde     |
+
+
+
+
+
+
+
+
+## Theme HYDROGEOLOGY
+
+### Class Construction_PT {#construction-pt}
+Die Klasse [Construction_PT](#construction-pt) beinhaltet Wasserbauten wie Grundwasserfassungen und Zisternen.
+Desweiteren kommen in dieser Klasse auch Messgeräte wie Piezometer und Limnigraphen vor.
+
+
+
+
+    | Name                         | Type                              | Description
+----|------------------------------|-----------------------------------|--------------------------------------
+1 | **kind**                | subtype                                    | Objektart
+[]()           | Cardinality [1] | 12101                                       |
+2 | **status**                | [CodedDomain](#construction-pt-status)  | Zustand der Objektart.. 
+[]()           | Cardinality [0..1] |                                                      |
+3 | **epoch**                | [CodedDomain](#construction-pt-epoch)  | Epoche der Erbauung der Objektart.. 
+[]()           | Cardinality [0..1] |                                                      |
+4 | **depth**                | float                                    | Tiefe der Objektart (m ab Terrainoberfläche).
+[]()           | Cardinality [0..1] |                                        |
+5 | **depth_wt**                | float                                    | Tiefe (m ab Terrainoberfläche) des Grundwasserspiegels (Mittelwert).
+[]()           | Cardinality [0..1] |                                        |
+6 | **mea_period**                | range                                    | Messperiode.
+[]()           | Cardinality [0..1] |                                        |
+
+
+
+
+
+#### Attribute kind
+_Objektart_
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|12101001 | Hcon Grundwasserfassung | Hcon Grundwasserfassung     |
+|12101002 | Hcon Zisterne | Hcon Zisterne     |
+|12101003 | Hcon laufender Brunnen (in wasserarmem Gebiet) | Hcon laufender Brunnen (in wasserarmem Gebiet)     |
+|12101004 | Hcon Sodbrunnen | Hcon Sodbrunnen     |
+|12101005 | Hcon Versickerungsschacht | Hcon Versickerungsschacht     |
+|12101006 | Hcon Limnigraph | Hcon Limnigraph     |
+|12101007 | Hcon Piezometer | Hcon Piezometer     |
+
+
+
+
+#### Attribute status {#construction-pt-status}
+_Zustand der Objektart._
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|12102001 | in Betrieb | in Betrieb     |
+|12102002 | stillgelegt | stillgelegt     |
+|999997 | Unknown | Unknown     |
+|999998 | Not applicable | Not applicable     |
+
+
+
+
+#### Attribute epoch {#construction-pt-epoch}
+_Epoche der Erbauung der Objektart._
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|12103001 | Mittelalter | Mittelalter     |
+|12103003 | prähistorisch | prähistorisch     |
+|12103002 | Römerzeit | Römerzeit     |
+|999997 | Unknown | Unknown     |
+|999998 | Not applicable | Not applicable     |
+
+
+
+
+#### Attribute depth
+_Tiefe der Objektart (m ab Terrainoberfläche)._
+_Datentyp:  float_
+
+
+
+
+
+#### Attribute depth_wt
+_Tiefe (m ab Terrainoberfläche) des Grundwasserspiegels (Mittelwert)._
+_Datentyp:  float_
+
+
+
+
+
+#### Attribute mea_period
+_Messperiode._
+_Datentyp:  range_
+
+
+
+
+
+### Class Construction_L {#construction-l}
+Die Klasse [Construction_L](#construction-l) enthält linienförmige Wasserbauten wie den Wasserfassungsstollen,
+welcher mit Objektarten der Klasse [Surface_Water_PT](#surface-water-pt) kombiniert werden kann.
+
+
+
+
+    | Name                         | Type                              | Description
+----|------------------------------|-----------------------------------|--------------------------------------
+1 | **kind**                | subtype                                    | Objektart
+[]()           | Cardinality [1] | 12201                                       |
+2 | **combi**                | [CodedDomain](#construction-l-combi)  | Objektart einer anderen Klasse, die mit der Objektart in Kombination vorkommen kann. 
+[]()           | Cardinality [0..1] |                                                      |
+
+
+
+
+
+#### Attribute kind
+_Objektart_
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|12201001 | Hcon Wasserfassungsstollen | Hcon Wasserfassungsstollen     |
+|12201002 | Hcon künstlicher Gewässerlauf | Hcon künstlicher Gewässerlauf     |
+
+
+
+
+#### Attribute combi {#construction-l-combi}
+_Objektart einer anderen Klasse, die mit der Objektart in Kombination vorkommen kann_
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|12202002 | mit gefasster Mineralquelle (orientiert) in Stollen | mit gefasster Mineralquelle (orientiert) in Stollen     |
+|12202003 | mit gefasster Thermalquelle (orientiert) in Stollen | mit gefasster Thermalquelle (orientiert) in Stollen     |
+|12202001 | mit Quellfassung (orientiert) in Stollen | mit Quellfassung (orientiert) in Stollen     |
+|999997 | Unknown | Unknown     |
+|999998 | Not applicable | Not applicable     |
+
+
+
+
+### Class Palaeohydrology_L {#palaeohydrology-l}
+In der Klasse [Palaeohydrology_L](#palaeohydrology-l) befinden sich alle linienförmigen Objektarten, welche einen
+gewissen Bezug zu einem ehemaligen Gewässer aufweisen.
+
+
+
+
+    | Name                         | Type                              | Description
+----|------------------------------|-----------------------------------|--------------------------------------
+1 | **kind**                | subtype                                    | Objektart
+[]()           | Cardinality [1] | 12301                                       |
+2 | **rel_age**                | [CodedDomain](#palaeohydrology-l-rel-age)  | Relatives Alter der Objektart. 
+[]()           | Cardinality [0..1] |                                                      |
+3 | **hpal_chrono**                | [CodedDomain](#gc-chrono-cd)  | Chronostratigraphische Zuordnung.. Die möglichen Werte sind in der Tabelle GC_CHRONO_CD im Anhang dieses Dokumentes verfügbar.
+[]()           | Cardinality [0..1] |                                                      |
+4 | **ref_year**                | integer                                    | Referenzjahr der ehemaligen Uferlinie.
+[]()           | Cardinality [1] |                                        |
+5 | **source**                | string                                    | Datenquelle der historischen Unterlagen.
+[]()           | Cardinality [0..1] |                                        |
+
+
+
+
+
+#### Attribute kind
+_Objektart_
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|12301001 | Hpal Paläotal | Hpal Paläotal     |
+|12301002 | Hpal ehemalige Entwässerungsrinne | Hpal ehemalige Entwässerungsrinne     |
+|12301004 | Hpal Trockental | Hpal Trockental     |
+|12301005 | Hpal ehemaliges Bachbett | Hpal ehemaliges Bachbett     |
+|12301006 | Hpal Ufer eines ehemaligen Flussbetts | Hpal Ufer eines ehemaligen Flussbetts     |
+|12301007 | Hpal ehemalige Uferlinie | Hpal ehemalige Uferlinie     |
+|12301003 | Hpal ehemalige glaziale Abflussrinne | Hpal ehemalige glaziale Abflussrinne     |
+
+
+
+
+#### Attribute rel_age {#palaeohydrology-l-rel-age}
+_Relatives Alter der Objektart_
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|12302002 | älter als die Jüngste | älter als die Jüngste     |
+|12302003 | älter als die Zweitjüngste | älter als die Zweitjüngste     |
+|12302001 | die Jüngste oder Einzige | die Jüngste oder Einzige     |
+|999997 | Unknown | Unknown     |
+|999998 | Not applicable | Not applicable     |
+
+
+
+
+#### Attribute hpal_chrono
+_Chronostratigraphische Zuordnung._
+Siehe die CodedDomain [GC_CHRONO_CD](#gc-chrono-cd) in Ahhang
+
+
+
+
+
+#### Attribute ref_year
+_Referenzjahr der ehemaligen Uferlinie._
+_Datentyp:  integer_
+
+
+
+
+
+#### Attribute source
+_Datenquelle der historischen Unterlagen._
+_Datentyp:  string_
+
+
+
+
+
+### Class Subsurface_Water_L {#subsurface-water-l}
+In der Klasse [Subsurface_Water_L](#subsurface-water-l) befinden sich linienförmigen Objektarten, welche einen
+unterirdischen Gewässerlauf anzeigen.
+
+Der genaue Verlauf des unterirdischen Gewässerlaufes ist in fast jedem Fall vermutet, mit
+wenigen Ausnahmen von erforschten Höhlensystemen. Liegen Färbversuche vor, so werden diese
+in den Erläuterungen erwähnt, sofern diese existieren. Der unterirdische Gewässerlauf
+kann mit Objeken aus der Klasse [Surface_Water_PT](#surface-water-pt) kombiniert werden.
+
+
+
+
+    | Name                         | Type                              | Description
+----|------------------------------|-----------------------------------|--------------------------------------
+1 | **kind**                | subtype                                    | Objektart
+[]()           | Cardinality [1] | 12401                                       |
+2 | **combi**                | [CodedDomain](#subsurface-water-l-combi)  | Objektart einer anderen Klasse, die mit der Objektart in Kombination vorkommen kann. 
+[]()           | Cardinality [0..1] |                                                      |
+
+
+
+
+
+#### Attribute kind
+_Objektart_
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|12401001 | Hsub unterirdischer Gewässerlauf | Hsub unterirdischer Gewässerlauf     |
+
+
+
+
+#### Attribute combi {#subsurface-water-l-combi}
+_Objektart einer anderen Klasse, die mit der Objektart in Kombination vorkommen kann_
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|12402001 | mit Versickerungsstelle eines Baches | mit Versickerungsstelle eines Baches     |
+|12402002 | mit Wiederaustritt eines unterirdischen Bachlaufes | mit Wiederaustritt eines unterirdischen Bachlaufes     |
+|999997 | Unknown | Unknown     |
+|999998 | Not applicable | Not applicable     |
+
+
+
+
+### Class Surface_Water_PT {#surface-water-pt}
+Die Klasse [Surface_Water_PT](#surface-water-pt) umfasst lokal (punktuell) beobachtete Oberflächengewässer, wie
+natürliche Wasseraustritts- und Versickerungsstellen. Zudem befindet sich die Objektart Steilstufe
+in Bachrinne, Wasserfall in dieser Klasse, die eine spezielle Stelle in Fliessgewässern markiert und
+die durch die darunterliegende Geologie bedingt ist.
+Eine Quelle wird als «Thermalquelle» bezeichnet, wenn das Wasser eine mittlere Jahrestem-
+20°C aufweist. Für diesen Quelltyp ist das Attribut «Temp» vorgesehen und
+beschränkt sich i.d.R. auf die mittlere Wassertemperatur. Deshalb wird für dieses Attribut auch
+kein Datum einer Analyse angegeben. Um eine Mineralquelle handelt es sich bei einer Quelle mit
+einer Mineralkonzentration 1g / l Wasser oder einer CO2- 250 mg / l Wasser.
+Für diesen Quelltyp ist das Attribut «Chemistry» vorgesehen. D.h. unter diesem Attribut wird das
+charakteristische chemische Element im Mineralwasser angegeben und nicht die komplette
+Wasserchemie.
+
+
+
+
+    | Name                         | Type                              | Description
+----|------------------------------|-----------------------------------|--------------------------------------
+1 | **kind**                | subtype                                    | Objektart
+[]()           | Cardinality [1] | 12501                                       |
+2 | **status**                | [CodedDomain](#surface-water-pt-status)  | Zustand der Objektart.. 
+[]()           | Cardinality [0..1] |                                                      |
+3 | **flow_con**                | [CodedDomain](#surface-water-pt-flow-con)  | Wasserfluss Bedingungen.. 
+[]()           | Cardinality [0..1] |                                                      |
+4 | **type**                | [CodedDomain](#surface-water-pt-type)  | Charakteristik der Objektart. 
+[]()           | Cardinality [0..1] |                                                      |
+5 | **dis_loca**                | [CodedDomain](#surface-water-pt-dis-loca)  | Ort des Wasserausflusses.. 
+[]()           | Cardinality [0..1] |                                                      |
+6 | **combi**                | [CodedDomain](#surface-water-pt-combi)  | Objektart einer anderen Klasse, die mit der Objektart in Kombination vorkommen kann. 
+[]()           | Cardinality [0..1] |                                                      |
+7 | **temp**                | integer                                    | Mittlere Wassertemperatur (°C).
+[]()           | Cardinality [0..1] |                                        |
+8 | **chemistry**                | string                                    | Charakteristisches chemisches Element im Mineralwasser (z.B. Fe).
+[]()           | Cardinality [0..1] |                                        |
+9 | **azimuth**                | integer                                    | Richtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad (0° 359°) im Uhrzeigersinn gemessen.
+[]()           | Cardinality [0..1] |                                        |
+
+
+
+
+
+#### Attribute kind
+_Objektart_
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|12501001 | Hsur Quelle | Hsur Quelle     |
+|12501002 | Hsur diffuse Quelle | Hsur diffuse Quelle     |
+|12501003 | Hsur Wiederaustritt eines unterirdischen Bachlaufes | Hsur Wiederaustritt eines unterirdischen Bachlaufes     |
+|12501004 | Hsur Versickerungsstelle eines Baches | Hsur Versickerungsstelle eines Baches     |
+|12501005 | Hsur Steilstufe in Bachrinne, Wasserfall | Hsur Steilstufe in Bachrinne, Wasserfall     |
+|12501006 | Hsur Grundwasseraufstoss | Hsur Grundwasseraufstoss     |
+
+
+
+
+#### Attribute status {#surface-water-pt-status}
+_Zustand der Objektart._
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|12502001 | gefasst | gefasst     |
+|12502002 | nicht gefasst | nicht gefasst     |
+|999997 | Unknown | Unknown     |
+|999998 | Not applicable | Not applicable     |
+
+
+
+
+#### Attribute flow_con {#surface-water-pt-flow-con}
+_Wasserfluss Bedingungen._
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|12503001 | perennierend | perennierend     |
+|12503002 | temporär | temporär     |
+|12503003 | versiegt | versiegt     |
+|999997 | Unknown | Unknown     |
+|999998 | Not applicable | Not applicable     |
+
+
+
+
+#### Attribute type {#surface-water-pt-type}
+_Charakteristik der Objektart_
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|12504001 | Karstquelle | Karstquelle     |
+|12504002 | Mineralquelle | Mineralquelle     |
+|12504003 | Thermalquelle | Thermalquelle     |
+|999997 | Unknown | Unknown     |
+|999998 | Not applicable | Not applicable     |
+
+
+
+
+#### Attribute dis_loca {#surface-water-pt-dis-loca}
+_Ort des Wasserausflusses._
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|12505002 | in Stollen | in Stollen     |
+|999997 | Unknown | Unknown     |
+|999998 | Not applicable | Not applicable     |
+
+
+
+
+#### Attribute combi {#surface-water-pt-combi}
+_Objektart einer anderen Klasse, die mit der Objektart in Kombination vorkommen kann_
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|12506002 | mit unterirdischem Gewässerlauf | mit unterirdischem Gewässerlauf     |
+|12506001 | mit Wasserfassungsstollen | mit Wasserfassungsstollen     |
+|999997 | Unknown | Unknown     |
+|999998 | Not applicable | Not applicable     |
+
+
+
+
+#### Attribute temp
+_Mittlere Wassertemperatur (°C)._
+_Datentyp:  integer_
+
+
+
+
+
+#### Attribute chemistry
+_Charakteristisches chemisches Element im Mineralwasser (z.B. Fe)._
+_Datentyp:  string_
+
+
+
+
+
+#### Attribute azimuth
+_Richtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad (0° 359°) im Uhrzeigersinn gemessen._
+_Datentyp:  integer_
+
+
+
+
+
+### Class Surface_Water_L {#surface-water-l}
+In der Klasse [Surface_Water_L](#surface-water-l) sind linienförmige Oberflächengewässer (Quellhorizonte)
+beschrieben.
+
+
+
+
+    | Name                         | Type                              | Description
+----|------------------------------|-----------------------------------|--------------------------------------
+1 | **kind**                | subtype                                    | Objektart
+[]()           | Cardinality [1] | 12601                                       |
+
+
+
+
+
+#### Attribute kind
+_Objektart_
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|12601001 | Hsur Quellhorizont | Hsur Quellhorizont     |
+|12601002 | Hsur Bachlauf | Hsur Bachlauf     |
+
+
+
+
+### Class Surface_Water_PLG {#surface-water-plg}
+Die Klasse [Surface_Water_PLG](#surface-water-plg) beinhaltet oberflächliche Wasserspeicher wie Gletscher, Seen und
+Flüsse, welche geologische Einheiten bedecken und oftmals eine Interpretation der darunter-
+liegenden Geologie verunmöglichen. Das vollständige Gewässernetz ist nicht Teil des Daten-
+modells Geologie
+
+
+
+
+    | Name                         | Type                              | Description
+----|------------------------------|-----------------------------------|--------------------------------------
+1 | **kind**                | subtype                                    | Objektart
+[]()           | Cardinality [1] | 12701                                       |
+
+
+
+
+
+#### Attribute kind
+_Objektart_
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|12701001 | Hsur Gletscher | Hsur Gletscher     |
+|12701002 | Hsur See | Hsur See     |
+|12701003 | Hsur Fluss | Hsur Fluss     |
+
+
+
+
+
+
+
+
+## Theme META_DATA
+
+### Class Mapsheet {#mapsheet}
+Die Klasse [Mapsheet](#mapsheet) ist eine geometrielose Klasse. Sie beinhaltet alle Metadaten zur Objektart
+(Kartengrundlage). Neben der Kartenart sind Angaben wie der Titel, Massstab, Autor, Datenherr,
+Publikationsjahr und über die öffentliche Verfügbarkeit der Karte grundlegend. Verfügt die Karte
+(wie z.B. die Karten der Landesgeologie) über eine Kartennummer, kann dies bei «Map_Nbr»
+angegeben werden, während bei «Mapping_Period» die Zeitspanne der Datenaufnahme
+(Kartierung) erfasst wird. Das Attribut «Basis_Topo» beschreibt die topographische Grundlage
+und «Basis_Vect» den Vektordatensatz.
+
+
+
+
+    | Name                         | Type                              | Description
+----|------------------------------|-----------------------------------|--------------------------------------
+1 | **kind**                | subtype                                    | Objektart
+[]()           | Cardinality [1] | 15410                                       |
+2 | **map_title**                | string                                    | Originaltitel (Kartentitel) der Objektart.
+[]()           | Cardinality [1] |                                        |
+3 | **map_nbr**                | integer                                    | Originalnummer (Kartennummer) der Objektart.
+[]()           | Cardinality [0..1] |                                        |
+4 | **map_scale**                | string                                    | Massstab der Objektart (Kartenmassstab).
+[]()           | Cardinality [1] |                                        |
+5 | **basis_topo**                |                                     | Angabe zur topographischen Grundlage der Objektart.
+Wird vor allem bei Karten der Landesgeologie angegeben.
+[]()           | Cardinality [0..1] |                                        |
+6 | **author**                | string                                    | Autor oder Autoren der Objektart.
+[]()           | Cardinality [1..*] |                                        |
+7 | **owner**                | string                                    | Angabe zum Datenherr / zu den Datenherren der Objektart.
+[]()           | Cardinality [1..*] |                                        |
+8 | **map_period**                | string                                    | Angabe zum Kartierzeitraum der Objektart.
+[]()           | Cardinality [0..1] |                                        |
+9 | **publ_year**                | integer                                    | Publikationsjahr der Objektart.
+[]()           | Cardinality [1] |                                        |
+10 | **basis_vect**                | string                                    | Grundlage Vektordatensatz.
+[]()           | Cardinality [0..1] |                                        |
+11 | **restriction**                | boolean                                    | Angabe darüber, ob die Objektart öffentlich verfügbar ist (ja) oder einer Beschränkung (nein) unterliegt
+[]()           | Cardinality [1] |                                        |
+
+
+
+
+
+#### Attribute kind
+_Objektart_
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+
+
+
+
+#### Attribute map_title
+_Originaltitel (Kartentitel) der Objektart._
+_Datentyp:  string_
+
+
+
+
+
+#### Attribute map_nbr
+_Originalnummer (Kartennummer) der Objektart._
+_Datentyp:  integer_
+
+
+
+
+
+#### Attribute map_scale
+_Massstab der Objektart (Kartenmassstab)._
+_Datentyp:  string_
+
+
+
+
+
+#### Attribute basis_topo
+_Angabe zur topographischen Grundlage der Objektart.
+Wird vor allem bei Karten der Landesgeologie angegeben._
+
+
+
+
+#### Attribute author
+_Autor oder Autoren der Objektart._
+_Datentyp:  string_
+
+
+
+
+
+#### Attribute owner
+_Angabe zum Datenherr / zu den Datenherren der Objektart._
+_Datentyp:  string_
+
+
+
+
+
+#### Attribute map_period
+_Angabe zum Kartierzeitraum der Objektart._
+_Datentyp:  string_
+
+
+
+
+
+#### Attribute publ_year
+_Publikationsjahr der Objektart._
+_Datentyp:  integer_
+
+
+
+
+
+#### Attribute basis_vect
+_Grundlage Vektordatensatz._
+_Datentyp:  string_
+
+
+
+
+
+#### Attribute restriction
+_Angabe darüber, ob die Objektart öffentlich verfügbar ist (ja) oder einer Beschränkung (nein) unterliegt_
+_Datentyp:  boolean_
+
+
+
+
+
+
+
+
+
+## Anhang GC_LITSTRAT_BED_CD {#gc-litstrat-bed-cd}
+Wertetabelle der lithostratigraphischen Einheiten
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -3839,10 +6277,468 @@ _Lithostratigraphische Einhei_
 |999998 | Not applicable | Not applicable     |
 
 
+## Anhang GC_LITSTRAT_UNCO_CD {#gc-litstrat-unco-cd}
+Wertetabelle der lithostratigraphischen Einheiten
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|15201044 | 1. letzteiszeitlischs Vorstoss | 1. letzteiszeitlischs Vorstoss     |
+|15201043 | 2. letzteiszeitlischs Vorstoss | 2. letzteiszeitlischs Vorstoss     |
+|15201210 | Aabach-Schotter | Aabach-Schotter     |
+|15201055 | Aarau-Schotter | Aarau-Schotter     |
+|15201167 | Aarburg-Schotter | Aarburg-Schotter     |
+|15201136 | Aare-Schotter | Aare-Schotter     |
+|15201271 | Aatal-Seebodenlehm | Aatal-Seebodenlehm     |
+|15201075 | Aathal-Schotter | Aathal-Schotter     |
+|15201540 | Alluvion von Ransun | Alluvion von Ransun     |
+|15201012 | Altberg-Till | Altberg-Till     |
+|15201183 | Alte Doubsschotter | Alte Doubsschotter     |
+|15201135 | Altenburg-Fulach-Terrasse | Altenburg-Fulach-Terrasse     |
+|15201001 | Ältere Ablagerungen, undifferenziert | Ältere Ablagerungen, undifferenziert     |
+|15201071 | Ältere Beckenfüllungen | Ältere Beckenfüllungen     |
+|15201189 | Alterswil-Schotter | Alterswil-Schotter     |
+|15201028 | Ämmert-Schotter | Ämmert-Schotter     |
+|15201029 | Ämmert-Till | Ämmert-Till     |
+|15201512 | Ämmet-Schotter | Ämmet-Schotter     |
+|15201160 | Attiswil-Schotter | Attiswil-Schotter     |
+|15201326 | Bachschutt der Gamsa | Bachschutt der Gamsa     |
+|15201331 | Bachschutt der Gürbe | Bachschutt der Gürbe     |
+|15201328 | Bachschutt der Lonza | Bachschutt der Lonza     |
+|15201329 | Bachschutt der Saltina | Bachschutt der Saltina     |
+|15201330 | Bachschutt der Vispa | Bachschutt der Vispa     |
+|15201323 | Bachschutt des Baltschiederbachs | Bachschutt des Baltschiederbachs     |
+|15201324 | Bachschutt des Bietschbachs | Bachschutt des Bietschbachs     |
+|15201325 | Bachschutt des Chelchbachs | Bachschutt des Chelchbachs     |
+|15201327 | Bachschutt des Jolibachs | Bachschutt des Jolibachs     |
+|15201332 | Bachschutt des Lombachs | Bachschutt des Lombachs     |
+|15201550 | Balm-Schotter | Balm-Schotter     |
+|15201248 | Bänkel-Schotter | Bänkel-Schotter     |
+|15201548 | Bannhalden-Schotter | Bannhalden-Schotter     |
+|15201256 | Bannholz-Schotter | Bannholz-Schotter     |
+|15201097 | Bärengraben-Schotter und -Till | Bärengraben-Schotter und -Till     |
+|15201336 | Bärenholz-Till | Bärenholz-Till     |
+|15201194 | Bennau-Schotter | Bennau-Schotter     |
+|15201017 | Berg-Schotter | Berg-Schotter     |
+|15201532 | Bergsturzablagerung von Bargis | Bergsturzablagerung von Bargis     |
+|15201533 | Bergsturzablagerung von Fidaz | Bergsturzablagerung von Fidaz     |
+|15201531 | Bergsturzablagerung von Ralligen (im Thunersee) | Bergsturzablagerung von Ralligen (im Thunersee)     |
+|15201299 | Bergsturzablagerungen vom Chapf | Bergsturzablagerungen vom Chapf     |
+|15201302 | Bergsturzablagerungen vom Delenwald | Bergsturzablagerungen vom Delenwald     |
+|15201301 | Bergsturzablagerungen vom Drussetschawald | Bergsturzablagerungen vom Drussetschawald     |
+|15201306 | Bergsturzablagerungen vom Kernwald | Bergsturzablagerungen vom Kernwald     |
+|15201460 | Bergsturzablagerungen vom Stützwald | Bergsturzablagerungen vom Stützwald     |
+|15201296 | Bergsturzablagerungen von Brienz | Bergsturzablagerungen von Brienz     |
+|15201298 | Bergsturzablagerungen von Brüsis | Bergsturzablagerungen von Brüsis     |
+|15201291 | Bergsturzablagerungen von Castasegna | Bergsturzablagerungen von Castasegna     |
+|15201288 | Bergsturzablagerungen von Chessel-Noville | Bergsturzablagerungen von Chessel-Noville     |
+|15201287 | Bergsturzablagerungen von Chiètres | Bergsturzablagerungen von Chiètres     |
+|15201300 | Bergsturzablagerungen von Derborence | Bergsturzablagerungen von Derborence     |
+|15201303 | Bergsturzablagerungen von Elm | Bergsturzablagerungen von Elm     |
+|15201297 | Bergsturzablagerungen von Flims | Bergsturzablagerungen von Flims     |
+|15201304 | Bergsturzablagerungen von Goldau | Bergsturzablagerungen von Goldau     |
+|15201290 | Bergsturzablagerungen von Gwelber-Laui-Weid | Bergsturzablagerungen von Gwelber-Laui-Weid     |
+|15201305 | Bergsturzablagerungen von Iragell | Bergsturzablagerungen von Iragell     |
+|15201295 | Bergsturzablagerungen von Mutta | Bergsturzablagerungen von Mutta     |
+|15201289 | Bergsturzablagerungen von Novalles-Vugelles | Bergsturzablagerungen von Novalles-Vugelles     |
+|15201293 | Bergsturzablagerungen von Prapan | Bergsturzablagerungen von Prapan     |
+|15201294 | Bergsturzablagerungen von Schaingels | Bergsturzablagerungen von Schaingels     |
+|15201286 | Bergsturzablagerungen von Sierre | Bergsturzablagerungen von Sierre     |
+|15201292 | Bergsturzablagerungen von Sogno | Bergsturzablagerungen von Sogno     |
+|15201310 | Bergsturzablagerungen von Tamins | Bergsturzablagerungen von Tamins     |
+|15201307 | Bergsturzablagerungen von Triesenberg | Bergsturzablagerungen von Triesenberg     |
+|15201053 | Beringen-Eiszeit | Beringen-Eiszeit     |
+|15201164 | Berken-Sand | Berken-Sand     |
+|15201163 | Berken-Schotter | Berken-Schotter     |
+|15201156 | Bersturzmasse von Selzach | Bersturzmasse von Selzach     |
+|15201523 | Beuggen-Schotter | Beuggen-Schotter     |
+|15201153 | Bick-Till | Bick-Till     |
+|15201263 | Bire-Bergsturzablagerungen | Bire-Bergsturzablagerungen     |
+|15201462 | Birkenhof-Formation | Birkenhof-Formation     |
+|15201009 | Birmenstorf-Vergletscherung (2. LGM-Vorstoss) | Birmenstorf-Vergletscherung (2. LGM-Vorstoss)     |
+|15201013 | Birmenstorf-Vorstoss | Birmenstorf-Vorstoss     |
+|15201014 | Birr-Schotter | Birr-Schotter     |
+|15201052 | Birrfeld- und Klettgau-Paläoböden | Birrfeld- und Klettgau-Paläoböden     |
+|15201006 | Birrfeld-Eiszeit (Letzte Eiszeit) | Birrfeld-Eiszeit (Letzte Eiszeit)     |
+|15201255 | Bohlingen-Schotter | Bohlingen-Schotter     |
+|15201308 | Bonaduz-Formation | Bonaduz-Formation     |
+|15201309 | Bonfol-Ton | Bonfol-Ton     |
+|15201465 | Böschmatt-Schotter | Böschmatt-Schotter     |
+|15201466 | Bramegg-Schotter | Bramegg-Schotter     |
+|15201221 | Brandflue-Schotter | Brandflue-Schotter     |
+|15201150 | Breite-Terrasse | Breite-Terrasse     |
+|15201520 | Bruderhäusle-Schotter | Bruderhäusle-Schotter     |
+|15201339 | Brüggstutz-Schotter | Brüggstutz-Schotter     |
+|15201120 | Buechen-Formation | Buechen-Formation     |
+|15201470 | Büel-Schotter | Büel-Schotter     |
+|15201469 | Büelm-Schotter | Büelm-Schotter     |
+|15201085 | Buerfeld-Schotter | Buerfeld-Schotter     |
+|15201471 | Bünten-Schotter | Bünten-Schotter     |
+|15201094 | Bünten-Till | Bünten-Till     |
+|15201558 | Burgacher-Schotter | Burgacher-Schotter     |
+|15201243 | Butteberg-Schotter | Butteberg-Schotter     |
+|15201458 | Ceppo | Ceppo     |
+|15201233 | Chälen-Schotter | Chälen-Schotter     |
+|15201234 | Chälen-Till | Chälen-Till     |
+|15201559 | Chatzenstig-Schotter | Chatzenstig-Schotter     |
+|15201223 | Chatzenstrick-Schotter | Chatzenstrick-Schotter     |
+|15201258 | Chilchstapfen-Schotter | Chilchstapfen-Schotter     |
+|15201191 | Chisetal-Schotter | Chisetal-Schotter     |
+|15201242 | Chräjeloch-Schotter | Chräjeloch-Schotter     |
+|15201214 | Dagmersellen-Vorstoss | Dagmersellen-Vorstoss     |
+|15201250 | Deckenschotter, undifferenziert | Deckenschotter, undifferenziert     |
+|15201116 | Degermoos-Schotter | Degermoos-Schotter     |
+|15201115 | Dürn-Formation | Dürn-Formation     |
+|15201472 | Durnagel-Schotter | Durnagel-Schotter     |
+|15201473 | Dürrenroth-Schotter | Dürrenroth-Schotter     |
+|15201117 | Ebnet-Schotter | Ebnet-Schotter     |
+|15201123 | Egg-Schotter | Egg-Schotter     |
+|15201119 | Egghalden-Schotter | Egghalden-Schotter     |
+|15201547 | Eggholz-Formation | Eggholz-Formation     |
+|15201474 | Egghüsli-Schotter | Egghüsli-Schotter     |
+|15201197 | Einsiedeln-Lehm | Einsiedeln-Lehm     |
+|15201546 | Ellikerholz-Formation | Ellikerholz-Formation     |
+|15201284 | Embrach-Seeablagerungen | Embrach-Seeablagerungen     |
+|15201144 | Emme-Schotter | Emme-Schotter     |
+|15201475 | Emmental-Schotter | Emmental-Schotter     |
+|15201030 | Emmet-Vorstoss | Emmet-Vorstoss     |
+|15201180 | Endingen-Schotter | Endingen-Schotter     |
+|15201159 | Enge-Schotter | Enge-Schotter     |
+|15201065 | Engiwald-Vorstoss | Engiwald-Vorstoss     |
+|15201054 | Entfelden-Schotter | Entfelden-Schotter     |
+|15201476 | Ergolztal-Schotter | Ergolztal-Schotter     |
+|15201510 | Ermensee-Schotter | Ermensee-Schotter     |
+|15201272 | Eschenbach-Formation | Eschenbach-Formation     |
+|15201265 | Fankhusgrabe-Schotter | Fankhusgrabe-Schotter     |
+|15201524 | Feldhof-Schotter | Feldhof-Schotter     |
+|15201121 | Feusi-Schotter | Feusi-Schotter     |
+|15201096 | Fisibach-Schotter | Fisibach-Schotter     |
+|15201262 | Fisistock-Bergsturzablagerungen | Fisistock-Bergsturzablagerungen     |
+|15201174 | Fislisbach-Schotter | Fislisbach-Schotter     |
+|15201154 | Flüe-Till | Flüe-Till     |
+|15201011 | Flüefeld-Schotter | Flüefeld-Schotter     |
+|15201146 | Flumenthal-Lehm | Flumenthal-Lehm     |
+|15201051 | Flurlingen-Quelltuff | Flurlingen-Quelltuff     |
+|15201106 | Forenirchel-Schotter | Forenirchel-Schotter     |
+|15201105 | Fornech-Schotter | Fornech-Schotter     |
+|15201018 | Fornholz-Till | Fornholz-Till     |
+|15201217 | Forst-Schotter | Forst-Schotter     |
+|15201477 | Gammenthal-Schotter | Gammenthal-Schotter     |
+|15201145 | Gäu-Schotter | Gäu-Schotter     |
+|15201079 | Geisslingen-Schotter | Geisslingen-Schotter     |
+|15201251 | Girenbad-Schotter | Girenbad-Schotter     |
+|15201047 | Glazi-lakustrische Serie | Glazi-lakustrische Serie     |
+|15201343 | Glütschtal-Formation | Glütschtal-Formation     |
+|15201478 | Gondiswil-Formation | Gondiswil-Formation     |
+|15201050 | Gondiswil-Interglazial (Letztes Integlazial) | Gondiswil-Interglazial (Letztes Integlazial)     |
+|15201203 | Gontenschwil-Lehm | Gontenschwil-Lehm     |
+|15201020 | Gontenschwil-Till | Gontenschwil-Till     |
+|15201019 | Gontenschwil-Vorstoss | Gontenschwil-Vorstoss     |
+|15201038 | Gossau-Interstadial | Gossau-Interstadial     |
+|15201169 | Grandson-Formation | Grandson-Formation     |
+|15201083 | Gränichen-Schotter | Gränichen-Schotter     |
+|15201192 | Grauholz-Schotter | Grauholz-Schotter     |
+|15201267 | Grundtal-Schotter | Grundtal-Schotter     |
+|15201232 | Gubel-Schotter | Gubel-Schotter     |
+|15201275 | Gublen-Schotter | Gublen-Schotter     |
+|15201031 | Gündelmoos-Lehm | Gündelmoos-Lehm     |
+|15201341 | Guntelsei-Schotter | Guntelsei-Schotter     |
+|15201340 | Guntelsei-Till | Guntelsei-Till     |
+|15201274 | Günterstall-Schotter | Günterstall-Schotter     |
+|15201240 | Gutsch-Schotter | Gutsch-Schotter     |
+|15201082 | Habsburg-Eiszeit | Habsburg-Eiszeit     |
+|15201080 | Habsburg-Hagenholz-Interglazial | Habsburg-Hagenholz-Interglazial     |
+|15201088 | Habsburg-Schotter | Habsburg-Schotter     |
+|15201086 | Habsburg-Vergletscherung | Habsburg-Vergletscherung     |
+|15201087 | Habsburg-Vorstoss | Habsburg-Vorstoss     |
+|15201072 | Hagenholz-Eiszeit | Hagenholz-Eiszeit     |
+|15201073 | Hagenholz-Vergletscherung | Hagenholz-Vergletscherung     |
+|15201074 | Hagenholz-Vorstoss | Hagenholz-Vorstoss     |
+|15201506 | Hagnau-Niveau | Hagnau-Niveau     |
+|15201344 | Hahni-Schotter | Hahni-Schotter     |
+|15201530 | Hahni-Till | Hahni-Till     |
+|15201278 | Halden-Seeablagerungen | Halden-Seeablagerungen     |
+|15201208 | Haselbach-Schotter | Haselbach-Schotter     |
+|15201479 | Hasewald-Schotter | Hasewald-Schotter     |
+|15201264 | Hasle-Schotter | Hasle-Schotter     |
+|15201270 | Haslentobel-Schotter | Haslentobel-Schotter     |
+|15201564 | Hasli-Formation | Hasli-Formation     |
+|15201177 | Hausen-Lehm | Hausen-Lehm     |
+|15201178 | Hausen-Moräne | Hausen-Moräne     |
+|15201245 | Heitere-Schotter | Heitere-Schotter     |
+|15201515 | Heubeerihübel-Schotter | Heubeerihübel-Schotter     |
+|15201480 | Hirzmatt-Schotter | Hirzmatt-Schotter     |
+|15201244 | Höchi-Schotter | Höchi-Schotter     |
+|15201003 | Hochterrasse | Hochterrasse     |
+|15201464 | Höhenschotter | Höhenschotter     |
+|15201005 | Höhere Deckenschotter | Höhere Deckenschotter     |
+|15201246 | Holziken-Schotter | Holziken-Schotter     |
+|15201513 | Homberg-Till | Homberg-Till     |
+|15201041 | Hombrechtikon-Vergletscherung (Frühletzteiszeitliche Vergl.) | Hombrechtikon-Vergletscherung (Frühletzteiszeitliche Vergl.)     |
+|15201257 | Hungerbol-Schotter | Hungerbol-Schotter     |
+|15201195 | Hütten-Schotter | Hütten-Schotter     |
+|15201098 | Iberig-Schotterkomplex | Iberig-Schotterkomplex     |
+|15201032 | Igliste-Schotter | Igliste-Schotter     |
+|15201311 | Informell benannte Bergsturzablagerungen | Informell benannte Bergsturzablagerungen     |
+|15201319 | Informell benannte fluviatile Schotter | Informell benannte fluviatile Schotter     |
+|15201312 | Informell benannte künstliche Ablagerungen | Informell benannte künstliche Ablagerungen     |
+|15201317 | Informell benannte Sackungsmassen | Informell benannte Sackungsmassen     |
+|15201322 | Informell benannter Bachschutt | Informell benannter Bachschutt     |
+|15201111 | Irchel-Dolomitschotter | Irchel-Dolomitschotter     |
+|15201108 | Irchel-Schotterkomplex | Irchel-Schotterkomplex     |
+|15201077 | Ittingen-Schotter | Ittingen-Schotter     |
+|15201209 | Jonen-Schotter | Jonen-Schotter     |
+|15201241 | Junkerenwald-Schotter | Junkerenwald-Schotter     |
+|15201182 | Juraschotter | Juraschotter     |
+|15201467 | Kaltenegg-Schotter | Kaltenegg-Schotter     |
+|15201166 | Käppelihof-Schotter | Käppelihof-Schotter     |
+|15201190 | Karlsruhe-Schotter | Karlsruhe-Schotter     |
+|15201142 | Kiessande von Madretsch | Kiessande von Madretsch     |
+|15201147 | Killwangen-Schaffhausen-Mellingen-Stadium | Killwangen-Schaffhausen-Mellingen-Stadium     |
+|15201037 | Kirchleerau-Till | Kirchleerau-Till     |
+|15201036 | Kirchleerau-Vorstoss | Kirchleerau-Vorstoss     |
+|15201219 | Kleinhöchstetten-Kies-Sand-Komplex | Kleinhöchstetten-Kies-Sand-Komplex     |
+|15201045 | Klettgau-Schotter | Klettgau-Schotter     |
+|15201236 | Kollbrunn-Schotter | Kollbrunn-Schotter     |
+|15201220 | Krauchthal-Schotter | Krauchthal-Schotter     |
+|15201539 | Kunkels-Formation | Kunkels-Formation     |
+|15201315 | Künstliche Ablagerungen der Gamsenried-Deponie | Künstliche Ablagerungen der Gamsenried-Deponie     |
+|15201313 | Künstliche Ablagerungen des Bahnhofs Brig | Künstliche Ablagerungen des Bahnhofs Brig     |
+|15201316 | Künstliche Ablagerungen des Riedertals | Künstliche Ablagerungen des Riedertals     |
+|15201314 | Künstliche Ablagerungen Golar | Künstliche Ablagerungen Golar     |
+|15201222 | Küsnacht-Schotter | Küsnacht-Schotter     |
+|15201158 | La-Côte-Schotter | La-Côte-Schotter     |
+|15201202 | La-Tuffière-Schotter | La-Tuffière-Schotter     |
+|15201114 | Langacher-Schotter | Langacher-Schotter     |
+|15201059 | Langwiesen-Vergletscherung | Langwiesen-Vergletscherung     |
+|15201060 | Langwiesen-Vorstoss | Langwiesen-Vorstoss     |
+|15201007 | Last Glacial Maximum (LGM), undiff. | Last Glacial Maximum (LGM), undiff.     |
+|15201008 | LGM-Rückzug | LGM-Rückzug     |
+|15201514 | Lindenberg-Till | Lindenberg-Till     |
+|15201122 | Lindenhau-Schotter | Lindenhau-Schotter     |
+|15201024 | Lindmühle-Vergletscherung (1. LGM-Vorstoss) | Lindmühle-Vergletscherung (1. LGM-Vorstoss)     |
+|15201027 | Lindmühle-Vorstoss | Lindmühle-Vorstoss     |
+|15201064 | Löhningen-Engiwald-Vergletscherung | Löhningen-Engiwald-Vergletscherung     |
+|15201067 | Löhningen-Vorstoss | Löhningen-Vorstoss     |
+|15201161 | Lommiswil-Schotter | Lommiswil-Schotter     |
+|15201444 | Löss, undifferenziert | Löss, undifferenziert     |
+|15201063 | Lupfig-Schotter | Lupfig-Schotter     |
+|15201186 | Malmkalk-Schotter der Randen-Täler | Malmkalk-Schotter der Randen-Täler     |
+|15201151 | Maximalstand (Kilwangen-Schaffhausen-Stadium) | Maximalstand (Kilwangen-Schaffhausen-Stadium)     |
+|15201070 | Meikirch-Interglazial | Meikirch-Interglazial     |
+|15201141 | Mély-Formation | Mély-Formation     |
+|15201201 | Menzingen-Schotter | Menzingen-Schotter     |
+|15201185 | Merenbach-Schotter | Merenbach-Schotter     |
+|15201481 | Mettlen-Schotter | Mettlen-Schotter     |
+|15201125 | Mischschotter | Mischschotter     |
+|15201101 | Mittlere Iberigschotter | Mittlere Iberigschotter     |
+|15201112 | Mittlere Irchelschotter | Mittlere Irchelschotter     |
+|15201048 | Mittlere Klettgauschotter | Mittlere Klettgauschotter     |
+|15201091 | Möhlin-Eiszeit (Grösste Eiszeit) | Möhlin-Eiszeit (Grösste Eiszeit)     |
+|15201092 | Möhlin-Vergletscherung | Möhlin-Vergletscherung     |
+|15201093 | Möhlin-Vorstoss | Möhlin-Vorstoss     |
+|15201081 | Möhlinerfeld-Paläoboden | Möhlinerfeld-Paläoboden     |
+|15201482 | Möhlinerfeld-Schotter | Möhlinerfeld-Schotter     |
+|15201511 | Mooretal-Schotter | Mooretal-Schotter     |
+|15201204 | Mooslerau-Lehm | Mooslerau-Lehm     |
+|15201039 | Mülligen-Paläoboden | Mülligen-Paläoboden     |
+|15201042 | Mülligen-Schotter | Mülligen-Schotter     |
+|15201521 | Mumpf-Schotter | Mumpf-Schotter     |
+|15201148 | Munot-Terrasse | Munot-Terrasse     |
+|15201188 | Münsingen-Schotterkomplex | Münsingen-Schotterkomplex     |
+|15201268 | Murg-Schieferkohle | Murg-Schieferkohle     |
+|15201483 | Muttenfeld-Schotter | Muttenfeld-Schotter     |
+|15201033 | Niderholz-Till | Niderholz-Till     |
+|15201527 | Niderstalden-Schotter | Niderstalden-Schotter     |
+|15201484 | Nidfurn-Schotter | Nidfurn-Schotter     |
+|15201002 | Niederterrasse | Niederterrasse     |
+|15201536 | Niederterrassenschotter, oberste Terrasse | Niederterrassenschotter, oberste Terrasse     |
+|15201534 | Niederterrassenschotter, tiefere Niveaus | Niederterrassenschotter, tiefere Niveaus     |
+|15201535 | Niederterrassenschotter, zweitoberste Terrasse | Niederterrassenschotter, zweitoberste Terrasse     |
+|15201040 | Niederweningen-Formation | Niederweningen-Formation     |
+|15201542 | Niklaushalden-Formation | Niklaushalden-Formation     |
+|15201134 | Nohl-Terrasse | Nohl-Terrasse     |
+|15201459 | Novazzano-Sand | Novazzano-Sand     |
+|15201099 | Obere Iberigschotter | Obere Iberigschotter     |
+|15201109 | Obere Irchelschotter | Obere Irchelschotter     |
+|15201046 | Obere Klettgauschotter | Obere Klettgauschotter     |
+|15201132 | Obere Singen-Terrasse | Obere Singen-Terrasse     |
+|15201100 | Oberer Till | Oberer Till     |
+|15201015 | Oberhard-Till | Oberhard-Till     |
+|15201485 | Oberhöhe-Grundmoräne | Oberhöhe-Grundmoräne     |
+|15201273 | Oberkirch-Seebodenlehm | Oberkirch-Seebodenlehm     |
+|15201486 | Obermoos-Schotter | Obermoos-Schotter     |
+|15201269 | Oberricken-Schotter | Oberricken-Schotter     |
+|15201162 | Oensingen-Moos-Lehm | Oensingen-Moos-Lehm     |
+|15201261 | Oeschinensee-Bergsturzablagerungen | Oeschinensee-Bergsturzablagerungen     |
+|15201259 | Ofenloch-Karstfüllung | Ofenloch-Karstfüllung     |
+|15201487 | Öflingen-Schotter | Öflingen-Schotter     |
+|15201215 | Oftringen-Schotter | Oftringen-Schotter     |
+|15201138 | Orvin-Schotter | Orvin-Schotter     |
+|15201025 | Otelfingen-Vorstoss | Otelfingen-Vorstoss     |
+|15201561 | Paradiesgärtli-Schotter | Paradiesgärtli-Schotter     |
+|15201076 | Pfyn-Vorstoss | Pfyn-Vorstoss     |
+|15201566 | Plaffeien-Seetone | Plaffeien-Seetone     |
+|15201567 | Plasselb-Stauschotter | Plasselb-Stauschotter     |
+|15201157 | Plateauschotter | Plateauschotter     |
+|15201333 | Pliozäne Ablagerungen | Pliozäne Ablagerungen     |
+|15201170 | Poissine-Formation | Poissine-Formation     |
+|15201212 | Port-Stauschotter | Port-Stauschotter     |
+|15201249 | Quartär, undifferenziert | Quartär, undifferenziert     |
+|15201224 | Rabennest-Schotter | Rabennest-Schotter     |
+|15201218 | Raintal-Deltaschotter | Raintal-Deltaschotter     |
+|15201225 | Ratengütsch-Schotter | Ratengütsch-Schotter     |
+|15201277 | Regelstein-Till | Regelstein-Till     |
+|15201230 | Reidbach-Schotter | Reidbach-Schotter     |
+|15201069 | Remigen-Schotter | Remigen-Schotter     |
+|15201068 | Remigen-Vorstoss | Remigen-Vorstoss     |
+|15201213 | Rempen-Stauschotter | Rempen-Stauschotter     |
+|15201062 | Reuenthal-Vorstoss | Reuenthal-Vorstoss     |
+|15201505 | Reuss-Schotterkomplex | Reuss-Schotterkomplex     |
+|15201176 | Reusstal-Lehm | Reusstal-Lehm     |
+|15201175 | Reusstal-Sand | Reusstal-Sand     |
+|15201507 | Reusstal-Seebodensediment | Reusstal-Seebodensediment     |
+|15201181 | Rhein- und Aareschotter | Rhein- und Aareschotter     |
+|15201133 | Rheinau-Terrasse | Rheinau-Terrasse     |
+|15201545 | Rheinau-Till | Rheinau-Till     |
+|15201228 | Richterswil-Seeton | Richterswil-Seeton     |
+|15201509 | Rickenbach-Schotter | Rickenbach-Schotter     |
+|15201522 | Riedmatt-Schotter | Riedmatt-Schotter     |
+|15201554 | Risibüel-Schotter | Risibüel-Schotter     |
+|15201238 | Ritteren-Schotterkomplex | Ritteren-Schotterkomplex     |
+|15201516 | Ritzhans-Schotter | Ritzhans-Schotter     |
+|15201084 | Roggehuse-Schotter | Roggehuse-Schotter     |
+|15201266 | Rossgaden-Schotter | Rossgaden-Schotter     |
+|15201488 | Rottal-Schotter | Rottal-Schotter     |
+|15201179 | Ruckfeld-Schotter | Ruckfeld-Schotter     |
+|15201489 | Rüdelwald-Schotter | Rüdelwald-Schotter     |
+|15201541 | Rüdlingen-Till | Rüdlingen-Till     |
+|15201247 | Ruedertal-Schotter | Ruedertal-Schotter     |
+|15201066 | Rüfenach-Vorstoss | Rüfenach-Vorstoss     |
+|15201490 | Rufswil-Schotter | Rufswil-Schotter     |
+|15201491 | Rütimatt-Schotter | Rütimatt-Schotter     |
+|15201078 | Ryhirt-Formation | Ryhirt-Formation     |
+|15201519 | Säckingen-Schotter | Säckingen-Schotter     |
+|15201318 | Sackungsmasse des Heinzenbergs | Sackungsmasse des Heinzenbergs     |
+|15201252 | Sagenbach-Schotter | Sagenbach-Schotter     |
+|15201556 | Saxegrabe-Schotter | Saxegrabe-Schotter     |
+|15201279 | Schafbüel-Formation | Schafbüel-Formation     |
+|15201061 | Schaffhausen-Schotter | Schaffhausen-Schotter     |
+|15201226 | Scherenspitz-Schotter | Scherenspitz-Schotter     |
+|15201095 | Schleitheim-Vorstoss | Schleitheim-Vorstoss     |
+|15201131 | Schlieren-Diessenhofen-Stetten-Stadien | Schlieren-Diessenhofen-Stetten-Stadien     |
+|15201553 | Schlossbuck-Schotter | Schlossbuck-Schotter     |
+|15201338 | Schlyffi-Till | Schlyffi-Till     |
+|15201555 | Schmerlet- und Toktri-Formation, undifferenziert | Schmerlet- und Toktri-Formation, undifferenziert     |
+|15201196 | Schnabelsberg-Stauchotter | Schnabelsberg-Stauchotter     |
+|15201518 | Schönegg-Formation | Schönegg-Formation     |
+|15201320 | Schotter und Sand der Rhône | Schotter und Sand der Rhône     |
+|15201321 | Schotter und Sand der Vispa | Schotter und Sand der Vispa     |
+|15201253 | Schrotzburg-Schotter | Schrotzburg-Schotter     |
+|15201254 | Schrotzburg-Till | Schrotzburg-Till     |
+|15201137 | Schüss-Schotter | Schüss-Schotter     |
+|15201493 | Schwande-Seebodensedimente | Schwande-Seebodensedimente     |
+|15201229 | Schwanden-Schotter | Schwanden-Schotter     |
+|15201492 | Schwanderholzwald-Schotter | Schwanderholzwald-Schotter     |
+|15201165 | Schwarzhäusern-Lehm | Schwarzhäusern-Lehm     |
+|15201139 | Seeablagerungen von Frinvillier und Rondchâtel | Seeablagerungen von Frinvillier und Rondchâtel     |
+|15201143 | Seeland-Schotter | Seeland-Schotter     |
+|15201016 | Seon-Vorstoss | Seon-Vorstoss     |
+|15201207 | Sihl-Schotter | Sihl-Schotter     |
+|15201235 | Sihlsprung-Schotter | Sihlsprung-Schotter     |
+|15201187 | Solothurn-Stadium | Solothurn-Stadium     |
+|15201494 | Soppensee-Seebodensedimente | Soppensee-Seebodensedimente     |
+|15201525 | Spärgacher-Schotter | Spärgacher-Schotter     |
+|15201495 | Speicherboden-Lokalmoräne | Speicherboden-Lokalmoräne     |
+|15201529 | Spiez-Schotter | Spiez-Schotter     |
+|15201543 | Stadel-Till | Stadel-Till     |
+|15201022 | Staffelbach-Schotter | Staffelbach-Schotter     |
+|15201023 | Staffelbach-Till | Staffelbach-Till     |
+|15201021 | Staffelbach-Vorstoss | Staffelbach-Vorstoss     |
+|15201211 | Starrberg-Schotter | Starrberg-Schotter     |
+|15201140 | Stauschotter von Diessbach | Stauschotter von Diessbach     |
+|15201342 | Steghalden-Schotter | Steghalden-Schotter     |
+|15201107 | Steig-Schotter | Steig-Schotter     |
+|15201468 | Steinhuserberg-Schotter | Steinhuserberg-Schotter     |
+|15201565 | Stetten-Schotter | Stetten-Schotter     |
+|15201334 | Stockesee-Sediment | Stockesee-Sediment     |
+|15201149 | Stokar-Terrasse | Stokar-Terrasse     |
+|15201335 | Strätligen-Till | Strätligen-Till     |
+|15201058 | Stüsslingen-Schotter | Stüsslingen-Schotter     |
+|15201552 | Südranden-Till | Südranden-Till     |
+|15201056 | Suhr-Schotter | Suhr-Schotter     |
+|15201124 | Sundgau-Schotter | Sundgau-Schotter     |
+|15201171 | Surbtal-Lehm | Surbtal-Lehm     |
+|15201173 | Surbtal-Schotter | Surbtal-Schotter     |
+|15201172 | Surbtal-Till | Surbtal-Till     |
+|15201026 | Tägerhard-Schotter | Tägerhard-Schotter     |
+|15201496 | terrasse lémanique de 10 m | terrasse lémanique de 10 m     |
+|15201497 | terrasse lémanique de 3 m | terrasse lémanique de 3 m     |
+|15201090 | Thalgut-Interglazial | Thalgut-Interglazial     |
+|15201282 | Tiefenwinkel-Seebodensedimente | Tiefenwinkel-Seebodensedimente     |
+|15201004 | Tiefere Deckenschotter | Tiefere Deckenschotter     |
+|15201538 | Tiefere Deckenschotter, oberes Niveau | Tiefere Deckenschotter, oberes Niveau     |
+|15201537 | Tiefere Deckenschotter, unteres Niveau | Tiefere Deckenschotter, unteres Niveau     |
+|15201193 | Trachslau-Schotter | Trachslau-Schotter     |
+|15201206 | Triengen-Lehm | Triengen-Lehm     |
+|15201205 | Triengen-Schotter | Triengen-Schotter     |
+|15201562 | Tubeschwanz-Schotter | Tubeschwanz-Schotter     |
+|15201168 | Tuileries-Formation | Tuileries-Formation     |
+|15201276 | Unter-Buechwald-Schotter | Unter-Buechwald-Schotter     |
+|15201517 | Unterdorf-Schotter | Unterdorf-Schotter     |
+|15201102 | Untere Iberigschotter | Untere Iberigschotter     |
+|15201113 | Untere Irchelschotter | Untere Irchelschotter     |
+|15201049 | Untere Klettgauschotter | Untere Klettgauschotter     |
+|15201130 | Untere Singen-Terrasse | Untere Singen-Terrasse     |
+|15201498 | Untere Zeller Schotter | Untere Zeller Schotter     |
+|15201103 | Unterer Till | Unterer Till     |
+|15201280 | Unteres-Huttenbüel-Schotter | Unteres-Huttenbüel-Schotter     |
+|15201499 | Untergrabehüsli-Schotter | Untergrabehüsli-Schotter     |
+|15201089 | Unterschlatt-Vorstoss | Unterschlatt-Vorstoss     |
+|15201500 | Untertreie-Schotter | Untertreie-Schotter     |
+|15201283 | Uznach-Schieferkohle | Uznach-Schieferkohle     |
+|15201057 | Veltheim-Schotter | Veltheim-Schotter     |
+|15201544 | Volken-Lehm | Volken-Lehm     |
+|15201239 | Vorholz-Schotter | Vorholz-Schotter     |
+|15201526 | Wagenmoos-Till | Wagenmoos-Till     |
+|15201237 | Walenberg-Schotter | Walenberg-Schotter     |
+|15201501 | Wallbach-Schotter | Wallbach-Schotter     |
+|15201227 | Walsenhaus-Schotter | Walsenhaus-Schotter     |
+|15201118 | Wannen-Schotter | Wannen-Schotter     |
+|15201337 | Wässerifluh-Formation | Wässerifluh-Formation     |
+|15201560 | Wasterkingen-Schotter | Wasterkingen-Schotter     |
+|15201152 | Wehntal-Schotter | Wehntal-Schotter     |
+|15201549 | Weiach-Schotter | Weiach-Schotter     |
+|15201126 | Weisse Serie | Weisse Serie     |
+|15201563 | Weisweil-Schotter | Weisweil-Schotter     |
+|15201502 | Werthenstein-Schotter | Werthenstein-Schotter     |
+|15201155 | Wettingen-Schotter | Wettingen-Schotter     |
+|15201010 | Wettingen-Vorstoss | Wettingen-Vorstoss     |
+|15201200 | Wiggen-Schotter | Wiggen-Schotter     |
+|15201503 | Willburg-Formation | Willburg-Formation     |
+|15201198 | Willisau-Schotter | Willisau-Schotter     |
+|15201504 | Wilzigen-Seebodensedimente | Wilzigen-Seebodensedimente     |
+|15201281 | Winden-Schieferkohle | Winden-Schieferkohle     |
+|15201551 | Windlach-Till | Windlach-Till     |
+|15201104 | Wolfacher-Schotter und -Till | Wolfacher-Schotter und -Till     |
+|15201199 | Wolhusen-Schotter | Wolhusen-Schotter     |
+|15201260 | Wurmsbach-Deltaablagerungen | Wurmsbach-Deltaablagerungen     |
+|15201184 | Wutach-Schotter | Wutach-Schotter     |
+|15201508 | Wyna-Schotter | Wyna-Schotter     |
+|15201463 | Zeiningen-Till | Zeiningen-Till     |
+|15201216 | Zelg-Schotter | Zelg-Schotter     |
+|15201231 | Zell-Schotterkomplex | Zell-Schotterkomplex     |
+|15201035 | Zetzwil-Till | Zetzwil-Till     |
+|15201034 | Zetzwil-Vorstoss | Zetzwil-Vorstoss     |
+|15201528 | Zulgtal-Schotter | Zulgtal-Schotter     |
+|15201129 | Zürich-Stein-Bremgarten-Stadien | Zürich-Stein-Bremgarten-Stadien     |
+|15201557 | Zweidlen-Schotter | Zweidlen-Schotter     |
+|999997 | Unknown | Unknown     |
+|999998 | Not applicable | Not applicable     |
 
 
-#### Attribute litho {#bedrock-plg-litho}
-_Lithologische Beschreibung_
+## Anhang GC_LITHO_CD {#gc-litho-cd}
+Wertetabellen der lithologischen Beschreibung
+
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -4211,10 +7107,84 @@ _Lithologische Beschreibung_
 |999998 | Not applicable | Not applicable     |
 
 
+## Anhang GC_LITHO_UNCO_CD {#gc-litho-unco-cd}
+Wertetabellen der lithologischen Beschreibung
 
 
-#### Attribute chrono_t {#bedrock-plg-chrono-t}
-_Chronostratigraphische Zuordnung der Obergrenze der Kartiereinheit (Top)_
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|15101039 | Alluvion, undifferenziert | Alluvion, undifferenziert     |
+|15101067 | anthropogene Elemente, undifferenziert | anthropogene Elemente, undifferenziert     |
+|15101062 | äolischer Sand, Flugsand | äolischer Sand, Flugsand     |
+|15101061 | äolisches Sediment, undifferenziert | äolisches Sediment, undifferenziert     |
+|15101071 | Auffüllung | Auffüllung     |
+|15101070 | Aufschüttung, Damm | Aufschüttung, Damm     |
+|15101041 | Bachschutt | Bachschutt     |
+|15101006 | Bergsturzablagerung | Bergsturzablagerung     |
+|15101015 | Blockgletscher | Blockgletscher     |
+|15101010 | Blockschutt | Blockschutt     |
+|15101072 | Deponie | Deponie     |
+|15101049 | detritische Verlandungsbildung | detritische Verlandungsbildung     |
+|15101075 | dünne Lockermaterialbedeckung | dünne Lockermaterialbedeckung     |
+|15101086 | Entwässerungssediment | Entwässerungssediment     |
+|15101007 | Felssturzablagerung | Felssturzablagerung     |
+|15101040 | fluviatiler Schotter | fluviatiler Schotter     |
+|15101026 | fluviatiles Sediment, undifferenziert | fluviatiles Sediment, undifferenziert     |
+|15101035 | gemischter Schutt | gemischter Schutt     |
+|15101076 | geringmächtige Lockergesteinsbedeckung | geringmächtige Lockergesteinsbedeckung     |
+|15101031 | glazifluviatiler Schotter | glazifluviatiler Schotter     |
+|15101028 | glazifluviatiles Sediment, undifferenziert | glazifluviatiles Sediment, undifferenziert     |
+|15101019 | glazigenes Sediment, undifferenziert | glazigenes Sediment, undifferenziert     |
+|15101047 | glazilakustrisches Deltasediment | glazilakustrisches Deltasediment     |
+|15101046 | glazilakustrisches Sediment, undifferenziert | glazilakustrisches Sediment, undifferenziert     |
+|15101003 | gravitative Sedimente und Verwitterungsbildungen, undifferenziert | gravitative Sedimente und Verwitterungsbildungen, undifferenziert     |
+|15101079 | Gyttja | Gyttja     |
+|15101073 | Halde | Halde     |
+|15101014 | Hanglehm, Schwemmlehm | Hanglehm, Schwemmlehm     |
+|15101009 | Hangschutt | Hangschutt     |
+|15101081 | hydrochemische Bildungen (Kalksinter) | hydrochemische Bildungen (Kalksinter)     |
+|15101083 | In-situ-Verwitterungsschutt | In-situ-Verwitterungsschutt     |
+|15101069 | künstliche Ablagerung, undifferenziert | künstliche Ablagerung, undifferenziert     |
+|15101057 | lakustrisches Deltasediment | lakustrisches Deltasediment     |
+|15101044 | lakustrisches Sediment, undifferenziert | lakustrisches Sediment, undifferenziert     |
+|15101008 | Lawinenschutt | Lawinenschutt     |
+|15101054 | Lignit (palustrisches Sediment) | Lignit (palustrisches Sediment)     |
+|15101001 | Lockergestein | Lockergestein     |
+|15101063 | Löss, Lösslehm | Löss, Lösslehm     |
+|15101021 | Moräne (Till), undifferenziert | Moräne (Till), undifferenziert     |
+|15101024 | Moräne auf Gletscher oder Toteis (Glacier or Dead Ice covered by Till) | Moräne auf Gletscher oder Toteis (Glacier or Dead Ice covered by Till)     |
+|15101037 | Murgangablagerung | Murgangablagerung     |
+|15101050 | palustrisches Sediment | palustrisches Sediment     |
+|15101051 | palustrisches Sediment, undifferenziert | palustrisches Sediment, undifferenziert     |
+|15101013 | Plateaulehm | Plateaulehm     |
+|15101080 | Quelltuff (Kalksinter, Lockergestein) | Quelltuff (Kalksinter, Lockergestein)     |
+|15101030 | randglazialer Schotter | randglazialer Schotter     |
+|15101033 | Rückzugsschotter | Rückzugsschotter     |
+|15101017 | Rutschmasse | Rutschmasse     |
+|15101087 | Sedimentärer Gang (clastic dike) | Sedimentärer Gang (clastic dike)     |
+|15101058 | Seebodensediment | Seebodensediment     |
+|15101059 | Seekreide | Seekreide     |
+|15101034 | Stauschotter | Stauschotter     |
+|15101056 | Strandablagerungen | Strandablagerungen     |
+|15101084 | strukturierter Hangschutt | strukturierter Hangschutt     |
+|15101005 | Sturzablagerung, undifferenziert | Sturzablagerung, undifferenziert     |
+|15101048 | subaquatisch abgelagerte Moräne (Waterlaid Till) | subaquatisch abgelagerte Moräne (Waterlaid Till)     |
+|15101052 | Sumpf | Sumpf     |
+|15101078 | tiefgründige Verwitterungsdecke | tiefgründige Verwitterungsdecke     |
+|15101053 | Torfmoor, Torf | Torfmoor, Torf     |
+|15101082 | Travertin (Kalksinter, Lockergestein) | Travertin (Kalksinter, Lockergestein)     |
+|15101085 | Tsunamiablagerung | Tsunamiablagerung     |
+|15101042 | Überschwemmungssediment | Überschwemmungssediment     |
+|15101012 | Verwitterungslehm, undifferenziert | Verwitterungslehm, undifferenziert     |
+|15101032 | Vorstossschotter | Vorstossschotter     |
+|15101065 | vulkanische Asche | vulkanische Asche     |
+|15101016 | zerrüttete Sackungsmasse | zerrüttete Sackungsmasse     |
+|999997 | Unknown | Unknown     |
+|999998 | Not applicable | Not applicable     |
+
+
+## Anhang GC_CHRONO_CD {#gc-chrono-cd}
+Wertetabelle der chronostratigraphischen Einheiten
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -4359,158 +7329,8 @@ _Chronostratigraphische Zuordnung der Obergrenze der Kartiereinheit (Top)_
 |999998 | Not applicable | Not applicable     |
 
 
-
-
-#### Attribute chrono_b {#bedrock-plg-chrono-b}
-_Chronostratigraphische Zuordnung der Untergrenze der Kartiereinheit (Basis)_
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|15001074 | Aalénien | Aalénien     |
-|15001059 | Albien | Albien     |
-|15001087 | Anisien | Anisien     |
-|15001060 | Aptien | Aptien     |
-|15001028 | Aquitanien | Aquitanien     |
-|15001153 | Archaikum | Archaikum     |
-|15001113 | Artinskien | Artinskien     |
-|15001117 | Asselien | Asselien     |
-|15001073 | Bajocien | Bajocien     |
-|15001061 | Barrémien | Barrémien     |
-|15001041 | Bartonien | Bartonien     |
-|15001140 | Bashkirien | Bashkirien     |
-|15001072 | Bathonien | Bathonien     |
-|15001064 | Berriasien | Berriasien     |
-|15001025 | Burdigalien | Burdigalien     |
-|15001010 | Calabrien | Calabrien     |
-|15001071 | Callovien | Callovien     |
-|15001053 | Campanien | Campanien     |
-|15001102 | Capitanien | Capitanien     |
-|15001084 | Carnien | Carnien     |
-|15001057 | Cénomanien | Cénomanien     |
-|15001096 | Changhsingien | Changhsingien     |
-|15001031 | Chattien | Chattien     |
-|15001151 | Chibanien | Chibanien     |
-|15001110 | Cisuralien | Cisuralien     |
-|15001055 | Coniacien | Coniacien     |
-|15001048 | Danien | Danien     |
-|15001128 | Devon | Devon     |
-|15001035 | Eozän | Eozän     |
-|15001058 | Frühe Kreide | Frühe Kreide     |
-|15001088 | Frühe Trias | Frühe Trias     |
-|15001075 | Früher Jura | Früher Jura     |
-|15001027 | frühes Burdigalien | frühes Burdigalien     |
-|15001033 | frühes Chattien | frühes Chattien     |
-|15001129 | Frühes Devon | Frühes Devon     |
-|15001043 | Frühes Eozän | Frühes Eozän     |
-|15001024 | Frühes Miozän | Frühes Miozän     |
-|15001127 | Frühes Mississippien | Frühes Mississippien     |
-|15001150 | Frühes Ordovizium | Frühes Ordovizium     |
-|15001123 | Frühes Pennsylvanien | Frühes Pennsylvanien     |
-|15001009 | Frühes Pleistozän | Frühes Pleistozän     |
-|15001039 | frühes Priabonien | frühes Priabonien     |
-|15001011 | Gélasien | Gélasien     |
-|15001101 | Guadalupien | Guadalupien     |
-|15001137 | Gzhélien | Gzhélien     |
-|15001062 | Hauterivien | Hauterivien     |
-|15001079 | Hettangien | Hettangien     |
-|15001004 | Holozän | Holozän     |
-|15001090 | Indusien | Indusien     |
-|15001065 | Jura | Jura     |
-|15001135 | Kambrium | Kambrium     |
-|15001002 | Känozoikum | Känozoikum     |
-|15001119 | Karbon | Karbon     |
-|15001138 | Kasimovien | Kasimovien     |
-|15001068 | Kimméridgien | Kimméridgien     |
-|15001050 | Kreide | Kreide     |
-|15001111 | Kungurien | Kungurien     |
-|15001086 | Ladinien | Ladinien     |
-|15001023 | Langhien | Langhien     |
-|15001147 | Llandovery | Llandovery     |
-|15001095 | Lopingien | Lopingien     |
-|15001145 | Ludlow | Ludlow     |
-|15001042 | Lutétien | Lutétien     |
-|15001052 | Maastrichtien | Maastrichtien     |
-|15001049 | Mesozoikum | Mesozoikum     |
-|15001019 | Messinien | Messinien     |
-|15001017 | Miozän | Miozän     |
-|15001124 | Mississippien | Mississippien     |
-|15001085 | Mittlere Trias | Mittlere Trias     |
-|15001070 | Mittlerer Jura | Mittlerer Jura     |
-|15001130 | Mittleres Devon | Mittleres Devon     |
-|15001040 | Mittleres Eozän | Mittleres Eozän     |
-|15001021 | Mittleres Miozän | Mittleres Miozän     |
-|15001126 | Mittleres Mississippien | Mittleres Mississippien     |
-|15001149 | Mittleres Ordovizium | Mittleres Ordovizium     |
-|15001122 | Mittleres Pennsylvanien | Mittleres Pennsylvanien     |
-|15001007 | Mittleres Pleistozän | Mittleres Pleistozän     |
-|15001139 | Moscovien | Moscovien     |
-|15001013 | Neogen | Neogen     |
-|15001083 | Norien | Norien     |
-|15001089 | Olénékien | Olénékien     |
-|15001030 | Oligozän | Oligozän     |
-|15001134 | Ordovizium | Ordovizium     |
-|15001069 | Oxfordien | Oxfordien     |
-|15001029 | Paläogen | Paläogen     |
-|15001091 | Paläozoikum | Paläozoikum     |
-|15001045 | Paleozän | Paleozän     |
-|15001120 | Pennsylvanien | Pennsylvanien     |
-|15001093 | Perm | Perm     |
-|15001001 | Phanerozoikum | Phanerozoikum     |
-|15001015 | Plaisancien | Plaisancien     |
-|15001005 | Pleistozän | Pleistozän     |
-|15001077 | Pliensbachien | Pliensbachien     |
-|15001014 | Pliozän | Pliozän     |
-|15001152 | Präkambrium | Präkambrium     |
-|15001037 | Priabonien | Priabonien     |
-|15001144 | Pridoli | Pridoli     |
-|15001136 | Proterozoikum | Proterozoikum     |
-|15001003 | Quartär | Quartär     |
-|15001082 | Rhät | Rhät     |
-|15001108 | Roadien | Roadien     |
-|15001034 | Rupélien | Rupélien     |
-|15001115 | Sakmarien | Sakmarien     |
-|15001054 | Santonien | Santonien     |
-|15001047 | Sélandien | Sélandien     |
-|15001141 | Serpukhovien | Serpukhovien     |
-|15001022 | Serravallien | Serravallien     |
-|15001133 | Silur | Silur     |
-|15001078 | Sinémurien | Sinémurien     |
-|15001051 | Späte Kreide | Späte Kreide     |
-|15001081 | Späte Trias | Späte Trias     |
-|15001066 | Später Jura | Später Jura     |
-|15001026 | spätes Burdigalien | spätes Burdigalien     |
-|15001032 | spätes Chattien | spätes Chattien     |
-|15001131 | Spätes Devon | Spätes Devon     |
-|15001036 | Spätes Eozän | Spätes Eozän     |
-|15001018 | Spätes Miozän | Spätes Miozän     |
-|15001125 | Spätes Mississippien | Spätes Mississippien     |
-|15001148 | Spätes Ordovizium | Spätes Ordovizium     |
-|15001121 | Spätes Pennsylvanien | Spätes Pennsylvanien     |
-|15001006 | Spätes Pleistozän | Spätes Pleistozän     |
-|15001038 | spätes Priabonien | spätes Priabonien     |
-|15001012 | Tertiär | Tertiär     |
-|15001046 | Thanétien | Thanétien     |
-|15001067 | Tithonien | Tithonien     |
-|15001076 | Toarcien | Toarcien     |
-|15001020 | Tortonien | Tortonien     |
-|15001143 | Tournaisien | Tournaisien     |
-|15001080 | Trias | Trias     |
-|15001056 | Turonien | Turonien     |
-|15001063 | Valanginien | Valanginien     |
-|15001142 | Viséen | Viséen     |
-|15001146 | Wenlock | Wenlock     |
-|15001106 | Wordien | Wordien     |
-|15001098 | Wuchiapingien | Wuchiapingien     |
-|15001044 | Yprésien | Yprésien     |
-|15001016 | Zancléen | Zancléen     |
-|999997 | Unknown | Unknown     |
-|999998 | Not applicable | Not applicable     |
-
-
-
-
-#### Attribute tecto {#bedrock-plg-tecto}
-_Tektonische Zugehörigkeit_
+## Anhang GC_TECTO_CD {#gc-tecto-cd}
+Wertetabelle der tektonischen Einheiten
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -4908,227 +7728,8 @@ _Tektonische Zugehörigkeit_
 |999998 | Not applicable | Not applicable     |
 
 
-
-
-#### Attribute orig_descr
-_Originalbezeichnung gemäss der Legende der zugrundeliegenden geologischen Karte_
-_Datentyp:  string_
-
-
-
-
-
-#### Attribute buried_out
-_Wurde das Festgestein wieder verdeckt (ja / nein)?_
-_Datentyp:  boolean_
-
-
-
-
-
-#### Attribute exotic_ele
-_Handelt es sich bei der Objektart um ein exotisches Element; z.B. Einschluss, Linse, Tasche, Olistholith (ja / nein)?_
-
-
-
-
-#### Attribute colour
-_Farbe des Gesteins. Präzisieren ob es sich um die Bruchfarbe, die Verwitterungsfarbe, etc. handelt; z.B.Verwitterungsfarbe grau._
-_Datentyp:  string_
-
-
-
-
-
-#### Attribute sedi_main_com {#bedrock-plg-sedi-main-com}
-_Hauptgesteinskomponente des klastischen Sedimentgesteins_
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|15602006 | Dolomitstein | Dolomitstein     |
-|15602001 | Gesteinsbruchstück undifferenziert | Gesteinsbruchstück undifferenziert     |
-|15602005 | Kalkstein | Kalkstein     |
-|15602002 | kieselige Gesteine (Quarzit, Quarz (Mineralisch), Radiolarit, Kieselkalk, Quarzsandstein, Hornstein) | kieselige Gesteine (Quarzit, Quarz (Mineralisch), Radiolarit, Kieselkalk, Quarzsandstein, Hornstein)     |
-|15602007 | Kristallingestein undifferenziert | Kristallingestein undifferenziert     |
-|15602010 | Mergelstein | Mergelstein     |
-|15602009 | Metamorphit | Metamorphit     |
-|15602003 | Sedimentgestein undifferenziert | Sedimentgestein undifferenziert     |
-|15602004 | Tonstein | Tonstein     |
-|15602008 | Vulkanit | Vulkanit     |
-|999997 | Unknown | Unknown     |
-|999998 | Not applicable | Not applicable     |
-
-
-
-
-#### Attribute sedi_seco_com {#bedrock-plg-sedi-seco-com}
-_Nebengesteinskomponente des Sedimentgesteins_
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|20001019 | biogene Komponenten | biogene Komponenten     |
-|20001024 | Bitumen | Bitumen     |
-|20001005 | Dolomitstein | Dolomitstein     |
-|20001026 | Eisenmineralien | Eisenmineralien     |
-|20001025 | Evaporit | Evaporit     |
-|20001012 | Feldspat | Feldspat     |
-|20001001 | Gesteinsbruchstück undifferenziert | Gesteinsbruchstück undifferenziert     |
-|20001013 | Glaukonit | Glaukonit     |
-|20001014 | Glimmer | Glimmer     |
-|20001015 | intraformationelle Gerölle | intraformationelle Gerölle     |
-|20001016 | Kalkkonkretionen | Kalkkonkretionen     |
-|20001004 | Kalkstein | Kalkstein     |
-|20001023 | Kohle | Kohle     |
-|20001006 | Kristallingestein undifferenziert | Kristallingestein undifferenziert     |
-|20001022 | Mergelstein | Mergelstein     |
-|20001008 | Metamorphit | Metamorphit     |
-|20001021 | Phosphorit | Phosphorit     |
-|20001010 | pyroklastische Komponenten | pyroklastische Komponenten     |
-|20001011 | Quarz | Quarz     |
-|20001009 | Quarzit | Quarzit     |
-|20001002 | Sedimentgestein undifferenziert | Sedimentgestein undifferenziert     |
-|20001017 | Sideritkonkretionen | Sideritkonkretionen     |
-|20001018 | Silexkonkretionen | Silexkonkretionen     |
-|20001020 | terrigener Detritus | terrigener Detritus     |
-|20001003 | Tonstein | Tonstein     |
-|20001007 | Vulkanit | Vulkanit     |
-|999997 | Unknown | Unknown     |
-|999998 | Not applicable | Not applicable     |
-
-
-
-
-#### Attribute sedi_bond_mat {#bedrock-plg-sedi-bond-mat}
-_Bindemittel des Sedimentgesteins_
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|14313008 | dolomitische Matrix | dolomitische Matrix     |
-|14313002 | dolomitischer Zement | dolomitischer Zement     |
-|14313007 | kalkige Matrix | kalkige Matrix     |
-|14313001 | kalkiger Zement | kalkiger Zement     |
-|14313003 | kieseliger Zement | kieseliger Zement     |
-|14313010 | mineralische Imprägnierung | mineralische Imprägnierung     |
-|14313009 | organische Imprägnierung (Asphalt) | organische Imprägnierung (Asphalt)     |
-|14313006 | sandige Matrix | sandige Matrix     |
-|14313005 | siltige Matrix | siltige Matrix     |
-|14313004 | tonige Matrix | tonige Matrix     |
-|999997 | Unknown | Unknown     |
-|999998 | Not applicable | Not applicable     |
-
-
-
-
-#### Attribute sedi_bedding {#bedrock-plg-sedi-bedding}
-_Schichtung des Sedimentgesteins_
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|20101005 | blätterig | blätterig     |
-|20101003 | dickbankig (&gt;30cm) | dickbankig (&gt;30cm)     |
-|20101004 | dünnbankig (1-10cm) | dünnbankig (1-10cm)     |
-|20101002 | gebankt | gebankt     |
-|20101006 | knauerig | knauerig     |
-|20101007 | knollig | knollig     |
-|20101008 | linsenförmig | linsenförmig     |
-|20101001 | massig | massig     |
-|999997 | Unknown | Unknown     |
-|999998 | Not applicable | Not applicable     |
-
-
-
-
-#### Attribute sedi_str {#bedrock-plg-sedi-str}
-_Textur des Sedimentgesteins_
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|20201007 | bioturbiert | bioturbiert     |
-|20201002 | geschichtet | geschichtet     |
-|20201006 | invers gradiert | invers gradiert     |
-|20201004 | laminiert | laminiert     |
-|20201005 | normal gradiert | normal gradiert     |
-|20201003 | schräg-/kreuzgeschichtet | schräg-/kreuzgeschichtet     |
-|20201008 | stromatolitisch | stromatolitisch     |
-|20201001 | texturlos | texturlos     |
-|999997 | Unknown | Unknown     |
-|999998 | Not applicable | Not applicable     |
-
-
-
-
-#### Attribute sedi_tex {#bedrock-plg-sedi-tex}
-_Sedimentstruktur_
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|20301005 | bioklastisch | bioklastisch     |
-|20301003 | mikritisch | mikritisch     |
-|20301001 | monomikt | monomikt     |
-|20301007 | onkolithisch | onkolithisch     |
-|20301008 | oolithisch | oolithisch     |
-|20301009 | pelitisch | pelitisch     |
-|20301010 | pisolithisch | pisolithisch     |
-|20301002 | polymikt | polymikt     |
-|20301004 | spätig | spätig     |
-|999997 | Unknown | Unknown     |
-|999998 | Not applicable | Not applicable     |
-
-
-
-
-#### Attribute igne_text {#bedrock-plg-igne-text}
-_Struktur des magmatischen Gesteins_
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|14317001 | gleichkörnig | gleichkörnig     |
-|14317003 | porphyrisch | porphyrisch     |
-|14317002 | ungleichkörnig | ungleichkörnig     |
-|999997 | Unknown | Unknown     |
-|999998 | Not applicable | Not applicable     |
-
-
-
-
-#### Attribute igne_grain_si {#bedrock-plg-igne-grain-si}
-_Korngrösse des magmatischen Gesteins_
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|14318003 | aphanitisch | aphanitisch     |
-|14318002 | feinkörnig | feinkörnig     |
-|14318001 | grobkörnig | grobkörnig     |
-|999997 | Unknown | Unknown     |
-|999998 | Not applicable | Not applicable     |
-
-
-
-
-#### Attribute igne_affinity {#bedrock-plg-igne-affinity}
-_Affinität zu einer magmatischen Serie._
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|15733001 | alkalisch | alkalisch     |
-|15733002 | kalkalkalisch | kalkalkalisch     |
-|15733003 | tholeiitisch | tholeiitisch     |
-|999997 | Unknown | Unknown     |
-|999998 | Not applicable | Not applicable     |
-
-
-
-
-#### Attribute meta_full_name
-_Bezeichnung des metamorphen Gesteins_
-_Datentyp:  string_
-
-
-
-
-
-#### Attribute meta_mineral {#bedrock-plg-meta-mineral}
-_Wichtiges Mineral des metamorphen Gesteins_
+## Anhang GC_MINERAL_CD {#gc-mineral-cd}
+-todo-
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -5217,3361 +7818,5 @@ _Wichtiges Mineral des metamorphen Gesteins_
 |20401055 | Zoisit | Zoisit     |
 |999997 | Unknown | Unknown     |
 |999998 | Not applicable | Not applicable     |
-
-
-
-
-#### Attribute meta_str {#bedrock-plg-meta-str}
-_Textur des metamorphen Gesteins_
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|20501016 | agmatitisch (migmatitisch) | agmatitisch (migmatitisch)     |
-|20501003 | augig | augig     |
-|20501017 | brekziös | brekziös     |
-|20501015 | flaserig | flaserig     |
-|20501012 | geadert | geadert     |
-|20501002 | gebändert | gebändert     |
-|20501010 | gebankt | gebankt     |
-|20501011 | gefältelt | gefältelt     |
-|20501008 | lagig | lagig     |
-|20501007 | laminiert | laminiert     |
-|20501014 | linsig | linsig     |
-|20501001 | massig | massig     |
-|20501004 | mit Schollen | mit Schollen     |
-|20501006 | phyllitisch | phyllitisch     |
-|20501009 | plattig | plattig     |
-|20501005 | schiefrig | schiefrig     |
-|20501013 | schlierig | schlierig     |
-|999997 | Unknown | Unknown     |
-|999998 | Not applicable | Not applicable     |
-
-
-
-
-
-
-
-
-## Theme GEOMORPHOLOGY
-
-### Class Instability_Structures_PT {#instability-structures-pt}
-Die Klasse [Instability_Structures_PT](#instability-structures-pt) enthält lokal beobachtete Hinweise auf Hanginstabilitäten 
-(Rutschungen), die räumlich nicht abgegrenzt werden können. Wenn möglich, sollen instabile 
-Gesteinsmassen durch Polygone erfasst werden (Klasse Instabilities_within_Unconsolidated_ 
-Deposits_PLG), die punktförmige Aufnahme ist zu vermeiden und vorwiegend für die Vektorisierung älterer
-gedruckter Karten gedacht.
-
-
-
-
-    | Name                         | Type                              | Description
-----|------------------------------|-----------------------------------|--------------------------------------
-1 | **kind**                | subtype                                    | Spezifische Eigenschaft
-[]()           | Cardinality [1] | 11601                                       |
-
-
-
-
-
-#### Attribute kind
-_Spezifische Eigenschaft_
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|11601001 | Gins Hinweis auf Hanginstabilität | Gins Hinweis auf Hanginstabilität     |
-
-
-
-
-### Class Instability_Structures_L {#instability-structures-l}
-Die Klasse [Instability_Structures_L](#instability-structures-l) umfasst linienförmige Morphologien, die sich als Folge von 
-Hanginstabilitäten an der Oberfläche ausgebildet haben. Beim Abrissrand handelt es sich um den 
-oberen Rand der durch das Abgleiten der bewegten Masse freigelegten Gleitfläche einer 
-Rutschung oder Sackung (Abrissnische)
-
-
-
-
-    | Name                         | Type                              | Description
-----|------------------------------|-----------------------------------|--------------------------------------
-1 | **kind**                | subtype                                    | Spezifische Eigenschaft
-[]()           | Cardinality [1] | 11701                                       |
-
-
-
-
-
-#### Attribute kind
-_Spezifische Eigenschaft_
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|11701001 | Gins Stauchwulst | Gins Stauchwulst     |
-|11701002 | Gins Nackentälchen, Zerrstruktur | Gins Nackentälchen, Zerrstruktur     |
-|11701003 | Gins Abrissrand | Gins Abrissrand     |
-|11701004 | Gins offene Spalte | Gins offene Spalte     |
-
-
-
-
-### Class Instabilities_within_Unconsolidated_Deposits_PLG {#instabilities-within-unconsolidated-deposits-plg}
-Die Klasse [Instabilities_within_Unconsolidated_Deposits_PLG](#instabilities-within-unconsolidated-deposits-plg) beinhaltet alle Polygone, die Gebiete 
-mit instabilen Lockergesteinen begrenzen. In dieser Klasse werden die Prozessräume der 
-verschiedenen Typen von gleitenden Massenbewegungsprozessen ausgeschieden; die 
-eigentlichen Gesteinskörper und Ablagerungen, die von Massenbewegungsprozessen betroffen 
-bzw. gebildet worden sind, werden in der Klasse [Unconsolidated_Deposits_PLG](#unconsolidated-deposits-plg) beschrieben. Zur 
-näheren Erklärung der verschiedenen Objektarten sind im Anhang A einige Fallbeispiele 
-abgebildet.
-
-
-
-
-    | Name                         | Type                              | Description
-----|------------------------------|-----------------------------------|--------------------------------------
-1 | **kind**                | subtype                                    | Spezifische Eigenschaft
-[]()           | Cardinality [1] | 11801                                       |
-
-
-
-
-
-#### Attribute kind
-_Spezifische Eigenschaft_
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-
-
-
-
-### Class Instabilities_within_Bedrock_PLG {#instabilities-within-bedrock-plg}
-Die Klasse [Instabilities_within_Bedrock_PLG](#instabilities-within-bedrock-plg) beinhaltet alle Polygone, die Gebiete mit instabilen 
-Festgesteinen begrenzen. In dieser Klasse werden die Prozessräume der verschiedenen Typen von 
-gleitenden Massenbewegungsprozessen ausgeschieden; die eigentlichen Gesteinskörper, die von 
-Massenbewegungsprozessen betroffen sind, werden in der Klasse [Bedrock_PLG](#bedrock-plg) beschrieben. Zur 
-näheren Erklärung der verschiedenen Objektarten sind im Anhang A einige Fallbeispiele 
-abgebildet.
-
-
-
-
-    | Name                         | Type                              | Description
-----|------------------------------|-----------------------------------|--------------------------------------
-1 | **kind**                | subtype                                    | Spezifische Eigenschaft
-[]()           | Cardinality [1] | 11501                                       |
-2 | **main_mov**                | [CodedDomain](#instabilities-within-bedrock-plg-main-mov)                    | Hauptbewegungsphase
-[]()           | Cardinality [0..1] |                                                      |
-
-
-
-
-
-#### Attribute kind
-_Spezifische Eigenschaft_
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-
-
-
-
-#### Attribute main_mov {#instabilities-within-bedrock-plg-main-mov}
-_Hauptbewegungsphase_
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|11502002 | Hauptbewegungsphase nach dem letzteiszeitlichen Maximum | Hauptbewegungsphase nach dem letzteiszeitlichen Maximum     |
-|11502001 | Hauptbewegungsphase vor dem letzteiszeitlichen Maximum | Hauptbewegungsphase vor dem letzteiszeitlichen Maximum     |
-|999997 | Unknown | Unknown     |
-|999998 | Not applicable | Not applicable     |
-
-
-
-
-### Class Glacial_Structures_PT {#glacial-structures-pt}
-Die Klasse [Glacial_Structures_PT](#glacial-structures-pt) enthält Objektarten, welche die ehemalige Anwesenheit eines 
-Gletschers punktuell dokumentieren (Gletscherschliff ist ein räumlich orientiertes Objekt und 
-befindet sich deshalb in der Klasse Lineation_PT).
-
-
-
-
-    | Name                         | Type                              | Description
-----|------------------------------|-----------------------------------|--------------------------------------
-1 | **kind**                | subtype                                    | Spezifische Eigenschaft
-[]()           | Cardinality [1] | 11201                                       |
-
-
-
-
-
-#### Attribute kind
-_Spezifische Eigenschaft_
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|11201002 | Ggla Gletschermühle, Strudelloch | Ggla Gletschermühle, Strudelloch     |
-|11201001 | Ggla glazitektonische Deformation | Ggla glazitektonische Deformation     |
-
-
-
-
-### Class Glacial_and_Periglacial_Structures_L {#glacial-and-periglacial-structures-l}
-Die Klasse [Glacial_and_Periglacial_Structures_L](#glacial-and-periglacial-structures-l) enthält linienförmige Strukturen, die auf ein 
-glaziales oder periglaziales Bildungsmilieu hindeuten. Mit Ausnahme der Schliffgrenze handelt es 
-sich in dieser Klasse ausschliesslich um akkummulative Landschaftsformen wie Moränenwälle oder 
-Blockwülste im Blockgletscher.
-
-
-
-
-    | Name                         | Type                              | Description
-----|------------------------------|-----------------------------------|--------------------------------------
-1 | **kind**                | subtype                                    | Objektart
-[]()           | Cardinality [1] | 11301                                       |
-2 | **morai_mo**                | [CodedDomain](#glacial-and-periglacial-structures-l-morai-mo)                    | Morphologie der Moräne
-[]()           | Cardinality [0..1] |                                                      |
-3 | **glac_typ**                | [CodedDomain](#glacial-and-periglacial-structures-l-glac-typ)                    | Gletschertyp, auf welchen die Objektart bezogen ist
-[]()           | Cardinality [0..1] |                                                      |
-4 | **ice_m_p**                | [CodedDomain](#glacial-and-periglacial-structures-l-ice-m-p)                    | Räumlicher Gletscherstand
-[]()           | Cardinality [0..1] |                                                      |
-5 | **quat_str**                | [CodedDomain](#glacial-and-periglacial-structures-l-quat-str)                    | Zeitliche quartärstratigraphische Zuordnung des Moränenwälls
-[]()           | Cardinality [0..1] |                                                      |
-6 | **ref_year**                | integer                                    | Referenzjahr des älteren Gletscherstandes.
-[]()           | Cardinality [0..1] |                                        |
-7 | **source**                | string                                    | Quellenangabe der historischen Unterlagen
-[]()           | Cardinality [0..1] |                                        |
-
-
-
-
-
-#### Attribute kind
-_Objektart_
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|11301001 | Ggla Moränenwall | Ggla Moränenwall     |
-|11301002 | Ggla Moränenwall auf Gletscher oder auf Toteis | Ggla Moränenwall auf Gletscher oder auf Toteis     |
-|11301003 | Ggla Kameterrassenkante | Ggla Kameterrassenkante     |
-|11301004 | Ggla älterer Gletscherstand, basierend auf historischen Daten | Ggla älterer Gletscherstand, basierend auf historischen Daten     |
-|11301005 | Ggla Schliffgrenze | Ggla Schliffgrenze     |
-|11301006 | Ggla Protalus Rampart Wulst | Ggla Protalus Rampart Wulst     |
-|11301007 | Ggla Blockwulst im Blockgletscher | Ggla Blockwulst im Blockgletscher     |
-|11301008 | Ggla Schneehaldenmoränenwall | Ggla Schneehaldenmoränenwall     |
-|11301009 | Ggla Verbreitungsgrenze von Geschiebe | Ggla Verbreitungsgrenze von Geschiebe     |
-
-
-
-
-#### Attribute morai_mo {#glacial-and-periglacial-structures-l-morai-mo}
-_Morphologie der Moräne_
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|11302002 | einseitig abfallend | einseitig abfallend     |
-|11302001 | symmetrisch | symmetrisch     |
-|999997 | Unknown | Unknown     |
-|999998 | Not applicable | Not applicable     |
-
-
-
-
-#### Attribute glac_typ {#glacial-and-periglacial-structures-l-glac-typ}
-_Gletschertyp, auf welchen die Objektart bezogen ist_
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|11303002 | grosse Tal- und Vorlandgletscher | grosse Tal- und Vorlandgletscher     |
-|11303001 | Lokalgletscher | Lokalgletscher     |
-|999997 | Unknown | Unknown     |
-|999998 | Not applicable | Not applicable     |
-
-
-
-
-#### Attribute ice_m_p {#glacial-and-periglacial-structures-l-ice-m-p}
-_Räumlicher Gletscherstand_
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|11304002 | Bern | Bern     |
-|11304050 | Bremgarten I | Bremgarten I     |
-|11304051 | Bremgarten II | Bremgarten II     |
-|11304003 | Bremgarten, undifferenziert | Bremgarten, undifferenziert     |
-|11304052 | Bülach I | Bülach I     |
-|11304053 | Bülach II | Bülach II     |
-|11304054 | Bülach, undifferenziert | Bülach, undifferenziert     |
-|11304037 | Chur | Chur     |
-|11304055 | Dättikon | Dättikon     |
-|11304028 | Feuerthalen I | Feuerthalen I     |
-|11304029 | Feuerthalen II | Feuerthalen II     |
-|11304005 | Feuerthalen, undifferenziert | Feuerthalen, undifferenziert     |
-|11304040 | Fideris | Fideris     |
-|11304006 | Gurten | Gurten     |
-|11304007 | Hurden | Hurden     |
-|11304008 | Killwangen | Killwangen     |
-|11304039 | Koblach | Koblach     |
-|11304004 | Konstanz | Konstanz     |
-|11304035 | Küblis | Küblis     |
-|11304036 | Lunden | Lunden     |
-|11304001 | Maximalstand, undifferenziert | Maximalstand, undifferenziert     |
-|11304009 | Mellingen | Mellingen     |
-|11304010 | Muri | Muri     |
-|11304056 | Regensdorf | Regensdorf     |
-|11304011 | Rotkreuz | Rotkreuz     |
-|11304038 | Sargans | Sargans     |
-|11304030 | Schaffausen I | Schaffausen I     |
-|11304031 | Schaffausen II | Schaffausen II     |
-|11304012 | Schaffhausen, undifferenziert | Schaffhausen, undifferenziert     |
-|11304048 | Schlieren I | Schlieren I     |
-|11304049 | Schlieren II | Schlieren II     |
-|11304013 | Schlieren, undifferenziert | Schlieren, undifferenziert     |
-|11304014 | Schosshalde | Schosshalde     |
-|11304057 | Seeb | Seeb     |
-|11304015 | Seftigschwand | Seftigschwand     |
-|11304041 | Serneus | Serneus     |
-|11304016 | Solothurn | Solothurn     |
-|11304017 | Spreitenbach | Spreitenbach     |
-|11304018 | Spreitenbach-Killwangen | Spreitenbach-Killwangen     |
-|11304045 | Staffelbach-Stand | Staffelbach-Stand     |
-|11304025 | Stein-am-Rhein I | Stein-am-Rhein I     |
-|11304026 | Stein-am-Rhein II | Stein-am-Rhein II     |
-|11304027 | Stein-am-Rhein III | Stein-am-Rhein III     |
-|11304019 | Stein am Rhein, undifferenziert | Stein am Rhein, undifferenziert     |
-|11304058 | Stetten I | Stetten I     |
-|11304059 | Stetten II | Stetten II     |
-|11304020 | Stetten, undifferenziert | Stetten, undifferenziert     |
-|11304043 | Sursee | Sursee     |
-|11304044 | Triengen | Triengen     |
-|11304021 | Wangen I | Wangen I     |
-|11304022 | Wangen II | Wangen II     |
-|11304042 | Wangen, undifferenziert | Wangen, undifferenziert     |
-|11304023 | Wittigkofen | Wittigkofen     |
-|11304060 | Würenlos I | Würenlos I     |
-|11304061 | Würenlos II | Würenlos II     |
-|11304062 | Würenlos, undifferenziert | Würenlos, undifferenziert     |
-|11304046 | Zürich I | Zürich I     |
-|11304047 | Zürich II | Zürich II     |
-|11304024 | Zürich, undifferenziert | Zürich, undifferenziert     |
-|999997 | Unknown | Unknown     |
-|999998 | Not applicable | Not applicable     |
-
-
-
-
-#### Attribute quat_str {#glacial-and-periglacial-structures-l-quat-str}
-_Zeitliche quartärstratigraphische Zuordnung des Moränenwälls_
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|11305001 | 1. Vergletscherung der letzten Eiszeit (MIS 5d) | 1. Vergletscherung der letzten Eiszeit (MIS 5d)     |
-|11305002 | 2. Vergletscherung der letzten Eiszeit (MIS 4) | 2. Vergletscherung der letzten Eiszeit (MIS 4)     |
-|11305003 | 3. Vergletscherung der letzten Eiszeit (LGM, MIS 2) | 3. Vergletscherung der letzten Eiszeit (LGM, MIS 2)     |
-|11305005 | Clavadel | Clavadel     |
-|11305006 | Daun | Daun     |
-|11305007 | Egesen | Egesen     |
-|11305004 | Gschnitz | Gschnitz     |
-|11305008 | Mittleres Pleistozän | Mittleres Pleistozän     |
-|999997 | Unknown | Unknown     |
-|999998 | Not applicable | Not applicable     |
-
-
-
-
-#### Attribute ref_year
-_Referenzjahr des älteren Gletscherstandes._
-_Datentyp:  integer_
-
-
-
-
-
-#### Attribute source
-_Quellenangabe der historischen Unterlagen_
-_Datentyp:  string_
-
-
-
-
-
-### Class Glacial_Structures_PLG {#glacial-structures-plg}
-Die Klasse [Glacial_Structures_PLG](#glacial-structures-plg) umfasst flächenhafte glaziale Landschaftsformen, die durch
-basales Fliessen des Gletschereises oder dessen Abschmelzen entstanden sind.
-
-
-
-
-    | Name                         | Type                              | Description
-----|------------------------------|-----------------------------------|--------------------------------------
-1 | **kind**                | subtype                                    | Objektart
-[]()           | Cardinality [1] | 11401                                       |
-
-
-
-
-
-#### Attribute kind
-_Objektart_
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|11401001 | Ggla Drumlin, drumlinartige Kieskuppe | Ggla Drumlin, drumlinartige Kieskuppe     |
-|11401003 | Ggla Rundhöcker | Ggla Rundhöcker     |
-|11401004 | Ggla Toteisloch, Soll | Ggla Toteisloch, Soll     |
-
-
-
-
-### Class Erosional_Structures_PT {#erosional-structures-pt}
-Die Klasse [Erosional_Structures_PT](#erosional-structures-pt) beinhaltet lokale Landschaftselemente, die sich im Laufe der 
-Zeit unter Einwirkung von diversen Erosionsprozessen gebildet haben.
-
-
-
-
-    | Name                         | Type                              | Description
-----|------------------------------|-----------------------------------|--------------------------------------
-1 | **kind**                | subtype                                    | Objektart
-[]()           | Cardinality [1] | 11001                                       |
-
-
-
-
-
-#### Attribute kind
-_Objektart_
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|11001001 | Gero Erdpyramide | Gero Erdpyramide     |
-
-
-
-
-### Class Erosional_Structures_L {#erosional-structures-l}
-Die Klasse [Erosional_Structures_L](#erosional-structures-l) enthält linienförmige erosive Formen wie Erosionsränder im 
-Allgemeinen oder Terrassenkanten. 
-Auf älteren gedruckten Karten wurden Erosionsränder und Terrassenkanten oftmals nicht 
-unterschieden. In den Vektordaten wird diese Unterscheidung jedoch konsequent vollzogen. Dies
-bedingt, dass im Rahmen der Vektorisierung älterer gedruckter Karten Erosionsränder und 
-Terrassenkanten aufgeteilt werden müssen. Terrassenkanten werden nur dann als solche 
-attributiert, wenn sie durch ihre Lage und entsprechende Schotterterrassen eindeutig zugeordnet
-werden können. Zweifelhafte Fälle werden als Erosionsränder aufgenommen.
-
-
-
-
-    | Name                         | Type                              | Description
-----|------------------------------|-----------------------------------|--------------------------------------
-1 | **kind**                | subtype                                    | Objektart
-[]()           | Cardinality [1] | 11101                                       |
-
-
-
-
-
-#### Attribute kind
-_Objektart_
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|11101001 | Gero Erosionsrand | Gero Erosionsrand     |
-|11101002 | Gero Terrassenkante | Gero Terrassenkante     |
-|11101003 | Gero Schichtstufenkante | Gero Schichtstufenkante     |
-
-
-
-
-### Class Karstic_Structures_PT {#karstic-structures-pt}
-Die Klasse [Karstic_Structures_PT](#karstic-structures-pt) beinhaltet Karstphänomene, die punktförmig dargestellt werden. 
-Darunter fallen u.a. der Ponor oder der Eingang zu einer Höhle.
-
-
-
-
-    | Name                         | Type                              | Description
-----|------------------------------|-----------------------------------|--------------------------------------
-1 | **kind**                | subtype                                    | Objektart
-[]()           | Cardinality [1] | 11301                                       |
-2 | **ice_cave**                | boolean                                    | Handelt es sich bei der Höhle um eine Eisgrotte («glacière», aussergewöhnlich kalte Höhle in der sich
-durch die winterlichen Schneefälle oder durch das Gefrieren von eingedrungenem Wasser Eis akkumuliert
-und das auch die warme Jahreszeit überdauert) (ja / nein)?
-[]()           | Cardinality [0..1] |                                        |
-
-
-
-
-
-#### Attribute kind
-_Objektart_
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|11301001 | Ggla Moränenwall | Ggla Moränenwall     |
-|11301002 | Ggla Moränenwall auf Gletscher oder auf Toteis | Ggla Moränenwall auf Gletscher oder auf Toteis     |
-|11301003 | Ggla Kameterrassenkante | Ggla Kameterrassenkante     |
-|11301004 | Ggla älterer Gletscherstand, basierend auf historischen Daten | Ggla älterer Gletscherstand, basierend auf historischen Daten     |
-|11301005 | Ggla Schliffgrenze | Ggla Schliffgrenze     |
-|11301006 | Ggla Protalus Rampart Wulst | Ggla Protalus Rampart Wulst     |
-|11301007 | Ggla Blockwulst im Blockgletscher | Ggla Blockwulst im Blockgletscher     |
-|11301008 | Ggla Schneehaldenmoränenwall | Ggla Schneehaldenmoränenwall     |
-|11301009 | Ggla Verbreitungsgrenze von Geschiebe | Ggla Verbreitungsgrenze von Geschiebe     |
-
-
-
-
-#### Attribute ice_cave
-_Handelt es sich bei der Höhle um eine Eisgrotte («glacière», aussergewöhnlich kalte Höhle in der sich
-durch die winterlichen Schneefälle oder durch das Gefrieren von eingedrungenem Wasser Eis akkumuliert
-und das auch die warme Jahreszeit überdauert) (ja / nein)?_
-_Datentyp:  boolean_
-
-
-
-
-
-### Class Karstic_Structures_PLG {#karstic-structures-plg}
-Die Klasse [Karstic_Structures_PLG](#karstic-structures-plg) umfasst flächenhafte Karstformen wie Dolinen oder Poljen. 
-Dolinen werden immer als Polygone erfasst (das) bildet dafür eine wichtige Grundlage). Kleine 
-Dolinen (Durchmesser &lt; 25 m), werden durch eine definierte Einheitsfläche von 500 m²
-dargestellt.
-
-
-
-
-    | Name                         | Type                              | Description
-----|------------------------------|-----------------------------------|--------------------------------------
-1 | **kind**                | subtype                                    | Objektart
-[]()           | Cardinality [1] | 12001                                       |
-
-
-
-
-
-#### Attribute kind
-_Objektart_
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|12001001 | Gkar Senke ohne oberirdischen Abfluss | Gkar Senke ohne oberirdischen Abfluss     |
-|12001002 | Gkar Doline | Gkar Doline     |
-|12001003 | Gkar Karrenfeld | Gkar Karrenfeld     |
-|12001004 | Gkar Polje | Gkar Polje     |
-
-
-
-
-### Class Alluvial_and_Lacustrine_Structures_L {#alluvial-and-lacustrine-structures-l}
-Die Klasse [Alluvial_and_Lacustrine_Structures_L](#alluvial-and-lacustrine-structures-l) beinhaltet linienförmige Morphologien 
-fluviatilen oder lakustrischen Ursprungs.
-
-
-
-
-    | Name                         | Type                              | Description
-----|------------------------------|-----------------------------------|--------------------------------------
-1 | **kind**                | subtype                                    | Objektart
-[]()           | Cardinality [1] | 10901                                       |
-2 | **age**                | [CodedDomain](#alluvial-and-lacustrine-structures-l-age)                    | Alter der Objektart.
-[]()           | Cardinality [0..1] |                                                      |
-
-
-
-
-
-#### Attribute kind
-_Objektart_
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|10901001 | Gall Strandwall | Gall Strandwall     |
-|10901002 | Gall Achse einer Murgangrinne | Gall Achse einer Murgangrinne     |
-
-
-
-
-#### Attribute age {#alluvial-and-lacustrine-structures-l-age}
-_Alter der Objektart._
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|10902001 | fossil | fossil     |
-|10902002 | rezent | rezent     |
-|999997 | Unknown | Unknown     |
-|999998 | Not applicable | Not applicable     |
-
-
-
-
-
-
-
-
-## Theme TECTONICS
-
-### Class Deformation_Structures_PT {#deformation-structures-pt}
-Die Klasse [Deformation_Structures_PT](#deformation-structures-pt) beinhaltet punktuell beobachtete tektonische 
-Deformationsstrukturen wie lokal stark verfaltete Stellen (Fältelung) oder Orte mit ausgeprägter 
-Klüftung. Ebenfalls in dieser Klasse befinden sich konstruierte Punkte wie z.B. die Orientierung 
-der Faltenachsenfläche. Die Darstellung der Spur einer Achsenfläche entspricht der Symbolisierung 
-eines konstruierten Faltenscharniers, in einem Punkt der Intersektion einer Achsenfläche und der 
-Topografie. Diese beiden letzterwähnten Objektarten sind im Anhang A zur besseren 
-Verständlichkeit abgebildet.
-
-
-
-
-    | Name                         | Type                              | Description
-----|------------------------------|-----------------------------------|--------------------------------------
-1 | **kind**                | subtype                                    | Objektart
-[]()           | Cardinality [1] | 14601                                       |
-2 | **azimuth**                | integer                                    | Fallrichtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad (0° 359°) im Uhrzeigersinn gemessen.
-[]()           | Cardinality [0..1] |                                        |
-3 | **dip**                | integer                                    | Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die
-Vertikale (90°).
-[]()           | Cardinality [0..1] |                                        |
-4 | **fold_typ**                | [CodedDomain](#deformation-structures-pt-fold-typ)                    | Objekttyp
-[]()           | Cardinality [0..1] |                                                      |
-5 | **fold_for**                | [CodedDomain](#deformation-structures-pt-fold-for)                    | Objektform
-[]()           | Cardinality [0..1] |                                                      |
-
-
-
-
-
-#### Attribute kind
-_Objektart_
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|14601001 | Tdef punktuell beobachtete tektonische Brekzie | Tdef punktuell beobachtete tektonische Brekzie     |
-|14601002 | Tdef ausgeprägte Klüftung | Tdef ausgeprägte Klüftung     |
-|14601003 | Tdef tektonische Diskordanz | Tdef tektonische Diskordanz     |
-|14601004 | Tdef Orientierung der Faltenachsenfläche | Tdef Orientierung der Faltenachsenfläche     |
-|14601005 | Tdef Fältelung | Tdef Fältelung     |
-|14601006 | Tdef Darstellung der Spur einer Achsenfläche | Tdef Darstellung der Spur einer Achsenfläche     |
-|14601007 | Tdef Chevron-Falte, Kink Fold | Tdef Chevron-Falte, Kink Fold     |
-
-
-
-
-#### Attribute azimuth
-_Fallrichtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad (0° 359°) im Uhrzeigersinn gemessen._
-_Datentyp:  integer_
-
-
-
-
-
-#### Attribute dip
-_Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die
-Vertikale (90°)._
-_Datentyp:  integer_
-
-
-
-
-
-#### Attribute fold_typ {#deformation-structures-pt-fold-typ}
-_Objekttyp_
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|14604001 | Antiklinale | Antiklinale     |
-|14604002 | Synklinale | Synklinale     |
-|999997 | Unknown | Unknown     |
-|999998 | Not applicable | Not applicable     |
-
-
-
-
-#### Attribute fold_for {#deformation-structures-pt-fold-for}
-_Objektform_
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|14605001 | Antiform | Antiform     |
-|14605002 | Synform | Synform     |
-|999997 | Unknown | Unknown     |
-|999998 | Not applicable | Not applicable     |
-
-
-
-
-### Class Deformation_Structures_L {#deformation-structures-l}
-Die Klasse [Deformation_Structures_L](#deformation-structures-l) enthält linienförmige tektonische Deformationsstrukturen,
-wie den Verlauf des Faltenscharniers. Ein Beispiel der Objektart ist zur Veranschaulichung im
-Anhang A abgebildet.
-
-
-
-
-    | Name                         | Type                              | Description
-----|------------------------------|-----------------------------------|--------------------------------------
-1 | **kind**                | subtype                                    | Objektart
-[]()           | Cardinality [1] | 14701                                       |
-
-
-
-
-
-#### Attribute kind
-_Objektart_
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|14701001 | Tdef Faltenscharnier | Tdef Faltenscharnier     |
-
-
-
-
-### Class Deformation_Structures_PLG {#deformation-structures-plg}
-In der Klasse [Deformation_Structures_PLG](#deformation-structures-plg) befinden sich tektonisch geprägte Zonen wie
-tektonisierte Zonen oder Kluftzonen.
-
-
-
-
-    | Name                         | Type                              | Description
-----|------------------------------|-----------------------------------|--------------------------------------
-1 | **kind**                | subtype                                    | Objektart
-[]()           | Cardinality [1] | 14801                                       |
-2 | **type**                | [CodedDomain](#deformation-structures-plg-type)                    | Charakteristik der Objektarten
-[]()           | Cardinality [0..1] |                                                      |
-3 | **gen_rela**                | CDD                                    | Genetische Beziehung.
-[]()           | Cardinality [0..1] | None                                       |
-
-
-
-
-
-#### Attribute kind
-_Objektart_
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|14801001 | Tdef Kluftzone | Tdef Kluftzone     |
-|14801002 | Tdef tektonisierte Zone | Tdef tektonisierte Zone     |
-
-
-
-
-#### Attribute type {#deformation-structures-plg-type}
-_Charakteristik der Objektarten_
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|14802002 | kakiritisch | kakiritisch     |
-|14802001 | kataklastisch | kataklastisch     |
-|14802003 | mylonitisch | mylonitisch     |
-|14802004 | pseudotachylitisch | pseudotachylitisch     |
-|999997 | Unknown | Unknown     |
-|999998 | Not applicable | Not applicable     |
-
-
-
-
-#### Attribute gen_rela
-_Genetische Beziehung._
-
-
-
-
-### Class Tectonic_Boundaries_L {#tectonic-boundaries-l}
-Die Klasse [Tectonic_Boundaries_L](#tectonic-boundaries-l) umfasst alle tektonischen Verwerfungen. Die Horizontal-
-verschiebungen in der Schweiz können als «Bruch, (Attribut «Fault_Mo» (Fault Movement))
-parallel zur Streichrichtung» abgebildet werden. Als Pendant zu «Überschiebung» oder
-«Abschiebung» gibt es in der Schweiz keine «Horizontalverschiebung» mit vergleichbarer
-Grössenausdehnung. Ein Abscherhorizont wird als «Überschiebung» oder als «Abschiebung»
-dargestellt. Wenn die Bewegungsrichtung nicht bekannt ist, wird er zur «tektonischen Grenze mit
-unbekannter Bewegungsrichtung». Zur näheren Erklärung der verschiedenen Objektarten sind im
-Anhang A Beispiele abgebildet.
-
-
-
-
-    | Name                         | Type                              | Description
-----|------------------------------|-----------------------------------|--------------------------------------
-1 | **kind**                | subtype                                    | Objektart
-[]()           | Cardinality [1] | 14901                                       |
-2 | **fault_mo**                | [CodedDomain](#tectonic-boundaries-l-fault-mo)                    | Bewegungsrichtung des Bruchs
-[]()           | Cardinality [0..1] |                                                      |
-3 | **verti_mo**                | [CodedDomain](#tectonic-boundaries-l-verti-mo)                    | Bewegung parallel zur Fallrichtung der Bruchfläche.
-[]()           | Cardinality [0..1] |                                                      |
-4 | **horiz_mo**                | [CodedDomain](#tectonic-boundaries-l-horiz-mo)                    | Bewegung parallel zur Streichrichtung der Bruch- oder Scherfläche
-[]()           | Cardinality [0..1] |                                                      |
-5 | **lim_tect_b**                | boolean                                    | Grenze einer tektonischen Einheit wie Deckengrenze,Schuppengrenze, Zonengrenze, etc. (ja / nein)?
-[]()           | Cardinality [1] |                                        |
-6 | **status**                | [CodedDomain](#tectonic-boundaries-l-status)                    | Zustand der Objektart
-[]()           | Cardinality [1] |                                                      |
-7 | **activity**                | TODO                                    | Aktivität der Objektart
-[]()           | Cardinality [0..1] |                                        |
-8 | **meta_sta**                | [CodedDomain](#tectonic-boundaries-l-meta-sta)                    | Tektonometamorphe Chronologie der Objektart
-[]()           | Cardinality [0..1] |                                                      |
-9 | **name**                | string                                    | Spezifischer Name der Objektart.
-[]()           | Cardinality [0..1] |                                        |
-
-
-
-
-
-#### Attribute kind
-_Objektart_
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|14901001 | Ttec Überschiebung | Ttec Überschiebung     |
-|14901002 | Ttec Abschiebung | Ttec Abschiebung     |
-|14901004 | Ttec Bruch | Ttec Bruch     |
-|14901005 | Ttec Aufschiebung | Ttec Aufschiebung     |
-|14901006 | Ttec Blattverschiebung | Ttec Blattverschiebung     |
-|14901007 | Ttec komplexe Störung | Ttec komplexe Störung     |
-|14901008 | Ttec Störung i. Allg. | Ttec Störung i. Allg.     |
-
-
-
-
-#### Attribute fault_mo {#tectonic-boundaries-l-fault-mo}
-_Bewegungsrichtung des Bruchs_
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|14902003 | parallel zur Fallrichtung (strike slip) | parallel zur Fallrichtung (strike slip)     |
-|14902002 | parallel zur Streichrichtung (Horizontalverschiebung) | parallel zur Streichrichtung (Horizontalverschiebung)     |
-|14902001 | schrägverschiebend (oblique slip) | schrägverschiebend (oblique slip)     |
-|999997 | Unknown | Unknown     |
-|999998 | Not applicable | Not applicable     |
-
-
-
-
-#### Attribute verti_mo {#tectonic-boundaries-l-verti-mo}
-_Bewegung parallel zur Fallrichtung der Bruchfläche._
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|14903002 | abschiebend | abschiebend     |
-|14903001 | aufschiebend | aufschiebend     |
-|999997 | Unknown | Unknown     |
-|999998 | Not applicable | Not applicable     |
-
-
-
-
-#### Attribute horiz_mo {#tectonic-boundaries-l-horiz-mo}
-_Bewegung parallel zur Streichrichtung der Bruch- oder Scherfläche_
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|14904001 | dextral | dextral     |
-|14904002 | sinistral | sinistral     |
-|999997 | Unknown | Unknown     |
-|999998 | Not applicable | Not applicable     |
-
-
-
-
-#### Attribute lim_tect_b
-_Grenze einer tektonischen Einheit wie Deckengrenze,Schuppengrenze, Zonengrenze, etc. (ja / nein)?_
-_Datentyp:  boolean_
-
-
-
-
-
-#### Attribute status {#tectonic-boundaries-l-status}
-_Zustand der Objektart_
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|14906004 | aus Seismikdaten interpretiert | aus Seismikdaten interpretiert     |
-|14906001 | gesichert, im Allgemeinen | gesichert, im Allgemeinen     |
-|14906002 | gesichert, unter Tage festgestellt | gesichert, unter Tage festgestellt     |
-|14906003 | vermutet | vermutet     |
-|999997 | Unknown | Unknown     |
-|999998 | Not applicable | Not applicable     |
-
-
-
-
-#### Attribute activity
-_Aktivität der Objektart_
-
-
-
-
-#### Attribute meta_sta {#tectonic-boundaries-l-meta-sta}
-_Tektonometamorphe Chronologie der Objektart_
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|14908003 | nach der Platznahme der Decken | nach der Platznahme der Decken     |
-|14908001 | vor der Platznahme der Decken | vor der Platznahme der Decken     |
-|14908002 | während der Platznahme der Decken | während der Platznahme der Decken     |
-|999997 | Unknown | Unknown     |
-|999998 | Not applicable | Not applicable     |
-
-
-
-
-#### Attribute name
-_Spezifischer Name der Objektart._
-_Datentyp:  string_
-
-
-
-
-
-
-
-
-
-## Theme MEASUREMENTS_SPATIAL_ORIENTATION
-
-### Class Folds_PT {#folds-pt}
-Die Klasse [Folds_PT](#folds-pt) enthält Objektarten, welche die räumliche Lage von verfalteten geologischen
-Objekten (mit direkten Feldmessungen) beschreiben. Beispiele der Objektarten Orientierung der
-Faltenachse und der Scheitellinie sind im Anhang A zur besseren Verständlichkeit abgebildet.
-
-
-
-
-    | Name                         | Type                              | Description
-----|------------------------------|-----------------------------------|--------------------------------------
-1 | **kind**                | subtype                                    | Objektart
-[]()           | Cardinality [1] | 13601                                       |
-2 | **fold_typ**                | [CodedDomain](#folds-pt-fold-typ)                    | Objekttyp
-[]()           | Cardinality [0..1] |                                                      |
-3 | **fold_for**                |                                     | Form der Objektart
-[]()           | Cardinality [0..1] | 13603                                       |
-4 | **phase**                | [CodedDomain](#folds-pt-phase)                    | Deformationsphase.
-[]()           | Cardinality [0..1] |                                                      |
-5 | **phase_ref**                | string                                    | Referenz für die Angabe der Deformationsphase.
-[]()           | Cardinality [0..1] |                                        |
-6 | **azimuth**                | integer                                    | Einfallsrichtung (Azimut) der jeweiligen Punktobjektart (z.B. Scheitellinie, Faltenachse).
-Wert in Grad (0° 359°) im Uhrzeigersinn gemessen
-[]()           | Cardinality [1] |                                        |
-7 | **dip**                | integer                                    | Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die
-Vertikale (90°).
-[]()           | Cardinality [0..1] |                                        |
-
-
-
-
-
-#### Attribute kind
-_Objektart_
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|13601001 | Mfol Orientierung der Faltenachse | Mfol Orientierung der Faltenachse     |
-|13601002 | Mfol Orientierung der Scheitellinie | Mfol Orientierung der Scheitellinie     |
-|13601003 | Mfol Orientierung der Muldenlinie | Mfol Orientierung der Muldenlinie     |
-
-
-
-
-#### Attribute fold_typ {#folds-pt-fold-typ}
-_Objekttyp_
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|13602001 | Antiklinale | Antiklinale     |
-|13602002 | Synklinale | Synklinale     |
-|999997 | Unknown | Unknown     |
-|999998 | Not applicable | Not applicable     |
-
-
-
-
-#### Attribute fold_for
-_Form der Objektart_
-
-
-
-
-#### Attribute phase {#folds-pt-phase}
-_Deformationsphase._
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|13604001 | F1 (1. Phase) | F1 (1. Phase)     |
-|13604002 | F2 (2. Phase) | F2 (2. Phase)     |
-|13604003 | F3 (3. Phase) | F3 (3. Phase)     |
-|999997 | Unknown | Unknown     |
-|999998 | Not applicable | Not applicable     |
-
-
-
-
-#### Attribute phase_ref
-_Referenz für die Angabe der Deformationsphase._
-_Datentyp:  string_
-
-
-
-
-
-#### Attribute azimuth
-_Einfallsrichtung (Azimut) der jeweiligen Punktobjektart (z.B. Scheitellinie, Faltenachse).
-Wert in Grad (0° 359°) im Uhrzeigersinn gemessen_
-_Datentyp:  integer_
-
-
-
-
-
-#### Attribute dip
-_Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die
-Vertikale (90°)._
-_Datentyp:  integer_
-
-
-
-
-
-### Class Lineation_PT {#lineation-pt}
-In der Klasse [Lineation_PT](#lineation-pt) finden sich Objektarten, welche die räumliche Lage von diversen
-Linearen mit direkten Feldmessungen beschreiben. Die räumliche Lage u.a. von Gletscherschliffen
-und Rutschharnischen ist ebenso Teil dieser Klasse wie die Orientierung von Streckungs- oder
-Intersektionslineationen.
-
-
-
-
-    | Name                         | Type                              | Description
-----|------------------------------|-----------------------------------|--------------------------------------
-1 | **kind**                | subtype                                    | Objektart
-[]()           | Cardinality [1] | 13701                                       |
-2 | **azimuth**                | integer                                    | Einfallsrichtung (Azimut) der jeweiligen Punktobjektart (z.B. Scheitellinie, Faltenachse).
-Wert in Grad (0° 359°) im Uhrzeigersinn gemessen
-[]()           | Cardinality [1] |                                        |
-3 | **dip**                |                                     | Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die
-Vertikale (90°).
-[]()           | Cardinality [] |                                        |
-
-
-
-
-
-#### Attribute kind
-_Objektart_
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|13701001 | Mlin Orientierung der Intersektionslineation | Mlin Orientierung der Intersektionslineation     |
-|13701002 | Mlin Orientierung der Streckungslineation | Mlin Orientierung der Streckungslineation     |
-|13701003 | Mlin Orientierung von Rutschharnischen | Mlin Orientierung von Rutschharnischen     |
-|13701004 | Mlin Orientierung von Gletscherschliffen | Mlin Orientierung von Gletscherschliffen     |
-
-
-
-
-#### Attribute azimuth
-_Einfallsrichtung (Azimut) der jeweiligen Punktobjektart (z.B. Scheitellinie, Faltenachse).
-Wert in Grad (0° 359°) im Uhrzeigersinn gemessen_
-_Datentyp:  integer_
-
-
-
-
-
-#### Attribute dip
-_Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die
-Vertikale (90°)._
-
-
-
-
-### Class Planar_Structures_PT {#planar-structures-pt}
-Die Klasse [Planar_Structures_PT](#planar-structures-pt) enthält Objektarten, welche die räumliche Lage von planaren
-Strukturen mit direkten Feldmessungen beschreiben. Ein Beispiel der Objektart Orientierung der
-Schieferung ist im Anhang A zur Veranschaulichung abgebildet.
-
-
-
-
-    | Name                         | Type                              | Description
-----|------------------------------|-----------------------------------|--------------------------------------
-1 | **kind**                | subtype                                    | Objektart
-[]()           | Cardinality [1] | 13801                                       |
-2 | **polarity**                | [CodedDomain](#planar-structures-pt-polarity)                    | Position der Objektart im Raum
-[]()           | Cardinality [0..1] |                                                      |
-3 | **phase**                | [CodedDomain](#planar-structures-pt-phase)                    | Deformationsphase
-[]()           | Cardinality [] |                                                      |
-4 | **phase_ref**                | string                                    | Referenz für die Angabe der Deformationsphase.
-[]()           | Cardinality [0..1] |                                        |
-5 | **ob_dip_slo**                | boolean                                    | Dip slope beobachtet (ja / nein)?
-[]()           | Cardinality [0..1] |                                        |
-6 | **azimuth**                | integer                                    | Einfallsrichtung (Azimut) der jeweiligen Punktobjektart (z.B. Scheitellinie, Faltenachse).
-Wert in Grad (0° 359°) im Uhrzeigersinn gemessen
-[]()           | Cardinality [1] |                                        |
-7 | **dip**                |                                     | Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die
-Vertikale (90°).
-[]()           | Cardinality [] |                                        |
-
-
-
-
-
-#### Attribute kind
-_Objektart_
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|13801002 | Mpla Orientierung eines Ganges | Mpla Orientierung eines Ganges     |
-|13801003 | Mpla Orientierung einer Bruchfläche | Mpla Orientierung einer Bruchfläche     |
-|13801004 | Mpla Orientierung der Schieferung | Mpla Orientierung der Schieferung     |
-|13801005 | Mpla Orientierung einer Schichtung oder Schieferung | Mpla Orientierung einer Schichtung oder Schieferung     |
-|13801001 | Mpla Orientierung der Schichten | Mpla Orientierung der Schichten     |
-|13801006 | Mpla Schüttungsrichtung | Mpla Schüttungsrichtung     |
-
-
-
-
-#### Attribute polarity {#planar-structures-pt-polarity}
-_Position der Objektart im Raum_
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|13802001 | normal | normal     |
-|13802002 | überkippt | überkippt     |
-|999997 | Unknown | Unknown     |
-|999998 | Not applicable | Not applicable     |
-
-
-
-
-#### Attribute phase {#planar-structures-pt-phase}
-_Deformationsphase_
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|13803001 | S1 (1. Phase) | S1 (1. Phase)     |
-|13803002 | S2 (2. Phase) | S2 (2. Phase)     |
-|13803003 | S3 (3. Phase) | S3 (3. Phase)     |
-|999997 | Unknown | Unknown     |
-|999998 | Not applicable | Not applicable     |
-
-
-
-
-#### Attribute phase_ref
-_Referenz für die Angabe der Deformationsphase._
-_Datentyp:  string_
-
-
-
-
-
-#### Attribute ob_dip_slo
-_Dip slope beobachtet (ja / nein)?_
-_Datentyp:  boolean_
-
-
-
-
-
-#### Attribute azimuth
-_Einfallsrichtung (Azimut) der jeweiligen Punktobjektart (z.B. Scheitellinie, Faltenachse).
-Wert in Grad (0° 359°) im Uhrzeigersinn gemessen_
-_Datentyp:  integer_
-
-
-
-
-
-#### Attribute dip
-_Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die
-Vertikale (90°)._
-
-
-
-
-
-
-
-
-## Theme LOCAL_ADDITIONAL_INFORMATION
-
-### Class Anomalies_PT {#anomalies-pt}
-Die Klasse [Anomalies_PT](#anomalies-pt) beinhaltet lokal beobachtete und / oder gemessene Anomalien.
-
-
-
-
-    | Name                         | Type                              | Description
-----|------------------------------|-----------------------------------|--------------------------------------
-1 | **kind**                | subtype                                    | Objektart
-[]()           | Cardinality [1] | 128001                                       |
-2 | **type**                |                                     | Charakteristik der Objektart.
-[]()           | Cardinality [] | 128002                                       |
-
-
-
-
-
-#### Attribute kind
-_Objektart_
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-
-
-
-
-#### Attribute type
-_Charakteristik der Objektart._
-
-
-
-
-### Class Fossils_PT {#fossils-pt}
-Die Klasse [Fossils_PT](#fossils-pt) enthält alle Fossilfundstellen.
-
-
-
-
-    | Name                         | Type                              | Description
-----|------------------------------|-----------------------------------|--------------------------------------
-1 | **kind**                | subtype                                    | Objektart
-[]()           | Cardinality [1] | 12901                                       |
-2 | **division**                | [CodedDomain](#fossils-pt-division)                    | Fossilienkategorie, zu welcher die Objektinstanz gehört.
-[]()           | Cardinality [0..1] |                                                      |
-3 | **system**                | table                                    | Fossiliengruppe.
-[]()           | Cardinality [0..1] | gc_system                                       |
-4 | **dat_meth**                | [CodedDomain](#fossils-pt-dat-meth)                    | Datierungsmethode.
-[]()           | Cardinality [0..1] |                                                      |
-5 | **status**                | [CodedDomain](#fossils-pt-status)                    | Zustand der Objektart
-[]()           | Cardinality [0..1] |                                                      |
-6 | **protected**                | boolean                                    | Geschützte Fossilfundstelle (ja / nein)?
-[]()           | Cardinality [0..1] |                                        |
-
-
-
-
-
-#### Attribute kind
-_Objektart_
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|12901001 | Lfos Fossilfundstelle | Lfos Fossilfundstelle     |
-
-
-
-
-#### Attribute division {#fossils-pt-division}
-_Fossilienkategorie, zu welcher die Objektinstanz gehört._
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|12902006 | Einzeller | Einzeller     |
-|12902002 | Pflanzen- und Tierreste | Pflanzen- und Tierreste     |
-|12902003 | Pflanzenreste | Pflanzenreste     |
-|12902004 | Spuren | Spuren     |
-|12902001 | Tierreste | Tierreste     |
-|999997 | Unknown | Unknown     |
-|999998 | Not applicable | Not applicable     |
-
-
-
-
-#### Attribute system
-_Fossiliengruppe._
-
-
-
-
-#### Attribute dat_meth {#fossils-pt-dat-meth}
-_Datierungsmethode._
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|12904001 | radiometrisch datiert | radiometrisch datiert     |
-|999997 | Unknown | Unknown     |
-|999998 | Not applicable | Not applicable     |
-
-
-
-
-#### Attribute status {#fossils-pt-status}
-_Zustand der Objektart_
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|12905001 | aufgeschlossen | aufgeschlossen     |
-|12905002 | wieder verdeckt | wieder verdeckt     |
-|999997 | Unknown | Unknown     |
-|999998 | Not applicable | Not applicable     |
-
-
-
-
-#### Attribute protected
-_Geschützte Fossilfundstelle (ja / nein)?_
-_Datentyp:  boolean_
-
-
-
-
-
-### Class Indication_of_Resources_PT {#indication-of-resources-pt}
-Die Klasse [Indication_of_Resources_PT](#indication-of-resources-pt) beinhaltet Fundstellen von vulkanischen, mineralischen
-und nicht-mineralischen Rohstoffen.
-
-
-
-
-    | Name                         | Type                              | Description
-----|------------------------------|-----------------------------------|--------------------------------------
-1 | **kind**                | subtype                                    | Objektart
-[]()           | Cardinality [1] | 13201                                       |
-2 | **status**                | [CodedDomain](#indication-of-resources-pt-status)                    | Zustand der Objektart
-[]()           | Cardinality [0..1] |                                                      |
-3 | **material**                | [CodedDomain](#indication-of-resources-pt-material)                    | Material, das mit der Objektart in Verbindung steht
-[]()           | Cardinality [0..1] |                                                      |
-4 | **chemistry**                | string                                    | Chemische Komponente(n) oder Mineralien, welche die Natur der Objektart charakterisieren.
-[]()           | Cardinality [0..1] |                                        |
-
-
-
-
-
-#### Attribute kind
-_Objektart_
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|13201001 | Lres Mineralfundstelle | Lres Mineralfundstelle     |
-|13201002 | Lres Gasquelle | Lres Gasquelle     |
-|13201003 | Lres Anzeichen auf Öl | Lres Anzeichen auf Öl     |
-|13201006 | Lres Fundstelle vulkanischer Auswürflinge (Tephra) | Lres Fundstelle vulkanischer Auswürflinge (Tephra)     |
-|13201007 | Lres Fundstelle von Ries-Auswürflingen | Lres Fundstelle von Ries-Auswürflingen     |
-|13201008 | Lres Asphalt, vereinzeltes Vorkommen | Lres Asphalt, vereinzeltes Vorkommen     |
-|13201005 | Lres Fundstelle von vulkanischem Tuffit | Lres Fundstelle von vulkanischem Tuffit     |
-|13201004 | Lres Tasche, Karsttasche, Kluft, mit Füllung von siderolithischem Sediment | Lres Tasche, Karsttasche, Kluft, mit Füllung von siderolithischem Sediment     |
-|13201009 | Lres Meteoritenfundstelle | Lres Meteoritenfundstelle     |
-
-
-
-
-#### Attribute status {#indication-of-resources-pt-status}
-_Zustand der Objektart_
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|13202001 | aufgeschlossen | aufgeschlossen     |
-|13202002 | wieder verdeckt | wieder verdeckt     |
-|999997 | Unknown | Unknown     |
-|999998 | Not applicable | Not applicable     |
-
-
-
-
-#### Attribute material {#indication-of-resources-pt-material}
-_Material, das mit der Objektart in Verbindung steht_
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|13203003 | Bohnerz | Bohnerz     |
-|13203001 | Boluston | Boluston     |
-|13203004 | Glas- / Quarzsand | Glas- / Quarzsand     |
-|13203002 | Huppererde | Huppererde     |
-|13203005 | Walkerde | Walkerde     |
-|999997 | Unknown | Unknown     |
-|999998 | Not applicable | Not applicable     |
-
-
-
-
-#### Attribute chemistry
-_Chemische Komponente(n) oder Mineralien, welche die Natur der Objektart charakterisieren._
-_Datentyp:  string_
-
-
-
-
-
-### Class Mineralised_Zone_L {#mineralised-zone-l}
-
-
-
-
-
-    | Name                         | Type                              | Description
-----|------------------------------|-----------------------------------|--------------------------------------
-1 | **kind**                | subtype                                    | Objektart
-[]()           | Cardinality [1] | 13301                                       |
-2 | **chemistry**                | string                                    | Chemische Komponente(n), welche die Natur der Objektart charakterisieren.
-[]()           | Cardinality [0..1] |                                        |
-
-
-
-
-
-#### Attribute kind
-_Objektart_
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|13301001 | Lmin Vererzungszone | Lmin Vererzungszone     |
-
-
-
-
-#### Attribute chemistry
-_Chemische Komponente(n), welche die Natur der Objektart charakterisieren._
-_Datentyp:  string_
-
-
-
-
-
-### Class Sedimentary_Structures_PT {#sedimentary-structures-pt}
-
-
-
-
-
-    | Name                         | Type                              | Description
-----|------------------------------|-----------------------------------|--------------------------------------
-1 | **kind**                | subtype                                    | Objektart
-[]()           | Cardinality [1] | 13401                                       |
-2 | **azimuth**                | integer                                    | Orientierung des Symbols. Wert in Grad (0° 359°) im Uhrzeigersinn gemessen.
-[]()           | Cardinality [0..1] |                                        |
-
-
-
-
-
-#### Attribute kind
-_Objektart_
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|13401001 | Lsed Sedimentstrukturen | Lsed Sedimentstrukturen     |
-|13401002 | Lsed Riffstrukturen | Lsed Riffstrukturen     |
-|13401003 | Lsed Erosions- oder Omissionsfläche, Hartgrund, Kondensationshorizont | Lsed Erosions- oder Omissionsfläche, Hartgrund, Kondensationshorizont     |
-|13401004 | Lsed stratigraphische Lage (Polarität) einer Schichtserie | Lsed stratigraphische Lage (Polarität) einer Schichtserie     |
-|13401005 | Lsed Winkeldiskordanz | Lsed Winkeldiskordanz     |
-|13401006 | Lsed Entwässerungstrichter (blow-out structure) | Lsed Entwässerungstrichter (blow-out structure)     |
-
-
-
-
-#### Attribute azimuth
-_Orientierung des Symbols. Wert in Grad (0° 359°) im Uhrzeigersinn gemessen._
-_Datentyp:  integer_
-
-
-
-
-
-### Class Type_Localities_PT {#type-localities-pt}
-Die Klasse [Type_Localities_PT](#type-localities-pt) beinhaltet diejenigen Objektarten, die Typlokalitäten oder wichtige
-geologische Aufschlüsse beschreiben.
-
-
-
-
-    | Name                         | Type                              | Description
-----|------------------------------|-----------------------------------|--------------------------------------
-1 | **kind**                | subtype                                    | Objektart
-[]()           | Cardinality [1] | 13501                                       |
-2 | **strati**                | [CodedDomain](#type-localities-pt-strati)                    | Lithostratigraphischer Zusatz zum Objekt
-[]()           | Cardinality [0..1] |                                                      |
-3 | **name**                | string                                    | Name der Typlokalität. / Beschreibung des geologisch relevanten Aufschlusses
-[]()           | Cardinality [0..1] |                                        |
-4 | **accessibil**                | boolean                                    | Ist die Objektart zum Zeitpunkt der Aufnahme aufgeschlossen (ja / nein)?
-[]()           | Cardinality [0..1] |                                        |
-5 | **protected**                | boolean                                    | Geschütztes geologisches Objekt (ja / nein)?
-[]()           | Cardinality [0..1] |                                        |
-
-
-
-
-
-#### Attribute kind
-_Objektart_
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|13501001 | Ltyp geologisch relevanter Aufschluss | Ltyp geologisch relevanter Aufschluss     |
-|13501003 | Ltyp Typusprofil | Ltyp Typusprofil     |
-
-
-
-
-#### Attribute strati {#type-localities-pt-strati}
-_Lithostratigraphischer Zusatz zum Objekt_
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|13502005 | Bank | Bank     |
-|13502003 | Formation | Formation     |
-|13502001 | Gruppe | Gruppe     |
-|13502004 | Member | Member     |
-|13502006 | Stufe | Stufe     |
-|13502002 | Subgruppe | Subgruppe     |
-|999997 | Unknown | Unknown     |
-|999998 | Not applicable | Not applicable     |
-
-
-
-
-#### Attribute name
-_Name der Typlokalität. / Beschreibung des geologisch relevanten Aufschlusses_
-_Datentyp:  string_
-
-
-
-
-
-#### Attribute accessibil
-_Ist die Objektart zum Zeitpunkt der Aufnahme aufgeschlossen (ja / nein)?_
-_Datentyp:  boolean_
-
-
-
-
-
-#### Attribute protected
-_Geschütztes geologisches Objekt (ja / nein)?_
-_Datentyp:  boolean_
-
-
-
-
-
-### Class Prominent_Lithological_Features_L {#prominent-lithological-features-l}
-In der Klasse [Prominent_Lithological_Features_L](#prominent-lithological-features-l) befinden sich linienförmige Gesteinshorizonte.
-Diese Gesteinshorizonte haben bloss Hinweischarakter (z.B. «markante Sandsteinbank» innerhalb
-von Wechsellagerungen von Sandstein und Mergel) und sind von den Leithorizonten (z.B.
-«Spatkalk im Hauptrogenstein») zu unterschieden. Leithorizonte befinden sich im Thema Rock Bodies.
-
-
-
-
-    | Name                         | Type                              | Description
-----|------------------------------|-----------------------------------|--------------------------------------
-1 | **kind**                | subtype                                    | Objektart
-[]()           | Cardinality [1] | 13101                                       |
-2 | **cong_spe**                | [CodedDomain](#prominent-lithological-features-l-cong-spe)                    | Charakterisation der Konglomerate nach ihrem Geröllspektrum.
-[]()           | Cardinality [0..1] |                                                      |
-3 | **name_horiz**                |                                     | Name des Bentonit-Leithorizonts.
-[]()           | Cardinality [0..1] | 13103                                       |
-4 | **orig_descr**                | string                                    | Originalbezeichnung gemäss der Legende der zugrundeliegenden geologischen Karte.
-[]()           | Cardinality [0..1] |                                        |
-5 | **litho**                | table                                    | Materialbezeichnung (lithologische Einheit).
-[]()           | Cardinality [1] | gc_litho                                       |
-
-
-
-
-
-#### Attribute kind
-_Objektart_
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|13101001 | Lpro Gesteinshorizont | Lpro Gesteinshorizont     |
-
-
-
-
-#### Attribute cong_spe {#prominent-lithological-features-l-cong-spe}
-_Charakterisation der Konglomerate nach ihrem Geröllspektrum._
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|13102003 | bunte bis polygene Nagelfluh | bunte bis polygene Nagelfluh     |
-|13102004 | Flyschsandstein-Nagelfluh, Riesenkonglomerat | Flyschsandstein-Nagelfluh, Riesenkonglomerat     |
-|13102001 | kristallinfreie bis -arme (Kalk-)Nagelfluh | kristallinfreie bis -arme (Kalk-)Nagelfluh     |
-|13102002 | kristallinführende (Kalk-)Nagelfluh | kristallinführende (Kalk-)Nagelfluh     |
-|999997 | Unknown | Unknown     |
-|999998 | Not applicable | Not applicable     |
-
-
-
-
-#### Attribute name_horiz
-_Name des Bentonit-Leithorizonts._
-
-
-
-
-#### Attribute orig_descr
-_Originalbezeichnung gemäss der Legende der zugrundeliegenden geologischen Karte._
-_Datentyp:  string_
-
-
-
-
-
-#### Attribute litho
-_Materialbezeichnung (lithologische Einheit)._
-
-
-
-
-### Class Miscellaneous_PT {#miscellaneous-pt}
-Die Klasse [Miscellaneous_PT](#miscellaneous-pt) ist für lokale, sehr spezielle geologische Objekte reserviert, die für die
-Gesamtheit der geologischen Daten irrelevant sind und deshalb im Datenmodell Geologie nicht
-standardisiert werden
-
-
-
-
-    | Name                         | Type                              | Description
-----|------------------------------|-----------------------------------|--------------------------------------
-1 | **kind**                | subtype                                    | Objektart
-[]()           | Cardinality [1] | 15501                                       |
-2 | **orig_name**                | string                                    | Ursprüngliche Bezeichnung des Objektes.
-[]()           | Cardinality [1] |                                        |
-
-
-
-
-
-#### Attribute kind
-_Objektart_
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|15501001 | Lmis Diverse | Lmis Diverse     |
-
-
-
-
-#### Attribute orig_name
-_Ursprüngliche Bezeichnung des Objektes._
-_Datentyp:  string_
-
-
-
-
-
-### Class Geological_Outlines_L {#geological-outlines-l}
-Die Klasse [Geological_Outlines_L](#geological-outlines-l) beinhaltet geologische Konturen. Darunter fallen die Umrisse
-von Fest- und Lockergesteinen, von tektonisierten Zonen, sowie die Umgrenzungen von
-Rutschungs- und Sackungsmassen, welche nicht durch andere Konturarten (z.B. tektonische
-Grenzen) abgegrenzt werden.
-Eine geologische Kontur mit Status im Allgemeinen umfasst stratigraphische und petrographische
-Grenzen. Geologische Konturen, welche von quartären Ablagerungen, Gewässern oder
-Gletschern bedeckt sind oder graduelle Übergänge in Locker- und Festgesteinen (keine klaren
-lithologischen Grenzen; im Sinne der Signaturgrenze nach dem Zeichenverzeichnis (ZV)), haben
-den Status vermutet. Künstliche geologische Konturen sind Konturen, welche Gebiete mit
-detaillierter Information von Gebieten mit geringerer Informationsdichte aufgrund fehlender
-Informationen oder aus darstellerischen Gründen (Digitalisierungsmassstab)
-ab-grenzen (Abgrenzungskontur nach dem ZV).
-
-
-
-
-    | Name                         | Type                              | Description
-----|------------------------------|-----------------------------------|--------------------------------------
-1 | **kind**                | subtype                                    | Objektart
-[]()           | Cardinality [1] | 13001                                       |
-2 | **status**                | [CodedDomain](#geological-outlines-l-status)                    | Zustand der Objektart.
-[]()           | Cardinality [0..1] |                                                      |
-
-
-
-
-
-#### Attribute kind
-_Objektart_
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|13001001 | Lgeo geologische Kontur | Lgeo geologische Kontur     |
-
-
-
-
-#### Attribute status {#geological-outlines-l-status}
-_Zustand der Objektart._
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|13002004 | gesichert, tektonisch überprägt | gesichert, tektonisch überprägt     |
-|13002001 | im Allgemeinen | im Allgemeinen     |
-|13002003 | künstlich | künstlich     |
-|13002002 | vermutet | vermutet     |
-|13002005 | vermutet, tektonisch überprägt | vermutet, tektonisch überprägt     |
-|999997 | Unknown | Unknown     |
-|999998 | Not applicable | Not applicable     |
-|13002006 | Gewässerlinie | Gewässerlinie     |
-
-
-
-
-
-
-
-
-## Theme PARAMETER_AND_MODELLING
-
-### Class Slope_Bedrock_PT {#slope-bedrock-pt}
-Die Klasse [Slope_Bedrock_PT](#slope-bedrock-pt) enthält Punktinformationen aus Modellierungen des Festgestein-
-verlaufs im Untergrund.
-
-
-
-
-    | Name                         | Type                              | Description
-----|------------------------------|-----------------------------------|--------------------------------------
-1 | **kind**                | subtype                                    | Objektart
-[]()           | Cardinality [1] | 14201                                       |
-2 | **type**                | [CodedDomain](#slope-bedrock-pt-type)                    | Referenzoberfläche.
-[]()           | Cardinality [1] |                                                      |
-3 | **azimuth**                | integer                                    | Fallrichtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad (0° 359°) im Uhrzeigersinn gemessen.
-[]()           | Cardinality [0..1] |                                        |
-4 | **dip**                | integer                                    | Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die
-Vertikale (90°).
-[]()           | Cardinality [0..1] |                                        |
-5 | **litstrat**                | table                                    | Lithostratigraphische Einheit der modellierten Formation
-[]()           | Cardinality [1] | gc_litstrat_bed                                       |
-
-
-
-
-
-#### Attribute kind
-_Objektart_
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|14201001 | Pslo Neigungsrichtung | Pslo Neigungsrichtung     |
-
-
-
-
-#### Attribute type {#slope-bedrock-pt-type}
-_Referenzoberfläche._
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|14202001 | Felsoberfläche | Felsoberfläche     |
-|14202002 | Obergrenze einer gegebenen Formation | Obergrenze einer gegebenen Formation     |
-|999997 | Unknown | Unknown     |
-|999998 | Not applicable | Not applicable     |
-
-
-
-
-#### Attribute azimuth
-_Fallrichtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad (0° 359°) im Uhrzeigersinn gemessen._
-_Datentyp:  integer_
-
-
-
-
-
-#### Attribute dip
-_Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die
-Vertikale (90°)._
-_Datentyp:  integer_
-
-
-
-
-
-#### Attribute litstrat
-_Lithostratigraphische Einheit der modellierten Formation_
-
-
-
-
-### Class Contour_Lines_Bedrock_L {#contour-lines-bedrock-l}
-Die Klasse [Contour_Lines_Bedrock_L](#contour-lines-bedrock-l) beinhaltet Isohypsen, die sich auf den Verlauf des Fest-
-gesteins beziehen und die das Resultat von Modellierungen darstellen. U.a. befinden sich die Iso-
-hypsen der Felsoberfläche in dieser Klasse.
-
-
-
-
-    | Name                         | Type                              | Description
-----|------------------------------|-----------------------------------|--------------------------------------
-1 | **kind**                | subtype                                    | Objektart
-[]()           | Cardinality [1] | 13901                                       |
-2 | **type**                | [CodedDomain](#contour-lines-bedrock-l-type)                    | Referenzoberfläche.
-[]()           | Cardinality [1] |                                                      |
-3 | **altitude**                | float                                    | Höhenangabe (m ü.M.) von Isohypsen.
-[]()           | Cardinality [1] |                                        |
-4 | **litstrat**                | table                                    | Lithostratigraphische Einheit der modellierten Formation
-[]()           | Cardinality [1] | gc_litstrat_bed                                       |
-
-
-
-
-
-#### Attribute kind
-_Objektart_
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|13901001 | Pcob Isohypse | Pcob Isohypse     |
-
-
-
-
-#### Attribute type {#contour-lines-bedrock-l-type}
-_Referenzoberfläche._
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|13902001 | Felsoberfläche | Felsoberfläche     |
-|13902002 | Obergrenze einer gegebenen Formation | Obergrenze einer gegebenen Formation     |
-|13902003 | Untergrenze einer gegebenen Formation | Untergrenze einer gegebenen Formation     |
-|999997 | Unknown | Unknown     |
-|999998 | Not applicable | Not applicable     |
-
-
-
-
-#### Attribute altitude
-_Höhenangabe (m ü.M.) von Isohypsen._
-_Datentyp:  float_
-
-
-
-
-
-#### Attribute litstrat
-_Lithostratigraphische Einheit der modellierten Formation_
-
-
-
-
-### Class Modelled_Water_Table_PT {#modelled-water-table-pt}
-Die Klasse [Modelled_Water_Table_PT](#modelled-water-table-pt) enthält Punktinformationen aus Modellierungen des
-Grundwasserspiegels.
-
-
-
-
-    | Name                         | Type                              | Description
-----|------------------------------|-----------------------------------|--------------------------------------
-1 | **kind**                | subtype                                    | Objektart
-[]()           | Cardinality [1] | 14101                                       |
-2 | **azimuth**                | integer                                    | Fallrichtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad (0° 359°) im Uhrzeigersinn gemessen.
-[]()           | Cardinality [0..1] |                                        |
-3 | **dip**                | integer                                    | Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die
-Vertikale (90°).
-[]()           | Cardinality [0..1] |                                        |
-4 | **height**                | float                                    | Kote des Grundwasserspiegels (m ü.M.).
-[]()           | Cardinality [0..1] |                                        |
-5 | **mea_period**                | range                                    | Messperiode.
-[]()           | Cardinality [0..1] |                                        |
-
-
-
-
-
-#### Attribute kind
-_Objektart_
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|14101001 | Pmod Grundwasserfliessrichtung | Pmod Grundwasserfliessrichtung     |
-|14101002 | Pmod mittlere Höhe des Grundwasserspiegels | Pmod mittlere Höhe des Grundwasserspiegels     |
-
-
-
-
-#### Attribute azimuth
-_Fallrichtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad (0° 359°) im Uhrzeigersinn gemessen._
-_Datentyp:  integer_
-
-
-
-
-
-#### Attribute dip
-_Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die
-Vertikale (90°)._
-_Datentyp:  integer_
-
-
-
-
-
-#### Attribute height
-_Kote des Grundwasserspiegels (m ü.M.)._
-_Datentyp:  float_
-
-
-
-
-
-#### Attribute mea_period
-_Messperiode._
-_Datentyp:  range_
-
-
-
-
-
-### Class Contour_Lines_Hydro_L {#contour-lines-hydro-l}
-In der Klasse [Contour_Lines_Hydro_L](#contour-lines-hydro-l) befinden sich die Isohypsen, die sich auf das Grundwasser
-beziehen.
-
-
-
-
-    | Name                         | Type                              | Description
-----|------------------------------|-----------------------------------|--------------------------------------
-1 | **kind**                | subtype                                    | Objektart
-[]()           | Cardinality [1] | 14001                                       |
-2 | **confine**                | [CodedDomain](#contour-lines-hydro-l-confine)                    | Druckzustand im Grundwasserleiter.
-[]()           | Cardinality [0..1] |                                                      |
-3 | **altitude**                |                                     | Höhenangabe (m ü.M.) von Isohypsen.
-[]()           | Cardinality [1] |                                        |
-4 | **wa_table**                | [CodedDomain](#contour-lines-hydro-l-wa-table)                    | Wasserstand.
-[]()           | Cardinality [0..1] |                                                      |
-
-
-
-
-
-#### Attribute kind
-_Objektart_
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|14001001 | Pcoh Isohypse des Grundwasserspiegels | Pcoh Isohypse des Grundwasserspiegels     |
-
-
-
-
-#### Attribute confine {#contour-lines-hydro-l-confine}
-_Druckzustand im Grundwasserleiter._
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|14002003 | artesisch | artesisch     |
-|14002001 | frei | frei     |
-|14002002 | gespannt | gespannt     |
-|999997 | Unknown | Unknown     |
-|999998 | Not applicable | Not applicable     |
-
-
-
-
-#### Attribute altitude
-_Höhenangabe (m ü.M.) von Isohypsen._
-
-
-
-
-#### Attribute wa_table {#contour-lines-hydro-l-wa-table}
-_Wasserstand._
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|14004002 | mittlere Höhe des Hochwasserstands | mittlere Höhe des Hochwasserstands     |
-|14004001 | mittlere Höhe des Niedrigwasserstands | mittlere Höhe des Niedrigwasserstands     |
-|999997 | Unknown | Unknown     |
-|999998 | Not applicable | Not applicable     |
-
-
-
-
-
-
-
-
-## Theme ANTHROPOGENIC_FEATURES
-
-### Class Archaeology_PT {#archaeology-pt}
-Die Klasse [Archaeology_PT](#archaeology-pt) enthält Objektarten zu einzelnen archäologischen Relikten.
-
-
-
-
-    | Name                         | Type                              | Description
-----|------------------------------|-----------------------------------|--------------------------------------
-1 | **kind**                | subtype                                    | Objektart
-[]()           | Cardinality [] | 10101                                       |
-2 | **epoch**                | [CodedDomain](#archaeology-pt-epoch)                    | Archäologische Epoche der Objektart
-[]()           | Cardinality [0..1] |                                                      |
-3 | **period**                | [CodedDomain](#archaeology-pt-period)                    | Archäologische Periode der Objektart.
-[]()           | Cardinality [0..1] |                                                      |
-4 | **age**                | [CodedDomain](#archaeology-pt-age)                    | Archäologisches Alter der Objektart.
-[]()           | Cardinality [0..1] |                                                      |
-5 | **type**                | [CodedDomain](#archaeology-pt-type)                    | Art des Kultsteins.
-[]()           | Cardinality [0..1] |                                                      |
-
-
-
-
-
-#### Attribute kind
-_Objektart_
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|10101001 | Aarc archäologische Fundstelle, Anlage, Siedlungsreste | Aarc archäologische Fundstelle, Anlage, Siedlungsreste     |
-|10101005 | Aarc Gräber, Gräberfeld | Aarc Gräber, Gräberfeld     |
-|10101007 | Aarc Grabhügel, Dolmengrab | Aarc Grabhügel, Dolmengrab     |
-|10101008 | Aarc Kultstein | Aarc Kultstein     |
-|10101009 | Aarc Kalkofen | Aarc Kalkofen     |
-|10101010 | Aarc Felsenkeller | Aarc Felsenkeller     |
-|10101011 | Aarc Schlackenhalde | Aarc Schlackenhalde     |
-|10101012 | Aarc Glashütte | Aarc Glashütte     |
-|10101013 | Aarc Schmelzofen | Aarc Schmelzofen     |
-|10101004 | Aarc Burgstelle, Burghügel, Wachtturm | Aarc Burgstelle, Burghügel, Wachtturm     |
-|10101002 | Aarc Höhlensiedlung, Abri | Aarc Höhlensiedlung, Abri     |
-|10101003 | Aarc Pfahlbauten | Aarc Pfahlbauten     |
-|10101006 | Aarc Steinplattengrab | Aarc Steinplattengrab     |
-|10101015 | Aarc Abbaustelle | Aarc Abbaustelle     |
-
-
-
-
-#### Attribute epoch {#archaeology-pt-epoch}
-_Archäologische Epoche der Objektart_
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|10002001 | historisch | historisch     |
-|10002002 | prähistorisch | prähistorisch     |
-|999997 | Unknown | Unknown     |
-|999998 | Not applicable | Not applicable     |
-
-
-
-
-#### Attribute period {#archaeology-pt-period}
-_Archäologische Periode der Objektart._
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|10003005 | Bronzezeit | Bronzezeit     |
-|10003004 | Eisenzeit | Eisenzeit     |
-|10003002 | Mittelalter | Mittelalter     |
-|10003001 | Neuzeit | Neuzeit     |
-|10003003 | Römerzeit | Römerzeit     |
-|10003006 | Steinzeit | Steinzeit     |
-|999997 | Unknown | Unknown     |
-|999998 | Not applicable | Not applicable     |
-
-
-
-
-#### Attribute age {#archaeology-pt-age}
-_Archäologisches Alter der Objektart._
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|10004005 | Altbronzezeit | Altbronzezeit     |
-|10004002 | Hallstattzeit | Hallstattzeit     |
-|10004003 | Jungbronzezeit | Jungbronzezeit     |
-|10004001 | Latènezeit | Latènezeit     |
-|10004007 | Mesolithikum | Mesolithikum     |
-|10004004 | Mittelbronzezeit | Mittelbronzezeit     |
-|10004006 | Neolithikum | Neolithikum     |
-|10004008 | Paläolithikum | Paläolithikum     |
-|999997 | Unknown | Unknown     |
-|999998 | Not applicable | Not applicable     |
-
-
-
-
-#### Attribute type {#archaeology-pt-type}
-_Art des Kultsteins._
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|10105001 | Menhir | Menhir     |
-|10105002 | Schalenstein | Schalenstein     |
-|999997 | Unknown | Unknown     |
-|999998 | Not applicable | Not applicable     |
-
-
-
-
-### Class Archaeology_L {#archaeology-l}
-Die Klasse [Archaeology_L](#archaeology-l) umfasst linienförmige archäologische Elemente. Historische Strassen,
-Hohlwege oder Befestigungsgräben sind Teile dieser Klasse.
-
-
-
-
-    | Name                         | Type                              | Description
-----|------------------------------|-----------------------------------|--------------------------------------
-1 | **kind**                | subtype                                    | Objektart
-[]()           | Cardinality [] | 10201                                       |
-2 | **epoch**                | [CodedDomain](#archaeology-l-epoch)                    | Archäologische Epoche der Objektart
-[]()           | Cardinality [0..1] |                                                      |
-3 | **period**                | [CodedDomain](#archaeology-l-period)                    | Archäologische Periode der Objektart.
-[]()           | Cardinality [0..1] |                                                      |
-4 | **age**                | [CodedDomain](#archaeology-l-age)                    | Archäologisches Alter der Objektart.
-[]()           | Cardinality [0..1] |                                                      |
-
-
-
-
-
-#### Attribute kind
-_Objektart_
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|10201001 | Aarc Verkehrsweg | Aarc Verkehrsweg     |
-|10201002 | Aarc Hohlweg | Aarc Hohlweg     |
-|10201003 | Aarc künstlicher Graben, Befestigungsgraben | Aarc künstlicher Graben, Befestigungsgraben     |
-|10201004 | Aarc künstlicher Erdwall | Aarc künstlicher Erdwall     |
-|10201005 | Aarc Wasserleitung | Aarc Wasserleitung     |
-|10201006 | Aarc Steinreihe | Aarc Steinreihe     |
-|10201007 | Aarc Schützengraben | Aarc Schützengraben     |
-
-
-
-
-#### Attribute epoch {#archaeology-l-epoch}
-_Archäologische Epoche der Objektart_
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|10002001 | historisch | historisch     |
-|10002002 | prähistorisch | prähistorisch     |
-|999997 | Unknown | Unknown     |
-|999998 | Not applicable | Not applicable     |
-
-
-
-
-#### Attribute period {#archaeology-l-period}
-_Archäologische Periode der Objektart._
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|10003005 | Bronzezeit | Bronzezeit     |
-|10003004 | Eisenzeit | Eisenzeit     |
-|10003002 | Mittelalter | Mittelalter     |
-|10003001 | Neuzeit | Neuzeit     |
-|10003003 | Römerzeit | Römerzeit     |
-|10003006 | Steinzeit | Steinzeit     |
-|999997 | Unknown | Unknown     |
-|999998 | Not applicable | Not applicable     |
-
-
-
-
-#### Attribute age {#archaeology-l-age}
-_Archäologisches Alter der Objektart._
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|10004005 | Altbronzezeit | Altbronzezeit     |
-|10004002 | Hallstattzeit | Hallstattzeit     |
-|10004003 | Jungbronzezeit | Jungbronzezeit     |
-|10004001 | Latènezeit | Latènezeit     |
-|10004007 | Mesolithikum | Mesolithikum     |
-|10004004 | Mittelbronzezeit | Mittelbronzezeit     |
-|10004006 | Neolithikum | Neolithikum     |
-|10004008 | Paläolithikum | Paläolithikum     |
-|999997 | Unknown | Unknown     |
-|999998 | Not applicable | Not applicable     |
-
-
-
-
-### Class Archaeology_PLG {#archaeology-plg}
-Die Klasse [Archaeology_PLG](#archaeology-plg) beinhaltet archäologische Relikte (z.B. römisches Castrum), die ein
-grösseres Gebiet (Fläche) abdecken.
-
-
-
-
-    | Name                         | Type                              | Description
-----|------------------------------|-----------------------------------|--------------------------------------
-1 | **kind**                | subtype                                    | Objektart
-[]()           | Cardinality [] | 10301                                       |
-2 | **epoch**                | [CodedDomain](#archaeology-plg-epoch)                    | Archäologische Epoche der Objektart
-[]()           | Cardinality [0..1] |                                                      |
-3 | **period**                | [CodedDomain](#archaeology-plg-period)                    | Archäologische Periode der Objektart.
-[]()           | Cardinality [0..1] |                                                      |
-4 | **age**                | [CodedDomain](#archaeology-plg-age)                    | Archäologisches Alter der Objektart.
-[]()           | Cardinality [0..1] |                                                      |
-
-
-
-
-
-#### Attribute kind
-_Objektart_
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|10301001 | Aarc Castrum | Aarc Castrum     |
-|10301002 | Aarc Refugium, Höhensiedlung, Erdwerk | Aarc Refugium, Höhensiedlung, Erdwerk     |
-
-
-
-
-#### Attribute epoch {#archaeology-plg-epoch}
-_Archäologische Epoche der Objektart_
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|10002001 | historisch | historisch     |
-|10002002 | prähistorisch | prähistorisch     |
-|999997 | Unknown | Unknown     |
-|999998 | Not applicable | Not applicable     |
-
-
-
-
-#### Attribute period {#archaeology-plg-period}
-_Archäologische Periode der Objektart._
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|10003005 | Bronzezeit | Bronzezeit     |
-|10003004 | Eisenzeit | Eisenzeit     |
-|10003002 | Mittelalter | Mittelalter     |
-|10003001 | Neuzeit | Neuzeit     |
-|10003003 | Römerzeit | Römerzeit     |
-|10003006 | Steinzeit | Steinzeit     |
-|999997 | Unknown | Unknown     |
-|999998 | Not applicable | Not applicable     |
-
-
-
-
-#### Attribute age {#archaeology-plg-age}
-_Archäologisches Alter der Objektart._
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|10004005 | Altbronzezeit | Altbronzezeit     |
-|10004002 | Hallstattzeit | Hallstattzeit     |
-|10004003 | Jungbronzezeit | Jungbronzezeit     |
-|10004001 | Latènezeit | Latènezeit     |
-|10004007 | Mesolithikum | Mesolithikum     |
-|10004004 | Mittelbronzezeit | Mittelbronzezeit     |
-|10004006 | Neolithikum | Neolithikum     |
-|10004008 | Paläolithikum | Paläolithikum     |
-|999997 | Unknown | Unknown     |
-|999998 | Not applicable | Not applicable     |
-
-
-
-
-### Class Exploitation_Geomaterials_PT {#exploitation-geomaterials-pt}
-Die Klasse [Exploitation_Geomaterials_PT](#exploitation-geomaterials-pt) enthält punktförmige Angaben zu Abbaustellen von
-Geomaterialien.
-
-
-
-
-    | Name                         | Type                              | Description
-----|------------------------------|-----------------------------------|--------------------------------------
-1 | **kind**                | subtype                                    | Objektart
-[]()           | Cardinality [] | 10601                                       |
-2 | **exp_unit**                | table                                    | Abgebaute lithostratigraphische Einheit.
-[]()           | Cardinality [0..*] | gc_litstrat_bed                                       |
-3 | **status**                | [CodedDomain](#exploitation-geomaterials-pt-status)                    | Abbaustatus.
-[]()           | Cardinality [0..1] |                                                      |
-4 | **depth_tot**                | float                                    | Endtiefe (m ab Terrainoberfläche) der Objektart.
-[]()           | Cardinality [0..1] |                                        |
-5 | **targ_mat**                | [CodedDomain](#exploitation-geomaterials-pt-targ-mat)                    | Abgebautes Material.
-[]()           | Cardinality [0..1] |                                                      |
-
-
-
-
-
-#### Attribute kind
-_Objektart_
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|10601001 | Aexp Bergwerk, Untertageabbau | Aexp Bergwerk, Untertageabbau     |
-|10601002 | Aexp Stolleneingang | Aexp Stolleneingang     |
-|10601003 | Aexp Schacht | Aexp Schacht     |
-|10601004 | Aexp Pinge (dolinenartiger Stolleneinbruch) | Aexp Pinge (dolinenartiger Stolleneinbruch)     |
-|10601005 | Aexp Schürfloch | Aexp Schürfloch     |
-|10601006 | Aexp ausgeräumte Bohnerztasche | Aexp ausgeräumte Bohnerztasche     |
-
-
-
-
-#### Attribute exp_unit
-_Abgebaute lithostratigraphische Einheit._
-
-
-
-
-#### Attribute status {#exploitation-geomaterials-pt-status}
-_Abbaustatus._
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|10603003 | aufgefüllt | aufgefüllt     |
-|10603001 | in Betrieb | in Betrieb     |
-|10603002 | stillgelegt | stillgelegt     |
-|10603004 | verfallen | verfallen     |
-|999997 | Unknown | Unknown     |
-|999998 | Not applicable | Not applicable     |
-
-
-
-
-#### Attribute depth_tot
-_Endtiefe (m ab Terrainoberfläche) der Objektart._
-_Datentyp:  float_
-
-
-
-
-
-#### Attribute targ_mat {#exploitation-geomaterials-pt-targ-mat}
-_Abgebautes Material._
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|10605010 | Antimon | Antimon     |
-|10605023 | Asbest | Asbest     |
-|10605029 | Asphalt / Bitumen | Asphalt / Bitumen     |
-|10605011 | Baryt | Baryt     |
-|10605006 | Blei-Zink | Blei-Zink     |
-|10605022 | Bohnerz | Bohnerz     |
-|10605007 | Chrom-Nickel, z.T. mit Kobalt | Chrom-Nickel, z.T. mit Kobalt     |
-|10605031 | Dachschiefer / Tafelschiefer | Dachschiefer / Tafelschiefer     |
-|10605005 | Eisen / Eisenoolith | Eisen / Eisenoolith     |
-|10605001 | Erze allgemein | Erze allgemein     |
-|10605013 | Fluorit | Fluorit     |
-|10605034 | Gips | Gips     |
-|10605002 | Gold | Gold     |
-|10605027 | Graphit | Graphit     |
-|10605030 | Hartgestein | Hartgestein     |
-|10605012 | Kalzit | Kalzit     |
-|10605015 | Kaolin | Kaolin     |
-|10605040 | Kies | Kies     |
-|10605024 | Kohle allgemein | Kohle allgemein     |
-|10605004 | Kupfer, z.T. mit Silber, Wismut und Arsen | Kupfer, z.T. mit Silber, Wismut und Arsen     |
-|10605026 | Lignit | Lignit     |
-|10605016 | Magnesit | Magnesit     |
-|10605017 | Magnesium | Magnesium     |
-|10605008 | Mangan | Mangan     |
-|10605009 | Molybdän und Wolfram | Molybdän und Wolfram     |
-|10605028 | Ölschiefer | Ölschiefer     |
-|10605018 | Phosphorit, Apatit | Phosphorit, Apatit     |
-|10605039 | Pyrit | Pyrit     |
-|10605014 | Quarz | Quarz     |
-|10605035 | Salz / Steinsalz | Salz / Steinsalz     |
-|10605037 | Sand | Sand     |
-|10605038 | Sand und Kies | Sand und Kies     |
-|10605020 | Schwefel | Schwefel     |
-|10605032 | Serpentin | Serpentin     |
-|10605003 | Silber | Silber     |
-|10605033 | Speckstein | Speckstein     |
-|10605025 | Steinkohle / Anthrazit | Steinkohle / Anthrazit     |
-|10605019 | Talk | Talk     |
-|10605036 | Ton / Ton und Silt (Lehm) | Ton / Ton und Silt (Lehm)     |
-|10605021 | Uran | Uran     |
-|999997 | Unknown | Unknown     |
-|999998 | Not applicable | Not applicable     |
-
-
-
-
-### Class Exploitation_Geomaterials_L {#exploitation-geomaterials-l}
-Die Klasse [Exploitation_Geomaterials_L](#exploitation-geomaterials-l) beinhaltet linienförmige Informationen zum Abbau von
-Geomaterialien (z.B. Verlauf der Abbaufront).
-
-
-
-
-    | Name                         | Type                              | Description
-----|------------------------------|-----------------------------------|--------------------------------------
-1 | **kind**                | subtype                                    | Objektart
-[]()           | Cardinality [] | 10701                                       |
-2 | **status**                | [CodedDomain](#exploitation-geomaterials-l-status)                    | Abbaustatus.
-[]()           | Cardinality [0..1] |                                                      |
-
-
-
-
-
-#### Attribute kind
-_Objektart_
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|10701001 | Aexp Abbaufront | Aexp Abbaufront     |
-|10701002 | Aexp Bergwerksstollen | Aexp Bergwerksstollen     |
-
-
-
-
-#### Attribute status {#exploitation-geomaterials-l-status}
-_Abbaustatus._
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|10702003 | aufgefüllt | aufgefüllt     |
-|10702001 | in Betrieb | in Betrieb     |
-|10702002 | stillgelegt | stillgelegt     |
-|10702004 | verfallen | verfallen     |
-|999997 | Unknown | Unknown     |
-|999998 | Not applicable | Not applicable     |
-
-
-
-
-### Class Exploitation_Geomaterials_PLG {#exploitation-geomaterials-plg}
-Die Klasse [Exploitation_Geomaterials_PLG](#exploitation-geomaterials-plg) enthält Flächen, wo zur Zeit der geologischen
-Aufnahmen Geomaterialien abgebaut wurden.
-
-
-
-
-    | Name                         | Type                              | Description
-----|------------------------------|-----------------------------------|--------------------------------------
-1 | **kind**                | subtype                                    | Objektart
-[]()           | Cardinality [] | 10801                                       |
-2 | **exp_unit**                | table                                    | Abgebaute lithostratigraphische Einheit.
-[]()           | Cardinality [1..*] | gc_litstrat_bed                                       |
-3 | **status**                | [CodedDomain](#exploitation-geomaterials-plg-status)                    | Abbaustatus.
-[]()           | Cardinality [0..1] |                                                      |
-4 | **depth_tot**                | float                                    | Endtiefe (m ab Terrainoberfläche) der Objektart.
-[]()           | Cardinality [0..1] |                                        |
-5 | **targ_mat**                | [CodedDomain](#exploitation-geomaterials-plg-targ-mat)                    | Abgebautes Material.
-[]()           | Cardinality [0..1] |                                                      |
-
-
-
-
-
-#### Attribute kind
-_Objektart_
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|10801001 | Aexp Steinbruch | Aexp Steinbruch     |
-|10801002 | Aexp Grube (Lockergesteinsabbau) | Aexp Grube (Lockergesteinsabbau)     |
-
-
-
-
-#### Attribute exp_unit
-_Abgebaute lithostratigraphische Einheit._
-
-
-
-
-#### Attribute status {#exploitation-geomaterials-plg-status}
-_Abbaustatus._
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|10802003 | aufgefüllt | aufgefüllt     |
-|10802001 | in Betrieb | in Betrieb     |
-|10802002 | stillgelegt | stillgelegt     |
-|10802004 | verfallen | verfallen     |
-|999997 | Unknown | Unknown     |
-|999998 | Not applicable | Not applicable     |
-
-
-
-
-#### Attribute depth_tot
-_Endtiefe (m ab Terrainoberfläche) der Objektart._
-_Datentyp:  float_
-
-
-
-
-
-#### Attribute targ_mat {#exploitation-geomaterials-plg-targ-mat}
-_Abgebautes Material._
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|10804015 | Asbest | Asbest     |
-|10804010 | Baryt | Baryt     |
-|10804016 | Bohnerz | Bohnerz     |
-|10804005 | Dachschiefer / Tafelschiefer | Dachschiefer / Tafelschiefer     |
-|10804012 | Eisen / Eisenoolithe | Eisen / Eisenoolithe     |
-|10804006 | Gips | Gips     |
-|10804004 | Hartgestein | Hartgestein     |
-|10804011 | Kalzit / Kalk | Kalzit / Kalk     |
-|10804013 | Kaolin | Kaolin     |
-|10804021 | Kies | Kies     |
-|10804019 | Kohle | Kohle     |
-|10804018 | Mergel | Mergel     |
-|10804014 | Quarz / Quarzit | Quarz / Quarzit     |
-|10804020 | Salz / Steinsalz | Salz / Steinsalz     |
-|10804002 | Sand | Sand     |
-|10804003 | Sand und Kies | Sand und Kies     |
-|10804007 | Serpentin | Serpentin     |
-|10804008 | Speckstein | Speckstein     |
-|10804009 | Talk | Talk     |
-|10804001 | Ton / Ton und Silt (Lehm) | Ton / Ton und Silt (Lehm)     |
-|10804017 | Torf | Torf     |
-|999997 | Unknown | Unknown     |
-|999998 | Not applicable | Not applicable     |
-
-
-
-
-### Class Boreholes_PT {#boreholes-pt}
-Die Klasse [Boreholes_PT](#boreholes-pt) beinhaltet Bohrungen und Sondierungen. (Auf alten gedruckten Karten
-wurde die Art der Sondierung nicht immer unterschieden. Es kann daher sein, dass in alten Karten
-Rammkernsondierungen als Bohrungen aufgenommen wurden.)
-
-
-
-
-    | Name                         | Type                              | Description
-----|------------------------------|-----------------------------------|--------------------------------------
-1 | **kind**                | subtype                                    | Objektart
-[]()           | Cardinality [] | 10501                                       |
-2 | **drill_mo**                |                                     | Bohrmethode.
-[]()           | Cardinality [0..1] | 10502                                       |
-3 | **depth_bedrock**                | float                                    | Tiefe (in Meter ab Terrainoberfläche) der Felsober-
-fläche. (Sofern die Bohrung das Festgestein nicht
-Depth_Bedrock erreicht, z.B. «Bohrung, Fels nicht erreicht», beträgt der
-Wert -9999, falls die Bohrung bereits im Festgestein beginnt, beträgt
-der Wert 0). Falls Festgestein erreicht wurde, aber nicht klar ist,
-dass es sich um die Felsoberfläche handelt, beträgt der Wert -8888.
-[]()           | Cardinality [0..1] |                                        |
-4 | **d_c_underg**                | boolean                                    | Bohransatzpunkt unter Terrain (ja / nein)
-[]()           | Cardinality [1] |                                        |
-5 | **main_tar**                | [CodedDomain](#boreholes-pt-main-tar)                    | Ziel der Sondierung.
-[]()           | Cardinality [0..1] |                                                      |
-6 | **targ_mat**                | [CodedDomain](#boreholes-pt-targ-mat)                    | Durch die Sondierung gefördertes Material.
-[]()           | Cardinality [0..1] |                                                      |
-7 | **depth_tot**                | float                                    | Gemessene Länge (Measured Depth) der Bohrung. Vgl.
-DM Bohrdaten. Die tatsächliche Tiefe (True Vertical
-Depth) ist oft nicht bekannt.
-[]()           | Cardinality [0..1] |                                        |
-8 | **fm_a**                | table                                    | Lithostratigraphische Einheit der erreichten Formation A
-[]()           | Cardinality [0..1] | gc_litstrat_bed                                       |
-9 | **depth_fm_a**                | float                                    | Tiefe (m ab Terrainoberfläche) der erreichten Formation A.
-[]()           | Cardinality [0..1] |                                        |
-10 | **fm_b**                | table                                    | Lithostratigraphische Einheit der erreichten Formation B
-[]()           | Cardinality [0..1] | gc_litstrat_bed                                       |
-11 | **depth_fm_b**                | float                                    | Tiefe (m ab Terrainoberfläche) der erreichten Formation B.
-[]()           | Cardinality [0..1] |                                        |
-12 | **depth_wt**                | float                                    | Tiefe (m ab Terrainoberfläche) des Grundwasserspiegels.
-[]()           | Cardinality [0..1] |                                        |
-13 | **azimuth**                | integer                                    | Fallrichtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad (0° 359°) im Uhrzeigersinn gemessen.
-[]()           | Cardinality [0..1] |                                        |
-14 | **dip**                | integer                                    | Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die
-Vertikale (90°).
-[]()           | Cardinality [0..1] |                                        |
-15 | **ref_number**                | integer                                    | Bohrungs-ID der Objektart in einem zusätzlichen Dokument (Erläuterungen, ...).
-[]()           | Cardinality [0..1] |                                        |
-16 | **link**                | integer                                    | Objektnummer in der Datenbank von INFOGEOL.
-[]()           | Cardinality [0..1] |                                        |
-
-
-
-
-
-#### Attribute kind
-_Objektart_
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|10501001 | Abor Bohrung | Abor Bohrung     |
-|10501002 | Abor Sondierschlitz | Abor Sondierschlitz     |
-|10501003 | Abor Handsondierung | Abor Handsondierung     |
-|10501004 | Abor Rammsondierung | Abor Rammsondierung     |
-|10501005 | Abor Rammkernsondierung | Abor Rammkernsondierung     |
-
-
-
-
-#### Attribute drill_mo
-_Bohrmethode._
-
-
-
-
-#### Attribute depth_bedrock
-_Tiefe (in Meter ab Terrainoberfläche) der Felsober-
-fläche. (Sofern die Bohrung das Festgestein nicht
-Depth_Bedrock erreicht, z.B. «Bohrung, Fels nicht erreicht», beträgt der
-Wert -9999, falls die Bohrung bereits im Festgestein beginnt, beträgt
-der Wert 0). Falls Festgestein erreicht wurde, aber nicht klar ist,
-dass es sich um die Felsoberfläche handelt, beträgt der Wert -8888._
-_Datentyp:  float_
-
-
-
-
-
-#### Attribute d_c_underg
-_Bohransatzpunkt unter Terrain (ja / nein)_
-_Datentyp:  boolean_
-
-
-
-
-
-#### Attribute main_tar {#boreholes-pt-main-tar}
-_Ziel der Sondierung._
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|10505006 | belasteter Standort | belasteter Standort     |
-|10505012 | Forschung | Forschung     |
-|10505001 | Geotechnik | Geotechnik     |
-|10505008 | Geothermie | Geothermie     |
-|10505002 | Hydrogeologie | Hydrogeologie     |
-|10505005 | Kohlenwasserstoffe | Kohlenwasserstoffe     |
-|10505004 | mineralische Rohstoffe | mineralische Rohstoffe     |
-|10505013 | Naturgefahren | Naturgefahren     |
-|10505007 | Seismik | Seismik     |
-|999997 | Unknown | Unknown     |
-|999998 | Not applicable | Not applicable     |
-
-
-
-
-#### Attribute targ_mat {#boreholes-pt-targ-mat}
-_Durch die Sondierung gefördertes Material._
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|10506003 | Erdgas | Erdgas     |
-|10506002 | Erdöl | Erdöl     |
-|10506004 | Erdwärme | Erdwärme     |
-|10506006 | Grundwasser | Grundwasser     |
-|10506007 | Mineralwasser | Mineralwasser     |
-|10506001 | Salz / Steinsalz | Salz / Steinsalz     |
-|10506005 | Thermalwasser | Thermalwasser     |
-|999997 | Unknown | Unknown     |
-|999998 | Not applicable | Not applicable     |
-
-
-
-
-#### Attribute depth_tot
-_Gemessene Länge (Measured Depth) der Bohrung. Vgl.
-DM Bohrdaten. Die tatsächliche Tiefe (True Vertical
-Depth) ist oft nicht bekannt._
-_Datentyp:  float_
-
-
-
-
-
-#### Attribute fm_a
-_Lithostratigraphische Einheit der erreichten Formation A_
-
-
-
-
-#### Attribute depth_fm_a
-_Tiefe (m ab Terrainoberfläche) der erreichten Formation A._
-_Datentyp:  float_
-
-
-
-
-
-#### Attribute fm_b
-_Lithostratigraphische Einheit der erreichten Formation B_
-
-
-
-
-#### Attribute depth_fm_b
-_Tiefe (m ab Terrainoberfläche) der erreichten Formation B._
-_Datentyp:  float_
-
-
-
-
-
-#### Attribute depth_wt
-_Tiefe (m ab Terrainoberfläche) des Grundwasserspiegels._
-_Datentyp:  float_
-
-
-
-
-
-#### Attribute azimuth
-_Fallrichtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad (0° 359°) im Uhrzeigersinn gemessen._
-_Datentyp:  integer_
-
-
-
-
-
-#### Attribute dip
-_Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die
-Vertikale (90°)._
-_Datentyp:  integer_
-
-
-
-
-
-#### Attribute ref_number
-_Bohrungs-ID der Objektart in einem zusätzlichen Dokument (Erläuterungen, ...)._
-_Datentyp:  integer_
-
-
-
-
-
-#### Attribute link
-_Objektnummer in der Datenbank von INFOGEOL._
-_Datentyp:  integer_
-
-
-
-
-
-### Class Artificial_Surface_Modifications_PLG {#artificial-surface-modifications-plg}
-Die Klasse [Artificial_Surface_Modifications_PLG](#artificial-surface-modifications-plg) enthält bedeutende künstliche Veränderungen
-des Geländes (Golfplatz, Skigebiet, etc.), die zur Folge haben, dass das ursprüngliche Relief nicht
-mehr zu erkennen ist, was bei einer geomorphologischen Deutung zu falschen Schlüssen führen könnte.
-
-
-
-
-    | Name                         | Type                              | Description
-----|------------------------------|-----------------------------------|--------------------------------------
-1 | **kind**                | subtype                                    | Objektart
-[]()           | Cardinality [1] | 10401                                       |
-
-
-
-
-
-#### Attribute kind
-_Objektart_
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|10401001 | Aart künstlich verändertes Gelände | Aart künstlich verändertes Gelände     |
-|10401002 | Aart künstliche Ablagerung, undifferenziert | Aart künstliche Ablagerung, undifferenziert     |
-|10401003 | Aart Aufschüttung, Damm | Aart Aufschüttung, Damm     |
-|10401004 | Aart Auffüllung | Aart Auffüllung     |
-|10401005 | Aart Deponie | Aart Deponie     |
-|10401006 | Aart Halde | Aart Halde     |
-
-
-
-
-
-
-
-
-## Theme HYDROGEOLOGY
-
-### Class Construction_PT {#construction-pt}
-Die Klasse [Construction_PT](#construction-pt) beinhaltet Wasserbauten wie Grundwasserfassungen und Zisternen.
-Desweiteren kommen in dieser Klasse auch Messgeräte wie Piezometer und Limnigraphen vor.
-
-
-
-
-    | Name                         | Type                              | Description
-----|------------------------------|-----------------------------------|--------------------------------------
-1 | **kind**                | subtype                                    | Objektart
-[]()           | Cardinality [1] | 12101                                       |
-2 | **status**                | [CodedDomain](#construction-pt-status)                    | Zustand der Objektart.
-[]()           | Cardinality [0..1] |                                                      |
-3 | **epoch**                | [CodedDomain](#construction-pt-epoch)                    | Epoche der Erbauung der Objektart.
-[]()           | Cardinality [0..1] |                                                      |
-4 | **depth**                | float                                    | Tiefe der Objektart (m ab Terrainoberfläche).
-[]()           | Cardinality [0..1] |                                        |
-5 | **depth_wt**                | float                                    | Tiefe (m ab Terrainoberfläche) des Grundwasserspiegels (Mittelwert).
-[]()           | Cardinality [0..1] |                                        |
-6 | **mea_period**                | range                                    | Messperiode.
-[]()           | Cardinality [0..1] |                                        |
-
-
-
-
-
-#### Attribute kind
-_Objektart_
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|12101001 | Hcon Grundwasserfassung | Hcon Grundwasserfassung     |
-|12101002 | Hcon Zisterne | Hcon Zisterne     |
-|12101003 | Hcon laufender Brunnen (in wasserarmem Gebiet) | Hcon laufender Brunnen (in wasserarmem Gebiet)     |
-|12101004 | Hcon Sodbrunnen | Hcon Sodbrunnen     |
-|12101005 | Hcon Versickerungsschacht | Hcon Versickerungsschacht     |
-|12101006 | Hcon Limnigraph | Hcon Limnigraph     |
-|12101007 | Hcon Piezometer | Hcon Piezometer     |
-
-
-
-
-#### Attribute status {#construction-pt-status}
-_Zustand der Objektart._
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|12102001 | in Betrieb | in Betrieb     |
-|12102002 | stillgelegt | stillgelegt     |
-|999997 | Unknown | Unknown     |
-|999998 | Not applicable | Not applicable     |
-
-
-
-
-#### Attribute epoch {#construction-pt-epoch}
-_Epoche der Erbauung der Objektart._
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|12103001 | Mittelalter | Mittelalter     |
-|12103003 | prähistorisch | prähistorisch     |
-|12103002 | Römerzeit | Römerzeit     |
-|999997 | Unknown | Unknown     |
-|999998 | Not applicable | Not applicable     |
-
-
-
-
-#### Attribute depth
-_Tiefe der Objektart (m ab Terrainoberfläche)._
-_Datentyp:  float_
-
-
-
-
-
-#### Attribute depth_wt
-_Tiefe (m ab Terrainoberfläche) des Grundwasserspiegels (Mittelwert)._
-_Datentyp:  float_
-
-
-
-
-
-#### Attribute mea_period
-_Messperiode._
-_Datentyp:  range_
-
-
-
-
-
-### Class Construction_L {#construction-l}
-Die Klasse [Construction_L](#construction-l) enthält linienförmige Wasserbauten wie den Wasserfassungsstollen,
-welcher mit Objektarten der Klasse [Surface_Water_PT](#surface-water-pt) kombiniert werden kann.
-
-
-
-
-    | Name                         | Type                              | Description
-----|------------------------------|-----------------------------------|--------------------------------------
-1 | **kind**                | subtype                                    | Objektart
-[]()           | Cardinality [1] | 12201                                       |
-2 | **combi**                | [CodedDomain](#construction-l-combi)                    | Objektart einer anderen Klasse, die mit der Objektart in Kombination vorkommen kann
-[]()           | Cardinality [0..1] |                                                      |
-
-
-
-
-
-#### Attribute kind
-_Objektart_
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|12201001 | Hcon Wasserfassungsstollen | Hcon Wasserfassungsstollen     |
-|12201002 | Hcon künstlicher Gewässerlauf | Hcon künstlicher Gewässerlauf     |
-
-
-
-
-#### Attribute combi {#construction-l-combi}
-_Objektart einer anderen Klasse, die mit der Objektart in Kombination vorkommen kann_
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|12202002 | mit gefasster Mineralquelle (orientiert) in Stollen | mit gefasster Mineralquelle (orientiert) in Stollen     |
-|12202003 | mit gefasster Thermalquelle (orientiert) in Stollen | mit gefasster Thermalquelle (orientiert) in Stollen     |
-|12202001 | mit Quellfassung (orientiert) in Stollen | mit Quellfassung (orientiert) in Stollen     |
-|999997 | Unknown | Unknown     |
-|999998 | Not applicable | Not applicable     |
-
-
-
-
-### Class Palaeohydrology_L {#palaeohydrology-l}
-In der Klasse [Palaeohydrology_L](#palaeohydrology-l) befinden sich alle linienförmigen Objektarten, welche einen
-gewissen Bezug zu einem ehemaligen Gewässer aufweisen.
-
-
-
-
-    | Name                         | Type                              | Description
-----|------------------------------|-----------------------------------|--------------------------------------
-1 | **kind**                | subtype                                    | Objektart
-[]()           | Cardinality [1] | 12301                                       |
-2 | **rel_age**                | [CodedDomain](#palaeohydrology-l-rel-age)                    | Relatives Alter der Objektart
-[]()           | Cardinality [0..1] |                                                      |
-3 | **chrono**                | table                                    | Chronostratigraphische Zuordnung.
-[]()           | Cardinality [0..1] | gc_chrono                                       |
-4 | **ref_year**                | integer                                    | Referenzjahr der ehemaligen Uferlinie.
-[]()           | Cardinality [1] |                                        |
-5 | **source**                | string                                    | Datenquelle der historischen Unterlagen.
-[]()           | Cardinality [0..1] |                                        |
-
-
-
-
-
-#### Attribute kind
-_Objektart_
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|12301001 | Hpal Paläotal | Hpal Paläotal     |
-|12301002 | Hpal ehemalige Entwässerungsrinne | Hpal ehemalige Entwässerungsrinne     |
-|12301004 | Hpal Trockental | Hpal Trockental     |
-|12301005 | Hpal ehemaliges Bachbett | Hpal ehemaliges Bachbett     |
-|12301006 | Hpal Ufer eines ehemaligen Flussbetts | Hpal Ufer eines ehemaligen Flussbetts     |
-|12301007 | Hpal ehemalige Uferlinie | Hpal ehemalige Uferlinie     |
-|12301003 | Hpal ehemalige glaziale Abflussrinne | Hpal ehemalige glaziale Abflussrinne     |
-
-
-
-
-#### Attribute rel_age {#palaeohydrology-l-rel-age}
-_Relatives Alter der Objektart_
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|12302002 | älter als die Jüngste | älter als die Jüngste     |
-|12302003 | älter als die Zweitjüngste | älter als die Zweitjüngste     |
-|12302001 | die Jüngste oder Einzige | die Jüngste oder Einzige     |
-|999997 | Unknown | Unknown     |
-|999998 | Not applicable | Not applicable     |
-
-
-
-
-#### Attribute chrono
-_Chronostratigraphische Zuordnung._
-
-
-
-
-#### Attribute ref_year
-_Referenzjahr der ehemaligen Uferlinie._
-_Datentyp:  integer_
-
-
-
-
-
-#### Attribute source
-_Datenquelle der historischen Unterlagen._
-_Datentyp:  string_
-
-
-
-
-
-### Class Subsurface_Water_L {#subsurface-water-l}
-In der Klasse [Subsurface_Water_L](#subsurface-water-l) befinden sich linienförmigen Objektarten, welche einen
-unterirdischen Gewässerlauf anzeigen.
-
-Der genaue Verlauf des unterirdischen Gewässerlaufes ist in fast jedem Fall vermutet, mit
-wenigen Ausnahmen von erforschten Höhlensystemen. Liegen Färbversuche vor, so werden diese
-in den Erläuterungen erwähnt, sofern diese existieren. Der unterirdische Gewässerlauf
-kann mit Objeken aus der Klasse [Surface_Water_PT](#surface-water-pt) kombiniert werden.
-
-
-
-
-    | Name                         | Type                              | Description
-----|------------------------------|-----------------------------------|--------------------------------------
-1 | **kind**                | subtype                                    | Objektart
-[]()           | Cardinality [1] | 12401                                       |
-2 | **combi**                | [CodedDomain](#subsurface-water-l-combi)                    | Objektart einer anderen Klasse, die mit der Objektart in Kombination vorkommen kann
-[]()           | Cardinality [0..1] |                                                      |
-
-
-
-
-
-#### Attribute kind
-_Objektart_
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|12401001 | Hsub unterirdischer Gewässerlauf | Hsub unterirdischer Gewässerlauf     |
-
-
-
-
-#### Attribute combi {#subsurface-water-l-combi}
-_Objektart einer anderen Klasse, die mit der Objektart in Kombination vorkommen kann_
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|12402001 | mit Versickerungsstelle eines Baches | mit Versickerungsstelle eines Baches     |
-|12402002 | mit Wiederaustritt eines unterirdischen Bachlaufes | mit Wiederaustritt eines unterirdischen Bachlaufes     |
-|999997 | Unknown | Unknown     |
-|999998 | Not applicable | Not applicable     |
-
-
-
-
-### Class Surface_Water_PT {#surface-water-pt}
-Die Klasse [Surface_Water_PT](#surface-water-pt) umfasst lokal (punktuell) beobachtete Oberflächengewässer, wie
-natürliche Wasseraustritts- und Versickerungsstellen. Zudem befindet sich die Objektart Steilstufe
-in Bachrinne, Wasserfall in dieser Klasse, die eine spezielle Stelle in Fliessgewässern markiert und
-die durch die darunterliegende Geologie bedingt ist.
-Eine Quelle wird als «Thermalquelle» bezeichnet, wenn das Wasser eine mittlere Jahrestem-
-20°C aufweist. Für diesen Quelltyp ist das Attribut «Temp» vorgesehen und
-beschränkt sich i.d.R. auf die mittlere Wassertemperatur. Deshalb wird für dieses Attribut auch
-kein Datum einer Analyse angegeben. Um eine Mineralquelle handelt es sich bei einer Quelle mit
-einer Mineralkonzentration 1g / l Wasser oder einer CO2- 250 mg / l Wasser.
-Für diesen Quelltyp ist das Attribut «Chemistry» vorgesehen. D.h. unter diesem Attribut wird das
-charakteristische chemische Element im Mineralwasser angegeben und nicht die komplette
-Wasserchemie.
-
-
-
-
-    | Name                         | Type                              | Description
-----|------------------------------|-----------------------------------|--------------------------------------
-1 | **kind**                | subtype                                    | Objektart
-[]()           | Cardinality [1] | 12501                                       |
-2 | **status**                | [CodedDomain](#surface-water-pt-status)                    | Zustand der Objektart.
-[]()           | Cardinality [0..1] |                                                      |
-3 | **flow_con**                | [CodedDomain](#surface-water-pt-flow-con)                    | Wasserfluss Bedingungen.
-[]()           | Cardinality [0..1] |                                                      |
-4 | **type**                | [CodedDomain](#surface-water-pt-type)                    | Charakteristik der Objektart
-[]()           | Cardinality [0..1] |                                                      |
-5 | **dis_loca**                | [CodedDomain](#surface-water-pt-dis-loca)                    | Ort des Wasserausflusses.
-[]()           | Cardinality [0..1] |                                                      |
-6 | **combi**                | [CodedDomain](#surface-water-pt-combi)                    | Objektart einer anderen Klasse, die mit der Objektart in Kombination vorkommen kann
-[]()           | Cardinality [0..1] |                                                      |
-7 | **temp**                | integer                                    | Mittlere Wassertemperatur (°C).
-[]()           | Cardinality [0..1] |                                        |
-8 | **chemistry**                | string                                    | Charakteristisches chemisches Element im Mineralwasser (z.B. Fe).
-[]()           | Cardinality [0..1] |                                        |
-9 | **azimuth**                | integer                                    | Richtung (Azimut) der jeweiligen Punktobjektart. Wert in
-Grad (0° 359°) im Uhrzeigersinn gemessen.
-[]()           | Cardinality [0..1] |                                        |
-
-
-
-
-
-#### Attribute kind
-_Objektart_
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|12501001 | Hsur Quelle | Hsur Quelle     |
-|12501002 | Hsur diffuse Quelle | Hsur diffuse Quelle     |
-|12501003 | Hsur Wiederaustritt eines unterirdischen Bachlaufes | Hsur Wiederaustritt eines unterirdischen Bachlaufes     |
-|12501004 | Hsur Versickerungsstelle eines Baches | Hsur Versickerungsstelle eines Baches     |
-|12501005 | Hsur Steilstufe in Bachrinne, Wasserfall | Hsur Steilstufe in Bachrinne, Wasserfall     |
-|12501006 | Hsur Grundwasseraufstoss | Hsur Grundwasseraufstoss     |
-
-
-
-
-#### Attribute status {#surface-water-pt-status}
-_Zustand der Objektart._
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|12502001 | gefasst | gefasst     |
-|12502002 | nicht gefasst | nicht gefasst     |
-|999997 | Unknown | Unknown     |
-|999998 | Not applicable | Not applicable     |
-
-
-
-
-#### Attribute flow_con {#surface-water-pt-flow-con}
-_Wasserfluss Bedingungen._
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|12503001 | perennierend | perennierend     |
-|12503002 | temporär | temporär     |
-|12503003 | versiegt | versiegt     |
-|999997 | Unknown | Unknown     |
-|999998 | Not applicable | Not applicable     |
-
-
-
-
-#### Attribute type {#surface-water-pt-type}
-_Charakteristik der Objektart_
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|12504001 | Karstquelle | Karstquelle     |
-|12504002 | Mineralquelle | Mineralquelle     |
-|12504003 | Thermalquelle | Thermalquelle     |
-|999997 | Unknown | Unknown     |
-|999998 | Not applicable | Not applicable     |
-
-
-
-
-#### Attribute dis_loca {#surface-water-pt-dis-loca}
-_Ort des Wasserausflusses._
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|12505002 | in Stollen | in Stollen     |
-|999997 | Unknown | Unknown     |
-|999998 | Not applicable | Not applicable     |
-
-
-
-
-#### Attribute combi {#surface-water-pt-combi}
-_Objektart einer anderen Klasse, die mit der Objektart in Kombination vorkommen kann_
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|12506002 | mit unterirdischem Gewässerlauf | mit unterirdischem Gewässerlauf     |
-|12506001 | mit Wasserfassungsstollen | mit Wasserfassungsstollen     |
-|999997 | Unknown | Unknown     |
-|999998 | Not applicable | Not applicable     |
-
-
-
-
-#### Attribute temp
-_Mittlere Wassertemperatur (°C)._
-_Datentyp:  integer_
-
-
-
-
-
-#### Attribute chemistry
-_Charakteristisches chemisches Element im Mineralwasser (z.B. Fe)._
-_Datentyp:  string_
-
-
-
-
-
-#### Attribute azimuth
-_Richtung (Azimut) der jeweiligen Punktobjektart. Wert in
-Grad (0° 359°) im Uhrzeigersinn gemessen._
-_Datentyp:  integer_
-
-
-
-
-
-### Class Surface_Water_L {#surface-water-l}
-In der Klasse [Surface_Water_L](#surface-water-l) sind linienförmige Oberflächengewässer (Quellhorizonte)
-beschrieben.
-
-
-
-
-    | Name                         | Type                              | Description
-----|------------------------------|-----------------------------------|--------------------------------------
-1 | **kind**                | subtype                                    | Objektart
-[]()           | Cardinality [1] | 12601                                       |
-
-
-
-
-
-#### Attribute kind
-_Objektart_
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|12601001 | Hsur Quellhorizont | Hsur Quellhorizont     |
-|12601002 | Hsur Bachlauf | Hsur Bachlauf     |
-
-
-
-
-### Class Surface_Water_PLG {#surface-water-plg}
-Die Klasse [Surface_Water_PLG](#surface-water-plg) beinhaltet oberflächliche Wasserspeicher wie Gletscher, Seen und
-Flüsse, welche geologische Einheiten bedecken und oftmals eine Interpretation der darunter-
-liegenden Geologie verunmöglichen. Das vollständige Gewässernetz ist nicht Teil des Daten-
-modells Geologie
-
-
-
-
-    | Name                         | Type                              | Description
-----|------------------------------|-----------------------------------|--------------------------------------
-1 | **kind**                | subtype                                    | Objektart
-[]()           | Cardinality [1] | 12701                                       |
-
-
-
-
-
-#### Attribute kind
-_Objektart_
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-|12701001 | Hsur Gletscher | Hsur Gletscher     |
-|12701002 | Hsur See | Hsur See     |
-|12701003 | Hsur Fluss | Hsur Fluss     |
-
-
-
-
-
-
-
-
-## Theme META_DATA
-
-### Class Mapsheet {#mapsheet}
-Die Klasse [Mapsheet](#mapsheet) ist eine geometrielose Klasse. Sie beinhaltet alle Metadaten zur Objektart
-(Kartengrundlage). Neben der Kartenart sind Angaben wie der Titel, Massstab, Autor, Datenherr,
-Publikationsjahr und über die öffentliche Verfügbarkeit der Karte grundlegend. Verfügt die Karte
-(wie z.B. die Karten der Landesgeologie) über eine Kartennummer, kann dies bei «Map_Nbr»
-angegeben werden, während bei «Mapping_Period» die Zeitspanne der Datenaufnahme
-(Kartierung) erfasst wird. Das Attribut «Basis_Topo» beschreibt die topographische Grundlage
-und «Basis_Vect» den Vektordatensatz.
-
-
-
-
-    | Name                         | Type                              | Description
-----|------------------------------|-----------------------------------|--------------------------------------
-1 | **kind**                | subtype                                    | Objektart
-[]()           | Cardinality [1] | 15410                                       |
-2 | **map_title**                | string                                    | Originaltitel (Kartentitel) der Objektart.
-[]()           | Cardinality [1] |                                        |
-3 | **map_nbr**                | integer                                    | Originalnummer (Kartennummer) der Objektart.
-[]()           | Cardinality [0..1] |                                        |
-4 | **map_scale**                | string                                    | Massstab der Objektart (Kartenmassstab).
-[]()           | Cardinality [1] |                                        |
-5 | **basis_topo**                |                                     | Angabe zur topographischen Grundlage der Objektart.
-Wird vor allem bei Karten der Landesgeologie angegeben.
-[]()           | Cardinality [0..1] |                                        |
-6 | **author**                | string                                    | Autor oder Autoren der Objektart.
-[]()           | Cardinality [1..*] |                                        |
-7 | **owner**                | string                                    | Angabe zum Datenherr / zu den Datenherren der Objektart.
-[]()           | Cardinality [1..*] |                                        |
-8 | **map_period**                | string                                    | Angabe zum Kartierzeitraum der Objektart.
-[]()           | Cardinality [0..1] |                                        |
-9 | **publ_year**                | integer                                    | Publikationsjahr der Objektart.
-[]()           | Cardinality [1] |                                        |
-10 | **basis_vect**                | string                                    | Grundlage Vektordatensatz.
-[]()           | Cardinality [0..1] |                                        |
-11 | **restriction**                | boolean                                    | Angabe darüber, ob die Objektart öffentlich verfügbar ist (ja) oder einer Beschränkung (nein) unterliegt
-[]()           | Cardinality [1] |                                        |
-
-
-
-
-
-#### Attribute kind
-_Objektart_
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-
-
-
-
-#### Attribute map_title
-_Originaltitel (Kartentitel) der Objektart._
-_Datentyp:  string_
-
-
-
-
-
-#### Attribute map_nbr
-_Originalnummer (Kartennummer) der Objektart._
-_Datentyp:  integer_
-
-
-
-
-
-#### Attribute map_scale
-_Massstab der Objektart (Kartenmassstab)._
-_Datentyp:  string_
-
-
-
-
-
-#### Attribute basis_topo
-_Angabe zur topographischen Grundlage der Objektart.
-Wird vor allem bei Karten der Landesgeologie angegeben._
-
-
-
-
-#### Attribute author
-_Autor oder Autoren der Objektart._
-_Datentyp:  string_
-
-
-
-
-
-#### Attribute owner
-_Angabe zum Datenherr / zu den Datenherren der Objektart._
-_Datentyp:  string_
-
-
-
-
-
-#### Attribute map_period
-_Angabe zum Kartierzeitraum der Objektart._
-_Datentyp:  string_
-
-
-
-
-
-#### Attribute publ_year
-_Publikationsjahr der Objektart._
-_Datentyp:  integer_
-
-
-
-
-
-#### Attribute basis_vect
-_Grundlage Vektordatensatz._
-_Datentyp:  string_
-
-
-
-
-
-#### Attribute restriction
-_Angabe darüber, ob die Objektart öffentlich verfügbar ist (ja) oder einer Beschränkung (nein) unterliegt_
-_Datentyp:  boolean_
-
-
-
-
 
 

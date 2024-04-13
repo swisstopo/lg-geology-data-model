@@ -72,6 +72,7 @@ class Report:
 
     def to_json(self):
         model = self.model.copy()
+        
         for theme in model["themes"]:
             for cls in theme.get("classes"):
                 attributes = cls.get("attributes")
@@ -82,6 +83,7 @@ class Report:
                         pairs = None
 
                         if att_type == "CD" and value is not None:
+                            
                             pairs = get_coded_values(value)
 
                         if att_type == "subtype" and value is not None:
@@ -89,6 +91,11 @@ class Report:
 
                         if pairs is not None:
                             att["pairs"] = pairs
+        for annex in model.get('annexes'):
+            pairs = get_coded_values(annex.get('name'))
+            annex["pairs"] = pairs
+                            
+        
         return model
 
     def to_markdown(self):
@@ -160,6 +167,7 @@ if __name__ == "__main__":
 
     project_name = Path(yaml_file).stem
     model = Report(yaml_file)
+    
 
     # model.to_markdown()
 

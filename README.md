@@ -69,5 +69,17 @@ Sur Linux...
 
 ..ou sur Windows:
 
+<<<<<<< HEAD
     C:\LegacySW\pandoc-3.1.13\pandoc.exe -s -V papersize:a4 --number-sections --shift-heading-level-by=-1
      --metadata-file=metadata.yaml  --variable mainfont="DejaVu Sans"  -o datamodel.docx datamodel.md
+=======
+Pour HTML
+
+        pandoc -s  --toc \
+                  --number-sections   \
+                  --shift-heading-level-by=-1 \
+                  --css datamodel.css \
+                  --metadata-file=metadata.yaml  \
+                  --variable mainfont="Sans" \
+                  -o datamodel.html datamodel.md
+>>>>>>> 284afae91a6c01da90b8812f7f6f4ab1e52b8f4d
