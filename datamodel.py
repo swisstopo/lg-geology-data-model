@@ -25,6 +25,19 @@ df = pd.read_csv("../data/GeolCodeText_Trad_230317.csv", sep=";")
 df = df.set_index(["GeolCodeInt"])
 
 
+def translate(geol_code, lang="FR"):
+    msg = ""
+    if lang in ("DE", "FR"):
+        try:
+            msg = df.loc[int(geol_code)]["FR"]
+        except KeyError as ke:
+            logger.error(f"GeolCode not found while translating '{geol_code}': {ke}")
+        except Exception as ke:
+            logger.error(f"Unknown error while translating '{geol_code}': {e}")
+
+    return msg
+
+
 def get_coded_values(value):
     if value in domains.keys():
         domain = domains.get(value)
@@ -72,7 +85,7 @@ class Report:
 
     def to_json(self):
         model = self.model.copy()
-        
+
         for theme in model["themes"]:
             for cls in theme.get("classes"):
                 attributes = cls.get("attributes")
@@ -83,7 +96,6 @@ class Report:
                         pairs = None
 
                         if att_type == "CD" and value is not None:
-                            
                             pairs = get_coded_values(value)
 
                         if att_type == "subtype" and value is not None:
@@ -91,11 +103,10 @@ class Report:
 
                         if pairs is not None:
                             att["pairs"] = pairs
-        for annex in model.get('annexes'):
-            pairs = get_coded_values(annex.get('name'))
+        for annex in model.get("annexes"):
+            pairs = get_coded_values(annex.get("name"))
             annex["pairs"] = pairs
-                            
-        
+
         return model
 
     def to_markdown(self):
@@ -167,7 +178,6 @@ if __name__ == "__main__":
 
     project_name = Path(yaml_file).stem
     model = Report(yaml_file)
-    
 
     # model.to_markdown()
 
@@ -206,6 +216,7 @@ if __name__ == "__main__":
 
     env.filters["slugify"] = slugify
     env.filters["highlight"] = highlight
+    env.filters["tr"] = translate
     temp = env.get_template("model_markdown.j2")
     # temp.render(data)
 

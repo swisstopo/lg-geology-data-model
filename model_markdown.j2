@@ -60,7 +60,7 @@ Siehe die CodedDomain [{{attr.value}}](#{{attr.value| slugify}}) in Ahhang
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
 {% for key, value in attr.pairs.items() -%}
-|{{key}} | {{value}} | {{value}}     |
+|{{key}} | {{value}} | {{key|tr}}     |
 {% endfor %}
 {% endif %}
 
@@ -79,7 +79,7 @@ Siehe die CodedDomain [{{attr.value}}](#{{attr.value| slugify}}) in Ahhang
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
 {% for key, value in annex.pairs.items() -%}
-|{{key}} | {{value}} | {{value}}     |
+|{{key}} | {{value}} | {{key|tr}}     |
 {% endfor %}
 {% endif %}
 {% endfor %}
