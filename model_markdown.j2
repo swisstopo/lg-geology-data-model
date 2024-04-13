@@ -31,9 +31,9 @@
 ----|------------------------------|-----------------------------------|--------------------------------------
 {% for attr in cls.attributes -%}
 {%- if attr.att_type == 'CD' -%}{% set slug = "%s-%s" % (cls.name, attr.name) -%}
-{%- elif attr.att_type == 'annex' -%}{% set slug = attr.value %}{%- else -%}{% set slug = None %}{% endif -%}
+{%- elif attr.att_type == 'annex' -%}{% set slug, location = attr.value, 'vgl. Anhang %s' % attr.value %}{%- else -%}{% set slug = None %}{% endif -%}
 {%- if slug != None -%}
-{{loop.index}} | **{{ attr.name  }}**                | [CodedDomain](#{{slug| slugify}})                    | {{ attr.description|trim }}
+{{loop.index}} | **{{ attr.name  }}**                | [CodedDomain](#{{slug| slugify}}) {{ location }}   | {{ attr.description|trim }}
 []()           | Cardinality [{{ attr.cardinality}}] |                                                      |
 {% else -%}
 {{loop.index}} | **{{ attr.name  }}**                | {{attr.att_type}}                                    | {{ attr.description|trim }}
@@ -73,6 +73,7 @@ Siehe die CodedDomain [{{attr.value}}](#{{attr.value| slugify}}) in Ahhang
 
 
 ## Anhang {{ annex.name |upper}} {{ '{#'}}{{annex.name | slugify}}{{'}'}}
+{{ annex.description }}
 
 {% if 'pairs' in annex -%}
 |GeolCode|Deutsch|Français|

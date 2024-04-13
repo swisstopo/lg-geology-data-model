@@ -1468,9 +1468,19 @@ themes:
             
 annexes:
     - name: GC_LITSTRAT_BED_CD
+      description: Wertetabelle der lithostratigraphischen Einheiten
     - name: GC_LITSTRAT_UNCO_CD
+      description: Wertetabelle der lithostratigraphischen Einheiten
     - name: GC_LITHO_CD
+      description: |
+          Wertetabellen der lithologischen Beschreibung
     - name: GC_LITHO_UNCO_CD
+      description: |
+          Wertetabellen der lithologischen Beschreibung
+
     - name: GC_CHRONO_CD
+      description: Wertetabelle der chronostratigraphischen Einheiten
     - name: GC_TECTO_CD
+      description: Wertetabelle der tektonischen Einheiten
     - name: GC_MINERAL_CD
+      description: -todo-
