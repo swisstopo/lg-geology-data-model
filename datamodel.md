@@ -26,13 +26,13 @@ Die Klasse [Unconsolidated_Deposits_PT](#unconsolidated-deposits-pt) umfasst ein
 ----|------------------------------|-----------------------------------|--------------------------------------
 1 | **kind**                | subtype                                    | Objektart
 []()           | Cardinality [1] | 14401                                       |
-2 | **status**                | [CodedDomain](#unconsolidated-deposits-pt-status)                    | Zustand der Objektart
+2 | **status**                | [CodedDomain](#unconsolidated-deposits-pt-status)  | Zustand der Objektart. 
 []()           | Cardinality [1] |                                                      |
-3 | **rock_type**                | [CodedDomain](#unconsolidated-deposits-pt-rock-type)                    | Gesteinstyp (Kristallingestein / Sedimentgestein)
+3 | **rock_type**                | [CodedDomain](#unconsolidated-deposits-pt-rock-type)  | Gesteinstyp (Kristallingestein / Sedimentgestein). 
 []()           | Cardinality [0..1] |                                                      |
-4 | **rock_spe**                | [CodedDomain](#unconsolidated-deposits-pt-rock-spe)                    | Bezeichnung des Leitgesteins
+4 | **rock_spe**                | [CodedDomain](#unconsolidated-deposits-pt-rock-spe)  | Bezeichnung des Leitgesteins. 
 []()           | Cardinality [0..1] |                                                      |
-5 | **mat_type**                | [CodedDomain](#gc-litho-unco-cd)                    | Materialbezeichnung (lithologische Einheit)
+5 | **mat_type**                | [CodedDomain](#gc-litho-unco-cd)  | Materialbezeichnung (lithologische Einheit). Die möglichen Werte sind in der Tabelle GC_LITHO_UNCO_CD im Anhang dieses Dokumentes verfügbar.
 []()           | Cardinality [0..1] |                                                      |
 6 | **orig_descr**                | string                                    | Originalbezeichnung gemäss der Legende der zugrundeliegenden geologischen Karte
 []()           | Cardinality [0..1] |                                        |
@@ -128,7 +128,7 @@ _Bezeichnung des Leitgesteins_
 
 #### Attribute mat_type
 _Materialbezeichnung (lithologische Einheit)_
-See CodedDomain [GC_LITHO_UNCO_CD](#gc-litho-unco-cd) in Ahhang
+Siehe die CodedDomain [GC_LITHO_UNCO_CD](#gc-litho-unco-cd) in Ahhang
 
 
 
@@ -171,13 +171,13 @@ Fallbeispiele abgebildet.
 ----|------------------------------|-----------------------------------|--------------------------------------
 1 | **kind**                | subtype                                    | Objektart
 []()           | Cardinality [1] | 14517                                       |
-2 | **litstrat**                | [CodedDomain](#gc-litstrat-unco-cd)                    | 
+2 | **litstrat**                | [CodedDomain](#gc-litstrat-unco-cd)  | . Die möglichen Werte sind in der Tabelle GC_LITSTRAT_UNCO_CD im Anhang dieses Dokumentes verfügbar.
 []()           | Cardinality [1] |                                                      |
-3 | **litho**                | [CodedDomain](#gc-litho-cd)                    | 
+3 | **litho**                | [CodedDomain](#gc-litho-cd)  | . Die möglichen Werte sind in der Tabelle GC_LITHO_CD im Anhang dieses Dokumentes verfügbar.
 []()           | Cardinality [1..3] |                                                      |
-4 | **chrono_t**                | [CodedDomain](#gc-chrono-cd)                    | 
+4 | **chrono_t**                | [CodedDomain](#gc-chrono-cd)  | . Die möglichen Werte sind in der Tabelle GC_CHRONO_CD im Anhang dieses Dokumentes verfügbar.
 []()           | Cardinality [1] |                                                      |
-5 | **chrono_b**                | [CodedDomain](#gc-chrono-cd)                    | 
+5 | **chrono_b**                | [CodedDomain](#gc-chrono-cd)  | . Die möglichen Werte sind in der Tabelle GC_CHRONO_CD im Anhang dieses Dokumentes verfügbar.
 []()           | Cardinality [1] |                                                      |
 6 | **mat_type**                |                                     | 
 []()           | Cardinality [0..3] | Lithostratigraphic_Units_Litho                                       |
@@ -187,17 +187,17 @@ Fallbeispiele abgebildet.
 []()           | Cardinality [0..3] | gc_composit                                       |
 9 | **admixture**                | table                                    | 
 []()           | Cardinality [0..2] | gc_admixture                                       |
-10 | **structur**                | [CodedDomain](#unconsolidated-deposits-plg-structur)                    | Textur des Lockergesteins
+10 | **structur**                | [CodedDomain](#unconsolidated-deposits-plg-structur)  | Textur des Lockergesteins. 
 []()           | Cardinality [0..1] |                                                      |
 11 | **charact**                | table                                    | Spezifische Eigenschaft
 []()           | Cardinality [0..3] | gc_charcat                                       |
-12 | **morpholo**                | [CodedDomain](#unconsolidated-deposits-plg-morpholo)                    | Morphologie der Lockergesteinseinheit
+12 | **morpholo**                | [CodedDomain](#unconsolidated-deposits-plg-morpholo)  | Morphologie der Lockergesteinseinheit. 
 []()           | Cardinality [0..1] |                                                      |
-13 | **glac_type**                | [CodedDomain](#unconsolidated-deposits-plg-glac-type)                    | Gletschertyp; Attribut nur für Moränen
+13 | **glac_type**                | [CodedDomain](#unconsolidated-deposits-plg-glac-type)  | Gletschertyp; Attribut nur für Moränen. 
 []()           | Cardinality [0..1] |                                                      |
 14 | **ref_year**                | string                                    | Zeitpunkt oder Zeitperiode. Zum Beispiel «1940 1943, Periode der Drainage» (muss präzisiert werden)
 []()           | Cardinality [0..1] |                                        |
-15 | **thin_cover**                | [CodedDomain](#unconsolidated-deposits-plg-thin-cover)                    | Lockermaterialbedeckung, wenn vorhanden.
+15 | **thin_cover**                | [CodedDomain](#unconsolidated-deposits-plg-thin-cover)  | Lockermaterialbedeckung, wenn vorhanden.. 
 []()           | Cardinality [0..1] |                                                      |
 16 | **orig_descr**                |                                     | Originalbezeichnung gemäss der Legende der zugrundeliegenden geologischen Karte
 []()           | Cardinality [1] | string                                       |
@@ -218,7 +218,7 @@ _Objektart_
 
 #### Attribute litstrat
 __
-See CodedDomain [GC_LITSTRAT_UNCO_CD](#gc-litstrat-unco-cd) in Ahhang
+Siehe die CodedDomain [GC_LITSTRAT_UNCO_CD](#gc-litstrat-unco-cd) in Ahhang
 
 
 
@@ -226,7 +226,7 @@ See CodedDomain [GC_LITSTRAT_UNCO_CD](#gc-litstrat-unco-cd) in Ahhang
 
 #### Attribute litho
 __
-See CodedDomain [GC_LITHO_CD](#gc-litho-cd) in Ahhang
+Siehe die CodedDomain [GC_LITHO_CD](#gc-litho-cd) in Ahhang
 
 
 
@@ -234,7 +234,7 @@ See CodedDomain [GC_LITHO_CD](#gc-litho-cd) in Ahhang
 
 #### Attribute chrono_t
 __
-See CodedDomain [GC_CHRONO_CD](#gc-chrono-cd) in Ahhang
+Siehe die CodedDomain [GC_CHRONO_CD](#gc-chrono-cd) in Ahhang
 
 
 
@@ -242,7 +242,7 @@ See CodedDomain [GC_CHRONO_CD](#gc-chrono-cd) in Ahhang
 
 #### Attribute chrono_b
 __
-See CodedDomain [GC_CHRONO_CD](#gc-chrono-cd) in Ahhang
+Siehe die CodedDomain [GC_CHRONO_CD](#gc-chrono-cd) in Ahhang
 
 
 
@@ -389,15 +389,15 @@ Die Klasse [Bedrock_PLG](#bedrock-plg) enthält alle flächenbildenden lithostra
 []()           | Cardinality [1] | 14334001                                       |
 2 | **fm_homog**                |                                     | Gesteinsaufbau
 []()           | Cardinality [] |                                        |
-3 | **listrat**                | [CodedDomain](#gc-litstrat-bed-cd)                    | Lithostratigraphische Einhei
+3 | **listrat**                | [CodedDomain](#gc-litstrat-bed-cd)  | Lithostratigraphische Einhei. Die möglichen Werte sind in der Tabelle GC_LITSTRAT_BED_CD im Anhang dieses Dokumentes verfügbar.
 []()           | Cardinality [1] |                                                      |
-4 | **litho**                | [CodedDomain](#gc-litho-cd)                    | Lithologische Beschreibung
+4 | **litho**                | [CodedDomain](#gc-litho-cd)  | Lithologische Beschreibung. Die möglichen Werte sind in der Tabelle GC_LITHO_CD im Anhang dieses Dokumentes verfügbar.
 []()           | Cardinality [1..3] |                                                      |
-5 | **chrono_t**                | [CodedDomain](#gc-chrono-cd)                    | Chronostratigraphische Zuordnung der Obergrenze der Kartiereinheit (Top)
+5 | **chrono_t**                | [CodedDomain](#gc-chrono-cd)  | Chronostratigraphische Zuordnung der Obergrenze der Kartiereinheit (Top). Die möglichen Werte sind in der Tabelle GC_CHRONO_CD im Anhang dieses Dokumentes verfügbar.
 []()           | Cardinality [1] |                                                      |
-6 | **chrono_b**                | [CodedDomain](#gc-chrono-cd)                    | Chronostratigraphische Zuordnung der Untergrenze der Kartiereinheit (Basis)
+6 | **chrono_b**                | [CodedDomain](#gc-chrono-cd)  | Chronostratigraphische Zuordnung der Untergrenze der Kartiereinheit (Basis). Die möglichen Werte sind in der Tabelle GC_CHRONO_CD im Anhang dieses Dokumentes verfügbar.
 []()           | Cardinality [1] |                                                      |
-7 | **tecto**                | [CodedDomain](#gc-tecto-cd)                    | Tektonische Zugehörigkeit
+7 | **tecto**                | [CodedDomain](#gc-tecto-cd)  | Tektonische Zugehörigkeit. Die möglichen Werte sind in der Tabelle GC_TECTO_CD im Anhang dieses Dokumentes verfügbar.
 []()           | Cardinality [1] |                                                      |
 8 | **orig_descr**                | string                                    | Originalbezeichnung gemäss der Legende der zugrundeliegenden geologischen Karte
 []()           | Cardinality [1] |                                        |
@@ -407,29 +407,29 @@ Die Klasse [Bedrock_PLG](#bedrock-plg) enthält alle flächenbildenden lithostra
 []()           | Cardinality [1] | boolean                                       |
 11 | **colour**                | string                                    | Farbe des Gesteins. Präzisieren ob es sich um die Bruchfarbe, die Verwitterungsfarbe, etc. handelt; z.B.Verwitterungsfarbe grau.
 []()           | Cardinality [0..1] |                                        |
-12 | **sedi_main_com**                | [CodedDomain](#bedrock-plg-sedi-main-com)                    | Hauptgesteinskomponente des klastischen Sedimentgesteins
+12 | **sedi_main_com**                | [CodedDomain](#bedrock-plg-sedi-main-com)  | Hauptgesteinskomponente des klastischen Sedimentgesteins. 
 []()           | Cardinality [0..1] |                                                      |
-13 | **sedi_seco_com**                | [CodedDomain](#bedrock-plg-sedi-seco-com)                    | Nebengesteinskomponente des Sedimentgesteins
+13 | **sedi_seco_com**                | [CodedDomain](#bedrock-plg-sedi-seco-com)  | Nebengesteinskomponente des Sedimentgesteins. 
 []()           | Cardinality [0..2] |                                                      |
-14 | **sedi_bond_mat**                | [CodedDomain](#bedrock-plg-sedi-bond-mat)                    | Bindemittel des Sedimentgesteins
+14 | **sedi_bond_mat**                | [CodedDomain](#bedrock-plg-sedi-bond-mat)  | Bindemittel des Sedimentgesteins. 
 []()           | Cardinality [0..1] |                                                      |
-15 | **sedi_bedding**                | [CodedDomain](#bedrock-plg-sedi-bedding)                    | Schichtung des Sedimentgesteins
+15 | **sedi_bedding**                | [CodedDomain](#bedrock-plg-sedi-bedding)  | Schichtung des Sedimentgesteins. 
 []()           | Cardinality [0..2] |                                                      |
-16 | **sedi_str**                | [CodedDomain](#bedrock-plg-sedi-str)                    | Textur des Sedimentgesteins
+16 | **sedi_str**                | [CodedDomain](#bedrock-plg-sedi-str)  | Textur des Sedimentgesteins. 
 []()           | Cardinality [0..2] |                                                      |
-17 | **sedi_tex**                | [CodedDomain](#bedrock-plg-sedi-tex)                    | Sedimentstruktur
+17 | **sedi_tex**                | [CodedDomain](#bedrock-plg-sedi-tex)  | Sedimentstruktur. 
 []()           | Cardinality [] |                                                      |
-18 | **igne_text**                | [CodedDomain](#bedrock-plg-igne-text)                    | Struktur des magmatischen Gesteins
+18 | **igne_text**                | [CodedDomain](#bedrock-plg-igne-text)  | Struktur des magmatischen Gesteins. 
 []()           | Cardinality [0..1] |                                                      |
-19 | **igne_grain_si**                | [CodedDomain](#bedrock-plg-igne-grain-si)                    | Korngrösse des magmatischen Gesteins
+19 | **igne_grain_si**                | [CodedDomain](#bedrock-plg-igne-grain-si)  | Korngrösse des magmatischen Gesteins. 
 []()           | Cardinality [0..1] |                                                      |
-20 | **igne_affinity**                | [CodedDomain](#bedrock-plg-igne-affinity)                    | Affinität zu einer magmatischen Serie.
+20 | **igne_affinity**                | [CodedDomain](#bedrock-plg-igne-affinity)  | Affinität zu einer magmatischen Serie.. 
 []()           | Cardinality [] |                                                      |
 21 | **meta_full_name**                | string                                    | Bezeichnung des metamorphen Gesteins
 []()           | Cardinality [0..1] |                                        |
-22 | **meta_mineral**                | [CodedDomain](#gc-mineral-cd)                    | Wichtiges Mineral des metamorphen Gesteins
+22 | **meta_mineral**                | [CodedDomain](#gc-mineral-cd)  | Wichtiges Mineral des metamorphen Gesteins. Die möglichen Werte sind in der Tabelle GC_MINERAL_CD im Anhang dieses Dokumentes verfügbar.
 []()           | Cardinality [0..3] |                                                      |
-23 | **meta_str**                | [CodedDomain](#bedrock-plg-meta-str)                    | Textur des metamorphen Gesteins
+23 | **meta_str**                | [CodedDomain](#bedrock-plg-meta-str)  | Textur des metamorphen Gesteins. 
 []()           | Cardinality [0..3] |                                                      |
 
 
@@ -454,7 +454,7 @@ _Gesteinsaufbau_
 
 #### Attribute listrat
 _Lithostratigraphische Einhei_
-See CodedDomain [GC_LITSTRAT_BED_CD](#gc-litstrat-bed-cd) in Ahhang
+Siehe die CodedDomain [GC_LITSTRAT_BED_CD](#gc-litstrat-bed-cd) in Ahhang
 
 
 
@@ -462,7 +462,7 @@ See CodedDomain [GC_LITSTRAT_BED_CD](#gc-litstrat-bed-cd) in Ahhang
 
 #### Attribute litho
 _Lithologische Beschreibung_
-See CodedDomain [GC_LITHO_CD](#gc-litho-cd) in Ahhang
+Siehe die CodedDomain [GC_LITHO_CD](#gc-litho-cd) in Ahhang
 
 
 
@@ -470,7 +470,7 @@ See CodedDomain [GC_LITHO_CD](#gc-litho-cd) in Ahhang
 
 #### Attribute chrono_t
 _Chronostratigraphische Zuordnung der Obergrenze der Kartiereinheit (Top)_
-See CodedDomain [GC_CHRONO_CD](#gc-chrono-cd) in Ahhang
+Siehe die CodedDomain [GC_CHRONO_CD](#gc-chrono-cd) in Ahhang
 
 
 
@@ -478,7 +478,7 @@ See CodedDomain [GC_CHRONO_CD](#gc-chrono-cd) in Ahhang
 
 #### Attribute chrono_b
 _Chronostratigraphische Zuordnung der Untergrenze der Kartiereinheit (Basis)_
-See CodedDomain [GC_CHRONO_CD](#gc-chrono-cd) in Ahhang
+Siehe die CodedDomain [GC_CHRONO_CD](#gc-chrono-cd) in Ahhang
 
 
 
@@ -486,7 +486,7 @@ See CodedDomain [GC_CHRONO_CD](#gc-chrono-cd) in Ahhang
 
 #### Attribute tecto
 _Tektonische Zugehörigkeit_
-See CodedDomain [GC_TECTO_CD](#gc-tecto-cd) in Ahhang
+Siehe die CodedDomain [GC_TECTO_CD](#gc-tecto-cd) in Ahhang
 
 
 
@@ -711,7 +711,7 @@ _Datentyp:  string_
 
 #### Attribute meta_mineral
 _Wichtiges Mineral des metamorphen Gesteins_
-See CodedDomain [GC_MINERAL_CD](#gc-mineral-cd) in Ahhang
+Siehe die CodedDomain [GC_MINERAL_CD](#gc-mineral-cd) in Ahhang
 
 
 
@@ -856,7 +856,7 @@ abgebildet.
 ----|------------------------------|-----------------------------------|--------------------------------------
 1 | **kind**                | subtype                                    | Spezifische Eigenschaft
 []()           | Cardinality [1] | 11501                                       |
-2 | **main_mov**                | [CodedDomain](#instabilities-within-bedrock-plg-main-mov)                    | Hauptbewegungsphase
+2 | **main_mov**                | [CodedDomain](#instabilities-within-bedrock-plg-main-mov)  | Hauptbewegungsphase. 
 []()           | Cardinality [0..1] |                                                      |
 
 
@@ -926,13 +926,13 @@ Blockwülste im Blockgletscher.
 ----|------------------------------|-----------------------------------|--------------------------------------
 1 | **kind**                | subtype                                    | Objektart
 []()           | Cardinality [1] | 11301                                       |
-2 | **morai_mo**                | [CodedDomain](#glacial-and-periglacial-structures-l-morai-mo)                    | Morphologie der Moräne
+2 | **morai_mo**                | [CodedDomain](#glacial-and-periglacial-structures-l-morai-mo)  | Morphologie der Moräne. 
 []()           | Cardinality [0..1] |                                                      |
-3 | **glac_typ**                | [CodedDomain](#glacial-and-periglacial-structures-l-glac-typ)                    | Gletschertyp, auf welchen die Objektart bezogen ist
+3 | **glac_typ**                | [CodedDomain](#glacial-and-periglacial-structures-l-glac-typ)  | Gletschertyp, auf welchen die Objektart bezogen ist. 
 []()           | Cardinality [0..1] |                                                      |
-4 | **ice_m_p**                | [CodedDomain](#glacial-and-periglacial-structures-l-ice-m-p)                    | Räumlicher Gletscherstand
+4 | **ice_m_p**                | [CodedDomain](#glacial-and-periglacial-structures-l-ice-m-p)  | Räumlicher Gletscherstand. 
 []()           | Cardinality [0..1] |                                                      |
-5 | **quat_str**                | [CodedDomain](#glacial-and-periglacial-structures-l-quat-str)                    | Zeitliche quartärstratigraphische Zuordnung des Moränenwälls
+5 | **quat_str**                | [CodedDomain](#glacial-and-periglacial-structures-l-quat-str)  | Zeitliche quartärstratigraphische Zuordnung des Moränenwälls. 
 []()           | Cardinality [0..1] |                                                      |
 6 | **ref_year**                | integer                                    | Referenzjahr des älteren Gletscherstandes.
 []()           | Cardinality [0..1] |                                        |
@@ -1270,7 +1270,7 @@ fluviatilen oder lakustrischen Ursprungs.
 ----|------------------------------|-----------------------------------|--------------------------------------
 1 | **kind**                | subtype                                    | Objektart
 []()           | Cardinality [1] | 10901                                       |
-2 | **age**                | [CodedDomain](#alluvial-and-lacustrine-structures-l-age)                    | Alter der Objektart.
+2 | **age**                | [CodedDomain](#alluvial-and-lacustrine-structures-l-age)  | Alter der Objektart.. 
 []()           | Cardinality [0..1] |                                                      |
 
 
@@ -1327,9 +1327,9 @@ Verständlichkeit abgebildet.
 []()           | Cardinality [0..1] |                                        |
 3 | **dip**                | integer                                    | Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die Vertikale (90°).
 []()           | Cardinality [0..1] |                                        |
-4 | **fold_typ**                | [CodedDomain](#deformation-structures-pt-fold-typ)                    | Objekttyp
+4 | **fold_typ**                | [CodedDomain](#deformation-structures-pt-fold-typ)  | Objekttyp. 
 []()           | Cardinality [0..1] |                                                      |
-5 | **fold_for**                | [CodedDomain](#deformation-structures-pt-fold-for)                    | Objektform
+5 | **fold_for**                | [CodedDomain](#deformation-structures-pt-fold-for)  | Objektform. 
 []()           | Cardinality [0..1] |                                                      |
 
 
@@ -1432,9 +1432,9 @@ tektonisierte Zonen oder Kluftzonen.
 ----|------------------------------|-----------------------------------|--------------------------------------
 1 | **kind**                | subtype                                    | Objektart
 []()           | Cardinality [1] | 14801                                       |
-2 | **type**                | [CodedDomain](#deformation-structures-plg-type)                    | Charakteristik der Objektarten
+2 | **type**                | [CodedDomain](#deformation-structures-plg-type)  | Charakteristik der Objektarten. 
 []()           | Cardinality [0..1] |                                                      |
-3 | **gen_rela**                | [CodedDomain](#deformation-structures-plg-gen-rela)                    | Genetische Beziehung.
+3 | **gen_rela**                | [CodedDomain](#deformation-structures-plg-gen-rela)  | Genetische Beziehung.. 
 []()           | Cardinality [0..1] |                                                      |
 
 
@@ -1490,19 +1490,19 @@ Anhang A Beispiele abgebildet.
 ----|------------------------------|-----------------------------------|--------------------------------------
 1 | **kind**                | subtype                                    | Objektart
 []()           | Cardinality [1] | 14901                                       |
-2 | **fault_mo**                | [CodedDomain](#tectonic-boundaries-l-fault-mo)                    | Bewegungsrichtung des Bruchs
+2 | **fault_mo**                | [CodedDomain](#tectonic-boundaries-l-fault-mo)  | Bewegungsrichtung des Bruchs. 
 []()           | Cardinality [0..1] |                                                      |
-3 | **verti_mo**                | [CodedDomain](#tectonic-boundaries-l-verti-mo)                    | Bewegung parallel zur Fallrichtung der Bruchfläche.
+3 | **verti_mo**                | [CodedDomain](#tectonic-boundaries-l-verti-mo)  | Bewegung parallel zur Fallrichtung der Bruchfläche.. 
 []()           | Cardinality [0..1] |                                                      |
-4 | **horiz_mo**                | [CodedDomain](#tectonic-boundaries-l-horiz-mo)                    | Bewegung parallel zur Streichrichtung der Bruch- oder Scherfläche
+4 | **horiz_mo**                | [CodedDomain](#tectonic-boundaries-l-horiz-mo)  | Bewegung parallel zur Streichrichtung der Bruch- oder Scherfläche. 
 []()           | Cardinality [0..1] |                                                      |
 5 | **lim_tect_b**                | boolean                                    | Grenze einer tektonischen Einheit wie Deckengrenze,Schuppengrenze, Zonengrenze, etc. (ja / nein)?
 []()           | Cardinality [1] |                                        |
-6 | **status**                | [CodedDomain](#tectonic-boundaries-l-status)                    | Zustand der Objektart
+6 | **status**                | [CodedDomain](#tectonic-boundaries-l-status)  | Zustand der Objektart. 
 []()           | Cardinality [1] |                                                      |
 7 | **activity**                | TODO                                    | Aktivität der Objektart
 []()           | Cardinality [0..1] |                                        |
-8 | **meta_sta**                | [CodedDomain](#tectonic-boundaries-l-meta-sta)                    | Tektonometamorphe Chronologie der Objektart
+8 | **meta_sta**                | [CodedDomain](#tectonic-boundaries-l-meta-sta)  | Tektonometamorphe Chronologie der Objektart. 
 []()           | Cardinality [0..1] |                                                      |
 9 | **name**                | string                                    | Spezifischer Name der Objektart.
 []()           | Cardinality [0..1] |                                        |
@@ -1636,11 +1636,11 @@ Faltenachse und der Scheitellinie sind im Anhang A zur besseren Verständlichkei
 ----|------------------------------|-----------------------------------|--------------------------------------
 1 | **kind**                | subtype                                    | Objektart
 []()           | Cardinality [1] | 13601                                       |
-2 | **fold_typ**                | [CodedDomain](#folds-pt-fold-typ)                    | Objekttyp
+2 | **fold_typ**                | [CodedDomain](#folds-pt-fold-typ)  | Objekttyp. 
 []()           | Cardinality [0..1] |                                                      |
 3 | **fold_for**                |                                     | Form der Objektart
 []()           | Cardinality [0..1] | 13603                                       |
-4 | **phase**                | [CodedDomain](#folds-pt-phase)                    | Deformationsphase.
+4 | **phase**                | [CodedDomain](#folds-pt-phase)  | Deformationsphase.. 
 []()           | Cardinality [0..1] |                                                      |
 5 | **phase_ref**                | string                                    | Referenz für die Angabe der Deformationsphase.
 []()           | Cardinality [0..1] |                                        |
@@ -1781,9 +1781,9 @@ Die Klasse [Planar_Structures_PT](#planar-structures-pt) enthält Objektarten, w
 ----|------------------------------|-----------------------------------|--------------------------------------
 1 | **kind**                | subtype                                    | Objektart
 []()           | Cardinality [1] | 13801                                       |
-2 | **polarity**                | [CodedDomain](#planar-structures-pt-polarity)                    | Position der Objektart im Raum
+2 | **polarity**                | [CodedDomain](#planar-structures-pt-polarity)  | Position der Objektart im Raum. 
 []()           | Cardinality [0..1] |                                                      |
-3 | **phase**                | [CodedDomain](#planar-structures-pt-phase)                    | Deformationsphase
+3 | **phase**                | [CodedDomain](#planar-structures-pt-phase)  | Deformationsphase. 
 []()           | Cardinality [] |                                                      |
 4 | **phase_ref**                | string                                    | Referenz für die Angabe der Deformationsphase.
 []()           | Cardinality [0..1] |                                        |
@@ -1918,13 +1918,13 @@ Die Klasse [Fossils_PT](#fossils-pt) enthält alle Fossilfundstellen.
 ----|------------------------------|-----------------------------------|--------------------------------------
 1 | **kind**                | subtype                                    | Objektart
 []()           | Cardinality [1] | 12901                                       |
-2 | **division**                | [CodedDomain](#fossils-pt-division)                    | Fossilienkategorie, zu welcher die Objektinstanz gehört.
+2 | **division**                | [CodedDomain](#fossils-pt-division)  | Fossilienkategorie, zu welcher die Objektinstanz gehört.. 
 []()           | Cardinality [0..1] |                                                      |
 3 | **system**                | table                                    | Fossiliengruppe.
 []()           | Cardinality [0..1] | gc_system                                       |
-4 | **dat_meth**                | [CodedDomain](#fossils-pt-dat-meth)                    | Datierungsmethode.
+4 | **dat_meth**                | [CodedDomain](#fossils-pt-dat-meth)  | Datierungsmethode.. 
 []()           | Cardinality [0..1] |                                                      |
-5 | **status**                | [CodedDomain](#fossils-pt-status)                    | Zustand der Objektart
+5 | **status**                | [CodedDomain](#fossils-pt-status)  | Zustand der Objektart. 
 []()           | Cardinality [0..1] |                                                      |
 6 | **protected**                | boolean                                    | Geschützte Fossilfundstelle (ja / nein)?
 []()           | Cardinality [0..1] |                                        |
@@ -2009,9 +2009,9 @@ und nicht-mineralischen Rohstoffen.
 ----|------------------------------|-----------------------------------|--------------------------------------
 1 | **kind**                | subtype                                    | Objektart
 []()           | Cardinality [1] | 13201                                       |
-2 | **status**                | [CodedDomain](#indication-of-resources-pt-status)                    | Zustand der Objektart
+2 | **status**                | [CodedDomain](#indication-of-resources-pt-status)  | Zustand der Objektart. 
 []()           | Cardinality [0..1] |                                                      |
-3 | **material**                | [CodedDomain](#indication-of-resources-pt-material)                    | Material, das mit der Objektart in Verbindung steht
+3 | **material**                | [CodedDomain](#indication-of-resources-pt-material)  | Material, das mit der Objektart in Verbindung steht. 
 []()           | Cardinality [0..1] |                                                      |
 4 | **chemistry**                | string                                    | Chemische Komponente(n) oder Mineralien, welche die Natur der Objektart charakterisieren.
 []()           | Cardinality [0..1] |                                        |
@@ -2161,7 +2161,7 @@ geologische Aufschlüsse beschreiben.
 ----|------------------------------|-----------------------------------|--------------------------------------
 1 | **kind**                | subtype                                    | Objektart
 []()           | Cardinality [1] | 13501                                       |
-2 | **strati**                | [CodedDomain](#type-localities-pt-strati)                    | Lithostratigraphischer Zusatz zum Objekt
+2 | **strati**                | [CodedDomain](#type-localities-pt-strati)  | Lithostratigraphischer Zusatz zum Objekt. 
 []()           | Cardinality [0..1] |                                                      |
 3 | **name**                | string                                    | Name der Typlokalität. / Beschreibung des geologisch relevanten Aufschlusses
 []()           | Cardinality [0..1] |                                        |
@@ -2239,13 +2239,13 @@ von Wechsellagerungen von Sandstein und Mergel) und sind von den Leithorizonten 
 ----|------------------------------|-----------------------------------|--------------------------------------
 1 | **kind**                | subtype                                    | Objektart
 []()           | Cardinality [1] | 13101                                       |
-2 | **cong_spe**                | [CodedDomain](#prominent-lithological-features-l-cong-spe)                    | Charakterisation der Konglomerate nach ihrem Geröllspektrum.
+2 | **cong_spe**                | [CodedDomain](#prominent-lithological-features-l-cong-spe)  | Charakterisation der Konglomerate nach ihrem Geröllspektrum.. 
 []()           | Cardinality [0..1] |                                                      |
-3 | **name_horiz**                | [CodedDomain](#gc-litstrat-bed-cd)                    | Name des Bentonit-Leithorizonts.
+3 | **name_horiz**                | [CodedDomain](#gc-litstrat-bed-cd)  | Name des Bentonit-Leithorizonts.. Die möglichen Werte sind in der Tabelle GC_LITSTRAT_BED_CD im Anhang dieses Dokumentes verfügbar.
 []()           | Cardinality [0..1] |                                                      |
 4 | **orig_descr**                | string                                    | Originalbezeichnung gemäss der Legende der zugrundeliegenden geologischen Karte.
 []()           | Cardinality [0..1] |                                        |
-5 | **lpro_litho**                | [CodedDomain](#gc-litho-cd)                    | Materialbezeichnung (lithologische Einheit).
+5 | **lpro_litho**                | [CodedDomain](#gc-litho-cd)  | Materialbezeichnung (lithologische Einheit).. Die möglichen Werte sind in der Tabelle GC_LITHO_CD im Anhang dieses Dokumentes verfügbar.
 []()           | Cardinality [1] |                                                      |
 
 
@@ -2279,7 +2279,7 @@ _Charakterisation der Konglomerate nach ihrem Geröllspektrum._
 
 #### Attribute name_horiz
 _Name des Bentonit-Leithorizonts._
-See CodedDomain [GC_LITSTRAT_BED_CD](#gc-litstrat-bed-cd) in Ahhang
+Siehe die CodedDomain [GC_LITSTRAT_BED_CD](#gc-litstrat-bed-cd) in Ahhang
 
 
 
@@ -2295,7 +2295,7 @@ _Datentyp:  string_
 
 #### Attribute lpro_litho
 _Materialbezeichnung (lithologische Einheit)._
-See CodedDomain [GC_LITHO_CD](#gc-litho-cd) in Ahhang
+Siehe die CodedDomain [GC_LITHO_CD](#gc-litho-cd) in Ahhang
 
 
 
@@ -2359,7 +2359,7 @@ ab-grenzen (Abgrenzungskontur nach dem ZV).
 ----|------------------------------|-----------------------------------|--------------------------------------
 1 | **kind**                | subtype                                    | Objektart
 []()           | Cardinality [1] | 13001                                       |
-2 | **status**                | [CodedDomain](#geological-outlines-l-status)                    | Zustand der Objektart.
+2 | **status**                | [CodedDomain](#geological-outlines-l-status)  | Zustand der Objektart.. 
 []()           | Cardinality [0..1] |                                                      |
 
 
@@ -2410,14 +2410,14 @@ verlaufs im Untergrund.
 ----|------------------------------|-----------------------------------|--------------------------------------
 1 | **kind**                | subtype                                    | Objektart
 []()           | Cardinality [1] | 14201                                       |
-2 | **type**                | [CodedDomain](#slope-bedrock-pt-type)                    | Referenzoberfläche.
+2 | **type**                | [CodedDomain](#slope-bedrock-pt-type)  | Referenzoberfläche.. 
 []()           | Cardinality [1] |                                                      |
 3 | **azimuth**                | integer                                    | Fallrichtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad (0° 359°) im Uhrzeigersinn gemessen.
 []()           | Cardinality [0..1] |                                        |
 4 | **dip**                | integer                                    | Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die
 Vertikale (90°).
 []()           | Cardinality [0..1] |                                        |
-5 | **pslo_formatio**                | [CodedDomain](#gc-litstrat-bed-cd)                    | Lithostratigraphische Einheit der modellierten Formation
+5 | **pslo_formatio**                | [CodedDomain](#gc-litstrat-bed-cd)  | Lithostratigraphische Einheit der modellierten Formation. Die möglichen Werte sind in der Tabelle GC_LITSTRAT_BED_CD im Anhang dieses Dokumentes verfügbar.
 []()           | Cardinality [1] |                                                      |
 
 
@@ -2466,7 +2466,7 @@ _Datentyp:  integer_
 
 #### Attribute pslo_formatio
 _Lithostratigraphische Einheit der modellierten Formation_
-See CodedDomain [GC_LITSTRAT_BED_CD](#gc-litstrat-bed-cd) in Ahhang
+Siehe die CodedDomain [GC_LITSTRAT_BED_CD](#gc-litstrat-bed-cd) in Ahhang
 
 
 
@@ -2484,11 +2484,11 @@ hypsen der Felsoberfläche in dieser Klasse.
 ----|------------------------------|-----------------------------------|--------------------------------------
 1 | **kind**                | subtype                                    | Objektart
 []()           | Cardinality [1] | 13901                                       |
-2 | **type**                | [CodedDomain](#contour-lines-bedrock-l-type)                    | Referenzoberfläche.
+2 | **type**                | [CodedDomain](#contour-lines-bedrock-l-type)  | Referenzoberfläche.. 
 []()           | Cardinality [1] |                                                      |
 3 | **altitude**                | float                                    | Höhenangabe (m ü.M.) von Isohypsen.
 []()           | Cardinality [1] |                                        |
-4 | **litstrat**                | [CodedDomain](#gc-litstrat-bed-cd)                    | Lithostratigraphische Einheit der modellierten Formation
+4 | **litstrat**                | [CodedDomain](#gc-litstrat-bed-cd)  | Lithostratigraphische Einheit der modellierten Formation. Die möglichen Werte sind in der Tabelle GC_LITSTRAT_BED_CD im Anhang dieses Dokumentes verfügbar.
 []()           | Cardinality [1] |                                                      |
 
 
@@ -2529,7 +2529,7 @@ _Datentyp:  float_
 
 #### Attribute litstrat
 _Lithostratigraphische Einheit der modellierten Formation_
-See CodedDomain [GC_LITSTRAT_BED_CD](#gc-litstrat-bed-cd) in Ahhang
+Siehe die CodedDomain [GC_LITSTRAT_BED_CD](#gc-litstrat-bed-cd) in Ahhang
 
 
 
@@ -2613,11 +2613,11 @@ beziehen.
 ----|------------------------------|-----------------------------------|--------------------------------------
 1 | **kind**                | subtype                                    | Objektart
 []()           | Cardinality [1] | 14001                                       |
-2 | **confine**                | [CodedDomain](#contour-lines-hydro-l-confine)                    | Druckzustand im Grundwasserleiter.
+2 | **confine**                | [CodedDomain](#contour-lines-hydro-l-confine)  | Druckzustand im Grundwasserleiter.. 
 []()           | Cardinality [0..1] |                                                      |
 3 | **altitude**                |                                     | Höhenangabe (m ü.M.) von Isohypsen.
 []()           | Cardinality [1] |                                        |
-4 | **wa_table**                | [CodedDomain](#contour-lines-hydro-l-wa-table)                    | Wasserstand.
+4 | **wa_table**                | [CodedDomain](#contour-lines-hydro-l-wa-table)  | Wasserstand.. 
 []()           | Cardinality [0..1] |                                                      |
 
 
@@ -2683,13 +2683,13 @@ Die Klasse [Archaeology_PT](#archaeology-pt) enthält Objektarten zu einzelnen a
 ----|------------------------------|-----------------------------------|--------------------------------------
 1 | **kind**                | subtype                                    | Objektart
 []()           | Cardinality [] | 10101                                       |
-2 | **epoch**                | [CodedDomain](#archaeology-pt-epoch)                    | Archäologische Epoche der Objektart
+2 | **epoch**                | [CodedDomain](#archaeology-pt-epoch)  | Archäologische Epoche der Objektart. 
 []()           | Cardinality [0..1] |                                                      |
-3 | **period**                | [CodedDomain](#archaeology-pt-period)                    | Archäologische Periode der Objektart.
+3 | **period**                | [CodedDomain](#archaeology-pt-period)  | Archäologische Periode der Objektart.. 
 []()           | Cardinality [0..1] |                                                      |
-4 | **age**                | [CodedDomain](#archaeology-pt-age)                    | Archäologisches Alter der Objektart.
+4 | **age**                | [CodedDomain](#archaeology-pt-age)  | Archäologisches Alter der Objektart.. 
 []()           | Cardinality [0..1] |                                                      |
-5 | **type**                | [CodedDomain](#archaeology-pt-type)                    | Art des Kultsteins.
+5 | **type**                | [CodedDomain](#archaeology-pt-type)  | Art des Kultsteins.. 
 []()           | Cardinality [0..1] |                                                      |
 
 
@@ -2792,11 +2792,11 @@ Hohlwege oder Befestigungsgräben sind Teile dieser Klasse.
 ----|------------------------------|-----------------------------------|--------------------------------------
 1 | **kind**                | subtype                                    | Objektart
 []()           | Cardinality [] | 10201                                       |
-2 | **epoch**                | [CodedDomain](#archaeology-l-epoch)                    | Archäologische Epoche der Objektart
+2 | **epoch**                | [CodedDomain](#archaeology-l-epoch)  | Archäologische Epoche der Objektart. 
 []()           | Cardinality [0..1] |                                                      |
-3 | **period**                | [CodedDomain](#archaeology-l-period)                    | Archäologische Periode der Objektart.
+3 | **period**                | [CodedDomain](#archaeology-l-period)  | Archäologische Periode der Objektart.. 
 []()           | Cardinality [0..1] |                                                      |
-4 | **age**                | [CodedDomain](#archaeology-l-age)                    | Archäologisches Alter der Objektart.
+4 | **age**                | [CodedDomain](#archaeology-l-age)  | Archäologisches Alter der Objektart.. 
 []()           | Cardinality [0..1] |                                                      |
 
 
@@ -2879,11 +2879,11 @@ grösseres Gebiet (Fläche) abdecken.
 ----|------------------------------|-----------------------------------|--------------------------------------
 1 | **kind**                | subtype                                    | Objektart
 []()           | Cardinality [] | 10301                                       |
-2 | **epoch**                | [CodedDomain](#archaeology-plg-epoch)                    | Archäologische Epoche der Objektart
+2 | **epoch**                | [CodedDomain](#archaeology-plg-epoch)  | Archäologische Epoche der Objektart. 
 []()           | Cardinality [0..1] |                                                      |
-3 | **period**                | [CodedDomain](#archaeology-plg-period)                    | Archäologische Periode der Objektart.
+3 | **period**                | [CodedDomain](#archaeology-plg-period)  | Archäologische Periode der Objektart.. 
 []()           | Cardinality [0..1] |                                                      |
-4 | **age**                | [CodedDomain](#archaeology-plg-age)                    | Archäologisches Alter der Objektart.
+4 | **age**                | [CodedDomain](#archaeology-plg-age)  | Archäologisches Alter der Objektart.. 
 []()           | Cardinality [0..1] |                                                      |
 
 
@@ -2963,11 +2963,11 @@ Geomaterialien.
 []()           | Cardinality [] | 10601                                       |
 2 | **exp_unit**                | table                                    | Abgebaute lithostratigraphische Einheit.
 []()           | Cardinality [0..*] | gc_litstrat_bed                                       |
-3 | **status**                | [CodedDomain](#exploitation-geomaterials-pt-status)                    | Abbaustatus.
+3 | **status**                | [CodedDomain](#exploitation-geomaterials-pt-status)  | Abbaustatus.. 
 []()           | Cardinality [0..1] |                                                      |
 4 | **depth_tot**                | float                                    | Endtiefe (m ab Terrainoberfläche) der Objektart.
 []()           | Cardinality [0..1] |                                        |
-5 | **targ_mat**                | [CodedDomain](#exploitation-geomaterials-pt-targ-mat)                    | Abgebautes Material.
+5 | **targ_mat**                | [CodedDomain](#exploitation-geomaterials-pt-targ-mat)  | Abgebautes Material.. 
 []()           | Cardinality [0..1] |                                                      |
 
 
@@ -3080,7 +3080,7 @@ Geomaterialien (z.B. Verlauf der Abbaufront).
 ----|------------------------------|-----------------------------------|--------------------------------------
 1 | **kind**                | subtype                                    | Objektart
 []()           | Cardinality [] | 10701                                       |
-2 | **status**                | [CodedDomain](#exploitation-geomaterials-l-status)                    | Abbaustatus.
+2 | **status**                | [CodedDomain](#exploitation-geomaterials-l-status)  | Abbaustatus.. 
 []()           | Cardinality [0..1] |                                                      |
 
 
@@ -3126,11 +3126,11 @@ Aufnahmen Geomaterialien abgebaut wurden.
 []()           | Cardinality [] | 10801                                       |
 2 | **exp_unit**                | table                                    | Abgebaute lithostratigraphische Einheit.
 []()           | Cardinality [1..*] | gc_litstrat_bed                                       |
-3 | **status**                | [CodedDomain](#exploitation-geomaterials-plg-status)                    | Abbaustatus.
+3 | **status**                | [CodedDomain](#exploitation-geomaterials-plg-status)  | Abbaustatus.. 
 []()           | Cardinality [0..1] |                                                      |
 4 | **depth_tot**                | float                                    | Endtiefe (m ab Terrainoberfläche) der Objektart.
 []()           | Cardinality [0..1] |                                        |
-5 | **targ_mat**                | [CodedDomain](#exploitation-geomaterials-plg-targ-mat)                    | Abgebautes Material.
+5 | **targ_mat**                | [CodedDomain](#exploitation-geomaterials-plg-targ-mat)  | Abgebautes Material.. 
 []()           | Cardinality [0..1] |                                                      |
 
 
@@ -3227,19 +3227,19 @@ Rammkernsondierungen als Bohrungen aufgenommen wurden.)
 []()           | Cardinality [0..1] |                                        |
 4 | **d_c_underg**                | boolean                                    | Bohransatzpunkt unter Terrain (ja / nein)
 []()           | Cardinality [1] |                                        |
-5 | **main_tar**                | [CodedDomain](#boreholes-pt-main-tar)                    | Ziel der Sondierung.
+5 | **main_tar**                | [CodedDomain](#boreholes-pt-main-tar)  | Ziel der Sondierung.. 
 []()           | Cardinality [0..1] |                                                      |
-6 | **targ_mat**                | [CodedDomain](#boreholes-pt-targ-mat)                    | Durch die Sondierung gefördertes Material.
+6 | **targ_mat**                | [CodedDomain](#boreholes-pt-targ-mat)  | Durch die Sondierung gefördertes Material.. 
 []()           | Cardinality [0..1] |                                                      |
 7 | **depth_tot**                | float                                    | Gemessene Länge (Measured Depth) der Bohrung. Vgl.
 DM Bohrdaten. Die tatsächliche Tiefe (True Vertical
 Depth) ist oft nicht bekannt.
 []()           | Cardinality [0..1] |                                        |
-8 | **fm_a**                | [CodedDomain](#gc-litstrat-bed-cd)                    | Lithostratigraphische Einheit der erreichten Formation A
+8 | **fm_a**                | [CodedDomain](#gc-litstrat-bed-cd)  | Lithostratigraphische Einheit der erreichten Formation A. Die möglichen Werte sind in der Tabelle GC_LITSTRAT_BED_CD im Anhang dieses Dokumentes verfügbar.
 []()           | Cardinality [0..1] |                                                      |
 9 | **depth_fm_a**                | float                                    | Tiefe (m ab Terrainoberfläche) der erreichten Formation A.
 []()           | Cardinality [0..1] |                                        |
-10 | **fm_b**                | [CodedDomain](#gc-litstrat-bed-cd)                    | Lithostratigraphische Einheit der erreichten Formation B
+10 | **fm_b**                | [CodedDomain](#gc-litstrat-bed-cd)  | Lithostratigraphische Einheit der erreichten Formation B. Die möglichen Werte sind in der Tabelle GC_LITSTRAT_BED_CD im Anhang dieses Dokumentes verfügbar.
 []()           | Cardinality [0..1] |                                                      |
 11 | **depth_fm_b**                | float                                    | Tiefe (m ab Terrainoberfläche) der erreichten Formation B.
 []()           | Cardinality [0..1] |                                        |
@@ -3344,7 +3344,7 @@ _Datentyp:  float_
 
 #### Attribute fm_a
 _Lithostratigraphische Einheit der erreichten Formation A_
-See CodedDomain [GC_LITSTRAT_BED_CD](#gc-litstrat-bed-cd) in Ahhang
+Siehe die CodedDomain [GC_LITSTRAT_BED_CD](#gc-litstrat-bed-cd) in Ahhang
 
 
 
@@ -3360,7 +3360,7 @@ _Datentyp:  float_
 
 #### Attribute fm_b
 _Lithostratigraphische Einheit der erreichten Formation B_
-See CodedDomain [GC_LITSTRAT_BED_CD](#gc-litstrat-bed-cd) in Ahhang
+Siehe die CodedDomain [GC_LITSTRAT_BED_CD](#gc-litstrat-bed-cd) in Ahhang
 
 
 
@@ -3463,9 +3463,9 @@ Desweiteren kommen in dieser Klasse auch Messgeräte wie Piezometer und Limnigra
 ----|------------------------------|-----------------------------------|--------------------------------------
 1 | **kind**                | subtype                                    | Objektart
 []()           | Cardinality [1] | 12101                                       |
-2 | **status**                | [CodedDomain](#construction-pt-status)                    | Zustand der Objektart.
+2 | **status**                | [CodedDomain](#construction-pt-status)  | Zustand der Objektart.. 
 []()           | Cardinality [0..1] |                                                      |
-3 | **epoch**                | [CodedDomain](#construction-pt-epoch)                    | Epoche der Erbauung der Objektart.
+3 | **epoch**                | [CodedDomain](#construction-pt-epoch)  | Epoche der Erbauung der Objektart.. 
 []()           | Cardinality [0..1] |                                                      |
 4 | **depth**                | float                                    | Tiefe der Objektart (m ab Terrainoberfläche).
 []()           | Cardinality [0..1] |                                        |
@@ -3556,7 +3556,7 @@ welcher mit Objektarten der Klasse [Surface_Water_PT](#surface-water-pt) kombini
 ----|------------------------------|-----------------------------------|--------------------------------------
 1 | **kind**                | subtype                                    | Objektart
 []()           | Cardinality [1] | 12201                                       |
-2 | **combi**                | [CodedDomain](#construction-l-combi)                    | Objektart einer anderen Klasse, die mit der Objektart in Kombination vorkommen kann
+2 | **combi**                | [CodedDomain](#construction-l-combi)  | Objektart einer anderen Klasse, die mit der Objektart in Kombination vorkommen kann. 
 []()           | Cardinality [0..1] |                                                      |
 
 
@@ -3599,9 +3599,9 @@ gewissen Bezug zu einem ehemaligen Gewässer aufweisen.
 ----|------------------------------|-----------------------------------|--------------------------------------
 1 | **kind**                | subtype                                    | Objektart
 []()           | Cardinality [1] | 12301                                       |
-2 | **rel_age**                | [CodedDomain](#palaeohydrology-l-rel-age)                    | Relatives Alter der Objektart
+2 | **rel_age**                | [CodedDomain](#palaeohydrology-l-rel-age)  | Relatives Alter der Objektart. 
 []()           | Cardinality [0..1] |                                                      |
-3 | **hpal_chrono**                | [CodedDomain](#gc-chrono-cd)                    | Chronostratigraphische Zuordnung.
+3 | **hpal_chrono**                | [CodedDomain](#gc-chrono-cd)  | Chronostratigraphische Zuordnung.. Die möglichen Werte sind in der Tabelle GC_CHRONO_CD im Anhang dieses Dokumentes verfügbar.
 []()           | Cardinality [0..1] |                                                      |
 4 | **ref_year**                | integer                                    | Referenzjahr der ehemaligen Uferlinie.
 []()           | Cardinality [1] |                                        |
@@ -3644,7 +3644,7 @@ _Relatives Alter der Objektart_
 
 #### Attribute hpal_chrono
 _Chronostratigraphische Zuordnung._
-See CodedDomain [GC_CHRONO_CD](#gc-chrono-cd) in Ahhang
+Siehe die CodedDomain [GC_CHRONO_CD](#gc-chrono-cd) in Ahhang
 
 
 
@@ -3682,7 +3682,7 @@ kann mit Objeken aus der Klasse [Surface_Water_PT](#surface-water-pt) kombiniert
 ----|------------------------------|-----------------------------------|--------------------------------------
 1 | **kind**                | subtype                                    | Objektart
 []()           | Cardinality [1] | 12401                                       |
-2 | **combi**                | [CodedDomain](#subsurface-water-l-combi)                    | Objektart einer anderen Klasse, die mit der Objektart in Kombination vorkommen kann
+2 | **combi**                | [CodedDomain](#subsurface-water-l-combi)  | Objektart einer anderen Klasse, die mit der Objektart in Kombination vorkommen kann. 
 []()           | Cardinality [0..1] |                                                      |
 
 
@@ -3733,15 +3733,15 @@ Wasserchemie.
 ----|------------------------------|-----------------------------------|--------------------------------------
 1 | **kind**                | subtype                                    | Objektart
 []()           | Cardinality [1] | 12501                                       |
-2 | **status**                | [CodedDomain](#surface-water-pt-status)                    | Zustand der Objektart.
+2 | **status**                | [CodedDomain](#surface-water-pt-status)  | Zustand der Objektart.. 
 []()           | Cardinality [0..1] |                                                      |
-3 | **flow_con**                | [CodedDomain](#surface-water-pt-flow-con)                    | Wasserfluss Bedingungen.
+3 | **flow_con**                | [CodedDomain](#surface-water-pt-flow-con)  | Wasserfluss Bedingungen.. 
 []()           | Cardinality [0..1] |                                                      |
-4 | **type**                | [CodedDomain](#surface-water-pt-type)                    | Charakteristik der Objektart
+4 | **type**                | [CodedDomain](#surface-water-pt-type)  | Charakteristik der Objektart. 
 []()           | Cardinality [0..1] |                                                      |
-5 | **dis_loca**                | [CodedDomain](#surface-water-pt-dis-loca)                    | Ort des Wasserausflusses.
+5 | **dis_loca**                | [CodedDomain](#surface-water-pt-dis-loca)  | Ort des Wasserausflusses.. 
 []()           | Cardinality [0..1] |                                                      |
-6 | **combi**                | [CodedDomain](#surface-water-pt-combi)                    | Objektart einer anderen Klasse, die mit der Objektart in Kombination vorkommen kann
+6 | **combi**                | [CodedDomain](#surface-water-pt-combi)  | Objektart einer anderen Klasse, die mit der Objektart in Kombination vorkommen kann. 
 []()           | Cardinality [0..1] |                                                      |
 7 | **temp**                | integer                                    | Mittlere Wassertemperatur (°C).
 []()           | Cardinality [0..1] |                                        |
@@ -4056,7 +4056,8 @@ _Datentyp:  boolean_
 
 
 
-## Annex GC_LITSTRAT_BED_CD {#gc-litstrat-bed-cd}
+## Anhang GC_LITSTRAT_BED_CD {#gc-litstrat-bed-cd}
+Wertetabelle der lithostratigraphischen Einheiten
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -6276,7 +6277,8 @@ _Datentyp:  boolean_
 |999998 | Not applicable | Not applicable     |
 
 
-## Annex GC_LITSTRAT_UNCO_CD {#gc-litstrat-unco-cd}
+## Anhang GC_LITSTRAT_UNCO_CD {#gc-litstrat-unco-cd}
+Wertetabelle der lithostratigraphischen Einheiten
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -6734,7 +6736,9 @@ _Datentyp:  boolean_
 |999998 | Not applicable | Not applicable     |
 
 
-## Annex GC_LITHO_CD {#gc-litho-cd}
+## Anhang GC_LITHO_CD {#gc-litho-cd}
+Wertetabellen der lithologischen Beschreibung
+
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -7103,7 +7107,9 @@ _Datentyp:  boolean_
 |999998 | Not applicable | Not applicable     |
 
 
-## Annex GC_LITHO_UNCO_CD {#gc-litho-unco-cd}
+## Anhang GC_LITHO_UNCO_CD {#gc-litho-unco-cd}
+Wertetabellen der lithologischen Beschreibung
+
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -7177,7 +7183,8 @@ _Datentyp:  boolean_
 |999998 | Not applicable | Not applicable     |
 
 
-## Annex GC_CHRONO_CD {#gc-chrono-cd}
+## Anhang GC_CHRONO_CD {#gc-chrono-cd}
+Wertetabelle der chronostratigraphischen Einheiten
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -7322,7 +7329,8 @@ _Datentyp:  boolean_
 |999998 | Not applicable | Not applicable     |
 
 
-## Annex GC_TECTO_CD {#gc-tecto-cd}
+## Anhang GC_TECTO_CD {#gc-tecto-cd}
+Wertetabelle der tektonischen Einheiten
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -7720,7 +7728,8 @@ _Datentyp:  boolean_
 |999998 | Not applicable | Not applicable     |
 
 
-## Annex GC_MINERAL_CD {#gc-mineral-cd}
+## Anhang GC_MINERAL_CD {#gc-mineral-cd}
+-todo-
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|

@@ -2911,6 +2911,7 @@
     "annexes": [
         {
             "name": "GC_LITSTRAT_BED_CD",
+            "description": "Wertetabelle der lithostratigraphischen Einheiten",
             "pairs": {
                 "15204121": "\u00ab\u00c4ltere Orthogneise\u00bb",
                 "15203300": "\u00abArblatsch-Flysch\u00bb",
@@ -5130,6 +5131,7 @@
         },
         {
             "name": "GC_LITSTRAT_UNCO_CD",
+            "description": "Wertetabelle der lithostratigraphischen Einheiten",
             "pairs": {
                 "15201044": "1. letzteiszeitlischs Vorstoss",
                 "15201043": "2. letzteiszeitlischs Vorstoss",
@@ -5587,6 +5589,7 @@
         },
         {
             "name": "GC_LITHO_CD",
+            "description": "Wertetabellen der lithologischen Beschreibung\n",
             "pairs": {
                 "15104015": "(Meso)Kataklasit",
                 "15104044": "Adergneis",
@@ -5955,6 +5958,7 @@
         },
         {
             "name": "GC_LITHO_UNCO_CD",
+            "description": "Wertetabellen der lithologischen Beschreibung\n",
             "pairs": {
                 "15101039": "Alluvion, undifferenziert",
                 "15101067": "anthropogene Elemente, undifferenziert",
@@ -6028,6 +6032,7 @@
         },
         {
             "name": "GC_CHRONO_CD",
+            "description": "Wertetabelle der chronostratigraphischen Einheiten",
             "pairs": {
                 "15001074": "Aal\u00e9nien",
                 "15001059": "Albien",
@@ -6172,6 +6177,7 @@
         },
         {
             "name": "GC_TECTO_CD",
+            "description": "Wertetabelle der tektonischen Einheiten",
             "pairs": {
                 "15301125": "\u00abZone Kronberg-S\u00fcd\u00bb",
                 "15303009": "Aar-Massiv",
@@ -6569,6 +6575,7 @@
         },
         {
             "name": "GC_MINERAL_CD",
+            "description": "-todo-",
             "pairs": {
                 "20401056": "Adular",
                 "20401057": "Aegirin",
@@ -6658,5 +6665,5 @@
             }
         }
     ],
-    "date": "2024-04-12"
+    "date": "2024-04-13"
 }
