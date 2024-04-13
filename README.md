@@ -54,6 +54,7 @@ Pour HTML
         pandoc -s  --toc \
                   --number-sections   \
                   --shift-heading-level-by=-1 \
+                  --css datamodel.css \
                   --metadata-file=metadata.yaml  \
                   --variable mainfont="Sans" \
                   -o datamodel.html datamodel.md
