@@ -49,3 +49,11 @@ Idem, mais pour un fichier Microsoft Word
                   -o datamodel.docx datamodel.md
 
 
+Pour HTML
+
+        pandoc -s  --toc \
+                  --number-sections   \
+                  --shift-heading-level-by=-1 \
+                  --metadata-file=metadata.yaml  \
+                  --variable mainfont="Sans" \
+                  -o datamodel.html datamodel.md
