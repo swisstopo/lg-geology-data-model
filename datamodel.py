@@ -67,6 +67,12 @@ def get_classes(model):
             classes.append(cls.get("name"))
     return classes
 
+class DatetimeEncoder(json.JSONEncoder):
+    def default(self, obj):
+        if isinstance(obj, (datetime.date, datetime.datetime)):
+            return obj.isoformat()
+        return super().default(obj)
+
 
 class Report:
     def __init__(self, config_file):
@@ -221,7 +227,7 @@ if __name__ == "__main__":
     # temp.render(data)
 
     with open(f"{project_name}.json", "w") as f:
-        f.write(json.dumps(data, indent=4))
+        f.write(json.dumps(data, indent=4, cls=DatetimeEncoder))
 
     # with open("model_markdown.j2") as f:
     #    template = Template(f.read())
