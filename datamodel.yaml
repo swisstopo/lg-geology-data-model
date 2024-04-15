@@ -1,7 +1,10 @@
 # Datenmodell Geologie
 
 # Document model version and date (structure, i.e. if python code must be adapted)
-version: 0.1
+
+# 0.1 First version
+# 0.2 Split classes 'description' into 'de' and 'fr'
+version: 0.2
 date: 2024-04-14
 
 # Model revision should change if attributes are added, deleted or changed
@@ -43,7 +46,7 @@ themes:
           - name: mat_type  # TODO type
             description: Materialbezeichnung (lithologische Einheit)
             att_type: annex
-            value: GC_LITHO_UNCO_CD  # TODO  check with Stephan # Table: GC_POINT_OBJECTS, field: RUNC_MAT_TYPE, domain:GC_LITHO_CD
+            value: GC_LITHO_UNCO_CD  # TODO  check with Stephan Table: GC_POINT_OBJECTS, field: RUNC_MAT_TYPE, domain:GC_LITHO_CD
             cardinality: 0..1
           - name: orig_descr
             description: Originalbezeichnung gemäss der Legende der zugrundeliegenden geologischen Karte
@@ -165,7 +168,7 @@ themes:
           - name: fm_homog  # TODO still in use?
             description: Gesteinsaufbau
             cardinality: 1
-            change: removed # 
+            change: removed # TODO
           - name: listrat
             description: Lithostratigraphische Einheit
             att_type: annex
@@ -1224,7 +1227,7 @@ themes:
             att_type: integer
             cardinality: 0..1
           - name: dip
-            description: >   # TODO text!!!
+            description: > 
                Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die
                Vertikale (90°).
             att_type: integer
@@ -1428,64 +1431,7 @@ themes:
             att_type: subtype
             value: 12701
             cardinality: 1
-  - name: Meta_Data
-    classes:
-      - name: Mapsheet
-        description: |
-            Die Klasse Mapsheet ist eine geometrielose Klasse. Sie beinhaltet alle Metadaten zur Objektart
-            (Kartengrundlage). Neben der Kartenart sind Angaben wie der Titel, Massstab, Autor, Datenherr,
-            Publikationsjahr und über die öffentliche Verfügbarkeit der Karte grundlegend. Verfügt die Karte
-            (wie z.B. die Karten der Landesgeologie) über eine Kartennummer, kann dies bei «Map_Nbr»
-            angegeben werden, während bei «Mapping_Period» die Zeitspanne der Datenaufnahme
-            (Kartierung) erfasst wird. Das Attribut «Basis_Topo» beschreibt die topographische Grundlage
-            und «Basis_Vect» den Vektordatensatz.
-        attributes:
-          - name: kind
-            description: Objektart
-            att_type: subtype
-            value: 15410
-            cardinality: 1
-          - name: map_title
-            description: Originaltitel (Kartentitel) der Objektart.
-            att_type: string
-            cardinality: 1
-          - name: map_nbr
-            description: Originalnummer (Kartennummer) der Objektart.
-            att_type: integer
-            cardinality: 0..1
-          - name: map_scale
-            description: Massstab der Objektart (Kartenmassstab).
-            att_type: string  # TODO really a string for scale?
-            cardinality: 1
-          - name: basis_topo
-            description: |
-                Angabe zur topographischen Grundlage der Objektart.
-                Wird vor allem bei Karten der Landesgeologie angegeben.
-            cardinality: 0..1
-          - name: author
-            description: Autor oder Autoren der Objektart.
-            att_type: string
-            cardinality: 1..*
-          - name: owner
-            description: Angabe zum Datenherr / zu den Datenherren der Objektart.
-            att_type: string
-            cardinality: 1..*
-          - name: map_period
-            description: Angabe zum Kartierzeitraum der Objektart.
-            att_type: string
-            cardinality: 0..1
-          - name: publ_year
-            description: Publikationsjahr der Objektart.
-            att_type: integer
-            cardinality: 1
-          - name: basis_vect
-            description: Grundlage Vektordatensatz.
-            att_type: string
-            cardinality: 0..1
-          - name: restriction
-            description: Angabe darüber, ob die Objektart öffentlich verfügbar ist (ja) oder einer Beschränkung (nein) unterliegt
-            att_type: boolean
-            cardinality: 1
+ 
             
 annexes:
     - name: GC_LITSTRAT_BED_CD
