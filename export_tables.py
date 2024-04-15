@@ -1,6 +1,11 @@
 import arcpy
 import pandas as pd
+import os
+import sys
 
+import logging
+
+logging.basicConfig(format="%(name)s - %(levelname)s - %(message)s", level=logging.INFO)
 
 def arcgis_table_to_df(in_fc, input_fields=None, query=""):
     """Function will convert an arcgis table into a pandas dataframe with an object ID index, and the selected
@@ -26,7 +31,7 @@ def arcgis_table_to_df(in_fc, input_fields=None, query=""):
     return fc_dataframe
 
 
-import os
+
 
 aprx = arcpy.mp.ArcGISProject("CURRENT")
 maps = aprx.listMaps()
@@ -35,7 +40,6 @@ basedir = r"H:\code\geocover-examples\datamodel\input"
 fields = list(
     (
         "OBJECTID",
-        "UUID",
         "GEOL_CODE",
         "GEOL_CODE_INT",
         "GERMAN",
@@ -47,14 +51,20 @@ fields = list(
 )
 
 with pd.ExcelWriter(os.path.join(basedir, f"tables.xlsx")) as writer:
-    for map in maps:
+    for mp in maps:
         print("--------------------------------------------------------------")
-        print(map.name)
+        print(mp.name)
         print("--------------------------------------------------------------")
-        tables = map.listTables()
+        tables = mp.listTables()
+        if len(tables) < 1:
+            logging.error("No Table found. Exit")
+            sys.exit(2)
         for table in tables:
             print(table.name)
             df = arcgis_table_to_df(table.name, input_fields=fields)
+            #df = df.reindex(df.columns.union(fields, sort=False), axis=1, fill_value=0)
+
+
             df.to_csv(os.path.join(basedir, f"{table.name}.csv"), index=True)
             df.to_json(os.path.join(basedir, f"{table.name}.json"), index=True)
-            df.to_excel(writer, sheet_name=table.name.upper())
+            # df.to_excel(writer, sheet_name=table.name.upper())
