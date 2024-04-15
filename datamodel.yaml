@@ -716,15 +716,17 @@ themes:
             cardinality: 1
           - name: azimuth
             description:
-              de: Fallrichtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad
-                (0° 359°) im Uhrzeigersinn gemessen.
+              de: |
+                  Fallrichtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad
+                  (0° 359°) im Uhrzeigersinn gemessen.
               fr: Azimut du type d'objet.
             att_type: integer
             cardinality: 0..1
           - name: dip
             description:
-              de: Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen
-                aus der Horizontalen (0°) nach unten bis in die Vertikale (90°).
+              de: |
+                  Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen
+                  aus der Horizontalen (0°) nach unten bis in die Vertikale (90°).
               fr: Valeur du pendage du type d'objet.
             att_type: integer
             cardinality: 0..1
@@ -1003,8 +1005,9 @@ themes:
             cardinality: 0..1
           - name: azimuth
             description:
-              de: Einfallsrichtung (Azimut) der jeweiligen Punktobjektart (z.B. Scheitellinie,
-                Faltenachse). Wert in Grad (0° 359°) im Uhrzeigersinn gemessen
+              de: |
+                  Einfallsrichtung (Azimut) der jeweiligen Punktobjektart (z.B. Scheitellinie,
+                  Faltenachse). Wert in Grad (0° 359°) im Uhrzeigersinn gemessen
               fr: Azimut du type d'objet.
             att_type: integer
             cardinality: 1
@@ -1038,7 +1041,7 @@ themes:
       - name: Fossils_PT
         description:
           de: Die Klasse Fossils_PT enthält alle Fossilfundstellen.
-          fr: "La classe Fossils_PT contient tous les gisements fossilifères.\n"
+          fr: La classe Fossils_PT contient tous les gisements fossilifères
         attributes:
           - name: kind
             description:
@@ -1086,8 +1089,9 @@ themes:
           de: |
             Die Klasse Indication_of_Resources_PT beinhaltet Fundstellen von vulkanischen, mineralischen
             und nicht-mineralischen Rohstoffen.
-          fr: "La classe Indication_of_Resources_PT regroupe les gisements de minéraux,
-            de gas, d’hydrocarbures et de matériel volcanique.\n"
+          fr: |
+              La classe Indication_of_Resources_PT regroupe les gisements de minéraux,
+              de gas, d’hydrocarbures et de matériel volcanique
         attributes:
           - name: kind
             description:
@@ -1120,7 +1124,7 @@ themes:
       - name: Mineralised_Zone_L
         description:
           de: Die Klasse Mineralised_Zone_L beinhaltet Vererzungszonen.
-          fr: "La classe Mineralised_Zone_L contient les zones minéralisées.\n"
+          fr: La classe Mineralised_Zone_L contient les zones minéralisées
         attributes:
           - name: kind
             description:
@@ -2034,8 +2038,9 @@ themes:
             cardinality: 0..1
           - name: combi
             description:
-              de: Objektart einer anderen Klasse, die mit der Objektart in Kombination
-                vorkommen kann
+              de: |
+                  Objektart einer anderen Klasse, die mit der Objektart in Kombination
+                  vorkommen kann
               fr: ''
             att_type: CD
             value: GC_PNT_HSUR_COMBI_CD
@@ -2054,7 +2059,8 @@ themes:
             cardinality: 0..1
           - name: azimuth
             description:
-              de: Richtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad (0°
+              de: |
+                Richtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad (0°
                 359°) im Uhrzeigersinn gemessen.
               fr: Azimut du type d'objet.
             att_type: integer
@@ -2064,8 +2070,9 @@ themes:
           de: |
             In der Klasse Surface_Water_L sind linienförmige Oberflächengewässer (Quellhorizonte)
             beschrieben.
-          fr: "Dans la classe Surface_Water_L sont décrit les niveaux de sources (de
-            forme linéaire).\n"
+          fr: |
+              Dans la classe Surface_Water_L sont décrit les niveaux de sources (de
+              forme linéaire)
         attributes:
           - name: kind
             description:
