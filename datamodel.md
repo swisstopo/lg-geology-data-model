@@ -393,7 +393,8 @@ Die Klasse [Bedrock_PLG](#bedrock-plg) enthält alle flächenbildenden lithostra
 []()           | Cardinality [1] |                                                      |
 4 | **litho**                | [CodedDomain](#gc-litho-cd)  | Lithologische Beschreibung. Die möglichen Werte sind in der Tabelle GC_LITHO_CD im Anhang dieses Dokumentes verfügbar.
 []()           | Cardinality [1..3] |                                                      |
-5 | **chrono_t**                | [CodedDomain](#gc-chrono-cd)  | Chronostratigraphische Zuordnung der Obergrenze der Kartiereinheit (Top). Die möglichen Werte sind in der Tabelle GC_CHRONO_CD im Anhang dieses Dokumentes verfügbar.
+5 | **chrono_t**                | [CodedDomain](#gc-chrono-cd)  | Chronostratigraphische Zuordnung der Obergrenze der Kartiereinheit
+(Top). Die möglichen Werte sind in der Tabelle GC_CHRONO_CD im Anhang dieses Dokumentes verfügbar.
 []()           | Cardinality [1] |                                                      |
 6 | **chrono_b**                | [CodedDomain](#gc-chrono-cd)  | Chronostratigraphische Zuordnung der Untergrenze der Kartiereinheit (Basis). Die möglichen Werte sind in der Tabelle GC_CHRONO_CD im Anhang dieses Dokumentes verfügbar.
 []()           | Cardinality [1] |                                                      |
@@ -469,7 +470,8 @@ Siehe die CodedDomain [GC_LITHO_CD](#gc-litho-cd) in Ahhang
 
 
 #### Attribute chrono_t
-_Chronostratigraphische Zuordnung der Obergrenze der Kartiereinheit (Top)_
+_Chronostratigraphische Zuordnung der Obergrenze der Kartiereinheit
+(Top)_
 Siehe die CodedDomain [GC_CHRONO_CD](#gc-chrono-cd) in Ahhang
 
 
@@ -752,9 +754,9 @@ _Textur des metamorphen Gesteins_
 ## Theme GEOMORPHOLOGY
 
 ### Class Instability_Structures_PT {#instability-structures-pt}
-Die Klasse [Instability_Structures_PT](#instability-structures-pt) enthält lokal beobachtete Hinweise auf Hanginstabilitäten 
-(Rutschungen), die räumlich nicht abgegrenzt werden können. Wenn möglich, sollen instabile 
-Gesteinsmassen durch Polygone erfasst werden (Klasse Instabilities_within_Unconsolidated_ 
+Die Klasse [Instability_Structures_PT](#instability-structures-pt) enthält lokal beobachtete Hinweise auf Hanginstabilitäten
+(Rutschungen), die räumlich nicht abgegrenzt werden können. Wenn möglich, sollen instabile
+Gesteinsmassen durch Polygone erfasst werden (Klasse Instabilities_within_Unconsolidated_
 Deposits_PLG), die punktförmige Aufnahme ist zu vermeiden und vorwiegend für die Vektorisierung älterer
 gedruckter Karten gedacht.
 
@@ -781,9 +783,9 @@ _Spezifische Eigenschaft_
 
 
 ### Class Instability_Structures_L {#instability-structures-l}
-Die Klasse [Instability_Structures_L](#instability-structures-l) umfasst linienförmige Morphologien, die sich als Folge von 
-Hanginstabilitäten an der Oberfläche ausgebildet haben. Beim Abrissrand handelt es sich um den 
-oberen Rand der durch das Abgleiten der bewegten Masse freigelegten Gleitfläche einer 
+Die Klasse [Instability_Structures_L](#instability-structures-l) umfasst linienförmige Morphologien, die sich als Folge von
+Hanginstabilitäten an der Oberfläche ausgebildet haben. Beim Abrissrand handelt es sich um den
+oberen Rand der durch das Abgleiten der bewegten Masse freigelegten Gleitfläche einer
 Rutschung oder Sackung (Abrissnische)
 
 
@@ -812,12 +814,12 @@ _Spezifische Eigenschaft_
 
 
 ### Class Instabilities_within_Unconsolidated_Deposits_PLG {#instabilities-within-unconsolidated-deposits-plg}
-Die Klasse [Instabilities_within_Unconsolidated_Deposits_PLG](#instabilities-within-unconsolidated-deposits-plg) beinhaltet alle Polygone, die Gebiete 
-mit instabilen Lockergesteinen begrenzen. In dieser Klasse werden die Prozessräume der 
-verschiedenen Typen von gleitenden Massenbewegungsprozessen ausgeschieden; die 
-eigentlichen Gesteinskörper und Ablagerungen, die von Massenbewegungsprozessen betroffen 
-bzw. gebildet worden sind, werden in der Klasse [Unconsolidated_Deposits_PLG](#unconsolidated-deposits-plg) beschrieben. Zur 
-näheren Erklärung der verschiedenen Objektarten sind im Anhang A einige Fallbeispiele 
+Die Klasse [Instabilities_within_Unconsolidated_Deposits_PLG](#instabilities-within-unconsolidated-deposits-plg) beinhaltet alle Polygone, die Gebiete
+mit instabilen Lockergesteinen begrenzen. In dieser Klasse werden die Prozessräume der
+verschiedenen Typen von gleitenden Massenbewegungsprozessen ausgeschieden; die
+eigentlichen Gesteinskörper und Ablagerungen, die von Massenbewegungsprozessen betroffen
+bzw. gebildet worden sind, werden in der Klasse [Unconsolidated_Deposits_PLG](#unconsolidated-deposits-plg) beschrieben. Zur
+näheren Erklärung der verschiedenen Objektarten sind im Anhang A einige Fallbeispiele
 abgebildet.
 
 
@@ -842,11 +844,11 @@ _Spezifische Eigenschaft_
 
 
 ### Class Instabilities_within_Bedrock_PLG {#instabilities-within-bedrock-plg}
-Die Klasse [Instabilities_within_Bedrock_PLG](#instabilities-within-bedrock-plg) beinhaltet alle Polygone, die Gebiete mit instabilen 
-Festgesteinen begrenzen. In dieser Klasse werden die Prozessräume der verschiedenen Typen von 
-gleitenden Massenbewegungsprozessen ausgeschieden; die eigentlichen Gesteinskörper, die von 
-Massenbewegungsprozessen betroffen sind, werden in der Klasse [Bedrock_PLG](#bedrock-plg) beschrieben. Zur 
-näheren Erklärung der verschiedenen Objektarten sind im Anhang A einige Fallbeispiele 
+Die Klasse [Instabilities_within_Bedrock_PLG](#instabilities-within-bedrock-plg) beinhaltet alle Polygone, die Gebiete mit instabilen
+Festgesteinen begrenzen. In dieser Klasse werden die Prozessräume der verschiedenen Typen von
+gleitenden Massenbewegungsprozessen ausgeschieden; die eigentlichen Gesteinskörper, die von
+Massenbewegungsprozessen betroffen sind, werden in der Klasse [Bedrock_PLG](#bedrock-plg) beschrieben. Zur
+näheren Erklärung der verschiedenen Objektarten sind im Anhang A einige Fallbeispiele
 abgebildet.
 
 
@@ -886,8 +888,8 @@ _Hauptbewegungsphase_
 
 
 ### Class Glacial_Structures_PT {#glacial-structures-pt}
-Die Klasse [Glacial_Structures_PT](#glacial-structures-pt) enthält Objektarten, welche die ehemalige Anwesenheit eines 
-Gletschers punktuell dokumentieren (Gletscherschliff ist ein räumlich orientiertes Objekt und 
+Die Klasse [Glacial_Structures_PT](#glacial-structures-pt) enthält Objektarten, welche die ehemalige Anwesenheit eines
+Gletschers punktuell dokumentieren (Gletscherschliff ist ein räumlich orientiertes Objekt und
 befindet sich deshalb in der Klasse Lineation_PT).
 
 
@@ -914,9 +916,9 @@ _Spezifische Eigenschaft_
 
 
 ### Class Glacial_and_Periglacial_Structures_L {#glacial-and-periglacial-structures-l}
-Die Klasse [Glacial_and_Periglacial_Structures_L](#glacial-and-periglacial-structures-l) enthält linienförmige Strukturen, die auf ein 
-glaziales oder periglaziales Bildungsmilieu hindeuten. Mit Ausnahme der Schliffgrenze handelt es 
-sich in dieser Klasse ausschliesslich um akkummulative Landschaftsformen wie Moränenwälle oder 
+Die Klasse [Glacial_and_Periglacial_Structures_L](#glacial-and-periglacial-structures-l) enthält linienförmige Strukturen, die auf ein
+glaziales oder periglaziales Bildungsmilieu hindeuten. Mit Ausnahme der Schliffgrenze handelt es
+sich in dieser Klasse ausschliesslich um akkummulative Landschaftsformen wie Moränenwälle oder
 Blockwülste im Blockgletscher.
 
 
@@ -1121,7 +1123,7 @@ _Objektart_
 
 
 ### Class Erosional_Structures_PT {#erosional-structures-pt}
-Die Klasse [Erosional_Structures_PT](#erosional-structures-pt) beinhaltet lokale Landschaftselemente, die sich im Laufe der 
+Die Klasse [Erosional_Structures_PT](#erosional-structures-pt) beinhaltet lokale Landschaftselemente, die sich im Laufe der
 Zeit unter Einwirkung von diversen Erosionsprozessen gebildet haben.
 
 
@@ -1147,12 +1149,12 @@ _Objektart_
 
 
 ### Class Erosional_Structures_L {#erosional-structures-l}
-Die Klasse [Erosional_Structures_L](#erosional-structures-l) enthält linienförmige erosive Formen wie Erosionsränder im 
-Allgemeinen oder Terrassenkanten. 
-Auf älteren gedruckten Karten wurden Erosionsränder und Terrassenkanten oftmals nicht 
+Die Klasse [Erosional_Structures_L](#erosional-structures-l) enthält linienförmige erosive Formen wie Erosionsränder im
+Allgemeinen oder Terrassenkanten.
+Auf älteren gedruckten Karten wurden Erosionsränder und Terrassenkanten oftmals nicht
 unterschieden. In den Vektordaten wird diese Unterscheidung jedoch konsequent vollzogen. Dies
-bedingt, dass im Rahmen der Vektorisierung älterer gedruckter Karten Erosionsränder und 
-Terrassenkanten aufgeteilt werden müssen. Terrassenkanten werden nur dann als solche 
+bedingt, dass im Rahmen der Vektorisierung älterer gedruckter Karten Erosionsränder und
+Terrassenkanten aufgeteilt werden müssen. Terrassenkanten werden nur dann als solche
 attributiert, wenn sie durch ihre Lage und entsprechende Schotterterrassen eindeutig zugeordnet
 werden können. Zweifelhafte Fälle werden als Erosionsränder aufgenommen.
 
@@ -1181,7 +1183,7 @@ _Objektart_
 
 
 ### Class Karstic_Structures_PT {#karstic-structures-pt}
-Die Klasse [Karstic_Structures_PT](#karstic-structures-pt) beinhaltet Karstphänomene, die punktförmig dargestellt werden. 
+Die Klasse [Karstic_Structures_PT](#karstic-structures-pt) beinhaltet Karstphänomene, die punktförmig dargestellt werden.
 Darunter fallen u.a. der Ponor oder der Eingang zu einer Höhle.
 
 
@@ -1229,8 +1231,8 @@ _Datentyp:  boolean_
 
 
 ### Class Karstic_Structures_PLG {#karstic-structures-plg}
-Die Klasse [Karstic_Structures_PLG](#karstic-structures-plg) umfasst flächenhafte Karstformen wie Dolinen oder Poljen. 
-Dolinen werden immer als Polygone erfasst (das) bildet dafür eine wichtige Grundlage). Kleine 
+Die Klasse [Karstic_Structures_PLG](#karstic-structures-plg) umfasst flächenhafte Karstformen wie Dolinen oder Poljen.
+Dolinen werden immer als Polygone erfasst (das) bildet dafür eine wichtige Grundlage). Kleine
 Dolinen (Durchmesser &lt; 25 m), werden durch eine definierte Einheitsfläche von 500 m²
 dargestellt.
 
@@ -1260,7 +1262,7 @@ _Objektart_
 
 
 ### Class Alluvial_and_Lacustrine_Structures_L {#alluvial-and-lacustrine-structures-l}
-Die Klasse [Alluvial_and_Lacustrine_Structures_L](#alluvial-and-lacustrine-structures-l) beinhaltet linienförmige Morphologien 
+Die Klasse [Alluvial_and_Lacustrine_Structures_L](#alluvial-and-lacustrine-structures-l) beinhaltet linienförmige Morphologien
 fluviatilen oder lakustrischen Ursprungs.
 
 
@@ -1308,12 +1310,12 @@ _Alter der Objektart._
 ## Theme TECTONICS
 
 ### Class Deformation_Structures_PT {#deformation-structures-pt}
-Die Klasse [Deformation_Structures_PT](#deformation-structures-pt) beinhaltet punktuell beobachtete tektonische 
-Deformationsstrukturen wie lokal stark verfaltete Stellen (Fältelung) oder Orte mit ausgeprägter 
-Klüftung. Ebenfalls in dieser Klasse befinden sich konstruierte Punkte wie z.B. die Orientierung 
-der Faltenachsenfläche. Die Darstellung der Spur einer Achsenfläche entspricht der Symbolisierung 
-eines konstruierten Faltenscharniers, in einem Punkt der Intersektion einer Achsenfläche und der 
-Topografie. Diese beiden letzterwähnten Objektarten sind im Anhang A zur besseren 
+Die Klasse [Deformation_Structures_PT](#deformation-structures-pt) beinhaltet punktuell beobachtete tektonische
+Deformationsstrukturen wie lokal stark verfaltete Stellen (Fältelung) oder Orte mit ausgeprägter
+Klüftung. Ebenfalls in dieser Klasse befinden sich konstruierte Punkte wie z.B. die Orientierung
+der Faltenachsenfläche. Die Darstellung der Spur einer Achsenfläche entspricht der Symbolisierung
+eines konstruierten Faltenscharniers, in einem Punkt der Intersektion einer Achsenfläche und der
+Topografie. Diese beiden letzterwähnten Objektarten sind im Anhang A zur besseren
 Verständlichkeit abgebildet.
 
 
@@ -3912,142 +3914,6 @@ _Objektart_
 |12701001 | Hsur Gletscher | glacier     |
 |12701002 | Hsur See | lac     |
 |12701003 | Hsur Fluss | rivière     |
-
-
-
-
-
-
-
-
-## Theme META_DATA
-
-### Class Mapsheet {#mapsheet}
-Die Klasse [Mapsheet](#mapsheet) ist eine geometrielose Klasse. Sie beinhaltet alle Metadaten zur Objektart
-(Kartengrundlage). Neben der Kartenart sind Angaben wie der Titel, Massstab, Autor, Datenherr,
-Publikationsjahr und über die öffentliche Verfügbarkeit der Karte grundlegend. Verfügt die Karte
-(wie z.B. die Karten der Landesgeologie) über eine Kartennummer, kann dies bei «Map_Nbr»
-angegeben werden, während bei «Mapping_Period» die Zeitspanne der Datenaufnahme
-(Kartierung) erfasst wird. Das Attribut «Basis_Topo» beschreibt die topographische Grundlage
-und «Basis_Vect» den Vektordatensatz.
-
-
-
-
-    | Name                         | Type                              | Description
-----|------------------------------|-----------------------------------|--------------------------------------
-1 | **kind**                | subtype                                    | Objektart
-[]()           | Cardinality [1] | 15410                                       |
-2 | **map_title**                | string                                    | Originaltitel (Kartentitel) der Objektart.
-[]()           | Cardinality [1] |                                        |
-3 | **map_nbr**                | integer                                    | Originalnummer (Kartennummer) der Objektart.
-[]()           | Cardinality [0..1] |                                        |
-4 | **map_scale**                | string                                    | Massstab der Objektart (Kartenmassstab).
-[]()           | Cardinality [1] |                                        |
-5 | **basis_topo**                |                                     | Angabe zur topographischen Grundlage der Objektart.
-Wird vor allem bei Karten der Landesgeologie angegeben.
-[]()           | Cardinality [0..1] |                                        |
-6 | **author**                | string                                    | Autor oder Autoren der Objektart.
-[]()           | Cardinality [1..*] |                                        |
-7 | **owner**                | string                                    | Angabe zum Datenherr / zu den Datenherren der Objektart.
-[]()           | Cardinality [1..*] |                                        |
-8 | **map_period**                | string                                    | Angabe zum Kartierzeitraum der Objektart.
-[]()           | Cardinality [0..1] |                                        |
-9 | **publ_year**                | integer                                    | Publikationsjahr der Objektart.
-[]()           | Cardinality [1] |                                        |
-10 | **basis_vect**                | string                                    | Grundlage Vektordatensatz.
-[]()           | Cardinality [0..1] |                                        |
-11 | **restriction**                | boolean                                    | Angabe darüber, ob die Objektart öffentlich verfügbar ist (ja) oder einer Beschränkung (nein) unterliegt
-[]()           | Cardinality [1] |                                        |
-
-
-
-
-
-#### Attribute kind
-_Objektart_
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-
-
-
-
-#### Attribute map_title
-_Originaltitel (Kartentitel) der Objektart._
-_Datentyp:  string_
-
-
-
-
-
-#### Attribute map_nbr
-_Originalnummer (Kartennummer) der Objektart._
-_Datentyp:  integer_
-
-
-
-
-
-#### Attribute map_scale
-_Massstab der Objektart (Kartenmassstab)._
-_Datentyp:  string_
-
-
-
-
-
-#### Attribute basis_topo
-_Angabe zur topographischen Grundlage der Objektart.
-Wird vor allem bei Karten der Landesgeologie angegeben._
-
-
-
-
-#### Attribute author
-_Autor oder Autoren der Objektart._
-_Datentyp:  string_
-
-
-
-
-
-#### Attribute owner
-_Angabe zum Datenherr / zu den Datenherren der Objektart._
-_Datentyp:  string_
-
-
-
-
-
-#### Attribute map_period
-_Angabe zum Kartierzeitraum der Objektart._
-_Datentyp:  string_
-
-
-
-
-
-#### Attribute publ_year
-_Publikationsjahr der Objektart._
-_Datentyp:  integer_
-
-
-
-
-
-#### Attribute basis_vect
-_Grundlage Vektordatensatz._
-_Datentyp:  string_
-
-
-
-
-
-#### Attribute restriction
-_Angabe darüber, ob die Objektart öffentlich verfügbar ist (ja) oder einer Beschränkung (nein) unterliegt_
-_Datentyp:  boolean_
-
 
 
 
@@ -6739,7 +6605,6 @@ Wertetabelle der lithostratigraphischen Einheiten
 ## Anhang GC_LITHO_CD {#gc-litho-cd}
 Wertetabellen der lithologischen Beschreibung
 
-
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
 |15104015 | (Meso)Kataklasit | (méso)cataclasite     |
@@ -7109,7 +6974,6 @@ Wertetabellen der lithologischen Beschreibung
 
 ## Anhang GC_LITHO_UNCO_CD {#gc-litho-unco-cd}
 Wertetabellen der lithologischen Beschreibung
-
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
