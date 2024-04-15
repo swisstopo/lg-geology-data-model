@@ -1,4 +1,10 @@
 # Datenmodell Geologie
+
+# Document model version and date (structure, i.e. if python code must be adapted)
+version: 0.1
+date: 2024-04-14
+
+# Model revision should change if attributes are added, deleted or changed
 model:
   - revision: 3.5
     revision_date: 2024-04-30
