@@ -177,7 +177,8 @@ Fallbeispiele abgebildet.
 []()           | Cardinality [1..3] |                                                      |
 4 | **chrono_t**                | [CodedDomain](#gc-chrono-cd)  | Chronostratigraphische Zuordnung der Obergrenze der Kartiereinheit (Top). Die möglichen Werte sind in der Tabelle GC_CHRONO_CD im Anhang dieses Dokumentes verfügbar.
 []()           | Cardinality [1] |                                                      |
-5 | **chrono_b**                | [CodedDomain](#gc-chrono-cd)  | Chronostratigraphische Zuordnung der Untergrenze der Kartiereinheit (Basis). Die möglichen Werte sind in der Tabelle GC_CHRONO_CD im Anhang dieses Dokumentes verfügbar.
+5 | **chrono_b**                | [CodedDomain](#gc-chrono-cd)  | Chronostratigraphische Zuordnung der Untergrenze der Kartiereinheit
+(Basis). Die möglichen Werte sind in der Tabelle GC_CHRONO_CD im Anhang dieses Dokumentes verfügbar.
 []()           | Cardinality [1] |                                                      |
 6 | **mat_type**                |                                     | Materialbezeichnung (lithologische Einheit)
 []()           | Cardinality [0..3] | Lithostratigraphic_Units_Litho                                       |
@@ -241,7 +242,8 @@ Siehe die CodedDomain [GC_CHRONO_CD](#gc-chrono-cd) in Ahhang
 
 
 #### Attribute chrono_b
-_Chronostratigraphische Zuordnung der Untergrenze der Kartiereinheit (Basis)_
+_Chronostratigraphische Zuordnung der Untergrenze der Kartiereinheit
+(Basis)_
 Siehe die CodedDomain [GC_CHRONO_CD](#gc-chrono-cd) in Ahhang
 
 
@@ -1325,9 +1327,11 @@ Verständlichkeit abgebildet.
 ----|------------------------------|-----------------------------------|--------------------------------------
 1 | **kind**                | subtype                                    | Objektart
 []()           | Cardinality [1] | 14601                                       |
-2 | **azimuth**                | integer                                    | Fallrichtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad (0° 359°) im Uhrzeigersinn gemessen.
+2 | **azimuth**                | integer                                    | Fallrichtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad
+(0° 359°) im Uhrzeigersinn gemessen.
 []()           | Cardinality [0..1] |                                        |
-3 | **dip**                | integer                                    | Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die Vertikale (90°).
+3 | **dip**                | integer                                    | Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen
+aus der Horizontalen (0°) nach unten bis in die Vertikale (90°).
 []()           | Cardinality [0..1] |                                        |
 4 | **fold_typ**                | [CodedDomain](#deformation-structures-pt-fold-typ)  | Objekttyp. 
 []()           | Cardinality [0..1] |                                                      |
@@ -1355,7 +1359,8 @@ _Objektart_
 
 
 #### Attribute azimuth
-_Fallrichtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad (0° 359°) im Uhrzeigersinn gemessen._
+_Fallrichtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad
+(0° 359°) im Uhrzeigersinn gemessen._
 _Datentyp:  integer_
 
 
@@ -1363,7 +1368,8 @@ _Datentyp:  integer_
 
 
 #### Attribute dip
-_Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die Vertikale (90°)._
+_Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen
+aus der Horizontalen (0°) nach unten bis in die Vertikale (90°)._
 _Datentyp:  integer_
 
 
@@ -1646,9 +1652,11 @@ Faltenachse und der Scheitellinie sind im Anhang A zur besseren Verständlichkei
 []()           | Cardinality [0..1] |                                                      |
 5 | **phase_ref**                | string                                    | Referenz für die Angabe der Deformationsphase.
 []()           | Cardinality [0..1] |                                        |
-6 | **azimuth**                | integer                                    | Einfallsrichtung (Azimut) der jeweiligen Punktobjektart (z.B. Scheitellinie, Faltenachse). Wert in Grad (0° 359°) im Uhrzeigersinn gemessen
+6 | **azimuth**                | integer                                    | Einfallsrichtung (Azimut) der jeweiligen Punktobjektart (z.B. Scheitellinie,
+Faltenachse). Wert in Grad (0° 359°) im Uhrzeigersinn gemessen
 []()           | Cardinality [1] |                                        |
-7 | **dip**                | integer                                    | Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die Vertikale (90°).
+7 | **dip**                | integer                                    | Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen
+aus der Horizontalen (0°) nach unten bis in die Vertikale (90°).
 []()           | Cardinality [0..1] |                                        |
 
 
@@ -1709,7 +1717,8 @@ _Datentyp:  string_
 
 
 #### Attribute azimuth
-_Einfallsrichtung (Azimut) der jeweiligen Punktobjektart (z.B. Scheitellinie, Faltenachse). Wert in Grad (0° 359°) im Uhrzeigersinn gemessen_
+_Einfallsrichtung (Azimut) der jeweiligen Punktobjektart (z.B. Scheitellinie,
+Faltenachse). Wert in Grad (0° 359°) im Uhrzeigersinn gemessen_
 _Datentyp:  integer_
 
 
@@ -1717,7 +1726,8 @@ _Datentyp:  integer_
 
 
 #### Attribute dip
-_Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die Vertikale (90°)._
+_Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen
+aus der Horizontalen (0°) nach unten bis in die Vertikale (90°)._
 _Datentyp:  integer_
 
 
@@ -1791,7 +1801,8 @@ Die Klasse [Planar_Structures_PT](#planar-structures-pt) enthält Objektarten, w
 []()           | Cardinality [0..1] |                                        |
 5 | **ob_dip_slo**                | boolean                                    | Dip slope beobachtet (ja / nein)?
 []()           | Cardinality [0..1] |                                        |
-6 | **azimuth**                | integer                                    | Einfallsrichtung (Azimut) der jeweiligen Punktobjektart (z.B. Scheitellinie, Faltenachse). Wert in Grad (0° 359°) im Uhrzeigersinn gemessen
+6 | **azimuth**                | integer                                    | Einfallsrichtung (Azimut) der jeweiligen Punktobjektart (z.B. Scheitellinie,
+Faltenachse). Wert in Grad (0° 359°) im Uhrzeigersinn gemessen
 []()           | Cardinality [1] |                                        |
 7 | **dip**                |                                     | Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die Vertikale (90°).
 []()           | Cardinality [] |                                        |
@@ -1859,7 +1870,8 @@ _Datentyp:  boolean_
 
 
 #### Attribute azimuth
-_Einfallsrichtung (Azimut) der jeweiligen Punktobjektart (z.B. Scheitellinie, Faltenachse). Wert in Grad (0° 359°) im Uhrzeigersinn gemessen_
+_Einfallsrichtung (Azimut) der jeweiligen Punktobjektart (z.B. Scheitellinie,
+Faltenachse). Wert in Grad (0° 359°) im Uhrzeigersinn gemessen_
 _Datentyp:  integer_
 
 
@@ -3743,13 +3755,15 @@ Wasserchemie.
 []()           | Cardinality [0..1] |                                                      |
 5 | **dis_loca**                | [CodedDomain](#surface-water-pt-dis-loca)  | Ort des Wasserausflusses.. 
 []()           | Cardinality [0..1] |                                                      |
-6 | **combi**                | [CodedDomain](#surface-water-pt-combi)  | Objektart einer anderen Klasse, die mit der Objektart in Kombination vorkommen kann. 
+6 | **combi**                | [CodedDomain](#surface-water-pt-combi)  | Objektart einer anderen Klasse, die mit der Objektart in Kombination
+vorkommen kann. 
 []()           | Cardinality [0..1] |                                                      |
 7 | **temp**                | integer                                    | Mittlere Wassertemperatur (°C).
 []()           | Cardinality [0..1] |                                        |
 8 | **chemistry**                | string                                    | Charakteristisches chemisches Element im Mineralwasser (z.B. Fe).
 []()           | Cardinality [0..1] |                                        |
-9 | **azimuth**                | integer                                    | Richtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad (0° 359°) im Uhrzeigersinn gemessen.
+9 | **azimuth**                | integer                                    | Richtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad (0°
+359°) im Uhrzeigersinn gemessen.
 []()           | Cardinality [0..1] |                                        |
 
 
@@ -3825,7 +3839,8 @@ _Ort des Wasserausflusses._
 
 
 #### Attribute combi {#surface-water-pt-combi}
-_Objektart einer anderen Klasse, die mit der Objektart in Kombination vorkommen kann_
+_Objektart einer anderen Klasse, die mit der Objektart in Kombination
+vorkommen kann_
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -3854,7 +3869,8 @@ _Datentyp:  string_
 
 
 #### Attribute azimuth
-_Richtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad (0° 359°) im Uhrzeigersinn gemessen._
+_Richtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad (0°
+359°) im Uhrzeigersinn gemessen._
 _Datentyp:  integer_
 
 
@@ -7684,3 +7700,7 @@ Wertetabelle der tektonischen Einheiten
 |999998 | Not applicable | not applicable     |
 
 
+
+
+
+Mittelalter
