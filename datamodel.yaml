@@ -1902,7 +1902,9 @@ themes:
             description:
               de: Bohrungs-ID der Objektart in einem zusätzlichen Dokument (Erläuterungen,
                 ...).
-              fr: ''
+              fr: |
+                Numéro de référence du type d'objet dans un 
+                document annexé (notice explicative,…).
             att_type: integer
             cardinality: 0..1
           - name: link
@@ -2079,7 +2081,9 @@ themes:
             description:
               de: Objektart einer anderen Klasse, die mit der Objektart in Kombination
                 vorkommen kann
-              fr: ''
+              fr: |
+                Type d’objet d'une autre classe avec lequel le type 
+                d’objet peut être combiné
             att_type: CD
             value: GC_LIN_HSUB_COMBI_CD
             cardinality: 0..1
@@ -2098,7 +2102,18 @@ themes:
             Für diesen Quelltyp ist das Attribut «Chemistry» vorgesehen. D.h. unter diesem Attribut wird das
             charakteristische chemische Element im Mineralwasser angegeben und nicht die komplette
             Wasserchemie.
-          fr:
+          fr: |
+            La classe Surface_Water_PT comprend les eaux de surface locales (ponctuelles) comme les 
+            sources et les pertes d’un cours d’eau. On y trouve également des types d’objets particuliers 
+            comme les cascades et les rapides, lesquels marquent des positions spécifiques du cours d’eau 
+            qui sont à relier avec la géologie sous-jacente.
+            Une source est décrite comme «source thermale» lorsque l’eau y atteint une température 
+            annuelle moyenne ≥ 20°C. L’attribut «Temp» est associé à ce type de source et se limite en 
+            règle générale à la température moyenne de l’eau. Par conséquent aucune donnée d’analyse 
+            chimique n’est indiquée pour cet attribut. Par «source minérale», on entend une source avec 
+            une concentration minérale dans l’eau ≥ 1g / l ou une concentration en CO2 ≥ 250 mg / l. 
+            L’attribut «Chemistry» est associé à ce type de source. Il indique l’élément caractéristique 
+            principal de l’eau minérale et non le chimisme complet de l’eau
         attributes:
           - name: kind
             description:
