@@ -544,28 +544,30 @@ themes:
           - name: morai_mo
             description:
               de: Morphologie der Moräne
-              fr: ''
+              fr: Morphologie de la moraine
             att_type: CD
             value: GC_LIN_GGLA_MORAI_MO_CD
             cardinality: 0..1
           - name: glac_typ
             description:
               de: Gletschertyp, auf welchen die Objektart bezogen ist
-              fr: ''
+              fr: Type de glacier auquel le type d’objet est associé
             att_type: CD
             value: GC_LIN_GGLA_GLAC_TYP_CD
             cardinality: 0..1
           - name: ice_m_p
             description:
               de: Räumlicher Gletscherstand
-              fr: ''
+              fr: Stade glaciaire
             att_type: CD
             value: GC_LIN_GGLA_ICE_M_P_CD
             cardinality: 0..1
           - name: quat_str
             description:
               de: Zeitliche quartärstratigraphische Zuordnung des Moränenwälls
-              fr: ''
+              fr: |
+                  Attribution chronostratigraphique du vallum morainique 
+                  au sein du Quaternaire
             att_type: CD
             value: GC_LIN_GGLA_QUAT_STR_CD
             cardinality: 0..1
@@ -702,7 +704,7 @@ themes:
           - name: age
             description:
               de: Alter der Objektart.
-              fr: ''
+              fr: Âge du type d'obje
             att_type: CD
             value: GC_LIN_GALL_AGE_CD
             cardinality: 0..1
@@ -738,28 +740,34 @@ themes:
               de: |
                   Fallrichtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad
                   (0° 359°) im Uhrzeigersinn gemessen.
-              fr: Azimut du type d'objet.
+              fr: |
+                Azimut du type d'objet. L'azimut est mesuré depuis le 
+                nord en degré de 0° à 359° dans le sens des aiguilles 
+                d'une montre
             att_type: integer
             cardinality: 0..1
-          - name: dip
+          - name: dip  # WAs 'plunge' in version 2.1
             description:
               de: |
                   Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen
                   aus der Horizontalen (0°) nach unten bis in die Vertikale (90°).
-              fr: Valeur du pendage du type d'objet.
+              fr: |
+                Valeur du plongement du type d'objet (valeur en 
+                degrés, mesurée de l’horizontale (0°) vers le bas jusqu’à 
+                la verticale (90°)
             att_type: integer
             cardinality: 0..1
           - name: fold_typ
             description:
               de: Objekttyp
-              fr: ''
+              fr: Caractéristique du type d'objet
             att_type: CD
             value: GC_PNT_TDEF_FOLD_TYP_CD
             cardinality: 0..1
           - name: fold_for
             description:
               de: Objektform
-              fr: ''
+              fr: Forme du type d'objet
             att_type: CD
             value: GC_PNT_TDEF_FOLD_FOR_CD
             cardinality: 0..1
@@ -800,14 +808,14 @@ themes:
           - name: type
             description:
               de: Charakteristik der Objektarten
-              fr: ''
+              fr: Caractéristique du type d'objet
             att_type: CD
             value: GC_SURF_TDEF_TYPE_CD
             cardinality: 0..1
           - name: gen_rela
             description:
               de: Genetische Beziehung.
-              fr: ''
+              fr: Relation génétique
             att_type: CD # TODO: where is the domain
             value:
             cardinality: 0..1
@@ -834,21 +842,23 @@ themes:
           - name: fault_mo
             description:
               de: Bewegungsrichtung des Bruchs
-              fr: ''
+              fr: Mouvement de la faille
             att_type: CD
             value: GC_LIN_TTEC_FAULT_MO_CD
             cardinality: 0..1
           - name: verti_mo
             description:
               de: Bewegung parallel zur Fallrichtung der Bruchfläche.
-              fr: ''
+              fr: Mouvement parallèle au pendage du plan de faille
             att_type: CD
             value: GC_LIN_TTEC_VERTI_MO_CD
             cardinality: 0..1
           - name: horiz_mo
             description:
               de: Bewegung parallel zur Streichrichtung der Bruch- oder Scherfläche
-              fr: ''
+              fr: |
+                  Mouvement parallèle à la direction du plan de faille ou 
+                  de cisaillement
             att_type: CD
             value: GC_LIN_TTEC_HORIZ_MO_CD
             cardinality: 0..1
@@ -862,27 +872,27 @@ themes:
           - name: status
             description:
               de: Zustand der Objektart
-              fr: ''
+              fr: État du type d'objet
             att_type: CD
             value: GC_LIN_TTEC_STATUS_CD
             cardinality: 1
           - name: activity
             description:
               de: Aktivität der Objektart
-              fr: ''
+              fr: Activité du type d'objet
             att_type: TODO  # TODO: no coded domain
             cardinality: 0..1
           - name: meta_sta
             description:
               de: Tektonometamorphe Chronologie der Objektart
-              fr: ''
+              fr: Chronologie tecto-métamorphique du type d’objet.
             att_type: CD
             value: GC_LIN_TTEC_META_STA_CD
             cardinality: 0..1
           - name: name
             description:
               de: Spezifischer Name der Objektart.
-              fr:
+              fr: |
                 Nom de la localité-type. / Description de l’affleurement géologique important
             att_type: string
             cardinality: 0..1
@@ -909,20 +919,20 @@ themes:
           - name: fold_typ
             description:
               de: Objekttyp
-              fr: ''
+              fr: Type de l'objet
             att_type: CD
             value: GC_PNT_MFOL_FOLD_TYP_CD
             cardinality: 0..1
           - name: fold_for
             description:
               de: Form der Objektart
-              fr: ''
+              fr: Forme du type d'objet
             value: 13603  # TODO: CD not found (but approaching)
             cardinality: 0..1
           - name: phase
             description:
               de: Deformationsphase.
-              fr: ''
+              fr: Phase de déformation
             att_type: CD
             value: GC_PNT_MFOL_PHASE_CD
             cardinality: 0..1
@@ -934,16 +944,24 @@ themes:
             cardinality: 0..1
           - name: azimuth
             description:
-              de: Einfallsrichtung (Azimut) der jeweiligen Punktobjektart (z.B. Scheitellinie,
+              de: |
+                Einfallsrichtung (Azimut) der jeweiligen Punktobjektart (z.B. Scheitellinie,
                 Faltenachse). Wert in Grad (0° 359°) im Uhrzeigersinn gemessen
-              fr: Azimut du type d'objet.
+              fr: |
+                Azimut du type d'objet. L'azimut est mesuré depuis le 
+                nord en degré de 0° à 359° dans le sens des aiguilles 
+                d'une montre
             att_type: integer
             cardinality: 1
           - name: dip
             description:
-              de: Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen
+              de: |
+                Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen
                 aus der Horizontalen (0°) nach unten bis in die Vertikale (90°).
-              fr: Valeur du pendage du type d'objet.
+              fr: |
+                Valeur du plongement du type d'objet (valeur en 
+                degrés, mesurée de l’horizontale (0°) vers le bas jusqu’à 
+                la verticale (90°)
             att_type: integer
             cardinality: 0..1
       - name: Lineation_PT
@@ -970,14 +988,20 @@ themes:
             description:
               de: Einfallsrichtung (Azimut) der jeweiligen Punktobjektart (z.B. Scheitellinie,
                 Faltenachse). Wert in Grad (0° 359°) im Uhrzeigersinn gemessen
-              fr: Azimut du type d'objet.
+              fr: |
+                Azimut du type d'objet. L'azimut est mesuré depuis le 
+                nord en degré de 0° à 359° dans le sens des aiguilles 
+                d'une montre
             att_type: integer
             cardinality: 1
           - name: dip
             description:
               de: Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen
                 aus der Horizontalen (0°) nach unten bis in die Vertikale (90°).
-              fr: Valeur du pendage du type d'objet.
+              fr: |
+                Valeur du plongement du type d'objet (en degrés),
+                mesurée de l’horizontale (0°) vers le bas jusqu’à la 
+                verticale (90°)
             cardinatity: 0..1
       - name: Planar_Structures_PT
         description:
@@ -999,14 +1023,14 @@ themes:
           - name: polarity
             description:
               de: Position der Objektart im Raum
-              fr: ''
+              fr: Polarité du type d'objet dans l'espace.
             att_type: CD
             value: GC_PNT_MPLA_POLARITY_CD
             cardinality: 0..1
           - name: phase
             description:
               de: Deformationsphase
-              fr: ''
+              fr: Phase de déformation
             att_type: CD
             value: GC_PNT_MPLA_PHASE_CD
             polarity: 0..1
@@ -1027,14 +1051,20 @@ themes:
               de: |
                   Einfallsrichtung (Azimut) der jeweiligen Punktobjektart (z.B. Scheitellinie,
                   Faltenachse). Wert in Grad (0° 359°) im Uhrzeigersinn gemessen
-              fr: Azimut du type d'objet.
+              fr: |
+                Azimut du type d'objet. L'azimut est mesuré depuis le 
+                nord en degré de 0° à 359° dans le sens des aiguilles 
+                d'une montre
             att_type: integer
             cardinality: 1
           - name: dip
             description:
               de: Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen
                 aus der Horizontalen (0°) nach unten bis in die Vertikale (90°).
-              fr: Valeur du pendage du type d'objet.
+              fr: |
+                Valeur du plongement du type d'objet (en degrés),
+                mesurée de l’horizontale (0°) vers le bas jusqu’à la 
+                verticale (90°)
             cardinatity: 0..1
 
   - name: Local_Additional_Information
@@ -1055,7 +1085,7 @@ themes:
           - name: type
             description:
               de: Charakteristik der Objektart.
-              fr: ''
+              fr: Caractéristique du type d'objet
             value: 128002  # TODO: no CD
       - name: Fossils_PT
         description:
@@ -1072,28 +1102,28 @@ themes:
           - name: division
             description:
               de: Fossilienkategorie, zu welcher die Objektinstanz gehört.
-              fr: ''
+              fr: Catégorie de fossile à laquelle appartient l'objet
             att_type: CD
             value: GC_FOSS_LFOS_DIVISION_CD
             cardinality: 0..1
           - name: system
             description:
               de: Fossiliengruppe.
-              fr: ''
+              fr: Groupe de fossiles
             att_type: table
             value: gc_system
             cardinality: 0..1
           - name: dat_meth
             description:
               de: Datierungsmethode.
-              fr: ''
+              fr: Méthode de datation
             att_type: CD
             value: GC_FOSS_LFOS_DAT_METH_CD
             cardinality: 0..1
           - name: status
             description:
               de: Zustand der Objektart
-              fr: ''
+              fr: État du type d'objet
             att_type: CD
             value: GC_FOSS_LFOS_STATUS_CD
             cardinality: 0..1
@@ -1122,14 +1152,14 @@ themes:
           - name: status
             description:
               de: Zustand der Objektart
-              fr: ''
+              fr: tat du type d'obje
             att_type: CD
             value: GC_PNT_LRES_STATUS_CD
             cardinality: 0..1
           - name: material
             description:
               de: Material, das mit der Objektart in Verbindung steht
-              fr: ''
+              fr: Matériau associé au type d'objet
             att_type: CD
             value: GC_PNT_LRES_MATERIAL_CD
             cardinality: 0..1
@@ -1137,7 +1167,9 @@ themes:
             description:
               de: Chemische Komponente(n) oder Mineralien, welche die Natur der Objektart
                 charakterisieren.
-              fr: Element chimique caractéristique dans l’eau minérale.
+              fr: |
+                Composant(s) chimique(s) caractérisant la nature du 
+                type d'objet.
             att_type: string
             cardinality: 0..1
       - name: Mineralised_Zone_L
@@ -1155,7 +1187,9 @@ themes:
           - name: chemistry
             description:
               de: Chemische Komponente(n), welche die Natur der Objektart charakterisieren.
-              fr: Element chimique caractéristique dans l’eau minérale.
+              fr: |
+               Composant(s) chimique(s) caractérisant la nature du 
+               type d'objet.
             att_type: string
             cardinality: 0..1
       - name: Sedimentary_Structures_PT
@@ -1176,7 +1210,10 @@ themes:
             description:
               de: Orientierung des Symbols. Wert in Grad (0° 359°) im Uhrzeigersinn
                 gemessen.
-              fr: Azimut du type d'objet.
+              fr: |
+                Azimut du type d'objet. L'azimut est mesuré depuis le 
+                nord en degré de 0° à 359° dans le sens des aiguilles 
+                d'une montre
             att_type: integer
             cardinality: 0..1
       - name: Type_Localities_PT
@@ -1198,7 +1235,7 @@ themes:
           - name: strati
             description:
               de: Lithostratigraphischer Zusatz zum Objekt
-              fr: ''
+              fr: Complément lithostratigraphique du type d'objet
             att_type: CD
             value: GC_PNT_LTYP_STRATI_CD
             cardinality: 0..1
@@ -1206,7 +1243,7 @@ themes:
             description:
               de: Name der Typlokalität. / Beschreibung des geologisch relevanten
                 Aufschlusses
-              fr:
+              fr: |
                 Nom de la localité-type. / Description de l’affleurement géologique important.
             att_type: string
             cardinality: 0..1
@@ -1243,14 +1280,16 @@ themes:
           - name: cong_spe
             description:
               de: Charakterisation der Konglomerate nach ihrem Geröllspektrum.
-              fr: ''
+              fr: |
+                  Caractérisation des conglomérats selon la nature des 
+                  clastes.
             att_type: CD
             value: GC_LIN_LPRO_CONG_SPE_CD
             cardinality: 0..1
           - name: name_horiz
             description:
               de: Name des Bentonit-Leithorizonts.
-              fr: ''
+              fr: Nom du horizon repère à bentonite.
             att_type: annex
             value: GC_LITSTRAT_BED_CD  # TODO: was 13103, now field: LPRO_NAME_HORIZ
             cardinality: 0..1
@@ -1265,10 +1304,10 @@ themes:
           - name: lpro_litho
             description:
               de: Materialbezeichnung (lithologische Einheit).
-              fr: ''
+              fr: Unité litholstratigraphique
             att_type: annex
             value: GC_LITHO_CD  # TODO: really or CD field: "LPRO_LITHO",
-            change: renamed  # 'ltiho' -> LPRO_LITHO
+            change: renamed  # 'litho' -> LPRO_LITHO
             cardinality: 1
       - name: Miscellaneous_PT
         description:
@@ -1309,7 +1348,19 @@ themes:
             detaillierter Information von Gebieten mit geringerer Informationsdichte aufgrund fehlender
             Informationen oder aus darstellerischen Gründen (Digitalisierungsmassstab)
             ab-grenzen (Abgrenzungskontur nach dem ZV).
-          fr:
+          fr: |
+            La classe Geological_Outlines_L contient les contours géologiques. Sous ce terme sont regroupés 
+            les périmètres des affleurements de roches consolidées et de roches meubles, les limites des 
+            zones tectonisées, ainsi que la délimitation des masses glissées et tassées, pour autant que ces 
+            bordures ne soient pas déjà décrites par un autre type de contour (p. ex. limite tectonique).
+            Les contours géologiques de statut général regroupent les limites stratigraphiques et 
+            pétrographiques. Un contour géologique recouvert par des dépôts quaternaires, par un cours 
+            d’eau ou un glacier a un statut probable. Il en va de même pour les passages graduels entre 
+            roches meubles et roches consolidées (aucune limite lithologique claire; au sens des limites de 
+            figuré selon le catalogue des signes (CS)). Les contours géologiques artificiels (contours de 
+            séparation selon le CS) sont des contours séparant des secteurs à information détaillée de 
+            secteurs à densité d’information plus faible – du fait d’un manque d’information ou pour des 
+            raisons de représentation (échelle de la digitalisation
         attributes:
           - name: kind
             description:
@@ -1321,7 +1372,7 @@ themes:
           - name: status
             description:
               de: Zustand der Objektart.
-              fr: ''
+              fr: État du type d'objet
             att_type: CD
             value: GC_LIN_LGEO_STATUS_CD
             cardinality: 0..1
@@ -1347,7 +1398,7 @@ themes:
           - name: type
             description:
               de: Referenzoberfläche.
-              fr: ''
+              fr: Surface de référence
             att_type: CD
             value: GC_PNT_PSLO_TYPE_CD
             cardinality: 1
@@ -1355,7 +1406,10 @@ themes:
             description:
               de: Fallrichtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad
                 (0° 359°) im Uhrzeigersinn gemessen.
-              fr: Azimut du type d'objet.
+              fr: |
+                Azimut du type d'objet. L'azimut est mesuré depuis le 
+                nord en degré de 0° à 359° dans le sens des aiguilles 
+                d'une montre
             att_type: integer
             cardinality: 0..1
           - name: dip
@@ -1363,13 +1417,16 @@ themes:
               de: |-
                 Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die
                 Vertikale (90°).
-              fr: Valeur du pendage du type d'objet.
+              fr: |
+                Valeur du plongement du type d'objet (en degrés),
+                mesurée de l’horizontale (0°) vers le bas jusqu’à la 
+                verticale (90°)
             att_type: integer
             cardinality: 0..1
           - name: pslo_formatio
             description:
               de: Lithostratigraphische Einheit der modellierten Formation
-              fr: ''
+              fr: Unité lithostratigraphique de l’horizon modélisé
             att_type: annex
             value: GC_LITSTRAT_BED_CD  # TODO:  coded domain field; PSLO_FORMATIO", CD:  "GC_LITSTRAT_BED_CD"
             cardinality: 1
@@ -1396,7 +1453,7 @@ themes:
           - name: type
             description:
               de: Referenzoberfläche.
-              fr: ''
+              fr: Surface de référence
             att_type: CD
             value: GC_LIN_PCOB_TYPE_CD
             cardinality: 1
@@ -1409,7 +1466,7 @@ themes:
           - name: litstrat
             description:
               de: Lithostratigraphische Einheit der modellierten Formation
-              fr: ''
+              fr: Unité lithostratigraphique de la formation modelisée
             att_type: annex
             value: GC_LITSTRAT_BED_CD  # TODO: renammed? field: "PCOB_FORMATIO", CD "GC_LITSTRAT_BED_CD"
             cardinality: 1
@@ -1433,14 +1490,20 @@ themes:
             description:
               de: Fallrichtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad
                 (0° 359°) im Uhrzeigersinn gemessen.
-              fr: Azimut du type d'objet.
+              fr: |
+                Azimut du type d'objet. L'azimut est mesuré depuis le 
+                nord en degré de 0° à 359° dans le sens des aiguilles 
+                d'une montre
             att_type: integer
             cardinality: 0..1
           - name: dip
             description:
               de: Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen
                 aus der Horizontalen (0°) nach unten bis in die Vertikale (90°).
-              fr: Valeur du pendage du type d'objet.
+              fr: |
+                Valeur du plongement du type d'objet (en degrés),
+                mesurée de l’horizontale (0°) vers le bas jusqu’à la 
+                verticale (90°)
             att_type: integer
             cardinality: 0..1
           - name: height
@@ -1474,7 +1537,7 @@ themes:
           - name: confine
             description:
               de: Druckzustand im Grundwasserleiter.
-              fr: ''
+              fr: État de la pression dans l’aquifère
             att_type: CD
             value: GC_LIN_PCOH_CONFINE_CD
             cardinality: 0..1
@@ -1486,7 +1549,7 @@ themes:
           - name: wa_table
             description:
               de: Wasserstand.
-              fr: ''
+              fr: Niveau des eaux
             att_type: CD
             value: GC_LIN_PCOH_WA_TABLE_CD
             cardinality: 0..1
@@ -1507,28 +1570,28 @@ themes:
           - name: epoch
             description:
               de: Archäologische Epoche der Objektart
-              fr: ''
+              fr: Époque archéologique du type d'objet
             att_type: CD
             value: GC_AARC_EPOCH_CD  # value wrong in PDF
             cardinality: 0..1
           - name: period
             description:
               de: Archäologische Periode der Objektart.
-              fr: ''
+              fr: Période archéologique du type d'objet
             att_type: CD
             value: GC_AARC_PERIOD_CD # GeolCode wrong in PDF
             cardinality: 0..1
           - name: age
             description:
               de: Archäologisches Alter der Objektart.
-              fr: ''
+              fr: Âge archéologique du type d'objet
             att_type: CD
             value: GC_AARC_AGE_CD
             cardinality: 0..1
           - name: type
             description:
               de: Art des Kultsteins.
-              fr: ''
+              fr: Type de mégalithe
             att_type: CD
             value: GC_PNT_AARC_TYPE_CD
             cardinality: 0..1
@@ -1550,21 +1613,21 @@ themes:
           - name: epoch
             description:
               de: Archäologische Epoche der Objektart
-              fr: ''
+              fr: Époque archéologique du type d'objet
             att_type: CD
             value: GC_AARC_EPOCH_CD  # value wrong in PDF
             cardinality: 0..1
           - name: period
             description:
               de: Archäologische Periode der Objektart.
-              fr: ''
+              fr: Période archéologique du type d'objet
             att_type: CD
             value: GC_AARC_PERIOD_CD # GeolCode wrong in PDF
             cardinality: 0..1
           - name: age
             description:
               de: Archäologisches Alter der Objektart.
-              fr: ''
+              fr: Âge archéologique du type d'objet
             att_type: CD
             value: GC_AARC_AGE_CD
             cardinality: 0..1
@@ -1586,21 +1649,21 @@ themes:
           - name: epoch
             description:
               de: Archäologische Epoche der Objektart
-              fr: ''
+              fr: Époque archéologique du type d'objet
             att_type: CD
             value: GC_AARC_EPOCH_CD  # value wrong in PDF
             cardinality: 0..1
           - name: period
             description:
               de: Archäologische Periode der Objektart.
-              fr: ''
+              fr: Période archéologique du type d'objet
             att_type: CD
             value: GC_AARC_PERIOD_CD # GeolCode wrong in PDF
             cardinality: 0..1
           - name: age
             description:
               de: Archäologisches Alter der Objektart.
-              fr: ''
+              fr: Âge archéologique du type d'objet
             att_type: CD
             value: GC_AARC_AGE_CD
             cardinality: 0..1
@@ -1622,14 +1685,14 @@ themes:
           - name: exp_unit
             description:
               de: Abgebaute lithostratigraphische Einheit.
-              fr: ''
+              fr: Unité lithostratigraphique exploitée
             att_type: table
             value: gc_litstrat_bed # TODO
             cardinality: 0..*
           - name: status
             description:
               de: Abbaustatus.
-              fr: ''
+              fr: État de l'exploitation
             att_type: CD
             value: GC_EX_GEO_PNT_AEXP_STATUS_CD
             cardinality: 0..1
@@ -1642,7 +1705,7 @@ themes:
           - name: targ_mat
             description:
               de: Abgebautes Material.
-              fr: ''
+              fr: Matériau exploité.
             att_type: CD
             value: GC_EX_GEO_PNT_AEXP_TARG_MAT_CD
             cardinality: 0..1
@@ -1665,7 +1728,7 @@ themes:
           - name: status
             description:
               de: Abbaustatus.
-              fr: ''
+              fr: État de l'exploitation
             att_type: CD
             value: GC_LIN_AEXP_STATUS_CD
             cardinality: 0..1
@@ -1688,14 +1751,14 @@ themes:
           - name: exp_unit
             description:
               de: Abgebaute lithostratigraphische Einheit.
-              fr: ''
+              fr: Unité lithostratigraphique exploitée
             att_type: table
             value: gc_litstrat_bed # TODO
             cardinality: 1..*
           - name: status
             description:
               de: Abbaustatus.
-              fr: ''
+              fr: État de l'exploitation
             att_type: CD
             value: GC_EX_GEO_PLG_AEXP_STATUS_CD
             cardinality: 0..1
@@ -1708,7 +1771,7 @@ themes:
           - name: targ_mat
             description:
               de: Abgebautes Material.
-              fr: ''
+              fr: Matériel exploité.
             att_type: CD
             value: GC_EX_GEO_PLG_AEXP_TARG_MAT_CD
             cardinality: 0..1
@@ -1732,7 +1795,7 @@ themes:
           - name: drill_mo
             description:
               de: Bohrmethode.
-              fr: ''
+              fr: Mode du forage.
             value: 10502 # TODO no CD
             cardinality: 0..1
           - name: depth_bedrock
@@ -1743,7 +1806,12 @@ themes:
                 im Festgestein beginnt, beträgt der Wert 0). Falls Festgestein erreicht
                 wurde, aber nicht klar ist, dass es sich um die Felsoberfläche handelt,
                 beträgt der Wert -8888.
-              fr: ''
+              fr: |
+                Profondeur de la roche en place (en mètres depuis la 
+                surface). (Si l’ouvrage n’atteint pas la roche en place, 
+                par exemple forage interrompu dans la couverture 
+                quaternaire, la valeur est -999, au cas où le forage 
+                commence déjà dans la roche en place la valeur est 0)
             att_type: float
             cardinality: 0..1
           - name: d_c_underg
@@ -1755,14 +1823,14 @@ themes:
           - name: main_tar
             description:
               de: Ziel der Sondierung.
-              fr: ''
+              fr: But principal du sondage
             att_type: CD
             value: GC_PNT_ABOR_MAIN_TAR_CD
             cardinality: 0..1
           - name: targ_mat
             description:
               de: Durch die Sondierung gefördertes Material.
-              fr: ''
+              fr: Matériau cible du sondage
             att_type: CD
             value: GC_PNT_ABOR_TARG_MAT_CD
             cardinality: 0..1
@@ -1778,7 +1846,7 @@ themes:
           - name: fm_a
             description:
               de: Lithostratigraphische Einheit der erreichten Formation A
-              fr: ''
+              fr: Unité lithostratigraphique de la formation A atteinte
             att_type: annex
             value: GC_LITSTRAT_BED_CD # TODO
             cardinality: 0..1
@@ -1792,14 +1860,16 @@ themes:
           - name: fm_b
             description:
               de: Lithostratigraphische Einheit der erreichten Formation B
-              fr: ''
+              fr: Unité lithostratigraphique de la formation B atteinte
             att_type: annex
             value: GC_LITSTRAT_BED_CD # TODO
             cardinality: 0..1
           - name: depth_fm_b
             description:
               de: Tiefe (m ab Terrainoberfläche) der erreichten Formation B.
-              fr: ''
+              fr: |
+                Profondeur de la formation B atteinte (en mètres depuis 
+                la surface).
             att_type: float
             cardinality: 0..1
           - name: depth_wt
@@ -1812,14 +1882,20 @@ themes:
             description:
               de: Fallrichtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad
                 (0° 359°) im Uhrzeigersinn gemessen.
-              fr: Azimut du type d'objet.
+              fr: |
+                Azimut du type d'objet. L'azimut est mesuré depuis le 
+                nord en degré de 0° à 359° dans le sens des aiguilles 
+                d'une montre
             att_type: integer
             cardinality: 0..1
           - name: dip
             description:
               de: Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen
                 aus der Horizontalen (0°) nach unten bis in die Vertikale (90°).
-              fr: Valeur du pendage du type d'objet.
+              fr: |
+                Valeur du plongement du type d'objet (en degrés),
+                mesurée de l’horizontale (0°) vers le bas jusqu’à la 
+                verticale (90°)
             att_type: integer
             cardinality: 0..1
           - name: ref_number
@@ -1832,7 +1908,9 @@ themes:
           - name: link
             description:
               de: Objektnummer in der Datenbank von INFOGEOL.
-              fr: ''
+              fr: |
+                Numéro de référence du type d'objet dans un 
+                document annexé (notice explicative,…).
             att_type: integer
             cardinality: 0..1
 
@@ -1873,14 +1951,14 @@ themes:
           - name: status
             description:
               de: Zustand der Objektart.
-              fr: ''
+              fr: État du type d'objet.
             att_type: CD
             value: GC_PNT_HCON_STATUS_CD
             cardinality: 0..1
           - name: epoch
             description:
               de: Epoche der Erbauung der Objektart.
-              fr: ''
+              fr: Époque de construction du type d'objet
             att_type: CD
             value: GC_PNT_HCON_EPOCH_CD
             cardinality: 0..1
@@ -1923,7 +2001,9 @@ themes:
             description:
               de: Objektart einer anderen Klasse, die mit der Objektart in Kombination
                 vorkommen kann
-              fr: ''
+              fr: |
+                Type d’objet d'une autre classe avec lequel le type 
+                d’objet peut être combiné
             att_type: CD
             value: GC_LIN_HCON_COMBI_CD
             cardinality: 0..1
@@ -1946,14 +2026,14 @@ themes:
           - name: rel_age
             description:
               de: Relatives Alter der Objektart
-              fr: ''
+              fr: Age relatif du type d'objet
             att_type: CD
             value: GC_LIN_HPAL_REL_AGE_CD
             cardinality: 0..1
           - name: hpal_chrono
             description:
               de: Chronostratigraphische Zuordnung.
-              fr: ''
+              fr: Attribution chronostratigraphique
             att_type: annex
             value: GC_CHRONO_CD  # TODO field "HPAL_CHRONO", CD:  "GC_CHRONO_CD"
             cardinality: 0..1
@@ -2030,28 +2110,28 @@ themes:
           - name: status
             description:
               de: Zustand der Objektart.
-              fr: ''
+              fr: État du type d'objet
             att_type: CD
             value: GC_PNT_HSUR_STATUS_CD
             cardinality: 0..1
           - name: flow_con
             description:
               de: Wasserfluss Bedingungen.
-              fr: ''
+              fr: Condition d’écoulement
             att_type: CD
             value: GC_PNT_HSUR_FLOW_CON_CD
             cardinality: 0..1
           - name: type
             description:
               de: Charakteristik der Objektart
-              fr: ''
+              fr: Caractéristique du type d'objet
             att_type: CD
             value: GC_PNT_HSUR_TYPE_CD
             cardinality: 0..1
           - name: dis_loca
             description:
               de: Ort des Wasserausflusses.
-              fr: ''
+              fr: Lieu d’écoulement
             att_type: CD
             value: GC_PNT_HSUR_DIS_LOCA_CD
             cardinality: 0..1
@@ -2060,7 +2140,9 @@ themes:
               de: |
                   Objektart einer anderen Klasse, die mit der Objektart in Kombination
                   vorkommen kann
-              fr: ''
+              fr: |
+                Type d’objet d'une autre classe avec lequel le type 
+                d’objet peut être combiné
             att_type: CD
             value: GC_PNT_HSUR_COMBI_CD
             cardinality: 0..1
@@ -2081,7 +2163,10 @@ themes:
               de: |
                 Richtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad (0°
                 359°) im Uhrzeigersinn gemessen.
-              fr: Azimut du type d'objet.
+              fr: |
+                Azimut du type d'objet. L'azimut est mesuré depuis le 
+                nord en degré de 0° à 359° dans le sens des aiguilles 
+                d'une montre
             att_type: integer
             cardinality: 0..1
       - name: Surface_Water_L
@@ -2125,28 +2210,28 @@ annexes:
   - name: GC_LITSTRAT_BED_CD
     description:
         de: Wertetabelle der lithostratigraphischen Einheiten
-        fr:
+        fr: Table des valeurs des unités lithostratigraphiques
   - name: GC_LITSTRAT_UNCO_CD
     description:
         de: Wertetabelle der lithostratigraphischen Einheiten
-        fr:
+        fr: Table des valeurs des unités lithostratigraphiques
   - name: GC_LITHO_CD
     description:
         de: Wertetabellen der lithologischen Beschreibung
-        fr:
+        fr: Tables des valeurs de la description lithologique
   - name: GC_LITHO_UNCO_CD
     description:
           de: Wertetabellen der lithologischen Beschreibung
-          fr:
+          fr: Tables des valeurs de la description lithologique (roches meubles)
 
   - name: GC_CHRONO_CD
     description:
         de: Wertetabelle der chronostratigraphischen Einheiten
-        fr:
+        fr:  Table des valeurs des unités chronostratigraphiques
   - name: GC_TECTO_CD
     description:
         de: Wertetabelle der tektonischen Einheiten
-        fr:
+        fr: Table des valeurs des unités tectoniques
   - name: GC_MINERAL_CD
     description:
         de: -todo-
