@@ -65,4 +65,5 @@ def main():
         f.write(json.dumps(dom_dict, indent=4))
 
 
-main()
+if __name__ == '__main__':
+    main()
