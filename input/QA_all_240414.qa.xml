@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<DataQuality xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:ProSuite.QA.QualitySpecifications-3.0">
+<DataQuality xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+             xmlns="urn:ProSuite.QA.QualitySpecifications-3.0">
   <QualitySpecifications>
     <QualitySpecification name="GC_Attributes_all" uuid="5DDFBA11-34C4-4B55-9D43-1ED3420F9E8C" listOrder="0" createdDate="2023-02-15T15:00:56" createdByUser="DallASteph" lastChangedDate="2023-06-27T09:08:04" lastChangedByUser="DallASteph">
       <Elements>
