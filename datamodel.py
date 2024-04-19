@@ -7,6 +7,10 @@ import datetime
 import re
 import os
 
+import click
+
+
+
 
 from loguru import logger
 
@@ -214,8 +218,10 @@ class Report:
                             print("")
                         print("")
 
-
-if __name__ == "__main__":
+@click.command()
+@click.option('--lang', prompt='Language to generate', type=click.Choice(['de', 'fr'], case_sensitive=False),
+              help='Language for the document')
+def datamodel(lang):
     import datetime
     import os
     import sys
@@ -228,6 +234,8 @@ if __name__ == "__main__":
     from babel import Locale
     # Parsing
     Locale.negotiate(['de_DE', 'en_US'], ['de_DE', 'de_AT'])
+    
+
    
     
 
@@ -248,14 +256,12 @@ if __name__ == "__main__":
     
     
     # TODO: only one language
-    translations = Translations.load('locale', ['de', 'fr'], 'datamodel')
-    ui_translations = Translations.load('locale', ['de', 'fr'], 'app')
+    translations = Translations.load('locale', [lang], 'datamodel')
+    ui_translations = Translations.load('locale', [lang], 'app')
     
     translations.merge(ui_translations)
+    data['lang'] = lang
     
-    print(translations)
-    
-    Locale('fr', 'FR')
 
     env.install_gettext_translations(translations,  newstyle=True)
     
@@ -304,3 +310,7 @@ if __name__ == "__main__":
     with open(f"{project_name}.md", "w") as f:
         # f.write(template.render(data))
         f.write(temp.render(data))
+
+
+if __name__ == "__main__":
+    datamodel()
