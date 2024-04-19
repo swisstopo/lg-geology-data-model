@@ -144,6 +144,7 @@ class Report:
         for theme in model["themes"]:
             for cls in theme.get("classes"):
                 attributes = cls.get("attributes")
+                cls['abrev'] = f"{theme['name'][0].upper()}{cls['name'][0:3].lower()}"
                 if attributes:
                     for att in attributes:
                         att_type = att.get("att_type")
@@ -244,6 +245,8 @@ def datamodel(lang):
 
     project_name = Path(yaml_file).stem
     model = Report(yaml_file)
+    
+    
 
     # model.to_markdown()
 
@@ -299,17 +302,28 @@ def datamodel(lang):
     temp = env.get_template("model_markdown.j2")
     # temp.render(data)
 
-    with open(f"{project_name}.json", "w") as f:
+    with open(f"{project_name}_{lang}.json", "w") as f:
         f.write(json.dumps(data, indent=4, cls=DatetimeEncoder))
 
     # with open("model_markdown.j2") as f:
     #    template = Template(f.read())
 
-    print(temp.render(data))
+    #print(temp.render(data))
 
-    with open(f"{project_name}.md", "w") as f:
+    with open(f"{project_name}_{lang}.md", "w") as f:
         # f.write(template.render(data))
         f.write(temp.render(data))
+        
+    # Metadata
+    meta = env.get_template("metadata.yaml.j2")
+    with open(f"metadata_{lang}.yaml", "w") as f:
+        # f.write(template.render(data))
+        f.write(meta.render(data))
+        
+        
+     
+        
+       
 
 
 if __name__ == "__main__":

@@ -34,14 +34,15 @@
     | {{_("Name")}}                | {{_("Type")}}                     | {{_("Description")}}
 ----|------------------------------|-----------------------------------|--------------------------------------
 {% for attr in cls.attributes -%}
+{%- if attr.mandatory -%}{% set mandatory =  "**%s**" % (_("mandatory")) -%}{% endif -%}
 {%- if attr.att_type == 'CD' -%}{% set slug = "%s-%s" % (cls.name, attr.name) -%}
 {%- elif attr.att_type == 'annex' -%}{% set slug, location = attr.value, 'vgl. Anhang %s' % attr.value %}{% set see_annex = 'Die möglichen Werte sind in der Tabelle %s im Anhang dieses Dokumentes verfügbar.' % attr.value %}{%- else -%}{% set slug = None %}{% endif -%}
 {%- if slug != None -%}
-{{loop.index}} | **{{ attr.name  }}**                | [CodedDomain](#{{slug| slugify}})  | {{ attr.description[lang]|trim }}. {{ see_annex }}
-[]()           | {{_("Cardinality")}}   [{{ attr.cardinality}}] |                                                      |
+{{loop.index}} | **{{ attr.name  }}**                           | [CodedDomain](#{{slug| slugify}})  | {{mandatory}} {{ attr.description[lang]|trim }}. {{ see_annex }} 
+[]()           | {{_("Cardinality")}}   [{{ attr.cardinality}}] |                                    |  
 {% else -%}
-{{loop.index}} | **{{ attr.name  }}**                | {{attr.att_type}}                                    | {{ attr.description[lang]|trim }}
-[]()           | {{_("Cardinality")}}  [{{ attr.cardinality}}] | {{attr.value}}                                       |
+{{loop.index}} | **{{ attr.name  }}**                           | {{attr.att_type}}                  | {{mandatory}} {{ attr.description[lang]|trim }}
+[]()           | {{_("Cardinality")}}  [{{ attr.cardinality}}]  | {{attr.value}}                     |  
 {% endif -%}
 
 {% endfor %}
