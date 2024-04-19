@@ -1,5 +1,8 @@
 
-# Datenmodell Geologie, Version {{model.revision}}#
+# Datenmodell Geologie, Version {{ gettext("Revision %(name)s!", name=model.revision) }} #
+
+
+
 
 
 ![Extrait GeoCover vers le Moléson](geocover.png "Moléson")
@@ -15,19 +18,19 @@
 {% set themeloop = loop %}
 
 
-## Theme {{ theme.name |upper}}
+## {{_("Theme")}} {{ theme.name |upper}}
 
 {% for cls in theme.classes -%}
 
 
 
-### Class {{ cls.name }} {{ '{#'}}{{cls.name | slugify}}{{'}'}}
+### {{_("Class")}} {{ cls.name }} {{ '{#'}}{{cls.name | slugify}}{{'}'}}
 {{ cls.description.de| trim|highlight}}
 
 
 
 
-    | Name                         | Type                              | Description
+    | {{_("Name")}}                | {{_("Type")}}                     | {{_("Description")}}
 ----|------------------------------|-----------------------------------|--------------------------------------
 {% for attr in cls.attributes -%}
 {%- if attr.att_type == 'CD' -%}{% set slug = "%s-%s" % (cls.name, attr.name) -%}

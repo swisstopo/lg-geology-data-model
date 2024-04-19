@@ -225,7 +225,9 @@ if __name__ == "__main__":
     import jinja2
     from pathlib import Path
     import re
-    import locale
+    from babel import Locale
+    # Parsing
+    Locale.negotiate(['de_DE', 'en_US'], ['de_DE', 'de_AT'])
    
     
 
@@ -243,14 +245,19 @@ if __name__ == "__main__":
 
     loader = jinja2.FileSystemLoader(yaml_dir)
     env = jinja2.Environment(autoescape=True, loader=loader, extensions=["jinja2.ext.i18n"])
- 
+    
+    
+    # TODO: only one language
     translations = Translations.load('locale', ['de', 'fr'], 'datamodel')
+    ui_translations = Translations.load('locale', ['de', 'fr'], 'app')
+    
+    translations.merge(ui_translations)
     
     print(translations)
     
     Locale('fr', 'FR')
 
-    env.install_gettext_translations(translations)
+    env.install_gettext_translations(translations,  newstyle=True)
     
     
 
