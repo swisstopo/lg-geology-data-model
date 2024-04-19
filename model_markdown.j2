@@ -1,5 +1,5 @@
 
-# {{ _("Geological datamodel") }} , {{ _("Revision %(name)s!", name=model.revision) }} #
+# {{ _("Geological datamodel") }} , {{ _("Revision %(name)s", name=model.revision) }} #
 
 
 
@@ -38,10 +38,10 @@
 {%- if attr.att_type == 'CD' -%}{% set slug = "%s-%s" % (cls.name, attr.name) -%}
 {%- elif attr.att_type == 'annex' -%}{% set slug, location = attr.value, 'vgl. Anhang %s' % attr.value %}{% set see_annex = 'Die möglichen Werte sind in der Tabelle %s im Anhang dieses Dokumentes verfügbar.' % attr.value %}{%- else -%}{% set slug = None %}{% endif -%}
 {%- if slug != None -%}
-{{loop.index}} | **{{ attr.name  }}**                           | [CodedDomain](#{{slug| slugify}})  | {{mandatory}} {{ attr.description[lang]|trim }}. {{ see_annex }} 
+{{loop.index}} | **{{ attr.name  }}**                           | [CodedDomain](#{{slug| slugify}})  | {{ attr.description[lang]|trim }}. {{ see_annex }} {{mandatory}} 
 []()           | {{_("Cardinality")}}   [{{ attr.cardinality}}] |                                    |  
 {% else -%}
-{{loop.index}} | **{{ attr.name  }}**                           | {{attr.att_type}}                  | {{mandatory}} {{ attr.description[lang]|trim }}
+{{loop.index}} | **{{ attr.name  }}**                           | {{attr.att_type}}                  | {{ attr.description[lang]|trim }} {{mandatory}}
 []()           | {{_("Cardinality")}}  [{{ attr.cardinality}}]  | {{attr.value}}                     |  
 {% endif -%}
 

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-04-19 16:40+0200\n"
-"PO-Revision-Date: 2024-04-19 16:46+0200\n"
+"POT-Creation-Date: 2024-04-19 18:42+0200\n"
+"PO-Revision-Date: 2024-04-19 18:43+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -17,6 +17,26 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.14.0\n"
 "X-Generator: Poedit 2.3\n"
+
+#: metadata.yaml.j2:2
+msgid "GeoCover Datenmodell, Version 3.5"
+msgstr "Modèle de donnée Geocover, Version 3.5"
+
+#: metadata.yaml.j2:3
+msgid "Beschreibung und Datenkatalog"
+msgstr "Description et catalogue de donnée"
+
+#: metadata.yaml.j2:4
+msgid "Bundesamt für Landestopographie swisstopo"
+msgstr "Office fédéral de topographie swisstopo"
+
+#: metadata.yaml.j2:5
+msgid "April 2024"
+msgstr "Avril 2024"
+
+#: metadata.yaml.j2:14
+msgid "Geologische Landesaufnahme der Schweiz"
+msgstr "Levé géologique de la Suisse"
 
 #: model_markdown.j2:2
 msgid "Geological datamodel"
@@ -55,26 +75,30 @@ msgstr "Type"
 msgid "Description"
 msgstr "Description"
 
-#: model_markdown.j2:41 model_markdown.j2:44
+#: model_markdown.j2:37
+msgid "mandatory"
+msgstr "obligatoire"
+
+#: model_markdown.j2:42 model_markdown.j2:45
 msgid "Cardinality"
 msgstr "Cardinalité"
 
-#: model_markdown.j2:53
+#: model_markdown.j2:54
 msgid "Attribute"
 msgstr "Attribut"
 
-#: model_markdown.j2:57
+#: model_markdown.j2:58
 msgid "Datatype"
 msgstr "Type de donnée"
 
-#: model_markdown.j2:60
+#: model_markdown.j2:61
 msgid "See the CodedDomain"
 msgstr "Voir le domaine"
 
-#: model_markdown.j2:60
+#: model_markdown.j2:61
 msgid "in the Annex"
 msgstr "dans l'annexe"
 
-#: model_markdown.j2:79
+#: model_markdown.j2:80
 msgid "Annexe"
 msgstr "Annexe"
