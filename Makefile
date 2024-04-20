@@ -8,22 +8,26 @@
 # Run "make clean" to delete converted files
 
 # Convert all files in this directory that have a .md suffix
-SOURCE_DOCS := $(wildcard *.md)
+SOURCE_DOCS := $(wildcard datamodel*.md)
 
-EXPORTED_DOCS=\
- $(SOURCE_DOCS:.md=.html) \
+FILES=\
  $(SOURCE_DOCS:.md=.pdf) \
  $(SOURCE_DOCS:.md=.docx) \
  $(SOURCE_DOCS:.md=.odt) 
+ 
+ 
+EXPORTED_DOCS=$(patsubst %, outdir/%, $(FILES))
 
 
 RM=/bin/rm
 
-$(info $$LANG  is [${LANG}])
+$(info $$EXPORTED_DOCS  is [${EXPORTED_DOCS}])
 
 PANDOC=/usr/bin/pandoc
 
-PANDOC_OPTIONS=--standalone -V papersize:a4   --number-sections \
+PANDOC_OPTIONS=--standalone \
+         -V papersize:a4   \
+         --number-sections \
          --shift-heading-level-by=-1  \
          --metadata-file=metadata_${LANG}.yaml \
          --variable mainfont="DejaVu Sans" \
@@ -48,8 +52,13 @@ outdir/%_${LANG}.html : %_${LANG}.md
 
 outdir/%_${LANG}.pdf : %_${LANG}.md
 	$(PANDOC) $(PANDOC_OPTIONS) $(PANDOC_PDF_OPTIONS) -o $@ $<
+%.pdf : %_${LANG}.md
+	$(PANDOC) $(PANDOC_OPTIONS) $(PANDOC_PDF_OPTIONS) -o $@ $<
 	
 outdir/%_${LANG}.docx : %_${LANG}.md
+	$(PANDOC) $(PANDOC_OPTIONS) $(PANDOC_DOCX_OPTIONS) -o $@ $<
+	
+%.docx : %_${LANG}.md
 	$(PANDOC) $(PANDOC_OPTIONS) $(PANDOC_DOCX_OPTIONS) -o $@ $<
 
 outdir/%_${LANG}.odt : %_${LANG}.md
