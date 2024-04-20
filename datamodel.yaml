@@ -26,7 +26,7 @@ themes:
             anthropogene Transportprozesse an ihren heutigen Ort gelangten,
             respektive sich an Ort und Stelle durch Verwitterung des umliegenden
             Gesteins gebildet haben.
-          fr: |
+          fr: >
             La classe Unconsolidated_Deposits_PT comprend les volumes rocheux individualisés (de taille
             variable, des galets aux blocs) qui ont été transportés par des processus gravitaires, glaciaires ou
             anthropogéniques jusqu’à leur position actuelle, ou dégagés sur place par dégradation de la
@@ -129,9 +129,9 @@ themes:
             cardinality: 1..3
           - name: chrono_t
             description:
-              de: |
+              de: >
                 Chronostratigraphische Zuordnung der Obergrenze der Kartiereinheit (Top)
-              fr: |
+              fr: >
                 Attribution chronostratigraphique du toit de la formation 
                 (top)
             att_type: annex
@@ -140,10 +140,10 @@ themes:
             mandatory: true
           - name: chrono_b
             description:
-              de: |
+              de: >
                 Chronostratigraphische Zuordnung der Untergrenze der Kartiereinheit
                 (Basis)
-              fr: |
+              fr: >
                 Attribution chronostratigraphique de la base de la 
                 formation (basis)
             att_type: annex
@@ -201,7 +201,7 @@ themes:
           - name: glac_type
             description:
               de: Gletschertyp; Attribut nur für Moränen
-              fr: |
+              fr: >
                 Type de glacier auquel le type d’objet est associé. Cet 
                 attribut n’est valable que pour des moraines
             att_type: CD
@@ -237,7 +237,7 @@ themes:
             lithostratigraphischen Festgesteinseinheiten. Die Angabe,  ob ein
             Festgestein bewegt (durch Gravitation versetzt) wurde, geht aus der
             Klasse Instabilities_within_Bedrock_PLG (Thema Geomorphology) hervor.
-          fr: |
+          fr: >
             La classe Bedrock_PLG regroupe toutes les unités lithostratigraphiques de roches consolidées qui
             constituent une surface. L’information indiquant si une roche consolidée est en mouvement
             (déplacée par gravitation) se trouve dans la classe Instabilities_ within_Bedrock_PLG (Thème
@@ -274,10 +274,10 @@ themes:
             att_type: annex
             value: GC_CHRONO_CD
             description:
-              de: |
+              de: >
                 Chronostratigraphische Zuordnung der Obergrenze der Kartiereinheit
                 (Top)
-              fr: |
+              fr: >
                 Attribution chronostratigraphique du toit de la 
                 formation (top)
             cardinality: 1
@@ -288,7 +288,7 @@ themes:
             description:
               de: Chronostratigraphische Zuordnung der Untergrenze der Kartiereinheit
                 (Basis)
-              fr: |
+              fr: >
                 Attribution chronostratigraphique de la base de la 
                 formation (basis).
             cardinality: 1
@@ -317,14 +317,16 @@ themes:
           - name: exotic_ele
             value: boolean
             description:
-              de: Handelt es sich bei der Objektart um ein exotisches Element; z.B.
+              de: >
+                Handelt es sich bei der Objektart um ein exotisches Element; z.B.
                 Einschluss, Linse, Tasche, Olistholith (ja / nein)?
               fr: S’agit-il d’un élément exotique (oui / non)?
             cardinality: 1
           - name: colour
             att_type: string
             description:
-              de: Farbe des Gesteins. Präzisieren ob es sich um die Bruchfarbe, die
+              de: >
+                Farbe des Gesteins. Präzisieren ob es sich um die Bruchfarbe, die
                 Verwitterungsfarbe, etc. handelt; z.B.Verwitterungsfarbe grau.
               fr: Couleur de la roche
             cardinality: 0..1
@@ -333,7 +335,7 @@ themes:
             value: GC_MAIN_COM_CD
             description:
               de: Hauptgesteinskomponente des klastischen Sedimentgesteins
-              fr: |
+              fr: >
                 Composant principal de la roche sédimentaire clastique.
             cardinality: 0..1
           - name: sedi_seco_com
@@ -576,7 +578,7 @@ themes:
           - name: quat_str
             description:
               de: Zeitliche quartärstratigraphische Zuordnung des Moränenwälls
-              fr: |
+              fr: >
                 Attribution chronostratigraphique du vallum morainique 
                 au sein du Quaternaire
             att_type: CD
@@ -597,10 +599,10 @@ themes:
       - name: Glacial_Structures_PLG
         abrev: Ggla  # TODO: to check
         description:
-          de: |
+          de: >
             Die Klasse Glacial_Structures_PLG umfasst flächenhafte glaziale Landschaftsformen, die durch
             basales Fliessen des Gletschereises oder dessen Abschmelzen entstanden sind.
-          fr: |
+          fr: >
             La classe Glacial_Structures_PLG regroupe les formes du paysage d’origine glaciaire qui se sont
             formées par écoulement basal de la glace du glacier ou par sa fonte.
         attributes:

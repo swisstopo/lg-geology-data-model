@@ -1,5 +1,5 @@
 
-# {{ _("Geological datamodel") }} , {{ _("Revision %(name)s", name=model.revision) }} #
+# {{ _("Geological datamodel") }}, {{ _("Revision %(name)s", name=model.revision) }} #
 
 
 
@@ -54,7 +54,7 @@
 #### {{_("Attribute")}}  {{ attr.name }}
 {%- if attr.att_type == 'CD' %} {{ '{#'}}{{slug| slugify}}{{'}'}}{% endif %}
 _{{ attr.description[lang]|trim|highlight}}_
-{%- if attr.att_type in ('boolean', 'string', 'float', 'range', 'integer') %}
+{% if attr.att_type in ('boolean', 'string', 'float', 'range', 'integer') %}
 _{{_("Datatype")}} :  {{ attr.att_type  }}_
 {% endif %}
 {%- if attr.att_type == 'annex' %}
