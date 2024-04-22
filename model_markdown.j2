@@ -22,7 +22,7 @@
 
 
 ### Class {{ cls.name }} {{ '{#'}}{{cls.name | slugify}}{{'}'}}
-{{ cls.description| trim|highlight}}
+{{ cls.description.de| trim|highlight}}
 
 
 
@@ -33,10 +33,10 @@
 {%- if attr.att_type == 'CD' -%}{% set slug = "%s-%s" % (cls.name, attr.name) -%}
 {%- elif attr.att_type == 'annex' -%}{% set slug, location = attr.value, 'vgl. Anhang %s' % attr.value %}{% set see_annex = 'Die möglichen Werte sind in der Tabelle %s im Anhang dieses Dokumentes verfügbar.' % attr.value %}{%- else -%}{% set slug = None %}{% endif -%}
 {%- if slug != None -%}
-{{loop.index}} | **{{ attr.name  }}**                | [CodedDomain](#{{slug| slugify}})  | {{ attr.description|trim }}. {{ see_annex }}
+{{loop.index}} | **{{ attr.name  }}**                | [CodedDomain](#{{slug| slugify}})  | {{ attr.description.de|trim }}. {{ see_annex }}
 []()           | Cardinality [{{ attr.cardinality}}] |                                                      |
 {% else -%}
-{{loop.index}} | **{{ attr.name  }}**                | {{attr.att_type}}                                    | {{ attr.description|trim }}
+{{loop.index}} | **{{ attr.name  }}**                | {{attr.att_type}}                                    | {{ attr.description.de|trim }}
 []()           | Cardinality [{{ attr.cardinality}}] | {{attr.value}}                                       |
 {% endif -%}
 
@@ -48,7 +48,7 @@
 {% set slug = "%s-%s" % (cls.name, attr.name) %}
 #### Attribute {{ attr.name }}
 {%- if attr.att_type == 'CD' %} {{ '{#'}}{{slug| slugify}}{{'}'}}{% endif %}
-_{{ attr.description|trim|highlight}}_
+_{{ attr.description.de|trim|highlight}}_
 {%- if attr.att_type in ('boolean', 'string', 'float', 'range', 'integer') %}
 _Datentyp:  {{ attr.att_type  }}_
 {% endif %}
@@ -73,7 +73,7 @@ Siehe die CodedDomain [{{attr.value}}](#{{attr.value| slugify}}) in Ahhang
 
 
 ## Anhang {{ annex.name |upper}} {{ '{#'}}{{annex.name | slugify}}{{'}'}}
-{{ annex.description }}
+{{ annex.description.de }}
 
 {% if 'pairs' in annex -%}
 |GeolCode|Deutsch|Français|

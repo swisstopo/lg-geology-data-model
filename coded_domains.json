@@ -1,11 +1,16 @@
 {
-    "TLM_JAHR_RD": {
-        "type": "Range",
-        "codedValues": null,
-        "range": [
-            -999999.0,
-            2100.0
-        ]
+    "date": "16:32:11-16-04-2024",
+    "database": {
+        "workspace": {
+            "ConnectionString": "",
+            "WorkspaceFactoryProgID": "esriDataSourcesGDB.SdeWorkspaceFactory",
+            "WorkspaceType:": "RemoteDatabase"
+        },
+        "connection": {
+            "Server": "GCOVERP",
+            "Instance": "sde:oracle11g:GCOVERP",
+            "Version": "SDE.DEFAULT"
+        }
     },
     "GC_BOOLEAN_CD": {
         "type": "CodedValue",
@@ -14,8 +19,7 @@
             "2": "False",
             "999997": "Unknown",
             "999998": "Not applicable"
-        },
-        "range": null
+        }
     },
     "GC_GRAIN_SI_CD": {
         "type": "CodedValue",
@@ -25,8 +29,7 @@
             "14318001": "grobk\u00f6rnig",
             "999997": "Unknown",
             "999998": "Not applicable"
-        },
-        "range": null
+        }
     },
     "GC_BEDDING_CD": {
         "type": "CodedValue",
@@ -41,8 +44,7 @@
             "20101001": "massig",
             "999997": "Unknown",
             "999998": "Not applicable"
-        },
-        "range": null
+        }
     },
     "GC_EX_GEO_PNT_AEXP_TARG_MAT_CD": {
         "type": "CodedValue",
@@ -89,8 +91,7 @@
             "10605021": "Uran",
             "999997": "Unknown",
             "999998": "Not applicable"
-        },
-        "range": null
+        }
     },
     "GC_PNT_TDEF_FOLD_FOR_CD": {
         "type": "CodedValue",
@@ -99,12 +100,10 @@
             "14605002": "Synform",
             "999997": "Unknown",
             "999998": "Not applicable"
-        },
-        "range": null
+        }
     },
     "GC_YEAR_RD": {
         "type": "Range",
-        "codedValues": null,
         "range": [
             -999999.0,
             2100.0
@@ -117,31 +116,7 @@
             "13602002": "Synklinale",
             "999997": "Unknown",
             "999998": "Not applicable"
-        },
-        "range": null
-    },
-    "TLM_REV_PRODUKT_CD": {
-        "type": "CodedValue",
-        "codedValues": {
-            "100": "TLM",
-            "200": "Vector25",
-            "300": "Vector200",
-            "400": "GG25",
-            "500": "SwissNames",
-            "600": "Landeskarte",
-            "700": "Wanderkarten",
-            "800": "Skitourenkarten",
-            "900": "Strassenkarte",
-            "1000": "DKM25",
-            "1200": "PLZO",
-            "1300": "ERM",
-            "1030": "DKM50",
-            "1060": "DKM100",
-            "1090": "DKM200",
-            "1120": "DKM500",
-            "1150": "DKM1000"
-        },
-        "range": null
+        }
     },
     "GC_MAIN_COM_CD": {
         "type": "CodedValue",
@@ -158,30 +133,7 @@
             "15602008": "Vulkanit",
             "999997": "Unknown",
             "999998": "Not applicable"
-        },
-        "range": null
-    },
-    "TLM_REV_FEATUREKLASSE_DSM_CD": {
-        "type": "CodedValue",
-        "codedValues": {
-            "11010": "Massenpunkte",
-            "11020": "Bruchkante",
-            "11030": "Insel",
-            "11040": "Seeufer"
-        },
-        "range": null
-    },
-    "VEC200_REV_FEATUREKLASSE_Transportation_CD": {
-        "type": "CodedValue",
-        "codedValues": {
-            "30010": "JUNCTIONS",
-            "30020": "RAILWAY",
-            "30030": "ROAD",
-            "30040": "RUNWAY",
-            "30050": "SHIP",
-            "30060": "TERMINAL"
-        },
-        "range": null
+        }
     },
     "GC_LIN_GGLA_GLAC_TYP_CD": {
         "type": "CodedValue",
@@ -190,8 +142,7 @@
             "11303001": "Lokalgletscher",
             "999997": "Unknown",
             "999998": "Not applicable"
-        },
-        "range": null
+        }
     },
     "GC_EX_GEO_PLG_AEXP_STATUS_CD": {
         "type": "CodedValue",
@@ -202,8 +153,7 @@
             "10802004": "verfallen",
             "999997": "Unknown",
             "999998": "Not applicable"
-        },
-        "range": null
+        }
     },
     "GC_FOSS_LFOS_DAT_METH_CD": {
         "type": "CodedValue",
@@ -211,19 +161,7 @@
             "12904001": "radiometrisch datiert",
             "999997": "Unknown",
             "999998": "Not applicable"
-        },
-        "range": null
-    },
-    "TLM_REV_FEATUREKLASSE_STRASSEN_CD": {
-        "type": "CodedValue",
-        "codedValues": {
-            "9010": "Strasse",
-            "9020": "Ausfahrt / Einfahrt",
-            "9030": "Strasseninformation",
-            "9040": "RBBS Achssegment",
-            "9050": "RBBS Bezugspunkt"
-        },
-        "range": null
+        }
     },
     "GC_LITSTRAT_BED_CD": {
         "type": "CodedValue",
@@ -2442,8 +2380,7 @@
             "15203528": "Zwischenmythen-Mergel",
             "999997": "Unknown",
             "999998": "Not applicable"
-        },
-        "range": null
+        }
     },
     "GC_BOND_MAT_CD": {
         "type": "CodedValue",
@@ -2460,8 +2397,7 @@
             "14313004": "tonige Matrix",
             "999997": "Unknown",
             "999998": "Not applicable"
-        },
-        "range": null
+        }
     },
     "GC_PNT_HCON_STATUS_CD": {
         "type": "CodedValue",
@@ -2470,8 +2406,7 @@
             "12102002": "stillgelegt",
             "999997": "Unknown",
             "999998": "Not applicable"
-        },
-        "range": null
+        }
     },
     "GC_CONFLICT_ROLE_CD": {
         "type": "CodedValue",
@@ -2479,8 +2414,7 @@
             "100": "Update",
             "200": "Delete",
             "300": "CommonAncestor"
-        },
-        "range": null
+        }
     },
     "GC_IGNE_TEX_CD": {
         "type": "CodedValue",
@@ -2490,29 +2424,7 @@
             "14317002": "ungleichk\u00f6rnig",
             "999997": "Unknown",
             "999998": "Not applicable"
-        },
-        "range": null
-    },
-    "TLM_REV_FEATUREKLASSE_AREALE_CD": {
-        "type": "CodedValue",
-        "codedValues": {
-            "1010": "Freizeitareal",
-            "1020": "Nutzungsareal",
-            "1030": "Verkehrsareal"
-        },
-        "range": null
-    },
-    "TLM_REV_FEATUREKLASSE_NAMEN_CD": {
-        "type": "CodedValue",
-        "codedValues": {
-            "7010": "Gebietsname",
-            "7020": "Hoehenkote",
-            "7030": "Name Punkt",
-            "7040": "Siedlungsname",
-            "7050": "Flurname",
-            "7060": "Gelaendename"
-        },
-        "range": null
+        }
     },
     "GC_CORRECTION_ERRORTYPE_CD": {
         "type": "CodedValue",
@@ -2520,8 +2432,7 @@
             "100": "Hard",
             "200": "Soft",
             "300": "Allowed"
-        },
-        "range": null
+        }
     },
     "GC_LIN_GGLA_QUAT_STR_CD": {
         "type": "CodedValue",
@@ -2536,8 +2447,7 @@
             "11305008": "Mittleres Pleistoz\u00e4n",
             "999997": "Unknown",
             "999998": "Not applicable"
-        },
-        "range": null
+        }
     },
     "GC_TECTO_CD": {
         "type": "CodedValue",
@@ -2934,8 +2844,7 @@
             "15304048": "Zone Subm\u00e9diane",
             "999997": "Unknown",
             "999998": "Not applicable"
-        },
-        "range": null
+        }
     },
     "GC_META_STR_CD": {
         "type": "CodedValue",
@@ -2959,16 +2868,14 @@
             "20501013": "schlierig",
             "999997": "Unknown",
             "999998": "Not applicable"
-        },
-        "range": null
+        }
     },
     "GC_INTEGRATION_STATUS_CD": {
         "type": "CodedValue",
         "codedValues": {
             "100": "TODO",
             "200": "Done"
-        },
-        "range": null
+        }
     },
     "GC_LITHO_UNCO_CD": {
         "type": "CodedValue",
@@ -3041,19 +2948,7 @@
             "15101016": "zerr\u00fcttete Sackungsmasse",
             "999997": "Unknown",
             "999998": "Not applicable"
-        },
-        "range": null
-    },
-    "TLM_REV_FEATUREKLASSE_OEV_CD": {
-        "type": "CodedValue",
-        "codedValues": {
-            "8010": "Eisenbahn",
-            "8020": "Haltestelle",
-            "8040": "Uebrige Bahn",
-            "8050": "Eisenbahnknoten",
-            "8030": "Schifffahrtslinie"
-        },
-        "range": null
+        }
     },
     "GC_PNT_MPLA_PHASE_CD": {
         "type": "CodedValue",
@@ -3063,8 +2958,7 @@
             "13803003": "S3 (3. Phase)",
             "999997": "Unknown",
             "999998": "Not applicable"
-        },
-        "range": null
+        }
     },
     "GC_LIN_PCOH_CONFINE_CD": {
         "type": "CodedValue",
@@ -3074,31 +2968,7 @@
             "14002002": "gespannt",
             "999997": "Unknown",
             "999998": "Not applicable"
-        },
-        "range": null
-    },
-    "DKM_REV_FEATUREKLASSE_CD": {
-        "type": "CodedValue",
-        "codedValues": {
-            "50010": "Strassen",
-            "50020": "OEV",
-            "50030": "Bauten",
-            "50040": "Areale",
-            "50050": "Gewaesser",
-            "50060": "Grenzen",
-            "50070": "Bodenbedeckung",
-            "50080": "Namen"
-        },
-        "range": null
-    },
-    "TLM_REV_FEATUREKLASSE_GEWAESSER_CD": {
-        "type": "CodedValue",
-        "codedValues": {
-            "5010": "Fliessgewaesser",
-            "5020": "Gewaessernetzknoten",
-            "5030": "Stehendes Gewaesser"
-        },
-        "range": null
+        }
     },
     "GC_MINERAL_CD": {
         "type": "CodedValue",
@@ -3188,8 +3058,7 @@
             "20401055": "Zoisit",
             "999997": "Unknown",
             "999998": "Not applicable"
-        },
-        "range": null
+        }
     },
     "GC_LITSTRAT_CD": {
         "type": "CodedValue",
@@ -5858,8 +5727,7 @@
             "15203528": "Zwischenmythen-Mergel",
             "999997": "Unknown",
             "999998": "Not applicable"
-        },
-        "range": null
+        }
     },
     "GC_LIN_LGEO_STATUS_CD": {
         "type": "CodedValue",
@@ -5872,79 +5740,7 @@
             "999997": "Unknown",
             "999998": "Not applicable",
             "13002006": "Gew\u00e4sserlinie"
-        },
-        "range": null
-    },
-    "ERM_REV_FEATUREKLASSE_EuroRegionalMap_CD": {
-        "type": "CodedValue",
-        "codedValues": {
-            "90010": "AirfldA",
-            "90020": "AirfldC",
-            "90030": "AirfldP",
-            "90040": "AquedctL",
-            "90050": "BuildP",
-            "90060": "BuiltupA",
-            "90070": "BuiltupP",
-            "90080": "CoastA",
-            "90090": "CoastL",
-            "90100": "CtowerP",
-            "90110": "DamC",
-            "90120": "DamL",
-            "90130": "DirlinesA",
-            "90140": "DirlinesL",
-            "90150": "ExitC",
-            "90160": "ExtractP",
-            "90170": "FacilP",
-            "90180": "FerryC",
-            "90190": "FerryL",
-            "90200": "GNameL",
-            "90210": "GNameT",
-            "90220": "GovservP",
-            "90230": "HarborA",
-            "90240": "HarborC",
-            "90250": "HarborL",
-            "90260": "HarborP",
-            "90270": "HeliP",
-            "90280": "HynodeC",
-            "90290": "IndprodL",
-            "90300": "IndprodP",
-            "90310": "IntercC",
-            "90320": "IslandA",
-            "90330": "LakeresA",
-            "90340": "LandIceA",
-            "90350": "LandmaskA",
-            "90360": "LandmrkP",
-            "90370": "LevelcC",
-            "90380": "MisaeroP",
-            "90390": "ParkA",
-            "90400": "PhysL",
-            "90410": "PhysP",
-            "90420": "PolbndA",
-            "90430": "PolbndL",
-            "90440": "PowerL",
-            "90450": "PowerP",
-            "90460": "RailrdC",
-            "90470": "RailrdL",
-            "90480": "RapidsC",
-            "90490": "RapidsL",
-            "90500": "RestC",
-            "90510": "RoadL",
-            "90520": "RunwayL",
-            "90530": "SeaA",
-            "90540": "SeastrtL",
-            "90550": "ShoreL",
-            "90560": "SoilA",
-            "90570": "SpringC",
-            "90580": "SpringP",
-            "90590": "SwampA",
-            "90600": "TowerP",
-            "90610": "UrbanP",
-            "90620": "VegA",
-            "90630": "WatrcrsA",
-            "90640": "WatrcrsL",
-            "90650": "WellP"
-        },
-        "range": null
+        }
     },
     "GC_PNT_ABOR_MAIN_TAR_CD": {
         "type": "CodedValue",
@@ -5960,8 +5756,7 @@
             "10505007": "Seismik",
             "999997": "Unknown",
             "999998": "Not applicable"
-        },
-        "range": null
+        }
     },
     "GC_UN_DEP_RUNC_MORPHOLO_CD": {
         "type": "CodedValue",
@@ -5976,8 +5771,7 @@
             "14512004": "Wall",
             "999997": "Unknown",
             "999998": "Not applicable"
-        },
-        "range": null
+        }
     },
     "GC_SEDI_TEX_CD": {
         "type": "CodedValue",
@@ -5993,8 +5787,7 @@
             "20301004": "sp\u00e4tig",
             "999997": "Unknown",
             "999998": "Not applicable"
-        },
-        "range": null
+        }
     },
     "GC_REASON_FOR_CHANGE_CD": {
         "type": "CodedValue",
@@ -6003,17 +5796,7 @@
             "200": "real",
             "300": "restructured",
             "400": "improved"
-        },
-        "range": null
-    },
-    "VEC200_REV_FEATUREKLASSE_Administrative_Boundary_CD": {
-        "type": "CodedValue",
-        "codedValues": {
-            "33010": "COM_BOUNDARY",
-            "33020": "COM_ZENTROID",
-            "33030": "COMMUNE"
-        },
-        "range": null
+        }
     },
     "GC_LITSTRAT_UNCO_CD": {
         "type": "CodedValue",
@@ -6470,20 +6253,7 @@
             "15201557": "Zweidlen-Schotter",
             "999997": "Unknown",
             "999998": "Not applicable"
-        },
-        "range": null
-    },
-    "REV_DKM_BEARBEITUNGSSCHRITT_CD": {
-        "type": "CodedValue",
-        "codedValues": {
-            "100": "DKM_B1",
-            "200": "DKM_B2",
-            "300": "DKM_B3",
-            "400": "DKM_BS",
-            "999997": "unbekannt",
-            "999998": "kein_Wert"
-        },
-        "range": null
+        }
     },
     "GC_AFFINITY_CD": {
         "type": "CodedValue",
@@ -6493,8 +6263,7 @@
             "15733003": "tholeiitisch",
             "999997": "Unknown",
             "999998": "Not applicable"
-        },
-        "range": null
+        }
     },
     "GC_LIN_PCOB_TYPE_CD": {
         "type": "CodedValue",
@@ -6504,8 +6273,7 @@
             "13902003": "Untergrenze einer gegebenen Formation",
             "999997": "Unknown",
             "999998": "Not applicable"
-        },
-        "range": null
+        }
     },
     "GC_SEDI_STR_CD": {
         "type": "CodedValue",
@@ -6520,16 +6288,7 @@
             "20201001": "texturlos",
             "999997": "Unknown",
             "999998": "Not applicable"
-        },
-        "range": null
-    },
-    "TLM_REV_FELD_RELEVANT_CD": {
-        "type": "CodedValue",
-        "codedValues": {
-            "100": "Falsch",
-            "200": "Wahr"
-        },
-        "range": null
+        }
     },
     "GC_PNT_LRES_MATERIAL_CD": {
         "type": "CodedValue",
@@ -6541,8 +6300,7 @@
             "13203005": "Walkerde",
             "999997": "Unknown",
             "999998": "Not applicable"
-        },
-        "range": null
+        }
     },
     "GC_LIN_TTEC_HORIZ_MO_CD": {
         "type": "CodedValue",
@@ -6551,8 +6309,7 @@
             "14904002": "sinistral",
             "999997": "Unknown",
             "999998": "Not applicable"
-        },
-        "range": null
+        }
     },
     "GC_LIN_PCOH_WA_TABLE_CD": {
         "type": "CodedValue",
@@ -6561,26 +6318,7 @@
             "14004001": "mittlere H\u00f6he des Niedrigwasserstands",
             "999997": "Unknown",
             "999998": "Not applicable"
-        },
-        "range": null
-    },
-    "TLM_REV_FEATUREKLASSE_EO_CD": {
-        "type": "CodedValue",
-        "codedValues": {
-            "4010": "Einzelobjekt"
-        },
-        "range": null
-    },
-    "VEC200_REV_FEATUREKLASSE_Hydrography_CD": {
-        "type": "CodedValue",
-        "codedValues": {
-            "31010": "DAM",
-            "31020": "FLOWING_WATER",
-            "31030": "HYDRO_NODE",
-            "31040": "HYDROINFO",
-            "31050": "STAGNANT_WATER"
-        },
-        "range": null
+        }
     },
     "GC_PNT_LANO_TYPE_CD": {
         "type": "CodedValue",
@@ -6589,8 +6327,7 @@
             "12802002": "radiometrisch",
             "999997": "Unknown",
             "999998": "Not applicable"
-        },
-        "range": null
+        }
     },
     "GC_LIN_TTEC_META_STA_CD": {
         "type": "CodedValue",
@@ -6600,8 +6337,7 @@
             "14908002": "w\u00e4hrend der Platznahme der Decken",
             "999997": "Unknown",
             "999998": "Not applicable"
-        },
-        "range": null
+        }
     },
     "GC_PNT_MFOL_PHASE_CD": {
         "type": "CodedValue",
@@ -6611,8 +6347,7 @@
             "13604003": "F3 (3. Phase)",
             "999997": "Unknown",
             "999998": "Not applicable"
-        },
-        "range": null
+        }
     },
     "GC_SECO_COM_CD": {
         "type": "CodedValue",
@@ -6645,8 +6380,7 @@
             "20001007": "Vulkanit",
             "999997": "Unknown",
             "999998": "Not applicable"
-        },
-        "range": null
+        }
     },
     "GC_CHRONO_CD": {
         "type": "CodedValue",
@@ -6790,8 +6524,7 @@
             "15001016": "Zancl\u00e9en",
             "999997": "Unknown",
             "999998": "Not applicable"
-        },
-        "range": null
+        }
     },
     "GC_LIN_AEXP_STATUS_CD": {
         "type": "CodedValue",
@@ -6802,8 +6535,7 @@
             "10702004": "verfallen",
             "999997": "Unknown",
             "999998": "Not applicable"
-        },
-        "range": null
+        }
     },
     "GC_UN_DEP_RUNC_GLAC_TYP_CD": {
         "type": "CodedValue",
@@ -6823,8 +6555,7 @@
             "14513008": "Walliser Gletscher",
             "999997": "Unknown",
             "999998": "Not applicable"
-        },
-        "range": null
+        }
     },
     "GC_LIN_HSUB_COMBI_CD": {
         "type": "CodedValue",
@@ -6833,8 +6564,7 @@
             "12402002": "mit Wiederaustritt eines unterirdischen Bachlaufes",
             "999997": "Unknown",
             "999998": "Not applicable"
-        },
-        "range": null
+        }
     },
     "GC_EX_GEO_PLG_AEXP_TARG_MAT_CD": {
         "type": "CodedValue",
@@ -6862,8 +6592,7 @@
             "10804017": "Torf",
             "999997": "Unknown",
             "999998": "Not applicable"
-        },
-        "range": null
+        }
     },
     "GC_PNT_LTYP_STRATI_CD": {
         "type": "CodedValue",
@@ -6876,8 +6605,7 @@
             "13502002": "Subgruppe",
             "999997": "Unknown",
             "999998": "Not applicable"
-        },
-        "range": null
+        }
     },
     "GC_LIN_TTEC_HIERA_CD": {
         "type": "CodedValue",
@@ -6887,8 +6615,7 @@
             "14911002": "Teilst\u00f6rungssystem",
             "999997": "Unknown",
             "999998": "Not applicable"
-        },
-        "range": null
+        }
     },
     "GC_PNT_PSLO_TYPE_CD": {
         "type": "CodedValue",
@@ -6897,8 +6624,7 @@
             "14202002": "Obergrenze einer gegebenen Formation",
             "999997": "Unknown",
             "999998": "Not applicable"
-        },
-        "range": null
+        }
     },
     "GC_LIN_GGLA_MORAI_MO_CD": {
         "type": "CodedValue",
@@ -6907,18 +6633,7 @@
             "11302001": "symmetrisch",
             "999997": "Unknown",
             "999998": "Not applicable"
-        },
-        "range": null
-    },
-    "TLM_REV_HERKUNFT_CD": {
-        "type": "CodedValue",
-        "codedValues": {
-            "100": "Extern",
-            "200": "Web",
-            "300": "Intern",
-            "400": "Feld"
-        },
-        "range": null
+        }
     },
     "GC_LIN_LPRO_CONG_SPE_CD": {
         "type": "CodedValue",
@@ -6929,8 +6644,7 @@
             "13102002": "kristallinf\u00fchrende (Kalk-)Nagelfluh",
             "999997": "Unknown",
             "999998": "Not applicable"
-        },
-        "range": null
+        }
     },
     "GC_PNT_RUNC_STATUS_CD": {
         "type": "CodedValue",
@@ -6941,18 +6655,7 @@
             "14402002": "zerst\u00f6rt",
             "999997": "Unknown",
             "999998": "Not applicable"
-        },
-        "range": null
-    },
-    "TLM_REV_STATUS_CD": {
-        "type": "CodedValue",
-        "codedValues": {
-            "100": "nicht zugewiesen",
-            "200": "aktiviert",
-            "300": "fehlerhaft",
-            "400": "abgearbeitet"
-        },
-        "range": null
+        }
     },
     "GC_FOSS_LFOS_DIVISION_CD": {
         "type": "CodedValue",
@@ -6964,8 +6667,7 @@
             "12902001": "Tierreste",
             "999997": "Unknown",
             "999998": "Not applicable"
-        },
-        "range": null
+        }
     },
     "GC_PNT_RUNC_ROCK_SPE_CD": {
         "type": "CodedValue",
@@ -6998,8 +6700,7 @@
             "14404011": "Windg\u00e4llen-Porphyr",
             "999997": "Unknown",
             "999998": "Not applicable"
-        },
-        "range": null
+        }
     },
     "GC_HARMOS_REV_CD": {
         "type": "CodedValue",
@@ -7012,8 +6713,7 @@
             "20601002": "Untergrenze muss noch revidiert werden",
             "999997": "Unknown",
             "999998": "Not applicable"
-        },
-        "range": null
+        }
     },
     "GC_LIN_TTEC_STATUS_CD": {
         "type": "CodedValue",
@@ -7024,8 +6724,7 @@
             "14906003": "vermutet",
             "999997": "Unknown",
             "999998": "Not applicable"
-        },
-        "range": null
+        }
     },
     "GC_PNT_MPLA_POLARITY_CD": {
         "type": "CodedValue",
@@ -7034,52 +6733,14 @@
             "13802002": "\u00fcberkippt",
             "999997": "Unknown",
             "999998": "Not applicable"
-        },
-        "range": null
+        }
     },
     "GC_CORRECTION_STATE_CD": {
         "type": "CodedValue",
         "codedValues": {
             "100": "Not Corrected",
             "200": "Corrected"
-        },
-        "range": null
-    },
-    "VEC200_REV_FEATUREKLASSE_Misc_CD": {
-        "type": "CodedValue",
-        "codedValues": {
-            "32010": "AIRPORT",
-            "32020": "BUILDING",
-            "32030": "BUILTUPP",
-            "32040": "GEOD_POINT",
-            "32050": "LANDCOVER",
-            "32060": "NAMED_LOCATION",
-            "32070": "PHYSL",
-            "32080": "POI",
-            "32090": "PROTECTED_AREA",
-            "32100": "SUPPLY"
-        },
-        "range": null
-    },
-    "TLM_MONAT_CD": {
-        "type": "CodedValue",
-        "codedValues": {
-            "1": "1",
-            "2": "2",
-            "3": "3",
-            "4": "4",
-            "5": "5",
-            "6": "6",
-            "7": "7",
-            "8": "8",
-            "9": "9",
-            "10": "10",
-            "11": "11",
-            "12": "12",
-            "999997": "ub",
-            "999998": "k_W"
-        },
-        "range": null
+        }
     },
     "GC_AARC_AGE_CD": {
         "type": "CodedValue",
@@ -7094,28 +6755,14 @@
             "10004008": "Pal\u00e4olithikum",
             "999997": "Unknown",
             "999998": "Not applicable"
-        },
-        "range": null
+        }
     },
     "GC_ORIGIN_CD": {
         "type": "CodedValue",
         "codedValues": {
             "100": "swisstopo",
             "200": "external"
-        },
-        "range": null
-    },
-    "TLM_REV_ZUWEISUNG_CD": {
-        "type": "CodedValue",
-        "codedValues": {
-            "100": "Lage",
-            "200": "Nicht sichtbar",
-            "300": "Verbindung",
-            "400": "Fortsetzung",
-            "500": "Wanderweg",
-            "600": "Im Bau"
-        },
-        "range": null
+        }
     },
     "GC_REV_FEATUREKLASSE_RockBodies_CD": {
         "type": "CodedValue",
@@ -7128,8 +6775,7 @@
             "81060": "Point Objects",
             "81070": "Surfaces",
             "81080": "Unco Desposit"
-        },
-        "range": null
+        }
     },
     "GC_FOSS_LFOS_STATUS_CD": {
         "type": "CodedValue",
@@ -7138,8 +6784,7 @@
             "12905002": "wieder verdeckt",
             "999997": "Unknown",
             "999998": "Not applicable"
-        },
-        "range": null
+        }
     },
     "GC_UN_DEP_RUNC_STRUCTUR_CD": {
         "type": "CodedValue",
@@ -7158,26 +6803,14 @@
             "14510001": "texturlos",
             "999997": "Unknown",
             "999998": "Not applicable"
-        },
-        "range": null
+        }
     },
     "GC_CONFLICT_REVISION_STATE_CD": {
         "type": "CodedValue",
         "codedValues": {
             "100": "Not Revised",
             "200": "Revised"
-        },
-        "range": null
-    },
-    "TLM_REV_FEATUREKLASSE_DTM_CD": {
-        "type": "CodedValue",
-        "codedValues": {
-            "10010": "Massenpunkte",
-            "10020": "Bruchkante",
-            "10040": "Nicht Aktualisiert",
-            "10050": "Variabel"
-        },
-        "range": null
+        }
     },
     "GC_LIN_HPAL_REL_AGE_CD": {
         "type": "CodedValue",
@@ -7187,8 +6820,7 @@
             "12302001": "die J\u00fcngste oder Einzige",
             "999997": "Unknown",
             "999998": "Not applicable"
-        },
-        "range": null
+        }
     },
     "GC_LITHO_CD": {
         "type": "CodedValue",
@@ -7556,8 +7188,7 @@
             "15104045": "Zweiglimmergneis",
             "999997": "Unknown",
             "999998": "Not applicable"
-        },
-        "range": null
+        }
     },
     "GC_PNT_HSUR_DIS_LOCA_CD": {
         "type": "CodedValue",
@@ -7565,8 +7196,7 @@
             "12505002": "in Stollen",
             "999997": "Unknown",
             "999998": "Not applicable"
-        },
-        "range": null
+        }
     },
     "GC_SURF_TDEF_TYPE_CD": {
         "type": "CodedValue",
@@ -7577,20 +7207,7 @@
             "14802004": "pseudotachylitisch",
             "999997": "Unknown",
             "999998": "Not applicable"
-        },
-        "range": null
-    },
-    "TLM_REV_FEATUREKLASSE_GRENZEN_CD": {
-        "type": "CodedValue",
-        "codedValues": {
-            "6010": "Hoheitsgebiet Zentroid",
-            "6020": "Hoheitsgrenze",
-            "6030": "Schutzgebiet",
-            "6040": "Landesgebiet Zentroid",
-            "6050": "Kantonsgebiet Zentroid",
-            "6060": "Bezirksgebiet Zentroid"
-        },
-        "range": null
+        }
     },
     "GC_UN_DEP_RUNC_THIN_COV_CD": {
         "type": "CodedValue",
@@ -7603,8 +7220,7 @@
             "14515006": "tiefgr\u00fcndige Verwitterungsdecke",
             "999997": "Unknown",
             "999998": "Not applicable"
-        },
-        "range": null
+        }
     },
     "GC_PNT_TDEF_FOLD_TYP_CD": {
         "type": "CodedValue",
@@ -7613,8 +7229,7 @@
             "14604002": "Synklinale",
             "999997": "Unknown",
             "999998": "Not applicable"
-        },
-        "range": null
+        }
     },
     "GC_LIN_GALL_AGE_CD": {
         "type": "CodedValue",
@@ -7623,8 +7238,7 @@
             "10902002": "rezent",
             "999997": "Unknown",
             "999998": "Not applicable"
-        },
-        "range": null
+        }
     },
     "GC_LIN_GGLA_ICE_M_P_CD": {
         "type": "CodedValue",
@@ -7690,8 +7304,7 @@
             "11304024": "Z\u00fcrich, undifferenziert",
             "999997": "Unknown",
             "999998": "Not applicable"
-        },
-        "range": null
+        }
     },
     "GC_AARC_PERIOD_CD": {
         "type": "CodedValue",
@@ -7704,8 +7317,7 @@
             "10003006": "Steinzeit",
             "999997": "Unknown",
             "999998": "Not applicable"
-        },
-        "range": null
+        }
     },
     "GC_LIN_TTEC_LIM_TYP": {
         "type": "CodedValue",
@@ -7714,8 +7326,7 @@
             "14910002": "Schuppen trennend",
             "999997": "Unknown",
             "999998": "Not applicable"
-        },
-        "range": null
+        }
     },
     "GC_LIN_TTEC_FAULT_MO_CD": {
         "type": "CodedValue",
@@ -7725,8 +7336,7 @@
             "14902001": "schr\u00e4gverschiebend (oblique slip)",
             "999997": "Unknown",
             "999998": "Not applicable"
-        },
-        "range": null
+        }
     },
     "GC_EX_GEO_PNT_AEXP_STATUS_CD": {
         "type": "CodedValue",
@@ -7737,8 +7347,7 @@
             "10603004": "verfallen",
             "999997": "Unknown",
             "999998": "Not applicable"
-        },
-        "range": null
+        }
     },
     "GC_LIN_TTEC_VERTI_MO_CD": {
         "type": "CodedValue",
@@ -7747,8 +7356,7 @@
             "14903001": "aufschiebend",
             "999997": "Unknown",
             "999998": "Not applicable"
-        },
-        "range": null
+        }
     },
     "GC_SURF_GINS_MAIN_MOV_CD": {
         "type": "CodedValue",
@@ -7757,8 +7365,7 @@
             "11502001": "Hauptbewegungsphase vor dem letzteiszeitlichen Maximum",
             "999997": "Unknown",
             "999998": "Not applicable"
-        },
-        "range": null
+        }
     },
     "GC_LIN_HCON_COMBI_CD": {
         "type": "CodedValue",
@@ -7768,8 +7375,7 @@
             "12202001": "mit Quellfassung (orientiert) in Stollen",
             "999997": "Unknown",
             "999998": "Not applicable"
-        },
-        "range": null
+        }
     },
     "GC_PNT_AARC_TYPE_CD": {
         "type": "CodedValue",
@@ -7778,8 +7384,7 @@
             "10105002": "Schalenstein",
             "999997": "Unknown",
             "999998": "Not applicable"
-        },
-        "range": null
+        }
     },
     "GC_PNT_ABOR_TARG_MAT_CD": {
         "type": "CodedValue",
@@ -7793,8 +7398,7 @@
             "10506005": "Thermalwasser",
             "999997": "Unknown",
             "999998": "Not applicable"
-        },
-        "range": null
+        }
     },
     "GC_MONTH_CD": {
         "type": "CodedValue",
@@ -7813,8 +7417,7 @@
             "12": "12",
             "999997": "Unknown",
             "999998": "Not applicable"
-        },
-        "range": null
+        }
     },
     "GC_PNT_RUNC_ROCK_TYP_CD": {
         "type": "CodedValue",
@@ -7824,42 +7427,7 @@
             "14403002": "Sedimentgestein",
             "999997": "Unknown",
             "999998": "Not applicable"
-        },
-        "range": null
-    },
-    "TLM_REV_FEATUREKLASSE_BB_CD": {
-        "type": "CodedValue",
-        "codedValues": {
-            "3010": "Baum- und Gebueschreihe",
-            "3020": "Bodenbedeckung",
-            "3030": "Einzelbaum und Gebuesch",
-            "3040": "Morphologische Kleinform (Linie)",
-            "3050": "Morphologische Kleinform (Punkt)"
-        },
-        "range": null
-    },
-    "TLM_REV_FEATUREKLASSE_BAUTEN_CD": {
-        "type": "CodedValue",
-        "codedValues": {
-            "2030": "Sport- und Freizeitbaute (Linie)",
-            "2040": "Sport- und Freizeitbaute (Polygon)",
-            "2050": "Staubaute",
-            "2060": "Verbauung und Mauer",
-            "2070": "Verkehrsbaute (Linie)",
-            "2080": "Verkehrsbaute (Polygon)",
-            "2090": "Versorgungs- und Kommunikationsbaute (Punkt)",
-            "2100": "Versorgungs- und Kommunikationsbaute (Linie)",
-            "2110": "Versorgungs- und Kommunikationsbaute (Polygon)",
-            "2010": "TLM Grundriss",
-            "2120": "Gebaeude Grundriss AV V25",
-            "2020": "Gebaeudedach",
-            "2130": "Boden",
-            "2140": "Dachdetail",
-            "2150": "Abzugskoerper",
-            "2160": "Mauer",
-            "2170": "Verbauung"
-        },
-        "range": null
+        }
     },
     "GC_PNT_HSUR_FLOW_CON_CD": {
         "type": "CodedValue",
@@ -7869,8 +7437,7 @@
             "12503003": "versiegt",
             "999997": "Unknown",
             "999998": "Not applicable"
-        },
-        "range": null
+        }
     },
     "GC_PNT_HCON_EPOCH_CD": {
         "type": "CodedValue",
@@ -7880,8 +7447,7 @@
             "12103002": "R\u00f6merzeit",
             "999997": "Unknown",
             "999998": "Not applicable"
-        },
-        "range": null
+        }
     },
     "GC_PNT_HSUR_COMBI_CD": {
         "type": "CodedValue",
@@ -7890,8 +7456,7 @@
             "12506001": "mit Wasserfassungsstollen",
             "999997": "Unknown",
             "999998": "Not applicable"
-        },
-        "range": null
+        }
     },
     "GC_PNT_HSUR_STATUS_CD": {
         "type": "CodedValue",
@@ -7900,8 +7465,7 @@
             "12502002": "nicht gefasst",
             "999997": "Unknown",
             "999998": "Not applicable"
-        },
-        "range": null
+        }
     },
     "GC_PNT_LRES_STATUS_CD": {
         "type": "CodedValue",
@@ -7910,8 +7474,7 @@
             "13202002": "wieder verdeckt",
             "999997": "Unknown",
             "999998": "Not applicable"
-        },
-        "range": null
+        }
     },
     "GC_AARC_EPOCH_CD": {
         "type": "CodedValue",
@@ -7920,19 +7483,7 @@
             "10002002": "pr\u00e4historisch",
             "999997": "Unknown",
             "999998": "Not applicable"
-        },
-        "range": null
-    },
-    "PLZO_REV_FEATUREKLASSE_PLZO_CD": {
-        "type": "CodedValue",
-        "codedValues": {
-            "70010": "Ortschaften",
-            "70020": "Ortschaftsname Position",
-            "70030": "Ortschaftsnachfuehrung Perimeter",
-            "70040": "Postleitzahlen",
-            "70050": "PLZ-Nachfuehrung Perimeter"
-        },
-        "range": null
+        }
     },
     "GC_CONFLICT_RESOLUTION_STATE_CD": {
         "type": "CodedValue",
@@ -7940,18 +7491,7 @@
             "100": "Not Solved",
             "200": "Solved Uncertain",
             "300": "Solved"
-        },
-        "range": null
-    },
-    "REV_REVISIONSEBENE_PRIORISIERUNG_CD": {
-        "type": "CodedValue",
-        "codedValues": {
-            "100": "Laufendes Jahr",
-            "200": "Spaeter",
-            "999997": "ub",
-            "999998": "k_W"
-        },
-        "range": null
+        }
     },
     "GC_PNT_HSUR_TYPE_CD": {
         "type": "CodedValue",
@@ -7961,7 +7501,6 @@
             "12504003": "Thermalquelle",
             "999997": "Unknown",
             "999998": "Not applicable"
-        },
-        "range": null
+        }
     }
 }

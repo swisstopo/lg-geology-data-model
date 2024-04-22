@@ -1,0 +1,2086 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DataQuality xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+             xmlns="urn:ProSuite.QA.QualitySpecifications-3.0">
+  <QualitySpecifications>
+    <QualitySpecification name="GC_Attributes_all" uuid="5DDFBA11-34C4-4B55-9D43-1ED3420F9E8C" listOrder="0" createdDate="2023-02-15T15:00:56" createdByUser="DallASteph" lastChangedDate="2023-06-27T09:08:04" lastChangedByUser="DallASteph">
+      <Elements>
+        <Element qualityCondition="GC_00_LINEAR_OBJECTS_positiveNumberValues" />
+        <Element qualityCondition="GC_00_POINT_OBJECTS_positiveNumberValues" />
+        <Element qualityCondition="GC_0101_Unconsolidated_Deposits_PT_MandatoryFields" />
+        <Element qualityCondition="GC_0102_Unconsolidated_Deposits_PLG_MandatoryFields" />
+        <Element qualityCondition="GC_0103_BEDR_LITHO_GC_LITHO_BED_MandatoryRelation" />
+        <Element qualityCondition="GC_0103_Bedrock_PLG_MandatoryFields" />
+        <Element qualityCondition="GC_0204_Instabilities_PLG_MandatoryFields" />
+        <Element qualityCondition="GC_0206_Glacial_and_Periglacial_Structures_L" />
+        <Element qualityCondition="GC_0210_Karstic_Structures_PT_MandatoryFields" />
+        <Element qualityCondition="GC_0301_Deformation_Structures_PT_MandatoryFields" />
+        <Element qualityCondition="GC_0303_Deformation_Structures_PLG_MandatoryFields" />
+        <Element qualityCondition="GC_0304_Tectonic_Boundaries_L_MandatoryFields" />
+        <Element qualityCondition="GC_0401_Folds_PT_MandatoryFields" />
+        <Element qualityCondition="GC_0402_Lineation_PT_MandatoryFields" />
+        <Element qualityCondition="GC_0403_Planar_Structures_PT_MandatoryFields" />
+        <Element qualityCondition="GC_0501_Anomalies_PT_MandatoryFields" />
+        <Element qualityCondition="GC_0502_Fossils_PT_MandatoryFields" />
+        <Element qualityCondition="GC_0505_Sedimentary_Structures_PT_MandatoryFields" />
+        <Element qualityCondition="GC_0506_Type_Localities_PT_MandatoryFields" />
+        <Element qualityCondition="GC_0507_Prominent_Lithological_Features_L_MandatoryFields" />
+        <Element qualityCondition="GC_0508_Miscellaneous_PT_MandatoryFields" />
+        <Element qualityCondition="GC_0601_Slope_Bedrock_PT_MandatoryFields" />
+        <Element qualityCondition="GC_0602_Contour_Lines_Bedrock_L_MandatoryFields" />
+        <Element qualityCondition="GC_0603_Modelled_Water_Table_PT_MandatoryFields" />
+        <Element qualityCondition="GC_0604_Contour_Lines_Hydro_L_MandatoryFields" />
+        <Element qualityCondition="GC_0701_Archaeology_PT_MandatoryFields" />
+        <Element qualityCondition="GC_0704_Exploitation_Geomaterials_PT_MandatoryFields" />
+        <Element qualityCondition="GC_0706_Exploitation_Geomaterials_PLG_MandatoryFields" />
+        <Element qualityCondition="GC_0707_Boreholes_PT_MandatoryFields" />
+        <Element qualityCondition="GC_0801_Construction_PT_MandatoryFields" />
+        <Element qualityCondition="GC_0803_Palaeohydrology_L_MandatoryFields" />
+        <Element qualityCondition="GC_0805_Surface_Water_PT_MandatoryFields" />
+      </Elements>
+    </QualitySpecification>
+    <QualitySpecification name="GC_Attributes_GC3" uuid="62672ADB-7481-437D-8E85-FD7563201A1E" listOrder="0" createdDate="2023-06-21T08:22:07" createdByUser="DallASteph" lastChangedDate="2023-07-12T07:23:50" lastChangedByUser="DallASteph">
+      <Description>This test has to run once every week</Description>
+      <Elements>
+        <Element qualityCondition="GC_00_LINEAR_OBJECTS_positiveNumberValues" />
+        <Element qualityCondition="GC_00_POINT_OBJECTS_positiveNumberValues" />
+        <Element qualityCondition="GC_0102_Unconsolidated_Deposits_PLG_MandatoryFields" />
+        <Element qualityCondition="GC_0103_BEDR_LITHO_GC_LITHO_BED_MandatoryRelation" />
+        <Element qualityCondition="GC_0103_Bedrock_PLG_MandatoryFields" />
+        <Element qualityCondition="GC_0204_Instabilities_PLG_MandatoryFields" />
+        <Element qualityCondition="GC_0206_Glacial_and_Periglacial_Structures_L" />
+        <Element qualityCondition="GC_0304_Tectonic_Boundaries_L_MandatoryFields" />
+        <Element qualityCondition="GC_0403_Planar_Structures_PT_MandatoryFields" />
+        <Element qualityCondition="GC_0507_Prominent_Lithological_Features_L_MandatoryFields" />
+        <Element qualityCondition="GC_0508_Miscellaneous_PT_MandatoryFields" />
+      </Elements>
+    </QualitySpecification>
+    <QualitySpecification name="GC_Extended_Tests" uuid="7A5F9F80-D90D-4BFC-A558-347621B9354A" listOrder="0" createdDate="2023-02-09T12:15:27" createdByUser="DallASteph" lastChangedDate="2023-12-14T17:06:11" lastChangedByUser="DallASteph">
+      <Elements>
+        <Element qualityCondition="A_GC_0101_Unconsolidated_Deposits_PT_MandatoryFields_extended" />
+        <Element qualityCondition="A_GC_0101_Unconsolidated_Deposits_PT_notInUnco_extended" />
+        <Element qualityCondition="A_GC_0102_Unconsolidated_Deposits_PLG_Artificial_terraines_in_UNCO_extended" />
+        <Element qualityCondition="A_GC_0201_[0x1F]Instability_Structures_PT_too_close_extended" />
+        <Element qualityCondition="A_GC_0304_Tectonic_Boundaries_L_MandatoryFields_ext" />
+        <Element qualityCondition="GC_SURFACES_NeighbourAreas" />
+      </Elements>
+    </QualitySpecification>
+    <QualitySpecification name="GC_Topology" uuid="1F4578D4-5642-460F-98B7-652B1264A43D" listOrder="0" createdDate="2023-01-27T13:45:00" createdByUser="DallASteph" lastChangedDate="2023-12-14T17:06:11" lastChangedByUser="DallASteph">
+      <Description>Simple topology tests</Description>
+      <Elements>
+        <Element qualityCondition="GC_ALL_POLYGON_AND_LINEAR_FEATURES_InteriorIntersects" />
+        <Element qualityCondition="GC_BEDROCK_Duplicates" />
+        <Element qualityCondition="GC_BEDROCK_MinPolygonArea" />
+        <Element qualityCondition="GC_BEDROCK_MinSegmentLength" />
+        <Element qualityCondition="GC_BEDROCK_NeighbourAreas" />
+        <Element qualityCondition="GC_BEDROCK_NoBoundaryLoops" />
+        <Element qualityCondition="GC_BEDROCK_NoCurves" />
+        <Element qualityCondition="GC_BEDROCK_NoMultiparts" />
+        <Element qualityCondition="GC_BEDROCK_NonEmptyGeometry" />
+        <Element qualityCondition="GC_BEDROCK_NoSliverPolygon" />
+        <Element qualityCondition="GC_BEDROCK_SimpleGeometry" />
+        <Element qualityCondition="GC_EXPLOIT_GEOMAT_PLG_Duplicates" />
+        <Element qualityCondition="GC_EXPLOIT_GEOMAT_PLG_MinPolygonArea" />
+        <Element qualityCondition="GC_EXPLOIT_GEOMAT_PLG_MinSegmentLength" />
+        <Element qualityCondition="GC_EXPLOIT_GEOMAT_PLG_NeighbourAreas" />
+        <Element qualityCondition="GC_EXPLOIT_GEOMAT_PLG_NoBoundaryLoops" />
+        <Element qualityCondition="GC_EXPLOIT_GEOMAT_PLG_NoCurves" />
+        <Element qualityCondition="GC_EXPLOIT_GEOMAT_PLG_NoMultiparts" />
+        <Element qualityCondition="GC_EXPLOIT_GEOMAT_PLG_NonEmptyGeometry" />
+        <Element qualityCondition="GC_EXPLOIT_GEOMAT_PLG_NoSliverPolygon" />
+        <Element qualityCondition="GC_EXPLOIT_GEOMAT_PLG_SimpleGeometry" />
+        <Element qualityCondition="GC_EXPLOIT_GEOMAT_PT_Duplicates" />
+        <Element qualityCondition="GC_EXPLOIT_GEOMAT_PT_NonEmptyGeometry" />
+        <Element qualityCondition="GC_EXPLOIT_GEOMAT_PT_SimpleGeometry" />
+        <Element qualityCondition="GC_FOSSILS_Duplicates" />
+        <Element qualityCondition="GC_FOSSILS_in_surfaces_not_marked_as_buried_out" />
+        <Element qualityCondition="GC_FOSSILS_NonEmptyGeometry" />
+        <Element qualityCondition="GC_FOSSILS_POINTOBJECTS_OnBoundaryOfBedrockOrUnco" />
+        <Element qualityCondition="GC_FOSSILS_SimpleGeometry" />
+        <Element qualityCondition="GC_FOSSILS_within_BEDROCK_or_UNCO" />
+        <Element qualityCondition="GC_LINEAR_OBJECTS_Duplicates" />
+        <Element qualityCondition="GC_LINEAR_OBJECTS_Lpro_must_be_in_BEDROCK_or buried_out" />
+        <Element qualityCondition="GC_LINEAR_OBJECTS_MinSegmentLength" />
+        <Element qualityCondition="GC_LINEAR_OBJECTS_Moraines_crossing_diff_UNCO" />
+        <Element qualityCondition="GC_LINEAR_OBJECTS_NoCurves" />
+        <Element qualityCondition="GC_LINEAR_OBJECTS_NoMultiparts" />
+        <Element qualityCondition="GC_LINEAR_OBJECTS_NonEmptyGeometry" />
+        <Element qualityCondition="GC_LINEAR_OBJECTS_PartCoincidenceSelf" />
+        <Element qualityCondition="GC_LINEAR_OBJECTS_SimpleGeometry" />
+        <Element qualityCondition="GC_LINEAR_Tecto_certain_in_Unco" />
+        <Element qualityCondition="GC_LINEAR_Tecto_vs_Unco_but_not_buried_out" />
+        <Element qualityCondition="GC_MAPSHEET_CoveredBy_ALL_PLG" />
+        <Element qualityCondition="GC_MAPSHEET_noGaps" />
+        <Element qualityCondition="GC_POINT_OBJECT_Duplicates" />
+        <Element qualityCondition="GC_POINT_OBJECTS_NoMultiparts" />
+        <Element qualityCondition="GC_POINT_OBJECTS_NonEmptyGeometry" />
+        <Element qualityCondition="GC_POINT_OBJECTS_SimpleGeometry" />
+        <Element qualityCondition="GC_POINT_OBJECTS_that_must_be_in_BEDROCK_but_are_in_Unco" />
+        <Element qualityCondition="GC_SURFACES_Duplicates" />
+        <Element qualityCondition="GC_SURFACES_MinPolygonArea" />
+        <Element qualityCondition="GC_SURFACES_MinSegmentLength" />
+        <Element qualityCondition="GC_SURFACES_NoBoundaryLoops" />
+        <Element qualityCondition="GC_SURFACES_NoCurves" />
+        <Element qualityCondition="GC_SURFACES_NoMultiparts" />
+        <Element qualityCondition="GC_SURFACES_NonEmptyGeometry" />
+        <Element qualityCondition="GC_SURFACES_NoSliverPolygon" />
+        <Element qualityCondition="GC_SURFACES_SimpleGeometry" />
+        <Element qualityCondition="GC_thin_UNCO_must_be_CoveredBy_BEDROCK" />
+        <Element qualityCondition="GC_UNCO_DESPOSIT_MinPolygonArea" />
+        <Element qualityCondition="GC_UNCO_DESPOSIT_MinSegmentLength" />
+        <Element qualityCondition="GC_UNCO_DESPOSIT_NeighbourAreas" />
+        <Element qualityCondition="GC_UNCO_DESPOSIT_NoBoundaryLoops" />
+        <Element qualityCondition="GC_UNCO_DESPOSIT_NoCurves" />
+        <Element qualityCondition="GC_UNCO_DESPOSIT_NoMultiparts" />
+        <Element qualityCondition="GC_UNCO_DESPOSIT_NonEmptyGeometry" />
+        <Element qualityCondition="GC_UNCO_DESPOSIT_NoSliverPolygon" />
+        <Element qualityCondition="GC_UNCO_DESPOSIT_SimpleGeometry" />
+      </Elements>
+    </QualitySpecification>
+    <QualitySpecification name="GC_TechnicalQualityAssurance" uuid="3AF42C94-F12C-3CD6-E053-9730830A4794" listOrder="900" createdDate="2015-05-06T08:51:17" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas">
+      <Elements>
+        <Element qualityCondition="GC_ADMIXTURE_GdbConstraint" />
+        <Element qualityCondition="GC_ADMIXTURE_TrimmedTextFields" />
+        <Element qualityCondition="GC_ADMIXTURE_UniqueUUID" />
+        <Element qualityCondition="GC_ADMIXTURE_UUID_RegExp" />
+        <Element qualityCondition="GC_BED_FORM_ATT_GdbConstraint" />
+        <Element qualityCondition="GC_BED_FORM_ATT_TrimmedTextFields" />
+        <Element qualityCondition="GC_BED_FORM_ATT_UniqueUUID" />
+        <Element qualityCondition="GC_BED_FORM_ATT_UUID_RegExp" />
+        <Element qualityCondition="GC_BEDROCK_GdbConstraint" />
+        <Element qualityCondition="GC_BEDROCK_RequiredFieldsCMAttr" />
+        <Element qualityCondition="GC_BEDROCK_TrimmedTextFields" />
+        <Element qualityCondition="GC_BEDROCK_UniqueUUID" />
+        <Element qualityCondition="GC_BEDROCK_UUID_RegExp" />
+        <Element qualityCondition="GC_CHARCAT_GdbConstraint" />
+        <Element qualityCondition="GC_CHARCAT_TrimmedTextFields" />
+        <Element qualityCondition="GC_CHARCAT_UniqueUUID" />
+        <Element qualityCondition="GC_CHARCAT_UUID_RegExp" />
+        <Element qualityCondition="GC_CHRONO_GdbConstraint" />
+        <Element qualityCondition="GC_CHRONO_TrimmedTextFields" />
+        <Element qualityCondition="GC_CHRONO_UniqueUUID" />
+        <Element qualityCondition="GC_CHRONO_UUID_RegExp" />
+        <Element qualityCondition="GC_COMPOSIT_GdbConstraint" />
+        <Element qualityCondition="GC_COMPOSIT_TrimmedTextFields" />
+        <Element qualityCondition="GC_COMPOSIT_UniqueUUID" />
+        <Element qualityCondition="GC_COMPOSIT_UUID_RegExp" />
+        <Element qualityCondition="GC_EXPLOIT_GEOMAT_PLG_GdbConstraint" />
+        <Element qualityCondition="GC_EXPLOIT_GEOMAT_PLG_RequiredFieldsCMAttr" />
+        <Element qualityCondition="GC_EXPLOIT_GEOMAT_PLG_TrimmedTextFields" />
+        <Element qualityCondition="GC_EXPLOIT_GEOMAT_PLG_UniqueUUID" />
+        <Element qualityCondition="GC_EXPLOIT_GEOMAT_PLG_UUID_RegExp" />
+        <Element qualityCondition="GC_EXPLOIT_GEOMAT_PT_RequiredFieldsCMAttr" />
+        <Element qualityCondition="GC_EXPLOIT_GEOMAT_PT_TrimmedTextFields" />
+        <Element qualityCondition="GC_EXPLOIT_GEOMAT_PT_UniqueUUID" />
+        <Element qualityCondition="GC_EXPLOIT_GEOMAT_PT_UUID_RegExp" />
+        <Element qualityCondition="GC_FOSSILS_GdbConstraint" />
+        <Element qualityCondition="GC_FOSSILS_RequiredFieldsCMAttr" />
+        <Element qualityCondition="GC_FOSSILS_TrimmedTextFields" />
+        <Element qualityCondition="GC_FOSSILS_UniqueUUID" />
+        <Element qualityCondition="GC_FOSSILS_UUID_RegExp" />
+        <Element qualityCondition="GC_LINEAR_OBJECTS_GdbConstraint" />
+        <Element qualityCondition="GC_LINEAR_OBJECTS_RequiredFieldsCMAttr" />
+        <Element qualityCondition="GC_LINEAR_OBJECTS_TrimmedTextFields" />
+        <Element qualityCondition="GC_LINEAR_OBJECTS_UniqueUUID" />
+        <Element qualityCondition="GC_LINEAR_OBJECTS_UUID_RegExp" />
+        <Element qualityCondition="GC_LITHO_BED_TrimmedTextFields" />
+        <Element qualityCondition="GC_LITHO_BED_UniqueUUID" />
+        <Element qualityCondition="GC_LITHO_BED_UUID_RegExp" />
+        <Element qualityCondition="GC_LITHO_GdbConstraint" />
+        <Element qualityCondition="GC_LITHO_TrimmedTextFields" />
+        <Element qualityCondition="GC_LITHO_UNCO_GdbConstraint" />
+        <Element qualityCondition="GC_LITHO_UNCO_TrimmedTextFields" />
+        <Element qualityCondition="GC_LITHO_UNCO_UniqueUUID" />
+        <Element qualityCondition="GC_LITHO_UNCO_UUID_RegExp" />
+        <Element qualityCondition="GC_LITHO_UniqueUUID" />
+        <Element qualityCondition="GC_LITHO_UUID_RegExp" />
+        <Element qualityCondition="GC_LITSTRAT_BED_GdbConstraint" />
+        <Element qualityCondition="GC_LITSTRAT_BED_TrimmedTextFields" />
+        <Element qualityCondition="GC_LITSTRAT_BED_UniqueUUID" />
+        <Element qualityCondition="GC_LITSTRAT_BED_UUID_RegExp" />
+        <Element qualityCondition="GC_LITSTRAT_GdbConstraint" />
+        <Element qualityCondition="GC_LITSTRAT_TrimmedTextFields" />
+        <Element qualityCondition="GC_LITSTRAT_UNCO_GdbConstraint" />
+        <Element qualityCondition="GC_LITSTRAT_UNCO_TrimmedTextFields" />
+        <Element qualityCondition="GC_LITSTRAT_UNCO_UniqueUUID" />
+        <Element qualityCondition="GC_LITSTRAT_UNCO_UUID_RegExp" />
+        <Element qualityCondition="GC_LITSTRAT_UniqueUUID" />
+        <Element qualityCondition="GC_LITSTRAT_UUID_RegExp" />
+        <Element qualityCondition="GC_MAPSHEET_RequiredFieldsCMAttr" />
+        <Element qualityCondition="GC_MAPSHEET_UniqueUUID" />
+        <Element qualityCondition="GC_MAPSHEET_UUID_RegExp" />
+        <Element qualityCondition="GC_POINT_OBJECTS_GdbConstraint" />
+        <Element qualityCondition="GC_POINT_OBJECTS_RequiredFieldsCMAttr" />
+        <Element qualityCondition="GC_POINT_OBJECTS_TrimmedTextFields" />
+        <Element qualityCondition="GC_POINT_OBJECTS_UniqueUUID" />
+        <Element qualityCondition="GC_POINT_OBJECTS_UUID_RegExp" />
+        <Element qualityCondition="GC_SURFACES_GdbConstraint" />
+        <Element qualityCondition="GC_SURFACES_RequiredFieldsCMAttr" />
+        <Element qualityCondition="GC_SURFACES_TrimmedTextFields" />
+        <Element qualityCondition="GC_SURFACES_UniqueUUID" />
+        <Element qualityCondition="GC_SURFACES_UUID_RegExp" />
+        <Element qualityCondition="GC_SYSTEM_GdbConstraint" />
+        <Element qualityCondition="GC_SYSTEM_TrimmedTextFields" />
+        <Element qualityCondition="GC_SYSTEM_UniqueUUID" />
+        <Element qualityCondition="GC_SYSTEM_UUID_RegExp" />
+        <Element qualityCondition="GC_TECTO_GdbConstraint" />
+        <Element qualityCondition="GC_TECTO_TrimmedTextFields" />
+        <Element qualityCondition="GC_TECTO_UniqueUUID" />
+        <Element qualityCondition="GC_TECTO_UUID_RegExp" />
+        <Element qualityCondition="GC_UNCO_DESPOSIT_GdbConstraint" />
+        <Element qualityCondition="GC_UNCO_DESPOSIT_RequiredFieldsCMAttr" />
+        <Element qualityCondition="GC_UNCO_DESPOSIT_TrimmedTextFields" />
+        <Element qualityCondition="GC_UNCO_DESPOSIT_UniqueUUID" />
+        <Element qualityCondition="GC_UNCO_DESPOSIT_UUID_RegExp" />
+      </Elements>
+    </QualitySpecification>
+  </QualitySpecifications>
+  <QualityConditions>
+    <QualityCondition name="A_GC_0101_Unconsolidated_Deposits_PT_MandatoryFields_extended" uuid="FE9ACEAD-7E94-4A8D-99DF-EF9A8ADDFD3D" versionUuid="FB64A628-1A2A-4E01-B34F-58BC493E403D" createdDate="2023-02-09T12:15:04" createdByUser="DallASteph" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="DatasetConstraintFactory" allowErrors="True">
+      <Description>Searches Attributes, that do not coincide with symbology</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_POINT_OBJECTS" workspace="GC_Production" />
+        <Scalar parameter="constraint" value="KIND IN (14401002,14401003,14401004,14401005,14401007,14401008)" />
+        <Scalar parameter="constraint" value="+ RUNC_STATUS = 999998" />
+        <Scalar parameter="constraint" value="KIND IN (14401006,14401007,14401008)" />
+        <Scalar parameter="constraint" value="+ RUNC_ROCK_SPE = 999998" />
+        <Scalar parameter="constraint" value="KIND IN (14401001,14401002,14401003,14401004,14401005,14401007,14401008)" />
+        <Scalar parameter="constraint" value="+ RUNC_MAT_TYPE = 999998" />
+        <Scalar parameter="constraint" value="KIND IN (14401005,14401007,14401008)" />
+        <Scalar parameter="constraint" value="+ RUNC_ORIG_DESCR = 'N/A'" />
+        <Scalar parameter="constraint" value="+ RUNC_PROTECTED = 999998" />
+        <Scalar parameter="constraint" value="KIND IN (14401001)" />
+        <Scalar parameter="constraint" value="+ RUNC_PROTECTED NOT IN (999997, 999998)" />
+        <Scalar parameter="constraint" value="+ RUNC_PROTECTED IS NOT NULL" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="A_GC_0101_Unconsolidated_Deposits_PT_notInUnco_extended" uuid="94EF1EB2-A80C-427A-A791-263E1745E999" versionUuid="8C9CF19D-8AFE-4217-A23A-1A2FDABD8386" createdDate="2023-02-28T11:19:10" createdByUser="DallASteph" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="ContainsOther(0)">
+      <Description>Finds erratic bloc that are not contained in UNCO</Description>
+      <Parameters>
+        <Dataset parameter="contains" value="TOPGIS_GC.GC_UNCO_DESPOSIT" workspace="GC_Production" />
+        <Dataset parameter="isWithin" value="TOPGIS_GC.GC_POINT_OBJECTS" where="KIND IN (14401001,14401002)" workspace="GC_Production" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="A_GC_0102_Unconsolidated_Deposits_PLG_Artificial_terraines_in_UNCO_extended" uuid="43810001-1744-49BD-BEC3-4C4D1B75D772" versionUuid="4D9B87D4-3A4D-4CF3-A572-8AEC24A09766" createdDate="2023-02-17T10:54:11" createdByUser="DallASteph" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="DatasetConstraintFactory" allowErrors="True" stopOnError="False">
+      <Description>Finds all Artificial terraines in Unco that should be in Aart</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_UNCO_DESPOSIT" workspace="GC_Production" />
+        <Scalar parameter="constraint" value="RUNC_LITHO NOT IN (10401001,10401002,10401003,10401004,10401005,10401006)" />
+        <Scalar parameter="constraint" value="RUNC_LITHO NOT IN (15101067,15101069,15101070,15101071,15101072,15101073)" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="A_GC_0201_[0x1F]Instability_Structures_PT_too_close_extended" uuid="41A1CD84-87D9-47EC-9186-9B2C9EFFA726" versionUuid="DDB2CD89-C81D-48E4-88AF-D298C65CC5D6" createdDate="2023-02-17T16:19:29" createdByUser="DallASteph" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="PointNotNear(0)">
+      <Description>Finds Points of Gins Hinweis für Hanginstabilität that are closer than 100m (=4mm)</Description>
+      <Parameters>
+        <Dataset parameter="pointClass" value="TOPGIS_GC.GC_POINT_OBJECTS" where="KIND = 11601001" workspace="GC_Production" />
+        <Dataset parameter="referenceClass" value="TOPGIS_GC.GC_POINT_OBJECTS" where="KIND = 11601001" workspace="GC_Production" />
+        <Scalar parameter="limit" value="100" />
+        <Scalar parameter="AllowCoincidentPoints" value="False" />
+        <Scalar parameter="MinimumErrorLineLength" value="-1" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="A_GC_0304_Tectonic_Boundaries_L_MandatoryFields_ext" uuid="C1A1463F-EA66-49CF-8225-8E125AD8E12C" versionUuid="A9248F4D-2D4A-4303-841D-56343288438A" createdDate="2023-04-26T09:45:54" createdByUser="DallASteph" lastChangedDate="2023-07-11T15:50:21" lastChangedByUser="DallASteph" testDescriptor="DatasetConstraintFactory" allowErrors="True" stopOnError="False">
+      <Description>Finds all rows in Tectonic_Boundaries_L that do not fullfill the mandatory rules of the Datamodel</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_LINEAR_OBJECTS" workspace="GC_Production" />
+        <Scalar parameter="constraint" value="KIND IN (14901001,14901002,14901004,14901005,14901006,14901007,14901008)" />
+        <Scalar parameter="constraint" value="+ TTEC_STATUS IS NOT NULL" />
+        <Scalar parameter="constraint" value="+ TTEC_STATUS NOT IN (999997,999998)" />
+        <Scalar parameter="constraint" value="KIND IN (14901001,14901002,14901003)" />
+        <Scalar parameter="constraint" value="+ TTEC_FAULT_MO = 999998" />
+        <Scalar parameter="constraint" value="+ TTEC_VERTI_MO = 999998" />
+        <Scalar parameter="constraint" value="KIND = 14901003" />
+        <Scalar parameter="constraint" value="+ TTEC_HORIZ_MO = 999998" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_00_LINEAR_OBJECTS_positiveNumberValues" uuid="3AF42C94-F024-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F105-3CD6-E053-9730830A4794" createdDate="2015-07-10T14:40:06" createdByUser="WyssAndre" lastChangedDate="2023-07-12T07:20:11" lastChangedByUser="DallASteph" testDescriptor="DatasetConstraintFactory" allowErrors="False" stopOnError="False">
+      <Description>Prio 1: Finds all number values &lt; 0 in Altitude and Reference Year</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_LINEAR_OBJECTS" workspace="GC_Production" />
+        <Scalar parameter="constraint" value="GGLA_REF_YEAR IS NOT NULL" />
+        <Scalar parameter="constraint" value="+GGLA_REF_YEAR &gt;= 0" />
+        <Scalar parameter="constraint" value="HPAL_REF_YEAR IS NOT NULL" />
+        <Scalar parameter="constraint" value="+HPAL_REF_YEAR &gt;= 0" />
+        <Scalar parameter="constraint" value="PCOB_ALTITUDE IS NOT NULL" />
+        <Scalar parameter="constraint" value="+PCOB_ALTITUDE &gt;= 0" />
+        <Scalar parameter="constraint" value="PCOH_ALTITUDE IS NOT NULL" />
+        <Scalar parameter="constraint" value="+PCOH_ALTITUDE &gt;= 0" />
+        <Scalar parameter="constraint" value="KIND IS NOT NULL" />
+        <Scalar parameter="constraint" value="KIND NOT IN (999997, 999998)" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_00_POINT_OBJECTS_positiveNumberValues" uuid="3AF42C94-F025-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F106-3CD6-E053-9730830A4794" createdDate="2015-07-10T14:43:49" createdByUser="WyssAndre" lastChangedDate="2023-07-12T07:20:56" lastChangedByUser="DallASteph" testDescriptor="DatasetConstraintFactory" allowErrors="False" stopOnError="False">
+      <Description>Prio 1: Finds all number values &lt; 0</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_POINT_OBJECTS" workspace="GC_Production" />
+        <Scalar parameter="constraint" value="ABOR_DEPTH_BEDR IS NOT NULL" />
+        <Scalar parameter="constraint" value="+ ABOR_DEPTH_BEDR NOT IN (-999,-888)" />
+        <Scalar parameter="constraint" value="++ABOR_DEPTH_BEDR &gt;= 0" />
+        <Scalar parameter="constraint" value="ABOR_DEPTH_TOT IS NOT NULL" />
+        <Scalar parameter="constraint" value="+ABOR_DEPTH_TOT &gt;= 0" />
+        <Scalar parameter="constraint" value="ABOR_DEPTH_FM_A IS NOT NULL" />
+        <Scalar parameter="constraint" value="+ABOR_DEPTH_FM_A &gt;= 0" />
+        <Scalar parameter="constraint" value="ABOR_DEPTH_FM_B IS NOT NULL" />
+        <Scalar parameter="constraint" value="+ABOR_DEPTH_FM_B &gt;= 0" />
+        <Scalar parameter="constraint" value="ABOR_DEPTH_WT IS NOT NULL" />
+        <Scalar parameter="constraint" value="+ABOR_DEPTH_WT &gt;= 0" />
+        <Scalar parameter="constraint" value="AZIMUTH IS NOT NULL" />
+        <Scalar parameter="constraint" value="+ AZIMUTH  &lt;&gt;  999998" />
+        <Scalar parameter="constraint" value="++AZIMUTH &gt;= 0 AND AZIMUTH &lt;= 360" />
+        <Scalar parameter="constraint" value="DIP IS NOT NULL" />
+        <Scalar parameter="constraint" value="+DIP &lt;&gt;  999998" />
+        <Scalar parameter="constraint" value="++DIP &gt;= 0 AND DIP &lt;= 90" />
+        <Scalar parameter="constraint" value="ABOR_REF_NUMBER IS NOT NULL" />
+        <Scalar parameter="constraint" value="+ABOR_REF_NUMBER &gt;= 0" />
+        <Scalar parameter="constraint" value="ABOR_LINK IS NOT NULL" />
+        <Scalar parameter="constraint" value="+ABOR_LINK &gt;= 0" />
+        <Scalar parameter="constraint" value="HCON_DEPTH IS NOT NULL" />
+        <Scalar parameter="constraint" value="+HCON_DEPTH &gt;= 0" />
+        <Scalar parameter="constraint" value="HCON_DEPTH_WT IS NOT NULL" />
+        <Scalar parameter="constraint" value="+HCON_DEPTH_WT &gt;= 0" />
+        <Scalar parameter="constraint" value="HSUR_TEMP IS NOT NULL" />
+        <Scalar parameter="constraint" value="+HSUR_TEMP &gt;= 0" />
+        <Scalar parameter="constraint" value="PMOD_HEIGHT IS NOT NULL" />
+        <Scalar parameter="constraint" value="+PMOD_HEIGHT &gt;= 0" />
+        <Scalar parameter="constraint" value="KIND IS NOT NULL" />
+        <Scalar parameter="constraint" value="+ KIND NOT IN (999997, 999998)" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_0101_Unconsolidated_Deposits_PT_MandatoryFields" uuid="C9496D0C-FBBF-4512-8359-9F31FA108AE7" versionUuid="52F7DA6E-2807-43B0-BF2E-FD12CA35360F" createdDate="2023-03-15T10:41:29" createdByUser="DallASteph" lastChangedDate="2024-04-15T14:56:42" lastChangedByUser="DallASteph" testDescriptor="DatasetConstraintFactory">
+      <Description>Finds all rows in Unconsolidated_Deposits_PT that do not fullfill the mandatory rules of the Datamodel</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_POINT_OBJECTS" workspace="GC_Production" />
+        <Scalar parameter="constraint" value="KIND IN (14401002,14401003,14401004,14401005,14401007,14401008)" />
+        <Scalar parameter="constraint" value="+ RUNC_STATUS = 999998" />
+        <Scalar parameter="constraint" value="KIND IN (14401006,14401007,14401008)" />
+        <Scalar parameter="constraint" value="+ RUNC_ROCK_SPE = 999998" />
+        <Scalar parameter="constraint" value="KIND IN (14401001,14401003,14401004,14401005,14401007,14401008)" />
+        <Scalar parameter="constraint" value="+ RUNC_MAT_TYPE NOT IN (999998)" />
+        <Scalar parameter="constraint" value="KIND IN (14401005,14401007,14401008)" />
+        <Scalar parameter="constraint" value="+ RUNC_ORIG_DESCR = 'N/A'" />
+        <Scalar parameter="constraint" value="+ RUNC_PROTECTED = 999998" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_0102_Unconsolidated_Deposits_PLG_MandatoryFields" uuid="86563D1C-79EF-4E84-AE3D-F59E4416B06C" versionUuid="B3734421-79A0-44EE-BC52-C7CC8DFDC184" createdDate="2023-03-17T12:49:45" createdByUser="DallASteph" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="DatasetConstraintFactory" allowErrors="False" stopOnError="False">
+      <Description>Prio 1: Finds all rows in Unconsolidated_Deposits_PLG that do not fullfill the mandatory rules of the Datamodel</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_UNCO_DESPOSIT" workspace="GC_Production" />
+        <Scalar parameter="constraint" value="RUNC_LITHO IN (15101019, 15101021, 15101024, 15101027, 15101028, 15101029, 15101030, 15101031, 15101032, 15101033, 15101034, 15101046, 15101047, 15101048, 15101049, 15101055, 15101058)" />
+        <Scalar parameter="constraint" value="+ RUNC_HARMOS_REV NOT IN (999997, 999998)" />
+        <Scalar parameter="constraint" value="RUNC_LITHO NOT IN (999997,999998)" />
+        <Scalar parameter="constraint" value="RUNC_CHRONO_T NOT IN (999997,999998)" />
+        <Scalar parameter="constraint" value="RUNC_CHRONO_B NOT IN (999997,999998)" />
+        <Scalar parameter="constraint" value="RUNC_LITSTRAT NOT IN (999997)" />
+        <Scalar parameter="constraint" value="RUNC_CHRONO_B IS NOT NULL" />
+        <Scalar parameter="constraint" value="RUNC_CHRONO_T IS NOT NULL" />
+        <Scalar parameter="constraint" value="RUNC_LITSTRAT IS NOT NULL" />
+        <Scalar parameter="constraint" value="RUNC_LITHO IS NOT NULL" />
+        <Scalar parameter="constraint" value="RUNC_GLAC_TYP IS NOT NULL" />
+        <Scalar parameter="constraint" value="+ RUNC_GLAC_TYP IN (14513001, 14513002,14513003, 14513004,14513005,14513006,14513007,14513008,14513009,14513010,14513011,14513012,14513013)" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_0103_BEDR_LITHO_GC_LITHO_BED_MandatoryRelation" uuid="3AF42C94-F03E-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F11F-3CD6-E053-9730830A4794" createdDate="2016-04-20T16:49:19" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="RelConstraint" allowErrors="False">
+      <Description>Prio 1: Finds all rows in GC_BEDROCK containing no relationship GC_LITHO_BED</Description>
+      <Parameters>
+        <Dataset parameter="relationTables" value="TOPGIS_GC.GC_BEDROCK" workspace="GC_Production" />
+        <Dataset parameter="relationTables" value="TOPGIS_GC.GC_LITHO_BED" workspace="GC_Production" />
+        <Scalar parameter="relation" value="TOPGIS_GC.GC_BEDR_LITHO_GC_LITHO_BED" />
+        <Scalar parameter="join" value="LeftJoin" />
+        <Scalar parameter="constraint" value="TOPGIS_GC.GC_BEDR_LITHO_GC_LITHO_BED.GC_BEDROCK_UUID IS NOT NULL" />
+        <Scalar parameter="ApplyFilterExpressionsInDatabase" value="False" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_0103_Bedrock_PLG_MandatoryFields" uuid="F3F4CF1C-92E2-421F-930D-D59DD22AB3A2" versionUuid="47967245-7412-4E66-8026-3AE3888DB888" createdDate="2018-01-09T12:14:42" createdByUser="BalanPauli" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="DatasetConstraintFactory" allowErrors="False" stopOnError="False">
+      <Description>Prio 1: Finds all rows in Bedrock_PLG that do not fullfill the mandatory rules of the Datamodel</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_BEDROCK" workspace="GC_Production" />
+        <Scalar parameter="constraint" value="RBED_CHRONO_B IS NOT NULL" />
+        <Scalar parameter="constraint" value="RBED_CHRONO_B NOT IN (999997,999998)" />
+        <Scalar parameter="constraint" value="RBED_CHRONO_T IS NOT NULL" />
+        <Scalar parameter="constraint" value="RBED_CHRONO_T NOT IN (999997,999998)" />
+        <Scalar parameter="constraint" value="RBED_TECTO IS NOT NULL" />
+        <Scalar parameter="constraint" value="RBED_TECTO NOT IN (999997,999998)" />
+        <Scalar parameter="constraint" value="FORM_ATT IS NOT NULL" />
+        <Scalar parameter="constraint" value="+ FORM_ATT NOT IN (999997,999998)" />
+        <Scalar parameter="constraint" value="RBED_HARMOS_REV IS NOT NULL" />
+        <Scalar parameter="constraint" value="RBED_HARMOS_REV NOT IN (999997,999998)" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_0204_Instabilities_PLG_MandatoryFields" uuid="D3DA43D7-BD71-467A-9F60-E17153D3F3D9" versionUuid="B07110C6-B36F-4AD9-AFBD-7C440FF82F0D" createdDate="2023-03-17T12:41:28" createdByUser="DallASteph" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="DatasetConstraintFactory" allowErrors="False" stopOnError="False">
+      <Description>Prio 1: Finds all rows in Instabilities_within_Bedrock_PLG that do not fullfill the mandatory rules of the Datamodel</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_SURFACES" workspace="GC_Production" />
+        <Scalar parameter="constraint" value="KIND IN (11501002,15801002)" />
+        <Scalar parameter="constraint" value="+ GINS_MAIN_MOV = 999998" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_0206_Glacial_and_Periglacial_Structures_L" uuid="5242F252-F7EF-4F37-AE39-C0068B3EA2AA" versionUuid="1076A5C0-DFBA-40B1-8448-369C5F0F7335" createdDate="2023-03-17T10:42:01" createdByUser="DallASteph" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="DatasetConstraintFactory" allowErrors="False" stopOnError="False">
+      <Description>Prio 1: Finds all rows in Glacial_and_Periglacial_Structures_L (Moränenwall,...) that do not fullfill the mandatory rules of the Datamodel</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_LINEAR_OBJECTS" workspace="GC_Production" />
+        <Scalar parameter="constraint" value="KIND = 11301001" />
+        <Scalar parameter="constraint" value="+ GGLA_MORAI_MO IS NOT NULL" />
+        <Scalar parameter="constraint" value="+ GGLA_MORAI_MO NOT IN (999997,999998)" />
+        <Scalar parameter="constraint" value="+ GGLA_GLAC_TYP IS NOT NULL" />
+        <Scalar parameter="constraint" value="+ GGLA_GLAC_TYP NOT IN (999997,999998)" />
+        <Scalar parameter="constraint" value="KIND IN (11301002,11301003,11301004,11301005,11301006,11301007,11301008,11301009)" />
+        <Scalar parameter="constraint" value="+ GGLA_MORAI_MO = 999998" />
+        <Scalar parameter="constraint" value="+ GGLA_ICE_M_P = 999998" />
+        <Scalar parameter="constraint" value="+ GGLA_QUAT_STR = 999998" />
+        <Scalar parameter="constraint" value="KIND IN (11301002,11301003,11301004,11301005,11301006,11301007,11301008)" />
+        <Scalar parameter="constraint" value="+ GGLA_GLAC_TYP = 999998" />
+        <Scalar parameter="constraint" value="KIND IN (11301002,11301003,11301001,11301005,11301006,11301007,11301008,11301009)" />
+        <Scalar parameter="constraint" value="+ GGLA_REF_YEAR = 999998" />
+        <Scalar parameter="constraint" value="+ GGLA_SOURCE = 'N/A'" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_0210_Karstic_Structures_PT_MandatoryFields" uuid="695285D2-446F-40E0-AA76-BE675B8AC768" versionUuid="E97FBAD6-9F2A-471E-BF54-BFA5E5C36F7D" createdDate="2023-03-17T16:30:37" createdByUser="DallASteph" lastChangedDate="2023-06-21T16:01:36" lastChangedByUser="DallASteph" testDescriptor="DatasetConstraintFactory" allowErrors="False" stopOnError="False">
+      <Description>Prio 2: Finds all rows in Karstic_Structures_PT that do not fullfill the mandatory rules of the Datamodel for GeoCover V3</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_POINT_OBJECTS" workspace="GC_Production" />
+        <Scalar parameter="constraint" value="KIND = 11901001" />
+        <Scalar parameter="constraint" value="+ GKAR_ICE_CAVE = 999998" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_0301_Deformation_Structures_PT_MandatoryFields" uuid="51F8EA24-D412-45EA-A229-CC1ACA8ADB40" versionUuid="D418C908-291A-4A01-8347-261452C55B0D" createdDate="2023-03-17T15:52:22" createdByUser="DallASteph" lastChangedDate="2023-06-21T16:01:13" lastChangedByUser="DallASteph" testDescriptor="DatasetConstraintFactory" allowErrors="False" stopOnError="False">
+      <Description>Prio 2 to 4: Finds all rows in Deformation_Structures_PT that do not fullfill the mandatory rules of the Datamodel for GeoCover V3</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_POINT_OBJECTS" workspace="GC_Production" />
+        <Scalar parameter="constraint" value="KIND in (14601004,14601006)" />
+        <Scalar parameter="constraint" value="+ AZIMUTH IS NOT NULL" />
+        <Scalar parameter="constraint" value="+ AZIMUTH NOT IN (999997,999998)" />
+        <Scalar parameter="constraint" value="KIND IN (14601001,14601003,14601005,14601007)" />
+        <Scalar parameter="constraint" value="+ AZIMUTH = 999998" />
+        <Scalar parameter="constraint" value="KIND IN (14601001,14601002,14601003,14601005,14601006,14601007)" />
+        <Scalar parameter="constraint" value="+ DIP = 999998" />
+        <Scalar parameter="constraint" value="KIND IN (14601001,14601002,14601003,14601005,14601007)" />
+        <Scalar parameter="constraint" value="+ TDEF_FOLD_TYP = 999998" />
+        <Scalar parameter="constraint" value="+ TDEF_FOLD_FOR = 999998" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_0303_Deformation_Structures_PLG_MandatoryFields" uuid="D779462D-AFB8-4564-937B-49E9590EBAF3" versionUuid="331D0B4C-D4F8-41C9-81F4-CB46389CB2EB" createdDate="2023-03-17T12:45:37" createdByUser="DallASteph" lastChangedDate="2023-06-21T16:04:53" lastChangedByUser="DallASteph" testDescriptor="DatasetConstraintFactory" allowErrors="False" stopOnError="False">
+      <Description>Prio 2: Finds all rows in Deformation_Structures_PLG that do not fullfill the mandatory rules of the Datamodel</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_SURFACES" workspace="GC_Production" />
+        <Scalar parameter="constraint" value="KIND = 14801001" />
+        <Scalar parameter="constraint" value="+ TDEF_TYPE = 999998" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_0304_Tectonic_Boundaries_L_MandatoryFields" uuid="41E3A610-BB36-4151-803F-517D0F10489A" versionUuid="A4D04863-F05B-4ABD-A261-0AE2644B520E" createdDate="2023-03-17T14:25:18" createdByUser="DallASteph" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="DatasetConstraintFactory" allowErrors="False" stopOnError="False">
+      <Description>Prio 1: Finds all rows in Tectonic_Boundaries_L that do not fullfill the mandatory rules of the Datamodel</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_LINEAR_OBJECTS" workspace="GC_Production" />
+        <Scalar parameter="constraint" value="KIND IN (14901001,14901002,14901004,14901005,14901006,14901007,14901008)" />
+        <Scalar parameter="constraint" value="+ TTEC_STATUS IS NOT NULL" />
+        <Scalar parameter="constraint" value="+ TTEC_STATUS NOT IN (999997,999998)" />
+        <Scalar parameter="constraint" value="KIND IN (14901001,14901002,14901003)" />
+        <Scalar parameter="constraint" value="+ TTEC_FAULT_MO = 999998" />
+        <Scalar parameter="constraint" value="+ TTEC_VERTI_MO = 999998" />
+        <Scalar parameter="constraint" value="KIND = 14901003" />
+        <Scalar parameter="constraint" value="+ TTEC_HORIZ_MO = 999998" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_0401_Folds_PT_MandatoryFields" uuid="FB5F4FEF-AA79-4154-B0AF-FD1F8AF2E4CB" versionUuid="5E35DBFD-63C9-4A11-89AC-3665421996E2" createdDate="2023-03-17T14:58:55" createdByUser="DallASteph" lastChangedDate="2023-06-21T16:08:57" lastChangedByUser="DallASteph" testDescriptor="DatasetConstraintFactory" allowErrors="False" stopOnError="False">
+      <Description>Prio 2: Finds all rows in Folds_PT that do not fullfill the mandatory rules of the Datamodel for GeoCover V3</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_POINT_OBJECTS" workspace="GC_Production" />
+        <Scalar parameter="constraint" value="KIND in (13601001,13601002,13601003)" />
+        <Scalar parameter="constraint" value="+ AZIMUTH IS NOT NULL" />
+        <Scalar parameter="constraint" value="+ AZIMUTH NOT IN (999997,999998)" />
+        <Scalar parameter="constraint" value="KIND in (13601001)" />
+        <Scalar parameter="constraint" value="+ DIP IS NOT NULL" />
+        <Scalar parameter="constraint" value="+ DIP NOT IN (999997,999998)" />
+        <Scalar parameter="constraint" value="KIND IN (13601002,13601003)" />
+        <Scalar parameter="constraint" value="+ MFOL_PHASE = 999998" />
+        <Scalar parameter="constraint" value="+ MFOL_PHASE_REF = 'N/A'" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_0402_Lineation_PT_MandatoryFields" uuid="16F64F3D-8342-4B76-BB46-CEC03F0BE0E2" versionUuid="8CC8C1B5-57F7-4552-BDC7-9E3DCC501494" createdDate="2023-03-17T15:15:59" createdByUser="DallASteph" lastChangedDate="2023-06-21T16:09:31" lastChangedByUser="DallASteph" testDescriptor="DatasetConstraintFactory" allowErrors="False" stopOnError="False">
+      <Description>Prio 2: Finds all rows in Lineation_PT that do not fullfill the mandatory rules of the Datamodel for GeoCover V3</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_POINT_OBJECTS" workspace="GC_Production" />
+        <Scalar parameter="constraint" value="KIND in (13701001,13701002,13701003,13701004)" />
+        <Scalar parameter="constraint" value="+ AZIMUTH IS NOT NULL" />
+        <Scalar parameter="constraint" value="+ AZIMUTH NOT IN (999997,999998)" />
+        <Scalar parameter="constraint" value="KIND in (13701001,13701002,13701003)" />
+        <Scalar parameter="constraint" value="+ DIP IS NOT NULL" />
+        <Scalar parameter="constraint" value="+ DIP NOT IN (999997,999998)" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_0403_Planar_Structures_PT_MandatoryFields" uuid="63C14692-9976-4D06-9952-48003BA70FE4" versionUuid="A0AE966A-40E4-4CB0-9AD4-50F4E8D26497" createdDate="2023-03-17T15:22:04" createdByUser="DallASteph" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="DatasetConstraintFactory" allowErrors="False" stopOnError="False">
+      <Description>Prio 1: Finds all rows in Planar_Structures_PT that do not fullfill the mandatory rules of the Datamodel for GeoCover V3</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_POINT_OBJECTS" workspace="GC_Production" />
+        <Scalar parameter="constraint" value="KIND in (13801001,13801002,13801003,13801004,13801005)" />
+        <Scalar parameter="constraint" value="+ AZIMUTH IS NOT NULL" />
+        <Scalar parameter="constraint" value="+ AZIMUTH NOT IN (999997,999998)" />
+        <Scalar parameter="constraint" value="KIND in (13801001,13801002,13801003,13801004,13801005)" />
+        <Scalar parameter="constraint" value="+ DIP IS NOT NULL" />
+        <Scalar parameter="constraint" value="+ DIP NOT IN (999997,999998)" />
+        <Scalar parameter="constraint" value="KIND IN (13801001) AND DIP NOT IN (0,90)" />
+        <Scalar parameter="constraint" value="+ MPLA_POLARITY IN (13802001,13802002,999997)" />
+        <Scalar parameter="constraint" value="KIND IN (13801001) AND DIP = 0" />
+        <Scalar parameter="constraint" value="+ AZIMUTH IN (0, 360)" />
+        <Scalar parameter="constraint" value="KIND IN (13801003,13801004,13801005)" />
+        <Scalar parameter="constraint" value="+ MPLA_POLARITY = 999998" />
+        <Scalar parameter="constraint" value="KIND IN (13801001,13801002,13801003,13801005)" />
+        <Scalar parameter="constraint" value="+ MPLA_PHASE = 999998" />
+        <Scalar parameter="constraint" value="+ MPLA_PHASE_REF IN ('N/A')" />
+        <Scalar parameter="constraint" value="KIND = 13801003" />
+        <Scalar parameter="constraint" value="+ MPLA_OB_DIP_SLO = 999998" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_0501_Anomalies_PT_MandatoryFields" uuid="EFA458EE-E663-4FAD-AB83-846E5D4EAAE6" versionUuid="410E6AFA-691D-4D1F-9F00-2D442C358461" createdDate="2023-03-17T16:02:19" createdByUser="DallASteph" lastChangedDate="2023-06-21T16:12:01" lastChangedByUser="DallASteph" testDescriptor="DatasetConstraintFactory" allowErrors="False" stopOnError="False">
+      <Description>Prio 3: Finds all rows in Anomalies_PT that do not fullfill the mandatory rules of the Datamodel for GeoCover V3</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_POINT_OBJECTS" workspace="GC_Production" />
+        <Scalar parameter="constraint" value="KIND = 12801001" />
+        <Scalar parameter="constraint" value="+ LANO_TYPE IS NOT NULL" />
+        <Scalar parameter="constraint" value="+ LANO_TYPE NOT IN (999997,999998)" />
+        <Scalar parameter="constraint" value="KIND = 12801002" />
+        <Scalar parameter="constraint" value="+ LANO_TYPE = 999998" />
+        <Scalar parameter="constraint" value="KIND = 12801004" />
+        <Scalar parameter="constraint" value="+ LRES_STATUS = 999998" />
+        <Scalar parameter="constraint" value="KIND IN (12801002,12801003,12801006,12801007)" />
+        <Scalar parameter="constraint" value="+ LRES_MATERIAL = 999998" />
+        <Scalar parameter="constraint" value="KIND IN (12801002,12801003,12801004,12801005,12801006,12801007)" />
+        <Scalar parameter="constraint" value="+ LRES_CHEMISTRY  = 'N/A'" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_0502_Fossils_PT_MandatoryFields" uuid="3AF42C94-F033-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F114-3CD6-E053-9730830A4794" createdDate="2015-09-11T15:32:36" createdByUser="WyssAndre" lastChangedDate="2023-06-21T16:12:52" lastChangedByUser="DallASteph" testDescriptor="DatasetConstraintFactory" allowErrors="False" stopOnError="False">
+      <Description>Prio 2: Finds all rows in GC_FOSSILS that do not fullfill the mandatory rules of the Datamodel</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_FOSSILS" workspace="GC_Production" />
+        <Scalar parameter="constraint" value="KIND = 12901001" />
+        <Scalar parameter="constraint" value="SYMBOL IS NOT NULL" />
+        <Scalar parameter="constraint" value="SYMBOL NOT IN (999,0)" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_0505_Sedimentary_Structures_PT_MandatoryFields" uuid="0D87374D-20DE-400A-B8AB-58EABAA9EB8F" versionUuid="E6EB0ABB-6E40-49D7-AAE6-66982E132215" createdDate="2023-03-17T16:46:47" createdByUser="DallASteph" lastChangedDate="2023-06-21T16:13:59" lastChangedByUser="DallASteph" testDescriptor="DatasetConstraintFactory" allowErrors="False" stopOnError="False">
+      <Description>Prio 2-3: Finds all rows in Sedimentary_Structures_PT that do not fullfill the mandatory rules of the Datamodel for GeoCover V3</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_POINT_OBJECTS" workspace="GC_Production" />
+        <Scalar parameter="constraint" value="KIND IN (13401001,13401002,13401003,13401005)" />
+        <Scalar parameter="constraint" value="+ AZIMUTH = 999998" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_0506_Type_Localities_PT_MandatoryFields" uuid="C48103CA-D44B-41A4-95AF-7F7A0730A65B" versionUuid="511E62F4-4619-4F89-B245-967D89926C22" createdDate="2023-03-17T16:07:12" createdByUser="DallASteph" lastChangedDate="2023-06-21T16:14:34" lastChangedByUser="DallASteph" testDescriptor="DatasetConstraintFactory" allowErrors="False" stopOnError="False">
+      <Description>Prio 2, 0: Finds all rows in Type_Localities_PT that do not fullfill the mandatory rules of the Datamodel for GeoCover V3</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_POINT_OBJECTS" workspace="GC_Production" />
+        <Scalar parameter="constraint" value="KIND in (13501002,13501003)" />
+        <Scalar parameter="constraint" value="+ LTYP_STRATI IS NOT NULL" />
+        <Scalar parameter="constraint" value="+ LTYP_STRATI NOT IN (999997,999998)" />
+        <Scalar parameter="constraint" value="+ LTYP_NAME IS NOT NULL" />
+        <Scalar parameter="constraint" value="+ LTYP_NAME NOT IN ('Unknown','N/A')" />
+        <Scalar parameter="constraint" value="+ LTYP_NAME NOT IN (999997, 999998)" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_0507_Prominent_Lithological_Features_L_MandatoryFields" uuid="CAF3F9E0-0C00-49E8-B562-9C9B766CF4A1" versionUuid="3F1F718C-6263-42E1-9B9E-19CB40968513" createdDate="2023-03-17T11:53:28" createdByUser="DallASteph" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="DatasetConstraintFactory" allowErrors="False" stopOnError="False">
+      <Description>Prio 1: Finds all rows in Prominent_Lithological_Features_L that do not fullfill the mandatory rules of the Datamodel</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_LINEAR_OBJECTS" workspace="GC_Production" />
+        <Scalar parameter="constraint" value="KIND = 13101001" />
+        <Scalar parameter="constraint" value="+ LPRO_ORIG_DESCR IS NOT NULL" />
+        <Scalar parameter="constraint" value="+ LPRO_ORIG_DESCR NOT IN ('Unknown','N/A')" />
+        <Scalar parameter="constraint" value="+ LPRO_LITHO IS NOT NULL" />
+        <Scalar parameter="constraint" value="+ LPRO_LITHO NOT IN (999997,999998)" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_0508_Miscellaneous_PT_MandatoryFields" uuid="D5B1E91D-EC25-472F-8AD6-0E7A3A939F93" versionUuid="B7AF11AA-EA28-4C0A-B77E-29179A3965FB" createdDate="2023-03-17T16:12:35" createdByUser="DallASteph" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="DatasetConstraintFactory" allowErrors="False" stopOnError="False">
+      <Description>Prio 1: Finds all rows in Miscellaneous_PT that do not fullfill the mandatory rules of the Datamodel for GeoCover V3</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_POINT_OBJECTS" workspace="GC_Production" />
+        <Scalar parameter="constraint" value="KIND = 15501001" />
+        <Scalar parameter="constraint" value="+ LMIS_ORIG_ID IS NOT NULL" />
+        <Scalar parameter="constraint" value="+ LMIS_ORIG_ID NOT IN ('Unknown','N/A')" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_0601_Slope_Bedrock_PT_MandatoryFields" uuid="955AA8F2-EDA3-4AD5-BA39-E6F4B6C5EF6F" versionUuid="C6D14EDC-EA08-43C2-ADDC-1007DAD076DD" createdDate="2023-03-17T15:44:49" createdByUser="DallASteph" lastChangedDate="2023-06-21T16:17:49" lastChangedByUser="DallASteph" testDescriptor="DatasetConstraintFactory" allowErrors="False" stopOnError="False">
+      <Description>Prio 3: Finds all rows in Slope_Bedrock_PT that do not fullfill the mandatory rules of the Datamodel for GeoCover V3</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_POINT_OBJECTS" workspace="GC_Production" />
+        <Scalar parameter="constraint" value="KIND in (14201001)" />
+        <Scalar parameter="constraint" value="+ AZIMUTH IS NOT NULL" />
+        <Scalar parameter="constraint" value="+ AZIMUTH NOT IN (999997,999998)" />
+        <Scalar parameter="constraint" value="KIND = 14201001" />
+        <Scalar parameter="constraint" value="+ PSLO_TYPE IS NOT NULL" />
+        <Scalar parameter="constraint" value="+ PSLO_TYPE NOT IN (999997,999998)" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_0602_Contour_Lines_Bedrock_L_MandatoryFields" uuid="805D34E9-DEFC-4786-BE4A-70241CC4702E" versionUuid="182DA194-3258-48AF-9221-CDB84CD1292B" createdDate="2023-03-17T11:22:11" createdByUser="DallASteph" lastChangedDate="2023-06-21T16:18:37" lastChangedByUser="DallASteph" testDescriptor="DatasetConstraintFactory" allowErrors="False" stopOnError="False">
+      <Description>Prio 3: Finds all rows in Contour_Lines_Bedrock_L that do not fullfill the mandatory rules of the Datamodel</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_LINEAR_OBJECTS" workspace="GC_Production" />
+        <Scalar parameter="constraint" value="KIND = 13901001" />
+        <Scalar parameter="constraint" value="+ PCOB_TYPE IS NOT NULL" />
+        <Scalar parameter="constraint" value="+ PCOB_TYPE NOT IN (999997,999998)" />
+        <Scalar parameter="constraint" value="+ PCOB_ALTITUDE IS NOT NULL" />
+        <Scalar parameter="constraint" value="+ PCOB_ALTITUDE NOT IN (999997,999998)" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_0603_Modelled_Water_Table_PT_MandatoryFields" uuid="E6D40767-176D-42DF-9944-1D8DA90B84D3" versionUuid="05906C45-F955-4E89-8DB8-AD70EEB314FE" createdDate="2023-03-17T15:29:05" createdByUser="DallASteph" lastChangedDate="2023-06-21T16:19:16" lastChangedByUser="DallASteph" testDescriptor="DatasetConstraintFactory" allowErrors="False" stopOnError="False">
+      <Description>Prio 3: Finds all rows in Modelled_Water_Table_PT that do not fullfill the mandatory rules of the Datamodel for GeoCover V3</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_POINT_OBJECTS" workspace="GC_Production" />
+        <Scalar parameter="constraint" value="KIND NOT IN (999997,999998)" />
+        <Scalar parameter="constraint" value="KIND in (14101001)" />
+        <Scalar parameter="constraint" value="+ AZIMUTH IS NOT NULL" />
+        <Scalar parameter="constraint" value="+ AZIMUTH NOT IN (999997,999998)" />
+        <Scalar parameter="constraint" value="+ PMOD_HEIGHT = 999998" />
+        <Scalar parameter="constraint" value="+ PMOD_MEA_PERIOD = 'N/A'" />
+        <Scalar parameter="constraint" value="KIND = 14101002" />
+        <Scalar parameter="constraint" value="+ PMOD_HEIGHT IS NOT NULL" />
+        <Scalar parameter="constraint" value="+ PMOD_HEIGHT NOT IN (999997,999998)" />
+        <Scalar parameter="constraint" value="+ AZIMUTH = 999998" />
+        <Scalar parameter="constraint" value="+ DIP = 999998" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_0604_Contour_Lines_Hydro_L_MandatoryFields" uuid="2ABBBC94-4EB8-46DF-A2C7-87DC55BFFAEE" versionUuid="B7D74A9C-8154-4F07-9933-E903AF2F096F" createdDate="2023-03-17T11:48:52" createdByUser="DallASteph" lastChangedDate="2023-06-21T16:19:39" lastChangedByUser="DallASteph" testDescriptor="DatasetConstraintFactory" allowErrors="False" stopOnError="False">
+      <Description>Prio 3: Finds all rows in Contour_Lines_Hydro_L that do not fullfill the mandatory rules of the Datamodel</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_LINEAR_OBJECTS" workspace="GC_Production" />
+        <Scalar parameter="constraint" value="KIND = 14001001" />
+        <Scalar parameter="constraint" value="+ PCOH_ALTITUDE IS NOT NULL" />
+        <Scalar parameter="constraint" value="+ PCOH_ALTITUDE NOT IN (999997,999998)" />
+        <Scalar parameter="constraint" value="+ PCOH_ALTITUDE &gt;=0" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_0701_Archaeology_PT_MandatoryFields" uuid="9C9DA462-D252-4B9E-9287-1DE398BB221D" versionUuid="9E1F3E9B-A0B2-426C-9292-FCD500F59489" createdDate="2023-03-17T16:25:23" createdByUser="DallASteph" lastChangedDate="2023-06-21T16:20:23" lastChangedByUser="DallASteph" testDescriptor="DatasetConstraintFactory" allowErrors="False" stopOnError="False">
+      <Description>Prio 3: Finds all rows in Archaeology_PT that do not fullfill the mandatory rules of the Datamodel for GeoCover V3</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_POINT_OBJECTS" workspace="GC_Production" />
+        <Scalar parameter="constraint" value="KIND IN (10101001,10101002, 10101003,10101004, 10101005,10101006,10101007,10101009,10101010,10101011,10101012)" />
+        <Scalar parameter="constraint" value="+ AARC_TYPE = 999998" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_0704_Exploitation_Geomaterials_PT_MandatoryFields" uuid="794AEB5A-E4AE-4B7F-9F1C-7645D2E27AEA" versionUuid="FCB93337-C42B-4E24-A83D-5E5300DEA6E4" createdDate="2018-01-09T12:12:16" createdByUser="BalanPauli" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="DatasetConstraintFactory" allowErrors="False" stopOnError="False">
+      <Description>Finds all rows in Exploitation_Geomaterials_PT that do not fullfill the mandatory rules of the Datamodel</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_EXPLOIT_GEOMAT_PT" workspace="GC_Production" />
+        <Scalar parameter="constraint" value="KIND IN (10601004,10601005,10601006)" />
+        <Scalar parameter="constraint" value="+ AEXP_STATUS = 999998" />
+        <Scalar parameter="constraint" value="KIND IN (10601001,10601002,10601004,10601005,10601006)" />
+        <Scalar parameter="constraint" value="+ AEXP_DEPTH_TOT = 999998" />
+        <Scalar parameter="constraint" value="KIND IN (10601002,10601003,10601004,10601006)" />
+        <Scalar parameter="constraint" value="+ AEXP_TARG_MAT = 999998" />
+        <Scalar parameter="constraint" value="SYMBOL IS NOT NULL" />
+        <Scalar parameter="constraint" value="+ SYMBOL NOT IN (999, 0)" />
+        <Scalar parameter="constraint" value="AEXP_DEPTH_TOT IS NOT NULL" />
+        <Scalar parameter="constraint" value="AEXP_DEPTH_TOT &gt;= 0" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_0706_Exploitation_Geomaterials_PLG_MandatoryFields" uuid="3AF42C94-F03F-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F120-3CD6-E053-9730830A4794" createdDate="2016-04-29T10:27:43" createdByUser="WyssAndre" lastChangedDate="2023-06-21T16:22:51" lastChangedByUser="DallASteph" testDescriptor="DatasetConstraintFactory" allowErrors="False" stopOnError="False">
+      <Description>Prio 3: Finds all rows in Exploitation_Geomaterials_PLG that do not fullfill the mandatory rules of the Datamodel</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_EXPLOIT_GEOMAT_PLG" workspace="GC_Production" />
+        <Scalar parameter="constraint" value="KIND IS NOT NULL" />
+        <Scalar parameter="constraint" value="+ KIND NOT IN (999997,999998)" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_0707_Boreholes_PT_MandatoryFields" uuid="9E017FAF-D6C1-4EDE-8BAA-C84C6394F22C" versionUuid="86306833-61BC-4094-8834-7C0D92B1E036" createdDate="2023-02-15T13:23:15" createdByUser="DallASteph" lastChangedDate="2024-04-15T14:55:41" lastChangedByUser="DallASteph" testDescriptor="DatasetConstraintFactory">
+      <Description>Prio 3: Tests the Attributes ABOR_DEPTH_TOT, ABOR_DEPTH_BEDR, ABOR_DEPTH_FM_A, ABOR_DEPTH_FM_B and their logic relation</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_POINT_OBJECTS" workspace="GC_Production" />
+        <Scalar parameter="constraint" value="KIND = 10501001" />
+        <Scalar parameter="constraint" value="+ABOR_DEPTH_BEDR IS NOT NULL" />
+        <Scalar parameter="constraint" value="++ ABOR_DEPTH_BEDR NOT IN (-999,-888)" />
+        <Scalar parameter="constraint" value="+++ABOR_DEPTH_BEDR &gt;= 0" />
+        <Scalar parameter="constraint" value="+ ABOR_DEPTH_BEDR NOT IN (999997,999998)" />
+        <Scalar parameter="constraint" value="+ABOR_DEPTH_TOT IS NOT NULL" />
+        <Scalar parameter="constraint" value="++ABOR_DEPTH_TOT &gt;= 0" />
+        <Scalar parameter="constraint" value="+ABOR_DEPTH_FM_A IS NOT NULL" />
+        <Scalar parameter="constraint" value="++ABOR_DEPTH_FM_A &gt;= 0" />
+        <Scalar parameter="constraint" value="+ABOR_DEPTH_FM_B IS NOT NULL" />
+        <Scalar parameter="constraint" value="++ABOR_DEPTH_FM_B &gt;= 0" />
+        <Scalar parameter="constraint" value="+ABOR_DEPTH_WT IS NOT NULL" />
+        <Scalar parameter="constraint" value="++ABOR_DEPTH_WT &gt;= 0" />
+        <Scalar parameter="constraint" value="+ABOR_DEPTH_BEDR NOT IN (999,888)" />
+        <Scalar parameter="constraint" value="++ABOR_DEPTH_TOT &gt;= ABOR_DEPTH_BEDR" />
+        <Scalar parameter="constraint" value="+ABOR_REF_NUMBER IS NOT NULL" />
+        <Scalar parameter="constraint" value="++ABOR_REF_NUMBER &gt;= 0" />
+        <Scalar parameter="constraint" value="KIND in (10501001,10501002,10501003,10501004,10501005)" />
+        <Scalar parameter="constraint" value="+ ABOR_D_C_UNDERG IS NOT NULL" />
+        <Scalar parameter="constraint" value="+ ABOR_D_C_UNDERG NOT IN (999997,999998)" />
+        <Scalar parameter="constraint" value="ABOR_DEPTH_BEDR = 999 AND ABOR_FM_A = 999997" />
+        <Scalar parameter="constraint" value="+ ABOR_DEPTH_TOT IS NOT NULL" />
+        <Scalar parameter="constraint" value="ABOR_D_C_UNDERG = 1" />
+        <Scalar parameter="constraint" value="+ ABOR_DEPTH_FM_A = 0" />
+        <Scalar parameter="constraint" value="+ ABOR_DEPTH_BEDR = 0" />
+        <Scalar parameter="constraint" value="ABOR_DEPTH_BEDR = 999" />
+        <Scalar parameter="constraint" value="+ ABOR_DEPTH_FM_A IS NULL" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_0801_Construction_PT_MandatoryFields" uuid="D33F3AC3-008B-4EE6-9EBB-F2741789CE9D" versionUuid="AF293453-36A1-4799-ADF1-3B28EF46BDFC" createdDate="2023-03-17T16:36:13" createdByUser="DallASteph" lastChangedDate="2023-06-21T16:26:59" lastChangedByUser="DallASteph" testDescriptor="DatasetConstraintFactory" allowErrors="False" stopOnError="False">
+      <Description>Prio 3: Finds all rows in Construction_PT that do not fullfill the mandatory rules of the Datamodel for GeoCover V3</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_POINT_OBJECTS" workspace="GC_Production" />
+        <Scalar parameter="constraint" value="KIND IN (12101003,12101005,12101006,12101007)" />
+        <Scalar parameter="constraint" value="+ HCON_STATUS = 999998" />
+        <Scalar parameter="constraint" value="KIND IN (12101001,12101003,12101005,12101006,12101007,12101008)" />
+        <Scalar parameter="constraint" value="+ HCON_EPOCH = 999998" />
+        <Scalar parameter="constraint" value="KIND IN (12101002,12101003,12101005,12101006,12101008,12101009)" />
+        <Scalar parameter="constraint" value="+ HCON_DEPTH = 999998" />
+        <Scalar parameter="constraint" value="KIND IN (12101002,12101003,12101005,12101006)" />
+        <Scalar parameter="constraint" value="+ HCON_DEPTH_WT = 999998" />
+        <Scalar parameter="constraint" value="KIND IN (12101002,12101003,12101005,12101006)" />
+        <Scalar parameter="constraint" value="+ HCON_MEA_PERIOD = 'N/A'" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_0803_Palaeohydrology_L_MandatoryFields" uuid="83959CAC-2CA8-4BC2-9687-09B17A4EEB7A" versionUuid="78CB0A50-3947-468C-AC4A-B5DAA7D83CFC" createdDate="2023-03-17T12:03:04" createdByUser="DallASteph" lastChangedDate="2023-06-21T16:27:42" lastChangedByUser="DallASteph" testDescriptor="DatasetConstraintFactory" allowErrors="False" stopOnError="False">
+      <Description>Prio 2: Finds all rows in Palaeohydrology_L_MandatoryFields that do not fullfill the mandatory rules of the Datamodel</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_LINEAR_OBJECTS" workspace="GC_Production" />
+        <Scalar parameter="constraint" value="KIND IN (12301001,12301002,12301003,12301004,12301005,12301006)" />
+        <Scalar parameter="constraint" value="+ HPAL_REL_AGE = 999998" />
+        <Scalar parameter="constraint" value="KIND IN (12301005,12301006,12301007)" />
+        <Scalar parameter="constraint" value="+ HPAL_CHRONO = 999998" />
+        <Scalar parameter="constraint" value="KIND IN (12301001,12301002,12301003,12301004)" />
+        <Scalar parameter="constraint" value="+ HPAL_REF_YEAR = 999998" />
+        <Scalar parameter="constraint" value="+ HPAL_SOURCE = 'N/A'" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_0805_Surface_Water_PT_MandatoryFields" uuid="5CC12170-AAE5-4507-92C7-8F1C77683205" versionUuid="CEC72178-FA35-4A45-9E06-805F380E27EB" createdDate="2023-03-17T16:20:04" createdByUser="DallASteph" lastChangedDate="2023-06-21T16:28:11" lastChangedByUser="DallASteph" testDescriptor="DatasetConstraintFactory" allowErrors="False" stopOnError="False">
+      <Description>Prio 2: Finds all rows in Surface_Water_PT that do not fullfill the mandatory rules of the Datamodel for GeoCover V3</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_POINT_OBJECTS" workspace="GC_Production" />
+        <Scalar parameter="constraint" value="KIND = 12501001" />
+        <Scalar parameter="constraint" value="+ HSUR_STATUS IN (12502001,12502002)" />
+        <Scalar parameter="constraint" value="KIND = 12501001 AND HSUR_DIS_LOCA = 12505002" />
+        <Scalar parameter="constraint" value="+ HSUR_STATUS = 12502001" />
+        <Scalar parameter="constraint" value="KIND IN (12501002,12501003,12501004,12501005)" />
+        <Scalar parameter="constraint" value="+ HSUR_STATUS = 999998" />
+        <Scalar parameter="constraint" value="KIND IN (12501004,12501005)" />
+        <Scalar parameter="constraint" value="+ HSUR_FLOW_CON = 999998" />
+        <Scalar parameter="constraint" value="KIND IN (12501003,12501004,12501005)" />
+        <Scalar parameter="constraint" value="+ HSUR_TYPE = 999998" />
+        <Scalar parameter="constraint" value="KIND IN (12501003,12501004,12501005)" />
+        <Scalar parameter="constraint" value="+ HSUR_DIS_LOCA = 999998" />
+        <Scalar parameter="constraint" value="KIND IN (12501002,12501005)" />
+        <Scalar parameter="constraint" value="+ HSUR_COMBI = 999998" />
+        <Scalar parameter="constraint" value="KIND IN (12501002,12501003,12501004,12501005)" />
+        <Scalar parameter="constraint" value="+ HSUR_TEMP = 999998" />
+        <Scalar parameter="constraint" value="KIND = 12501005" />
+        <Scalar parameter="constraint" value="+ AZIMUTH = 999998" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_ADMIXTURE_GdbConstraint" uuid="3AF42C94-EFBF-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F0A2-3CD6-E053-9730830A4794" createdDate="2015-06-03T16:27:16" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="GdbConstraintFactory">
+      <Description>Finds all rows in GC_ADMIXTURE that do not fulfill the attribute rules that are defined in the geodatabase</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_ADMIXTURE" workspace="GC_Production" />
+        <Scalar parameter="AllowNullValuesForCodedValueDomains" value="True" />
+        <Scalar parameter="AllowNullValuesForRangeDomains" value="True" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_ADMIXTURE_TrimmedTextFields" uuid="3AF42C94-EFE1-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F0C3-3CD6-E053-9730830A4794" createdDate="2015-06-03T16:12:38" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="TrimmedTextFields(0)" allowErrors="False">
+      <Description>Finds rows with text fields having leading or trailing whitespace characters.</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_ADMIXTURE" workspace="GC_Production" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_ADMIXTURE_UniqueUUID" uuid="3AF42C94-EFD6-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F0B8-3CD6-E053-9730830A4794" createdDate="2016-03-30T11:00:19" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="Unique(0)">
+      <Description>Find all none unique UUID-rows in GC_ADMIXTURE</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_ADMIXTURE" workspace="GC_Production" />
+        <Scalar parameter="unique" value="UUID" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_ADMIXTURE_UUID_RegExp" uuid="3AF42C94-EF6B-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F04E-3CD6-E053-9730830A4794" createdDate="2015-06-23T11:59:26" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="RegularExpression(5)">
+      <Description>UUID may only contain capital letters and numbers</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_ADMIXTURE" workspace="GC_Production" />
+        <Scalar parameter="pattern" value="([0-9A-F]){8}-([0-9A-F]){4}-([0-9A-F]){4}-([0-9A-F]){4}-([0-9A-F]){12}" />
+        <Scalar parameter="fieldNames" value="UUID" />
+        <Scalar parameter="matchIsError" value="False" />
+        <Scalar parameter="patternDescription" value="" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_ALL_POLYGON_AND_LINEAR_FEATURES_InteriorIntersects" uuid="3AF42C94-F030-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F111-3CD6-E053-9730830A4794" createdDate="2015-09-03T07:53:03" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="InteriorIntersectsSelf(4)" allowErrors="False">
+      <Description>Finds overlaps</Description>
+      <Parameters>
+        <Dataset parameter="featureClasses" value="TOPGIS_GC.GC_BEDROCK" workspace="GC_Production" />
+        <Dataset parameter="featureClasses" value="TOPGIS_GC.GC_EXPLOIT_GEOMAT_PLG" workspace="GC_Production" />
+        <Dataset parameter="featureClasses" value="TOPGIS_GC.GC_SURFACES" workspace="GC_Production" />
+        <Dataset parameter="featureClasses" value="TOPGIS_GC.GC_UNCO_DESPOSIT" workspace="GC_Production" />
+        <Dataset parameter="featureClasses" value="TOPGIS_GC.GC_LINEAR_OBJECTS" workspace="GC_Production" />
+        <Scalar parameter="constraint" value="G1.KIND&lt;&gt;G2.KIND" />
+        <Scalar parameter="reportIntersectionsAsMultipart" value="True" />
+        <Scalar parameter="ValidIntersectionGeometryConstraint" value="" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_BED_FORM_ATT_GdbConstraint" uuid="3AF42C94-F00A-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F0EB-3CD6-E053-9730830A4794" createdDate="2016-03-30T10:58:17" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="GdbConstraintFactory">
+      <Description>Finds all rows in GC_BED_FORM_ATT that do not fulfill the attribute rules that are defined in the geodatabase</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_BED_FORM_ATT" workspace="GC_Production" />
+        <Scalar parameter="AllowNullValuesForCodedValueDomains" value="True" />
+        <Scalar parameter="AllowNullValuesForRangeDomains" value="True" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_BED_FORM_ATT_TrimmedTextFields" uuid="3AF42C94-F010-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F0F1-3CD6-E053-9730830A4794" createdDate="2016-03-30T10:58:54" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="TrimmedTextFields(0)" allowErrors="False">
+      <Description>Finds rows with text fields having leading or trailing whitespace characters.</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_BED_FORM_ATT" workspace="GC_Production" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_BED_FORM_ATT_UniqueUUID" uuid="3AF42C94-F005-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F0E6-3CD6-E053-9730830A4794" createdDate="2015-05-07T09:46:33" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="Unique(0)">
+      <Description>Find all none unique UUID-rows in GC_BED_FORM_ATT</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_BED_FORM_ATT" workspace="GC_Production" />
+        <Scalar parameter="unique" value="UUID" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_BED_FORM_ATT_UUID_RegExp" uuid="3AF42C94-F00B-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F0EC-3CD6-E053-9730830A4794" createdDate="2016-03-30T10:57:28" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="RegularExpression(5)">
+      <Description>UUID may only contain capital letters and numbers</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_BED_FORM_ATT" workspace="GC_Production" />
+        <Scalar parameter="pattern" value="([0-9A-F]){8}-([0-9A-F]){4}-([0-9A-F]){4}-([0-9A-F]){4}-([0-9A-F]){12}" />
+        <Scalar parameter="fieldNames" value="UUID" />
+        <Scalar parameter="matchIsError" value="False" />
+        <Scalar parameter="patternDescription" value="" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_BEDROCK_Duplicates" uuid="86B8B257-758E-4DA9-B6C8-88D74AB65710" versionUuid="C294A261-C8AA-4D57-8B21-EC20E62710DC" createdDate="2023-01-31T14:21:34" createdByUser="DallASteph" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="DuplicateGeometrySelf(1)">
+      <Description>Finds features with equal geometries for which the constraint is G1.Kind &lt;&gt; G2.Kind</Description>
+      <Parameters>
+        <Dataset parameter="featureClass" value="TOPGIS_GC.GC_BEDROCK" workspace="GC_Production" />
+        <Scalar parameter="validDuplicateConstraint" value="G1.Kind &lt;&gt; G2.Kind" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_BEDROCK_GdbConstraint" uuid="3AF42C94-EF81-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F064-3CD6-E053-9730830A4794" createdDate="2015-06-03T16:27:16" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="GdbConstraintFactory">
+      <Description>Finds all rows in GC_BEDROCK that do not fulfill the attribute rules that are defined in the geodatabase</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_BEDROCK" workspace="GC_Production" />
+        <Scalar parameter="AllowNullValuesForCodedValueDomains" value="True" />
+        <Scalar parameter="AllowNullValuesForRangeDomains" value="True" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_BEDROCK_MinPolygonArea" uuid="3AF42C94-F01F-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F100-3CD6-E053-9730830A4794" createdDate="2015-05-13T13:20:55" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="MinArea(0)">
+      <Description>Finds all polygons with areas smaller than 100</Description>
+      <Parameters>
+        <Dataset parameter="polygonClass" value="TOPGIS_GC.GC_BEDROCK" workspace="GC_Production" />
+        <Scalar parameter="limit" value="100" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_BEDROCK_MinSegmentLength" uuid="3AF42C94-EFAE-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F091-3CD6-E053-9730830A4794" createdDate="2015-06-18T16:46:44" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="MinLength(2)">
+      <Description>Finds all segments in GC_BEDROCK with length smaller than 5</Description>
+      <Parameters>
+        <Dataset parameter="featureClass" value="TOPGIS_GC.GC_BEDROCK" workspace="GC_Production" />
+        <Scalar parameter="limit" value="5" />
+        <Scalar parameter="is3D" value="False" />
+        <Scalar parameter="perPart" value="False" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_BEDROCK_NeighbourAreas" uuid="3AF42C94-EFE8-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F0C9-3CD6-E053-9730830A4794" createdDate="2016-07-13T11:12:00" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="NeighbourAreas(3)">
+      <Description>Finds all touching features in GC_BEDROCK for wich a list of attributes are equal</Description>
+      <Parameters>
+        <Dataset parameter="polygonClass" value="TOPGIS_GC.GC_BEDROCK" workspace="GC_Production" />
+        <Scalar parameter="allowPointIntersection" value="True" />
+        <Scalar parameter="fieldsString" value="OBJECTORIGIN_YEAR,INTEGRATION_OBJECT_UUID,REASONFORCHANGE,RC_ID,WU_ID,RC_ID_CREATION,REVISION_QUALITY,ORIGINAL_ORIGIN,WU_ID_CREATION,OBJECTID,UUID,KIND, CREATION_YEAR, OPERATOR, DATEOFCREATION,DATEOFCHANGE,CREATION_MONTH,REVISION_YEAR,REVISION_MONTH,REASONOFCHANGE,OBJECTORIGIN,OBEJCTORIGIN_YEAR,OBJECTORIGIN_MONTH,SHAPE.LEN, SHAPE.AREA, RBED_ORIG_DESCR" />
+        <Scalar parameter="fieldListType" value="IgnoredFields" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_BEDROCK_NoBoundaryLoops" uuid="3AF42C94-EFA5-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F088-3CD6-E053-9730830A4794" createdDate="2015-05-21T07:47:36" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="NoBoundaryLoops(1)">
+      <Description>Finds all boundary loops (closed 'bays' in polygon boundaries) in a polygon feature class and reports them as point errors identifying the location where the boundary loop starts/ends.</Description>
+      <Parameters>
+        <Dataset parameter="polygonClass" value="TOPGIS_GC.GC_BEDROCK" workspace="GC_Production" />
+        <Scalar parameter="errorGeometry" value="LoopStartPoint" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_BEDROCK_NoCurves" uuid="3AF42C94-EF98-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F07B-3CD6-E053-9730830A4794" createdDate="2015-05-07T10:39:03" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="Curve(0)">
+      <Description>Finds segments in GC_BEDROCK that are not straight lines</Description>
+      <Parameters>
+        <Dataset parameter="featureClass" value="TOPGIS_GC.GC_BEDROCK" workspace="GC_Production" />
+        <Scalar parameter="GroupIssuesBySegmentType" value="False" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_BEDROCK_NoMultiparts" uuid="3AF42C94-EF7B-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F05E-3CD6-E053-9730830A4794" createdDate="2015-05-07T09:40:01" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="Multipart(0)">
+      <Description>Finds multiparts</Description>
+      <Parameters>
+        <Dataset parameter="featureClass" value="TOPGIS_GC.GC_BEDROCK" workspace="GC_Production" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_BEDROCK_NonEmptyGeometry" uuid="3AF42C94-EF77-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F05A-3CD6-E053-9730830A4794" createdDate="2015-05-07T10:48:44" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="NonEmptyGeometry(1)">
+      <Description>Finds all features in 'featureClass' with null or empty geometries.</Description>
+      <Parameters>
+        <Dataset parameter="featureClass" value="TOPGIS_GC.GC_BEDROCK" workspace="GC_Production" />
+        <Scalar parameter="dontFilterPolycurvesByZeroLength" value="False" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_BEDROCK_NoSliverPolygon" uuid="3AF42C94-EF9D-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F080-3CD6-E053-9730830A4794" createdDate="2015-06-03T15:05:42" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="SliverPolygon(1)" allowErrors="False">
+      <Description>Polygons with a maximum area of 2000 and a maximum ratio between the square of the perimeter and the area of 500</Description>
+      <Parameters>
+        <Dataset parameter="polygonClass" value="TOPGIS_GC.GC_BEDROCK" workspace="GC_Production" />
+        <Scalar parameter="limit" value="500" />
+        <Scalar parameter="maxArea" value="2000" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_BEDROCK_RequiredFieldsCMAttr" uuid="3AF42C94-F004-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F0E5-3CD6-E053-9730830A4794" createdDate="2016-04-12T16:26:30" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="RequiredFields(3)" allowErrors="False">
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_BEDROCK" workspace="GC_Production" />
+        <Scalar parameter="requiredFieldNamesString" value="UUID,OPERATOR,CREATION_YEAR,REASONFORCHANGE,OBJECTORIGIN" />
+        <Scalar parameter="allowEmptyStrings" value="False" />
+        <Scalar parameter="allowMissingFields" value="True" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_BEDROCK_SimpleGeometry" uuid="3AF42C94-EF94-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F077-3CD6-E053-9730830A4794" createdDate="2015-05-07T09:37:55" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="SimpleGeometry(2)">
+      <Parameters>
+        <Dataset parameter="featureClass" value="TOPGIS_GC.GC_BEDROCK" workspace="GC_Production" />
+        <Scalar parameter="allowNonPlanarLines" value="False" />
+        <Scalar parameter="toleranceFactor" value="0.4" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_BEDROCK_TrimmedTextFields" uuid="3AF42C94-EF66-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F049-3CD6-E053-9730830A4794" createdDate="2015-06-03T16:12:38" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="TrimmedTextFields(0)" allowErrors="False">
+      <Description>Finds rows with text fields having leading or trailing whitespace characters.</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_BEDROCK" workspace="GC_Production" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_BEDROCK_UniqueUUID" uuid="3AF42C94-EFCD-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F0AF-3CD6-E053-9730830A4794" createdDate="2015-05-07T09:46:33" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="Unique(0)">
+      <Description>Finds all none unique UUID-rows in GC_BEDROCK</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_BEDROCK" workspace="GC_Production" />
+        <Scalar parameter="unique" value="UUID" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_BEDROCK_UUID_RegExp" uuid="3AF42C94-EF69-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F04C-3CD6-E053-9730830A4794" createdDate="2015-05-07T10:27:30" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="RegularExpression(5)">
+      <Description>UUID may only contain capital letters and numbers</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_BEDROCK" workspace="GC_Production" />
+        <Scalar parameter="pattern" value="([0-9A-F]){8}-([0-9A-F]){4}-([0-9A-F]){4}-([0-9A-F]){4}-([0-9A-F]){12}" />
+        <Scalar parameter="fieldNames" value="UUID" />
+        <Scalar parameter="matchIsError" value="False" />
+        <Scalar parameter="patternDescription" value="" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_CHARCAT_GdbConstraint" uuid="3AF42C94-EFBC-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F09F-3CD6-E053-9730830A4794" createdDate="2015-06-03T16:27:16" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="GdbConstraintFactory">
+      <Description>Finds all rows in GC_CHARCAT that do not fulfill the attribute rules that are defined in the geodatabase</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_CHARCAT" workspace="GC_Production" />
+        <Scalar parameter="AllowNullValuesForCodedValueDomains" value="True" />
+        <Scalar parameter="AllowNullValuesForRangeDomains" value="True" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_CHARCAT_TrimmedTextFields" uuid="3AF42C94-EFE2-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F126-3CD6-E053-9730830A4794" createdDate="2015-06-03T16:12:38" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="TrimmedTextFields(0)" allowErrors="False">
+      <Description>Finds rows with text fields having leading or trailing whitespace characters.</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_CHARCAT" workspace="GC_Production" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_CHARCAT_UniqueUUID" uuid="3AF42C94-EFD9-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F0BB-3CD6-E053-9730830A4794" createdDate="2015-05-07T09:46:33" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="Unique(0)">
+      <Description>Finds all none unique UUID-rows in GC_CHARCAT</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_CHARCAT" workspace="GC_Production" />
+        <Scalar parameter="unique" value="UUID" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_CHARCAT_UUID_RegExp" uuid="3AF42C94-EFC3-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F0A6-3CD6-E053-9730830A4794" createdDate="2015-06-23T14:52:33" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="RegularExpression(5)">
+      <Description>UUID may only contain capital letters and numbers</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_CHARCAT" workspace="GC_Production" />
+        <Scalar parameter="pattern" value="([0-9A-F]){8}-([0-9A-F]){4}-([0-9A-F]){4}-([0-9A-F]){4}-([0-9A-F]){12}" />
+        <Scalar parameter="fieldNames" value="UUID" />
+        <Scalar parameter="matchIsError" value="False" />
+        <Scalar parameter="patternDescription" value="" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_CHRONO_GdbConstraint" uuid="3AF42C94-EFBE-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F0A1-3CD6-E053-9730830A4794" createdDate="2015-06-03T16:27:16" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="GdbConstraintFactory">
+      <Description>Finds all rows in GC_CHRONO that do not fulfill the attribute rules that are defined in the geodatabase</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_CHRONO" workspace="GC_Production" />
+        <Scalar parameter="AllowNullValuesForCodedValueDomains" value="True" />
+        <Scalar parameter="AllowNullValuesForRangeDomains" value="True" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_CHRONO_TrimmedTextFields" uuid="3AF42C94-EF62-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F045-3CD6-E053-9730830A4794" createdDate="2015-06-03T16:12:38" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="TrimmedTextFields(0)" allowErrors="False">
+      <Description>Finds rows with text fields having leading or trailing whitespace characters.</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_CHRONO" workspace="GC_Production" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_CHRONO_UniqueUUID" uuid="3AF42C94-EFD7-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F0B9-3CD6-E053-9730830A4794" createdDate="2015-05-07T09:46:33" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="Unique(0)">
+      <Description>Finds all none unique UUID-rows in GC_CHRONO</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_CHRONO" workspace="GC_Production" />
+        <Scalar parameter="unique" value="UUID" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_CHRONO_UUID_RegExp" uuid="3AF42C94-EFC4-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F0A7-3CD6-E053-9730830A4794" createdDate="2015-06-23T14:53:07" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="RegularExpression(5)">
+      <Description>UUID may only contain capital letters and numbers</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_CHRONO" workspace="GC_Production" />
+        <Scalar parameter="pattern" value="([0-9A-F]){8}-([0-9A-F]){4}-([0-9A-F]){4}-([0-9A-F]){4}-([0-9A-F]){12}" />
+        <Scalar parameter="fieldNames" value="UUID" />
+        <Scalar parameter="matchIsError" value="False" />
+        <Scalar parameter="patternDescription" value="" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_COMPOSIT_GdbConstraint" uuid="3AF42C94-EFB5-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F098-3CD6-E053-9730830A4794" createdDate="2015-06-03T16:27:16" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="GdbConstraintFactory">
+      <Description>Finds all rows in GC_COMPOSIT that do not fulfill the attribute rules that are defined in the geodatabase</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_COMPOSIT" workspace="GC_Production" />
+        <Scalar parameter="AllowNullValuesForCodedValueDomains" value="True" />
+        <Scalar parameter="AllowNullValuesForRangeDomains" value="True" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_COMPOSIT_TrimmedTextFields" uuid="3AF42C94-EF65-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F048-3CD6-E053-9730830A4794" createdDate="2015-06-03T16:12:38" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="TrimmedTextFields(0)" allowErrors="False">
+      <Description>Finds rows with text fields having leading or trailing whitespace characters.</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_COMPOSIT" workspace="GC_Production" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_COMPOSIT_UniqueUUID" uuid="3AF42C94-EFCC-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F0AE-3CD6-E053-9730830A4794" createdDate="2015-05-07T09:46:33" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="Unique(0)">
+      <Description>Finds all none unique UUID-rows in GC_COMPOSIT</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_COMPOSIT" workspace="GC_Production" />
+        <Scalar parameter="unique" value="UUID" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_COMPOSIT_UUID_RegExp" uuid="3AF42C94-EFC5-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F0A8-3CD6-E053-9730830A4794" createdDate="2015-06-23T14:53:44" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="RegularExpression(5)">
+      <Description>UUID may only contain capital letters and numbers</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_COMPOSIT" workspace="GC_Production" />
+        <Scalar parameter="pattern" value="([0-9A-F]){8}-([0-9A-F]){4}-([0-9A-F]){4}-([0-9A-F]){4}-([0-9A-F]){12}" />
+        <Scalar parameter="fieldNames" value="UUID" />
+        <Scalar parameter="matchIsError" value="False" />
+        <Scalar parameter="patternDescription" value="" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_EXPLOIT_GEOMAT_PLG_Duplicates" uuid="C50FF4BA-93FF-4DA7-8916-6366797D7461" versionUuid="A69C9E4B-377B-4AAB-9CA6-1819864AD64D" createdDate="2023-04-26T14:08:45" createdByUser="DallASteph" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="DuplicateGeometrySelf(1)">
+      <Description>Finds features with equal geometries for which the constraint is G1.Kind &lt;&gt; G2.Kind</Description>
+      <Parameters>
+        <Dataset parameter="featureClass" value="TOPGIS_GC.GC_EXPLOIT_GEOMAT_PLG" workspace="GC_Production" />
+        <Scalar parameter="validDuplicateConstraint" value="G1.Kind &lt;&gt; G2.Kind" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_EXPLOIT_GEOMAT_PLG_GdbConstraint" uuid="3AF42C94-EFB3-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F096-3CD6-E053-9730830A4794" createdDate="2015-06-03T16:27:16" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="GdbConstraintFactory">
+      <Description>Finds all rows in GC_EXPLOIT_GEOMAT_PLG that do not fulfill the attribute rules that are defined in the geodatabase</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_EXPLOIT_GEOMAT_PLG" workspace="GC_Production" />
+        <Scalar parameter="AllowNullValuesForCodedValueDomains" value="True" />
+        <Scalar parameter="AllowNullValuesForRangeDomains" value="True" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_EXPLOIT_GEOMAT_PLG_MinPolygonArea" uuid="3AF42C94-F021-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F102-3CD6-E053-9730830A4794" createdDate="2015-05-13T13:20:55" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="MinArea(0)">
+      <Description>Finds all polygons in GC_EXPLOIT_GEOMAT_PLG with areas smaller than 100</Description>
+      <Parameters>
+        <Dataset parameter="polygonClass" value="TOPGIS_GC.GC_EXPLOIT_GEOMAT_PLG" workspace="GC_Production" />
+        <Scalar parameter="limit" value="100" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_EXPLOIT_GEOMAT_PLG_MinSegmentLength" uuid="3AF42C94-EFB1-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F094-3CD6-E053-9730830A4794" createdDate="2015-06-18T16:57:47" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="MinLength(2)">
+      <Description>Finds all lines in GC_EXPLOIT_GEOMAT_PLG with length smaller than 5</Description>
+      <Parameters>
+        <Dataset parameter="featureClass" value="TOPGIS_GC.GC_EXPLOIT_GEOMAT_PLG" workspace="GC_Production" />
+        <Scalar parameter="limit" value="5" />
+        <Scalar parameter="is3D" value="False" />
+        <Scalar parameter="perPart" value="False" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_EXPLOIT_GEOMAT_PLG_NeighbourAreas" uuid="3AF42C94-EFE7-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F0C8-3CD6-E053-9730830A4794" createdDate="2016-07-13T11:12:00" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="NeighbourAreas(3)">
+      <Description>Finds all touching features in GC_EXPLOIT_GEOMAT_PLG for wich a list of attributes are equal</Description>
+      <Parameters>
+        <Dataset parameter="polygonClass" value="TOPGIS_GC.GC_EXPLOIT_GEOMAT_PLG" workspace="GC_Production" />
+        <Scalar parameter="allowPointIntersection" value="True" />
+        <Scalar parameter="fieldsString" value="OBJECTORIGIN_YEAR,INTEGRATION_OBJECT_UUID,REASONFORCHANGE,RC_ID,WU_ID,RC_ID_CREATION,REVISION_QUALITY,ORIGINAL_ORIGIN,WU_ID_CREATION,OBJECTID,UUID,KIND, CREATION_YEAR, OPERATOR, DATEOFCREATION,DATEOFCHANGE,CREATION_MONTH,REVISION_YEAR,REVISION_MONTH,REASONOFCHANGE,OBJECTORIGIN,OBEJCTORIGIN_YEAR,OBJECTORIGIN_MONTH,SHAPE.LEN, SHAPE.AREA" />
+        <Scalar parameter="fieldListType" value="IgnoredFields" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_EXPLOIT_GEOMAT_PLG_NoBoundaryLoops" uuid="3AF42C94-EFA3-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F086-3CD6-E053-9730830A4794" createdDate="2015-05-21T07:47:36" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="NoBoundaryLoops(1)">
+      <Description>Finds all boundary loops (closed 'bays' in polygon boundaries) in a polygon feature class and reports them as point errors identifying the location where the boundary loop starts/ends.</Description>
+      <Parameters>
+        <Dataset parameter="polygonClass" value="TOPGIS_GC.GC_EXPLOIT_GEOMAT_PLG" workspace="GC_Production" />
+        <Scalar parameter="errorGeometry" value="LoopStartPoint" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_EXPLOIT_GEOMAT_PLG_NoCurves" uuid="3AF42C94-EF96-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F079-3CD6-E053-9730830A4794" createdDate="2015-05-07T10:38:34" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="Curve(0)">
+      <Description>Finds segments in GC_EXPLOIT_GEOMAT_PLG that are not straight lines</Description>
+      <Parameters>
+        <Dataset parameter="featureClass" value="TOPGIS_GC.GC_EXPLOIT_GEOMAT_PLG" workspace="GC_Production" />
+        <Scalar parameter="GroupIssuesBySegmentType" value="False" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_EXPLOIT_GEOMAT_PLG_NoMultiparts" uuid="3AF42C94-EF7A-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F05D-3CD6-E053-9730830A4794" createdDate="2015-05-07T09:40:01" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="Multipart(0)">
+      <Parameters>
+        <Dataset parameter="featureClass" value="TOPGIS_GC.GC_EXPLOIT_GEOMAT_PLG" workspace="GC_Production" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_EXPLOIT_GEOMAT_PLG_NonEmptyGeometry" uuid="3AF42C94-EF78-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F05B-3CD6-E053-9730830A4794" createdDate="2015-05-07T10:48:44" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="NonEmptyGeometry(1)">
+      <Parameters>
+        <Dataset parameter="featureClass" value="TOPGIS_GC.GC_EXPLOIT_GEOMAT_PLG" workspace="GC_Production" />
+        <Scalar parameter="dontFilterPolycurvesByZeroLength" value="False" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_EXPLOIT_GEOMAT_PLG_NoSliverPolygon" uuid="3AF42C94-EF9E-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F081-3CD6-E053-9730830A4794" createdDate="2015-06-03T15:05:42" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="SliverPolygon(1)" allowErrors="False">
+      <Description>Polygons with a maximum area of 2000 and a maximum ratio between the square of the perimeter and the area of 500</Description>
+      <Parameters>
+        <Dataset parameter="polygonClass" value="TOPGIS_GC.GC_EXPLOIT_GEOMAT_PLG" workspace="GC_Production" />
+        <Scalar parameter="limit" value="500" />
+        <Scalar parameter="maxArea" value="2000" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_EXPLOIT_GEOMAT_PLG_RequiredFieldsCMAttr" uuid="3AF42C94-F003-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F0E4-3CD6-E053-9730830A4794" createdDate="2016-04-12T16:26:30" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="RequiredFields(3)" allowErrors="False">
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_EXPLOIT_GEOMAT_PLG" workspace="GC_Production" />
+        <Scalar parameter="requiredFieldNamesString" value="UUID,OPERATOR,CREATION_YEAR,REASONFORCHANGE,OBJECTORIGIN" />
+        <Scalar parameter="allowEmptyStrings" value="False" />
+        <Scalar parameter="allowMissingFields" value="True" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_EXPLOIT_GEOMAT_PLG_SimpleGeometry" uuid="3AF42C94-EF93-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F076-3CD6-E053-9730830A4794" createdDate="2015-05-07T09:37:55" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="SimpleGeometry(2)">
+      <Parameters>
+        <Dataset parameter="featureClass" value="TOPGIS_GC.GC_EXPLOIT_GEOMAT_PLG" workspace="GC_Production" />
+        <Scalar parameter="allowNonPlanarLines" value="False" />
+        <Scalar parameter="toleranceFactor" value="0.4" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_EXPLOIT_GEOMAT_PLG_TrimmedTextFields" uuid="3AF42C94-EFDC-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F0BE-3CD6-E053-9730830A4794" createdDate="2015-06-03T16:12:38" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="TrimmedTextFields(0)" allowErrors="False">
+      <Description>Finds rows with text fields having leading or trailing whitespace characters.</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_EXPLOIT_GEOMAT_PLG" workspace="GC_Production" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_EXPLOIT_GEOMAT_PLG_UniqueUUID" uuid="3AF42C94-EFCF-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F0B1-3CD6-E053-9730830A4794" createdDate="2015-05-07T09:46:33" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="Unique(0)">
+      <Description>Finds all none unique UUID-rows in GC_EXPLOIT_GEOMAT_PLG</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_EXPLOIT_GEOMAT_PLG" workspace="GC_Production" />
+        <Scalar parameter="unique" value="UUID" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_EXPLOIT_GEOMAT_PLG_UUID_RegExp" uuid="3AF42C94-EF67-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F04A-3CD6-E053-9730830A4794" createdDate="2015-05-07T10:27:51" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="RegularExpression(5)">
+      <Description>UUID may only contain capital letters and numbers</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_EXPLOIT_GEOMAT_PLG" workspace="GC_Production" />
+        <Scalar parameter="pattern" value="([0-9A-F]){8}-([0-9A-F]){4}-([0-9A-F]){4}-([0-9A-F]){4}-([0-9A-F]){12}" />
+        <Scalar parameter="fieldNames" value="UUID" />
+        <Scalar parameter="matchIsError" value="False" />
+        <Scalar parameter="patternDescription" value="" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_EXPLOIT_GEOMAT_PT_Duplicates" uuid="3AF42C94-EF8C-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F06F-3CD6-E053-9730830A4794" createdDate="2015-05-07T10:54:22" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="DuplicateGeometrySelf(1)">
+      <Description>Finds features with equal geometries in GC_EXPLOIT_GEOMAT_PT for which the constraint is G1.Kind &lt;&gt; G2.Kind</Description>
+      <Parameters>
+        <Dataset parameter="featureClass" value="TOPGIS_GC.GC_EXPLOIT_GEOMAT_PT" workspace="GC_Production" />
+        <Scalar parameter="validDuplicateConstraint" value="G1.Kind &lt;&gt; G2.Kind" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_EXPLOIT_GEOMAT_PT_NonEmptyGeometry" uuid="3AF42C94-EF76-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F059-3CD6-E053-9730830A4794" createdDate="2015-05-07T10:48:44" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="NonEmptyGeometry(1)">
+      <Parameters>
+        <Dataset parameter="featureClass" value="TOPGIS_GC.GC_EXPLOIT_GEOMAT_PT" workspace="GC_Production" />
+        <Scalar parameter="dontFilterPolycurvesByZeroLength" value="False" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_EXPLOIT_GEOMAT_PT_RequiredFieldsCMAttr" uuid="3AF42C94-F002-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F0E3-3CD6-E053-9730830A4794" createdDate="2016-04-12T16:26:30" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="RequiredFields(3)" allowErrors="False">
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_EXPLOIT_GEOMAT_PT" workspace="GC_Production" />
+        <Scalar parameter="requiredFieldNamesString" value="UUID,OPERATOR,CREATION_YEAR,REASONFORCHANGE,OBJECTORIGIN" />
+        <Scalar parameter="allowEmptyStrings" value="False" />
+        <Scalar parameter="allowMissingFields" value="True" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_EXPLOIT_GEOMAT_PT_SimpleGeometry" uuid="3AF42C94-EF92-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F075-3CD6-E053-9730830A4794" createdDate="2015-05-07T09:37:55" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="SimpleGeometry(2)">
+      <Parameters>
+        <Dataset parameter="featureClass" value="TOPGIS_GC.GC_EXPLOIT_GEOMAT_PT" workspace="GC_Production" />
+        <Scalar parameter="allowNonPlanarLines" value="False" />
+        <Scalar parameter="toleranceFactor" value="0.4" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_EXPLOIT_GEOMAT_PT_TrimmedTextFields" uuid="3AF42C94-EFDD-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F0BF-3CD6-E053-9730830A4794" createdDate="2015-06-03T16:12:38" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="TrimmedTextFields(0)" allowErrors="False">
+      <Description>Finds rows with text fields having leading or trailing whitespace characters.</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_EXPLOIT_GEOMAT_PT" workspace="GC_Production" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_EXPLOIT_GEOMAT_PT_UniqueUUID" uuid="3AF42C94-EFCE-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F0B0-3CD6-E053-9730830A4794" createdDate="2015-05-07T09:46:33" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="Unique(0)">
+      <Description>Finds all none unique UUID-rows in GC_EXPLOIT_GEOMAT_PT</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_EXPLOIT_GEOMAT_PT" workspace="GC_Production" />
+        <Scalar parameter="unique" value="UUID" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_EXPLOIT_GEOMAT_PT_UUID_RegExp" uuid="3AF42C94-EF6A-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F04D-3CD6-E053-9730830A4794" createdDate="2015-05-07T10:25:12" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="RegularExpression(5)">
+      <Description>UUID may only contain capital letters and numbers</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_EXPLOIT_GEOMAT_PT" workspace="GC_Production" />
+        <Scalar parameter="pattern" value="([0-9A-F]){8}-([0-9A-F]){4}-([0-9A-F]){4}-([0-9A-F]){4}-([0-9A-F]){12}" />
+        <Scalar parameter="fieldNames" value="UUID" />
+        <Scalar parameter="matchIsError" value="False" />
+        <Scalar parameter="patternDescription" value="" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_FOSSILS_Duplicates" uuid="3AF42C94-EF8B-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F06E-3CD6-E053-9730830A4794" createdDate="2015-05-07T10:54:22" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="DuplicateGeometrySelf(1)">
+      <Description>Finds features with equal geometries in GC_FOSSILS for which the constraint is G1.Kind &lt;&gt; G2.Kind</Description>
+      <Parameters>
+        <Dataset parameter="featureClass" value="TOPGIS_GC.GC_FOSSILS" workspace="GC_Production" />
+        <Scalar parameter="validDuplicateConstraint" value="G1.Kind &lt;&gt; G2.Kind" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_FOSSILS_GdbConstraint" uuid="3AF42C94-EFBB-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F09E-3CD6-E053-9730830A4794" createdDate="2015-06-03T16:27:16" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="GdbConstraintFactory">
+      <Description>Finds all rows in GC_FOSSILS that do not fulfill the attribute rules that are defined in the geodatabase</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_FOSSILS" workspace="GC_Production" />
+        <Scalar parameter="AllowNullValuesForCodedValueDomains" value="True" />
+        <Scalar parameter="AllowNullValuesForRangeDomains" value="True" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_FOSSILS_in_surfaces_not_marked_as_buried_out" uuid="74C4917C-221B-4296-9099-D8CB66C51C28" versionUuid="9E54EA67-A95D-4910-A594-8611128BCECA" createdDate="2023-05-01T12:03:02" createdByUser="DallASteph" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="InteriorIntersectsOther(2)" allowErrors="True">
+      <Description>Finds all Fossil findings in surfaces that are not marked as buried out</Description>
+      <Parameters>
+        <Dataset parameter="featureClasses" value="TOPGIS_GC.GC_UNCO_DESPOSIT" workspace="GC_Production" />
+        <Dataset parameter="featureClasses" value="TOPGIS_GC.GC_SURFACES" where="KIND IN (10401001,10401002,10401003,10401004,10401005,10401006) AND SYMBOL NOT IN (102)" workspace="GC_Production" />
+        <Dataset parameter="relatedClasses" value="TOPGIS_GC.GC_FOSSILS" where="LFOS_STATUS NOT IN (12905002)" workspace="GC_Production" />
+        <Scalar parameter="ValidIntersectionGeometryConstraint" value="" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_FOSSILS_NonEmptyGeometry" uuid="3AF42C94-EF72-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F055-3CD6-E053-9730830A4794" createdDate="2015-05-07T10:48:44" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="NonEmptyGeometry(1)">
+      <Parameters>
+        <Dataset parameter="featureClass" value="TOPGIS_GC.GC_FOSSILS" workspace="GC_Production" />
+        <Scalar parameter="dontFilterPolycurvesByZeroLength" value="False" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_FOSSILS_POINTOBJECTS_OnBoundaryOfBedrockOrUnco" uuid="3AF42C94-EFFB-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F0DC-3CD6-E053-9730830A4794" createdDate="2016-04-12T15:22:01" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="IntersectionMatrixOther(0)" allowErrors="False">
+      <Description>Finds all rows in GC_FOSSILS or GC_POINT_OBJECTS (selection) which lie on the boundary of GC_BEDROCK or GC_UNCO_DEPOSITS</Description>
+      <Parameters>
+        <Dataset parameter="featureClasses" value="TOPGIS_GC.GC_FOSSILS" workspace="GC_Production" />
+        <Dataset parameter="featureClasses" value="TOPGIS_GC.GC_POINT_OBJECTS" where="KIND IN (11201001,11201002,11601001,12801001,12801002,13201001,13201002,13201003,13201004,13201005,13201006,13201007,13201008,13401001,13401002,13401003,13401004,13401005,13501001,13501002,13501003,13601001,13601002,13601003,13701001,13701002,13701003,13701004,13801001,13801002,13801003,13801004,13801005,14201001,14601001,14601002,14601003,14601004,14601005,14601006,14601007)" workspace="GC_Production" />
+        <Dataset parameter="relatedClasses" value="TOPGIS_GC.GC_BEDROCK" workspace="GC_Production" />
+        <Dataset parameter="relatedClasses" value="TOPGIS_GC.GC_UNCO_DESPOSIT" workspace="GC_Production" />
+        <Scalar parameter="intersectionMatrix" value="*T*******" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_FOSSILS_RequiredFieldsCMAttr" uuid="3AF42C94-F001-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F0E2-3CD6-E053-9730830A4794" createdDate="2016-04-12T16:26:30" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="RequiredFields(3)" allowErrors="False">
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_FOSSILS" workspace="GC_Production" />
+        <Scalar parameter="requiredFieldNamesString" value="UUID,OPERATOR,CREATION_YEAR,REASONFORCHANGE,OBJECTORIGIN" />
+        <Scalar parameter="allowEmptyStrings" value="False" />
+        <Scalar parameter="allowMissingFields" value="True" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_FOSSILS_SimpleGeometry" uuid="3AF42C94-EF91-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F074-3CD6-E053-9730830A4794" createdDate="2015-05-07T09:37:55" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="SimpleGeometry(2)">
+      <Parameters>
+        <Dataset parameter="featureClass" value="TOPGIS_GC.GC_FOSSILS" workspace="GC_Production" />
+        <Scalar parameter="allowNonPlanarLines" value="False" />
+        <Scalar parameter="toleranceFactor" value="0.4" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_FOSSILS_TrimmedTextFields" uuid="3AF42C94-EFE3-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F0C4-3CD6-E053-9730830A4794" createdDate="2015-06-03T16:12:38" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="TrimmedTextFields(0)" allowErrors="False">
+      <Description>Finds rows with text fields having leading or trailing whitespace characters.</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_FOSSILS" workspace="GC_Production" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_FOSSILS_UniqueUUID" uuid="3AF42C94-EFCA-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F0AC-3CD6-E053-9730830A4794" createdDate="2015-05-07T09:46:33" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="Unique(0)">
+      <Description>Finds all none unique UUID-rows in GC_FOSSILS</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_FOSSILS" workspace="GC_Production" />
+        <Scalar parameter="unique" value="UUID" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_FOSSILS_UUID_RegExp" uuid="3AF42C94-EF68-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F04B-3CD6-E053-9730830A4794" createdDate="2015-05-07T10:28:16" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="RegularExpression(5)">
+      <Description>UUID may only contain capital letters and numbers</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_FOSSILS" workspace="GC_Production" />
+        <Scalar parameter="pattern" value="([0-9A-F]){8}-([0-9A-F]){4}-([0-9A-F]){4}-([0-9A-F]){4}-([0-9A-F]){12}" />
+        <Scalar parameter="fieldNames" value="UUID" />
+        <Scalar parameter="matchIsError" value="False" />
+        <Scalar parameter="patternDescription" value="" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_FOSSILS_within_BEDROCK_or_UNCO" uuid="3AF42C94-EFC0-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F0A3-3CD6-E053-9730830A4794" createdDate="2015-05-20T16:46:30" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="ContainsOther(0)" allowErrors="False">
+      <Description>Finds all features in GC_FOSSILS that are not contained by any feature in GC_BEDROCK or GC_UNCO_DESPOSIT</Description>
+      <Parameters>
+        <Dataset parameter="contains" value="TOPGIS_GC.GC_BEDROCK" workspace="GC_Production" />
+        <Dataset parameter="contains" value="TOPGIS_GC.GC_UNCO_DESPOSIT" workspace="GC_Production" />
+        <Dataset parameter="isWithin" value="TOPGIS_GC.GC_FOSSILS" where="LFOS_STATUS NOT IN (12905002)" workspace="GC_Production" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_LINEAR_OBJECTS_Duplicates" uuid="3AF42C94-EF8A-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F06D-3CD6-E053-9730830A4794" createdDate="2015-05-07T10:54:22" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="DuplicateGeometrySelf(1)">
+      <Description>Finds features with equal geometries in GC_LINEAR_OBJECTS for which the constraint is G1.Kind &lt;&gt; G2.Kind</Description>
+      <Parameters>
+        <Dataset parameter="featureClass" value="TOPGIS_GC.GC_LINEAR_OBJECTS" workspace="GC_Production" />
+        <Scalar parameter="validDuplicateConstraint" value="G1.Kind &lt;&gt; G2.Kind" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_LINEAR_OBJECTS_GdbConstraint" uuid="3AF42C94-EFBD-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F0A0-3CD6-E053-9730830A4794" createdDate="2015-06-03T16:27:16" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="GdbConstraintFactory">
+      <Description>Finds all rows in GC_LINEAR_OBJECTS that do not fulfill the attribute rules that are defined in the geodatabase</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_LINEAR_OBJECTS" workspace="GC_Production" />
+        <Scalar parameter="AllowNullValuesForCodedValueDomains" value="True" />
+        <Scalar parameter="AllowNullValuesForRangeDomains" value="True" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_LINEAR_OBJECTS_Lpro_must_be_in_BEDROCK_or buried_out" uuid="7A81DB2C-5E7B-4182-9D03-CE1715A57E96" versionUuid="E500FB84-B2BF-4878-AA05-E9978A5CA491" createdDate="2023-02-17T14:06:59" createdByUser="DallASteph" lastChangedDate="2023-06-21T16:31:52" lastChangedByUser="DallASteph" testDescriptor="InteriorIntersectsOther(2)" allowErrors="True">
+      <Description>Prio 1: Finds all Lpro die im quartär liegen und wird als Fehler rapportiert</Description>
+      <Parameters>
+        <Dataset parameter="featureClasses" value="TOPGIS_GC.GC_UNCO_DESPOSIT" workspace="GC_Production" />
+        <Dataset parameter="featureClasses" value="TOPGIS_GC.GC_SURFACES" where="KIND IN (10401001,10401002,10401003,10401004,10401005,10401006) AND SYMBOL NOT IN (102)" workspace="GC_Production" />
+        <Dataset parameter="relatedClasses" value="TOPGIS_GC.GC_LINEAR_OBJECTS" where="KIND IN (13101001)" workspace="GC_Production" />
+        <Scalar parameter="ValidIntersectionGeometryConstraint" value="" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_LINEAR_OBJECTS_MinSegmentLength" uuid="3AF42C94-EFB0-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F093-3CD6-E053-9730830A4794" createdDate="2015-06-18T16:57:47" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="MinLength(2)">
+      <Description>Finds all lines in GC_LINEAR_OBJECTS with length smaller than 5</Description>
+      <Parameters>
+        <Dataset parameter="featureClass" value="TOPGIS_GC.GC_LINEAR_OBJECTS" workspace="GC_Production" />
+        <Scalar parameter="limit" value="5" />
+        <Scalar parameter="is3D" value="False" />
+        <Scalar parameter="perPart" value="False" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_LINEAR_OBJECTS_Moraines_crossing_diff_UNCO" uuid="CBAA028E-A521-437E-8F03-21AA3891A80D" versionUuid="8BA67A2E-8DAE-4E04-9DCF-031BE6A74A18" createdDate="2023-02-28T13:53:51" createdByUser="DallASteph" lastChangedDate="2023-06-21T16:32:37" lastChangedByUser="DallASteph" testDescriptor="CrossesOther(0)">
+      <Description>Prio 1: Finds all Moraenenwaelle which cross  UNCO limits</Description>
+      <Parameters>
+        <Dataset parameter="crossed" value="TOPGIS_GC.GC_UNCO_DESPOSIT" workspace="GC_Production" />
+        <Dataset parameter="crossing" value="TOPGIS_GC.GC_LINEAR_OBJECTS" where="KIND IN (11301001)" workspace="GC_Production" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_LINEAR_OBJECTS_NoCurves" uuid="3AF42C94-EF9A-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F07D-3CD6-E053-9730830A4794" createdDate="2015-05-07T10:40:42" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="Curve(0)">
+      <Description>Finds segments in GC_LINEAR_OBJECTS that are not straight lines</Description>
+      <Parameters>
+        <Dataset parameter="featureClass" value="TOPGIS_GC.GC_LINEAR_OBJECTS" workspace="GC_Production" />
+        <Scalar parameter="GroupIssuesBySegmentType" value="False" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_LINEAR_OBJECTS_NoMultiparts" uuid="3AF42C94-EF7E-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F061-3CD6-E053-9730830A4794" createdDate="2015-05-07T09:40:01" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="Multipart(0)">
+      <Parameters>
+        <Dataset parameter="featureClass" value="TOPGIS_GC.GC_LINEAR_OBJECTS" workspace="GC_Production" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_LINEAR_OBJECTS_NonEmptyGeometry" uuid="3AF42C94-EF71-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F054-3CD6-E053-9730830A4794" createdDate="2015-05-07T10:48:44" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="NonEmptyGeometry(1)">
+      <Parameters>
+        <Dataset parameter="featureClass" value="TOPGIS_GC.GC_LINEAR_OBJECTS" workspace="GC_Production" />
+        <Scalar parameter="dontFilterPolycurvesByZeroLength" value="False" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_LINEAR_OBJECTS_PartCoincidenceSelf" uuid="7A21A942-BB05-4BDE-94C1-92F52D1514E4" versionUuid="CB90E936-E805-4198-B17A-27262FC44F05" createdDate="2018-01-11T11:01:01" createdByUser="BalanPauli" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="PartCoincidenceSelf(0)">
+      <Description>Find line sections longer than 10m in GC_LINEAR_OBJECTS, where 2 non-coincident lines lie nearer than 0.5 but are not coincident.</Description>
+      <Parameters>
+        <Dataset parameter="featureClass" value="TOPGIS_GC.GC_LINEAR_OBJECTS" workspace="GC_Production" />
+        <Scalar parameter="near" value="0.5" />
+        <Scalar parameter="minLength" value="10" />
+        <Scalar parameter="is3D" value="True" />
+        <Scalar parameter="IgnoreNeighborConditions" value="G1.KIND &lt;&gt; G2.KIND" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_LINEAR_OBJECTS_RequiredFieldsCMAttr" uuid="3AF42C94-F000-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F0E1-3CD6-E053-9730830A4794" createdDate="2016-04-12T16:26:30" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="RequiredFields(3)" allowErrors="False">
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_LINEAR_OBJECTS" workspace="GC_Production" />
+        <Scalar parameter="requiredFieldNamesString" value="UUID,OPERATOR,CREATION_YEAR,REASONFORCHANGE,OBJECTORIGIN" />
+        <Scalar parameter="allowEmptyStrings" value="False" />
+        <Scalar parameter="allowMissingFields" value="True" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_LINEAR_OBJECTS_SimpleGeometry" uuid="3AF42C94-EF90-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F073-3CD6-E053-9730830A4794" createdDate="2015-05-07T09:37:55" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="SimpleGeometry(2)">
+      <Parameters>
+        <Dataset parameter="featureClass" value="TOPGIS_GC.GC_LINEAR_OBJECTS" workspace="GC_Production" />
+        <Scalar parameter="allowNonPlanarLines" value="False" />
+        <Scalar parameter="toleranceFactor" value="0.4" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_LINEAR_OBJECTS_TrimmedTextFields" uuid="3AF42C94-EFE4-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F0C5-3CD6-E053-9730830A4794" createdDate="2015-06-03T16:12:38" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="TrimmedTextFields(0)" allowErrors="False">
+      <Description>Finds rows with text fields having leading or trailing whitespace characters.</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_LINEAR_OBJECTS" workspace="GC_Production" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_LINEAR_OBJECTS_UniqueUUID" uuid="3AF42C94-EFC9-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F0AB-3CD6-E053-9730830A4794" createdDate="2015-05-07T09:46:33" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="Unique(0)">
+      <Description>Finds all none unique UUID-rows in GC_LINEAR_OBJECTS</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_LINEAR_OBJECTS" workspace="GC_Production" />
+        <Scalar parameter="unique" value="UUID" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_LINEAR_OBJECTS_UUID_RegExp" uuid="3AF42C94-EF6D-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F050-3CD6-E053-9730830A4794" createdDate="2015-05-07T10:25:35" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="RegularExpression(5)">
+      <Description>UUID may only contain capital letters and numbers</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_LINEAR_OBJECTS" workspace="GC_Production" />
+        <Scalar parameter="pattern" value="([0-9A-F]){8}-([0-9A-F]){4}-([0-9A-F]){4}-([0-9A-F]){4}-([0-9A-F]){12}" />
+        <Scalar parameter="fieldNames" value="UUID" />
+        <Scalar parameter="matchIsError" value="False" />
+        <Scalar parameter="patternDescription" value="" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_LINEAR_Tecto_certain_in_Unco" uuid="A7D82D0C-8D89-4312-9DB7-5D5AE37CE0E8" versionUuid="84D177AE-084C-42EA-A4A4-E5D37A834AE2" createdDate="2020-10-20T16:52:49" createdByUser="BalanPauli" lastChangedDate="2023-06-21T16:33:49" lastChangedByUser="DallASteph" testDescriptor="InteriorIntersectsOther(2)" allowErrors="False">
+      <Description>Prio 1: Finds all tecto lineaments die im quartär liegen mit den Attribut Ttec_Status = gesichert und wird als Fehler rapportiert</Description>
+      <Parameters>
+        <Dataset parameter="featureClasses" value="TOPGIS_GC.GC_UNCO_DESPOSIT" workspace="GC_Production" />
+        <Dataset parameter="featureClasses" value="TOPGIS_GC.GC_SURFACES" where="KIND IN (10401001,10401002,10401003,10401004,10401005,10401006) AND SYMBOL NOT IN (102)" workspace="GC_Production" />
+        <Dataset parameter="relatedClasses" value="TOPGIS_GC.GC_LINEAR_OBJECTS" where="TTEC_STATUS IN (14906001)" workspace="GC_Production" />
+        <Scalar parameter="ValidIntersectionGeometryConstraint" value="" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_LINEAR_Tecto_vs_Unco_but_not_buried_out" uuid="27573FC4-77C3-4F19-8899-EF7246DC0966" versionUuid="485AA688-8092-44DD-AD5B-606878B42B16" createdDate="2023-02-17T13:07:37" createdByUser="DallASteph" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="InteriorIntersectsOther(2)" allowErrors="False">
+      <Description>Finds all tecto lineament die im quartär liegen mit den Attribut Ttec_Status = gesichert und wird als Fehler rapportiert, ausser, wenn es sich um einen temporären Aufschluss handelt</Description>
+      <Parameters>
+        <Dataset parameter="featureClasses" value="TOPGIS_GC.GC_UNCO_DESPOSIT" where="RUNC_BURIED_OUT NOT IN (1)" workspace="GC_Production" />
+        <Dataset parameter="featureClasses" value="TOPGIS_GC.GC_SURFACES" where="KIND IN (10401001,10401002,10401003,10401004,10401005,10401006) AND SYMBOL NOT IN (102)" workspace="GC_Production" />
+        <Dataset parameter="relatedClasses" value="TOPGIS_GC.GC_LINEAR_OBJECTS" where="TTEC_STATUS IN (14906001)" workspace="GC_Production" />
+        <Scalar parameter="ValidIntersectionGeometryConstraint" value="" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_LITHO_BED_TrimmedTextFields" uuid="3AF42C94-F011-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F0F2-3CD6-E053-9730830A4794" createdDate="2015-06-03T16:12:38" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="TrimmedTextFields(0)" allowErrors="False">
+      <Description>Finds rows with text fields having leading or trailing whitespace characters.</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_LITHO_BED" workspace="GC_Production" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_LITHO_BED_UniqueUUID" uuid="3AF42C94-F016-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F0F7-3CD6-E053-9730830A4794" createdDate="2015-05-07T09:46:33" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="Unique(0)">
+      <Description>Finds all none unique UUID-rows in GC_LITHO_BED</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_LITHO_BED" workspace="GC_Production" />
+        <Scalar parameter="unique" value="UUID" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_LITHO_BED_UUID_RegExp" uuid="3AF42C94-F00C-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F0ED-3CD6-E053-9730830A4794" createdDate="2015-06-23T14:55:20" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="RegularExpression(5)">
+      <Description>UUID may only contain capital letters and numbers</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_LITHO_BED" workspace="GC_Production" />
+        <Scalar parameter="pattern" value="([0-9A-F]){8}-([0-9A-F]){4}-([0-9A-F]){4}-([0-9A-F]){4}-([0-9A-F]){12}" />
+        <Scalar parameter="fieldNames" value="UUID" />
+        <Scalar parameter="matchIsError" value="False" />
+        <Scalar parameter="patternDescription" value="" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_LITHO_GdbConstraint" uuid="3AF42C94-EFB4-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F097-3CD6-E053-9730830A4794" createdDate="2015-06-03T16:27:16" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="GdbConstraintFactory">
+      <Description>Finds all rows in GC_LITHO that do not fulfill the attribute rules that are defined in the geodatabase</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_LITHO" workspace="GC_Production" />
+        <Scalar parameter="AllowNullValuesForCodedValueDomains" value="True" />
+        <Scalar parameter="AllowNullValuesForRangeDomains" value="True" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_LITHO_TrimmedTextFields" uuid="3AF42C94-EFDA-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F0BC-3CD6-E053-9730830A4794" createdDate="2015-06-03T16:12:38" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="TrimmedTextFields(0)" allowErrors="False">
+      <Description>Finds rows with text fields having leading or trailing whitespace characters.</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_LITHO" workspace="GC_Production" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_LITHO_UNCO_GdbConstraint" uuid="3AF42C94-F008-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F0E9-3CD6-E053-9730830A4794" createdDate="2015-06-03T16:27:16" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="GdbConstraintFactory">
+      <Description>Finds all rows in GC_LITHO_UNCO that do not fulfill the attribute rules that are defined in the geodatabase</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_LITHO_UNCO" workspace="GC_Production" />
+        <Scalar parameter="AllowNullValuesForCodedValueDomains" value="True" />
+        <Scalar parameter="AllowNullValuesForRangeDomains" value="True" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_LITHO_UNCO_TrimmedTextFields" uuid="3AF42C94-F012-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F0F3-3CD6-E053-9730830A4794" createdDate="2015-06-03T16:12:38" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="TrimmedTextFields(0)" allowErrors="False">
+      <Description>Finds rows with text fields having leading or trailing whitespace characters.</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_LITHO_UNCO" workspace="GC_Production" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_LITHO_UNCO_UniqueUUID" uuid="3AF42C94-F017-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F0F8-3CD6-E053-9730830A4794" createdDate="2015-05-07T09:46:33" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="Unique(0)">
+      <Description>Finds all none unique UUID-rows in GC_LITHO_UNCO</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_LITHO_UNCO" workspace="GC_Production" />
+        <Scalar parameter="unique" value="UUID" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_LITHO_UNCO_UUID_RegExp" uuid="3AF42C94-F00D-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F0EE-3CD6-E053-9730830A4794" createdDate="2015-06-23T14:55:41" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="RegularExpression(5)">
+      <Description>UUID may only contain capital letters and numbers</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_LITHO_UNCO" workspace="GC_Production" />
+        <Scalar parameter="pattern" value="([0-9A-F]){8}-([0-9A-F]){4}-([0-9A-F]){4}-([0-9A-F]){4}-([0-9A-F]){12}" />
+        <Scalar parameter="fieldNames" value="UUID" />
+        <Scalar parameter="matchIsError" value="False" />
+        <Scalar parameter="patternDescription" value="" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_LITHO_UniqueUUID" uuid="3AF42C94-EFCB-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F0AD-3CD6-E053-9730830A4794" createdDate="2015-05-07T09:46:33" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="Unique(0)">
+      <Description>Finds all none unique UUID-rows in GC_LITHO</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_LITHO" workspace="GC_Production" />
+        <Scalar parameter="unique" value="UUID" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_LITHO_UUID_RegExp" uuid="3AF42C94-EFC6-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F125-3CD6-E053-9730830A4794" createdDate="2015-06-23T14:54:27" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="RegularExpression(5)">
+      <Description>UUID may only contain capital letters and numbers</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_LITHO" workspace="GC_Production" />
+        <Scalar parameter="pattern" value="([0-9A-F]){8}-([0-9A-F]){4}-([0-9A-F]){4}-([0-9A-F]){4}-([0-9A-F]){12}" />
+        <Scalar parameter="fieldNames" value="UUID" />
+        <Scalar parameter="matchIsError" value="False" />
+        <Scalar parameter="patternDescription" value="" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_LITSTRAT_BED_GdbConstraint" uuid="3AF42C94-F007-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F0E8-3CD6-E053-9730830A4794" createdDate="2016-03-30T11:06:31" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="GdbConstraintFactory">
+      <Description>Finds all rows in GC_LITSTRAT_BED that do not fulfill the attribute rules that are defined in the geodatabase</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_LITSTRAT_BED" workspace="GC_Production" />
+        <Scalar parameter="AllowNullValuesForCodedValueDomains" value="True" />
+        <Scalar parameter="AllowNullValuesForRangeDomains" value="True" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_LITSTRAT_BED_TrimmedTextFields" uuid="3AF42C94-F013-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F0F4-3CD6-E053-9730830A4794" createdDate="2016-03-30T11:07:02" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="TrimmedTextFields(0)" allowErrors="False">
+      <Description>Finds rows with text fields having leading or trailing whitespace characters.</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_LITSTRAT_BED" workspace="GC_Production" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_LITSTRAT_BED_UniqueUUID" uuid="3AF42C94-F018-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F0F9-3CD6-E053-9730830A4794" createdDate="2016-03-30T11:10:10" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="Unique(0)">
+      <Description>Finds all none unique UUID-rows in GC_LITSTRAT_BED</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_LITSTRAT_BED" workspace="GC_Production" />
+        <Scalar parameter="unique" value="UUID" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_LITSTRAT_BED_UUID_RegExp" uuid="3AF42C94-F00E-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F0EF-3CD6-E053-9730830A4794" createdDate="2016-03-30T11:10:39" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="RegularExpression(5)">
+      <Description>UUID may only contain capital letters and numbers</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_LITSTRAT_BED" workspace="GC_Production" />
+        <Scalar parameter="pattern" value="([0-9A-F]){8}-([0-9A-F]){4}-([0-9A-F]){4}-([0-9A-F]){4}-([0-9A-F]){12}" />
+        <Scalar parameter="fieldNames" value="UUID" />
+        <Scalar parameter="matchIsError" value="False" />
+        <Scalar parameter="patternDescription" value="" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_LITSTRAT_GdbConstraint" uuid="3AF42C94-EFB6-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F099-3CD6-E053-9730830A4794" createdDate="2015-06-03T16:27:16" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="GdbConstraintFactory">
+      <Description>Finds all rows in GC_LITSTRAT that do not fulfill the attribute rules that are defined in the geodatabase</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_LITSTRAT" workspace="GC_Production" />
+        <Scalar parameter="AllowNullValuesForCodedValueDomains" value="True" />
+        <Scalar parameter="AllowNullValuesForRangeDomains" value="True" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_LITSTRAT_TrimmedTextFields" uuid="3AF42C94-EFDB-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F0BD-3CD6-E053-9730830A4794" createdDate="2015-06-03T16:12:38" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="TrimmedTextFields(0)" allowErrors="False">
+      <Description>Finds rows with text fields having leading or trailing whitespace characters.</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_LITSTRAT" workspace="GC_Production" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_LITSTRAT_UNCO_GdbConstraint" uuid="3AF42C94-F006-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F0E7-3CD6-E053-9730830A4794" createdDate="2016-03-30T11:11:47" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="GdbConstraintFactory">
+      <Description>Finds all rows in GC_LITSTRAT_UNCO that do not fulfill the attribute rules that are defined in the geodatabase</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_LITSTRAT_UNCO" workspace="GC_Production" />
+        <Scalar parameter="AllowNullValuesForCodedValueDomains" value="True" />
+        <Scalar parameter="AllowNullValuesForRangeDomains" value="True" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_LITSTRAT_UNCO_TrimmedTextFields" uuid="3AF42C94-F014-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F0F5-3CD6-E053-9730830A4794" createdDate="2016-03-30T11:12:18" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="TrimmedTextFields(0)" allowErrors="False">
+      <Description>Finds rows with text fields having leading or trailing whitespace characters.</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_LITSTRAT_UNCO" workspace="GC_Production" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_LITSTRAT_UNCO_UniqueUUID" uuid="3AF42C94-F019-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F0FA-3CD6-E053-9730830A4794" createdDate="2016-03-30T11:12:38" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="Unique(0)">
+      <Description>Finds all none unique UUID-rows in GC_LITSTRAT_UNCO</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_LITSTRAT_UNCO" workspace="GC_Production" />
+        <Scalar parameter="unique" value="UUID" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_LITSTRAT_UNCO_UUID_RegExp" uuid="3AF42C94-F00F-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F0F0-3CD6-E053-9730830A4794" createdDate="2016-03-30T11:13:08" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="RegularExpression(5)">
+      <Description>UUID may only contain capital letters and numbers</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_LITSTRAT_UNCO" workspace="GC_Production" />
+        <Scalar parameter="pattern" value="([0-9A-F]){8}-([0-9A-F]){4}-([0-9A-F]){4}-([0-9A-F]){4}-([0-9A-F]){12}" />
+        <Scalar parameter="fieldNames" value="UUID" />
+        <Scalar parameter="matchIsError" value="False" />
+        <Scalar parameter="patternDescription" value="" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_LITSTRAT_UniqueUUID" uuid="3AF42C94-EFD5-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F0B7-3CD6-E053-9730830A4794" createdDate="2015-05-07T09:46:33" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="Unique(0)">
+      <Description>Finds all none unique UUID-rows in GC_LITSTRAT</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_LITSTRAT" workspace="GC_Production" />
+        <Scalar parameter="unique" value="UUID" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_LITSTRAT_UUID_RegExp" uuid="3AF42C94-EFC7-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F0A9-3CD6-E053-9730830A4794" createdDate="2015-06-23T14:56:07" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="RegularExpression(5)">
+      <Description>UUID may only contain capital letters and numbers</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_LITSTRAT" workspace="GC_Production" />
+        <Scalar parameter="pattern" value="([0-9A-F]){8}-([0-9A-F]){4}-([0-9A-F]){4}-([0-9A-F]){4}-([0-9A-F]){12}" />
+        <Scalar parameter="fieldNames" value="UUID" />
+        <Scalar parameter="matchIsError" value="False" />
+        <Scalar parameter="patternDescription" value="" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_MAPSHEET_CoveredBy_ALL_PLG" uuid="6911A040-EBE6-4361-BCE0-E0B778FDDD02" versionUuid="3A1070D8-4FA2-4254-BC7A-016C203AEE88" createdDate="2016-11-10T08:10:59" createdByUser="BalanPauli" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="IsCoveredByOther(0)" allowErrors="False">
+      <Description>Find all rows in GC_MAPSHEET wich are not covered by GC_SURFACE (selection) + GC_UNCO_DEPOSITS + GC_BEDROCK</Description>
+      <Parameters>
+        <Dataset parameter="covering" value="TOPGIS_GC.GC_SURFACES" where="KIND IN (12701001,12701002,12701003,10401001,10401002,10401003,10401004,10401005,10401006,10401007,10401008)" workspace="GC_Production" />
+        <Dataset parameter="covering" value="TOPGIS_GC.GC_UNCO_DESPOSIT" workspace="GC_Production" />
+        <Dataset parameter="covering" value="TOPGIS_GC.GC_BEDROCK" workspace="GC_Production" />
+        <Dataset parameter="covered" value="TOPGIS_GC.GC_MAPSHEET" workspace="GC_Production" />
+        <Scalar parameter="ValidUncoveredGeometryConstraint" value="" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_MAPSHEET_noGaps" uuid="A974551F-B10C-4469-9770-774A2149E6FF" versionUuid="0B9E7B48-BDFC-48F8-BAA4-E43453646943" createdDate="2016-09-26T15:45:16" createdByUser="WyssAndre" lastChangedDate="2016-09-26T15:45:16" lastChangedByUser="WyssAndre" testDescriptor="NoGaps(0)">
+      <Parameters>
+        <Dataset parameter="polygonClass" value="TOPGIS_GC.GC_MAPSHEET" workspace="GC_Production" />
+        <Scalar parameter="sliverLimit" value="0" />
+        <Scalar parameter="maxArea" value="-1" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_MAPSHEET_RequiredFieldsCMAttr" uuid="3AF42C94-EFFF-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F0E0-3CD6-E053-9730830A4794" createdDate="2016-04-12T16:26:30" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="RequiredFields(3)" allowErrors="False">
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_MAPSHEET" workspace="GC_Production" />
+        <Scalar parameter="requiredFieldNamesString" value="UUID,OPERATOR,REASONFORCHANGE,OBJECTORIGIN" />
+        <Scalar parameter="allowEmptyStrings" value="False" />
+        <Scalar parameter="allowMissingFields" value="True" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_MAPSHEET_UniqueUUID" uuid="3AF42C94-EFD8-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F0BA-3CD6-E053-9730830A4794" createdDate="2015-05-07T09:46:33" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="Unique(0)">
+      <Description>Finds all none unique UUID-rows in GC_MAPSHEET</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_MAPSHEET" workspace="GC_Production" />
+        <Scalar parameter="unique" value="UUID" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_MAPSHEET_UUID_RegExp" uuid="3AF42C94-EF6F-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F052-3CD6-E053-9730830A4794" createdDate="2015-05-07T10:27:10" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="RegularExpression(5)">
+      <Description>UUID may only contain capital letters and numbers</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_MAPSHEET" workspace="GC_Production" />
+        <Scalar parameter="pattern" value="([0-9A-F]){8}-([0-9A-F]){4}-([0-9A-F]){4}-([0-9A-F]){4}-([0-9A-F]){12}" />
+        <Scalar parameter="fieldNames" value="UUID" />
+        <Scalar parameter="matchIsError" value="False" />
+        <Scalar parameter="patternDescription" value="" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_POINT_OBJECT_Duplicates" uuid="06143858-2132-42D5-8593-C8ADF601DBEB" versionUuid="F3B6AC67-A893-4675-9801-AA9F24E62798" createdDate="2023-01-30T11:25:29" createdByUser="DallASteph" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="DuplicateGeometrySelf(1)">
+      <Parameters>
+        <Dataset parameter="featureClass" value="TOPGIS_GC.GC_POINT_OBJECTS" workspace="GC_Production" />
+        <Scalar parameter="validDuplicateConstraint" value="G1.Kind &lt;&gt; G2.Kind" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_POINT_OBJECTS_GdbConstraint" uuid="3AF42C94-EFBA-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F09D-3CD6-E053-9730830A4794" createdDate="2015-06-03T16:27:16" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="GdbConstraintFactory">
+      <Description>Finds all rows in GC_POINT_OBJECTS that do not fulfill the attribute rules that are defined in the geodatabase</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_POINT_OBJECTS" workspace="GC_Production" />
+        <Scalar parameter="AllowNullValuesForCodedValueDomains" value="True" />
+        <Scalar parameter="AllowNullValuesForRangeDomains" value="True" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_POINT_OBJECTS_NoMultiparts" uuid="3AF42C94-EF7D-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F060-3CD6-E053-9730830A4794" createdDate="2015-05-07T09:40:01" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="Multipart(0)">
+      <Parameters>
+        <Dataset parameter="featureClass" value="TOPGIS_GC.GC_POINT_OBJECTS" workspace="GC_Production" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_POINT_OBJECTS_NonEmptyGeometry" uuid="3AF42C94-EF75-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F058-3CD6-E053-9730830A4794" createdDate="2015-05-07T10:48:44" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="NonEmptyGeometry(1)">
+      <Parameters>
+        <Dataset parameter="featureClass" value="TOPGIS_GC.GC_POINT_OBJECTS" workspace="GC_Production" />
+        <Scalar parameter="dontFilterPolycurvesByZeroLength" value="False" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_POINT_OBJECTS_RequiredFieldsCMAttr" uuid="3AF42C94-EFFE-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F0DF-3CD6-E053-9730830A4794" createdDate="2016-04-12T16:26:30" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="RequiredFields(3)" allowErrors="False">
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_POINT_OBJECTS" workspace="GC_Production" />
+        <Scalar parameter="requiredFieldNamesString" value="UUID,OPERATOR,CREATION_YEAR,REASONFORCHANGE,OBJECTORIGIN" />
+        <Scalar parameter="allowEmptyStrings" value="False" />
+        <Scalar parameter="allowMissingFields" value="True" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_POINT_OBJECTS_SimpleGeometry" uuid="3AF42C94-EF8F-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F072-3CD6-E053-9730830A4794" createdDate="2015-05-07T09:37:55" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="SimpleGeometry(2)">
+      <Parameters>
+        <Dataset parameter="featureClass" value="TOPGIS_GC.GC_POINT_OBJECTS" workspace="GC_Production" />
+        <Scalar parameter="allowNonPlanarLines" value="False" />
+        <Scalar parameter="toleranceFactor" value="0.4" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_POINT_OBJECTS_that_must_be_in_BEDROCK_but_are_in_Unco" uuid="991AE160-F229-4753-A914-C38F05F77906" versionUuid="2C5B6E33-65EB-4C40-90B4-6AF6D7A8A162" createdDate="2023-02-17T15:14:28" createdByUser="DallASteph" lastChangedDate="2023-10-09T15:58:49" lastChangedByUser="DallASteph" testDescriptor="InteriorIntersectsOther(2)" allowErrors="True">
+      <Description>Finds all measures et al. that are not in Bedrock</Description>
+      <Parameters>
+        <Dataset parameter="featureClasses" value="TOPGIS_GC.GC_UNCO_DESPOSIT" workspace="GC_Production" />
+        <Dataset parameter="featureClasses" value="TOPGIS_GC.GC_SURFACES" where="KIND IN (10401001,10401002,10401003,10401004,10401005,10401006) AND SYMBOL NOT IN (102)" workspace="GC_Production" />
+        <Dataset parameter="relatedClasses" value="TOPGIS_GC.GC_POINT_OBJECTS" where="KIND IN (13401001,13401002,13401003,13401004,13401005, 13601001,13601002,13601003,13701001,13701002,13701003,13701004,13801001,13801002,13801003,13801004,13801005)" workspace="GC_Production" />
+        <Scalar parameter="ValidIntersectionGeometryConstraint" value="" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_POINT_OBJECTS_TrimmedTextFields" uuid="3AF42C94-EF63-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F046-3CD6-E053-9730830A4794" createdDate="2015-06-03T16:12:38" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="TrimmedTextFields(0)" allowErrors="False">
+      <Description>Finds rows with text fields having leading or trailing whitespace characters.</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_POINT_OBJECTS" workspace="GC_Production" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_POINT_OBJECTS_UniqueUUID" uuid="3AF42C94-EFD4-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F0B6-3CD6-E053-9730830A4794" createdDate="2015-05-07T09:46:33" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="Unique(0)">
+      <Description>Finds all none unique UUID-rows in GC_POINT_OBJECTS</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_POINT_OBJECTS" workspace="GC_Production" />
+        <Scalar parameter="unique" value="UUID" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_POINT_OBJECTS_UUID_RegExp" uuid="3AF42C94-EF6E-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F051-3CD6-E053-9730830A4794" createdDate="2015-05-07T10:26:22" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="RegularExpression(5)">
+      <Description>UUID may only contain capital letters and numbers</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_POINT_OBJECTS" workspace="GC_Production" />
+        <Scalar parameter="pattern" value="([0-9A-F]){8}-([0-9A-F]){4}-([0-9A-F]){4}-([0-9A-F]){4}-([0-9A-F]){12}" />
+        <Scalar parameter="fieldNames" value="UUID" />
+        <Scalar parameter="matchIsError" value="False" />
+        <Scalar parameter="patternDescription" value="" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_SURFACES_Duplicates" uuid="4DE9B321-89DD-4FC2-BBDA-37FD54B5BB7E" versionUuid="05825D1A-4838-4632-92A8-514AB0AE71F2" createdDate="2023-04-26T14:23:35" createdByUser="DallASteph" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="DuplicateGeometrySelf(1)">
+      <Description>Finds features with equal geometries for which the constraint is G1.Kind &lt;&gt; G2.Kind</Description>
+      <Parameters>
+        <Dataset parameter="featureClass" value="TOPGIS_GC.GC_SURFACES" workspace="GC_Production" />
+        <Scalar parameter="validDuplicateConstraint" value="G1.Kind &lt;&gt; G2.Kind" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_SURFACES_GdbConstraint" uuid="3AF42C94-EFB2-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F095-3CD6-E053-9730830A4794" createdDate="2015-06-03T16:27:16" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="GdbConstraintFactory">
+      <Description>Finds all rows in GC_SURFACES that do not fulfill the attribute rules that are defined in the geodatabase</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_SURFACES" workspace="GC_Production" />
+        <Scalar parameter="AllowNullValuesForCodedValueDomains" value="True" />
+        <Scalar parameter="AllowNullValuesForRangeDomains" value="True" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_SURFACES_MinPolygonArea" uuid="3AF42C94-F020-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F101-3CD6-E053-9730830A4794" createdDate="2015-05-13T13:20:55" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="MinArea(0)">
+      <Description>Finds polygons in GC_SURFACES with areas smaller than 100 and KIND &lt;&gt; Gkar Doline</Description>
+      <Parameters>
+        <Dataset parameter="polygonClass" value="TOPGIS_GC.GC_SURFACES" where="KIND &lt;&gt; 12001002" workspace="GC_Production" />
+        <Scalar parameter="limit" value="100" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_SURFACES_MinSegmentLength" uuid="3AF42C94-EFAF-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F092-3CD6-E053-9730830A4794" createdDate="2015-06-18T16:57:47" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="MinLength(2)">
+      <Description>Finds all lines in GC_SURFACES with length smaller than 5</Description>
+      <Parameters>
+        <Dataset parameter="featureClass" value="TOPGIS_GC.GC_SURFACES" where="KIND &lt;&gt; 12001002" workspace="GC_Production" />
+        <Scalar parameter="limit" value="5" />
+        <Scalar parameter="is3D" value="False" />
+        <Scalar parameter="perPart" value="False" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_SURFACES_NeighbourAreas" uuid="3AF42C94-EFE6-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F0C7-3CD6-E053-9730830A4794" createdDate="2016-07-13T11:12:00" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="NeighbourAreas(3)">
+      <Description>Finds all touching features in GC_SURFACES for wich a list of attributes are equal</Description>
+      <Parameters>
+        <Dataset parameter="polygonClass" value="TOPGIS_GC.GC_SURFACES" workspace="GC_Production" />
+        <Scalar parameter="allowPointIntersection" value="True" />
+        <Scalar parameter="fieldsString" value="OBJECTORIGIN_YEAR,INTEGRATION_OBJECT_UUID,REASONFORCHANGE,RC_ID,WU_ID,RC_ID_CREATION,REVISION_QUALITY,ORIGINAL_ORIGIN,WU_ID_CREATION,OBJECTID,UUID, CREATION_YEAR, OPERATOR, DATEOFCREATION,DATEOFCHANGE,CREATION_MONTH,REVISION_YEAR,REVISION_MONTH,REASONOFCHANGE,OBJECTORIGIN,OBEJCTORIGIN_YEAR,OBJECTORIGIN_MONTH,SHAPE.LEN, SHAPE.AREA" />
+        <Scalar parameter="fieldListType" value="IgnoredFields" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_SURFACES_NoBoundaryLoops" uuid="3AF42C94-EFA6-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F089-3CD6-E053-9730830A4794" createdDate="2015-05-21T07:47:36" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="NoBoundaryLoops(1)">
+      <Description>Finds all boundary loops (closed 'bays' in polygon boundaries) in a polygon feature class and reports them as point errors identifying the location where the boundary loop starts/ends.</Description>
+      <Parameters>
+        <Dataset parameter="polygonClass" value="TOPGIS_GC.GC_SURFACES" workspace="GC_Production" />
+        <Scalar parameter="errorGeometry" value="LoopStartPoint" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_SURFACES_NoCurves" uuid="3AF42C94-EF9B-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F07E-3CD6-E053-9730830A4794" createdDate="2015-05-07T10:41:07" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="Curve(0)">
+      <Description>Finds segments in GC_SURFACES that are not straight lines</Description>
+      <Parameters>
+        <Dataset parameter="featureClass" value="TOPGIS_GC.GC_SURFACES" workspace="GC_Production" />
+        <Scalar parameter="GroupIssuesBySegmentType" value="False" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_SURFACES_NoMultiparts" uuid="3AF42C94-EF7F-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F062-3CD6-E053-9730830A4794" createdDate="2015-05-07T09:40:01" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="Multipart(0)">
+      <Parameters>
+        <Dataset parameter="featureClass" value="TOPGIS_GC.GC_SURFACES" workspace="GC_Production" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_SURFACES_NonEmptyGeometry" uuid="3AF42C94-EF74-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F057-3CD6-E053-9730830A4794" createdDate="2015-05-07T10:48:44" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="NonEmptyGeometry(1)">
+      <Parameters>
+        <Dataset parameter="featureClass" value="TOPGIS_GC.GC_SURFACES" workspace="GC_Production" />
+        <Scalar parameter="dontFilterPolycurvesByZeroLength" value="False" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_SURFACES_NoSliverPolygon" uuid="3AF42C94-EF9F-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F082-3CD6-E053-9730830A4794" createdDate="2015-06-03T15:05:42" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="SliverPolygon(1)" allowErrors="False">
+      <Description>Polygons with a maximum area of 2000 and a maximum ratio between the square of the perimeter and the area of 500</Description>
+      <Parameters>
+        <Dataset parameter="polygonClass" value="TOPGIS_GC.GC_SURFACES" workspace="GC_Production" />
+        <Scalar parameter="limit" value="500" />
+        <Scalar parameter="maxArea" value="2000" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_SURFACES_RequiredFieldsCMAttr" uuid="3AF42C94-EFFD-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F0DE-3CD6-E053-9730830A4794" createdDate="2016-04-12T16:26:30" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="RequiredFields(3)" allowErrors="False">
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_SURFACES" workspace="GC_Production" />
+        <Scalar parameter="requiredFieldNamesString" value="UUID,OPERATOR,CREATION_YEAR,REASONFORCHANGE,OBJECTORIGIN" />
+        <Scalar parameter="allowEmptyStrings" value="False" />
+        <Scalar parameter="allowMissingFields" value="True" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_SURFACES_SimpleGeometry" uuid="3AF42C94-EF8E-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F071-3CD6-E053-9730830A4794" createdDate="2015-05-07T09:37:55" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="SimpleGeometry(2)">
+      <Parameters>
+        <Dataset parameter="featureClass" value="TOPGIS_GC.GC_SURFACES" workspace="GC_Production" />
+        <Scalar parameter="allowNonPlanarLines" value="False" />
+        <Scalar parameter="toleranceFactor" value="0.4" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_SURFACES_TrimmedTextFields" uuid="3AF42C94-EF64-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F047-3CD6-E053-9730830A4794" createdDate="2015-06-03T16:12:38" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="TrimmedTextFields(0)" allowErrors="False">
+      <Description>Finds rows with text fields having leading or trailing whitespace characters.</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_SURFACES" workspace="GC_Production" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_SURFACES_UniqueUUID" uuid="3AF42C94-EFD1-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F0B3-3CD6-E053-9730830A4794" createdDate="2015-05-07T09:46:33" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="Unique(0)">
+      <Description>Finds all none unique UUID-rows in GC_SURFACES</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_SURFACES" workspace="GC_Production" />
+        <Scalar parameter="unique" value="UUID" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_SURFACES_UUID_RegExp" uuid="3AF42C94-EF6C-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F04F-3CD6-E053-9730830A4794" createdDate="2015-05-07T10:23:11" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="RegularExpression(5)">
+      <Description>UUID may only contain capital letters and numbers</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_SURFACES" workspace="GC_Production" />
+        <Scalar parameter="pattern" value="([0-9A-F]){8}-([0-9A-F]){4}-([0-9A-F]){4}-([0-9A-F]){4}-([0-9A-F]){12}" />
+        <Scalar parameter="fieldNames" value="UUID" />
+        <Scalar parameter="matchIsError" value="False" />
+        <Scalar parameter="patternDescription" value="" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_SYSTEM_GdbConstraint" uuid="3AF42C94-EFB9-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F09C-3CD6-E053-9730830A4794" createdDate="2015-06-03T16:27:16" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="GdbConstraintFactory">
+      <Description>Finds all rows in GC_SYSTEM that do not fulfill the attribute rules that are defined in the geodatabase</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_SYSTEM" workspace="GC_Production" />
+        <Scalar parameter="AllowNullValuesForCodedValueDomains" value="True" />
+        <Scalar parameter="AllowNullValuesForRangeDomains" value="True" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_SYSTEM_TrimmedTextFields" uuid="3AF42C94-EFDE-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F0C0-3CD6-E053-9730830A4794" createdDate="2015-06-03T16:12:38" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="TrimmedTextFields(0)" allowErrors="False">
+      <Description>Finds rows with text fields having leading or trailing whitespace characters.</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_SYSTEM" workspace="GC_Production" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_SYSTEM_UniqueUUID" uuid="3AF42C94-EFD0-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F0B2-3CD6-E053-9730830A4794" createdDate="2015-05-07T09:46:33" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="Unique(0)">
+      <Description>Finds all none unique UUID-rows in GC_SYSTEM</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_SYSTEM" workspace="GC_Production" />
+        <Scalar parameter="unique" value="UUID" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_SYSTEM_UUID_RegExp" uuid="3AF42C94-EFC8-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F0AA-3CD6-E053-9730830A4794" createdDate="2015-06-23T14:56:38" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="RegularExpression(5)">
+      <Description>UUID may only contain capital letters and numbers</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_SYSTEM" workspace="GC_Production" />
+        <Scalar parameter="pattern" value="([0-9A-F]){8}-([0-9A-F]){4}-([0-9A-F]){4}-([0-9A-F]){4}-([0-9A-F]){12}" />
+        <Scalar parameter="fieldNames" value="UUID" />
+        <Scalar parameter="matchIsError" value="False" />
+        <Scalar parameter="patternDescription" value="" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_TECTO_GdbConstraint" uuid="3AF42C94-EFB8-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F09B-3CD6-E053-9730830A4794" createdDate="2015-06-03T16:27:16" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="GdbConstraintFactory">
+      <Description>Finds all rows in GC_TECTO that do not fulfill the attribute rules that are defined in the geodatabase</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_TECTO" workspace="GC_Production" />
+        <Scalar parameter="AllowNullValuesForCodedValueDomains" value="True" />
+        <Scalar parameter="AllowNullValuesForRangeDomains" value="True" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_TECTO_TrimmedTextFields" uuid="3AF42C94-EFDF-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F0C1-3CD6-E053-9730830A4794" createdDate="2015-06-03T16:12:38" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="TrimmedTextFields(0)" allowErrors="False">
+      <Description>Finds rows with text fields having leading or trailing whitespace characters.</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_TECTO" workspace="GC_Production" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_TECTO_UniqueUUID" uuid="3AF42C94-EFD3-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F0B5-3CD6-E053-9730830A4794" createdDate="2015-05-07T09:46:33" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="Unique(0)">
+      <Description>Finds all none unique UUID-rows in GC_TECTO</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_TECTO" workspace="GC_Production" />
+        <Scalar parameter="unique" value="UUID" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_TECTO_UUID_RegExp" uuid="3AF42C94-EF83-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F066-3CD6-E053-9730830A4794" createdDate="2015-06-23T14:56:56" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="RegularExpression(5)">
+      <Description>UUID may only contain capital letters and numbers</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_TECTO" workspace="GC_Production" />
+        <Scalar parameter="pattern" value="([0-9A-F]){8}-([0-9A-F]){4}-([0-9A-F]){4}-([0-9A-F]){4}-([0-9A-F]){12}" />
+        <Scalar parameter="fieldNames" value="UUID" />
+        <Scalar parameter="matchIsError" value="False" />
+        <Scalar parameter="patternDescription" value="" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_thin_UNCO_must_be_CoveredBy_BEDROCK" uuid="FE12EACF-428F-4666-9A82-C340EC0C13DF" versionUuid="080FDA63-5942-40A7-89C8-EDB98A4B3465" createdDate="2016-09-19T10:39:18" createdByUser="BalanPauli" lastChangedDate="2023-07-11T15:21:34" lastChangedByUser="DallASteph" testDescriptor="IsCoveredByOther(4)" allowErrors="False">
+      <Description>Finds all thin covers that are not lying on one features from class GC_BEDROCK</Description>
+      <Parameters>
+        <Dataset parameter="covering" value="TOPGIS_GC.GC_BEDROCK" workspace="GC_Production" />
+        <Scalar parameter="coveringGeometryComponents" value="EntireGeometry" />
+        <Dataset parameter="covered" value="TOPGIS_GC.GC_UNCO_DESPOSIT" where="RUNC_LITHO in (15101075,15101076, 15101077)" workspace="GC_Production" />
+        <Scalar parameter="coveredGeometryComponents" value="EntireGeometry" />
+        <Scalar parameter="isCoveringCondition" value="" />
+        <Scalar parameter="ValidUncoveredGeometryConstraint" value="" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_UNCO_DESPOSIT_GdbConstraint" uuid="3AF42C94-EF82-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F065-3CD6-E053-9730830A4794" createdDate="2015-06-03T16:27:16" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="GdbConstraintFactory">
+      <Description>Finds all rows in GC_UNCO_DESPOSIT that do not fulfill the attribute rules that are defined in the geodatabase</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_UNCO_DESPOSIT" workspace="GC_Production" />
+        <Scalar parameter="AllowNullValuesForCodedValueDomains" value="True" />
+        <Scalar parameter="AllowNullValuesForRangeDomains" value="True" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_UNCO_DESPOSIT_MinPolygonArea" uuid="3AF42C94-F022-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F103-3CD6-E053-9730830A4794" createdDate="2015-05-13T13:20:55" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="MinArea(0)">
+      <Description>Finds all polygons in GC_UNCO_DESPOSIT with areas smaller than 100</Description>
+      <Parameters>
+        <Dataset parameter="polygonClass" value="TOPGIS_GC.GC_UNCO_DESPOSIT" workspace="GC_Production" />
+        <Scalar parameter="limit" value="100" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_UNCO_DESPOSIT_MinSegmentLength" uuid="3AF42C94-EFAD-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F090-3CD6-E053-9730830A4794" createdDate="2015-06-18T16:57:47" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="MinLength(2)">
+      <Description>Finds all lines in GC_LINEAR_OBJECTS with length smaller than 5</Description>
+      <Parameters>
+        <Dataset parameter="featureClass" value="TOPGIS_GC.GC_UNCO_DESPOSIT" workspace="GC_Production" />
+        <Scalar parameter="limit" value="5" />
+        <Scalar parameter="is3D" value="False" />
+        <Scalar parameter="perPart" value="False" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_UNCO_DESPOSIT_NeighbourAreas" uuid="3AF42C94-EFE5-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F0C6-3CD6-E053-9730830A4794" createdDate="2016-07-13T11:12:00" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="NeighbourAreas(3)">
+      <Parameters>
+        <Dataset parameter="polygonClass" value="TOPGIS_GC.GC_UNCO_DESPOSIT" workspace="GC_Production" />
+        <Scalar parameter="allowPointIntersection" value="True" />
+        <Scalar parameter="fieldsString" value="OBJECTORIGIN_YEAR,INTEGRATION_OBJECT_UUID,REASONFORCHANGE,RC_ID,WU_ID,RC_ID_CREATION,REVISION_QUALITY,ORIGINAL_ORIGIN,WU_ID_CREATION,OBJECTID,UUID,KIND, CREATION_YEAR, OPERATOR, DATEOFCREATION,DATEOFCHANGE,CREATION_MONTH,REVISION_YEAR,REVISION_MONTH,REASONOFCHANGE,OBJECTORIGIN,OBEJCTORIGIN_YEAR,OBJECTORIGIN_MONTH,SHAPE.LEN, SHAPE.AREA, RUNC_ORIG_DESCR" />
+        <Scalar parameter="fieldListType" value="IgnoredFields" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_UNCO_DESPOSIT_NoBoundaryLoops" uuid="3AF42C94-EFA4-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F087-3CD6-E053-9730830A4794" createdDate="2015-05-21T07:47:36" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="NoBoundaryLoops(1)">
+      <Description>Finds all boundary loops (closed 'bays' in polygon boundaries) in a polygon feature class and reports them as point errors identifying the location where the boundary loop starts/ends.</Description>
+      <Parameters>
+        <Dataset parameter="polygonClass" value="TOPGIS_GC.GC_UNCO_DESPOSIT" workspace="GC_Production" />
+        <Scalar parameter="errorGeometry" value="LoopStartPoint" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_UNCO_DESPOSIT_NoCurves" uuid="3AF42C94-EF99-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F07C-3CD6-E053-9730830A4794" createdDate="2015-05-07T10:40:16" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="Curve(0)">
+      <Description>Finds segments in GC_UNCO_DESPOSIT that are not straight lines</Description>
+      <Parameters>
+        <Dataset parameter="featureClass" value="TOPGIS_GC.GC_UNCO_DESPOSIT" workspace="GC_Production" />
+        <Scalar parameter="GroupIssuesBySegmentType" value="False" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_UNCO_DESPOSIT_NoMultiparts" uuid="3AF42C94-EF80-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F063-3CD6-E053-9730830A4794" createdDate="2015-05-07T09:40:01" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="Multipart(0)">
+      <Parameters>
+        <Dataset parameter="featureClass" value="TOPGIS_GC.GC_UNCO_DESPOSIT" workspace="GC_Production" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_UNCO_DESPOSIT_NonEmptyGeometry" uuid="3AF42C94-EF73-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F056-3CD6-E053-9730830A4794" createdDate="2015-05-07T10:48:44" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="NonEmptyGeometry(1)">
+      <Parameters>
+        <Dataset parameter="featureClass" value="TOPGIS_GC.GC_UNCO_DESPOSIT" workspace="GC_Production" />
+        <Scalar parameter="dontFilterPolycurvesByZeroLength" value="False" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_UNCO_DESPOSIT_NoSliverPolygon" uuid="3AF42C94-EF9C-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F07F-3CD6-E053-9730830A4794" createdDate="2015-06-03T15:05:42" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="SliverPolygon(1)" allowErrors="False">
+      <Description>Polygons with a maximum area of 2000 and a maximum ratio between the square of the perimeter and the area of 500</Description>
+      <Parameters>
+        <Dataset parameter="polygonClass" value="TOPGIS_GC.GC_UNCO_DESPOSIT" workspace="GC_Production" />
+        <Scalar parameter="limit" value="500" />
+        <Scalar parameter="maxArea" value="2000" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_UNCO_DESPOSIT_RequiredFieldsCMAttr" uuid="3AF42C94-EFFC-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F0DD-3CD6-E053-9730830A4794" createdDate="2016-04-12T16:26:30" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="RequiredFields(3)" allowErrors="False">
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_UNCO_DESPOSIT" workspace="GC_Production" />
+        <Scalar parameter="requiredFieldNamesString" value="UUID,OPERATOR,CREATION_YEAR,REASONFORCHANGE,OBJECTORIGIN" />
+        <Scalar parameter="allowEmptyStrings" value="False" />
+        <Scalar parameter="allowMissingFields" value="True" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_UNCO_DESPOSIT_SimpleGeometry" uuid="3AF42C94-EF8D-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F070-3CD6-E053-9730830A4794" createdDate="2015-05-07T09:37:55" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="SimpleGeometry(2)">
+      <Parameters>
+        <Dataset parameter="featureClass" value="TOPGIS_GC.GC_UNCO_DESPOSIT" workspace="GC_Production" />
+        <Scalar parameter="allowNonPlanarLines" value="False" />
+        <Scalar parameter="toleranceFactor" value="0.4" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_UNCO_DESPOSIT_TrimmedTextFields" uuid="3AF42C94-EFE0-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F0C2-3CD6-E053-9730830A4794" createdDate="2015-06-03T16:12:38" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="TrimmedTextFields(0)" allowErrors="False">
+      <Description>Finds rows with text fields having leading or trailing whitespace characters.</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_UNCO_DESPOSIT" workspace="GC_Production" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_UNCO_DESPOSIT_UniqueUUID" uuid="3AF42C94-EFD2-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F0B4-3CD6-E053-9730830A4794" createdDate="2015-05-07T09:46:33" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="Unique(0)">
+      <Description>Finds all none unique UUID-rows in GC_UNCO_DESPOSIT</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_UNCO_DESPOSIT" workspace="GC_Production" />
+        <Scalar parameter="unique" value="UUID" />
+      </Parameters>
+    </QualityCondition>
+    <QualityCondition name="GC_UNCO_DESPOSIT_UUID_RegExp" uuid="3AF42C94-EF70-3CD6-E053-9730830A4794" versionUuid="3AF42C94-F053-3CD6-E053-9730830A4794" createdDate="2015-05-07T10:26:50" createdByUser="WyssAndre" lastChangedDate="2023-12-21T10:33:15" lastChangedByUser="OggieSebas" testDescriptor="RegularExpression(5)">
+      <Description>UUID may only contain capital letters and numbers</Description>
+      <Parameters>
+        <Dataset parameter="table" value="TOPGIS_GC.GC_UNCO_DESPOSIT" workspace="GC_Production" />
+        <Scalar parameter="pattern" value="([0-9A-F]){8}-([0-9A-F]){4}-([0-9A-F]){4}-([0-9A-F]){4}-([0-9A-F]){12}" />
+        <Scalar parameter="fieldNames" value="UUID" />
+        <Scalar parameter="matchIsError" value="False" />
+        <Scalar parameter="patternDescription" value="" />
+      </Parameters>
+    </QualityCondition>
+  </QualityConditions>
+  <TestDescriptors>
+    <TestDescriptor name="ContainsOther(0)" createdDate="2015-07-08T13:36:14" createdByUser="WyssAndre" lastChangedDate="2015-07-08T13:36:14" lastChangedByUser="WyssAndre" allowErrors="true">
+      <TestClass type="EsriDE.ProSuite.QA.Tests.QaContainsOther" assembly="EsriDE.ProSuite.QA.Tests" constructorIndex="0" />
+    </TestDescriptor>
+    <TestDescriptor name="CrossesOther(0)" createdDate="2015-07-08T13:36:14" createdByUser="WyssAndre" lastChangedDate="2015-07-08T13:36:14" lastChangedByUser="WyssAndre" allowErrors="true">
+      <TestClass type="EsriDE.ProSuite.QA.Tests.QaCrossesOther" assembly="EsriDE.ProSuite.QA.Tests" constructorIndex="0" />
+    </TestDescriptor>
+    <TestDescriptor name="Curve(0)" createdDate="2015-05-07T10:31:25" createdByUser="WyssAndre" lastChangedDate="2015-07-08T13:36:15" lastChangedByUser="WyssAndre">
+      <TestClass type="EsriDE.ProSuite.QA.Tests.QaCurve" assembly="EsriDE.ProSuite.QA.Tests" constructorIndex="0" />
+    </TestDescriptor>
+    <TestDescriptor name="DatasetConstraintFactory" createdDate="2015-07-08T13:36:14" createdByUser="WyssAndre" lastChangedDate="2015-09-14T14:36:39" lastChangedByUser="WyssAndre">
+      <TestFactory type="EsriDE.ProSuite.QA.TestFactories.QaDatasetConstraintFactory" assembly="EsriDE.ProSuite.QA.TestFactories" />
+    </TestDescriptor>
+    <TestDescriptor name="DuplicateGeometrySelf(1)" createdDate="2015-05-07T10:53:45" createdByUser="WyssAndre" lastChangedDate="2015-07-08T13:36:15" lastChangedByUser="WyssAndre">
+      <TestClass type="EsriDE.ProSuite.QA.Tests.QaDuplicateGeometrySelf" assembly="EsriDE.ProSuite.QA.Tests" constructorIndex="1" />
+    </TestDescriptor>
+    <TestDescriptor name="GdbConstraintFactory" createdDate="2015-07-08T13:36:15" createdByUser="WyssAndre" lastChangedDate="2015-07-10T10:47:07" lastChangedByUser="WyssAndre">
+      <TestFactory type="EsriDE.ProSuite.QA.TestFactories.QaGdbConstraintFactory" assembly="EsriDE.ProSuite.QA.TestFactories" />
+    </TestDescriptor>
+    <TestDescriptor name="InteriorIntersectsOther(2)" createdDate="2015-07-08T13:36:15" createdByUser="WyssAndre" lastChangedDate="2015-07-08T13:36:15" lastChangedByUser="WyssAndre" allowErrors="true">
+      <TestClass type="EsriDE.ProSuite.QA.Tests.QaInteriorIntersectsOther" assembly="EsriDE.ProSuite.QA.Tests" constructorIndex="2" />
+    </TestDescriptor>
+    <TestDescriptor name="InteriorIntersectsSelf(4)" createdDate="2015-05-20T17:45:42" createdByUser="WyssAndre" lastChangedDate="2015-07-08T13:36:15" lastChangedByUser="WyssAndre">
+      <TestClass type="EsriDE.ProSuite.QA.Tests.QaInteriorIntersectsSelf" assembly="EsriDE.ProSuite.QA.Tests" constructorIndex="4" />
+    </TestDescriptor>
+    <TestDescriptor name="IntersectionMatrixOther(0)" createdDate="2015-07-08T13:36:15" createdByUser="WyssAndre" lastChangedDate="2015-07-08T13:36:15" lastChangedByUser="WyssAndre" allowErrors="true">
+      <TestClass type="EsriDE.ProSuite.QA.Tests.QaIntersectionMatrixOther" assembly="EsriDE.ProSuite.QA.Tests" constructorIndex="0" />
+    </TestDescriptor>
+    <TestDescriptor name="IsCoveredByOther(0)" createdDate="2015-07-08T13:36:15" createdByUser="WyssAndre" lastChangedDate="2015-07-08T13:36:15" lastChangedByUser="WyssAndre" allowErrors="true">
+      <TestClass type="EsriDE.ProSuite.QA.Tests.QaIsCoveredByOther" assembly="EsriDE.ProSuite.QA.Tests" constructorIndex="0" />
+    </TestDescriptor>
+    <TestDescriptor name="IsCoveredByOther(4)" createdDate="2015-07-08T13:36:15" createdByUser="WyssAndre" lastChangedDate="2015-07-08T13:36:15" lastChangedByUser="WyssAndre" allowErrors="true">
+      <TestClass type="EsriDE.ProSuite.QA.Tests.QaIsCoveredByOther" assembly="EsriDE.ProSuite.QA.Tests" constructorIndex="4" />
+    </TestDescriptor>
+    <TestDescriptor name="MinArea(0)" createdDate="2015-05-13T13:18:51" createdByUser="WyssAndre" lastChangedDate="2015-07-08T13:36:15" lastChangedByUser="WyssAndre" allowErrors="true">
+      <TestClass type="EsriDE.ProSuite.QA.Tests.QaMinArea" assembly="EsriDE.ProSuite.QA.Tests" constructorIndex="0" />
+    </TestDescriptor>
+    <TestDescriptor name="MinLength(2)" createdDate="2015-06-18T16:45:23" createdByUser="WyssAndre" lastChangedDate="2015-07-08T13:36:15" lastChangedByUser="WyssAndre" allowErrors="true">
+      <TestClass type="EsriDE.ProSuite.QA.Tests.QaMinLength" assembly="EsriDE.ProSuite.QA.Tests" constructorIndex="2" />
+    </TestDescriptor>
+    <TestDescriptor name="Multipart(0)" createdDate="2015-05-07T09:27:15" createdByUser="WyssAndre" lastChangedDate="2015-07-08T13:36:15" lastChangedByUser="WyssAndre">
+      <TestClass type="EsriDE.ProSuite.QA.Tests.QaMultipart" assembly="EsriDE.ProSuite.QA.Tests" constructorIndex="0" />
+    </TestDescriptor>
+    <TestDescriptor name="NeighbourAreas(3)" createdDate="2015-07-08T13:36:15" createdByUser="WyssAndre" lastChangedDate="2015-07-08T13:36:15" lastChangedByUser="WyssAndre" allowErrors="true">
+      <TestClass type="EsriDE.ProSuite.QA.Tests.QaNeighbourAreas" assembly="EsriDE.ProSuite.QA.Tests" constructorIndex="3" />
+    </TestDescriptor>
+    <TestDescriptor name="NoBoundaryLoops(1)" createdDate="2015-05-21T07:44:33" createdByUser="WyssAndre" lastChangedDate="2015-07-08T13:36:15" lastChangedByUser="WyssAndre">
+      <TestClass type="EsriDE.ProSuite.QA.Tests.QaNoBoundaryLoops" assembly="EsriDE.ProSuite.QA.Tests" constructorIndex="1" />
+    </TestDescriptor>
+    <TestDescriptor name="NoGaps(0)" createdDate="2015-07-08T13:36:15" createdByUser="WyssAndre" lastChangedDate="2015-07-08T13:36:15" lastChangedByUser="WyssAndre" allowErrors="true">
+      <TestClass type="EsriDE.ProSuite.QA.Tests.QaNoGaps" assembly="EsriDE.ProSuite.QA.Tests" constructorIndex="0" />
+    </TestDescriptor>
+    <TestDescriptor name="NonEmptyGeometry(1)" createdDate="2015-05-07T10:44:30" createdByUser="WyssAndre" lastChangedDate="2015-07-08T13:36:15" lastChangedByUser="WyssAndre">
+      <TestClass type="EsriDE.ProSuite.QA.Tests.QaNonEmptyGeometry" assembly="EsriDE.ProSuite.QA.Tests" constructorIndex="1" />
+    </TestDescriptor>
+    <TestDescriptor name="PartCoincidenceSelf(0)" createdDate="2015-07-08T13:36:15" createdByUser="WyssAndre" lastChangedDate="2015-07-08T13:36:15" lastChangedByUser="WyssAndre" allowErrors="true">
+      <TestClass type="EsriDE.ProSuite.QA.Tests.QaPartCoincidenceSelf" assembly="EsriDE.ProSuite.QA.Tests" constructorIndex="0" />
+    </TestDescriptor>
+    <TestDescriptor name="PointNotNear(0)" createdDate="2015-07-08T13:36:15" createdByUser="WyssAndre" lastChangedDate="2015-07-08T13:36:15" lastChangedByUser="WyssAndre" allowErrors="true">
+      <TestClass type="EsriDE.ProSuite.QA.Tests.QaPointNotNear" assembly="EsriDE.ProSuite.QA.Tests" constructorIndex="0" />
+    </TestDescriptor>
+    <TestDescriptor name="RegularExpression(5)" createdDate="2015-05-07T09:49:24" createdByUser="WyssAndre" lastChangedDate="2015-07-08T13:36:15" lastChangedByUser="WyssAndre">
+      <TestClass type="EsriDE.ProSuite.QA.Tests.QaRegularExpression" assembly="EsriDE.ProSuite.QA.Tests" constructorIndex="5" />
+    </TestDescriptor>
+    <TestDescriptor name="RelConstraint" createdDate="2015-07-08T13:36:15" createdByUser="WyssAndre" lastChangedDate="2015-07-08T13:36:15" lastChangedByUser="WyssAndre" allowErrors="true">
+      <TestFactory type="EsriDE.ProSuite.QA.TestFactories.QaRelConstraint" assembly="EsriDE.ProSuite.QA.TestFactories" />
+    </TestDescriptor>
+    <TestDescriptor name="RequiredFields(3)" createdDate="2015-07-08T13:36:15" createdByUser="WyssAndre" lastChangedDate="2015-07-08T13:36:15" lastChangedByUser="WyssAndre" allowErrors="true">
+      <TestClass type="EsriDE.ProSuite.QA.Tests.QaRequiredFields" assembly="EsriDE.ProSuite.QA.Tests" constructorIndex="3" />
+    </TestDescriptor>
+    <TestDescriptor name="SimpleGeometry(2)" createdDate="2015-05-06T08:48:16" createdByUser="WyssAndre" lastChangedDate="2015-07-10T10:31:08" lastChangedByUser="WyssAndre" stopOnError="true">
+      <TestClass type="EsriDE.ProSuite.QA.Tests.QaSimpleGeometry" assembly="EsriDE.ProSuite.QA.Tests" constructorIndex="2" />
+    </TestDescriptor>
+    <TestDescriptor name="SliverPolygon(1)" createdDate="2015-06-03T15:04:48" createdByUser="WyssAndre" lastChangedDate="2015-07-08T13:36:15" lastChangedByUser="WyssAndre" allowErrors="true">
+      <TestClass type="EsriDE.ProSuite.QA.Tests.QaSliverPolygon" assembly="EsriDE.ProSuite.QA.Tests" constructorIndex="1" />
+    </TestDescriptor>
+    <TestDescriptor name="TrimmedTextFields(0)" createdDate="2015-06-03T16:11:24" createdByUser="WyssAndre" lastChangedDate="2015-08-03T13:28:56" lastChangedByUser="WyssAndre">
+      <Description>Finds rows with text fields having leading or trailing whitespace characters.</Description>
+      <TestClass type="EsriDE.ProSuite.QA.Tests.QaTrimmedTextFields" assembly="EsriDE.ProSuite.QA.Tests" constructorIndex="0" />
+    </TestDescriptor>
+    <TestDescriptor name="Unique(0)" createdDate="2015-05-07T09:41:41" createdByUser="WyssAndre" lastChangedDate="2015-07-08T13:36:15" lastChangedByUser="WyssAndre">
+      <TestClass type="EsriDE.ProSuite.QA.Tests.QaUnique" assembly="EsriDE.ProSuite.QA.Tests" constructorIndex="0" />
+    </TestDescriptor>
+  </TestDescriptors>
+  <Workspaces>
+    <Workspace id="GC_Production" modelName="GC_Production" schemaOwner="TOPGIS_GC" />
+  </Workspaces>
+</DataQuality>
