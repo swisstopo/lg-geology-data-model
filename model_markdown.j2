@@ -1,8 +1,11 @@
 
-# Datenmodell Geologie, Version {{model.revision}}#
+# {{ _("Geological datamodel") }}, {{ _("Revision %(name)s", name=model.revision) }} #
 
 
-![Extrait GeoCover vers le Moléson](geocover.png "Moléson")
+
+
+
+![{{ _("Extract of Geocover and exemple of representation") }}](geocover.png "{{ _("Figure alt text") }}")
 
 
 
@@ -15,29 +18,31 @@
 {% set themeloop = loop %}
 
 
-## Theme {{ theme.name |upper}}
+## {{_("Theme")}} {{ theme.name |upper}}
 
 {% for cls in theme.classes -%}
 
 
 
-### Class {{ cls.name }} {{ '{#'}}{{cls.name | slugify}}{{'}'}}
-{{ cls.description.de| trim|highlight}}
+### {{_("Class")}} {{ cls.name }} {{ '{#'}}{{cls.name | slugify}}{{'}'}}
+{{ cls.description[lang]| trim|highlight}}
 
 
 
 
-    | Name                         | Type                              | Description
+
+    | {{_("Name")}}                | {{_("Type")}}                     | {{_("Description")}}
 ----|------------------------------|-----------------------------------|--------------------------------------
 {% for attr in cls.attributes -%}
+{%- if attr.mandatory -%}{% set mandatory =  "**%s**" % (_("mandatory")) -%}{% endif -%}
 {%- if attr.att_type == 'CD' -%}{% set slug = "%s-%s" % (cls.name, attr.name) -%}
 {%- elif attr.att_type == 'annex' -%}{% set slug, location = attr.value, 'vgl. Anhang %s' % attr.value %}{% set see_annex = 'Die möglichen Werte sind in der Tabelle %s im Anhang dieses Dokumentes verfügbar.' % attr.value %}{%- else -%}{% set slug = None %}{% endif -%}
 {%- if slug != None -%}
-{{loop.index}} | **{{ attr.name  }}**                | [CodedDomain](#{{slug| slugify}})  | {{ attr.description.de|trim }}. {{ see_annex }}
-[]()           | Cardinality [{{ attr.cardinality}}] |                                                      |
+{{loop.index}} | **{{ attr.name  }}**                           | [CodedDomain](#{{slug| slugify}})  | {{ attr.description[lang]|trim }}. {{ _("Die möglichen Werte sind in der Tabelle %(name)s im Anhang dieses Dokumentes verfügbar.", name=attr.value ) }}  {{mandatory}} 
+[]()           | {{_("Cardinality")}}   [{{ attr.cardinality}}] |                                    |  
 {% else -%}
-{{loop.index}} | **{{ attr.name  }}**                | {{attr.att_type}}                                    | {{ attr.description.de|trim }}
-[]()           | Cardinality [{{ attr.cardinality}}] | {{attr.value}}                                       |
+{{loop.index}} | **{{ attr.name  }}**                           | {{attr.att_type}}                  | {{ attr.description[lang]|trim }} {{mandatory}}
+[]()           | {{_("Cardinality")}}  [{{ attr.cardinality}}]  | {{attr.value}}                     |  
 {% endif -%}
 
 {% endfor %}
@@ -46,14 +51,14 @@
 
 {% for attr in cls.attributes -%}
 {% set slug = "%s-%s" % (cls.name, attr.name) %}
-#### Attribute {{ attr.name }}
+#### {{_("Attribute")}}  {{ attr.name }}
 {%- if attr.att_type == 'CD' %} {{ '{#'}}{{slug| slugify}}{{'}'}}{% endif %}
-_{{ attr.description.de|trim|highlight}}_
-{%- if attr.att_type in ('boolean', 'string', 'float', 'range', 'integer') %}
-_Datentyp:  {{ attr.att_type  }}_
+_{{ attr.description[lang]|trim|highlight}}_
+{% if attr.att_type in ('boolean', 'string', 'float', 'range', 'integer') %}
+_{{_("Datatype")}} :  {{ attr.att_type  }}_
 {% endif %}
 {%- if attr.att_type == 'annex' %}
-Siehe die CodedDomain [{{attr.value}}](#{{attr.value| slugify}}) in Ahhang
+{{_("See the CodedDomain")}} [{{attr.value}}](#{{attr.value| slugify}}) {{_("in the Annex")}}
 {% endif %}
 
 {% if 'pairs' in attr -%}
@@ -72,8 +77,8 @@ Siehe die CodedDomain [{{attr.value}}](#{{attr.value| slugify}}) in Ahhang
 {% for annex in annexes -%}
 
 
-## Anhang {{ annex.name |upper}} {{ '{#'}}{{annex.name | slugify}}{{'}'}}
-{{ annex.description.de }}
+## {{_("Annexe")}}  {{ annex.name |upper}} {{ '{#'}}{{annex.name | slugify}}{{'}'}}
+{{ annex.description[lang] }}
 
 {% if 'pairs' in annex -%}
 |GeolCode|Deutsch|Français|
@@ -83,3 +88,5 @@ Siehe die CodedDomain [{{attr.value}}](#{{attr.value| slugify}}) in Ahhang
 {% endfor %}
 {% endif %}
 {% endfor %}
+
+

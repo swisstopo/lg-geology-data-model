@@ -39,6 +39,24 @@ Creation des fichiers JSON contenant les _coded domains_ et la liste des _subtyp
 Dans une fenêtre Python ou un notebook _Jupyter_ exécuter les deux scripts _coded_domains.py_ et
 _subtypes.py_ . Le résultat sont deux fichiers JSON _coded_domains.json_ et _subtypes.json_
 
+
+
+## Traductions
+
+Extraction des chaînes de charactères :
+
+    pybabel extract -F babel.cfg -o locale/app.pot .
+    
+Fusion des catalogues :
+
+    pybabel update -i locale/app.pot   -d app
+    
+Compiler les catalogues :
+    
+    pybabel compile --domain=app --directory=locale --use-fuzzy
+
+
+
 ## Création du fichier Markdown source
 
 Le script _datamodel.py_ combine les informations de la configuration _datamodel.yaml_  avec _coded_domains.json_ , _subtypes.json_ et le fichier de traduction.

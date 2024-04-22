@@ -5,6 +5,11 @@ import pandas as pd
 import sys
 import datetime
 import re
+import os
+
+import click
+
+
 
 
 from loguru import logger
@@ -21,11 +26,55 @@ with open("subtypes.json", "r") as f:
 
 df = pd.read_csv("../data/GeolCodeText_Trad_230317.csv", sep=";")
 
+po_header_tpl = '''
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2008-02-06 16:25-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: ENCODING\n"'''
+
+
+def create_msg(df):
+    
+    print(df.columns)
+
+    de = list(zip(df['GeolCodeInt'], df['DE']))
+
+    fr  =list(zip(df['GeolCodeInt'], df['FR']))
+
+    msgs = {}
+    msgs['de'] = "\n".join([f'\nmsgid "{m[0]}"\nmsgstr "{m[1]}"' for m in de])
+    msgs['fr'] = "\n".join( [f'\nmsgid "{m[0]}"\nmsgstr "{m[1]}"' for m in fr])
+    empty_pot= "\n".join( [f'\nmsgid "{m[0]}"\nmsgstr ""' for m in fr])
+
+    
+    
+    for lang in ('de', 'fr'):
+        locale_dir = f'./locale/{lang}/LC_MESSAGES'
+        if not os.path.isdir(locale_dir):
+            os.makedirs(locale_dir)
+            
+        with open(os.path.join(locale_dir, 'datamodel.po'), 'w') as f:
+            f.write(po_header_tpl + msgs[lang])
+    with open(os.path.join('locale', 'datamodel.pot'), 'w') as f:
+            f.write(po_header_tpl + empty_pot)
+create_msg(df)
 
 df = df.set_index(["GeolCodeInt"])
 
-
 def translate(geol_code, lang="FR"):
+   
     msg = ""
     if lang in ("DE", "FR"):
         try:
@@ -95,6 +144,7 @@ class Report:
         for theme in model["themes"]:
             for cls in theme.get("classes"):
                 attributes = cls.get("attributes")
+                cls['abrev'] = f"{theme['name'][0].upper()}{cls['name'][0:3].lower()}"
                 if attributes:
                     for att in attributes:
                         att_type = att.get("att_type")
@@ -169,21 +219,34 @@ class Report:
                             print("")
                         print("")
 
-
-if __name__ == "__main__":
+@click.command()
+@click.option('--lang', prompt='Language to generate', type=click.Choice(['de', 'fr'], case_sensitive=False),
+              help='Language for the document')
+def datamodel(lang):
     import datetime
     import os
     import sys
     from jinja2 import Template
+    from babel.support import Translations
+    from babel.core import Locale
     import jinja2
     from pathlib import Path
     import re
+    from babel import Locale
+    # Parsing
+    Locale.negotiate(['de_DE', 'en_US'], ['de_DE', 'de_AT'])
+    
+
+   
+    
 
     yaml_file = "datamodel.yaml"
     yaml_dir = os.path.dirname(os.path.realpath(__file__))
 
     project_name = Path(yaml_file).stem
     model = Report(yaml_file)
+    
+    
 
     # model.to_markdown()
 
@@ -192,7 +255,20 @@ if __name__ == "__main__":
     data = model.to_json()
 
     loader = jinja2.FileSystemLoader(yaml_dir)
-    env = jinja2.Environment(autoescape=True, loader=loader)
+    env = jinja2.Environment(autoescape=True, loader=loader, extensions=["jinja2.ext.i18n"])
+    
+    
+    # TODO: only one language
+    translations = Translations.load('locale', [lang], 'datamodel')
+    ui_translations = Translations.load('locale', [lang], 'app')
+    
+    translations.merge(ui_translations)
+    data['lang'] = lang
+    
+
+    env.install_gettext_translations(translations,  newstyle=True)
+    
+    
 
     def slugify(input):
         """Custom filter"""
@@ -226,14 +302,29 @@ if __name__ == "__main__":
     temp = env.get_template("model_markdown.j2")
     # temp.render(data)
 
-    with open(f"{project_name}.json", "w") as f:
+    with open(f"{project_name}_{lang}.json", "w") as f:
         f.write(json.dumps(data, indent=4, cls=DatetimeEncoder))
 
     # with open("model_markdown.j2") as f:
     #    template = Template(f.read())
 
-    print(temp.render(data))
+    #print(temp.render(data))
 
-    with open(f"{project_name}.md", "w") as f:
+    with open(f"{project_name}_{lang}.md", "w") as f:
         # f.write(template.render(data))
         f.write(temp.render(data))
+        
+    # Metadata
+    meta = env.get_template("metadata.yaml.j2")
+    with open(f"metadata_{lang}.yaml", "w") as f:
+        # f.write(template.render(data))
+        f.write(meta.render(data))
+        
+        
+     
+        
+       
+
+
+if __name__ == "__main__":
+    datamodel()

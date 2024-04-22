@@ -1,21 +1,20 @@
 {
-    "version": 0.2,
-    "date": "2024-04-15",
-    "model": [
-        {
-            "revision": 3.5,
-            "revision_date": "2024-04-30"
-        }
-    ],
+    "version": 0.4,
+    "date": "2024-04-20",
+    "model": {
+        "revision": 3.5,
+        "revision_date": "2024-04-30"
+    },
     "themes": [
         {
             "name": "Rock_Bodies",
             "classes": [
                 {
                     "name": "Unconsolidated_Deposits_PT",
+                    "abrev": "Runc",
                     "description": {
                         "de": "Die Klasse Unconsolidated_Deposits_PT umfasst einzelne Gesteine (Korngr\u00f6sse: Steine bis Bl\u00f6cke), die durch gravitative, glaziale oder anthropogene Transportprozesse an ihren heutigen Ort gelangten, respektive sich an Ort und Stelle durch Verwitterung des umliegenden Gesteins gebildet haben.\n",
-                        "fr": "La classe Unconsolidated_Deposits_PT comprend les volumes rocheux individualis\u00e9s (de taille\nvariable, des galets aux blocs) qui ont \u00e9t\u00e9 transport\u00e9s par des processus gravitaires, glaciaires ou\nanthropog\u00e9niques jusqu\u2019\u00e0 leur position actuelle, ou d\u00e9gag\u00e9s sur place par d\u00e9gradation de la\nroche sous-jacente.\n"
+                        "fr": "La classe Unconsolidated_Deposits_PT comprend les volumes rocheux individualis\u00e9s (de taille variable, des galets aux blocs) qui ont \u00e9t\u00e9 transport\u00e9s par des processus gravitaires, glaciaires ou anthropog\u00e9niques jusqu\u2019\u00e0 leur position actuelle, ou d\u00e9gag\u00e9s sur place par d\u00e9gradation de la roche sous-jacente.\n"
                     },
                     "attributes": [
                         {
@@ -44,7 +43,7 @@
                             "value": "GC_PNT_RUNC_STATUS_CD",
                             "description": {
                                 "de": "Zustand der Objektart",
-                                "fr": ""
+                                "fr": "\u00c9tat du type d'objet"
                             },
                             "cardinality": 1,
                             "pairs": {
@@ -62,7 +61,7 @@
                             "value": "GC_PNT_RUNC_ROCK_TYP_CD",
                             "description": {
                                 "de": "Gesteinstyp (Kristallingestein / Sedimentgestein)",
-                                "fr": ""
+                                "fr": "Type de roche"
                             },
                             "cardinality": "0..1",
                             "pairs": {
@@ -79,7 +78,7 @@
                             "value": "GC_PNT_RUNC_ROCK_SPE_CD",
                             "description": {
                                 "de": "Bezeichnung des Leitgesteins",
-                                "fr": ""
+                                "fr": "Description de la roche rep\u00e8re."
                             },
                             "cardinality": "0..1",
                             "pairs": {
@@ -117,7 +116,7 @@
                             "name": "mat_type",
                             "description": {
                                 "de": "Materialbezeichnung (lithologische Einheit)",
-                                "fr": ""
+                                "fr": "Description du mat\u00e9riel (unit\u00e9 lithologique)"
                             },
                             "att_type": "annex",
                             "value": "GC_LITHO_UNCO_CD",
@@ -145,6 +144,7 @@
                 },
                 {
                     "name": "Unconsolidated_Deposits_PLG",
+                    "abrev": "Runc",
                     "description": {
                         "de": "Die Klasse Unconsolidated_Deposits_PLG beinhaltet alle fl\u00e4chenhaft\nausgeschiedenen Lockergesteine.\\\nDie Angabe, ob eine Lockergesteinsmasse bewegt (durch Gravitation versetzt) wurde, geht\naus der Klasse Instabilities_within_Unconsolidated_Deposits_PLG (Thema\nGeomorphology) hervor. Eine Ausnahme bilden Lockergesteinsmassen,\nwelche unter dem Einfluss der Schwerkraft bewegt wurden und keine\nAngaben zum Ausgangsmaterial enthalten (Rutschmassen oder zerr\u00fcttete\nGesteinsmassen \u00abSackungsmassen\u00bb).\\\nSolche Lockergesteine werden sowohl in der Klasse Unconsolidated_Deposits_PLG als auch in der Klasse\nInstabilities_with_in_Unconsolidated_Deposits_PLG erfasst. Zur n\u00e4heren\nErkl\u00e4rung der verschiedenen Objektarten sind im Anhang A einige\nFallbeispiele abgebildet.\n",
                         "fr": "La classe Unconsolidated_Deposits_PLG contient toutes les masses distinctes de roches meubles\noccupant une surface. L\u2019information indiquant si une roche meuble est en mouvement\n(d\u00e9plac\u00e9e par gravitation) se trouve dans la classe Instabilities_within_Unconsolidated_Deposits_\nPLG (Th\u00e8me Geomorphology). Cependant, lorsque la nature du mat\u00e9riel en glissement n\u2019est pas\ndistinguable, celle-ci pourra \u00eatre attribu\u00e9 en tant que masse gliss\u00e9e ou en glissement ou masse\nde roche tass\u00e9e et disloqu\u00e9e. A des fins de clarification, quelques exemples des diff\u00e9rents types\nd'objets sont illustr\u00e9s dans l'annexe A.\n"
@@ -167,17 +167,18 @@
                             "name": "litstrat",
                             "description": {
                                 "de": "Lithostratigraphische Einheit.",
-                                "fr": ""
+                                "fr": "Description lithostratigraphique"
                             },
                             "att_type": "annex",
                             "value": "GC_LITSTRAT_UNCO_CD",
-                            "cardinality": 1
+                            "cardinality": 1,
+                            "mandatory": true
                         },
                         {
                             "name": "litho",
                             "description": {
                                 "de": "Lithologische Beschreibung",
-                                "fr": ""
+                                "fr": "Description lithologique."
                             },
                             "att_type": "annex",
                             "value": "GC_LITHO_CD",
@@ -186,28 +187,30 @@
                         {
                             "name": "chrono_t",
                             "description": {
-                                "de": "Chronostratigraphische Zuordnung der Obergrenze der Kartiereinheit (Top)",
-                                "fr": ""
+                                "de": "Chronostratigraphische Zuordnung der Obergrenze der Kartiereinheit (Top)\n",
+                                "fr": "Attribution chronostratigraphique du toit de la formation  (top)\n"
                             },
                             "att_type": "annex",
                             "value": "GC_CHRONO_CD",
-                            "cardinality": 1
+                            "cardinality": 1,
+                            "mandatory": true
                         },
                         {
                             "name": "chrono_b",
                             "description": {
-                                "de": "Chronostratigraphische Zuordnung der Untergrenze der Kartiereinheit (Basis)",
-                                "fr": ""
+                                "de": "Chronostratigraphische Zuordnung der Untergrenze der Kartiereinheit (Basis)\n",
+                                "fr": "Attribution chronostratigraphique de la base de la  formation (basis)\n"
                             },
                             "att_type": "annex",
                             "value": "GC_CHRONO_CD",
-                            "cardinality": 1
+                            "cardinality": 1,
+                            "mandatory": true
                         },
                         {
                             "name": "mat_type",
                             "description": {
                                 "de": "Materialbezeichnung (lithologische Einheit)",
-                                "fr": ""
+                                "fr": "Description du mat\u00e9riel (unit\u00e9 lithologique)"
                             },
                             "value": "Lithostratigraphic_Units_Litho",
                             "cardinality": "0..3"
@@ -225,7 +228,7 @@
                             "name": "composit",
                             "description": {
                                 "de": "Zusammensetzung des Lockergesteins",
-                                "fr": ""
+                                "fr": "Composition de la roche meuble"
                             },
                             "att_type": "table",
                             "value": "gc_composit",
@@ -235,7 +238,7 @@
                             "name": "admixture",
                             "description": {
                                 "de": "Beimengung",
-                                "fr": ""
+                                "fr": "Incorporation"
                             },
                             "att_type": "table",
                             "value": "gc_admixture",
@@ -271,7 +274,7 @@
                             "name": "charact",
                             "description": {
                                 "de": "Spezifische Eigenschaft.",
-                                "fr": ""
+                                "fr": "Structure s\u00e9dimentaire"
                             },
                             "att_type": "table",
                             "value": "gc_charcat",
@@ -281,7 +284,7 @@
                             "name": "morpholo",
                             "description": {
                                 "de": "Morphologie der Lockergesteinseinheit",
-                                "fr": ""
+                                "fr": "Morphologie de l\u2019unit\u00e9 de roche meuble"
                             },
                             "att_type": "CD",
                             "value": "GC_UN_DEP_RUNC_MORPHOLO_CD",
@@ -303,7 +306,7 @@
                             "name": "glac_type",
                             "description": {
                                 "de": "Gletschertyp; Attribut nur f\u00fcr Mor\u00e4nen",
-                                "fr": ""
+                                "fr": "Type de glacier auquel le type d\u2019objet est associ\u00e9. Cet  attribut n\u2019est valable que pour des moraines\n"
                             },
                             "att_type": "CD",
                             "value": "GC_UN_DEP_RUNC_GLAC_TYP_CD",
@@ -341,7 +344,7 @@
                             "value": "GC_UN_DEP_RUNC_THIN_COV_CD",
                             "description": {
                                 "de": "Lockermaterialbedeckung, wenn vorhanden.",
-                                "fr": ""
+                                "fr": "Couverture meuble pelliculaire"
                             },
                             "cardinality": "0..1",
                             "pairs": {
@@ -368,9 +371,10 @@
                 },
                 {
                     "name": "Bedrock_PLG",
+                    "abrev": "Rbed",
                     "description": {
                         "de": "Die Klasse Bedrock_PLG enth\u00e4lt alle fl\u00e4chenbildenden lithostratigraphischen Festgesteinseinheiten. Die Angabe,  ob ein Festgestein bewegt (durch Gravitation versetzt) wurde, geht aus der Klasse Instabilities_within_Bedrock_PLG (Thema Geomorphology) hervor.\n",
-                        "fr": "La classe Bedrock_PLG regroupe toutes les unit\u00e9s lithostratigraphiques de roches consolid\u00e9es qui\nconstituent une surface. L\u2019information indiquant si une roche consolid\u00e9e est en mouvement\n(d\u00e9plac\u00e9e par gravitation) se trouve dans la classe Instabilities_ within_Bedrock_PLG (Th\u00e8me\nGeomorphology).\n"
+                        "fr": "La classe Bedrock_PLG regroupe toutes les unit\u00e9s lithostratigraphiques de roches consolid\u00e9es qui constituent une surface. L\u2019information indiquant si une roche consolid\u00e9e est en mouvement (d\u00e9plac\u00e9e par gravitation) se trouve dans la classe Instabilities_ within_Bedrock_PLG (Th\u00e8me Geomorphology).\n"
                     },
                     "attributes": [
                         {
@@ -399,7 +403,7 @@
                             "name": "listrat",
                             "description": {
                                 "de": "Lithostratigraphische Einheit",
-                                "fr": ""
+                                "fr": "Description lithostratigraphique"
                             },
                             "att_type": "annex",
                             "value": "GC_LITSTRAT_BED_CD",
@@ -411,7 +415,7 @@
                             "value": "GC_LITHO_CD",
                             "description": {
                                 "de": "Lithologische Beschreibung",
-                                "fr": ""
+                                "fr": "Description lithologique"
                             },
                             "cardinality": "1..3"
                         },
@@ -420,10 +424,11 @@
                             "att_type": "annex",
                             "value": "GC_CHRONO_CD",
                             "description": {
-                                "de": "Chronostratigraphische Zuordnung der Obergrenze der Kartiereinheit\n(Top)\n",
-                                "fr": ""
+                                "de": "Chronostratigraphische Zuordnung der Obergrenze der Kartiereinheit (Top)\n",
+                                "fr": "Attribution chronostratigraphique du toit de la  formation (top)\n"
                             },
-                            "cardinality": 1
+                            "cardinality": 1,
+                            "mandatory": true
                         },
                         {
                             "name": "chrono_b",
@@ -431,9 +436,10 @@
                             "value": "GC_CHRONO_CD",
                             "description": {
                                 "de": "Chronostratigraphische Zuordnung der Untergrenze der Kartiereinheit (Basis)",
-                                "fr": ""
+                                "fr": "Attribution chronostratigraphique de la base de la  formation (basis).\n"
                             },
-                            "cardinality": 1
+                            "cardinality": 1,
+                            "mandatory": true
                         },
                         {
                             "name": "tecto",
@@ -441,9 +447,10 @@
                             "value": "GC_TECTO_CD",
                             "description": {
                                 "de": "Tektonische Zugeh\u00f6rigkeit",
-                                "fr": ""
+                                "fr": "Attribution tectonique"
                             },
-                            "cardinality": 1
+                            "cardinality": 1,
+                            "mandatory": true
                         },
                         {
                             "name": "orig_descr",
@@ -467,7 +474,7 @@
                             "name": "exotic_ele",
                             "value": "boolean",
                             "description": {
-                                "de": "Handelt es sich bei der Objektart um ein exotisches Element; z.B. Einschluss, Linse, Tasche, Olistholith (ja / nein)?",
+                                "de": "Handelt es sich bei der Objektart um ein exotisches Element; z.B. Einschluss, Linse, Tasche, Olistholith (ja / nein)?\n",
                                 "fr": "S\u2019agit-il d\u2019un \u00e9l\u00e9ment exotique (oui / non)?"
                             },
                             "cardinality": 1
@@ -476,7 +483,7 @@
                             "name": "colour",
                             "att_type": "string",
                             "description": {
-                                "de": "Farbe des Gesteins. Pr\u00e4zisieren ob es sich um die Bruchfarbe, die Verwitterungsfarbe, etc. handelt; z.B.Verwitterungsfarbe grau.",
+                                "de": "Farbe des Gesteins. Pr\u00e4zisieren ob es sich um die Bruchfarbe, die Verwitterungsfarbe, etc. handelt; z.B.Verwitterungsfarbe grau.\n",
                                 "fr": "Couleur de la roche"
                             },
                             "cardinality": "0..1"
@@ -487,7 +494,7 @@
                             "value": "GC_MAIN_COM_CD",
                             "description": {
                                 "de": "Hauptgesteinskomponente des klastischen Sedimentgesteins",
-                                "fr": ""
+                                "fr": "Composant principal de la roche s\u00e9dimentaire clastique.\n"
                             },
                             "cardinality": "0..1",
                             "pairs": {
@@ -511,7 +518,7 @@
                             "value": "GC_SECO_COM_CD",
                             "description": {
                                 "de": "Nebengesteinskomponente des Sedimentgesteins",
-                                "fr": ""
+                                "fr": "Composant secondaire de la roche s\u00e9dimentaire"
                             },
                             "cardinality": "0..2",
                             "pairs": {
@@ -575,7 +582,7 @@
                             "value": "GC_BEDDING_CD",
                             "description": {
                                 "de": "Schichtung des Sedimentgesteins",
-                                "fr": ""
+                                "fr": "Matrice ou ciment de la roche s\u00e9dimentaire"
                             },
                             "cardinality": "0..2",
                             "pairs": {
@@ -597,7 +604,7 @@
                             "value": "GC_SEDI_STR_CD",
                             "description": {
                                 "de": "Textur des Sedimentgesteins",
-                                "fr": ""
+                                "fr": "Structure s\u00e9dimentaire de la roche s\u00e9dimentaire"
                             },
                             "cardinality": "0..2",
                             "pairs": {
@@ -619,7 +626,7 @@
                             "value": "GC_SEDI_TEX_CD",
                             "description": {
                                 "de": "Sedimentstruktur",
-                                "fr": ""
+                                "fr": "Texture de la roche s\u00e9dimentaire"
                             },
                             "pairs": {
                                 "20301005": "bioklastisch",
@@ -641,7 +648,7 @@
                             "value": "GC_IGNE_TEX_CD",
                             "description": {
                                 "de": "Struktur des magmatischen Gesteins",
-                                "fr": ""
+                                "fr": "Texture de la roche magmatique"
                             },
                             "cardinality": "0..1",
                             "pairs": {
@@ -659,7 +666,7 @@
                             "cardinality": "0..1",
                             "description": {
                                 "de": "Korngr\u00f6sse des magmatischen Gesteins",
-                                "fr": ""
+                                "fr": "Granulom\u00e9trie de la roche magmatique"
                             },
                             "pairs": {
                                 "14318003": "aphanitisch",
@@ -675,7 +682,7 @@
                             "value": "GC_AFFINITY_CD",
                             "description": {
                                 "de": "Affinit\u00e4t zu einer magmatischen Serie.",
-                                "fr": ""
+                                "fr": "Affinit\u00e9 avec une s\u00e9rie magmatique"
                             },
                             "pairs": {
                                 "15733001": "alkalisch",
@@ -690,7 +697,7 @@
                             "att_type": "string",
                             "description": {
                                 "de": "Bezeichnung des metamorphen Gesteins",
-                                "fr": ""
+                                "fr": "Description de la roche m\u00e9tamorphique."
                             },
                             "cardinality": "0..1"
                         },
@@ -700,7 +707,7 @@
                             "value": "GC_MINERAL_CD",
                             "description": {
                                 "de": "Wichtiges Mineral des metamorphen Gesteins",
-                                "fr": ""
+                                "fr": "Min\u00e9ral important de la roche m\u00e9tamorphique"
                             },
                             "cardinality": "0..3"
                         },
@@ -710,7 +717,7 @@
                             "value": "GC_META_STR_CD",
                             "description": {
                                 "de": "Textur des metamorphen Gesteins",
-                                "fr": ""
+                                "fr": "Structure de la roche m\u00e9tamorphique"
                             },
                             "cardinality": "0..3",
                             "pairs": {
@@ -744,6 +751,7 @@
             "classes": [
                 {
                     "name": "Instability_Structures_PT",
+                    "abrev": "Gins",
                     "description": {
                         "de": "Die Klasse Instability_Structures_PT enth\u00e4lt lokal beobachtete Hinweise auf Hanginstabilit\u00e4ten\n(Rutschungen), die r\u00e4umlich nicht abgegrenzt werden k\u00f6nnen. Wenn m\u00f6glich, sollen instabile\nGesteinsmassen durch Polygone erfasst werden (Klasse Instabilities_within_Unconsolidated_\nDeposits_PLG), die punktf\u00f6rmige Aufnahme ist zu vermeiden und vorwiegend f\u00fcr die Vektorisierung \u00e4lterer\ngedruckter Karten gedacht.\n",
                         "fr": "La classe Instability_Structures_PT contient des indications sur des instabilit\u00e9s de pentes\n(glissements) observ\u00e9s localement, qui ne peuvent pas \u00eatre d\u00e9limit\u00e9s spatialement. Cependant,\nlorsque cela est possible, les masses de roches instables doivent \u00eatre saisies comme polygones\n(classe Instabilities_within_Unconsolidated_Deposits_PLG). La repr\u00e9sentation sous forme de\npoint est \u00e0 \u00e9viter et a \u00e9t\u00e9 conserv\u00e9e avant tout pour la vectorisation d\u2019anciennes cartes\nimprim\u00e9es.\n"
@@ -766,6 +774,7 @@
                 },
                 {
                     "name": "Instability_Structures_L",
+                    "abrev": "Gins",
                     "description": {
                         "de": "Die Klasse Instability_Structures_L umfasst linienf\u00f6rmige Morphologien, die sich als Folge von\nHanginstabilit\u00e4ten an der Oberfl\u00e4che ausgebildet haben. Beim Abrissrand handelt es sich um den\noberen Rand der durch das Abgleiten der bewegten Masse freigelegten Gleitfl\u00e4che einer\nRutschung oder Sackung (Abrissnische)\n",
                         "fr": null
@@ -791,6 +800,7 @@
                 },
                 {
                     "name": "Instabilities_within_Unconsolidated_Deposits_PLG",
+                    "abrev": "Gins",
                     "description": {
                         "de": "Die Klasse Instabilities_within_Unconsolidated_Deposits_PLG beinhaltet alle Polygone, die Gebiete\nmit instabilen Lockergesteinen begrenzen. In dieser Klasse werden die Prozessr\u00e4ume der\nverschiedenen Typen von gleitenden Massenbewegungsprozessen ausgeschieden; die\neigentlichen Gesteinsk\u00f6rper und Ablagerungen, die von Massenbewegungsprozessen betroffen\nbzw. gebildet worden sind, werden in der Klasse Unconsolidated_Deposits_PLG beschrieben. Zur\nn\u00e4heren Erkl\u00e4rung der verschiedenen Objektarten sind im Anhang A einige Fallbeispiele\nabgebildet.\n",
                         "fr": "La classe Instabilities_within_Unconsolidated_Deposits_PLG contient tous les polygones qui\nd\u00e9limitent des zones de roches meubles instables. Dans cette classe on distingue les surfaces\naffect\u00e9es par les diff\u00e9rents types de ph\u00e9nom\u00e8nes de mouvement de masse. Les corps rocheux\nproprement dits ainsi que les d\u00e9p\u00f4ts affect\u00e9s resp. engendr\u00e9s par ces processus de mouvement\nde masse seront d\u00e9crits dans la classe Unconsolidated_ Deposits_PLG. A des fins de clarification,\nquelques exemples des diff\u00e9rents types d'objets sont illustr\u00e9s dans l'annexe A.\n"
@@ -811,6 +821,7 @@
                 },
                 {
                     "name": "Instabilities_within_Bedrock_PLG",
+                    "abrev": "Gins",
                     "description": {
                         "de": "Die Klasse Instabilities_within_Bedrock_PLG beinhaltet alle Polygone, die Gebiete mit instabilen\nFestgesteinen begrenzen. In dieser Klasse werden die Prozessr\u00e4ume der verschiedenen Typen von\ngleitenden Massenbewegungsprozessen ausgeschieden; die eigentlichen Gesteinsk\u00f6rper, die von\nMassenbewegungsprozessen betroffen sind, werden in der Klasse Bedrock_PLG beschrieben. Zur\nn\u00e4heren Erkl\u00e4rung der verschiedenen Objektarten sind im Anhang A einige Fallbeispiele\nabgebildet.\n",
                         "fr": "La classe Instabilities_within_Bedrock_PLG contient tous les polygones qui d\u00e9limitent des zones\nde roche consolid\u00e9e instable. Dans cette classe on distingue les surfaces affect\u00e9es par les\ndiff\u00e9rents types de ph\u00e9nom\u00e8nes de mouvement de masse. Les corps rocheux proprement dits\nqui sont affect\u00e9s par ces processus de mouvement de masse seront d\u00e9crits dans la classe\nBedrock_PLG. A des fins de clarification, quelques exemples des diff\u00e9rents types d'objets sont\nillustr\u00e9s dans l'annexe A.\n"
@@ -847,6 +858,7 @@
                 },
                 {
                     "name": "Glacial_Structures_PT",
+                    "abrev": "Ggla",
                     "description": {
                         "de": "Die Klasse Glacial_Structures_PT enth\u00e4lt Objektarten, welche die ehemalige Anwesenheit eines\nGletschers punktuell dokumentieren (Gletscherschliff ist ein r\u00e4umlich orientiertes Objekt und\nbefindet sich deshalb in der Klasse Lineation_PT).\n",
                         "fr": "La classe Glacial_Structures_PT contient des types d\u2019objets qui montrent ponctuellement la\npr\u00e9sence dans le pass\u00e9 d\u2019un glacier (les stries glaciaires sont des objets orient\u00e9s et se trouvent en\ncons\u00e9quence dans la classe Lineation_PT.)\n"
@@ -870,6 +882,7 @@
                 },
                 {
                     "name": "Glacial_and_Periglacial_Structures_L",
+                    "abrev": "Ggla",
                     "description": {
                         "de": "Die Klasse Glacial_and_Periglacial_Structures_L enth\u00e4lt linienf\u00f6rmige Strukturen, die auf ein\nglaziales oder periglaziales Bildungsmilieu hindeuten. Mit Ausnahme der Schliffgrenze handelt es\nsich in dieser Klasse ausschliesslich um akkummulative Landschaftsformen wie Mor\u00e4nenw\u00e4lle oder\nBlockw\u00fclste im Blockgletscher.\n",
                         "fr": "La classe Glacial_and_Periglacial_Structures_L contient des structures de formes lin\u00e9aires,\nfa\u00e7onnant une formation glaciaire ou p\u00e9riglaciaire. A l\u2019exception des limites sup\u00e9rieures de\nl\u2019\u00e9rosion glaciaire, il s\u2019agit principalement dans cette classe de formes d\u2019accumulation telles que\nles vallums morainiques ou les bourrelets d\u2019un glacier rocheux.\n"
@@ -900,7 +913,7 @@
                             "name": "morai_mo",
                             "description": {
                                 "de": "Morphologie der Mor\u00e4ne",
-                                "fr": ""
+                                "fr": "Morphologie de la moraine"
                             },
                             "att_type": "CD",
                             "value": "GC_LIN_GGLA_MORAI_MO_CD",
@@ -916,7 +929,7 @@
                             "name": "glac_typ",
                             "description": {
                                 "de": "Gletschertyp, auf welchen die Objektart bezogen ist",
-                                "fr": ""
+                                "fr": "Type de glacier auquel le type d\u2019objet est associ\u00e9"
                             },
                             "att_type": "CD",
                             "value": "GC_LIN_GGLA_GLAC_TYP_CD",
@@ -932,7 +945,7 @@
                             "name": "ice_m_p",
                             "description": {
                                 "de": "R\u00e4umlicher Gletscherstand",
-                                "fr": ""
+                                "fr": "Stade glaciaire"
                             },
                             "att_type": "CD",
                             "value": "GC_LIN_GGLA_ICE_M_P_CD",
@@ -1005,7 +1018,7 @@
                             "name": "quat_str",
                             "description": {
                                 "de": "Zeitliche quart\u00e4rstratigraphische Zuordnung des Mor\u00e4nenw\u00e4lls",
-                                "fr": ""
+                                "fr": "Attribution chronostratigraphique du vallum morainique  au sein du Quaternaire\n"
                             },
                             "att_type": "CD",
                             "value": "GC_LIN_GGLA_QUAT_STR_CD",
@@ -1045,9 +1058,10 @@
                 },
                 {
                     "name": "Glacial_Structures_PLG",
+                    "abrev": "Ggla",
                     "description": {
-                        "de": "Die Klasse Glacial_Structures_PLG umfasst fl\u00e4chenhafte glaziale Landschaftsformen, die durch\nbasales Fliessen des Gletschereises oder dessen Abschmelzen entstanden sind.\n",
-                        "fr": "La classe Glacial_Structures_PLG regroupe les formes du paysage d\u2019origine glaciaire qui se sont\nform\u00e9es par \u00e9coulement basal de la glace du glacier ou par sa fonte.\n"
+                        "de": "Die Klasse Glacial_Structures_PLG umfasst fl\u00e4chenhafte glaziale Landschaftsformen, die durch basales Fliessen des Gletschereises oder dessen Abschmelzen entstanden sind.\n",
+                        "fr": "La classe Glacial_Structures_PLG regroupe les formes du paysage d\u2019origine glaciaire qui se sont form\u00e9es par \u00e9coulement basal de la glace du glacier ou par sa fonte.\n"
                     },
                     "attributes": [
                         {
@@ -1069,6 +1083,7 @@
                 },
                 {
                     "name": "Erosional_Structures_PT",
+                    "abrev": "Gero",
                     "description": {
                         "de": "Die Klasse Erosional_Structures_PT beinhaltet lokale Landschaftselemente, die sich im Laufe der\nZeit unter Einwirkung von diversen Erosionsprozessen gebildet haben.\n",
                         "fr": "La classe Erosional_Structures_PT contient des \u00e9l\u00e9ments locaux du paysage qui se sont form\u00e9s au\ncours du temps sous l\u2019influence de processus \u00e9rosifs.\n"
@@ -1091,6 +1106,7 @@
                 },
                 {
                     "name": "Erosional_Structures_L",
+                    "abrev": "Gero",
                     "description": {
                         "de": "Die Klasse Erosional_Structures_L enth\u00e4lt linienf\u00f6rmige erosive Formen wie Erosionsr\u00e4nder im\nAllgemeinen oder Terrassenkanten.\nAuf \u00e4lteren gedruckten Karten wurden Erosionsr\u00e4nder und Terrassenkanten oftmals nicht\nunterschieden. In den Vektordaten wird diese Unterscheidung jedoch konsequent vollzogen. Dies\nbedingt, dass im Rahmen der Vektorisierung \u00e4lterer gedruckter Karten Erosionsr\u00e4nder und\nTerrassenkanten aufgeteilt werden m\u00fcssen. Terrassenkanten werden nur dann als solche\nattributiert, wenn sie durch ihre Lage und entsprechende Schotterterrassen eindeutig zugeordnet\nwerden k\u00f6nnen. Zweifelhafte F\u00e4lle werden als Erosionsr\u00e4nder aufgenommen.\n",
                         "fr": "La classe Erosional_Structures_L regroupe des formes \u00e9rosives lin\u00e9aires comme les bords\nd\u2019\u00e9rosion en g\u00e9n\u00e9ral ou les bords de terrasse. Sur les anciennes cartes imprim\u00e9es, les bords de\nterrasse et les bords d\u2019\u00e9rosion n\u2019\u00e9taient souvent pas distingu\u00e9s. Dans les donn\u00e9es vectorielles,\ncette distinction doit \u00eatre effectu\u00e9e. Par cons\u00e9quent, dans les cas de vectorisation d\u2019anciennes\ncartes imprim\u00e9es, les bords de terrasse et d\u2019\u00e9rosion devront \u00eatre s\u00e9par\u00e9s. Les bords de terrasse\nseront attribu\u00e9s en tant que tels seulement lorsqu\u2019il sera clairement possible de les identifier par\nleur position ainsi que par leur association avec des terrasses de graviers. Les cas incertains\nseront attribu\u00e9s en tant que bords d\u2019\u00e9rosion.\n"
@@ -1115,6 +1131,7 @@
                 },
                 {
                     "name": "Karstic_Structures_PT",
+                    "abrev": "Gkar",
                     "description": {
                         "de": "Die Klasse Karstic_Structures_PT beinhaltet Karstph\u00e4nomene, die punktf\u00f6rmig dargestellt werden.\nDarunter fallen u.a. der Ponor oder der Eingang zu einer H\u00f6hle.\n",
                         "fr": "La classe Karstic_Structures_PT regroupe les ph\u00e9nom\u00e8nes karstiques qui sont repr\u00e9sent\u00e9s par des\nformes ponctuelles. Elle contient entre autres le ponor ou l\u2019entr\u00e9e d\u2019une grotte.\n"
@@ -1154,6 +1171,7 @@
                 },
                 {
                     "name": "Karstic_Structures_PLG",
+                    "abrev": "Gkar",
                     "description": {
                         "de": "Die Klasse Karstic_Structures_PLG umfasst fl\u00e4chenhafte Karstformen wie Dolinen oder Poljen.\nDolinen werden immer als Polygone erfasst (das) bildet daf\u00fcr eine wichtige Grundlage). Kleine\nDolinen (Durchmesser < 25 m), werden durch eine definierte Einheitsfl\u00e4che von 500 m\u00b2\ndargestellt.\n",
                         "fr": null
@@ -1179,6 +1197,7 @@
                 },
                 {
                     "name": "Alluvial_and_Lacustrine_Structures_L",
+                    "abrev": "Gall",
                     "description": {
                         "de": "Die Klasse Alluvial_and_Lacustrine_Structures_L beinhaltet linienf\u00f6rmige Morphologien\nfluviatilen oder lakustrischen Ursprungs.\n",
                         "fr": "La classe Alluvial_and_Lacustrine_Structures_L contient les morphologies lin\u00e9aires d\u2019origine\nfluviatile ou lacustre.\n"
@@ -1202,7 +1221,7 @@
                             "name": "age",
                             "description": {
                                 "de": "Alter der Objektart.",
-                                "fr": ""
+                                "fr": "\u00c2ge du type d'obje"
                             },
                             "att_type": "CD",
                             "value": "GC_LIN_GALL_AGE_CD",
@@ -1223,6 +1242,7 @@
             "classes": [
                 {
                     "name": "Deformation_Structures_PT",
+                    "abrev": "Tdef",
                     "description": {
                         "de": "Die Klasse Deformation_Structures_PT beinhaltet punktuell beobachtete tektonische\nDeformationsstrukturen wie lokal stark verfaltete Stellen (F\u00e4ltelung) oder Orte mit ausgepr\u00e4gter\nKl\u00fcftung. Ebenfalls in dieser Klasse befinden sich konstruierte Punkte wie z.B. die Orientierung\nder Faltenachsenfl\u00e4che. Die Darstellung der Spur einer Achsenfl\u00e4che entspricht der Symbolisierung\neines konstruierten Faltenscharniers, in einem Punkt der Intersektion einer Achsenfl\u00e4che und der\nTopografie. Diese beiden letzterw\u00e4hnten Objektarten sind im Anhang A zur besseren\nVerst\u00e4ndlichkeit abgebildet.\n",
                         "fr": "La classe Deformation_Structures_PT contient les structures de d\u00e9formation ponctuelles observ\u00e9es, comme les endroits fortement pliss\u00e9s (plissotement) ou les lieux avec des diaclases bien\nmarqu\u00e9es. Dans cette classe se trouvent aussi les points construits, comme p. ex. la repr\u00e9sentation de la trace d\u2019une surface axiale. Celle-ci correspond \u00e0 la symbolisation d\u2019une charni\u00e8re de pli\nconstruite \u00e0 partir de l\u2019intersection de la surface axiale avec la topographie et elle est repr\u00e9sent\u00e9e\npar un ou plusieurs points. Ces deux derniers types d\u2019objets sont illustr\u00e9s dans l\u2019annexe A pour\nen faciliter la compr\u00e9hension.\n"
@@ -1250,8 +1270,8 @@
                         {
                             "name": "azimuth",
                             "description": {
-                                "de": "Fallrichtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad (0\u00b0 359\u00b0) im Uhrzeigersinn gemessen.",
-                                "fr": "Azimut du type d'objet."
+                                "de": "Fallrichtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad\n(0\u00b0 359\u00b0) im Uhrzeigersinn gemessen.\n",
+                                "fr": "Azimut du type d'objet. L'azimut est mesur\u00e9 depuis le \nnord en degr\u00e9 de 0\u00b0 \u00e0 359\u00b0 dans le sens des aiguilles \nd'une montre\n"
                             },
                             "att_type": "integer",
                             "cardinality": "0..1"
@@ -1259,8 +1279,8 @@
                         {
                             "name": "dip",
                             "description": {
-                                "de": "Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0\u00b0) nach unten bis in die Vertikale (90\u00b0).",
-                                "fr": "Valeur du pendage du type d'objet."
+                                "de": "Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen\naus der Horizontalen (0\u00b0) nach unten bis in die Vertikale (90\u00b0).\n",
+                                "fr": "Valeur du plongement du type d'objet (valeur en \ndegr\u00e9s, mesur\u00e9e de l\u2019horizontale (0\u00b0) vers le bas jusqu\u2019\u00e0 \nla verticale (90\u00b0)\n"
                             },
                             "att_type": "integer",
                             "cardinality": "0..1"
@@ -1269,7 +1289,7 @@
                             "name": "fold_typ",
                             "description": {
                                 "de": "Objekttyp",
-                                "fr": ""
+                                "fr": "Caract\u00e9ristique du type d'objet"
                             },
                             "att_type": "CD",
                             "value": "GC_PNT_TDEF_FOLD_TYP_CD",
@@ -1285,7 +1305,7 @@
                             "name": "fold_for",
                             "description": {
                                 "de": "Objektform",
-                                "fr": ""
+                                "fr": "Forme du type d'objet"
                             },
                             "att_type": "CD",
                             "value": "GC_PNT_TDEF_FOLD_FOR_CD",
@@ -1301,6 +1321,7 @@
                 },
                 {
                     "name": "Deformation_Structures_L",
+                    "abrev": "Tdef",
                     "description": {
                         "de": "Die Klasse Deformation_Structures_L enth\u00e4lt linienf\u00f6rmige tektonische Deformationsstrukturen,\nwie den Verlauf des Faltenscharniers. Ein Beispiel der Objektart ist zur Veranschaulichung im\nAnhang A abgebildet.\n",
                         "fr": "La classe Deformation_Structures_L regroupe les structures lin\u00e9aires de d\u00e9formations tectoniques comme le trac\u00e9 d\u2019une charni\u00e8re de pli. Un exemple d\u2019un tel type d\u2019objet est illustr\u00e9 dans\nl\u2019annexe A.\n"
@@ -1323,6 +1344,7 @@
                 },
                 {
                     "name": "Deformation_Structures_PLG",
+                    "abrev": "Tdef",
                     "description": {
                         "de": "In der Klasse Deformation_Structures_PLG befinden sich tektonisch gepr\u00e4gte Zonen wie\ntektonisierte Zonen oder Kluftzonen.\n",
                         "fr": "Dans la classe Deformation_Structures_PLG se trouvent les r\u00e9gions marqu\u00e9es par des structures\ntectoniques \u00e0 grande \u00e9chelle comme les zones tectonis\u00e9es ou les zones diaclas\u00e9es.\n"
@@ -1346,7 +1368,7 @@
                             "name": "type",
                             "description": {
                                 "de": "Charakteristik der Objektarten",
-                                "fr": ""
+                                "fr": "Caract\u00e9ristique du type d'objet"
                             },
                             "att_type": "CD",
                             "value": "GC_SURF_TDEF_TYPE_CD",
@@ -1364,7 +1386,7 @@
                             "name": "gen_rela",
                             "description": {
                                 "de": "Genetische Beziehung.",
-                                "fr": ""
+                                "fr": "Relation g\u00e9n\u00e9tique"
                             },
                             "att_type": "CD",
                             "value": null,
@@ -1374,6 +1396,7 @@
                 },
                 {
                     "name": "Tectonic_Boundaries_L",
+                    "abrev": "Ttec",
                     "description": {
                         "de": "Die Klasse Tectonic_Boundaries_L umfasst alle tektonischen Verwerfungen. Die Horizontal-\nverschiebungen in der Schweiz k\u00f6nnen als \u00abBruch, (Attribut \u00abFault_Mo\u00bb (Fault Movement))\nparallel zur Streichrichtung\u00bb abgebildet werden. Als Pendant zu \u00ab\u00dcberschiebung\u00bb oder\n\u00abAbschiebung\u00bb gibt es in der Schweiz keine \u00abHorizontalverschiebung\u00bb mit vergleichbarer\nGr\u00f6ssenausdehnung. Ein Abscherhorizont wird als \u00ab\u00dcberschiebung\u00bb oder als \u00abAbschiebung\u00bb\ndargestellt. Wenn die Bewegungsrichtung nicht bekannt ist, wird er zur \u00abtektonischen Grenze mit\nunbekannter Bewegungsrichtung\u00bb. Zur n\u00e4heren Erkl\u00e4rung der verschiedenen Objektarten sind im\nAnhang A Beispiele abgebildet.\n",
                         "fr": null
@@ -1402,7 +1425,7 @@
                             "name": "fault_mo",
                             "description": {
                                 "de": "Bewegungsrichtung des Bruchs",
-                                "fr": ""
+                                "fr": "Mouvement de la faille"
                             },
                             "att_type": "CD",
                             "value": "GC_LIN_TTEC_FAULT_MO_CD",
@@ -1419,7 +1442,7 @@
                             "name": "verti_mo",
                             "description": {
                                 "de": "Bewegung parallel zur Fallrichtung der Bruchfl\u00e4che.",
-                                "fr": ""
+                                "fr": "Mouvement parall\u00e8le au pendage du plan de faille"
                             },
                             "att_type": "CD",
                             "value": "GC_LIN_TTEC_VERTI_MO_CD",
@@ -1435,7 +1458,7 @@
                             "name": "horiz_mo",
                             "description": {
                                 "de": "Bewegung parallel zur Streichrichtung der Bruch- oder Scherfl\u00e4che",
-                                "fr": ""
+                                "fr": "Mouvement parall\u00e8le \u00e0 la direction du plan de faille ou \nde cisaillement\n"
                             },
                             "att_type": "CD",
                             "value": "GC_LIN_TTEC_HORIZ_MO_CD",
@@ -1460,7 +1483,7 @@
                             "name": "status",
                             "description": {
                                 "de": "Zustand der Objektart",
-                                "fr": ""
+                                "fr": "\u00c9tat du type d'objet"
                             },
                             "att_type": "CD",
                             "value": "GC_LIN_TTEC_STATUS_CD",
@@ -1478,7 +1501,7 @@
                             "name": "activity",
                             "description": {
                                 "de": "Aktivit\u00e4t der Objektart",
-                                "fr": ""
+                                "fr": "Activit\u00e9 du type d'objet"
                             },
                             "att_type": "TODO",
                             "cardinality": "0..1"
@@ -1487,7 +1510,7 @@
                             "name": "meta_sta",
                             "description": {
                                 "de": "Tektonometamorphe Chronologie der Objektart",
-                                "fr": ""
+                                "fr": "Chronologie tecto-m\u00e9tamorphique du type d\u2019objet."
                             },
                             "att_type": "CD",
                             "value": "GC_LIN_TTEC_META_STA_CD",
@@ -1504,7 +1527,7 @@
                             "name": "name",
                             "description": {
                                 "de": "Spezifischer Name der Objektart.",
-                                "fr": "Nom de la localit\u00e9-type. / Description de l\u2019affleurement g\u00e9ologique important"
+                                "fr": "Nom de la localit\u00e9-type. / Description de l\u2019affleurement g\u00e9ologique important\n"
                             },
                             "att_type": "string",
                             "cardinality": "0..1"
@@ -1518,6 +1541,7 @@
             "classes": [
                 {
                     "name": "Folds_PT",
+                    "abrev": "Mfol",
                     "description": {
                         "de": "Die Klasse Folds_PT enth\u00e4lt Objektarten, welche die r\u00e4umliche Lage von verfalteten geologischen\nObjekten (mit direkten Feldmessungen) beschreiben. Beispiele der Objektarten Orientierung der\nFaltenachse und der Scheitellinie sind im Anhang A zur besseren Verst\u00e4ndlichkeit abgebildet.\n",
                         "fr": "La classe Folds_PT contient les motifs qui d\u00e9crivent la position spatiale d\u2019objets g\u00e9ologiques\npliss\u00e9s (par des mesures prises directement sur le terrain). A titre d\u2019exemple, l\u2019annexe A illustre\nl\u2019orientation d\u2019un axe de pli et l\u2019orientation d\u2019une ligne de cr\u00eate.\n"
@@ -1542,7 +1566,7 @@
                             "name": "fold_typ",
                             "description": {
                                 "de": "Objekttyp",
-                                "fr": ""
+                                "fr": "Type de l'objet"
                             },
                             "att_type": "CD",
                             "value": "GC_PNT_MFOL_FOLD_TYP_CD",
@@ -1558,7 +1582,7 @@
                             "name": "fold_for",
                             "description": {
                                 "de": "Form der Objektart",
-                                "fr": ""
+                                "fr": "Forme du type d'objet"
                             },
                             "value": 13603,
                             "cardinality": "0..1"
@@ -1567,7 +1591,7 @@
                             "name": "phase",
                             "description": {
                                 "de": "Deformationsphase.",
-                                "fr": ""
+                                "fr": "Phase de d\u00e9formation"
                             },
                             "att_type": "CD",
                             "value": "GC_PNT_MFOL_PHASE_CD",
@@ -1592,8 +1616,8 @@
                         {
                             "name": "azimuth",
                             "description": {
-                                "de": "Einfallsrichtung (Azimut) der jeweiligen Punktobjektart (z.B. Scheitellinie, Faltenachse). Wert in Grad (0\u00b0 359\u00b0) im Uhrzeigersinn gemessen",
-                                "fr": "Azimut du type d'objet."
+                                "de": "Einfallsrichtung (Azimut) der jeweiligen Punktobjektart (z.B. Scheitellinie,\nFaltenachse). Wert in Grad (0\u00b0 359\u00b0) im Uhrzeigersinn gemessen\n",
+                                "fr": "Azimut du type d'objet. L'azimut est mesur\u00e9 depuis le \nnord en degr\u00e9 de 0\u00b0 \u00e0 359\u00b0 dans le sens des aiguilles \nd'une montre\n"
                             },
                             "att_type": "integer",
                             "cardinality": 1
@@ -1601,8 +1625,8 @@
                         {
                             "name": "dip",
                             "description": {
-                                "de": "Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0\u00b0) nach unten bis in die Vertikale (90\u00b0).",
-                                "fr": "Valeur du pendage du type d'objet."
+                                "de": "Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen\naus der Horizontalen (0\u00b0) nach unten bis in die Vertikale (90\u00b0).\n",
+                                "fr": "Valeur du plongement du type d'objet (valeur en \ndegr\u00e9s, mesur\u00e9e de l\u2019horizontale (0\u00b0) vers le bas jusqu\u2019\u00e0 \nla verticale (90\u00b0)\n"
                             },
                             "att_type": "integer",
                             "cardinality": "0..1"
@@ -1611,6 +1635,7 @@
                 },
                 {
                     "name": "Lineation_PT",
+                    "abrev": "Mlin",
                     "description": {
                         "de": "In der Klasse Lineation_PT finden sich Objektarten, welche die r\u00e4umliche Lage von diversen\nLinearen mit direkten Feldmessungen beschreiben. Die r\u00e4umliche Lage u.a. von Gletscherschliffen\nund Rutschharnischen ist ebenso Teil dieser Klasse wie die Orientierung von Streckungs- oder\nIntersektionslineationen.\n",
                         "fr": "La classe Lineation_PT contient des structures lin\u00e9aires dont la position spatiale est d\u00e9crite par\ndes mesures directes sur le terrain. La position dans l\u2019espace, entre autre de stries glaciaires et de\ntectoglyphes, fait aussi partie de cette classe tout comme l\u2019orientation de la lin\u00e9ation\nd\u2019intersection ou de lin\u00e9ation d\u2019\u00e9tirement.\n"
@@ -1636,7 +1661,7 @@
                             "name": "azimuth",
                             "description": {
                                 "de": "Einfallsrichtung (Azimut) der jeweiligen Punktobjektart (z.B. Scheitellinie, Faltenachse). Wert in Grad (0\u00b0 359\u00b0) im Uhrzeigersinn gemessen",
-                                "fr": "Azimut du type d'objet."
+                                "fr": "Azimut du type d'objet. L'azimut est mesur\u00e9 depuis le \nnord en degr\u00e9 de 0\u00b0 \u00e0 359\u00b0 dans le sens des aiguilles \nd'une montre\n"
                             },
                             "att_type": "integer",
                             "cardinality": 1
@@ -1645,7 +1670,7 @@
                             "name": "dip",
                             "description": {
                                 "de": "Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0\u00b0) nach unten bis in die Vertikale (90\u00b0).",
-                                "fr": "Valeur du pendage du type d'objet."
+                                "fr": "Valeur du plongement du type d'objet (en degr\u00e9s),\nmesur\u00e9e de l\u2019horizontale (0\u00b0) vers le bas jusqu\u2019\u00e0 la \nverticale (90\u00b0)\n"
                             },
                             "cardinatity": "0..1"
                         }
@@ -1653,6 +1678,7 @@
                 },
                 {
                     "name": "Planar_Structures_PT",
+                    "abrev": "Mpla",
                     "description": {
                         "de": "Die Klasse Planar_Structures_PT enth\u00e4lt Objektarten, welche die r\u00e4umliche Lage von planaren Strukturen mit direkten Feldmessungen beschreiben. Ein Beispiel der Objektart Orientierung der Schieferung ist im Anhang A zur Veranschaulichung abgebildet.\n",
                         "fr": null
@@ -1680,7 +1706,7 @@
                             "name": "polarity",
                             "description": {
                                 "de": "Position der Objektart im Raum",
-                                "fr": ""
+                                "fr": "Polarit\u00e9 du type d'objet dans l'espace."
                             },
                             "att_type": "CD",
                             "value": "GC_PNT_MPLA_POLARITY_CD",
@@ -1696,7 +1722,7 @@
                             "name": "phase",
                             "description": {
                                 "de": "Deformationsphase",
-                                "fr": ""
+                                "fr": "Phase de d\u00e9formation"
                             },
                             "att_type": "CD",
                             "value": "GC_PNT_MPLA_PHASE_CD",
@@ -1730,8 +1756,8 @@
                         {
                             "name": "azimuth",
                             "description": {
-                                "de": "Einfallsrichtung (Azimut) der jeweiligen Punktobjektart (z.B. Scheitellinie, Faltenachse). Wert in Grad (0\u00b0 359\u00b0) im Uhrzeigersinn gemessen",
-                                "fr": "Azimut du type d'objet."
+                                "de": "Einfallsrichtung (Azimut) der jeweiligen Punktobjektart (z.B. Scheitellinie,\nFaltenachse). Wert in Grad (0\u00b0 359\u00b0) im Uhrzeigersinn gemessen\n",
+                                "fr": "Azimut du type d'objet. L'azimut est mesur\u00e9 depuis le \nnord en degr\u00e9 de 0\u00b0 \u00e0 359\u00b0 dans le sens des aiguilles \nd'une montre\n"
                             },
                             "att_type": "integer",
                             "cardinality": 1
@@ -1740,7 +1766,7 @@
                             "name": "dip",
                             "description": {
                                 "de": "Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0\u00b0) nach unten bis in die Vertikale (90\u00b0).",
-                                "fr": "Valeur du pendage du type d'objet."
+                                "fr": "Valeur du plongement du type d'objet (en degr\u00e9s),\nmesur\u00e9e de l\u2019horizontale (0\u00b0) vers le bas jusqu\u2019\u00e0 la \nverticale (90\u00b0)\n"
                             },
                             "cardinatity": "0..1"
                         }
@@ -1753,6 +1779,7 @@
             "classes": [
                 {
                     "name": "Anomalies_PT",
+                    "abrev": "Lano",
                     "description": {
                         "de": "Die Klasse Anomalies_PT beinhaltet lokal beobachtete und / oder gemessene Anomalien.",
                         "fr": null
@@ -1773,7 +1800,7 @@
                             "name": "type",
                             "description": {
                                 "de": "Charakteristik der Objektart.",
-                                "fr": ""
+                                "fr": "Caract\u00e9ristique du type d'objet"
                             },
                             "value": 128002
                         }
@@ -1781,9 +1808,10 @@
                 },
                 {
                     "name": "Fossils_PT",
+                    "abrev": "Lfos",
                     "description": {
                         "de": "Die Klasse Fossils_PT enth\u00e4lt alle Fossilfundstellen.",
-                        "fr": "La classe Fossils_PT contient tous les gisements fossilif\u00e8res.\n"
+                        "fr": "La classe Fossils_PT contient tous les gisements fossilif\u00e8res"
                     },
                     "attributes": [
                         {
@@ -1803,7 +1831,7 @@
                             "name": "division",
                             "description": {
                                 "de": "Fossilienkategorie, zu welcher die Objektinstanz geh\u00f6rt.",
-                                "fr": ""
+                                "fr": "Cat\u00e9gorie de fossile \u00e0 laquelle appartient l'objet"
                             },
                             "att_type": "CD",
                             "value": "GC_FOSS_LFOS_DIVISION_CD",
@@ -1822,7 +1850,7 @@
                             "name": "system",
                             "description": {
                                 "de": "Fossiliengruppe.",
-                                "fr": ""
+                                "fr": "Groupe de fossiles"
                             },
                             "att_type": "table",
                             "value": "gc_system",
@@ -1832,7 +1860,7 @@
                             "name": "dat_meth",
                             "description": {
                                 "de": "Datierungsmethode.",
-                                "fr": ""
+                                "fr": "M\u00e9thode de datation"
                             },
                             "att_type": "CD",
                             "value": "GC_FOSS_LFOS_DAT_METH_CD",
@@ -1847,7 +1875,7 @@
                             "name": "status",
                             "description": {
                                 "de": "Zustand der Objektart",
-                                "fr": ""
+                                "fr": "\u00c9tat du type d'objet"
                             },
                             "att_type": "CD",
                             "value": "GC_FOSS_LFOS_STATUS_CD",
@@ -1872,9 +1900,10 @@
                 },
                 {
                     "name": "Indication_of_Resources_PT",
+                    "abrev": "Lind",
                     "description": {
                         "de": "Die Klasse Indication_of_Resources_PT beinhaltet Fundstellen von vulkanischen, mineralischen\nund nicht-mineralischen Rohstoffen.\n",
-                        "fr": "La classe Indication_of_Resources_PT regroupe les gisements de min\u00e9raux, de gas, d\u2019hydrocarbures et de mat\u00e9riel volcanique.\n"
+                        "fr": "La classe Indication_of_Resources_PT regroupe les gisements de min\u00e9raux,\nde gas, d\u2019hydrocarbures et de mat\u00e9riel volcanique\n"
                     },
                     "attributes": [
                         {
@@ -1902,7 +1931,7 @@
                             "name": "status",
                             "description": {
                                 "de": "Zustand der Objektart",
-                                "fr": ""
+                                "fr": "tat du type d'obje"
                             },
                             "att_type": "CD",
                             "value": "GC_PNT_LRES_STATUS_CD",
@@ -1918,7 +1947,7 @@
                             "name": "material",
                             "description": {
                                 "de": "Material, das mit der Objektart in Verbindung steht",
-                                "fr": ""
+                                "fr": "Mat\u00e9riau associ\u00e9 au type d'objet"
                             },
                             "att_type": "CD",
                             "value": "GC_PNT_LRES_MATERIAL_CD",
@@ -1937,7 +1966,7 @@
                             "name": "chemistry",
                             "description": {
                                 "de": "Chemische Komponente(n) oder Mineralien, welche die Natur der Objektart charakterisieren.",
-                                "fr": "Element chimique caract\u00e9ristique dans l\u2019eau min\u00e9rale."
+                                "fr": "Composant(s) chimique(s) caract\u00e9risant la nature du \ntype d'objet.\n"
                             },
                             "att_type": "string",
                             "cardinality": "0..1"
@@ -1946,9 +1975,10 @@
                 },
                 {
                     "name": "Mineralised_Zone_L",
+                    "abrev": "Lmin",
                     "description": {
                         "de": "Die Klasse Mineralised_Zone_L beinhaltet Vererzungszonen.",
-                        "fr": "La classe Mineralised_Zone_L contient les zones min\u00e9ralis\u00e9es.\n"
+                        "fr": "La classe Mineralised_Zone_L contient les zones min\u00e9ralis\u00e9es"
                     },
                     "attributes": [
                         {
@@ -1968,7 +1998,7 @@
                             "name": "chemistry",
                             "description": {
                                 "de": "Chemische Komponente(n), welche die Natur der Objektart charakterisieren.",
-                                "fr": "Element chimique caract\u00e9ristique dans l\u2019eau min\u00e9rale."
+                                "fr": "Composant(s) chimique(s) caract\u00e9risant la nature du \ntype d'objet.\n"
                             },
                             "att_type": "string",
                             "cardinality": "0..1"
@@ -1977,6 +2007,7 @@
                 },
                 {
                     "name": "Sedimentary_Structures_PT",
+                    "abrev": "Lsed",
                     "description": {
                         "de": "Die Klasse Sedimentary_Structures_PT enth\u00e4lt beobachtete Sedimentstrukturen.",
                         "fr": "La classe Sedimentary_Structures_PT contient la description des structures s\u00e9dimentaires\nobserv\u00e9es.\n"
@@ -2004,7 +2035,7 @@
                             "name": "azimuth",
                             "description": {
                                 "de": "Orientierung des Symbols. Wert in Grad (0\u00b0 359\u00b0) im Uhrzeigersinn gemessen.",
-                                "fr": "Azimut du type d'objet."
+                                "fr": "Azimut du type d'objet. L'azimut est mesur\u00e9 depuis le \nnord en degr\u00e9 de 0\u00b0 \u00e0 359\u00b0 dans le sens des aiguilles \nd'une montre\n"
                             },
                             "att_type": "integer",
                             "cardinality": "0..1"
@@ -2013,6 +2044,7 @@
                 },
                 {
                     "name": "Type_Localities_PT",
+                    "abrev": "Ltyp",
                     "description": {
                         "de": "Die Klasse Type_Localities_PT beinhaltet diejenigen Objektarten, die Typlokalit\u00e4ten oder wichtige\ngeologische Aufschl\u00fcsse beschreiben.\n",
                         "fr": "La classe Type_Localities_PT regroupe les types d\u2019objets qui d\u00e9crivent les localit\u00e9s-types ou les\naffleurements g\u00e9ologiques importants.\n"
@@ -2036,7 +2068,7 @@
                             "name": "strati",
                             "description": {
                                 "de": "Lithostratigraphischer Zusatz zum Objekt",
-                                "fr": ""
+                                "fr": "Compl\u00e9ment lithostratigraphique du type d'objet"
                             },
                             "att_type": "CD",
                             "value": "GC_PNT_LTYP_STRATI_CD",
@@ -2056,7 +2088,7 @@
                             "name": "name",
                             "description": {
                                 "de": "Name der Typlokalit\u00e4t. / Beschreibung des geologisch relevanten Aufschlusses",
-                                "fr": "Nom de la localit\u00e9-type. / Description de l\u2019affleurement g\u00e9ologique important."
+                                "fr": "Nom de la localit\u00e9-type. / Description de l\u2019affleurement g\u00e9ologique important.\n"
                             },
                             "att_type": "string",
                             "cardinality": "0..1"
@@ -2083,6 +2115,7 @@
                 },
                 {
                     "name": "Prominent_Lithological_Features_L",
+                    "abrev": "Lpro",
                     "description": {
                         "de": "In der Klasse Prominent_Lithological_Features_L befinden sich linienf\u00f6rmige Gesteinshorizonte.\nDiese Gesteinshorizonte haben bloss Hinweischarakter (z.B. \u00abmarkante Sandsteinbank\u00bb innerhalb\nvon Wechsellagerungen von Sandstein und Mergel) und sind von den Leithorizonten (z.B.\n\u00abSpatkalk im Hauptrogenstein\u00bb) zu unterschieden. Leithorizonte befinden sich im Thema Rock Bodies.\n",
                         "fr": null
@@ -2105,7 +2138,7 @@
                             "name": "cong_spe",
                             "description": {
                                 "de": "Charakterisation der Konglomerate nach ihrem Ger\u00f6llspektrum.",
-                                "fr": ""
+                                "fr": "Caract\u00e9risation des conglom\u00e9rats selon la nature des \nclastes.\n"
                             },
                             "att_type": "CD",
                             "value": "GC_LIN_LPRO_CONG_SPE_CD",
@@ -2123,7 +2156,7 @@
                             "name": "name_horiz",
                             "description": {
                                 "de": "Name des Bentonit-Leithorizonts.",
-                                "fr": ""
+                                "fr": "Nom du horizon rep\u00e8re \u00e0 bentonite."
                             },
                             "att_type": "annex",
                             "value": "GC_LITSTRAT_BED_CD",
@@ -2143,7 +2176,7 @@
                             "name": "lpro_litho",
                             "description": {
                                 "de": "Materialbezeichnung (lithologische Einheit).",
-                                "fr": ""
+                                "fr": "Unit\u00e9 litholstratigraphique"
                             },
                             "att_type": "annex",
                             "value": "GC_LITHO_CD",
@@ -2154,6 +2187,7 @@
                 },
                 {
                     "name": "Miscellaneous_PT",
+                    "abrev": "Lmis",
                     "description": {
                         "de": "Die Klasse Miscellaneous_PT ist f\u00fcr lokale, sehr spezielle geologische Objekte reserviert, die f\u00fcr die\nGesamtheit der geologischen Daten irrelevant sind und deshalb im Datenmodell Geologie nicht\nstandardisiert werden\n",
                         "fr": "La classe Miscellaneous_PT est r\u00e9serv\u00e9e aux objets locaux tr\u00e8s particuliers qui ne sont pas\npertinents pour l\u2019ensemble des donn\u00e9es g\u00e9ologiques. Par cons\u00e9quent ils ne sont pas\nstandardis\u00e9s dans le Mod\u00e8le de donn\u00e9es g\u00e9ologiques.\n"
@@ -2185,9 +2219,10 @@
                 },
                 {
                     "name": "Geological_Outlines_L",
+                    "abrev": "Lgeo",
                     "description": {
                         "de": "Die Klasse Geological_Outlines_L beinhaltet geologische Konturen. Darunter fallen die Umrisse\nvon Fest- und Lockergesteinen, von tektonisierten Zonen, sowie die Umgrenzungen von\nRutschungs- und Sackungsmassen, welche nicht durch andere Konturarten (z.B. tektonische\nGrenzen) abgegrenzt werden.\nEine geologische Kontur mit Status im Allgemeinen umfasst stratigraphische und petrographische\nGrenzen. Geologische Konturen, welche von quart\u00e4ren Ablagerungen, Gew\u00e4ssern oder\nGletschern bedeckt sind oder graduelle \u00dcberg\u00e4nge in Locker- und Festgesteinen (keine klaren\nlithologischen Grenzen; im Sinne der Signaturgrenze nach dem Zeichenverzeichnis (ZV)), haben\nden Status vermutet. K\u00fcnstliche geologische Konturen sind Konturen, welche Gebiete mit\ndetaillierter Information von Gebieten mit geringerer Informationsdichte aufgrund fehlender\nInformationen oder aus darstellerischen Gr\u00fcnden (Digitalisierungsmassstab)\nab-grenzen (Abgrenzungskontur nach dem ZV).\n",
-                        "fr": null
+                        "fr": "La classe Geological_Outlines_L contient les contours g\u00e9ologiques. Sous ce terme sont regroup\u00e9s \nles p\u00e9rim\u00e8tres des affleurements de roches consolid\u00e9es et de roches meubles, les limites des \nzones tectonis\u00e9es, ainsi que la d\u00e9limitation des masses gliss\u00e9es et tass\u00e9es, pour autant que ces \nbordures ne soient pas d\u00e9j\u00e0 d\u00e9crites par un autre type de contour (p. ex. limite tectonique).\nLes contours g\u00e9ologiques de statut g\u00e9n\u00e9ral regroupent les limites stratigraphiques et \np\u00e9trographiques. Un contour g\u00e9ologique recouvert par des d\u00e9p\u00f4ts quaternaires, par un cours \nd\u2019eau ou un glacier a un statut probable. Il en va de m\u00eame pour les passages graduels entre \nroches meubles et roches consolid\u00e9es (aucune limite lithologique claire; au sens des limites de \nfigur\u00e9 selon le catalogue des signes (CS)). Les contours g\u00e9ologiques artificiels (contours de \ns\u00e9paration selon le CS) sont des contours s\u00e9parant des secteurs \u00e0 information d\u00e9taill\u00e9e de \nsecteurs \u00e0 densit\u00e9 d\u2019information plus faible \u2013 du fait d\u2019un manque d\u2019information ou pour des \nraisons de repr\u00e9sentation (\u00e9chelle de la digitalisation\n"
                     },
                     "attributes": [
                         {
@@ -2207,7 +2242,7 @@
                             "name": "status",
                             "description": {
                                 "de": "Zustand der Objektart.",
-                                "fr": ""
+                                "fr": "\u00c9tat du type d'objet"
                             },
                             "att_type": "CD",
                             "value": "GC_LIN_LGEO_STATUS_CD",
@@ -2232,6 +2267,7 @@
             "classes": [
                 {
                     "name": "Slope_Bedrock_PT",
+                    "abrev": "Pslo",
                     "description": {
                         "de": "Die Klasse Slope_Bedrock_PT enth\u00e4lt Punktinformationen aus Modellierungen des Festgestein-\nverlaufs im Untergrund.\n",
                         "fr": "La classe Slope_Bedrock_PT contient des informations ponctuelles provenant de la mod\u00e9lisation\nde l\u2019orientation d\u2019horizons lithologiques des roches consolid\u00e9es dans le sous-sol ou de surfaces\nd\u2019\u00e9rosions.\n"
@@ -2254,7 +2290,7 @@
                             "name": "type",
                             "description": {
                                 "de": "Referenzoberfl\u00e4che.",
-                                "fr": ""
+                                "fr": "Surface de r\u00e9f\u00e9rence"
                             },
                             "att_type": "CD",
                             "value": "GC_PNT_PSLO_TYPE_CD",
@@ -2270,7 +2306,7 @@
                             "name": "azimuth",
                             "description": {
                                 "de": "Fallrichtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad (0\u00b0 359\u00b0) im Uhrzeigersinn gemessen.",
-                                "fr": "Azimut du type d'objet."
+                                "fr": "Azimut du type d'objet. L'azimut est mesur\u00e9 depuis le \nnord en degr\u00e9 de 0\u00b0 \u00e0 359\u00b0 dans le sens des aiguilles \nd'une montre\n"
                             },
                             "att_type": "integer",
                             "cardinality": "0..1"
@@ -2279,7 +2315,7 @@
                             "name": "dip",
                             "description": {
                                 "de": "Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0\u00b0) nach unten bis in die\nVertikale (90\u00b0).",
-                                "fr": "Valeur du pendage du type d'objet."
+                                "fr": "Valeur du plongement du type d'objet (en degr\u00e9s),\nmesur\u00e9e de l\u2019horizontale (0\u00b0) vers le bas jusqu\u2019\u00e0 la \nverticale (90\u00b0)\n"
                             },
                             "att_type": "integer",
                             "cardinality": "0..1"
@@ -2288,7 +2324,7 @@
                             "name": "pslo_formatio",
                             "description": {
                                 "de": "Lithostratigraphische Einheit der modellierten Formation",
-                                "fr": ""
+                                "fr": "Unit\u00e9 lithostratigraphique de l\u2019horizon mod\u00e9lis\u00e9"
                             },
                             "att_type": "annex",
                             "value": "GC_LITSTRAT_BED_CD",
@@ -2299,6 +2335,7 @@
                 },
                 {
                     "name": "Contour_Lines_Bedrock_L",
+                    "abrev": "Pcon",
                     "description": {
                         "de": "Die Klasse Contour_Lines_Bedrock_L beinhaltet Isohypsen, die sich auf den Verlauf des Fest-\ngesteins beziehen und die das Resultat von Modellierungen darstellen. U.a. befinden sich die Iso-\nhypsen der Felsoberfl\u00e4che in dieser Klasse.\n",
                         "fr": "La classe Contour_Lines_Bedrock_L contient les isohypses qui d\u00e9crivent la g\u00e9om\u00e9trie des roches\nconsolid\u00e9es dans le sous-sol et sont le r\u00e9sultat d\u2019une mod\u00e9lisation. Dans cette classe se trouvent\nentre autres les isohypses de la surface du substratum rocheux.\n"
@@ -2321,7 +2358,7 @@
                             "name": "type",
                             "description": {
                                 "de": "Referenzoberfl\u00e4che.",
-                                "fr": ""
+                                "fr": "Surface de r\u00e9f\u00e9rence"
                             },
                             "att_type": "CD",
                             "value": "GC_LIN_PCOB_TYPE_CD",
@@ -2347,7 +2384,7 @@
                             "name": "litstrat",
                             "description": {
                                 "de": "Lithostratigraphische Einheit der modellierten Formation",
-                                "fr": ""
+                                "fr": "Unit\u00e9 lithostratigraphique de la formation modelis\u00e9e"
                             },
                             "att_type": "annex",
                             "value": "GC_LITSTRAT_BED_CD",
@@ -2357,6 +2394,7 @@
                 },
                 {
                     "name": "Modelled_Water_Table_PT",
+                    "abrev": "Pmod",
                     "description": {
                         "de": "Die Klasse Modelled_Water_Table_PT enth\u00e4lt Punktinformationen aus Modellierungen des\nGrundwasserspiegels.\n",
                         "fr": "La classe Modelled_Water_Table_PT contient des informations ponctuelles provenant de la\nmod\u00e9lisation du niveau pi\u00e9zom\u00e9trique d\u2019une nappe libre.\n"
@@ -2380,7 +2418,7 @@
                             "name": "azimuth",
                             "description": {
                                 "de": "Fallrichtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad (0\u00b0 359\u00b0) im Uhrzeigersinn gemessen.",
-                                "fr": "Azimut du type d'objet."
+                                "fr": "Azimut du type d'objet. L'azimut est mesur\u00e9 depuis le \nnord en degr\u00e9 de 0\u00b0 \u00e0 359\u00b0 dans le sens des aiguilles \nd'une montre\n"
                             },
                             "att_type": "integer",
                             "cardinality": "0..1"
@@ -2389,7 +2427,7 @@
                             "name": "dip",
                             "description": {
                                 "de": "Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0\u00b0) nach unten bis in die Vertikale (90\u00b0).",
-                                "fr": "Valeur du pendage du type d'objet."
+                                "fr": "Valeur du plongement du type d'objet (en degr\u00e9s),\nmesur\u00e9e de l\u2019horizontale (0\u00b0) vers le bas jusqu\u2019\u00e0 la \nverticale (90\u00b0)\n"
                             },
                             "att_type": "integer",
                             "cardinality": "0..1"
@@ -2416,6 +2454,7 @@
                 },
                 {
                     "name": "Contour_Lines_Hydro_L",
+                    "abrev": "Pcon",
                     "description": {
                         "de": "In der Klasse Contour_Lines_Hydro_L befinden sich die Isohypsen, die sich auf das Grundwasser\nbeziehen.\n",
                         "fr": "Dans la classe Contour_Lines_Hydro_L se trouvent les isohypses qui d\u00e9crivent la surface d\u2019une\nnappe d\u2019eaux souterraine.\n"
@@ -2438,7 +2477,7 @@
                             "name": "confine",
                             "description": {
                                 "de": "Druckzustand im Grundwasserleiter.",
-                                "fr": ""
+                                "fr": "\u00c9tat de la pression dans l\u2019aquif\u00e8re"
                             },
                             "att_type": "CD",
                             "value": "GC_LIN_PCOH_CONFINE_CD",
@@ -2463,7 +2502,7 @@
                             "name": "wa_table",
                             "description": {
                                 "de": "Wasserstand.",
-                                "fr": ""
+                                "fr": "Niveau des eaux"
                             },
                             "att_type": "CD",
                             "value": "GC_LIN_PCOH_WA_TABLE_CD",
@@ -2484,6 +2523,7 @@
             "classes": [
                 {
                     "name": "Archaeology_PT",
+                    "abrev": "Aarc",
                     "description": {
                         "de": "Die Klasse Archaeology_PT enth\u00e4lt Objektarten zu einzelnen arch\u00e4ologischen Relikten.",
                         "fr": "La classe Archaeology_PT regroupe les sites arch\u00e9ologiques.\n"
@@ -2518,7 +2558,7 @@
                             "name": "epoch",
                             "description": {
                                 "de": "Arch\u00e4ologische Epoche der Objektart",
-                                "fr": ""
+                                "fr": "\u00c9poque arch\u00e9ologique du type d'objet"
                             },
                             "att_type": "CD",
                             "value": "GC_AARC_EPOCH_CD",
@@ -2534,7 +2574,7 @@
                             "name": "period",
                             "description": {
                                 "de": "Arch\u00e4ologische Periode der Objektart.",
-                                "fr": ""
+                                "fr": "P\u00e9riode arch\u00e9ologique du type d'objet"
                             },
                             "att_type": "CD",
                             "value": "GC_AARC_PERIOD_CD",
@@ -2554,7 +2594,7 @@
                             "name": "age",
                             "description": {
                                 "de": "Arch\u00e4ologisches Alter der Objektart.",
-                                "fr": ""
+                                "fr": "\u00c2ge arch\u00e9ologique du type d'objet"
                             },
                             "att_type": "CD",
                             "value": "GC_AARC_AGE_CD",
@@ -2576,7 +2616,7 @@
                             "name": "type",
                             "description": {
                                 "de": "Art des Kultsteins.",
-                                "fr": ""
+                                "fr": "Type de m\u00e9galithe"
                             },
                             "att_type": "CD",
                             "value": "GC_PNT_AARC_TYPE_CD",
@@ -2592,6 +2632,7 @@
                 },
                 {
                     "name": "Archaeology_L",
+                    "abrev": "Aarc",
                     "description": {
                         "de": "Die Klasse Archaeology_L umfasst linienf\u00f6rmige arch\u00e4ologische Elemente. Historische Strassen,\nHohlwege oder Befestigungsgr\u00e4ben sind Teile dieser Klasse.\n",
                         "fr": "La classe Archaeology_L contient les \u00e9l\u00e9ments arch\u00e9ologiques de forme lin\u00e9aire. Les routes\nhistoriques, les chemins creux et les foss\u00e9s de fortification font partie de cette classe.\n"
@@ -2619,7 +2660,7 @@
                             "name": "epoch",
                             "description": {
                                 "de": "Arch\u00e4ologische Epoche der Objektart",
-                                "fr": ""
+                                "fr": "\u00c9poque arch\u00e9ologique du type d'objet"
                             },
                             "att_type": "CD",
                             "value": "GC_AARC_EPOCH_CD",
@@ -2635,7 +2676,7 @@
                             "name": "period",
                             "description": {
                                 "de": "Arch\u00e4ologische Periode der Objektart.",
-                                "fr": ""
+                                "fr": "P\u00e9riode arch\u00e9ologique du type d'objet"
                             },
                             "att_type": "CD",
                             "value": "GC_AARC_PERIOD_CD",
@@ -2655,7 +2696,7 @@
                             "name": "age",
                             "description": {
                                 "de": "Arch\u00e4ologisches Alter der Objektart.",
-                                "fr": ""
+                                "fr": "\u00c2ge arch\u00e9ologique du type d'objet"
                             },
                             "att_type": "CD",
                             "value": "GC_AARC_AGE_CD",
@@ -2677,6 +2718,7 @@
                 },
                 {
                     "name": "Archaeology_PLG",
+                    "abrev": "Aarc",
                     "description": {
                         "de": "Die Klasse Archaeology_PLG beinhaltet arch\u00e4ologische Relikte (z.B. r\u00f6misches Castrum), die ein\ngr\u00f6sseres Gebiet (Fl\u00e4che) abdecken.\n",
                         "fr": "Dans la classe Archaeology_PLG se trouvent les vestiges arch\u00e9ologiques (p.ex. le Castrum\nromain) qui recouvrent une surface importante.\n"
@@ -2699,7 +2741,7 @@
                             "name": "epoch",
                             "description": {
                                 "de": "Arch\u00e4ologische Epoche der Objektart",
-                                "fr": ""
+                                "fr": "\u00c9poque arch\u00e9ologique du type d'objet"
                             },
                             "att_type": "CD",
                             "value": "GC_AARC_EPOCH_CD",
@@ -2715,7 +2757,7 @@
                             "name": "period",
                             "description": {
                                 "de": "Arch\u00e4ologische Periode der Objektart.",
-                                "fr": ""
+                                "fr": "P\u00e9riode arch\u00e9ologique du type d'objet"
                             },
                             "att_type": "CD",
                             "value": "GC_AARC_PERIOD_CD",
@@ -2735,7 +2777,7 @@
                             "name": "age",
                             "description": {
                                 "de": "Arch\u00e4ologisches Alter der Objektart.",
-                                "fr": ""
+                                "fr": "\u00c2ge arch\u00e9ologique du type d'objet"
                             },
                             "att_type": "CD",
                             "value": "GC_AARC_AGE_CD",
@@ -2757,6 +2799,7 @@
                 },
                 {
                     "name": "Exploitation_Geomaterials_PT",
+                    "abrev": "Aexp",
                     "description": {
                         "de": "Die Klasse Exploitation_Geomaterials_PT enth\u00e4lt punktf\u00f6rmige Angaben zu Abbaustellen von\nGeomaterialien.\n",
                         "fr": "La classe Exploitation_Geomaterials_PT contient des informations ponctuelles sur les sites\nd\u2019exploitation de mat\u00e9riaux g\u00e9ologiques.\n"
@@ -2783,7 +2826,7 @@
                             "name": "exp_unit",
                             "description": {
                                 "de": "Abgebaute lithostratigraphische Einheit.",
-                                "fr": ""
+                                "fr": "Unit\u00e9 lithostratigraphique exploit\u00e9e"
                             },
                             "att_type": "table",
                             "value": "gc_litstrat_bed",
@@ -2793,7 +2836,7 @@
                             "name": "status",
                             "description": {
                                 "de": "Abbaustatus.",
-                                "fr": ""
+                                "fr": "\u00c9tat de l'exploitation"
                             },
                             "att_type": "CD",
                             "value": "GC_EX_GEO_PNT_AEXP_STATUS_CD",
@@ -2820,7 +2863,7 @@
                             "name": "targ_mat",
                             "description": {
                                 "de": "Abgebautes Material.",
-                                "fr": ""
+                                "fr": "Mat\u00e9riau exploit\u00e9."
                             },
                             "att_type": "CD",
                             "value": "GC_EX_GEO_PNT_AEXP_TARG_MAT_CD",
@@ -2874,6 +2917,7 @@
                 },
                 {
                     "name": "Exploitation_Geomaterials_L",
+                    "abrev": "Aexp",
                     "description": {
                         "de": "Die Klasse Exploitation_Geomaterials_L beinhaltet linienf\u00f6rmige Informationen zum Abbau von\nGeomaterialien (z.B. Verlauf der Abbaufront).\n",
                         "fr": "La classe Exploitation_Geomaterials_L contient les objets de forme lin\u00e9aire li\u00e9s aux sites\nd\u2019exploitation de mat\u00e9riaux g\u00e9ologiques (p.ex. le front de taille).\n"
@@ -2896,7 +2940,7 @@
                             "name": "status",
                             "description": {
                                 "de": "Abbaustatus.",
-                                "fr": ""
+                                "fr": "\u00c9tat de l'exploitation"
                             },
                             "att_type": "CD",
                             "value": "GC_LIN_AEXP_STATUS_CD",
@@ -2914,6 +2958,7 @@
                 },
                 {
                     "name": "Exploitation_Geomaterials_PLG",
+                    "abrev": "Aexp",
                     "description": {
                         "de": "Die Klasse Exploitation_Geomaterials_PLG enth\u00e4lt Fl\u00e4chen, wo zur Zeit der geologischen\nAufnahmen Geomaterialien abgebaut wurden.\n",
                         "fr": "La classe Exploitation_Geomaterials_PLG contient les surfaces d\u2019exploitation de g\u00e9omat\u00e9riaux,\ntelles qu\u2019elles \u00e9taient au moment du lev\u00e9 de la carte g\u00e9ologique.\n"
@@ -2936,7 +2981,7 @@
                             "name": "exp_unit",
                             "description": {
                                 "de": "Abgebaute lithostratigraphische Einheit.",
-                                "fr": ""
+                                "fr": "Unit\u00e9 lithostratigraphique exploit\u00e9e"
                             },
                             "att_type": "table",
                             "value": "gc_litstrat_bed",
@@ -2946,7 +2991,7 @@
                             "name": "status",
                             "description": {
                                 "de": "Abbaustatus.",
-                                "fr": ""
+                                "fr": "\u00c9tat de l'exploitation"
                             },
                             "att_type": "CD",
                             "value": "GC_EX_GEO_PLG_AEXP_STATUS_CD",
@@ -2973,7 +3018,7 @@
                             "name": "targ_mat",
                             "description": {
                                 "de": "Abgebautes Material.",
-                                "fr": ""
+                                "fr": "Mat\u00e9riel exploit\u00e9."
                             },
                             "att_type": "CD",
                             "value": "GC_EX_GEO_PLG_AEXP_TARG_MAT_CD",
@@ -3008,6 +3053,7 @@
                 },
                 {
                     "name": "Boreholes_PT",
+                    "abrev": "Abor",
                     "description": {
                         "de": "Die Klasse Boreholes_PT beinhaltet Bohrungen und Sondierungen. (Auf alten gedruckten Karten\nwurde die Art der Sondierung nicht immer unterschieden. Es kann daher sein, dass in alten Karten\nRammkernsondierungen als Bohrungen aufgenommen wurden.)\n",
                         "fr": "La classe Boreholes_PT regroupe les forages et les sondages. (Sur les anciennes cartes imprim\u00e9es,\nle genre d\u2019objet n\u2019\u00e9tait pas toujours distingu\u00e9. D\u2019ailleurs, il se peut que sur les anciennes cartes,\nles sondages par carottier battu aient \u00e9t\u00e9 class\u00e9s en tant que forages.)\n"
@@ -3033,7 +3079,7 @@
                             "name": "drill_mo",
                             "description": {
                                 "de": "Bohrmethode.",
-                                "fr": ""
+                                "fr": "Mode du forage."
                             },
                             "value": 10502,
                             "cardinality": "0..1"
@@ -3042,7 +3088,7 @@
                             "name": "depth_bedrock",
                             "description": {
                                 "de": "Tiefe (in Meter ab Terrainoberfl\u00e4che) der Felsober- fl\u00e4che. (Sofern die Bohrung das Festgestein nicht Depth_Bedrock erreicht, z.B. \u00abBohrung, Fels nicht erreicht\u00bb, betr\u00e4gt der Wert -9999, falls die Bohrung bereits im Festgestein beginnt, betr\u00e4gt der Wert 0). Falls Festgestein erreicht wurde, aber nicht klar ist, dass es sich um die Felsoberfl\u00e4che handelt, betr\u00e4gt der Wert -8888.",
-                                "fr": ""
+                                "fr": "Profondeur de la roche en place (en m\u00e8tres depuis la \nsurface). (Si l\u2019ouvrage n\u2019atteint pas la roche en place, \npar exemple forage interrompu dans la couverture \nquaternaire, la valeur est -999, au cas o\u00f9 le forage \ncommence d\u00e9j\u00e0 dans la roche en place la valeur est 0)\n"
                             },
                             "att_type": "float",
                             "cardinality": "0..1"
@@ -3060,7 +3106,7 @@
                             "name": "main_tar",
                             "description": {
                                 "de": "Ziel der Sondierung.",
-                                "fr": ""
+                                "fr": "But principal du sondage"
                             },
                             "att_type": "CD",
                             "value": "GC_PNT_ABOR_MAIN_TAR_CD",
@@ -3083,7 +3129,7 @@
                             "name": "targ_mat",
                             "description": {
                                 "de": "Durch die Sondierung gef\u00f6rdertes Material.",
-                                "fr": ""
+                                "fr": "Mat\u00e9riau cible du sondage"
                             },
                             "att_type": "CD",
                             "value": "GC_PNT_ABOR_TARG_MAT_CD",
@@ -3113,7 +3159,7 @@
                             "name": "fm_a",
                             "description": {
                                 "de": "Lithostratigraphische Einheit der erreichten Formation A",
-                                "fr": ""
+                                "fr": "Unit\u00e9 lithostratigraphique de la formation A atteinte"
                             },
                             "att_type": "annex",
                             "value": "GC_LITSTRAT_BED_CD",
@@ -3132,7 +3178,7 @@
                             "name": "fm_b",
                             "description": {
                                 "de": "Lithostratigraphische Einheit der erreichten Formation B",
-                                "fr": ""
+                                "fr": "Unit\u00e9 lithostratigraphique de la formation B atteinte"
                             },
                             "att_type": "annex",
                             "value": "GC_LITSTRAT_BED_CD",
@@ -3142,7 +3188,7 @@
                             "name": "depth_fm_b",
                             "description": {
                                 "de": "Tiefe (m ab Terrainoberfl\u00e4che) der erreichten Formation B.",
-                                "fr": ""
+                                "fr": "Profondeur de la formation B atteinte (en m\u00e8tres depuis \nla surface).\n"
                             },
                             "att_type": "float",
                             "cardinality": "0..1"
@@ -3160,7 +3206,7 @@
                             "name": "azimuth",
                             "description": {
                                 "de": "Fallrichtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad (0\u00b0 359\u00b0) im Uhrzeigersinn gemessen.",
-                                "fr": "Azimut du type d'objet."
+                                "fr": "Azimut du type d'objet. L'azimut est mesur\u00e9 depuis le \nnord en degr\u00e9 de 0\u00b0 \u00e0 359\u00b0 dans le sens des aiguilles \nd'une montre\n"
                             },
                             "att_type": "integer",
                             "cardinality": "0..1"
@@ -3169,7 +3215,7 @@
                             "name": "dip",
                             "description": {
                                 "de": "Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0\u00b0) nach unten bis in die Vertikale (90\u00b0).",
-                                "fr": "Valeur du pendage du type d'objet."
+                                "fr": "Valeur du plongement du type d'objet (en degr\u00e9s),\nmesur\u00e9e de l\u2019horizontale (0\u00b0) vers le bas jusqu\u2019\u00e0 la \nverticale (90\u00b0)\n"
                             },
                             "att_type": "integer",
                             "cardinality": "0..1"
@@ -3178,7 +3224,7 @@
                             "name": "ref_number",
                             "description": {
                                 "de": "Bohrungs-ID der Objektart in einem zus\u00e4tzlichen Dokument (Erl\u00e4uterungen, ...).",
-                                "fr": ""
+                                "fr": "Num\u00e9ro de r\u00e9f\u00e9rence du type d'objet dans un \ndocument annex\u00e9 (notice explicative,\u2026).\n"
                             },
                             "att_type": "integer",
                             "cardinality": "0..1"
@@ -3187,7 +3233,7 @@
                             "name": "link",
                             "description": {
                                 "de": "Objektnummer in der Datenbank von INFOGEOL.",
-                                "fr": ""
+                                "fr": "Num\u00e9ro de r\u00e9f\u00e9rence du type d'objet dans un \ndocument annex\u00e9 (notice explicative,\u2026).\n"
                             },
                             "att_type": "integer",
                             "cardinality": "0..1"
@@ -3196,6 +3242,7 @@
                 },
                 {
                     "name": "Artificial_Surface_Modifications_PLG",
+                    "abrev": "Aart",
                     "description": {
                         "de": "Die Klasse Artificial_Surface_Modifications_PLG enth\u00e4lt bedeutende k\u00fcnstliche Ver\u00e4nderungen\ndes Gel\u00e4ndes (Golfplatz, Skigebiet, etc.), die zur Folge haben, dass das urspr\u00fcngliche Relief nicht\nmehr zu erkennen ist, was bei einer geomorphologischen Deutung zu falschen Schl\u00fcssen f\u00fchren k\u00f6nnte.\n",
                         "fr": null
@@ -3228,6 +3275,7 @@
             "classes": [
                 {
                     "name": "Construction_PT",
+                    "abrev": "Hcon",
                     "description": {
                         "de": "Die Klasse Construction_PT beinhaltet Wasserbauten wie Grundwasserfassungen und Zisternen.\nDesweiteren kommen in dieser Klasse auch Messger\u00e4te wie Piezometer und Limnigraphen vor.\n",
                         "fr": "Dans la classe Construction_PT se trouvent les constructions hydriques, comme les captages\ndans la nappe phr\u00e9atique et les citernes. Les instruments de mesure comme les pi\u00e9zom\u00e8tres et\nles limnigraphes appartiennent \u00e9galement \u00e0 cette classe.\n"
@@ -3256,7 +3304,7 @@
                             "name": "status",
                             "description": {
                                 "de": "Zustand der Objektart.",
-                                "fr": ""
+                                "fr": "\u00c9tat du type d'objet."
                             },
                             "att_type": "CD",
                             "value": "GC_PNT_HCON_STATUS_CD",
@@ -3272,7 +3320,7 @@
                             "name": "epoch",
                             "description": {
                                 "de": "Epoche der Erbauung der Objektart.",
-                                "fr": ""
+                                "fr": "\u00c9poque de construction du type d'objet"
                             },
                             "att_type": "CD",
                             "value": "GC_PNT_HCON_EPOCH_CD",
@@ -3316,6 +3364,7 @@
                 },
                 {
                     "name": "Construction_L",
+                    "abrev": "Hcon",
                     "description": {
                         "de": "Die Klasse Construction_L enth\u00e4lt linienf\u00f6rmige Wasserbauten wie den Wasserfassungsstollen,\nwelcher mit Objektarten der Klasse Surface_Water_PT kombiniert werden kann.\n",
                         "fr": "Dans la classe Construction_L se trouvent les constructions hydriques de forme lin\u00e9aire comme\nles galeries de captage d\u2019eau, qui peuvent \u00eatre combin\u00e9es avec les types d\u2019objets de la classe\nSurface_Water_PT.\n"
@@ -3339,7 +3388,7 @@
                             "name": "combi",
                             "description": {
                                 "de": "Objektart einer anderen Klasse, die mit der Objektart in Kombination vorkommen kann",
-                                "fr": ""
+                                "fr": "Type d\u2019objet d'une autre classe avec lequel le type \nd\u2019objet peut \u00eatre combin\u00e9\n"
                             },
                             "att_type": "CD",
                             "value": "GC_LIN_HCON_COMBI_CD",
@@ -3356,6 +3405,7 @@
                 },
                 {
                     "name": "Palaeohydrology_L",
+                    "abrev": "Hpal",
                     "description": {
                         "de": "In der Klasse Palaeohydrology_L befinden sich alle linienf\u00f6rmigen Objektarten, welche einen\ngewissen Bezug zu einem ehemaligen Gew\u00e4sser aufweisen.\n",
                         "fr": "La classe Palaeohydrology_L contient tous les types d\u2019objets de forme lin\u00e9aire, indiquant le trac\u00e9\nd\u2019un cours d\u2019eau dans le pass\u00e9.\n"
@@ -3384,7 +3434,7 @@
                             "name": "rel_age",
                             "description": {
                                 "de": "Relatives Alter der Objektart",
-                                "fr": ""
+                                "fr": "Age relatif du type d'objet"
                             },
                             "att_type": "CD",
                             "value": "GC_LIN_HPAL_REL_AGE_CD",
@@ -3401,7 +3451,7 @@
                             "name": "hpal_chrono",
                             "description": {
                                 "de": "Chronostratigraphische Zuordnung.",
-                                "fr": ""
+                                "fr": "Attribution chronostratigraphique"
                             },
                             "att_type": "annex",
                             "value": "GC_CHRONO_CD",
@@ -3430,6 +3480,7 @@
                 },
                 {
                     "name": "Subsurface_Water_L",
+                    "abrev": "Hsub",
                     "description": {
                         "de": "In der Klasse Subsurface_Water_L befinden sich linienf\u00f6rmigen Objektarten, welche einen\nunterirdischen Gew\u00e4sserlauf anzeigen.\n\nDer genaue Verlauf des unterirdischen Gew\u00e4sserlaufes ist in fast jedem Fall vermutet, mit\nwenigen Ausnahmen von erforschten H\u00f6hlensystemen. Liegen F\u00e4rbversuche vor, so werden diese\nin den Erl\u00e4uterungen erw\u00e4hnt, sofern diese existieren. Der unterirdische Gew\u00e4sserlauf\nkann mit Objeken aus der Klasse Surface_Water_PT kombiniert werden.\n",
                         "fr": "Dans la classe Subsurface_Water_L se trouvent les objets de forme lin\u00e9aire qui repr\u00e9sentent les\ncours d\u2019eau souterrains. Le parcours exact des cours d\u2019eau souterrains est presque toujours\nsuppos\u00e9. Il est d\u00e9duit \u00e0 partir de quelques donn\u00e9es d\u2019\u00e9tudes de syst\u00e8mes de captage. Les essais\nde tra\u00e7age seront mentionn\u00e9es dans la notice explicative, lorsqu\u2019elle existe. Les cours d\u2019eau\nsouterrains peuvent \u00eatre combin\u00e9s avec les objets de la classe Surface_Water_PT.\n"
@@ -3452,7 +3503,7 @@
                             "name": "combi",
                             "description": {
                                 "de": "Objektart einer anderen Klasse, die mit der Objektart in Kombination vorkommen kann",
-                                "fr": ""
+                                "fr": "Type d\u2019objet d'une autre classe avec lequel le type \nd\u2019objet peut \u00eatre combin\u00e9\n"
                             },
                             "att_type": "CD",
                             "value": "GC_LIN_HSUB_COMBI_CD",
@@ -3468,9 +3519,10 @@
                 },
                 {
                     "name": "Surface_Water_PT",
+                    "abrev": "Hsur",
                     "description": {
                         "de": "Die Klasse Surface_Water_PT umfasst lokal (punktuell) beobachtete Oberfl\u00e4chengew\u00e4sser, wie\nnat\u00fcrliche Wasseraustritts- und Versickerungsstellen. Zudem befindet sich die Objektart Steilstufe\nin Bachrinne, Wasserfall in dieser Klasse, die eine spezielle Stelle in Fliessgew\u00e4ssern markiert und\ndie durch die darunterliegende Geologie bedingt ist.\nEine Quelle wird als \u00abThermalquelle\u00bb bezeichnet, wenn das Wasser eine mittlere Jahrestem-\n20\u00b0C aufweist. F\u00fcr diesen Quelltyp ist das Attribut \u00abTemp\u00bb vorgesehen und\nbeschr\u00e4nkt sich i.d.R. auf die mittlere Wassertemperatur. Deshalb wird f\u00fcr dieses Attribut auch\nkein Datum einer Analyse angegeben. Um eine Mineralquelle handelt es sich bei einer Quelle mit\neiner Mineralkonzentration 1g / l Wasser oder einer CO2- 250 mg / l Wasser.\nF\u00fcr diesen Quelltyp ist das Attribut \u00abChemistry\u00bb vorgesehen. D.h. unter diesem Attribut wird das\ncharakteristische chemische Element im Mineralwasser angegeben und nicht die komplette\nWasserchemie.\n",
-                        "fr": null
+                        "fr": "La classe Surface_Water_PT comprend les eaux de surface locales (ponctuelles) comme les \nsources et les pertes d\u2019un cours d\u2019eau. On y trouve \u00e9galement des types d\u2019objets particuliers \ncomme les cascades et les rapides, lesquels marquent des positions sp\u00e9cifiques du cours d\u2019eau \nqui sont \u00e0 relier avec la g\u00e9ologie sous-jacente.\nUne source est d\u00e9crite comme \u00absource thermale\u00bb lorsque l\u2019eau y atteint une temp\u00e9rature \nannuelle moyenne \u2265 20\u00b0C. L\u2019attribut \u00abTemp\u00bb est associ\u00e9 \u00e0 ce type de source et se limite en \nr\u00e8gle g\u00e9n\u00e9rale \u00e0 la temp\u00e9rature moyenne de l\u2019eau. Par cons\u00e9quent aucune donn\u00e9e d\u2019analyse \nchimique n\u2019est indiqu\u00e9e pour cet attribut. Par \u00absource min\u00e9rale\u00bb, on entend une source avec \nune concentration min\u00e9rale dans l\u2019eau \u2265 1g / l ou une concentration en CO2 \u2265 250 mg / l. \nL\u2019attribut \u00abChemistry\u00bb est associ\u00e9 \u00e0 ce type de source. Il indique l\u2019\u00e9l\u00e9ment caract\u00e9ristique \nprincipal de l\u2019eau min\u00e9rale et non le chimisme complet de l\u2019eau\n"
                     },
                     "attributes": [
                         {
@@ -3495,7 +3547,7 @@
                             "name": "status",
                             "description": {
                                 "de": "Zustand der Objektart.",
-                                "fr": ""
+                                "fr": "\u00c9tat du type d'objet"
                             },
                             "att_type": "CD",
                             "value": "GC_PNT_HSUR_STATUS_CD",
@@ -3511,7 +3563,7 @@
                             "name": "flow_con",
                             "description": {
                                 "de": "Wasserfluss Bedingungen.",
-                                "fr": ""
+                                "fr": "Condition d\u2019\u00e9coulement"
                             },
                             "att_type": "CD",
                             "value": "GC_PNT_HSUR_FLOW_CON_CD",
@@ -3528,7 +3580,7 @@
                             "name": "type",
                             "description": {
                                 "de": "Charakteristik der Objektart",
-                                "fr": ""
+                                "fr": "Caract\u00e9ristique du type d'objet"
                             },
                             "att_type": "CD",
                             "value": "GC_PNT_HSUR_TYPE_CD",
@@ -3545,7 +3597,7 @@
                             "name": "dis_loca",
                             "description": {
                                 "de": "Ort des Wasserausflusses.",
-                                "fr": ""
+                                "fr": "Lieu d\u2019\u00e9coulement"
                             },
                             "att_type": "CD",
                             "value": "GC_PNT_HSUR_DIS_LOCA_CD",
@@ -3559,8 +3611,8 @@
                         {
                             "name": "combi",
                             "description": {
-                                "de": "Objektart einer anderen Klasse, die mit der Objektart in Kombination vorkommen kann",
-                                "fr": ""
+                                "de": "Objektart einer anderen Klasse, die mit der Objektart in Kombination\nvorkommen kann\n",
+                                "fr": "Type d\u2019objet d'une autre classe avec lequel le type \nd\u2019objet peut \u00eatre combin\u00e9\n"
                             },
                             "att_type": "CD",
                             "value": "GC_PNT_HSUR_COMBI_CD",
@@ -3593,8 +3645,8 @@
                         {
                             "name": "azimuth",
                             "description": {
-                                "de": "Richtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad (0\u00b0 359\u00b0) im Uhrzeigersinn gemessen.",
-                                "fr": "Azimut du type d'objet."
+                                "de": "Richtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad (0\u00b0\n359\u00b0) im Uhrzeigersinn gemessen.\n",
+                                "fr": "Azimut du type d'objet. L'azimut est mesur\u00e9 depuis le \nnord en degr\u00e9 de 0\u00b0 \u00e0 359\u00b0 dans le sens des aiguilles \nd'une montre\n"
                             },
                             "att_type": "integer",
                             "cardinality": "0..1"
@@ -3603,9 +3655,10 @@
                 },
                 {
                     "name": "Surface_Water_L",
+                    "abrev": "Hsur",
                     "description": {
                         "de": "In der Klasse Surface_Water_L sind linienf\u00f6rmige Oberfl\u00e4chengew\u00e4sser (Quellhorizonte)\nbeschrieben.\n",
-                        "fr": "Dans la classe Surface_Water_L sont d\u00e9crit les niveaux de sources (de forme lin\u00e9aire).\n"
+                        "fr": "Dans la classe Surface_Water_L sont d\u00e9crit les niveaux de sources (de\nforme lin\u00e9aire)\n"
                     },
                     "attributes": [
                         {
@@ -3626,6 +3679,7 @@
                 },
                 {
                     "name": "Surface_Water_PLG",
+                    "abrev": "Hsur",
                     "description": {
                         "de": "Die Klasse Surface_Water_PLG beinhaltet oberfl\u00e4chliche Wasserspeicher wie Gletscher, Seen und\nFl\u00fcsse, welche geologische Einheiten bedecken und oftmals eine Interpretation der darunter-\nliegenden Geologie verunm\u00f6glichen. Das vollst\u00e4ndige Gew\u00e4ssernetz ist nicht Teil des Daten-\nmodells Geologie\n",
                         "fr": "La classe Surface_Water_PLG regroupe toutes les accumulations d\u2019eaux superficielles comme les\nglaciers, les lacs et les rivi\u00e8res qui masquent les unit\u00e9s g\u00e9ologiques sous-jacentes. Le mod\u00e8le\ncomplet du r\u00e9seau hydrique ne fait pas partie du Mod\u00e8le de donn\u00e9es g\u00e9ologiques.\n"
@@ -3656,7 +3710,7 @@
             "name": "GC_LITSTRAT_BED_CD",
             "description": {
                 "de": "Wertetabelle der lithostratigraphischen Einheiten",
-                "fr": null
+                "fr": "Table des valeurs des unit\u00e9s lithostratigraphiques"
             },
             "pairs": {
                 "15204121": "\u00ab\u00c4ltere Orthogneise\u00bb",
@@ -5879,7 +5933,7 @@
             "name": "GC_LITSTRAT_UNCO_CD",
             "description": {
                 "de": "Wertetabelle der lithostratigraphischen Einheiten",
-                "fr": null
+                "fr": "Table des valeurs des unit\u00e9s lithostratigraphiques"
             },
             "pairs": {
                 "15201044": "1. letzteiszeitlischs Vorstoss",
@@ -6340,7 +6394,7 @@
             "name": "GC_LITHO_CD",
             "description": {
                 "de": "Wertetabellen der lithologischen Beschreibung",
-                "fr": null
+                "fr": "Tables des valeurs de la description lithologique"
             },
             "pairs": {
                 "15104015": "(Meso)Kataklasit",
@@ -6712,7 +6766,7 @@
             "name": "GC_LITHO_UNCO_CD",
             "description": {
                 "de": "Wertetabellen der lithologischen Beschreibung",
-                "fr": null
+                "fr": "Tables des valeurs de la description lithologique (roches meubles)"
             },
             "pairs": {
                 "15101039": "Alluvion, undifferenziert",
@@ -6789,7 +6843,7 @@
             "name": "GC_CHRONO_CD",
             "description": {
                 "de": "Wertetabelle der chronostratigraphischen Einheiten",
-                "fr": null
+                "fr": "Table des valeurs des unit\u00e9s chronostratigraphiques"
             },
             "pairs": {
                 "15001074": "Aal\u00e9nien",
@@ -6937,7 +6991,7 @@
             "name": "GC_TECTO_CD",
             "description": {
                 "de": "Wertetabelle der tektonischen Einheiten",
-                "fr": null
+                "fr": "Table des valeurs des unit\u00e9s tectoniques"
             },
             "pairs": {
                 "15301125": "\u00abZone Kronberg-S\u00fcd\u00bb",
@@ -7428,5 +7482,6 @@
                 "999998": "Not applicable"
             }
         }
-    ]
+    ],
+    "lang": "fr"
 }
