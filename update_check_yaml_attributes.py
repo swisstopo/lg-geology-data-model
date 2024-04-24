@@ -39,6 +39,11 @@ def main():
     yaml.default_flow_style = False
     yaml.indent(sequence=4, offset=2)
     yaml.representer.add_representer(str, str_representer)
+    
+    
+    with open("../data/geocover-schema-sde.json", "r") as f:
+        feat_classes = json.load(f).get('featclasses')
+    
 
     with open("datamodel.yaml", "r") as f:
         data = yaml.load(f)
@@ -47,18 +52,24 @@ def main():
         theme_name = theme.get("name")
         for cls in theme.get("classes"):
             cls_name = cls.get("name")
-            cls_abre = cls.get(abrev')')
+            cls_table = 'TOPGIS_GC.{}'.format(cls.get('table').upper())
+            table_attributes = feat_classes.get(cls_table).get('fields')
+            print(cls_name, cls_table)
+            
+            available_attributes = list(map(lambda x: x[0], table_attributes))
+            print(available_attributes)
             for att in cls.get('attributes'):
+                print(att, att in available_attributes)
 
 
-    yaml.dump(data, sys.stdout)
+    #yaml.dump(data, sys.stdout)
     from pprint import pprint
 
     # pprint(data)
     new_path = pathlib.Path("translated.yaml")
 
-    with open(new_path, "wb") as f:
-        yaml.dump(data, f)
+    #with open(new_path, "wb") as f:
+    #    yaml.dump(data, f)
 
 
 if __name__ == "__main__":
