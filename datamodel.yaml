@@ -6,8 +6,9 @@
 # 0.2 Split classes 'description' into 'de' and 'fr'
 # 0.3 Mandatory attributes
 # 0.4 Add 'abrev' attribute
-version: 0.4
-date: 2024-04-19
+# 0.5 Add tablename 
+version: 0.5
+date: 2024-04-24
 
 # Model revision should change if attributes are added, deleted or changed
 model:
@@ -19,6 +20,7 @@ themes:
     classes:
       - name: Unconsolidated_Deposits_PT
         abrev: Runc  # TODO: to check
+        table: GC_POINT_OBJECTS # TODO: to check
         description:
           de: >
             Die Klasse Unconsolidated_Deposits_PT umfasst einzelne Gesteine
@@ -27,9 +29,12 @@ themes:
             respektive sich an Ort und Stelle durch Verwitterung des umliegenden
             Gesteins gebildet haben.
           fr: >
-            La classe Unconsolidated_Deposits_PT comprend les volumes rocheux individualisés (de taille
-            variable, des galets aux blocs) qui ont été transportés par des processus gravitaires, glaciaires ou
-            anthropogéniques jusqu’à leur position actuelle, ou dégagés sur place par dégradation de la
+            La classe Unconsolidated_Deposits_PT comprend les volumes rocheux individualisés
+            (de taille
+            variable, des galets aux blocs) qui ont été transportés par des processus
+            gravitaires, glaciaires ou
+            anthropogéniques jusqu’à leur position actuelle, ou dégagés sur place
+            par dégradation de la
             roche sous-jacente.
         attributes:
           - name: kind
@@ -82,6 +87,7 @@ themes:
             cardinality: 0..1
       - name: Unconsolidated_Deposits_PLG
         abrev: Runc  # TODO: to check
+        table: GC_UNCO_DESPOSIT # TODO: to check
         description:
           de: |
             Die Klasse Unconsolidated_Deposits_PLG beinhaltet alle flächenhaft
@@ -130,10 +136,10 @@ themes:
           - name: chrono_t
             description:
               de: >
-                Chronostratigraphische Zuordnung der Obergrenze der Kartiereinheit (Top)
+                Chronostratigraphische Zuordnung der Obergrenze der Kartiereinheit
+                (Top)
               fr: >
-                Attribution chronostratigraphique du toit de la formation 
-                (top)
+                Attribution chronostratigraphique du toit de la formation  (top)
             att_type: annex
             value: GC_CHRONO_CD
             cardinality: 1
@@ -144,8 +150,7 @@ themes:
                 Chronostratigraphische Zuordnung der Untergrenze der Kartiereinheit
                 (Basis)
               fr: >
-                Attribution chronostratigraphique de la base de la 
-                formation (basis)
+                Attribution chronostratigraphique de la base de la  formation (basis)
             att_type: annex
             value: GC_CHRONO_CD
             cardinality: 1
@@ -202,8 +207,8 @@ themes:
             description:
               de: Gletschertyp; Attribut nur für Moränen
               fr: >
-                Type de glacier auquel le type d’objet est associé. Cet 
-                attribut n’est valable que pour des moraines
+                Type de glacier auquel le type d’objet est associé. Cet  attribut
+                n’est valable que pour des moraines
             att_type: CD
             value: GC_UN_DEP_RUNC_GLAC_TYP_CD
             cardinality: 0..1
@@ -231,6 +236,7 @@ themes:
 
       - name: Bedrock_PLG
         abrev: Rbed  # TODO: to check
+        table: GC_BEDROCK # TODO: to check
         description:
           de: >
             Die Klasse Bedrock_PLG enthält alle flächenbildenden
@@ -238,9 +244,12 @@ themes:
             Festgestein bewegt (durch Gravitation versetzt) wurde, geht aus der
             Klasse Instabilities_within_Bedrock_PLG (Thema Geomorphology) hervor.
           fr: >
-            La classe Bedrock_PLG regroupe toutes les unités lithostratigraphiques de roches consolidées qui
-            constituent une surface. L’information indiquant si une roche consolidée est en mouvement
-            (déplacée par gravitation) se trouve dans la classe Instabilities_ within_Bedrock_PLG (Thème
+            La classe Bedrock_PLG regroupe toutes les unités lithostratigraphiques
+            de roches consolidées qui
+            constituent une surface. L’information indiquant si une roche consolidée
+            est en mouvement
+            (déplacée par gravitation) se trouve dans la classe Instabilities_ within_Bedrock_PLG
+            (Thème
             Geomorphology).
         attributes:
           - name: kind
@@ -278,8 +287,7 @@ themes:
                 Chronostratigraphische Zuordnung der Obergrenze der Kartiereinheit
                 (Top)
               fr: >
-                Attribution chronostratigraphique du toit de la 
-                formation (top)
+                Attribution chronostratigraphique du toit de la  formation (top)
             cardinality: 1
             mandatory: true
           - name: chrono_b
@@ -289,8 +297,7 @@ themes:
               de: Chronostratigraphische Zuordnung der Untergrenze der Kartiereinheit
                 (Basis)
               fr: >
-                Attribution chronostratigraphique de la base de la 
-                formation (basis).
+                Attribution chronostratigraphique de la base de la  formation (basis).
             cardinality: 1
             mandatory: true
           - name: tecto
@@ -416,6 +423,7 @@ themes:
     classes:
       - name: Instability_Structures_PT
         abrev: Gins  # TODO: to check
+        table: GC_POINT_OBJECTS # TODO: to check
         description:
           de: |
             Die Klasse Instability_Structures_PT enthält lokal beobachtete Hinweise auf Hanginstabilitäten
@@ -440,6 +448,7 @@ themes:
             cardinality: 1
       - name: Instability_Structures_L
         abrev: Gins  # TODO: to check
+        table: GC_LINEAR_OBJECTS # TODO: to check
         description:
           de: |
             Die Klasse Instability_Structures_L umfasst linienförmige Morphologien, die sich als Folge von
@@ -457,6 +466,7 @@ themes:
             cardinality: 1
       - name: Instabilities_within_Unconsolidated_Deposits_PLG
         abrev: Gins  # TODO: to check
+        table: GC_UNCO_DESPOSIT # TODO: to check
         description:
           de: |
             Die Klasse Instabilities_within_Unconsolidated_Deposits_PLG beinhaltet alle Polygone, die Gebiete
@@ -483,6 +493,7 @@ themes:
             cardinality: 1
       - name: Instabilities_within_Bedrock_PLG
         abrev: Gins  # TODO: to check
+        table: GC_BEDROCK # TODO: to check
         description:
           de: |
             Die Klasse Instabilities_within_Bedrock_PLG beinhaltet alle Polygone, die Gebiete mit instabilen
@@ -516,6 +527,7 @@ themes:
 
       - name: Glacial_Structures_PT
         abrev: Ggla  # TODO: to check
+        table: GC_POINT_OBJECTS # TODO: to check
         description:
           de: |
             Die Klasse Glacial_Structures_PT enthält Objektarten, welche die ehemalige Anwesenheit eines
@@ -535,6 +547,7 @@ themes:
             cardinality: 1
       - name: Glacial_and_Periglacial_Structures_L
         abrev: Ggla  # TODO: to check
+        table: GC_LINEAR_OBJECTS # TODO: to check
         description:
           de: |
             Die Klasse Glacial_and_Periglacial_Structures_L enthält linienförmige Strukturen, die auf ein
@@ -579,8 +592,8 @@ themes:
             description:
               de: Zeitliche quartärstratigraphische Zuordnung des Moränenwälls
               fr: >
-                Attribution chronostratigraphique du vallum morainique 
-                au sein du Quaternaire
+                Attribution chronostratigraphique du vallum morainique  au sein du
+                Quaternaire
             att_type: CD
             value: GC_LIN_GGLA_QUAT_STR_CD
             cardinality: 0..1
@@ -598,12 +611,16 @@ themes:
             cardinality: 0..1
       - name: Glacial_Structures_PLG
         abrev: Ggla  # TODO: to check
+        table: GC_SURFACES # TODO: to check
         description:
           de: >
-            Die Klasse Glacial_Structures_PLG umfasst flächenhafte glaziale Landschaftsformen, die durch
-            basales Fliessen des Gletschereises oder dessen Abschmelzen entstanden sind.
+            Die Klasse Glacial_Structures_PLG umfasst flächenhafte glaziale Landschaftsformen,
+            die durch
+            basales Fliessen des Gletschereises oder dessen Abschmelzen entstanden
+            sind.
           fr: >
-            La classe Glacial_Structures_PLG regroupe les formes du paysage d’origine glaciaire qui se sont
+            La classe Glacial_Structures_PLG regroupe les formes du paysage d’origine
+            glaciaire qui se sont
             formées par écoulement basal de la glace du glacier ou par sa fonte.
         attributes:
           - name: kind
@@ -615,6 +632,7 @@ themes:
             cardinality: 1
       - name: Erosional_Structures_PT
         abrev: Gero  # TODO: to check
+        table: GC_POINT_OBJECTS # TODO: to check
         description:
           de: |
             Die Klasse Erosional_Structures_PT beinhaltet lokale Landschaftselemente, die sich im Laufe der
@@ -632,6 +650,7 @@ themes:
             cardinality: 1
       - name: Erosional_Structures_L
         abrev: Gero  # TODO: to check
+        table: GC_LINEAR_OBJECTS # TODO: to check
         description:
           de: |
             Die Klasse Erosional_Structures_L enthält linienförmige erosive Formen wie Erosionsränder im
@@ -662,6 +681,7 @@ themes:
 
       - name: Karstic_Structures_PT
         abrev: Gkar  # TODO: to check
+        table: GC_POINT_OBJECTS # TODO: to check
         description:
           de: |
             Die Klasse Karstic_Structures_PT beinhaltet Karstphänomene, die punktförmig dargestellt werden.
@@ -688,6 +708,7 @@ themes:
             cardinality: 0..1
       - name: Karstic_Structures_PLG
         abrev: Gkar  # TODO: to check
+        table: GC_SURFACES # TODO: to check
         description:
           de: |
             Die Klasse Karstic_Structures_PLG umfasst flächenhafte Karstformen wie Dolinen oder Poljen.
@@ -705,6 +726,7 @@ themes:
             cardinality: 1
       - name: Alluvial_and_Lacustrine_Structures_L
         abrev: Gall  # TODO: to check
+        table: GC_LINEAR_OBJECTS # TODO: to check
         description:
           de: |
             Die Klasse Alluvial_and_Lacustrine_Structures_L beinhaltet linienförmige Morphologien
@@ -732,6 +754,7 @@ themes:
     classes:
       - name: Deformation_Structures_PT
         abrev: Tdef  # TODO: to check
+        table: GC_POINT_OBJECTS # TODO: to check
         description:
           de: |
             Die Klasse Deformation_Structures_PT beinhaltet punktuell beobachtete tektonische
@@ -794,6 +817,7 @@ themes:
 
       - name: Deformation_Structures_L
         abrev: Tdef  # TODO: to check
+        table: GC_LINEAR_OBJECTS # TODO: to check
         description:
           de: |
             Die Klasse Deformation_Structures_L enthält linienförmige tektonische Deformationsstrukturen,
@@ -812,6 +836,7 @@ themes:
             cardinality: 1
       - name: Deformation_Structures_PLG
         abrev: Tdef  # TODO: to check
+        table: GC_SURFACES # TODO: to check
         description:
           de: |
             In der Klasse Deformation_Structures_PLG befinden sich tektonisch geprägte Zonen wie
@@ -843,6 +868,7 @@ themes:
             cardinality: 0..1
       - name: Tectonic_Boundaries_L
         abrev: Ttec  # TODO: to check
+        table: GC_LINEAR_OBJECTS # TODO: to check
         description:
           de: |
             Die Klasse Tectonic_Boundaries_L umfasst alle tektonischen Verwerfungen. Die Horizontal-
@@ -923,6 +949,7 @@ themes:
     classes:
       - name: Folds_PT
         abrev: Mfol  # TODO: to check
+        table: GC_POINT_OBJECTS # TODO: to check
         description:
           de: |
             Die Klasse Folds_PT enthält Objektarten, welche die räumliche Lage von verfalteten geologischen
@@ -990,6 +1017,7 @@ themes:
             cardinality: 0..1
       - name: Lineation_PT
         abrev: Mlin  # TODO: to check
+        table: GC_POINT_OBJECTS # TODO: to check
         description:
           de: |
             In der Klasse Lineation_PT finden sich Objektarten, welche die räumliche Lage von diversen
@@ -1030,6 +1058,7 @@ themes:
             cardinatity: 0..1
       - name: Planar_Structures_PT
         abrev: Mpla  # TODO: to check
+        table: GC_POINT_OBJECTS # TODO: to check
         description:
           de: >
             Die Klasse Planar_Structures_PT enthält Objektarten, welche die räumliche
@@ -1097,6 +1126,7 @@ themes:
     classes:
       - name: Anomalies_PT
         abrev: Lano  # TODO: to check
+        table: GC_POINT_OBJECTS # TODO: to check
         description:
           de: Die Klasse Anomalies_PT beinhaltet lokal beobachtete und / oder gemessene
             Anomalien.
@@ -1116,6 +1146,7 @@ themes:
             value: 128002  # TODO: no CD
       - name: Fossils_PT
         abrev: Lfos  # TODO: to check
+        table: GC_FOSSILS # TODO: to check
         description:
           de: Die Klasse Fossils_PT enthält alle Fossilfundstellen.
           fr: La classe Fossils_PT contient tous les gisements fossilifères
@@ -1163,6 +1194,7 @@ themes:
             cardinality: 0..1
       - name: Indication_of_Resources_PT
         abrev: Lind  # TODO: to check
+        table: GC_POINT_OBJECTS # TODO: to check
         description:
           de: |
             Die Klasse Indication_of_Resources_PT beinhaltet Fundstellen von vulkanischen, mineralischen
@@ -1203,6 +1235,7 @@ themes:
             cardinality: 0..1
       - name: Mineralised_Zone_L
         abrev: Lmin  # TODO: to check
+        table: GC_LINEAR_OBJECTS # TODO: to check
         description:
           de: Die Klasse Mineralised_Zone_L beinhaltet Vererzungszonen.
           fr: La classe Mineralised_Zone_L contient les zones minéralisées
@@ -1224,6 +1257,7 @@ themes:
             cardinality: 0..1
       - name: Sedimentary_Structures_PT
         abrev: Lsed  # TODO: to check
+        table: GC_POINT_OBJECTS # TODO: to check
         description:
           de: Die Klasse Sedimentary_Structures_PT enthält beobachtete Sedimentstrukturen.
           fr: |
@@ -1249,6 +1283,7 @@ themes:
             cardinality: 0..1
       - name: Type_Localities_PT
         abrev: Ltyp  # TODO: to check
+        table: GC_POINT_OBJECTS # TODO: to check
         description:
           de: |
             Die Klasse Type_Localities_PT beinhaltet diejenigen Objektarten, die Typlokalitäten oder wichtige
@@ -1296,6 +1331,7 @@ themes:
 
       - name: Prominent_Lithological_Features_L
         abrev: Lpro  # TODO: to check
+        table: GC_LINEAR_OBJECTS # TODO: to check
         description:
           de: |
             In der Klasse Prominent_Lithological_Features_L befinden sich linienförmige Gesteinshorizonte.
@@ -1345,6 +1381,7 @@ themes:
             cardinality: 1
       - name: Miscellaneous_PT
         abrev: Lmis  # TODO: to check
+        table: GC_POINT_OBJECTS # TODO: to check
         description:
           de: |
             Die Klasse Miscellaneous_PT ist für lokale, sehr spezielle geologische Objekte reserviert, die für die
@@ -1370,6 +1407,7 @@ themes:
             cardinality: 1
       - name: Geological_Outlines_L
         abrev: Lgeo  # TODO: to check
+        table: GC_LINEAR_OBJECTS # TODO: to check
         description:
           de: |
             Die Klasse Geological_Outlines_L beinhaltet geologische Konturen. Darunter fallen die Umrisse
@@ -1416,6 +1454,7 @@ themes:
     classes:
       - name: Slope_Bedrock_PT
         abrev: Pslo  # TODO: to check
+        table: GC_POINT_OBJECTS # TODO: to check
         description:
           de: |
             Die Klasse Slope_Bedrock_PT enthält Punktinformationen aus Modellierungen des Festgestein-
@@ -1471,6 +1510,7 @@ themes:
 
       - name: Contour_Lines_Bedrock_L
         abrev: Pcon  # TODO: to check
+        table: GC_LINEAR_OBJECTS # TODO: to check
         description:
           de: |
             Die Klasse Contour_Lines_Bedrock_L beinhaltet Isohypsen, die sich auf den Verlauf des Fest-
@@ -1510,6 +1550,7 @@ themes:
             cardinality: 1
       - name: Modelled_Water_Table_PT
         abrev: Pmod  # TODO: to check
+        table: GC_POINT_OBJECTS # TODO: to check
         description:
           de: |
             Die Klasse Modelled_Water_Table_PT enthält Punktinformationen aus Modellierungen des
@@ -1559,6 +1600,7 @@ themes:
             cardinality: 0..1
       - name: Contour_Lines_Hydro_L
         abrev: Pcon  # TODO: to check
+        table: GC_LINEAR_OBJECTS # TODO: to check
         description:
           de: |
             In der Klasse Contour_Lines_Hydro_L befinden sich die Isohypsen, die sich auf das Grundwasser
@@ -1597,6 +1639,7 @@ themes:
     classes:
       - name: Archaeology_PT
         abrev: Aarc  # TODO: to check
+        table: GC_POINT_OBJECTS # TODO: to check
         description:
           de: Die Klasse Archaeology_PT enthält Objektarten zu einzelnen archäologischen
             Relikten.
@@ -1638,6 +1681,7 @@ themes:
             cardinality: 0..1
       - name: Archaeology_L
         abrev: Aarc  # TODO: to check
+        table: GC_LINEAR_OBJECTS # TODO: to check
         description:
           de: |
             Die Klasse Archaeology_L umfasst linienförmige archäologische Elemente. Historische Strassen,
@@ -1675,6 +1719,7 @@ themes:
             cardinality: 0..1
       - name: Archaeology_PLG
         abrev: Aarc  # TODO: to check
+        table: GC_SURFACES # TODO: to check
         description:
           de: |
             Die Klasse Archaeology_PLG beinhaltet archäologische Relikte (z.B. römisches Castrum), die ein
@@ -1712,6 +1757,7 @@ themes:
             cardinality: 0..1
       - name: Exploitation_Geomaterials_PT
         abrev: Aexp  # TODO: to check
+        table: GC_POINT_OBJECTS # TODO: to check
         description:
           de: |
             Die Klasse Exploitation_Geomaterials_PT enthält punktförmige Angaben zu Abbaustellen von
@@ -1756,6 +1802,7 @@ themes:
 
       - name: Exploitation_Geomaterials_L
         abrev: Aexp  # TODO: to check
+        table: GC_LINEAR_OBJECTS # TODO: to check
         description:
           de: |
             Die Klasse Exploitation_Geomaterials_L beinhaltet linienförmige Informationen zum Abbau von
@@ -1780,6 +1827,7 @@ themes:
 
       - name: Exploitation_Geomaterials_PLG
         abrev: Aexp  # TODO: to check
+        table: GC_SURFACES # TODO: to check
         description:
           de: |
             Die Klasse Exploitation_Geomaterials_PLG enthält Flächen, wo zur Zeit der geologischen
@@ -1823,6 +1871,7 @@ themes:
             cardinality: 0..1
       - name: Boreholes_PT
         abrev: Abor  # TODO: to check
+        table: GC_POINT_OBJECTS # TODO: to check
         description:
           de: |
             Die Klasse Boreholes_PT beinhaltet Bohrungen und Sondierungen. (Auf alten gedruckten Karten
@@ -1966,6 +2015,7 @@ themes:
 
       - name: Artificial_Surface_Modifications_PLG
         abrev: Aart  # TODO: to check
+        table: GC_SURFACES # TODO: to check
         description:
           de: |
             Die Klasse Artificial_Surface_Modifications_PLG enthält bedeutende künstliche Veränderungen
@@ -1984,6 +2034,7 @@ themes:
     classes:
       - name: Construction_PT
         abrev: Hcon  # TODO: to check
+        table: GC_POINT_OBJECTS # TODO: to check
         description:
           de: |
             Die Klasse Construction_PT beinhaltet Wasserbauten wie Grundwasserfassungen und Zisternen.
@@ -2035,6 +2086,7 @@ themes:
             cardinality: 0..1
       - name: Construction_L
         abrev: Hcon  # TODO: to check
+        table: GC_LINEAR_OBJECTS # TODO: to check
         description:
           de: |
             Die Klasse Construction_L enthält linienförmige Wasserbauten wie den Wasserfassungsstollen,
@@ -2063,6 +2115,7 @@ themes:
             cardinality: 0..1
       - name: Palaeohydrology_L
         abrev: Hpal  # TODO: to check
+        table: GC_LINEAR_OBJECTS # TODO: to check
         description:
           de: |
             In der Klasse Palaeohydrology_L befinden sich alle linienförmigen Objektarten, welche einen
@@ -2108,6 +2161,7 @@ themes:
 
       - name: Subsurface_Water_L
         abrev: Hsub  # TODO: to check
+        table: GC_LINEAR_OBJECTS # TODO: to check
         description:
           de: |
             In der Klasse Subsurface_Water_L befinden sich linienförmigen Objektarten, welche einen
@@ -2143,6 +2197,7 @@ themes:
             cardinality: 0..1
       - name: Surface_Water_PT
         abrev: Hsur  # TODO: to check
+        table: GC_POINT_OBJECTS # TODO: to check
         description:
           de: |
             Die Klasse Surface_Water_PT umfasst lokal (punktuell) beobachtete Oberflächengewässer, wie
@@ -2241,6 +2296,7 @@ themes:
             cardinality: 0..1
       - name: Surface_Water_L
         abrev: Hsur  # TODO: to check
+        table: GC_LINEAR_OBJECTS # TODO: to check
         description:
           de: |
             In der Klasse Surface_Water_L sind linienförmige Oberflächengewässer (Quellhorizonte)
@@ -2258,6 +2314,7 @@ themes:
             cardinality: 1
       - name: Surface_Water_PLG
         abrev: Hsur  # TODO: to check
+        table: GC_SURFACES # TODO: to check
         description:
           de: |
             Die Klasse Surface_Water_PLG beinhaltet oberflächliche Wasserspeicher wie Gletscher, Seen und
