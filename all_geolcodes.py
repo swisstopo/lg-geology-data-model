@@ -39,11 +39,19 @@ def main():
 
     data = []
 
+    trad = pd.read_csv("../data/GeolCodeText_Trad_230317.csv", sep=";")
+    print(trad.columns)
+
+    de = list(zip(trad["GeolCodeInt"], trad["DE"]))
+
     with open("../data/geocover-schema-sde.json", "r") as f:
         domains = json.load(f).get("domains")
 
     with open("subtypes_dict.json", "r") as f:
         subtypes = json.load(f)
+
+    for key, val in de:
+        data.append(("traduction", int(key), val))
 
     for key, val in subtypes.items():
         data.append(("subtype", int(key), val))
