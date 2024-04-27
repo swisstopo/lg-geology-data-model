@@ -1,0 +1,399 @@
+
+@startuml
+
+skinparam monochrome true
+skinparam linetype ortho
+scale 2
+
+!define table(x) class x << (T,#FFAAAA) >>
+!define view(x) class x << (V,#FFAAAA) >>
+!define ent(x) class x << (E,#FFAAAA) >>
+
+!define primary_key(x) <b>PK: x</b>
+!define foreign_key(x,reference) <b>FK: </b>x
+hide methods
+hide stereotypes
+
+table(GC_LITHO_BED) {
+	foreign_key(GC_BEDROCK_UUID,GC_BEDROCK) Guid
+	foreign_key(GC_LITHO_BED_UUID,GC_LITHO_BED) Guid
+}
+
+table(GC_SYSTEM) {
+	foreign_key(GC_FOSSILS_UUID,GC_FOSSILS) Guid
+	foreign_key(GC_SYSTEM_UUID,GC_SYSTEM) Guid
+}
+
+table(GC_LITSTRAT) {
+	foreign_key(GC_EXPLOIT_GEOMAT_PLG_UUID,GC_EXPLOIT_GEOMAT_PLG) Guid
+	foreign_key(GC_LITSTRAT_UUID,GC_LITSTRAT) Guid
+}
+
+table(GC_BED_FORM_ATT) {
+	---
+	OBJECTID OID
+	UUID Guid
+	FMAT_META_MINERAL1 Integer
+	FMAT_META_MINERAL2 Integer
+	FMAT_META_MINERAL3 Integer
+	FMAT_META_STR1 Integer
+	FMAT_META_STR2 Integer
+	FMAT_META_STR3 Integer
+	FMAT_SEDI_BEDDING1 Integer
+	FMAT_SEDI_BEDDING2 Integer
+	FMAT_SEDI_BOND_MAT Integer
+	FMAT_SEDI_MAIN_COM Integer
+	FMAT_SEDI_SECO_COM1 Integer
+	FMAT_SEDI_SECO_COM2 Integer
+	FMAT_SEDI_STR1 Integer
+	FMAT_SEDI_STR2 Integer
+	FMAT_SEDI_TEX1 Integer
+	FMAT_SEDI_TEX2 Integer
+	FMAT_IGNE_TEX Integer
+	FMAT_IGNE_GRAIN_SI Integer
+	FMAT_IGNE_AFFINITY Integer
+	FMAT_META_FULL_NAME String
+	FMAT_LITSTRAT Integer
+}
+
+table(GC_LITHO) {
+	foreign_key(GC_UNCO_DESPOSIT_UUID,GC_UNCO_DESPOSIT) Guid
+	foreign_key(GC_LITHO_UUID,GC_LITHO) Guid
+}
+
+table(GC_LITSTRAT_UNCO) {
+	---
+	OBJECTID OID
+	UUID Guid
+	GEOL_CODE String
+	GEOL_CODE_INT Integer
+	GERMAN String
+	TREE_LEVEL Integer
+	PARENT_REF Integer
+}
+
+table(GC_CHRONO) {
+	---
+	OBJECTID OID
+	UUID Guid
+	GEOL_CODE String
+	GEOL_CODE_INT Integer
+	GERMAN String
+	TREE_LEVEL Integer
+	PARENT_REF Integer
+}
+
+table(GC_CHARCAT) {
+	foreign_key(GC_UNCO_DESPOSIT_UUID,GC_UNCO_DESPOSIT) Guid
+	foreign_key(GC_CHARCAT_UUID,GC_CHARCAT) Guid
+}
+
+table(GC_TECTO) {
+	---
+	OBJECTID OID
+	UUID Guid
+	GEOL_CODE String
+	GEOL_CODE_INT Integer
+	GERMAN String
+	TREE_LEVEL Integer
+	PARENT_REF Integer
+}
+
+table(GC_LITSTRAT_BED) {
+	---
+	OBJECTID OID
+	UUID Guid
+	GEOL_CODE String
+	GEOL_CODE_INT Integer
+	GERMAN String
+	TREE_LEVEL Integer
+	PARENT_REF Integer
+}
+
+table(GC_ADMIXTURE) {
+	foreign_key(GC_UNCO_DESPOSIT_UUID,GC_UNCO_DESPOSIT) Guid
+	foreign_key(GC_ADMIXTURE_UUID,GC_ADMIXTURE) Guid
+}
+
+table(GC_LITHO_UNCO) {
+	---
+	OBJECTID OID
+	UUID Guid
+	GEOL_CODE String
+	GEOL_CODE_INT Integer
+	GERMAN String
+	TREE_LEVEL Integer
+	PARENT_REF Integer
+}
+
+table(GC_COMPOSIT) {
+	foreign_key(GC_UNCO_DESPOSIT_UUID,GC_UNCO_DESPOSIT) Guid
+	foreign_key(GC_COMPOSIT_UUID,GC_COMPOSIT) Guid
+}
+
+table(GC_LINEAR_OBJECTS) {
+	---
+	OBJECTID OID
+	UUID Guid
+	SYMBOL String
+	HPAL_CHRONO Integer
+	LPRO_LITHO Integer
+	PCOB_FORMATIO Integer
+	AARC_EPOCH Integer
+	AARC_PERIOD Integer
+	AARC_AGE Integer
+	AEXP_STATUS Integer
+	GALL_AGE Integer
+	GGLA_MORAI_MO Integer
+	GGLA_GLAC_TYP Integer
+	GGLA_ICE_M_P Integer
+	GGLA_QUAT_STR Integer
+	HCON_COMBI Integer
+	HPAL_REL_AGE Integer
+	HSUB_COMBI Integer
+	LGEO_STATUS Integer
+	LPRO_CONG_SPE Integer
+	LPRO_NAME_HORIZ Integer
+	PCOB_TYPE Integer
+	PCOH_CONFINE Integer
+	PCOH_WA_TABLE Integer
+	TTEC_FAULT_MO Integer
+	TTEC_VERTI_MO Integer
+	TTEC_HORIZ_MO Integer
+	TTEC_STATUS Integer
+	TTEC_META_STA Integer
+	GGLA_REF_YEAR Integer
+	GGLA_SOURCE String
+	HPAL_REF_YEAR Integer
+	HPAL_SOURCE String
+	LPRO_ORIG_DESCR String
+	LMIN_CHEMISTRY String
+	PCOB_ALTITUDE Double
+	PCOH_ALTITUDE Double
+	TTEC_NAME String
+	SHAPE Geometry
+	PRINTED Integer
+	TTEC_LIM_TYP Integer
+	TTEC_HIERA Integer
+}
+
+table(GC_BEDROCK) {
+	foreign_key(FORM_ATT,GC_BED_FORM_ATT) Guid
+	---
+	OBJECTID OID
+	UUID Guid
+	SYMBOL String
+	RBED_CHRONO_T Integer
+	RBED_CHRONO_B Integer
+	RBED_CHRONO_B_LOC Integer
+	RBED_CHRONO_T_LOC Integer
+	RBED_TECTO Integer
+	RBED_HARMOS_REV Integer
+	RBED_EXOTIC_ELE Integer
+	RBED_ORIG_DESCR String
+	RBED_INDEX String
+	FORM_ATT Guid
+	SHAPE Geometry
+}
+
+table(GC_UNCO_DESPOSIT) {
+	---
+	OBJECTID OID
+	UUID Guid
+	SYMBOL String
+	RUNC_CHRONO_T Integer
+	RUNC_CHRONO_B Integer
+	RUNC_LITHO Integer
+	RUNC_LITSTRAT Integer
+	RUNC_HARMOS_REV Integer
+	RUNC_STRUCTUR Integer
+	RUNC_MORPHOLO Integer
+	RUNC_GLAC_TYP Integer
+	RUNC_THIN_COV Integer
+	RUNC_BURIED_OUT Integer
+	RUNC_ORIG_DESCR String
+	RUNC_REF_YEAR String
+	RUNC_INDEX String
+	SHAPE Geometry
+}
+
+table(GC_EXPLOIT_GEOMAT_PLG) {
+	---
+	OBJECTID OID
+	UUID Guid
+	SYMBOL String
+	AEXP_STATUS Integer
+	AEXP_TARG_MAT Integer
+	SHAPE Geometry
+}
+
+table(GC_POINT_OBJECTS) {
+	---
+	OBJECTID OID
+	UUID Guid
+	SYMBOL String
+	RUNC_MAT_TYPE Integer
+	ABOR_FM_A Integer
+	ABOR_FM_B Integer
+	PSLO_FORMATIO Integer
+	AARC_EPOCH Integer
+	AARC_PERIOD Integer
+	AARC_AGE Integer
+	AARC_TYPE Integer
+	ABOR_MAIN_TAR Integer
+	ABOR_TARG_MAT Integer
+	ABOR_D_C_UNDERG Integer
+	GKAR_ICE_CAVE Integer
+	HCON_STATUS Integer
+	HCON_EPOCH Integer
+	HSUR_STATUS Integer
+	HSUR_FLOW_CON Integer
+	HSUR_TYPE Integer
+	HSUR_DIS_LOCA Integer
+	HSUR_COMBI Integer
+	LANO_TYPE Integer
+	LRES_STATUS Integer
+	LRES_MATERIAL Integer
+	LTYP_STRATI Integer
+	LTYP_ACCESSIBIL Integer
+	LTYP_PROTECTED Integer
+	MFOL_FOLD_TYP Integer
+	MFOL_PHASE Integer
+	MPLA_POLARITY Integer
+	MPLA_PHASE Integer
+	MPLA_OB_DIP_SLO Integer
+	PSLO_TYPE Integer
+	RUNC_STATUS Integer
+	RUNC_ROCK_TYP Integer
+	RUNC_ROCK_SPE Integer
+	RUNC_PROTECTED Integer
+	TDEF_FOLD_TYP Integer
+	TDEF_FOLD_FOR Integer
+	ABOR_DEPTH_BEDR Double
+	ABOR_DEPTH_TOT Double
+	ABOR_DEPTH_FM_A Double
+	ABOR_DEPTH_FM_B Double
+	ABOR_DEPTH_WT Double
+	AZIMUTH Integer
+	DIP Integer
+	ABOR_REF_NUMBER Integer
+	ABOR_LINK Integer
+	HCON_DEPTH Double
+	HCON_DEPTH_WT Double
+	HCON_MEA_PERIOD String
+	HSUR_TEMP Integer
+	HSUR_CHEMISTRY String
+	LRES_CHEMISTRY String
+	LTYP_NAME String
+	MFOL_PHASE_REF String
+	MPLA_PHASE_REF String
+	PMOD_HEIGHT Double
+	PMOD_MEA_PERIOD String
+	RUNC_ORIG_DESCR String
+	LMIS_ORIG_ID String
+	SHAPE Geometry
+	PRINTED Integer
+	ABOR_LITHO Integer
+}
+
+table(GC_EXPLOIT_GEOMAT_PT) {
+	---
+	OBJECTID OID
+	UUID Guid
+	SYMBOL String
+	AEXP_STATUS Integer
+	AEXP_TARG_MAT Integer
+	AEXP_DEPTH_TOT Double
+	SHAPE Geometry
+	PRINTED Integer
+}
+
+table(GC_FOSSILS) {
+	---
+	OBJECTID OID
+	UUID Guid
+	SYMBOL String
+	LFOS_DIVISION Integer
+	LFOS_DAT_METH Integer
+	LFOS_STATUS Integer
+	LFOS_PROTECTED Integer
+	SHAPE Geometry
+	PRINTED Integer
+}
+
+table(GC_SURFACES) {
+	---
+	OBJECTID OID
+	UUID Guid
+	SYMBOL String
+	AARC_EPOCH Integer
+	AARC_PERIOD Integer
+	AARC_AGE Integer
+	GINS_MAIN_MOV Integer
+	TDEF_TYPE Integer
+	SHAPE Geometry
+}
+
+table(GC_FOSSILS_GC_SYSTEM) {
+	foreign_key(GC_FOSSILS_UUID,GC_FOSSILS) Guid
+	foreign_key(GC_SYSTEM_UUID,GC_SYSTEM) Guid
+}
+
+table(GC_EXPLOIT_GEOMAT_PT_GC_LITSTRAT) {
+	foreign_key(GC_EXPLOIT_GEOMAT_PT_UUID,GC_EXPLOIT_GEOMAT_PT) Guid
+	foreign_key(GC_LITSTRAT_UUID,GC_LITSTRAT) Guid
+}
+
+table(GC_UNCO_DESPOSIT_GC_LITHO) {
+	foreign_key(GC_UNCO_DESPOSIT_UUID,GC_UNCO_DESPOSIT) Guid
+	foreign_key(GC_LITHO_UUID,GC_LITHO) Guid
+}
+
+table(GC_BEDROCK_GC_LITHO_BED) {
+	foreign_key(GC_BEDROCK_UUID,GC_BEDROCK) Guid
+	foreign_key(GC_LITHO_BED_UUID,GC_LITHO_BED) Guid
+}
+
+table(GC_EXPLOIT_GEOMAT_PLG_GC_LITSTRAT) {
+	foreign_key(GC_EXPLOIT_GEOMAT_PLG_UUID,GC_EXPLOIT_GEOMAT_PLG) Guid
+	foreign_key(GC_LITSTRAT_UUID,GC_LITSTRAT) Guid
+}
+
+table(GC_UNCO_DESPOSIT_GC_CHARCAT) {
+	foreign_key(GC_UNCO_DESPOSIT_UUID,GC_UNCO_DESPOSIT) Guid
+	foreign_key(GC_CHARCAT_UUID,GC_CHARCAT) Guid
+}
+
+table(GC_UNCO_DESPOSIT_GC_ADMIXTURE) {
+	foreign_key(GC_UNCO_DESPOSIT_UUID,GC_UNCO_DESPOSIT) Guid
+	foreign_key(GC_ADMIXTURE_UUID,GC_ADMIXTURE) Guid
+}
+
+table(GC_UNCO_DESPOSIT_GC_COMPOSIT) {
+	foreign_key(GC_UNCO_DESPOSIT_UUID,GC_UNCO_DESPOSIT) Guid
+	foreign_key(GC_COMPOSIT_UUID,GC_COMPOSIT) Guid
+}
+
+GC_LITHO "0..n" -- "1..1" GC_UNCO_DESPOSIT
+GC_CHARCAT "0..n" -- "1..1" GC_UNCO_DESPOSIT
+GC_ADMIXTURE "0..n" -- "1..1" GC_UNCO_DESPOSIT
+GC_COMPOSIT "0..n" -- "1..1" GC_UNCO_DESPOSIT
+GC_BEDROCK "0..n" -- "1..1" GC_BED_FORM_ATT
+GC_FOSSILS_GC_SYSTEM "0..n" -- "1..1" GC_FOSSILS
+GC_FOSSILS_GC_SYSTEM "0..n" -- "1..1" GC_SYSTEM
+GC_EXPLOIT_GEOMAT_PT_GC_LITSTRAT "0..n" -- "1..1" GC_EXPLOIT_GEOMAT_PT
+GC_EXPLOIT_GEOMAT_PT_GC_LITSTRAT "0..n" -- "1..1" GC_LITSTRAT
+GC_UNCO_DESPOSIT_GC_LITHO "0..n" -- "1..1" GC_UNCO_DESPOSIT
+GC_UNCO_DESPOSIT_GC_LITHO "0..n" -- "1..1" GC_LITHO
+GC_BEDROCK_GC_LITHO_BED "0..n" -- "1..1" GC_BEDROCK
+GC_BEDROCK_GC_LITHO_BED "0..n" -- "1..1" GC_LITHO_BED
+GC_EXPLOIT_GEOMAT_PLG_GC_LITSTRAT "0..n" -- "1..1" GC_EXPLOIT_GEOMAT_PLG
+GC_EXPLOIT_GEOMAT_PLG_GC_LITSTRAT "0..n" -- "1..1" GC_LITSTRAT
+GC_UNCO_DESPOSIT_GC_CHARCAT "0..n" -- "1..1" GC_UNCO_DESPOSIT
+GC_UNCO_DESPOSIT_GC_ADMIXTURE "0..n" -- "1..1" GC_UNCO_DESPOSIT
+GC_UNCO_DESPOSIT_GC_ADMIXTURE "0..n" -- "1..1" GC_ADMIXTURE
+GC_UNCO_DESPOSIT_GC_COMPOSIT "0..n" -- "1..1" GC_UNCO_DESPOSIT
+GC_UNCO_DESPOSIT_GC_COMPOSIT "0..n" -- "1..1" GC_COMPOSIT
+
+@enduml
+    

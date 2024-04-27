@@ -1,12 +1,18 @@
 #!/usr/bin/env python3
 
 import os
+import sys
 import json
 import pygraphviz as pgv
+
+from loguru import logger
 
 from sql2puml import SQL2PUML
 
 FONTNAME = "DejaVu Sans,Nimbus Sans"
+
+logger.remove(0)
+logger.add(sys.stderr, format="{time} {level} {message}", level="INFO")
 
 
 def removeprefix(prefix, lst):
@@ -61,7 +67,6 @@ IGNORE_OBJECTS = clean(
         "TOPGIS_GC.GC_ERRORS_POLYGON",
         "TOPGIS_GC.GC_REVISIONSEBENE",
         "TOPGIS_GC.GC_CONFLICT_POLYGON",
-        "TOPGIS_GC.GC_FOSSILS",
         "TOPGIS_GC.GC_ERRORS_LINE",
         "GC_VERSION",
         "GC_MAPSHEET",
@@ -162,7 +167,9 @@ for f in s["featclasses"].keys():
     fields = s["featclasses"][f]["fields"]
     f = clean(f)
     if f.endswith("_I") or clean(f) in IGNORE_OBJECTS:
+        logger.debug(f)
         continue
+    logger.info(f"========{f}===============")
     G.add_node(clean(f))  # adds node 'a'
     S.add_table(clean(f))
     t = FeatureClass(clean(f), "pnt")
@@ -208,7 +215,7 @@ for i, r in enumerate(relations):
         rev_lbl = "m"
     else:
         rev_lbl = "1"
-    print(cr, f"({cardinality}):", origin, "-->", destination)
+    # print(cr, f"({cardinality}):", origin, "-->", destination)
     G.add_edge(origin, fwd_label, label=fwd_lbl)
     G.add_edge(fwd_label, destination, label=rev_lbl)
 
@@ -226,17 +233,73 @@ for i, r in enumerate(relations):
             else:
                 fk_key = name
         if fk_key is None or pri_key is None:
-            print("ERROR")
+            logger.error("ERROR")
             continue
 
         # fk = ColumnFK(name, type_, reference
 
         kk = ori_table.get_column(pri_key, erase=False)
-        print(f"FK: {pri_key}", [col.name for col in ori_table.columns], kk)
+        logger.debug(f"FK: {pri_key}", [col.name for col in ori_table.columns], kk)
         if kk is not None:
             type_ = kk.type_
             col = ColumnFK(fk_key, type_, origin)
             dest_table.columns.append(col)
+
+            tables[destination] = dest_table
+
+    if cardinality == "ManyToMany":
+        new_table = f"{origin}_{destination}"  # tiret not allowed
+        logger.info(f"New name: '{new_table}', original: '{cr}'")
+        if new_table in tables.keys():
+            logger.info(f'Discarding Relationships "ManyToMany" {cr}')
+            continue
+        ori_table = tables.get(origin)
+        dest_table = tables.get(destination)
+        ori_keys = rr.get("originClassKeys")
+        dest_keys = rr.get("destinationClassKeys")
+        pri_key = None
+        fk_key = None
+
+        def get_keys(keys):
+            d = {}
+            for k in keys:
+                role = k["role"]
+                name = k["name"]
+                if "Primary" in role:
+                    d["pk"] = name
+                else:
+                    d["fk"] = name
+            return d
+
+        keys = {}
+        keys["origin"] = get_keys(ori_keys)
+        keys["destination"] = get_keys(dest_keys)
+
+        t = Table(new_table)
+        # t.columns.append(Column(keys["origin"]["fk"], "int"))
+        # t.columns.append(Column(keys["destination"]["fk"], "int"))
+        tables[new_table] = t
+
+        # fk = ColumnFK(name, type_, reference
+
+        ori_pk = ori_table.get_column(keys["origin"]["pk"], erase=False)
+        logger.debug(f"FK: {ori_pk}", [col.name for col in ori_table.columns], ori_pk)
+        if ori_pk is not None:
+            type_ = ori_pk.type_
+            col = ColumnFK(keys["origin"]["fk"], type_, origin)
+            t.columns.append(col)
+
+            tables[destination] = t
+        dest_pk = ori_table.get_column(keys["destination"]["pk"], erase=False)
+        logger.debug(
+            f"FK: {dest_pk}", [col.name for col in dest_table.columns], dest_pk
+        )
+        if dest_pk is not None:
+            type_ = dest_pk.type_
+            col = ColumnFK(keys["destination"]["fk"], type_, destination)
+            t.columns.append(col)
+
+            tables[destination] = t
 
 
 G.layout()  # default to neato
