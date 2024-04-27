@@ -4,6 +4,7 @@ import os
 import sys
 import json
 import pygraphviz as pgv
+import yaml
 
 from loguru import logger
 
@@ -76,9 +77,13 @@ IGNORE_OBJECTS = clean(
 
 
 class Column:
-    def __init__(self, name, type_):
+    def __init__(self, name, type_, primary=False):
         self.name = name
         self.type_ = type_
+        self.primary = primary
+
+    def __repr__(self):
+        return f"<Column: {self.name}, {self.type_}, PK: {self.primary}>"
 
 
 class ColumnFK(Column):
@@ -88,9 +93,10 @@ class ColumnFK(Column):
 
 
 class Table:
-    def __init__(self, name):
+    def __init__(self, name, relation=False):
         self.name = name
         self.columns = []
+        self.relation = relation
 
     def get_column(self, name, erase=True):
         for i, c in enumerate(self.columns):
@@ -100,6 +106,9 @@ class Table:
                 else:
                     return c
         return None
+
+    def __repr__(self):
+        return f"<Table: {self.name}, relation: {self.relation}, columns: '{','.join([col.name for col in self.columns])}'>"
 
 
 class FeatureClass(Table):
@@ -123,7 +132,7 @@ with open(input_file, "r") as f:
 
 s = json.loads(c)
 
-tables = {}
+all_tables = {}
 
 S = SQL2PUML()
 G = pgv.AGraph(strict=False, directed=False)
@@ -144,43 +153,59 @@ G.edge_attr["fontname"] = FONTNAME
 
 
 for t in s["tables"].keys():
-    if t.endswith("_I") or clean(t) in IGNORE_OBJECTS:
+    short_name = clean(t)
+    if t.endswith("_I") or short_name in IGNORE_OBJECTS:
         continue
-    G.add_node(clean(t))  # adds node 'a'
-    S.add_table(clean(t))
+
+    logger.info(f"====Table {short_name}====")
+    G.add_node(short_name)  # adds node 'a'
+    S.add_table(short_name)
 
     fields = s["tables"][t].get("fields", [])
 
-    tt = Table(clean(t))
+    tt = Table(short_name)
     for field in fields:
         name = field.get("name")
         if name in IGNORE_FIELDS:
             continue
         typ = field.get("type")
         S.add_column(name, typ)
-        tt.columns.append(Column(name, typ))
-    tables[clean(t)] = tt
+        if name.lower() == "uuid":
+            primary = True
+        else:
+            primary = False
+
+        tt.columns.append(Column(name, typ, primary=primary))
+    all_tables[short_name] = tt
+
+    logger.info(tt)
 
 
 G.node_attr["color"] = "lightcoral"
 for f in s["featclasses"].keys():
+    short_name = clean(f)
+
     fields = s["featclasses"][f]["fields"]
-    f = clean(f)
-    if f.endswith("_I") or clean(f) in IGNORE_OBJECTS:
-        logger.debug(f)
+
+    if f.endswith("_I") or short_name in IGNORE_OBJECTS:
+        logger.debug(short_name)
         continue
-    logger.info(f"========{f}===============")
-    G.add_node(clean(f))  # adds node 'a'
-    S.add_table(clean(f))
-    t = FeatureClass(clean(f), "pnt")
+    logger.info(f"========FeatureClass {short_name}===============")
+    G.add_node(short_name)  # adds node 'a'
+    S.add_table(short_name)
+    t = FeatureClass(short_name, "pnt")
     for field in fields:
         name = field.get("name")
         if name in IGNORE_FIELDS:
             continue
+        if name.lower() == "uuid":
+            primary = True
+        else:
+            primary = False
         typ = field.get("type")
         S.add_column(name, typ)
-        t.columns.append(Column(name, typ))
-    tables[clean(f)] = t
+        t.columns.append(Column(name, typ, primary=primary))
+    all_tables[short_name] = t
 
 G.node_attr["color"] = "lightgrey"
 G.node_attr["style"] = "filled"
@@ -191,6 +216,7 @@ relations = [r for r in s["relationships"].keys() if not r.endswith("_I")]
 
 for i, r in enumerate(relations):
     cr = clean(r)
+
     rr = s["relationships"][r]
     cardinality = rr["cardinality"]
 
@@ -200,6 +226,8 @@ for i, r in enumerate(relations):
 for i, r in enumerate(relations):
     rr = s["relationships"][r]
     cr = clean(r)
+    short_name = clean(r)
+    logger.info(f"========Relationship {short_name}===============")
     cardinality = rr["cardinality"]
     origin = clean(rr["origin"])
     destination = clean(rr["destination"])
@@ -215,13 +243,13 @@ for i, r in enumerate(relations):
         rev_lbl = "m"
     else:
         rev_lbl = "1"
-    # print(cr, f"({cardinality}):", origin, "-->", destination)
+    # print(short_name, f"({cardinality}):", origin, "-->", destination)
     G.add_edge(origin, fwd_label, label=fwd_lbl)
     G.add_edge(fwd_label, destination, label=rev_lbl)
 
     if cardinality == "OneToMany":
-        ori_table = tables.get(origin)
-        dest_table = tables.get(destination)
+        ori_table = all_tables.get(origin)
+        dest_table = all_tables.get(destination)
         keys = rr.get("originClassKeys")
         pri_key = None
         fk_key = None
@@ -245,16 +273,16 @@ for i, r in enumerate(relations):
             col = ColumnFK(fk_key, type_, origin)
             dest_table.columns.append(col)
 
-            tables[destination] = dest_table
+            all_tables[destination] = dest_table
 
     if cardinality == "ManyToMany":
         new_table = f"{origin}_{destination}"  # tiret not allowed
         logger.info(f"New name: '{new_table}', original: '{cr}'")
-        if new_table in tables.keys():
-            logger.info(f'Discarding Relationships "ManyToMany" {cr}')
+        if new_table in all_tables.keys():
+            logger.info(f'Discarding Relationships "ManyToMany" {new_table}')
             continue
-        ori_table = tables.get(origin)
-        dest_table = tables.get(destination)
+        ori_table = all_tables.get(origin)
+        dest_table = all_tables.get(destination)
         ori_keys = rr.get("originClassKeys")
         dest_keys = rr.get("destinationClassKeys")
         pri_key = None
@@ -275,10 +303,10 @@ for i, r in enumerate(relations):
         keys["origin"] = get_keys(ori_keys)
         keys["destination"] = get_keys(dest_keys)
 
-        t = Table(new_table)
+        t = Table(new_table, relation=True)
         # t.columns.append(Column(keys["origin"]["fk"], "int"))
         # t.columns.append(Column(keys["destination"]["fk"], "int"))
-        tables[new_table] = t
+        all_tables[new_table] = t
 
         # fk = ColumnFK(name, type_, reference
 
@@ -289,7 +317,6 @@ for i, r in enumerate(relations):
             col = ColumnFK(keys["origin"]["fk"], type_, origin)
             t.columns.append(col)
 
-            tables[destination] = t
         dest_pk = ori_table.get_column(keys["destination"]["pk"], erase=False)
         logger.debug(
             f"FK: {dest_pk}", [col.name for col in dest_table.columns], dest_pk
@@ -299,7 +326,7 @@ for i, r in enumerate(relations):
             col = ColumnFK(keys["destination"]["fk"], type_, destination)
             t.columns.append(col)
 
-            tables[destination] = t
+        all_tables[destination] = t
 
 
 G.layout()  # default to neato
@@ -310,8 +337,6 @@ G.draw(output_file)  # write previously positioned graph to PNG file
 G.draw(basename + ".svg")
 G.write(dotfile)
 
-with open("ER-Diagram.puml", "w") as f:
-    f.write(S.transform())
 
 print(
     "Generate with: dot -Tpng -Kneato -Gsize=8.3,11.7\! -Gdpi=254 -o{} {}".format(
@@ -321,20 +346,62 @@ print(
 
 import pprint
 
-S = SQL2PUML()
-for name, table in tables.items():
-    S.add_table(name)
+from ruamel.yaml import YAML
+from collections import OrderedDict
+
+db_config = {"database": "GCOVERP", "version": 1, "tables": [], "featureclasses": {}}
+
+logger.info("-----------------------")
+
+SP = SQL2PUML()
+for name, table in all_tables.items():
+    logger.info(f"----{name}----")
+    # logger.info()
+
+    if SP.puml_tables.get(name) is not None:
+        SP.current_table = name
+    else:
+        SP.add_table(name)
+    tt = {"name": name, "columns": []}
     # pprint.pprint(table.columns)
     for col in table.columns:
+        c = {}
         if isinstance(col, ColumnFK):
             # print(f"{col.name} is foreign")
-            S.add_column_foreign(col.name, col.type_, col.reference)
+            SP.add_column_foreign(col.name, col.type_, col.reference)
+            c = {
+                "foreign_key": {
+                    "name": col.name,
+                    "type": col.type_,
+                    "reference": col.reference,
+                }
+            }
+
         else:
-            # print(f"{col.name} is not foreign {type(col)}")
-            S.add_column(col.name, col.type_)
+            if col.primary is True:
+                logger.debug(f"PK: {col.name}")
+                SP.add_column_primary(col.name, col.type_)
+            else:
+                # print(f"{col.name} is not foreign {type(col)}")
+                SP.add_column(col.name, col.type_)
+            c = {"name": col.name, "type": col.type_, "primary_key": primary}
+        tt["columns"].append(c)
+    db_config["tables"].append(tt)
+
+pprint.pprint(db_config)
+
 for table_name, table in S.puml_tables.items():
-    # print(table_name)
-    for fk in table["foreign"].values():
-        pass  # print(fk)
-with open("ER-Diagram.puml", "w") as f:
-    f.write(S.transform())
+    for t in ("default", "primary", "foreign"):
+        for fk in table[t].keys():
+            logger.debug(f"{table_name}, {t}, {fk}")
+
+with open("ER-GCOVER.puml", "w") as f:
+    f.write(SP.transform())
+
+yaml = YAML()
+
+# Set the output to preserve the order of keys
+yaml.default_flow_style = False
+
+with open("GCOVERP.yaml", "w") as f:
+    yaml.dump(db_config, f)

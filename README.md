@@ -113,3 +113,16 @@ Sur Linux...
     C:\LegacySW\pandoc-3.1.13\pandoc.exe  --toc --number-sections  --shift-heading-level-by=-1 --css datamodel.css 
                   --metadata-file=metadata.yaml   --variable mainfont="Sans"  -o datamodel.html datamodel.md
 
+
+# Schema SDE
+
+Générer le fichier `PlantUML  avec :
+
+    python create_gv.py 
+    
+Convertir en fichier SVG avec p.ex. https://www.planttext.com/
+
+Convertir en image :
+
+
+    convert  ER-GCOVER.svg ER-GCOVER.png

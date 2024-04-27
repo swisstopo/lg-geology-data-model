@@ -149,7 +149,7 @@ hide stereotypes
 
             # Add PUML lines for all primary keys.
             for cname, ctype  in table['primary'].items():
-                puml_lines.append('\tprimary_key({}) {}'.format(cname, ctype))
+                 puml_lines.append('\tprimary_key({}) {}'.format(cname, ctype))
 
             # Add PUML lines for all foreign keys.
             for cname, cval  in table['foreign'].items():
@@ -171,7 +171,9 @@ hide stereotypes
         # Run through all foreign keys and crete the table relations.
         for table_name, table in self.puml_tables.items():
             for fk  in table['foreign'].values():
-                puml_lines.append('{} "0..n" -- "1..1" {}'.format(table_name, fk[1].split('.')[0]))
+                foreign_table = fk[1].split('.')[0]
+                if foreign_table != table_name:
+                    puml_lines.append('{} "0..n" -- "1..1" {}'.format(table_name, foreign_table))
 
         # Add a single empty line.
         puml_lines.append('')
