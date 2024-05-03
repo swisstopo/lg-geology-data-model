@@ -21,6 +21,51 @@ from ruamel.yaml import YAML
 from bs4 import BeautifulSoup
 
 
+abreviations = [
+    "Aarc",
+    "Aart",
+    "Abor",
+    "Aexp",
+    "Gall",
+    "Gero",
+    "Ggla",
+    "Gins",
+    "Gkar",
+    "Hcon",
+    "Hpal",
+    "Hsub",
+    "Hsur",
+    "Lano",
+    "Lfos",
+    "Lgeo",
+    "Lind",
+    "Lmin",
+    "Lmis",
+    "Lpro",
+    "Lsed",
+    "Ltyp",
+    "Mfol",
+    "Mlin",
+    "Mpla",
+    "Pcon",
+    "Pmod",
+    "Pslo",
+    "Rbed",
+    "Runc",
+    "Tdef",
+    "Ttec",
+]
+
+tables = [
+    "Admixtures.csv",
+    "Cahrcat.csv",
+    "Chrono.csv",
+    "Composit.csv",
+    "Litho.csv",
+    "Litstrat.csv",
+]
+
+
 class DatetimeEncoder(json.JSONEncoder):
     def default(self, obj):
         if isinstance(obj, (datetime.date, datetime.datetime)):
@@ -32,6 +77,14 @@ def str_representer(dumper, data):
     if len(data.splitlines()) > 1:  # check for multiline string
         return dumper.represent_scalar("tag:yaml.org,2002:str", data, style="|")
     return dumper.represent_scalar("tag:yaml.org,2002:str", data)
+
+
+def remove_abrev(msg):
+    for i in abreviations:
+        if msg.find(i) == 0:
+            return msg.replace(i, "").strip()
+
+    return msg
 
 
 def main():
@@ -51,10 +104,12 @@ def main():
         subtypes = json.load(f)
 
     for key, val in de:
-        data.append(("traduction", int(key), val))
+        # Remove Abrev prefix from string
+
+        data.append(("traduction", int(key), remove_abrev(val)))
 
     for key, val in subtypes.items():
-        data.append(("subtype", int(key), val))
+        data.append(("subtype", int(key), remove_abrev(val)))
 
     for domain_name in domains.keys():
         domain = domains.get(domain_name)
@@ -64,7 +119,7 @@ def main():
         for key in domain.keys():
             val = domain.get(key)
 
-            data.append((domain_name, int(key), val))
+            data.append((domain_name, int(key), remove_abrev(val)))
 
     df = pd.DataFrame(data, columns=["domain", "geolcode", "german"])
     df["source"] = ""
