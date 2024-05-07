@@ -1,0 +1,12 @@
+OBJECTID,GEOL_CODE,GEOL_CODE_INT,GERMAN
+6,Runc311006,14511006,verschwemmt
+1,Runc311001,14511001,fossil
+7,Runc311007,14511007,sumpfig
+11,Runc311011,14511011,künstlich bewässert (Wässermatten)
+2,Runc311002,14511002,rezent
+8,Runc311008,14511008,umgelagert
+4,Runc311004,14511004,"verfestigt (durch Überlast), konsolidiert"
+5,Runc311005,14511005,verkittet (zementiert)
+10,Runc311010,14511010,drainiert
+3,Runc311003,14511003,verwittert
+9,Runc311009,14511009,abgebaut
