@@ -4,6 +4,7 @@ from __future__ import annotations
 # https://dataclass-wizard.readthedocs.io/en/latest/
 
 import yaml
+from ruamel.yaml import YAML
 import json
 from io import StringIO
 from typing_extensions import TypedDict
@@ -31,7 +32,7 @@ class Subtype(TypedDict):
     pass
 
 class Domain(TypedDict):
-    id: str
+    id: int
     name: str
 
 class Relationship(TypedDict):
@@ -84,5 +85,13 @@ database: dict[str, (Table, FeatureClass, Relationship, Domain)]=  data
 ymal_string=yaml.dump(database)
 print("The YAML string is:")
 print(ymal_string)
+
+yaml = YAML()
+
+# Set the output to preserve the order of keys
+yaml.default_flow_style = False
+
+with open("SDE.yaml", "w") as f:
+    yaml.dump(database, f)
 
 
