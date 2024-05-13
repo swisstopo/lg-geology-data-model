@@ -52,7 +52,7 @@ try:
         )
 
         print(df)
-        df.to_csv("output/oracle.csv", index=False)
+        df.to_csv("input/oracle.csv", index=False)
 
 except Exception as e:
     # If an error occurred, print line number and error message
