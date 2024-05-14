@@ -252,27 +252,7 @@ table(GC_BEDROCK) {
 	SHAPE Geometry
 }
 
-table(GC_UNCO_DESPOSIT) {
-	primary_key(UUID) Guid
-	---
-	OBJECTID OID
-	UUID Guid
-	SYMBOL String
-	RUNC_CHRONO_T Integer
-	RUNC_CHRONO_B Integer
-	RUNC_LITHO Integer
-	RUNC_LITSTRAT Integer
-	RUNC_HARMOS_REV Integer
-	RUNC_STRUCTUR Integer
-	RUNC_MORPHOLO Integer
-	RUNC_GLAC_TYP Integer
-	RUNC_THIN_COV Integer
-	RUNC_BURIED_OUT Integer
-	RUNC_ORIG_DESCR String
-	RUNC_REF_YEAR String
-	RUNC_INDEX String
-	SHAPE Geometry
-}
+
 
 table(GC_EXPLOIT_GEOMAT_PLG) {
 	primary_key(UUID) Guid
@@ -406,19 +386,34 @@ table(GC_EXPLOIT_GEOMAT_PT_GC_LITSTRAT) {
 	foreign_key(GC_LITSTRAT_UUID,GC_LITSTRAT) Guid
 }
 
+together {
+
+
+table(GC_UNCO_DESPOSIT) {
+	primary_key(UUID) Guid
+	---
+	OBJECTID OID
+	UUID Guid
+	SYMBOL String
+	RUNC_CHRONO_T Integer
+	RUNC_CHRONO_B Integer
+	RUNC_LITHO Integer
+	RUNC_LITSTRAT Integer
+	RUNC_HARMOS_REV Integer
+	RUNC_STRUCTUR Integer
+	RUNC_MORPHOLO Integer
+	RUNC_GLAC_TYP Integer
+	RUNC_THIN_COV Integer
+	RUNC_BURIED_OUT Integer
+	RUNC_ORIG_DESCR String
+	RUNC_REF_YEAR String
+	RUNC_INDEX String
+	SHAPE Geometry
+}
+
 table(GC_UNCO_DESPOSIT_GC_LITHO) {
 	foreign_key(GC_UNCO_DESPOSIT_UUID,GC_UNCO_DESPOSIT) Guid
 	foreign_key(GC_LITHO_UUID,GC_LITHO) Guid
-}
-
-table(GC_BEDROCK_GC_LITHO_BED) {
-	foreign_key(GC_BEDROCK_UUID,GC_BEDROCK) Guid
-	foreign_key(GC_LITHO_BED_UUID,GC_LITHO_BED) Guid
-}
-
-table(GC_EXPLOIT_GEOMAT_PLG_GC_LITSTRAT) {
-	foreign_key(GC_EXPLOIT_GEOMAT_PLG_UUID,GC_EXPLOIT_GEOMAT_PLG) Guid
-	foreign_key(GC_LITSTRAT_UUID,GC_LITSTRAT) Guid
 }
 
 table(GC_UNCO_DESPOSIT_GC_CHARCAT) {
@@ -435,6 +430,20 @@ table(GC_UNCO_DESPOSIT_GC_COMPOSIT) {
 	foreign_key(GC_UNCO_DESPOSIT_UUID,GC_UNCO_DESPOSIT) Guid
 	foreign_key(GC_COMPOSIT_UUID,GC_COMPOSIT) Guid
 }
+
+}
+
+table(GC_BEDROCK_GC_LITHO_BED) {
+	foreign_key(GC_BEDROCK_UUID,GC_BEDROCK) Guid
+	foreign_key(GC_LITHO_BED_UUID,GC_LITHO_BED) Guid
+}
+
+table(GC_EXPLOIT_GEOMAT_PLG_GC_LITSTRAT) {
+	foreign_key(GC_EXPLOIT_GEOMAT_PLG_UUID,GC_EXPLOIT_GEOMAT_PLG) Guid
+	foreign_key(GC_LITSTRAT_UUID,GC_LITSTRAT) Guid
+}
+
+
 
 
 

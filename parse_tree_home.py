@@ -38,6 +38,39 @@ from bigtree import (
 import yaml
 
 
+
+def reporting_using_anytree(df, table_path, table_name):
+    
+  # Create the root node
+  root = Node("0", german="Root")
+
+  nodes = {"0": root}
+
+  # Assuming df is your DataFrame
+  for index, row in df.iterrows():
+    code = str(int(row["GEOL_CODE_INT"]))
+    parent_id = str(int(row["PARENT_REF"]))
+    german = row["GERMAN"]
+    try:
+        n = Node(code, parent=nodes[parent_id], german=german)
+        nodes[code] = n
+    except KeyError as e:
+        logging.error(f"Orphan: {code}, {german}, parentid: {parent_id}")
+    
+
+  # Checking for orphans
+  for index, row in df.iterrows():
+    code = str(int(row["GEOL_CODE_INT"]))
+    parent_id = str(int(row["PARENT_REF"]))
+    german = row["GERMAN"]
+    n = nodes.get(code)
+    p = nodes.get(parent_id)
+    if p is not None and n is not None:
+        n.parent = p
+    else:
+        logging.error(f"Orphan: {code}, {german}, parentid: {parent_id}")
+
+
 def reporting(df, table_path, table_name):
     logging.info(f"=== Table {table_name} ====")
 
@@ -103,6 +136,8 @@ def main():
         df = get_df(table_name)
 
         reporting(df, table_path, table_name)
+        
+        # reporting_using_anytree(df, table_path, table_name)
 
 
 if __name__ == "__main__":
