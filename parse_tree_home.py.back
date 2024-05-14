@@ -135,9 +135,9 @@ def main():
 
         df = get_df(table_name)
 
-        reporting(df, table_path, table_name)
+        #reporting(df, table_path, table_name)
         
-        # reporting_using_anytree(df, table_path, table_name)
+        reporting_using_anytree(df, table_path, table_name)
 
 
 if __name__ == "__main__":

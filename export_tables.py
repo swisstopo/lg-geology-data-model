@@ -16,13 +16,13 @@ def arcgis_table_to_df(in_fc, input_fields=None, query=""):
     :returns - pandas.DataFrame"""
     OIDFieldName = arcpy.Describe(in_fc).OIDFieldName
     available_fields = [field.name for field in arcpy.ListFields(in_fc)]
-    print(available_fields)
-    print(input_fields)
+    logging.debug(available_fields)
+    logging.debug(input_fields)
     if input_fields:
         final_fields = list(set([OIDFieldName] + input_fields) & set(available_fields))
     else:
         final_fields = available_fields
-    print("Intersection:", final_fields)
+    logging.debug("Intersection:", final_fields)
     data = [
         row for row in arcpy.da.SearchCursor(in_fc, final_fields, where_clause=query)
     ]
@@ -50,21 +50,26 @@ fields = list(
     )
 )
 
-with pd.ExcelWriter(os.path.join(basedir, f"tables.xlsx")) as writer:
+with pd.ExcelWriter(os.path.join(basedir, f"export_tables.xlsx")) as writer:
     for mp in maps:
-        print("--------------------------------------------------------------")
-        print(mp.name)
-        print("--------------------------------------------------------------")
+        logging.info("--------------------------------------------------------------")
+        logging.info(mp.name)
+        logging.info("--------------------------------------------------------------")
         tables = mp.listTables()
         if len(tables) < 1:
             logging.error("No Table found. Exit")
             sys.exit(2)
         for table in tables:
-            print(table.name)
+            logging.info(table.name)
             df = arcgis_table_to_df(table.name, input_fields=fields)
+            df['PARENT_REF'] = df['PARENT_REF'].fillna(0)
+
+            df.sort_values(by=['GEOL_CODE_INT', 'PARENT_REF'], inplace=True)
             #df = df.reindex(df.columns.union(fields, sort=False), axis=1, fill_value=0)
 
-
-            df.to_csv(os.path.join(basedir, f"{table.name}.csv"), index=True)
-            df.to_json(os.path.join(basedir, f"{table.name}.json"), index=True)
-            # df.to_excel(writer, sheet_name=table.name.upper())
+            try:
+                df.to_csv(os.path.join(basedir, f"{table.name}.csv"), index=True)
+                df.to_json(os.path.join(basedir, f"{table.name}.json"), index=True)
+                df.to_excel(writer, sheet_name=table.name.upper())
+            except PermissionError as e:
+                logging.error(f"Permission error: {table}")
