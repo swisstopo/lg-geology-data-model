@@ -3,6 +3,10 @@ from __future__ import annotations
 
 from dataclasses import dataclass, field
 
+from dataclasses import asdict, make_dataclass
+from typing import Optional, List, Union, Dict, Any, NamedTuple, DefaultDict, Literal
+
+
 from dataclass_wizard import JSONWizard
 import json
 
@@ -39,6 +43,26 @@ class Field(JSONWizard):
     type: str
     length: int
 
+@dataclass
+class Key(JSONWizard):
+    name: str
+    role: str
+@dataclass
+class Relationship(JSONWizard):
+    origin: list
+    destination: str
+    forwardPathLabel: str
+    backwardPathLabel: str
+    isAttachmentRelationship: bool
+    cardinality: Literal['OneToMany', 'ManyToMany']
+    originClassKeys: list[Key]
+    destinationClassKeys: list[Key]
+    is_attributed: bool
+    is_composite: bool
+    is_reflexive: bool
+    classKey: str
+    keyType: str
+
 
 
 with open(r"../data/geocover-schema-sde.json") as f:
@@ -60,7 +84,17 @@ for name in domains:
     domain = CodedDomain(d)
     print(domain)
 
-    person_dict = {'name': 'Eve', 'age': 40}
-    Person = dataclass(type('Person', (object,), person_dict))
-    person = Person()
-    print(person)
+    '''
+    Impossible as  '1' is not a valid variable name
+    CD = make_dataclass('CodedDomain',  list(d.items()))
+    x = CD(**d)
+
+    print(asdict(x))
+    # {'i': 42, 's': 'text'}
+    '''
+relationships = data.get('relationships')
+for name in relationships:
+    t = relationships.get(name)
+
+    relationship = Relationship.from_dict(t)
+    print(relationship)
