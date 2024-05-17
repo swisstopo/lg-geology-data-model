@@ -74,6 +74,8 @@ def reporting_using_anytree(df, table_path, table_name):
 def reporting(df, table_path, table_name):
     logging.info(f"=== Table {table_name} ====")
 
+    res = {'orphans': [], 'missings': []}
+
     # df = pd.read_csv(table_path, sep=",")
     # df["PARENT_REF"] = df["PARENT_REF"].fillna(0)
 
@@ -99,6 +101,10 @@ def reporting(df, table_path, table_name):
             n.parent = p
         else:
             logging.error(f"Orphan: {code}, {german}, parentid: {parent_id}")
+            res['orphans'].append(int(code))
+            res['missings'].append(int(parent_id))
+
+    return res
 
     # print_tree(root, attr_list=["german"])
 
@@ -125,18 +131,30 @@ def get_df(table_name):
     df = pd.read_excel("input/export_tables.xlsx", sheet_name=table_name.upper())
 
     df["PARENT_REF"] = df["PARENT_REF"].fillna(0)
+    df["REMARK"] = ""
 
     return df
 
 
 def main():
-    for table_name in ("Tecto", "Litho", "Litstrat", "Chrono"):
+    with pd.ExcelWriter('input/alain.xlsx') as writer:
+
+      for table_name in ("Tecto", "Litho", "Litstrat", "Chrono"):
         table_path = os.path.join("input", table_name + ".csv")
 
         df = get_df(table_name)
 
-        reporting(df, table_path, table_name)
-        
+        result = reporting(df, table_path, table_name)
+
+        orphans = result.get('orphans')
+
+        if orphans is not None:
+
+            df['REMARK'] = df['GEOL_CODE_INT'].apply(lambda x: 'orphan' if int(x) in orphans else '')
+
+        df.to_excel(writer, sheet_name=table_name.upper())
+
+
         # reporting_using_anytree(df, table_path, table_name)
 
 
