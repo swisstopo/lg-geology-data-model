@@ -1,5 +1,6 @@
 """ Simple script to exctract layer SubType from an ESRI ArcMap or ArcGis Pro project"""
 
+import os
 import json
 import arcpy
 import datetime
@@ -10,6 +11,15 @@ import logging
 logging.basicConfig(format="%(name)s - %(levelname)s - %(message)s", level=logging.INFO)
 
 now = datetime.datetime.now()
+
+try:
+    curdir  = os.path.dirname(os.path.realpath(__file__))
+except NameError:
+    curdir = r'H:\code\geocover-examples\datamodel'
+basedir = os.path.join(curdir, 'exports')
+
+if not  os.path.isdir(basedir):
+    os.makedirs(basedir)
 
 if sys.version_info[0] > 2:
     is_py3 = True
@@ -80,8 +90,8 @@ for lyr in layers_list:
             logging.error(e)
             continue
 
-with open(r"h:/model_reporting/subtypes_pro_layer.json", "w") as f:
+with open(os.path.join(basedir, "subtypes_pro_layer.json"), "w") as f:
     f.write(json.dumps(subtypes_layers, indent=4))
 
-with open(r"h:/model_reporting/subtypes_dict.json", "w") as f:
+with open(os.path.join(basedir, "subtypes_dict.json"), "w") as f:
     f.write(json.dumps(subtypes_dict, indent=4))
