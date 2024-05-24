@@ -254,7 +254,7 @@ def datamodel(lang):
 
     data = model.to_json()
 
-    loader = jinja2.FileSystemLoader(yaml_dir)
+    loader = jinja2.FileSystemLoader(os.path.join(yaml_dir, 'templates'))
     env = jinja2.Environment(autoescape=True, loader=loader, extensions=["jinja2.ext.i18n"])
     
     
