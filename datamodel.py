@@ -14,13 +14,17 @@ import click
 
 from loguru import logger
 
+input_dir = 'exports'
+
+output_dir = 'input'
+
 logger.add("datamodel.log", backtrace=False)
 
 
-with open("coded_domains.json", "r") as f:
+with open(os.path.join(input_dir, "coded_domains.json"), "r") as f:
     domains = json.load(f)
 
-with open("subtypes.json", "r") as f:
+with open(os.path.join(input_dir, "subtypes_dict.json"), "r") as f:
     subtypes = json.load(f)
 
 
@@ -302,7 +306,7 @@ def datamodel(lang):
     temp = env.get_template("model_markdown.j2")
     # temp.render(data)
 
-    with open(f"{project_name}_{lang}.json", "w") as f:
+    with open(os.path.join(output_dir, f"{project_name}_{lang}.json"), "w") as f:
         f.write(json.dumps(data, indent=4, cls=DatetimeEncoder))
 
     # with open("model_markdown.j2") as f:
@@ -310,13 +314,13 @@ def datamodel(lang):
 
     #print(temp.render(data))
 
-    with open(f"input/{project_name}_{lang}.md", "w") as f:
+    with open(os.path.join(output_dir, f"{project_name}_{lang}.md"), "w") as f:
         # f.write(template.render(data))
         f.write(temp.render(data))
         
     # Metadata
     meta = env.get_template("metadata.yaml.j2")
-    with open(f"metadata_{lang}.yaml", "w") as f:
+    with open(os.path.join(output_dir, f"metadata_{lang}.yaml"), "w") as f:
         # f.write(template.render(data))
         f.write(meta.render(data))
         

@@ -10,7 +10,7 @@ particulier la liste des valeurs attributaires possibles.
 Les scripts ne fonctionnent qu'avec Python3 (on est en 2024). Sur BURAUT, on peut utiliser l'installation _conda_ par 
 defaut de _ESRI ArcGis Pro_ (_argispro-py3_) qui contient les modules nécessaires. Sur Linux, il faut au moins :
 
-    conda install jinja2 pyyaml pandas
+    conda install jinja2 pyyaml pandas click loguru --yes
 
 Les scripts, _coded_domain.py_ et _subtype.py_ doivent être excécuté dans un projet ESRI ArcGis Pro avec une connection
 sur la base SDE GCOVER.

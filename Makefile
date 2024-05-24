@@ -47,6 +47,10 @@ $(info $$PANDOC_OPTIONS  is [${PANDOC_OPTIONS}])
 
 # Pattern-matching Rules
 
+babel:
+	pybabel compile --domain=app --directory=locale --use-fuzzy
+	pybabel compile --domain=datamodel --directory=locale --use-fuzzy
+
 outdir/%_${LANG}.html : %_${LANG}.md
 	$(PANDOC) $(PANDOC_OPTIONS) $(PANDOC_HTML_OPTIONS) -o $@ $<
 
@@ -68,9 +72,10 @@ outdir/%_${LANG}.odt : %_${LANG}.md
 
 # Targets and dependencies
 
-.PHONY: all clean
+.PHONY: all clean babel
 
 all : $(EXPORTED_DOCS)
 
 clean:
-	- $(RM) $(EXPORTED_DOCS)
+	$(RM) $(EXPORTED_DOCS)
+	find . -name '*.mo' -exec rm -i {} \;
