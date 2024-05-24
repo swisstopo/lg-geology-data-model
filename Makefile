@@ -8,7 +8,7 @@
 # Run "make clean" to delete converted files
 
 # Convert all files in this directory that have a .md suffix
-SOURCE_DOCS := $(wildcard datamodel*.md)
+SOURCE_DOCS := $(wildcard input/datamodel*.md)
 
 FILES=\
  $(SOURCE_DOCS:.md=.pdf) \
@@ -16,7 +16,7 @@ FILES=\
  $(SOURCE_DOCS:.md=.odt) 
  
  
-EXPORTED_DOCS=$(patsubst %, outdir/%, $(FILES))
+EXPORTED_DOCS=$(patsubst input/%, outdir/%, $(FILES))
 
 
 RM=/bin/rm
@@ -47,6 +47,10 @@ $(info $$PANDOC_OPTIONS  is [${PANDOC_OPTIONS}])
 
 # Pattern-matching Rules
 
+babel:
+	pybabel compile --domain=app --directory=locale --use-fuzzy
+	pybabel compile --domain=datamodel --directory=locale --use-fuzzy
+
 outdir/%_${LANG}.html : %_${LANG}.md
 	$(PANDOC) $(PANDOC_OPTIONS) $(PANDOC_HTML_OPTIONS) -o $@ $<
 
@@ -68,9 +72,12 @@ outdir/%_${LANG}.odt : %_${LANG}.md
 
 # Targets and dependencies
 
-.PHONY: all clean
+.PHONY: all clean cleanall babel
 
 all : $(EXPORTED_DOCS)
 
 clean:
-	- $(RM) $(EXPORTED_DOCS)
+	$(RM) $(EXPORTED_DOCS)
+
+cleanall: clean
+	find . -name '*.mo' -exec rm -i {} \;
