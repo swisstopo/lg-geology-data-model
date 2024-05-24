@@ -39,7 +39,9 @@ Creation des fichiers JSON contenant les _coded domains_ et la liste des _subtyp
 Dans une fenêtre Python ou un notebook _Jupyter_ exécuter les deux scripts _coded_domains.py_ et
 _subtypes.py_ . Le résultat sont deux fichiers JSON _coded_domains.json_ et _subtypes.json_
 
+Extraction des tables hiérarchiques : `litho`,  `litstrat`, `chrono` et `tecto`
 
+Dans ArcGis Pro, charger et exécuter le script : `export_tables.py`
 
 ## Traductions
 
