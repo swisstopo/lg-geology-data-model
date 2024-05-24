@@ -8,6 +8,12 @@ import re
 
 xml_dir = r"\\v0t0020a.adr.admin.ch\topgisprod\10_Production_GC\CorporateEditor\AE"
 
+try:
+    curdir  = os.path.dirname(os.path.realpath(__file__))
+except NameError:
+    curdir = r'H:\code\geocover-examples\datamodel'
+basedir = os.path.join(curdir, 'exports')
+
 
 prefixes = [
     "AARC_",
@@ -81,5 +87,5 @@ for fname in xml_files:
     print(f"==={basename}===")
     madatory[basename] = get_madatory(fname)
 
-with open("mandatory.json", "w") as f:
+with open(os.path.join(basedir, "mandatory.json"), "w") as f:
     f.write(json.dumps(madatory, indent=4))
