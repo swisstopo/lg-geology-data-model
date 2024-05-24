@@ -43,6 +43,10 @@ Extraction des tables hiérarchiques : `litho`,  `litstrat`, `chrono` et `tecto`
 
 Dans ArcGis Pro, charger et exécuter le script : `export_tables.py`
 
+Export de la structure Oracle : 
+
+Dans ArcGis Pro, charger et exécuter le script : `export_oracle_tables.py`
+
 ## Traductions
 
 Extraction des chaînes de charactères :
