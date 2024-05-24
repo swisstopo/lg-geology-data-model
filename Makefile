@@ -8,7 +8,7 @@
 # Run "make clean" to delete converted files
 
 # Convert all files in this directory that have a .md suffix
-SOURCE_DOCS := $(wildcard datamodel*.md)
+SOURCE_DOCS := $(wildcard input/datamodel*.md)
 
 FILES=\
  $(SOURCE_DOCS:.md=.pdf) \
@@ -16,7 +16,7 @@ FILES=\
  $(SOURCE_DOCS:.md=.odt) 
  
  
-EXPORTED_DOCS=$(patsubst %, outdir/%, $(FILES))
+EXPORTED_DOCS=$(patsubst input/%, outdir/%, $(FILES))
 
 
 RM=/bin/rm
@@ -72,10 +72,12 @@ outdir/%_${LANG}.odt : %_${LANG}.md
 
 # Targets and dependencies
 
-.PHONY: all clean babel
+.PHONY: all clean cleanall babel
 
 all : $(EXPORTED_DOCS)
 
 clean:
 	$(RM) $(EXPORTED_DOCS)
+
+cleanall: clean
 	find . -name '*.mo' -exec rm -i {} \;
