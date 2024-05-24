@@ -1,6 +1,7 @@
 import arcpy
 import json
 import datetime
+import os
 
 import logging
 
@@ -61,7 +62,16 @@ def main():
     dom_dict = get_coded_domains()
     print(dom_dict)
 
-    with open(r"H:/model_reporting/coded_domains.json", "w") as f:
+    try:
+        curdir = os.path.dirname(os.path.realpath(__file__))
+    except NameError:
+        curdir = r'H:\code\geocover-examples\datamodel'
+    basedir = os.path.join(curdir, 'exports')
+
+    if not os.path.isdir(basedir):
+        os.makedirs(basedir)
+
+    with open(os.path.join(basedir, "coded_domains.json"), "w") as f:
         f.write(json.dumps(dom_dict, indent=4))
 
 

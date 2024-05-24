@@ -22,6 +22,15 @@ data = []
 df = None
 
 try:
+    curdir  = os.path.dirname(os.path.realpath(__file__))
+except NameError:
+    curdir = r'H:\code\geocover-examples\datamodel'
+basedir = os.path.join(curdir, 'exports')
+
+if not  os.path.isdir(basedir):
+    os.makedirs(basedir)
+
+try:
     # Database Connections/balrog.odc/vtest.COUNTIES
     # table = ["IFMSDB.DBO.%Property"]
     sde_conn = arcpy.ArcSDESQLExecute(r"h:\connections\GCOVERP@osa.sde")
@@ -52,7 +61,7 @@ try:
         )
 
         print(df)
-        df.to_csv("input/oracle.csv", index=False)
+        df.to_csv(os.path.join(basedir, "oracle.csv"), index=False)
 
 except Exception as e:
     # If an error occurred, print line number and error message
