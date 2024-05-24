@@ -310,7 +310,7 @@ def datamodel(lang):
 
     #print(temp.render(data))
 
-    with open(f"{project_name}_{lang}.md", "w") as f:
+    with open(f"input/{project_name}_{lang}.md", "w") as f:
         # f.write(template.render(data))
         f.write(temp.render(data))
         
