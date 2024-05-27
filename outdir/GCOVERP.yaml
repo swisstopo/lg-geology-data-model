@@ -1,0 +1,874 @@
+database: GCOVERP
+version: 1
+tables:
+- name: GC_CHRONO
+  columns:
+  - name: OBJECTID
+    type: OID
+    primary_key: false
+  - name: UUID
+    type: Guid
+    primary_key: false
+  - name: GEOL_CODE
+    type: String
+    primary_key: false
+  - name: GEOL_CODE_INT
+    type: Integer
+    primary_key: false
+  - name: GERMAN
+    type: String
+    primary_key: false
+  - name: TREE_LEVEL
+    type: Integer
+    primary_key: false
+  - name: PARENT_REF
+    type: Integer
+    primary_key: false
+- name: GC_LITHO
+  columns:
+  - foreign_key:
+      name: GC_UNCO_DESPOSIT_UUID
+      type: Guid
+      reference: GC_UNCO_DESPOSIT
+  - foreign_key:
+      name: GC_LITHO_UUID
+      type: Guid
+      reference: GC_LITHO
+- name: GC_LITSTRAT
+  columns:
+  - foreign_key:
+      name: GC_EXPLOIT_GEOMAT_PLG_UUID
+      type: Guid
+      reference: GC_EXPLOIT_GEOMAT_PLG
+  - foreign_key:
+      name: GC_LITSTRAT_UUID
+      type: Guid
+      reference: GC_LITSTRAT
+- name: GC_TECTO
+  columns:
+  - name: OBJECTID
+    type: OID
+    primary_key: false
+  - name: UUID
+    type: Guid
+    primary_key: false
+  - name: GEOL_CODE
+    type: String
+    primary_key: false
+  - name: GEOL_CODE_INT
+    type: Integer
+    primary_key: false
+  - name: GERMAN
+    type: String
+    primary_key: false
+  - name: TREE_LEVEL
+    type: Integer
+    primary_key: false
+  - name: PARENT_REF
+    type: Integer
+    primary_key: false
+- name: GC_LITHO_UNCO
+  columns:
+  - name: OBJECTID
+    type: OID
+    primary_key: false
+  - name: UUID
+    type: Guid
+    primary_key: false
+  - name: GEOL_CODE
+    type: String
+    primary_key: false
+  - name: GEOL_CODE_INT
+    type: Integer
+    primary_key: false
+  - name: GERMAN
+    type: String
+    primary_key: false
+  - name: TREE_LEVEL
+    type: Integer
+    primary_key: false
+  - name: PARENT_REF
+    type: Integer
+    primary_key: false
+- name: GC_LITHO_BED
+  columns:
+  - foreign_key:
+      name: GC_BEDROCK_UUID
+      type: Guid
+      reference: GC_BEDROCK
+  - foreign_key:
+      name: GC_LITHO_BED_UUID
+      type: Guid
+      reference: GC_LITHO_BED
+- name: GC_LITSTRAT_BED
+  columns:
+  - name: OBJECTID
+    type: OID
+    primary_key: false
+  - name: UUID
+    type: Guid
+    primary_key: false
+  - name: GEOL_CODE
+    type: String
+    primary_key: false
+  - name: GEOL_CODE_INT
+    type: Integer
+    primary_key: false
+  - name: GERMAN
+    type: String
+    primary_key: false
+  - name: TREE_LEVEL
+    type: Integer
+    primary_key: false
+  - name: PARENT_REF
+    type: Integer
+    primary_key: false
+- name: GC_LITSTRAT_UNCO
+  columns:
+  - name: OBJECTID
+    type: OID
+    primary_key: false
+  - name: UUID
+    type: Guid
+    primary_key: false
+  - name: GEOL_CODE
+    type: String
+    primary_key: false
+  - name: GEOL_CODE_INT
+    type: Integer
+    primary_key: false
+  - name: GERMAN
+    type: String
+    primary_key: false
+  - name: TREE_LEVEL
+    type: Integer
+    primary_key: false
+  - name: PARENT_REF
+    type: Integer
+    primary_key: false
+- name: GC_BED_FORM_ATT
+  columns:
+  - name: OBJECTID
+    type: OID
+    primary_key: false
+  - name: UUID
+    type: Guid
+    primary_key: false
+  - name: FMAT_META_MINERAL1
+    type: Integer
+    primary_key: false
+  - name: FMAT_META_MINERAL2
+    type: Integer
+    primary_key: false
+  - name: FMAT_META_MINERAL3
+    type: Integer
+    primary_key: false
+  - name: FMAT_META_STR1
+    type: Integer
+    primary_key: false
+  - name: FMAT_META_STR2
+    type: Integer
+    primary_key: false
+  - name: FMAT_META_STR3
+    type: Integer
+    primary_key: false
+  - name: FMAT_SEDI_BEDDING1
+    type: Integer
+    primary_key: false
+  - name: FMAT_SEDI_BEDDING2
+    type: Integer
+    primary_key: false
+  - name: FMAT_SEDI_BOND_MAT
+    type: Integer
+    primary_key: false
+  - name: FMAT_SEDI_MAIN_COM
+    type: Integer
+    primary_key: false
+  - name: FMAT_SEDI_SECO_COM1
+    type: Integer
+    primary_key: false
+  - name: FMAT_SEDI_SECO_COM2
+    type: Integer
+    primary_key: false
+  - name: FMAT_SEDI_STR1
+    type: Integer
+    primary_key: false
+  - name: FMAT_SEDI_STR2
+    type: Integer
+    primary_key: false
+  - name: FMAT_SEDI_TEX1
+    type: Integer
+    primary_key: false
+  - name: FMAT_SEDI_TEX2
+    type: Integer
+    primary_key: false
+  - name: FMAT_IGNE_TEX
+    type: Integer
+    primary_key: false
+  - name: FMAT_IGNE_GRAIN_SI
+    type: Integer
+    primary_key: false
+  - name: FMAT_IGNE_AFFINITY
+    type: Integer
+    primary_key: false
+  - name: FMAT_META_FULL_NAME
+    type: String
+    primary_key: false
+  - name: FMAT_LITSTRAT
+    type: Integer
+    primary_key: false
+- name: GC_SYSTEM
+  columns:
+  - foreign_key:
+      name: GC_FOSSILS_UUID
+      type: Guid
+      reference: GC_FOSSILS
+  - foreign_key:
+      name: GC_SYSTEM_UUID
+      type: Guid
+      reference: GC_SYSTEM
+- name: GC_COMPOSIT
+  columns:
+  - foreign_key:
+      name: GC_UNCO_DESPOSIT_UUID
+      type: Guid
+      reference: GC_UNCO_DESPOSIT
+  - foreign_key:
+      name: GC_COMPOSIT_UUID
+      type: Guid
+      reference: GC_COMPOSIT
+- name: GC_ADMIXTURE
+  columns:
+  - foreign_key:
+      name: GC_UNCO_DESPOSIT_UUID
+      type: Guid
+      reference: GC_UNCO_DESPOSIT
+  - foreign_key:
+      name: GC_ADMIXTURE_UUID
+      type: Guid
+      reference: GC_ADMIXTURE
+- name: GC_CHARCAT
+  columns:
+  - foreign_key:
+      name: GC_UNCO_DESPOSIT_UUID
+      type: Guid
+      reference: GC_UNCO_DESPOSIT
+  - foreign_key:
+      name: GC_CHARCAT_UUID
+      type: Guid
+      reference: GC_CHARCAT
+- name: GC_EXPLOIT_GEOMAT_PLG
+  columns:
+  - name: OBJECTID
+    type: OID
+    primary_key: false
+  - name: UUID
+    type: Guid
+    primary_key: false
+  - name: SYMBOL
+    type: String
+    primary_key: false
+  - name: AEXP_STATUS
+    type: Integer
+    primary_key: false
+  - name: AEXP_TARG_MAT
+    type: Integer
+    primary_key: false
+  - name: SHAPE
+    type: Geometry
+    primary_key: false
+- name: GC_LINEAR_OBJECTS
+  columns:
+  - name: OBJECTID
+    type: OID
+    primary_key: false
+  - name: UUID
+    type: Guid
+    primary_key: false
+  - name: SYMBOL
+    type: String
+    primary_key: false
+  - name: HPAL_CHRONO
+    type: Integer
+    primary_key: false
+  - name: LPRO_LITHO
+    type: Integer
+    primary_key: false
+  - name: PCOB_FORMATIO
+    type: Integer
+    primary_key: false
+  - name: AARC_EPOCH
+    type: Integer
+    primary_key: false
+  - name: AARC_PERIOD
+    type: Integer
+    primary_key: false
+  - name: AARC_AGE
+    type: Integer
+    primary_key: false
+  - name: AEXP_STATUS
+    type: Integer
+    primary_key: false
+  - name: GALL_AGE
+    type: Integer
+    primary_key: false
+  - name: GGLA_MORAI_MO
+    type: Integer
+    primary_key: false
+  - name: GGLA_GLAC_TYP
+    type: Integer
+    primary_key: false
+  - name: GGLA_ICE_M_P
+    type: Integer
+    primary_key: false
+  - name: GGLA_QUAT_STR
+    type: Integer
+    primary_key: false
+  - name: HCON_COMBI
+    type: Integer
+    primary_key: false
+  - name: HPAL_REL_AGE
+    type: Integer
+    primary_key: false
+  - name: HSUB_COMBI
+    type: Integer
+    primary_key: false
+  - name: LGEO_STATUS
+    type: Integer
+    primary_key: false
+  - name: LPRO_CONG_SPE
+    type: Integer
+    primary_key: false
+  - name: LPRO_NAME_HORIZ
+    type: Integer
+    primary_key: false
+  - name: PCOB_TYPE
+    type: Integer
+    primary_key: false
+  - name: PCOH_CONFINE
+    type: Integer
+    primary_key: false
+  - name: PCOH_WA_TABLE
+    type: Integer
+    primary_key: false
+  - name: TTEC_FAULT_MO
+    type: Integer
+    primary_key: false
+  - name: TTEC_VERTI_MO
+    type: Integer
+    primary_key: false
+  - name: TTEC_HORIZ_MO
+    type: Integer
+    primary_key: false
+  - name: TTEC_STATUS
+    type: Integer
+    primary_key: false
+  - name: TTEC_META_STA
+    type: Integer
+    primary_key: false
+  - name: GGLA_REF_YEAR
+    type: Integer
+    primary_key: false
+  - name: GGLA_SOURCE
+    type: String
+    primary_key: false
+  - name: HPAL_REF_YEAR
+    type: Integer
+    primary_key: false
+  - name: HPAL_SOURCE
+    type: String
+    primary_key: false
+  - name: LPRO_ORIG_DESCR
+    type: String
+    primary_key: false
+  - name: LMIN_CHEMISTRY
+    type: String
+    primary_key: false
+  - name: PCOB_ALTITUDE
+    type: Double
+    primary_key: false
+  - name: PCOH_ALTITUDE
+    type: Double
+    primary_key: false
+  - name: TTEC_NAME
+    type: String
+    primary_key: false
+  - name: SHAPE
+    type: Geometry
+    primary_key: false
+  - name: PRINTED
+    type: Integer
+    primary_key: false
+  - name: TTEC_LIM_TYP
+    type: Integer
+    primary_key: false
+  - name: TTEC_HIERA
+    type: Integer
+    primary_key: false
+- name: GC_POINT_OBJECTS
+  columns:
+  - name: OBJECTID
+    type: OID
+    primary_key: false
+  - name: UUID
+    type: Guid
+    primary_key: false
+  - name: SYMBOL
+    type: String
+    primary_key: false
+  - name: RUNC_MAT_TYPE
+    type: Integer
+    primary_key: false
+  - name: ABOR_FM_A
+    type: Integer
+    primary_key: false
+  - name: ABOR_FM_B
+    type: Integer
+    primary_key: false
+  - name: PSLO_FORMATIO
+    type: Integer
+    primary_key: false
+  - name: AARC_EPOCH
+    type: Integer
+    primary_key: false
+  - name: AARC_PERIOD
+    type: Integer
+    primary_key: false
+  - name: AARC_AGE
+    type: Integer
+    primary_key: false
+  - name: AARC_TYPE
+    type: Integer
+    primary_key: false
+  - name: ABOR_MAIN_TAR
+    type: Integer
+    primary_key: false
+  - name: ABOR_TARG_MAT
+    type: Integer
+    primary_key: false
+  - name: ABOR_D_C_UNDERG
+    type: Integer
+    primary_key: false
+  - name: GKAR_ICE_CAVE
+    type: Integer
+    primary_key: false
+  - name: HCON_STATUS
+    type: Integer
+    primary_key: false
+  - name: HCON_EPOCH
+    type: Integer
+    primary_key: false
+  - name: HSUR_STATUS
+    type: Integer
+    primary_key: false
+  - name: HSUR_FLOW_CON
+    type: Integer
+    primary_key: false
+  - name: HSUR_TYPE
+    type: Integer
+    primary_key: false
+  - name: HSUR_DIS_LOCA
+    type: Integer
+    primary_key: false
+  - name: HSUR_COMBI
+    type: Integer
+    primary_key: false
+  - name: LANO_TYPE
+    type: Integer
+    primary_key: false
+  - name: LRES_STATUS
+    type: Integer
+    primary_key: false
+  - name: LRES_MATERIAL
+    type: Integer
+    primary_key: false
+  - name: LTYP_STRATI
+    type: Integer
+    primary_key: false
+  - name: LTYP_ACCESSIBIL
+    type: Integer
+    primary_key: false
+  - name: LTYP_PROTECTED
+    type: Integer
+    primary_key: false
+  - name: MFOL_FOLD_TYP
+    type: Integer
+    primary_key: false
+  - name: MFOL_PHASE
+    type: Integer
+    primary_key: false
+  - name: MPLA_POLARITY
+    type: Integer
+    primary_key: false
+  - name: MPLA_PHASE
+    type: Integer
+    primary_key: false
+  - name: MPLA_OB_DIP_SLO
+    type: Integer
+    primary_key: false
+  - name: PSLO_TYPE
+    type: Integer
+    primary_key: false
+  - name: RUNC_STATUS
+    type: Integer
+    primary_key: false
+  - name: RUNC_ROCK_TYP
+    type: Integer
+    primary_key: false
+  - name: RUNC_ROCK_SPE
+    type: Integer
+    primary_key: false
+  - name: RUNC_PROTECTED
+    type: Integer
+    primary_key: false
+  - name: TDEF_FOLD_TYP
+    type: Integer
+    primary_key: false
+  - name: TDEF_FOLD_FOR
+    type: Integer
+    primary_key: false
+  - name: ABOR_DEPTH_BEDR
+    type: Double
+    primary_key: false
+  - name: ABOR_DEPTH_TOT
+    type: Double
+    primary_key: false
+  - name: ABOR_DEPTH_FM_A
+    type: Double
+    primary_key: false
+  - name: ABOR_DEPTH_FM_B
+    type: Double
+    primary_key: false
+  - name: ABOR_DEPTH_WT
+    type: Double
+    primary_key: false
+  - name: AZIMUTH
+    type: Integer
+    primary_key: false
+  - name: DIP
+    type: Integer
+    primary_key: false
+  - name: ABOR_REF_NUMBER
+    type: Integer
+    primary_key: false
+  - name: ABOR_LINK
+    type: Integer
+    primary_key: false
+  - name: HCON_DEPTH
+    type: Double
+    primary_key: false
+  - name: HCON_DEPTH_WT
+    type: Double
+    primary_key: false
+  - name: HCON_MEA_PERIOD
+    type: String
+    primary_key: false
+  - name: HSUR_TEMP
+    type: Integer
+    primary_key: false
+  - name: HSUR_CHEMISTRY
+    type: String
+    primary_key: false
+  - name: LRES_CHEMISTRY
+    type: String
+    primary_key: false
+  - name: LTYP_NAME
+    type: String
+    primary_key: false
+  - name: MFOL_PHASE_REF
+    type: String
+    primary_key: false
+  - name: MPLA_PHASE_REF
+    type: String
+    primary_key: false
+  - name: PMOD_HEIGHT
+    type: Double
+    primary_key: false
+  - name: PMOD_MEA_PERIOD
+    type: String
+    primary_key: false
+  - name: RUNC_ORIG_DESCR
+    type: String
+    primary_key: false
+  - name: LMIS_ORIG_ID
+    type: String
+    primary_key: false
+  - name: SHAPE
+    type: Geometry
+    primary_key: false
+  - name: PRINTED
+    type: Integer
+    primary_key: false
+  - name: ABOR_LITHO
+    type: Integer
+    primary_key: false
+- name: GC_FOSSILS
+  columns:
+  - name: OBJECTID
+    type: OID
+    primary_key: false
+  - name: UUID
+    type: Guid
+    primary_key: false
+  - name: SYMBOL
+    type: String
+    primary_key: false
+  - name: LFOS_DIVISION
+    type: Integer
+    primary_key: false
+  - name: LFOS_DAT_METH
+    type: Integer
+    primary_key: false
+  - name: LFOS_STATUS
+    type: Integer
+    primary_key: false
+  - name: LFOS_PROTECTED
+    type: Integer
+    primary_key: false
+  - name: SHAPE
+    type: Geometry
+    primary_key: false
+  - name: PRINTED
+    type: Integer
+    primary_key: false
+- name: GC_UNCO_DESPOSIT
+  columns:
+  - name: OBJECTID
+    type: OID
+    primary_key: false
+  - name: UUID
+    type: Guid
+    primary_key: false
+  - name: SYMBOL
+    type: String
+    primary_key: false
+  - name: RUNC_CHRONO_T
+    type: Integer
+    primary_key: false
+  - name: RUNC_CHRONO_B
+    type: Integer
+    primary_key: false
+  - name: RUNC_LITHO
+    type: Integer
+    primary_key: false
+  - name: RUNC_LITSTRAT
+    type: Integer
+    primary_key: false
+  - name: RUNC_HARMOS_REV
+    type: Integer
+    primary_key: false
+  - name: RUNC_STRUCTUR
+    type: Integer
+    primary_key: false
+  - name: RUNC_MORPHOLO
+    type: Integer
+    primary_key: false
+  - name: RUNC_GLAC_TYP
+    type: Integer
+    primary_key: false
+  - name: RUNC_THIN_COV
+    type: Integer
+    primary_key: false
+  - name: RUNC_BURIED_OUT
+    type: Integer
+    primary_key: false
+  - name: RUNC_ORIG_DESCR
+    type: String
+    primary_key: false
+  - name: RUNC_REF_YEAR
+    type: String
+    primary_key: false
+  - name: RUNC_INDEX
+    type: String
+    primary_key: false
+  - name: SHAPE
+    type: Geometry
+    primary_key: false
+- name: GC_BEDROCK
+  columns:
+  - name: OBJECTID
+    type: OID
+    primary_key: false
+  - name: UUID
+    type: Guid
+    primary_key: false
+  - name: SYMBOL
+    type: String
+    primary_key: false
+  - name: RBED_CHRONO_T
+    type: Integer
+    primary_key: false
+  - name: RBED_CHRONO_B
+    type: Integer
+    primary_key: false
+  - name: RBED_CHRONO_B_LOC
+    type: Integer
+    primary_key: false
+  - name: RBED_CHRONO_T_LOC
+    type: Integer
+    primary_key: false
+  - name: RBED_TECTO
+    type: Integer
+    primary_key: false
+  - name: RBED_HARMOS_REV
+    type: Integer
+    primary_key: false
+  - name: RBED_EXOTIC_ELE
+    type: Integer
+    primary_key: false
+  - name: RBED_ORIG_DESCR
+    type: String
+    primary_key: false
+  - name: RBED_INDEX
+    type: String
+    primary_key: false
+  - name: FORM_ATT
+    type: Guid
+    primary_key: false
+  - name: SHAPE
+    type: Geometry
+    primary_key: false
+  - foreign_key:
+      name: FORM_ATT
+      type: Guid
+      reference: GC_BED_FORM_ATT
+  - foreign_key:
+      name: FORM_ATT
+      type: Guid
+      reference: GC_BED_FORM_ATT
+- name: GC_SURFACES
+  columns:
+  - name: OBJECTID
+    type: OID
+    primary_key: false
+  - name: UUID
+    type: Guid
+    primary_key: false
+  - name: SYMBOL
+    type: String
+    primary_key: false
+  - name: AARC_EPOCH
+    type: Integer
+    primary_key: false
+  - name: AARC_PERIOD
+    type: Integer
+    primary_key: false
+  - name: AARC_AGE
+    type: Integer
+    primary_key: false
+  - name: GINS_MAIN_MOV
+    type: Integer
+    primary_key: false
+  - name: TDEF_TYPE
+    type: Integer
+    primary_key: false
+  - name: SHAPE
+    type: Geometry
+    primary_key: false
+- name: GC_EXPLOIT_GEOMAT_PT
+  columns:
+  - name: OBJECTID
+    type: OID
+    primary_key: false
+  - name: UUID
+    type: Guid
+    primary_key: false
+  - name: SYMBOL
+    type: String
+    primary_key: false
+  - name: AEXP_STATUS
+    type: Integer
+    primary_key: false
+  - name: AEXP_TARG_MAT
+    type: Integer
+    primary_key: false
+  - name: AEXP_DEPTH_TOT
+    type: Double
+    primary_key: false
+  - name: SHAPE
+    type: Geometry
+    primary_key: false
+  - name: PRINTED
+    type: Integer
+    primary_key: false
+- name: GC_UNCO_DESPOSIT_GC_LITHO
+  columns:
+  - foreign_key:
+      name: GC_UNCO_DESPOSIT_UUID
+      type: Guid
+      reference: GC_UNCO_DESPOSIT
+  - foreign_key:
+      name: GC_LITHO_UUID
+      type: Guid
+      reference: GC_LITHO
+- name: GC_EXPLOIT_GEOMAT_PT_GC_LITSTRAT
+  columns:
+  - foreign_key:
+      name: GC_EXPLOIT_GEOMAT_PT_UUID
+      type: Guid
+      reference: GC_EXPLOIT_GEOMAT_PT
+  - foreign_key:
+      name: GC_LITSTRAT_UUID
+      type: Guid
+      reference: GC_LITSTRAT
+- name: GC_BEDROCK_GC_LITHO_BED
+  columns:
+  - foreign_key:
+      name: GC_BEDROCK_UUID
+      type: Guid
+      reference: GC_BEDROCK
+  - foreign_key:
+      name: GC_LITHO_BED_UUID
+      type: Guid
+      reference: GC_LITHO_BED
+- name: GC_FOSSILS_GC_SYSTEM
+  columns:
+  - foreign_key:
+      name: GC_FOSSILS_UUID
+      type: Guid
+      reference: GC_FOSSILS
+  - foreign_key:
+      name: GC_SYSTEM_UUID
+      type: Guid
+      reference: GC_SYSTEM
+- name: GC_UNCO_DESPOSIT_GC_COMPOSIT
+  columns:
+  - foreign_key:
+      name: GC_UNCO_DESPOSIT_UUID
+      type: Guid
+      reference: GC_UNCO_DESPOSIT
+  - foreign_key:
+      name: GC_COMPOSIT_UUID
+      type: Guid
+      reference: GC_COMPOSIT
+- name: GC_UNCO_DESPOSIT_GC_ADMIXTURE
+  columns:
+  - foreign_key:
+      name: GC_UNCO_DESPOSIT_UUID
+      type: Guid
+      reference: GC_UNCO_DESPOSIT
+  - foreign_key:
+      name: GC_ADMIXTURE_UUID
+      type: Guid
+      reference: GC_ADMIXTURE
+- name: GC_UNCO_DESPOSIT_GC_CHARCAT
+  columns:
+  - foreign_key:
+      name: GC_UNCO_DESPOSIT_UUID
+      type: Guid
+      reference: GC_UNCO_DESPOSIT
+  - foreign_key:
+      name: GC_CHARCAT_UUID
+      type: Guid
+      reference: GC_CHARCAT
+- name: GC_EXPLOIT_GEOMAT_PLG_GC_LITSTRAT
+  columns:
+  - foreign_key:
+      name: GC_EXPLOIT_GEOMAT_PLG_UUID
+      type: Guid
+      reference: GC_EXPLOIT_GEOMAT_PLG
+  - foreign_key:
+      name: GC_LITSTRAT_UUID
+      type: Guid
+      reference: GC_LITSTRAT
+featureclasses: {}

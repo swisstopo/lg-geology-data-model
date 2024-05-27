@@ -14,6 +14,68 @@ scale 2
 hide methods
 hide stereotypes
 
+table(GC_CHRONO) {
+	primary_key(UUID) Guid
+	---
+	OBJECTID OID
+	UUID Guid
+	GEOL_CODE String
+	GEOL_CODE_INT Integer
+	GERMAN String
+	TREE_LEVEL Integer
+	PARENT_REF Integer
+}
+
+table(GC_LITHO) {
+	foreign_key(GC_UNCO_DESPOSIT_UUID,GC_UNCO_DESPOSIT) Guid
+	foreign_key(GC_LITHO_UUID,GC_LITHO) Guid
+	---
+	OBJECTID OID
+	UUID Guid
+	GEOL_CODE String
+	GEOL_CODE_INT Integer
+	GERMAN String
+	TREE_LEVEL Integer
+	PARENT_REF Integer
+}
+
+table(GC_LITSTRAT) {
+	foreign_key(GC_EXPLOIT_GEOMAT_PLG_UUID,GC_EXPLOIT_GEOMAT_PLG) Guid
+	foreign_key(GC_LITSTRAT_UUID,GC_LITSTRAT) Guid
+	---
+	OBJECTID OID
+	UUID Guid
+	GEOL_CODE String
+	GEOL_CODE_INT Integer
+	GERMAN String
+	TREE_LEVEL Integer
+	PARENT_REF Integer
+}
+
+table(GC_TECTO) {
+	primary_key(UUID) Guid
+	---
+	OBJECTID OID
+	UUID Guid
+	GEOL_CODE String
+	GEOL_CODE_INT Integer
+	GERMAN String
+	TREE_LEVEL Integer
+	PARENT_REF Integer
+}
+
+table(GC_LITHO_UNCO) {
+	primary_key(UUID) Guid
+	---
+	OBJECTID OID
+	UUID Guid
+	GEOL_CODE String
+	GEOL_CODE_INT Integer
+	GERMAN String
+	TREE_LEVEL Integer
+	PARENT_REF Integer
+}
+
 table(GC_LITHO_BED) {
 	foreign_key(GC_BEDROCK_UUID,GC_BEDROCK) Guid
 	foreign_key(GC_LITHO_BED_UUID,GC_LITHO_BED) Guid
@@ -27,20 +89,20 @@ table(GC_LITHO_BED) {
 	PARENT_REF Integer
 }
 
-table(GC_SYSTEM) {
-	foreign_key(GC_FOSSILS_UUID,GC_FOSSILS) Guid
-	foreign_key(GC_SYSTEM_UUID,GC_SYSTEM) Guid
+table(GC_LITSTRAT_BED) {
+	primary_key(UUID) Guid
 	---
 	OBJECTID OID
 	UUID Guid
 	GEOL_CODE String
 	GEOL_CODE_INT Integer
 	GERMAN String
+	TREE_LEVEL Integer
+	PARENT_REF Integer
 }
 
-table(GC_LITSTRAT) {
-	foreign_key(GC_EXPLOIT_GEOMAT_PLG_UUID,GC_EXPLOIT_GEOMAT_PLG) Guid
-	foreign_key(GC_LITSTRAT_UUID,GC_LITSTRAT) Guid
+table(GC_LITSTRAT_UNCO) {
+	primary_key(UUID) Guid
 	---
 	OBJECTID OID
 	UUID Guid
@@ -79,76 +141,26 @@ table(GC_BED_FORM_ATT) {
 	FMAT_LITSTRAT Integer
 }
 
-table(GC_LITHO) {
+table(GC_SYSTEM) {
+	foreign_key(GC_FOSSILS_UUID,GC_FOSSILS) Guid
+	foreign_key(GC_SYSTEM_UUID,GC_SYSTEM) Guid
+	---
+	OBJECTID OID
+	UUID Guid
+	GEOL_CODE String
+	GEOL_CODE_INT Integer
+	GERMAN String
+}
+
+table(GC_COMPOSIT) {
 	foreign_key(GC_UNCO_DESPOSIT_UUID,GC_UNCO_DESPOSIT) Guid
-	foreign_key(GC_LITHO_UUID,GC_LITHO) Guid
+	foreign_key(GC_COMPOSIT_UUID,GC_COMPOSIT) Guid
 	---
 	OBJECTID OID
 	UUID Guid
 	GEOL_CODE String
 	GEOL_CODE_INT Integer
 	GERMAN String
-	TREE_LEVEL Integer
-	PARENT_REF Integer
-}
-
-table(GC_LITSTRAT_UNCO) {
-	primary_key(UUID) Guid
-	---
-	OBJECTID OID
-	UUID Guid
-	GEOL_CODE String
-	GEOL_CODE_INT Integer
-	GERMAN String
-	TREE_LEVEL Integer
-	PARENT_REF Integer
-}
-
-table(GC_CHRONO) {
-	primary_key(UUID) Guid
-	---
-	OBJECTID OID
-	UUID Guid
-	GEOL_CODE String
-	GEOL_CODE_INT Integer
-	GERMAN String
-	TREE_LEVEL Integer
-	PARENT_REF Integer
-}
-
-table(GC_CHARCAT) {
-	foreign_key(GC_UNCO_DESPOSIT_UUID,GC_UNCO_DESPOSIT) Guid
-	foreign_key(GC_CHARCAT_UUID,GC_CHARCAT) Guid
-	---
-	OBJECTID OID
-	UUID Guid
-	GEOL_CODE String
-	GEOL_CODE_INT Integer
-	GERMAN String
-}
-
-table(GC_TECTO) {
-	primary_key(UUID) Guid
-	---
-	OBJECTID OID
-	UUID Guid
-	GEOL_CODE String
-	GEOL_CODE_INT Integer
-	GERMAN String
-	TREE_LEVEL Integer
-	PARENT_REF Integer
-}
-
-table(GC_LITSTRAT_BED) {
-	primary_key(UUID) Guid
-	---
-	OBJECTID OID
-	UUID Guid
-	GEOL_CODE String
-	GEOL_CODE_INT Integer
-	GERMAN String
-	TREE_LEVEL Integer
-	PARENT_REF Integer
 }
 
 table(GC_ADMIXTURE) {
@@ -162,27 +174,26 @@ table(GC_ADMIXTURE) {
 	GERMAN String
 }
 
-table(GC_LITHO_UNCO) {
+table(GC_CHARCAT) {
+	foreign_key(GC_UNCO_DESPOSIT_UUID,GC_UNCO_DESPOSIT) Guid
+	foreign_key(GC_CHARCAT_UUID,GC_CHARCAT) Guid
+	---
+	OBJECTID OID
+	UUID Guid
+	GEOL_CODE String
+	GEOL_CODE_INT Integer
+	GERMAN String
+}
+
+table(GC_EXPLOIT_GEOMAT_PLG) {
 	primary_key(UUID) Guid
 	---
 	OBJECTID OID
 	UUID Guid
-	GEOL_CODE String
-	GEOL_CODE_INT Integer
-	GERMAN String
-	TREE_LEVEL Integer
-	PARENT_REF Integer
-}
-
-table(GC_COMPOSIT) {
-	foreign_key(GC_UNCO_DESPOSIT_UUID,GC_UNCO_DESPOSIT) Guid
-	foreign_key(GC_COMPOSIT_UUID,GC_COMPOSIT) Guid
-	---
-	OBJECTID OID
-	UUID Guid
-	GEOL_CODE String
-	GEOL_CODE_INT Integer
-	GERMAN String
+	SYMBOL String
+	AEXP_STATUS Integer
+	AEXP_TARG_MAT Integer
+	SHAPE Geometry
 }
 
 table(GC_LINEAR_OBJECTS) {
@@ -230,39 +241,6 @@ table(GC_LINEAR_OBJECTS) {
 	PRINTED Integer
 	TTEC_LIM_TYP Integer
 	TTEC_HIERA Integer
-}
-
-table(GC_BEDROCK) {
-	primary_key(UUID) Guid
-	foreign_key(FORM_ATT,GC_BED_FORM_ATT) Guid
-	---
-	OBJECTID OID
-	UUID Guid
-	SYMBOL String
-	RBED_CHRONO_T Integer
-	RBED_CHRONO_B Integer
-	RBED_CHRONO_B_LOC Integer
-	RBED_CHRONO_T_LOC Integer
-	RBED_TECTO Integer
-	RBED_HARMOS_REV Integer
-	RBED_EXOTIC_ELE Integer
-	RBED_ORIG_DESCR String
-	RBED_INDEX String
-	FORM_ATT Guid
-	SHAPE Geometry
-}
-
-
-
-table(GC_EXPLOIT_GEOMAT_PLG) {
-	primary_key(UUID) Guid
-	---
-	OBJECTID OID
-	UUID Guid
-	SYMBOL String
-	AEXP_STATUS Integer
-	AEXP_TARG_MAT Integer
-	SHAPE Geometry
 }
 
 table(GC_POINT_OBJECTS) {
@@ -335,19 +313,6 @@ table(GC_POINT_OBJECTS) {
 	ABOR_LITHO Integer
 }
 
-table(GC_EXPLOIT_GEOMAT_PT) {
-	primary_key(UUID) Guid
-	---
-	OBJECTID OID
-	UUID Guid
-	SYMBOL String
-	AEXP_STATUS Integer
-	AEXP_TARG_MAT Integer
-	AEXP_DEPTH_TOT Double
-	SHAPE Geometry
-	PRINTED Integer
-}
-
 table(GC_FOSSILS) {
 	primary_key(UUID) Guid
 	---
@@ -361,33 +326,6 @@ table(GC_FOSSILS) {
 	SHAPE Geometry
 	PRINTED Integer
 }
-
-table(GC_SURFACES) {
-	primary_key(UUID) Guid
-	---
-	OBJECTID OID
-	UUID Guid
-	SYMBOL String
-	AARC_EPOCH Integer
-	AARC_PERIOD Integer
-	AARC_AGE Integer
-	GINS_MAIN_MOV Integer
-	TDEF_TYPE Integer
-	SHAPE Geometry
-}
-
-table(GC_FOSSILS_GC_SYSTEM) {
-	foreign_key(GC_FOSSILS_UUID,GC_FOSSILS) Guid
-	foreign_key(GC_SYSTEM_UUID,GC_SYSTEM) Guid
-}
-
-table(GC_EXPLOIT_GEOMAT_PT_GC_LITSTRAT) {
-	foreign_key(GC_EXPLOIT_GEOMAT_PT_UUID,GC_EXPLOIT_GEOMAT_PT) Guid
-	foreign_key(GC_LITSTRAT_UUID,GC_LITSTRAT) Guid
-}
-
-together {
-
 
 table(GC_UNCO_DESPOSIT) {
 	primary_key(UUID) Guid
@@ -411,26 +349,61 @@ table(GC_UNCO_DESPOSIT) {
 	SHAPE Geometry
 }
 
+table(GC_BEDROCK) {
+	primary_key(UUID) Guid
+	foreign_key(FORM_ATT,GC_BED_FORM_ATT) Guid
+	---
+	OBJECTID OID
+	UUID Guid
+	SYMBOL String
+	RBED_CHRONO_T Integer
+	RBED_CHRONO_B Integer
+	RBED_CHRONO_B_LOC Integer
+	RBED_CHRONO_T_LOC Integer
+	RBED_TECTO Integer
+	RBED_HARMOS_REV Integer
+	RBED_EXOTIC_ELE Integer
+	RBED_ORIG_DESCR String
+	RBED_INDEX String
+	FORM_ATT Guid
+	SHAPE Geometry
+}
+
+table(GC_SURFACES) {
+	primary_key(UUID) Guid
+	---
+	OBJECTID OID
+	UUID Guid
+	SYMBOL String
+	AARC_EPOCH Integer
+	AARC_PERIOD Integer
+	AARC_AGE Integer
+	GINS_MAIN_MOV Integer
+	TDEF_TYPE Integer
+	SHAPE Geometry
+}
+
+table(GC_EXPLOIT_GEOMAT_PT) {
+	primary_key(UUID) Guid
+	---
+	OBJECTID OID
+	UUID Guid
+	SYMBOL String
+	AEXP_STATUS Integer
+	AEXP_TARG_MAT Integer
+	AEXP_DEPTH_TOT Double
+	SHAPE Geometry
+	PRINTED Integer
+}
+
 table(GC_UNCO_DESPOSIT_GC_LITHO) {
 	foreign_key(GC_UNCO_DESPOSIT_UUID,GC_UNCO_DESPOSIT) Guid
 	foreign_key(GC_LITHO_UUID,GC_LITHO) Guid
 }
 
-table(GC_UNCO_DESPOSIT_GC_CHARCAT) {
-	foreign_key(GC_UNCO_DESPOSIT_UUID,GC_UNCO_DESPOSIT) Guid
-	foreign_key(GC_CHARCAT_UUID,GC_CHARCAT) Guid
-}
-
-table(GC_UNCO_DESPOSIT_GC_ADMIXTURE) {
-	foreign_key(GC_UNCO_DESPOSIT_UUID,GC_UNCO_DESPOSIT) Guid
-	foreign_key(GC_ADMIXTURE_UUID,GC_ADMIXTURE) Guid
-}
-
-table(GC_UNCO_DESPOSIT_GC_COMPOSIT) {
-	foreign_key(GC_UNCO_DESPOSIT_UUID,GC_UNCO_DESPOSIT) Guid
-	foreign_key(GC_COMPOSIT_UUID,GC_COMPOSIT) Guid
-}
-
+table(GC_EXPLOIT_GEOMAT_PT_GC_LITSTRAT) {
+	foreign_key(GC_EXPLOIT_GEOMAT_PT_UUID,GC_EXPLOIT_GEOMAT_PT) Guid
+	foreign_key(GC_LITSTRAT_UUID,GC_LITSTRAT) Guid
 }
 
 table(GC_BEDROCK_GC_LITHO_BED) {
@@ -438,32 +411,55 @@ table(GC_BEDROCK_GC_LITHO_BED) {
 	foreign_key(GC_LITHO_BED_UUID,GC_LITHO_BED) Guid
 }
 
+table(GC_FOSSILS_GC_SYSTEM) {
+	foreign_key(GC_FOSSILS_UUID,GC_FOSSILS) Guid
+	foreign_key(GC_SYSTEM_UUID,GC_SYSTEM) Guid
+}
+
+table(GC_UNCO_DESPOSIT_GC_COMPOSIT) {
+	foreign_key(GC_UNCO_DESPOSIT_UUID,GC_UNCO_DESPOSIT) Guid
+	foreign_key(GC_COMPOSIT_UUID,GC_COMPOSIT) Guid
+}
+
+table(GC_UNCO_DESPOSIT_GC_ADMIXTURE) {
+	foreign_key(GC_UNCO_DESPOSIT_UUID,GC_UNCO_DESPOSIT) Guid
+	foreign_key(GC_ADMIXTURE_UUID,GC_ADMIXTURE) Guid
+}
+
+table(GC_UNCO_DESPOSIT_GC_CHARCAT) {
+	foreign_key(GC_UNCO_DESPOSIT_UUID,GC_UNCO_DESPOSIT) Guid
+	foreign_key(GC_CHARCAT_UUID,GC_CHARCAT) Guid
+}
+
 table(GC_EXPLOIT_GEOMAT_PLG_GC_LITSTRAT) {
 	foreign_key(GC_EXPLOIT_GEOMAT_PLG_UUID,GC_EXPLOIT_GEOMAT_PLG) Guid
 	foreign_key(GC_LITSTRAT_UUID,GC_LITSTRAT) Guid
 }
 
-
-
-
-
+GC_LITHO "0..n" -- "1..1" GC_UNCO_DESPOSIT
+GC_LITSTRAT "0..n" -- "1..1" GC_EXPLOIT_GEOMAT_PLG
+GC_LITHO_BED "0..n" -- "1..1" GC_BEDROCK
+GC_SYSTEM "0..n" -- "1..1" GC_FOSSILS
+GC_COMPOSIT "0..n" -- "1..1" GC_UNCO_DESPOSIT
+GC_ADMIXTURE "0..n" -- "1..1" GC_UNCO_DESPOSIT
+GC_CHARCAT "0..n" -- "1..1" GC_UNCO_DESPOSIT
 GC_BEDROCK "0..n" -- "1..1" GC_BED_FORM_ATT
-GC_FOSSILS_GC_SYSTEM "0..n" -- "1..1" GC_FOSSILS
-GC_FOSSILS_GC_SYSTEM "0..n" -- "1..1" GC_SYSTEM
-GC_EXPLOIT_GEOMAT_PT_GC_LITSTRAT "0..n" -- "1..1" GC_EXPLOIT_GEOMAT_PT
-GC_EXPLOIT_GEOMAT_PT_GC_LITSTRAT "0..n" -- "1..1" GC_LITSTRAT
 GC_UNCO_DESPOSIT_GC_LITHO "0..n" -- "1..1" GC_UNCO_DESPOSIT
 GC_UNCO_DESPOSIT_GC_LITHO "0..n" -- "1..1" GC_LITHO
+GC_EXPLOIT_GEOMAT_PT_GC_LITSTRAT "0..n" -- "1..1" GC_EXPLOIT_GEOMAT_PT
+GC_EXPLOIT_GEOMAT_PT_GC_LITSTRAT "0..n" -- "1..1" GC_LITSTRAT
 GC_BEDROCK_GC_LITHO_BED "0..n" -- "1..1" GC_BEDROCK
 GC_BEDROCK_GC_LITHO_BED "0..n" -- "1..1" GC_LITHO_BED
-GC_EXPLOIT_GEOMAT_PLG_GC_LITSTRAT "0..n" -- "1..1" GC_EXPLOIT_GEOMAT_PLG
-GC_EXPLOIT_GEOMAT_PLG_GC_LITSTRAT "0..n" -- "1..1" GC_LITSTRAT
-GC_UNCO_DESPOSIT_GC_CHARCAT "0..n" -- "1..1" GC_UNCO_DESPOSIT
-GC_UNCO_DESPOSIT_GC_CHARCAT "0..n" -- "1..1" GC_CHARCAT
-GC_UNCO_DESPOSIT_GC_ADMIXTURE "0..n" -- "1..1" GC_UNCO_DESPOSIT
-GC_UNCO_DESPOSIT_GC_ADMIXTURE "0..n" -- "1..1" GC_ADMIXTURE
+GC_FOSSILS_GC_SYSTEM "0..n" -- "1..1" GC_FOSSILS
+GC_FOSSILS_GC_SYSTEM "0..n" -- "1..1" GC_SYSTEM
 GC_UNCO_DESPOSIT_GC_COMPOSIT "0..n" -- "1..1" GC_UNCO_DESPOSIT
 GC_UNCO_DESPOSIT_GC_COMPOSIT "0..n" -- "1..1" GC_COMPOSIT
+GC_UNCO_DESPOSIT_GC_ADMIXTURE "0..n" -- "1..1" GC_UNCO_DESPOSIT
+GC_UNCO_DESPOSIT_GC_ADMIXTURE "0..n" -- "1..1" GC_ADMIXTURE
+GC_UNCO_DESPOSIT_GC_CHARCAT "0..n" -- "1..1" GC_UNCO_DESPOSIT
+GC_UNCO_DESPOSIT_GC_CHARCAT "0..n" -- "1..1" GC_CHARCAT
+GC_EXPLOIT_GEOMAT_PLG_GC_LITSTRAT "0..n" -- "1..1" GC_EXPLOIT_GEOMAT_PLG
+GC_EXPLOIT_GEOMAT_PLG_GC_LITSTRAT "0..n" -- "1..1" GC_LITSTRAT
 
 @enduml
     
