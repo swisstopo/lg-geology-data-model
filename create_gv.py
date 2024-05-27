@@ -4,7 +4,7 @@ import os
 import sys
 import json
 import pygraphviz as pgv
-import yaml
+import  yaml
 
 from loguru import logger
 
@@ -124,8 +124,8 @@ input_file = "../data/geocover-schema-sde.json"
 basename = os.path.splitext(os.path.basename(input_file))[0]
 
 
-output_file = basename + ".png"
-dotfile = basename + ".dot"
+output_file = os.path.join(OUTPUT_DIR, basename + ".png")
+dotfile = os.path.join(OUTPUT_DIR, basename + ".dot")
 
 
 with open(input_file, "r") as f:
@@ -400,10 +400,16 @@ for table_name, table in S.puml_tables.items():
 with open(os.path.join(OUTPUT_DIR, "ER-GCOVER.puml"), "w") as f:
     f.write(SP.transform())
 
-yaml = YAML()
 
-# Set the output to preserve the order of keys
-yaml.default_flow_style = False
+
+
 
 with open(os.path.join(OUTPUT_DIR, "GCOVERP.yaml"), "w") as f:
-    yaml.dump(db_config, f)
+    yaml.dump(
+        db_config,
+        f,
+        default_flow_style=False,
+        sort_keys=False,
+        allow_unicode=True,
+        encoding=("utf-8"),
+    )
