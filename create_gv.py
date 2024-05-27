@@ -12,6 +12,8 @@ from sql2puml import SQL2PUML
 
 FONTNAME = "DejaVu Sans,Nimbus Sans"
 
+OUTPUT_DIR = "output"
+
 logger.remove(0)
 logger.add(sys.stderr, format="{time} {level} {message}", level="INFO")
 
@@ -75,7 +77,7 @@ IGNORE_OBJECTS = clean(
     ]
 )
 
-OUTPUT_DIR = "outdir"
+
 
 
 class Column:

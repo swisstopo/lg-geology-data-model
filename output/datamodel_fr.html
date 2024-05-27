@@ -4,10 +4,10 @@
   <meta charset="utf-8" />
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <meta name="author" content="Bundesamt für Landestopographie swisstopo" />
+  <meta name="author" content="Office fédéral de topographie swisstopo" />
   <meta name="keywords" content="GeoCover, Metadata, Model, GIS, Vector
 data, Geology, Switzerland" />
-  <title>Modèle de donnée géologique , Révision 3.5!</title>
+  <title>Modèle de donnée géologique, Révision 3.5</title>
   <style>
     html {
       font-family: DejaVu Sans;
@@ -175,10 +175,10 @@ data, Geology, Switzerland" />
 </head>
 <body>
 <header id="title-block-header">
-<h1 class="title">Modèle de donnée géologique , Révision 3.5!</h1>
-<p class="subtitle">Beschreibung und Datenkatalog</p>
-<p class="author">Bundesamt für Landestopographie swisstopo</p>
-<p class="date">April 2024</p>
+<h1 class="title">Modèle de donnée géologique, Révision 3.5</h1>
+<p class="subtitle">Description et catalogue de donnée</p>
+<p class="author">Office fédéral de topographie swisstopo</p>
+<p class="date">Avril 2024</p>
 </header>
 <figure>
 <img src="geocover.png" title="Figure alt text"
@@ -229,7 +229,8 @@ dégagés sur place par dégradation de la roche sous-jacente.</p>
 <td>2</td>
 <td><strong>status</strong></td>
 <td><a href="#unconsolidated-deposits-pt-status">CodedDomain</a></td>
-<td>État du type d'objet.</td>
+<td>État du type d'objet. Les valeurs possibles sont énumérées dans la
+table GC_PNT_RUNC_STATUS_CD en annexe de ce document.</td>
 </tr>
 <tr class="even">
 <td><a href=""></a></td>
@@ -241,7 +242,8 @@ dégagés sur place par dégradation de la roche sous-jacente.</p>
 <td>3</td>
 <td><strong>rock_type</strong></td>
 <td><a href="#unconsolidated-deposits-pt-rock-type">CodedDomain</a></td>
-<td>Type de roche.</td>
+<td>Type de roche. Les valeurs possibles sont énumérées dans la table
+GC_PNT_RUNC_ROCK_TYP_CD en annexe de ce document.</td>
 </tr>
 <tr class="even">
 <td><a href=""></a></td>
@@ -253,7 +255,9 @@ dégagés sur place par dégradation de la roche sous-jacente.</p>
 <td>4</td>
 <td><strong>rock_spe</strong></td>
 <td><a href="#unconsolidated-deposits-pt-rock-spe">CodedDomain</a></td>
-<td>Description de la roche repère..</td>
+<td>Description de la roche repère.. Les valeurs possibles sont
+énumérées dans la table GC_PNT_RUNC_ROCK_SPE_CD en annexe de ce
+document.</td>
 </tr>
 <tr class="even">
 <td><a href=""></a></td>
@@ -265,9 +269,9 @@ dégagés sur place par dégradation de la roche sous-jacente.</p>
 <td>5</td>
 <td><strong>mat_type</strong></td>
 <td><a href="#gc-litho-unco-cd">CodedDomain</a></td>
-<td>Description du matériel (unité lithologique). Die möglichen Werte
-sind in der Tabelle GC_LITHO_UNCO_CD im Anhang dieses Dokumentes
-verfügbar.</td>
+<td>Description du matériel (unité lithologique). Les valeurs possibles
+sont énumérées dans la table GC_LITHO_UNCO_CD en annexe de ce
+document.</td>
 </tr>
 <tr class="even">
 <td><a href=""></a></td>
@@ -318,46 +322,6 @@ class="header-section-number">1.1.1</span> Attribut kind</h3>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td>14401001</td>
-<td>Runc erratischer Block</td>
-<td>bloc erratique</td>
-</tr>
-<tr class="even">
-<td>14401002</td>
-<td>Runc Schwarm erratischer Blöcke</td>
-<td>accumulation de blocs erratiques</td>
-</tr>
-<tr class="odd">
-<td>14401003</td>
-<td>Runc anthropogene Ansammlung von erratischen Blöcken</td>
-<td>amas anthropique de blocs erratiques</td>
-</tr>
-<tr class="even">
-<td>14401004</td>
-<td>Runc Wanderblock</td>
-<td>bloc laboureur</td>
-</tr>
-<tr class="odd">
-<td>14401005</td>
-<td>Runc Geschiebe</td>
-<td>cailloutis glaciaire</td>
-</tr>
-<tr class="even">
-<td>14401006</td>
-<td>Runc Sturzblock</td>
-<td>bloc éboulé</td>
-</tr>
-<tr class="odd">
-<td>14401007</td>
-<td>Runc Lesesteinhaufen</td>
-<td>dépôt d'épierrage</td>
-</tr>
-<tr class="even">
-<td>14401008</td>
-<td>Runc Verwitterungsrückstände (Gerölle und/oder Konkretionen)</td>
-<td>éléments résiduels (galets et/ou rognons)</td>
-</tr>
 </tbody>
 </table>
 <h3 data-number="1.1.2" id="unconsolidated-deposits-pt-status"><span
@@ -614,16 +578,18 @@ class="header-section-number">1.1.4</span> Attribut rock_spe</h3>
 </table>
 <h3 data-number="1.1.5" id="attribut-mat_type"><span
 class="header-section-number">1.1.5</span> Attribut mat_type</h3>
-<p><em>Description du matériel (unité lithologique)</em> Voir le domaine
-<a href="#gc-litho-unco-cd">GC_LITHO_UNCO_CD</a> dans l’annexe</p>
+<p><em>Description du matériel (unité lithologique)</em></p>
+<p>Voir le domaine <a href="#gc-litho-unco-cd">GC_LITHO_UNCO_CD</a> dans
+l’annexe</p>
 <h3 data-number="1.1.6" id="attribut-orig_descr"><span
 class="header-section-number">1.1.6</span> Attribut orig_descr</h3>
-<p><em>Description de la légende de la carte géologique originale</em>
-<em>Type de donnée : string</em></p>
+<p><em>Description de la légende de la carte géologique
+originale</em></p>
+<p><em>Type de donnée : string</em></p>
 <h3 data-number="1.1.7" id="attribut-protected"><span
 class="header-section-number">1.1.7</span> Attribut protected</h3>
-<p><em>Objet géologique protégé (oui / non)?</em> <em>Type de donnée :
-boolean</em></p>
+<p><em>Objet géologique protégé (oui / non)?</em></p>
+<p><em>Type de donnée : boolean</em></p>
 <h2 data-number="1.2" id="unconsolidated-deposits-plg"><span
 class="header-section-number">1.2</span> Classe
 Unconsolidated_Deposits_PLG</h2>
@@ -670,9 +636,9 @@ illustrés dans l'annexe A.</p>
 <td>2</td>
 <td><strong>litstrat</strong></td>
 <td><a href="#gc-litstrat-unco-cd">CodedDomain</a></td>
-<td><strong>obligatoire</strong> Description lithostratigraphique. Die
-möglichen Werte sind in der Tabelle GC_LITSTRAT_UNCO_CD im Anhang dieses
-Dokumentes verfügbar.</td>
+<td>Description lithostratigraphique. Les valeurs possibles sont
+énumérées dans la table GC_LITSTRAT_UNCO_CD en annexe de ce document.
+<strong>obligatoire</strong></td>
 </tr>
 <tr class="even">
 <td><a href=""></a></td>
@@ -684,8 +650,8 @@ Dokumentes verfügbar.</td>
 <td>3</td>
 <td><strong>litho</strong></td>
 <td><a href="#gc-litho-cd">CodedDomain</a></td>
-<td>Description lithologique.. Die möglichen Werte sind in der Tabelle
-GC_LITHO_CD im Anhang dieses Dokumentes verfügbar.</td>
+<td>Description lithologique.. Les valeurs possibles sont énumérées dans
+la table GC_LITHO_CD en annexe de ce document.</td>
 </tr>
 <tr class="even">
 <td><a href=""></a></td>
@@ -697,52 +663,173 @@ GC_LITHO_CD im Anhang dieses Dokumentes verfügbar.</td>
 <td>4</td>
 <td><strong>chrono_t</strong></td>
 <td><a href="#gc-chrono-cd">CodedDomain</a></td>
-<td><strong>obligatoire</strong> Attribution chronostratigraphique du
-toit de la formation</td>
+<td>Attribution chronostratigraphique du toit de la formation (top). Les
+valeurs possibles sont énumérées dans la table GC_CHRONO_CD en annexe de
+ce document. <strong>obligatoire</strong></td>
+</tr>
+<tr class="even">
+<td><a href=""></a></td>
+<td>Cardinalité [1]</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td><strong>chrono_b</strong></td>
+<td><a href="#gc-chrono-cd">CodedDomain</a></td>
+<td>Attribution chronostratigraphique de la base de la formation
+(basis). Les valeurs possibles sont énumérées dans la table GC_CHRONO_CD
+en annexe de ce document. <strong>obligatoire</strong></td>
+</tr>
+<tr class="even">
+<td><a href=""></a></td>
+<td>Cardinalité [1]</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>6</td>
+<td><strong>mat_type</strong></td>
+<td></td>
+<td>Description du matériel (unité lithologique)</td>
+</tr>
+<tr class="even">
+<td><a href=""></a></td>
+<td>Cardinalité [0..3]</td>
+<td>Lithostratigraphic_Units_Litho</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td><strong>buried_out</strong></td>
+<td>boolean</td>
+<td>Est-ce que la roche consolidée est recouvert (oui / non)?</td>
+</tr>
+<tr class="even">
+<td><a href=""></a></td>
+<td>Cardinalité [1]</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>8</td>
+<td><strong>composit</strong></td>
+<td>table</td>
+<td>Composition de la roche meuble</td>
+</tr>
+<tr class="even">
+<td><a href=""></a></td>
+<td>Cardinalité [0..3]</td>
+<td>gc_composit</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>9</td>
+<td><strong>admixture</strong></td>
+<td>table</td>
+<td>Incorporation</td>
+</tr>
+<tr class="even">
+<td><a href=""></a></td>
+<td>Cardinalité [0..2]</td>
+<td>gc_admixture</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>10</td>
+<td><strong>structur</strong></td>
+<td><a href="#unconsolidated-deposits-plg-structur">CodedDomain</a></td>
+<td>. Les valeurs possibles sont énumérées dans la table
+GC_UN_DEP_RUNC_STRUCTUR_CD en annexe de ce document.</td>
+</tr>
+<tr class="even">
+<td><a href=""></a></td>
+<td>Cardinalité [0..1]</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>11</td>
+<td><strong>charact</strong></td>
+<td>table</td>
+<td>Structure sédimentaire</td>
+</tr>
+<tr class="even">
+<td><a href=""></a></td>
+<td>Cardinalité [0..3]</td>
+<td>gc_charcat</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>12</td>
+<td><strong>morpholo</strong></td>
+<td><a href="#unconsolidated-deposits-plg-morpholo">CodedDomain</a></td>
+<td>Morphologie de l’unité de roche meuble. Les valeurs possibles sont
+énumérées dans la table GC_UN_DEP_RUNC_MORPHOLO_CD en annexe de ce
+document.</td>
+</tr>
+<tr class="even">
+<td><a href=""></a></td>
+<td>Cardinalité [0..1]</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>13</td>
+<td><strong>glac_type</strong></td>
+<td><a
+href="#unconsolidated-deposits-plg-glac-type">CodedDomain</a></td>
+<td>Type de glacier auquel le type d’objet est associé. Cet attribut
+n’est valable que pour des moraines. Les valeurs possibles sont
+énumérées dans la table GC_UN_DEP_RUNC_GLAC_TYP_CD en annexe de ce
+document.</td>
+</tr>
+<tr class="even">
+<td><a href=""></a></td>
+<td>Cardinalité [0..1]</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>14</td>
+<td><strong>ref_year</strong></td>
+<td>string</td>
+<td>Année de référence de l’ancienne ligne de rivage.</td>
+</tr>
+<tr class="even">
+<td><a href=""></a></td>
+<td>Cardinalité [0..1]</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>15</td>
+<td><strong>thin_cover</strong></td>
+<td><a
+href="#unconsolidated-deposits-plg-thin-cover">CodedDomain</a></td>
+<td>Couverture meuble pelliculaire. Les valeurs possibles sont énumérées
+dans la table GC_UN_DEP_RUNC_THIN_COV_CD en annexe de ce document.</td>
+</tr>
+<tr class="even">
+<td><a href=""></a></td>
+<td>Cardinalité [0..1]</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>16</td>
+<td><strong>orig_descr</strong></td>
+<td></td>
+<td>Description de la légende de la carte géologique originale.</td>
+</tr>
+<tr class="even">
+<td><a href=""></a></td>
+<td>Cardinalité [1]</td>
+<td>string</td>
+<td></td>
 </tr>
 </tbody>
 </table>
-<p>(top). Die möglichen Werte sind in der Tabelle GC_CHRONO_CD im Anhang
-dieses Dokumentes verfügbar. <a href=""></a> | Cardinalité [1] | |<br />
-5 | <strong>chrono_b</strong> | <a href="#gc-chrono-cd">CodedDomain</a>
-| <strong>obligatoire</strong> Attribution chronostratigraphique de la
-base de la formation (basis). Die möglichen Werte sind in der Tabelle
-GC_CHRONO_CD im Anhang dieses Dokumentes verfügbar. <a href=""></a> |
-Cardinalité [1] | |<br />
-6 | <strong>mat_type</strong> | | Description du matériel (unité
-lithologique) <a href=""></a> | Cardinalité [0..3] |
-Lithostratigraphic_Units_Litho |<br />
-7 | <strong>buried_out</strong> | boolean | Est-ce que la roche
-consolidée est recouvert (oui / non)? <a href=""></a> | Cardinalité [1]
-| |<br />
-8 | <strong>composit</strong> | table | Composition de la roche meuble
-<a href=""></a> | Cardinalité [0..3] | gc_composit |<br />
-9 | <strong>admixture</strong> | table | Incorporation <a href=""></a> |
-Cardinalité [0..2] | gc_admixture |<br />
-10 | <strong>structur</strong> | <a
-href="#unconsolidated-deposits-plg-structur">CodedDomain</a> | .<br />
-<a href=""></a> | Cardinalité [0..1] | |<br />
-11 | <strong>charact</strong> | table | Structure sédimentaire <a
-href=""></a> | Cardinalité [0..3] | gc_charcat |<br />
-12 | <strong>morpholo</strong> | <a
-href="#unconsolidated-deposits-plg-morpholo">CodedDomain</a> |
-Morphologie de l’unité de roche meuble.<br />
-<a href=""></a> | Cardinalité [0..1] | |<br />
-13 | <strong>glac_type</strong> | <a
-href="#unconsolidated-deposits-plg-glac-type">CodedDomain</a> | Type de
-glacier auquel le type d’objet est associé. Cet attribut n’est valable
-que pour des moraines.<br />
-<a href=""></a> | Cardinalité [0..1] | |<br />
-14 | <strong>ref_year</strong> | string | Année de référence de
-l’ancienne ligne de rivage. <a href=""></a> | Cardinalité [0..1] |
-|<br />
-15 | <strong>thin_cover</strong> | <a
-href="#unconsolidated-deposits-plg-thin-cover">CodedDomain</a> |
-Couverture meuble pelliculaire.<br />
-<a href=""></a> | Cardinalité [0..1] | |<br />
-16 | <strong>orig_descr</strong> | | Description de la légende de la
-carte géologique originale. <a href=""></a> | Cardinalité [1] | string
-|</p>
 <h3 data-number="1.2.1" id="attribut-kind-1"><span
 class="header-section-number">1.2.1</span> Attribut kind</h3>
 <p><em>Type de l'objet et description</em></p>
@@ -760,38 +847,38 @@ class="header-section-number">1.2.1</span> Attribut kind</h3>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td>14517001</td>
-<td>Runc Lockergestein</td>
-<td>roche meuble</td>
-</tr>
 </tbody>
 </table>
 <h3 data-number="1.2.2" id="attribut-litstrat"><span
 class="header-section-number">1.2.2</span> Attribut litstrat</h3>
-<p><em>Description lithostratigraphique</em> Voir le domaine <a
+<p><em>Description lithostratigraphique</em></p>
+<p>Voir le domaine <a
 href="#gc-litstrat-unco-cd">GC_LITSTRAT_UNCO_CD</a> dans l’annexe</p>
 <h3 data-number="1.2.3" id="attribut-litho"><span
 class="header-section-number">1.2.3</span> Attribut litho</h3>
-<p><em>Description lithologique.</em> Voir le domaine <a
-href="#gc-litho-cd">GC_LITHO_CD</a> dans l’annexe</p>
+<p><em>Description lithologique.</em></p>
+<p>Voir le domaine <a href="#gc-litho-cd">GC_LITHO_CD</a> dans
+l’annexe</p>
 <h3 data-number="1.2.4" id="attribut-chrono_t"><span
 class="header-section-number">1.2.4</span> Attribut chrono_t</h3>
 <p><em>Attribution chronostratigraphique du toit de la formation
-(top)</em> Voir le domaine <a href="#gc-chrono-cd">GC_CHRONO_CD</a> dans
+(top)</em></p>
+<p>Voir le domaine <a href="#gc-chrono-cd">GC_CHRONO_CD</a> dans
 l’annexe</p>
 <h3 data-number="1.2.5" id="attribut-chrono_b"><span
 class="header-section-number">1.2.5</span> Attribut chrono_b</h3>
 <p><em>Attribution chronostratigraphique de la base de la formation
-(basis)</em> Voir le domaine <a href="#gc-chrono-cd">GC_CHRONO_CD</a>
-dans l’annexe</p>
+(basis)</em></p>
+<p>Voir le domaine <a href="#gc-chrono-cd">GC_CHRONO_CD</a> dans
+l’annexe</p>
 <h3 data-number="1.2.6" id="attribut-mat_type-1"><span
 class="header-section-number">1.2.6</span> Attribut mat_type</h3>
 <p><em>Description du matériel (unité lithologique)</em></p>
 <h3 data-number="1.2.7" id="attribut-buried_out"><span
 class="header-section-number">1.2.7</span> Attribut buried_out</h3>
-<p><em>Est-ce que la roche consolidée est recouvert (oui / non)?</em>
-<em>Type de donnée : boolean</em></p>
+<p><em>Est-ce que la roche consolidée est recouvert (oui /
+non)?</em></p>
+<p><em>Type de donnée : boolean</em></p>
 <h3 data-number="1.2.8" id="attribut-composit"><span
 class="header-section-number">1.2.8</span> Attribut composit</h3>
 <p><em>Composition de la roche meuble</em></p>
@@ -1058,8 +1145,8 @@ n’est valable que pour des moraines</em></p>
 </table>
 <h3 data-number="1.2.14" id="attribut-ref_year"><span
 class="header-section-number">1.2.14</span> Attribut ref_year</h3>
-<p><em>Année de référence de l’ancienne ligne de rivage.</em> <em>Type
-de donnée : string</em></p>
+<p><em>Année de référence de l’ancienne ligne de rivage.</em></p>
+<p><em>Type de donnée : string</em></p>
 <h3 data-number="1.2.15"
 id="unconsolidated-deposits-plg-thin-cover"><span
 class="header-section-number">1.2.15</span> Attribut thin_cover</h3>
@@ -1175,8 +1262,9 @@ Instabilities_ within_Bedrock_PLG (Thème Geomorphology).</p>
 <td>3</td>
 <td><strong>listrat</strong></td>
 <td><a href="#gc-litstrat-bed-cd">CodedDomain</a></td>
-<td>Description lithostratigraphique. Die möglichen Werte sind in der
-Tabelle GC_LITSTRAT_BED_CD im Anhang dieses Dokumentes verfügbar.</td>
+<td>Description lithostratigraphique. Les valeurs possibles sont
+énumérées dans la table GC_LITSTRAT_BED_CD en annexe de ce
+document.</td>
 </tr>
 <tr class="even">
 <td><a href=""></a></td>
@@ -1188,8 +1276,8 @@ Tabelle GC_LITSTRAT_BED_CD im Anhang dieses Dokumentes verfügbar.</td>
 <td>4</td>
 <td><strong>litho</strong></td>
 <td><a href="#gc-litho-cd">CodedDomain</a></td>
-<td>Description lithologique. Die möglichen Werte sind in der Tabelle
-GC_LITHO_CD im Anhang dieses Dokumentes verfügbar.</td>
+<td>Description lithologique. Les valeurs possibles sont énumérées dans
+la table GC_LITHO_CD en annexe de ce document.</td>
 </tr>
 <tr class="even">
 <td><a href=""></a></td>
@@ -1201,79 +1289,254 @@ GC_LITHO_CD im Anhang dieses Dokumentes verfügbar.</td>
 <td>5</td>
 <td><strong>chrono_t</strong></td>
 <td><a href="#gc-chrono-cd">CodedDomain</a></td>
-<td><strong>obligatoire</strong> Attribution chronostratigraphique du
-toit de la</td>
+<td>Attribution chronostratigraphique du toit de la formation (top). Les
+valeurs possibles sont énumérées dans la table GC_CHRONO_CD en annexe de
+ce document. <strong>obligatoire</strong></td>
+</tr>
+<tr class="even">
+<td><a href=""></a></td>
+<td>Cardinalité [1]</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>6</td>
+<td><strong>chrono_b</strong></td>
+<td><a href="#gc-chrono-cd">CodedDomain</a></td>
+<td>Attribution chronostratigraphique de la base de la formation
+(basis).. Les valeurs possibles sont énumérées dans la table
+GC_CHRONO_CD en annexe de ce document. <strong>obligatoire</strong></td>
+</tr>
+<tr class="even">
+<td><a href=""></a></td>
+<td>Cardinalité [1]</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td><strong>tecto</strong></td>
+<td><a href="#gc-tecto-cd">CodedDomain</a></td>
+<td>Attribution tectonique. Les valeurs possibles sont énumérées dans la
+table GC_TECTO_CD en annexe de ce document.
+<strong>obligatoire</strong></td>
+</tr>
+<tr class="even">
+<td><a href=""></a></td>
+<td>Cardinalité [1]</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>8</td>
+<td><strong>orig_descr</strong></td>
+<td>string</td>
+<td>Description de la légende de la carte géologique originale.</td>
+</tr>
+<tr class="even">
+<td><a href=""></a></td>
+<td>Cardinalité [1]</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>9</td>
+<td><strong>buried_out</strong></td>
+<td>boolean</td>
+<td>Est-ce que la roche consolidée est recouvert (oui / non)?</td>
+</tr>
+<tr class="even">
+<td><a href=""></a></td>
+<td>Cardinalité [1]</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>10</td>
+<td><strong>exotic_ele</strong></td>
+<td></td>
+<td>S’agit-il d’un élément exotique (oui / non)?</td>
+</tr>
+<tr class="even">
+<td><a href=""></a></td>
+<td>Cardinalité [1]</td>
+<td>boolean</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>11</td>
+<td><strong>colour</strong></td>
+<td>string</td>
+<td>Couleur de la roche</td>
+</tr>
+<tr class="even">
+<td><a href=""></a></td>
+<td>Cardinalité [0..1]</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>12</td>
+<td><strong>sedi_main_com</strong></td>
+<td><a href="#bedrock-plg-sedi-main-com">CodedDomain</a></td>
+<td>Composant principal de la roche sédimentaire clastique.. Les valeurs
+possibles sont énumérées dans la table GC_MAIN_COM_CD en annexe de ce
+document.</td>
+</tr>
+<tr class="even">
+<td><a href=""></a></td>
+<td>Cardinalité [0..1]</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>13</td>
+<td><strong>sedi_seco_com</strong></td>
+<td><a href="#bedrock-plg-sedi-seco-com">CodedDomain</a></td>
+<td>Composant secondaire de la roche sédimentaire. Les valeurs possibles
+sont énumérées dans la table GC_SECO_COM_CD en annexe de ce
+document.</td>
+</tr>
+<tr class="even">
+<td><a href=""></a></td>
+<td>Cardinalité [0..2]</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>14</td>
+<td><strong>sedi_bond_mat</strong></td>
+<td><a href="#bedrock-plg-sedi-bond-mat">CodedDomain</a></td>
+<td>. Les valeurs possibles sont énumérées dans la table GC_BOND_MAT_CD
+en annexe de ce document.</td>
+</tr>
+<tr class="even">
+<td><a href=""></a></td>
+<td>Cardinalité [0..1]</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>15</td>
+<td><strong>sedi_bedding</strong></td>
+<td><a href="#bedrock-plg-sedi-bedding">CodedDomain</a></td>
+<td>Matrice ou ciment de la roche sédimentaire. Les valeurs possibles
+sont énumérées dans la table GC_BEDDING_CD en annexe de ce
+document.</td>
+</tr>
+<tr class="even">
+<td><a href=""></a></td>
+<td>Cardinalité [0..2]</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>16</td>
+<td><strong>sedi_str</strong></td>
+<td><a href="#bedrock-plg-sedi-str">CodedDomain</a></td>
+<td>Structure sédimentaire de la roche sédimentaire. Les valeurs
+possibles sont énumérées dans la table GC_SEDI_STR_CD en annexe de ce
+document.</td>
+</tr>
+<tr class="even">
+<td><a href=""></a></td>
+<td>Cardinalité [0..2]</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>17</td>
+<td><strong>sedi_tex</strong></td>
+<td><a href="#bedrock-plg-sedi-tex">CodedDomain</a></td>
+<td>Texture de la roche sédimentaire. Les valeurs possibles sont
+énumérées dans la table GC_SEDI_TEX_CD en annexe de ce document.</td>
+</tr>
+<tr class="even">
+<td><a href=""></a></td>
+<td>Cardinalité []</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>18</td>
+<td><strong>igne_text</strong></td>
+<td><a href="#bedrock-plg-igne-text">CodedDomain</a></td>
+<td>Texture de la roche magmatique. Les valeurs possibles sont énumérées
+dans la table GC_IGNE_TEX_CD en annexe de ce document.</td>
+</tr>
+<tr class="even">
+<td><a href=""></a></td>
+<td>Cardinalité [0..1]</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>19</td>
+<td><strong>igne_grain_si</strong></td>
+<td><a href="#bedrock-plg-igne-grain-si">CodedDomain</a></td>
+<td>Granulométrie de la roche magmatique. Les valeurs possibles sont
+énumérées dans la table GC_GRAIN_SI_CD en annexe de ce document.</td>
+</tr>
+<tr class="even">
+<td><a href=""></a></td>
+<td>Cardinalité [0..1]</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>20</td>
+<td><strong>igne_affinity</strong></td>
+<td><a href="#bedrock-plg-igne-affinity">CodedDomain</a></td>
+<td>Affinité avec une série magmatique. Les valeurs possibles sont
+énumérées dans la table GC_AFFINITY_CD en annexe de ce document.</td>
+</tr>
+<tr class="even">
+<td><a href=""></a></td>
+<td>Cardinalité []</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>21</td>
+<td><strong>meta_full_name</strong></td>
+<td>string</td>
+<td>Description de la roche métamorphique.</td>
+</tr>
+<tr class="even">
+<td><a href=""></a></td>
+<td>Cardinalité [0..1]</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>22</td>
+<td><strong>meta_mineral</strong></td>
+<td><a href="#gc-mineral-cd">CodedDomain</a></td>
+<td>Minéral important de la roche métamorphique. Les valeurs possibles
+sont énumérées dans la table GC_MINERAL_CD en annexe de ce
+document.</td>
+</tr>
+<tr class="even">
+<td><a href=""></a></td>
+<td>Cardinalité [0..3]</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>23</td>
+<td><strong>meta_str</strong></td>
+<td><a href="#bedrock-plg-meta-str">CodedDomain</a></td>
+<td>Structure de la roche métamorphique. Les valeurs possibles sont
+énumérées dans la table GC_META_STR_CD en annexe de ce document.</td>
+</tr>
+<tr class="even">
+<td><a href=""></a></td>
+<td>Cardinalité [0..3]</td>
+<td></td>
+<td></td>
 </tr>
 </tbody>
 </table>
-<p>formation (top). Die möglichen Werte sind in der Tabelle GC_CHRONO_CD
-im Anhang dieses Dokumentes verfügbar. <a href=""></a> | Cardinalité [1]
-| |<br />
-6 | <strong>chrono_b</strong> | <a href="#gc-chrono-cd">CodedDomain</a>
-| <strong>obligatoire</strong> Attribution chronostratigraphique de la
-base de la formation (basis).. Die möglichen Werte sind in der Tabelle
-GC_CHRONO_CD im Anhang dieses Dokumentes verfügbar. <a href=""></a> |
-Cardinalité [1] | |<br />
-7 | <strong>tecto</strong> | <a href="#gc-tecto-cd">CodedDomain</a> |
-<strong>obligatoire</strong> Attribution tectonique. Die möglichen Werte
-sind in der Tabelle GC_TECTO_CD im Anhang dieses Dokumentes verfügbar.
-<a href=""></a> | Cardinalité [1] | |<br />
-8 | <strong>orig_descr</strong> | string | Description de la légende de
-la carte géologique originale. <a href=""></a> | Cardinalité [1] |
-|<br />
-9 | <strong>buried_out</strong> | boolean | Est-ce que la roche
-consolidée est recouvert (oui / non)? <a href=""></a> | Cardinalité [1]
-| |<br />
-10 | <strong>exotic_ele</strong> | | S’agit-il d’un élément exotique
-(oui / non)? <a href=""></a> | Cardinalité [1] | boolean |<br />
-11 | <strong>colour</strong> | string | Couleur de la roche <a
-href=""></a> | Cardinalité [0..1] | |<br />
-12 | <strong>sedi_main_com</strong> | <a
-href="#bedrock-plg-sedi-main-com">CodedDomain</a> | Composant principal
-de la roche sédimentaire clastique..<br />
-<a href=""></a> | Cardinalité [0..1] | |<br />
-13 | <strong>sedi_seco_com</strong> | <a
-href="#bedrock-plg-sedi-seco-com">CodedDomain</a> | Composant secondaire
-de la roche sédimentaire.<br />
-<a href=""></a> | Cardinalité [0..2] | |<br />
-14 | <strong>sedi_bond_mat</strong> | <a
-href="#bedrock-plg-sedi-bond-mat">CodedDomain</a> | .<br />
-<a href=""></a> | Cardinalité [0..1] | |<br />
-15 | <strong>sedi_bedding</strong> | <a
-href="#bedrock-plg-sedi-bedding">CodedDomain</a> | Matrice ou ciment de
-la roche sédimentaire.<br />
-<a href=""></a> | Cardinalité [0..2] | |<br />
-16 | <strong>sedi_str</strong> | <a
-href="#bedrock-plg-sedi-str">CodedDomain</a> | Structure sédimentaire de
-la roche sédimentaire.<br />
-<a href=""></a> | Cardinalité [0..2] | |<br />
-17 | <strong>sedi_tex</strong> | <a
-href="#bedrock-plg-sedi-tex">CodedDomain</a> | Texture de la roche
-sédimentaire.<br />
-<a href=""></a> | Cardinalité [] | |<br />
-18 | <strong>igne_text</strong> | <a
-href="#bedrock-plg-igne-text">CodedDomain</a> | Texture de la roche
-magmatique.<br />
-<a href=""></a> | Cardinalité [0..1] | |<br />
-19 | <strong>igne_grain_si</strong> | <a
-href="#bedrock-plg-igne-grain-si">CodedDomain</a> | Granulométrie de la
-roche magmatique.<br />
-<a href=""></a> | Cardinalité [0..1] | |<br />
-20 | <strong>igne_affinity</strong> | <a
-href="#bedrock-plg-igne-affinity">CodedDomain</a> | Affinité avec une
-série magmatique.<br />
-<a href=""></a> | Cardinalité [] | |<br />
-21 | <strong>meta_full_name</strong> | string | Description de la roche
-métamorphique. <a href=""></a> | Cardinalité [0..1] | |<br />
-22 | <strong>meta_mineral</strong> | <a
-href="#gc-mineral-cd">CodedDomain</a> | Minéral important de la roche
-métamorphique. Die möglichen Werte sind in der Tabelle GC_MINERAL_CD im
-Anhang dieses Dokumentes verfügbar. <a href=""></a> | Cardinalité [0..3]
-| |<br />
-23 | <strong>meta_str</strong> | <a
-href="#bedrock-plg-meta-str">CodedDomain</a> | Structure de la roche
-métamorphique.<br />
-<a href=""></a> | Cardinalité [0..3] | |</p>
 <h3 data-number="1.3.1" id="attribut-kind-2"><span
 class="header-section-number">1.3.1</span> Attribut kind</h3>
 <p><em>Type de l'objet et description.</em></p>
@@ -1291,11 +1554,6 @@ class="header-section-number">1.3.1</span> Attribut kind</h3>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td>14334001</td>
-<td>Rbed Festgestein</td>
-<td>roche consolidée</td>
-</tr>
 </tbody>
 </table>
 <h3 data-number="1.3.2" id="attribut-fm_homog"><span
@@ -1303,40 +1561,48 @@ class="header-section-number">1.3.2</span> Attribut fm_homog</h3>
 <p>__</p>
 <h3 data-number="1.3.3" id="attribut-listrat"><span
 class="header-section-number">1.3.3</span> Attribut listrat</h3>
-<p><em>Description lithostratigraphique</em> Voir le domaine <a
-href="#gc-litstrat-bed-cd">GC_LITSTRAT_BED_CD</a> dans l’annexe</p>
+<p><em>Description lithostratigraphique</em></p>
+<p>Voir le domaine <a href="#gc-litstrat-bed-cd">GC_LITSTRAT_BED_CD</a>
+dans l’annexe</p>
 <h3 data-number="1.3.4" id="attribut-litho-1"><span
 class="header-section-number">1.3.4</span> Attribut litho</h3>
-<p><em>Description lithologique</em> Voir le domaine <a
-href="#gc-litho-cd">GC_LITHO_CD</a> dans l’annexe</p>
+<p><em>Description lithologique</em></p>
+<p>Voir le domaine <a href="#gc-litho-cd">GC_LITHO_CD</a> dans
+l’annexe</p>
 <h3 data-number="1.3.5" id="attribut-chrono_t-1"><span
 class="header-section-number">1.3.5</span> Attribut chrono_t</h3>
 <p><em>Attribution chronostratigraphique du toit de la formation
-(top)</em> Voir le domaine <a href="#gc-chrono-cd">GC_CHRONO_CD</a> dans
+(top)</em></p>
+<p>Voir le domaine <a href="#gc-chrono-cd">GC_CHRONO_CD</a> dans
 l’annexe</p>
 <h3 data-number="1.3.6" id="attribut-chrono_b-1"><span
 class="header-section-number">1.3.6</span> Attribut chrono_b</h3>
 <p><em>Attribution chronostratigraphique de la base de la formation
-(basis).</em> Voir le domaine <a href="#gc-chrono-cd">GC_CHRONO_CD</a>
-dans l’annexe</p>
+(basis).</em></p>
+<p>Voir le domaine <a href="#gc-chrono-cd">GC_CHRONO_CD</a> dans
+l’annexe</p>
 <h3 data-number="1.3.7" id="attribut-tecto"><span
 class="header-section-number">1.3.7</span> Attribut tecto</h3>
-<p><em>Attribution tectonique</em> Voir le domaine <a
-href="#gc-tecto-cd">GC_TECTO_CD</a> dans l’annexe</p>
+<p><em>Attribution tectonique</em></p>
+<p>Voir le domaine <a href="#gc-tecto-cd">GC_TECTO_CD</a> dans
+l’annexe</p>
 <h3 data-number="1.3.8" id="attribut-orig_descr-2"><span
 class="header-section-number">1.3.8</span> Attribut orig_descr</h3>
-<p><em>Description de la légende de la carte géologique originale.</em>
-<em>Type de donnée : string</em></p>
+<p><em>Description de la légende de la carte géologique
+originale.</em></p>
+<p><em>Type de donnée : string</em></p>
 <h3 data-number="1.3.9" id="attribut-buried_out-1"><span
 class="header-section-number">1.3.9</span> Attribut buried_out</h3>
-<p><em>Est-ce que la roche consolidée est recouvert (oui / non)?</em>
-<em>Type de donnée : boolean</em></p>
+<p><em>Est-ce que la roche consolidée est recouvert (oui /
+non)?</em></p>
+<p><em>Type de donnée : boolean</em></p>
 <h3 data-number="1.3.10" id="attribut-exotic_ele"><span
 class="header-section-number">1.3.10</span> Attribut exotic_ele</h3>
 <p><em>S’agit-il d’un élément exotique (oui / non)?</em></p>
 <h3 data-number="1.3.11" id="attribut-colour"><span
 class="header-section-number">1.3.11</span> Attribut colour</h3>
-<p><em>Couleur de la roche</em> <em>Type de donnée : string</em></p>
+<p><em>Couleur de la roche</em></p>
+<p><em>Type de donnée : string</em></p>
 <h3 data-number="1.3.12" id="bedrock-plg-sedi-main-com"><span
 class="header-section-number">1.3.12</span> Attribut sedi_main_com</h3>
 <p><em>Composant principal de la roche sédimentaire clastique.</em></p>
@@ -2002,12 +2268,13 @@ class="header-section-number">1.3.20</span> Attribut igne_affinity</h3>
 </table>
 <h3 data-number="1.3.21" id="attribut-meta_full_name"><span
 class="header-section-number">1.3.21</span> Attribut meta_full_name</h3>
-<p><em>Description de la roche métamorphique.</em> <em>Type de donnée :
-string</em></p>
+<p><em>Description de la roche métamorphique.</em></p>
+<p><em>Type de donnée : string</em></p>
 <h3 data-number="1.3.22" id="attribut-meta_mineral"><span
 class="header-section-number">1.3.22</span> Attribut meta_mineral</h3>
-<p><em>Minéral important de la roche métamorphique</em> Voir le domaine
-<a href="#gc-mineral-cd">GC_MINERAL_CD</a> dans l’annexe</p>
+<p><em>Minéral important de la roche métamorphique</em></p>
+<p>Voir le domaine <a href="#gc-mineral-cd">GC_MINERAL_CD</a> dans
+l’annexe</p>
 <h3 data-number="1.3.23" id="bedrock-plg-meta-str"><span
 class="header-section-number">1.3.23</span> Attribut meta_str</h3>
 <p><em>Structure de la roche métamorphique</em></p>
@@ -2183,11 +2450,6 @@ class="header-section-number">2.1.1</span> Attribut kind</h3>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td>11601001</td>
-<td>Gins Hinweis auf Hanginstabilität</td>
-<td>indice d'instabilité</td>
-</tr>
 </tbody>
 </table>
 <h2 data-number="2.2" id="instability-structures-l"><span
@@ -2241,26 +2503,6 @@ class="header-section-number">2.2.1</span> Attribut kind</h3>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td>11701001</td>
-<td>Gins Stauchwulst</td>
-<td>bourrelet de glissement</td>
-</tr>
-<tr class="even">
-<td>11701002</td>
-<td>Gins Nackentälchen, Zerrstruktur</td>
-<td>limite de contrepente</td>
-</tr>
-<tr class="odd">
-<td>11701003</td>
-<td>Gins Abrissrand</td>
-<td>niche d´arrachement</td>
-</tr>
-<tr class="even">
-<td>11701004</td>
-<td>Gins offene Spalte</td>
-<td>fissure ouverte</td>
-</tr>
 </tbody>
 </table>
 <h2 data-number="2.3"
@@ -2371,7 +2613,8 @@ illustrés dans l'annexe A.</p>
 <td><strong>main_mov</strong></td>
 <td><a
 href="#instabilities-within-bedrock-plg-main-mov">CodedDomain</a></td>
-<td>.</td>
+<td>. Les valeurs possibles sont énumérées dans la table
+GC_SURF_GINS_MAIN_MOV_CD en annexe de ce document.</td>
 </tr>
 <tr class="even">
 <td><a href=""></a></td>
@@ -2496,16 +2739,6 @@ class="header-section-number">2.5.1</span> Attribut kind</h3>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td>11201002</td>
-<td>Ggla Gletschermühle, Strudelloch</td>
-<td>marmite glaciaire, cavité d´érosion</td>
-</tr>
-<tr class="even">
-<td>11201001</td>
-<td>Ggla glazitektonische Deformation</td>
-<td>déformation glaciotectonique</td>
-</tr>
 </tbody>
 </table>
 <h2 data-number="2.6" id="glacial-and-periglacial-structures-l"><span
@@ -2551,7 +2784,8 @@ bourrelets d’un glacier rocheux.</p>
 <td><strong>morai_mo</strong></td>
 <td><a
 href="#glacial-and-periglacial-structures-l-morai-mo">CodedDomain</a></td>
-<td>Morphologie de la moraine.</td>
+<td>Morphologie de la moraine. Les valeurs possibles sont énumérées dans
+la table GC_LIN_GGLA_MORAI_MO_CD en annexe de ce document.</td>
 </tr>
 <tr class="even">
 <td><a href=""></a></td>
@@ -2564,7 +2798,9 @@ href="#glacial-and-periglacial-structures-l-morai-mo">CodedDomain</a></td>
 <td><strong>glac_typ</strong></td>
 <td><a
 href="#glacial-and-periglacial-structures-l-glac-typ">CodedDomain</a></td>
-<td>Type de glacier auquel le type d’objet est associé.</td>
+<td>Type de glacier auquel le type d’objet est associé. Les valeurs
+possibles sont énumérées dans la table GC_LIN_GGLA_GLAC_TYP_CD en annexe
+de ce document.</td>
 </tr>
 <tr class="even">
 <td><a href=""></a></td>
@@ -2577,7 +2813,8 @@ href="#glacial-and-periglacial-structures-l-glac-typ">CodedDomain</a></td>
 <td><strong>ice_m_p</strong></td>
 <td><a
 href="#glacial-and-periglacial-structures-l-ice-m-p">CodedDomain</a></td>
-<td>Stade glaciaire.</td>
+<td>Stade glaciaire. Les valeurs possibles sont énumérées dans la table
+GC_LIN_GGLA_ICE_M_P_CD en annexe de ce document.</td>
 </tr>
 <tr class="even">
 <td><a href=""></a></td>
@@ -2590,18 +2827,42 @@ href="#glacial-and-periglacial-structures-l-ice-m-p">CodedDomain</a></td>
 <td><strong>quat_str</strong></td>
 <td><a
 href="#glacial-and-periglacial-structures-l-quat-str">CodedDomain</a></td>
-<td>Attribution chronostratigraphique du vallum morainique</td>
+<td>Attribution chronostratigraphique du vallum morainique au sein du
+Quaternaire. Les valeurs possibles sont énumérées dans la table
+GC_LIN_GGLA_QUAT_STR_CD en annexe de ce document.</td>
+</tr>
+<tr class="even">
+<td><a href=""></a></td>
+<td>Cardinalité [0..1]</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>6</td>
+<td><strong>ref_year</strong></td>
+<td>integer</td>
+<td>Année de référence de l’ancienne ligne de rivage.</td>
+</tr>
+<tr class="even">
+<td><a href=""></a></td>
+<td>Cardinalité [0..1]</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td><strong>source</strong></td>
+<td>string</td>
+<td>Source des données déduites à partir de données historiques.</td>
+</tr>
+<tr class="even">
+<td><a href=""></a></td>
+<td>Cardinalité [0..1]</td>
+<td></td>
+<td></td>
 </tr>
 </tbody>
 </table>
-<p>au sein du Quaternaire.<br />
-<a href=""></a> | Cardinalité [0..1] | |<br />
-6 | <strong>ref_year</strong> | integer | Année de référence de
-l’ancienne ligne de rivage. <a href=""></a> | Cardinalité [0..1] |
-|<br />
-7 | <strong>source</strong> | string | Source des données déduites à
-partir de données historiques. <a href=""></a> | Cardinalité [0..1] |
-|</p>
 <h3 data-number="2.6.1" id="attribut-kind-8"><span
 class="header-section-number">2.6.1</span> Attribut kind</h3>
 <p><em>Type de l'objet et description.</em></p>
@@ -2619,51 +2880,6 @@ class="header-section-number">2.6.1</span> Attribut kind</h3>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td>11301001</td>
-<td>Ggla Moränenwall</td>
-<td>vallum morainique</td>
-</tr>
-<tr class="even">
-<td>11301002</td>
-<td>Ggla Moränenwall auf Gletscher oder auf Toteis</td>
-<td>cordon morainique sur glacier ou sur glace morte</td>
-</tr>
-<tr class="odd">
-<td>11301003</td>
-<td>Ggla Kameterrassenkante</td>
-<td>bord de terrasse de kame</td>
-</tr>
-<tr class="even">
-<td>11301004</td>
-<td>Ggla älterer Gletscherstand, basierend auf historischen Daten</td>
-<td>ancien stade glaciaire, déduit de données historiques</td>
-</tr>
-<tr class="odd">
-<td>11301005</td>
-<td>Ggla Schliffgrenze</td>
-<td>limite supérieure de l'érosion glaciaire (trimline)</td>
-</tr>
-<tr class="even">
-<td>11301006</td>
-<td>Ggla Protalus Rampart Wulst</td>
-<td>bourrelet de protalus rampart</td>
-</tr>
-<tr class="odd">
-<td>11301007</td>
-<td>Ggla Blockwulst im Blockgletscher</td>
-<td>bourrelet de glacier rocheux</td>
-</tr>
-<tr class="even">
-<td>11301008</td>
-<td>Ggla Schneehaldenmoränenwall</td>
-<td>vallum de moraine de névé</td>
-</tr>
-<tr class="odd">
-<td>11301009</td>
-<td>Ggla Verbreitungsgrenze von Geschiebe</td>
-<td>limite de l'étendue des blocs</td>
-</tr>
 </tbody>
 </table>
 <h3 data-number="2.6.2"
@@ -3144,12 +3360,13 @@ Quaternaire</em></p>
 </table>
 <h3 data-number="2.6.6" id="attribut-ref_year-1"><span
 class="header-section-number">2.6.6</span> Attribut ref_year</h3>
-<p><em>Année de référence de l’ancienne ligne de rivage.</em> <em>Type
-de donnée : integer</em></p>
+<p><em>Année de référence de l’ancienne ligne de rivage.</em></p>
+<p><em>Type de donnée : integer</em></p>
 <h3 data-number="2.6.7" id="attribut-source"><span
 class="header-section-number">2.6.7</span> Attribut source</h3>
-<p><em>Source des données déduites à partir de données historiques.</em>
-<em>Type de donnée : string</em></p>
+<p><em>Source des données déduites à partir de données
+historiques.</em></p>
+<p><em>Type de donnée : string</em></p>
 <h2 data-number="2.7" id="glacial-structures-plg"><span
 class="header-section-number">2.7</span> Classe
 Glacial_Structures_PLG</h2>
@@ -3204,21 +3421,6 @@ class="header-section-number">2.7.1</span> Attribut kind</h3>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td>11401001</td>
-<td>Ggla Drumlin, drumlinartige Kieskuppe</td>
-<td>drumlin, croupe graveleuse en forme de drumlin</td>
-</tr>
-<tr class="even">
-<td>11401003</td>
-<td>Ggla Rundhöcker</td>
-<td>roches moutonnées</td>
-</tr>
-<tr class="odd">
-<td>11401004</td>
-<td>Ggla Toteisloch, Soll</td>
-<td>doline glaciaire, soll</td>
-</tr>
 </tbody>
 </table>
 <h2 data-number="2.8" id="erosional-structures-pt"><span
@@ -3275,11 +3477,6 @@ class="header-section-number">2.8.1</span> Attribut kind</h3>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td>11001001</td>
-<td>Gero Erdpyramide</td>
-<td>demoiselle coiffée</td>
-</tr>
 </tbody>
 </table>
 <h2 data-number="2.9" id="erosional-structures-l"><span
@@ -3344,21 +3541,6 @@ class="header-section-number">2.9.1</span> Attribut kind</h3>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td>11101001</td>
-<td>Gero Erosionsrand</td>
-<td>bord d´érosion</td>
-</tr>
-<tr class="even">
-<td>11101002</td>
-<td>Gero Terrassenkante</td>
-<td>bord de terrasse</td>
-</tr>
-<tr class="odd">
-<td>11101003</td>
-<td>Gero Schichtstufenkante</td>
-<td>escarpement en tête de banc</td>
-</tr>
 </tbody>
 </table>
 <h2 data-number="2.10" id="karstic-structures-pt"><span
@@ -3427,57 +3609,12 @@ class="header-section-number">2.10.1</span> Attribut kind</h3>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td>11301001</td>
-<td>Ggla Moränenwall</td>
-<td>vallum morainique</td>
-</tr>
-<tr class="even">
-<td>11301002</td>
-<td>Ggla Moränenwall auf Gletscher oder auf Toteis</td>
-<td>cordon morainique sur glacier ou sur glace morte</td>
-</tr>
-<tr class="odd">
-<td>11301003</td>
-<td>Ggla Kameterrassenkante</td>
-<td>bord de terrasse de kame</td>
-</tr>
-<tr class="even">
-<td>11301004</td>
-<td>Ggla älterer Gletscherstand, basierend auf historischen Daten</td>
-<td>ancien stade glaciaire, déduit de données historiques</td>
-</tr>
-<tr class="odd">
-<td>11301005</td>
-<td>Ggla Schliffgrenze</td>
-<td>limite supérieure de l'érosion glaciaire (trimline)</td>
-</tr>
-<tr class="even">
-<td>11301006</td>
-<td>Ggla Protalus Rampart Wulst</td>
-<td>bourrelet de protalus rampart</td>
-</tr>
-<tr class="odd">
-<td>11301007</td>
-<td>Ggla Blockwulst im Blockgletscher</td>
-<td>bourrelet de glacier rocheux</td>
-</tr>
-<tr class="even">
-<td>11301008</td>
-<td>Ggla Schneehaldenmoränenwall</td>
-<td>vallum de moraine de névé</td>
-</tr>
-<tr class="odd">
-<td>11301009</td>
-<td>Ggla Verbreitungsgrenze von Geschiebe</td>
-<td>limite de l'étendue des blocs</td>
-</tr>
 </tbody>
 </table>
 <h3 data-number="2.10.2" id="attribut-ice_cave"><span
 class="header-section-number">2.10.2</span> Attribut ice_cave</h3>
-<p><em>S’agit-il d’une glacière (oui / non)?</em> <em>Type de donnée :
-boolean</em></p>
+<p><em>S’agit-il d’une glacière (oui / non)?</em></p>
+<p><em>Type de donnée : boolean</em></p>
 <h2 data-number="2.11" id="karstic-structures-plg"><span
 class="header-section-number">2.11</span> Classe
 Karstic_Structures_PLG</h2>
@@ -3529,26 +3666,6 @@ class="header-section-number">2.11.1</span> Attribut kind</h3>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td>12001001</td>
-<td>Gkar Senke ohne oberirdischen Abfluss</td>
-<td>dépression sans exutoire superficiel</td>
-</tr>
-<tr class="even">
-<td>12001002</td>
-<td>Gkar Doline</td>
-<td>doline</td>
-</tr>
-<tr class="odd">
-<td>12001003</td>
-<td>Gkar Karrenfeld</td>
-<td>lapiez</td>
-</tr>
-<tr class="even">
-<td>12001004</td>
-<td>Gkar Polje</td>
-<td>poljé</td>
-</tr>
 </tbody>
 </table>
 <h2 data-number="2.12" id="alluvial-and-lacustrine-structures-l"><span
@@ -3591,7 +3708,8 @@ lacustre.</p>
 <td><strong>age</strong></td>
 <td><a
 href="#alluvial-and-lacustrine-structures-l-age">CodedDomain</a></td>
-<td>Âge du type d'obje.</td>
+<td>Âge du type d'obje. Les valeurs possibles sont énumérées dans la
+table GC_LIN_GALL_AGE_CD en annexe de ce document.</td>
 </tr>
 <tr class="even">
 <td><a href=""></a></td>
@@ -3618,16 +3736,6 @@ class="header-section-number">2.12.1</span> Attribut kind</h3>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td>10901001</td>
-<td>Gall Strandwall</td>
-<td>cordon littoral</td>
-</tr>
-<tr class="even">
-<td>10901002</td>
-<td>Gall Achse einer Murgangrinne</td>
-<td>axe d'un chenal de lave torrentielle</td>
-</tr>
 </tbody>
 </table>
 <h3 data-number="2.12.2"
@@ -3730,11 +3838,13 @@ jusqu’à la verticale (90°) <a href=""></a> | Cardinalité [0..1] |
 |<br />
 4 | <strong>fold_typ</strong> | <a
 href="#deformation-structures-pt-fold-typ">CodedDomain</a> |
-Caractéristique du type d'objet.<br />
+Caractéristique du type d'objet. Les valeurs possibles sont énumérées
+dans la table GC_PNT_TDEF_FOLD_TYP_CD en annexe de ce document.<br />
 <a href=""></a> | Cardinalité [0..1] | |<br />
 5 | <strong>fold_for</strong> | <a
 href="#deformation-structures-pt-fold-for">CodedDomain</a> | Forme du
-type d'objet.<br />
+type d'objet. Les valeurs possibles sont énumérées dans la table
+GC_PNT_TDEF_FOLD_FOR_CD en annexe de ce document.<br />
 <a href=""></a> | Cardinalité [0..1] | |</p>
 <h3 data-number="3.1.1" id="attribut-kind-15"><span
 class="header-section-number">3.1.1</span> Attribut kind</h3>
@@ -3753,53 +3863,18 @@ class="header-section-number">3.1.1</span> Attribut kind</h3>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td>14601001</td>
-<td>Tdef punktuell beobachtete tektonische Brekzie</td>
-<td>brèche tectonique observée ponctuellement</td>
-</tr>
-<tr class="even">
-<td>14601002</td>
-<td>Tdef ausgeprägte Klüftung</td>
-<td>diaclases bien marquées</td>
-</tr>
-<tr class="odd">
-<td>14601003</td>
-<td>Tdef tektonische Diskordanz</td>
-<td>discordance tectonique</td>
-</tr>
-<tr class="even">
-<td>14601004</td>
-<td>Tdef Orientierung der Faltenachsenfläche</td>
-<td>orientation de la surface axiale d'un pli</td>
-</tr>
-<tr class="odd">
-<td>14601005</td>
-<td>Tdef Fältelung</td>
-<td>plissotement (plis)</td>
-</tr>
-<tr class="even">
-<td>14601006</td>
-<td>Tdef Darstellung der Spur einer Achsenfläche</td>
-<td>représentation de la trace d'une surface axiale</td>
-</tr>
-<tr class="odd">
-<td>14601007</td>
-<td>Tdef Chevron-Falte, Kink Fold</td>
-<td>plis en chevron, Kink Fold</td>
-</tr>
 </tbody>
 </table>
 <h3 data-number="3.1.2" id="attribut-azimuth"><span
 class="header-section-number">3.1.2</span> Attribut azimuth</h3>
 <p><em>Azimut du type d'objet. L'azimut est mesuré depuis le nord en
-degré de 0° à 359° dans le sens des aiguilles d'une montre</em> <em>Type
-de donnée : integer</em></p>
+degré de 0° à 359° dans le sens des aiguilles d'une montre</em></p>
+<p><em>Type de donnée : integer</em></p>
 <h3 data-number="3.1.3" id="attribut-dip"><span
 class="header-section-number">3.1.3</span> Attribut dip</h3>
 <p><em>Valeur du plongement du type d'objet (valeur en degrés, mesurée
-de l’horizontale (0°) vers le bas jusqu’à la verticale (90°)</em>
-<em>Type de donnée : integer</em></p>
+de l’horizontale (0°) vers le bas jusqu’à la verticale (90°)</em></p>
+<p><em>Type de donnée : integer</em></p>
 <h3 data-number="3.1.4" id="deformation-structures-pt-fold-typ"><span
 class="header-section-number">3.1.4</span> Attribut fold_typ</h3>
 <p><em>Caractéristique du type d'objet</em></p>
@@ -3933,11 +4008,6 @@ class="header-section-number">3.2.1</span> Attribut kind</h3>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td>14701001</td>
-<td>Tdef Faltenscharnier</td>
-<td>charnière de pli</td>
-</tr>
 </tbody>
 </table>
 <h2 data-number="3.3" id="deformation-structures-plg"><span
@@ -3979,7 +4049,9 @@ trouvent les régions marquées par des structures tectoniques à grande
 <td>2</td>
 <td><strong>type</strong></td>
 <td><a href="#deformation-structures-plg-type">CodedDomain</a></td>
-<td>Caractéristique du type d'objet.</td>
+<td>Caractéristique du type d'objet. Les valeurs possibles sont
+énumérées dans la table GC_SURF_TDEF_TYPE_CD en annexe de ce
+document.</td>
 </tr>
 <tr class="even">
 <td><a href=""></a></td>
@@ -3991,7 +4063,8 @@ trouvent les régions marquées par des structures tectoniques à grande
 <td>3</td>
 <td><strong>gen_rela</strong></td>
 <td><a href="#deformation-structures-plg-gen-rela">CodedDomain</a></td>
-<td>Relation génétique.</td>
+<td>Relation génétique. Les valeurs possibles sont énumérées dans la
+table None en annexe de ce document.</td>
 </tr>
 <tr class="even">
 <td><a href=""></a></td>
@@ -4018,16 +4091,6 @@ class="header-section-number">3.3.1</span> Attribut kind</h3>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td>14801001</td>
-<td>Tdef Kluftzone</td>
-<td>zone diaclasée</td>
-</tr>
-<tr class="even">
-<td>14801002</td>
-<td>Tdef tektonisierte Zone</td>
-<td>zone tectonisée</td>
-</tr>
 </tbody>
 </table>
 <h3 data-number="3.3.2" id="deformation-structures-plg-type"><span
@@ -4118,7 +4181,8 @@ Tectonic_Boundaries_L</h2>
 <td>2</td>
 <td><strong>fault_mo</strong></td>
 <td><a href="#tectonic-boundaries-l-fault-mo">CodedDomain</a></td>
-<td>Mouvement de la faille.</td>
+<td>Mouvement de la faille. Les valeurs possibles sont énumérées dans la
+table GC_LIN_TTEC_FAULT_MO_CD en annexe de ce document.</td>
 </tr>
 <tr class="even">
 <td><a href=""></a></td>
@@ -4130,7 +4194,9 @@ Tectonic_Boundaries_L</h2>
 <td>3</td>
 <td><strong>verti_mo</strong></td>
 <td><a href="#tectonic-boundaries-l-verti-mo">CodedDomain</a></td>
-<td>Mouvement parallèle au pendage du plan de faille.</td>
+<td>Mouvement parallèle au pendage du plan de faille. Les valeurs
+possibles sont énumérées dans la table GC_LIN_TTEC_VERTI_MO_CD en annexe
+de ce document.</td>
 </tr>
 <tr class="even">
 <td><a href=""></a></td>
@@ -4146,19 +4212,23 @@ Tectonic_Boundaries_L</h2>
 </tr>
 </tbody>
 </table>
-<p>de cisaillement.<br />
+<p>de cisaillement. Les valeurs possibles sont énumérées dans la table
+GC_LIN_TTEC_HORIZ_MO_CD en annexe de ce document.<br />
 <a href=""></a> | Cardinalité [0..1] | |<br />
 5 | <strong>lim_tect_b</strong> | boolean | Limite d’unité tectonique
 (oui / non)? <a href=""></a> | Cardinalité [1] | |<br />
 6 | <strong>status</strong> | <a
 href="#tectonic-boundaries-l-status">CodedDomain</a> | État du type
-d'objet.<br />
+d'objet. Les valeurs possibles sont énumérées dans la table
+GC_LIN_TTEC_STATUS_CD en annexe de ce document.<br />
 <a href=""></a> | Cardinalité [1] | |<br />
 7 | <strong>activity</strong> | TODO | Activité du type d'objet <a
 href=""></a> | Cardinalité [0..1] | |<br />
 8 | <strong>meta_sta</strong> | <a
 href="#tectonic-boundaries-l-meta-sta">CodedDomain</a> | Chronologie
-tecto-métamorphique du type d’objet..<br />
+tecto-métamorphique du type d’objet.. Les valeurs possibles sont
+énumérées dans la table GC_LIN_TTEC_META_STA_CD en annexe de ce
+document.<br />
 <a href=""></a> | Cardinalité [0..1] | |<br />
 9 | <strong>name</strong> | string | Nom de la localité-type. /
 Description de l’affleurement géologique important <a href=""></a> |
@@ -4180,42 +4250,6 @@ class="header-section-number">3.4.1</span> Attribut kind</h3>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td>14901001</td>
-<td>Ttec Überschiebung</td>
-<td>chevauchement</td>
-</tr>
-<tr class="even">
-<td>14901002</td>
-<td>Ttec Abschiebung</td>
-<td>détachement (faille normale de grande extension et faible
-pendage)</td>
-</tr>
-<tr class="odd">
-<td>14901004</td>
-<td>Ttec Bruch</td>
-<td>faille</td>
-</tr>
-<tr class="even">
-<td>14901005</td>
-<td>Ttec Aufschiebung</td>
-<td>faille inverse</td>
-</tr>
-<tr class="odd">
-<td>14901006</td>
-<td>Ttec Blattverschiebung</td>
-<td>décrochement</td>
-</tr>
-<tr class="even">
-<td>14901007</td>
-<td>Ttec komplexe Störung</td>
-<td>accident tectonique complexe</td>
-</tr>
-<tr class="odd">
-<td>14901008</td>
-<td>Ttec Störung i. Allg.</td>
-<td>accident tectonique en général</td>
-</tr>
 </tbody>
 </table>
 <h3 data-number="3.4.2" id="tectonic-boundaries-l-fault-mo"><span
@@ -4343,8 +4377,8 @@ cisaillement</em></p>
 </table>
 <h3 data-number="3.4.5" id="attribut-lim_tect_b"><span
 class="header-section-number">3.4.5</span> Attribut lim_tect_b</h3>
-<p><em>Limite d’unité tectonique (oui / non)?</em> <em>Type de donnée :
-boolean</em></p>
+<p><em>Limite d’unité tectonique (oui / non)?</em></p>
+<p><em>Type de donnée : boolean</em></p>
 <h3 data-number="3.4.6" id="tectonic-boundaries-l-status"><span
 class="header-section-number">3.4.6</span> Attribut status</h3>
 <p><em>État du type d'objet</em></p>
@@ -4444,7 +4478,8 @@ class="header-section-number">3.4.8</span> Attribut meta_sta</h3>
 <h3 data-number="3.4.9" id="attribut-name"><span
 class="header-section-number">3.4.9</span> Attribut name</h3>
 <p><em>Nom de la localité-type. / Description de l’affleurement
-géologique important</em> <em>Type de donnée : string</em></p>
+géologique important</em></p>
+<p><em>Type de donnée : string</em></p>
 <h1 data-number="4" id="thème-measurements_spatial_orientation"><span
 class="header-section-number">4</span> Thème
 MEASUREMENTS_SPATIAL_ORIENTATION</h1>
@@ -4487,7 +4522,8 @@ crête.</p>
 <td>2</td>
 <td><strong>fold_typ</strong></td>
 <td><a href="#folds-pt-fold-typ">CodedDomain</a></td>
-<td>Type de l'objet.</td>
+<td>Type de l'objet. Les valeurs possibles sont énumérées dans la table
+GC_PNT_MFOL_FOLD_TYP_CD en annexe de ce document.</td>
 </tr>
 <tr class="even">
 <td><a href=""></a></td>
@@ -4511,7 +4547,8 @@ crête.</p>
 <td>4</td>
 <td><strong>phase</strong></td>
 <td><a href="#folds-pt-phase">CodedDomain</a></td>
-<td>Phase de déformation.</td>
+<td>Phase de déformation. Les valeurs possibles sont énumérées dans la
+table GC_PNT_MFOL_PHASE_CD en annexe de ce document.</td>
 </tr>
 <tr class="even">
 <td><a href=""></a></td>
@@ -4561,21 +4598,6 @@ class="header-section-number">4.1.1</span> Attribut kind</h3>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td>13601001</td>
-<td>Mfol Orientierung der Faltenachse</td>
-<td>orientation d'un axe de pli</td>
-</tr>
-<tr class="even">
-<td>13601002</td>
-<td>Mfol Orientierung der Scheitellinie</td>
-<td>orientation d'une ligne de crête</td>
-</tr>
-<tr class="odd">
-<td>13601003</td>
-<td>Mfol Orientierung der Muldenlinie</td>
-<td>orientation d'une ligne de creux</td>
-</tr>
 </tbody>
 </table>
 <h3 data-number="4.1.2" id="folds-pt-fold-typ"><span
@@ -4667,17 +4689,18 @@ class="header-section-number">4.1.4</span> Attribut phase</h3>
 <h3 data-number="4.1.5" id="attribut-phase_ref"><span
 class="header-section-number">4.1.5</span> Attribut phase_ref</h3>
 <p><em>Référence pour les données concernant la phase de
-déformation.</em> <em>Type de donnée : string</em></p>
+déformation.</em></p>
+<p><em>Type de donnée : string</em></p>
 <h3 data-number="4.1.6" id="attribut-azimuth-1"><span
 class="header-section-number">4.1.6</span> Attribut azimuth</h3>
 <p><em>Azimut du type d'objet. L'azimut est mesuré depuis le nord en
-degré de 0° à 359° dans le sens des aiguilles d'une montre</em> <em>Type
-de donnée : integer</em></p>
+degré de 0° à 359° dans le sens des aiguilles d'une montre</em></p>
+<p><em>Type de donnée : integer</em></p>
 <h3 data-number="4.1.7" id="attribut-dip-1"><span
 class="header-section-number">4.1.7</span> Attribut dip</h3>
 <p><em>Valeur du plongement du type d'objet (valeur en degrés, mesurée
-de l’horizontale (0°) vers le bas jusqu’à la verticale (90°)</em>
-<em>Type de donnée : integer</em></p>
+de l’horizontale (0°) vers le bas jusqu’à la verticale (90°)</em></p>
+<p><em>Type de donnée : integer</em></p>
 <h2 data-number="4.2" id="lineation-pt"><span
 class="header-section-number">4.2</span> Classe Lineation_PT</h2>
 <p>La classe <a href="#lineation-pt">Lineation_PT</a> contient des
@@ -4744,33 +4767,13 @@ class="header-section-number">4.2.1</span> Attribut kind</h3>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td>13701001</td>
-<td>Mlin Orientierung der Intersektionslineation</td>
-<td>orientation de la linéation d´intersection</td>
-</tr>
-<tr class="even">
-<td>13701002</td>
-<td>Mlin Orientierung der Streckungslineation</td>
-<td>orientation de la linéation d'étirement</td>
-</tr>
-<tr class="odd">
-<td>13701003</td>
-<td>Mlin Orientierung von Rutschharnischen</td>
-<td>orientation des tectoglyphes</td>
-</tr>
-<tr class="even">
-<td>13701004</td>
-<td>Mlin Orientierung von Gletscherschliffen</td>
-<td>orientation des stries glaciaires</td>
-</tr>
 </tbody>
 </table>
 <h3 data-number="4.2.2" id="attribut-azimuth-2"><span
 class="header-section-number">4.2.2</span> Attribut azimuth</h3>
 <p><em>Azimut du type d'objet. L'azimut est mesuré depuis le nord en
-degré de 0° à 359° dans le sens des aiguilles d'une montre</em> <em>Type
-de donnée : integer</em></p>
+degré de 0° à 359° dans le sens des aiguilles d'une montre</em></p>
+<p><em>Type de donnée : integer</em></p>
 <h3 data-number="4.2.3" id="attribut-dip-2"><span
 class="header-section-number">4.2.3</span> Attribut dip</h3>
 <p><em>Valeur du plongement du type d'objet (en degrés), mesurée de
@@ -4811,7 +4814,9 @@ Planar_Structures_PT</h2>
 <td>2</td>
 <td><strong>polarity</strong></td>
 <td><a href="#planar-structures-pt-polarity">CodedDomain</a></td>
-<td>Polarité du type d'objet dans l'espace..</td>
+<td>Polarité du type d'objet dans l'espace.. Les valeurs possibles sont
+énumérées dans la table GC_PNT_MPLA_POLARITY_CD en annexe de ce
+document.</td>
 </tr>
 <tr class="even">
 <td><a href=""></a></td>
@@ -4823,7 +4828,8 @@ Planar_Structures_PT</h2>
 <td>3</td>
 <td><strong>phase</strong></td>
 <td><a href="#planar-structures-pt-phase">CodedDomain</a></td>
-<td>Phase de déformation.</td>
+<td>Phase de déformation. Les valeurs possibles sont énumérées dans la
+table GC_PNT_MPLA_PHASE_CD en annexe de ce document.</td>
 </tr>
 <tr class="even">
 <td><a href=""></a></td>
@@ -4885,36 +4891,6 @@ class="header-section-number">4.3.1</span> Attribut kind</h3>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td>13801002</td>
-<td>Mpla Orientierung eines Ganges</td>
-<td>orientation d'un filon</td>
-</tr>
-<tr class="even">
-<td>13801003</td>
-<td>Mpla Orientierung einer Bruchfläche</td>
-<td>orientation d'un plan de faille</td>
-</tr>
-<tr class="odd">
-<td>13801004</td>
-<td>Mpla Orientierung der Schieferung</td>
-<td>orientation d'une schistosité</td>
-</tr>
-<tr class="even">
-<td>13801005</td>
-<td>Mpla Orientierung einer Schichtung oder Schieferung</td>
-<td>orientation d'une couche ou d'une schistosité</td>
-</tr>
-<tr class="odd">
-<td>13801001</td>
-<td>Mpla Orientierung der Schichten</td>
-<td>orientation des couches</td>
-</tr>
-<tr class="even">
-<td>13801006</td>
-<td>Mpla Schüttungsrichtung</td>
-<td>direction de transport sédimentaire</td>
-</tr>
 </tbody>
 </table>
 <h3 data-number="4.3.2" id="planar-structures-pt-polarity"><span
@@ -5003,16 +4979,17 @@ class="header-section-number">4.3.3</span> Attribut phase</h3>
 <h3 data-number="4.3.4" id="attribut-phase_ref-1"><span
 class="header-section-number">4.3.4</span> Attribut phase_ref</h3>
 <p><em>Référence pour les données concernant la phase de
-déformation.</em> <em>Type de donnée : string</em></p>
+déformation.</em></p>
+<p><em>Type de donnée : string</em></p>
 <h3 data-number="4.3.5" id="attribut-ob_dip_slo"><span
 class="header-section-number">4.3.5</span> Attribut ob_dip_slo</h3>
-<p><em>Dip slope observé (oui / non)?</em> <em>Type de donnée :
-boolean</em></p>
+<p><em>Dip slope observé (oui / non)?</em></p>
+<p><em>Type de donnée : boolean</em></p>
 <h3 data-number="4.3.6" id="attribut-azimuth-3"><span
 class="header-section-number">4.3.6</span> Attribut azimuth</h3>
 <p><em>Azimut du type d'objet. L'azimut est mesuré depuis le nord en
-degré de 0° à 359° dans le sens des aiguilles d'une montre</em> <em>Type
-de donnée : integer</em></p>
+degré de 0° à 359° dans le sens des aiguilles d'une montre</em></p>
+<p><em>Type de donnée : integer</em></p>
 <h3 data-number="4.3.7" id="attribut-dip-3"><span
 class="header-section-number">4.3.7</span> Attribut dip</h3>
 <p><em>Valeur du plongement du type d'objet (en degrés), mesurée de
@@ -5123,7 +5100,9 @@ gisements fossilifères</p>
 <td>2</td>
 <td><strong>division</strong></td>
 <td><a href="#fossils-pt-division">CodedDomain</a></td>
-<td>Catégorie de fossile à laquelle appartient l'objet.</td>
+<td>Catégorie de fossile à laquelle appartient l'objet. Les valeurs
+possibles sont énumérées dans la table GC_FOSS_LFOS_DIVISION_CD en
+annexe de ce document.</td>
 </tr>
 <tr class="even">
 <td><a href=""></a></td>
@@ -5147,7 +5126,8 @@ gisements fossilifères</p>
 <td>4</td>
 <td><strong>dat_meth</strong></td>
 <td><a href="#fossils-pt-dat-meth">CodedDomain</a></td>
-<td>Méthode de datation.</td>
+<td>Méthode de datation. Les valeurs possibles sont énumérées dans la
+table GC_FOSS_LFOS_DAT_METH_CD en annexe de ce document.</td>
 </tr>
 <tr class="even">
 <td><a href=""></a></td>
@@ -5159,7 +5139,8 @@ gisements fossilifères</p>
 <td>5</td>
 <td><strong>status</strong></td>
 <td><a href="#fossils-pt-status">CodedDomain</a></td>
-<td>État du type d'objet.</td>
+<td>État du type d'objet. Les valeurs possibles sont énumérées dans la
+table GC_FOSS_LFOS_STATUS_CD en annexe de ce document.</td>
 </tr>
 <tr class="even">
 <td><a href=""></a></td>
@@ -5198,11 +5179,6 @@ class="header-section-number">5.2.1</span> Attribut kind</h3>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td>12901001</td>
-<td>Lfos Fossilfundstelle</td>
-<td>gisement fossilifère</td>
-</tr>
 </tbody>
 </table>
 <h3 data-number="5.2.2" id="fossils-pt-division"><span
@@ -5337,8 +5313,8 @@ class="header-section-number">5.2.5</span> Attribut status</h3>
 </table>
 <h3 data-number="5.2.6" id="attribut-protected-1"><span
 class="header-section-number">5.2.6</span> Attribut protected</h3>
-<p><em>Objet géologique protégé (oui / non)?</em> <em>Type de donnée :
-boolean</em></p>
+<p><em>Objet géologique protégé (oui / non)?</em></p>
+<p><em>Type de donnée : boolean</em></p>
 <h2 data-number="5.3" id="indication-of-resources-pt"><span
 class="header-section-number">5.3</span> Classe
 Indication_of_Resources_PT</h2>
@@ -5378,7 +5354,8 @@ matériel volcanique</p>
 <td>2</td>
 <td><strong>status</strong></td>
 <td><a href="#indication-of-resources-pt-status">CodedDomain</a></td>
-<td>tat du type d'obje.</td>
+<td>tat du type d'obje. Les valeurs possibles sont énumérées dans la
+table GC_PNT_LRES_STATUS_CD en annexe de ce document.</td>
 </tr>
 <tr class="even">
 <td><a href=""></a></td>
@@ -5390,7 +5367,9 @@ matériel volcanique</p>
 <td>3</td>
 <td><strong>material</strong></td>
 <td><a href="#indication-of-resources-pt-material">CodedDomain</a></td>
-<td>Matériau associé au type d'objet.</td>
+<td>Matériau associé au type d'objet. Les valeurs possibles sont
+énumérées dans la table GC_PNT_LRES_MATERIAL_CD en annexe de ce
+document.</td>
 </tr>
 <tr class="even">
 <td><a href=""></a></td>
@@ -5424,53 +5403,6 @@ class="header-section-number">5.3.1</span> Attribut kind</h3>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td>13201001</td>
-<td>Lres Mineralfundstelle</td>
-<td>gisement de minéraux</td>
-</tr>
-<tr class="even">
-<td>13201002</td>
-<td>Lres Gasquelle</td>
-<td>source de gaz naturel</td>
-</tr>
-<tr class="odd">
-<td>13201003</td>
-<td>Lres Anzeichen auf Öl</td>
-<td>indices de pétrole</td>
-</tr>
-<tr class="even">
-<td>13201006</td>
-<td>Lres Fundstelle vulkanischer Auswürflinge (Tephra)</td>
-<td>gisement de projections volcaniques (tephra)</td>
-</tr>
-<tr class="odd">
-<td>13201007</td>
-<td>Lres Fundstelle von Ries-Auswürflingen</td>
-<td>gisement de projections du Ries</td>
-</tr>
-<tr class="even">
-<td>13201008</td>
-<td>Lres Asphalt, vereinzeltes Vorkommen</td>
-<td>asphalte, gisement isolé</td>
-</tr>
-<tr class="odd">
-<td>13201005</td>
-<td>Lres Fundstelle von vulkanischem Tuffit</td>
-<td>gisement de tuffite volcanique</td>
-</tr>
-<tr class="even">
-<td>13201004</td>
-<td>Lres Tasche, Karsttasche, Kluft, mit Füllung von siderolithischem
-Sediment</td>
-<td>poche, poche karstique, fissure, remplie de matériel
-sidérolithique</td>
-</tr>
-<tr class="odd">
-<td>13201009</td>
-<td>Lres Meteoritenfundstelle</td>
-<td>gisement de météorite</td>
-</tr>
 </tbody>
 </table>
 <h3 data-number="5.3.2" id="indication-of-resources-pt-status"><span
@@ -5569,7 +5501,8 @@ class="header-section-number">5.3.3</span> Attribut material</h3>
 <h3 data-number="5.3.4" id="attribut-chemistry"><span
 class="header-section-number">5.3.4</span> Attribut chemistry</h3>
 <p><em>Composant(s) chimique(s) caractérisant la nature du type
-d'objet.</em> <em>Type de donnée : string</em></p>
+d'objet.</em></p>
+<p><em>Type de donnée : string</em></p>
 <h2 data-number="5.4" id="mineralised-zone-l"><span
 class="header-section-number">5.4</span> Classe Mineralised_Zone_L</h2>
 <p>La classe <a href="#mineralised-zone-l">Mineralised_Zone_L</a>
@@ -5628,17 +5561,13 @@ class="header-section-number">5.4.1</span> Attribut kind</h3>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td>13301001</td>
-<td>Lmin Vererzungszone</td>
-<td>zone minéralisée</td>
-</tr>
 </tbody>
 </table>
 <h3 data-number="5.4.2" id="attribut-chemistry-1"><span
 class="header-section-number">5.4.2</span> Attribut chemistry</h3>
 <p><em>Composant(s) chimique(s) caractérisant la nature du type
-d'objet.</em> <em>Type de donnée : string</em></p>
+d'objet.</em></p>
+<p><em>Type de donnée : string</em></p>
 <h2 data-number="5.5" id="sedimentary-structures-pt"><span
 class="header-section-number">5.5</span> Classe
 Sedimentary_Structures_PT</h2>
@@ -5700,45 +5629,13 @@ class="header-section-number">5.5.1</span> Attribut kind</h3>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td>13401001</td>
-<td>Lsed Sedimentstrukturen</td>
-<td>structures sédimentaires</td>
-</tr>
-<tr class="even">
-<td>13401002</td>
-<td>Lsed Riffstrukturen</td>
-<td>structures récifales</td>
-</tr>
-<tr class="odd">
-<td>13401003</td>
-<td>Lsed Erosions- oder Omissionsfläche, Hartgrund,
-Kondensationshorizont</td>
-<td>surface d´érosion ou lacune stratigraphique, surface durcie, niveau
-de condensation</td>
-</tr>
-<tr class="even">
-<td>13401004</td>
-<td>Lsed stratigraphische Lage (Polarität) einer Schichtserie</td>
-<td>position stratigraphique (polarité) d´une couche sédimentaire</td>
-</tr>
-<tr class="odd">
-<td>13401005</td>
-<td>Lsed Winkeldiskordanz</td>
-<td>discordance angulaire</td>
-</tr>
-<tr class="even">
-<td>13401006</td>
-<td>Lsed Entwässerungstrichter (blow-out structure)</td>
-<td>cratère d'échappement d'eau</td>
-</tr>
 </tbody>
 </table>
 <h3 data-number="5.5.2" id="attribut-azimuth-4"><span
 class="header-section-number">5.5.2</span> Attribut azimuth</h3>
 <p><em>Azimut du type d'objet. L'azimut est mesuré depuis le nord en
-degré de 0° à 359° dans le sens des aiguilles d'une montre</em> <em>Type
-de donnée : integer</em></p>
+degré de 0° à 359° dans le sens des aiguilles d'une montre</em></p>
+<p><em>Type de donnée : integer</em></p>
 <h2 data-number="5.6" id="type-localities-pt"><span
 class="header-section-number">5.6</span> Classe Type_Localities_PT</h2>
 <p>La classe <a href="#type-localities-pt">Type_Localities_PT</a>
@@ -5776,7 +5673,9 @@ affleurements géologiques importants.</p>
 <td>2</td>
 <td><strong>strati</strong></td>
 <td><a href="#type-localities-pt-strati">CodedDomain</a></td>
-<td>Complément lithostratigraphique du type d'objet.</td>
+<td>Complément lithostratigraphique du type d'objet. Les valeurs
+possibles sont énumérées dans la table GC_PNT_LTYP_STRATI_CD en annexe
+de ce document.</td>
 </tr>
 <tr class="even">
 <td><a href=""></a></td>
@@ -5841,16 +5740,6 @@ class="header-section-number">5.6.1</span> Attribut kind</h3>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td>13501001</td>
-<td>Ltyp geologisch relevanter Aufschluss</td>
-<td>affleurement géologique important</td>
-</tr>
-<tr class="even">
-<td>13501003</td>
-<td>Ltyp Typusprofil</td>
-<td>coupe-type</td>
-</tr>
 </tbody>
 </table>
 <h3 data-number="5.6.2" id="type-localities-pt-strati"><span
@@ -5915,15 +5804,17 @@ class="header-section-number">5.6.2</span> Attribut strati</h3>
 <h3 data-number="5.6.3" id="attribut-name-1"><span
 class="header-section-number">5.6.3</span> Attribut name</h3>
 <p><em>Nom de la localité-type. / Description de l’affleurement
-géologique important.</em> <em>Type de donnée : string</em></p>
+géologique important.</em></p>
+<p><em>Type de donnée : string</em></p>
 <h3 data-number="5.6.4" id="attribut-accessibil"><span
 class="header-section-number">5.6.4</span> Attribut accessibil</h3>
 <p><em>Est-ce que le type d’objet était accessible au moment du levé de
-la carte</em> <em>Type de donnée : boolean</em></p>
+la carte</em></p>
+<p><em>Type de donnée : boolean</em></p>
 <h3 data-number="5.6.5" id="attribut-protected-2"><span
 class="header-section-number">5.6.5</span> Attribut protected</h3>
-<p><em>Objet géologique protégé (oui / non)?</em> <em>Type de donnée :
-boolean</em></p>
+<p><em>Objet géologique protégé (oui / non)?</em></p>
+<p><em>Type de donnée : boolean</em></p>
 <h2 data-number="5.7" id="prominent-lithological-features-l"><span
 class="header-section-number">5.7</span> Classe
 Prominent_Lithological_Features_L</h2>
@@ -5965,20 +5856,21 @@ href="#prominent-lithological-features-l-cong-spe">CodedDomain</a></td>
 </tr>
 </tbody>
 </table>
-<p>clastes..<br />
+<p>clastes.. Les valeurs possibles sont énumérées dans la table
+GC_LIN_LPRO_CONG_SPE_CD en annexe de ce document.<br />
 <a href=""></a> | Cardinalité [0..1] | |<br />
 3 | <strong>name_horiz</strong> | <a
 href="#gc-litstrat-bed-cd">CodedDomain</a> | Nom du horizon repère à
-bentonite.. Die möglichen Werte sind in der Tabelle GC_LITSTRAT_BED_CD
-im Anhang dieses Dokumentes verfügbar. <a href=""></a> | Cardinalité
-[0..1] | |<br />
+bentonite.. Les valeurs possibles sont énumérées dans la table
+GC_LITSTRAT_BED_CD en annexe de ce document.<br />
+<a href=""></a> | Cardinalité [0..1] | |<br />
 4 | <strong>orig_descr</strong> | string | Description de la légende de
 la carte géologique originale. <a href=""></a> | Cardinalité [0..1] |
 |<br />
 5 | <strong>lpro_litho</strong> | <a href="#gc-litho-cd">CodedDomain</a>
-| Unité litholstratigraphique. Die möglichen Werte sind in der Tabelle
-GC_LITHO_CD im Anhang dieses Dokumentes verfügbar. <a href=""></a> |
-Cardinalité [1] | |</p>
+| Unité litholstratigraphique. Les valeurs possibles sont énumérées dans
+la table GC_LITHO_CD en annexe de ce document.<br />
+<a href=""></a> | Cardinalité [1] | |</p>
 <h3 data-number="5.7.1" id="attribut-kind-28"><span
 class="header-section-number">5.7.1</span> Attribut kind</h3>
 <p><em>Type de l'objet et description.</em></p>
@@ -5996,11 +5888,6 @@ class="header-section-number">5.7.1</span> Attribut kind</h3>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td>13101001</td>
-<td>Lpro Gesteinshorizont</td>
-<td>horizon de roche</td>
-</tr>
 </tbody>
 </table>
 <h3 data-number="5.7.2"
@@ -6056,16 +5943,19 @@ clastes.</em></p>
 </table>
 <h3 data-number="5.7.3" id="attribut-name_horiz"><span
 class="header-section-number">5.7.3</span> Attribut name_horiz</h3>
-<p><em>Nom du horizon repère à bentonite.</em> Voir le domaine <a
-href="#gc-litstrat-bed-cd">GC_LITSTRAT_BED_CD</a> dans l’annexe</p>
+<p><em>Nom du horizon repère à bentonite.</em></p>
+<p>Voir le domaine <a href="#gc-litstrat-bed-cd">GC_LITSTRAT_BED_CD</a>
+dans l’annexe</p>
 <h3 data-number="5.7.4" id="attribut-orig_descr-3"><span
 class="header-section-number">5.7.4</span> Attribut orig_descr</h3>
-<p><em>Description de la légende de la carte géologique originale.</em>
-<em>Type de donnée : string</em></p>
+<p><em>Description de la légende de la carte géologique
+originale.</em></p>
+<p><em>Type de donnée : string</em></p>
 <h3 data-number="5.7.5" id="attribut-lpro_litho"><span
 class="header-section-number">5.7.5</span> Attribut lpro_litho</h3>
-<p><em>Unité litholstratigraphique</em> Voir le domaine <a
-href="#gc-litho-cd">GC_LITHO_CD</a> dans l’annexe</p>
+<p><em>Unité litholstratigraphique</em></p>
+<p>Voir le domaine <a href="#gc-litho-cd">GC_LITHO_CD</a> dans
+l’annexe</p>
 <h2 data-number="5.8" id="miscellaneous-pt"><span
 class="header-section-number">5.8</span> Classe Miscellaneous_PT</h2>
 <p>La classe <a href="#miscellaneous-pt">Miscellaneous_PT</a> est
@@ -6131,16 +6021,12 @@ class="header-section-number">5.8.1</span> Attribut kind</h3>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td>15501001</td>
-<td>Lmis Diverse</td>
-<td>divers</td>
-</tr>
 </tbody>
 </table>
 <h3 data-number="5.8.2" id="attribut-orig_name"><span
 class="header-section-number">5.8.2</span> Attribut orig_name</h3>
-<p>__ <em>Type de donnée : string</em></p>
+<p>__</p>
+<p><em>Type de donnée : string</em></p>
 <h2 data-number="5.9" id="geological-outlines-l"><span
 class="header-section-number">5.9</span> Classe
 Geological_Outlines_L</h2>
@@ -6193,7 +6079,8 @@ digitalisation</p>
 <td>2</td>
 <td><strong>status</strong></td>
 <td><a href="#geological-outlines-l-status">CodedDomain</a></td>
-<td>État du type d'objet.</td>
+<td>État du type d'objet. Les valeurs possibles sont énumérées dans la
+table GC_LIN_LGEO_STATUS_CD en annexe de ce document.</td>
 </tr>
 <tr class="even">
 <td><a href=""></a></td>
@@ -6220,11 +6107,6 @@ class="header-section-number">5.9.1</span> Attribut kind</h3>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td>13001001</td>
-<td>Lgeo geologische Kontur</td>
-<td>contour géologique</td>
-</tr>
 </tbody>
 </table>
 <h3 data-number="5.9.2" id="geological-outlines-l-status"><span
@@ -6327,7 +6209,8 @@ sous-sol ou de surfaces d’érosions.</p>
 <td>2</td>
 <td><strong>type</strong></td>
 <td><a href="#slope-bedrock-pt-type">CodedDomain</a></td>
-<td>Surface de référence.</td>
+<td>Surface de référence. Les valeurs possibles sont énumérées dans la
+table GC_PNT_PSLO_TYPE_CD en annexe de ce document.</td>
 </tr>
 <tr class="even">
 <td><a href=""></a></td>
@@ -6350,9 +6233,9 @@ d'objet (en degrés), mesurée de l’horizontale (0°) vers le bas jusqu’à
 la verticale (90°) <a href=""></a> | Cardinalité [0..1] | |<br />
 5 | <strong>pslo_formatio</strong> | <a
 href="#gc-litstrat-bed-cd">CodedDomain</a> | Unité lithostratigraphique
-de l’horizon modélisé. Die möglichen Werte sind in der Tabelle
-GC_LITSTRAT_BED_CD im Anhang dieses Dokumentes verfügbar. <a
-href=""></a> | Cardinalité [1] | |</p>
+de l’horizon modélisé. Les valeurs possibles sont énumérées dans la
+table GC_LITSTRAT_BED_CD en annexe de ce document.<br />
+<a href=""></a> | Cardinalité [1] | |</p>
 <h3 data-number="6.1.1" id="attribut-kind-31"><span
 class="header-section-number">6.1.1</span> Attribut kind</h3>
 <p><em>Type de l'objet et description.</em></p>
@@ -6370,11 +6253,6 @@ class="header-section-number">6.1.1</span> Attribut kind</h3>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td>14201001</td>
-<td>Pslo Neigungsrichtung</td>
-<td>direction de plongement</td>
-</tr>
 </tbody>
 </table>
 <h3 data-number="6.1.2" id="slope-bedrock-pt-type"><span
@@ -6419,18 +6297,18 @@ class="header-section-number">6.1.2</span> Attribut type</h3>
 <h3 data-number="6.1.3" id="attribut-azimuth-5"><span
 class="header-section-number">6.1.3</span> Attribut azimuth</h3>
 <p><em>Azimut du type d'objet. L'azimut est mesuré depuis le nord en
-degré de 0° à 359° dans le sens des aiguilles d'une montre</em> <em>Type
-de donnée : integer</em></p>
+degré de 0° à 359° dans le sens des aiguilles d'une montre</em></p>
+<p><em>Type de donnée : integer</em></p>
 <h3 data-number="6.1.4" id="attribut-dip-4"><span
 class="header-section-number">6.1.4</span> Attribut dip</h3>
 <p><em>Valeur du plongement du type d'objet (en degrés), mesurée de
-l’horizontale (0°) vers le bas jusqu’à la verticale (90°)</em> <em>Type
-de donnée : integer</em></p>
+l’horizontale (0°) vers le bas jusqu’à la verticale (90°)</em></p>
+<p><em>Type de donnée : integer</em></p>
 <h3 data-number="6.1.5" id="attribut-pslo_formatio"><span
 class="header-section-number">6.1.5</span> Attribut pslo_formatio</h3>
-<p><em>Unité lithostratigraphique de l’horizon modélisé</em> Voir le
-domaine <a href="#gc-litstrat-bed-cd">GC_LITSTRAT_BED_CD</a> dans
-l’annexe</p>
+<p><em>Unité lithostratigraphique de l’horizon modélisé</em></p>
+<p>Voir le domaine <a href="#gc-litstrat-bed-cd">GC_LITSTRAT_BED_CD</a>
+dans l’annexe</p>
 <h2 data-number="6.2" id="contour-lines-bedrock-l"><span
 class="header-section-number">6.2</span> Classe
 Contour_Lines_Bedrock_L</h2>
@@ -6472,7 +6350,8 @@ rocheux.</p>
 <td>2</td>
 <td><strong>type</strong></td>
 <td><a href="#contour-lines-bedrock-l-type">CodedDomain</a></td>
-<td>Surface de référence.</td>
+<td>Surface de référence. Les valeurs possibles sont énumérées dans la
+table GC_LIN_PCOB_TYPE_CD en annexe de ce document.</td>
 </tr>
 <tr class="even">
 <td><a href=""></a></td>
@@ -6496,9 +6375,9 @@ rocheux.</p>
 <td>4</td>
 <td><strong>litstrat</strong></td>
 <td><a href="#gc-litstrat-bed-cd">CodedDomain</a></td>
-<td>Unité lithostratigraphique de la formation modelisée. Die möglichen
-Werte sind in der Tabelle GC_LITSTRAT_BED_CD im Anhang dieses Dokumentes
-verfügbar.</td>
+<td>Unité lithostratigraphique de la formation modelisée. Les valeurs
+possibles sont énumérées dans la table GC_LITSTRAT_BED_CD en annexe de
+ce document.</td>
 </tr>
 <tr class="even">
 <td><a href=""></a></td>
@@ -6525,11 +6404,6 @@ class="header-section-number">6.2.1</span> Attribut kind</h3>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td>13901001</td>
-<td>Pcob Isohypse</td>
-<td>isohypse</td>
-</tr>
 </tbody>
 </table>
 <h3 data-number="6.2.2" id="contour-lines-bedrock-l-type"><span
@@ -6578,13 +6452,13 @@ class="header-section-number">6.2.2</span> Attribut type</h3>
 </table>
 <h3 data-number="6.2.3" id="attribut-altitude"><span
 class="header-section-number">6.2.3</span> Attribut altitude</h3>
-<p><em>Valeur altimétrique des isohypses.</em> <em>Type de donnée :
-float</em></p>
+<p><em>Valeur altimétrique des isohypses.</em></p>
+<p><em>Type de donnée : float</em></p>
 <h3 data-number="6.2.4" id="attribut-litstrat-1"><span
 class="header-section-number">6.2.4</span> Attribut litstrat</h3>
-<p><em>Unité lithostratigraphique de la formation modelisée</em> Voir le
-domaine <a href="#gc-litstrat-bed-cd">GC_LITSTRAT_BED_CD</a> dans
-l’annexe</p>
+<p><em>Unité lithostratigraphique de la formation modelisée</em></p>
+<p>Voir le domaine <a href="#gc-litstrat-bed-cd">GC_LITSTRAT_BED_CD</a>
+dans l’annexe</p>
 <h2 data-number="6.3" id="modelled-water-table-pt"><span
 class="header-section-number">6.3</span> Classe
 Modelled_Water_Table_PT</h2>
@@ -6655,36 +6529,27 @@ class="header-section-number">6.3.1</span> Attribut kind</h3>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td>14101001</td>
-<td>Pmod Grundwasserfliessrichtung</td>
-<td>direction d'écoulement</td>
-</tr>
-<tr class="even">
-<td>14101002</td>
-<td>Pmod mittlere Höhe des Grundwasserspiegels</td>
-<td>niveau moyen de la nappe phréatique</td>
-</tr>
 </tbody>
 </table>
 <h3 data-number="6.3.2" id="attribut-azimuth-6"><span
 class="header-section-number">6.3.2</span> Attribut azimuth</h3>
 <p><em>Azimut du type d'objet. L'azimut est mesuré depuis le nord en
-degré de 0° à 359° dans le sens des aiguilles d'une montre</em> <em>Type
-de donnée : integer</em></p>
+degré de 0° à 359° dans le sens des aiguilles d'une montre</em></p>
+<p><em>Type de donnée : integer</em></p>
 <h3 data-number="6.3.3" id="attribut-dip-5"><span
 class="header-section-number">6.3.3</span> Attribut dip</h3>
 <p><em>Valeur du plongement du type d'objet (en degrés), mesurée de
-l’horizontale (0°) vers le bas jusqu’à la verticale (90°)</em> <em>Type
-de donnée : integer</em></p>
+l’horizontale (0°) vers le bas jusqu’à la verticale (90°)</em></p>
+<p><em>Type de donnée : integer</em></p>
 <h3 data-number="6.3.4" id="attribut-height"><span
 class="header-section-number">6.3.4</span> Attribut height</h3>
-<p><em>Cote de la nappe phréatique.</em> <em>Type de donnée :
-float</em></p>
+<p><em>Cote de la nappe phréatique.</em></p>
+<p><em>Type de donnée : float</em></p>
 <h3 data-number="6.3.5" id="attribut-mea_period"><span
 class="header-section-number">6.3.5</span> Attribut mea_period</h3>
-<p><em>Période de mesure de la profondeur du niveau hydrostatique.</em>
-<em>Type de donnée : range</em></p>
+<p><em>Période de mesure de la profondeur du niveau
+hydrostatique.</em></p>
+<p><em>Type de donnée : range</em></p>
 <h2 data-number="6.4" id="contour-lines-hydro-l"><span
 class="header-section-number">6.4</span> Classe
 Contour_Lines_Hydro_L</h2>
@@ -6723,7 +6588,9 @@ isohypses qui décrivent la surface d’une nappe d’eaux souterraine.</p>
 <td>2</td>
 <td><strong>confine</strong></td>
 <td><a href="#contour-lines-hydro-l-confine">CodedDomain</a></td>
-<td>État de la pression dans l’aquifère.</td>
+<td>État de la pression dans l’aquifère. Les valeurs possibles sont
+énumérées dans la table GC_LIN_PCOH_CONFINE_CD en annexe de ce
+document.</td>
 </tr>
 <tr class="even">
 <td><a href=""></a></td>
@@ -6747,7 +6614,8 @@ isohypses qui décrivent la surface d’une nappe d’eaux souterraine.</p>
 <td>4</td>
 <td><strong>wa_table</strong></td>
 <td><a href="#contour-lines-hydro-l-wa-table">CodedDomain</a></td>
-<td>Niveau des eaux.</td>
+<td>Niveau des eaux. Les valeurs possibles sont énumérées dans la table
+GC_LIN_PCOH_WA_TABLE_CD en annexe de ce document.</td>
 </tr>
 <tr class="even">
 <td><a href=""></a></td>
@@ -6774,11 +6642,6 @@ class="header-section-number">6.4.1</span> Attribut kind</h3>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td>14001001</td>
-<td>Pcoh Isohypse des Grundwasserspiegels</td>
-<td>isohypse de la surface piézométrique</td>
-</tr>
 </tbody>
 </table>
 <h3 data-number="6.4.2" id="contour-lines-hydro-l-confine"><span
@@ -6905,7 +6768,8 @@ sites archéologiques.</p>
 <td>2</td>
 <td><strong>epoch</strong></td>
 <td><a href="#archaeology-pt-epoch">CodedDomain</a></td>
-<td>Époque archéologique du type d'objet.</td>
+<td>Époque archéologique du type d'objet. Les valeurs possibles sont
+énumérées dans la table GC_AARC_EPOCH_CD en annexe de ce document.</td>
 </tr>
 <tr class="even">
 <td><a href=""></a></td>
@@ -6917,7 +6781,8 @@ sites archéologiques.</p>
 <td>3</td>
 <td><strong>period</strong></td>
 <td><a href="#archaeology-pt-period">CodedDomain</a></td>
-<td>Période archéologique du type d'objet.</td>
+<td>Période archéologique du type d'objet. Les valeurs possibles sont
+énumérées dans la table GC_AARC_PERIOD_CD en annexe de ce document.</td>
 </tr>
 <tr class="even">
 <td><a href=""></a></td>
@@ -6929,7 +6794,8 @@ sites archéologiques.</p>
 <td>4</td>
 <td><strong>age</strong></td>
 <td><a href="#archaeology-pt-age">CodedDomain</a></td>
-<td>Âge archéologique du type d'objet.</td>
+<td>Âge archéologique du type d'objet. Les valeurs possibles sont
+énumérées dans la table GC_AARC_AGE_CD en annexe de ce document.</td>
 </tr>
 <tr class="even">
 <td><a href=""></a></td>
@@ -6941,7 +6807,8 @@ sites archéologiques.</p>
 <td>5</td>
 <td><strong>type</strong></td>
 <td><a href="#archaeology-pt-type">CodedDomain</a></td>
-<td>Type de mégalithe.</td>
+<td>Type de mégalithe. Les valeurs possibles sont énumérées dans la
+table GC_PNT_AARC_TYPE_CD en annexe de ce document.</td>
 </tr>
 <tr class="even">
 <td><a href=""></a></td>
@@ -6968,77 +6835,6 @@ class="header-section-number">7.1.1</span> Attribut kind</h3>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td>10101001</td>
-<td>Aarc archäologische Fundstelle, Anlage, Siedlungsreste</td>
-<td>site archéologique, station, vestiges d'établissement</td>
-</tr>
-<tr class="even">
-<td>10101005</td>
-<td>Aarc Gräber, Gräberfeld</td>
-<td>tombe, site mortuaire</td>
-</tr>
-<tr class="odd">
-<td>10101007</td>
-<td>Aarc Grabhügel, Dolmengrab</td>
-<td>tumulus, dolmen funéraire</td>
-</tr>
-<tr class="even">
-<td>10101008</td>
-<td>Aarc Kultstein</td>
-<td>mégalithe</td>
-</tr>
-<tr class="odd">
-<td>10101009</td>
-<td>Aarc Kalkofen</td>
-<td>four à chaux</td>
-</tr>
-<tr class="even">
-<td>10101010</td>
-<td>Aarc Felsenkeller</td>
-<td>cave dans la roche</td>
-</tr>
-<tr class="odd">
-<td>10101011</td>
-<td>Aarc Schlackenhalde</td>
-<td>crassier</td>
-</tr>
-<tr class="even">
-<td>10101012</td>
-<td>Aarc Glashütte</td>
-<td>verrerie</td>
-</tr>
-<tr class="odd">
-<td>10101013</td>
-<td>Aarc Schmelzofen</td>
-<td>four à fer</td>
-</tr>
-<tr class="even">
-<td>10101004</td>
-<td>Aarc Burgstelle, Burghügel, Wachtturm</td>
-<td>motte, emplacement d´un ancien château, d´une fortification, d'un
-château-fort</td>
-</tr>
-<tr class="odd">
-<td>10101002</td>
-<td>Aarc Höhlensiedlung, Abri</td>
-<td>grotte, abri sous roche</td>
-</tr>
-<tr class="even">
-<td>10101003</td>
-<td>Aarc Pfahlbauten</td>
-<td>palafitte</td>
-</tr>
-<tr class="odd">
-<td>10101006</td>
-<td>Aarc Steinplattengrab</td>
-<td>sépulture</td>
-</tr>
-<tr class="even">
-<td>10101015</td>
-<td>Aarc Abbaustelle</td>
-<td>exploitation</td>
-</tr>
 </tbody>
 </table>
 <h3 data-number="7.1.2" id="archaeology-pt-epoch"><span
@@ -7285,7 +7081,8 @@ classe.</p>
 <td>2</td>
 <td><strong>epoch</strong></td>
 <td><a href="#archaeology-l-epoch">CodedDomain</a></td>
-<td>Époque archéologique du type d'objet.</td>
+<td>Époque archéologique du type d'objet. Les valeurs possibles sont
+énumérées dans la table GC_AARC_EPOCH_CD en annexe de ce document.</td>
 </tr>
 <tr class="even">
 <td><a href=""></a></td>
@@ -7297,7 +7094,8 @@ classe.</p>
 <td>3</td>
 <td><strong>period</strong></td>
 <td><a href="#archaeology-l-period">CodedDomain</a></td>
-<td>Période archéologique du type d'objet.</td>
+<td>Période archéologique du type d'objet. Les valeurs possibles sont
+énumérées dans la table GC_AARC_PERIOD_CD en annexe de ce document.</td>
 </tr>
 <tr class="even">
 <td><a href=""></a></td>
@@ -7309,7 +7107,8 @@ classe.</p>
 <td>4</td>
 <td><strong>age</strong></td>
 <td><a href="#archaeology-l-age">CodedDomain</a></td>
-<td>Âge archéologique du type d'objet.</td>
+<td>Âge archéologique du type d'objet. Les valeurs possibles sont
+énumérées dans la table GC_AARC_AGE_CD en annexe de ce document.</td>
 </tr>
 <tr class="even">
 <td><a href=""></a></td>
@@ -7336,41 +7135,6 @@ class="header-section-number">7.2.1</span> Attribut kind</h3>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td>10201001</td>
-<td>Aarc Verkehrsweg</td>
-<td>voie de communication</td>
-</tr>
-<tr class="even">
-<td>10201002</td>
-<td>Aarc Hohlweg</td>
-<td>chemin creux</td>
-</tr>
-<tr class="odd">
-<td>10201003</td>
-<td>Aarc künstlicher Graben, Befestigungsgraben</td>
-<td>fossé artificiel, fossé de fortification</td>
-</tr>
-<tr class="even">
-<td>10201004</td>
-<td>Aarc künstlicher Erdwall</td>
-<td>levée de terre artificielle</td>
-</tr>
-<tr class="odd">
-<td>10201005</td>
-<td>Aarc Wasserleitung</td>
-<td>aqueduc</td>
-</tr>
-<tr class="even">
-<td>10201006</td>
-<td>Aarc Steinreihe</td>
-<td>alignement mégalithique</td>
-</tr>
-<tr class="odd">
-<td>10201007</td>
-<td>Aarc Schützengraben</td>
-<td>tranchée</td>
-</tr>
 </tbody>
 </table>
 <h3 data-number="7.2.2" id="archaeology-l-epoch"><span
@@ -7577,7 +7341,8 @@ recouvrent une surface importante.</p>
 <td>2</td>
 <td><strong>epoch</strong></td>
 <td><a href="#archaeology-plg-epoch">CodedDomain</a></td>
-<td>Époque archéologique du type d'objet.</td>
+<td>Époque archéologique du type d'objet. Les valeurs possibles sont
+énumérées dans la table GC_AARC_EPOCH_CD en annexe de ce document.</td>
 </tr>
 <tr class="even">
 <td><a href=""></a></td>
@@ -7589,7 +7354,8 @@ recouvrent une surface importante.</p>
 <td>3</td>
 <td><strong>period</strong></td>
 <td><a href="#archaeology-plg-period">CodedDomain</a></td>
-<td>Période archéologique du type d'objet.</td>
+<td>Période archéologique du type d'objet. Les valeurs possibles sont
+énumérées dans la table GC_AARC_PERIOD_CD en annexe de ce document.</td>
 </tr>
 <tr class="even">
 <td><a href=""></a></td>
@@ -7601,7 +7367,8 @@ recouvrent une surface importante.</p>
 <td>4</td>
 <td><strong>age</strong></td>
 <td><a href="#archaeology-plg-age">CodedDomain</a></td>
-<td>Âge archéologique du type d'objet.</td>
+<td>Âge archéologique du type d'objet. Les valeurs possibles sont
+énumérées dans la table GC_AARC_AGE_CD en annexe de ce document.</td>
 </tr>
 <tr class="even">
 <td><a href=""></a></td>
@@ -7628,16 +7395,6 @@ class="header-section-number">7.3.1</span> Attribut kind</h3>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td>10301001</td>
-<td>Aarc Castrum</td>
-<td>castrum</td>
-</tr>
-<tr class="even">
-<td>10301002</td>
-<td>Aarc Refugium, Höhensiedlung, Erdwerk</td>
-<td>refugium, oppidum, fortification</td>
-</tr>
 </tbody>
 </table>
 <h3 data-number="7.3.2" id="archaeology-plg-epoch"><span
@@ -7858,7 +7615,8 @@ matériaux géologiques.</p>
 <td>3</td>
 <td><strong>status</strong></td>
 <td><a href="#exploitation-geomaterials-pt-status">CodedDomain</a></td>
-<td>État de l'exploitation.</td>
+<td>État de l'exploitation. Les valeurs possibles sont énumérées dans la
+table GC_EX_GEO_PNT_AEXP_STATUS_CD en annexe de ce document.</td>
 </tr>
 <tr class="even">
 <td><a href=""></a></td>
@@ -7884,7 +7642,8 @@ surface).</td>
 <td><strong>targ_mat</strong></td>
 <td><a
 href="#exploitation-geomaterials-pt-targ-mat">CodedDomain</a></td>
-<td>Matériau exploité..</td>
+<td>Matériau exploité.. Les valeurs possibles sont énumérées dans la
+table GC_EX_GEO_PNT_AEXP_TARG_MAT_CD en annexe de ce document.</td>
 </tr>
 <tr class="even">
 <td><a href=""></a></td>
@@ -7911,36 +7670,6 @@ class="header-section-number">7.4.1</span> Attribut kind</h3>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td>10601001</td>
-<td>Aexp Bergwerk, Untertageabbau</td>
-<td>mine, exploitation souterraine</td>
-</tr>
-<tr class="even">
-<td>10601002</td>
-<td>Aexp Stolleneingang</td>
-<td>entrée de galerie</td>
-</tr>
-<tr class="odd">
-<td>10601003</td>
-<td>Aexp Schacht</td>
-<td>puits de mine</td>
-</tr>
-<tr class="even">
-<td>10601004</td>
-<td>Aexp Pinge (dolinenartiger Stolleneinbruch)</td>
-<td>fontis (effondrement de surface lié à des travaux souterrains)</td>
-</tr>
-<tr class="odd">
-<td>10601005</td>
-<td>Aexp Schürfloch</td>
-<td>trace d´exploitation en surface</td>
-</tr>
-<tr class="even">
-<td>10601006</td>
-<td>Aexp ausgeräumte Bohnerztasche</td>
-<td>poche sidérolithique vidée</td>
-</tr>
 </tbody>
 </table>
 <h3 data-number="7.4.2" id="attribut-exp_unit"><span
@@ -7998,7 +7727,8 @@ class="header-section-number">7.4.3</span> Attribut status</h3>
 <h3 data-number="7.4.4" id="attribut-depth_tot"><span
 class="header-section-number">7.4.4</span> Attribut depth_tot</h3>
 <p><em>Profondeur totale du type d'objet (en mètres depuis la
-surface).</em> <em>Type de donnée : float</em></p>
+surface).</em></p>
+<p><em>Type de donnée : float</em></p>
 <h3 data-number="7.4.5" id="exploitation-geomaterials-pt-targ-mat"><span
 class="header-section-number">7.4.5</span> Attribut targ_mat</h3>
 <p><em>Matériau exploité.</em></p>
@@ -8267,7 +7997,8 @@ matériaux géologiques (p.ex. le front de taille).</p>
 <td>2</td>
 <td><strong>status</strong></td>
 <td><a href="#exploitation-geomaterials-l-status">CodedDomain</a></td>
-<td>État de l'exploitation.</td>
+<td>État de l'exploitation. Les valeurs possibles sont énumérées dans la
+table GC_LIN_AEXP_STATUS_CD en annexe de ce document.</td>
 </tr>
 <tr class="even">
 <td><a href=""></a></td>
@@ -8294,16 +8025,6 @@ class="header-section-number">7.5.1</span> Attribut kind</h3>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td>10701001</td>
-<td>Aexp Abbaufront</td>
-<td>front d'exploitation</td>
-</tr>
-<tr class="even">
-<td>10701002</td>
-<td>Aexp Bergwerksstollen</td>
-<td>galerie de mine</td>
-</tr>
 </tbody>
 </table>
 <h3 data-number="7.5.2" id="exploitation-geomaterials-l-status"><span
@@ -8406,7 +8127,8 @@ contient les surfaces d’exploitation de géomatériaux, telles qu’elles
 <td>3</td>
 <td><strong>status</strong></td>
 <td><a href="#exploitation-geomaterials-plg-status">CodedDomain</a></td>
-<td>État de l'exploitation.</td>
+<td>État de l'exploitation. Les valeurs possibles sont énumérées dans la
+table GC_EX_GEO_PLG_AEXP_STATUS_CD en annexe de ce document.</td>
 </tr>
 <tr class="even">
 <td><a href=""></a></td>
@@ -8432,7 +8154,8 @@ surface).</td>
 <td><strong>targ_mat</strong></td>
 <td><a
 href="#exploitation-geomaterials-plg-targ-mat">CodedDomain</a></td>
-<td>Matériel exploité..</td>
+<td>Matériel exploité.. Les valeurs possibles sont énumérées dans la
+table GC_EX_GEO_PLG_AEXP_TARG_MAT_CD en annexe de ce document.</td>
 </tr>
 <tr class="even">
 <td><a href=""></a></td>
@@ -8459,16 +8182,6 @@ class="header-section-number">7.6.1</span> Attribut kind</h3>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td>10801001</td>
-<td>Aexp Steinbruch</td>
-<td>carrière</td>
-</tr>
-<tr class="even">
-<td>10801002</td>
-<td>Aexp Grube (Lockergesteinsabbau)</td>
-<td>exploitation de matériaux meubles</td>
-</tr>
 </tbody>
 </table>
 <h3 data-number="7.6.2" id="attribut-exp_unit-1"><span
@@ -8526,7 +8239,8 @@ class="header-section-number">7.6.3</span> Attribut status</h3>
 <h3 data-number="7.6.4" id="attribut-depth_tot-1"><span
 class="header-section-number">7.6.4</span> Attribut depth_tot</h3>
 <p><em>Profondeur totale du type d'objet (en mètres depuis la
-surface).</em> <em>Type de donnée : float</em></p>
+surface).</em></p>
+<p><em>Type de donnée : float</em></p>
 <h3 data-number="7.6.5"
 id="exploitation-geomaterials-plg-targ-mat"><span
 class="header-section-number">7.6.5</span> Attribut targ_mat</h3>
@@ -8725,28 +8439,30 @@ cas où le forage commence déjà dans la roche en place la valeur est 0)
 d’une galerie (oui / non)? <a href=""></a> | Cardinalité [1] | |<br />
 5 | <strong>main_tar</strong> | <a
 href="#boreholes-pt-main-tar">CodedDomain</a> | But principal du
-sondage.<br />
+sondage. Les valeurs possibles sont énumérées dans la table
+GC_PNT_ABOR_MAIN_TAR_CD en annexe de ce document.<br />
 <a href=""></a> | Cardinalité [0..1] | |<br />
 6 | <strong>targ_mat</strong> | <a
 href="#boreholes-pt-targ-mat">CodedDomain</a> | Matériau cible du
-sondage.<br />
+sondage. Les valeurs possibles sont énumérées dans la table
+GC_PNT_ABOR_TARG_MAT_CD en annexe de ce document.<br />
 <a href=""></a> | Cardinalité [0..1] | |<br />
 7 | <strong>depth_tot</strong> | float | Profondeur totale du type
 d'objet (en mètres depuis la surface). <a href=""></a> | Cardinalité
 [0..1] | |<br />
 8 | <strong>fm_a</strong> | <a
 href="#gc-litstrat-bed-cd">CodedDomain</a> | Unité lithostratigraphique
-de la formation A atteinte. Die möglichen Werte sind in der Tabelle
-GC_LITSTRAT_BED_CD im Anhang dieses Dokumentes verfügbar. <a
-href=""></a> | Cardinalité [0..1] | |<br />
+de la formation A atteinte. Les valeurs possibles sont énumérées dans la
+table GC_LITSTRAT_BED_CD en annexe de ce document.<br />
+<a href=""></a> | Cardinalité [0..1] | |<br />
 9 | <strong>depth_fm_a</strong> | float | Profondeur relative à la
 formation A atteinte (en mètres depuis la surface). <a href=""></a> |
 Cardinalité [0..1] | |<br />
 10 | <strong>fm_b</strong> | <a
 href="#gc-litstrat-bed-cd">CodedDomain</a> | Unité lithostratigraphique
-de la formation B atteinte. Die möglichen Werte sind in der Tabelle
-GC_LITSTRAT_BED_CD im Anhang dieses Dokumentes verfügbar. <a
-href=""></a> | Cardinalité [0..1] | |<br />
+de la formation B atteinte. Les valeurs possibles sont énumérées dans la
+table GC_LITSTRAT_BED_CD en annexe de ce document.<br />
+<a href=""></a> | Cardinalité [0..1] | |<br />
 11 | <strong>depth_fm_b</strong> | float | Profondeur de la formation B
 atteinte (en mètres depuis la surface). <a href=""></a> | Cardinalité
 [0..1] | |<br />
@@ -8783,31 +8499,6 @@ class="header-section-number">7.7.1</span> Attribut kind</h3>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td>10501001</td>
-<td>Abor Bohrung</td>
-<td>forage</td>
-</tr>
-<tr class="even">
-<td>10501002</td>
-<td>Abor Sondierschlitz</td>
-<td>fouille ou tranchée de reconnaissance</td>
-</tr>
-<tr class="odd">
-<td>10501003</td>
-<td>Abor Handsondierung</td>
-<td>sondage à la tarière</td>
-</tr>
-<tr class="even">
-<td>10501004</td>
-<td>Abor Rammsondierung</td>
-<td>sondage au pénétromètre</td>
-</tr>
-<tr class="odd">
-<td>10501005</td>
-<td>Abor Rammkernsondierung</td>
-<td>sondage par carottier battu</td>
-</tr>
 </tbody>
 </table>
 <h3 data-number="7.7.2" id="attribut-drill_mo"><span
@@ -8818,12 +8509,12 @@ class="header-section-number">7.7.3</span> Attribut depth_bedrock</h3>
 <p><em>Profondeur de la roche en place (en mètres depuis la surface).
 (Si l’ouvrage n’atteint pas la roche en place, par exemple forage
 interrompu dans la couverture quaternaire, la valeur est -999, au cas où
-le forage commence déjà dans la roche en place la valeur est 0)</em>
-<em>Type de donnée : float</em></p>
+le forage commence déjà dans la roche en place la valeur est 0)</em></p>
+<p><em>Type de donnée : float</em></p>
 <h3 data-number="7.7.4" id="attribut-d_c_underg"><span
 class="header-section-number">7.7.4</span> Attribut d_c_underg</h3>
-<p><em>Forage réalisé à partir d’une galerie (oui / non)?</em> <em>Type
-de donnée : boolean</em></p>
+<p><em>Forage réalisé à partir d’une galerie (oui / non)?</em></p>
+<p><em>Type de donnée : boolean</em></p>
 <h3 data-number="7.7.5" id="boreholes-pt-main-tar"><span
 class="header-section-number">7.7.5</span> Attribut main_tar</h3>
 <p><em>But principal du sondage</em></p>
@@ -8965,47 +8656,53 @@ class="header-section-number">7.7.6</span> Attribut targ_mat</h3>
 <h3 data-number="7.7.7" id="attribut-depth_tot-2"><span
 class="header-section-number">7.7.7</span> Attribut depth_tot</h3>
 <p><em>Profondeur totale du type d'objet (en mètres depuis la
-surface).</em> <em>Type de donnée : float</em></p>
+surface).</em></p>
+<p><em>Type de donnée : float</em></p>
 <h3 data-number="7.7.8" id="attribut-fm_a"><span
 class="header-section-number">7.7.8</span> Attribut fm_a</h3>
-<p><em>Unité lithostratigraphique de la formation A atteinte</em> Voir
-le domaine <a href="#gc-litstrat-bed-cd">GC_LITSTRAT_BED_CD</a> dans
-l’annexe</p>
+<p><em>Unité lithostratigraphique de la formation A atteinte</em></p>
+<p>Voir le domaine <a href="#gc-litstrat-bed-cd">GC_LITSTRAT_BED_CD</a>
+dans l’annexe</p>
 <h3 data-number="7.7.9" id="attribut-depth_fm_a"><span
 class="header-section-number">7.7.9</span> Attribut depth_fm_a</h3>
 <p><em>Profondeur relative à la formation A atteinte (en mètres depuis
-la surface).</em> <em>Type de donnée : float</em></p>
+la surface).</em></p>
+<p><em>Type de donnée : float</em></p>
 <h3 data-number="7.7.10" id="attribut-fm_b"><span
 class="header-section-number">7.7.10</span> Attribut fm_b</h3>
-<p><em>Unité lithostratigraphique de la formation B atteinte</em> Voir
-le domaine <a href="#gc-litstrat-bed-cd">GC_LITSTRAT_BED_CD</a> dans
-l’annexe</p>
+<p><em>Unité lithostratigraphique de la formation B atteinte</em></p>
+<p>Voir le domaine <a href="#gc-litstrat-bed-cd">GC_LITSTRAT_BED_CD</a>
+dans l’annexe</p>
 <h3 data-number="7.7.11" id="attribut-depth_fm_b"><span
 class="header-section-number">7.7.11</span> Attribut depth_fm_b</h3>
 <p><em>Profondeur de la formation B atteinte (en mètres depuis la
-surface).</em> <em>Type de donnée : float</em></p>
+surface).</em></p>
+<p><em>Type de donnée : float</em></p>
 <h3 data-number="7.7.12" id="attribut-depth_wt"><span
 class="header-section-number">7.7.12</span> Attribut depth_wt</h3>
 <p><em>Profondeur (m depuis la surface) de la nappe phréatique (valeur
-moyenne).</em> <em>Type de donnée : float</em></p>
+moyenne).</em></p>
+<p><em>Type de donnée : float</em></p>
 <h3 data-number="7.7.13" id="attribut-azimuth-7"><span
 class="header-section-number">7.7.13</span> Attribut azimuth</h3>
 <p><em>Azimut du type d'objet. L'azimut est mesuré depuis le nord en
-degré de 0° à 359° dans le sens des aiguilles d'une montre</em> <em>Type
-de donnée : integer</em></p>
+degré de 0° à 359° dans le sens des aiguilles d'une montre</em></p>
+<p><em>Type de donnée : integer</em></p>
 <h3 data-number="7.7.14" id="attribut-dip-6"><span
 class="header-section-number">7.7.14</span> Attribut dip</h3>
 <p><em>Valeur du plongement du type d'objet (en degrés), mesurée de
-l’horizontale (0°) vers le bas jusqu’à la verticale (90°)</em> <em>Type
-de donnée : integer</em></p>
+l’horizontale (0°) vers le bas jusqu’à la verticale (90°)</em></p>
+<p><em>Type de donnée : integer</em></p>
 <h3 data-number="7.7.15" id="attribut-ref_number"><span
 class="header-section-number">7.7.15</span> Attribut ref_number</h3>
 <p><em>Numéro de référence du type d'objet dans un document annexé
-(notice explicative,…).</em> <em>Type de donnée : integer</em></p>
+(notice explicative,…).</em></p>
+<p><em>Type de donnée : integer</em></p>
 <h3 data-number="7.7.16" id="attribut-link"><span
 class="header-section-number">7.7.16</span> Attribut link</h3>
 <p><em>Numéro de référence du type d'objet dans un document annexé
-(notice explicative,…).</em> <em>Type de donnée : integer</em></p>
+(notice explicative,…).</em></p>
+<p><em>Type de donnée : integer</em></p>
 <h2 data-number="7.8" id="artificial-surface-modifications-plg"><span
 class="header-section-number">7.8</span> Classe
 Artificial_Surface_Modifications_PLG</h2>
@@ -9057,36 +8754,6 @@ class="header-section-number">7.8.1</span> Attribut kind</h3>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td>10401001</td>
-<td>Aart künstlich verändertes Gelände</td>
-<td>terrain modelé artificiellement</td>
-</tr>
-<tr class="even">
-<td>10401002</td>
-<td>Aart künstliche Ablagerung, undifferenziert</td>
-<td>dépôts artificiels, indifférenciés</td>
-</tr>
-<tr class="odd">
-<td>10401003</td>
-<td>Aart Aufschüttung, Damm</td>
-<td>remblai, digue</td>
-</tr>
-<tr class="even">
-<td>10401004</td>
-<td>Aart Auffüllung</td>
-<td>remplissage</td>
-</tr>
-<tr class="odd">
-<td>10401005</td>
-<td>Aart Deponie</td>
-<td>décharge</td>
-</tr>
-<tr class="even">
-<td>10401006</td>
-<td>Aart Halde</td>
-<td>terril</td>
-</tr>
 </tbody>
 </table>
 <h1 data-number="8" id="thème-hydrogeology"><span
@@ -9130,7 +8797,8 @@ classe.</p>
 <td>2</td>
 <td><strong>status</strong></td>
 <td><a href="#construction-pt-status">CodedDomain</a></td>
-<td>État du type d'objet..</td>
+<td>État du type d'objet.. Les valeurs possibles sont énumérées dans la
+table GC_PNT_HCON_STATUS_CD en annexe de ce document.</td>
 </tr>
 <tr class="even">
 <td><a href=""></a></td>
@@ -9142,7 +8810,9 @@ classe.</p>
 <td>3</td>
 <td><strong>epoch</strong></td>
 <td><a href="#construction-pt-epoch">CodedDomain</a></td>
-<td>Époque de construction du type d'objet.</td>
+<td>Époque de construction du type d'objet. Les valeurs possibles sont
+énumérées dans la table GC_PNT_HCON_EPOCH_CD en annexe de ce
+document.</td>
 </tr>
 <tr class="even">
 <td><a href=""></a></td>
@@ -9206,41 +8876,6 @@ class="header-section-number">8.1.1</span> Attribut kind</h3>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td>12101001</td>
-<td>Hcon Grundwasserfassung</td>
-<td>captage dans la nappe phréatique</td>
-</tr>
-<tr class="even">
-<td>12101002</td>
-<td>Hcon Zisterne</td>
-<td>citerne</td>
-</tr>
-<tr class="odd">
-<td>12101003</td>
-<td>Hcon laufender Brunnen (in wasserarmem Gebiet)</td>
-<td>fontaine (en région sèche)</td>
-</tr>
-<tr class="even">
-<td>12101004</td>
-<td>Hcon Sodbrunnen</td>
-<td>puits</td>
-</tr>
-<tr class="odd">
-<td>12101005</td>
-<td>Hcon Versickerungsschacht</td>
-<td>puits d´infiltration</td>
-</tr>
-<tr class="even">
-<td>12101006</td>
-<td>Hcon Limnigraph</td>
-<td>limnigraphe</td>
-</tr>
-<tr class="odd">
-<td>12101007</td>
-<td>Hcon Piezometer</td>
-<td>piézomètre</td>
-</tr>
 </tbody>
 </table>
 <h3 data-number="8.1.2" id="construction-pt-status"><span
@@ -9328,16 +8963,18 @@ class="header-section-number">8.1.3</span> Attribut epoch</h3>
 </table>
 <h3 data-number="8.1.4" id="attribut-depth"><span
 class="header-section-number">8.1.4</span> Attribut depth</h3>
-<p><em>Profondeur du type d'objet.</em> <em>Type de donnée :
-float</em></p>
+<p><em>Profondeur du type d'objet.</em></p>
+<p><em>Type de donnée : float</em></p>
 <h3 data-number="8.1.5" id="attribut-depth_wt-1"><span
 class="header-section-number">8.1.5</span> Attribut depth_wt</h3>
 <p><em>Profondeur (m depuis la surface) de la nappe phréatique (valeur
-moyenne).</em> <em>Type de donnée : float</em></p>
+moyenne).</em></p>
+<p><em>Type de donnée : float</em></p>
 <h3 data-number="8.1.6" id="attribut-mea_period-1"><span
 class="header-section-number">8.1.6</span> Attribut mea_period</h3>
-<p><em>Période de mesure de la profondeur du niveau hydrostatique.</em>
-<em>Type de donnée : range</em></p>
+<p><em>Période de mesure de la profondeur du niveau
+hydrostatique.</em></p>
+<p><em>Type de donnée : range</em></p>
 <h2 data-number="8.2" id="construction-l"><span
 class="header-section-number">8.2</span> Classe Construction_L</h2>
 <p>Dans la classe <a href="#construction-l">Construction_L</a> se
@@ -9380,7 +9017,8 @@ d’objets de la classe Surface_Water_PT.</p>
 </tr>
 </tbody>
 </table>
-<p>d’objet peut être combiné.<br />
+<p>d’objet peut être combiné. Les valeurs possibles sont énumérées dans
+la table GC_LIN_HCON_COMBI_CD en annexe de ce document.<br />
 <a href=""></a> | Cardinalité [0..1] | |</p>
 <h3 data-number="8.2.1" id="attribut-kind-44"><span
 class="header-section-number">8.2.1</span> Attribut kind</h3>
@@ -9399,16 +9037,6 @@ class="header-section-number">8.2.1</span> Attribut kind</h3>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td>12201001</td>
-<td>Hcon Wasserfassungsstollen</td>
-<td>galerie de captage d´eau</td>
-</tr>
-<tr class="even">
-<td>12201002</td>
-<td>Hcon künstlicher Gewässerlauf</td>
-<td>écoulement artificiel</td>
-</tr>
 </tbody>
 </table>
 <h3 data-number="8.2.2" id="construction-l-combi"><span
@@ -9493,7 +9121,8 @@ d’eau dans le passé.</p>
 <td>2</td>
 <td><strong>rel_age</strong></td>
 <td><a href="#palaeohydrology-l-rel-age">CodedDomain</a></td>
-<td>Age relatif du type d'objet.</td>
+<td>Age relatif du type d'objet. Les valeurs possibles sont énumérées
+dans la table GC_LIN_HPAL_REL_AGE_CD en annexe de ce document.</td>
 </tr>
 <tr class="even">
 <td><a href=""></a></td>
@@ -9505,8 +9134,8 @@ d’eau dans le passé.</p>
 <td>3</td>
 <td><strong>hpal_chrono</strong></td>
 <td><a href="#gc-chrono-cd">CodedDomain</a></td>
-<td>Attribution chronostratigraphique. Die möglichen Werte sind in der
-Tabelle GC_CHRONO_CD im Anhang dieses Dokumentes verfügbar.</td>
+<td>Attribution chronostratigraphique. Les valeurs possibles sont
+énumérées dans la table GC_CHRONO_CD en annexe de ce document.</td>
 </tr>
 <tr class="even">
 <td><a href=""></a></td>
@@ -9557,41 +9186,6 @@ class="header-section-number">8.3.1</span> Attribut kind</h3>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td>12301001</td>
-<td>Hpal Paläotal</td>
-<td>axe de paléovallée</td>
-</tr>
-<tr class="even">
-<td>12301002</td>
-<td>Hpal ehemalige Entwässerungsrinne</td>
-<td>ancien chenal</td>
-</tr>
-<tr class="odd">
-<td>12301004</td>
-<td>Hpal Trockental</td>
-<td>vallée sèche</td>
-</tr>
-<tr class="even">
-<td>12301005</td>
-<td>Hpal ehemaliges Bachbett</td>
-<td>ancien lit de cours d'eau (ruisseau)</td>
-</tr>
-<tr class="odd">
-<td>12301006</td>
-<td>Hpal Ufer eines ehemaligen Flussbetts</td>
-<td>rive d'un ancien lit de cours d'eau</td>
-</tr>
-<tr class="even">
-<td>12301007</td>
-<td>Hpal ehemalige Uferlinie</td>
-<td>ancienne ligne de rivage</td>
-</tr>
-<tr class="odd">
-<td>12301003</td>
-<td>Hpal ehemalige glaziale Abflussrinne</td>
-<td>axe d'un ancien effluent glaciaire</td>
-</tr>
 </tbody>
 </table>
 <h3 data-number="8.3.2" id="palaeohydrology-l-rel-age"><span
@@ -9640,16 +9234,18 @@ class="header-section-number">8.3.2</span> Attribut rel_age</h3>
 </table>
 <h3 data-number="8.3.3" id="attribut-hpal_chrono"><span
 class="header-section-number">8.3.3</span> Attribut hpal_chrono</h3>
-<p><em>Attribution chronostratigraphique</em> Voir le domaine <a
-href="#gc-chrono-cd">GC_CHRONO_CD</a> dans l’annexe</p>
+<p><em>Attribution chronostratigraphique</em></p>
+<p>Voir le domaine <a href="#gc-chrono-cd">GC_CHRONO_CD</a> dans
+l’annexe</p>
 <h3 data-number="8.3.4" id="attribut-ref_year-2"><span
 class="header-section-number">8.3.4</span> Attribut ref_year</h3>
-<p><em>Année de référence de l’ancienne ligne de rivage.</em> <em>Type
-de donnée : integer</em></p>
+<p><em>Année de référence de l’ancienne ligne de rivage.</em></p>
+<p><em>Type de donnée : integer</em></p>
 <h3 data-number="8.3.5" id="attribut-source-1"><span
 class="header-section-number">8.3.5</span> Attribut source</h3>
-<p><em>Source des données déduites à partir de données historiques.</em>
-<em>Type de donnée : string</em></p>
+<p><em>Source des données déduites à partir de données
+historiques.</em></p>
+<p><em>Type de donnée : string</em></p>
 <h2 data-number="8.4" id="subsurface-water-l"><span
 class="header-section-number">8.4</span> Classe Subsurface_Water_L</h2>
 <p>Dans la classe <a href="#subsurface-water-l">Subsurface_Water_L</a>
@@ -9696,7 +9292,8 @@ Surface_Water_PT.</p>
 </tr>
 </tbody>
 </table>
-<p>d’objet peut être combiné.<br />
+<p>d’objet peut être combiné. Les valeurs possibles sont énumérées dans
+la table GC_LIN_HSUB_COMBI_CD en annexe de ce document.<br />
 <a href=""></a> | Cardinalité [0..1] | |</p>
 <h3 data-number="8.4.1" id="attribut-kind-46"><span
 class="header-section-number">8.4.1</span> Attribut kind</h3>
@@ -9715,11 +9312,6 @@ class="header-section-number">8.4.1</span> Attribut kind</h3>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td>12401001</td>
-<td>Hsub unterirdischer Gewässerlauf</td>
-<td>écoulement souterrain</td>
-</tr>
 </tbody>
 </table>
 <h3 data-number="8.4.2" id="subsurface-water-l-combi"><span
@@ -9810,7 +9402,8 @@ principal de l’eau minérale et non le chimisme complet de l’eau</p>
 <td>2</td>
 <td><strong>status</strong></td>
 <td><a href="#surface-water-pt-status">CodedDomain</a></td>
-<td>État du type d'objet.</td>
+<td>État du type d'objet. Les valeurs possibles sont énumérées dans la
+table GC_PNT_HSUR_STATUS_CD en annexe de ce document.</td>
 </tr>
 <tr class="even">
 <td><a href=""></a></td>
@@ -9822,7 +9415,8 @@ principal de l’eau minérale et non le chimisme complet de l’eau</p>
 <td>3</td>
 <td><strong>flow_con</strong></td>
 <td><a href="#surface-water-pt-flow-con">CodedDomain</a></td>
-<td>Condition d’écoulement.</td>
+<td>Condition d’écoulement. Les valeurs possibles sont énumérées dans la
+table GC_PNT_HSUR_FLOW_CON_CD en annexe de ce document.</td>
 </tr>
 <tr class="even">
 <td><a href=""></a></td>
@@ -9834,7 +9428,9 @@ principal de l’eau minérale et non le chimisme complet de l’eau</p>
 <td>4</td>
 <td><strong>type</strong></td>
 <td><a href="#surface-water-pt-type">CodedDomain</a></td>
-<td>Caractéristique du type d'objet.</td>
+<td>Caractéristique du type d'objet. Les valeurs possibles sont
+énumérées dans la table GC_PNT_HSUR_TYPE_CD en annexe de ce
+document.</td>
 </tr>
 <tr class="even">
 <td><a href=""></a></td>
@@ -9846,7 +9442,8 @@ principal de l’eau minérale et non le chimisme complet de l’eau</p>
 <td>5</td>
 <td><strong>dis_loca</strong></td>
 <td><a href="#surface-water-pt-dis-loca">CodedDomain</a></td>
-<td>Lieu d’écoulement.</td>
+<td>Lieu d’écoulement. Les valeurs possibles sont énumérées dans la
+table GC_PNT_HSUR_DIS_LOCA_CD en annexe de ce document.</td>
 </tr>
 <tr class="even">
 <td><a href=""></a></td>
@@ -9862,7 +9459,8 @@ principal de l’eau minérale et non le chimisme complet de l’eau</p>
 </tr>
 </tbody>
 </table>
-<p>d’objet peut être combiné.<br />
+<p>d’objet peut être combiné. Les valeurs possibles sont énumérées dans
+la table GC_PNT_HSUR_COMBI_CD en annexe de ce document.<br />
 <a href=""></a> | Cardinalité [0..1] | |<br />
 7 | <strong>temp</strong> | integer | Température moyenne (°C) de l'eau.
 <a href=""></a> | Cardinalité [0..1] | |<br />
@@ -9889,36 +9487,6 @@ class="header-section-number">8.5.1</span> Attribut kind</h3>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td>12501001</td>
-<td>Hsur Quelle</td>
-<td>source</td>
-</tr>
-<tr class="even">
-<td>12501002</td>
-<td>Hsur diffuse Quelle</td>
-<td>source diffuse</td>
-</tr>
-<tr class="odd">
-<td>12501003</td>
-<td>Hsur Wiederaustritt eines unterirdischen Bachlaufes</td>
-<td>résurgence d'une rivière souterraine</td>
-</tr>
-<tr class="even">
-<td>12501004</td>
-<td>Hsur Versickerungsstelle eines Baches</td>
-<td>perte d´un cours d´eau</td>
-</tr>
-<tr class="odd">
-<td>12501005</td>
-<td>Hsur Steilstufe in Bachrinne, Wasserfall</td>
-<td>rapide d'un cours d'eau, cascade</td>
-</tr>
-<tr class="even">
-<td>12501006</td>
-<td>Hsur Grundwasseraufstoss</td>
-<td>résurgence des eaux souterraines</td>
-</tr>
 </tbody>
 </table>
 <h3 data-number="8.5.2" id="surface-water-pt-status"><span
@@ -10124,17 +9692,17 @@ class="header-section-number">8.5.6</span> Attribut combi</h3>
 </table>
 <h3 data-number="8.5.7" id="attribut-temp"><span
 class="header-section-number">8.5.7</span> Attribut temp</h3>
-<p><em>Température moyenne (°C) de l'eau.</em> <em>Type de donnée :
-integer</em></p>
+<p><em>Température moyenne (°C) de l'eau.</em></p>
+<p><em>Type de donnée : integer</em></p>
 <h3 data-number="8.5.8" id="attribut-chemistry-2"><span
 class="header-section-number">8.5.8</span> Attribut chemistry</h3>
-<p><em>Element chimique caractéristique dans l’eau minérale.</em>
-<em>Type de donnée : string</em></p>
+<p><em>Element chimique caractéristique dans l’eau minérale.</em></p>
+<p><em>Type de donnée : string</em></p>
 <h3 data-number="8.5.9" id="attribut-azimuth-8"><span
 class="header-section-number">8.5.9</span> Attribut azimuth</h3>
 <p><em>Azimut du type d'objet. L'azimut est mesuré depuis le nord en
-degré de 0° à 359° dans le sens des aiguilles d'une montre</em> <em>Type
-de donnée : integer</em></p>
+degré de 0° à 359° dans le sens des aiguilles d'une montre</em></p>
+<p><em>Type de donnée : integer</em></p>
 <h2 data-number="8.6" id="surface-water-l"><span
 class="header-section-number">8.6</span> Classe Surface_Water_L</h2>
 <p>Dans la classe <a href="#surface-water-l">Surface_Water_L</a> sont
@@ -10186,16 +9754,6 @@ class="header-section-number">8.6.1</span> Attribut kind</h3>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td>12601001</td>
-<td>Hsur Quellhorizont</td>
-<td>niveau de sources, déversement de la nappe phréatique</td>
-</tr>
-<tr class="even">
-<td>12601002</td>
-<td>Hsur Bachlauf</td>
-<td>ruisseau</td>
-</tr>
 </tbody>
 </table>
 <h2 data-number="8.7" id="surface-water-plg"><span
@@ -10252,21 +9810,6 @@ class="header-section-number">8.7.1</span> Attribut kind</h3>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td>12701001</td>
-<td>Hsur Gletscher</td>
-<td>glacier</td>
-</tr>
-<tr class="even">
-<td>12701002</td>
-<td>Hsur See</td>
-<td>lac</td>
-</tr>
-<tr class="odd">
-<td>12701003</td>
-<td>Hsur Fluss</td>
-<td>rivière</td>
-</tr>
 </tbody>
 </table>
 <h1 data-number="9" id="gc-litstrat-bed-cd"><span
