@@ -75,6 +75,8 @@ IGNORE_OBJECTS = clean(
     ]
 )
 
+OUTPUT_DIR = "outdir"
+
 
 class Column:
     def __init__(self, name, type_, primary=False):
@@ -334,7 +336,7 @@ G.layout(prog="neato")  # use dot
 
 G.draw(output_file)  # write previously positioned graph to PNG file
 # G.draw("file.ps", prog="circo")  # use circo to position, write PS file
-G.draw(basename + ".svg")
+G.draw(os.path.join(OUTPUT_DIR, basename + ".svg"))
 G.write(dotfile)
 
 
@@ -395,7 +397,7 @@ for table_name, table in S.puml_tables.items():
         for fk in table[t].keys():
             logger.debug(f"{table_name}, {t}, {fk}")
 
-with open("ER-GCOVER.puml", "w") as f:
+with open(os.path.join(OUTPUT_DIR, "ER-GCOVER.puml"), "w") as f:
     f.write(SP.transform())
 
 yaml = YAML()
@@ -403,5 +405,5 @@ yaml = YAML()
 # Set the output to preserve the order of keys
 yaml.default_flow_style = False
 
-with open("GCOVERP.yaml", "w") as f:
+with open(os.path.join(OUTPUT_DIR, "GCOVERP.yaml"), "w") as f:
     yaml.dump(db_config, f)
