@@ -7,6 +7,8 @@ import logging
 
 logging.basicConfig(format="%(name)s - %(levelname)s - %(message)s", level=logging.INFO)
 
+TREE_TABLES = ['litho', 'litstrat', 'chrono', 'charcat']
+
 def arcgis_table_to_df(in_fc, input_fields=None, query=""):
     """Function will convert an arcgis table into a pandas dataframe with an object ID index, and the selected
     input fields using an arcpy.da.SearchCursor.
@@ -35,7 +37,14 @@ def arcgis_table_to_df(in_fc, input_fields=None, query=""):
 
 aprx = arcpy.mp.ArcGISProject("CURRENT")
 maps = aprx.listMaps()
-basedir = r"H:\code\geocover-examples\datamodel\input"
+try:
+    curdir  = os.path.dirname(os.path.realpath(__file__))
+except NameError:
+    curdir = r'H:\code\geocover-examples\datamodel'
+basedir = os.path.join(curdir, 'exports')
+
+if not  os.path.isdir(basedir):
+    os.makedirs(basedir)
 
 fields = list(
     (
@@ -61,8 +70,13 @@ with pd.ExcelWriter(os.path.join(basedir, f"export_tables.xlsx")) as writer:
             sys.exit(2)
         for table in tables:
             logging.info(table.name)
-            df = arcgis_table_to_df(table.name, input_fields=fields)
-            df['PARENT_REF'] = df['PARENT_REF'].fillna(0)
+
+            try:
+                df = arcgis_table_to_df(table.name, input_fields=fields)
+                df['PARENT_REF'] = df['PARENT_REF'].fillna(0)
+            except KeyError as e:
+                logging.error(f"Table {table.name} has nokey: {e}")
+                continue
 
             df.sort_values(by=['GEOL_CODE_INT', 'PARENT_REF'], inplace=True)
             #df = df.reindex(df.columns.union(fields, sort=False), axis=1, fill_value=0)
