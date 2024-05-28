@@ -4,13 +4,15 @@ import os
 import sys
 import json
 import pygraphviz as pgv
-import yaml
+import  yaml
 
 from loguru import logger
 
 from sql2puml import SQL2PUML
 
 FONTNAME = "DejaVu Sans,Nimbus Sans"
+
+OUTPUT_DIR = "output"
 
 logger.remove(0)
 logger.add(sys.stderr, format="{time} {level} {message}", level="INFO")
@@ -76,6 +78,8 @@ IGNORE_OBJECTS = clean(
 )
 
 
+
+
 class Column:
     def __init__(self, name, type_, primary=False):
         self.name = name
@@ -122,8 +126,8 @@ input_file = "../data/geocover-schema-sde.json"
 basename = os.path.splitext(os.path.basename(input_file))[0]
 
 
-output_file = basename + ".png"
-dotfile = basename + ".dot"
+output_file = os.path.join(OUTPUT_DIR, basename + ".png")
+dotfile = os.path.join(OUTPUT_DIR, basename + ".dot")
 
 
 with open(input_file, "r") as f:
@@ -168,7 +172,7 @@ for t in s["tables"].keys():
         name = field.get("name")
         if name in IGNORE_FIELDS:
             continue
-        typ = field.get("type")
+        typ = field.get("domain") if field.get('domain') is not None else field.get("type")
         S.add_column(name, typ)
         if name.lower() == "uuid":
             primary = True
@@ -193,7 +197,7 @@ for f in s["featclasses"].keys():
     logger.info(f"========FeatureClass {short_name}===============")
     G.add_node(short_name)  # adds node 'a'
     S.add_table(short_name)
-    t = FeatureClass(short_name, "pnt")
+    t = FeatureClass(short_name, "Geometry")
     for field in fields:
         name = field.get("name")
         if name in IGNORE_FIELDS:
@@ -202,7 +206,7 @@ for f in s["featclasses"].keys():
             primary = True
         else:
             primary = False
-        typ = field.get("type")
+        typ = field.get("domain") if field.get("domain") is not None else field.get("type")
         S.add_column(name, typ)
         t.columns.append(Column(name, typ, primary=primary))
     all_tables[short_name] = t
@@ -334,11 +338,11 @@ G.layout(prog="neato")  # use dot
 
 G.draw(output_file)  # write previously positioned graph to PNG file
 # G.draw("file.ps", prog="circo")  # use circo to position, write PS file
-G.draw(basename + ".svg")
+G.draw(os.path.join(OUTPUT_DIR, basename + ".svg"))
 G.write(dotfile)
 
 
-print(
+logger.info(
     "Generate with: dot -Tpng -Kneato -Gsize=8.3,11.7\! -Gdpi=254 -o{} {}".format(
         output_file, dotfile
     )
@@ -349,7 +353,7 @@ import pprint
 from ruamel.yaml import YAML
 from collections import OrderedDict
 
-db_config = {"database": "GCOVERP", "version": 1, "tables": [], "featureclasses": {}}
+db_config = {"database": "GCOVERP", "version": 1, "tables": []}
 
 logger.info("-----------------------")
 
@@ -388,20 +392,33 @@ for name, table in all_tables.items():
         tt["columns"].append(c)
     db_config["tables"].append(tt)
 
-pprint.pprint(db_config)
+coded_domains = s.get('domains')
+for name in coded_domains.keys():
+    logger.info(f"----{name}----")
+    domain_dict = coded_domains[name]
+    SP.add_enum(name, domain_dict)
+
+#pprint.pprint(db_config)
 
 for table_name, table in S.puml_tables.items():
     for t in ("default", "primary", "foreign"):
         for fk in table[t].keys():
             logger.debug(f"{table_name}, {t}, {fk}")
 
-with open("ER-GCOVER.puml", "w") as f:
+puml_file = os.path.join(OUTPUT_DIR, "ER-GCOVER.puml")
+logger.info(f"Writing PUML diagram to {puml_file}")
+
+with open(puml_file, "w") as f:
     f.write(SP.transform())
 
-yaml = YAML()
-
-# Set the output to preserve the order of keys
-yaml.default_flow_style = False
-
-with open("GCOVERP.yaml", "w") as f:
-    yaml.dump(db_config, f)
+yaml_file = os.path.join(OUTPUT_DIR, "GCOVERP.yaml")
+logger.info(f"Writing YAML structure to {yaml_file}")
+with open(yaml_file, "w") as f:
+    yaml.dump(
+        db_config,
+        f,
+        default_flow_style=False,
+        sort_keys=False,
+        allow_unicode=True,
+        encoding=("utf-8"),
+    )

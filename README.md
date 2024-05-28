@@ -10,7 +10,7 @@ particulier la liste des valeurs attributaires possibles.
 Les scripts ne fonctionnent qu'avec Python3 (on est en 2024). Sur BURAUT, on peut utiliser l'installation _conda_ par 
 defaut de _ESRI ArcGis Pro_ (_argispro-py3_) qui contient les modules nécessaires. Sur Linux, il faut au moins :
 
-    conda install jinja2 pyyaml pandas
+    conda install jinja2 pyyaml pandas click loguru --yes
 
 Les scripts, _coded_domain.py_ et _subtype.py_ doivent être excécuté dans un projet ESRI ArcGis Pro avec une connection
 sur la base SDE GCOVER.
@@ -34,12 +34,23 @@ Pour tester l'installation (le numéro de version peut être différent):
 
 ## Extraction des données
 
-Creation des fichiers JSON contenant les _coded domains_ et la liste des _subtypes_
+1. Creation des fichiers JSON contenant les _coded domains_ et la liste des _subtypes_
 
-Dans une fenêtre Python ou un notebook _Jupyter_ exécuter les deux scripts _coded_domains.py_ et
-_subtypes.py_ . Le résultat sont deux fichiers JSON _coded_domains.json_ et _subtypes.json_
+Dans une fenêtre Python ou un notebook _Jupyter_ exécuter les deux scripts `export_coded_domains.py` et
+`export_subtypes.py` . Le résultat sont deux fichiers JSON _coded_domains.json_ et _subtypes.json_
+
+2. Extraction des tables hiérarchiques : `litho`,  `litstrat`, `chrono` et `tecto`
+
+Dans ArcGis Pro, charger et exécuter le script : `export_tables.py`
+
+3. Export de la structure Oracle : 
+
+Dans ArcGis Pro, charger et exécuter le script : `export_oracle_tables.py`
+
+4. Export des champs obligatoires :
 
 
+    python export_mandatory.py
 
 ## Traductions
 

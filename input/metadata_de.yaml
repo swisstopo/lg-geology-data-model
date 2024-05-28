@@ -1,0 +1,29 @@
+---
+title: GeoCover Datenmodell, Version 3.5
+subtitle: Beschreibung und Datenkatalog
+author: Bundesamt für Landestopographie swisstopo
+date: April 2024
+keywords:
+  - "GeoCover"
+  - "Metadata"
+  - "Model"
+  - "GIS"
+  - "Vector data"
+  - "Geology"
+  - "Switzerland"
+subject: Geologische Landesaufnahme der Schweiz
+lang: de
+
+fontsize: 10pt
+geometry: "left=3cm,right=2cm,top=3cm,bottom=3cm"
+colorlinks: true
+linkcolor: teal
+urlcolor: teal
+toccolor: gray
+
+# PDF
+papersize: a4
+fontsize: "10pt"
+mainfont: "DejaVu Sans"
+
+---
