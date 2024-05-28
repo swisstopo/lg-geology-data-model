@@ -155,67 +155,67 @@ tables:
     type: Guid
     primary_key: false
   - name: FMAT_META_MINERAL1
-    type: Integer
+    type: GC_MINERAL_CD
     primary_key: false
   - name: FMAT_META_MINERAL2
-    type: Integer
+    type: GC_MINERAL_CD
     primary_key: false
   - name: FMAT_META_MINERAL3
-    type: Integer
+    type: GC_MINERAL_CD
     primary_key: false
   - name: FMAT_META_STR1
-    type: Integer
+    type: GC_META_STR_CD
     primary_key: false
   - name: FMAT_META_STR2
-    type: Integer
+    type: GC_META_STR_CD
     primary_key: false
   - name: FMAT_META_STR3
-    type: Integer
+    type: GC_META_STR_CD
     primary_key: false
   - name: FMAT_SEDI_BEDDING1
-    type: Integer
+    type: GC_BEDDING_CD
     primary_key: false
   - name: FMAT_SEDI_BEDDING2
-    type: Integer
+    type: GC_BEDDING_CD
     primary_key: false
   - name: FMAT_SEDI_BOND_MAT
-    type: Integer
+    type: GC_BOND_MAT_CD
     primary_key: false
   - name: FMAT_SEDI_MAIN_COM
-    type: Integer
+    type: GC_MAIN_COM_CD
     primary_key: false
   - name: FMAT_SEDI_SECO_COM1
-    type: Integer
+    type: GC_SECO_COM_CD
     primary_key: false
   - name: FMAT_SEDI_SECO_COM2
-    type: Integer
+    type: GC_SECO_COM_CD
     primary_key: false
   - name: FMAT_SEDI_STR1
-    type: Integer
+    type: GC_SEDI_STR_CD
     primary_key: false
   - name: FMAT_SEDI_STR2
-    type: Integer
+    type: GC_SEDI_STR_CD
     primary_key: false
   - name: FMAT_SEDI_TEX1
-    type: Integer
+    type: GC_SEDI_TEX_CD
     primary_key: false
   - name: FMAT_SEDI_TEX2
-    type: Integer
+    type: GC_SEDI_TEX_CD
     primary_key: false
   - name: FMAT_IGNE_TEX
-    type: Integer
+    type: GC_IGNE_TEX_CD
     primary_key: false
   - name: FMAT_IGNE_GRAIN_SI
-    type: Integer
+    type: GC_GRAIN_SI_CD
     primary_key: false
   - name: FMAT_IGNE_AFFINITY
-    type: Integer
+    type: GC_AFFINITY_CD
     primary_key: false
   - name: FMAT_META_FULL_NAME
     type: String
     primary_key: false
   - name: FMAT_LITSTRAT
-    type: Integer
+    type: GC_LITSTRAT_BED_CD
     primary_key: false
 - name: GC_SYSTEM
   columns:
@@ -269,10 +269,10 @@ tables:
     type: String
     primary_key: false
   - name: AEXP_STATUS
-    type: Integer
+    type: GC_EX_GEO_PLG_AEXP_STATUS_CD
     primary_key: false
   - name: AEXP_TARG_MAT
-    type: Integer
+    type: GC_EX_GEO_PLG_AEXP_TARG_MAT_CD
     primary_key: false
   - name: SHAPE
     type: Geometry
@@ -289,82 +289,82 @@ tables:
     type: String
     primary_key: false
   - name: HPAL_CHRONO
-    type: Integer
+    type: GC_CHRONO_CD
     primary_key: false
   - name: LPRO_LITHO
-    type: Integer
+    type: GC_LITHO_CD
     primary_key: false
   - name: PCOB_FORMATIO
-    type: Integer
+    type: GC_LITSTRAT_BED_CD
     primary_key: false
   - name: AARC_EPOCH
-    type: Integer
+    type: GC_AARC_EPOCH_CD
     primary_key: false
   - name: AARC_PERIOD
-    type: Integer
+    type: GC_AARC_PERIOD_CD
     primary_key: false
   - name: AARC_AGE
-    type: Integer
+    type: GC_AARC_AGE_CD
     primary_key: false
   - name: AEXP_STATUS
-    type: Integer
+    type: GC_LIN_AEXP_STATUS_CD
     primary_key: false
   - name: GALL_AGE
-    type: Integer
+    type: GC_LIN_GALL_AGE_CD
     primary_key: false
   - name: GGLA_MORAI_MO
-    type: Integer
+    type: GC_LIN_GGLA_MORAI_MO_CD
     primary_key: false
   - name: GGLA_GLAC_TYP
-    type: Integer
+    type: GC_LIN_GGLA_GLAC_TYP_CD
     primary_key: false
   - name: GGLA_ICE_M_P
-    type: Integer
+    type: GC_LIN_GGLA_ICE_M_P_CD
     primary_key: false
   - name: GGLA_QUAT_STR
-    type: Integer
+    type: GC_LIN_GGLA_QUAT_STR_CD
     primary_key: false
   - name: HCON_COMBI
-    type: Integer
+    type: GC_LIN_HCON_COMBI_CD
     primary_key: false
   - name: HPAL_REL_AGE
-    type: Integer
+    type: GC_LIN_HPAL_REL_AGE_CD
     primary_key: false
   - name: HSUB_COMBI
-    type: Integer
+    type: GC_LIN_HSUB_COMBI_CD
     primary_key: false
   - name: LGEO_STATUS
-    type: Integer
+    type: GC_LIN_LGEO_STATUS_CD
     primary_key: false
   - name: LPRO_CONG_SPE
-    type: Integer
+    type: GC_LIN_LPRO_CONG_SPE_CD
     primary_key: false
   - name: LPRO_NAME_HORIZ
-    type: Integer
+    type: GC_LITSTRAT_BED_CD
     primary_key: false
   - name: PCOB_TYPE
-    type: Integer
+    type: GC_LIN_PCOB_TYPE_CD
     primary_key: false
   - name: PCOH_CONFINE
-    type: Integer
+    type: GC_LIN_PCOH_CONFINE_CD
     primary_key: false
   - name: PCOH_WA_TABLE
-    type: Integer
+    type: GC_LIN_PCOH_WA_TABLE_CD
     primary_key: false
   - name: TTEC_FAULT_MO
-    type: Integer
+    type: GC_LIN_TTEC_FAULT_MO_CD
     primary_key: false
   - name: TTEC_VERTI_MO
-    type: Integer
+    type: GC_LIN_TTEC_VERTI_MO_CD
     primary_key: false
   - name: TTEC_HORIZ_MO
-    type: Integer
+    type: GC_LIN_TTEC_HORIZ_MO_CD
     primary_key: false
   - name: TTEC_STATUS
-    type: Integer
+    type: GC_LIN_TTEC_STATUS_CD
     primary_key: false
   - name: TTEC_META_STA
-    type: Integer
+    type: GC_LIN_TTEC_META_STA_CD
     primary_key: false
   - name: GGLA_REF_YEAR
     type: Integer
@@ -397,13 +397,13 @@ tables:
     type: Geometry
     primary_key: false
   - name: PRINTED
-    type: Integer
+    type: GC_BOOLEAN_CD
     primary_key: false
   - name: TTEC_LIM_TYP
-    type: Integer
+    type: GC_LIN_TTEC_LIM_TYP
     primary_key: false
   - name: TTEC_HIERA
-    type: Integer
+    type: GC_LIN_TTEC_HIERA_CD
     primary_key: false
 - name: GC_POINT_OBJECTS
   columns:
@@ -417,115 +417,115 @@ tables:
     type: String
     primary_key: false
   - name: RUNC_MAT_TYPE
-    type: Integer
+    type: GC_LITHO_CD
     primary_key: false
   - name: ABOR_FM_A
-    type: Integer
+    type: GC_LITSTRAT_CD
     primary_key: false
   - name: ABOR_FM_B
-    type: Integer
+    type: GC_LITSTRAT_CD
     primary_key: false
   - name: PSLO_FORMATIO
-    type: Integer
+    type: GC_LITSTRAT_BED_CD
     primary_key: false
   - name: AARC_EPOCH
-    type: Integer
+    type: GC_AARC_EPOCH_CD
     primary_key: false
   - name: AARC_PERIOD
-    type: Integer
+    type: GC_AARC_PERIOD_CD
     primary_key: false
   - name: AARC_AGE
-    type: Integer
+    type: GC_AARC_AGE_CD
     primary_key: false
   - name: AARC_TYPE
-    type: Integer
+    type: GC_PNT_AARC_TYPE_CD
     primary_key: false
   - name: ABOR_MAIN_TAR
-    type: Integer
+    type: GC_PNT_ABOR_MAIN_TAR_CD
     primary_key: false
   - name: ABOR_TARG_MAT
-    type: Integer
+    type: GC_PNT_ABOR_TARG_MAT_CD
     primary_key: false
   - name: ABOR_D_C_UNDERG
-    type: Integer
+    type: GC_BOOLEAN_CD
     primary_key: false
   - name: GKAR_ICE_CAVE
-    type: Integer
+    type: GC_BOOLEAN_CD
     primary_key: false
   - name: HCON_STATUS
-    type: Integer
+    type: GC_PNT_HCON_STATUS_CD
     primary_key: false
   - name: HCON_EPOCH
-    type: Integer
+    type: GC_PNT_HCON_EPOCH_CD
     primary_key: false
   - name: HSUR_STATUS
-    type: Integer
+    type: GC_PNT_HSUR_STATUS_CD
     primary_key: false
   - name: HSUR_FLOW_CON
-    type: Integer
+    type: GC_PNT_HSUR_FLOW_CON_CD
     primary_key: false
   - name: HSUR_TYPE
-    type: Integer
+    type: GC_PNT_HSUR_TYPE_CD
     primary_key: false
   - name: HSUR_DIS_LOCA
-    type: Integer
+    type: GC_PNT_HSUR_DIS_LOCA_CD
     primary_key: false
   - name: HSUR_COMBI
-    type: Integer
+    type: GC_PNT_HSUR_COMBI_CD
     primary_key: false
   - name: LANO_TYPE
-    type: Integer
+    type: GC_PNT_LANO_TYPE_CD
     primary_key: false
   - name: LRES_STATUS
-    type: Integer
+    type: GC_PNT_LRES_STATUS_CD
     primary_key: false
   - name: LRES_MATERIAL
-    type: Integer
+    type: GC_PNT_LRES_MATERIAL_CD
     primary_key: false
   - name: LTYP_STRATI
-    type: Integer
+    type: GC_PNT_LTYP_STRATI_CD
     primary_key: false
   - name: LTYP_ACCESSIBIL
-    type: Integer
+    type: GC_BOOLEAN_CD
     primary_key: false
   - name: LTYP_PROTECTED
-    type: Integer
+    type: GC_BOOLEAN_CD
     primary_key: false
   - name: MFOL_FOLD_TYP
-    type: Integer
+    type: GC_PNT_MFOL_FOLD_TYP_CD
     primary_key: false
   - name: MFOL_PHASE
-    type: Integer
+    type: GC_PNT_MFOL_PHASE_CD
     primary_key: false
   - name: MPLA_POLARITY
-    type: Integer
+    type: GC_PNT_MPLA_POLARITY_CD
     primary_key: false
   - name: MPLA_PHASE
-    type: Integer
+    type: GC_PNT_MPLA_PHASE_CD
     primary_key: false
   - name: MPLA_OB_DIP_SLO
-    type: Integer
+    type: GC_BOOLEAN_CD
     primary_key: false
   - name: PSLO_TYPE
-    type: Integer
+    type: GC_PNT_PSLO_TYPE_CD
     primary_key: false
   - name: RUNC_STATUS
-    type: Integer
+    type: GC_PNT_RUNC_STATUS_CD
     primary_key: false
   - name: RUNC_ROCK_TYP
-    type: Integer
+    type: GC_PNT_RUNC_ROCK_TYP_CD
     primary_key: false
   - name: RUNC_ROCK_SPE
-    type: Integer
+    type: GC_LITSTRAT_BED_CD
     primary_key: false
   - name: RUNC_PROTECTED
-    type: Integer
+    type: GC_BOOLEAN_CD
     primary_key: false
   - name: TDEF_FOLD_TYP
-    type: Integer
+    type: GC_PNT_TDEF_FOLD_TYP_CD
     primary_key: false
   - name: TDEF_FOLD_FOR
-    type: Integer
+    type: GC_PNT_TDEF_FOLD_FOR_CD
     primary_key: false
   - name: ABOR_DEPTH_BEDR
     type: Double
@@ -597,10 +597,10 @@ tables:
     type: Geometry
     primary_key: false
   - name: PRINTED
-    type: Integer
+    type: GC_BOOLEAN_CD
     primary_key: false
   - name: ABOR_LITHO
-    type: Integer
+    type: GC_LITHO_CD
     primary_key: false
 - name: GC_FOSSILS
   columns:
@@ -614,22 +614,22 @@ tables:
     type: String
     primary_key: false
   - name: LFOS_DIVISION
-    type: Integer
+    type: GC_FOSS_LFOS_DIVISION_CD
     primary_key: false
   - name: LFOS_DAT_METH
-    type: Integer
+    type: GC_FOSS_LFOS_DAT_METH_CD
     primary_key: false
   - name: LFOS_STATUS
-    type: Integer
+    type: GC_FOSS_LFOS_STATUS_CD
     primary_key: false
   - name: LFOS_PROTECTED
-    type: Integer
+    type: GC_BOOLEAN_CD
     primary_key: false
   - name: SHAPE
     type: Geometry
     primary_key: false
   - name: PRINTED
-    type: Integer
+    type: GC_BOOLEAN_CD
     primary_key: false
 - name: GC_UNCO_DESPOSIT
   columns:
@@ -643,34 +643,34 @@ tables:
     type: String
     primary_key: false
   - name: RUNC_CHRONO_T
-    type: Integer
+    type: GC_CHRONO_CD
     primary_key: false
   - name: RUNC_CHRONO_B
-    type: Integer
+    type: GC_CHRONO_CD
     primary_key: false
   - name: RUNC_LITHO
-    type: Integer
+    type: GC_LITHO_UNCO_CD
     primary_key: false
   - name: RUNC_LITSTRAT
-    type: Integer
+    type: GC_LITSTRAT_UNCO_CD
     primary_key: false
   - name: RUNC_HARMOS_REV
-    type: Integer
+    type: GC_HARMOS_REV_CD
     primary_key: false
   - name: RUNC_STRUCTUR
-    type: Integer
+    type: GC_UN_DEP_RUNC_STRUCTUR_CD
     primary_key: false
   - name: RUNC_MORPHOLO
-    type: Integer
+    type: GC_UN_DEP_RUNC_MORPHOLO_CD
     primary_key: false
   - name: RUNC_GLAC_TYP
-    type: Integer
+    type: GC_UN_DEP_RUNC_GLAC_TYP_CD
     primary_key: false
   - name: RUNC_THIN_COV
-    type: Integer
+    type: GC_UN_DEP_RUNC_THIN_COV_CD
     primary_key: false
   - name: RUNC_BURIED_OUT
-    type: Integer
+    type: GC_BOOLEAN_CD
     primary_key: false
   - name: RUNC_ORIG_DESCR
     type: String
@@ -696,25 +696,25 @@ tables:
     type: String
     primary_key: false
   - name: RBED_CHRONO_T
-    type: Integer
+    type: GC_CHRONO_CD
     primary_key: false
   - name: RBED_CHRONO_B
-    type: Integer
+    type: GC_CHRONO_CD
     primary_key: false
   - name: RBED_CHRONO_B_LOC
-    type: Integer
+    type: GC_CHRONO_CD
     primary_key: false
   - name: RBED_CHRONO_T_LOC
-    type: Integer
+    type: GC_CHRONO_CD
     primary_key: false
   - name: RBED_TECTO
-    type: Integer
+    type: GC_TECTO_CD
     primary_key: false
   - name: RBED_HARMOS_REV
-    type: Integer
+    type: GC_HARMOS_REV_CD
     primary_key: false
   - name: RBED_EXOTIC_ELE
-    type: Integer
+    type: GC_BOOLEAN_CD
     primary_key: false
   - name: RBED_ORIG_DESCR
     type: String
@@ -748,19 +748,19 @@ tables:
     type: String
     primary_key: false
   - name: AARC_EPOCH
-    type: Integer
+    type: GC_AARC_EPOCH_CD
     primary_key: false
   - name: AARC_PERIOD
-    type: Integer
+    type: GC_AARC_PERIOD_CD
     primary_key: false
   - name: AARC_AGE
-    type: Integer
+    type: GC_AARC_AGE_CD
     primary_key: false
   - name: GINS_MAIN_MOV
-    type: Integer
+    type: GC_SURF_GINS_MAIN_MOV_CD
     primary_key: false
   - name: TDEF_TYPE
-    type: Integer
+    type: GC_SURF_TDEF_TYPE_CD
     primary_key: false
   - name: SHAPE
     type: Geometry
@@ -777,10 +777,10 @@ tables:
     type: String
     primary_key: false
   - name: AEXP_STATUS
-    type: Integer
+    type: GC_EX_GEO_PNT_AEXP_STATUS_CD
     primary_key: false
   - name: AEXP_TARG_MAT
-    type: Integer
+    type: GC_EX_GEO_PNT_AEXP_TARG_MAT_CD
     primary_key: false
   - name: AEXP_DEPTH_TOT
     type: Double
@@ -789,7 +789,7 @@ tables:
     type: Geometry
     primary_key: false
   - name: PRINTED
-    type: Integer
+    type: GC_BOOLEAN_CD
     primary_key: false
 - name: GC_UNCO_DESPOSIT_GC_LITHO
   columns:
@@ -871,4 +871,3 @@ tables:
       name: GC_LITSTRAT_UUID
       type: Guid
       reference: GC_LITSTRAT
-featureclasses: {}

@@ -172,7 +172,7 @@ for t in s["tables"].keys():
         name = field.get("name")
         if name in IGNORE_FIELDS:
             continue
-        typ = field.get("type")
+        typ = field.get("domain") if field.get('domain') is not None else field.get("type")
         S.add_column(name, typ)
         if name.lower() == "uuid":
             primary = True
@@ -197,7 +197,7 @@ for f in s["featclasses"].keys():
     logger.info(f"========FeatureClass {short_name}===============")
     G.add_node(short_name)  # adds node 'a'
     S.add_table(short_name)
-    t = FeatureClass(short_name, "pnt")
+    t = FeatureClass(short_name, "Geometry")
     for field in fields:
         name = field.get("name")
         if name in IGNORE_FIELDS:
@@ -206,7 +206,7 @@ for f in s["featclasses"].keys():
             primary = True
         else:
             primary = False
-        typ = field.get("type")
+        typ = field.get("domain") if field.get("domain") is not None else field.get("type")
         S.add_column(name, typ)
         t.columns.append(Column(name, typ, primary=primary))
     all_tables[short_name] = t
@@ -342,7 +342,7 @@ G.draw(os.path.join(OUTPUT_DIR, basename + ".svg"))
 G.write(dotfile)
 
 
-print(
+logger.info(
     "Generate with: dot -Tpng -Kneato -Gsize=8.3,11.7\! -Gdpi=254 -o{} {}".format(
         output_file, dotfile
     )
@@ -353,7 +353,7 @@ import pprint
 from ruamel.yaml import YAML
 from collections import OrderedDict
 
-db_config = {"database": "GCOVERP", "version": 1, "tables": [], "featureclasses": {}}
+db_config = {"database": "GCOVERP", "version": 1, "tables": []}
 
 logger.info("-----------------------")
 
@@ -392,21 +392,28 @@ for name, table in all_tables.items():
         tt["columns"].append(c)
     db_config["tables"].append(tt)
 
-pprint.pprint(db_config)
+coded_domains = s.get('domains')
+for name in coded_domains.keys():
+    logger.info(f"----{name}----")
+    domain_dict = coded_domains[name]
+    SP.add_enum(name, domain_dict)
+
+#pprint.pprint(db_config)
 
 for table_name, table in S.puml_tables.items():
     for t in ("default", "primary", "foreign"):
         for fk in table[t].keys():
             logger.debug(f"{table_name}, {t}, {fk}")
 
-with open(os.path.join(OUTPUT_DIR, "ER-GCOVER.puml"), "w") as f:
+puml_file = os.path.join(OUTPUT_DIR, "ER-GCOVER.puml")
+logger.info(f"Writing PUML diagram to {puml_file}")
+
+with open(puml_file, "w") as f:
     f.write(SP.transform())
 
-
-
-
-
-with open(os.path.join(OUTPUT_DIR, "GCOVERP.yaml"), "w") as f:
+yaml_file = os.path.join(OUTPUT_DIR, "GCOVERP.yaml")
+logger.info(f"Writing YAML structure to {yaml_file}")
+with open(yaml_file, "w") as f:
     yaml.dump(
         db_config,
         f,

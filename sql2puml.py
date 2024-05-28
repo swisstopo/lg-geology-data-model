@@ -52,9 +52,11 @@ scale 2
 !define table(x) class x << (T,#FFAAAA) >>
 !define view(x) class x << (V,#FFAAAA) >>
 !define ent(x) class x << (E,#FFAAAA) >>
+!define enum(x) class x << (E,#FFAAAA) >>
 
 !define primary_key(x) <b>PK: x</b>
 !define foreign_key(x,reference) <b>FK: </b>x
+!define key(x) <b>x</b>
 hide methods
 hide stereotypes
 
@@ -65,6 +67,17 @@ hide stereotypes
     puml_tables = OrderedDict()
     # Equals name of the table if processing a table.
     current_table = None
+
+    # Template structure when the SQL is parsed.
+    puml_enumerations = OrderedDict()
+
+    def add_enum(self, name, enum):
+        """
+        Add an enumeration to the PUML structure.
+
+        :param name: Name of the enumeration.
+        """
+        self.puml_enumerations[name] = enum
 
     def add_table(self, name):
         """
@@ -161,7 +174,7 @@ hide stereotypes
 
             # Add regular columns.
             for cname, ctype  in table['default'].items():
-                puml_lines.append('\t{} {}'.format(cname, ctype))
+                puml_lines.append('\tkey({}) {}'.format(cname, ctype))
 
             # Close the table.
             puml_lines.append('}')
@@ -174,6 +187,19 @@ hide stereotypes
                 foreign_table = fk[1].split('.')[0]
                 if foreign_table != table_name:
                     puml_lines.append('{} "0..n" -- "1..1" {}'.format(table_name, foreign_table))
+        puml_lines.append('')
+
+        # Add the puml_enumerations
+        for enum_name, enum in self.puml_enumerations.items():
+            # Add PUML code for the beggining of the enum.
+            puml_lines.append('enum({}) '.format(enum_name) + '{')
+            # Add PUML lines for all primary keys.
+            for cname, ctype  in enum.items():
+                 puml_lines.append('\tkey({}) {}'.format(cname, ctype))
+            # Close the enum.
+            puml_lines.append('}')
+            # Add a single empty line.
+            puml_lines.append('')
 
         # Add a single empty line.
         puml_lines.append('')
