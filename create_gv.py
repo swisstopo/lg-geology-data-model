@@ -121,7 +121,7 @@ class FeatureClass(Table):
         self.geometry = geo
 
 
-input_file = "../data/geocover-schema-sde.json"
+input_file = "input/geocover-schema-sde.json"
 
 basename = os.path.splitext(os.path.basename(input_file))[0]
 

@@ -3,13 +3,16 @@
 # Help target
 help:
 	@echo "Usage:"
-	@echo "  make all    - Generate all files (PDF, DOCX, HTML and ODT for all languages)"
-	@echo "  make pdf    - Generate only PDF files for all languages"
-	@echo "  make docx    - Generate only PDF files for all languages"
-	@echo "  make de     - Generate all files (PDF, DOCX, HTML and ODT) for German"
-	@echo "  make fr     - Generate all files (PDF, DOCX, HTML and ODT) for French"
-	@echo "  make clean  - Remove all generated files"
-	@echo "  make help   - Display this help message"
+	@echo "  make docs     - Generate all files (PDF, DOCX, HTML and ODT for all languages)"
+	@echo "  make pdf      - Generate only PDF files for all languages"
+	@echo "  make docx     - Generate only PDF files for all languages"
+	@echo "  make de       - Generate all files (PDF, DOCX, HTML and ODT) for German"
+	@echo "  make fr       - Generate all files (PDF, DOCX, HTML and ODT) for French"
+	@echo "  make babel    - Generate .mo translation files"
+	@echo "  make markdown - Generate markdown files"
+	@echo "  make diagram  - Generate ER diagram"
+	@echo "  make clean    - Remove all generated files"
+	@echo "  make help     - Display this help message"
 	
 	
 INPUT_DIR = input
@@ -68,7 +71,7 @@ RM=/bin/rm
 
 
 # Default target
-all: babel $(TARGETS)
+docs: babel $(TARGETS)
 
 # Target to generate only PDF files
 pdf: $(PDF_TARGETS)
@@ -79,14 +82,21 @@ docx: $(DOCX_TARGETS)
 de: $(DE_TARGETS)
 fr: $(FR_TARGETS)
 
-
+all: markdown diagram docs
 
 # Phony targets
-.PHONY: all pdf clean de fr help
+.PHONY: all clean de fr help
 
 babel:
 	pybabel compile --domain=app --directory=locale --use-fuzzy
 	pybabel compile --domain=datamodel --directory=locale --use-fuzzy
+
+markdown: babel
+	python datamodel.py --lang=de
+	python datamodel.py --lang=de
+
+diagram:
+	python create_gv.py
 
 # Pattern rule for conversion
 $(OUTPUT_DIR)/datamodel_%.pdf: $(INPUT_DIR)/datamodel_%.md

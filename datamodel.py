@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import yaml
 import json
 import pprint
@@ -28,7 +29,7 @@ with open(os.path.join(input_dir, "subtypes_dict.json"), "r") as f:
     subtypes = json.load(f)
 
 
-df = pd.read_csv("../data/GeolCodeText_Trad_230317.csv", sep=";")
+df = pd.read_csv(os.path.join(input_dir, "GeolCodeText_Trad_230317.csv"), sep=";")
 
 po_header_tpl = '''
 # SOME DESCRIPTIVE TITLE
