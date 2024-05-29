@@ -1,0 +1,71 @@
+name: Build PDF with Pandoc
+
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+      - pandoc_action
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  build-markdown:
+    name: Generating Markdown files
+    runs-on: "ubuntu-latest"
+    steps:
+      - name: Set up TeX Live
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y texlive-xetex texlive-fonts-recommended texlive-plain-generic
+
+      - name: Install Pandoc
+        run: sudo apt-get install -y pandoc
+      - uses: actions/checkout@v4
+        
+      - name: Install miniconda
+        uses: conda-incubator/setup-miniconda@v3
+        with:
+          python-version: 3.12.3
+          mamba-version: "*"
+          channels: conda-forge,defaults
+          channel-priority: true
+          activate-environment: DATAMODEL
+          environment-file: environment.yaml
+          
+      - name: Check conda installation
+        shell: bash -el {0}
+        run: |
+          conda info
+          conda list
+          conda config --show-sources
+          conda config --show
+          printenv | sort
+          
+      
+      
+      
+
+      - shell: bash -el {0}
+        run: make markdown
+        
+      - shell: bash -el {0}
+        run: |
+          python ./datamodel.py  --lang de
+          python ./datamodel.py  --lang fr
+          python ./create_gv.py
+    
+      - name: Build all targets
+        run: make docs
+      
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: document-artifacts
+          path: |
+            output/datamodel_de.pdf
+            output/datamodel_fr.pdf 
+            output/datamodel_de.docx
+            output/datamodel_fr.docx
