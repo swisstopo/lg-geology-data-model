@@ -58,7 +58,7 @@ jobs:
         uses: rotaract/plantuml-action@v1
         with:
           format: svg
-          pattern: "*.puml"
+          pattern: "output/*.puml"
 
       
       - name: Upload Artifacts
@@ -74,4 +74,4 @@ jobs:
             output/datamodel_de.html
             output/datamodel.css
             output/geocover.png
-            "**.svg"
+            "output/*.svg"
