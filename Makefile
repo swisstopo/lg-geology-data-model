@@ -114,7 +114,7 @@ babel:
 
 markdown: babel
 	python datamodel.py --lang=de
-	python datamodel.py --lang=de
+	python datamodel.py --lang=fr
 
 diagram:
 	python create_gv.py
