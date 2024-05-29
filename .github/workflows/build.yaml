@@ -43,10 +43,6 @@ jobs:
           conda config --show-sources
           conda config --show
           printenv | sort
-          
-      
-      
-      
 
       - shell: bash -el {0}
         run: make markdown
