@@ -19,18 +19,22 @@ INPUT_DIR = input
 OUTPUT_DIR = output
 SOURCES = $(wildcard $(INPUT_DIR)/datamodel_*.md)
 FORMATS = pdf docx odt html
+CSS = datamodel.css
 
 # Extract base names and languages from sources
 BASENAMES = $(basename $(notdir $(SOURCES)))
 LANGUAGES = $(patsubst datamodel_%, %, $(BASENAMES))
 
 PANDOC=/usr/bin/pandoc
+RM=/bin/rm
+CP=/usr/bin/cp
 
+# Options for all doc format
 PANDOC_OPTIONS=--standalone \
          -V papersize:a4   \
          --number-sections \
          --shift-heading-level-by=-1  \
-        --variable mainfont="DejaVu Sans" \
+         --variable mainfont="DejaVu Sans" \
          -V colorlinks=true \
          -V linkcolor=teal \
          -V urlcolor=teal \
@@ -41,7 +45,8 @@ PANDOC_OPTIONS=--standalone \
 OPTIONS_de = --metadata lang=de  --metadata-file=metadata_de.yaml -V lang=de
 OPTIONS_fr = --metadata lang=fr  --metadata-file=metadata_fr.yaml -V lang=fr
 
-PANDOC_HTML_OPTIONS=--to html5
+# format specific options
+PANDOC_HTML_OPTIONS=--to html5 --toc  --css $(CSS)
 PANDOC_PDF_OPTIONS=--pdf-engine=xelatex 
 PANDOC_DOCX_OPTIONS=
 PANDOC_ODT_OPTIONS=
@@ -55,16 +60,24 @@ TARGETS = $(foreach lang, $(LANGUAGES), \
 PDF_TARGETS = $(foreach lang, $(LANGUAGES), \
                 $(OUTPUT_DIR)/datamodel_$(lang).pdf)
                 
-# Define PDF target files
+# Define Microsoft .docx target files
 DOCX_TARGETS = $(foreach lang, $(LANGUAGES), \
                 $(OUTPUT_DIR)/datamodel_$(lang).docx)
+                
+# Define LibreOffice .odt target files
+ODT_TARGETS = $(foreach lang, $(LANGUAGES), \
+                $(OUTPUT_DIR)/datamodel_$(lang).odt)
+                
+# Define HTML target files
+HTML_TARGETS = $(foreach lang, $(LANGUAGES), \
+                $(OUTPUT_DIR)/datamodel_$(lang).html)
                 
 # Define language-specific target files
 DE_TARGETS = $(foreach format, $(FORMATS), $(OUTPUT_DIR)/datamodel_de.$(format))
 FR_TARGETS = $(foreach format, $(FORMATS), $(OUTPUT_DIR)/datamodel_fr.$(format))
 
               
-RM=/bin/rm
+
 
 # $(info $$TARGETS  is [${TARGETS}])
 
@@ -78,6 +91,14 @@ pdf: $(PDF_TARGETS)
 
 # Target to generate only docx files
 docx: $(DOCX_TARGETS)
+
+# Target to generate only docx files
+odt: $(ODT_TARGETS)
+
+# Target to generate only html files
+html: $(HTML_TARGETS)
+	$(CP) $(CSS) $(OUTPUT_DIR)
+	$(CP) geocover.png $(OUTPUT_DIR)
 
 de: $(DE_TARGETS)
 fr: $(FR_TARGETS)
@@ -93,7 +114,7 @@ babel:
 
 markdown: babel
 	python datamodel.py --lang=de
-	python datamodel.py --lang=de
+	python datamodel.py --lang=fr
 
 diagram:
 	python create_gv.py

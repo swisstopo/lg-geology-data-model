@@ -24,7 +24,6 @@ jobs:
       - name: Install Pandoc
         run: sudo apt-get install -y pandoc
       - uses: actions/checkout@v4
-        
       - name: Install miniconda
         uses: conda-incubator/setup-miniconda@v3
         with:
@@ -34,7 +33,6 @@ jobs:
           channel-priority: true
           activate-environment: DATAMODEL
           environment-file: environment.yaml
-          
       - name: Check conda installation
         shell: bash -el {0}
         run: |
@@ -43,14 +41,11 @@ jobs:
           conda config --show-sources
           conda config --show
           printenv | sort
-          
-      
-      
-      
+
 
       - shell: bash -el {0}
         run: make markdown
-        
+
       - shell: bash -el {0}
         run: |
           python ./datamodel.py  --lang de
@@ -69,3 +64,7 @@ jobs:
             output/datamodel_fr.pdf 
             output/datamodel_de.docx
             output/datamodel_fr.docx
+            output/datamodel_fr.html
+            output/datamodel_de.html
+            output/datamodel.css
+            output/geocover.png

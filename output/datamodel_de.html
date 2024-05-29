@@ -9,153 +9,6 @@
 data, Geology, Switzerland" />
   <title>Geologisches Datamodel, Revision 3.5</title>
   <style>
-    html {
-      font-family: DejaVu Sans;
-      font-size: 10pt;
-      color: #1a1a1a;
-      background-color: #fdfdfd;
-    }
-    body {
-      margin: 0 auto;
-      max-width: 36em;
-      padding-left: 50px;
-      padding-right: 50px;
-      padding-top: 50px;
-      padding-bottom: 50px;
-      hyphens: auto;
-      overflow-wrap: break-word;
-      text-rendering: optimizeLegibility;
-      font-kerning: normal;
-    }
-    @media (max-width: 600px) {
-      body {
-        font-size: 0.9em;
-        padding: 12px;
-      }
-      h1 {
-        font-size: 1.8em;
-      }
-    }
-    @media print {
-      html {
-        background-color: white;
-      }
-      body {
-        background-color: transparent;
-        color: black;
-        font-size: 12pt;
-      }
-      p, h2, h3 {
-        orphans: 3;
-        widows: 3;
-      }
-      h2, h3, h4 {
-        page-break-after: avoid;
-      }
-    }
-    p {
-      margin: 1em 0;
-    }
-    a {
-      color: teal;
-    }
-    a:visited {
-      color: teal;
-    }
-    img {
-      max-width: 100%;
-    }
-    svg {
-      height: auto;
-      max-width: 100%;
-    }
-    h1, h2, h3, h4, h5, h6 {
-      margin-top: 1.4em;
-    }
-    h5, h6 {
-      font-size: 1em;
-      font-style: italic;
-    }
-    h6 {
-      font-weight: normal;
-    }
-    ol, ul {
-      padding-left: 1.7em;
-      margin-top: 1em;
-    }
-    li > ol, li > ul {
-      margin-top: 0;
-    }
-    blockquote {
-      margin: 1em 0 1em 1.7em;
-      padding-left: 1em;
-      border-left: 2px solid #e6e6e6;
-      color: #606060;
-    }
-    code {
-      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
-      font-size: 85%;
-      margin: 0;
-      hyphens: manual;
-    }
-    pre {
-      margin: 1em 0;
-      overflow: auto;
-    }
-    pre code {
-      padding: 0;
-      overflow: visible;
-      overflow-wrap: normal;
-    }
-    .sourceCode {
-     background-color: transparent;
-     overflow: visible;
-    }
-    hr {
-      background-color: #1a1a1a;
-      border: none;
-      height: 1px;
-      margin: 1em 0;
-    }
-    table {
-      margin: 1em 0;
-      border-collapse: collapse;
-      width: 100%;
-      overflow-x: auto;
-      display: block;
-      font-variant-numeric: lining-nums tabular-nums;
-    }
-    table caption {
-      margin-bottom: 0.75em;
-    }
-    tbody {
-      margin-top: 0.5em;
-      border-top: 1px solid #1a1a1a;
-      border-bottom: 1px solid #1a1a1a;
-    }
-    th {
-      border-top: 1px solid #1a1a1a;
-      padding: 0.25em 0.5em 0.25em 0.5em;
-    }
-    td {
-      padding: 0.125em 0.5em 0.25em 0.5em;
-    }
-    header {
-      margin-bottom: 4em;
-      text-align: center;
-    }
-    #TOC li {
-      list-style: none;
-    }
-    #TOC ul {
-      padding-left: 1.3em;
-    }
-    #TOC > ul {
-      padding-left: 0;
-    }
-    #TOC a:not(:hover) {
-      text-decoration: none;
-    }
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -172,6 +25,7 @@ data, Geology, Switzerland" />
     }
     .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
+  <link rel="stylesheet" href="datamodel.css" />
 </head>
 <body>
 <header id="title-block-header">
@@ -180,6 +34,851 @@ data, Geology, Switzerland" />
 <p class="author">Bundesamt für Landestopographie swisstopo</p>
 <p class="date">April 2024</p>
 </header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#thema-rock_bodies" id="toc-thema-rock_bodies"><span
+class="toc-section-number">1</span> Thema ROCK_BODIES</a>
+<ul>
+<li><a href="#unconsolidated-deposits-pt"
+id="toc-unconsolidated-deposits-pt"><span
+class="toc-section-number">1.1</span> Klass
+Unconsolidated_Deposits_PT</a>
+<ul>
+<li><a href="#attributen-kind" id="toc-attributen-kind"><span
+class="toc-section-number">1.1.1</span> Attributen kind</a></li>
+<li><a href="#unconsolidated-deposits-pt-status"
+id="toc-unconsolidated-deposits-pt-status"><span
+class="toc-section-number">1.1.2</span> Attributen status</a></li>
+<li><a href="#unconsolidated-deposits-pt-rock-type"
+id="toc-unconsolidated-deposits-pt-rock-type"><span
+class="toc-section-number">1.1.3</span> Attributen rock_type</a></li>
+<li><a href="#unconsolidated-deposits-pt-rock-spe"
+id="toc-unconsolidated-deposits-pt-rock-spe"><span
+class="toc-section-number">1.1.4</span> Attributen rock_spe</a></li>
+<li><a href="#attributen-mat_type" id="toc-attributen-mat_type"><span
+class="toc-section-number">1.1.5</span> Attributen mat_type</a></li>
+<li><a href="#attributen-orig_descr"
+id="toc-attributen-orig_descr"><span
+class="toc-section-number">1.1.6</span> Attributen orig_descr</a></li>
+<li><a href="#attributen-protected" id="toc-attributen-protected"><span
+class="toc-section-number">1.1.7</span> Attributen protected</a></li>
+</ul></li>
+<li><a href="#unconsolidated-deposits-plg"
+id="toc-unconsolidated-deposits-plg"><span
+class="toc-section-number">1.2</span> Klass
+Unconsolidated_Deposits_PLG</a>
+<ul>
+<li><a href="#attributen-kind-1" id="toc-attributen-kind-1"><span
+class="toc-section-number">1.2.1</span> Attributen kind</a></li>
+<li><a href="#attributen-litstrat" id="toc-attributen-litstrat"><span
+class="toc-section-number">1.2.2</span> Attributen litstrat</a></li>
+<li><a href="#attributen-litho" id="toc-attributen-litho"><span
+class="toc-section-number">1.2.3</span> Attributen litho</a></li>
+<li><a href="#attributen-chrono_t" id="toc-attributen-chrono_t"><span
+class="toc-section-number">1.2.4</span> Attributen chrono_t</a></li>
+<li><a href="#attributen-chrono_b" id="toc-attributen-chrono_b"><span
+class="toc-section-number">1.2.5</span> Attributen chrono_b</a></li>
+<li><a href="#attributen-mat_type-1"
+id="toc-attributen-mat_type-1"><span
+class="toc-section-number">1.2.6</span> Attributen mat_type</a></li>
+<li><a href="#attributen-buried_out"
+id="toc-attributen-buried_out"><span
+class="toc-section-number">1.2.7</span> Attributen buried_out</a></li>
+<li><a href="#attributen-composit" id="toc-attributen-composit"><span
+class="toc-section-number">1.2.8</span> Attributen composit</a></li>
+<li><a href="#attributen-admixture" id="toc-attributen-admixture"><span
+class="toc-section-number">1.2.9</span> Attributen admixture</a></li>
+<li><a href="#unconsolidated-deposits-plg-structur"
+id="toc-unconsolidated-deposits-plg-structur"><span
+class="toc-section-number">1.2.10</span> Attributen structur</a></li>
+<li><a href="#attributen-charact" id="toc-attributen-charact"><span
+class="toc-section-number">1.2.11</span> Attributen charact</a></li>
+<li><a href="#unconsolidated-deposits-plg-morpholo"
+id="toc-unconsolidated-deposits-plg-morpholo"><span
+class="toc-section-number">1.2.12</span> Attributen morpholo</a></li>
+<li><a href="#unconsolidated-deposits-plg-glac-type"
+id="toc-unconsolidated-deposits-plg-glac-type"><span
+class="toc-section-number">1.2.13</span> Attributen glac_type</a></li>
+<li><a href="#attributen-ref_year" id="toc-attributen-ref_year"><span
+class="toc-section-number">1.2.14</span> Attributen ref_year</a></li>
+<li><a href="#unconsolidated-deposits-plg-thin-cover"
+id="toc-unconsolidated-deposits-plg-thin-cover"><span
+class="toc-section-number">1.2.15</span> Attributen thin_cover</a></li>
+<li><a href="#attributen-orig_descr-1"
+id="toc-attributen-orig_descr-1"><span
+class="toc-section-number">1.2.16</span> Attributen orig_descr</a></li>
+</ul></li>
+<li><a href="#bedrock-plg" id="toc-bedrock-plg"><span
+class="toc-section-number">1.3</span> Klass Bedrock_PLG</a>
+<ul>
+<li><a href="#attributen-kind-2" id="toc-attributen-kind-2"><span
+class="toc-section-number">1.3.1</span> Attributen kind</a></li>
+<li><a href="#attributen-fm_homog" id="toc-attributen-fm_homog"><span
+class="toc-section-number">1.3.2</span> Attributen fm_homog</a></li>
+<li><a href="#attributen-listrat" id="toc-attributen-listrat"><span
+class="toc-section-number">1.3.3</span> Attributen listrat</a></li>
+<li><a href="#attributen-litho-1" id="toc-attributen-litho-1"><span
+class="toc-section-number">1.3.4</span> Attributen litho</a></li>
+<li><a href="#attributen-chrono_t-1"
+id="toc-attributen-chrono_t-1"><span
+class="toc-section-number">1.3.5</span> Attributen chrono_t</a></li>
+<li><a href="#attributen-chrono_b-1"
+id="toc-attributen-chrono_b-1"><span
+class="toc-section-number">1.3.6</span> Attributen chrono_b</a></li>
+<li><a href="#attributen-tecto" id="toc-attributen-tecto"><span
+class="toc-section-number">1.3.7</span> Attributen tecto</a></li>
+<li><a href="#attributen-orig_descr-2"
+id="toc-attributen-orig_descr-2"><span
+class="toc-section-number">1.3.8</span> Attributen orig_descr</a></li>
+<li><a href="#attributen-buried_out-1"
+id="toc-attributen-buried_out-1"><span
+class="toc-section-number">1.3.9</span> Attributen buried_out</a></li>
+<li><a href="#attributen-exotic_ele"
+id="toc-attributen-exotic_ele"><span
+class="toc-section-number">1.3.10</span> Attributen exotic_ele</a></li>
+<li><a href="#attributen-colour" id="toc-attributen-colour"><span
+class="toc-section-number">1.3.11</span> Attributen colour</a></li>
+<li><a href="#bedrock-plg-sedi-main-com"
+id="toc-bedrock-plg-sedi-main-com"><span
+class="toc-section-number">1.3.12</span> Attributen
+sedi_main_com</a></li>
+<li><a href="#bedrock-plg-sedi-seco-com"
+id="toc-bedrock-plg-sedi-seco-com"><span
+class="toc-section-number">1.3.13</span> Attributen
+sedi_seco_com</a></li>
+<li><a href="#bedrock-plg-sedi-bond-mat"
+id="toc-bedrock-plg-sedi-bond-mat"><span
+class="toc-section-number">1.3.14</span> Attributen
+sedi_bond_mat</a></li>
+<li><a href="#bedrock-plg-sedi-bedding"
+id="toc-bedrock-plg-sedi-bedding"><span
+class="toc-section-number">1.3.15</span> Attributen
+sedi_bedding</a></li>
+<li><a href="#bedrock-plg-sedi-str" id="toc-bedrock-plg-sedi-str"><span
+class="toc-section-number">1.3.16</span> Attributen sedi_str</a></li>
+<li><a href="#bedrock-plg-sedi-tex" id="toc-bedrock-plg-sedi-tex"><span
+class="toc-section-number">1.3.17</span> Attributen sedi_tex</a></li>
+<li><a href="#bedrock-plg-igne-text"
+id="toc-bedrock-plg-igne-text"><span
+class="toc-section-number">1.3.18</span> Attributen igne_text</a></li>
+<li><a href="#bedrock-plg-igne-grain-si"
+id="toc-bedrock-plg-igne-grain-si"><span
+class="toc-section-number">1.3.19</span> Attributen
+igne_grain_si</a></li>
+<li><a href="#bedrock-plg-igne-affinity"
+id="toc-bedrock-plg-igne-affinity"><span
+class="toc-section-number">1.3.20</span> Attributen
+igne_affinity</a></li>
+<li><a href="#attributen-meta_full_name"
+id="toc-attributen-meta_full_name"><span
+class="toc-section-number">1.3.21</span> Attributen
+meta_full_name</a></li>
+<li><a href="#attributen-meta_mineral"
+id="toc-attributen-meta_mineral"><span
+class="toc-section-number">1.3.22</span> Attributen
+meta_mineral</a></li>
+<li><a href="#bedrock-plg-meta-str" id="toc-bedrock-plg-meta-str"><span
+class="toc-section-number">1.3.23</span> Attributen meta_str</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#thema-geomorphology" id="toc-thema-geomorphology"><span
+class="toc-section-number">2</span> Thema GEOMORPHOLOGY</a>
+<ul>
+<li><a href="#instability-structures-pt"
+id="toc-instability-structures-pt"><span
+class="toc-section-number">2.1</span> Klass
+Instability_Structures_PT</a>
+<ul>
+<li><a href="#attributen-kind-3" id="toc-attributen-kind-3"><span
+class="toc-section-number">2.1.1</span> Attributen kind</a></li>
+</ul></li>
+<li><a href="#instability-structures-l"
+id="toc-instability-structures-l"><span
+class="toc-section-number">2.2</span> Klass Instability_Structures_L</a>
+<ul>
+<li><a href="#attributen-kind-4" id="toc-attributen-kind-4"><span
+class="toc-section-number">2.2.1</span> Attributen kind</a></li>
+</ul></li>
+<li><a href="#instabilities-within-unconsolidated-deposits-plg"
+id="toc-instabilities-within-unconsolidated-deposits-plg"><span
+class="toc-section-number">2.3</span> Klass
+Instabilities_within_Unconsolidated_Deposits_PLG</a>
+<ul>
+<li><a href="#attributen-kind-5" id="toc-attributen-kind-5"><span
+class="toc-section-number">2.3.1</span> Attributen kind</a></li>
+</ul></li>
+<li><a href="#instabilities-within-bedrock-plg"
+id="toc-instabilities-within-bedrock-plg"><span
+class="toc-section-number">2.4</span> Klass
+Instabilities_within_Bedrock_PLG</a>
+<ul>
+<li><a href="#attributen-kind-6" id="toc-attributen-kind-6"><span
+class="toc-section-number">2.4.1</span> Attributen kind</a></li>
+<li><a href="#instabilities-within-bedrock-plg-main-mov"
+id="toc-instabilities-within-bedrock-plg-main-mov"><span
+class="toc-section-number">2.4.2</span> Attributen main_mov</a></li>
+</ul></li>
+<li><a href="#glacial-structures-pt"
+id="toc-glacial-structures-pt"><span
+class="toc-section-number">2.5</span> Klass Glacial_Structures_PT</a>
+<ul>
+<li><a href="#attributen-kind-7" id="toc-attributen-kind-7"><span
+class="toc-section-number">2.5.1</span> Attributen kind</a></li>
+</ul></li>
+<li><a href="#glacial-and-periglacial-structures-l"
+id="toc-glacial-and-periglacial-structures-l"><span
+class="toc-section-number">2.6</span> Klass
+Glacial_and_Periglacial_Structures_L</a>
+<ul>
+<li><a href="#attributen-kind-8" id="toc-attributen-kind-8"><span
+class="toc-section-number">2.6.1</span> Attributen kind</a></li>
+<li><a href="#glacial-and-periglacial-structures-l-morai-mo"
+id="toc-glacial-and-periglacial-structures-l-morai-mo"><span
+class="toc-section-number">2.6.2</span> Attributen morai_mo</a></li>
+<li><a href="#glacial-and-periglacial-structures-l-glac-typ"
+id="toc-glacial-and-periglacial-structures-l-glac-typ"><span
+class="toc-section-number">2.6.3</span> Attributen glac_typ</a></li>
+<li><a href="#glacial-and-periglacial-structures-l-ice-m-p"
+id="toc-glacial-and-periglacial-structures-l-ice-m-p"><span
+class="toc-section-number">2.6.4</span> Attributen ice_m_p</a></li>
+<li><a href="#glacial-and-periglacial-structures-l-quat-str"
+id="toc-glacial-and-periglacial-structures-l-quat-str"><span
+class="toc-section-number">2.6.5</span> Attributen quat_str</a></li>
+<li><a href="#attributen-ref_year-1"
+id="toc-attributen-ref_year-1"><span
+class="toc-section-number">2.6.6</span> Attributen ref_year</a></li>
+<li><a href="#attributen-source" id="toc-attributen-source"><span
+class="toc-section-number">2.6.7</span> Attributen source</a></li>
+</ul></li>
+<li><a href="#glacial-structures-plg"
+id="toc-glacial-structures-plg"><span
+class="toc-section-number">2.7</span> Klass Glacial_Structures_PLG</a>
+<ul>
+<li><a href="#attributen-kind-9" id="toc-attributen-kind-9"><span
+class="toc-section-number">2.7.1</span> Attributen kind</a></li>
+</ul></li>
+<li><a href="#erosional-structures-pt"
+id="toc-erosional-structures-pt"><span
+class="toc-section-number">2.8</span> Klass Erosional_Structures_PT</a>
+<ul>
+<li><a href="#attributen-kind-10" id="toc-attributen-kind-10"><span
+class="toc-section-number">2.8.1</span> Attributen kind</a></li>
+</ul></li>
+<li><a href="#erosional-structures-l"
+id="toc-erosional-structures-l"><span
+class="toc-section-number">2.9</span> Klass Erosional_Structures_L</a>
+<ul>
+<li><a href="#attributen-kind-11" id="toc-attributen-kind-11"><span
+class="toc-section-number">2.9.1</span> Attributen kind</a></li>
+</ul></li>
+<li><a href="#karstic-structures-pt"
+id="toc-karstic-structures-pt"><span
+class="toc-section-number">2.10</span> Klass Karstic_Structures_PT</a>
+<ul>
+<li><a href="#attributen-kind-12" id="toc-attributen-kind-12"><span
+class="toc-section-number">2.10.1</span> Attributen kind</a></li>
+<li><a href="#attributen-ice_cave" id="toc-attributen-ice_cave"><span
+class="toc-section-number">2.10.2</span> Attributen ice_cave</a></li>
+</ul></li>
+<li><a href="#karstic-structures-plg"
+id="toc-karstic-structures-plg"><span
+class="toc-section-number">2.11</span> Klass Karstic_Structures_PLG</a>
+<ul>
+<li><a href="#attributen-kind-13" id="toc-attributen-kind-13"><span
+class="toc-section-number">2.11.1</span> Attributen kind</a></li>
+</ul></li>
+<li><a href="#alluvial-and-lacustrine-structures-l"
+id="toc-alluvial-and-lacustrine-structures-l"><span
+class="toc-section-number">2.12</span> Klass
+Alluvial_and_Lacustrine_Structures_L</a>
+<ul>
+<li><a href="#attributen-kind-14" id="toc-attributen-kind-14"><span
+class="toc-section-number">2.12.1</span> Attributen kind</a></li>
+<li><a href="#alluvial-and-lacustrine-structures-l-age"
+id="toc-alluvial-and-lacustrine-structures-l-age"><span
+class="toc-section-number">2.12.2</span> Attributen age</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#thema-tectonics" id="toc-thema-tectonics"><span
+class="toc-section-number">3</span> Thema TECTONICS</a>
+<ul>
+<li><a href="#deformation-structures-pt"
+id="toc-deformation-structures-pt"><span
+class="toc-section-number">3.1</span> Klass
+Deformation_Structures_PT</a>
+<ul>
+<li><a href="#attributen-kind-15" id="toc-attributen-kind-15"><span
+class="toc-section-number">3.1.1</span> Attributen kind</a></li>
+<li><a href="#attributen-azimuth" id="toc-attributen-azimuth"><span
+class="toc-section-number">3.1.2</span> Attributen azimuth</a></li>
+<li><a href="#attributen-dip" id="toc-attributen-dip"><span
+class="toc-section-number">3.1.3</span> Attributen dip</a></li>
+<li><a href="#deformation-structures-pt-fold-typ"
+id="toc-deformation-structures-pt-fold-typ"><span
+class="toc-section-number">3.1.4</span> Attributen fold_typ</a></li>
+<li><a href="#deformation-structures-pt-fold-for"
+id="toc-deformation-structures-pt-fold-for"><span
+class="toc-section-number">3.1.5</span> Attributen fold_for</a></li>
+</ul></li>
+<li><a href="#deformation-structures-l"
+id="toc-deformation-structures-l"><span
+class="toc-section-number">3.2</span> Klass Deformation_Structures_L</a>
+<ul>
+<li><a href="#attributen-kind-16" id="toc-attributen-kind-16"><span
+class="toc-section-number">3.2.1</span> Attributen kind</a></li>
+</ul></li>
+<li><a href="#deformation-structures-plg"
+id="toc-deformation-structures-plg"><span
+class="toc-section-number">3.3</span> Klass
+Deformation_Structures_PLG</a>
+<ul>
+<li><a href="#attributen-kind-17" id="toc-attributen-kind-17"><span
+class="toc-section-number">3.3.1</span> Attributen kind</a></li>
+<li><a href="#deformation-structures-plg-type"
+id="toc-deformation-structures-plg-type"><span
+class="toc-section-number">3.3.2</span> Attributen type</a></li>
+<li><a href="#deformation-structures-plg-gen-rela"
+id="toc-deformation-structures-plg-gen-rela"><span
+class="toc-section-number">3.3.3</span> Attributen gen_rela</a></li>
+</ul></li>
+<li><a href="#tectonic-boundaries-l"
+id="toc-tectonic-boundaries-l"><span
+class="toc-section-number">3.4</span> Klass Tectonic_Boundaries_L</a>
+<ul>
+<li><a href="#attributen-kind-18" id="toc-attributen-kind-18"><span
+class="toc-section-number">3.4.1</span> Attributen kind</a></li>
+<li><a href="#tectonic-boundaries-l-fault-mo"
+id="toc-tectonic-boundaries-l-fault-mo"><span
+class="toc-section-number">3.4.2</span> Attributen fault_mo</a></li>
+<li><a href="#tectonic-boundaries-l-verti-mo"
+id="toc-tectonic-boundaries-l-verti-mo"><span
+class="toc-section-number">3.4.3</span> Attributen verti_mo</a></li>
+<li><a href="#tectonic-boundaries-l-horiz-mo"
+id="toc-tectonic-boundaries-l-horiz-mo"><span
+class="toc-section-number">3.4.4</span> Attributen horiz_mo</a></li>
+<li><a href="#attributen-lim_tect_b"
+id="toc-attributen-lim_tect_b"><span
+class="toc-section-number">3.4.5</span> Attributen lim_tect_b</a></li>
+<li><a href="#tectonic-boundaries-l-status"
+id="toc-tectonic-boundaries-l-status"><span
+class="toc-section-number">3.4.6</span> Attributen status</a></li>
+<li><a href="#attributen-activity" id="toc-attributen-activity"><span
+class="toc-section-number">3.4.7</span> Attributen activity</a></li>
+<li><a href="#tectonic-boundaries-l-meta-sta"
+id="toc-tectonic-boundaries-l-meta-sta"><span
+class="toc-section-number">3.4.8</span> Attributen meta_sta</a></li>
+<li><a href="#attributen-name" id="toc-attributen-name"><span
+class="toc-section-number">3.4.9</span> Attributen name</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#thema-measurements_spatial_orientation"
+id="toc-thema-measurements_spatial_orientation"><span
+class="toc-section-number">4</span> Thema
+MEASUREMENTS_SPATIAL_ORIENTATION</a>
+<ul>
+<li><a href="#folds-pt" id="toc-folds-pt"><span
+class="toc-section-number">4.1</span> Klass Folds_PT</a>
+<ul>
+<li><a href="#attributen-kind-19" id="toc-attributen-kind-19"><span
+class="toc-section-number">4.1.1</span> Attributen kind</a></li>
+<li><a href="#folds-pt-fold-typ" id="toc-folds-pt-fold-typ"><span
+class="toc-section-number">4.1.2</span> Attributen fold_typ</a></li>
+<li><a href="#attributen-fold_for" id="toc-attributen-fold_for"><span
+class="toc-section-number">4.1.3</span> Attributen fold_for</a></li>
+<li><a href="#folds-pt-phase" id="toc-folds-pt-phase"><span
+class="toc-section-number">4.1.4</span> Attributen phase</a></li>
+<li><a href="#attributen-phase_ref" id="toc-attributen-phase_ref"><span
+class="toc-section-number">4.1.5</span> Attributen phase_ref</a></li>
+<li><a href="#attributen-azimuth-1" id="toc-attributen-azimuth-1"><span
+class="toc-section-number">4.1.6</span> Attributen azimuth</a></li>
+<li><a href="#attributen-dip-1" id="toc-attributen-dip-1"><span
+class="toc-section-number">4.1.7</span> Attributen dip</a></li>
+</ul></li>
+<li><a href="#lineation-pt" id="toc-lineation-pt"><span
+class="toc-section-number">4.2</span> Klass Lineation_PT</a>
+<ul>
+<li><a href="#attributen-kind-20" id="toc-attributen-kind-20"><span
+class="toc-section-number">4.2.1</span> Attributen kind</a></li>
+<li><a href="#attributen-azimuth-2" id="toc-attributen-azimuth-2"><span
+class="toc-section-number">4.2.2</span> Attributen azimuth</a></li>
+<li><a href="#attributen-dip-2" id="toc-attributen-dip-2"><span
+class="toc-section-number">4.2.3</span> Attributen dip</a></li>
+</ul></li>
+<li><a href="#planar-structures-pt" id="toc-planar-structures-pt"><span
+class="toc-section-number">4.3</span> Klass Planar_Structures_PT</a>
+<ul>
+<li><a href="#attributen-kind-21" id="toc-attributen-kind-21"><span
+class="toc-section-number">4.3.1</span> Attributen kind</a></li>
+<li><a href="#planar-structures-pt-polarity"
+id="toc-planar-structures-pt-polarity"><span
+class="toc-section-number">4.3.2</span> Attributen polarity</a></li>
+<li><a href="#planar-structures-pt-phase"
+id="toc-planar-structures-pt-phase"><span
+class="toc-section-number">4.3.3</span> Attributen phase</a></li>
+<li><a href="#attributen-phase_ref-1"
+id="toc-attributen-phase_ref-1"><span
+class="toc-section-number">4.3.4</span> Attributen phase_ref</a></li>
+<li><a href="#attributen-ob_dip_slo"
+id="toc-attributen-ob_dip_slo"><span
+class="toc-section-number">4.3.5</span> Attributen ob_dip_slo</a></li>
+<li><a href="#attributen-azimuth-3" id="toc-attributen-azimuth-3"><span
+class="toc-section-number">4.3.6</span> Attributen azimuth</a></li>
+<li><a href="#attributen-dip-3" id="toc-attributen-dip-3"><span
+class="toc-section-number">4.3.7</span> Attributen dip</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#thema-local_additional_information"
+id="toc-thema-local_additional_information"><span
+class="toc-section-number">5</span> Thema
+LOCAL_ADDITIONAL_INFORMATION</a>
+<ul>
+<li><a href="#anomalies-pt" id="toc-anomalies-pt"><span
+class="toc-section-number">5.1</span> Klass Anomalies_PT</a>
+<ul>
+<li><a href="#attributen-kind-22" id="toc-attributen-kind-22"><span
+class="toc-section-number">5.1.1</span> Attributen kind</a></li>
+<li><a href="#attributen-type" id="toc-attributen-type"><span
+class="toc-section-number">5.1.2</span> Attributen type</a></li>
+</ul></li>
+<li><a href="#fossils-pt" id="toc-fossils-pt"><span
+class="toc-section-number">5.2</span> Klass Fossils_PT</a>
+<ul>
+<li><a href="#attributen-kind-23" id="toc-attributen-kind-23"><span
+class="toc-section-number">5.2.1</span> Attributen kind</a></li>
+<li><a href="#fossils-pt-division" id="toc-fossils-pt-division"><span
+class="toc-section-number">5.2.2</span> Attributen division</a></li>
+<li><a href="#attributen-system" id="toc-attributen-system"><span
+class="toc-section-number">5.2.3</span> Attributen system</a></li>
+<li><a href="#fossils-pt-dat-meth" id="toc-fossils-pt-dat-meth"><span
+class="toc-section-number">5.2.4</span> Attributen dat_meth</a></li>
+<li><a href="#fossils-pt-status" id="toc-fossils-pt-status"><span
+class="toc-section-number">5.2.5</span> Attributen status</a></li>
+<li><a href="#attributen-protected-1"
+id="toc-attributen-protected-1"><span
+class="toc-section-number">5.2.6</span> Attributen protected</a></li>
+</ul></li>
+<li><a href="#indication-of-resources-pt"
+id="toc-indication-of-resources-pt"><span
+class="toc-section-number">5.3</span> Klass
+Indication_of_Resources_PT</a>
+<ul>
+<li><a href="#attributen-kind-24" id="toc-attributen-kind-24"><span
+class="toc-section-number">5.3.1</span> Attributen kind</a></li>
+<li><a href="#indication-of-resources-pt-status"
+id="toc-indication-of-resources-pt-status"><span
+class="toc-section-number">5.3.2</span> Attributen status</a></li>
+<li><a href="#indication-of-resources-pt-material"
+id="toc-indication-of-resources-pt-material"><span
+class="toc-section-number">5.3.3</span> Attributen material</a></li>
+<li><a href="#attributen-chemistry" id="toc-attributen-chemistry"><span
+class="toc-section-number">5.3.4</span> Attributen chemistry</a></li>
+</ul></li>
+<li><a href="#mineralised-zone-l" id="toc-mineralised-zone-l"><span
+class="toc-section-number">5.4</span> Klass Mineralised_Zone_L</a>
+<ul>
+<li><a href="#attributen-kind-25" id="toc-attributen-kind-25"><span
+class="toc-section-number">5.4.1</span> Attributen kind</a></li>
+<li><a href="#attributen-chemistry-1"
+id="toc-attributen-chemistry-1"><span
+class="toc-section-number">5.4.2</span> Attributen chemistry</a></li>
+</ul></li>
+<li><a href="#sedimentary-structures-pt"
+id="toc-sedimentary-structures-pt"><span
+class="toc-section-number">5.5</span> Klass
+Sedimentary_Structures_PT</a>
+<ul>
+<li><a href="#attributen-kind-26" id="toc-attributen-kind-26"><span
+class="toc-section-number">5.5.1</span> Attributen kind</a></li>
+<li><a href="#attributen-azimuth-4" id="toc-attributen-azimuth-4"><span
+class="toc-section-number">5.5.2</span> Attributen azimuth</a></li>
+</ul></li>
+<li><a href="#type-localities-pt" id="toc-type-localities-pt"><span
+class="toc-section-number">5.6</span> Klass Type_Localities_PT</a>
+<ul>
+<li><a href="#attributen-kind-27" id="toc-attributen-kind-27"><span
+class="toc-section-number">5.6.1</span> Attributen kind</a></li>
+<li><a href="#type-localities-pt-strati"
+id="toc-type-localities-pt-strati"><span
+class="toc-section-number">5.6.2</span> Attributen strati</a></li>
+<li><a href="#attributen-name-1" id="toc-attributen-name-1"><span
+class="toc-section-number">5.6.3</span> Attributen name</a></li>
+<li><a href="#attributen-accessibil"
+id="toc-attributen-accessibil"><span
+class="toc-section-number">5.6.4</span> Attributen accessibil</a></li>
+<li><a href="#attributen-protected-2"
+id="toc-attributen-protected-2"><span
+class="toc-section-number">5.6.5</span> Attributen protected</a></li>
+</ul></li>
+<li><a href="#prominent-lithological-features-l"
+id="toc-prominent-lithological-features-l"><span
+class="toc-section-number">5.7</span> Klass
+Prominent_Lithological_Features_L</a>
+<ul>
+<li><a href="#attributen-kind-28" id="toc-attributen-kind-28"><span
+class="toc-section-number">5.7.1</span> Attributen kind</a></li>
+<li><a href="#prominent-lithological-features-l-cong-spe"
+id="toc-prominent-lithological-features-l-cong-spe"><span
+class="toc-section-number">5.7.2</span> Attributen cong_spe</a></li>
+<li><a href="#attributen-name_horiz"
+id="toc-attributen-name_horiz"><span
+class="toc-section-number">5.7.3</span> Attributen name_horiz</a></li>
+<li><a href="#attributen-orig_descr-3"
+id="toc-attributen-orig_descr-3"><span
+class="toc-section-number">5.7.4</span> Attributen orig_descr</a></li>
+<li><a href="#attributen-lpro_litho"
+id="toc-attributen-lpro_litho"><span
+class="toc-section-number">5.7.5</span> Attributen lpro_litho</a></li>
+</ul></li>
+<li><a href="#miscellaneous-pt" id="toc-miscellaneous-pt"><span
+class="toc-section-number">5.8</span> Klass Miscellaneous_PT</a>
+<ul>
+<li><a href="#attributen-kind-29" id="toc-attributen-kind-29"><span
+class="toc-section-number">5.8.1</span> Attributen kind</a></li>
+<li><a href="#attributen-orig_name" id="toc-attributen-orig_name"><span
+class="toc-section-number">5.8.2</span> Attributen orig_name</a></li>
+</ul></li>
+<li><a href="#geological-outlines-l"
+id="toc-geological-outlines-l"><span
+class="toc-section-number">5.9</span> Klass Geological_Outlines_L</a>
+<ul>
+<li><a href="#attributen-kind-30" id="toc-attributen-kind-30"><span
+class="toc-section-number">5.9.1</span> Attributen kind</a></li>
+<li><a href="#geological-outlines-l-status"
+id="toc-geological-outlines-l-status"><span
+class="toc-section-number">5.9.2</span> Attributen status</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#thema-parameter_and_modelling"
+id="toc-thema-parameter_and_modelling"><span
+class="toc-section-number">6</span> Thema PARAMETER_AND_MODELLING</a>
+<ul>
+<li><a href="#slope-bedrock-pt" id="toc-slope-bedrock-pt"><span
+class="toc-section-number">6.1</span> Klass Slope_Bedrock_PT</a>
+<ul>
+<li><a href="#attributen-kind-31" id="toc-attributen-kind-31"><span
+class="toc-section-number">6.1.1</span> Attributen kind</a></li>
+<li><a href="#slope-bedrock-pt-type"
+id="toc-slope-bedrock-pt-type"><span
+class="toc-section-number">6.1.2</span> Attributen type</a></li>
+<li><a href="#attributen-azimuth-5" id="toc-attributen-azimuth-5"><span
+class="toc-section-number">6.1.3</span> Attributen azimuth</a></li>
+<li><a href="#attributen-dip-4" id="toc-attributen-dip-4"><span
+class="toc-section-number">6.1.4</span> Attributen dip</a></li>
+<li><a href="#attributen-pslo_formatio"
+id="toc-attributen-pslo_formatio"><span
+class="toc-section-number">6.1.5</span> Attributen
+pslo_formatio</a></li>
+</ul></li>
+<li><a href="#contour-lines-bedrock-l"
+id="toc-contour-lines-bedrock-l"><span
+class="toc-section-number">6.2</span> Klass Contour_Lines_Bedrock_L</a>
+<ul>
+<li><a href="#attributen-kind-32" id="toc-attributen-kind-32"><span
+class="toc-section-number">6.2.1</span> Attributen kind</a></li>
+<li><a href="#contour-lines-bedrock-l-type"
+id="toc-contour-lines-bedrock-l-type"><span
+class="toc-section-number">6.2.2</span> Attributen type</a></li>
+<li><a href="#attributen-altitude" id="toc-attributen-altitude"><span
+class="toc-section-number">6.2.3</span> Attributen altitude</a></li>
+<li><a href="#attributen-litstrat-1"
+id="toc-attributen-litstrat-1"><span
+class="toc-section-number">6.2.4</span> Attributen litstrat</a></li>
+</ul></li>
+<li><a href="#modelled-water-table-pt"
+id="toc-modelled-water-table-pt"><span
+class="toc-section-number">6.3</span> Klass Modelled_Water_Table_PT</a>
+<ul>
+<li><a href="#attributen-kind-33" id="toc-attributen-kind-33"><span
+class="toc-section-number">6.3.1</span> Attributen kind</a></li>
+<li><a href="#attributen-azimuth-6" id="toc-attributen-azimuth-6"><span
+class="toc-section-number">6.3.2</span> Attributen azimuth</a></li>
+<li><a href="#attributen-dip-5" id="toc-attributen-dip-5"><span
+class="toc-section-number">6.3.3</span> Attributen dip</a></li>
+<li><a href="#attributen-height" id="toc-attributen-height"><span
+class="toc-section-number">6.3.4</span> Attributen height</a></li>
+<li><a href="#attributen-mea_period"
+id="toc-attributen-mea_period"><span
+class="toc-section-number">6.3.5</span> Attributen mea_period</a></li>
+</ul></li>
+<li><a href="#contour-lines-hydro-l"
+id="toc-contour-lines-hydro-l"><span
+class="toc-section-number">6.4</span> Klass Contour_Lines_Hydro_L</a>
+<ul>
+<li><a href="#attributen-kind-34" id="toc-attributen-kind-34"><span
+class="toc-section-number">6.4.1</span> Attributen kind</a></li>
+<li><a href="#contour-lines-hydro-l-confine"
+id="toc-contour-lines-hydro-l-confine"><span
+class="toc-section-number">6.4.2</span> Attributen confine</a></li>
+<li><a href="#attributen-altitude-1"
+id="toc-attributen-altitude-1"><span
+class="toc-section-number">6.4.3</span> Attributen altitude</a></li>
+<li><a href="#contour-lines-hydro-l-wa-table"
+id="toc-contour-lines-hydro-l-wa-table"><span
+class="toc-section-number">6.4.4</span> Attributen wa_table</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#thema-anthropogenic_features"
+id="toc-thema-anthropogenic_features"><span
+class="toc-section-number">7</span> Thema ANTHROPOGENIC_FEATURES</a>
+<ul>
+<li><a href="#archaeology-pt" id="toc-archaeology-pt"><span
+class="toc-section-number">7.1</span> Klass Archaeology_PT</a>
+<ul>
+<li><a href="#attributen-kind-35" id="toc-attributen-kind-35"><span
+class="toc-section-number">7.1.1</span> Attributen kind</a></li>
+<li><a href="#archaeology-pt-epoch" id="toc-archaeology-pt-epoch"><span
+class="toc-section-number">7.1.2</span> Attributen epoch</a></li>
+<li><a href="#archaeology-pt-period"
+id="toc-archaeology-pt-period"><span
+class="toc-section-number">7.1.3</span> Attributen period</a></li>
+<li><a href="#archaeology-pt-age" id="toc-archaeology-pt-age"><span
+class="toc-section-number">7.1.4</span> Attributen age</a></li>
+<li><a href="#archaeology-pt-type" id="toc-archaeology-pt-type"><span
+class="toc-section-number">7.1.5</span> Attributen type</a></li>
+</ul></li>
+<li><a href="#archaeology-l" id="toc-archaeology-l"><span
+class="toc-section-number">7.2</span> Klass Archaeology_L</a>
+<ul>
+<li><a href="#attributen-kind-36" id="toc-attributen-kind-36"><span
+class="toc-section-number">7.2.1</span> Attributen kind</a></li>
+<li><a href="#archaeology-l-epoch" id="toc-archaeology-l-epoch"><span
+class="toc-section-number">7.2.2</span> Attributen epoch</a></li>
+<li><a href="#archaeology-l-period" id="toc-archaeology-l-period"><span
+class="toc-section-number">7.2.3</span> Attributen period</a></li>
+<li><a href="#archaeology-l-age" id="toc-archaeology-l-age"><span
+class="toc-section-number">7.2.4</span> Attributen age</a></li>
+</ul></li>
+<li><a href="#archaeology-plg" id="toc-archaeology-plg"><span
+class="toc-section-number">7.3</span> Klass Archaeology_PLG</a>
+<ul>
+<li><a href="#attributen-kind-37" id="toc-attributen-kind-37"><span
+class="toc-section-number">7.3.1</span> Attributen kind</a></li>
+<li><a href="#archaeology-plg-epoch"
+id="toc-archaeology-plg-epoch"><span
+class="toc-section-number">7.3.2</span> Attributen epoch</a></li>
+<li><a href="#archaeology-plg-period"
+id="toc-archaeology-plg-period"><span
+class="toc-section-number">7.3.3</span> Attributen period</a></li>
+<li><a href="#archaeology-plg-age" id="toc-archaeology-plg-age"><span
+class="toc-section-number">7.3.4</span> Attributen age</a></li>
+</ul></li>
+<li><a href="#exploitation-geomaterials-pt"
+id="toc-exploitation-geomaterials-pt"><span
+class="toc-section-number">7.4</span> Klass
+Exploitation_Geomaterials_PT</a>
+<ul>
+<li><a href="#attributen-kind-38" id="toc-attributen-kind-38"><span
+class="toc-section-number">7.4.1</span> Attributen kind</a></li>
+<li><a href="#attributen-exp_unit" id="toc-attributen-exp_unit"><span
+class="toc-section-number">7.4.2</span> Attributen exp_unit</a></li>
+<li><a href="#exploitation-geomaterials-pt-status"
+id="toc-exploitation-geomaterials-pt-status"><span
+class="toc-section-number">7.4.3</span> Attributen status</a></li>
+<li><a href="#attributen-depth_tot" id="toc-attributen-depth_tot"><span
+class="toc-section-number">7.4.4</span> Attributen depth_tot</a></li>
+<li><a href="#exploitation-geomaterials-pt-targ-mat"
+id="toc-exploitation-geomaterials-pt-targ-mat"><span
+class="toc-section-number">7.4.5</span> Attributen targ_mat</a></li>
+</ul></li>
+<li><a href="#exploitation-geomaterials-l"
+id="toc-exploitation-geomaterials-l"><span
+class="toc-section-number">7.5</span> Klass
+Exploitation_Geomaterials_L</a>
+<ul>
+<li><a href="#attributen-kind-39" id="toc-attributen-kind-39"><span
+class="toc-section-number">7.5.1</span> Attributen kind</a></li>
+<li><a href="#exploitation-geomaterials-l-status"
+id="toc-exploitation-geomaterials-l-status"><span
+class="toc-section-number">7.5.2</span> Attributen status</a></li>
+</ul></li>
+<li><a href="#exploitation-geomaterials-plg"
+id="toc-exploitation-geomaterials-plg"><span
+class="toc-section-number">7.6</span> Klass
+Exploitation_Geomaterials_PLG</a>
+<ul>
+<li><a href="#attributen-kind-40" id="toc-attributen-kind-40"><span
+class="toc-section-number">7.6.1</span> Attributen kind</a></li>
+<li><a href="#attributen-exp_unit-1"
+id="toc-attributen-exp_unit-1"><span
+class="toc-section-number">7.6.2</span> Attributen exp_unit</a></li>
+<li><a href="#exploitation-geomaterials-plg-status"
+id="toc-exploitation-geomaterials-plg-status"><span
+class="toc-section-number">7.6.3</span> Attributen status</a></li>
+<li><a href="#attributen-depth_tot-1"
+id="toc-attributen-depth_tot-1"><span
+class="toc-section-number">7.6.4</span> Attributen depth_tot</a></li>
+<li><a href="#exploitation-geomaterials-plg-targ-mat"
+id="toc-exploitation-geomaterials-plg-targ-mat"><span
+class="toc-section-number">7.6.5</span> Attributen targ_mat</a></li>
+</ul></li>
+<li><a href="#boreholes-pt" id="toc-boreholes-pt"><span
+class="toc-section-number">7.7</span> Klass Boreholes_PT</a>
+<ul>
+<li><a href="#attributen-kind-41" id="toc-attributen-kind-41"><span
+class="toc-section-number">7.7.1</span> Attributen kind</a></li>
+<li><a href="#attributen-drill_mo" id="toc-attributen-drill_mo"><span
+class="toc-section-number">7.7.2</span> Attributen drill_mo</a></li>
+<li><a href="#attributen-depth_bedrock"
+id="toc-attributen-depth_bedrock"><span
+class="toc-section-number">7.7.3</span> Attributen
+depth_bedrock</a></li>
+<li><a href="#attributen-d_c_underg"
+id="toc-attributen-d_c_underg"><span
+class="toc-section-number">7.7.4</span> Attributen d_c_underg</a></li>
+<li><a href="#boreholes-pt-main-tar"
+id="toc-boreholes-pt-main-tar"><span
+class="toc-section-number">7.7.5</span> Attributen main_tar</a></li>
+<li><a href="#boreholes-pt-targ-mat"
+id="toc-boreholes-pt-targ-mat"><span
+class="toc-section-number">7.7.6</span> Attributen targ_mat</a></li>
+<li><a href="#attributen-depth_tot-2"
+id="toc-attributen-depth_tot-2"><span
+class="toc-section-number">7.7.7</span> Attributen depth_tot</a></li>
+<li><a href="#attributen-fm_a" id="toc-attributen-fm_a"><span
+class="toc-section-number">7.7.8</span> Attributen fm_a</a></li>
+<li><a href="#attributen-depth_fm_a"
+id="toc-attributen-depth_fm_a"><span
+class="toc-section-number">7.7.9</span> Attributen depth_fm_a</a></li>
+<li><a href="#attributen-fm_b" id="toc-attributen-fm_b"><span
+class="toc-section-number">7.7.10</span> Attributen fm_b</a></li>
+<li><a href="#attributen-depth_fm_b"
+id="toc-attributen-depth_fm_b"><span
+class="toc-section-number">7.7.11</span> Attributen depth_fm_b</a></li>
+<li><a href="#attributen-depth_wt" id="toc-attributen-depth_wt"><span
+class="toc-section-number">7.7.12</span> Attributen depth_wt</a></li>
+<li><a href="#attributen-azimuth-7" id="toc-attributen-azimuth-7"><span
+class="toc-section-number">7.7.13</span> Attributen azimuth</a></li>
+<li><a href="#attributen-dip-6" id="toc-attributen-dip-6"><span
+class="toc-section-number">7.7.14</span> Attributen dip</a></li>
+<li><a href="#attributen-ref_number"
+id="toc-attributen-ref_number"><span
+class="toc-section-number">7.7.15</span> Attributen ref_number</a></li>
+<li><a href="#attributen-link" id="toc-attributen-link"><span
+class="toc-section-number">7.7.16</span> Attributen link</a></li>
+</ul></li>
+<li><a href="#artificial-surface-modifications-plg"
+id="toc-artificial-surface-modifications-plg"><span
+class="toc-section-number">7.8</span> Klass
+Artificial_Surface_Modifications_PLG</a>
+<ul>
+<li><a href="#attributen-kind-42" id="toc-attributen-kind-42"><span
+class="toc-section-number">7.8.1</span> Attributen kind</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#thema-hydrogeology" id="toc-thema-hydrogeology"><span
+class="toc-section-number">8</span> Thema HYDROGEOLOGY</a>
+<ul>
+<li><a href="#construction-pt" id="toc-construction-pt"><span
+class="toc-section-number">8.1</span> Klass Construction_PT</a>
+<ul>
+<li><a href="#attributen-kind-43" id="toc-attributen-kind-43"><span
+class="toc-section-number">8.1.1</span> Attributen kind</a></li>
+<li><a href="#construction-pt-status"
+id="toc-construction-pt-status"><span
+class="toc-section-number">8.1.2</span> Attributen status</a></li>
+<li><a href="#construction-pt-epoch"
+id="toc-construction-pt-epoch"><span
+class="toc-section-number">8.1.3</span> Attributen epoch</a></li>
+<li><a href="#attributen-depth" id="toc-attributen-depth"><span
+class="toc-section-number">8.1.4</span> Attributen depth</a></li>
+<li><a href="#attributen-depth_wt-1"
+id="toc-attributen-depth_wt-1"><span
+class="toc-section-number">8.1.5</span> Attributen depth_wt</a></li>
+<li><a href="#attributen-mea_period-1"
+id="toc-attributen-mea_period-1"><span
+class="toc-section-number">8.1.6</span> Attributen mea_period</a></li>
+</ul></li>
+<li><a href="#construction-l" id="toc-construction-l"><span
+class="toc-section-number">8.2</span> Klass Construction_L</a>
+<ul>
+<li><a href="#attributen-kind-44" id="toc-attributen-kind-44"><span
+class="toc-section-number">8.2.1</span> Attributen kind</a></li>
+<li><a href="#construction-l-combi" id="toc-construction-l-combi"><span
+class="toc-section-number">8.2.2</span> Attributen combi</a></li>
+</ul></li>
+<li><a href="#palaeohydrology-l" id="toc-palaeohydrology-l"><span
+class="toc-section-number">8.3</span> Klass Palaeohydrology_L</a>
+<ul>
+<li><a href="#attributen-kind-45" id="toc-attributen-kind-45"><span
+class="toc-section-number">8.3.1</span> Attributen kind</a></li>
+<li><a href="#palaeohydrology-l-rel-age"
+id="toc-palaeohydrology-l-rel-age"><span
+class="toc-section-number">8.3.2</span> Attributen rel_age</a></li>
+<li><a href="#attributen-hpal_chrono"
+id="toc-attributen-hpal_chrono"><span
+class="toc-section-number">8.3.3</span> Attributen hpal_chrono</a></li>
+<li><a href="#attributen-ref_year-2"
+id="toc-attributen-ref_year-2"><span
+class="toc-section-number">8.3.4</span> Attributen ref_year</a></li>
+<li><a href="#attributen-source-1" id="toc-attributen-source-1"><span
+class="toc-section-number">8.3.5</span> Attributen source</a></li>
+</ul></li>
+<li><a href="#subsurface-water-l" id="toc-subsurface-water-l"><span
+class="toc-section-number">8.4</span> Klass Subsurface_Water_L</a>
+<ul>
+<li><a href="#attributen-kind-46" id="toc-attributen-kind-46"><span
+class="toc-section-number">8.4.1</span> Attributen kind</a></li>
+<li><a href="#subsurface-water-l-combi"
+id="toc-subsurface-water-l-combi"><span
+class="toc-section-number">8.4.2</span> Attributen combi</a></li>
+</ul></li>
+<li><a href="#surface-water-pt" id="toc-surface-water-pt"><span
+class="toc-section-number">8.5</span> Klass Surface_Water_PT</a>
+<ul>
+<li><a href="#attributen-kind-47" id="toc-attributen-kind-47"><span
+class="toc-section-number">8.5.1</span> Attributen kind</a></li>
+<li><a href="#surface-water-pt-status"
+id="toc-surface-water-pt-status"><span
+class="toc-section-number">8.5.2</span> Attributen status</a></li>
+<li><a href="#surface-water-pt-flow-con"
+id="toc-surface-water-pt-flow-con"><span
+class="toc-section-number">8.5.3</span> Attributen flow_con</a></li>
+<li><a href="#surface-water-pt-type"
+id="toc-surface-water-pt-type"><span
+class="toc-section-number">8.5.4</span> Attributen type</a></li>
+<li><a href="#surface-water-pt-dis-loca"
+id="toc-surface-water-pt-dis-loca"><span
+class="toc-section-number">8.5.5</span> Attributen dis_loca</a></li>
+<li><a href="#surface-water-pt-combi"
+id="toc-surface-water-pt-combi"><span
+class="toc-section-number">8.5.6</span> Attributen combi</a></li>
+<li><a href="#attributen-temp" id="toc-attributen-temp"><span
+class="toc-section-number">8.5.7</span> Attributen temp</a></li>
+<li><a href="#attributen-chemistry-2"
+id="toc-attributen-chemistry-2"><span
+class="toc-section-number">8.5.8</span> Attributen chemistry</a></li>
+<li><a href="#attributen-azimuth-8" id="toc-attributen-azimuth-8"><span
+class="toc-section-number">8.5.9</span> Attributen azimuth</a></li>
+</ul></li>
+<li><a href="#surface-water-l" id="toc-surface-water-l"><span
+class="toc-section-number">8.6</span> Klass Surface_Water_L</a>
+<ul>
+<li><a href="#attributen-kind-48" id="toc-attributen-kind-48"><span
+class="toc-section-number">8.6.1</span> Attributen kind</a></li>
+</ul></li>
+<li><a href="#surface-water-plg" id="toc-surface-water-plg"><span
+class="toc-section-number">8.7</span> Klass Surface_Water_PLG</a>
+<ul>
+<li><a href="#attributen-kind-49" id="toc-attributen-kind-49"><span
+class="toc-section-number">8.7.1</span> Attributen kind</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#gc-litstrat-bed-cd" id="toc-gc-litstrat-bed-cd"><span
+class="toc-section-number">9</span> Anhang GC_LITSTRAT_BED_CD</a></li>
+<li><a href="#gc-litstrat-unco-cd" id="toc-gc-litstrat-unco-cd"><span
+class="toc-section-number">10</span> Anhang GC_LITSTRAT_UNCO_CD</a></li>
+<li><a href="#gc-litho-cd" id="toc-gc-litho-cd"><span
+class="toc-section-number">11</span> Anhang GC_LITHO_CD</a></li>
+<li><a href="#gc-litho-unco-cd" id="toc-gc-litho-unco-cd"><span
+class="toc-section-number">12</span> Anhang GC_LITHO_UNCO_CD</a></li>
+<li><a href="#gc-chrono-cd" id="toc-gc-chrono-cd"><span
+class="toc-section-number">13</span> Anhang GC_CHRONO_CD</a></li>
+<li><a href="#gc-tecto-cd" id="toc-gc-tecto-cd"><span
+class="toc-section-number">14</span> Anhang GC_TECTO_CD</a></li>
+<li><a href="#gc-mineral-cd" id="toc-gc-mineral-cd"><span
+class="toc-section-number">15</span> Anhang GC_MINERAL_CD</a></li>
+</ul>
+</nav>
 <figure>
 <img src="geocover.png" title="Figure alt text"
 alt="Auszug aus Geocover und Beispiel für die Darstellung" />
