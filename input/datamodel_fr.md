@@ -466,6 +466,7 @@ _Type de l&#39;objet et description._
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
+|14334001 | Rbed Festgestein | roche consolidée     |
 
 
 
@@ -851,9 +852,9 @@ _Type de l&#39;objet et description._
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
-|11701003 | Gins Abrissrand | niche d´arrachement     |
-|11701002 | Gins Nackentälchen, Zerrstruktur | limite de contrepente     |
 |11701001 | Gins Stauchwulst | bourrelet de glissement     |
+|11701002 | Gins Nackentälchen, Zerrstruktur | limite de contrepente     |
+|11701003 | Gins Abrissrand | niche d´arrachement     |
 |11701004 | Gins offene Spalte | fissure ouverte     |
 
 
@@ -1177,8 +1178,8 @@ _Type de l&#39;objet et description._
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
 |11401001 | Ggla Drumlin, drumlinartige Kieskuppe | drumlin, croupe graveleuse en forme de drumlin     |
-|11401004 | Ggla Toteisloch, Soll | doline glaciaire, soll     |
 |11401003 | Ggla Rundhöcker | roches moutonnées     |
+|11401004 | Ggla Toteisloch, Soll | doline glaciaire, soll     |
 
 
 
@@ -1241,8 +1242,8 @@ _Type de l&#39;objet et description._
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
 |11101001 | Gero Erosionsrand | bord d´érosion     |
-|11101003 | Gero Schichtstufenkante | escarpement en tête de banc     |
 |11101002 | Gero Terrassenkante | bord de terrasse     |
+|11101003 | Gero Schichtstufenkante | escarpement en tête de banc     |
 
 
 
@@ -1413,13 +1414,13 @@ _Type de l&#39;objet et description._
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
+|14601001 | Tdef punktuell beobachtete tektonische Brekzie | brèche tectonique observée ponctuellement     |
 |14601002 | Tdef ausgeprägte Klüftung | diaclases bien marquées     |
 |14601003 | Tdef tektonische Diskordanz | discordance tectonique     |
+|14601004 | Tdef Orientierung der Faltenachsenfläche | orientation de la surface axiale d&#39;un pli     |
 |14601005 | Tdef Fältelung | plissotement (plis)     |
 |14601006 | Tdef Darstellung der Spur einer Achsenfläche | représentation de la trace d&#39;une surface axiale     |
 |14601007 | Tdef Chevron-Falte, Kink Fold | plis en chevron, Kink Fold     |
-|14601004 | Tdef Orientierung der Faltenachsenfläche | orientation de la surface axiale d&#39;un pli     |
-|14601001 | Tdef punktuell beobachtete tektonische Brekzie | brèche tectonique observée ponctuellement     |
 
 
 
@@ -1529,8 +1530,8 @@ _Type de l&#39;objet et description._
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
-|14801002 | Tdef tektonisierte Zone | zone tectonisée     |
 |14801001 | Tdef Kluftzone | zone diaclasée     |
+|14801002 | Tdef tektonisierte Zone | zone tectonisée     |
 
 
 
@@ -1597,13 +1598,13 @@ _Type de l&#39;objet et description._
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
+|14901001 | Ttec Überschiebung | chevauchement     |
 |14901002 | Ttec Abschiebung | détachement (faille normale de grande extension et faible pendage)     |
 |14901004 | Ttec Bruch | faille     |
 |14901005 | Ttec Aufschiebung | faille inverse     |
 |14901006 | Ttec Blattverschiebung | décrochement     |
 |14901007 | Ttec komplexe Störung | accident tectonique complexe     |
 |14901008 | Ttec Störung i. Allg. | accident tectonique en général     |
-|14901001 | Ttec Überschiebung | chevauchement     |
 
 
 
@@ -1861,8 +1862,8 @@ _Type de l&#39;objet et description._
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
-|13701002 | Mlin Orientierung der Streckungslineation | orientation de la linéation d&#39;étirement     |
 |13701001 | Mlin Orientierung der Intersektionslineation | orientation de la linéation d´intersection     |
+|13701002 | Mlin Orientierung der Streckungslineation | orientation de la linéation d&#39;étirement     |
 |13701003 | Mlin Orientierung von Rutschharnischen | orientation des tectoglyphes     |
 |13701004 | Mlin Orientierung von Gletscherschliffen | orientation des stries glaciaires     |
 
@@ -1927,12 +1928,12 @@ _Type de l&#39;objet et description._
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
-|13801001 | Mpla Orientierung der Schichten | orientation des couches     |
 |13801002 | Mpla Orientierung eines Ganges | orientation d&#39;un filon     |
+|13801003 | Mpla Orientierung einer Bruchfläche | orientation d&#39;un plan de faille     |
 |13801004 | Mpla Orientierung der Schieferung | orientation d&#39;une schistosité     |
 |13801005 | Mpla Orientierung einer Schichtung oder Schieferung | orientation d&#39;une couche ou d&#39;une schistosité     |
+|13801001 | Mpla Orientierung der Schichten | orientation des couches     |
 |13801006 | Mpla Schüttungsrichtung | direction de transport sédimentaire     |
-|13801003 | Mpla Orientierung einer Bruchfläche | orientation d&#39;un plan de faille     |
 
 
 
@@ -2175,11 +2176,11 @@ _Type de l&#39;objet et description._
 |13201001 | Lres Mineralfundstelle | gisement de minéraux     |
 |13201002 | Lres Gasquelle | source de gaz naturel     |
 |13201003 | Lres Anzeichen auf Öl | indices de pétrole     |
-|13201004 | Lres Tasche, Karsttasche, Kluft, mit Füllung von siderolithischem Sediment | poche, poche karstique, fissure, remplie de matériel sidérolithique     |
-|13201005 | Lres Fundstelle von vulkanischem Tuffit | gisement de tuffite volcanique     |
 |13201006 | Lres Fundstelle vulkanischer Auswürflinge (Tephra) | gisement de projections volcaniques (tephra)     |
 |13201007 | Lres Fundstelle von Ries-Auswürflingen | gisement de projections du Ries     |
 |13201008 | Lres Asphalt, vereinzeltes Vorkommen | asphalte, gisement isolé     |
+|13201005 | Lres Fundstelle von vulkanischem Tuffit | gisement de tuffite volcanique     |
+|13201004 | Lres Tasche, Karsttasche, Kluft, mit Füllung von siderolithischem Sediment | poche, poche karstique, fissure, remplie de matériel sidérolithique     |
 |13201009 | Lres Meteoritenfundstelle | gisement de météorite     |
 
 
@@ -2293,12 +2294,12 @@ _Type de l&#39;objet et description._
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
+|13401001 | Lsed Sedimentstrukturen | structures sédimentaires     |
+|13401002 | Lsed Riffstrukturen | structures récifales     |
 |13401003 | Lsed Erosions- oder Omissionsfläche, Hartgrund, Kondensationshorizont | surface d´érosion ou lacune stratigraphique, surface durcie, niveau de condensation     |
 |13401004 | Lsed stratigraphische Lage (Polarität) einer Schichtserie | position stratigraphique (polarité) d´une couche sédimentaire     |
 |13401005 | Lsed Winkeldiskordanz | discordance angulaire     |
 |13401006 | Lsed Entwässerungstrichter (blow-out structure) | cratère d&#39;échappement d&#39;eau     |
-|13401001 | Lsed Sedimentstrukturen | structures sédimentaires     |
-|13401002 | Lsed Riffstrukturen | structures récifales     |
 
 
 
@@ -2345,8 +2346,8 @@ _Type de l&#39;objet et description._
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
-|13501003 | Ltyp Typusprofil | coupe-type     |
 |13501001 | Ltyp geologisch relevanter Aufschluss | affleurement géologique important     |
+|13501003 | Ltyp Typusprofil | coupe-type     |
 
 
 
@@ -2921,19 +2922,19 @@ _Type de l&#39;objet et description._
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
-|10101003 | Aarc Pfahlbauten | palafitte     |
+|10101001 | Aarc archäologische Fundstelle, Anlage, Siedlungsreste | site archéologique, station, vestiges d&#39;établissement     |
 |10101005 | Aarc Gräber, Gräberfeld | tombe, site mortuaire     |
-|10101006 | Aarc Steinplattengrab | sépulture     |
 |10101007 | Aarc Grabhügel, Dolmengrab | tumulus, dolmen funéraire     |
 |10101008 | Aarc Kultstein | mégalithe     |
-|10101001 | Aarc archäologische Fundstelle, Anlage, Siedlungsreste | site archéologique, station, vestiges d&#39;établissement     |
-|10101002 | Aarc Höhlensiedlung, Abri | grotte, abri sous roche     |
-|10101004 | Aarc Burgstelle, Burghügel, Wachtturm | motte, emplacement d´un ancien château, d´une fortification, d&#39;un château-fort     |
 |10101009 | Aarc Kalkofen | four à chaux     |
 |10101010 | Aarc Felsenkeller | cave dans la roche     |
 |10101011 | Aarc Schlackenhalde | crassier     |
 |10101012 | Aarc Glashütte | verrerie     |
 |10101013 | Aarc Schmelzofen | four à fer     |
+|10101004 | Aarc Burgstelle, Burghügel, Wachtturm | motte, emplacement d´un ancien château, d´une fortification, d&#39;un château-fort     |
+|10101002 | Aarc Höhlensiedlung, Abri | grotte, abri sous roche     |
+|10101003 | Aarc Pfahlbauten | palafitte     |
+|10101006 | Aarc Steinplattengrab | sépulture     |
 |10101015 | Aarc Abbaustelle | exploitation     |
 
 
@@ -3034,12 +3035,12 @@ _Type de l&#39;objet et description._
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
-|10201004 | Aarc künstlicher Erdwall | levée de terre artificielle     |
-|10201003 | Aarc künstlicher Graben, Befestigungsgraben | fossé artificiel, fossé de fortification     |
-|10201005 | Aarc Wasserleitung | aqueduc     |
-|10201006 | Aarc Steinreihe | alignement mégalithique     |
 |10201001 | Aarc Verkehrsweg | voie de communication     |
 |10201002 | Aarc Hohlweg | chemin creux     |
+|10201003 | Aarc künstlicher Graben, Befestigungsgraben | fossé artificiel, fossé de fortification     |
+|10201004 | Aarc künstlicher Erdwall | levée de terre artificielle     |
+|10201005 | Aarc Wasserleitung | aqueduc     |
+|10201006 | Aarc Steinreihe | alignement mégalithique     |
 |10201007 | Aarc Schützengraben | tranchée     |
 
 
@@ -3215,9 +3216,9 @@ _Type de l&#39;objet et description._
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
-|10601003 | Aexp Schacht | puits de mine     |
 |10601001 | Aexp Bergwerk, Untertageabbau | mine, exploitation souterraine     |
 |10601002 | Aexp Stolleneingang | entrée de galerie     |
+|10601003 | Aexp Schacht | puits de mine     |
 |10601004 | Aexp Pinge (dolinenartiger Stolleneinbruch) | fontis (effondrement de surface lié à des travaux souterrains)     |
 |10601005 | Aexp Schürfloch | trace d´exploitation en surface     |
 |10601006 | Aexp ausgeräumte Bohnerztasche | poche sidérolithique vidée     |
@@ -3334,8 +3335,8 @@ _Type de l&#39;objet et description._
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
-|10701002 | Aexp Bergwerksstollen | galerie de mine     |
 |10701001 | Aexp Abbaufront | front d&#39;exploitation     |
+|10701002 | Aexp Bergwerksstollen | galerie de mine     |
 
 
 
@@ -3523,11 +3524,11 @@ _Type de l&#39;objet et description._
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
-|10501005 | Abor Rammkernsondierung | sondage par carottier battu     |
-|10501004 | Abor Rammsondierung | sondage au pénétromètre     |
+|10501001 | Abor Bohrung | forage     |
 |10501002 | Abor Sondierschlitz | fouille ou tranchée de reconnaissance     |
 |10501003 | Abor Handsondierung | sondage à la tarière     |
-|10501001 | Abor Bohrung | forage     |
+|10501004 | Abor Rammsondierung | sondage au pénétromètre     |
+|10501005 | Abor Rammkernsondierung | sondage par carottier battu     |
 
 
 
@@ -3720,12 +3721,12 @@ _Type de l&#39;objet et description._
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
-|10401005 | Aart Deponie | décharge     |
-|10401006 | Aart Halde | terril     |
-|10401004 | Aart Auffüllung | remplissage     |
 |10401001 | Aart künstlich verändertes Gelände | terrain modelé artificiellement     |
 |10401002 | Aart künstliche Ablagerung, undifferenziert | dépôts artificiels, indifférenciés     |
 |10401003 | Aart Aufschüttung, Damm | remblai, digue     |
+|10401004 | Aart Auffüllung | remplissage     |
+|10401005 | Aart Deponie | décharge     |
+|10401006 | Aart Halde | terril     |
 
 
 
@@ -3770,13 +3771,13 @@ _Type de l&#39;objet et description._
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
+|12101001 | Hcon Grundwasserfassung | captage dans la nappe phréatique     |
 |12101002 | Hcon Zisterne | citerne     |
 |12101003 | Hcon laufender Brunnen (in wasserarmem Gebiet) | fontaine (en région sèche)     |
-|12101001 | Hcon Grundwasserfassung | captage dans la nappe phréatique     |
+|12101004 | Hcon Sodbrunnen | puits     |
 |12101005 | Hcon Versickerungsschacht | puits d´infiltration     |
 |12101006 | Hcon Limnigraph | limnigraphe     |
 |12101007 | Hcon Piezometer | piézomètre     |
-|12101004 | Hcon Sodbrunnen | puits     |
 
 
 
@@ -3919,11 +3920,11 @@ _Type de l&#39;objet et description._
 |---------------|----------------------------------------|----------------------------------------|
 |12301001 | Hpal Paläotal | axe de paléovallée     |
 |12301002 | Hpal ehemalige Entwässerungsrinne | ancien chenal     |
-|12301003 | Hpal ehemalige glaziale Abflussrinne | axe d&#39;un ancien effluent glaciaire     |
 |12301004 | Hpal Trockental | vallée sèche     |
 |12301005 | Hpal ehemaliges Bachbett | ancien lit de cours d&#39;eau (ruisseau)     |
 |12301006 | Hpal Ufer eines ehemaligen Flussbetts | rive d&#39;un ancien lit de cours d&#39;eau     |
 |12301007 | Hpal ehemalige Uferlinie | ancienne ligne de rivage     |
+|12301003 | Hpal ehemalige glaziale Abflussrinne | axe d&#39;un ancien effluent glaciaire     |
 
 
 
@@ -4070,12 +4071,12 @@ _Type de l&#39;objet et description._
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
+|12501001 | Hsur Quelle | source     |
+|12501002 | Hsur diffuse Quelle | source diffuse     |
 |12501003 | Hsur Wiederaustritt eines unterirdischen Bachlaufes | résurgence d&#39;une rivière souterraine     |
 |12501004 | Hsur Versickerungsstelle eines Baches | perte d´un cours d´eau     |
 |12501005 | Hsur Steilstufe in Bachrinne, Wasserfall | rapide d&#39;un cours d&#39;eau, cascade     |
 |12501006 | Hsur Grundwasseraufstoss | résurgence des eaux souterraines     |
-|12501001 | Hsur Quelle | source     |
-|12501002 | Hsur diffuse Quelle | source diffuse     |
 
 
 
@@ -4234,8 +4235,8 @@ _Type de l&#39;objet et description._
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
-|12701002 | Hsur See | lac     |
 |12701001 | Hsur Gletscher | glacier     |
+|12701002 | Hsur See | lac     |
 |12701003 | Hsur Fluss | rivière     |
 
 
