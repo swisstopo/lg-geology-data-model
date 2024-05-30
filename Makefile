@@ -101,6 +101,7 @@ html: assets $(HTML_TARGETS)
 assets:
 	$(CP) assets/$(CSS) $(OUTPUT_DIR)
 	$(CP) assets/geocover.png $(OUTPUT_DIR)
+	$(CP) assets/geocover.png .
 
 de: assets $(DE_TARGETS)
 fr: assets $(FR_TARGETS)
