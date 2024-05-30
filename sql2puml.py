@@ -53,6 +53,7 @@ scale 2
 !define view(x) class x << (V,#FFAAAA) >>
 !define ent(x) class x << (E,#FFAAAA) >>
 !define enum(x) class x << (E,#FFAAAA) >>
+!define class(x) class x << (FC, #CC8888) >> #fff
 
 !define primary_key(x) <b>PK: x</b>
 !define foreign_key(x,reference) <b>FK: </b>x
@@ -100,11 +101,18 @@ hide stereotypes
         :param name: Name of the column.
         :param type: Type of the column.
         """
+        is_feature_class = False
         # Refuse if not in a table
         if self.current_table is None:
             raise NoTableException
 
         self.puml_tables[self.current_table]['default'][name] = type
+
+        if name.lower() == 'shape' or type.lower() == 'geometry':
+            is_feature_class = True
+
+        self.puml_tables[self.current_table]['is_feature_class'] = is_feature_class
+
 
 
     def add_column_primary(self, name, type):
@@ -141,7 +149,7 @@ hide stereotypes
         self.puml_tables = OrderedDict()
         self.current_table = None
 
-    def transform(self, sql=None):
+    def transform(self, sql=None, enum=False):
         """
         Transform SQL CREATE TABLE statements to a Plant UML database graph.
 
@@ -158,7 +166,10 @@ hide stereotypes
         # Run through all tables.
         for table_name, table in self.puml_tables.items():
             # Add PUML code for the beggining of the table.
-            puml_lines.append('table({}) '.format(table_name) + '{')
+            class_name = 'table'
+            if table.get('is_feature_class'):
+                class_name = 'class'
+            puml_lines.append('{}({}) '.format(class_name, table_name) + '{')
 
             # Add PUML lines for all primary keys.
             for cname, ctype  in table['primary'].items():
@@ -173,7 +184,12 @@ hide stereotypes
                 puml_lines.append('\t---')
 
             # Add regular columns.
-            for cname, ctype  in table['default'].items():
+            # Sort keys except OBJECTID and UUID
+            keys = list(table['default'].keys())
+            if len(keys) > 1 and keys[0].lower() == 'objectid' and keys[1].lower() == 'uuid':
+                keys = keys[:2] + sorted(keys[2:])
+            sorted_keys = {i: table['default'][i] for i in keys}
+            for cname, ctype  in sorted_keys.items():
                 puml_lines.append('\tkey({}) {}'.format(cname, ctype))
 
             # Close the table.
@@ -190,7 +206,8 @@ hide stereotypes
         puml_lines.append('')
 
         # Add the puml_enumerations
-        for enum_name, enum in self.puml_enumerations.items():
+        if enum:
+          for enum_name, enum in self.puml_enumerations.items():
             # Add PUML code for the beggining of the enum.
             puml_lines.append('enum({}) '.format(enum_name) + '{')
             # Add PUML lines for all primary keys.
@@ -201,8 +218,8 @@ hide stereotypes
             # Add a single empty line.
             puml_lines.append('')
 
-        # Add a single empty line.
-        puml_lines.append('')
+          # Add a single empty line.
+          puml_lines.append('')
 
         # Join all output lines separated by new lines.
         content = '\n'.join(puml_lines)

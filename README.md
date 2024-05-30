@@ -12,6 +12,14 @@ defaut de _ESRI ArcGis Pro_ (_argispro-py3_) qui contient les modules nécessair
 
     conda install jinja2 pyyaml pandas click loguru --yes
 
+ou simplement (l'environement créé est `DATAMODEL`):
+
+    conda env create -f environment.yml
+
+En cas d'ajout de dépendances, recréer la liste des paquets avec :
+
+    conda env export environment.yml
+
 Les scripts, _coded_domain.py_ et _subtype.py_ doivent être excécuté dans un projet ESRI ArcGis Pro avec une connection
 sur la base SDE GCOVER.
 
