@@ -8,15 +8,29 @@ import sys
 
 import logging
 
-logging.basicConfig(format="%(name)s - %(levelname)s - %(message)s", level=logging.INFO)
+class UnicodeHandler(logging.StreamHandler):
+    def emit(self, record):
+        try:
+            msg = self.format(record)
+            stream = self.stream
+            # Ensure that msg is a Unicode string and encode it as UTF-8
+            if isinstance(msg, unicode):
+                msg = msg.encode('utf-8')
+            stream.write(msg + self.terminator)
+            self.flush()
+        except Exception:
+            self.handleError(record)
+
+logging.basicConfig(format="%(name)s - %(levelname)s - %(message)s",level=logging.INFO)
+
 
 now = datetime.datetime.now()
 
 try:
-    curdir  = os.path.dirname(os.path.realpath(__file__))
+    curdir  = os.path.join(os.path.dirname(os.path.realpath(__file__)), '..')
 except NameError:
-    curdir = r'H:\code\geocover-examples\datamodel'
-basedir = os.path.join(curdir, 'exports')
+    curdir = r'H:\code\lg-geology-data-model'
+basedir = os.path.abspath(os.path.join(curdir, 'exports'))
 
 if not  os.path.isdir(basedir):
     os.makedirs(basedir)
@@ -32,12 +46,18 @@ else:
     is_py3 = False
     mxd = arcpy.mapping.MapDocument(r"CURRENT")
     df = arcpy.mapping.ListDataFrames(mxd, "*")[0]
-    layers_list = arcpy.mp.ListLayers(mxd, "", df)
+    if df is not None:
+        layers_list=  arcpy.mapping.ListLayers(mxd, "*", df)
+    else:
+        layers_list =  arcpy.mapping.ListLayers(mxd, "*")
+
 
 if is_py3:
     list_subtypes = lambda x: arcpy.da.ListSubtypes(x).items()
 else:
     list_subtypes = lambda x: arcpy.da.ListSubtypes(x).iteritems()
+
+
 
 
 def merge_two_dicts(x, y):
@@ -53,14 +73,16 @@ subtypes_layers = {"date": now.strftime("%H:%M:%S-%d-%m-%Y"), "database": {}}
 
 
 for lyr in layers_list:
-    logging.info("==== {} ====".format(lyr.name))
+    print(u"==== {} ====".format(lyr.name))
     if not lyr.isFeatureLayer:
-        logging.info("Not a Feature Layer")
+        print("Not a Feature Layer")
         continue
     fc = lyr.name
     previous_connection_info = subtypes_dict["database"].get("connection")
     if lyr.supports("DATASOURCE"):
         if lyr.dataSource:
+          connection_info = None
+          try:
             cp = lyr.connectionProperties
             connection_info = cp.get("connection_info")
             logging.debug(connection_info)
@@ -69,29 +91,33 @@ for lyr in layers_list:
                 if not previous_connection_info == connection_info:
                     logging.error("Connection is different form the previous one.")
                     sys.exit(2)
+          except AttributeError:
+              print(u"Layer {} has no connection properties".format(lyr.name))
+
         try:
             desc_lu = {key: value["Name"] for (key, value) in list_subtypes(fc)}
-            logging.info(json.dumps(desc_lu, indent=4))
+            #print(json.dumps(desc_lu, indent=4))
             subtypes_layers[fc] = desc_lu
             subtypes_dict = merge_two_dicts(subtypes_dict, desc_lu)
 
             subtypes_layers["database"]["connection"] = connection_info
             subtypes_dict["database"]["connection"] = connection_info
 
-            """fields  = arcpy.ListFields(fc)
-    if "SUBTYPEFIELD" in fields:
-        with arcpy.da.SearchCursor(fc, "SUBTYPEFIELD") as cur:
-            for row in cur:
-                logging.info(desc_lu[row[0]])
-    else:
-        logging.info("No 'subtypefiled'")
-    """
+            print(subtypes_dict)
+
+
         except Exception as e:
-            logging.error(e)
+            print(e)
             continue
+    else:
+        logging.error("Do not support datasource")
+logging.info(json.dumps(subtypes_layers, indent=4))
 
 with open(os.path.join(basedir, "subtypes_pro_layer.json"), "w") as f:
     f.write(json.dumps(subtypes_layers, indent=4))
 
-with open(os.path.join(basedir, "subtypes_dict.json"), "w") as f:
+fname = os.path.join(basedir, "subtypes_dict.json")
+with open(fname, "w") as f:
     f.write(json.dumps(subtypes_dict, indent=4))
+
+print(fname)
