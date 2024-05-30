@@ -42,8 +42,8 @@ PANDOC_OPTIONS=--standalone \
          
          
 # Define language-specific options
-OPTIONS_de = --metadata lang=de  --metadata-file=metadata_de.yaml -V lang=de
-OPTIONS_fr = --metadata lang=fr  --metadata-file=metadata_fr.yaml -V lang=fr
+OPTIONS_de = --metadata lang=de  --metadata-file=assets/metadata_de.yaml -V lang=de
+OPTIONS_fr = --metadata lang=fr  --metadata-file=assets/metadata_fr.yaml -V lang=fr
 
 # format specific options
 PANDOC_HTML_OPTIONS=--to html5 --toc  --css $(CSS)
@@ -84,29 +84,31 @@ FR_TARGETS = $(foreach format, $(FORMATS), $(OUTPUT_DIR)/datamodel_fr.$(format))
 
 
 # Default target
-docs: babel $(TARGETS)
+docs: babel assets $(TARGETS)
 
 # Target to generate only PDF files
-pdf: $(PDF_TARGETS)
+pdf: assets $(PDF_TARGETS)
 
 # Target to generate only docx files
-docx: $(DOCX_TARGETS)
+docx: assets $(DOCX_TARGETS)
 
 # Target to generate only docx files
-odt: $(ODT_TARGETS)
+odt: assets $(ODT_TARGETS)
 
 # Target to generate only html files
-html: $(HTML_TARGETS)
-	$(CP) $(CSS) $(OUTPUT_DIR)
-	$(CP) geocover.png $(OUTPUT_DIR)
+html: assets $(HTML_TARGETS)
 
-de: $(DE_TARGETS)
-fr: $(FR_TARGETS)
+assets:
+	$(CP) assets/$(CSS) $(OUTPUT_DIR)
+	$(CP) assets/geocover.png $(OUTPUT_DIR)
+
+de: assets $(DE_TARGETS)
+fr: assets $(FR_TARGETS)
 
 all: markdown diagram docs
 
 # Phony targets
-.PHONY: all clean de fr help
+.PHONY: all clean de fr help assets
 
 babel:
 	pybabel compile --domain=app --directory=locale --use-fuzzy

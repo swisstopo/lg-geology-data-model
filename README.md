@@ -2,7 +2,15 @@ Modèle de donnée géologie
 =========================
 
 Le but de ces outils est de créer de manière plus au moins automatique le _modèle de donnée géologie_ GeoCover, en
-particulier la liste des valeurs attributaires possibles.
+particulier la liste des valeurs attributaires possibles, et le modèle physique issu de ESRI ArcSDE.
+
+Les fichiers d'intérêts sont dans le répertoire `output`
+
+* Le modèle de donnée géologique : `datamodel_de.pdf` et `datamodel_fr.pdf` (des fichiers `.docx`, `.html` et `.odt` sont
+  également disponibles)
+* le dump des informations de ESRI ArcSDE 
+* Le schéma ER de la base `ER-GCOVER.svg`, généré à partir d'un fichier `PlantUML`.
+
 
 
 # Installation
@@ -133,15 +141,14 @@ Sur Linux...
                   --metadata-file=metadata.yaml   --variable mainfont="Sans"  -o datamodel.html datamodel.md
 
 
-# Schema SDE
+# Génération du schema ER de la base de donnée SDE
 
-Générer le fichier `PlantUML  avec :
+Générer le fichier `PlantUML`  avec :
 
     python create_gv.py 
     
 Convertir en fichier SVG avec p.ex. https://www.planttext.com/
 
 Convertir en image :
-
 
     convert  ER-GCOVER.svg ER-GCOVER.png
