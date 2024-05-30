@@ -98,7 +98,7 @@ odt: assets $(ODT_TARGETS)
 # Target to generate only html files
 html: assets $(HTML_TARGETS)
 
-assets: assets/$(CSS) assets/geocover.png
+assets:
 	$(CP) assets/$(CSS) $(OUTPUT_DIR)
 	$(CP) assets/geocover.png $(OUTPUT_DIR)
 
@@ -108,7 +108,7 @@ fr: assets $(FR_TARGETS)
 all: markdown diagram docs
 
 # Phony targets
-.PHONY: all clean de fr help
+.PHONY: all clean de fr help assets
 
 babel:
 	pybabel compile --domain=app --directory=locale --use-fuzzy
