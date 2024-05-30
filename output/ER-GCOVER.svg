@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
    contentStyleType="text/css"
-   height="4368px"
+   height="4245.1733"
    preserveAspectRatio="none"
-   style="width:10092px;height:4368px;background:#FFFFFF;"
    version="1.1"
-   viewBox="0 0 10092 4368"
-   width="10092px"
+   viewBox="0 0 6588.4668 4245.1733"
+   width="6588.4668"
    zoomAndPan="magnify"
    id="svg1696"
    sodipodi:docname="ER-GCOVER.svg"
    inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   inkscape:export-filename="/home/marc-monnerat-u1/code/github.com/lg-geology-data-model/output/ER-GCOVER@300.png"
+   inkscape:export-xdpi="299.99622"
+   inkscape:export-ydpi="299.99622"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -24,20 +26,28 @@
      inkscape:pageopacity="0.0"
      inkscape:pagecheckerboard="0"
      showgrid="false"
-     inkscape:zoom="0.36462383"
-     inkscape:cx="3784.7225"
-     inkscape:cy="839.22107"
+     inkscape:zoom="0.14056252"
+     inkscape:cx="2657.1807"
+     inkscape:cy="2127.1674"
      inkscape:window-width="1850"
      inkscape:window-height="1022"
      inkscape:window-x="70"
      inkscape:window-y="27"
      inkscape:window-maximized="1"
-     inkscape:current-layer="svg1696" />
+     inkscape:current-layer="svg1696"
+     inkscape:snap-text-baseline="true"
+     fit-margin-left="50"
+     fit-margin-top="50"
+     fit-margin-bottom="50"
+     fit-margin-right="50" />
   <defs
      id="defs2" />
   <g
      id="elem_GC_CHRONO"
-     transform="translate(0,102)">
+     transform="translate(-63.5,43.205781)"
+     inkscape:export-filename="/home/marc-monnerat-u1/code/github.com/lg-geology-data-model/output/ER-GCOVER@150.png"
+     inkscape:export-xdpi="149.99661"
+     inkscape:export-ydpi="149.99661">
     <rect
        codeLine="17"
        fill="#f1f1f1"
@@ -127,10 +137,29 @@
        font-size="28px"
        font-weight="bold"
        lengthAdjust="spacing"
-       textLength="184"
+       textLength="74"
        x="202"
        y="193.1777"
-       id="text23">GEOL_CODE</text>
+       id="text23">UUID</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="28px"
+       lengthAdjust="spacing"
+       textLength="64"
+       x="284"
+       y="193.1777"
+       id="text25">Guid</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="28px"
+       font-weight="bold"
+       lengthAdjust="spacing"
+       textLength="184"
+       x="202"
+       y="225.7715"
+       id="text27">GEOL_CODE</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -138,8 +167,8 @@
        lengthAdjust="spacing"
        textLength="80"
        x="394"
-       y="193.1777"
-       id="text25">String</text>
+       y="225.7715"
+       id="text29">String</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -148,8 +177,8 @@
        lengthAdjust="spacing"
        textLength="248"
        x="202"
-       y="225.7715"
-       id="text27">GEOL_CODE_INT</text>
+       y="258.3652"
+       id="text31">GEOL_CODE_INT</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -157,8 +186,8 @@
        lengthAdjust="spacing"
        textLength="98"
        x="458"
-       y="225.7715"
-       id="text29">Integer</text>
+       y="258.3652"
+       id="text33">Integer</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -167,8 +196,8 @@
        lengthAdjust="spacing"
        textLength="132"
        x="202"
-       y="258.3652"
-       id="text31">GERMAN</text>
+       y="290.95901"
+       id="text35">GERMAN</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -176,8 +205,8 @@
        lengthAdjust="spacing"
        textLength="80"
        x="342"
-       y="258.3652"
-       id="text33">String</text>
+       y="290.95901"
+       id="text37">String</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -186,8 +215,8 @@
        lengthAdjust="spacing"
        textLength="192"
        x="202"
-       y="290.95901"
-       id="text35">PARENT_REF</text>
+       y="323.5527"
+       id="text39">PARENT_REF</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -195,25 +224,6 @@
        lengthAdjust="spacing"
        textLength="98"
        x="402"
-       y="290.95901"
-       id="text37">Integer</text>
-    <text
-       fill="#000000"
-       font-family="sans-serif"
-       font-size="28px"
-       font-weight="bold"
-       lengthAdjust="spacing"
-       textLength="184"
-       x="202"
-       y="323.5527"
-       id="text39">TREE_LEVEL</text>
-    <text
-       fill="#000000"
-       font-family="sans-serif"
-       font-size="28px"
-       lengthAdjust="spacing"
-       textLength="98"
-       x="394"
        y="323.5527"
        id="text41">Integer</text>
     <text
@@ -222,22 +232,26 @@
        font-size="28px"
        font-weight="bold"
        lengthAdjust="spacing"
-       textLength="74"
+       textLength="184"
        x="202"
        y="356.14651"
-       id="text43">UUID</text>
+       id="text43">TREE_LEVEL</text>
     <text
        fill="#000000"
        font-family="sans-serif"
        font-size="28px"
        lengthAdjust="spacing"
-       textLength="64"
-       x="284"
+       textLength="98"
+       x="394"
        y="356.14651"
-       id="text45">Guid</text>
+       id="text45">Integer</text>
   </g>
   <g
-     id="elem_GC_LITHO">
+     id="elem_GC_LITHO"
+     inkscape:export-filename="/home/marc-monnerat-u1/code/github.com/lg-geology-data-model/output/ER-GCOVER@150.png"
+     inkscape:export-xdpi="149.99661"
+     inkscape:export-ydpi="149.99661"
+     transform="translate(-63.5,-52.794219)">
     <rect
        codeLine="29"
        fill="#f1f1f1"
@@ -346,10 +360,29 @@
        font-size="28px"
        font-weight="bold"
        lengthAdjust="spacing"
-       textLength="184"
+       textLength="74"
        x="1873"
        y="1256.6115"
-       id="text71">GEOL_CODE</text>
+       id="text71">UUID</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="28px"
+       lengthAdjust="spacing"
+       textLength="64"
+       x="1955"
+       y="1256.6115"
+       id="text73">Guid</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="28px"
+       font-weight="bold"
+       lengthAdjust="spacing"
+       textLength="184"
+       x="1873"
+       y="1289.2052"
+       id="text75">GEOL_CODE</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -357,8 +390,8 @@
        lengthAdjust="spacing"
        textLength="80"
        x="2065"
-       y="1256.6115"
-       id="text73">String</text>
+       y="1289.2052"
+       id="text77">String</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -367,8 +400,8 @@
        lengthAdjust="spacing"
        textLength="248"
        x="1873"
-       y="1289.2052"
-       id="text75">GEOL_CODE_INT</text>
+       y="1321.799"
+       id="text79">GEOL_CODE_INT</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -376,8 +409,8 @@
        lengthAdjust="spacing"
        textLength="98"
        x="2129"
-       y="1289.2052"
-       id="text77">Integer</text>
+       y="1321.799"
+       id="text81">Integer</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -386,8 +419,8 @@
        lengthAdjust="spacing"
        textLength="132"
        x="1873"
-       y="1321.799"
-       id="text79">GERMAN</text>
+       y="1354.3927"
+       id="text83">GERMAN</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -395,8 +428,8 @@
        lengthAdjust="spacing"
        textLength="80"
        x="2013"
-       y="1321.799"
-       id="text81">String</text>
+       y="1354.3927"
+       id="text85">String</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -405,8 +438,8 @@
        lengthAdjust="spacing"
        textLength="192"
        x="1873"
-       y="1354.3927"
-       id="text83">PARENT_REF</text>
+       y="1386.9865"
+       id="text87">PARENT_REF</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -414,25 +447,6 @@
        lengthAdjust="spacing"
        textLength="98"
        x="2073"
-       y="1354.3927"
-       id="text85">Integer</text>
-    <text
-       fill="#000000"
-       font-family="sans-serif"
-       font-size="28px"
-       font-weight="bold"
-       lengthAdjust="spacing"
-       textLength="184"
-       x="1873"
-       y="1386.9865"
-       id="text87">TREE_LEVEL</text>
-    <text
-       fill="#000000"
-       font-family="sans-serif"
-       font-size="28px"
-       lengthAdjust="spacing"
-       textLength="98"
-       x="2065"
        y="1386.9865"
        id="text89">Integer</text>
     <text
@@ -441,23 +455,26 @@
        font-size="28px"
        font-weight="bold"
        lengthAdjust="spacing"
-       textLength="74"
+       textLength="184"
        x="1873"
        y="1419.5802"
-       id="text91">UUID</text>
+       id="text91">TREE_LEVEL</text>
     <text
        fill="#000000"
        font-family="sans-serif"
        font-size="28px"
        lengthAdjust="spacing"
-       textLength="64"
-       x="1955"
+       textLength="98"
+       x="2065"
        y="1419.5802"
-       id="text93">Guid</text>
+       id="text93">Integer</text>
   </g>
   <g
      id="elem_GC_LITSTRAT"
-     transform="translate(-3250.2291,1962.5488)">
+     transform="translate(-3352.5146,1925.2688)"
+     inkscape:export-filename="/home/marc-monnerat-u1/code/github.com/lg-geology-data-model/output/ER-GCOVER@150.png"
+     inkscape:export-xdpi="149.99661"
+     inkscape:export-ydpi="149.99661">
     <rect
        codeLine="42"
        fill="#f1f1f1"
@@ -566,10 +583,29 @@
        font-size="28px"
        font-weight="bold"
        lengthAdjust="spacing"
-       textLength="184"
+       textLength="74"
        x="6064"
        y="1256.6115"
-       id="text119">GEOL_CODE</text>
+       id="text119">UUID</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="28px"
+       lengthAdjust="spacing"
+       textLength="64"
+       x="6146"
+       y="1256.6115"
+       id="text121">Guid</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="28px"
+       font-weight="bold"
+       lengthAdjust="spacing"
+       textLength="184"
+       x="6064"
+       y="1289.2052"
+       id="text123">GEOL_CODE</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -577,8 +613,8 @@
        lengthAdjust="spacing"
        textLength="80"
        x="6256"
-       y="1256.6115"
-       id="text121">String</text>
+       y="1289.2052"
+       id="text125">String</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -587,8 +623,8 @@
        lengthAdjust="spacing"
        textLength="248"
        x="6064"
-       y="1289.2052"
-       id="text123">GEOL_CODE_INT</text>
+       y="1321.799"
+       id="text127">GEOL_CODE_INT</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -596,8 +632,8 @@
        lengthAdjust="spacing"
        textLength="98"
        x="6320"
-       y="1289.2052"
-       id="text125">Integer</text>
+       y="1321.799"
+       id="text129">Integer</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -606,8 +642,8 @@
        lengthAdjust="spacing"
        textLength="132"
        x="6064"
-       y="1321.799"
-       id="text127">GERMAN</text>
+       y="1354.3927"
+       id="text131">GERMAN</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -615,8 +651,8 @@
        lengthAdjust="spacing"
        textLength="80"
        x="6204"
-       y="1321.799"
-       id="text129">String</text>
+       y="1354.3927"
+       id="text133">String</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -625,8 +661,8 @@
        lengthAdjust="spacing"
        textLength="192"
        x="6064"
-       y="1354.3927"
-       id="text131">PARENT_REF</text>
+       y="1386.9865"
+       id="text135">PARENT_REF</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -634,25 +670,6 @@
        lengthAdjust="spacing"
        textLength="98"
        x="6264"
-       y="1354.3927"
-       id="text133">Integer</text>
-    <text
-       fill="#000000"
-       font-family="sans-serif"
-       font-size="28px"
-       font-weight="bold"
-       lengthAdjust="spacing"
-       textLength="184"
-       x="6064"
-       y="1386.9865"
-       id="text135">TREE_LEVEL</text>
-    <text
-       fill="#000000"
-       font-family="sans-serif"
-       font-size="28px"
-       lengthAdjust="spacing"
-       textLength="98"
-       x="6256"
        y="1386.9865"
        id="text137">Integer</text>
     <text
@@ -661,23 +678,26 @@
        font-size="28px"
        font-weight="bold"
        lengthAdjust="spacing"
-       textLength="74"
+       textLength="184"
        x="6064"
        y="1419.5802"
-       id="text139">UUID</text>
+       id="text139">TREE_LEVEL</text>
     <text
        fill="#000000"
        font-family="sans-serif"
        font-size="28px"
        lengthAdjust="spacing"
-       textLength="64"
-       x="6146"
+       textLength="98"
+       x="6256"
        y="1419.5802"
-       id="text141">Guid</text>
+       id="text141">Integer</text>
   </g>
   <g
      id="elem_GC_TECTO"
-     transform="translate(0,102)">
+     transform="translate(-63.5,43.205781)"
+     inkscape:export-filename="/home/marc-monnerat-u1/code/github.com/lg-geology-data-model/output/ER-GCOVER@150.png"
+     inkscape:export-xdpi="149.99661"
+     inkscape:export-ydpi="149.99661">
     <rect
        codeLine="55"
        fill="#f1f1f1"
@@ -767,10 +787,29 @@
        font-size="28px"
        font-weight="bold"
        lengthAdjust="spacing"
-       textLength="184"
+       textLength="74"
        x="650"
        y="193.1777"
-       id="text163">GEOL_CODE</text>
+       id="text163">UUID</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="28px"
+       lengthAdjust="spacing"
+       textLength="64"
+       x="732"
+       y="193.1777"
+       id="text165">Guid</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="28px"
+       font-weight="bold"
+       lengthAdjust="spacing"
+       textLength="184"
+       x="650"
+       y="225.7715"
+       id="text167">GEOL_CODE</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -778,8 +817,8 @@
        lengthAdjust="spacing"
        textLength="80"
        x="842"
-       y="193.1777"
-       id="text165">String</text>
+       y="225.7715"
+       id="text169">String</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -788,8 +827,8 @@
        lengthAdjust="spacing"
        textLength="248"
        x="650"
-       y="225.7715"
-       id="text167">GEOL_CODE_INT</text>
+       y="258.3652"
+       id="text171">GEOL_CODE_INT</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -797,8 +836,8 @@
        lengthAdjust="spacing"
        textLength="98"
        x="906"
-       y="225.7715"
-       id="text169">Integer</text>
+       y="258.3652"
+       id="text173">Integer</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -807,8 +846,8 @@
        lengthAdjust="spacing"
        textLength="132"
        x="650"
-       y="258.3652"
-       id="text171">GERMAN</text>
+       y="290.95901"
+       id="text175">GERMAN</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -816,8 +855,8 @@
        lengthAdjust="spacing"
        textLength="80"
        x="790"
-       y="258.3652"
-       id="text173">String</text>
+       y="290.95901"
+       id="text177">String</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -826,8 +865,8 @@
        lengthAdjust="spacing"
        textLength="192"
        x="650"
-       y="290.95901"
-       id="text175">PARENT_REF</text>
+       y="323.5527"
+       id="text179">PARENT_REF</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -835,25 +874,6 @@
        lengthAdjust="spacing"
        textLength="98"
        x="850"
-       y="290.95901"
-       id="text177">Integer</text>
-    <text
-       fill="#000000"
-       font-family="sans-serif"
-       font-size="28px"
-       font-weight="bold"
-       lengthAdjust="spacing"
-       textLength="184"
-       x="650"
-       y="323.5527"
-       id="text179">TREE_LEVEL</text>
-    <text
-       fill="#000000"
-       font-family="sans-serif"
-       font-size="28px"
-       lengthAdjust="spacing"
-       textLength="98"
-       x="842"
        y="323.5527"
        id="text181">Integer</text>
     <text
@@ -862,23 +882,26 @@
        font-size="28px"
        font-weight="bold"
        lengthAdjust="spacing"
-       textLength="74"
+       textLength="184"
        x="650"
        y="356.14651"
-       id="text183">UUID</text>
+       id="text183">TREE_LEVEL</text>
     <text
        fill="#000000"
        font-family="sans-serif"
        font-size="28px"
        lengthAdjust="spacing"
-       textLength="64"
-       x="732"
+       textLength="98"
+       x="842"
        y="356.14651"
-       id="text185">Guid</text>
+       id="text185">Integer</text>
   </g>
   <g
      id="elem_GC_LITHO_UNCO"
-     transform="translate(0,102)">
+     transform="translate(-63.5,43.205781)"
+     inkscape:export-filename="/home/marc-monnerat-u1/code/github.com/lg-geology-data-model/output/ER-GCOVER@150.png"
+     inkscape:export-xdpi="149.99661"
+     inkscape:export-ydpi="149.99661">
     <rect
        codeLine="67"
        fill="#f1f1f1"
@@ -968,10 +991,29 @@
        font-size="28px"
        font-weight="bold"
        lengthAdjust="spacing"
-       textLength="184"
+       textLength="74"
        x="1098"
        y="193.1777"
-       id="text207">GEOL_CODE</text>
+       id="text207">UUID</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="28px"
+       lengthAdjust="spacing"
+       textLength="64"
+       x="1180"
+       y="193.1777"
+       id="text209">Guid</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="28px"
+       font-weight="bold"
+       lengthAdjust="spacing"
+       textLength="184"
+       x="1098"
+       y="225.7715"
+       id="text211">GEOL_CODE</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -979,8 +1021,8 @@
        lengthAdjust="spacing"
        textLength="80"
        x="1290"
-       y="193.1777"
-       id="text209">String</text>
+       y="225.7715"
+       id="text213">String</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -989,8 +1031,8 @@
        lengthAdjust="spacing"
        textLength="248"
        x="1098"
-       y="225.7715"
-       id="text211">GEOL_CODE_INT</text>
+       y="258.3652"
+       id="text215">GEOL_CODE_INT</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -998,8 +1040,8 @@
        lengthAdjust="spacing"
        textLength="98"
        x="1354"
-       y="225.7715"
-       id="text213">Integer</text>
+       y="258.3652"
+       id="text217">Integer</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -1008,8 +1050,8 @@
        lengthAdjust="spacing"
        textLength="132"
        x="1098"
-       y="258.3652"
-       id="text215">GERMAN</text>
+       y="290.95901"
+       id="text219">GERMAN</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -1017,8 +1059,8 @@
        lengthAdjust="spacing"
        textLength="80"
        x="1238"
-       y="258.3652"
-       id="text217">String</text>
+       y="290.95901"
+       id="text221">String</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -1027,8 +1069,8 @@
        lengthAdjust="spacing"
        textLength="192"
        x="1098"
-       y="290.95901"
-       id="text219">PARENT_REF</text>
+       y="323.5527"
+       id="text223">PARENT_REF</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -1036,25 +1078,6 @@
        lengthAdjust="spacing"
        textLength="98"
        x="1298"
-       y="290.95901"
-       id="text221">Integer</text>
-    <text
-       fill="#000000"
-       font-family="sans-serif"
-       font-size="28px"
-       font-weight="bold"
-       lengthAdjust="spacing"
-       textLength="184"
-       x="1098"
-       y="323.5527"
-       id="text223">TREE_LEVEL</text>
-    <text
-       fill="#000000"
-       font-family="sans-serif"
-       font-size="28px"
-       lengthAdjust="spacing"
-       textLength="98"
-       x="1290"
        y="323.5527"
        id="text225">Integer</text>
     <text
@@ -1063,23 +1086,26 @@
        font-size="28px"
        font-weight="bold"
        lengthAdjust="spacing"
-       textLength="74"
+       textLength="184"
        x="1098"
        y="356.14651"
-       id="text227">UUID</text>
+       id="text227">TREE_LEVEL</text>
     <text
        fill="#000000"
        font-family="sans-serif"
        font-size="28px"
        lengthAdjust="spacing"
-       textLength="64"
-       x="1180"
+       textLength="98"
+       x="1290"
        y="356.14651"
-       id="text229">Guid</text>
+       id="text229">Integer</text>
   </g>
   <g
      id="elem_GC_LITHO_BED"
-     transform="translate(-2071.1483,-31.02844)">
+     transform="translate(-2282.0334,-69.279999)"
+     inkscape:export-filename="/home/marc-monnerat-u1/code/github.com/lg-geology-data-model/output/ER-GCOVER@150.png"
+     inkscape:export-xdpi="149.99661"
+     inkscape:export-ydpi="149.99661">
     <rect
        codeLine="79"
        fill="#f1f1f1"
@@ -1188,10 +1214,29 @@
        font-size="28px"
        font-weight="bold"
        lengthAdjust="spacing"
-       textLength="184"
+       textLength="74"
        x="7656"
        y="1256.6115"
-       id="text255">GEOL_CODE</text>
+       id="text255">UUID</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="28px"
+       lengthAdjust="spacing"
+       textLength="64"
+       x="7738"
+       y="1256.6115"
+       id="text257">Guid</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="28px"
+       font-weight="bold"
+       lengthAdjust="spacing"
+       textLength="184"
+       x="7656"
+       y="1289.2052"
+       id="text259">GEOL_CODE</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -1199,8 +1244,8 @@
        lengthAdjust="spacing"
        textLength="80"
        x="7848"
-       y="1256.6115"
-       id="text257">String</text>
+       y="1289.2052"
+       id="text261">String</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -1209,8 +1254,8 @@
        lengthAdjust="spacing"
        textLength="248"
        x="7656"
-       y="1289.2052"
-       id="text259">GEOL_CODE_INT</text>
+       y="1321.799"
+       id="text263">GEOL_CODE_INT</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -1218,8 +1263,8 @@
        lengthAdjust="spacing"
        textLength="98"
        x="7912"
-       y="1289.2052"
-       id="text261">Integer</text>
+       y="1321.799"
+       id="text265">Integer</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -1228,8 +1273,8 @@
        lengthAdjust="spacing"
        textLength="132"
        x="7656"
-       y="1321.799"
-       id="text263">GERMAN</text>
+       y="1354.3927"
+       id="text267">GERMAN</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -1237,8 +1282,8 @@
        lengthAdjust="spacing"
        textLength="80"
        x="7796"
-       y="1321.799"
-       id="text265">String</text>
+       y="1354.3927"
+       id="text269">String</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -1247,8 +1292,8 @@
        lengthAdjust="spacing"
        textLength="192"
        x="7656"
-       y="1354.3927"
-       id="text267">PARENT_REF</text>
+       y="1386.9865"
+       id="text271">PARENT_REF</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -1256,25 +1301,6 @@
        lengthAdjust="spacing"
        textLength="98"
        x="7856"
-       y="1354.3927"
-       id="text269">Integer</text>
-    <text
-       fill="#000000"
-       font-family="sans-serif"
-       font-size="28px"
-       font-weight="bold"
-       lengthAdjust="spacing"
-       textLength="184"
-       x="7656"
-       y="1386.9865"
-       id="text271">TREE_LEVEL</text>
-    <text
-       fill="#000000"
-       font-family="sans-serif"
-       font-size="28px"
-       lengthAdjust="spacing"
-       textLength="98"
-       x="7848"
        y="1386.9865"
        id="text273">Integer</text>
     <text
@@ -1283,22 +1309,26 @@
        font-size="28px"
        font-weight="bold"
        lengthAdjust="spacing"
-       textLength="74"
+       textLength="184"
        x="7656"
        y="1419.5802"
-       id="text275">UUID</text>
+       id="text275">TREE_LEVEL</text>
     <text
        fill="#000000"
        font-family="sans-serif"
        font-size="28px"
        lengthAdjust="spacing"
-       textLength="64"
-       x="7738"
+       textLength="98"
+       x="7848"
        y="1419.5802"
-       id="text277">Guid</text>
+       id="text277">Integer</text>
   </g>
   <g
-     id="elem_GC_LITSTRAT_BED">
+     id="elem_GC_LITSTRAT_BED"
+     inkscape:export-filename="/home/marc-monnerat-u1/code/github.com/lg-geology-data-model/output/ER-GCOVER@150.png"
+     inkscape:export-xdpi="149.99661"
+     inkscape:export-ydpi="149.99661"
+     transform="translate(-63.5,-52.794219)">
     <rect
        codeLine="92"
        fill="#f1f1f1"
@@ -1388,10 +1418,29 @@
        font-size="28px"
        font-weight="bold"
        lengthAdjust="spacing"
-       textLength="184"
+       textLength="74"
        x="202"
        y="1240.3177"
-       id="text299">GEOL_CODE</text>
+       id="text299">UUID</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="28px"
+       lengthAdjust="spacing"
+       textLength="64"
+       x="284"
+       y="1240.3177"
+       id="text301">Guid</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="28px"
+       font-weight="bold"
+       lengthAdjust="spacing"
+       textLength="184"
+       x="202"
+       y="1272.9115"
+       id="text303">GEOL_CODE</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -1399,8 +1448,8 @@
        lengthAdjust="spacing"
        textLength="80"
        x="394"
-       y="1240.3177"
-       id="text301">String</text>
+       y="1272.9115"
+       id="text305">String</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -1409,8 +1458,8 @@
        lengthAdjust="spacing"
        textLength="248"
        x="202"
-       y="1272.9115"
-       id="text303">GEOL_CODE_INT</text>
+       y="1305.5052"
+       id="text307">GEOL_CODE_INT</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -1418,8 +1467,8 @@
        lengthAdjust="spacing"
        textLength="98"
        x="458"
-       y="1272.9115"
-       id="text305">Integer</text>
+       y="1305.5052"
+       id="text309">Integer</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -1428,8 +1477,8 @@
        lengthAdjust="spacing"
        textLength="132"
        x="202"
-       y="1305.5052"
-       id="text307">GERMAN</text>
+       y="1338.099"
+       id="text311">GERMAN</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -1437,8 +1486,8 @@
        lengthAdjust="spacing"
        textLength="80"
        x="342"
-       y="1305.5052"
-       id="text309">String</text>
+       y="1338.099"
+       id="text313">String</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -1447,8 +1496,8 @@
        lengthAdjust="spacing"
        textLength="192"
        x="202"
-       y="1338.099"
-       id="text311">PARENT_REF</text>
+       y="1370.6927"
+       id="text315">PARENT_REF</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -1456,25 +1505,6 @@
        lengthAdjust="spacing"
        textLength="98"
        x="402"
-       y="1338.099"
-       id="text313">Integer</text>
-    <text
-       fill="#000000"
-       font-family="sans-serif"
-       font-size="28px"
-       font-weight="bold"
-       lengthAdjust="spacing"
-       textLength="184"
-       x="202"
-       y="1370.6927"
-       id="text315">TREE_LEVEL</text>
-    <text
-       fill="#000000"
-       font-family="sans-serif"
-       font-size="28px"
-       lengthAdjust="spacing"
-       textLength="98"
-       x="394"
        y="1370.6927"
        id="text317">Integer</text>
     <text
@@ -1483,22 +1513,26 @@
        font-size="28px"
        font-weight="bold"
        lengthAdjust="spacing"
-       textLength="74"
+       textLength="184"
        x="202"
        y="1403.2865"
-       id="text319">UUID</text>
+       id="text319">TREE_LEVEL</text>
     <text
        fill="#000000"
        font-family="sans-serif"
        font-size="28px"
        lengthAdjust="spacing"
-       textLength="64"
-       x="284"
+       textLength="98"
+       x="394"
        y="1403.2865"
-       id="text321">Guid</text>
+       id="text321">Integer</text>
   </g>
   <g
-     id="elem_GC_LITSTRAT_UNCO">
+     id="elem_GC_LITSTRAT_UNCO"
+     inkscape:export-filename="/home/marc-monnerat-u1/code/github.com/lg-geology-data-model/output/ER-GCOVER@150.png"
+     inkscape:export-xdpi="149.99661"
+     inkscape:export-ydpi="149.99661"
+     transform="translate(-63.5,-52.794219)">
     <rect
        codeLine="104"
        fill="#f1f1f1"
@@ -1588,10 +1622,29 @@
        font-size="28px"
        font-weight="bold"
        lengthAdjust="spacing"
-       textLength="184"
+       textLength="74"
        x="650"
        y="1240.3177"
-       id="text343">GEOL_CODE</text>
+       id="text343">UUID</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="28px"
+       lengthAdjust="spacing"
+       textLength="64"
+       x="732"
+       y="1240.3177"
+       id="text345">Guid</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="28px"
+       font-weight="bold"
+       lengthAdjust="spacing"
+       textLength="184"
+       x="650"
+       y="1272.9115"
+       id="text347">GEOL_CODE</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -1599,8 +1652,8 @@
        lengthAdjust="spacing"
        textLength="80"
        x="842"
-       y="1240.3177"
-       id="text345">String</text>
+       y="1272.9115"
+       id="text349">String</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -1609,8 +1662,8 @@
        lengthAdjust="spacing"
        textLength="248"
        x="650"
-       y="1272.9115"
-       id="text347">GEOL_CODE_INT</text>
+       y="1305.5052"
+       id="text351">GEOL_CODE_INT</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -1618,8 +1671,8 @@
        lengthAdjust="spacing"
        textLength="98"
        x="906"
-       y="1272.9115"
-       id="text349">Integer</text>
+       y="1305.5052"
+       id="text353">Integer</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -1628,8 +1681,8 @@
        lengthAdjust="spacing"
        textLength="132"
        x="650"
-       y="1305.5052"
-       id="text351">GERMAN</text>
+       y="1338.099"
+       id="text355">GERMAN</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -1637,8 +1690,8 @@
        lengthAdjust="spacing"
        textLength="80"
        x="790"
-       y="1305.5052"
-       id="text353">String</text>
+       y="1338.099"
+       id="text357">String</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -1647,8 +1700,8 @@
        lengthAdjust="spacing"
        textLength="192"
        x="650"
-       y="1338.099"
-       id="text355">PARENT_REF</text>
+       y="1370.6927"
+       id="text359">PARENT_REF</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -1656,25 +1709,6 @@
        lengthAdjust="spacing"
        textLength="98"
        x="850"
-       y="1338.099"
-       id="text357">Integer</text>
-    <text
-       fill="#000000"
-       font-family="sans-serif"
-       font-size="28px"
-       font-weight="bold"
-       lengthAdjust="spacing"
-       textLength="184"
-       x="650"
-       y="1370.6927"
-       id="text359">TREE_LEVEL</text>
-    <text
-       fill="#000000"
-       font-family="sans-serif"
-       font-size="28px"
-       lengthAdjust="spacing"
-       textLength="98"
-       x="842"
        y="1370.6927"
        id="text361">Integer</text>
     <text
@@ -1683,23 +1717,26 @@
        font-size="28px"
        font-weight="bold"
        lengthAdjust="spacing"
-       textLength="74"
+       textLength="184"
        x="650"
        y="1403.2865"
-       id="text363">UUID</text>
+       id="text363">TREE_LEVEL</text>
     <text
        fill="#000000"
        font-family="sans-serif"
        font-size="28px"
        lengthAdjust="spacing"
-       textLength="64"
-       x="732"
+       textLength="98"
+       x="842"
        y="1403.2865"
-       id="text365">Guid</text>
+       id="text365">Integer</text>
   </g>
   <g
      id="elem_GC_BED_FORM_ATT"
-     transform="translate(-2071.1483,-31.02844)">
+     transform="translate(-2282.0334,-69.279999)"
+     inkscape:export-filename="/home/marc-monnerat-u1/code/github.com/lg-geology-data-model/output/ER-GCOVER@150.png"
+     inkscape:export-xdpi="149.99661"
+     inkscape:export-ydpi="149.99661">
     <rect
        codeLine="116"
        fill="#f1f1f1"
@@ -1789,10 +1826,29 @@
        font-size="28px"
        font-weight="bold"
        lengthAdjust="spacing"
-       textLength="322"
+       textLength="74"
        x="8158"
        y="2971.9177"
-       id="text387">FMAT_IGNE_AFFINITY</text>
+       id="text387">UUID</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="28px"
+       lengthAdjust="spacing"
+       textLength="64"
+       x="8240"
+       y="2971.9177"
+       id="text389">Guid</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="28px"
+       font-weight="bold"
+       lengthAdjust="spacing"
+       textLength="322"
+       x="8158"
+       y="3004.5115"
+       id="text391">FMAT_IGNE_AFFINITY</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -1800,8 +1856,8 @@
        lengthAdjust="spacing"
        textLength="230"
        x="8488"
-       y="2971.9177"
-       id="text389">GC_AFFINITY_CD</text>
+       y="3004.5115"
+       id="text393">GC_AFFINITY_CD</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -1810,8 +1866,8 @@
        lengthAdjust="spacing"
        textLength="324"
        x="8158"
-       y="3004.5115"
-       id="text391">FMAT_IGNE_GRAIN_SI</text>
+       y="3037.1052"
+       id="text395">FMAT_IGNE_GRAIN_SI</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -1819,8 +1875,8 @@
        lengthAdjust="spacing"
        textLength="236"
        x="8490"
-       y="3004.5115"
-       id="text393">GC_GRAIN_SI_CD</text>
+       y="3037.1052"
+       id="text397">GC_GRAIN_SI_CD</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -1829,8 +1885,8 @@
        lengthAdjust="spacing"
        textLength="244"
        x="8158"
-       y="3037.1052"
-       id="text395">FMAT_IGNE_TEX</text>
+       y="3069.699"
+       id="text399">FMAT_IGNE_TEX</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -1838,8 +1894,8 @@
        lengthAdjust="spacing"
        textLength="246"
        x="8410"
-       y="3037.1052"
-       id="text397">GC_IGNE_TEX_CD</text>
+       y="3069.699"
+       id="text401">GC_IGNE_TEX_CD</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -1848,8 +1904,8 @@
        lengthAdjust="spacing"
        textLength="248"
        x="8158"
-       y="3069.699"
-       id="text399">FMAT_LITSTRAT</text>
+       y="3102.2927"
+       id="text403">FMAT_LITSTRAT</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -1857,8 +1913,8 @@
        lengthAdjust="spacing"
        textLength="316"
        x="8414"
-       y="3069.699"
-       id="text401">GC_LITSTRAT_BED_CD</text>
+       y="3102.2927"
+       id="text405">GC_LITSTRAT_BED_CD</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -1867,8 +1923,8 @@
        lengthAdjust="spacing"
        textLength="378"
        x="8158"
-       y="3102.2927"
-       id="text403">FMAT_META_FULL_NAME</text>
+       y="3134.8865"
+       id="text407">FMAT_META_FULL_NAME</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -1876,27 +1932,8 @@
        lengthAdjust="spacing"
        textLength="80"
        x="8544"
-       y="3102.2927"
-       id="text405">String</text>
-    <text
-       fill="#000000"
-       font-family="sans-serif"
-       font-size="28px"
-       font-weight="bold"
-       lengthAdjust="spacing"
-       textLength="354"
-       x="8158"
        y="3134.8865"
-       id="text407">FMAT_META_MINERAL1</text>
-    <text
-       fill="#000000"
-       font-family="sans-serif"
-       font-size="28px"
-       lengthAdjust="spacing"
-       textLength="232"
-       x="8520"
-       y="3134.8865"
-       id="text409">GC_MINERAL_CD</text>
+       id="text409">String</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -1906,7 +1943,7 @@
        textLength="354"
        x="8158"
        y="3167.4802"
-       id="text411">FMAT_META_MINERAL2</text>
+       id="text411">FMAT_META_MINERAL1</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -1925,7 +1962,7 @@
        textLength="354"
        x="8158"
        y="3200.074"
-       id="text415">FMAT_META_MINERAL3</text>
+       id="text415">FMAT_META_MINERAL2</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -1941,19 +1978,19 @@
        font-size="28px"
        font-weight="bold"
        lengthAdjust="spacing"
-       textLength="280"
+       textLength="354"
        x="8158"
        y="3232.6677"
-       id="text419">FMAT_META_STR1</text>
+       id="text419">FMAT_META_MINERAL3</text>
     <text
        fill="#000000"
        font-family="sans-serif"
        font-size="28px"
        lengthAdjust="spacing"
-       textLength="260"
-       x="8446"
+       textLength="232"
+       x="8520"
        y="3232.6677"
-       id="text421">GC_META_STR_CD</text>
+       id="text421">GC_MINERAL_CD</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -1963,7 +2000,7 @@
        textLength="280"
        x="8158"
        y="3265.2615"
-       id="text423">FMAT_META_STR2</text>
+       id="text423">FMAT_META_STR1</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -1982,7 +2019,7 @@
        textLength="280"
        x="8158"
        y="3297.8552"
-       id="text427">FMAT_META_STR3</text>
+       id="text427">FMAT_META_STR2</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -1998,19 +2035,19 @@
        font-size="28px"
        font-weight="bold"
        lengthAdjust="spacing"
-       textLength="338"
+       textLength="280"
        x="8158"
        y="3330.449"
-       id="text431">FMAT_SEDI_BEDDING1</text>
+       id="text431">FMAT_META_STR3</text>
     <text
        fill="#000000"
        font-family="sans-serif"
        font-size="28px"
        lengthAdjust="spacing"
-       textLength="242"
-       x="8504"
+       textLength="260"
+       x="8446"
        y="3330.449"
-       id="text433">GC_BEDDING_CD</text>
+       id="text433">GC_META_STR_CD</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -2020,7 +2057,7 @@
        textLength="338"
        x="8158"
        y="3363.0427"
-       id="text435">FMAT_SEDI_BEDDING2</text>
+       id="text435">FMAT_SEDI_BEDDING1</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -2036,10 +2073,29 @@
        font-size="28px"
        font-weight="bold"
        lengthAdjust="spacing"
-       textLength="352"
+       textLength="338"
        x="8158"
        y="3395.6365"
-       id="text439">FMAT_SEDI_BOND_MAT</text>
+       id="text439">FMAT_SEDI_BEDDING2</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="28px"
+       lengthAdjust="spacing"
+       textLength="242"
+       x="8504"
+       y="3395.6365"
+       id="text441">GC_BEDDING_CD</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="28px"
+       font-weight="bold"
+       lengthAdjust="spacing"
+       textLength="352"
+       x="8158"
+       y="3428.2302"
+       id="text443">FMAT_SEDI_BOND_MAT</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -2047,8 +2103,8 @@
        lengthAdjust="spacing"
        textLength="270"
        x="8518"
-       y="3395.6365"
-       id="text441">GC_BOND_MAT_CD</text>
+       y="3428.2302"
+       id="text445">GC_BOND_MAT_CD</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -2057,8 +2113,8 @@
        lengthAdjust="spacing"
        textLength="346"
        x="8158"
-       y="3428.2302"
-       id="text443">FMAT_SEDI_MAIN_COM</text>
+       y="3460.824"
+       id="text447">FMAT_SEDI_MAIN_COM</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -2066,27 +2122,8 @@
        lengthAdjust="spacing"
        textLength="260"
        x="8512"
-       y="3428.2302"
-       id="text445">GC_MAIN_COM_CD</text>
-    <text
-       fill="#000000"
-       font-family="sans-serif"
-       font-size="28px"
-       font-weight="bold"
-       lengthAdjust="spacing"
-       textLength="372"
-       x="8158"
        y="3460.824"
-       id="text447">FMAT_SEDI_SECO_COM1</text>
-    <text
-       fill="#000000"
-       font-family="sans-serif"
-       font-size="28px"
-       lengthAdjust="spacing"
-       textLength="270"
-       x="8538"
-       y="3460.824"
-       id="text449">GC_SECO_COM_CD</text>
+       id="text449">GC_MAIN_COM_CD</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -2096,7 +2133,7 @@
        textLength="372"
        x="8158"
        y="3493.4177"
-       id="text451">FMAT_SEDI_SECO_COM2</text>
+       id="text451">FMAT_SEDI_SECO_COM1</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -2112,19 +2149,19 @@
        font-size="28px"
        font-weight="bold"
        lengthAdjust="spacing"
-       textLength="262"
+       textLength="372"
        x="8158"
        y="3526.0115"
-       id="text455">FMAT_SEDI_STR1</text>
+       id="text455">FMAT_SEDI_SECO_COM2</text>
     <text
        fill="#000000"
        font-family="sans-serif"
        font-size="28px"
        lengthAdjust="spacing"
-       textLength="246"
-       x="8428"
+       textLength="270"
+       x="8538"
        y="3526.0115"
-       id="text457">GC_SEDI_STR_CD</text>
+       id="text457">GC_SECO_COM_CD</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -2134,7 +2171,7 @@
        textLength="262"
        x="8158"
        y="3558.6052"
-       id="text459">FMAT_SEDI_STR2</text>
+       id="text459">FMAT_SEDI_STR1</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -2150,19 +2187,19 @@
        font-size="28px"
        font-weight="bold"
        lengthAdjust="spacing"
-       textLength="260"
+       textLength="262"
        x="8158"
        y="3591.199"
-       id="text463">FMAT_SEDI_TEX1</text>
+       id="text463">FMAT_SEDI_STR2</text>
     <text
        fill="#000000"
        font-family="sans-serif"
        font-size="28px"
        lengthAdjust="spacing"
-       textLength="244"
-       x="8426"
+       textLength="246"
+       x="8428"
        y="3591.199"
-       id="text465">GC_SEDI_TEX_CD</text>
+       id="text465">GC_SEDI_STR_CD</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -2172,7 +2209,7 @@
        textLength="260"
        x="8158"
        y="3623.7927"
-       id="text467">FMAT_SEDI_TEX2</text>
+       id="text467">FMAT_SEDI_TEX1</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -2188,23 +2225,26 @@
        font-size="28px"
        font-weight="bold"
        lengthAdjust="spacing"
-       textLength="74"
+       textLength="260"
        x="8158"
        y="3656.3865"
-       id="text471">UUID</text>
+       id="text471">FMAT_SEDI_TEX2</text>
     <text
        fill="#000000"
        font-family="sans-serif"
        font-size="28px"
        lengthAdjust="spacing"
-       textLength="64"
-       x="8240"
+       textLength="244"
+       x="8426"
        y="3656.3865"
-       id="text473">Guid</text>
+       id="text473">GC_SEDI_TEX_CD</text>
   </g>
   <g
      id="elem_GC_SYSTEM"
-     transform="translate(-4297.4389,1947.0346)">
+     transform="translate(-4485.0527,1917.5117)"
+     inkscape:export-filename="/home/marc-monnerat-u1/code/github.com/lg-geology-data-model/output/ER-GCOVER@150.png"
+     inkscape:export-xdpi="149.99661"
+     inkscape:export-ydpi="149.99661">
     <rect
        codeLine="144"
        fill="#f1f1f1"
@@ -2313,10 +2353,29 @@
        font-size="28px"
        font-weight="bold"
        lengthAdjust="spacing"
-       textLength="184"
+       textLength="74"
        x="8884"
        y="1289.1915"
-       id="text499">GEOL_CODE</text>
+       id="text499">UUID</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="28px"
+       lengthAdjust="spacing"
+       textLength="64"
+       x="8966"
+       y="1289.1915"
+       id="text501">Guid</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="28px"
+       font-weight="bold"
+       lengthAdjust="spacing"
+       textLength="184"
+       x="8884"
+       y="1321.7852"
+       id="text503">GEOL_CODE</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -2324,8 +2383,8 @@
        lengthAdjust="spacing"
        textLength="80"
        x="9076"
-       y="1289.1915"
-       id="text501">String</text>
+       y="1321.7852"
+       id="text505">String</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -2334,8 +2393,8 @@
        lengthAdjust="spacing"
        textLength="248"
        x="8884"
-       y="1321.7852"
-       id="text503">GEOL_CODE_INT</text>
+       y="1354.379"
+       id="text507">GEOL_CODE_INT</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -2343,8 +2402,8 @@
        lengthAdjust="spacing"
        textLength="98"
        x="9140"
-       y="1321.7852"
-       id="text505">Integer</text>
+       y="1354.379"
+       id="text509">Integer</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -2353,8 +2412,8 @@
        lengthAdjust="spacing"
        textLength="132"
        x="8884"
-       y="1354.379"
-       id="text507">GERMAN</text>
+       y="1386.9727"
+       id="text511">GERMAN</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -2362,31 +2421,15 @@
        lengthAdjust="spacing"
        textLength="80"
        x="9024"
-       y="1354.379"
-       id="text509">String</text>
-    <text
-       fill="#000000"
-       font-family="sans-serif"
-       font-size="28px"
-       font-weight="bold"
-       lengthAdjust="spacing"
-       textLength="74"
-       x="8884"
        y="1386.9727"
-       id="text511">UUID</text>
-    <text
-       fill="#000000"
-       font-family="sans-serif"
-       font-size="28px"
-       lengthAdjust="spacing"
-       textLength="64"
-       x="8966"
-       y="1386.9727"
-       id="text513">Guid</text>
+       id="text513">String</text>
   </g>
   <g
      id="elem_GC_COMPOSIT"
-     transform="translate(70,-553.41644)">
+     transform="translate(18.5,-634.79422)"
+     inkscape:export-filename="/home/marc-monnerat-u1/code/github.com/lg-geology-data-model/output/ER-GCOVER@150.png"
+     inkscape:export-xdpi="149.99661"
+     inkscape:export-ydpi="149.99661">
     <rect
        codeLine="155"
        fill="#f1f1f1"
@@ -2495,10 +2538,29 @@
        font-size="28px"
        font-weight="bold"
        lengthAdjust="spacing"
-       textLength="184"
+       textLength="74"
        x="2475"
        y="1289.1915"
-       id="text539">GEOL_CODE</text>
+       id="text539">UUID</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="28px"
+       lengthAdjust="spacing"
+       textLength="64"
+       x="2557"
+       y="1289.1915"
+       id="text541">Guid</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="28px"
+       font-weight="bold"
+       lengthAdjust="spacing"
+       textLength="184"
+       x="2475"
+       y="1321.7852"
+       id="text543">GEOL_CODE</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -2506,8 +2568,8 @@
        lengthAdjust="spacing"
        textLength="80"
        x="2667"
-       y="1289.1915"
-       id="text541">String</text>
+       y="1321.7852"
+       id="text545">String</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -2516,8 +2578,8 @@
        lengthAdjust="spacing"
        textLength="248"
        x="2475"
-       y="1321.7852"
-       id="text543">GEOL_CODE_INT</text>
+       y="1354.379"
+       id="text547">GEOL_CODE_INT</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -2525,8 +2587,8 @@
        lengthAdjust="spacing"
        textLength="98"
        x="2731"
-       y="1321.7852"
-       id="text545">Integer</text>
+       y="1354.379"
+       id="text549">Integer</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -2535,8 +2597,8 @@
        lengthAdjust="spacing"
        textLength="132"
        x="2475"
-       y="1354.379"
-       id="text547">GERMAN</text>
+       y="1386.9727"
+       id="text551">GERMAN</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -2544,31 +2606,15 @@
        lengthAdjust="spacing"
        textLength="80"
        x="2615"
-       y="1354.379"
-       id="text549">String</text>
-    <text
-       fill="#000000"
-       font-family="sans-serif"
-       font-size="28px"
-       font-weight="bold"
-       lengthAdjust="spacing"
-       textLength="74"
-       x="2475"
        y="1386.9727"
-       id="text551">UUID</text>
-    <text
-       fill="#000000"
-       font-family="sans-serif"
-       font-size="28px"
-       lengthAdjust="spacing"
-       textLength="64"
-       x="2557"
-       y="1386.9727"
-       id="text553">Guid</text>
+       id="text553">String</text>
   </g>
   <g
      id="elem_GC_ADMIXTURE"
-     transform="translate(-200.20633,-589.64879)">
+     transform="translate(-241.5,-690.79422)"
+     inkscape:export-filename="/home/marc-monnerat-u1/code/github.com/lg-geology-data-model/output/ER-GCOVER@150.png"
+     inkscape:export-xdpi="149.99661"
+     inkscape:export-ydpi="149.99661">
     <rect
        codeLine="166"
        fill="#f1f1f1"
@@ -2677,10 +2723,29 @@
        font-size="28px"
        font-weight="bold"
        lengthAdjust="spacing"
-       textLength="184"
+       textLength="74"
        x="3951"
        y="1289.1915"
-       id="text579">GEOL_CODE</text>
+       id="text579">UUID</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="28px"
+       lengthAdjust="spacing"
+       textLength="64"
+       x="4033"
+       y="1289.1915"
+       id="text581">Guid</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="28px"
+       font-weight="bold"
+       lengthAdjust="spacing"
+       textLength="184"
+       x="3951"
+       y="1321.7852"
+       id="text583">GEOL_CODE</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -2688,8 +2753,8 @@
        lengthAdjust="spacing"
        textLength="80"
        x="4143"
-       y="1289.1915"
-       id="text581">String</text>
+       y="1321.7852"
+       id="text585">String</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -2698,8 +2763,8 @@
        lengthAdjust="spacing"
        textLength="248"
        x="3951"
-       y="1321.7852"
-       id="text583">GEOL_CODE_INT</text>
+       y="1354.379"
+       id="text587">GEOL_CODE_INT</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -2707,8 +2772,8 @@
        lengthAdjust="spacing"
        textLength="98"
        x="4207"
-       y="1321.7852"
-       id="text585">Integer</text>
+       y="1354.379"
+       id="text589">Integer</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -2717,8 +2782,8 @@
        lengthAdjust="spacing"
        textLength="132"
        x="3951"
-       y="1354.379"
-       id="text587">GERMAN</text>
+       y="1386.9727"
+       id="text591">GERMAN</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -2726,30 +2791,15 @@
        lengthAdjust="spacing"
        textLength="80"
        x="4091"
-       y="1354.379"
-       id="text589">String</text>
-    <text
-       fill="#000000"
-       font-family="sans-serif"
-       font-size="28px"
-       font-weight="bold"
-       lengthAdjust="spacing"
-       textLength="74"
-       x="3951"
        y="1386.9727"
-       id="text591">UUID</text>
-    <text
-       fill="#000000"
-       font-family="sans-serif"
-       font-size="28px"
-       lengthAdjust="spacing"
-       textLength="64"
-       x="4033"
-       y="1386.9727"
-       id="text593">Guid</text>
+       id="text593">String</text>
   </g>
   <g
-     id="elem_GC_CHARCAT">
+     id="elem_GC_CHARCAT"
+     inkscape:export-filename="/home/marc-monnerat-u1/code/github.com/lg-geology-data-model/output/ER-GCOVER@150.png"
+     inkscape:export-xdpi="149.99661"
+     inkscape:export-ydpi="149.99661"
+     transform="translate(-63.5,-52.794219)">
     <rect
        codeLine="177"
        fill="#f1f1f1"
@@ -2858,10 +2908,29 @@
        font-size="28px"
        font-weight="bold"
        lengthAdjust="spacing"
-       textLength="184"
+       textLength="74"
        x="4553"
        y="1289.1915"
-       id="text619">GEOL_CODE</text>
+       id="text619">UUID</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="28px"
+       lengthAdjust="spacing"
+       textLength="64"
+       x="4635"
+       y="1289.1915"
+       id="text621">Guid</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="28px"
+       font-weight="bold"
+       lengthAdjust="spacing"
+       textLength="184"
+       x="4553"
+       y="1321.7852"
+       id="text623">GEOL_CODE</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -2869,8 +2938,8 @@
        lengthAdjust="spacing"
        textLength="80"
        x="4745"
-       y="1289.1915"
-       id="text621">String</text>
+       y="1321.7852"
+       id="text625">String</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -2879,8 +2948,8 @@
        lengthAdjust="spacing"
        textLength="248"
        x="4553"
-       y="1321.7852"
-       id="text623">GEOL_CODE_INT</text>
+       y="1354.379"
+       id="text627">GEOL_CODE_INT</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -2888,8 +2957,8 @@
        lengthAdjust="spacing"
        textLength="98"
        x="4809"
-       y="1321.7852"
-       id="text625">Integer</text>
+       y="1354.379"
+       id="text629">Integer</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -2898,8 +2967,8 @@
        lengthAdjust="spacing"
        textLength="132"
        x="4553"
-       y="1354.379"
-       id="text627">GERMAN</text>
+       y="1386.9727"
+       id="text631">GERMAN</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -2907,31 +2976,15 @@
        lengthAdjust="spacing"
        textLength="80"
        x="4693"
-       y="1354.379"
-       id="text629">String</text>
-    <text
-       fill="#000000"
-       font-family="sans-serif"
-       font-size="28px"
-       font-weight="bold"
-       lengthAdjust="spacing"
-       textLength="74"
-       x="4553"
        y="1386.9727"
-       id="text631">UUID</text>
-    <text
-       fill="#000000"
-       font-family="sans-serif"
-       font-size="28px"
-       lengthAdjust="spacing"
-       textLength="64"
-       x="4635"
-       y="1386.9727"
-       id="text633">Guid</text>
+       id="text633">String</text>
   </g>
   <g
      id="elem_GC_EXPLOIT_GEOMAT_PLG"
-     transform="translate(-3250.2291,1962.5488)">
+     transform="translate(-3352.5146,1925.2688)"
+     inkscape:export-filename="/home/marc-monnerat-u1/code/github.com/lg-geology-data-model/output/ER-GCOVER@150.png"
+     inkscape:export-xdpi="149.99661"
+     inkscape:export-ydpi="149.99661">
     <rect
        codeLine="188"
        fill="#ffffff"
@@ -3021,10 +3074,29 @@
        font-size="28px"
        font-weight="bold"
        lengthAdjust="spacing"
-       textLength="218"
+       textLength="74"
        x="6748"
        y="1256.5977"
-       id="text655">AEXP_STATUS</text>
+       id="text655">UUID</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="28px"
+       lengthAdjust="spacing"
+       textLength="64"
+       x="6830"
+       y="1256.5977"
+       id="text657">Guid</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="28px"
+       font-weight="bold"
+       lengthAdjust="spacing"
+       textLength="218"
+       x="6748"
+       y="1289.1915"
+       id="text659">AEXP_STATUS</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -3032,8 +3104,8 @@
        lengthAdjust="spacing"
        textLength="502"
        x="6974"
-       y="1256.5977"
-       id="text657">GC_EX_GEO_PLG_AEXP_STATUS_CD</text>
+       y="1289.1915"
+       id="text661">GC_EX_GEO_PLG_AEXP_STATUS_CD</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -3042,8 +3114,8 @@
        lengthAdjust="spacing"
        textLength="262"
        x="6748"
-       y="1289.1915"
-       id="text659">AEXP_TARG_MAT</text>
+       y="1321.7852"
+       id="text663">AEXP_TARG_MAT</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -3051,8 +3123,8 @@
        lengthAdjust="spacing"
        textLength="544"
        x="7018"
-       y="1289.1915"
-       id="text661">GC_EX_GEO_PLG_AEXP_TARG_MAT_CD</text>
+       y="1321.7852"
+       id="text665">GC_EX_GEO_PLG_AEXP_TARG_MAT_CD</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -3061,8 +3133,8 @@
        lengthAdjust="spacing"
        textLength="102"
        x="6748"
-       y="1321.7852"
-       id="text663">SHAPE</text>
+       y="1354.379"
+       id="text667">SHAPE</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -3070,8 +3142,8 @@
        lengthAdjust="spacing"
        textLength="136"
        x="6858"
-       y="1321.7852"
-       id="text665">Geometry</text>
+       y="1354.379"
+       id="text669">Geometry</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -3080,8 +3152,8 @@
        lengthAdjust="spacing"
        textLength="128"
        x="6748"
-       y="1354.379"
-       id="text667">SYMBOL</text>
+       y="1386.9727"
+       id="text671">SYMBOL</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -3089,31 +3161,15 @@
        lengthAdjust="spacing"
        textLength="80"
        x="6884"
-       y="1354.379"
-       id="text669">String</text>
-    <text
-       fill="#000000"
-       font-family="sans-serif"
-       font-size="28px"
-       font-weight="bold"
-       lengthAdjust="spacing"
-       textLength="74"
-       x="6748"
        y="1386.9727"
-       id="text671">UUID</text>
-    <text
-       fill="#000000"
-       font-family="sans-serif"
-       font-size="28px"
-       lengthAdjust="spacing"
-       textLength="64"
-       x="6830"
-       y="1386.9727"
-       id="text673">Guid</text>
+       id="text673">String</text>
   </g>
   <g
      id="elem_GC_LINEAR_OBJECTS"
-     transform="translate(24,557.50616)">
+     transform="translate(-63.5,497.20578)"
+     inkscape:export-filename="/home/marc-monnerat-u1/code/github.com/lg-geology-data-model/output/ER-GCOVER@150.png"
+     inkscape:export-xdpi="149.99661"
+     inkscape:export-ydpi="149.99661">
     <rect
        codeLine="199"
        fill="#f1f1f1"
@@ -3203,10 +3259,29 @@
        font-size="28px"
        font-weight="bold"
        lengthAdjust="spacing"
-       textLength="164"
+       textLength="74"
        x="1099"
        y="669.91772"
-       id="text695">AARC_AGE</text>
+       id="text695">UUID</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="28px"
+       lengthAdjust="spacing"
+       textLength="64"
+       x="1181"
+       y="669.91772"
+       id="text697">Guid</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="28px"
+       font-weight="bold"
+       lengthAdjust="spacing"
+       textLength="164"
+       x="1099"
+       y="702.51147"
+       id="text699">AARC_AGE</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -3214,8 +3289,8 @@
        lengthAdjust="spacing"
        textLength="260"
        x="1271"
-       y="669.91772"
-       id="text697">GC_AARC_AGE_CD</text>
+       y="702.51147"
+       id="text701">GC_AARC_AGE_CD</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -3224,8 +3299,8 @@
        lengthAdjust="spacing"
        textLength="206"
        x="1099"
-       y="702.51147"
-       id="text699">AARC_EPOCH</text>
+       y="735.10522"
+       id="text703">AARC_EPOCH</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -3233,8 +3308,8 @@
        lengthAdjust="spacing"
        textLength="300"
        x="1313"
-       y="702.51147"
-       id="text701">GC_AARC_EPOCH_CD</text>
+       y="735.10522"
+       id="text705">GC_AARC_EPOCH_CD</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -3243,8 +3318,8 @@
        lengthAdjust="spacing"
        textLength="212"
        x="1099"
-       y="735.10522"
-       id="text703">AARC_PERIOD</text>
+       y="767.69897"
+       id="text707">AARC_PERIOD</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -3252,8 +3327,8 @@
        lengthAdjust="spacing"
        textLength="308"
        x="1319"
-       y="735.10522"
-       id="text705">GC_AARC_PERIOD_CD</text>
+       y="767.69897"
+       id="text709">GC_AARC_PERIOD_CD</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -3262,8 +3337,8 @@
        lengthAdjust="spacing"
        textLength="218"
        x="1099"
-       y="767.69897"
-       id="text707">AEXP_STATUS</text>
+       y="800.29272"
+       id="text711">AEXP_STATUS</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -3271,8 +3346,8 @@
        lengthAdjust="spacing"
        textLength="362"
        x="1325"
-       y="767.69897"
-       id="text709">GC_LIN_AEXP_STATUS_CD</text>
+       y="800.29272"
+       id="text713">GC_LIN_AEXP_STATUS_CD</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -3281,8 +3356,8 @@
        lengthAdjust="spacing"
        textLength="160"
        x="1099"
-       y="800.29272"
-       id="text711">GALL_AGE</text>
+       y="832.88647"
+       id="text715">GALL_AGE</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -3290,8 +3365,8 @@
        lengthAdjust="spacing"
        textLength="306"
        x="1267"
-       y="800.29272"
-       id="text713">GC_LIN_GALL_AGE_CD</text>
+       y="832.88647"
+       id="text717">GC_LIN_GALL_AGE_CD</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -3300,8 +3375,8 @@
        lengthAdjust="spacing"
        textLength="262"
        x="1099"
-       y="832.88647"
-       id="text715">GGLA_GLAC_TYP</text>
+       y="865.48022"
+       id="text719">GGLA_GLAC_TYP</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -3309,8 +3384,8 @@
        lengthAdjust="spacing"
        textLength="398"
        x="1369"
-       y="832.88647"
-       id="text717">GC_LIN_GGLA_GLAC_TYP_CD</text>
+       y="865.48022"
+       id="text721">GC_LIN_GGLA_GLAC_TYP_CD</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -3319,8 +3394,8 @@
        lengthAdjust="spacing"
        textLength="224"
        x="1099"
-       y="865.48022"
-       id="text719">GGLA_ICE_M_P</text>
+       y="898.07397"
+       id="text723">GGLA_ICE_M_P</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -3328,8 +3403,8 @@
        lengthAdjust="spacing"
        textLength="370"
        x="1331"
-       y="865.48022"
-       id="text721">GC_LIN_GGLA_ICE_M_P_CD</text>
+       y="898.07397"
+       id="text725">GC_LIN_GGLA_ICE_M_P_CD</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -3338,8 +3413,8 @@
        lengthAdjust="spacing"
        textLength="266"
        x="1099"
-       y="898.07397"
-       id="text723">GGLA_MORAI_MO</text>
+       y="930.66772"
+       id="text727">GGLA_MORAI_MO</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -3347,8 +3422,8 @@
        lengthAdjust="spacing"
        textLength="406"
        x="1373"
-       y="898.07397"
-       id="text725">GC_LIN_GGLA_MORAI_MO_CD</text>
+       y="930.66772"
+       id="text729">GC_LIN_GGLA_MORAI_MO_CD</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -3357,8 +3432,8 @@
        lengthAdjust="spacing"
        textLength="264"
        x="1099"
-       y="930.66772"
-       id="text727">GGLA_QUAT_STR</text>
+       y="963.26147"
+       id="text731">GGLA_QUAT_STR</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -3366,8 +3441,8 @@
        lengthAdjust="spacing"
        textLength="404"
        x="1371"
-       y="930.66772"
-       id="text729">GC_LIN_GGLA_QUAT_STR_CD</text>
+       y="963.26147"
+       id="text733">GC_LIN_GGLA_QUAT_STR_CD</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -3376,8 +3451,8 @@
        lengthAdjust="spacing"
        textLength="252"
        x="1099"
-       y="963.26147"
-       id="text731">GGLA_REF_YEAR</text>
+       y="995.85522"
+       id="text735">GGLA_REF_YEAR</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -3385,8 +3460,8 @@
        lengthAdjust="spacing"
        textLength="98"
        x="1359"
-       y="963.26147"
-       id="text733">Integer</text>
+       y="995.85522"
+       id="text737">Integer</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -3395,8 +3470,8 @@
        lengthAdjust="spacing"
        textLength="228"
        x="1099"
-       y="995.85522"
-       id="text735">GGLA_SOURCE</text>
+       y="1028.449"
+       id="text739">GGLA_SOURCE</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -3404,8 +3479,8 @@
        lengthAdjust="spacing"
        textLength="80"
        x="1335"
-       y="995.85522"
-       id="text737">String</text>
+       y="1028.449"
+       id="text741">String</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -3414,8 +3489,8 @@
        lengthAdjust="spacing"
        textLength="204"
        x="1099"
-       y="1028.449"
-       id="text739">HCON_COMBI</text>
+       y="1061.0427"
+       id="text743">HCON_COMBI</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -3423,8 +3498,8 @@
        lengthAdjust="spacing"
        textLength="354"
        x="1311"
-       y="1028.449"
-       id="text741">GC_LIN_HCON_COMBI_CD</text>
+       y="1061.0427"
+       id="text745">GC_LIN_HCON_COMBI_CD</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -3433,8 +3508,8 @@
        lengthAdjust="spacing"
        textLength="230"
        x="1099"
-       y="1061.0427"
-       id="text743">HPAL_CHRONO</text>
+       y="1093.6365"
+       id="text747">HPAL_CHRONO</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -3442,8 +3517,8 @@
        lengthAdjust="spacing"
        textLength="236"
        x="1337"
-       y="1061.0427"
-       id="text745">GC_CHRONO_CD</text>
+       y="1093.6365"
+       id="text749">GC_CHRONO_CD</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -3452,8 +3527,8 @@
        lengthAdjust="spacing"
        textLength="246"
        x="1099"
-       y="1093.6365"
-       id="text747">HPAL_REF_YEAR</text>
+       y="1126.2302"
+       id="text751">HPAL_REF_YEAR</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -3461,8 +3536,8 @@
        lengthAdjust="spacing"
        textLength="98"
        x="1353"
-       y="1093.6365"
-       id="text749">Integer</text>
+       y="1126.2302"
+       id="text753">Integer</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -3471,8 +3546,8 @@
        lengthAdjust="spacing"
        textLength="230"
        x="1099"
-       y="1126.2302"
-       id="text751">HPAL_REL_AGE</text>
+       y="1158.824"
+       id="text755">HPAL_REL_AGE</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -3480,8 +3555,8 @@
        lengthAdjust="spacing"
        textLength="374"
        x="1337"
-       y="1126.2302"
-       id="text753">GC_LIN_HPAL_REL_AGE_CD</text>
+       y="1158.824"
+       id="text757">GC_LIN_HPAL_REL_AGE_CD</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -3490,8 +3565,8 @@
        lengthAdjust="spacing"
        textLength="222"
        x="1099"
-       y="1158.824"
-       id="text755">HPAL_SOURCE</text>
+       y="1191.4177"
+       id="text759">HPAL_SOURCE</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -3499,8 +3574,8 @@
        lengthAdjust="spacing"
        textLength="80"
        x="1329"
-       y="1158.824"
-       id="text757">String</text>
+       y="1191.4177"
+       id="text761">String</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -3509,8 +3584,8 @@
        lengthAdjust="spacing"
        textLength="198"
        x="1099"
-       y="1191.4177"
-       id="text759">HSUB_COMBI</text>
+       y="1224.0115"
+       id="text763">HSUB_COMBI</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -3518,8 +3593,8 @@
        lengthAdjust="spacing"
        textLength="350"
        x="1305"
-       y="1191.4177"
-       id="text761">GC_LIN_HSUB_COMBI_CD</text>
+       y="1224.0115"
+       id="text765">GC_LIN_HSUB_COMBI_CD</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -3528,8 +3603,8 @@
        lengthAdjust="spacing"
        textLength="222"
        x="1099"
-       y="1224.0115"
-       id="text763">LGEO_STATUS</text>
+       y="1256.6052"
+       id="text767">LGEO_STATUS</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -3537,8 +3612,8 @@
        lengthAdjust="spacing"
        textLength="366"
        x="1329"
-       y="1224.0115"
-       id="text765">GC_LIN_LGEO_STATUS_CD</text>
+       y="1256.6052"
+       id="text769">GC_LIN_LGEO_STATUS_CD</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -3547,8 +3622,8 @@
        lengthAdjust="spacing"
        textLength="264"
        x="1099"
-       y="1256.6052"
-       id="text767">LMIN_CHEMISTRY</text>
+       y="1289.199"
+       id="text771">LMIN_CHEMISTRY</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -3556,8 +3631,8 @@
        lengthAdjust="spacing"
        textLength="80"
        x="1371"
-       y="1256.6052"
-       id="text769">String</text>
+       y="1289.199"
+       id="text773">String</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -3566,8 +3641,8 @@
        lengthAdjust="spacing"
        textLength="260"
        x="1099"
-       y="1289.199"
-       id="text771">LPRO_CONG_SPE</text>
+       y="1321.7927"
+       id="text775">LPRO_CONG_SPE</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -3575,8 +3650,8 @@
        lengthAdjust="spacing"
        textLength="406"
        x="1367"
-       y="1289.199"
-       id="text773">GC_LIN_LPRO_CONG_SPE_CD</text>
+       y="1321.7927"
+       id="text777">GC_LIN_LPRO_CONG_SPE_CD</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -3585,8 +3660,8 @@
        lengthAdjust="spacing"
        textLength="188"
        x="1099"
-       y="1321.7927"
-       id="text775">LPRO_LITHO</text>
+       y="1354.3865"
+       id="text779">LPRO_LITHO</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -3594,8 +3669,8 @@
        lengthAdjust="spacing"
        textLength="192"
        x="1295"
-       y="1321.7927"
-       id="text777">GC_LITHO_CD</text>
+       y="1354.3865"
+       id="text781">GC_LITHO_CD</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -3604,8 +3679,8 @@
        lengthAdjust="spacing"
        textLength="294"
        x="1099"
-       y="1354.3865"
-       id="text779">LPRO_NAME_HORIZ</text>
+       y="1386.9802"
+       id="text783">LPRO_NAME_HORIZ</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -3613,8 +3688,8 @@
        lengthAdjust="spacing"
        textLength="316"
        x="1401"
-       y="1354.3865"
-       id="text781">GC_LITSTRAT_BED_CD</text>
+       y="1386.9802"
+       id="text785">GC_LITSTRAT_BED_CD</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -3623,8 +3698,8 @@
        lengthAdjust="spacing"
        textLength="288"
        x="1099"
-       y="1386.9802"
-       id="text783">LPRO_ORIG_DESCR</text>
+       y="1419.574"
+       id="text787">LPRO_ORIG_DESCR</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -3632,8 +3707,8 @@
        lengthAdjust="spacing"
        textLength="80"
        x="1395"
-       y="1386.9802"
-       id="text785">String</text>
+       y="1419.574"
+       id="text789">String</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -3642,8 +3717,8 @@
        lengthAdjust="spacing"
        textLength="250"
        x="1099"
-       y="1419.574"
-       id="text787">PCOB_ALTITUDE</text>
+       y="1452.1677"
+       id="text791">PCOB_ALTITUDE</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -3651,8 +3726,8 @@
        lengthAdjust="spacing"
        textLength="100"
        x="1357"
-       y="1419.574"
-       id="text789">Double</text>
+       y="1452.1677"
+       id="text793">Double</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -3661,8 +3736,8 @@
        lengthAdjust="spacing"
        textLength="262"
        x="1099"
-       y="1452.1677"
-       id="text791">PCOB_FORMATIO</text>
+       y="1484.7615"
+       id="text795">PCOB_FORMATIO</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -3670,8 +3745,8 @@
        lengthAdjust="spacing"
        textLength="316"
        x="1369"
-       y="1452.1677"
-       id="text793">GC_LITSTRAT_BED_CD</text>
+       y="1484.7615"
+       id="text797">GC_LITSTRAT_BED_CD</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -3680,8 +3755,8 @@
        lengthAdjust="spacing"
        textLength="178"
        x="1099"
-       y="1484.7615"
-       id="text795">PCOB_TYPE</text>
+       y="1517.3552"
+       id="text799">PCOB_TYPE</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -3689,8 +3764,8 @@
        lengthAdjust="spacing"
        textLength="332"
        x="1285"
-       y="1484.7615"
-       id="text797">GC_LIN_PCOB_TYPE_CD</text>
+       y="1517.3552"
+       id="text801">GC_LIN_PCOB_TYPE_CD</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -3699,8 +3774,8 @@
        lengthAdjust="spacing"
        textLength="252"
        x="1099"
-       y="1517.3552"
-       id="text799">PCOH_ALTITUDE</text>
+       y="1549.949"
+       id="text803">PCOH_ALTITUDE</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -3708,8 +3783,8 @@
        lengthAdjust="spacing"
        textLength="100"
        x="1359"
-       y="1517.3552"
-       id="text801">Double</text>
+       y="1549.949"
+       id="text805">Double</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -3718,8 +3793,8 @@
        lengthAdjust="spacing"
        textLength="236"
        x="1099"
-       y="1549.949"
-       id="text803">PCOH_CONFINE</text>
+       y="1582.5427"
+       id="text807">PCOH_CONFINE</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -3727,8 +3802,8 @@
        lengthAdjust="spacing"
        textLength="382"
        x="1343"
-       y="1549.949"
-       id="text805">GC_LIN_PCOH_CONFINE_CD</text>
+       y="1582.5427"
+       id="text809">GC_LIN_PCOH_CONFINE_CD</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -3737,8 +3812,8 @@
        lengthAdjust="spacing"
        textLength="266"
        x="1099"
-       y="1582.5427"
-       id="text807">PCOH_WA_TABLE</text>
+       y="1615.1365"
+       id="text811">PCOH_WA_TABLE</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -3746,8 +3821,8 @@
        lengthAdjust="spacing"
        textLength="406"
        x="1373"
-       y="1582.5427"
-       id="text809">GC_LIN_PCOH_WA_TABLE_CD</text>
+       y="1615.1365"
+       id="text813">GC_LIN_PCOH_WA_TABLE_CD</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -3756,8 +3831,8 @@
        lengthAdjust="spacing"
        textLength="130"
        x="1099"
-       y="1615.1365"
-       id="text811">PRINTED</text>
+       y="1647.7302"
+       id="text815">PRINTED</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -3765,8 +3840,8 @@
        lengthAdjust="spacing"
        textLength="246"
        x="1237"
-       y="1615.1365"
-       id="text813">GC_BOOLEAN_CD</text>
+       y="1647.7302"
+       id="text817">GC_BOOLEAN_CD</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -3775,8 +3850,8 @@
        lengthAdjust="spacing"
        textLength="102"
        x="1099"
-       y="1647.7302"
-       id="text815">SHAPE</text>
+       y="1680.324"
+       id="text819">SHAPE</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -3784,8 +3859,8 @@
        lengthAdjust="spacing"
        textLength="136"
        x="1209"
-       y="1647.7302"
-       id="text817">Geometry</text>
+       y="1680.324"
+       id="text821">Geometry</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -3794,8 +3869,8 @@
        lengthAdjust="spacing"
        textLength="128"
        x="1099"
-       y="1680.324"
-       id="text819">SYMBOL</text>
+       y="1712.9177"
+       id="text823">SYMBOL</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -3803,8 +3878,8 @@
        lengthAdjust="spacing"
        textLength="80"
        x="1235"
-       y="1680.324"
-       id="text821">String</text>
+       y="1712.9177"
+       id="text825">String</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -3813,8 +3888,8 @@
        lengthAdjust="spacing"
        textLength="258"
        x="1099"
-       y="1712.9177"
-       id="text823">TTEC_FAULT_MO</text>
+       y="1745.5115"
+       id="text827">TTEC_FAULT_MO</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -3822,8 +3897,8 @@
        lengthAdjust="spacing"
        textLength="400"
        x="1365"
-       y="1712.9177"
-       id="text825">GC_LIN_TTEC_FAULT_MO_CD</text>
+       y="1745.5115"
+       id="text829">GC_LIN_TTEC_FAULT_MO_CD</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -3832,8 +3907,8 @@
        lengthAdjust="spacing"
        textLength="184"
        x="1099"
-       y="1745.5115"
-       id="text827">TTEC_HIERA</text>
+       y="1778.1052"
+       id="text831">TTEC_HIERA</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -3841,8 +3916,8 @@
        lengthAdjust="spacing"
        textLength="336"
        x="1291"
-       y="1745.5115"
-       id="text829">GC_LIN_TTEC_HIERA_CD</text>
+       y="1778.1052"
+       id="text833">GC_LIN_TTEC_HIERA_CD</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -3851,8 +3926,8 @@
        lengthAdjust="spacing"
        textLength="254"
        x="1099"
-       y="1778.1052"
-       id="text831">TTEC_HORIZ_MO</text>
+       y="1810.699"
+       id="text835">TTEC_HORIZ_MO</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -3860,8 +3935,8 @@
        lengthAdjust="spacing"
        textLength="402"
        x="1361"
-       y="1778.1052"
-       id="text833">GC_LIN_TTEC_HORIZ_MO_CD</text>
+       y="1810.699"
+       id="text837">GC_LIN_TTEC_HORIZ_MO_CD</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -3870,8 +3945,8 @@
        lengthAdjust="spacing"
        textLength="220"
        x="1099"
-       y="1810.699"
-       id="text835">TTEC_LIM_TYP</text>
+       y="1843.2927"
+       id="text839">TTEC_LIM_TYP</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -3879,8 +3954,8 @@
        lengthAdjust="spacing"
        textLength="310"
        x="1327"
-       y="1810.699"
-       id="text837">GC_LIN_TTEC_LIM_TYP</text>
+       y="1843.2927"
+       id="text841">GC_LIN_TTEC_LIM_TYP</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -3889,8 +3964,8 @@
        lengthAdjust="spacing"
        textLength="256"
        x="1099"
-       y="1843.2927"
-       id="text839">TTEC_META_STA</text>
+       y="1875.8865"
+       id="text843">TTEC_META_STA</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -3898,8 +3973,8 @@
        lengthAdjust="spacing"
        textLength="400"
        x="1363"
-       y="1843.2927"
-       id="text841">GC_LIN_TTEC_META_STA_CD</text>
+       y="1875.8865"
+       id="text845">GC_LIN_TTEC_META_STA_CD</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -3908,8 +3983,8 @@
        lengthAdjust="spacing"
        textLength="182"
        x="1099"
-       y="1875.8865"
-       id="text843">TTEC_NAME</text>
+       y="1908.4802"
+       id="text847">TTEC_NAME</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -3917,8 +3992,8 @@
        lengthAdjust="spacing"
        textLength="80"
        x="1289"
-       y="1875.8865"
-       id="text845">String</text>
+       y="1908.4802"
+       id="text849">String</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -3927,8 +4002,8 @@
        lengthAdjust="spacing"
        textLength="218"
        x="1099"
-       y="1908.4802"
-       id="text847">TTEC_STATUS</text>
+       y="1941.074"
+       id="text851">TTEC_STATUS</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -3936,8 +4011,8 @@
        lengthAdjust="spacing"
        textLength="364"
        x="1325"
-       y="1908.4802"
-       id="text849">GC_LIN_TTEC_STATUS_CD</text>
+       y="1941.074"
+       id="text853">GC_LIN_TTEC_STATUS_CD</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -3946,8 +4021,8 @@
        lengthAdjust="spacing"
        textLength="246"
        x="1099"
-       y="1941.074"
-       id="text851">TTEC_VERTI_MO</text>
+       y="1973.6677"
+       id="text855">TTEC_VERTI_MO</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -3955,31 +4030,15 @@
        lengthAdjust="spacing"
        textLength="394"
        x="1353"
-       y="1941.074"
-       id="text853">GC_LIN_TTEC_VERTI_MO_CD</text>
-    <text
-       fill="#000000"
-       font-family="sans-serif"
-       font-size="28px"
-       font-weight="bold"
-       lengthAdjust="spacing"
-       textLength="74"
-       x="1099"
        y="1973.6677"
-       id="text855">UUID</text>
-    <text
-       fill="#000000"
-       font-family="sans-serif"
-       font-size="28px"
-       lengthAdjust="spacing"
-       textLength="64"
-       x="1181"
-       y="1973.6677"
-       id="text857">Guid</text>
+       id="text857">GC_LIN_TTEC_VERTI_MO_CD</text>
   </g>
   <g
      id="elem_GC_POINT_OBJECTS"
-     transform="translate(54,-52)">
+     transform="translate(36.5,-160.79422)"
+     inkscape:export-filename="/home/marc-monnerat-u1/code/github.com/lg-geology-data-model/output/ER-GCOVER@150.png"
+     inkscape:export-xdpi="149.99661"
+     inkscape:export-ydpi="149.99661">
     <rect
        codeLine="246"
        fill="#f1f1f1"
@@ -4069,10 +4128,29 @@
        font-size="28px"
        font-weight="bold"
        lengthAdjust="spacing"
-       textLength="164"
+       textLength="74"
        x="26"
        y="2287.4578"
-       id="text879">AARC_AGE</text>
+       id="text879">UUID</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="28px"
+       lengthAdjust="spacing"
+       textLength="64"
+       x="108"
+       y="2287.4578"
+       id="text881">Guid</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="28px"
+       font-weight="bold"
+       lengthAdjust="spacing"
+       textLength="164"
+       x="26"
+       y="2320.0515"
+       id="text883">AARC_AGE</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -4080,8 +4158,8 @@
        lengthAdjust="spacing"
        textLength="260"
        x="198"
-       y="2287.4578"
-       id="text881">GC_AARC_AGE_CD</text>
+       y="2320.0515"
+       id="text885">GC_AARC_AGE_CD</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -4090,8 +4168,8 @@
        lengthAdjust="spacing"
        textLength="206"
        x="26"
-       y="2320.0515"
-       id="text883">AARC_EPOCH</text>
+       y="2352.6453"
+       id="text887">AARC_EPOCH</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -4099,8 +4177,8 @@
        lengthAdjust="spacing"
        textLength="300"
        x="240"
-       y="2320.0515"
-       id="text885">GC_AARC_EPOCH_CD</text>
+       y="2352.6453"
+       id="text889">GC_AARC_EPOCH_CD</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -4109,8 +4187,8 @@
        lengthAdjust="spacing"
        textLength="212"
        x="26"
-       y="2352.6453"
-       id="text887">AARC_PERIOD</text>
+       y="2385.239"
+       id="text891">AARC_PERIOD</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -4118,8 +4196,8 @@
        lengthAdjust="spacing"
        textLength="308"
        x="246"
-       y="2352.6453"
-       id="text889">GC_AARC_PERIOD_CD</text>
+       y="2385.239"
+       id="text893">GC_AARC_PERIOD_CD</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -4128,8 +4206,8 @@
        lengthAdjust="spacing"
        textLength="178"
        x="26"
-       y="2385.239"
-       id="text891">AARC_TYPE</text>
+       y="2417.8328"
+       id="text895">AARC_TYPE</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -4137,27 +4215,8 @@
        lengthAdjust="spacing"
        textLength="344"
        x="212"
-       y="2385.239"
-       id="text893">GC_PNT_AARC_TYPE_CD</text>
-    <text
-       fill="#000000"
-       font-family="sans-serif"
-       font-size="28px"
-       font-weight="bold"
-       lengthAdjust="spacing"
-       textLength="296"
-       x="26"
        y="2417.8328"
-       id="text895">ABOR_DEPTH_BEDR</text>
-    <text
-       fill="#000000"
-       font-family="sans-serif"
-       font-size="28px"
-       lengthAdjust="spacing"
-       textLength="100"
-       x="330"
-       y="2417.8328"
-       id="text897">Double</text>
+       id="text897">GC_PNT_AARC_TYPE_CD</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -4167,7 +4226,7 @@
        textLength="296"
        x="26"
        y="2450.4265"
-       id="text899">ABOR_DEPTH_FM_A</text>
+       id="text899">ABOR_DEPTH_BEDR</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -4183,17 +4242,17 @@
        font-size="28px"
        font-weight="bold"
        lengthAdjust="spacing"
-       textLength="294"
+       textLength="296"
        x="26"
        y="2483.0203"
-       id="text903">ABOR_DEPTH_FM_B</text>
+       id="text903">ABOR_DEPTH_FM_A</text>
     <text
        fill="#000000"
        font-family="sans-serif"
        font-size="28px"
        lengthAdjust="spacing"
        textLength="100"
-       x="328"
+       x="330"
        y="2483.0203"
        id="text905">Double</text>
     <text
@@ -4202,17 +4261,17 @@
        font-size="28px"
        font-weight="bold"
        lengthAdjust="spacing"
-       textLength="280"
+       textLength="294"
        x="26"
        y="2515.614"
-       id="text907">ABOR_DEPTH_TOT</text>
+       id="text907">ABOR_DEPTH_FM_B</text>
     <text
        fill="#000000"
        font-family="sans-serif"
        font-size="28px"
        lengthAdjust="spacing"
        textLength="100"
-       x="314"
+       x="328"
        y="2515.614"
        id="text909">Double</text>
     <text
@@ -4221,17 +4280,17 @@
        font-size="28px"
        font-weight="bold"
        lengthAdjust="spacing"
-       textLength="266"
+       textLength="280"
        x="26"
        y="2548.2078"
-       id="text911">ABOR_DEPTH_WT</text>
+       id="text911">ABOR_DEPTH_TOT</text>
     <text
        fill="#000000"
        font-family="sans-serif"
        font-size="28px"
        lengthAdjust="spacing"
        textLength="100"
-       x="300"
+       x="314"
        y="2548.2078"
        id="text913">Double</text>
     <text
@@ -4240,10 +4299,29 @@
        font-size="28px"
        font-weight="bold"
        lengthAdjust="spacing"
-       textLength="300"
+       textLength="266"
        x="26"
        y="2580.8015"
-       id="text915">ABOR_D_C_UNDERG</text>
+       id="text915">ABOR_DEPTH_WT</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="28px"
+       lengthAdjust="spacing"
+       textLength="100"
+       x="300"
+       y="2580.8015"
+       id="text917">Double</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="28px"
+       font-weight="bold"
+       lengthAdjust="spacing"
+       textLength="300"
+       x="26"
+       y="2613.3953"
+       id="text919">ABOR_D_C_UNDERG</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -4251,8 +4329,8 @@
        lengthAdjust="spacing"
        textLength="246"
        x="334"
-       y="2580.8015"
-       id="text917">GC_BOOLEAN_CD</text>
+       y="2613.3953"
+       id="text921">GC_BOOLEAN_CD</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -4261,8 +4339,8 @@
        lengthAdjust="spacing"
        textLength="180"
        x="26"
-       y="2613.3953"
-       id="text919">ABOR_FM_A</text>
+       y="2645.989"
+       id="text923">ABOR_FM_A</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -4270,25 +4348,6 @@
        lengthAdjust="spacing"
        textLength="242"
        x="214"
-       y="2613.3953"
-       id="text921">GC_LITSTRAT_CD</text>
-    <text
-       fill="#000000"
-       font-family="sans-serif"
-       font-size="28px"
-       font-weight="bold"
-       lengthAdjust="spacing"
-       textLength="178"
-       x="26"
-       y="2645.989"
-       id="text923">ABOR_FM_B</text>
-    <text
-       fill="#000000"
-       font-family="sans-serif"
-       font-size="28px"
-       lengthAdjust="spacing"
-       textLength="242"
-       x="212"
        y="2645.989"
        id="text925">GC_LITSTRAT_CD</text>
     <text
@@ -4297,10 +4356,29 @@
        font-size="28px"
        font-weight="bold"
        lengthAdjust="spacing"
-       textLength="170"
+       textLength="178"
        x="26"
        y="2678.5828"
-       id="text927">ABOR_LINK</text>
+       id="text927">ABOR_FM_B</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="28px"
+       lengthAdjust="spacing"
+       textLength="242"
+       x="212"
+       y="2678.5828"
+       id="text929">GC_LITSTRAT_CD</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="28px"
+       font-weight="bold"
+       lengthAdjust="spacing"
+       textLength="170"
+       x="26"
+       y="2711.1765"
+       id="text931">ABOR_LINK</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -4308,8 +4386,8 @@
        lengthAdjust="spacing"
        textLength="98"
        x="204"
-       y="2678.5828"
-       id="text929">Integer</text>
+       y="2711.1765"
+       id="text933">Integer</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -4318,8 +4396,8 @@
        lengthAdjust="spacing"
        textLength="192"
        x="26"
-       y="2711.1765"
-       id="text931">ABOR_LITHO</text>
+       y="2743.7703"
+       id="text935">ABOR_LITHO</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -4327,8 +4405,8 @@
        lengthAdjust="spacing"
        textLength="192"
        x="226"
-       y="2711.1765"
-       id="text933">GC_LITHO_CD</text>
+       y="2743.7703"
+       id="text937">GC_LITHO_CD</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -4337,8 +4415,8 @@
        lengthAdjust="spacing"
        textLength="254"
        x="26"
-       y="2743.7703"
-       id="text935">ABOR_MAIN_TAR</text>
+       y="2776.364"
+       id="text939">ABOR_MAIN_TAR</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -4346,8 +4424,8 @@
        lengthAdjust="spacing"
        textLength="414"
        x="288"
-       y="2743.7703"
-       id="text937">GC_PNT_ABOR_MAIN_TAR_CD</text>
+       y="2776.364"
+       id="text941">GC_PNT_ABOR_MAIN_TAR_CD</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -4356,8 +4434,8 @@
        lengthAdjust="spacing"
        textLength="298"
        x="26"
-       y="2776.364"
-       id="text939">ABOR_REF_NUMBER</text>
+       y="2808.9578"
+       id="text943">ABOR_REF_NUMBER</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -4365,8 +4443,8 @@
        lengthAdjust="spacing"
        textLength="98"
        x="332"
-       y="2776.364"
-       id="text941">Integer</text>
+       y="2808.9578"
+       id="text945">Integer</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -4375,8 +4453,8 @@
        lengthAdjust="spacing"
        textLength="268"
        x="26"
-       y="2808.9578"
-       id="text943">ABOR_TARG_MAT</text>
+       y="2841.5515"
+       id="text947">ABOR_TARG_MAT</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -4384,8 +4462,8 @@
        lengthAdjust="spacing"
        textLength="428"
        x="302"
-       y="2808.9578"
-       id="text945">GC_PNT_ABOR_TARG_MAT_CD</text>
+       y="2841.5515"
+       id="text949">GC_PNT_ABOR_TARG_MAT_CD</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -4394,8 +4472,8 @@
        lengthAdjust="spacing"
        textLength="142"
        x="26"
-       y="2841.5515"
-       id="text947">AZIMUTH</text>
+       y="2874.1453"
+       id="text951">AZIMUTH</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -4403,25 +4481,6 @@
        lengthAdjust="spacing"
        textLength="98"
        x="176"
-       y="2841.5515"
-       id="text949">Integer</text>
-    <text
-       fill="#000000"
-       font-family="sans-serif"
-       font-size="28px"
-       font-weight="bold"
-       lengthAdjust="spacing"
-       textLength="50"
-       x="26"
-       y="2874.1453"
-       id="text951">DIP</text>
-    <text
-       fill="#000000"
-       font-family="sans-serif"
-       font-size="28px"
-       lengthAdjust="spacing"
-       textLength="98"
-       x="84"
        y="2874.1453"
        id="text953">Integer</text>
     <text
@@ -4430,10 +4489,29 @@
        font-size="28px"
        font-weight="bold"
        lengthAdjust="spacing"
-       textLength="248"
+       textLength="50"
        x="26"
        y="2906.739"
-       id="text955">GKAR_ICE_CAVE</text>
+       id="text955">DIP</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="28px"
+       lengthAdjust="spacing"
+       textLength="98"
+       x="84"
+       y="2906.739"
+       id="text957">Integer</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="28px"
+       font-weight="bold"
+       lengthAdjust="spacing"
+       textLength="248"
+       x="26"
+       y="2939.3328"
+       id="text959">GKAR_ICE_CAVE</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -4441,8 +4519,8 @@
        lengthAdjust="spacing"
        textLength="246"
        x="282"
-       y="2906.739"
-       id="text957">GC_BOOLEAN_CD</text>
+       y="2939.3328"
+       id="text961">GC_BOOLEAN_CD</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -4451,8 +4529,8 @@
        lengthAdjust="spacing"
        textLength="206"
        x="26"
-       y="2939.3328"
-       id="text959">HCON_DEPTH</text>
+       y="2971.9265"
+       id="text963">HCON_DEPTH</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -4460,25 +4538,6 @@
        lengthAdjust="spacing"
        textLength="100"
        x="240"
-       y="2939.3328"
-       id="text961">Double</text>
-    <text
-       fill="#000000"
-       font-family="sans-serif"
-       font-size="28px"
-       font-weight="bold"
-       lengthAdjust="spacing"
-       textLength="270"
-       x="26"
-       y="2971.9265"
-       id="text963">HCON_DEPTH_WT</text>
-    <text
-       fill="#000000"
-       font-family="sans-serif"
-       font-size="28px"
-       lengthAdjust="spacing"
-       textLength="100"
-       x="304"
        y="2971.9265"
        id="text965">Double</text>
     <text
@@ -4487,10 +4546,29 @@
        font-size="28px"
        font-weight="bold"
        lengthAdjust="spacing"
-       textLength="210"
+       textLength="270"
        x="26"
        y="3004.5203"
-       id="text967">HCON_EPOCH</text>
+       id="text967">HCON_DEPTH_WT</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="28px"
+       lengthAdjust="spacing"
+       textLength="100"
+       x="304"
+       y="3004.5203"
+       id="text969">Double</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="28px"
+       font-weight="bold"
+       lengthAdjust="spacing"
+       textLength="210"
+       x="26"
+       y="3037.114"
+       id="text971">HCON_EPOCH</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -4498,8 +4576,8 @@
        lengthAdjust="spacing"
        textLength="376"
        x="244"
-       y="3004.5203"
-       id="text969">GC_PNT_HCON_EPOCH_CD</text>
+       y="3037.114"
+       id="text973">GC_PNT_HCON_EPOCH_CD</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -4508,8 +4586,8 @@
        lengthAdjust="spacing"
        textLength="296"
        x="26"
-       y="3037.114"
-       id="text971">HCON_MEA_PERIOD</text>
+       y="3069.7078"
+       id="text975">HCON_MEA_PERIOD</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -4517,8 +4595,8 @@
        lengthAdjust="spacing"
        textLength="80"
        x="330"
-       y="3037.114"
-       id="text973">String</text>
+       y="3069.7078"
+       id="text977">String</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -4527,8 +4605,8 @@
        lengthAdjust="spacing"
        textLength="228"
        x="26"
-       y="3069.7078"
-       id="text975">HCON_STATUS</text>
+       y="3102.3015"
+       id="text979">HCON_STATUS</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -4536,8 +4614,8 @@
        lengthAdjust="spacing"
        textLength="388"
        x="262"
-       y="3069.7078"
-       id="text977">GC_PNT_HCON_STATUS_CD</text>
+       y="3102.3015"
+       id="text981">GC_PNT_HCON_STATUS_CD</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -4546,8 +4624,8 @@
        lengthAdjust="spacing"
        textLength="274"
        x="26"
-       y="3102.3015"
-       id="text979">HSUR_CHEMISTRY</text>
+       y="3134.8953"
+       id="text983">HSUR_CHEMISTRY</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -4555,8 +4633,8 @@
        lengthAdjust="spacing"
        textLength="80"
        x="308"
-       y="3102.3015"
-       id="text981">String</text>
+       y="3134.8953"
+       id="text985">String</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -4565,8 +4643,8 @@
        lengthAdjust="spacing"
        textLength="198"
        x="26"
-       y="3134.8953"
-       id="text983">HSUR_COMBI</text>
+       y="3167.489"
+       id="text987">HSUR_COMBI</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -4574,8 +4652,8 @@
        lengthAdjust="spacing"
        textLength="366"
        x="232"
-       y="3134.8953"
-       id="text985">GC_PNT_HSUR_COMBI_CD</text>
+       y="3167.489"
+       id="text989">GC_PNT_HSUR_COMBI_CD</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -4584,8 +4662,8 @@
        lengthAdjust="spacing"
        textLength="248"
        x="26"
-       y="3167.489"
-       id="text987">HSUR_DIS_LOCA</text>
+       y="3200.0828"
+       id="text991">HSUR_DIS_LOCA</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -4593,8 +4671,8 @@
        lengthAdjust="spacing"
        textLength="408"
        x="282"
-       y="3167.489"
-       id="text989">GC_PNT_HSUR_DIS_LOCA_CD</text>
+       y="3200.0828"
+       id="text993">GC_PNT_HSUR_DIS_LOCA_CD</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -4603,8 +4681,8 @@
        lengthAdjust="spacing"
        textLength="270"
        x="26"
-       y="3200.0828"
-       id="text991">HSUR_FLOW_CON</text>
+       y="3232.6765"
+       id="text995">HSUR_FLOW_CON</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -4612,8 +4690,8 @@
        lengthAdjust="spacing"
        textLength="428"
        x="304"
-       y="3200.0828"
-       id="text993">GC_PNT_HSUR_FLOW_CON_CD</text>
+       y="3232.6765"
+       id="text997">GC_PNT_HSUR_FLOW_CON_CD</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -4622,8 +4700,8 @@
        lengthAdjust="spacing"
        textLength="222"
        x="26"
-       y="3232.6765"
-       id="text995">HSUR_STATUS</text>
+       y="3265.2703"
+       id="text999">HSUR_STATUS</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -4631,8 +4709,8 @@
        lengthAdjust="spacing"
        textLength="384"
        x="256"
-       y="3232.6765"
-       id="text997">GC_PNT_HSUR_STATUS_CD</text>
+       y="3265.2703"
+       id="text1001">GC_PNT_HSUR_STATUS_CD</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -4641,8 +4719,8 @@
        lengthAdjust="spacing"
        textLength="182"
        x="26"
-       y="3265.2703"
-       id="text999">HSUR_TEMP</text>
+       y="3297.864"
+       id="text1003">HSUR_TEMP</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -4650,8 +4728,8 @@
        lengthAdjust="spacing"
        textLength="98"
        x="216"
-       y="3265.2703"
-       id="text1001">Integer</text>
+       y="3297.864"
+       id="text1005">Integer</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -4660,8 +4738,8 @@
        lengthAdjust="spacing"
        textLength="176"
        x="26"
-       y="3297.864"
-       id="text1003">HSUR_TYPE</text>
+       y="3330.4578"
+       id="text1007">HSUR_TYPE</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -4669,8 +4747,8 @@
        lengthAdjust="spacing"
        textLength="346"
        x="210"
-       y="3297.864"
-       id="text1005">GC_PNT_HSUR_TYPE_CD</text>
+       y="3330.4578"
+       id="text1009">GC_PNT_HSUR_TYPE_CD</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -4679,8 +4757,8 @@
        lengthAdjust="spacing"
        textLength="178"
        x="26"
-       y="3330.4578"
-       id="text1007">LANO_TYPE</text>
+       y="3363.0515"
+       id="text1011">LANO_TYPE</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -4688,8 +4766,8 @@
        lengthAdjust="spacing"
        textLength="342"
        x="212"
-       y="3330.4578"
-       id="text1009">GC_PNT_LANO_TYPE_CD</text>
+       y="3363.0515"
+       id="text1013">GC_PNT_LANO_TYPE_CD</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -4698,8 +4776,8 @@
        lengthAdjust="spacing"
        textLength="206"
        x="26"
-       y="3363.0515"
-       id="text1011">LMIS_ORIG_ID</text>
+       y="3395.6453"
+       id="text1015">LMIS_ORIG_ID</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -4707,25 +4785,6 @@
        lengthAdjust="spacing"
        textLength="80"
        x="240"
-       y="3363.0515"
-       id="text1013">String</text>
-    <text
-       fill="#000000"
-       font-family="sans-serif"
-       font-size="28px"
-       font-weight="bold"
-       lengthAdjust="spacing"
-       textLength="266"
-       x="26"
-       y="3395.6453"
-       id="text1015">LRES_CHEMISTRY</text>
-    <text
-       fill="#000000"
-       font-family="sans-serif"
-       font-size="28px"
-       lengthAdjust="spacing"
-       textLength="80"
-       x="300"
        y="3395.6453"
        id="text1017">String</text>
     <text
@@ -4734,10 +4793,29 @@
        font-size="28px"
        font-weight="bold"
        lengthAdjust="spacing"
-       textLength="244"
+       textLength="266"
        x="26"
        y="3428.239"
-       id="text1019">LRES_MATERIAL</text>
+       id="text1019">LRES_CHEMISTRY</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="28px"
+       lengthAdjust="spacing"
+       textLength="80"
+       x="300"
+       y="3428.239"
+       id="text1021">String</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="28px"
+       font-weight="bold"
+       lengthAdjust="spacing"
+       textLength="244"
+       x="26"
+       y="3460.8328"
+       id="text1023">LRES_MATERIAL</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -4745,8 +4823,8 @@
        lengthAdjust="spacing"
        textLength="402"
        x="278"
-       y="3428.239"
-       id="text1021">GC_PNT_LRES_MATERIAL_CD</text>
+       y="3460.8328"
+       id="text1025">GC_PNT_LRES_MATERIAL_CD</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -4755,8 +4833,8 @@
        lengthAdjust="spacing"
        textLength="214"
        x="26"
-       y="3460.8328"
-       id="text1023">LRES_STATUS</text>
+       y="3493.4265"
+       id="text1027">LRES_STATUS</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -4764,8 +4842,8 @@
        lengthAdjust="spacing"
        textLength="376"
        x="248"
-       y="3460.8328"
-       id="text1025">GC_PNT_LRES_STATUS_CD</text>
+       y="3493.4265"
+       id="text1029">GC_PNT_LRES_STATUS_CD</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -4774,8 +4852,8 @@
        lengthAdjust="spacing"
        textLength="270"
        x="26"
-       y="3493.4265"
-       id="text1027">LTYP_ACCESSIBIL</text>
+       y="3526.0203"
+       id="text1031">LTYP_ACCESSIBIL</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -4783,8 +4861,8 @@
        lengthAdjust="spacing"
        textLength="246"
        x="304"
-       y="3493.4265"
-       id="text1029">GC_BOOLEAN_CD</text>
+       y="3526.0203"
+       id="text1033">GC_BOOLEAN_CD</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -4793,8 +4871,8 @@
        lengthAdjust="spacing"
        textLength="180"
        x="26"
-       y="3526.0203"
-       id="text1031">LTYP_NAME</text>
+       y="3558.614"
+       id="text1035">LTYP_NAME</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -4802,8 +4880,8 @@
        lengthAdjust="spacing"
        textLength="80"
        x="214"
-       y="3526.0203"
-       id="text1033">String</text>
+       y="3558.614"
+       id="text1037">String</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -4812,8 +4890,8 @@
        lengthAdjust="spacing"
        textLength="276"
        x="26"
-       y="3558.614"
-       id="text1035">LTYP_PROTECTED</text>
+       y="3591.2078"
+       id="text1039">LTYP_PROTECTED</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -4821,8 +4899,8 @@
        lengthAdjust="spacing"
        textLength="246"
        x="310"
-       y="3558.614"
-       id="text1037">GC_BOOLEAN_CD</text>
+       y="3591.2078"
+       id="text1041">GC_BOOLEAN_CD</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -4831,8 +4909,8 @@
        lengthAdjust="spacing"
        textLength="202"
        x="26"
-       y="3591.2078"
-       id="text1039">LTYP_STRATI</text>
+       y="3623.8015"
+       id="text1043">LTYP_STRATI</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -4840,8 +4918,8 @@
        lengthAdjust="spacing"
        textLength="362"
        x="236"
-       y="3591.2078"
-       id="text1041">GC_PNT_LTYP_STRATI_CD</text>
+       y="3623.8015"
+       id="text1045">GC_PNT_LTYP_STRATI_CD</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -4850,8 +4928,8 @@
        lengthAdjust="spacing"
        textLength="256"
        x="26"
-       y="3623.8015"
-       id="text1043">MFOL_FOLD_TYP</text>
+       y="3656.3953"
+       id="text1047">MFOL_FOLD_TYP</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -4859,8 +4937,8 @@
        lengthAdjust="spacing"
        textLength="414"
        x="290"
-       y="3623.8015"
-       id="text1045">GC_PNT_MFOL_FOLD_TYP_CD</text>
+       y="3656.3953"
+       id="text1049">GC_PNT_MFOL_FOLD_TYP_CD</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -4869,8 +4947,8 @@
        lengthAdjust="spacing"
        textLength="202"
        x="26"
-       y="3656.3953"
-       id="text1047">MFOL_PHASE</text>
+       y="3688.989"
+       id="text1051">MFOL_PHASE</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -4878,8 +4956,8 @@
        lengthAdjust="spacing"
        textLength="364"
        x="236"
-       y="3656.3953"
-       id="text1049">GC_PNT_MFOL_PHASE_CD</text>
+       y="3688.989"
+       id="text1053">GC_PNT_MFOL_PHASE_CD</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -4888,8 +4966,8 @@
        lengthAdjust="spacing"
        textLength="272"
        x="26"
-       y="3688.989"
-       id="text1051">MFOL_PHASE_REF</text>
+       y="3721.5828"
+       id="text1055">MFOL_PHASE_REF</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -4897,8 +4975,8 @@
        lengthAdjust="spacing"
        textLength="80"
        x="306"
-       y="3688.989"
-       id="text1053">String</text>
+       y="3721.5828"
+       id="text1057">String</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -4907,8 +4985,8 @@
        lengthAdjust="spacing"
        textLength="284"
        x="26"
-       y="3721.5828"
-       id="text1055">MPLA_OB_DIP_SLO</text>
+       y="3754.1765"
+       id="text1059">MPLA_OB_DIP_SLO</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -4916,8 +4994,8 @@
        lengthAdjust="spacing"
        textLength="246"
        x="318"
-       y="3721.5828"
-       id="text1057">GC_BOOLEAN_CD</text>
+       y="3754.1765"
+       id="text1061">GC_BOOLEAN_CD</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -4926,8 +5004,8 @@
        lengthAdjust="spacing"
        textLength="202"
        x="26"
-       y="3754.1765"
-       id="text1059">MPLA_PHASE</text>
+       y="3786.7703"
+       id="text1063">MPLA_PHASE</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -4935,8 +5013,8 @@
        lengthAdjust="spacing"
        textLength="362"
        x="236"
-       y="3754.1765"
-       id="text1061">GC_PNT_MPLA_PHASE_CD</text>
+       y="3786.7703"
+       id="text1065">GC_PNT_MPLA_PHASE_CD</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -4945,8 +5023,8 @@
        lengthAdjust="spacing"
        textLength="272"
        x="26"
-       y="3786.7703"
-       id="text1063">MPLA_PHASE_REF</text>
+       y="3819.364"
+       id="text1067">MPLA_PHASE_REF</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -4954,8 +5032,8 @@
        lengthAdjust="spacing"
        textLength="80"
        x="306"
-       y="3786.7703"
-       id="text1065">String</text>
+       y="3819.364"
+       id="text1069">String</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -4964,8 +5042,8 @@
        lengthAdjust="spacing"
        textLength="252"
        x="26"
-       y="3819.364"
-       id="text1067">MPLA_POLARITY</text>
+       y="3851.9578"
+       id="text1071">MPLA_POLARITY</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -4973,8 +5051,8 @@
        lengthAdjust="spacing"
        textLength="404"
        x="286"
-       y="3819.364"
-       id="text1069">GC_PNT_MPLA_POLARITY_CD</text>
+       y="3851.9578"
+       id="text1073">GC_PNT_MPLA_POLARITY_CD</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -4983,8 +5061,8 @@
        lengthAdjust="spacing"
        textLength="220"
        x="26"
-       y="3851.9578"
-       id="text1071">PMOD_HEIGHT</text>
+       y="3884.5515"
+       id="text1075">PMOD_HEIGHT</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -4992,8 +5070,8 @@
        lengthAdjust="spacing"
        textLength="100"
        x="254"
-       y="3851.9578"
-       id="text1073">Double</text>
+       y="3884.5515"
+       id="text1077">Double</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -5002,8 +5080,8 @@
        lengthAdjust="spacing"
        textLength="298"
        x="26"
-       y="3884.5515"
-       id="text1075">PMOD_MEA_PERIOD</text>
+       y="3917.1453"
+       id="text1079">PMOD_MEA_PERIOD</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -5011,8 +5089,8 @@
        lengthAdjust="spacing"
        textLength="80"
        x="332"
-       y="3884.5515"
-       id="text1077">String</text>
+       y="3917.1453"
+       id="text1081">String</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -5021,8 +5099,8 @@
        lengthAdjust="spacing"
        textLength="130"
        x="26"
-       y="3917.1453"
-       id="text1079">PRINTED</text>
+       y="3949.739"
+       id="text1083">PRINTED</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -5030,8 +5108,8 @@
        lengthAdjust="spacing"
        textLength="246"
        x="164"
-       y="3917.1453"
-       id="text1081">GC_BOOLEAN_CD</text>
+       y="3949.739"
+       id="text1085">GC_BOOLEAN_CD</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -5040,8 +5118,8 @@
        lengthAdjust="spacing"
        textLength="258"
        x="26"
-       y="3949.739"
-       id="text1083">PSLO_FORMATIO</text>
+       y="3982.3328"
+       id="text1087">PSLO_FORMATIO</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -5049,8 +5127,8 @@
        lengthAdjust="spacing"
        textLength="316"
        x="292"
-       y="3949.739"
-       id="text1085">GC_LITSTRAT_BED_CD</text>
+       y="3982.3328"
+       id="text1089">GC_LITSTRAT_BED_CD</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -5059,8 +5137,8 @@
        lengthAdjust="spacing"
        textLength="174"
        x="26"
-       y="3982.3328"
-       id="text1087">PSLO_TYPE</text>
+       y="4014.9265"
+       id="text1091">PSLO_TYPE</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -5068,8 +5146,8 @@
        lengthAdjust="spacing"
        textLength="340"
        x="208"
-       y="3982.3328"
-       id="text1089">GC_PNT_PSLO_TYPE_CD</text>
+       y="4014.9265"
+       id="text1093">GC_PNT_PSLO_TYPE_CD</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -5078,8 +5156,8 @@
        lengthAdjust="spacing"
        textLength="260"
        x="26"
-       y="4014.9265"
-       id="text1091">RUNC_MAT_TYPE</text>
+       y="4047.5203"
+       id="text1095">RUNC_MAT_TYPE</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -5087,8 +5165,8 @@
        lengthAdjust="spacing"
        textLength="192"
        x="294"
-       y="4014.9265"
-       id="text1093">GC_LITHO_CD</text>
+       y="4047.5203"
+       id="text1097">GC_LITHO_CD</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -5097,8 +5175,8 @@
        lengthAdjust="spacing"
        textLength="292"
        x="26"
-       y="4047.5203"
-       id="text1095">RUNC_ORIG_DESCR</text>
+       y="4080.114"
+       id="text1099">RUNC_ORIG_DESCR</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -5106,8 +5184,8 @@
        lengthAdjust="spacing"
        textLength="80"
        x="326"
-       y="4047.5203"
-       id="text1097">String</text>
+       y="4080.114"
+       id="text1101">String</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -5116,8 +5194,8 @@
        lengthAdjust="spacing"
        textLength="284"
        x="26"
-       y="4080.114"
-       id="text1099">RUNC_PROTECTED</text>
+       y="4112.7075"
+       id="text1103">RUNC_PROTECTED</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -5125,8 +5203,8 @@
        lengthAdjust="spacing"
        textLength="246"
        x="318"
-       y="4080.114"
-       id="text1101">GC_BOOLEAN_CD</text>
+       y="4112.7075"
+       id="text1105">GC_BOOLEAN_CD</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -5135,8 +5213,8 @@
        lengthAdjust="spacing"
        textLength="260"
        x="26"
-       y="4112.7075"
-       id="text1103">RUNC_ROCK_SPE</text>
+       y="4145.3013"
+       id="text1107">RUNC_ROCK_SPE</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -5144,8 +5222,8 @@
        lengthAdjust="spacing"
        textLength="316"
        x="294"
-       y="4112.7075"
-       id="text1105">GC_LITSTRAT_BED_CD</text>
+       y="4145.3013"
+       id="text1109">GC_LITSTRAT_BED_CD</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -5154,8 +5232,8 @@
        lengthAdjust="spacing"
        textLength="262"
        x="26"
-       y="4145.3013"
-       id="text1107">RUNC_ROCK_TYP</text>
+       y="4177.895"
+       id="text1111">RUNC_ROCK_TYP</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -5163,8 +5241,8 @@
        lengthAdjust="spacing"
        textLength="424"
        x="296"
-       y="4145.3013"
-       id="text1109">GC_PNT_RUNC_ROCK_TYP_CD</text>
+       y="4177.895"
+       id="text1113">GC_PNT_RUNC_ROCK_TYP_CD</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -5173,8 +5251,8 @@
        lengthAdjust="spacing"
        textLength="224"
        x="26"
-       y="4177.895"
-       id="text1111">RUNC_STATUS</text>
+       y="4210.4888"
+       id="text1115">RUNC_STATUS</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -5182,8 +5260,8 @@
        lengthAdjust="spacing"
        textLength="386"
        x="258"
-       y="4177.895"
-       id="text1113">GC_PNT_RUNC_STATUS_CD</text>
+       y="4210.4888"
+       id="text1117">GC_PNT_RUNC_STATUS_CD</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -5192,8 +5270,8 @@
        lengthAdjust="spacing"
        textLength="102"
        x="26"
-       y="4210.4888"
-       id="text1115">SHAPE</text>
+       y="4243.0825"
+       id="text1119">SHAPE</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -5201,8 +5279,8 @@
        lengthAdjust="spacing"
        textLength="136"
        x="136"
-       y="4210.4888"
-       id="text1117">Geometry</text>
+       y="4243.0825"
+       id="text1121">Geometry</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -5211,8 +5289,8 @@
        lengthAdjust="spacing"
        textLength="128"
        x="26"
-       y="4243.0825"
-       id="text1119">SYMBOL</text>
+       y="4275.6763"
+       id="text1123">SYMBOL</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -5220,8 +5298,8 @@
        lengthAdjust="spacing"
        textLength="80"
        x="162"
-       y="4243.0825"
-       id="text1121">String</text>
+       y="4275.6763"
+       id="text1125">String</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -5230,8 +5308,8 @@
        lengthAdjust="spacing"
        textLength="250"
        x="26"
-       y="4275.6763"
-       id="text1123">TDEF_FOLD_FOR</text>
+       y="4308.27"
+       id="text1127">TDEF_FOLD_FOR</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -5239,8 +5317,8 @@
        lengthAdjust="spacing"
        textLength="416"
        x="284"
-       y="4275.6763"
-       id="text1125">GC_PNT_TDEF_FOLD_FOR_CD</text>
+       y="4308.27"
+       id="text1129">GC_PNT_TDEF_FOLD_FOR_CD</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -5249,8 +5327,8 @@
        lengthAdjust="spacing"
        textLength="248"
        x="26"
-       y="4308.27"
-       id="text1127">TDEF_FOLD_TYP</text>
+       y="4340.8638"
+       id="text1131">TDEF_FOLD_TYP</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -5258,31 +5336,15 @@
        lengthAdjust="spacing"
        textLength="412"
        x="282"
-       y="4308.27"
-       id="text1129">GC_PNT_TDEF_FOLD_TYP_CD</text>
-    <text
-       fill="#000000"
-       font-family="sans-serif"
-       font-size="28px"
-       font-weight="bold"
-       lengthAdjust="spacing"
-       textLength="74"
-       x="26"
        y="4340.8638"
-       id="text1131">UUID</text>
-    <text
-       fill="#000000"
-       font-family="sans-serif"
-       font-size="28px"
-       lengthAdjust="spacing"
-       textLength="64"
-       x="108"
-       y="4340.8638"
-       id="text1133">Guid</text>
+       id="text1133">GC_PNT_TDEF_FOLD_TYP_CD</text>
   </g>
   <g
      id="elem_GC_FOSSILS"
-     transform="translate(-4297.4389,1947.0346)">
+     transform="translate(-4485.0527,1917.5117)"
+     inkscape:export-filename="/home/marc-monnerat-u1/code/github.com/lg-geology-data-model/output/ER-GCOVER@150.png"
+     inkscape:export-xdpi="149.99661"
+     inkscape:export-ydpi="149.99661">
     <rect
        codeLine="316"
        fill="#f1f1f1"
@@ -5372,10 +5434,29 @@
        font-size="28px"
        font-weight="bold"
        lengthAdjust="spacing"
-       textLength="258"
+       textLength="74"
        x="9364"
        y="1207.7177"
-       id="text1155">LFOS_DAT_METH</text>
+       id="text1155">UUID</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="28px"
+       lengthAdjust="spacing"
+       textLength="64"
+       x="9446"
+       y="1207.7177"
+       id="text1157">Guid</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="28px"
+       font-weight="bold"
+       lengthAdjust="spacing"
+       textLength="258"
+       x="9364"
+       y="1240.3115"
+       id="text1159">LFOS_DAT_METH</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -5383,8 +5464,8 @@
        lengthAdjust="spacing"
        textLength="436"
        x="9630"
-       y="1207.7177"
-       id="text1157">GC_FOSS_LFOS_DAT_METH_CD</text>
+       y="1240.3115"
+       id="text1161">GC_FOSS_LFOS_DAT_METH_CD</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -5393,8 +5474,8 @@
        lengthAdjust="spacing"
        textLength="228"
        x="9364"
-       y="1240.3115"
-       id="text1159">LFOS_DIVISION</text>
+       y="1272.9052"
+       id="text1163">LFOS_DIVISION</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -5402,8 +5483,8 @@
        lengthAdjust="spacing"
        textLength="402"
        x="9600"
-       y="1240.3115"
-       id="text1161">GC_FOSS_LFOS_DIVISION_CD</text>
+       y="1272.9052"
+       id="text1165">GC_FOSS_LFOS_DIVISION_CD</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -5412,8 +5493,8 @@
        lengthAdjust="spacing"
        textLength="278"
        x="9364"
-       y="1272.9052"
-       id="text1163">LFOS_PROTECTED</text>
+       y="1305.499"
+       id="text1167">LFOS_PROTECTED</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -5421,8 +5502,8 @@
        lengthAdjust="spacing"
        textLength="246"
        x="9650"
-       y="1272.9052"
-       id="text1165">GC_BOOLEAN_CD</text>
+       y="1305.499"
+       id="text1169">GC_BOOLEAN_CD</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -5431,8 +5512,8 @@
        lengthAdjust="spacing"
        textLength="218"
        x="9364"
-       y="1305.499"
-       id="text1167">LFOS_STATUS</text>
+       y="1338.0927"
+       id="text1171">LFOS_STATUS</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -5440,8 +5521,8 @@
        lengthAdjust="spacing"
        textLength="394"
        x="9590"
-       y="1305.499"
-       id="text1169">GC_FOSS_LFOS_STATUS_CD</text>
+       y="1338.0927"
+       id="text1173">GC_FOSS_LFOS_STATUS_CD</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -5450,8 +5531,8 @@
        lengthAdjust="spacing"
        textLength="130"
        x="9364"
-       y="1338.0927"
-       id="text1171">PRINTED</text>
+       y="1370.6865"
+       id="text1175">PRINTED</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -5459,8 +5540,8 @@
        lengthAdjust="spacing"
        textLength="246"
        x="9502"
-       y="1338.0927"
-       id="text1173">GC_BOOLEAN_CD</text>
+       y="1370.6865"
+       id="text1177">GC_BOOLEAN_CD</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -5469,8 +5550,8 @@
        lengthAdjust="spacing"
        textLength="102"
        x="9364"
-       y="1370.6865"
-       id="text1175">SHAPE</text>
+       y="1403.2802"
+       id="text1179">SHAPE</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -5478,8 +5559,8 @@
        lengthAdjust="spacing"
        textLength="136"
        x="9474"
-       y="1370.6865"
-       id="text1177">Geometry</text>
+       y="1403.2802"
+       id="text1181">Geometry</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -5488,8 +5569,8 @@
        lengthAdjust="spacing"
        textLength="128"
        x="9364"
-       y="1403.2802"
-       id="text1179">SYMBOL</text>
+       y="1435.874"
+       id="text1183">SYMBOL</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -5497,30 +5578,15 @@
        lengthAdjust="spacing"
        textLength="80"
        x="9500"
-       y="1403.2802"
-       id="text1181">String</text>
-    <text
-       fill="#000000"
-       font-family="sans-serif"
-       font-size="28px"
-       font-weight="bold"
-       lengthAdjust="spacing"
-       textLength="74"
-       x="9364"
        y="1435.874"
-       id="text1183">UUID</text>
-    <text
-       fill="#000000"
-       font-family="sans-serif"
-       font-size="28px"
-       lengthAdjust="spacing"
-       textLength="64"
-       x="9446"
-       y="1435.874"
-       id="text1185">Guid</text>
+       id="text1185">String</text>
   </g>
   <g
-     id="elem_GC_UNCO_DESPOSIT">
+     id="elem_GC_UNCO_DESPOSIT"
+     inkscape:export-filename="/home/marc-monnerat-u1/code/github.com/lg-geology-data-model/output/ER-GCOVER@150.png"
+     inkscape:export-xdpi="149.99661"
+     inkscape:export-ydpi="149.99661"
+     transform="translate(-63.5,-52.794219)">
     <rect
        codeLine="330"
        fill="#ffffff"
@@ -5610,10 +5676,29 @@
        font-size="28px"
        font-weight="bold"
        lengthAdjust="spacing"
-       textLength="290"
+       textLength="74"
        x="3077"
        y="1077.3376"
-       id="text1207">RUNC_BURIED_OUT</text>
+       id="text1207">UUID</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="28px"
+       lengthAdjust="spacing"
+       textLength="64"
+       x="3159"
+       y="1077.3376"
+       id="text1209">Guid</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="28px"
+       font-weight="bold"
+       lengthAdjust="spacing"
+       textLength="290"
+       x="3077"
+       y="1109.9315"
+       id="text1211">RUNC_BURIED_OUT</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -5621,27 +5706,8 @@
        lengthAdjust="spacing"
        textLength="246"
        x="3375"
-       y="1077.3376"
-       id="text1209">GC_BOOLEAN_CD</text>
-    <text
-       fill="#000000"
-       font-family="sans-serif"
-       font-size="28px"
-       font-weight="bold"
-       lengthAdjust="spacing"
-       textLength="268"
-       x="3077"
        y="1109.9315"
-       id="text1211">RUNC_CHRONO_B</text>
-    <text
-       fill="#000000"
-       font-family="sans-serif"
-       font-size="28px"
-       lengthAdjust="spacing"
-       textLength="236"
-       x="3353"
-       y="1109.9315"
-       id="text1213">GC_CHRONO_CD</text>
+       id="text1213">GC_BOOLEAN_CD</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -5651,7 +5717,7 @@
        textLength="268"
        x="3077"
        y="1142.5251"
-       id="text1215">RUNC_CHRONO_T</text>
+       id="text1215">RUNC_CHRONO_B</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -5667,10 +5733,29 @@
        font-size="28px"
        font-weight="bold"
        lengthAdjust="spacing"
-       textLength="260"
+       textLength="268"
        x="3077"
        y="1175.119"
-       id="text1219">RUNC_GLAC_TYP</text>
+       id="text1219">RUNC_CHRONO_T</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="28px"
+       lengthAdjust="spacing"
+       textLength="236"
+       x="3353"
+       y="1175.119"
+       id="text1221">GC_CHRONO_CD</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="28px"
+       font-weight="bold"
+       lengthAdjust="spacing"
+       textLength="260"
+       x="3077"
+       y="1207.7126"
+       id="text1223">RUNC_GLAC_TYP</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -5678,8 +5763,8 @@
        lengthAdjust="spacing"
        textLength="474"
        x="3345"
-       y="1175.119"
-       id="text1221">GC_UN_DEP_RUNC_GLAC_TYP_CD</text>
+       y="1207.7126"
+       id="text1225">GC_UN_DEP_RUNC_GLAC_TYP_CD</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -5688,8 +5773,8 @@
        lengthAdjust="spacing"
        textLength="308"
        x="3077"
-       y="1207.7126"
-       id="text1223">RUNC_HARMOS_REV</text>
+       y="1240.3065"
+       id="text1227">RUNC_HARMOS_REV</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -5697,8 +5782,8 @@
        lengthAdjust="spacing"
        textLength="304"
        x="3393"
-       y="1207.7126"
-       id="text1225">GC_HARMOS_REV_CD</text>
+       y="1240.3065"
+       id="text1229">GC_HARMOS_REV_CD</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -5707,8 +5792,8 @@
        lengthAdjust="spacing"
        textLength="190"
        x="3077"
-       y="1240.3065"
-       id="text1227">RUNC_INDEX</text>
+       y="1272.9001"
+       id="text1231">RUNC_INDEX</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -5716,8 +5801,8 @@
        lengthAdjust="spacing"
        textLength="80"
        x="3275"
-       y="1240.3065"
-       id="text1229">String</text>
+       y="1272.9001"
+       id="text1233">String</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -5726,8 +5811,8 @@
        lengthAdjust="spacing"
        textLength="192"
        x="3077"
-       y="1272.9001"
-       id="text1231">RUNC_LITHO</text>
+       y="1305.494"
+       id="text1235">RUNC_LITHO</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -5735,8 +5820,8 @@
        lengthAdjust="spacing"
        textLength="288"
        x="3277"
-       y="1272.9001"
-       id="text1233">GC_LITHO_UNCO_CD</text>
+       y="1305.494"
+       id="text1237">GC_LITHO_UNCO_CD</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -5745,8 +5830,8 @@
        lengthAdjust="spacing"
        textLength="248"
        x="3077"
-       y="1305.494"
-       id="text1235">RUNC_LITSTRAT</text>
+       y="1338.0876"
+       id="text1239">RUNC_LITSTRAT</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -5754,8 +5839,8 @@
        lengthAdjust="spacing"
        textLength="338"
        x="3333"
-       y="1305.494"
-       id="text1237">GC_LITSTRAT_UNCO_CD</text>
+       y="1338.0876"
+       id="text1241">GC_LITSTRAT_UNCO_CD</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -5764,8 +5849,8 @@
        lengthAdjust="spacing"
        textLength="278"
        x="3077"
-       y="1338.0876"
-       id="text1239">RUNC_MORPHOLO</text>
+       y="1370.6815"
+       id="text1243">RUNC_MORPHOLO</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -5773,8 +5858,8 @@
        lengthAdjust="spacing"
        textLength="494"
        x="3363"
-       y="1338.0876"
-       id="text1241">GC_UN_DEP_RUNC_MORPHOLO_CD</text>
+       y="1370.6815"
+       id="text1245">GC_UN_DEP_RUNC_MORPHOLO_CD</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -5783,8 +5868,8 @@
        lengthAdjust="spacing"
        textLength="292"
        x="3077"
-       y="1370.6815"
-       id="text1243">RUNC_ORIG_DESCR</text>
+       y="1403.2751"
+       id="text1247">RUNC_ORIG_DESCR</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -5792,25 +5877,6 @@
        lengthAdjust="spacing"
        textLength="80"
        x="3377"
-       y="1370.6815"
-       id="text1245">String</text>
-    <text
-       fill="#000000"
-       font-family="sans-serif"
-       font-size="28px"
-       font-weight="bold"
-       lengthAdjust="spacing"
-       textLength="250"
-       x="3077"
-       y="1403.2751"
-       id="text1247">RUNC_REF_YEAR</text>
-    <text
-       fill="#000000"
-       font-family="sans-serif"
-       font-size="28px"
-       lengthAdjust="spacing"
-       textLength="80"
-       x="3335"
        y="1403.2751"
        id="text1249">String</text>
     <text
@@ -5819,10 +5885,29 @@
        font-size="28px"
        font-weight="bold"
        lengthAdjust="spacing"
-       textLength="266"
+       textLength="250"
        x="3077"
        y="1435.869"
-       id="text1251">RUNC_STRUCTUR</text>
+       id="text1251">RUNC_REF_YEAR</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="28px"
+       lengthAdjust="spacing"
+       textLength="80"
+       x="3335"
+       y="1435.869"
+       id="text1253">String</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="28px"
+       font-weight="bold"
+       lengthAdjust="spacing"
+       textLength="266"
+       x="3077"
+       y="1468.4626"
+       id="text1255">RUNC_STRUCTUR</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -5830,8 +5915,8 @@
        lengthAdjust="spacing"
        textLength="486"
        x="3351"
-       y="1435.869"
-       id="text1253">GC_UN_DEP_RUNC_STRUCTUR_CD</text>
+       y="1468.4626"
+       id="text1257">GC_UN_DEP_RUNC_STRUCTUR_CD</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -5840,8 +5925,8 @@
        lengthAdjust="spacing"
        textLength="254"
        x="3077"
-       y="1468.4626"
-       id="text1255">RUNC_THIN_COV</text>
+       y="1501.0565"
+       id="text1259">RUNC_THIN_COV</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -5849,8 +5934,8 @@
        lengthAdjust="spacing"
        textLength="470"
        x="3339"
-       y="1468.4626"
-       id="text1257">GC_UN_DEP_RUNC_THIN_COV_CD</text>
+       y="1501.0565"
+       id="text1261">GC_UN_DEP_RUNC_THIN_COV_CD</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -5859,8 +5944,8 @@
        lengthAdjust="spacing"
        textLength="102"
        x="3077"
-       y="1501.0565"
-       id="text1259">SHAPE</text>
+       y="1533.6501"
+       id="text1263">SHAPE</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -5868,8 +5953,8 @@
        lengthAdjust="spacing"
        textLength="136"
        x="3187"
-       y="1501.0565"
-       id="text1261">Geometry</text>
+       y="1533.6501"
+       id="text1265">Geometry</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -5878,8 +5963,8 @@
        lengthAdjust="spacing"
        textLength="128"
        x="3077"
-       y="1533.6501"
-       id="text1263">SYMBOL</text>
+       y="1566.244"
+       id="text1267">SYMBOL</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -5887,31 +5972,15 @@
        lengthAdjust="spacing"
        textLength="80"
        x="3213"
-       y="1533.6501"
-       id="text1265">String</text>
-    <text
-       fill="#000000"
-       font-family="sans-serif"
-       font-size="28px"
-       font-weight="bold"
-       lengthAdjust="spacing"
-       textLength="74"
-       x="3077"
        y="1566.244"
-       id="text1267">UUID</text>
-    <text
-       fill="#000000"
-       font-family="sans-serif"
-       font-size="28px"
-       lengthAdjust="spacing"
-       textLength="64"
-       x="3159"
-       y="1566.244"
-       id="text1269">Guid</text>
+       id="text1269">String</text>
   </g>
   <g
      id="elem_GC_BEDROCK"
-     transform="translate(-2071.1483,-31.02844)">
+     transform="translate(-2282.0334,-69.279999)"
+     inkscape:export-filename="/home/marc-monnerat-u1/code/github.com/lg-geology-data-model/output/ER-GCOVER@150.png"
+     inkscape:export-xdpi="149.99661"
+     inkscape:export-ydpi="149.99661">
     <rect
        codeLine="352"
        fill="#ffffff"
@@ -6020,17 +6089,17 @@
        font-size="28px"
        font-weight="bold"
        lengthAdjust="spacing"
-       textLength="164"
+       textLength="74"
        x="8176"
        y="1142.5315"
-       id="text1295">FORM_ATT</text>
+       id="text1295">UUID</text>
     <text
        fill="#000000"
        font-family="sans-serif"
        font-size="28px"
        lengthAdjust="spacing"
        textLength="64"
-       x="8348"
+       x="8258"
        y="1142.5315"
        id="text1297">Guid</text>
     <text
@@ -6039,10 +6108,29 @@
        font-size="28px"
        font-weight="bold"
        lengthAdjust="spacing"
-       textLength="262"
+       textLength="164"
        x="8176"
        y="1175.1252"
-       id="text1299">RBED_CHRONO_B</text>
+       id="text1299">FORM_ATT</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="28px"
+       lengthAdjust="spacing"
+       textLength="64"
+       x="8348"
+       y="1175.1252"
+       id="text1301">Guid</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="28px"
+       font-weight="bold"
+       lengthAdjust="spacing"
+       textLength="262"
+       x="8176"
+       y="1207.719"
+       id="text1303">RBED_CHRONO_B</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -6050,25 +6138,6 @@
        lengthAdjust="spacing"
        textLength="236"
        x="8446"
-       y="1175.1252"
-       id="text1301">GC_CHRONO_CD</text>
-    <text
-       fill="#000000"
-       font-family="sans-serif"
-       font-size="28px"
-       font-weight="bold"
-       lengthAdjust="spacing"
-       textLength="340"
-       x="8176"
-       y="1207.719"
-       id="text1303">RBED_CHRONO_B_LOC</text>
-    <text
-       fill="#000000"
-       font-family="sans-serif"
-       font-size="28px"
-       lengthAdjust="spacing"
-       textLength="236"
-       x="8524"
        y="1207.719"
        id="text1305">GC_CHRONO_CD</text>
     <text
@@ -6077,17 +6146,17 @@
        font-size="28px"
        font-weight="bold"
        lengthAdjust="spacing"
-       textLength="262"
+       textLength="340"
        x="8176"
        y="1240.3127"
-       id="text1307">RBED_CHRONO_T</text>
+       id="text1307">RBED_CHRONO_B_LOC</text>
     <text
        fill="#000000"
        font-family="sans-serif"
        font-size="28px"
        lengthAdjust="spacing"
        textLength="236"
-       x="8446"
+       x="8524"
        y="1240.3127"
        id="text1309">GC_CHRONO_CD</text>
     <text
@@ -6096,17 +6165,17 @@
        font-size="28px"
        font-weight="bold"
        lengthAdjust="spacing"
-       textLength="340"
+       textLength="262"
        x="8176"
        y="1272.9065"
-       id="text1311">RBED_CHRONO_T_LOC</text>
+       id="text1311">RBED_CHRONO_T</text>
     <text
        fill="#000000"
        font-family="sans-serif"
        font-size="28px"
        lengthAdjust="spacing"
        textLength="236"
-       x="8524"
+       x="8446"
        y="1272.9065"
        id="text1313">GC_CHRONO_CD</text>
     <text
@@ -6115,10 +6184,29 @@
        font-size="28px"
        font-weight="bold"
        lengthAdjust="spacing"
-       textLength="274"
+       textLength="340"
        x="8176"
        y="1305.5002"
-       id="text1315">RBED_EXOTIC_ELE</text>
+       id="text1315">RBED_CHRONO_T_LOC</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="28px"
+       lengthAdjust="spacing"
+       textLength="236"
+       x="8524"
+       y="1305.5002"
+       id="text1317">GC_CHRONO_CD</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="28px"
+       font-weight="bold"
+       lengthAdjust="spacing"
+       textLength="274"
+       x="8176"
+       y="1338.094"
+       id="text1319">RBED_EXOTIC_ELE</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -6126,8 +6214,8 @@
        lengthAdjust="spacing"
        textLength="246"
        x="8458"
-       y="1305.5002"
-       id="text1317">GC_BOOLEAN_CD</text>
+       y="1338.094"
+       id="text1321">GC_BOOLEAN_CD</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -6136,8 +6224,8 @@
        lengthAdjust="spacing"
        textLength="302"
        x="8176"
-       y="1338.094"
-       id="text1319">RBED_HARMOS_REV</text>
+       y="1370.6877"
+       id="text1323">RBED_HARMOS_REV</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -6145,8 +6233,8 @@
        lengthAdjust="spacing"
        textLength="304"
        x="8486"
-       y="1338.094"
-       id="text1321">GC_HARMOS_REV_CD</text>
+       y="1370.6877"
+       id="text1325">GC_HARMOS_REV_CD</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -6155,8 +6243,8 @@
        lengthAdjust="spacing"
        textLength="184"
        x="8176"
-       y="1370.6877"
-       id="text1323">RBED_INDEX</text>
+       y="1403.2815"
+       id="text1327">RBED_INDEX</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -6164,25 +6252,6 @@
        lengthAdjust="spacing"
        textLength="80"
        x="8368"
-       y="1370.6877"
-       id="text1325">String</text>
-    <text
-       fill="#000000"
-       font-family="sans-serif"
-       font-size="28px"
-       font-weight="bold"
-       lengthAdjust="spacing"
-       textLength="286"
-       x="8176"
-       y="1403.2815"
-       id="text1327">RBED_ORIG_DESCR</text>
-    <text
-       fill="#000000"
-       font-family="sans-serif"
-       font-size="28px"
-       lengthAdjust="spacing"
-       textLength="80"
-       x="8470"
        y="1403.2815"
        id="text1329">String</text>
     <text
@@ -6191,10 +6260,29 @@
        font-size="28px"
        font-weight="bold"
        lengthAdjust="spacing"
-       textLength="198"
+       textLength="286"
        x="8176"
        y="1435.8752"
-       id="text1331">RBED_TECTO</text>
+       id="text1331">RBED_ORIG_DESCR</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="28px"
+       lengthAdjust="spacing"
+       textLength="80"
+       x="8470"
+       y="1435.8752"
+       id="text1333">String</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="28px"
+       font-weight="bold"
+       lengthAdjust="spacing"
+       textLength="198"
+       x="8176"
+       y="1468.469"
+       id="text1335">RBED_TECTO</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -6202,8 +6290,8 @@
        lengthAdjust="spacing"
        textLength="208"
        x="8382"
-       y="1435.8752"
-       id="text1333">GC_TECTO_CD</text>
+       y="1468.469"
+       id="text1337">GC_TECTO_CD</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -6212,8 +6300,8 @@
        lengthAdjust="spacing"
        textLength="102"
        x="8176"
-       y="1468.469"
-       id="text1335">SHAPE</text>
+       y="1501.0627"
+       id="text1339">SHAPE</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -6221,8 +6309,8 @@
        lengthAdjust="spacing"
        textLength="136"
        x="8286"
-       y="1468.469"
-       id="text1337">Geometry</text>
+       y="1501.0627"
+       id="text1341">Geometry</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -6231,8 +6319,8 @@
        lengthAdjust="spacing"
        textLength="128"
        x="8176"
-       y="1501.0627"
-       id="text1339">SYMBOL</text>
+       y="1533.6565"
+       id="text1343">SYMBOL</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -6240,31 +6328,15 @@
        lengthAdjust="spacing"
        textLength="80"
        x="8312"
-       y="1501.0627"
-       id="text1341">String</text>
-    <text
-       fill="#000000"
-       font-family="sans-serif"
-       font-size="28px"
-       font-weight="bold"
-       lengthAdjust="spacing"
-       textLength="74"
-       x="8176"
        y="1533.6565"
-       id="text1343">UUID</text>
-    <text
-       fill="#000000"
-       font-family="sans-serif"
-       font-size="28px"
-       lengthAdjust="spacing"
-       textLength="64"
-       x="8258"
-       y="1533.6565"
-       id="text1345">Guid</text>
+       id="text1345">String</text>
   </g>
   <g
      id="elem_GC_SURFACES"
-     transform="translate(122)">
+     transform="translate(-5.5,-62.794219)"
+     inkscape:export-filename="/home/marc-monnerat-u1/code/github.com/lg-geology-data-model/output/ER-GCOVER@150.png"
+     inkscape:export-xdpi="149.99661"
+     inkscape:export-ydpi="149.99661">
     <rect
        codeLine="372"
        fill="#ffffff"
@@ -6354,10 +6426,29 @@
        font-size="28px"
        font-weight="bold"
        lengthAdjust="spacing"
-       textLength="164"
+       textLength="74"
        x="826"
        y="3200.0776"
-       id="text1367">AARC_AGE</text>
+       id="text1367">UUID</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="28px"
+       lengthAdjust="spacing"
+       textLength="64"
+       x="908"
+       y="3200.0776"
+       id="text1369">Guid</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="28px"
+       font-weight="bold"
+       lengthAdjust="spacing"
+       textLength="164"
+       x="826"
+       y="3232.6714"
+       id="text1371">AARC_AGE</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -6365,8 +6456,8 @@
        lengthAdjust="spacing"
        textLength="260"
        x="998"
-       y="3200.0776"
-       id="text1369">GC_AARC_AGE_CD</text>
+       y="3232.6714"
+       id="text1373">GC_AARC_AGE_CD</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -6375,8 +6466,8 @@
        lengthAdjust="spacing"
        textLength="206"
        x="826"
-       y="3232.6714"
-       id="text1371">AARC_EPOCH</text>
+       y="3265.2651"
+       id="text1375">AARC_EPOCH</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -6384,8 +6475,8 @@
        lengthAdjust="spacing"
        textLength="300"
        x="1040"
-       y="3232.6714"
-       id="text1373">GC_AARC_EPOCH_CD</text>
+       y="3265.2651"
+       id="text1377">GC_AARC_EPOCH_CD</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -6394,8 +6485,8 @@
        lengthAdjust="spacing"
        textLength="212"
        x="826"
-       y="3265.2651"
-       id="text1375">AARC_PERIOD</text>
+       y="3297.8589"
+       id="text1379">AARC_PERIOD</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -6403,8 +6494,8 @@
        lengthAdjust="spacing"
        textLength="308"
        x="1046"
-       y="3265.2651"
-       id="text1377">GC_AARC_PERIOD_CD</text>
+       y="3297.8589"
+       id="text1381">GC_AARC_PERIOD_CD</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -6413,8 +6504,8 @@
        lengthAdjust="spacing"
        textLength="252"
        x="826"
-       y="3297.8589"
-       id="text1379">GINS_MAIN_MOV</text>
+       y="3330.4526"
+       id="text1383">GINS_MAIN_MOV</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -6422,8 +6513,8 @@
        lengthAdjust="spacing"
        textLength="426"
        x="1086"
-       y="3297.8589"
-       id="text1381">GC_SURF_GINS_MAIN_MOV_CD</text>
+       y="3330.4526"
+       id="text1385">GC_SURF_GINS_MAIN_MOV_CD</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -6432,8 +6523,8 @@
        lengthAdjust="spacing"
        textLength="102"
        x="826"
-       y="3330.4526"
-       id="text1383">SHAPE</text>
+       y="3363.0464"
+       id="text1387">SHAPE</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -6441,8 +6532,8 @@
        lengthAdjust="spacing"
        textLength="136"
        x="936"
-       y="3330.4526"
-       id="text1385">Geometry</text>
+       y="3363.0464"
+       id="text1389">Geometry</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -6451,8 +6542,8 @@
        lengthAdjust="spacing"
        textLength="128"
        x="826"
-       y="3363.0464"
-       id="text1387">SYMBOL</text>
+       y="3395.6401"
+       id="text1391">SYMBOL</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -6460,8 +6551,8 @@
        lengthAdjust="spacing"
        textLength="80"
        x="962"
-       y="3363.0464"
-       id="text1389">String</text>
+       y="3395.6401"
+       id="text1393">String</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -6470,8 +6561,8 @@
        lengthAdjust="spacing"
        textLength="170"
        x="826"
-       y="3395.6401"
-       id="text1391">TDEF_TYPE</text>
+       y="3428.2339"
+       id="text1395">TDEF_TYPE</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -6479,31 +6570,15 @@
        lengthAdjust="spacing"
        textLength="360"
        x="1004"
-       y="3395.6401"
-       id="text1393">GC_SURF_TDEF_TYPE_CD</text>
-    <text
-       fill="#000000"
-       font-family="sans-serif"
-       font-size="28px"
-       font-weight="bold"
-       lengthAdjust="spacing"
-       textLength="74"
-       x="826"
        y="3428.2339"
-       id="text1395">UUID</text>
-    <text
-       fill="#000000"
-       font-family="sans-serif"
-       font-size="28px"
-       lengthAdjust="spacing"
-       textLength="64"
-       x="908"
-       y="3428.2339"
-       id="text1397">Guid</text>
+       id="text1397">GC_SURF_TDEF_TYPE_CD</text>
   </g>
   <g
      id="elem_GC_EXPLOIT_GEOMAT_PT"
-     transform="translate(-3250.2291,1962.5488)">
+     transform="translate(-3352.5146,1925.2688)"
+     inkscape:export-filename="/home/marc-monnerat-u1/code/github.com/lg-geology-data-model/output/ER-GCOVER@150.png"
+     inkscape:export-xdpi="149.99661"
+     inkscape:export-ydpi="149.99661">
     <rect
        codeLine="386"
        fill="#f1f1f1"
@@ -6593,10 +6668,29 @@
        font-size="28px"
        font-weight="bold"
        lengthAdjust="spacing"
-       textLength="274"
+       textLength="74"
        x="5155"
        y="1224.0177"
-       id="text1419">AEXP_DEPTH_TOT</text>
+       id="text1419">UUID</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="28px"
+       lengthAdjust="spacing"
+       textLength="64"
+       x="5237"
+       y="1224.0177"
+       id="text1421">Guid</text>
+    <text
+       fill="#000000"
+       font-family="sans-serif"
+       font-size="28px"
+       font-weight="bold"
+       lengthAdjust="spacing"
+       textLength="274"
+       x="5155"
+       y="1256.6115"
+       id="text1423">AEXP_DEPTH_TOT</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -6604,8 +6698,8 @@
        lengthAdjust="spacing"
        textLength="100"
        x="5437"
-       y="1224.0177"
-       id="text1421">Double</text>
+       y="1256.6115"
+       id="text1425">Double</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -6614,8 +6708,8 @@
        lengthAdjust="spacing"
        textLength="218"
        x="5155"
-       y="1256.6115"
-       id="text1423">AEXP_STATUS</text>
+       y="1289.2052"
+       id="text1427">AEXP_STATUS</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -6623,8 +6717,8 @@
        lengthAdjust="spacing"
        textLength="504"
        x="5381"
-       y="1256.6115"
-       id="text1425">GC_EX_GEO_PNT_AEXP_STATUS_CD</text>
+       y="1289.2052"
+       id="text1429">GC_EX_GEO_PNT_AEXP_STATUS_CD</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -6633,8 +6727,8 @@
        lengthAdjust="spacing"
        textLength="262"
        x="5155"
-       y="1289.2052"
-       id="text1427">AEXP_TARG_MAT</text>
+       y="1321.799"
+       id="text1431">AEXP_TARG_MAT</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -6642,8 +6736,8 @@
        lengthAdjust="spacing"
        textLength="546"
        x="5425"
-       y="1289.2052"
-       id="text1429">GC_EX_GEO_PNT_AEXP_TARG_MAT_CD</text>
+       y="1321.799"
+       id="text1433">GC_EX_GEO_PNT_AEXP_TARG_MAT_CD</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -6652,8 +6746,8 @@
        lengthAdjust="spacing"
        textLength="130"
        x="5155"
-       y="1321.799"
-       id="text1431">PRINTED</text>
+       y="1354.3927"
+       id="text1435">PRINTED</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -6661,8 +6755,8 @@
        lengthAdjust="spacing"
        textLength="246"
        x="5293"
-       y="1321.799"
-       id="text1433">GC_BOOLEAN_CD</text>
+       y="1354.3927"
+       id="text1437">GC_BOOLEAN_CD</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -6671,8 +6765,8 @@
        lengthAdjust="spacing"
        textLength="102"
        x="5155"
-       y="1354.3927"
-       id="text1435">SHAPE</text>
+       y="1386.9865"
+       id="text1439">SHAPE</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -6680,8 +6774,8 @@
        lengthAdjust="spacing"
        textLength="136"
        x="5265"
-       y="1354.3927"
-       id="text1437">Geometry</text>
+       y="1386.9865"
+       id="text1441">Geometry</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -6690,8 +6784,8 @@
        lengthAdjust="spacing"
        textLength="128"
        x="5155"
-       y="1386.9865"
-       id="text1439">SYMBOL</text>
+       y="1419.5802"
+       id="text1443">SYMBOL</text>
     <text
        fill="#000000"
        font-family="sans-serif"
@@ -6699,30 +6793,15 @@
        lengthAdjust="spacing"
        textLength="80"
        x="5291"
-       y="1386.9865"
-       id="text1441">String</text>
-    <text
-       fill="#000000"
-       font-family="sans-serif"
-       font-size="28px"
-       font-weight="bold"
-       lengthAdjust="spacing"
-       textLength="74"
-       x="5155"
        y="1419.5802"
-       id="text1443">UUID</text>
-    <text
-       fill="#000000"
-       font-family="sans-serif"
-       font-size="28px"
-       lengthAdjust="spacing"
-       textLength="64"
-       x="5237"
-       y="1419.5802"
-       id="text1445">Guid</text>
+       id="text1445">String</text>
   </g>
   <g
-     id="elem_GC_UNCO_DESPOSIT_GC_LITHO">
+     id="elem_GC_UNCO_DESPOSIT_GC_LITHO"
+     inkscape:export-filename="/home/marc-monnerat-u1/code/github.com/lg-geology-data-model/output/ER-GCOVER@150.png"
+     inkscape:export-xdpi="149.99661"
+     inkscape:export-ydpi="149.99661"
+     transform="translate(-63.5,-52.794219)">
     <rect
        codeLine="399"
        fill="#f1f1f1"
@@ -6802,7 +6881,10 @@
   </g>
   <g
      id="elem_GC_EXPLOIT_GEOMAT_PT_GC_LITSTRAT"
-     transform="translate(-3250.2291,1962.5488)">
+     transform="translate(-3352.5146,1925.2688)"
+     inkscape:export-filename="/home/marc-monnerat-u1/code/github.com/lg-geology-data-model/output/ER-GCOVER@150.png"
+     inkscape:export-xdpi="149.99661"
+     inkscape:export-ydpi="149.99661">
     <rect
        codeLine="404"
        fill="#f1f1f1"
@@ -6882,7 +6964,10 @@
   </g>
   <g
      id="elem_GC_BEDROCK_GC_LITHO_BED"
-     transform="translate(-2071.1483,-31.02844)">
+     transform="translate(-2282.0334,-69.279999)"
+     inkscape:export-filename="/home/marc-monnerat-u1/code/github.com/lg-geology-data-model/output/ER-GCOVER@150.png"
+     inkscape:export-xdpi="149.99661"
+     inkscape:export-ydpi="149.99661">
     <rect
        codeLine="409"
        fill="#f1f1f1"
@@ -6962,7 +7047,10 @@
   </g>
   <g
      id="elem_GC_FOSSILS_GC_SYSTEM"
-     transform="translate(-4297.4389,1947.0346)">
+     transform="translate(-4485.0527,1917.5117)"
+     inkscape:export-filename="/home/marc-monnerat-u1/code/github.com/lg-geology-data-model/output/ER-GCOVER@150.png"
+     inkscape:export-xdpi="149.99661"
+     inkscape:export-ydpi="149.99661">
     <rect
        codeLine="414"
        fill="#f1f1f1"
@@ -7041,7 +7129,11 @@
        id="text1517">GC_SYSTEM_UUID Guid</text>
   </g>
   <g
-     id="elem_GC_UNCO_DESPOSIT_GC_COMPOSIT">
+     id="elem_GC_UNCO_DESPOSIT_GC_COMPOSIT"
+     inkscape:export-filename="/home/marc-monnerat-u1/code/github.com/lg-geology-data-model/output/ER-GCOVER@150.png"
+     inkscape:export-xdpi="149.99661"
+     inkscape:export-ydpi="149.99661"
+     transform="translate(-63.5,-52.794219)">
     <rect
        codeLine="419"
        fill="#f1f1f1"
@@ -7120,7 +7212,11 @@
        id="text1535">GC_COMPOSIT_UUID Guid</text>
   </g>
   <g
-     id="elem_GC_UNCO_DESPOSIT_GC_ADMIXTURE">
+     id="elem_GC_UNCO_DESPOSIT_GC_ADMIXTURE"
+     inkscape:export-filename="/home/marc-monnerat-u1/code/github.com/lg-geology-data-model/output/ER-GCOVER@150.png"
+     inkscape:export-xdpi="149.99661"
+     inkscape:export-ydpi="149.99661"
+     transform="translate(-63.5,-52.794219)">
     <rect
        codeLine="424"
        fill="#f1f1f1"
@@ -7199,7 +7295,11 @@
        id="text1553">GC_ADMIXTURE_UUID Guid</text>
   </g>
   <g
-     id="elem_GC_UNCO_DESPOSIT_GC_CHARCAT">
+     id="elem_GC_UNCO_DESPOSIT_GC_CHARCAT"
+     inkscape:export-filename="/home/marc-monnerat-u1/code/github.com/lg-geology-data-model/output/ER-GCOVER@150.png"
+     inkscape:export-xdpi="149.99661"
+     inkscape:export-ydpi="149.99661"
+     transform="translate(-63.5,-52.794219)">
     <rect
        codeLine="429"
        fill="#f1f1f1"
@@ -7279,7 +7379,10 @@
   </g>
   <g
      id="elem_GC_EXPLOIT_GEOMAT_PLG_GC_LITSTRAT"
-     transform="translate(-3250.2291,1962.5488)">
+     transform="translate(-3352.5146,1925.2688)"
+     inkscape:export-filename="/home/marc-monnerat-u1/code/github.com/lg-geology-data-model/output/ER-GCOVER@150.png"
+     inkscape:export-xdpi="149.99661"
+     inkscape:export-ydpi="149.99661">
     <rect
        codeLine="434"
        fill="#f1f1f1"
@@ -7359,7 +7462,10 @@
   </g>
   <g
      id="link_GC_BEDROCK_GC_BED_FORM_ATT"
-     transform="translate(-2071.1483,-31.02844)">
+     transform="translate(-2282.0334,-69.279999)"
+     inkscape:export-filename="/home/marc-monnerat-u1/code/github.com/lg-geology-data-model/output/ER-GCOVER@150.png"
+     inkscape:export-xdpi="149.99661"
+     inkscape:export-ydpi="149.99661">
     <path
        codeLine="440"
        d="m 8483,1549.18 c 0,333.46 0,866.76 0,1243.48"
@@ -7386,7 +7492,11 @@
        id="text1595">1..1</text>
   </g>
   <g
-     id="link_GC_UNCO_DESPOSIT_GC_LITHO_GC_UNCO_DESPOSIT">
+     id="link_GC_UNCO_DESPOSIT_GC_LITHO_GC_UNCO_DESPOSIT"
+     inkscape:export-filename="/home/marc-monnerat-u1/code/github.com/lg-geology-data-model/output/ER-GCOVER@150.png"
+     inkscape:export-xdpi="149.99661"
+     inkscape:export-ydpi="149.99661"
+     transform="translate(-63.5,-52.794219)">
     <path
        codeLine="441"
        d="m 2401,265.84 c 0,194.46 0,707.62 0,707.62 0,0 361.72,0 663.76,0"
@@ -7413,7 +7523,11 @@
        id="text1601">1..1</text>
   </g>
   <g
-     id="link_GC_UNCO_DESPOSIT_GC_LITHO_GC_LITHO">
+     id="link_GC_UNCO_DESPOSIT_GC_LITHO_GC_LITHO"
+     inkscape:export-filename="/home/marc-monnerat-u1/code/github.com/lg-geology-data-model/output/ER-GCOVER@150.png"
+     inkscape:export-xdpi="149.99661"
+     inkscape:export-ydpi="149.99661"
+     transform="translate(-63.5,-52.794219)">
     <path
        codeLine="442"
        d="m 2135,265.16 c 0,159.32 0,543.42 0,778.98"
@@ -7441,7 +7555,10 @@
   </g>
   <g
      id="link_GC_EXPLOIT_GEOMAT_PT_GC_LITSTRAT_GC_EXPLOIT_GEOMAT_PT"
-     transform="translate(-3250.2291,1962.5488)">
+     transform="translate(-3352.5146,1925.2688)"
+     inkscape:export-filename="/home/marc-monnerat-u1/code/github.com/lg-geology-data-model/output/ER-GCOVER@150.png"
+     inkscape:export-xdpi="149.99661"
+     inkscape:export-ydpi="149.99661">
     <path
        codeLine="443"
        d="m 5611,265.16 c 0,159.32 0,543.42 0,778.98"
@@ -7469,7 +7586,10 @@
   </g>
   <g
      id="link_GC_EXPLOIT_GEOMAT_PT_GC_LITSTRAT_GC_LITSTRAT"
-     transform="translate(-3250.2291,1962.5488)">
+     transform="translate(-3352.5146,1925.2688)"
+     inkscape:export-filename="/home/marc-monnerat-u1/code/github.com/lg-geology-data-model/output/ER-GCOVER@150.png"
+     inkscape:export-xdpi="149.99661"
+     inkscape:export-ydpi="149.99661">
     <path
        codeLine="444"
        d="m 5921.5,193.46 c 160.64,0 323.5,0 323.5,0 0,0 0,547.76 0,850.52"
@@ -7497,7 +7617,10 @@
   </g>
   <g
      id="link_GC_BEDROCK_GC_LITHO_BED_GC_BEDROCK"
-     transform="translate(-2071.1483,-31.02844)">
+     transform="translate(-2282.0334,-69.279999)"
+     inkscape:export-filename="/home/marc-monnerat-u1/code/github.com/lg-geology-data-model/output/ER-GCOVER@150.png"
+     inkscape:export-xdpi="149.99661"
+     inkscape:export-ydpi="149.99661">
     <path
        codeLine="445"
        d="m 8290.5,265.16 c 0,135.56 0,433.82 0,664.86"
@@ -7525,7 +7648,10 @@
   </g>
   <g
      id="link_GC_BEDROCK_GC_LITHO_BED_GC_LITHO_BED"
-     transform="translate(-2071.1483,-31.02844)">
+     transform="translate(-2282.0334,-69.279999)"
+     inkscape:export-filename="/home/marc-monnerat-u1/code/github.com/lg-geology-data-model/output/ER-GCOVER@150.png"
+     inkscape:export-xdpi="149.99661"
+     inkscape:export-ydpi="149.99661">
     <path
        codeLine="446"
        d="m 8013.5,265.16 c 0,159.32 0,543.42 0,778.98"
@@ -7553,7 +7679,10 @@
   </g>
   <g
      id="link_GC_FOSSILS_GC_SYSTEM_GC_FOSSILS"
-     transform="translate(-4297.4389,1947.0346)">
+     transform="translate(-4485.0527,1917.5117)"
+     inkscape:export-filename="/home/marc-monnerat-u1/code/github.com/lg-geology-data-model/output/ER-GCOVER@150.png"
+     inkscape:export-xdpi="149.99661"
+     inkscape:export-ydpi="149.99661">
     <path
        codeLine="447"
        d="m 9477.5,265.16 c 0,155.74 0,526.2 0,762.82"
@@ -7581,7 +7710,10 @@
   </g>
   <g
      id="link_GC_FOSSILS_GC_SYSTEM_GC_SYSTEM"
-     transform="translate(-4297.4389,1947.0346)">
+     transform="translate(-4485.0527,1917.5117)"
+     inkscape:export-filename="/home/marc-monnerat-u1/code/github.com/lg-geology-data-model/output/ER-GCOVER@150.png"
+     inkscape:export-xdpi="149.99661"
+     inkscape:export-ydpi="149.99661">
     <path
        codeLine="448"
        d="m 9234.5,265.16 c 0,166.98 0,580.84 0,811.86"
@@ -7608,7 +7740,11 @@
        id="text1643">1..1</text>
   </g>
   <g
-     id="link_GC_UNCO_DESPOSIT_GC_COMPOSIT_GC_UNCO_DESPOSIT">
+     id="link_GC_UNCO_DESPOSIT_GC_COMPOSIT_GC_UNCO_DESPOSIT"
+     inkscape:export-filename="/home/marc-monnerat-u1/code/github.com/lg-geology-data-model/output/ER-GCOVER@150.png"
+     inkscape:export-xdpi="149.99661"
+     inkscape:export-ydpi="149.99661"
+     transform="translate(-63.5,-52.794219)">
     <path
        codeLine="449"
        d="m 3154.5,265.16 c 0,129.3 0,406.6 0,632.44"
@@ -7636,10 +7772,13 @@
   </g>
   <path
      codeLine="450"
-     d="m 2832.5,263.16 c 0,53.03648 0,184.48742 0,257.86439"
+     d="m 2769,212.36578 c 0,46.0426 0,160.15919 0,223.86"
      fill="none"
      id="GC_UNCO_DESPOSIT_GC_COMPOSIT-GC_COMPOSIT"
-     style="stroke:#181818;stroke-width:1.12716" />
+     style="stroke:#181818;stroke-width:1.05021"
+     inkscape:export-filename="/home/marc-monnerat-u1/code/github.com/lg-geology-data-model/output/ER-GCOVER@150.png"
+     inkscape:export-xdpi="149.99661"
+     inkscape:export-ydpi="149.99661" />
   <text
      fill="#000000"
      font-family="sans-serif"
@@ -7648,7 +7787,11 @@
      textLength="48"
      x="2758.0483"
      y="304.95441"
-     id="text1653">0..n</text>
+     id="text1653"
+     inkscape:export-filename="/home/marc-monnerat-u1/code/github.com/lg-geology-data-model/output/ER-GCOVER@150.png"
+     inkscape:export-xdpi="149.99661"
+     inkscape:export-ydpi="149.99661"
+     transform="translate(-63.5,-52.794219)">0..n</text>
   <text
      fill="#000000"
      font-family="sans-serif"
@@ -7658,9 +7801,16 @@
      x="2791.5806"
      y="1055.359"
      id="text1655"
-     transform="translate(-35.653183,-550.40201)">1..1</text>
+     transform="translate(-91.5,-638.79422)"
+     inkscape:export-filename="/home/marc-monnerat-u1/code/github.com/lg-geology-data-model/output/ER-GCOVER@150.png"
+     inkscape:export-xdpi="149.99661"
+     inkscape:export-ydpi="149.99661">1..1</text>
   <g
-     id="link_GC_UNCO_DESPOSIT_GC_ADMIXTURE_GC_UNCO_DESPOSIT">
+     id="link_GC_UNCO_DESPOSIT_GC_ADMIXTURE_GC_UNCO_DESPOSIT"
+     inkscape:export-filename="/home/marc-monnerat-u1/code/github.com/lg-geology-data-model/output/ER-GCOVER@150.png"
+     inkscape:export-xdpi="149.99661"
+     inkscape:export-ydpi="149.99661"
+     transform="translate(-63.5,-52.794219)">
     <path
        codeLine="451"
        d="m 3607.5,265.16 c 0,129.3 0,406.6 0,632.44"
@@ -7688,10 +7838,13 @@
   </g>
   <path
      codeLine="452"
-     d="m 3936.7686,192.91827 c 68.8558,0 122.4394,0 122.4394,0 0,0 0,197.92086 0,296.69316"
+     d="m 3873.2401,140.06464 c 68.8876,0 122.4959,0 122.4959,0 0,0 0,161.20608 0,241.6559"
      fill="none"
      id="GC_UNCO_DESPOSIT_GC_ADMIXTURE-GC_ADMIXTURE"
-     style="stroke:#181818;stroke-width:1.16119" />
+     style="stroke:#181818;stroke-width:1.04821"
+     inkscape:export-filename="/home/marc-monnerat-u1/code/github.com/lg-geology-data-model/output/ER-GCOVER@150.png"
+     inkscape:export-xdpi="149.99661"
+     inkscape:export-ydpi="149.99661" />
   <text
      fill="#000000"
      font-family="sans-serif"
@@ -7700,7 +7853,11 @@
      textLength="48"
      x="3952.479"
      y="186.9263"
-     id="text1665">0..n</text>
+     id="text1665"
+     inkscape:export-filename="/home/marc-monnerat-u1/code/github.com/lg-geology-data-model/output/ER-GCOVER@150.png"
+     inkscape:export-xdpi="149.99661"
+     inkscape:export-ydpi="149.99661"
+     transform="translate(-63.5,-52.794219)">0..n</text>
   <text
      fill="#000000"
      font-family="sans-serif"
@@ -7710,9 +7867,16 @@
      x="3996.3906"
      y="1055.5005"
      id="text1667"
-     transform="translate(-16.455315,-595.1339)">1..1</text>
+     transform="translate(-71.5,-682.79422)"
+     inkscape:export-filename="/home/marc-monnerat-u1/code/github.com/lg-geology-data-model/output/ER-GCOVER@150.png"
+     inkscape:export-xdpi="149.99661"
+     inkscape:export-ydpi="149.99661">1..1</text>
   <g
-     id="link_GC_UNCO_DESPOSIT_GC_CHARCAT_GC_UNCO_DESPOSIT">
+     id="link_GC_UNCO_DESPOSIT_GC_CHARCAT_GC_UNCO_DESPOSIT"
+     inkscape:export-filename="/home/marc-monnerat-u1/code/github.com/lg-geology-data-model/output/ER-GCOVER@150.png"
+     inkscape:export-xdpi="149.99661"
+     inkscape:export-ydpi="149.99661"
+     transform="translate(-63.5,-52.794219)">
     <path
        codeLine="453"
        d="m 4325,265.68 c 0,183.84 0,649.78 0,649.78 0,0 -232.46,0 -455.38,0"
@@ -7739,7 +7903,11 @@
        id="text1673">1..1</text>
   </g>
   <g
-     id="link_GC_UNCO_DESPOSIT_GC_CHARCAT_GC_CHARCAT">
+     id="link_GC_UNCO_DESPOSIT_GC_CHARCAT_GC_CHARCAT"
+     inkscape:export-filename="/home/marc-monnerat-u1/code/github.com/lg-geology-data-model/output/ER-GCOVER@150.png"
+     inkscape:export-xdpi="149.99661"
+     inkscape:export-ydpi="149.99661"
+     transform="translate(-63.5,-52.794219)">
     <path
        codeLine="454"
        d="m 4640,265.16 c 0,166.98 0,580.84 0,811.86"
@@ -7767,7 +7935,10 @@
   </g>
   <g
      id="link_GC_EXPLOIT_GEOMAT_PLG_GC_LITSTRAT_GC_EXPLOIT_GEOMAT_PLG"
-     transform="translate(-3250.2291,1962.5488)">
+     transform="translate(-3352.5146,1925.2688)"
+     inkscape:export-filename="/home/marc-monnerat-u1/code/github.com/lg-geology-data-model/output/ER-GCOVER@150.png"
+     inkscape:export-xdpi="149.99661"
+     inkscape:export-ydpi="149.99661">
     <path
        codeLine="455"
        d="m 6906,265.16 c 0,166.98 0,580.84 0,811.86"
@@ -7795,7 +7966,10 @@
   </g>
   <g
      id="link_GC_EXPLOIT_GEOMAT_PLG_GC_LITSTRAT_GC_LITSTRAT"
-     transform="translate(-3250.2291,1962.5488)">
+     transform="translate(-3352.5146,1925.2688)"
+     inkscape:export-filename="/home/marc-monnerat-u1/code/github.com/lg-geology-data-model/output/ER-GCOVER@150.png"
+     inkscape:export-xdpi="149.99661"
+     inkscape:export-ydpi="149.99661">
     <path
        codeLine="456"
        d="m 6552,265.16 c 0,159.32 0,543.42 0,778.98"
@@ -7821,4 +7995,18 @@
        y="1022.8344"
        id="text1691">1..1</text>
   </g>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:167.368px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:4.18419"
+     x="1664.9951"
+     y="3858.3997"
+     id="text7837"
+     inkscape:export-filename="/home/marc-monnerat-u1/code/github.com/lg-geology-data-model/output/ER-GCOVER@150.png"
+     inkscape:export-xdpi="149.99661"
+     inkscape:export-ydpi="149.99661"><tspan
+       sodipodi:role="line"
+       id="tspan7835"
+       x="1664.9951"
+       y="3858.3997"
+       style="stroke-width:4.18419">GCOVER 30.05.2024</tspan></text>
 </svg>
