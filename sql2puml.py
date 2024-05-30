@@ -49,11 +49,11 @@ skinparam monochrome true
 skinparam linetype ortho
 scale 2
 
-!define table(x) class x << (T,#FFAAAA) >>
+!define table(x) class x << (T,#FFAAAA) >> #FFF
 !define view(x) class x << (V,#FFAAAA) >>
 !define ent(x) class x << (E,#FFAAAA) >>
 !define enum(x) class x << (E,#FFAAAA) >>
-!define class(x) class x << (FC, #CC8888) >> #fff
+!define class(x) class x << (C, #CC8888) >> #EEEBDC
 
 !define primary_key(x) <b>PK: x</b>
 !define foreign_key(x,reference) <b>FK: </b>x
@@ -101,17 +101,15 @@ hide stereotypes
         :param name: Name of the column.
         :param type: Type of the column.
         """
-        is_feature_class = False
+
         # Refuse if not in a table
         if self.current_table is None:
             raise NoTableException
 
         self.puml_tables[self.current_table]['default'][name] = type
 
-        if name.lower() == 'shape' or type.lower() == 'geometry':
-            is_feature_class = True
-
-        self.puml_tables[self.current_table]['is_feature_class'] = is_feature_class
+        if name.lower() == 'shape' and type.lower().strip() == 'geometry':
+            self.puml_tables[self.current_table]['is_feature_class'] = True
 
 
 
