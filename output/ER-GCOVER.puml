@@ -5,11 +5,11 @@ skinparam monochrome true
 skinparam linetype ortho
 scale 2
 
-!define table(x) class x << (T,#FFAAAA) >>
+!define table(x) class x << (T,#FFAAAA) >> #FFF
 !define view(x) class x << (V,#FFAAAA) >>
 !define ent(x) class x << (E,#FFAAAA) >>
 !define enum(x) class x << (E,#FFAAAA) >>
-!define class(x) class x << (FC, #CC8888) >> #fff
+!define class(x) class x << (C, #CC8888) >> #EEEBDC
 
 !define primary_key(x) <b>PK: x</b>
 !define foreign_key(x,reference) <b>FK: </b>x
@@ -199,7 +199,7 @@ class(GC_EXPLOIT_GEOMAT_PLG) {
 	key(SYMBOL) String
 }
 
-table(GC_LINEAR_OBJECTS) {
+class(GC_LINEAR_OBJECTS) {
 	primary_key(UUID) Guid
 	---
 	key(OBJECTID) OID
@@ -246,7 +246,7 @@ table(GC_LINEAR_OBJECTS) {
 	key(TTEC_VERTI_MO) GC_LIN_TTEC_VERTI_MO_CD
 }
 
-table(GC_POINT_OBJECTS) {
+class(GC_POINT_OBJECTS) {
 	primary_key(UUID) Guid
 	---
 	key(OBJECTID) OID
@@ -316,7 +316,7 @@ table(GC_POINT_OBJECTS) {
 	key(TDEF_FOLD_TYP) GC_PNT_TDEF_FOLD_TYP_CD
 }
 
-table(GC_FOSSILS) {
+class(GC_FOSSILS) {
 	primary_key(UUID) Guid
 	---
 	key(OBJECTID) OID
@@ -386,7 +386,7 @@ class(GC_SURFACES) {
 	key(TDEF_TYPE) GC_SURF_TDEF_TYPE_CD
 }
 
-table(GC_EXPLOIT_GEOMAT_PT) {
+class(GC_EXPLOIT_GEOMAT_PT) {
 	primary_key(UUID) Guid
 	---
 	key(OBJECTID) OID
@@ -439,7 +439,13 @@ table(GC_EXPLOIT_GEOMAT_PLG_GC_LITSTRAT) {
 	foreign_key(GC_LITSTRAT_UUID,GC_LITSTRAT) Guid
 }
 
-
+GC_LITHO "0..n" -- "1..1" GC_UNCO_DESPOSIT
+GC_LITSTRAT "0..n" -- "1..1" GC_EXPLOIT_GEOMAT_PLG
+GC_LITHO_BED "0..n" -- "1..1" GC_BEDROCK
+GC_SYSTEM "0..n" -- "1..1" GC_FOSSILS
+GC_COMPOSIT "0..n" -- "1..1" GC_UNCO_DESPOSIT
+GC_ADMIXTURE "0..n" -- "1..1" GC_UNCO_DESPOSIT
+GC_CHARCAT "0..n" -- "1..1" GC_UNCO_DESPOSIT
 GC_BEDROCK "0..n" -- "1..1" GC_BED_FORM_ATT
 GC_UNCO_DESPOSIT_GC_LITHO "0..n" -- "1..1" GC_UNCO_DESPOSIT
 GC_UNCO_DESPOSIT_GC_LITHO "0..n" -- "1..1" GC_LITHO
