@@ -4,7 +4,7 @@ import os
 import sys
 import json
 import pygraphviz as pgv
-import  yaml
+import yaml
 
 from loguru import logger
 
@@ -76,8 +76,6 @@ IGNORE_OBJECTS = clean(
         "GC_CONFLICT_ROW",
     ]
 )
-
-
 
 
 class Column:
@@ -172,7 +170,11 @@ for t in s["tables"].keys():
         name = field.get("name")
         if name in IGNORE_FIELDS:
             continue
-        typ = field.get("domain") if field.get('domain') is not None else field.get("type")
+        typ = (
+            field.get("domain")
+            if field.get("domain") is not None
+            else field.get("type")
+        )
         S.add_column(name, typ)
         if name.lower() == "uuid":
             primary = True
@@ -206,7 +208,11 @@ for f in s["featclasses"].keys():
             primary = True
         else:
             primary = False
-        typ = field.get("domain") if field.get("domain") is not None else field.get("type")
+        typ = (
+            field.get("domain")
+            if field.get("domain") is not None
+            else field.get("type")
+        )
         S.add_column(name, typ)
         t.columns.append(Column(name, typ, primary=primary))
     all_tables[short_name] = t
@@ -392,13 +398,13 @@ for name, table in all_tables.items():
         tt["columns"].append(c)
     db_config["tables"].append(tt)
 
-coded_domains = s.get('domains')
+coded_domains = s.get("domains")
 for name in coded_domains.keys():
     logger.info(f"----{name}----")
     domain_dict = coded_domains[name]
     SP.add_enum(name, domain_dict)
 
-#pprint.pprint(db_config)
+# pprint.pprint(db_config)
 
 for table_name, table in S.puml_tables.items():
     for t in ("default", "primary", "foreign"):
