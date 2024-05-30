@@ -11,13 +11,11 @@ import os
 import click
 
 
-
-
 from loguru import logger
 
-input_dir = 'exports'
+input_dir = "exports"
 
-output_dir = 'input'
+output_dir = "input"
 
 logger.add("datamodel.log", backtrace=False)
 
@@ -51,35 +49,34 @@ msgstr ""
 
 
 def create_msg(df):
-    
     print(df.columns)
 
-    de = list(zip(df['GeolCodeInt'], df['DE']))
+    de = list(zip(df["GeolCodeInt"], df["DE"]))
 
-    fr  =list(zip(df['GeolCodeInt'], df['FR']))
+    fr = list(zip(df["GeolCodeInt"], df["FR"]))
 
     msgs = {}
-    msgs['de'] = "\n".join([f'\nmsgid "{m[0]}"\nmsgstr "{m[1]}"' for m in de])
-    msgs['fr'] = "\n".join( [f'\nmsgid "{m[0]}"\nmsgstr "{m[1]}"' for m in fr])
-    empty_pot= "\n".join( [f'\nmsgid "{m[0]}"\nmsgstr ""' for m in fr])
+    msgs["de"] = "\n".join([f'\nmsgid "{m[0]}"\nmsgstr "{m[1]}"' for m in de])
+    msgs["fr"] = "\n".join([f'\nmsgid "{m[0]}"\nmsgstr "{m[1]}"' for m in fr])
+    empty_pot = "\n".join([f'\nmsgid "{m[0]}"\nmsgstr ""' for m in fr])
 
-    
-    
-    for lang in ('de', 'fr'):
-        locale_dir = f'./locale/{lang}/LC_MESSAGES'
+    for lang in ("de", "fr"):
+        locale_dir = f"./locale/{lang}/LC_MESSAGES"
         if not os.path.isdir(locale_dir):
             os.makedirs(locale_dir)
-            
-        with open(os.path.join(locale_dir, 'datamodel.po'), 'w') as f:
+
+        with open(os.path.join(locale_dir, "datamodel.po"), "w") as f:
             f.write(po_header_tpl + msgs[lang])
-    with open(os.path.join('locale', 'datamodel.pot'), 'w') as f:
-            f.write(po_header_tpl + empty_pot)
+    with open(os.path.join("locale", "datamodel.pot"), "w") as f:
+        f.write(po_header_tpl + empty_pot)
+
+
 create_msg(df)
 
 df = df.set_index(["GeolCodeInt"])
 
+
 def translate(geol_code, lang="FR"):
-   
     msg = ""
     if lang in ("DE", "FR"):
         try:
@@ -121,6 +118,7 @@ def get_classes(model):
             classes.append(cls.get("name"))
     return classes
 
+
 class DatetimeEncoder(json.JSONEncoder):
     def default(self, obj):
         if isinstance(obj, (datetime.date, datetime.datetime)):
@@ -149,7 +147,7 @@ class Report:
         for theme in model["themes"]:
             for cls in theme.get("classes"):
                 attributes = cls.get("attributes")
-                cls['abrev'] = f"{theme['name'][0].upper()}{cls['name'][0:3].lower()}"
+                cls["abrev"] = f"{theme['name'][0].upper()}{cls['name'][0:3].lower()}"
                 if attributes:
                     for att in attributes:
                         att_type = att.get("att_type")
@@ -170,63 +168,14 @@ class Report:
 
         return model
 
-    def to_markdown(self):
-        now = datetime.datetime.now()
-
-        # print(json.dumps(model, indent=4))
-        print(f"# Datenmodel GeoCover ({now.strftime('%x')})")
-        print(f'![geocover](geocover.png "GeoCover")')
-
-        for theme in self.model["themes"]:
-            print("")
-            print(f"## Thema {theme.get('name','').replace('_', ' ')}")
-            for cls in theme.get("classes"):
-                print(f"### Klasse {cls.get('name')}")
-                desc = cls.get("description", None)
-                if desc is not None:
-                    print(f"_{desc}_")
-                print("")
-                attributes = cls.get("attributes")
-                if attributes:
-                    for att in attributes:
-                        name = att.get("name")
-                        att_type = att.get("att_type")
-                        value = att.get("value")
-                        desc = att.get("description", None)
-                        print(f"**Attribute {name.upper()}** \n")
-                        if desc is not None:
-                            print(f"_{desc}_ \n")
-
-                        pairs = None
-
-                        if att_type in ("integer", "range", "string", "float"):
-                            print(f"Type: {att_type}\n")
-                        if att_type == "CD" and value is not None:
-                            pairs = get_coded_values(value)
-                        if att_type == "subtype" and value is not None:
-                            pairs = get_subtype(value)
-
-                        if pairs is not None:
-                            print("")
-                            print("|GeolCode|Deutsch|Français|")
-                            print(
-                                "|---------------|------------------------------|------------------------------|"
-                            )
-                            for k in sorted(pairs):
-                                de = pairs[k]
-                                try:
-                                    fr = df.loc[int(k)]["FR"]
-                                except Exception as e:
-                                    logger.error(f"{de} is not translated")
-                                    fr = ""
-
-                                print(f"|    {k:>10}| {de}|{fr}|")
-                            print("")
-                        print("")
 
 @click.command()
-@click.option('--lang', prompt='Language to generate', type=click.Choice(['de', 'fr'], case_sensitive=False),
-              help='Language for the document')
+@click.option(
+    "--lang",
+    prompt="Language to generate",
+    type=click.Choice(["de", "fr"], case_sensitive=False),
+    help="Language for the document",
+)
 def datamodel(lang):
     import datetime
     import os
@@ -238,42 +187,33 @@ def datamodel(lang):
     from pathlib import Path
     import re
     from babel import Locale
-    # Parsing
-    Locale.negotiate(['de_DE', 'en_US'], ['de_DE', 'de_AT'])
-    
 
-   
-    
+    # Parsing
+    Locale.negotiate(["de_DE", "en_US"], ["de_DE", "de_AT"])
 
     yaml_file = "datamodel.yaml"
     yaml_dir = os.path.dirname(os.path.realpath(__file__))
 
     project_name = Path(yaml_file).stem
     model = Report(yaml_file)
-    
-    
-
-    # model.to_markdown()
 
     classe_names = get_classes(model.model)
 
     data = model.to_json()
 
-    loader = jinja2.FileSystemLoader(os.path.join(yaml_dir, 'templates'))
-    env = jinja2.Environment(autoescape=True, loader=loader, extensions=["jinja2.ext.i18n"])
-    
-    
-    # TODO: only one language
-    translations = Translations.load('locale', [lang], 'datamodel')
-    ui_translations = Translations.load('locale', [lang], 'app')
-    
-    translations.merge(ui_translations)
-    data['lang'] = lang
-    
+    loader = jinja2.FileSystemLoader(os.path.join(yaml_dir, "templates"))
+    env = jinja2.Environment(
+        autoescape=True, loader=loader, extensions=["jinja2.ext.i18n"]
+    )
 
-    env.install_gettext_translations(translations,  newstyle=True)
-    
-    
+    # TODO: only one language
+    translations = Translations.load("locale", [lang], "datamodel")
+    ui_translations = Translations.load("locale", [lang], "app")
+
+    translations.merge(ui_translations)
+    data["lang"] = lang
+
+    env.install_gettext_translations(translations, newstyle=True)
 
     def slugify(input):
         """Custom filter"""
@@ -313,22 +253,17 @@ def datamodel(lang):
     # with open("model_markdown.j2") as f:
     #    template = Template(f.read())
 
-    #print(temp.render(data))
+    # print(temp.render(data))
 
     with open(os.path.join(output_dir, f"{project_name}_{lang}.md"), "w") as f:
         # f.write(template.render(data))
         f.write(temp.render(data))
-        
+
     # Metadata
     meta = env.get_template("metadata.yaml.j2")
     with open(os.path.join(output_dir, f"metadata_{lang}.yaml"), "w") as f:
         # f.write(template.render(data))
         f.write(meta.render(data))
-        
-        
-     
-        
-       
 
 
 if __name__ == "__main__":
