@@ -71,7 +71,7 @@ def main(output_dir, workspace):
         prefix, short_name = table.split(".")
         if short_name not in TREE_TABLES:
             continue
-        tables.append((table, short_name))
+        tables.append((table, short_name.replace('GC_','')))
 
     if not os.path.isdir(output_dir):
         os.makedirs(output_dir)
