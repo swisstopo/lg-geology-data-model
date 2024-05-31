@@ -75,3 +75,4 @@ jobs:
             output/datamodel.css
             output/geocover.png
             output/ER-GCOVER.svg
+            exports/coded_domains.xlsx
