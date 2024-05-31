@@ -1,21 +1,24 @@
 import glob
 import os
 import xml.etree.ElementTree as ET
-from io import StringIO  ## for Python 3
 import json
-from pathlib import Path
 import re
+import click
+
+import logging
+
+logging.basicConfig(format="%(name)s - %(levelname)s - %(message)s", level=logging.INFO)
 
 xml_dir = r"\\v0t0020a.adr.admin.ch\topgisprod\10_Production_GC\CorporateEditor\AE"
 
 try:
-    curdir  = os.path.dirname(os.path.realpath(__file__))
+    curdir = os.path.join(os.path.dirname(os.path.realpath(__file__)), "..")
 except NameError:
-    curdir = r'H:\code\geocover-examples\datamodel'
-basedir = os.path.join(curdir, 'exports')
+    curdir = r"H:\code\lg-geology-data-model"
+DEFAULT_OUTPUT_DIR = os.path.abspath(os.path.join(curdir, "exports"))
 
 
-prefixes = [
+PREFIXES = [
     "AARC_",
     "AARC_",
     "ABOR_",
@@ -68,7 +71,7 @@ def get_madatory(fname):
         ".//{urn:EsriDE.ProSuite.AE.ObjectClass-1.0}FieldControl", namespaces
     )
 
-    p = re.compile("|".join(map(re.escape, prefixes)))
+    p = re.compile("|".join(map(re.escape, PREFIXES)))
 
     for sub in subs:
         field = p.sub("", sub.attrib["field"])
@@ -78,14 +81,31 @@ def get_madatory(fname):
     return mandatory
 
 
-xml_files = get_xml_files()
+@click.command(context_settings={"show_default": True})
+@click.option(
+    "-o",
+    "--output-dir",
+    type=click.Path(exists=True, file_okay=False),
+    help="The directory for the output",
+    default=DEFAULT_OUTPUT_DIR,
+)
+def main(output_dir):
+    xml_files = get_xml_files()
 
-madatory = {}
+    madatory = {}
 
-for fname in xml_files:
-    basename = os.path.basename(fname).replace(".ae.xml", "")
-    print(f"==={basename}===")
-    madatory[basename] = get_madatory(fname)
+    for fname in xml_files:
+        basename = os.path.basename(fname).replace(".ae.xml", "")
+        logging.info(f"==={basename}===")
+        madatory[basename] = get_madatory(fname)
 
-with open(os.path.join(basedir, "mandatory.json"), "w") as f:
-    f.write(json.dumps(madatory, indent=4))
+    output_filename = os.path.join(output_dir, "mandatory.json")
+
+    logging.info(f"Writing to: {output_filename}")
+
+    with open(output_filename, "w") as f:
+        f.write(json.dumps(madatory, indent=4))
+
+
+if __name__ == "__main__":
+    main()
