@@ -141,7 +141,7 @@ clean:
 	rm -f $(TARGETS)
 	
 cleanall: clean
-	find . -name '*.mo' -exec rm -i {} \;
+	find . -name '*.mo' -exec rm -f {} \;
 
 # Ensure the output directory exists
 $(OUTPUT_DIR):
