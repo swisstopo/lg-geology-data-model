@@ -3,8 +3,17 @@ import arcpy
 import json
 import logging
 import click
+from collections import OrderedDict
+
 
 logging.basicConfig(format="%(name)s - %(levelname)s - %(message)s", level=logging.INFO)
+
+
+"""
+Subtype dictionnary
+
+{'Default': False, 'Name': 'Aexp Grube (Lockergesteinsabbau)', 'FieldValues': {'OBJECTID': (None, None), 'UUID': (None, None), 'OPERATOR': (None, None), 'DATEOFCREATION': (None, None), 'DATEOFCHANGE': (None, None), 'CREATION_YEAR': (None, <Workspace Domain object object at 0x00000164D322F270>), 'CREATION_MONTH': (None, <Workspace Domain object object at 0x00000164D322F230>), 'REVISION_YEAR': (None, <Workspace Domain object object at 0x00000164D322F1B0>), 'REVISION_MONTH': (None, <Workspace Domain object object at 0x00000164D322F1F0>), 'REASONFORCHANGE': (None, <Workspace Domain object object at 0x00000164D322F130>), 'OBJECTORIGIN': (None, <Workspace Domain object object at 0x00000164D322F170>), 'OBJECTORIGIN_YEAR': (None, <Workspace Domain object object at 0x00000164D322F0B0>), 'OBJECTORIGIN_MONTH': (None, <Workspace Domain object object at 0x00000164D322F2B0>), 'KIND': (None, None), 'RC_ID': (None, None), 'WU_ID': (None, None), 'RC_ID_CREATION': (None, None), 'WU_ID_CREATION': (None, None), 'REVISION_QUALITY': (None, None), 'ORIGINAL_ORIGIN': (None, <Workspace Domain object object at 0x00000164D322F330>), 'INTEGRATION_OBJECT_UUID': (None, None), 'MORE_INFO': (None, None), 'SYMBOL': (None, None), 'AEXP_STATUS': (None, <Workspace Domain object object at 0x00000164D322F430>), 'AEXP_TARG_MAT': (None, <Workspace Domain object object at 0x00000164D322F370>), 'SHAPE': (None, None), 'SHAPE.AREA': (None, None), 'SHAPE.LEN': (None, None)}, 'SubtypeField': 'KIND'}
+                    """
 
 # Define the path to your .sde connection file
 sde_connection = r"d:\connections\GCOVERP@osa.sde"
@@ -47,6 +56,18 @@ def merge_two_dicts(x, y):
     return z
 
 
+def get_field_type(stdict):
+    field_type_dict = {}
+    for stkey in list(stdict.keys()):
+        if stkey == "FieldValues":
+            fields = stdict[stkey]
+            for field, fieldvals in list(fields.items()):
+                if not fieldvals[1] is None:
+                    logging.info(f"   {field}: {fieldvals[1].name} {fieldvals[0]}")
+                    field_type_dict[field] = fieldvals[1].name
+    return field_type_dict
+
+
 def list_subtypes_walking():
     subtypes_layers_dict = {}
     subtypes_dict = {}
@@ -55,35 +76,24 @@ def list_subtypes_walking():
     for root, fds, fcs in walk:
         for fc in fcs:
             if not fc.endswith("_I") and "GC_" in fc and fc not in EXLCUDES:
-                print(f"===={fc}====")
+                logging.info(f"===={fc}====")
                 try:
                     subtypes = arcpy.da.ListSubtypes(os.path.join(root, fc))
                 except OSError as e:
-                    print(e)
+                    logging.error(e)
                     continue
                 d = []
                 desc_lu = {key: value["Name"] for (key, value) in subtypes.items()}
                 subtypes_dict = merge_two_dicts(subtypes_dict, desc_lu)
-                # print(json.dumps(desc_lu, indent=4))
 
                 for stcode, stdict in list(subtypes.items()):
-                    print({stcode: stdict["Name"]})
-                    print("SubtypeField: {0}".format(stdict["SubtypeField"]))
+                    logging.info({stcode: stdict["Name"]})
+                    logging.info("SubtypeField: {0}".format(stdict["SubtypeField"]))
 
                     d.append({stcode: stdict})
 
-                    # print(stdict)
-                    """
-                    {'Default': False, 'Name': 'Aexp Grube (Lockergesteinsabbau)', 'FieldValues': {'OBJECTID': (None, None), 'UUID': (None, None), 'OPERATOR': (None, None), 'DATEOFCREATION': (None, None), 'DATEOFCHANGE': (None, None), 'CREATION_YEAR': (None, <Workspace Domain object object at 0x00000164D322F270>), 'CREATION_MONTH': (None, <Workspace Domain object object at 0x00000164D322F230>), 'REVISION_YEAR': (None, <Workspace Domain object object at 0x00000164D322F1B0>), 'REVISION_MONTH': (None, <Workspace Domain object object at 0x00000164D322F1F0>), 'REASONFORCHANGE': (None, <Workspace Domain object object at 0x00000164D322F130>), 'OBJECTORIGIN': (None, <Workspace Domain object object at 0x00000164D322F170>), 'OBJECTORIGIN_YEAR': (None, <Workspace Domain object object at 0x00000164D322F0B0>), 'OBJECTORIGIN_MONTH': (None, <Workspace Domain object object at 0x00000164D322F2B0>), 'KIND': (None, None), 'RC_ID': (None, None), 'WU_ID': (None, None), 'RC_ID_CREATION': (None, None), 'WU_ID_CREATION': (None, None), 'REVISION_QUALITY': (None, None), 'ORIGINAL_ORIGIN': (None, <Workspace Domain object object at 0x00000164D322F330>), 'INTEGRATION_OBJECT_UUID': (None, None), 'MORE_INFO': (None, None), 'SYMBOL': (None, None), 'AEXP_STATUS': (None, <Workspace Domain object object at 0x00000164D322F430>), 'AEXP_TARG_MAT': (None, <Workspace Domain object object at 0x00000164D322F370>), 'SHAPE': (None, None), 'SHAPE.AREA': (None, None), 'SHAPE.LEN': (None, None)}, 'SubtypeField': 'KIND'}
-                    """
-                    for stkey in list(stdict.keys()):
-                        if stkey == "FieldValues":
-                            fields = stdict[stkey]
-                            for field, fieldvals in list(fields.items()):
-                                if not fieldvals[1] is None:
-                                    print(
-                                        f"   {field}: {fieldvals[1].name} {fieldvals[0]}"
-                                    )
+                    field_type_dict = get_field_type(stdict)
+
                 subtypes_layers_dict[fc] = d
     return (subtypes_layers_dict, subtypes_dict)
 
@@ -92,29 +102,29 @@ def list_subtypes_walking():
 # generated by ChatGPT
 def list_subtypes(dataset_path):
     subtypes = arcpy.da.ListSubtypes(dataset_path)
-    print(f"Subtypes for {dataset_path}:")
+    logging.info(f"Subtypes for {dataset_path}:")
     for subtype_code, subtype_dict in subtypes.items():
-        print(f"  Subtype Code: {subtype_code}")
-        print(f"  Subtype Name: {subtype_dict['Name']}")
-        print(f"  Subtype Field:{subtype_dict['SubtypeField']}")
-        print(f"  Subtype Default:{subtype_dict['Default']}")
+        logging.info(f"  Subtype Code: {subtype_code}")
+        logging.info(f"  Subtype Name: {subtype_dict['Name']}")
+        logging.info(f"  Subtype Field:{subtype_dict['SubtypeField']}")
+        logging.info(f"  Subtype Default:{subtype_dict['Default']}")
         if "FieldValues" in subtype_dict:
-            print("  Field Values:")
+            logging.info("  Field Values:")
             for field, field_value in subtype_dict["FieldValues"].items():
                 if field_value[1] is not None:
-                    print(f"    {field}: ({field_value[0]}, {field_value[1].name})")
+                    logging.info(f"    {field}: ({field_value[0]}, {field_value[1].name})")
                 else:
-                    print(f"    {field}: {field_value}")
+                    logging.info(f"    {field}: {field_value}")
                 # Check if the field has a coded domain
                 if isinstance(field_value, dict) and "domain" in field_value:
                     domain_name = field_value["domain"]
                     if domain_name in domains:
                         domain = domains[domain_name]
                         if domain.domainType == "CodedValue":
-                            print(f"    Coded Values for domain '{domain_name}':")
+                            logging.info(f"    Coded Values for domain '{domain_name}':")
                             for code, name in domain.codedValues.items():
-                                print(f"      {code}: {name}")
-    print("\n")
+                                logging.info(f"      {code}: {name}")
+    logging.info("\n")
 
 
 @click.command(context_settings={"show_default": True})
@@ -137,13 +147,21 @@ def main(output_dir, workspace):
 
     subtypes_layers_dict, subtypes_dict = list_subtypes_walking()
 
+    sorted_subtypes_dict = OrderedDict(sorted(subtypes_dict.items()))
+
     with open(os.path.join(output_dir, "subtypes_layers_dict.json"), "w") as f:
         f.write(json.dumps(subtypes_layers_dict, indent=4, cls=CodedDomainEncoder))
 
     with open(
         os.path.join(output_dir, "subtypes_dict.json"), "w", encoding="utf8"
     ) as json_file:
-        json.dump(subtypes_dict, json_file, indent=4, ensure_ascii=False, cls=CodedDomainEncoder)
+        json.dump(
+            sorted_subtypes_dict,
+            json_file,
+            indent=4,
+            ensure_ascii=False,
+            cls=CodedDomainEncoder,
+        )
 
 
 if __name__ == "__main__":
