@@ -2,6 +2,7 @@ import os
 import arcpy
 import json
 import logging
+import click
 
 logging.basicConfig(format="%(name)s - %(levelname)s - %(message)s", level=logging.INFO)
 
@@ -21,13 +22,36 @@ domains = {domain.name: domain for domain in arcpy.da.ListDomains(sde_connection
 
 EXLCUDES = ["TOPGIS_GC.GC_REVISIONSEBENE"]
 
+# Has to be a local drive (h:\ gives OSError!
+DEFAULT_WORKSPACE = r"D:/connections/GCOVERP@osa.sde"
+
+try:
+    curdir = os.path.join(os.path.dirname(os.path.realpath(__file__)), "..")
+except NameError:
+    curdir = r"H:\code\lg-geology-data-model"
+DEFAULT_OUTPUT_DIR = os.path.abspath(os.path.join(curdir, "exports"))
+
+
+class CodedDomainEncoder(json.JSONEncoder):
+    def default(self, z):
+        if z.__class__.__name__ == "Workspace Domain object":
+            return z.name
+        else:
+            return super().default(z)
+
+
+def merge_two_dicts(x, y):
+    """Given two dictionaries, merge them into a new dict as a shallow copy."""
+    z = x.copy()
+    z.update(y)
+    return z
+
 
 def list_subtypes_walking():
+    subtypes_layers_dict = {}
     subtypes_dict = {}
-    walk = arcpy.da.Walk(
-        datatype="FeatureClass"
-    )  # assumes arcpy.env.workspace is already set to SDE connection
-
+    walk = arcpy.da.Walk(datatype="FeatureClass")
+    list_subtypes = lambda x: arcpy.da.ListSubtypes(x).items()
     for root, fds, fcs in walk:
         for fc in fcs:
             if not fc.endswith("_I") and "GC_" in fc and fc not in EXLCUDES:
@@ -38,6 +62,10 @@ def list_subtypes_walking():
                     print(e)
                     continue
                 d = []
+                desc_lu = {key: value["Name"] for (key, value) in subtypes.items()}
+                subtypes_dict = merge_two_dicts(subtypes_dict, desc_lu)
+                # print(json.dumps(desc_lu, indent=4))
+
                 for stcode, stdict in list(subtypes.items()):
                     print({stcode: stdict["Name"]})
                     print("SubtypeField: {0}".format(stdict["SubtypeField"]))
@@ -56,8 +84,8 @@ def list_subtypes_walking():
                                     print(
                                         f"   {field}: {fieldvals[1].name} {fieldvals[0]}"
                                     )
-                subtypes_dict[fc] = d
-    return subtypes_dict
+                subtypes_layers_dict[fc] = d
+    return (subtypes_layers_dict, subtypes_dict)
 
 
 # Function to list subtypes for a given dataset (feature class or table)
@@ -89,49 +117,34 @@ def list_subtypes(dataset_path):
     print("\n")
 
 
-def list_subtypes2(fc):
-    subtypes = arcpy.da.ListSubtypes(fc)
+@click.command(context_settings={"show_default": True})
+@click.option(
+    "-o",
+    "--output-dir",
+    type=click.Path(exists=True, file_okay=False),
+    help="The directory for the output",
+    default=DEFAULT_OUTPUT_DIR,
+)
+@click.option(
+    "-w",
+    "--workspace",
+    type=str,
+    help="Workspace (SDE string or GDB)",
+    default=DEFAULT_WORKSPACE,
+)
+def main(output_dir, workspace):
+    arcpy.env.workspace = workspace
 
-    for stcode, stdict in subtypes.items():
-        print("Code: {0}".format(stcode))
-        for stkey in stdict.keys():
-            if stkey == "FieldValues":
-                print("Fields:")
-                fields = stdict[stkey]
-                for field, fieldvals in fields.items():
-                    print(" --Field name: {0}".format(field))
-                    print(" --Field default value: {0}".format(fieldvals[0]))
-                    if not fieldvals[1] is None:
-                        print(" --Domain name: {0}".format(fieldvals[1].name))
-            else:
-                print("{0}: {1}".format(stkey, stdict[stkey]))
+    subtypes_layers_dict, subtypes_dict = list_subtypes_walking()
 
+    with open(os.path.join(output_dir, "subtypes_layers_dict.json"), "w") as f:
+        f.write(json.dumps(subtypes_layers_dict, indent=4, cls=CodedDomainEncoder))
 
-# List subtypes for all tables
-for table in tables:
-    if table.endswith("_I") or "GC_" not in table:
-        continue
-    table_path = f"{sde_connection}\\{table}"
-    list_subtypes(table_path)
-
-# List subtypes for all feature classes
-for fc in feature_classes:
-    if not fc.endswith("_I") and "GC_" in fc:
-        fc_path = f"{sde_connection}\\{fc}"
-        list_subtypes(fc_path)
-        print("------")
-        # list_subtypes2(fc_path)
-
-subtypes_dict = list_subtypes_walking()
+    with open(
+        os.path.join(output_dir, "subtypes_dict.json"), "w", encoding="utf8"
+    ) as json_file:
+        json.dump(subtypes_dict, json_file, indent=4, ensure_ascii=False, cls=CodedDomainEncoder)
 
 
-class CodedDomainEncoder(json.JSONEncoder):
-    def default(self, z):
-        if z.__class__.__name__ == "Workspace Domain object":
-            return z.name
-        else:
-            return super().default(z)
-
-
-with open("../exports/subtypes_dict.json", "w") as f:
-    f.write(json.dumps(subtypes_dict, indent=4, cls=CodedDomainEncoder))
+if __name__ == "__main__":
+    main()
