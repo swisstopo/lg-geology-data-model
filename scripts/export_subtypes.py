@@ -1,12 +1,14 @@
-""" Simple script to exctract layer SubType from an ESRI ArcMap or ArcGis Pro project"""
+"""Simple script to exctract layer SubType from an ESRI ArcMap or ArcGis Pro project"""
 
 import os
 import json
 import arcpy
 import datetime
 import sys
+import traceback
 
 import logging
+
 
 class UnicodeHandler(logging.StreamHandler):
     def emit(self, record):
@@ -15,28 +17,30 @@ class UnicodeHandler(logging.StreamHandler):
             stream = self.stream
             # Ensure that msg is a Unicode string and encode it as UTF-8
             if isinstance(msg, unicode):
-                msg = msg.encode('utf-8')
+                msg = msg.encode("utf-8")
             stream.write(msg + self.terminator)
             self.flush()
         except Exception:
             self.handleError(record)
 
-logging.basicConfig(format="%(name)s - %(levelname)s - %(message)s",level=logging.INFO)
+
+logging.basicConfig(format="%(name)s - %(levelname)s - %(message)s", level=logging.INFO)
 
 
 now = datetime.datetime.now()
 
 try:
-    curdir  = os.path.join(os.path.dirname(os.path.realpath(__file__)), '..')
+    curdir = os.path.join(os.path.dirname(os.path.realpath(__file__)), "..")
 except NameError:
-    curdir = r'H:\code\lg-geology-data-model'
-basedir = os.path.abspath(os.path.join(curdir, 'exports'))
+    curdir = r"H:\code\lg-geology-data-model"
+basedir = os.path.abspath(os.path.join(curdir, "exports"))
 
-if not  os.path.isdir(basedir):
+if not os.path.isdir(basedir):
     os.makedirs(basedir)
 
 if sys.version_info[0] > 2:
     is_py3 = True
+    esri_name = "arcgis"
     p = arcpy.mp.ArcGISProject("CURRENT")
     m = p.listMaps("*")[0]
     layers_list = [lyr for lyr in m.listLayers()]
@@ -44,20 +48,19 @@ if sys.version_info[0] > 2:
 
 else:
     is_py3 = False
+    esri_name = "arcmap"
     mxd = arcpy.mapping.MapDocument(r"CURRENT")
     df = arcpy.mapping.ListDataFrames(mxd, "*")[0]
     if df is not None:
-        layers_list=  arcpy.mapping.ListLayers(mxd, "*", df)
+        layers_list = arcpy.mapping.ListLayers(mxd, "*", df)
     else:
-        layers_list =  arcpy.mapping.ListLayers(mxd, "*")
+        layers_list = arcpy.mapping.ListLayers(mxd, "*")
 
 
 if is_py3:
     list_subtypes = lambda x: arcpy.da.ListSubtypes(x).items()
 else:
     list_subtypes = lambda x: arcpy.da.ListSubtypes(x).iteritems()
-
-
 
 
 def merge_two_dicts(x, y):
@@ -73,7 +76,7 @@ subtypes_layers = {"date": now.strftime("%H:%M:%S-%d-%m-%Y"), "database": {}}
 
 
 for lyr in layers_list:
-    print(u"==== {} ====".format(lyr.name))
+    print("==== {} ====".format(lyr.name))
     if not lyr.isFeatureLayer:
         print("Not a Feature Layer")
         continue
@@ -81,22 +84,23 @@ for lyr in layers_list:
     previous_connection_info = subtypes_dict["database"].get("connection")
     if lyr.supports("DATASOURCE"):
         if lyr.dataSource:
-          connection_info = None
-          try:
-            cp = lyr.connectionProperties
-            connection_info = cp.get("connection_info")
-            logging.debug(connection_info)
-            logging.debug(cp["dataset"])
-            if previous_connection_info is not None:
-                if not previous_connection_info == connection_info:
-                    logging.error("Connection is different form the previous one.")
-                    sys.exit(2)
-          except AttributeError:
-              print(u"Layer {} has no connection properties".format(lyr.name))
+            connection_info = None
+            try:
+                cp = lyr.connectionProperties
+                connection_info = cp.get("connection_info")
+                logging.debug(connection_info)
+                logging.debug(cp.get("dataset"))
+                if previous_connection_info is not None:
+                    if not previous_connection_info == connection_info:
+                        logging.error("Connection is different form the previous one.")
+                        sys.exit(2)
+            except AttributeError:
+                print("Layer {} has no connection properties".format(lyr.name))
+        print("Datasource available")
 
         try:
             desc_lu = {key: value["Name"] for (key, value) in list_subtypes(fc)}
-            #print(json.dumps(desc_lu, indent=4))
+            # print(json.dumps(desc_lu, indent=4))
             subtypes_layers[fc] = desc_lu
             subtypes_dict = merge_two_dicts(subtypes_dict, desc_lu)
 
@@ -104,7 +108,10 @@ for lyr in layers_list:
             subtypes_dict["database"]["connection"] = connection_info
 
             print(subtypes_dict)
-
+        except OSError as oe:
+            tb = sys.exc_info()[2]
+            tbinfo = traceback.format_tb(tb)[0]
+            print("OSError: {}".format(tbinfo))
 
         except Exception as e:
             print(e)
@@ -113,10 +120,12 @@ for lyr in layers_list:
         logging.error("Do not support datasource")
 logging.info(json.dumps(subtypes_layers, indent=4))
 
-with open(os.path.join(basedir, "subtypes_pro_layer.json"), "w") as f:
+with open(
+    os.path.join(basedir, "subtypes_pro_layer_{}.json".format(esri_name)), "w"
+) as f:
     f.write(json.dumps(subtypes_layers, indent=4))
 
-fname = os.path.join(basedir, "subtypes_dict.json")
+fname = os.path.join(basedir, "subtypes_dict_{}.json".format(esri_name))
 with open(fname, "w") as f:
     f.write(json.dumps(subtypes_dict, indent=4))
 

@@ -101,9 +101,6 @@ def list_subtypes_walking():
     return (subtypes_layers_dict, subtypes_dict)
 
 
-
-
-
 @click.command(context_settings={"show_default": True})
 @click.option(
     "-o",
