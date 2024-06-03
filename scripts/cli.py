@@ -28,24 +28,23 @@ DEFAULT_OUTPUT_DIR = os.path.abspath(os.path.join(curdir, "exports"))
     help="Workspace (SDE string or GDB)",
     default=DEFAULT_WORKSPACE,
 )
-
 def main(output_dir, workspace):
-
     from encoder import ExtendedEncoder
 
     so = GeocoverSchema.instance(workspace)
 
     print(so)
     print(so.tables)
-    print(so.domains, type(so.domains[0]))
 
     encoder = ExtendedEncoder()
-    print(encoder.to_json(so.domains, indent=4))
+    print(encoder.to_json(so.coded_domains, indent=4))
 
-    print(encoder.to_yaml(so.domains))
+    print(encoder.to_yaml(so.coded_domains))
 
+    print(so.datasets)
+    print(so.feature_classes)
+    print(encoder.to_yaml(so))
 
 
 if __name__ == "__main__":
     main()
-

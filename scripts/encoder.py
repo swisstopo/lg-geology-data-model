@@ -2,6 +2,9 @@ import json
 import yaml
 
 
+from schema import GeocoverSchema
+
+
 class CustomEncoder:
     def __init__(self):
         pass
@@ -15,8 +18,11 @@ class CustomEncoder:
             return {key: self.to_serializable_dict(value) for key, value in obj.items()}
         else:
             # If it's a custom object, convert it to a dictionary
-            if hasattr(obj, '__dict__'):
-                return {key: self.to_serializable_dict(value) for key, value in obj.__dict__.items()}
+            if hasattr(obj, "__dict__"):
+                return {
+                    key: self.to_serializable_dict(value)
+                    for key, value in obj.__dict__.items()
+                }
             else:
                 return str(obj)  # Fallback: convert to string
 
@@ -30,12 +36,10 @@ class CustomEncoder:
 
 
 class ExtendedEncoder(CustomEncoder):
-
-
     def to_serializable_dict(self, obj):
         print(obj.__class__.__name__)
         # Handle specific object types here
-        if obj.__class__.__name__ == 'Workspace Domain object':
+        if obj.__class__.__name__ == "Workspace Domain object":
             return self._serialize_coded_domain(obj)
         elif isinstance(obj, Subtype):
             return self._serialize_subtype(obj)
@@ -43,6 +47,8 @@ class ExtendedEncoder(CustomEncoder):
             return self._serialize_table(obj)
         elif isinstance(obj, FeatureClass):
             return self._serialize_feature_class(obj)
+        elif isinstance(obj, GeocoverSchema):
+            return self._serialize_database_schema(obj)
         else:
             # Fallback to the base class implementation
             return super().to_serializable_dict(obj)
@@ -60,23 +66,35 @@ class ExtendedEncoder(CustomEncoder):
         return dom_dict
 
     def _serialize_subtype(self, obj):
-        return {
-            "name": obj.name,
-            "fields": obj.fields
-        }
+        return {"name": obj.name, "fields": obj.fields}
 
     def _serialize_table(self, obj):
         return {
             "name": obj.name,
-            "columns": [{"name": field.name, "type": field.type} for field in obj.columns]
+            "columns": [
+                {"name": field.name, "type": field.type} for field in obj.columns
+            ],
         }
 
     def _serialize_feature_class(self, obj):
         return {
             "name": obj.name,
-            "columns": [{"name": field.name, "type": field.type} for field in obj.columns],
+            "columns": [
+                {"name": field.name, "type": field.type} for field in obj.columns
+            ],
             "subtypes": obj.subtypes,
-            "coded_domains": obj.coded_domains
+            "coded_domains": obj.coded_domains,
+        }
+
+    def _serialize_database_schema(self, obj):
+        return {
+            "tables": [self.to_serializable_dict(table) for table in obj.tables],
+            "feature_classes": [
+                self.to_serializable_dict(fc) for fc in obj.feature_classes
+            ],
+            "coded_domains": [
+                self.to_serializable_dict(cd) for cd in obj.coded_domains
+            ],
         }
 
 
@@ -106,7 +124,8 @@ class FeatureClass(Table):
         self.subtypes = subtypes
         self.coded_domains = coded_domains
 
-'''
+
+"""
 # Example usage
 coded_domain = CodedDomain("ExampleDomain", "CodedValue", {1: "One", 2: "Two"})
 subtype = Subtype("Subtype1", ["Field1", "Field2"])
@@ -122,4 +141,4 @@ print(json_output)
 print("\nYAML Output:")
 print(yaml_output)
 
-'''
+"""
