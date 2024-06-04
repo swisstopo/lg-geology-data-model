@@ -3,6 +3,7 @@ import os
 import arcpy
 import logging
 
+from utils import merge_two_dicts, get_field_type
 
 logging.basicConfig(format="%(name)s - %(levelname)s - %(message)s", level=logging.INFO)
 
@@ -19,6 +20,8 @@ EXCLUDE_TABLES = [
 remove_prefix = lambda x: x.split(".")[-1]
 
 gc_filter = lambda x: "GC_" in x or not x.endswith("_I")
+
+
 
 
 class GeocoverSchema:
@@ -85,7 +88,7 @@ class GeocoverSchema:
     def datasets(self):
         if len(self.__datasets) < 1:
             logging.debug("Collecting datasets from workspace")
-            self.__datasets = arcpy.ListDatasets("", "Feature")
+            self.__datasets = arcpy.ListDatasets()
 
         return self.__datasets
 
@@ -95,9 +98,10 @@ class GeocoverSchema:
             if len(self.__datasets) < 1:
                 self.datasets
             logging.debug("Collecting feature classes from workspace")
-            for dataset in self.__datasets:
-                for fc in arcpy.ListFeatureClasses("", "All", dataset):
-                    logging.debug("\n---{}---".format(fc))
+            walk = arcpy.da.Walk(datatype="FeatureClass")
+            for root, dataset, fcs in walk:
+                for fc in fcs:
+                    logging.info("\n---{}---".format(fc))
                     feat_class_dict = {
                         "name": fc,
                         "type": "featclass",
@@ -143,7 +147,7 @@ class GeocoverSchema:
     def relationships(self):
         if len(self.__relationships) < 1:
             logging.debug("Collecting relationships from workspace")
-            print(self.feature_classes)
+            logging.debug(self.feature_classes)
             for i, fc in enumerate(self.feature_classes.keys()):
                 logging.info(fc)
                 desc = arcpy.Describe(fc)
@@ -154,3 +158,42 @@ class GeocoverSchema:
 
                     self.__relationships.add(rel)
         return self.__relationships
+
+    @property
+    def subtypes(self, expand=False):
+        if len(self.__feature_class_subtypes) < 1:
+            logging.debug("Collecting relationships from workspace")
+            subtypes_layers_dict = {}
+            subtypes_dict = {}
+            walk = arcpy.da.Walk(datatype="FeatureClass")
+            list_subtypes = lambda x: arcpy.da.ListSubtypes(x).items()
+
+            for fc in self.feature_classes.keys():
+
+                try:
+                    subtypes = arcpy.da.ListSubtypes(os.path.join(self.__workspace, fc))
+                except OSError as e:
+                    logging.error(e)
+                    continue
+                d = []
+                desc_lu = {key: value["Name"] for (key, value) in subtypes.items()}
+                subtypes_dict = merge_two_dicts(subtypes_dict, desc_lu)
+
+                for stcode, stdict in list(subtypes.items()):
+                    logging.debug({stcode: stdict["Name"]})
+                    logging.debug(f"  Subtype Code: {stcode}")
+                    logging.debug(f"  Subtype Name: {stdict['Name']}")
+                    logging.debug(f"  Subtype Field:{stdict['SubtypeField']}")
+                    logging.debug(f"  Subtype Default:{stdict['Default']}")
+
+                    d.append({stcode: stdict})
+
+                    field_type_dict = get_field_type(stdict)
+
+                subtypes_layers_dict[fc] = d
+            if expand:
+                self.__feature_class_subtypes = subtypes_layers_dict
+            else:
+                self.__feature_class_subtypes = subtypes_dict
+
+            return self.__feature_class_subtypes
