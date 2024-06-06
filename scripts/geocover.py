@@ -3,6 +3,7 @@ import os
 import sys
 import datetime
 import json
+import pandas as pd
 
 import logging
 
@@ -74,8 +75,6 @@ def export(output_dir, workspace, log_level):
 
     so = GeocoverSchema.instance(workspace)
 
-    print(so.tables)
-
     encoder = ExtendedEncoder()
 
     connection_info = so.connection_info
@@ -104,6 +103,40 @@ def export(output_dir, workspace, log_level):
         encoder.to_serializable_dict(subtypes_dict),
         os.path.join(output_dir, "subtypes_dict.json"),
     )
+
+    # Export tables
+    tables_dict = deepcopy(base_dict)
+
+    print("###############")
+
+    tables_dict.update(so.tables)
+
+    dump_dict_to_json(
+        encoder.to_serializable_dict(tables_dict),
+        os.path.join(output_dir, "tables.json"),
+    )
+    with pd.ExcelWriter(os.path.join(output_dir, f"export_tables.xlsx")) as writer:
+        for table_name, df in so.tables.items():
+            logging.info(table_name)
+
+            prefix, short_name = table_name.split(".")
+            short_name = short_name.replace("GC_", "")
+
+            try:
+                df["PARENT_REF"] = df["PARENT_REF"].fillna(0)
+            except KeyError as e:
+                logging.error(f"Table {table_name} has nokey: {e}")
+                continue
+
+            df.sort_values(by=["GEOL_CODE_INT", "PARENT_REF"], inplace=True)
+            # df = df.reindex(df.columns.union(fields, sort=False), axis=1, fill_value=0)
+
+            try:
+                df.to_csv(os.path.join(output_dir, f"{short_name}.csv"), index=True)
+                df.to_json(os.path.join(output_dir, f"{short_name}.json"), index=True)
+                df.to_excel(writer, sheet_name=short_name.upper())
+            except PermissionError as e:
+                logging.error(f"Permission error: {table} is probably already opened")
 
 
 @geocover.command("schema")

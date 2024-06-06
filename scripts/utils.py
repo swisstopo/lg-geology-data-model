@@ -1,6 +1,32 @@
 import os
 import json
 import logging
+import pandas as pd
+import arcpy
+
+
+def arcgis_table_to_df(in_fc, input_fields=None, query=""):
+    """Function will convert an arcgis table into a pandas dataframe with an object ID index, and the selected
+    input fields using an arcpy.da.SearchCursor.
+    :param - in_fc - input feature class or table to convert
+    :param - input_fields - fields to input to a da search cursor for retrieval
+    :param - query - sql query to grab appropriate values
+    :returns - pandas.DataFrame"""
+    OIDFieldName = arcpy.Describe(in_fc).OIDFieldName
+    available_fields = [field.name for field in arcpy.ListFields(in_fc)]
+    logging.debug(available_fields)
+    logging.debug(input_fields)
+    if input_fields:
+        final_fields = list(set([OIDFieldName] + input_fields) & set(available_fields))
+    else:
+        final_fields = available_fields
+    logging.debug("Intersection:", final_fields)
+    data = [
+        row for row in arcpy.da.SearchCursor(in_fc, final_fields, where_clause=query)
+    ]
+    fc_dataframe = pd.DataFrame(data, columns=final_fields)
+    fc_dataframe = fc_dataframe.set_index(OIDFieldName, drop=True)
+    return fc_dataframe
 
 
 def dump_dict_to_json(data, file_path):

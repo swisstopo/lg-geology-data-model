@@ -16,6 +16,8 @@ class CustomEncoder:
             return [self.to_serializable_dict(item) for item in obj]
         elif isinstance(obj, dict):
             return {key: self.to_serializable_dict(value) for key, value in obj.items()}
+        elif hasattr(obj, "to_dict"):
+            return obj.to_dict(orient="records")
         else:
             # If it's a custom object, convert it to a dictionary
             if hasattr(obj, "__dict__"):

@@ -7,9 +7,9 @@ import logging
 from collections import OrderedDict
 
 
-from utils import merge_two_dicts, get_field_type
+from utils import merge_two_dicts, get_field_type, arcgis_table_to_df
 
-logging.basicConfig(format="%(name)s - %(levelname)s - %(message)s", level=logging.INFO)
+# logging.basicConfig(format="%(name)s - %(levelname)s - %(message)s", level=logging.INFO)
 
 
 EXCLUDE_TABLES = [
@@ -21,10 +21,32 @@ EXCLUDE_TABLES = [
     "TOPGIS_GC.GC_ERRORS_LINE",
 ]
 
+TREE_TABLES = [
+    "TOPGIS_GC.GC_LITHO",
+    "TOPGIS_GC.GC_LITSTRAT",
+    "TOPGIS_GC.GC_CHRONO",
+    "TOPGIS_GC.GC_TECTO",
+]
+
+TREE_TABLE_FIELD = list(
+    (
+        "OBJECTID",
+        "GEOL_CODE",
+        "GEOL_CODE_INT",
+        "GERMAN",
+        "FMAT_LITSTRAT",
+        "GERMAN",
+        "TREE_LEVEL",
+        "PARENT_REF",
+    )
+)
+
 
 remove_prefix = lambda x: x.split(".")[-1]
 
 gc_filter = lambda x: "GC_" in x and not x.endswith("_I") and x not in EXCLUDE_TABLES
+
+table_filter = lambda x: x in TREE_TABLES
 
 
 class GeocoverSchema:
@@ -49,7 +71,8 @@ class GeocoverSchema:
             GeocoverSchema.__instance = self
             arcpy.env.workspace = self.__workspace = workspace
 
-            self.__tables = []
+            self.__tables = {}
+            self.__tables_list = []
             self.__coded_domains = []
             self.__coded_domains_values = {}
             self.__datasets = []
@@ -95,10 +118,28 @@ class GeocoverSchema:
         return self.__connection_info
 
     @property
-    def tables(self):
-        if len(self.__tables) < 1:
+    def tables_list(self):
+        if len(self.__tables_list) < 1:
             logging.debug("Collecting tables from workspace")
-            self.__tables = [table.split(".")[-1] for table in arcpy.ListTables()]
+            self.__tables_list = list(filter(table_filter, arcpy.ListTables()))
+
+        return self.__tables_list
+
+    @property
+    def tables(self):
+        tables = {}
+        if len(self.__tables_list) < 1:
+            self.tables_list
+
+        for table_name in self.__tables_list:
+            logging.info(table_name)
+
+            try:
+                df = arcgis_table_to_df(table_name, input_fields=TREE_TABLE_FIELD)
+                self.__tables[table_name] = df
+            except KeyError as e:
+                logging.error(f"Table {table_name} has nokey: {e}")
+                continue
 
         return self.__tables
 
@@ -196,14 +237,6 @@ class GeocoverSchema:
                 self.__feature_classes[fc] = self.fields(fc)
 
         return self.__feature_classes
-
-    @property
-    def tables(self):
-        if len(self.__tables) < 1:
-            logging.debug("Collecting tables from workspace")
-            self.__tables = list(map(remove_prefix, arcpy.ListTables()))
-
-        return self.__tables
 
     @property
     def relationships(self):
