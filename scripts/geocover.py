@@ -25,11 +25,10 @@ connection=D:\connections\GCOVERP@osa.sde\TOPGIS_GC.GC_ERRORS, datasets=[], feat
 """
 
 
-
-
 @click.group()
 def geocover():
     pass
+
 
 @geocover.command("export", context_settings={"show_default": True})
 @click.option(
@@ -70,21 +69,19 @@ def export(output_dir, workspace):
     print("##############")
 
     print("datasets=", so.datasets)
-    print("feature classes=", encoder.to_json(so.feature_classes, indent=4))
+    print("feature classes=", so.feature_classes.keys())
 
-    '''walk = arcpy.da.Walk(datatype="FeatureClass")
+    """walk = arcpy.da.Walk(datatype="FeatureClass")
     for root, fds, fcs in walk:
-        print(f"connection={root}, datasets={fds}, feat classes={fcs}\n")'''
+        print(f"connection={root}, datasets={fds}, feat classes={fcs}\n")"""
 
     print("##############")
     print(encoder.to_json(so.subtypes, indent=4))
 
+
 @geocover.command("schema")
 def schema():
     print("schema")
-
-
-
 
 
 if __name__ == "__main__":

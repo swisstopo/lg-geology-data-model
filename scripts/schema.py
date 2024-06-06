@@ -3,6 +3,9 @@ import os
 import arcpy
 import logging
 
+from collections import OrderedDict
+
+
 from utils import merge_two_dicts, get_field_type
 
 logging.basicConfig(format="%(name)s - %(levelname)s - %(message)s", level=logging.INFO)
@@ -20,8 +23,6 @@ EXCLUDE_TABLES = [
 remove_prefix = lambda x: x.split(".")[-1]
 
 gc_filter = lambda x: "GC_" in x or not x.endswith("_I")
-
-
 
 
 class GeocoverSchema:
@@ -92,6 +93,28 @@ class GeocoverSchema:
 
         return self.__datasets
 
+    def fields(self, feature_class_name):
+        fields_list = []
+        fields = arcpy.ListFields(feature_class_name)
+
+        for field in fields:
+            domain = None
+            if len(field.domain) > 0 and field.domain in self.__coded_domains_values:
+                domain = field.domain
+            logging.debug(f"    {field.name}, {field.type}, {field.length}, {domain}")
+
+            fields_list.append(
+                dict(
+                    {
+                        "name": field.name,
+                        "type": field.type,
+                        "length": field.length,
+                        "domain": domain,
+                    }
+                )
+            )
+        return fields_list
+
     @property
     def feature_classes(self):
         if len(self.__feature_classes) < 1:
@@ -101,7 +124,7 @@ class GeocoverSchema:
             walk = arcpy.da.Walk(datatype="FeatureClass")
             for root, dataset, fcs in walk:
                 for fc in fcs:
-                    logging.info("\n---{}---".format(fc))
+                    logging.info("--- Feature class: {} ---".format(fc))
                     feat_class_dict = {
                         "name": fc,
                         "type": "featclass",
@@ -109,29 +132,8 @@ class GeocoverSchema:
                         "fields": [],
                         "dataset": dataset,
                     }
-                    fields = arcpy.ListFields(self.__workspace + "/" + str(fc))
-                    for field in fields:
-                        domain = None
-                        if (
-                            len(field.domain) > 0
-                            and field.domain in self.__coded_domains_values
-                        ):
-                            domain = field.domain
-                        logging.debug(
-                            f"    {field.name}, {field.type}, {field.length}, {domain}"
-                        )
 
-                        feat_class_dict["fields"].append(
-                            dict(
-                                {
-                                    "name": field.name,
-                                    "type": field.type,
-                                    "length": field.length,
-                                    "domain": domain,
-                                }
-                            )
-                        )
-                self.__feature_classes[fc] = feat_class_dict
+                    self.__feature_classes[fc] = self.fields(fc)
 
         return self.__feature_classes
 
@@ -169,7 +171,6 @@ class GeocoverSchema:
             list_subtypes = lambda x: arcpy.da.ListSubtypes(x).items()
 
             for fc in self.feature_classes.keys():
-
                 try:
                     subtypes = arcpy.da.ListSubtypes(os.path.join(self.__workspace, fc))
                 except OSError as e:
@@ -191,9 +192,12 @@ class GeocoverSchema:
                     field_type_dict = get_field_type(stdict)
 
                 subtypes_layers_dict[fc] = d
+
             if expand:
                 self.__feature_class_subtypes = subtypes_layers_dict
             else:
-                self.__feature_class_subtypes = subtypes_dict
+                self.__feature_class_subtypes = OrderedDict(
+                    sorted(subtypes_dict.items())
+                )
 
             return self.__feature_class_subtypes

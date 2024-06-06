@@ -37,7 +37,6 @@ class CustomEncoder:
 
 class ExtendedEncoder(CustomEncoder):
     def to_serializable_dict(self, obj):
-
         # Handle specific object types here
         if obj.__class__.__name__ == "Workspace Domain object":
             return self._serialize_coded_domain(obj)
