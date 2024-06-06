@@ -1,5 +1,17 @@
 {
-    "0": "TOPGIS_GC.GC_ERRORS_LINE",
+    "date": "16:02:42-06-06-2024",
+    "database": {
+        "workspace": {
+            "ConnectionString": "",
+            "WorkspaceFactoryProgID": "esriDataSourcesGDB.SdeWorkspaceFactory",
+            "WorkspaceType:": "RemoteDatabase"
+        },
+        "connection": {
+            "Server": "GCOVERP",
+            "Instance": "sde:oracle11g:GCOVERP",
+            "Version": "SDE.DEFAULT"
+        }
+    },
     "10101001": "Aarc archäologische Fundstelle, Anlage, Siedlungsreste",
     "10101002": "Aarc Höhlensiedlung, Abri",
     "10101003": "Aarc Pfahlbauten",

@@ -6,6 +6,8 @@ import json
 
 import logging
 
+from copy import deepcopy
+
 from schema import GeocoverSchema
 from utils import dump_dict_to_json
 
@@ -13,7 +15,6 @@ DEFAULT_WORKSPACE = r"D:/connections/GCOVERP@osa.sde"
 
 curdir = os.path.join(os.path.dirname(os.path.realpath(__file__)), "..")
 DEFAULT_OUTPUT_DIR = os.path.abspath(os.path.join(curdir, "exports"))
-
 
 
 """
@@ -27,7 +28,6 @@ connection=D:\connections\GCOVERP@osa.sde\GRATICULES_MANAGER.GRATICULES, dataset
 
 connection=D:\connections\GCOVERP@osa.sde\TOPGIS_GC.GC_ERRORS, datasets=[], feat classes=['TOPGIS_GC.GC_ERRORS_POLYGON', 'TOPGIS_GC.GC_ERRORS_MULTIPOINT', 'TOPGIS_GC.GC_ERRORS_LINE']
 """
-
 
 
 @click.group()
@@ -78,13 +78,14 @@ def export(output_dir, workspace, log_level):
 
     encoder = ExtendedEncoder()
 
-
     connection_info = so.connection_info
     logger.info(f"Connection info: {connection_info}")
-    coded_domains_dict = {
+    base_dict = {
         "date": now.strftime("%H:%M:%S-%d-%m-%Y"),
         "database": connection_info,
     }
+    # Export coded domains
+    coded_domains_dict = deepcopy(base_dict)
 
     coded_domains_dict.update(so.coded_domains)
 
@@ -92,6 +93,16 @@ def export(output_dir, workspace, log_level):
     dump_dict_to_json(
         encoder.to_serializable_dict(so.coded_domains),
         os.path.join(output_dir, "coded_domains.json"),
+    )
+
+    # Export subtypes
+    subtypes_dict = deepcopy(base_dict)
+
+    subtypes_dict.update(so.subtypes)
+
+    dump_dict_to_json(
+        encoder.to_serializable_dict(subtypes_dict),
+        os.path.join(output_dir, "subtypes_dict.json"),
     )
 
 

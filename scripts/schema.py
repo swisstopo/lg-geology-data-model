@@ -13,13 +13,12 @@ logging.basicConfig(format="%(name)s - %(levelname)s - %(message)s", level=loggi
 
 
 EXCLUDE_TABLES = [
-    "TOPGIS_GC.GC_EXPLOIT_GEOMAT_PLG",
-    "TOPGIS_GC.GC_LINEAR_OBJECTS",
-    "TOPGIS_GC.GC_POINT_OBJECTS",
-    "TOPGIS_GC.GC_FOSSILS",
-    "TOPGIS_GC.GC_UNCO_DESPOSIT",
-    "TOPGIS_GC.GC_BEDROCK",
-    "TOPGIS_GC.GC_SURFACES",
+    "TOPGIS_GC.GC_REVISIONSEBENE",
+    "TOPGIS_GC.GC_CONFLICT_POLYGON",
+    "TOPGIS_GC.GC_MAPSHEET",
+    "TOPGIS_GC.GC_ERRORS_POLYGON",
+    "TOPGIS_GC.GC_ERRORS_MULTIPOINT",
+    "TOPGIS_GC.GC_ERRORS_LINE",
 ]
 
 
@@ -60,7 +59,7 @@ class GeocoverSchema:
             self.__relationships = set()
             self.__connection_info = None
             self.__feature_classes_list = []
-            self.__esri_style_dump  = True
+            self.__esri_style_dump = True
 
     def generate_filter_function():
         def filter_function(name):
@@ -124,7 +123,10 @@ class GeocoverSchema:
                     for val, desc in coded_values.items():
                         domain_dict[val] = desc
             else:
-                domain_dict = {"type": domain.domainType, "codedValues": domain.codedValues}
+                domain_dict = {
+                    "type": domain.domainType,
+                    "codedValues": domain.codedValues,
+                }
 
             self.__coded_domains_values[domain.name] = domain_dict
 
@@ -222,14 +224,17 @@ class GeocoverSchema:
     def subtypes(self, expand=False):
         if len(self.__feature_class_subtypes) < 1:
             logging.debug("Collecting relationships from workspace")
+            if len(self.__feature_classes_list) < 1:
+                self.feature_classes_list
             subtypes_layers_dict = {}
             subtypes_dict = {}
-            walk = arcpy.da.Walk(datatype="FeatureClass")
+
             list_subtypes = lambda x: arcpy.da.ListSubtypes(x).items()
 
-            for fc in self.feature_classes.keys():
+            for fc in self.__feature_classes_list:
+                logging.info(f"-----{fc} ------")
                 try:
-                    subtypes = arcpy.da.ListSubtypes(os.path.join(self.__workspace, fc))
+                    subtypes = arcpy.da.ListSubtypes(fc)
                 except OSError as e:
                     logging.error(e)
                     continue
