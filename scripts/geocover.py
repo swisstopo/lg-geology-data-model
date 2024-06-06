@@ -1,16 +1,20 @@
 import click
 import os
 import sys
+import datetime
+import json
+
+import logging
 
 from schema import GeocoverSchema
+from utils import dump_dict_to_json
 
 DEFAULT_WORKSPACE = r"D:/connections/GCOVERP@osa.sde"
 
-try:
-    curdir = os.path.join(os.path.dirname(os.path.realpath(__file__)), "..")
-except NameError:
-    curdir = r"H:\code\lg-geology-data-model"
+curdir = os.path.join(os.path.dirname(os.path.realpath(__file__)), "..")
 DEFAULT_OUTPUT_DIR = os.path.abspath(os.path.join(curdir, "exports"))
+
+
 
 """
 connection=D:\connections\GCOVERP@osa.sde, datasets=['TOPGIS_GC.GC_ROCK_BODIES', 'TOPGIS_GC.GC_ROCK_BODIES_I', 'GRATICULES_MANAGER.GRATICULES', 'TOPGIS_GC.GC_ERRORS'], feat classes=['TOPGIS_GC.GC_REVISIONSEBENE', 'TOPGIS_GC.GC_CONFLICT_POLYGON']
@@ -25,11 +29,22 @@ connection=D:\connections\GCOVERP@osa.sde\TOPGIS_GC.GC_ERRORS, datasets=[], feat
 """
 
 
+
 @click.group()
 def geocover():
     pass
 
 
+@click.option(
+    "-l",
+    "--log-level",
+    default="INFO",
+    type=click.Choice(
+        ["DEBUG", "INFO", "WARNING", "ERROR", "CRITICAL"], case_sensitive=True
+    ),
+    show_default=True,
+    help="Log level",
+)
 @geocover.command("export", context_settings={"show_default": True})
 @click.option(
     "-o",
@@ -45,38 +60,39 @@ def geocover():
     help="Workspace (SDE string or GDB)",
     default=DEFAULT_WORKSPACE,
 )
-def export(output_dir, workspace):
+def export(output_dir, workspace, log_level):
     from encoder import ExtendedEncoder
     import arcpy
 
+    now = datetime.datetime.now()
+
     arcpy.env.workspace = workspace
+
+    logger = logging.getLogger(__name__)
+    logger.setLevel(log_level.upper())
+    logger.addHandler(logging.StreamHandler(sys.stdout))
 
     so = GeocoverSchema.instance(workspace)
 
     print(so.tables)
 
     encoder = ExtendedEncoder()
-    # print(encoder.to_json(so.coded_domains, indent=4))
 
-    # print(encoder.to_yaml(so.coded_domains))
 
-    # print(so.datasets)
-    # print(so.feature_classes)
-    # print(encoder.to_yaml(so))
+    connection_info = so.connection_info
+    logger.info(f"Connection info: {connection_info}")
+    coded_domains_dict = {
+        "date": now.strftime("%H:%M:%S-%d-%m-%Y"),
+        "database": connection_info,
+    }
 
-    # print(encoder.to_json(so.feature_classes,  indent=4))
+    coded_domains_dict.update(so.coded_domains)
 
-    print("##############")
-
-    print("datasets=", so.datasets)
-    print("feature classes=", so.feature_classes.keys())
-
-    """walk = arcpy.da.Walk(datatype="FeatureClass")
-    for root, fds, fcs in walk:
-        print(f"connection={root}, datasets={fds}, feat classes={fcs}\n")"""
-
-    print("##############")
-    print(encoder.to_json(so.subtypes, indent=4))
+    logging.info("Writting to 'coded_domains.json'...")
+    dump_dict_to_json(
+        encoder.to_serializable_dict(so.coded_domains),
+        os.path.join(output_dir, "coded_domains.json"),
+    )
 
 
 @geocover.command("schema")

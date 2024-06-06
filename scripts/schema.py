@@ -1,4 +1,5 @@
 import os
+import json
 
 import arcpy
 import logging
@@ -12,17 +13,19 @@ logging.basicConfig(format="%(name)s - %(levelname)s - %(message)s", level=loggi
 
 
 EXCLUDE_TABLES = [
-    "GC_REVISIONSEBENE",
-    "GC_CONFLICT_",
-    "GC_ERRORS_",
-    "GC_VERSION",
-    "GC_MAPSHEET",
+    "TOPGIS_GC.GC_EXPLOIT_GEOMAT_PLG",
+    "TOPGIS_GC.GC_LINEAR_OBJECTS",
+    "TOPGIS_GC.GC_POINT_OBJECTS",
+    "TOPGIS_GC.GC_FOSSILS",
+    "TOPGIS_GC.GC_UNCO_DESPOSIT",
+    "TOPGIS_GC.GC_BEDROCK",
+    "TOPGIS_GC.GC_SURFACES",
 ]
 
 
 remove_prefix = lambda x: x.split(".")[-1]
 
-gc_filter = lambda x: "GC_" in x or not x.endswith("_I")
+gc_filter = lambda x: "GC_" in x and not x.endswith("_I") and x not in EXCLUDE_TABLES
 
 
 class GeocoverSchema:
@@ -55,6 +58,42 @@ class GeocoverSchema:
             self.__feature_class_subtypes = {}
             self.__geol_code = {}
             self.__relationships = set()
+            self.__connection_info = None
+            self.__feature_classes_list = []
+            self.__esri_style_dump  = True
+
+    def generate_filter_function():
+        def filter_function(name):
+            return (
+                not name.endswith("_I")
+                and name.startswith("GC_")
+                and name not in EXCLUDE_TABLES
+            )
+
+        return filter_function
+
+    @property
+    def connection_info(self):
+        if self.__connection_info is None:
+            desc = arcpy.Describe(self.__workspace)
+            cp = desc.connectionProperties
+
+            connection_info = {
+                "workspace": {
+                    "ConnectionString": desc.connectionString,
+                    "WorkspaceFactoryProgID": desc.workspaceFactoryProgID,
+                    "WorkspaceType:": desc.workspaceType,
+                },
+                "connection": {
+                    "Server": cp.server,
+                    "Instance": cp.instance,
+                    "Version": cp.version,
+                },
+            }
+
+            self.__connection_info = connection_info
+
+        return self.__connection_info
 
     @property
     def tables(self):
@@ -66,8 +105,10 @@ class GeocoverSchema:
 
     def list_coded_domains(self):
         if len(self.__coded_domains) < 1:
+            gc_filter = lambda x: "GC_" in x.name
             logging.debug("Collecting coded domains from workspace")
-            self.__coded_domains = arcpy.da.ListDomains(self.__workspace)
+            coded_domains_list = arcpy.da.ListDomains(self.__workspace)
+            self.__coded_domains = list(filter(gc_filter, coded_domains_list))
 
         return self.__coded_domains
 
@@ -76,12 +117,16 @@ class GeocoverSchema:
         if len(self.list_coded_domains()) < 1:
             self.list_coded_domains()
         for domain in self.list_coded_domains():
-            if domain.domainType == "CodedValue":
-                coded_values = domain.codedValues
-                domain_dict = {}
-                for val, desc in coded_values.items():
-                    domain_dict[val] = desc
-                self.__coded_domains_values[domain.name] = domain_dict
+            if not self.__esri_style_dump:
+                if domain.domainType == "CodedValue":
+                    coded_values = domain.codedValues
+                    domain_dict = {}
+                    for val, desc in coded_values.items():
+                        domain_dict[val] = desc
+            else:
+                domain_dict = {"type": domain.domainType, "codedValues": domain.codedValues}
+
+            self.__coded_domains_values[domain.name] = domain_dict
 
         return self.__coded_domains_values
 
@@ -116,24 +161,37 @@ class GeocoverSchema:
         return fields_list
 
     @property
-    def feature_classes(self):
-        if len(self.__feature_classes) < 1:
-            if len(self.__datasets) < 1:
-                self.datasets
-            logging.debug("Collecting feature classes from workspace")
+    def feature_classes_list(self):
+        if len(self.__feature_classes_list) < 1:
+            logging.debug("Collecting feature classes list from workspace")
+            feature_classes_list = []
             walk = arcpy.da.Walk(datatype="FeatureClass")
             for root, dataset, fcs in walk:
                 for fc in fcs:
-                    logging.info("--- Feature class: {} ---".format(fc))
-                    feat_class_dict = {
-                        "name": fc,
-                        "type": "featclass",
-                        "relationships": [],
-                        "fields": [],
-                        "dataset": dataset,
-                    }
+                    feature_classes_list.append(fc)
+            self.__feature_classes_list = list(filter(gc_filter, feature_classes_list))
 
-                    self.__feature_classes[fc] = self.fields(fc)
+            logging.info(f"Filtered list: {self.__feature_classes_list}")
+
+        return self.__feature_classes_list
+
+    @property
+    def feature_classes(self):
+        if len(self.__feature_classes) < 1:
+            if len(self.__feature_classes_list) < 1:
+                self.feature_classes_list
+            logging.debug("Collecting feature classes from workspace")
+
+            for fc in self.__feature_classes_list:
+                logging.debug("--- Feature class: {} ---".format(fc))
+                feat_class_dict = {
+                    "name": fc,
+                    "type": "featclass",
+                    "relationships": [],
+                    "fields": [],
+                }
+
+                self.__feature_classes[fc] = self.fields(fc)
 
         return self.__feature_classes
 
@@ -151,9 +209,8 @@ class GeocoverSchema:
             logging.debug("Collecting relationships from workspace")
             logging.debug(self.feature_classes)
             for i, fc in enumerate(self.feature_classes.keys()):
-                logging.info(fc)
                 desc = arcpy.Describe(fc)
-                logging.info(desc)
+                logging.debug(desc)
                 for j, rel in enumerate(desc.relationshipClassNames):
                     relDesc = arcpy.Describe(rel)
                     logging.debug(relDesc)
