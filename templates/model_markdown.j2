@@ -38,10 +38,10 @@
 {%- if attr.att_type == 'CD' -%}{% set slug = "%s-%s" % (cls.name, attr.name) -%}
 {%- elif attr.att_type == 'annex' -%}{% set slug, location = attr.value, 'vgl. Anhang %s' % attr.value %}{% set see_annex = 'Die möglichen Werte sind in der Tabelle %s im Anhang dieses Dokumentes verfügbar.' % attr.value %}{%- else -%}{% set slug = None %}{% endif -%}
 {%- if slug != None -%}
-{{loop.index}} | **{{ attr.name  }}**                           | [CodedDomain](#{{slug| slugify}})  | {{ attr.description[lang]|trim }}. {{ _("Die möglichen Werte sind in der Tabelle %(name)s im Anhang dieses Dokumentes verfügbar.", name=attr.value ) }}  {{mandatory}} 
+{{loop.index}} | **{{ attr.name |upper  }}**                           | [CodedDomain](#{{slug| slugify}})  | {{ attr.description[lang]|trim }}. {{ _("Die möglichen Werte sind in der Tabelle %(name)s im Anhang dieses Dokumentes verfügbar.", name=attr.value ) }}  {{mandatory}}
 []()           | {{_("Cardinality")}}   [{{ attr.cardinality}}] |                                    |  
 {% else -%}
-{{loop.index}} | **{{ attr.name  }}**                           | {{attr.att_type}}                  | {{ attr.description[lang]|trim }} {{mandatory}}
+{{loop.index}} | **{{ attr.name |upper  }}**                           | {{attr.att_type}}                  | {{ attr.description[lang]|trim }} {{mandatory}}
 []()           | {{_("Cardinality")}}  [{{ attr.cardinality}}]  | {{attr.value}}                     |  
 {% endif -%}
 
@@ -51,7 +51,7 @@
 
 {% for attr in cls.attributes -%}
 {% set slug = "%s-%s" % (cls.name, attr.name) %}
-#### {{_("Attribute")}}  {{ attr.name }}
+#### {{_("Attribute")}}  {{ attr.name |upper}}
 {%- if attr.att_type == 'CD' %} {{ '{#'}}{{slug| slugify}}{{'}'}}{% endif %}
 _{{ attr.description[lang]|trim|highlight}}_
 {% if attr.att_type in ('boolean', 'string', 'float', 'range', 'integer') %}
