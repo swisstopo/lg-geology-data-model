@@ -6,10 +6,12 @@ on:
   push:
     branches:
       - master
-      - pandoc_action
+      - 'releases/**'
   pull_request:
     branches:
       - master
+      - develop
+      - 'releases/**'
 
 jobs:
   build-markdown:
