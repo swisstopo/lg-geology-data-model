@@ -25,6 +25,7 @@ TREE_TABLES = [
     "TOPGIS_GC.GC_LITSTRAT",
     "TOPGIS_GC.GC_CHRONO",
     "TOPGIS_GC.GC_TECTO",
+    "TOPGIS_GC.GC_ADMIXTURE",  # Not a hierarchical table
 ]
 
 TREE_TABLE_FIELD = list(
@@ -143,7 +144,7 @@ class GeocoverSchema:
         if len(self.__tables_list) < 1:
             self.tables_list
 
-        if len(self.self.__coded_domains_values) < 1:
+        if len(self.__coded_domains_values) < 1:
             self.coded_domains
 
         for table_name in list(filter(table_filter, self.__tables_list)):

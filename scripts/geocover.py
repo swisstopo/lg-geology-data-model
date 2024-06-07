@@ -14,17 +14,18 @@ from encoder import ExtendedEncoder
 from schema import GeocoverSchema
 from utils import dump_dict_to_json
 
+# Won't work on h:\
 DEFAULT_WORKSPACE = r"D:/connections/GCOVERP@osa.sde"
 curdir = os.path.join(os.path.dirname(os.path.realpath(__file__)), "..")
 DEFAULT_OUTPUT_DIR = os.path.abspath(os.path.join(curdir, "exports"))
 
 
-@click.group()
+@click.group(help="Command to work with TOPGIS/GeoCover ArcSDE database")
 def geocover():
     pass
 
 
-@geocover.command("export", context_settings={"show_default": True})
+@geocover.command("export", context_settings={"show_default": True}, help="Export some ArcSDE data for use in datamodel")
 @click.option(
     "-l",
     "--log-level",
@@ -78,7 +79,7 @@ def export(output_dir, workspace, log_level):
 
     coded_domains_dict.update(so.coded_domains)
 
-    logging.info("Writting to 'coded_domains.json'...")
+    logger.info("Writting to 'coded_domains.json'...")
     dump_dict_to_json(
         encoder.to_serializable_dict(so.coded_domains),
         os.path.join(output_dir, "coded_domains.json"),
@@ -94,13 +95,12 @@ def export(output_dir, workspace, log_level):
         os.path.join(output_dir, "subtypes_dict.json"),
     )
 
-    print("###### RELATIONSHIPS #########")
-    # print(so.relationships)
+    logger.info("###### RELATIONSHIPS #########")
 
     logger.info(encoder.to_serializable_dict(so.relationships))
 
     # Export tables
-    print("###### TABLES #########")
+    logger.info("###### TABLES #########")
     tables_dict = deepcopy(base_dict)
 
     tables_dict.update(so.tree_tables)
@@ -110,30 +110,31 @@ def export(output_dir, workspace, log_level):
         os.path.join(output_dir, "tables.json"),
     )
     with pd.ExcelWriter(os.path.join(output_dir, f"export_tables.xlsx")) as writer:
-        for table_name, df in so.tables.items():
-            logging.info(table_name)
+        for table_name, df in so.tree_tables.items():
+            logger.info(table_name)
 
             prefix, short_name = table_name.split(".")
-            short_name = short_name.replace("GC_", "")
+            short_name = short_name.replace("GC_", "").capitalize()
 
-            try:
+            if set(['PARENT_REf', 'GEOL_CODE_INT']).issubset(df.columns):
+
+              try:
                 df["PARENT_REF"] = df["PARENT_REF"].fillna(0)
-            except KeyError as e:
-                logging.error(f"Table {table_name} has nokey: {e}")
+                df.sort_values(by=["GEOL_CODE_INT", "PARENT_REF"], inplace=True)
+              except KeyError as e:
+                logger.error(f"Table {table_name} has nokey: {e}")
                 continue
 
-            df.sort_values(by=["GEOL_CODE_INT", "PARENT_REF"], inplace=True)
-            # df = df.reindex(df.columns.union(fields, sort=False), axis=1, fill_value=0)
-
+            logger.info(f"Exporting to {short_name}.csv, {short_name}.json and 'export_tables.xlsx' (sheet={short_name.upper()}")
             try:
                 df.to_csv(os.path.join(output_dir, f"{short_name}.csv"), index=True)
                 df.to_json(os.path.join(output_dir, f"{short_name}.json"), index=True)
                 df.to_excel(writer, sheet_name=short_name.upper())
             except PermissionError as e:
-                logging.error(f"Permission error: {table} is probably already opened")
+                logger.error(f"Permission error: 'export_tables.xlsx' is probably already opened")
 
 
-@geocover.command("schema", context_settings={"show_default": True})
+@geocover.command("schema", context_settings={"show_default": True}, help="Dumps ArcSDE schema")
 @click.option(
     "-o",
     "--output-dir",
@@ -182,10 +183,10 @@ def schema(output_dir, workspace, log_level):
         }
     )
 
-    logging.info("Writting to 'schema.json'...")
+    logger.info("Writting to 'geocover-schema-sde.json'...")
     dump_dict_to_json(
         encoder.to_serializable_dict(schema_dict),
-        os.path.join(output_dir, "schema.json"),
+        os.path.join(output_dir, "geocover-schema-sde.json"),
     )
 
 
