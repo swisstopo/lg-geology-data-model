@@ -50,20 +50,19 @@ Pour tester l'installation (le numéro de version peut être différent):
 
 ## Extraction des données
 
-1. Creation des fichiers JSON contenant les _coded domains_ et la liste des _subtypes_
+1. Creation des fichiers JSON/YAML contenant les _coded domains_ et la liste des _subtypes_ directement depuis
+   la base de donnée ArcSDE
 
-Dans une fenêtre Python ou un notebook _Jupyter_ exécuter les deux scripts `export_coded_domains.py` et
-`export_subtypes.py` . Le résultat sont deux fichiers JSON _coded_domains.json_ et _subtypes.json_
+Dans un prompt Python, en utilisant l'environnement `conda` par défaut `arcgis-py3` :
 
-2. Extraction des tables hiérarchiques : `litho`,  `litstrat`, `chrono` et `tecto`
+     ./geocover.py  export  -w D:\connections\GCOVERP@osa.sde -l DEBUG -o ../exports
 
-Dans ArcGis Pro, charger et exécuter le script : `export_tables.py`
 
-3. Export de la structure Oracle : 
+2. Export de la structure Oracle : 
 
 Dans ArcGis Pro, charger et exécuter le script : `export_oracle_tables.py`
 
-4. Export des champs obligatoires :
+3. Export des champs obligatoires :
 
 
     python export_mandatory.py
