@@ -1,15 +1,14 @@
-import os
 import json
-
-import arcpy
 import logging
-
+import os
+import sys
 from collections import OrderedDict
 
+import arcpy
 
-from utils import merge_two_dicts, get_field_type, arcgis_table_to_df
+from utils import arcgis_table_to_df, get_field_type, merge_two_dicts
 
-# logging.basicConfig(format="%(name)s - %(levelname)s - %(message)s", level=logging.INFO)
+logging.basicConfig(format="%(name)s - %(levelname)s - %(message)s", level=logging.INFO)
 
 
 EXCLUDE_TABLES = [
@@ -79,7 +78,7 @@ class GeocoverSchema:
             self.__feature_classes = {}
             self.__feature_class_subtypes = {}
             self.__geol_code = {}
-            self.__relationships = set()
+            self.__relationships = {}
             self.__connection_info = None
             self.__feature_classes_list = []
             self.__esri_style_dump = True
@@ -121,7 +120,7 @@ class GeocoverSchema:
     def tables_list(self):
         if len(self.__tables_list) < 1:
             logging.debug("Collecting tables from workspace")
-            self.__tables_list = list(filter(table_filter, arcpy.ListTables()))
+            self.__tables_list = list(filter(gc_filter, arcpy.ListTables()))
 
         return self.__tables_list
 
@@ -132,6 +131,22 @@ class GeocoverSchema:
             self.tables_list
 
         for table_name in self.__tables_list:
+            logging.info(table_name)
+
+            self.__tables[table_name] = self.fields(table_name)
+
+        return self.__tables
+
+    @property
+    def tree_tables(self):
+        tables = {}
+        if len(self.__tables_list) < 1:
+            self.tables_list
+
+        if len(self.self.__coded_domains_values) < 1:
+            self.coded_domains
+
+        for table_name in list(filter(table_filter, self.__tables_list)):
             logging.info(table_name)
 
             try:
@@ -156,20 +171,21 @@ class GeocoverSchema:
     def coded_domains(self):
         if len(self.list_coded_domains()) < 1:
             self.list_coded_domains()
-        for domain in self.list_coded_domains():
-            if not self.__esri_style_dump:
-                if domain.domainType == "CodedValue":
-                    coded_values = domain.codedValues
-                    domain_dict = {}
-                    for val, desc in coded_values.items():
-                        domain_dict[val] = desc
-            else:
-                domain_dict = {
-                    "type": domain.domainType,
-                    "codedValues": domain.codedValues,
-                }
+        if len(self.__coded_domains_values) < 1:
+            for domain in self.list_coded_domains():
+                if not self.__esri_style_dump:
+                    if domain.domainType == "CodedValue":
+                        coded_values = domain.codedValues
+                        domain_dict = {}
+                        for val, desc in coded_values.items():
+                            domain_dict[val] = desc
+                else:
+                    domain_dict = {
+                        "type": domain.domainType,
+                        "codedValues": domain.codedValues,
+                    }
 
-            self.__coded_domains_values[domain.name] = domain_dict
+                self.__coded_domains_values[domain.name] = domain_dict
 
         return self.__coded_domains_values
 
@@ -184,6 +200,9 @@ class GeocoverSchema:
     def fields(self, feature_class_name):
         fields_list = []
         fields = arcpy.ListFields(feature_class_name)
+
+        if len(self.__coded_domains_values) < 1:
+            self.coded_domains
 
         for field in fields:
             domain = None
@@ -242,15 +261,15 @@ class GeocoverSchema:
     def relationships(self):
         if len(self.__relationships) < 1:
             logging.debug("Collecting relationships from workspace")
-            logging.debug(self.feature_classes)
-            for i, fc in enumerate(self.feature_classes.keys()):
+
+            for i, fc in enumerate(self.feature_classes_list):
                 desc = arcpy.Describe(fc)
-                logging.debug(desc)
+
                 for j, rel in enumerate(desc.relationshipClassNames):
                     relDesc = arcpy.Describe(rel)
-                    logging.debug(relDesc)
+                    r_name = str(fc).replace("/", "-")
 
-                    self.__relationships.add(rel)
+                    self.__relationships[r_name] = relDesc
         return self.__relationships
 
     @property
@@ -265,7 +284,7 @@ class GeocoverSchema:
             list_subtypes = lambda x: arcpy.da.ListSubtypes(x).items()
 
             for fc in self.__feature_classes_list:
-                logging.info(f"-----{fc} ------")
+                logging.debug(f"-----{fc} ------")
                 try:
                     subtypes = arcpy.da.ListSubtypes(fc)
                 except OSError as e:

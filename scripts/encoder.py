@@ -1,7 +1,6 @@
 import json
 import yaml
 
-
 from schema import GeocoverSchema
 
 
@@ -16,6 +15,7 @@ class CustomEncoder:
             return [self.to_serializable_dict(item) for item in obj]
         elif isinstance(obj, dict):
             return {key: self.to_serializable_dict(value) for key, value in obj.items()}
+        # Panda DataFrame
         elif hasattr(obj, "to_dict"):
             return obj.to_dict(orient="records")
         else:
@@ -40,14 +40,12 @@ class CustomEncoder:
 class ExtendedEncoder(CustomEncoder):
     def to_serializable_dict(self, obj):
         # Handle specific object types here
-        if obj.__class__.__name__ == "Workspace Domain object":
+        if hasattr(obj, "originClassNames"):
+            return self._serialize_relationship_desc(obj)
+
+        elif obj.__class__.__name__ == "Workspace Domain object":
             return self._serialize_coded_domain(obj)
-        elif isinstance(obj, Subtype):
-            return self._serialize_subtype(obj)
-        elif isinstance(obj, Table):
-            return self._serialize_table(obj)
-        elif isinstance(obj, FeatureClass):
-            return self._serialize_feature_class(obj)
+
         elif isinstance(obj, GeocoverSchema):
             return self._serialize_database_schema(obj)
         else:
@@ -98,48 +96,32 @@ class ExtendedEncoder(CustomEncoder):
             ],
         }
 
+    def _serialize_relationship_desc(self, obj):
+        oriClasses = obj.originClassNames
 
-# Example custom classes
-class CodedDomain:
-    def __init__(self, name, domain_type, coded_values):
-        self.name = name
-        self.domain_type = domain_type
-        self.coded_values = coded_values
+        dest_keys = []
+        if len(obj.destinationClassKeys) > 0:
+            for key in obj.destinationClassKeys:
+                key_name, key_role, _ = key
+                dest_keys.append({"name": key_name, "role": key_role})
+        orig_keys = []
+        if len(obj.originClassKeys) > 0:
+            for key in obj.originClassKeys:
+                key_name, key_role, _ = key
+                orig_keys.append({"name": key_name, "role": key_role})
 
-
-class Subtype:
-    def __init__(self, name, fields):
-        self.name = name
-        self.fields = fields
-
-
-class Table:
-    def __init__(self, name, columns):
-        self.name = name
-        self.columns = columns
-
-
-class FeatureClass(Table):
-    def __init__(self, name, columns, subtypes, coded_domains):
-        super().__init__(name, columns)
-        self.subtypes = subtypes
-        self.coded_domains = coded_domains
-
-
-"""
-# Example usage
-coded_domain = CodedDomain("ExampleDomain", "CodedValue", {1: "One", 2: "Two"})
-subtype = Subtype("Subtype1", ["Field1", "Field2"])
-table = Table("Table1", ["Column1", "Column2"])
-feature_class = FeatureClass("FeatureClass1", ["Column1", "Column2"], [subtype], [coded_domain])
-
-encoder = ExtendedEncoder()
-json_output = encoder.to_json(feature_class, indent=4)
-yaml_output = encoder.to_yaml(feature_class, default_flow_style=False)
-
-print("JSON Output:")
-print(json_output)
-print("\nYAML Output:")
-print(yaml_output)
-
-"""
+        return {
+            "origin": oriClasses,  # oriClass,
+            "destination": obj.destinationClassNames[0],
+            "forwardPathLabel": obj.forwardPathLabel,
+            "backwardPathLabel": obj.backwardPathLabel,
+            "isAttachmentRelationship": obj.isAttachmentRelationship,
+            "cardinality": obj.cardinality,
+            "originClassKeys": orig_keys,
+            "destinationClassKeys": dest_keys,
+            "is_attributed": obj.isAttributed,
+            "is_composite": obj.isComposite,
+            "is_reflexive": obj.isReflexive,
+            "classKey": obj.classKey,
+            "keyType": obj.keyType,
+        }

@@ -1,8 +1,9 @@
-import os
 import json
 import logging
-import pandas as pd
+import os
+
 import arcpy
+import pandas as pd
 
 
 def arcgis_table_to_df(in_fc, input_fields=None, query=""):

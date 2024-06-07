@@ -1,34 +1,22 @@
-import click
-import os
-import sys
 import datetime
 import json
-import pandas as pd
-
 import logging
-
+import os
+import sys
+from collections import OrderedDict
 from copy import deepcopy
 
+import arcpy
+import click
+import pandas as pd
+
+from encoder import ExtendedEncoder
 from schema import GeocoverSchema
 from utils import dump_dict_to_json
 
 DEFAULT_WORKSPACE = r"D:/connections/GCOVERP@osa.sde"
-
 curdir = os.path.join(os.path.dirname(os.path.realpath(__file__)), "..")
 DEFAULT_OUTPUT_DIR = os.path.abspath(os.path.join(curdir, "exports"))
-
-
-"""
-connection=D:\connections\GCOVERP@osa.sde, datasets=['TOPGIS_GC.GC_ROCK_BODIES', 'TOPGIS_GC.GC_ROCK_BODIES_I', 'GRATICULES_MANAGER.GRATICULES', 'TOPGIS_GC.GC_ERRORS'], feat classes=['TOPGIS_GC.GC_REVISIONSEBENE', 'TOPGIS_GC.GC_CONFLICT_POLYGON']
-
-connection=D:\connections\GCOVERP@osa.sde\TOPGIS_GC.GC_ROCK_BODIES, datasets=[], feat classes=['TOPGIS_GC.GC_EXPLOIT_GEOMAT_PLG', 'TOPGIS_GC.GC_LINEAR_OBJECTS', 'TOPGIS_GC.GC_POINT_OBJECTS', 'TOPGIS_GC.GC_FOSSILS', 'TOPGIS_GC.GC_UNCO_DESPOSIT', 'TOPGIS_GC.GC_BEDROCK', 'TOPGIS_GC.GC_SURFACES', 'TOPGIS_GC.GC_MAPSHEET', 'TOPGIS_GC.GC_EXPLOIT_GEOMAT_PT']
-
-connection=D:\connections\GCOVERP@osa.sde\TOPGIS_GC.GC_ROCK_BODIES_I, datasets=[], feat classes=['TOPGIS_GC.GC_UNCO_DESPOSIT_I', 'TOPGIS_GC.GC_BEDROCK_I', 'TOPGIS_GC.GC_FOSSILS_I', 'TOPGIS_GC.GC_LINEAR_OBJECTS_I', 'TOPGIS_GC.GC_POINT_OBJECTS_I', 'TOPGIS_GC.GC_EXPLOIT_GEOMAT_PT_I', 'TOPGIS_GC.GC_EXPLOIT_GEOMAT_PLG_I', 'TOPGIS_GC.GC_SURFACES_I', 'TOPGIS_GC.GC_MAPSHEET_I']
-
-connection=D:\connections\GCOVERP@osa.sde\GRATICULES_MANAGER.GRATICULES, datasets=[], feat classes=[]
-
-connection=D:\connections\GCOVERP@osa.sde\TOPGIS_GC.GC_ERRORS, datasets=[], feat classes=['TOPGIS_GC.GC_ERRORS_POLYGON', 'TOPGIS_GC.GC_ERRORS_MULTIPOINT', 'TOPGIS_GC.GC_ERRORS_LINE']
-"""
 
 
 @click.group()
@@ -36,6 +24,7 @@ def geocover():
     pass
 
 
+@geocover.command("export", context_settings={"show_default": True})
 @click.option(
     "-l",
     "--log-level",
@@ -46,7 +35,6 @@ def geocover():
     show_default=True,
     help="Log level",
 )
-@geocover.command("export", context_settings={"show_default": True})
 @click.option(
     "-o",
     "--output-dir",
@@ -62,8 +50,9 @@ def geocover():
     default=DEFAULT_WORKSPACE,
 )
 def export(output_dir, workspace, log_level):
-    from encoder import ExtendedEncoder
     import arcpy
+
+    from encoder import ExtendedEncoder
 
     now = datetime.datetime.now()
 
@@ -78,11 +67,12 @@ def export(output_dir, workspace, log_level):
     encoder = ExtendedEncoder()
 
     connection_info = so.connection_info
-    logger.info(f"Connection info: {connection_info}")
+    logger.debug(f"Connection info: {connection_info}")
     base_dict = {
         "date": now.strftime("%H:%M:%S-%d-%m-%Y"),
         "database": connection_info,
     }
+
     # Export coded domains
     coded_domains_dict = deepcopy(base_dict)
 
@@ -104,12 +94,16 @@ def export(output_dir, workspace, log_level):
         os.path.join(output_dir, "subtypes_dict.json"),
     )
 
+    print("###### RELATIONSHIPS #########")
+    # print(so.relationships)
+
+    logger.info(encoder.to_serializable_dict(so.relationships))
+
     # Export tables
+    print("###### TABLES #########")
     tables_dict = deepcopy(base_dict)
 
-    print("###############")
-
-    tables_dict.update(so.tables)
+    tables_dict.update(so.tree_tables)
 
     dump_dict_to_json(
         encoder.to_serializable_dict(tables_dict),
@@ -139,9 +133,60 @@ def export(output_dir, workspace, log_level):
                 logging.error(f"Permission error: {table} is probably already opened")
 
 
-@geocover.command("schema")
-def schema():
-    print("schema")
+@geocover.command("schema", context_settings={"show_default": True})
+@click.option(
+    "-o",
+    "--output-dir",
+    type=click.Path(exists=True, file_okay=False),
+    help="The directory for the output",
+    default=DEFAULT_OUTPUT_DIR,
+)
+@click.option(
+    "-w",
+    "--workspace",
+    type=str,
+    help="Workspace (SDE string or GDB)",
+    default=DEFAULT_WORKSPACE,
+)
+@click.option(
+    "-l",
+    "--log-level",
+    default="INFO",
+    type=click.Choice(
+        ["DEBUG", "INFO", "WARNING", "ERROR", "CRITICAL"], case_sensitive=True
+    ),
+    show_default=True,
+    help="Log level",
+)
+def schema(output_dir, workspace, log_level):
+    arcpy.env.workspace = workspace
+
+    logger = logging.getLogger(__name__)
+    logger.setLevel(log_level.upper())
+    logger.addHandler(logging.StreamHandler(sys.stdout))
+
+    so = GeocoverSchema.instance(workspace)
+
+    encoder = ExtendedEncoder()
+
+    connection_info = so.connection_info
+
+    schema_dict = OrderedDict(
+        {
+            "datetime": datetime.datetime.now(),
+            "relationships": so.relationships,
+            "tables": so.tables,
+            "featclasses": so.feature_classes,
+            "domains": so.coded_domains,
+            "subtypes": so.subtypes,
+        }
+    )
+
+    logging.info("Writting to 'schema.json'...")
+    dump_dict_to_json(
+        encoder.to_serializable_dict(schema_dict),
+        os.path.join(output_dir, "schema.json"),
+    )
 
 
 if __name__ == "__main__":
