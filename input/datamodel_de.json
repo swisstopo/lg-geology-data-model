@@ -1,9 +1,9 @@
 {
     "version": 0.5,
-    "date": "2024-05-30",
+    "date": "2024-06-07",
     "model": {
         "revision": 3.5,
-        "revision_date": "2024-04-30"
+        "revision_date": "2024-06-07"
     },
     "themes": [
         {
@@ -882,8 +882,8 @@
                             "value": 11201,
                             "cardinality": 1,
                             "pairs": {
-                                "11201002": "Ggla Gletscherm\u00fchle, Strudelloch",
-                                "11201001": "Ggla glazitektonische Deformation"
+                                "11201001": "Ggla glazitektonische Deformation",
+                                "11201002": "Ggla Gletscherm\u00fchle, Strudelloch"
                             }
                         }
                     ]
@@ -1716,11 +1716,11 @@
                             "value": 13801,
                             "cardinality": 1,
                             "pairs": {
+                                "13801001": "Mpla Orientierung der Schichten",
                                 "13801002": "Mpla Orientierung eines Ganges",
                                 "13801003": "Mpla Orientierung einer Bruchfl\u00e4che",
                                 "13801004": "Mpla Orientierung der Schieferung",
                                 "13801005": "Mpla Orientierung einer Schichtung oder Schieferung",
-                                "13801001": "Mpla Orientierung der Schichten",
                                 "13801006": "Mpla Sch\u00fcttungsrichtung"
                             }
                         },
@@ -1944,11 +1944,11 @@
                                 "13201001": "Lres Mineralfundstelle",
                                 "13201002": "Lres Gasquelle",
                                 "13201003": "Lres Anzeichen auf \u00d6l",
+                                "13201004": "Lres Tasche, Karsttasche, Kluft, mit F\u00fcllung von siderolithischem Sediment",
+                                "13201005": "Lres Fundstelle von vulkanischem Tuffit",
                                 "13201006": "Lres Fundstelle vulkanischer Ausw\u00fcrflinge (Tephra)",
                                 "13201007": "Lres Fundstelle von Ries-Ausw\u00fcrflingen",
                                 "13201008": "Lres Asphalt, vereinzeltes Vorkommen",
-                                "13201005": "Lres Fundstelle von vulkanischem Tuffit",
-                                "13201004": "Lres Tasche, Karsttasche, Kluft, mit F\u00fcllung von siderolithischem Sediment",
                                 "13201009": "Lres Meteoritenfundstelle"
                             }
                         },
@@ -2575,7 +2575,11 @@
                             "value": 10101,
                             "pairs": {
                                 "10101001": "Aarc arch\u00e4ologische Fundstelle, Anlage, Siedlungsreste",
+                                "10101002": "Aarc H\u00f6hlensiedlung, Abri",
+                                "10101003": "Aarc Pfahlbauten",
+                                "10101004": "Aarc Burgstelle, Burgh\u00fcgel, Wachtturm",
                                 "10101005": "Aarc Gr\u00e4ber, Gr\u00e4berfeld",
+                                "10101006": "Aarc Steinplattengrab",
                                 "10101007": "Aarc Grabh\u00fcgel, Dolmengrab",
                                 "10101008": "Aarc Kultstein",
                                 "10101009": "Aarc Kalkofen",
@@ -2583,10 +2587,6 @@
                                 "10101011": "Aarc Schlackenhalde",
                                 "10101012": "Aarc Glash\u00fctte",
                                 "10101013": "Aarc Schmelzofen",
-                                "10101004": "Aarc Burgstelle, Burgh\u00fcgel, Wachtturm",
-                                "10101002": "Aarc H\u00f6hlensiedlung, Abri",
-                                "10101003": "Aarc Pfahlbauten",
-                                "10101006": "Aarc Steinplattengrab",
                                 "10101015": "Aarc Abbaustelle"
                             }
                         },
@@ -3469,11 +3469,11 @@
                             "pairs": {
                                 "12301001": "Hpal Pal\u00e4otal",
                                 "12301002": "Hpal ehemalige Entw\u00e4sserungsrinne",
+                                "12301003": "Hpal ehemalige glaziale Abflussrinne",
                                 "12301004": "Hpal Trockental",
                                 "12301005": "Hpal ehemaliges Bachbett",
                                 "12301006": "Hpal Ufer eines ehemaligen Flussbetts",
-                                "12301007": "Hpal ehemalige Uferlinie",
-                                "12301003": "Hpal ehemalige glaziale Abflussrinne"
+                                "12301007": "Hpal ehemalige Uferlinie"
                             }
                         },
                         {
