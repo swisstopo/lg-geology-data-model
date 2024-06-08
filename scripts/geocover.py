@@ -6,12 +6,11 @@ import sys
 from collections import OrderedDict
 from copy import deepcopy
 
-import arcpy
+
 import click
 import pandas as pd
 
-from encoder import ExtendedEncoder
-from schema import GeocoverSchema
+
 from utils import dump_dict_to_json
 
 # Won't work on h:\
@@ -25,7 +24,11 @@ def geocover():
     pass
 
 
-@geocover.command("export", context_settings={"show_default": True}, help="Export some ArcSDE data for use in datamodel")
+@geocover.command(
+    "export",
+    context_settings={"show_default": True},
+    help="Export some ArcSDE data for use in datamodel",
+)
 @click.option(
     "-l",
     "--log-level",
@@ -54,6 +57,7 @@ def export(output_dir, workspace, log_level):
     import arcpy
 
     from encoder import ExtendedEncoder
+    from schema import GeocoverSchema
 
     now = datetime.datetime.now()
 
@@ -116,25 +120,30 @@ def export(output_dir, workspace, log_level):
             prefix, short_name = table_name.split(".")
             short_name = short_name.replace("GC_", "").capitalize()
 
-            if set(['PARENT_REf', 'GEOL_CODE_INT']).issubset(df.columns):
+            if set(["PARENT_REf", "GEOL_CODE_INT"]).issubset(df.columns):
+                try:
+                    df["PARENT_REF"] = df["PARENT_REF"].fillna(0)
+                    df.sort_values(by=["GEOL_CODE_INT", "PARENT_REF"], inplace=True)
+                except KeyError as e:
+                    logger.error(f"Table {table_name} has nokey: {e}")
+                    continue
 
-              try:
-                df["PARENT_REF"] = df["PARENT_REF"].fillna(0)
-                df.sort_values(by=["GEOL_CODE_INT", "PARENT_REF"], inplace=True)
-              except KeyError as e:
-                logger.error(f"Table {table_name} has nokey: {e}")
-                continue
-
-            logger.info(f"Exporting to {short_name}.csv, {short_name}.json and 'export_tables.xlsx' (sheet={short_name.upper()}")
+            logger.info(
+                f"Exporting to {short_name}.csv, {short_name}.json and 'export_tables.xlsx' (sheet={short_name.upper()}"
+            )
             try:
                 df.to_csv(os.path.join(output_dir, f"{short_name}.csv"), index=True)
                 df.to_json(os.path.join(output_dir, f"{short_name}.json"), index=True)
                 df.to_excel(writer, sheet_name=short_name.upper())
             except PermissionError as e:
-                logger.error(f"Permission error: 'export_tables.xlsx' is probably already opened")
+                logger.error(
+                    f"Permission error: 'export_tables.xlsx' is probably already opened"
+                )
 
 
-@geocover.command("schema", context_settings={"show_default": True}, help="Dumps ArcSDE schema")
+@geocover.command(
+    "schema", context_settings={"show_default": True}, help="Dumps ArcSDE schema"
+)
 @click.option(
     "-o",
     "--output-dir",
@@ -160,6 +169,10 @@ def export(output_dir, workspace, log_level):
     help="Log level",
 )
 def schema(output_dir, workspace, log_level):
+    import arcpy
+    from encoder import ExtendedEncoder
+    from schema import GeocoverSchema
+
     arcpy.env.workspace = workspace
 
     logger = logging.getLogger(__name__)
@@ -188,6 +201,51 @@ def schema(output_dir, workspace, log_level):
         encoder.to_serializable_dict(schema_dict),
         os.path.join(output_dir, "geocover-schema-sde.json"),
     )
+
+
+@geocover.command(
+    "geolcode", context_settings={"show_default": True}, help="Dumps all geol codes"
+)
+@click.option(
+    "-o",
+    "--output-dir",
+    type=click.Path(exists=True, file_okay=False),
+    help="The directory for the output",
+    default=DEFAULT_OUTPUT_DIR,
+)
+@click.option(
+    "-w",
+    "--workspace",
+    type=str,
+    help="Workspace (SDE string or GDB)",
+    default=DEFAULT_WORKSPACE,
+)
+@click.option(
+    "-l",
+    "--log-level",
+    default="INFO",
+    type=click.Choice(
+        ["DEBUG", "INFO", "WARNING", "ERROR", "CRITICAL"], case_sensitive=True
+    ),
+    show_default=True,
+    help="Log level",
+)
+def geolcode(output_dir, workspace, log_level):
+    from all_geolcodes import get_geol_codes
+    
+    logger = logging.getLogger(__name__)
+    logger.setLevel(log_level.upper())
+    logger.addHandler(logging.StreamHandler(sys.stdout))
+
+    df = get_geol_codes()
+
+    print(json.dumps(df.to_dict(), indent=4))
+
+    geolcodes_fname = os.path.join(output_dir, "all_geolcode.xlsx")
+
+    logger.info(f"Saving to {geolcodes_fname}")
+    if os.path.isdir(output_dir):
+        df.to_excel(geolcodes_fname)
 
 
 if __name__ == "__main__":
