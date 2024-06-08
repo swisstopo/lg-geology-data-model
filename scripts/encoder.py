@@ -1,5 +1,6 @@
 import json
 import yaml
+import datetime
 
 from schema import GeocoverSchema
 
@@ -15,6 +16,8 @@ class CustomEncoder:
             return [self.to_serializable_dict(item) for item in obj]
         elif isinstance(obj, dict):
             return {key: self.to_serializable_dict(value) for key, value in obj.items()}
+        elif isinstance(obj, (datetime.date, datetime.datetime)):
+            return obj.isoformat()
         # Panda DataFrame
         elif hasattr(obj, "to_dict"):
             return obj.to_dict(orient="records")

@@ -142,6 +142,7 @@ clean:
 	
 cleanall: clean
 	find . -name '*.mo' -exec rm -f {} \;
+	rm -f $(OUTPUT_DIR)/*.css
 
 # Ensure the output directory exists
 $(OUTPUT_DIR):
