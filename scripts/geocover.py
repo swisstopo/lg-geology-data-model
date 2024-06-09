@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 import datetime
 import json
 import logging
@@ -208,10 +210,10 @@ def schema(output_dir, workspace, log_level):
 )
 @click.option(
     "-o",
-    "--output-dir",
-    type=click.Path(exists=True, file_okay=False),
-    help="The directory for the output",
-    default=DEFAULT_OUTPUT_DIR,
+    "--output-file",
+    type=click.Path(exists=False, file_okay=True, writable=True),
+    default="../exports/all_geolcode.xlsx",
+    help="The file for the output",
 )
 @click.option(
     "-w",
@@ -230,22 +232,31 @@ def schema(output_dir, workspace, log_level):
     show_default=True,
     help="Log level",
 )
-def geolcode(output_dir, workspace, log_level):
+def geolcode(output_file, workspace, log_level):
     from all_geolcodes import get_geol_codes
-    
+
     logger = logging.getLogger(__name__)
     logger.setLevel(log_level.upper())
     logger.addHandler(logging.StreamHandler(sys.stdout))
 
+    ext = os.path.basename(os.path.abspath(output_file)).split(".")[1]
+
     df = get_geol_codes()
 
-    print(json.dumps(df.to_dict(), indent=4))
+    json_str = df.to_dict(orient="records")
 
-    geolcodes_fname = os.path.join(output_dir, "all_geolcode.xlsx")
+    logger.info(f"Saving to {output_file}")
+    if ext == "json":
+        df.to_json(
+            path_or_buf=output_file,
+            orient="records",
+            force_ascii=False,
+            indent=4,
+            mode="w",
+        )
 
-    logger.info(f"Saving to {geolcodes_fname}")
-    if os.path.isdir(output_dir):
-        df.to_excel(geolcodes_fname)
+    if ext == "xlsx":
+        df.to_excel(output_file)
 
 
 if __name__ == "__main__":
