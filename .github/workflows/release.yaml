@@ -18,6 +18,8 @@ jobs:
         run: cat Release.txt
       - name: Release assets
         uses: softprops/action-gh-release@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}
         with:
           files: |
             Release.txt
