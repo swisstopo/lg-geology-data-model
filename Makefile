@@ -42,8 +42,8 @@ PANDOC_OPTIONS=--standalone \
          
          
 # Define language-specific options
-OPTIONS_de = --metadata lang=de  --metadata-file=assets/metadata_de.yaml -V lang=de
-OPTIONS_fr = --metadata lang=fr  --metadata-file=assets/metadata_fr.yaml -V lang=fr
+OPTIONS_de = --metadata lang=de  --metadata-file=$(INPUT_DIR)/metadata_de.yaml -V lang=de
+OPTIONS_fr = --metadata lang=fr  --metadata-file=$(INPUT_DIR)/metadata_fr.yaml -V lang=fr
 
 # format specific options
 PANDOC_HTML_OPTIONS=--to html5 --toc  --css $(CSS)
