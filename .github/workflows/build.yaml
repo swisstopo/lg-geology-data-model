@@ -55,7 +55,7 @@ jobs:
           python ./create_gv.py
     
       - name: Build all targets
-        run: make docs
+        run: make cleanall babel markdown docs
       - name: Generate PlantUML Diagrams
         uses: rotaract/plantuml-action@v1
         with:
