@@ -69,15 +69,17 @@ Dans ArcGis Pro, charger et exécuter le script : `export_oracle_tables.py`
 
 ## Traductions
 
-Extraction des chaînes de charactères :
+1. Extraction des chaînes de caractères  pour traduction :
 
     pybabel extract -F babel.cfg -o locale/app.pot .
+
+2. Edition des fichiers .po dans `PoEdit` par exemple
     
-Fusion des catalogues :
+3. Fusion des catalogues (`app` et `datamodel`):
 
     pybabel update -i locale/app.pot   -d app
     
-Compiler les catalogues :
+4. Compiler les catalogues (`app` et `datamodel`) :
     
     pybabel compile --domain=app --directory=locale --use-fuzzy
 
@@ -86,9 +88,9 @@ Compiler les catalogues :
 ## Création du fichier Markdown source
 
 Le script _datamodel.py_ combine les informations de la configuration _datamodel.yaml_  avec _coded_domains.json_ , _subtypes.json_ et le fichier de traduction.
-Le résultat est le fichier _Marcdown_ _datamodel.md_
+Le résultat est le fichier _Marcdown_ _datamodel_fr.md_ ou _datamodel_de.md_
 
-    python3 datamodel.py
+    python3 datamodel.py --lang de  # ou fr
 
 ## Génération des différents formats
 
@@ -151,3 +153,7 @@ Convertir en fichier SVG avec p.ex. https://www.planttext.com/
 Convertir en image :
 
     convert  ER-GCOVER.svg ER-GCOVER.png
+
+Convertir en PDF (A3)
+
+    cairosvg  -o ER-GCOVER.pdf    --background '#EEEEFF' --output-width   4191   --output-height 2972 ER-GCOVER.svg
