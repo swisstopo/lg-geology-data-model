@@ -2,8 +2,15 @@ import json
 import logging
 import os
 
-import arcpy
+
 import pandas as pd
+
+from config import abreviations
+
+try:
+    import arcpy
+except ImportError:
+    print("No arcpy")
 
 
 def arcgis_table_to_df(in_fc, input_fields=None, query=""):
@@ -60,6 +67,14 @@ def dump_dict_to_json(data, file_path):
             json.dump(data, json_file, ensure_ascii=False, indent=4)
     except IOError as e:
         raise IOError(f"Error writing to file: {e}")
+
+
+def remove_abrev(msg):
+    for i in abreviations:
+        if msg.find(i) == 0:
+            return msg.replace(i, "").strip()
+
+    return msg
 
 
 def merge_two_dicts(x, y):

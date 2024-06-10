@@ -187,6 +187,7 @@ def datamodel(lang):
     from pathlib import Path
     import re
     from babel import Locale
+    import babel.dates
 
     # Parsing
     Locale.negotiate(["de_DE", "en_US"], ["de_DE", "de_AT"])
@@ -212,12 +213,18 @@ def datamodel(lang):
 
     translations.merge(ui_translations)
     data["lang"] = lang
+    data["date"] = datetime.datetime.now()
+    locale = lang
 
     env.install_gettext_translations(translations, newstyle=True)
 
     def slugify(input):
         """Custom filter"""
         return re.sub(r"[\W_]+", "-", input.lower())
+
+    # Define the custom filter function
+    def format_date_locale(value, format="MMMM yyyy", locale="de_CH"):
+        return babel.dates.format_date(date=value, format=format, locale=locale)
 
     def highlight(input, words=classe_names, linkify=True):
         words.sort(key=len, reverse=True)  # longer first
@@ -244,6 +251,7 @@ def datamodel(lang):
     env.filters["slugify"] = slugify
     env.filters["highlight"] = highlight
     env.filters["tr"] = translate
+    env.filters["format_date_locale"] = format_date_locale
     temp = env.get_template("model_markdown.j2")
     # temp.render(data)
 
@@ -254,16 +262,21 @@ def datamodel(lang):
     #    template = Template(f.read())
 
     # print(temp.render(data))
+    def render_template_with_locale(template_name, data, locale):
+        template = env.get_template(template_name)
+        return template.render(data, locale=locale)
 
     with open(os.path.join(output_dir, f"{project_name}_{lang}.md"), "w") as f:
         # f.write(template.render(data))
-        f.write(temp.render(data))
+        rendered = render_template_with_locale("model_markdown.j2", data, locale)
+        f.write(rendered)
 
     # Metadata
-    meta = env.get_template("metadata.yaml.j2")
+    # meta = env.get_template("metadata.yaml.j2")
     with open(os.path.join(output_dir, f"metadata_{lang}.yaml"), "w") as f:
         # f.write(template.render(data))
-        f.write(meta.render(data))
+        rendered = render_template_with_locale("metadata.yaml.j2", data, locale)
+        f.write(rendered)
 
 
 if __name__ == "__main__":
