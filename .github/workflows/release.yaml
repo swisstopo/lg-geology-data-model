@@ -7,17 +7,6 @@ on:
       - "v*.*.*"
 
 
-# cat .github/workflows/deploy.yml
-name: deploy
-on:
-  push:
-    tags:  # trigger the deploy job on tag creation
-    - *
-jobs:
-
-  deploy:
-    name: deploy
-    needs: [tests]  # require tests to pass before deploy runs
 
 jobs:
   build:
