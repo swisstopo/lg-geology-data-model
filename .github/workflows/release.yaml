@@ -25,9 +25,12 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
         with:
           files: |
-            Release.txt
             output/datamodel_de.pdf
             output/datamodel_fr.pdf
             output/datamodel_de.docx
             output/datamodel_fr.docx
             output/ER-GCOVER.svg
+            output/ER-GCOVER.pdf
+            exports/coded_domains.xlsx
+            exports/all_geolcode.xlsx
+

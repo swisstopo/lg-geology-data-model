@@ -80,4 +80,8 @@ jobs:
             output/datamodel.css
             output/geocover.png
             output/ER-GCOVER.svg
+            output/ER-GCOVER.pdf
             exports/coded_domains.xlsx
+            exports/all_geolcode.xlsx
+            exports/all_geolcode.json
+
