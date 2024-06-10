@@ -49,8 +49,6 @@ msgstr ""
 
 
 def create_msg(df):
-    print(df.columns)
-
     de = list(zip(df["GeolCodeInt"], df["DE"]))
 
     fr = list(zip(df["GeolCodeInt"], df["FR"]))
@@ -201,6 +199,7 @@ def datamodel(lang):
     classe_names = get_classes(model.model)
 
     data = model.to_json()
+    now = datetime.datetime.now()
 
     loader = jinja2.FileSystemLoader(os.path.join(yaml_dir, "templates"))
     env = jinja2.Environment(
@@ -213,7 +212,7 @@ def datamodel(lang):
 
     translations.merge(ui_translations)
     data["lang"] = lang
-    data["date"] = datetime.datetime.now()
+    data["date"] = now
     locale = lang
 
     env.install_gettext_translations(translations, newstyle=True)
@@ -236,11 +235,8 @@ def datamodel(lang):
             if re.search(pattern, input) is not None:
                 matches = re.finditer(p, input)
 
-                print("---")
-                print(input)
                 for i, m in enumerate(matches):
                     word = m.group(1)
-                    print(i, word)
                     output = output.replace(
                         f" {word} ", f" [{word}](#{slugify(word)}) "
                     )
@@ -253,27 +249,28 @@ def datamodel(lang):
     env.filters["tr"] = translate
     env.filters["format_date_locale"] = format_date_locale
     temp = env.get_template("model_markdown.j2")
-    # temp.render(data)
 
-    with open(os.path.join(output_dir, f"{project_name}_{lang}.json"), "w") as f:
+    json_fname = os.path.join(output_dir, f"{project_name}_{lang}.json")
+    logger.info(f"Generating {json_fname}")
+    with open(json_fname, "w") as f:
         f.write(json.dumps(data, indent=4, cls=DatetimeEncoder))
 
-    # with open("model_markdown.j2") as f:
-    #    template = Template(f.read())
-
-    # print(temp.render(data))
     def render_template_with_locale(template_name, data, locale):
         template = env.get_template(template_name)
         return template.render(data, locale=locale)
 
-    with open(os.path.join(output_dir, f"{project_name}_{lang}.md"), "w") as f:
+    markdown_fname = os.path.join(output_dir, f"{project_name}_{lang}.md")
+    logger.info(f"Generating {markdown_fname}")
+    with open(markdown_fname, "w") as f:
         # f.write(template.render(data))
         rendered = render_template_with_locale("model_markdown.j2", data, locale)
         f.write(rendered)
 
     # Metadata
     # meta = env.get_template("metadata.yaml.j2")
-    with open(os.path.join(output_dir, f"metadata_{lang}.yaml"), "w") as f:
+    metadata_fname = os.path.join(output_dir, f"metadata_{lang}.yaml")
+    logger.info(f"Generating {metadata_fname}")
+    with open(metadata_fname, "w") as f:
         # f.write(template.render(data))
         rendered = render_template_with_locale("metadata.yaml.j2", data, locale)
         f.write(rendered)
