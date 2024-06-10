@@ -12,9 +12,11 @@ dependencies:
   - brotli-python=1.1.0=py312h30efb56_1
   - bzip2=1.0.8=hd590300_5
   - c-ares=1.28.1=hd590300_0
-  - ca-certificates=2024.2.2=hbcca054_0
+  - ca-certificates=2024.6.2=hbcca054_0
   - cairo=1.18.0=h3faef2a_0
-  - certifi=2024.2.2=pyhd8ed1ab_0
+  - cairocffi=1.6.1=pyhd8ed1ab_0
+  - cairosvg=2.7.1=pyhd8ed1ab_0
+  - certifi=2024.6.2=pyhd8ed1ab_0
   - cffi=1.16.0=py312hf06ca03_0
   - charset-normalizer=3.3.2=pyhd8ed1ab_0
   - click=8.1.7=unix_pyh707e725_0
@@ -23,7 +25,10 @@ dependencies:
   - conda-libmamba-solver=24.1.0=pyhd8ed1ab_0
   - conda-package-handling=2.2.0=pyh38be061_0
   - conda-package-streaming=0.9.0=pyhd8ed1ab_0
+  - cssselect2=0.2.1=pyh9f0ad1d_1
+  - defusedxml=0.7.1=pyhd8ed1ab_0
   - distro=1.9.0=pyhd8ed1ab_0
+  - et_xmlfile=1.1.0=pyhd8ed1ab_0
   - expat=2.6.2=h59595ed_0
   - fmt=10.2.1=h00ab1b0_0
   - font-ttf-dejavu-sans-mono=2.37=hab24e00_0
@@ -50,6 +55,7 @@ dependencies:
   - jsonpointer=2.4=py312h7900ff3_3
   - keyutils=1.6.1=h166bdaf_0
   - krb5=1.21.2=h659d440_0
+  - lcms2=2.16=hb7c19ff_0
   - ld_impl_linux-64=2.40=hf3520f5_1
   - lerc=4.0.0=h27087fc_0
   - libarchive=3.7.2=h2aa1ff5_1
@@ -97,11 +103,14 @@ dependencies:
   - menuinst=2.1.0=py312h7900ff3_0
   - ncurses=6.5=h59595ed_0
   - numpy=1.26.4=py312heda63a1_0
-  - openssl=3.3.0=h4ab18f5_3
+  - openjpeg=2.5.2=h488ebb8_0
+  - openpyxl=3.1.2=py312h98912ed_1
+  - openssl=3.3.1=h4ab18f5_0
   - packaging=24.0=pyhd8ed1ab_0
   - pandas=2.2.2=py312h1d6d2e6_1
   - pango=1.52.2=ha41ecd1_0
   - pcre2=10.43=hcad00b1_0
+  - pillow=10.3.0=py312hdcec9eb_0
   - pip=24.0=pyhd8ed1ab_0
   - pixman=0.43.2=h59595ed_0
   - platformdirs=4.2.2=pyhd8ed1ab_0
@@ -126,11 +135,13 @@ dependencies:
   - ruamel.yaml.clib=0.2.8=py312h98912ed_0
   - setuptools=70.0.0=pyhd8ed1ab_0
   - six=1.16.0=pyh6c4a22f_0
+  - tinycss2=1.3.0=pyhd8ed1ab_0
   - tk=8.6.13=noxft_h4845f30_101
   - tqdm=4.66.4=pyhd8ed1ab_0
   - truststore=0.8.0=pyhd8ed1ab_0
   - tzdata=2024a=h0c530f3_0
   - urllib3=2.2.1=pyhd8ed1ab_0
+  - webencodings=0.5.1=pyhd8ed1ab_2
   - wheel=0.43.0=pyhd8ed1ab_1
   - xorg-kbproto=1.0.7=h7f98852_1002
   - xorg-libice=1.1.1=hd590300_0
