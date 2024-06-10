@@ -6,12 +6,26 @@ on:
     tags:
       - "v*.*.*"
 
+
+# cat .github/workflows/deploy.yml
+name: deploy
+on:
+  push:
+    tags:  # trigger the deploy job on tag creation
+    - *
+jobs:
+
+  deploy:
+    name: deploy
+    needs: [tests]  # require tests to pass before deploy runs
+
 jobs:
   build:
+    uses: ./.github/workflows/build.yml  # use the callable build job to run build
+  release:
     runs-on: ubuntu-latest
+    needs: [build]  # require build to pass before deploy runs
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
       - name: Build
         run: echo ${{ github.sha }} > Release.txt
       - name: Test
@@ -25,3 +39,6 @@ jobs:
             Release.txt
             output/datamodel_de.pdf
             output/datamodel_fr.pdf
+            output/datamodel_de.docx
+            output/datamodel_fr.docx
+            output/ER-GCOVER.svg

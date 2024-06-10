@@ -1,8 +1,8 @@
-name: Build PDF with Pandoc
+name: build
 
 
 on:
-  workflow_dispatch:
+  workflow_call:
   push:
     branches:
       - master
@@ -12,6 +12,7 @@ on:
       - master
       - develop
       - 'releases/**'
+
 
 jobs:
   build-markdown:
@@ -25,7 +26,8 @@ jobs:
 
       - name: Install Pandoc
         run: sudo apt-get install -y pandoc
-      - uses: actions/checkout@v4
+      - name: Checkout coded_domains
+        uses: actions/checkout@v4
       - name: Install miniconda
         uses: conda-incubator/setup-miniconda@v3
         with:
