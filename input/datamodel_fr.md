@@ -1,5 +1,5 @@
 
-# Modèle de donnée géologique, Révision 3.5 #
+# Modèle de donnée géologique, Révision 3.1 #
 
 
 
