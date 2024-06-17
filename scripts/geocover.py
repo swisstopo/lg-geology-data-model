@@ -20,8 +20,54 @@ DEFAULT_WORKSPACE = r"D:/connections/GCOVERP@osa.sde"
 curdir = os.path.join(os.path.dirname(os.path.realpath(__file__)), "..")
 DEFAULT_OUTPUT_DIR = os.path.abspath(os.path.join(curdir, "exports"))
 
+GDB_PATH = "/media/marco/G12/GEODATA/20240503_0300_2030-12-31.gdb"
+USED_SYMBOLS_PATH = "layer_used_symbols.json"
 
-@click.group(help="Command to work with TOPGIS/GeoCover ArcSDE database")
+
+COMMANDS_REQUIRING_ARCPY = ['export', 'schema']
+def check_library():
+    try:
+        import arcpy
+        return True
+    except ImportError:
+        return False
+
+class CommandDisabled(click.ClickException):
+    def __init__(self, message):
+        super().__init__(message)
+
+class ConditionalGroup(click.Group):
+    def __init__(self, *args, **kwargs):
+        self.condition = kwargs.pop('condition', lambda: True)
+        super().__init__(*args, **kwargs)
+
+    def get_command(self, ctx, cmd_name):
+        if self.condition():
+            return super().get_command(ctx, cmd_name)
+        else:
+            if cmd_name in COMMANDS_REQUIRING_ARCPY:
+                raise CommandDisabled(f"The command '{cmd_name}' is disabled because the 'arcpy' library is not installed.")
+            return super().get_command(ctx, cmd_name)
+
+    def invoke(self, ctx):
+        try:
+            super().invoke(ctx)
+        except CommandDisabled as e:
+            ctx.fail(e.message)
+
+def _arg_split(ctx, param, value):
+    # split columns by ',' and remove whitespace
+    try:
+        bbox = list(map(float, [c.strip() for c in value.split(",")]))
+        # validate
+        if len(bbox) != 4:
+            raise ValueError("bbox must have four values")
+    except ValueError as e:
+        raise click.BadOptionUsage("resolution", f"--bbox: {e}")
+
+    return bbox
+@click.group(cls=ConditionalGroup, condition=check_library, help="Command to work with TOPGIS/GeoCover ArcSDE database")
+
 def geocover():
     pass
 
@@ -56,7 +102,6 @@ def geocover():
     default=DEFAULT_WORKSPACE,
 )
 def export(output_dir, workspace, log_level):
-    import arcpy
 
     from encoder import ExtendedEncoder
     from schema import GeocoverSchema
@@ -171,7 +216,7 @@ def export(output_dir, workspace, log_level):
     help="Log level",
 )
 def schema(output_dir, workspace, log_level):
-    import arcpy
+
     from encoder import ExtendedEncoder
     from schema import GeocoverSchema
 
@@ -258,6 +303,64 @@ def geolcode(output_file, workspace, log_level):
     if ext == "xlsx":
         df.to_excel(output_file)
 
+@geocover.command(
+    "filter", context_settings={"show_default": True}, help="Filter features by symbol rules"
+)
+@click.option(
+    "-b",
+    "--bbox",
+    required=False,
+    nargs=1,
+    type=click.STRING,
+    callback=_arg_split,
+    default="2725000,1158000,742500,1170000",  # Vals
+    help="bounding box to filter",
+)
+@click.option(
+    "--gdb-path", type=click.Path(exists=True), default=GDB_PATH, help="GDB file"
+)
+@click.option(
+    "-o",
+    "--output",
+    type=click.Path(exists=False),
+    default=DEFAULT_OUTPUT_DIR,
+    help="Used symbols file",
+)
+@click.option(
+    "-l",
+    "--log-level",
+    default="INFO",
+    type=click.Choice(
+        ["DEBUG", "INFO", "WARNING", "ERROR", "CRITICAL"], case_sensitive=True
+    ),
+    help="Log level (DEBUG, INFO, WARNING, ERROR, CRITICAL)",
+)
+def filter_symbols(bbox, gdb_path, output, log_level):
+
+    from filter_symbols import process_layers
+    #configure_logging(log_level)
+
+    dirname = os.path.dirname(__file__)
+    config_json = os.path.join(dirname, "layer_symbols.json")
+    now = datetime.now()
+
+    results = {"bbox": bbox, "gdb_path": gdb_path, "datetime": now.isoformat()}
+
+    extent = box(*bbox)
+
+    with open(config_json, "r") as f:
+        layers = json.load(f)
+
+    results["layers"] = process_layers(layers, gdb_path, extent)
+
+    if output is not None:
+        logging.info(f"Writing to {output}")
+
+        with open(output, "w", encoding="utf-8") as f:
+            # Serialize the data and write it to the file
+            json.dump(results, f, ensure_ascii=False, indent=4)
+    else:
+        print(json.dumps(results, indent=4))
 
 if __name__ == "__main__":
     geocover()
