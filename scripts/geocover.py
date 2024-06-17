@@ -385,7 +385,7 @@ def filter_symbols(bbox, gdb_path, output, log_level):
     "-w",
     "--workspace",
     type=click.Path(exists=True),
-    default=r"D:\ArcGIS\GOTOP\GOTOP\GOTOP.aprx",
+    default=r"D:\ArcGIS\GCOVERP.aprx",
     help="ESRI ArcGis Pro project with layers file",
 )
 @click.option(
