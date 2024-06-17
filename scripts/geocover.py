@@ -24,21 +24,26 @@ GDB_PATH = "/media/marco/G12/GEODATA/20240503_0300_2030-12-31.gdb"
 USED_SYMBOLS_PATH = "layer_used_symbols.json"
 
 
-COMMANDS_REQUIRING_ARCPY = ['export', 'schema']
+COMMANDS_REQUIRING_ARCPY = ["export", "schema", "rules"]
+
+
 def check_library():
     try:
         import arcpy
+
         return True
     except ImportError:
         return False
+
 
 class CommandDisabled(click.ClickException):
     def __init__(self, message):
         super().__init__(message)
 
+
 class ConditionalGroup(click.Group):
     def __init__(self, *args, **kwargs):
-        self.condition = kwargs.pop('condition', lambda: True)
+        self.condition = kwargs.pop("condition", lambda: True)
         super().__init__(*args, **kwargs)
 
     def get_command(self, ctx, cmd_name):
@@ -46,7 +51,9 @@ class ConditionalGroup(click.Group):
             return super().get_command(ctx, cmd_name)
         else:
             if cmd_name in COMMANDS_REQUIRING_ARCPY:
-                raise CommandDisabled(f"The command '{cmd_name}' is disabled because the 'arcpy' library is not installed.")
+                raise CommandDisabled(
+                    f"The command '{cmd_name}' is disabled because the 'arcpy' library is not installed."
+                )
             return super().get_command(ctx, cmd_name)
 
     def invoke(self, ctx):
@@ -54,6 +61,7 @@ class ConditionalGroup(click.Group):
             super().invoke(ctx)
         except CommandDisabled as e:
             ctx.fail(e.message)
+
 
 def _arg_split(ctx, param, value):
     # split columns by ',' and remove whitespace
@@ -66,8 +74,13 @@ def _arg_split(ctx, param, value):
         raise click.BadOptionUsage("resolution", f"--bbox: {e}")
 
     return bbox
-@click.group(cls=ConditionalGroup, condition=check_library, help="Command to work with TOPGIS/GeoCover ArcSDE database")
 
+
+@click.group(
+    cls=ConditionalGroup,
+    condition=check_library,
+    help="Command to work with TOPGIS/GeoCover ArcSDE database",
+)
 def geocover():
     pass
 
@@ -102,7 +115,6 @@ def geocover():
     default=DEFAULT_WORKSPACE,
 )
 def export(output_dir, workspace, log_level):
-
     from encoder import ExtendedEncoder
     from schema import GeocoverSchema
 
@@ -216,7 +228,6 @@ def export(output_dir, workspace, log_level):
     help="Log level",
 )
 def schema(output_dir, workspace, log_level):
-
     from encoder import ExtendedEncoder
     from schema import GeocoverSchema
 
@@ -303,8 +314,11 @@ def geolcode(output_file, workspace, log_level):
     if ext == "xlsx":
         df.to_excel(output_file)
 
+
 @geocover.command(
-    "filter", context_settings={"show_default": True}, help="Filter features by symbol rules"
+    "filter",
+    context_settings={"show_default": True},
+    help="Filter features by symbol rules",
 )
 @click.option(
     "-b",
@@ -336,9 +350,8 @@ def geolcode(output_file, workspace, log_level):
     help="Log level (DEBUG, INFO, WARNING, ERROR, CRITICAL)",
 )
 def filter_symbols(bbox, gdb_path, output, log_level):
-
     from filter_symbols import process_layers
-    #configure_logging(log_level)
+    # configure_logging(log_level)
 
     dirname = os.path.dirname(__file__)
     config_json = os.path.join(dirname, "layer_symbols.json")
@@ -361,6 +374,79 @@ def filter_symbols(bbox, gdb_path, output, log_level):
             json.dump(results, f, ensure_ascii=False, indent=4)
     else:
         print(json.dumps(results, indent=4))
+
+
+@geocover.command(
+    "rules",
+    context_settings={"show_default": True},
+    help="Export ArcGis Pro layer symbology rules",
+)
+@click.option(
+    "-w",
+    "--workspace",
+    type=click.Path(exists=True),
+    default=r"D:\ArcGIS\GOTOP\GOTOP\GOTOP.aprx",
+    help="ESRI ArcGis Pro project with layers file",
+)
+@click.option(
+    "-o",
+    "--output",
+    type=click.Path(exists=False),
+    default=DEFAULT_OUTPUT_DIR,
+    help="Used symbols file",
+)
+@click.option(
+    "-l",
+    "--log-level",
+    default="INFO",
+    type=click.Choice(
+        ["DEBUG", "INFO", "WARNING", "ERROR", "CRITICAL"], case_sensitive=True
+    ),
+    help="Log level (DEBUG, INFO, WARNING, ERROR, CRITICAL)",
+)
+def export_rules(workspace, output, log_level):
+    # Define the path to your ArcGIS Pro project
+    import arcpy
+    from export_symbol_rules import process_layers
+
+    # aprx = arcpy.mp.ArcGISProject()
+
+    fields = ["OBJECTID", "MSH_MAP_TITLE", "MSH_MAP_NBR"]
+    try:
+        aprx = arcpy.mp.ArcGISProject("CURRENT")
+    except OSError as e:
+        logging.error(e)
+        project_path = workspace
+
+        # Open the ArcGIS Pro project
+        aprx = arcpy.mp.ArcGISProject(workspace)
+
+    m = aprx.listMaps()[0]
+
+    mapsheet_lyr = None
+
+    """
+    aprx = arcpy.mp.ArcGISProject(r"Template_File_Path")
+    
+     Documents\ArcGIS\ProjectTemplates
+
+aprx.saveACopy(r"New_File_Path")"""
+
+    res = {}
+    for l in m.listLayers():
+        if l.isFeatureLayer:
+            attributes = process_layers(l)
+
+            res[l.name] = attributes
+
+    output = os.path.join(output, "used_symbols.json")
+
+    logging.info(f"Writing to {output}")
+
+    with open(output, "w", encoding="utf-8") as f:
+        # Serialize the data and write it to the file
+        json.dump(res, f, ensure_ascii=False, indent=4)
+
 
 if __name__ == "__main__":
     geocover()
