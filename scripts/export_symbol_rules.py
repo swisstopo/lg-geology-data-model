@@ -75,13 +75,16 @@ def process_layers(l):
                     logging.debug(f"   {itm.label}")
                     logging.debug(f"   {itm.values}")
                     dd["labels"].append(itm.label)
-                    dd["values"].append(itm.values)
+                    cleaned_list = [
+                        [None if item == "<Null>" else item for item in sublist]
+                        for sublist in itm.values
+                    ]
+
+                    logging.debug(cleaned_list)
+                    dd["values"].append(cleaned_list)
             d["renderer"] = dd
         else:
             logging.error(f"Layer {l.name}: {sym.renderer.type}")
+            return d
 
     return d
-
-
-
-

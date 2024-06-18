@@ -27,6 +27,20 @@ USED_SYMBOLS_PATH = "layer_used_symbols.json"
 COMMANDS_REQUIRING_ARCPY = ["export", "schema", "rules"]
 
 
+def configure_logging(level):
+    numeric_level = getattr(logging, level.upper(), None)
+    if not isinstance(numeric_level, int):
+        raise ValueError(f"Invalid log level: {level}")
+
+    logging.basicConfig(
+        level=numeric_level
+    )  # Initial configuration (if no handlers exist)
+    logging.getLogger().setLevel(
+        numeric_level
+    )  # Set the root logger's level explicitly
+    logging.info(f"Logging level set to {level}")
+
+
 def check_library():
     try:
         import arcpy
@@ -79,16 +93,16 @@ def _arg_split(ctx, param, value):
 @click.group(
     cls=ConditionalGroup,
     condition=check_library,
-    help="Command to work with TOPGIS/GeoCover ArcSDE database",
 )
 def geocover():
+    """Command to work with TOPGIS/GeoCover ArcSDE database or ArcGis Pro project"""
     pass
 
 
 @geocover.command(
     "export",
     context_settings={"show_default": True},
-    help="Export some ArcSDE data for use in datamodel",
+    help="Export ArcSDE data to generate the datamodel",
 )
 @click.option(
     "-l",
@@ -262,7 +276,9 @@ def schema(output_dir, workspace, log_level):
 
 
 @geocover.command(
-    "geolcode", context_settings={"show_default": True}, help="Dumps all geol codes"
+    "geolcode",
+    context_settings={"show_default": True},
+    help="Dumps all geol codes currently in use",
 )
 @click.option(
     "-o",
@@ -409,41 +425,32 @@ def export_rules(workspace, output, log_level):
     import arcpy
     from export_symbol_rules import process_layers
 
-    # aprx = arcpy.mp.ArcGISProject()
+    configure_logging(log_level)
 
     fields = ["OBJECTID", "MSH_MAP_TITLE", "MSH_MAP_NBR"]
     try:
-        aprx = arcpy.mp.ArcGISProject("CURRENT")
-    except OSError as e:
-        logging.error(e)
-        project_path = workspace
-
         # Open the ArcGIS Pro project
+        project_path = workspace
         aprx = arcpy.mp.ArcGISProject(workspace)
+    except OSError as e:
+        logging.error(f"Cannot open project {workspace}. Exiting: {e}")
+        sys.exit()
 
     m = aprx.listMaps()[0]
 
     mapsheet_lyr = None
 
-    """
-    aprx = arcpy.mp.ArcGISProject(r"Template_File_Path")
-    
-     Documents\ArcGIS\ProjectTemplates
-
-aprx.saveACopy(r"New_File_Path")"""
-
     res = {}
     for l in m.listLayers():
         if l.isFeatureLayer:
             attributes = process_layers(l)
-
             res[l.name] = attributes
 
-    output = os.path.join(output, "used_symbols.json")
+    output_fname = os.path.join(output, "used_symbols.json")
 
-    logging.info(f"Writing to {output}")
+    logging.info(f"Writing to {output_fname}")
 
-    with open(output, "w", encoding="utf-8") as f:
+    with open(output_fname, "w", encoding="utf-8") as f:
         # Serialize the data and write it to the file
         json.dump(res, f, ensure_ascii=False, indent=4)
 
