@@ -61,14 +61,19 @@ class ConditionalGroup(click.Group):
         super().__init__(*args, **kwargs)
 
     def get_command(self, ctx, cmd_name):
-        if self.condition():
-            return super().get_command(ctx, cmd_name)
-        else:
-            if cmd_name in COMMANDS_REQUIRING_ARCPY:
-                raise CommandDisabled(
-                    f"The command '{cmd_name}' is disabled because the 'arcpy' library is not installed."
-                )
-            return super().get_command(ctx, cmd_name)
+        command = super().get_command(ctx, cmd_name)
+        if command and not self.condition() and cmd_name in COMMANDS_REQUIRING_ARCPY:
+            raise CommandDisabled(
+                "The command 'conditional-command' is disabled because the required library is not installed."
+            )
+        return command
+
+    def list_commands(self, ctx):
+        commands = super().list_commands(ctx)
+        if not self.condition():
+            for cmd in COMMANDS_REQUIRING_ARCPY:
+                commands.remove(cmd)
+        return commands
 
     def invoke(self, ctx):
         try:
@@ -93,6 +98,7 @@ def _arg_split(ctx, param, value):
 @click.group(
     cls=ConditionalGroup,
     condition=check_library,
+    help=f"Command to work with TOPGIS/GeoCover ArcSDE database or ArcGis Pro project. The commands '{"','".join(COMMANDS_REQUIRING_ARCPY)}' require `arcpy`",
 )
 def geocover():
     """Command to work with TOPGIS/GeoCover ArcSDE database or ArcGis Pro project"""
@@ -115,6 +121,12 @@ def geocover():
     help="Log level",
 )
 @click.option(
+    "--dry-run",
+    is_flag=True,
+    default=False,
+    help="Run the command without making any changes.",
+)
+@click.option(
     "-o",
     "--output-dir",
     type=click.Path(exists=True, file_okay=False),
@@ -128,7 +140,7 @@ def geocover():
     help="Workspace (SDE string or GDB)",
     default=DEFAULT_WORKSPACE,
 )
-def export(output_dir, workspace, log_level):
+def export(output_dir, workspace, log_level, dry_run):
     from encoder import ExtendedEncoder
     from schema import GeocoverSchema
 
@@ -204,18 +216,24 @@ def export(output_dir, workspace, log_level):
             logger.info(
                 f"Exporting to {short_name}.csv, {short_name}.json and 'export_tables.xlsx' (sheet={short_name.upper()}"
             )
-            try:
-                df.to_csv(os.path.join(output_dir, f"{short_name}.csv"), index=True)
-                df.to_json(os.path.join(output_dir, f"{short_name}.json"), index=True)
-                df.to_excel(writer, sheet_name=short_name.upper())
-            except PermissionError as e:
-                logger.error(
-                    f"Permission error: 'export_tables.xlsx' is probably already opened"
-                )
+            if not dry_run:
+                try:
+                    df.to_csv(os.path.join(output_dir, f"{short_name}.csv"), index=True)
+                    df.to_json(
+                        os.path.join(output_dir, f"{short_name}.json"), index=True
+                    )
+                    df.to_excel(writer, sheet_name=short_name.upper())
+                except PermissionError as e:
+                    logger.error(
+                        f"Permission error: 'export_tables.xlsx' is probably already opened"
+                    )
+            logger.info("Dry run. Not writing anything")
 
 
 @geocover.command(
-    "schema", context_settings={"show_default": True}, help="Dumps ArcSDE schema"
+    "schema",
+    context_settings={"show_default": True},
+    help="Dumps ArcSDE schema as PlantUML file",
 )
 @click.option(
     "-o",
