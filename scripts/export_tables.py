@@ -10,6 +10,10 @@ logging.basicConfig(format="%(name)s - %(levelname)s - %(message)s", level=loggi
 
 TREE_TABLES = ["GC_LITHO", "GC_LITSTRAT", "GC_CHRONO", "GC_TECTO"]
 
+TABLES = ["GC_CHARCAT", "GC_ADMIXTURE", "GC_COMPOSIT"]
+
+ALL_TABLES = TABLES + TREE_TABLES
+
 DEFAULT_WORKSPACE = r"h:/connections/GCOVERP@osa.sde"
 
 try:
@@ -66,12 +70,13 @@ def main(output_dir, workspace):
     tables = []
 
     for table in arcpy.ListTables():
+        logging.info(table)
         if table.endswith("_I"):
             continue
         prefix, short_name = table.split(".")
-        if short_name not in TREE_TABLES:
+        if short_name not in ALL_TABLES:
             continue
-        tables.append((table, short_name.replace('GC_','')))
+        tables.append((table, short_name.replace("GC_", "")))
 
     if not os.path.isdir(output_dir):
         os.makedirs(output_dir)
@@ -97,15 +102,17 @@ def main(output_dir, workspace):
             sys.exit(2)
         for table_name, short_name in tables:
             logging.info(table_name)
-
+            sort_keys = ["GEOL_CODE_INT"]
             try:
                 df = arcgis_table_to_df(table_name, input_fields=fields)
-                df["PARENT_REF"] = df["PARENT_REF"].fillna(0)
+                if "PARENT_REF" in df.columns:
+                    df["PARENT_REF"] = df["PARENT_REF"].fillna(0)
+                    sort_keys = ["GEOL_CODE_INT", "PARENT_REF"]
             except KeyError as e:
                 logging.error(f"Table {table_name} has nokey: {e}")
                 continue
 
-            df.sort_values(by=["GEOL_CODE_INT", "PARENT_REF"], inplace=True)
+            df.sort_values(by=sort_keys, inplace=True)
             # df = df.reindex(df.columns.union(fields, sort=False), axis=1, fill_value=0)
 
             try:

@@ -26,6 +26,8 @@ TREE_TABLES = [
     "TOPGIS_GC.GC_CHRONO",
     "TOPGIS_GC.GC_TECTO",
     "TOPGIS_GC.GC_ADMIXTURE",  # Not a hierarchical table
+    "TOPGIS_GC.GC_CHARCAT",  # Not a hierarchical table
+    "TOPGIS_GC.GC_COMPOSIT",  # Not a hierarchical table
 ]
 
 TREE_TABLE_FIELD = list(

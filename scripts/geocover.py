@@ -129,6 +129,7 @@ def geocover():
     default=DEFAULT_WORKSPACE,
 )
 def export(output_dir, workspace, log_level):
+    import arcpy
     from encoder import ExtendedEncoder
     from schema import GeocoverSchema
 
@@ -242,6 +243,7 @@ def export(output_dir, workspace, log_level):
     help="Log level",
 )
 def schema(output_dir, workspace, log_level):
+    import arcpy
     from encoder import ExtendedEncoder
     from schema import GeocoverSchema
 
