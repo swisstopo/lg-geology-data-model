@@ -415,6 +415,7 @@ def filter_symbols(bbox, geometry, gdb_path, output, log_level, symbols):
     from shapely import box
     from filter_symbols import process_layers_symbols
     import geopandas as gpd
+    import pandas as pd
 
     configure_logging(log_level)
 
@@ -447,9 +448,28 @@ def filter_symbols(bbox, geometry, gdb_path, output, log_level, symbols):
     if output is not None:
         logging.info(f"Writing to {output}")
 
-        with open(output, "w", encoding="utf-8") as f:
-            # Serialize the data and write it to the file
-            json.dump(results, f, ensure_ascii=False, indent=4)
+        if output.endswith(".json"):
+            with open(output, "w", encoding="utf-8") as f:
+                # Serialize the data and write it to the file
+                json.dump(results, f, ensure_ascii=False, indent=4)
+        elif output.endswith(".csv") or output.endswith(".xlsx"):
+            df = pd.DataFrame.from_dict(results["layers"], orient="index")
+            data = results["layers"]
+
+            flattened_data = [
+                (k1, k2, v)
+                for k1, subdict in data.items()
+                for k2, v in subdict.get("rules", {}).items()
+            ]
+
+            # Convert to a DataFrame
+            df = pd.DataFrame(flattened_data, columns=["Layer", "Rule", "Count"])
+
+            df = df[df.Count != 0]
+
+            with pd.ExcelWriter(output) as writer:
+                df.to_excel(writer, sheet_name="RULES")
+
     else:
         print(json.dumps(results, indent=4))
 
