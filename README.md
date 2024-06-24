@@ -157,3 +157,14 @@ Convertir en image :
 Convertir en PDF (A3)
 
     cairosvg  -o ER-GCOVER.pdf    --background '#EEEEFF' --output-width   4191   --output-height 2972 ER-GCOVER.svg
+
+# Autres fonctions
+
+## Extraire les règles des layerfiles
+
+    python geocover.py rules -l INFO
+
+## Compter les features dans un périmètre
+
+
+    python geocover.py filter --geometry ..\exports\san_bernardino.geojson  --gdb-path  I:\backup\GCOVER\daily\20240425_0300_2030-12-31.gdb  -s ..\exports\layer_symbols_rules.json

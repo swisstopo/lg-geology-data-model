@@ -403,6 +403,13 @@ def geolcode(output_file, workspace, log_level):
     default=LAYERS_SYMBOL_RULES,
 )
 @click.option(
+    "-d",
+    "--drop",
+    default=False,
+    help="Drop rules where features are absent",
+    is_flag=True,
+)
+@click.option(
     "-l",
     "--log-level",
     default="INFO",
@@ -411,7 +418,7 @@ def geolcode(output_file, workspace, log_level):
     ),
     help="Log level (DEBUG, INFO, WARNING, ERROR, CRITICAL)",
 )
-def filter_symbols(bbox, geometry, gdb_path, output, log_level, symbols):
+def filter_symbols(bbox, geometry, gdb_path, output, log_level, symbols, drop):
     from shapely import box
     from filter_symbols import process_layers_symbols
     import geopandas as gpd
@@ -464,8 +471,8 @@ def filter_symbols(bbox, geometry, gdb_path, output, log_level, symbols):
 
             # Convert to a DataFrame
             df = pd.DataFrame(flattened_data, columns=["Layer", "Rule", "Count"])
-
-            df = df[df.Count != 0]
+            if drop:
+                df = df[df.Count != 0]
 
             with pd.ExcelWriter(output) as writer:
                 df.to_excel(writer, sheet_name="RULES")
