@@ -111,7 +111,7 @@ def main(output_dir, workspace):
             except KeyError as e:
                 logging.error(f"Table {table_name} has nokey: {e}")
                 continue
-
+            logging.info(f"Sort keys: {sort_keys}")
             df.sort_values(by=sort_keys, inplace=True)
             # df = df.reindex(df.columns.union(fields, sort=False), axis=1, fill_value=0)
 

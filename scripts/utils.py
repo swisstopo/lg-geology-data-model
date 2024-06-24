@@ -2,6 +2,7 @@ import json
 import logging
 import os
 
+from collections import OrderedDict
 
 import pandas as pd
 
@@ -22,13 +23,14 @@ def arcgis_table_to_df(in_fc, input_fields=None, query=""):
     :returns - pandas.DataFrame"""
     OIDFieldName = arcpy.Describe(in_fc).OIDFieldName
     available_fields = [field.name for field in arcpy.ListFields(in_fc)]
-    logging.debug(available_fields)
-    logging.debug(input_fields)
+    logging.debug(f"Available fields: {available_fields}")
+    logging.debug(f"Input fields: {input_fields}")
     if input_fields:
-        final_fields = list(set([OIDFieldName] + input_fields) & set(available_fields))
+        # Preserve order of the 'input_fields'
+        final_fields = list(OrderedDict.fromkeys(item for item in input_fields if item in available_fields))
     else:
         final_fields = available_fields
-    logging.debug("Intersection:", final_fields)
+    logging.debug(f"intersection: {final_fields}")
     data = [
         row for row in arcpy.da.SearchCursor(in_fc, final_fields, where_clause=query)
     ]

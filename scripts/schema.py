@@ -30,11 +30,12 @@ TREE_TABLES = [
     "TOPGIS_GC.GC_COMPOSIT",  # Not a hierarchical table
 ]
 
+# The order will be preserved in the export
 TREE_TABLE_FIELD = list(
     (
         "OBJECTID",
-        "GEOL_CODE",
         "GEOL_CODE_INT",
+        "GEOL_CODE",
         "GERMAN",
         "FMAT_LITSTRAT",
         "GERMAN",
@@ -152,8 +153,13 @@ class GeocoverSchema:
         for table_name in list(filter(table_filter, self.__tables_list)):
             logging.info(table_name)
 
+            sort_keys = ["GEOL_CODE_INT"]
             try:
                 df = arcgis_table_to_df(table_name, input_fields=TREE_TABLE_FIELD)
+                if "PARENT_REF" in df.columns:
+                    df["PARENT_REF"] = df["PARENT_REF"].fillna(0)
+                    sort_keys = ["GEOL_CODE_INT", "PARENT_REF"]
+                df.sort_values(by=sort_keys, inplace=True)
                 self.__tables[table_name] = df
             except KeyError as e:
                 logging.error(f"Table {table_name} has nokey: {e}")
