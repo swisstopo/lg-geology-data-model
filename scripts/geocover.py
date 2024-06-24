@@ -21,7 +21,9 @@ curdir = os.path.join(os.path.dirname(os.path.realpath(__file__)), "..")
 DEFAULT_OUTPUT_DIR = os.path.abspath(os.path.join(curdir, "exports"))
 
 GDB_PATH = "/media/marco/G12/GEODATA/20240503_0300_2030-12-31.gdb"
-USED_SYMBOLS_PATH = "layer_used_symbols.json"
+USED_SYMBOLS_PATH = os.path.join(DEFAULT_OUTPUT_DIR, "layer_used_symbols.json")
+
+LAYERS_SYMBOL_RULES = "layer_symbols_rules.json"
 
 
 COMMANDS_REQUIRING_ARCPY = ["export", "schema", "rules"]
@@ -48,6 +50,30 @@ def check_library():
         return True
     except ImportError:
         return False
+
+
+class MutuallyExclusiveOption(click.Option):
+    def __init__(self, *args, **kwargs):
+        self.mutually_exclusive = set(kwargs.pop("mutually_exclusive", []))
+        help = kwargs.get("help", "")
+        if self.mutually_exclusive:
+            ex_str = ", ".join(self.mutually_exclusive)
+            kwargs["help"] = help + (
+                " NOTE: This argument is mutually exclusive with "
+                " arguments: [" + ex_str + "]."
+            )
+        super().__init__(*args, **kwargs)
+
+    def handle_parse_result(self, ctx, opts, args):
+        current_opt = self.name
+        if current_opt in opts and self.mutually_exclusive:
+            for other_opt in self.mutually_exclusive:
+                if other_opt in opts:
+                    raise click.UsageError(
+                        f"Illegal usage: `{current_opt}` is mutually exclusive with "
+                        f"`{other_opt}`."
+                    )
+        return super().handle_parse_result(ctx, opts, args)
 
 
 class CommandDisabled(click.ClickException):
@@ -345,8 +371,18 @@ def geolcode(output_file, workspace, log_level):
     nargs=1,
     type=click.STRING,
     callback=_arg_split,
+    cls=MutuallyExclusiveOption,
+    mutually_exclusive=["geometry"],
     default="2725000,1158000,742500,1170000",  # Vals
-    help="bounding box to filter",
+    help="Filter with a bbox",
+)
+@click.option(
+    "--geometry",
+    type=click.Path(exists=True, file_okay=True),
+    cls=MutuallyExclusiveOption,
+    mutually_exclusive=["bbox"],
+    help="Filter with a geojson geometry.",
+    default="../exports/mapsheets.geojson",
 )
 @click.option(
     "--gdb-path", type=click.Path(exists=True), default=GDB_PATH, help="GDB file"
@@ -354,9 +390,17 @@ def geolcode(output_file, workspace, log_level):
 @click.option(
     "-o",
     "--output",
-    type=click.Path(exists=False),
-    default=DEFAULT_OUTPUT_DIR,
-    help="Used symbols file",
+    type=click.Path(file_okay=True),
+    default=USED_SYMBOLS_PATH,
+    help="Used filtered symbols file",
+)
+@click.option(
+    "-s",
+    "--symbols",
+    type=click.Path(exists=True, file_okay=True),
+    help="The symbols file",
+    required=True,
+    default=LAYERS_SYMBOL_RULES,
 )
 @click.option(
     "-l",
@@ -367,22 +411,38 @@ def geolcode(output_file, workspace, log_level):
     ),
     help="Log level (DEBUG, INFO, WARNING, ERROR, CRITICAL)",
 )
-def filter_symbols(bbox, gdb_path, output, log_level):
-    from filter_symbols import process_layers
-    # configure_logging(log_level)
+def filter_symbols(bbox, geometry, gdb_path, output, log_level, symbols):
+    from shapely import box
+    from filter_symbols import process_layers_symbols
+    import geopandas as gpd
+
+    configure_logging(log_level)
 
     dirname = os.path.dirname(__file__)
-    config_json = os.path.join(dirname, "layer_symbols.json")
-    now = datetime.now()
+    config_json = symbols
+    now = datetime.datetime.now()
 
     results = {"bbox": bbox, "gdb_path": gdb_path, "datetime": now.isoformat()}
 
-    extent = box(*bbox)
+    logging.info(f"Mask: {geometry}")
+
+    if geometry:
+        try:
+            # Read the mask file (shapefile or GeoJSON)
+            mask_gdf = gpd.read_file(geometry)  # or 'path_to_mask_file.geojson'
+            # Assuming the mask is a single geometry, you can dissolve to create a single unified geometry
+            mask_geom = mask_gdf.unary_union
+        except Exception as e:
+            logging.error(e)
+    else:
+        mask_geom = box(*bbox)
 
     with open(config_json, "r") as f:
         layers = json.load(f)
 
-    results["layers"] = process_layers(layers, gdb_path, extent)
+    logging.debug(layers.keys())
+
+    results["layers"] = process_layers_symbols(layers, gdb_path, mask_geom)
 
     if output is not None:
         logging.info(f"Writing to {output}")
@@ -448,7 +508,7 @@ def export_rules(workspace, output, log_level):
             attributes = process_layers(l)
             res[l.name] = attributes
 
-    output_fname = os.path.join(output, "used_symbols.json")
+    output_fname = os.path.join(output, LAYERS_SYMBOL_RULES)
 
     logging.info(f"Writing to {output_fname}")
 

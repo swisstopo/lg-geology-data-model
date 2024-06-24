@@ -23,6 +23,8 @@ layername = "GC_POINT_OBJECTS"
 bivio = box(2760000, 1146000, 2777500, 1158000)
 vals = box(2725000, 1158000, 2742500, 1170000)
 
+logging.basicConfig(format="%(name)s - %(levelname)s - %(message)s", level=logging.INFO)
+
 
 def cleanup(x):
     if x == "<Null>":
@@ -115,15 +117,18 @@ def process_layer(layername, gdf, data, all_value=True):
     return {"rules": results}
 
 
-def process_layers(layers, gdb_path, extent):
+def process_layers_symbols(layers, gdb_path, mask_geom):
     results = {}
     dataset = None
+
     for layername in layers.keys():
         logging.info(f"--- {layername} ---")
         data = layers.get(layername)
         logging.debug(data)
 
         datasource = data.get("dataSource")
+
+        logging.info(f"datasource={datasource}")
 
         dataset = None
         m = re.findall(",Dataset=(.*)", datasource)
@@ -142,7 +147,15 @@ def process_layers(layers, gdb_path, extent):
             logging.error(f"    No dataset found for {layername}")
             continue
 
-        gdf = gpd.read_file(gdb_path, layer=dataset, bbox=extent)
+        logging.info(dataset)
+        bbox = mask_geom.boundary
+        logging.debug(bbox)
+
+        unfiltered_gdf = gpd.read_file(gdb_path, layer=dataset, bbox=bbox)
+
+        gdf = unfiltered_gdf[unfiltered_gdf.intersects(mask_geom)]
+
+        logging.debug(gdf)
 
         # TODO: this should be dynamic
         if "Bedrock_HARMOS" in layername:
@@ -239,7 +252,7 @@ def main(bbox, gdb_path, output, log_level):
     with open(config_json, "r") as f:
         layers = json.load(f)
 
-    results["layers"] = process_layers(layers, gdb_path, extent)
+    results["layers"] = process_layers_symbols(layers, gdb_path, extent)
 
     if output is not None:
         logging.info(f"Writing to {output}")

@@ -82,7 +82,10 @@ def process_layers(l):
 
                     logging.debug(cleaned_list)
                     dd["values"].append(cleaned_list)
-            d["renderer"] = dd
+            try:
+                d["renderer"] = dd
+            except Exception as e:
+                logging.error(f"Cannot add symbology: {l.name}: {e}")
         else:
             logging.error(f"Layer {l.name}: {sym.renderer.type}")
             return d
