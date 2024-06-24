@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "san_bernardino",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::2056" } },
+"features": [
+{ "type": "Feature", "properties": { "id": 2, "name": "San Bernardino" }, "geometry": { "type": "MultiPolygon", "coordinates": [ [ [ [ 2729199.76, 1153951.26 ], [ 2731392.5, 1154872.67 ], [ 2734704.94, 1155245.91 ], [ 2736174.54, 1154102.88 ], [ 2736909.34, 1151408.61 ], [ 2737725.79, 1147897.9 ], [ 2737947.4, 1145915.1 ], [ 2735241.46, 1145518.54 ], [ 2730354.45, 1145693.49 ], [ 2727963.43, 1146614.91 ], [ 2729199.76, 1153951.26 ] ] ] ] } }
+]
+}
