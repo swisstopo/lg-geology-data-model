@@ -21,14 +21,13 @@ def get_selected_features(layer, esri_geom=True):
     # Get the geometry of the first selected feature
     selected_geometry = selected_features[0][1]
 
-    # Convert the ESRI JSON to a Geometry object
-    esri_json_str = selected_geometry.JSON
-    esri_geometry = Geometry(esri_json_str)
-
     if esri_geom:
-        return esri_geometry
+        return selected_geometry
 
     else:
+        # Convert the ESRI JSON to a Geometry object
+        esri_json_str = selected_geometry.JSON
+        esri_geometry = Geometry(esri_json_str)
 
         # Convert the ESRI Geometry to GeoJSON
         geojson_dict = esri_geometry.__geo_interface__
