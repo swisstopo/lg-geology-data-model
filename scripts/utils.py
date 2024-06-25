@@ -14,7 +14,7 @@ except ImportError:
     print("No arcpy")
 
 
-def arcgis_table_to_df(in_fc, input_fields=None, query=""):
+def arcgis_table_to_df(in_fc, input_fields=None, query="", spatial_filter=None):
     """Function will convert an arcgis table into a pandas dataframe with an object ID index, and the selected
     input fields using an arcpy.da.SearchCursor.
     :param - in_fc - input feature class or table to convert
@@ -32,7 +32,8 @@ def arcgis_table_to_df(in_fc, input_fields=None, query=""):
         final_fields = available_fields
     logging.debug(f"intersection: {final_fields}")
     data = [
-        row for row in arcpy.da.SearchCursor(in_fc, final_fields, where_clause=query)
+        row for row in arcpy.da.SearchCursor(in_fc, final_fields, where_clause=query,  spatial_filter=spatial_filter,
+            search_order="SPATIALFIRST")
     ]
     fc_dataframe = pd.DataFrame(data, columns=final_fields)
     fc_dataframe = fc_dataframe.set_index(OIDFieldName, drop=True)

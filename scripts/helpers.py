@@ -5,14 +5,16 @@ from shapely.geometry import shape
 from arcgis.geometry import Geometry
 
 
-
 def get_selected_features(layer, esri_geom=True):
-
     # Get the selected feature IDs as strings
     selected_oids = set(map(str, arcpy.Describe(layer).FIDSet.split(";")))
 
     # Get the selected features using a search cursor
-    selected_features = [row for row in arcpy.da.SearchCursor(layer, ["OID@", "SHAPE@"]) if str(row[0]) in selected_oids]
+    selected_features = [
+        row
+        for row in arcpy.da.SearchCursor(layer, ["OID@", "SHAPE@"])
+        if str(row[0]) in selected_oids
+    ]
 
     # Ensure there is a selected feature
     if not selected_features:
@@ -36,10 +38,7 @@ def get_selected_features(layer, esri_geom=True):
         shapely_geometry = shape(geojson_dict)
 
         # Create a GeoDataFrame
-        gdf = gpd.GeoDataFrame([{'geometry': shapely_geometry}], crs="EPSG:4326")
+        gdf = gpd.GeoDataFrame([{"geometry": shapely_geometry}], crs="EPSG:4326")
 
         # Display the GeoDataFrame
         return gdf
-
-
-
