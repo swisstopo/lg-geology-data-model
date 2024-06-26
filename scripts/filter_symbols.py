@@ -27,7 +27,7 @@ logging.basicConfig(format="%(name)s - %(levelname)s - %(message)s", level=loggi
 
 
 def cleanup(x):
-    if x == "<Null>":
+    if x == "<Null>" or x is None:
         return 0
     else:
         return int(x)
