@@ -55,8 +55,26 @@ def filter_from_criteria(data, gdf):
     filter_criteria = zip(labels, values)
 
     filters = []
+    results = {}
 
-    for criterion in filter_criteria:
+    for criteria in filter_criteria:
+        logging.info(f"\nApplying criteria: {criteria}")
+
+        # Start with a True series to filter
+        filter_expression = pd.Series([True] * len(df), index=df.index)
+
+        for column, value in criteria:
+            # Update the filter expression for each (column, value) pair
+            filter_expression &= df[column] == value
+            logging.info(f"Filter status for ({column} == {value}):")
+            logging.info(filter_expression)
+            logging.info(f"Matching rows count: {filter_expression.sum()}")
+
+        filters.append(filter_expression)
+
+
+
+    '''for criterion in filter_criteria:
         label, values = criterion
         # Create the filter expression dynamically
 
@@ -64,7 +82,7 @@ def filter_from_criteria(data, gdf):
             filter_expression = pd.Series([True] * len(gdf))
             for i, head in enumerate(headings):
                 filter_expression = filter_expression & (gdf[head] == cleanup(value[i]))
-        filters.append(filter_expression)
+        filters.append(filter_expression)'''
 
     return filters
 
