@@ -43,8 +43,8 @@ ah.setFormatter(log_frmt)
 logger.addHandler(ah)
 
 
-def cleanup(x):
-    if x == "<Null>":
+def convert_to_int(x):
+    if x == "<Null>" or x is None:
         return 0
     else:
         return int(x)
@@ -80,7 +80,9 @@ def filter_from_criteria(data, gdf):
         for value in values:
             filter_expression = pd.Series([True] * len(gdf))
             for i, head in enumerate(headings):
-                filter_expression = filter_expression & (gdf[head] == cleanup(value[i]))
+                filter_expression = filter_expression & (
+                    gdf[head] == convert_to_int(value[i])
+                )
         filters.append(filter_expression)
 
     return filters
@@ -272,17 +274,14 @@ class SymbolFilter:
 
             # TTEC_LIM_TYP
             try:
-                if DEBUG_MODE:
-                    messages.addMessage(f"    dataset={dataset}")
+                logger.debug(f"    dataset={dataset}")
                 renderer = data.get("renderer")
             except Exception as e:
-                messages.addWarningMessage(
-                    f"    Cannot get renderer for {layername}: {e}"
-                )
+                logger.warning(f"    Cannot get renderer for {layername}: {e}")
                 continue
 
             if dataset is None:
-                messages.addWarningMessage(f"    No dataset found for {layername}")
+                logger.warning(f"    No dataset found for {layername}")
                 continue
 
             feature_class_path = dataset
@@ -291,42 +290,65 @@ class SymbolFilter:
             selected_features = []
 
             gdf = arcgis_table_to_df(feature_class_path, spatial_filter=spatial_filter)
+            # TODO: this should be dynamic
+            if "Bedrock_HARMOS" in layername:
+                df = arcgis_table_to_df("TOPGIS_GC.GC_BED_FORM_ATT")
+                logger.debug(df)
+                logger.debug(gdf)
+                gdf = gdf.merge(df, left_on="FORM_ATT", right_on="UUID")
+                logger.debug(f"     ====== MERGING")
+                logger.debug(gdf)
 
-            messages.addMessage(f"    count={len(gdf)}")
-            if DEBUG_MODE:
-                messages.addMessage(f"    {renderer}")
-                messages.addMessage(f"    {gdf.columns}")
+                # results = process_layer(layername, gdf, renderer)
 
-            if "Quelle" in layername:
+            logger.info(f"    count={len(gdf)}")
+            logger.debug(f"    {renderer}")
+            logger.debug(f"    {gdf.columns}")
+
+            if not "Bedrock_HARMOS" in layername:  # "Quelle" in layername:
                 logger.info("############################################")
-                gdf = arcgis_table_to_df(
-                    feature_class_path,
-                    input_fields=["OBJECTID", "KIND", "HSUR_TYPE", "HSUR_STATUS"],
-                    spatial_filter=spatial_filter,
-                    # query= "KIND IN (11901001,12501002,12501003,12501004,12501006,12101006,13601001,13601002 ,13601003,13701001,13701002,13701004,13801003,13801004,13801005,13801006,14601004) AND (PRINTED = 1 OR PRINTED IS NULL)"
-                )
-
-                logger.info(f"BEFORE: Orient dataFrame\n{gdf}")
-                logger.info(f"Count\n{len(gdf)}")
-
-                headings = renderer.get("headings")
+                columns = renderer.get("headings")
                 values = renderer.get("values")
                 labels = renderer.get("labels")
+
+                if columns is None or any(col is None for col in columns):
+                    logger.error(f"<null> column are not valid: {columns}")
+                    continue
+
+                try:
+                    gdf = arcgis_table_to_df(
+                        feature_class_path,
+                        input_fields=["OBJECTID"] + columns,
+                        spatial_filter=spatial_filter,
+                        # query= "KIND IN (11901001,12501002,12501003,12501004,12501006,12101006,13601001,13601002 ,13601003,13701001,13701002,13701004,13801003,13801004,13801005,13801006,14601004) AND (PRINTED = 1 OR PRINTED IS NULL)"
+                    )
+                except Exception as e:
+                    logger.error(
+                        f"Error while getting dataframe fro layer {layername}: {e}"
+                    )
+                    continue
+
+                logger.debug(f"BEFORE: Orient dataFrame\n{gdf}")
+                logger.debug(f"Count\n{len(gdf)}")
 
                 # Initialize the complex filter criteria list
                 complex_filter_criteria = []
 
-                # Iterate over the list of value sets
-                for value_set in values:
+                # Iterate over the list of value sets and labels
+                for label, value_set in zip(labels, values):
                     for value_group in value_set:
                         # Create a list of (column, value) pairs
                         criteria = [
-                            (col, val)
+                            (col, convert_to_int(val))
                             for col, val in zip(columns, value_group)
-                            if val is not None
-                        ]
-                        # Add the criteria to the complex filter list
-                        complex_filter_criteria.append(criteria)
+                        ]  # if val is not None]
+                        # Add the criteria to the complex filter list along with the label
+                        complex_filter_criteria.append((label, criteria))
+
+                # Print the complex filter criteria
+                logger.debug("Complex Filter Criteria with Labels:")
+                for label, criteria in complex_filter_criteria:
+                    logger.debug(f"Label: {label}, Criteria: {criteria}")
 
                 """complex_filter_criteria = [
                     [("KIND", 14401001), ("HSUR_TYPE", 999998)],
@@ -334,31 +356,30 @@ class SymbolFilter:
                 ]"""
                 df = gdf
 
-                def cleanup(x):
-                    if x == "<Null>" or x is None:
-                        return 0
-                    else:
-                        return int(x)
-
-                columns_to_convert = ["KIND", "HSUR_TYPE", "HSUR_STATUS"]
+                columns_to_convert = columns
                 # Check if conversion is possible and convert
-                for col in columns_to_convert:
-                    if (
-                        df[col]
-                        .dropna()
-                        .apply(lambda x: isinstance(x, float) and x.is_integer())
-                        .all()
-                    ):
-                        # Fill NaN values with 0 (or another specific value) before conversion
-                        df[col] = df[col].fillna(0).astype(int)
-                logger.info(f"BEFORE: Orient dataFrame\n{df}")
-                logger.info(f"Count\n{len(gdf)}")
+                try:
+                    for col in columns_to_convert:
+                        if (
+                            df[col]
+                            .dropna()
+                            .apply(lambda x: isinstance(x, float) and x.is_integer())
+                            .all()
+                        ):
+                            # Fill NaN values with 0 (or another specific value) before conversion
+                            df[col] = df[col].fillna(0).astype(int)
+                except KeyError as ke:
+                    logger.error(f"Key error while converting column {col}: {ke}")
+                except Exception as e:
+                    logger.error(f"Unknown error: {e}")
+                logger.debug(f"BEFORE: Orient dataFrame\n{df}")
+                logger.debug(f"Count\n{len(gdf)}")
 
                 # Dictionary to store counts and rows for each complex filter criterion
                 results = {}
 
-                for criteria in complex_filter_criteria:
-                    print(f"\nApplying criteria: {criteria}")
+                for label, criteria in complex_filter_criteria:
+                    logger.info(f"\nApplying criteria: {label}, {criteria}")
 
                     # Start with a True series to filter
                     filter_expression = pd.Series([True] * len(df), index=df.index)
@@ -366,63 +387,60 @@ class SymbolFilter:
                     for column, value in criteria:
                         # Update the filter expression for each (column, value) pair
                         filter_expression &= df[column] == value
-                        print(f"Filter status for ({column} == {value}):")
-                        print(filter_expression)
-                        print(f"Matching rows count: {filter_expression.sum()}")
+                        logger.debug(f"Filter status for ({column} == {value}):")
+                        logger.debug(filter_expression)
+                        logger.debug(f"Matching rows count: {filter_expression.sum()}")
 
                     # Apply the final filter to the DataFrame
                     filtered_df = df[filter_expression]
 
-                    # Store the count and the matching rows
-                    results[tuple(criteria)] = {
+                    """results[label] = {
                         "count": len(filtered_df),
-                        "rows": filtered_df,
-                    }
+                        "rows": filtered_df.to_json(orient='records') , # filtered_df,
+                        "criteria": criteria,
+                    }"""
+
+                    count = len(filtered_df)
+
+                    if count > 0:
+                        results[label] = count
 
                 # Print the results
-                logger.info("---")
-                for criteria, result in results.items():
-                    logger.info(f"\nFilter Criterion: {criteria}")
+
+                """for label, result in results.items():
+                    logger.info(f"\nFilter Label: {label}")
+                    logger.info(f"Criteria: {result['criteria']}")
                     logger.info(f"Count: {result['count']}")
                     logger.info("Matching Rows:")
-                    logger.info(result["rows"])
+                    logger.info(result["rows"])"""
                 logger.info("---")
 
-                logger.info(f"Orient dataFrame\n{gdf}")
-                logger.info(f"Count\n{len(gdf)}")
-                rules = process_layer(layername, gdf, renderer)
-                logger.info(f"Rules\n{rules}")
-
-                return
-
-            # TODO: this should be dynamic
-            if "Bedrock_HARMOS" in layername:
-                df = arcgis_table_to_df("TOPGIS_GC.GC_BED_FORM_ATT")
-                if DEBUG_MODE:
-                    messages.addMessage(df)
-                    messages.addMessage(gdf)
-                gdf = gdf.merge(df, left_on="FORM_ATT", right_on="UUID")
-                if DEBUG_MODE:
-                    messages.addMessage(f"     ====== MERGING")
-                    messages.addMessage(gdf)
+                filtered[layername] = results
 
             # messages.addMessage(f"    {gdf.columns}")
-            rules = process_layer(layername, gdf, renderer)
+            # rules = process_layer(layername, gdf, renderer)
 
-            filtered[layername] = rules
-            if DEBUG_MODE:
-                messages.addMessage(f"     {json.dumps(rules, indent=4)}")
+            # filtered[layername] = rules
+            # logger.debug(f"     {json.dumps(results, indent=4)}")
 
-        messages.addMessage(f"---- Saving results to {output_path} ----------")
-        messages.addMessage(f"---- {filtered.keys()} ----------")
+        logger.info(f"---- Saving results to {output_path} ----------")
+        logger.info(f"---- {filtered.keys()} ----------")
 
         try:
             data = filtered  # results["layers"]
 
+            with open(
+                output_path.replace(".xlsx", ".json"), "w", encoding="utf-8"
+            ) as f:
+                # Serialize the data and write it to the file
+                json.dump(filtered, f, ensure_ascii=False, indent=4)
+        except Exception as e:
+            messages.addErrorMessage(e)
+            logger.error(e)
+
+        try:
             flattened_data = [
-                (k1, k2, v)
-                for k1, subdict in data.items()
-                for k2, v in subdict.get("rules", {}).items()
+                (k1, k2, v) for k1, subdict in data.items() for k2, v in subdict.items()
             ]
 
             # Convert to a DataFrame
@@ -430,19 +448,13 @@ class SymbolFilter:
             if drop:
                 df = df[df.Count != 0]
 
-            with open(
-                output_path.replace(".xlsx", ".json"), "w", encoding="utf-8"
-            ) as f:
-                # Serialize the data and write it to the file
-                json.dump(filtered, f, ensure_ascii=False, indent=4)
-
             with pd.ExcelWriter(output_path) as writer:
                 df.to_excel(writer, sheet_name="RULES")
 
         except Exception as e:
             messages.addErrorMessage(e)
             logger.error(e)
-        logger.info(logger.handlers)
+
         return
 
     def postExecute(self, parameters):
