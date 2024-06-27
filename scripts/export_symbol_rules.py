@@ -57,6 +57,9 @@ def process_layers(l):
         d["renderer"]["type"] = sym.renderer.type
 
         ## Layer Validation
+        if l.supports("dataSource"):
+            d["dataSource"] = l.dataSource
+
         if l.supports("DefinitionQuery"):
             # Lists Definition Queries
             dfn = []
