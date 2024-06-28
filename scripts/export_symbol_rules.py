@@ -34,6 +34,17 @@ def arcgis_table_to_df(in_fc, input_fields=None, query="", spatial_filter=None):
     return fc_dataframe
 
 
+def merge_headings(headings, headings_alias):
+    final_headings = []
+    # Loop through both lists in parallel using zip
+    for alias, heading in zip(headings_alias, headings):
+        if heading is None:
+            final_headings.append(alias.upper())
+        else:
+            final_headings.append(heading)
+    return final_headings
+
+
 def process_layers(l):
     """if l.isGroupLayer:
     for sublayer in l.listLayers():
@@ -46,6 +57,9 @@ def process_layers(l):
         d["renderer"]["type"] = sym.renderer.type
 
         ## Layer Validation
+        if l.supports("dataSource"):
+            d["dataSource"] = l.dataSource
+
         if l.supports("DefinitionQuery"):
             # Lists Definition Queries
             dfn = []
@@ -65,10 +79,13 @@ def process_layers(l):
             for grp in renderer.groups:
                 dd = {}
                 # heading = list(map(str.strip, grp.heading.split(",")))
-                headings = [v.strip() for v in grp.heading.split(",")]
-                logging.debug(f"   {headings}")
-                dd["headings_alias"] = headings
-                dd["headings"] = [fields.get(f) for f in headings]
+                headings_alias = [v.strip() for v in grp.heading.split(",")]
+                logging.debug(f"   {headings_alias}")
+                dd["headings_alias"] = headings_alias
+                dd["headings"] = [
+                    fields[alias] if alias in fields else alias.upper()
+                    for alias in headings_alias
+                ]
                 dd["labels"] = []
                 dd["values"] = []
                 for itm in grp.items:
