@@ -67,7 +67,7 @@ def process_layers(l):
             # List Dictionary
             for dic in query:
                 for key, value in dic.items():
-                    logging.debug(key, value)
+                    logging.debug(f"{key}: {value}")
                     dfn.append({key: value})
             d["query_defn"] = dfn
 
@@ -76,33 +76,55 @@ def process_layers(l):
             fields[fld.aliasName] = fld.name
 
         if hasattr(renderer, "groups"):
-            for grp in renderer.groups:
-                dd = {}
+
+          nb_groups = len(renderer.groups)
+
+          logging.debug(f"GROUPS: {nb_groups}")
+          # https://pro.arcgis.com/en/pro-app/latest/arcpy/mapping/uniquevaluerenderer-class.htm
+          renderer_dict = {}
+          renderer_dict['fields'] = renderer.fields
+          renderer_dict['groups'] = []
+
+          for grp in renderer.groups:
+                logging.debug(f"New group: {grp.heading}")
+                grp_dict={}
+
+
                 # heading = list(map(str.strip, grp.heading.split(",")))
-                headings_alias = [v.strip() for v in grp.heading.split(",")]
-                logging.debug(f"   {headings_alias}")
-                dd["headings_alias"] = headings_alias
-                dd["headings"] = [
+                headings = [v.strip() for v in grp.heading.split(",")]
+                '''headings = [
                     fields[alias] if alias in fields else alias.upper()
                     for alias in headings_alias
-                ]
-                dd["labels"] = []
-                dd["values"] = []
+                ]'''
+                # logging.debug(f"alias={headings_alias}")
+                # grp_dict["headings_alias"] = headings_alias
+                grp_dict["headings"] = headings
+                logging.debug(f"headings={headings}")
+                grp_dict["labels"] = []
+                grp_dict["values"] = []
                 for itm in grp.items:
-                    logging.debug(f"   {itm.label}")
-                    logging.debug(f"   {itm.values}")
-                    dd["labels"].append(itm.label)
+                    logging.debug(f"New item")
+                    logging.debug(f"   label={itm.label}")
+                    logging.debug(f"   values={itm.values}")
+                    grp_dict["labels"].append(itm.label)
                     cleaned_list = [
                         [None if item == "<Null>" else item for item in sublist]
                         for sublist in itm.values
                     ]
 
                     logging.debug(cleaned_list)
-                    dd["values"].append(cleaned_list)
-            try:
-                d["renderer"] = dd
-            except Exception as e:
+                    grp_dict["values"].append(cleaned_list)
+                renderer_dict['groups'].append(grp_dict)
+          try:
+                d["renderer"] = renderer_dict
+                logging.debug(f"--{l.name}--")
+                logging.debug(json.dumps(renderer_dict, indent=4))
+
+          except Exception as e:
                 logging.error(f"Cannot add symbology: {l.name}: {e}")
+          # More than onegroup
+
+
         else:
             logging.error(f"Layer {l.name}: {sym.renderer.type}")
             return d
