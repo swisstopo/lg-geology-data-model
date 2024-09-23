@@ -81,7 +81,7 @@ themes:
             cardinality: 0..1
           - name: protected
             description:
-              de: Geschützt: ja/nein
+              de: "Geschützt: ja/nein"
               fr: Objet géologique protégé (oui / non)?
             att_type: boolean
             cardinality: 0..1
