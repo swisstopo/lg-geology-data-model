@@ -40,7 +40,7 @@ msgstr "Geologische Landesaufnahme der Schweiz"
 
 #: model_markdown.j2:2
 msgid "Geological datamodel"
-msgstr "Geologisches Datamodel"
+msgstr "Datenmodell Geologie"
 
 #: model_markdown.j2:2
 #, python-format
@@ -61,7 +61,7 @@ msgstr "Thema"
 
 #: model_markdown.j2:27
 msgid "Class"
-msgstr "Klass"
+msgstr "Klasse"
 
 #: model_markdown.j2:34
 msgid "Name"
@@ -94,7 +94,7 @@ msgstr "Kardinalität"
 
 #: model_markdown.j2:54
 msgid "Attribute"
-msgstr "Attributen"
+msgstr "Attribut"
 
 #: model_markdown.j2:58
 msgid "Datatype"
