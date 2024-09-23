@@ -531,7 +531,9 @@ def export_rules(workspace, output, log_level):
 
     res = {}
     for l in m.listLayers():
+
         if l.isFeatureLayer:  # and 'Deposits_Chrono' in l.name:
+
             attributes = process_layers(l)
             res[l.name] = attributes
 
