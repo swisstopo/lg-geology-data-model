@@ -102,7 +102,7 @@ msgstr "Datentyp"
 
 #: model_markdown.j2:61
 msgid "See the CodedDomain"
-msgstr "Sehe CodedDomain"
+msgstr "Siehe CodedDomain"
 
 #: model_markdown.j2:61
 msgid "in the Annex"
