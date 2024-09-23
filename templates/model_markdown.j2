@@ -65,7 +65,7 @@ _{{_("Datatype")}} :  {{ attr.att_type  }}_
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
 {% for key, value in attr.pairs.items() -%}
-|{{key}} | {{value}} | {{key|tr}}     |
+|{{key}} | {{value|remove_prefix}} | {{key|tr}}     |
 {% endfor %}
 {% endif %}
 
