@@ -42,7 +42,7 @@
 []()           | {{_("Cardinality")}}   [{{ attr.cardinality}}] |                                    |  
 {% else -%}
 {{loop.index}} | **{{ attr.name |upper  }}**                           | {{attr.att_type}}                  | {{ attr.description[lang]|trim }} {{mandatory}}
-[]()           | {{_("Cardinality")}}  [{{ attr.cardinality}}]  | {{attr.value}}                     |  
+[]()           | {{_("Cardinality")}}  [{{ attr.cardinality}}]  | {%- if attr.att_type != 'subtype' -%}{{attr.value}}{% endif -%}  |
 {% endif -%}
 
 {% endfor %}
