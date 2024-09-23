@@ -91,25 +91,10 @@ themes:
         description:
           de: |
             Die Klasse Unconsolidated_Deposits_PLG beinhaltet alle flächenhaft
-            ausgeschiedenen Lockergesteine.\
-            Die Angabe, ob eine Lockergesteinsmasse bewegt (durch Gravitation versetzt) wurde, geht
-            aus der Klasse Instabilities_within_Unconsolidated_Deposits_PLG (Thema
-            Geomorphology) hervor. Eine Ausnahme bilden Lockergesteinsmassen,
-            welche unter dem Einfluss der Schwerkraft bewegt wurden und keine
-            Angaben zum Ausgangsmaterial enthalten (Rutschmassen oder zerrüttete
-            Gesteinsmassen «Sackungsmassen»).\
-            Solche Lockergesteine werden sowohl in der Klasse Unconsolidated_Deposits_PLG als auch in der Klasse
-            Instabilities_with_in_Unconsolidated_Deposits_PLG erfasst. Zur näheren
-            Erklärung der verschiedenen Objektarten sind im Anhang A einige
-            Fallbeispiele abgebildet.
+            ausgeschiedenen Lockergesteine.
           fr: |
             La classe Unconsolidated_Deposits_PLG contient toutes les masses distinctes de roches meubles
-            occupant une surface. L’information indiquant si une roche meuble est en mouvement
-            (déplacée par gravitation) se trouve dans la classe Instabilities_within_Unconsolidated_Deposits_
-            PLG (Thème Geomorphology). Cependant, lorsque la nature du matériel en glissement n’est pas
-            distinguable, celle-ci pourra être attribué en tant que masse glissée ou en glissement ou masse
-            de roche tassée et disloquée. A des fins de clarification, quelques exemples des différents types
-            d'objets sont illustrés dans l'annexe A.
+            occupant une surface.
         attributes:
           - name: kind
             att_type: subtype
@@ -171,14 +156,14 @@ themes:
             description:
               de: Zusammensetzung des Lockergesteins
               fr: Composition de la roche meuble
-            att_type: table
+            att_type: annex
             value: gc_composit
             cardinality: 0..3
           - name: admixture
             description:
               de: Beimengung
               fr: Incorporation
-            att_type: table
+            att_type: annex
             value: gc_admixture
             cardinality: 0..2
           - name: structur
@@ -2362,6 +2347,18 @@ annexes:
       de: Wertetabelle der tektonischen Einheiten
       fr: Table des valeurs des unités tectoniques
   - name: GC_MINERAL_CD
+    description:
+      de: -todo-
+      fr: -todo-
+  - name: GC_ADMIXTURE
+    description:
+      de: -todo-
+      fr: -todo-
+  - name: GC_COMPOSIT
+    description:
+      de: -todo-
+      fr: -todo-
+  - name: GC_CHARCAT
     description:
       de: -todo-
       fr: -todo-
