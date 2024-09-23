@@ -1,6 +1,6 @@
 {
     "version": 0.5,
-    "date": "2024-06-10T21:06:54.913930",
+    "date": "2024-09-23T17:16:11.760490",
     "model": {
         "revision": 3.1,
         "revision_date": "2024-06-07"
@@ -61,7 +61,7 @@
                             "att_type": "CD",
                             "value": "GC_PNT_RUNC_ROCK_TYP_CD",
                             "description": {
-                                "de": "Gesteinstyp (Kristallingestein / Sedimentgestein)",
+                                "de": "Gesteinstyp",
                                 "fr": "Type de roche"
                             },
                             "cardinality": "0..1",
@@ -78,7 +78,7 @@
                             "att_type": "CD",
                             "value": "GC_PNT_RUNC_ROCK_SPE_CD",
                             "description": {
-                                "de": "Bezeichnung des Leitgesteins",
+                                "de": "Bezeichnung des Leitgesteins.",
                                 "fr": "Description de la roche rep\u00e8re."
                             },
                             "cardinality": "0..1",
@@ -135,7 +135,7 @@
                         {
                             "name": "protected",
                             "description": {
-                                "de": "Gesch\u00fctztes geologisches Objekt",
+                                "de": "Gesch\u00fctzt: ja/nein",
                                 "fr": "Objet g\u00e9ologique prot\u00e9g\u00e9 (oui / non)?"
                             },
                             "att_type": "boolean",

@@ -74,14 +74,16 @@ create_msg(df)
 df = df.set_index(["GeolCodeInt"])
 
 
-def translate(geol_code, lang="FR"):
-    msg = ""
+def translate(geol_code, fallback, lang="FR"):
+    msg = fallback
     if lang in ("DE", "FR"):
         try:
             msg = df.loc[int(geol_code)]["FR"]
+
         except KeyError as ke:
             logger.error(f"GeolCode not found while translating '{geol_code}': {ke}")
-        except Exception as ke:
+
+        except Exception as e:
             logger.error(f"Unknown error while translating '{geol_code}': {e}")
 
     return msg
@@ -115,6 +117,14 @@ def get_classes(model):
         for cls in theme["classes"]:
             classes.append(cls.get("name"))
     return classes
+
+
+def get_prefixes(model):
+    prefixes = []
+    for theme in model["themes"]:
+        for cls in theme["classes"]:
+            prefixes.append(cls.get("abrev"))
+    return prefixes
 
 
 class DatetimeEncoder(json.JSONEncoder):
@@ -197,6 +207,7 @@ def datamodel(lang):
     model = Report(yaml_file)
 
     classe_names = get_classes(model.model)
+    prefixes = [p + " " for p in get_prefixes(model.model)]
 
     data = model.to_json()
     now = datetime.datetime.now()
@@ -217,9 +228,17 @@ def datamodel(lang):
 
     env.install_gettext_translations(translations, newstyle=True)
 
+    # Custom filters
+
     def slugify(input):
         """Custom filter"""
         return re.sub(r"[\W_]+", "-", input.lower())
+
+    def remove_prefix(value, prefixes=prefixes):
+        for prefix in prefixes:
+            if value.startswith(prefix):
+                return value[len(prefix) :]
+        return value
 
     # Define the custom filter function
     def format_date_locale(value, format="MMMM yyyy", locale="de_CH"):
@@ -248,6 +267,8 @@ def datamodel(lang):
     env.filters["highlight"] = highlight
     env.filters["tr"] = translate
     env.filters["format_date_locale"] = format_date_locale
+    env.filters["remove_prefix"] = remove_prefix
+
     temp = env.get_template("model_markdown.j2")
 
     json_fname = os.path.join(output_dir, f"{project_name}_{lang}.json")

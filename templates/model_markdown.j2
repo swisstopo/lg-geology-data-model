@@ -42,7 +42,7 @@
 []()           | {{_("Cardinality")}}   [{{ attr.cardinality}}] |                                    |  
 {% else -%}
 {{loop.index}} | **{{ attr.name |upper  }}**                           | {{attr.att_type}}                  | {{ attr.description[lang]|trim }} {{mandatory}}
-[]()           | {{_("Cardinality")}}  [{{ attr.cardinality}}]  | {{attr.value}}                     |  
+[]()           | {{_("Cardinality")}}  [{{ attr.cardinality}}]  | {%- if attr.att_type != 'subtype' -%}{{attr.value}}{% endif -%}  |
 {% endif -%}
 
 {% endfor %}
@@ -65,7 +65,7 @@ _{{_("Datatype")}} :  {{ attr.att_type  }}_
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
 {% for key, value in attr.pairs.items() -%}
-|{{key}} | {{value}} | {{key|tr}}     |
+|{{key}} | {{value|remove_prefix}} | {{key|tr(value)}}     |
 {% endfor %}
 {% endif %}
 
@@ -84,7 +84,7 @@ _{{_("Datatype")}} :  {{ attr.att_type  }}_
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
 {% for key, value in annex.pairs.items() -%}
-|{{key}} | {{value}} | {{key|tr}}     |
+|{{key}} | {{value}} | {{key|tr(value)}}     |
 {% endfor %}
 {% endif %}
 {% endfor %}
