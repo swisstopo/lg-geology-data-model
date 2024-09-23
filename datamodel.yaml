@@ -55,14 +55,14 @@ themes:
             att_type: CD
             value: GC_PNT_RUNC_ROCK_TYP_CD
             description:
-              de: Gesteinstyp (Kristallingestein / Sedimentgestein)
+              de: Gesteinstyp
               fr: Type de roche
             cardinality: 0..1
           - name: rock_spe
             att_type: CD
             value: GC_PNT_RUNC_ROCK_SPE_CD
             description:
-              de: Bezeichnung des Leitgesteins
+              de: Bezeichnung des Leitgesteins.
               fr: Description de la roche repère.
             cardinality: 0..1
           - name: mat_type  # TODO type
@@ -81,7 +81,7 @@ themes:
             cardinality: 0..1
           - name: protected
             description:
-              de: Geschütztes geologisches Objekt
+              de: "Geschützt: ja/nein"
               fr: Objet géologique protégé (oui / non)?
             att_type: boolean
             cardinality: 0..1
