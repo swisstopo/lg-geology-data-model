@@ -86,7 +86,6 @@ Dans ArcGis Pro, charger et exécuter le script : `export_oracle_tables.py`
     pybabel compile --domain=app --directory=locale --use-fuzzy
 
 
-
 ## Création du fichier Markdown source
 
 Le script _datamodel.py_ combine les informations de la configuration _datamodel.yaml_  avec _coded_domains.json_ , _subtypes.json_ et le fichier de traduction.
