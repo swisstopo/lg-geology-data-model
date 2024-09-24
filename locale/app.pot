@@ -98,7 +98,7 @@ msgid "Datatype"
 msgstr ""
 
 #: model_markdown.j2:61
-msgid "See the CodedDomain"
+msgid "See"
 msgstr ""
 
 #: model_markdown.j2:61
