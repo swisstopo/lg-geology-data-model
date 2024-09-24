@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-04-20 20:27+0200\n"
+"POT-Creation-Date: 2024-09-24 11:56+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,95 +17,85 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.14.0\n"
 
-#: metadata.yaml.j2:2
-msgid "GeoCover Datenmodell, Version 3.5"
-msgstr ""
-
-#: metadata.yaml.j2:3
-msgid "Beschreibung und Datenkatalog"
-msgstr ""
-
-#: metadata.yaml.j2:4
-msgid "Bundesamt für Landestopographie swisstopo"
-msgstr ""
-
-#: metadata.yaml.j2:5
-msgid "April 2024"
-msgstr ""
-
-#: metadata.yaml.j2:14
-msgid "Geologische Landesaufnahme der Schweiz"
-msgstr ""
-
-#: model_markdown.j2:2
+#: templates/metadata.yaml.j2:2 templates/model_markdown.j2:2
 msgid "Geological datamodel"
 msgstr ""
 
-#: model_markdown.j2:2
+#: templates/metadata.yaml.j2:2 templates/model_markdown.j2:2
 #, python-format
 msgid "Revision %(name)s"
 msgstr ""
 
-#: model_markdown.j2:8
+#: templates/metadata.yaml.j2:3
+msgid "Beschreibung und Datenkatalog"
+msgstr ""
+
+#: templates/metadata.yaml.j2:4
+msgid "Bundesamt für Landestopographie swisstopo"
+msgstr ""
+
+#: templates/metadata.yaml.j2:14
+msgid "Geologische Landesaufnahme der Schweiz"
+msgstr ""
+
+#: templates/model_markdown.j2:8
 msgid "Extract of Geocover and exemple of representation"
 msgstr ""
 
-#: model_markdown.j2:8
+#: templates/model_markdown.j2:8
 msgid "Figure alt text"
 msgstr ""
 
-#: model_markdown.j2:21
+#: templates/model_markdown.j2:21
 msgid "Theme"
 msgstr ""
 
-#: model_markdown.j2:27
+#: templates/model_markdown.j2:27
 msgid "Class"
 msgstr ""
 
-#: model_markdown.j2:34
+#: templates/model_markdown.j2:34
 msgid "Name"
 msgstr ""
 
-#: model_markdown.j2:34
+#: templates/model_markdown.j2:34
 msgid "Type"
 msgstr ""
 
-#: model_markdown.j2:34
+#: templates/model_markdown.j2:34
 msgid "Description"
 msgstr ""
 
-#: model_markdown.j2:37
+#: templates/model_markdown.j2:37
 msgid "mandatory"
 msgstr ""
 
-#: model_markdown.j2:41
-#, python-format
-msgid ""
-"Die möglichen Werte sind in der Tabelle %(name)s im Anhang dieses "
-"Dokumentes verfügbar."
-msgstr ""
-
-#: model_markdown.j2:42 model_markdown.j2:45
+#: templates/model_markdown.j2:42 templates/model_markdown.j2:45
+#: templates/model_markdown.j2:48
 msgid "Cardinality"
 msgstr ""
 
-#: model_markdown.j2:54
+#: templates/model_markdown.j2:44
+msgid "Table"
+msgstr ""
+
+#: templates/model_markdown.j2:57
 msgid "Attribute"
 msgstr ""
 
-#: model_markdown.j2:58
+#: templates/model_markdown.j2:61
 msgid "Datatype"
 msgstr ""
 
-#: model_markdown.j2:61
-msgid "See the CodedDomain"
+#: templates/model_markdown.j2:64
+msgid "See"
 msgstr ""
 
-#: model_markdown.j2:61
+#: templates/model_markdown.j2:64
 msgid "in the Annex"
 msgstr ""
 
-#: model_markdown.j2:80
+#: templates/model_markdown.j2:83
 msgid "Annexe"
 msgstr ""
 

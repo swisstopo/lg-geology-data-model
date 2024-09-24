@@ -75,12 +75,14 @@ Dans ArcGis Pro, charger et exécuter le script : `export_oracle_tables.py`
 
     pybabel extract -F babel.cfg -o locale/app.pot .
 
-2. Edition des fichiers .po dans `PoEdit` par exemple
-    
-3. Fusion des catalogues (`app` et `datamodel`):
+2. Fusion des catalogues (`app` et `datamodel`):
 
-    pybabel update -i locale/app.pot   -d app
+    pybabel update -i locale/app.pot -d locale -D app
+    pybabel update -i locale/datamodel.pot -d locale -D datamodel
+
+3. Edition des fichiers .po dans `PoEdit` par exemple
     
+
 4. Compiler les catalogues (`app` et `datamodel`) :
     
     pybabel compile --domain=app --directory=locale --use-fuzzy

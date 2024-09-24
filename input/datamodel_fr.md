@@ -30,14 +30,14 @@ La classe [Unconsolidated_Deposits_PT](#unconsolidated-deposits-pt) comprend les
 ----|------------------------------|-----------------------------------|--------------------------------------
 1 | **KIND**                           | subtype                  | Type de l&#39;objet et description 
 []()           | Cardinalité  [1]  ||
-2 | **STATUS**                           | [CodedDomain](#unconsolidated-deposits-pt-status)  | État du type d&#39;objet. Les valeurs possibles sont énumérées dans la table  GC_PNT_RUNC_STATUS_CD en annexe de ce document.  
+2 | **STATUS**                           | [CodedDomain](#unconsolidated-deposits-pt-status)  | État du type d&#39;objet. 
 []()           | Cardinalité   [1] |                                    |  
-3 | **ROCK_TYPE**                           | [CodedDomain](#unconsolidated-deposits-pt-rock-type)  | Type de roche. Les valeurs possibles sont énumérées dans la table  GC_PNT_RUNC_ROCK_TYP_CD en annexe de ce document.  
+3 | **ROCK_TYPE**                           | [CodedDomain](#unconsolidated-deposits-pt-rock-type)  | Type de roche. 
 []()           | Cardinalité   [0..1] |                                    |  
-4 | **ROCK_SPE**                           | [CodedDomain](#unconsolidated-deposits-pt-rock-spe)  | Description de la roche repère.. Les valeurs possibles sont énumérées dans la table  GC_PNT_RUNC_ROCK_SPE_CD en annexe de ce document.  
+4 | **ROCK_SPE**                           | [CodedDomain](#unconsolidated-deposits-pt-rock-spe)  | Description de la roche repère.. 
 []()           | Cardinalité   [0..1] |                                    |  
-5 | **MAT_TYPE**                           | [CodedDomain](#gc-litho-unco-cd)  | Description du matériel (unité lithologique). Les valeurs possibles sont énumérées dans la table  GC_LITHO_UNCO_CD en annexe de ce document.  
-[]()           | Cardinalité   [0..1] |                                    |  
+5 | **MAT_TYPE**                           | [ Table ](#gc-litho-unco-cd)  | Description du matériel (unité lithologique). 
+[]()           | Cardinalité   [0..1] |
 6 | **ORIG_DESCR**                           | string                  | Description de la légende de la carte géologique originale 
 []()           | Cardinalité  [0..1]  ||
 7 | **PROTECTED**                           | boolean                  | Objet géologique protégé (oui / non)? 
@@ -137,7 +137,7 @@ _Description de la roche repère._
 #### Attribut  MAT_TYPE
 _Description du matériel (unité lithologique)_
 
-Voir le domaine [GC_LITHO_UNCO_CD](#gc-litho-unco-cd) dans l'annexe
+Voir [GC_LITHO_UNCO_CD](#gc-litho-unco-cd) dans l'annexe
 
 
 
@@ -163,12 +163,7 @@ _Type de donnée :  boolean_
 
 ### Classe Unconsolidated_Deposits_PLG {#unconsolidated-deposits-plg}
 La classe [Unconsolidated_Deposits_PLG](#unconsolidated-deposits-plg) contient toutes les masses distinctes de roches meubles
-occupant une surface. L’information indiquant si une roche meuble est en mouvement
-(déplacée par gravitation) se trouve dans la classe Instabilities_within_Unconsolidated_Deposits_
-PLG (Thème Geomorphology). Cependant, lorsque la nature du matériel en glissement n’est pas
-distinguable, celle-ci pourra être attribué en tant que masse glissée ou en glissement ou masse
-de roche tassée et disloquée. A des fins de clarification, quelques exemples des différents types
-d&#39;objets sont illustrés dans l&#39;annexe A.
+occupant une surface.
 
 
 
@@ -178,33 +173,33 @@ d&#39;objets sont illustrés dans l&#39;annexe A.
 ----|------------------------------|-----------------------------------|--------------------------------------
 1 | **KIND**                           | subtype                  | Type de l&#39;objet et description 
 []()           | Cardinalité  [1]  ||
-2 | **LITSTRAT**                           | [CodedDomain](#gc-litstrat-unco-cd)  | Description lithostratigraphique. Les valeurs possibles sont énumérées dans la table  GC_LITSTRAT_UNCO_CD en annexe de ce document.  **obligatoire**
-[]()           | Cardinalité   [1] |                                    |  
-3 | **LITHO**                           | [CodedDomain](#gc-litho-cd)  | Description lithologique.. Les valeurs possibles sont énumérées dans la table  GC_LITHO_CD en annexe de ce document.  
-[]()           | Cardinalité   [1..3] |                                    |  
-4 | **CHRONO_T**                           | [CodedDomain](#gc-chrono-cd)  | Attribution chronostratigraphique du toit de la formation  (top). Les valeurs possibles sont énumérées dans la table  GC_CHRONO_CD en annexe de ce document.  **obligatoire**
-[]()           | Cardinalité   [1] |                                    |  
-5 | **CHRONO_B**                           | [CodedDomain](#gc-chrono-cd)  | Attribution chronostratigraphique de la base de la  formation (basis). Les valeurs possibles sont énumérées dans la table  GC_CHRONO_CD en annexe de ce document.  **obligatoire**
-[]()           | Cardinalité   [1] |                                    |  
+2 | **LITSTRAT**                           | [ Table ](#gc-litstrat-unco-cd)  | Description lithostratigraphique. **obligatoire**
+[]()           | Cardinalité   [1] |
+3 | **LITHO**                           | [ Table ](#gc-litho-cd)  | Description lithologique.. 
+[]()           | Cardinalité   [1..3] |
+4 | **CHRONO_T**                           | [ Table ](#gc-chrono-cd)  | Attribution chronostratigraphique du toit de la formation  (top). **obligatoire**
+[]()           | Cardinalité   [1] |
+5 | **CHRONO_B**                           | [ Table ](#gc-chrono-cd)  | Attribution chronostratigraphique de la base de la  formation (basis). **obligatoire**
+[]()           | Cardinalité   [1] |
 6 | **MAT_TYPE**                           |                   | Description du matériel (unité lithologique) 
 []()           | Cardinalité  [0..3]  |Lithostratigraphic_Units_Litho|
 7 | **BURIED_OUT**                           | boolean                  | Est-ce que la roche consolidée est recouvert (oui / non)? 
 []()           | Cardinalité  [1]  ||
-8 | **COMPOSIT**                           | table                  | Composition de la roche meuble 
-[]()           | Cardinalité  [0..3]  |gc_composit|
-9 | **ADMIXTURE**                           | table                  | Incorporation 
-[]()           | Cardinalité  [0..2]  |gc_admixture|
-10 | **STRUCTUR**                           | [CodedDomain](#unconsolidated-deposits-plg-structur)  | . Les valeurs possibles sont énumérées dans la table  GC_UN_DEP_RUNC_STRUCTUR_CD en annexe de ce document.  
+8 | **COMPOSIT**                           | [ Table ](#gc-composit)  | Composition de la roche meuble. 
+[]()           | Cardinalité   [0..3] |
+9 | **ADMIXTURE**                           | [ Table ](#gc-admixture)  | Incorporation. 
+[]()           | Cardinalité   [0..2] |
+10 | **STRUCTUR**                           | [CodedDomain](#unconsolidated-deposits-plg-structur)  | . 
 []()           | Cardinalité   [0..1] |                                    |  
-11 | **CHARACT**                           | table                  | Structure sédimentaire 
-[]()           | Cardinalité  [0..3]  |gc_charcat|
-12 | **MORPHOLO**                           | [CodedDomain](#unconsolidated-deposits-plg-morpholo)  | Morphologie de l’unité de roche meuble. Les valeurs possibles sont énumérées dans la table  GC_UN_DEP_RUNC_MORPHOLO_CD en annexe de ce document.  
+11 | **CHARACT**                           | [ Table ](#gc-charcat)  | Structure sédimentaire. 
+[]()           | Cardinalité   [0..3] |
+12 | **MORPHOLO**                           | [CodedDomain](#unconsolidated-deposits-plg-morpholo)  | Morphologie de l’unité de roche meuble. 
 []()           | Cardinalité   [0..1] |                                    |  
-13 | **GLAC_TYPE**                           | [CodedDomain](#unconsolidated-deposits-plg-glac-type)  | Type de glacier auquel le type d’objet est associé. Cet  attribut n’est valable que pour des moraines. Les valeurs possibles sont énumérées dans la table  GC_UN_DEP_RUNC_GLAC_TYP_CD en annexe de ce document.  
+13 | **GLAC_TYPE**                           | [CodedDomain](#unconsolidated-deposits-plg-glac-type)  | Type de glacier auquel le type d’objet est associé. Cet  attribut n’est valable que pour des moraines. 
 []()           | Cardinalité   [0..1] |                                    |  
 14 | **REF_YEAR**                           | string                  | Année de référence de l’ancienne ligne de rivage. 
 []()           | Cardinalité  [0..1]  ||
-15 | **THIN_COVER**                           | [CodedDomain](#unconsolidated-deposits-plg-thin-cover)  | Couverture meuble pelliculaire. Les valeurs possibles sont énumérées dans la table  GC_UN_DEP_RUNC_THIN_COV_CD en annexe de ce document.  
+15 | **THIN_COVER**                           | [CodedDomain](#unconsolidated-deposits-plg-thin-cover)  | Couverture meuble pelliculaire. 
 []()           | Cardinalité   [0..1] |                                    |  
 16 | **ORIG_DESCR**                           |                   | Description de la légende de la carte géologique originale. 
 []()           | Cardinalité  [1]  |string|
@@ -227,7 +222,7 @@ _Type de l&#39;objet et description_
 #### Attribut  LITSTRAT
 _Description lithostratigraphique_
 
-Voir le domaine [GC_LITSTRAT_UNCO_CD](#gc-litstrat-unco-cd) dans l'annexe
+Voir [GC_LITSTRAT_UNCO_CD](#gc-litstrat-unco-cd) dans l'annexe
 
 
 
@@ -236,7 +231,7 @@ Voir le domaine [GC_LITSTRAT_UNCO_CD](#gc-litstrat-unco-cd) dans l'annexe
 #### Attribut  LITHO
 _Description lithologique._
 
-Voir le domaine [GC_LITHO_CD](#gc-litho-cd) dans l'annexe
+Voir [GC_LITHO_CD](#gc-litho-cd) dans l'annexe
 
 
 
@@ -245,7 +240,7 @@ Voir le domaine [GC_LITHO_CD](#gc-litho-cd) dans l'annexe
 #### Attribut  CHRONO_T
 _Attribution chronostratigraphique du toit de la formation  (top)_
 
-Voir le domaine [GC_CHRONO_CD](#gc-chrono-cd) dans l'annexe
+Voir [GC_CHRONO_CD](#gc-chrono-cd) dans l'annexe
 
 
 
@@ -254,7 +249,7 @@ Voir le domaine [GC_CHRONO_CD](#gc-chrono-cd) dans l'annexe
 #### Attribut  CHRONO_B
 _Attribution chronostratigraphique de la base de la  formation (basis)_
 
-Voir le domaine [GC_CHRONO_CD](#gc-chrono-cd) dans l'annexe
+Voir [GC_CHRONO_CD](#gc-chrono-cd) dans l'annexe
 
 
 
@@ -279,12 +274,16 @@ _Type de donnée :  boolean_
 #### Attribut  COMPOSIT
 _Composition de la roche meuble_
 
+Voir [gc_composit](#gc-composit) dans l'annexe
+
 
 
 
 
 #### Attribut  ADMIXTURE
 _Incorporation_
+
+Voir [gc_admixture](#gc-admixture) dans l'annexe
 
 
 
@@ -316,6 +315,8 @@ __
 
 #### Attribut  CHARACT
 _Structure sédimentaire_
+
+Voir [gc_charcat](#gc-charcat) dans l'annexe
 
 
 
@@ -411,49 +412,45 @@ La classe [Bedrock_PLG](#bedrock-plg) regroupe toutes les unités lithostratigra
 ----|------------------------------|-----------------------------------|--------------------------------------
 1 | **KIND**                           | subtype                  | Type de l&#39;objet et description. 
 []()           | Cardinalité  [1]  ||
-2 | **FM_HOMOG**                           |                   |  
-[]()           | Cardinalité  [1]  ||
-3 | **LISTRAT**                           | [CodedDomain](#gc-litstrat-bed-cd)  | Description lithostratigraphique. Les valeurs possibles sont énumérées dans la table  GC_LITSTRAT_BED_CD en annexe de ce document.  
-[]()           | Cardinalité   [1] |                                    |  
-4 | **LITHO**                           | [CodedDomain](#gc-litho-cd)  | Description lithologique. Les valeurs possibles sont énumérées dans la table  GC_LITHO_CD en annexe de ce document.  
-[]()           | Cardinalité   [1..3] |                                    |  
-5 | **CHRONO_T**                           | [CodedDomain](#gc-chrono-cd)  | Attribution chronostratigraphique du toit de la  formation (top). Les valeurs possibles sont énumérées dans la table  GC_CHRONO_CD en annexe de ce document.  **obligatoire**
-[]()           | Cardinalité   [1] |                                    |  
-6 | **CHRONO_B**                           | [CodedDomain](#gc-chrono-cd)  | Attribution chronostratigraphique de la base de la  formation (basis).. Les valeurs possibles sont énumérées dans la table  GC_CHRONO_CD en annexe de ce document.  **obligatoire**
-[]()           | Cardinalité   [1] |                                    |  
-7 | **TECTO**                           | [CodedDomain](#gc-tecto-cd)  | Attribution tectonique. Les valeurs possibles sont énumérées dans la table  GC_TECTO_CD en annexe de ce document.  **obligatoire**
-[]()           | Cardinalité   [1] |                                    |  
+3 | **LITSTRAT**                           | [ Table ](#gc-litstrat-bed-cd)  | Description lithostratigraphique. 
+[]()           | Cardinalité   [1] |
+4 | **LITHO**                           | [ Table ](#gc-litho-cd)  | Description lithologique. 
+[]()           | Cardinalité   [1..3] |
+5 | **CHRONO_T**                           | [ Table ](#gc-chrono-cd)  | Attribution chronostratigraphique du toit de la  formation (top). **obligatoire**
+[]()           | Cardinalité   [1] |
+6 | **CHRONO_B**                           | [ Table ](#gc-chrono-cd)  | Attribution chronostratigraphique de la base de la  formation (basis).. **obligatoire**
+[]()           | Cardinalité   [1] |
+7 | **TECTO**                           | [ Table ](#gc-tecto-cd)  | Attribution tectonique. **obligatoire**
+[]()           | Cardinalité   [1] |
 8 | **ORIG_DESCR**                           | string                  | Description de la légende de la carte géologique originale. 
 []()           | Cardinalité  [1]  ||
 9 | **BURIED_OUT**                           | boolean                  | Est-ce que la roche consolidée est recouvert (oui / non)? 
 []()           | Cardinalité  [1]  ||
 10 | **EXOTIC_ELE**                           |                   | S’agit-il d’un élément exotique (oui / non)? 
 []()           | Cardinalité  [1]  |boolean|
-11 | **COLOUR**                           | string                  | Couleur de la roche 
-[]()           | Cardinalité  [0..1]  ||
-12 | **SEDI_MAIN_COM**                           | [CodedDomain](#bedrock-plg-sedi-main-com)  | Composant principal de la roche sédimentaire clastique.. Les valeurs possibles sont énumérées dans la table  GC_MAIN_COM_CD en annexe de ce document.  
+12 | **SEDI_MAIN_COM**                           | [CodedDomain](#bedrock-plg-sedi-main-com)  | Composant principal de la roche sédimentaire clastique.. 
 []()           | Cardinalité   [0..1] |                                    |  
-13 | **SEDI_SECO_COM**                           | [CodedDomain](#bedrock-plg-sedi-seco-com)  | Composant secondaire de la roche sédimentaire. Les valeurs possibles sont énumérées dans la table  GC_SECO_COM_CD en annexe de ce document.  
+13 | **SEDI_SECO_COM**                           | [CodedDomain](#bedrock-plg-sedi-seco-com)  | Composant secondaire de la roche sédimentaire. 
 []()           | Cardinalité   [0..2] |                                    |  
-14 | **SEDI_BOND_MAT**                           | [CodedDomain](#bedrock-plg-sedi-bond-mat)  | . Les valeurs possibles sont énumérées dans la table  GC_BOND_MAT_CD en annexe de ce document.  
+14 | **SEDI_BOND_MAT**                           | [CodedDomain](#bedrock-plg-sedi-bond-mat)  | . 
 []()           | Cardinalité   [0..1] |                                    |  
-15 | **SEDI_BEDDING**                           | [CodedDomain](#bedrock-plg-sedi-bedding)  | Matrice ou ciment de la roche sédimentaire. Les valeurs possibles sont énumérées dans la table  GC_BEDDING_CD en annexe de ce document.  
+15 | **SEDI_BEDDING**                           | [CodedDomain](#bedrock-plg-sedi-bedding)  | Matrice ou ciment de la roche sédimentaire. 
 []()           | Cardinalité   [0..2] |                                    |  
-16 | **SEDI_STR**                           | [CodedDomain](#bedrock-plg-sedi-str)  | Structure sédimentaire de la roche sédimentaire. Les valeurs possibles sont énumérées dans la table  GC_SEDI_STR_CD en annexe de ce document.  
+16 | **SEDI_STR**                           | [CodedDomain](#bedrock-plg-sedi-str)  | Structure sédimentaire de la roche sédimentaire. 
 []()           | Cardinalité   [0..2] |                                    |  
-17 | **SEDI_TEX**                           | [CodedDomain](#bedrock-plg-sedi-tex)  | Texture de la roche sédimentaire. Les valeurs possibles sont énumérées dans la table  GC_SEDI_TEX_CD en annexe de ce document.  
+17 | **SEDI_TEX**                           | [CodedDomain](#bedrock-plg-sedi-tex)  | Texture de la roche sédimentaire. 
 []()           | Cardinalité   [] |                                    |  
-18 | **IGNE_TEXT**                           | [CodedDomain](#bedrock-plg-igne-text)  | Texture de la roche magmatique. Les valeurs possibles sont énumérées dans la table  GC_IGNE_TEX_CD en annexe de ce document.  
+18 | **IGNE_TEXT**                           | [CodedDomain](#bedrock-plg-igne-text)  | Texture de la roche magmatique. 
 []()           | Cardinalité   [0..1] |                                    |  
-19 | **IGNE_GRAIN_SI**                           | [CodedDomain](#bedrock-plg-igne-grain-si)  | Granulométrie de la roche magmatique. Les valeurs possibles sont énumérées dans la table  GC_GRAIN_SI_CD en annexe de ce document.  
+19 | **IGNE_GRAIN_SI**                           | [CodedDomain](#bedrock-plg-igne-grain-si)  | Granulométrie de la roche magmatique. 
 []()           | Cardinalité   [0..1] |                                    |  
-20 | **IGNE_AFFINITY**                           | [CodedDomain](#bedrock-plg-igne-affinity)  | Affinité avec une série magmatique. Les valeurs possibles sont énumérées dans la table  GC_AFFINITY_CD en annexe de ce document.  
-[]()           | Cardinalité   [] |                                    |  
+20 | **IGNE_AFFINITY**                           | [CodedDomain](#bedrock-plg-igne-affinity)  | Affinité avec une série magmatique. 
+[]()           | Cardinalité   [0..1] |                                    |  
 21 | **META_FULL_NAME**                           | string                  | Description de la roche métamorphique. 
 []()           | Cardinalité  [0..1]  ||
-22 | **META_MINERAL**                           | [CodedDomain](#gc-mineral-cd)  | Minéral important de la roche métamorphique. Les valeurs possibles sont énumérées dans la table  GC_MINERAL_CD en annexe de ce document.  
-[]()           | Cardinalité   [0..3] |                                    |  
-23 | **META_STR**                           | [CodedDomain](#bedrock-plg-meta-str)  | Structure de la roche métamorphique. Les valeurs possibles sont énumérées dans la table  GC_META_STR_CD en annexe de ce document.  
+22 | **META_MINERAL**                           | [ Table ](#gc-mineral-cd)  | Minéral important de la roche métamorphique. 
+[]()           | Cardinalité   [0..3] |
+23 | **META_STR**                           | [CodedDomain](#bedrock-plg-meta-str)  | Structure de la roche métamorphique. 
 []()           | Cardinalité   [0..3] |                                    |  
 
 
@@ -471,17 +468,10 @@ _Type de l&#39;objet et description._
 
 
 
-#### Attribut  FM_HOMOG
-__
-
-
-
-
-
-#### Attribut  LISTRAT
+#### Attribut  LITSTRAT
 _Description lithostratigraphique_
 
-Voir le domaine [GC_LITSTRAT_BED_CD](#gc-litstrat-bed-cd) dans l'annexe
+Voir [GC_LITSTRAT_BED_CD](#gc-litstrat-bed-cd) dans l'annexe
 
 
 
@@ -490,7 +480,7 @@ Voir le domaine [GC_LITSTRAT_BED_CD](#gc-litstrat-bed-cd) dans l'annexe
 #### Attribut  LITHO
 _Description lithologique_
 
-Voir le domaine [GC_LITHO_CD](#gc-litho-cd) dans l'annexe
+Voir [GC_LITHO_CD](#gc-litho-cd) dans l'annexe
 
 
 
@@ -499,7 +489,7 @@ Voir le domaine [GC_LITHO_CD](#gc-litho-cd) dans l'annexe
 #### Attribut  CHRONO_T
 _Attribution chronostratigraphique du toit de la  formation (top)_
 
-Voir le domaine [GC_CHRONO_CD](#gc-chrono-cd) dans l'annexe
+Voir [GC_CHRONO_CD](#gc-chrono-cd) dans l'annexe
 
 
 
@@ -508,7 +498,7 @@ Voir le domaine [GC_CHRONO_CD](#gc-chrono-cd) dans l'annexe
 #### Attribut  CHRONO_B
 _Attribution chronostratigraphique de la base de la  formation (basis)._
 
-Voir le domaine [GC_CHRONO_CD](#gc-chrono-cd) dans l'annexe
+Voir [GC_CHRONO_CD](#gc-chrono-cd) dans l'annexe
 
 
 
@@ -517,7 +507,7 @@ Voir le domaine [GC_CHRONO_CD](#gc-chrono-cd) dans l'annexe
 #### Attribut  TECTO
 _Attribution tectonique_
 
-Voir le domaine [GC_TECTO_CD](#gc-tecto-cd) dans l'annexe
+Voir [GC_TECTO_CD](#gc-tecto-cd) dans l'annexe
 
 
 
@@ -543,15 +533,6 @@ _Type de donnée :  boolean_
 
 #### Attribut  EXOTIC_ELE
 _S’agit-il d’un élément exotique (oui / non)?_
-
-
-
-
-
-#### Attribut  COLOUR
-_Couleur de la roche_
-
-_Type de donnée :  string_
 
 
 
@@ -623,16 +604,16 @@ __
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
-|14313008 | dolomitische Matrix | à matrice dolomitique     |
-|14313002 | dolomitischer Zement | à ciment dolomitique     |
-|14313007 | kalkige Matrix | à matrice calcaire     |
-|14313001 | kalkiger Zement | à ciment calcaire     |
-|14313003 | kieseliger Zement | à ciment siliceux     |
+|14313008 | dolomitische Matrix | matrice dolomitique     |
+|14313002 | dolomitischer Zement | ciment dolomitique     |
+|14313007 | kalkige Matrix | matrice calcaire     |
+|14313001 | kalkiger Zement | ciment calcaire     |
+|14313003 | kieseliger Zement | ciment siliceux     |
 |14313010 | mineralische Imprägnierung | imprégnation minérale     |
 |14313009 | organische Imprägnierung (Asphalt) | imprégnation de matière organique (asphalte)     |
-|14313006 | sandige Matrix | à matrice sableuse     |
-|14313005 | siltige Matrix | à matrice silteuse     |
-|14313004 | tonige Matrix | à matrice argileuse     |
+|14313006 | sandige Matrix | matrice sableuse     |
+|14313005 | siltige Matrix | matrice silteuse     |
+|14313004 | tonige Matrix | matrice argileuse     |
 |999997 | Unknown | inconnu     |
 |999998 | Not applicable | not applicable     |
 
@@ -757,7 +738,7 @@ _Type de donnée :  string_
 #### Attribut  META_MINERAL
 _Minéral important de la roche métamorphique_
 
-Voir le domaine [GC_MINERAL_CD](#gc-mineral-cd) dans l'annexe
+Voir [GC_MINERAL_CD](#gc-mineral-cd) dans l'annexe
 
 
 
@@ -860,39 +841,8 @@ _Type de l&#39;objet et description._
 
 
 
-### Classe Instabilities_within_Unconsolidated_Deposits_PLG {#instabilities-within-unconsolidated-deposits-plg}
-La classe [Instabilities_within_Unconsolidated_Deposits_PLG](#instabilities-within-unconsolidated-deposits-plg) contient tous les polygones qui
-délimitent des zones de roches meubles instables. Dans cette classe on distingue les surfaces
-affectées par les différents types de phénomènes de mouvement de masse. Les corps rocheux
-proprement dits ainsi que les dépôts affectés resp. engendrés par ces processus de mouvement
-de masse seront décrits dans la classe Unconsolidated_ Deposits_PLG. A des fins de clarification,
-quelques exemples des différents types d&#39;objets sont illustrés dans l&#39;annexe A.
-
-
-
-
-
-    | Nom                | Type                     | Description
-----|------------------------------|-----------------------------------|--------------------------------------
-1 | **KIND**                           | subtype                  | Type de l&#39;objet et description. 
-[]()           | Cardinalité  [1]  ||
-
-
-
-
-
-#### Attribut  KIND
-_Type de l&#39;objet et description._
-
-
-|GeolCode|Deutsch|Français|
-|---------------|----------------------------------------|----------------------------------------|
-
-
-
-
-### Classe Instabilities_within_Bedrock_PLG {#instabilities-within-bedrock-plg}
-La classe [Instabilities_within_Bedrock_PLG](#instabilities-within-bedrock-plg) contient tous les polygones qui délimitent des zones
+### Classe Instabilities_PLG {#instabilities-plg}
+La classe Instabilities_within_Bedrock_PLG contient tous les polygones qui délimitent des zones
 de roche consolidée instable. Dans cette classe on distingue les surfaces affectées par les
 différents types de phénomènes de mouvement de masse. Les corps rocheux proprement dits
 qui sont affectés par ces processus de mouvement de masse seront décrits dans la classe
@@ -907,7 +857,7 @@ illustrés dans l&#39;annexe A.
 ----|------------------------------|-----------------------------------|--------------------------------------
 1 | **KIND**                           | subtype                  | Type de l&#39;objet et description. 
 []()           | Cardinalité  [1]  ||
-2 | **MAIN_MOV**                           | [CodedDomain](#instabilities-within-bedrock-plg-main-mov)  | . Les valeurs possibles sont énumérées dans la table  GC_SURF_GINS_MAIN_MOV_CD en annexe de ce document.  
+2 | **MAIN_MOV**                           | [CodedDomain](#instabilities-plg-main-mov)  | . 
 []()           | Cardinalité   [0..1] |                                    |  
 
 
@@ -920,11 +870,15 @@ _Type de l&#39;objet et description._
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
+|15801001 | Sackungsgebiet | zone de tassement     |
+|15801002 | Gebiet mit Hakenwurf | zone de fauchage     |
+|15801003 | Rutschgebiet | zone de glissement     |
+|15801004 | Gebiet mit Solifluktion | zone de solifluxion     |
 
 
 
 
-#### Attribut  MAIN_MOV {#instabilities-within-bedrock-plg-main-mov}
+#### Attribut  MAIN_MOV {#instabilities-plg-main-mov}
 __
 
 
@@ -982,13 +936,13 @@ les vallums morainiques ou les bourrelets d’un glacier rocheux.
 ----|------------------------------|-----------------------------------|--------------------------------------
 1 | **KIND**                           | subtype                  | Type de l&#39;objet et description. 
 []()           | Cardinalité  [1]  ||
-2 | **MORAI_MO**                           | [CodedDomain](#glacial-and-periglacial-structures-l-morai-mo)  | Morphologie de la moraine. Les valeurs possibles sont énumérées dans la table  GC_LIN_GGLA_MORAI_MO_CD en annexe de ce document.  
+2 | **MORAI_MO**                           | [CodedDomain](#glacial-and-periglacial-structures-l-morai-mo)  | Morphologie de la moraine. 
 []()           | Cardinalité   [0..1] |                                    |  
-3 | **GLAC_TYP**                           | [CodedDomain](#glacial-and-periglacial-structures-l-glac-typ)  | Type de glacier auquel le type d’objet est associé. Les valeurs possibles sont énumérées dans la table  GC_LIN_GGLA_GLAC_TYP_CD en annexe de ce document.  
+3 | **GLAC_TYP**                           | [CodedDomain](#glacial-and-periglacial-structures-l-glac-typ)  | Type de glacier auquel le type d’objet est associé. 
 []()           | Cardinalité   [0..1] |                                    |  
-4 | **ICE_M_P**                           | [CodedDomain](#glacial-and-periglacial-structures-l-ice-m-p)  | Stade glaciaire. Les valeurs possibles sont énumérées dans la table  GC_LIN_GGLA_ICE_M_P_CD en annexe de ce document.  
+4 | **ICE_M_P**                           | [CodedDomain](#glacial-and-periglacial-structures-l-ice-m-p)  | Stade glaciaire. 
 []()           | Cardinalité   [0..1] |                                    |  
-5 | **QUAT_STR**                           | [CodedDomain](#glacial-and-periglacial-structures-l-quat-str)  | Attribution chronostratigraphique du vallum morainique  au sein du Quaternaire. Les valeurs possibles sont énumérées dans la table  GC_LIN_GGLA_QUAT_STR_CD en annexe de ce document.  
+5 | **QUAT_STR**                           | [CodedDomain](#glacial-and-periglacial-structures-l-quat-str)  | Attribution chronostratigraphique du vallum morainique  au sein du Quaternaire. 
 []()           | Cardinalité   [0..1] |                                    |  
 6 | **REF_YEAR**                           | integer                  | Année de référence de l’ancienne ligne de rivage. 
 []()           | Cardinalité  [0..1]  ||
@@ -1260,7 +1214,7 @@ formes ponctuelles. Elle contient entre autres le ponor ou l’entrée d’une g
 ----|------------------------------|-----------------------------------|--------------------------------------
 1 | **KIND**                           | subtype                  | Type de l&#39;objet et description. 
 []()           | Cardinalité  [1]  ||
-2 | **ICE_CAVE**                           | boolean                  | S’agit-il d’une glacière (oui / non)? 
+2 | **ICE_CAVE**                           | boolean                  | S’agit-il d’une glacière (oui / non) 
 []()           | Cardinalité  [0..1]  ||
 
 
@@ -1287,7 +1241,7 @@ _Type de l&#39;objet et description._
 
 
 #### Attribut  ICE_CAVE
-_S’agit-il d’une glacière (oui / non)?_
+_S’agit-il d’une glacière (oui / non)_
 
 _Type de donnée :  boolean_
 
@@ -1296,7 +1250,7 @@ _Type de donnée :  boolean_
 
 
 ### Classe Karstic_Structures_PLG {#karstic-structures-plg}
-None
+La classe [Karstic_Structures_PLG](#karstic-structures-plg) comprend les formes karstiques surfaciques telles que les dolines ou les poljés.
 
 
 
@@ -1337,7 +1291,7 @@ fluviatile ou lacustre.
 ----|------------------------------|-----------------------------------|--------------------------------------
 1 | **KIND**                           | subtype                  | Type de l&#39;objet et description. 
 []()           | Cardinalité  [1]  ||
-2 | **AGE**                           | [CodedDomain](#alluvial-and-lacustrine-structures-l-age)  | Âge du type d&#39;obje. Les valeurs possibles sont énumérées dans la table  GC_LIN_GALL_AGE_CD en annexe de ce document.  
+2 | **AGE**                           | [CodedDomain](#alluvial-and-lacustrine-structures-l-age)  | Âge du type d&#39;obje. 
 []()           | Cardinalité   [0..1] |                                    |  
 
 
@@ -1391,17 +1345,15 @@ en faciliter la compréhension.
 ----|------------------------------|-----------------------------------|--------------------------------------
 1 | **KIND**                           | subtype                  | Type de l&#39;objet et description. 
 []()           | Cardinalité  [1]  ||
-2 | **AZIMUTH**                           | integer                  | Azimut du type d&#39;objet. L&#39;azimut est mesuré depuis le 
-nord en degré de 0° à 359° dans le sens des aiguilles 
-d&#39;une montre 
+2 | **AZIMUTH**                           | integer                  | Azimut du type d&#39;objet. L&#39;azimut est mesuré depuis le  nord en degré de 0° à 359° dans le sens des aiguilles  d&#39;une montre 
 []()           | Cardinalité  [0..1]  ||
 3 | **DIP**                           | integer                  | Valeur du plongement du type d&#39;objet (valeur en 
 degrés, mesurée de l’horizontale (0°) vers le bas jusqu’à 
 la verticale (90°) 
 []()           | Cardinalité  [0..1]  ||
-4 | **FOLD_TYP**                           | [CodedDomain](#deformation-structures-pt-fold-typ)  | Caractéristique du type d&#39;objet. Les valeurs possibles sont énumérées dans la table  GC_PNT_TDEF_FOLD_TYP_CD en annexe de ce document.  
+4 | **FOLD_TYP**                           | [CodedDomain](#deformation-structures-pt-fold-typ)  | Caractéristique du type d&#39;objet. 
 []()           | Cardinalité   [0..1] |                                    |  
-5 | **FOLD_FOR**                           | [CodedDomain](#deformation-structures-pt-fold-for)  | Forme du type d&#39;objet. Les valeurs possibles sont énumérées dans la table  GC_PNT_TDEF_FOLD_FOR_CD en annexe de ce document.  
+5 | **FOLD_FOR**                           | [CodedDomain](#deformation-structures-pt-fold-for)  | Forme du type d&#39;objet. 
 []()           | Cardinalité   [0..1] |                                    |  
 
 
@@ -1426,9 +1378,7 @@ _Type de l&#39;objet et description._
 
 
 #### Attribut  AZIMUTH
-_Azimut du type d&#39;objet. L&#39;azimut est mesuré depuis le 
-nord en degré de 0° à 359° dans le sens des aiguilles 
-d&#39;une montre_
+_Azimut du type d&#39;objet. L&#39;azimut est mesuré depuis le  nord en degré de 0° à 359° dans le sens des aiguilles  d&#39;une montre_
 
 _Type de donnée :  integer_
 
@@ -1476,8 +1426,7 @@ _Forme du type d&#39;objet_
 
 
 ### Classe Deformation_Structures_L {#deformation-structures-l}
-La classe [Deformation_Structures_L](#deformation-structures-l) regroupe les structures linéaires de déformations tectoniques comme le tracé d’une charnière de pli. Un exemple d’un tel type d’objet est illustré dans
-l’annexe A.
+La classe [Deformation_Structures_L](#deformation-structures-l) regroupe les structures linéaires de déformations tectoniques comme le tracé d’une charnière de pli.
 
 
 
@@ -1515,9 +1464,9 @@ tectoniques à grande échelle comme les zones tectonisées ou les zones diaclas
 ----|------------------------------|-----------------------------------|--------------------------------------
 1 | **KIND**                           | subtype                  | Type de l&#39;objet et description. 
 []()           | Cardinalité  [1]  ||
-2 | **TYPE**                           | [CodedDomain](#deformation-structures-plg-type)  | Caractéristique du type d&#39;objet. Les valeurs possibles sont énumérées dans la table  GC_SURF_TDEF_TYPE_CD en annexe de ce document.  
+2 | **TYPE**                           | [CodedDomain](#deformation-structures-plg-type)  | Caractéristique du type d&#39;objet. 
 []()           | Cardinalité   [0..1] |                                    |  
-3 | **GEN_RELA**                           | [CodedDomain](#deformation-structures-plg-gen-rela)  | Relation génétique. Les valeurs possibles sont énumérées dans la table  None en annexe de ce document.  
+3 | **GEN_RELA**                           | [CodedDomain](#deformation-structures-plg-gen-rela)  | Relation génétique. 
 []()           | Cardinalité   [0..1] |                                    |  
 
 
@@ -1560,7 +1509,7 @@ _Relation génétique_
 
 
 ### Classe Tectonic_Boundaries_L {#tectonic-boundaries-l}
-None
+La classe [Tectonic_Boundaries_L](#tectonic-boundaries-l) comprend toutes les failles tectoniques.
 
 
 
@@ -1570,20 +1519,18 @@ None
 ----|------------------------------|-----------------------------------|--------------------------------------
 1 | **KIND**                           | subtype                  | Type de l&#39;objet et description. 
 []()           | Cardinalité  [1]  ||
-2 | **FAULT_MO**                           | [CodedDomain](#tectonic-boundaries-l-fault-mo)  | Mouvement de la faille. Les valeurs possibles sont énumérées dans la table  GC_LIN_TTEC_FAULT_MO_CD en annexe de ce document.  
+2 | **FAULT_MO**                           | [CodedDomain](#tectonic-boundaries-l-fault-mo)  | Mouvement de la faille. 
 []()           | Cardinalité   [0..1] |                                    |  
-3 | **VERTI_MO**                           | [CodedDomain](#tectonic-boundaries-l-verti-mo)  | Mouvement parallèle au pendage du plan de faille. Les valeurs possibles sont énumérées dans la table  GC_LIN_TTEC_VERTI_MO_CD en annexe de ce document.  
+3 | **VERTI_MO**                           | [CodedDomain](#tectonic-boundaries-l-verti-mo)  | Mouvement parallèle au pendage du plan de faille. 
 []()           | Cardinalité   [0..1] |                                    |  
 4 | **HORIZ_MO**                           | [CodedDomain](#tectonic-boundaries-l-horiz-mo)  | Mouvement parallèle à la direction du plan de faille ou 
-de cisaillement. Les valeurs possibles sont énumérées dans la table  GC_LIN_TTEC_HORIZ_MO_CD en annexe de ce document.  
+de cisaillement. 
 []()           | Cardinalité   [0..1] |                                    |  
 5 | **LIM_TECT_B**                           | boolean                  | Limite d’unité tectonique (oui / non)? 
 []()           | Cardinalité  [1]  ||
-6 | **STATUS**                           | [CodedDomain](#tectonic-boundaries-l-status)  | État du type d&#39;objet. Les valeurs possibles sont énumérées dans la table  GC_LIN_TTEC_STATUS_CD en annexe de ce document.  
+6 | **STATUS**                           | [CodedDomain](#tectonic-boundaries-l-status)  | État du type d&#39;objet. 
 []()           | Cardinalité   [1] |                                    |  
-7 | **ACTIVITY**                           | TODO                  | Activité du type d&#39;objet 
-[]()           | Cardinalité  [0..1]  ||
-8 | **META_STA**                           | [CodedDomain](#tectonic-boundaries-l-meta-sta)  | Chronologie tecto-métamorphique du type d’objet.. Les valeurs possibles sont énumérées dans la table  GC_LIN_TTEC_META_STA_CD en annexe de ce document.  
+8 | **META_STA**                           | [CodedDomain](#tectonic-boundaries-l-meta-sta)  | Chronologie tecto-métamorphique du type d’objet.. 
 []()           | Cardinalité   [0..1] |                                    |  
 9 | **NAME**                           | string                  | Nom de la localité-type. / Description de l’affleurement géologique important 
 []()           | Cardinalité  [0..1]  ||
@@ -1678,13 +1625,6 @@ _État du type d&#39;objet_
 
 
 
-#### Attribut  ACTIVITY
-_Activité du type d&#39;objet_
-
-
-
-
-
 #### Attribut  META_STA {#tectonic-boundaries-l-meta-sta}
 _Chronologie tecto-métamorphique du type d’objet._
 
@@ -1717,8 +1657,7 @@ _Type de donnée :  string_
 
 ### Classe Folds_PT {#folds-pt}
 La classe [Folds_PT](#folds-pt) contient les motifs qui décrivent la position spatiale d’objets géologiques
-plissés (par des mesures prises directement sur le terrain). A titre d’exemple, l’annexe A illustre
-l’orientation d’un axe de pli et l’orientation d’une ligne de crête.
+plissés (par des mesures prises directement sur le terrain).
 
 
 
@@ -1728,21 +1667,17 @@ l’orientation d’un axe de pli et l’orientation d’une ligne de crête.
 ----|------------------------------|-----------------------------------|--------------------------------------
 1 | **KIND**                           | subtype                  | Type de l&#39;objet et description. 
 []()           | Cardinalité  [1]  ||
-2 | **FOLD_TYP**                           | [CodedDomain](#folds-pt-fold-typ)  | Type de l&#39;objet. Les valeurs possibles sont énumérées dans la table  GC_PNT_MFOL_FOLD_TYP_CD en annexe de ce document.  
+2 | **FOLD_TYP**                           | [CodedDomain](#folds-pt-fold-typ)  | Type de l&#39;objet. 
 []()           | Cardinalité   [0..1] |                                    |  
 3 | **FOLD_FOR**                           |                   | Forme du type d&#39;objet 
 []()           | Cardinalité  [0..1]  |13603|
-4 | **PHASE**                           | [CodedDomain](#folds-pt-phase)  | Phase de déformation. Les valeurs possibles sont énumérées dans la table  GC_PNT_MFOL_PHASE_CD en annexe de ce document.  
+4 | **PHASE**                           | [CodedDomain](#folds-pt-phase)  | Phase de déformation. 
 []()           | Cardinalité   [0..1] |                                    |  
 5 | **PHASE_REF**                           | string                  | Référence pour les données concernant la phase de déformation. 
 []()           | Cardinalité  [0..1]  ||
-6 | **AZIMUTH**                           | integer                  | Azimut du type d&#39;objet. L&#39;azimut est mesuré depuis le 
-nord en degré de 0° à 359° dans le sens des aiguilles 
-d&#39;une montre 
+6 | **AZIMUTH**                           | integer                  | Azimut du type d&#39;objet. L&#39;azimut est mesuré depuis le  nord en degré de 0° à 359° dans le sens des aiguilles  d&#39;une montre 
 []()           | Cardinalité  [1]  ||
-7 | **DIP**                           | integer                  | Valeur du plongement du type d&#39;objet (valeur en 
-degrés, mesurée de l’horizontale (0°) vers le bas jusqu’à 
-la verticale (90°) 
+7 | **DIP**                           | integer                  | Valeur du plongement du type d&#39;objet (valeur en  degrés, mesurée de l’horizontale (0°) vers le bas jusqu’à  la verticale (90°) 
 []()           | Cardinalité  [0..1]  ||
 
 
@@ -1808,9 +1743,7 @@ _Type de donnée :  string_
 
 
 #### Attribut  AZIMUTH
-_Azimut du type d&#39;objet. L&#39;azimut est mesuré depuis le 
-nord en degré de 0° à 359° dans le sens des aiguilles 
-d&#39;une montre_
+_Azimut du type d&#39;objet. L&#39;azimut est mesuré depuis le  nord en degré de 0° à 359° dans le sens des aiguilles  d&#39;une montre_
 
 _Type de donnée :  integer_
 
@@ -1819,9 +1752,7 @@ _Type de donnée :  integer_
 
 
 #### Attribut  DIP
-_Valeur du plongement du type d&#39;objet (valeur en 
-degrés, mesurée de l’horizontale (0°) vers le bas jusqu’à 
-la verticale (90°)_
+_Valeur du plongement du type d&#39;objet (valeur en  degrés, mesurée de l’horizontale (0°) vers le bas jusqu’à  la verticale (90°)_
 
 _Type de donnée :  integer_
 
@@ -1843,13 +1774,9 @@ d’intersection ou de linéation d’étirement.
 ----|------------------------------|-----------------------------------|--------------------------------------
 1 | **KIND**                           | subtype                  | Type de l&#39;objet et description. 
 []()           | Cardinalité  [1]  ||
-2 | **AZIMUTH**                           | integer                  | Azimut du type d&#39;objet. L&#39;azimut est mesuré depuis le 
-nord en degré de 0° à 359° dans le sens des aiguilles 
-d&#39;une montre 
+2 | **AZIMUTH**                           | integer                  | Azimut du type d&#39;objet. L&#39;azimut est mesuré depuis le  nord en degré de 0° à 359° dans le sens des aiguilles  d&#39;une montre 
 []()           | Cardinalité  [1]  ||
-3 | **DIP**                           |                   | Valeur du plongement du type d&#39;objet (en degrés),
-mesurée de l’horizontale (0°) vers le bas jusqu’à la 
-verticale (90°) 
+3 | **DIP**                           |                   | Valeur du plongement du type d&#39;objet (en degrés), mesurée de l’horizontale (0°) vers le bas jusqu’à la  verticale (90°) 
 []()           | Cardinalité  []  ||
 
 
@@ -1871,9 +1798,7 @@ _Type de l&#39;objet et description._
 
 
 #### Attribut  AZIMUTH
-_Azimut du type d&#39;objet. L&#39;azimut est mesuré depuis le 
-nord en degré de 0° à 359° dans le sens des aiguilles 
-d&#39;une montre_
+_Azimut du type d&#39;objet. L&#39;azimut est mesuré depuis le  nord en degré de 0° à 359° dans le sens des aiguilles  d&#39;une montre_
 
 _Type de donnée :  integer_
 
@@ -1882,16 +1807,14 @@ _Type de donnée :  integer_
 
 
 #### Attribut  DIP
-_Valeur du plongement du type d&#39;objet (en degrés),
-mesurée de l’horizontale (0°) vers le bas jusqu’à la 
-verticale (90°)_
+_Valeur du plongement du type d&#39;objet (en degrés), mesurée de l’horizontale (0°) vers le bas jusqu’à la  verticale (90°)_
 
 
 
 
 
 ### Classe Planar_Structures_PT {#planar-structures-pt}
-None
+La classe [Planar_Structures_PT](#planar-structures-pt) contient des types d&#39;objets qui décrivent la position spatiale de structures planes. décrivent la position des structures planaires avec des mesures directes sur le terrain.
 
 
 
@@ -1901,17 +1824,15 @@ None
 ----|------------------------------|-----------------------------------|--------------------------------------
 1 | **KIND**                           | subtype                  | Type de l&#39;objet et description. 
 []()           | Cardinalité  [1]  ||
-2 | **POLARITY**                           | [CodedDomain](#planar-structures-pt-polarity)  | Polarité du type d&#39;objet dans l&#39;espace.. Les valeurs possibles sont énumérées dans la table  GC_PNT_MPLA_POLARITY_CD en annexe de ce document.  
+2 | **POLARITY**                           | [CodedDomain](#planar-structures-pt-polarity)  | Polarité du type d&#39;objet dans l&#39;espace.. 
 []()           | Cardinalité   [0..1] |                                    |  
-3 | **PHASE**                           | [CodedDomain](#planar-structures-pt-phase)  | Phase de déformation. Les valeurs possibles sont énumérées dans la table  GC_PNT_MPLA_PHASE_CD en annexe de ce document.  
-[]()           | Cardinalité   [] |                                    |  
+3 | **PHASE**                           | [CodedDomain](#planar-structures-pt-phase)  | Phase de déformation. 
+[]()           | Cardinalité   [0..1] |                                    |  
 4 | **PHASE_REF**                           | string                  | Référence pour les données concernant la phase de déformation. 
 []()           | Cardinalité  [0..1]  ||
-5 | **OB_DIP_SLO**                           | boolean                  | Dip slope observé (oui / non)? 
+5 | **OB_DIP_SLO**                           | boolean                  | Dip slope (oui / non)? 
 []()           | Cardinalité  [0..1]  ||
-6 | **AZIMUTH**                           | integer                  | Azimut du type d&#39;objet. L&#39;azimut est mesuré depuis le 
-nord en degré de 0° à 359° dans le sens des aiguilles 
-d&#39;une montre 
+6 | **AZIMUTH**                           | integer                  | Azimut du type d&#39;objet. L&#39;azimut est mesuré depuis le  nord en degré de 0° à 359° dans le sens des aiguilles  d&#39;une montre 
 []()           | Cardinalité  [1]  ||
 7 | **DIP**                           |                   | Valeur du plongement du type d&#39;objet (en degrés),
 mesurée de l’horizontale (0°) vers le bas jusqu’à la 
@@ -1977,7 +1898,7 @@ _Type de donnée :  string_
 
 
 #### Attribut  OB_DIP_SLO
-_Dip slope observé (oui / non)?_
+_Dip slope (oui / non)?_
 
 _Type de donnée :  boolean_
 
@@ -1986,9 +1907,7 @@ _Type de donnée :  boolean_
 
 
 #### Attribut  AZIMUTH
-_Azimut du type d&#39;objet. L&#39;azimut est mesuré depuis le 
-nord en degré de 0° à 359° dans le sens des aiguilles 
-d&#39;une montre_
+_Azimut du type d&#39;objet. L&#39;azimut est mesuré depuis le  nord en degré de 0° à 359° dans le sens des aiguilles  d&#39;une montre_
 
 _Type de donnée :  integer_
 
@@ -2057,13 +1976,13 @@ La classe [Fossils_PT](#fossils-pt) contient tous les gisements fossilifères
 ----|------------------------------|-----------------------------------|--------------------------------------
 1 | **KIND**                           | subtype                  | Type de l&#39;objet et description. 
 []()           | Cardinalité  [1]  ||
-2 | **DIVISION**                           | [CodedDomain](#fossils-pt-division)  | Catégorie de fossile à laquelle appartient l&#39;objet. Les valeurs possibles sont énumérées dans la table  GC_FOSS_LFOS_DIVISION_CD en annexe de ce document.  
+2 | **DIVISION**                           | [CodedDomain](#fossils-pt-division)  | Catégorie de fossile à laquelle appartient l&#39;objet. 
 []()           | Cardinalité   [0..1] |                                    |  
 3 | **SYSTEM**                           | table                  | Groupe de fossiles 
-[]()           | Cardinalité  [0..1]  |gc_system|
-4 | **DAT_METH**                           | [CodedDomain](#fossils-pt-dat-meth)  | Méthode de datation. Les valeurs possibles sont énumérées dans la table  GC_FOSS_LFOS_DAT_METH_CD en annexe de ce document.  
+[]()           | Cardinalité  [0..5]  |gc_system|
+4 | **DAT_METH**                           | [CodedDomain](#fossils-pt-dat-meth)  | Méthode de datation. 
 []()           | Cardinalité   [0..1] |                                    |  
-5 | **STATUS**                           | [CodedDomain](#fossils-pt-status)  | État du type d&#39;objet. Les valeurs possibles sont énumérées dans la table  GC_FOSS_LFOS_STATUS_CD en annexe de ce document.  
+5 | **STATUS**                           | [CodedDomain](#fossils-pt-status)  | État du type d&#39;objet. 
 []()           | Cardinalité   [0..1] |                                    |  
 6 | **PROTECTED**                           | boolean                  | Objet géologique protégé (oui / non)? 
 []()           | Cardinalité  [0..1]  ||
@@ -2155,9 +2074,9 @@ de gas, d’hydrocarbures et de matériel volcanique
 ----|------------------------------|-----------------------------------|--------------------------------------
 1 | **KIND**                           | subtype                  | Type de l&#39;objet et description. 
 []()           | Cardinalité  [1]  ||
-2 | **STATUS**                           | [CodedDomain](#indication-of-resources-pt-status)  | tat du type d&#39;obje. Les valeurs possibles sont énumérées dans la table  GC_PNT_LRES_STATUS_CD en annexe de ce document.  
+2 | **STATUS**                           | [CodedDomain](#indication-of-resources-pt-status)  | tat du type d&#39;obje. 
 []()           | Cardinalité   [0..1] |                                    |  
-3 | **MATERIAL**                           | [CodedDomain](#indication-of-resources-pt-material)  | Matériau associé au type d&#39;objet. Les valeurs possibles sont énumérées dans la table  GC_PNT_LRES_MATERIAL_CD en annexe de ce document.  
+3 | **MATERIAL**                           | [CodedDomain](#indication-of-resources-pt-material)  | Matériau associé au type d&#39;objet. 
 []()           | Cardinalité   [0..1] |                                    |  
 4 | **CHEMISTRY**                           | string                  | Composant(s) chimique(s) caractérisant la nature du 
 type d&#39;objet. 
@@ -2279,9 +2198,7 @@ observées.
 ----|------------------------------|-----------------------------------|--------------------------------------
 1 | **KIND**                           | subtype                  | Type de l&#39;objet et description. 
 []()           | Cardinalité  [1]  ||
-2 | **AZIMUTH**                           | integer                  | Azimut du type d&#39;objet. L&#39;azimut est mesuré depuis le 
-nord en degré de 0° à 359° dans le sens des aiguilles 
-d&#39;une montre 
+2 | **AZIMUTH**                           | integer                  | Azimut du type d&#39;objet. L&#39;azimut est mesuré depuis le  nord en degré de 0° à 359° dans le sens des aiguilles  d&#39;une montre 
 []()           | Cardinalité  [0..1]  ||
 
 
@@ -2305,9 +2222,7 @@ _Type de l&#39;objet et description._
 
 
 #### Attribut  AZIMUTH
-_Azimut du type d&#39;objet. L&#39;azimut est mesuré depuis le 
-nord en degré de 0° à 359° dans le sens des aiguilles 
-d&#39;une montre_
+_Azimut du type d&#39;objet. L&#39;azimut est mesuré depuis le  nord en degré de 0° à 359° dans le sens des aiguilles  d&#39;une montre_
 
 _Type de donnée :  integer_
 
@@ -2316,7 +2231,7 @@ _Type de donnée :  integer_
 
 
 ### Classe Type_Localities_PT {#type-localities-pt}
-La classe [Type_Localities_PT](#type-localities-pt) regroupe les types d’objets qui décrivent les localités-types ou les
+La classe [Type_Localities_PT](#type-localities-pt) regroupe les types d’objets qui décrivent les profiles-types ou les
 affleurements géologiques importants.
 
 
@@ -2327,7 +2242,7 @@ affleurements géologiques importants.
 ----|------------------------------|-----------------------------------|--------------------------------------
 1 | **KIND**                           | subtype                  | Type de l&#39;objet et description. 
 []()           | Cardinalité  [1]  ||
-2 | **STRATI**                           | [CodedDomain](#type-localities-pt-strati)  | Complément lithostratigraphique du type d&#39;objet. Les valeurs possibles sont énumérées dans la table  GC_PNT_LTYP_STRATI_CD en annexe de ce document.  
+2 | **STRATI**                           | [CodedDomain](#type-localities-pt-strati)  | Complément lithostratigraphique du type d&#39;objet. 
 []()           | Cardinalité   [0..1] |                                    |  
 3 | **NAME**                           | string                  | Nom de la localité-type. / Description de l’affleurement géologique important. 
 []()           | Cardinalité  [0..1]  ||
@@ -2409,14 +2324,14 @@ None
 1 | **KIND**                           | subtype                  | Type de l&#39;objet et description. 
 []()           | Cardinalité  [1]  ||
 2 | **CONG_SPE**                           | [CodedDomain](#prominent-lithological-features-l-cong-spe)  | Caractérisation des conglomérats selon la nature des 
-clastes.. Les valeurs possibles sont énumérées dans la table  GC_LIN_LPRO_CONG_SPE_CD en annexe de ce document.  
+clastes.. 
 []()           | Cardinalité   [0..1] |                                    |  
-3 | **NAME_HORIZ**                           | [CodedDomain](#gc-litstrat-bed-cd)  | Nom du horizon repère à bentonite.. Les valeurs possibles sont énumérées dans la table  GC_LITSTRAT_BED_CD en annexe de ce document.  
-[]()           | Cardinalité   [0..1] |                                    |  
+3 | **NAME_HORIZ**                           | [ Table ](#gc-litstrat-bed-cd)  | Nom du horizon repère à bentonite.. 
+[]()           | Cardinalité   [0..1] |
 4 | **ORIG_DESCR**                           | string                  | Description de la légende de la carte géologique originale. 
 []()           | Cardinalité  [0..1]  ||
-5 | **LPRO_LITHO**                           | [CodedDomain](#gc-litho-cd)  | Unité litholstratigraphique. Les valeurs possibles sont énumérées dans la table  GC_LITHO_CD en annexe de ce document.  
-[]()           | Cardinalité   [1] |                                    |  
+5 | **LPRO_LITHO**                           | [ Table ](#gc-litho-cd)  | Unité litholstratigraphique. 
+[]()           | Cardinalité   [1] |
 
 
 
@@ -2453,7 +2368,7 @@ clastes._
 #### Attribut  NAME_HORIZ
 _Nom du horizon repère à bentonite._
 
-Voir le domaine [GC_LITSTRAT_BED_CD](#gc-litstrat-bed-cd) dans l'annexe
+Voir [GC_LITSTRAT_BED_CD](#gc-litstrat-bed-cd) dans l'annexe
 
 
 
@@ -2471,7 +2386,7 @@ _Type de donnée :  string_
 #### Attribut  LPRO_LITHO
 _Unité litholstratigraphique_
 
-Voir le domaine [GC_LITHO_CD](#gc-litho-cd) dans l'annexe
+Voir [GC_LITHO_CD](#gc-litho-cd) dans l'annexe
 
 
 
@@ -2518,18 +2433,7 @@ _Type de donnée :  string_
 
 
 ### Classe Geological_Outlines_L {#geological-outlines-l}
-La classe [Geological_Outlines_L](#geological-outlines-l) contient les contours géologiques. Sous ce terme sont regroupés 
-les périmètres des affleurements de roches consolidées et de roches meubles, les limites des 
-zones tectonisées, ainsi que la délimitation des masses glissées et tassées, pour autant que ces 
-bordures ne soient pas déjà décrites par un autre type de contour (p. ex. limite tectonique).
-Les contours géologiques de statut général regroupent les limites stratigraphiques et 
-pétrographiques. Un contour géologique recouvert par des dépôts quaternaires, par un cours 
-d’eau ou un glacier a un statut probable. Il en va de même pour les passages graduels entre 
-roches meubles et roches consolidées (aucune limite lithologique claire; au sens des limites de 
-figuré selon le catalogue des signes (CS)). Les contours géologiques artificiels (contours de 
-séparation selon le CS) sont des contours séparant des secteurs à information détaillée de 
-secteurs à densité d’information plus faible – du fait d’un manque d’information ou pour des 
-raisons de représentation (échelle de la digitalisation
+La classe [Geological_Outlines_L](#geological-outlines-l) contient les contours géologiques.
 
 
 
@@ -2539,7 +2443,7 @@ raisons de représentation (échelle de la digitalisation
 ----|------------------------------|-----------------------------------|--------------------------------------
 1 | **KIND**                           | subtype                  | Type de l&#39;objet et description. 
 []()           | Cardinalité  [1]  ||
-2 | **STATUS**                           | [CodedDomain](#geological-outlines-l-status)  | État du type d&#39;objet. Les valeurs possibles sont énumérées dans la table  GC_LIN_LGEO_STATUS_CD en annexe de ce document.  
+2 | **STATUS**                           | [CodedDomain](#geological-outlines-l-status)  | État du type d&#39;objet. 
 []()           | Cardinalité   [0..1] |                                    |  
 
 
@@ -2594,18 +2498,14 @@ d’érosions.
 ----|------------------------------|-----------------------------------|--------------------------------------
 1 | **KIND**                           | subtype                  | Type de l&#39;objet et description. 
 []()           | Cardinalité  [1]  ||
-2 | **TYPE**                           | [CodedDomain](#slope-bedrock-pt-type)  | Surface de référence. Les valeurs possibles sont énumérées dans la table  GC_PNT_PSLO_TYPE_CD en annexe de ce document.  
+2 | **TYPE**                           | [CodedDomain](#slope-bedrock-pt-type)  | Surface de référence. 
 []()           | Cardinalité   [1] |                                    |  
-3 | **AZIMUTH**                           | integer                  | Azimut du type d&#39;objet. L&#39;azimut est mesuré depuis le 
-nord en degré de 0° à 359° dans le sens des aiguilles 
-d&#39;une montre 
+3 | **AZIMUTH**                           | integer                  | Azimut du type d&#39;objet. L&#39;azimut est mesuré depuis le  nord en degré de 0° à 359° dans le sens des aiguilles  d&#39;une montre 
 []()           | Cardinalité  [0..1]  ||
-4 | **DIP**                           | integer                  | Valeur du plongement du type d&#39;objet (en degrés),
-mesurée de l’horizontale (0°) vers le bas jusqu’à la 
-verticale (90°) 
+4 | **DIP**                           | integer                  | Valeur du plongement du type d&#39;objet (en degrés), mesurée de l’horizontale (0°) vers le bas jusqu’à la  verticale (90°) 
 []()           | Cardinalité  [0..1]  ||
-5 | **PSLO_FORMATIO**                           | [CodedDomain](#gc-litstrat-bed-cd)  | Unité lithostratigraphique de l’horizon modélisé. Les valeurs possibles sont énumérées dans la table  GC_LITSTRAT_BED_CD en annexe de ce document.  
-[]()           | Cardinalité   [1] |                                    |  
+5 | **PSLO_FORMATIO**                           | [ Table ](#gc-litstrat-bed-cd)  | Unité lithostratigraphique de l’horizon modélisé. 
+[]()           | Cardinalité   [1] |
 
 
 
@@ -2637,9 +2537,7 @@ _Surface de référence_
 
 
 #### Attribut  AZIMUTH
-_Azimut du type d&#39;objet. L&#39;azimut est mesuré depuis le 
-nord en degré de 0° à 359° dans le sens des aiguilles 
-d&#39;une montre_
+_Azimut du type d&#39;objet. L&#39;azimut est mesuré depuis le  nord en degré de 0° à 359° dans le sens des aiguilles  d&#39;une montre_
 
 _Type de donnée :  integer_
 
@@ -2648,9 +2546,7 @@ _Type de donnée :  integer_
 
 
 #### Attribut  DIP
-_Valeur du plongement du type d&#39;objet (en degrés),
-mesurée de l’horizontale (0°) vers le bas jusqu’à la 
-verticale (90°)_
+_Valeur du plongement du type d&#39;objet (en degrés), mesurée de l’horizontale (0°) vers le bas jusqu’à la  verticale (90°)_
 
 _Type de donnée :  integer_
 
@@ -2661,7 +2557,7 @@ _Type de donnée :  integer_
 #### Attribut  PSLO_FORMATIO
 _Unité lithostratigraphique de l’horizon modélisé_
 
-Voir le domaine [GC_LITSTRAT_BED_CD](#gc-litstrat-bed-cd) dans l'annexe
+Voir [GC_LITSTRAT_BED_CD](#gc-litstrat-bed-cd) dans l'annexe
 
 
 
@@ -2680,12 +2576,12 @@ entre autres les isohypses de la surface du substratum rocheux.
 ----|------------------------------|-----------------------------------|--------------------------------------
 1 | **KIND**                           | subtype                  | Type de l&#39;objet et description. 
 []()           | Cardinalité  [1]  ||
-2 | **TYPE**                           | [CodedDomain](#contour-lines-bedrock-l-type)  | Surface de référence. Les valeurs possibles sont énumérées dans la table  GC_LIN_PCOB_TYPE_CD en annexe de ce document.  
+2 | **TYPE**                           | [CodedDomain](#contour-lines-bedrock-l-type)  | Surface de référence. 
 []()           | Cardinalité   [1] |                                    |  
 3 | **ALTITUDE**                           | float                  | Valeur altimétrique des isohypses. 
 []()           | Cardinalité  [1]  ||
-4 | **LITSTRAT**                           | [CodedDomain](#gc-litstrat-bed-cd)  | Unité lithostratigraphique de la formation modelisée. Les valeurs possibles sont énumérées dans la table  GC_LITSTRAT_BED_CD en annexe de ce document.  
-[]()           | Cardinalité   [1] |                                    |  
+4 | **LITSTRAT**                           | [ Table ](#gc-litstrat-bed-cd)  | Unité lithostratigraphique de la formation modelisée. 
+[]()           | Cardinalité   [1] |
 
 
 
@@ -2729,7 +2625,7 @@ _Type de donnée :  float_
 #### Attribut  LITSTRAT
 _Unité lithostratigraphique de la formation modelisée_
 
-Voir le domaine [GC_LITSTRAT_BED_CD](#gc-litstrat-bed-cd) dans l'annexe
+Voir [GC_LITSTRAT_BED_CD](#gc-litstrat-bed-cd) dans l'annexe
 
 
 
@@ -2747,13 +2643,9 @@ modélisation du niveau piézométrique d’une nappe libre.
 ----|------------------------------|-----------------------------------|--------------------------------------
 1 | **KIND**                           | subtype                  | Type de l&#39;objet et description. 
 []()           | Cardinalité  [1]  ||
-2 | **AZIMUTH**                           | integer                  | Azimut du type d&#39;objet. L&#39;azimut est mesuré depuis le 
-nord en degré de 0° à 359° dans le sens des aiguilles 
-d&#39;une montre 
+2 | **AZIMUTH**                           | integer                  | Azimut du type d&#39;objet. L&#39;azimut est mesuré depuis le  nord en degré de 0° à 359° dans le sens des aiguilles  d&#39;une montre 
 []()           | Cardinalité  [0..1]  ||
-3 | **DIP**                           | integer                  | Valeur du plongement du type d&#39;objet (en degrés),
-mesurée de l’horizontale (0°) vers le bas jusqu’à la 
-verticale (90°) 
+3 | **DIP**                           | integer                  | Valeur du plongement du type d&#39;objet (en degrés), mesurée de l’horizontale (0°) vers le bas jusqu’à la  verticale (90°) 
 []()           | Cardinalité  [0..1]  ||
 4 | **HEIGHT**                           | float                  | Cote de la nappe phréatique. 
 []()           | Cardinalité  [0..1]  ||
@@ -2777,9 +2669,7 @@ _Type de l&#39;objet et description._
 
 
 #### Attribut  AZIMUTH
-_Azimut du type d&#39;objet. L&#39;azimut est mesuré depuis le 
-nord en degré de 0° à 359° dans le sens des aiguilles 
-d&#39;une montre_
+_Azimut du type d&#39;objet. L&#39;azimut est mesuré depuis le  nord en degré de 0° à 359° dans le sens des aiguilles  d&#39;une montre_
 
 _Type de donnée :  integer_
 
@@ -2788,9 +2678,7 @@ _Type de donnée :  integer_
 
 
 #### Attribut  DIP
-_Valeur du plongement du type d&#39;objet (en degrés),
-mesurée de l’horizontale (0°) vers le bas jusqu’à la 
-verticale (90°)_
+_Valeur du plongement du type d&#39;objet (en degrés), mesurée de l’horizontale (0°) vers le bas jusqu’à la  verticale (90°)_
 
 _Type de donnée :  integer_
 
@@ -2828,11 +2716,11 @@ nappe d’eaux souterraine.
 ----|------------------------------|-----------------------------------|--------------------------------------
 1 | **KIND**                           | subtype                  | Type de l&#39;objet et description. 
 []()           | Cardinalité  [1]  ||
-2 | **CONFINE**                           | [CodedDomain](#contour-lines-hydro-l-confine)  | État de la pression dans l’aquifère. Les valeurs possibles sont énumérées dans la table  GC_LIN_PCOH_CONFINE_CD en annexe de ce document.  
+2 | **CONFINE**                           | [CodedDomain](#contour-lines-hydro-l-confine)  | État de la pression dans l’aquifère. 
 []()           | Cardinalité   [0..1] |                                    |  
 3 | **ALTITUDE**                           |                   | Valeur altimétrique des isohypses. 
 []()           | Cardinalité  [1]  ||
-4 | **WA_TABLE**                           | [CodedDomain](#contour-lines-hydro-l-wa-table)  | Niveau des eaux. Les valeurs possibles sont énumérées dans la table  GC_LIN_PCOH_WA_TABLE_CD en annexe de ce document.  
+4 | **WA_TABLE**                           | [CodedDomain](#contour-lines-hydro-l-wa-table)  | Niveau des eaux. 
 []()           | Cardinalité   [0..1] |                                    |  
 
 
@@ -2903,13 +2791,13 @@ La classe [Archaeology_PT](#archaeology-pt) regroupe les sites archéologiques.
 ----|------------------------------|-----------------------------------|--------------------------------------
 1 | **KIND**                           | subtype                  | Type de l&#39;objet et description. 
 []()           | Cardinalité  []  ||
-2 | **EPOCH**                           | [CodedDomain](#archaeology-pt-epoch)  | Époque archéologique du type d&#39;objet. Les valeurs possibles sont énumérées dans la table  GC_AARC_EPOCH_CD en annexe de ce document.  
+2 | **EPOCH**                           | [CodedDomain](#archaeology-pt-epoch)  | Époque archéologique du type d&#39;objet. 
 []()           | Cardinalité   [0..1] |                                    |  
-3 | **PERIOD**                           | [CodedDomain](#archaeology-pt-period)  | Période archéologique du type d&#39;objet. Les valeurs possibles sont énumérées dans la table  GC_AARC_PERIOD_CD en annexe de ce document.  
+3 | **PERIOD**                           | [CodedDomain](#archaeology-pt-period)  | Période archéologique du type d&#39;objet. 
 []()           | Cardinalité   [0..1] |                                    |  
-4 | **AGE**                           | [CodedDomain](#archaeology-pt-age)  | Âge archéologique du type d&#39;objet. Les valeurs possibles sont énumérées dans la table  GC_AARC_AGE_CD en annexe de ce document.  
+4 | **AGE**                           | [CodedDomain](#archaeology-pt-age)  | Âge archéologique du type d&#39;objet. 
 []()           | Cardinalité   [0..1] |                                    |  
-5 | **TYPE**                           | [CodedDomain](#archaeology-pt-type)  | Type de mégalithe. Les valeurs possibles sont énumérées dans la table  GC_PNT_AARC_TYPE_CD en annexe de ce document.  
+5 | **TYPE**                           | [CodedDomain](#archaeology-pt-type)  | Type de mégalithe. 
 []()           | Cardinalité   [0..1] |                                    |  
 
 
@@ -3018,11 +2906,11 @@ historiques, les chemins creux et les fossés de fortification font partie de ce
 ----|------------------------------|-----------------------------------|--------------------------------------
 1 | **KIND**                           | subtype                  | Type de l&#39;objet et description. 
 []()           | Cardinalité  []  ||
-2 | **EPOCH**                           | [CodedDomain](#archaeology-l-epoch)  | Époque archéologique du type d&#39;objet. Les valeurs possibles sont énumérées dans la table  GC_AARC_EPOCH_CD en annexe de ce document.  
+2 | **EPOCH**                           | [CodedDomain](#archaeology-l-epoch)  | Époque archéologique du type d&#39;objet. 
 []()           | Cardinalité   [0..1] |                                    |  
-3 | **PERIOD**                           | [CodedDomain](#archaeology-l-period)  | Période archéologique du type d&#39;objet. Les valeurs possibles sont énumérées dans la table  GC_AARC_PERIOD_CD en annexe de ce document.  
+3 | **PERIOD**                           | [CodedDomain](#archaeology-l-period)  | Période archéologique du type d&#39;objet. 
 []()           | Cardinalité   [0..1] |                                    |  
-4 | **AGE**                           | [CodedDomain](#archaeology-l-age)  | Âge archéologique du type d&#39;objet. Les valeurs possibles sont énumérées dans la table  GC_AARC_AGE_CD en annexe de ce document.  
+4 | **AGE**                           | [CodedDomain](#archaeology-l-age)  | Âge archéologique du type d&#39;objet. 
 []()           | Cardinalité   [0..1] |                                    |  
 
 
@@ -3110,11 +2998,11 @@ romain) qui recouvrent une surface importante.
 ----|------------------------------|-----------------------------------|--------------------------------------
 1 | **KIND**                           | subtype                  | Type de l&#39;objet et description. 
 []()           | Cardinalité  []  ||
-2 | **EPOCH**                           | [CodedDomain](#archaeology-plg-epoch)  | Époque archéologique du type d&#39;objet. Les valeurs possibles sont énumérées dans la table  GC_AARC_EPOCH_CD en annexe de ce document.  
+2 | **EPOCH**                           | [CodedDomain](#archaeology-plg-epoch)  | Époque archéologique du type d&#39;objet. 
 []()           | Cardinalité   [0..1] |                                    |  
-3 | **PERIOD**                           | [CodedDomain](#archaeology-plg-period)  | Période archéologique du type d&#39;objet. Les valeurs possibles sont énumérées dans la table  GC_AARC_PERIOD_CD en annexe de ce document.  
+3 | **PERIOD**                           | [CodedDomain](#archaeology-plg-period)  | Période archéologique du type d&#39;objet. 
 []()           | Cardinalité   [0..1] |                                    |  
-4 | **AGE**                           | [CodedDomain](#archaeology-plg-age)  | Âge archéologique du type d&#39;objet. Les valeurs possibles sont énumérées dans la table  GC_AARC_AGE_CD en annexe de ce document.  
+4 | **AGE**                           | [CodedDomain](#archaeology-plg-age)  | Âge archéologique du type d&#39;objet. 
 []()           | Cardinalité   [0..1] |                                    |  
 
 
@@ -3197,13 +3085,13 @@ d’exploitation de matériaux géologiques.
 ----|------------------------------|-----------------------------------|--------------------------------------
 1 | **KIND**                           | subtype                  | Type de l&#39;objet et description. 
 []()           | Cardinalité  []  ||
-2 | **EXP_UNIT**                           | table                  | Unité lithostratigraphique exploitée 
-[]()           | Cardinalité  [0..*]  |gc_litstrat_bed|
-3 | **STATUS**                           | [CodedDomain](#exploitation-geomaterials-pt-status)  | État de l&#39;exploitation. Les valeurs possibles sont énumérées dans la table  GC_EX_GEO_PNT_AEXP_STATUS_CD en annexe de ce document.  
+2 | **EXP_UNIT**                           | [ Table ](#gc-litstrat-bed-cd)  | Unité lithostratigraphique exploitée. 
+[]()           | Cardinalité   [0..*] |
+3 | **STATUS**                           | [CodedDomain](#exploitation-geomaterials-pt-status)  | État de l&#39;exploitation. 
 []()           | Cardinalité   [0..1] |                                    |  
 4 | **DEPTH_TOT**                           | float                  | Profondeur totale du type d&#39;objet (en mètres depuis la surface). 
 []()           | Cardinalité  [0..1]  ||
-5 | **TARG_MAT**                           | [CodedDomain](#exploitation-geomaterials-pt-targ-mat)  | Matériau exploité.. Les valeurs possibles sont énumérées dans la table  GC_EX_GEO_PNT_AEXP_TARG_MAT_CD en annexe de ce document.  
+5 | **TARG_MAT**                           | [CodedDomain](#exploitation-geomaterials-pt-targ-mat)  | Matériau exploité.. 
 []()           | Cardinalité   [0..1] |                                    |  
 
 
@@ -3228,6 +3116,8 @@ _Type de l&#39;objet et description._
 
 #### Attribut  EXP_UNIT
 _Unité lithostratigraphique exploitée_
+
+Voir [GC_LITSTRAT_BED_CD](#gc-litstrat-bed-cd) dans l'annexe
 
 
 
@@ -3322,7 +3212,7 @@ d’exploitation de matériaux géologiques (p.ex. le front de taille).
 ----|------------------------------|-----------------------------------|--------------------------------------
 1 | **KIND**                           | subtype                  | Type de l&#39;objet et description. 
 []()           | Cardinalité  []  ||
-2 | **STATUS**                           | [CodedDomain](#exploitation-geomaterials-l-status)  | État de l&#39;exploitation. Les valeurs possibles sont énumérées dans la table  GC_LIN_AEXP_STATUS_CD en annexe de ce document.  
+2 | **STATUS**                           | [CodedDomain](#exploitation-geomaterials-l-status)  | État de l&#39;exploitation. 
 []()           | Cardinalité   [0..1] |                                    |  
 
 
@@ -3369,13 +3259,13 @@ telles qu’elles étaient au moment du levé de la carte géologique.
 ----|------------------------------|-----------------------------------|--------------------------------------
 1 | **KIND**                           | subtype                  | Type de l&#39;objet et description. 
 []()           | Cardinalité  []  ||
-2 | **EXP_UNIT**                           | table                  | Unité lithostratigraphique exploitée 
-[]()           | Cardinalité  [1..*]  |gc_litstrat_bed|
-3 | **STATUS**                           | [CodedDomain](#exploitation-geomaterials-plg-status)  | État de l&#39;exploitation. Les valeurs possibles sont énumérées dans la table  GC_EX_GEO_PLG_AEXP_STATUS_CD en annexe de ce document.  
+2 | **EXP_UNIT**                           | [ Table ](#gc-litstrat-bed-cd)  | Unité lithostratigraphique exploitée. 
+[]()           | Cardinalité   [1..*] |
+3 | **STATUS**                           | [CodedDomain](#exploitation-geomaterials-plg-status)  | État de l&#39;exploitation. 
 []()           | Cardinalité   [0..1] |                                    |  
 4 | **DEPTH_TOT**                           | float                  | Profondeur totale du type d&#39;objet (en mètres depuis la surface). 
 []()           | Cardinalité  [0..1]  ||
-5 | **TARG_MAT**                           | [CodedDomain](#exploitation-geomaterials-plg-targ-mat)  | Matériel exploité.. Les valeurs possibles sont énumérées dans la table  GC_EX_GEO_PLG_AEXP_TARG_MAT_CD en annexe de ce document.  
+5 | **TARG_MAT**                           | [CodedDomain](#exploitation-geomaterials-plg-targ-mat)  | Matériel exploité.. 
 []()           | Cardinalité   [0..1] |                                    |  
 
 
@@ -3396,6 +3286,8 @@ _Type de l&#39;objet et description._
 
 #### Attribut  EXP_UNIT
 _Unité lithostratigraphique exploitée_
+
+Voir [GC_LITSTRAT_BED_CD](#gc-litstrat-bed-cd) dans l'annexe
 
 
 
@@ -3482,36 +3374,27 @@ commence déjà dans la roche en place la valeur est 0)
 []()           | Cardinalité  [0..1]  ||
 4 | **D_C_UNDERG**                           | boolean                  | Forage réalisé à partir d’une galerie (oui / non)? 
 []()           | Cardinalité  [1]  ||
-5 | **MAIN_TAR**                           | [CodedDomain](#boreholes-pt-main-tar)  | But principal du sondage. Les valeurs possibles sont énumérées dans la table  GC_PNT_ABOR_MAIN_TAR_CD en annexe de ce document.  
+5 | **MAIN_TAR**                           | [CodedDomain](#boreholes-pt-main-tar)  | But principal du sondage. 
 []()           | Cardinalité   [0..1] |                                    |  
-6 | **TARG_MAT**                           | [CodedDomain](#boreholes-pt-targ-mat)  | Matériau cible du sondage. Les valeurs possibles sont énumérées dans la table  GC_PNT_ABOR_TARG_MAT_CD en annexe de ce document.  
+6 | **TARG_MAT**                           | [CodedDomain](#boreholes-pt-targ-mat)  | Matériau cible du sondage. 
 []()           | Cardinalité   [0..1] |                                    |  
 7 | **DEPTH_TOT**                           | float                  | Profondeur totale du type d&#39;objet (en mètres depuis la surface). 
 []()           | Cardinalité  [0..1]  ||
-8 | **FM_A**                           | [CodedDomain](#gc-litstrat-bed-cd)  | Unité lithostratigraphique de la formation A atteinte. Les valeurs possibles sont énumérées dans la table  GC_LITSTRAT_BED_CD en annexe de ce document.  
-[]()           | Cardinalité   [0..1] |                                    |  
+8 | **FM_A**                           | [ Table ](#gc-litstrat-bed-cd)  | Unité lithostratigraphique de la formation A atteinte. 
+[]()           | Cardinalité   [0..1] |
 9 | **DEPTH_FM_A**                           | float                  | Profondeur relative à la formation A atteinte (en mètres depuis la surface). 
 []()           | Cardinalité  [0..1]  ||
-10 | **FM_B**                           | [CodedDomain](#gc-litstrat-bed-cd)  | Unité lithostratigraphique de la formation B atteinte. Les valeurs possibles sont énumérées dans la table  GC_LITSTRAT_BED_CD en annexe de ce document.  
-[]()           | Cardinalité   [0..1] |                                    |  
-11 | **DEPTH_FM_B**                           | float                  | Profondeur de la formation B atteinte (en mètres depuis 
-la surface). 
+10 | **FM_B**                           | [ Table ](#gc-litstrat-bed-cd)  | Unité lithostratigraphique de la formation B atteinte. 
+[]()           | Cardinalité   [0..1] |
+11 | **DEPTH_FM_B**                           | float                  | Profondeur de la formation B atteinte (en mètres depuis  la surface). 
 []()           | Cardinalité  [0..1]  ||
 12 | **DEPTH_WT**                           | float                  | Profondeur (m depuis la surface) de la nappe phréatique (valeur moyenne). 
 []()           | Cardinalité  [0..1]  ||
-13 | **AZIMUTH**                           | integer                  | Azimut du type d&#39;objet. L&#39;azimut est mesuré depuis le 
-nord en degré de 0° à 359° dans le sens des aiguilles 
-d&#39;une montre 
+13 | **AZIMUTH**                           | integer                  | Azimut du type d&#39;objet. L&#39;azimut est mesuré depuis le  nord en degré de 0° à 359° dans le sens des aiguilles  d&#39;une montre 
 []()           | Cardinalité  [0..1]  ||
-14 | **DIP**                           | integer                  | Valeur du plongement du type d&#39;objet (en degrés),
-mesurée de l’horizontale (0°) vers le bas jusqu’à la 
-verticale (90°) 
+14 | **DIP**                           | integer                  | Valeur du plongement du type d&#39;objet (en degrés), mesurée de l’horizontale (0°) vers le bas jusqu’à la  verticale (90°) 
 []()           | Cardinalité  [0..1]  ||
-15 | **REF_NUMBER**                           | integer                  | Numéro de référence du type d&#39;objet dans un 
-document annexé (notice explicative,…). 
-[]()           | Cardinalité  [0..1]  ||
-16 | **LINK**                           | integer                  | Numéro de référence du type d&#39;objet dans un 
-document annexé (notice explicative,…). 
+15 | **REF_NUMBER**                           | integer                  | Numéro de référence du type d&#39;objet dans un  document annexé (notice explicative,…). 
 []()           | Cardinalité  [0..1]  ||
 
 
@@ -3614,7 +3497,7 @@ _Type de donnée :  float_
 #### Attribut  FM_A
 _Unité lithostratigraphique de la formation A atteinte_
 
-Voir le domaine [GC_LITSTRAT_BED_CD](#gc-litstrat-bed-cd) dans l'annexe
+Voir [GC_LITSTRAT_BED_CD](#gc-litstrat-bed-cd) dans l'annexe
 
 
 
@@ -3632,15 +3515,14 @@ _Type de donnée :  float_
 #### Attribut  FM_B
 _Unité lithostratigraphique de la formation B atteinte_
 
-Voir le domaine [GC_LITSTRAT_BED_CD](#gc-litstrat-bed-cd) dans l'annexe
+Voir [GC_LITSTRAT_BED_CD](#gc-litstrat-bed-cd) dans l'annexe
 
 
 
 
 
 #### Attribut  DEPTH_FM_B
-_Profondeur de la formation B atteinte (en mètres depuis 
-la surface)._
+_Profondeur de la formation B atteinte (en mètres depuis  la surface)._
 
 _Type de donnée :  float_
 
@@ -3658,9 +3540,7 @@ _Type de donnée :  float_
 
 
 #### Attribut  AZIMUTH
-_Azimut du type d&#39;objet. L&#39;azimut est mesuré depuis le 
-nord en degré de 0° à 359° dans le sens des aiguilles 
-d&#39;une montre_
+_Azimut du type d&#39;objet. L&#39;azimut est mesuré depuis le  nord en degré de 0° à 359° dans le sens des aiguilles  d&#39;une montre_
 
 _Type de donnée :  integer_
 
@@ -3669,9 +3549,7 @@ _Type de donnée :  integer_
 
 
 #### Attribut  DIP
-_Valeur du plongement du type d&#39;objet (en degrés),
-mesurée de l’horizontale (0°) vers le bas jusqu’à la 
-verticale (90°)_
+_Valeur du plongement du type d&#39;objet (en degrés), mesurée de l’horizontale (0°) vers le bas jusqu’à la  verticale (90°)_
 
 _Type de donnée :  integer_
 
@@ -3680,18 +3558,7 @@ _Type de donnée :  integer_
 
 
 #### Attribut  REF_NUMBER
-_Numéro de référence du type d&#39;objet dans un 
-document annexé (notice explicative,…)._
-
-_Type de donnée :  integer_
-
-
-
-
-
-#### Attribut  LINK
-_Numéro de référence du type d&#39;objet dans un 
-document annexé (notice explicative,…)._
+_Numéro de référence du type d&#39;objet dans un  document annexé (notice explicative,…)._
 
 _Type de donnée :  integer_
 
@@ -3750,9 +3617,9 @@ les limnigraphes appartiennent également à cette classe.
 ----|------------------------------|-----------------------------------|--------------------------------------
 1 | **KIND**                           | subtype                  | Type de l&#39;objet et description. 
 []()           | Cardinalité  [1]  ||
-2 | **STATUS**                           | [CodedDomain](#construction-pt-status)  | État du type d&#39;objet.. Les valeurs possibles sont énumérées dans la table  GC_PNT_HCON_STATUS_CD en annexe de ce document.  
+2 | **STATUS**                           | [CodedDomain](#construction-pt-status)  | État du type d&#39;objet.. 
 []()           | Cardinalité   [0..1] |                                    |  
-3 | **EPOCH**                           | [CodedDomain](#construction-pt-epoch)  | Époque de construction du type d&#39;objet. Les valeurs possibles sont énumérées dans la table  GC_PNT_HCON_EPOCH_CD en annexe de ce document.  
+3 | **EPOCH**                           | [CodedDomain](#construction-pt-epoch)  | Époque de construction du type d&#39;objet. 
 []()           | Cardinalité   [0..1] |                                    |  
 4 | **DEPTH**                           | float                  | Profondeur du type d&#39;objet. 
 []()           | Cardinalité  [0..1]  ||
@@ -3852,7 +3719,7 @@ Surface_Water_PT.
 1 | **KIND**                           | subtype                  | Type de l&#39;objet et description. 
 []()           | Cardinalité  [1]  ||
 2 | **COMBI**                           | [CodedDomain](#construction-l-combi)  | Type d’objet d&#39;une autre classe avec lequel le type 
-d’objet peut être combiné. Les valeurs possibles sont énumérées dans la table  GC_LIN_HCON_COMBI_CD en annexe de ce document.  
+d’objet peut être combiné. 
 []()           | Cardinalité   [0..1] |                                    |  
 
 
@@ -3899,10 +3766,10 @@ d’un cours d’eau dans le passé.
 ----|------------------------------|-----------------------------------|--------------------------------------
 1 | **KIND**                           | subtype                  | Type de l&#39;objet et description. 
 []()           | Cardinalité  [1]  ||
-2 | **REL_AGE**                           | [CodedDomain](#palaeohydrology-l-rel-age)  | Age relatif du type d&#39;objet. Les valeurs possibles sont énumérées dans la table  GC_LIN_HPAL_REL_AGE_CD en annexe de ce document.  
+2 | **REL_AGE**                           | [CodedDomain](#palaeohydrology-l-rel-age)  | Age relatif du type d&#39;objet. 
 []()           | Cardinalité   [0..1] |                                    |  
-3 | **HPAL_CHRONO**                           | [CodedDomain](#gc-chrono-cd)  | Attribution chronostratigraphique. Les valeurs possibles sont énumérées dans la table  GC_CHRONO_CD en annexe de ce document.  
-[]()           | Cardinalité   [0..1] |                                    |  
+3 | **HPAL_CHRONO**                           | [ Table ](#gc-chrono-cd)  | Attribution chronostratigraphique. 
+[]()           | Cardinalité   [0..1] |
 4 | **REF_YEAR**                           | integer                  | Année de référence de l’ancienne ligne de rivage. 
 []()           | Cardinalité  [1]  ||
 5 | **SOURCE**                           | string                  | Source des données déduites à partir de données historiques. 
@@ -3947,7 +3814,7 @@ _Age relatif du type d&#39;objet_
 #### Attribut  HPAL_CHRONO
 _Attribution chronostratigraphique_
 
-Voir le domaine [GC_CHRONO_CD](#gc-chrono-cd) dans l'annexe
+Voir [GC_CHRONO_CD](#gc-chrono-cd) dans l'annexe
 
 
 
@@ -3987,7 +3854,7 @@ souterrains peuvent être combinés avec les objets de la classe Surface_Water_P
 1 | **KIND**                           | subtype                  | Type de l&#39;objet et description. 
 []()           | Cardinalité  [1]  ||
 2 | **COMBI**                           | [CodedDomain](#subsurface-water-l-combi)  | Type d’objet d&#39;une autre classe avec lequel le type 
-d’objet peut être combiné. Les valeurs possibles sont énumérées dans la table  GC_LIN_HSUB_COMBI_CD en annexe de ce document.  
+d’objet peut être combiné. 
 []()           | Cardinalité   [0..1] |                                    |  
 
 
@@ -4041,24 +3908,21 @@ principal de l’eau minérale et non le chimisme complet de l’eau
 ----|------------------------------|-----------------------------------|--------------------------------------
 1 | **KIND**                           | subtype                  | Type de l&#39;objet et description. 
 []()           | Cardinalité  [1]  ||
-2 | **STATUS**                           | [CodedDomain](#surface-water-pt-status)  | État du type d&#39;objet. Les valeurs possibles sont énumérées dans la table  GC_PNT_HSUR_STATUS_CD en annexe de ce document.  
+2 | **STATUS**                           | [CodedDomain](#surface-water-pt-status)  | État du type d&#39;objet. 
 []()           | Cardinalité   [0..1] |                                    |  
-3 | **FLOW_CON**                           | [CodedDomain](#surface-water-pt-flow-con)  | Condition d’écoulement. Les valeurs possibles sont énumérées dans la table  GC_PNT_HSUR_FLOW_CON_CD en annexe de ce document.  
+3 | **FLOW_CON**                           | [CodedDomain](#surface-water-pt-flow-con)  | Condition d’écoulement. 
 []()           | Cardinalité   [0..1] |                                    |  
-4 | **TYPE**                           | [CodedDomain](#surface-water-pt-type)  | Caractéristique du type d&#39;objet. Les valeurs possibles sont énumérées dans la table  GC_PNT_HSUR_TYPE_CD en annexe de ce document.  
+4 | **TYPE**                           | [CodedDomain](#surface-water-pt-type)  | Caractéristique du type d&#39;objet. 
 []()           | Cardinalité   [0..1] |                                    |  
-5 | **DIS_LOCA**                           | [CodedDomain](#surface-water-pt-dis-loca)  | Lieu d’écoulement. Les valeurs possibles sont énumérées dans la table  GC_PNT_HSUR_DIS_LOCA_CD en annexe de ce document.  
+5 | **DIS_LOCA**                           | [CodedDomain](#surface-water-pt-dis-loca)  | Lieu d’écoulement. 
 []()           | Cardinalité   [0..1] |                                    |  
-6 | **COMBI**                           | [CodedDomain](#surface-water-pt-combi)  | Type d’objet d&#39;une autre classe avec lequel le type 
-d’objet peut être combiné. Les valeurs possibles sont énumérées dans la table  GC_PNT_HSUR_COMBI_CD en annexe de ce document.  
+6 | **COMBI**                           | [CodedDomain](#surface-water-pt-combi)  | Type d’objet d&#39;une autre classe avec lequel le type  d’objet peut être combiné. 
 []()           | Cardinalité   [0..1] |                                    |  
 7 | **TEMP**                           | integer                  | Température moyenne (°C) de l&#39;eau. 
 []()           | Cardinalité  [0..1]  ||
 8 | **CHEMISTRY**                           | string                  | Element chimique caractéristique dans l’eau minérale. 
 []()           | Cardinalité  [0..1]  ||
-9 | **AZIMUTH**                           | integer                  | Azimut du type d&#39;objet. L&#39;azimut est mesuré depuis le 
-nord en degré de 0° à 359° dans le sens des aiguilles 
-d&#39;une montre 
+9 | **AZIMUTH**                           | integer                  | Azimut du type d&#39;objet. L&#39;azimut est mesuré depuis le  nord en degré de 0° à 359° dans le sens des aiguilles  d&#39;une montre 
 []()           | Cardinalité  [0..1]  ||
 
 
@@ -4139,8 +4003,7 @@ _Lieu d’écoulement_
 
 
 #### Attribut  COMBI {#surface-water-pt-combi}
-_Type d’objet d&#39;une autre classe avec lequel le type 
-d’objet peut être combiné_
+_Type d’objet d&#39;une autre classe avec lequel le type  d’objet peut être combiné_
 
 
 |GeolCode|Deutsch|Français|
@@ -4172,9 +4035,7 @@ _Type de donnée :  string_
 
 
 #### Attribut  AZIMUTH
-_Azimut du type d&#39;objet. L&#39;azimut est mesuré depuis le 
-nord en degré de 0° à 359° dans le sens des aiguilles 
-d&#39;une montre_
+_Azimut du type d&#39;objet. L&#39;azimut est mesuré depuis le  nord en degré de 0° à 359° dans le sens des aiguilles  d&#39;une montre_
 
 _Type de donnée :  integer_
 
@@ -4183,8 +4044,7 @@ _Type de donnée :  integer_
 
 
 ### Classe Surface_Water_L {#surface-water-l}
-Dans la classe [Surface_Water_L](#surface-water-l) sont décrit les niveaux de sources (de
-forme linéaire)
+Dans la classe [Surface_Water_L](#surface-water-l) sont décrit les niveaux de sources (de forme linéaire)
 
 
 
@@ -4255,7 +4115,7 @@ Table des valeurs des unités lithostratigraphiques
 |15203300 | «Arblatsch-Flysch» | «Arblatsch-Flysch»     |
 |15203302 | «Arblatsch-Konglomerat» | «Arblatsch-Konglomerat»     |
 |15202417 | «Basaler Quarzit» (Coroi-Fm.) | «Quartzite de base» (Fm. du Coroi)     |
-|15202437 | «Calcaire à ciment» (Bifé-Fm.) | «Calcaire à ciment» (Fm. de Bifé)     |
+|15202437 | «Calcaire à ciment» (Bifé-Fm.) | «Calcaire ciment» (Fm. de Bifé)     |
 |15202428 | «Calcaire siliceux brunâtre» | «Calcaire siliceux brunâtre»     |
 |15200674 | «Calcaires à Entroques» | «Calcaires à Entroques»     |
 |15202433 | «Calcaires bréchiques» | «Calcaires bréchiques»     |
@@ -7917,7 +7777,7 @@ Table des valeurs des unités tectoniques
 
 
 ## Annexe  GC_MINERAL_CD {#gc-mineral-cd}
--todo-
+Minéral important de la roche métamorphique
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -8006,6 +7866,65 @@ Table des valeurs des unités tectoniques
 |20401055 | Zoisit | zoïsite     |
 |999997 | Unknown | inconnu     |
 |999998 | Not applicable | not applicable     |
+
+
+## Annexe  GC_ADMIXTURE {#gc-admixture}
+Incorporation
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|14509001 | mit Löss | avec loess     |
+|14509002 | mit Lösslehm | avec loess argileux     |
+|14509003 | mit Seekreide | avec craie lacustre     |
+|14509004 | mit Blöcken | avec blocs     |
+|14509005 | mit alpinen Geröllen | avec galets alpins     |
+|14509006 | mit Block- und Geschiebestreu | parsemé de blocs     |
+|14509007 | mit Blockschutt vermischt | mélangé à des dépôts d&#39;éboulement     |
+|14509008 | mit Hangschutt vermischt | mélangé à des éboulis     |
+|14509009 | mit Verwitterungsschutt vermischt | mélangé à des résidus d&#39;altération     |
+|14509010 | mit Torf | avec tourbe     |
+|14509011 | mit jurassischen Geröllen | avec galets jurassiens     |
+|14509012 | mit Geröllen aus Vogesen / Schwarzwald | avec galets des Vosges / de la Forêt Noire     |
+|14509013 | mit Schieferkohle | mit Schieferkohle     |
+
+
+## Annexe  GC_COMPOSIT {#gc-composit}
+Composition de la roche meuble
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|14508001 | tonig | argileux     |
+|14508002 | lehmig | limoneux     |
+|14508003 | siltig | silteux     |
+|14508004 | sandig | sableux     |
+|14508005 | kiesig | graveleux     |
+|14508006 | geröllreich | riche en galets     |
+|14508007 | torfig | tourbeux     |
+
+
+## Annexe  GC_CHARCAT {#gc-charcat}
+Structure sédimentaire
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|14511001 | fossil | fossile     |
+|14511002 | rezent | récent     |
+|14511003 | verwittert | altéré     |
+|14511004 | verfestigt (durch Überlast), konsolidiert | consolidé (par surcharge)     |
+|14511005 | verkittet (zementiert) | cimenté     |
+|14511006 | verschwemmt | délavé     |
+|14511007 | sumpfig | marécageux     |
+|14511008 | umgelagert | remanié     |
+|14511009 | abgebaut | exploité     |
+|14511010 | drainiert | drainé     |
+|14511011 | künstlich bewässert (Wässermatten) | inondé artificiellement (prairies irriguées)     |
+
+
+## Annexe  GC_SYSTEM {#gc-system}
+Groupe de fossile
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
 
 
 
