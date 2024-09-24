@@ -99,6 +99,35 @@ def get_coded_values(value):
     return {}
 
 
+def get_table_values(name):
+    try:
+        file_path = os.path.join(input_dir, name.lower().capitalize() + ".json")
+        df = pd.read_csv(file_path)
+
+        with open(file_path, "r", encoding="utf-8") as f:
+            data = json.load(f)
+
+        df = pd.DataFrame(data)
+
+        # Convert to dictionary with 'GEOL_CODE_INT' as key and 'GERMAN' as value
+        df["GEOL_CODE_INT"] = df["GEOL_CODE_INT"].astype(str)
+
+        geol_dict = df.set_index("GEOL_CODE_INT")["GERMAN"].to_dict()
+
+        return geol_dict
+
+    except FileNotFoundError:
+        logger.error(f"Error: The CSV file {file_path} was not found.")
+    except pd.errors.EmptyDataError:
+        logger.error("Error: The CSV file is empty.")
+    except pd.errors.ParserError:
+        logger.error("Error: There was a problem parsing the CSV file.")
+    except Exception as e:
+        logger.error(f"An unexpected error occurred: {e}: {geol_dict}, {df}")
+
+    return {}
+
+
 def get_subtype(value):
     res = {}
 
@@ -171,7 +200,11 @@ class Report:
                         if pairs is not None:
                             att["pairs"] = pairs
         for annex in model.get("annexes"):
-            pairs = get_coded_values(annex.get("name"))
+            annex_name = annex.get("name")
+            if annex_name.endswith("_CD"):
+                pairs = get_coded_values(annex_name)
+            else:
+                pairs = get_table_values(annex_name)
             annex["pairs"] = pairs
 
         return model

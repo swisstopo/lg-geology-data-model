@@ -7,8 +7,9 @@
 # 0.3 Mandatory attributes
 # 0.4 Add 'abrev' attribute
 # 0.5 Add tablename 
-version: 0.5
-date: 2024-04-24
+# 0.6 Tables, like CHARCAT, ADMIXTURE as annex (why no CD?)
+version: 0.6
+date: 2024-09-24
 
 # Model revision should change if attributes are added, deleted or changed
 model:
@@ -178,7 +179,7 @@ themes:
             description:
               de: Spezifische Eigenschaft.
               fr: Structure sédimentaire
-            att_type: table
+            att_type: annex
             value: gc_charcat
             cardinality: 0..3
           - name: morpholo
@@ -2319,7 +2320,10 @@ themes:
             value: 12701
             cardinality: 1
 
-
+# Two distincts sources for annexes:
+# - `name`ending with `_CD` is a coded domain (file `exports/coded_domains.json`)
+# - Other `name` expected a JSON file `exports/<name>.json` with the give
+#   value (see `get_table_values` method)
 annexes:
   - name: GC_LITSTRAT_BED_CD
     description:
@@ -2350,15 +2354,16 @@ annexes:
     description:
       de: -todo-
       fr: -todo-
-  - name: GC_ADMIXTURE
+  - name: ADMIXTURE
     description:
       de: -todo-
       fr: -todo-
-  - name: GC_COMPOSIT
+  - name: COMPOSIT
     description:
       de: -todo-
       fr: -todo-
-  - name: GC_CHARCAT
+  - name: CHARCAT
     description:
       de: -todo-
       fr: -todo-
+
