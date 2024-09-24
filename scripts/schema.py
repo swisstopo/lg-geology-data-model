@@ -28,6 +28,7 @@ TREE_TABLES = [
     "TOPGIS_GC.GC_ADMIXTURE",  # Not a hierarchical table
     "TOPGIS_GC.GC_CHARCAT",  # Not a hierarchical table
     "TOPGIS_GC.GC_COMPOSIT",  # Not a hierarchical table
+    "TOPGIS_GC.GC_SYSTEM",  # Not a hierarchical table
 ]
 
 # The order will be preserved in the export

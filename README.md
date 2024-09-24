@@ -55,7 +55,9 @@ Pour tester l'installation (le numéro de version peut être différent):
 
 Dans un prompt Python, en utilisant l'environnement `conda` par défaut `arcgis-py3` :
 
-     ./geocover.py  export  -w D:\connections\GCOVERP@osa.sde -l DEBUG -o ../exports
+    (arcgispro-py3)> cd H:\code\lg-geology-data-model\scripts
+
+    (arcgispro-py3)scripts>D:\conda\envs\arcgispro-py3-clone\python.exe geocover.py  export  -w D:\connections\GCOVERP@osa.sde -l DEBUG -o ../exports
 
 
 2. Export de la structure Oracle : 
@@ -82,7 +84,6 @@ Dans ArcGis Pro, charger et exécuter le script : `export_oracle_tables.py`
 4. Compiler les catalogues (`app` et `datamodel`) :
     
     pybabel compile --domain=app --directory=locale --use-fuzzy
-
 
 
 ## Création du fichier Markdown source
