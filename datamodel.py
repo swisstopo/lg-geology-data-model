@@ -7,6 +7,7 @@ import sys
 import datetime
 import re
 import os
+import subprocess
 
 import click
 
@@ -47,6 +48,8 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ENCODING\n"'''
 
+def get_git_revision_short_hash() -> str:
+    return subprocess.check_output(['git', 'rev-parse', '--short', 'HEAD']).decode('ascii').strip()
 
 def create_msg(df):
     de = list(zip(df["GeolCodeInt"], df["DE"]))
@@ -80,7 +83,7 @@ def translate(geol_code, fallback, lang="FR"):
         try:
             msg = df.loc[int(geol_code)]["FR"]
             # TODO: should be done in the translation XLS
-            msg = msg.replace('à ciment', 'ciment').replace('à matrice', 'matrice')
+            msg = msg.replace("à ciment", "ciment").replace("à matrice", "matrice")
 
         except KeyError as ke:
             logger.error(f"GeolCode not found while translating '{geol_code}': {ke}")
@@ -178,6 +181,7 @@ class Report:
             with open(self.config_file, "rt", encoding="utf8") as f:
                 self._model = yaml.load(f, Loader=yaml.FullLoader)
                 self._model["date"] = str(datetime.date.today())
+                self._model["hash"] = get_git_revision_short_hash()
             return self._model
 
     def to_json(self):
@@ -252,7 +256,9 @@ def datamodel(lang):
 
     loader = jinja2.FileSystemLoader(os.path.join(yaml_dir, "templates"))
     env = jinja2.Environment(
-        autoescape=True, loader=loader, extensions=["jinja2.ext.i18n"]
+        autoescape=True,
+        loader=loader,
+        extensions=["jinja2.ext.i18n"],
     )
 
     # TODO: only one language
@@ -262,6 +268,7 @@ def datamodel(lang):
     translations.merge(ui_translations)
     data["lang"] = lang
     data["date"] = now
+    data["hash"] = get_git_revision_short_hash()
     locale = lang
 
     env.install_gettext_translations(translations, newstyle=True)

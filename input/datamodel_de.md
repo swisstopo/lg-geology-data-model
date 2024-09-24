@@ -1,5 +1,5 @@
 
-# Datenmodell Geologie, Revision 3.1 #
+# Datenmodell Geologie, Revision 4.0 #
 
 
 
@@ -4174,10 +4174,10 @@ Wertetabelle der lithostratigraphischen Einheiten
 |15202078 | Altmann-Member | Membre de l&#39;Altmann     |
 |15204023 | Alv-Brekzie | Brèche d&#39;Alv     |
 |15200577 | Amaltheenton-Formation | Amaltheenton-Formation     |
+|15202607 | Amden- und Wang-Formation, undifferenziert | Amden- und Wang-Formation, undifferenziert     |
 |15202049 | Amden-Mergel | Marne d&#39;Amden     |
 |15204006 | Ammergau-Formation | Formation d&#39;Ammergau     |
 |15205120 | Amphibolit der Valpelline-Gruppe | Amphibolite du Groupe de Valpelline     |
-|15203466 | Amphibolit des Ergischhorn-Ensembles | Amphibolite du Complexe gneissique de l&#39;Ergischhorn     |
 |15206037 | Amphibolit, undifferenziert | amphibolite, indifférenciée     |
 |15200574 | Ancepsoolith-Subformation | Ancepsoolith-Subformation     |
 |15205067 | Andesit und Dazit | Andésite et dacite permiennes du Sudalpin     |
@@ -4249,6 +4249,10 @@ Wertetabelle der lithostratigraphischen Einheiten
 |15203580 | Bärenhorn-Formation: Quarzsandstein | Formation du Bärenhorn: grès quartzitique     |
 |15203531 | Bargella-Brekzie | Brèche de Bargella     |
 |15200223 | Bärhalde-Granit | Granite de la Bärhalde     |
+|15203593 | Barrhorn-Einheit: Couches-Rouges | Barrhorn-Einheit: Couches-Rouges     |
+|15203595 | Barrhorn-Einheit: Dogger | Barrhorn-Einheit: Dogger     |
+|15203592 | Barrhorn-Einheit: Flysch | Barrhorn-Einheit: Flysch     |
+|15203594 | Barrhorn-Einheit: Malm | Barrhorn-Einheit: Malm     |
 |15203182 | Barrhorn-Serie | Série du Barrhorn     |
 |15200672 | Bärschwil- bis St-Ursanne-Formation, undifferenziert | Bärschwil- bis St-Ursanne-Formation, undifferenziert     |
 |15200006 | Bärschwil-Formation | Formation de Bärschwil     |
@@ -4287,6 +4291,7 @@ Wertetabelle der lithostratigraphischen Einheiten
 |15205060 | Besano-Formation | Formation de Besano     |
 |15205039 | Besazio-Kalk | Calcaire de Besazio     |
 |15202135 | Besoëns-Formation | Formation des Besoëns     |
+|15202609 | Betlis- bis Schrattenkalk-Formation, undifferenziert | Betlis- bis Schrattenkalk-Formation, undifferenziert     |
 |15202084 | Betlis-Formation | Formation de Betlis     |
 |15203530 | Bettlerjoch-Brekzie | Brèche du Bettlerjoch     |
 |15202115 | Bietenhorn-Member | Membre du Bietenhorn     |
@@ -4337,8 +4342,10 @@ Wertetabelle der lithostratigraphischen Einheiten
 |15205088 | Bouquetins-Quarzdiorit | Bouquetins-Quarzdiorit     |
 |15200049 | Bözen-Member | Membre de Bözen     |
 |15204065 | Brachiopodenkalk-Member | Brachiopodenkalk-Member     |
+|15202614 | Bränd-Brekzie | Bränd-Brekzie     |
 |15203079 | Brand-Formation | Formation de Brand     |
 |15200499 | Brand-Herrentisch-Tuffit | Tuffite du Brand-Herrentisch     |
+|15203601 | Brändjispitz-Gabbro | Brändjispitz-Gabbro     |
 |15203383 | Brasses-Formation | Formation des Brasses     |
 |15200460 | Brauner Oolith | Brauner Oolith     |
 |15205048 | Brecce Retiche | Brecce Retiche     |
@@ -4488,6 +4495,7 @@ Wertetabelle der lithostratigraphischen Einheiten
 |15203016 | Coulaytes-Melange | Mélange des Coulaytes     |
 |15203587 | Coulaytes-Melange und Cuvigne-Derrey-Formation, undifferenziert | Coulaytes-Melange und Cuvigne-Derrey-Formation, undifferenziert     |
 |15200445 | Courcelon-Süsswasserkalk | Calcaire d&#39;eau douce de Courcelon     |
+|15200685 | Courgenay-, Balsthal- und Villigen-Formation, undifferenziert | Courgenay-, Balsthal- und Villigen-Formation, undifferenziert     |
 |15200003 | Courgenay-Formation | Formation de Courgenay     |
 |15200019 | Courtedoux-Member | Membre de Courtedoux     |
 |15200025 | Couvaloup-Member | Membre du Couvaloup     |
@@ -4530,6 +4538,7 @@ Wertetabelle der lithostratigraphischen Einheiten
 |15206074 | Diorit, undifferenziert | diorite, indifférenciée     |
 |15202089 | Diphyoides-Kalk | Calcaire à Diphyoides     |
 |15202348 | Distelgrat-Gneis | Gneiss du Distelgrat     |
+|15203599 | Distulberg-Fm.: Graphitschiefer | Distulberg-Fm.: Graphitschiefer     |
 |15203194 | Distulberg-Formation | Formation du Distulberg     |
 |15203272 | Dogger der Klippen-Decke | Dogger de la nappe des Préalpes Médianes     |
 |15202106 | Dogger des Helvetikums | Dogger de l&#39;Helvétique     |
@@ -4573,6 +4582,7 @@ Wertetabelle der lithostratigraphischen Einheiten
 |15200502 | Eichbol-Tuffit | Tuffite d&#39;Eichbol     |
 |15203152 | Eichholztobel-Formation | Formation de l&#39;Eichholztobel     |
 |15200260 | Eimätteli-Member | Membre d&#39;Eimätteli     |
+|15202596 | Einsiedeln- und Steinibach-Member, undifferenziert | Formation de l&#39;Euthal et Membre du Steinbach, indiff.     |
 |15202038 | Einsiedeln-Member | Membre d&#39;Einsiedeln     |
 |15202589 | Einsiedeln-Member, «Älterer Quarzsandstein» | Membre d&#39;Einsiedeln, «Älterer Quarzsandstein»     |
 |15202592 | Einsiedeln-Member, Alveolinenkalk-Fazies | Membre d&#39;Einsiedeln, faciès calcaire à Alvéolines     |
@@ -4591,6 +4601,8 @@ Wertetabelle der lithostratigraphischen Einheiten
 |15200524 | Ennetbühl-Member | Membre d&#39;Ennetbühl     |
 |15200212 | Eptingen-Member | Banc d&#39;Eptingen     |
 |15203199 | Ergischhorn-Komplex | Complexe de l&#39;Ergischhorn     |
+|15203466 | Ergischhorn-Komplex: Amphibolit | Amphibolite du Complexe gneissique de l&#39;Ergischhorn     |
+|15203602 | Ergischhorn-Komplex: Eklogit | Ergischhorn-Komplex: Eklogit     |
 |15200210 | Ergolz-Member | Membre de l&#39;Ergolz     |
 |15200072 | Eriwis-Bank | Banc d&#39;Eriwis     |
 |15200073 | Erlimoos-Bank | Banc d&#39;Erlimoos     |
@@ -4603,15 +4615,15 @@ Wertetabelle der lithostratigraphischen Einheiten
 |15202553 | Erstfeld-Gneiskomplex: Migmatit | Complexe gneissique d&#39;Erstfeld: migmatite     |
 |15202552 | Erstfeld-Gneiskomplex: Orthogneis | Complexe gneissique d&#39;Erstfeld: orthogneiss     |
 |15202107 | Erzegg-Formation | Formation de l&#39;Erzegg     |
+|15202613 | Erzegg-Formation: Grenzschicht | Erzegg-Formation: Grenzschicht     |
 |15200446 | Erzmatt-Krustenkalk | Calcaire concrétionné de la Erzmatt     |
 |15203124 | Estavannens-Flysch | Flysch d&#39;Estavannens     |
 |15200468 | Estherien-Schichten | Couches à Estheria (Fm. de Schinznach)     |
 |15202171 | Estuarisches Member | Membre estuarien (Fm. du Bifertengrätli)     |
 |15200023 | Etiollets-Formation | Formation des Etiollets     |
 |15200643 | Etzgen-Granit | Granite d&#39;Etzgen     |
+|15202606 | Euthal- und Bürgen-Formation, undifferenziert | Euthal- und Bürgen-Formation, undifferenziert     |
 |15202036 | Euthal-Formation | Formation d&#39;Euthal     |
-|15202596 | Euthal-Formation und Steinbach-Member, undiff. | Formation de l&#39;Euthal et Membre du Steinbach, indiff.     |
-|15202604 | Euthal-Formation: schwarzer schiefriger Tonstein | Formation d&#39;Euthal: faciès argilo-schisteux noir     |
 |15203260 | Exergillod-Brekzie | Brèche d&#39;Exergillod     |
 |15203167 | Fadura-Formation | Formation de la Fadura     |
 |15200279 | Falätschen-Mergel | Marne de la Falätschen     |
@@ -4629,7 +4641,7 @@ Wertetabelle der lithostratigraphischen Einheiten
 |15200275 | Fellitobel-Süsswasserkalk | Calcaire d&#39;eau douce du Fellitobel     |
 |15203372 | Ferret-Schiefer | Schistes de Ferret     |
 |15200196 | Ferrugineus-Oolith | Oolite à Ferrugineus     |
-|15203228 | Fêta-d&#39;Août-Flysch | Flysch de la Fêta d&#39;Août     |
+|15203228 | Fêta-d&#39;Août-Formation | Flysch de la Fêta d&#39;Août     |
 |15202230 | Fibbia-Granit | Granite de la Fibbia     |
 |15203138 | Filamentkalk | Calcaires à filaments     |
 |15205133 | Finero-Peridotit | Péridotite de Finero     |
@@ -4639,8 +4651,10 @@ Wertetabelle der lithostratigraphischen Einheiten
 |15203497 | Flix-Schichten | Schistes de Flix     |
 |15204104 | Flüela-Augnengneis | Gneiss oeillé de la Flüela     |
 |15200556 | Flühli-Nagelfluh | Poudingue de Flühli     |
+|15203605 | Flysch 2 | Flysch 2     |
 |15203115 | Flysch 2a tonig-sandig | Flysch 2a argilo-gréseux     |
 |15203114 | Flysch 2b mit sandigen Turbiditen | Flysch 2b à turbidites siliceuses     |
+|15203606 | Flysch 3 | Flysch 3     |
 |15203113 | Flysch 3a mergelig-sandig | Flysch 3a marno-gréseux     |
 |15203112 | Flysch 3b mit bioklastischen Turbiditen | Flysch 3b à turbidites bioclastiques     |
 |15203111 | Flysch 4 mit siltigen Turbiditen | Flysch 4 à turbidites silteuses     |
@@ -4696,7 +4710,7 @@ Wertetabelle der lithostratigraphischen Einheiten
 |15200209 | Gansingen-Member | Membre de Gansingen     |
 |15203321 | Ganter-Gneis | Ganter-Gneis     |
 |15206073 | Garbenschiefer, undifferenziert | Garbenschiefer, indifférencié     |
-|15203227 | Garde-de-Bordon-Serie | Série de la Garde de Bordon     |
+|15203227 | Garde-de-Bordon-Formation | Série de la Garde de Bordon     |
 |15203254 | Garenstock-Augengneis | Gneiss oeillé du Garenstock     |
 |15204048 | Garone-Formation | Formation du (Monte) Garone     |
 |15202052 | Garschella-Formation | Formation de Garschella     |
@@ -4897,6 +4911,7 @@ Wertetabelle der lithostratigraphischen Einheiten
 |15203048 | Heiti-Formation | Formation de Heiti     |
 |15200565 | Heliciden-Mergel | Marne à Hélicidés     |
 |15203116 | Hellstätt-Formation | Formation de Hellstätt     |
+|15203607 | Hellstätt-Formation und Flysch 2a, undifferenziert | Hellstätt-Formation und Flysch 2a, undifferenziert     |
 |15202079 | Helvetischer Kieselkalk | Kieselkalk Helvétique     |
 |15202515 | Helvetischer Kieselkalk, Basisschiefer | Helvetischer Kieselkalk, Basisschiefer     |
 |15202513 | Helvetischer Kieselkalk, Oberer Teil | Helvetischer Kieselkalk, Oberer Teil     |
@@ -4959,6 +4974,7 @@ Wertetabelle der lithostratigraphischen Einheiten
 |15202403 | Inferno-Formation, Unterer Teil | Formation d&#39;Inferno, partie inférieure     |
 |15206016 | Informelle Zuordnung | Informelle Zuordnung     |
 |15203282 | Infrabrèche-Melange | Mélange infra-brèche     |
+|15202615 | Infralias-Sandstein | Infralias-Sandstein     |
 |15202307 | Infrapräalpines Melange | Mélange Infrapréalpin     |
 |15202195 | Innertkirchen-Migmatit | Migmatite d&#39;Innertkirchen     |
 |15202531 | Innertkirchen-Migmatit, permisch verwittert | Migmatite d&#39;Innertkirchen, à altération permienne     |
@@ -5142,6 +5158,7 @@ Wertetabelle der lithostratigraphischen Einheiten
 |15200619 | Limnischer Horizont (OMM-I) | Horizon limnique (OMM-I)     |
 |15200431 | Limnischer Horizont (OMM-II) | Horizon limnique (OMM-II)     |
 |15200680 | Lindau-Granit | Lindau-Granit     |
+|15203600 | Lirec-Fm.: Amphibolit | Lirec-Fm.: Amphibolit     |
 |15203197 | Lirec-Formation | Formation de Lirec     |
 |15206020 | Lithologische Einheit, undifferenziert | Lithologische Einheit, undifferenziert     |
 |15203518 | Lizun-Grünschiefer | Schistes verts du Lizun     |
@@ -5160,6 +5177,7 @@ Wertetabelle der lithostratigraphischen Einheiten
 |15202560 | Lötschental-Gneiskomplex: Chloritschiefer | Complexe gneissique du Lötschental: schiste à chlorite     |
 |15202559 | Lötschental-Gneiskomplex: migmatitischer Biotitgneis | Complexe gneissique du Lötschental: gneiss à biotite migmatitique     |
 |15202558 | Lötschental-Gneiskomplex: Muskovitgneis | Complexe gneissique du Lötschental: gneiss à muscovite     |
+|15203598 | Louvie-Gabbro | Louvie-Gabbro     |
 |15205011 | Lucino-Konglomerat | Conglomérat de Lucino     |
 |15203081 | Lückengraben-Formation | Formation du Lückengraben     |
 |15203374 | Lugnez-Schiefer | Schistes du Val Lumnezia     |
@@ -5277,6 +5295,7 @@ Wertetabelle der lithostratigraphischen Einheiten
 |15200420 | Molière-Muschelsandstein | Grès coquillier de la Molière     |
 |15205041 | Molino-Member | Membre du Molino     |
 |15202117 | Mols-Member | Membre de Mols     |
+|15202611 | Mols-Members, Basisbildungen | Mols-Members, Basisbildungen     |
 |15205040 | Moltrasio-Formation | Formation de Moltrasio     |
 |15204082 | Mönchalp-Augengneis | Gneiss oeillé de la Mönchalp     |
 |15203462 | Moncucco-Peridotit | Péridotite du Moncucco     |
@@ -5413,6 +5432,8 @@ Wertetabelle der lithostratigraphischen Einheiten
 |15200503 | Öhningen-Formation | Formation d&#39;Öhningen     |
 |15200504 | Öhningen-Süsswasserkalk | Calcaire d&#39;eau douce d&#39;Öhningen     |
 |15200272 | Öhningen-Zone im Hörnligebiet | Zone d&#39;Öhningen de la région du Hörnli     |
+|15202610 | Öhrli- bis Schrattenkalk-Formation, undifferenziert | Öhrli- bis Schrattenkalk-Formation, undifferenziert     |
+|15202612 | Öhrli- und Betlis-Formation, undifferenziert | Öhrli- und Betlis-Formation, undifferenziert     |
 |15202091 | Öhrli-Formation | Formation de l&#39;Öhrli     |
 |15202527 | Öhrli-Formation, von Siderolithikum durchsetzt | Formation de l&#39;Öhrli, à infiltrations de Sidérolithique     |
 |15200638 | Öligraben-Formation | Formation de l&#39;Öligraben     |
@@ -5509,6 +5530,7 @@ Wertetabelle der lithostratigraphischen Einheiten
 |15203160 | Peula-Schichten | Couches de la Peula     |
 |15203084 | Pfad-Mikrofazies | Microfaciès de Pfad     |
 |15200403 | Pfadflüe-Nagelfluh | Poudingue de la Pfadflüe     |
+|15202605 | Pfäfers-Formation | Pfäfers-Formation     |
 |15200677 | Pfaffnau-Granit | Pfaffnau-Granit     |
 |15200257 | Pfänder-Schichten | Couches du Pfänder     |
 |15200280 | Pfannenstiel-Schichten | Couches du Pfannenstiel     |
@@ -5523,6 +5545,8 @@ Wertetabelle der lithostratigraphischen Einheiten
 |15203356 | Pianasciom-Kalkschiefer | Calcschiste de Pianasciom     |
 |15203357 | Piano-delle-Creste-Sandstein | Grès du Piano delle Creste     |
 |15200039 | Pichoux-Formation | Formation du Pichoux     |
+|15200686 | Pichoux-Formation: Korallenfazies | Pichoux-Formation: Korallenfazies     |
+|15200687 | Pichoux-Formation: Schwammfazies | Pichoux-Formation: Schwammfazies     |
 |15203408 | Piémont-Glanzschiefer | Schistes lustrés du Piémontais     |
 |15203413 | Piémont-Ophiolith | Ophiolite du Piémontais     |
 |15203345 | Pierre-Avoi-Brekzie | Pierre-Avoi-Brekzie     |
@@ -5549,9 +5573,9 @@ Wertetabelle der lithostratigraphischen Einheiten
 |15204085 | Plasseggen-Augengneis | Gneiss oeillé de Plasseggen     |
 |15203224 | Plattamala-Granit | Granite de la nappe de la Tasna     |
 |15204008 | Plattas-Member | Membre de Plattas     |
-|15202602 | Plattazüg-Formation | Formation du Plattazüg     |
 |15200146 | Plattensandstein | Plattensandstein (Fm. du Dinkelberg)     |
 |15202058 | Plattenwald-Bank | Banc du Plattenwald     |
+|15202602 | Plattenzüg-Formation | Formation du Plattazüg     |
 |15200218 | Playa-Serie | Playa-Serie (Fm. de Weitenau)     |
 |15202203 | Plex-Aboyeu-Rhyodazit | Rhyodacite de Plex-Aboyeu     |
 |15202519 | Pliensbachien-Spatkalk | Pliensbachien-Spatkalk     |
@@ -5607,6 +5631,7 @@ Wertetabelle der lithostratigraphischen Einheiten
 |15203436 | Preja-Formation | Formation de la Preja     |
 |15205022 | Prella-Konglomerat | Conglomérat de Prella     |
 |15205014 | Prestino-Pelite | Pélite de Prestino     |
+|15203597 | Printse-Formation | Printse-Formation     |
 |15202601 | Prodkamm- bis Sexmor-Formation, undifferenziert | Formation du Prodkamm à Formation du Sexmor, indifférenciées     |
 |15202131 | Prodkamm-Formation | Formation du Prodkamm     |
 |15202390 | Prodkamm-Formation, Mittlerer Teil | Prodkamm-Formation, Mittlerer Teil     |
@@ -5778,7 +5803,7 @@ Wertetabelle der lithostratigraphischen Einheiten
 |15206105 | Sandstein, undifferenziert | grès, indifférencié     |
 |15202016 | Sanetsch-Formation | Formation du Sanetsch     |
 |15202280 | Sardona-Melange | Mélange du Sardona     |
-|15202283 | Sardona-Quarzit | Quartzite du Sardona     |
+|15202283 | Sardona-Member | Quartzite du Sardona     |
 |15204112 | Sass-Queder-Metarhyolith | Métarhyolite du Sass Queder     |
 |15205091 | Sassa-Metagabbro | Sassa-Metagabbro     |
 |15203169 | Sassauna-Formation | Formation de la Sassauna     |
@@ -5847,6 +5872,7 @@ Wertetabelle der lithostratigraphischen Einheiten
 |15200227 | Seeablagerungen | Seeablagerungen (Fm. de Weiach)     |
 |15200206 | Seebi-Member | Membre de Seebi     |
 |15200506 | Seerücken-Tuffit | Tuffite du Seerücken     |
+|15202608 | Seewen- und Amden-Formation, undifferenziert | Seewen- und Amden-Formation, undifferenziert     |
 |15202050 | Seewen-Formation | Formation de Seewen     |
 |15202500 | Seez-Member | Membre de Seez     |
 |15202104 | Seeztal-Member | Membre du Seeztal     |
@@ -5926,6 +5952,7 @@ Wertetabelle der lithostratigraphischen Einheiten
 |15200054 | St-Brais-Member | Membre de St-Braix     |
 |15203157 | St-Christophe-Schichten | Formation de St-Christophe     |
 |15200309 | St-Gallen-Formation | Formation de St-Gall     |
+|15203596 | St-Triphon- und Wiriehorn-Fm., undifferenziert | St-Triphon- und Wiriehorn-Fm., undifferenziert     |
 |15203096 | St-Triphon-Formation | Formation de St-Triphon     |
 |15200005 | St-Ursanne-Formation | Formation de St-Ursanne     |
 |15200238 | St.-Blasien-Granit | Granite de St-Blasien     |
@@ -5963,6 +5990,8 @@ Wertetabelle der lithostratigraphischen Einheiten
 |15200123 | Subfurcatum-Bank | Banc à Subfurcatum     |
 |15203257 | Submédiane-Melange | Mélange Submédian     |
 |15203370 | Südegg-Komplex | Compexe de Südegg     |
+|15203603 | Südegg-Komplex: Prasinit | Südegg-Komplex: Prasinit     |
+|15203604 | Südegg-Komplex: Talkschiefer | Südegg-Komplex: Talkschiefer     |
 |15202295 | Südelbach-Member | Membre du Südelbach     |
 |15202004 | Südhelvetische Flyscheinheiten | Unités de flysch sud-helvétiques     |
 |15202162 | Südwestlicher Aare-Granit | Granite sud-occidental de l&#39;Aar     |
@@ -6171,6 +6200,7 @@ Wertetabelle der lithostratigraphischen Einheiten
 |15205079 | Variszische Intrusiva des Südalpins | roches intrusives varisques du Sudalpin     |
 |15200617 | Variszisches Grundgebirge der Nordschweiz | Variszisches Grundgebirge der Nordschweiz     |
 |15202467 | Variszisches Kristallin des Helvetikums | Variszisches Kristallin des Helvetikums     |
+|15202604 | Vasanachopf-Member | Formation d&#39;Euthal: faciès argilo-schisteux noir     |
 |15202400 | Vättis-Fossilbrekzie | Brèche fossilifère de Vättis     |
 |15200443 | Vauglène-Bänke | Couches de Vauglène     |
 |15204108 | Vaüglia-Granodiorit | Granodiorite de Vaüglia     |
@@ -7893,6 +7923,26 @@ Fossiliengruppe.
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
+|12903001 | Vertebraten | vertébrés     |
+|12903002 | Ostrakoden | ostracodes     |
+|12903003 | Gastropoden | gastéropodes     |
+|12903004 | Foraminiferen | foraminifères     |
+|12903005 | Algen | algues     |
+|12903006 | Blätter | feuilles     |
+|12903007 | Gräser | graminées     |
+|12903008 | Holz | bois     |
+|12903009 | Ammoniten | ammonites     |
+|12903010 | Schwämme | éponges     |
+|12903011 | Korallen | coraux     |
+|12903012 | Brachiopoden | brachiopodes     |
+|12903013 | Mollusken | mollusques     |
+|12903014 | Cephalopoden | céphalopodes     |
+|12903015 | Bivalven | bivalves     |
+|12903016 | Echinodermen | échinodermes     |
+|12903017 | Fische | poissons     |
+|12903018 | Reptilien | reptiles     |
+|12903019 | Säugetiere | mammifères     |
+|12903021 | Palynomorphe | palynomorphes     |
 
 
 

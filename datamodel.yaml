@@ -7,14 +7,15 @@
 # 0.3 Mandatory attributes
 # 0.4 Add 'abrev' attribute
 # 0.5 Add tablename 
-# 0.6 Tables, like CHARCAT, ADMIXTURE as annex (why no CD?)
+# 0.6 Tables, like CHARCAT, ADMIXTURE as annex (why no CD?). Ignore some deleted attributes.
+#     hack to improve translations (cannot modify the XLS file)
 version: 0.6
 date: 2024-09-24
 
 # Model revision should change if attributes are added, deleted or changed
 model:
-  revision: 3.1
-  revision_date: 2024-06-07
+  revision: 4.0
+  revision_date: 2024-09-24
 
 themes:
   - name: Rock_Bodies
