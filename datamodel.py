@@ -101,7 +101,7 @@ def get_coded_values(value):
 
 def get_table_values(name):
     try:
-        file_path = os.path.join(input_dir, name.lower().capitalize() + ".json")
+        file_path = os.path.join(input_dir, name)
         df = pd.read_csv(file_path)
 
         with open(file_path, "r", encoding="utf-8") as f:
@@ -201,10 +201,13 @@ class Report:
                             att["pairs"] = pairs
         for annex in model.get("annexes"):
             annex_name = annex.get("name")
-            if annex_name.endswith("_CD"):
-                pairs = get_coded_values(annex_name)
+            annex_fname = annex.get("fname")
+            if annex_fname is not None:
+                pairs = get_table_values(annex_fname)
+
             else:
-                pairs = get_table_values(annex_name)
+                pairs = get_coded_values(annex_name)
+
             annex["pairs"] = pairs
 
         return model
