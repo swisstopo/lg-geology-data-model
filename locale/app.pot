@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-09-24 11:56+0200\n"
+"POT-Creation-Date: 2024-09-24 23:55+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,9 +21,9 @@ msgstr ""
 msgid "Geological datamodel"
 msgstr ""
 
-#: templates/metadata.yaml.j2:2 templates/model_markdown.j2:2
+#: templates/metadata.yaml.j2:2
 #, python-format
-msgid "Revision %(name)s"
+msgid "Revision %(name)s (%(hash)s)"
 msgstr ""
 
 #: templates/metadata.yaml.j2:3
@@ -36,6 +36,11 @@ msgstr ""
 
 #: templates/metadata.yaml.j2:14
 msgid "Geologische Landesaufnahme der Schweiz"
+msgstr ""
+
+#: templates/model_markdown.j2:2
+#, python-format
+msgid "Revision %(name)s"
 msgstr ""
 
 #: templates/model_markdown.j2:8
@@ -66,36 +71,40 @@ msgstr ""
 msgid "Description"
 msgstr ""
 
-#: templates/model_markdown.j2:37
-msgid "mandatory"
+#: templates/model_markdown.j2:34
+msgid "Mandatory"
 msgstr ""
 
-#: templates/model_markdown.j2:42 templates/model_markdown.j2:45
-#: templates/model_markdown.j2:48
+#: templates/model_markdown.j2:38
+msgid "yes"
+msgstr ""
+
+#: templates/model_markdown.j2:43 templates/model_markdown.j2:46
+#: templates/model_markdown.j2:49
 msgid "Cardinality"
 msgstr ""
 
-#: templates/model_markdown.j2:44
+#: templates/model_markdown.j2:45
 msgid "Table"
 msgstr ""
 
-#: templates/model_markdown.j2:57
+#: templates/model_markdown.j2:59
 msgid "Attribute"
 msgstr ""
 
-#: templates/model_markdown.j2:61
+#: templates/model_markdown.j2:63
 msgid "Datatype"
 msgstr ""
 
-#: templates/model_markdown.j2:64
+#: templates/model_markdown.j2:66
 msgid "See"
 msgstr ""
 
-#: templates/model_markdown.j2:64
+#: templates/model_markdown.j2:66
 msgid "in the Annex"
 msgstr ""
 
-#: templates/model_markdown.j2:83
+#: templates/model_markdown.j2:86
 msgid "Annexe"
 msgstr ""
 
