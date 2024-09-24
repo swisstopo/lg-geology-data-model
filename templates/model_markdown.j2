@@ -34,6 +34,7 @@
     | {{_("Name")}}                | {{_("Type")}}                     | {{_("Description")}}
 ----|------------------------------|-----------------------------------|--------------------------------------
 {% for attr in cls.attributes -%}
+{%- if attr.change != 'removed' -%}
 {%- if attr.mandatory -%}{% set mandatory =  "**%s**" % (_("mandatory")) -%}{% endif -%}
 {%- if attr.att_type == 'CD' -%}{% set slug = "%s-%s" % (cls.name, attr.name) -%}
 {%- elif attr.att_type == 'annex' -%}{% set slug, location = attr.value, 'vgl. Anhang %s' % attr.value %}{% set see_annex = 'Die möglichen Werte sind in der Tabelle %s im Anhang dieses Dokumentes verfügbar.' % attr.value %}{%- else -%}{% set slug = None %}{% endif -%}
@@ -47,12 +48,13 @@
 {{loop.index}} | **{{ attr.name |upper  }}**                           | {{attr.att_type}}                  | {{ attr.description[lang]|trim }} {{mandatory}}
 []()           | {{_("Cardinality")}}  [{{ attr.cardinality}}]  | {%- if attr.att_type != 'subtype' -%}{{attr.value}}{% endif -%}  |
 {% endif -%}
-
+{% endif -%}
 {% endfor %}
 
 
 
 {% for attr in cls.attributes -%}
+{%- if attr.change != 'removed' -%}
 {% set slug = "%s-%s" % (cls.name, attr.name) %}
 #### {{_("Attribute")}}  {{ attr.name |upper}}
 {%- if attr.att_type == 'CD' %} {{ '{#'}}{{slug| slugify}}{{'}'}}{% endif %}
@@ -72,6 +74,7 @@ _{{_("Datatype")}} :  {{ attr.att_type  }}_
 {% endfor %}
 {% endif %}
 
+{% endif -%}
 {% endfor %}
 {% endfor %}
 {% endfor %}
