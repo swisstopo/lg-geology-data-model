@@ -2324,6 +2324,7 @@ themes:
 # - `name`ending with `_CD` is a coded domain (file `exports/coded_domains.json`)
 # - Other `name` expected a JSON file `exports/<name>.json` with the give
 #   value (see `get_table_values` method)
+# TODO: description should be taken from abbove
 annexes:
   - name: GC_LITSTRAT_BED_CD
     description:
@@ -2352,18 +2353,21 @@ annexes:
       fr: Table des valeurs des unités tectoniques
   - name: GC_MINERAL_CD
     description:
-      de: -todo-
-      fr: -todo-
-  - name: ADMIXTURE
+      de: Wichtiges Mineral des metamorphen Gesteins
+      fr: Minéral important de la roche métamorphique
+  - name: gc_admixture
+    fname: Admixture.json
     description:
-      de: -todo-
-      fr: -todo-
-  - name: COMPOSIT
+      de: Beimengung
+      fr: Incorporation
+  - name: gc_composit
+    fname: Composit.json
     description:
-      de: -todo-
-      fr: -todo-
-  - name: CHARCAT
+      de: Zusammensetzung des Lockergesteins
+      fr: Composition de la roche meuble
+  - name: gc_charcat
+    fname: Charcat.json
     description:
-      de: -todo-
-      fr: -todo-
+      de: Spezifische Eigenschaft.
+      fr: Structure sédimentaire
 
