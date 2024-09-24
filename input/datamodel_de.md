@@ -26,21 +26,21 @@ Die Klasse [Unconsolidated_Deposits_PT](#unconsolidated-deposits-pt) umfasst ein
 
 
 
-    | Name                | Typ                     | Beschreibung
-----|------------------------------|-----------------------------------|--------------------------------------
-1 | **KIND**                           | subtype                  | Objektart 
+    | Name                | Typ                     | Beschreibung                 |  Obligatorisch
+----|------------------------------|-----------------------------------|--------------------------------------|------------------------
+1 | **KIND**                           | subtype                  | Objektart |
 []()           | Kardinalität  [1]  ||
-2 | **STATUS**                           | [CodedDomain](#unconsolidated-deposits-pt-status)  | Zustand der Objektart. 
+2 | **STATUS**                           | [CodedDomain](#unconsolidated-deposits-pt-status)  | Zustand der Objektart.|  
 []()           | Kardinalität   [1] |                                    |  
-3 | **ROCK_TYPE**                           | [CodedDomain](#unconsolidated-deposits-pt-rock-type)  | Gesteinstyp. 
+3 | **ROCK_TYPE**                           | [CodedDomain](#unconsolidated-deposits-pt-rock-type)  | Gesteinstyp.|  
 []()           | Kardinalität   [0..1] |                                    |  
-4 | **ROCK_SPE**                           | [CodedDomain](#unconsolidated-deposits-pt-rock-spe)  | Bezeichnung des Leitgesteins.. 
+4 | **ROCK_SPE**                           | [CodedDomain](#unconsolidated-deposits-pt-rock-spe)  | Bezeichnung des Leitgesteins..|  
 []()           | Kardinalität   [0..1] |                                    |  
-5 | **MAT_TYPE**                           | [ Tabelle ](#gc-litho-unco-cd)  | Materialbezeichnung (lithologische Einheit). 
+5 | **MAT_TYPE**                           | [ Tabelle ](#gc-litho-unco-cd)  | Materialbezeichnung (lithologische Einheit).|  
 []()           | Kardinalität   [0..1] |
-6 | **ORIG_DESCR**                           | string                  | Originalbezeichnung gemäss der Legende der zugrundeliegenden geologischen Karte 
+6 | **ORIG_DESCR**                           | string                  | Originalbezeichnung gemäss der Legende der zugrundeliegenden geologischen Karte |
 []()           | Kardinalität  [0..1]  ||
-7 | **PROTECTED**                           | boolean                  | Geschützt: ja/nein 
+7 | **PROTECTED**                           | boolean                  | Geschützt: ja/nein |
 []()           | Kardinalität  [0..1]  ||
 
 
@@ -169,39 +169,39 @@ ausgeschiedenen Lockergesteine.
 
 
 
-    | Name                | Typ                     | Beschreibung
-----|------------------------------|-----------------------------------|--------------------------------------
-1 | **KIND**                           | subtype                  | Objektart 
+    | Name                | Typ                     | Beschreibung                 |  Obligatorisch
+----|------------------------------|-----------------------------------|--------------------------------------|------------------------
+1 | **KIND**                           | subtype                  | Objektart |
 []()           | Kardinalität  [1]  ||
-2 | **LITSTRAT**                           | [ Tabelle ](#gc-litstrat-unco-cd)  | Lithostratigraphische Einheit.. **obligatorisch**
+2 | **LITSTRAT**                           | [ Tabelle ](#gc-litstrat-unco-cd)  | Lithostratigraphische Einheit..|  **ja**
 []()           | Kardinalität   [1] |
-3 | **LITHO**                           | [ Tabelle ](#gc-litho-cd)  | Lithologische Beschreibung. 
+3 | **LITHO**                           | [ Tabelle ](#gc-litho-cd)  | Lithologische Beschreibung.|  
 []()           | Kardinalität   [1..3] |
-4 | **CHRONO_T**                           | [ Tabelle ](#gc-chrono-cd)  | Chronostratigraphische Zuordnung der Obergrenze der Kartiereinheit (Top). **obligatorisch**
+4 | **CHRONO_T**                           | [ Tabelle ](#gc-chrono-cd)  | Chronostratigraphische Zuordnung der Obergrenze der Kartiereinheit (Top).|  **ja**
 []()           | Kardinalität   [1] |
-5 | **CHRONO_B**                           | [ Tabelle ](#gc-chrono-cd)  | Chronostratigraphische Zuordnung der Untergrenze der Kartiereinheit (Basis). **obligatorisch**
+5 | **CHRONO_B**                           | [ Tabelle ](#gc-chrono-cd)  | Chronostratigraphische Zuordnung der Untergrenze der Kartiereinheit (Basis).|  **ja**
 []()           | Kardinalität   [1] |
-6 | **MAT_TYPE**                           |                   | Materialbezeichnung (lithologische Einheit) 
+6 | **MAT_TYPE**                           |                   | Materialbezeichnung (lithologische Einheit) |
 []()           | Kardinalität  [0..3]  |Lithostratigraphic_Units_Litho|
-7 | **BURIED_OUT**                           | boolean                  | Wurde das Lockergestein wieder verdeckt 
+7 | **BURIED_OUT**                           | boolean                  | Wurde das Lockergestein wieder verdeckt |
 []()           | Kardinalität  [1]  ||
-8 | **COMPOSIT**                           | [ Tabelle ](#gc-composit)  | Zusammensetzung des Lockergesteins. 
+8 | **COMPOSIT**                           | [ Tabelle ](#gc-composit)  | Zusammensetzung des Lockergesteins.|  
 []()           | Kardinalität   [0..3] |
-9 | **ADMIXTURE**                           | [ Tabelle ](#gc-admixture)  | Beimengung. 
+9 | **ADMIXTURE**                           | [ Tabelle ](#gc-admixture)  | Beimengung.|  
 []()           | Kardinalität   [0..2] |
-10 | **STRUCTUR**                           | [CodedDomain](#unconsolidated-deposits-plg-structur)  | Textur des Lockergesteins. 
+10 | **STRUCTUR**                           | [CodedDomain](#unconsolidated-deposits-plg-structur)  | Textur des Lockergesteins.|  
 []()           | Kardinalität   [0..1] |                                    |  
-11 | **CHARACT**                           | [ Tabelle ](#gc-charcat)  | Spezifische Eigenschaft.. 
+11 | **CHARACT**                           | [ Tabelle ](#gc-charcat)  | Spezifische Eigenschaft..|  
 []()           | Kardinalität   [0..3] |
-12 | **MORPHOLO**                           | [CodedDomain](#unconsolidated-deposits-plg-morpholo)  | Morphologie der Lockergesteinseinheit. 
+12 | **MORPHOLO**                           | [CodedDomain](#unconsolidated-deposits-plg-morpholo)  | Morphologie der Lockergesteinseinheit.|  
 []()           | Kardinalität   [0..1] |                                    |  
-13 | **GLAC_TYPE**                           | [CodedDomain](#unconsolidated-deposits-plg-glac-type)  | Gletschertyp; Attribut nur für Moränen. 
+13 | **GLAC_TYPE**                           | [CodedDomain](#unconsolidated-deposits-plg-glac-type)  | Gletschertyp; Attribut nur für Moränen.|  
 []()           | Kardinalität   [0..1] |                                    |  
-14 | **REF_YEAR**                           | string                  | Zeitpunkt oder Zeitperiode. Zum Beispiel «1940 1943, Periode der Drainage» (muss präzisiert werden). 
+14 | **REF_YEAR**                           | string                  | Zeitpunkt oder Zeitperiode. Zum Beispiel «1940 1943, Periode der Drainage» (muss präzisiert werden). |
 []()           | Kardinalität  [0..1]  ||
-15 | **THIN_COVER**                           | [CodedDomain](#unconsolidated-deposits-plg-thin-cover)  | Lockermaterialbedeckung, wenn vorhanden.. 
+15 | **THIN_COVER**                           | [CodedDomain](#unconsolidated-deposits-plg-thin-cover)  | Lockermaterialbedeckung, wenn vorhanden..|  
 []()           | Kardinalität   [0..1] |                                    |  
-16 | **ORIG_DESCR**                           |                   | Originalbezeichnung gemäss der Legende der zugrundeliegenden geologischen Karte 
+16 | **ORIG_DESCR**                           |                   | Originalbezeichnung gemäss der Legende der zugrundeliegenden geologischen Karte |
 []()           | Kardinalität  [1]  |string|
 
 
@@ -408,49 +408,49 @@ Die Klasse [Bedrock_PLG](#bedrock-plg) enthält alle lithostratigraphischen Fest
 
 
 
-    | Name                | Typ                     | Beschreibung
-----|------------------------------|-----------------------------------|--------------------------------------
-1 | **KIND**                           | subtype                  | Objektart 
+    | Name                | Typ                     | Beschreibung                 |  Obligatorisch
+----|------------------------------|-----------------------------------|--------------------------------------|------------------------
+1 | **KIND**                           | subtype                  | Objektart |
 []()           | Kardinalität  [1]  ||
-3 | **LITSTRAT**                           | [ Tabelle ](#gc-litstrat-bed-cd)  | Lithostratigraphische Einheit. 
+3 | **LITSTRAT**                           | [ Tabelle ](#gc-litstrat-bed-cd)  | Lithostratigraphische Einheit.|  
 []()           | Kardinalität   [1] |
-4 | **LITHO**                           | [ Tabelle ](#gc-litho-cd)  | Lithologische Beschreibung. 
+4 | **LITHO**                           | [ Tabelle ](#gc-litho-cd)  | Lithologische Beschreibung.|  
 []()           | Kardinalität   [1..3] |
-5 | **CHRONO_T**                           | [ Tabelle ](#gc-chrono-cd)  | Chronostratigraphische Zuordnung der Obergrenze der Kartiereinheit (Top). **obligatorisch**
+5 | **CHRONO_T**                           | [ Tabelle ](#gc-chrono-cd)  | Chronostratigraphische Zuordnung der Obergrenze der Kartiereinheit (Top).|  **ja**
 []()           | Kardinalität   [1] |
-6 | **CHRONO_B**                           | [ Tabelle ](#gc-chrono-cd)  | Chronostratigraphische Zuordnung der Untergrenze der Kartiereinheit (Basis). **obligatorisch**
+6 | **CHRONO_B**                           | [ Tabelle ](#gc-chrono-cd)  | Chronostratigraphische Zuordnung der Untergrenze der Kartiereinheit (Basis).|  **ja**
 []()           | Kardinalität   [1] |
-7 | **TECTO**                           | [ Tabelle ](#gc-tecto-cd)  | Tektonische Zugehörigkeit. **obligatorisch**
+7 | **TECTO**                           | [ Tabelle ](#gc-tecto-cd)  | Tektonische Zugehörigkeit.|  **ja**
 []()           | Kardinalität   [1] |
-8 | **ORIG_DESCR**                           | string                  | Originalbezeichnung gemäss der Legende der zugrundeliegenden geologischen Karte 
+8 | **ORIG_DESCR**                           | string                  | Originalbezeichnung gemäss der Legende der zugrundeliegenden geologischen Karte |
 []()           | Kardinalität  [1]  ||
-9 | **BURIED_OUT**                           | boolean                  | Wurde das Festgestein wieder verdeckt (ja / nein)? 
+9 | **BURIED_OUT**                           | boolean                  | Wurde das Festgestein wieder verdeckt (ja / nein)? |
 []()           | Kardinalität  [1]  ||
-10 | **EXOTIC_ELE**                           |                   | Handelt es sich bei der Objektart um ein exotisches Element; z.B. Einschluss, Linse, Tasche, Olistholith (ja / nein)? 
+10 | **EXOTIC_ELE**                           |                   | Handelt es sich bei der Objektart um ein exotisches Element; z.B. Einschluss, Linse, Tasche, Olistholith (ja / nein)? |
 []()           | Kardinalität  [1]  |boolean|
-12 | **SEDI_MAIN_COM**                           | [CodedDomain](#bedrock-plg-sedi-main-com)  | Hauptgesteinskomponente des klastischen Sedimentgesteins. 
+12 | **SEDI_MAIN_COM**                           | [CodedDomain](#bedrock-plg-sedi-main-com)  | Hauptgesteinskomponente des klastischen Sedimentgesteins.|  
 []()           | Kardinalität   [0..1] |                                    |  
-13 | **SEDI_SECO_COM**                           | [CodedDomain](#bedrock-plg-sedi-seco-com)  | Nebengesteinskomponente des Sedimentgesteins. 
+13 | **SEDI_SECO_COM**                           | [CodedDomain](#bedrock-plg-sedi-seco-com)  | Nebengesteinskomponente des Sedimentgesteins.|  
 []()           | Kardinalität   [0..2] |                                    |  
-14 | **SEDI_BOND_MAT**                           | [CodedDomain](#bedrock-plg-sedi-bond-mat)  | Bindemittel des Sedimentgesteins. 
+14 | **SEDI_BOND_MAT**                           | [CodedDomain](#bedrock-plg-sedi-bond-mat)  | Bindemittel des Sedimentgesteins.|  
 []()           | Kardinalität   [0..1] |                                    |  
-15 | **SEDI_BEDDING**                           | [CodedDomain](#bedrock-plg-sedi-bedding)  | Schichtung des Sedimentgesteins. 
+15 | **SEDI_BEDDING**                           | [CodedDomain](#bedrock-plg-sedi-bedding)  | Schichtung des Sedimentgesteins.|  
 []()           | Kardinalität   [0..2] |                                    |  
-16 | **SEDI_STR**                           | [CodedDomain](#bedrock-plg-sedi-str)  | Textur des Sedimentgesteins. 
+16 | **SEDI_STR**                           | [CodedDomain](#bedrock-plg-sedi-str)  | Textur des Sedimentgesteins.|  
 []()           | Kardinalität   [0..2] |                                    |  
-17 | **SEDI_TEX**                           | [CodedDomain](#bedrock-plg-sedi-tex)  | Sedimentstruktur. 
+17 | **SEDI_TEX**                           | [CodedDomain](#bedrock-plg-sedi-tex)  | Sedimentstruktur.|  
 []()           | Kardinalität   [] |                                    |  
-18 | **IGNE_TEXT**                           | [CodedDomain](#bedrock-plg-igne-text)  | Struktur des magmatischen Gesteins. 
+18 | **IGNE_TEXT**                           | [CodedDomain](#bedrock-plg-igne-text)  | Struktur des magmatischen Gesteins.|  
 []()           | Kardinalität   [0..1] |                                    |  
-19 | **IGNE_GRAIN_SI**                           | [CodedDomain](#bedrock-plg-igne-grain-si)  | Korngrösse des magmatischen Gesteins. 
+19 | **IGNE_GRAIN_SI**                           | [CodedDomain](#bedrock-plg-igne-grain-si)  | Korngrösse des magmatischen Gesteins.|  
 []()           | Kardinalität   [0..1] |                                    |  
-20 | **IGNE_AFFINITY**                           | [CodedDomain](#bedrock-plg-igne-affinity)  | Affinität zu einer magmatischen Serie.. 
+20 | **IGNE_AFFINITY**                           | [CodedDomain](#bedrock-plg-igne-affinity)  | Affinität zu einer magmatischen Serie..|  
 []()           | Kardinalität   [0..1] |                                    |  
-21 | **META_FULL_NAME**                           | string                  | Bezeichnung des metamorphen Gesteins 
+21 | **META_FULL_NAME**                           | string                  | Bezeichnung des metamorphen Gesteins |
 []()           | Kardinalität  [0..1]  ||
-22 | **META_MINERAL**                           | [ Tabelle ](#gc-mineral-cd)  | Wichtiges Mineral des metamorphen Gesteins. 
+22 | **META_MINERAL**                           | [ Tabelle ](#gc-mineral-cd)  | Wichtiges Mineral des metamorphen Gesteins.|  
 []()           | Kardinalität   [0..3] |
-23 | **META_STR**                           | [CodedDomain](#bedrock-plg-meta-str)  | Textur des metamorphen Gesteins. 
+23 | **META_STR**                           | [CodedDomain](#bedrock-plg-meta-str)  | Textur des metamorphen Gesteins.|  
 []()           | Kardinalität   [0..3] |                                    |  
 
 
@@ -788,9 +788,9 @@ Gesteinsmassen durch Polygone erfasst werden (Klasse Instabilities_PLG).
 
 
 
-    | Name                | Typ                     | Beschreibung
-----|------------------------------|-----------------------------------|--------------------------------------
-1 | **KIND**                           | subtype                  | Objektart 
+    | Name                | Typ                     | Beschreibung                 |  Obligatorisch
+----|------------------------------|-----------------------------------|--------------------------------------|------------------------
+1 | **KIND**                           | subtype                  | Objektart |
 []()           | Kardinalität  [1]  ||
 
 
@@ -816,9 +816,9 @@ Hanginstabilitäten an der Oberfläche ausgebildet haben.
 
 
 
-    | Name                | Typ                     | Beschreibung
-----|------------------------------|-----------------------------------|--------------------------------------
-1 | **KIND**                           | subtype                  | Objektart 
+    | Name                | Typ                     | Beschreibung                 |  Obligatorisch
+----|------------------------------|-----------------------------------|--------------------------------------|------------------------
+1 | **KIND**                           | subtype                  | Objektart |
 []()           | Kardinalität  [1]  ||
 
 
@@ -850,11 +850,11 @@ betroffen bzw. gebildet worden sind, werden in der Klasse [Bedrock_PLG](#bedrock
 
 
 
-    | Name                | Typ                     | Beschreibung
-----|------------------------------|-----------------------------------|--------------------------------------
-1 | **KIND**                           | subtype                  | Objektart 
+    | Name                | Typ                     | Beschreibung                 |  Obligatorisch
+----|------------------------------|-----------------------------------|--------------------------------------|------------------------
+1 | **KIND**                           | subtype                  | Objektart |
 []()           | Kardinalität  [1]  ||
-2 | **MAIN_MOV**                           | [CodedDomain](#instabilities-plg-main-mov)  | Hauptbewegungsphase. 
+2 | **MAIN_MOV**                           | [CodedDomain](#instabilities-plg-main-mov)  | Hauptbewegungsphase.|  
 []()           | Kardinalität   [0..1] |                                    |  
 
 
@@ -898,9 +898,9 @@ befindet sich deshalb in der Klasse Lineation_PT).
 
 
 
-    | Name                | Typ                     | Beschreibung
-----|------------------------------|-----------------------------------|--------------------------------------
-1 | **KIND**                           | subtype                  | Objektart 
+    | Name                | Typ                     | Beschreibung                 |  Obligatorisch
+----|------------------------------|-----------------------------------|--------------------------------------|------------------------
+1 | **KIND**                           | subtype                  | Objektart |
 []()           | Kardinalität  [1]  ||
 
 
@@ -927,21 +927,21 @@ glaziales oder periglaziales Bildungsmilieu hindeuten.
 
 
 
-    | Name                | Typ                     | Beschreibung
-----|------------------------------|-----------------------------------|--------------------------------------
-1 | **KIND**                           | subtype                  | Objektart 
+    | Name                | Typ                     | Beschreibung                 |  Obligatorisch
+----|------------------------------|-----------------------------------|--------------------------------------|------------------------
+1 | **KIND**                           | subtype                  | Objektart |
 []()           | Kardinalität  [1]  ||
-2 | **MORAI_MO**                           | [CodedDomain](#glacial-and-periglacial-structures-l-morai-mo)  | Morphologie der Moräne. 
+2 | **MORAI_MO**                           | [CodedDomain](#glacial-and-periglacial-structures-l-morai-mo)  | Morphologie der Moräne.|  
 []()           | Kardinalität   [0..1] |                                    |  
-3 | **GLAC_TYP**                           | [CodedDomain](#glacial-and-periglacial-structures-l-glac-typ)  | Gletschertyp, auf welchen die Objektart bezogen ist. 
+3 | **GLAC_TYP**                           | [CodedDomain](#glacial-and-periglacial-structures-l-glac-typ)  | Gletschertyp, auf welchen die Objektart bezogen ist.|  
 []()           | Kardinalität   [0..1] |                                    |  
-4 | **ICE_M_P**                           | [CodedDomain](#glacial-and-periglacial-structures-l-ice-m-p)  | Räumlicher Gletscherstand. 
+4 | **ICE_M_P**                           | [CodedDomain](#glacial-and-periglacial-structures-l-ice-m-p)  | Räumlicher Gletscherstand.|  
 []()           | Kardinalität   [0..1] |                                    |  
-5 | **QUAT_STR**                           | [CodedDomain](#glacial-and-periglacial-structures-l-quat-str)  | Zeitliche quartärstratigraphische Zuordnung des Moränenwälls. 
+5 | **QUAT_STR**                           | [CodedDomain](#glacial-and-periglacial-structures-l-quat-str)  | Zeitliche quartärstratigraphische Zuordnung des Moränenwälls.|  
 []()           | Kardinalität   [0..1] |                                    |  
-6 | **REF_YEAR**                           | integer                  | Referenzjahr des älteren Gletscherstandes. 
+6 | **REF_YEAR**                           | integer                  | Referenzjahr des älteren Gletscherstandes. |
 []()           | Kardinalität  [0..1]  ||
-7 | **SOURCE**                           | string                  | Quellenangabe der historischen Unterlagen 
+7 | **SOURCE**                           | string                  | Quellenangabe der historischen Unterlagen |
 []()           | Kardinalität  [0..1]  ||
 
 
@@ -1111,9 +1111,9 @@ Die Klasse [Glacial_Structures_PLG](#glacial-structures-plg) umfasst flächenhaf
 
 
 
-    | Name                | Typ                     | Beschreibung
-----|------------------------------|-----------------------------------|--------------------------------------
-1 | **KIND**                           | subtype                  | Objektart 
+    | Name                | Typ                     | Beschreibung                 |  Obligatorisch
+----|------------------------------|-----------------------------------|--------------------------------------|------------------------
+1 | **KIND**                           | subtype                  | Objektart |
 []()           | Kardinalität  [1]  ||
 
 
@@ -1141,9 +1141,9 @@ Zeit unter Einwirkung von diversen Erosionsprozessen gebildet haben.
 
 
 
-    | Name                | Typ                     | Beschreibung
-----|------------------------------|-----------------------------------|--------------------------------------
-1 | **KIND**                           | subtype                  | Objektart 
+    | Name                | Typ                     | Beschreibung                 |  Obligatorisch
+----|------------------------------|-----------------------------------|--------------------------------------|------------------------
+1 | **KIND**                           | subtype                  | Objektart |
 []()           | Kardinalität  [1]  ||
 
 
@@ -1169,9 +1169,9 @@ Allgemeinen oder Terrassenkanten.
 
 
 
-    | Name                | Typ                     | Beschreibung
-----|------------------------------|-----------------------------------|--------------------------------------
-1 | **KIND**                           | subtype                  | Objektart 
+    | Name                | Typ                     | Beschreibung                 |  Obligatorisch
+----|------------------------------|-----------------------------------|--------------------------------------|------------------------
+1 | **KIND**                           | subtype                  | Objektart |
 []()           | Kardinalität  [1]  ||
 
 
@@ -1199,11 +1199,11 @@ Darunter fallen u.a. der Ponor oder der Eingang zu einer Höhle.
 
 
 
-    | Name                | Typ                     | Beschreibung
-----|------------------------------|-----------------------------------|--------------------------------------
-1 | **KIND**                           | subtype                  | Objektart 
+    | Name                | Typ                     | Beschreibung                 |  Obligatorisch
+----|------------------------------|-----------------------------------|--------------------------------------|------------------------
+1 | **KIND**                           | subtype                  | Objektart |
 []()           | Kardinalität  [1]  ||
-2 | **ICE_CAVE**                           | boolean                  | Eisgrotte (ja / nein) 
+2 | **ICE_CAVE**                           | boolean                  | Eisgrotte (ja / nein) |
 []()           | Kardinalität  [0..1]  ||
 
 
@@ -1245,9 +1245,9 @@ Die Klasse [Karstic_Structures_PLG](#karstic-structures-plg) umfasst flächenhaf
 
 
 
-    | Name                | Typ                     | Beschreibung
-----|------------------------------|-----------------------------------|--------------------------------------
-1 | **KIND**                           | subtype                  | Objektart 
+    | Name                | Typ                     | Beschreibung                 |  Obligatorisch
+----|------------------------------|-----------------------------------|--------------------------------------|------------------------
+1 | **KIND**                           | subtype                  | Objektart |
 []()           | Kardinalität  [1]  ||
 
 
@@ -1276,11 +1276,11 @@ fluviatilen oder lakustrischen Ursprungs.
 
 
 
-    | Name                | Typ                     | Beschreibung
-----|------------------------------|-----------------------------------|--------------------------------------
-1 | **KIND**                           | subtype                  | Objektart 
+    | Name                | Typ                     | Beschreibung                 |  Obligatorisch
+----|------------------------------|-----------------------------------|--------------------------------------|------------------------
+1 | **KIND**                           | subtype                  | Objektart |
 []()           | Kardinalität  [1]  ||
-2 | **AGE**                           | [CodedDomain](#alluvial-and-lacustrine-structures-l-age)  | Alter der Objektart.. 
+2 | **AGE**                           | [CodedDomain](#alluvial-and-lacustrine-structures-l-age)  | Alter der Objektart..|  
 []()           | Kardinalität   [0..1] |                                    |  
 
 
@@ -1329,18 +1329,18 @@ der Faltenachsenfläche.
 
 
 
-    | Name                | Typ                     | Beschreibung
-----|------------------------------|-----------------------------------|--------------------------------------
-1 | **KIND**                           | subtype                  | Objektart 
+    | Name                | Typ                     | Beschreibung                 |  Obligatorisch
+----|------------------------------|-----------------------------------|--------------------------------------|------------------------
+1 | **KIND**                           | subtype                  | Objektart |
 []()           | Kardinalität  [1]  ||
-2 | **AZIMUTH**                           | integer                  | Fallrichtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad von 0° bis 359° im Uhrzeigersinn gemessen. 
+2 | **AZIMUTH**                           | integer                  | Fallrichtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad von 0° bis 359° im Uhrzeigersinn gemessen. |
 []()           | Kardinalität  [0..1]  ||
 3 | **DIP**                           | integer                  | Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen
-aus der Horizontalen (0°) nach unten bis in die Vertikale (90°). 
+aus der Horizontalen (0°) nach unten bis in die Vertikale (90°). |
 []()           | Kardinalität  [0..1]  ||
-4 | **FOLD_TYP**                           | [CodedDomain](#deformation-structures-pt-fold-typ)  | Objekttyp. 
+4 | **FOLD_TYP**                           | [CodedDomain](#deformation-structures-pt-fold-typ)  | Objekttyp.|  
 []()           | Kardinalität   [0..1] |                                    |  
-5 | **FOLD_FOR**                           | [CodedDomain](#deformation-structures-pt-fold-for)  | Objektform. 
+5 | **FOLD_FOR**                           | [CodedDomain](#deformation-structures-pt-fold-for)  | Objektform.|  
 []()           | Kardinalität   [0..1] |                                    |  
 
 
@@ -1419,9 +1419,9 @@ wie den Verlauf des Faltenscharniers.
 
 
 
-    | Name                | Typ                     | Beschreibung
-----|------------------------------|-----------------------------------|--------------------------------------
-1 | **KIND**                           | subtype                  | Objektart 
+    | Name                | Typ                     | Beschreibung                 |  Obligatorisch
+----|------------------------------|-----------------------------------|--------------------------------------|------------------------
+1 | **KIND**                           | subtype                  | Objektart |
 []()           | Kardinalität  [1]  ||
 
 
@@ -1447,13 +1447,13 @@ tektonisierte Zonen oder Kluftzonen.
 
 
 
-    | Name                | Typ                     | Beschreibung
-----|------------------------------|-----------------------------------|--------------------------------------
-1 | **KIND**                           | subtype                  | Objektart 
+    | Name                | Typ                     | Beschreibung                 |  Obligatorisch
+----|------------------------------|-----------------------------------|--------------------------------------|------------------------
+1 | **KIND**                           | subtype                  | Objektart |
 []()           | Kardinalität  [1]  ||
-2 | **TYPE**                           | [CodedDomain](#deformation-structures-plg-type)  | Charakteristik der Objektarten. 
+2 | **TYPE**                           | [CodedDomain](#deformation-structures-plg-type)  | Charakteristik der Objektarten.|  
 []()           | Kardinalität   [0..1] |                                    |  
-3 | **GEN_RELA**                           | [CodedDomain](#deformation-structures-plg-gen-rela)  | Genetische Beziehung.. 
+3 | **GEN_RELA**                           | [CodedDomain](#deformation-structures-plg-gen-rela)  | Genetische Beziehung..|  
 []()           | Kardinalität   [0..1] |                                    |  
 
 
@@ -1502,23 +1502,23 @@ Die Klasse [Tectonic_Boundaries_L](#tectonic-boundaries-l) umfasst alle tektonis
 
 
 
-    | Name                | Typ                     | Beschreibung
-----|------------------------------|-----------------------------------|--------------------------------------
-1 | **KIND**                           | subtype                  | Objektart 
+    | Name                | Typ                     | Beschreibung                 |  Obligatorisch
+----|------------------------------|-----------------------------------|--------------------------------------|------------------------
+1 | **KIND**                           | subtype                  | Objektart |
 []()           | Kardinalität  [1]  ||
-2 | **FAULT_MO**                           | [CodedDomain](#tectonic-boundaries-l-fault-mo)  | Bewegungsrichtung des Bruchs. 
+2 | **FAULT_MO**                           | [CodedDomain](#tectonic-boundaries-l-fault-mo)  | Bewegungsrichtung des Bruchs.|  
 []()           | Kardinalität   [0..1] |                                    |  
-3 | **VERTI_MO**                           | [CodedDomain](#tectonic-boundaries-l-verti-mo)  | Bewegung parallel zur Fallrichtung der Bruchfläche.. 
+3 | **VERTI_MO**                           | [CodedDomain](#tectonic-boundaries-l-verti-mo)  | Bewegung parallel zur Fallrichtung der Bruchfläche..|  
 []()           | Kardinalität   [0..1] |                                    |  
-4 | **HORIZ_MO**                           | [CodedDomain](#tectonic-boundaries-l-horiz-mo)  | Bewegung parallel zur Streichrichtung der Bruch- oder Scherfläche. 
+4 | **HORIZ_MO**                           | [CodedDomain](#tectonic-boundaries-l-horiz-mo)  | Bewegung parallel zur Streichrichtung der Bruch- oder Scherfläche.|  
 []()           | Kardinalität   [0..1] |                                    |  
-5 | **LIM_TECT_B**                           | boolean                  | Grenze einer tektonischen Einheit wie Deckengrenze,Schuppengrenze, Zonengrenze, etc. (ja / nein)? 
+5 | **LIM_TECT_B**                           | boolean                  | Grenze einer tektonischen Einheit wie Deckengrenze,Schuppengrenze, Zonengrenze, etc. (ja / nein)? |
 []()           | Kardinalität  [1]  ||
-6 | **STATUS**                           | [CodedDomain](#tectonic-boundaries-l-status)  | Zustand der Objektart. 
+6 | **STATUS**                           | [CodedDomain](#tectonic-boundaries-l-status)  | Zustand der Objektart.|  
 []()           | Kardinalität   [1] |                                    |  
-8 | **META_STA**                           | [CodedDomain](#tectonic-boundaries-l-meta-sta)  | Tektonometamorphe Chronologie der Objektart. 
+8 | **META_STA**                           | [CodedDomain](#tectonic-boundaries-l-meta-sta)  | Tektonometamorphe Chronologie der Objektart.|  
 []()           | Kardinalität   [0..1] |                                    |  
-9 | **NAME**                           | string                  | Spezifischer Name der Objektart. 
+9 | **NAME**                           | string                  | Spezifischer Name der Objektart. |
 []()           | Kardinalität  [0..1]  ||
 
 
@@ -1648,21 +1648,21 @@ Objekten (mit direkten Feldmessungen) beschreiben.
 
 
 
-    | Name                | Typ                     | Beschreibung
-----|------------------------------|-----------------------------------|--------------------------------------
-1 | **KIND**                           | subtype                  | Objektart 
+    | Name                | Typ                     | Beschreibung                 |  Obligatorisch
+----|------------------------------|-----------------------------------|--------------------------------------|------------------------
+1 | **KIND**                           | subtype                  | Objektart |
 []()           | Kardinalität  [1]  ||
-2 | **FOLD_TYP**                           | [CodedDomain](#folds-pt-fold-typ)  | Objekttyp. 
+2 | **FOLD_TYP**                           | [CodedDomain](#folds-pt-fold-typ)  | Objekttyp.|  
 []()           | Kardinalität   [0..1] |                                    |  
-3 | **FOLD_FOR**                           |                   | Form der Objektart 
+3 | **FOLD_FOR**                           |                   | Form der Objektart |
 []()           | Kardinalität  [0..1]  |13603|
-4 | **PHASE**                           | [CodedDomain](#folds-pt-phase)  | Deformationsphase.. 
+4 | **PHASE**                           | [CodedDomain](#folds-pt-phase)  | Deformationsphase..|  
 []()           | Kardinalität   [0..1] |                                    |  
-5 | **PHASE_REF**                           | string                  | Referenz für die Angabe der Deformationsphase. 
+5 | **PHASE_REF**                           | string                  | Referenz für die Angabe der Deformationsphase. |
 []()           | Kardinalität  [0..1]  ||
-6 | **AZIMUTH**                           | integer                  | Einfallsrichtung (Azimut) der jeweiligen Punktobjektart (z.B. Scheitellinie, Faltenachse). Wert in Grad (0° 359°) im Uhrzeigersinn gemessen 
+6 | **AZIMUTH**                           | integer                  | Einfallsrichtung (Azimut) der jeweiligen Punktobjektart (z.B. Scheitellinie, Faltenachse). Wert in Grad (0° 359°) im Uhrzeigersinn gemessen |
 []()           | Kardinalität  [1]  ||
-7 | **DIP**                           | integer                  | Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die Vertikale (90°). 
+7 | **DIP**                           | integer                  | Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die Vertikale (90°). |
 []()           | Kardinalität  [0..1]  ||
 
 
@@ -1755,13 +1755,13 @@ Intersektionslineationen.
 
 
 
-    | Name                | Typ                     | Beschreibung
-----|------------------------------|-----------------------------------|--------------------------------------
-1 | **KIND**                           | subtype                  | Objektart 
+    | Name                | Typ                     | Beschreibung                 |  Obligatorisch
+----|------------------------------|-----------------------------------|--------------------------------------|------------------------
+1 | **KIND**                           | subtype                  | Objektart |
 []()           | Kardinalität  [1]  ||
-2 | **AZIMUTH**                           | integer                  | Einfallsrichtung (Azimut) der jeweiligen Punktobjektart (z.B. Scheitellinie, Faltenachse). Wert in Grad (0° 359°) im Uhrzeigersinn gemessen 
+2 | **AZIMUTH**                           | integer                  | Einfallsrichtung (Azimut) der jeweiligen Punktobjektart (z.B. Scheitellinie, Faltenachse). Wert in Grad (0° 359°) im Uhrzeigersinn gemessen |
 []()           | Kardinalität  [1]  ||
-3 | **DIP**                           |                   | Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die Vertikale (90°). 
+3 | **DIP**                           |                   | Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die Vertikale (90°). |
 []()           | Kardinalität  []  ||
 
 
@@ -1805,21 +1805,21 @@ Die Klasse [Planar_Structures_PT](#planar-structures-pt) enthält Objektarten, w
 
 
 
-    | Name                | Typ                     | Beschreibung
-----|------------------------------|-----------------------------------|--------------------------------------
-1 | **KIND**                           | subtype                  | Objektart 
+    | Name                | Typ                     | Beschreibung                 |  Obligatorisch
+----|------------------------------|-----------------------------------|--------------------------------------|------------------------
+1 | **KIND**                           | subtype                  | Objektart |
 []()           | Kardinalität  [1]  ||
-2 | **POLARITY**                           | [CodedDomain](#planar-structures-pt-polarity)  | Position der Objektart im Raum. 
+2 | **POLARITY**                           | [CodedDomain](#planar-structures-pt-polarity)  | Position der Objektart im Raum.|  
 []()           | Kardinalität   [0..1] |                                    |  
-3 | **PHASE**                           | [CodedDomain](#planar-structures-pt-phase)  | Deformationsphase. 
+3 | **PHASE**                           | [CodedDomain](#planar-structures-pt-phase)  | Deformationsphase.|  
 []()           | Kardinalität   [0..1] |                                    |  
-4 | **PHASE_REF**                           | string                  | Referenz für die Angabe der Deformationsphase. 
+4 | **PHASE_REF**                           | string                  | Referenz für die Angabe der Deformationsphase. |
 []()           | Kardinalität  [0..1]  ||
-5 | **OB_DIP_SLO**                           | boolean                  | Dip slope (ja / nein)? 
+5 | **OB_DIP_SLO**                           | boolean                  | Dip slope (ja / nein)? |
 []()           | Kardinalität  [0..1]  ||
-6 | **AZIMUTH**                           | integer                  | Einfallsrichtung (Azimut) der jeweiligen Punktobjektart (z.B. Scheitellinie, Faltenachse). Wert in Grad (0° 359°) im Uhrzeigersinn gemessen 
+6 | **AZIMUTH**                           | integer                  | Einfallsrichtung (Azimut) der jeweiligen Punktobjektart (z.B. Scheitellinie, Faltenachse). Wert in Grad (0° 359°) im Uhrzeigersinn gemessen |
 []()           | Kardinalität  [1]  ||
-7 | **DIP**                           |                   | Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die Vertikale (90°). 
+7 | **DIP**                           |                   | Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die Vertikale (90°). |
 []()           | Kardinalität  []  ||
 
 
@@ -1918,11 +1918,11 @@ Die Klasse [Anomalies_PT](#anomalies-pt) beinhaltet lokal beobachtete und / oder
 
 
 
-    | Name                | Typ                     | Beschreibung
-----|------------------------------|-----------------------------------|--------------------------------------
-1 | **KIND**                           | subtype                  | Objektart 
+    | Name                | Typ                     | Beschreibung                 |  Obligatorisch
+----|------------------------------|-----------------------------------|--------------------------------------|------------------------
+1 | **KIND**                           | subtype                  | Objektart |
 []()           | Kardinalität  [1]  ||
-2 | **TYPE**                           |                   | Charakteristik der Objektart. 
+2 | **TYPE**                           |                   | Charakteristik der Objektart. |
 []()           | Kardinalität  []  |128002|
 
 
@@ -1953,19 +1953,19 @@ Die Klasse [Fossils_PT](#fossils-pt) enthält alle Fossilfundstellen.
 
 
 
-    | Name                | Typ                     | Beschreibung
-----|------------------------------|-----------------------------------|--------------------------------------
-1 | **KIND**                           | subtype                  | Objektart 
+    | Name                | Typ                     | Beschreibung                 |  Obligatorisch
+----|------------------------------|-----------------------------------|--------------------------------------|------------------------
+1 | **KIND**                           | subtype                  | Objektart |
 []()           | Kardinalität  [1]  ||
-2 | **DIVISION**                           | [CodedDomain](#fossils-pt-division)  | Fossilienkategorie, zu welcher die Objektinstanz gehört.. 
+2 | **DIVISION**                           | [CodedDomain](#fossils-pt-division)  | Fossilienkategorie, zu welcher die Objektinstanz gehört..|  
 []()           | Kardinalität   [0..1] |                                    |  
-3 | **SYSTEM**                           | table                  | Fossiliengruppe. 
+3 | **SYSTEM**                           | table                  | Fossiliengruppe. |
 []()           | Kardinalität  [0..5]  |gc_system|
-4 | **DAT_METH**                           | [CodedDomain](#fossils-pt-dat-meth)  | Datierungsmethode.. 
+4 | **DAT_METH**                           | [CodedDomain](#fossils-pt-dat-meth)  | Datierungsmethode..|  
 []()           | Kardinalität   [0..1] |                                    |  
-5 | **STATUS**                           | [CodedDomain](#fossils-pt-status)  | Zustand der Objektart. 
+5 | **STATUS**                           | [CodedDomain](#fossils-pt-status)  | Zustand der Objektart.|  
 []()           | Kardinalität   [0..1] |                                    |  
-6 | **PROTECTED**                           | boolean                  | Geschützte Fossilfundstelle (ja / nein)? 
+6 | **PROTECTED**                           | boolean                  | Geschützte Fossilfundstelle (ja / nein)? |
 []()           | Kardinalität  [0..1]  ||
 
 
@@ -2051,15 +2051,15 @@ und nicht-mineralischen Rohstoffen.
 
 
 
-    | Name                | Typ                     | Beschreibung
-----|------------------------------|-----------------------------------|--------------------------------------
-1 | **KIND**                           | subtype                  | Objektart 
+    | Name                | Typ                     | Beschreibung                 |  Obligatorisch
+----|------------------------------|-----------------------------------|--------------------------------------|------------------------
+1 | **KIND**                           | subtype                  | Objektart |
 []()           | Kardinalität  [1]  ||
-2 | **STATUS**                           | [CodedDomain](#indication-of-resources-pt-status)  | Zustand der Objektart. 
+2 | **STATUS**                           | [CodedDomain](#indication-of-resources-pt-status)  | Zustand der Objektart.|  
 []()           | Kardinalität   [0..1] |                                    |  
-3 | **MATERIAL**                           | [CodedDomain](#indication-of-resources-pt-material)  | Material, das mit der Objektart in Verbindung steht. 
+3 | **MATERIAL**                           | [CodedDomain](#indication-of-resources-pt-material)  | Material, das mit der Objektart in Verbindung steht.|  
 []()           | Kardinalität   [0..1] |                                    |  
-4 | **CHEMISTRY**                           | string                  | Chemische Komponente(n) oder Mineralien, welche die Natur der Objektart charakterisieren. 
+4 | **CHEMISTRY**                           | string                  | Chemische Komponente(n) oder Mineralien, welche die Natur der Objektart charakterisieren. |
 []()           | Kardinalität  [0..1]  ||
 
 
@@ -2132,11 +2132,11 @@ Die Klasse [Mineralised_Zone_L](#mineralised-zone-l) beinhaltet Vererzungszonen.
 
 
 
-    | Name                | Typ                     | Beschreibung
-----|------------------------------|-----------------------------------|--------------------------------------
-1 | **KIND**                           | subtype                  | Objektart 
+    | Name                | Typ                     | Beschreibung                 |  Obligatorisch
+----|------------------------------|-----------------------------------|--------------------------------------|------------------------
+1 | **KIND**                           | subtype                  | Objektart |
 []()           | Kardinalität  [1]  ||
-2 | **CHEMISTRY**                           | string                  | Chemische Komponente(n), welche die Natur der Objektart charakterisieren. 
+2 | **CHEMISTRY**                           | string                  | Chemische Komponente(n), welche die Natur der Objektart charakterisieren. |
 []()           | Kardinalität  [0..1]  ||
 
 
@@ -2170,11 +2170,11 @@ Die Klasse [Sedimentary_Structures_PT](#sedimentary-structures-pt) enthält beob
 
 
 
-    | Name                | Typ                     | Beschreibung
-----|------------------------------|-----------------------------------|--------------------------------------
-1 | **KIND**                           | subtype                  | Objektart 
+    | Name                | Typ                     | Beschreibung                 |  Obligatorisch
+----|------------------------------|-----------------------------------|--------------------------------------|------------------------
+1 | **KIND**                           | subtype                  | Objektart |
 []()           | Kardinalität  [1]  ||
-2 | **AZIMUTH**                           | integer                  | Orientierung des Symbols. Wert in Grad (0° 359°) im Uhrzeigersinn gemessen. 
+2 | **AZIMUTH**                           | integer                  | Orientierung des Symbols. Wert in Grad (0° 359°) im Uhrzeigersinn gemessen. |
 []()           | Kardinalität  [0..1]  ||
 
 
@@ -2214,17 +2214,17 @@ geologische Aufschlüsse beschreiben.
 
 
 
-    | Name                | Typ                     | Beschreibung
-----|------------------------------|-----------------------------------|--------------------------------------
-1 | **KIND**                           | subtype                  | Objektart 
+    | Name                | Typ                     | Beschreibung                 |  Obligatorisch
+----|------------------------------|-----------------------------------|--------------------------------------|------------------------
+1 | **KIND**                           | subtype                  | Objektart |
 []()           | Kardinalität  [1]  ||
-2 | **STRATI**                           | [CodedDomain](#type-localities-pt-strati)  | Lithostratigraphischer Zusatz zum Objekt. 
+2 | **STRATI**                           | [CodedDomain](#type-localities-pt-strati)  | Lithostratigraphischer Zusatz zum Objekt.|  
 []()           | Kardinalität   [0..1] |                                    |  
-3 | **NAME**                           | string                  | Name der Typlokalität. / Beschreibung des geologisch relevanten Aufschlusses 
+3 | **NAME**                           | string                  | Name der Typlokalität. / Beschreibung des geologisch relevanten Aufschlusses |
 []()           | Kardinalität  [0..1]  ||
-4 | **ACCESSIBIL**                           | boolean                  | Ist die Objektart zum Zeitpunkt der Aufnahme aufgeschlossen (ja / nein)? 
+4 | **ACCESSIBIL**                           | boolean                  | Ist die Objektart zum Zeitpunkt der Aufnahme aufgeschlossen (ja / nein)? |
 []()           | Kardinalität  [0..1]  ||
-5 | **PROTECTED**                           | boolean                  | Geschütztes geologisches Objekt (ja / nein)? 
+5 | **PROTECTED**                           | boolean                  | Geschütztes geologisches Objekt (ja / nein)? |
 []()           | Kardinalität  [0..1]  ||
 
 
@@ -2298,17 +2298,17 @@ von Wechsellagerungen von Sandstein und Mergel) und sind von den Leithorizonten 
 
 
 
-    | Name                | Typ                     | Beschreibung
-----|------------------------------|-----------------------------------|--------------------------------------
-1 | **KIND**                           | subtype                  | Objektart 
+    | Name                | Typ                     | Beschreibung                 |  Obligatorisch
+----|------------------------------|-----------------------------------|--------------------------------------|------------------------
+1 | **KIND**                           | subtype                  | Objektart |
 []()           | Kardinalität  [1]  ||
-2 | **CONG_SPE**                           | [CodedDomain](#prominent-lithological-features-l-cong-spe)  | Charakterisation der Konglomerate nach ihrem Geröllspektrum.. 
+2 | **CONG_SPE**                           | [CodedDomain](#prominent-lithological-features-l-cong-spe)  | Charakterisation der Konglomerate nach ihrem Geröllspektrum..|  
 []()           | Kardinalität   [0..1] |                                    |  
-3 | **NAME_HORIZ**                           | [ Tabelle ](#gc-litstrat-bed-cd)  | Name des Leithorizonts.. 
+3 | **NAME_HORIZ**                           | [ Tabelle ](#gc-litstrat-bed-cd)  | Name des Leithorizonts..|  
 []()           | Kardinalität   [0..1] |
-4 | **ORIG_DESCR**                           | string                  | Originalbezeichnung gemäss der Legende der zugrundeliegenden geologischen Karte. 
+4 | **ORIG_DESCR**                           | string                  | Originalbezeichnung gemäss der Legende der zugrundeliegenden geologischen Karte. |
 []()           | Kardinalität  [0..1]  ||
-5 | **LPRO_LITHO**                           | [ Tabelle ](#gc-litho-cd)  | Materialbezeichnung (lithologische Einheit).. 
+5 | **LPRO_LITHO**                           | [ Tabelle ](#gc-litho-cd)  | Materialbezeichnung (lithologische Einheit)..|  
 []()           | Kardinalität   [1] |
 
 
@@ -2378,11 +2378,11 @@ standardisiert werden
 
 
 
-    | Name                | Typ                     | Beschreibung
-----|------------------------------|-----------------------------------|--------------------------------------
-1 | **KIND**                           | subtype                  | Objektart 
+    | Name                | Typ                     | Beschreibung                 |  Obligatorisch
+----|------------------------------|-----------------------------------|--------------------------------------|------------------------
+1 | **KIND**                           | subtype                  | Objektart |
 []()           | Kardinalität  [1]  ||
-2 | **ORIG_NAME**                           | string                  | Ursprüngliche Bezeichnung des Objektes. 
+2 | **ORIG_NAME**                           | string                  | Ursprüngliche Bezeichnung des Objektes. |
 []()           | Kardinalität  [1]  ||
 
 
@@ -2416,11 +2416,11 @@ Die Klasse [Geological_Outlines_L](#geological-outlines-l) beinhaltet geologisch
 
 
 
-    | Name                | Typ                     | Beschreibung
-----|------------------------------|-----------------------------------|--------------------------------------
-1 | **KIND**                           | subtype                  | Objektart 
+    | Name                | Typ                     | Beschreibung                 |  Obligatorisch
+----|------------------------------|-----------------------------------|--------------------------------------|------------------------
+1 | **KIND**                           | subtype                  | Objektart |
 []()           | Kardinalität  [1]  ||
-2 | **STATUS**                           | [CodedDomain](#geological-outlines-l-status)  | Zustand der Objektart.. 
+2 | **STATUS**                           | [CodedDomain](#geological-outlines-l-status)  | Zustand der Objektart..|  
 []()           | Kardinalität   [0..1] |                                    |  
 
 
@@ -2470,17 +2470,17 @@ verlaufs im Untergrund.
 
 
 
-    | Name                | Typ                     | Beschreibung
-----|------------------------------|-----------------------------------|--------------------------------------
-1 | **KIND**                           | subtype                  | Objektart 
+    | Name                | Typ                     | Beschreibung                 |  Obligatorisch
+----|------------------------------|-----------------------------------|--------------------------------------|------------------------
+1 | **KIND**                           | subtype                  | Objektart |
 []()           | Kardinalität  [1]  ||
-2 | **TYPE**                           | [CodedDomain](#slope-bedrock-pt-type)  | Referenzoberfläche.. 
+2 | **TYPE**                           | [CodedDomain](#slope-bedrock-pt-type)  | Referenzoberfläche..|  
 []()           | Kardinalität   [1] |                                    |  
-3 | **AZIMUTH**                           | integer                  | Fallrichtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad (0° 359°) im Uhrzeigersinn gemessen. 
+3 | **AZIMUTH**                           | integer                  | Fallrichtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad (0° 359°) im Uhrzeigersinn gemessen. |
 []()           | Kardinalität  [0..1]  ||
-4 | **DIP**                           | integer                  | Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die Vertikale (90°). 
+4 | **DIP**                           | integer                  | Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die Vertikale (90°). |
 []()           | Kardinalität  [0..1]  ||
-5 | **PSLO_FORMATIO**                           | [ Tabelle ](#gc-litstrat-bed-cd)  | Lithostratigraphische Einheit der modellierten Formation. 
+5 | **PSLO_FORMATIO**                           | [ Tabelle ](#gc-litstrat-bed-cd)  | Lithostratigraphische Einheit der modellierten Formation.|  
 []()           | Kardinalität   [1] |
 
 
@@ -2548,15 +2548,15 @@ hypsen der Felsoberfläche in dieser Klasse.
 
 
 
-    | Name                | Typ                     | Beschreibung
-----|------------------------------|-----------------------------------|--------------------------------------
-1 | **KIND**                           | subtype                  | Objektart 
+    | Name                | Typ                     | Beschreibung                 |  Obligatorisch
+----|------------------------------|-----------------------------------|--------------------------------------|------------------------
+1 | **KIND**                           | subtype                  | Objektart |
 []()           | Kardinalität  [1]  ||
-2 | **TYPE**                           | [CodedDomain](#contour-lines-bedrock-l-type)  | Referenzoberfläche.. 
+2 | **TYPE**                           | [CodedDomain](#contour-lines-bedrock-l-type)  | Referenzoberfläche..|  
 []()           | Kardinalität   [1] |                                    |  
-3 | **ALTITUDE**                           | float                  | Höhenangabe (m ü.M.) von Isohypsen. 
+3 | **ALTITUDE**                           | float                  | Höhenangabe (m ü.M.) von Isohypsen. |
 []()           | Kardinalität  [1]  ||
-4 | **LITSTRAT**                           | [ Tabelle ](#gc-litstrat-bed-cd)  | Lithostratigraphische Einheit der modellierten Formation. 
+4 | **LITSTRAT**                           | [ Tabelle ](#gc-litstrat-bed-cd)  | Lithostratigraphische Einheit der modellierten Formation.|  
 []()           | Kardinalität   [1] |
 
 
@@ -2615,17 +2615,17 @@ Grundwasserspiegels.
 
 
 
-    | Name                | Typ                     | Beschreibung
-----|------------------------------|-----------------------------------|--------------------------------------
-1 | **KIND**                           | subtype                  | Objektart 
+    | Name                | Typ                     | Beschreibung                 |  Obligatorisch
+----|------------------------------|-----------------------------------|--------------------------------------|------------------------
+1 | **KIND**                           | subtype                  | Objektart |
 []()           | Kardinalität  [1]  ||
-2 | **AZIMUTH**                           | integer                  | Fallrichtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad (0° 359°) im Uhrzeigersinn gemessen. 
+2 | **AZIMUTH**                           | integer                  | Fallrichtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad (0° 359°) im Uhrzeigersinn gemessen. |
 []()           | Kardinalität  [0..1]  ||
-3 | **DIP**                           | integer                  | Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die Vertikale (90°). 
+3 | **DIP**                           | integer                  | Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die Vertikale (90°). |
 []()           | Kardinalität  [0..1]  ||
-4 | **HEIGHT**                           | float                  | Kote des Grundwasserspiegels (m ü.M.). 
+4 | **HEIGHT**                           | float                  | Kote des Grundwasserspiegels (m ü.M.). |
 []()           | Kardinalität  [0..1]  ||
-5 | **MEA_PERIOD**                           | range                  | Messperiode. 
+5 | **MEA_PERIOD**                           | range                  | Messperiode. |
 []()           | Kardinalität  [0..1]  ||
 
 
@@ -2688,15 +2688,15 @@ beziehen.
 
 
 
-    | Name                | Typ                     | Beschreibung
-----|------------------------------|-----------------------------------|--------------------------------------
-1 | **KIND**                           | subtype                  | Objektart 
+    | Name                | Typ                     | Beschreibung                 |  Obligatorisch
+----|------------------------------|-----------------------------------|--------------------------------------|------------------------
+1 | **KIND**                           | subtype                  | Objektart |
 []()           | Kardinalität  [1]  ||
-2 | **CONFINE**                           | [CodedDomain](#contour-lines-hydro-l-confine)  | Druckzustand im Grundwasserleiter.. 
+2 | **CONFINE**                           | [CodedDomain](#contour-lines-hydro-l-confine)  | Druckzustand im Grundwasserleiter..|  
 []()           | Kardinalität   [0..1] |                                    |  
-3 | **ALTITUDE**                           |                   | Höhenangabe (m ü.M.) von Isohypsen. 
+3 | **ALTITUDE**                           |                   | Höhenangabe (m ü.M.) von Isohypsen. |
 []()           | Kardinalität  [1]  ||
-4 | **WA_TABLE**                           | [CodedDomain](#contour-lines-hydro-l-wa-table)  | Wasserstand.. 
+4 | **WA_TABLE**                           | [CodedDomain](#contour-lines-hydro-l-wa-table)  | Wasserstand..|  
 []()           | Kardinalität   [0..1] |                                    |  
 
 
@@ -2763,17 +2763,17 @@ Die Klasse [Archaeology_PT](#archaeology-pt) enthält Objektarten zu einzelnen a
 
 
 
-    | Name                | Typ                     | Beschreibung
-----|------------------------------|-----------------------------------|--------------------------------------
-1 | **KIND**                           | subtype                  | Objektart 
+    | Name                | Typ                     | Beschreibung                 |  Obligatorisch
+----|------------------------------|-----------------------------------|--------------------------------------|------------------------
+1 | **KIND**                           | subtype                  | Objektart |
 []()           | Kardinalität  []  ||
-2 | **EPOCH**                           | [CodedDomain](#archaeology-pt-epoch)  | Archäologische Epoche der Objektart. 
+2 | **EPOCH**                           | [CodedDomain](#archaeology-pt-epoch)  | Archäologische Epoche der Objektart.|  
 []()           | Kardinalität   [0..1] |                                    |  
-3 | **PERIOD**                           | [CodedDomain](#archaeology-pt-period)  | Archäologische Periode der Objektart.. 
+3 | **PERIOD**                           | [CodedDomain](#archaeology-pt-period)  | Archäologische Periode der Objektart..|  
 []()           | Kardinalität   [0..1] |                                    |  
-4 | **AGE**                           | [CodedDomain](#archaeology-pt-age)  | Archäologisches Alter der Objektart.. 
+4 | **AGE**                           | [CodedDomain](#archaeology-pt-age)  | Archäologisches Alter der Objektart..|  
 []()           | Kardinalität   [0..1] |                                    |  
-5 | **TYPE**                           | [CodedDomain](#archaeology-pt-type)  | Art des Kultsteins.. 
+5 | **TYPE**                           | [CodedDomain](#archaeology-pt-type)  | Art des Kultsteins..|  
 []()           | Kardinalität   [0..1] |                                    |  
 
 
@@ -2878,15 +2878,15 @@ Hohlwege oder Befestigungsgräben sind Teile dieser Klasse.
 
 
 
-    | Name                | Typ                     | Beschreibung
-----|------------------------------|-----------------------------------|--------------------------------------
-1 | **KIND**                           | subtype                  | Objektart 
+    | Name                | Typ                     | Beschreibung                 |  Obligatorisch
+----|------------------------------|-----------------------------------|--------------------------------------|------------------------
+1 | **KIND**                           | subtype                  | Objektart |
 []()           | Kardinalität  []  ||
-2 | **EPOCH**                           | [CodedDomain](#archaeology-l-epoch)  | Archäologische Epoche der Objektart. 
+2 | **EPOCH**                           | [CodedDomain](#archaeology-l-epoch)  | Archäologische Epoche der Objektart.|  
 []()           | Kardinalität   [0..1] |                                    |  
-3 | **PERIOD**                           | [CodedDomain](#archaeology-l-period)  | Archäologische Periode der Objektart.. 
+3 | **PERIOD**                           | [CodedDomain](#archaeology-l-period)  | Archäologische Periode der Objektart..|  
 []()           | Kardinalität   [0..1] |                                    |  
-4 | **AGE**                           | [CodedDomain](#archaeology-l-age)  | Archäologisches Alter der Objektart.. 
+4 | **AGE**                           | [CodedDomain](#archaeology-l-age)  | Archäologisches Alter der Objektart..|  
 []()           | Kardinalität   [0..1] |                                    |  
 
 
@@ -2970,15 +2970,15 @@ grösseres Gebiet (Fläche) abdecken.
 
 
 
-    | Name                | Typ                     | Beschreibung
-----|------------------------------|-----------------------------------|--------------------------------------
-1 | **KIND**                           | subtype                  | Objektart 
+    | Name                | Typ                     | Beschreibung                 |  Obligatorisch
+----|------------------------------|-----------------------------------|--------------------------------------|------------------------
+1 | **KIND**                           | subtype                  | Objektart |
 []()           | Kardinalität  []  ||
-2 | **EPOCH**                           | [CodedDomain](#archaeology-plg-epoch)  | Archäologische Epoche der Objektart. 
+2 | **EPOCH**                           | [CodedDomain](#archaeology-plg-epoch)  | Archäologische Epoche der Objektart.|  
 []()           | Kardinalität   [0..1] |                                    |  
-3 | **PERIOD**                           | [CodedDomain](#archaeology-plg-period)  | Archäologische Periode der Objektart.. 
+3 | **PERIOD**                           | [CodedDomain](#archaeology-plg-period)  | Archäologische Periode der Objektart..|  
 []()           | Kardinalität   [0..1] |                                    |  
-4 | **AGE**                           | [CodedDomain](#archaeology-plg-age)  | Archäologisches Alter der Objektart.. 
+4 | **AGE**                           | [CodedDomain](#archaeology-plg-age)  | Archäologisches Alter der Objektart..|  
 []()           | Kardinalität   [0..1] |                                    |  
 
 
@@ -3057,17 +3057,17 @@ Geomaterialien.
 
 
 
-    | Name                | Typ                     | Beschreibung
-----|------------------------------|-----------------------------------|--------------------------------------
-1 | **KIND**                           | subtype                  | Objektart 
+    | Name                | Typ                     | Beschreibung                 |  Obligatorisch
+----|------------------------------|-----------------------------------|--------------------------------------|------------------------
+1 | **KIND**                           | subtype                  | Objektart |
 []()           | Kardinalität  []  ||
-2 | **EXP_UNIT**                           | [ Tabelle ](#gc-litstrat-bed-cd)  | Abgebaute lithostratigraphische Einheit.. 
+2 | **EXP_UNIT**                           | [ Tabelle ](#gc-litstrat-bed-cd)  | Abgebaute lithostratigraphische Einheit..|  
 []()           | Kardinalität   [0..*] |
-3 | **STATUS**                           | [CodedDomain](#exploitation-geomaterials-pt-status)  | Abbaustatus.. 
+3 | **STATUS**                           | [CodedDomain](#exploitation-geomaterials-pt-status)  | Abbaustatus..|  
 []()           | Kardinalität   [0..1] |                                    |  
-4 | **DEPTH_TOT**                           | float                  | Endtiefe (m ab Terrainoberfläche) der Objektart. 
+4 | **DEPTH_TOT**                           | float                  | Endtiefe (m ab Terrainoberfläche) der Objektart. |
 []()           | Kardinalität  [0..1]  ||
-5 | **TARG_MAT**                           | [CodedDomain](#exploitation-geomaterials-pt-targ-mat)  | Abgebautes Material.. 
+5 | **TARG_MAT**                           | [CodedDomain](#exploitation-geomaterials-pt-targ-mat)  | Abgebautes Material..|  
 []()           | Kardinalität   [0..1] |                                    |  
 
 
@@ -3184,11 +3184,11 @@ Geomaterialien (z.B. Verlauf der Abbaufront).
 
 
 
-    | Name                | Typ                     | Beschreibung
-----|------------------------------|-----------------------------------|--------------------------------------
-1 | **KIND**                           | subtype                  | Objektart 
+    | Name                | Typ                     | Beschreibung                 |  Obligatorisch
+----|------------------------------|-----------------------------------|--------------------------------------|------------------------
+1 | **KIND**                           | subtype                  | Objektart |
 []()           | Kardinalität  []  ||
-2 | **STATUS**                           | [CodedDomain](#exploitation-geomaterials-l-status)  | Abbaustatus.. 
+2 | **STATUS**                           | [CodedDomain](#exploitation-geomaterials-l-status)  | Abbaustatus..|  
 []()           | Kardinalität   [0..1] |                                    |  
 
 
@@ -3231,17 +3231,17 @@ Aufnahmen Geomaterialien abgebaut wurden.
 
 
 
-    | Name                | Typ                     | Beschreibung
-----|------------------------------|-----------------------------------|--------------------------------------
-1 | **KIND**                           | subtype                  | Objektart 
+    | Name                | Typ                     | Beschreibung                 |  Obligatorisch
+----|------------------------------|-----------------------------------|--------------------------------------|------------------------
+1 | **KIND**                           | subtype                  | Objektart |
 []()           | Kardinalität  []  ||
-2 | **EXP_UNIT**                           | [ Tabelle ](#gc-litstrat-bed-cd)  | Abgebaute lithostratigraphische Einheit.. 
+2 | **EXP_UNIT**                           | [ Tabelle ](#gc-litstrat-bed-cd)  | Abgebaute lithostratigraphische Einheit..|  
 []()           | Kardinalität   [1..*] |
-3 | **STATUS**                           | [CodedDomain](#exploitation-geomaterials-plg-status)  | Abbaustatus.. 
+3 | **STATUS**                           | [CodedDomain](#exploitation-geomaterials-plg-status)  | Abbaustatus..|  
 []()           | Kardinalität   [0..1] |                                    |  
-4 | **DEPTH_TOT**                           | float                  | Endtiefe (m ab Terrainoberfläche) der Objektart. 
+4 | **DEPTH_TOT**                           | float                  | Endtiefe (m ab Terrainoberfläche) der Objektart. |
 []()           | Kardinalität  [0..1]  ||
-5 | **TARG_MAT**                           | [CodedDomain](#exploitation-geomaterials-plg-targ-mat)  | Abgebautes Material.. 
+5 | **TARG_MAT**                           | [CodedDomain](#exploitation-geomaterials-plg-targ-mat)  | Abgebautes Material..|  
 []()           | Kardinalität   [0..1] |                                    |  
 
 
@@ -3336,37 +3336,37 @@ Rammkernsondierungen als Bohrungen aufgenommen wurden.)
 
 
 
-    | Name                | Typ                     | Beschreibung
-----|------------------------------|-----------------------------------|--------------------------------------
-1 | **KIND**                           | subtype                  | Objektart 
+    | Name                | Typ                     | Beschreibung                 |  Obligatorisch
+----|------------------------------|-----------------------------------|--------------------------------------|------------------------
+1 | **KIND**                           | subtype                  | Objektart |
 []()           | Kardinalität  []  ||
-2 | **DRILL_MO**                           |                   | Bohrmethode. 
+2 | **DRILL_MO**                           |                   | Bohrmethode. |
 []()           | Kardinalität  [0..1]  |10502|
-3 | **DEPTH_BEDROCK**                           | float                  | Tiefe (in Meter ab Terrainoberfläche) der Felsober- fläche. (Sofern die Bohrung das Festgestein nicht Depth_Bedrock erreicht, z.B. «Bohrung, Fels nicht erreicht», beträgt der Wert -999, falls die Bohrung bereits im Festgestein beginnt, beträgt der Wert 0). Falls Festgestein erreicht wurde, aber nicht klar ist, dass es sich um die Felsoberfläche handelt, beträgt der Wert -888. 
+3 | **DEPTH_BEDROCK**                           | float                  | Tiefe (in Meter ab Terrainoberfläche) der Felsober- fläche. (Sofern die Bohrung das Festgestein nicht Depth_Bedrock erreicht, z.B. «Bohrung, Fels nicht erreicht», beträgt der Wert -999, falls die Bohrung bereits im Festgestein beginnt, beträgt der Wert 0). Falls Festgestein erreicht wurde, aber nicht klar ist, dass es sich um die Felsoberfläche handelt, beträgt der Wert -888. |
 []()           | Kardinalität  [0..1]  ||
-4 | **D_C_UNDERG**                           | boolean                  | Bohransatzpunkt unter Terrain (ja / nein) 
+4 | **D_C_UNDERG**                           | boolean                  | Bohransatzpunkt unter Terrain (ja / nein) |
 []()           | Kardinalität  [1]  ||
-5 | **MAIN_TAR**                           | [CodedDomain](#boreholes-pt-main-tar)  | Ziel der Sondierung.. 
+5 | **MAIN_TAR**                           | [CodedDomain](#boreholes-pt-main-tar)  | Ziel der Sondierung..|  
 []()           | Kardinalität   [0..1] |                                    |  
-6 | **TARG_MAT**                           | [CodedDomain](#boreholes-pt-targ-mat)  | Durch die Sondierung gefördertes Material.. 
+6 | **TARG_MAT**                           | [CodedDomain](#boreholes-pt-targ-mat)  | Durch die Sondierung gefördertes Material..|  
 []()           | Kardinalität   [0..1] |                                    |  
-7 | **DEPTH_TOT**                           | float                  | Gemessene Länge (Measured Depth) der Bohrung. Vgl. DM Bohrdaten. Die tatsächliche Tiefe (True Vertical Depth) ist oft nicht bekannt. 
+7 | **DEPTH_TOT**                           | float                  | Gemessene Länge (Measured Depth) der Bohrung. Vgl. DM Bohrdaten. Die tatsächliche Tiefe (True Vertical Depth) ist oft nicht bekannt. |
 []()           | Kardinalität  [0..1]  ||
-8 | **FM_A**                           | [ Tabelle ](#gc-litstrat-bed-cd)  | Lithostratigraphische Einheit der erreichten Formation A. 
+8 | **FM_A**                           | [ Tabelle ](#gc-litstrat-bed-cd)  | Lithostratigraphische Einheit der erreichten Formation A.|  
 []()           | Kardinalität   [0..1] |
-9 | **DEPTH_FM_A**                           | float                  | Tiefe (m ab Terrainoberfläche) der erreichten Formation A. 
+9 | **DEPTH_FM_A**                           | float                  | Tiefe (m ab Terrainoberfläche) der erreichten Formation A. |
 []()           | Kardinalität  [0..1]  ||
-10 | **FM_B**                           | [ Tabelle ](#gc-litstrat-bed-cd)  | Lithostratigraphische Einheit der erreichten Formation B. 
+10 | **FM_B**                           | [ Tabelle ](#gc-litstrat-bed-cd)  | Lithostratigraphische Einheit der erreichten Formation B.|  
 []()           | Kardinalität   [0..1] |
-11 | **DEPTH_FM_B**                           | float                  | Tiefe (m ab Terrainoberfläche) der erreichten Formation B. 
+11 | **DEPTH_FM_B**                           | float                  | Tiefe (m ab Terrainoberfläche) der erreichten Formation B. |
 []()           | Kardinalität  [0..1]  ||
-12 | **DEPTH_WT**                           | float                  | Tiefe (m ab Terrainoberfläche) des Grundwasserspiegels. 
+12 | **DEPTH_WT**                           | float                  | Tiefe (m ab Terrainoberfläche) des Grundwasserspiegels. |
 []()           | Kardinalität  [0..1]  ||
-13 | **AZIMUTH**                           | integer                  | Fallrichtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad (0° 359°) im Uhrzeigersinn gemessen. 
+13 | **AZIMUTH**                           | integer                  | Fallrichtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad (0° 359°) im Uhrzeigersinn gemessen. |
 []()           | Kardinalität  [0..1]  ||
-14 | **DIP**                           | integer                  | Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die Vertikale (90°). 
+14 | **DIP**                           | integer                  | Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die Vertikale (90°). |
 []()           | Kardinalität  [0..1]  ||
-15 | **REF_NUMBER**                           | integer                  | Bohrungs-ID der Objektart in einem zusätzlichen Dokument (Erläuterungen, ...). 
+15 | **REF_NUMBER**                           | integer                  | Bohrungs-ID der Objektart in einem zusätzlichen Dokument (Erläuterungen, ...). |
 []()           | Kardinalität  [0..1]  ||
 
 
@@ -3543,9 +3543,9 @@ mehr zu erkennen ist, was bei einer geomorphologischen Deutung zu falschen Schl�
 
 
 
-    | Name                | Typ                     | Beschreibung
-----|------------------------------|-----------------------------------|--------------------------------------
-1 | **KIND**                           | subtype                  | Objektart 
+    | Name                | Typ                     | Beschreibung                 |  Obligatorisch
+----|------------------------------|-----------------------------------|--------------------------------------|------------------------
+1 | **KIND**                           | subtype                  | Objektart |
 []()           | Kardinalität  [1]  ||
 
 
@@ -3582,19 +3582,19 @@ Desweiteren kommen in dieser Klasse auch Messgeräte wie Piezometer und Limnigra
 
 
 
-    | Name                | Typ                     | Beschreibung
-----|------------------------------|-----------------------------------|--------------------------------------
-1 | **KIND**                           | subtype                  | Objektart 
+    | Name                | Typ                     | Beschreibung                 |  Obligatorisch
+----|------------------------------|-----------------------------------|--------------------------------------|------------------------
+1 | **KIND**                           | subtype                  | Objektart |
 []()           | Kardinalität  [1]  ||
-2 | **STATUS**                           | [CodedDomain](#construction-pt-status)  | Zustand der Objektart.. 
+2 | **STATUS**                           | [CodedDomain](#construction-pt-status)  | Zustand der Objektart..|  
 []()           | Kardinalität   [0..1] |                                    |  
-3 | **EPOCH**                           | [CodedDomain](#construction-pt-epoch)  | Epoche der Erbauung der Objektart.. 
+3 | **EPOCH**                           | [CodedDomain](#construction-pt-epoch)  | Epoche der Erbauung der Objektart..|  
 []()           | Kardinalität   [0..1] |                                    |  
-4 | **DEPTH**                           | float                  | Tiefe der Objektart (m ab Terrainoberfläche). 
+4 | **DEPTH**                           | float                  | Tiefe der Objektart (m ab Terrainoberfläche). |
 []()           | Kardinalität  [0..1]  ||
-5 | **DEPTH_WT**                           | float                  | Tiefe (m ab Terrainoberfläche) des Grundwasserspiegels (Mittelwert). 
+5 | **DEPTH_WT**                           | float                  | Tiefe (m ab Terrainoberfläche) des Grundwasserspiegels (Mittelwert). |
 []()           | Kardinalität  [0..1]  ||
-6 | **MEA_PERIOD**                           | range                  | Messperiode. 
+6 | **MEA_PERIOD**                           | range                  | Messperiode. |
 []()           | Kardinalität  [0..1]  ||
 
 
@@ -3682,11 +3682,11 @@ welcher mit Objektarten der Klasse [Surface_Water_PT](#surface-water-pt) kombini
 
 
 
-    | Name                | Typ                     | Beschreibung
-----|------------------------------|-----------------------------------|--------------------------------------
-1 | **KIND**                           | subtype                  | Objektart 
+    | Name                | Typ                     | Beschreibung                 |  Obligatorisch
+----|------------------------------|-----------------------------------|--------------------------------------|------------------------
+1 | **KIND**                           | subtype                  | Objektart |
 []()           | Kardinalität  [1]  ||
-2 | **COMBI**                           | [CodedDomain](#construction-l-combi)  | Objektart einer anderen Klasse, die mit der Objektart in Kombination vorkommen kann. 
+2 | **COMBI**                           | [CodedDomain](#construction-l-combi)  | Objektart einer anderen Klasse, die mit der Objektart in Kombination vorkommen kann.|  
 []()           | Kardinalität   [0..1] |                                    |  
 
 
@@ -3728,17 +3728,17 @@ gewissen Bezug zu einem ehemaligen Gewässer aufweisen.
 
 
 
-    | Name                | Typ                     | Beschreibung
-----|------------------------------|-----------------------------------|--------------------------------------
-1 | **KIND**                           | subtype                  | Objektart 
+    | Name                | Typ                     | Beschreibung                 |  Obligatorisch
+----|------------------------------|-----------------------------------|--------------------------------------|------------------------
+1 | **KIND**                           | subtype                  | Objektart |
 []()           | Kardinalität  [1]  ||
-2 | **REL_AGE**                           | [CodedDomain](#palaeohydrology-l-rel-age)  | Relatives Alter der Objektart. 
+2 | **REL_AGE**                           | [CodedDomain](#palaeohydrology-l-rel-age)  | Relatives Alter der Objektart.|  
 []()           | Kardinalität   [0..1] |                                    |  
-3 | **HPAL_CHRONO**                           | [ Tabelle ](#gc-chrono-cd)  | Chronostratigraphische Zuordnung.. 
+3 | **HPAL_CHRONO**                           | [ Tabelle ](#gc-chrono-cd)  | Chronostratigraphische Zuordnung..|  
 []()           | Kardinalität   [0..1] |
-4 | **REF_YEAR**                           | integer                  | Referenzjahr der ehemaligen Uferlinie. 
+4 | **REF_YEAR**                           | integer                  | Referenzjahr der ehemaligen Uferlinie. |
 []()           | Kardinalität  [1]  ||
-5 | **SOURCE**                           | string                  | Datenquelle der historischen Unterlagen. 
+5 | **SOURCE**                           | string                  | Datenquelle der historischen Unterlagen. |
 []()           | Kardinalität  [0..1]  ||
 
 
@@ -3817,11 +3817,11 @@ kann mit Objeken aus der Klasse [Surface_Water_PT](#surface-water-pt) kombiniert
 
 
 
-    | Name                | Typ                     | Beschreibung
-----|------------------------------|-----------------------------------|--------------------------------------
-1 | **KIND**                           | subtype                  | Objektart 
+    | Name                | Typ                     | Beschreibung                 |  Obligatorisch
+----|------------------------------|-----------------------------------|--------------------------------------|------------------------
+1 | **KIND**                           | subtype                  | Objektart |
 []()           | Kardinalität  [1]  ||
-2 | **COMBI**                           | [CodedDomain](#subsurface-water-l-combi)  | Objektart einer anderen Klasse, die mit der Objektart in Kombination vorkommen kann. 
+2 | **COMBI**                           | [CodedDomain](#subsurface-water-l-combi)  | Objektart einer anderen Klasse, die mit der Objektart in Kombination vorkommen kann.|  
 []()           | Kardinalität   [0..1] |                                    |  
 
 
@@ -3871,25 +3871,25 @@ Wasserchemie.
 
 
 
-    | Name                | Typ                     | Beschreibung
-----|------------------------------|-----------------------------------|--------------------------------------
-1 | **KIND**                           | subtype                  | Objektart 
+    | Name                | Typ                     | Beschreibung                 |  Obligatorisch
+----|------------------------------|-----------------------------------|--------------------------------------|------------------------
+1 | **KIND**                           | subtype                  | Objektart |
 []()           | Kardinalität  [1]  ||
-2 | **STATUS**                           | [CodedDomain](#surface-water-pt-status)  | Zustand der Objektart.. 
+2 | **STATUS**                           | [CodedDomain](#surface-water-pt-status)  | Zustand der Objektart..|  
 []()           | Kardinalität   [0..1] |                                    |  
-3 | **FLOW_CON**                           | [CodedDomain](#surface-water-pt-flow-con)  | Wasserfluss Bedingungen.. 
+3 | **FLOW_CON**                           | [CodedDomain](#surface-water-pt-flow-con)  | Wasserfluss Bedingungen..|  
 []()           | Kardinalität   [0..1] |                                    |  
-4 | **TYPE**                           | [CodedDomain](#surface-water-pt-type)  | Charakteristik der Objektart. 
+4 | **TYPE**                           | [CodedDomain](#surface-water-pt-type)  | Charakteristik der Objektart.|  
 []()           | Kardinalität   [0..1] |                                    |  
-5 | **DIS_LOCA**                           | [CodedDomain](#surface-water-pt-dis-loca)  | Ort des Wasserausflusses.. 
+5 | **DIS_LOCA**                           | [CodedDomain](#surface-water-pt-dis-loca)  | Ort des Wasserausflusses..|  
 []()           | Kardinalität   [0..1] |                                    |  
-6 | **COMBI**                           | [CodedDomain](#surface-water-pt-combi)  | Objektart einer anderen Klasse, die mit der Objektart in Kombination vorkommen kann. 
+6 | **COMBI**                           | [CodedDomain](#surface-water-pt-combi)  | Objektart einer anderen Klasse, die mit der Objektart in Kombination vorkommen kann.|  
 []()           | Kardinalität   [0..1] |                                    |  
-7 | **TEMP**                           | integer                  | Mittlere Wassertemperatur (°C). 
+7 | **TEMP**                           | integer                  | Mittlere Wassertemperatur (°C). |
 []()           | Kardinalität  [0..1]  ||
-8 | **CHEMISTRY**                           | string                  | Charakteristisches chemisches Element im Mineralwasser (z.B. Fe). 
+8 | **CHEMISTRY**                           | string                  | Charakteristisches chemisches Element im Mineralwasser (z.B. Fe). |
 []()           | Kardinalität  [0..1]  ||
-9 | **AZIMUTH**                           | integer                  | Richtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad (0° 359°) im Uhrzeigersinn gemessen. 
+9 | **AZIMUTH**                           | integer                  | Richtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad (0° 359°) im Uhrzeigersinn gemessen. |
 []()           | Kardinalität  [0..1]  ||
 
 
@@ -4017,9 +4017,9 @@ In der Klasse [Surface_Water_L](#surface-water-l) sind linienförmige Oberfläch
 
 
 
-    | Name                | Typ                     | Beschreibung
-----|------------------------------|-----------------------------------|--------------------------------------
-1 | **KIND**                           | subtype                  | Objektart 
+    | Name                | Typ                     | Beschreibung                 |  Obligatorisch
+----|------------------------------|-----------------------------------|--------------------------------------|------------------------
+1 | **KIND**                           | subtype                  | Objektart |
 []()           | Kardinalität  [1]  ||
 
 
@@ -4048,9 +4048,9 @@ modells Geologie
 
 
 
-    | Name                | Typ                     | Beschreibung
-----|------------------------------|-----------------------------------|--------------------------------------
-1 | **KIND**                           | subtype                  | Objektart 
+    | Name                | Typ                     | Beschreibung                 |  Obligatorisch
+----|------------------------------|-----------------------------------|--------------------------------------|------------------------
+1 | **KIND**                           | subtype                  | Objektart |
 []()           | Kardinalität  [1]  ||
 
 
