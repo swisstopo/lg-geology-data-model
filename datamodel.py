@@ -79,6 +79,8 @@ def translate(geol_code, fallback, lang="FR"):
     if lang in ("DE", "FR"):
         try:
             msg = df.loc[int(geol_code)]["FR"]
+            # TODO: should be done in the translation XLS
+            msg = msg.replace('à ciment', 'ciment').replace('à matrice', 'matrice')
 
         except KeyError as ke:
             logger.error(f"GeolCode not found while translating '{geol_code}': {ke}")
