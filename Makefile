@@ -3,6 +3,7 @@ FORMATS = pdf odt docx html
 
 INPUT_DIR = inputs
 OUTPUT_DIR = outputs
+LOCALE_DIR = locale
 
 PANDOC=/usr/bin/pandoc
 RM=/bin/rm
@@ -12,6 +13,10 @@ CSS = datamodel.css
 
 # Define targets for each language and format
 OUTPUTS = $(foreach lang,$(LANGUAGES),$(foreach fmt,$(FORMATS),$(OUTPUT_DIR)/$(lang)/datamodel.$(fmt)))
+# Define the list of required .mo files for each language
+MO_FILES = $(foreach lang,$(LANGUAGES),$(LOCALE_DIR)/$(lang)/LC_MESSAGES/datamodel.mo $(LOCALE_DIR)/$(lang)/LC_MESSAGES/app.mo)
+INPUTS = $(foreach lang,$(LANGUAGES),$(foreach fmt,$(FORMATS),$(INPUT_DIR)/$(lang)/datamodel.md))
+
 
 # Options for all doc format
 PANDOC_OPTIONS=--standalone \
@@ -35,37 +40,55 @@ PANDOC_PDF_OPTIONS=--pdf-engine=xelatex
 PANDOC_DOCX_OPTIONS=
 PANDOC_ODT_OPTIONS=
 
+# Help target
+help:
+	@echo "Usage:"
+	@echo "  make all     - Generate all files (PDF, DOCX, HTML and ODT for all languages)"
+	@echo "  make pdf      - Generate only PDF files for all languages"
+	@echo "  make docx     - Generate only PDF files for all languages"
+	@echo "  make de       - Generate all files (PDF, DOCX, HTML and ODT) for German"
+	@echo "  make fr       - Generate all files (PDF, DOCX, HTML and ODT) for French"
+	@echo "  make babel    - Generate .mo translation files"
+	@echo "  make markdown - Generate markdown files"
+	@echo "  make diagram  - Generate ER diagram"
+	@echo "  make clean    - Remove all generated files"
+	@echo "  make help     - Display this help message"
+
 assets:
 	mkdir -p $(OUTPUT_DIR)
 	$(CP) assets/$(CSS) $(OUTPUT_DIR)
 	$(CP) assets/geocover.png $(OUTPUT_DIR)
 	$(CP) assets/geocover.png .
 
-babel:
-	pybabel compile --domain=app --directory=locale --use-fuzzy
+babel: $(MO_FILES)
+
+
+# Rule to compile .mo files if missing
+$(LOCALE_DIR)/%/LC_MESSAGES/datamodel.mo: $(LOCALE_DIR)/%/LC_MESSAGES/datamodel.po
+	mkdir -p $(@D)
 	pybabel compile --domain=datamodel --directory=locale --use-fuzzy
 
-markdown: babel
-	python datamodel.py --lang=de
-	python datamodel.py --lang=fr
+$(LOCALE_DIR)/%/LC_MESSAGES/app.mo: $(LOCALE_DIR)/%/LC_MESSAGES/app.po
+	mkdir -p $(@D)
+	pybabel compile --domain=app --directory=locale --use-fuzzy
+
+markdown: $(MO_FILES) $(INPUTS)
+
 
 diagram:
 	python create_gv.py
 
 
-
-OUTPUTS = $(foreach lang,$(LANGUAGES),$(foreach fmt,$(FORMATS),$(OUTPUT_DIR)/$(lang)/datamodel.$(fmt)))
-
 .PHONY: all
-all: $(OUTPUTS)
+all: $(MO_FILES) $(INPUTS)  $(OUTPUTS) diagram
 
 # Define individual rules for each format and language
 define build_rule
-$(INPUT_DIR)/$(1)/metadata.yaml:
+$(INPUT_DIR)/$(1)/metadata.yaml: assets $(MO_FILES)
 	mkdir -p $$(@D)
 	python datamodel.py --lang=$(1)
 
-$(INPUT_DIR)/$(1)/datamodel.md:
+$(INPUT_DIR)/$(1)/datamodel.md: assets $(MO_FILES)
 	mkdir -p $$(@D)
 	python datamodel.py --lang=$(1)
 
@@ -89,20 +112,27 @@ endef
 # Apply the build_rule for each language
 $(foreach lang,$(LANGUAGES),$(eval $(call build_rule,$(lang))))
 
+
+
 # Targets for building specific formats
-.PHONY: pdfs odts htmls
+.PHONY: pdfs odts htmls docxs mds
 pdfs: $(foreach lang,$(LANGUAGES),$(OUTPUT_DIR)/$(lang)/datamodel.pdf)
 odts: $(foreach lang,$(LANGUAGES),$(OUTPUT_DIR)/$(lang)/datamodel.odt)
 htmls: $(foreach lang,$(LANGUAGES),$(OUTPUT_DIR)/$(lang)/datamodel.html)
+docxs: $(foreach lang,$(LANGUAGES),$(OUTPUT_DIR)/$(lang)/datamodel.docx)
+mds: $(foreach lang,$(LANGUAGES),$(INPUT_DIR)/$(lang)/datamodel.md)
 
 
 # Targets for building specific languages
 .PHONY: de fr it
 de: $(foreach fmt,$(FORMATS),$(OUTPUT_DIR)/de/datamodel.$(fmt))
 fr: $(foreach fmt,$(FORMATS),$(OUTPUT_DIR)/fr/datamodel.$(fmt))
-it: $(foreach fmt,$(FORMATS),$(OUTPUT_DIR)/it/datamodel.$(fmt))
+
+diagram:
+	python create_gv.py
 
 # Clean up
 .PHONY: clean
 clean:
 	rm -rf $(OUTPUT_DIR)/*
+	rm -rf $(MO_FILES)
