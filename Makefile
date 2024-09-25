@@ -54,10 +54,14 @@ help:
 	@echo "  make clean    - Remove all generated files"
 	@echo "  make help     - Display this help message"
 
+.PHONY: assets
 assets:
-	mkdir -p $(OUTPUT_DIR)
-	$(CP) assets/$(CSS) $(OUTPUT_DIR)
-	$(CP) assets/geocover.png $(OUTPUT_DIR)
+	mkdir -p $(OUTPUT_DIR)/de
+	mkdir -p $(OUTPUT_DIR)/fr
+	$(CP) assets/$(CSS) $(OUTPUT_DIR)/de
+	$(CP) assets/$(CSS) $(OUTPUT_DIR)/fr
+	$(CP) assets/geocover.png $(OUTPUT_DIR)/de
+	$(CP) assets/geocover.png $(OUTPUT_DIR)/fr
 	$(CP) assets/geocover.png .
 
 babel: $(MO_FILES)
@@ -128,8 +132,6 @@ mds: $(foreach lang,$(LANGUAGES),$(INPUT_DIR)/$(lang)/datamodel.md)
 de: $(foreach fmt,$(FORMATS),$(OUTPUT_DIR)/de/datamodel.$(fmt))
 fr: $(foreach fmt,$(FORMATS),$(OUTPUT_DIR)/fr/datamodel.$(fmt))
 
-diagram:
-	python create_gv.py
 
 # Clean up
 .PHONY: clean
