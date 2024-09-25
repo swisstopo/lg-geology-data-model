@@ -1,5 +1,5 @@
-Modèle de donnée géologie
-=========================
+Modèle de donnée géologique
+===========================
 
 Le but de ces outils est de créer de manière plus au moins automatique le _modèle de donnée géologie_ GeoCover, en
 particulier la liste des valeurs attributaires possibles, et le modèle physique issu de ESRI ArcSDE.
