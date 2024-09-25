@@ -34,4 +34,6 @@ jobs:
             exports/coded_domains.xlsx
             exports/all_geolcode.xlsx
             exports/geocover-schema-sde.json
+            outputs/geocover-schema-sde.png
+            outputs/geocover-schema-sde.svg
 
