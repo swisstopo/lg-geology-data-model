@@ -1,8 +1,8 @@
 ---
-title: Datenmodell Geologie, Revision 4.0 
-subtitle: Beschreibung und Datenkatalog
-author: Bundesamt für Landestopographie swisstopo
-date:  September 2024
+title: Modèle de donnée géologique, Révision 4.0 
+subtitle: Description et catalogue de donnée
+author: Office fédéral de topographie swisstopo
+date:  septembre 2024
 keywords:
   - "GeoCover"
   - "Metadata"
@@ -11,10 +11,10 @@ keywords:
   - "Vector data"
   - "Geology"
   - "Switzerland"
-subject: Geologische Landesaufnahme der Schweiz
-lang: de
+subject: Levé géologique de la Suisse
+lang: fr
 
-fontsize: 10pt
+fontsize: 9pt
 geometry: "left=3cm,right=2cm,top=3cm,bottom=3cm"
 colorlinks: true
 linkcolor: teal
@@ -23,7 +23,7 @@ toccolor: gray
 
 # PDF
 papersize: a4
-fontsize: "10pt"
+fontsize: "9pt"
 mainfont: "DejaVu Sans"
 
 ---

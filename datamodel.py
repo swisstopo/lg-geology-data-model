@@ -16,7 +16,7 @@ from loguru import logger
 
 input_dir = "exports"
 
-output_dir = "input"
+output_dir = "inputs"
 
 logger.add("datamodel.log", backtrace=False)
 
@@ -48,8 +48,14 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: ENCODING\n"'''
 
+
 def get_git_revision_short_hash() -> str:
-    return subprocess.check_output(['git', 'rev-parse', '--short', 'HEAD']).decode('ascii').strip()
+    return (
+        subprocess.check_output(["git", "rev-parse", "--short", "HEAD"])
+        .decode("ascii")
+        .strip()
+    )
+
 
 def create_msg(df):
     de = list(zip(df["GeolCodeInt"], df["DE"]))
@@ -316,7 +322,7 @@ def datamodel(lang):
 
     temp = env.get_template("model_markdown.j2")
 
-    json_fname = os.path.join(output_dir, f"{project_name}_{lang}.json")
+    json_fname = os.path.join(output_dir, lang, f"{project_name}.json")
     logger.info(f"Generating {json_fname}")
     with open(json_fname, "w") as f:
         f.write(json.dumps(data, indent=4, cls=DatetimeEncoder))
@@ -325,7 +331,7 @@ def datamodel(lang):
         template = env.get_template(template_name)
         return template.render(data, locale=locale)
 
-    markdown_fname = os.path.join(output_dir, f"{project_name}_{lang}.md")
+    markdown_fname = os.path.join(output_dir, lang, f"{project_name}.md")
     logger.info(f"Generating {markdown_fname}")
     with open(markdown_fname, "w") as f:
         # f.write(template.render(data))
@@ -334,7 +340,7 @@ def datamodel(lang):
 
     # Metadata
     # meta = env.get_template("metadata.yaml.j2")
-    metadata_fname = os.path.join(output_dir, f"metadata_{lang}.yaml")
+    metadata_fname = os.path.join(output_dir, lang, f"metadata.yaml")
     logger.info(f"Generating {metadata_fname}")
     with open(metadata_fname, "w") as f:
         # f.write(template.render(data))
