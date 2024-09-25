@@ -79,7 +79,7 @@ $(LOCALE_DIR)/%/LC_MESSAGES/app.mo: $(LOCALE_DIR)/%/LC_MESSAGES/app.po
 markdown: $(MO_FILES) $(INPUTS)
 
 
-diagram:
+diagram: assets
 	python create_gv.py
 
 
