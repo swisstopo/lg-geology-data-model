@@ -34,7 +34,7 @@
 -------------------------|----------|---------------------------------------------------|-----|-----
 {% for attr in cls.attributes -%}
 {%- if attr.change != 'removed' -%}
-{%- if attr.mandatory -%}{% set mandatory =  "**%s**" % (_("yes")) -%}{% endif -%}
+{%- if attr.mandatory -%}{% set mandatory =  "**%s**" % (_("yes")) -%}{% else -%}{% set mandatory =  "**%s**" % (_("no")) -%}{% endif -%}
 {%- if attr.att_type == 'CD' -%}{% set slug = "%s-%s" % (cls.name, attr.name) -%}
 {%- elif attr.att_type == 'annex' -%}{% set slug, location = attr.value, 'vgl. Anhang %s' % attr.value %}{% set see_annex = 'Die möglichen Werte sind in der Tabelle %s im Anhang dieses Dokumentes verfügbar.' % attr.value %}{%- else -%}{% set slug = None %}{% endif -%}
 {%- if (slug != None) and (attr.att_type == 'CD') -%}

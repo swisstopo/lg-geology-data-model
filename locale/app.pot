@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-09-26 14:02+0200\n"
+"POT-Creation-Date: 2024-09-26 22:19+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -81,6 +81,10 @@ msgstr ""
 
 #: templates/model_markdown.j2:37
 msgid "yes"
+msgstr ""
+
+#: templates/model_markdown.j2:37
+msgid "no"
 msgstr ""
 
 #: templates/model_markdown.j2:41
