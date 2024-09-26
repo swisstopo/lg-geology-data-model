@@ -44,7 +44,7 @@ themes:
             value: 14401
             description:
               de: Objektart
-              fr: Type de l'objet et description
+              fr: Type de l'objet
             cardinality: 1
           - name: status
             att_type: CD
@@ -103,7 +103,7 @@ themes:
             value: 14517
             description:
               de: Objektart
-              fr: Type de l'objet et description
+              fr: Type de l'objet
             cardinality: 1
           - name: litstrat  # ajouté dans version 3?
             description:
@@ -239,7 +239,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 14334001
             cardinality: 1
@@ -427,7 +427,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description
+              fr: Type de l'objet
             att_type: subtype
             value: 11601
             cardinality: 1
@@ -443,7 +443,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 11701
             cardinality: 1
@@ -468,7 +468,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 15801  # changed
             cardinality: 1
@@ -496,7 +496,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 11201
             cardinality: 1
@@ -516,7 +516,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 11301
             cardinality: 1
@@ -578,7 +578,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 11401
             cardinality: 1
@@ -596,7 +596,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 11001
             cardinality: 1
@@ -620,7 +620,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 11101
             cardinality: 1
@@ -639,7 +639,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 11301
             cardinality: 1
@@ -661,7 +661,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 12001
             cardinality: 1
@@ -679,7 +679,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 10901
             cardinality: 1
@@ -712,7 +712,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 14601
             cardinality: 1
@@ -766,7 +766,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 14701
             cardinality: 1
@@ -784,7 +784,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 14801
             cardinality: 1
@@ -814,7 +814,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 14901
             cardinality: 1
@@ -892,7 +892,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 13601
             cardinality: 1
@@ -962,7 +962,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 13701
             cardinality: 1
@@ -1001,7 +1001,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 13801
             cardinality: 1
@@ -1066,7 +1066,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 128001
             cardinality: 1
@@ -1086,7 +1086,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 12901
             cardinality: 1
@@ -1138,7 +1138,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 13201
             cardinality: 1
@@ -1175,7 +1175,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 13301
             cardinality: 1
@@ -1199,7 +1199,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 13401
             cardinality: 1
@@ -1228,7 +1228,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 13501
             cardinality: 1
@@ -1276,7 +1276,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 13101
             cardinality: 1
@@ -1328,7 +1328,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 15501
             cardinality: 1
@@ -1350,7 +1350,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 13001
             cardinality: 1
@@ -1378,7 +1378,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 14201
             cardinality: 1
@@ -1436,7 +1436,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 13901
             cardinality: 1
@@ -1474,7 +1474,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 14101
             cardinality: 1
@@ -1526,7 +1526,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 14001
             cardinality: 1
@@ -1562,7 +1562,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 10101
           - name: epoch
@@ -1607,7 +1607,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 10201
           - name: epoch
@@ -1645,7 +1645,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 10301
           - name: epoch
@@ -1683,7 +1683,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 10601
           - name: exp_unit
@@ -1728,7 +1728,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 10701
           - name: status
@@ -1753,7 +1753,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 10801
           - name: exp_unit
@@ -1799,7 +1799,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 10501
           - name: drill_mo
@@ -1952,7 +1952,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 10401
             cardinality: 1
@@ -1973,7 +1973,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 12101
             cardinality: 1
@@ -2025,7 +2025,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 12201
             cardinality: 1
@@ -2053,7 +2053,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 12301
             cardinality: 1
@@ -2107,7 +2107,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 12401
             cardinality: 1
@@ -2154,7 +2154,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 12501
             cardinality: 1
@@ -2236,7 +2236,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 12601
             cardinality: 1
@@ -2257,7 +2257,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 12701
             cardinality: 1
