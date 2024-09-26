@@ -361,6 +361,7 @@ themes:
           - name: sedi_tex
             att_type: CD
             value: GC_SEDI_TEX_CD
+            cardinality: 0..1    # TODO
             description:                   # TODO: really struktur?
               de: Sedimentstruktur
               fr: Texture de la roche sédimentaire
