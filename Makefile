@@ -134,7 +134,31 @@ fr: $(foreach fmt,$(FORMATS),$(OUTPUT_DIR)/fr/datamodel.$(fmt))
 
 
 # Clean up
-.PHONY: clean
+# Clean up all generated files
+.PHONY: clean cleanall
+cleanall: clean cleaninputs
+
 clean:
 	rm -rf $(OUTPUT_DIR)/*
-	rm -rf $(MO_FILES)
+	find $(LOCALE_DIR) -name "*.mo" -delete
+
+# Clean up only generated PDF files
+.PHONY: cleanpdf
+cleanpdf:
+	find $(OUTPUT_DIR) -name "*.pdf" -delete
+
+# Clean up only generated ODT files
+.PHONY: cleanodt
+cleanodt:
+	find $(OUTPUT_DIR) -name "*.odt" -delete
+
+
+# Clean up only generated HTML, CSS, and image files
+.PHONY: cleanhtml
+cleanhtml:
+	find $(OUTPUT_DIR) -type f \( -name "*.html" -o -name "*.css" -o -name "*.png" -o -name "*.jpg" -o -name "*.jpeg" \) -delete
+
+.PHONY: cleaninputs
+cleaninputs:
+	rm -rf $(INPUT_DIR)/de/*
+	rm -rf $(INPUT_DIR)/fr/*
