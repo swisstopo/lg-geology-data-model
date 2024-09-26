@@ -99,13 +99,24 @@ def translate(geol_code, fallback, lang="FR"):
 
     return msg
 
+# Custom sort key
+def custom_sort_key(item):
+    key, _ = item
+    if key in ["999997", "999998"]:
+        return float('inf')  # Ensure "999997" and "999998" come last
+    return int(key)
 
-def get_coded_values(value):
-    if value in domains.keys():
-        domain = domains.get(value)
-        # print(f"  {name}, {att_type} , {value}")
+
+
+def get_coded_values(domain_name):
+    if domain_name in domains.keys():
+        domain = domains.get(domain_name)
+        # print(f"  {name}, {att_type} , {domain_name}")
         if domain.get("type") == "CodedValue":
-            return domain.get("codedValues")
+            coded_values = domain.get("codedValues")
+            # Sort the list using the custom key
+            return  dict(sorted(coded_values.items(), key=custom_sort_key))
+
 
     return {}
 
