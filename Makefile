@@ -152,6 +152,10 @@ cleanpdf:
 cleanodt:
 	find $(OUTPUT_DIR) -name "*.odt" -delete
 
+# Clean up only generated DOCX files
+.PHONY: cleandocx
+cleanodt:
+	find $(OUTPUT_DIR) -name "*.docx" -delete
 
 # Clean up only generated HTML, CSS, and image files
 .PHONY: cleanhtml
