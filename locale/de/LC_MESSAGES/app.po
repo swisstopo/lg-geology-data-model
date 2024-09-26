@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-09-26 14:02+0200\n"
+"POT-Creation-Date: 2024-09-26 22:15+0200\n"
 "PO-Revision-Date: 2024-09-24 13:18+0200\n"
 "Last-Translator: \n"
 "Language: de\n"
@@ -83,6 +83,10 @@ msgstr "Kard."
 #: templates/model_markdown.j2:37
 msgid "yes"
 msgstr "ja"
+
+#: templates/model_markdown.j2:37
+msgid "no"
+msgstr "nein"
 
 #: templates/model_markdown.j2:41
 msgid "CodedDomain"

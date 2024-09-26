@@ -14,8 +14,8 @@ date: 2024-09-24
 
 # Model revision should change if attributes are added, deleted or changed
 model:
-  revision: 3.9.0
-  revision_date: 2024-09-24
+  revision: 3.9.1
+  revision_date: 2024-09-26
 
 themes:
   - name: Rock_Bodies
@@ -44,7 +44,7 @@ themes:
             value: 14401
             description:
               de: Objektart
-              fr: Type de l'objet et description
+              fr: Type de l'objet
             cardinality: 1
           - name: status
             att_type: CD
@@ -103,7 +103,7 @@ themes:
             value: 14517
             description:
               de: Objektart
-              fr: Type de l'objet et description
+              fr: Type de l'objet
             cardinality: 1
           - name: litstrat  # ajouté dans version 3?
             description:
@@ -193,7 +193,7 @@ themes:
           - name: glac_type
             description:
               de: Gletschertyp; Attribut nur für Moränen
-              fr: >
+              fr: >-
                 Type de glacier auquel le type d’objet est associé. Cet  attribut
                 n’est valable que pour des moraines
             att_type: CD
@@ -215,9 +215,10 @@ themes:
             cardinality: 0..1
           - name: orig_descr
             description:
-              de: Originalbezeichnung gemäss der Legende der zugrundeliegenden geologischen
+              de: >-
+                Originalbezeichnung gemäss der Legende der zugrundeliegenden geologischen
                 Karte
-              fr: Description de la légende de la carte géologique originale.
+              fr: Description selon la légende de la carte géologique originale.
             value: string
             cardinality: 1
 
@@ -225,21 +226,18 @@ themes:
         abrev: Rbed  # TODO: to check
         table: GC_BEDROCK # TODO: to check
         description:
-          de: >
+          de: >-
             Die Klasse Bedrock_PLG enthält alle lithostratigraphischen Festgesteinseinheiten.
-          fr: >
+          fr: >-
             La classe Bedrock_PLG regroupe toutes les unités lithostratigraphiques
-            de roches consolidées qui
-            constituent une surface. L’information indiquant si une roche consolidée
-            est en mouvement
-            (déplacée par gravitation) se trouve dans la classe Instabilities_ within_Bedrock_PLG
-            (Thème
-            Geomorphology).
+            de roches consolidées qui constituent une surface. L’information indiquant si une roche consolidée
+            est en mouvement (déplacée par gravitation) se trouve dans la classe Instabilities_PLG
+            (Thème Geomorphology).
         attributes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 14334001
             cardinality: 1
@@ -262,15 +260,15 @@ themes:
             description:
               de: Lithologische Beschreibung
               fr: Description lithologique
-            cardinality: 1..3
+            cardinality: 1
           - name: chrono_t
             att_type: annex
             value: GC_CHRONO_CD
             description:
-              de: >
+              de: >-
                 Chronostratigraphische Zuordnung der Obergrenze der Kartiereinheit
                 (Top)
-              fr: >
+              fr: >-
                 Attribution chronostratigraphique du toit de la  formation (top)
             cardinality: 1
             mandatory: true
@@ -278,10 +276,11 @@ themes:
             att_type: annex
             value: GC_CHRONO_CD
             description:
-              de: Chronostratigraphische Zuordnung der Untergrenze der Kartiereinheit
+              de: >-
+                Chronostratigraphische Zuordnung der Untergrenze der Kartiereinheit
                 (Basis)
-              fr: >
-                Attribution chronostratigraphique de la base de la  formation (basis).
+              fr: >-
+                Attribution chronostratigraphique de la base de la  formation (base).
             cardinality: 1
             mandatory: true
           - name: tecto
@@ -295,9 +294,11 @@ themes:
           - name: orig_descr
             att_type: string
             description:
-              de: Originalbezeichnung gemäss der Legende der zugrundeliegenden geologischen
+              de: >-
+                Originalbezeichnung gemäss der Legende der zugrundeliegenden geologischen
                 Karte
-              fr: Description de la légende de la carte géologique originale.
+              fr: >-
+                Description selon la légende de la carte géologique originale
             cardinality: 1
           - name: buried_out
             att_type: boolean
@@ -308,15 +309,16 @@ themes:
           - name: exotic_ele
             value: boolean
             description:
-              de: >
+              de: >-
                 Handelt es sich bei der Objektart um ein exotisches Element; z.B.
                 Einschluss, Linse, Tasche, Olistholith (ja / nein)?
-              fr: S’agit-il d’un élément exotique (oui / non)?
+              fr: >-
+                S’agit-il d’un élément exotique (oui / non)?
             cardinality: 1
           - name: colour
             att_type: string
             description:
-              de: >
+              de: >-
                 Farbe des Gesteins. Präzisieren ob es sich um die Bruchfarbe, die
                 Verwitterungsfarbe, etc. handelt; z.B.Verwitterungsfarbe grau.
               fr: Couleur de la roche
@@ -326,8 +328,9 @@ themes:
             att_type: CD
             value: GC_MAIN_COM_CD
             description:
-              de: Hauptgesteinskomponente des klastischen Sedimentgesteins
-              fr: >
+              de: >-
+                Hauptgesteinskomponente des klastischen Sedimentgesteins
+              fr: >-
                 Composant principal de la roche sédimentaire clastique.
             cardinality: 0..1
           - name: sedi_seco_com
@@ -342,7 +345,7 @@ themes:
             value: GC_BOND_MAT_CD
             description:
               de: Bindemittel des Sedimentgesteins
-              fr: ''
+              fr: Ciment de la roche sédimentaire
             cardinality: 0..1
           - name: sedi_bedding
             att_type: CD
@@ -427,7 +430,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description
+              fr: Type de l'objet
             att_type: subtype
             value: 11601
             cardinality: 1
@@ -443,7 +446,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 11701
             cardinality: 1
@@ -468,14 +471,14 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 15801  # changed
             cardinality: 1
           - name: main_mov
             description:
               de: Hauptbewegungsphase
-              fr: ''
+              fr: Phase de mouvement principale
             att_type: CD
             value: GC_SURF_GINS_MAIN_MOV_CD
             cardinality: 0..1
@@ -496,7 +499,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 11201
             cardinality: 1
@@ -516,7 +519,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 11301
             cardinality: 1
@@ -553,7 +556,7 @@ themes:
           - name: ref_year
             description:
               de: Referenzjahr des älteren Gletscherstandes.
-              fr: Année de référence de l’ancienne ligne de rivage.
+              fr: Année de référence.
             att_type: integer
             cardinality: 0..1
           - name: source
@@ -578,7 +581,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 11401
             cardinality: 1
@@ -596,7 +599,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 11001
             cardinality: 1
@@ -620,7 +623,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 11101
             cardinality: 1
@@ -639,7 +642,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 11301
             cardinality: 1
@@ -661,7 +664,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 12001
             cardinality: 1
@@ -679,7 +682,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 10901
             cardinality: 1
@@ -712,7 +715,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 14601
             cardinality: 1
@@ -766,7 +769,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 14701
             cardinality: 1
@@ -784,7 +787,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 14801
             cardinality: 1
@@ -814,7 +817,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 14901
             cardinality: 1
@@ -892,7 +895,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 13601
             cardinality: 1
@@ -962,7 +965,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 13701
             cardinality: 1
@@ -1001,7 +1004,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 13801
             cardinality: 1
@@ -1066,7 +1069,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 128001
             cardinality: 1
@@ -1086,7 +1089,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 12901
             cardinality: 1
@@ -1138,7 +1141,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 13201
             cardinality: 1
@@ -1175,7 +1178,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 13301
             cardinality: 1
@@ -1199,7 +1202,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 13401
             cardinality: 1
@@ -1228,7 +1231,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 13501
             cardinality: 1
@@ -1276,7 +1279,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 13101
             cardinality: 1
@@ -1301,7 +1304,7 @@ themes:
             description:
               de: Originalbezeichnung gemäss der Legende der zugrundeliegenden geologischen
                 Karte.
-              fr: Description de la légende de la carte géologique originale.
+              fr: Description selon la légende de la carte géologique originale.
             att_type: string
             cardinality: 0..1
           - name: lpro_litho
@@ -1328,7 +1331,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 15501
             cardinality: 1
@@ -1350,7 +1353,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 13001
             cardinality: 1
@@ -1378,7 +1381,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 14201
             cardinality: 1
@@ -1436,7 +1439,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 13901
             cardinality: 1
@@ -1474,7 +1477,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 14101
             cardinality: 1
@@ -1526,7 +1529,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 14001
             cardinality: 1
@@ -1562,7 +1565,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 10101
           - name: epoch
@@ -1607,7 +1610,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 10201
           - name: epoch
@@ -1645,7 +1648,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 10301
           - name: epoch
@@ -1683,7 +1686,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 10601
           - name: exp_unit
@@ -1728,7 +1731,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 10701
           - name: status
@@ -1753,7 +1756,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 10801
           - name: exp_unit
@@ -1799,7 +1802,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 10501
           - name: drill_mo
@@ -1952,7 +1955,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 10401
             cardinality: 1
@@ -1973,7 +1976,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 12101
             cardinality: 1
@@ -2025,7 +2028,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 12201
             cardinality: 1
@@ -2053,7 +2056,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 12301
             cardinality: 1
@@ -2107,7 +2110,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 12401
             cardinality: 1
@@ -2154,7 +2157,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 12501
             cardinality: 1
@@ -2236,7 +2239,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 12601
             cardinality: 1
@@ -2257,7 +2260,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 12701
             cardinality: 1
