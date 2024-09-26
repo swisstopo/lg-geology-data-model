@@ -26,7 +26,7 @@ ou simplement (l'environement créé est `DATAMODEL`):
 
 En cas d'ajout de dépendances, recréer la liste des paquets avec :
 
-    conda env export environment.yml
+    conda env export > environment.yml
 
 Les scripts, _coded_domain.py_ et _subtype.py_ doivent être excécuté dans un projet ESRI ArcGis Pro avec une connection
 sur la base SDE GCOVER.
