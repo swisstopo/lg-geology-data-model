@@ -31,8 +31,7 @@ jobs:
       - name: Install miniconda
         uses: conda-incubator/setup-miniconda@v3
         with:
-          python-version: 3.12.3
-          mamba-version: "*"
+          python-version: 3.12
           channels: conda-forge,defaults
           channel-priority: true
           activate-environment: DATAMODEL
