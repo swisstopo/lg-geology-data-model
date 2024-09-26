@@ -32,7 +32,6 @@ jobs:
         uses: conda-incubator/setup-miniconda@v3
         with:
           python-version: 3.12.3
-          mamba-version: "*"
           channels: conda-forge,defaults
           channel-priority: true
           activate-environment: DATAMODEL
