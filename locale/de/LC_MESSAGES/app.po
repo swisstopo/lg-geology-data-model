@@ -25,7 +25,7 @@ msgstr "Datenmodell Geologie"
 #: templates/metadata.yaml.j2:2
 #, fuzzy, python-format
 msgid "Revision %(name)s (%(hash)s)"
-msgstr "Revision %(name)s"
+msgstr "Revision %(name)s (%(hash)s)"
 
 #: templates/metadata.yaml.j2:3
 msgid "Beschreibung und Datenkatalog"
