@@ -193,7 +193,7 @@ themes:
           - name: glac_type
             description:
               de: Gletschertyp; Attribut nur für Moränen
-              fr: >
+              fr: >-
                 Type de glacier auquel le type d’objet est associé. Cet  attribut
                 n’est valable que pour des moraines
             att_type: CD
@@ -215,9 +215,10 @@ themes:
             cardinality: 0..1
           - name: orig_descr
             description:
-              de: Originalbezeichnung gemäss der Legende der zugrundeliegenden geologischen
+              de: >-
+                Originalbezeichnung gemäss der Legende der zugrundeliegenden geologischen
                 Karte
-              fr: Description de la légende de la carte géologique originale.
+              fr: Description selon la légende de la carte géologique originale.
             value: string
             cardinality: 1
 
@@ -225,16 +226,13 @@ themes:
         abrev: Rbed  # TODO: to check
         table: GC_BEDROCK # TODO: to check
         description:
-          de: >
+          de: >-
             Die Klasse Bedrock_PLG enthält alle lithostratigraphischen Festgesteinseinheiten.
-          fr: >
+          fr: >-
             La classe Bedrock_PLG regroupe toutes les unités lithostratigraphiques
-            de roches consolidées qui
-            constituent une surface. L’information indiquant si une roche consolidée
-            est en mouvement
-            (déplacée par gravitation) se trouve dans la classe Instabilities_ within_Bedrock_PLG
-            (Thème
-            Geomorphology).
+            de roches consolidées qui constituent une surface. L’information indiquant si une roche consolidée
+            est en mouvement (déplacée par gravitation) se trouve dans la classe Instabilities_PLG
+            (Thème Geomorphology).
         attributes:
           - name: kind
             description:
@@ -262,15 +260,15 @@ themes:
             description:
               de: Lithologische Beschreibung
               fr: Description lithologique
-            cardinality: 1..3
+            cardinality: 1
           - name: chrono_t
             att_type: annex
             value: GC_CHRONO_CD
             description:
-              de: >
+              de: >-
                 Chronostratigraphische Zuordnung der Obergrenze der Kartiereinheit
                 (Top)
-              fr: >
+              fr: >-
                 Attribution chronostratigraphique du toit de la  formation (top)
             cardinality: 1
             mandatory: true
@@ -278,10 +276,11 @@ themes:
             att_type: annex
             value: GC_CHRONO_CD
             description:
-              de: Chronostratigraphische Zuordnung der Untergrenze der Kartiereinheit
+              de: >-
+                Chronostratigraphische Zuordnung der Untergrenze der Kartiereinheit
                 (Basis)
-              fr: >
-                Attribution chronostratigraphique de la base de la  formation (basis).
+              fr: >-
+                Attribution chronostratigraphique de la base de la  formation (base).
             cardinality: 1
             mandatory: true
           - name: tecto
@@ -295,9 +294,11 @@ themes:
           - name: orig_descr
             att_type: string
             description:
-              de: Originalbezeichnung gemäss der Legende der zugrundeliegenden geologischen
+              de: >-
+                Originalbezeichnung gemäss der Legende der zugrundeliegenden geologischen
                 Karte
-              fr: Description de la légende de la carte géologique originale.
+              fr: >-
+                Description selon la légende de la carte géologique originale
             cardinality: 1
           - name: buried_out
             att_type: boolean
@@ -308,15 +309,16 @@ themes:
           - name: exotic_ele
             value: boolean
             description:
-              de: >
+              de: >-
                 Handelt es sich bei der Objektart um ein exotisches Element; z.B.
                 Einschluss, Linse, Tasche, Olistholith (ja / nein)?
-              fr: S’agit-il d’un élément exotique (oui / non)?
+              fr: >-
+                S’agit-il d’un élément exotique (oui / non)?
             cardinality: 1
           - name: colour
             att_type: string
             description:
-              de: >
+              de: >-
                 Farbe des Gesteins. Präzisieren ob es sich um die Bruchfarbe, die
                 Verwitterungsfarbe, etc. handelt; z.B.Verwitterungsfarbe grau.
               fr: Couleur de la roche
@@ -326,8 +328,9 @@ themes:
             att_type: CD
             value: GC_MAIN_COM_CD
             description:
-              de: Hauptgesteinskomponente des klastischen Sedimentgesteins
-              fr: >
+              de: >-
+                Hauptgesteinskomponente des klastischen Sedimentgesteins
+              fr: >-
                 Composant principal de la roche sédimentaire clastique.
             cardinality: 0..1
           - name: sedi_seco_com
@@ -342,7 +345,7 @@ themes:
             value: GC_BOND_MAT_CD
             description:
               de: Bindemittel des Sedimentgesteins
-              fr: ''
+              fr: Ciment de la roche sédimentaire
             cardinality: 0..1
           - name: sedi_bedding
             att_type: CD
@@ -475,7 +478,7 @@ themes:
           - name: main_mov
             description:
               de: Hauptbewegungsphase
-              fr: ''
+              fr: Phase de mouvement principale
             att_type: CD
             value: GC_SURF_GINS_MAIN_MOV_CD
             cardinality: 0..1
@@ -553,7 +556,7 @@ themes:
           - name: ref_year
             description:
               de: Referenzjahr des älteren Gletscherstandes.
-              fr: Année de référence de l’ancienne ligne de rivage.
+              fr: Année de référence.
             att_type: integer
             cardinality: 0..1
           - name: source
@@ -1301,7 +1304,7 @@ themes:
             description:
               de: Originalbezeichnung gemäss der Legende der zugrundeliegenden geologischen
                 Karte.
-              fr: Description de la légende de la carte géologique originale.
+              fr: Description selon la légende de la carte géologique originale.
             att_type: string
             cardinality: 0..1
           - name: lpro_litho
