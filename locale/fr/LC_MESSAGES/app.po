@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-09-24 23:55+0200\n"
+"POT-Creation-Date: 2024-09-26 14:02+0200\n"
 "PO-Revision-Date: 2024-09-24 13:19+0200\n"
 "Last-Translator: \n"
 "Language: fr\n"
@@ -60,53 +60,56 @@ msgstr "Thème"
 msgid "Class"
 msgstr "Classe"
 
-#: templates/model_markdown.j2:34
+#: templates/model_markdown.j2:33
 msgid "Name"
 msgstr "Nom"
 
-#: templates/model_markdown.j2:34
+#: templates/model_markdown.j2:33
 msgid "Type"
 msgstr "Type"
 
-#: templates/model_markdown.j2:34
+#: templates/model_markdown.j2:33
 msgid "Description"
 msgstr "Description"
 
-#: templates/model_markdown.j2:34
+#: templates/model_markdown.j2:33
 #, fuzzy
-msgid "Mandatory"
-msgstr "Obligatoire"
+msgid "Mandat."
+msgstr "Oblig."
 
-#: templates/model_markdown.j2:38
+#: templates/model_markdown.j2:33
+msgid "Card."
+msgstr "Card."
+
+#: templates/model_markdown.j2:37
 msgid "yes"
 msgstr "oui"
 
-#: templates/model_markdown.j2:43 templates/model_markdown.j2:46
-#: templates/model_markdown.j2:49
-msgid "Cardinality"
-msgstr "Cardinalité"
+#: templates/model_markdown.j2:41
+msgid "CodedDomain"
+msgstr "CD"
 
-#: templates/model_markdown.j2:45
+#: templates/model_markdown.j2:43
 msgid "Table"
 msgstr "Table"
 
-#: templates/model_markdown.j2:59
+#: templates/model_markdown.j2:55
 msgid "Attribute"
 msgstr "Attribut"
 
-#: templates/model_markdown.j2:63
+#: templates/model_markdown.j2:59
 msgid "Datatype"
 msgstr "Type de donnée"
 
-#: templates/model_markdown.j2:66
+#: templates/model_markdown.j2:62
 msgid "See"
 msgstr "Voir"
 
-#: templates/model_markdown.j2:66
+#: templates/model_markdown.j2:62
 msgid "in the Annex"
 msgstr "dans l'annexe"
 
-#: templates/model_markdown.j2:86
+#: templates/model_markdown.j2:82
 msgid "Annexe"
 msgstr "Annexe"
 
@@ -124,4 +127,7 @@ msgstr "Annexe"
 #~ "Les valeurs possibles sont énumérées "
 #~ "dans la table  %(name)s en annexe "
 #~ "de ce document."
+
+#~ msgid "Cardinality"
+#~ msgstr "Cardinalité"
 
