@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-09-24 23:55+0200\n"
+"POT-Creation-Date: 2024-09-26 14:02+0200\n"
 "PO-Revision-Date: 2024-09-24 13:18+0200\n"
 "Last-Translator: \n"
 "Language: de\n"
@@ -25,7 +25,7 @@ msgstr "Datenmodell Geologie"
 #: templates/metadata.yaml.j2:2
 #, fuzzy, python-format
 msgid "Revision %(name)s (%(hash)s)"
-msgstr "Revision %(name)s"
+msgstr "Revision %(name)s (%(hash)s)"
 
 #: templates/metadata.yaml.j2:3
 msgid "Beschreibung und Datenkatalog"
@@ -60,53 +60,55 @@ msgstr "Thema"
 msgid "Class"
 msgstr "Klasse"
 
-#: templates/model_markdown.j2:34
+#: templates/model_markdown.j2:33
 msgid "Name"
 msgstr "Name"
 
-#: templates/model_markdown.j2:34
+#: templates/model_markdown.j2:33
 msgid "Type"
 msgstr "Typ"
 
-#: templates/model_markdown.j2:34
+#: templates/model_markdown.j2:33
 msgid "Description"
 msgstr "Beschreibung"
 
-#: templates/model_markdown.j2:34
-#, fuzzy
-msgid "Mandatory"
-msgstr "Obligatorisch"
+#: templates/model_markdown.j2:33
+msgid "Mandat."
+msgstr "Oblig."
 
-#: templates/model_markdown.j2:38
+#: templates/model_markdown.j2:33
+msgid "Card."
+msgstr "Kard."
+
+#: templates/model_markdown.j2:37
 msgid "yes"
 msgstr "ja"
 
-#: templates/model_markdown.j2:43 templates/model_markdown.j2:46
-#: templates/model_markdown.j2:49
-msgid "Cardinality"
-msgstr "Kardinalität"
+#: templates/model_markdown.j2:41
+msgid "CodedDomain"
+msgstr "CD"
 
-#: templates/model_markdown.j2:45
+#: templates/model_markdown.j2:43
 msgid "Table"
 msgstr "Tabelle"
 
-#: templates/model_markdown.j2:59
+#: templates/model_markdown.j2:55
 msgid "Attribute"
 msgstr "Attribut"
 
-#: templates/model_markdown.j2:63
+#: templates/model_markdown.j2:59
 msgid "Datatype"
 msgstr "Datentyp"
 
-#: templates/model_markdown.j2:66
+#: templates/model_markdown.j2:62
 msgid "See"
 msgstr "Siehe"
 
-#: templates/model_markdown.j2:66
+#: templates/model_markdown.j2:62
 msgid "in the Annex"
 msgstr "in der Anhang"
 
-#: templates/model_markdown.j2:86
+#: templates/model_markdown.j2:82
 msgid "Annexe"
 msgstr "Anhang"
 
@@ -124,4 +126,7 @@ msgstr "Anhang"
 #~ "Die möglichen Werte sind in der "
 #~ "Tabelle %(name)s im Anhang dieses "
 #~ "Dokumentes verfügbar."
+
+#~ msgid "Cardinality"
+#~ msgstr "Kardinalität"
 
