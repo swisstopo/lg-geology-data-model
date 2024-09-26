@@ -14,7 +14,7 @@ date: 2024-09-24
 
 # Model revision should change if attributes are added, deleted or changed
 model:
-  revision: 4.0
+  revision: 3.9.0
   revision_date: 2024-09-24
 
 themes:
