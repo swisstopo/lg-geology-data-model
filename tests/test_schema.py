@@ -30,6 +30,23 @@ def create_mock_domains():
     return [mock_domain1, mock_domain2]
 
 
+def create_mock_fields():
+    """Helper function to create mock field objects."""
+    mock_field1 = MagicMock(name="Field1")
+    mock_field1.name = "Field1"
+    mock_field1.type = "String"
+    mock_field1.length = 50
+    mock_field1.domain = "GC_Domain1"  # This matches one of our coded domain values
+
+    mock_field2 = MagicMock(name="Field2")
+    mock_field2.name = "Field2"
+    mock_field2.type = "Integer"
+    mock_field2.length = 10
+    mock_field2.domain = ""  # No domain associated
+
+    return [mock_field1, mock_field2]
+
+
 class TestGeocoverSchema(unittest.TestCase):
     def setUp(self):
         # Reset the singleton instance before each test
@@ -150,6 +167,59 @@ class TestGeocoverSchema(unittest.TestCase):
             },
         }
 
+        self.assertEqual(result, expected_result)
+
+    # @patch.object(GeocoverSchema, 'coded_domains', new_callable=property)
+    @patch("arcpy.ListFields")
+    @patch.object(GeocoverSchema, "list_coded_domains")
+    def test_fields(self, mock_list_coded_domains, mock_list_fields):
+        # Use helper to create mock fields
+        mock_list_fields.return_value = create_mock_fields()
+
+        # Mock the return value of list_coded_domains
+        mock_list_coded_domains.return_value = [
+            MagicMock(
+                name="GC_Domain1",
+                domainType="CodedValue",
+                codedValues={1: "Value1", 2: "Value2"},
+            ),
+            MagicMock(
+                name="GC_Domain2",
+                domainType="CodedValue",
+                codedValues={3: "Value3", 4: "Value4"},
+            ),
+        ]
+
+        # Create an instance of GeocoverSchema
+        instance = GeocoverSchema("fake_workspace")
+
+        # Directly set the internal __coded_domains_values dictionary
+        instance._GeocoverSchema__coded_domains_values = {
+            "GC_Domain1": {
+                "type": "CodedValue",
+                "codedValues": {1: "Value1", 2: "Value2"},
+            },
+            "GC_Domain2": {
+                "type": "CodedValue",
+                "codedValues": {3: "Value3", 4: "Value4"},
+            },
+        }
+
+        # Call the fields method
+        result = instance.fields("fake_feature_class")
+
+        # Define expected result
+        expected_result = [
+            {"name": "Field1", "type": "String", "length": 50, "domain": "GC_Domain1"},
+            {
+                "name": "Field2",
+                "type": "Integer",
+                "length": 10,
+                "domain": None,  # No domain for this field
+            },
+        ]
+
+        # Assert the result matches the expected output
         self.assertEqual(result, expected_result)
 
 

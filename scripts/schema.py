@@ -231,6 +231,9 @@ class GeocoverSchema:
 
         for field in fields:
             domain = None
+            print(
+                f"DEBUG domain={field.domain}, domains={[d.name for d in self.list_coded_domains()]}"
+            )
             if len(field.domain) > 0 and field.domain in self.__coded_domains_values:
                 domain = field.domain
             logging.debug(f"    {field.name}, {field.type}, {field.length}, {domain}")
