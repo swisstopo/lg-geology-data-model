@@ -15,6 +15,21 @@ arcpy.da = MagicMock()  # Explicitement moquer 'arcpy.da'
 from schema import GeocoverSchema, gc_filter  # Import the class you want to test
 
 
+def create_mock_domains():
+    """Helper function to create mock domain objects."""
+    mock_domain1 = MagicMock(name="Domain1")
+    mock_domain1.name = "GC_Domain1"
+    mock_domain1.domainType = "CodedValue"
+    mock_domain1.codedValues = {"1": "Value1", "2": "Value2"}
+
+    mock_domain2 = MagicMock(name="Domain2")
+    mock_domain2.name = "GC_Domain2"
+    mock_domain2.domainType = "Range"
+    mock_domain2.codedValues = {"RangeStart": 10, "RangeEnd": 20}
+
+    return [mock_domain1, mock_domain2]
+
+
 class TestGeocoverSchema(unittest.TestCase):
     def setUp(self):
         # Reset the singleton instance before each test
@@ -87,6 +102,55 @@ class TestGeocoverSchema(unittest.TestCase):
 
             # Vérifier que ListDomains a été appelé avec le bon espace de travail
             arcpy.da.ListDomains.assert_called_with(instance._GeocoverSchema__workspace)
+
+    @patch.object(GeocoverSchema, "list_coded_domains")
+    def test_coded_domains_esri_style_dump_false(self, mock_list_coded_domains):
+        # Use the helper function to create mock domains
+        mock_list_coded_domains.return_value = create_mock_domains()
+
+        # Create instance
+        instance = GeocoverSchema("fake_workspace")
+        instance.esri_style_dump = False  # Set the property to False
+
+        # Call the property
+        result = instance.coded_domains
+
+        # Verify expected results
+        expected_result = {
+            "GC_Domain1": {"1": "Value1", "2": "Value2"},
+            "GC_Domain2": {
+                "type": "Range",
+                "codedValues": {"RangeStart": 10, "RangeEnd": 20},
+            },
+        }
+
+        self.assertEqual(result, expected_result)
+
+    @patch.object(GeocoverSchema, "list_coded_domains")
+    def test_coded_domains_esri_style_dump_true(self, mock_list_coded_domains):
+        # Use the helper function to create mock domains
+        mock_list_coded_domains.return_value = create_mock_domains()
+
+        # Create instance
+        instance = GeocoverSchema("fake_workspace")
+        instance.esri_style_dump = True  # Set the property to True
+
+        # Call the property
+        result = instance.coded_domains
+
+        # Verify expected results
+        expected_result = {
+            "GC_Domain1": {
+                "type": "CodedValue",
+                "codedValues": {"1": "Value1", "2": "Value2"},
+            },
+            "GC_Domain2": {
+                "type": "Range",
+                "codedValues": {"RangeStart": 10, "RangeEnd": 20},
+            },
+        }
+
+        self.assertEqual(result, expected_result)
 
 
 if __name__ == "__main__":

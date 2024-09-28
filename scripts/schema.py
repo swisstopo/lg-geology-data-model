@@ -107,6 +107,14 @@ class GeocoverSchema:
         return filter_function
 
     @property
+    def esri_style_dump(self):
+        return self.__esri_style_dump
+
+    @esri_style_dump.setter
+    def esri_style_dump(self, value: bool):
+        self.__esri_style_dump = value
+
+    @property
     def connection_info(self):
         if self.__connection_info is None:
             desc = arcpy.Describe(self.__workspace)
@@ -190,12 +198,12 @@ class GeocoverSchema:
             self.list_coded_domains()
         if len(self.__coded_domains_values) < 1:
             for domain in self.list_coded_domains():
-                if not self.__esri_style_dump:
-                    if domain.domainType == "CodedValue":
-                        coded_values = domain.codedValues
-                        domain_dict = {}
-                        for val, desc in coded_values.items():
-                            domain_dict[val] = desc
+                if not self.__esri_style_dump and domain.domainType == "CodedValue":
+                    coded_values = domain.codedValues
+                    domain_dict = {}
+                    for val, desc in coded_values.items():
+                        domain_dict[val] = desc
+
                 else:
                     domain_dict = {
                         "type": domain.domainType,
