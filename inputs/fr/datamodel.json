@@ -1,6 +1,6 @@
 {
     "version": 0.6,
-    "date": "2024-09-29T22:39:16.428883",
+    "date": "2024-09-29T23:44:13.856821",
     "model": {
         "revision": "3.9.1",
         "revision_date": "2024-09-26"
@@ -52,8 +52,8 @@
                                 "14402002": "zerst\u00f6rt",
                                 "14402003": "in Situ",
                                 "14402004": "umgelagert",
-                                "999997": "Unknown",
-                                "999998": "Not applicable"
+                                "999997": "unbekannt",
+                                "999998": "nicht anwendbar"
                             }
                         },
                         {
@@ -69,8 +69,8 @@
                                 "14403001": "Kristallingestein",
                                 "14403002": "Sedimentgestein",
                                 "14403003": "Basisches / Ultrabasisches Gestein",
-                                "999997": "Unknown",
-                                "999998": "Not applicable"
+                                "999997": "unbekannt",
+                                "999998": "nicht anwendbar"
                             }
                         },
                         {
@@ -109,8 +109,8 @@
                                 "14404024": "Alpines Sedimentgestein",
                                 "14404025": "Molassegestein",
                                 "14404026": "Gruontal-Konglomerat",
-                                "999997": "Unknown",
-                                "999998": "Not applicable"
+                                "999997": "unbekannt",
+                                "999998": "nicht anwendbar"
                             }
                         },
                         {
@@ -268,8 +268,8 @@
                                 "14510010": "invers gradiert",
                                 "14510011": "bioturbiert",
                                 "14510012": "pedogen \u00fcberpr\u00e4gt",
-                                "999997": "Unknown",
-                                "999998": "Not applicable"
+                                "999997": "unbekannt",
+                                "999998": "nicht anwendbar"
                             }
                         },
                         {
@@ -300,8 +300,8 @@
                                 "14512006": "Sander",
                                 "14512007": "Os",
                                 "14512008": "Bastion",
-                                "999997": "Unknown",
-                                "999998": "Not applicable"
+                                "999997": "unbekannt",
+                                "999998": "nicht anwendbar"
                             }
                         },
                         {
@@ -327,8 +327,8 @@
                                 "14513011": "Schlierengletscher",
                                 "14513012": "Engelberger Gletscher",
                                 "14513013": "Br\u00fcnig-Aaregletscher",
-                                "999997": "Unknown",
-                                "999998": "Not applicable"
+                                "999997": "unbekannt",
+                                "999998": "nicht anwendbar"
                             }
                         },
                         {
@@ -356,8 +356,8 @@
                                 "14515004": "geringm\u00e4chtige Schwemmlehmbedeckung",
                                 "14515005": "geringm\u00e4chtige L\u00f6ss- oder L\u00f6sslehmbedeckung",
                                 "14515006": "tiefgr\u00fcndige Verwitterungsdecke",
-                                "999997": "Unknown",
-                                "999998": "Not applicable"
+                                "999997": "unbekannt",
+                                "999998": "nicht anwendbar"
                             }
                         },
                         {
@@ -512,8 +512,8 @@
                                 "15602008": "Vulkanit",
                                 "15602009": "Metamorphit",
                                 "15602010": "Mergelstein",
-                                "999997": "Unknown",
-                                "999998": "Not applicable"
+                                "999997": "unbekannt",
+                                "999998": "nicht anwendbar"
                             }
                         },
                         {
@@ -552,8 +552,8 @@
                                 "20001024": "Bitumen",
                                 "20001025": "Evaporit",
                                 "20001026": "Eisenmineralien",
-                                "999997": "Unknown",
-                                "999998": "Not applicable"
+                                "999997": "unbekannt",
+                                "999998": "nicht anwendbar"
                             }
                         },
                         {
@@ -576,8 +576,8 @@
                                 "14313008": "dolomitische Matrix",
                                 "14313009": "organische Impr\u00e4gnierung (Asphalt)",
                                 "14313010": "mineralische Impr\u00e4gnierung",
-                                "999997": "Unknown",
-                                "999998": "Not applicable"
+                                "999997": "unbekannt",
+                                "999998": "nicht anwendbar"
                             }
                         },
                         {
@@ -598,8 +598,8 @@
                                 "20101006": "knauerig",
                                 "20101007": "knollig",
                                 "20101008": "linsenf\u00f6rmig",
-                                "999997": "Unknown",
-                                "999998": "Not applicable"
+                                "999997": "unbekannt",
+                                "999998": "nicht anwendbar"
                             }
                         },
                         {
@@ -620,8 +620,8 @@
                                 "20201006": "invers gradiert",
                                 "20201007": "bioturbiert",
                                 "20201008": "stromatolitisch",
-                                "999997": "Unknown",
-                                "999998": "Not applicable"
+                                "999997": "unbekannt",
+                                "999998": "nicht anwendbar"
                             }
                         },
                         {
@@ -643,8 +643,8 @@
                                 "20301008": "oolithisch",
                                 "20301009": "pelitisch",
                                 "20301010": "pisolithisch",
-                                "999997": "Unknown",
-                                "999998": "Not applicable"
+                                "999997": "unbekannt",
+                                "999998": "nicht anwendbar"
                             }
                         },
                         {
@@ -660,8 +660,8 @@
                                 "14317001": "gleichk\u00f6rnig",
                                 "14317002": "ungleichk\u00f6rnig",
                                 "14317003": "porphyrisch",
-                                "999997": "Unknown",
-                                "999998": "Not applicable"
+                                "999997": "unbekannt",
+                                "999998": "nicht anwendbar"
                             }
                         },
                         {
@@ -677,8 +677,8 @@
                                 "14318001": "grobk\u00f6rnig",
                                 "14318002": "feink\u00f6rnig",
                                 "14318003": "aphanitisch",
-                                "999997": "Unknown",
-                                "999998": "Not applicable"
+                                "999997": "unbekannt",
+                                "999998": "nicht anwendbar"
                             }
                         },
                         {
@@ -694,8 +694,8 @@
                                 "15733001": "alkalisch",
                                 "15733002": "kalkalkalisch",
                                 "15733003": "tholeiitisch",
-                                "999997": "Unknown",
-                                "999998": "Not applicable"
+                                "999997": "unbekannt",
+                                "999998": "nicht anwendbar"
                             }
                         },
                         {
@@ -744,8 +744,8 @@
                                 "20501015": "flaserig",
                                 "20501016": "agmatitisch (migmatitisch)",
                                 "20501017": "brekzi\u00f6s",
-                                "999997": "Unknown",
-                                "999998": "Not applicable"
+                                "999997": "unbekannt",
+                                "999998": "nicht anwendbar"
                             }
                         }
                     ]
@@ -843,8 +843,8 @@
                             "pairs": {
                                 "11502001": "Hauptbewegungsphase vor dem letzteiszeitlichen Maximum",
                                 "11502002": "Hauptbewegungsphase nach dem letzteiszeitlichen Maximum",
-                                "999997": "Unknown",
-                                "999998": "Not applicable"
+                                "999997": "unbekannt",
+                                "999998": "nicht anwendbar"
                             }
                         }
                     ]
@@ -916,8 +916,8 @@
                             "pairs": {
                                 "11302001": "symmetrisch",
                                 "11302002": "einseitig abfallend",
-                                "999997": "Unknown",
-                                "999998": "Not applicable"
+                                "999997": "unbekannt",
+                                "999998": "nicht anwendbar"
                             }
                         },
                         {
@@ -932,8 +932,8 @@
                             "pairs": {
                                 "11303001": "Lokalgletscher",
                                 "11303002": "grosse Tal- und Vorlandgletscher",
-                                "999997": "Unknown",
-                                "999998": "Not applicable"
+                                "999997": "unbekannt",
+                                "999998": "nicht anwendbar"
                             }
                         },
                         {
@@ -1005,8 +1005,8 @@
                                 "11304060": "W\u00fcrenlos I",
                                 "11304061": "W\u00fcrenlos II",
                                 "11304062": "W\u00fcrenlos, undifferenziert",
-                                "999997": "Unknown",
-                                "999998": "Not applicable"
+                                "999997": "unbekannt",
+                                "999998": "nicht anwendbar"
                             }
                         },
                         {
@@ -1027,8 +1027,8 @@
                                 "11305006": "Daun",
                                 "11305007": "Egesen",
                                 "11305008": "Mittleres Pleistoz\u00e4n",
-                                "999997": "Unknown",
-                                "999998": "Not applicable"
+                                "999997": "unbekannt",
+                                "999998": "nicht anwendbar"
                             }
                         },
                         {
@@ -1230,8 +1230,8 @@
                             "pairs": {
                                 "10902001": "fossil",
                                 "10902002": "rezent",
-                                "999997": "Unknown",
-                                "999998": "Not applicable"
+                                "999997": "unbekannt",
+                                "999998": "nicht anwendbar"
                             }
                         }
                     ]
@@ -1299,8 +1299,8 @@
                             "pairs": {
                                 "14604001": "Antiklinale",
                                 "14604002": "Synklinale",
-                                "999997": "Unknown",
-                                "999998": "Not applicable"
+                                "999997": "unbekannt",
+                                "999998": "nicht anwendbar"
                             }
                         },
                         {
@@ -1315,8 +1315,8 @@
                             "pairs": {
                                 "14605001": "Antiform",
                                 "14605002": "Synform",
-                                "999997": "Unknown",
-                                "999998": "Not applicable"
+                                "999997": "unbekannt",
+                                "999998": "nicht anwendbar"
                             }
                         }
                     ]
@@ -1382,8 +1382,8 @@
                                 "14802002": "kakiritisch",
                                 "14802003": "mylonitisch",
                                 "14802004": "pseudotachylitisch",
-                                "999997": "Unknown",
-                                "999998": "Not applicable"
+                                "999997": "unbekannt",
+                                "999998": "nicht anwendbar"
                             }
                         },
                         {
@@ -1439,8 +1439,8 @@
                                 "14902001": "schr\u00e4gverschiebend (oblique slip)",
                                 "14902002": "parallel zur Streichrichtung (Horizontalverschiebung)",
                                 "14902003": "parallel zur Fallrichtung (strike slip)",
-                                "999997": "Unknown",
-                                "999998": "Not applicable"
+                                "999997": "unbekannt",
+                                "999998": "nicht anwendbar"
                             }
                         },
                         {
@@ -1455,8 +1455,8 @@
                             "pairs": {
                                 "14903001": "aufschiebend",
                                 "14903002": "abschiebend",
-                                "999997": "Unknown",
-                                "999998": "Not applicable"
+                                "999997": "unbekannt",
+                                "999998": "nicht anwendbar"
                             }
                         },
                         {
@@ -1471,8 +1471,8 @@
                             "pairs": {
                                 "14904001": "dextral",
                                 "14904002": "sinistral",
-                                "999997": "Unknown",
-                                "999998": "Not applicable"
+                                "999997": "unbekannt",
+                                "999998": "nicht anwendbar"
                             }
                         },
                         {
@@ -1498,8 +1498,8 @@
                                 "14906002": "gesichert, unter Tage festgestellt",
                                 "14906003": "vermutet",
                                 "14906004": "aus Seismikdaten interpretiert",
-                                "999997": "Unknown",
-                                "999998": "Not applicable"
+                                "999997": "unbekannt",
+                                "999998": "nicht anwendbar"
                             }
                         },
                         {
@@ -1525,8 +1525,8 @@
                                 "14908001": "vor der Platznahme der Decken",
                                 "14908002": "w\u00e4hrend der Platznahme der Decken",
                                 "14908003": "nach der Platznahme der Decken",
-                                "999997": "Unknown",
-                                "999998": "Not applicable"
+                                "999997": "unbekannt",
+                                "999998": "nicht anwendbar"
                             }
                         },
                         {
@@ -1581,8 +1581,8 @@
                             "pairs": {
                                 "13602001": "Antiklinale",
                                 "13602002": "Synklinale",
-                                "999997": "Unknown",
-                                "999998": "Not applicable"
+                                "999997": "unbekannt",
+                                "999998": "nicht anwendbar"
                             }
                         },
                         {
@@ -1607,8 +1607,8 @@
                                 "13604001": "F1 (1. Phase)",
                                 "13604002": "F2 (2. Phase)",
                                 "13604003": "F3 (3. Phase)",
-                                "999997": "Unknown",
-                                "999998": "Not applicable"
+                                "999997": "unbekannt",
+                                "999998": "nicht anwendbar"
                             }
                         },
                         {
@@ -1723,8 +1723,8 @@
                             "pairs": {
                                 "13802001": "normal",
                                 "13802002": "\u00fcberkippt",
-                                "999997": "Unknown",
-                                "999998": "Not applicable"
+                                "999997": "unbekannt",
+                                "999998": "nicht anwendbar"
                             }
                         },
                         {
@@ -1741,8 +1741,8 @@
                                 "13803001": "S1 (1. Phase)",
                                 "13803002": "S2 (2. Phase)",
                                 "13803003": "S3 (3. Phase)",
-                                "999997": "Unknown",
-                                "999998": "Not applicable"
+                                "999997": "unbekannt",
+                                "999998": "nicht anwendbar"
                             }
                         },
                         {
@@ -1855,8 +1855,8 @@
                                 "12902003": "Pflanzenreste",
                                 "12902004": "Spuren",
                                 "12902006": "Einzeller",
-                                "999997": "Unknown",
-                                "999998": "Not applicable"
+                                "999997": "unbekannt",
+                                "999998": "nicht anwendbar"
                             }
                         },
                         {
@@ -1880,8 +1880,8 @@
                             "cardinality": "0..1",
                             "pairs": {
                                 "12904001": "radiometrisch datiert",
-                                "999997": "Unknown",
-                                "999998": "Not applicable"
+                                "999997": "unbekannt",
+                                "999998": "nicht anwendbar"
                             }
                         },
                         {
@@ -1896,8 +1896,8 @@
                             "pairs": {
                                 "12905001": "aufgeschlossen",
                                 "12905002": "wieder verdeckt",
-                                "999997": "Unknown",
-                                "999998": "Not applicable"
+                                "999997": "unbekannt",
+                                "999998": "nicht anwendbar"
                             }
                         },
                         {
@@ -1953,8 +1953,8 @@
                             "pairs": {
                                 "13202001": "aufgeschlossen",
                                 "13202002": "wieder verdeckt",
-                                "999997": "Unknown",
-                                "999998": "Not applicable"
+                                "999997": "unbekannt",
+                                "999998": "nicht anwendbar"
                             }
                         },
                         {
@@ -1972,8 +1972,8 @@
                                 "13203003": "Bohnerz",
                                 "13203004": "Glas- / Quarzsand",
                                 "13203005": "Walkerde",
-                                "999997": "Unknown",
-                                "999998": "Not applicable"
+                                "999997": "unbekannt",
+                                "999998": "nicht anwendbar"
                             }
                         },
                         {
@@ -2097,8 +2097,8 @@
                                 "13502004": "Member",
                                 "13502005": "Bank",
                                 "13502006": "Stufe",
-                                "999997": "Unknown",
-                                "999998": "Not applicable"
+                                "999997": "unbekannt",
+                                "999998": "nicht anwendbar"
                             }
                         },
                         {
@@ -2166,8 +2166,8 @@
                                 "13102002": "kristallinf\u00fchrende (Kalk-)Nagelfluh",
                                 "13102003": "bunte bis polygene Nagelfluh",
                                 "13102004": "Flyschsandstein-Nagelfluh, Riesenkonglomerat",
-                                "999997": "Unknown",
-                                "999998": "Not applicable"
+                                "999997": "unbekannt",
+                                "999998": "nicht anwendbar"
                             }
                         },
                         {
@@ -2274,8 +2274,8 @@
                                 "13002004": "gesichert, tektonisch \u00fcberpr\u00e4gt",
                                 "13002005": "vermutet, tektonisch \u00fcberpr\u00e4gt",
                                 "13002006": "Gew\u00e4sserlinie",
-                                "999997": "Unknown",
-                                "999998": "Not applicable"
+                                "999997": "unbekannt",
+                                "999998": "nicht anwendbar"
                             }
                         }
                     ]
@@ -2319,8 +2319,8 @@
                             "pairs": {
                                 "14202001": "Felsoberfl\u00e4che",
                                 "14202002": "Obergrenze einer gegebenen Formation",
-                                "999997": "Unknown",
-                                "999998": "Not applicable"
+                                "999997": "unbekannt",
+                                "999998": "nicht anwendbar"
                             }
                         },
                         {
@@ -2389,8 +2389,8 @@
                                 "13902001": "Felsoberfl\u00e4che",
                                 "13902002": "Obergrenze einer gegebenen Formation",
                                 "13902003": "Untergrenze einer gegebenen Formation",
-                                "999997": "Unknown",
-                                "999998": "Not applicable"
+                                "999997": "unbekannt",
+                                "999998": "nicht anwendbar"
                             }
                         },
                         {
@@ -2510,8 +2510,8 @@
                                 "14002001": "frei",
                                 "14002002": "gespannt",
                                 "14002003": "artesisch",
-                                "999997": "Unknown",
-                                "999998": "Not applicable"
+                                "999997": "unbekannt",
+                                "999998": "nicht anwendbar"
                             }
                         },
                         {
@@ -2534,8 +2534,8 @@
                             "pairs": {
                                 "14004001": "mittlere H\u00f6he des Niedrigwasserstands",
                                 "14004002": "mittlere H\u00f6he des Hochwasserstands",
-                                "999997": "Unknown",
-                                "999998": "Not applicable"
+                                "999997": "unbekannt",
+                                "999998": "nicht anwendbar"
                             }
                         }
                     ]
@@ -2591,8 +2591,8 @@
                             "pairs": {
                                 "10002001": "historisch",
                                 "10002002": "pr\u00e4historisch",
-                                "999997": "Unknown",
-                                "999998": "Not applicable"
+                                "999997": "unbekannt",
+                                "999998": "nicht anwendbar"
                             }
                         },
                         {
@@ -2611,8 +2611,8 @@
                                 "10003004": "Eisenzeit",
                                 "10003005": "Bronzezeit",
                                 "10003006": "Steinzeit",
-                                "999997": "Unknown",
-                                "999998": "Not applicable"
+                                "999997": "unbekannt",
+                                "999998": "nicht anwendbar"
                             }
                         },
                         {
@@ -2633,8 +2633,8 @@
                                 "10004006": "Neolithikum",
                                 "10004007": "Mesolithikum",
                                 "10004008": "Pal\u00e4olithikum",
-                                "999997": "Unknown",
-                                "999998": "Not applicable"
+                                "999997": "unbekannt",
+                                "999998": "nicht anwendbar"
                             }
                         },
                         {
@@ -2649,8 +2649,8 @@
                             "pairs": {
                                 "10105001": "Menhir",
                                 "10105002": "Schalenstein",
-                                "999997": "Unknown",
-                                "999998": "Not applicable"
+                                "999997": "unbekannt",
+                                "999998": "nicht anwendbar"
                             }
                         }
                     ]
@@ -2694,8 +2694,8 @@
                             "pairs": {
                                 "10002001": "historisch",
                                 "10002002": "pr\u00e4historisch",
-                                "999997": "Unknown",
-                                "999998": "Not applicable"
+                                "999997": "unbekannt",
+                                "999998": "nicht anwendbar"
                             }
                         },
                         {
@@ -2714,8 +2714,8 @@
                                 "10003004": "Eisenzeit",
                                 "10003005": "Bronzezeit",
                                 "10003006": "Steinzeit",
-                                "999997": "Unknown",
-                                "999998": "Not applicable"
+                                "999997": "unbekannt",
+                                "999998": "nicht anwendbar"
                             }
                         },
                         {
@@ -2736,8 +2736,8 @@
                                 "10004006": "Neolithikum",
                                 "10004007": "Mesolithikum",
                                 "10004008": "Pal\u00e4olithikum",
-                                "999997": "Unknown",
-                                "999998": "Not applicable"
+                                "999997": "unbekannt",
+                                "999998": "nicht anwendbar"
                             }
                         }
                     ]
@@ -2776,8 +2776,8 @@
                             "pairs": {
                                 "10002001": "historisch",
                                 "10002002": "pr\u00e4historisch",
-                                "999997": "Unknown",
-                                "999998": "Not applicable"
+                                "999997": "unbekannt",
+                                "999998": "nicht anwendbar"
                             }
                         },
                         {
@@ -2796,8 +2796,8 @@
                                 "10003004": "Eisenzeit",
                                 "10003005": "Bronzezeit",
                                 "10003006": "Steinzeit",
-                                "999997": "Unknown",
-                                "999998": "Not applicable"
+                                "999997": "unbekannt",
+                                "999998": "nicht anwendbar"
                             }
                         },
                         {
@@ -2818,8 +2818,8 @@
                                 "10004006": "Neolithikum",
                                 "10004007": "Mesolithikum",
                                 "10004008": "Pal\u00e4olithikum",
-                                "999997": "Unknown",
-                                "999998": "Not applicable"
+                                "999997": "unbekannt",
+                                "999998": "nicht anwendbar"
                             }
                         }
                     ]
@@ -2874,8 +2874,8 @@
                                 "10603002": "stillgelegt",
                                 "10603003": "aufgef\u00fcllt",
                                 "10603004": "verfallen",
-                                "999997": "Unknown",
-                                "999998": "Not applicable"
+                                "999997": "unbekannt",
+                                "999998": "nicht anwendbar"
                             }
                         },
                         {
@@ -2937,8 +2937,8 @@
                                 "10605038": "Sand und Kies",
                                 "10605039": "Pyrit",
                                 "10605040": "Kies",
-                                "999997": "Unknown",
-                                "999998": "Not applicable"
+                                "999997": "unbekannt",
+                                "999998": "nicht anwendbar"
                             }
                         }
                     ]
@@ -2979,8 +2979,8 @@
                                 "10702002": "stillgelegt",
                                 "10702003": "aufgef\u00fcllt",
                                 "10702004": "verfallen",
-                                "999997": "Unknown",
-                                "999998": "Not applicable"
+                                "999997": "unbekannt",
+                                "999998": "nicht anwendbar"
                             }
                         }
                     ]
@@ -3031,8 +3031,8 @@
                                 "10802002": "stillgelegt",
                                 "10802003": "aufgef\u00fcllt",
                                 "10802004": "verfallen",
-                                "999997": "Unknown",
-                                "999998": "Not applicable"
+                                "999997": "unbekannt",
+                                "999998": "nicht anwendbar"
                             }
                         },
                         {
@@ -3075,8 +3075,8 @@
                                 "10804019": "Kohle",
                                 "10804020": "Salz / Steinsalz",
                                 "10804021": "Kies",
-                                "999997": "Unknown",
-                                "999998": "Not applicable"
+                                "999997": "unbekannt",
+                                "999998": "nicht anwendbar"
                             }
                         }
                     ]
@@ -3152,8 +3152,8 @@
                                 "10505008": "Geothermie",
                                 "10505012": "Forschung",
                                 "10505013": "Naturgefahren",
-                                "999997": "Unknown",
-                                "999998": "Not applicable"
+                                "999997": "unbekannt",
+                                "999998": "nicht anwendbar"
                             }
                         },
                         {
@@ -3173,8 +3173,8 @@
                                 "10506005": "Thermalwasser",
                                 "10506006": "Grundwasser",
                                 "10506007": "Mineralwasser",
-                                "999997": "Unknown",
-                                "999998": "Not applicable"
+                                "999997": "unbekannt",
+                                "999998": "nicht anwendbar"
                             }
                         },
                         {
@@ -3346,8 +3346,8 @@
                             "pairs": {
                                 "12102001": "in Betrieb",
                                 "12102002": "stillgelegt",
-                                "999997": "Unknown",
-                                "999998": "Not applicable"
+                                "999997": "unbekannt",
+                                "999998": "nicht anwendbar"
                             }
                         },
                         {
@@ -3363,8 +3363,8 @@
                                 "12103001": "Mittelalter",
                                 "12103002": "R\u00f6merzeit",
                                 "12103003": "pr\u00e4historisch",
-                                "999997": "Unknown",
-                                "999998": "Not applicable"
+                                "999997": "unbekannt",
+                                "999998": "nicht anwendbar"
                             }
                         },
                         {
@@ -3432,8 +3432,8 @@
                                 "12202001": "mit Quellfassung (orientiert) in Stollen",
                                 "12202002": "mit gefasster Mineralquelle (orientiert) in Stollen",
                                 "12202003": "mit gefasster Thermalquelle (orientiert) in Stollen",
-                                "999997": "Unknown",
-                                "999998": "Not applicable"
+                                "999997": "unbekannt",
+                                "999998": "nicht anwendbar"
                             }
                         }
                     ]
@@ -3479,8 +3479,8 @@
                                 "12302001": "die J\u00fcngste oder Einzige",
                                 "12302002": "\u00e4lter als die J\u00fcngste",
                                 "12302003": "\u00e4lter als die Zweitj\u00fcngste",
-                                "999997": "Unknown",
-                                "999998": "Not applicable"
+                                "999997": "unbekannt",
+                                "999998": "nicht anwendbar"
                             }
                         },
                         {
@@ -3548,8 +3548,8 @@
                             "pairs": {
                                 "12402001": "mit Versickerungsstelle eines Baches",
                                 "12402002": "mit Wiederaustritt eines unterirdischen Bachlaufes",
-                                "999997": "Unknown",
-                                "999998": "Not applicable"
+                                "999997": "unbekannt",
+                                "999998": "nicht anwendbar"
                             }
                         }
                     ]
@@ -3593,8 +3593,8 @@
                             "pairs": {
                                 "12502001": "gefasst",
                                 "12502002": "nicht gefasst",
-                                "999997": "Unknown",
-                                "999998": "Not applicable"
+                                "999997": "unbekannt",
+                                "999998": "nicht anwendbar"
                             }
                         },
                         {
@@ -3610,8 +3610,8 @@
                                 "12503001": "perennierend",
                                 "12503002": "tempor\u00e4r",
                                 "12503003": "versiegt",
-                                "999997": "Unknown",
-                                "999998": "Not applicable"
+                                "999997": "unbekannt",
+                                "999998": "nicht anwendbar"
                             }
                         },
                         {
@@ -3627,8 +3627,8 @@
                                 "12504001": "Karstquelle",
                                 "12504002": "Mineralquelle",
                                 "12504003": "Thermalquelle",
-                                "999997": "Unknown",
-                                "999998": "Not applicable"
+                                "999997": "unbekannt",
+                                "999998": "nicht anwendbar"
                             }
                         },
                         {
@@ -3642,8 +3642,8 @@
                             "cardinality": "0..1",
                             "pairs": {
                                 "12505002": "in Stollen",
-                                "999997": "Unknown",
-                                "999998": "Not applicable"
+                                "999997": "unbekannt",
+                                "999998": "nicht anwendbar"
                             }
                         },
                         {
@@ -3658,8 +3658,8 @@
                             "pairs": {
                                 "12506001": "mit Wasserfassungsstollen",
                                 "12506002": "mit unterirdischem Gew\u00e4sserlauf",
-                                "999997": "Unknown",
-                                "999998": "Not applicable"
+                                "999997": "unbekannt",
+                                "999998": "nicht anwendbar"
                             }
                         },
                         {
@@ -5995,8 +5995,8 @@
                 "15206116": "Aptychenkalk, undiff.",
                 "15206117": "Quarzsandstein, undiff.",
                 "15206118": "Mergelstein, undifferenziert",
-                "999997": "Unknown",
-                "999998": "Not applicable"
+                "999997": "unbekannt",
+                "999998": "nicht anwendbar"
             }
         },
         {
@@ -6456,8 +6456,8 @@
                 "15201565": "Stetten-Schotter",
                 "15201566": "Plaffeien-Seetone",
                 "15201567": "Plasselb-Stauschotter",
-                "999997": "Unknown",
-                "999998": "Not applicable"
+                "999997": "unbekannt",
+                "999998": "nicht anwendbar"
             }
         },
         {
@@ -6828,8 +6828,8 @@
                 "15104446": "Metavulkanit",
                 "15104447": "ultramafisches Gestein",
                 "15104448": "tektonische Kalkbrekzie",
-                "999997": "Unknown",
-                "999998": "Not applicable"
+                "999997": "unbekannt",
+                "999998": "nicht anwendbar"
             }
         },
         {
@@ -6905,8 +6905,8 @@
                 "15101085": "Tsunamiablagerung",
                 "15101086": "Entw\u00e4sserungssediment",
                 "15101087": "Sediment\u00e4rer Gang (clastic dike)",
-                "999997": "Unknown",
-                "999998": "Not applicable"
+                "999997": "unbekannt",
+                "999998": "nicht anwendbar"
             }
         },
         {
@@ -7053,8 +7053,8 @@
                 "15001151": "Chibanien",
                 "15001152": "Pr\u00e4kambrium",
                 "15001153": "Archaikum",
-                "999997": "Unknown",
-                "999998": "Not applicable"
+                "999997": "unbekannt",
+                "999998": "nicht anwendbar"
             }
         },
         {
@@ -7454,8 +7454,8 @@
                 "15308029": "Pontey-Schuppe",
                 "15308030": "Grun-Schuppe",
                 "15308031": "Vollon-Schuppe",
-                "999997": "Unknown",
-                "999998": "Not applicable"
+                "999997": "unbekannt",
+                "999998": "nicht anwendbar"
             }
         },
         {
@@ -7548,8 +7548,8 @@
                 "20401083": "Zeolith",
                 "20401084": "Serizit",
                 "20401085": "Fuchsit",
-                "999997": "Unknown",
-                "999998": "Not applicable"
+                "999997": "unbekannt",
+                "999998": "nicht anwendbar"
             }
         },
         {
@@ -7644,6 +7644,6 @@
             }
         }
     ],
-    "hash": "02cba23",
+    "hash": "a4e61c5",
     "lang": "fr"
 }
