@@ -81,26 +81,41 @@ class CommandDisabled(click.ClickException):
         super().__init__(message)
 
 
-class ConditionalGroup(click.Group):
-    def __init__(self, *args, **kwargs):
-        self.condition = kwargs.pop("condition", lambda: True)
-        super().__init__(*args, **kwargs)
+try:
+    import arcpy
+
+    HAS_ARCPY = True
+except ImportError:
+    HAS_ARCPY = False
+
+
+class ArcpyAwareGroup(click.Group):
+    def list_commands(self, ctx):
+        # List commands available based on the presence of arcpy
+        commands = super().list_commands(ctx)
+        if not HAS_ARCPY:
+            commands = [
+                cmd
+                for cmd in commands
+                if not getattr(self.get_command(ctx, cmd), "requires_arcpy", False)
+            ]
+        return commands
 
     def get_command(self, ctx, cmd_name):
-        if self.condition():
-            return super().get_command(ctx, cmd_name)
-        else:
-            if cmd_name in COMMANDS_REQUIRING_ARCPY:
-                raise CommandDisabled(
-                    f"The command '{cmd_name}' is disabled because the 'arcpy' library is not installed."
-                )
-            return super().get_command(ctx, cmd_name)
+        # Retrieve the command and ensure it matches the arcpy requirement
+        cmd = super().get_command(ctx, cmd_name)
+        if cmd is None:
+            return None  # Ensure we handle cases where the command doesn't exist
+        if not HAS_ARCPY and getattr(cmd, "requires_arcpy", False):
+            return None
+        return cmd
 
     def invoke(self, ctx):
-        try:
-            super().invoke(ctx)
-        except CommandDisabled as e:
-            ctx.fail(e.message)
+        # Display help if no command is provided
+        if ctx.invoked_subcommand is None:
+            click.echo(ctx.get_help())
+            ctx.exit()
+        return super().invoke(ctx)
 
 
 def _arg_split(ctx, param, value):
@@ -117,11 +132,10 @@ def _arg_split(ctx, param, value):
 
 
 @click.group(
-    cls=ConditionalGroup,
-    condition=check_library,
+    cls=ArcpyAwareGroup,
 )
 def geocover():
-    """Command to work with TOPGIS/GeoCover ArcSDE database or ArcGis Pro project"""
+    """Command to work with TOPGIS/GeoCover ArcSDE database or ArcGis Pro project (ArcSDE operations require `arcpy`)"""
     pass
 
 
@@ -155,7 +169,8 @@ def geocover():
     default=DEFAULT_WORKSPACE,
 )
 def export(output_dir, workspace, log_level):
-    import arcpy
+    if not HAS_ARCPY:
+        raise click.ClickException("arcpy library is not available.")
     from encoder import ExtendedEncoder
     from schema import GeocoverSchema
 
@@ -269,7 +284,8 @@ def export(output_dir, workspace, log_level):
     help="Log level",
 )
 def schema(output_dir, workspace, log_level):
-    import arcpy
+    if not HAS_ARCPY:
+        raise click.ClickException("arcpy library is not available.")
     from encoder import ExtendedEncoder
     from schema import GeocoverSchema
 
@@ -510,15 +526,16 @@ def filter_symbols(bbox, geometry, gdb_path, output, log_level, symbols, drop):
     help="Log level (DEBUG, INFO, WARNING, ERROR, CRITICAL)",
 )
 def export_rules(workspace, output, log_level):
-    # Define the path to your ArcGIS Pro project
-    import arcpy
+    
+    if not HAS_ARCPY:
+        raise click.ClickException("arcpy library is not available.")
     from export_symbol_rules import process_layers
 
     configure_logging(log_level)
 
     fields = ["OBJECTID", "MSH_MAP_TITLE", "MSH_MAP_NBR"]
     try:
-        # Open the ArcGIS Pro project
+        
         project_path = workspace
         aprx = arcpy.mp.ArcGISProject(workspace)
     except OSError as e:
@@ -531,7 +548,7 @@ def export_rules(workspace, output, log_level):
 
     res = {}
     for l in m.listLayers():
-        if l.isFeatureLayer: #and 'Deposits_Chrono' in l.name:
+        if l.isFeatureLayer:  # and 'Deposits_Chrono' in l.name:
             attributes = process_layers(l)
             res[l.name] = attributes
 
@@ -542,6 +559,20 @@ def export_rules(workspace, output, log_level):
     with open(output_fname, "w", encoding="utf-8") as f:
         # Serialize the data and write it to the file
         json.dump(res, f, ensure_ascii=False, indent=4)
+
+
+# command as requiring arcpy
+export.requires_arcpy = True
+schema.requires_arcpy = True
+export_rules.requires_arcpy = True
+
+
+geocover.add_command(export)
+geocover.add_command(schema)
+geocover.add_command(export_rules)
+
+geocover.add_command(geolcode)
+geocover.add_command(filter_symbols)
 
 
 if __name__ == "__main__":
