@@ -1,28 +1,19 @@
-
-# SOME DESCRIPTIVE TITLE
 # Copyright (C) YEAR Free Software Foundation, Inc.
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# FIRST Marc Monnerat <marc.monnerat@swisstopo.ch>, 2024.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION
-"
-"POT-Creation-Date: 2008-02-06 16:25-0500
-"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE
-"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>
-"
-"Language-Team: LANGUAGE <LL@li.org>
-"
-"MIME-Version: 1.0
-"
-"Content-Type: text/plain; charset=CHARSET
-"
-"Content-Transfer-Encoding: ENCODING
-"
+"Project-Id-Version: geocover"
+"POT-Creation-Date: 2024-09-29 19:00+0200"
+"PO-Revision-Date: 2024-09-29 19:00+0200"
+"Last-Translator: geocover <geocover@swisstopo.ch>"
+"Language-Team: LANGUAGE <LL@li.org>"
+"Plural-Forms: nplurals=2; plural=(n != 1);"
+"MIME-Version: 1.0"
+"Content-Type: text/plain; charset=utf-8"
+"Content-Transfer-Encoding: 8bit"
 msgid "999997"
 msgstr "unbekannt"
 
@@ -33,7 +24,7 @@ msgid "10002001"
 msgstr "historisch"
 
 msgid "10002002"
-msgstr "prÃ¤historisch"
+msgstr "prähistorisch"
 
 msgid "10003001"
 msgstr "Neuzeit"
@@ -42,7 +33,7 @@ msgid "10003002"
 msgstr "Mittelalter"
 
 msgid "10003003"
-msgstr "RÃ¶merzeit"
+msgstr "Römerzeit"
 
 msgid "10003004"
 msgstr "Eisenzeit"
@@ -54,7 +45,7 @@ msgid "10003006"
 msgstr "Steinzeit"
 
 msgid "10004001"
-msgstr "LatÃ¨nezeit"
+msgstr "Latènezeit"
 
 msgid "10004002"
 msgstr "Hallstattzeit"
@@ -75,28 +66,28 @@ msgid "10004007"
 msgstr "Mesolithikum"
 
 msgid "10004008"
-msgstr "PalÃ¤olithikum"
+msgstr "Paläolithikum"
 
 msgid "10101001"
-msgstr "archÃ¤ologische Fundstelle, Anlage, Siedlungsreste"
+msgstr "archäologische Fundstelle, Anlage, Siedlungsreste"
 
 msgid "10101002"
-msgstr "HÃ¶hlensiedlung, Abri"
+msgstr "Höhlensiedlung, Abri"
 
 msgid "10101003"
 msgstr "Pfahlbauten"
 
 msgid "10101004"
-msgstr "Burgstelle, BurghÃ¼gel, Wachtturm"
+msgstr "Burgstelle, Burghügel, Wachtturm"
 
 msgid "10101005"
-msgstr "GrÃ¤ber, GrÃ¤berfeld"
+msgstr "Gräber, Gräberfeld"
 
 msgid "10101006"
 msgstr "Steinplattengrab"
 
 msgid "10101007"
-msgstr "GrabhÃ¼gel, Dolmengrab"
+msgstr "Grabhügel, Dolmengrab"
 
 msgid "10101008"
 msgstr "Kultstein"
@@ -111,7 +102,7 @@ msgid "10101011"
 msgstr "Schlackenhalde"
 
 msgid "10101012"
-msgstr "GlashÃ¼tte"
+msgstr "Glashütte"
 
 msgid "10101013"
 msgstr "Schmelzofen"
@@ -126,7 +117,7 @@ msgid "10102001"
 msgstr "historisch"
 
 msgid "10102002"
-msgstr "prÃ¤historisch"
+msgstr "prähistorisch"
 
 msgid "10103001"
 msgstr "Neuzeit"
@@ -135,7 +126,7 @@ msgid "10103002"
 msgstr "Mittelalter"
 
 msgid "10103003"
-msgstr "RÃ¶merzeit"
+msgstr "Römerzeit"
 
 msgid "10103004"
 msgstr "Eisenzeit"
@@ -147,7 +138,7 @@ msgid "10103006"
 msgstr "Steinzeit"
 
 msgid "10104001"
-msgstr "LatÃ¨nezeit"
+msgstr "Latènezeit"
 
 msgid "10104002"
 msgstr "Hallstattzeit"
@@ -168,7 +159,7 @@ msgid "10104007"
 msgstr "Mesolithikum"
 
 msgid "10104008"
-msgstr "PalÃ¤olithikum"
+msgstr "Paläolithikum"
 
 msgid "10105001"
 msgstr "Menhir"
@@ -183,10 +174,10 @@ msgid "10201002"
 msgstr "Hohlweg"
 
 msgid "10201003"
-msgstr "kÃ¼nstlicher Graben, Befestigungsgraben"
+msgstr "künstlicher Graben, Befestigungsgraben"
 
 msgid "10201004"
-msgstr "kÃ¼nstlicher Erdwall"
+msgstr "künstlicher Erdwall"
 
 msgid "10201005"
 msgstr "Wasserleitung"
@@ -195,13 +186,13 @@ msgid "10201006"
 msgstr "Steinreihe"
 
 msgid "10201007"
-msgstr "SchÃ¼tzengraben"
+msgstr "Schützengraben"
 
 msgid "10202001"
 msgstr "historisch"
 
 msgid "10202002"
-msgstr "prÃ¤historisch"
+msgstr "prähistorisch"
 
 msgid "10203001"
 msgstr "Neuzeit"
@@ -210,7 +201,7 @@ msgid "10203002"
 msgstr "Mittelalter"
 
 msgid "10203003"
-msgstr "RÃ¶merzeit"
+msgstr "Römerzeit"
 
 msgid "10203004"
 msgstr "Eisenzeit"
@@ -222,7 +213,7 @@ msgid "10203006"
 msgstr "Steinzeit"
 
 msgid "10204001"
-msgstr "LatÃ¨nezeit"
+msgstr "Latènezeit"
 
 msgid "10204002"
 msgstr "Hallstattzeit"
@@ -243,19 +234,19 @@ msgid "10204007"
 msgstr "Mesolithikum"
 
 msgid "10204008"
-msgstr "PalÃ¤olithikum"
+msgstr "Paläolithikum"
 
 msgid "10301001"
 msgstr "Castrum"
 
 msgid "10301002"
-msgstr "Refugium, HÃ¶hensiedlung, Erdwerk"
+msgstr "Refugium, Höhensiedlung, Erdwerk"
 
 msgid "10302001"
 msgstr "historisch"
 
 msgid "10302002"
-msgstr "prÃ¤historisch"
+msgstr "prähistorisch"
 
 msgid "10303001"
 msgstr "Neuzeit"
@@ -264,28 +255,28 @@ msgid "10303002"
 msgstr "Mittelalter"
 
 msgid "10303003"
-msgstr "RÃ¶merzeit"
+msgstr "Römerzeit"
 
 msgid "10303004"
 msgstr "Eisenzeit"
 
 msgid "10304001"
-msgstr "LatÃ¨nezeit"
+msgstr "Latènezeit"
 
 msgid "10304002"
 msgstr "Hallstattzeit"
 
 msgid "10401001"
-msgstr "kÃ¼nstlich verÃ¤ndertes GelÃ¤nde"
+msgstr "künstlich verändertes Gelände"
 
 msgid "10401002"
-msgstr "kÃ¼nstliche Ablagerung, undifferenziert"
+msgstr "künstliche Ablagerung, undifferenziert"
 
 msgid "10401003"
-msgstr "AufschÃ¼ttung, Damm"
+msgstr "Aufschüttung, Damm"
 
 msgid "10401004"
-msgstr "AuffÃ¼llung"
+msgstr "Auffüllung"
 
 msgid "10401005"
 msgstr "Deponie"
@@ -354,13 +345,13 @@ msgid "10506001"
 msgstr "Salz / Steinsalz"
 
 msgid "10506002"
-msgstr "ErdÃ¶l"
+msgstr "Erdöl"
 
 msgid "10506003"
 msgstr "Erdgas"
 
 msgid "10506004"
-msgstr "ErdwÃ¤rme"
+msgstr "Erdwärme"
 
 msgid "10506005"
 msgstr "Thermalwasser"
@@ -384,10 +375,10 @@ msgid "10601004"
 msgstr "Pinge (dolinenartiger Stolleneinbruch)"
 
 msgid "10601005"
-msgstr "SchÃ¼rfloch"
+msgstr "Schürfloch"
 
 msgid "10601006"
-msgstr "ausgerÃ¤umte Bohnerztasche"
+msgstr "ausgeräumte Bohnerztasche"
 
 msgid "10603001"
 msgstr "in Betrieb"
@@ -396,7 +387,7 @@ msgid "10603002"
 msgstr "stillgelegt"
 
 msgid "10603003"
-msgstr "aufgefÃ¼llt"
+msgstr "aufgefüllt"
 
 msgid "10603004"
 msgstr "verfallen"
@@ -426,7 +417,7 @@ msgid "10605008"
 msgstr "Mangan"
 
 msgid "10605009"
-msgstr "MolybdÃ¤n und Wolfram"
+msgstr "Molybdän und Wolfram"
 
 msgid "10605010"
 msgstr "Antimon"
@@ -483,7 +474,7 @@ msgid "10605027"
 msgstr "Graphit"
 
 msgid "10605028"
-msgstr "Ã–lschiefer"
+msgstr "Ölschiefer"
 
 msgid "10605029"
 msgstr "Asphalt / Bitumen"
@@ -534,7 +525,7 @@ msgid "10702002"
 msgstr "stillgelegt"
 
 msgid "10702003"
-msgstr "aufgefÃ¼llt"
+msgstr "aufgefüllt"
 
 msgid "10702004"
 msgstr "verfallen"
@@ -552,7 +543,7 @@ msgid "10802002"
 msgstr "stillgelegt"
 
 msgid "10802003"
-msgstr "aufgefÃ¼llt"
+msgstr "aufgefüllt"
 
 msgid "10802004"
 msgstr "verfallen"
@@ -648,19 +639,19 @@ msgid "11201001"
 msgstr "glazitektonische Deformation"
 
 msgid "11201002"
-msgstr "GletschermÃ¼hle, Strudelloch"
+msgstr "Gletschermühle, Strudelloch"
 
 msgid "11301001"
-msgstr "MorÃ¤nenwall"
+msgstr "Moränenwall"
 
 msgid "11301002"
-msgstr "MorÃ¤nenwall auf Gletscher oder auf Toteis"
+msgstr "Moränenwall auf Gletscher oder auf Toteis"
 
 msgid "11301003"
 msgstr "Kameterrassenkante"
 
 msgid "11301004"
-msgstr "Ã¤lterer Gletscherstand, basierend auf historischen Daten"
+msgstr "älterer Gletscherstand, basierend auf historischen Daten"
 
 msgid "11301005"
 msgstr "Schliffgrenze"
@@ -672,7 +663,7 @@ msgid "11301007"
 msgstr "Blockwulst im Blockgletscher"
 
 msgid "11301008"
-msgstr "SchneehaldenmorÃ¤nenwall"
+msgstr "Schneehaldenmoränenwall"
 
 msgid "11301009"
 msgstr "Verbreitungsgrenze von Geschiebe"
@@ -759,7 +750,7 @@ msgid "11304023"
 msgstr "Wittigkofen"
 
 msgid "11304024"
-msgstr "ZÃ¼rich, undifferenziert"
+msgstr "Zürich, undifferenziert"
 
 msgid "11304025"
 msgstr "Stein-am-Rhein I"
@@ -783,7 +774,7 @@ msgid "11304031"
 msgstr "Schaffausen II"
 
 msgid "11304035"
-msgstr "KÃ¼blis"
+msgstr "Küblis"
 
 msgid "11304036"
 msgstr "Lunden"
@@ -819,16 +810,16 @@ msgid "11304051"
 msgstr "Bremgarten II"
 
 msgid "11304052"
-msgstr "BÃ¼lach I"
+msgstr "Bülach I"
 
 msgid "11304053"
-msgstr "BÃ¼lach II"
+msgstr "Bülach II"
 
 msgid "11304054"
-msgstr "BÃ¼lach, undifferenziert"
+msgstr "Bülach, undifferenziert"
 
 msgid "11304055"
-msgstr "DÃ¤ttikon"
+msgstr "Dättikon"
 
 msgid "11304056"
 msgstr "Regensdorf"
@@ -843,13 +834,13 @@ msgid "11304059"
 msgstr "Stetten II"
 
 msgid "11304060"
-msgstr "WÃ¼renlos I"
+msgstr "Würenlos I"
 
 msgid "11304061"
-msgstr "WÃ¼renlos II"
+msgstr "Würenlos II"
 
 msgid "11304062"
-msgstr "WÃ¼renlos, undifferenziert"
+msgstr "Würenlos, undifferenziert"
 
 msgid "11305001"
 msgstr "1. Vergletscherung der letzten Eiszeit (MIS 5d)"
@@ -873,13 +864,13 @@ msgid "11305007"
 msgstr "Egesen"
 
 msgid "11305008"
-msgstr "Mitlleres PleistozÃ¤n"
+msgstr "Mitlleres Pleistozän"
 
 msgid "11401001"
 msgstr "Drumlin, drumlinartige Kieskuppe"
 
 msgid "11401003"
-msgstr "RundhÃ¶cker"
+msgstr "Rundhöcker"
 
 msgid "11401004"
 msgstr "Toteisloch, Soll"
@@ -891,13 +882,13 @@ msgid "11502002"
 msgstr "Hauptbewegungsphase nach dem letzteiszeitlichen Maximum"
 
 msgid "11601001"
-msgstr "Hinweis auf HanginstabilitÃ¤t"
+msgstr "Hinweis auf Hanginstabilität"
 
 msgid "11701001"
 msgstr "Stauchwulst"
 
 msgid "11701002"
-msgstr "NackentÃ¤lchen, Zerrstruktur"
+msgstr "Nackentälchen, Zerrstruktur"
 
 msgid "11701003"
 msgstr "Abrissrand"
@@ -909,7 +900,7 @@ msgid "11901001"
 msgstr "Ponor"
 
 msgid "11901002"
-msgstr "HÃ¶hle, Balme"
+msgstr "Höhle, Balme"
 
 msgid "12001001"
 msgstr "Senke ohne oberirdischen Abfluss"
@@ -960,16 +951,16 @@ msgid "12103001"
 msgstr "Mittelalter"
 
 msgid "12103002"
-msgstr "RÃ¶merzeit"
+msgstr "Römerzeit"
 
 msgid "12103003"
-msgstr "prÃ¤historisch"
+msgstr "prähistorisch"
 
 msgid "12201001"
 msgstr "Wasserfassungsstollen"
 
 msgid "12201002"
-msgstr "KÃ¼nstlicher GewÃ¤sserlauf"
+msgstr "Künstlicher Gewässerlauf"
 
 msgid "12202001"
 msgstr "mit Quellfassung (orientiert) in Stollen"
@@ -981,10 +972,10 @@ msgid "12202003"
 msgstr "mit gefasster Thermalquelle (orientiert)  in Stollen"
 
 msgid "12301001"
-msgstr "PalÃ¤otal"
+msgstr "Paläotal"
 
 msgid "12301002"
-msgstr "ehemalige EntwÃ¤sserungsrinne"
+msgstr "ehemalige Entwässerungsrinne"
 
 msgid "12301003"
 msgstr "glaziale Abflussrinne"
@@ -1002,16 +993,16 @@ msgid "12301007"
 msgstr "ehemalige Uferlinie"
 
 msgid "12302001"
-msgstr "die JÃ¼ngste oder Einzige"
+msgstr "die Jüngste oder Einzige"
 
 msgid "12302002"
-msgstr "Ã¤lter als die JÃ¼ngste"
+msgstr "älter als die Jüngste"
 
 msgid "12302003"
-msgstr "Ã¤lter als die ZweitjÃ¼ngste"
+msgstr "älter als die Zweitjüngste"
 
 msgid "12401001"
-msgstr "unterirdischer GewÃ¤sserlauf"
+msgstr "unterirdischer Gewässerlauf"
 
 msgid "12402001"
 msgstr "mit Versickerungsstelle eines Baches"
@@ -1047,7 +1038,7 @@ msgid "12503001"
 msgstr "perennierend"
 
 msgid "12503002"
-msgstr "temporÃ¤r"
+msgstr "temporär"
 
 msgid "12503003"
 msgstr "versiegt"
@@ -1068,7 +1059,7 @@ msgid "12506001"
 msgstr "mit Wasserfassungsstollen"
 
 msgid "12506002"
-msgstr "mit unterirdischem GewÃ¤sserlauf"
+msgstr "mit unterirdischem Gewässerlauf"
 
 msgid "12601001"
 msgstr "Quellhorizont"
@@ -1131,10 +1122,10 @@ msgid "12903005"
 msgstr "Algen"
 
 msgid "12903006"
-msgstr "BlÃ¤tter"
+msgstr "Blätter"
 
 msgid "12903007"
-msgstr "GrÃ¤ser"
+msgstr "Gräser"
 
 msgid "12903008"
 msgstr "Holz"
@@ -1143,7 +1134,7 @@ msgid "12903009"
 msgstr "Ammoniten"
 
 msgid "12903010"
-msgstr "SchwÃ¤mme"
+msgstr "Schwämme"
 
 msgid "12903011"
 msgstr "Korallen"
@@ -1170,7 +1161,7 @@ msgid "12903018"
 msgstr "Reptilien"
 
 msgid "12903019"
-msgstr "SÃ¤ugetiere"
+msgstr "Säugetiere"
 
 msgid "12903020"
 msgstr "Mikrofossilien"
@@ -1197,19 +1188,19 @@ msgid "13002002"
 msgstr "vermutet"
 
 msgid "13002003"
-msgstr "kÃ¼nstlich"
+msgstr "künstlich"
 
 msgid "13002004"
-msgstr "gesichert, tektonisch Ã¼berprÃ¤gt"
+msgstr "gesichert, tektonisch überprägt"
 
 msgid "13002005"
-msgstr "vermutet, tektonisch Ã¼berprÃ¤gt"
+msgstr "vermutet, tektonisch überprägt"
 
 msgid "20501002"
-msgstr "gebÃ¤ndert"
+msgstr "gebändert"
 
 msgid "13002006"
-msgstr "GewÃ¤sserlinie"
+msgstr "Gewässerlinie"
 
 msgid "13101001"
 msgstr "Gesteinshorizont"
@@ -1218,7 +1209,7 @@ msgid "13102001"
 msgstr "kristallinfreie bis -arme (Kalk-)Nagelfluh"
 
 msgid "13102002"
-msgstr "kristallinfÃ¼hrende (Kalk-)Nagelfluh"
+msgstr "kristallinführende (Kalk-)Nagelfluh"
 
 msgid "13102003"
 msgstr "bunte bis polygene Nagelfluh"
@@ -1233,19 +1224,19 @@ msgid "13201002"
 msgstr "Gasquelle"
 
 msgid "13201003"
-msgstr "Anzeichen auf Ã–l"
+msgstr "Anzeichen auf Öl"
 
 msgid "13201004"
-msgstr "Tasche, Karsttasche, Kluft, mit FÃ¼llung von Siderolithikum"
+msgstr "Tasche, Karsttasche, Kluft, mit Füllung von Siderolithikum"
 
 msgid "13201005"
 msgstr "Fundstelle von vulkanischem Tuffit"
 
 msgid "13201006"
-msgstr "Fundstelle vulkanischer AuswÃ¼rflinge (Tephra)"
+msgstr "Fundstelle vulkanischer Auswürflinge (Tephra)"
 
 msgid "13201007"
-msgstr "Fundstelle von Ries-AuswÃ¼rflingen"
+msgstr "Fundstelle von Ries-Auswürflingen"
 
 msgid "13201008"
 msgstr "Asphalt, vereinzeltes Vorkommen"
@@ -1284,16 +1275,16 @@ msgid "13401002"
 msgstr "Riffstrukturen"
 
 msgid "13401003"
-msgstr "Erosions- oder OmissionsflÃ¤che, Hartgrund, Kondensationshorizont"
+msgstr "Erosions- oder Omissionsfläche, Hartgrund, Kondensationshorizont"
 
 msgid "13401004"
-msgstr "stratigraphische Lage (PolaritÃ¤t) einer Schichtserie"
+msgstr "stratigraphische Lage (Polarität) einer Schichtserie"
 
 msgid "13401005"
 msgstr "Winkeldiskordanz"
 
 msgid "13401006"
-msgstr "EntwÃ¤sserungstrichter (blow-out structure) "
+msgstr "Entwässerungstrichter (blow-out structure) "
 
 msgid "13501001"
 msgstr "geologisch relevanter Aufschluss"
@@ -1368,7 +1359,7 @@ msgid "13801002"
 msgstr "Orientierung eines Ganges"
 
 msgid "13801003"
-msgstr "Orientierung einer BruchflÃ¤che"
+msgstr "Orientierung einer Bruchfläche"
 
 msgid "13801004"
 msgstr "Orientierung der Schieferung"
@@ -1377,13 +1368,13 @@ msgid "13801005"
 msgstr "Orientierung einer Schichtung oder Schieferung"
 
 msgid "13801006"
-msgstr "SchÃ¼ttungsrichtung"
+msgstr "Schüttungsrichtung"
 
 msgid "13802001"
 msgstr "normal"
 
 msgid "13802002"
-msgstr "Ã¼berkippt"
+msgstr "überkippt"
 
 msgid "13803001"
 msgstr "S1 (1. Phase)"
@@ -1398,7 +1389,7 @@ msgid "13901001"
 msgstr "Isohypse"
 
 msgid "13902001"
-msgstr "FelsoberflÃ¤che"
+msgstr "Felsoberfläche"
 
 msgid "13902002"
 msgstr "Obergrenze einer gegebenen Formation"
@@ -1419,22 +1410,22 @@ msgid "14002003"
 msgstr "artesisch"
 
 msgid "14004001"
-msgstr "mittlere HÃ¶he des Niedrigwasserstands"
+msgstr "mittlere Höhe des Niedrigwasserstands"
 
 msgid "14004002"
-msgstr "mittlere HÃ¶he des Hochwasserstands"
+msgstr "mittlere Höhe des Hochwasserstands"
 
 msgid "14101001"
 msgstr "Grundwasserfliessrichtung"
 
 msgid "14101002"
-msgstr "mittlere HÃ¶he des Grundwasserspiegels"
+msgstr "mittlere Höhe des Grundwasserspiegels"
 
 msgid "14201001"
 msgstr "Neigungsrichtung"
 
 msgid "14202001"
-msgstr "FelsoberflÃ¤che"
+msgstr "Felsoberfläche"
 
 msgid "14202002"
 msgstr "Obergrenze einer gegebenen Formation"
@@ -1473,25 +1464,25 @@ msgid "14313008"
 msgstr "dolomitische Matrix"
 
 msgid "14313009"
-msgstr "organische ImprÃ¤gnierung (Asphalt)"
+msgstr "organische Imprägnierung (Asphalt)"
 
 msgid "14313010"
-msgstr "mineralische ImprÃ¤gnierung"
+msgstr "mineralische Imprägnierung"
 
 msgid "14317001"
-msgstr "gleichkÃ¶rnig"
+msgstr "gleichkörnig"
 
 msgid "14317002"
-msgstr "ungleichkÃ¶rnig"
+msgstr "ungleichkörnig"
 
 msgid "14317003"
 msgstr "porphyrisch"
 
 msgid "14318001"
-msgstr "grobkÃ¶rnig"
+msgstr "grobkörnig"
 
 msgid "14318002"
-msgstr "feinkÃ¶rnig"
+msgstr "feinkörnig"
 
 msgid "14318003"
 msgstr "aphanitisch"
@@ -1503,10 +1494,10 @@ msgid "14401001"
 msgstr "erratischer Block"
 
 msgid "14401002"
-msgstr "Schwarm erratischer BlÃ¶cke"
+msgstr "Schwarm erratischer Blöcke"
 
 msgid "14401003"
-msgstr "anthropogene Ansammlung von erratischen BlÃ¶cken"
+msgstr "anthropogene Ansammlung von erratischen Blöcken"
 
 msgid "14401004"
 msgstr "Wanderblock"
@@ -1521,13 +1512,13 @@ msgid "14401007"
 msgstr "Lesesteinhaufen"
 
 msgid "14401008"
-msgstr "VerwitterungsrÃ¼ckstÃ¤nde (GerÃ¶lle und/oder Konkretionen)"
+msgstr "Verwitterungsrückstände (Gerölle und/oder Konkretionen)"
 
 msgid "14402001"
 msgstr "versetzt"
 
 msgid "14402002"
-msgstr "zerstÃ¶rt"
+msgstr "zerstört"
 
 msgid "14402003"
 msgstr "in Situ"
@@ -1560,25 +1551,25 @@ msgid "14508005"
 msgstr "kiesig"
 
 msgid "14508006"
-msgstr "gerÃ¶llreich"
+msgstr "geröllreich"
 
 msgid "14508007"
 msgstr "torfig"
 
 msgid "14509001"
-msgstr "mit LÃ¶ss"
+msgstr "mit Löss"
 
 msgid "14509002"
-msgstr "mit LÃ¶sslehm"
+msgstr "mit Lösslehm"
 
 msgid "14509003"
 msgstr "mit Seekreide"
 
 msgid "14509004"
-msgstr "mit BlÃ¶cken"
+msgstr "mit Blöcken"
 
 msgid "14509005"
-msgstr "mit alpinen GerÃ¶llen"
+msgstr "mit alpinen Geröllen"
 
 msgid "14509006"
 msgstr "mit Block- und Geschiebestreu"
@@ -1596,10 +1587,10 @@ msgid "14509010"
 msgstr "mit Torf"
 
 msgid "14509011"
-msgstr "mit jurassischen GerÃ¶llen"
+msgstr "mit jurassischen Geröllen"
 
 msgid "14509012"
-msgstr "mit GerÃ¶llen aus Vogesen / Schwarzwald"
+msgstr "mit Geröllen aus Vogesen / Schwarzwald"
 
 msgid "14510001"
 msgstr "strukturlos"
@@ -1608,16 +1599,16 @@ msgid "14510002"
 msgstr "geschichtet"
 
 msgid "14510003"
-msgstr "schrÃ¤g-/kreuzgeschichtet"
+msgstr "schräg-/kreuzgeschichtet"
 
 msgid "14510004"
-msgstr "grossmassstÃ¤bliche SchrÃ¤gschichtung (z.B. Deltaschichtung)"
+msgstr "grossmassstäbliche Schrägschichtung (z.B. Deltaschichtung)"
 
 msgid "14510005"
-msgstr "glaziale ÃœberprÃ¤gung (Glazitektonik)"
+msgstr "glaziale Überprägung (Glazitektonik)"
 
 msgid "14510006"
-msgstr "periglazial gestÃ¶rte Schichtung (Diapir, Eiskeil, etc.)"
+msgstr "periglazial gestörte Schichtung (Diapir, Eiskeil, etc.)"
 
 msgid "14510007"
 msgstr "laminiert"
@@ -1635,7 +1626,7 @@ msgid "14510011"
 msgstr "bioturbiert"
 
 msgid "14510012"
-msgstr "pedogen Ã¼berprÃ¤gt"
+msgstr "pedogen überprägt"
 
 msgid "14511001"
 msgstr "fossil"
@@ -1647,7 +1638,7 @@ msgid "14511003"
 msgstr "verwittert"
 
 msgid "14511004"
-msgstr "verfestigt (durch Ãœberlast), konsolidiert"
+msgstr "verfestigt (durch Überlast), konsolidiert"
 
 msgid "14511005"
 msgstr "verkittet (zementiert)"
@@ -1668,16 +1659,16 @@ msgid "14511010"
 msgstr "drainiert"
 
 msgid "14511011"
-msgstr "kÃ¼nstlich bewÃ¤ssert (WÃ¤ssermatten)"
+msgstr "künstlich bewässert (Wässermatten)"
 
 msgid "14512001"
-msgstr "Kegel / FÃ¤cher"
+msgstr "Kegel / Fächer"
 
 msgid "14512002"
 msgstr "Schleier"
 
 msgid "14512003"
-msgstr "DÃ¼ne"
+msgstr "Düne"
 
 msgid "14512004"
 msgstr "Wall"
@@ -1701,7 +1692,7 @@ msgid "14513002"
 msgstr "grosse Tal- und Vorlandgletscher"
 
 msgid "14513003"
-msgstr "BÃ¼ndner Gletscher"
+msgstr "Bündner Gletscher"
 
 msgid "14513004"
 msgstr "Bodensee-Rheingletscher"
@@ -1731,25 +1722,25 @@ msgid "14513012"
 msgstr "Engelberger Gletscher"
 
 msgid "14513013"
-msgstr "BrÃ¼nig-Aaregletscher"
+msgstr "Brünig-Aaregletscher"
 
 msgid "14515001"
-msgstr "geringmÃ¤chtige Lockergesteinsbedeckung, undifferenziert"
+msgstr "geringmächtige Lockergesteinsbedeckung, undifferenziert"
 
 msgid "14515002"
-msgstr "geringmÃ¤chtige MorÃ¤nenbedeckung"
+msgstr "geringmächtige Moränenbedeckung"
 
 msgid "14515003"
-msgstr "geringmÃ¤chtige Schotterbedeckung"
+msgstr "geringmächtige Schotterbedeckung"
 
 msgid "14515004"
-msgstr "geringmÃ¤chtige Schwemmlehmbedeckung"
+msgstr "geringmächtige Schwemmlehmbedeckung"
 
 msgid "14515005"
-msgstr "geringmÃ¤chtige LÃ¶ss- oder LÃ¶sslehmbedeckung"
+msgstr "geringmächtige Löss- oder Lösslehmbedeckung"
 
 msgid "14515006"
-msgstr "tiefgrÃ¼ndige Verwitterungsdecke"
+msgstr "tiefgründige Verwitterungsdecke"
 
 msgid "14517001"
 msgstr "Lockergestein"
@@ -1758,19 +1749,19 @@ msgid "14601001"
 msgstr "punktuell beobachtete tektonische Brekzie"
 
 msgid "14601002"
-msgstr "ausgeprÃ¤gte KlÃ¼ftung"
+msgstr "ausgeprägte Klüftung"
 
 msgid "14601003"
 msgstr "tektonische Diskordanz"
 
 msgid "14601004"
-msgstr "Orientierung der FaltenachsenflÃ¤che"
+msgstr "Orientierung der Faltenachsenfläche"
 
 msgid "14601005"
-msgstr "FÃ¤ltelung"
+msgstr "Fältelung"
 
 msgid "14601006"
-msgstr "Darstellung der Spur einer AchsenflÃ¤che"
+msgstr "Darstellung der Spur einer Achsenfläche"
 
 msgid "14601007"
 msgstr "Chevron-Falte, Kink Fold"
@@ -1809,7 +1800,7 @@ msgid "14802004"
 msgstr "pseudotachylitisch"
 
 msgid "14803001"
-msgstr "an eine Ãœberschiebung gebunden"
+msgstr "an eine Überschiebung gebunden"
 
 msgid "14803002"
 msgstr "an eine Abschiebung gebunden"
@@ -1824,7 +1815,7 @@ msgid "14803005"
 msgstr "an einen bestehenden tektonischen Kontakt gebunden"
 
 msgid "14901001"
-msgstr "Ãœberschiebung"
+msgstr "Überschiebung"
 
 msgid "14901002"
 msgstr "Abschiebung"
@@ -1839,13 +1830,13 @@ msgid "14901006"
 msgstr "Blattverschiebung"
 
 msgid "14901007"
-msgstr "Komplexe StÃ¶rung"
+msgstr "Komplexe Störung"
 
 msgid "14901008"
-msgstr "StÃ¶rung i. Allg."
+msgstr "Störung i. Allg."
 
 msgid "14902001"
-msgstr "schrÃ¤gverschiebend (oblique slip)"
+msgstr "schrägverschiebend (oblique slip)"
 
 msgid "14902002"
 msgstr "parallel zur Streichrichtung (Horizontalverschiebung)"
@@ -1881,7 +1872,7 @@ msgid "14908001"
 msgstr "vor der Platznahme der Decken"
 
 msgid "14908002"
-msgstr "wÃ¤hrend der Platznahme der Decken"
+msgstr "während der Platznahme der Decken"
 
 msgid "14908003"
 msgstr "nach der Platznahme der Decken"
@@ -1893,64 +1884,64 @@ msgid "14910002"
 msgstr "Schuppen trennend"
 
 msgid "14911002"
-msgstr "TeilstÃ¶rungssystem"
+msgstr "Teilstörungssystem"
 
 msgid "14911003"
-msgstr "GrossstÃ¶rungssystem"
+msgstr "Grossstörungssystem"
 
 msgid "15001001"
 msgstr "Phanerozoikum"
 
 msgid "15001002"
-msgstr "KÃ¤nozoikum"
+msgstr "Känozoikum"
 
 msgid "15001003"
-msgstr "QuartÃ¤r"
+msgstr "Quartär"
 
 msgid "15001004"
-msgstr "HolozÃ¤n"
+msgstr "Holozän"
 
 msgid "15001005"
-msgstr "PleistozÃ¤n"
+msgstr "Pleistozän"
 
 msgid "15001006"
-msgstr "SpÃ¤tes PleistozÃ¤n"
+msgstr "Spätes Pleistozän"
 
 msgid "15001007"
-msgstr "Mittleres PleistozÃ¤n"
+msgstr "Mittleres Pleistozän"
 
 msgid "15001008"
 msgstr "Ionien"
 
 msgid "15001009"
-msgstr "FrÃ¼hes PleistozÃ¤n"
+msgstr "Frühes Pleistozän"
 
 msgid "15001010"
 msgstr "Calabrien"
 
 msgid "15001011"
-msgstr "GÃ©lasien"
+msgstr "Gélasien"
 
 msgid "15001012"
-msgstr "TertiÃ¤r"
+msgstr "Tertiär"
 
 msgid "15001013"
 msgstr "Neogen"
 
 msgid "15001014"
-msgstr "PliozÃ¤n"
+msgstr "Pliozän"
 
 msgid "15001015"
 msgstr "Plaisancien"
 
 msgid "15001016"
-msgstr "ZanclÃ©en"
+msgstr "Zancléen"
 
 msgid "15001017"
-msgstr "MiozÃ¤n"
+msgstr "Miozän"
 
 msgid "15001018"
-msgstr "SpÃ¤tes MiozÃ¤n"
+msgstr "Spätes Miozän"
 
 msgid "15001019"
 msgstr "Messinien"
@@ -1959,7 +1950,7 @@ msgid "15001020"
 msgstr "Tortonien"
 
 msgid "15001021"
-msgstr "Mittleres MiozÃ¤n"
+msgstr "Mittleres Miozän"
 
 msgid "15001022"
 msgstr "Serravallien"
@@ -1968,76 +1959,76 @@ msgid "15001023"
 msgstr "Langhien"
 
 msgid "15001024"
-msgstr "FrÃ¼hes MiozÃ¤n"
+msgstr "Frühes Miozän"
 
 msgid "15001025"
 msgstr "Burdigalien"
 
 msgid "15001026"
-msgstr "SpÃ¤tes Burdigalien"
+msgstr "Spätes Burdigalien"
 
 msgid "15001027"
-msgstr "FrÃ¼hes Burdigalien"
+msgstr "Frühes Burdigalien"
 
 msgid "15001028"
 msgstr "Aquitanien"
 
 msgid "15001029"
-msgstr "PalÃ¤ogen"
+msgstr "Paläogen"
 
 msgid "15001030"
-msgstr "OligozÃ¤n"
+msgstr "Oligozän"
 
 msgid "15001031"
 msgstr "Chattien"
 
 msgid "15001032"
-msgstr "SpÃ¤tes Chattien"
+msgstr "Spätes Chattien"
 
 msgid "15001033"
-msgstr "FrÃ¼hes Chattien"
+msgstr "Frühes Chattien"
 
 msgid "15001034"
-msgstr "RupÃ©lien"
+msgstr "Rupélien"
 
 msgid "15001035"
-msgstr "EozÃ¤n"
+msgstr "Eozän"
 
 msgid "15001036"
-msgstr "SpÃ¤tes EozÃ¤n"
+msgstr "Spätes Eozän"
 
 msgid "15001037"
 msgstr "Priabonien"
 
 msgid "15001038"
-msgstr "SpÃ¤tes Priabonien / Latdorfien"
+msgstr "Spätes Priabonien / Latdorfien"
 
 msgid "15001039"
-msgstr "FrÃ¼hes Priabonien"
+msgstr "Frühes Priabonien"
 
 msgid "15001040"
-msgstr "Mittleres EozÃ¤n"
+msgstr "Mittleres Eozän"
 
 msgid "15001041"
 msgstr "Bartonien"
 
 msgid "15001042"
-msgstr "LutÃ©tien"
+msgstr "Lutétien"
 
 msgid "15001043"
-msgstr "FrÃ¼hes EozÃ¤n"
+msgstr "Frühes Eozän"
 
 msgid "15001044"
-msgstr "YprÃ©sien"
+msgstr "Yprésien"
 
 msgid "15001045"
-msgstr "PaleozÃ¤n"
+msgstr "Paleozän"
 
 msgid "15001046"
-msgstr "ThanÃ©tien"
+msgstr "Thanétien"
 
 msgid "15001047"
-msgstr "SÃ©landien"
+msgstr "Sélandien"
 
 msgid "15001048"
 msgstr "Danien"
@@ -2049,7 +2040,7 @@ msgid "15001050"
 msgstr "Kreide"
 
 msgid "15001051"
-msgstr "SpÃ¤te Kreide"
+msgstr "Späte Kreide"
 
 msgid "15001052"
 msgstr "Maastrichtien"
@@ -2067,10 +2058,10 @@ msgid "15001056"
 msgstr "Turonien"
 
 msgid "15001057"
-msgstr "CÃ©nomanien"
+msgstr "Cénomanien"
 
 msgid "15001058"
-msgstr "FrÃ¼he Kreide"
+msgstr "Frühe Kreide"
 
 msgid "15001059"
 msgstr "Albien"
@@ -2079,7 +2070,7 @@ msgid "15001060"
 msgstr "Aptien"
 
 msgid "15001061"
-msgstr "BarrÃ©mien"
+msgstr "Barrémien"
 
 msgid "15001062"
 msgstr "Hauterivien"
@@ -2094,13 +2085,13 @@ msgid "15001065"
 msgstr "Jura"
 
 msgid "15001066"
-msgstr "SpÃ¤ter Jura"
+msgstr "Später Jura"
 
 msgid "15001067"
 msgstr "Tithonien"
 
 msgid "15001068"
-msgstr "KimmÃ©ridgien"
+msgstr "Kimméridgien"
 
 msgid "15001069"
 msgstr "Oxfordien"
@@ -2118,10 +2109,10 @@ msgid "15001073"
 msgstr "Bajocien"
 
 msgid "15001074"
-msgstr "AalÃ©nien"
+msgstr "Aalénien"
 
 msgid "15001075"
-msgstr "FrÃ¼her Jura"
+msgstr "Früher Jura"
 
 msgid "15001076"
 msgstr "Toarcien"
@@ -2130,7 +2121,7 @@ msgid "15001077"
 msgstr "Pliensbachien"
 
 msgid "15001078"
-msgstr "SinÃ©murien"
+msgstr "Sinémurien"
 
 msgid "15001079"
 msgstr "Hettangien"
@@ -2139,10 +2130,10 @@ msgid "15001080"
 msgstr "Trias"
 
 msgid "15001081"
-msgstr "SpÃ¤te Trias"
+msgstr "Späte Trias"
 
 msgid "15001082"
-msgstr "RhÃ¤t"
+msgstr "Rhät"
 
 msgid "15001083"
 msgstr "Norien"
@@ -2160,25 +2151,25 @@ msgid "15001087"
 msgstr "Anisien"
 
 msgid "15001088"
-msgstr "FrÃ¼he Trias"
+msgstr "Frühe Trias"
 
 msgid "15001089"
-msgstr "OlÃ©nÃ©kien"
+msgstr "Olénékien"
 
 msgid "15001090"
 msgstr "Indusien"
 
 msgid "15001091"
-msgstr "PalÃ¤ozoikum"
+msgstr "Paläozoikum"
 
 msgid "15001092"
-msgstr "SpÃ¤tes PalÃ¤ozoikum"
+msgstr "Spätes Paläozoikum"
 
 msgid "15001093"
 msgstr "Perm"
 
 msgid "15001094"
-msgstr "SpÃ¤tes Perm"
+msgstr "Spätes Perm"
 
 msgid "15001095"
 msgstr "Lopingien"
@@ -2199,7 +2190,7 @@ msgid "15001102"
 msgstr "Capitanien"
 
 msgid "15001104"
-msgstr "FrÃ¼hes Perm"
+msgstr "Frühes Perm"
 
 msgid "15001106"
 msgstr "Wordien"
@@ -2229,40 +2220,40 @@ msgid "15001120"
 msgstr "Pennsylvanien"
 
 msgid "15001121"
-msgstr "SpÃ¤tes Pennsylvanien"
+msgstr "Spätes Pennsylvanien"
 
 msgid "15001122"
 msgstr "Mittleres Pennsylvanien"
 
 msgid "15001123"
-msgstr "FrÃ¼hes Pennsylvanien"
+msgstr "Frühes Pennsylvanien"
 
 msgid "15001124"
 msgstr "Mississippien"
 
 msgid "15001125"
-msgstr "SpÃ¤tes Mississippien"
+msgstr "Spätes Mississippien"
 
 msgid "15001126"
 msgstr "Mittleres Mississippien"
 
 msgid "15001127"
-msgstr "FrÃ¼hes Mississippien"
+msgstr "Frühes Mississippien"
 
 msgid "15001128"
 msgstr "Devon"
 
 msgid "15001129"
-msgstr "FrÃ¼hes Devon"
+msgstr "Frühes Devon"
 
 msgid "15001130"
 msgstr "Mittleres Devon"
 
 msgid "15001131"
-msgstr "SpÃ¤tes Devon"
+msgstr "Spätes Devon"
 
 msgid "15001132"
-msgstr "FrÃ¼hes PalÃ¤ozoikum"
+msgstr "Frühes Paläozoikum"
 
 msgid "15001133"
 msgstr "Silur"
@@ -2277,7 +2268,7 @@ msgid "15001136"
 msgstr "Proterozoikum"
 
 msgid "15001137"
-msgstr "GzhÃ©lien"
+msgstr "Gzhélien"
 
 msgid "15001138"
 msgstr "Kasimovien"
@@ -2292,7 +2283,7 @@ msgid "15001141"
 msgstr "Serpukhovien"
 
 msgid "15001142"
-msgstr "VisÃ©en"
+msgstr "Viséen"
 
 msgid "15001143"
 msgstr "Tournaisien"
@@ -2310,13 +2301,13 @@ msgid "15001147"
 msgstr "Llandoveryien"
 
 msgid "15001148"
-msgstr "SpÃ¤tes Ordovizium"
+msgstr "Spätes Ordovizium"
 
 msgid "15001149"
 msgstr "Mittleres Ordovizium"
 
 msgid "15001150"
-msgstr "FrÃ¼hes Ordovizium"
+msgstr "Frühes Ordovizium"
 
 msgid "15101001"
 msgstr "Lockergestein"
@@ -2364,7 +2355,7 @@ msgid "15101015"
 msgstr "Blockgletscher"
 
 msgid "15101016"
-msgstr "zerrÃ¼ttete Sackungsmasse"
+msgstr "zerrüttete Sackungsmasse"
 
 msgid "15101017"
 msgstr "Rutschmasse"
@@ -2376,19 +2367,19 @@ msgid "15101019"
 msgstr "glazigenes Sediment, undifferenziert"
 
 msgid "15101020"
-msgstr "MorÃ¤ne (Till)"
+msgstr "Moräne (Till)"
 
 msgid "15101021"
-msgstr "MorÃ¤ne (Till), undifferenziert"
+msgstr "Moräne (Till), undifferenziert"
 
 msgid "15101022"
-msgstr "GrundmorÃ¤ne (Basal Lodgement Till)"
+msgstr "Grundmoräne (Basal Lodgement Till)"
 
 msgid "15101023"
-msgstr "AblationsmorÃ¤ne (Meltout Till)"
+msgstr "Ablationsmoräne (Meltout Till)"
 
 msgid "15101024"
-msgstr "MorÃ¤ne auf Gletscher oder Toteis (Glacier or Dead Ice covered by Till)"
+msgstr "Moräne auf Gletscher oder Toteis (Glacier or Dead Ice covered by Till)"
 
 msgid "15101025"
 msgstr "fluviatiles Sediment"
@@ -2415,7 +2406,7 @@ msgid "15101032"
 msgstr "Vorstossschotter"
 
 msgid "15101033"
-msgstr "RÃ¼ckzugsschotter"
+msgstr "Rückzugsschotter"
 
 msgid "15101034"
 msgstr "Stauschotter"
@@ -2442,7 +2433,7 @@ msgid "15101041"
 msgstr "Bachschutt"
 
 msgid "15101042"
-msgstr "Ãœberschwemmungssediment"
+msgstr "Überschwemmungssediment"
 
 msgid "15101043"
 msgstr "lakustrisches Sediment"
@@ -2460,7 +2451,7 @@ msgid "15101047"
 msgstr "glazilakustrisches Deltasediment"
 
 msgid "15101048"
-msgstr "subaquatisch abgelagerte MorÃ¤ne (Waterlaid Till)"
+msgstr "subaquatisch abgelagerte Moräne (Waterlaid Till)"
 
 msgid "15101049"
 msgstr "detritische Verlandungsbildung"
@@ -2481,7 +2472,7 @@ msgid "15101054"
 msgstr "Lignit (palustrisches Sediment)"
 
 msgid "15101055"
-msgstr "RÃ¼ckstausediment"
+msgstr "Rückstausediment"
 
 msgid "15101056"
 msgstr "Strandablagerungen"
@@ -2496,16 +2487,16 @@ msgid "15101059"
 msgstr "Seekreide"
 
 msgid "15101060"
-msgstr "Ã¤olisches Sediment"
+msgstr "äolisches Sediment"
 
 msgid "15101061"
-msgstr "Ã¤olisches Sediment, undifferenziert"
+msgstr "äolisches Sediment, undifferenziert"
 
 msgid "15101062"
-msgstr "Ã¤olischer Sand, Flugsand"
+msgstr "äolischer Sand, Flugsand"
 
 msgid "15101063"
-msgstr "LÃ¶ss, LÃ¶sslehm"
+msgstr "Löss, Lösslehm"
 
 msgid "15101065"
 msgstr "vulkanische Asche"
@@ -2517,16 +2508,16 @@ msgid "15101067"
 msgstr "anthropogene Elemente, undifferenziert"
 
 msgid "15101068"
-msgstr "kÃ¼nstliche Ablagerung"
+msgstr "künstliche Ablagerung"
 
 msgid "15101069"
-msgstr "kÃ¼nstliche Ablagerung, undifferenziert"
+msgstr "künstliche Ablagerung, undifferenziert"
 
 msgid "15101070"
-msgstr "AufschÃ¼ttung, Damm"
+msgstr "Aufschüttung, Damm"
 
 msgid "15101071"
-msgstr "AuffÃ¼llung"
+msgstr "Auffüllung"
 
 msgid "15101072"
 msgstr "Deponie"
@@ -2535,19 +2526,19 @@ msgid "15101073"
 msgstr "Halde"
 
 msgid "15101074"
-msgstr "WÃ¤ssermatte"
+msgstr "Wässermatte"
 
 msgid "15101075"
-msgstr "dÃ¼nne Lockermaterialbedeckung"
+msgstr "dünne Lockermaterialbedeckung"
 
 msgid "15101076"
-msgstr "geringmÃ¤chtige Lockergesteinsbedeckung"
+msgstr "geringmächtige Lockergesteinsbedeckung"
 
 msgid "15101077"
-msgstr "geringmÃ¤chtige Lockergesteinsbedeckung"
+msgstr "geringmächtige Lockergesteinsbedeckung"
 
 msgid "15101078"
-msgstr "tiefgrÃ¼ndige Verwitterungsdecke"
+msgstr "tiefgründige Verwitterungsdecke"
 
 msgid "15101079"
 msgstr "Gyttja"
@@ -2571,10 +2562,10 @@ msgid "15101085"
 msgstr "Tsunamiablagerung"
 
 msgid "15101086"
-msgstr "EntwÃ¤sserungssediment"
+msgstr "Entwässerungssediment"
 
 msgid "15101087"
-msgstr "SedimentÃ¤rer Gang (clastic dike)"
+msgstr "Sedimentärer Gang (clastic dike)"
 
 msgid "15102001"
 msgstr "Sedimentgestein"
@@ -2586,10 +2577,10 @@ msgid "15102003"
 msgstr "klastisches Sedimentgestein, undifferenziert"
 
 msgid "15102004"
-msgstr "Konglomerat / Brekzie (Psephit: KorngrÃ¶sse: Kies, Steine und BlÃ¶cke)"
+msgstr "Konglomerat / Brekzie (Psephit: Korngrösse: Kies, Steine und Blöcke)"
 
 msgid "15102005"
-msgstr "Konglomerat und Brekzie, undifferenziert (Psephit, KorngrÃ¶sse: Kies, Steine und BlÃ¶cke)"
+msgstr "Konglomerat und Brekzie, undifferenziert (Psephit, Korngrösse: Kies, Steine und Blöcke)"
 
 msgid "15102006"
 msgstr "Brekzie"
@@ -2598,10 +2589,10 @@ msgid "15102007"
 msgstr "Konglomerat"
 
 msgid "15102008"
-msgstr "Sandstein (Psammit: SandkorngrÃ¶sse)"
+msgstr "Sandstein (Psammit: Sandkorngrösse)"
 
 msgid "15102009"
-msgstr "Sandstein, undifferenziert (Psammit: SandkorngrÃ¶sse)"
+msgstr "Sandstein, undifferenziert (Psammit: Sandkorngrösse)"
 
 msgid "15102010"
 msgstr "Quarzsandstein"
@@ -2628,7 +2619,7 @@ msgid "15102017"
 msgstr "Flyschsandstein, Grauwacke"
 
 msgid "15102018"
-msgstr "GerÃ¶ll fÃ¼hrender Sandstein"
+msgstr "Geröll führender Sandstein"
 
 msgid "15102019"
 msgstr "Glimmersandstein"
@@ -2643,7 +2634,7 @@ msgid "15102022"
 msgstr "Muschelsandstein"
 
 msgid "15102023"
-msgstr "Silt- / Tonstein, Mergel (Pelit: Silt- u. TonkorngrÃ¶sse)"
+msgstr "Silt- / Tonstein, Mergel (Pelit: Silt- u. Tonkorngrösse)"
 
 msgid "15102024"
 msgstr "Pelit, undifferenziert"
@@ -2715,7 +2706,7 @@ msgid "15102046"
 msgstr "detritischer Kalk"
 
 msgid "15102047"
-msgstr "SÃ¼sswasserkalk"
+msgstr "Süsswasserkalk"
 
 msgid "15102048"
 msgstr "Dolomitstein"
@@ -2811,13 +2802,13 @@ msgid "15102078"
 msgstr "Travertin (Kalksinter, Sedimentgestein)"
 
 msgid "15102079"
-msgstr "Residualgestein / pedogen Ã¼berprÃ¤gtes Gestein"
+msgstr "Residualgestein / pedogen überprägtes Gestein"
 
 msgid "15102080"
-msgstr "Residualgestein / pedogen Ã¼berprÃ¤gtes Gestein, undifferenziert"
+msgstr "Residualgestein / pedogen überprägtes Gestein, undifferenziert"
 
 msgid "15102081"
-msgstr "eisenreiches Gestein, pedogen Ã¼berprÃ¤gtes Gestein"
+msgstr "eisenreiches Gestein, pedogen überprägtes Gestein"
 
 msgid "15102082"
 msgstr "Bohnerz"
@@ -2883,7 +2874,7 @@ msgid "15102107"
 msgstr "Mergelkalk"
 
 msgid "15102108"
-msgstr "eisenschÃ¼ssiger Kalk"
+msgstr "eisenschüssiger Kalk"
 
 msgid "15102109"
 msgstr "Dolomitbrekzie"
@@ -3102,13 +3093,13 @@ msgid "15104001"
 msgstr "Metamorphit"
 
 msgid "15104002"
-msgstr "Gestein der StÃ¶rungszone"
+msgstr "Gestein der Störungszone"
 
 msgid "15104003"
-msgstr "Gestein der StÃ¶rungszone, undifferenziert"
+msgstr "Gestein der Störungszone, undifferenziert"
 
 msgid "15104004"
-msgstr "Kakirit (stark zerrÃ¼ttet und zerschert, Â± kohÃ¤sionslos)"
+msgstr "Kakirit (stark zerrüttet und zerschert, ± kohäsionslos)"
 
 msgid "15104005"
 msgstr "Kakirit, undifferenziert"
@@ -3120,10 +3111,10 @@ msgid "15104007"
 msgstr "Kluftletten"
 
 msgid "15104008"
-msgstr "tektonische Brekzie (kohÃ¤sionslos)"
+msgstr "tektonische Brekzie (kohäsionslos)"
 
 msgid "15104009"
-msgstr "Kataklasit (mit grÃ¶sseren BruchstÃ¼cken des Nebengesteins, vorwiegend sprÃ¶d deformiert)"
+msgstr "Kataklasit (mit grösseren Bruchstücken des Nebengesteins, vorwiegend spröd deformiert)"
 
 msgid "15104010"
 msgstr "Kataklasit, undifferenziert"
@@ -3135,7 +3126,7 @@ msgid "15104012"
 msgstr "tektonische Dolomitbrekzie"
 
 msgid "15104013"
-msgstr "tektonische Brekzie (mit KohÃ¤sion)"
+msgstr "tektonische Brekzie (mit Kohäsion)"
 
 msgid "15104014"
 msgstr "Protokataklasit"
@@ -3147,7 +3138,7 @@ msgid "15104016"
 msgstr "Ultrakataklasit"
 
 msgid "15104017"
-msgstr "Mylonit (dynamisch rekristallisiert, gebÃ¤ndert, duktil deformiert)"
+msgstr "Mylonit (dynamisch rekristallisiert, gebändert, duktil deformiert)"
 
 msgid "15104018"
 msgstr "Mylonit, undifferenziert"
@@ -3168,7 +3159,7 @@ msgid "15104023"
 msgstr "Phyllonit"
 
 msgid "15104024"
-msgstr "Pseudotachylit (durch ReibungswÃ¤rme aufgeschmolzen)"
+msgstr "Pseudotachylit (durch Reibungswärme aufgeschmolzen)"
 
 msgid "15104025"
 msgstr "Pseudotachylit"
@@ -3180,7 +3171,7 @@ msgid "15104027"
 msgstr "Gestein der Regional- und Kontaktmetamorphose, undifferenziert"
 
 msgid "15104028"
-msgstr "Phyllit (sehr dÃ¼nnschiefrig-blÃ¤ttrig)"
+msgstr "Phyllit (sehr dünnschiefrig-blättrig)"
 
 msgid "15104029"
 msgstr "Phyllit"
@@ -3225,7 +3216,7 @@ msgid "15104042"
 msgstr "Augengneis"
 
 msgid "15104043"
-msgstr "BÃ¤ndergneis"
+msgstr "Bändergneis"
 
 msgid "15104044"
 msgstr "Adergneis"
@@ -3264,7 +3255,7 @@ msgid "15104055"
 msgstr "Marmor (Fels)"
 
 msgid "15104056"
-msgstr "Karbonat- und Silikat fÃ¼hrendes Gestein"
+msgstr "Karbonat- und Silikat führendes Gestein"
 
 msgid "15104057"
 msgstr "silikatreicher Marmor"
@@ -3279,7 +3270,7 @@ msgid "15104060"
 msgstr "Amphibolit"
 
 msgid "15104061"
-msgstr "BÃ¤nderamphibolit"
+msgstr "Bänderamphibolit"
 
 msgid "15104062"
 msgstr "Schollenamphibolit"
@@ -3372,7 +3363,7 @@ msgid "15104092"
 msgstr "Metamorphit (Protolith erkennbar)"
 
 msgid "15104093"
-msgstr "Metamorphit (sedimentÃ¤rer Protolith erkennbar)"
+msgstr "Metamorphit (sedimentärer Protolith erkennbar)"
 
 msgid "15104095"
 msgstr "Metamorphit (magmatischer Protolith erkennbar)"
@@ -3384,7 +3375,7 @@ msgid "15104097"
 msgstr "Granat-Glimmerschiefer"
 
 msgid "15104098"
-msgstr "GrÃ¼nschiefer"
+msgstr "Grünschiefer"
 
 msgid "15104099"
 msgstr "Ophikalzit"
@@ -3405,7 +3396,7 @@ msgid "15104205"
 msgstr "Metasandstein"
 
 msgid "15104206"
-msgstr "Quarzit (sedimentÃ¤rer Protolith)"
+msgstr "Quarzit (sedimentärer Protolith)"
 
 msgid "15104207"
 msgstr "Metapsammit"
@@ -3417,7 +3408,7 @@ msgid "15104209"
 msgstr "Metagrauwacke"
 
 msgid "15104210"
-msgstr "GerÃ¶ll fÃ¼hrender Metasandstein"
+msgstr "Geröll führender Metasandstein"
 
 msgid "15104211"
 msgstr "Metapelit"
@@ -3426,13 +3417,13 @@ msgid "15104212"
 msgstr "Metasiltstein"
 
 msgid "15104213"
-msgstr "Tonschiefer (sedimentÃ¤rer Protolith)"
+msgstr "Tonschiefer (sedimentärer Protolith)"
 
 msgid "15104214"
 msgstr "Metamergel"
 
 msgid "15104215"
-msgstr "Marmor (sedimentÃ¤rer Protolith)"
+msgstr "Marmor (sedimentärer Protolith)"
 
 msgid "15104216"
 msgstr "dolomitischer Marmor"
@@ -3447,7 +3438,7 @@ msgid "15104401"
 msgstr "Metamagmatit"
 
 msgid "15104402"
-msgstr "metamorph Ã¼berprÃ¤gtes Intrusivgestein"
+msgstr "metamorph überprägtes Intrusivgestein"
 
 msgid "15104403"
 msgstr "Metaplutonit"
@@ -3570,7 +3561,7 @@ msgid "15104443"
 msgstr "Metaphonolit"
 
 msgid "15104444"
-msgstr "metamorph Ã¼berprÃ¤gtes pyroklastisches Gestein"
+msgstr "metamorph überprägtes pyroklastisches Gestein"
 
 msgid "15104445"
 msgstr "Metaignimbrit"
@@ -3603,7 +3594,7 @@ msgid "15200005"
 msgstr "St-Ursanne-Formation"
 
 msgid "15200006"
-msgstr "BÃ¤rschwil-Formation"
+msgstr "Bärschwil-Formation"
 
 msgid "15200007"
 msgstr "Ifenthal-Formation"
@@ -3645,7 +3636,7 @@ msgid "15200019"
 msgstr "Courtedoux-Member"
 
 msgid "15200020"
-msgstr "BannÃ©-Member"
+msgstr "Banné-Member"
 
 msgid "15200021"
 msgstr "Vabenau-Member"
@@ -3657,7 +3648,7 @@ msgid "15200023"
 msgstr "Etiollets-Formation"
 
 msgid "15200024"
-msgstr "Complexe rÃ©cifal"
+msgstr "Complexe récifal"
 
 msgid "15200025"
 msgstr "Couvaloup-Member"
@@ -3678,7 +3669,7 @@ msgid "15200030"
 msgstr "Hauptmumienbank-Member"
 
 msgid "15200031"
-msgstr "RÃ¶schenz-Member"
+msgstr "Röschenz-Member"
 
 msgid "15200032"
 msgstr "Vorbourg-Member"
@@ -3717,19 +3708,19 @@ msgid "15200044"
 msgstr "Herznach-Member"
 
 msgid "15200045"
-msgstr "SchellenbrÃ¼cke-Bank"
+msgstr "Schellenbrücke-Bank"
 
 msgid "15200046"
 msgstr "Bollement-Member"
 
 msgid "15200047"
-msgstr "Ã„ngistein-Member"
+msgstr "Ängistein-Member"
 
 msgid "15200048"
 msgstr "Unter-Erli-Bank"
 
 msgid "15200049"
-msgstr "BÃ¶zen-Member"
+msgstr "Bözen-Member"
 
 msgid "15200050"
 msgstr "Saulcy-Member"
@@ -3741,7 +3732,7 @@ msgid "15200052"
 msgstr "Anwil-Bank"
 
 msgid "15200053"
-msgstr "ChÃ¢tillon-Member"
+msgstr "Châtillon-Member"
 
 msgid "15200054"
 msgstr "St-Brais-Member"
@@ -3777,7 +3768,7 @@ msgid "15200064"
 msgstr "Rothenfluh-Member"
 
 msgid "15200065"
-msgstr "BrÃ¼ggli-Member"
+msgstr "Brüggli-Member"
 
 msgid "15200066"
 msgstr "Humphriesi-Schichten"
@@ -3816,7 +3807,7 @@ msgid "15200077"
 msgstr "Rickenbach-Member"
 
 msgid "15200078"
-msgstr "MÃ¼senegg-Bank"
+msgstr "Müsenegg-Bank"
 
 msgid "15200079"
 msgstr "Breitenmatt-Member"
@@ -3825,7 +3816,7 @@ msgid "15200080"
 msgstr "Trasadingen-Bank"
 
 msgid "15200081"
-msgstr "GrÃ¼nschholz-Member"
+msgstr "Grünschholz-Member"
 
 msgid "15200082"
 msgstr "Frick-Member"
@@ -3843,7 +3834,7 @@ msgid "15200086"
 msgstr "Beggingen-Member"
 
 msgid "15200087"
-msgstr "GÃ¤chlingen-Bank"
+msgstr "Gächlingen-Bank"
 
 msgid "15200088"
 msgstr "Schleitheim-Bank"
@@ -3864,7 +3855,7 @@ msgid "15200093"
 msgstr "Vallorbe-Formation"
 
 msgid "15200094"
-msgstr "RiviÃ¨re-Member"
+msgstr "Rivière-Member"
 
 msgid "15200095"
 msgstr "Russille-Member"
@@ -3873,7 +3864,7 @@ msgid "15200096"
 msgstr "Gorges-de-l'Orbe-Formation"
 
 msgid "15200097"
-msgstr "Pierre-ChÃ¢tel-, Vions- und Chambotte-Formation, undifferenziert"
+msgstr "Pierre-Châtel-, Vions- und Chambotte-Formation, undifferenziert"
 
 msgid "15200098"
 msgstr "Chambotte-Formation"
@@ -3885,7 +3876,7 @@ msgid "15200100"
 msgstr "Vions-Formation"
 
 msgid "15200101"
-msgstr "Pierre-ChÃ¢tel-Formation"
+msgstr "Pierre-Châtel-Formation"
 
 msgid "15200102"
 msgstr "Burghorn-Formation"
@@ -3909,7 +3900,7 @@ msgid "15200108"
 msgstr "Knollen-Bank"
 
 msgid "15200109"
-msgstr "KÃ¼ssaburg-Member"
+msgstr "Küssaburg-Member"
 
 msgid "15200110"
 msgstr "Wangen-Member"
@@ -3930,13 +3921,13 @@ msgid "15200115"
 msgstr "Effingen-Member"
 
 msgid "15200116"
-msgstr "GerstenhÃ¼bel-Bank"
+msgstr "Gerstenhübel-Bank"
 
 msgid "15200117"
 msgstr "Birmenstorf-Member"
 
 msgid "15200118"
-msgstr "GÃ¼nsberg-Formation"
+msgstr "Günsberg-Formation"
 
 msgid "15200119"
 msgstr "Moutier-Korallenkalk"
@@ -3966,7 +3957,7 @@ msgid "15200127"
 msgstr "Belchen-Member"
 
 msgid "15200128"
-msgstr "BÃ¤nkerjoch-Formation"
+msgstr "Bänkerjoch-Formation"
 
 msgid "15200129"
 msgstr "Muschelkalk"
@@ -4017,7 +4008,7 @@ msgid "15200144"
 msgstr "Dinkelberg-Formation"
 
 msgid "15200145"
-msgstr "RhÃ¶tton"
+msgstr "Rhötton"
 
 msgid "15200146"
 msgstr "Plattensandstein"
@@ -4029,13 +4020,13 @@ msgid "15200148"
 msgstr "Narlay-Formation"
 
 msgid "15200149"
-msgstr "Perte-du-RhÃ´ne-Formation"
+msgstr "Perte-du-Rhône-Formation"
 
 msgid "15200150"
 msgstr "Grand-Essert-Formation"
 
 msgid "15200151"
-msgstr "Pierre Jaune de NeuchÃ¢tel"
+msgstr "Pierre Jaune de Neuchâtel"
 
 msgid "15200152"
 msgstr "Hauterive-Mergel"
@@ -4062,7 +4053,7 @@ msgid "15200159"
 msgstr "Weiach-Formation"
 
 msgid "15200160"
-msgstr "GÃ¼nsberg-, Vellerat-, Villigen-, Balsthal- und Courgenay-Formation, undifferenziert"
+msgstr "Günsberg-, Vellerat-, Villigen-, Balsthal- und Courgenay-Formation, undifferenziert"
 
 msgid "15200161"
 msgstr "Kreide des Juragebirges"
@@ -4074,7 +4065,7 @@ msgid "15200163"
 msgstr "Trias des Juragebirges"
 
 msgid "15200168"
-msgstr "SpÃ¤tvariszische Sedimente und Vulkanite"
+msgstr "Spätvariszische Sedimente und Vulkanite"
 
 msgid "15200175"
 msgstr "Bohnerzton"
@@ -4110,7 +4101,7 @@ msgid "15200185"
 msgstr "Bryozoen-Mergel"
 
 msgid "15200186"
-msgstr "ZuckerkÃ¶rniger Kalk"
+msgstr "Zuckerkörniger Kalk"
 
 msgid "15200187"
 msgstr "Chevenez-Member"
@@ -4134,7 +4125,7 @@ msgid "15200193"
 msgstr "Steinibach-Member"
 
 msgid "15200194"
-msgstr "GrÃ¼ne Mumienbank"
+msgstr "Grüne Mumienbank"
 
 msgid "15200195"
 msgstr "Pecten-Bank"
@@ -4191,28 +4182,28 @@ msgid "15200212"
 msgstr "Eptingen-Member"
 
 msgid "15200213"
-msgstr "DÃ¼nnlenberg-Bank"
+msgstr "Dünnlenberg-Bank"
 
 msgid "15200214"
 msgstr "Saalhof-Bank"
 
 msgid "15200215"
-msgstr "FÃ¼tzen-Bank"
+msgstr "Fützen-Bank"
 
 msgid "15200216"
 msgstr "Dolomitzone"
 
 msgid "15200217"
-msgstr "Oberer SchuttfÃ¤cher"
+msgstr "Oberer Schuttfächer"
 
 msgid "15200218"
 msgstr "Playa-Serie"
 
 msgid "15200219"
-msgstr "Unterer SchuttfÃ¤cher"
+msgstr "Unterer Schuttfächer"
 
 msgid "15200220"
-msgstr "SpÃ¤t- bis postvariszische Intrusiva des Schwarzwaldes"
+msgstr "Spät- bis postvariszische Intrusiva des Schwarzwaldes"
 
 msgid "15200221"
 msgstr "Permo-Karbon der NW-Schweiz"
@@ -4221,28 +4212,28 @@ msgid "15200222"
 msgstr "Stockberg-Quarzporphyr"
 
 msgid "15200223"
-msgstr "BÃ¤rhalde-Granit"
+msgstr "Bärhalde-Granit"
 
 msgid "15200224"
 msgstr "Schluchsee-Granit"
 
 msgid "15200225"
-msgstr "SÃ¤ckingen-Granit"
+msgstr "Säckingen-Granit"
 
 msgid "15200226"
-msgstr "JÃ¼ngere Flussablagerungen"
+msgstr "Jüngere Flussablagerungen"
 
 msgid "15200227"
 msgstr "Seeablagerungen"
 
 msgid "15200228"
-msgstr "Ã„ltere Flussablagerungen"
+msgstr "Ältere Flussablagerungen"
 
 msgid "15200229"
 msgstr "Kohle-Serie"
 
 msgid "15200230"
-msgstr "FrÃ¼hvariszische Intrusiva des Schwarzwaldes"
+msgstr "Frühvariszische Intrusiva des Schwarzwaldes"
 
 msgid "15200231"
 msgstr "Albtal-Granit"
@@ -4260,10 +4251,10 @@ msgid "15200235"
 msgstr "Randgranit"
 
 msgid "15200236"
-msgstr "MÃ¼nsterhalden-Granit"
+msgstr "Münsterhalden-Granit"
 
 msgid "15200237"
-msgstr "SchÃ¶nau-Herrenschwand-Granit"
+msgstr "Schönau-Herrenschwand-Granit"
 
 msgid "15200238"
 msgstr "St.-Blasien-Granit"
@@ -4278,16 +4269,16 @@ msgid "15200241"
 msgstr "Hauenstein-Granit"
 
 msgid "15200242"
-msgstr "BÃ¶ttstein-Granit"
+msgstr "Böttstein-Granit"
 
 msgid "15200243"
-msgstr "PrÃ¤- und frÃ¼hvariszische Sedimente und Vulkanite des Schwarzwaldes"
+msgstr "Prä- und frühvariszische Sedimente und Vulkanite des Schwarzwaldes"
 
 msgid "15200244"
 msgstr "Schiefer und Grauwacken"
 
 msgid "15200245"
-msgstr "PrÃ¤variszisches polyzyklisches Grundgebirge des Schwarzwaldes"
+msgstr "Prävariszisches polyzyklisches Grundgebirge des Schwarzwaldes"
 
 msgid "15200246"
 msgstr "Orthogneise des Schwarzwaldes"
@@ -4311,31 +4302,31 @@ msgid "15200252"
 msgstr "Wehratal-Syenit"
 
 msgid "15200253"
-msgstr "GrÃ¼ngesteine des Schwarzwaldes"
+msgstr "Grüngesteine des Schwarzwaldes"
 
 msgid "15200254"
 msgstr "Molasse"
 
 msgid "15200255"
-msgstr "Obere SÃ¼sswassermolasse (OSM)"
+msgstr "Obere Süsswassermolasse (OSM)"
 
 msgid "15200256"
 msgstr "Tannenberg-Schichten"
 
 msgid "15200257"
-msgstr "PfÃ¤nder-Schichten"
+msgstr "Pfänder-Schichten"
 
 msgid "15200258"
 msgstr "Napf-Formation"
 
 msgid "15200259"
-msgstr "Blapbach-KohlflÃ¶z"
+msgstr "Blapbach-Kohlflöz"
 
 msgid "15200260"
-msgstr "EimÃ¤tteli-Member"
+msgstr "Eimätteli-Member"
 
 msgid "15200261"
-msgstr "SchÃ¼pferegg-Nagelfluh"
+msgstr "Schüpferegg-Nagelfluh"
 
 msgid "15200262"
 msgstr "OSM-II"
@@ -4353,22 +4344,22 @@ msgid "15200266"
 msgstr "Hegau-Deckentuffe"
 
 msgid "15200267"
-msgstr "HÃ¶rnligipfel-Nagelfluh"
+msgstr "Hörnligipfel-Nagelfluh"
 
 msgid "15200268"
-msgstr "HÃ¶chegg-Brekzie"
+msgstr "Höchegg-Brekzie"
 
 msgid "15200269"
-msgstr "HÃ¶rnligubel-Mergel"
+msgstr "Hörnligubel-Mergel"
 
 msgid "15200270"
-msgstr "TÃ¶sswald-Schichten"
+msgstr "Tösswald-Schichten"
 
 msgid "15200271"
 msgstr "Bischofszell-Bentonit"
 
 msgid "15200272"
-msgstr "Ã–hningen-Zone im HÃ¶rnligebiet"
+msgstr "Öhningen-Zone im Hörnligebiet"
 
 msgid "15200273"
 msgstr "Krinau-Schichten"
@@ -4377,31 +4368,31 @@ msgid "15200274"
 msgstr "Glimmersand-Formation"
 
 msgid "15200275"
-msgstr "Fellitobel-SÃ¼sswasserkalk"
+msgstr "Fellitobel-Süsswasserkalk"
 
 msgid "15200276"
-msgstr "Ãœetliberg-Schichten"
+msgstr "Üetliberg-Schichten"
 
 msgid "15200277"
-msgstr "Ãœetliberggipfel-Nagelfluh"
+msgstr "Üetliberggipfel-Nagelfluh"
 
 msgid "15200278"
-msgstr "Ãœetliberg-Nagelfluh"
+msgstr "Üetliberg-Nagelfluh"
 
 msgid "15200279"
-msgstr "FalÃ¤tschen-Mergel"
+msgstr "Falätschen-Mergel"
 
 msgid "15200280"
 msgstr "Pfannenstiel-Schichten"
 
 msgid "15200281"
-msgstr "ZÃ¼rich-Schichten"
+msgstr "Zürich-Schichten"
 
 msgid "15200282"
 msgstr "Leimbach-Bentonit"
 
 msgid "15200283"
-msgstr "RÃ¼tschlibach-Riedhof-SÃ¼sswasserkalk"
+msgstr "Rütschlibach-Riedhof-Süsswasserkalk"
 
 msgid "15200284"
 msgstr "Winterthur-Bentonit"
@@ -4410,13 +4401,13 @@ msgid "15200285"
 msgstr "Aeugstertal-Bentonit"
 
 msgid "15200286"
-msgstr "Ã„ntlisberg-Doldertobel-SÃ¼sswasserkalk"
+msgstr "Äntlisberg-Doldertobel-Süsswasserkalk"
 
 msgid "15200287"
-msgstr "Wehrenbach-HÃ¶ckler-SÃ¼sswasserkalk"
+msgstr "Wehrenbach-Höckler-Süsswasserkalk"
 
 msgid "15200288"
-msgstr "KÃ¼snacht-Bentonit"
+msgstr "Küsnacht-Bentonit"
 
 msgid "15200289"
 msgstr "Urdorf-Bentonit"
@@ -4428,7 +4419,7 @@ msgid "15200291"
 msgstr "Abtwil-Konglomerat"
 
 msgid "15200292"
-msgstr "HÃ¼llistein-Konglomerat"
+msgstr "Hüllistein-Konglomerat"
 
 msgid "15200293"
 msgstr "Degersheim-Konglomerat"
@@ -4443,13 +4434,13 @@ msgid "15200296"
 msgstr "Lichtensteig-Formation"
 
 msgid "15200297"
-msgstr "HÃ¶rnli-Formation"
+msgstr "Hörnli-Formation"
 
 msgid "15200298"
 msgstr "Guggershorn-Formation"
 
 msgid "15200299"
-msgstr "Horgen-KÃ¤pfnach-SÃ¼sswasserkalk"
+msgstr "Horgen-Käpfnach-Süsswasserkalk"
 
 msgid "15200300"
 msgstr "OSM-J"
@@ -4467,7 +4458,7 @@ msgid "15200304"
 msgstr "Combe-Girard-Bentonit"
 
 msgid "15200305"
-msgstr "Vermes-SÃ¼sswasserkalk"
+msgstr "Vermes-Süsswasserkalk"
 
 msgid "15200306"
 msgstr "Le-Locle-Gompholit"
@@ -4494,10 +4485,10 @@ msgid "15200313"
 msgstr "Safenwil-Muschelsandstein"
 
 msgid "15200314"
-msgstr "Untere SÃ¼sswassermolasse (USM)"
+msgstr "Untere Süsswassermolasse (USM)"
 
 msgid "15200315"
-msgstr "HÃ¶hronen-Nagelfluh"
+msgstr "Höhronen-Nagelfluh"
 
 msgid "15200316"
 msgstr "Kronberg-Nagelfluh"
@@ -4506,7 +4497,7 @@ msgid "15200317"
 msgstr "Cornalle-Sandstein"
 
 msgid "15200318"
-msgstr "Mont-PÃ¨lerin-Nagelfluh"
+msgstr "Mont-Pèlerin-Nagelfluh"
 
 msgid "15200319"
 msgstr "Speer-Formation"
@@ -4560,16 +4551,16 @@ msgid "15200335"
 msgstr "USM-I"
 
 msgid "15200336"
-msgstr "GrÃ¨s et Marnes Gris Ã  Gypse"
+msgstr "Grès et Marnes Gris à Gypse"
 
 msgid "15200337"
-msgstr "Molasse Ã  Charbon"
+msgstr "Molasse à Charbon"
 
 msgid "15200338"
 msgstr "Molasse Rouge"
 
 msgid "15200339"
-msgstr "Heuboden-Ã„schitannen-Nagelfluh"
+msgstr "Heuboden-Äschitannen-Nagelfluh"
 
 msgid "15200340"
 msgstr "Beichlen-Formation"
@@ -4578,22 +4569,22 @@ msgid "15200341"
 msgstr "USM-J"
 
 msgid "15200342"
-msgstr "La-Chaux-SÃ¼sswasserkalk"
+msgstr "La-Chaux-Süsswasserkalk"
 
 msgid "15200343"
-msgstr "ElsÃ¤sser Molasse s.s."
+msgstr "Elsässer Molasse s.s."
 
 msgid "15200344"
-msgstr "DelÃ©mont-SÃ¼sswasserkalk"
+msgstr "Delémont-Süsswasserkalk"
 
 msgid "15200345"
-msgstr "Matzendorf-SÃ¼sswasserkalk"
+msgstr "Matzendorf-Süsswasserkalk"
 
 msgid "15200346"
-msgstr "Oensingen-SÃ¼sswasserkalk"
+msgstr "Oensingen-Süsswasserkalk"
 
 msgid "15200347"
-msgstr "Wynau-SÃ¼sswasserkalk"
+msgstr "Wynau-Süsswasserkalk"
 
 msgid "15200348"
 msgstr "Untere Meeresmolasse (UMM)"
@@ -4623,7 +4614,7 @@ msgid "15200356"
 msgstr "Marnes gris-souris"
 
 msgid "15200357"
-msgstr "Schistes marno-micacÃ©s"
+msgstr "Schistes marno-micacés"
 
 msgid "15200358"
 msgstr "Hilfern-Formation"
@@ -4668,10 +4659,10 @@ msgid "15200373"
 msgstr "Ajoie-Gompholit"
 
 msgid "15200378"
-msgstr "TÃ¼llingen-SÃ¼sswasserkalk"
+msgstr "Tüllingen-Süsswasserkalk"
 
 msgid "15200379"
-msgstr "ElsÃ¤sser-Molasse s.l."
+msgstr "Elsässer-Molasse s.l."
 
 msgid "15200380"
 msgstr "Oberer Teil des Hauptrogensteins"
@@ -4692,13 +4683,13 @@ msgid "15200386"
 msgstr "Montchaibeux-Member"
 
 msgid "15200387"
-msgstr "DaubrÃ©e-Konglomerat"
+msgstr "Daubrée-Konglomerat"
 
 msgid "15200388"
 msgstr "Wanderblock-Bildungen"
 
 msgid "15200389"
-msgstr "GerÃ¶llsande"
+msgstr "Geröllsande"
 
 msgid "15200390"
 msgstr "Polygene Nagelfluh"
@@ -4710,7 +4701,7 @@ msgid "15200392"
 msgstr "Graue Molasse (OMM)"
 
 msgid "15200393"
-msgstr "DaubrÃ©e-Kalk"
+msgstr "Daubrée-Kalk"
 
 msgid "15200394"
 msgstr "Basisbildungen der USM-J"
@@ -4740,10 +4731,10 @@ msgid "15200402"
 msgstr "Belpberg-Formation"
 
 msgid "15200403"
-msgstr "PfadflÃ¼e-Nagelfluh"
+msgstr "Pfadflüe-Nagelfluh"
 
 msgid "15200404"
-msgstr "SÃ¤del-Kalknagelfluh"
+msgstr "Sädel-Kalknagelfluh"
 
 msgid "15200405"
 msgstr "Utzigen-Muschelsandstein"
@@ -4752,10 +4743,10 @@ msgid "15200406"
 msgstr "Ulmiz-Quarzitnagelfluh"
 
 msgid "15200407"
-msgstr "BÃ¼tschelbach-Nagelfluh"
+msgstr "Bütschelbach-Nagelfluh"
 
 msgid "15200408"
-msgstr "KalchstÃ¤tten-Formation"
+msgstr "Kalchstätten-Formation"
 
 msgid "15200409"
 msgstr "Freudenberg-Nagelfluh"
@@ -4782,40 +4773,40 @@ msgid "15200416"
 msgstr "Meinisberg-Muschelsandstein"
 
 msgid "15200417"
-msgstr "BrÃ¼ttelen-Muschelnagelfluh"
+msgstr "Brüttelen-Muschelnagelfluh"
 
 msgid "15200418"
 msgstr "Sense-Formation"
 
 msgid "15200419"
-msgstr "MontÃ©cu-Schichten"
+msgstr "Montécu-Schichten"
 
 msgid "15200420"
-msgstr "MoliÃ¨re-Muschelsandstein"
+msgstr "Molière-Muschelsandstein"
 
 msgid "15200421"
 msgstr "Scherli-Quarzitnagelfluh"
 
 msgid "15200422"
-msgstr "Grilly-SÃ¼sswasserkalk"
+msgstr "Grilly-Süsswasserkalk"
 
 msgid "15200423"
-msgstr "Orbe-SÃ¼sswasserkalk"
+msgstr "Orbe-Süsswasserkalk"
 
 msgid "15200424"
 msgstr "Krustenkalk"
 
 msgid "15200425"
-msgstr "GÃ¼mmenen-Formation"
+msgstr "Gümmenen-Formation"
 
 msgid "15200426"
-msgstr "Solothurner SchildkrÃ¶tenkalk"
+msgstr "Solothurner Schildkrötenkalk"
 
 msgid "15200429"
 msgstr "Obere bunte Molasse"
 
 msgid "15200430"
-msgstr "Oberdorf-SÃ¼sswasserkalk"
+msgstr "Oberdorf-Süsswasserkalk"
 
 msgid "15200431"
 msgstr "Limnischer Horizont (OMM-II)"
@@ -4854,25 +4845,25 @@ msgid "15200442"
 msgstr "Mortier-Mergel"
 
 msgid "15200443"
-msgstr "VauglÃ¨ne-BÃ¤nke"
+msgstr "Vauglène-Bänke"
 
 msgid "15200444"
 msgstr "Poet-Bank"
 
 msgid "15200445"
-msgstr "Courcelon-SÃ¼sswasserkalk"
+msgstr "Courcelon-Süsswasserkalk"
 
 msgid "15200446"
 msgstr "Erzmatt-Krustenkalk"
 
 msgid "15200447"
-msgstr "Diegten-SÃ¼sswasserkalk"
+msgstr "Diegten-Süsswasserkalk"
 
 msgid "15200448"
-msgstr "La-Verrerie-SÃ¼sswasserkalk"
+msgstr "La-Verrerie-Süsswasserkalk"
 
 msgid "15200449"
-msgstr "La-Charrue-SÃ¼sswasserkalk"
+msgstr "La-Charrue-Süsswasserkalk"
 
 msgid "15200450"
 msgstr "Astieria-Mergel"
@@ -4881,16 +4872,16 @@ msgid "15200451"
 msgstr "Villers-Schichten"
 
 msgid "15200452"
-msgstr "UnitÃ© Moyenne Calcaire (UMC)"
+msgstr "Unité Moyenne Calcaire (UMC)"
 
 msgid "15200453"
-msgstr "UnitÃ© InfÃ©rieure Oolithique (UIO)"
+msgstr "Unité Inférieure Oolithique (UIO)"
 
 msgid "15200454"
 msgstr "Mergel- und Kalkzone (MKZ)"
 
 msgid "15200455"
-msgstr "Calcaire Ã¢pre"
+msgstr "Calcaire âpre"
 
 msgid "15200456"
 msgstr "Landaize-Kalk"
@@ -4902,7 +4893,7 @@ msgid "15200458"
 msgstr "Hautes-Roches-Algenkalk"
 
 msgid "15200459"
-msgstr "Akzessorische MumienbÃ¤nke"
+msgstr "Akzessorische Mumienbänke"
 
 msgid "15200460"
 msgstr "Brauner Oolith"
@@ -4920,7 +4911,7 @@ msgid "15200464"
 msgstr "Leutschenberg-Member"
 
 msgid "15200465"
-msgstr "SchlÃ¤chtenhaus-Granit"
+msgstr "Schlächtenhaus-Granit"
 
 msgid "15200466"
 msgstr "Steinatal-Gneiskomplex"
@@ -5034,16 +5025,16 @@ msgid "15200502"
 msgstr "Eichbol-Tuffit"
 
 msgid "15200503"
-msgstr "Ã–hningen-Formation"
+msgstr "Öhningen-Formation"
 
 msgid "15200504"
-msgstr "Ã–hningen-SÃ¼sswasserkalk"
+msgstr "Öhningen-Süsswasserkalk"
 
 msgid "15200505"
 msgstr "Ramschwag-Nagelfluh"
 
 msgid "15200506"
-msgstr "SeerÃ¼cken-Tuffit"
+msgstr "Seerücken-Tuffit"
 
 msgid "15200507"
 msgstr "Meilen-Schichten"
@@ -5052,13 +5043,13 @@ msgid "15200508"
 msgstr "Wulp-Rotzone"
 
 msgid "15200509"
-msgstr "KÃ¤pfnach-Formation"
+msgstr "Käpfnach-Formation"
 
 msgid "15200510"
-msgstr "Â«Juranagelfluh-MergelÂ»"
+msgstr "«Juranagelfluh-Mergel»"
 
 msgid "15200511"
-msgstr "Golat-SÃ¼sswasserkalk"
+msgstr "Golat-Süsswasserkalk"
 
 msgid "15200512"
 msgstr "Petrefaktenlager"
@@ -5070,7 +5061,7 @@ msgid "15200514"
 msgstr "Homberg-Member"
 
 msgid "15200515"
-msgstr "GÃ¤bris-Nagelfluh"
+msgstr "Gäbris-Nagelfluh"
 
 msgid "15200516"
 msgstr "Gstaldenbach-Member"
@@ -5094,10 +5085,10 @@ msgid "15200522"
 msgstr "Pfingstboden-Member"
 
 msgid "15200523"
-msgstr "HochflÃ¤schli-Member"
+msgstr "Hochfläschli-Member"
 
 msgid "15200524"
-msgstr "EnnetbÃ¼hl-Member"
+msgstr "Ennetbühl-Member"
 
 msgid "15200525"
 msgstr "Hochalp-Member"
@@ -5106,10 +5097,10 @@ msgid "15200526"
 msgstr "Krummenau-Member"
 
 msgid "15200527"
-msgstr "Ã„ltere Juranagelfluh"
+msgstr "Ältere Juranagelfluh"
 
 msgid "15200528"
-msgstr "GitzischÃ¶pf-Nagelfluh"
+msgstr "Gitzischöpf-Nagelfluh"
 
 msgid "15200529"
 msgstr "Honegg-Mergel"
@@ -5118,13 +5109,13 @@ msgid "15200530"
 msgstr "Kaltbach-Nagelfluh"
 
 msgid "15200531"
-msgstr "HÃ¼nibach-Nagelfluh"
+msgstr "Hünibach-Nagelfluh"
 
 msgid "15200532"
 msgstr "Losenegg-Formation"
 
 msgid "15200533"
-msgstr "SchwÃ¤ndibach-Naglelfuh"
+msgstr "Schwändibach-Naglelfuh"
 
 msgid "15200534"
 msgstr "Uerscheli-Formation"
@@ -5136,7 +5127,7 @@ msgid "15200536"
 msgstr "Kalksandstein-Serie"
 
 msgid "15200537"
-msgstr "GÃ©rignoz-Formation"
+msgstr "Gérignoz-Formation"
 
 msgid "15200538"
 msgstr "Leuenfall-Nagelfluh"
@@ -5148,7 +5139,7 @@ msgid "15200540"
 msgstr "Ebnat-Sandstein"
 
 msgid "15200541"
-msgstr "RÃ¼tiberg-Kalksandstein"
+msgstr "Rütiberg-Kalksandstein"
 
 msgid "15200542"
 msgstr "Pfiffegg-Nagelfluh"
@@ -5157,16 +5148,16 @@ msgid "15200543"
 msgstr "Weggis-Formation"
 
 msgid "15200544"
-msgstr "KÃ¤nnelegg-Nagelfluh"
+msgstr "Kännelegg-Nagelfluh"
 
 msgid "15200545"
-msgstr "Molasse Rouge des JurasÃ¼dfusses"
+msgstr "Molasse Rouge des Jurasüdfusses"
 
 msgid "15200546"
 msgstr "Mathod-Sandstein"
 
 msgid "15200547"
-msgstr "GoumoÃ«ns-Sandstein"
+msgstr "Goumoëns-Sandstein"
 
 msgid "15200548"
 msgstr "Molasse Rouge von Vevey"
@@ -5178,10 +5169,10 @@ msgid "15200550"
 msgstr "Grindelegg-Formation"
 
 msgid "15200551"
-msgstr "TillerÃ©e-Schichten"
+msgstr "Tillerée-Schichten"
 
 msgid "15200552"
-msgstr "Serie der SÃ¼sswasserkalke und Dolomite"
+msgstr "Serie der Süsswasserkalke und Dolomite"
 
 msgid "15200553"
 msgstr "Oltingue-Kalkarenit"
@@ -5193,7 +5184,7 @@ msgid "15200555"
 msgstr "Unter-Lochsitli-Nagelfluh"
 
 msgid "15200556"
-msgstr "FlÃ¼hli-Nagelfluh"
+msgstr "Flühli-Nagelfluh"
 
 msgid "15200557"
 msgstr "Zone der Schiefermergel (der St.-Gallen-Fm.)"
@@ -5205,7 +5196,7 @@ msgid "15200559"
 msgstr "Aarwangen-Molasse"
 
 msgid "15200560"
-msgstr "Untere Bunte Molasse des JurasÃ¼dfusses"
+msgstr "Untere Bunte Molasse des Jurasüdfusses"
 
 msgid "15200562"
 msgstr "Mittlere Juranagelfluh"
@@ -5235,16 +5226,16 @@ msgid "15200570"
 msgstr "Randen-Grobkalk"
 
 msgid "15200571"
-msgstr "PÃ©ry-GerÃ¶llsande"
+msgstr "Péry-Geröllsande"
 
 msgid "15200572"
 msgstr "Les-Bayards-Juranagelfluh"
 
 msgid "15200573"
-msgstr "GÃ¼nsberg- und Vellerat-Formation, undifferenziert"
+msgstr "Günsberg- und Vellerat-Formation, undifferenziert"
 
 msgid "15200618"
-msgstr "MÃ¼mliswil-SÃ¼sswasserkalk"
+msgstr "Mümliswil-Süsswasserkalk"
 
 msgid "15200619"
 msgstr "Limnischer Horizont (OMM-I)"
@@ -5256,25 +5247,25 @@ msgid "15200631"
 msgstr "Wholusen-Bentonit"
 
 msgid "15200632"
-msgstr "Gitzitobel-SÃ¼sswasserkalk"
+msgstr "Gitzitobel-Süsswasserkalk"
 
 msgid "15200633"
-msgstr "Wissenbach-SÃ¼sswasserkalk"
+msgstr "Wissenbach-Süsswasserkalk"
 
 msgid "15200634"
-msgstr "Altbach-SÃ¼sswasserkalk"
+msgstr "Altbach-Süsswasserkalk"
 
 msgid "15200635"
-msgstr "TrÃ¶leten-SÃ¼sswasserkalk"
+msgstr "Tröleten-Süsswasserkalk"
 
 msgid "15200636"
-msgstr "TschÃ¶plihof-SÃ¼sswasserkalk"
+msgstr "Tschöplihof-Süsswasserkalk"
 
 msgid "15200637"
 msgstr "Lienegg-Formation"
 
 msgid "15200638"
-msgstr "Ã–ligraben-Formation"
+msgstr "Öligraben-Formation"
 
 msgid "15200639"
 msgstr "Studweid-Formation"
@@ -5298,7 +5289,7 @@ msgid "15200645"
 msgstr "Karbonatreiche Molasse: Kalk-Dolomit-Nagelfluh"
 
 msgid "15200646"
-msgstr "HornbÃ¼el-Melange"
+msgstr "Hornbüel-Melange"
 
 msgid "15200647"
 msgstr "Kalter-Wangen-Formation"
@@ -5316,7 +5307,7 @@ msgid "15200651"
 msgstr "Fort-de-l'Ecluse-Member"
 
 msgid "15200652"
-msgstr "BÃ´le-Member"
+msgstr "Bôle-Member"
 
 msgid "15200653"
 msgstr "Montcherand-Member"
@@ -5331,7 +5322,7 @@ msgid "15200656"
 msgstr "Weilergraben-Formation"
 
 msgid "15200657"
-msgstr "GugenmÃ¼hle-Member"
+msgstr "Gugenmühle-Member"
 
 msgid "15200658"
 msgstr "Schwarzbach-Schichten"
@@ -5340,7 +5331,7 @@ msgid "15200659"
 msgstr "Wangen- und Letzi-Member, undifferenziert"
 
 msgid "15201001"
-msgstr "Ã„ltere Ablagerungen, undifferenziert"
+msgstr "Ältere Ablagerungen, undifferenziert"
 
 msgid "15201002"
 msgstr "Niederterrasse"
@@ -5352,7 +5343,7 @@ msgid "15201004"
 msgstr "Tiefere Deckenschotter"
 
 msgid "15201005"
-msgstr "HÃ¶here Deckenschotter"
+msgstr "Höhere Deckenschotter"
 
 msgid "15201006"
 msgstr "Birrfeld-Eiszeit (Letzte Eiszeit)"
@@ -5361,7 +5352,7 @@ msgid "15201007"
 msgstr "Last Glacial Maximum (LGM), undiff."
 
 msgid "15201008"
-msgstr "LGM-RÃ¼ckzug"
+msgstr "LGM-Rückzug"
 
 msgid "15201009"
 msgstr "Birmenstorf-Vergletscherung (2. LGM-Vorstoss)"
@@ -5370,7 +5361,7 @@ msgid "15201010"
 msgstr "Wettingen-Vorstoss"
 
 msgid "15201011"
-msgstr "FlÃ¼efeld-Schotter"
+msgstr "Flüefeld-Schotter"
 
 msgid "15201012"
 msgstr "Altberg-Till"
@@ -5409,28 +5400,28 @@ msgid "15201023"
 msgstr "Staffelbach-Till"
 
 msgid "15201024"
-msgstr "LindmÃ¼hle-Vergletscherung (1. LGM-Vorstoss)"
+msgstr "Lindmühle-Vergletscherung (1. LGM-Vorstoss)"
 
 msgid "15201025"
 msgstr "Otelfingen-Vorstoss"
 
 msgid "15201026"
-msgstr "TÃ¤gerhard-Schotter"
+msgstr "Tägerhard-Schotter"
 
 msgid "15201027"
-msgstr "LindmÃ¼hle-Vorstoss"
+msgstr "Lindmühle-Vorstoss"
 
 msgid "15201028"
-msgstr "Ã„mmert-Schotter"
+msgstr "Ämmert-Schotter"
 
 msgid "15201029"
-msgstr "Ã„mmert-Till"
+msgstr "Ämmert-Till"
 
 msgid "15201030"
 msgstr "Emmet-Vorstoss"
 
 msgid "15201031"
-msgstr "GÃ¼ndelmoos-Lehm"
+msgstr "Gündelmoos-Lehm"
 
 msgid "15201032"
 msgstr "Igliste-Schotter"
@@ -5454,16 +5445,16 @@ msgid "15201038"
 msgstr "Gossau-Interstadial"
 
 msgid "15201039"
-msgstr "MÃ¼lligen-PalÃ¤oboden"
+msgstr "Mülligen-Paläoboden"
 
 msgid "15201040"
 msgstr "Niederweningen-Formation"
 
 msgid "15201041"
-msgstr "Hombrechtikon-Vergletscherung (FrÃ¼hletzteiszeitliche Vergl.)"
+msgstr "Hombrechtikon-Vergletscherung (Frühletzteiszeitliche Vergl.)"
 
 msgid "15201042"
-msgstr "MÃ¼lligen-Schotter"
+msgstr "Mülligen-Schotter"
 
 msgid "15201043"
 msgstr "2. letzteiszeitlischs Vorstoss"
@@ -5493,7 +5484,7 @@ msgid "15201051"
 msgstr "Flurlingen-Quelltuff"
 
 msgid "15201052"
-msgstr "Birrfeld- und Klettgau-PalÃ¤obÃ¶den"
+msgstr "Birrfeld- und Klettgau-Paläoböden"
 
 msgid "15201053"
 msgstr "Beringen-Eiszeit"
@@ -5511,7 +5502,7 @@ msgid "15201057"
 msgstr "Veltheim-Schotter"
 
 msgid "15201058"
-msgstr "StÃ¼sslingen-Schotter"
+msgstr "Stüsslingen-Schotter"
 
 msgid "15201059"
 msgstr "Langwiesen-Vergletscherung"
@@ -5529,16 +5520,16 @@ msgid "15201063"
 msgstr "Lupfig-Schotter"
 
 msgid "15201064"
-msgstr "LÃ¶hningen-Engiwald-Vergletscherung"
+msgstr "Löhningen-Engiwald-Vergletscherung"
 
 msgid "15201065"
 msgstr "Engiwald-Vorstoss"
 
 msgid "15201066"
-msgstr "RÃ¼fenach-Vorstoss"
+msgstr "Rüfenach-Vorstoss"
 
 msgid "15201067"
-msgstr "LÃ¶hningen-Vorstoss"
+msgstr "Löhningen-Vorstoss"
 
 msgid "15201068"
 msgstr "Remigen-Vorstoss"
@@ -5550,7 +5541,7 @@ msgid "15201070"
 msgstr "Meikirch-Interglazial"
 
 msgid "15201071"
-msgstr "Ã„ltere BeckenfÃ¼llungen"
+msgstr "Ältere Beckenfüllungen"
 
 msgid "15201072"
 msgstr "Hagenholz-Eiszeit"
@@ -5580,13 +5571,13 @@ msgid "15201080"
 msgstr "Habsburg-Hagenholz-Interglazial"
 
 msgid "15201081"
-msgstr "MÃ¶hlinerfeld-PalÃ¤oboden"
+msgstr "Möhlinerfeld-Paläoboden"
 
 msgid "15201082"
 msgstr "Habsburg-Eiszeit"
 
 msgid "15201083"
-msgstr "GrÃ¤nichen-Schotter"
+msgstr "Gränichen-Schotter"
 
 msgid "15201084"
 msgstr "Roggehuse-Schotter"
@@ -5610,16 +5601,16 @@ msgid "15201090"
 msgstr "Thalgut-Interglazial"
 
 msgid "15201091"
-msgstr "MÃ¶hlin-Eiszeit (GrÃ¶sste Eiszeit)"
+msgstr "Möhlin-Eiszeit (Grösste Eiszeit)"
 
 msgid "15201092"
-msgstr "MÃ¶hlin-Vergletscherung"
+msgstr "Möhlin-Vergletscherung"
 
 msgid "15201093"
-msgstr "MÃ¶hlin-Vorstoss"
+msgstr "Möhlin-Vorstoss"
 
 msgid "15201094"
-msgstr "BÃ¼nten-Till"
+msgstr "Bünten-Till"
 
 msgid "15201095"
 msgstr "Schleitheim-Vorstoss"
@@ -5628,7 +5619,7 @@ msgid "15201096"
 msgstr "Fisibach-Schotter"
 
 msgid "15201097"
-msgstr "BÃ¤rengraben-Schotter und -Till"
+msgstr "Bärengraben-Schotter und -Till"
 
 msgid "15201098"
 msgstr "Iberig-Schotter"
@@ -5682,7 +5673,7 @@ msgid "15201114"
 msgstr "Langacher-Schotter"
 
 msgid "15201115"
-msgstr "DÃ¼rn-Formation"
+msgstr "Dürn-Formation"
 
 msgid "15201116"
 msgstr "Degermoos-Schotter"
@@ -5718,7 +5709,7 @@ msgid "15201126"
 msgstr "Weisse Serie"
 
 msgid "15201129"
-msgstr "ZÃ¼rich-Stein-Bremgarten-Stadien"
+msgstr "Zürich-Stein-Bremgarten-Stadien"
 
 msgid "15201130"
 msgstr "Untere Singen-Terrasse"
@@ -5742,19 +5733,19 @@ msgid "15201136"
 msgstr "Aare-Schotter"
 
 msgid "15201137"
-msgstr "SchÃ¼ss-Schotter"
+msgstr "Schüss-Schotter"
 
 msgid "15201138"
 msgstr "Orvin-Schotter"
 
 msgid "15201139"
-msgstr "Seeablagerungen von Frinvillier und RondchÃ¢tel"
+msgstr "Seeablagerungen von Frinvillier und Rondchâtel"
 
 msgid "15201140"
 msgstr "Stauschotter von Diessbach"
 
 msgid "15201141"
-msgstr "MÃ©ly-Formation"
+msgstr "Mély-Formation"
 
 msgid "15201142"
 msgstr "Kiessande von Madretsch"
@@ -5766,7 +5757,7 @@ msgid "15201144"
 msgstr "Emme-Schotter"
 
 msgid "15201145"
-msgstr "GÃ¤u-Schotter"
+msgstr "Gäu-Schotter"
 
 msgid "15201146"
 msgstr "Flumenthal-Lehm"
@@ -5790,10 +5781,10 @@ msgid "15201152"
 msgstr "Wehntal-Schotter"
 
 msgid "15201153"
-msgstr "Bick-MorÃ¤ne"
+msgstr "Bick-Moräne"
 
 msgid "15201154"
-msgstr "FlÃ¼e-MorÃ¤ne"
+msgstr "Flüe-Moräne"
 
 msgid "15201155"
 msgstr "Wettingen-Schotter"
@@ -5805,7 +5796,7 @@ msgid "15201157"
 msgstr "Plateauschotter"
 
 msgid "15201158"
-msgstr "La-CÃ´te-Alluvionen"
+msgstr "La-Côte-Alluvionen"
 
 msgid "15201159"
 msgstr "Enge-Schotter"
@@ -5826,10 +5817,10 @@ msgid "15201164"
 msgstr "Berken-Sand"
 
 msgid "15201165"
-msgstr "SchwarzhÃ¤usern-Lehm"
+msgstr "Schwarzhäusern-Lehm"
 
 msgid "15201166"
-msgstr "KÃ¤ppelihof-Schotter"
+msgstr "Käppelihof-Schotter"
 
 msgid "15201167"
 msgstr "Aarburg-Schotter"
@@ -5847,7 +5838,7 @@ msgid "15201171"
 msgstr "Surbtal-Lehm"
 
 msgid "15201172"
-msgstr "Surbtal-MorÃ¤ne"
+msgstr "Surbtal-Moräne"
 
 msgid "15201173"
 msgstr "Surbtal-Schotter"
@@ -5865,7 +5856,7 @@ msgid "15201177"
 msgstr "Hausen-Lehm"
 
 msgid "15201178"
-msgstr "Hausen-MorÃ¤ne"
+msgstr "Hausen-Moräne"
 
 msgid "15201179"
 msgstr "Ruckfeld-Schotter"
@@ -5889,13 +5880,13 @@ msgid "15201185"
 msgstr "Merenbach-Schotter"
 
 msgid "15201186"
-msgstr "Malmkalk-Schotter der Randen-TÃ¤ler"
+msgstr "Malmkalk-Schotter der Randen-Täler"
 
 msgid "15201187"
 msgstr "Solothurn-Stadium"
 
 msgid "15201188"
-msgstr "MÃ¼nsingen-Schotterkomplex"
+msgstr "Münsingen-Schotterkomplex"
 
 msgid "15201189"
 msgstr "Alterswil-Schotter"
@@ -5916,7 +5907,7 @@ msgid "15201194"
 msgstr "Bennau-Schotter"
 
 msgid "15201195"
-msgstr "HÃ¼tten-Schotter"
+msgstr "Hütten-Schotter"
 
 msgid "15201196"
 msgstr "Schnabelsberg-Stauchotter"
@@ -5937,7 +5928,7 @@ msgid "15201201"
 msgstr "Menzingen-Schotter"
 
 msgid "15201202"
-msgstr "La-TuffiÃ¨re-Schotter"
+msgstr "La-Tuffière-Schotter"
 
 msgid "15201203"
 msgstr "Gontenschwil-Lehm"
@@ -5988,7 +5979,7 @@ msgid "15201218"
 msgstr "Raintal-Deltaschotter"
 
 msgid "15201219"
-msgstr "KleinhÃ¶chstetten-Kies-Sand-Komplex"
+msgstr "Kleinhöchstetten-Kies-Sand-Komplex"
 
 msgid "15201220"
 msgstr "Krauchthal-Schotter"
@@ -5997,7 +5988,7 @@ msgid "15201221"
 msgstr "Brandflue-Schotter"
 
 msgid "15201222"
-msgstr "KÃ¼snacht-Schotter"
+msgstr "Küsnacht-Schotter"
 
 msgid "15201223"
 msgstr "Chatzenstrick-Schotter"
@@ -6006,7 +5997,7 @@ msgid "15201224"
 msgstr "Rabennest-Schotter"
 
 msgid "15201225"
-msgstr "RatengÃ¼tsch-Schotter"
+msgstr "Ratengütsch-Schotter"
 
 msgid "15201226"
 msgstr "Scherenspitz-Schotter"
@@ -6030,10 +6021,10 @@ msgid "15201232"
 msgstr "Gubel-Schotter"
 
 msgid "15201233"
-msgstr "ChÃ¤len-Schotter"
+msgstr "Chälen-Schotter"
 
 msgid "15201234"
-msgstr "ChÃ¤len-Till"
+msgstr "Chälen-Till"
 
 msgid "15201235"
 msgstr "Sihlsprung-Schotter"
@@ -6057,13 +6048,13 @@ msgid "15201241"
 msgstr "Junkerenwald-Schotter"
 
 msgid "15201242"
-msgstr "ChrÃ¤jeloch-Schotter"
+msgstr "Chräjeloch-Schotter"
 
 msgid "15201243"
 msgstr "Butteberg-Schotter"
 
 msgid "15201244"
-msgstr "HÃ¶chi-Schotter"
+msgstr "Höchi-Schotter"
 
 msgid "15201245"
 msgstr "Heitere-Schotter"
@@ -6075,10 +6066,10 @@ msgid "15201247"
 msgstr "Ruedertal-Schotter"
 
 msgid "15201248"
-msgstr "BÃ¤nkel-Schotter"
+msgstr "Bänkel-Schotter"
 
 msgid "15201249"
-msgstr "QuartÃ¤r, undifferenziert"
+msgstr "Quartär, undifferenziert"
 
 msgid "15201250"
 msgstr "Deckenschotter, undifferenziert"
@@ -6111,7 +6102,7 @@ msgid "15201286"
 msgstr "Bergsturzablagerungen von Sierre"
 
 msgid "15201287"
-msgstr "Bergsturzablagerungen von ChiÃ¨tres"
+msgstr "Bergsturzablagerungen von Chiètres"
 
 msgid "15201288"
 msgstr "Bergsturzablagerungen von Chessel-Noville"
@@ -6144,7 +6135,7 @@ msgid "15201297"
 msgstr "Bergsturzablagerungen von Flims"
 
 msgid "15201298"
-msgstr "Bergsturzablagerungen von BrÃ¼sis"
+msgstr "Bergsturzablagerungen von Brüsis"
 
 msgid "15201299"
 msgstr "Bergsturzablagerungen vom Chapf"
@@ -6183,19 +6174,19 @@ msgid "15201311"
 msgstr "Informell benannte Bergsturzablagerungen"
 
 msgid "15201312"
-msgstr "Informell benannte kÃ¼nstliche Ablagerungen"
+msgstr "Informell benannte künstliche Ablagerungen"
 
 msgid "15201313"
-msgstr "KÃ¼nstliche Ablagerungen des Bahnhofs Brig"
+msgstr "Künstliche Ablagerungen des Bahnhofs Brig"
 
 msgid "15201314"
-msgstr "KÃ¼nstliche Ablagerungen Golar"
+msgstr "Künstliche Ablagerungen Golar"
 
 msgid "15201315"
-msgstr "KÃ¼nstliche Ablagerungen der Lonzadeponie"
+msgstr "Künstliche Ablagerungen der Lonzadeponie"
 
 msgid "15201316"
-msgstr "KÃ¼nstliche Ablagerungen des Riedertals"
+msgstr "Künstliche Ablagerungen des Riedertals"
 
 msgid "15201317"
 msgstr "Informell benannte Sackungsmassen"
@@ -6207,7 +6198,7 @@ msgid "15201319"
 msgstr "Informell benannte fluviatile Schotter"
 
 msgid "15201320"
-msgstr "Schotter und Sand der RhÃ´ne"
+msgstr "Schotter und Sand der Rhône"
 
 msgid "15201321"
 msgstr "Schotter und Sand der Vispa"
@@ -6240,31 +6231,31 @@ msgid "15201330"
 msgstr "Baschutt der Vispa"
 
 msgid "15201331"
-msgstr "Bachschutt der GÃ¼rbe"
+msgstr "Bachschutt der Gürbe"
 
 msgid "15201332"
 msgstr "Bachschutt des Lombachs"
 
 msgid "15201333"
-msgstr "PliozÃ¤ne Ablagerungen"
+msgstr "Pliozäne Ablagerungen"
 
 msgid "15201334"
 msgstr "Stockesee-Sediment"
 
 msgid "15201335"
-msgstr "StrÃ¤tligen-Till"
+msgstr "Strätligen-Till"
 
 msgid "15201336"
-msgstr "BÃ¤renholz-Till"
+msgstr "Bärenholz-Till"
 
 msgid "15201337"
-msgstr "WÃ¤sserlifluh-Formation"
+msgstr "Wässerlifluh-Formation"
 
 msgid "15201338"
 msgstr "Schlyffi-Till"
 
 msgid "15201339"
-msgstr "BrÃ¼ggstutz-Schotter"
+msgstr "Brüggstutz-Schotter"
 
 msgid "15201340"
 msgstr "Guntelsei-Till"
@@ -6276,13 +6267,13 @@ msgid "15201342"
 msgstr "Steghalden-Schotter"
 
 msgid "15201343"
-msgstr "GlÃ¼tschtal-Formation"
+msgstr "Glütschtal-Formation"
 
 msgid "15201344"
 msgstr "Hahni-Schotter"
 
 msgid "15201444"
-msgstr "LÃ¶ss, undifferenziert"
+msgstr "Löss, undifferenziert"
 
 msgid "15201458"
 msgstr "Ceppo"
@@ -6291,7 +6282,7 @@ msgid "15201459"
 msgstr "Novazzano-Sand"
 
 msgid "15201460"
-msgstr "Bergsturzablagerungen vom StÃ¼tzwald"
+msgstr "Bergsturzablagerungen vom Stützwald"
 
 msgid "15201526"
 msgstr "Wagenmoos-Till"
@@ -6339,7 +6330,7 @@ msgid "15201540"
 msgstr "Alluvion von Ransun"
 
 msgid "15201541"
-msgstr "RÃ¼dlingen-Till"
+msgstr "Rüdlingen-Till"
 
 msgid "15201542"
 msgstr "Niklaushalden-Formation"
@@ -6372,13 +6363,13 @@ msgid "15201551"
 msgstr "Windlach-Till"
 
 msgid "15201552"
-msgstr "SÃ¼dranden-Till"
+msgstr "Südranden-Till"
 
 msgid "15201553"
 msgstr "Schlossbuck-Schotter"
 
 msgid "15201554"
-msgstr "RisibÃ¼el-Schotter"
+msgstr "Risibüel-Schotter"
 
 msgid "15201555"
 msgstr "Schmerlet- und Toktri-Formation, undifferenziert"
@@ -6399,7 +6390,7 @@ msgid "15201560"
 msgstr "Wasterkingen-Schotter"
 
 msgid "15201561"
-msgstr "ParadiesgÃ¤rtli-Schotter"
+msgstr "Paradiesgärtli-Schotter"
 
 msgid "15201562"
 msgstr "Tubeschwanz-Schotter"
@@ -6417,13 +6408,13 @@ msgid "15202001"
 msgstr "Habkern-Melange"
 
 msgid "15202002"
-msgstr "SÃ¶renberg-Melange"
+msgstr "Sörenberg-Melange"
 
 msgid "15202003"
 msgstr "Wildhaus-Melange"
 
 msgid "15202004"
-msgstr "SÃ¼dhelvetische Flyscheinheiten"
+msgstr "Südhelvetische Flyscheinheiten"
 
 msgid "15202005"
 msgstr "Nordhelvetische Flysch-Gruppe"
@@ -6441,19 +6432,19 @@ msgid "15202009"
 msgstr "Elm-Formation"
 
 msgid "15202010"
-msgstr "RÃ¼schenweid-Bank"
+msgstr "Rüschenweid-Bank"
 
 msgid "15202011"
 msgstr "Taveyannaz-Formation"
 
 msgid "15202012"
-msgstr "PalÃ¤ogen des Helvetikums"
+msgstr "Paläogen des Helvetikums"
 
 msgid "15202013"
 msgstr "Stad-Formation"
 
 msgid "15202014"
-msgstr "WÃ¤ngen-Kalk"
+msgstr "Wängen-Kalk"
 
 msgid "15202015"
 msgstr "Jochstock-Konglomerat"
@@ -6480,7 +6471,7 @@ msgid "15202022"
 msgstr "Hohgant-Sandstein"
 
 msgid "15202023"
-msgstr "Wagenmoos-BÃ¤nke"
+msgstr "Wagenmoos-Bänke"
 
 msgid "15202024"
 msgstr "Wildstrubel-Formation"
@@ -6492,7 +6483,7 @@ msgid "15202026"
 msgstr "Tierberg-Member"
 
 msgid "15202027"
-msgstr "KÃ¼blibad-Member"
+msgstr "Küblibad-Member"
 
 msgid "15202028"
 msgstr "Klimsenhorn-Formation"
@@ -6504,10 +6495,10 @@ msgid "15202030"
 msgstr "Band-Member"
 
 msgid "15202031"
-msgstr "FrÃ¤kmÃ¼nt-Member"
+msgstr "Fräkmünt-Member"
 
 msgid "15202032"
-msgstr "BÃ¼rgen-Formation"
+msgstr "Bürgen-Formation"
 
 msgid "15202033"
 msgstr "Foribach-Member"
@@ -6528,7 +6519,7 @@ msgid "15202038"
 msgstr "Einsiedeln-Member"
 
 msgid "15202039"
-msgstr "BatÃ¶ni-Member"
+msgstr "Batöni-Member"
 
 msgid "15202040"
 msgstr "Chruteren-Member"
@@ -6543,10 +6534,10 @@ msgid "15202043"
 msgstr "Grindelwald-Marmor"
 
 msgid "15202044"
-msgstr "MÃ¼rren-Brekzie"
+msgstr "Mürren-Brekzie"
 
 msgid "15202045"
-msgstr "DÃ¼nden-Konglomerat"
+msgstr "Dünden-Konglomerat"
 
 msgid "15202046"
 msgstr "Rosenlaui-Marmor"
@@ -6588,13 +6579,13 @@ msgid "15202058"
 msgstr "Plattenwald-Bank"
 
 msgid "15202059"
-msgstr "DurschlÃ¤gi-Bank"
+msgstr "Durschlägi-Bank"
 
 msgid "15202060"
 msgstr "Niederi-Schichten"
 
 msgid "15202061"
-msgstr "TwÃ¤riberg-Bank"
+msgstr "Twäriberg-Bank"
 
 msgid "15202062"
 msgstr "Klaus-Bank"
@@ -6624,7 +6615,7 @@ msgid "15202070"
 msgstr "Hochkugel-Schichten"
 
 msgid "15202071"
-msgstr "GrÃ¼nten-Member"
+msgstr "Grünten-Member"
 
 msgid "15202072"
 msgstr "Rohrbachstein-Bank"
@@ -6657,7 +6648,7 @@ msgid "15202081"
 msgstr "Lidernen-Member"
 
 msgid "15202082"
-msgstr "GemsmÃ¤ttli-Bank"
+msgstr "Gemsmättli-Bank"
 
 msgid "15202083"
 msgstr "Rahberg-Bank"
@@ -6672,7 +6663,7 @@ msgid "15202086"
 msgstr "Spitzern-Member"
 
 msgid "15202087"
-msgstr "BÃ¼ls-Bank"
+msgstr "Büls-Bank"
 
 msgid "15202088"
 msgstr "Sichel-Kalk"
@@ -6684,7 +6675,7 @@ msgid "15202090"
 msgstr "Vitznau-Mergel"
 
 msgid "15202091"
-msgstr "Ã–hrli-Formation"
+msgstr "Öhrli-Formation"
 
 msgid "15202092"
 msgstr "Palfris-Formation"
@@ -6708,25 +6699,25 @@ msgid "15202098"
 msgstr "Tros-Kalk"
 
 msgid "15202099"
-msgstr "Â«MergelbandÂ»"
+msgstr "«Mergelband»"
 
 msgid "15202100"
 msgstr "Schilt-Formation"
 
 msgid "15202101"
-msgstr "MÃ¼rtschen-Member"
+msgstr "Mürtschen-Member"
 
 msgid "15202102"
-msgstr "Â«Schilt-MergelÂ»"
+msgstr "«Schilt-Mergel»"
 
 msgid "15202103"
-msgstr "Â«Schilt-KalkÂ»"
+msgstr "«Schilt-Kalk»"
 
 msgid "15202104"
 msgstr "Seeztal-Member"
 
 msgid "15202105"
-msgstr "WindgÃ¤llen-Member"
+msgstr "Windgällen-Member"
 
 msgid "15202106"
 msgstr "Dogger des Helvetikums"
@@ -6816,7 +6807,7 @@ msgid "15202134"
 msgstr "Trias des Helvetikums"
 
 msgid "15202135"
-msgstr "BesoÃ«ns-Formation"
+msgstr "Besoëns-Formation"
 
 msgid "15202136"
 msgstr "Quarten-Formation"
@@ -6828,7 +6819,7 @@ msgid "15202138"
 msgstr "Griaz-Member"
 
 msgid "15202139"
-msgstr "RÃ¶ti-Formation"
+msgstr "Röti-Formation"
 
 msgid "15202140"
 msgstr "Vieux-Emosson-Formation"
@@ -6846,13 +6837,13 @@ msgid "15202144"
 msgstr "Glarus-Verrucano"
 
 msgid "15202145"
-msgstr "SchÃ¶nbÃ¼el-Formation"
+msgstr "Schönbüel-Formation"
 
 msgid "15202146"
-msgstr "SchÃ¶nbÃ¼el-Quarzit"
+msgstr "Schönbüel-Quarzit"
 
 msgid "15202147"
-msgstr "KÃ¤rpf-Formation"
+msgstr "Kärpf-Formation"
 
 msgid "15202148"
 msgstr "Karrenstock-Formation"
@@ -6864,10 +6855,10 @@ msgid "15202150"
 msgstr "Fuggstock-Member"
 
 msgid "15202151"
-msgstr "MÃ¤ren-Formation"
+msgstr "Mären-Formation"
 
 msgid "15202152"
-msgstr "Ãœblital-Formation"
+msgstr "Üblital-Formation"
 
 msgid "15202153"
 msgstr "Ilanz-Verrucano"
@@ -6897,19 +6888,19 @@ msgid "15202161"
 msgstr "Grimsel-Granodiorit"
 
 msgid "15202162"
-msgstr "SÃ¼dwestlicher Aare-Granit"
+msgstr "Südwestlicher Aare-Granit"
 
 msgid "15202163"
 msgstr "Bugnei-Granodiorit"
 
 msgid "15202164"
-msgstr "SpÃ¤t- bis postvariszische Sedimente und Vulkanite des Aar-Massivs"
+msgstr "Spät- bis postvariszische Sedimente und Vulkanite des Aar-Massivs"
 
 msgid "15202165"
 msgstr "Wendenjoch-Formation"
 
 msgid "15202166"
-msgstr "WindgÃ¤llen-Formation"
+msgstr "Windgällen-Formation"
 
 msgid "15202167"
 msgstr "Trift-Formation"
@@ -6918,7 +6909,7 @@ msgid "15202168"
 msgstr "Intschi-Formation"
 
 msgid "15202169"
-msgstr "BifertengrÃ¤tli-Formation"
+msgstr "Bifertengrätli-Formation"
 
 msgid "15202170"
 msgstr "Lakustrisches Member"
@@ -6927,7 +6918,7 @@ msgid "15202171"
 msgstr "Estuarisches Member"
 
 msgid "15202172"
-msgstr "Basales Konglomerat (BifertengrÃ¤tli)"
+msgstr "Basales Konglomerat (Bifertengrätli)"
 
 msgid "15202173"
 msgstr "Vulkanisches Member"
@@ -6945,7 +6936,7 @@ msgid "15202178"
 msgstr "Brunni-Granit"
 
 msgid "15202179"
-msgstr "DÃ¼ssi-Diorit"
+msgstr "Düssi-Diorit"
 
 msgid "15202180"
 msgstr "Munt-Dado-Granit"
@@ -6957,13 +6948,13 @@ msgid "15202182"
 msgstr "Voralp-Granit"
 
 msgid "15202183"
-msgstr "RÃ¶tifirn-Gruppe"
+msgstr "Rötifirn-Gruppe"
 
 msgid "15202184"
 msgstr "Punteglias-Granit"
 
 msgid "15202185"
-msgstr "TÃ¶di-Granit"
+msgstr "Tödi-Granit"
 
 msgid "15202186"
 msgstr "Strem-Granit"
@@ -6990,13 +6981,13 @@ msgid "15202193"
 msgstr "Bifertenfirn-Formation"
 
 msgid "15202194"
-msgstr "PrÃ¤variszisches polyzyklisches Grundgebirge des Aar-Massivs"
+msgstr "Prävariszisches polyzyklisches Grundgebirge des Aar-Massivs"
 
 msgid "15202195"
 msgstr "Innertkirchen-Migmatit"
 
 msgid "15202196"
-msgstr "ZÃ¤senberg-Gneis"
+msgstr "Zäsenberg-Gneis"
 
 msgid "15202197"
 msgstr "Erstfeld-Gneiskomplex"
@@ -7005,10 +6996,10 @@ msgid "15202198"
 msgstr "Guttannen-Gneiskomplex"
 
 msgid "15202199"
-msgstr "StraligenstÃ¶ckli-Gneiskomplex"
+msgstr "Straligenstöckli-Gneiskomplex"
 
 msgid "15202200"
-msgstr "LÃ¶tschental-Gneiskomplex"
+msgstr "Lötschental-Gneiskomplex"
 
 msgid "15202201"
 msgstr "Ofenhorn-Stampfhorn-Gneiskomplex"
@@ -7023,10 +7014,10 @@ msgid "15202204"
 msgstr "Vallorcine-Granit"
 
 msgid "15202205"
-msgstr "MiÃ©ville-Mylonit"
+msgstr "Miéville-Mylonit"
 
 msgid "15202206"
-msgstr "MontÃ©es-PÃ©lissiers-Granit"
+msgstr "Montées-Pélissiers-Granit"
 
 msgid "15202207"
 msgstr "Pormenaz-Granit"
@@ -7035,7 +7026,7 @@ msgid "15202208"
 msgstr "Servoz-Les-Houches-Granit"
 
 msgid "15202209"
-msgstr "VisÃ©en"
+msgstr "Viséen"
 
 msgid "15202210"
 msgstr "Emosson-Glimmerschiefer"
@@ -7044,7 +7035,7 @@ msgid "15202211"
 msgstr "Luisin-Orthogneis"
 
 msgid "15202212"
-msgstr "Val-BÃ©rard-Gneiskomplex"
+msgstr "Val-Bérard-Gneiskomplex"
 
 msgid "15202213"
 msgstr "Lac-Cornu-Eklogit"
@@ -7065,7 +7056,7 @@ msgid "15202218"
 msgstr "Lognan-Orthogneis"
 
 msgid "15202219"
-msgstr "PÃ©toudes-Orthogneis"
+msgstr "Pétoudes-Orthogneis"
 
 msgid "15202220"
 msgstr "Pesciora-Gruppe"
@@ -7077,7 +7068,7 @@ msgid "15202222"
 msgstr "Cacciola-Granit"
 
 msgid "15202223"
-msgstr "SÃ¤delhorn-Diorit"
+msgstr "Sädelhorn-Diorit"
 
 msgid "15202224"
 msgstr "Winterhorn-Granit"
@@ -7125,7 +7116,7 @@ msgid "15202238"
 msgstr "Sasso-Rosso-Gneiskomplex"
 
 msgid "15202239"
-msgstr "PrÃ¼sfa-Gneiskomplex"
+msgstr "Prüsfa-Gneiskomplex"
 
 msgid "15202240"
 msgstr "Streifengneis-Komplex"
@@ -7284,22 +7275,22 @@ msgid "15202291"
 msgstr "Ahornen-Member"
 
 msgid "15202292"
-msgstr "KistenstÃ¶ckli-Member"
+msgstr "Kistenstöckli-Member"
 
 msgid "15202293"
-msgstr "GhÃ¶lzwald-Member"
+msgstr "Ghölzwald-Member"
 
 msgid "15202294"
 msgstr "Malor-Member"
 
 msgid "15202295"
-msgstr "SÃ¼delbach-Member"
+msgstr "Südelbach-Member"
 
 msgid "15202296"
 msgstr "Kleintal-Konglomerat"
 
 msgid "15202297"
-msgstr "RÃ¼tenen-Konglomerat"
+msgstr "Rütenen-Konglomerat"
 
 msgid "15202298"
 msgstr "Jura des Helvetikums"
@@ -7308,16 +7299,16 @@ msgid "15202299"
 msgstr "Wang-Brekzie"
 
 msgid "15202300"
-msgstr "Â«Oberer SchrattenkalkÂ»"
+msgstr "«Oberer Schrattenkalk»"
 
 msgid "15202301"
-msgstr "Â«Unterer SchrattenkalkÂ»"
+msgstr "«Unterer Schrattenkalk»"
 
 msgid "15202302"
-msgstr "Â«Oberer Quinten-KalkÂ»"
+msgstr "«Oberer Quinten-Kalk»"
 
 msgid "15202303"
-msgstr "Â«Unterer Quinten-KalkÂ»"
+msgstr "«Unterer Quinten-Kalk»"
 
 msgid "15202304"
 msgstr "Planplatte-Eisenoolith"
@@ -7326,10 +7317,10 @@ msgid "15202305"
 msgstr "Geissbach-Konglomerat"
 
 msgid "15202306"
-msgstr "StÃ¶cki-Sandstein"
+msgstr "Stöcki-Sandstein"
 
 msgid "15202307"
-msgstr "InfraprÃ¤alpines Melange"
+msgstr "Infrapräalpines Melange"
 
 msgid "15202308"
 msgstr "Iberg-Melange"
@@ -7347,7 +7338,7 @@ msgid "15202312"
 msgstr "Serhalten-Flysch"
 
 msgid "15202313"
-msgstr "GwÃ¼rz-Flysch"
+msgstr "Gwürz-Flysch"
 
 msgid "15202314"
 msgstr "Ruestel-Flysch"
@@ -7359,7 +7350,7 @@ msgid "15202316"
 msgstr "Habkern-Granit"
 
 msgid "15202317"
-msgstr "Gros-PlanÃ©-Melange"
+msgstr "Gros-Plané-Melange"
 
 msgid "15202318"
 msgstr "Bodevena-Melange"
@@ -7371,7 +7362,7 @@ msgid "15202320"
 msgstr "Torrenthorn-Formation"
 
 msgid "15202321"
-msgstr "WeissgandstÃ¶ckli-Bank"
+msgstr "Weissgandstöckli-Bank"
 
 msgid "15202322"
 msgstr "Grisch-Member"
@@ -7383,19 +7374,19 @@ msgid "15202324"
 msgstr "Murgtal-Formation"
 
 msgid "15202325"
-msgstr "DzÃ©man-Member"
+msgstr "Dzéman-Member"
 
 msgid "15202326"
 msgstr "Aplitische Randfazies des Zentralen Aare-Granits"
 
 msgid "15202327"
-msgstr "Chli-WindgÃ¤llen-Rhyolith"
+msgstr "Chli-Windgällen-Rhyolith"
 
 msgid "15202328"
-msgstr "BÃ¤regg-Gneiskomplex"
+msgstr "Bäregg-Gneiskomplex"
 
 msgid "15202329"
-msgstr "GÃ¤rsthorn-Gneiskomplex"
+msgstr "Gärsthorn-Gneiskomplex"
 
 msgid "15202330"
 msgstr "Sogn-Placi-Gneiskomplex"
@@ -7404,22 +7395,22 @@ msgid "15202331"
 msgstr "Massa-Gneiskomplex"
 
 msgid "15202332"
-msgstr "FrÃ¼hvariszische Intrusiva des Aiguilles-Rouges-Massivs"
+msgstr "Frühvariszische Intrusiva des Aiguilles-Rouges-Massivs"
 
 msgid "15202333"
-msgstr "FrÃ¼hvariszische Intrusiva des Aiguilles-Rouges-Massivs"
+msgstr "Frühvariszische Intrusiva des Aiguilles-Rouges-Massivs"
 
 msgid "15202334"
-msgstr "PrÃ¤variszisches polyzyklisches Grundgebirge des Aiguilles-Rouges-Massivs"
+msgstr "Prävariszisches polyzyklisches Grundgebirge des Aiguilles-Rouges-Massivs"
 
 msgid "15202335"
-msgstr "ChÃ©serys-Gneis"
+msgstr "Chéserys-Gneis"
 
 msgid "15202336"
-msgstr "SpÃ¤t- bis postvariszische Intrusiva des Mont-Blanc-Massivs"
+msgstr "Spät- bis postvariszische Intrusiva des Mont-Blanc-Massivs"
 
 msgid "15202337"
-msgstr "PrÃ¤variszisches polyzyklisches Grundgebirge des Mont-Blanc-Massivs"
+msgstr "Prävariszisches polyzyklisches Grundgebirge des Mont-Blanc-Massivs"
 
 msgid "15202338"
 msgstr "Alp-Cavradi-Gneiskomplex"
@@ -7428,13 +7419,13 @@ msgid "15202339"
 msgstr "Giubine-Gneiskomplex"
 
 msgid "15202340"
-msgstr "PrÃ¤variszisches polyzyklisches Grundgebirge der Gotthardt-Decke"
+msgstr "Prävariszisches polyzyklisches Grundgebirge der Gotthardt-Decke"
 
 msgid "15202341"
 msgstr "Unterwassern-Gneis"
 
 msgid "15202342"
-msgstr "HÃ¼enerstock-Gneis"
+msgstr "Hüenerstock-Gneis"
 
 msgid "15202343"
 msgstr "Sassina-Augengneis"
@@ -7473,40 +7464,40 @@ msgid "15202354"
 msgstr "Corandoni-Amphibolit"
 
 msgid "15202355"
-msgstr "PrÃ¤variszisches polyzyklisches Grundgebirge der Tavetsch-Decke"
+msgstr "Prävariszisches polyzyklisches Grundgebirge der Tavetsch-Decke"
 
 msgid "15202356"
 msgstr "Rueras-Gneiskomplex"
 
 msgid "15202357"
-msgstr "PrÃ¤- und FrÃ¼hvariszische Sedimente und Vulkanite des Aiguilles-Rouges-Massivs"
+msgstr "Prä- und Frühvariszische Sedimente und Vulkanite des Aiguilles-Rouges-Massivs"
 
 msgid "15202358"
 msgstr "Au-d'Arbignon-Schiefer"
 
 msgid "15202359"
-msgstr "DorÃ©naz-Konglomerat"
+msgstr "Dorénaz-Konglomerat"
 
 msgid "15202394"
 msgstr "Spirstock-Member"
 
 msgid "15202395"
-msgstr "Â«Roter SeewenkalkÂ»"
+msgstr "«Roter Seewenkalk»"
 
 msgid "15202396"
-msgstr "Untere GÃ¶tzis-Bank"
+msgstr "Untere Götzis-Bank"
 
 msgid "15202397"
 msgstr "Col-de-la-Plaine-Morte-Bank"
 
 msgid "15202398"
-msgstr "Â«Oberer BetliskalkÂ»"
+msgstr "«Oberer Betliskalk»"
 
 msgid "15202399"
-msgstr "Â«Unterer BetliskalkÂ»"
+msgstr "«Unterer Betliskalk»"
 
 msgid "15202400"
-msgstr "VÃ¤ttis-Fossilbrekzie"
+msgstr "Vättis-Fossilbrekzie"
 
 msgid "15202401"
 msgstr "Inferno-Formation, Oberer Teil"
@@ -7524,37 +7515,37 @@ msgid "15202405"
 msgstr "Sexmor-Formation, Unterer Teil"
 
 msgid "15202406"
-msgstr "Â«LeitoolithÂ»"
+msgstr "«Leitoolith»"
 
 msgid "15202411"
 msgstr "Lochegg-Brekzie"
 
 msgid "15202412"
-msgstr "Â«Obere ZementsteinschichtenÂ»"
+msgstr "«Obere Zementsteinschichten»"
 
 msgid "15202413"
-msgstr "Â«Untere ZementsteinschichtenÂ»"
+msgstr "«Untere Zementsteinschichten»"
 
 msgid "15202414"
-msgstr "Â«Rote EchinodermenbrekzieÂ»"
+msgstr "«Rote Echinodermenbrekzie»"
 
 msgid "15202415"
-msgstr "Â«Obere TonschieferÂ» (Bommerstein-Fm.)"
+msgstr "«Obere Tonschiefer» (Bommerstein-Fm.)"
 
 msgid "15202416"
 msgstr "Glockhaus-Member"
 
 msgid "15202417"
-msgstr "Â«Basaler QuarzitÂ» (Coroi-Fm.)"
+msgstr "«Basaler Quarzit» (Coroi-Fm.)"
 
 msgid "15202418"
-msgstr "Rauwacke (RÃ¶ti-Fm.)"
+msgstr "Rauwacke (Röti-Fm.)"
 
 msgid "15202419"
 msgstr "Col-du-Jorat-Member"
 
 msgid "15202420"
-msgstr "Â«EquisetenschieferÂ»"
+msgstr "«Equisetenschiefer»"
 
 msgid "15202421"
 msgstr "Leist-Mergel"
@@ -7569,22 +7560,22 @@ msgid "15202424"
 msgstr "Javrex-Formation"
 
 msgid "15202425"
-msgstr "Â«Marnes noires pyriteusesÂ»"
+msgstr "«Marnes noires pyriteuses»"
 
 msgid "15202426"
-msgstr "Â«Calcaires grÃ©so-glauconieuxÂ»"
+msgstr "«Calcaires gréso-glauconieux»"
 
 msgid "15202427"
-msgstr "Â«CalcarÃ©nites beiges oolitiquesÂ»"
+msgstr "«Calcarénites beiges oolitiques»"
 
 msgid "15202428"
-msgstr "Â«Calcaire siliceux brunÃ¢treÂ»"
+msgstr "«Calcaire siliceux brunâtre»"
 
 msgid "15202429"
 msgstr "Villarbeney-Formation"
 
 msgid "15202430"
-msgstr "Veveyse-de-ChÃ¢tel-Member"
+msgstr "Veveyse-de-Châtel-Member"
 
 msgid "15202431"
 msgstr "Riondouneire-Member"
@@ -7593,19 +7584,19 @@ msgid "15202432"
 msgstr "Jogne-Formation"
 
 msgid "15202433"
-msgstr "Â«Calcaires brÃ©chiquesÂ»"
+msgstr "«Calcaires bréchiques»"
 
 msgid "15202434"
 msgstr "Vuavres-Member"
 
 msgid "15202435"
-msgstr "PlaniÃ¨re-Member"
+msgstr "Planière-Member"
 
 msgid "15202436"
-msgstr "BifÃ©-Formation"
+msgstr "Bifé-Formation"
 
 msgid "15202437"
-msgstr "Â«Calcaire Ã  cimentÂ» (BifÃ©-Fm.)"
+msgstr "«Calcaire à ciment» (Bifé-Fm.)"
 
 msgid "15202438"
 msgstr "Joux-Galez-Member"
@@ -7650,10 +7641,10 @@ msgid "15202452"
 msgstr "Basaler Mines-Lias"
 
 msgid "15202453"
-msgstr "Tektonisierte Basis des Glarner-Verrucano (Â«PlagioklasgneisÂ»)"
+msgstr "Tektonisierte Basis des Glarner-Verrucano («Plagioklasgneis»)"
 
 msgid "15202454"
-msgstr "ChrÃ¼zlistock-Migmatit"
+msgstr "Chrüzlistock-Migmatit"
 
 msgid "15202455"
 msgstr "Piz-Cuolmet-Gneiskomplex"
@@ -7662,7 +7653,7 @@ msgid "15202456"
 msgstr "Pulanera-Gneiskomplex"
 
 msgid "15202464"
-msgstr "SpÃ¤t- bis postvariszische Sedimente und Vulkanite des Helvetikums"
+msgstr "Spät- bis postvariszische Sedimente und Vulkanite des Helvetikums"
 
 msgid "15202465"
 msgstr "Permo-Karbon des Aiguilles-Rouges-Massivs"
@@ -7674,7 +7665,7 @@ msgid "15202467"
 msgstr "Variszisches Kristallin des Helvetikums"
 
 msgid "15202468"
-msgstr "PrÃ¤variszisches polyzyklisches Grundgebirge des Helvetikums"
+msgstr "Prävariszisches polyzyklisches Grundgebirge des Helvetikums"
 
 msgid "15202469"
 msgstr "Undifferenziertes Kristallin des Helvetikums"
@@ -7683,7 +7674,7 @@ msgid "15202472"
 msgstr "Catogne-Gneiskomplex"
 
 msgid "15202473"
-msgstr "GrÃ©pillon-Leukogranitporphyr"
+msgstr "Grépillon-Leukogranitporphyr"
 
 msgid "15202474"
 msgstr "Arpette-Leukogranit"
@@ -7743,7 +7734,7 @@ msgid "15202492"
 msgstr "Kapfen-Sandstein"
 
 msgid "15202493"
-msgstr "KÃ¤rpfgipfel-Sernifit"
+msgstr "Kärpfgipfel-Sernifit"
 
 msgid "15202494"
 msgstr "Fulen-Formation"
@@ -7779,7 +7770,7 @@ msgid "15202504"
 msgstr "Perm der Tavetsch-Decke (Val Acla Mulin)"
 
 msgid "15202505"
-msgstr "WindgÃ¤llenlÃ¼cke-Mikrogranit"
+msgstr "Windgällenlücke-Mikrogranit"
 
 msgid "15202506"
 msgstr "Sandalp-Rhyolith"
@@ -7797,7 +7788,7 @@ msgid "15202510"
 msgstr "Gonzen-Eisenerzhorizont"
 
 msgid "15202527"
-msgstr "Ã–hrli-Formation, vom Siderolithikum durchsetzt"
+msgstr "Öhrli-Formation, vom Siderolithikum durchsetzt"
 
 msgid "15202528"
 msgstr "Beesten-Fazies"
@@ -7890,16 +7881,16 @@ msgid "15202557"
 msgstr "Guttannen-Gneiskomplex: Chlorit-Serizitschiefer"
 
 msgid "15202558"
-msgstr "LÃ¶tschental-Gneiskomplex: Muskovitgneis"
+msgstr "Lötschental-Gneiskomplex: Muskovitgneis"
 
 msgid "15202559"
-msgstr "LÃ¶tschental-Gneiskomplex: migmatitischer Biotitgneis"
+msgstr "Lötschental-Gneiskomplex: migmatitischer Biotitgneis"
 
 msgid "15202560"
-msgstr "LÃ¶tschental-Gneiskomplex: Chloritschiefer"
+msgstr "Lötschental-Gneiskomplex: Chloritschiefer"
 
 msgid "15202561"
-msgstr "Ofenhorn-Stampfhorn-Gneiskomplex: gebÃ¤nderter Biotit-Plagioklasgneis"
+msgstr "Ofenhorn-Stampfhorn-Gneiskomplex: gebänderter Biotit-Plagioklasgneis"
 
 msgid "15202562"
 msgstr "Ofenhorn-Stampfhorn-Gneiskomplex: Migmatit"
@@ -7911,13 +7902,13 @@ msgid "15202564"
 msgstr "Ofenhorn-Stampfhorn-Gneiskomplex: Orthogneis"
 
 msgid "15202565"
-msgstr "BÃ¤regg-Gneiskomplex: mylonitischer Orthogneis"
+msgstr "Bäregg-Gneiskomplex: mylonitischer Orthogneis"
 
 msgid "15202566"
-msgstr "BÃ¤regg-Gneiskomplex: mylonitischer Paragneis"
+msgstr "Bäregg-Gneiskomplex: mylonitischer Paragneis"
 
 msgid "15202567"
-msgstr "BÃ¤regg-Gneiskomplex: Metavulkanite"
+msgstr "Bäregg-Gneiskomplex: Metavulkanite"
 
 msgid "15202568"
 msgstr "Grimsel-Granodiorit: aplitische Randfazies"
@@ -7941,7 +7932,7 @@ msgid "15202574"
 msgstr "Guttannen-Gneiskomplex: Migmatit"
 
 msgid "15202575"
-msgstr "Guttannen-Gneiskomplex: Amphibolit fÃ¼hrend"
+msgstr "Guttannen-Gneiskomplex: Amphibolit führend"
 
 msgid "15202576"
 msgstr "Guttannen-Gneiskomplex: aplitischer Granit"
@@ -7968,7 +7959,7 @@ msgid "15202583"
 msgstr "Bommerstein- und Reischiben-Formation, undifferenziert"
 
 msgid "15202584"
-msgstr "Mels- und RÃ¶ti-Formation, undifferenziert"
+msgstr "Mels- und Röti-Formation, undifferenziert"
 
 msgid "15202585"
 msgstr "Guttannen-Gneiskomplex: schierfriger Biotit-Chlorit-Serizit-Gneis"
@@ -7980,16 +7971,16 @@ msgid "15202587"
 msgstr "Laubersmad-Flysch"
 
 msgid "15202588"
-msgstr "Stad-Formation, Â«JÃ¼ngerer QuarzsandsteinÂ»"
+msgstr "Stad-Formation, «Jüngerer Quarzsandstein»"
 
 msgid "15202589"
-msgstr "Einsiedeln-Member, Â«Ã„lterer QuarzsandsteinÂ»"
+msgstr "Einsiedeln-Member, «Älterer Quarzsandstein»"
 
 msgid "15202590"
 msgstr "Schrattenkalk-Formation, vermergelt"
 
 msgid "15202591"
-msgstr "WÃ¤ngen-Kalk, Lithothamnienkalk-Fazies"
+msgstr "Wängen-Kalk, Lithothamnienkalk-Fazies"
 
 msgid "15202592"
 msgstr "Einsiedeln-Member, Alveolinenkalk-Fazies"
@@ -8001,7 +7992,7 @@ msgid "15202594"
 msgstr "Tektonisches Melange der Internen Einsiedeln-Schuppen"
 
 msgid "15202595"
-msgstr "BÃ¼rgen- und Wildstrubel-Formation, undiff."
+msgstr "Bürgen- und Wildstrubel-Formation, undiff."
 
 msgid "15202596"
 msgstr "Euthal-Formation und Steinbach-Member, undiff."
@@ -8022,7 +8013,7 @@ msgid "15202601"
 msgstr "Prodkamm- bis Sexmor-Formation, undifferenziert"
 
 msgid "15202602"
-msgstr "PlattazÃ¼g-Formation"
+msgstr "Plattazüg-Formation"
 
 msgid "15202603"
 msgstr "Zemenstein- bis Garschella-Formation, undifferenziert"
@@ -8055,7 +8046,7 @@ msgid "15203008"
 msgstr "Forclaz-Member"
 
 msgid "15203009"
-msgstr "GrÃ¨s de Passage"
+msgstr "Grès de Passage"
 
 msgid "15203010"
 msgstr "Leyderry-Member"
@@ -8064,7 +8055,7 @@ msgid "15203011"
 msgstr "Raverette-Member"
 
 msgid "15203012"
-msgstr "Schistes Ã  Miches"
+msgstr "Schistes à Miches"
 
 msgid "15203013"
 msgstr "Murgaz-Kalk"
@@ -8121,10 +8112,10 @@ msgid "15203030"
 msgstr "Rontins-Member"
 
 msgid "15203031"
-msgstr "AlliÃ¨res-Member"
+msgstr "Allières-Member"
 
 msgid "15203032"
-msgstr "GÃ©rignoz-Kalk"
+msgstr "Gérignoz-Kalk"
 
 msgid "15203033"
 msgstr "Plagersflue-Kalkarenit"
@@ -8133,7 +8124,7 @@ msgid "15203034"
 msgstr "Intyamon-Formation"
 
 msgid "15203035"
-msgstr "ChÃ¤llihorn-Member"
+msgstr "Chällihorn-Member"
 
 msgid "15203036"
 msgstr "Comba-d'Avau-Member"
@@ -8145,7 +8136,7 @@ msgid "15203038"
 msgstr "Sciernes-d'Albeuve-Formation"
 
 msgid "15203039"
-msgstr "MolÃ©son-Formation"
+msgstr "Moléson-Formation"
 
 msgid "15203040"
 msgstr "Torrent-de-Lessoc-Formation"
@@ -8157,7 +8148,7 @@ msgid "15203042"
 msgstr "Col-de-Lys-Member"
 
 msgid "15203043"
-msgstr "Vanil-CarrÃ©-Member"
+msgstr "Vanil-Carré-Member"
 
 msgid "15203044"
 msgstr "Verdy-Member"
@@ -8169,7 +8160,7 @@ msgid "15203046"
 msgstr "Sommant-Formation"
 
 msgid "15203047"
-msgstr "RossiniÃ¨re-Formation"
+msgstr "Rossinière-Formation"
 
 msgid "15203048"
 msgstr "Heiti-Formation"
@@ -8184,7 +8175,7 @@ msgid "15203051"
 msgstr "Creux-de-l'Ours-Member"
 
 msgid "15203052"
-msgstr "Petit-LienÃ§on-Formation"
+msgstr "Petit-Liençon-Formation"
 
 msgid "15203053"
 msgstr "Arvel-Formation"
@@ -8214,7 +8205,7 @@ msgid "15203061"
 msgstr "Dolomies Blondes"
 
 msgid "15203062"
-msgstr "ClÃ´t-la-Cime-Formation"
+msgstr "Clôt-la-Cime-Formation"
 
 msgid "15203063"
 msgstr "Neokom"
@@ -8238,7 +8229,7 @@ msgid "15203069"
 msgstr "Gibel-Formation"
 
 msgid "15203070"
-msgstr "RÃ¤msi-Member"
+msgstr "Rämsi-Member"
 
 msgid "15203071"
 msgstr "Gibel-Member"
@@ -8259,7 +8250,7 @@ msgid "15203076"
 msgstr "Spis-Kalk"
 
 msgid "15203077"
-msgstr "Â«PosidonienschieferÂ» (der Stanserhorn-Fm.)"
+msgstr "«Posidonienschiefer» (der Stanserhorn-Fm.)"
 
 msgid "15203078"
 msgstr "Obflue-Formation"
@@ -8271,10 +8262,10 @@ msgid "15203080"
 msgstr "Horngraben-Formation"
 
 msgid "15203081"
-msgstr "LÃ¼ckengraben-Formation"
+msgstr "Lückengraben-Formation"
 
 msgid "15203082"
-msgstr "DorfflÃ¼e-Formation"
+msgstr "Dorfflüe-Formation"
 
 msgid "15203083"
 msgstr "Gummfluh-Mikrofazies"
@@ -8376,7 +8367,7 @@ msgid "15203115"
 msgstr "Flysch 2a tonig-sandig"
 
 msgid "15203116"
-msgstr "HellstÃ¤tt-Formation"
+msgstr "Hellstätt-Formation"
 
 msgid "15203117"
 msgstr "Schlieren-Flysch"
@@ -8409,7 +8400,7 @@ msgid "15203126"
 msgstr "Biot-Formation"
 
 msgid "15203127"
-msgstr "ChÃ©tillon-Formation"
+msgstr "Chétillon-Formation"
 
 msgid "15203128"
 msgstr "Rodomonts-Formation"
@@ -8448,10 +8439,10 @@ msgid "15203139"
 msgstr "Spatkalk (Tissota-Melange)"
 
 msgid "15203140"
-msgstr "HundsrÃ¼gg-Formation"
+msgstr "Hundsrügg-Formation"
 
 msgid "15203141"
-msgstr "PerriÃ¨res-Formation"
+msgstr "Perrières-Formation"
 
 msgid "15203142"
 msgstr "Rhenodanubischer Flysch"
@@ -8463,7 +8454,7 @@ msgid "15203144"
 msgstr "Fanola-Formation"
 
 msgid "15203145"
-msgstr "PlanknerbrÃ¼cke-Formation"
+msgstr "Planknerbrücke-Formation"
 
 msgid "15203146"
 msgstr "Planken-Formation"
@@ -8514,13 +8505,13 @@ msgid "15203161"
 msgstr "Versoyen-Schichten"
 
 msgid "15203162"
-msgstr "PrÃ¤ttigau-Schiefer"
+msgstr "Prättigau-Schiefer"
 
 msgid "15203163"
 msgstr "Ruchberg-Formation"
 
 msgid "15203164"
-msgstr "OberÃ¤lpli-Formation"
+msgstr "Oberälpli-Formation"
 
 msgid "15203165"
 msgstr "Eggberg-Formation"
@@ -8532,7 +8523,7 @@ msgid "15203167"
 msgstr "Fadura-Formation"
 
 msgid "15203168"
-msgstr "PfÃ¤vigrat-Formation"
+msgstr "Pfävigrat-Formation"
 
 msgid "15203169"
 msgstr "Sassauna-Formation"
@@ -8544,7 +8535,7 @@ msgid "15203171"
 msgstr "Klus-Formation"
 
 msgid "15203172"
-msgstr "TomÃ¼l-Flysch"
+msgstr "Tomül-Flysch"
 
 msgid "15203173"
 msgstr "Hauptkonglomerat"
@@ -8562,16 +8553,16 @@ msgid "15203177"
 msgstr "Nolla-Ton"
 
 msgid "15203178"
-msgstr "BÃ¤renhorn-Formation"
+msgstr "Bärenhorn-Formation"
 
 msgid "15203179"
-msgstr "GrÃ¼ngesteine (Grava/TomÃ¼l)"
+msgstr "Grüngesteine (Grava/Tomül)"
 
 msgid "15203180"
-msgstr "TomÃ¼l-MÃ©lange"
+msgstr "Tomül-Mélange"
 
 msgid "15203181"
-msgstr "TounÃ´-Serie"
+msgstr "Tounô-Serie"
 
 msgid "15203182"
 msgstr "Barrhorn-Serie"
@@ -8607,7 +8598,7 @@ msgid "15203192"
 msgstr "Cleuson-Member"
 
 msgid "15203193"
-msgstr "MÃ©tailler-Formation"
+msgstr "Métailler-Formation"
 
 msgid "15203194"
 msgstr "Distulberg-Formation"
@@ -8622,7 +8613,7 @@ msgid "15203197"
 msgstr "Lirec-Formation"
 
 msgid "15203198"
-msgstr "AdlerflÃ¼e-Formation"
+msgstr "Adlerflüe-Formation"
 
 msgid "15203199"
 msgstr "Ergischhorn-Komplex"
@@ -8703,22 +8694,22 @@ msgid "15203224"
 msgstr "Tasna-Granit"
 
 msgid "15203225"
-msgstr "SÃ©rie Rousse"
+msgstr "Série Rousse"
 
 msgid "15203226"
-msgstr "SÃ©rie Grise"
+msgstr "Série Grise"
 
 msgid "15203227"
 msgstr "Garde-de-Bordon-Serie"
 
 msgid "15203228"
-msgstr "FÃªta-d'AoÃ»t-Flysch"
+msgstr "Fêta-d'Août-Flysch"
 
 msgid "15203229"
 msgstr "Allalin-Gabbro"
 
 msgid "15203230"
-msgstr "Arosa-MÃ©lange"
+msgstr "Arosa-Mélange"
 
 msgid "15203231"
 msgstr "Verspala-Formation"
@@ -8739,7 +8730,7 @@ msgid "15203236"
 msgstr "Ophiolith der Arosa-Zone"
 
 msgid "15203237"
-msgstr "InfraprÃ¤alpines Melange"
+msgstr "Infrapräalpines Melange"
 
 msgid "15203238"
 msgstr "Buufal-Konglomerat"
@@ -8748,7 +8739,7 @@ msgid "15203239"
 msgstr "Langel-Member"
 
 msgid "15203240"
-msgstr "Â«Obere RauhwackeÂ»"
+msgstr "«Obere Rauhwacke»"
 
 msgid "15203241"
 msgstr "Gips der Klippen-Decke"
@@ -8766,22 +8757,22 @@ msgid "15203245"
 msgstr "Gets-Ophiolith"
 
 msgid "15203246"
-msgstr "Obere Kalk- und Tonschiefer (Grava/TomÃ¼l)"
+msgstr "Obere Kalk- und Tonschiefer (Grava/Tomül)"
 
 msgid "15203247"
-msgstr "Quarzit und quarzitische Schiefer (Grava/TomÃ¼l)"
+msgstr "Quarzit und quarzitische Schiefer (Grava/Tomül)"
 
 msgid "15203248"
-msgstr "Untere Kalk- und Tonschiefer (Grava/TomÃ¼l)"
+msgstr "Untere Kalk- und Tonschiefer (Grava/Tomül)"
 
 msgid "15203249"
 msgstr "Aul-Marmor"
 
 msgid "15203250"
-msgstr "Brekzie (Grava/TomÃ¼l)"
+msgstr "Brekzie (Grava/Tomül)"
 
 msgid "15203251"
-msgstr "GryphÃ¤enkalk"
+msgstr "Gryphäenkalk"
 
 msgid "15203252"
 msgstr "Nordpenninische Trias"
@@ -8799,7 +8790,7 @@ msgid "15203256"
 msgstr "Adula-D.: Amphibolit"
 
 msgid "15203257"
-msgstr "SubmÃ©diane-Melange"
+msgstr "Submédiane-Melange"
 
 msgid "15203258"
 msgstr "Truche-Brekzie"
@@ -8814,10 +8805,10 @@ msgid "15203261"
 msgstr "Troublon-Kalk"
 
 msgid "15203262"
-msgstr "ZÃ¼negg-Knollenkalk"
+msgstr "Zünegg-Knollenkalk"
 
 msgid "15203263"
-msgstr "Hauta-CrÃªtaz-Formation"
+msgstr "Hauta-Crêtaz-Formation"
 
 msgid "15203264"
 msgstr "Pointe-de-l'Au-Brekzie"
@@ -8871,13 +8862,13 @@ msgid "15203280"
 msgstr "Wildgrimmi-Member"
 
 msgid "15203281"
-msgstr "Â«Untere RauhwackeÂ»"
+msgstr "«Untere Rauhwacke»"
 
 msgid "15203282"
-msgstr "InfrabrÃ¨che-Melange"
+msgstr "Infrabrèche-Melange"
 
 msgid "15203283"
-msgstr "WÃ¤gital-Flysch"
+msgstr "Wägital-Flysch"
 
 msgid "15203284"
 msgstr "Flysch 5, mit kieseligen Mikrokonglomeraten"
@@ -8886,7 +8877,7 @@ msgid "15203285"
 msgstr "Voirons-Flysch"
 
 msgid "15203286"
-msgstr "BoÃ«ge-Mergel"
+msgstr "Boëge-Mergel"
 
 msgid "15203287"
 msgstr "Vouan-Konglomerat"
@@ -8919,7 +8910,7 @@ msgid "15203325"
 msgstr "Holzerspitz-Kalkschiefer"
 
 msgid "15203348"
-msgstr "Karbon der Zone-HouillÃ¨re"
+msgstr "Karbon der Zone-Houillère"
 
 msgid "15203349"
 msgstr "Terri-Schiefer"
@@ -8931,7 +8922,7 @@ msgid "15203351"
 msgstr "Pizzo-Castello-Wildflysch"
 
 msgid "15203352"
-msgstr "Tamier-ZÃ¶tt-Wildflysch"
+msgstr "Tamier-Zött-Wildflysch"
 
 msgid "15203353"
 msgstr "Alpe-Tamia-Campo-Wildflysch"
@@ -8979,13 +8970,13 @@ msgid "15203367"
 msgstr "Lagensandkalk"
 
 msgid "15203368"
-msgstr "SÃ©rie schisto-quartzitique (Pierre Avoi)"
+msgstr "Série schisto-quartzitique (Pierre Avoi)"
 
 msgid "15203369"
-msgstr "SÃ©rie conglomÃ©ratique (Pierre Avoi)"
+msgstr "Série conglomératique (Pierre Avoi)"
 
 msgid "15203370"
-msgstr "SÃ¼degg-Komplex"
+msgstr "Südegg-Komplex"
 
 msgid "15203371"
 msgstr "Punta-Rossa-Komplex"
@@ -9030,28 +9021,28 @@ msgid "15203385"
 msgstr "Macugnaga-Augengneis"
 
 msgid "15203386"
-msgstr "Perm der Zone-HouillÃ¨re"
+msgstr "Perm der Zone-Houillère"
 
 msgid "15203387"
-msgstr "Perm der Zone-HouillÃ¨re, quarzschiefrig"
+msgstr "Perm der Zone-Houillère, quarzschiefrig"
 
 msgid "15203388"
 msgstr "Ricard-Rhyolit"
 
 msgid "15203389"
-msgstr "Perm der Zone-HouillÃ¨re, konglomeratisch"
+msgstr "Perm der Zone-Houillère, konglomeratisch"
 
 msgid "15203390"
-msgstr "SÃ©rie schisto-grÃ©seuse supÃ©rieure"
+msgstr "Série schisto-gréseuse supérieure"
 
 msgid "15203391"
-msgstr "SÃ©rie schisteuse moyenne"
+msgstr "Série schisteuse moyenne"
 
 msgid "15203392"
 msgstr "Chandoline-Sandstein"
 
 msgid "15203393"
-msgstr "GÃ¤lmji-Gneiss"
+msgstr "Gälmji-Gneiss"
 
 msgid "15203394"
 msgstr "Scherbadung-Gabbro"
@@ -9087,7 +9078,7 @@ msgid "15203404"
 msgstr "Quarzit der Nordpenninische Trias"
 
 msgid "15203405"
-msgstr "Kristallin des BrianÃ§onnais"
+msgstr "Kristallin des Briançonnais"
 
 msgid "15203406"
 msgstr "Permo-Karbon der Ruitor-Decke"
@@ -9096,25 +9087,25 @@ msgid "15203407"
 msgstr "Permo-Karbon der Ruitor-Decke, konglomeratisch"
 
 msgid "15203408"
-msgstr "PiÃ©mont-Glanzschiefer"
+msgstr "Piémont-Glanzschiefer"
 
 msgid "15203409"
-msgstr "Metasedimente der TsatÃ©-Decke"
+msgstr "Metasedimente der Tsaté-Decke"
 
 msgid "15203410"
-msgstr "Marmor der TsatÃ©-Decke"
+msgstr "Marmor der Tsaté-Decke"
 
 msgid "15203411"
-msgstr "Metaradiolarit der TsatÃ©-Decke"
+msgstr "Metaradiolarit der Tsaté-Decke"
 
 msgid "15203412"
 msgstr "Metasedimente der Zermatt-Saas-Decke"
 
 msgid "15203413"
-msgstr "PiÃ©mont-Ophiolith"
+msgstr "Piémont-Ophiolith"
 
 msgid "15203414"
-msgstr "Ophiolith der TsatÃ©-Decke"
+msgstr "Ophiolith der Tsaté-Decke"
 
 msgid "15203415"
 msgstr "Mont-des-Ritzes-Metabasalt"
@@ -9147,7 +9138,7 @@ msgid "15203424"
 msgstr "Ophiolith der Antrona-Decke"
 
 msgid "15203425"
-msgstr "BÃ¶shorn-Gneis"
+msgstr "Böshorn-Gneis"
 
 msgid "15203426"
 msgstr "Orthogneis der Monte-Leone-Decke"
@@ -9192,7 +9183,7 @@ msgid "15203439"
 msgstr "Mezzalama-Granit"
 
 msgid "15203440"
-msgstr "Monte-Rosa-Orthogneis, grobkÃ¶rnig"
+msgstr "Monte-Rosa-Orthogneis, grobkörnig"
 
 msgid "15203441"
 msgstr "Rottal-Migmatit"
@@ -9207,7 +9198,7 @@ msgid "15203444"
 msgstr "Biotitgneis der Monte-Rosa-Decke"
 
 msgid "15203445"
-msgstr "BÃ¤ndergneis der Monte-Rosa-Decke"
+msgstr "Bändergneis der Monte-Rosa-Decke"
 
 msgid "15203446"
 msgstr "Glimmerschiefer der Monte-Rosa-Decke"
@@ -9231,13 +9222,13 @@ msgid "15203452"
 msgstr "Weissmies-Paragneis"
 
 msgid "15203453"
-msgstr "Monte-Rosa-Orthogneis, mittelkÃ¶rnig"
+msgstr "Monte-Rosa-Orthogneis, mittelkörnig"
 
 msgid "15203454"
 msgstr "Stellihorn-Mylonit"
 
 msgid "15203455"
-msgstr "Kalkschiefer der FÃ¤ldbach-Serie"
+msgstr "Kalkschiefer der Fäldbach-Serie"
 
 msgid "15203456"
 msgstr "Nordpenninischer Dogger"
@@ -9252,19 +9243,19 @@ msgid "15203459"
 msgstr "Valgrande-Paragneis"
 
 msgid "15203460"
-msgstr "Variszische Intrusiva des BrianÃ§onnais"
+msgstr "Variszische Intrusiva des Briançonnais"
 
 msgid "15203461"
-msgstr "PrÃ¤variszisches Grundgebirge des BrianÃ§onnais"
+msgstr "Prävariszisches Grundgebirge des Briançonnais"
 
 msgid "15203462"
 msgstr "Moncucco-Peridotit"
 
 msgid "15203463"
-msgstr "Albitaugenschiefer (SOPA) der AdlerflÃ¼e-Formation"
+msgstr "Albitaugenschiefer (SOPA) der Adlerflüe-Formation"
 
 msgid "15203464"
-msgstr "BÃ¤nderamphibolit der AdlerflÃ¼e-Formation"
+msgstr "Bänderamphibolit der Adlerflüe-Formation"
 
 msgid "15203465"
 msgstr "Minugrat-Eklogit"
@@ -9273,13 +9264,13 @@ msgid "15203466"
 msgstr "Amphibolit des Ergischhorn-Ensembles"
 
 msgid "15203467"
-msgstr "GrÃ¼ngesteine der Distulberg-Formation"
+msgstr "Grüngesteine der Distulberg-Formation"
 
 msgid "15203468"
-msgstr "Prasinit der MÃ©tailler-Formation"
+msgstr "Prasinit der Métailler-Formation"
 
 msgid "15203469"
-msgstr "Ultramafit der MÃ©tailler-Formation"
+msgstr "Ultramafit der Métailler-Formation"
 
 msgid "15203470"
 msgstr "Oberems-Albitgneis"
@@ -9297,13 +9288,13 @@ msgid "15203474"
 msgstr "Variszische Intrusiva der Maggia-Decke"
 
 msgid "15203475"
-msgstr "PrÃ¤variszisches Grundgebirge der Maggia-Decke"
+msgstr "Prävariszisches Grundgebirge der Maggia-Decke"
 
 msgid "15203476"
 msgstr "Maggia-D.: Paragneis"
 
 msgid "15203477"
-msgstr "BÃ¤ndergneis der Maggia-Decke"
+msgstr "Bändergneis der Maggia-Decke"
 
 msgid "15203478"
 msgstr "Augengneis der Maggia-Decke"
@@ -9426,7 +9417,7 @@ msgid "15203517"
 msgstr "Aula-Spruga-Gneiskomplex"
 
 msgid "15203518"
-msgstr "Lizun-GrÃ¼nschiefer"
+msgstr "Lizun-Grünschiefer"
 
 msgid "15203519"
 msgstr "Rossi-Formation"
@@ -9438,7 +9429,7 @@ msgid "15203521"
 msgstr "Batnall-Gneis"
 
 msgid "15203526"
-msgstr "Gips der Zone SubmÃ©diane"
+msgstr "Gips der Zone Submédiane"
 
 msgid "15203527"
 msgstr "Karpatischer Keuper"
@@ -9552,13 +9543,13 @@ msgid "15203563"
 msgstr "Couches-Rouges der ZSK"
 
 msgid "15203564"
-msgstr "WÃ¤gital-Flysch: oberer Teil (PalÃ¤ogen)"
+msgstr "Wägital-Flysch: oberer Teil (Paläogen)"
 
 msgid "15203565"
-msgstr "WÃ¤gital-Flysch: untererer Teil (Kreide)"
+msgstr "Wägital-Flysch: untererer Teil (Kreide)"
 
 msgid "15203566"
-msgstr "WÃ¤gital-Flysch: basaler, tektonisierter Teil"
+msgstr "Wägital-Flysch: basaler, tektonisierter Teil"
 
 msgid "15203567"
 msgstr "Gibel- und Griggeli-Formation"
@@ -9579,7 +9570,7 @@ msgid "15203572"
 msgstr "Gipsmergel und Sandstein der Klippen-Decke"
 
 msgid "15203573"
-msgstr "Schlieren-Sandstein, im PalÃ¤ogen tektonisch Ã¼berprÃ¤gt"
+msgstr "Schlieren-Sandstein, im Paläogen tektonisch überprägt"
 
 msgid "15203574"
 msgstr "Leimern-Schichten"
@@ -9588,7 +9579,7 @@ msgid "15203575"
 msgstr "Rauwacke und Quarzsandstein der Klippen-Decke (basale Trias)"
 
 msgid "15203576"
-msgstr "Schlieren-Flysch: Hauptmasse (PalÃ¤ogen)"
+msgstr "Schlieren-Flysch: Hauptmasse (Paläogen)"
 
 msgid "15203577"
 msgstr "Mittellias der Klippen-Decke"
@@ -9600,7 +9591,7 @@ msgid "15203579"
 msgstr "Nolla-Tonschiefer: Quarzsandstein"
 
 msgid "15203580"
-msgstr "BÃ¤renhorn-Formation: Quarzsandstein"
+msgstr "Bärenhorn-Formation: Quarzsandstein"
 
 msgid "15203581"
 msgstr "Kalkiger Tonschiefer der Grava-Decke"
@@ -9615,7 +9606,7 @@ msgid "15204001"
 msgstr "God-Drosa-Flysch"
 
 msgid "15204002"
-msgstr "ChanÃ¨ls-Formation"
+msgstr "Chanèls-Formation"
 
 msgid "15204003"
 msgstr "Lech-Formation"
@@ -9657,7 +9648,7 @@ msgid "15204015"
 msgstr "Err-Brekzie"
 
 msgid "15204016"
-msgstr "AllgÃ¤u-Formation"
+msgstr "Allgäu-Formation"
 
 msgid "15204017"
 msgstr "Mezzaun-Member"
@@ -9681,7 +9672,7 @@ msgid "15204023"
 msgstr "Alv-Brekzie"
 
 msgid "15204024"
-msgstr "KÃ¶ssen-Formation"
+msgstr "Kössen-Formation"
 
 msgid "15204025"
 msgstr "Zirmenkopf-Kalk"
@@ -9702,7 +9693,7 @@ msgid "15204030"
 msgstr "Hauptdolomit-Gruppe"
 
 msgid "15204031"
-msgstr "MurtÃ¨r-Plattenkalk"
+msgstr "Murtèr-Plattenkalk"
 
 msgid "15204032"
 msgstr "Murteret-Dolomit"
@@ -9720,7 +9711,7 @@ msgid "15204036"
 msgstr "Pra-Grata-Member"
 
 msgid "15204037"
-msgstr "MÃ¼schauns-Dolomit"
+msgstr "Müschauns-Dolomit"
 
 msgid "15204038"
 msgstr "Raibl-Gruppe"
@@ -9744,10 +9735,10 @@ msgid "15204044"
 msgstr "Stugl-Member"
 
 msgid "15204045"
-msgstr "MingÃ¨r-Formation"
+msgstr "Mingèr-Formation"
 
 msgid "15204046"
-msgstr "MingÃ¨r-Dolomit"
+msgstr "Mingèr-Dolomit"
 
 msgid "15204047"
 msgstr "Mora-Member"
@@ -9831,19 +9822,19 @@ msgid "15204073"
 msgstr "Unteres Member der Fuorn-Fm."
 
 msgid "15204074"
-msgstr "Val-MÃ¼stair-Gruppe"
+msgstr "Val-Müstair-Gruppe"
 
 msgid "15204075"
-msgstr "ChazforÃ -Formation"
+msgstr "Chazforà-Formation"
 
 msgid "15204076"
 msgstr "Tuors-Member"
 
 msgid "15204077"
-msgstr "Val-PÃ¼ra-Member"
+msgstr "Val-Püra-Member"
 
 msgid "15204078"
-msgstr "PrÃ¤bichl-Formation"
+msgstr "Präbichl-Formation"
 
 msgid "15204079"
 msgstr "Ruina-Formation"
@@ -9855,13 +9846,13 @@ msgid "15204081"
 msgstr "Bellaluna-Member"
 
 msgid "15204082"
-msgstr "MÃ¶nchalp-Augengneis"
+msgstr "Mönchalp-Augengneis"
 
 msgid "15204083"
 msgstr "Tschuggen-Augengneis"
 
 msgid "15204084"
-msgstr "GÃ¼stizia-Gneis"
+msgstr "Güstizia-Gneis"
 
 msgid "15204085"
 msgstr "Plasseggen-Augengneis"
@@ -9879,10 +9870,10 @@ msgid "15204102"
 msgstr "Err-Granodiorit"
 
 msgid "15204103"
-msgstr "Postvariszische DiabasgÃ¤nge"
+msgstr "Postvariszische Diabasgänge"
 
 msgid "15204104"
-msgstr "FlÃ¼ela-Augnengneis"
+msgstr "Flüela-Augnengneis"
 
 msgid "15204105"
 msgstr "Dorfberg-Gneis"
@@ -9894,10 +9885,10 @@ msgid "15204107"
 msgstr "Sesvenna-Augengneis"
 
 msgid "15204108"
-msgstr "VaÃ¼glia-Granodiorit"
+msgstr "Vaüglia-Granodiorit"
 
 msgid "15204109"
-msgstr "DÃ¶ss-Radond-Vulkanite"
+msgstr "Döss-Radond-Vulkanite"
 
 msgid "15204110"
 msgstr "Augsten-Brekzie"
@@ -9909,7 +9900,7 @@ msgid "15204112"
 msgstr "Sass-Queder-Metarhyolith"
 
 msgid "15204113"
-msgstr "La-RÃ¶sa-Orthogneis"
+msgstr "La-Rösa-Orthogneis"
 
 msgid "15204114"
 msgstr "Carale-Paraschiefer"
@@ -9927,13 +9918,13 @@ msgid "15204118"
 msgstr "Kesch-Augengneis"
 
 msgid "15204119"
-msgstr "prÃ¤variszisches polyzyklisches Grundgebirge des Ostalpins"
+msgstr "prävariszisches polyzyklisches Grundgebirge des Ostalpins"
 
 msgid "15204120"
-msgstr "Â«JÃ¼ngere OrthogneiseÂ»"
+msgstr "«Jüngere Orthogneise»"
 
 msgid "15204121"
-msgstr "Â«Ã„ltere OrthogneiseÂ»"
+msgstr "«Ältere Orthogneise»"
 
 msgid "15204122"
 msgstr "Val-Rude-Orthogneis"
@@ -9948,7 +9939,7 @@ msgid "15204125"
 msgstr "Sasso-Rosso-Granodiorit"
 
 msgid "15204126"
-msgstr "LavinÃ¨r-Brekzie"
+msgstr "Lavinèr-Brekzie"
 
 msgid "15204127"
 msgstr "Haupter-Brekzie"
@@ -9969,13 +9960,13 @@ msgid "15204134"
 msgstr "kalkalkalische Intrusiva des Ostalpins"
 
 msgid "15204135"
-msgstr "prÃ¤variszische Orthogneise des Ostalpins"
+msgstr "prävariszische Orthogneise des Ostalpins"
 
 msgid "15204136"
-msgstr "prÃ¤variszische Paragneise des Ostalpins"
+msgstr "prävariszische Paragneise des Ostalpins"
 
 msgid "15204137"
-msgstr "prÃ¤variszische GrÃ¼ngesteine des Ostalpins"
+msgstr "prävariszische Grüngesteine des Ostalpins"
 
 msgid "15204138"
 msgstr "Uglix-Plattenkalk"
@@ -10014,7 +10005,7 @@ msgid "15204149"
 msgstr "Raibl-Gr.: Dolomit"
 
 msgid "15204150"
-msgstr "Hauptdolomit-Gr.: bituminÃ¶se Dolomitbrekzie"
+msgstr "Hauptdolomit-Gr.: bituminöse Dolomitbrekzie"
 
 msgid "15204151"
 msgstr "Raibl-Gruppe der Zentralschweizer Klippen"
@@ -10230,10 +10221,10 @@ msgid "15205070"
 msgstr "Manno-Formation"
 
 msgid "15205079"
-msgstr "Variszische Intrusiva des SÃ¼dalpins"
+msgstr "Variszische Intrusiva des Südalpins"
 
 msgid "15205081"
-msgstr "PrÃ¤variszische Metasedimente des SÃ¼dalpins"
+msgstr "Prävariszische Metasedimente des Südalpins"
 
 msgid "15205099"
 msgstr "Oberer Meride-Kalk"
@@ -10326,10 +10317,10 @@ msgid "15205128"
 msgstr "Variszische Intrusiva der Margna-Sella"
 
 msgid "15205129"
-msgstr "PrÃ¤variszisches Grundgebirge der Margna-Sella"
+msgstr "Prävariszisches Grundgebirge der Margna-Sella"
 
 msgid "15205130"
-msgstr "PrÃ¤variszische Metaarkose, Orthogneise"
+msgstr "Prävariszische Metaarkose, Orthogneise"
 
 msgid "15205131"
 msgstr "Orthogneis der Sesia-Decke"
@@ -10347,7 +10338,7 @@ msgid "15205135"
 msgstr "Zona Dioritico-Kinzigitica"
 
 msgid "15205136"
-msgstr "PrÃ¤variszische Orthogneise des SÃ¼dalpins"
+msgstr "Prävariszische Orthogneise des Südalpins"
 
 msgid "15205137"
 msgstr "Pontida-Formation"
@@ -10398,7 +10389,7 @@ msgid "15206035"
 msgstr "Rhyolit, undifferenziert"
 
 msgid "15206036"
-msgstr "GrÃ¼ngestein, undifferenziert"
+msgstr "Grüngestein, undifferenziert"
 
 msgid "15206037"
 msgstr "Amphibolit, undifferenziert"
@@ -10425,10 +10416,10 @@ msgid "15206044"
 msgstr "Mikrogranit"
 
 msgid "15206045"
-msgstr "RhÃ©tien, undifferenziert"
+msgstr "Rhétien, undifferenziert"
 
 msgid "15206046"
-msgstr "Biogener Kalk (EozÃ¤n)"
+msgstr "Biogener Kalk (Eozän)"
 
 msgid "15206047"
 msgstr "Rodingit"
@@ -10452,13 +10443,13 @@ msgid "15206053"
 msgstr "Mamor, undifferenziert"
 
 msgid "15206054"
-msgstr "SedimentÃ¤re Brekzie, undifferenziert"
+msgstr "Sedimentäre Brekzie, undifferenziert"
 
 msgid "15206055"
-msgstr "PalÃ¤ozoikum, undifferenziert"
+msgstr "Paläozoikum, undifferenziert"
 
 msgid "15206056"
-msgstr "KÃ¤nozoikum, undifferenziert"
+msgstr "Känozoikum, undifferenziert"
 
 msgid "15206057"
 msgstr "Ultramafische Gesteine"
@@ -10488,7 +10479,7 @@ msgid "15206065"
 msgstr "Glaukophanschiefer, undifferenziert"
 
 msgid "15206066"
-msgstr "BÃ¼ndnerschiefer, undifferenziert"
+msgstr "Bündnerschiefer, undifferenziert"
 
 msgid "15206067"
 msgstr "Augengneis, undifferenziert"
@@ -10542,10 +10533,10 @@ msgid "15206083"
 msgstr "Quarzphyllit, undifferenziert"
 
 msgid "15206084"
-msgstr "BÃ¼ndnerschiefer, kalkig"
+msgstr "Bündnerschiefer, kalkig"
 
 msgid "15206085"
-msgstr "BÃ¼ndnerschiefer, tonig"
+msgstr "Bündnerschiefer, tonig"
 
 msgid "15206086"
 msgstr "Migmatit, undifferenziert"
@@ -10569,7 +10560,7 @@ msgid "15206092"
 msgstr "Biotit-Plagioklasgneis, undifferenziert"
 
 msgid "15206093"
-msgstr "BÃ¤ndergneis, undifferenziert"
+msgstr "Bändergneis, undifferenziert"
 
 msgid "15206094"
 msgstr "Zweiglimmergneis, undifferenziert"
@@ -10581,7 +10572,7 @@ msgid "15206096"
 msgstr "Peridotit, undifferenziert"
 
 msgid "15206097"
-msgstr "BÃ¤nder- und Schollenamphibolit, undifferenziert"
+msgstr "Bänder- und Schollenamphibolit, undifferenziert"
 
 msgid "15206098"
 msgstr "Granatamphibolit, undifferenziert"
@@ -10620,7 +10611,7 @@ msgid "15206109"
 msgstr "Konglomeratgneis, undifferenziert"
 
 msgid "15206110"
-msgstr "PrÃ¤variszisches, polyzyklisches Grundgebirge, undifferenziert"
+msgstr "Prävariszisches, polyzyklisches Grundgebirge, undifferenziert"
 
 msgid "15206111"
 msgstr "Schiefer, undifferenziert"
@@ -10677,25 +10668,25 @@ msgid "15301119"
 msgstr "St.-Jost-Schuppe"
 
 msgid "15301120"
-msgstr "HÃ¶hronen-Schuppe"
+msgstr "Höhronen-Schuppe"
 
 msgid "15301121"
 msgstr "Speer-Stockberg-Schuppe"
 
 msgid "15301122"
-msgstr "SchorhÃ¼ttenberg-Schuppe"
+msgstr "Schorhüttenberg-Schuppe"
 
 msgid "15301123"
-msgstr "ChrÃ¤zerli-Schuppe"
+msgstr "Chräzerli-Schuppe"
 
 msgid "15301124"
 msgstr "Kronberg-Schuppe"
 
 msgid "15301125"
-msgstr "Â«Zone Kronberg-SÃ¼dÂ»"
+msgstr "«Zone Kronberg-Süd»"
 
 msgid "15301126"
-msgstr "GÃ¤bris-Schuppe"
+msgstr "Gäbris-Schuppe"
 
 msgid "15301127"
 msgstr "Blueme-Beichle-Schuppe"
@@ -10704,7 +10695,7 @@ msgid "15301128"
 msgstr "Hilfern-Schuppe"
 
 msgid "15301129"
-msgstr "HornbÃ¼el-Schuppenzone"
+msgstr "Hornbüel-Schuppenzone"
 
 msgid "15301130"
 msgstr "Schangnau-Schuppe"
@@ -10722,13 +10713,13 @@ msgid "15301134"
 msgstr "Lavaux-Schuppe"
 
 msgid "15301135"
-msgstr "Mont-PÃ¨lerin-Schuppe"
+msgstr "Mont-Pèlerin-Schuppe"
 
 msgid "15301136"
 msgstr "Vevey-Evian-Schuppe"
 
 msgid "15301137"
-msgstr "GÃ©rignoz-La-Roche-Schuppe"
+msgstr "Gérignoz-La-Roche-Schuppe"
 
 msgid "15301138"
 msgstr "Vaulruz-Schuppe"
@@ -10764,7 +10755,7 @@ msgid "15301148"
 msgstr "Hirschberg-Schuppe"
 
 msgid "15301149"
-msgstr "HÃ¶lzliberg-Schuppe"
+msgstr "Hölzliberg-Schuppe"
 
 msgid "15301150"
 msgstr "Eichberg-Schuppe"
@@ -10773,34 +10764,34 @@ msgid "15301151"
 msgstr "Giebelegg-Schuppe"
 
 msgid "15302005"
-msgstr "Steffisburgâ€“Berneck-Dreieckzone"
+msgstr "Steffisburg–Berneck-Dreieckzone"
 
 msgid "15302006"
 msgstr "Subalpine Molasse"
 
 msgid "15302007"
-msgstr "Rigiâ€“Rossberg-Schuppe"
+msgstr "Rigi–Rossberg-Schuppe"
 
 msgid "15302008"
 msgstr "St.-Jost-Schuppe"
 
 msgid "15302009"
-msgstr "HÃ¶hronen-Schuppe"
+msgstr "Höhronen-Schuppe"
 
 msgid "15302010"
-msgstr "Speerâ€“Stockberg-Schuppe"
+msgstr "Speer–Stockberg-Schuppe"
 
 msgid "15302011"
-msgstr "SchorhÃ¼ttenberg-Schuppe"
+msgstr "Schorhüttenberg-Schuppe"
 
 msgid "15302012"
 msgstr "Kronberg-Schuppe"
 
 msgid "15302013"
-msgstr "GÃ¤bris-Schuppe"
+msgstr "Gäbris-Schuppe"
 
 msgid "15302014"
-msgstr "Beichlenâ€“Farneren-Schuppe"
+msgstr "Beichlen–Farneren-Schuppe"
 
 msgid "15302015"
 msgstr "Hilfern-Schuppe"
@@ -10809,7 +10800,7 @@ msgid "15302016"
 msgstr "Schangnau-Schuppe"
 
 msgid "15302017"
-msgstr "Â«Zone Kronberg-SÃ¼dÂ»"
+msgstr "«Zone Kronberg-Süd»"
 
 msgid "15302020"
 msgstr "Hegau-Bodensee-Graben"
@@ -10818,16 +10809,16 @@ msgid "15302021"
 msgstr "Subjurassische Zone"
 
 msgid "15302022"
-msgstr "ChrÃ¤zerli-Schuppe"
+msgstr "Chräzerli-Schuppe"
 
 msgid "15302023"
-msgstr "HornbÃ¼el-Schuppenzone"
+msgstr "Hornbüel-Schuppenzone"
 
 msgid "15302024"
 msgstr "Belmont-Schuppe"
 
 msgid "15302025"
-msgstr "Lutryâ€“Thonon-Schuppe"
+msgstr "Lutry–Thonon-Schuppe"
 
 msgid "15302026"
 msgstr "Cully-Schuppe"
@@ -10836,22 +10827,22 @@ msgid "15302027"
 msgstr "Lavaux-Schuppe"
 
 msgid "15302028"
-msgstr "Mont-PÃ¨lerin-Schuppe"
+msgstr "Mont-Pèlerin-Schuppe"
 
 msgid "15302029"
-msgstr "Veveyâ€“Evian-Schuppe"
+msgstr "Vevey–Evian-Schuppe"
 
 msgid "15302030"
-msgstr "GÃ©rignozâ€“La-Roche-Schuppe"
+msgstr "Gérignoz–La-Roche-Schuppe"
 
 msgid "15302031"
 msgstr "Vaulruz-Schuppe"
 
 msgid "15302032"
-msgstr "Champoteyâ€“Ramsera-Schuppe"
+msgstr "Champotey–Ramsera-Schuppe"
 
 msgid "15302033"
-msgstr "La-Pattazâ€“La-Holena-Schuppe"
+msgstr "La-Pattaz–La-Holena-Schuppe"
 
 msgid "15302034"
 msgstr "Villarvolard-Schuppe"
@@ -10860,16 +10851,16 @@ msgid "15302035"
 msgstr "Etzel-Klippe"
 
 msgid "15302036"
-msgstr "HÃ¼llerich-Klippe"
+msgstr "Hüllerich-Klippe"
 
 msgid "15302040"
 msgstr "Autochtones Nordalpines Vorland"
 
 msgid "15302042"
-msgstr "Haute-SaÃ´ne-Tafel"
+msgstr "Haute-Saône-Tafel"
 
 msgid "15302043"
-msgstr "SÃ¼ddeutsche Tafel"
+msgstr "Süddeutsche Tafel"
 
 msgid "15302045"
 msgstr "Oberrhein-Graben"
@@ -10896,7 +10887,7 @@ msgid "15303003"
 msgstr "Aiguilles-Rouges-Massiv"
 
 msgid "15303004"
-msgstr "Salvan-DorÃ©naz-Graben"
+msgstr "Salvan-Dorénaz-Graben"
 
 msgid "15303005"
 msgstr "Fully-Massiv"
@@ -10917,7 +10908,7 @@ msgid "15303010"
 msgstr "Zone von Disentis"
 
 msgid "15303011"
-msgstr "ChaÃ®nes-subalpines-Decke"
+msgstr "Chaînes-subalpines-Decke"
 
 msgid "15303012"
 msgstr "Aravis-Kette"
@@ -10938,7 +10929,7 @@ msgid "15303017"
 msgstr "Ardon-Decke"
 
 msgid "15303018"
-msgstr "JÃ¤gerchrÃ¼z-Decke"
+msgstr "Jägerchrüz-Decke"
 
 msgid "15303019"
 msgstr "Plammis-Decke"
@@ -11001,7 +10992,7 @@ msgid "15303038"
 msgstr "Glarner Deckenkomplex"
 
 msgid "15303039"
-msgstr "MÃ¼rtschen-Decke"
+msgstr "Mürtschen-Decke"
 
 msgid "15303040"
 msgstr "Hohenemser Decke"
@@ -11019,7 +11010,7 @@ msgid "15303044"
 msgstr "Gonzen-Walenstadt-Schuppen"
 
 msgid "15303045"
-msgstr "SÃ¤ntis-Decke"
+msgstr "Säntis-Decke"
 
 msgid "15303046"
 msgstr "Drusberg-Decke"
@@ -11031,7 +11022,7 @@ msgid "15303048"
 msgstr "Ultrahelvetikum"
 
 msgid "15303049"
-msgstr "Mont-ChÃ©tif-Decke"
+msgstr "Mont-Chétif-Decke"
 
 msgid "15303050"
 msgstr "Furka-Zone"
@@ -11076,7 +11067,7 @@ msgid "15303063"
 msgstr "Wildhaus-Melange"
 
 msgid "15303064"
-msgstr "BrÃ¼lisau-Schuppenzone"
+msgstr "Brülisau-Schuppenzone"
 
 msgid "15303065"
 msgstr "Leist-Schuppenzone"
@@ -11094,7 +11085,7 @@ msgid "15303070"
 msgstr "Grabser Klippen"
 
 msgid "15303071"
-msgstr "FlÃ¤scherberg-Decke"
+msgstr "Fläscherberg-Decke"
 
 msgid "15303072"
 msgstr "Plaine-Morte-Decke"
@@ -11139,7 +11130,7 @@ msgid "15303085"
 msgstr "Silberen-Schuppen"
 
 msgid "15303086"
-msgstr "BÃ¤chistock-Schuppe"
+msgstr "Bächistock-Schuppe"
 
 msgid "15303087"
 msgstr "Axen-Decke sensu stricto"
@@ -11151,19 +11142,19 @@ msgid "15303089"
 msgstr "Carpet-Schuppe"
 
 msgid "15303090"
-msgstr "SÃ¶renberg-MÃ©lange-Zone"
+msgstr "Sörenberg-Mélange-Zone"
 
 msgid "15303105"
 msgstr "Broc-Schuppenkomplex"
 
 msgid "15303106"
-msgstr "Gros-PlanÃ©-Melange"
+msgstr "Gros-Plané-Melange"
 
 msgid "15303107"
 msgstr "Montsalvens-Schuppe"
 
 msgid "15303108"
-msgstr "Les-PlÃ©iades-Schuppe"
+msgstr "Les-Pléiades-Schuppe"
 
 msgid "15303109"
 msgstr "Bois-de-Bouleyres-Schuppe"
@@ -11202,25 +11193,25 @@ msgid "15303126"
 msgstr "Langfirn-Schuppe"
 
 msgid "15303127"
-msgstr "Fisetenâ€“Orthalgen-Schuppen"
+msgstr "Fiseten–Orthalgen-Schuppen"
 
 msgid "15303128"
-msgstr "Chropfsbergâ€“Gaffia-Schuppen"
+msgstr "Chropfsberg–Gaffia-Schuppen"
 
 msgid "15303129"
 msgstr "Kaminspitz-Schuppe"
 
 msgid "15303130"
-msgstr "Axen-SÃ¼dschuppe"
+msgstr "Axen-Südschuppe"
 
 msgid "15303131"
 msgstr "Axen-Nordschuppe"
 
 msgid "15303132"
-msgstr "SchÃ¤chentaler WindgÃ¤llen-Schuppen"
+msgstr "Schächentaler Windgällen-Schuppen"
 
 msgid "15303133"
-msgstr "HÃ¶ch-Turm-Schuppen"
+msgstr "Höch-Turm-Schuppen"
 
 msgid "15303134"
 msgstr "Wissenwand-Schuppe"
@@ -11274,10 +11265,10 @@ msgid "15303152"
 msgstr "Mirutta-Schuppen (Aar-Massiv-Anteil)"
 
 msgid "15303153"
-msgstr "SÃ¼delbach-Zone"
+msgstr "Südelbach-Zone"
 
 msgid "15303154"
-msgstr "SÃ¶renberg-Melange"
+msgstr "Sörenberg-Melange"
 
 msgid "15303155"
 msgstr "Maliens-Schuppe"
@@ -11298,7 +11289,7 @@ msgid "15304005"
 msgstr "Piz-Terri-Lunschania-Decke"
 
 msgid "15304006"
-msgstr "GÃ¼ida-Alpettas-Schuppen"
+msgstr "Güida-Alpettas-Schuppen"
 
 msgid "15304007"
 msgstr "Molare-Zone"
@@ -11370,7 +11361,7 @@ msgid "15304029"
 msgstr "Ferret-Schuppe"
 
 msgid "15304030"
-msgstr "MoÃ»tiers-Schuppe"
+msgstr "Moûtiers-Schuppe"
 
 msgid "15304031"
 msgstr "Roignais-Versoyen-Schuppe"
@@ -11403,16 +11394,16 @@ msgid "15304040"
 msgstr "Sosto-Schiefer"
 
 msgid "15304041"
-msgstr "TomÃ¼l-Decke"
+msgstr "Tomül-Decke"
 
 msgid "15304042"
-msgstr "PrÃ¤ttigau-Flysch"
+msgstr "Prättigau-Flysch"
 
 msgid "15304043"
-msgstr "FeuerstÃ¤tter Decke"
+msgstr "Feuerstätter Decke"
 
 msgid "15304044"
-msgstr "Ãœntschen-Decke"
+msgstr "Üntschen-Decke"
 
 msgid "15304045"
 msgstr "Roz-Champatsch-Melange"
@@ -11424,19 +11415,19 @@ msgid "15304047"
 msgstr "Muttler-Decke"
 
 msgid "15304048"
-msgstr "Zone SubmÃ©diane"
+msgstr "Zone Submédiane"
 
 msgid "15304049"
 msgstr "Mittelpenninikum"
 
 msgid "15304050"
-msgstr "Zone HouillÃ¨re"
+msgstr "Zone Houillère"
 
 msgid "15304051"
-msgstr "Zone HouillÃ¨re externe"
+msgstr "Zone Houillère externe"
 
 msgid "15304052"
-msgstr "Zone HouillÃ¨re interne"
+msgstr "Zone Houillère interne"
 
 msgid "15304053"
 msgstr "Visperterminen-Schuppe"
@@ -11454,10 +11445,10 @@ msgid "15304057"
 msgstr "Klippen-Decke"
 
 msgid "15304058"
-msgstr "PrÃ©alpes mÃ©dianes plastiques"
+msgstr "Préalpes médianes plastiques"
 
 msgid "15304059"
-msgstr "PrÃ©alpes mÃ©dianes rigides"
+msgstr "Préalpes médianes rigides"
 
 msgid "15304060"
 msgstr "Giswil-Klippen"
@@ -11508,7 +11499,7 @@ msgid "15304075"
 msgstr "Martegnas-Melange"
 
 msgid "15304076"
-msgstr "Areuaâ€“Bruschghorn-Melange"
+msgstr "Areua–Bruschghorn-Melange"
 
 msgid "15304077"
 msgstr "Moncucco-Decke"
@@ -11559,7 +11550,7 @@ msgid "15304093"
 msgstr "Zermatt-Saas-Fee-Decke"
 
 msgid "15304094"
-msgstr "TsatÃ©-Decke"
+msgstr "Tsaté-Decke"
 
 msgid "15304095"
 msgstr "Simmen-Decke sensu stricto"
@@ -11595,7 +11586,7 @@ msgid "15304105"
 msgstr "Schlieren-Decke"
 
 msgid "15304106"
-msgstr "WÃ¤gital-Decke"
+msgstr "Wägital-Decke"
 
 msgid "15304107"
 msgstr "Dranses-Decke"
@@ -11625,13 +11616,13 @@ msgid "15304116"
 msgstr "Zervreila-Schuppe"
 
 msgid "15304117"
-msgstr "Ganaâ€“Palingera-Schuppe"
+msgstr "Gana–Palingera-Schuppe"
 
 msgid "15304118"
 msgstr "Claro-Schuppe"
 
 msgid "15304119"
-msgstr "Orselinaâ€“Bellinzona-Zone"
+msgstr "Orselina–Bellinzona-Zone"
 
 msgid "15304120"
 msgstr "Kiental-Melange"
@@ -11700,7 +11691,7 @@ msgid "15304142"
 msgstr "Obere Vals-Schuppen"
 
 msgid "15304143"
-msgstr "GÃ¤lmji-Zone"
+msgstr "Gälmji-Zone"
 
 msgid "15304144"
 msgstr "Madrisa-Scholle"
@@ -11739,19 +11730,19 @@ msgid "15304156"
 msgstr "Obere Rotenflue-Schuppe"
 
 msgid "15304157"
-msgstr "StÃ¤glerenegg-BrÃ¼nnelistock-Schuppen "
+msgstr "Stäglerenegg-Brünnelistock-Schuppen "
 
 msgid "15304158"
 msgstr "Aubrig-Schuppe"
 
 msgid "15304159"
-msgstr "InfraprÃ¤alpines Melange"
+msgstr "Infrapräalpines Melange"
 
 msgid "15305012"
 msgstr "S-chanf-Schuppen"
 
 msgid "15305014"
-msgstr "Umbrailâ€“Terza-Schuppenkomplex"
+msgstr "Umbrail–Terza-Schuppenkomplex"
 
 msgid "15305016"
 msgstr "S-charl-Sesvenna-Decke"
@@ -11772,7 +11763,7 @@ msgid "15305031"
 msgstr "Madulain-Schuppenkomplex"
 
 msgid "15305036"
-msgstr "MurtirÃ¶l-Schuppe"
+msgstr "Murtiröl-Schuppe"
 
 msgid "15305039"
 msgstr "Carungas-Schuppe"
@@ -11805,25 +11796,25 @@ msgid "15305054"
 msgstr "Ochsenkopf-Schuppe"
 
 msgid "15305055"
-msgstr "HeubÃ¼hl-Schuppe"
+msgstr "Heubühl-Schuppe"
 
 msgid "15305056"
 msgstr "Drei-Schwestern-Schuppe"
 
 msgid "15305057"
-msgstr "SchaflÃ¤ger-Decke"
+msgstr "Schafläger-Decke"
 
 msgid "15305058"
 msgstr "Dorfberg-Decke"
 
 msgid "15305059"
-msgstr "GrÃ¼enhorn-Schuppe"
+msgstr "Grüenhorn-Schuppe"
 
 msgid "15305060"
 msgstr "Casanna-Schuppe"
 
 msgid "15305070"
-msgstr "Roggenstock-MÃ¶rdergruebi-Decke"
+msgstr "Roggenstock-Mördergruebi-Decke"
 
 msgid "15305072"
 msgstr "Madrisa-Schuppe"
@@ -11838,7 +11829,7 @@ msgid "15306008"
 msgstr "Milan Belt"
 
 msgid "15306009"
-msgstr "SÃ¼dalpin Sub-DomÃ¤ne undifferenziert"
+msgstr "Südalpin Sub-Domäne undifferenziert"
 
 msgid "15307003"
 msgstr "Periadriatische Provinz"
@@ -11847,7 +11838,7 @@ msgid "15307006"
 msgstr "Bregaglia-Intrusion"
 
 msgid "15307009"
-msgstr "KÃ¤nozoische magmatische Provinzen"
+msgstr "Känozoische magmatische Provinzen"
 
 msgid "15307010"
 msgstr "Hegau-Provinz"
@@ -11856,7 +11847,7 @@ msgid "15308001"
 msgstr "Salassikum"
 
 msgid "15308002"
-msgstr "Salassikum Sub-DomÃ¤ne undifferenziert"
+msgstr "Salassikum Sub-Domäne undifferenziert"
 
 msgid "15308009"
 msgstr "Mont-Emilius-Decke"
@@ -11865,7 +11856,7 @@ msgid "15308010"
 msgstr "Mont-Mary-Decke"
 
 msgid "15308011"
-msgstr "Roisanâ€“Cignana-Scherzone"
+msgstr "Roisan–Cignana-Scherzone"
 
 msgid "15308012"
 msgstr "Untere Einheit der Mont-Mary-Decke"
@@ -11934,7 +11925,7 @@ msgid "15601002"
 msgstr "Arbeitsfortschritte"
 
 msgid "15602001"
-msgstr "GesteinsbruchstÃ¼ck undifferenziert"
+msgstr "Gesteinsbruchstück undifferenziert"
 
 msgid "15602002"
 msgstr "kieselige Gesteine (Quarzit, Quarz (Mineralisch), Radiolarit, Kieselkalk, Quarzsandstein, Hornstein)"
@@ -11985,7 +11976,7 @@ msgid "15801004"
 msgstr "Gebiet mit Solifluktion"
 
 msgid "20001001"
-msgstr "GesteinsbruchstÃ¼ck undifferenziert"
+msgstr "Gesteinsbruchstück undifferenziert"
 
 msgid "20001002"
 msgstr "Sedimentgestein undifferenziert"
@@ -12027,7 +12018,7 @@ msgid "20001014"
 msgstr "Glimmer"
 
 msgid "20001015"
-msgstr "intraformationelle GerÃ¶lle"
+msgstr "intraformationelle Gerölle"
 
 msgid "20001016"
 msgstr "Kalkkonkretionen"
@@ -12072,10 +12063,10 @@ msgid "20101003"
 msgstr "dickbankig"
 
 msgid "20101004"
-msgstr "dÃ¼nnbankig"
+msgstr "dünnbankig"
 
 msgid "20101005"
-msgstr "blÃ¤tterig"
+msgstr "blätterig"
 
 msgid "20101006"
 msgstr "knauerig"
@@ -12084,7 +12075,7 @@ msgid "20101007"
 msgstr "knollig"
 
 msgid "20101008"
-msgstr "linsenfÃ¶rmig"
+msgstr "linsenförmig"
 
 msgid "20201001"
 msgstr "strukturlos"
@@ -12093,7 +12084,7 @@ msgid "20201002"
 msgstr "geschichtet"
 
 msgid "20201003"
-msgstr "schrÃ¤g-/kreuzgeschichtet"
+msgstr "schräg-/kreuzgeschichtet"
 
 msgid "20201004"
 msgstr "laminiert"
@@ -12120,13 +12111,13 @@ msgid "20301003"
 msgstr "mikritisch"
 
 msgid "20301004"
-msgstr "spÃ¤tig"
+msgstr "spätig"
 
 msgid "20301005"
 msgstr "bioklastisch"
 
 msgid "20301006"
-msgstr "Fossilien fÃ¼hrend"
+msgstr "Fossilien führend"
 
 msgid "20301007"
 msgstr "onkolithisch"
@@ -12423,7 +12414,7 @@ msgid "20501010"
 msgstr "gebankt"
 
 msgid "20501011"
-msgstr "gefÃ¤ltelt"
+msgstr "gefältelt"
 
 msgid "20501012"
 msgstr "geadert"
@@ -12441,7 +12432,7 @@ msgid "20501016"
 msgstr "agmatitisch (migmatitisch)"
 
 msgid "20501017"
-msgstr "brekziÃ¶s"
+msgstr "brekziös"
 
 msgid "20601001"
 msgstr "Lithostratigraphische Gliederung und Zuteilung abgeschlossen"
@@ -12453,7 +12444,7 @@ msgid "20601003"
 msgstr "Lithostratigraphische Obergrenze muss noch revidiert werden"
 
 msgid "20601004"
-msgstr "Lithostratigraphische Unter- und Obergrenzen mÃ¼ssen noch revidiert werden"
+msgstr "Lithostratigraphische Unter- und Obergrenzen müssen noch revidiert werden"
 
 msgid "20601005"
 msgstr "Interne lithostratigraphische Gliederung zu revidieren"
