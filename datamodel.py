@@ -133,6 +133,11 @@ def get_coded_values(domain_name):
         # print(f"  {name}, {att_type} , {domain_name}")
         if domain.get("type") == "CodedValue":
             coded_values = domain.get("codedValues")
+            # TODO: hack
+            if "999997" in coded_values.keys():
+                coded_values["999997"] = "unbekannt"
+            if "999998" in coded_values.keys():
+                coded_values["999998"] = "nicht anwendbar"
             # Sort the list using the custom key
             return dict(sorted(coded_values.items(), key=custom_sort_key))
 
