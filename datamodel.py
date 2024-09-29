@@ -42,10 +42,10 @@ def get_datetime_with_tz():
 
 datetime_with_tz = get_datetime_with_tz()
 
-po_header_tpl = f'''# Geology Datamodel
-# Copyright (C) YEAR Free Software Foundation, Inc.
+po_header_tpl = f'''# Swiss Geology Datamodel
+# Copyright (C) 2024 Free Software Foundation, Inc.
 # This file is distributed under the same license as the {PACKAGE_NAME} package.
-# Marc Monnerat <marc.monnerat@swisstopo.ch>, 2024.
+# Geocover Team <geocover@swisstopo.ch>, 2024.
 #
 #, fuzzy
 msgid ""
