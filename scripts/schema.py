@@ -4,7 +4,10 @@ import os
 import sys
 from collections import OrderedDict
 
-import arcpy
+try:
+    import arcpy
+except ImportError:
+    arcpy = None
 
 from utils import arcgis_table_to_df, get_field_type, merge_two_dicts
 
@@ -50,6 +53,8 @@ remove_prefix = lambda x: x.split(".")[-1]
 
 gc_filter = lambda x: "GC_" in x and not x.endswith("_I") and x not in EXCLUDE_TABLES
 
+gc_prefix_filter = lambda x: "GC_" in x.name
+
 table_filter = lambda x: x in TREE_TABLES
 
 
@@ -59,8 +64,11 @@ class GeocoverSchema:
     @staticmethod
     def instance(workspace):
         """Static access method."""
-        if GeocoverSchema.__instance is None:
-            GeocoverSchema(workspace)
+        if GeocoverSchema.__instance is not None:
+            raise Exception("Forbidden access to singleton class")
+        else:
+            if arcpy is None:
+                raise RuntimeError("arcpy is not available in this environment.")
 
         return GeocoverSchema.__instance
 
@@ -97,6 +105,14 @@ class GeocoverSchema:
             )
 
         return filter_function
+
+    @property
+    def esri_style_dump(self):
+        return self.__esri_style_dump
+
+    @esri_style_dump.setter
+    def esri_style_dump(self, value: bool):
+        self.__esri_style_dump = value
 
     @property
     def connection_info(self):
@@ -170,10 +186,9 @@ class GeocoverSchema:
 
     def list_coded_domains(self):
         if len(self.__coded_domains) < 1:
-            gc_filter = lambda x: "GC_" in x.name
             logging.debug("Collecting coded domains from workspace")
             coded_domains_list = arcpy.da.ListDomains(self.__workspace)
-            self.__coded_domains = list(filter(gc_filter, coded_domains_list))
+            self.__coded_domains = list(filter(gc_prefix_filter, coded_domains_list))
 
         return self.__coded_domains
 
@@ -183,12 +198,12 @@ class GeocoverSchema:
             self.list_coded_domains()
         if len(self.__coded_domains_values) < 1:
             for domain in self.list_coded_domains():
-                if not self.__esri_style_dump:
-                    if domain.domainType == "CodedValue":
-                        coded_values = domain.codedValues
-                        domain_dict = {}
-                        for val, desc in coded_values.items():
-                            domain_dict[val] = desc
+                if not self.__esri_style_dump and domain.domainType == "CodedValue":
+                    coded_values = domain.codedValues
+                    domain_dict = {}
+                    for val, desc in coded_values.items():
+                        domain_dict[val] = desc
+
                 else:
                     domain_dict = {
                         "type": domain.domainType,
@@ -216,6 +231,9 @@ class GeocoverSchema:
 
         for field in fields:
             domain = None
+            print(
+                f"DEBUG domain={field.domain}, domains={[d.name for d in self.list_coded_domains()]}"
+            )
             if len(field.domain) > 0 and field.domain in self.__coded_domains_values:
                 domain = field.domain
             logging.debug(f"    {field.name}, {field.type}, {field.length}, {domain}")
