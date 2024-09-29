@@ -5,6 +5,7 @@ import pprint
 import pandas as pd
 import sys
 import datetime
+import pytz
 import re
 import os
 import subprocess
@@ -20,6 +21,8 @@ output_dir = "inputs"
 
 logger.add("datamodel.log", backtrace=False)
 
+PACKAGE_NAME = 'geocover'
+
 
 with open(os.path.join(input_dir, "coded_domains.json"), "r") as f:
     domains = json.load(f)
@@ -30,23 +33,32 @@ with open(os.path.join(input_dir, "subtypes_dict.json"), "r") as f:
 
 df = pd.read_csv(os.path.join(input_dir, "GeolCodeText_Trad_230317.csv"), sep=";")
 
-po_header_tpl = '''
-# SOME DESCRIPTIVE TITLE
-# Copyright (C) YEAR Free Software Foundation, Inc.
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+def get_datetime_with_tz():
+    # Define the Western Europe timezone
+    timezone = pytz.timezone('Europe/Zurich')
+    tz_aware_datetime = datetime.datetime.now(timezone)
+
+    return  tz_aware_datetime.strftime("%Y-%m-%d %H:%M%z")
+
+datetime_with_tz = get_datetime_with_tz()
+
+po_header_tpl = f'''# Swiss Geology Datamodel
+# Copyright (C) 2024 Free Software Foundation, Inc.
+# This file is distributed under the same license as the {PACKAGE_NAME} package.
+# Geocover Team <geocover@swisstopo.ch>, 2024.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2008-02-06 16:25-0500\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
-"Content-Transfer-Encoding: ENCODING\n"'''
+"Project-Id-Version: {PACKAGE_NAME}"
+"POT-Creation-Date: {datetime_with_tz}"
+"PO-Revision-Date: {datetime_with_tz}"
+"Last-Translator: geocover <geocover@swisstopo.ch>"
+"Language-Team: LANGUAGE <LL@li.org>"
+"Plural-Forms: nplurals=2; plural=(n != 1);"
+"MIME-Version: 1.0"
+"Content-Type: text/plain; charset=utf-8"
+"Content-Transfer-Encoding: 8bit"'''
 
 
 def get_git_revision_short_hash() -> str:
@@ -55,12 +67,16 @@ def get_git_revision_short_hash() -> str:
         .decode("ascii")
         .strip()
     )
+    
+
 
 
 def create_msg(df):
     de = list(zip(df["GeolCodeInt"], df["DE"]))
 
     fr = list(zip(df["GeolCodeInt"], df["FR"]))
+    
+    
 
     msgs = {}
     msgs["de"] = "\n".join([f'\nmsgid "{m[0]}"\nmsgstr "{m[1]}"' for m in de])
@@ -78,6 +94,8 @@ def create_msg(df):
         f.write(po_header_tpl + empty_pot)
 
 
+
+# TODO: 
 create_msg(df)
 
 df = df.set_index(["GeolCodeInt"])
@@ -88,8 +106,9 @@ def translate(geol_code, fallback, lang="FR"):
     if lang in ("DE", "FR"):
         try:
             msg = df.loc[int(geol_code)]["FR"]
-            # TODO: should be done in the translation XLS
-            msg = msg.replace("à ciment", "ciment").replace("à matrice", "matrice")
+            # TODO: should be done in the translation XLS à ciment, à matrice
+            if msg.startswith("à "):
+                msg = msg.replace("à ", "")
 
         except KeyError as ke:
             logger.error(f"GeolCode not found while translating '{geol_code}': {ke}")
@@ -114,6 +133,11 @@ def get_coded_values(domain_name):
         # print(f"  {name}, {att_type} , {domain_name}")
         if domain.get("type") == "CodedValue":
             coded_values = domain.get("codedValues")
+            # TODO: hack
+            if "999997" in coded_values.keys():
+                coded_values["999997"] = "unbekannt"
+            if "999998" in coded_values.keys():
+                coded_values["999998"] = "nicht anwendbar"
             # Sort the list using the custom key
             return dict(sorted(coded_values.items(), key=custom_sort_key))
 

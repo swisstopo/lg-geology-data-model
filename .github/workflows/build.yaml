@@ -57,7 +57,7 @@ jobs:
     
       - name: Build all targets
         shell: bash -el {0}
-        run: make clean all
+        run: make cleanall all
       - name: Generate PlantUML Diagrams
         uses: rotaract/plantuml-action@v1
         with:
