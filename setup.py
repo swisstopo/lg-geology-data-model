@@ -58,9 +58,11 @@ setup(
 
     ],
     tests_require=["coverage"],
+    py_modules=['datamodel'], 
     entry_points={
         "console_scripts": [
             "geocover = scripts.geocover:geocover",
+            "datamodel = datamodel:datamodel",
         ],
     },
 )
