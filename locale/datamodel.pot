@@ -1,29 +1,20 @@
-# Geology Datamodel
-# Copyright (C) YEAR Free Software Foundation, Inc.
+# Swiss Geology Datamodel
+# Copyright (C) 2024 Free Software Foundation, Inc.
 # This file is distributed under the same license as the geocover package.
-# Marc Monnerat <marc.monnerat@swisstopo.ch>, 2024.
+# Geocover Team <geocover@swisstopo.ch>, 2024.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: geocover
-"
-"POT-Creation-Date: 2024-09-29 19:27+0200
-"
-"PO-Revision-Date: 2024-09-29 19:27+0200
-"
-"Last-Translator: geocover <geocover@swisstopo.ch>
-"
-"Language-Team: LANGUAGE <LL@li.org>
-"
-"Plural-Forms: nplurals=2; plural=(n != 1);
-"
-"MIME-Version: 1.0
-"
-"Content-Type: text/plain; charset=utf-8
-"
-"Content-Transfer-Encoding: 8bit
-"
+"Project-Id-Version: geocover"
+"POT-Creation-Date: 2024-09-29 22:25+0200"
+"PO-Revision-Date: 2024-09-29 22:25+0200"
+"Last-Translator: geocover <geocover@swisstopo.ch>"
+"Language-Team: LANGUAGE <LL@li.org>"
+"Plural-Forms: nplurals=2; plural=(n != 1);"
+"MIME-Version: 1.0"
+"Content-Type: text/plain; charset=utf-8"
+"Content-Transfer-Encoding: 8bit"
 msgid "999997"
 msgstr ""
 

@@ -50,15 +50,15 @@ po_header_tpl = f'''# Swiss Geology Datamodel
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: {PACKAGE_NAME}\n"
-"POT-Creation-Date: {datetime_with_tz}\n"
-"PO-Revision-Date: {datetime_with_tz}\n"
-"Last-Translator: geocover <geocover@swisstopo.ch>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
-"Content-Transfer-Encoding: 8bit\n"'''
+"Project-Id-Version: {PACKAGE_NAME}"
+"POT-Creation-Date: {datetime_with_tz}"
+"PO-Revision-Date: {datetime_with_tz}"
+"Last-Translator: geocover <geocover@swisstopo.ch>"
+"Language-Team: LANGUAGE <LL@li.org>"
+"Plural-Forms: nplurals=2; plural=(n != 1);"
+"MIME-Version: 1.0"
+"Content-Type: text/plain; charset=utf-8"
+"Content-Transfer-Encoding: 8bit"'''
 
 
 def get_git_revision_short_hash() -> str:
@@ -95,7 +95,7 @@ def create_msg(df):
 
 
 
-
+# TODO: 
 create_msg(df)
 
 df = df.set_index(["GeolCodeInt"])
@@ -106,8 +106,9 @@ def translate(geol_code, fallback, lang="FR"):
     if lang in ("DE", "FR"):
         try:
             msg = df.loc[int(geol_code)]["FR"]
-            # TODO: should be done in the translation XLS
-            msg = msg.replace("à ciment", "ciment").replace("à matrice", "matrice")
+            # TODO: should be done in the translation XLS à ciment, à matrice
+            if msg.startswith("à "):
+                msg = msg.replace("à ", "")
 
         except KeyError as ke:
             logger.error(f"GeolCode not found while translating '{geol_code}': {ke}")
