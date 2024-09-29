@@ -42,23 +42,23 @@ def get_datetime_with_tz():
 
 datetime_with_tz = get_datetime_with_tz()
 
-po_header_tpl = f'''# SOME DESCRIPTIVE TITLE
+po_header_tpl = f'''# Geology Datamodel
 # Copyright (C) YEAR Free Software Foundation, Inc.
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST Marc Monnerat <marc.monnerat@swisstopo.ch>, 2024.
+# This file is distributed under the same license as the {PACKAGE_NAME} package.
+# Marc Monnerat <marc.monnerat@swisstopo.ch>, 2024.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: {PACKAGE_NAME}"
-"POT-Creation-Date: {datetime_with_tz}"
-"PO-Revision-Date: {datetime_with_tz}"
-"Last-Translator: geocover <geocover@swisstopo.ch>"
-"Language-Team: LANGUAGE <LL@li.org>"
-"Plural-Forms: nplurals=2; plural=(n != 1);"
-"MIME-Version: 1.0"
-"Content-Type: text/plain; charset=utf-8"
-"Content-Transfer-Encoding: 8bit"'''
+"Project-Id-Version: {PACKAGE_NAME}\n"
+"POT-Creation-Date: {datetime_with_tz}\n"
+"PO-Revision-Date: {datetime_with_tz}\n"
+"Last-Translator: geocover <geocover@swisstopo.ch>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"'''
 
 
 def get_git_revision_short_hash() -> str:
