@@ -501,7 +501,7 @@ themes:
               de: Objektart
               fr: Type de l'objet
             att_type: subtype
-            value: 11201
+            value: 11901
             cardinality: 1
       - name: Glacial_and_Periglacial_Structures_L
         abrev: Ggla  # TODO: to check
