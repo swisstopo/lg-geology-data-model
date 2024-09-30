@@ -14,8 +14,8 @@ date: 2024-09-24
 
 # Model revision should change if attributes are added, deleted or changed
 model:
-  revision: 3.9.2
-  revision_date: 2024-09-29
+  revision: 3.9.3
+  revision_date: 2024-09-30
 
 themes:
   - name: Rock_Bodies

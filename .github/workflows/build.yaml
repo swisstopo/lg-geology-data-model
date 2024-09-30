@@ -47,12 +47,10 @@ jobs:
 
 
       - shell: bash -el {0}
-        run: make markdown
+        run: pip install -e .
 
       - shell: bash -el {0}
         run: |
-          python ./datamodel.py  --lang de
-          python ./datamodel.py  --lang fr
           python ./create_gv.py
     
       - name: Build all targets

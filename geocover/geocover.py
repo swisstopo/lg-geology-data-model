@@ -13,7 +13,7 @@ import click
 import pandas as pd
 
 
-from utils import dump_dict_to_json
+from . import utils
 
 # Won't work on h:\
 DEFAULT_WORKSPACE = r"D:/connections/GCOVERP@osa.sde"
@@ -171,8 +171,8 @@ def geocover():
 def export(output_dir, workspace, log_level):
     if not HAS_ARCPY:
         raise click.ClickException("arcpy library is not available.")
-    from encoder import ExtendedEncoder
-    from schema import GeocoverSchema
+    from . import  encoder 
+    from . import schema
 
     now = datetime.datetime.now()
 
@@ -182,9 +182,9 @@ def export(output_dir, workspace, log_level):
     logger.setLevel(log_level.upper())
     logger.addHandler(logging.StreamHandler(sys.stdout))
 
-    so = GeocoverSchema.instance(workspace)
+    so = schema.GeocoverSchema.instance(workspace)
 
-    encoder = ExtendedEncoder()
+    encoder = encoder.ExtendedEncoder()
 
     connection_info = so.connection_info
     logger.debug(f"Connection info: {connection_info}")
@@ -199,7 +199,7 @@ def export(output_dir, workspace, log_level):
     coded_domains_dict.update(so.coded_domains)
 
     logger.info("Writting to 'coded_domains.json'...")
-    dump_dict_to_json(
+    utils.dump_dict_to_json(
         encoder.to_serializable_dict(so.coded_domains),
         os.path.join(output_dir, "coded_domains.json"),
     )
@@ -286,8 +286,8 @@ def export(output_dir, workspace, log_level):
 def schema(output_dir, workspace, log_level):
     if not HAS_ARCPY:
         raise click.ClickException("arcpy library is not available.")
-    from encoder import ExtendedEncoder
-    from schema import GeocoverSchema
+    from . import  encoder 
+    from . import schema
 
     arcpy.env.workspace = workspace
 
@@ -295,9 +295,9 @@ def schema(output_dir, workspace, log_level):
     logger.setLevel(log_level.upper())
     logger.addHandler(logging.StreamHandler(sys.stdout))
 
-    so = GeocoverSchema.instance(workspace)
+    so = schema.GeocoverSchema.instance(workspace)
 
-    encoder = ExtendedEncoder()
+    encoder = encoder.ExtendedEncoder()
 
     connection_info = so.connection_info
 
@@ -349,7 +349,7 @@ def schema(output_dir, workspace, log_level):
     help="Log level",
 )
 def geolcode(output_file, workspace, log_level):
-    from all_geolcodes import get_geol_codes
+    from . import all_geolcodes 
 
     logger = logging.getLogger(__name__)
     logger.setLevel(log_level.upper())
@@ -357,7 +357,7 @@ def geolcode(output_file, workspace, log_level):
 
     ext = os.path.basename(os.path.abspath(output_file)).split(".")[1]
 
-    df = get_geol_codes()
+    df = all_geolcodes.get_geol_codes()
 
     json_str = df.to_dict(orient="records")
 
@@ -436,7 +436,7 @@ def geolcode(output_file, workspace, log_level):
 )
 def filter_symbols(bbox, geometry, gdb_path, output, log_level, symbols, drop):
     from shapely import box
-    from filter_symbols import process_layers_symbols
+    from . import filter_symbols 
     import geopandas as gpd
     import pandas as pd
 
@@ -466,7 +466,7 @@ def filter_symbols(bbox, geometry, gdb_path, output, log_level, symbols, drop):
 
     logging.debug(layers.keys())
 
-    results["layers"] = process_layers_symbols(layers, gdb_path, mask_geom)
+    results["layers"] = filter_symbols.process_layers_symbols(layers, gdb_path, mask_geom)
 
     if output is not None:
         logging.info(f"Writing to {output}")
@@ -526,10 +526,10 @@ def filter_symbols(bbox, geometry, gdb_path, output, log_level, symbols, drop):
     help="Log level (DEBUG, INFO, WARNING, ERROR, CRITICAL)",
 )
 def export_rules(workspace, output, log_level):
-    
     if not HAS_ARCPY:
         raise click.ClickException("arcpy library is not available.")
     from export_symbol_rules import process_layers
+    from . import  export_symbol_rules
 
     configure_logging(log_level)
 
@@ -549,7 +549,7 @@ def export_rules(workspace, output, log_level):
     res = {}
     for l in m.listLayers():
         if l.isFeatureLayer:  # and 'Deposits_Chrono' in l.name:
-            attributes = process_layers(l)
+            attributes = export_symbol_rules.process_layers(l)
             res[l.name] = attributes
 
     output_fname = os.path.join(output, LAYERS_SYMBOL_RULES)

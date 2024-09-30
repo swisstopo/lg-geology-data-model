@@ -88,9 +88,9 @@ def create_msg(df):
         if not os.path.isdir(locale_dir):
             os.makedirs(locale_dir)
 
-        with open(os.path.join(locale_dir, "datamodel.po"), "w") as f:
+        with open(os.path.join(locale_dir, "datamodel.po"), "w", encoding="utf-8") as f:
             f.write(po_header_tpl + msgs[lang])
-    with open(os.path.join("locale", "datamodel.pot"), "w") as f:
+    with open(os.path.join("locale", "datamodel.pot"), "w", encoding="utf-8") as f:
         f.write(po_header_tpl + empty_pot)
 
 
@@ -111,10 +111,10 @@ def translate(geol_code, fallback, lang="FR"):
                 msg = msg.replace("à ", "")
 
         except KeyError as ke:
-            logger.error(f"GeolCode not found while translating '{geol_code}': {ke}")
+            logger.warning(f"GeolCode not found while translating '{geol_code}': {ke}")
 
         except Exception as e:
-            logger.error(f"Unknown error while translating '{geol_code}': {e}")
+            logger.warning(f"Unknown error while translating '{geol_code}': {e}")
 
     return msg
 
@@ -225,26 +225,45 @@ class Report:
             return self._model
 
     def to_json(self):
-        model = self.model.copy()
+        try:
+            model = self.model.copy()
+        except AttributeError:
+            logger.error("Model must be a dictionary-like object with a copy() method.")
+            return None
 
-        for theme in model["themes"]:
-            for cls in theme.get("classes"):
-                attributes = cls.get("attributes")
-                cls["abrev"] = f"{theme['name'][0].upper()}{cls['name'][0:3].lower()}"
-                if attributes:
-                    for att in attributes:
-                        att_type = att.get("att_type")
-                        value = att.get("value")
-                        pairs = None
+        for theme in model.get("themes", []):
+            try:
+                theme_name = theme.get("name", "")
+                if not theme_name:
+                    logger.error("Missing 'name' attribute in theme.")
+                    return None
 
-                        if att_type == "CD" and value is not None:
-                            pairs = get_coded_values(value)
+                for cls in theme.get("classes", []):
+                    cls_name = cls.get("name", "")
+                    if not cls_name:
+                        logger.error("Missing 'name' attribute in class.")
+                        return None
+                    attributes = cls.get("attributes")
+                    cls["abrev"] = (
+                        f"{theme['name'][0].upper()}{cls['name'][0:3].lower()}"
+                    )
+                    if attributes:
+                        for att in attributes:
+                            att_type = att.get("att_type")
+                            value = att.get("value")
+                            pairs = None
 
-                        if att_type == "subtype" and value is not None:
-                            pairs = get_subtype(value)
+                            if att_type == "CD" and value is not None:
+                                pairs = get_coded_values(value)
 
-                        if pairs is not None:
-                            att["pairs"] = pairs
+                            if att_type == "subtype" and value is not None:
+                                pairs = get_subtype(value)
+
+                            if pairs is not None:
+                                att["pairs"] = pairs
+            except (KeyError, TypeError, IndexError) as e:
+                logger.error(f"Error processing theme '{theme}': {e}")
+                return None
         for annex in model.get("annexes"):
             annex_name = annex.get("name")
             annex_fname = annex.get("fname")
@@ -266,7 +285,18 @@ class Report:
     type=click.Choice(["de", "fr"], case_sensitive=False),
     help="Language for the document",
 )
-def datamodel(lang):
+@click.option(
+    "--output",
+    "-o",
+    type=click.Path(file_okay=False),
+    default="inputs",
+    help="Directory for output markdown files",
+)
+@click.argument("datamodel", type=click.Path(exists=True))
+def datamodel(lang, datamodel, output):
+    """
+    Generate a markdown document from the DATAMODEL YAML-file.
+    """
     import datetime
     import os
     import sys
@@ -282,16 +312,31 @@ def datamodel(lang):
     # Parsing
     Locale.negotiate(["de_DE", "en_US"], ["de_DE", "de_AT"])
 
-    yaml_file = "datamodel.yaml"
-    yaml_dir = os.path.dirname(os.path.realpath(__file__))
+    yaml_file = os.path.abspath(datamodel)
+    yaml_dir = Path(yaml_file).parent
+    if os.path.isabs(output):
+        output_dir = output
+    else:
+        output_dir = Path(yaml_dir).joinpath(output)
+
+    if not os.path.isdir(os.path.join(output_dir, lang)):
+        os.makedirs(os.path.isdir(os.path.join(output_dir, lang)))
+
+    logger.info(f"Markdown files ouput dir: {output_dir}")
 
     project_name = Path(yaml_file).stem
-    model = Report(yaml_file)
+    try:
+        model = Report(yaml_file)
+
+    except Exception as e:
+        logger.error(f"Cannot read/parse datamodel: {yaml_file}")
 
     classe_names = get_classes(model.model)
     prefixes = [p + " " for p in get_prefixes(model.model)]
 
     data = model.to_json()
+    if data is None:
+        raise RuntimeError("Model conversion to JSON failed, cannot proceed")
     now = datetime.datetime.now()
 
     loader = jinja2.FileSystemLoader(os.path.join(yaml_dir, "templates"))
@@ -302,8 +347,10 @@ def datamodel(lang):
     )
 
     # TODO: only one language
-    translations = Translations.load("locale", [lang], "datamodel")
-    ui_translations = Translations.load("locale", [lang], "app")
+    locale_dir = os.path.join(yaml_dir, "locale")
+    logger.info(locale_dir)
+    translations = Translations.load(locale_dir, [lang], "datamodel")
+    ui_translations = Translations.load(locale_dir, [lang], "app")
 
     translations.merge(ui_translations)
     data["lang"] = lang
@@ -358,7 +405,7 @@ def datamodel(lang):
 
     json_fname = os.path.join(output_dir, lang, f"{project_name}.json")
     logger.info(f"Generating {json_fname}")
-    with open(json_fname, "w") as f:
+    with open(json_fname, "w", encoding="utf-8") as f:
         f.write(json.dumps(data, indent=4, cls=DatetimeEncoder))
 
     def render_template_with_locale(template_name, data, locale):
@@ -367,7 +414,7 @@ def datamodel(lang):
 
     markdown_fname = os.path.join(output_dir, lang, f"{project_name}.md")
     logger.info(f"Generating {markdown_fname}")
-    with open(markdown_fname, "w") as f:
+    with open(markdown_fname, "w", encoding="utf-8") as f:
         # f.write(template.render(data))
         rendered = render_template_with_locale("model_markdown.j2", data, locale)
         f.write(rendered)
@@ -376,7 +423,7 @@ def datamodel(lang):
     # meta = env.get_template("metadata.yaml.j2")
     metadata_fname = os.path.join(output_dir, lang, f"metadata.yaml")
     logger.info(f"Generating {metadata_fname}")
-    with open(metadata_fname, "w") as f:
+    with open(metadata_fname, "w", encoding="utf-8") as f:
         # f.write(template.render(data))
         rendered = render_template_with_locale("metadata.yaml.j2", data, locale)
         f.write(rendered)
