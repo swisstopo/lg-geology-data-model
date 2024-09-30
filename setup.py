@@ -27,9 +27,9 @@ setup(
     maintainer_email="marc.monnerat@swisstopo.ch",
     url="https://github.com/procrastinatio/lg-geology-data-model",
     license="LICENSE.txt",
-    #packages=find_packages(where="scripts"),  # Automatically find packages under src
+    #packages=find_packages(where="geocover"),  # Automatically find packages under src
     packages=find_packages(),
-    #package_dir={"": "scripts"},
+    #package_dir={"": "geocover"},
     include_package_data=True,
     python_requires=">=3.8",
     classifiers=[
@@ -55,14 +55,14 @@ setup(
         "click",
         "loguru",
         "shapely >= 2.0.0",
+        "babel",
 
     ],
-    tests_require=["coverage"],
-    py_modules=['datamodel'], 
+    tests_require=["coverage", "unittests"],
     entry_points={
         "console_scripts": [
-            "geocover = scripts.geocover:geocover",
-            "datamodel = datamodel:datamodel",
+            "geocover = geocover.geocover:geocover",
+            "datamodel = geocover.datamodel:datamodel",
         ],
     },
 )
