@@ -24,7 +24,7 @@
 
 
 
-### {{_("Class")}} {{ cls.name }} {{ '{#'}}{{cls.name | slugify}}{{'}'}}
+### {{_("Class")}} {{ cls.name }} {% if cls.abrev -%}({{cls.abrev}}){% endif -%}  {{ '{#'}}{{cls.name | slugify}}{{'}'}}
 {{ cls.description[lang]| trim|highlight}}
 
 
