@@ -51,8 +51,6 @@ jobs:
 
       - shell: bash -el {0}
         run: |
-          datamodel  --lang de -o inputs  datamodel.yaml
-          datamodel  --lang de -o inputs  datamodel.yaml
           python ./create_gv.py
     
       - name: Build all targets
