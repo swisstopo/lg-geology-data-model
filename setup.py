@@ -25,7 +25,7 @@ setup(
     author="swisstopo",
     maintainer="Marc Monnerat",
     maintainer_email="marc.monnerat@swisstopo.ch",
-    url="https://github.com/procrastinatio/lg-geology-data-model",
+    url="https://github.com/swisstopo/lg-geology-data-model",
     license="LICENSE.txt",
     #packages=find_packages(where="geocover"),  # Automatically find packages under src
     packages=find_packages(),
