@@ -111,10 +111,10 @@ def translate(geol_code, fallback, lang="FR"):
                 msg = msg.replace("à ", "")
 
         except KeyError as ke:
-            logger.error(f"GeolCode not found while translating '{geol_code}': {ke}")
+            logger.warning(f"GeolCode not found while translating '{geol_code}': {ke}")
 
         except Exception as e:
-            logger.error(f"Unknown error while translating '{geol_code}': {e}")
+            logger.warning(f"Unknown error while translating '{geol_code}': {e}")
 
     return msg
 
