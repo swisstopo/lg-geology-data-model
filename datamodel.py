@@ -291,12 +291,12 @@ def datamodel(lang, datamodel, output):
     yaml_file = os.path.abspath(datamodel)
     yaml_dir = Path(yaml_file).parent
     if os.path.isabs(output):
-        output_dir = Path(output).joinpath(lang)
+        output_dir = output
     else:
-        output_dir = Path(yaml_dir).joinpath(output, lang)
+        output_dir = Path(yaml_dir).joinpath(output)
 
-    if not os.path.isdir(output_dir):
-        os.makedirs(output_dir)
+    if not os.path.isdir(os.path.join(output_dir, lang)):
+        os.makedirs(os.path.isdir(os.path.join(output_dir, lang)))
 
     logger.info(f"Markdown files ouput dir: {output_dir}")
 
@@ -323,8 +323,10 @@ def datamodel(lang, datamodel, output):
     )
 
     # TODO: only one language
-    translations = Translations.load("locale", [lang], "datamodel")
-    ui_translations = Translations.load("locale", [lang], "app")
+    locale_dir = os.path.join(yaml_dir, "locale")
+    logger.info(locale_dir)
+    translations = Translations.load(locale_dir, [lang], "datamodel")
+    ui_translations = Translations.load(locale_dir, [lang], "app")
 
     translations.merge(ui_translations)
     data["lang"] = lang
