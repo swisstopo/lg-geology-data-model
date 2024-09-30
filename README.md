@@ -1,13 +1,13 @@
-Modèle de donnée géologique
-===========================
+Modèle de données géologiques
+=============================
 
-Le but de ces outils est de créer de manière plus au moins automatique le _modèle de donnée géologie_ GeoCover, en
+Le but de ces outils est de créer de manière plus au moins automatique le [modèle de données géologiques](https://www.geologieportal.ch/fr/connaissance/consulter/modeles-de-donnees/modele-de-donnees-geologiques.html), en
 particulier la liste des valeurs attributaires possibles, et le modèle physique issu de ESRI ArcSDE.
 
-Les fichiers d'intérêts sont dans le répertoire `output`
+Les fichiers d'intérêts sont dans le répertoire `outputs`:
 
-* Le modèle de donnée géologique : `datamodel_de.pdf` et `datamodel_fr.pdf` (des fichiers `.docx`, `.html` et `.odt` sont
-  également disponibles)
+* Pour l'instante, le modèle est disponible en allemand et en français.
+* Plusieurs formats sont disponbiles : `datamodel.pdf`, ainsi que sous forme de fichier `.docx`, `.html` et `.odt`.
 * le dump des informations de ESRI ArcSDE 
 * Le schéma ER de la base `ER-GCOVER.svg`, généré à partir d'un fichier `PlantUML`.
 
@@ -15,10 +15,15 @@ Les fichiers d'intérêts sont dans le répertoire `output`
 
 # Installation
 
-Les scripts ne fonctionnent qu'avec Python3 (on est en 2024). Sur BURAUT, on peut utiliser l'installation _conda_ par 
-defaut de _ESRI ArcGis Pro_ (_argispro-py3_) qui contient les modules nécessaires. Sur Linux, il faut au moins :
+Les scripts ne fonctionnent qu'avec Python3 et sont disponible comme paquet `conda`. Sur BURAUT, il faut cloner l'environnement par defaut
+pour pouvoir le modifier. Sous Linux, il est possible de générer les fichiers finaux, mais l'extraction des données à partir de la
+base de données ESRI ArcSDE n'est bien entendu pas possible.
 
-    conda install jinja2 pyyaml pandas click loguru --yes
+    conda install swisstopo::geocover
+    
+ou, manuellement
+
+    conda install jinja2 pyyaml pandas click loguru babel --yes
 
 ou simplement (l'environement créé est `DATAMODEL`):
 
@@ -38,7 +43,7 @@ et va combiner
 
 ## Windows
 
-Comme _pandoc_ est un fichier unique, il peut être facilement téléchargé et installé dans _C:\LegacySW_ . Téléecahrger
+Comme _pandoc.exe_ est un fichier unique, il peut être facilement téléchargé et installé dans _C:\LegacySW_ . Télécharger
 la dernière version Windows disponible sur [Pandoc](https://github.com/jgm/pandoc/releases) et dézipper dans _C:>LegacySW_
 
 Pour tester l'installation (le numéro de version peut être différent):
@@ -55,9 +60,9 @@ Pour tester l'installation (le numéro de version peut être différent):
 
 Dans un prompt Python, en utilisant l'environnement `conda` par défaut `arcgis-py3` :
 
-    (arcgispro-py3)> cd H:\code\lg-geology-data-model\scripts
+    (arcgispro-py3-clone)> cd H:\code\lg-geology-data-model
 
-    (arcgispro-py3)scripts>D:\conda\envs\arcgispro-py3-clone\python.exe geocover.py  export  -w D:\connections\GCOVERP@osa.sde -l DEBUG -o ../exports
+    (arcgispro-py3-clone)lg-geology-data-model>geocover  export  -w D:\connections\GCOVERP@osa.sde -l DEBUG -o ../exports
 
 
 2. Export de la structure Oracle : 
@@ -65,7 +70,6 @@ Dans un prompt Python, en utilisant l'environnement `conda` par défaut `arcgis-
 Dans ArcGis Pro, charger et exécuter le script : `export_oracle_tables.py`
 
 3. Export des champs obligatoires :
-
 
     python export_mandatory.py
 
@@ -93,7 +97,7 @@ Dans ArcGis Pro, charger et exécuter le script : `export_oracle_tables.py`
 Le script _datamodel.py_ combine les informations de la configuration _datamodel.yaml_  avec _coded_domains.json_ , _subtypes.json_ et le fichier de traduction.
 Le résultat est le fichier _Marcdown_ _datamodel_fr.md_ ou _datamodel_de.md_
 
-    python3 datamodel.py --lang de  # ou fr
+    datamodel --lang de  datamodel.yaml
 
 ## Génération des différents formats
 
