@@ -136,7 +136,7 @@ fr: $(foreach fmt,$(FORMATS),$(OUTPUT_DIR)/fr/datamodel.$(fmt))
 # Clean up
 # Clean up all generated files
 .PHONY: clean cleanall
-cleanall: clean cleaninputs
+cleanall: clean cleaninputs cleanpdf cleanodt cleanhtml cleandocx
 
 clean:
 	rm -rf $(OUTPUT_DIR)/*
@@ -154,7 +154,7 @@ cleanodt:
 
 # Clean up only generated DOCX files
 .PHONY: cleandocx
-cleanodt:
+cleandocx:
 	find $(OUTPUT_DIR) -name "*.docx" -delete
 
 # Clean up only generated HTML, CSS, and image files
