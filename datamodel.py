@@ -72,9 +72,9 @@ def create_msg(df):
         if not os.path.isdir(locale_dir):
             os.makedirs(locale_dir)
 
-        with open(os.path.join(locale_dir, "datamodel.po"), "w") as f:
+        with open(os.path.join(locale_dir, "datamodel.po"), "w", , encoding="utf-8") as f:
             f.write(po_header_tpl + msgs[lang])
-    with open(os.path.join("locale", "datamodel.pot"), "w") as f:
+    with open(os.path.join("locale", "datamodel.pot"), "w", , encoding="utf-8") as f:
         f.write(po_header_tpl + empty_pot)
 
 
@@ -334,7 +334,7 @@ def datamodel(lang):
 
     json_fname = os.path.join(output_dir, lang, f"{project_name}.json")
     logger.info(f"Generating {json_fname}")
-    with open(json_fname, "w") as f:
+    with open(json_fname, "w",, encoding="utf-8") as f:
         f.write(json.dumps(data, indent=4, cls=DatetimeEncoder))
 
     def render_template_with_locale(template_name, data, locale):
@@ -343,7 +343,7 @@ def datamodel(lang):
 
     markdown_fname = os.path.join(output_dir, lang, f"{project_name}.md")
     logger.info(f"Generating {markdown_fname}")
-    with open(markdown_fname, "w") as f:
+    with open(markdown_fname, "w", , encoding="utf-8") as f:
         # f.write(template.render(data))
         rendered = render_template_with_locale("model_markdown.j2", data, locale)
         f.write(rendered)
@@ -352,7 +352,7 @@ def datamodel(lang):
     # meta = env.get_template("metadata.yaml.j2")
     metadata_fname = os.path.join(output_dir, lang, f"metadata.yaml")
     logger.info(f"Generating {metadata_fname}")
-    with open(metadata_fname, "w") as f:
+    with open(metadata_fname, "w", , encoding="utf-8") as f:
         # f.write(template.render(data))
         rendered = render_template_with_locale("metadata.yaml.j2", data, locale)
         f.write(rendered)
