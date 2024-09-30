@@ -16,6 +16,9 @@ build:
   noarch: python
   number: 0
   script: python -m pip install . --no-deps -vv
+  entry_points:
+    - geocover = scripts.geocover:geocover
+    - datamodel = datamodel:datamode
 
 requirements:
   build:
@@ -34,6 +37,7 @@ requirements:
     - pandas
     - loguru
     - shapely>=2.0.0
+    - babel
 
 
 
@@ -41,7 +45,7 @@ about:
   summary: {{ summary }}
   description: {{ summary }}
   home: https://github.com/swisstopo/lg-geology-data-model
-  license: BSD-3
+  license: BSD
   summary: {{ summary }}
   dev_url: https://github.com/swisstopo/lg-geology-data-model/src/master/
   doc_url: https://anaconda.org/swisstopo/geocover
