@@ -288,6 +288,7 @@ def schema(output_dir, workspace, log_level):
         raise click.ClickException("arcpy library is not available.")
     from . import encoder
     from . import schema
+    from . import utils
 
     arcpy.env.workspace = workspace
 
@@ -313,7 +314,7 @@ def schema(output_dir, workspace, log_level):
     )
 
     logger.info("Writting to 'geocover-schema-sde.json'...")
-    dump_dict_to_json(
+    utils.dump_dict_to_json(
         encoder.to_serializable_dict(schema_dict),
         os.path.join(output_dir, "geocover-schema-sde.json"),
     )
