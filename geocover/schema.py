@@ -9,7 +9,7 @@ try:
 except ImportError:
     arcpy = None
 
-from utils import arcgis_table_to_df, get_field_type, merge_two_dicts
+from . import utils
 
 logging.basicConfig(format="%(name)s - %(levelname)s - %(message)s", level=logging.INFO)
 
@@ -172,7 +172,7 @@ class GeocoverSchema:
 
             sort_keys = ["GEOL_CODE_INT"]
             try:
-                df = arcgis_table_to_df(table_name, input_fields=TREE_TABLE_FIELD)
+                df = utils.arcgis_table_to_df(table_name, input_fields=TREE_TABLE_FIELD)
                 if "PARENT_REF" in df.columns:
                     df["PARENT_REF"] = df["PARENT_REF"].fillna(0)
                     sort_keys = ["GEOL_CODE_INT", "PARENT_REF"]
@@ -320,7 +320,7 @@ class GeocoverSchema:
                     continue
                 d = []
                 desc_lu = {key: value["Name"] for (key, value) in subtypes.items()}
-                subtypes_dict = merge_two_dicts(subtypes_dict, desc_lu)
+                subtypes_dict = utils.merge_two_dicts(subtypes_dict, desc_lu)
 
                 for stcode, stdict in list(subtypes.items()):
                     logging.debug({stcode: stdict["Name"]})
@@ -331,7 +331,7 @@ class GeocoverSchema:
 
                     d.append({stcode: stdict})
 
-                    field_type_dict = get_field_type(stdict)
+                    field_type_dict = utils.get_field_type(stdict)
 
                 subtypes_layers_dict[fc] = d
 
