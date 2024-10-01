@@ -172,6 +172,7 @@ def export(output_dir, workspace, log_level):
         raise click.ClickException("arcpy library is not available.")
     from . import encoder
     from . import schema
+    from . import utils
 
     now = datetime.datetime.now()
 
@@ -208,7 +209,7 @@ def export(output_dir, workspace, log_level):
 
     subtypes_dict.update(so.subtypes)
 
-    dump_dict_to_json(
+    utils.dump_dict_to_json(
         encoder.to_serializable_dict(subtypes_dict),
         os.path.join(output_dir, "subtypes_dict.json"),
     )
@@ -223,7 +224,7 @@ def export(output_dir, workspace, log_level):
 
     tables_dict.update(so.tree_tables)
 
-    dump_dict_to_json(
+    utils.dump_dict_to_json(
         encoder.to_serializable_dict(tables_dict),
         os.path.join(output_dir, "tables.json"),
     )
