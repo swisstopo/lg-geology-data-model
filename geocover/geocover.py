@@ -15,6 +15,13 @@ import pandas as pd
 
 from . import utils
 
+try:
+    import arcpy
+
+    HAS_ARCPY = True
+except ImportError:
+    HAS_ARCPY = False
+
 # Won't work on h:\
 DEFAULT_WORKSPACE = r"D:/connections/GCOVERP@osa.sde"
 curdir = os.path.join(os.path.dirname(os.path.realpath(__file__)), "..")
@@ -81,12 +88,7 @@ class CommandDisabled(click.ClickException):
         super().__init__(message)
 
 
-try:
-    import arcpy
 
-    HAS_ARCPY = True
-except ImportError:
-    HAS_ARCPY = False
 
 
 class ArcpyAwareGroup(click.Group):
@@ -112,6 +114,7 @@ class ArcpyAwareGroup(click.Group):
 
     def invoke(self, ctx):
         # Display help if no command is provided
+        print(ctx.invoked_subcommand)
         if ctx.invoked_subcommand is None:
             click.echo(ctx.get_help())
             ctx.exit()
@@ -132,10 +135,15 @@ def _arg_split(ctx, param, value):
 
 
 @click.group(
-    cls=ArcpyAwareGroup,
+    cls=ArcpyAwareGroup
 )
-def geocover():
+@click.pass_context
+def geocover(ctx):
     """Command to work with TOPGIS/GeoCover ArcSDE database or ArcGis Pro project (ArcSDE operations require `arcpy`)"""
+    if ctx.invoked_subcommand is None:
+        click.echo('I was invoked without subcommand')
+    else:
+        click.echo(f"I am about to invoke {ctx.invoked_subcommand}")
     pass
 
 
@@ -173,6 +181,8 @@ def export(output_dir, workspace, log_level):
         raise click.ClickException("arcpy library is not available.")
     from . import  encoder 
     from . import schema
+
+    logger.info(output_dir)
 
     now = datetime.datetime.now()
 
