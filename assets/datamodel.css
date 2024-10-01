@@ -28,6 +28,11 @@ margin-right:auto;
 margin-left:0px
 }
 
+h2 + p + table thead tr  {
+    background-color: #555555;
+    color: #ffffff;
+}
+
 
 tbody tr:nth-of-type(even) {
     background-color: #f3f3f3;
@@ -38,8 +43,9 @@ tbody tr:last-of-type {
 }
 
 table thead tr {
-    background-color: #555555;
-    color: #ffffff;
+    background-color: #e1e1e1;
+    color: #333333;
+    
     text-align: left;
 }
 tbody tr:hover {
