@@ -41,10 +41,21 @@ requirements:
 
   run_constrained:
     - arcpy  # Optional: Only available for users with the ESRI environment set up.
+    
+    
 
 test:
+  source_files:
+    - src/
+    - tests/
   imports:
     - geocover
+  commands:
+    - python -m unittest discover ../tests
+    - coverage run -m unittest discover tests/
+  requires:
+    - pip
+    - coverage
 
 about:
   summary: {{ summary }}
