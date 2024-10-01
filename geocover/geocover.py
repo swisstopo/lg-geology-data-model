@@ -17,7 +17,6 @@ from . import utils
 
 try:
     import arcpy
-
     HAS_ARCPY = True
 except ImportError:
     HAS_ARCPY = False
@@ -134,10 +133,7 @@ def _arg_split(ctx, param, value):
 @click.pass_context
 def geocover(ctx):
     """Command to work with TOPGIS/GeoCover ArcSDE database or ArcGis Pro project (ArcSDE operations require `arcpy`)"""
-    if ctx.invoked_subcommand is None:
-        logging.debug("I was invoked without subcommand")
-    else:
-        logging.debug(f"I am about to invoke {ctx.invoked_subcommand}")
+
     pass
 
 
@@ -176,7 +172,6 @@ def export(output_dir, workspace, log_level):
     from . import encoder
     from . import schema
 
-    logger.info(output_dir)
 
     now = datetime.datetime.now()
 
@@ -445,6 +440,9 @@ def filter_symbols(bbox, geometry, gdb_path, output, log_level, symbols, drop):
     import pandas as pd
 
     configure_logging(log_level)
+    logger = logging.getLogger(__name__)
+    logger.setLevel(log_level.upper())
+    logger.addHandler(logging.StreamHandler(sys.stdout))
 
     dirname = os.path.dirname(__file__)
     config_json = symbols
@@ -452,7 +450,7 @@ def filter_symbols(bbox, geometry, gdb_path, output, log_level, symbols, drop):
 
     results = {"bbox": bbox, "gdb_path": gdb_path, "datetime": now.isoformat()}
 
-    logging.info(f"Mask: {geometry}")
+    logger.info(f"Mask: {geometry}")
 
     if geometry:
         try:
@@ -461,21 +459,21 @@ def filter_symbols(bbox, geometry, gdb_path, output, log_level, symbols, drop):
             # Assuming the mask is a single geometry, you can dissolve to create a single unified geometry
             mask_geom = mask_gdf.unary_union
         except Exception as e:
-            logging.error(e)
+            logger.error(e)
     else:
         mask_geom = box(*bbox)
 
     with open(config_json, "r") as f:
         layers = json.load(f)
 
-    logging.debug(layers.keys())
+    logger.debug(layers.keys())
 
     results["layers"] = filter_symbols.process_layers_symbols(
         layers, gdb_path, mask_geom
     )
 
     if output is not None:
-        logging.info(f"Writing to {output}")
+        logger.info(f"Writing to {output}")
 
         if output.endswith(".json"):
             with open(output, "w", encoding="utf-8") as f:
