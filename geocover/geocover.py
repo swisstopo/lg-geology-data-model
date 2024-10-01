@@ -294,7 +294,7 @@ def schema(output_dir, workspace, log_level):
     logger.setLevel(log_level.upper())
     logger.addHandler(logging.StreamHandler(sys.stdout))
 
-    so = schema.GeocoverSchema.instance(workspace)
+    so = schema.GeocoverSchema(workspace)
 
     encoder = encoder.ExtendedEncoder()
 
