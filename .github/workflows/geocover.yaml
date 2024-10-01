@@ -1,0 +1,60 @@
+name: build
+
+
+on:
+  workflow_call:
+  push:
+    branches:
+      - master
+      - 'releases/**'
+  pull_request:
+    branches:
+      - master
+      - develop
+      - 'releases/**'
+
+
+jobs:
+  build-markdown:
+    name: Build conda and pip packages
+    runs-on: "ubuntu-latest"
+    steps:
+
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Install miniconda
+        uses: conda-incubator/setup-miniconda@v3
+        with:
+          python-version: 3.12
+          channels: conda-forge,defaults
+          channel-priority: true
+          activate-environment: DATAMODEL
+          environment-file: environment.yaml
+
+      - name: conda install
+        shell: bash -el {0}
+        run: $CONDA/bin/conda install conda-build anaconda-client -y
+
+      - name: Check conda installation
+        shell: bash -el {0}
+        run: |
+          conda info
+          conda list
+          conda config --show-sources
+          conda config --show
+          printenv | sort
+
+      - name: conda build
+        shell: bash -el {0}
+        run: |
+          $CONDA/bin/conda build -output-folder ./conda-out/  recipe
+    
+
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: document-artifacts
+          path: |
+            conda-out/*
+
+
