@@ -6,7 +6,7 @@ from collections import OrderedDict
 
 import pandas as pd
 
-from . import config 
+from . import config
 
 try:
     import arcpy
@@ -27,7 +27,11 @@ def arcgis_table_to_df(in_fc, input_fields=None, query=""):
     logging.debug(f"Input fields: {input_fields}")
     if input_fields:
         # Preserve order of the 'input_fields'
-        final_fields = list(OrderedDict.fromkeys(item for item in input_fields if item in available_fields))
+        final_fields = list(
+            OrderedDict.fromkeys(
+                item for item in input_fields if item in available_fields
+            )
+        )
     else:
         final_fields = available_fields
     logging.debug(f"intersection: {final_fields}")

@@ -19,29 +19,22 @@ Les scripts ne fonctionnent qu'avec Python3 et sont disponible comme paquet `con
 pour pouvoir le modifier. Sous Linux, il est possible de générer les fichiers finaux, mais l'extraction des données à partir de la
 base de données ESRI ArcSDE n'est bien entendu pas possible.
 
-    conda install swisstopo::geocover
-    
-ou, manuellement
-
-    conda install jinja2 pyyaml pandas click loguru babel --yes
-
-ou simplement (l'environement créé est `DATAMODEL`):
-
-    conda env create -f environment.yml
-
-En cas d'ajout de dépendances, recréer la liste des paquets avec :
-
-    conda env export > environment.yml
-
-Les scripts, _coded_domain.py_ et _subtype.py_ doivent être excécuté dans un projet ESRI ArcGis Pro avec une connection
-sur la base SDE GCOVER.
-
-Le script _datamodel.py_  qui génère le fichier _MarkDown_ n'a besoin que des libraries de base sus-mentionnées.
-et va combiner
-
-
-
 ## Windows
+
+Open a Python Command Prompt windows and clone the default ESRI ArcGis  `conda` environnement
+
+    (arcgispro-py3) C:\Program Files\ArcGIS\Pro\bin\Python\envs\arcgispro-py3>conda create --clone arcgispro-py3 --prefix C:\LegacySW\envs\arcgispro-py3_clone
+
+Deactivate
+
+    (arcgispro-py3) C:\Program Files\ArcGIS\Pro\bin\Python\envs\arcgispro-py3> deactivate
+
+Activate
+
+    C:\Program Files\ArcGIS\Pro\bin\Python\envs\arcgispro-py3> activate C:\LegacySW\envs\arcgispro-py3_clone
+
+
+    (arcgispro-py3) C:\LegacySW\envs\arcgispro-py3_clone> conda install swisstopo::geocover
 
 Comme _pandoc.exe_ est un fichier unique, il peut être facilement téléchargé et installé dans _C:\LegacySW_ . Télécharger
 la dernière version Windows disponible sur [Pandoc](https://github.com/jgm/pandoc/releases) et dézipper dans _C:>LegacySW_
@@ -49,6 +42,16 @@ la dernière version Windows disponible sur [Pandoc](https://github.com/jgm/pand
 Pour tester l'installation (le numéro de version peut être différent):
 
     C:\LegacySW\pandoc-3.1.13\pandoc.exe --version
+    
+## Linux
+
+    conda install swisstopo::geocover
+
+
+Les scripts, _coded_domain.py_ et _subtype.py_ doivent être excécuté dans un projet ESRI ArcGis Pro avec une connection
+sur la base SDE GCOVER.
+
+Le script `datamodel` qui génère le fichier _MarkDown_ n'a besoin que des libraries de base sus-mentionnées.
 
 
 # Utilisation

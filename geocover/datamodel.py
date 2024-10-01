@@ -21,7 +21,7 @@ output_dir = "inputs"
 
 logger.add("datamodel.log", backtrace=False)
 
-PACKAGE_NAME = 'geocover'
+PACKAGE_NAME = "geocover"
 
 
 with open(os.path.join(input_dir, "coded_domains.json"), "r") as f:
@@ -33,12 +33,14 @@ with open(os.path.join(input_dir, "subtypes_dict.json"), "r") as f:
 
 df = pd.read_csv(os.path.join(input_dir, "GeolCodeText_Trad_230317.csv"), sep=";")
 
+
 def get_datetime_with_tz():
     # Define the Western Europe timezone
-    timezone = pytz.timezone('Europe/Zurich')
+    timezone = pytz.timezone("Europe/Zurich")
     tz_aware_datetime = datetime.datetime.now(timezone)
 
-    return  tz_aware_datetime.strftime("%Y-%m-%d %H:%M%z")
+    return tz_aware_datetime.strftime("%Y-%m-%d %H:%M%z")
+
 
 datetime_with_tz = get_datetime_with_tz()
 
@@ -67,16 +69,12 @@ def get_git_revision_short_hash() -> str:
         .decode("ascii")
         .strip()
     )
-    
-
 
 
 def create_msg(df):
     de = list(zip(df["GeolCodeInt"], df["DE"]))
 
     fr = list(zip(df["GeolCodeInt"], df["FR"]))
-    
-    
 
     msgs = {}
     msgs["de"] = "\n".join([f'\nmsgid "{m[0]}"\nmsgstr "{m[1]}"' for m in de])
@@ -94,8 +92,7 @@ def create_msg(df):
         f.write(po_header_tpl + empty_pot)
 
 
-
-# TODO: 
+# TODO:
 create_msg(df)
 
 df = df.set_index(["GeolCodeInt"])

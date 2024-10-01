@@ -9,7 +9,7 @@ try:
 except ImportError:
     arcpy = None
 
-from utils import arcgis_table_to_df, get_field_type, merge_two_dicts
+from . import utils
 
 logging.basicConfig(format="%(name)s - %(levelname)s - %(message)s", level=logging.INFO)
 
@@ -64,12 +64,10 @@ class GeocoverSchema:
     @staticmethod
     def instance(workspace):
         """Static access method."""
-        if GeocoverSchema.__instance is not None:
-            raise Exception("Forbidden access to singleton class")
-        else:
+        if GeocoverSchema.__instance is None:
             if arcpy is None:
                 raise RuntimeError("arcpy is not available in this environment.")
-
+            GeocoverSchema.__instance = GeocoverSchema(workspace)
         return GeocoverSchema.__instance
 
     def __repr__(self):
@@ -79,22 +77,21 @@ class GeocoverSchema:
         """Virtually private constructor."""
         if GeocoverSchema.__instance is not None:
             raise Exception("Forbidden access to singleton class")
-        else:
-            GeocoverSchema.__instance = self
-            arcpy.env.workspace = self.__workspace = workspace
+        self.__workspace = workspace
+        arcpy.env.workspace = self.__workspace
 
-            self.__tables = {}
-            self.__tables_list = []
-            self.__coded_domains = []
-            self.__coded_domains_values = {}
-            self.__datasets = []
-            self.__feature_classes = {}
-            self.__feature_class_subtypes = {}
-            self.__geol_code = {}
-            self.__relationships = {}
-            self.__connection_info = None
-            self.__feature_classes_list = []
-            self.__esri_style_dump = True
+        self.__tables = {}
+        self.__tables_list = []
+        self.__coded_domains = []
+        self.__coded_domains_values = {}
+        self.__datasets = []
+        self.__feature_classes = {}
+        self.__feature_class_subtypes = {}
+        self.__geol_code = {}
+        self.__relationships = {}
+        self.__connection_info = None
+        self.__feature_classes_list = []
+        self.__esri_style_dump = True
 
     def generate_filter_function():
         def filter_function(name):
@@ -172,7 +169,7 @@ class GeocoverSchema:
 
             sort_keys = ["GEOL_CODE_INT"]
             try:
-                df = arcgis_table_to_df(table_name, input_fields=TREE_TABLE_FIELD)
+                df = utils.arcgis_table_to_df(table_name, input_fields=TREE_TABLE_FIELD)
                 if "PARENT_REF" in df.columns:
                     df["PARENT_REF"] = df["PARENT_REF"].fillna(0)
                     sort_keys = ["GEOL_CODE_INT", "PARENT_REF"]
@@ -320,7 +317,7 @@ class GeocoverSchema:
                     continue
                 d = []
                 desc_lu = {key: value["Name"] for (key, value) in subtypes.items()}
-                subtypes_dict = merge_two_dicts(subtypes_dict, desc_lu)
+                subtypes_dict = utils.merge_two_dicts(subtypes_dict, desc_lu)
 
                 for stcode, stdict in list(subtypes.items()):
                     logging.debug({stcode: stdict["Name"]})
@@ -331,7 +328,7 @@ class GeocoverSchema:
 
                     d.append({stcode: stdict})
 
-                    field_type_dict = get_field_type(stdict)
+                    field_type_dict = utils.get_field_type(stdict)
 
                 subtypes_layers_dict[fc] = d
 
