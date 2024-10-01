@@ -3,16 +3,15 @@ from unittest.mock import patch, MagicMock
 
 
 import sys
-
-# Mock 'arcpy' before importing your module
 import sys
 
+# Mock 'arcpy' before importing geocover
 sys.modules["arcpy"] = MagicMock()
 arcpy = sys.modules["arcpy"]
-arcpy.env = MagicMock()  # Explicitly mock 'arcpy.env'
-arcpy.da = MagicMock()  # Explicitement moquer 'arcpy.da'
+arcpy.env = MagicMock()
+arcpy.da = MagicMock()
 
-from schema import GeocoverSchema, gc_filter  # Import the class you want to test
+from geocover import schema
 
 
 def create_mock_domains():
@@ -50,7 +49,7 @@ def create_mock_fields():
 class TestGeocoverSchema(unittest.TestCase):
     def setUp(self):
         # Reset the singleton instance before each test
-        GeocoverSchema._GeocoverSchema__instance = None
+        schema.GeocoverSchema._GeocoverSchema__instance = None
 
     @patch("arcpy.env", new_callable=MagicMock)
     @patch("arcpy.ListTables")
@@ -59,7 +58,7 @@ class TestGeocoverSchema(unittest.TestCase):
         mock_list_tables.return_value = ["table1", "table2"]
 
         # Test instance creation
-        instance = GeocoverSchema("fake_workspace")
+        instance = schema.GeocoverSchema("fake_workspace")
 
         # Check if the workspace was set correctly
         self.assertEqual(instance._GeocoverSchema__workspace, "fake_workspace")
@@ -76,20 +75,17 @@ class TestGeocoverSchema(unittest.TestCase):
             return table_name.startswith("table")
 
         # Replace the actual gc_filter with the mock version
-        with patch("schema.gc_filter", mock_gc_filter):
-            # Create an instance of GeocoverSchema
-            instance = GeocoverSchema("fake_workspace")
+        with patch("geocover.schema.gc_filter", mock_gc_filter):
+            instance = schema.GeocoverSchema("fake_workspace")
 
-            # Call the tables_list property
             result = instance.tables_list
 
-            # Check if the result matches the filtered list
             self.assertEqual(result, ["table1", "table2"])
 
     @patch("arcpy.env", new_callable=MagicMock)
     @patch("arcpy.da.ListDomains")
     def test_list_coded_domains(self, mock_list_domains, mock_env):
-        # Définir un comportement simulé pour ListDomains
+        # mock for ListDomains
         mock_domain1 = MagicMock(name="Domain1")
         mock_domain1.name = "GC_Domain1"
         mock_domain2 = MagicMock(name="Domain2")
@@ -97,42 +93,32 @@ class TestGeocoverSchema(unittest.TestCase):
         mock_domain3 = MagicMock(name="Domain3")
         mock_domain3.name = "GC_Domain3"
 
-        # Liste simulée de domaines
         mock_list_domains.return_value = [mock_domain1, mock_domain2, mock_domain3]
 
         # Assuming gc_prefix_filter only allows name starting with 'GC_'
         def mock_gc_prefix_filter(domain_name):
             return domain_name.name.startswith("GC_")
 
-        # Replace the actual gc_prefix_filter with the mock version
-        with patch("schema.gc_prefix_filter", mock_gc_prefix_filter):
-            # Create an instance of GeocoverSchema
-            instance = GeocoverSchema("fake_workspace")
+        with patch("geocover.schema.gc_prefix_filter", mock_gc_prefix_filter):
+            instance = schema.GeocoverSchema("fake_workspace")
 
-            # Call the list_coded_domains property
             result = instance.list_coded_domains()
 
-            # Check if the result matches the filtered list
             self.assertEqual(
                 result, [mock_domain1, mock_domain3]
-            )  # Devrait contenir uniquement les domaines commençant par "GC_"
+            )  # Only domains beginning with "GC_"
 
-            # Vérifier que ListDomains a été appelé avec le bon espace de travail
             arcpy.da.ListDomains.assert_called_with(instance._GeocoverSchema__workspace)
 
-    @patch.object(GeocoverSchema, "list_coded_domains")
+    @patch.object(schema.GeocoverSchema, "list_coded_domains")
     def test_coded_domains_esri_style_dump_false(self, mock_list_coded_domains):
-        # Use the helper function to create mock domains
         mock_list_coded_domains.return_value = create_mock_domains()
 
-        # Create instance
-        instance = GeocoverSchema("fake_workspace")
+        instance = schema.GeocoverSchema("fake_workspace")
         instance.esri_style_dump = False  # Set the property to False
 
-        # Call the property
         result = instance.coded_domains
 
-        # Verify expected results
         expected_result = {
             "GC_Domain1": {"1": "Value1", "2": "Value2"},
             "GC_Domain2": {
@@ -143,19 +129,15 @@ class TestGeocoverSchema(unittest.TestCase):
 
         self.assertEqual(result, expected_result)
 
-    @patch.object(GeocoverSchema, "list_coded_domains")
+    @patch.object(schema.GeocoverSchema, "list_coded_domains")
     def test_coded_domains_esri_style_dump_true(self, mock_list_coded_domains):
-        # Use the helper function to create mock domains
         mock_list_coded_domains.return_value = create_mock_domains()
 
-        # Create instance
-        instance = GeocoverSchema("fake_workspace")
+        instance = schema.GeocoverSchema("fake_workspace")
         instance.esri_style_dump = True  # Set the property to True
 
-        # Call the property
         result = instance.coded_domains
 
-        # Verify expected results
         expected_result = {
             "GC_Domain1": {
                 "type": "CodedValue",
@@ -169,14 +151,11 @@ class TestGeocoverSchema(unittest.TestCase):
 
         self.assertEqual(result, expected_result)
 
-    # @patch.object(GeocoverSchema, 'coded_domains', new_callable=property)
     @patch("arcpy.ListFields")
-    @patch.object(GeocoverSchema, "list_coded_domains")
+    @patch.object(schema.GeocoverSchema, "list_coded_domains")
     def test_fields(self, mock_list_coded_domains, mock_list_fields):
-        # Use helper to create mock fields
         mock_list_fields.return_value = create_mock_fields()
 
-        # Mock the return value of list_coded_domains
         mock_list_coded_domains.return_value = [
             MagicMock(
                 name="GC_Domain1",
@@ -190,10 +169,8 @@ class TestGeocoverSchema(unittest.TestCase):
             ),
         ]
 
-        # Create an instance of GeocoverSchema
-        instance = GeocoverSchema("fake_workspace")
+        instance = schema.GeocoverSchema("fake_workspace")
 
-        # Directly set the internal __coded_domains_values dictionary
         instance._GeocoverSchema__coded_domains_values = {
             "GC_Domain1": {
                 "type": "CodedValue",
@@ -205,10 +182,8 @@ class TestGeocoverSchema(unittest.TestCase):
             },
         }
 
-        # Call the fields method
         result = instance.fields("fake_feature_class")
 
-        # Define expected result
         expected_result = [
             {"name": "Field1", "type": "String", "length": 50, "domain": "GC_Domain1"},
             {
@@ -219,7 +194,6 @@ class TestGeocoverSchema(unittest.TestCase):
             },
         ]
 
-        # Assert the result matches the expected output
         self.assertEqual(result, expected_result)
 
 
