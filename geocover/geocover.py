@@ -88,9 +88,6 @@ class CommandDisabled(click.ClickException):
         super().__init__(message)
 
 
-
-
-
 class ArcpyAwareGroup(click.Group):
     def list_commands(self, ctx):
         # List commands available based on the presence of arcpy
@@ -114,11 +111,10 @@ class ArcpyAwareGroup(click.Group):
 
     def invoke(self, ctx):
         # Display help if no command is provided
-        print(ctx.invoked_subcommand)
+        super().invoke(ctx)
         if ctx.invoked_subcommand is None:
             click.echo(ctx.get_help())
             ctx.exit()
-        return super().invoke(ctx)
 
 
 def _arg_split(ctx, param, value):
@@ -134,16 +130,14 @@ def _arg_split(ctx, param, value):
     return bbox
 
 
-@click.group(
-    cls=ArcpyAwareGroup
-)
+@click.group(cls=ArcpyAwareGroup)
 @click.pass_context
 def geocover(ctx):
     """Command to work with TOPGIS/GeoCover ArcSDE database or ArcGis Pro project (ArcSDE operations require `arcpy`)"""
     if ctx.invoked_subcommand is None:
-        click.echo('I was invoked without subcommand')
+        logging.debug("I was invoked without subcommand")
     else:
-        click.echo(f"I am about to invoke {ctx.invoked_subcommand}")
+        logging.debug(f"I am about to invoke {ctx.invoked_subcommand}")
     pass
 
 
@@ -179,7 +173,7 @@ def geocover(ctx):
 def export(output_dir, workspace, log_level):
     if not HAS_ARCPY:
         raise click.ClickException("arcpy library is not available.")
-    from . import  encoder 
+    from . import encoder
     from . import schema
 
     logger.info(output_dir)
@@ -296,7 +290,7 @@ def export(output_dir, workspace, log_level):
 def schema(output_dir, workspace, log_level):
     if not HAS_ARCPY:
         raise click.ClickException("arcpy library is not available.")
-    from . import  encoder 
+    from . import encoder
     from . import schema
 
     arcpy.env.workspace = workspace
@@ -359,7 +353,7 @@ def schema(output_dir, workspace, log_level):
     help="Log level",
 )
 def geolcode(output_file, workspace, log_level):
-    from . import all_geolcodes 
+    from . import all_geolcodes
 
     logger = logging.getLogger(__name__)
     logger.setLevel(log_level.upper())
@@ -446,7 +440,7 @@ def geolcode(output_file, workspace, log_level):
 )
 def filter_symbols(bbox, geometry, gdb_path, output, log_level, symbols, drop):
     from shapely import box
-    from . import filter_symbols 
+    from . import filter_symbols
     import geopandas as gpd
     import pandas as pd
 
@@ -476,7 +470,9 @@ def filter_symbols(bbox, geometry, gdb_path, output, log_level, symbols, drop):
 
     logging.debug(layers.keys())
 
-    results["layers"] = filter_symbols.process_layers_symbols(layers, gdb_path, mask_geom)
+    results["layers"] = filter_symbols.process_layers_symbols(
+        layers, gdb_path, mask_geom
+    )
 
     if output is not None:
         logging.info(f"Writing to {output}")
@@ -539,13 +535,12 @@ def export_rules(workspace, output, log_level):
     if not HAS_ARCPY:
         raise click.ClickException("arcpy library is not available.")
     from export_symbol_rules import process_layers
-    from . import  export_symbol_rules
+    from . import export_symbol_rules
 
     configure_logging(log_level)
 
     fields = ["OBJECTID", "MSH_MAP_TITLE", "MSH_MAP_NBR"]
     try:
-        
         project_path = workspace
         aprx = arcpy.mp.ArcGISProject(workspace)
     except OSError as e:
