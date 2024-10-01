@@ -1,4 +1,4 @@
-name: Uploading release assets
+name: Uploading assets to GitHub release
 
 
 on:
