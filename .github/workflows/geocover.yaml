@@ -1,4 +1,4 @@
-name: Bui8ld conda and pip packages
+name: Build conda and pip packages
 
 
 on:
