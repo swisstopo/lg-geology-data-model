@@ -1,4 +1,4 @@
-name: build
+name: conda build
 
 
 on:
@@ -53,8 +53,8 @@ jobs:
       - name: Upload Artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: document-artifacts
+          name: conda-package
           path: |
-            conda-out/*
+            conda-out/noarch/geocover*.tar.bz2
 
 
