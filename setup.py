@@ -31,7 +31,7 @@ setup(
     packages=find_packages(),
     #package_dir={"": "geocover"},
     include_package_data=True,
-    python_requires=">=3.8",
+    python_requires=">=3.7",  # ArcGis Pro 3.3 is still 3.7.11
     classifiers=[
         "Development Status :: 3 - Alpha",
         "License :: OSI Approved :: BSD License",
@@ -41,6 +41,8 @@ setup(
         "Topic :: Scientific/Engineering :: GIS",
         "Programming Language :: Python",
         "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: 3.7",
+        "Programming Language :: Python :: 3.8",
         "Programming Language :: Python :: 3.9",
         "Programming Language :: Python :: 3.10",
         "Programming Language :: Python :: 3.11",
