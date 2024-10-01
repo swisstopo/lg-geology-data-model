@@ -17,8 +17,8 @@ build:
   number: 0
   script: python -m pip install . --no-deps -vv
   entry_points:
-    - geocover = scripts.geocover:geocover
-    - datamodel = datamodel:datamode
+    - geocover = geocover.geocover:geocover
+    - datamodel = geocover.datamodel:datamodel
 
 requirements:
   build:
