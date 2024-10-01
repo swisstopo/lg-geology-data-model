@@ -46,7 +46,7 @@ requirements:
 
 test:
   source_files:
-    - src/
+    - geocover/
     - tests/
   imports:
     - geocover
