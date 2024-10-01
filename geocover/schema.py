@@ -64,12 +64,10 @@ class GeocoverSchema:
     @staticmethod
     def instance(workspace):
         """Static access method."""
-        if GeocoverSchema.__instance is not None:
-            raise Exception("Forbidden access to singleton class")
-        else:
+        if GeocoverSchema.__instance is None:
             if arcpy is None:
                 raise RuntimeError("arcpy is not available in this environment.")
-
+            GeocoverSchema.__instance = GeocoverSchema(workspace)
         return GeocoverSchema.__instance
 
     def __repr__(self):
@@ -79,9 +77,8 @@ class GeocoverSchema:
         """Virtually private constructor."""
         if GeocoverSchema.__instance is not None:
             raise Exception("Forbidden access to singleton class")
-        else:
-            GeocoverSchema.__instance = self
-            arcpy.env.workspace = self.__workspace = workspace
+        self.__workspace = workspace
+        arcpy.env.workspace = self.__workspace
 
             self.__tables = {}
             self.__tables_list = []
