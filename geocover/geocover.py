@@ -17,6 +17,7 @@ from . import utils
 
 try:
     import arcpy
+
     HAS_ARCPY = True
 except ImportError:
     HAS_ARCPY = False
@@ -171,7 +172,6 @@ def export(output_dir, workspace, log_level):
         raise click.ClickException("arcpy library is not available.")
     from . import encoder
     from . import schema
-
 
     now = datetime.datetime.now()
 

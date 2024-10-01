@@ -80,18 +80,18 @@ class GeocoverSchema:
         self.__workspace = workspace
         arcpy.env.workspace = self.__workspace
 
-            self.__tables = {}
-            self.__tables_list = []
-            self.__coded_domains = []
-            self.__coded_domains_values = {}
-            self.__datasets = []
-            self.__feature_classes = {}
-            self.__feature_class_subtypes = {}
-            self.__geol_code = {}
-            self.__relationships = {}
-            self.__connection_info = None
-            self.__feature_classes_list = []
-            self.__esri_style_dump = True
+        self.__tables = {}
+        self.__tables_list = []
+        self.__coded_domains = []
+        self.__coded_domains_values = {}
+        self.__datasets = []
+        self.__feature_classes = {}
+        self.__feature_class_subtypes = {}
+        self.__geol_code = {}
+        self.__relationships = {}
+        self.__connection_info = None
+        self.__feature_classes_list = []
+        self.__esri_style_dump = True
 
     def generate_filter_function():
         def filter_function(name):

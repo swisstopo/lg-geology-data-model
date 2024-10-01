@@ -22,12 +22,12 @@ data = []
 df = None
 
 try:
-    curdir  = os.path.dirname(os.path.realpath(__file__))
+    curdir = os.path.dirname(os.path.realpath(__file__))
 except NameError:
-    curdir = r'H:\code\geocover-examples\datamodel'
-basedir = os.path.join(curdir, 'exports')
+    curdir = r"H:\code\geocover-examples\datamodel"
+basedir = os.path.join(curdir, "exports")
 
-if not  os.path.isdir(basedir):
+if not os.path.isdir(basedir):
     os.makedirs(basedir)
 
 try:
