@@ -1,5 +1,5 @@
 ---
-title: {{ _("Geological datamodel") }}, {{ _("Revision %(name)s", name=model.revision) }} 
+title: {{ _("Geological datamodel") }}, {{ _("Revision %(name)s (%(hash)s)", name=model.revision, hash=hash) }} 
 subtitle: {{_("Beschreibung und Datenkatalog")}}
 author: {{_("Bundesamt für Landestopographie swisstopo")}}
 date:  {{ date | format_date_locale('MMMM yyyy', lang) }}
@@ -14,7 +14,13 @@ keywords:
 subject: {{_("Geologische Landesaufnahme der Schweiz")}}
 lang: {{lang}}
 
-fontsize: 10pt
+# Custom LaTeX headers
+# Left-align all tables
+header-includes: |
+    \usepackage[margins=raggedright]{floatrow} 
+
+
+fontsize: 9pt
 geometry: "left=3cm,right=2cm,top=3cm,bottom=3cm"
 colorlinks: true
 linkcolor: teal
@@ -23,7 +29,6 @@ toccolor: gray
 
 # PDF
 papersize: a4
-fontsize: "10pt"
 mainfont: "DejaVu Sans"
 
 ---

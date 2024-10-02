@@ -4,9 +4,12 @@ import os
 import sys
 from collections import OrderedDict
 
-import arcpy
+try:
+    import arcpy
+except ImportError:
+    arcpy = None
 
-from utils import arcgis_table_to_df, get_field_type, merge_two_dicts
+from . import utils
 
 logging.basicConfig(format="%(name)s - %(levelname)s - %(message)s", level=logging.INFO)
 
@@ -28,6 +31,7 @@ TREE_TABLES = [
     "TOPGIS_GC.GC_ADMIXTURE",  # Not a hierarchical table
     "TOPGIS_GC.GC_CHARCAT",  # Not a hierarchical table
     "TOPGIS_GC.GC_COMPOSIT",  # Not a hierarchical table
+    "TOPGIS_GC.GC_SYSTEM",  # Not a hierarchical table
 ]
 
 # The order will be preserved in the export
@@ -49,6 +53,8 @@ remove_prefix = lambda x: x.split(".")[-1]
 
 gc_filter = lambda x: "GC_" in x and not x.endswith("_I") and x not in EXCLUDE_TABLES
 
+gc_prefix_filter = lambda x: "GC_" in x.name
+
 table_filter = lambda x: x in TREE_TABLES
 
 
@@ -59,8 +65,9 @@ class GeocoverSchema:
     def instance(workspace):
         """Static access method."""
         if GeocoverSchema.__instance is None:
-            GeocoverSchema(workspace)
-
+            if arcpy is None:
+                raise RuntimeError("arcpy is not available in this environment.")
+            GeocoverSchema.__instance = GeocoverSchema(workspace)
         return GeocoverSchema.__instance
 
     def __repr__(self):
@@ -70,22 +77,21 @@ class GeocoverSchema:
         """Virtually private constructor."""
         if GeocoverSchema.__instance is not None:
             raise Exception("Forbidden access to singleton class")
-        else:
-            GeocoverSchema.__instance = self
-            arcpy.env.workspace = self.__workspace = workspace
+        self.__workspace = workspace
+        arcpy.env.workspace = self.__workspace
 
-            self.__tables = {}
-            self.__tables_list = []
-            self.__coded_domains = []
-            self.__coded_domains_values = {}
-            self.__datasets = []
-            self.__feature_classes = {}
-            self.__feature_class_subtypes = {}
-            self.__geol_code = {}
-            self.__relationships = {}
-            self.__connection_info = None
-            self.__feature_classes_list = []
-            self.__esri_style_dump = True
+        self.__tables = {}
+        self.__tables_list = []
+        self.__coded_domains = []
+        self.__coded_domains_values = {}
+        self.__datasets = []
+        self.__feature_classes = {}
+        self.__feature_class_subtypes = {}
+        self.__geol_code = {}
+        self.__relationships = {}
+        self.__connection_info = None
+        self.__feature_classes_list = []
+        self.__esri_style_dump = True
 
     def generate_filter_function():
         def filter_function(name):
@@ -96,6 +102,14 @@ class GeocoverSchema:
             )
 
         return filter_function
+
+    @property
+    def esri_style_dump(self):
+        return self.__esri_style_dump
+
+    @esri_style_dump.setter
+    def esri_style_dump(self, value: bool):
+        self.__esri_style_dump = value
 
     @property
     def connection_info(self):
@@ -155,7 +169,7 @@ class GeocoverSchema:
 
             sort_keys = ["GEOL_CODE_INT"]
             try:
-                df = arcgis_table_to_df(table_name, input_fields=TREE_TABLE_FIELD)
+                df = utils.arcgis_table_to_df(table_name, input_fields=TREE_TABLE_FIELD)
                 if "PARENT_REF" in df.columns:
                     df["PARENT_REF"] = df["PARENT_REF"].fillna(0)
                     sort_keys = ["GEOL_CODE_INT", "PARENT_REF"]
@@ -169,10 +183,9 @@ class GeocoverSchema:
 
     def list_coded_domains(self):
         if len(self.__coded_domains) < 1:
-            gc_filter = lambda x: "GC_" in x.name
             logging.debug("Collecting coded domains from workspace")
             coded_domains_list = arcpy.da.ListDomains(self.__workspace)
-            self.__coded_domains = list(filter(gc_filter, coded_domains_list))
+            self.__coded_domains = list(filter(gc_prefix_filter, coded_domains_list))
 
         return self.__coded_domains
 
@@ -182,12 +195,12 @@ class GeocoverSchema:
             self.list_coded_domains()
         if len(self.__coded_domains_values) < 1:
             for domain in self.list_coded_domains():
-                if not self.__esri_style_dump:
-                    if domain.domainType == "CodedValue":
-                        coded_values = domain.codedValues
-                        domain_dict = {}
-                        for val, desc in coded_values.items():
-                            domain_dict[val] = desc
+                if not self.__esri_style_dump and domain.domainType == "CodedValue":
+                    coded_values = domain.codedValues
+                    domain_dict = {}
+                    for val, desc in coded_values.items():
+                        domain_dict[val] = desc
+
                 else:
                     domain_dict = {
                         "type": domain.domainType,
@@ -215,6 +228,9 @@ class GeocoverSchema:
 
         for field in fields:
             domain = None
+            print(
+                f"DEBUG domain={field.domain}, domains={[d.name for d in self.list_coded_domains()]}"
+            )
             if len(field.domain) > 0 and field.domain in self.__coded_domains_values:
                 domain = field.domain
             logging.debug(f"    {field.name}, {field.type}, {field.length}, {domain}")
@@ -301,7 +317,7 @@ class GeocoverSchema:
                     continue
                 d = []
                 desc_lu = {key: value["Name"] for (key, value) in subtypes.items()}
-                subtypes_dict = merge_two_dicts(subtypes_dict, desc_lu)
+                subtypes_dict = utils.merge_two_dicts(subtypes_dict, desc_lu)
 
                 for stcode, stdict in list(subtypes.items()):
                     logging.debug({stcode: stdict["Name"]})
@@ -312,7 +328,7 @@ class GeocoverSchema:
 
                     d.append({stcode: stdict})
 
-                    field_type_dict = get_field_type(stdict)
+                    field_type_dict = utils.get_field_type(stdict)
 
                 subtypes_layers_dict[fc] = d
 

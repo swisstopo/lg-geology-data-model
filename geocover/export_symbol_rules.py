@@ -76,26 +76,24 @@ def process_layers(l):
             fields[fld.aliasName] = fld.name
 
         if hasattr(renderer, "groups"):
+            nb_groups = len(renderer.groups)
 
-          nb_groups = len(renderer.groups)
+            logging.debug(f"GROUPS: {nb_groups}")
+            # https://pro.arcgis.com/en/pro-app/latest/arcpy/mapping/uniquevaluerenderer-class.htm
+            renderer_dict = {}
+            renderer_dict["fields"] = renderer.fields
+            renderer_dict["groups"] = []
 
-          logging.debug(f"GROUPS: {nb_groups}")
-          # https://pro.arcgis.com/en/pro-app/latest/arcpy/mapping/uniquevaluerenderer-class.htm
-          renderer_dict = {}
-          renderer_dict['fields'] = renderer.fields
-          renderer_dict['groups'] = []
-
-          for grp in renderer.groups:
+            for grp in renderer.groups:
                 logging.debug(f"New group: {grp.heading}")
-                grp_dict={}
-
+                grp_dict = {}
 
                 # heading = list(map(str.strip, grp.heading.split(",")))
                 headings = [v.strip() for v in grp.heading.split(",")]
-                '''headings = [
+                """headings = [
                     fields[alias] if alias in fields else alias.upper()
                     for alias in headings_alias
-                ]'''
+                ]"""
                 # logging.debug(f"alias={headings_alias}")
                 # grp_dict["headings_alias"] = headings_alias
                 grp_dict["headings"] = headings
@@ -114,16 +112,15 @@ def process_layers(l):
 
                     logging.debug(cleaned_list)
                     grp_dict["values"].append(cleaned_list)
-                renderer_dict['groups'].append(grp_dict)
-          try:
+                renderer_dict["groups"].append(grp_dict)
+            try:
                 d["renderer"] = renderer_dict
                 logging.debug(f"--{l.name}--")
                 logging.debug(json.dumps(renderer_dict, indent=4))
 
-          except Exception as e:
+            except Exception as e:
                 logging.error(f"Cannot add symbology: {l.name}: {e}")
-          # More than onegroup
-
+            # More than onegroup
 
         else:
             logging.error(f"Layer {l.name}: {sym.renderer.type}")

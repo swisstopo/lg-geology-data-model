@@ -7,13 +7,15 @@
 # 0.3 Mandatory attributes
 # 0.4 Add 'abrev' attribute
 # 0.5 Add tablename 
-version: 0.5
-date: 2024-04-24
+# 0.6 Tables, like CHARCAT, ADMIXTURE as annex (why no CD?). Ignore some deleted attributes.
+#     hack to improve translations (cannot modify the XLS file)
+version: 0.6
+date: 2024-09-24
 
 # Model revision should change if attributes are added, deleted or changed
 model:
-  revision: 3.1
-  revision_date: 2024-06-07
+  revision: 3.9.4
+  revision_date: 2024-10-01
 
 themes:
   - name: Rock_Bodies
@@ -42,7 +44,7 @@ themes:
             value: 14401
             description:
               de: Objektart
-              fr: Type de l'objet et description
+              fr: Type de l'objet
             cardinality: 1
           - name: status
             att_type: CD
@@ -55,14 +57,14 @@ themes:
             att_type: CD
             value: GC_PNT_RUNC_ROCK_TYP_CD
             description:
-              de: Gesteinstyp (Kristallingestein / Sedimentgestein)
+              de: Gesteinstyp
               fr: Type de roche
             cardinality: 0..1
           - name: rock_spe
             att_type: CD
             value: GC_PNT_RUNC_ROCK_SPE_CD
             description:
-              de: Bezeichnung des Leitgesteins
+              de: Bezeichnung des Leitgesteins.
               fr: Description de la roche repère.
             cardinality: 0..1
           - name: mat_type  # TODO type
@@ -81,7 +83,7 @@ themes:
             cardinality: 0..1
           - name: protected
             description:
-              de: Geschütztes geologisches Objekt
+              de: "Geschützt: ja/nein"
               fr: Objet géologique protégé (oui / non)?
             att_type: boolean
             cardinality: 0..1
@@ -91,32 +93,17 @@ themes:
         description:
           de: |
             Die Klasse Unconsolidated_Deposits_PLG beinhaltet alle flächenhaft
-            ausgeschiedenen Lockergesteine.\
-            Die Angabe, ob eine Lockergesteinsmasse bewegt (durch Gravitation versetzt) wurde, geht
-            aus der Klasse Instabilities_within_Unconsolidated_Deposits_PLG (Thema
-            Geomorphology) hervor. Eine Ausnahme bilden Lockergesteinsmassen,
-            welche unter dem Einfluss der Schwerkraft bewegt wurden und keine
-            Angaben zum Ausgangsmaterial enthalten (Rutschmassen oder zerrüttete
-            Gesteinsmassen «Sackungsmassen»).\
-            Solche Lockergesteine werden sowohl in der Klasse Unconsolidated_Deposits_PLG als auch in der Klasse
-            Instabilities_with_in_Unconsolidated_Deposits_PLG erfasst. Zur näheren
-            Erklärung der verschiedenen Objektarten sind im Anhang A einige
-            Fallbeispiele abgebildet.
+            ausgeschiedenen Lockergesteine.
           fr: |
             La classe Unconsolidated_Deposits_PLG contient toutes les masses distinctes de roches meubles
-            occupant une surface. L’information indiquant si une roche meuble est en mouvement
-            (déplacée par gravitation) se trouve dans la classe Instabilities_within_Unconsolidated_Deposits_
-            PLG (Thème Geomorphology). Cependant, lorsque la nature du matériel en glissement n’est pas
-            distinguable, celle-ci pourra être attribué en tant que masse glissée ou en glissement ou masse
-            de roche tassée et disloquée. A des fins de clarification, quelques exemples des différents types
-            d'objets sont illustrés dans l'annexe A.
+            occupant une surface.
         attributes:
           - name: kind
             att_type: subtype
             value: 14517
             description:
               de: Objektart
-              fr: Type de l'objet et description
+              fr: Type de l'objet
             cardinality: 1
           - name: litstrat  # ajouté dans version 3?
             description:
@@ -171,14 +158,14 @@ themes:
             description:
               de: Zusammensetzung des Lockergesteins
               fr: Composition de la roche meuble
-            att_type: table
+            att_type: annex
             value: gc_composit
             cardinality: 0..3
           - name: admixture
             description:
               de: Beimengung
               fr: Incorporation
-            att_type: table
+            att_type: annex
             value: gc_admixture
             cardinality: 0..2
           - name: structur
@@ -193,7 +180,7 @@ themes:
             description:
               de: Spezifische Eigenschaft.
               fr: Structure sédimentaire
-            att_type: table
+            att_type: annex
             value: gc_charcat
             cardinality: 0..3
           - name: morpholo
@@ -206,7 +193,7 @@ themes:
           - name: glac_type
             description:
               de: Gletschertyp; Attribut nur für Moränen
-              fr: >
+              fr: >-
                 Type de glacier auquel le type d’objet est associé. Cet  attribut
                 n’est valable que pour des moraines
             att_type: CD
@@ -228,9 +215,10 @@ themes:
             cardinality: 0..1
           - name: orig_descr
             description:
-              de: Originalbezeichnung gemäss der Legende der zugrundeliegenden geologischen
+              de: >-
+                Originalbezeichnung gemäss der Legende der zugrundeliegenden geologischen
                 Karte
-              fr: Description de la légende de la carte géologique originale.
+              fr: Description selon la légende de la carte géologique originale.
             value: string
             cardinality: 1
 
@@ -238,34 +226,28 @@ themes:
         abrev: Rbed  # TODO: to check
         table: GC_BEDROCK # TODO: to check
         description:
-          de: >
-            Die Klasse Bedrock_PLG enthält alle flächenbildenden
-            lithostratigraphischen Festgesteinseinheiten. Die Angabe,  ob ein
-            Festgestein bewegt (durch Gravitation versetzt) wurde, geht aus der
-            Klasse Instabilities_within_Bedrock_PLG (Thema Geomorphology) hervor.
-          fr: >
+          de: >-
+            Die Klasse Bedrock_PLG enthält alle lithostratigraphischen Festgesteinseinheiten.
+          fr: >-
             La classe Bedrock_PLG regroupe toutes les unités lithostratigraphiques
-            de roches consolidées qui
-            constituent une surface. L’information indiquant si une roche consolidée
-            est en mouvement
-            (déplacée par gravitation) se trouve dans la classe Instabilities_ within_Bedrock_PLG
-            (Thème
-            Geomorphology).
+            de roches consolidées qui constituent une surface. L’information indiquant si une roche consolidée
+            est en mouvement (déplacée par gravitation) se trouve dans la classe Instabilities_PLG
+            (Thème Geomorphology).
         attributes:
           - name: kind
             description:
-              de: Spezifische Eigenschaft
-              fr: Type de l'objet et description.
+              de: Objektart
+              fr: Type de l'objet
             att_type: subtype
             value: 14334001
             cardinality: 1
-          - name: fm_homog  # TODO still in use?
+          - name: fm_homog  # removed
             description:
               de: Gesteinsaufbau
               fr: ''
             cardinality: 1
-            change: removed # TODO
-          - name: listrat
+            change: removed
+          - name: litstrat
             description:
               de: Lithostratigraphische Einheit
               fr: Description lithostratigraphique
@@ -278,15 +260,15 @@ themes:
             description:
               de: Lithologische Beschreibung
               fr: Description lithologique
-            cardinality: 1..3
+            cardinality: 1
           - name: chrono_t
             att_type: annex
             value: GC_CHRONO_CD
             description:
-              de: >
+              de: >-
                 Chronostratigraphische Zuordnung der Obergrenze der Kartiereinheit
                 (Top)
-              fr: >
+              fr: >-
                 Attribution chronostratigraphique du toit de la  formation (top)
             cardinality: 1
             mandatory: true
@@ -294,10 +276,11 @@ themes:
             att_type: annex
             value: GC_CHRONO_CD
             description:
-              de: Chronostratigraphische Zuordnung der Untergrenze der Kartiereinheit
+              de: >-
+                Chronostratigraphische Zuordnung der Untergrenze der Kartiereinheit
                 (Basis)
-              fr: >
-                Attribution chronostratigraphique de la base de la  formation (basis).
+              fr: >-
+                Attribution chronostratigraphique de la base de la  formation (base).
             cardinality: 1
             mandatory: true
           - name: tecto
@@ -311,9 +294,11 @@ themes:
           - name: orig_descr
             att_type: string
             description:
-              de: Originalbezeichnung gemäss der Legende der zugrundeliegenden geologischen
+              de: >-
+                Originalbezeichnung gemäss der Legende der zugrundeliegenden geologischen
                 Karte
-              fr: Description de la légende de la carte géologique originale.
+              fr: >-
+                Description selon la légende de la carte géologique originale
             cardinality: 1
           - name: buried_out
             att_type: boolean
@@ -324,25 +309,28 @@ themes:
           - name: exotic_ele
             value: boolean
             description:
-              de: >
+              de: >-
                 Handelt es sich bei der Objektart um ein exotisches Element; z.B.
                 Einschluss, Linse, Tasche, Olistholith (ja / nein)?
-              fr: S’agit-il d’un élément exotique (oui / non)?
+              fr: >-
+                S’agit-il d’un élément exotique (oui / non)?
             cardinality: 1
           - name: colour
             att_type: string
             description:
-              de: >
+              de: >-
                 Farbe des Gesteins. Präzisieren ob es sich um die Bruchfarbe, die
                 Verwitterungsfarbe, etc. handelt; z.B.Verwitterungsfarbe grau.
               fr: Couleur de la roche
             cardinality: 0..1
+            change: removed
           - name: sedi_main_com
             att_type: CD
             value: GC_MAIN_COM_CD
             description:
-              de: Hauptgesteinskomponente des klastischen Sedimentgesteins
-              fr: >
+              de: >-
+                Hauptgesteinskomponente des klastischen Sedimentgesteins
+              fr: >-
                 Composant principal de la roche sédimentaire clastique.
             cardinality: 0..1
           - name: sedi_seco_com
@@ -357,7 +345,7 @@ themes:
             value: GC_BOND_MAT_CD
             description:
               de: Bindemittel des Sedimentgesteins
-              fr: ''
+              fr: Ciment de la roche sédimentaire
             cardinality: 0..1
           - name: sedi_bedding
             att_type: CD
@@ -376,6 +364,7 @@ themes:
           - name: sedi_tex
             att_type: CD
             value: GC_SEDI_TEX_CD
+            cardinality: 0..1    # TODO
             description:                   # TODO: really struktur?
               de: Sedimentstruktur
               fr: Texture de la roche sédimentaire
@@ -396,6 +385,7 @@ themes:
           - name: igne_affinity
             att_type: CD
             value: GC_AFFINITY_CD
+            cardinality: 0..1
             description:
               de: Affinität zu einer magmatischen Serie.
               fr: Affinité avec une série magmatique
@@ -428,9 +418,7 @@ themes:
           de: |
             Die Klasse Instability_Structures_PT enthält lokal beobachtete Hinweise auf Hanginstabilitäten
             (Rutschungen), die räumlich nicht abgegrenzt werden können. Wenn möglich, sollen instabile
-            Gesteinsmassen durch Polygone erfasst werden (Klasse Instabilities_within_Unconsolidated_
-            Deposits_PLG), die punktförmige Aufnahme ist zu vermeiden und vorwiegend für die Vektorisierung älterer
-            gedruckter Karten gedacht.
+            Gesteinsmassen durch Polygone erfasst werden (Klasse Instabilities_PLG).
           fr: |
             La classe Instability_Structures_PT contient des indications sur des instabilités de pentes
             (glissements) observés localement, qui ne peuvent pas être délimités spatialement. Cependant,
@@ -441,8 +429,8 @@ themes:
         attributes:
           - name: kind
             description:
-              de: Spezifische Eigenschaft
-              fr: Type de l'objet et description
+              de: Objektart
+              fr: Type de l'objet
             att_type: subtype
             value: 11601
             cardinality: 1
@@ -452,56 +440,26 @@ themes:
         description:
           de: |
             Die Klasse Instability_Structures_L umfasst linienförmige Morphologien, die sich als Folge von
-            Hanginstabilitäten an der Oberfläche ausgebildet haben. Beim Abrissrand handelt es sich um den
-            oberen Rand der durch das Abgleiten der bewegten Masse freigelegten Gleitfläche einer
-            Rutschung oder Sackung (Abrissnische)
+            Hanginstabilitäten an der Oberfläche ausgebildet haben.
           fr:
         attributes:
           - name: kind
             description:
-              de: Spezifische Eigenschaft
-              fr: Type de l'objet et description.
+              de: Objektart
+              fr: Type de l'objet
             att_type: subtype
             value: 11701
             cardinality: 1
-      - name: Instabilities_within_Unconsolidated_Deposits_PLG
-        abrev: Gins  # TODO: to check
-        table: GC_UNCO_DESPOSIT # TODO: to check
-        description:
-          de: |
-            Die Klasse Instabilities_within_Unconsolidated_Deposits_PLG beinhaltet alle Polygone, die Gebiete
-            mit instabilen Lockergesteinen begrenzen. In dieser Klasse werden die Prozessräume der
-            verschiedenen Typen von gleitenden Massenbewegungsprozessen ausgeschieden; die
-            eigentlichen Gesteinskörper und Ablagerungen, die von Massenbewegungsprozessen betroffen
-            bzw. gebildet worden sind, werden in der Klasse Unconsolidated_Deposits_PLG beschrieben. Zur
-            näheren Erklärung der verschiedenen Objektarten sind im Anhang A einige Fallbeispiele
-            abgebildet.
-          fr: |
-            La classe Instabilities_within_Unconsolidated_Deposits_PLG contient tous les polygones qui
-            délimitent des zones de roches meubles instables. Dans cette classe on distingue les surfaces
-            affectées par les différents types de phénomènes de mouvement de masse. Les corps rocheux
-            proprement dits ainsi que les dépôts affectés resp. engendrés par ces processus de mouvement
-            de masse seront décrits dans la classe Unconsolidated_ Deposits_PLG. A des fins de clarification,
-            quelques exemples des différents types d'objets sont illustrés dans l'annexe A.
-        attributes:
-          - name: kind
-            description:
-              de: Spezifische Eigenschaft
-              fr: Type de l'objet et description.
-            att_type: subtype # TODO: subtyp not found
-            value: 11801
-            cardinality: 1
-      - name: Instabilities_within_Bedrock_PLG
+      - name: Instabilities_PLG
         abrev: Gins  # TODO: to check
         table: GC_BEDROCK # TODO: to check
         description:
           de: |
-            Die Klasse Instabilities_within_Bedrock_PLG beinhaltet alle Polygone, die Gebiete mit instabilen
-            Festgesteinen begrenzen. In dieser Klasse werden die Prozessräume der verschiedenen Typen von
-            gleitenden Massenbewegungsprozessen ausgeschieden; die eigentlichen Gesteinskörper, die von
-            Massenbewegungsprozessen betroffen sind, werden in der Klasse Bedrock_PLG beschrieben. Zur
-            näheren Erklärung der verschiedenen Objektarten sind im Anhang A einige Fallbeispiele
-            abgebildet.
+            Die Klasse Instabilities_PLG beinhaltet alle Polygone, die Gebiete mit instabilen
+            Festgesteinen oder Lockergestein begrenzen. In dieser Klasse werden die Prozessräume
+            der verschiedenen Typen von gleitenden Massenbewegungsprozessen ausgeschieden; die
+            eigentlichen Gesteinskörper oder Lockergesteinsablagerungen, die von Massenbewegungsprozessen
+            betroffen bzw. gebildet worden sind, werden in der Klasse Bedrock_PLG beschrieben.
           fr: |
             La classe Instabilities_within_Bedrock_PLG contient tous les polygones qui délimitent des zones
             de roche consolidée instable. Dans cette classe on distingue les surfaces affectées par les
@@ -512,15 +470,15 @@ themes:
         attributes:
           - name: kind
             description:
-              de: Spezifische Eigenschaft
-              fr: Type de l'objet et description.
+              de: Objektart
+              fr: Type de l'objet
             att_type: subtype
-            value: 11501
+            value: 15801  # changed
             cardinality: 1
           - name: main_mov
             description:
               de: Hauptbewegungsphase
-              fr: ''
+              fr: Phase de mouvement principale
             att_type: CD
             value: GC_SURF_GINS_MAIN_MOV_CD
             cardinality: 0..1
@@ -540,10 +498,10 @@ themes:
         attributes:
           - name: kind
             description:
-              de: Spezifische Eigenschaft
-              fr: Type de l'objet et description.
+              de: Objektart
+              fr: Type de l'objet
             att_type: subtype
-            value: 11201
+            value: 11901
             cardinality: 1
       - name: Glacial_and_Periglacial_Structures_L
         abrev: Ggla  # TODO: to check
@@ -551,9 +509,7 @@ themes:
         description:
           de: |
             Die Klasse Glacial_and_Periglacial_Structures_L enthält linienförmige Strukturen, die auf ein
-            glaziales oder periglaziales Bildungsmilieu hindeuten. Mit Ausnahme der Schliffgrenze handelt es
-            sich in dieser Klasse ausschliesslich um akkummulative Landschaftsformen wie Moränenwälle oder
-            Blockwülste im Blockgletscher.
+            glaziales oder periglaziales Bildungsmilieu hindeuten.
           fr: |
             La classe Glacial_and_Periglacial_Structures_L contient des structures de formes linéaires,
             façonnant une formation glaciaire ou périglaciaire. A l’exception des limites supérieures de
@@ -563,7 +519,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 11301
             cardinality: 1
@@ -600,7 +556,7 @@ themes:
           - name: ref_year
             description:
               de: Referenzjahr des älteren Gletscherstandes.
-              fr: Année de référence de l’ancienne ligne de rivage.
+              fr: Année de référence.
             att_type: integer
             cardinality: 0..1
           - name: source
@@ -615,8 +571,7 @@ themes:
         description:
           de: >
             Die Klasse Glacial_Structures_PLG umfasst flächenhafte glaziale Landschaftsformen,
-            die durch
-            basales Fliessen des Gletschereises oder dessen Abschmelzen entstanden
+            die durch basales Fliessen des Gletschereises oder dessen Abschmelzen entstanden
             sind.
           fr: >
             La classe Glacial_Structures_PLG regroupe les formes du paysage d’origine
@@ -626,7 +581,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 11401
             cardinality: 1
@@ -644,7 +599,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 11001
             cardinality: 1
@@ -655,12 +610,6 @@ themes:
           de: |
             Die Klasse Erosional_Structures_L enthält linienförmige erosive Formen wie Erosionsränder im
             Allgemeinen oder Terrassenkanten.
-            Auf älteren gedruckten Karten wurden Erosionsränder und Terrassenkanten oftmals nicht
-            unterschieden. In den Vektordaten wird diese Unterscheidung jedoch konsequent vollzogen. Dies
-            bedingt, dass im Rahmen der Vektorisierung älterer gedruckter Karten Erosionsränder und
-            Terrassenkanten aufgeteilt werden müssen. Terrassenkanten werden nur dann als solche
-            attributiert, wenn sie durch ihre Lage und entsprechende Schotterterrassen eindeutig zugeordnet
-            werden können. Zweifelhafte Fälle werden als Erosionsränder aufgenommen.
           fr: |
             La classe Erosional_Structures_L regroupe des formes érosives linéaires comme les bords
             d’érosion en général ou les bords de terrasse. Sur les anciennes cartes imprimées, les bords de
@@ -674,7 +623,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 11101
             cardinality: 1
@@ -693,17 +642,14 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 11301
             cardinality: 1
           - name: ice_cave
             description:
-              de: |-
-                Handelt es sich bei der Höhle um eine Eisgrotte («glacière», aussergewöhnlich kalte Höhle in der sich
-                durch die winterlichen Schneefälle oder durch das Gefrieren von eingedrungenem Wasser Eis akkumuliert
-                und das auch die warme Jahreszeit überdauert) (ja / nein)?
-              fr: S’agit-il d’une glacière (oui / non)?
+              de: "Eisgrotte (ja / nein)"
+              fr: "S’agit-il d’une glacière (oui / non)"
             att_type: boolean
             cardinality: 0..1
       - name: Karstic_Structures_PLG
@@ -712,15 +658,13 @@ themes:
         description:
           de: |
             Die Klasse Karstic_Structures_PLG umfasst flächenhafte Karstformen wie Dolinen oder Poljen.
-            Dolinen werden immer als Polygone erfasst (das) bildet dafür eine wichtige Grundlage). Kleine
-            Dolinen (Durchmesser < 25 m), werden durch eine definierte Einheitsfläche von 500 m²
-            dargestellt.
-          fr:
+          fr: |
+            La classe Karstic_Structures_PLG comprend les formes karstiques surfaciques telles que les dolines ou les poljés.
         attributes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 12001
             cardinality: 1
@@ -738,7 +682,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 10901
             cardinality: 1
@@ -760,10 +704,7 @@ themes:
             Die Klasse Deformation_Structures_PT beinhaltet punktuell beobachtete tektonische
             Deformationsstrukturen wie lokal stark verfaltete Stellen (Fältelung) oder Orte mit ausgeprägter
             Klüftung. Ebenfalls in dieser Klasse befinden sich konstruierte Punkte wie z.B. die Orientierung
-            der Faltenachsenfläche. Die Darstellung der Spur einer Achsenfläche entspricht der Symbolisierung
-            eines konstruierten Faltenscharniers, in einem Punkt der Intersektion einer Achsenfläche und der
-            Topografie. Diese beiden letzterwähnten Objektarten sind im Anhang A zur besseren
-            Verständlichkeit abgebildet.
+            der Faltenachsenfläche.
           fr: |
             La classe Deformation_Structures_PT contient les structures de déformation ponctuelles observées, comme les endroits fortement plissés (plissotement) ou les lieux avec des diaclases bien
             marquées. Dans cette classe se trouvent aussi les points construits, comme p. ex. la représentation de la trace d’une surface axiale. Celle-ci correspond à la symbolisation d’une charnière de pli
@@ -774,16 +715,16 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 14601
             cardinality: 1
           - name: azimuth
             description:
-              de: |
+              de: >-
                 Fallrichtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad
-                (0° 359°) im Uhrzeigersinn gemessen.
-              fr: |
+                von 0° bis 359° im Uhrzeigersinn gemessen.
+              fr: >-
                 Azimut du type d'objet. L'azimut est mesuré depuis le 
                 nord en degré de 0° à 359° dans le sens des aiguilles 
                 d'une montre
@@ -821,16 +762,14 @@ themes:
         description:
           de: |
             Die Klasse Deformation_Structures_L enthält linienförmige tektonische Deformationsstrukturen,
-            wie den Verlauf des Faltenscharniers. Ein Beispiel der Objektart ist zur Veranschaulichung im
-            Anhang A abgebildet.
+            wie den Verlauf des Faltenscharniers.
           fr: |
-            La classe Deformation_Structures_L regroupe les structures linéaires de déformations tectoniques comme le tracé d’une charnière de pli. Un exemple d’un tel type d’objet est illustré dans
-            l’annexe A.
+            La classe Deformation_Structures_L regroupe les structures linéaires de déformations tectoniques comme le tracé d’une charnière de pli.
         attributes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 14701
             cardinality: 1
@@ -848,7 +787,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 14801
             cardinality: 1
@@ -871,20 +810,14 @@ themes:
         table: GC_LINEAR_OBJECTS # TODO: to check
         description:
           de: |
-            Die Klasse Tectonic_Boundaries_L umfasst alle tektonischen Verwerfungen. Die Horizontal-
-            verschiebungen in der Schweiz können als «Bruch, (Attribut «Fault_Mo» (Fault Movement))
-            parallel zur Streichrichtung» abgebildet werden. Als Pendant zu «Überschiebung» oder
-            «Abschiebung» gibt es in der Schweiz keine «Horizontalverschiebung» mit vergleichbarer
-            Grössenausdehnung. Ein Abscherhorizont wird als «Überschiebung» oder als «Abschiebung»
-            dargestellt. Wenn die Bewegungsrichtung nicht bekannt ist, wird er zur «tektonischen Grenze mit
-            unbekannter Bewegungsrichtung». Zur näheren Erklärung der verschiedenen Objektarten sind im
-            Anhang A Beispiele abgebildet.
-          fr:
+            Die Klasse Tectonic_Boundaries_L umfasst alle tektonischen Verwerfungen.
+          fr: |
+            La classe Tectonic_Boundaries_L comprend toutes les failles tectoniques.
         attributes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 14901
             cardinality: 1
@@ -930,6 +863,7 @@ themes:
               de: Aktivität der Objektart
               fr: Activité du type d'objet
             att_type: TODO  # TODO: no coded domain
+            change: removed
             cardinality: 0..1
           - name: meta_sta
             description:
@@ -953,17 +887,15 @@ themes:
         description:
           de: |
             Die Klasse Folds_PT enthält Objektarten, welche die räumliche Lage von verfalteten geologischen
-            Objekten (mit direkten Feldmessungen) beschreiben. Beispiele der Objektarten Orientierung der
-            Faltenachse und der Scheitellinie sind im Anhang A zur besseren Verständlichkeit abgebildet.
+            Objekten (mit direkten Feldmessungen) beschreiben.
           fr: |
             La classe Folds_PT contient les motifs qui décrivent la position spatiale d’objets géologiques
-            plissés (par des mesures prises directement sur le terrain). A titre d’exemple, l’annexe A illustre
-            l’orientation d’un axe de pli et l’orientation d’une ligne de crête.
+            plissés (par des mesures prises directement sur le terrain).
         attributes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 13601
             cardinality: 1
@@ -995,10 +927,10 @@ themes:
             cardinality: 0..1
           - name: azimuth
             description:
-              de: |
+              de: >-
                 Einfallsrichtung (Azimut) der jeweiligen Punktobjektart (z.B. Scheitellinie,
                 Faltenachse). Wert in Grad (0° 359°) im Uhrzeigersinn gemessen
-              fr: |
+              fr: >-
                 Azimut du type d'objet. L'azimut est mesuré depuis le 
                 nord en degré de 0° à 359° dans le sens des aiguilles 
                 d'une montre
@@ -1006,10 +938,10 @@ themes:
             cardinality: 1
           - name: dip
             description:
-              de: |
+              de: >-
                 Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen
                 aus der Horizontalen (0°) nach unten bis in die Vertikale (90°).
-              fr: |
+              fr: >-
                 Valeur du plongement du type d'objet (valeur en 
                 degrés, mesurée de l’horizontale (0°) vers le bas jusqu’à 
                 la verticale (90°)
@@ -1033,15 +965,16 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 13701
             cardinality: 1
           - name: azimuth
             description:
-              de: Einfallsrichtung (Azimut) der jeweiligen Punktobjektart (z.B. Scheitellinie,
+              de: >-
+                Einfallsrichtung (Azimut) der jeweiligen Punktobjektart (z.B. Scheitellinie,
                 Faltenachse). Wert in Grad (0° 359°) im Uhrzeigersinn gemessen
-              fr: |
+              fr: >-
                 Azimut du type d'objet. L'azimut est mesuré depuis le 
                 nord en degré de 0° à 359° dans le sens des aiguilles 
                 d'une montre
@@ -1049,9 +982,10 @@ themes:
             cardinality: 1
           - name: dip
             description:
-              de: Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen
+              de: >-
+                Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen
                 aus der Horizontalen (0°) nach unten bis in die Vertikale (90°).
-              fr: |
+              fr: >-
                 Valeur du plongement du type d'objet (en degrés),
                 mesurée de l’horizontale (0°) vers le bas jusqu’à la 
                 verticale (90°)
@@ -1062,16 +996,15 @@ themes:
         description:
           de: >
             Die Klasse Planar_Structures_PT enthält Objektarten, welche die räumliche
-            Lage von planaren
-            Strukturen mit direkten Feldmessungen beschreiben. Ein Beispiel der Objektart
-            Orientierung der
-            Schieferung ist im Anhang A zur Veranschaulichung abgebildet.
-          fr:
+            Lage von planaren Strukturen mit direkten Feldmessungen beschreiben.
+          fr: >
+            La classe Planar_Structures_PT contient des types d'objets qui décrivent la position spatiale de structures planes.
+            décrivent la position des structures planaires avec des mesures directes sur le terrain.
         attributes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 13801
             cardinality: 1
@@ -1083,6 +1016,7 @@ themes:
             value: GC_PNT_MPLA_POLARITY_CD
             cardinality: 0..1
           - name: phase
+            cardinality: 0..1
             description:
               de: Deformationsphase
               fr: Phase de déformation
@@ -1097,16 +1031,16 @@ themes:
             cardinality: 0..1
           - name: ob_dip_slo
             description:
-              de: Dip slope beobachtet (ja / nein)?
-              fr: Dip slope observé (oui / non)?
+              de: Dip slope (ja / nein)?
+              fr: Dip slope (oui / non)?
             att_type: boolean
             cardinality: 0..1
           - name: azimuth
             description:
-              de: |
+              de: >-
                 Einfallsrichtung (Azimut) der jeweiligen Punktobjektart (z.B. Scheitellinie,
                 Faltenachse). Wert in Grad (0° 359°) im Uhrzeigersinn gemessen
-              fr: |
+              fr: >-
                 Azimut du type d'objet. L'azimut est mesuré depuis le 
                 nord en degré de 0° à 359° dans le sens des aiguilles 
                 d'une montre
@@ -1135,11 +1069,12 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 128001
             cardinality: 1
           - name: type
+            cardinatity: 0..1
             description:
               de: Charakteristik der Objektart.
               fr: Caractéristique du type d'objet
@@ -1154,7 +1089,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 12901
             cardinality: 1
@@ -1171,7 +1106,7 @@ themes:
               fr: Groupe de fossiles
             att_type: table
             value: gc_system
-            cardinality: 0..1
+            cardinality: 0..5
           - name: dat_meth
             description:
               de: Datierungsmethode.
@@ -1206,7 +1141,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 13201
             cardinality: 1
@@ -1243,7 +1178,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 13301
             cardinality: 1
@@ -1267,15 +1202,16 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 13401
             cardinality: 1
           - name: azimuth
             description:
-              de: Orientierung des Symbols. Wert in Grad (0° 359°) im Uhrzeigersinn
+              de: >-
+                Orientierung des Symbols. Wert in Grad (0° 359°) im Uhrzeigersinn
                 gemessen.
-              fr: |
+              fr: >-
                 Azimut du type d'objet. L'azimut est mesuré depuis le 
                 nord en degré de 0° à 359° dans le sens des aiguilles 
                 d'une montre
@@ -1286,16 +1222,16 @@ themes:
         table: GC_POINT_OBJECTS # TODO: to check
         description:
           de: |
-            Die Klasse Type_Localities_PT beinhaltet diejenigen Objektarten, die Typlokalitäten oder wichtige
+            Die Klasse Type_Localities_PT beinhaltet diejenigen Objektarten, die Typusprofile oder wichtige
             geologische Aufschlüsse beschreiben.
           fr: |
-            La classe Type_Localities_PT regroupe les types d’objets qui décrivent les localités-types ou les
+            La classe Type_Localities_PT regroupe les types d’objets qui décrivent les profiles-types ou les
             affleurements géologiques importants.
         attributes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 13501
             cardinality: 1
@@ -1335,7 +1271,7 @@ themes:
         description:
           de: |
             In der Klasse Prominent_Lithological_Features_L befinden sich linienförmige Gesteinshorizonte.
-            Diese Gesteinshorizonte haben bloss Hinweischarakter (z.B. «markante Sandsteinbank» innerhalb
+            Diese Gesteinshorizonte haben lediglich Hinweischarakter (z.B. «markante Sandsteinbank» innerhalb
             von Wechsellagerungen von Sandstein und Mergel) und sind von den Leithorizonten (z.B.
             «Spatkalk im Hauptrogenstein») zu unterschieden. Leithorizonte befinden sich im Thema Rock Bodies.
           fr:
@@ -1343,7 +1279,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 13101
             cardinality: 1
@@ -1358,7 +1294,7 @@ themes:
             cardinality: 0..1
           - name: name_horiz
             description:
-              de: Name des Bentonit-Leithorizonts.
+              de: Name des Leithorizonts.
               fr: Nom du horizon repère à bentonite.
             att_type: annex
             value: GC_LITSTRAT_BED_CD  # TODO: was 13103, now field: LPRO_NAME_HORIZ
@@ -1368,7 +1304,7 @@ themes:
             description:
               de: Originalbezeichnung gemäss der Legende der zugrundeliegenden geologischen
                 Karte.
-              fr: Description de la légende de la carte géologique originale.
+              fr: Description selon la légende de la carte géologique originale.
             att_type: string
             cardinality: 0..1
           - name: lpro_litho
@@ -1395,7 +1331,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 15501
             cardinality: 1
@@ -1410,36 +1346,14 @@ themes:
         table: GC_LINEAR_OBJECTS # TODO: to check
         description:
           de: |
-            Die Klasse Geological_Outlines_L beinhaltet geologische Konturen. Darunter fallen die Umrisse
-            von Fest- und Lockergesteinen, von tektonisierten Zonen, sowie die Umgrenzungen von
-            Rutschungs- und Sackungsmassen, welche nicht durch andere Konturarten (z.B. tektonische
-            Grenzen) abgegrenzt werden.
-            Eine geologische Kontur mit Status im Allgemeinen umfasst stratigraphische und petrographische
-            Grenzen. Geologische Konturen, welche von quartären Ablagerungen, Gewässern oder
-            Gletschern bedeckt sind oder graduelle Übergänge in Locker- und Festgesteinen (keine klaren
-            lithologischen Grenzen; im Sinne der Signaturgrenze nach dem Zeichenverzeichnis (ZV)), haben
-            den Status vermutet. Künstliche geologische Konturen sind Konturen, welche Gebiete mit
-            detaillierter Information von Gebieten mit geringerer Informationsdichte aufgrund fehlender
-            Informationen oder aus darstellerischen Gründen (Digitalisierungsmassstab)
-            ab-grenzen (Abgrenzungskontur nach dem ZV).
+            Die Klasse Geological_Outlines_L beinhaltet geologische Konturen.
           fr: |
-            La classe Geological_Outlines_L contient les contours géologiques. Sous ce terme sont regroupés 
-            les périmètres des affleurements de roches consolidées et de roches meubles, les limites des 
-            zones tectonisées, ainsi que la délimitation des masses glissées et tassées, pour autant que ces 
-            bordures ne soient pas déjà décrites par un autre type de contour (p. ex. limite tectonique).
-            Les contours géologiques de statut général regroupent les limites stratigraphiques et 
-            pétrographiques. Un contour géologique recouvert par des dépôts quaternaires, par un cours 
-            d’eau ou un glacier a un statut probable. Il en va de même pour les passages graduels entre 
-            roches meubles et roches consolidées (aucune limite lithologique claire; au sens des limites de 
-            figuré selon le catalogue des signes (CS)). Les contours géologiques artificiels (contours de 
-            séparation selon le CS) sont des contours séparant des secteurs à information détaillée de 
-            secteurs à densité d’information plus faible – du fait d’un manque d’information ou pour des 
-            raisons de représentation (échelle de la digitalisation
+            La classe Geological_Outlines_L contient les contours géologiques.
         attributes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 13001
             cardinality: 1
@@ -1467,7 +1381,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 14201
             cardinality: 1
@@ -1480,9 +1394,10 @@ themes:
             cardinality: 1
           - name: azimuth
             description:
-              de: Fallrichtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad
+              de: >-
+                Fallrichtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad
                 (0° 359°) im Uhrzeigersinn gemessen.
-              fr: |
+              fr: >-
                 Azimut du type d'objet. L'azimut est mesuré depuis le 
                 nord en degré de 0° à 359° dans le sens des aiguilles 
                 d'une montre
@@ -1490,10 +1405,10 @@ themes:
             cardinality: 0..1
           - name: dip
             description:
-              de: |-
+              de: >-
                 Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die
                 Vertikale (90°).
-              fr: |
+              fr: >-
                 Valeur du plongement du type d'objet (en degrés),
                 mesurée de l’horizontale (0°) vers le bas jusqu’à la 
                 verticale (90°)
@@ -1524,7 +1439,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 13901
             cardinality: 1
@@ -1562,15 +1477,16 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 14101
             cardinality: 1
           - name: azimuth
             description:
-              de: Fallrichtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad
+              de: >-
+                Fallrichtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad
                 (0° 359°) im Uhrzeigersinn gemessen.
-              fr: |
+              fr: >-
                 Azimut du type d'objet. L'azimut est mesuré depuis le 
                 nord en degré de 0° à 359° dans le sens des aiguilles 
                 d'une montre
@@ -1578,9 +1494,10 @@ themes:
             cardinality: 0..1
           - name: dip
             description:
-              de: Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen
+              de: >-
+                Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen
                 aus der Horizontalen (0°) nach unten bis in die Vertikale (90°).
-              fr: |
+              fr: >-
                 Valeur du plongement du type d'objet (en degrés),
                 mesurée de l’horizontale (0°) vers le bas jusqu’à la 
                 verticale (90°)
@@ -1612,7 +1529,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 14001
             cardinality: 1
@@ -1648,7 +1565,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 10101
           - name: epoch
@@ -1693,7 +1610,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 10201
           - name: epoch
@@ -1731,7 +1648,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 10301
           - name: epoch
@@ -1769,15 +1686,15 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 10601
           - name: exp_unit
             description:
               de: Abgebaute lithostratigraphische Einheit.
               fr: Unité lithostratigraphique exploitée
-            att_type: table
-            value: gc_litstrat_bed # TODO
+            att_type: annex
+            value: GC_LITSTRAT_BED_CD # TODO: check
             cardinality: 0..*
           - name: status
             description:
@@ -1814,7 +1731,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 10701
           - name: status
@@ -1839,15 +1756,15 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 10801
           - name: exp_unit
             description:
               de: Abgebaute lithostratigraphische Einheit.
               fr: Unité lithostratigraphique exploitée
-            att_type: table
-            value: gc_litstrat_bed # TODO
+            att_type: annex
+            value: GC_LITSTRAT_BED_CD # TODO: check
             cardinality: 1..*
           - name: status
             description:
@@ -1885,7 +1802,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 10501
           - name: drill_mo
@@ -1898,10 +1815,10 @@ themes:
             description:
               de: Tiefe (in Meter ab Terrainoberfläche) der Felsober- fläche. (Sofern
                 die Bohrung das Festgestein nicht Depth_Bedrock erreicht, z.B. «Bohrung,
-                Fels nicht erreicht», beträgt der Wert -9999, falls die Bohrung bereits
+                Fels nicht erreicht», beträgt der Wert -999, falls die Bohrung bereits
                 im Festgestein beginnt, beträgt der Wert 0). Falls Festgestein erreicht
                 wurde, aber nicht klar ist, dass es sich um die Felsoberfläche handelt,
-                beträgt der Wert -8888.
+                beträgt der Wert -888.
               fr: |
                 Profondeur de la roche en place (en mètres depuis la 
                 surface). (Si l’ouvrage n’atteint pas la roche en place, 
@@ -1932,24 +1849,29 @@ themes:
             cardinality: 0..1
           - name: depth_tot
             description:
-              de: |-
+              de: >-
                 Gemessene Länge (Measured Depth) der Bohrung. Vgl.
                 DM Bohrdaten. Die tatsächliche Tiefe (True Vertical
                 Depth) ist oft nicht bekannt.
-              fr: Profondeur totale du type d'objet (en mètres depuis la surface).
+              fr: >-
+                Profondeur totale du type d'objet (en mètres depuis la surface).
             att_type: float
             cardinality: 0..1
           - name: fm_a
             description:
-              de: Lithostratigraphische Einheit der erreichten Formation A
-              fr: Unité lithostratigraphique de la formation A atteinte
+              de: >-
+                Lithostratigraphische Einheit der erreichten Formation A
+              fr: >-
+                Unité lithostratigraphique de la formation A atteinte
             att_type: annex
             value: GC_LITSTRAT_BED_CD # TODO
             cardinality: 0..1
           - name: depth_fm_a
             description:
-              de: Tiefe (m ab Terrainoberfläche) der erreichten Formation A.
-              fr: Profondeur relative à la formation A atteinte (en mètres depuis
+              de: >-
+                Tiefe (m ab Terrainoberfläche) der erreichten Formation A.
+              fr: >-
+                Profondeur relative à la formation A atteinte (en mètres depuis
                 la surface).
             att_type: float
             cardinality: 0..1
@@ -1962,24 +1884,28 @@ themes:
             cardinality: 0..1
           - name: depth_fm_b
             description:
-              de: Tiefe (m ab Terrainoberfläche) der erreichten Formation B.
-              fr: |
+              de: >-
+                Tiefe (m ab Terrainoberfläche) der erreichten Formation B.
+              fr: >-
                 Profondeur de la formation B atteinte (en mètres depuis 
                 la surface).
             att_type: float
             cardinality: 0..1
           - name: depth_wt
             description:
-              de: Tiefe (m ab Terrainoberfläche) des Grundwasserspiegels.
-              fr: Profondeur (m depuis la surface) de la nappe phréatique (valeur
+              de: >-
+                Tiefe (m ab Terrainoberfläche) des Grundwasserspiegels.
+              fr: >-
+                Profondeur (m depuis la surface) de la nappe phréatique (valeur
                 moyenne).
             att_type: float
             cardinality: 0..1
           - name: azimuth
             description:
-              de: Fallrichtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad
+              de: >-
+                Fallrichtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad
                 (0° 359°) im Uhrzeigersinn gemessen.
-              fr: |
+              fr: >-
                 Azimut du type d'objet. L'azimut est mesuré depuis le 
                 nord en degré de 0° à 359° dans le sens des aiguilles 
                 d'une montre
@@ -1987,9 +1913,10 @@ themes:
             cardinality: 0..1
           - name: dip
             description:
-              de: Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen
+              de: >-
+                Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen
                 aus der Horizontalen (0°) nach unten bis in die Vertikale (90°).
-              fr: |
+              fr: >-
                 Valeur du plongement du type d'objet (en degrés),
                 mesurée de l’horizontale (0°) vers le bas jusqu’à la 
                 verticale (90°)
@@ -1997,17 +1924,19 @@ themes:
             cardinality: 0..1
           - name: ref_number
             description:
-              de: Bohrungs-ID der Objektart in einem zusätzlichen Dokument (Erläuterungen,
+              de: >-
+                Bohrungs-ID der Objektart in einem zusätzlichen Dokument (Erläuterungen,
                 ...).
-              fr: |
+              fr: >-
                 Numéro de référence du type d'objet dans un 
                 document annexé (notice explicative,…).
             att_type: integer
             cardinality: 0..1
           - name: link
+            change: removed
             description:
               de: Objektnummer in der Datenbank von INFOGEOL.
-              fr: |
+              fr: >-
                 Numéro de référence du type d'objet dans un 
                 document annexé (notice explicative,…).
             att_type: integer
@@ -2026,7 +1955,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 10401
             cardinality: 1
@@ -2047,7 +1976,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 12101
             cardinality: 1
@@ -2099,7 +2028,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 12201
             cardinality: 1
@@ -2127,7 +2056,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 12301
             cardinality: 1
@@ -2181,7 +2110,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 12401
             cardinality: 1
@@ -2228,7 +2157,7 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 12501
             cardinality: 1
@@ -2262,10 +2191,10 @@ themes:
             cardinality: 0..1
           - name: combi
             description:
-              de: |
+              de: >-
                 Objektart einer anderen Klasse, die mit der Objektart in Kombination
                 vorkommen kann
-              fr: |
+              fr: >-
                 Type d’objet d'une autre classe avec lequel le type 
                 d’objet peut être combiné
             att_type: CD
@@ -2279,16 +2208,18 @@ themes:
             cardinality: 0..1
           - name: chemistry
             description:
-              de: Charakteristisches chemisches Element im Mineralwasser (z.B. Fe).
-              fr: Element chimique caractéristique dans l’eau minérale.
+              de: >-
+                Charakteristisches chemisches Element im Mineralwasser (z.B. Fe).
+              fr: >-
+                Element chimique caractéristique dans l’eau minérale.
             att_type: string
             cardinality: 0..1
           - name: azimuth
             description:
-              de: |
+              de: >-
                 Richtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad (0°
                 359°) im Uhrzeigersinn gemessen.
-              fr: |
+              fr: >-
                 Azimut du type d'objet. L'azimut est mesuré depuis le 
                 nord en degré de 0° à 359° dans le sens des aiguilles 
                 d'une montre
@@ -2298,17 +2229,17 @@ themes:
         abrev: Hsur  # TODO: to check
         table: GC_LINEAR_OBJECTS # TODO: to check
         description:
-          de: |
+          de: >-
             In der Klasse Surface_Water_L sind linienförmige Oberflächengewässer (Quellhorizonte)
             beschrieben.
-          fr: |
+          fr: >-
             Dans la classe Surface_Water_L sont décrit les niveaux de sources (de
             forme linéaire)
         attributes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 12601
             cardinality: 1
@@ -2329,12 +2260,16 @@ themes:
           - name: kind
             description:
               de: Objektart
-              fr: Type de l'objet et description.
+              fr: Type de l'objet
             att_type: subtype
             value: 12701
             cardinality: 1
 
-
+# Two distincts sources for annexes:
+# - `name`ending with `_CD` is a coded domain (file `exports/coded_domains.json`)
+# - Other `name` expected a JSON file `exports/<name>.json` with the give
+#   value (see `get_table_values` method)
+# TODO: description should be taken from abbove
 annexes:
   - name: GC_LITSTRAT_BED_CD
     description:
@@ -2363,5 +2298,26 @@ annexes:
       fr: Table des valeurs des unités tectoniques
   - name: GC_MINERAL_CD
     description:
-      de: -todo-
-      fr: -todo-
+      de: Wichtiges Mineral des metamorphen Gesteins
+      fr: Minéral important de la roche métamorphique
+  - name: gc_admixture
+    fname: Admixture.json
+    description:
+      de: Beimengung
+      fr: Incorporation
+  - name: gc_composit
+    fname: Composit.json
+    description:
+      de: Zusammensetzung des Lockergesteins
+      fr: Composition de la roche meuble
+  - name: gc_charcat
+    fname: Charcat.json
+    description:
+      de: Spezifische Eigenschaft.
+      fr: Structure sédimentaire
+  - name: gc_system # TODO: file is missing
+    fname: System.json
+    description:
+      de: Fossiliengruppe.
+      fr: Groupe de fossile
+

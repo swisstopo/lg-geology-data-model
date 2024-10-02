@@ -2,7 +2,7 @@ import json
 import yaml
 import datetime
 
-from schema import GeocoverSchema
+from . import schema
 
 
 class CustomEncoder:
@@ -49,7 +49,7 @@ class ExtendedEncoder(CustomEncoder):
         elif obj.__class__.__name__ == "Workspace Domain object":
             return self._serialize_coded_domain(obj)
 
-        elif isinstance(obj, GeocoverSchema):
+        elif isinstance(obj, schema.GeocoverSchema):
             return self._serialize_database_schema(obj)
         else:
             # Fallback to the base class implementation

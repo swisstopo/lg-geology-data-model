@@ -13,7 +13,14 @@ import click
 import pandas as pd
 
 
-from utils import dump_dict_to_json
+from . import utils
+
+try:
+    import arcpy
+
+    HAS_ARCPY = True
+except ImportError:
+    HAS_ARCPY = False
 
 # Won't work on h:\
 DEFAULT_WORKSPACE = r"D:/connections/GCOVERP@osa.sde"
@@ -81,26 +88,33 @@ class CommandDisabled(click.ClickException):
         super().__init__(message)
 
 
-class ConditionalGroup(click.Group):
-    def __init__(self, *args, **kwargs):
-        self.condition = kwargs.pop("condition", lambda: True)
-        super().__init__(*args, **kwargs)
+class ArcpyAwareGroup(click.Group):
+    def list_commands(self, ctx):
+        # List commands available based on the presence of arcpy
+        commands = super().list_commands(ctx)
+        if not HAS_ARCPY:
+            commands = [
+                cmd
+                for cmd in commands
+                if not getattr(self.get_command(ctx, cmd), "requires_arcpy", False)
+            ]
+        return commands
 
     def get_command(self, ctx, cmd_name):
-        if self.condition():
-            return super().get_command(ctx, cmd_name)
-        else:
-            if cmd_name in COMMANDS_REQUIRING_ARCPY:
-                raise CommandDisabled(
-                    f"The command '{cmd_name}' is disabled because the 'arcpy' library is not installed."
-                )
-            return super().get_command(ctx, cmd_name)
+        # Retrieve the command and ensure it matches the arcpy requirement
+        cmd = super().get_command(ctx, cmd_name)
+        if cmd is None:
+            return None  # Ensure we handle cases where the command doesn't exist
+        if not HAS_ARCPY and getattr(cmd, "requires_arcpy", False):
+            return None
+        return cmd
 
     def invoke(self, ctx):
-        try:
-            super().invoke(ctx)
-        except CommandDisabled as e:
-            ctx.fail(e.message)
+        # Display help if no command is provided
+        super().invoke(ctx)
+        if ctx.invoked_subcommand is None:
+            click.echo(ctx.get_help())
+            ctx.exit()
 
 
 def _arg_split(ctx, param, value):
@@ -116,12 +130,11 @@ def _arg_split(ctx, param, value):
     return bbox
 
 
-@click.group(
-    cls=ConditionalGroup,
-    condition=check_library,
-)
-def geocover():
-    """Command to work with TOPGIS/GeoCover ArcSDE database or ArcGis Pro project"""
+@click.group(cls=ArcpyAwareGroup)
+@click.pass_context
+def geocover(ctx):
+    """Command to work with TOPGIS/GeoCover ArcSDE database or ArcGis Pro project (ArcSDE operations require `arcpy`)"""
+
     pass
 
 
@@ -155,9 +168,11 @@ def geocover():
     default=DEFAULT_WORKSPACE,
 )
 def export(output_dir, workspace, log_level):
-    import arcpy
-    from encoder import ExtendedEncoder
-    from schema import GeocoverSchema
+    if not HAS_ARCPY:
+        raise click.ClickException("arcpy library is not available.")
+    from . import encoder
+    from . import schema
+    from . import utils
 
     now = datetime.datetime.now()
 
@@ -167,9 +182,9 @@ def export(output_dir, workspace, log_level):
     logger.setLevel(log_level.upper())
     logger.addHandler(logging.StreamHandler(sys.stdout))
 
-    so = GeocoverSchema.instance(workspace)
+    so = schema.GeocoverSchema.instance(workspace)
 
-    encoder = ExtendedEncoder()
+    encoder = encoder.ExtendedEncoder()
 
     connection_info = so.connection_info
     logger.debug(f"Connection info: {connection_info}")
@@ -184,7 +199,7 @@ def export(output_dir, workspace, log_level):
     coded_domains_dict.update(so.coded_domains)
 
     logger.info("Writting to 'coded_domains.json'...")
-    dump_dict_to_json(
+    utils.dump_dict_to_json(
         encoder.to_serializable_dict(so.coded_domains),
         os.path.join(output_dir, "coded_domains.json"),
     )
@@ -194,7 +209,7 @@ def export(output_dir, workspace, log_level):
 
     subtypes_dict.update(so.subtypes)
 
-    dump_dict_to_json(
+    utils.dump_dict_to_json(
         encoder.to_serializable_dict(subtypes_dict),
         os.path.join(output_dir, "subtypes_dict.json"),
     )
@@ -209,7 +224,7 @@ def export(output_dir, workspace, log_level):
 
     tables_dict.update(so.tree_tables)
 
-    dump_dict_to_json(
+    utils.dump_dict_to_json(
         encoder.to_serializable_dict(tables_dict),
         os.path.join(output_dir, "tables.json"),
     )
@@ -269,9 +284,11 @@ def export(output_dir, workspace, log_level):
     help="Log level",
 )
 def schema(output_dir, workspace, log_level):
-    import arcpy
-    from encoder import ExtendedEncoder
-    from schema import GeocoverSchema
+    if not HAS_ARCPY:
+        raise click.ClickException("arcpy library is not available.")
+    from . import encoder
+    from . import schema
+    from . import utils
 
     arcpy.env.workspace = workspace
 
@@ -279,9 +296,9 @@ def schema(output_dir, workspace, log_level):
     logger.setLevel(log_level.upper())
     logger.addHandler(logging.StreamHandler(sys.stdout))
 
-    so = GeocoverSchema.instance(workspace)
+    so = schema.GeocoverSchema(workspace)
 
-    encoder = ExtendedEncoder()
+    encoder = encoder.ExtendedEncoder()
 
     connection_info = so.connection_info
 
@@ -297,7 +314,7 @@ def schema(output_dir, workspace, log_level):
     )
 
     logger.info("Writting to 'geocover-schema-sde.json'...")
-    dump_dict_to_json(
+    utils.dump_dict_to_json(
         encoder.to_serializable_dict(schema_dict),
         os.path.join(output_dir, "geocover-schema-sde.json"),
     )
@@ -333,7 +350,7 @@ def schema(output_dir, workspace, log_level):
     help="Log level",
 )
 def geolcode(output_file, workspace, log_level):
-    from all_geolcodes import get_geol_codes
+    from . import all_geolcodes
 
     logger = logging.getLogger(__name__)
     logger.setLevel(log_level.upper())
@@ -341,7 +358,7 @@ def geolcode(output_file, workspace, log_level):
 
     ext = os.path.basename(os.path.abspath(output_file)).split(".")[1]
 
-    df = get_geol_codes()
+    df = all_geolcodes.get_geol_codes()
 
     json_str = df.to_dict(orient="records")
 
@@ -420,11 +437,14 @@ def geolcode(output_file, workspace, log_level):
 )
 def filter_symbols(bbox, geometry, gdb_path, output, log_level, symbols, drop):
     from shapely import box
-    from filter_symbols import process_layers_symbols
+    from . import filter_symbols
     import geopandas as gpd
     import pandas as pd
 
     configure_logging(log_level)
+    logger = logging.getLogger(__name__)
+    logger.setLevel(log_level.upper())
+    logger.addHandler(logging.StreamHandler(sys.stdout))
 
     dirname = os.path.dirname(__file__)
     config_json = symbols
@@ -432,7 +452,7 @@ def filter_symbols(bbox, geometry, gdb_path, output, log_level, symbols, drop):
 
     results = {"bbox": bbox, "gdb_path": gdb_path, "datetime": now.isoformat()}
 
-    logging.info(f"Mask: {geometry}")
+    logger.info(f"Mask: {geometry}")
 
     if geometry:
         try:
@@ -441,19 +461,21 @@ def filter_symbols(bbox, geometry, gdb_path, output, log_level, symbols, drop):
             # Assuming the mask is a single geometry, you can dissolve to create a single unified geometry
             mask_geom = mask_gdf.unary_union
         except Exception as e:
-            logging.error(e)
+            logger.error(e)
     else:
         mask_geom = box(*bbox)
 
     with open(config_json, "r") as f:
         layers = json.load(f)
 
-    logging.debug(layers.keys())
+    logger.debug(layers.keys())
 
-    results["layers"] = process_layers_symbols(layers, gdb_path, mask_geom)
+    results["layers"] = filter_symbols.process_layers_symbols(
+        layers, gdb_path, mask_geom
+    )
 
     if output is not None:
-        logging.info(f"Writing to {output}")
+        logger.info(f"Writing to {output}")
 
         if output.endswith(".json"):
             with open(output, "w", encoding="utf-8") as f:
@@ -510,15 +532,15 @@ def filter_symbols(bbox, geometry, gdb_path, output, log_level, symbols, drop):
     help="Log level (DEBUG, INFO, WARNING, ERROR, CRITICAL)",
 )
 def export_rules(workspace, output, log_level):
-    # Define the path to your ArcGIS Pro project
-    import arcpy
+    if not HAS_ARCPY:
+        raise click.ClickException("arcpy library is not available.")
     from export_symbol_rules import process_layers
+    from . import export_symbol_rules
 
     configure_logging(log_level)
 
     fields = ["OBJECTID", "MSH_MAP_TITLE", "MSH_MAP_NBR"]
     try:
-        # Open the ArcGIS Pro project
         project_path = workspace
         aprx = arcpy.mp.ArcGISProject(workspace)
     except OSError as e:
@@ -531,8 +553,8 @@ def export_rules(workspace, output, log_level):
 
     res = {}
     for l in m.listLayers():
-        if l.isFeatureLayer: #and 'Deposits_Chrono' in l.name:
-            attributes = process_layers(l)
+        if l.isFeatureLayer:  # and 'Deposits_Chrono' in l.name:
+            attributes = export_symbol_rules.process_layers(l)
             res[l.name] = attributes
 
     output_fname = os.path.join(output, LAYERS_SYMBOL_RULES)
@@ -542,6 +564,20 @@ def export_rules(workspace, output, log_level):
     with open(output_fname, "w", encoding="utf-8") as f:
         # Serialize the data and write it to the file
         json.dump(res, f, ensure_ascii=False, indent=4)
+
+
+# command as requiring arcpy
+export.requires_arcpy = True
+schema.requires_arcpy = True
+export_rules.requires_arcpy = True
+
+
+geocover.add_command(export)
+geocover.add_command(schema)
+geocover.add_command(export_rules)
+
+geocover.add_command(geolcode)
+geocover.add_command(filter_symbols)
 
 
 if __name__ == "__main__":

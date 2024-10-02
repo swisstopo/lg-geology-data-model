@@ -638,6 +638,9 @@ OBJECTID,GEOL_CODE_INT,GEOL_CODE,GERMAN,TREE_LEVEL,PARENT_REF
 7432,15200682,Vlit500682,Schlächtenhaus-Schiefer,4.0,15200243.0
 7433,15200683,Vlit500683,Gersbach-Schiefer,4.0,15200243.0
 7434,15200684,Vlit500684,Herdern-Streifengneis,5.0,15200246.0
+7738,15200685,Vlit500685,"Courgenay-, Balsthal- und Villigen-Formation, undifferenziert",4.0,15200160.0
+7739,15200686,Vlit500686,Pichoux-Formation: Korallenfazies,4.0,15200039.0
+7740,15200687,Vlit500687,Pichoux-Formation: Schwammfazies,4.0,15200039.0
 501,15201001,Vlit501001,"Ältere Ablagerungen, undifferenziert",1.0,0.0
 433,15201002,Vlit501002,Niederterrasse,1.0,0.0
 505,15201003,Vlit501003,Hochterrasse,1.0,0.0
@@ -1362,7 +1365,7 @@ OBJECTID,GEOL_CODE_INT,GEOL_CODE,GERMAN,TREE_LEVEL,PARENT_REF
 617,15202280,Vlit502280,Sardona-Melange,3.0,15202279.0
 618,15202281,Vlit502281,Martinsmad-Formation,3.0,15202279.0
 619,15202282,Vlit502282,Obere Flyschabfolge (Sardona),4.0,15202281.0
-620,15202283,Vlit502283,Sardona-Quarzit,4.0,15202281.0
+620,15202283,Vlit502283,Sardona-Member,4.0,15202281.0
 621,15202284,Vlit502284,Untere Flyschabfolge (Sardona),4.0,15202281.0
 622,15202285,Vlit502285,Meilleret-Formation,3.0,15202279.0
 624,15202286,Vlit502286,Lavtina-Sandstein,3.0,15202004.0
@@ -1659,15 +1662,26 @@ OBJECTID,GEOL_CODE_INT,GEOL_CODE,GERMAN,TREE_LEVEL,PARENT_REF
 6451,15202593,Vlit502593,"Hohgant-Sandstein, Sandkalk und Kalk",4.0,15202022.0
 6452,15202594,Vlit502594,Tektonisches Melange der Internen Einsiedeln-Schuppen,1.0,0.0
 6453,15202595,Vlit502595,"Bürgen- und Wildstrubel-Formation, undiff.",2.0,15202012.0
-6441,15202596,Vlit502596,"Euthal-Formation und Steinbach-Member, undiff.",2.0,15202012.0
+6441,15202596,Vlit502596,"Einsiedeln- und Steinibach-Member, undifferenziert",2.0,15202012.0
 6456,15202597,Vlit502597,Stad-Formation (e6),3.0,15202013.0
 7097,15202598,Vlit502598,"Stgir- und Inferno-Formation, undifferenziert",3.0,15202120.0
 7098,15202599,Vlit502599,Oberer Quintner Kalk: Korallenkalk,5.0,15202302.0
 7099,15202600,Vlit502600,Oberer Quintner Kalk: Unterer Kalk,5.0,15202302.0
 7100,15202601,Vlit502601,"Prodkamm- bis Sexmor-Formation, undifferenziert",3.0,15202120.0
-7101,15202602,Vlit502602,Plattazüg-Formation,2.0,15202143.0
+7101,15202602,Vlit502602,Plattenzüg-Formation,2.0,15202143.0
 7102,15202603,Vlit502603,"Zemenstein- bis Garschella-Formation, undifferenziert",2.0,15202047.0
-7103,15202604,Vlit502604,Euthal-Formation: schwarzer schiefriger Tonstein,3.0,15202036.0
+7103,15202604,Vlit502604,Vasanachopf-Member,3.0,15202036.0
+7734,15202605,Vlit502605,Pfäfers-Formation,2.0,15202012.0
+7749,15202606,Vlit502606,"Euthal- und Bürgen-Formation, undifferenziert",2.0,15202012.0
+7737,15202607,Vlit502607,"Amden- und Wang-Formation, undifferenziert",2.0,15202047.0
+7741,15202608,Vlit502608,"Seewen- und Amden-Formation, undifferenziert",2.0,15202047.0
+7742,15202609,Vlit502609,"Betlis- bis Schrattenkalk-Formation, undifferenziert",2.0,15202047.0
+7743,15202610,Vlit502610,"Öhrli- bis Schrattenkalk-Formation, undifferenziert",2.0,15202047.0
+7744,15202611,Vlit502611,"Mols-Members, Basisbildungen",5.0,15202117.0
+7745,15202612,Vlit502612,"Öhrli- und Betlis-Formation, undifferenziert",2.0,15202047.0
+7746,15202613,Vlit502613,Erzegg-Formation: Grenzschicht,4.0,15202107.0
+7747,15202614,Vlit502614,Bränd-Brekzie,4.0,15202128.0
+7748,15202615,Vlit502615,Infralias-Sandstein,1.0,0.0
 911,15203001,Vlit503001,Niesen-Flysch,1.0,0.0
 912,15203002,Vlit503002,Chesselbach-Formation,2.0,15203001.0
 913,15203003,Vlit503003,Seron-Formation,2.0,15203001.0
@@ -1894,8 +1908,8 @@ OBJECTID,GEOL_CODE_INT,GEOL_CODE,GERMAN,TREE_LEVEL,PARENT_REF
 1153,15203224,Vlit503224,Plattamala-Granit,1.0,0.0
 1154,15203225,Vlit503225,Série Rousse,3.0,15203409.0
 1155,15203226,Vlit503226,Série Grise,3.0,15203409.0
-1156,15203227,Vlit503227,Garde-de-Bordon-Serie,3.0,15203409.0
-1157,15203228,Vlit503228,Fêta-d'Août-Flysch,3.0,15203409.0
+1156,15203227,Vlit503227,Garde-de-Bordon-Formation,3.0,15203409.0
+1157,15203228,Vlit503228,Fêta-d'Août-Formation,3.0,15203409.0
 1158,15203229,Vlit503229,Allalin-Gabbro,3.0,15203422.0
 1159,15203230,Vlit503230,Arosa-Mélange,1.0,0.0
 1160,15203231,Vlit503231,Verspala-Formation,1.0,0.0
@@ -2131,7 +2145,7 @@ OBJECTID,GEOL_CODE_INT,GEOL_CODE,GERMAN,TREE_LEVEL,PARENT_REF
 4290,15203463,Vlit503463,Albitaugenschiefer (SOPA) der Adlerflüe-Formation,4.0,15203198.0
 4291,15203464,Vlit503464,Bänderamphibolit der Adlerflüe-Formation,4.0,15203198.0
 4292,15203465,Vlit503465,Minugrat-Eklogit,5.0,15203464.0
-4293,15203466,Vlit503466,Amphibolit des Ergischhorn-Ensembles,4.0,15203199.0
+4293,15203466,Vlit503466,Ergischhorn-Komplex: Amphibolit,4.0,15203199.0
 4294,15203467,Vlit503467,Grüngesteine der Distulberg-Formation,4.0,15203194.0
 4295,15203468,Vlit503468,Prasinit der Métailler-Formation,4.0,15203193.0
 4296,15203469,Vlit503469,Ultramafit der Métailler-Formation,4.0,15203193.0
@@ -2257,6 +2271,22 @@ OBJECTID,GEOL_CODE_INT,GEOL_CODE,GERMAN,TREE_LEVEL,PARENT_REF
 7406,15203589,Vlit503589,"Grande-Bonavau-Formation und Formation spathique, undifferenziert",2.0,15203275.0
 7407,15203590,Vlit503590,"Col-de-Tompey- und Agreblierai-Member, undifferenziert",2.0,15203275.0
 7408,15203591,Vlit503591,"Chavanette- und Rubli-Member, undifferenziert",3.0,15203088.0
+7721,15203592,Vlit503592,Barrhorn-Einheit: Flysch,2.0,15203182.0
+7722,15203593,Vlit503593,Barrhorn-Einheit: Couches-Rouges,2.0,15203182.0
+7723,15203594,Vlit503594,Barrhorn-Einheit: Malm,2.0,15203182.0
+7724,15203595,Vlit503595,Barrhorn-Einheit: Dogger,2.0,15203182.0
+7725,15203596,Vlit503596,"St-Triphon- und Wiriehorn-Fm., undifferenziert",2.0,15203276.0
+7726,15203597,Vlit503597,Printse-Formation,1.0,0.0
+7727,15203598,Vlit503598,Louvie-Gabbro,4.0,15203193.0
+7728,15203599,Vlit503599,Distulberg-Fm.: Graphitschiefer,4.0,15203194.0
+7729,15203600,Vlit503600,Lirec-Fm.: Amphibolit,4.0,15203197.0
+7730,15203601,Vlit503601,Brändjispitz-Gabbro,4.0,15203199.0
+7731,15203602,Vlit503602,Ergischhorn-Komplex: Eklogit,4.0,15203199.0
+7732,15203603,Vlit503603,Südegg-Komplex: Prasinit,2.0,15203370.0
+7733,15203604,Vlit503604,Südegg-Komplex: Talkschiefer,2.0,15203370.0
+7750,15203605,Vlit503605,Flysch 2,2.0,15203110.0
+7735,15203606,Vlit503606,Flysch 3,2.0,15203110.0
+7736,15203607,Vlit503607,"Hellstätt-Formation und Flysch 2a, undifferenziert",2.0,15203110.0
 1166,15204001,Vlit504001,God-Drosa-Flysch,1.0,0.0
 1167,15204002,Vlit504002,Chanèls-Formation,1.0,0.0
 1168,15204003,Vlit504003,Lech-Formation,1.0,0.0
