@@ -86,7 +86,6 @@ def process_layers(l):
             renderer_dict["fields"] = renderer.fields
             renderer_dict["groups"] = []
 
-
             for grp in renderer.groups:
                 logging.debug(f"New group: {grp.heading}")
                 grp_dict = {}
@@ -110,8 +109,8 @@ def process_layers(l):
 
                     logging.debug(cleaned_list)
                     grp_dict["values"].append(cleaned_list)
-            try:
                 renderer_dict["groups"].append(grp_dict)
+            try:
                 d["renderer"] = renderer_dict
                 logging.debug(f"--{l.name}--")
                 logging.debug(json.dumps(renderer_dict, indent=4))
