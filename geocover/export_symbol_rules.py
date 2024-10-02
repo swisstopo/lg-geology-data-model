@@ -78,6 +78,8 @@ def process_layers(l):
         if hasattr(renderer, "groups"):
             nb_groups = len(renderer.groups)
 
+            nb_groups = len(renderer.groups)
+
             logging.debug(f"GROUPS: {nb_groups}")
             # https://pro.arcgis.com/en/pro-app/latest/arcpy/mapping/uniquevaluerenderer-class.htm
             renderer_dict = {}
@@ -90,12 +92,7 @@ def process_layers(l):
 
                 # heading = list(map(str.strip, grp.heading.split(",")))
                 headings = [v.strip() for v in grp.heading.split(",")]
-                """headings = [
-                    fields[alias] if alias in fields else alias.upper()
-                    for alias in headings_alias
-                ]"""
-                # logging.debug(f"alias={headings_alias}")
-                # grp_dict["headings_alias"] = headings_alias
+
                 grp_dict["headings"] = headings
                 logging.debug(f"headings={headings}")
                 grp_dict["labels"] = []
