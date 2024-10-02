@@ -1,4 +1,4 @@
-name: build
+name: Generate markdown and PDF documents
 
 
 on:
@@ -31,8 +31,7 @@ jobs:
       - name: Install miniconda
         uses: conda-incubator/setup-miniconda@v3
         with:
-          python-version: 3.12.3
-          mamba-version: "*"
+          python-version: 3.12
           channels: conda-forge,defaults
           channel-priority: true
           activate-environment: DATAMODEL
@@ -48,22 +47,20 @@ jobs:
 
 
       - shell: bash -el {0}
-        run: make markdown
+        run: pip install -e .
 
       - shell: bash -el {0}
         run: |
-          python ./datamodel.py  --lang de
-          python ./datamodel.py  --lang fr
           python ./create_gv.py
     
       - name: Build all targets
         shell: bash -el {0}
-        run: make cleanall babel markdown docs
+        run: make cleanall all
       - name: Generate PlantUML Diagrams
         uses: rotaract/plantuml-action@v1
         with:
           format: svg
-          pattern: output/ER-GCOVER.puml
+          pattern: outputs/ER-GCOVER.puml
 
       
       - name: Upload Artifacts
@@ -71,17 +68,22 @@ jobs:
         with:
           name: document-artifacts
           path: |
-            output/datamodel_de.pdf
-            output/datamodel_fr.pdf 
-            output/datamodel_de.docx
-            output/datamodel_fr.docx
-            output/datamodel_fr.html
-            output/datamodel_de.html
-            output/datamodel.css
-            output/geocover.png
-            output/ER-GCOVER.svg
-            output/ER-GCOVER.pdf
+            outputs/de/datamodel.pdf
+            outputs/fr/datamodel.pdf
+            outputs/de/datamodel.docx
+            outputs/fr/datamodel.docx
+            outputs/fr/datamodel.html
+            outputs/de/datamodel.html
+            outputs/de/datamodel.css
+            outputs/fr/datamodel.css
+            outputs/de/geocover.png
+            outputs/fr/geocover.png
+            outputs/ER-GCOVER.svg
+            outputs/ER-GCOVER.pdf
+            outputs/geocover-schema-sde.png
+            outputs/geocover-schema-sde.svg
             exports/coded_domains.xlsx
             exports/all_geolcode.xlsx
             exports/all_geolcode.json
+            exports/geocover-schema-sde.json
 

@@ -1,8 +1,8 @@
 ---
-title: Geologisches Datamodel, Revision 3.1 
+title: Datenmodell Geologie, Revision 3.9.1 (a4e61c5) 
 subtitle: Beschreibung und Datenkatalog
 author: Bundesamt für Landestopographie swisstopo
-date:  Juni 2024
+date:  September 2024
 keywords:
   - "GeoCover"
   - "Metadata"
@@ -14,7 +14,13 @@ keywords:
 subject: Geologische Landesaufnahme der Schweiz
 lang: de
 
-fontsize: 10pt
+# Custom LaTeX headers
+# Left-align all tables
+header-includes: |
+    \usepackage[margins=raggedright]{floatrow} 
+
+
+fontsize: 9pt
 geometry: "left=3cm,right=2cm,top=3cm,bottom=3cm"
 colorlinks: true
 linkcolor: teal
@@ -23,7 +29,6 @@ toccolor: gray
 
 # PDF
 papersize: a4
-fontsize: "10pt"
 mainfont: "DejaVu Sans"
 
 ---

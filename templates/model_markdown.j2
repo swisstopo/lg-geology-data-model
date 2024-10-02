@@ -24,32 +24,33 @@
 
 
 
-### {{_("Class")}} {{ cls.name }} {{ '{#'}}{{cls.name | slugify}}{{'}'}}
+### {{_("Class")}} {{ cls.name }} {% if cls.abrev -%}({{cls.abrev}}){% endif -%}  {{ '{#'}}{{cls.name | slugify}}{{'}'}}
 {{ cls.description[lang]| trim|highlight}}
 
 
 
 
-
-    | {{_("Name")}}                | {{_("Type")}}                     | {{_("Description")}}
-----|------------------------------|-----------------------------------|--------------------------------------
+{{_("Name")}}            | {{_("Type")}} | {{_("Description")}}                              |  {{_("Mandat.")}} | {{_("Card.")}}
+-------------------------|----------|---------------------------------------------------|-----|-----
 {% for attr in cls.attributes -%}
-{%- if attr.mandatory -%}{% set mandatory =  "**%s**" % (_("mandatory")) -%}{% endif -%}
+{%- if attr.change != 'removed' -%}
+{%- if attr.mandatory -%}{% set mandatory =  "**%s**" % (_("yes")) -%}{% else -%}{% set mandatory =  "%s" % (_("no")) -%}{% endif -%}
 {%- if attr.att_type == 'CD' -%}{% set slug = "%s-%s" % (cls.name, attr.name) -%}
 {%- elif attr.att_type == 'annex' -%}{% set slug, location = attr.value, 'vgl. Anhang %s' % attr.value %}{% set see_annex = 'Die möglichen Werte sind in der Tabelle %s im Anhang dieses Dokumentes verfügbar.' % attr.value %}{%- else -%}{% set slug = None %}{% endif -%}
-{%- if slug != None -%}
-{{loop.index}} | **{{ attr.name |upper  }}**                           | [CodedDomain](#{{slug| slugify}})  | {{ attr.description[lang]|trim }}. {{ _("Die möglichen Werte sind in der Tabelle %(name)s im Anhang dieses Dokumentes verfügbar.", name=attr.value ) }}  {{mandatory}}
-[]()           | {{_("Cardinality")}}   [{{ attr.cardinality}}] |                                    |  
+{%- if (slug != None) and (attr.att_type == 'CD') -%}
+**{{ attr.name |upper  }}**                 | [{{_("CodedDomain")}}](#{{slug| slugify}})  | {{ attr.description[lang]|trim }}.|  {{mandatory}}  | [{{ attr.cardinality}}]
+{%elif (slug != None) and (attr.att_type == 'annex') -%}
+**{{ attr.name |upper  }}**                 | [ {{_("Table")}} ](#{{slug| slugify}})  | {{ attr.description[lang]|trim }}.|  {{mandatory}} | [{{ attr.cardinality}}]
 {% else -%}
-{{loop.index}} | **{{ attr.name |upper  }}**                           | {{attr.att_type}}                  | {{ attr.description[lang]|trim }} {{mandatory}}
-[]()           | {{_("Cardinality")}}  [{{ attr.cardinality}}]  | {{attr.value}}                     |  
+**{{ attr.name |upper  }}**                 | {{attr.att_type}}                  | {{ attr.description[lang]|trim }} |{{mandatory}} | [{{ attr.cardinality}}]
 {% endif -%}
-
+{% endif -%}
 {% endfor %}
 
 
 
 {% for attr in cls.attributes -%}
+{%- if attr.change != 'removed' -%}
 {% set slug = "%s-%s" % (cls.name, attr.name) %}
 #### {{_("Attribute")}}  {{ attr.name |upper}}
 {%- if attr.att_type == 'CD' %} {{ '{#'}}{{slug| slugify}}{{'}'}}{% endif %}
@@ -58,17 +59,18 @@ _{{ attr.description[lang]|trim|highlight}}_
 _{{_("Datatype")}} :  {{ attr.att_type  }}_
 {% endif %}
 {%- if attr.att_type == 'annex' %}
-{{_("See the CodedDomain")}} [{{attr.value}}](#{{attr.value| slugify}}) {{_("in the Annex")}}
+{{_("See")}} [{{attr.value}}](#{{attr.value| slugify}}) {{_("in the Annex")}}
 {% endif %}
 
 {% if 'pairs' in attr -%}
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
 {% for key, value in attr.pairs.items() -%}
-|{{key}} | {{value}} | {{key|tr}}     |
+|{{key}} | {{value|remove_prefix}} | {{key|tr(value)}}     |
 {% endfor %}
 {% endif %}
 
+{% endif -%}
 {% endfor %}
 {% endfor %}
 {% endfor %}
@@ -84,7 +86,7 @@ _{{_("Datatype")}} :  {{ attr.att_type  }}_
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
 {% for key, value in annex.pairs.items() -%}
-|{{key}} | {{value}} | {{key|tr}}     |
+|{{key}} | {{value}} | {{key|tr(value)}}     |
 {% endfor %}
 {% endif %}
 {% endfor %}

@@ -12,7 +12,7 @@ from sql2puml import SQL2PUML
 
 FONTNAME = "DejaVu Sans,Nimbus Sans"
 
-OUTPUT_DIR = "output"
+OUTPUT_DIR = "outputs"
 
 logger.remove(0)
 logger.add(sys.stderr, format="{time} {level} {message}", level="INFO")
@@ -119,7 +119,7 @@ class FeatureClass(Table):
         self.geometry = geo
 
 
-input_file = "input/geocover-schema-sde.json"
+input_file = "inputs/geocover-schema-sde.json"
 
 basename = os.path.splitext(os.path.basename(input_file))[0]
 

@@ -76,6 +76,7 @@ def process_layers(l):
             fields[fld.aliasName] = fld.name
 
         if hasattr(renderer, "groups"):
+            nb_groups = len(renderer.groups)
 
             nb_groups = len(renderer.groups)
 
@@ -85,19 +86,14 @@ def process_layers(l):
             renderer_dict["fields"] = renderer.fields
             renderer_dict["groups"] = []
 
+
             for grp in renderer.groups:
                 logging.debug(f"New group: {grp.heading}")
                 grp_dict = {}
 
                 # heading = list(map(str.strip, grp.heading.split(",")))
                 headings = [v.strip() for v in grp.heading.split(",")]
-                """headings = [
-                    fields[alias] if alias in fields else alias.upper()
-                    for alias in headings_alias
-                ]"""
 
-                # logging.debug(f"alias={headings_alias}")
-                # grp_dict["headings_alias"] = headings_alias
                 grp_dict["headings"] = headings
                 logging.debug(f"headings={headings}")
                 grp_dict["labels"] = []
@@ -114,10 +110,8 @@ def process_layers(l):
 
                     logging.debug(cleaned_list)
                     grp_dict["values"].append(cleaned_list)
-
-                renderer_dict["groups"].append(grp_dict)
             try:
-
+                renderer_dict["groups"].append(grp_dict)
                 d["renderer"] = renderer_dict
                 logging.debug(f"--{l.name}--")
                 logging.debug(json.dumps(renderer_dict, indent=4))
@@ -125,7 +119,6 @@ def process_layers(l):
             except Exception as e:
                 logging.error(f"Cannot add symbology: {l.name}: {e}")
             # More than onegroup
-
 
         else:
             logging.error(f"Layer {l.name}: {sym.renderer.type}")
