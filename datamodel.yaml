@@ -501,7 +501,7 @@ themes:
               de: Objektart
               fr: Type de l'objet
             att_type: subtype
-            value: 11901
+            value: 11201
             cardinality: 1
       - name: Glacial_and_Periglacial_Structures_L
         abrev: Ggla  # TODO: to check
@@ -1059,7 +1059,7 @@ themes:
   - name: Local_Additional_Information
     classes:
       - name: Anomalies_PT
-        abrev: Lano  # TODO: to check
+        abrev: Lano
         table: GC_POINT_OBJECTS # TODO: to check
         description:
           de: Die Klasse Anomalies_PT beinhaltet lokal beobachtete und / oder gemessene
@@ -1071,7 +1071,7 @@ themes:
               de: Objektart
               fr: Type de l'objet
             att_type: subtype
-            value: 128001
+            value: 12801
             cardinality: 1
           - name: type
             cardinatity: 0..1
@@ -1128,7 +1128,7 @@ themes:
             att_type: boolean
             cardinality: 0..1
       - name: Indication_of_Resources_PT
-        abrev: Lind  # TODO: to check
+        abrev: Lres
         table: GC_POINT_OBJECTS # TODO: to check
         description:
           de: |
@@ -1424,7 +1424,7 @@ themes:
             change: renamed  # from litstrat to PSLO_FORMATIO
 
       - name: Contour_Lines_Bedrock_L
-        abrev: Pcon  # TODO: to check
+        abrev: Pcob
         table: GC_LINEAR_OBJECTS # TODO: to check
         description:
           de: |
