@@ -319,7 +319,7 @@ class Report:
                             if pairs is not None:
                                 att["pairs"] = pairs
                             else:
-                                if not check_attribute_in_table(
+                                if att.get("change", "") != "removed" and not check_attribute_in_table(
                                     table_name, att_name, cls["abrev"]
                                 ):
                                     logger.error(
@@ -429,7 +429,6 @@ def datamodel(lang, datamodel, output):
     # Custom filters
 
     def slugify(input):
-        """Custom filter"""
         return re.sub(r"[\W_]+", "-", input.lower())
 
     def remove_prefix(value, prefixes=prefixes):
@@ -483,12 +482,10 @@ def datamodel(lang, datamodel, output):
     markdown_fname = os.path.join(output_dir, lang, f"{project_name}.md")
     logger.info(f"Generating {markdown_fname}")
     with open(markdown_fname, "w", encoding="utf-8") as f:
-        # f.write(template.render(data))
         rendered = render_template_with_locale("model_markdown.j2", data, locale)
         f.write(rendered)
 
     # Metadata
-    # meta = env.get_template("metadata.yaml.j2")
     metadata_fname = os.path.join(output_dir, lang, f"metadata.yaml")
     logger.info(f"Generating {metadata_fname}")
     with open(metadata_fname, "w", encoding="utf-8") as f:
