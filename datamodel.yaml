@@ -2,19 +2,20 @@
 
 # Document model version and date (structure, i.e. if python code must be adapted)
 
-# 0.1 First version
-# 0.2 Split classes 'description' into 'de' and 'fr'
-# 0.3 Mandatory attributes
-# 0.4 Add 'abrev' attribute
-# 0.5 Add tablename 
-# 0.6 Tables, like CHARCAT, ADMIXTURE as annex (why no CD?). Ignore some deleted attributes.
-#     hack to improve translations (cannot modify the XLS file)
+# 0.1  First version
+# 0.2  Split classes 'description' into 'de' and 'fr'
+# 0.3  Mandatory attributes
+# 0.4  Add 'abrev' attribute
+# 0.5  Add tablename
+# 0.6  Tables, like CHARCAT, ADMIXTURE as annex (why no CD?). Ignore some deleted attributes.
+#      hack to improve translations (cannot modify the XLS file)
+# 0.7  Added attribut `alias`
 version: 0.6
 date: 2024-09-24
 
 # Model revision should change if attributes are added, deleted or changed
 model:
-  revision: 3.9.4
+  revision: 3.9.5
   revision_date: 2024-10-01
 
 themes:
@@ -300,12 +301,13 @@ themes:
               fr: >-
                 Description selon la légende de la carte géologique originale
             cardinality: 1
-          - name: buried_out
+          - name: buried_out # removed
             att_type: boolean
             description:
               de: Wurde das Festgestein wieder verdeckt (ja / nein)?
               fr: Est-ce que la roche consolidée est recouvert (oui / non)?
             cardinality: 1
+            change: removed
           - name: exotic_ele
             value: boolean
             description:
@@ -501,7 +503,7 @@ themes:
               de: Objektart
               fr: Type de l'objet
             att_type: subtype
-            value: 11901
+            value: 11201
             cardinality: 1
       - name: Glacial_and_Periglacial_Structures_L
         abrev: Ggla  # TODO: to check
@@ -697,7 +699,7 @@ themes:
   - name: Tectonics
     classes:
       - name: Deformation_Structures_PT
-        abrev: Tdef  # TODO: to check
+        abrev: Tdef
         table: GC_POINT_OBJECTS # TODO: to check
         description:
           de: |
@@ -749,6 +751,7 @@ themes:
             value: GC_PNT_TDEF_FOLD_TYP_CD
             cardinality: 0..1
           - name: fold_for
+            alias: TDEF_FOLD_FOR
             description:
               de: Objektform
               fr: Forme du type d'objet
@@ -1059,7 +1062,7 @@ themes:
   - name: Local_Additional_Information
     classes:
       - name: Anomalies_PT
-        abrev: Lano  # TODO: to check
+        abrev: Lano
         table: GC_POINT_OBJECTS # TODO: to check
         description:
           de: Die Klasse Anomalies_PT beinhaltet lokal beobachtete und / oder gemessene
@@ -1071,7 +1074,7 @@ themes:
               de: Objektart
               fr: Type de l'objet
             att_type: subtype
-            value: 128001
+            value: 12801
             cardinality: 1
           - name: type
             cardinatity: 0..1
@@ -1128,7 +1131,7 @@ themes:
             att_type: boolean
             cardinality: 0..1
       - name: Indication_of_Resources_PT
-        abrev: Lind  # TODO: to check
+        abrev: Lres
         table: GC_POINT_OBJECTS # TODO: to check
         description:
           de: |
@@ -1424,7 +1427,7 @@ themes:
             change: renamed  # from litstrat to PSLO_FORMATIO
 
       - name: Contour_Lines_Bedrock_L
-        abrev: Pcon  # TODO: to check
+        abrev: Pcob
         table: GC_LINEAR_OBJECTS # TODO: to check
         description:
           de: |
@@ -1451,6 +1454,7 @@ themes:
             value: GC_LIN_PCOB_TYPE_CD
             cardinality: 1
           - name: altitude
+            alias: PCOB_ALTITUDE
             description:
               de: Höhenangabe (m ü.M.) von Isohypsen.
               fr: Valeur altimétrique des isohypses.
@@ -1541,6 +1545,7 @@ themes:
             value: GC_LIN_PCOH_CONFINE_CD
             cardinality: 0..1
           - name: altitude
+            alias: PCON_ALTITUDE
             description:
               de: Höhenangabe (m ü.M.) von Isohypsen.
               fr: Valeur altimétrique des isohypses.
@@ -1689,7 +1694,7 @@ themes:
               fr: Type de l'objet
             att_type: subtype
             value: 10601
-          - name: exp_unit
+          - name: exp_unit  # Removed??
             description:
               de: Abgebaute lithostratigraphische Einheit.
               fr: Unité lithostratigraphique exploitée
@@ -1704,6 +1709,7 @@ themes:
             value: GC_EX_GEO_PNT_AEXP_STATUS_CD
             cardinality: 0..1
           - name: depth_tot
+            alias: AEXP_DEPTH_TOT
             description:
               de: Endtiefe (m ab Terrainoberfläche) der Objektart.
               fr: Profondeur totale du type d'objet (en mètres depuis la surface).
@@ -1811,7 +1817,8 @@ themes:
               fr: Mode du forage.
             value: 10502 # TODO no CD
             cardinality: 0..1
-          - name: depth_bedrock
+          - name: depth_bedr
+            alias: ABOR_DEPTH_BEDR
             description:
               de: Tiefe (in Meter ab Terrainoberfläche) der Felsober- fläche. (Sofern
                 die Bohrung das Festgestein nicht Depth_Bedrock erreicht, z.B. «Bohrung,
@@ -2207,6 +2214,7 @@ themes:
             att_type: integer
             cardinality: 0..1
           - name: chemistry
+            alias: HSUR_CHEMISTRY
             description:
               de: >-
                 Charakteristisches chemisches Element im Mineralwasser (z.B. Fe).
