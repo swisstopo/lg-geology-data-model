@@ -30,6 +30,23 @@ logger.add(LOG_FILENAME, backtrace=False, level="DEBUG")
 PACKAGE_NAME = "geocover"
 
 
+ATTRIBUTES_TO_IGNORE = [
+    "PRINTED" "OBJECTORIGIN",
+    "REASONFORCHANGE",
+    "ORIGINAL_ORIGIN",
+    "OBJECTORIGIN_YEAR",
+    "OBJECTORIGIN_MONTH",
+    "CREATION_YEAR",
+    "CREATION_MONTH",
+    "REVISION_YEAR",
+    "REVISION_MONTH",
+    "DATEOFCREATION",
+    "DATEOFCHANGE",
+    "OPERATOR",
+    "UUID",
+]
+
+
 with open(os.path.join(input_dir, "coded_domains.json"), "r") as f:
     domains = json.load(f)
 
@@ -319,7 +336,9 @@ class Report:
                             if pairs is not None:
                                 att["pairs"] = pairs
                             else:
-                                if att.get("change", "") != "removed" and not check_attribute_in_table(
+                                if att.get(
+                                    "change", ""
+                                ) != "removed" and not check_attribute_in_table(
                                     table_name, att_name, cls["abrev"]
                                 ):
                                     logger.error(
@@ -343,6 +362,19 @@ class Report:
         return model
 
 
+@click.group()
+def datamodel():
+    """Datamodel command group"""
+    pass
+
+
+@click.command()
+@click.argument("datamodel", type=click.Path(exists=True))
+def check():
+    """Check the data model for consistency or errors."""
+    click.echo("Checking data model...")
+
+
 @click.command()
 @click.option(
     "--lang",
@@ -358,7 +390,7 @@ class Report:
     help="Directory for output markdown files",
 )
 @click.argument("datamodel", type=click.Path(exists=True))
-def datamodel(lang, datamodel, output):
+def generate(lang, datamodel, output):
     """
     Generate a markdown document from the DATAMODEL YAML-file.
     """
@@ -374,6 +406,8 @@ def datamodel(lang, datamodel, output):
     from babel.core import Locale
     from babel.support import Translations
     from jinja2 import Template
+
+    click.echo("Generating data model...")
 
     # Parsing
     Locale.negotiate(["de_DE", "en_US"], ["de_DE", "de_AT"])
@@ -495,6 +529,11 @@ def datamodel(lang, datamodel, output):
 
     logger.info(f"Failed translations: {translator.get_failed_count()}")
     logger.debug(f"Failed strings: {translator.get_failed_strings()}")
+
+
+# Add the sub-commands to the main command group
+datamodel.add_command(check)
+datamodel.add_command(generate)
 
 
 if __name__ == "__main__":
