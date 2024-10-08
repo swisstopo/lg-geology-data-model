@@ -376,6 +376,51 @@ def check():
 
 
 @click.command()
+@click.argument("datamodel", type=click.Path(exists=True))
+def prettify(datamodel):
+    """Prettifying the datamodel."""
+    click.echo("Prettifying data model...")
+    import sys
+    import ruamel.yaml
+
+    def block_style(base):
+        """
+        This routine walks over a simple, i.e. consisting of dicts, lists and
+        primitives, tree loaded from YAML. It recurses into dict values and list
+        items, and sets block-style on these.
+        """
+        if isinstance(base, dict):
+            for k in base:
+                try:
+                    base.fa.set_block_style()
+                except AttributeError:
+                    pass
+                block_style(base[k])
+        elif isinstance(base, list):
+            for elem in base:
+                try:
+                    base.fa.set_block_style()
+                except AttributeError:
+                    pass
+                block_style(elem)
+
+    yaml = ruamel.yaml.YAML()
+    yaml.preserve_quotes = True
+    try:
+        with open(datamodel) as fp:
+            data = yaml.load(fp)
+        block_style(data)
+        with open(datamodel, "w") as fp:
+            yaml.dump(data, fp)
+    except (FileNotFoundError, PermissionError):
+        logger.error("You do not have permission to access this file.")
+    except ruamel.yaml.YAMLError as e:
+        logger.error(f"An error occurred while processing the YAML file: {e}")
+    except Exception as e:
+        logger.error(f"An unexpected error occurred: {e}")
+
+
+@click.command()
 @click.option(
     "--lang",
     prompt="Language to generate",
@@ -534,6 +579,7 @@ def generate(lang, datamodel, output):
 # Add the sub-commands to the main command group
 datamodel.add_command(check)
 datamodel.add_command(generate)
+datamodel.add_command(prettify)
 
 
 if __name__ == "__main__":
