@@ -15,8 +15,8 @@ date: 2024-09-24
 
 # Model revision should change if attributes are added, deleted or changed
 model:
-  revision: 3.9.5
-  revision_date: 2024-10-01
+  revision: 3.9.6
+  revision_date: 2024-10-08
 
 themes:
 - name: Rock_Bodies
@@ -47,6 +47,7 @@ themes:
         de: Objektart
         fr: Type de l'objet
       cardinality: 1
+      mandatory: true
     - name: status
       att_type: CD
       value: GC_PNT_RUNC_STATUS_CD
@@ -54,6 +55,7 @@ themes:
         de: Zustand der Objektart
         fr: État du type d'objet
       cardinality: 1
+      mandatory: false
     - name: rock_type
       att_type: CD
       value: GC_PNT_RUNC_ROCK_TYP_CD
@@ -61,6 +63,7 @@ themes:
         de: Gesteinstyp
         fr: Type de roche
       cardinality: 0..1
+      mandatory: false
     - name: rock_spe
       att_type: CD
       value: GC_PNT_RUNC_ROCK_SPE_CD
@@ -68,6 +71,7 @@ themes:
         de: Bezeichnung des Leitgesteins.
         fr: Description de la roche repère.
       cardinality: 0..1
+      mandatory: false
     - name: mat_type        # TODO type
       description:
         de: Materialbezeichnung (lithologische Einheit)
@@ -75,6 +79,7 @@ themes:
       att_type: annex
       value: GC_LITHO_UNCO_CD        # TODO  check with Stephan Table: GC_POINT_OBJECTS, field: RUNC_MAT_TYPE, domain:GC_LITHO_CD
       cardinality: 0..1
+      mandatory: false
     - name: orig_descr
       description:
         de: Originalbezeichnung gemäss der Legende der zugrundeliegenden geologischen
@@ -82,12 +87,14 @@ themes:
         fr: Description de la légende de la carte géologique originale
       att_type: string
       cardinality: 0..1
+      mandatory: false
     - name: protected
       description:
         de: 'Geschützt: ja/nein'
         fr: Objet géologique protégé (oui / non)?
       att_type: boolean
       cardinality: 0..1
+      mandatory: false
   - name: Unconsolidated_Deposits_PLG
     abrev: Runc      # TODO: to check
     table: GC_UNCO_DESPOSIT     # TODO: to check
@@ -106,6 +113,7 @@ themes:
         de: Objektart
         fr: Type de l'objet
       cardinality: 1
+      mandatory: true
     - name: litstrat        # ajouté dans version 3?
       description:
         de: Lithostratigraphische Einheit.
@@ -121,6 +129,7 @@ themes:
       att_type: annex
       value: GC_LITHO_CD
       cardinality: 1..3
+      mandatory: true
     - name: chrono_t
       description:
         de: >
@@ -149,12 +158,14 @@ themes:
         fr: Description du matériel (unité lithologique)
       value: Lithostratigraphic_Units_Litho
       cardinality: 0..3
+      mandatory: false
     - name: buried_out
       description:
         de: Wurde das Lockergestein wieder verdeckt
         fr: Est-ce que la roche consolidée est recouvert (oui / non)?
       att_type: boolean
       cardinality: 1
+      mandatory: false
     - name: composit
       description:
         de: Zusammensetzung des Lockergesteins
@@ -162,6 +173,7 @@ themes:
       att_type: annex
       value: gc_composit
       cardinality: 0..3
+      mandatory: false
     - name: admixture
       description:
         de: Beimengung
@@ -169,6 +181,7 @@ themes:
       att_type: annex
       value: gc_admixture
       cardinality: 0..2
+      mandatory: false
     - name: structur
       description:
         de: Textur des Lockergesteins
@@ -176,6 +189,7 @@ themes:
       att_type: CD
       value: GC_UN_DEP_RUNC_STRUCTUR_CD
       cardinality: 0..1
+      mandatory: false
     - name: charact
             # TODO Achtung charact is sometime charcat
       description:
@@ -184,6 +198,7 @@ themes:
       att_type: annex
       value: gc_charcat
       cardinality: 0..3
+      mandatory: false
     - name: morpholo
       description:
         de: Morphologie der Lockergesteinseinheit
@@ -191,6 +206,7 @@ themes:
       att_type: CD
       value: GC_UN_DEP_RUNC_MORPHOLO_CD
       cardinality: 0..1
+      mandatory: false
     - name: glac_type
       description:
         de: Gletschertyp; Attribut nur für Moränen
@@ -200,6 +216,7 @@ themes:
       att_type: CD
       value: GC_UN_DEP_RUNC_GLAC_TYP_CD
       cardinality: 0..1
+      mandatory: false
     - name: ref_year
       description:
         de: Zeitpunkt oder Zeitperiode. Zum Beispiel «1940 1943, Periode der Drainage»
@@ -207,6 +224,7 @@ themes:
         fr: Année de référence de l’ancienne ligne de rivage.
       att_type: string
       cardinality: 0..1
+      mandatory: false
     - name: thin_cover
       att_type: CD
       value: GC_UN_DEP_RUNC_THIN_COV_CD
@@ -214,6 +232,7 @@ themes:
         de: Lockermaterialbedeckung, wenn vorhanden.
         fr: Couverture meuble pelliculaire
       cardinality: 0..1
+      mandatory: false
     - name: orig_descr
       description:
         de: >-
@@ -223,6 +242,7 @@ themes:
       value: string
       cardinality: 1
 
+      mandatory: false
   - name: Bedrock_PLG
     abrev: Rbed      # TODO: to check
     table: GC_BEDROCK     # TODO: to check
@@ -243,12 +263,14 @@ themes:
       att_type: subtype
       value: 14334001
       cardinality: 1
+      mandatory: true
     - name: fm_homog        # removed
       description:
         de: Gesteinsaufbau
         fr: ''
       cardinality: 1
       change: removed
+      mandatory: false
     - name: litstrat
       description:
         de: Lithostratigraphische Einheit
@@ -256,6 +278,7 @@ themes:
       att_type: annex
       value: GC_LITSTRAT_BED_CD
       cardinality: 1
+      mandatory: false
     - name: litho
       att_type: annex
       value: GC_LITHO_CD
@@ -263,6 +286,7 @@ themes:
         de: Lithologische Beschreibung
         fr: Description lithologique
       cardinality: 1
+      mandatory: false
     - name: chrono_t
       att_type: annex
       value: GC_CHRONO_CD
@@ -302,6 +326,7 @@ themes:
         fr: >-
           Description selon la légende de la carte géologique originale
       cardinality: 1
+      mandatory: false
     - name: buried_out       # removed
       att_type: boolean
       description:
@@ -309,6 +334,7 @@ themes:
         fr: Est-ce que la roche consolidée est recouvert (oui / non)?
       cardinality: 1
       change: removed
+      mandatory: false
     - name: exotic_ele
       value: boolean
       description:
@@ -318,6 +344,7 @@ themes:
         fr: >-
           S’agit-il d’un élément exotique (oui / non)?
       cardinality: 1
+      mandatory: false
     - name: colour
       att_type: string
       description:
@@ -327,6 +354,7 @@ themes:
         fr: Couleur de la roche
       cardinality: 0..1
       change: removed
+      mandatory: false
     - name: sedi_main_com
       att_type: CD
       value: GC_MAIN_COM_CD
@@ -336,6 +364,7 @@ themes:
         fr: >-
           Composant principal de la roche sédimentaire clastique.
       cardinality: 0..1
+      mandatory: false
     - name: sedi_seco_com
       att_type: CD
       value: GC_SECO_COM_CD
@@ -343,6 +372,7 @@ themes:
         de: Nebengesteinskomponente des Sedimentgesteins
         fr: Composant secondaire de la roche sédimentaire
       cardinality: 0..2
+      mandatory: false
     - name: sedi_bond_mat
       att_type: CD
       value: GC_BOND_MAT_CD
@@ -350,6 +380,7 @@ themes:
         de: Bindemittel des Sedimentgesteins
         fr: Ciment de la roche sédimentaire
       cardinality: 0..1
+      mandatory: false
     - name: sedi_bedding
       att_type: CD
       value: GC_BEDDING_CD
@@ -357,6 +388,7 @@ themes:
         de: Schichtung des Sedimentgesteins
         fr: Matrice ou ciment de la roche sédimentaire
       cardinality: 0..2
+      mandatory: false
     - name: sedi_str
       att_type: CD
       value: GC_SEDI_STR_CD
@@ -364,6 +396,7 @@ themes:
         de: Textur des Sedimentgesteins
         fr: Structure sédimentaire de la roche sédimentaire
       cardinality: 0..2
+      mandatory: false
     - name: sedi_tex
       att_type: CD
       value: GC_SEDI_TEX_CD
@@ -371,6 +404,7 @@ themes:
       description:                         # TODO: really struktur?
         de: Sedimentstruktur
         fr: Texture de la roche sédimentaire
+      mandatory: false
     - name: igne_text       # TODO: check typo!
       att_type: CD
       value: GC_IGNE_TEX_CD
@@ -378,6 +412,7 @@ themes:
         de: Struktur des magmatischen Gesteins
         fr: Texture de la roche magmatique
       cardinality: 0..1
+      mandatory: false
     - name: igne_grain_si
       att_type: CD
       value: GC_GRAIN_SI_CD
@@ -385,6 +420,7 @@ themes:
       description:
         de: Korngrösse des magmatischen Gesteins
         fr: Granulométrie de la roche magmatique
+      mandatory: false
     - name: igne_affinity
       att_type: CD
       value: GC_AFFINITY_CD
@@ -392,12 +428,14 @@ themes:
       description:
         de: Affinität zu einer magmatischen Serie.
         fr: Affinité avec une série magmatique
+      mandatory: false
     - name: meta_full_name
       att_type: string
       description:
         de: Bezeichnung des metamorphen Gesteins
         fr: Description de la roche métamorphique.
       cardinality: 0..1
+      mandatory: false
     - name: meta_mineral
       att_type: annex
       value: GC_MINERAL_CD
@@ -405,6 +443,7 @@ themes:
         de: Wichtiges Mineral des metamorphen Gesteins
         fr: Minéral important de la roche métamorphique
       cardinality: 0..3
+      mandatory: false
     - name: meta_str
       att_type: CD
       value: GC_META_STR_CD
@@ -412,6 +451,7 @@ themes:
         de: Textur des metamorphen Gesteins
         fr: Structure de la roche métamorphique
       cardinality: 0..3
+      mandatory: false
 - name: Geomorphology
   classes:
   - name: Instability_Structures_PT
@@ -437,6 +477,7 @@ themes:
       att_type: subtype
       value: 11601
       cardinality: 1
+      mandatory: true
   - name: Instability_Structures_L
     abrev: Gins      # TODO: to check
     table: GC_LINEAR_OBJECTS     # TODO: to check
@@ -453,6 +494,7 @@ themes:
       att_type: subtype
       value: 11701
       cardinality: 1
+      mandatory: true
   - name: Instabilities_PLG
     abrev: Gins      # TODO: to check
     table: GC_BEDROCK     # TODO: to check
@@ -478,6 +520,7 @@ themes:
       att_type: subtype
       value: 15801        # changed
       cardinality: 1
+      mandatory: true
     - name: main_mov
       description:
         de: Hauptbewegungsphase
@@ -486,6 +529,7 @@ themes:
       value: GC_SURF_GINS_MAIN_MOV_CD
       cardinality: 0..1
 
+      mandatory: false
   - name: Glacial_Structures_PT
     abrev: Ggla      # TODO: to check
     table: GC_POINT_OBJECTS     # TODO: to check
@@ -506,6 +550,7 @@ themes:
       att_type: subtype
       value: 11201
       cardinality: 1
+      mandatory: true
   - name: Glacial_and_Periglacial_Structures_L
     abrev: Ggla      # TODO: to check
     table: GC_LINEAR_OBJECTS     # TODO: to check
@@ -526,6 +571,7 @@ themes:
       att_type: subtype
       value: 11301
       cardinality: 1
+      mandatory: true
     - name: morai_mo
       description:
         de: Morphologie der Moräne
@@ -533,6 +579,7 @@ themes:
       att_type: CD
       value: GC_LIN_GGLA_MORAI_MO_CD
       cardinality: 0..1
+      mandatory: true
     - name: glac_typ
       description:
         de: Gletschertyp, auf welchen die Objektart bezogen ist
@@ -540,6 +587,7 @@ themes:
       att_type: CD
       value: GC_LIN_GGLA_GLAC_TYP_CD
       cardinality: 0..1
+      mandatory: true
     - name: ice_m_p
       description:
         de: Räumlicher Gletscherstand
@@ -547,6 +595,7 @@ themes:
       att_type: CD
       value: GC_LIN_GGLA_ICE_M_P_CD
       cardinality: 0..1
+      mandatory: false
     - name: quat_str
       description:
         de: Zeitliche quartärstratigraphische Zuordnung des Moränenwälls
@@ -556,18 +605,21 @@ themes:
       att_type: CD
       value: GC_LIN_GGLA_QUAT_STR_CD
       cardinality: 0..1
+      mandatory: false
     - name: ref_year
       description:
         de: Referenzjahr des älteren Gletscherstandes.
         fr: Année de référence.
       att_type: integer
       cardinality: 0..1
+      mandatory: false
     - name: source
       description:
         de: Quellenangabe der historischen Unterlagen
         fr: Source des données déduites à partir de données historiques.
       att_type: string
       cardinality: 0..1
+      mandatory: false
   - name: Glacial_Structures_PLG
     abrev: Ggla      # TODO: to check
     table: GC_SURFACES     # TODO: to check
@@ -588,6 +640,7 @@ themes:
       att_type: subtype
       value: 11401
       cardinality: 1
+      mandatory: true
   - name: Erosional_Structures_PT
     abrev: Gero      # TODO: to check
     table: GC_POINT_OBJECTS     # TODO: to check
@@ -606,6 +659,7 @@ themes:
       att_type: subtype
       value: 11001
       cardinality: 1
+      mandatory: true
   - name: Erosional_Structures_L
     abrev: Gero      # TODO: to check
     table: GC_LINEAR_OBJECTS     # TODO: to check
@@ -631,6 +685,7 @@ themes:
       value: 11101
       cardinality: 1
 
+      mandatory: true
   - name: Karstic_Structures_PT
     abrev: Gkar      # TODO: to check
     table: GC_POINT_OBJECTS     # TODO: to check
@@ -649,12 +704,14 @@ themes:
       att_type: subtype
       value: 11301
       cardinality: 1
+      mandatory: true
     - name: ice_cave
       description:
         de: Eisgrotte (ja / nein)
         fr: S’agit-il d’une glacière (oui / non)
       att_type: boolean
       cardinality: 0..1
+      mandatory: false
   - name: Karstic_Structures_PLG
     abrev: Gkar      # TODO: to check
     table: GC_SURFACES     # TODO: to check
@@ -671,6 +728,7 @@ themes:
       att_type: subtype
       value: 12001
       cardinality: 1
+      mandatory: true
   - name: Alluvial_and_Lacustrine_Structures_L
     abrev: Gall      # TODO: to check
     table: GC_LINEAR_OBJECTS     # TODO: to check
@@ -689,6 +747,7 @@ themes:
       att_type: subtype
       value: 10901
       cardinality: 1
+      mandatory: true
     - name: age
       description:
         de: Alter der Objektart.
@@ -697,6 +756,7 @@ themes:
       value: GC_LIN_GALL_AGE_CD
       cardinality: 0..1
 
+      mandatory: false
 - name: Tectonics
   classes:
   - name: Deformation_Structures_PT
@@ -722,6 +782,7 @@ themes:
       att_type: subtype
       value: 14601
       cardinality: 1
+      mandatory: true
     - name: azimuth
       description:
         de: >-
@@ -732,6 +793,7 @@ themes:
           0° à 359° dans le sens des aiguilles  d'une montre
       att_type: integer
       cardinality: 0..1
+      mandatory: false
     - name: dip        # WAs 'plunge' in version 2.1
       description:
         de: |
@@ -743,6 +805,7 @@ themes:
           la verticale (90°)
       att_type: integer
       cardinality: 0..1
+      mandatory: false
     - name: fold_typ
       description:
         de: Objekttyp
@@ -750,6 +813,7 @@ themes:
       att_type: CD
       value: GC_PNT_TDEF_FOLD_TYP_CD
       cardinality: 0..1
+      mandatory: false
     - name: fold_for
       alias: TDEF_FOLD_FOR
       description:
@@ -759,6 +823,7 @@ themes:
       value: GC_PNT_TDEF_FOLD_FOR_CD
       cardinality: 0..1
 
+      mandatory: false
   - name: Deformation_Structures_L
     abrev: Tdef      # TODO: to check
     table: GC_LINEAR_OBJECTS     # TODO: to check
@@ -776,6 +841,7 @@ themes:
       att_type: subtype
       value: 14701
       cardinality: 1
+      mandatory: true
   - name: Deformation_Structures_PLG
     abrev: Tdef      # TODO: to check
     table: GC_SURFACES     # TODO: to check
@@ -794,6 +860,7 @@ themes:
       att_type: subtype
       value: 14801
       cardinality: 1
+      mandatory: true
     - name: type
       description:
         de: Charakteristik der Objektarten
@@ -801,6 +868,7 @@ themes:
       att_type: CD
       value: GC_SURF_TDEF_TYPE_CD
       cardinality: 0..1
+      mandatory: false
     - name: gen_rela
       description:
         de: Genetische Beziehung.
@@ -808,6 +876,7 @@ themes:
       att_type: CD       # TODO: where is the domain
       value:
       cardinality: 0..1
+      mandatory: false
   - name: Tectonic_Boundaries_L
     abrev: Ttec      # TODO: to check
     table: GC_LINEAR_OBJECTS     # TODO: to check
@@ -824,6 +893,7 @@ themes:
       att_type: subtype
       value: 14901
       cardinality: 1
+      mandatory: true
     - name: fault_mo
       description:
         de: Bewegungsrichtung des Bruchs
@@ -831,6 +901,7 @@ themes:
       att_type: CD
       value: GC_LIN_TTEC_FAULT_MO_CD
       cardinality: 0..1
+      mandatory: false
     - name: verti_mo
       description:
         de: Bewegung parallel zur Fallrichtung der Bruchfläche.
@@ -838,6 +909,7 @@ themes:
       att_type: CD
       value: GC_LIN_TTEC_VERTI_MO_CD
       cardinality: 0..1
+      mandatory: false
     - name: horiz_mo
       description:
         de: Bewegung parallel zur Streichrichtung der Bruch- oder Scherfläche
@@ -847,6 +919,7 @@ themes:
       att_type: CD
       value: GC_LIN_TTEC_HORIZ_MO_CD
       cardinality: 0..1
+      mandatory: false
     - name: lim_tect_b
       description:
         de: Grenze einer tektonischen Einheit wie Deckengrenze,Schuppengrenze, Zonengrenze,
@@ -854,6 +927,7 @@ themes:
         fr: Limite d’unité tectonique (oui / non)?
       att_type: boolean
       cardinality: 1
+      mandatory: false
     - name: status
       description:
         de: Zustand der Objektart
@@ -861,6 +935,7 @@ themes:
       att_type: CD
       value: GC_LIN_TTEC_STATUS_CD
       cardinality: 1
+      mandatory: true
     - name: activity
       description:
         de: Aktivität der Objektart
@@ -868,6 +943,7 @@ themes:
       att_type: TODO        # TODO: no coded domain
       change: removed
       cardinality: 0..1
+      mandatory: false
     - name: meta_sta
       description:
         de: Tektonometamorphe Chronologie der Objektart
@@ -875,6 +951,7 @@ themes:
       att_type: CD
       value: GC_LIN_TTEC_META_STA_CD
       cardinality: 0..1
+      mandatory: false
     - name: name
       description:
         de: Spezifischer Name der Objektart.
@@ -882,6 +959,7 @@ themes:
           Nom de la localité-type. / Description de l’affleurement géologique important
       att_type: string
       cardinality: 0..1
+      mandatory: false
 - name: Measurements_Spatial_Orientation
   classes:
   - name: Folds_PT
@@ -902,6 +980,7 @@ themes:
       att_type: subtype
       value: 13601
       cardinality: 1
+      mandatory: true
     - name: fold_typ
       description:
         de: Objekttyp
@@ -909,12 +988,14 @@ themes:
       att_type: CD
       value: GC_PNT_MFOL_FOLD_TYP_CD
       cardinality: 0..1
+      mandatory: false
     - name: fold_for
       description:
         de: Form der Objektart
         fr: Forme du type d'objet
       value: 13603        # TODO: CD not found (but approaching)
       cardinality: 0..1
+      mandatory: false
     - name: phase
       description:
         de: Deformationsphase.
@@ -922,12 +1003,14 @@ themes:
       att_type: CD
       value: GC_PNT_MFOL_PHASE_CD
       cardinality: 0..1
+      mandatory: false
     - name: phase_ref
       description:
         de: Referenz für die Angabe der Deformationsphase.
         fr: Référence pour les données concernant la phase de déformation.
       att_type: string
       cardinality: 0..1
+      mandatory: false
     - name: azimuth
       description:
         de: >-
@@ -938,6 +1021,7 @@ themes:
           0° à 359° dans le sens des aiguilles  d'une montre
       att_type: integer
       cardinality: 1
+      mandatory: false
     - name: dip
       description:
         de: >-
@@ -948,6 +1032,7 @@ themes:
           (0°) vers le bas jusqu’à  la verticale (90°)
       att_type: integer
       cardinality: 0..1
+      mandatory: false
   - name: Lineation_PT
     abrev: Mlin      # TODO: to check
     table: GC_POINT_OBJECTS     # TODO: to check
@@ -970,6 +1055,7 @@ themes:
       att_type: subtype
       value: 13701
       cardinality: 1
+      mandatory: true
     - name: azimuth
       description:
         de: >-
@@ -980,6 +1066,7 @@ themes:
           0° à 359° dans le sens des aiguilles  d'une montre
       att_type: integer
       cardinality: 1
+      mandatory: false
     - name: dip
       description:
         de: >-
@@ -989,6 +1076,7 @@ themes:
           Valeur du plongement du type d'objet (en degrés),
           mesurée de l’horizontale (0°) vers le bas jusqu’à la  verticale (90°)
       cardinatity: 0..1
+      mandatory: false
   - name: Planar_Structures_PT
     abrev: Mpla      # TODO: to check
     table: GC_POINT_OBJECTS     # TODO: to check
@@ -1009,6 +1097,7 @@ themes:
       att_type: subtype
       value: 13801
       cardinality: 1
+      mandatory: true
     - name: polarity
       description:
         de: Position der Objektart im Raum
@@ -1016,6 +1105,7 @@ themes:
       att_type: CD
       value: GC_PNT_MPLA_POLARITY_CD
       cardinality: 0..1
+      mandatory: false
     - name: phase
       cardinality: 0..1
       description:
@@ -1024,18 +1114,21 @@ themes:
       att_type: CD
       value: GC_PNT_MPLA_PHASE_CD
       polarity: 0..1
+      mandatory: false
     - name: phase_ref
       description:
         de: Referenz für die Angabe der Deformationsphase.
         fr: Référence pour les données concernant la phase de déformation.
       att_type: string
       cardinality: 0..1
+      mandatory: false
     - name: ob_dip_slo
       description:
         de: Dip slope (ja / nein)?
         fr: Dip slope (oui / non)?
       att_type: boolean
       cardinality: 0..1
+      mandatory: false
     - name: azimuth
       description:
         de: >-
@@ -1046,6 +1139,7 @@ themes:
           0° à 359° dans le sens des aiguilles  d'une montre
       att_type: integer
       cardinality: 1
+      mandatory: false
     - name: dip
       description:
         de: Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus
@@ -1056,6 +1150,7 @@ themes:
           verticale (90°)
       cardinatity: 0..1
 
+      mandatory: false
 - name: Local_Additional_Information
   classes:
   - name: Anomalies_PT
@@ -1073,12 +1168,14 @@ themes:
       att_type: subtype
       value: 12801
       cardinality: 1
+      mandatory: true
     - name: type
       cardinatity: 0..1
       description:
         de: Charakteristik der Objektart.
         fr: Caractéristique du type d'objet
       value: 128002        # TODO: no CD
+      mandatory: true
   - name: Fossils_PT
     abrev: Lfos      # TODO: to check
     table: GC_FOSSILS     # TODO: to check
@@ -1093,6 +1190,7 @@ themes:
       att_type: subtype
       value: 12901
       cardinality: 1
+      mandatory: true
     - name: division
       description:
         de: Fossilienkategorie, zu welcher die Objektinstanz gehört.
@@ -1100,6 +1198,7 @@ themes:
       att_type: CD
       value: GC_FOSS_LFOS_DIVISION_CD
       cardinality: 0..1
+      mandatory: false
     - name: system
       description:
         de: Fossiliengruppe.
@@ -1107,6 +1206,7 @@ themes:
       att_type: table
       value: gc_system
       cardinality: 0..5
+      mandatory: false
     - name: dat_meth
       description:
         de: Datierungsmethode.
@@ -1114,6 +1214,7 @@ themes:
       att_type: CD
       value: GC_FOSS_LFOS_DAT_METH_CD
       cardinality: 0..1
+      mandatory: false
     - name: status
       description:
         de: Zustand der Objektart
@@ -1121,12 +1222,14 @@ themes:
       att_type: CD
       value: GC_FOSS_LFOS_STATUS_CD
       cardinality: 0..1
+      mandatory: false
     - name: protected
       description:
         de: Geschützte Fossilfundstelle (ja / nein)?
         fr: Objet géologique protégé (oui / non)?
       att_type: boolean
       cardinality: 0..1
+      mandatory: false
   - name: Indication_of_Resources_PT
     abrev: Lres
     table: GC_POINT_OBJECTS     # TODO: to check
@@ -1145,6 +1248,7 @@ themes:
       att_type: subtype
       value: 13201
       cardinality: 1
+      mandatory: true
     - name: status
       description:
         de: Zustand der Objektart
@@ -1152,6 +1256,7 @@ themes:
       att_type: CD
       value: GC_PNT_LRES_STATUS_CD
       cardinality: 0..1
+      mandatory: false
     - name: material
       description:
         de: Material, das mit der Objektart in Verbindung steht
@@ -1159,6 +1264,7 @@ themes:
       att_type: CD
       value: GC_PNT_LRES_MATERIAL_CD
       cardinality: 0..1
+      mandatory: false
     - name: chemistry
       description:
         de: Chemische Komponente(n) oder Mineralien, welche die Natur der Objektart
@@ -1168,6 +1274,7 @@ themes:
           type d'objet.
       att_type: string
       cardinality: 0..1
+      mandatory: false
   - name: Mineralised_Zone_L
     abrev: Lmin      # TODO: to check
     table: GC_LINEAR_OBJECTS     # TODO: to check
@@ -1182,6 +1289,7 @@ themes:
       att_type: subtype
       value: 13301
       cardinality: 1
+      mandatory: true
     - name: chemistry
       description:
         de: Chemische Komponente(n), welche die Natur der Objektart charakterisieren.
@@ -1190,6 +1298,7 @@ themes:
           type d'objet.
       att_type: string
       cardinality: 0..1
+      mandatory: false
   - name: Sedimentary_Structures_PT
     abrev: Lsed      # TODO: to check
     table: GC_POINT_OBJECTS     # TODO: to check
@@ -1206,6 +1315,7 @@ themes:
       att_type: subtype
       value: 13401
       cardinality: 1
+      mandatory: true
     - name: azimuth
       description:
         de: >-
@@ -1216,6 +1326,7 @@ themes:
           0° à 359° dans le sens des aiguilles  d'une montre
       att_type: integer
       cardinality: 0..1
+      mandatory: false
   - name: Type_Localities_PT
     abrev: Ltyp      # TODO: to check
     table: GC_POINT_OBJECTS     # TODO: to check
@@ -1234,6 +1345,7 @@ themes:
       att_type: subtype
       value: 13501
       cardinality: 1
+      mandatory: true
     - name: strati
       description:
         de: Lithostratigraphischer Zusatz zum Objekt
@@ -1241,6 +1353,7 @@ themes:
       att_type: CD
       value: GC_PNT_LTYP_STRATI_CD
       cardinality: 0..1
+      mandatory: true
     - name: name
       description:
         de: Name der Typlokalität. / Beschreibung des geologisch relevanten Aufschlusses
@@ -1248,12 +1361,14 @@ themes:
           Nom de la localité-type. / Description de l’affleurement géologique important.
       att_type: string
       cardinality: 0..1
+      mandatory: true
     - name: accessibil
       description:
         de: Ist die Objektart zum Zeitpunkt der Aufnahme aufgeschlossen (ja / nein)?
         fr: Est-ce que le type d’objet était accessible au moment du levé de la carte
       att_type: boolean
       cardinality: 0..1
+      mandatory: false
     - name: protected
       description:
         de: Geschütztes geologisches Objekt (ja / nein)?
@@ -1261,6 +1376,7 @@ themes:
       att_type: boolean
       cardinality: 0..1
 
+      mandatory: false
   - name: Prominent_Lithological_Features_L
     abrev: Lpro      # TODO: to check
     table: GC_LINEAR_OBJECTS     # TODO: to check
@@ -1279,6 +1395,7 @@ themes:
       att_type: subtype
       value: 13101
       cardinality: 1
+      mandatory: true
     - name: cong_spe
       description:
         de: Charakterisation der Konglomerate nach ihrem Geröllspektrum.
@@ -1288,6 +1405,7 @@ themes:
       att_type: CD
       value: GC_LIN_LPRO_CONG_SPE_CD
       cardinality: 0..1
+      mandatory: false
     - name: name_horiz
       description:
         de: Name des Leithorizonts.
@@ -1296,6 +1414,7 @@ themes:
       value: GC_LITSTRAT_BED_CD        # TODO: was 13103, now field: LPRO_NAME_HORIZ
       cardinality: 0..1
       change: new
+      mandatory: false
     - name: orig_descr
       description:
         de: Originalbezeichnung gemäss der Legende der zugrundeliegenden geologischen
@@ -1303,6 +1422,7 @@ themes:
         fr: Description selon la légende de la carte géologique originale.
       att_type: string
       cardinality: 0..1
+      mandatory: false
     - name: lpro_litho
       description:
         de: Materialbezeichnung (lithologische Einheit).
@@ -1311,6 +1431,7 @@ themes:
       value: GC_LITHO_CD        # TODO: really or CD field: "LPRO_LITHO",
       change: renamed        # 'litho' -> LPRO_LITHO
       cardinality: 1
+      mandatory: false
   - name: Miscellaneous_PT
     abrev: Lmis      # TODO: to check
     table: GC_POINT_OBJECTS     # TODO: to check
@@ -1331,12 +1452,14 @@ themes:
       att_type: subtype
       value: 15501
       cardinality: 1
+      mandatory: true
     - name: orig_name
       description:
         de: Ursprüngliche Bezeichnung des Objektes.
         fr: ''
       att_type: string
       cardinality: 1
+      mandatory: false
   - name: Geological_Outlines_L
     abrev: Lgeo      # TODO: to check
     table: GC_LINEAR_OBJECTS     # TODO: to check
@@ -1353,6 +1476,7 @@ themes:
       att_type: subtype
       value: 13001
       cardinality: 1
+      mandatory: true
     - name: status
       description:
         de: Zustand der Objektart.
@@ -1360,6 +1484,7 @@ themes:
       att_type: CD
       value: GC_LIN_LGEO_STATUS_CD
       cardinality: 0..1
+      mandatory: true
 - name: Parameter_and_Modelling
   classes:
   - name: Slope_Bedrock_PT
@@ -1381,6 +1506,7 @@ themes:
       att_type: subtype
       value: 14201
       cardinality: 1
+      mandatory: true
     - name: type
       description:
         de: Referenzoberfläche.
@@ -1388,6 +1514,7 @@ themes:
       att_type: CD
       value: GC_PNT_PSLO_TYPE_CD
       cardinality: 1
+      mandatory: true
     - name: azimuth
       description:
         de: >-
@@ -1398,6 +1525,7 @@ themes:
           0° à 359° dans le sens des aiguilles  d'une montre
       att_type: integer
       cardinality: 0..1
+      mandatory: false
     - name: dip
       description:
         de: >-
@@ -1409,6 +1537,7 @@ themes:
           mesurée de l’horizontale (0°) vers le bas jusqu’à la  verticale (90°)
       att_type: integer
       cardinality: 0..1
+      mandatory: false
     - name: pslo_formatio
       description:
         de: Lithostratigraphische Einheit der modellierten Formation
@@ -1418,6 +1547,7 @@ themes:
       cardinality: 1
       change: renamed        # from litstrat to PSLO_FORMATIO
 
+      mandatory: false
   - name: Contour_Lines_Bedrock_L
     abrev: Pcob
     table: GC_LINEAR_OBJECTS     # TODO: to check
@@ -1438,6 +1568,7 @@ themes:
       att_type: subtype
       value: 13901
       cardinality: 1
+      mandatory: true
     - name: type
       description:
         de: Referenzoberfläche.
@@ -1445,6 +1576,7 @@ themes:
       att_type: CD
       value: GC_LIN_PCOB_TYPE_CD
       cardinality: 1
+      mandatory: true
     - name: altitude
       alias: PCOB_ALTITUDE
       description:
@@ -1452,6 +1584,7 @@ themes:
         fr: Valeur altimétrique des isohypses.
       att_type: float
       cardinality: 1
+      mandatory: true
     - name: litstrat
       description:
         de: Lithostratigraphische Einheit der modellierten Formation
@@ -1459,6 +1592,7 @@ themes:
       att_type: annex
       value: GC_LITSTRAT_BED_CD        # TODO: renammed? field: "PCOB_FORMATIO", CD "GC_LITSTRAT_BED_CD"
       cardinality: 1
+      mandatory: false
   - name: Modelled_Water_Table_PT
     abrev: Pmod      # TODO: to check
     table: GC_POINT_OBJECTS     # TODO: to check
@@ -1477,6 +1611,7 @@ themes:
       att_type: subtype
       value: 14101
       cardinality: 1
+      mandatory: true
     - name: azimuth
       description:
         de: >-
@@ -1487,6 +1622,7 @@ themes:
           0° à 359° dans le sens des aiguilles  d'une montre
       att_type: integer
       cardinality: 0..1
+      mandatory: false
     - name: dip
       description:
         de: >-
@@ -1497,18 +1633,21 @@ themes:
           mesurée de l’horizontale (0°) vers le bas jusqu’à la  verticale (90°)
       att_type: integer
       cardinality: 0..1
+      mandatory: false
     - name: height
       description:
         de: Kote des Grundwasserspiegels (m ü.M.).
         fr: Cote de la nappe phréatique.
       att_type: float
       cardinality: 0..1
+      mandatory: true
     - name: mea_period
       description:
         de: Messperiode.
         fr: Période de mesure de la profondeur du niveau hydrostatique.
       att_type: range        # TODO
       cardinality: 0..1
+      mandatory: false
   - name: Contour_Lines_Hydro_L
     abrev: Pcon      # TODO: to check
     table: GC_LINEAR_OBJECTS     # TODO: to check
@@ -1527,6 +1666,7 @@ themes:
       att_type: subtype
       value: 14001
       cardinality: 1
+      mandatory: true
     - name: confine
       description:
         de: Druckzustand im Grundwasserleiter.
@@ -1534,12 +1674,14 @@ themes:
       att_type: CD
       value: GC_LIN_PCOH_CONFINE_CD
       cardinality: 0..1
+      mandatory: false
     - name: altitude
       alias: PCON_ALTITUDE
       description:
         de: Höhenangabe (m ü.M.) von Isohypsen.
         fr: Valeur altimétrique des isohypses.
       cardinality: 1
+      mandatory: true
     - name: wa_table
       description:
         de: Wasserstand.
@@ -1547,6 +1689,7 @@ themes:
       att_type: CD
       value: GC_LIN_PCOH_WA_TABLE_CD
       cardinality: 0..1
+      mandatory: false
 - name: Anthropogenic_Features
   classes:
   - name: Archaeology_PT
@@ -1563,6 +1706,7 @@ themes:
         fr: Type de l'objet
       att_type: subtype
       value: 10101
+      mandatory: true
     - name: epoch
       description:
         de: Archäologische Epoche der Objektart
@@ -1570,6 +1714,7 @@ themes:
       att_type: CD
       value: GC_AARC_EPOCH_CD        # value wrong in PDF
       cardinality: 0..1
+      mandatory: false
     - name: period
       description:
         de: Archäologische Periode der Objektart.
@@ -1577,6 +1722,7 @@ themes:
       att_type: CD
       value: GC_AARC_PERIOD_CD       # GeolCode wrong in PDF
       cardinality: 0..1
+      mandatory: false
     - name: age
       description:
         de: Archäologisches Alter der Objektart.
@@ -1584,6 +1730,7 @@ themes:
       att_type: CD
       value: GC_AARC_AGE_CD
       cardinality: 0..1
+      mandatory: false
     - name: type
       description:
         de: Art des Kultsteins.
@@ -1591,6 +1738,7 @@ themes:
       att_type: CD
       value: GC_PNT_AARC_TYPE_CD
       cardinality: 0..1
+      mandatory: true
   - name: Archaeology_L
     abrev: Aarc      # TODO: to check
     table: GC_LINEAR_OBJECTS     # TODO: to check
@@ -1608,6 +1756,7 @@ themes:
         fr: Type de l'objet
       att_type: subtype
       value: 10201
+      mandatory: true
     - name: epoch
       description:
         de: Archäologische Epoche der Objektart
@@ -1615,6 +1764,7 @@ themes:
       att_type: CD
       value: GC_AARC_EPOCH_CD        # value wrong in PDF
       cardinality: 0..1
+      mandatory: false
     - name: period
       description:
         de: Archäologische Periode der Objektart.
@@ -1622,6 +1772,7 @@ themes:
       att_type: CD
       value: GC_AARC_PERIOD_CD       # GeolCode wrong in PDF
       cardinality: 0..1
+      mandatory: false
     - name: age
       description:
         de: Archäologisches Alter der Objektart.
@@ -1629,6 +1780,7 @@ themes:
       att_type: CD
       value: GC_AARC_AGE_CD
       cardinality: 0..1
+      mandatory: false
   - name: Archaeology_PLG
     abrev: Aarc      # TODO: to check
     table: GC_SURFACES     # TODO: to check
@@ -1646,6 +1798,7 @@ themes:
         fr: Type de l'objet
       att_type: subtype
       value: 10301
+      mandatory: true
     - name: epoch
       description:
         de: Archäologische Epoche der Objektart
@@ -1653,6 +1806,7 @@ themes:
       att_type: CD
       value: GC_AARC_EPOCH_CD        # value wrong in PDF
       cardinality: 0..1
+      mandatory: false
     - name: period
       description:
         de: Archäologische Periode der Objektart.
@@ -1660,6 +1814,7 @@ themes:
       att_type: CD
       value: GC_AARC_PERIOD_CD       # GeolCode wrong in PDF
       cardinality: 0..1
+      mandatory: false
     - name: age
       description:
         de: Archäologisches Alter der Objektart.
@@ -1667,6 +1822,7 @@ themes:
       att_type: CD
       value: GC_AARC_AGE_CD
       cardinality: 0..1
+      mandatory: false
   - name: Exploitation_Geomaterials_PT
     abrev: Aexp      # TODO: to check
     table: GC_POINT_OBJECTS     # TODO: to check
@@ -1684,6 +1840,7 @@ themes:
         fr: Type de l'objet
       att_type: subtype
       value: 10601
+      mandatory: true
     - name: exp_unit        # Removed??
       description:
         de: Abgebaute lithostratigraphische Einheit.
@@ -1691,6 +1848,7 @@ themes:
       att_type: annex
       value: GC_LITSTRAT_BED_CD       # TODO: check
       cardinality: 0..*
+      mandatory: false
     - name: status
       description:
         de: Abbaustatus.
@@ -1698,6 +1856,7 @@ themes:
       att_type: CD
       value: GC_EX_GEO_PNT_AEXP_STATUS_CD
       cardinality: 0..1
+      mandatory: false
     - name: depth_tot
       alias: AEXP_DEPTH_TOT
       description:
@@ -1705,6 +1864,7 @@ themes:
         fr: Profondeur totale du type d'objet (en mètres depuis la surface).
       att_type: float
       cardinality: 0..1
+      mandatory: false
     - name: targ_mat
       description:
         de: Abgebautes Material.
@@ -1713,6 +1873,7 @@ themes:
       value: GC_EX_GEO_PNT_AEXP_TARG_MAT_CD
       cardinality: 0..1
 
+      mandatory: false
   - name: Exploitation_Geomaterials_L
     abrev: Aexp      # TODO: to check
     table: GC_LINEAR_OBJECTS     # TODO: to check
@@ -1730,6 +1891,7 @@ themes:
         fr: Type de l'objet
       att_type: subtype
       value: 10701
+      mandatory: true
     - name: status
       description:
         de: Abbaustatus.
@@ -1738,6 +1900,7 @@ themes:
       value: GC_LIN_AEXP_STATUS_CD
       cardinality: 0..1
 
+      mandatory: true
   - name: Exploitation_Geomaterials_PLG
     abrev: Aexp      # TODO: to check
     table: GC_SURFACES     # TODO: to check
@@ -1755,6 +1918,7 @@ themes:
         fr: Type de l'objet
       att_type: subtype
       value: 10801
+      mandatory: true
     - name: exp_unit
       description:
         de: Abgebaute lithostratigraphische Einheit.
@@ -1762,6 +1926,7 @@ themes:
       att_type: annex
       value: GC_LITSTRAT_BED_CD       # TODO: check
       cardinality: 1..*
+      mandatory: false
     - name: status
       description:
         de: Abbaustatus.
@@ -1769,12 +1934,14 @@ themes:
       att_type: CD
       value: GC_EX_GEO_PLG_AEXP_STATUS_CD
       cardinality: 0..1
+      mandatory: false
     - name: depth_tot
       description:
         de: Endtiefe (m ab Terrainoberfläche) der Objektart.
         fr: Profondeur totale du type d'objet (en mètres depuis la surface).
       att_type: float
       cardinality: 0..1
+      mandatory: false
     - name: targ_mat
       description:
         de: Abgebautes Material.
@@ -1782,6 +1949,7 @@ themes:
       att_type: CD
       value: GC_EX_GEO_PLG_AEXP_TARG_MAT_CD
       cardinality: 0..1
+      mandatory: false
   - name: Boreholes_PT
     abrev: Abor      # TODO: to check
     table: GC_POINT_OBJECTS     # TODO: to check
@@ -1801,12 +1969,14 @@ themes:
         fr: Type de l'objet
       att_type: subtype
       value: 10501
+      mandatory: true
     - name: drill_mo
       description:
         de: Bohrmethode.
         fr: Mode du forage.
       value: 10502       # TODO no CD
       cardinality: 0..1
+      mandatory: false
     - name: depth_bedr
       alias: ABOR_DEPTH_BEDR
       description:
@@ -1823,12 +1993,14 @@ themes:
           commence déjà dans la roche en place la valeur est 0)
       att_type: float
       cardinality: 0..1
+      mandatory: true
     - name: d_c_underg
       description:
         de: Bohransatzpunkt unter Terrain (ja / nein)
         fr: Forage réalisé à partir d’une galerie (oui / non)?
       att_type: boolean
       cardinality: 1
+      mandatory: true
     - name: main_tar
       description:
         de: Ziel der Sondierung.
@@ -1836,6 +2008,7 @@ themes:
       att_type: CD
       value: GC_PNT_ABOR_MAIN_TAR_CD
       cardinality: 0..1
+      mandatory: false
     - name: targ_mat
       description:
         de: Durch die Sondierung gefördertes Material.
@@ -1843,6 +2016,7 @@ themes:
       att_type: CD
       value: GC_PNT_ABOR_TARG_MAT_CD
       cardinality: 0..1
+      mandatory: false
     - name: depth_tot
       description:
         de: >-
@@ -1853,6 +2027,7 @@ themes:
           Profondeur totale du type d'objet (en mètres depuis la surface).
       att_type: float
       cardinality: 0..1
+      mandatory: false
     - name: fm_a
       description:
         de: >-
@@ -1862,6 +2037,7 @@ themes:
       att_type: annex
       value: GC_LITSTRAT_BED_CD       # TODO
       cardinality: 0..1
+      mandatory: false
     - name: depth_fm_a
       description:
         de: >-
@@ -1871,6 +2047,7 @@ themes:
           la surface).
       att_type: float
       cardinality: 0..1
+      mandatory: false
     - name: fm_b
       description:
         de: Lithostratigraphische Einheit der erreichten Formation B
@@ -1878,6 +2055,7 @@ themes:
       att_type: annex
       value: GC_LITSTRAT_BED_CD       # TODO
       cardinality: 0..1
+      mandatory: false
     - name: depth_fm_b
       description:
         de: >-
@@ -1886,6 +2064,7 @@ themes:
           Profondeur de la formation B atteinte (en mètres depuis  la surface).
       att_type: float
       cardinality: 0..1
+      mandatory: false
     - name: depth_wt
       description:
         de: >-
@@ -1895,6 +2074,7 @@ themes:
           moyenne).
       att_type: float
       cardinality: 0..1
+      mandatory: false
     - name: azimuth
       description:
         de: >-
@@ -1905,6 +2085,7 @@ themes:
           0° à 359° dans le sens des aiguilles  d'une montre
       att_type: integer
       cardinality: 0..1
+      mandatory: false
     - name: dip
       description:
         de: >-
@@ -1915,6 +2096,7 @@ themes:
           mesurée de l’horizontale (0°) vers le bas jusqu’à la  verticale (90°)
       att_type: integer
       cardinality: 0..1
+      mandatory: false
     - name: ref_number
       description:
         de: >-
@@ -1924,6 +2106,7 @@ themes:
           Numéro de référence du type d'objet dans un  document annexé (notice explicative,…).
       att_type: integer
       cardinality: 0..1
+      mandatory: false
     - name: link
       change: removed
       description:
@@ -1933,6 +2116,7 @@ themes:
       att_type: integer
       cardinality: 0..1
 
+      mandatory: false
   - name: Artificial_Surface_Modifications_PLG
     abrev: Aart      # TODO: to check
     table: GC_SURFACES     # TODO: to check
@@ -1950,6 +2134,7 @@ themes:
       att_type: subtype
       value: 10401
       cardinality: 1
+      mandatory: true
 - name: Hydrogeology
   classes:
   - name: Construction_PT
@@ -1971,6 +2156,7 @@ themes:
       att_type: subtype
       value: 12101
       cardinality: 1
+      mandatory: true
     - name: status
       description:
         de: Zustand der Objektart.
@@ -1978,6 +2164,7 @@ themes:
       att_type: CD
       value: GC_PNT_HCON_STATUS_CD
       cardinality: 0..1
+      mandatory: false
     - name: epoch
       description:
         de: Epoche der Erbauung der Objektart.
@@ -1985,24 +2172,28 @@ themes:
       att_type: CD
       value: GC_PNT_HCON_EPOCH_CD
       cardinality: 0..1
+      mandatory: false
     - name: depth
       description:
         de: Tiefe der Objektart (m ab Terrainoberfläche).
         fr: Profondeur du type d'objet.
       att_type: float
       cardinality: 0..1
+      mandatory: false
     - name: depth_wt
       description:
         de: Tiefe (m ab Terrainoberfläche) des Grundwasserspiegels (Mittelwert).
         fr: Profondeur (m depuis la surface) de la nappe phréatique (valeur moyenne).
       att_type: float
       cardinality: 0..1
+      mandatory: false
     - name: mea_period
       description:
         de: Messperiode.
         fr: Période de mesure de la profondeur du niveau hydrostatique.
       att_type: range        # TODO
       cardinality: 0..1
+      mandatory: false
   - name: Construction_L
     abrev: Hcon      # TODO: to check
     table: GC_LINEAR_OBJECTS     # TODO: to check
@@ -2022,6 +2213,7 @@ themes:
       att_type: subtype
       value: 12201
       cardinality: 1
+      mandatory: true
     - name: combi
       description:
         de: Objektart einer anderen Klasse, die mit der Objektart in Kombination vorkommen
@@ -2032,6 +2224,7 @@ themes:
       att_type: CD
       value: GC_LIN_HCON_COMBI_CD
       cardinality: 0..1
+      mandatory: false
   - name: Palaeohydrology_L
     abrev: Hpal      # TODO: to check
     table: GC_LINEAR_OBJECTS     # TODO: to check
@@ -2050,6 +2243,7 @@ themes:
       att_type: subtype
       value: 12301
       cardinality: 1
+      mandatory: true
     - name: rel_age
       description:
         de: Relatives Alter der Objektart
@@ -2057,6 +2251,7 @@ themes:
       att_type: CD
       value: GC_LIN_HPAL_REL_AGE_CD
       cardinality: 0..1
+      mandatory: false
     - name: hpal_chrono
       description:
         de: Chronostratigraphische Zuordnung.
@@ -2065,12 +2260,14 @@ themes:
       value: GC_CHRONO_CD        # TODO field "HPAL_CHRONO", CD:  "GC_CHRONO_CD"
       cardinality: 0..1
       change: renamed        # chrono -> HPAL_CHRONO
+      mandatory: false
     - name: ref_year
       description:
         de: Referenzjahr der ehemaligen Uferlinie.
         fr: Année de référence de l’ancienne ligne de rivage.
       att_type: integer
       cardinality: 1
+      mandatory: false
     - name: source
       description:
         de: Datenquelle der historischen Unterlagen.
@@ -2078,6 +2275,7 @@ themes:
       att_type: string
       cardinality: 0..1
 
+      mandatory: false
   - name: Subsurface_Water_L
     abrev: Hsub      # TODO: to check
     table: GC_LINEAR_OBJECTS     # TODO: to check
@@ -2104,6 +2302,7 @@ themes:
       att_type: subtype
       value: 12401
       cardinality: 1
+      mandatory: true
     - name: combi
       description:
         de: Objektart einer anderen Klasse, die mit der Objektart in Kombination vorkommen
@@ -2114,6 +2313,7 @@ themes:
       att_type: CD
       value: GC_LIN_HSUB_COMBI_CD
       cardinality: 0..1
+      mandatory: false
   - name: Surface_Water_PT
     abrev: Hsur      # TODO: to check
     table: GC_POINT_OBJECTS     # TODO: to check
@@ -2151,6 +2351,7 @@ themes:
       att_type: subtype
       value: 12501
       cardinality: 1
+      mandatory: true
     - name: status
       description:
         de: Zustand der Objektart.
@@ -2158,6 +2359,7 @@ themes:
       att_type: CD
       value: GC_PNT_HSUR_STATUS_CD
       cardinality: 0..1
+      mandatory: false
     - name: flow_con
       description:
         de: Wasserfluss Bedingungen.
@@ -2165,6 +2367,7 @@ themes:
       att_type: CD
       value: GC_PNT_HSUR_FLOW_CON_CD
       cardinality: 0..1
+      mandatory: false
     - name: type
       description:
         de: Charakteristik der Objektart
@@ -2172,6 +2375,7 @@ themes:
       att_type: CD
       value: GC_PNT_HSUR_TYPE_CD
       cardinality: 0..1
+      mandatory: true
     - name: dis_loca
       description:
         de: Ort des Wasserausflusses.
@@ -2179,6 +2383,7 @@ themes:
       att_type: CD
       value: GC_PNT_HSUR_DIS_LOCA_CD
       cardinality: 0..1
+      mandatory: false
     - name: combi
       description:
         de: >-
@@ -2189,12 +2394,14 @@ themes:
       att_type: CD
       value: GC_PNT_HSUR_COMBI_CD
       cardinality: 0..1
+      mandatory: false
     - name: temp
       description:
         de: Mittlere Wassertemperatur (°C).
         fr: Température moyenne (°C) de l'eau.
       att_type: integer
       cardinality: 0..1
+      mandatory: false
     - name: chemistry
       alias: HSUR_CHEMISTRY
       description:
@@ -2204,6 +2411,7 @@ themes:
           Element chimique caractéristique dans l’eau minérale.
       att_type: string
       cardinality: 0..1
+      mandatory: false
     - name: azimuth
       description:
         de: >-
@@ -2214,6 +2422,7 @@ themes:
           0° à 359° dans le sens des aiguilles  d'une montre
       att_type: integer
       cardinality: 0..1
+      mandatory: false
   - name: Surface_Water_L
     abrev: Hsur      # TODO: to check
     table: GC_LINEAR_OBJECTS     # TODO: to check
@@ -2232,6 +2441,7 @@ themes:
       att_type: subtype
       value: 12601
       cardinality: 1
+      mandatory: true
   - name: Surface_Water_PLG
     abrev: Hsur      # TODO: to check
     table: GC_SURFACES     # TODO: to check
@@ -2259,6 +2469,7 @@ themes:
 # - Other `name` expected a JSON file `exports/<name>.json` with the give
 #   value (see `get_table_values` method)
 # TODO: description should be taken from abbove
+      mandatory: true
 annexes:
 - name: GC_LITSTRAT_BED_CD
   description:
