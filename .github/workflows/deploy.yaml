@@ -16,7 +16,7 @@ jobs:
     needs: [build]  # require build to pass before deploy runs
     steps:
     - name: Set Package Version
-      shell: bash -l
+      shell: bash
       run: |
           echo "version=$(<VERSION)" >> $GITHUB_ENV
           echo "=== PKG_VERSION=$version ==="
