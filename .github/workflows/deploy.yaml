@@ -16,8 +16,8 @@ jobs:
     needs: [build]  # require build to pass before deploy runs
     steps:
     - name: Set Package Version
-        shell: bash -l {0}
-        run: |
+      shell: bash -l {0}
+      run: |
           echo "version=$(<VERSION)" >> $GITHUB_ENV
           echo "=== PKG_VERSION=$version ==="
           echo "RELEASE=$(python -c "import yaml; print(yaml.safe_load(open('datamodel.yaml'))['model']['revision'])")" >> $GITHUB_ENV
