@@ -90,11 +90,11 @@ all: $(MO_FILES) $(INPUTS)  $(OUTPUTS) diagram
 define build_rule
 $(INPUT_DIR)/$(1)/metadata.yaml: assets $(MO_FILES)
 	mkdir -p $$(@D)
-	datamodel --lang=$(1)  -o $(INPUT_DIR) datamodel.yaml
+	datamodel generate --lang=$(1)  -o $(INPUT_DIR) datamodel.yaml
 
 $(INPUT_DIR)/$(1)/datamodel.md: assets $(MO_FILES)
 	mkdir -p $$(@D)
-	datamodel --lang=$(1) -o $(INPUT_DIR) datamodel.yaml
+	datamodel generate --lang=$(1) -o $(INPUT_DIR) datamodel.yaml
 
 $(OUTPUT_DIR)/$(1)/datamodel.pdf: $(INPUT_DIR)/$(1)/datamodel.md $(INPUT_DIR)/$(1)/metadata.yaml
 	mkdir -p $$(@D)
