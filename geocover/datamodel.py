@@ -12,10 +12,9 @@ import click
 import pandas as pd
 import pytz
 import yaml
+from jsonschema import Draft7Validator, ValidationError
+from jsonschema import validate as jsonschema_validate
 from loguru import logger
-from jsonschema import validate as jsonschema_validate, ValidationError
-from jsonschema import Draft7Validator
-
 
 input_dir = "exports"
 
@@ -380,6 +379,36 @@ def check():
 
 @click.command()
 @click.argument("datamodel", type=click.Path(exists=True))
+@click.option(
+    "--output",
+    "-o",
+    type=click.Path(file_okay=True),
+    default="inputs",
+    help="Directory for output markdown files",
+)
+@click.option(
+    "--format",
+    "-f",
+    type=click.Choice(["XLSX", "JSON"], case_sensitive=False),
+    help="Directory for output markdown files",
+    default="XLSX",
+)
+def export(datamodel, output, format):
+    """Export model to various format."""
+    
+    from geocover import model 
+    yaml_path = datamodel
+    
+
+    datamodel = model.Datamodel()
+    datamodel.import_from_yaml(yaml_path)
+    logger.info("Export to Excel")
+    # datamodel.export_to_yaml("output.yaml")
+    datamodel.export_to_excel(output)
+
+
+@click.command()
+@click.argument("datamodel", type=click.Path(exists=True))
 def validate(datamodel):
     """Validate the model against a JSON schema."""
     click.echo("Validate the data model...")
@@ -418,6 +447,7 @@ def prettify(datamodel):
     """Prettifying the datamodel."""
     click.echo("Prettifying data model...")
     import sys
+
     import ruamel.yaml
 
     def block_style(base):
@@ -618,6 +648,7 @@ datamodel.add_command(check)
 datamodel.add_command(generate)
 datamodel.add_command(prettify)
 datamodel.add_command(validate)
+datamodel.add_command(export)
 
 if __name__ == "__main__":
     datamodel()
