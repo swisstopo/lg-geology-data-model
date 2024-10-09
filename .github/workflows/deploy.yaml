@@ -16,7 +16,7 @@ jobs:
     needs: [build]  # require build to pass before deploy runs
     steps:
     - name: Checkout code
-        uses: actions/checkout@v4
+      uses: actions/checkout@v4
     - name: Set Package Version
       shell: bash
       run: |
