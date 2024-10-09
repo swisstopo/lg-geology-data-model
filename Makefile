@@ -81,10 +81,13 @@ markdown: $(MO_FILES) $(INPUTS)
 
 diagram: assets
 	python create_gv.py
+	
+$(INPUT_DIR)/datamodel.xlsx:
+	datamodel  export datamodel.yaml  -o $@
 
 
 .PHONY: all
-all: $(MO_FILES) $(INPUTS)  $(OUTPUTS) diagram
+all: $(MO_FILES) $(INPUTS)  $(OUTPUTS) diagram $(INPUT_DIR)/datamodel.xlsx
 
 # Define individual rules for each format and language
 define build_rule

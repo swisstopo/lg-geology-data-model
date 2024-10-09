@@ -86,4 +86,6 @@ jobs:
             exports/all_geolcode.xlsx
             exports/all_geolcode.json
             exports/geocover-schema-sde.json
+            inputs/datamodel.xlsx
+            inputs/datamodel.yaml
 

@@ -27,9 +27,10 @@ setup(
     maintainer_email="marc.monnerat@swisstopo.ch",
     url="https://github.com/swisstopo/lg-geology-data-model",
     license="LICENSE.txt",
-    #packages=find_packages(where="geocover"),  # Automatically find packages under src
-    packages=find_packages(),
-    #package_dir={"": "geocover"},
+    #packages=find_packages(where="src"),  # Automatically find packages under src
+    #packages=find_packages(),
+    packages=find_packages(where='src'),  
+    package_dir={'': 'src'}, 
     include_package_data=True,
     python_requires=">=3.7",  # ArcGis Pro 3.3 is still 3.7.11
     classifiers=[
@@ -58,6 +59,10 @@ setup(
         "loguru",
         "shapely >= 2.0.0",
         "babel",
+        "jsonschema",
+        "openpyxl",
+        "ruamel.yaml",
+      
 
     ],
     tests_require=["coverage", "unittests"],
