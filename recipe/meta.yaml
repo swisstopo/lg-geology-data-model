@@ -38,6 +38,9 @@ requirements:
     - loguru
     - shapely>=2.0.0
     - babel
+    - jsonschema
+    - openpyxl
+    - ruamel.yaml
 
   run_constrained:
     - arcpy  # Optional: Only available for users with the ESRI environment set up.
@@ -46,7 +49,7 @@ requirements:
 
 test:
   source_files:
-    - geocover/
+    - src/geocover/
     - tests/
   imports:
     - geocover

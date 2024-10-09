@@ -1,27 +1,52 @@
 #!/usr/bin/env python3
-import yaml
-import json
-import pprint
-import pandas as pd
-import sys
 import datetime
-import pytz
-import re
+import json
 import os
+import pprint
+import re
 import subprocess
+import sys
+import threading
 
 import click
-
-
+import pandas as pd
+import pytz
+import yaml
+from jsonschema import Draft7Validator, ValidationError
+from jsonschema import validate as jsonschema_validate
 from loguru import logger
 
 input_dir = "exports"
 
 output_dir = "inputs"
 
-logger.add("datamodel.log", backtrace=False)
+LOG_FILENAME = "datamodel.log"
+
+logger.remove()
+logger.add(sys.stderr, level="INFO")
+
+if os.path.isfile(LOG_FILENAME):
+    os.remove(LOG_FILENAME)
+logger.add(LOG_FILENAME, backtrace=False, level="DEBUG")
 
 PACKAGE_NAME = "geocover"
+
+
+ATTRIBUTES_TO_IGNORE = [
+    "PRINTED" "OBJECTORIGIN",
+    "REASONFORCHANGE",
+    "ORIGINAL_ORIGIN",
+    "OBJECTORIGIN_YEAR",
+    "OBJECTORIGIN_MONTH",
+    "CREATION_YEAR",
+    "CREATION_MONTH",
+    "REVISION_YEAR",
+    "REVISION_MONTH",
+    "DATEOFCREATION",
+    "DATEOFCHANGE",
+    "OPERATOR",
+    "UUID",
+]
 
 
 with open(os.path.join(input_dir, "coded_domains.json"), "r") as f:
@@ -30,6 +55,12 @@ with open(os.path.join(input_dir, "coded_domains.json"), "r") as f:
 with open(os.path.join(input_dir, "subtypes_dict.json"), "r") as f:
     subtypes = json.load(f)
 
+with open(os.path.join(input_dir, "geocover-schema-sde.json"), "r") as f:
+    sde_schema = json.load(f)
+    featclasses_dict = sde_schema.get("featclasses")
+    tables_ = sde_schema.get("tables")
+
+    tables_dict = featclasses_dict | tables_
 
 df = pd.read_csv(os.path.join(input_dir, "GeolCodeText_Trad_230317.csv"), sep=";")
 
@@ -92,28 +123,54 @@ def create_msg(df):
         f.write(po_header_tpl + empty_pot)
 
 
-# TODO:
+# TODO: not at the right place
 create_msg(df)
 
 df = df.set_index(["GeolCodeInt"])
 
 
-def translate(geol_code, fallback, lang="FR"):
-    msg = fallback
-    if lang in ("DE", "FR"):
-        try:
-            msg = df.loc[int(geol_code)]["FR"]
-            # TODO: should be done in the translation XLS à ciment, à matrice
-            if msg.startswith("à "):
-                msg = msg.replace("à ", "")
+class Translator:
+    def __init__(self):
+        self.failed_translations = 0
+        self.failed_strings = []
+        self._lock = threading.Lock()  # Ensures thread safety
 
-        except KeyError as ke:
-            logger.warning(f"GeolCode not found while translating '{geol_code}': {ke}")
+    def translate(self, geol_code, text, lang="FR"):
+        translated_text, _err = self._translate(geol_code, text, lang)
+        if _err:
+            with self._lock:
+                self.failed_translations += 1
+                self.failed_strings.append(text)
 
-        except Exception as e:
-            logger.warning(f"Unknown error while translating '{geol_code}': {e}")
+        return translated_text
 
-    return msg
+    def _translate(self, geol_code, fallback, lang):
+        msg = fallback
+        err = False
+        if lang in ("DE", "FR"):
+            try:
+                msg = df.loc[int(geol_code)]["FR"]
+                # TODO: should be done in the translation XLS à ciment, à matrice
+                if msg.startswith("à "):
+                    msg = msg.replace("à ", "")
+
+            except KeyError as ke:
+                err = True
+                logger.debug(
+                    f"GeolCode not found while translating '{geol_code}': {ke}"
+                )
+
+            except Exception as e:
+                err = True
+                logger.debug(f"Unknown error while translating '{geol_code}': {e}")
+
+        return (msg, err)
+
+    def get_failed_count(self):
+        return self.failed_translations
+
+    def get_failed_strings(self):
+        return self.failed_strings
 
 
 # Custom sort key
@@ -139,6 +196,26 @@ def get_coded_values(domain_name):
             return dict(sorted(coded_values.items(), key=custom_sort_key))
 
     return {}
+
+
+def check_attribute_in_table(table, attribute, abrev):
+    table_name = "TOPGIS_GC." + table.upper()
+
+    attributes_list = tables_dict.get(table_name)
+
+    attribute_name = (abrev + "_" + attribute).upper()
+    target_names = [attribute.upper(), attribute_name]
+
+    if attributes_list:
+        res = any(d.get("name", "").upper() in target_names for d in attributes_list)
+        if not res:
+            logger.debug(
+                f"Missing attribute: {target_names}, {sorted([d.get('name', '').upper() for d in attributes_list])}"
+            )
+
+        return res
+
+    return False
 
 
 def get_table_values(name):
@@ -232,14 +309,15 @@ class Report:
             try:
                 theme_name = theme.get("name", "")
                 if not theme_name:
-                    logger.error("Missing 'name' attribute in theme.")
+                    logger.error(f"Missing 'name' attribute in theme '{theme_name}'.")
                     return None
 
                 for cls in theme.get("classes", []):
                     cls_name = cls.get("name", "")
                     if not cls_name:
-                        logger.error("Missing 'name' attribute in class.")
+                        logger.error(f"Missing 'name' attribute in class '{cls_name}'")
                         return None
+                    table_name = cls.get("table")
                     attributes = cls.get("attributes")
                     cls["abrev"] = (
                         f"{theme['name'][0].upper()}{cls['name'][0:3].lower()}"
@@ -247,6 +325,7 @@ class Report:
                     if attributes:
                         for att in attributes:
                             att_type = att.get("att_type")
+                            att_name = att.get("name")
                             value = att.get("value")
                             pairs = None
 
@@ -258,6 +337,16 @@ class Report:
 
                             if pairs is not None:
                                 att["pairs"] = pairs
+                            else:
+                                if att.get(
+                                    "change", ""
+                                ) != "removed" and not check_attribute_in_table(
+                                    table_name, att_name, cls["abrev"]
+                                ):
+                                    logger.error(
+                                        f"{att_name} in '{cls_name}' not in table '{table_name}'"
+                                    )
+
             except (KeyError, TypeError, IndexError) as e:
                 logger.error(f"Error processing theme '{theme}': {e}")
                 return None
@@ -275,6 +364,129 @@ class Report:
         return model
 
 
+@click.group()
+def datamodel():
+    """Datamodel command group"""
+    pass
+
+
+@click.command()
+@click.argument("datamodel", type=click.Path(exists=True))
+def check():
+    """Check the data model for consistency or errors."""
+    click.echo("Checking data model...")
+
+
+@click.command()
+@click.argument("datamodel", type=click.Path(exists=True))
+@click.option(
+    "--output",
+    "-o",
+    type=click.Path(file_okay=True),
+    default="inputs",
+    help="Directory for output markdown files",
+)
+@click.option(
+    "--format",
+    "-f",
+    type=click.Choice(["XLSX", "JSON"], case_sensitive=False),
+    help="Directory for output markdown files",
+    default="XLSX",
+)
+def export(datamodel, output, format):
+    """Export model to various format."""
+    
+    from geocover import model 
+    yaml_path = datamodel
+    
+
+    datamodel = model.Datamodel()
+    datamodel.import_from_yaml(yaml_path)
+    logger.info("Export to Excel")
+    # datamodel.export_to_yaml("output.yaml")
+    datamodel.export_to_excel(output)
+
+
+@click.command()
+@click.argument("datamodel", type=click.Path(exists=True))
+def validate(datamodel):
+    """Validate the model against a JSON schema."""
+    click.echo("Validate the data model...")
+    try:
+        with open(datamodel, "r", encoding="utf-8") as file:
+            yaml_data = yaml.safe_load(file)
+    except Exception as e:
+        logger.error(f"Error while opening/parsing {datamodel}")
+        sys.exit(3)
+
+    version = yaml_data.get("version")
+    if version:
+        schema_file_path = os.path.join("schema", f"json-schema-{version}.json")
+        try:
+            with open(schema_file_path, "r", encoding="utf-8") as file:
+                schema_data = json.load(file)
+        except Exception as e:
+            logger.error(f"Cannot load schemo {schema_file_path}")
+            sys.exit(4)
+
+    # Validate the loaded YAML data against the schema
+    validator = Draft7Validator(schema_data)
+
+    errors = sorted(validator.iter_errors(yaml_data), key=lambda e: e.path)
+    if errors:
+        for error in errors:
+            error_path = " -> ".join(str(p) for p in error.path)
+            logger.error(f"Validation error at {error_path}: {error.message}")
+    else:
+        logger.info(f"YAML file {datamodel} is valid.")
+
+
+@click.command()
+@click.argument("datamodel", type=click.Path(exists=True))
+def prettify(datamodel):
+    """Prettifying the datamodel."""
+    click.echo("Prettifying data model...")
+    import sys
+
+    import ruamel.yaml
+
+    def block_style(base):
+        """
+        This routine walks over a simple, i.e. consisting of dicts, lists and
+        primitives, tree loaded from YAML. It recurses into dict values and list
+        items, and sets block-style on these.
+        """
+        if isinstance(base, dict):
+            for k in base:
+                try:
+                    base.fa.set_block_style()
+                except AttributeError:
+                    pass
+                block_style(base[k])
+        elif isinstance(base, list):
+            for elem in base:
+                try:
+                    base.fa.set_block_style()
+                except AttributeError:
+                    pass
+                block_style(elem)
+
+    yaml = ruamel.yaml.YAML()
+    yaml.preserve_quotes = True
+    try:
+        with open(datamodel) as fp:
+            data = yaml.load(fp)
+        block_style(data)
+        with open(datamodel, "w") as fp:
+            yaml.dump(data, fp)
+    except (FileNotFoundError, PermissionError):
+        logger.error("You do not have permission to access this file.")
+    except ruamel.yaml.YAMLError as e:
+        logger.error(f"An error occurred while processing the YAML file: {e}")
+    except Exception as e:
+        logger.error(f"An unexpected error occurred: {e}")
+
+
 @click.command()
 @click.option(
     "--lang",
@@ -290,21 +502,24 @@ class Report:
     help="Directory for output markdown files",
 )
 @click.argument("datamodel", type=click.Path(exists=True))
-def datamodel(lang, datamodel, output):
+def generate(lang, datamodel, output):
     """
     Generate a markdown document from the DATAMODEL YAML-file.
     """
     import datetime
     import os
-    import sys
-    from jinja2 import Template
-    from babel.support import Translations
-    from babel.core import Locale
-    import jinja2
-    from pathlib import Path
     import re
-    from babel import Locale
+    import sys
+    from pathlib import Path
+
     import babel.dates
+    import jinja2
+    from babel import Locale
+    from babel.core import Locale
+    from babel.support import Translations
+    from jinja2 import Template
+
+    click.echo("Generating data model...")
 
     # Parsing
     Locale.negotiate(["de_DE", "en_US"], ["de_DE", "de_AT"])
@@ -360,7 +575,6 @@ def datamodel(lang, datamodel, output):
     # Custom filters
 
     def slugify(input):
-        """Custom filter"""
         return re.sub(r"[\W_]+", "-", input.lower())
 
     def remove_prefix(value, prefixes=prefixes):
@@ -392,9 +606,11 @@ def datamodel(lang, datamodel, output):
 
         return p.sub(r"**\1**", input)
 
+    translator = Translator()
+
     env.filters["slugify"] = slugify
     env.filters["highlight"] = highlight
-    env.filters["tr"] = translate
+    env.filters["tr"] = translator.translate
     env.filters["format_date_locale"] = format_date_locale
     env.filters["remove_prefix"] = remove_prefix
 
@@ -412,12 +628,10 @@ def datamodel(lang, datamodel, output):
     markdown_fname = os.path.join(output_dir, lang, f"{project_name}.md")
     logger.info(f"Generating {markdown_fname}")
     with open(markdown_fname, "w", encoding="utf-8") as f:
-        # f.write(template.render(data))
         rendered = render_template_with_locale("model_markdown.j2", data, locale)
         f.write(rendered)
 
     # Metadata
-    # meta = env.get_template("metadata.yaml.j2")
     metadata_fname = os.path.join(output_dir, lang, f"metadata.yaml")
     logger.info(f"Generating {metadata_fname}")
     with open(metadata_fname, "w", encoding="utf-8") as f:
@@ -425,6 +639,16 @@ def datamodel(lang, datamodel, output):
         rendered = render_template_with_locale("metadata.yaml.j2", data, locale)
         f.write(rendered)
 
+    logger.info(f"Failed translations: {translator.get_failed_count()}")
+    logger.debug(f"Failed strings: {translator.get_failed_strings()}")
+
+
+# Add the sub-commands to the main command group
+datamodel.add_command(check)
+datamodel.add_command(generate)
+datamodel.add_command(prettify)
+datamodel.add_command(validate)
+datamodel.add_command(export)
 
 if __name__ == "__main__":
     datamodel()

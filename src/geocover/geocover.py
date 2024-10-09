@@ -13,7 +13,7 @@ import click
 import pandas as pd
 
 
-from . import utils
+
 
 try:
     import arcpy
@@ -170,9 +170,9 @@ def geocover(ctx):
 def export(output_dir, workspace, log_level):
     if not HAS_ARCPY:
         raise click.ClickException("arcpy library is not available.")
-    from . import encoder
-    from . import schema
-    from . import utils
+    from geocover import encoder
+    from geocover import schema
+    from geocover import utils
 
     now = datetime.datetime.now()
 
@@ -286,9 +286,9 @@ def export(output_dir, workspace, log_level):
 def schema(output_dir, workspace, log_level):
     if not HAS_ARCPY:
         raise click.ClickException("arcpy library is not available.")
-    from . import encoder
-    from . import schema
-    from . import utils
+    from geocover import encoder
+    from geocover import schema
+    from geocover import utils
 
     arcpy.env.workspace = workspace
 
@@ -350,7 +350,7 @@ def schema(output_dir, workspace, log_level):
     help="Log level",
 )
 def geolcode(output_file, workspace, log_level):
-    from . import all_geolcodes
+    from geocover import all_geolcodes
 
     logger = logging.getLogger(__name__)
     logger.setLevel(log_level.upper())
@@ -437,7 +437,7 @@ def geolcode(output_file, workspace, log_level):
 )
 def filter_symbols(bbox, geometry, gdb_path, output, log_level, symbols, drop):
     from shapely import box
-    from . import filter_symbols
+    from geocover import filter_symbols
     import geopandas as gpd
     import pandas as pd
 
@@ -535,7 +535,7 @@ def export_rules(workspace, output, log_level):
     if not HAS_ARCPY:
         raise click.ClickException("arcpy library is not available.")
     from export_symbol_rules import process_layers
-    from . import export_symbol_rules
+    from geocover import export_symbol_rules
 
     configure_logging(log_level)
 
