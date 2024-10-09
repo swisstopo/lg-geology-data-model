@@ -10,13 +10,13 @@
 # 0.6  Tables, like CHARCAT, ADMIXTURE as annex (why no CD?). Ignore some deleted attributes.
 #      hack to improve translations (cannot modify the XLS file)
 # 0.7  Added attribut `alias`
-version: 0.6
+version: "0.6"
 date: 2024-09-24
 
 # Model revision should change if attributes are added, deleted or changed
 model:
   revision: 3.9.6
-  revision_date: 2024-10-08
+  revision_date: "2024-10-08"
 
 themes:
 - name: Rock_Bodies
@@ -46,7 +46,7 @@ themes:
       description:
         de: Objektart
         fr: Type de l'objet
-      cardinality: 1
+      cardinality: "1"
       mandatory: true
     - name: status
       att_type: CD
@@ -54,7 +54,7 @@ themes:
       description:
         de: Zustand der Objektart
         fr: État du type d'objet
-      cardinality: 1
+      cardinality: "1"
       mandatory: false
     - name: rock_type
       att_type: CD
@@ -112,7 +112,7 @@ themes:
       description:
         de: Objektart
         fr: Type de l'objet
-      cardinality: 1
+      cardinality: "1"
       mandatory: true
     - name: litstrat        # ajouté dans version 3?
       description:
@@ -120,7 +120,7 @@ themes:
         fr: Description lithostratigraphique
       att_type: annex
       value: GC_LITSTRAT_UNCO_CD
-      cardinality: 1
+      cardinality: "1"
       mandatory: true
     - name: litho
       description:
@@ -139,7 +139,7 @@ themes:
           Attribution chronostratigraphique du toit de la formation  (top)
       att_type: annex
       value: GC_CHRONO_CD
-      cardinality: 1
+      cardinality: "1"
       mandatory: true
     - name: chrono_b
       description:
@@ -150,7 +150,7 @@ themes:
           Attribution chronostratigraphique de la base de la  formation (basis)
       att_type: annex
       value: GC_CHRONO_CD
-      cardinality: 1
+      cardinality: "1"
       mandatory: true
     - name: mat_type
       description:
@@ -164,7 +164,7 @@ themes:
         de: Wurde das Lockergestein wieder verdeckt
         fr: Est-ce que la roche consolidée est recouvert (oui / non)?
       att_type: boolean
-      cardinality: 1
+      cardinality: "1"
       mandatory: false
     - name: composit
       description:
@@ -240,7 +240,7 @@ themes:
           Karte
         fr: Description selon la légende de la carte géologique originale.
       value: string
-      cardinality: 1
+      cardinality: "1"
 
       mandatory: false
   - name: Bedrock_PLG
@@ -262,13 +262,13 @@ themes:
         fr: Type de l'objet
       att_type: subtype
       value: 14334001
-      cardinality: 1
+      cardinality: "1"
       mandatory: true
     - name: fm_homog        # removed
       description:
         de: Gesteinsaufbau
         fr: ''
-      cardinality: 1
+      cardinality: "1"
       change: removed
       mandatory: false
     - name: litstrat
@@ -277,7 +277,7 @@ themes:
         fr: Description lithostratigraphique
       att_type: annex
       value: GC_LITSTRAT_BED_CD
-      cardinality: 1
+      cardinality: "1"
       mandatory: false
     - name: litho
       att_type: annex
@@ -285,7 +285,7 @@ themes:
       description:
         de: Lithologische Beschreibung
         fr: Description lithologique
-      cardinality: 1
+      cardinality: "1"
       mandatory: false
     - name: chrono_t
       att_type: annex
@@ -296,7 +296,7 @@ themes:
           (Top)
         fr: >-
           Attribution chronostratigraphique du toit de la  formation (top)
-      cardinality: 1
+      cardinality: "1"
       mandatory: true
     - name: chrono_b
       att_type: annex
@@ -307,7 +307,7 @@ themes:
           (Basis)
         fr: >-
           Attribution chronostratigraphique de la base de la  formation (base).
-      cardinality: 1
+      cardinality: "1"
       mandatory: true
     - name: tecto
       att_type: annex
@@ -315,7 +315,7 @@ themes:
       description:
         de: Tektonische Zugehörigkeit
         fr: Attribution tectonique
-      cardinality: 1
+      cardinality: "1"
       mandatory: true
     - name: orig_descr
       att_type: string
@@ -325,14 +325,14 @@ themes:
           Karte
         fr: >-
           Description selon la légende de la carte géologique originale
-      cardinality: 1
+      cardinality: "1"
       mandatory: false
     - name: buried_out       # removed
       att_type: boolean
       description:
         de: Wurde das Festgestein wieder verdeckt (ja / nein)?
         fr: Est-ce que la roche consolidée est recouvert (oui / non)?
-      cardinality: 1
+      cardinality: "1"
       change: removed
       mandatory: false
     - name: exotic_ele
@@ -343,7 +343,7 @@ themes:
           Einschluss, Linse, Tasche, Olistholith (ja / nein)?
         fr: >-
           S’agit-il d’un élément exotique (oui / non)?
-      cardinality: 1
+      cardinality: "1"
       mandatory: false
     - name: colour
       att_type: string
@@ -476,7 +476,7 @@ themes:
         fr: Type de l'objet
       att_type: subtype
       value: 11601
-      cardinality: 1
+      cardinality: "1"
       mandatory: true
   - name: Instability_Structures_L
     abrev: Gins      # TODO: to check
@@ -493,7 +493,7 @@ themes:
         fr: Type de l'objet
       att_type: subtype
       value: 11701
-      cardinality: 1
+      cardinality: "1"
       mandatory: true
   - name: Instabilities_PLG
     abrev: Gins      # TODO: to check
@@ -519,7 +519,7 @@ themes:
         fr: Type de l'objet
       att_type: subtype
       value: 15801        # changed
-      cardinality: 1
+      cardinality: "1"
       mandatory: true
     - name: main_mov
       description:
@@ -549,7 +549,7 @@ themes:
         fr: Type de l'objet
       att_type: subtype
       value: 11201
-      cardinality: 1
+      cardinality: "1"
       mandatory: true
   - name: Glacial_and_Periglacial_Structures_L
     abrev: Ggla      # TODO: to check
@@ -570,7 +570,7 @@ themes:
         fr: Type de l'objet
       att_type: subtype
       value: 11301
-      cardinality: 1
+      cardinality: "1"
       mandatory: true
     - name: morai_mo
       description:
@@ -639,7 +639,7 @@ themes:
         fr: Type de l'objet
       att_type: subtype
       value: 11401
-      cardinality: 1
+      cardinality: "1"
       mandatory: true
   - name: Erosional_Structures_PT
     abrev: Gero      # TODO: to check
@@ -658,7 +658,7 @@ themes:
         fr: Type de l'objet
       att_type: subtype
       value: 11001
-      cardinality: 1
+      cardinality: "1"
       mandatory: true
   - name: Erosional_Structures_L
     abrev: Gero      # TODO: to check
@@ -683,7 +683,7 @@ themes:
         fr: Type de l'objet
       att_type: subtype
       value: 11101
-      cardinality: 1
+      cardinality: "1"
 
       mandatory: true
   - name: Karstic_Structures_PT
@@ -703,7 +703,7 @@ themes:
         fr: Type de l'objet
       att_type: subtype
       value: 11301
-      cardinality: 1
+      cardinality: "1"
       mandatory: true
     - name: ice_cave
       description:
@@ -727,7 +727,7 @@ themes:
         fr: Type de l'objet
       att_type: subtype
       value: 12001
-      cardinality: 1
+      cardinality: "1"
       mandatory: true
   - name: Alluvial_and_Lacustrine_Structures_L
     abrev: Gall      # TODO: to check
@@ -746,7 +746,7 @@ themes:
         fr: Type de l'objet
       att_type: subtype
       value: 10901
-      cardinality: 1
+      cardinality: "1"
       mandatory: true
     - name: age
       description:
@@ -781,7 +781,7 @@ themes:
         fr: Type de l'objet
       att_type: subtype
       value: 14601
-      cardinality: 1
+      cardinality: "1"
       mandatory: true
     - name: azimuth
       description:
@@ -840,7 +840,7 @@ themes:
         fr: Type de l'objet
       att_type: subtype
       value: 14701
-      cardinality: 1
+      cardinality: "1"
       mandatory: true
   - name: Deformation_Structures_PLG
     abrev: Tdef      # TODO: to check
@@ -859,7 +859,7 @@ themes:
         fr: Type de l'objet
       att_type: subtype
       value: 14801
-      cardinality: 1
+      cardinality: "1"
       mandatory: true
     - name: type
       description:
@@ -892,7 +892,7 @@ themes:
         fr: Type de l'objet
       att_type: subtype
       value: 14901
-      cardinality: 1
+      cardinality: "1"
       mandatory: true
     - name: fault_mo
       description:
@@ -926,7 +926,7 @@ themes:
           etc. (ja / nein)?
         fr: Limite d’unité tectonique (oui / non)?
       att_type: boolean
-      cardinality: 1
+      cardinality: "1"
       mandatory: false
     - name: status
       description:
@@ -934,7 +934,7 @@ themes:
         fr: État du type d'objet
       att_type: CD
       value: GC_LIN_TTEC_STATUS_CD
-      cardinality: 1
+      cardinality: "1"
       mandatory: true
     - name: activity
       description:
@@ -979,7 +979,7 @@ themes:
         fr: Type de l'objet
       att_type: subtype
       value: 13601
-      cardinality: 1
+      cardinality: "1"
       mandatory: true
     - name: fold_typ
       description:
@@ -1020,7 +1020,7 @@ themes:
           Azimut du type d'objet. L'azimut est mesuré depuis le  nord en degré de
           0° à 359° dans le sens des aiguilles  d'une montre
       att_type: integer
-      cardinality: 1
+      cardinality: "1"
       mandatory: false
     - name: dip
       description:
@@ -1054,7 +1054,7 @@ themes:
         fr: Type de l'objet
       att_type: subtype
       value: 13701
-      cardinality: 1
+      cardinality: "1"
       mandatory: true
     - name: azimuth
       description:
@@ -1065,7 +1065,7 @@ themes:
           Azimut du type d'objet. L'azimut est mesuré depuis le  nord en degré de
           0° à 359° dans le sens des aiguilles  d'une montre
       att_type: integer
-      cardinality: 1
+      cardinality: "1"
       mandatory: false
     - name: dip
       description:
@@ -1096,7 +1096,7 @@ themes:
         fr: Type de l'objet
       att_type: subtype
       value: 13801
-      cardinality: 1
+      cardinality: "1"
       mandatory: true
     - name: polarity
       description:
@@ -1138,7 +1138,7 @@ themes:
           Azimut du type d'objet. L'azimut est mesuré depuis le  nord en degré de
           0° à 359° dans le sens des aiguilles  d'une montre
       att_type: integer
-      cardinality: 1
+      cardinality: "1"
       mandatory: false
     - name: dip
       description:
@@ -1167,7 +1167,7 @@ themes:
         fr: Type de l'objet
       att_type: subtype
       value: 12801
-      cardinality: 1
+      cardinality: "1"
       mandatory: true
     - name: type
       cardinatity: 0..1
@@ -1189,7 +1189,7 @@ themes:
         fr: Type de l'objet
       att_type: subtype
       value: 12901
-      cardinality: 1
+      cardinality: "1"
       mandatory: true
     - name: division
       description:
@@ -1247,7 +1247,7 @@ themes:
         fr: Type de l'objet
       att_type: subtype
       value: 13201
-      cardinality: 1
+      cardinality: "1"
       mandatory: true
     - name: status
       description:
@@ -1288,7 +1288,7 @@ themes:
         fr: Type de l'objet
       att_type: subtype
       value: 13301
-      cardinality: 1
+      cardinality: "1"
       mandatory: true
     - name: chemistry
       description:
@@ -1314,7 +1314,7 @@ themes:
         fr: Type de l'objet
       att_type: subtype
       value: 13401
-      cardinality: 1
+      cardinality: "1"
       mandatory: true
     - name: azimuth
       description:
@@ -1344,7 +1344,7 @@ themes:
         fr: Type de l'objet
       att_type: subtype
       value: 13501
-      cardinality: 1
+      cardinality: "1"
       mandatory: true
     - name: strati
       description:
@@ -1394,7 +1394,7 @@ themes:
         fr: Type de l'objet
       att_type: subtype
       value: 13101
-      cardinality: 1
+      cardinality: "1"
       mandatory: true
     - name: cong_spe
       description:
@@ -1430,7 +1430,7 @@ themes:
       att_type: annex
       value: GC_LITHO_CD        # TODO: really or CD field: "LPRO_LITHO",
       change: renamed        # 'litho' -> LPRO_LITHO
-      cardinality: 1
+      cardinality: "1"
       mandatory: false
   - name: Miscellaneous_PT
     abrev: Lmis      # TODO: to check
@@ -1451,14 +1451,14 @@ themes:
         fr: Type de l'objet
       att_type: subtype
       value: 15501
-      cardinality: 1
+      cardinality: "1"
       mandatory: true
     - name: orig_name
       description:
         de: Ursprüngliche Bezeichnung des Objektes.
         fr: ''
       att_type: string
-      cardinality: 1
+      cardinality: "1"
       mandatory: false
   - name: Geological_Outlines_L
     abrev: Lgeo      # TODO: to check
@@ -1475,7 +1475,7 @@ themes:
         fr: Type de l'objet
       att_type: subtype
       value: 13001
-      cardinality: 1
+      cardinality: "1"
       mandatory: true
     - name: status
       description:
@@ -1505,7 +1505,7 @@ themes:
         fr: Type de l'objet
       att_type: subtype
       value: 14201
-      cardinality: 1
+      cardinality: "1"
       mandatory: true
     - name: type
       description:
@@ -1513,7 +1513,7 @@ themes:
         fr: Surface de référence
       att_type: CD
       value: GC_PNT_PSLO_TYPE_CD
-      cardinality: 1
+      cardinality: "1"
       mandatory: true
     - name: azimuth
       description:
@@ -1544,7 +1544,7 @@ themes:
         fr: Unité lithostratigraphique de l’horizon modélisé
       att_type: annex
       value: GC_LITSTRAT_BED_CD        # TODO:  coded domain field; PSLO_FORMATIO", CD:  "GC_LITSTRAT_BED_CD"
-      cardinality: 1
+      cardinality: "1"
       change: renamed        # from litstrat to PSLO_FORMATIO
 
       mandatory: false
@@ -1567,7 +1567,7 @@ themes:
         fr: Type de l'objet
       att_type: subtype
       value: 13901
-      cardinality: 1
+      cardinality: "1"
       mandatory: true
     - name: type
       description:
@@ -1575,7 +1575,7 @@ themes:
         fr: Surface de référence
       att_type: CD
       value: GC_LIN_PCOB_TYPE_CD
-      cardinality: 1
+      cardinality: "1"
       mandatory: true
     - name: altitude
       alias: PCOB_ALTITUDE
@@ -1583,7 +1583,7 @@ themes:
         de: Höhenangabe (m ü.M.) von Isohypsen.
         fr: Valeur altimétrique des isohypses.
       att_type: float
-      cardinality: 1
+      cardinality: "1"
       mandatory: true
     - name: litstrat
       description:
@@ -1591,7 +1591,7 @@ themes:
         fr: Unité lithostratigraphique de la formation modelisée
       att_type: annex
       value: GC_LITSTRAT_BED_CD        # TODO: renammed? field: "PCOB_FORMATIO", CD "GC_LITSTRAT_BED_CD"
-      cardinality: 1
+      cardinality: "1"
       mandatory: false
   - name: Modelled_Water_Table_PT
     abrev: Pmod      # TODO: to check
@@ -1610,7 +1610,7 @@ themes:
         fr: Type de l'objet
       att_type: subtype
       value: 14101
-      cardinality: 1
+      cardinality: "1"
       mandatory: true
     - name: azimuth
       description:
@@ -1665,7 +1665,7 @@ themes:
         fr: Type de l'objet
       att_type: subtype
       value: 14001
-      cardinality: 1
+      cardinality: "1"
       mandatory: true
     - name: confine
       description:
@@ -1680,7 +1680,7 @@ themes:
       description:
         de: Höhenangabe (m ü.M.) von Isohypsen.
         fr: Valeur altimétrique des isohypses.
-      cardinality: 1
+      cardinality: "1"
       mandatory: true
     - name: wa_table
       description:
@@ -1999,7 +1999,7 @@ themes:
         de: Bohransatzpunkt unter Terrain (ja / nein)
         fr: Forage réalisé à partir d’une galerie (oui / non)?
       att_type: boolean
-      cardinality: 1
+      cardinality: "1"
       mandatory: true
     - name: main_tar
       description:
@@ -2133,7 +2133,7 @@ themes:
         fr: Type de l'objet
       att_type: subtype
       value: 10401
-      cardinality: 1
+      cardinality: "1"
       mandatory: true
 - name: Hydrogeology
   classes:
@@ -2155,7 +2155,7 @@ themes:
         fr: Type de l'objet
       att_type: subtype
       value: 12101
-      cardinality: 1
+      cardinality: "1"
       mandatory: true
     - name: status
       description:
@@ -2212,7 +2212,7 @@ themes:
         fr: Type de l'objet
       att_type: subtype
       value: 12201
-      cardinality: 1
+      cardinality: "1"
       mandatory: true
     - name: combi
       description:
@@ -2242,7 +2242,7 @@ themes:
         fr: Type de l'objet
       att_type: subtype
       value: 12301
-      cardinality: 1
+      cardinality: "1"
       mandatory: true
     - name: rel_age
       description:
@@ -2266,7 +2266,7 @@ themes:
         de: Referenzjahr der ehemaligen Uferlinie.
         fr: Année de référence de l’ancienne ligne de rivage.
       att_type: integer
-      cardinality: 1
+      cardinality: "1"
       mandatory: false
     - name: source
       description:
@@ -2301,7 +2301,7 @@ themes:
         fr: Type de l'objet
       att_type: subtype
       value: 12401
-      cardinality: 1
+      cardinality: "1"
       mandatory: true
     - name: combi
       description:
@@ -2350,7 +2350,7 @@ themes:
         fr: Type de l'objet
       att_type: subtype
       value: 12501
-      cardinality: 1
+      cardinality: "1"
       mandatory: true
     - name: status
       description:
@@ -2440,7 +2440,7 @@ themes:
         fr: Type de l'objet
       att_type: subtype
       value: 12601
-      cardinality: 1
+      cardinality: "1"
       mandatory: true
   - name: Surface_Water_PLG
     abrev: Hsur      # TODO: to check
@@ -2462,7 +2462,7 @@ themes:
         fr: Type de l'objet
       att_type: subtype
       value: 12701
-      cardinality: 1
+      cardinality: "1"
 
 # Two distincts sources for annexes:
 # - `name`ending with `_CD` is a coded domain (file `exports/coded_domains.json`)

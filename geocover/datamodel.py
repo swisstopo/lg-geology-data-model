@@ -13,6 +13,9 @@ import pandas as pd
 import pytz
 import yaml
 from loguru import logger
+from jsonschema import validate as jsonschema_validate, ValidationError
+from jsonschema import Draft7Validator
+
 
 input_dir = "exports"
 
@@ -377,6 +380,40 @@ def check():
 
 @click.command()
 @click.argument("datamodel", type=click.Path(exists=True))
+def validate(datamodel):
+    """Validate the model against a JSON schema."""
+    click.echo("Validate the data model...")
+    try:
+        with open(datamodel, "r", encoding="utf-8") as file:
+            yaml_data = yaml.safe_load(file)
+    except Exception as e:
+        logger.error(f"Error while opening/parsing {datamodel}")
+        sys.exit(3)
+
+    version = yaml_data.get("version")
+    if version:
+        schema_file_path = os.path.join("schema", f"json-schema-{version}.json")
+        try:
+            with open(schema_file_path, "r", encoding="utf-8") as file:
+                schema_data = json.load(file)
+        except Exception as e:
+            logger.error(f"Cannot load schemo {schema_file_path}")
+            sys.exit(4)
+
+    # Validate the loaded YAML data against the schema
+    validator = Draft7Validator(schema_data)
+
+    errors = sorted(validator.iter_errors(yaml_data), key=lambda e: e.path)
+    if errors:
+        for error in errors:
+            error_path = " -> ".join(str(p) for p in error.path)
+            logger.error(f"Validation error at {error_path}: {error.message}")
+    else:
+        logger.info(f"YAML file {datamodel} is valid.")
+
+
+@click.command()
+@click.argument("datamodel", type=click.Path(exists=True))
 def prettify(datamodel):
     """Prettifying the datamodel."""
     click.echo("Prettifying data model...")
@@ -580,7 +617,7 @@ def generate(lang, datamodel, output):
 datamodel.add_command(check)
 datamodel.add_command(generate)
 datamodel.add_command(prettify)
-
+datamodel.add_command(validate)
 
 if __name__ == "__main__":
     datamodel()
