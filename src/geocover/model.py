@@ -1,5 +1,6 @@
 import sys
 import textwrap
+import json
 from collections import OrderedDict
 
 import openpyxl
@@ -12,6 +13,26 @@ from openpyxl.worksheet.dimensions import ColumnDimension, DimensionHolder
 from ruamel.yaml import YAML
 
 
+from datetime import datetime, date
+
+
+def dequote(text):
+    
+    if text:
+      text = " ".join(text.split())
+    
+      if text.startswith('"') and text.endswith('"'):
+        text = string[1:-1]
+    
+    return text
+
+class DateTimeEncoder(json.JSONEncoder):
+    def default(self, obj):
+        if isinstance(obj, (datetime, date)):  # Handles both datetime and date
+            return obj.isoformat()  # or str(obj)
+        return super().default(obj)
+
+
 class Datamodel:
     def __init__(self):
         self.yaml_data = OrderedDict()
@@ -20,113 +41,90 @@ class Datamodel:
 
     def import_from_excel(self, file_path):
         """Import data from an Excel file into the yaml_data structure."""
-        # Load the workbook and the first sheet
         workbook = openpyxl.load_workbook(file_path)
         sheet = workbook.active
 
-        yaml_data = OrderedDict()
-        yaml_data["themes"] = []
+        self.yaml_data["themes"] = []
         current_theme = None
         current_class = None
 
-        n = 0
         revision = sheet["B2"].value
         revision_date = sheet["B3"].value
         schema_version = sheet["B3"].value
 
-        yaml_data["model"] = {"revision": revision, "revision_date": revision_date}
-        yaml_data["schema"] = str(schema_version)
-        # Iterate over rows starting from the second row (skip headers)
-        current_class_name = None
-        current_class = None
+        self.yaml_data["model"] = {"revision": revision, "revision_date": revision_date}
+        self.yaml_data["schema"] = str(schema_version)
+
         in_attributes = False
         for row in sheet.iter_rows(min_row=6, values_only=True):
-            # Use the `or` operator to assign a default value (None or empty string) if the cell is empty
-
             if not any(row):
                 continue
 
-            n += 1
-            theme_name = None
-            class_name = None
-            table_name = None
-            abrev = None
-            description_de = ""
-            description_fr = ""
-            attr_name = None
-            attr_desc_de = attr_desc_fr = ""
-            attr_type = mandatory = cardinality = None
             row_type = row[0] or ""
             if "Theme" in row_type:
                 theme_name = row[1] or None
-                in_attributes = False
+                current_theme = self._create_new_theme(theme_name)
             if "Class" in row_type:
                 class_name = row[1] or None
-                current_class_name = class_name
-                in_attributes = False
+                current_class = self._create_new_class(class_name)
+                current_theme["classes"].append(current_class)
             if "Description" in row_type:
                 description_de = row[2] or ""
                 description_fr = row[3] or ""
-                in_attributes = False
+                self._update_class_description(current_class, description_de, description_fr)
             if "Abrev" in row_type:
                 abrev = row[1] or None
-                in_attributes = False
+                current_class["abrev"] = abrev
             if "Table" in row_type:
                 table_name = row[1] or None
-                in_attributes = False
+                current_class["table"] = table_name
             if "Attributes" in row_type:
                 in_attributes = True
-            if in_attributes:
-                attr_name = row[1]
-                attr_desc_de = row[2]
-                attr_desc_fr = row[3]
-                attr_type = row[4] or None
-                mandatory = row[5] or "no"
-                cardinality = row[6] or None
+                logger.debug('In atrintue')
+            if in_attributes and not row[0] and row[1]:  # Check if attributes section and valid attribute
+                self._add_attribute_to_class(current_class, row)
 
-            # print(f"{row_type}, {attr_name}, in={in_attributes}")
-            # print(row)
-            # if n>20: return yaml_data
+        return self.yaml_data
 
-            # If a new theme is found
-            if theme_name:
-                # Create a new theme if it doesn't exist yet
-                current_theme = {"name": theme_name, "classes": []}
-                yaml_data["themes"].append(current_theme)
+    def _create_new_theme(self, theme_name):
+        """Create and return a new theme structure."""
+        theme = {"name": theme_name, "classes": []}
+        self.yaml_data["themes"].append(theme)
+        return theme
 
-            # If a new class is found
-            if class_name:
-                # Create a new class if it doesn't exist yet
-                current_class = {
-                    "name": class_name,
-                    "description": {
-                        "de": description_de.strip(),
-                        "fr": description_fr.strip(),
-                    },
-                    "attributes": [],
-                }
-                current_theme["classes"].append(current_class)
-            if description_fr or description_de:
-                current_class["description"]["de"] = "|" + description_de.strip()
-                current_class["description"]["fr"] = "|" + description_fr.strip()
-            if abrev:
-                current_class["abrev"] = abrev
-            if table_name:
-                current_class["table"] = table_name
+    def _create_new_class(self, class_name):
+        """Create and return a new class structure."""
+        return {
+            "name": class_name,
+            "description": {"de": "", "fr": ""},
+            "attributes": [],
+        }
 
-            # Add attribute to the current class
-            if attr_name:
-                attribute = {
-                    "name": attr_name,
-                    "att_type": attr_type,
-                    "description": {"de": attr_desc_de, "fr": attr_desc_fr},
-                    "mandatory": mandatory == "yes",
-                    "cardinality": cardinality,
-                }
-                current_class["attributes"].append(attribute)
-        self.yaml_data = yaml_data
+    def _update_class_description(self, current_class, description_de, description_fr):
+        """Update the description of the current class."""
+        current_class["description"]["de"] = dequote(description_de)
+        current_class["description"]["fr"] = dequote(description_fr)
+        
+        logger.debug(current_class["description"]["fr"] )
 
-        return yaml_data
+    def _add_attribute_to_class(self, current_class, row):
+        """Add an attribute to the current class based on the row data."""
+        logger.debug(row)
+        attr_name = row[1] or None
+        attr_desc_de = row[2] or ""
+        attr_desc_fr = row[3] or ""
+        attr_type = row[4] or None
+        mandatory = row[5] or "no"
+        cardinality = row[6] or None
+
+        attribute = {
+            "name": attr_name,
+            "att_type": attr_type,
+            "description": {"de": attr_desc_de, "fr": attr_desc_fr},
+            "mandatory": mandatory == "yes",
+            "cardinality": cardinality,
+        }
+        current_class["attributes"].append(attribute)
 
     def export_to_excel(self, file_path):
         """Export the yaml_data structure to an Excel file."""
@@ -216,8 +214,8 @@ class Datamodel:
         class_name = cls.get("name", "")
         abrev = cls.get("abrev", "")
         table = cls.get("table", "")
-        description_de = cls.get("description", {}).get("de", "")
-        description_fr = cls.get("description", {}).get("fr", "")
+        description_de = dequote(cls.get("description", {}).get("de", ""))
+        description_fr = dequote(cls.get("description", {}).get("fr", ""))
 
         # Write Class details
         set_cell(worksheet, current_row, 1, "Class", Font(bold=True, name="Arial"))
@@ -253,12 +251,12 @@ class Datamodel:
             cardinality = f"[{attr.get('cardinality', '')}]"
 
             # Write attribute details
-            set_cell(worksheet, current_row, 2, attr_name.upper())
+            set_cell(worksheet, current_row, 2, attr_name.upper(), alignment=my_align)
             set_cell(worksheet, current_row, 3, attr_desc_de, alignment=my_align)
             set_cell(worksheet, current_row, 4, attr_desc_fr, alignment=my_align)
-            set_cell(worksheet, current_row, 5, attr_type)
-            set_cell(worksheet, current_row, 6, mandatory)
-            set_cell(worksheet, current_row, 7, cardinality)
+            set_cell(worksheet, current_row, 5, attr_type, alignment=my_align)
+            set_cell(worksheet, current_row, 6, mandatory, alignment=my_align)
+            set_cell(worksheet, current_row, 7, cardinality, alignment=my_align)
             current_row = update_row(worksheet, current_row)
 
         current_row = update_row(worksheet, current_row, height=20)
@@ -267,12 +265,13 @@ class Datamodel:
 
     def export_to_yaml(self, file_path):
         """Export the yaml_data structure to a YAML file."""
+        yaml = YAML()
         output_data = {
             key: dict(value) if isinstance(value, OrderedDict) else value
             for key, value in self.yaml_data.items()
         }
-        with open(file_path, "w", encoding="utf-8") as yaml_file:
-            yaml.dump(output_data, yaml_file, allow_unicode=True, sort_keys=False)
+        with open(file_path, "w") as yaml_file:
+            yaml.dump(output_data, yaml_file)
 
     def import_from_yaml(self, file_path):
         """Import data from a YAML file into the yaml_data structure."""
@@ -284,14 +283,16 @@ if __name__ == "__main__":
     # Example Usage
     xlsx_file = "modelclass.xlsx"
     datamodel = Datamodel()
+    logger.info("Loading original model form YAML")
     datamodel.import_from_yaml("datamodel.yaml")
     logger.info(datamodel.yaml_data)
 
-    logger.info("Export to Excel")
+    logger.info(f"Export model to Excel: {xlsx_file}")
     # datamodel.export_to_yaml("output.yaml")
     datamodel.export_to_excel(xlsx_file)
-    logger.info("Import from  Excel")
+    logger.info(f"Import from  Excel {xlsx_file}")
     datamodel.import_from_excel(xlsx_file)
+    # logger.info(json.dumps(datamodel.yaml_data, indent=4, cls=DateTimeEncoder))
 
     logger.info("Export to YAML")
 
