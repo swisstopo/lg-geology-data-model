@@ -1,30 +1,33 @@
-import sys
-import textwrap
 import json
 from collections import OrderedDict
+from datetime import date, datetime
 
 import openpyxl
 import pandas as pd
 import yaml
 from loguru import logger
 from openpyxl.styles import Alignment, Font, PatternFill
+
+
 from openpyxl.utils import get_column_letter
 from openpyxl.worksheet.dimensions import ColumnDimension, DimensionHolder
 from ruamel.yaml import YAML
 
+DOCUMENT_TITLE = "Geology Data Model"
 
-from datetime import datetime, date
+FONT_ARIAL_BOLD = Font(bold=True, name="Arial")
+FONT_TITLE = Font(size=20, bold=True, name="Arial")
+FONT_METADATA = Font(size=12, bold=True, name="Arial")
+TEXT_WRAP_ALIGN_TOP = Alignment(wrapText=True, vertical="top")
 
 
 def dequote(text):
-    
     if text:
-      text = " ".join(text.split())
-    
-      if text.startswith('"') and text.endswith('"'):
-        text = string[1:-1]
-    
+        text = " ".join(text.split())
+        if text.startswith('"') and text.endswith('"'):
+            text = string[1:-1]
     return text
+
 
 class DateTimeEncoder(json.JSONEncoder):
     def default(self, obj):
@@ -39,8 +42,13 @@ class Datamodel:
         self.yaml_data["metadata"] = {}
         self.yaml_data["themes"] = []
 
-    def import_from_excel(self, file_path):
-        """Import data from an Excel file into the yaml_data structure."""
+    def from_excel(self, file_path):
+        """Import data from an Excel file into the yaml_data structure.
+
+        Parameters
+        ----------
+        file_path
+        """
         workbook = openpyxl.load_workbook(file_path)
         sheet = workbook.active
 
@@ -71,7 +79,9 @@ class Datamodel:
             if "Description" in row_type:
                 description_de = row[2] or ""
                 description_fr = row[3] or ""
-                self._update_class_description(current_class, description_de, description_fr)
+                self._update_class_description(
+                    current_class, description_de, description_fr
+                )
             if "Abrev" in row_type:
                 abrev = row[1] or None
                 current_class["abrev"] = abrev
@@ -80,8 +90,9 @@ class Datamodel:
                 current_class["table"] = table_name
             if "Attributes" in row_type:
                 in_attributes = True
-                logger.debug('In atrintue')
-            if in_attributes and not row[0] and row[1]:  # Check if attributes section and valid attribute
+            if (
+                in_attributes and not row[0] and row[1]
+            ):  # Check if attributes section and valid attribute
                 self._add_attribute_to_class(current_class, row)
 
         return self.yaml_data
@@ -104,12 +115,9 @@ class Datamodel:
         """Update the description of the current class."""
         current_class["description"]["de"] = dequote(description_de)
         current_class["description"]["fr"] = dequote(description_fr)
-        
-        logger.debug(current_class["description"]["fr"] )
 
     def _add_attribute_to_class(self, current_class, row):
         """Add an attribute to the current class based on the row data."""
-        logger.debug(row)
         attr_name = row[1] or None
         attr_desc_de = row[2] or ""
         attr_desc_fr = row[3] or ""
@@ -126,7 +134,7 @@ class Datamodel:
         }
         current_class["attributes"].append(attribute)
 
-    def export_to_excel(self, file_path):
+    def to_excel(self, file_path):
         """Export the yaml_data structure to an Excel file."""
         yaml_data = self.yaml_data
 
@@ -141,8 +149,15 @@ class Datamodel:
                 cell.fill = fill
             return cell
 
-        def merge_and_format(worksheet, start_row, start_col, end_row, end_col, value, font):
-            worksheet.merge_cells(start_row=start_row, start_column=start_col, end_row=end_row, end_column=end_col)
+        def merge_and_format(
+            worksheet, start_row, start_col, end_row, end_col, value, font
+        ):
+            worksheet.merge_cells(
+                start_row=start_row,
+                start_column=start_col,
+                end_row=end_row,
+                end_column=end_col,
+            )
             cell = worksheet.cell(row=start_row, column=start_col)
             cell.value = value
             cell.font = font
@@ -157,45 +172,75 @@ class Datamodel:
 
             # Title Section
             current_row = 1
-            title_font = Font(size=20, bold=True, name="Arial")
-            merge_and_format(worksheet, 1, 1, 1, 3, "Geology Data Model", title_font)
+
+            merge_and_format(worksheet, 1, 1, 1, 3, DOCUMENT_TITLE, FONT_TITLE)
             worksheet.row_dimensions[current_row].height = 30
 
             # Metadata
-            metadata_font = Font(size=12, bold=True, name="Arial")
-            set_cell(worksheet, 2, 1, "Revision", metadata_font)
-            set_cell(worksheet, 2, 2, yaml_data.get("model", {}).get("revision", ""), metadata_font)
-            set_cell(worksheet, 3, 1, "Date", metadata_font)
-            set_cell(worksheet, 3, 2, yaml_data.get("model", {}).get("revision_date", ""), metadata_font)
-            set_cell(worksheet, 4, 1, "Schema", metadata_font)
-            set_cell(worksheet, 4, 2, yaml_data.get("version", ""), metadata_font)
+
+            set_cell(worksheet, 2, 1, "Revision", FONT_METADATA)
+            set_cell(
+                worksheet,
+                2,
+                2,
+                yaml_data.get("model", {}).get("revision", ""),
+                FONT_METADATA,
+            )
+            set_cell(worksheet, 3, 1, "Date", FONT_METADATA)
+            set_cell(
+                worksheet,
+                3,
+                2,
+                yaml_data.get("model", {}).get("revision_date", ""),
+                FONT_METADATA,
+            )
+            set_cell(worksheet, 4, 1, "Schema", FONT_METADATA)
+            set_cell(worksheet, 4, 2, yaml_data.get("version", ""), FONT_METADATA)
 
             # Header Section
             current_row = update_row(worksheet, current_row + 4)
             header_font = Font(size=14, bold=True, color="dddddd", name="Arial")
             header_alignment = Alignment(horizontal="center", vertical="center")
-            header_fill = PatternFill(start_color="333333", end_color="dddddd", fill_type="solid")
+            header_fill = PatternFill(
+                start_color="333333", end_color="dddddd", fill_type="solid"
+            )
 
             headers = ["Deutsch", "Français", "Type", "Mandatory", "Cardinality"]
             for i, header in enumerate(headers, start=3):
-                set_cell(worksheet, current_row, i, header, font=header_font, alignment=header_alignment, fill=header_fill)
+                set_cell(
+                    worksheet,
+                    current_row,
+                    i,
+                    header,
+                    font=header_font,
+                    alignment=header_alignment,
+                    fill=header_fill,
+                )
 
             current_row = update_row(worksheet, current_row)
 
             # Themes and Classes
-            previous_theme = previous_class = previous_abrev = previous_table = previous_description_de = previous_description_fr = "dummy"
+            previous_theme = previous_class = previous_abrev = previous_table = (
+                previous_description_de
+            ) = previous_description_fr = "dummy"
             for theme in yaml_data.get("themes", []):
-                current_row = self._write_theme(worksheet, theme, current_row, set_cell, update_row)
+                current_row = self._write_theme(
+                    worksheet, theme, current_row, set_cell, update_row
+                )
 
                 for cls in theme.get("classes", []):
-                    current_row = self._write_class(worksheet, cls, current_row, set_cell, update_row)
+                    current_row = self._write_class(
+                        worksheet, cls, current_row, set_cell, update_row
+                    )
 
             # Set column widths
             dim_holder = DimensionHolder(worksheet=worksheet)
             for col in range(worksheet.min_column, worksheet.max_column + 1):
                 column_name = get_column_letter(col)
                 width = 75 if column_name in ["C", "D"] else 20
-                dim_holder[column_name] = ColumnDimension(worksheet, min=col, max=col, width=width)
+                dim_holder[column_name] = ColumnDimension(
+                    worksheet, min=col, max=col, width=width
+                )
             worksheet.column_dimensions = dim_holder
 
     def _write_theme(self, worksheet, theme, current_row, set_cell, update_row):
@@ -204,9 +249,15 @@ class Datamodel:
 
         if theme_name:
             set_cell(worksheet, current_row, 1, "Theme", Font(bold=True, name="Arial"))
-            set_cell(worksheet, current_row, 2, theme_name, Font(size=20, bold=True, name="Arial"))
+            set_cell(
+                worksheet,
+                current_row,
+                2,
+                theme_name,
+                Font(size=20, bold=True, name="Arial"),
+            )
             current_row = update_row(worksheet, current_row, height=30)
-        
+
         return current_row
 
     def _write_class(self, worksheet, cls, current_row, set_cell, update_row):
@@ -218,28 +269,45 @@ class Datamodel:
         description_fr = dequote(cls.get("description", {}).get("fr", ""))
 
         # Write Class details
-        set_cell(worksheet, current_row, 1, "Class", Font(bold=True, name="Arial"))
-        set_cell(worksheet, current_row, 2, class_name, Font(size=14, bold=True, name="Arial"))
+        set_cell(worksheet, current_row, 1, "Class", FONT_ARIAL_BOLD)
+        set_cell(
+            worksheet,
+            current_row,
+            2,
+            class_name,
+            Font(size=14, bold=True, name="Arial"),
+        )
         current_row = update_row(worksheet, current_row, height=20)
 
         # Description
-        my_align = Alignment(wrapText=True, vertical="top")
-        set_cell(worksheet, current_row, 1, "Description", Font(bold=True, name="Arial"), alignment=my_align)
-        set_cell(worksheet, current_row, 3, description_de, alignment=my_align)
-        set_cell(worksheet, current_row, 4, description_fr, alignment=my_align)
+
+        set_cell(
+            worksheet,
+            current_row,
+            1,
+            "Description",
+            FONT_ARIAL_BOLD,
+            alignment=TEXT_WRAP_ALIGN_TOP,
+        )
+        set_cell(
+            worksheet, current_row, 3, description_de, alignment=TEXT_WRAP_ALIGN_TOP
+        )
+        set_cell(
+            worksheet, current_row, 4, description_fr, alignment=TEXT_WRAP_ALIGN_TOP
+        )
         current_row = update_row(worksheet, current_row, height=100)
 
         # Abbreviation and Table
-        set_cell(worksheet, current_row, 1, "Abrev", Font(bold=True, name="Arial"))
+        set_cell(worksheet, current_row, 1, "Abrev", FONT_ARIAL_BOLD)
         set_cell(worksheet, current_row, 2, abrev)
         current_row = update_row(worksheet, current_row)
 
-        set_cell(worksheet, current_row, 1, "Table", Font(bold=True, name="Arial"))
+        set_cell(worksheet, current_row, 1, "Table", FONT_ARIAL_BOLD)
         set_cell(worksheet, current_row, 2, table)
         current_row = update_row(worksheet, current_row)
 
         # Attributes
-        set_cell(worksheet, current_row, 1, "Attributes", Font(bold=True, name="Arial"))
+        set_cell(worksheet, current_row, 1, "Attributes", FONT_ARIAL_BOLD)
         current_row = update_row(worksheet, current_row)
 
         for attr in cls.get("attributes", []):
@@ -251,19 +319,35 @@ class Datamodel:
             cardinality = f"[{attr.get('cardinality', '')}]"
 
             # Write attribute details
-            set_cell(worksheet, current_row, 2, attr_name.upper(), alignment=my_align)
-            set_cell(worksheet, current_row, 3, attr_desc_de, alignment=my_align)
-            set_cell(worksheet, current_row, 4, attr_desc_fr, alignment=my_align)
-            set_cell(worksheet, current_row, 5, attr_type, alignment=my_align)
-            set_cell(worksheet, current_row, 6, mandatory, alignment=my_align)
-            set_cell(worksheet, current_row, 7, cardinality, alignment=my_align)
+            set_cell(
+                worksheet,
+                current_row,
+                2,
+                attr_name.upper(),
+                alignment=TEXT_WRAP_ALIGN_TOP,
+            )
+            set_cell(
+                worksheet, current_row, 3, attr_desc_de, alignment=TEXT_WRAP_ALIGN_TOP
+            )
+            set_cell(
+                worksheet, current_row, 4, attr_desc_fr, alignment=TEXT_WRAP_ALIGN_TOP
+            )
+            set_cell(
+                worksheet, current_row, 5, attr_type, alignment=TEXT_WRAP_ALIGN_TOP
+            )
+            set_cell(
+                worksheet, current_row, 6, mandatory, alignment=TEXT_WRAP_ALIGN_TOP
+            )
+            set_cell(
+                worksheet, current_row, 7, cardinality, alignment=TEXT_WRAP_ALIGN_TOP
+            )
             current_row = update_row(worksheet, current_row)
 
         current_row = update_row(worksheet, current_row, height=20)
 
         return current_row
 
-    def export_to_yaml(self, file_path):
+    def to_yaml(self, file_path):
         """Export the yaml_data structure to a YAML file."""
         yaml = YAML()
         output_data = {
@@ -273,7 +357,7 @@ class Datamodel:
         with open(file_path, "w") as yaml_file:
             yaml.dump(output_data, yaml_file)
 
-    def import_from_yaml(self, file_path):
+    def from_yaml(self, file_path):
         """Import data from a YAML file into the yaml_data structure."""
         with open(file_path, "r", encoding="utf-8") as yaml_file:
             self.yaml_data = yaml.load(yaml_file, Loader=yaml.FullLoader)
@@ -284,16 +368,16 @@ if __name__ == "__main__":
     xlsx_file = "modelclass.xlsx"
     datamodel = Datamodel()
     logger.info("Loading original model form YAML")
-    datamodel.import_from_yaml("datamodel.yaml")
+    datamodel.from_yaml("datamodel.yaml")
     logger.info(datamodel.yaml_data)
 
     logger.info(f"Export model to Excel: {xlsx_file}")
     # datamodel.export_to_yaml("output.yaml")
-    datamodel.export_to_excel(xlsx_file)
+    datamodel.to_excel(xlsx_file)
     logger.info(f"Import from  Excel {xlsx_file}")
-    datamodel.import_from_excel(xlsx_file)
+    datamodel.from_excel(xlsx_file)
     # logger.info(json.dumps(datamodel.yaml_data, indent=4, cls=DateTimeEncoder))
 
     logger.info("Export to YAML")
 
-    datamodel.export_to_yaml("modelclass.yaml")
+    datamodel.to_yaml("modelclass.yaml")
