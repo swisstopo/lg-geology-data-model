@@ -130,274 +130,140 @@ class Datamodel:
 
     def export_to_excel(self, file_path):
         """Export the yaml_data structure to an Excel file."""
-
         yaml_data = self.yaml_data
 
-        # Prepare the data for DataFrame
-        data = []
-        previous_theme = "dummy"
-        previous_class = "dummy"
-        previous_abrev = "dummy"
-        previous_table = "dummy"
-        previous_description_de = "dummy"
-        previous_description_fr = "dummy"
+        # Helper Functions
+        def set_cell(worksheet, row, col, value, font=None, alignment=None, fill=None):
+            cell = worksheet.cell(row=row, column=col, value=value)
+            if font:
+                cell.font = font
+            if alignment:
+                cell.alignment = alignment
+            if fill:
+                cell.fill = fill
+            return cell
 
-        # Create an Excel file
-        # file_path = "basic_excel.xlsx"
+        def merge_and_format(worksheet, start_row, start_col, end_row, end_col, value, font):
+            worksheet.merge_cells(start_row=start_row, start_column=start_col, end_row=end_row, end_column=end_col)
+            cell = worksheet.cell(row=start_row, column=start_col)
+            cell.value = value
+            cell.font = font
+
+        def update_row(worksheet, current_row, height=20):
+            worksheet.row_dimensions[current_row].height = height
+            return current_row + 1
+
+        # Excel Writer
         with pd.ExcelWriter(file_path, engine="openpyxl") as writer:
-            current_row = 1  # Starting row for writing data
-            worksheet = (
-                writer.sheets["Sheet1"]
-                if "Sheet1" in writer.sheets
-                else writer.book.create_sheet("Sheet1")
-            )
-            data = []
+            worksheet = writer.book.create_sheet("Sheet1")
 
-            # Title
-            schema_version = yaml_data.get("version", "")
-            model = yaml_data.get("model", {})
-            revision = model.get("revision", "")
-            revision_date = model.get("revision_date", "")
-
+            # Title Section
+            current_row = 1
             title_font = Font(size=20, bold=True, name="Arial")
-
-            cell = worksheet["A1"]
-            cell.value = f"Geology Data Model"
-            cell.font = title_font
-            worksheet.merge_cells(start_row=1, start_column=1, end_row=1, end_column=3)
+            merge_and_format(worksheet, 1, 1, 1, 3, "Geology Data Model", title_font)
             worksheet.row_dimensions[current_row].height = 30
 
-            cell = worksheet["A2"]
-            cell.value = "Revision"
-            cell.font = Font(size=12, bold=True, name="Arial")
-            cell = worksheet["B2"]
-            cell.value = revision
-            cell.font = Font(size=12, bold=True, name="Arial")
+            # Metadata
+            metadata_font = Font(size=12, bold=True, name="Arial")
+            set_cell(worksheet, 2, 1, "Revision", metadata_font)
+            set_cell(worksheet, 2, 2, yaml_data.get("model", {}).get("revision", ""), metadata_font)
+            set_cell(worksheet, 3, 1, "Date", metadata_font)
+            set_cell(worksheet, 3, 2, yaml_data.get("model", {}).get("revision_date", ""), metadata_font)
+            set_cell(worksheet, 4, 1, "Schema", metadata_font)
+            set_cell(worksheet, 4, 2, yaml_data.get("version", ""), metadata_font)
 
-            cell = worksheet["A3"]
-            cell.value = "Date"
-            cell.font = Font(size=12, bold=True, name="Arial")
-            cell = worksheet["B3"]
-            cell.value = revision_date
-            cell.font = Font(size=12, bold=True, name="Arial")
-
-            cell = worksheet["A4"]
-            cell.value = "Schema"
-            cell.font = Font(size=12, bold=True, name="Arial")
-            cell = worksheet["B4"]
-            cell.value = schema_version
-            cell.font = Font(size=12, bold=True, name="Arial")
-
-            # Format the headers (bold, size 14, center alignment)
-            current_row += 4
-
-            worksheet[f"C{current_row}"] = "Deutsch"
-            worksheet[f"D{current_row}"] = "Français"
-            worksheet[f"E{current_row}"] = "Type"
-            worksheet[f"F{current_row}"] = "Mandatory"
-            worksheet[f"G{current_row}"] = "Cardinality"
-
+            # Header Section
+            current_row = update_row(worksheet, current_row + 4)
             header_font = Font(size=14, bold=True, color="dddddd", name="Arial")
             header_alignment = Alignment(horizontal="center", vertical="center")
-            header_fill = PatternFill(
-                start_color="333333", end_color="dddddd", fill_type="solid"
-            )
+            header_fill = PatternFill(start_color="333333", end_color="dddddd", fill_type="solid")
 
-            # Apply the formatting to the headers
-            for col in [chr(i) for i in range(ord("A"), ord("G") + 1)]:
-                cell = worksheet[f"{col}{current_row}"]
-                cell.font = header_font
-                cell.alignment = header_alignment
-                cell.fill = header_fill
+            headers = ["Deutsch", "Français", "Type", "Mandatory", "Cardinality"]
+            for i, header in enumerate(headers, start=3):
+                set_cell(worksheet, current_row, i, header, font=header_font, alignment=header_alignment, fill=header_fill)
 
-            current_row += 1
+            current_row = update_row(worksheet, current_row)
 
+            # Themes and Classes
+            previous_theme = previous_class = previous_abrev = previous_table = previous_description_de = previous_description_fr = "dummy"
             for theme in yaml_data.get("themes", []):
-                theme_name = theme.get("name", "")
-                # theme_desc_de = theme.get("description", {}).get("de", "")
-                # theme_desc_fr = theme.get("description", {}).get("fr", "")
+                current_row = self._write_theme(worksheet, theme, current_row, set_cell, update_row)
+
                 for cls in theme.get("classes", []):
-                    class_name = cls.get("name", "")
-                    if "Unconsolidated_Deposits_PLG" in class_name:
-                        logger.debug(cls.get("description", {}))
-                    abrev = cls.get("abrev", "")
-                    table = cls.get("table", "")
-                    description_de = cls.get("description", {}).get("de", "")
-                    description_fr = cls.get("description", {}).get("fr", "")
-                    logger.debug(
-                        description_de.strip()
-                        if description_de != previous_description_de
-                        else ""
-                    )
+                    current_row = self._write_class(worksheet, cls, current_row, set_cell, update_row)
 
-                    # Iterate over attributes
-                    for attr in cls.get("attributes", []):
-                        attr_name = attr.get("name", "")
-                        attr_type = attr.get("att_type", "")
-                        attr_value = attr.get("value", "")
-                        attr_desc_de = attr.get("description", {}).get("de", "")
-                        attr_desc_fr = attr.get("description", {}).get("fr", "")
-                        cardinality = attr.get("cardinality", "")
-                        mandatory = attr.get("mandatory", False)
+            # Set column widths
+            dim_holder = DimensionHolder(worksheet=worksheet)
+            for col in range(worksheet.min_column, worksheet.max_column + 1):
+                column_name = get_column_letter(col)
+                width = 75 if column_name in ["C", "D"] else 20
+                dim_holder[column_name] = ColumnDimension(worksheet, min=col, max=col, width=width)
+            worksheet.column_dimensions = dim_holder
 
-                        (
-                            theme_name if theme_name != previous_theme else "",
-                        )  # Omit repeating theme name
-                        (
-                            class_name if class_name != previous_class else "",
-                        )  # Omit repeating class name
-                        (
-                            description_de
-                            if description_de != previous_description_de
-                            else "",
-                        )
-                        (
-                            description_fr
-                            if description_fr != previous_description_fr
-                            else "",
-                        )
+    def _write_theme(self, worksheet, theme, current_row, set_cell, update_row):
+        """Private method to write theme data to the worksheet."""
+        theme_name = theme.get("name", "")
 
-                        # Prepare the row data
-                        row_data = [
-                            # "Abbreviation": abrev if abrev != previous_abrev else "",  # Omit repeating class name
-                            # "Table Name": table if table != previous_table else "",  # Omit repeating class name,
-                            attr_name,
-                            attr_desc_de,
-                            attr_desc_fr,
-                            attr_type,
-                            attr_value,
-                            "yes" if mandatory else "no",
-                            f"[{cardinality}]",
-                        ]
-                        data.append(row_data)
+        if theme_name:
+            set_cell(worksheet, current_row, 1, "Theme", Font(bold=True, name="Arial"))
+            set_cell(worksheet, current_row, 2, theme_name, Font(size=20, bold=True, name="Arial"))
+            current_row = update_row(worksheet, current_row, height=30)
+        
+        return current_row
 
-                        # Theme
-                        if theme_name != previous_theme:
-                            cell = worksheet.cell(
-                                row=current_row, column=1, value="Theme"
-                            )
-                            cell.font = Font(bold=True, name="Arial")
-                            cell = worksheet.cell(
-                                row=current_row, column=2, value=theme_name
-                            )
-                            cell.font = font = Font(size=20, bold=True, name="Arial")
+    def _write_class(self, worksheet, cls, current_row, set_cell, update_row):
+        """Private method to write class data and its attributes to the worksheet."""
+        class_name = cls.get("name", "")
+        abrev = cls.get("abrev", "")
+        table = cls.get("table", "")
+        description_de = cls.get("description", {}).get("de", "")
+        description_fr = cls.get("description", {}).get("fr", "")
 
-                        # Classe
-                        cell = worksheet.cell(
-                            row=current_row + 1, column=1, value="Class"
-                        )
-                        cell.font = Font(bold=True, name="Arial")
+        # Write Class details
+        set_cell(worksheet, current_row, 1, "Class", Font(bold=True, name="Arial"))
+        set_cell(worksheet, current_row, 2, class_name, Font(size=14, bold=True, name="Arial"))
+        current_row = update_row(worksheet, current_row, height=20)
 
-                        cell = worksheet.cell(
-                            row=current_row + 1, column=2, value=class_name
-                        )
-                        cell.font = Font(size=14, bold=True, name="Arial")
+        # Description
+        my_align = Alignment(wrapText=True, vertical="top")
+        set_cell(worksheet, current_row, 1, "Description", Font(bold=True, name="Arial"), alignment=my_align)
+        set_cell(worksheet, current_row, 3, description_de, alignment=my_align)
+        set_cell(worksheet, current_row, 4, description_fr, alignment=my_align)
+        current_row = update_row(worksheet, current_row, height=100)
 
-                        my_align = Alignment(wrapText=True, vertical="top")
-                        for col_range in range(1, 12):
-                            cell_title = worksheet.cell(current_row + 1, col_range)
-                            cell_title.fill = PatternFill(
-                                start_color="dddddd",
-                                end_color="dddddd",
-                                fill_type="solid",
-                            )
-                        worksheet.cell(
-                            row=current_row + 2, column=3, value=description_de
-                        )
-                        worksheet.cell(
-                            row=current_row + 2, column=4, value=description_fr
-                        )
+        # Abbreviation and Table
+        set_cell(worksheet, current_row, 1, "Abrev", Font(bold=True, name="Arial"))
+        set_cell(worksheet, current_row, 2, abrev)
+        current_row = update_row(worksheet, current_row)
 
-                        worksheet.cell(
-                            row=current_row + 2, column=3
-                        ).alignment = my_align
-                        worksheet.cell(
-                            row=current_row + 2, column=4
-                        ).alignment = my_align
-                        cell = worksheet.cell(
-                            row=current_row + 2, column=1, value="Description"
-                        )
-                        cell.font = Font(bold=True, name="Arial")
-                        cell.alignment = my_align
+        set_cell(worksheet, current_row, 1, "Table", Font(bold=True, name="Arial"))
+        set_cell(worksheet, current_row, 2, table)
+        current_row = update_row(worksheet, current_row)
 
-                        worksheet.cell(row=current_row + 3, column=2, value=abrev)
-                        cell = worksheet.cell(
-                            row=current_row + 3, column=1, value="Abrev"
-                        )
-                        cell.font = Font(bold=True, name="Arial")
+        # Attributes
+        set_cell(worksheet, current_row, 1, "Attributes", Font(bold=True, name="Arial"))
+        current_row = update_row(worksheet, current_row)
 
-                        worksheet.cell(row=current_row + 4, column=2, value=table)
-                        cell = worksheet.cell(
-                            row=current_row + 4, column=1, value="Table"
-                        )
-                        cell.font = Font(bold=True, name="Arial")
+        for attr in cls.get("attributes", []):
+            attr_name = attr.get("name", "")
+            attr_desc_de = attr.get("description", {}).get("de", "")
+            attr_desc_fr = attr.get("description", {}).get("fr", "")
+            attr_type = attr.get("att_type", "")
+            mandatory = "yes" if attr.get("mandatory", False) else "no"
+            cardinality = f"[{attr.get('cardinality', '')}]"
 
-                        cell = worksheet.cell(
-                            row=current_row + 5, column=1, value="Attributes"
-                        )
-                        cell.font = Font(bold=True, name="Arial")
+            # Write attribute details
+            set_cell(worksheet, current_row, 2, attr_name.upper())
+            set_cell(worksheet, current_row, 3, attr_desc_de, alignment=my_align)
+            set_cell(worksheet, current_row, 4, attr_desc_fr, alignment=my_align)
+            set_cell(worksheet, current_row, 5, attr_type)
+            set_cell(worksheet, current_row, 6, mandatory)
+            set_cell(worksheet, current_row, 7, cardinality)
+            current_row = update_row(worksheet, current_row)
 
-                        worksheet.row_dimensions[current_row].height = 30
-                        worksheet.row_dimensions[current_row + 1].height = 20
+        current_row = update_row(worksheet, current_row, height=20)
 
-                        worksheet.row_dimensions[current_row + 2].height = 100
-
-                        column_index = 0
-
-                        current_row += 5
-
-                        for attr in data:
-                            (
-                                attr_name,
-                                attr_desc_de,
-                                attr_desc_fr,
-                                attr_type,
-                                attr_value,
-                                mandatory,
-                                cardinality,
-                            ) = attr
-
-                            worksheet.cell(
-                                row=current_row, column=2, value=attr_name.upper()
-                            )  # Indented description
-                            worksheet.cell(
-                                row=current_row, column=3, value=attr_desc_de
-                            ).alignment = my_align  # Indented cardinality
-                            worksheet.cell(
-                                row=current_row, column=4, value=attr_desc_fr
-                            ).alignment = my_align  # Indented mandatory
-
-                            worksheet.cell(row=current_row, column=5, value=attr_type)
-                            worksheet.cell(row=current_row, column=6, value=mandatory)
-                            worksheet.cell(row=current_row, column=7, value=cardinality)
-                            current_row += 1  # Move down for each attribute
-
-                        current_row += 2  # Next class
-
-                        dim_holder = DimensionHolder(worksheet=worksheet)
-
-                        for col in range(
-                            worksheet.min_column, worksheet.max_column + 1
-                        ):
-                            column_name = get_column_letter(col)
-                            width = 20
-                            if column_name.upper() in ["C", "D"]:
-                                width = 75
-                            if column_name.upper() in ["E", "F", "G"]:
-                                width = 20
-
-                            dim_holder[column_name] = ColumnDimension(
-                                worksheet, min=col, max=col, width=width
-                            )
-                            worksheet.column_dimensions = dim_holder
-
-                        # Update previous_theme and previous_class
-                        previous_theme = theme_name
-                        previous_class = class_name
-                        previous_abrev = abrev
-                        previous_table = table
-                        previous_description_de = description_de
-                        previous_description_fr = description_fr
+        return current_row
 
     def export_to_yaml(self, file_path):
         """Export the yaml_data structure to a YAML file."""
