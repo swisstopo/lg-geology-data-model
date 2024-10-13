@@ -401,10 +401,10 @@ def export(datamodel, output, format):
     
 
     datamodel = model.Datamodel()
-    datamodel.import_from_yaml(yaml_path)
+    datamodel.from_yaml(yaml_path)
     logger.info("Export to Excel")
     # datamodel.export_to_yaml("output.yaml")
-    datamodel.export_to_excel(output)
+    datamodel.to_excel(output)
 
 
 @click.command()
