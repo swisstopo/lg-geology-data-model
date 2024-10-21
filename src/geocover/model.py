@@ -217,6 +217,7 @@ class Datamodel:
                 # theme_desc_de = theme.get("description", {}).get("de", "")
                 # theme_desc_fr = theme.get("description", {}).get("fr", "")
                 for cls in theme.get("classes", []):
+                    data = []
                     class_name = cls.get("name", "")
                     if "Unconsolidated_Deposits_PLG" in class_name:
                         logger.debug(cls.get("description", {}))
@@ -271,8 +272,8 @@ class Datamodel:
                         ]
                         data.append(row_data)
 
-                        # Theme
-                        if theme_name != previous_theme:
+                    # Theme
+                    if theme_name != previous_theme:
                             cell = worksheet.cell(
                                 row=current_row, column=1, value="Theme"
                             )
@@ -282,122 +283,130 @@ class Datamodel:
                             )
                             cell.font = font = Font(size=20, bold=True, name="Arial")
 
-                        # Classe
-                        cell = worksheet.cell(
-                            row=current_row + 1, column=1, value="Class"
-                        )
-                        cell.font = Font(bold=True, name="Arial")
-
-                        cell = worksheet.cell(
-                            row=current_row + 1, column=2, value=class_name
-                        )
-                        cell.font = Font(size=14, bold=True, name="Arial")
-
-                        my_align = Alignment(wrapText=True, vertical="top")
-                        for col_range in range(1, 12):
-                            cell_title = worksheet.cell(current_row + 1, col_range)
-                            cell_title.fill = PatternFill(
-                                start_color="dddddd",
-                                end_color="dddddd",
-                                fill_type="solid",
+                    # Classe
+                    if class_name != previous_class:
+                            cell = worksheet.cell(
+                                row=current_row + 1, column=1, value="Class"
                             )
-                        worksheet.cell(
-                            row=current_row + 2, column=3, value=description_de
-                        )
-                        worksheet.cell(
-                            row=current_row + 2, column=4, value=description_fr
-                        )
+                            cell.font = Font(bold=True, name="Arial")
 
-                        worksheet.cell(
-                            row=current_row + 2, column=3
-                        ).alignment = my_align
-                        worksheet.cell(
-                            row=current_row + 2, column=4
-                        ).alignment = my_align
-                        cell = worksheet.cell(
-                            row=current_row + 2, column=1, value="Description"
-                        )
-                        cell.font = Font(bold=True, name="Arial")
-                        cell.alignment = my_align
+                            cell = worksheet.cell(
+                                row=current_row + 1, column=2, value=class_name
+                            )
+                            cell.font = Font(size=14, bold=True, name="Arial")
 
-                        worksheet.cell(row=current_row + 3, column=2, value=abrev)
-                        cell = worksheet.cell(
-                            row=current_row + 3, column=1, value="Abrev"
-                        )
-                        cell.font = Font(bold=True, name="Arial")
-
-                        worksheet.cell(row=current_row + 4, column=2, value=table)
-                        cell = worksheet.cell(
-                            row=current_row + 4, column=1, value="Table"
-                        )
-                        cell.font = Font(bold=True, name="Arial")
-
-                        cell = worksheet.cell(
-                            row=current_row + 5, column=1, value="Attributes"
-                        )
-                        cell.font = Font(bold=True, name="Arial")
-
-                        worksheet.row_dimensions[current_row].height = 30
-                        worksheet.row_dimensions[current_row + 1].height = 20
-
-                        worksheet.row_dimensions[current_row + 2].height = 100
-
-                        column_index = 0
-
-                        current_row += 5
-
-                        for attr in data:
-                            (
-                                attr_name,
-                                attr_desc_de,
-                                attr_desc_fr,
-                                attr_type,
-                                attr_value,
-                                mandatory,
-                                cardinality,
-                            ) = attr
+                            my_align = Alignment(wrapText=True, vertical="top")
+                            for col_range in range(1, 12):
+                                cell_title = worksheet.cell(current_row + 1, col_range)
+                                cell_title.fill = PatternFill(
+                                    start_color="dddddd",
+                                    end_color="dddddd",
+                                    fill_type="solid",
+                                )
+                            worksheet.cell(
+                                row=current_row + 2, column=3, value=description_de
+                            )
+                            worksheet.cell(
+                                row=current_row + 2, column=4, value=description_fr
+                            )
 
                             worksheet.cell(
-                                row=current_row, column=2, value=attr_name.upper()
-                            )  # Indented description
+                                row=current_row + 2, column=3
+                            ).alignment = my_align
                             worksheet.cell(
-                                row=current_row, column=3, value=attr_desc_de
-                            ).alignment = my_align  # Indented cardinality
-                            worksheet.cell(
-                                row=current_row, column=4, value=attr_desc_fr
-                            ).alignment = my_align  # Indented mandatory
+                                row=current_row + 2, column=4
+                            ).alignment = my_align
+                            cell = worksheet.cell(
+                                row=current_row + 2, column=1, value="Description"
+                            )
+                            cell.font = Font(bold=True, name="Arial")
+                            cell.alignment = my_align
 
-                            worksheet.cell(row=current_row, column=5, value=attr_type)
-                            worksheet.cell(row=current_row, column=6, value=mandatory)
-                            worksheet.cell(row=current_row, column=7, value=cardinality)
-                            current_row += 1  # Move down for each attribute
+                            worksheet.cell(row=current_row + 3, column=2, value=abrev)
+                            cell = worksheet.cell(
+                                row=current_row + 3, column=1, value="Abrev"
+                            )
+                            cell.font = Font(bold=True, name="Arial")
 
-                        current_row += 2  # Next class
+                            worksheet.cell(row=current_row + 4, column=2, value=table)
+                            cell = worksheet.cell(
+                                row=current_row + 4, column=1, value="Table"
+                            )
+                            cell.font = Font(bold=True, name="Arial")
 
-                        dim_holder = DimensionHolder(worksheet=worksheet)
+                            cell = worksheet.cell(
+                                row=current_row + 5, column=1, value="Attributes"
+                            )
+                            cell.font = Font(bold=True, name="Arial")
 
-                        for col in range(
-                            worksheet.min_column, worksheet.max_column + 1
-                        ):
-                            column_name = get_column_letter(col)
-                            width = 20
-                            if column_name.upper() in ["C", "D"]:
-                                width = 75
-                            if column_name.upper() in ["E", "F", "G"]:
+                            worksheet.row_dimensions[current_row].height = 30
+                            worksheet.row_dimensions[current_row + 1].height = 20
+
+                            worksheet.row_dimensions[current_row + 2].height = 100
+
+                            column_index = 0
+
+                            current_row += 5
+
+                            for attr in data:
+                                (
+                                    attr_name,
+                                    attr_desc_de,
+                                    attr_desc_fr,
+                                    attr_type,
+                                    attr_value,
+                                    mandatory,
+                                    cardinality,
+                                ) = attr
+
+                                worksheet.cell(
+                                    row=current_row, column=2, value=attr_name.upper()
+                                )  # Indented description
+                                worksheet.cell(
+                                    row=current_row, column=3, value=attr_desc_de
+                                ).alignment = my_align  # Indented cardinality
+                                worksheet.cell(
+                                    row=current_row, column=4, value=attr_desc_fr
+                                ).alignment = my_align  # Indented mandatory
+
+                                worksheet.cell(
+                                    row=current_row, column=5, value=attr_type
+                                )
+                                worksheet.cell(
+                                    row=current_row, column=6, value=mandatory
+                                )
+                                worksheet.cell(
+                                    row=current_row, column=7, value=cardinality
+                                )
+                                current_row += 1  # Move down for each attribute
+
+                            current_row += 2  # Next class
+
+                            dim_holder = DimensionHolder(worksheet=worksheet)
+
+                            for col in range(
+                                worksheet.min_column, worksheet.max_column + 1
+                            ):
+                                column_name = get_column_letter(col)
                                 width = 20
+                                if column_name.upper() in ["C", "D"]:
+                                    width = 75
+                                if column_name.upper() in ["E", "F", "G"]:
+                                    width = 20
 
-                            dim_holder[column_name] = ColumnDimension(
-                                worksheet, min=col, max=col, width=width
-                            )
-                            worksheet.column_dimensions = dim_holder
+                                dim_holder[column_name] = ColumnDimension(
+                                    worksheet, min=col, max=col, width=width
+                                )
+                                worksheet.column_dimensions = dim_holder
 
-                        # Update previous_theme and previous_class
-                        previous_theme = theme_name
-                        previous_class = class_name
-                        previous_abrev = abrev
-                        previous_table = table
-                        previous_description_de = description_de
-                        previous_description_fr = description_fr
+                    # Update previous_theme and previous_class
+                    data = []
+                    previous_theme = theme_name
+                    previous_class = class_name
+                    previous_abrev = abrev
+                    previous_table = table
+                    previous_description_de = description_de
+                    previous_description_fr = description_fr
 
     def export_to_yaml(self, file_path):
         """Export the yaml_data structure to a YAML file."""
