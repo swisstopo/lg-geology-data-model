@@ -160,18 +160,38 @@ Convertir en PDF (A3)
 
 # Autres fonctions
 
-## Extraire les règles des layerfiles
+## Extraire les règles utiisées dans layerfiles d'un projet ESRI ArcGis Pro
 
     geocover rules -l INFO
 
 ## Compter les features dans un périmètre donné
 
+Le fichier contenant les règles (`layer_symbols_rules.json`) a été généré avec la commande `geocover rules`.
+
 With an arbitrary polyon (GeoJSON or ESRI Shapefile)
 
-    geocover filter --geometry san_bernardino.geojson  --gdb-path  I:\backup\GCOVER\daily\20240425_0300_2030-12-31.gdb  -s san_bernardino.json
+    geocover filter --geometry san_bernardino.geojson  --gdb-path  I:\backup\GCOVER\daily\20240425_0300_2030-12-31.gdb   --ouput  san_bernardino.json
 
 
 Or with a bounding box:
 
 
-    geocover filter --bbox 2760000,1146000,2777500,1158000  --gdb-path  I:\backup\GCOVER\daily\20240425_0300_2030-12-31.gdb  -s san_bernardino.xlsx
+    geocover filter --bbox 2760000,1146000,2777500,1158000  --gdb-path  I:\backup\GCOVER\daily\20240425_0300_2030-12-31.gdb   --ouput  san_bernardino.xlsx
+
+The ouput format is either `JSON`or `CSV` depending on the file extension of the ouput file (`.csv`, `.xlsx` or `.json` )
+
+## Migration de schema
+
+
+### Dumping schema
+
+Exécuter la commande suivante avant et après la migration de schéma
+
+    geocover schema --workspace  D:/connections/GCOVERP@osa.sde  --ouput dumps/PRODUCTION
+    
+### Différences
+
+La commande suivante permet d'afficher les différences avant et après la migration :
+
+    jsondiff --indent  4 --preserve-unicode dumps/PRODUCTION/geocover-schema-sde-2024-10-24.json  dumps/PRODUCTION/geocover-schema-sde-2024-10-26.json  > production-diff-october-2024.txt
+
