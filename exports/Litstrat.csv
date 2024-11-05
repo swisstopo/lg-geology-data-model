@@ -641,6 +641,10 @@ OBJECTID,GEOL_CODE_INT,GEOL_CODE,GERMAN,TREE_LEVEL,PARENT_REF
 7738,15200685,Vlit500685,"Courgenay-, Balsthal- und Villigen-Formation, undifferenziert",4.0,15200160.0
 7739,15200686,Vlit500686,Pichoux-Formation: Korallenfazies,4.0,15200039.0
 7740,15200687,Vlit500687,Pichoux-Formation: Schwammfazies,4.0,15200039.0
+8258,15200688,Vlit500688,Kalter-Wangen-Formation: Konglomerat-Fazies,4.0,15200647.0
+8052,15200689,Vlit500689,Kalter-Wangen-Formation: Sandstein-Mergel-Fazies,4.0,15200647.0
+8260,15200690,Vlit500690,Heilsberg-Bentonit,5.0,15200689.0
+8261,15200691,Vlit500691,Humlikon-Bentonit,3.0,15200255.0
 501,15201001,Vlit501001,"Ältere Ablagerungen, undifferenziert",1.0,0.0
 433,15201002,Vlit501002,Niederterrasse,1.0,0.0
 505,15201003,Vlit501003,Hochterrasse,1.0,0.0
@@ -690,7 +694,7 @@ OBJECTID,GEOL_CODE_INT,GEOL_CODE,GERMAN,TREE_LEVEL,PARENT_REF
 511,15201047,Vlit501047,Glazi-lakustrische Serie,3.0,15201045.0
 512,15201048,Vlit501048,Mittlere Klettgauschotter,3.0,15201045.0
 513,15201049,Vlit501049,Untere Klettgauschotter,3.0,15201045.0
-506,15201050,Vlit501050,Gondiswil-Interglazial (Letztes Integlazial),2.0,15201003.0
+506,15201050,Vlit501050,Gondiswil-Interglazial (Letztes Interglazial),2.0,15201003.0
 507,15201051,Vlit501051,Flurlingen-Quelltuff,3.0,15201050.0
 508,15201052,Vlit501052,Birrfeld- und Klettgau-Paläoböden,3.0,15201050.0
 526,15201053,Vlit501053,Beringen-Eiszeit,2.0,15201003.0
@@ -1091,6 +1095,154 @@ OBJECTID,GEOL_CODE_INT,GEOL_CODE,GERMAN,TREE_LEVEL,PARENT_REF
 7096,15201565,Vlit501565,Stetten-Schotter,4.0,15201064.0
 7436,15201566,Vlit501566,Plaffeien-Seetone,3.0,15201007.0
 7438,15201567,Vlit501567,Plasselb-Stauschotter,4.0,15201008.0
+8114,15201568,Vlit501568,Uetliberg-Lehm,,15201400.0
+8115,15201569,Vlit501569,Schotter der Thur,,15201400.0
+8116,15201570,Vlit501570,Schwarzwald-Schotter,2.0,15201249.0
+8117,15201571,Vlit501571,Neuenburg-Formation,3.0,15201534.0
+8118,15201572,Vlit501572,Hartheim-Member,4.0,15201571.0
+8119,15201573,Vlit501573,Nambsheim-Member,4.0,15201571.0
+8120,15201574,Vlit501574,Breisgau-Formation,1.0,0.0
+8121,15201575,Vlit501575,Balgau-Member,2.0,15201574.0
+8122,15201576,Vlit501576,Weinstetten-Member,2.0,15201574.0
+8123,15201577,Vlit501577,Iffezheim-Formation,1.0,0.0
+8124,15201578,Vlit501578,Mannheim-Formation,1.0,0.0
+8125,15201579,Vlit501579,Etzgen-Formation,3.0,15201534.0
+8126,15201580,Vlit501580,Niederuster-Schotter,4.0,15201008.0
+8127,15201581,Vlit501581,Pfungen-Formation,4.0,15201008.0
+8128,15201582,Vlit501582,Dättlikon-Stadium,4.0,15201008.0
+8129,15201583,Vlit501583,Dübendorf-Stadium,4.0,15201008.0
+8130,15201584,Vlit501584,Gfenn-Stadium,4.0,15201008.0
+8131,15201585,Vlit501585,Regensdorf-Stadium,4.0,15201008.0
+8132,15201586,Vlit501586,Seeb-Stadium,4.0,15201008.0
+8133,15201587,Vlit501587,Würenlos-Stadium,4.0,15201008.0
+8134,15201588,Vlit501588,Würenlos-Stand-I,5.0,15201587.0
+8135,15201589,Vlit501589,Würenlos-Stand-II,5.0,15201587.0
+8136,15201590,Vlit501590,Bülach-Stadium,4.0,15201008.0
+8137,15201591,Vlit501591,Bülach-Stand-I,5.0,15201590.0
+8138,15201592,Vlit501592,Bülach-Stand-II,5.0,15201590.0
+8169,15201593,Vlit501593,Stein-am-Rhein-Stadium,4.0,15201008.0
+8175,15201594,Vlit501594,Stein-am-Rhein-Stand-I,5.0,15201593.0
+8141,15201595,Vlit501595,Stein-am-Rhein-Stand-II,5.0,15201593.0
+8142,15201596,Vlit501596,Stein-am-Rhein-Stand-III,5.0,15201593.0
+8143,15201597,Vlit501597,Zürich-Stadium,4.0,15201008.0
+8199,15201598,Vlit501598,Zürich-Stand-I,5.0,15201597.0
+8145,15201599,Vlit501599,Zürich-Stand-II,5.0,15201597.0
+8211,15201600,Vlit501600,Bremgarten-Stadium,4.0,15201008.0
+8147,15201601,Vlit501601,Bremgarten-I,5.0,15201600.0
+8148,15201602,Vlit501602,Bremgarten-II,5.0,15201600.0
+8229,15201603,Vlit501603,Singen-Stadium,4.0,15201008.0
+8150,15201604,Vlit501604,Feuerthalen-Stadium,4.0,15201008.0
+8151,15201605,Vlit501605,Feuerthalen-Stand-I,5.0,15201604.0
+8247,15201606,Vlit501606,Feuerthalen-Stand-II,5.0,15201604.0
+8253,15201607,Vlit501607,Schlieren-Stadium,4.0,15201008.0
+8259,15201608,Vlit501608,Bäretswil-Seeablagerung,5.0,15201607.0
+8155,15201609,Vlit501609,Hittnau-Seeablagerung,5.0,15201607.0
+8156,15201610,Vlit501610,Russikon-Seeablagerung,5.0,15201607.0
+8157,15201611,Vlit501611,Stetten-Stadium,4.0,15201008.0
+8158,15201612,Vlit501612,Stetten-Stand-I,5.0,15201611.0
+8159,15201613,Vlit501613,Stetten-Stand-II,5.0,15201611.0
+8160,15201614,Vlit501614,Diessenhofen-Stadium,4.0,15201008.0
+8161,15201615,Vlit501615,Mellingen-Stand,5.0,15201151.0
+8162,15201616,Vlit501616,Schaffhausen-Stadium,5.0,15201151.0
+8163,15201617,Vlit501617,Schaffhausen-Stand-I,6.0,15201616.0
+8164,15201618,Vlit501618,Schaffhausen-Stand-II,6.0,15201616.0
+8165,15201619,Vlit501619,Killwangen-Stadium,5.0,15201151.0
+8166,15201620,Vlit501620,"Lottstetten-, Kohlschwärze- und Zelgli-Vorstoss",4.0,15201024.0
+8167,15201621,Vlit501621,Grafschaft-Schotter,4.0,15201024.0
+8168,15201622,Vlit501622,"""Mittelterrasse""",2.0,15201001.0
+8047,15201623,Vlit501623,"Hochterrasse, unteres Niveau",2.0,15201003.0
+8170,15201624,Vlit501624,"Hochterrasse, mittleres Niveau",2.0,15201003.0
+8171,15201625,Vlit501625,"Hochterrasse, oberes Niveau",2.0,15201003.0
+8172,15201626,Vlit501626,First-Schotter,2.0,15201003.0
+8173,15201627,Vlit501627,Helltobel-Schotter,2.0,15201003.0
+8174,15201628,Vlit501628,Lettenberg-Seesedimente,2.0,15201003.0
+8054,15201629,Vlit501629,Zurzach-Formation,2.0,15201003.0
+8176,15201630,Vlit501630,Ursplen-Till,2.0,15201003.0
+8177,15201631,Vlit501631,Äntschberg-Schotter,2.0,15201003.0
+8178,15201632,Vlit501632,Oberrüti-Schotter,2.0,15201003.0
+8179,15201633,Vlit501633,Neerach-Schotter,2.0,15201003.0
+8180,15201634,Vlit501634,Bachs-Schotter,2.0,15201003.0
+8181,15201635,Vlit501635,Steighalden-Schotter,2.0,15201003.0
+8182,15201636,Vlit501636,Mühlbach-Formation,2.0,15201003.0
+8183,15201637,Vlit501637,Chilchberg-Schotter,2.0,15201003.0
+8184,15201638,Vlit501638,Frenkendorf-Schotter,2.0,15201003.0
+8185,15201639,Vlit501639,Birstal-Schotter,2.0,15201003.0
+8186,15201640,Vlit501640,Schlatt-Formation,3.0,15201053.0
+8187,15201641,Vlit501641,Illmensee-Formation,4.0,15201064.0
+8188,15201642,Vlit501642,Dietmanns-Formation,4.0,15201064.0
+8189,15201643,Vlit501643,Hasenweiler-Formation,4.0,15201064.0
+8190,15201644,Vlit501644,Haseltal-Formation,4.0,15201064.0
+8191,15201645,Vlit501645,"Birndorf-, Laufenburg- und Zeiningen-Vorstoss",4.0,15201064.0
+8192,15201646,Vlit501646,Chäppeli-Schotter,5.0,15201645.0
+8193,15201647,Vlit501647,Leuggern-Schotter,5.0,15201645.0
+8194,15201648,Vlit501648,Zelgli-Schotter,5.0,15201645.0
+8195,15201649,Vlit501649,Leibstadt-Schotter,5.0,15201645.0
+8196,15201650,Vlit501650,Dogern-Schotter,5.0,15201645.0
+8197,15201651,Vlit501651,Haldenacher-Schotter,5.0,15201645.0
+8198,15201652,Vlit501652,Allmendwald-Schotter,5.0,15201645.0
+8077,15201653,Vlit501653,Lei-Schotter,5.0,15201645.0
+8200,15201654,Vlit501654,Obersäckingen-Schotter,5.0,15201645.0
+8201,15201655,Vlit501655,Schulerholz-Formation,5.0,15201645.0
+8202,15201656,Vlit501656,Schachen-Formation,5.0,15201645.0
+8203,15201657,Vlit501657,Schmerlet-Formation,5.0,15201645.0
+8204,15201658,Vlit501658,Toktri-Formation,5.0,15201645.0
+8205,15201659,Vlit501659,Buchholz-Till,5.0,15201645.0
+8206,15201660,Vlit501660,Birndorf-Till,5.0,15201645.0
+8207,15201661,Vlit501661,Geissäcker-Schotter,4.0,15201074.0
+8208,15201662,Vlit501662,Bürgerwald-Schotter,4.0,15201074.0
+8209,15201663,Vlit501663,Hettenschwil-Schotter,4.0,15201074.0
+8210,15201664,Vlit501664,Moos-Schotter,4.0,15201074.0
+8099,15201665,Vlit501665,Schlüsselgraben-Schotter,4.0,15201074.0
+8212,15201666,Vlit501666,Hundsbel-Schotter,4.0,15201074.0
+8213,15201667,Vlit501667,Laufenburg-Schotter,4.0,15201074.0
+8214,15201668,Vlit501668,Eilez-Schotter,4.0,15201074.0
+8215,15201669,Vlit501669,St.-Margarethen-Schotter,4.0,15201074.0
+8216,15201670,Vlit501670,Hegenheim-Schotter,4.0,15201074.0
+8217,15201671,Vlit501671,Blotzheim-Schotter,4.0,15201074.0
+8218,15201672,Vlit501672,Hardwald-Schotter,4.0,15201074.0
+8219,15201673,Vlit501673,Homberg-Schotter,4.0,15201074.0
+8220,15201674,Vlit501674,Rümlang-Schotter,4.0,15201074.0
+8221,15201675,Vlit501675,Äpelöö-Schotter,3.0,15201082.0
+8222,15201676,Vlit501676,Fehrental-Schotter,3.0,15201082.0
+8223,15201677,Vlit501677,Challeren-Schotter,3.0,15201082.0
+8224,15201678,Vlit501678,Ausserberg-Schotter,3.0,15201082.0
+8225,15201679,Vlit501679,Leibstadt-Till,5.0,15201093.0
+8226,15201680,Vlit501680,Buechli-Schotter,2.0,15201004.0
+8227,15201681,Vlit501681,Bächemoos-Schotter,2.0,15201004.0
+8228,15201682,Vlit501682,Aarberg-Schotter,2.0,15201004.0
+8091,15201683,Vlit501683,Tannboden-Schotter,2.0,15201004.0
+8230,15201684,Vlit501684,Etzwil-Schotter,2.0,15201004.0
+8231,15201685,Vlit501685,Ellenbühl-Schotter,2.0,15201004.0
+8232,15201686,Vlit501686,Kegelplatz-Schotter,2.0,15201004.0
+8233,15201687,Vlit501687,Einschlag-Schotter,2.0,15201004.0
+8234,15201688,Vlit501688,Lehacker-Schotter,2.0,15201004.0
+8235,15201689,Vlit501689,Letten-Schotter,2.0,15201004.0
+8236,15201690,Vlit501690,Schwörstadt-Schotter,2.0,15201004.0
+8237,15201691,Vlit501691,Steppberg-Schotter,2.0,15201004.0
+8238,15201692,Vlit501692,Bloseberg-Schotter,2.0,15201004.0
+8239,15201693,Vlit501693,Steinebol-Schotter,2.0,15201004.0
+8240,15201694,Vlit501694,Giebenach-Schotter,2.0,15201004.0
+8241,15201695,Vlit501695,Blözen-Schotter,2.0,15201004.0
+8242,15201696,Vlit501696,Rütihard-Schotter,2.0,15201004.0
+8243,15201697,Vlit501697,Bruederholz-Schotter,2.0,15201004.0
+8244,15201698,Vlit501698,Binningen-Schotter,2.0,15201004.0
+8245,15201699,Vlit501699,Allschwil-Schotter,2.0,15201004.0
+8246,15201700,Vlit501700,Buschwiller-Schotter,2.0,15201004.0
+8278,15201701,Vlit501701,Berchenwald-Schotter,2.0,15201005.0
+8248,15201702,Vlit501702,Hörndli-Schotter,2.0,15201005.0
+8249,15201703,Vlit501703,Acheberg-Schotter,2.0,15201005.0
+8250,15201704,Vlit501704,Mühleberg-Schotter,2.0,15201005.0
+8251,15201705,Vlit501705,Mandach-Schotter,2.0,15201005.0
+8252,15201706,Vlit501706,Duttenberg-Schotter,2.0,15201005.0
+8042,15201707,Vlit501707,Humbel-Schotter,2.0,15201005.0
+8254,15201708,Vlit501708,Frauewald-Schotter,2.0,15201005.0
+8255,15201709,Vlit501709,Bolderen-Schotter,2.0,15201005.0
+8256,15201710,Vlit501710,Seiglisten-Schotter,2.0,15201005.0
+8257,15201711,Vlit501711,Geispel-Schotter,2.0,15201005.0
+8049,15201712,Vlit501712,Birlibänz-Schotter,2.0,15201005.0
+8065,15201713,Vlit501713,Schönenbuch-Schotter,2.0,15201005.0
+8053,15201714,Vlit501714,Wentzwiller-Schotter,2.0,15201005.0
+8055,15201715,Vlit501715,Bellevue-Schotter,2.0,15201005.0
 612,15202001,Vlit502001,Habkern-Melange,1.0,0.0
 613,15202002,Vlit502002,Sörenberg-Melange,1.0,0.0
 614,15202003,Vlit502003,Wildhaus-Melange,1.0,0.0
@@ -1682,6 +1834,39 @@ OBJECTID,GEOL_CODE_INT,GEOL_CODE,GERMAN,TREE_LEVEL,PARENT_REF
 7746,15202613,Vlit502613,Erzegg-Formation: Grenzschicht,4.0,15202107.0
 7747,15202614,Vlit502614,Bränd-Brekzie,4.0,15202128.0
 7748,15202615,Vlit502615,Infralias-Sandstein,1.0,0.0
+8061,15202616,Vlit502616,Nufenen-Zone: phyllitische Trias,2.0,15202647.0
+8139,15202617,Vlit502617,Nufenen-Zone: karbonatische Trias,2.0,15202647.0
+8140,15202618,Vlit502618,Nufenen-Zone: karbonatische Trias: Kalkmarmor,3.0,15202617.0
+8074,15202619,Vlit502619,Nufenen-Zone: karbonatische Trias: Dolomitmarmor,3.0,15202617.0
+8082,15202620,Vlit502620,Nufenen-Zone: karbonatische Trias: Rauwacke,3.0,15202617.0
+8093,15202621,Vlit502621,Nufenen-Zone: quartzitische Trias,2.0,15202647.0
+8144,15202622,Vlit502622,Urseren-Garvera-Zone: Malm,2.0,15202645.0
+8288,15202623,Vlit502623,Urseren-Garvera-Zone: Dogger,2.0,15202645.0
+8146,15202624,Vlit502624,Urseren-Garvera-Zone: Lias undiff.,2.0,15202645.0
+8264,15202625,Vlit502625,Urseren-Garvera-Zone: Oberer Lias,3.0,15202624.0
+8263,15202626,Vlit502626,Urseren-Garvera-Zone: Mittlerer Lias,3.0,15202624.0
+8149,15202627,Vlit502627,Urseren-Garvera-Zone: Unterer Lias,3.0,15202624.0
+8269,15202628,Vlit502628,Urseren-Garvera-Zone: phyllitische Trias,3.0,15202646.0
+8281,15202629,Vlit502629,Urseren-Garvera-Zone: karbonatische Trias,3.0,15202646.0
+8152,15202630,Vlit502630,Urseren-Garvera-Zone: Permokarbon: Psephit- und Psammitgneis,3.0,15202266.0
+8153,15202631,Vlit502631,Urseren-Garvera-Zone: Permokarbon: Metarhyolith,3.0,15202266.0
+8154,15202632,Vlit502632,Urseren-Garvera-Zone: Permokarbon: Chloritschiefer,3.0,15202266.0
+8262,15202633,Vlit502633,Urseren-Garvera-Zone: Permokarbon: Graphitschiefer,3.0,15202266.0
+8265,15202634,Vlit502634,Gotthard-Decke: Prävariszischer Orthogneis,2.0,15202340.0
+8267,15202635,Vlit502635,Gotthard-Decke: Prävariszischer Augengneis,2.0,15202340.0
+8270,15202636,Vlit502636,Gotthard-Decke: Prävariszischer Paragneis,2.0,15202340.0
+8273,15202637,Vlit502637,Camosci-Decke: Paragneis,1.0,0.0
+8275,15202638,Vlit502638,Camosci-Decke: Lias-Dogger,1.0,0.0
+8277,15202639,Vlit502639,Camosci-Decke: Lias-Dogger: Kalkglimmerschiefer,2.0,15202638.0
+8279,15202640,Vlit502640,Camosci-Decke: Lias-Dogger: Granatglimmerschiefer,2.0,15202638.0
+8282,15202641,Vlit502641,Camosci-Decke: Lias,1.0,0.0
+8285,15202642,Vlit502642,Camosci-Decke: Trias,1.0,0.0
+8287,15202643,Vlit502643,Camosci-Decke: sandige Trias,2.0,15202642.0
+8289,15202644,Vlit502644,Camosci-Decke: karbonatische Trias,2.0,15202642.0
+8291,15202645,Vlit502645,Urseren-Garvera-Zone: Mesozoikum undiff.,1.0,0.0
+8044,15202646,Vlit502646,Urseren-Garvera-Zone: Trias,2.0,15202645.0
+8041,15202647,Vlit502647,Nufenen-Zone: Trias,1.0,0.0
+8048,15202648,Vlit502648,Nufenen-Zone: Lias undiff.,1.0,0.0
 911,15203001,Vlit503001,Niesen-Flysch,1.0,0.0
 912,15203002,Vlit503002,Chesselbach-Formation,2.0,15203001.0
 913,15203003,Vlit503003,Seron-Formation,2.0,15203001.0
@@ -2287,6 +2472,69 @@ OBJECTID,GEOL_CODE_INT,GEOL_CODE,GERMAN,TREE_LEVEL,PARENT_REF
 7750,15203605,Vlit503605,Flysch 2,2.0,15203110.0
 7735,15203606,Vlit503606,Flysch 3,2.0,15203110.0
 7736,15203607,Vlit503607,"Hellstätt-Formation und Flysch 2a, undifferenziert",2.0,15203110.0
+8106,15203608,Vlit503608,Walliser-Sedimentabfolge,1.0,0.0
+8107,15203609,Vlit503609,Südegg-Komplex: schwarzer Schiefer,2.0,15203370.0
+8108,15203610,Vlit503610,Südegg-Komplex: Serpentinit,2.0,15203370.0
+8109,15203611,Vlit503611,Südegg-Komplex: Albitgneis,2.0,15203370.0
+8110,15203612,Vlit503612,Südegg-Komplex: Marmor,2.0,15203370.0
+8111,15203613,Vlit503613,Südegg-Komplex: Brekzie,2.0,15203370.0
+8112,15203614,Vlit503614,Südegg-Komplex: Gips,2.0,15203370.0
+8113,15203615,Vlit503615,Monte-Leone-Decke: Mesozoikum undiff.,1.0,0.0
+8078,15203616,Vlit503616,Monte-Leone-Decke: Dogger-Malm,2.0,15203615.0
+8079,15203617,Vlit503617,Monte-Leone-Decke: Dogger-Malm: Glimmerschiefer,3.0,15203616.0
+8080,15203618,Vlit503618,Monte-Leone-Decke: Dogger-Malm: Marmor,3.0,15203616.0
+8081,15203619,Vlit503619,Monte-Leone-Decke: konglomeratischer Dogger,3.0,15203616.0
+8084,15203620,Vlit503620,Monte-Leone-Decke: Lias,2.0,15203615.0
+8086,15203621,Vlit503621,Monte-Leone-Decke: sandiger Lias,3.0,15203620.0
+8087,15203622,Vlit503622,Monte-Leone-Decke: konglomeratischer Lias,3.0,15203620.0
+8090,15203623,Vlit503623,Monte-Leone-Decke: Trias,2.0,15203615.0
+8092,15203624,Vlit503624,Monte-Leone-Decke: quarzitische Trias,3.0,15203623.0
+8095,15203625,Vlit503625,Pizzo-del-Vallone-Decke: Mesozoikum undiff.,1.0,0.0
+8096,15203626,Vlit503626,Pizzo-del-Vallone-Decke: Dogger-Malm,2.0,15203625.0
+8097,15203627,Vlit503627,Pizzo-del-Vallone-Decke: Dogger-Malm: Marmor,3.0,15203626.0
+8100,15203628,Vlit503628,Pizzo-del-Vallone-Decke: Dogger-Malm: Glimmerschiefer,3.0,15203626.0
+8101,15203629,Vlit503629,Pizzo-del-Vallone-Decke: Dogger-Malm: Vulkanit,3.0,15203626.0
+8105,15203630,Vlit503630,Pizzo-del-Vallone-Decke: Lias,2.0,15203625.0
+8276,15203631,Vlit503631,Pizzo-del-Vallone-Decke: Trias,2.0,15203625.0
+8272,15203632,Vlit503632,Artsinol-Sedimentabfolge undiff.,1.0,0.0
+8063,15203633,Vlit503633,Artsinol-Sedimentabfolge: Trias,2.0,15203632.0
+8073,15203634,Vlit503634,Artsinol-Sedimentabfolge: Trias: Rauwacke,3.0,15203633.0
+8284,15203635,Vlit503635,Métailler-Formation: Quarzit,4.0,15203193.0
+8046,15203636,Vlit503636,Métailler-Formation: Glimmerschiefer,4.0,15203193.0
+8051,15203637,Vlit503637,Métailler-Formation: Chloritoid-Glimmerschiefer,4.0,15203193.0
+8058,15203638,Vlit503638,Distulberg-Formation: Schiefer,4.0,15203194.0
+8280,15203639,Vlit503639,Distulberg-Formation: Albitgneis,4.0,15203194.0
+8068,15203640,Vlit503640,Barrhorn-Sedimentabfolge: Trias,2.0,15203182.0
+8072,15203641,Vlit503641,Siviez-Mischabel-Decke: Aplit,1.0,0.0
+8076,15203642,Vlit503642,Siviez-Mischabel-Decke: Pegmatit,1.0,0.0
+8056,15203643,Vlit503643,Lirec-Formation: leukokrater Mikroklingneis,4.0,15203197.0
+8286,15203644,Vlit503644,Adlerflüe-Formation: leukokrater Gneis,4.0,15203198.0
+8085,15203645,Vlit503645,Ergischhorn-Komplex: leukokrater aplitischer Gneis,4.0,15203199.0
+8098,15203646,Vlit503646,Stalden-Gneiskomplex undiff.,1.0,0.0
+8070,15203647,Vlit503647,Stalden-Gneiskomplex: Ahorn-Augengneis,2.0,15203646.0
+8266,15203648,Vlit503648,Stalden-Gneiskomplex: Amphibolit,2.0,15203646.0
+8268,15203649,Vlit503649,Printse-Formation: Konglomerat,2.0,15203348.0
+8060,15203650,Vlit503650,Printse-Formation: Graphitschiefer,2.0,15203348.0
+8271,15203651,Vlit503651,Portjengrat-Decke: Kalzitmarmor,1.0,0.0
+8283,15203652,Vlit503652,Portjengrat-Decke: Dolomitmarmor,1.0,0.0
+8045,15203653,Vlit503653,Portjengrat-Decke: Arkose,1.0,0.0
+8050,15203654,Vlit503654,Portjengrat-Decke: Grundgebirge,1.0,0.0
+8057,15203655,Vlit503655,"Gornergrat-Decke: Kalkschisfer, sandiger Marmor, Brekzie",1.0,0.0
+8062,15203656,Vlit503656,Gornergrat-Decke: Trias,1.0,0.0
+8067,15203657,Vlit503657,Gornergrat-Decke: Phengit-Albitgneis,1.0,0.0
+8071,15203658,Vlit503658,Gornergrat-Decke: Basischer Gang,1.0,0.0
+8075,15203659,Vlit503659,Gornergrat-Decke: Granat-Muskovit-Schiefer,1.0,0.0
+8083,15203660,Vlit503660,Frilihorn-Decke: Trias,1.0,0.0
+8094,15203661,Vlit503661,Frilihorn-Decke: Trias: Rauwacke,2.0,15203660.0
+8104,15203662,Vlit503662,Garda-Bordon-Formation: Black Shales (Série feuilletée),4.0,15203227.0
+8290,15203663,Vlit503663,Garda-Bordon-Formation: Quarzschiefer,4.0,15203227.0
+8069,15203664,Vlit503664,Tsaté-Decke: Serpentinit,3.0,15203414.0
+8274,15203665,Vlit503665,Zermatt-Saas-Decke: Eklogit,3.0,15203422.0
+8066,15203666,Vlit503666,Zermatt-Saas-Decke: Metapyroxenit,3.0,15203422.0
+8059,15203667,Vlit503667,Zermatt-Saas-Decke: Metagabbro,3.0,15203422.0
+8089,15203668,Vlit503668,Zermatt-Saas-Decke: Rodingit,3.0,15203422.0
+8064,15203669,Vlit503669,Zermatt-Saas-Decke: Talkschiefer,3.0,15203422.0
+8043,15203670,Vlit503670,Lengenbach-Dolomitmarmor,3.0,15203623.0
 1166,15204001,Vlit504001,God-Drosa-Flysch,1.0,0.0
 1167,15204002,Vlit504002,Chanèls-Formation,1.0,0.0
 1168,15204003,Vlit504003,Lech-Formation,1.0,0.0
@@ -2573,6 +2821,8 @@ OBJECTID,GEOL_CODE_INT,GEOL_CODE,GERMAN,TREE_LEVEL,PARENT_REF
 4579,15205135,Vlit505135,Zona Dioritico-Kinzigitica,3.0,15205081.0
 4583,15205136,Vlit505136,Prävariszische Orthogneise des Südalpins,2.0,15205078.0
 4585,15205137,Vlit505137,Pontida-Formation,3.0,15205023.0
+8102,15205138,Vlit505138,Arolla-Einheit: Metagranit,2.0,15205004.0
+8103,15205139,Vlit505139,Arolla-Einheit: Leukokrater Granitgneis,2.0,15205004.0
 1317,15206001,Vlit506001,Periadriatische Vulkanite,1.0,0.0
 1318,15206002,Vlit506002,Novate-Intrusiva,1.0,0.0
 1319,15206003,Vlit506003,Bergell-Intrusiva,1.0,0.0
@@ -2691,3 +2941,4 @@ OBJECTID,GEOL_CODE_INT,GEOL_CODE,GERMAN,TREE_LEVEL,PARENT_REF
 6454,15206116,Vlit506116,"Aptychenkalk, undiff.",1.0,0.0
 6455,15206117,Vlit506117,"Quarzsandstein, undiff.",1.0,0.0
 7409,15206118,Vlit506118,"Mergelstein, undifferenziert",4.0,15206030.0
+8088,15206119,Vlit506119,"Basisches Gestein, undifferenziert",1.0,0.0
