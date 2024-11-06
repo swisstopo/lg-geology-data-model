@@ -117,8 +117,6 @@ class GeocoverSchema:
             desc = arcpy.Describe(self.__workspace)
             cp = desc.connectionProperties
 
-            print()
-
             connection_info = {
                 "workspace": {
                     "ConnectionString": desc.connectionString,
