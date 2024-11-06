@@ -27,11 +27,12 @@ setup(
     maintainer_email="marc.monnerat@swisstopo.ch",
     url="https://github.com/swisstopo/lg-geology-data-model",
     license="LICENSE.txt",
-    #packages=find_packages(where="src"),  # Automatically find packages under src
-    #packages=find_packages(),
-    packages=find_packages(where='src'),  
-    package_dir={'': 'src'}, 
-    include_package_data=True,
+    packages=find_packages(where="src"),  # Automatically find packages under src
+    package_dir={'': 'src'},
+    include_package_data=True,  # Must be in included in MANIFEST.in
+    package_data={
+        "geocover": ["data/*.csv"],
+    },
     python_requires=">=3.7",  # ArcGis Pro 3.3 is still 3.7.11
     classifiers=[
         "Development Status :: 3 - Alpha",
@@ -42,8 +43,6 @@ setup(
         "Topic :: Scientific/Engineering :: GIS",
         "Programming Language :: Python",
         "Programming Language :: Python :: 3",
-        "Programming Language :: Python :: 3.7",
-        "Programming Language :: Python :: 3.8",
         "Programming Language :: Python :: 3.9",
         "Programming Language :: Python :: 3.10",
         "Programming Language :: Python :: 3.11",
@@ -62,8 +61,6 @@ setup(
         "jsonschema",
         "openpyxl",
         "ruamel.yaml",
-      
-
     ],
     tests_require=["coverage", "unittests"],
     entry_points={

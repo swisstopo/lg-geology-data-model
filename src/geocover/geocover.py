@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+##!/usr/bin/env python
 
 import datetime
 import json
@@ -328,22 +328,15 @@ def schema(output_dir, workspace, log_level):
     "-o",
     "--output-file",
     type=click.Path(exists=False, file_okay=True, writable=True),
-    default="../exports/all_geolcode.xlsx",
+    default="exports/all_geolcode.xlsx",
     help="The file for the output",
 )
 @click.option(
     "-i",
     "--input-dir",
     type=click.Path(exists=True, file_okay=False),
-    default="../exports/all_geolcode.xlsx",
+    default="exports",
     help="The input data dir",
-)
-@click.option(
-    "-w",
-    "--workspace",
-    type=str,
-    help="Workspace (SDE string or GDB)",
-    default=DEFAULT_WORKSPACE,
 )
 @click.option(
     "-l",
@@ -355,7 +348,7 @@ def schema(output_dir, workspace, log_level):
     show_default=True,
     help="Log level",
 )
-def geolcode(output_file, workspace, log_level):
+def geolcode(input_dir, output_file, log_level):
     from geocover import all_geolcodes
 
     logger = logging.getLogger(__name__)
@@ -368,7 +361,7 @@ def geolcode(output_file, workspace, log_level):
         logger.error(f"Output {output_file} is not an '.json' or an ',xlsx' file: {e}")
         sys.exit()
 
-    df = all_geolcodes.get_geol_codes()
+    df = all_geolcodes.get_geol_codes(input_dir)
 
     json_str = df.to_dict(orient="records")
 
