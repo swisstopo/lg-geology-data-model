@@ -93,7 +93,7 @@ class GeocoverSchema:
         self.__feature_classes_list = []
         self.__esri_style_dump = True
 
-    def generate_filter_function():
+    def generate_filter_function(self):
         def filter_function(name):
             return (
                 not name.endswith("_I")
@@ -123,12 +123,15 @@ class GeocoverSchema:
                     "WorkspaceFactoryProgID": desc.workspaceFactoryProgID,
                     "WorkspaceType:": desc.workspaceType,
                 },
-                "connection": {
+            }
+            if desc.workspaceType == "RemoteDatabase":
+                connection_info["connection"] = {
                     "Server": cp.server,
                     "Instance": cp.instance,
                     "Version": cp.version,
-                },
-            }
+                }
+            else:
+                connection_info["ConnectionString"] = self.__workspace
 
             self.__connection_info = connection_info
 
