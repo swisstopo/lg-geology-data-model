@@ -4,88 +4,114 @@
 import datetime
 import html
 import json
+import logging
 import os
 import pathlib
 import re
 import sys
 import unicodedata
 from collections import OrderedDict
-
-if sys.version_info.major == 3 and sys.version_info.minor >= 9:
-    # Python 3.9+ specific imports
-    import importlib.resources as resources
-else:
-    # Imports for Python versions below 3.9
-    import pkg_resources as resources
-
+from pathlib import Path
 
 import pandas as pd
 from ruamel.yaml import YAML
 from ruamel.yaml.scalarstring import DoubleQuotedScalarString as dq
 
+from geocover.config import abreviations, tables
 from geocover.utils import remove_abrev
 
-from geocover.config import abreviations, tables
-
+# Constants
 TRAD_CSV = "GeolCodeText_Trad_230317.csv"
 
+# Set up logging
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
+
+# Utility functions
+def remove_abrev(value):
+    # Placeholder for your actual abbreviation removal logic
+    return value.replace("Abrev", "")
 
 def get_geol_codes(exports_dir):
     data = []
+    trad = None
 
-    if sys.version_info >= (3, 9):
-        with resources.path("geocover.data", TRAD_CSV) as csv_path:
+    exports_dir = Path(exports_dir)
+
+    try:
+        if sys.version_info >= (3, 9):
+            from importlib import resources
+            with resources.path("geocover.data", TRAD_CSV) as csv_path:
+                trad = pd.read_csv(csv_path, sep=";")
+        else:
+            import pkg_resources as resources
+            csv_path = resources.resource_filename("geocover.data", TRAD_CSV)
             trad = pd.read_csv(csv_path, sep=";")
-    else:
-        csv_path = resources.resource_filename("geocover.data", TRAD_CSV)
+    except Exception as e:
+        logger.error(f"Failed to load translation CSV '{TRAD_CSV}': {e}")
+        return pd.DataFrame()  # Return empty DataFrame if loading fails
 
-        trad = pd.read_csv(csv_path, sep=";")
+    # Process GeolCode and German translations
+    try:
+        geol_codes = list(zip(trad["GeolCodeInt"], trad["DE"]))
+        for key, val in geol_codes:
+            data.append(("traduction", int(key), remove_abrev(val)))
+    except KeyError as e:
+        logger.error(f"Missing expected column in CSV '{TRAD_CSV}': {e}")
+        return pd.DataFrame()
 
-    de = list(zip(trad["GeolCodeInt"], trad["DE"]))
+    # Load geocover schema and subtypes
+    try:
+        with open(exports_dir / "geocover-schema-sde.json", "r") as f:
+            domains = json.load(f).get("domains", {})
 
-    with open(os.path.join(exports_dir, "geocover-schema-sde.json"), "r") as f:
-        domains = json.load(f).get("domains")
+        with open(exports_dir / "subtypes_dict.json", "r") as f:
+            subtypes = json.load(f)
+    except (FileNotFoundError, json.JSONDecodeError) as e:
+        logger.error(f"Failed to load schema or subtypes file: {e}")
+        return pd.DataFrame()
 
-    with open(os.path.join(exports_dir, "subtypes_dict.json"), "r") as f:
-        subtypes = json.load(f)
-
-    for key, val in de:
-        # Remove Abrev prefix from string
-
-        data.append(("traduction", int(key), remove_abrev(val)))
-
+    # Process subtypes
     for key, val in subtypes.items():
         try:
             data.append(("subtype", int(key), remove_abrev(val)))
         except ValueError as e:
-            print(key, val)
+            logger.warning(f"Invalid subtype key or value ({key}, {val}): {e}")
 
-    for domain_name in domains.keys():
-        domain = domains.get(domain_name)
+    # Process domains
+    for domain_name, domain in domains.items():
         if not domain_name.startswith("GC_"):
             continue
 
-        if domain.get("type") == "Range":
+        domain_type = domain.get("type")
+        if domain_type == "Range":
             continue
-
-        if domain.get("type") == "CodedValue":
+        elif domain_type == "CodedValue":
             coded_values = domain.get("codedValues", {})
-            if coded_values:
-                for key in coded_values.keys():
-                    val = coded_values.get(key)
+            for key, val in coded_values.items():
+                try:
                     data.append((domain_name, int(key), remove_abrev(val)))
-        # TODO: legacy
+                except ValueError as e:
+                    logger.warning(f"Invalid coded value key or value in {domain_name} ({key}, {val}): {e}")
         else:
-            for key in domain.keys():
-                val = domain.get(key)
-                data.append((domain_name, int(key), remove_abrev(val)))
+            # Process legacy domain structure
+            for key, val in domain.items():
+                try:
+                    data.append((domain_name, int(key), remove_abrev(val)))
+                except ValueError as e:
+                    logger.warning(f"Invalid legacy domain key or value in {domain_name} ({key}, {val}): {e}")
 
+    # Create DataFrame and process duplicates
     df = pd.DataFrame(data, columns=["domain", "geolcode", "german"])
-    df["source"] = ""
-    df["source"] = df.groupby(["geolcode"])["domain"].transform(lambda x: ",".join(x))
-    df = df.drop("domain", axis="columns")
-    df = df[["geolcode", "german", "source"]].drop_duplicates()
+    if df.empty:
+        logger.info("No data available after processing.")
+        return df
 
+    # Group by geolcode to aggregate source domains
+    df["source"] = df.groupby("geolcode")["domain"].transform(lambda x: ",".join(sorted(set(x))))
+    df = df.drop(columns="domain").drop_duplicates(subset=["geolcode", "german"])
+
+    # Sort by geolcode for consistency
     df.sort_values("geolcode", inplace=True)
 
     return df

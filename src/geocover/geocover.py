@@ -376,7 +376,7 @@ def geolcode(input_dir, output_file, log_level):
         )
 
     if ext == "xlsx":
-        df.to_excel(output_file)
+        df.to_excel(output_file, index=False)
 
 
 @geocover.command(
