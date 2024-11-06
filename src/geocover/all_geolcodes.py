@@ -49,10 +49,17 @@ def get_geol_codes():
         if not domain_name.startswith("GC_"):
             continue
 
-        for key in domain.keys():
-            val = domain.get(key)
-
-            data.append((domain_name, int(key), remove_abrev(val)))
+        if domain.get("type") == "CodedValue":
+            coded_values = domain.get("codedValues", {})
+            if coded_values:
+                for key in coded_values.keys():
+                    val = coded_values.get(key)
+                    data.append((domain_name, int(key), remove_abrev(val)))
+        # TODO: legacy
+        else:
+            for key in domain.keys():
+                val = domain.get(key)
+                data.append((domain_name, int(key), remove_abrev(val)))
 
     df = pd.DataFrame(data, columns=["domain", "geolcode", "german"])
     df["source"] = ""

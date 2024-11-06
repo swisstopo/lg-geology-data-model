@@ -13,8 +13,6 @@ import click
 import pandas as pd
 
 
-
-
 try:
     import arcpy
 
@@ -305,6 +303,7 @@ def schema(output_dir, workspace, log_level):
     schema_dict = OrderedDict(
         {
             "datetime": datetime.datetime.now(),
+            "connection_info": connection_info,
             "relationships": so.relationships,
             "tables": so.tables,
             "featclasses": so.feature_classes,
@@ -333,6 +332,13 @@ def schema(output_dir, workspace, log_level):
     help="The file for the output",
 )
 @click.option(
+    "-i",
+    "--input-dir",
+    type=click.Path(exists=True, file_okay=False),
+    default="../exports/all_geolcode.xlsx",
+    help="The input data dir",
+)
+@click.option(
     "-w",
     "--workspace",
     type=str,
@@ -356,7 +362,11 @@ def geolcode(output_file, workspace, log_level):
     logger.setLevel(log_level.upper())
     logger.addHandler(logging.StreamHandler(sys.stdout))
 
-    ext = os.path.basename(os.path.abspath(output_file)).split(".")[1]
+    try:
+        ext = os.path.basename(os.path.abspath(output_file)).split(".")[1]
+    except ValueError as e:
+        logger.error(f"Output {output_file} is not an '.json' or an ',xlsx' file: {e}")
+        sys.exit()
 
     df = all_geolcodes.get_geol_codes()
 
