@@ -1,5 +1,5 @@
 
-# Modèle de donnée géologique, Révision 3.9.1 #
+# Modèle de donnée géologique, Révision 3.9.10 #
 
 
 
@@ -19,21 +19,21 @@
 
 ## Thème ROCK_BODIES
 
-### Classe Unconsolidated_Deposits_PT {#unconsolidated-deposits-pt}
+### Classe Unconsolidated_Deposits_PT (Runc){#unconsolidated-deposits-pt}
 La classe [Unconsolidated_Deposits_PT](#unconsolidated-deposits-pt) comprend les volumes rocheux individualisés (de taille variable, des galets aux blocs) qui ont été transportés par des processus gravitaires, glaciaires ou anthropogéniques jusqu’à leur position actuelle, ou dégagés sur place par dégradation de la roche sous-jacente.
 
 
 
 
-Nom            | Type | Description                              |  Oblig. | Card.
--------------------------|----------|---------------------------------------------------|-----|-----
-**KIND**                 | subtype                  | Type de l&#39;objet |non | [1]
-**STATUS**                 | [CD](#unconsolidated-deposits-pt-status)  | État du type d&#39;objet.|  non  | [1]
-**ROCK_TYPE**                 | [CD](#unconsolidated-deposits-pt-rock-type)  | Type de roche.|  non  | [0..1]
-**ROCK_SPE**                 | [CD](#unconsolidated-deposits-pt-rock-spe)  | Description de la roche repère..|  non  | [0..1]
-**MAT_TYPE**                 | [ Table ](#gc-litho-unco-cd)  | Description du matériel (unité lithologique).|  non | [0..1]
-**ORIG_DESCR**                 | string                  | Description de la légende de la carte géologique originale |non | [0..1]
-**PROTECTED**                 | boolean                  | Objet géologique protégé (oui / non)? |non | [0..1]
+Nom             | Type | Description                             |  Card.
+--------------------------|------------|-----------------------------------------------------|-----
+**KIND**                 | subtype                  | Type de l&#39;objet | [1]
+**STATUS**                 | [CD](#unconsolidated-deposits-pt-status)  | État du type d&#39;objet. | [1]
+**ROCK_TYPE**                 | [CD](#unconsolidated-deposits-pt-rock-type)  | Type de roche. | [0..1]
+**ROCK_SPE**                 | [CD](#unconsolidated-deposits-pt-rock-spe)  | Description de la roche repère.. | [0..1]
+**MAT_TYPE**                 | [ Table ](#gc-litho-unco-cd)  | Description du matériel (unité lithologique). | [0..1]
+**ORIG_DESCR**                 | string                  | Description de la légende de la carte géologique originale | [0..1]
+**PROTECTED**                 | boolean                  | Objet géologique protégé (oui / non)? | [0..1]
 
 
 
@@ -153,31 +153,31 @@ _Type de donnée :  boolean_
 
 
 
-### Classe Unconsolidated_Deposits_PLG {#unconsolidated-deposits-plg}
+### Classe Unconsolidated_Deposits_PLG (Runc){#unconsolidated-deposits-plg}
 La classe [Unconsolidated_Deposits_PLG](#unconsolidated-deposits-plg) contient toutes les masses distinctes de roches meubles
 occupant une surface.
 
 
 
 
-Nom            | Type | Description                              |  Oblig. | Card.
--------------------------|----------|---------------------------------------------------|-----|-----
-**KIND**                 | subtype                  | Type de l&#39;objet |non | [1]
-**LITSTRAT**                 | [ Table ](#gc-litstrat-unco-cd)  | Description lithostratigraphique.|  **oui** | [1]
-**LITHO**                 | [ Table ](#gc-litho-cd)  | Description lithologique..|  non | [1..3]
-**CHRONO_T**                 | [ Table ](#gc-chrono-cd)  | Attribution chronostratigraphique du toit de la formation  (top).|  **oui** | [1]
-**CHRONO_B**                 | [ Table ](#gc-chrono-cd)  | Attribution chronostratigraphique de la base de la  formation (basis).|  **oui** | [1]
-**MAT_TYPE**                 |                   | Description du matériel (unité lithologique) |non | [0..3]
-**BURIED_OUT**                 | boolean                  | Est-ce que la roche consolidée est recouvert (oui / non)? |non | [1]
-**COMPOSIT**                 | [ Table ](#gc-composit)  | Composition de la roche meuble.|  non | [0..3]
-**ADMIXTURE**                 | [ Table ](#gc-admixture)  | Incorporation.|  non | [0..2]
-**STRUCTUR**                 | [CD](#unconsolidated-deposits-plg-structur)  | .|  non  | [0..1]
-**CHARACT**                 | [ Table ](#gc-charcat)  | Structure sédimentaire.|  non | [0..3]
-**MORPHOLO**                 | [CD](#unconsolidated-deposits-plg-morpholo)  | Morphologie de l’unité de roche meuble.|  non  | [0..1]
-**GLAC_TYPE**                 | [CD](#unconsolidated-deposits-plg-glac-type)  | Type de glacier auquel le type d’objet est associé. Cet  attribut n’est valable que pour des moraines.|  non  | [0..1]
-**REF_YEAR**                 | string                  | Année de référence de l’ancienne ligne de rivage. |non | [0..1]
-**THIN_COVER**                 | [CD](#unconsolidated-deposits-plg-thin-cover)  | Couverture meuble pelliculaire.|  non  | [0..1]
-**ORIG_DESCR**                 |                   | Description selon la légende de la carte géologique originale. |non | [1]
+Nom             | Type | Description                             |  Card.
+--------------------------|------------|-----------------------------------------------------|-----
+**KIND**                 | subtype                  | Type de l&#39;objet | [1]
+**LITSTRAT**                 | [ Table ](#gc-litstrat-unco-cd)  | Description lithostratigraphique. | [1]
+**LITHO**                 | [ Table ](#gc-litho-cd)  | Description lithologique.. | [1..3]
+**CHRONO_T**                 | [ Table ](#gc-chrono-cd)  | Attribution chronostratigraphique du toit de la formation  (top). | [1]
+**CHRONO_B**                 | [ Table ](#gc-chrono-cd)  | Attribution chronostratigraphique de la base de la  formation (basis). | [1]
+**MAT_TYPE**                 |                   | Description du matériel (unité lithologique) | [0..3]
+**BURIED_OUT**                 | boolean                  | Est-ce que la roche consolidée est recouvert (oui / non)? | [1]
+**COMPOSIT**                 | [ Table ](#gc-composit)  | Composition de la roche meuble. | [0..3]
+**ADMIXTURE**                 | [ Table ](#gc-admixture)  | Incorporation. | [0..2]
+**STRUCTUR**                 | [CD](#unconsolidated-deposits-plg-structur)  | . | [0..1]
+**CHARACT**                 | [ Table ](#gc-charcat)  | Structure sédimentaire. | [0..3]
+**MORPHOLO**                 | [CD](#unconsolidated-deposits-plg-morpholo)  | Morphologie de l’unité de roche meuble. | [0..1]
+**GLAC_TYPE**                 | [CD](#unconsolidated-deposits-plg-glac-type)  | Type de glacier auquel le type d’objet est associé. Cet  attribut n’est valable que pour des moraines. | [0..1]
+**REF_YEAR**                 | string                  | Année de référence de l’ancienne ligne de rivage. | [0..1]
+**THIN_COVER**                 | [CD](#unconsolidated-deposits-plg-thin-cover)  | Couverture meuble pelliculaire. | [0..1]
+**ORIG_DESCR**                 |                   | Description selon la légende de la carte géologique originale. | [1]
 
 
 
@@ -376,35 +376,34 @@ _Description selon la légende de la carte géologique originale._
 
 
 
-### Classe Bedrock_PLG {#bedrock-plg}
+### Classe Bedrock_PLG (Rbed){#bedrock-plg}
 La classe [Bedrock_PLG](#bedrock-plg) regroupe toutes les unités lithostratigraphiques de roches consolidées qui constituent une surface. L’information indiquant si une roche consolidée est en mouvement (déplacée par gravitation) se trouve dans la classe [Instabilities_PLG](#instabilities-plg) (Thème Geomorphology).
 
 
 
 
-Nom            | Type | Description                              |  Oblig. | Card.
--------------------------|----------|---------------------------------------------------|-----|-----
-**KIND**                 | subtype                  | Type de l&#39;objet |non | [1]
-**LITSTRAT**                 | [ Table ](#gc-litstrat-bed-cd)  | Description lithostratigraphique.|  non | [1]
-**LITHO**                 | [ Table ](#gc-litho-cd)  | Description lithologique.|  non | [1]
-**CHRONO_T**                 | [ Table ](#gc-chrono-cd)  | Attribution chronostratigraphique du toit de la  formation (top).|  **oui** | [1]
-**CHRONO_B**                 | [ Table ](#gc-chrono-cd)  | Attribution chronostratigraphique de la base de la  formation (base)..|  **oui** | [1]
-**TECTO**                 | [ Table ](#gc-tecto-cd)  | Attribution tectonique.|  **oui** | [1]
-**ORIG_DESCR**                 | string                  | Description selon la légende de la carte géologique originale |non | [1]
-**BURIED_OUT**                 | boolean                  | Est-ce que la roche consolidée est recouvert (oui / non)? |non | [1]
-**EXOTIC_ELE**                 |                   | S’agit-il d’un élément exotique (oui / non)? |non | [1]
-**SEDI_MAIN_COM**                 | [CD](#bedrock-plg-sedi-main-com)  | Composant principal de la roche sédimentaire clastique..|  non  | [0..1]
-**SEDI_SECO_COM**                 | [CD](#bedrock-plg-sedi-seco-com)  | Composant secondaire de la roche sédimentaire.|  non  | [0..2]
-**SEDI_BOND_MAT**                 | [CD](#bedrock-plg-sedi-bond-mat)  | Ciment de la roche sédimentaire.|  non  | [0..1]
-**SEDI_BEDDING**                 | [CD](#bedrock-plg-sedi-bedding)  | Matrice ou ciment de la roche sédimentaire.|  non  | [0..2]
-**SEDI_STR**                 | [CD](#bedrock-plg-sedi-str)  | Structure sédimentaire de la roche sédimentaire.|  non  | [0..2]
-**SEDI_TEX**                 | [CD](#bedrock-plg-sedi-tex)  | Texture de la roche sédimentaire.|  non  | [0..1]
-**IGNE_TEXT**                 | [CD](#bedrock-plg-igne-text)  | Texture de la roche magmatique.|  non  | [0..1]
-**IGNE_GRAIN_SI**                 | [CD](#bedrock-plg-igne-grain-si)  | Granulométrie de la roche magmatique.|  non  | [0..1]
-**IGNE_AFFINITY**                 | [CD](#bedrock-plg-igne-affinity)  | Affinité avec une série magmatique.|  non  | [0..1]
-**META_FULL_NAME**                 | string                  | Description de la roche métamorphique. |non | [0..1]
-**META_MINERAL**                 | [ Table ](#gc-mineral-cd)  | Minéral important de la roche métamorphique.|  non | [0..3]
-**META_STR**                 | [CD](#bedrock-plg-meta-str)  | Structure de la roche métamorphique.|  non  | [0..3]
+Nom             | Type | Description                             |  Card.
+--------------------------|------------|-----------------------------------------------------|-----
+**KIND**                 | subtype                  | Type de l&#39;objet | [1]
+**LITSTRAT**                 | [ Table ](#gc-litstrat-bed-cd)  | Description lithostratigraphique. | [1]
+**LITHO**                 | [ Table ](#gc-litho-cd)  | Description lithologique. | [1]
+**CHRONO_T**                 | [ Table ](#gc-chrono-cd)  | Attribution chronostratigraphique du toit de la  formation (top). | [1]
+**CHRONO_B**                 | [ Table ](#gc-chrono-cd)  | Attribution chronostratigraphique de la base de la  formation (base).. | [1]
+**TECTO**                 | [ Table ](#gc-tecto-cd)  | Attribution tectonique. | [1]
+**ORIG_DESCR**                 | string                  | Description selon la légende de la carte géologique originale | [1]
+**EXOTIC_ELE**                 |                   | S’agit-il d’un élément exotique (oui / non)? | [1]
+**SEDI_MAIN_COM**                 | [CD](#bedrock-plg-sedi-main-com)  | Composant principal de la roche sédimentaire clastique.. | [0..1]
+**SEDI_SECO_COM**                 | [CD](#bedrock-plg-sedi-seco-com)  | Composant secondaire de la roche sédimentaire. | [0..2]
+**SEDI_BOND_MAT**                 | [CD](#bedrock-plg-sedi-bond-mat)  | Ciment de la roche sédimentaire. | [0..1]
+**SEDI_BEDDING**                 | [CD](#bedrock-plg-sedi-bedding)  | Matrice ou ciment de la roche sédimentaire. | [0..2]
+**SEDI_STR**                 | [CD](#bedrock-plg-sedi-str)  | Structure sédimentaire de la roche sédimentaire. | [0..2]
+**SEDI_TEX**                 | [CD](#bedrock-plg-sedi-tex)  | Texture de la roche sédimentaire. | [0..1]
+**IGNE_TEXT**                 | [CD](#bedrock-plg-igne-text)  | Texture de la roche magmatique. | [0..1]
+**IGNE_GRAIN_SI**                 | [CD](#bedrock-plg-igne-grain-si)  | Granulométrie de la roche magmatique. | [0..1]
+**IGNE_AFFINITY**                 | [CD](#bedrock-plg-igne-affinity)  | Affinité avec une série magmatique. | [0..1]
+**META_FULL_NAME**                 | string                  | Description de la roche métamorphique. | [0..1]
+**META_MINERAL**                 | [ Table ](#gc-mineral-cd)  | Minéral important de la roche métamorphique. | [0..3]
+**META_STR**                 | [CD](#bedrock-plg-meta-str)  | Structure de la roche métamorphique. | [0..3]
 
 
 
@@ -470,15 +469,6 @@ Voir [GC_TECTO_CD](#gc-tecto-cd) dans l'annexe
 _Description selon la légende de la carte géologique originale_
 
 _Type de donnée :  string_
-
-
-
-
-
-#### Attribut  BURIED_OUT
-_Est-ce que la roche consolidée est recouvert (oui / non)?_
-
-_Type de donnée :  boolean_
 
 
 
@@ -732,7 +722,7 @@ _Structure de la roche métamorphique_
 
 ## Thème GEOMORPHOLOGY
 
-### Classe Instability_Structures_PT {#instability-structures-pt}
+### Classe Instability_Structures_PT (Gins){#instability-structures-pt}
 La classe [Instability_Structures_PT](#instability-structures-pt) contient des indications sur des instabilités de pentes
 (glissements) observés localement, qui ne peuvent pas être délimités spatialement. Cependant,
 lorsque cela est possible, les masses de roches instables doivent être saisies comme polygones
@@ -743,9 +733,9 @@ imprimées.
 
 
 
-Nom            | Type | Description                              |  Oblig. | Card.
--------------------------|----------|---------------------------------------------------|-----|-----
-**KIND**                 | subtype                  | Type de l&#39;objet |non | [1]
+Nom             | Type | Description                             |  Card.
+--------------------------|------------|-----------------------------------------------------|-----
+**KIND**                 | subtype                  | Type de l&#39;objet | [1]
 
 
 
@@ -762,15 +752,15 @@ _Type de l&#39;objet_
 
 
 
-### Classe Instability_Structures_L {#instability-structures-l}
+### Classe Instability_Structures_L (Gins){#instability-structures-l}
 None
 
 
 
 
-Nom            | Type | Description                              |  Oblig. | Card.
--------------------------|----------|---------------------------------------------------|-----|-----
-**KIND**                 | subtype                  | Type de l&#39;objet |non | [1]
+Nom             | Type | Description                             |  Card.
+--------------------------|------------|-----------------------------------------------------|-----
+**KIND**                 | subtype                  | Type de l&#39;objet | [1]
 
 
 
@@ -790,7 +780,7 @@ _Type de l&#39;objet_
 
 
 
-### Classe Instabilities_PLG {#instabilities-plg}
+### Classe Instabilities_PLG (Gins){#instabilities-plg}
 La classe Instabilities_within_Bedrock_PLG contient tous les polygones qui délimitent des zones
 de roche consolidée instable. Dans cette classe on distingue les surfaces affectées par les
 différents types de phénomènes de mouvement de masse. Les corps rocheux proprement dits
@@ -801,10 +791,10 @@ illustrés dans l&#39;annexe A.
 
 
 
-Nom            | Type | Description                              |  Oblig. | Card.
--------------------------|----------|---------------------------------------------------|-----|-----
-**KIND**                 | subtype                  | Type de l&#39;objet |non | [1]
-**MAIN_MOV**                 | [CD](#instabilities-plg-main-mov)  | Phase de mouvement principale.|  non  | [0..1]
+Nom             | Type | Description                             |  Card.
+--------------------------|------------|-----------------------------------------------------|-----
+**KIND**                 | subtype                  | Type de l&#39;objet | [1]
+**MAIN_MOV**                 | [CD](#instabilities-plg-main-mov)  | Phase de mouvement principale. | [0..1]
 
 
 
@@ -838,7 +828,7 @@ _Phase de mouvement principale_
 
 
 
-### Classe Glacial_Structures_PT {#glacial-structures-pt}
+### Classe Glacial_Structures_PT (Ggla){#glacial-structures-pt}
 La classe [Glacial_Structures_PT](#glacial-structures-pt) contient des types d’objets qui montrent ponctuellement la
 présence dans le passé d’un glacier (les stries glaciaires sont des objets orientés et se trouvent en
 conséquence dans la classe Lineation_PT.)
@@ -846,9 +836,9 @@ conséquence dans la classe Lineation_PT.)
 
 
 
-Nom            | Type | Description                              |  Oblig. | Card.
--------------------------|----------|---------------------------------------------------|-----|-----
-**KIND**                 | subtype                  | Type de l&#39;objet |non | [1]
+Nom             | Type | Description                             |  Card.
+--------------------------|------------|-----------------------------------------------------|-----
+**KIND**                 | subtype                  | Type de l&#39;objet | [1]
 
 
 
@@ -866,7 +856,7 @@ _Type de l&#39;objet_
 
 
 
-### Classe Glacial_and_Periglacial_Structures_L {#glacial-and-periglacial-structures-l}
+### Classe Glacial_and_Periglacial_Structures_L (Ggla){#glacial-and-periglacial-structures-l}
 La classe [Glacial_and_Periglacial_Structures_L](#glacial-and-periglacial-structures-l) contient des structures de formes linéaires,
 façonnant une formation glaciaire ou périglaciaire. A l’exception des limites supérieures de
 l’érosion glaciaire, il s’agit principalement dans cette classe de formes d’accumulation telles que
@@ -875,15 +865,15 @@ les vallums morainiques ou les bourrelets d’un glacier rocheux.
 
 
 
-Nom            | Type | Description                              |  Oblig. | Card.
--------------------------|----------|---------------------------------------------------|-----|-----
-**KIND**                 | subtype                  | Type de l&#39;objet |non | [1]
-**MORAI_MO**                 | [CD](#glacial-and-periglacial-structures-l-morai-mo)  | Morphologie de la moraine.|  non  | [0..1]
-**GLAC_TYP**                 | [CD](#glacial-and-periglacial-structures-l-glac-typ)  | Type de glacier auquel le type d’objet est associé.|  non  | [0..1]
-**ICE_M_P**                 | [CD](#glacial-and-periglacial-structures-l-ice-m-p)  | Stade glaciaire.|  non  | [0..1]
-**QUAT_STR**                 | [CD](#glacial-and-periglacial-structures-l-quat-str)  | Attribution chronostratigraphique du vallum morainique  au sein du Quaternaire.|  non  | [0..1]
-**REF_YEAR**                 | integer                  | Année de référence. |non | [0..1]
-**SOURCE**                 | string                  | Source des données déduites à partir de données historiques. |non | [0..1]
+Nom             | Type | Description                             |  Card.
+--------------------------|------------|-----------------------------------------------------|-----
+**KIND**                 | subtype                  | Type de l&#39;objet | [1]
+**MORAI_MO**                 | [CD](#glacial-and-periglacial-structures-l-morai-mo)  | Morphologie de la moraine. | [0..1]
+**GLAC_TYP**                 | [CD](#glacial-and-periglacial-structures-l-glac-typ)  | Type de glacier auquel le type d’objet est associé. | [0..1]
+**ICE_M_P**                 | [CD](#glacial-and-periglacial-structures-l-ice-m-p)  | Stade glaciaire. | [0..1]
+**QUAT_STR**                 | [CD](#glacial-and-periglacial-structures-l-quat-str)  | Attribution chronostratigraphique du vallum morainique  au sein du Quaternaire. | [0..1]
+**REF_YEAR**                 | integer                  | Année de référence. | [0..1]
+**SOURCE**                 | string                  | Source des données déduites à partir de données historiques. | [0..1]
 
 
 
@@ -1045,15 +1035,15 @@ _Type de donnée :  string_
 
 
 
-### Classe Glacial_Structures_PLG {#glacial-structures-plg}
+### Classe Glacial_Structures_PLG (Ggla){#glacial-structures-plg}
 La classe [Glacial_Structures_PLG](#glacial-structures-plg) regroupe les formes du paysage d’origine glaciaire qui se sont formées par écoulement basal de la glace du glacier ou par sa fonte.
 
 
 
 
-Nom            | Type | Description                              |  Oblig. | Card.
--------------------------|----------|---------------------------------------------------|-----|-----
-**KIND**                 | subtype                  | Type de l&#39;objet |non | [1]
+Nom             | Type | Description                             |  Card.
+--------------------------|------------|-----------------------------------------------------|-----
+**KIND**                 | subtype                  | Type de l&#39;objet | [1]
 
 
 
@@ -1072,16 +1062,16 @@ _Type de l&#39;objet_
 
 
 
-### Classe Erosional_Structures_PT {#erosional-structures-pt}
+### Classe Erosional_Structures_PT (Gero){#erosional-structures-pt}
 La classe [Erosional_Structures_PT](#erosional-structures-pt) contient des éléments locaux du paysage qui se sont formés au
 cours du temps sous l’influence de processus érosifs.
 
 
 
 
-Nom            | Type | Description                              |  Oblig. | Card.
--------------------------|----------|---------------------------------------------------|-----|-----
-**KIND**                 | subtype                  | Type de l&#39;objet |non | [1]
+Nom             | Type | Description                             |  Card.
+--------------------------|------------|-----------------------------------------------------|-----
+**KIND**                 | subtype                  | Type de l&#39;objet | [1]
 
 
 
@@ -1098,7 +1088,7 @@ _Type de l&#39;objet_
 
 
 
-### Classe Erosional_Structures_L {#erosional-structures-l}
+### Classe Erosional_Structures_L (Gero){#erosional-structures-l}
 La classe [Erosional_Structures_L](#erosional-structures-l) regroupe des formes érosives linéaires comme les bords
 d’érosion en général ou les bords de terrasse. Sur les anciennes cartes imprimées, les bords de
 terrasse et les bords d’érosion n’étaient souvent pas distingués. Dans les données vectorielles,
@@ -1111,9 +1101,9 @@ seront attribués en tant que bords d’érosion.
 
 
 
-Nom            | Type | Description                              |  Oblig. | Card.
--------------------------|----------|---------------------------------------------------|-----|-----
-**KIND**                 | subtype                  | Type de l&#39;objet |non | [1]
+Nom             | Type | Description                             |  Card.
+--------------------------|------------|-----------------------------------------------------|-----
+**KIND**                 | subtype                  | Type de l&#39;objet | [1]
 
 
 
@@ -1132,17 +1122,17 @@ _Type de l&#39;objet_
 
 
 
-### Classe Karstic_Structures_PT {#karstic-structures-pt}
+### Classe Karstic_Structures_PT (Gkar){#karstic-structures-pt}
 La classe [Karstic_Structures_PT](#karstic-structures-pt) regroupe les phénomènes karstiques qui sont représentés par des
 formes ponctuelles. Elle contient entre autres le ponor ou l’entrée d’une grotte.
 
 
 
 
-Nom            | Type | Description                              |  Oblig. | Card.
--------------------------|----------|---------------------------------------------------|-----|-----
-**KIND**                 | subtype                  | Type de l&#39;objet |non | [1]
-**ICE_CAVE**                 | boolean                  | S’agit-il d’une glacière (oui / non) |non | [0..1]
+Nom             | Type | Description                             |  Card.
+--------------------------|------------|-----------------------------------------------------|-----
+**KIND**                 | subtype                  | Type de l&#39;objet | [1]
+**ICE_CAVE**                 | boolean                  | S’agit-il d’une glacière (oui / non) | [0..1]
 
 
 
@@ -1176,15 +1166,15 @@ _Type de donnée :  boolean_
 
 
 
-### Classe Karstic_Structures_PLG {#karstic-structures-plg}
+### Classe Karstic_Structures_PLG (Gkar){#karstic-structures-plg}
 La classe [Karstic_Structures_PLG](#karstic-structures-plg) comprend les formes karstiques surfaciques telles que les dolines ou les poljés.
 
 
 
 
-Nom            | Type | Description                              |  Oblig. | Card.
--------------------------|----------|---------------------------------------------------|-----|-----
-**KIND**                 | subtype                  | Type de l&#39;objet |non | [1]
+Nom             | Type | Description                             |  Card.
+--------------------------|------------|-----------------------------------------------------|-----
+**KIND**                 | subtype                  | Type de l&#39;objet | [1]
 
 
 
@@ -1204,17 +1194,17 @@ _Type de l&#39;objet_
 
 
 
-### Classe Alluvial_and_Lacustrine_Structures_L {#alluvial-and-lacustrine-structures-l}
+### Classe Alluvial_and_Lacustrine_Structures_L (Gall){#alluvial-and-lacustrine-structures-l}
 La classe [Alluvial_and_Lacustrine_Structures_L](#alluvial-and-lacustrine-structures-l) contient les morphologies linéaires d’origine
 fluviatile ou lacustre.
 
 
 
 
-Nom            | Type | Description                              |  Oblig. | Card.
--------------------------|----------|---------------------------------------------------|-----|-----
-**KIND**                 | subtype                  | Type de l&#39;objet |non | [1]
-**AGE**                 | [CD](#alluvial-and-lacustrine-structures-l-age)  | Âge du type d&#39;obje.|  non  | [0..1]
+Nom             | Type | Description                             |  Card.
+--------------------------|------------|-----------------------------------------------------|-----
+**KIND**                 | subtype                  | Type de l&#39;objet | [1]
+**AGE**                 | [CD](#alluvial-and-lacustrine-structures-l-age)  | Âge du type d&#39;obje. | [0..1]
 
 
 
@@ -1252,7 +1242,7 @@ _Âge du type d&#39;obje_
 
 ## Thème TECTONICS
 
-### Classe Deformation_Structures_PT {#deformation-structures-pt}
+### Classe Deformation_Structures_PT (Tdef){#deformation-structures-pt}
 La classe [Deformation_Structures_PT](#deformation-structures-pt) contient les structures de déformation ponctuelles observées, comme les endroits fortement plissés (plissotement) ou les lieux avec des diaclases bien
 marquées. Dans cette classe se trouvent aussi les points construits, comme p. ex. la représentation de la trace d’une surface axiale. Celle-ci correspond à la symbolisation d’une charnière de pli
 construite à partir de l’intersection de la surface axiale avec la topographie et elle est représentée
@@ -1262,15 +1252,15 @@ en faciliter la compréhension.
 
 
 
-Nom            | Type | Description                              |  Oblig. | Card.
--------------------------|----------|---------------------------------------------------|-----|-----
-**KIND**                 | subtype                  | Type de l&#39;objet |non | [1]
-**AZIMUTH**                 | integer                  | Azimut du type d&#39;objet. L&#39;azimut est mesuré depuis le  nord en degré de 0° à 359° dans le sens des aiguilles  d&#39;une montre |non | [0..1]
+Nom             | Type | Description                             |  Card.
+--------------------------|------------|-----------------------------------------------------|-----
+**KIND**                 | subtype                  | Type de l&#39;objet | [1]
+**AZIMUTH**                 | integer                  | Azimut du type d&#39;objet. L&#39;azimut est mesuré depuis le  nord en degré de 0° à 359° dans le sens des aiguilles  d&#39;une montre | [0..1]
 **DIP**                 | integer                  | Valeur du plongement du type d&#39;objet (valeur en 
 degrés, mesurée de l’horizontale (0°) vers le bas jusqu’à 
-la verticale (90°) |non | [0..1]
-**FOLD_TYP**                 | [CD](#deformation-structures-pt-fold-typ)  | Caractéristique du type d&#39;objet.|  non  | [0..1]
-**FOLD_FOR**                 | [CD](#deformation-structures-pt-fold-for)  | Forme du type d&#39;objet.|  non  | [0..1]
+la verticale (90°) | [0..1]
+**FOLD_TYP**                 | [CD](#deformation-structures-pt-fold-typ)  | Caractéristique du type d&#39;objet. | [0..1]
+**FOLD_FOR**                 | [CD](#deformation-structures-pt-fold-for)  | Forme du type d&#39;objet. | [0..1]
 
 
 
@@ -1341,15 +1331,15 @@ _Forme du type d&#39;objet_
 
 
 
-### Classe Deformation_Structures_L {#deformation-structures-l}
+### Classe Deformation_Structures_L (Tdef){#deformation-structures-l}
 La classe [Deformation_Structures_L](#deformation-structures-l) regroupe les structures linéaires de déformations tectoniques comme le tracé d’une charnière de pli.
 
 
 
 
-Nom            | Type | Description                              |  Oblig. | Card.
--------------------------|----------|---------------------------------------------------|-----|-----
-**KIND**                 | subtype                  | Type de l&#39;objet |non | [1]
+Nom             | Type | Description                             |  Card.
+--------------------------|------------|-----------------------------------------------------|-----
+**KIND**                 | subtype                  | Type de l&#39;objet | [1]
 
 
 
@@ -1366,18 +1356,18 @@ _Type de l&#39;objet_
 
 
 
-### Classe Deformation_Structures_PLG {#deformation-structures-plg}
+### Classe Deformation_Structures_PLG (Tdef){#deformation-structures-plg}
 Dans la classe [Deformation_Structures_PLG](#deformation-structures-plg) se trouvent les régions marquées par des structures
 tectoniques à grande échelle comme les zones tectonisées ou les zones diaclasées.
 
 
 
 
-Nom            | Type | Description                              |  Oblig. | Card.
--------------------------|----------|---------------------------------------------------|-----|-----
-**KIND**                 | subtype                  | Type de l&#39;objet |non | [1]
-**TYPE**                 | [CD](#deformation-structures-plg-type)  | Caractéristique du type d&#39;objet.|  non  | [0..1]
-**GEN_RELA**                 | [CD](#deformation-structures-plg-gen-rela)  | Relation génétique.|  non  | [0..1]
+Nom             | Type | Description                             |  Card.
+--------------------------|------------|-----------------------------------------------------|-----
+**KIND**                 | subtype                  | Type de l&#39;objet | [1]
+**TYPE**                 | [CD](#deformation-structures-plg-type)  | Caractéristique du type d&#39;objet. | [0..1]
+**GEN_RELA**                 | [CD](#deformation-structures-plg-gen-rela)  | Relation génétique. | [0..1]
 
 
 
@@ -1418,23 +1408,23 @@ _Relation génétique_
 
 
 
-### Classe Tectonic_Boundaries_L {#tectonic-boundaries-l}
+### Classe Tectonic_Boundaries_L (Ttec){#tectonic-boundaries-l}
 La classe [Tectonic_Boundaries_L](#tectonic-boundaries-l) comprend toutes les failles tectoniques.
 
 
 
 
-Nom            | Type | Description                              |  Oblig. | Card.
--------------------------|----------|---------------------------------------------------|-----|-----
-**KIND**                 | subtype                  | Type de l&#39;objet |non | [1]
-**FAULT_MO**                 | [CD](#tectonic-boundaries-l-fault-mo)  | Mouvement de la faille.|  non  | [0..1]
-**VERTI_MO**                 | [CD](#tectonic-boundaries-l-verti-mo)  | Mouvement parallèle au pendage du plan de faille.|  non  | [0..1]
+Nom             | Type | Description                             |  Card.
+--------------------------|------------|-----------------------------------------------------|-----
+**KIND**                 | subtype                  | Type de l&#39;objet | [1]
+**FAULT_MO**                 | [CD](#tectonic-boundaries-l-fault-mo)  | Mouvement de la faille. | [0..1]
+**VERTI_MO**                 | [CD](#tectonic-boundaries-l-verti-mo)  | Mouvement parallèle au pendage du plan de faille. | [0..1]
 **HORIZ_MO**                 | [CD](#tectonic-boundaries-l-horiz-mo)  | Mouvement parallèle à la direction du plan de faille ou 
-de cisaillement.|  non  | [0..1]
-**LIM_TECT_B**                 | boolean                  | Limite d’unité tectonique (oui / non)? |non | [1]
-**STATUS**                 | [CD](#tectonic-boundaries-l-status)  | État du type d&#39;objet.|  non  | [1]
-**META_STA**                 | [CD](#tectonic-boundaries-l-meta-sta)  | Chronologie tecto-métamorphique du type d’objet..|  non  | [0..1]
-**NAME**                 | string                  | Nom de la localité-type. / Description de l’affleurement géologique important |non | [0..1]
+de cisaillement. | [0..1]
+**LIM_TECT**                 | boolean                  | Limite d’unité tectonique (oui / non)? | [1]
+**STATUS**                 | [CD](#tectonic-boundaries-l-status)  | État du type d&#39;objet. | [1]
+**META_STA**                 | [CD](#tectonic-boundaries-l-meta-sta)  | Chronologie tecto-métamorphique du type d’objet.. | [0..1]
+**NAME**                 | string                  | Nom de la localité-type. / Description de l’affleurement géologique important | [0..1]
 
 
 
@@ -1501,7 +1491,7 @@ de cisaillement_
 
 
 
-#### Attribut  LIM_TECT_B
+#### Attribut  LIM_TECT
 _Limite d’unité tectonique (oui / non)?_
 
 _Type de donnée :  boolean_
@@ -1556,22 +1546,22 @@ _Type de donnée :  string_
 
 ## Thème MEASUREMENTS_SPATIAL_ORIENTATION
 
-### Classe Folds_PT {#folds-pt}
+### Classe Folds_PT (Mfol){#folds-pt}
 La classe [Folds_PT](#folds-pt) contient les motifs qui décrivent la position spatiale d’objets géologiques
 plissés (par des mesures prises directement sur le terrain).
 
 
 
 
-Nom            | Type | Description                              |  Oblig. | Card.
--------------------------|----------|---------------------------------------------------|-----|-----
-**KIND**                 | subtype                  | Type de l&#39;objet |non | [1]
-**FOLD_TYP**                 | [CD](#folds-pt-fold-typ)  | Type de l&#39;objet.|  non  | [0..1]
-**FOLD_FOR**                 |                   | Forme du type d&#39;objet |non | [0..1]
-**PHASE**                 | [CD](#folds-pt-phase)  | Phase de déformation.|  non  | [0..1]
-**PHASE_REF**                 | string                  | Référence pour les données concernant la phase de déformation. |non | [0..1]
-**AZIMUTH**                 | integer                  | Azimut du type d&#39;objet. L&#39;azimut est mesuré depuis le  nord en degré de 0° à 359° dans le sens des aiguilles  d&#39;une montre |non | [1]
-**DIP**                 | integer                  | Valeur du plongement du type d&#39;objet (valeur en  degrés, mesurée de l’horizontale (0°) vers le bas jusqu’à  la verticale (90°) |non | [0..1]
+Nom             | Type | Description                             |  Card.
+--------------------------|------------|-----------------------------------------------------|-----
+**KIND**                 | subtype                  | Type de l&#39;objet | [1]
+**FOLD_TYP**                 | [CD](#folds-pt-fold-typ)  | Type de plis. | [0..1]
+**FOLD_FOR**                 |                   | Forme de plis | [0..1]
+**PHASE**                 | [CD](#folds-pt-phase)  | Phase de déformation. | [0..1]
+**PHASE_REF**                 | string                  | Référence pour les données concernant la phase de déformation. | [0..1]
+**AZIMUTH**                 | integer                  | Azimut du type d&#39;objet. L&#39;azimut est mesuré depuis le  nord en degré de 0° à 359° dans le sens des aiguilles  d&#39;une montre | [1]
+**DIP**                 | integer                  | Valeur du plongement du type d&#39;objet (valeur en  degrés, mesurée de l’horizontale (0°) vers le bas jusqu’à  la verticale (90°) | [0..1]
 
 
 
@@ -1591,7 +1581,7 @@ _Type de l&#39;objet_
 
 
 #### Attribut  FOLD_TYP {#folds-pt-fold-typ}
-_Type de l&#39;objet_
+_Type de plis_
 
 
 |GeolCode|Deutsch|Français|
@@ -1605,7 +1595,7 @@ _Type de l&#39;objet_
 
 
 #### Attribut  FOLD_FOR
-_Forme du type d&#39;objet_
+_Forme de plis_
 
 
 
@@ -1653,7 +1643,7 @@ _Type de donnée :  integer_
 
 
 
-### Classe Lineation_PT {#lineation-pt}
+### Classe Lineation_PT (Mlin){#lineation-pt}
 La classe [Lineation_PT](#lineation-pt) contient des structures linéaires dont la position spatiale est décrite par
 des mesures directes sur le terrain. La position dans l’espace, entre autre de stries glaciaires et de
 tectoglyphes, fait aussi partie de cette classe tout comme l’orientation de la linéation
@@ -1662,11 +1652,11 @@ d’intersection ou de linéation d’étirement.
 
 
 
-Nom            | Type | Description                              |  Oblig. | Card.
--------------------------|----------|---------------------------------------------------|-----|-----
-**KIND**                 | subtype                  | Type de l&#39;objet |non | [1]
-**AZIMUTH**                 | integer                  | Azimut du type d&#39;objet. L&#39;azimut est mesuré depuis le  nord en degré de 0° à 359° dans le sens des aiguilles  d&#39;une montre |non | [1]
-**DIP**                 |                   | Valeur du plongement du type d&#39;objet (en degrés), mesurée de l’horizontale (0°) vers le bas jusqu’à la  verticale (90°) |non | []
+Nom             | Type | Description                             |  Card.
+--------------------------|------------|-----------------------------------------------------|-----
+**KIND**                 | subtype                  | Type de l&#39;objet | [1]
+**AZIMUTH**                 | integer                  | Azimut du type d&#39;objet. L&#39;azimut est mesuré depuis le  nord en degré de 0° à 359° dans le sens des aiguilles  d&#39;une montre | [1]
+**DIP**                 |                   | Valeur du plongement du type d&#39;objet (en degrés), mesurée de l’horizontale (0°) vers le bas jusqu’à la  verticale (90°) | []
 
 
 
@@ -1702,23 +1692,23 @@ _Valeur du plongement du type d&#39;objet (en degrés), mesurée de l’horizont
 
 
 
-### Classe Planar_Structures_PT {#planar-structures-pt}
+### Classe Planar_Structures_PT (Mpla){#planar-structures-pt}
 La classe [Planar_Structures_PT](#planar-structures-pt) contient des types d&#39;objets qui décrivent la position spatiale de structures planes. décrivent la position des structures planaires avec des mesures directes sur le terrain.
 
 
 
 
-Nom            | Type | Description                              |  Oblig. | Card.
--------------------------|----------|---------------------------------------------------|-----|-----
-**KIND**                 | subtype                  | Type de l&#39;objet |non | [1]
-**POLARITY**                 | [CD](#planar-structures-pt-polarity)  | Polarité du type d&#39;objet dans l&#39;espace..|  non  | [0..1]
-**PHASE**                 | [CD](#planar-structures-pt-phase)  | Phase de déformation.|  non  | [0..1]
-**PHASE_REF**                 | string                  | Référence pour les données concernant la phase de déformation. |non | [0..1]
-**OB_DIP_SLO**                 | boolean                  | Dip slope (oui / non)? |non | [0..1]
-**AZIMUTH**                 | integer                  | Azimut du type d&#39;objet. L&#39;azimut est mesuré depuis le  nord en degré de 0° à 359° dans le sens des aiguilles  d&#39;une montre |non | [1]
+Nom             | Type | Description                             |  Card.
+--------------------------|------------|-----------------------------------------------------|-----
+**KIND**                 | subtype                  | Type de l&#39;objet | [1]
+**POLARITY**                 | [CD](#planar-structures-pt-polarity)  | Polarité du type d&#39;objet dans l&#39;espace.. | [0..1]
+**PHASE**                 | [CD](#planar-structures-pt-phase)  | Phase de déformation. | [0..1]
+**PHASE_REF**                 | string                  | Référence pour les données concernant la phase de déformation. | [0..1]
+**OB_DIP_SLO**                 | boolean                  | Dip slope (oui / non)? | [0..1]
+**AZIMUTH**                 | integer                  | Azimut du type d&#39;objet. L&#39;azimut est mesuré depuis le  nord en degré de 0° à 359° dans le sens des aiguilles  d&#39;une montre | [1]
 **DIP**                 |                   | Valeur du plongement du type d&#39;objet (en degrés),
 mesurée de l’horizontale (0°) vers le bas jusqu’à la 
-verticale (90°) |non | []
+verticale (90°) | []
 
 
 
@@ -1811,16 +1801,16 @@ verticale (90°)_
 
 ## Thème LOCAL_ADDITIONAL_INFORMATION
 
-### Classe Anomalies_PT {#anomalies-pt}
+### Classe Anomalies_PT (Lano){#anomalies-pt}
 None
 
 
 
 
-Nom            | Type | Description                              |  Oblig. | Card.
--------------------------|----------|---------------------------------------------------|-----|-----
-**KIND**                 | subtype                  | Type de l&#39;objet |non | [1]
-**TYPE**                 |                   | Caractéristique du type d&#39;objet |non | []
+Nom             | Type | Description                             |  Card.
+--------------------------|------------|-----------------------------------------------------|-----
+**KIND**                 | subtype                  | Type de l&#39;objet | [1]
+**TYPE**                 |                   | Caractéristique du type d&#39;objet | []
 
 
 
@@ -1832,6 +1822,8 @@ _Type de l&#39;objet_
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
+|12801001 | gemessene Anomalie | anomalie mesurée     |
+|12801002 | Fulgurit | fulgurite     |
 
 
 
@@ -1843,20 +1835,20 @@ _Caractéristique du type d&#39;objet_
 
 
 
-### Classe Fossils_PT {#fossils-pt}
+### Classe Fossils_PT (Lfos){#fossils-pt}
 La classe [Fossils_PT](#fossils-pt) contient tous les gisements fossilifères
 
 
 
 
-Nom            | Type | Description                              |  Oblig. | Card.
--------------------------|----------|---------------------------------------------------|-----|-----
-**KIND**                 | subtype                  | Type de l&#39;objet |non | [1]
-**DIVISION**                 | [CD](#fossils-pt-division)  | Catégorie de fossile à laquelle appartient l&#39;objet.|  non  | [0..1]
-**SYSTEM**                 | table                  | Groupe de fossiles |non | [0..5]
-**DAT_METH**                 | [CD](#fossils-pt-dat-meth)  | Méthode de datation.|  non  | [0..1]
-**STATUS**                 | [CD](#fossils-pt-status)  | État du type d&#39;objet.|  non  | [0..1]
-**PROTECTED**                 | boolean                  | Objet géologique protégé (oui / non)? |non | [0..1]
+Nom             | Type | Description                             |  Card.
+--------------------------|------------|-----------------------------------------------------|-----
+**KIND**                 | subtype                  | Type de l&#39;objet | [1]
+**DIVISION**                 | [CD](#fossils-pt-division)  | Catégorie de fossile à laquelle appartient l&#39;objet. | [0..1]
+**SYSTEM**                 | table                  | Groupe de fossiles | [0..5]
+**DAT_METH**                 | [CD](#fossils-pt-dat-meth)  | Méthode de datation. | [0..1]
+**STATUS**                 | [CD](#fossils-pt-status)  | État du type d&#39;objet. | [0..1]
+**PROTECTED**                 | boolean                  | Objet géologique protégé (oui / non)? | [0..1]
 
 
 
@@ -1933,20 +1925,20 @@ _Type de donnée :  boolean_
 
 
 
-### Classe Indication_of_Resources_PT {#indication-of-resources-pt}
+### Classe Indication_of_Resources_PT (Lind){#indication-of-resources-pt}
 La classe [Indication_of_Resources_PT](#indication-of-resources-pt) regroupe les gisements de minéraux,
 de gas, d’hydrocarbures et de matériel volcanique
 
 
 
 
-Nom            | Type | Description                              |  Oblig. | Card.
--------------------------|----------|---------------------------------------------------|-----|-----
-**KIND**                 | subtype                  | Type de l&#39;objet |non | [1]
-**STATUS**                 | [CD](#indication-of-resources-pt-status)  | tat du type d&#39;obje.|  non  | [0..1]
-**MATERIAL**                 | [CD](#indication-of-resources-pt-material)  | Matériau associé au type d&#39;objet.|  non  | [0..1]
+Nom             | Type | Description                             |  Card.
+--------------------------|------------|-----------------------------------------------------|-----
+**KIND**                 | subtype                  | Type de l&#39;objet | [1]
+**STATUS**                 | [CD](#indication-of-resources-pt-status)  | tat du type d&#39;obje. | [0..1]
+**MATERIAL**                 | [CD](#indication-of-resources-pt-material)  | Matériau associé au type d&#39;objet. | [0..1]
 **CHEMISTRY**                 | string                  | Composant(s) chimique(s) caractérisant la nature du 
-type d&#39;objet. |non | [0..1]
+type d&#39;objet. | [0..1]
 
 
 
@@ -1958,15 +1950,15 @@ _Type de l&#39;objet_
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
-|13201001 | Lres Mineralfundstelle | gisement de minéraux     |
-|13201002 | Lres Gasquelle | source de gaz naturel     |
-|13201003 | Lres Anzeichen auf Öl | indices de pétrole     |
-|13201004 | Lres Tasche, Karsttasche, Kluft, mit Füllung von siderolithischem Sediment | poche, poche karstique, fissure, remplie de matériel sidérolithique     |
-|13201005 | Lres Fundstelle von vulkanischem Tuffit | gisement de tuffite volcanique     |
-|13201006 | Lres Fundstelle vulkanischer Auswürflinge (Tephra) | gisement de projections volcaniques (tephra)     |
-|13201007 | Lres Fundstelle von Ries-Auswürflingen | gisement de projections du Ries     |
-|13201008 | Lres Asphalt, vereinzeltes Vorkommen | asphalte, gisement isolé     |
-|13201009 | Lres Meteoritenfundstelle | gisement de météorite     |
+|13201001 | Mineralfundstelle | gisement de minéraux     |
+|13201002 | Gasquelle | source de gaz naturel     |
+|13201003 | Anzeichen auf Öl | indices de pétrole     |
+|13201004 | Tasche, Karsttasche, Kluft, mit Füllung von siderolithischem Sediment | poche, poche karstique, fissure, remplie de matériel sidérolithique     |
+|13201005 | Fundstelle von vulkanischem Tuffit | gisement de tuffite volcanique     |
+|13201006 | Fundstelle vulkanischer Auswürflinge (Tephra) | gisement de projections volcaniques (tephra)     |
+|13201007 | Fundstelle von Ries-Auswürflingen | gisement de projections du Ries     |
+|13201008 | Asphalt, vereinzeltes Vorkommen | asphalte, gisement isolé     |
+|13201009 | Meteoritenfundstelle | gisement de météorite     |
 
 
 
@@ -2012,17 +2004,17 @@ _Type de donnée :  string_
 
 
 
-### Classe Mineralised_Zone_L {#mineralised-zone-l}
+### Classe Mineralised_Zone_L (Lmin){#mineralised-zone-l}
 La classe [Mineralised_Zone_L](#mineralised-zone-l) contient les zones minéralisées
 
 
 
 
-Nom            | Type | Description                              |  Oblig. | Card.
--------------------------|----------|---------------------------------------------------|-----|-----
-**KIND**                 | subtype                  | Type de l&#39;objet |non | [1]
+Nom             | Type | Description                             |  Card.
+--------------------------|------------|-----------------------------------------------------|-----
+**KIND**                 | subtype                  | Type de l&#39;objet | [1]
 **CHEMISTRY**                 | string                  | Composant(s) chimique(s) caractérisant la nature du 
-type d&#39;objet. |non | [0..1]
+type d&#39;objet. | [0..1]
 
 
 
@@ -2049,17 +2041,17 @@ _Type de donnée :  string_
 
 
 
-### Classe Sedimentary_Structures_PT {#sedimentary-structures-pt}
+### Classe Sedimentary_Structures_PT (Lsed){#sedimentary-structures-pt}
 La classe [Sedimentary_Structures_PT](#sedimentary-structures-pt) contient la description des structures sédimentaires
 observées.
 
 
 
 
-Nom            | Type | Description                              |  Oblig. | Card.
--------------------------|----------|---------------------------------------------------|-----|-----
-**KIND**                 | subtype                  | Type de l&#39;objet |non | [1]
-**AZIMUTH**                 | integer                  | Azimut du type d&#39;objet. L&#39;azimut est mesuré depuis le  nord en degré de 0° à 359° dans le sens des aiguilles  d&#39;une montre |non | [0..1]
+Nom             | Type | Description                             |  Card.
+--------------------------|------------|-----------------------------------------------------|-----
+**KIND**                 | subtype                  | Type de l&#39;objet | [1]
+**AZIMUTH**                 | integer                  | Azimut du type d&#39;objet. L&#39;azimut est mesuré depuis le  nord en degré de 0° à 359° dans le sens des aiguilles  d&#39;une montre | [0..1]
 
 
 
@@ -2090,20 +2082,20 @@ _Type de donnée :  integer_
 
 
 
-### Classe Type_Localities_PT {#type-localities-pt}
+### Classe Type_Localities_PT (Ltyp){#type-localities-pt}
 La classe [Type_Localities_PT](#type-localities-pt) regroupe les types d’objets qui décrivent les profiles-types ou les
 affleurements géologiques importants.
 
 
 
 
-Nom            | Type | Description                              |  Oblig. | Card.
--------------------------|----------|---------------------------------------------------|-----|-----
-**KIND**                 | subtype                  | Type de l&#39;objet |non | [1]
-**STRATI**                 | [CD](#type-localities-pt-strati)  | Complément lithostratigraphique du type d&#39;objet.|  non  | [0..1]
-**NAME**                 | string                  | Nom de la localité-type. / Description de l’affleurement géologique important. |non | [0..1]
-**ACCESSIBIL**                 | boolean                  | Est-ce que le type d’objet était accessible au moment du levé de la carte |non | [0..1]
-**PROTECTED**                 | boolean                  | Objet géologique protégé (oui / non)? |non | [0..1]
+Nom             | Type | Description                             |  Card.
+--------------------------|------------|-----------------------------------------------------|-----
+**KIND**                 | subtype                  | Type de l&#39;objet | [1]
+**STRATI**                 | [CD](#type-localities-pt-strati)  | Complément lithostratigraphique du type d&#39;objet. | [0..1]
+**NAME**                 | string                  | Nom de la localité-type. / Description de l’affleurement géologique important. | [0..1]
+**ACCESSIBIL**                 | boolean                  | Est-ce que le type d’objet était accessible au moment du levé de la carte | [0..1]
+**PROTECTED**                 | boolean                  | Objet géologique protégé (oui / non)? | [0..1]
 
 
 
@@ -2166,20 +2158,20 @@ _Type de donnée :  boolean_
 
 
 
-### Classe Prominent_Lithological_Features_L {#prominent-lithological-features-l}
+### Classe Prominent_Lithological_Features_L (Lpro){#prominent-lithological-features-l}
 None
 
 
 
 
-Nom            | Type | Description                              |  Oblig. | Card.
--------------------------|----------|---------------------------------------------------|-----|-----
-**KIND**                 | subtype                  | Type de l&#39;objet |non | [1]
+Nom             | Type | Description                             |  Card.
+--------------------------|------------|-----------------------------------------------------|-----
+**KIND**                 | subtype                  | Type de l&#39;objet | [1]
 **CONG_SPE**                 | [CD](#prominent-lithological-features-l-cong-spe)  | Caractérisation des conglomérats selon la nature des 
-clastes..|  non  | [0..1]
-**NAME_HORIZ**                 | [ Table ](#gc-litstrat-bed-cd)  | Nom du horizon repère à bentonite..|  non | [0..1]
-**ORIG_DESCR**                 | string                  | Description selon la légende de la carte géologique originale. |non | [0..1]
-**LPRO_LITHO**                 | [ Table ](#gc-litho-cd)  | Unité litholstratigraphique.|  non | [1]
+clastes.. | [0..1]
+**NAME_HORIZ**                 | [ Table ](#gc-litstrat-bed-cd)  | Nom du horizon repère à bentonite.. | [0..1]
+**ORIG_DESCR**                 | string                  | Description selon la légende de la carte géologique originale. | [0..1]
+**LPRO_LITHO**                 | [ Table ](#gc-litho-cd)  | Unité litholstratigraphique. | [1]
 
 
 
@@ -2240,7 +2232,7 @@ Voir [GC_LITHO_CD](#gc-litho-cd) dans l'annexe
 
 
 
-### Classe Miscellaneous_PT {#miscellaneous-pt}
+### Classe Miscellaneous_PT (Lmis){#miscellaneous-pt}
 La classe [Miscellaneous_PT](#miscellaneous-pt) est réservée aux objets locaux très particuliers qui ne sont pas
 pertinents pour l’ensemble des données géologiques. Par conséquent ils ne sont pas
 standardisés dans le Modèle de données géologiques.
@@ -2248,10 +2240,10 @@ standardisés dans le Modèle de données géologiques.
 
 
 
-Nom            | Type | Description                              |  Oblig. | Card.
--------------------------|----------|---------------------------------------------------|-----|-----
-**KIND**                 | subtype                  | Type de l&#39;objet |non | [1]
-**ORIG_NAME**                 | string                  |  |non | [1]
+Nom             | Type | Description                             |  Card.
+--------------------------|------------|-----------------------------------------------------|-----
+**KIND**                 | subtype                  | Type de l&#39;objet | [1]
+**ORIG_NAME**                 | string                  |  | [1]
 
 
 
@@ -2277,16 +2269,16 @@ _Type de donnée :  string_
 
 
 
-### Classe Geological_Outlines_L {#geological-outlines-l}
+### Classe Geological_Outlines_L (Lgeo){#geological-outlines-l}
 La classe [Geological_Outlines_L](#geological-outlines-l) contient les contours géologiques.
 
 
 
 
-Nom            | Type | Description                              |  Oblig. | Card.
--------------------------|----------|---------------------------------------------------|-----|-----
-**KIND**                 | subtype                  | Type de l&#39;objet |non | [1]
-**STATUS**                 | [CD](#geological-outlines-l-status)  | État du type d&#39;objet.|  non  | [0..1]
+Nom             | Type | Description                             |  Card.
+--------------------------|------------|-----------------------------------------------------|-----
+**KIND**                 | subtype                  | Type de l&#39;objet | [1]
+**STATUS**                 | [CD](#geological-outlines-l-status)  | État du type d&#39;objet. | [0..1]
 
 
 
@@ -2327,7 +2319,7 @@ _État du type d&#39;objet_
 
 ## Thème PARAMETER_AND_MODELLING
 
-### Classe Slope_Bedrock_PT {#slope-bedrock-pt}
+### Classe Slope_Bedrock_PT (Pslo){#slope-bedrock-pt}
 La classe [Slope_Bedrock_PT](#slope-bedrock-pt) contient des informations ponctuelles provenant de la modélisation
 de l’orientation d’horizons lithologiques des roches consolidées dans le sous-sol ou de surfaces
 d’érosions.
@@ -2335,13 +2327,13 @@ d’érosions.
 
 
 
-Nom            | Type | Description                              |  Oblig. | Card.
--------------------------|----------|---------------------------------------------------|-----|-----
-**KIND**                 | subtype                  | Type de l&#39;objet |non | [1]
-**TYPE**                 | [CD](#slope-bedrock-pt-type)  | Surface de référence.|  non  | [1]
-**AZIMUTH**                 | integer                  | Azimut du type d&#39;objet. L&#39;azimut est mesuré depuis le  nord en degré de 0° à 359° dans le sens des aiguilles  d&#39;une montre |non | [0..1]
-**DIP**                 | integer                  | Valeur du plongement du type d&#39;objet (en degrés), mesurée de l’horizontale (0°) vers le bas jusqu’à la  verticale (90°) |non | [0..1]
-**PSLO_FORMATIO**                 | [ Table ](#gc-litstrat-bed-cd)  | Unité lithostratigraphique de l’horizon modélisé.|  non | [1]
+Nom             | Type | Description                             |  Card.
+--------------------------|------------|-----------------------------------------------------|-----
+**KIND**                 | subtype                  | Type de l&#39;objet | [1]
+**TYPE**                 | [CD](#slope-bedrock-pt-type)  | Surface de référence. | [1]
+**AZIMUTH**                 | integer                  | Azimut du type d&#39;objet. L&#39;azimut est mesuré depuis le  nord en degré de 0° à 359° dans le sens des aiguilles  d&#39;une montre | [0..1]
+**DIP**                 | integer                  | Valeur du plongement du type d&#39;objet (en degrés), mesurée de l’horizontale (0°) vers le bas jusqu’à la  verticale (90°) | [0..1]
+**PSLO_FORMATIO**                 | [ Table ](#gc-litstrat-bed-cd)  | Unité lithostratigraphique de l’horizon modélisé. | [1]
 
 
 
@@ -2399,7 +2391,7 @@ Voir [GC_LITSTRAT_BED_CD](#gc-litstrat-bed-cd) dans l'annexe
 
 
 
-### Classe Contour_Lines_Bedrock_L {#contour-lines-bedrock-l}
+### Classe Contour_Lines_Bedrock_L (Pcon){#contour-lines-bedrock-l}
 La classe [Contour_Lines_Bedrock_L](#contour-lines-bedrock-l) contient les isohypses qui décrivent la géométrie des roches
 consolidées dans le sous-sol et sont le résultat d’une modélisation. Dans cette classe se trouvent
 entre autres les isohypses de la surface du substratum rocheux.
@@ -2407,12 +2399,12 @@ entre autres les isohypses de la surface du substratum rocheux.
 
 
 
-Nom            | Type | Description                              |  Oblig. | Card.
--------------------------|----------|---------------------------------------------------|-----|-----
-**KIND**                 | subtype                  | Type de l&#39;objet |non | [1]
-**TYPE**                 | [CD](#contour-lines-bedrock-l-type)  | Surface de référence.|  non  | [1]
-**ALTITUDE**                 | float                  | Valeur altimétrique des isohypses. |non | [1]
-**LITSTRAT**                 | [ Table ](#gc-litstrat-bed-cd)  | Unité lithostratigraphique de la formation modelisée.|  non | [1]
+Nom             | Type | Description                             |  Card.
+--------------------------|------------|-----------------------------------------------------|-----
+**KIND**                 | subtype                  | Type de l&#39;objet | [1]
+**TYPE**                 | [CD](#contour-lines-bedrock-l-type)  | Surface de référence. | [1]
+**ALTITUDE**                 | float                  | Valeur altimétrique des isohypses. | [1]
+**LITSTRAT**                 | [ Table ](#gc-litstrat-bed-cd)  | Unité lithostratigraphique de la formation modelisée. | [1]
 
 
 
@@ -2424,7 +2416,7 @@ _Type de l&#39;objet_
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
-|13901001 | Pcob Isohypse | isohypse     |
+|13901001 | Isohypse | isohypse     |
 
 
 
@@ -2462,20 +2454,20 @@ Voir [GC_LITSTRAT_BED_CD](#gc-litstrat-bed-cd) dans l'annexe
 
 
 
-### Classe Modelled_Water_Table_PT {#modelled-water-table-pt}
+### Classe Modelled_Water_Table_PT (Pmod){#modelled-water-table-pt}
 La classe [Modelled_Water_Table_PT](#modelled-water-table-pt) contient des informations ponctuelles provenant de la
 modélisation du niveau piézométrique d’une nappe libre.
 
 
 
 
-Nom            | Type | Description                              |  Oblig. | Card.
--------------------------|----------|---------------------------------------------------|-----|-----
-**KIND**                 | subtype                  | Type de l&#39;objet |non | [1]
-**AZIMUTH**                 | integer                  | Azimut du type d&#39;objet. L&#39;azimut est mesuré depuis le  nord en degré de 0° à 359° dans le sens des aiguilles  d&#39;une montre |non | [0..1]
-**DIP**                 | integer                  | Valeur du plongement du type d&#39;objet (en degrés), mesurée de l’horizontale (0°) vers le bas jusqu’à la  verticale (90°) |non | [0..1]
-**HEIGHT**                 | float                  | Cote de la nappe phréatique. |non | [0..1]
-**MEA_PERIOD**                 | range                  | Période de mesure de la profondeur du niveau hydrostatique. |non | [0..1]
+Nom             | Type | Description                             |  Card.
+--------------------------|------------|-----------------------------------------------------|-----
+**KIND**                 | subtype                  | Type de l&#39;objet | [1]
+**AZIMUTH**                 | integer                  | Azimut du type d&#39;objet. L&#39;azimut est mesuré depuis le  nord en degré de 0° à 359° dans le sens des aiguilles  d&#39;une montre | [0..1]
+**DIP**                 | integer                  | Valeur du plongement du type d&#39;objet (en degrés), mesurée de l’horizontale (0°) vers le bas jusqu’à la  verticale (90°) | [0..1]
+**HEIGHT**                 | float                  | Cote de la nappe phréatique. | [0..1]
+**MEA_PERIOD**                 | range                  | Période de mesure de la profondeur du niveau hydrostatique. | [0..1]
 
 
 
@@ -2529,19 +2521,19 @@ _Type de donnée :  range_
 
 
 
-### Classe Contour_Lines_Hydro_L {#contour-lines-hydro-l}
+### Classe Contour_Lines_Hydro_L (Pcon){#contour-lines-hydro-l}
 Dans la classe [Contour_Lines_Hydro_L](#contour-lines-hydro-l) se trouvent les isohypses qui décrivent la surface d’une
 nappe d’eaux souterraine.
 
 
 
 
-Nom            | Type | Description                              |  Oblig. | Card.
--------------------------|----------|---------------------------------------------------|-----|-----
-**KIND**                 | subtype                  | Type de l&#39;objet |non | [1]
-**CONFINE**                 | [CD](#contour-lines-hydro-l-confine)  | État de la pression dans l’aquifère.|  non  | [0..1]
-**ALTITUDE**                 |                   | Valeur altimétrique des isohypses. |non | [1]
-**WA_TABLE**                 | [CD](#contour-lines-hydro-l-wa-table)  | Niveau des eaux.|  non  | [0..1]
+Nom             | Type | Description                             |  Card.
+--------------------------|------------|-----------------------------------------------------|-----
+**KIND**                 | subtype                  | Type de l&#39;objet | [1]
+**CONFINE**                 | [CD](#contour-lines-hydro-l-confine)  | État de la pression dans l’aquifère. | [0..1]
+**ALTITUDE**                 |                   | Valeur altimétrique des isohypses. | [1]
+**WA_TABLE**                 | [CD](#contour-lines-hydro-l-wa-table)  | Niveau des eaux. | [0..1]
 
 
 
@@ -2600,19 +2592,19 @@ _Niveau des eaux_
 
 ## Thème ANTHROPOGENIC_FEATURES
 
-### Classe Archaeology_PT {#archaeology-pt}
+### Classe Archaeology_PT (Aarc){#archaeology-pt}
 La classe [Archaeology_PT](#archaeology-pt) regroupe les sites archéologiques.
 
 
 
 
-Nom            | Type | Description                              |  Oblig. | Card.
--------------------------|----------|---------------------------------------------------|-----|-----
-**KIND**                 | subtype                  | Type de l&#39;objet |non | []
-**EPOCH**                 | [CD](#archaeology-pt-epoch)  | Époque archéologique du type d&#39;objet.|  non  | [0..1]
-**PERIOD**                 | [CD](#archaeology-pt-period)  | Période archéologique du type d&#39;objet.|  non  | [0..1]
-**AGE**                 | [CD](#archaeology-pt-age)  | Âge archéologique du type d&#39;objet.|  non  | [0..1]
-**TYPE**                 | [CD](#archaeology-pt-type)  | Type de mégalithe.|  non  | [0..1]
+Nom             | Type | Description                             |  Card.
+--------------------------|------------|-----------------------------------------------------|-----
+**KIND**                 | subtype                  | Type de l&#39;objet | []
+**EPOCH**                 | [CD](#archaeology-pt-epoch)  | Époque archéologique du type d&#39;objet. | [0..1]
+**PERIOD**                 | [CD](#archaeology-pt-period)  | Période archéologique du type d&#39;objet. | [0..1]
+**AGE**                 | [CD](#archaeology-pt-age)  | Âge archéologique du type d&#39;objet. | [0..1]
+**TYPE**                 | [CD](#archaeology-pt-type)  | Type de mégalithe. | [0..1]
 
 
 
@@ -2708,19 +2700,19 @@ _Type de mégalithe_
 
 
 
-### Classe Archaeology_L {#archaeology-l}
+### Classe Archaeology_L (Aarc){#archaeology-l}
 La classe [Archaeology_L](#archaeology-l) contient les éléments archéologiques de forme linéaire. Les routes
 historiques, les chemins creux et les fossés de fortification font partie de cette classe.
 
 
 
 
-Nom            | Type | Description                              |  Oblig. | Card.
--------------------------|----------|---------------------------------------------------|-----|-----
-**KIND**                 | subtype                  | Type de l&#39;objet |non | []
-**EPOCH**                 | [CD](#archaeology-l-epoch)  | Époque archéologique du type d&#39;objet.|  non  | [0..1]
-**PERIOD**                 | [CD](#archaeology-l-period)  | Période archéologique du type d&#39;objet.|  non  | [0..1]
-**AGE**                 | [CD](#archaeology-l-age)  | Âge archéologique du type d&#39;objet.|  non  | [0..1]
+Nom             | Type | Description                             |  Card.
+--------------------------|------------|-----------------------------------------------------|-----
+**KIND**                 | subtype                  | Type de l&#39;objet | []
+**EPOCH**                 | [CD](#archaeology-l-epoch)  | Époque archéologique du type d&#39;objet. | [0..1]
+**PERIOD**                 | [CD](#archaeology-l-period)  | Période archéologique du type d&#39;objet. | [0..1]
+**AGE**                 | [CD](#archaeology-l-age)  | Âge archéologique du type d&#39;objet. | [0..1]
 
 
 
@@ -2795,19 +2787,19 @@ _Âge archéologique du type d&#39;objet_
 
 
 
-### Classe Archaeology_PLG {#archaeology-plg}
+### Classe Archaeology_PLG (Aarc){#archaeology-plg}
 Dans la classe [Archaeology_PLG](#archaeology-plg) se trouvent les vestiges archéologiques (p.ex. le Castrum
 romain) qui recouvrent une surface importante.
 
 
 
 
-Nom            | Type | Description                              |  Oblig. | Card.
--------------------------|----------|---------------------------------------------------|-----|-----
-**KIND**                 | subtype                  | Type de l&#39;objet |non | []
-**EPOCH**                 | [CD](#archaeology-plg-epoch)  | Époque archéologique du type d&#39;objet.|  non  | [0..1]
-**PERIOD**                 | [CD](#archaeology-plg-period)  | Période archéologique du type d&#39;objet.|  non  | [0..1]
-**AGE**                 | [CD](#archaeology-plg-age)  | Âge archéologique du type d&#39;objet.|  non  | [0..1]
+Nom             | Type | Description                             |  Card.
+--------------------------|------------|-----------------------------------------------------|-----
+**KIND**                 | subtype                  | Type de l&#39;objet | []
+**EPOCH**                 | [CD](#archaeology-plg-epoch)  | Époque archéologique du type d&#39;objet. | [0..1]
+**PERIOD**                 | [CD](#archaeology-plg-period)  | Période archéologique du type d&#39;objet. | [0..1]
+**AGE**                 | [CD](#archaeology-plg-age)  | Âge archéologique du type d&#39;objet. | [0..1]
 
 
 
@@ -2877,20 +2869,20 @@ _Âge archéologique du type d&#39;objet_
 
 
 
-### Classe Exploitation_Geomaterials_PT {#exploitation-geomaterials-pt}
+### Classe Exploitation_Geomaterials_PT (Aexp){#exploitation-geomaterials-pt}
 La classe [Exploitation_Geomaterials_PT](#exploitation-geomaterials-pt) contient des informations ponctuelles sur les sites
 d’exploitation de matériaux géologiques.
 
 
 
 
-Nom            | Type | Description                              |  Oblig. | Card.
--------------------------|----------|---------------------------------------------------|-----|-----
-**KIND**                 | subtype                  | Type de l&#39;objet |non | []
-**EXP_UNIT**                 | [ Table ](#gc-litstrat-bed-cd)  | Unité lithostratigraphique exploitée.|  non | [0..*]
-**STATUS**                 | [CD](#exploitation-geomaterials-pt-status)  | État de l&#39;exploitation.|  non  | [0..1]
-**DEPTH_TOT**                 | float                  | Profondeur totale du type d&#39;objet (en mètres depuis la surface). |non | [0..1]
-**TARG_MAT**                 | [CD](#exploitation-geomaterials-pt-targ-mat)  | Matériau exploité..|  non  | [0..1]
+Nom             | Type | Description                             |  Card.
+--------------------------|------------|-----------------------------------------------------|-----
+**KIND**                 | subtype                  | Type de l&#39;objet | []
+**EXP_UNIT**                 | [ Table ](#gc-litstrat-bed-cd)  | Unité lithostratigraphique exploitée. | [0..*]
+**STATUS**                 | [CD](#exploitation-geomaterials-pt-status)  | État de l&#39;exploitation. | [0..1]
+**DEPTH_TOT**                 | float                  | Profondeur totale du type d&#39;objet (en mètres depuis la surface). | [0..1]
+**TARG_MAT**                 | [CD](#exploitation-geomaterials-pt-targ-mat)  | Matériau exploité.. | [0..1]
 
 
 
@@ -2998,17 +2990,17 @@ _Matériau exploité._
 
 
 
-### Classe Exploitation_Geomaterials_L {#exploitation-geomaterials-l}
+### Classe Exploitation_Geomaterials_L (Aexp){#exploitation-geomaterials-l}
 La classe [Exploitation_Geomaterials_L](#exploitation-geomaterials-l) contient les objets de forme linéaire liés aux sites
 d’exploitation de matériaux géologiques (p.ex. le front de taille).
 
 
 
 
-Nom            | Type | Description                              |  Oblig. | Card.
--------------------------|----------|---------------------------------------------------|-----|-----
-**KIND**                 | subtype                  | Type de l&#39;objet |non | []
-**STATUS**                 | [CD](#exploitation-geomaterials-l-status)  | État de l&#39;exploitation.|  non  | [0..1]
+Nom             | Type | Description                             |  Card.
+--------------------------|------------|-----------------------------------------------------|-----
+**KIND**                 | subtype                  | Type de l&#39;objet | []
+**STATUS**                 | [CD](#exploitation-geomaterials-l-status)  | État de l&#39;exploitation. | [0..1]
 
 
 
@@ -3042,20 +3034,20 @@ _État de l&#39;exploitation_
 
 
 
-### Classe Exploitation_Geomaterials_PLG {#exploitation-geomaterials-plg}
+### Classe Exploitation_Geomaterials_PLG (Aexp){#exploitation-geomaterials-plg}
 La classe [Exploitation_Geomaterials_PLG](#exploitation-geomaterials-plg) contient les surfaces d’exploitation de géomatériaux,
 telles qu’elles étaient au moment du levé de la carte géologique.
 
 
 
 
-Nom            | Type | Description                              |  Oblig. | Card.
--------------------------|----------|---------------------------------------------------|-----|-----
-**KIND**                 | subtype                  | Type de l&#39;objet |non | []
-**EXP_UNIT**                 | [ Table ](#gc-litstrat-bed-cd)  | Unité lithostratigraphique exploitée.|  non | [1..*]
-**STATUS**                 | [CD](#exploitation-geomaterials-plg-status)  | État de l&#39;exploitation.|  non  | [0..1]
-**DEPTH_TOT**                 | float                  | Profondeur totale du type d&#39;objet (en mètres depuis la surface). |non | [0..1]
-**TARG_MAT**                 | [CD](#exploitation-geomaterials-plg-targ-mat)  | Matériel exploité..|  non  | [0..1]
+Nom             | Type | Description                             |  Card.
+--------------------------|------------|-----------------------------------------------------|-----
+**KIND**                 | subtype                  | Type de l&#39;objet | []
+**EXP_UNIT**                 | [ Table ](#gc-litstrat-bed-cd)  | Unité lithostratigraphique exploitée. | [1..*]
+**STATUS**                 | [CD](#exploitation-geomaterials-plg-status)  | État de l&#39;exploitation. | [0..1]
+**DEPTH_TOT**                 | float                  | Profondeur totale du type d&#39;objet (en mètres depuis la surface). | [0..1]
+**TARG_MAT**                 | [CD](#exploitation-geomaterials-plg-targ-mat)  | Matériel exploité.. | [0..1]
 
 
 
@@ -3140,7 +3132,7 @@ _Matériel exploité._
 
 
 
-### Classe Boreholes_PT {#boreholes-pt}
+### Classe Boreholes_PT (Abor){#boreholes-pt}
 La classe [Boreholes_PT](#boreholes-pt) regroupe les forages et les sondages. (Sur les anciennes cartes imprimées,
 le genre d’objet n’était pas toujours distingué. D’ailleurs, il se peut que sur les anciennes cartes,
 les sondages par carottier battu aient été classés en tant que forages.)
@@ -3148,27 +3140,27 @@ les sondages par carottier battu aient été classés en tant que forages.)
 
 
 
-Nom            | Type | Description                              |  Oblig. | Card.
--------------------------|----------|---------------------------------------------------|-----|-----
-**KIND**                 | subtype                  | Type de l&#39;objet |non | []
-**DRILL_MO**                 |                   | Mode du forage. |non | [0..1]
-**DEPTH_BEDROCK**                 | float                  | Profondeur de la roche en place (en mètres depuis la 
+Nom             | Type | Description                             |  Card.
+--------------------------|------------|-----------------------------------------------------|-----
+**KIND**                 | subtype                  | Type de l&#39;objet | []
+**DRILL_MO**                 |                   | Mode du forage. | [0..1]
+**DEPTH_BEDR**                 | float                  | Profondeur de la roche en place (en mètres depuis la 
 surface). (Si l’ouvrage n’atteint pas la roche en place, 
 par exemple forage interrompu dans la couverture 
 quaternaire, la valeur est -999, au cas où le forage 
-commence déjà dans la roche en place la valeur est 0) |non | [0..1]
-**D_C_UNDERG**                 | boolean                  | Forage réalisé à partir d’une galerie (oui / non)? |non | [1]
-**MAIN_TAR**                 | [CD](#boreholes-pt-main-tar)  | But principal du sondage.|  non  | [0..1]
-**TARG_MAT**                 | [CD](#boreholes-pt-targ-mat)  | Matériau cible du sondage.|  non  | [0..1]
-**DEPTH_TOT**                 | float                  | Profondeur totale du type d&#39;objet (en mètres depuis la surface). |non | [0..1]
-**FM_A**                 | [ Table ](#gc-litstrat-bed-cd)  | Unité lithostratigraphique de la formation A atteinte.|  non | [0..1]
-**DEPTH_FM_A**                 | float                  | Profondeur relative à la formation A atteinte (en mètres depuis la surface). |non | [0..1]
-**FM_B**                 | [ Table ](#gc-litstrat-bed-cd)  | Unité lithostratigraphique de la formation B atteinte.|  non | [0..1]
-**DEPTH_FM_B**                 | float                  | Profondeur de la formation B atteinte (en mètres depuis  la surface). |non | [0..1]
-**DEPTH_WT**                 | float                  | Profondeur (m depuis la surface) de la nappe phréatique (valeur moyenne). |non | [0..1]
-**AZIMUTH**                 | integer                  | Azimut du type d&#39;objet. L&#39;azimut est mesuré depuis le  nord en degré de 0° à 359° dans le sens des aiguilles  d&#39;une montre |non | [0..1]
-**DIP**                 | integer                  | Valeur du plongement du type d&#39;objet (en degrés), mesurée de l’horizontale (0°) vers le bas jusqu’à la  verticale (90°) |non | [0..1]
-**REF_NUMBER**                 | integer                  | Numéro de référence du type d&#39;objet dans un  document annexé (notice explicative,…). |non | [0..1]
+commence déjà dans la roche en place la valeur est 0) | [0..1]
+**D_C_UNDERG**                 | boolean                  | Forage réalisé à partir d’une galerie (oui / non)? | [1]
+**MAIN_TAR**                 | [CD](#boreholes-pt-main-tar)  | But principal du sondage. | [0..1]
+**TARG_MAT**                 | [CD](#boreholes-pt-targ-mat)  | Matériau cible du sondage. | [0..1]
+**DEPTH_TOT**                 | float                  | Profondeur totale du type d&#39;objet (en mètres depuis la surface). | [0..1]
+**FM_A**                 | [ Table ](#gc-litstrat-bed-cd)  | Unité lithostratigraphique de la formation A atteinte. | [0..1]
+**DEPTH_FM_A**                 | float                  | Profondeur relative à la formation A atteinte (en mètres depuis la surface). | [0..1]
+**FM_B**                 | [ Table ](#gc-litstrat-bed-cd)  | Unité lithostratigraphique de la formation B atteinte. | [0..1]
+**DEPTH_FM_B**                 | float                  | Profondeur de la formation B atteinte (en mètres depuis  la surface). | [0..1]
+**DEPTH_WT**                 | float                  | Profondeur (m depuis la surface) de la nappe phréatique (valeur moyenne). | [0..1]
+**AZIMUTH**                 | integer                  | Azimut du type d&#39;objet. L&#39;azimut est mesuré depuis le  nord en degré de 0° à 359° dans le sens des aiguilles  d&#39;une montre | [0..1]
+**DIP**                 | integer                  | Valeur du plongement du type d&#39;objet (en degrés), mesurée de l’horizontale (0°) vers le bas jusqu’à la  verticale (90°) | [0..1]
+**REF_NUMBER**                 | integer                  | Numéro de référence du type d&#39;objet dans un  document annexé (notice explicative,…). | [0..1]
 
 
 
@@ -3196,7 +3188,7 @@ _Mode du forage._
 
 
 
-#### Attribut  DEPTH_BEDROCK
+#### Attribut  DEPTH_BEDR
 _Profondeur de la roche en place (en mètres depuis la 
 surface). (Si l’ouvrage n’atteint pas la roche en place, 
 par exemple forage interrompu dans la couverture 
@@ -3339,15 +3331,15 @@ _Type de donnée :  integer_
 
 
 
-### Classe Artificial_Surface_Modifications_PLG {#artificial-surface-modifications-plg}
+### Classe Artificial_Surface_Modifications_PLG (Aart){#artificial-surface-modifications-plg}
 None
 
 
 
 
-Nom            | Type | Description                              |  Oblig. | Card.
--------------------------|----------|---------------------------------------------------|-----|-----
-**KIND**                 | subtype                  | Type de l&#39;objet |non | [1]
+Nom             | Type | Description                             |  Card.
+--------------------------|------------|-----------------------------------------------------|-----
+**KIND**                 | subtype                  | Type de l&#39;objet | [1]
 
 
 
@@ -3375,7 +3367,7 @@ _Type de l&#39;objet_
 
 ## Thème HYDROGEOLOGY
 
-### Classe Construction_PT {#construction-pt}
+### Classe Construction_PT (Hcon){#construction-pt}
 Dans la classe [Construction_PT](#construction-pt) se trouvent les constructions hydriques, comme les captages
 dans la nappe phréatique et les citernes. Les instruments de mesure comme les piézomètres et
 les limnigraphes appartiennent également à cette classe.
@@ -3383,14 +3375,14 @@ les limnigraphes appartiennent également à cette classe.
 
 
 
-Nom            | Type | Description                              |  Oblig. | Card.
--------------------------|----------|---------------------------------------------------|-----|-----
-**KIND**                 | subtype                  | Type de l&#39;objet |non | [1]
-**STATUS**                 | [CD](#construction-pt-status)  | État du type d&#39;objet..|  non  | [0..1]
-**EPOCH**                 | [CD](#construction-pt-epoch)  | Époque de construction du type d&#39;objet.|  non  | [0..1]
-**DEPTH**                 | float                  | Profondeur du type d&#39;objet. |non | [0..1]
-**DEPTH_WT**                 | float                  | Profondeur (m depuis la surface) de la nappe phréatique (valeur moyenne). |non | [0..1]
-**MEA_PERIOD**                 | range                  | Période de mesure de la profondeur du niveau hydrostatique. |non | [0..1]
+Nom             | Type | Description                             |  Card.
+--------------------------|------------|-----------------------------------------------------|-----
+**KIND**                 | subtype                  | Type de l&#39;objet | [1]
+**STATUS**                 | [CD](#construction-pt-status)  | État du type d&#39;objet.. | [0..1]
+**EPOCH**                 | [CD](#construction-pt-epoch)  | Époque de construction du type d&#39;objet. | [0..1]
+**DEPTH**                 | float                  | Profondeur du type d&#39;objet. | [0..1]
+**DEPTH_WT**                 | float                  | Profondeur (m depuis la surface) de la nappe phréatique (valeur moyenne). | [0..1]
+**MEA_PERIOD**                 | range                  | Période de mesure de la profondeur du niveau hydrostatique. | [0..1]
 
 
 
@@ -3469,7 +3461,7 @@ _Type de donnée :  range_
 
 
 
-### Classe Construction_L {#construction-l}
+### Classe Construction_L (Hcon){#construction-l}
 Dans la classe [Construction_L](#construction-l) se trouvent les constructions hydriques de forme linéaire comme
 les galeries de captage d’eau, qui peuvent être combinées avec les types d’objets de la classe
 Surface_Water_PT.
@@ -3477,11 +3469,11 @@ Surface_Water_PT.
 
 
 
-Nom            | Type | Description                              |  Oblig. | Card.
--------------------------|----------|---------------------------------------------------|-----|-----
-**KIND**                 | subtype                  | Type de l&#39;objet |non | [1]
+Nom             | Type | Description                             |  Card.
+--------------------------|------------|-----------------------------------------------------|-----
+**KIND**                 | subtype                  | Type de l&#39;objet | [1]
 **COMBI**                 | [CD](#construction-l-combi)  | Type d’objet d&#39;une autre classe avec lequel le type 
-d’objet peut être combiné.|  non  | [0..1]
+d’objet peut être combiné. | [0..1]
 
 
 
@@ -3515,20 +3507,20 @@ d’objet peut être combiné_
 
 
 
-### Classe Palaeohydrology_L {#palaeohydrology-l}
+### Classe Palaeohydrology_L (Hpal){#palaeohydrology-l}
 La classe [Palaeohydrology_L](#palaeohydrology-l) contient tous les types d’objets de forme linéaire, indiquant le tracé
 d’un cours d’eau dans le passé.
 
 
 
 
-Nom            | Type | Description                              |  Oblig. | Card.
--------------------------|----------|---------------------------------------------------|-----|-----
-**KIND**                 | subtype                  | Type de l&#39;objet |non | [1]
-**REL_AGE**                 | [CD](#palaeohydrology-l-rel-age)  | Age relatif du type d&#39;objet.|  non  | [0..1]
-**HPAL_CHRONO**                 | [ Table ](#gc-chrono-cd)  | Attribution chronostratigraphique.|  non | [0..1]
-**REF_YEAR**                 | integer                  | Année de référence de l’ancienne ligne de rivage. |non | [1]
-**SOURCE**                 | string                  | Source des données déduites à partir de données historiques. |non | [0..1]
+Nom             | Type | Description                             |  Card.
+--------------------------|------------|-----------------------------------------------------|-----
+**KIND**                 | subtype                  | Type de l&#39;objet | [1]
+**REL_AGE**                 | [CD](#palaeohydrology-l-rel-age)  | Age relatif du type d&#39;objet. | [0..1]
+**HPAL_CHRONO**                 | [ Table ](#gc-chrono-cd)  | Attribution chronostratigraphique. | [0..1]
+**REF_YEAR**                 | integer                  | Année de référence de l’ancienne ligne de rivage. | [1]
+**SOURCE**                 | string                  | Source des données déduites à partir de données historiques. | [0..1]
 
 
 
@@ -3593,7 +3585,7 @@ _Type de donnée :  string_
 
 
 
-### Classe Subsurface_Water_L {#subsurface-water-l}
+### Classe Subsurface_Water_L (Hsub){#subsurface-water-l}
 Dans la classe [Subsurface_Water_L](#subsurface-water-l) se trouvent les objets de forme linéaire qui représentent les
 cours d’eau souterrains. Le parcours exact des cours d’eau souterrains est presque toujours
 supposé. Il est déduit à partir de quelques données d’études de systèmes de captage. Les essais
@@ -3603,11 +3595,11 @@ souterrains peuvent être combinés avec les objets de la classe Surface_Water_P
 
 
 
-Nom            | Type | Description                              |  Oblig. | Card.
--------------------------|----------|---------------------------------------------------|-----|-----
-**KIND**                 | subtype                  | Type de l&#39;objet |non | [1]
+Nom             | Type | Description                             |  Card.
+--------------------------|------------|-----------------------------------------------------|-----
+**KIND**                 | subtype                  | Type de l&#39;objet | [1]
 **COMBI**                 | [CD](#subsurface-water-l-combi)  | Type d’objet d&#39;une autre classe avec lequel le type 
-d’objet peut être combiné.|  non  | [0..1]
+d’objet peut être combiné. | [0..1]
 
 
 
@@ -3639,7 +3631,7 @@ d’objet peut être combiné_
 
 
 
-### Classe Surface_Water_PT {#surface-water-pt}
+### Classe Surface_Water_PT (Hsur){#surface-water-pt}
 La classe [Surface_Water_PT](#surface-water-pt) comprend les eaux de surface locales (ponctuelles) comme les 
 sources et les pertes d’un cours d’eau. On y trouve également des types d’objets particuliers 
 comme les cascades et les rapides, lesquels marquent des positions spécifiques du cours d’eau 
@@ -3655,17 +3647,17 @@ principal de l’eau minérale et non le chimisme complet de l’eau
 
 
 
-Nom            | Type | Description                              |  Oblig. | Card.
--------------------------|----------|---------------------------------------------------|-----|-----
-**KIND**                 | subtype                  | Type de l&#39;objet |non | [1]
-**STATUS**                 | [CD](#surface-water-pt-status)  | État du type d&#39;objet.|  non  | [0..1]
-**FLOW_CON**                 | [CD](#surface-water-pt-flow-con)  | Condition d’écoulement.|  non  | [0..1]
-**TYPE**                 | [CD](#surface-water-pt-type)  | Caractéristique du type d&#39;objet.|  non  | [0..1]
-**DIS_LOCA**                 | [CD](#surface-water-pt-dis-loca)  | Lieu d’écoulement.|  non  | [0..1]
-**COMBI**                 | [CD](#surface-water-pt-combi)  | Type d’objet d&#39;une autre classe avec lequel le type  d’objet peut être combiné.|  non  | [0..1]
-**TEMP**                 | integer                  | Température moyenne (°C) de l&#39;eau. |non | [0..1]
-**CHEMISTRY**                 | string                  | Element chimique caractéristique dans l’eau minérale. |non | [0..1]
-**AZIMUTH**                 | integer                  | Azimut du type d&#39;objet. L&#39;azimut est mesuré depuis le  nord en degré de 0° à 359° dans le sens des aiguilles  d&#39;une montre |non | [0..1]
+Nom             | Type | Description                             |  Card.
+--------------------------|------------|-----------------------------------------------------|-----
+**KIND**                 | subtype                  | Type de l&#39;objet | [1]
+**STATUS**                 | [CD](#surface-water-pt-status)  | État du type d&#39;objet. | [0..1]
+**FLOW_CON**                 | [CD](#surface-water-pt-flow-con)  | Condition d’écoulement. | [0..1]
+**TYPE**                 | [CD](#surface-water-pt-type)  | Caractéristique du type d&#39;objet. | [0..1]
+**DIS_LOCA**                 | [CD](#surface-water-pt-dis-loca)  | Lieu d’écoulement. | [0..1]
+**COMBI**                 | [CD](#surface-water-pt-combi)  | Type d’objet d&#39;une autre classe avec lequel le type  d’objet peut être combiné. | [0..1]
+**TEMP**                 | integer                  | Température moyenne (°C) de l&#39;eau. | [0..1]
+**CHEMISTRY**                 | string                  | Element chimique caractéristique dans l’eau minérale. | [0..1]
+**AZIMUTH**                 | integer                  | Azimut du type d&#39;objet. L&#39;azimut est mesuré depuis le  nord en degré de 0° à 359° dans le sens des aiguilles  d&#39;une montre | [0..1]
 
 
 
@@ -3785,15 +3777,15 @@ _Type de donnée :  integer_
 
 
 
-### Classe Surface_Water_L {#surface-water-l}
+### Classe Surface_Water_L (Hsur){#surface-water-l}
 Dans la classe [Surface_Water_L](#surface-water-l) sont décrit les niveaux de sources (de forme linéaire)
 
 
 
 
-Nom            | Type | Description                              |  Oblig. | Card.
--------------------------|----------|---------------------------------------------------|-----|-----
-**KIND**                 | subtype                  | Type de l&#39;objet |non | [1]
+Nom             | Type | Description                             |  Card.
+--------------------------|------------|-----------------------------------------------------|-----
+**KIND**                 | subtype                  | Type de l&#39;objet | [1]
 
 
 
@@ -3811,7 +3803,7 @@ _Type de l&#39;objet_
 
 
 
-### Classe Surface_Water_PLG {#surface-water-plg}
+### Classe Surface_Water_PLG (Hsur){#surface-water-plg}
 La classe [Surface_Water_PLG](#surface-water-plg) regroupe toutes les accumulations d’eaux superficielles comme les
 glaciers, les lacs et les rivières qui masquent les unités géologiques sous-jacentes. Le modèle
 complet du réseau hydrique ne fait pas partie du Modèle de données géologiques.
@@ -3819,9 +3811,9 @@ complet du réseau hydrique ne fait pas partie du Modèle de données géologiqu
 
 
 
-Nom            | Type | Description                              |  Oblig. | Card.
--------------------------|----------|---------------------------------------------------|-----|-----
-**KIND**                 | subtype                  | Type de l&#39;objet |non | [1]
+Nom             | Type | Description                             |  Card.
+--------------------------|------------|-----------------------------------------------------|-----
+**KIND**                 | subtype                  | Type de l&#39;objet | [1]
 
 
 
@@ -4491,6 +4483,10 @@ Table des valeurs des unités lithostratigraphiques
 |15200685 | Courgenay-, Balsthal- und Villigen-Formation, undifferenziert | Courgenay-, Balsthal- und Villigen-Formation, undifferenziert     |
 |15200686 | Pichoux-Formation: Korallenfazies | Pichoux-Formation: Korallenfazies     |
 |15200687 | Pichoux-Formation: Schwammfazies | Pichoux-Formation: Schwammfazies     |
+|15200688 | Kalter-Wangen-Formation: Konglomerat-Fazies | Kalter-Wangen-Formation: Konglomerat-Fazies     |
+|15200689 | Kalter-Wangen-Formation: Sandstein-Mergel-Fazies | Kalter-Wangen-Formation: Sandstein-Mergel-Fazies     |
+|15200690 | Heilsberg-Bentonit | Heilsberg-Bentonit     |
+|15200691 | Humlikon-Bentonit | Humlikon-Bentonit     |
 |15202001 | Habkern-Melange | Mélange de Habkern     |
 |15202002 | Sörenberg-Melange | Mélange de Sörenberg     |
 |15202003 | Wildhaus-Melange | Mélange de Wildhaus     |
@@ -5082,6 +5078,39 @@ Table des valeurs des unités lithostratigraphiques
 |15202613 | Erzegg-Formation: Grenzschicht | Erzegg-Formation: Grenzschicht     |
 |15202614 | Bränd-Brekzie | Bränd-Brekzie     |
 |15202615 | Infralias-Sandstein | Infralias-Sandstein     |
+|15202616 | Nufenen-Zone: phyllitische Trias | Nufenen-Zone: phyllitische Trias     |
+|15202617 | Nufenen-Zone: karbonatische Trias | Nufenen-Zone: karbonatische Trias     |
+|15202618 | Nufenen-Zone: karbonatische Trias: Kalkmarmor | Nufenen-Zone: karbonatische Trias: Kalkmarmor     |
+|15202619 | Nufenen-Zone: karbonatische Trias: Dolomitmarmor | Nufenen-Zone: karbonatische Trias: Dolomitmarmor     |
+|15202620 | Nufenen-Zone: karbonatische Trias: Rauwacke | Nufenen-Zone: karbonatische Trias: Rauwacke     |
+|15202621 | Nufenen-Zone: quartzitische Trias | Nufenen-Zone: quartzitische Trias     |
+|15202622 | Urseren-Garvera-Zone: Malm | Urseren-Garvera-Zone: Malm     |
+|15202623 | Urseren-Garvera-Zone: Dogger | Urseren-Garvera-Zone: Dogger     |
+|15202624 | Urseren-Garvera-Zone: Lias undiff. | Urseren-Garvera-Zone: Lias undiff.     |
+|15202625 | Urseren-Garvera-Zone: Oberer Lias | Urseren-Garvera-Zone: Oberer Lias     |
+|15202626 | Urseren-Garvera-Zone: Mittlerer Lias | Urseren-Garvera-Zone: Mittlerer Lias     |
+|15202627 | Urseren-Garvera-Zone: Unterer Lias | Urseren-Garvera-Zone: Unterer Lias     |
+|15202628 | Urseren-Garvera-Zone: phyllitische Trias | Urseren-Garvera-Zone: phyllitische Trias     |
+|15202629 | Urseren-Garvera-Zone: karbonatische Trias | Urseren-Garvera-Zone: karbonatische Trias     |
+|15202630 | Urseren-Garvera-Zone: Permokarbon: Psephit- und Psammitgneis | Urseren-Garvera-Zone: Permokarbon: Psephit- und Psammitgneis     |
+|15202631 | Urseren-Garvera-Zone: Permokarbon: Metarhyolith | Urseren-Garvera-Zone: Permokarbon: Metarhyolith     |
+|15202632 | Urseren-Garvera-Zone: Permokarbon: Chloritschiefer | Urseren-Garvera-Zone: Permokarbon: Chloritschiefer     |
+|15202633 | Urseren-Garvera-Zone: Permokarbon: Graphitschiefer | Urseren-Garvera-Zone: Permokarbon: Graphitschiefer     |
+|15202634 | Gotthard-Decke: Prävariszischer Orthogneis | Gotthard-Decke: Prävariszischer Orthogneis     |
+|15202635 | Gotthard-Decke: Prävariszischer Augengneis | Gotthard-Decke: Prävariszischer Augengneis     |
+|15202636 | Gotthard-Decke: Prävariszischer Paragneis | Gotthard-Decke: Prävariszischer Paragneis     |
+|15202637 | Camosci-Decke: Paragneis | Camosci-Decke: Paragneis     |
+|15202638 | Camosci-Decke: Lias-Dogger | Camosci-Decke: Lias-Dogger     |
+|15202639 | Camosci-Decke: Lias-Dogger: Kalkglimmerschiefer | Camosci-Decke: Lias-Dogger: Kalkglimmerschiefer     |
+|15202640 | Camosci-Decke: Lias-Dogger: Granatglimmerschiefer | Camosci-Decke: Lias-Dogger: Granatglimmerschiefer     |
+|15202641 | Camosci-Decke: Lias | Camosci-Decke: Lias     |
+|15202642 | Camosci-Decke: Trias | Camosci-Decke: Trias     |
+|15202643 | Camosci-Decke: sandige Trias | Camosci-Decke: sandige Trias     |
+|15202644 | Camosci-Decke: karbonatische Trias | Camosci-Decke: karbonatische Trias     |
+|15202645 | Urseren-Garvera-Zone: Mesozoikum undiff. | Urseren-Garvera-Zone: Mesozoikum undiff.     |
+|15202646 | Urseren-Garvera-Zone: Trias | Urseren-Garvera-Zone: Trias     |
+|15202647 | Nufenen-Zone: Trias | Nufenen-Zone: Trias     |
+|15202648 | Nufenen-Zone: Lias undiff. | Nufenen-Zone: Lias undiff.     |
 |15203001 | Niesen-Flysch | Flysch du Niesen     |
 |15203002 | Chesselbach-Formation | Formation du Chesselbach     |
 |15203003 | Seron-Formation | Formation de Seron     |
@@ -5687,6 +5716,69 @@ Table des valeurs des unités lithostratigraphiques
 |15203605 | Flysch 2 | Flysch 2     |
 |15203606 | Flysch 3 | Flysch 3     |
 |15203607 | Hellstätt-Formation und Flysch 2a, undifferenziert | Hellstätt-Formation und Flysch 2a, undifferenziert     |
+|15203608 | Walliser-Sedimentabfolge | Walliser-Sedimentabfolge     |
+|15203609 | Südegg-Komplex: schwarzer Schiefer | Südegg-Komplex: schwarzer Schiefer     |
+|15203610 | Südegg-Komplex: Serpentinit | Südegg-Komplex: Serpentinit     |
+|15203611 | Südegg-Komplex: Albitgneis | Südegg-Komplex: Albitgneis     |
+|15203612 | Südegg-Komplex: Marmor | Südegg-Komplex: Marmor     |
+|15203613 | Südegg-Komplex: Brekzie | Südegg-Komplex: Brekzie     |
+|15203614 | Südegg-Komplex: Gips | Südegg-Komplex: Gips     |
+|15203615 | Monte-Leone-Decke: Mesozoikum undiff. | Monte-Leone-Decke: Mesozoikum undiff.     |
+|15203616 | Monte-Leone-Decke: Dogger-Malm | Monte-Leone-Decke: Dogger-Malm     |
+|15203617 | Monte-Leone-Decke: Dogger-Malm: Glimmerschiefer | Monte-Leone-Decke: Dogger-Malm: Glimmerschiefer     |
+|15203618 | Monte-Leone-Decke: Dogger-Malm: Marmor | Monte-Leone-Decke: Dogger-Malm: Marmor     |
+|15203619 | Monte-Leone-Decke: konglomeratischer Dogger | Monte-Leone-Decke: konglomeratischer Dogger     |
+|15203620 | Monte-Leone-Decke: Lias | Monte-Leone-Decke: Lias     |
+|15203621 | Monte-Leone-Decke: sandiger Lias | Monte-Leone-Decke: sandiger Lias     |
+|15203622 | Monte-Leone-Decke: konglomeratischer Lias | Monte-Leone-Decke: konglomeratischer Lias     |
+|15203623 | Monte-Leone-Decke: Trias | Monte-Leone-Decke: Trias     |
+|15203624 | Monte-Leone-Decke: quarzitische Trias | Monte-Leone-Decke: quarzitische Trias     |
+|15203625 | Pizzo-del-Vallone-Decke: Mesozoikum undiff. | Pizzo-del-Vallone-Decke: Mesozoikum undiff.     |
+|15203626 | Pizzo-del-Vallone-Decke: Dogger-Malm | Pizzo-del-Vallone-Decke: Dogger-Malm     |
+|15203627 | Pizzo-del-Vallone-Decke: Dogger-Malm: Marmor | Pizzo-del-Vallone-Decke: Dogger-Malm: Marmor     |
+|15203628 | Pizzo-del-Vallone-Decke: Dogger-Malm: Glimmerschiefer | Pizzo-del-Vallone-Decke: Dogger-Malm: Glimmerschiefer     |
+|15203629 | Pizzo-del-Vallone-Decke: Dogger-Malm: Vulkanit | Pizzo-del-Vallone-Decke: Dogger-Malm: Vulkanit     |
+|15203630 | Pizzo-del-Vallone-Decke: Lias | Pizzo-del-Vallone-Decke: Lias     |
+|15203631 | Pizzo-del-Vallone-Decke: Trias | Pizzo-del-Vallone-Decke: Trias     |
+|15203632 | Artsinol-Sedimentabfolge undiff. | Artsinol-Sedimentabfolge undiff.     |
+|15203633 | Artsinol-Sedimentabfolge: Trias | Artsinol-Sedimentabfolge: Trias     |
+|15203634 | Artsinol-Sedimentabfolge: Trias: Rauwacke | Artsinol-Sedimentabfolge: Trias: Rauwacke     |
+|15203635 | Métailler-Formation: Quarzit | Métailler-Formation: Quarzit     |
+|15203636 | Métailler-Formation: Glimmerschiefer | Métailler-Formation: Glimmerschiefer     |
+|15203637 | Métailler-Formation: Chloritoid-Glimmerschiefer | Métailler-Formation: Chloritoid-Glimmerschiefer     |
+|15203638 | Distulberg-Formation: Schiefer | Distulberg-Formation: Schiefer     |
+|15203639 | Distulberg-Formation: Albitgneis | Distulberg-Formation: Albitgneis     |
+|15203640 | Barrhorn-Sedimentabfolge: Trias | Barrhorn-Sedimentabfolge: Trias     |
+|15203641 | Siviez-Mischabel-Decke: Aplit | Siviez-Mischabel-Decke: Aplit     |
+|15203642 | Siviez-Mischabel-Decke: Pegmatit | Siviez-Mischabel-Decke: Pegmatit     |
+|15203643 | Lirec-Formation: leukokrater Mikroklingneis | Lirec-Formation: leukokrater Mikroklingneis     |
+|15203644 | Adlerflüe-Formation: leukokrater Gneis | Adlerflüe-Formation: leukokrater Gneis     |
+|15203645 | Ergischhorn-Komplex: leukokrater aplitischer Gneis | Ergischhorn-Komplex: leukokrater aplitischer Gneis     |
+|15203646 | Stalden-Gneiskomplex undiff. | Stalden-Gneiskomplex undiff.     |
+|15203647 | Stalden-Gneiskomplex: Ahorn-Augengneis | Stalden-Gneiskomplex: Ahorn-Augengneis     |
+|15203648 | Stalden-Gneiskomplex: Amphibolit | Stalden-Gneiskomplex: Amphibolit     |
+|15203649 | Printse-Formation: Konglomerat | Printse-Formation: Konglomerat     |
+|15203650 | Printse-Formation: Graphitschiefer | Printse-Formation: Graphitschiefer     |
+|15203651 | Portjengrat-Decke: Kalzitmarmor | Portjengrat-Decke: Kalzitmarmor     |
+|15203652 | Portjengrat-Decke: Dolomitmarmor | Portjengrat-Decke: Dolomitmarmor     |
+|15203653 | Portjengrat-Decke: Arkose | Portjengrat-Decke: Arkose     |
+|15203654 | Portjengrat-Decke: Grundgebirge | Portjengrat-Decke: Grundgebirge     |
+|15203655 | Gornergrat-Decke: Kalkschisfer, sandiger Marmor, Brekzie | Gornergrat-Decke: Kalkschisfer, sandiger Marmor, Brekzie     |
+|15203656 | Gornergrat-Decke: Trias | Gornergrat-Decke: Trias     |
+|15203657 | Gornergrat-Decke: Phengit-Albitgneis | Gornergrat-Decke: Phengit-Albitgneis     |
+|15203658 | Gornergrat-Decke: Basischer Gang | Gornergrat-Decke: Basischer Gang     |
+|15203659 | Gornergrat-Decke: Granat-Muskovit-Schiefer | Gornergrat-Decke: Granat-Muskovit-Schiefer     |
+|15203660 | Frilihorn-Decke: Trias | Frilihorn-Decke: Trias     |
+|15203661 | Frilihorn-Decke: Trias: Rauwacke | Frilihorn-Decke: Trias: Rauwacke     |
+|15203662 | Garda-Bordon-Formation: Black Shales (Série feuilletée) | Garda-Bordon-Formation: Black Shales (Série feuilletée)     |
+|15203663 | Garda-Bordon-Formation: Quarzschiefer | Garda-Bordon-Formation: Quarzschiefer     |
+|15203664 | Tsaté-Decke: Serpentinit | Tsaté-Decke: Serpentinit     |
+|15203665 | Zermatt-Saas-Decke: Eklogit | Zermatt-Saas-Decke: Eklogit     |
+|15203666 | Zermatt-Saas-Decke: Metapyroxenit | Zermatt-Saas-Decke: Metapyroxenit     |
+|15203667 | Zermatt-Saas-Decke: Metagabbro | Zermatt-Saas-Decke: Metagabbro     |
+|15203668 | Zermatt-Saas-Decke: Rodingit | Zermatt-Saas-Decke: Rodingit     |
+|15203669 | Zermatt-Saas-Decke: Talkschiefer | Zermatt-Saas-Decke: Talkschiefer     |
+|15203670 | Lengenbach-Dolomitmarmor | Lengenbach-Dolomitmarmor     |
 |15204001 | God-Drosa-Flysch | Flysch du God Drosa     |
 |15204002 | Chanèls-Formation | Formation de Chanèls     |
 |15204003 | Lech-Formation | Formation de Lech     |
@@ -5973,6 +6065,8 @@ Table des valeurs des unités lithostratigraphiques
 |15205135 | Zona Dioritico-Kinzigitica | Zona Dioritico-Kinzigitica     |
 |15205136 | Prävariszische Orthogneise des Südalpins | orthogneiss anté-varisques du Sudalpin     |
 |15205137 | Pontida-Formation | Formation de Pontida     |
+|15205138 | Arolla-Einheit: Metagranit | Arolla-Einheit: Metagranit     |
+|15205139 | Arolla-Einheit: Leukokrater Granitgneis | Arolla-Einheit: Leukokrater Granitgneis     |
 |15206001 | Periadriatische Vulkanite | roches volcaniques cénozoïques péri-adriatiques     |
 |15206002 | Novate-Intrusiva | Intrusion de Novate     |
 |15206003 | Bergell-Intrusiva | Intrusion du Bergell     |
@@ -6091,6 +6185,7 @@ Table des valeurs des unités lithostratigraphiques
 |15206116 | Aptychenkalk, undiff. | Calcaire à aptychus, indiff.     |
 |15206117 | Quarzsandstein, undiff. | Grès quartzitique, indiff.     |
 |15206118 | Mergelstein, undifferenziert | Mergelstein, undifferenziert     |
+|15206119 | Basisches Gestein, undifferenziert | Basisches Gestein, undifferenziert     |
 |999997 | unbekannt | inconnu     |
 |999998 | nicht anwendbar | non applicable     |
 
@@ -6149,7 +6244,7 @@ Table des valeurs des unités lithostratigraphiques
 |15201047 | Glazi-lakustrische Serie | Série glaciolacustre (Gravier du Klettgau)     |
 |15201048 | Mittlere Klettgauschotter | Gravier moyen du Klettgau     |
 |15201049 | Untere Klettgauschotter | Gravier inférieur du Klettgau     |
-|15201050 | Gondiswil-Interglazial (Letztes Integlazial) | Interglaciaire de Gondiswil (Dernier Interglaciaire)     |
+|15201050 | Gondiswil-Interglazial (Letztes Interglazial) | Interglaciaire de Gondiswil (Dernier Interglaciaire)     |
 |15201051 | Flurlingen-Quelltuff | Tuf calcaire de Flurlingen     |
 |15201052 | Birrfeld- und Klettgau-Paläoböden | Paléosols du Birrfeld et du Klettgau     |
 |15201053 | Beringen-Eiszeit | Période glaciaire de Beringen (Avant-dernière Période glaciaire)     |
@@ -6550,6 +6645,154 @@ Table des valeurs des unités lithostratigraphiques
 |15201565 | Stetten-Schotter | Gravier de Stetten     |
 |15201566 | Plaffeien-Seetone | Plaffeien-Seetone     |
 |15201567 | Plasselb-Stauschotter | Plasselb-Stauschotter     |
+|15201568 | Uetliberg-Lehm | Uetliberg-Lehm     |
+|15201569 | Schotter der Thur | Schotter der Thur     |
+|15201570 | Schwarzwald-Schotter | Schwarzwald-Schotter     |
+|15201571 | Neuenburg-Formation | Neuenburg-Formation     |
+|15201572 | Hartheim-Member | Hartheim-Member     |
+|15201573 | Nambsheim-Member | Nambsheim-Member     |
+|15201574 | Breisgau-Formation | Breisgau-Formation     |
+|15201575 | Balgau-Member | Balgau-Member     |
+|15201576 | Weinstetten-Member | Weinstetten-Member     |
+|15201577 | Iffezheim-Formation | Iffezheim-Formation     |
+|15201578 | Mannheim-Formation | Mannheim-Formation     |
+|15201579 | Etzgen-Formation | Etzgen-Formation     |
+|15201580 | Niederuster-Schotter | Niederuster-Schotter     |
+|15201581 | Pfungen-Formation | Pfungen-Formation     |
+|15201582 | Dättlikon-Stadium | Dättlikon-Stadium     |
+|15201583 | Dübendorf-Stadium | Dübendorf-Stadium     |
+|15201584 | Gfenn-Stadium | Gfenn-Stadium     |
+|15201585 | Regensdorf-Stadium | Regensdorf-Stadium     |
+|15201586 | Seeb-Stadium | Seeb-Stadium     |
+|15201587 | Würenlos-Stadium | Würenlos-Stadium     |
+|15201588 | Würenlos-Stand-I | Würenlos-Stand-I     |
+|15201589 | Würenlos-Stand-II | Würenlos-Stand-II     |
+|15201590 | Bülach-Stadium | Bülach-Stadium     |
+|15201591 | Bülach-Stand-I | Bülach-Stand-I     |
+|15201592 | Bülach-Stand-II | Bülach-Stand-II     |
+|15201593 | Stein-am-Rhein-Stadium | Stein-am-Rhein-Stadium     |
+|15201594 | Stein-am-Rhein-Stand-I | Stein-am-Rhein-Stand-I     |
+|15201595 | Stein-am-Rhein-Stand-II | Stein-am-Rhein-Stand-II     |
+|15201596 | Stein-am-Rhein-Stand-III | Stein-am-Rhein-Stand-III     |
+|15201597 | Zürich-Stadium | Zürich-Stadium     |
+|15201598 | Zürich-Stand-I | Zürich-Stand-I     |
+|15201599 | Zürich-Stand-II | Zürich-Stand-II     |
+|15201600 | Bremgarten-Stadium | Bremgarten-Stadium     |
+|15201601 | Bremgarten-I | Bremgarten-I     |
+|15201602 | Bremgarten-II | Bremgarten-II     |
+|15201603 | Singen-Stadium | Singen-Stadium     |
+|15201604 | Feuerthalen-Stadium | Feuerthalen-Stadium     |
+|15201605 | Feuerthalen-Stand-I | Feuerthalen-Stand-I     |
+|15201606 | Feuerthalen-Stand-II | Feuerthalen-Stand-II     |
+|15201607 | Schlieren-Stadium | Schlieren-Stadium     |
+|15201608 | Bäretswil-Seeablagerung | Bäretswil-Seeablagerung     |
+|15201609 | Hittnau-Seeablagerung | Hittnau-Seeablagerung     |
+|15201610 | Russikon-Seeablagerung | Russikon-Seeablagerung     |
+|15201611 | Stetten-Stadium | Stetten-Stadium     |
+|15201612 | Stetten-Stand-I | Stetten-Stand-I     |
+|15201613 | Stetten-Stand-II | Stetten-Stand-II     |
+|15201614 | Diessenhofen-Stadium | Diessenhofen-Stadium     |
+|15201615 | Mellingen-Stand | Mellingen-Stand     |
+|15201616 | Schaffhausen-Stadium | Schaffhausen-Stadium     |
+|15201617 | Schaffhausen-Stand-I | Schaffhausen-Stand-I     |
+|15201618 | Schaffhausen-Stand-II | Schaffhausen-Stand-II     |
+|15201619 | Killwangen-Stadium | Killwangen-Stadium     |
+|15201620 | Lottstetten-, Kohlschwärze- und Zelgli-Vorstoss | Lottstetten-, Kohlschwärze- und Zelgli-Vorstoss     |
+|15201621 | Grafschaft-Schotter | Grafschaft-Schotter     |
+|15201622 | &#34;Mittelterrasse&#34; | &#34;Mittelterrasse&#34;     |
+|15201623 | Hochterrasse, unteres Niveau | Hochterrasse, unteres Niveau     |
+|15201624 | Hochterrasse, mittleres Niveau | Hochterrasse, mittleres Niveau     |
+|15201625 | Hochterrasse, oberes Niveau | Hochterrasse, oberes Niveau     |
+|15201626 | First-Schotter | First-Schotter     |
+|15201627 | Helltobel-Schotter | Helltobel-Schotter     |
+|15201628 | Lettenberg-Seesedimente | Lettenberg-Seesedimente     |
+|15201629 | Zurzach-Formation | Zurzach-Formation     |
+|15201630 | Ursplen-Till | Ursplen-Till     |
+|15201631 | Äntschberg-Schotter | Äntschberg-Schotter     |
+|15201632 | Oberrüti-Schotter | Oberrüti-Schotter     |
+|15201633 | Neerach-Schotter | Neerach-Schotter     |
+|15201634 | Bachs-Schotter | Bachs-Schotter     |
+|15201635 | Steighalden-Schotter | Steighalden-Schotter     |
+|15201636 | Mühlbach-Formation | Mühlbach-Formation     |
+|15201637 | Chilchberg-Schotter | Chilchberg-Schotter     |
+|15201638 | Frenkendorf-Schotter | Frenkendorf-Schotter     |
+|15201639 | Birstal-Schotter | Birstal-Schotter     |
+|15201640 | Schlatt-Formation | Schlatt-Formation     |
+|15201641 | Illmensee-Formation | Illmensee-Formation     |
+|15201642 | Dietmanns-Formation | Dietmanns-Formation     |
+|15201643 | Hasenweiler-Formation | Hasenweiler-Formation     |
+|15201644 | Haseltal-Formation | Haseltal-Formation     |
+|15201645 | Birndorf-, Laufenburg- und Zeiningen-Vorstoss | Birndorf-, Laufenburg- und Zeiningen-Vorstoss     |
+|15201646 | Chäppeli-Schotter | Chäppeli-Schotter     |
+|15201647 | Leuggern-Schotter | Leuggern-Schotter     |
+|15201648 | Zelgli-Schotter | Zelgli-Schotter     |
+|15201649 | Leibstadt-Schotter | Leibstadt-Schotter     |
+|15201650 | Dogern-Schotter | Dogern-Schotter     |
+|15201651 | Haldenacher-Schotter | Haldenacher-Schotter     |
+|15201652 | Allmendwald-Schotter | Allmendwald-Schotter     |
+|15201653 | Lei-Schotter | Lei-Schotter     |
+|15201654 | Obersäckingen-Schotter | Obersäckingen-Schotter     |
+|15201655 | Schulerholz-Formation | Schulerholz-Formation     |
+|15201656 | Schachen-Formation | Schachen-Formation     |
+|15201657 | Schmerlet-Formation | Schmerlet-Formation     |
+|15201658 | Toktri-Formation | Toktri-Formation     |
+|15201659 | Buchholz-Till | Buchholz-Till     |
+|15201660 | Birndorf-Till | Birndorf-Till     |
+|15201661 | Geissäcker-Schotter | Geissäcker-Schotter     |
+|15201662 | Bürgerwald-Schotter | Bürgerwald-Schotter     |
+|15201663 | Hettenschwil-Schotter | Hettenschwil-Schotter     |
+|15201664 | Moos-Schotter | Moos-Schotter     |
+|15201665 | Schlüsselgraben-Schotter | Schlüsselgraben-Schotter     |
+|15201666 | Hundsbel-Schotter | Hundsbel-Schotter     |
+|15201667 | Laufenburg-Schotter | Laufenburg-Schotter     |
+|15201668 | Eilez-Schotter | Eilez-Schotter     |
+|15201669 | St.-Margarethen-Schotter | St.-Margarethen-Schotter     |
+|15201670 | Hegenheim-Schotter | Hegenheim-Schotter     |
+|15201671 | Blotzheim-Schotter | Blotzheim-Schotter     |
+|15201672 | Hardwald-Schotter | Hardwald-Schotter     |
+|15201673 | Homberg-Schotter | Homberg-Schotter     |
+|15201674 | Rümlang-Schotter | Rümlang-Schotter     |
+|15201675 | Äpelöö-Schotter | Äpelöö-Schotter     |
+|15201676 | Fehrental-Schotter | Fehrental-Schotter     |
+|15201677 | Challeren-Schotter | Challeren-Schotter     |
+|15201678 | Ausserberg-Schotter | Ausserberg-Schotter     |
+|15201679 | Leibstadt-Till | Leibstadt-Till     |
+|15201680 | Buechli-Schotter | Buechli-Schotter     |
+|15201681 | Bächemoos-Schotter | Bächemoos-Schotter     |
+|15201682 | Aarberg-Schotter | Aarberg-Schotter     |
+|15201683 | Tannboden-Schotter | Tannboden-Schotter     |
+|15201684 | Etzwil-Schotter | Etzwil-Schotter     |
+|15201685 | Ellenbühl-Schotter | Ellenbühl-Schotter     |
+|15201686 | Kegelplatz-Schotter | Kegelplatz-Schotter     |
+|15201687 | Einschlag-Schotter | Einschlag-Schotter     |
+|15201688 | Lehacker-Schotter | Lehacker-Schotter     |
+|15201689 | Letten-Schotter | Letten-Schotter     |
+|15201690 | Schwörstadt-Schotter | Schwörstadt-Schotter     |
+|15201691 | Steppberg-Schotter | Steppberg-Schotter     |
+|15201692 | Bloseberg-Schotter | Bloseberg-Schotter     |
+|15201693 | Steinebol-Schotter | Steinebol-Schotter     |
+|15201694 | Giebenach-Schotter | Giebenach-Schotter     |
+|15201695 | Blözen-Schotter | Blözen-Schotter     |
+|15201696 | Rütihard-Schotter | Rütihard-Schotter     |
+|15201697 | Bruederholz-Schotter | Bruederholz-Schotter     |
+|15201698 | Binningen-Schotter | Binningen-Schotter     |
+|15201699 | Allschwil-Schotter | Allschwil-Schotter     |
+|15201700 | Buschwiller-Schotter | Buschwiller-Schotter     |
+|15201701 | Berchenwald-Schotter | Berchenwald-Schotter     |
+|15201702 | Hörndli-Schotter | Hörndli-Schotter     |
+|15201703 | Acheberg-Schotter | Acheberg-Schotter     |
+|15201704 | Mühleberg-Schotter | Mühleberg-Schotter     |
+|15201705 | Mandach-Schotter | Mandach-Schotter     |
+|15201706 | Duttenberg-Schotter | Duttenberg-Schotter     |
+|15201707 | Humbel-Schotter | Humbel-Schotter     |
+|15201708 | Frauewald-Schotter | Frauewald-Schotter     |
+|15201709 | Bolderen-Schotter | Bolderen-Schotter     |
+|15201710 | Seiglisten-Schotter | Seiglisten-Schotter     |
+|15201711 | Geispel-Schotter | Geispel-Schotter     |
+|15201712 | Birlibänz-Schotter | Birlibänz-Schotter     |
+|15201713 | Schönenbuch-Schotter | Schönenbuch-Schotter     |
+|15201714 | Wentzwiller-Schotter | Wentzwiller-Schotter     |
+|15201715 | Bellevue-Schotter | Bellevue-Schotter     |
 |999997 | unbekannt | inconnu     |
 |999998 | nicht anwendbar | non applicable     |
 
@@ -7150,396 +7393,400 @@ Table des valeurs des unités tectoniques
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
-|15301001 | Abgeschertes Nordalpines Vorland | Avant-pays nord-alpin décollé     |
-|15301022 | Avant-Monts-Zone | Zone des Avant-monts     |
-|15301023 | Interner Faltenjura | Jura plissé interne     |
-|15301024 | Externer Faltenjura | Jura plissé externe     |
-|15301025 | Faisceaux | Faisceaux     |
-|15301026 | Plateaus | Plateaux     |
-|15301027 | Abgescherter Tafeljura | Jura tabulaire cisaillé     |
-|15301030 | Vorlandplateau | Plateau de l&#39;Avant-pays     |
-|15301031 | Vorfaltenzone | Vorfaltenzone     |
-|15301116 | Subalpine Molasse | Molasse subalpine     |
-|15301118 | Rigi-Rossberg-Schuppe | écaille du Rigi-Rossberg     |
-|15301119 | St.-Jost-Schuppe | écaille de St-Jost     |
-|15301120 | Höhronen-Schuppe | écaille de la Höhronen     |
-|15301121 | Speer-Stockberg-Schuppe | écaille du Speer-Stockberg     |
-|15301122 | Schorhüttenberg-Schuppe | écaille du Schorhüttenberg     |
-|15301123 | Chräzerli-Schuppe | écaille de Chräzerli     |
-|15301124 | Kronberg-Schuppe | écaille du Kronberg     |
-|15301125 | «Zone Kronberg-Süd» | zone du Kronberg-Sud     |
-|15301126 | Gäbris-Schuppe | écaille du Gäbris     |
-|15301127 | Blueme-Beichle-Schuppe | écaille de la Blueme-Beichle     |
-|15301128 | Hilfern-Schuppe | écaille d&#39;Hilfern     |
-|15301129 | Hornbüel-Schuppenzone | zone d&#39;écailles de Hornbüel     |
-|15301130 | Schangnau-Schuppe | écaille de Schangnau     |
-|15301131 | Belmont-Schuppe | écaille de Belmont     |
-|15301132 | Lutry-Thonon-Schuppe | écaille de Lutry-Thonon     |
-|15301133 | Cully-Schuppe | écaille de Cully     |
-|15301134 | Lavaux-Schuppe | écaille du Lavaux     |
-|15301135 | Mont-Pèlerin-Schuppe | écaille du Mont-Pèlerin     |
-|15301136 | Vevey-Evian-Schuppe | écaille de Vevey-Evian     |
-|15301137 | Gérignoz-La-Roche-Schuppe | écaille de Gérignoz-la-Roche     |
-|15301138 | Vaulruz-Schuppe | écaille de Vaulruz     |
-|15301139 | Champotey-Ramsera-Schuppe | écaille de Champotey-Ramsera     |
-|15301140 | La-Pattaz-La-Holena-Schuppe | écaille de La-Pattaz-la-Holena     |
-|15301141 | Villarvolard-Schuppe | écaille de Villarvolard     |
-|15301142 | Marbach-Berneck-Dreieckzone | zone triangulaire Marbach-Berneck     |
-|15301143 | Subalpiner Schuppenkomplex | complexe des écailles subalpines     |
-|15301144 | Seftigschwand-Schuppe | écaille de Seftigschwand     |
-|15301145 | Steffisburg-Schuppe | écaille de Steffisburg     |
-|15301146 | Wolfsegg-Schuppe | écaille de la Wolfsegg     |
-|15301147 | Ralligen-Schuppenzone | zone d&#39;écailles de Ralligen     |
-|15301148 | Hirschberg-Schuppe | écaille du Hirschberg     |
-|15301149 | Hölzliberg-Schuppe | écaille du Hölzliberg     |
-|15301150 | Eichberg-Schuppe | écaille de l&#39;Eichberg     |
-|15301151 | Giebelegg-Schuppe | écaille de la Giebelegg     |
-|15302020 | Hegau-Bodensee-Störungszone | fossé d&#39;Hegau-Bodensee     |
-|15302040 | Autochtones Nordalpines Vorland | Avant-pays nord-alpin autochtone     |
-|15302042 | Haute-Saône-Tafel | plateau de Haute Saône     |
-|15302043 | Süddeutsche Tafel | plateau d&#39;Allemagne méridionale     |
-|15302045 | Oberrhein-Graben | fossé du Haut-Rhin     |
-|15302046 | Bresse-Graben | fossé bressan     |
-|15303001 | Unterhelvetikum | Helvétique inférieur     |
-|15303002 | Belledonne-Massiv | massif de Belledonne     |
-|15303003 | Aiguilles-Rouges-Massiv | massif des Aiguilles Rouges     |
-|15303007 | Mont-Blanc-Massiv | massif du Mont Blanc     |
-|15303008 | Gastern-Massiv | massif de Gastern     |
-|15303009 | Aar-Massiv | massif de l&#39;Aar     |
-|15303011 | Chaînes-subalpines-Decke | nappe des Chaînes subalpines     |
-|15303015 | Morcles-Decke | nappe de Morcles     |
-|15303016 | Doldenhorn-Decke | nappe du Doldenhorn     |
-|15303017 | Ardon-Decke | nappe d&#39;Ardon     |
-|15303018 | Jägerchrüz-Decke | nappe du Jägerchrüz     |
-|15303019 | Plammis-Decke | nappe de Plammis     |
-|15303020 | Gellihorn-Decke | nappe du Gellihorn     |
-|15303021 | Tschep-Schuppe | nappe du Tschep     |
-|15303023 | Griessstock-Decke | nappe du Griessstock     |
-|15303024 | Klausenpass-Schuppen | écailles du Klausenpasse     |
-|15303025 | Kammlistock-Decke | nappe des Kammlistock     |
-|15303026 | Gitschen-Decke | nappe du Gitschen     |
-|15303027 | Cavistrau-Decke | nappe du Cavistrau     |
-|15303028 | Oberhelvetikum | Helvétique supérieur     |
-|15303029 | Roselette-Decke | nappe de Roselette     |
-|15303030 | Diablerets-Decke | nappe des Diablerets     |
-|15303031 | Wildhorn-Deckenkomplex | complexe de nappes du Wildhorn     |
-|15303033 | Mont-Gond-Decke | nappe du Mont-Gond     |
-|15303034 | Sublage-Decke | nappe du Sublage     |
-|15303037 | Wageten-Schuppe | écaille de la Wageten     |
-|15303038 | Glarner Deckenkomplex | complexe de nappes de Glaris     |
-|15303039 | Mürtschen-Decke | nappe du Mürtschen     |
-|15303040 | Hohenems-Decke | nappe de Hohenems     |
-|15303041 | Axen-Decke | nappe de l&#39;Axen     |
-|15303042 | Wissberg-Schuppe | écaille du Wissberg     |
-|15303044 | Gonzen-Walenstadt-Schuppen | écailles du Gonzen-Walenstadt     |
-|15303045 | Säntis-Decke | nappe du Säntis     |
-|15303046 | Drusberg-Decke | nappe du Drusberg     |
-|15303048 | Ultrahelvetikum | Ultrahelvétique     |
-|15303049 | Mont-Chétif-Decke | nappe du Mont-Chétif     |
-|15303055 | Ilanz-Decke | nappe d&#39;Ilanz     |
-|15303057 | Tavetsch-Decke | nappe du Tavetsch     |
-|15303058 | Gotthard-Decke | nappe du Gothard     |
-|15303059 | Subalpine Flysch-Zone | zone du Flysch subalpin     |
-|15303060 | Einsiedeln-Schuppenkomplex | complexe d&#39;écailles d&#39;Einsiedeln     |
-|15303061 | Externe Einsiedeln-Schuppen | écailles externes d&#39;Einsiedeln     |
-|15303062 | Interne Einsiedeln-Schuppen | écailles internes d&#39;Einsiedeln     |
-|15303063 | Wildhaus-Melange | Mélange de Wildhaus     |
-|15303068 | Liebenstein-Decke | Liebenstein-Decke     |
-|15303069 | Sardona-Decke | nappe du Sardona     |
-|15303071 | Fläscherberg-Decke | nappe du Fläscherberg     |
-|15303072 | Plaine-Morte-Decke | nappe de la Plaine Morte     |
-|15303073 | Sex-Mort-Decke | nappe du Sex Mort     |
-|15303074 | Bex-Laubhorn-Decke | nappe de Bex-Laubhorn     |
-|15303075 | Arveyes-Decke | nappe d&#39;Arveyes     |
-|15303077 | Habkern-Melange-Zone | Zone de mélange de Habkern     |
-|15303078 | Scopi-Decke | nappe du Scopi     |
-|15303081 | Anzeinde-Decke | nappe d&#39;Anzeinde     |
-|15303082 | Blattengrat-Decke | nappe du Blattengrat     |
-|15303085 | Silberen-Schuppen | écailles du Silberen     |
-|15303086 | Bächistock-Schuppe | écaille du Bächistock     |
-|15303088 | Hoch-Fulen-Decke | nappe du Hoch-Fulen     |
-|15303091 | Calanda-Decke | Calanda-Decke     |
-|15303092 | Mirutta-Decke | Mirutta-Decke     |
-|15303094 | Chropfsberg-Schuppe | Chropfsberg-Schuppe     |
-|15303095 | Gaffia-Schuppe | Gaffia-Schuppe     |
-|15303096 | Logsbach-Schuppe | Logsbach-Schuppe     |
-|15303097 | Toralp-Schuppe | Toralp-Schuppe     |
-|15303098 | Niederhorn-Pilatus-Schuppe | Niederhorn-Pilatus-Schuppe     |
-|15303099 | Bürgenstock-Urmiberg-Schuppe | Bürgenstock-Urmiberg-Schuppe     |
-|15303100 | Helvetikum | Helvetikum     |
-|15303101 | Hochflue-Schuppe | Hochflue-Schuppe     |
-|15303102 | Camosci-Decke | Camosci-Decke     |
-|15303103 | Piora-Peiden-Schuppenkomplex | Piora-Peiden-Schuppenkomplex     |
-|15303104 | Iberg-Melange | Iberg-Melange     |
-|15303105 | Broc-Schuppenkomplex | complexe des écailles de Broc     |
-|15303106 | Gros-Plané-Melange | Mélange du Gros Plané     |
-|15303107 | Montsalvens-Schuppe | écaille de Montsalvens     |
-|15303108 | Les-Pléiades-Schuppe | écaille des Pléiades     |
-|15303109 | Bois-de-Bouleyres-Schuppe | écaille du Bois de Bouleyres     |
-|15303110 | Tulle-Melange | Mélange de la Tulle     |
-|15303111 | Piz-d&#39;Artgas-Decke | nappe du Piz d&#39;Artgas     |
-|15303112 | Externes Aar-Massiv | massif de l&#39;Aar externe     |
-|15303113 | Internes Aar-Massiv | massif de l&#39;Aar interne     |
-|15303114 | Trun-Punteglias-Teilmassiv | Trun-Punteglias-Teilmassiv     |
-|15303115 | Externes Mont-Blanc-Massiv | Externes Mont-Blanc-Massiv     |
-|15303116 | Internes Mont-Blanc-Massiv | Internes Mont-Blanc-Massiv     |
-|15303118 | Mättental-Melange | Mättental-Melange     |
-|15303119 | Bad-Ragaz-Decke | Bad-Ragaz-Decke     |
-|15303120 | Clariden-Schuppenkomplex | complexe des écailles des Clariden     |
-|15303121 | Chamerstock-Schuppe | écaille du Chamerstock     |
-|15303122 | Geisstritt-Schuppe | écaille du Geisstritt     |
-|15303123 | Stichplatten-Schuppe | écaille des Stichplatten     |
-|15303124 | Gemsfairen-Schuppe | écaille du Gemsfairen     |
-|15303125 | Rotstock-Schuppe | écaille du Rotstock     |
-|15303126 | Langfirn-Schuppe | écaille du Langfirn     |
-|15303127 | Fiseten-Orthalgen-Schuppen | écailles de Fiseten–Orthalden     |
-|15303128 | Chropfsberg-Gaffia-Schuppen | écailles du Chropfsberg–Gaffia     |
-|15303129 | Kaminspitz-Schuppe | nappe du Kaminspitz     |
-|15303130 | Axen-Südschuppe | Axen-Südschuppe     |
-|15303131 | Axen-Nordschuppe | Axen-Nordschuppe     |
-|15303132 | Schächentaler Windgällen-Schuppen | écailles des Schächentaler Windgällen     |
-|15303133 | Höch-Turm-Schuppen | écaille de la Hoch Turm     |
-|15303134 | Wissenwand-Schuppe | écaille de la Wissenwand     |
-|15303135 | Schabell-Melange | Schabell-Melange     |
-|15303136 | Tschingelhörner-Schuppe | Tschingelhörner-Schuppe     |
-|15303137 | Pizalun-Schuppe | écaille du Pizalun     |
-|15303138 | Friteren-Schuppe | écaille de Friteren     |
-|15303139 | Maisander-Schuppe | écaille de Maisander     |
-|15303140 | Internes Belledonne-Massiv | massif de Belledonne interne     |
-|15303141 | Externes Belledonne-Massiv | massif de Belledonne externe     |
-|15303142 | Stelli-Schuppe | écaille du Stelli     |
-|15303143 | Orglen-Schuppen (Aar-Massiv-Anteil) | écailles de l&#39;Orglen (partie massif de l&#39;Aar)     |
-|15303144 | Marchegghorn-Schuppe (Blattengrat-Anteil) | écaille du Marchegghorn (partie Blattengrat)     |
-|15303145 | Calanda-Decke (Blattengrat-Anteil) | Nappe du Calanda (partie Blattengrat)     |
-|15303146 | Mirutta-Schuppen (Blattengrat-Anteil) | Nappe de Mirutta (partie Blattengrat)     |
-|15303147 | Marchegghorn-Schuppe (Sardona-Anteil) | écaille du Marchegghorn (partie Sardona)     |
-|15303148 | Orglen-Schuppen (Sardona-Anteil) | écailles de l&#39;Orglen (partie Sardona)     |
-|15303149 | Calanda-Decke (Sardona-Anteil) | Nappe du Calanda (partie Sardona)     |
-|15303150 | Mirutta-Schuppen (Sardona-Anteil) | Nappe de Mirutta (partie Sardona)     |
-|15303151 | Calanda-Schuppe (Aar-Massiv-Anteil) | Nappe du Calanda (partie massif de l&#39;Aar)     |
-|15303152 | Mirutta-Schuppen (Aar-Massiv-Anteil) | Nappe de Mirutta (partie massif de l&#39;Aar)     |
-|15303153 | Südelbach-Zone | zone du Südelbach     |
-|15303154 | Sörenberg-Melange | Mélange de Sörenberg     |
-|15303155 | Maliens-Schuppe | écaille de Maliens     |
-|15304002 | Leventina-Lucomagno-Decke | nappe de la Léventine-Lukmanier     |
-|15304004 | Soja-Decke | nappe du Soi     |
-|15304005 | Piz-Terri-Lunschania-Decke | nappe du Piz-Terri-Lunschania     |
-|15304006 | Güida-Alpettas-Schuppen | écailles de Güida-Alpettas     |
-|15304008 | Simano-Decke | nappe du Simano     |
-|15304009 | Verampio-Decke | nappe de Verampio     |
-|15304010 | Antigorio-Deckenkomplex | complexe de nappes d&#39;Antigorio     |
-|15304011 | Lebendun-Decke | nappe de Lebendun     |
-|15304012 | Monte-Leone-Decke | nappe du Monte Leone     |
-|15304013 | Pizzo-del-Vallone-Decke | nappe du Pizzo del Vallone     |
-|15304014 | Penninikum | Pennique     |
-|15304015 | Unterpenninikum | Pennique inférieur     |
-|15304017 | Cima-Lunga-Decke | nappe de la Cima Lunga     |
-|15304018 | Adula-Decke | nappe de l&#39;Adula     |
-|15304019 | Gruf-Komplex | complexe du Gruf     |
-|15304025 | Isorno-Zone | zone de l&#39;Isorno     |
-|15304026 | Bosco-Zone | zone de Bosco     |
-|15304027 | Niesen-Decke | nappe du Niesen     |
-|15304028 | Sion-Courmayeur-Decke | nappe de Sion-Courmayeur     |
-|15304029 | Ferret-Schuppe | écaille de Ferret     |
-|15304030 | Moûtiers-Schuppe | écaille de Moûtiers     |
-|15304031 | Roignais-Versoyen-Schuppe | écaille du Roignais-Versoyen     |
-|15304032 | Pierre-Avoi-Schuppe | écaille de la Pierre Avoi     |
-|15304033 | Petit-St-Bernard-Schuppe | écaille du Petit St-Bernard     |
-|15304034 | Chiavenna-Decke | nappe de Chiavenna     |
-|15304035 | Vals-Schuppenkomplex | complexe d&#39;écailles de Vals     |
-|15304036 | Aul-Decke | nappe de l&#39;Aul     |
-|15304038 | Grava-Decke | nappe de Grava     |
-|15304041 | Tomül-Decke | nappe du Tomül     |
-|15304043 | Feuerstätter-Decke | nappe de Feuerstätt     |
-|15304044 | Üntschen-Decke | nappe de l&#39;Üntschen     |
-|15304045 | Roz-Champatsch-Melange | Mélange de Roz-Campatsch     |
-|15304046 | Ramosch-Zone | zone de Ramosch     |
-|15304047 | Muttler-Decke | nappe du Muttler     |
-|15304048 | Zone Submédiane | zone Submédiane     |
-|15304049 | Mittelpenninikum | Pennique moyen     |
-|15304050 | Zone Houillère | zone Houillère     |
-|15304051 | Zone Houillère externe | zone Houillère externe     |
-|15304052 | Zone Houillère interne | zone Houillère interne     |
-|15304053 | Visperterminen-Schuppe | écaille de Visperterminen     |
-|15304054 | Untere Stalden-Schuppe | écaille de Stalden inférieure     |
-|15304055 | Cimes-Blanches-Decke | nappe des Cimes Blanches     |
-|15304056 | Frilihorn-Decke | nappe du Frilihorn     |
-|15304057 | Klippen-Decke | nappe des Préalpes médianes     |
-|15304058 | Préalpes médianes plastiques | Préalpes médianes plastiques     |
-|15304059 | Préalpes médianes rigides | Préalpes médianes rigides     |
-|15304065 | Brekzien-Decke | nappe de la Brèche     |
-|15304066 | Falknis-Decke | nappe du Falknis     |
-|15304067 | Sulzfluh-Decke | nappe de la Sulzfluh     |
-|15304068 | Tasna-Decke | nappe du Tasna     |
-|15304069 | Schams-Deckenkomplex | complexe de nappes du Schams     |
-|15304070 | Gelbhorn-Decke | nappe du Gelbhorn     |
-|15304072 | Tschera-Kalkberg-Decke | nappe du Tscherra-Kalkberg     |
-|15304073 | Knorren-Melange | Mélange de Knorren     |
-|15304075 | Martegnas-Melange | Mélange du Martegnas     |
-|15304076 | Areua-Bruschghorn-Melange | mélange de l&#39;Areua–Bruschghorn     |
-|15304077 | Moncucco-Decke | nappe du Moncucco     |
-|15304078 | Bombogno-Zone | zone de Bombogno     |
-|15304080 | Ruitor-Decke | nappe du Ruitor     |
-|15304081 | Obere Stalden-Decke | nappe de Stalden supérieure     |
-|15304082 | Berisal-Decke | nappe de Berisal     |
-|15304083 | Siviez-Mischabel-Decke | nappe de Siviez-Mischabel     |
-|15304084 | Mont-Fort-Decke | nappe du Mont Fort     |
-|15304085 | Monte-Rosa-Decke | nappe du Mont Rose     |
-|15304086 | Maggia-Decke | nappe de la Maggia     |
-|15304088 | Sambuco-Decke | nappe du Sambuco     |
-|15304089 | Tambo-Decke | nappe du Tambo     |
-|15304090 | Suretta-Decke | nappe de Suretta     |
-|15304091 | Oberpenninikum | Pennique supérieur     |
-|15304092 | Antrona-Decke | nappe d&#39;Antrona     |
-|15304093 | Zermatt-Saas-Fee-Decke | nappe de Zermatt-Saas-Fee     |
-|15304094 | Tsaté-Decke | nappe du Tsaté     |
-|15304096 | Gets-Decke | nappe des Gets     |
-|15304097 | Avers-Decke | nappe de l&#39;Avers     |
-|15304098 | Malenco-Forno-Lizun-Decke | nappe du Malenco-Forno-Lizun     |
-|15304099 | Platta-Decke | nappe du Platta     |
-|15304100 | Arosa-Decke | nappe d&#39;Arosa     |
-|15304103 | Gurnigel-Decke | nappe du Gurnigel     |
-|15304104 | Voirons-Decke | nappe des Voirons     |
-|15304105 | Schlieren-Decke | nappe des Schlieren     |
-|15304106 | Wägital-Decke | nappe du Wägital     |
-|15304107 | Dranses-Decke | nappe des Dranses     |
-|15304108 | Saane-Decke | nappe de la Sarine     |
-|15304109 | San-Giorgio-Schuppe | écaille de San Giorgio     |
-|15304111 | Garzott-Schuppe | écaille de Garzott     |
-|15304112 | Terri-Schuppe | écaille du Terri     |
-|15304113 | Fanella-Schuppe | écaille de la Fanella     |
-|15304114 | Trescolmen-Schuppe | écaille de Trescolmen     |
-|15304115 | Soazza-Schuppe | écaille de Soazza     |
-|15304116 | Zervreila-Schuppe | écaille de Zervreila     |
-|15304117 | Gana-Palingera-Schuppe | écaille de Gana–Palingera     |
-|15304118 | Claro-Schuppe | écaille de Claro     |
-|15304119 | Orselina-Bellinzona-Zone | zone d&#39;Orselina–Bellinzona     |
-|15304120 | Kiental-Melange | Mélange du Kiental     |
-|15304121 | Meilleret-Decke | nappe du Meilleret     |
-|15304122 | Ochsenweid-Decke | nappe de l&#39;Ochsenweid     |
-|15304123 | Lenk-Decke | nappe de la Lenk     |
-|15304125 | Ruginenta-Decke | nappe de Ruginenta     |
-|15304126 | Portjengrat-Decke | nappe du Portjengrat     |
-|15304127 | Stockhorn-Decke | nappe du Stockhorn     |
-|15304128 | Darlun-Schuppe | écaille de Darlun     |
-|15304129 | Groven-Schuppe | écaille de Groven     |
-|15304130 | Argio-Schuppe | écaille d&#39;Argio     |
-|15304131 | Bodengo-Schuppe | écaille de Bodengo     |
-|15304132 | Mergoscia-Zone | zone de Mergoscia     |
-|15304133 | Livizung-Schuppe | écaille de Livizung     |
-|15304134 | Forcellina-Schuppe | écaille de la Forcellina     |
-|15304135 | Val-Gronda-Schuppe | écaille du Val Gronda     |
-|15304136 | Triesenberg-Schuppenkomplex | zone d&#39;écailles du Triesenberg     |
-|15304137 | Tschingel-Schuppe | écaille du Tschingel     |
-|15304138 | Grauspitz-Schuppe | écaille du Grauspitz     |
-|15304139 | Glegghorn-Schuppe | écaille du Glegghorn     |
-|15304140 | Gornergrat-Decke | nappe du Gornergrat     |
-|15304141 | Untere Vals-Schuppen | écailles de Vals inférieures     |
-|15304142 | Obere Vals-Schuppen | écailles de Vals supérieures     |
-|15304143 | Gälmji-Zone | zone de Gälmji     |
-|15304145 | Haupterhorn-Scholle | écaille de l&#39;Haupterhorn     |
-|15304146 | Weissfluh-Scholle | écaille de la Weissfluh     |
-|15304147 | Gotschnawang-Scholle | écaille la Gotschnawang     |
-|15304148 | Dros-Scholle | écaille de Dros     |
-|15304149 | Totalp-Ophiolithkomplex | complexe ophiolithique de la Totalp     |
-|15304150 | Sasseneire-Decke | nappe du Sasseneire     |
-|15304151 | Antigorio-Decke | nappe d&#39;Antigorio     |
-|15304152 | Rosswald-Schuppe | écaille de Rosswald     |
-|15304153 | Camughera-Decke | nappe de Camughera     |
-|15304154 | Infra-Niesen-Melange | mélange Infra-Niesen     |
-|15304155 | Mythen-Roggenegg-Schuppe | Mythen-Roggenegg-Schuppe     |
-|15304156 | Obere Rotenflue-Schuppe | écaille de l&#39;Obere Rotenflue     |
-|15304157 | Stäglerenegg-Brünnelistock-Schuppen  | écailles de la Stäglerenegg-Brünnelistock     |
-|15304158 | Aubrig-Schuppe | écaille de l&#39;Aubrig     |
-|15304159 | Infrapräalpines Melange | Mélange infrapréalpin     |
-|15305001 | Ostalpin | Ostalpin     |
-|15305002 | Oberostalpin | Oberostalpin     |
-|15305004 | Krabachjoch-Decke | Krabachjoch-Decke     |
-|15305005 | Inntal-Decke | Inntal-Decke     |
-|15305006 | Lechtal-Decke | Lechtal-Decke     |
-|15305007 | Allgäu-Decke | Allgäu-Decke     |
-|15305009 | Silvretta-Decke | Silvretta-Decke     |
-|15305012 | S-chanf-Schuppen | écailles de S-chanf     |
-|15305013 | Ötztal-Decke | Ötztal-Decke     |
-|15305014 | Umbrail-Terza-Schuppenkomplex | complexe d&#39;écailles de l&#39;Umbrail–Terza     |
-|15305015 | Quattervals-Decke | Quattervals-Decke     |
-|15305016 | S-charl-Sesvenna-Decke | nappe de S-charl-Sesvenna     |
-|15305018 | Ortler-Decke | Ortler-Decke     |
-|15305019 | Campo-Decke | Campo-Decke     |
-|15305020 | Languard-Decke | Languard-Decke     |
-|15305022 | Tonale-Decke | nappe du Tonale     |
-|15305023 | Unterostalpin | Unterostalpin     |
-|15305024 | Rothorn-Decke | Rothorn-Decke     |
-|15305026 | Tschirpen-Decke | Tschirpen-Decke     |
-|15305027 | Stammerspitz-Schuppe | écaille du Stammerspitz     |
-|15305028 | Bernina-Deckenkomplex | Bernina-Deckenkomplex     |
-|15305029 | Bernina-Decke | nappe de la Bernina     |
-|15305030 | Mezzaun-Schuppe | écaille du Mezzaun     |
-|15305031 | Madulain-Schuppenkomplex | zone d&#39;écailles de Madulain     |
-|15305032 | Ela-Decke | Ela-Decke     |
-|15305033 | Julier-Decke | Julier-Decke     |
-|15305035 | Err-Deckenkomplex | Err-Deckenkomplex     |
-|15305036 | Murtiröl-Schuppe | écaille du Murtiröl     |
-|15305038 | Err-Decke | Err-Decke     |
-|15305039 | Carungas-Schuppe | écaille du Carungas     |
-|15305041 | Corvatsch-Schuppe | écaille du Corvatsch     |
-|15305042 | Chastelets-Schuppe | écaille du Chastelets     |
-|15305043 | Bardella-Padella-Schuppenkomplex | complexe d&#39;écailles de Bardella-Padella     |
-|15305047 | Terza-Schuppe | écaille du Piz Terza     |
-|15305048 | Schiahorn-Decke | nappe du Schiahorn     |
-|15305051 | Schesaplana-Schuppe | écaille de Schesaplana     |
-|15305052 | Gorvion-Schuppe | écaille du Gorvion     |
-|15305053 | Augstenberg-Schuppe | Augstenberg-Schuppe     |
-|15305054 | Ochsenkopf-Schuppe | écaille de l&#39;Ochsenkopf     |
-|15305055 | Heubühl-Schuppe | écaille du Heubühl     |
-|15305056 | Drei-Schwestern-Schuppe | écaille des Drei-Schwestern     |
-|15305057 | Schafläger-Decke | nappe du Schafläger     |
-|15305058 | Dorfberg-Decke | nappe du Dorfberg     |
-|15305059 | Grüenhorn-Schuppe | nappe du Grüenhorn     |
-|15305060 | Casanna-Schuppe | écaille de la Casanna     |
-|15305070 | Roggenstock-Mördergruebi-Decke | nappe du Roggenstock-Mördergruebi     |
-|15305072 | Madrisa-Schuppe | écaille de Madrisa     |
-|15305082 | Umbrail-Chavalatsch-Schuppen | écailles de l&#39;Umbrail-Chavalatsch     |
-|15306001 | Südalpin | Südalpin     |
-|15306002 | Ivrea-Verbano-Zone | Ivrea-Verbano-Zone     |
-|15306003 | Strona-Ceneri-Zone | Strona-Ceneri-Zone     |
-|15306004 | Canavese-Zone | Canavese-Zone     |
-|15306005 | Obere Orobische Decke | Obere Orobische Decke     |
-|15306006 | Untere Orobische Decke | Untere Orobische Decke     |
-|15306007 | Po-Becken | bassin du Pô     |
-|15306008 | Milan Belt | Arc milanais     |
-|15306009 | Südalpin Sub-Domäne undifferenziert | sous-domaine indifférencié du Sudalpin     |
-|15307003 | Periadriatische Provinz | Province périadriatique     |
-|15307004 | Adamello-Intrusion | Adamello-Intrusion     |
-|15307005 | Novate-Intrusion | Novate-Intrusion     |
-|15307006 | Bregaglia-Intrusion | Intrusion de Bregaglia     |
-|15307008 | Periadriatische Vulkanite entlang der Insubrischen Linie | Periadriatische Vulkanite entlang der Insubrischen Linie     |
-|15307009 | Känozoische magmatische Provinzen | provinces magmatiques cénozoïques     |
-|15307010 | Hegau-Provinz | province du Hegau     |
-|15308001 | Salassikum | Salassique     |
-|15308002 | Salassikum Sub-Domäne undifferenziert | sous-domaine indifférencié du Salassique     |
-|15308009 | Mont-Emilius-Decke | nappe du Mont Emilius     |
-|15308010 | Mont-Mary-Decke | nappe du Mont Mary     |
-|15308011 | Roisan-Cignana-Scherzone | zone de cisaillement de Roisan–Cignana     |
-|15308012 | Untere Einheit der Mont-Mary-Decke | unité inférieure de la nappe du Mont Mary     |
-|15308013 | Obere Einheit der Mont-Mary-Decke | unité supérieure de la nappe du Mont Mary     |
-|15308014 | Dent-Blanche-Decke | nappe de la Dent Blanche     |
-|15308015 | Arolla-Einheit | unité d&#39;Arolla     |
-|15308016 | Valpelline-Einheit | unité de la Valpelline     |
-|15308017 | Sesia-Decke | nappe de Sesia     |
-|15308018 | IIa Zona Dioritico-Kinzigitica | IIa Zona Dioritico-Kinzigitica     |
-|15308019 | Gneiss-minuti-Einheit | «Gneiss minuti»     |
-|15308021 | Micascisti-eclogitici-Einheit | «Micascisti eclogitici»     |
-|15308022 | Margna-Decke | nappe de la Margna     |
-|15308023 | Sella-Decke | nappe de la Sella     |
-|15308024 | Simmen-Decke | nappe de la Simme     |
-|15308025 | Etirol-Levaz-Schuppe | écaille d&#39;Etirol-Levaz     |
-|15308026 | Chatillon-St-Vincent-Schuppen | écailles de Chatillon-St-Vincent     |
-|15308027 | Grun-Schuppe | écaille de Grun     |
-|15308028 | Chatillon-Schuppe | écaille de Chatillon     |
-|15308029 | Pontey-Schuppe | écaille de Pontey     |
-|15308030 | Grun-Schuppe | écaille de Grun     |
-|15308031 | Vollon-Schuppe | écaille de Vollon     |
+|15309001 | Autochthones Nordalpines Vorland | Autochthones Nordalpines Vorland     |
+|15309002 | Bresse-Graben | Bresse-Graben     |
+|15309003 | Haute-Saône-Tafel | Haute-Saône-Tafel     |
+|15309004 | Oberrhein-Graben | Oberrhein-Graben     |
+|15309005 | Süddeutsche Tafel | Süddeutsche Tafel     |
+|15309006 | Hegau-Bodensee-Graben | Hegau-Bodensee-Graben     |
+|15309007 | Übergangszone zwischen Abgeschertem und Autochthonem Vorlandplateau | Übergangszone zwischen Abgeschertem und Autochthonem Vorlandplateau     |
+|15309008 | Abgeschertes Nordalpines Vorland | Abgeschertes Nordalpines Vorland     |
+|15309009 | Externer Faltenjura | Externer Faltenjura     |
+|15309010 | Faisceaux | Faisceaux     |
+|15309011 | Plateaux | Plateaux     |
+|15309012 | Interner Faltenjura und Vorlandplateau | Interner Faltenjura und Vorlandplateau     |
+|15309013 | Subalpine Molasse | Subalpine Molasse     |
+|15309014 | Marbach-Berneck-Dreieckzone | Marbach-Berneck-Dreieckzone     |
+|15309015 | Subalpiner Schuppenkomplex | Subalpiner Schuppenkomplex     |
+|15309016 | Belmont-Schuppe | Belmont-Schuppe     |
+|15309017 | Lutry-Thonon-Schuppe | Lutry-Thonon-Schuppe     |
+|15309018 | Brécorens-Lucinges-Schuppe | Brécorens-Lucinges-Schuppe     |
+|15309019 | Cully-Schuppe | Cully-Schuppe     |
+|15309020 | Lavaux-Schuppe | Lavaux-Schuppe     |
+|15309021 | Mont-Pèlerin-Schuppe | Mont-Pèlerin-Schuppe     |
+|15309022 | Vevey-Evian-Schuppe | Vevey-Evian-Schuppe     |
+|15309023 | Gérignoz-La-Roche-Schuppe | Gérignoz-La-Roche-Schuppe     |
+|15309024 | Vaulruz-Schuppe | Vaulruz-Schuppe     |
+|15309025 | Champotey-Ramsera-Schuppe | Champotey-Ramsera-Schuppe     |
+|15309026 | La-Pattaz-La-Holena-Schuppe | La-Pattaz-La-Holena-Schuppe     |
+|15309027 | Villarvolard-Schuppe | Villarvolard-Schuppe     |
+|15309028 | Seftigschwand-Schuppe | Seftigschwand-Schuppe     |
+|15309029 | Giebelegg-Schuppe | Giebelegg-Schuppe     |
+|15309030 | Steffisburg-Schuppe | Steffisburg-Schuppe     |
+|15309031 | Schangnau-Schuppe | Schangnau-Schuppe     |
+|15309032 | Hornbüel-Schuppenzone | Hornbüel-Schuppenzone     |
+|15309033 | Blueme-Beichle-Schuppe | Blueme-Beichle-Schuppe     |
+|15309034 | Wolfsegg-Schuppe | Wolfsegg-Schuppe     |
+|15309035 | Ralligen-Schuppenzone | Ralligen-Schuppenzone     |
+|15309036 | Hilfern-Schuppe | Hilfern-Schuppe     |
+|15309037 | Höhronen-Schuppe | Höhronen-Schuppe     |
+|15309038 | St.-Jost-Schuppe | St.-Jost-Schuppe     |
+|15309039 | Rigi-Rossberg-Schuppe | Rigi-Rossberg-Schuppe     |
+|15309040 | Gäbris-Schuppe | Gäbris-Schuppe     |
+|15309041 | Kronberg-Schuppe | Kronberg-Schuppe     |
+|15309042 | «Zone Kronberg-Süd» | «Zone Kronberg-Süd»     |
+|15309043 | Schorhüttenberg-Schuppe | Schorhüttenberg-Schuppe     |
+|15309044 | Speer-Stockberg-Schuppe | Speer-Stockberg-Schuppe     |
+|15309045 | Chräzerli-Schuppe | Chräzerli-Schuppe     |
+|15309046 | Hirschberg-Schuppe | Hirschberg-Schuppe     |
+|15309047 | Hölzliberg-Schuppe | Hölzliberg-Schuppe     |
+|15309048 | Eichberg-Schuppe | Eichberg-Schuppe     |
+|15309049 | Helvetikum | Helvetikum     |
+|15309050 | Unterhelvetikum | Unterhelvetikum     |
+|15309051 | Subalpine Flysch-Zone | Subalpine Flysch-Zone     |
+|15309052 | Externe Einsiedeln-Schuppen | Externe Einsiedeln-Schuppen     |
+|15309053 | Belledonne-Massiv | Belledonne-Massiv     |
+|15309054 | Externes Belledonne-Massiv | Externes Belledonne-Massiv     |
+|15309055 | Mittleres Belledonne-Massiv | Mittleres Belledonne-Massiv     |
+|15309056 | Internes Belledonne-Massiv | Internes Belledonne-Massiv     |
+|15309057 | Aiguilles-Rouges-Massiv | Aiguilles-Rouges-Massiv     |
+|15309058 | Mont-Blanc-Massiv | Mont-Blanc-Massiv     |
+|15309059 | Externes Mont-Blanc-Massiv | Externes Mont-Blanc-Massiv     |
+|15309060 | Internes Mont-Blanc-Massiv | Internes Mont-Blanc-Massiv     |
+|15309061 | Aar-Massiv | Aar-Massiv     |
+|15309062 | Externes Aar-Massiv | Externes Aar-Massiv     |
+|15309063 | Gastern-Teilmassiv | Gastern-Teilmassiv     |
+|15309064 | Internes Aar-Massiv | Internes Aar-Massiv     |
+|15309065 | Baltschieder-Gletsch-Teilmassiv | Baltschieder-Gletsch-Teilmassiv     |
+|15309066 | Trun-Punteglias-Teilmassiv | Trun-Punteglias-Teilmassiv     |
+|15309067 | Kaminspitz-Schuppe | Kaminspitz-Schuppe     |
+|15309068 | Stelli-Schuppe | Stelli-Schuppe     |
+|15309069 | Orglen-Schuppen (Aar-Massiv-Anteil) | Orglen-Schuppen (Aar-Massiv-Anteil)     |
+|15309070 | Calanda-Schuppe (Aar-Massiv-Anteil) | Calanda-Schuppe (Aar-Massiv-Anteil)     |
+|15309071 | Mirutta-Schuppen (Aar-Massiv-Anteil) | Mirutta-Schuppen (Aar-Massiv-Anteil)     |
+|15309072 | Tschep-Schuppe | Tschep-Schuppe     |
+|15309073 | Maliens-Schuppe | Maliens-Schuppe     |
+|15309074 | Piz-d&#39;Artgas-Schuppe | Piz-d&#39;Artgas-Schuppe     |
+|15309075 | Hoch-Fulen-Schuppe | Hoch-Fulen-Schuppe     |
+|15309076 | Chaines-Subalpines-Decke | Chaines-Subalpines-Decke     |
+|15309077 | Morcles-Decke | Morcles-Decke     |
+|15309078 | Ardon-Decke | Ardon-Decke     |
+|15309079 | Doldenhorn-Decke | Doldenhorn-Decke     |
+|15309080 | Gellihorn-Decke | Gellihorn-Decke     |
+|15309081 | Plammis-Decke | Plammis-Decke     |
+|15309082 | Jägerchrüz-Decke | Jägerchrüz-Decke     |
+|15309083 | Kammlistock-Decke | Kammlistock-Decke     |
+|15309084 | Griessstock-Decke | Griessstock-Decke     |
+|15309085 | Clariden-Schuppenkomplex | Clariden-Schuppenkomplex     |
+|15309086 | Klausenpass-Schuppen | Klausenpass-Schuppen     |
+|15309087 | Chamerstock-Schuppe | Chamerstock-Schuppe     |
+|15309088 | Geisstritt-Schuppe | Geisstritt-Schuppe     |
+|15309089 | Stichplatten-Schuppe | Stichplatten-Schuppe     |
+|15309090 | Gemsfairen-Schuppe | Gemsfairen-Schuppe     |
+|15309091 | Rotstock-Schuppe | Rotstock-Schuppe     |
+|15309092 | Langfirn-Schuppe | Langfirn-Schuppe     |
+|15309093 | Fiseten-Orthalden-Schuppen | Fiseten-Orthalden-Schuppen     |
+|15309094 | Cavistrau-Decke | Cavistrau-Decke     |
+|15309095 | Chropfsberg-Pizalun-Schuppen | Chropfsberg-Pizalun-Schuppen     |
+|15309096 | Chropfsberg-Schuppe | Chropfsberg-Schuppe     |
+|15309097 | Pizalun-Schuppe | Pizalun-Schuppe     |
+|15309098 | Gaffia-Schuppe | Gaffia-Schuppe     |
+|15309099 | Logsbach-Schuppe | Logsbach-Schuppe     |
+|15309100 | Mättental-Melange | Mättental-Melange     |
+|15309101 | Schabell-Melange | Schabell-Melange     |
+|15309102 | Tschingelhörner-Schuppen | Tschingelhörner-Schuppen     |
+|15309103 | Blattengrat-Decke | Blattengrat-Decke     |
+|15309104 | Marchegghorn-Schuppe (Blattengrat-Anteil) | Marchegghorn-Schuppe (Blattengrat-Anteil)     |
+|15309105 | Calanda-Schuppe (Blattengrat-Anteil) | Calanda-Schuppe (Blattengrat-Anteil)     |
+|15309106 | Mirutta-Schuppe (Blattengrat-Anteil) | Mirutta-Schuppe (Blattengrat-Anteil)     |
+|15309107 | Sardona-Decke | Sardona-Decke     |
+|15309108 | Marchegghorn-Schuppe (Sardona-Anteil) | Marchegghorn-Schuppe (Sardona-Anteil)     |
+|15309109 | Orglen-Schuppen (Sardona-Anteil) | Orglen-Schuppen (Sardona-Anteil)     |
+|15309110 | Calanda-Schuppe (Sardona-Anteil) | Calanda-Schuppe (Sardona-Anteil)     |
+|15309111 | Mirutta-Schuppe (Sardona-Anteil) | Mirutta-Schuppe (Sardona-Anteil)     |
+|15309112 | Bad-Ragaz-Decke | Bad-Ragaz-Decke     |
+|15309113 | Calanda-Schuppe (undifferenziert) | Calanda-Schuppe (undifferenziert)     |
+|15309114 | Marchegghorn-Schuppe (undifferenziert) | Marchegghorn-Schuppe (undifferenziert)     |
+|15309115 | Mirutta-Schuppe (undifferenziert) | Mirutta-Schuppe (undifferenziert)     |
+|15309116 | Orglen-Schuppe (undifferenziert) | Orglen-Schuppe (undifferenziert)     |
+|15309117 | Oberhelvetikum | Oberhelvetikum     |
+|15309118 | Mont-Chétif-Decke | Mont-Chétif-Decke     |
+|15309119 | Roselette-Decke | Roselette-Decke     |
+|15309120 | Wildhorn-Deckenkomplex | Wildhorn-Deckenkomplex     |
+|15309121 | Diablerets-Decke | Diablerets-Decke     |
+|15309122 | Mont-Gond-Decke | Mont-Gond-Decke     |
+|15309123 | Sublage-Decke | Sublage-Decke     |
+|15309124 | Glarner Deckenkomplex | Glarner Deckenkomplex     |
+|15309125 | Wageten-Schuppe | Wageten-Schuppe     |
+|15309126 | Gonzen-Walenstadt-Schuppen | Gonzen-Walenstadt-Schuppen     |
+|15309127 | Mürtschen-Decke | Mürtschen-Decke     |
+|15309128 | Axen-Decke | Axen-Decke     |
+|15309129 | Toralp-Schuppe | Toralp-Schuppe     |
+|15309130 | Silberen-Schuppen | Silberen-Schuppen     |
+|15309131 | Bächistock-Schuppe | Bächistock-Schuppe     |
+|15309132 | Axen-Südschuppe | Axen-Südschuppe     |
+|15309133 | Axen-Nordschuppe | Axen-Nordschuppe     |
+|15309134 | Wissberg-Schuppe | Wissberg-Schuppe     |
+|15309135 | Schächentaler Windgällen-Schuppen | Schächentaler Windgällen-Schuppen     |
+|15309136 | Höch-Turm-Schuppen | Höch-Turm-Schuppen     |
+|15309137 | Friteren-Schuppe | Friteren-Schuppe     |
+|15309138 | Drusberg-Decke | Drusberg-Decke     |
+|15309139 | Wissenwand-Schuppe | Wissenwand-Schuppe     |
+|15309140 | Niederhorn-Pilatus-Schuppe | Niederhorn-Pilatus-Schuppe     |
+|15309141 | Bürgenstock-Urmiberg-Schuppe | Bürgenstock-Urmiberg-Schuppe     |
+|15309142 | Hochflue-Schuppe | Hochflue-Schuppe     |
+|15309143 | Maisander-Schuppe | Maisander-Schuppe     |
+|15309144 | Aubrig-Schuppe | Aubrig-Schuppe     |
+|15309145 | Säntis-Decke | Säntis-Decke     |
+|15309146 | Hohenems-Decke | Hohenems-Decke     |
+|15309147 | Tavetsch-Decke | Tavetsch-Decke     |
+|15309148 | Ilanz-Decke | Ilanz-Decke     |
+|15309149 | Gotthard-Decke | Gotthard-Decke     |
+|15309150 | Camosci-Decke | Camosci-Decke     |
+|15309151 | Scopi-Decke | Scopi-Decke     |
+|15309152 | Piora-Peiden-Schuppenkomplex | Piora-Peiden-Schuppenkomplex     |
+|15309153 | Habkern-Melangezone | Habkern-Melangezone     |
+|15309154 | Iberg-Melange | Iberg-Melange     |
+|15309155 | Interne Einsiedeln-Schuppen | Interne Einsiedeln-Schuppen     |
+|15309156 | Wildhaus-Melange | Wildhaus-Melange     |
+|15309157 | Liebenstein-Decke | Liebenstein-Decke     |
+|15309158 | Fläscherberg-Decke | Fläscherberg-Decke     |
+|15309159 | Pillon-Melangezone | Pillon-Melangezone     |
+|15309160 | Plaine-Morte-Melange | Plaine-Morte-Melange     |
+|15309161 | Anzeinde-type slivers | Anzeinde-type slivers     |
+|15309162 | Sex-Mort-type slivers | Sex-Mort-type slivers     |
+|15309163 | Arveyes-type slivers | Arveyes-type slivers     |
+|15309164 | Bex-Laubhorn-type slivers | Bex-Laubhorn-type slivers     |
+|15309165 | Meilleret-type slivers | Meilleret-type slivers     |
+|15309166 | Bulle-Melangezone | Bulle-Melangezone     |
+|15309167 | Infrapräalpines Melange | Infrapräalpines Melange     |
+|15309168 | Montsalvens-Schuppe | Montsalvens-Schuppe     |
+|15309169 | Les-Pléiades-Schuppe | Les-Pléiades-Schuppe     |
+|15309170 | Bois-de-Bouleyres-Schuppe | Bois-de-Bouleyres-Schuppe     |
+|15309171 | Faucigny-Schuppen | Faucigny-Schuppen     |
+|15309172 | Lepontikum | Lepontikum     |
+|15309173 | Verampio-Decke | Verampio-Decke     |
+|15309174 | Antigorio-Deckenkomplex | Antigorio-Deckenkomplex     |
+|15309175 | Antigorio-Decke | Antigorio-Decke     |
+|15309176 | Mergoscia-Zone | Mergoscia-Zone     |
+|15309177 | Lebendun-Decke | Lebendun-Decke     |
+|15309178 | Monte-Leone-Decke | Monte-Leone-Decke     |
+|15309179 | Moncucco-Decke | Moncucco-Decke     |
+|15309180 | Pizzo-del-Vallone-Decke | Pizzo-del-Vallone-Decke     |
+|15309181 | Isorno-Zone | Isorno-Zone     |
+|15309182 | Orselina-Bellinzona-Zone | Orselina-Bellinzona-Zone     |
+|15309183 | Bosco-Zone | Bosco-Zone     |
+|15309184 | Bombogno-Zone | Bombogno-Zone     |
+|15309185 | Maggia-Decke | Maggia-Decke     |
+|15309186 | Sambuco-Decke | Sambuco-Decke     |
+|15309187 | San-Giorgio-Schuppe | San-Giorgio-Schuppe     |
+|15309188 | Leventina-Lucomagno-Decke | Leventina-Lucomagno-Decke     |
+|15309189 | Simano-Decke | Simano-Decke     |
+|15309190 | Cima-Lunga-Decke | Cima-Lunga-Decke     |
+|15309191 | Adula-Decke | Adula-Decke     |
+|15309192 | Gruf-Komplex | Gruf-Komplex     |
+|15309193 | Soja-Decke | Soja-Decke     |
+|15309194 | Garzott-Schuppen | Garzott-Schuppen     |
+|15309195 | Piz-Terri-Lunschania-Decke | Piz-Terri-Lunschania-Decke     |
+|15309196 | Terri-Schuppe | Terri-Schuppe     |
+|15309197 | Güida-Alpettas-Schuppen | Güida-Alpettas-Schuppen     |
+|15309198 | Darlun-Schuppe | Darlun-Schuppe     |
+|15309199 | Penninikum | Penninikum     |
+|15309200 | Unterpenninikum | Unterpenninikum     |
+|15309201 | Niesen-Decke | Niesen-Decke     |
+|15309202 | Infraniesen-Melange | Infraniesen-Melange     |
+|15309203 | Voirons-Decke | Voirons-Decke     |
+|15309204 | Gurnigel-Decke | Gurnigel-Decke     |
+|15309205 | Schlieren-Decke | Schlieren-Decke     |
+|15309206 | Wägital-Decke | Wägital-Decke     |
+|15309207 | Üntschen-Decke | Üntschen-Decke     |
+|15309208 | Sigiswang-Decke | Sigiswang-Decke     |
+|15309209 | Triesenberg-Schuppenkomplex | Triesenberg-Schuppenkomplex     |
+|15309210 | Oberstdorf-Decke | Oberstdorf-Decke     |
+|15309211 | Sion-Courmayeur-Decke | Sion-Courmayeur-Decke     |
+|15309212 | Rosswald-Schuppe | Rosswald-Schuppe     |
+|15309213 | Ferret-Schuppe | Ferret-Schuppe     |
+|15309214 | Moûtiers-Schuppe | Moûtiers-Schuppe     |
+|15309215 | Roignais-Versoyen-Schuppe | Roignais-Versoyen-Schuppe     |
+|15309216 | Pierre-Avoi-Schuppe | Pierre-Avoi-Schuppe     |
+|15309217 | Petit-St-Bernard-Schuppe | Petit-St-Bernard-Schuppe     |
+|15309218 | Chiavenna-Decke | Chiavenna-Decke     |
+|15309219 | Vals-Schuppen | Vals-Schuppen     |
+|15309220 | Aul-Decke | Aul-Decke     |
+|15309221 | Grava-Decke | Grava-Decke     |
+|15309222 | Tomül-Decke | Tomül-Decke     |
+|15309223 | Forbesch-Schuppe | Forbesch-Schuppe     |
+|15309224 | Roz-Champatsch-Melange | Roz-Champatsch-Melange     |
+|15309225 | Ramosch-Zone | Ramosch-Zone     |
+|15309226 | Pfunds-Decke | Pfunds-Decke     |
+|15309227 | Mittelpenninikum | Mittelpenninikum     |
+|15309228 | Zone Submédiane | Zone Submédiane     |
+|15309229 | Klippen-Decke | Klippen-Decke     |
+|15309230 | Préalpes Médianes Plastiques | Préalpes Médianes Plastiques     |
+|15309231 | Préalpes Médianes Rigides | Préalpes Médianes Rigides     |
+|15309232 | Mythen-Roggenegg-Schuppe | Mythen-Roggenegg-Schuppe     |
+|15309233 | Obere Rotenflue-Schuppe | Obere Rotenflue-Schuppe     |
+|15309234 | Stäglerenegg-Brünnelistock-Schuppen  | Stäglerenegg-Brünnelistock-Schuppen      |
+|15309235 | Brekzien-Decke | Brekzien-Decke     |
+|15309236 | Zone Houillère | Zone Houillère     |
+|15309237 | Zone Houillère externe | Zone Houillère externe     |
+|15309238 | Zone Houillère interne | Zone Houillère interne     |
+|15309239 | Visperterminen-Schuppe | Visperterminen-Schuppe     |
+|15309240 | Untere Stalden-Schuppe | Untere Stalden-Schuppe     |
+|15309241 | Gälmji-Zone | Gälmji-Zone     |
+|15309242 | Ruginenta-Decke | Ruginenta-Decke     |
+|15309243 | Ruitor-Decke | Ruitor-Decke     |
+|15309244 | Obere Stalden-Decke | Obere Stalden-Decke     |
+|15309245 | Berisal-Decke | Berisal-Decke     |
+|15309246 | Camughera-Decke | Camughera-Decke     |
+|15309247 | Siviez-Mischabel-Decke | Siviez-Mischabel-Decke     |
+|15309248 | Mont-Fort-Decke | Mont-Fort-Decke     |
+|15309249 | Portjengrat-Decke | Portjengrat-Decke     |
+|15309250 | Stockhorn-Decke | Stockhorn-Decke     |
+|15309251 | Monte-Rosa-Decke | Monte-Rosa-Decke     |
+|15309252 | Tambo-Decke | Tambo-Decke     |
+|15309253 | Suretta-Decke | Suretta-Decke     |
+|15309254 | Schams-Deckenkomplex | Schams-Deckenkomplex     |
+|15309255 | Gelbhorn-Decke | Gelbhorn-Decke     |
+|15309256 | Tschera-Kalkberg-Decke | Tschera-Kalkberg-Decke     |
+|15309257 | Knorren-Melange | Knorren-Melange     |
+|15309258 | Martegnas-Melange | Martegnas-Melange     |
+|15309259 | Areua-Bruschghorn-Melange | Areua-Bruschghorn-Melange     |
+|15309260 | Falknis-Decke | Falknis-Decke     |
+|15309261 | Tschingel-Schuppe | Tschingel-Schuppe     |
+|15309262 | Grauspitz-Schuppe | Grauspitz-Schuppe     |
+|15309263 | Glegghorn-Schuppe | Glegghorn-Schuppe     |
+|15309264 | Sulzfluh-Decke | Sulzfluh-Decke     |
+|15309265 | Fimber-Zone | Fimber-Zone     |
+|15309266 | Tasna-Decke | Tasna-Decke     |
+|15309267 | Oberpenninikum | Oberpenninikum     |
+|15309268 | Gets-Decke | Gets-Decke     |
+|15309269 | Simmen-Decke | Simmen-Decke     |
+|15309270 | Dranses-Decke | Dranses-Decke     |
+|15309271 | Saane-Decke | Saane-Decke     |
+|15309272 | Antrona-Decke | Antrona-Decke     |
+|15309273 | Zermatt-Saas-Fee-Decke | Zermatt-Saas-Fee-Decke     |
+|15309274 | Theodulgletscher-Schuppe | Theodulgletscher-Schuppe     |
+|15309275 | Mont-Emilius-Decke | Mont-Emilius-Decke     |
+|15309276 | Etirol-Levaz-Schuppe | Etirol-Levaz-Schuppe     |
+|15309277 | Châtillon-St-Vincent-Schuppen | Châtillon-St-Vincent-Schuppen     |
+|15309278 | Châtillon-Schuppe | Châtillon-Schuppe     |
+|15309279 | Pontey-Schuppe | Pontey-Schuppe     |
+|15309280 | Grun-Schuppe | Grun-Schuppe     |
+|15309281 | Vollon-Schuppe | Vollon-Schuppe     |
+|15309282 | Gornergrat-Decke | Gornergrat-Decke     |
+|15309283 | Cimes-Blanches-Decke | Cimes-Blanches-Decke     |
+|15309284 | Frilihorn-Decke | Frilihorn-Decke     |
+|15309285 | Tsaté-Decke | Tsaté-Decke     |
+|15309286 | Avers-Decke | Avers-Decke     |
+|15309287 | Malenco-Forno-Lizun-Decke | Malenco-Forno-Lizun-Decke     |
+|15309288 | Platta-Decke | Platta-Decke     |
+|15309289 | Arosa-Zone | Arosa-Zone     |
+|15309290 | Haupterhorn-Scholle | Haupterhorn-Scholle     |
+|15309291 | Weissfluh-Scholle | Weissfluh-Scholle     |
+|15309292 | Gotschnawang-Scholle | Gotschnawang-Scholle     |
+|15309293 | Dros-Scholle | Dros-Scholle     |
+|15309294 | Totalp-Ophiolithkomplex | Totalp-Ophiolithkomplex     |
+|15309295 | Salassikum | Salassikum     |
+|15309296 | Mont-Mary-Decke | Mont-Mary-Decke     |
+|15309297 | Untere Einheit der Mont-Mary-Decke | Untere Einheit der Mont-Mary-Decke     |
+|15309298 | Obere Einheit der Mont-Mary-Decke | Obere Einheit der Mont-Mary-Decke     |
+|15309299 | Roisan-Cignana-Scherzone | Roisan-Cignana-Scherzone     |
+|15309300 | Dent-Blanche-Decke | Dent-Blanche-Decke     |
+|15309301 | Arolla-Einheit | Arolla-Einheit     |
+|15309302 | Valpelline-Einheit | Valpelline-Einheit     |
+|15309303 | Sesia-Decke | Sesia-Decke     |
+|15309304 | Seconda Zona Dioritico-Kinzigitica | Seconda Zona Dioritico-Kinzigitica     |
+|15309305 | Gneiss-minuti-Einheit | Gneiss-minuti-Einheit     |
+|15309306 | Micascisti-eclogitici-Einheit | Micascisti-eclogitici-Einheit     |
+|15309307 | Margna-Decke | Margna-Decke     |
+|15309308 | Forcellina-Schuppe | Forcellina-Schuppe     |
+|15309309 | Sella-Decke | Sella-Decke     |
+|15309310 | Ostalpin | Ostalpin     |
+|15309311 | Unterostalpin | Unterostalpin     |
+|15309312 | Rothorn-Schwarzhorn-Deckenkomplex | Rothorn-Schwarzhorn-Deckenkomplex     |
+|15309313 | Rothorn-Decke | Rothorn-Decke     |
+|15309314 | Tschirpen-Decke | Tschirpen-Decke     |
+|15309315 | Schafläger-Decke | Schafläger-Decke     |
+|15309316 | Dorfberg-Decke | Dorfberg-Decke     |
+|15309317 | Grüenhorn-Casanna-Schuppenkomplex | Grüenhorn-Casanna-Schuppenkomplex     |
+|15309318 | Grüenhorn-Schuppe | Grüenhorn-Schuppe     |
+|15309319 | Casanna-Schuppe | Casanna-Schuppe     |
+|15309320 | Stammerspitz-Schuppe | Stammerspitz-Schuppe     |
+|15309321 | Bernina-Deckenkomplex | Bernina-Deckenkomplex     |
+|15309322 | Ela-Decke | Ela-Decke     |
+|15309323 | Bernina-Decke | Bernina-Decke     |
+|15309324 | Müsella-Schuppe | Müsella-Schuppe     |
+|15309325 | Mezzaun-Schuppe | Mezzaun-Schuppe     |
+|15309326 | Madulain-Schuppen | Madulain-Schuppen     |
+|15309327 | Schlattain-Clavadatsch-Padella-Schuppen | Schlattain-Clavadatsch-Padella-Schuppen     |
+|15309328 | Julier-Decke | Julier-Decke     |
+|15309329 | Err-Deckenkomplex | Err-Deckenkomplex     |
+|15309330 | Murtiröl-Schuppe | Murtiröl-Schuppe     |
+|15309331 | Err-Decke | Err-Decke     |
+|15309332 | Carungas-Schuppe | Carungas-Schuppe     |
+|15309333 | Corvatsch-Schuppe | Corvatsch-Schuppe     |
+|15309334 | Chastelets-Schuppe | Chastelets-Schuppe     |
+|15309335 | Bardella-Roccabella-Schuppen | Bardella-Roccabella-Schuppen     |
+|15309336 | Oberostalpin | Oberostalpin     |
+|15309337 | Campo-Deckenkomplex | Campo-Deckenkomplex     |
+|15309338 | Masuccio-Decke | Masuccio-Decke     |
+|15309339 | Campo-Decke | Campo-Decke     |
+|15309340 | Grosina-Decke | Grosina-Decke     |
+|15309341 | Laas-Decke | Laas-Decke     |
+|15309342 | Vinschgau-Scherzone | Vinschgau-Scherzone     |
+|15309343 | Languard-Decke | Languard-Decke     |
+|15309344 | Tonale-Decke | Tonale-Decke     |
+|15309345 | Ulten-Einheit | Ulten-Einheit     |
+|15309346 | Krabachjoch-Decke | Krabachjoch-Decke     |
+|15309347 | Inntal-Decke | Inntal-Decke     |
+|15309348 | Roggenstock-Mördergruebi-Decke | Roggenstock-Mördergruebi-Decke     |
+|15309349 | Lechtal-Decke | Lechtal-Decke     |
+|15309350 | Madrisa-Schuppe | Madrisa-Schuppe     |
+|15309351 | Schesaplana-Schuppe | Schesaplana-Schuppe     |
+|15309352 | Gorvion-Schuppe | Gorvion-Schuppe     |
+|15309353 | Augstenberg-Schuppe | Augstenberg-Schuppe     |
+|15309354 | Ochsenkopf-Schuppe | Ochsenkopf-Schuppe     |
+|15309355 | Heubühl-Schuppe | Heubühl-Schuppe     |
+|15309356 | Drei-Schwestern-Schuppe | Drei-Schwestern-Schuppe     |
+|15309357 | Allgäu-Decke | Allgäu-Decke     |
+|15309358 | Cenoman-Randschuppe | Cenoman-Randschuppe     |
+|15309359 | Schiahorn-Decke | Schiahorn-Decke     |
+|15309360 | Silvretta-Decke | Silvretta-Decke     |
+|15309361 | S-chanf-Schuppen | S-chanf-Schuppen     |
+|15309362 | Phyllitgneiszone | Phyllitgneiszone     |
+|15309363 | Ötztal-Deckenkomplex | Ötztal-Deckenkomplex     |
+|15309364 | Matsch-Decke | Matsch-Decke     |
+|15309365 | Umbrail-Terza-Schuppenkomplex | Umbrail-Terza-Schuppenkomplex     |
+|15309366 | Umbrail-Chavalatsch-Schuppen | Umbrail-Chavalatsch-Schuppen     |
+|15309367 | Terza-Schuppe | Terza-Schuppe     |
+|15309368 | Quattervals-Decke | Quattervals-Decke     |
+|15309369 | S-charl-Sesvenna-Decke | S-charl-Sesvenna-Decke     |
+|15309370 | Tavrü-Schuppe | Tavrü-Schuppe     |
+|15309371 | Ortler-Decke | Ortler-Decke     |
+|15309372 | Südalpin | Südalpin     |
+|15309373 | Canavese-Zone | Canavese-Zone     |
+|15309374 | Ivrea-Ceneri-Komplex | Ivrea-Ceneri-Komplex     |
+|15309375 | Ivrea-Zone | Ivrea-Zone     |
+|15309376 | Strona-Ceneri-Zone (Ivrea-Ceneri-Anteil) | Strona-Ceneri-Zone (Ivrea-Ceneri-Anteil)     |
+|15309377 | Milano-Belt | Milano-Belt     |
+|15309378 | Externe Giudicarie-Zone | Externe Giudicarie-Zone     |
+|15309379 | Untere Orobische Schuppen | Untere Orobische Schuppen     |
+|15309380 | Interne Giudicarie-Zone | Interne Giudicarie-Zone     |
+|15309381 | Obere Orobische Decke | Obere Orobische Decke     |
+|15309382 | Val-Colla-Zone | Val-Colla-Zone     |
+|15309383 | Strona-Ceneri-Zone (Oberer Orobischer Anteil) | Strona-Ceneri-Zone (Oberer Orobischer Anteil)     |
+|15309384 | Varesotto-Schuppen | Varesotto-Schuppen     |
+|15309385 | Strona-Ceneri-Zone (undifferenziert) | Strona-Ceneri-Zone (undifferenziert)     |
+|15309386 | Känozoische magmatische Gesteine | Känozoische magmatische Gesteine     |
+|15309387 | Vulkanische Serie des Hegaus | Vulkanische Serie des Hegaus     |
+|15309388 | Periadriatische magmatische Provinz | Periadriatische magmatische Provinz     |
+|15309389 | Vulkanische Serie von Biella | Vulkanische Serie von Biella     |
+|15309390 | Subvulkanischer Körper vom Colle Gallo | Subvulkanischer Körper vom Colle Gallo     |
+|15309391 | Subvulkanischer Körper von Gandino | Subvulkanischer Körper von Gandino     |
+|15309392 | Bregaglia-Intrusionskörper | Bregaglia-Intrusionskörper     |
+|15309393 | Novate-Intrusionskörper | Novate-Intrusionskörper     |
+|15309394 | Adamello-Batholith | Adamello-Batholith     |
 |999997 | unbekannt | inconnu     |
 |999998 | nicht anwendbar | non applicable     |
 
