@@ -43,9 +43,12 @@ PANDOC_ODT_OPTIONS=
 # Help target
 help:
 	@echo "Usage:"
-	@echo "  make all     - Generate all files (PDF, DOCX, HTML and ODT for all languages)"
-	@echo "  make pdf      - Generate only PDF files for all languages"
-	@echo "  make docx     - Generate only PDF files for all languages"
+	@echo "  make all      - Generate all files (PDF, DOCX, HTML and ODT for all languages)"
+	@echo "  make pdfs     - Generate only PDF files for all languages"
+	@echo "  make docxs    - Generate only DOCX files for all languages"
+	@echo "  make odts     - Generate only ODT files for all languages"
+	@echo "  make htmls    - Generate only HTML files for all languages"
+	@echo "  make mds      - Generate only Markdown files for all languages"
 	@echo "  make de       - Generate all files (PDF, DOCX, HTML and ODT) for German"
 	@echo "  make fr       - Generate all files (PDF, DOCX, HTML and ODT) for French"
 	@echo "  make babel    - Generate .mo translation files"
