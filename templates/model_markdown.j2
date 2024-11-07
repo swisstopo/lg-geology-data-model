@@ -30,19 +30,19 @@
 
 
 
-{{_("Name")}}            | {{_("Type")}} | {{_("Description")}}                              |  {{_("Mandat.")}} | {{_("Card.")}}
--------------------------|----------|---------------------------------------------------|-----|-----
+{{_("Name")}}             | {{_("Type")}} | {{_("Description")}}                             |  {{_("Card.")}}
+--------------------------|------------|-----------------------------------------------------|-----
 {% for attr in cls.attributes -%}
 {%- if attr.change != 'removed' -%}
 {%- if attr.mandatory -%}{% set mandatory =  "**%s**" % (_("yes")) -%}{% else -%}{% set mandatory =  "%s" % (_("no")) -%}{% endif -%}
 {%- if attr.att_type == 'CD' -%}{% set slug = "%s-%s" % (cls.name, attr.name) -%}
 {%- elif attr.att_type == 'annex' -%}{% set slug, location = attr.value, 'vgl. Anhang %s' % attr.value %}{% set see_annex = 'Die möglichen Werte sind in der Tabelle %s im Anhang dieses Dokumentes verfügbar.' % attr.value %}{%- else -%}{% set slug = None %}{% endif -%}
 {%- if (slug != None) and (attr.att_type == 'CD') -%}
-**{{ attr.name |upper  }}**                 | [{{_("CodedDomain")}}](#{{slug| slugify}})  | {{ attr.description[lang]|trim }}.|  {{mandatory}}  | [{{ attr.cardinality}}]
+**{{ attr.name |upper  }}**                 | [{{_("CodedDomain")}}](#{{slug| slugify}})  | {{ attr.description[lang]|trim }}. | [{{ attr.cardinality}}]
 {%elif (slug != None) and (attr.att_type == 'annex') -%}
-**{{ attr.name |upper  }}**                 | [ {{_("Table")}} ](#{{slug| slugify}})  | {{ attr.description[lang]|trim }}.|  {{mandatory}} | [{{ attr.cardinality}}]
+**{{ attr.name |upper  }}**                 | [ {{_("Table")}} ](#{{slug| slugify}})  | {{ attr.description[lang]|trim }}. | [{{ attr.cardinality}}]
 {% else -%}
-**{{ attr.name |upper  }}**                 | {{attr.att_type}}                  | {{ attr.description[lang]|trim }} |{{mandatory}} | [{{ attr.cardinality}}]
+**{{ attr.name |upper  }}**                 | {{attr.att_type}}                  | {{ attr.description[lang]|trim }} | [{{ attr.cardinality}}]
 {% endif -%}
 {% endif -%}
 {% endfor %}
