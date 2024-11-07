@@ -15,8 +15,8 @@ date: 2024-09-24
 
 # Model revision should change if attributes are added, deleted or changed
 model:
-  revision: 3.9.9
-  revision_date: "2024-11-05"
+  revision: 3.9.10
+  revision_date: "2024-11-07"
 
 themes:
 - name: Rock_Bodies
@@ -161,7 +161,7 @@ themes:
       mandatory: false
     - name: buried_out
       description:
-        de: Wurde das Lockergestein wieder verdeckt
+        de: Wurde das Lockergestein wieder verdeckt (ja/nein)?
         fr: Est-ce que la roche consolidée est recouvert (oui / non)?
       att_type: boolean
       cardinality: "1"
@@ -193,7 +193,7 @@ themes:
     - name: charact
             # TODO Achtung charact is sometime charcat
       description:
-        de: Spezifische Eigenschaft.
+        de: Spezifische Eigenschaft
         fr: Structure sédimentaire
       att_type: annex
       value: gc_charcat
@@ -229,15 +229,14 @@ themes:
       att_type: CD
       value: GC_UN_DEP_RUNC_THIN_COV_CD
       description:
-        de: Lockermaterialbedeckung, wenn vorhanden.
+        de: Typ der geringmächtigen Lockermaterialbedeckung, wenn vorhanden.
         fr: Couverture meuble pelliculaire
       cardinality: 0..1
       mandatory: false
     - name: orig_descr
       description:
         de: >-
-          Originalbezeichnung gemäss der Legende der zugrundeliegenden geologischen
-          Karte
+          Originalbezeichnung gemäss der Legende der zugrunde liegenden geologischen Karte
         fr: Description selon la légende de la carte géologique originale.
       value: string
       cardinality: "1"
@@ -920,10 +919,9 @@ themes:
       value: GC_LIN_TTEC_HORIZ_MO_CD
       cardinality: 0..1
       mandatory: false
-    - name: lim_tect_b
+    - name: lim_tect
       description:
-        de: Grenze einer tektonischen Einheit wie Deckengrenze,Schuppengrenze, Zonengrenze,
-          etc. (ja / nein)?
+        de: Typ der tektonischen Grenze (Deckengrenze,Schuppengrenze, etc.)
         fr: Limite d’unité tectonique (oui / non)?
       att_type: boolean
       cardinality: "1"
@@ -983,16 +981,16 @@ themes:
       mandatory: true
     - name: fold_typ
       description:
-        de: Objekttyp
-        fr: Type de l'objet
+        de: Faltentyp
+        fr: Type de plis
       att_type: CD
       value: GC_PNT_MFOL_FOLD_TYP_CD
       cardinality: 0..1
       mandatory: false
     - name: fold_for
       description:
-        de: Form der Objektart
-        fr: Forme du type d'objet
+        de: Faltenform
+        fr: Forme de plis
       value: 13603        # TODO: CD not found (but approaching)
       cardinality: 0..1
       mandatory: false
@@ -1319,8 +1317,7 @@ themes:
     - name: azimuth
       description:
         de: >-
-          Orientierung des Symbols. Wert in Grad (0° 359°) im Uhrzeigersinn
-          gemessen.
+          Orientierung des Symbols. Wert in Grad (0° bis 359°) im Uhrzeigersinn gemessen.
         fr: >-
           Azimut du type d'objet. L'azimut est mesuré depuis le  nord en degré de
           0° à 359° dans le sens des aiguilles  d'une montre
@@ -1386,6 +1383,7 @@ themes:
         Diese Gesteinshorizonte haben lediglich Hinweischarakter (z.B. «markante Sandsteinbank» innerhalb
         von Wechsellagerungen von Sandstein und Mergel) und sind von den Leithorizonten (z.B.
         «Spatkalk im Hauptrogenstein») zu unterschieden. Leithorizonte befinden sich im Thema Rock Bodies.
+
       fr:
     attributes:
     - name: kind
@@ -1518,8 +1516,7 @@ themes:
     - name: azimuth
       description:
         de: >-
-          Fallrichtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad
-          (0° 359°) im Uhrzeigersinn gemessen.
+          Fallrichtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad (0° bis 359°) im Uhrzeigersinn gemessen.
         fr: >-
           Azimut du type d'objet. L'azimut est mesuré depuis le  nord en degré de
           0° à 359° dans le sens des aiguilles  d'une montre
@@ -1615,8 +1612,7 @@ themes:
     - name: azimuth
       description:
         de: >-
-          Fallrichtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad
-          (0° 359°) im Uhrzeigersinn gemessen.
+          Fallrichtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad (0° bis 359°) im Uhrzeigersinn gemessen.
         fr: >-
           Azimut du type d'objet. L'azimut est mesuré depuis le  nord en degré de
           0° à 359° dans le sens des aiguilles  d'une montre
@@ -1980,11 +1976,8 @@ themes:
     - name: depth_bedr
       alias: ABOR_DEPTH_BEDR
       description:
-        de: Tiefe (in Meter ab Terrainoberfläche) der Felsober- fläche. (Sofern die
-          Bohrung das Festgestein nicht Depth_Bedrock erreicht, z.B. «Bohrung, Fels
-          nicht erreicht», beträgt der Wert -999, falls die Bohrung bereits im Festgestein
-          beginnt, beträgt der Wert 0). Falls Festgestein erreicht wurde, aber nicht
-          klar ist, dass es sich um die Felsoberfläche handelt, beträgt der Wert -888.
+        de: |
+          Tiefe (in Meter ab Terrainoberfläche) der Felsoberfläche. (Sofern die Bohrung das Festgestein nicht erreicht, z.B. «Bohrung, Fels nicht erreicht», beträgt der Wert 999, falls die Bohrung bereits im Festgestein beginnt, beträgt der Wert 0). Falls Festgestein erreicht wurde, aber nicht klar ist, dass es sich um die Felsoberfläche handelt, beträgt der Wert 888.
         fr: |
           Profondeur de la roche en place (en mètres depuis la 
           surface). (Si l’ouvrage n’atteint pas la roche en place, 
@@ -2284,10 +2277,7 @@ themes:
         In der Klasse Subsurface_Water_L befinden sich linienförmigen Objektarten, welche einen
         unterirdischen Gewässerlauf anzeigen.
 
-        Der genaue Verlauf des unterirdischen Gewässerlaufes ist in fast jedem Fall vermutet, mit
-        wenigen Ausnahmen von erforschten Höhlensystemen. Liegen Färbversuche vor, so werden diese
-        in den Erläuterungen erwähnt, sofern diese existieren. Der unterirdische Gewässerlauf
-        kann mit Objeken aus der Klasse Surface_Water_PT kombiniert werden.
+        Der genaue Verlauf des unterirdischen Gewässerlaufes ist meistens vermutet.
       fr: |
         Dans la classe Subsurface_Water_L se trouvent les objets de forme linéaire qui représentent les
         cours d’eau souterrains. Le parcours exact des cours d’eau souterrains est presque toujours
@@ -2323,14 +2313,7 @@ themes:
         natürliche Wasseraustritts- und Versickerungsstellen. Zudem befindet sich die Objektart Steilstufe
         in Bachrinne, Wasserfall in dieser Klasse, die eine spezielle Stelle in Fliessgewässern markiert und
         die durch die darunterliegende Geologie bedingt ist.
-        Eine Quelle wird als «Thermalquelle» bezeichnet, wenn das Wasser eine mittlere Jahrestem-
-        20°C aufweist. Für diesen Quelltyp ist das Attribut «Temp» vorgesehen und
-        beschränkt sich i.d.R. auf die mittlere Wassertemperatur. Deshalb wird für dieses Attribut auch
-        kein Datum einer Analyse angegeben. Um eine Mineralquelle handelt es sich bei einer Quelle mit
-        einer Mineralkonzentration 1g / l Wasser oder einer CO2- 250 mg / l Wasser.
-        Für diesen Quelltyp ist das Attribut «Chemistry» vorgesehen. D.h. unter diesem Attribut wird das
-        charakteristische chemische Element im Mineralwasser angegeben und nicht die komplette
-        Wasserchemie.
+
       fr: |
         La classe Surface_Water_PT comprend les eaux de surface locales (ponctuelles) comme les 
         sources et les pertes d’un cours d’eau. On y trouve également des types d’objets particuliers 
@@ -2415,8 +2398,7 @@ themes:
     - name: azimuth
       description:
         de: >-
-          Richtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad (0°
-          359°) im Uhrzeigersinn gemessen.
+          Richtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad (0° bis 359°) im Uhrzeigersinn gemessen.
         fr: >-
           Azimut du type d'objet. L'azimut est mesuré depuis le  nord en degré de
           0° à 359° dans le sens des aiguilles  d'une montre
@@ -2448,9 +2430,8 @@ themes:
     description:
       de: |
         Die Klasse Surface_Water_PLG beinhaltet oberflächliche Wasserspeicher wie Gletscher, Seen und
-        Flüsse, welche geologische Einheiten bedecken und oftmals eine Interpretation der darunter-
-        liegenden Geologie verunmöglichen. Das vollständige Gewässernetz ist nicht Teil des Daten-
-        modells Geologie
+        Flüsse.
+
       fr: |
         La classe Surface_Water_PLG regroupe toutes les accumulations d’eaux superficielles comme les
         glaciers, les lacs et les rivières qui masquent les unités géologiques sous-jacentes. Le modèle
