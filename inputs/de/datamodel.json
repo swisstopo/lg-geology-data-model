@@ -1,9 +1,9 @@
 {
-    "version": 0.6,
-    "date": "2024-09-29T23:44:04.029931",
+    "version": "0.6",
+    "date": "2024-11-07T15:00:14.976145",
     "model": {
-        "revision": "3.9.1",
-        "revision_date": "2024-09-26"
+        "revision": "3.9.10",
+        "revision_date": "2024-11-07"
     },
     "themes": [
         {
@@ -26,7 +26,8 @@
                                 "de": "Objektart",
                                 "fr": "Type de l'objet"
                             },
-                            "cardinality": 1,
+                            "cardinality": "1",
+                            "mandatory": true,
                             "pairs": {
                                 "14401001": "Runc erratischer Block",
                                 "14401002": "Runc Schwarm erratischer Bl\u00f6cke",
@@ -46,7 +47,8 @@
                                 "de": "Zustand der Objektart",
                                 "fr": "\u00c9tat du type d'objet"
                             },
-                            "cardinality": 1,
+                            "cardinality": "1",
+                            "mandatory": false,
                             "pairs": {
                                 "14402001": "versetzt",
                                 "14402002": "zerst\u00f6rt",
@@ -65,6 +67,7 @@
                                 "fr": "Type de roche"
                             },
                             "cardinality": "0..1",
+                            "mandatory": false,
                             "pairs": {
                                 "14403001": "Kristallingestein",
                                 "14403002": "Sedimentgestein",
@@ -82,6 +85,7 @@
                                 "fr": "Description de la roche rep\u00e8re."
                             },
                             "cardinality": "0..1",
+                            "mandatory": false,
                             "pairs": {
                                 "14404001": "Vallorcine-Konglomerat",
                                 "14404002": "Allalin-Gabbro",
@@ -121,7 +125,8 @@
                             },
                             "att_type": "annex",
                             "value": "GC_LITHO_UNCO_CD",
-                            "cardinality": "0..1"
+                            "cardinality": "0..1",
+                            "mandatory": false
                         },
                         {
                             "name": "orig_descr",
@@ -130,7 +135,8 @@
                                 "fr": "Description de la l\u00e9gende de la carte g\u00e9ologique originale"
                             },
                             "att_type": "string",
-                            "cardinality": "0..1"
+                            "cardinality": "0..1",
+                            "mandatory": false
                         },
                         {
                             "name": "protected",
@@ -139,7 +145,8 @@
                                 "fr": "Objet g\u00e9ologique prot\u00e9g\u00e9 (oui / non)?"
                             },
                             "att_type": "boolean",
-                            "cardinality": "0..1"
+                            "cardinality": "0..1",
+                            "mandatory": false
                         }
                     ]
                 },
@@ -160,7 +167,8 @@
                                 "de": "Objektart",
                                 "fr": "Type de l'objet"
                             },
-                            "cardinality": 1,
+                            "cardinality": "1",
+                            "mandatory": true,
                             "pairs": {
                                 "14517001": "Runc Lockergestein"
                             }
@@ -173,7 +181,7 @@
                             },
                             "att_type": "annex",
                             "value": "GC_LITSTRAT_UNCO_CD",
-                            "cardinality": 1,
+                            "cardinality": "1",
                             "mandatory": true
                         },
                         {
@@ -184,7 +192,8 @@
                             },
                             "att_type": "annex",
                             "value": "GC_LITHO_CD",
-                            "cardinality": "1..3"
+                            "cardinality": "1..3",
+                            "mandatory": true
                         },
                         {
                             "name": "chrono_t",
@@ -194,7 +203,7 @@
                             },
                             "att_type": "annex",
                             "value": "GC_CHRONO_CD",
-                            "cardinality": 1,
+                            "cardinality": "1",
                             "mandatory": true
                         },
                         {
@@ -205,7 +214,7 @@
                             },
                             "att_type": "annex",
                             "value": "GC_CHRONO_CD",
-                            "cardinality": 1,
+                            "cardinality": "1",
                             "mandatory": true
                         },
                         {
@@ -215,16 +224,18 @@
                                 "fr": "Description du mat\u00e9riel (unit\u00e9 lithologique)"
                             },
                             "value": "Lithostratigraphic_Units_Litho",
-                            "cardinality": "0..3"
+                            "cardinality": "0..3",
+                            "mandatory": false
                         },
                         {
                             "name": "buried_out",
                             "description": {
-                                "de": "Wurde das Lockergestein wieder verdeckt",
+                                "de": "Wurde das Lockergestein wieder verdeckt (ja/nein)?",
                                 "fr": "Est-ce que la roche consolid\u00e9e est recouvert (oui / non)?"
                             },
                             "att_type": "boolean",
-                            "cardinality": 1
+                            "cardinality": "1",
+                            "mandatory": false
                         },
                         {
                             "name": "composit",
@@ -234,7 +245,8 @@
                             },
                             "att_type": "annex",
                             "value": "gc_composit",
-                            "cardinality": "0..3"
+                            "cardinality": "0..3",
+                            "mandatory": false
                         },
                         {
                             "name": "admixture",
@@ -244,7 +256,8 @@
                             },
                             "att_type": "annex",
                             "value": "gc_admixture",
-                            "cardinality": "0..2"
+                            "cardinality": "0..2",
+                            "mandatory": false
                         },
                         {
                             "name": "structur",
@@ -255,6 +268,7 @@
                             "att_type": "CD",
                             "value": "GC_UN_DEP_RUNC_STRUCTUR_CD",
                             "cardinality": "0..1",
+                            "mandatory": false,
                             "pairs": {
                                 "14510001": "texturlos",
                                 "14510002": "geschichtet",
@@ -275,12 +289,13 @@
                         {
                             "name": "charact",
                             "description": {
-                                "de": "Spezifische Eigenschaft.",
+                                "de": "Spezifische Eigenschaft",
                                 "fr": "Structure s\u00e9dimentaire"
                             },
                             "att_type": "annex",
                             "value": "gc_charcat",
-                            "cardinality": "0..3"
+                            "cardinality": "0..3",
+                            "mandatory": false
                         },
                         {
                             "name": "morpholo",
@@ -291,6 +306,7 @@
                             "att_type": "CD",
                             "value": "GC_UN_DEP_RUNC_MORPHOLO_CD",
                             "cardinality": "0..1",
+                            "mandatory": false,
                             "pairs": {
                                 "14512001": "Kegel / F\u00e4cher",
                                 "14512002": "Schleier",
@@ -313,6 +329,7 @@
                             "att_type": "CD",
                             "value": "GC_UN_DEP_RUNC_GLAC_TYP_CD",
                             "cardinality": "0..1",
+                            "mandatory": false,
                             "pairs": {
                                 "14513001": "Lokalgletscher",
                                 "14513002": "grosse Tal- und Vorlandgletscher",
@@ -338,17 +355,19 @@
                                 "fr": "Ann\u00e9e de r\u00e9f\u00e9rence de l\u2019ancienne ligne de rivage."
                             },
                             "att_type": "string",
-                            "cardinality": "0..1"
+                            "cardinality": "0..1",
+                            "mandatory": false
                         },
                         {
                             "name": "thin_cover",
                             "att_type": "CD",
                             "value": "GC_UN_DEP_RUNC_THIN_COV_CD",
                             "description": {
-                                "de": "Lockermaterialbedeckung, wenn vorhanden.",
+                                "de": "Typ der geringm\u00e4chtigen Lockermaterialbedeckung, wenn vorhanden.",
                                 "fr": "Couverture meuble pelliculaire"
                             },
                             "cardinality": "0..1",
+                            "mandatory": false,
                             "pairs": {
                                 "14515001": "geringm\u00e4chtige Lockergesteinsbedeckung, undifferenziert",
                                 "14515002": "geringm\u00e4chtige Mor\u00e4nenbedeckung",
@@ -363,11 +382,12 @@
                         {
                             "name": "orig_descr",
                             "description": {
-                                "de": "Originalbezeichnung gem\u00e4ss der Legende der zugrundeliegenden geologischen Karte",
+                                "de": "Originalbezeichnung gem\u00e4ss der Legende der zugrunde liegenden geologischen Karte",
                                 "fr": "Description selon la l\u00e9gende de la carte g\u00e9ologique originale."
                             },
                             "value": "string",
-                            "cardinality": 1
+                            "cardinality": "1",
+                            "mandatory": false
                         }
                     ]
                 },
@@ -388,7 +408,8 @@
                             },
                             "att_type": "subtype",
                             "value": 14334001,
-                            "cardinality": 1,
+                            "cardinality": "1",
+                            "mandatory": true,
                             "pairs": {
                                 "14334001": "Rbed Festgestein"
                             }
@@ -399,8 +420,9 @@
                                 "de": "Gesteinsaufbau",
                                 "fr": ""
                             },
-                            "cardinality": 1,
-                            "change": "removed"
+                            "cardinality": "1",
+                            "change": "removed",
+                            "mandatory": false
                         },
                         {
                             "name": "litstrat",
@@ -410,7 +432,8 @@
                             },
                             "att_type": "annex",
                             "value": "GC_LITSTRAT_BED_CD",
-                            "cardinality": 1
+                            "cardinality": "1",
+                            "mandatory": false
                         },
                         {
                             "name": "litho",
@@ -420,7 +443,8 @@
                                 "de": "Lithologische Beschreibung",
                                 "fr": "Description lithologique"
                             },
-                            "cardinality": 1
+                            "cardinality": "1",
+                            "mandatory": false
                         },
                         {
                             "name": "chrono_t",
@@ -430,7 +454,7 @@
                                 "de": "Chronostratigraphische Zuordnung der Obergrenze der Kartiereinheit (Top)",
                                 "fr": "Attribution chronostratigraphique du toit de la  formation (top)"
                             },
-                            "cardinality": 1,
+                            "cardinality": "1",
                             "mandatory": true
                         },
                         {
@@ -441,7 +465,7 @@
                                 "de": "Chronostratigraphische Zuordnung der Untergrenze der Kartiereinheit (Basis)",
                                 "fr": "Attribution chronostratigraphique de la base de la  formation (base)."
                             },
-                            "cardinality": 1,
+                            "cardinality": "1",
                             "mandatory": true
                         },
                         {
@@ -452,7 +476,7 @@
                                 "de": "Tektonische Zugeh\u00f6rigkeit",
                                 "fr": "Attribution tectonique"
                             },
-                            "cardinality": 1,
+                            "cardinality": "1",
                             "mandatory": true
                         },
                         {
@@ -462,7 +486,8 @@
                                 "de": "Originalbezeichnung gem\u00e4ss der Legende der zugrundeliegenden geologischen Karte",
                                 "fr": "Description selon la l\u00e9gende de la carte g\u00e9ologique originale"
                             },
-                            "cardinality": 1
+                            "cardinality": "1",
+                            "mandatory": false
                         },
                         {
                             "name": "buried_out",
@@ -471,7 +496,9 @@
                                 "de": "Wurde das Festgestein wieder verdeckt (ja / nein)?",
                                 "fr": "Est-ce que la roche consolid\u00e9e est recouvert (oui / non)?"
                             },
-                            "cardinality": 1
+                            "cardinality": "1",
+                            "change": "removed",
+                            "mandatory": false
                         },
                         {
                             "name": "exotic_ele",
@@ -480,7 +507,8 @@
                                 "de": "Handelt es sich bei der Objektart um ein exotisches Element; z.B. Einschluss, Linse, Tasche, Olistholith (ja / nein)?",
                                 "fr": "S\u2019agit-il d\u2019un \u00e9l\u00e9ment exotique (oui / non)?"
                             },
-                            "cardinality": 1
+                            "cardinality": "1",
+                            "mandatory": false
                         },
                         {
                             "name": "colour",
@@ -490,7 +518,8 @@
                                 "fr": "Couleur de la roche"
                             },
                             "cardinality": "0..1",
-                            "change": "removed"
+                            "change": "removed",
+                            "mandatory": false
                         },
                         {
                             "name": "sedi_main_com",
@@ -501,6 +530,7 @@
                                 "fr": "Composant principal de la roche s\u00e9dimentaire clastique."
                             },
                             "cardinality": "0..1",
+                            "mandatory": false,
                             "pairs": {
                                 "15602001": "Gesteinsbruchst\u00fcck undifferenziert",
                                 "15602002": "kieselige Gesteine (Quarzit, Quarz (Mineralisch), Radiolarit, Kieselkalk, Quarzsandstein, Hornstein)",
@@ -525,6 +555,7 @@
                                 "fr": "Composant secondaire de la roche s\u00e9dimentaire"
                             },
                             "cardinality": "0..2",
+                            "mandatory": false,
                             "pairs": {
                                 "20001001": "Gesteinsbruchst\u00fcck undifferenziert",
                                 "20001002": "Sedimentgestein undifferenziert",
@@ -565,6 +596,7 @@
                                 "fr": "Ciment de la roche s\u00e9dimentaire"
                             },
                             "cardinality": "0..1",
+                            "mandatory": false,
                             "pairs": {
                                 "14313001": "kalkiger Zement",
                                 "14313002": "dolomitischer Zement",
@@ -589,6 +621,7 @@
                                 "fr": "Matrice ou ciment de la roche s\u00e9dimentaire"
                             },
                             "cardinality": "0..2",
+                            "mandatory": false,
                             "pairs": {
                                 "20101001": "massig",
                                 "20101002": "gebankt",
@@ -611,6 +644,7 @@
                                 "fr": "Structure s\u00e9dimentaire de la roche s\u00e9dimentaire"
                             },
                             "cardinality": "0..2",
+                            "mandatory": false,
                             "pairs": {
                                 "20201001": "texturlos",
                                 "20201002": "geschichtet",
@@ -633,6 +667,7 @@
                                 "de": "Sedimentstruktur",
                                 "fr": "Texture de la roche s\u00e9dimentaire"
                             },
+                            "mandatory": false,
                             "pairs": {
                                 "20301001": "monomikt",
                                 "20301002": "polymikt",
@@ -656,6 +691,7 @@
                                 "fr": "Texture de la roche magmatique"
                             },
                             "cardinality": "0..1",
+                            "mandatory": false,
                             "pairs": {
                                 "14317001": "gleichk\u00f6rnig",
                                 "14317002": "ungleichk\u00f6rnig",
@@ -673,6 +709,7 @@
                                 "de": "Korngr\u00f6sse des magmatischen Gesteins",
                                 "fr": "Granulom\u00e9trie de la roche magmatique"
                             },
+                            "mandatory": false,
                             "pairs": {
                                 "14318001": "grobk\u00f6rnig",
                                 "14318002": "feink\u00f6rnig",
@@ -690,6 +727,7 @@
                                 "de": "Affinit\u00e4t zu einer magmatischen Serie.",
                                 "fr": "Affinit\u00e9 avec une s\u00e9rie magmatique"
                             },
+                            "mandatory": false,
                             "pairs": {
                                 "15733001": "alkalisch",
                                 "15733002": "kalkalkalisch",
@@ -705,7 +743,8 @@
                                 "de": "Bezeichnung des metamorphen Gesteins",
                                 "fr": "Description de la roche m\u00e9tamorphique."
                             },
-                            "cardinality": "0..1"
+                            "cardinality": "0..1",
+                            "mandatory": false
                         },
                         {
                             "name": "meta_mineral",
@@ -715,7 +754,8 @@
                                 "de": "Wichtiges Mineral des metamorphen Gesteins",
                                 "fr": "Min\u00e9ral important de la roche m\u00e9tamorphique"
                             },
-                            "cardinality": "0..3"
+                            "cardinality": "0..3",
+                            "mandatory": false
                         },
                         {
                             "name": "meta_str",
@@ -726,6 +766,7 @@
                                 "fr": "Structure de la roche m\u00e9tamorphique"
                             },
                             "cardinality": "0..3",
+                            "mandatory": false,
                             "pairs": {
                                 "20501001": "massig",
                                 "20501002": "geb\u00e4ndert",
@@ -772,7 +813,8 @@
                             },
                             "att_type": "subtype",
                             "value": 11601,
-                            "cardinality": 1,
+                            "cardinality": "1",
+                            "mandatory": true,
                             "pairs": {
                                 "11601001": "Gins Hinweis auf Hanginstabilit\u00e4t"
                             }
@@ -796,7 +838,8 @@
                             },
                             "att_type": "subtype",
                             "value": 11701,
-                            "cardinality": 1,
+                            "cardinality": "1",
+                            "mandatory": true,
                             "pairs": {
                                 "11701001": "Gins Stauchwulst",
                                 "11701002": "Gins Nackent\u00e4lchen, Zerrstruktur",
@@ -823,7 +866,8 @@
                             },
                             "att_type": "subtype",
                             "value": 15801,
-                            "cardinality": 1,
+                            "cardinality": "1",
+                            "mandatory": true,
                             "pairs": {
                                 "15801001": "Gins Sackungsgebiet",
                                 "15801002": "Gins Gebiet mit Hakenwurf",
@@ -840,6 +884,7 @@
                             "att_type": "CD",
                             "value": "GC_SURF_GINS_MAIN_MOV_CD",
                             "cardinality": "0..1",
+                            "mandatory": false,
                             "pairs": {
                                 "11502001": "Hauptbewegungsphase vor dem letzteiszeitlichen Maximum",
                                 "11502002": "Hauptbewegungsphase nach dem letzteiszeitlichen Maximum",
@@ -866,7 +911,8 @@
                             },
                             "att_type": "subtype",
                             "value": 11201,
-                            "cardinality": 1,
+                            "cardinality": "1",
+                            "mandatory": true,
                             "pairs": {
                                 "11201001": "Ggla glazitektonische Deformation",
                                 "11201002": "Ggla Gletscherm\u00fchle, Strudelloch"
@@ -891,7 +937,8 @@
                             },
                             "att_type": "subtype",
                             "value": 11301,
-                            "cardinality": 1,
+                            "cardinality": "1",
+                            "mandatory": true,
                             "pairs": {
                                 "11301001": "Ggla Mor\u00e4nenwall",
                                 "11301002": "Ggla Mor\u00e4nenwall auf Gletscher oder auf Toteis",
@@ -913,6 +960,7 @@
                             "att_type": "CD",
                             "value": "GC_LIN_GGLA_MORAI_MO_CD",
                             "cardinality": "0..1",
+                            "mandatory": true,
                             "pairs": {
                                 "11302001": "symmetrisch",
                                 "11302002": "einseitig abfallend",
@@ -929,6 +977,7 @@
                             "att_type": "CD",
                             "value": "GC_LIN_GGLA_GLAC_TYP_CD",
                             "cardinality": "0..1",
+                            "mandatory": true,
                             "pairs": {
                                 "11303001": "Lokalgletscher",
                                 "11303002": "grosse Tal- und Vorlandgletscher",
@@ -945,6 +994,7 @@
                             "att_type": "CD",
                             "value": "GC_LIN_GGLA_ICE_M_P_CD",
                             "cardinality": "0..1",
+                            "mandatory": false,
                             "pairs": {
                                 "11304001": "Maximalstand, undifferenziert",
                                 "11304002": "Bern",
@@ -1018,6 +1068,7 @@
                             "att_type": "CD",
                             "value": "GC_LIN_GGLA_QUAT_STR_CD",
                             "cardinality": "0..1",
+                            "mandatory": false,
                             "pairs": {
                                 "11305001": "1. Vergletscherung der letzten Eiszeit (MIS 5d)",
                                 "11305002": "2. Vergletscherung der letzten Eiszeit (MIS 4)",
@@ -1038,7 +1089,8 @@
                                 "fr": "Ann\u00e9e de r\u00e9f\u00e9rence."
                             },
                             "att_type": "integer",
-                            "cardinality": "0..1"
+                            "cardinality": "0..1",
+                            "mandatory": false
                         },
                         {
                             "name": "source",
@@ -1047,7 +1099,8 @@
                                 "fr": "Source des donn\u00e9es d\u00e9duites \u00e0 partir de donn\u00e9es historiques."
                             },
                             "att_type": "string",
-                            "cardinality": "0..1"
+                            "cardinality": "0..1",
+                            "mandatory": false
                         }
                     ]
                 },
@@ -1068,7 +1121,8 @@
                             },
                             "att_type": "subtype",
                             "value": 11401,
-                            "cardinality": 1,
+                            "cardinality": "1",
+                            "mandatory": true,
                             "pairs": {
                                 "11401001": "Ggla Drumlin, drumlinartige Kieskuppe",
                                 "11401003": "Ggla Rundh\u00f6cker",
@@ -1094,7 +1148,8 @@
                             },
                             "att_type": "subtype",
                             "value": 11001,
-                            "cardinality": 1,
+                            "cardinality": "1",
+                            "mandatory": true,
                             "pairs": {
                                 "11001001": "Gero Erdpyramide"
                             }
@@ -1118,7 +1173,8 @@
                             },
                             "att_type": "subtype",
                             "value": 11101,
-                            "cardinality": 1,
+                            "cardinality": "1",
+                            "mandatory": true,
                             "pairs": {
                                 "11101001": "Gero Erosionsrand",
                                 "11101002": "Gero Terrassenkante",
@@ -1144,7 +1200,8 @@
                             },
                             "att_type": "subtype",
                             "value": 11301,
-                            "cardinality": 1,
+                            "cardinality": "1",
+                            "mandatory": true,
                             "pairs": {
                                 "11301001": "Ggla Mor\u00e4nenwall",
                                 "11301002": "Ggla Mor\u00e4nenwall auf Gletscher oder auf Toteis",
@@ -1164,7 +1221,8 @@
                                 "fr": "S\u2019agit-il d\u2019une glaci\u00e8re (oui / non)"
                             },
                             "att_type": "boolean",
-                            "cardinality": "0..1"
+                            "cardinality": "0..1",
+                            "mandatory": false
                         }
                     ]
                 },
@@ -1185,7 +1243,8 @@
                             },
                             "att_type": "subtype",
                             "value": 12001,
-                            "cardinality": 1,
+                            "cardinality": "1",
+                            "mandatory": true,
                             "pairs": {
                                 "12001001": "Gkar Senke ohne oberirdischen Abfluss",
                                 "12001002": "Gkar Doline",
@@ -1212,7 +1271,8 @@
                             },
                             "att_type": "subtype",
                             "value": 10901,
-                            "cardinality": 1,
+                            "cardinality": "1",
+                            "mandatory": true,
                             "pairs": {
                                 "10901001": "Gall Strandwall",
                                 "10901002": "Gall Achse einer Murgangrinne"
@@ -1227,6 +1287,7 @@
                             "att_type": "CD",
                             "value": "GC_LIN_GALL_AGE_CD",
                             "cardinality": "0..1",
+                            "mandatory": false,
                             "pairs": {
                                 "10902001": "fossil",
                                 "10902002": "rezent",
@@ -1258,7 +1319,8 @@
                             },
                             "att_type": "subtype",
                             "value": 14601,
-                            "cardinality": 1,
+                            "cardinality": "1",
+                            "mandatory": true,
                             "pairs": {
                                 "14601001": "Tdef punktuell beobachtete tektonische Brekzie",
                                 "14601002": "Tdef ausgepr\u00e4gte Kl\u00fcftung",
@@ -1276,7 +1338,8 @@
                                 "fr": "Azimut du type d'objet. L'azimut est mesur\u00e9 depuis le  nord en degr\u00e9 de 0\u00b0 \u00e0 359\u00b0 dans le sens des aiguilles  d'une montre"
                             },
                             "att_type": "integer",
-                            "cardinality": "0..1"
+                            "cardinality": "0..1",
+                            "mandatory": false
                         },
                         {
                             "name": "dip",
@@ -1285,7 +1348,8 @@
                                 "fr": "Valeur du plongement du type d'objet (valeur en \ndegr\u00e9s, mesur\u00e9e de l\u2019horizontale (0\u00b0) vers le bas jusqu\u2019\u00e0 \nla verticale (90\u00b0)\n"
                             },
                             "att_type": "integer",
-                            "cardinality": "0..1"
+                            "cardinality": "0..1",
+                            "mandatory": false
                         },
                         {
                             "name": "fold_typ",
@@ -1296,6 +1360,7 @@
                             "att_type": "CD",
                             "value": "GC_PNT_TDEF_FOLD_TYP_CD",
                             "cardinality": "0..1",
+                            "mandatory": false,
                             "pairs": {
                                 "14604001": "Antiklinale",
                                 "14604002": "Synklinale",
@@ -1305,6 +1370,7 @@
                         },
                         {
                             "name": "fold_for",
+                            "alias": "TDEF_FOLD_FOR",
                             "description": {
                                 "de": "Objektform",
                                 "fr": "Forme du type d'objet"
@@ -1312,6 +1378,7 @@
                             "att_type": "CD",
                             "value": "GC_PNT_TDEF_FOLD_FOR_CD",
                             "cardinality": "0..1",
+                            "mandatory": false,
                             "pairs": {
                                 "14605001": "Antiform",
                                 "14605002": "Synform",
@@ -1338,7 +1405,8 @@
                             },
                             "att_type": "subtype",
                             "value": 14701,
-                            "cardinality": 1,
+                            "cardinality": "1",
+                            "mandatory": true,
                             "pairs": {
                                 "14701001": "Tdef Faltenscharnier"
                             }
@@ -1362,7 +1430,8 @@
                             },
                             "att_type": "subtype",
                             "value": 14801,
-                            "cardinality": 1,
+                            "cardinality": "1",
+                            "mandatory": true,
                             "pairs": {
                                 "14801001": "Tdef Kluftzone",
                                 "14801002": "Tdef tektonisierte Zone"
@@ -1377,6 +1446,7 @@
                             "att_type": "CD",
                             "value": "GC_SURF_TDEF_TYPE_CD",
                             "cardinality": "0..1",
+                            "mandatory": false,
                             "pairs": {
                                 "14802001": "kataklastisch",
                                 "14802002": "kakiritisch",
@@ -1394,7 +1464,8 @@
                             },
                             "att_type": "CD",
                             "value": null,
-                            "cardinality": "0..1"
+                            "cardinality": "0..1",
+                            "mandatory": false
                         }
                     ]
                 },
@@ -1415,7 +1486,8 @@
                             },
                             "att_type": "subtype",
                             "value": 14901,
-                            "cardinality": 1,
+                            "cardinality": "1",
+                            "mandatory": true,
                             "pairs": {
                                 "14901001": "Ttec \u00dcberschiebung",
                                 "14901002": "Ttec Abschiebung",
@@ -1435,6 +1507,7 @@
                             "att_type": "CD",
                             "value": "GC_LIN_TTEC_FAULT_MO_CD",
                             "cardinality": "0..1",
+                            "mandatory": false,
                             "pairs": {
                                 "14902001": "schr\u00e4gverschiebend (oblique slip)",
                                 "14902002": "parallel zur Streichrichtung (Horizontalverschiebung)",
@@ -1452,6 +1525,7 @@
                             "att_type": "CD",
                             "value": "GC_LIN_TTEC_VERTI_MO_CD",
                             "cardinality": "0..1",
+                            "mandatory": false,
                             "pairs": {
                                 "14903001": "aufschiebend",
                                 "14903002": "abschiebend",
@@ -1468,6 +1542,7 @@
                             "att_type": "CD",
                             "value": "GC_LIN_TTEC_HORIZ_MO_CD",
                             "cardinality": "0..1",
+                            "mandatory": false,
                             "pairs": {
                                 "14904001": "dextral",
                                 "14904002": "sinistral",
@@ -1476,13 +1551,14 @@
                             }
                         },
                         {
-                            "name": "lim_tect_b",
+                            "name": "lim_tect",
                             "description": {
-                                "de": "Grenze einer tektonischen Einheit wie Deckengrenze,Schuppengrenze, Zonengrenze, etc. (ja / nein)?",
+                                "de": "Typ der tektonischen Grenze (Deckengrenze,Schuppengrenze, etc.)",
                                 "fr": "Limite d\u2019unit\u00e9 tectonique (oui / non)?"
                             },
                             "att_type": "boolean",
-                            "cardinality": 1
+                            "cardinality": "1",
+                            "mandatory": false
                         },
                         {
                             "name": "status",
@@ -1492,7 +1568,8 @@
                             },
                             "att_type": "CD",
                             "value": "GC_LIN_TTEC_STATUS_CD",
-                            "cardinality": 1,
+                            "cardinality": "1",
+                            "mandatory": true,
                             "pairs": {
                                 "14906001": "gesichert, im Allgemeinen",
                                 "14906002": "gesichert, unter Tage festgestellt",
@@ -1510,7 +1587,8 @@
                             },
                             "att_type": "TODO",
                             "change": "removed",
-                            "cardinality": "0..1"
+                            "cardinality": "0..1",
+                            "mandatory": false
                         },
                         {
                             "name": "meta_sta",
@@ -1521,6 +1599,7 @@
                             "att_type": "CD",
                             "value": "GC_LIN_TTEC_META_STA_CD",
                             "cardinality": "0..1",
+                            "mandatory": false,
                             "pairs": {
                                 "14908001": "vor der Platznahme der Decken",
                                 "14908002": "w\u00e4hrend der Platznahme der Decken",
@@ -1536,7 +1615,8 @@
                                 "fr": "Nom de la localit\u00e9-type. / Description de l\u2019affleurement g\u00e9ologique important\n"
                             },
                             "att_type": "string",
-                            "cardinality": "0..1"
+                            "cardinality": "0..1",
+                            "mandatory": false
                         }
                     ]
                 }
@@ -1562,7 +1642,8 @@
                             },
                             "att_type": "subtype",
                             "value": 13601,
-                            "cardinality": 1,
+                            "cardinality": "1",
+                            "mandatory": true,
                             "pairs": {
                                 "13601001": "Mfol Orientierung der Faltenachse",
                                 "13601002": "Mfol Orientierung der Scheitellinie",
@@ -1572,12 +1653,13 @@
                         {
                             "name": "fold_typ",
                             "description": {
-                                "de": "Objekttyp",
-                                "fr": "Type de l'objet"
+                                "de": "Faltentyp",
+                                "fr": "Type de plis"
                             },
                             "att_type": "CD",
                             "value": "GC_PNT_MFOL_FOLD_TYP_CD",
                             "cardinality": "0..1",
+                            "mandatory": false,
                             "pairs": {
                                 "13602001": "Antiklinale",
                                 "13602002": "Synklinale",
@@ -1588,11 +1670,12 @@
                         {
                             "name": "fold_for",
                             "description": {
-                                "de": "Form der Objektart",
-                                "fr": "Forme du type d'objet"
+                                "de": "Faltenform",
+                                "fr": "Forme de plis"
                             },
                             "value": 13603,
-                            "cardinality": "0..1"
+                            "cardinality": "0..1",
+                            "mandatory": false
                         },
                         {
                             "name": "phase",
@@ -1603,6 +1686,7 @@
                             "att_type": "CD",
                             "value": "GC_PNT_MFOL_PHASE_CD",
                             "cardinality": "0..1",
+                            "mandatory": false,
                             "pairs": {
                                 "13604001": "F1 (1. Phase)",
                                 "13604002": "F2 (2. Phase)",
@@ -1618,7 +1702,8 @@
                                 "fr": "R\u00e9f\u00e9rence pour les donn\u00e9es concernant la phase de d\u00e9formation."
                             },
                             "att_type": "string",
-                            "cardinality": "0..1"
+                            "cardinality": "0..1",
+                            "mandatory": false
                         },
                         {
                             "name": "azimuth",
@@ -1627,7 +1712,8 @@
                                 "fr": "Azimut du type d'objet. L'azimut est mesur\u00e9 depuis le  nord en degr\u00e9 de 0\u00b0 \u00e0 359\u00b0 dans le sens des aiguilles  d'une montre"
                             },
                             "att_type": "integer",
-                            "cardinality": 1
+                            "cardinality": "1",
+                            "mandatory": false
                         },
                         {
                             "name": "dip",
@@ -1636,7 +1722,8 @@
                                 "fr": "Valeur du plongement du type d'objet (valeur en  degr\u00e9s, mesur\u00e9e de l\u2019horizontale (0\u00b0) vers le bas jusqu\u2019\u00e0  la verticale (90\u00b0)"
                             },
                             "att_type": "integer",
-                            "cardinality": "0..1"
+                            "cardinality": "0..1",
+                            "mandatory": false
                         }
                     ]
                 },
@@ -1657,7 +1744,8 @@
                             },
                             "att_type": "subtype",
                             "value": 13701,
-                            "cardinality": 1,
+                            "cardinality": "1",
+                            "mandatory": true,
                             "pairs": {
                                 "13701001": "Mlin Orientierung der Intersektionslineation",
                                 "13701002": "Mlin Orientierung der Streckungslineation",
@@ -1672,7 +1760,8 @@
                                 "fr": "Azimut du type d'objet. L'azimut est mesur\u00e9 depuis le  nord en degr\u00e9 de 0\u00b0 \u00e0 359\u00b0 dans le sens des aiguilles  d'une montre"
                             },
                             "att_type": "integer",
-                            "cardinality": 1
+                            "cardinality": "1",
+                            "mandatory": false
                         },
                         {
                             "name": "dip",
@@ -1680,7 +1769,8 @@
                                 "de": "Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0\u00b0) nach unten bis in die Vertikale (90\u00b0).",
                                 "fr": "Valeur du plongement du type d'objet (en degr\u00e9s), mesur\u00e9e de l\u2019horizontale (0\u00b0) vers le bas jusqu\u2019\u00e0 la  verticale (90\u00b0)"
                             },
-                            "cardinatity": "0..1"
+                            "cardinatity": "0..1",
+                            "mandatory": false
                         }
                     ]
                 },
@@ -1701,7 +1791,8 @@
                             },
                             "att_type": "subtype",
                             "value": 13801,
-                            "cardinality": 1,
+                            "cardinality": "1",
+                            "mandatory": true,
                             "pairs": {
                                 "13801001": "Mpla Orientierung der Schichten",
                                 "13801002": "Mpla Orientierung eines Ganges",
@@ -1720,6 +1811,7 @@
                             "att_type": "CD",
                             "value": "GC_PNT_MPLA_POLARITY_CD",
                             "cardinality": "0..1",
+                            "mandatory": false,
                             "pairs": {
                                 "13802001": "normal",
                                 "13802002": "\u00fcberkippt",
@@ -1737,6 +1829,7 @@
                             "att_type": "CD",
                             "value": "GC_PNT_MPLA_PHASE_CD",
                             "polarity": "0..1",
+                            "mandatory": false,
                             "pairs": {
                                 "13803001": "S1 (1. Phase)",
                                 "13803002": "S2 (2. Phase)",
@@ -1752,7 +1845,8 @@
                                 "fr": "R\u00e9f\u00e9rence pour les donn\u00e9es concernant la phase de d\u00e9formation."
                             },
                             "att_type": "string",
-                            "cardinality": "0..1"
+                            "cardinality": "0..1",
+                            "mandatory": false
                         },
                         {
                             "name": "ob_dip_slo",
@@ -1761,7 +1855,8 @@
                                 "fr": "Dip slope (oui / non)?"
                             },
                             "att_type": "boolean",
-                            "cardinality": "0..1"
+                            "cardinality": "0..1",
+                            "mandatory": false
                         },
                         {
                             "name": "azimuth",
@@ -1770,7 +1865,8 @@
                                 "fr": "Azimut du type d'objet. L'azimut est mesur\u00e9 depuis le  nord en degr\u00e9 de 0\u00b0 \u00e0 359\u00b0 dans le sens des aiguilles  d'une montre"
                             },
                             "att_type": "integer",
-                            "cardinality": 1
+                            "cardinality": "1",
+                            "mandatory": false
                         },
                         {
                             "name": "dip",
@@ -1778,7 +1874,8 @@
                                 "de": "Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0\u00b0) nach unten bis in die Vertikale (90\u00b0).",
                                 "fr": "Valeur du plongement du type d'objet (en degr\u00e9s),\nmesur\u00e9e de l\u2019horizontale (0\u00b0) vers le bas jusqu\u2019\u00e0 la \nverticale (90\u00b0)\n"
                             },
-                            "cardinatity": "0..1"
+                            "cardinatity": "0..1",
+                            "mandatory": false
                         }
                     ]
                 }
@@ -1803,9 +1900,13 @@
                                 "fr": "Type de l'objet"
                             },
                             "att_type": "subtype",
-                            "value": 128001,
-                            "cardinality": 1,
-                            "pairs": {}
+                            "value": 12801,
+                            "cardinality": "1",
+                            "mandatory": true,
+                            "pairs": {
+                                "12801001": "Lano gemessene Anomalie",
+                                "12801002": "Lano Fulgurit"
+                            }
                         },
                         {
                             "name": "type",
@@ -1814,7 +1915,8 @@
                                 "de": "Charakteristik der Objektart.",
                                 "fr": "Caract\u00e9ristique du type d'objet"
                             },
-                            "value": 128002
+                            "value": 128002,
+                            "mandatory": true
                         }
                     ]
                 },
@@ -1835,7 +1937,8 @@
                             },
                             "att_type": "subtype",
                             "value": 12901,
-                            "cardinality": 1,
+                            "cardinality": "1",
+                            "mandatory": true,
                             "pairs": {
                                 "12901001": "Lfos Fossilfundstelle"
                             }
@@ -1849,6 +1952,7 @@
                             "att_type": "CD",
                             "value": "GC_FOSS_LFOS_DIVISION_CD",
                             "cardinality": "0..1",
+                            "mandatory": false,
                             "pairs": {
                                 "12902001": "Tierreste",
                                 "12902002": "Pflanzen- und Tierreste",
@@ -1867,7 +1971,8 @@
                             },
                             "att_type": "table",
                             "value": "gc_system",
-                            "cardinality": "0..5"
+                            "cardinality": "0..5",
+                            "mandatory": false
                         },
                         {
                             "name": "dat_meth",
@@ -1878,6 +1983,7 @@
                             "att_type": "CD",
                             "value": "GC_FOSS_LFOS_DAT_METH_CD",
                             "cardinality": "0..1",
+                            "mandatory": false,
                             "pairs": {
                                 "12904001": "radiometrisch datiert",
                                 "999997": "unbekannt",
@@ -1893,6 +1999,7 @@
                             "att_type": "CD",
                             "value": "GC_FOSS_LFOS_STATUS_CD",
                             "cardinality": "0..1",
+                            "mandatory": false,
                             "pairs": {
                                 "12905001": "aufgeschlossen",
                                 "12905002": "wieder verdeckt",
@@ -1907,7 +2014,8 @@
                                 "fr": "Objet g\u00e9ologique prot\u00e9g\u00e9 (oui / non)?"
                             },
                             "att_type": "boolean",
-                            "cardinality": "0..1"
+                            "cardinality": "0..1",
+                            "mandatory": false
                         }
                     ]
                 },
@@ -1928,7 +2036,8 @@
                             },
                             "att_type": "subtype",
                             "value": 13201,
-                            "cardinality": 1,
+                            "cardinality": "1",
+                            "mandatory": true,
                             "pairs": {
                                 "13201001": "Lres Mineralfundstelle",
                                 "13201002": "Lres Gasquelle",
@@ -1950,6 +2059,7 @@
                             "att_type": "CD",
                             "value": "GC_PNT_LRES_STATUS_CD",
                             "cardinality": "0..1",
+                            "mandatory": false,
                             "pairs": {
                                 "13202001": "aufgeschlossen",
                                 "13202002": "wieder verdeckt",
@@ -1966,6 +2076,7 @@
                             "att_type": "CD",
                             "value": "GC_PNT_LRES_MATERIAL_CD",
                             "cardinality": "0..1",
+                            "mandatory": false,
                             "pairs": {
                                 "13203001": "Boluston",
                                 "13203002": "Huppererde",
@@ -1983,7 +2094,8 @@
                                 "fr": "Composant(s) chimique(s) caract\u00e9risant la nature du \ntype d'objet.\n"
                             },
                             "att_type": "string",
-                            "cardinality": "0..1"
+                            "cardinality": "0..1",
+                            "mandatory": false
                         }
                     ]
                 },
@@ -2004,7 +2116,8 @@
                             },
                             "att_type": "subtype",
                             "value": 13301,
-                            "cardinality": 1,
+                            "cardinality": "1",
+                            "mandatory": true,
                             "pairs": {
                                 "13301001": "Lmin Vererzungszone"
                             }
@@ -2016,7 +2129,8 @@
                                 "fr": "Composant(s) chimique(s) caract\u00e9risant la nature du \ntype d'objet.\n"
                             },
                             "att_type": "string",
-                            "cardinality": "0..1"
+                            "cardinality": "0..1",
+                            "mandatory": false
                         }
                     ]
                 },
@@ -2037,7 +2151,8 @@
                             },
                             "att_type": "subtype",
                             "value": 13401,
-                            "cardinality": 1,
+                            "cardinality": "1",
+                            "mandatory": true,
                             "pairs": {
                                 "13401001": "Lsed Sedimentstrukturen",
                                 "13401002": "Lsed Riffstrukturen",
@@ -2050,11 +2165,12 @@
                         {
                             "name": "azimuth",
                             "description": {
-                                "de": "Orientierung des Symbols. Wert in Grad (0\u00b0 359\u00b0) im Uhrzeigersinn gemessen.",
+                                "de": "Orientierung des Symbols. Wert in Grad (0\u00b0 bis 359\u00b0) im Uhrzeigersinn gemessen.",
                                 "fr": "Azimut du type d'objet. L'azimut est mesur\u00e9 depuis le  nord en degr\u00e9 de 0\u00b0 \u00e0 359\u00b0 dans le sens des aiguilles  d'une montre"
                             },
                             "att_type": "integer",
-                            "cardinality": "0..1"
+                            "cardinality": "0..1",
+                            "mandatory": false
                         }
                     ]
                 },
@@ -2075,7 +2191,8 @@
                             },
                             "att_type": "subtype",
                             "value": 13501,
-                            "cardinality": 1,
+                            "cardinality": "1",
+                            "mandatory": true,
                             "pairs": {
                                 "13501001": "Ltyp geologisch relevanter Aufschluss",
                                 "13501003": "Ltyp Typusprofil"
@@ -2090,6 +2207,7 @@
                             "att_type": "CD",
                             "value": "GC_PNT_LTYP_STRATI_CD",
                             "cardinality": "0..1",
+                            "mandatory": true,
                             "pairs": {
                                 "13502001": "Gruppe",
                                 "13502002": "Subgruppe",
@@ -2108,7 +2226,8 @@
                                 "fr": "Nom de la localit\u00e9-type. / Description de l\u2019affleurement g\u00e9ologique important.\n"
                             },
                             "att_type": "string",
-                            "cardinality": "0..1"
+                            "cardinality": "0..1",
+                            "mandatory": true
                         },
                         {
                             "name": "accessibil",
@@ -2117,7 +2236,8 @@
                                 "fr": "Est-ce que le type d\u2019objet \u00e9tait accessible au moment du lev\u00e9 de la carte"
                             },
                             "att_type": "boolean",
-                            "cardinality": "0..1"
+                            "cardinality": "0..1",
+                            "mandatory": false
                         },
                         {
                             "name": "protected",
@@ -2126,7 +2246,8 @@
                                 "fr": "Objet g\u00e9ologique prot\u00e9g\u00e9 (oui / non)?"
                             },
                             "att_type": "boolean",
-                            "cardinality": "0..1"
+                            "cardinality": "0..1",
+                            "mandatory": false
                         }
                     ]
                 },
@@ -2147,7 +2268,8 @@
                             },
                             "att_type": "subtype",
                             "value": 13101,
-                            "cardinality": 1,
+                            "cardinality": "1",
+                            "mandatory": true,
                             "pairs": {
                                 "13101001": "Lpro Gesteinshorizont"
                             }
@@ -2161,6 +2283,7 @@
                             "att_type": "CD",
                             "value": "GC_LIN_LPRO_CONG_SPE_CD",
                             "cardinality": "0..1",
+                            "mandatory": false,
                             "pairs": {
                                 "13102001": "kristallinfreie bis -arme (Kalk-)Nagelfluh",
                                 "13102002": "kristallinf\u00fchrende (Kalk-)Nagelfluh",
@@ -2179,7 +2302,8 @@
                             "att_type": "annex",
                             "value": "GC_LITSTRAT_BED_CD",
                             "cardinality": "0..1",
-                            "change": "new"
+                            "change": "new",
+                            "mandatory": false
                         },
                         {
                             "name": "orig_descr",
@@ -2188,7 +2312,8 @@
                                 "fr": "Description selon la l\u00e9gende de la carte g\u00e9ologique originale."
                             },
                             "att_type": "string",
-                            "cardinality": "0..1"
+                            "cardinality": "0..1",
+                            "mandatory": false
                         },
                         {
                             "name": "lpro_litho",
@@ -2199,7 +2324,8 @@
                             "att_type": "annex",
                             "value": "GC_LITHO_CD",
                             "change": "renamed",
-                            "cardinality": 1
+                            "cardinality": "1",
+                            "mandatory": false
                         }
                     ]
                 },
@@ -2220,7 +2346,8 @@
                             },
                             "att_type": "subtype",
                             "value": 15501,
-                            "cardinality": 1,
+                            "cardinality": "1",
+                            "mandatory": true,
                             "pairs": {
                                 "15501001": "Lmis Diverse"
                             }
@@ -2232,7 +2359,8 @@
                                 "fr": ""
                             },
                             "att_type": "string",
-                            "cardinality": 1
+                            "cardinality": "1",
+                            "mandatory": false
                         }
                     ]
                 },
@@ -2253,7 +2381,8 @@
                             },
                             "att_type": "subtype",
                             "value": 13001,
-                            "cardinality": 1,
+                            "cardinality": "1",
+                            "mandatory": true,
                             "pairs": {
                                 "13001001": "Lgeo geologische Kontur"
                             }
@@ -2267,6 +2396,7 @@
                             "att_type": "CD",
                             "value": "GC_LIN_LGEO_STATUS_CD",
                             "cardinality": "0..1",
+                            "mandatory": true,
                             "pairs": {
                                 "13002001": "im Allgemeinen",
                                 "13002002": "vermutet",
@@ -2302,7 +2432,8 @@
                             },
                             "att_type": "subtype",
                             "value": 14201,
-                            "cardinality": 1,
+                            "cardinality": "1",
+                            "mandatory": true,
                             "pairs": {
                                 "14201001": "Pslo Neigungsrichtung"
                             }
@@ -2315,7 +2446,8 @@
                             },
                             "att_type": "CD",
                             "value": "GC_PNT_PSLO_TYPE_CD",
-                            "cardinality": 1,
+                            "cardinality": "1",
+                            "mandatory": true,
                             "pairs": {
                                 "14202001": "Felsoberfl\u00e4che",
                                 "14202002": "Obergrenze einer gegebenen Formation",
@@ -2326,11 +2458,12 @@
                         {
                             "name": "azimuth",
                             "description": {
-                                "de": "Fallrichtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad (0\u00b0 359\u00b0) im Uhrzeigersinn gemessen.",
+                                "de": "Fallrichtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad (0\u00b0 bis 359\u00b0) im Uhrzeigersinn gemessen.",
                                 "fr": "Azimut du type d'objet. L'azimut est mesur\u00e9 depuis le  nord en degr\u00e9 de 0\u00b0 \u00e0 359\u00b0 dans le sens des aiguilles  d'une montre"
                             },
                             "att_type": "integer",
-                            "cardinality": "0..1"
+                            "cardinality": "0..1",
+                            "mandatory": false
                         },
                         {
                             "name": "dip",
@@ -2339,7 +2472,8 @@
                                 "fr": "Valeur du plongement du type d'objet (en degr\u00e9s), mesur\u00e9e de l\u2019horizontale (0\u00b0) vers le bas jusqu\u2019\u00e0 la  verticale (90\u00b0)"
                             },
                             "att_type": "integer",
-                            "cardinality": "0..1"
+                            "cardinality": "0..1",
+                            "mandatory": false
                         },
                         {
                             "name": "pslo_formatio",
@@ -2349,8 +2483,9 @@
                             },
                             "att_type": "annex",
                             "value": "GC_LITSTRAT_BED_CD",
-                            "cardinality": 1,
-                            "change": "renamed"
+                            "cardinality": "1",
+                            "change": "renamed",
+                            "mandatory": false
                         }
                     ]
                 },
@@ -2371,7 +2506,8 @@
                             },
                             "att_type": "subtype",
                             "value": 13901,
-                            "cardinality": 1,
+                            "cardinality": "1",
+                            "mandatory": true,
                             "pairs": {
                                 "13901001": "Pcob Isohypse"
                             }
@@ -2384,7 +2520,8 @@
                             },
                             "att_type": "CD",
                             "value": "GC_LIN_PCOB_TYPE_CD",
-                            "cardinality": 1,
+                            "cardinality": "1",
+                            "mandatory": true,
                             "pairs": {
                                 "13902001": "Felsoberfl\u00e4che",
                                 "13902002": "Obergrenze einer gegebenen Formation",
@@ -2395,12 +2532,14 @@
                         },
                         {
                             "name": "altitude",
+                            "alias": "PCOB_ALTITUDE",
                             "description": {
                                 "de": "H\u00f6henangabe (m \u00fc.M.) von Isohypsen.",
                                 "fr": "Valeur altim\u00e9trique des isohypses."
                             },
                             "att_type": "float",
-                            "cardinality": 1
+                            "cardinality": "1",
+                            "mandatory": true
                         },
                         {
                             "name": "litstrat",
@@ -2410,7 +2549,8 @@
                             },
                             "att_type": "annex",
                             "value": "GC_LITSTRAT_BED_CD",
-                            "cardinality": 1
+                            "cardinality": "1",
+                            "mandatory": false
                         }
                     ]
                 },
@@ -2431,7 +2571,8 @@
                             },
                             "att_type": "subtype",
                             "value": 14101,
-                            "cardinality": 1,
+                            "cardinality": "1",
+                            "mandatory": true,
                             "pairs": {
                                 "14101001": "Pmod Grundwasserfliessrichtung",
                                 "14101002": "Pmod mittlere H\u00f6he des Grundwasserspiegels"
@@ -2440,11 +2581,12 @@
                         {
                             "name": "azimuth",
                             "description": {
-                                "de": "Fallrichtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad (0\u00b0 359\u00b0) im Uhrzeigersinn gemessen.",
+                                "de": "Fallrichtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad (0\u00b0 bis 359\u00b0) im Uhrzeigersinn gemessen.",
                                 "fr": "Azimut du type d'objet. L'azimut est mesur\u00e9 depuis le  nord en degr\u00e9 de 0\u00b0 \u00e0 359\u00b0 dans le sens des aiguilles  d'une montre"
                             },
                             "att_type": "integer",
-                            "cardinality": "0..1"
+                            "cardinality": "0..1",
+                            "mandatory": false
                         },
                         {
                             "name": "dip",
@@ -2453,7 +2595,8 @@
                                 "fr": "Valeur du plongement du type d'objet (en degr\u00e9s), mesur\u00e9e de l\u2019horizontale (0\u00b0) vers le bas jusqu\u2019\u00e0 la  verticale (90\u00b0)"
                             },
                             "att_type": "integer",
-                            "cardinality": "0..1"
+                            "cardinality": "0..1",
+                            "mandatory": false
                         },
                         {
                             "name": "height",
@@ -2462,7 +2605,8 @@
                                 "fr": "Cote de la nappe phr\u00e9atique."
                             },
                             "att_type": "float",
-                            "cardinality": "0..1"
+                            "cardinality": "0..1",
+                            "mandatory": true
                         },
                         {
                             "name": "mea_period",
@@ -2471,7 +2615,8 @@
                                 "fr": "P\u00e9riode de mesure de la profondeur du niveau hydrostatique."
                             },
                             "att_type": "range",
-                            "cardinality": "0..1"
+                            "cardinality": "0..1",
+                            "mandatory": false
                         }
                     ]
                 },
@@ -2492,7 +2637,8 @@
                             },
                             "att_type": "subtype",
                             "value": 14001,
-                            "cardinality": 1,
+                            "cardinality": "1",
+                            "mandatory": true,
                             "pairs": {
                                 "14001001": "Pcoh Isohypse des Grundwasserspiegels"
                             }
@@ -2506,6 +2652,7 @@
                             "att_type": "CD",
                             "value": "GC_LIN_PCOH_CONFINE_CD",
                             "cardinality": "0..1",
+                            "mandatory": false,
                             "pairs": {
                                 "14002001": "frei",
                                 "14002002": "gespannt",
@@ -2516,11 +2663,13 @@
                         },
                         {
                             "name": "altitude",
+                            "alias": "PCON_ALTITUDE",
                             "description": {
                                 "de": "H\u00f6henangabe (m \u00fc.M.) von Isohypsen.",
                                 "fr": "Valeur altim\u00e9trique des isohypses."
                             },
-                            "cardinality": 1
+                            "cardinality": "1",
+                            "mandatory": true
                         },
                         {
                             "name": "wa_table",
@@ -2531,6 +2680,7 @@
                             "att_type": "CD",
                             "value": "GC_LIN_PCOH_WA_TABLE_CD",
                             "cardinality": "0..1",
+                            "mandatory": false,
                             "pairs": {
                                 "14004001": "mittlere H\u00f6he des Niedrigwasserstands",
                                 "14004002": "mittlere H\u00f6he des Hochwasserstands",
@@ -2562,6 +2712,7 @@
                             },
                             "att_type": "subtype",
                             "value": 10101,
+                            "mandatory": true,
                             "pairs": {
                                 "10101001": "Aarc arch\u00e4ologische Fundstelle, Anlage, Siedlungsreste",
                                 "10101002": "Aarc H\u00f6hlensiedlung, Abri",
@@ -2588,6 +2739,7 @@
                             "att_type": "CD",
                             "value": "GC_AARC_EPOCH_CD",
                             "cardinality": "0..1",
+                            "mandatory": false,
                             "pairs": {
                                 "10002001": "historisch",
                                 "10002002": "pr\u00e4historisch",
@@ -2604,6 +2756,7 @@
                             "att_type": "CD",
                             "value": "GC_AARC_PERIOD_CD",
                             "cardinality": "0..1",
+                            "mandatory": false,
                             "pairs": {
                                 "10003001": "Neuzeit",
                                 "10003002": "Mittelalter",
@@ -2624,6 +2777,7 @@
                             "att_type": "CD",
                             "value": "GC_AARC_AGE_CD",
                             "cardinality": "0..1",
+                            "mandatory": false,
                             "pairs": {
                                 "10004001": "Lat\u00e8nezeit",
                                 "10004002": "Hallstattzeit",
@@ -2646,6 +2800,7 @@
                             "att_type": "CD",
                             "value": "GC_PNT_AARC_TYPE_CD",
                             "cardinality": "0..1",
+                            "mandatory": true,
                             "pairs": {
                                 "10105001": "Menhir",
                                 "10105002": "Schalenstein",
@@ -2672,6 +2827,7 @@
                             },
                             "att_type": "subtype",
                             "value": 10201,
+                            "mandatory": true,
                             "pairs": {
                                 "10201001": "Aarc Verkehrsweg",
                                 "10201002": "Aarc Hohlweg",
@@ -2691,6 +2847,7 @@
                             "att_type": "CD",
                             "value": "GC_AARC_EPOCH_CD",
                             "cardinality": "0..1",
+                            "mandatory": false,
                             "pairs": {
                                 "10002001": "historisch",
                                 "10002002": "pr\u00e4historisch",
@@ -2707,6 +2864,7 @@
                             "att_type": "CD",
                             "value": "GC_AARC_PERIOD_CD",
                             "cardinality": "0..1",
+                            "mandatory": false,
                             "pairs": {
                                 "10003001": "Neuzeit",
                                 "10003002": "Mittelalter",
@@ -2727,6 +2885,7 @@
                             "att_type": "CD",
                             "value": "GC_AARC_AGE_CD",
                             "cardinality": "0..1",
+                            "mandatory": false,
                             "pairs": {
                                 "10004001": "Lat\u00e8nezeit",
                                 "10004002": "Hallstattzeit",
@@ -2759,6 +2918,7 @@
                             },
                             "att_type": "subtype",
                             "value": 10301,
+                            "mandatory": true,
                             "pairs": {
                                 "10301001": "Aarc Castrum",
                                 "10301002": "Aarc Refugium, H\u00f6hensiedlung, Erdwerk"
@@ -2773,6 +2933,7 @@
                             "att_type": "CD",
                             "value": "GC_AARC_EPOCH_CD",
                             "cardinality": "0..1",
+                            "mandatory": false,
                             "pairs": {
                                 "10002001": "historisch",
                                 "10002002": "pr\u00e4historisch",
@@ -2789,6 +2950,7 @@
                             "att_type": "CD",
                             "value": "GC_AARC_PERIOD_CD",
                             "cardinality": "0..1",
+                            "mandatory": false,
                             "pairs": {
                                 "10003001": "Neuzeit",
                                 "10003002": "Mittelalter",
@@ -2809,6 +2971,7 @@
                             "att_type": "CD",
                             "value": "GC_AARC_AGE_CD",
                             "cardinality": "0..1",
+                            "mandatory": false,
                             "pairs": {
                                 "10004001": "Lat\u00e8nezeit",
                                 "10004002": "Hallstattzeit",
@@ -2841,6 +3004,7 @@
                             },
                             "att_type": "subtype",
                             "value": 10601,
+                            "mandatory": true,
                             "pairs": {
                                 "10601001": "Aexp Bergwerk, Untertageabbau",
                                 "10601002": "Aexp Stolleneingang",
@@ -2858,7 +3022,8 @@
                             },
                             "att_type": "annex",
                             "value": "GC_LITSTRAT_BED_CD",
-                            "cardinality": "0..*"
+                            "cardinality": "0..*",
+                            "mandatory": false
                         },
                         {
                             "name": "status",
@@ -2869,6 +3034,7 @@
                             "att_type": "CD",
                             "value": "GC_EX_GEO_PNT_AEXP_STATUS_CD",
                             "cardinality": "0..1",
+                            "mandatory": false,
                             "pairs": {
                                 "10603001": "in Betrieb",
                                 "10603002": "stillgelegt",
@@ -2880,12 +3046,14 @@
                         },
                         {
                             "name": "depth_tot",
+                            "alias": "AEXP_DEPTH_TOT",
                             "description": {
                                 "de": "Endtiefe (m ab Terrainoberfl\u00e4che) der Objektart.",
                                 "fr": "Profondeur totale du type d'objet (en m\u00e8tres depuis la surface)."
                             },
                             "att_type": "float",
-                            "cardinality": "0..1"
+                            "cardinality": "0..1",
+                            "mandatory": false
                         },
                         {
                             "name": "targ_mat",
@@ -2896,6 +3064,7 @@
                             "att_type": "CD",
                             "value": "GC_EX_GEO_PNT_AEXP_TARG_MAT_CD",
                             "cardinality": "0..1",
+                            "mandatory": false,
                             "pairs": {
                                 "10605001": "Erze allgemein",
                                 "10605002": "Gold",
@@ -2960,6 +3129,7 @@
                             },
                             "att_type": "subtype",
                             "value": 10701,
+                            "mandatory": true,
                             "pairs": {
                                 "10701001": "Aexp Abbaufront",
                                 "10701002": "Aexp Bergwerksstollen"
@@ -2974,6 +3144,7 @@
                             "att_type": "CD",
                             "value": "GC_LIN_AEXP_STATUS_CD",
                             "cardinality": "0..1",
+                            "mandatory": true,
                             "pairs": {
                                 "10702001": "in Betrieb",
                                 "10702002": "stillgelegt",
@@ -3002,6 +3173,7 @@
                             },
                             "att_type": "subtype",
                             "value": 10801,
+                            "mandatory": true,
                             "pairs": {
                                 "10801001": "Aexp Steinbruch",
                                 "10801002": "Aexp Grube (Lockergesteinsabbau)"
@@ -3015,7 +3187,8 @@
                             },
                             "att_type": "annex",
                             "value": "GC_LITSTRAT_BED_CD",
-                            "cardinality": "1..*"
+                            "cardinality": "1..*",
+                            "mandatory": false
                         },
                         {
                             "name": "status",
@@ -3026,6 +3199,7 @@
                             "att_type": "CD",
                             "value": "GC_EX_GEO_PLG_AEXP_STATUS_CD",
                             "cardinality": "0..1",
+                            "mandatory": false,
                             "pairs": {
                                 "10802001": "in Betrieb",
                                 "10802002": "stillgelegt",
@@ -3042,7 +3216,8 @@
                                 "fr": "Profondeur totale du type d'objet (en m\u00e8tres depuis la surface)."
                             },
                             "att_type": "float",
-                            "cardinality": "0..1"
+                            "cardinality": "0..1",
+                            "mandatory": false
                         },
                         {
                             "name": "targ_mat",
@@ -3053,6 +3228,7 @@
                             "att_type": "CD",
                             "value": "GC_EX_GEO_PLG_AEXP_TARG_MAT_CD",
                             "cardinality": "0..1",
+                            "mandatory": false,
                             "pairs": {
                                 "10804001": "Ton / Ton und Silt (Lehm)",
                                 "10804002": "Sand",
@@ -3098,6 +3274,7 @@
                             },
                             "att_type": "subtype",
                             "value": 10501,
+                            "mandatory": true,
                             "pairs": {
                                 "10501001": "Abor Bohrung",
                                 "10501002": "Abor Sondierschlitz",
@@ -3113,16 +3290,19 @@
                                 "fr": "Mode du forage."
                             },
                             "value": 10502,
-                            "cardinality": "0..1"
+                            "cardinality": "0..1",
+                            "mandatory": false
                         },
                         {
-                            "name": "depth_bedrock",
+                            "name": "depth_bedr",
+                            "alias": "ABOR_DEPTH_BEDR",
                             "description": {
-                                "de": "Tiefe (in Meter ab Terrainoberfl\u00e4che) der Felsober- fl\u00e4che. (Sofern die Bohrung das Festgestein nicht Depth_Bedrock erreicht, z.B. \u00abBohrung, Fels nicht erreicht\u00bb, betr\u00e4gt der Wert -999, falls die Bohrung bereits im Festgestein beginnt, betr\u00e4gt der Wert 0). Falls Festgestein erreicht wurde, aber nicht klar ist, dass es sich um die Felsoberfl\u00e4che handelt, betr\u00e4gt der Wert -888.",
+                                "de": "Tiefe (in Meter ab Terrainoberfl\u00e4che) der Felsoberfl\u00e4che. (Sofern die Bohrung das Festgestein nicht erreicht, z.B. \u00abBohrung, Fels nicht erreicht\u00bb, betr\u00e4gt der Wert 999, falls die Bohrung bereits im Festgestein beginnt, betr\u00e4gt der Wert 0). Falls Festgestein erreicht wurde, aber nicht klar ist, dass es sich um die Felsoberfl\u00e4che handelt, betr\u00e4gt der Wert 888.\n",
                                 "fr": "Profondeur de la roche en place (en m\u00e8tres depuis la \nsurface). (Si l\u2019ouvrage n\u2019atteint pas la roche en place, \npar exemple forage interrompu dans la couverture \nquaternaire, la valeur est -999, au cas o\u00f9 le forage \ncommence d\u00e9j\u00e0 dans la roche en place la valeur est 0)\n"
                             },
                             "att_type": "float",
-                            "cardinality": "0..1"
+                            "cardinality": "0..1",
+                            "mandatory": true
                         },
                         {
                             "name": "d_c_underg",
@@ -3131,7 +3311,8 @@
                                 "fr": "Forage r\u00e9alis\u00e9 \u00e0 partir d\u2019une galerie (oui / non)?"
                             },
                             "att_type": "boolean",
-                            "cardinality": 1
+                            "cardinality": "1",
+                            "mandatory": true
                         },
                         {
                             "name": "main_tar",
@@ -3142,6 +3323,7 @@
                             "att_type": "CD",
                             "value": "GC_PNT_ABOR_MAIN_TAR_CD",
                             "cardinality": "0..1",
+                            "mandatory": false,
                             "pairs": {
                                 "10505001": "Geotechnik",
                                 "10505002": "Hydrogeologie",
@@ -3165,6 +3347,7 @@
                             "att_type": "CD",
                             "value": "GC_PNT_ABOR_TARG_MAT_CD",
                             "cardinality": "0..1",
+                            "mandatory": false,
                             "pairs": {
                                 "10506001": "Salz / Steinsalz",
                                 "10506002": "Erd\u00f6l",
@@ -3184,7 +3367,8 @@
                                 "fr": "Profondeur totale du type d'objet (en m\u00e8tres depuis la surface)."
                             },
                             "att_type": "float",
-                            "cardinality": "0..1"
+                            "cardinality": "0..1",
+                            "mandatory": false
                         },
                         {
                             "name": "fm_a",
@@ -3194,7 +3378,8 @@
                             },
                             "att_type": "annex",
                             "value": "GC_LITSTRAT_BED_CD",
-                            "cardinality": "0..1"
+                            "cardinality": "0..1",
+                            "mandatory": false
                         },
                         {
                             "name": "depth_fm_a",
@@ -3203,7 +3388,8 @@
                                 "fr": "Profondeur relative \u00e0 la formation A atteinte (en m\u00e8tres depuis la surface)."
                             },
                             "att_type": "float",
-                            "cardinality": "0..1"
+                            "cardinality": "0..1",
+                            "mandatory": false
                         },
                         {
                             "name": "fm_b",
@@ -3213,7 +3399,8 @@
                             },
                             "att_type": "annex",
                             "value": "GC_LITSTRAT_BED_CD",
-                            "cardinality": "0..1"
+                            "cardinality": "0..1",
+                            "mandatory": false
                         },
                         {
                             "name": "depth_fm_b",
@@ -3222,7 +3409,8 @@
                                 "fr": "Profondeur de la formation B atteinte (en m\u00e8tres depuis  la surface)."
                             },
                             "att_type": "float",
-                            "cardinality": "0..1"
+                            "cardinality": "0..1",
+                            "mandatory": false
                         },
                         {
                             "name": "depth_wt",
@@ -3231,7 +3419,8 @@
                                 "fr": "Profondeur (m depuis la surface) de la nappe phr\u00e9atique (valeur moyenne)."
                             },
                             "att_type": "float",
-                            "cardinality": "0..1"
+                            "cardinality": "0..1",
+                            "mandatory": false
                         },
                         {
                             "name": "azimuth",
@@ -3240,7 +3429,8 @@
                                 "fr": "Azimut du type d'objet. L'azimut est mesur\u00e9 depuis le  nord en degr\u00e9 de 0\u00b0 \u00e0 359\u00b0 dans le sens des aiguilles  d'une montre"
                             },
                             "att_type": "integer",
-                            "cardinality": "0..1"
+                            "cardinality": "0..1",
+                            "mandatory": false
                         },
                         {
                             "name": "dip",
@@ -3249,7 +3439,8 @@
                                 "fr": "Valeur du plongement du type d'objet (en degr\u00e9s), mesur\u00e9e de l\u2019horizontale (0\u00b0) vers le bas jusqu\u2019\u00e0 la  verticale (90\u00b0)"
                             },
                             "att_type": "integer",
-                            "cardinality": "0..1"
+                            "cardinality": "0..1",
+                            "mandatory": false
                         },
                         {
                             "name": "ref_number",
@@ -3258,7 +3449,8 @@
                                 "fr": "Num\u00e9ro de r\u00e9f\u00e9rence du type d'objet dans un  document annex\u00e9 (notice explicative,\u2026)."
                             },
                             "att_type": "integer",
-                            "cardinality": "0..1"
+                            "cardinality": "0..1",
+                            "mandatory": false
                         },
                         {
                             "name": "link",
@@ -3268,7 +3460,8 @@
                                 "fr": "Num\u00e9ro de r\u00e9f\u00e9rence du type d'objet dans un  document annex\u00e9 (notice explicative,\u2026)."
                             },
                             "att_type": "integer",
-                            "cardinality": "0..1"
+                            "cardinality": "0..1",
+                            "mandatory": false
                         }
                     ]
                 },
@@ -3289,7 +3482,8 @@
                             },
                             "att_type": "subtype",
                             "value": 10401,
-                            "cardinality": 1,
+                            "cardinality": "1",
+                            "mandatory": true,
                             "pairs": {
                                 "10401001": "Aart k\u00fcnstlich ver\u00e4ndertes Gel\u00e4nde",
                                 "10401002": "Aart k\u00fcnstliche Ablagerung, undifferenziert",
@@ -3323,7 +3517,8 @@
                             },
                             "att_type": "subtype",
                             "value": 12101,
-                            "cardinality": 1,
+                            "cardinality": "1",
+                            "mandatory": true,
                             "pairs": {
                                 "12101001": "Hcon Grundwasserfassung",
                                 "12101002": "Hcon Zisterne",
@@ -3343,6 +3538,7 @@
                             "att_type": "CD",
                             "value": "GC_PNT_HCON_STATUS_CD",
                             "cardinality": "0..1",
+                            "mandatory": false,
                             "pairs": {
                                 "12102001": "in Betrieb",
                                 "12102002": "stillgelegt",
@@ -3359,6 +3555,7 @@
                             "att_type": "CD",
                             "value": "GC_PNT_HCON_EPOCH_CD",
                             "cardinality": "0..1",
+                            "mandatory": false,
                             "pairs": {
                                 "12103001": "Mittelalter",
                                 "12103002": "R\u00f6merzeit",
@@ -3374,7 +3571,8 @@
                                 "fr": "Profondeur du type d'objet."
                             },
                             "att_type": "float",
-                            "cardinality": "0..1"
+                            "cardinality": "0..1",
+                            "mandatory": false
                         },
                         {
                             "name": "depth_wt",
@@ -3383,7 +3581,8 @@
                                 "fr": "Profondeur (m depuis la surface) de la nappe phr\u00e9atique (valeur moyenne)."
                             },
                             "att_type": "float",
-                            "cardinality": "0..1"
+                            "cardinality": "0..1",
+                            "mandatory": false
                         },
                         {
                             "name": "mea_period",
@@ -3392,7 +3591,8 @@
                                 "fr": "P\u00e9riode de mesure de la profondeur du niveau hydrostatique."
                             },
                             "att_type": "range",
-                            "cardinality": "0..1"
+                            "cardinality": "0..1",
+                            "mandatory": false
                         }
                     ]
                 },
@@ -3413,7 +3613,8 @@
                             },
                             "att_type": "subtype",
                             "value": 12201,
-                            "cardinality": 1,
+                            "cardinality": "1",
+                            "mandatory": true,
                             "pairs": {
                                 "12201001": "Hcon Wasserfassungsstollen",
                                 "12201002": "Hcon k\u00fcnstlicher Gew\u00e4sserlauf"
@@ -3428,6 +3629,7 @@
                             "att_type": "CD",
                             "value": "GC_LIN_HCON_COMBI_CD",
                             "cardinality": "0..1",
+                            "mandatory": false,
                             "pairs": {
                                 "12202001": "mit Quellfassung (orientiert) in Stollen",
                                 "12202002": "mit gefasster Mineralquelle (orientiert) in Stollen",
@@ -3455,7 +3657,8 @@
                             },
                             "att_type": "subtype",
                             "value": 12301,
-                            "cardinality": 1,
+                            "cardinality": "1",
+                            "mandatory": true,
                             "pairs": {
                                 "12301001": "Hpal Pal\u00e4otal",
                                 "12301002": "Hpal ehemalige Entw\u00e4sserungsrinne",
@@ -3475,6 +3678,7 @@
                             "att_type": "CD",
                             "value": "GC_LIN_HPAL_REL_AGE_CD",
                             "cardinality": "0..1",
+                            "mandatory": false,
                             "pairs": {
                                 "12302001": "die J\u00fcngste oder Einzige",
                                 "12302002": "\u00e4lter als die J\u00fcngste",
@@ -3492,7 +3696,8 @@
                             "att_type": "annex",
                             "value": "GC_CHRONO_CD",
                             "cardinality": "0..1",
-                            "change": "renamed"
+                            "change": "renamed",
+                            "mandatory": false
                         },
                         {
                             "name": "ref_year",
@@ -3501,7 +3706,8 @@
                                 "fr": "Ann\u00e9e de r\u00e9f\u00e9rence de l\u2019ancienne ligne de rivage."
                             },
                             "att_type": "integer",
-                            "cardinality": 1
+                            "cardinality": "1",
+                            "mandatory": false
                         },
                         {
                             "name": "source",
@@ -3510,7 +3716,8 @@
                                 "fr": "Source des donn\u00e9es d\u00e9duites \u00e0 partir de donn\u00e9es historiques."
                             },
                             "att_type": "string",
-                            "cardinality": "0..1"
+                            "cardinality": "0..1",
+                            "mandatory": false
                         }
                     ]
                 },
@@ -3519,7 +3726,7 @@
                     "abrev": "Hsub",
                     "table": "GC_LINEAR_OBJECTS",
                     "description": {
-                        "de": "In der Klasse Subsurface_Water_L befinden sich linienf\u00f6rmigen Objektarten, welche einen\nunterirdischen Gew\u00e4sserlauf anzeigen.\n\nDer genaue Verlauf des unterirdischen Gew\u00e4sserlaufes ist in fast jedem Fall vermutet, mit\nwenigen Ausnahmen von erforschten H\u00f6hlensystemen. Liegen F\u00e4rbversuche vor, so werden diese\nin den Erl\u00e4uterungen erw\u00e4hnt, sofern diese existieren. Der unterirdische Gew\u00e4sserlauf\nkann mit Objeken aus der Klasse Surface_Water_PT kombiniert werden.\n",
+                        "de": "In der Klasse Subsurface_Water_L befinden sich linienf\u00f6rmigen Objektarten, welche einen\nunterirdischen Gew\u00e4sserlauf anzeigen.\n\nDer genaue Verlauf des unterirdischen Gew\u00e4sserlaufes ist meistens vermutet.\n",
                         "fr": "Dans la classe Subsurface_Water_L se trouvent les objets de forme lin\u00e9aire qui repr\u00e9sentent les\ncours d\u2019eau souterrains. Le parcours exact des cours d\u2019eau souterrains est presque toujours\nsuppos\u00e9. Il est d\u00e9duit \u00e0 partir de quelques donn\u00e9es d\u2019\u00e9tudes de syst\u00e8mes de captage. Les essais\nde tra\u00e7age seront mentionn\u00e9es dans la notice explicative, lorsqu\u2019elle existe. Les cours d\u2019eau\nsouterrains peuvent \u00eatre combin\u00e9s avec les objets de la classe Surface_Water_PT.\n"
                     },
                     "attributes": [
@@ -3531,7 +3738,8 @@
                             },
                             "att_type": "subtype",
                             "value": 12401,
-                            "cardinality": 1,
+                            "cardinality": "1",
+                            "mandatory": true,
                             "pairs": {
                                 "12401001": "Hsub unterirdischer Gew\u00e4sserlauf"
                             }
@@ -3545,6 +3753,7 @@
                             "att_type": "CD",
                             "value": "GC_LIN_HSUB_COMBI_CD",
                             "cardinality": "0..1",
+                            "mandatory": false,
                             "pairs": {
                                 "12402001": "mit Versickerungsstelle eines Baches",
                                 "12402002": "mit Wiederaustritt eines unterirdischen Bachlaufes",
@@ -3559,7 +3768,7 @@
                     "abrev": "Hsur",
                     "table": "GC_POINT_OBJECTS",
                     "description": {
-                        "de": "Die Klasse Surface_Water_PT umfasst lokal (punktuell) beobachtete Oberfl\u00e4chengew\u00e4sser, wie\nnat\u00fcrliche Wasseraustritts- und Versickerungsstellen. Zudem befindet sich die Objektart Steilstufe\nin Bachrinne, Wasserfall in dieser Klasse, die eine spezielle Stelle in Fliessgew\u00e4ssern markiert und\ndie durch die darunterliegende Geologie bedingt ist.\nEine Quelle wird als \u00abThermalquelle\u00bb bezeichnet, wenn das Wasser eine mittlere Jahrestem-\n20\u00b0C aufweist. F\u00fcr diesen Quelltyp ist das Attribut \u00abTemp\u00bb vorgesehen und\nbeschr\u00e4nkt sich i.d.R. auf die mittlere Wassertemperatur. Deshalb wird f\u00fcr dieses Attribut auch\nkein Datum einer Analyse angegeben. Um eine Mineralquelle handelt es sich bei einer Quelle mit\neiner Mineralkonzentration 1g / l Wasser oder einer CO2- 250 mg / l Wasser.\nF\u00fcr diesen Quelltyp ist das Attribut \u00abChemistry\u00bb vorgesehen. D.h. unter diesem Attribut wird das\ncharakteristische chemische Element im Mineralwasser angegeben und nicht die komplette\nWasserchemie.\n",
+                        "de": "Die Klasse Surface_Water_PT umfasst lokal (punktuell) beobachtete Oberfl\u00e4chengew\u00e4sser, wie\nnat\u00fcrliche Wasseraustritts- und Versickerungsstellen. Zudem befindet sich die Objektart Steilstufe\nin Bachrinne, Wasserfall in dieser Klasse, die eine spezielle Stelle in Fliessgew\u00e4ssern markiert und\ndie durch die darunterliegende Geologie bedingt ist.\n",
                         "fr": "La classe Surface_Water_PT comprend les eaux de surface locales (ponctuelles) comme les \nsources et les pertes d\u2019un cours d\u2019eau. On y trouve \u00e9galement des types d\u2019objets particuliers \ncomme les cascades et les rapides, lesquels marquent des positions sp\u00e9cifiques du cours d\u2019eau \nqui sont \u00e0 relier avec la g\u00e9ologie sous-jacente.\nUne source est d\u00e9crite comme \u00absource thermale\u00bb lorsque l\u2019eau y atteint une temp\u00e9rature \nannuelle moyenne \u2265 20\u00b0C. L\u2019attribut \u00abTemp\u00bb est associ\u00e9 \u00e0 ce type de source et se limite en \nr\u00e8gle g\u00e9n\u00e9rale \u00e0 la temp\u00e9rature moyenne de l\u2019eau. Par cons\u00e9quent aucune donn\u00e9e d\u2019analyse \nchimique n\u2019est indiqu\u00e9e pour cet attribut. Par \u00absource min\u00e9rale\u00bb, on entend une source avec \nune concentration min\u00e9rale dans l\u2019eau \u2265 1g / l ou une concentration en CO2 \u2265 250 mg / l. \nL\u2019attribut \u00abChemistry\u00bb est associ\u00e9 \u00e0 ce type de source. Il indique l\u2019\u00e9l\u00e9ment caract\u00e9ristique \nprincipal de l\u2019eau min\u00e9rale et non le chimisme complet de l\u2019eau\n"
                     },
                     "attributes": [
@@ -3571,7 +3780,8 @@
                             },
                             "att_type": "subtype",
                             "value": 12501,
-                            "cardinality": 1,
+                            "cardinality": "1",
+                            "mandatory": true,
                             "pairs": {
                                 "12501001": "Hsur Quelle",
                                 "12501002": "Hsur diffuse Quelle",
@@ -3590,6 +3800,7 @@
                             "att_type": "CD",
                             "value": "GC_PNT_HSUR_STATUS_CD",
                             "cardinality": "0..1",
+                            "mandatory": false,
                             "pairs": {
                                 "12502001": "gefasst",
                                 "12502002": "nicht gefasst",
@@ -3606,6 +3817,7 @@
                             "att_type": "CD",
                             "value": "GC_PNT_HSUR_FLOW_CON_CD",
                             "cardinality": "0..1",
+                            "mandatory": false,
                             "pairs": {
                                 "12503001": "perennierend",
                                 "12503002": "tempor\u00e4r",
@@ -3623,6 +3835,7 @@
                             "att_type": "CD",
                             "value": "GC_PNT_HSUR_TYPE_CD",
                             "cardinality": "0..1",
+                            "mandatory": true,
                             "pairs": {
                                 "12504001": "Karstquelle",
                                 "12504002": "Mineralquelle",
@@ -3640,6 +3853,7 @@
                             "att_type": "CD",
                             "value": "GC_PNT_HSUR_DIS_LOCA_CD",
                             "cardinality": "0..1",
+                            "mandatory": false,
                             "pairs": {
                                 "12505002": "in Stollen",
                                 "999997": "unbekannt",
@@ -3655,6 +3869,7 @@
                             "att_type": "CD",
                             "value": "GC_PNT_HSUR_COMBI_CD",
                             "cardinality": "0..1",
+                            "mandatory": false,
                             "pairs": {
                                 "12506001": "mit Wasserfassungsstollen",
                                 "12506002": "mit unterirdischem Gew\u00e4sserlauf",
@@ -3669,25 +3884,29 @@
                                 "fr": "Temp\u00e9rature moyenne (\u00b0C) de l'eau."
                             },
                             "att_type": "integer",
-                            "cardinality": "0..1"
+                            "cardinality": "0..1",
+                            "mandatory": false
                         },
                         {
                             "name": "chemistry",
+                            "alias": "HSUR_CHEMISTRY",
                             "description": {
                                 "de": "Charakteristisches chemisches Element im Mineralwasser (z.B. Fe).",
                                 "fr": "Element chimique caract\u00e9ristique dans l\u2019eau min\u00e9rale."
                             },
                             "att_type": "string",
-                            "cardinality": "0..1"
+                            "cardinality": "0..1",
+                            "mandatory": false
                         },
                         {
                             "name": "azimuth",
                             "description": {
-                                "de": "Richtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad (0\u00b0 359\u00b0) im Uhrzeigersinn gemessen.",
+                                "de": "Richtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad (0\u00b0 bis 359\u00b0) im Uhrzeigersinn gemessen.",
                                 "fr": "Azimut du type d'objet. L'azimut est mesur\u00e9 depuis le  nord en degr\u00e9 de 0\u00b0 \u00e0 359\u00b0 dans le sens des aiguilles  d'une montre"
                             },
                             "att_type": "integer",
-                            "cardinality": "0..1"
+                            "cardinality": "0..1",
+                            "mandatory": false
                         }
                     ]
                 },
@@ -3708,7 +3927,8 @@
                             },
                             "att_type": "subtype",
                             "value": 12601,
-                            "cardinality": 1,
+                            "cardinality": "1",
+                            "mandatory": true,
                             "pairs": {
                                 "12601001": "Hsur Quellhorizont",
                                 "12601002": "Hsur Bachlauf"
@@ -3721,7 +3941,7 @@
                     "abrev": "Hsur",
                     "table": "GC_SURFACES",
                     "description": {
-                        "de": "Die Klasse Surface_Water_PLG beinhaltet oberfl\u00e4chliche Wasserspeicher wie Gletscher, Seen und\nFl\u00fcsse, welche geologische Einheiten bedecken und oftmals eine Interpretation der darunter-\nliegenden Geologie verunm\u00f6glichen. Das vollst\u00e4ndige Gew\u00e4ssernetz ist nicht Teil des Daten-\nmodells Geologie\n",
+                        "de": "Die Klasse Surface_Water_PLG beinhaltet oberfl\u00e4chliche Wasserspeicher wie Gletscher, Seen und\nFl\u00fcsse.\n",
                         "fr": "La classe Surface_Water_PLG regroupe toutes les accumulations d\u2019eaux superficielles comme les\nglaciers, les lacs et les rivi\u00e8res qui masquent les unit\u00e9s g\u00e9ologiques sous-jacentes. Le mod\u00e8le\ncomplet du r\u00e9seau hydrique ne fait pas partie du Mod\u00e8le de donn\u00e9es g\u00e9ologiques.\n"
                     },
                     "attributes": [
@@ -3733,7 +3953,8 @@
                             },
                             "att_type": "subtype",
                             "value": 12701,
-                            "cardinality": 1,
+                            "cardinality": "1",
+                            "mandatory": true,
                             "pairs": {
                                 "12701001": "Hsur Gletscher",
                                 "12701002": "Hsur See",
@@ -4395,6 +4616,10 @@
                 "15200685": "Courgenay-, Balsthal- und Villigen-Formation, undifferenziert",
                 "15200686": "Pichoux-Formation: Korallenfazies",
                 "15200687": "Pichoux-Formation: Schwammfazies",
+                "15200688": "Kalter-Wangen-Formation: Konglomerat-Fazies",
+                "15200689": "Kalter-Wangen-Formation: Sandstein-Mergel-Fazies",
+                "15200690": "Heilsberg-Bentonit",
+                "15200691": "Humlikon-Bentonit",
                 "15202001": "Habkern-Melange",
                 "15202002": "S\u00f6renberg-Melange",
                 "15202003": "Wildhaus-Melange",
@@ -4986,6 +5211,39 @@
                 "15202613": "Erzegg-Formation: Grenzschicht",
                 "15202614": "Br\u00e4nd-Brekzie",
                 "15202615": "Infralias-Sandstein",
+                "15202616": "Nufenen-Zone: phyllitische Trias",
+                "15202617": "Nufenen-Zone: karbonatische Trias",
+                "15202618": "Nufenen-Zone: karbonatische Trias: Kalkmarmor",
+                "15202619": "Nufenen-Zone: karbonatische Trias: Dolomitmarmor",
+                "15202620": "Nufenen-Zone: karbonatische Trias: Rauwacke",
+                "15202621": "Nufenen-Zone: quartzitische Trias",
+                "15202622": "Urseren-Garvera-Zone: Malm",
+                "15202623": "Urseren-Garvera-Zone: Dogger",
+                "15202624": "Urseren-Garvera-Zone: Lias undiff.",
+                "15202625": "Urseren-Garvera-Zone: Oberer Lias",
+                "15202626": "Urseren-Garvera-Zone: Mittlerer Lias",
+                "15202627": "Urseren-Garvera-Zone: Unterer Lias",
+                "15202628": "Urseren-Garvera-Zone: phyllitische Trias",
+                "15202629": "Urseren-Garvera-Zone: karbonatische Trias",
+                "15202630": "Urseren-Garvera-Zone: Permokarbon: Psephit- und Psammitgneis",
+                "15202631": "Urseren-Garvera-Zone: Permokarbon: Metarhyolith",
+                "15202632": "Urseren-Garvera-Zone: Permokarbon: Chloritschiefer",
+                "15202633": "Urseren-Garvera-Zone: Permokarbon: Graphitschiefer",
+                "15202634": "Gotthard-Decke: Pr\u00e4variszischer Orthogneis",
+                "15202635": "Gotthard-Decke: Pr\u00e4variszischer Augengneis",
+                "15202636": "Gotthard-Decke: Pr\u00e4variszischer Paragneis",
+                "15202637": "Camosci-Decke: Paragneis",
+                "15202638": "Camosci-Decke: Lias-Dogger",
+                "15202639": "Camosci-Decke: Lias-Dogger: Kalkglimmerschiefer",
+                "15202640": "Camosci-Decke: Lias-Dogger: Granatglimmerschiefer",
+                "15202641": "Camosci-Decke: Lias",
+                "15202642": "Camosci-Decke: Trias",
+                "15202643": "Camosci-Decke: sandige Trias",
+                "15202644": "Camosci-Decke: karbonatische Trias",
+                "15202645": "Urseren-Garvera-Zone: Mesozoikum undiff.",
+                "15202646": "Urseren-Garvera-Zone: Trias",
+                "15202647": "Nufenen-Zone: Trias",
+                "15202648": "Nufenen-Zone: Lias undiff.",
                 "15203001": "Niesen-Flysch",
                 "15203002": "Chesselbach-Formation",
                 "15203003": "Seron-Formation",
@@ -5591,6 +5849,69 @@
                 "15203605": "Flysch 2",
                 "15203606": "Flysch 3",
                 "15203607": "Hellst\u00e4tt-Formation und Flysch 2a, undifferenziert",
+                "15203608": "Walliser-Sedimentabfolge",
+                "15203609": "S\u00fcdegg-Komplex: schwarzer Schiefer",
+                "15203610": "S\u00fcdegg-Komplex: Serpentinit",
+                "15203611": "S\u00fcdegg-Komplex: Albitgneis",
+                "15203612": "S\u00fcdegg-Komplex: Marmor",
+                "15203613": "S\u00fcdegg-Komplex: Brekzie",
+                "15203614": "S\u00fcdegg-Komplex: Gips",
+                "15203615": "Monte-Leone-Decke: Mesozoikum undiff.",
+                "15203616": "Monte-Leone-Decke: Dogger-Malm",
+                "15203617": "Monte-Leone-Decke: Dogger-Malm: Glimmerschiefer",
+                "15203618": "Monte-Leone-Decke: Dogger-Malm: Marmor",
+                "15203619": "Monte-Leone-Decke: konglomeratischer Dogger",
+                "15203620": "Monte-Leone-Decke: Lias",
+                "15203621": "Monte-Leone-Decke: sandiger Lias",
+                "15203622": "Monte-Leone-Decke: konglomeratischer Lias",
+                "15203623": "Monte-Leone-Decke: Trias",
+                "15203624": "Monte-Leone-Decke: quarzitische Trias",
+                "15203625": "Pizzo-del-Vallone-Decke: Mesozoikum undiff.",
+                "15203626": "Pizzo-del-Vallone-Decke: Dogger-Malm",
+                "15203627": "Pizzo-del-Vallone-Decke: Dogger-Malm: Marmor",
+                "15203628": "Pizzo-del-Vallone-Decke: Dogger-Malm: Glimmerschiefer",
+                "15203629": "Pizzo-del-Vallone-Decke: Dogger-Malm: Vulkanit",
+                "15203630": "Pizzo-del-Vallone-Decke: Lias",
+                "15203631": "Pizzo-del-Vallone-Decke: Trias",
+                "15203632": "Artsinol-Sedimentabfolge undiff.",
+                "15203633": "Artsinol-Sedimentabfolge: Trias",
+                "15203634": "Artsinol-Sedimentabfolge: Trias: Rauwacke",
+                "15203635": "M\u00e9tailler-Formation: Quarzit",
+                "15203636": "M\u00e9tailler-Formation: Glimmerschiefer",
+                "15203637": "M\u00e9tailler-Formation: Chloritoid-Glimmerschiefer",
+                "15203638": "Distulberg-Formation: Schiefer",
+                "15203639": "Distulberg-Formation: Albitgneis",
+                "15203640": "Barrhorn-Sedimentabfolge: Trias",
+                "15203641": "Siviez-Mischabel-Decke: Aplit",
+                "15203642": "Siviez-Mischabel-Decke: Pegmatit",
+                "15203643": "Lirec-Formation: leukokrater Mikroklingneis",
+                "15203644": "Adlerfl\u00fce-Formation: leukokrater Gneis",
+                "15203645": "Ergischhorn-Komplex: leukokrater aplitischer Gneis",
+                "15203646": "Stalden-Gneiskomplex undiff.",
+                "15203647": "Stalden-Gneiskomplex: Ahorn-Augengneis",
+                "15203648": "Stalden-Gneiskomplex: Amphibolit",
+                "15203649": "Printse-Formation: Konglomerat",
+                "15203650": "Printse-Formation: Graphitschiefer",
+                "15203651": "Portjengrat-Decke: Kalzitmarmor",
+                "15203652": "Portjengrat-Decke: Dolomitmarmor",
+                "15203653": "Portjengrat-Decke: Arkose",
+                "15203654": "Portjengrat-Decke: Grundgebirge",
+                "15203655": "Gornergrat-Decke: Kalkschisfer, sandiger Marmor, Brekzie",
+                "15203656": "Gornergrat-Decke: Trias",
+                "15203657": "Gornergrat-Decke: Phengit-Albitgneis",
+                "15203658": "Gornergrat-Decke: Basischer Gang",
+                "15203659": "Gornergrat-Decke: Granat-Muskovit-Schiefer",
+                "15203660": "Frilihorn-Decke: Trias",
+                "15203661": "Frilihorn-Decke: Trias: Rauwacke",
+                "15203662": "Garda-Bordon-Formation: Black Shales (S\u00e9rie feuillet\u00e9e)",
+                "15203663": "Garda-Bordon-Formation: Quarzschiefer",
+                "15203664": "Tsat\u00e9-Decke: Serpentinit",
+                "15203665": "Zermatt-Saas-Decke: Eklogit",
+                "15203666": "Zermatt-Saas-Decke: Metapyroxenit",
+                "15203667": "Zermatt-Saas-Decke: Metagabbro",
+                "15203668": "Zermatt-Saas-Decke: Rodingit",
+                "15203669": "Zermatt-Saas-Decke: Talkschiefer",
+                "15203670": "Lengenbach-Dolomitmarmor",
                 "15204001": "God-Drosa-Flysch",
                 "15204002": "Chan\u00e8ls-Formation",
                 "15204003": "Lech-Formation",
@@ -5877,6 +6198,8 @@
                 "15205135": "Zona Dioritico-Kinzigitica",
                 "15205136": "Pr\u00e4variszische Orthogneise des S\u00fcdalpins",
                 "15205137": "Pontida-Formation",
+                "15205138": "Arolla-Einheit: Metagranit",
+                "15205139": "Arolla-Einheit: Leukokrater Granitgneis",
                 "15206001": "Periadriatische Vulkanite",
                 "15206002": "Novate-Intrusiva",
                 "15206003": "Bergell-Intrusiva",
@@ -5995,6 +6318,7 @@
                 "15206116": "Aptychenkalk, undiff.",
                 "15206117": "Quarzsandstein, undiff.",
                 "15206118": "Mergelstein, undifferenziert",
+                "15206119": "Basisches Gestein, undifferenziert",
                 "999997": "unbekannt",
                 "999998": "nicht anwendbar"
             }
@@ -6055,7 +6379,7 @@
                 "15201047": "Glazi-lakustrische Serie",
                 "15201048": "Mittlere Klettgauschotter",
                 "15201049": "Untere Klettgauschotter",
-                "15201050": "Gondiswil-Interglazial (Letztes Integlazial)",
+                "15201050": "Gondiswil-Interglazial (Letztes Interglazial)",
                 "15201051": "Flurlingen-Quelltuff",
                 "15201052": "Birrfeld- und Klettgau-Pal\u00e4ob\u00f6den",
                 "15201053": "Beringen-Eiszeit",
@@ -6456,6 +6780,154 @@
                 "15201565": "Stetten-Schotter",
                 "15201566": "Plaffeien-Seetone",
                 "15201567": "Plasselb-Stauschotter",
+                "15201568": "Uetliberg-Lehm",
+                "15201569": "Schotter der Thur",
+                "15201570": "Schwarzwald-Schotter",
+                "15201571": "Neuenburg-Formation",
+                "15201572": "Hartheim-Member",
+                "15201573": "Nambsheim-Member",
+                "15201574": "Breisgau-Formation",
+                "15201575": "Balgau-Member",
+                "15201576": "Weinstetten-Member",
+                "15201577": "Iffezheim-Formation",
+                "15201578": "Mannheim-Formation",
+                "15201579": "Etzgen-Formation",
+                "15201580": "Niederuster-Schotter",
+                "15201581": "Pfungen-Formation",
+                "15201582": "D\u00e4ttlikon-Stadium",
+                "15201583": "D\u00fcbendorf-Stadium",
+                "15201584": "Gfenn-Stadium",
+                "15201585": "Regensdorf-Stadium",
+                "15201586": "Seeb-Stadium",
+                "15201587": "W\u00fcrenlos-Stadium",
+                "15201588": "W\u00fcrenlos-Stand-I",
+                "15201589": "W\u00fcrenlos-Stand-II",
+                "15201590": "B\u00fclach-Stadium",
+                "15201591": "B\u00fclach-Stand-I",
+                "15201592": "B\u00fclach-Stand-II",
+                "15201593": "Stein-am-Rhein-Stadium",
+                "15201594": "Stein-am-Rhein-Stand-I",
+                "15201595": "Stein-am-Rhein-Stand-II",
+                "15201596": "Stein-am-Rhein-Stand-III",
+                "15201597": "Z\u00fcrich-Stadium",
+                "15201598": "Z\u00fcrich-Stand-I",
+                "15201599": "Z\u00fcrich-Stand-II",
+                "15201600": "Bremgarten-Stadium",
+                "15201601": "Bremgarten-I",
+                "15201602": "Bremgarten-II",
+                "15201603": "Singen-Stadium",
+                "15201604": "Feuerthalen-Stadium",
+                "15201605": "Feuerthalen-Stand-I",
+                "15201606": "Feuerthalen-Stand-II",
+                "15201607": "Schlieren-Stadium",
+                "15201608": "B\u00e4retswil-Seeablagerung",
+                "15201609": "Hittnau-Seeablagerung",
+                "15201610": "Russikon-Seeablagerung",
+                "15201611": "Stetten-Stadium",
+                "15201612": "Stetten-Stand-I",
+                "15201613": "Stetten-Stand-II",
+                "15201614": "Diessenhofen-Stadium",
+                "15201615": "Mellingen-Stand",
+                "15201616": "Schaffhausen-Stadium",
+                "15201617": "Schaffhausen-Stand-I",
+                "15201618": "Schaffhausen-Stand-II",
+                "15201619": "Killwangen-Stadium",
+                "15201620": "Lottstetten-, Kohlschw\u00e4rze- und Zelgli-Vorstoss",
+                "15201621": "Grafschaft-Schotter",
+                "15201622": "\"Mittelterrasse\"",
+                "15201623": "Hochterrasse, unteres Niveau",
+                "15201624": "Hochterrasse, mittleres Niveau",
+                "15201625": "Hochterrasse, oberes Niveau",
+                "15201626": "First-Schotter",
+                "15201627": "Helltobel-Schotter",
+                "15201628": "Lettenberg-Seesedimente",
+                "15201629": "Zurzach-Formation",
+                "15201630": "Ursplen-Till",
+                "15201631": "\u00c4ntschberg-Schotter",
+                "15201632": "Oberr\u00fcti-Schotter",
+                "15201633": "Neerach-Schotter",
+                "15201634": "Bachs-Schotter",
+                "15201635": "Steighalden-Schotter",
+                "15201636": "M\u00fchlbach-Formation",
+                "15201637": "Chilchberg-Schotter",
+                "15201638": "Frenkendorf-Schotter",
+                "15201639": "Birstal-Schotter",
+                "15201640": "Schlatt-Formation",
+                "15201641": "Illmensee-Formation",
+                "15201642": "Dietmanns-Formation",
+                "15201643": "Hasenweiler-Formation",
+                "15201644": "Haseltal-Formation",
+                "15201645": "Birndorf-, Laufenburg- und Zeiningen-Vorstoss",
+                "15201646": "Ch\u00e4ppeli-Schotter",
+                "15201647": "Leuggern-Schotter",
+                "15201648": "Zelgli-Schotter",
+                "15201649": "Leibstadt-Schotter",
+                "15201650": "Dogern-Schotter",
+                "15201651": "Haldenacher-Schotter",
+                "15201652": "Allmendwald-Schotter",
+                "15201653": "Lei-Schotter",
+                "15201654": "Obers\u00e4ckingen-Schotter",
+                "15201655": "Schulerholz-Formation",
+                "15201656": "Schachen-Formation",
+                "15201657": "Schmerlet-Formation",
+                "15201658": "Toktri-Formation",
+                "15201659": "Buchholz-Till",
+                "15201660": "Birndorf-Till",
+                "15201661": "Geiss\u00e4cker-Schotter",
+                "15201662": "B\u00fcrgerwald-Schotter",
+                "15201663": "Hettenschwil-Schotter",
+                "15201664": "Moos-Schotter",
+                "15201665": "Schl\u00fcsselgraben-Schotter",
+                "15201666": "Hundsbel-Schotter",
+                "15201667": "Laufenburg-Schotter",
+                "15201668": "Eilez-Schotter",
+                "15201669": "St.-Margarethen-Schotter",
+                "15201670": "Hegenheim-Schotter",
+                "15201671": "Blotzheim-Schotter",
+                "15201672": "Hardwald-Schotter",
+                "15201673": "Homberg-Schotter",
+                "15201674": "R\u00fcmlang-Schotter",
+                "15201675": "\u00c4pel\u00f6\u00f6-Schotter",
+                "15201676": "Fehrental-Schotter",
+                "15201677": "Challeren-Schotter",
+                "15201678": "Ausserberg-Schotter",
+                "15201679": "Leibstadt-Till",
+                "15201680": "Buechli-Schotter",
+                "15201681": "B\u00e4chemoos-Schotter",
+                "15201682": "Aarberg-Schotter",
+                "15201683": "Tannboden-Schotter",
+                "15201684": "Etzwil-Schotter",
+                "15201685": "Ellenb\u00fchl-Schotter",
+                "15201686": "Kegelplatz-Schotter",
+                "15201687": "Einschlag-Schotter",
+                "15201688": "Lehacker-Schotter",
+                "15201689": "Letten-Schotter",
+                "15201690": "Schw\u00f6rstadt-Schotter",
+                "15201691": "Steppberg-Schotter",
+                "15201692": "Bloseberg-Schotter",
+                "15201693": "Steinebol-Schotter",
+                "15201694": "Giebenach-Schotter",
+                "15201695": "Bl\u00f6zen-Schotter",
+                "15201696": "R\u00fctihard-Schotter",
+                "15201697": "Bruederholz-Schotter",
+                "15201698": "Binningen-Schotter",
+                "15201699": "Allschwil-Schotter",
+                "15201700": "Buschwiller-Schotter",
+                "15201701": "Berchenwald-Schotter",
+                "15201702": "H\u00f6rndli-Schotter",
+                "15201703": "Acheberg-Schotter",
+                "15201704": "M\u00fchleberg-Schotter",
+                "15201705": "Mandach-Schotter",
+                "15201706": "Duttenberg-Schotter",
+                "15201707": "Humbel-Schotter",
+                "15201708": "Frauewald-Schotter",
+                "15201709": "Bolderen-Schotter",
+                "15201710": "Seiglisten-Schotter",
+                "15201711": "Geispel-Schotter",
+                "15201712": "Birlib\u00e4nz-Schotter",
+                "15201713": "Sch\u00f6nenbuch-Schotter",
+                "15201714": "Wentzwiller-Schotter",
+                "15201715": "Bellevue-Schotter",
                 "999997": "unbekannt",
                 "999998": "nicht anwendbar"
             }
@@ -7064,396 +7536,400 @@
                 "fr": "Table des valeurs des unit\u00e9s tectoniques"
             },
             "pairs": {
-                "15301001": "Abgeschertes Nordalpines Vorland",
-                "15301022": "Avant-Monts-Zone",
-                "15301023": "Interner Faltenjura",
-                "15301024": "Externer Faltenjura",
-                "15301025": "Faisceaux",
-                "15301026": "Plateaus",
-                "15301027": "Abgescherter Tafeljura",
-                "15301030": "Vorlandplateau",
-                "15301031": "Vorfaltenzone",
-                "15301116": "Subalpine Molasse",
-                "15301118": "Rigi-Rossberg-Schuppe",
-                "15301119": "St.-Jost-Schuppe",
-                "15301120": "H\u00f6hronen-Schuppe",
-                "15301121": "Speer-Stockberg-Schuppe",
-                "15301122": "Schorh\u00fcttenberg-Schuppe",
-                "15301123": "Chr\u00e4zerli-Schuppe",
-                "15301124": "Kronberg-Schuppe",
-                "15301125": "\u00abZone Kronberg-S\u00fcd\u00bb",
-                "15301126": "G\u00e4bris-Schuppe",
-                "15301127": "Blueme-Beichle-Schuppe",
-                "15301128": "Hilfern-Schuppe",
-                "15301129": "Hornb\u00fcel-Schuppenzone",
-                "15301130": "Schangnau-Schuppe",
-                "15301131": "Belmont-Schuppe",
-                "15301132": "Lutry-Thonon-Schuppe",
-                "15301133": "Cully-Schuppe",
-                "15301134": "Lavaux-Schuppe",
-                "15301135": "Mont-P\u00e8lerin-Schuppe",
-                "15301136": "Vevey-Evian-Schuppe",
-                "15301137": "G\u00e9rignoz-La-Roche-Schuppe",
-                "15301138": "Vaulruz-Schuppe",
-                "15301139": "Champotey-Ramsera-Schuppe",
-                "15301140": "La-Pattaz-La-Holena-Schuppe",
-                "15301141": "Villarvolard-Schuppe",
-                "15301142": "Marbach-Berneck-Dreieckzone",
-                "15301143": "Subalpiner Schuppenkomplex",
-                "15301144": "Seftigschwand-Schuppe",
-                "15301145": "Steffisburg-Schuppe",
-                "15301146": "Wolfsegg-Schuppe",
-                "15301147": "Ralligen-Schuppenzone",
-                "15301148": "Hirschberg-Schuppe",
-                "15301149": "H\u00f6lzliberg-Schuppe",
-                "15301150": "Eichberg-Schuppe",
-                "15301151": "Giebelegg-Schuppe",
-                "15302020": "Hegau-Bodensee-St\u00f6rungszone",
-                "15302040": "Autochtones Nordalpines Vorland",
-                "15302042": "Haute-Sa\u00f4ne-Tafel",
-                "15302043": "S\u00fcddeutsche Tafel",
-                "15302045": "Oberrhein-Graben",
-                "15302046": "Bresse-Graben",
-                "15303001": "Unterhelvetikum",
-                "15303002": "Belledonne-Massiv",
-                "15303003": "Aiguilles-Rouges-Massiv",
-                "15303007": "Mont-Blanc-Massiv",
-                "15303008": "Gastern-Massiv",
-                "15303009": "Aar-Massiv",
-                "15303011": "Cha\u00eenes-subalpines-Decke",
-                "15303015": "Morcles-Decke",
-                "15303016": "Doldenhorn-Decke",
-                "15303017": "Ardon-Decke",
-                "15303018": "J\u00e4gerchr\u00fcz-Decke",
-                "15303019": "Plammis-Decke",
-                "15303020": "Gellihorn-Decke",
-                "15303021": "Tschep-Schuppe",
-                "15303023": "Griessstock-Decke",
-                "15303024": "Klausenpass-Schuppen",
-                "15303025": "Kammlistock-Decke",
-                "15303026": "Gitschen-Decke",
-                "15303027": "Cavistrau-Decke",
-                "15303028": "Oberhelvetikum",
-                "15303029": "Roselette-Decke",
-                "15303030": "Diablerets-Decke",
-                "15303031": "Wildhorn-Deckenkomplex",
-                "15303033": "Mont-Gond-Decke",
-                "15303034": "Sublage-Decke",
-                "15303037": "Wageten-Schuppe",
-                "15303038": "Glarner Deckenkomplex",
-                "15303039": "M\u00fcrtschen-Decke",
-                "15303040": "Hohenems-Decke",
-                "15303041": "Axen-Decke",
-                "15303042": "Wissberg-Schuppe",
-                "15303044": "Gonzen-Walenstadt-Schuppen",
-                "15303045": "S\u00e4ntis-Decke",
-                "15303046": "Drusberg-Decke",
-                "15303048": "Ultrahelvetikum",
-                "15303049": "Mont-Ch\u00e9tif-Decke",
-                "15303055": "Ilanz-Decke",
-                "15303057": "Tavetsch-Decke",
-                "15303058": "Gotthard-Decke",
-                "15303059": "Subalpine Flysch-Zone",
-                "15303060": "Einsiedeln-Schuppenkomplex",
-                "15303061": "Externe Einsiedeln-Schuppen",
-                "15303062": "Interne Einsiedeln-Schuppen",
-                "15303063": "Wildhaus-Melange",
-                "15303068": "Liebenstein-Decke",
-                "15303069": "Sardona-Decke",
-                "15303071": "Fl\u00e4scherberg-Decke",
-                "15303072": "Plaine-Morte-Decke",
-                "15303073": "Sex-Mort-Decke",
-                "15303074": "Bex-Laubhorn-Decke",
-                "15303075": "Arveyes-Decke",
-                "15303077": "Habkern-Melange-Zone",
-                "15303078": "Scopi-Decke",
-                "15303081": "Anzeinde-Decke",
-                "15303082": "Blattengrat-Decke",
-                "15303085": "Silberen-Schuppen",
-                "15303086": "B\u00e4chistock-Schuppe",
-                "15303088": "Hoch-Fulen-Decke",
-                "15303091": "Calanda-Decke",
-                "15303092": "Mirutta-Decke",
-                "15303094": "Chropfsberg-Schuppe",
-                "15303095": "Gaffia-Schuppe",
-                "15303096": "Logsbach-Schuppe",
-                "15303097": "Toralp-Schuppe",
-                "15303098": "Niederhorn-Pilatus-Schuppe",
-                "15303099": "B\u00fcrgenstock-Urmiberg-Schuppe",
-                "15303100": "Helvetikum",
-                "15303101": "Hochflue-Schuppe",
-                "15303102": "Camosci-Decke",
-                "15303103": "Piora-Peiden-Schuppenkomplex",
-                "15303104": "Iberg-Melange",
-                "15303105": "Broc-Schuppenkomplex",
-                "15303106": "Gros-Plan\u00e9-Melange",
-                "15303107": "Montsalvens-Schuppe",
-                "15303108": "Les-Pl\u00e9iades-Schuppe",
-                "15303109": "Bois-de-Bouleyres-Schuppe",
-                "15303110": "Tulle-Melange",
-                "15303111": "Piz-d'Artgas-Decke",
-                "15303112": "Externes Aar-Massiv",
-                "15303113": "Internes Aar-Massiv",
-                "15303114": "Trun-Punteglias-Teilmassiv",
-                "15303115": "Externes Mont-Blanc-Massiv",
-                "15303116": "Internes Mont-Blanc-Massiv",
-                "15303118": "M\u00e4ttental-Melange",
-                "15303119": "Bad-Ragaz-Decke",
-                "15303120": "Clariden-Schuppenkomplex",
-                "15303121": "Chamerstock-Schuppe",
-                "15303122": "Geisstritt-Schuppe",
-                "15303123": "Stichplatten-Schuppe",
-                "15303124": "Gemsfairen-Schuppe",
-                "15303125": "Rotstock-Schuppe",
-                "15303126": "Langfirn-Schuppe",
-                "15303127": "Fiseten-Orthalgen-Schuppen",
-                "15303128": "Chropfsberg-Gaffia-Schuppen",
-                "15303129": "Kaminspitz-Schuppe",
-                "15303130": "Axen-S\u00fcdschuppe",
-                "15303131": "Axen-Nordschuppe",
-                "15303132": "Sch\u00e4chentaler Windg\u00e4llen-Schuppen",
-                "15303133": "H\u00f6ch-Turm-Schuppen",
-                "15303134": "Wissenwand-Schuppe",
-                "15303135": "Schabell-Melange",
-                "15303136": "Tschingelh\u00f6rner-Schuppe",
-                "15303137": "Pizalun-Schuppe",
-                "15303138": "Friteren-Schuppe",
-                "15303139": "Maisander-Schuppe",
-                "15303140": "Internes Belledonne-Massiv",
-                "15303141": "Externes Belledonne-Massiv",
-                "15303142": "Stelli-Schuppe",
-                "15303143": "Orglen-Schuppen (Aar-Massiv-Anteil)",
-                "15303144": "Marchegghorn-Schuppe (Blattengrat-Anteil)",
-                "15303145": "Calanda-Decke (Blattengrat-Anteil)",
-                "15303146": "Mirutta-Schuppen (Blattengrat-Anteil)",
-                "15303147": "Marchegghorn-Schuppe (Sardona-Anteil)",
-                "15303148": "Orglen-Schuppen (Sardona-Anteil)",
-                "15303149": "Calanda-Decke (Sardona-Anteil)",
-                "15303150": "Mirutta-Schuppen (Sardona-Anteil)",
-                "15303151": "Calanda-Schuppe (Aar-Massiv-Anteil)",
-                "15303152": "Mirutta-Schuppen (Aar-Massiv-Anteil)",
-                "15303153": "S\u00fcdelbach-Zone",
-                "15303154": "S\u00f6renberg-Melange",
-                "15303155": "Maliens-Schuppe",
-                "15304002": "Leventina-Lucomagno-Decke",
-                "15304004": "Soja-Decke",
-                "15304005": "Piz-Terri-Lunschania-Decke",
-                "15304006": "G\u00fcida-Alpettas-Schuppen",
-                "15304008": "Simano-Decke",
-                "15304009": "Verampio-Decke",
-                "15304010": "Antigorio-Deckenkomplex",
-                "15304011": "Lebendun-Decke",
-                "15304012": "Monte-Leone-Decke",
-                "15304013": "Pizzo-del-Vallone-Decke",
-                "15304014": "Penninikum",
-                "15304015": "Unterpenninikum",
-                "15304017": "Cima-Lunga-Decke",
-                "15304018": "Adula-Decke",
-                "15304019": "Gruf-Komplex",
-                "15304025": "Isorno-Zone",
-                "15304026": "Bosco-Zone",
-                "15304027": "Niesen-Decke",
-                "15304028": "Sion-Courmayeur-Decke",
-                "15304029": "Ferret-Schuppe",
-                "15304030": "Mo\u00fbtiers-Schuppe",
-                "15304031": "Roignais-Versoyen-Schuppe",
-                "15304032": "Pierre-Avoi-Schuppe",
-                "15304033": "Petit-St-Bernard-Schuppe",
-                "15304034": "Chiavenna-Decke",
-                "15304035": "Vals-Schuppenkomplex",
-                "15304036": "Aul-Decke",
-                "15304038": "Grava-Decke",
-                "15304041": "Tom\u00fcl-Decke",
-                "15304043": "Feuerst\u00e4tter-Decke",
-                "15304044": "\u00dcntschen-Decke",
-                "15304045": "Roz-Champatsch-Melange",
-                "15304046": "Ramosch-Zone",
-                "15304047": "Muttler-Decke",
-                "15304048": "Zone Subm\u00e9diane",
-                "15304049": "Mittelpenninikum",
-                "15304050": "Zone Houill\u00e8re",
-                "15304051": "Zone Houill\u00e8re externe",
-                "15304052": "Zone Houill\u00e8re interne",
-                "15304053": "Visperterminen-Schuppe",
-                "15304054": "Untere Stalden-Schuppe",
-                "15304055": "Cimes-Blanches-Decke",
-                "15304056": "Frilihorn-Decke",
-                "15304057": "Klippen-Decke",
-                "15304058": "Pr\u00e9alpes m\u00e9dianes plastiques",
-                "15304059": "Pr\u00e9alpes m\u00e9dianes rigides",
-                "15304065": "Brekzien-Decke",
-                "15304066": "Falknis-Decke",
-                "15304067": "Sulzfluh-Decke",
-                "15304068": "Tasna-Decke",
-                "15304069": "Schams-Deckenkomplex",
-                "15304070": "Gelbhorn-Decke",
-                "15304072": "Tschera-Kalkberg-Decke",
-                "15304073": "Knorren-Melange",
-                "15304075": "Martegnas-Melange",
-                "15304076": "Areua-Bruschghorn-Melange",
-                "15304077": "Moncucco-Decke",
-                "15304078": "Bombogno-Zone",
-                "15304080": "Ruitor-Decke",
-                "15304081": "Obere Stalden-Decke",
-                "15304082": "Berisal-Decke",
-                "15304083": "Siviez-Mischabel-Decke",
-                "15304084": "Mont-Fort-Decke",
-                "15304085": "Monte-Rosa-Decke",
-                "15304086": "Maggia-Decke",
-                "15304088": "Sambuco-Decke",
-                "15304089": "Tambo-Decke",
-                "15304090": "Suretta-Decke",
-                "15304091": "Oberpenninikum",
-                "15304092": "Antrona-Decke",
-                "15304093": "Zermatt-Saas-Fee-Decke",
-                "15304094": "Tsat\u00e9-Decke",
-                "15304096": "Gets-Decke",
-                "15304097": "Avers-Decke",
-                "15304098": "Malenco-Forno-Lizun-Decke",
-                "15304099": "Platta-Decke",
-                "15304100": "Arosa-Decke",
-                "15304103": "Gurnigel-Decke",
-                "15304104": "Voirons-Decke",
-                "15304105": "Schlieren-Decke",
-                "15304106": "W\u00e4gital-Decke",
-                "15304107": "Dranses-Decke",
-                "15304108": "Saane-Decke",
-                "15304109": "San-Giorgio-Schuppe",
-                "15304111": "Garzott-Schuppe",
-                "15304112": "Terri-Schuppe",
-                "15304113": "Fanella-Schuppe",
-                "15304114": "Trescolmen-Schuppe",
-                "15304115": "Soazza-Schuppe",
-                "15304116": "Zervreila-Schuppe",
-                "15304117": "Gana-Palingera-Schuppe",
-                "15304118": "Claro-Schuppe",
-                "15304119": "Orselina-Bellinzona-Zone",
-                "15304120": "Kiental-Melange",
-                "15304121": "Meilleret-Decke",
-                "15304122": "Ochsenweid-Decke",
-                "15304123": "Lenk-Decke",
-                "15304125": "Ruginenta-Decke",
-                "15304126": "Portjengrat-Decke",
-                "15304127": "Stockhorn-Decke",
-                "15304128": "Darlun-Schuppe",
-                "15304129": "Groven-Schuppe",
-                "15304130": "Argio-Schuppe",
-                "15304131": "Bodengo-Schuppe",
-                "15304132": "Mergoscia-Zone",
-                "15304133": "Livizung-Schuppe",
-                "15304134": "Forcellina-Schuppe",
-                "15304135": "Val-Gronda-Schuppe",
-                "15304136": "Triesenberg-Schuppenkomplex",
-                "15304137": "Tschingel-Schuppe",
-                "15304138": "Grauspitz-Schuppe",
-                "15304139": "Glegghorn-Schuppe",
-                "15304140": "Gornergrat-Decke",
-                "15304141": "Untere Vals-Schuppen",
-                "15304142": "Obere Vals-Schuppen",
-                "15304143": "G\u00e4lmji-Zone",
-                "15304145": "Haupterhorn-Scholle",
-                "15304146": "Weissfluh-Scholle",
-                "15304147": "Gotschnawang-Scholle",
-                "15304148": "Dros-Scholle",
-                "15304149": "Totalp-Ophiolithkomplex",
-                "15304150": "Sasseneire-Decke",
-                "15304151": "Antigorio-Decke",
-                "15304152": "Rosswald-Schuppe",
-                "15304153": "Camughera-Decke",
-                "15304154": "Infra-Niesen-Melange",
-                "15304155": "Mythen-Roggenegg-Schuppe",
-                "15304156": "Obere Rotenflue-Schuppe",
-                "15304157": "St\u00e4glerenegg-Br\u00fcnnelistock-Schuppen ",
-                "15304158": "Aubrig-Schuppe",
-                "15304159": "Infrapr\u00e4alpines Melange",
-                "15305001": "Ostalpin",
-                "15305002": "Oberostalpin",
-                "15305004": "Krabachjoch-Decke",
-                "15305005": "Inntal-Decke",
-                "15305006": "Lechtal-Decke",
-                "15305007": "Allg\u00e4u-Decke",
-                "15305009": "Silvretta-Decke",
-                "15305012": "S-chanf-Schuppen",
-                "15305013": "\u00d6tztal-Decke",
-                "15305014": "Umbrail-Terza-Schuppenkomplex",
-                "15305015": "Quattervals-Decke",
-                "15305016": "S-charl-Sesvenna-Decke",
-                "15305018": "Ortler-Decke",
-                "15305019": "Campo-Decke",
-                "15305020": "Languard-Decke",
-                "15305022": "Tonale-Decke",
-                "15305023": "Unterostalpin",
-                "15305024": "Rothorn-Decke",
-                "15305026": "Tschirpen-Decke",
-                "15305027": "Stammerspitz-Schuppe",
-                "15305028": "Bernina-Deckenkomplex",
-                "15305029": "Bernina-Decke",
-                "15305030": "Mezzaun-Schuppe",
-                "15305031": "Madulain-Schuppenkomplex",
-                "15305032": "Ela-Decke",
-                "15305033": "Julier-Decke",
-                "15305035": "Err-Deckenkomplex",
-                "15305036": "Murtir\u00f6l-Schuppe",
-                "15305038": "Err-Decke",
-                "15305039": "Carungas-Schuppe",
-                "15305041": "Corvatsch-Schuppe",
-                "15305042": "Chastelets-Schuppe",
-                "15305043": "Bardella-Padella-Schuppenkomplex",
-                "15305047": "Terza-Schuppe",
-                "15305048": "Schiahorn-Decke",
-                "15305051": "Schesaplana-Schuppe",
-                "15305052": "Gorvion-Schuppe",
-                "15305053": "Augstenberg-Schuppe",
-                "15305054": "Ochsenkopf-Schuppe",
-                "15305055": "Heub\u00fchl-Schuppe",
-                "15305056": "Drei-Schwestern-Schuppe",
-                "15305057": "Schafl\u00e4ger-Decke",
-                "15305058": "Dorfberg-Decke",
-                "15305059": "Gr\u00fcenhorn-Schuppe",
-                "15305060": "Casanna-Schuppe",
-                "15305070": "Roggenstock-M\u00f6rdergruebi-Decke",
-                "15305072": "Madrisa-Schuppe",
-                "15305082": "Umbrail-Chavalatsch-Schuppen",
-                "15306001": "S\u00fcdalpin",
-                "15306002": "Ivrea-Verbano-Zone",
-                "15306003": "Strona-Ceneri-Zone",
-                "15306004": "Canavese-Zone",
-                "15306005": "Obere Orobische Decke",
-                "15306006": "Untere Orobische Decke",
-                "15306007": "Po-Becken",
-                "15306008": "Milan Belt",
-                "15306009": "S\u00fcdalpin Sub-Dom\u00e4ne undifferenziert",
-                "15307003": "Periadriatische Provinz",
-                "15307004": "Adamello-Intrusion",
-                "15307005": "Novate-Intrusion",
-                "15307006": "Bregaglia-Intrusion",
-                "15307008": "Periadriatische Vulkanite entlang der Insubrischen Linie",
-                "15307009": "K\u00e4nozoische magmatische Provinzen",
-                "15307010": "Hegau-Provinz",
-                "15308001": "Salassikum",
-                "15308002": "Salassikum Sub-Dom\u00e4ne undifferenziert",
-                "15308009": "Mont-Emilius-Decke",
-                "15308010": "Mont-Mary-Decke",
-                "15308011": "Roisan-Cignana-Scherzone",
-                "15308012": "Untere Einheit der Mont-Mary-Decke",
-                "15308013": "Obere Einheit der Mont-Mary-Decke",
-                "15308014": "Dent-Blanche-Decke",
-                "15308015": "Arolla-Einheit",
-                "15308016": "Valpelline-Einheit",
-                "15308017": "Sesia-Decke",
-                "15308018": "IIa Zona Dioritico-Kinzigitica",
-                "15308019": "Gneiss-minuti-Einheit",
-                "15308021": "Micascisti-eclogitici-Einheit",
-                "15308022": "Margna-Decke",
-                "15308023": "Sella-Decke",
-                "15308024": "Simmen-Decke",
-                "15308025": "Etirol-Levaz-Schuppe",
-                "15308026": "Chatillon-St-Vincent-Schuppen",
-                "15308027": "Grun-Schuppe",
-                "15308028": "Chatillon-Schuppe",
-                "15308029": "Pontey-Schuppe",
-                "15308030": "Grun-Schuppe",
-                "15308031": "Vollon-Schuppe",
+                "15309001": "Autochthones Nordalpines Vorland",
+                "15309002": "Bresse-Graben",
+                "15309003": "Haute-Sa\u00f4ne-Tafel",
+                "15309004": "Oberrhein-Graben",
+                "15309005": "S\u00fcddeutsche Tafel",
+                "15309006": "Hegau-Bodensee-Graben",
+                "15309007": "\u00dcbergangszone zwischen Abgeschertem und Autochthonem Vorlandplateau",
+                "15309008": "Abgeschertes Nordalpines Vorland",
+                "15309009": "Externer Faltenjura",
+                "15309010": "Faisceaux",
+                "15309011": "Plateaux",
+                "15309012": "Interner Faltenjura und Vorlandplateau",
+                "15309013": "Subalpine Molasse",
+                "15309014": "Marbach-Berneck-Dreieckzone",
+                "15309015": "Subalpiner Schuppenkomplex",
+                "15309016": "Belmont-Schuppe",
+                "15309017": "Lutry-Thonon-Schuppe",
+                "15309018": "Br\u00e9corens-Lucinges-Schuppe",
+                "15309019": "Cully-Schuppe",
+                "15309020": "Lavaux-Schuppe",
+                "15309021": "Mont-P\u00e8lerin-Schuppe",
+                "15309022": "Vevey-Evian-Schuppe",
+                "15309023": "G\u00e9rignoz-La-Roche-Schuppe",
+                "15309024": "Vaulruz-Schuppe",
+                "15309025": "Champotey-Ramsera-Schuppe",
+                "15309026": "La-Pattaz-La-Holena-Schuppe",
+                "15309027": "Villarvolard-Schuppe",
+                "15309028": "Seftigschwand-Schuppe",
+                "15309029": "Giebelegg-Schuppe",
+                "15309030": "Steffisburg-Schuppe",
+                "15309031": "Schangnau-Schuppe",
+                "15309032": "Hornb\u00fcel-Schuppenzone",
+                "15309033": "Blueme-Beichle-Schuppe",
+                "15309034": "Wolfsegg-Schuppe",
+                "15309035": "Ralligen-Schuppenzone",
+                "15309036": "Hilfern-Schuppe",
+                "15309037": "H\u00f6hronen-Schuppe",
+                "15309038": "St.-Jost-Schuppe",
+                "15309039": "Rigi-Rossberg-Schuppe",
+                "15309040": "G\u00e4bris-Schuppe",
+                "15309041": "Kronberg-Schuppe",
+                "15309042": "\u00abZone Kronberg-S\u00fcd\u00bb",
+                "15309043": "Schorh\u00fcttenberg-Schuppe",
+                "15309044": "Speer-Stockberg-Schuppe",
+                "15309045": "Chr\u00e4zerli-Schuppe",
+                "15309046": "Hirschberg-Schuppe",
+                "15309047": "H\u00f6lzliberg-Schuppe",
+                "15309048": "Eichberg-Schuppe",
+                "15309049": "Helvetikum",
+                "15309050": "Unterhelvetikum",
+                "15309051": "Subalpine Flysch-Zone",
+                "15309052": "Externe Einsiedeln-Schuppen",
+                "15309053": "Belledonne-Massiv",
+                "15309054": "Externes Belledonne-Massiv",
+                "15309055": "Mittleres Belledonne-Massiv",
+                "15309056": "Internes Belledonne-Massiv",
+                "15309057": "Aiguilles-Rouges-Massiv",
+                "15309058": "Mont-Blanc-Massiv",
+                "15309059": "Externes Mont-Blanc-Massiv",
+                "15309060": "Internes Mont-Blanc-Massiv",
+                "15309061": "Aar-Massiv",
+                "15309062": "Externes Aar-Massiv",
+                "15309063": "Gastern-Teilmassiv",
+                "15309064": "Internes Aar-Massiv",
+                "15309065": "Baltschieder-Gletsch-Teilmassiv",
+                "15309066": "Trun-Punteglias-Teilmassiv",
+                "15309067": "Kaminspitz-Schuppe",
+                "15309068": "Stelli-Schuppe",
+                "15309069": "Orglen-Schuppen (Aar-Massiv-Anteil)",
+                "15309070": "Calanda-Schuppe (Aar-Massiv-Anteil)",
+                "15309071": "Mirutta-Schuppen (Aar-Massiv-Anteil)",
+                "15309072": "Tschep-Schuppe",
+                "15309073": "Maliens-Schuppe",
+                "15309074": "Piz-d'Artgas-Schuppe",
+                "15309075": "Hoch-Fulen-Schuppe",
+                "15309076": "Chaines-Subalpines-Decke",
+                "15309077": "Morcles-Decke",
+                "15309078": "Ardon-Decke",
+                "15309079": "Doldenhorn-Decke",
+                "15309080": "Gellihorn-Decke",
+                "15309081": "Plammis-Decke",
+                "15309082": "J\u00e4gerchr\u00fcz-Decke",
+                "15309083": "Kammlistock-Decke",
+                "15309084": "Griessstock-Decke",
+                "15309085": "Clariden-Schuppenkomplex",
+                "15309086": "Klausenpass-Schuppen",
+                "15309087": "Chamerstock-Schuppe",
+                "15309088": "Geisstritt-Schuppe",
+                "15309089": "Stichplatten-Schuppe",
+                "15309090": "Gemsfairen-Schuppe",
+                "15309091": "Rotstock-Schuppe",
+                "15309092": "Langfirn-Schuppe",
+                "15309093": "Fiseten-Orthalden-Schuppen",
+                "15309094": "Cavistrau-Decke",
+                "15309095": "Chropfsberg-Pizalun-Schuppen",
+                "15309096": "Chropfsberg-Schuppe",
+                "15309097": "Pizalun-Schuppe",
+                "15309098": "Gaffia-Schuppe",
+                "15309099": "Logsbach-Schuppe",
+                "15309100": "M\u00e4ttental-Melange",
+                "15309101": "Schabell-Melange",
+                "15309102": "Tschingelh\u00f6rner-Schuppen",
+                "15309103": "Blattengrat-Decke",
+                "15309104": "Marchegghorn-Schuppe (Blattengrat-Anteil)",
+                "15309105": "Calanda-Schuppe (Blattengrat-Anteil)",
+                "15309106": "Mirutta-Schuppe (Blattengrat-Anteil)",
+                "15309107": "Sardona-Decke",
+                "15309108": "Marchegghorn-Schuppe (Sardona-Anteil)",
+                "15309109": "Orglen-Schuppen (Sardona-Anteil)",
+                "15309110": "Calanda-Schuppe (Sardona-Anteil)",
+                "15309111": "Mirutta-Schuppe (Sardona-Anteil)",
+                "15309112": "Bad-Ragaz-Decke",
+                "15309113": "Calanda-Schuppe (undifferenziert)",
+                "15309114": "Marchegghorn-Schuppe (undifferenziert)",
+                "15309115": "Mirutta-Schuppe (undifferenziert)",
+                "15309116": "Orglen-Schuppe (undifferenziert)",
+                "15309117": "Oberhelvetikum",
+                "15309118": "Mont-Ch\u00e9tif-Decke",
+                "15309119": "Roselette-Decke",
+                "15309120": "Wildhorn-Deckenkomplex",
+                "15309121": "Diablerets-Decke",
+                "15309122": "Mont-Gond-Decke",
+                "15309123": "Sublage-Decke",
+                "15309124": "Glarner Deckenkomplex",
+                "15309125": "Wageten-Schuppe",
+                "15309126": "Gonzen-Walenstadt-Schuppen",
+                "15309127": "M\u00fcrtschen-Decke",
+                "15309128": "Axen-Decke",
+                "15309129": "Toralp-Schuppe",
+                "15309130": "Silberen-Schuppen",
+                "15309131": "B\u00e4chistock-Schuppe",
+                "15309132": "Axen-S\u00fcdschuppe",
+                "15309133": "Axen-Nordschuppe",
+                "15309134": "Wissberg-Schuppe",
+                "15309135": "Sch\u00e4chentaler Windg\u00e4llen-Schuppen",
+                "15309136": "H\u00f6ch-Turm-Schuppen",
+                "15309137": "Friteren-Schuppe",
+                "15309138": "Drusberg-Decke",
+                "15309139": "Wissenwand-Schuppe",
+                "15309140": "Niederhorn-Pilatus-Schuppe",
+                "15309141": "B\u00fcrgenstock-Urmiberg-Schuppe",
+                "15309142": "Hochflue-Schuppe",
+                "15309143": "Maisander-Schuppe",
+                "15309144": "Aubrig-Schuppe",
+                "15309145": "S\u00e4ntis-Decke",
+                "15309146": "Hohenems-Decke",
+                "15309147": "Tavetsch-Decke",
+                "15309148": "Ilanz-Decke",
+                "15309149": "Gotthard-Decke",
+                "15309150": "Camosci-Decke",
+                "15309151": "Scopi-Decke",
+                "15309152": "Piora-Peiden-Schuppenkomplex",
+                "15309153": "Habkern-Melangezone",
+                "15309154": "Iberg-Melange",
+                "15309155": "Interne Einsiedeln-Schuppen",
+                "15309156": "Wildhaus-Melange",
+                "15309157": "Liebenstein-Decke",
+                "15309158": "Fl\u00e4scherberg-Decke",
+                "15309159": "Pillon-Melangezone",
+                "15309160": "Plaine-Morte-Melange",
+                "15309161": "Anzeinde-type slivers",
+                "15309162": "Sex-Mort-type slivers",
+                "15309163": "Arveyes-type slivers",
+                "15309164": "Bex-Laubhorn-type slivers",
+                "15309165": "Meilleret-type slivers",
+                "15309166": "Bulle-Melangezone",
+                "15309167": "Infrapr\u00e4alpines Melange",
+                "15309168": "Montsalvens-Schuppe",
+                "15309169": "Les-Pl\u00e9iades-Schuppe",
+                "15309170": "Bois-de-Bouleyres-Schuppe",
+                "15309171": "Faucigny-Schuppen",
+                "15309172": "Lepontikum",
+                "15309173": "Verampio-Decke",
+                "15309174": "Antigorio-Deckenkomplex",
+                "15309175": "Antigorio-Decke",
+                "15309176": "Mergoscia-Zone",
+                "15309177": "Lebendun-Decke",
+                "15309178": "Monte-Leone-Decke",
+                "15309179": "Moncucco-Decke",
+                "15309180": "Pizzo-del-Vallone-Decke",
+                "15309181": "Isorno-Zone",
+                "15309182": "Orselina-Bellinzona-Zone",
+                "15309183": "Bosco-Zone",
+                "15309184": "Bombogno-Zone",
+                "15309185": "Maggia-Decke",
+                "15309186": "Sambuco-Decke",
+                "15309187": "San-Giorgio-Schuppe",
+                "15309188": "Leventina-Lucomagno-Decke",
+                "15309189": "Simano-Decke",
+                "15309190": "Cima-Lunga-Decke",
+                "15309191": "Adula-Decke",
+                "15309192": "Gruf-Komplex",
+                "15309193": "Soja-Decke",
+                "15309194": "Garzott-Schuppen",
+                "15309195": "Piz-Terri-Lunschania-Decke",
+                "15309196": "Terri-Schuppe",
+                "15309197": "G\u00fcida-Alpettas-Schuppen",
+                "15309198": "Darlun-Schuppe",
+                "15309199": "Penninikum",
+                "15309200": "Unterpenninikum",
+                "15309201": "Niesen-Decke",
+                "15309202": "Infraniesen-Melange",
+                "15309203": "Voirons-Decke",
+                "15309204": "Gurnigel-Decke",
+                "15309205": "Schlieren-Decke",
+                "15309206": "W\u00e4gital-Decke",
+                "15309207": "\u00dcntschen-Decke",
+                "15309208": "Sigiswang-Decke",
+                "15309209": "Triesenberg-Schuppenkomplex",
+                "15309210": "Oberstdorf-Decke",
+                "15309211": "Sion-Courmayeur-Decke",
+                "15309212": "Rosswald-Schuppe",
+                "15309213": "Ferret-Schuppe",
+                "15309214": "Mo\u00fbtiers-Schuppe",
+                "15309215": "Roignais-Versoyen-Schuppe",
+                "15309216": "Pierre-Avoi-Schuppe",
+                "15309217": "Petit-St-Bernard-Schuppe",
+                "15309218": "Chiavenna-Decke",
+                "15309219": "Vals-Schuppen",
+                "15309220": "Aul-Decke",
+                "15309221": "Grava-Decke",
+                "15309222": "Tom\u00fcl-Decke",
+                "15309223": "Forbesch-Schuppe",
+                "15309224": "Roz-Champatsch-Melange",
+                "15309225": "Ramosch-Zone",
+                "15309226": "Pfunds-Decke",
+                "15309227": "Mittelpenninikum",
+                "15309228": "Zone Subm\u00e9diane",
+                "15309229": "Klippen-Decke",
+                "15309230": "Pr\u00e9alpes M\u00e9dianes Plastiques",
+                "15309231": "Pr\u00e9alpes M\u00e9dianes Rigides",
+                "15309232": "Mythen-Roggenegg-Schuppe",
+                "15309233": "Obere Rotenflue-Schuppe",
+                "15309234": "St\u00e4glerenegg-Br\u00fcnnelistock-Schuppen ",
+                "15309235": "Brekzien-Decke",
+                "15309236": "Zone Houill\u00e8re",
+                "15309237": "Zone Houill\u00e8re externe",
+                "15309238": "Zone Houill\u00e8re interne",
+                "15309239": "Visperterminen-Schuppe",
+                "15309240": "Untere Stalden-Schuppe",
+                "15309241": "G\u00e4lmji-Zone",
+                "15309242": "Ruginenta-Decke",
+                "15309243": "Ruitor-Decke",
+                "15309244": "Obere Stalden-Decke",
+                "15309245": "Berisal-Decke",
+                "15309246": "Camughera-Decke",
+                "15309247": "Siviez-Mischabel-Decke",
+                "15309248": "Mont-Fort-Decke",
+                "15309249": "Portjengrat-Decke",
+                "15309250": "Stockhorn-Decke",
+                "15309251": "Monte-Rosa-Decke",
+                "15309252": "Tambo-Decke",
+                "15309253": "Suretta-Decke",
+                "15309254": "Schams-Deckenkomplex",
+                "15309255": "Gelbhorn-Decke",
+                "15309256": "Tschera-Kalkberg-Decke",
+                "15309257": "Knorren-Melange",
+                "15309258": "Martegnas-Melange",
+                "15309259": "Areua-Bruschghorn-Melange",
+                "15309260": "Falknis-Decke",
+                "15309261": "Tschingel-Schuppe",
+                "15309262": "Grauspitz-Schuppe",
+                "15309263": "Glegghorn-Schuppe",
+                "15309264": "Sulzfluh-Decke",
+                "15309265": "Fimber-Zone",
+                "15309266": "Tasna-Decke",
+                "15309267": "Oberpenninikum",
+                "15309268": "Gets-Decke",
+                "15309269": "Simmen-Decke",
+                "15309270": "Dranses-Decke",
+                "15309271": "Saane-Decke",
+                "15309272": "Antrona-Decke",
+                "15309273": "Zermatt-Saas-Fee-Decke",
+                "15309274": "Theodulgletscher-Schuppe",
+                "15309275": "Mont-Emilius-Decke",
+                "15309276": "Etirol-Levaz-Schuppe",
+                "15309277": "Ch\u00e2tillon-St-Vincent-Schuppen",
+                "15309278": "Ch\u00e2tillon-Schuppe",
+                "15309279": "Pontey-Schuppe",
+                "15309280": "Grun-Schuppe",
+                "15309281": "Vollon-Schuppe",
+                "15309282": "Gornergrat-Decke",
+                "15309283": "Cimes-Blanches-Decke",
+                "15309284": "Frilihorn-Decke",
+                "15309285": "Tsat\u00e9-Decke",
+                "15309286": "Avers-Decke",
+                "15309287": "Malenco-Forno-Lizun-Decke",
+                "15309288": "Platta-Decke",
+                "15309289": "Arosa-Zone",
+                "15309290": "Haupterhorn-Scholle",
+                "15309291": "Weissfluh-Scholle",
+                "15309292": "Gotschnawang-Scholle",
+                "15309293": "Dros-Scholle",
+                "15309294": "Totalp-Ophiolithkomplex",
+                "15309295": "Salassikum",
+                "15309296": "Mont-Mary-Decke",
+                "15309297": "Untere Einheit der Mont-Mary-Decke",
+                "15309298": "Obere Einheit der Mont-Mary-Decke",
+                "15309299": "Roisan-Cignana-Scherzone",
+                "15309300": "Dent-Blanche-Decke",
+                "15309301": "Arolla-Einheit",
+                "15309302": "Valpelline-Einheit",
+                "15309303": "Sesia-Decke",
+                "15309304": "Seconda Zona Dioritico-Kinzigitica",
+                "15309305": "Gneiss-minuti-Einheit",
+                "15309306": "Micascisti-eclogitici-Einheit",
+                "15309307": "Margna-Decke",
+                "15309308": "Forcellina-Schuppe",
+                "15309309": "Sella-Decke",
+                "15309310": "Ostalpin",
+                "15309311": "Unterostalpin",
+                "15309312": "Rothorn-Schwarzhorn-Deckenkomplex",
+                "15309313": "Rothorn-Decke",
+                "15309314": "Tschirpen-Decke",
+                "15309315": "Schafl\u00e4ger-Decke",
+                "15309316": "Dorfberg-Decke",
+                "15309317": "Gr\u00fcenhorn-Casanna-Schuppenkomplex",
+                "15309318": "Gr\u00fcenhorn-Schuppe",
+                "15309319": "Casanna-Schuppe",
+                "15309320": "Stammerspitz-Schuppe",
+                "15309321": "Bernina-Deckenkomplex",
+                "15309322": "Ela-Decke",
+                "15309323": "Bernina-Decke",
+                "15309324": "M\u00fcsella-Schuppe",
+                "15309325": "Mezzaun-Schuppe",
+                "15309326": "Madulain-Schuppen",
+                "15309327": "Schlattain-Clavadatsch-Padella-Schuppen",
+                "15309328": "Julier-Decke",
+                "15309329": "Err-Deckenkomplex",
+                "15309330": "Murtir\u00f6l-Schuppe",
+                "15309331": "Err-Decke",
+                "15309332": "Carungas-Schuppe",
+                "15309333": "Corvatsch-Schuppe",
+                "15309334": "Chastelets-Schuppe",
+                "15309335": "Bardella-Roccabella-Schuppen",
+                "15309336": "Oberostalpin",
+                "15309337": "Campo-Deckenkomplex",
+                "15309338": "Masuccio-Decke",
+                "15309339": "Campo-Decke",
+                "15309340": "Grosina-Decke",
+                "15309341": "Laas-Decke",
+                "15309342": "Vinschgau-Scherzone",
+                "15309343": "Languard-Decke",
+                "15309344": "Tonale-Decke",
+                "15309345": "Ulten-Einheit",
+                "15309346": "Krabachjoch-Decke",
+                "15309347": "Inntal-Decke",
+                "15309348": "Roggenstock-M\u00f6rdergruebi-Decke",
+                "15309349": "Lechtal-Decke",
+                "15309350": "Madrisa-Schuppe",
+                "15309351": "Schesaplana-Schuppe",
+                "15309352": "Gorvion-Schuppe",
+                "15309353": "Augstenberg-Schuppe",
+                "15309354": "Ochsenkopf-Schuppe",
+                "15309355": "Heub\u00fchl-Schuppe",
+                "15309356": "Drei-Schwestern-Schuppe",
+                "15309357": "Allg\u00e4u-Decke",
+                "15309358": "Cenoman-Randschuppe",
+                "15309359": "Schiahorn-Decke",
+                "15309360": "Silvretta-Decke",
+                "15309361": "S-chanf-Schuppen",
+                "15309362": "Phyllitgneiszone",
+                "15309363": "\u00d6tztal-Deckenkomplex",
+                "15309364": "Matsch-Decke",
+                "15309365": "Umbrail-Terza-Schuppenkomplex",
+                "15309366": "Umbrail-Chavalatsch-Schuppen",
+                "15309367": "Terza-Schuppe",
+                "15309368": "Quattervals-Decke",
+                "15309369": "S-charl-Sesvenna-Decke",
+                "15309370": "Tavr\u00fc-Schuppe",
+                "15309371": "Ortler-Decke",
+                "15309372": "S\u00fcdalpin",
+                "15309373": "Canavese-Zone",
+                "15309374": "Ivrea-Ceneri-Komplex",
+                "15309375": "Ivrea-Zone",
+                "15309376": "Strona-Ceneri-Zone (Ivrea-Ceneri-Anteil)",
+                "15309377": "Milano-Belt",
+                "15309378": "Externe Giudicarie-Zone",
+                "15309379": "Untere Orobische Schuppen",
+                "15309380": "Interne Giudicarie-Zone",
+                "15309381": "Obere Orobische Decke",
+                "15309382": "Val-Colla-Zone",
+                "15309383": "Strona-Ceneri-Zone (Oberer Orobischer Anteil)",
+                "15309384": "Varesotto-Schuppen",
+                "15309385": "Strona-Ceneri-Zone (undifferenziert)",
+                "15309386": "K\u00e4nozoische magmatische Gesteine",
+                "15309387": "Vulkanische Serie des Hegaus",
+                "15309388": "Periadriatische magmatische Provinz",
+                "15309389": "Vulkanische Serie von Biella",
+                "15309390": "Subvulkanischer K\u00f6rper vom Colle Gallo",
+                "15309391": "Subvulkanischer K\u00f6rper von Gandino",
+                "15309392": "Bregaglia-Intrusionsk\u00f6rper",
+                "15309393": "Novate-Intrusionsk\u00f6rper",
+                "15309394": "Adamello-Batholith",
                 "999997": "unbekannt",
                 "999998": "nicht anwendbar"
             }
@@ -7644,6 +8120,6 @@
             }
         }
     ],
-    "hash": "a4e61c5",
+    "hash": "757b50d",
     "lang": "de"
 }
