@@ -332,11 +332,27 @@ def schema(output_dir, workspace, log_level):
     help="The file for the output",
 )
 @click.option(
-    "-i",
-    "--input-dir",
-    type=click.Path(exists=True, file_okay=False),
-    default="exports",
-    help="The input data dir",
+    "-s",
+    "--schema-file",
+    required=True,
+    type=click.Path(exists=True, file_okay=True),
+    default="exports/geocover-schema-sde.json",
+    help="The input schema file",
+)
+@click.option(
+    "-t",
+    "--subtypes-file",
+    required=True,
+    type=click.Path(exists=True, file_okay=True),
+    default="exports/subtypes_dict.json",
+    help="The input subtypes file",
+)
+@click.option(
+    "-u",
+    "--use-translation",
+    default=False,
+    help="Use translation XLS file. Caution, with older GDB, it may end with too many geolcodes.",
+    is_flag=True,
 )
 @click.option(
     "-l",
@@ -348,20 +364,27 @@ def schema(output_dir, workspace, log_level):
     show_default=True,
     help="Log level",
 )
-def geolcode(input_dir, output_file, log_level):
+def geolcode(schema_file, subtypes_file, output_file, use_translation, log_level):
     from geocover import all_geolcodes
 
     logger = logging.getLogger(__name__)
     logger.setLevel(log_level.upper())
     logger.addHandler(logging.StreamHandler(sys.stdout))
 
+    schema_path = os.path.abspath(schema_file)
+    subtypes_path = os.path.abspath(subtypes_file)
+
     try:
         ext = os.path.basename(os.path.abspath(output_file)).split(".")[1]
+        if ext not in ["json", "xlsx"]:
+            raise ValueError
     except ValueError as e:
         logger.error(f"Output {output_file} is not an '.json' or an ',xlsx' file: {e}")
         sys.exit()
 
-    df = all_geolcodes.get_geol_codes(input_dir)
+    df = all_geolcodes.get_geol_codes(
+        schema_path, subtypes_path, use_translation=use_translation
+    )
 
     json_str = df.to_dict(orient="records")
 
