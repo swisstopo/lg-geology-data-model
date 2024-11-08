@@ -27,24 +27,20 @@ TRAD_CSV = "GeolCodeText_Trad_230317.csv"
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-# Utility functions
-def remove_abrev(value):
-    # Placeholder for your actual abbreviation removal logic
-    return value.replace("Abrev", "")
 
-def get_geol_codes(exports_dir):
+def get_geol_codes(schema_path, subtypes_path, use_translation=False):
     data = []
     trad = None
-
-    exports_dir = Path(exports_dir)
 
     try:
         if sys.version_info >= (3, 9):
             from importlib import resources
+
             with resources.path("geocover.data", TRAD_CSV) as csv_path:
                 trad = pd.read_csv(csv_path, sep=";")
         else:
             import pkg_resources as resources
+
             csv_path = resources.resource_filename("geocover.data", TRAD_CSV)
             trad = pd.read_csv(csv_path, sep=";")
     except Exception as e:
@@ -52,20 +48,21 @@ def get_geol_codes(exports_dir):
         return pd.DataFrame()  # Return empty DataFrame if loading fails
 
     # Process GeolCode and German translations
-    try:
-        geol_codes = list(zip(trad["GeolCodeInt"], trad["DE"]))
-        for key, val in geol_codes:
-            data.append(("traduction", int(key), remove_abrev(val)))
-    except KeyError as e:
-        logger.error(f"Missing expected column in CSV '{TRAD_CSV}': {e}")
-        return pd.DataFrame()
+    if use_translation:
+        try:
+            geol_codes = list(zip(trad["GeolCodeInt"], trad["DE"]))
+            for key, val in geol_codes:
+                data.append(("traduction", int(key), remove_abrev(val)))
+        except KeyError as e:
+            logger.error(f"Missing expected column in CSV '{TRAD_CSV}': {e}")
+            return pd.DataFrame()
 
     # Load geocover schema and subtypes
     try:
-        with open(exports_dir / "geocover-schema-sde.json", "r") as f:
+        with open(schema_path, "r") as f:
             domains = json.load(f).get("domains", {})
 
-        with open(exports_dir / "subtypes_dict.json", "r") as f:
+        with open(subtypes_path, "r") as f:
             subtypes = json.load(f)
     except (FileNotFoundError, json.JSONDecodeError) as e:
         logger.error(f"Failed to load schema or subtypes file: {e}")
@@ -84,22 +81,27 @@ def get_geol_codes(exports_dir):
             continue
 
         domain_type = domain.get("type")
-        if domain_type == "Range":
-            continue
-        elif domain_type == "CodedValue":
-            coded_values = domain.get("codedValues", {})
-            for key, val in coded_values.items():
-                try:
-                    data.append((domain_name, int(key), remove_abrev(val)))
-                except ValueError as e:
-                    logger.warning(f"Invalid coded value key or value in {domain_name} ({key}, {val}): {e}")
+        if domain_type:
+            if domain_type == "Range":
+                continue
+            elif domain_type == "CodedValue":
+                coded_values = domain.get("codedValues", {})
+                for key, val in coded_values.items():
+                    try:
+                        data.append((domain_name, int(key), remove_abrev(val)))
+                    except ValueError as e:
+                        logger.warning(
+                            f"Invalid coded value key or value in {domain_name} ({key}, {val}): {e}"
+                        )
         else:
             # Process legacy domain structure
             for key, val in domain.items():
                 try:
                     data.append((domain_name, int(key), remove_abrev(val)))
                 except ValueError as e:
-                    logger.warning(f"Invalid legacy domain key or value in {domain_name} ({key}, {val}): {e}")
+                    logger.warning(
+                        f"Invalid legacy domain key or value in {domain_name} ({key}, {val}): {e}"
+                    )
 
     # Create DataFrame and process duplicates
     df = pd.DataFrame(data, columns=["domain", "geolcode", "german"])
@@ -108,7 +110,9 @@ def get_geol_codes(exports_dir):
         return df
 
     # Group by geolcode to aggregate source domains
-    df["source"] = df.groupby("geolcode")["domain"].transform(lambda x: ",".join(sorted(set(x))))
+    df["source"] = df.groupby("geolcode")["domain"].transform(
+        lambda x: ",".join(sorted(set(x)))
+    )
     df = df.drop(columns="domain").drop_duplicates(subset=["geolcode", "german"])
 
     # Sort by geolcode for consistency
