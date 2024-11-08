@@ -545,7 +545,7 @@ def generate(lang, datamodel, output):
         
         
     # Geolcode
-    xlsx_file = 'comparison_results.xlsx'
+    xlsx_file = os.path.join(yaml_dir, 'exports', 'comparison_results.xlsx')
     added_rows = pd.read_excel(xlsx_file, sheet_name='Added Rows')
     removed_rows = pd.read_excel(xlsx_file, sheet_name='Removed Rows')
     changed_rows = pd.read_excel(xlsx_file, sheet_name='Changed Rows')
