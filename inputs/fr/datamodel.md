@@ -1,5 +1,5 @@
 
-# Modèle de donnée géologique, Révision 3.9.10 #
+# Modèle de donnée géologique, Révision 3.9.11 #
 
 
 
@@ -3828,6 +3828,7 @@ _Type de l&#39;objet_
 |12701001 | Gletscher | glacier     |
 |12701002 | See | lac     |
 |12701003 | Fluss | rivière     |
+
 
 
 
@@ -7963,4 +7964,439 @@ Groupe de fossile
 
 
 
+
+
+## GeolCodes changés 2022-2024 
+
+
+### Geolcodes ajoutés 
+
+
+| Geolcode | Deutsch |
+|----------|--------|
+| 15309183 | Bosco-Zone |
+| 15309184 | Bombogno-Zone |
+| 15309185 | Maggia-Decke |
+| 15309186 | Sambuco-Decke |
+| 15309187 | San-Giorgio-Schuppe |
+| 15309188 | Leventina-Lucomagno-Decke |
+| 15309189 | Simano-Decke |
+| 15309190 | Cima-Lunga-Decke |
+| 15309191 | Adula-Decke |
+| 15309192 | Gruf-Komplex |
+| 15309193 | Soja-Decke |
+| 15309194 | Garzott-Schuppen |
+| 15309195 | Piz-Terri-Lunschania-Decke |
+| 15309196 | Terri-Schuppe |
+| 15309197 | Güida-Alpettas-Schuppen |
+| 15309198 | Darlun-Schuppe |
+| 15309199 | Penninikum |
+| 15309200 | Unterpenninikum |
+| 15309201 | Niesen-Decke |
+| 15309202 | Infraniesen-Melange |
+| 15309203 | Voirons-Decke |
+| 15309204 | Gurnigel-Decke |
+| 15309205 | Schlieren-Decke |
+| 15309206 | Wägital-Decke |
+| 15309207 | Üntschen-Decke |
+| 15309208 | Sigiswang-Decke |
+| 15309209 | Triesenberg-Schuppenkomplex |
+| 15309210 | Oberstdorf-Decke |
+| 15309211 | Sion-Courmayeur-Decke |
+| 15309212 | Rosswald-Schuppe |
+| 15309213 | Ferret-Schuppe |
+| 15309214 | Moûtiers-Schuppe |
+| 15309215 | Roignais-Versoyen-Schuppe |
+| 15309216 | Pierre-Avoi-Schuppe |
+| 15309217 | Petit-St-Bernard-Schuppe |
+| 15309218 | Chiavenna-Decke |
+| 15309219 | Vals-Schuppen |
+| 15309220 | Aul-Decke |
+| 15309221 | Grava-Decke |
+| 15309222 | Tomül-Decke |
+| 15309223 | Forbesch-Schuppe |
+| 15309224 | Roz-Champatsch-Melange |
+| 15309225 | Ramosch-Zone |
+| 15309226 | Pfunds-Decke |
+| 15309227 | Mittelpenninikum |
+| 15309228 | Zone Submédiane |
+| 15309229 | Klippen-Decke |
+| 15309230 | Préalpes Médianes Plastiques |
+| 15309231 | Préalpes Médianes Rigides |
+| 15309232 | Mythen-Roggenegg-Schuppe |
+| 15309233 | Obere Rotenflue-Schuppe |
+| 15309234 | Stäglerenegg-Brünnelistock-Schuppen  |
+| 15309235 | Brekzien-Decke |
+| 15309236 | Zone Houillère |
+| 15309237 | Zone Houillère externe |
+| 15309238 | Zone Houillère interne |
+| 15309239 | Visperterminen-Schuppe |
+| 15309240 | Untere Stalden-Schuppe |
+| 15309241 | Gälmji-Zone |
+| 15309242 | Ruginenta-Decke |
+| 15309243 | Ruitor-Decke |
+| 15309244 | Obere Stalden-Decke |
+| 15309245 | Berisal-Decke |
+| 15309246 | Camughera-Decke |
+| 15309247 | Siviez-Mischabel-Decke |
+| 15309248 | Mont-Fort-Decke |
+| 15309249 | Portjengrat-Decke |
+| 15309250 | Stockhorn-Decke |
+| 15309251 | Monte-Rosa-Decke |
+| 15309252 | Tambo-Decke |
+| 15309253 | Suretta-Decke |
+| 15309254 | Schams-Deckenkomplex |
+| 15309255 | Gelbhorn-Decke |
+| 15309256 | Tschera-Kalkberg-Decke |
+| 15309257 | Knorren-Melange |
+| 15309258 | Martegnas-Melange |
+| 15309259 | Areua-Bruschghorn-Melange |
+| 15309260 | Falknis-Decke |
+| 15309261 | Tschingel-Schuppe |
+| 15309262 | Grauspitz-Schuppe |
+| 15309263 | Glegghorn-Schuppe |
+| 15309264 | Sulzfluh-Decke |
+| 15309265 | Fimber-Zone |
+| 15309266 | Tasna-Decke |
+| 15309267 | Oberpenninikum |
+| 15309268 | Gets-Decke |
+| 15309269 | Simmen-Decke |
+| 15309270 | Dranses-Decke |
+| 15309271 | Saane-Decke |
+| 15309272 | Antrona-Decke |
+| 15309273 | Zermatt-Saas-Fee-Decke |
+| 15309274 | Theodulgletscher-Schuppe |
+| 15309275 | Mont-Emilius-Decke |
+| 15309276 | Etirol-Levaz-Schuppe |
+| 15309277 | Châtillon-St-Vincent-Schuppen |
+| 15309278 | Châtillon-Schuppe |
+| 15309279 | Pontey-Schuppe |
+| 15309280 | Grun-Schuppe |
+| 15309281 | Vollon-Schuppe |
+| 15309282 | Gornergrat-Decke |
+| 15309283 | Cimes-Blanches-Decke |
+| 15309284 | Frilihorn-Decke |
+| 15309285 | Tsaté-Decke |
+| 15309286 | Avers-Decke |
+| 15309287 | Malenco-Forno-Lizun-Decke |
+| 15309288 | Platta-Decke |
+| 15309289 | Arosa-Zone |
+| 15309290 | Haupterhorn-Scholle |
+| 15309291 | Weissfluh-Scholle |
+| 15309292 | Gotschnawang-Scholle |
+| 15309293 | Dros-Scholle |
+| 15309294 | Totalp-Ophiolithkomplex |
+| 15309295 | Salassikum |
+| 15309296 | Mont-Mary-Decke |
+| 15309297 | Untere Einheit der Mont-Mary-Decke |
+| 15309298 | Obere Einheit der Mont-Mary-Decke |
+| 15309299 | Roisan-Cignana-Scherzone |
+| 15309300 | Dent-Blanche-Decke |
+| 15309301 | Arolla-Einheit |
+| 15309302 | Valpelline-Einheit |
+| 15309303 | Sesia-Decke |
+| 15309304 | Seconda Zona Dioritico-Kinzigitica |
+| 15309305 | Gneiss-minuti-Einheit |
+| 15309306 | Micascisti-eclogitici-Einheit |
+| 15309307 | Margna-Decke |
+| 15309308 | Forcellina-Schuppe |
+| 15309309 | Sella-Decke |
+| 15309310 | Ostalpin |
+| 15309311 | Unterostalpin |
+| 15309312 | Rothorn-Schwarzhorn-Deckenkomplex |
+| 15309313 | Rothorn-Decke |
+| 15309314 | Tschirpen-Decke |
+| 15309315 | Schafläger-Decke |
+| 15309316 | Dorfberg-Decke |
+| 15309317 | Grüenhorn-Casanna-Schuppenkomplex |
+| 15309318 | Grüenhorn-Schuppe |
+| 15309319 | Casanna-Schuppe |
+| 15309320 | Stammerspitz-Schuppe |
+| 15309321 | Bernina-Deckenkomplex |
+| 15309322 | Ela-Decke |
+| 15309323 | Bernina-Decke |
+| 15309324 | Müsella-Schuppe |
+| 15309325 | Mezzaun-Schuppe |
+| 15309326 | Madulain-Schuppen |
+| 15309327 | Schlattain-Clavadatsch-Padella-Schuppen |
+| 15309328 | Julier-Decke |
+| 15309329 | Err-Deckenkomplex |
+| 15309330 | Murtiröl-Schuppe |
+| 15309331 | Err-Decke |
+| 15309332 | Carungas-Schuppe |
+| 15309333 | Corvatsch-Schuppe |
+| 15309334 | Chastelets-Schuppe |
+| 15309335 | Bardella-Roccabella-Schuppen |
+| 15309336 | Oberostalpin |
+| 15309337 | Campo-Deckenkomplex |
+| 15309338 | Masuccio-Decke |
+| 15309339 | Campo-Decke |
+| 15309340 | Grosina-Decke |
+| 15309341 | Laas-Decke |
+| 15309342 | Vinschgau-Scherzone |
+| 15309343 | Languard-Decke |
+| 15309344 | Tonale-Decke |
+| 15309345 | Ulten-Einheit |
+| 15309346 | Krabachjoch-Decke |
+| 15309347 | Inntal-Decke |
+| 15309348 | Roggenstock-Mördergruebi-Decke |
+| 15309349 | Lechtal-Decke |
+| 15309350 | Madrisa-Schuppe |
+| 15309351 | Schesaplana-Schuppe |
+| 15309352 | Gorvion-Schuppe |
+| 15309353 | Augstenberg-Schuppe |
+| 15309354 | Ochsenkopf-Schuppe |
+| 15309355 | Heubühl-Schuppe |
+| 15309356 | Drei-Schwestern-Schuppe |
+| 15309357 | Allgäu-Decke |
+| 15309358 | Cenoman-Randschuppe |
+| 15309359 | Schiahorn-Decke |
+| 15309360 | Silvretta-Decke |
+| 15309361 | S-chanf-Schuppen |
+| 15309362 | Phyllitgneiszone |
+| 15309363 | Ötztal-Deckenkomplex |
+| 15309364 | Matsch-Decke |
+| 15309365 | Umbrail-Terza-Schuppenkomplex |
+| 15309366 | Umbrail-Chavalatsch-Schuppen |
+| 15309367 | Terza-Schuppe |
+| 15309368 | Quattervals-Decke |
+| 15309369 | S-charl-Sesvenna-Decke |
+| 15309370 | Tavrü-Schuppe |
+| 15309371 | Ortler-Decke |
+| 15309372 | Südalpin |
+| 15309373 | Canavese-Zone |
+| 15309374 | Ivrea-Ceneri-Komplex |
+| 15309375 | Ivrea-Zone |
+| 15309376 | Strona-Ceneri-Zone (Ivrea-Ceneri-Anteil) |
+| 15309377 | Milano-Belt |
+| 15309378 | Externe Giudicarie-Zone |
+| 15309379 | Untere Orobische Schuppen |
+| 15309380 | Interne Giudicarie-Zone |
+| 15309381 | Obere Orobische Decke |
+| 15309382 | Val-Colla-Zone |
+| 15309383 | Strona-Ceneri-Zone (Oberer Orobischer Anteil) |
+| 15309384 | Varesotto-Schuppen |
+| 15309385 | Strona-Ceneri-Zone (undifferenziert) |
+| 15309386 | Känozoische magmatische Gesteine |
+| 15309387 | Vulkanische Serie des Hegaus |
+| 15309388 | Periadriatische magmatische Provinz |
+| 15309389 | Vulkanische Serie von Biella |
+| 15309390 | Subvulkanischer Körper vom Colle Gallo |
+| 15309391 | Subvulkanischer Körper von Gandino |
+| 15309392 | Bregaglia-Intrusionskörper |
+| 15309393 | Novate-Intrusionskörper |
+| 15309394 | Adamello-Batholith |
+| 15501001 | Diverse |
+| 15601001 | Laco gerichtete Linie |
+| 15601002 | Laco Arbeitsfortschritte |
+| 15602001 | Gesteinsbruchstück undifferenziert |
+| 15602002 | kieselige Gesteine (Quarzit, Quarz (Mineralisch), Radiolarit, Kieselkalk, Quarzsandstein, Hornstein) |
+| 15602003 | Sedimentgestein undifferenziert |
+| 15602004 | Tonstein |
+| 15602005 | Kalkstein |
+| 15602006 | Dolomitstein |
+| 15602007 | Kristallingestein undifferenziert |
+| 15602008 | Vulkanit |
+| 15602009 | Metamorphit |
+| 15602010 | Mergelstein |
+| 15733001 | alkalisch |
+| 15733002 | kalkalkalisch |
+| 15733003 | tholeiitisch |
+| 15801001 | Sackungsgebiet |
+| 15801002 | Gebiet mit Hakenwurf |
+| 15801003 | Rutschgebiet |
+| 15801004 | Gebiet mit Solifluktion |
+| 20001001 | Gesteinsbruchstück undifferenziert |
+| 20001002 | Sedimentgestein undifferenziert |
+| 20001003 | Tonstein |
+| 20001004 | Kalkstein |
+| 20001005 | Dolomitstein |
+| 20001006 | Kristallingestein undifferenziert |
+| 20001007 | Vulkanit |
+| 20001008 | Metamorphit |
+| 20001009 | Quarzit |
+| 20001010 | pyroklastische Komponenten |
+| 20001011 | Quarz |
+| 20001012 | Feldspat |
+| 20001013 | Glaukonit |
+| 20001014 | Glimmer |
+| 20001015 | intraformationelle Gerölle |
+| 20001016 | Kalkkonkretionen |
+| 20001017 | Sideritkonkretionen |
+| 20001018 | Silexkonkretionen |
+| 20001019 | biogene Komponenten |
+| 20001020 | terrigener Detritus |
+| 20001021 | Phosphorit |
+| 20001022 | Mergelstein |
+| 20001023 | Kohle |
+| 20001024 | Bitumen |
+| 20001025 | Evaporit |
+| 20001026 | Eisenmineralien |
+| 20101001 | massig |
+| 20101002 | gebankt |
+| 20101003 | dickbankig (&gt;30cm) |
+| 20101004 | dünnbankig (1-10cm) |
+| 20101005 | blätterig |
+| 20101006 | knauerig |
+| 20101007 | knollig |
+| 20101008 | linsenförmig |
+| 20201001 | texturlos |
+| 20201002 | geschichtet |
+| 20201003 | schräg-/kreuzgeschichtet |
+| 20201004 | laminiert |
+| 20201005 | normal gradiert |
+| 20201006 | invers gradiert |
+| 20201007 | bioturbiert |
+| 20201008 | stromatolitisch |
+| 20301001 | monomikt |
+| 20301002 | polymikt |
+| 20301003 | mikritisch |
+| 20301004 | spätig |
+| 20301005 | bioklastisch |
+| 20301007 | onkolithisch |
+| 20301008 | oolithisch |
+| 20301009 | pelitisch |
+| 20301010 | pisolithisch |
+| 20401001 | Aktinolith |
+| 20401002 | Albit |
+| 20401003 | Allanit |
+| 20401004 | Almandin |
+| 20401005 | Amphibol |
+| 20401006 | Andalusit |
+| 20401007 | Ankerit |
+| 20401008 | Anorthit |
+| 20401009 | Antigorit |
+| 20401010 | Biotit |
+| 20401011 | Kalzit |
+| 20401012 | Karbonatmineral |
+| 20401013 | Karpholith |
+| 20401014 | Chlorit |
+| 20401015 | Chloritoid |
+| 20401016 | Klinozoisit |
+| 20401017 | Coesit |
+| 20401018 | Cordierit |
+| 20401019 | Diopsid |
+| 20401020 | Disthen |
+| 20401021 | Dolomit |
+| 20401022 | Epidot |
+| 20401023 | Feldspat |
+| 20401024 | Alkalifeldspat |
+| 20401026 | Glaukophan |
+| 20401027 | Graphit |
+| 20401028 | Granat |
+| 20401029 | Hornblende |
+| 20401030 | Lawsonit |
+| 20401031 | Magnetit |
+| 20401032 | Glimmer |
+| 20401033 | Hellglimmer |
+| 20401034 | Mikroklin |
+| 20401035 | Muskovit |
+| 20401036 | Olivin |
+| 20401037 | Omphazit |
+| 20401038 | Orthoklas |
+| 20401039 | Paragonit |
+| 20401040 | Phlogopit |
+| 20401041 | Plagioklas |
+| 20401042 | Prehnit |
+| 20401043 | Pyrit |
+| 20401044 | Pyrop |
+| 20401045 | Pyrophyllit |
+| 20401046 | Pyroxen |
+| 20401047 | Quarz |
+| 20401049 | Serpentin |
+| 20401050 | Alumosilikat |
+| 20401051 | Sillimanit |
+| 20401052 | Staurolith |
+| 20401053 | Stilpnomelan |
+| 20401054 | Talk |
+| 20401055 | Zoisit |
+| 20401056 | Adular |
+| 20401057 | Aegirin |
+| 20401058 | Aegirin-Augit |
+| 20401059 | Andesin |
+| 20401060 | Anhydrit |
+| 20401061 | Annit |
+| 20401062 | Aragonit |
+| 20401063 | Augit |
+| 20401064 | Chrysotil |
+| 20401065 | Grossular |
+| 20401066 | Jadeit |
+| 20401067 | Margarit |
+| 20401068 | Oligoklas |
+| 20401069 | Orthopyroxen |
+| 20401070 | Klinopyroxen |
+| 20401071 | Phengit |
+| 20401072 | Pumpellyit |
+| 20401073 | Sanidin |
+| 20401074 | Sapphirin |
+| 20401075 | Spessartin |
+| 20401076 | Spinell |
+| 20401077 | Titanit |
+| 20401078 | Tremolit |
+| 20401079 | Turmalin |
+| 20401080 | Forsterit |
+| 20401081 | Fayalit |
+| 20401082 | Enstatit |
+| 20401083 | Zeolith |
+| 20401084 | Serizit |
+| 20401085 | Fuchsit |
+| 20501001 | massig |
+| 20501002 | gebändert |
+| 20501003 | augig |
+| 20501004 | mit Schollen |
+| 20501005 | schiefrig |
+| 20501006 | phyllitisch |
+| 20501007 | laminiert |
+| 20501008 | lagig |
+| 20501009 | plattig |
+| 20501010 | gebankt |
+| 20501011 | gefältelt |
+| 20501012 | geadert |
+| 20501013 | schlierig |
+| 20501014 | linsig |
+| 20501015 | flaserig |
+| 20501016 | agmatitisch (migmatitisch) |
+| 20501017 | brekziös |
+| 20601001 | Name und Begrenzung harmonisiert |
+| 20601002 | Untergrenze muss noch revidiert werden |
+| 20601003 | Obergrenze muss noch revidiert werden |
+| 20601004 | Unter- und Obergrenzen müssen noch revidiert werden |
+| 20601005 | Interne Gliederung zu revidieren |
+| 20601006 | Unsichere lithostratigraphische Attribuierung |
+
+
+
+
+### Geolcodes effacés 
+
+ Aucun geolcode supprimé 
+
+
+### Geolcodes changés 
+
+| Geolcode | 2022 | 2024  |
+|----------|-------------|------------|
+| 15200093 | Vallorbe-Formation | Vallorbe-Member |
+| 15200220 | Spät- bis postvariszische Intrusiva des Schwarzwaldes | Spät- bis postvariszische Intrusiva der Nordschweiz |
+| 15200221 | Permo-Karbon der NW-Schweiz | Permo-Karbon der Nordschweiz |
+| 15200230 | Frühvariszische Intrusiva des Schwarzwaldes | Frühvariszische Intrusiva der Nordschweiz |
+| 15200243 | Prä- und frühvariszische Sedimente und Vulkanite des Schwarzwaldes | Prä- und frühvariszische Sedimente und Vulkanite der Nordschweiz |
+| 15200245 | Prävariszisches polyzyklisches Grundgebirge des Schwarzwaldes | Prävariszisches polyzyklisches Grundgebirge der Nordschweiz |
+| 15200246 | Orthogneise des Schwarzwaldes | Prävariszische Orthogneise der Nordschweiz |
+| 15200250 | Migmatite des Schwarzwaldes | Prävariszische Migmatite der Nordschweiz |
+| 15200253 | Grüngesteine des Schwarzwaldes | Prävariszische Grüngesteine der Nordschweiz |
+| 15201050 | Gondiswil-Interglazial (Letztes Integlazial) | Gondiswil-Interglazial (Letztes Interglazial) |
+| 15202149 | Chartegg-Member | Chartegg-Formation |
+| 15202283 | Sardona-Quarzit | Sardona-Member |
+| 15202542 | Elm- und Matt-Formation: schiefriger Tonstein | Nordhelvetische Flysch-Gruppe, vorw. schiefriger Tonstein |
+| 15202588 | Stad-Formation, &#34;Jüngerer Quarzsandstein&#34; | Stad-Formation, «Jüngerer Quarzsandstein» |
+| 15202589 | Einsiedeln-Member, &#34;Älterer Quarzsandstein&#34; | Einsiedeln-Member, «Älterer Quarzsandstein» |
+| 15202591 | Wängen-Kalk, &#34;Lithothamnienkalk&#34;-Fazies | Wängen-Kalk, Lithothamnienkalk-Fazies |
+| 15202592 | Einsiedeln-Member, &#34;Alveolinenkalk&#34;-Fazies | Einsiedeln-Member, Alveolinenkalk-Fazies |
+| 15202596 | Euthal-Formation und Steinbach-Member, undiff. | Einsiedeln- und Steinibach-Member, undifferenziert |
+| 15203224 | Tasna-Granit | Plattamala-Granit |
+| 15203227 | Garde-de-Bordon-Serie | Garde-de-Bordon-Formation |
+| 15203228 | Fêta-d&#39;Août-Flysch | Fêta-d&#39;Août-Formation |
+| 15203466 | Amphibolit des Ergischhorn-Ensembles | Ergischhorn-Komplex: Amphibolit |
+| 15203499 | Radiolarit der Platta-Decke | Falotta-Radiolarit |
 

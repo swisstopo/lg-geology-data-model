@@ -1,9 +1,9 @@
 {
     "version": "0.6",
-    "date": "2024-11-07T15:00:14.976145",
+    "date": "2024-11-08T20:31:02.842496",
     "model": {
-        "revision": "3.9.10",
-        "revision_date": "2024-11-07"
+        "revision": "3.9.11",
+        "revision_date": "2024-11-08"
     },
     "themes": [
         {
@@ -8120,6 +8120,1707 @@
             }
         }
     ],
-    "hash": "757b50d",
+    "hash": "e944f39",
+    "geolcodes": {
+        "added": [
+            {
+                "geolcode": 15309183,
+                "german": "Bosco-Zone"
+            },
+            {
+                "geolcode": 15309184,
+                "german": "Bombogno-Zone"
+            },
+            {
+                "geolcode": 15309185,
+                "german": "Maggia-Decke"
+            },
+            {
+                "geolcode": 15309186,
+                "german": "Sambuco-Decke"
+            },
+            {
+                "geolcode": 15309187,
+                "german": "San-Giorgio-Schuppe"
+            },
+            {
+                "geolcode": 15309188,
+                "german": "Leventina-Lucomagno-Decke"
+            },
+            {
+                "geolcode": 15309189,
+                "german": "Simano-Decke"
+            },
+            {
+                "geolcode": 15309190,
+                "german": "Cima-Lunga-Decke"
+            },
+            {
+                "geolcode": 15309191,
+                "german": "Adula-Decke"
+            },
+            {
+                "geolcode": 15309192,
+                "german": "Gruf-Komplex"
+            },
+            {
+                "geolcode": 15309193,
+                "german": "Soja-Decke"
+            },
+            {
+                "geolcode": 15309194,
+                "german": "Garzott-Schuppen"
+            },
+            {
+                "geolcode": 15309195,
+                "german": "Piz-Terri-Lunschania-Decke"
+            },
+            {
+                "geolcode": 15309196,
+                "german": "Terri-Schuppe"
+            },
+            {
+                "geolcode": 15309197,
+                "german": "G\u00fcida-Alpettas-Schuppen"
+            },
+            {
+                "geolcode": 15309198,
+                "german": "Darlun-Schuppe"
+            },
+            {
+                "geolcode": 15309199,
+                "german": "Penninikum"
+            },
+            {
+                "geolcode": 15309200,
+                "german": "Unterpenninikum"
+            },
+            {
+                "geolcode": 15309201,
+                "german": "Niesen-Decke"
+            },
+            {
+                "geolcode": 15309202,
+                "german": "Infraniesen-Melange"
+            },
+            {
+                "geolcode": 15309203,
+                "german": "Voirons-Decke"
+            },
+            {
+                "geolcode": 15309204,
+                "german": "Gurnigel-Decke"
+            },
+            {
+                "geolcode": 15309205,
+                "german": "Schlieren-Decke"
+            },
+            {
+                "geolcode": 15309206,
+                "german": "W\u00e4gital-Decke"
+            },
+            {
+                "geolcode": 15309207,
+                "german": "\u00dcntschen-Decke"
+            },
+            {
+                "geolcode": 15309208,
+                "german": "Sigiswang-Decke"
+            },
+            {
+                "geolcode": 15309209,
+                "german": "Triesenberg-Schuppenkomplex"
+            },
+            {
+                "geolcode": 15309210,
+                "german": "Oberstdorf-Decke"
+            },
+            {
+                "geolcode": 15309211,
+                "german": "Sion-Courmayeur-Decke"
+            },
+            {
+                "geolcode": 15309212,
+                "german": "Rosswald-Schuppe"
+            },
+            {
+                "geolcode": 15309213,
+                "german": "Ferret-Schuppe"
+            },
+            {
+                "geolcode": 15309214,
+                "german": "Mo\u00fbtiers-Schuppe"
+            },
+            {
+                "geolcode": 15309215,
+                "german": "Roignais-Versoyen-Schuppe"
+            },
+            {
+                "geolcode": 15309216,
+                "german": "Pierre-Avoi-Schuppe"
+            },
+            {
+                "geolcode": 15309217,
+                "german": "Petit-St-Bernard-Schuppe"
+            },
+            {
+                "geolcode": 15309218,
+                "german": "Chiavenna-Decke"
+            },
+            {
+                "geolcode": 15309219,
+                "german": "Vals-Schuppen"
+            },
+            {
+                "geolcode": 15309220,
+                "german": "Aul-Decke"
+            },
+            {
+                "geolcode": 15309221,
+                "german": "Grava-Decke"
+            },
+            {
+                "geolcode": 15309222,
+                "german": "Tom\u00fcl-Decke"
+            },
+            {
+                "geolcode": 15309223,
+                "german": "Forbesch-Schuppe"
+            },
+            {
+                "geolcode": 15309224,
+                "german": "Roz-Champatsch-Melange"
+            },
+            {
+                "geolcode": 15309225,
+                "german": "Ramosch-Zone"
+            },
+            {
+                "geolcode": 15309226,
+                "german": "Pfunds-Decke"
+            },
+            {
+                "geolcode": 15309227,
+                "german": "Mittelpenninikum"
+            },
+            {
+                "geolcode": 15309228,
+                "german": "Zone Subm\u00e9diane"
+            },
+            {
+                "geolcode": 15309229,
+                "german": "Klippen-Decke"
+            },
+            {
+                "geolcode": 15309230,
+                "german": "Pr\u00e9alpes M\u00e9dianes Plastiques"
+            },
+            {
+                "geolcode": 15309231,
+                "german": "Pr\u00e9alpes M\u00e9dianes Rigides"
+            },
+            {
+                "geolcode": 15309232,
+                "german": "Mythen-Roggenegg-Schuppe"
+            },
+            {
+                "geolcode": 15309233,
+                "german": "Obere Rotenflue-Schuppe"
+            },
+            {
+                "geolcode": 15309234,
+                "german": "St\u00e4glerenegg-Br\u00fcnnelistock-Schuppen "
+            },
+            {
+                "geolcode": 15309235,
+                "german": "Brekzien-Decke"
+            },
+            {
+                "geolcode": 15309236,
+                "german": "Zone Houill\u00e8re"
+            },
+            {
+                "geolcode": 15309237,
+                "german": "Zone Houill\u00e8re externe"
+            },
+            {
+                "geolcode": 15309238,
+                "german": "Zone Houill\u00e8re interne"
+            },
+            {
+                "geolcode": 15309239,
+                "german": "Visperterminen-Schuppe"
+            },
+            {
+                "geolcode": 15309240,
+                "german": "Untere Stalden-Schuppe"
+            },
+            {
+                "geolcode": 15309241,
+                "german": "G\u00e4lmji-Zone"
+            },
+            {
+                "geolcode": 15309242,
+                "german": "Ruginenta-Decke"
+            },
+            {
+                "geolcode": 15309243,
+                "german": "Ruitor-Decke"
+            },
+            {
+                "geolcode": 15309244,
+                "german": "Obere Stalden-Decke"
+            },
+            {
+                "geolcode": 15309245,
+                "german": "Berisal-Decke"
+            },
+            {
+                "geolcode": 15309246,
+                "german": "Camughera-Decke"
+            },
+            {
+                "geolcode": 15309247,
+                "german": "Siviez-Mischabel-Decke"
+            },
+            {
+                "geolcode": 15309248,
+                "german": "Mont-Fort-Decke"
+            },
+            {
+                "geolcode": 15309249,
+                "german": "Portjengrat-Decke"
+            },
+            {
+                "geolcode": 15309250,
+                "german": "Stockhorn-Decke"
+            },
+            {
+                "geolcode": 15309251,
+                "german": "Monte-Rosa-Decke"
+            },
+            {
+                "geolcode": 15309252,
+                "german": "Tambo-Decke"
+            },
+            {
+                "geolcode": 15309253,
+                "german": "Suretta-Decke"
+            },
+            {
+                "geolcode": 15309254,
+                "german": "Schams-Deckenkomplex"
+            },
+            {
+                "geolcode": 15309255,
+                "german": "Gelbhorn-Decke"
+            },
+            {
+                "geolcode": 15309256,
+                "german": "Tschera-Kalkberg-Decke"
+            },
+            {
+                "geolcode": 15309257,
+                "german": "Knorren-Melange"
+            },
+            {
+                "geolcode": 15309258,
+                "german": "Martegnas-Melange"
+            },
+            {
+                "geolcode": 15309259,
+                "german": "Areua-Bruschghorn-Melange"
+            },
+            {
+                "geolcode": 15309260,
+                "german": "Falknis-Decke"
+            },
+            {
+                "geolcode": 15309261,
+                "german": "Tschingel-Schuppe"
+            },
+            {
+                "geolcode": 15309262,
+                "german": "Grauspitz-Schuppe"
+            },
+            {
+                "geolcode": 15309263,
+                "german": "Glegghorn-Schuppe"
+            },
+            {
+                "geolcode": 15309264,
+                "german": "Sulzfluh-Decke"
+            },
+            {
+                "geolcode": 15309265,
+                "german": "Fimber-Zone"
+            },
+            {
+                "geolcode": 15309266,
+                "german": "Tasna-Decke"
+            },
+            {
+                "geolcode": 15309267,
+                "german": "Oberpenninikum"
+            },
+            {
+                "geolcode": 15309268,
+                "german": "Gets-Decke"
+            },
+            {
+                "geolcode": 15309269,
+                "german": "Simmen-Decke"
+            },
+            {
+                "geolcode": 15309270,
+                "german": "Dranses-Decke"
+            },
+            {
+                "geolcode": 15309271,
+                "german": "Saane-Decke"
+            },
+            {
+                "geolcode": 15309272,
+                "german": "Antrona-Decke"
+            },
+            {
+                "geolcode": 15309273,
+                "german": "Zermatt-Saas-Fee-Decke"
+            },
+            {
+                "geolcode": 15309274,
+                "german": "Theodulgletscher-Schuppe"
+            },
+            {
+                "geolcode": 15309275,
+                "german": "Mont-Emilius-Decke"
+            },
+            {
+                "geolcode": 15309276,
+                "german": "Etirol-Levaz-Schuppe"
+            },
+            {
+                "geolcode": 15309277,
+                "german": "Ch\u00e2tillon-St-Vincent-Schuppen"
+            },
+            {
+                "geolcode": 15309278,
+                "german": "Ch\u00e2tillon-Schuppe"
+            },
+            {
+                "geolcode": 15309279,
+                "german": "Pontey-Schuppe"
+            },
+            {
+                "geolcode": 15309280,
+                "german": "Grun-Schuppe"
+            },
+            {
+                "geolcode": 15309281,
+                "german": "Vollon-Schuppe"
+            },
+            {
+                "geolcode": 15309282,
+                "german": "Gornergrat-Decke"
+            },
+            {
+                "geolcode": 15309283,
+                "german": "Cimes-Blanches-Decke"
+            },
+            {
+                "geolcode": 15309284,
+                "german": "Frilihorn-Decke"
+            },
+            {
+                "geolcode": 15309285,
+                "german": "Tsat\u00e9-Decke"
+            },
+            {
+                "geolcode": 15309286,
+                "german": "Avers-Decke"
+            },
+            {
+                "geolcode": 15309287,
+                "german": "Malenco-Forno-Lizun-Decke"
+            },
+            {
+                "geolcode": 15309288,
+                "german": "Platta-Decke"
+            },
+            {
+                "geolcode": 15309289,
+                "german": "Arosa-Zone"
+            },
+            {
+                "geolcode": 15309290,
+                "german": "Haupterhorn-Scholle"
+            },
+            {
+                "geolcode": 15309291,
+                "german": "Weissfluh-Scholle"
+            },
+            {
+                "geolcode": 15309292,
+                "german": "Gotschnawang-Scholle"
+            },
+            {
+                "geolcode": 15309293,
+                "german": "Dros-Scholle"
+            },
+            {
+                "geolcode": 15309294,
+                "german": "Totalp-Ophiolithkomplex"
+            },
+            {
+                "geolcode": 15309295,
+                "german": "Salassikum"
+            },
+            {
+                "geolcode": 15309296,
+                "german": "Mont-Mary-Decke"
+            },
+            {
+                "geolcode": 15309297,
+                "german": "Untere Einheit der Mont-Mary-Decke"
+            },
+            {
+                "geolcode": 15309298,
+                "german": "Obere Einheit der Mont-Mary-Decke"
+            },
+            {
+                "geolcode": 15309299,
+                "german": "Roisan-Cignana-Scherzone"
+            },
+            {
+                "geolcode": 15309300,
+                "german": "Dent-Blanche-Decke"
+            },
+            {
+                "geolcode": 15309301,
+                "german": "Arolla-Einheit"
+            },
+            {
+                "geolcode": 15309302,
+                "german": "Valpelline-Einheit"
+            },
+            {
+                "geolcode": 15309303,
+                "german": "Sesia-Decke"
+            },
+            {
+                "geolcode": 15309304,
+                "german": "Seconda Zona Dioritico-Kinzigitica"
+            },
+            {
+                "geolcode": 15309305,
+                "german": "Gneiss-minuti-Einheit"
+            },
+            {
+                "geolcode": 15309306,
+                "german": "Micascisti-eclogitici-Einheit"
+            },
+            {
+                "geolcode": 15309307,
+                "german": "Margna-Decke"
+            },
+            {
+                "geolcode": 15309308,
+                "german": "Forcellina-Schuppe"
+            },
+            {
+                "geolcode": 15309309,
+                "german": "Sella-Decke"
+            },
+            {
+                "geolcode": 15309310,
+                "german": "Ostalpin"
+            },
+            {
+                "geolcode": 15309311,
+                "german": "Unterostalpin"
+            },
+            {
+                "geolcode": 15309312,
+                "german": "Rothorn-Schwarzhorn-Deckenkomplex"
+            },
+            {
+                "geolcode": 15309313,
+                "german": "Rothorn-Decke"
+            },
+            {
+                "geolcode": 15309314,
+                "german": "Tschirpen-Decke"
+            },
+            {
+                "geolcode": 15309315,
+                "german": "Schafl\u00e4ger-Decke"
+            },
+            {
+                "geolcode": 15309316,
+                "german": "Dorfberg-Decke"
+            },
+            {
+                "geolcode": 15309317,
+                "german": "Gr\u00fcenhorn-Casanna-Schuppenkomplex"
+            },
+            {
+                "geolcode": 15309318,
+                "german": "Gr\u00fcenhorn-Schuppe"
+            },
+            {
+                "geolcode": 15309319,
+                "german": "Casanna-Schuppe"
+            },
+            {
+                "geolcode": 15309320,
+                "german": "Stammerspitz-Schuppe"
+            },
+            {
+                "geolcode": 15309321,
+                "german": "Bernina-Deckenkomplex"
+            },
+            {
+                "geolcode": 15309322,
+                "german": "Ela-Decke"
+            },
+            {
+                "geolcode": 15309323,
+                "german": "Bernina-Decke"
+            },
+            {
+                "geolcode": 15309324,
+                "german": "M\u00fcsella-Schuppe"
+            },
+            {
+                "geolcode": 15309325,
+                "german": "Mezzaun-Schuppe"
+            },
+            {
+                "geolcode": 15309326,
+                "german": "Madulain-Schuppen"
+            },
+            {
+                "geolcode": 15309327,
+                "german": "Schlattain-Clavadatsch-Padella-Schuppen"
+            },
+            {
+                "geolcode": 15309328,
+                "german": "Julier-Decke"
+            },
+            {
+                "geolcode": 15309329,
+                "german": "Err-Deckenkomplex"
+            },
+            {
+                "geolcode": 15309330,
+                "german": "Murtir\u00f6l-Schuppe"
+            },
+            {
+                "geolcode": 15309331,
+                "german": "Err-Decke"
+            },
+            {
+                "geolcode": 15309332,
+                "german": "Carungas-Schuppe"
+            },
+            {
+                "geolcode": 15309333,
+                "german": "Corvatsch-Schuppe"
+            },
+            {
+                "geolcode": 15309334,
+                "german": "Chastelets-Schuppe"
+            },
+            {
+                "geolcode": 15309335,
+                "german": "Bardella-Roccabella-Schuppen"
+            },
+            {
+                "geolcode": 15309336,
+                "german": "Oberostalpin"
+            },
+            {
+                "geolcode": 15309337,
+                "german": "Campo-Deckenkomplex"
+            },
+            {
+                "geolcode": 15309338,
+                "german": "Masuccio-Decke"
+            },
+            {
+                "geolcode": 15309339,
+                "german": "Campo-Decke"
+            },
+            {
+                "geolcode": 15309340,
+                "german": "Grosina-Decke"
+            },
+            {
+                "geolcode": 15309341,
+                "german": "Laas-Decke"
+            },
+            {
+                "geolcode": 15309342,
+                "german": "Vinschgau-Scherzone"
+            },
+            {
+                "geolcode": 15309343,
+                "german": "Languard-Decke"
+            },
+            {
+                "geolcode": 15309344,
+                "german": "Tonale-Decke"
+            },
+            {
+                "geolcode": 15309345,
+                "german": "Ulten-Einheit"
+            },
+            {
+                "geolcode": 15309346,
+                "german": "Krabachjoch-Decke"
+            },
+            {
+                "geolcode": 15309347,
+                "german": "Inntal-Decke"
+            },
+            {
+                "geolcode": 15309348,
+                "german": "Roggenstock-M\u00f6rdergruebi-Decke"
+            },
+            {
+                "geolcode": 15309349,
+                "german": "Lechtal-Decke"
+            },
+            {
+                "geolcode": 15309350,
+                "german": "Madrisa-Schuppe"
+            },
+            {
+                "geolcode": 15309351,
+                "german": "Schesaplana-Schuppe"
+            },
+            {
+                "geolcode": 15309352,
+                "german": "Gorvion-Schuppe"
+            },
+            {
+                "geolcode": 15309353,
+                "german": "Augstenberg-Schuppe"
+            },
+            {
+                "geolcode": 15309354,
+                "german": "Ochsenkopf-Schuppe"
+            },
+            {
+                "geolcode": 15309355,
+                "german": "Heub\u00fchl-Schuppe"
+            },
+            {
+                "geolcode": 15309356,
+                "german": "Drei-Schwestern-Schuppe"
+            },
+            {
+                "geolcode": 15309357,
+                "german": "Allg\u00e4u-Decke"
+            },
+            {
+                "geolcode": 15309358,
+                "german": "Cenoman-Randschuppe"
+            },
+            {
+                "geolcode": 15309359,
+                "german": "Schiahorn-Decke"
+            },
+            {
+                "geolcode": 15309360,
+                "german": "Silvretta-Decke"
+            },
+            {
+                "geolcode": 15309361,
+                "german": "S-chanf-Schuppen"
+            },
+            {
+                "geolcode": 15309362,
+                "german": "Phyllitgneiszone"
+            },
+            {
+                "geolcode": 15309363,
+                "german": "\u00d6tztal-Deckenkomplex"
+            },
+            {
+                "geolcode": 15309364,
+                "german": "Matsch-Decke"
+            },
+            {
+                "geolcode": 15309365,
+                "german": "Umbrail-Terza-Schuppenkomplex"
+            },
+            {
+                "geolcode": 15309366,
+                "german": "Umbrail-Chavalatsch-Schuppen"
+            },
+            {
+                "geolcode": 15309367,
+                "german": "Terza-Schuppe"
+            },
+            {
+                "geolcode": 15309368,
+                "german": "Quattervals-Decke"
+            },
+            {
+                "geolcode": 15309369,
+                "german": "S-charl-Sesvenna-Decke"
+            },
+            {
+                "geolcode": 15309370,
+                "german": "Tavr\u00fc-Schuppe"
+            },
+            {
+                "geolcode": 15309371,
+                "german": "Ortler-Decke"
+            },
+            {
+                "geolcode": 15309372,
+                "german": "S\u00fcdalpin"
+            },
+            {
+                "geolcode": 15309373,
+                "german": "Canavese-Zone"
+            },
+            {
+                "geolcode": 15309374,
+                "german": "Ivrea-Ceneri-Komplex"
+            },
+            {
+                "geolcode": 15309375,
+                "german": "Ivrea-Zone"
+            },
+            {
+                "geolcode": 15309376,
+                "german": "Strona-Ceneri-Zone (Ivrea-Ceneri-Anteil)"
+            },
+            {
+                "geolcode": 15309377,
+                "german": "Milano-Belt"
+            },
+            {
+                "geolcode": 15309378,
+                "german": "Externe Giudicarie-Zone"
+            },
+            {
+                "geolcode": 15309379,
+                "german": "Untere Orobische Schuppen"
+            },
+            {
+                "geolcode": 15309380,
+                "german": "Interne Giudicarie-Zone"
+            },
+            {
+                "geolcode": 15309381,
+                "german": "Obere Orobische Decke"
+            },
+            {
+                "geolcode": 15309382,
+                "german": "Val-Colla-Zone"
+            },
+            {
+                "geolcode": 15309383,
+                "german": "Strona-Ceneri-Zone (Oberer Orobischer Anteil)"
+            },
+            {
+                "geolcode": 15309384,
+                "german": "Varesotto-Schuppen"
+            },
+            {
+                "geolcode": 15309385,
+                "german": "Strona-Ceneri-Zone (undifferenziert)"
+            },
+            {
+                "geolcode": 15309386,
+                "german": "K\u00e4nozoische magmatische Gesteine"
+            },
+            {
+                "geolcode": 15309387,
+                "german": "Vulkanische Serie des Hegaus"
+            },
+            {
+                "geolcode": 15309388,
+                "german": "Periadriatische magmatische Provinz"
+            },
+            {
+                "geolcode": 15309389,
+                "german": "Vulkanische Serie von Biella"
+            },
+            {
+                "geolcode": 15309390,
+                "german": "Subvulkanischer K\u00f6rper vom Colle Gallo"
+            },
+            {
+                "geolcode": 15309391,
+                "german": "Subvulkanischer K\u00f6rper von Gandino"
+            },
+            {
+                "geolcode": 15309392,
+                "german": "Bregaglia-Intrusionsk\u00f6rper"
+            },
+            {
+                "geolcode": 15309393,
+                "german": "Novate-Intrusionsk\u00f6rper"
+            },
+            {
+                "geolcode": 15309394,
+                "german": "Adamello-Batholith"
+            },
+            {
+                "geolcode": 15501001,
+                "german": "Diverse"
+            },
+            {
+                "geolcode": 15601001,
+                "german": "Laco gerichtete Linie"
+            },
+            {
+                "geolcode": 15601002,
+                "german": "Laco Arbeitsfortschritte"
+            },
+            {
+                "geolcode": 15602001,
+                "german": "Gesteinsbruchst\u00fcck undifferenziert"
+            },
+            {
+                "geolcode": 15602002,
+                "german": "kieselige Gesteine (Quarzit, Quarz (Mineralisch), Radiolarit, Kieselkalk, Quarzsandstein, Hornstein)"
+            },
+            {
+                "geolcode": 15602003,
+                "german": "Sedimentgestein undifferenziert"
+            },
+            {
+                "geolcode": 15602004,
+                "german": "Tonstein"
+            },
+            {
+                "geolcode": 15602005,
+                "german": "Kalkstein"
+            },
+            {
+                "geolcode": 15602006,
+                "german": "Dolomitstein"
+            },
+            {
+                "geolcode": 15602007,
+                "german": "Kristallingestein undifferenziert"
+            },
+            {
+                "geolcode": 15602008,
+                "german": "Vulkanit"
+            },
+            {
+                "geolcode": 15602009,
+                "german": "Metamorphit"
+            },
+            {
+                "geolcode": 15602010,
+                "german": "Mergelstein"
+            },
+            {
+                "geolcode": 15733001,
+                "german": "alkalisch"
+            },
+            {
+                "geolcode": 15733002,
+                "german": "kalkalkalisch"
+            },
+            {
+                "geolcode": 15733003,
+                "german": "tholeiitisch"
+            },
+            {
+                "geolcode": 15801001,
+                "german": "Sackungsgebiet"
+            },
+            {
+                "geolcode": 15801002,
+                "german": "Gebiet mit Hakenwurf"
+            },
+            {
+                "geolcode": 15801003,
+                "german": "Rutschgebiet"
+            },
+            {
+                "geolcode": 15801004,
+                "german": "Gebiet mit Solifluktion"
+            },
+            {
+                "geolcode": 20001001,
+                "german": "Gesteinsbruchst\u00fcck undifferenziert"
+            },
+            {
+                "geolcode": 20001002,
+                "german": "Sedimentgestein undifferenziert"
+            },
+            {
+                "geolcode": 20001003,
+                "german": "Tonstein"
+            },
+            {
+                "geolcode": 20001004,
+                "german": "Kalkstein"
+            },
+            {
+                "geolcode": 20001005,
+                "german": "Dolomitstein"
+            },
+            {
+                "geolcode": 20001006,
+                "german": "Kristallingestein undifferenziert"
+            },
+            {
+                "geolcode": 20001007,
+                "german": "Vulkanit"
+            },
+            {
+                "geolcode": 20001008,
+                "german": "Metamorphit"
+            },
+            {
+                "geolcode": 20001009,
+                "german": "Quarzit"
+            },
+            {
+                "geolcode": 20001010,
+                "german": "pyroklastische Komponenten"
+            },
+            {
+                "geolcode": 20001011,
+                "german": "Quarz"
+            },
+            {
+                "geolcode": 20001012,
+                "german": "Feldspat"
+            },
+            {
+                "geolcode": 20001013,
+                "german": "Glaukonit"
+            },
+            {
+                "geolcode": 20001014,
+                "german": "Glimmer"
+            },
+            {
+                "geolcode": 20001015,
+                "german": "intraformationelle Ger\u00f6lle"
+            },
+            {
+                "geolcode": 20001016,
+                "german": "Kalkkonkretionen"
+            },
+            {
+                "geolcode": 20001017,
+                "german": "Sideritkonkretionen"
+            },
+            {
+                "geolcode": 20001018,
+                "german": "Silexkonkretionen"
+            },
+            {
+                "geolcode": 20001019,
+                "german": "biogene Komponenten"
+            },
+            {
+                "geolcode": 20001020,
+                "german": "terrigener Detritus"
+            },
+            {
+                "geolcode": 20001021,
+                "german": "Phosphorit"
+            },
+            {
+                "geolcode": 20001022,
+                "german": "Mergelstein"
+            },
+            {
+                "geolcode": 20001023,
+                "german": "Kohle"
+            },
+            {
+                "geolcode": 20001024,
+                "german": "Bitumen"
+            },
+            {
+                "geolcode": 20001025,
+                "german": "Evaporit"
+            },
+            {
+                "geolcode": 20001026,
+                "german": "Eisenmineralien"
+            },
+            {
+                "geolcode": 20101001,
+                "german": "massig"
+            },
+            {
+                "geolcode": 20101002,
+                "german": "gebankt"
+            },
+            {
+                "geolcode": 20101003,
+                "german": "dickbankig (>30cm)"
+            },
+            {
+                "geolcode": 20101004,
+                "german": "d\u00fcnnbankig (1-10cm)"
+            },
+            {
+                "geolcode": 20101005,
+                "german": "bl\u00e4tterig"
+            },
+            {
+                "geolcode": 20101006,
+                "german": "knauerig"
+            },
+            {
+                "geolcode": 20101007,
+                "german": "knollig"
+            },
+            {
+                "geolcode": 20101008,
+                "german": "linsenf\u00f6rmig"
+            },
+            {
+                "geolcode": 20201001,
+                "german": "texturlos"
+            },
+            {
+                "geolcode": 20201002,
+                "german": "geschichtet"
+            },
+            {
+                "geolcode": 20201003,
+                "german": "schr\u00e4g-/kreuzgeschichtet"
+            },
+            {
+                "geolcode": 20201004,
+                "german": "laminiert"
+            },
+            {
+                "geolcode": 20201005,
+                "german": "normal gradiert"
+            },
+            {
+                "geolcode": 20201006,
+                "german": "invers gradiert"
+            },
+            {
+                "geolcode": 20201007,
+                "german": "bioturbiert"
+            },
+            {
+                "geolcode": 20201008,
+                "german": "stromatolitisch"
+            },
+            {
+                "geolcode": 20301001,
+                "german": "monomikt"
+            },
+            {
+                "geolcode": 20301002,
+                "german": "polymikt"
+            },
+            {
+                "geolcode": 20301003,
+                "german": "mikritisch"
+            },
+            {
+                "geolcode": 20301004,
+                "german": "sp\u00e4tig"
+            },
+            {
+                "geolcode": 20301005,
+                "german": "bioklastisch"
+            },
+            {
+                "geolcode": 20301007,
+                "german": "onkolithisch"
+            },
+            {
+                "geolcode": 20301008,
+                "german": "oolithisch"
+            },
+            {
+                "geolcode": 20301009,
+                "german": "pelitisch"
+            },
+            {
+                "geolcode": 20301010,
+                "german": "pisolithisch"
+            },
+            {
+                "geolcode": 20401001,
+                "german": "Aktinolith"
+            },
+            {
+                "geolcode": 20401002,
+                "german": "Albit"
+            },
+            {
+                "geolcode": 20401003,
+                "german": "Allanit"
+            },
+            {
+                "geolcode": 20401004,
+                "german": "Almandin"
+            },
+            {
+                "geolcode": 20401005,
+                "german": "Amphibol"
+            },
+            {
+                "geolcode": 20401006,
+                "german": "Andalusit"
+            },
+            {
+                "geolcode": 20401007,
+                "german": "Ankerit"
+            },
+            {
+                "geolcode": 20401008,
+                "german": "Anorthit"
+            },
+            {
+                "geolcode": 20401009,
+                "german": "Antigorit"
+            },
+            {
+                "geolcode": 20401010,
+                "german": "Biotit"
+            },
+            {
+                "geolcode": 20401011,
+                "german": "Kalzit"
+            },
+            {
+                "geolcode": 20401012,
+                "german": "Karbonatmineral"
+            },
+            {
+                "geolcode": 20401013,
+                "german": "Karpholith"
+            },
+            {
+                "geolcode": 20401014,
+                "german": "Chlorit"
+            },
+            {
+                "geolcode": 20401015,
+                "german": "Chloritoid"
+            },
+            {
+                "geolcode": 20401016,
+                "german": "Klinozoisit"
+            },
+            {
+                "geolcode": 20401017,
+                "german": "Coesit"
+            },
+            {
+                "geolcode": 20401018,
+                "german": "Cordierit"
+            },
+            {
+                "geolcode": 20401019,
+                "german": "Diopsid"
+            },
+            {
+                "geolcode": 20401020,
+                "german": "Disthen"
+            },
+            {
+                "geolcode": 20401021,
+                "german": "Dolomit"
+            },
+            {
+                "geolcode": 20401022,
+                "german": "Epidot"
+            },
+            {
+                "geolcode": 20401023,
+                "german": "Feldspat"
+            },
+            {
+                "geolcode": 20401024,
+                "german": "Alkalifeldspat"
+            },
+            {
+                "geolcode": 20401026,
+                "german": "Glaukophan"
+            },
+            {
+                "geolcode": 20401027,
+                "german": "Graphit"
+            },
+            {
+                "geolcode": 20401028,
+                "german": "Granat"
+            },
+            {
+                "geolcode": 20401029,
+                "german": "Hornblende"
+            },
+            {
+                "geolcode": 20401030,
+                "german": "Lawsonit"
+            },
+            {
+                "geolcode": 20401031,
+                "german": "Magnetit"
+            },
+            {
+                "geolcode": 20401032,
+                "german": "Glimmer"
+            },
+            {
+                "geolcode": 20401033,
+                "german": "Hellglimmer"
+            },
+            {
+                "geolcode": 20401034,
+                "german": "Mikroklin"
+            },
+            {
+                "geolcode": 20401035,
+                "german": "Muskovit"
+            },
+            {
+                "geolcode": 20401036,
+                "german": "Olivin"
+            },
+            {
+                "geolcode": 20401037,
+                "german": "Omphazit"
+            },
+            {
+                "geolcode": 20401038,
+                "german": "Orthoklas"
+            },
+            {
+                "geolcode": 20401039,
+                "german": "Paragonit"
+            },
+            {
+                "geolcode": 20401040,
+                "german": "Phlogopit"
+            },
+            {
+                "geolcode": 20401041,
+                "german": "Plagioklas"
+            },
+            {
+                "geolcode": 20401042,
+                "german": "Prehnit"
+            },
+            {
+                "geolcode": 20401043,
+                "german": "Pyrit"
+            },
+            {
+                "geolcode": 20401044,
+                "german": "Pyrop"
+            },
+            {
+                "geolcode": 20401045,
+                "german": "Pyrophyllit"
+            },
+            {
+                "geolcode": 20401046,
+                "german": "Pyroxen"
+            },
+            {
+                "geolcode": 20401047,
+                "german": "Quarz"
+            },
+            {
+                "geolcode": 20401049,
+                "german": "Serpentin"
+            },
+            {
+                "geolcode": 20401050,
+                "german": "Alumosilikat"
+            },
+            {
+                "geolcode": 20401051,
+                "german": "Sillimanit"
+            },
+            {
+                "geolcode": 20401052,
+                "german": "Staurolith"
+            },
+            {
+                "geolcode": 20401053,
+                "german": "Stilpnomelan"
+            },
+            {
+                "geolcode": 20401054,
+                "german": "Talk"
+            },
+            {
+                "geolcode": 20401055,
+                "german": "Zoisit"
+            },
+            {
+                "geolcode": 20401056,
+                "german": "Adular"
+            },
+            {
+                "geolcode": 20401057,
+                "german": "Aegirin"
+            },
+            {
+                "geolcode": 20401058,
+                "german": "Aegirin-Augit"
+            },
+            {
+                "geolcode": 20401059,
+                "german": "Andesin"
+            },
+            {
+                "geolcode": 20401060,
+                "german": "Anhydrit"
+            },
+            {
+                "geolcode": 20401061,
+                "german": "Annit"
+            },
+            {
+                "geolcode": 20401062,
+                "german": "Aragonit"
+            },
+            {
+                "geolcode": 20401063,
+                "german": "Augit"
+            },
+            {
+                "geolcode": 20401064,
+                "german": "Chrysotil"
+            },
+            {
+                "geolcode": 20401065,
+                "german": "Grossular"
+            },
+            {
+                "geolcode": 20401066,
+                "german": "Jadeit"
+            },
+            {
+                "geolcode": 20401067,
+                "german": "Margarit"
+            },
+            {
+                "geolcode": 20401068,
+                "german": "Oligoklas"
+            },
+            {
+                "geolcode": 20401069,
+                "german": "Orthopyroxen"
+            },
+            {
+                "geolcode": 20401070,
+                "german": "Klinopyroxen"
+            },
+            {
+                "geolcode": 20401071,
+                "german": "Phengit"
+            },
+            {
+                "geolcode": 20401072,
+                "german": "Pumpellyit"
+            },
+            {
+                "geolcode": 20401073,
+                "german": "Sanidin"
+            },
+            {
+                "geolcode": 20401074,
+                "german": "Sapphirin"
+            },
+            {
+                "geolcode": 20401075,
+                "german": "Spessartin"
+            },
+            {
+                "geolcode": 20401076,
+                "german": "Spinell"
+            },
+            {
+                "geolcode": 20401077,
+                "german": "Titanit"
+            },
+            {
+                "geolcode": 20401078,
+                "german": "Tremolit"
+            },
+            {
+                "geolcode": 20401079,
+                "german": "Turmalin"
+            },
+            {
+                "geolcode": 20401080,
+                "german": "Forsterit"
+            },
+            {
+                "geolcode": 20401081,
+                "german": "Fayalit"
+            },
+            {
+                "geolcode": 20401082,
+                "german": "Enstatit"
+            },
+            {
+                "geolcode": 20401083,
+                "german": "Zeolith"
+            },
+            {
+                "geolcode": 20401084,
+                "german": "Serizit"
+            },
+            {
+                "geolcode": 20401085,
+                "german": "Fuchsit"
+            },
+            {
+                "geolcode": 20501001,
+                "german": "massig"
+            },
+            {
+                "geolcode": 20501002,
+                "german": "geb\u00e4ndert"
+            },
+            {
+                "geolcode": 20501003,
+                "german": "augig"
+            },
+            {
+                "geolcode": 20501004,
+                "german": "mit Schollen"
+            },
+            {
+                "geolcode": 20501005,
+                "german": "schiefrig"
+            },
+            {
+                "geolcode": 20501006,
+                "german": "phyllitisch"
+            },
+            {
+                "geolcode": 20501007,
+                "german": "laminiert"
+            },
+            {
+                "geolcode": 20501008,
+                "german": "lagig"
+            },
+            {
+                "geolcode": 20501009,
+                "german": "plattig"
+            },
+            {
+                "geolcode": 20501010,
+                "german": "gebankt"
+            },
+            {
+                "geolcode": 20501011,
+                "german": "gef\u00e4ltelt"
+            },
+            {
+                "geolcode": 20501012,
+                "german": "geadert"
+            },
+            {
+                "geolcode": 20501013,
+                "german": "schlierig"
+            },
+            {
+                "geolcode": 20501014,
+                "german": "linsig"
+            },
+            {
+                "geolcode": 20501015,
+                "german": "flaserig"
+            },
+            {
+                "geolcode": 20501016,
+                "german": "agmatitisch (migmatitisch)"
+            },
+            {
+                "geolcode": 20501017,
+                "german": "brekzi\u00f6s"
+            },
+            {
+                "geolcode": 20601001,
+                "german": "Name und Begrenzung harmonisiert"
+            },
+            {
+                "geolcode": 20601002,
+                "german": "Untergrenze muss noch revidiert werden"
+            },
+            {
+                "geolcode": 20601003,
+                "german": "Obergrenze muss noch revidiert werden"
+            },
+            {
+                "geolcode": 20601004,
+                "german": "Unter- und Obergrenzen m\u00fcssen noch revidiert werden"
+            },
+            {
+                "geolcode": 20601005,
+                "german": "Interne Gliederung zu revidieren"
+            },
+            {
+                "geolcode": 20601006,
+                "german": "Unsichere lithostratigraphische Attribuierung"
+            }
+        ],
+        "removed": [],
+        "changed": [
+            {
+                "Unnamed: 0": 0,
+                "geolcode": 15200093,
+                "2022": "Vallorbe-Formation",
+                "2024": "Vallorbe-Member"
+            },
+            {
+                "Unnamed: 0": 1,
+                "geolcode": 15200220,
+                "2022": "Sp\u00e4t- bis postvariszische Intrusiva des Schwarzwaldes",
+                "2024": "Sp\u00e4t- bis postvariszische Intrusiva der Nordschweiz"
+            },
+            {
+                "Unnamed: 0": 2,
+                "geolcode": 15200221,
+                "2022": "Permo-Karbon der NW-Schweiz",
+                "2024": "Permo-Karbon der Nordschweiz"
+            },
+            {
+                "Unnamed: 0": 3,
+                "geolcode": 15200230,
+                "2022": "Fr\u00fchvariszische Intrusiva des Schwarzwaldes",
+                "2024": "Fr\u00fchvariszische Intrusiva der Nordschweiz"
+            },
+            {
+                "Unnamed: 0": 4,
+                "geolcode": 15200243,
+                "2022": "Pr\u00e4- und fr\u00fchvariszische Sedimente und Vulkanite des Schwarzwaldes",
+                "2024": "Pr\u00e4- und fr\u00fchvariszische Sedimente und Vulkanite der Nordschweiz"
+            },
+            {
+                "Unnamed: 0": 5,
+                "geolcode": 15200245,
+                "2022": "Pr\u00e4variszisches polyzyklisches Grundgebirge des Schwarzwaldes",
+                "2024": "Pr\u00e4variszisches polyzyklisches Grundgebirge der Nordschweiz"
+            },
+            {
+                "Unnamed: 0": 6,
+                "geolcode": 15200246,
+                "2022": "Orthogneise des Schwarzwaldes",
+                "2024": "Pr\u00e4variszische Orthogneise der Nordschweiz"
+            },
+            {
+                "Unnamed: 0": 7,
+                "geolcode": 15200250,
+                "2022": "Migmatite des Schwarzwaldes",
+                "2024": "Pr\u00e4variszische Migmatite der Nordschweiz"
+            },
+            {
+                "Unnamed: 0": 8,
+                "geolcode": 15200253,
+                "2022": "Gr\u00fcngesteine des Schwarzwaldes",
+                "2024": "Pr\u00e4variszische Gr\u00fcngesteine der Nordschweiz"
+            },
+            {
+                "Unnamed: 0": 9,
+                "geolcode": 15201050,
+                "2022": "Gondiswil-Interglazial (Letztes Integlazial)",
+                "2024": "Gondiswil-Interglazial (Letztes Interglazial)"
+            },
+            {
+                "Unnamed: 0": 10,
+                "geolcode": 15202149,
+                "2022": "Chartegg-Member",
+                "2024": "Chartegg-Formation"
+            },
+            {
+                "Unnamed: 0": 11,
+                "geolcode": 15202283,
+                "2022": "Sardona-Quarzit",
+                "2024": "Sardona-Member"
+            },
+            {
+                "Unnamed: 0": 12,
+                "geolcode": 15202542,
+                "2022": "Elm- und Matt-Formation: schiefriger Tonstein",
+                "2024": "Nordhelvetische Flysch-Gruppe, vorw. schiefriger Tonstein"
+            },
+            {
+                "Unnamed: 0": 13,
+                "geolcode": 15202588,
+                "2022": "Stad-Formation, \"J\u00fcngerer Quarzsandstein\"",
+                "2024": "Stad-Formation, \u00abJ\u00fcngerer Quarzsandstein\u00bb"
+            },
+            {
+                "Unnamed: 0": 14,
+                "geolcode": 15202589,
+                "2022": "Einsiedeln-Member, \"\u00c4lterer Quarzsandstein\"",
+                "2024": "Einsiedeln-Member, \u00ab\u00c4lterer Quarzsandstein\u00bb"
+            },
+            {
+                "Unnamed: 0": 15,
+                "geolcode": 15202591,
+                "2022": "W\u00e4ngen-Kalk, \"Lithothamnienkalk\"-Fazies",
+                "2024": "W\u00e4ngen-Kalk, Lithothamnienkalk-Fazies"
+            },
+            {
+                "Unnamed: 0": 16,
+                "geolcode": 15202592,
+                "2022": "Einsiedeln-Member, \"Alveolinenkalk\"-Fazies",
+                "2024": "Einsiedeln-Member, Alveolinenkalk-Fazies"
+            },
+            {
+                "Unnamed: 0": 17,
+                "geolcode": 15202596,
+                "2022": "Euthal-Formation und Steinbach-Member, undiff.",
+                "2024": "Einsiedeln- und Steinibach-Member, undifferenziert"
+            },
+            {
+                "Unnamed: 0": 18,
+                "geolcode": 15203224,
+                "2022": "Tasna-Granit",
+                "2024": "Plattamala-Granit"
+            },
+            {
+                "Unnamed: 0": 19,
+                "geolcode": 15203227,
+                "2022": "Garde-de-Bordon-Serie",
+                "2024": "Garde-de-Bordon-Formation"
+            },
+            {
+                "Unnamed: 0": 20,
+                "geolcode": 15203228,
+                "2022": "F\u00eata-d'Ao\u00fbt-Flysch",
+                "2024": "F\u00eata-d'Ao\u00fbt-Formation"
+            },
+            {
+                "Unnamed: 0": 21,
+                "geolcode": 15203466,
+                "2022": "Amphibolit des Ergischhorn-Ensembles",
+                "2024": "Ergischhorn-Komplex: Amphibolit"
+            },
+            {
+                "Unnamed: 0": 22,
+                "geolcode": 15203499,
+                "2022": "Radiolarit der Platta-Decke",
+                "2024": "Falotta-Radiolarit"
+            }
+        ]
+    },
     "lang": "de"
 }

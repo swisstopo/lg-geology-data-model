@@ -542,6 +542,19 @@ def generate(lang, datamodel, output):
 
     except Exception as e:
         logger.error(f"Cannot read/parse datamodel: {yaml_file}")
+        
+        
+    # Geolcode
+    xlsx_file = os.path.join(yaml_dir, 'exports', 'comparison_results.xlsx')
+    added_rows = pd.read_excel(xlsx_file, sheet_name='Added Rows')
+    removed_rows = pd.read_excel(xlsx_file, sheet_name='Removed Rows')
+    changed_rows = pd.read_excel(xlsx_file, sheet_name='Changed Rows')
+    # Convert DataFrames to dictionaries for Jinja2
+    added_rows_dict = added_rows.to_dict(orient='records')
+    removed_rows_dict = removed_rows.to_dict(orient='records')
+    changed_rows_dict = changed_rows.to_dict(orient='records')
+    
+    
 
     classe_names = get_classes(model.model)
     prefixes = [p + " " for p in get_prefixes(model.model)]
@@ -550,6 +563,11 @@ def generate(lang, datamodel, output):
     if data is None:
         raise RuntimeError("Model conversion to JSON failed, cannot proceed")
     now = datetime.datetime.now()
+    
+    data['geolcodes'] = {}
+    data['geolcodes']['added'] = added_rows_dict
+    data['geolcodes']['removed'] = removed_rows_dict
+    data['geolcodes']['changed'] = changed_rows_dict
 
     loader = jinja2.FileSystemLoader(os.path.join(yaml_dir, "templates"))
     env = jinja2.Environment(

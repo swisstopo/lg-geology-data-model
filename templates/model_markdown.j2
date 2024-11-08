@@ -76,6 +76,7 @@ _{{_("Datatype")}} :  {{ attr.att_type  }}_
 {% endfor %}
 
 
+
 {% for annex in annexes -%}
 
 
@@ -90,5 +91,8 @@ _{{_("Datatype")}} :  {{ attr.att_type  }}_
 {% endfor %}
 {% endif %}
 {% endfor %}
+
+
+{% extends "comparison_reports.j2" %}
 
 
