@@ -10,13 +10,14 @@
 # 0.6  Tables, like CHARCAT, ADMIXTURE as annex (why no CD?). Ignore some deleted attributes.
 #      hack to improve translations (cannot modify the XLS file)
 # 0.7  Added attribut `alias`
-version: "0.6"
+# 0.8  Attribut `status` indicating the version an attribute is used (<4.0, >=4.0)
+version: "0.8"
 date: 2024-09-24
 
 # Model revision should change if attributes are added, deleted or changed
 model:
-  revision: 3.9.11
-  revision_date: "2024-11-08"
+  revision: 3.9.12
+  revision_date: "2024-11-09"
 
 themes:
 - name: Rock_Bodies
@@ -122,6 +123,7 @@ themes:
       value: GC_LITSTRAT_UNCO_CD
       cardinality: "1"
       mandatory: true
+      status: ">=3.0"
     - name: litho
       description:
         de: Lithologische Beschreibung
@@ -334,6 +336,7 @@ themes:
       cardinality: "1"
       change: removed
       mandatory: false
+      status: "<4.0"
     - name: exotic_ele
       value: boolean
       description:
@@ -927,7 +930,7 @@ themes:
       value: GC_LIN_TTEC_LIM_TYP
       cardinality: "1"
       mandatory: false
-      status: >4.0
+      status: ">=4.0"
     - name: lim_tect 
       description:
         de: Typ der tektonischen Grenze (Deckengrenze,Schuppengrenze, etc.)
@@ -936,7 +939,7 @@ themes:
       cardinality: "1"
       mandatory: false
       change: removed
-      status: <4.0
+      status: "<4.0"
     - name: hiera
       description:
         de: Typ der tektonischen Grenze (Deckengrenze,Schuppengrenze, etc.)
@@ -945,7 +948,7 @@ themes:
       value: GC_LIN_TTEC_HIERA_CD
       cardinality: "1"
       mandatory: false
-      status: >4.0
+      status: ">=4.0"
     - name: status
       description:
         de: Zustand der Objektart
@@ -962,7 +965,7 @@ themes:
       change: removed
       cardinality: 0..1
       mandatory: false
-      status: <4.0
+      status: "<4.0"
     - name: meta_sta
       description:
         de: Tektonometamorphe Chronologie der Objektart
@@ -1226,6 +1229,8 @@ themes:
       value: gc_system
       cardinality: 0..5
       mandatory: false
+      change: removed
+      status: "<4.0"
     - name: dat_meth
       description:
         de: Datierungsmethode.
