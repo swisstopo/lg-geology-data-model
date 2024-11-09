@@ -919,13 +919,33 @@ themes:
       value: GC_LIN_TTEC_HORIZ_MO_CD
       cardinality: 0..1
       mandatory: false
-    - name: lim_tect
+    - name: lim_typ 
+      description:
+        de: Typ der tektonischen Grenze (Deckengrenze,Schuppengrenze, etc.)
+        fr: Limite d’unité tectonique (oui / non)?
+      att_type: CD
+      value: GC_LIN_TTEC_LIM_TYP
+      cardinality: "1"
+      mandatory: false
+      status: >4.0
+    - name: lim_tect 
       description:
         de: Typ der tektonischen Grenze (Deckengrenze,Schuppengrenze, etc.)
         fr: Limite d’unité tectonique (oui / non)?
       att_type: boolean
       cardinality: "1"
       mandatory: false
+      change: removed
+      status: <4.0
+    - name: hiera
+      description:
+        de: Typ der tektonischen Grenze (Deckengrenze,Schuppengrenze, etc.)
+        fr: Limite d’unité tectonique (oui / non)?
+      att_type: CD
+      value: GC_LIN_TTEC_HIERA_CD
+      cardinality: "1"
+      mandatory: false
+      status: >4.0
     - name: status
       description:
         de: Zustand der Objektart
@@ -938,10 +958,11 @@ themes:
       description:
         de: Aktivität der Objektart
         fr: Activité du type d'objet
-      att_type: TODO        # TODO: no coded domain
+      att_type: TODO        # removed
       change: removed
       cardinality: 0..1
       mandatory: false
+      status: <4.0
     - name: meta_sta
       description:
         de: Tektonometamorphe Chronologie der Objektart
