@@ -229,7 +229,7 @@ def check_attribute_in_table(cls_name, table, attributes, abrev, prefixes):
 
     model_attributes = []
 
-    logger.info(f"All prefixes: {prefixes}")
+    logger.debug(f"All prefixes: {prefixes}")
 
     for attribute in attributes:
         model_attributes.append(attribute.upper())
@@ -257,16 +257,17 @@ def check_attribute_in_table(cls_name, table, attributes, abrev, prefixes):
         table_attributes_set = set(table_attributes)
         model_attributes_set = set(model_attributes)
 
-        # missing_in_table = any(d in model_attributes for d in table_attributes)
-        # missing_in_model = any(d in table_attributes for d in  model_attributes)
-
         missing_in_model = sorted(list(table_attributes_set - model_attributes_set))
         missing_in_table = sorted(list(model_attributes_set - table_attributes_set))
 
-        logger.info(f"Class {cls_name}: elements to add to model?: {missing_in_model}")
-        logger.info(
-            f"Class {cls_name}: elements to remove from model? (not in feature class {table}): {missing_in_table}"
-        )
+        if len(missing_in_model) > 0:
+            logger.warning(
+                f"Class {cls_name}: elements to add to model?: {missing_in_model}"
+            )
+        if len(missing_in_table) > 0:
+            logger.warning(
+                f"Class {cls_name}: elements to remove from model? (not in feature class {table}): {missing_in_table}"
+            )
 
     return (missing_in_model, missing_in_table)
 
@@ -371,6 +372,8 @@ class Report:
         except AttributeError:
             logger.error("Model must be a dictionary-like object with a copy() method.")
             return None
+
+        logger.debug(f"All prefixes: {self.abrevs}")
 
         for theme in model.get("themes", []):
             try:
