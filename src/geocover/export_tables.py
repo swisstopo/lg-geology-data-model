@@ -81,14 +81,15 @@ def main(output_dir, workspace):
     if not os.path.isdir(output_dir):
         os.makedirs(output_dir)
 
+
+
     fields = list(
         (
             "OBJECTID",
-            "GEOL_CODE",
             "GEOL_CODE_INT",
+            "GEOL_CODE",
             "GERMAN",
             "FMAT_LITSTRAT",
-            "GERMAN",
             "TREE_LEVEL",
             "PARENT_REF",
         )
@@ -114,6 +115,19 @@ def main(output_dir, workspace):
             logging.info(f"Sort keys: {sort_keys}")
             df.sort_values(by=sort_keys, inplace=True)
             # df = df.reindex(df.columns.union(fields, sort=False), axis=1, fill_value=0)
+            # Reorder the columns (why is it no always the same?)
+            # Check for missing columns
+            missing_fields = [col for col in fields if col not in df.columns]
+
+            if missing_fields:
+                logging.error(f"The following columns {missing_fields} are missing from {table_name} ")
+
+            # Reorder columns if all required columns are present
+            present_columns = [col for col in fields if col in df.columns]
+
+            df = df[present_columns]
+
+            logging.info(f"Table: {table_name}, {df.columns}")
 
             try:
                 df.to_csv(os.path.join(output_dir, f"{short_name}.csv"), index=True)
