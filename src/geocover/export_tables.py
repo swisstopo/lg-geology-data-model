@@ -86,8 +86,6 @@ def export_tables(output_dir, workspace):
     if not os.path.isdir(output_dir):
         os.makedirs(output_dir)
 
-
-
     fields = list(
         (
             "OBJECTID",
@@ -125,7 +123,9 @@ def export_tables(output_dir, workspace):
             missing_fields = [col for col in fields if col not in df.columns]
 
             if missing_fields:
-                logging.error(f"The following columns {missing_fields} are missing from {table_name} ")
+                logging.error(
+                    f"The following columns {missing_fields} are missing from {table_name} "
+                )
 
             # Reorder columns if all required columns are present
             present_columns = [col for col in fields if col in df.columns]
