@@ -31,7 +31,7 @@ USED_SYMBOLS_PATH = os.path.join(DEFAULT_OUTPUT_DIR, "layer_used_symbols.json")
 LAYERS_SYMBOL_RULES = "layer_symbols_rules.json"
 
 
-COMMANDS_REQUIRING_ARCPY = ["export", "schema", "rules"]
+COMMANDS_REQUIRING_ARCPY = ["export", "schema", "rules", "tables"]
 
 
 def configure_logging(level):
@@ -624,7 +624,7 @@ def export_rules(workspace, output, log_level):
 export.requires_arcpy = True
 schema.requires_arcpy = True
 export_rules.requires_arcpy = True
-
+tables.requires_arcpy = True
 
 geocover.add_command(export)
 geocover.add_command(schema)
@@ -632,6 +632,7 @@ geocover.add_command(export_rules)
 
 geocover.add_command(geolcode)
 geocover.add_command(filter_symbols)
+geocover.add_command(tables)
 
 
 if __name__ == "__main__":
