@@ -320,6 +320,34 @@ def schema(output_dir, workspace, log_level):
 
 
 @geocover.command(
+    "tables",
+    context_settings={"show_default": True},
+    help="Dumps all non-spatial tables",
+)
+@click.option(
+    "-o",
+    "--output-dir",
+    type=click.Path(exists=True, file_okay=False),
+    help="The directory for the output",
+    default=DEFAULT_OUTPUT_DIR,
+)
+@click.option(
+    "-w",
+    "--workspace",
+    type=str,
+    help="Workspace (SDE string or GDB)",
+    default=DEFAULT_WORKSPACE,
+)
+def tables(output_dir, workspace):
+    from geocover.export_tables import arcgis_table_to_df, export_tables
+
+    abs_output_dir = os.path.abspath(os.path.join(output_dir))
+
+    export_tables(abs_output_dir, workspace)
+
+
+
+@geocover.command(
     "geolcode",
     context_settings={"show_default": True},
     help="Dumps all geol codes currently in use",

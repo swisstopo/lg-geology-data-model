@@ -3,6 +3,7 @@ import pandas as pd
 import os
 import sys
 import click
+import datetime
 
 import logging
 
@@ -65,6 +66,10 @@ def arcgis_table_to_df(in_fc, input_fields=None, query=""):
     default=DEFAULT_WORKSPACE,
 )
 def main(output_dir, workspace):
+    export_tables(output_dir, workspace)
+
+
+def export_tables(output_dir, workspace):
     arcpy.env.workspace = workspace
 
     tables = []
