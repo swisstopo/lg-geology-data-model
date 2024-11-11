@@ -46,6 +46,14 @@ ATTRIBUTES_TO_IGNORE = [
     "DATEOFCHANGE",
     "OPERATOR",
     "UUID",
+    "SHAPE",
+    "RC_ID_CREATION",
+    "REVISION_QUALITY",
+    "SHAPE.LEN",
+    "SHAPE.AREA",
+    "RC_ID",
+    "WU_ID",
+    "WU_ID_CREATION",
 ]
 
 
@@ -198,24 +206,69 @@ def get_coded_values(domain_name):
     return {}
 
 
-def check_attribute_in_table(table, attribute, abrev):
+def check_attribute_in_table(cls_name, table, attributes, abrev, prefixes):
+    ATTRIBUTES_TO_REMOVE = [
+        "INTEGRATION_OBJECT_UUID",
+        "MORE_INFO",
+        "OBJECTID",
+        "OBJECTORIGIN",
+        "SYMBOL",
+        "PRINTED",
+    ] + ATTRIBUTES_TO_IGNORE
+
+    prefixes = list(map(str.upper, prefixes))
+
+    if abrev in prefixes:
+        prefixes.remove(abrev)
+
     table_name = "TOPGIS_GC." + table.upper()
 
-    attributes_list = tables_dict.get(table_name)
+    attributes_dict = tables_dict.get(table_name)
 
-    attribute_name = (abrev + "_" + attribute).upper()
-    target_names = [attribute.upper(), attribute_name]
+    table_attributes = [d.get("name", "").upper() for d in attributes_dict]
 
-    if attributes_list:
-        res = any(d.get("name", "").upper() in target_names for d in attributes_list)
-        if not res:
-            logger.debug(
-                f"Missing attribute: {target_names}, {sorted([d.get('name', '').upper() for d in attributes_list])}"
-            )
+    model_attributes = []
 
-        return res
+    logger.info(f"All prefixes: {prefixes}")
 
-    return False
+    for attribute in attributes:
+        model_attributes.append(attribute.upper())
+        if attribute.lower() != "kind":
+            attribute_name = (abrev + "_" + attribute).upper()
+            model_attributes.append(attribute_name)
+
+    # Ignore som common metadata columns
+    table_attributes = [
+        col for col in table_attributes if col not in ATTRIBUTES_TO_REMOVE
+    ]
+    model_attributes = [
+        col for col in model_attributes if col not in ATTRIBUTES_TO_REMOVE
+    ]
+
+    # Ignore attributes which are prefixes
+    table_attributes = [
+        elem for elem in table_attributes if not elem.startswith(tuple(prefixes))
+    ]
+
+    logger.debug(f"Attributes in model: {model_attributes}")
+    logger.debug(f"Attributes in feature class: {table_attributes}")
+
+    if table_attributes:
+        table_attributes_set = set(table_attributes)
+        model_attributes_set = set(model_attributes)
+
+        # missing_in_table = any(d in model_attributes for d in table_attributes)
+        # missing_in_model = any(d in table_attributes for d in  model_attributes)
+
+        missing_in_model = sorted(list(table_attributes_set - model_attributes_set))
+        missing_in_table = sorted(list(model_attributes_set - table_attributes_set))
+
+        logger.info(f"Class {cls_name}: elements to add to model?: {missing_in_model}")
+        logger.info(
+            f"Class {cls_name}: elements to remove from model? (not in feature class {table}): {missing_in_table}"
+        )
+
+    return (missing_in_model, missing_in_table)
 
 
 def get_table_values(name):
@@ -298,6 +351,20 @@ class Report:
                 self._model["hash"] = get_git_revision_short_hash()
             return self._model
 
+    @property
+    def abrevs(self):
+        abrevs = []
+        for theme in self.model.get("themes", []):
+            try:
+                for cls in theme.get("classes", []):
+                    cls_abrev = cls.get("abrev")
+                    if cls_abrev:
+                        abrevs.append(cls_abrev)
+            except (KeyError, TypeError, IndexError) as e:
+                logger.error(f"Error processing theme '{theme}': {e}")
+                return None
+        return abrevs
+
     def to_json(self):
         try:
             model = self.model.copy()
@@ -323,6 +390,7 @@ class Report:
                         f"{theme['name'][0].upper()}{cls['name'][0:3].lower()}"
                     )
                     if attributes:
+                        attributes_in_model = []
                         for att in attributes:
                             att_type = att.get("att_type")
                             att_name = att.get("name")
@@ -337,15 +405,16 @@ class Report:
 
                             if pairs is not None:
                                 att["pairs"] = pairs
-                            else:
-                                if att.get(
-                                    "change", ""
-                                ) != "removed" and not check_attribute_in_table(
-                                    table_name, att_name, cls["abrev"]
-                                ):
-                                    logger.error(
-                                        f"{att_name} in '{cls_name}' not in table '{table_name}'"
-                                    )
+                            if att.get("change", "") != "removed":
+                                attributes_in_model.append(att_name)
+
+                        check_attribute_in_table(
+                            cls_name,
+                            table_name,
+                            attributes_in_model,
+                            cls["abrev"],
+                            self.abrevs,
+                        )
 
             except (KeyError, TypeError, IndexError) as e:
                 logger.error(f"Error processing theme '{theme}': {e}")
@@ -395,10 +464,10 @@ def check():
 )
 def export(datamodel, output, format):
     """Export model to various format."""
-    
-    from geocover import model 
+
+    from geocover import model
+
     yaml_path = datamodel
-    
 
     datamodel = model.Datamodel()
     datamodel.import_from_yaml(yaml_path)
@@ -542,19 +611,17 @@ def generate(lang, datamodel, output):
 
     except Exception as e:
         logger.error(f"Cannot read/parse datamodel: {yaml_file}")
-        
-        
+
     # Geolcode
-    xlsx_file = os.path.join(yaml_dir, 'exports', 'comparison_results.xlsx')
-    added_rows = pd.read_excel(xlsx_file, sheet_name='Added Rows')
-    removed_rows = pd.read_excel(xlsx_file, sheet_name='Removed Rows')
-    changed_rows = pd.read_excel(xlsx_file, sheet_name='Changed Rows')
+    xlsx_file = os.path.join(yaml_dir, "exports", "comparison_results.xlsx")
+    logger.info(f"comparison file: {xlsx_file}")
+    added_rows = pd.read_excel(xlsx_file, sheet_name="Added Rows")
+    removed_rows = pd.read_excel(xlsx_file, sheet_name="Removed Rows")
+    changed_rows = pd.read_excel(xlsx_file, sheet_name="Changed Rows")
     # Convert DataFrames to dictionaries for Jinja2
-    added_rows_dict = added_rows.to_dict(orient='records')
-    removed_rows_dict = removed_rows.to_dict(orient='records')
-    changed_rows_dict = changed_rows.to_dict(orient='records')
-    
-    
+    added_rows_dict = added_rows.to_dict(orient="records")
+    removed_rows_dict = removed_rows.to_dict(orient="records")
+    changed_rows_dict = changed_rows.to_dict(orient="records")
 
     classe_names = get_classes(model.model)
     prefixes = [p + " " for p in get_prefixes(model.model)]
@@ -563,11 +630,11 @@ def generate(lang, datamodel, output):
     if data is None:
         raise RuntimeError("Model conversion to JSON failed, cannot proceed")
     now = datetime.datetime.now()
-    
-    data['geolcodes'] = {}
-    data['geolcodes']['added'] = added_rows_dict
-    data['geolcodes']['removed'] = removed_rows_dict
-    data['geolcodes']['changed'] = changed_rows_dict
+
+    data["geolcodes"] = {}
+    data["geolcodes"]["added"] = added_rows_dict
+    data["geolcodes"]["removed"] = removed_rows_dict
+    data["geolcodes"]["changed"] = changed_rows_dict
 
     loader = jinja2.FileSystemLoader(os.path.join(yaml_dir, "templates"))
     env = jinja2.Environment(
@@ -587,6 +654,8 @@ def generate(lang, datamodel, output):
     data["date"] = now
     data["hash"] = get_git_revision_short_hash()
     locale = lang
+
+    # logger.info(json.dumps(data, indent=4,  cls=DatetimeEncoder))
 
     env.install_gettext_translations(translations, newstyle=True)
 

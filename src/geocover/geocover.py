@@ -346,7 +346,6 @@ def tables(output_dir, workspace):
     export_tables(abs_output_dir, workspace)
 
 
-
 @geocover.command(
     "geolcode",
     context_settings={"show_default": True},
