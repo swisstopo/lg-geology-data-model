@@ -230,20 +230,17 @@ def check_attribute_in_table(cls_name, table, attributes, abrev, prefixes):
 
     table_attributes = [d.get("name", "").upper() for d in attributes_dict]
 
-
-
     logger.debug(f"All prefixes: {prefixes}")
 
     for attribute in attributes:
-      couple = []
-      if attribute not in ATTRIBUTES_TO_REMOVE:
-        couple.append(attribute.upper())
-        model_attributes.append(attribute.upper())
-        if attribute.lower() != "kind":
-
-            attribute_name = (abrev + "_" + attribute).upper()
-            couple.append(attribute_name)
-        model_attributes_tuples.append(tuple(couple))
+        couple = []
+        if attribute not in ATTRIBUTES_TO_REMOVE:
+            couple.append(attribute.upper())
+            model_attributes.append(attribute.upper())
+            if attribute.lower() != "kind":
+                attribute_name = (abrev + "_" + attribute).upper()
+                couple.append(attribute_name)
+            model_attributes_tuples.append(tuple(couple))
 
     # Ignore som common metadata columns
     all_table_attributes = [
@@ -255,42 +252,37 @@ def check_attribute_in_table(cls_name, table, attributes, abrev, prefixes):
         elem for elem in all_table_attributes if not elem.startswith(tuple(prefixes))
     ]
 
-    #missing_in_table = [elem for tup in model_attributes_tuples if not any(e in table_attributes for e in tup) for elem in tup]
+    # missing_in_table = [elem for tup in model_attributes_tuples if not any(e in table_attributes for e in tup) for elem in tup]
 
-
-    logger.info(f"Attributes in model {cls_name}: {model_attributes}")
-    logger.info(f"All attributes in feature class {table}: {all_table_attributes}")
-    logger.info(f"Filtered attributes in feature class {table}: {table_attributes}")
-
-
-
+    logger.debug(f"Attributes in model {cls_name}: {model_attributes}")
+    logger.debug(f"All attributes in feature class {table}: {all_table_attributes}")
+    logger.debug(f"Filtered attributes in feature class {table}: {table_attributes}")
 
     if table_attributes:
         try:
-          table_attributes_set = set(table_attributes)
-          model_attributes_set = set(model_attributes)
+            table_attributes_set = set(table_attributes)
+            model_attributes_set = set(model_attributes)
 
-          missing_in_model = sorted(list(table_attributes_set - model_attributes_set))
-          missing_in_table = sorted(list(model_attributes_set - table_attributes_set))
+            missing_in_model = sorted(list(table_attributes_set - model_attributes_set))
+            missing_in_table = sorted(list(model_attributes_set - table_attributes_set))
 
-          # missing_in_table = [elem for tup in model_attributes_tuples if not any(e in table_attributes for e in tup) for elem in tup]
+            # missing_in_table = [elem for tup in model_attributes_tuples if not any(e in table_attributes for e in tup) for elem in tup]
 
-          missing_in_table = [
-             col for col in missing_in_table if col not in table_attributes
-         ]
+            missing_in_table = [
+                col for col in missing_in_table if col not in table_attributes
+            ]
 
-          missing_in_table = []
+            missing_in_table = []
 
-          for col in model_attributes:
-              if col not in table_attributes and (abrev + "_" + col).upper() not in table_attributes:
-                  missing_in_table.append(col)
-
-
-
+            for col in model_attributes:
+                if (
+                    col not in table_attributes
+                    and (abrev + "_" + col).upper() not in table_attributes
+                ):
+                    missing_in_table.append(col)
 
         except Exception as e:
             logger.error(f"{e}")
-
 
         if len(missing_in_model) > 0:
             logger.warning(
@@ -445,13 +437,13 @@ class Report:
                             if att.get("change", "") != "removed":
                                 attributes_in_model.append(att_name)
                         try:
-                          check_attribute_in_table(
-                            cls_name,
-                            table_name,
-                            attributes_in_model,
-                            cls["abrev"],
-                            self.abrevs,
-                         )
+                            check_attribute_in_table(
+                                cls_name,
+                                table_name,
+                                attributes_in_model,
+                                cls["abrev"],
+                                self.abrevs,
+                            )
                         except Exception as e:
                             logger.error(f"Check error: {e}")
 
@@ -714,10 +706,11 @@ def generate(lang, datamodel, output):
         return babel.dates.format_date(date=value, format=format, locale=locale)
 
     def attribute_name(attribute):
-        alias = attribute.get('alias')
+        alias = attribute.get("alias")
         if alias:
             return alias
-        return attribute.get('name')
+        return attribute.get("name")
+
     def highlight(input, words=classe_names, linkify=True):
         words.sort(key=len, reverse=True)  # longer first
         pattern = "({})".format(r"\b|\b".join(words))
@@ -744,7 +737,7 @@ def generate(lang, datamodel, output):
     env.filters["tr"] = translator.translate
     env.filters["format_date_locale"] = format_date_locale
     env.filters["remove_prefix"] = remove_prefix
-    env.filters["attribute_name"]= attribute_name
+    env.filters["attribute_name"] = attribute_name
 
     temp = env.get_template("model_markdown.j2")
 
