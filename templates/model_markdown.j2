@@ -40,9 +40,9 @@
 {%- if (slug != None) and (attr.att_type == 'CD') -%}
 **{{ attr |attribute_name|upper  }}**                 | [{{_("CodedDomain")}}](#{{slug| slugify}})  | {{ attr.description[lang]|trim }}. | [{{ attr.cardinality}}]
 {%elif (slug != None) and (attr.att_type == 'annex') -%}
-**{{ attr.name |upper  }}**                 | [ {{_("Table")}} ](#{{slug| slugify}})  | {{ attr.description[lang]|trim }}. | [{{ attr.cardinality}}]
+**{{ attr | attribute_name |upper  }}**                 | [ {{_("Table")}} ](#{{slug| slugify}})  | {{ attr.description[lang]|trim }}. | [{{ attr.cardinality}}]
 {% else -%}
-**{{ attr.name |upper  }}**                 | {{attr.att_type}}                  | {{ attr.description[lang]|trim }} | [{{ attr.cardinality}}]
+**{{ attr | attribute_name |upper  }}**                 | {{attr.att_type}}                  | {{ attr.description[lang]|trim }} | [{{ attr.cardinality}}]
 {% endif -%}
 {% endif -%}
 {% endfor %}
