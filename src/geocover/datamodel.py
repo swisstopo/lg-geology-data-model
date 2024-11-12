@@ -327,6 +327,8 @@ class Report:
                             att_type = att.get("att_type")
                             att_name = att.get("name")
                             value = att.get("value")
+                            alias = att.get("alias")
+
                             pairs = None
 
                             if att_type == "CD" and value is not None:
@@ -605,6 +607,11 @@ def generate(lang, datamodel, output):
     def format_date_locale(value, format="MMMM yyyy", locale="de_CH"):
         return babel.dates.format_date(date=value, format=format, locale=locale)
 
+    def attribute_name(attribute):
+        alias = attribute.get('alias')
+        if alias:
+            return alias
+        return attribute.get('name')
     def highlight(input, words=classe_names, linkify=True):
         words.sort(key=len, reverse=True)  # longer first
         pattern = "({})".format(r"\b|\b".join(words))
@@ -631,6 +638,7 @@ def generate(lang, datamodel, output):
     env.filters["tr"] = translator.translate
     env.filters["format_date_locale"] = format_date_locale
     env.filters["remove_prefix"] = remove_prefix
+    env.filters["attribute_name"]= attribute_name
 
     temp = env.get_template("model_markdown.j2")
 

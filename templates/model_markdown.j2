@@ -35,14 +35,14 @@
 {% for attr in cls.attributes -%}
 {%- if attr.change != 'removed' -%}
 {%- if attr.mandatory -%}{% set mandatory =  "**%s**" % (_("yes")) -%}{% else -%}{% set mandatory =  "%s" % (_("no")) -%}{% endif -%}
-{%- if attr.att_type == 'CD' -%}{% set slug = "%s-%s" % (cls.name, attr.name) -%}
+{%- if attr.att_type == 'CD' -%}{% set slug = "%s-%s" % (cls.name, attr|attribute_name) -%}
 {%- elif attr.att_type == 'annex' -%}{% set slug, location = attr.value, 'vgl. Anhang %s' % attr.value %}{% set see_annex = 'Die möglichen Werte sind in der Tabelle %s im Anhang dieses Dokumentes verfügbar.' % attr.value %}{%- else -%}{% set slug = None %}{% endif -%}
 {%- if (slug != None) and (attr.att_type == 'CD') -%}
-**{{ attr.name |upper  }}**                 | [{{_("CodedDomain")}}](#{{slug| slugify}})  | {{ attr.description[lang]|trim }}. | [{{ attr.cardinality}}]
+**{{ attr |attribute_name|upper  }}**                 | [{{_("CodedDomain")}}](#{{slug| slugify}})  | {{ attr.description[lang]|trim }}. | [{{ attr.cardinality}}]
 {%elif (slug != None) and (attr.att_type == 'annex') -%}
-**{{ attr.name |upper  }}**                 | [ {{_("Table")}} ](#{{slug| slugify}})  | {{ attr.description[lang]|trim }}. | [{{ attr.cardinality}}]
+**{{ attr | attribute_name |upper  }}**                 | [ {{_("Table")}} ](#{{slug| slugify}})  | {{ attr.description[lang]|trim }}. | [{{ attr.cardinality}}]
 {% else -%}
-**{{ attr.name |upper  }}**                 | {{attr.att_type}}                  | {{ attr.description[lang]|trim }} | [{{ attr.cardinality}}]
+**{{ attr | attribute_name |upper  }}**                 | {{attr.att_type}}                  | {{ attr.description[lang]|trim }} | [{{ attr.cardinality}}]
 {% endif -%}
 {% endif -%}
 {% endfor %}
@@ -51,8 +51,8 @@
 
 {% for attr in cls.attributes -%}
 {%- if attr.change != 'removed' -%}
-{% set slug = "%s-%s" % (cls.name, attr.name) %}
-#### {{_("Attribute")}}  {{ attr.name |upper}}
+{% set slug = "%s-%s" % (cls.name, attr | attribute_name) %}
+#### {{_("Attribute")}}  {{ attr |attribute_name|upper}}
 {%- if attr.att_type == 'CD' %} {{ '{#'}}{{slug| slugify}}{{'}'}}{% endif %}
 _{{ attr.description[lang]|trim|highlight}}_
 {% if attr.att_type in ('boolean', 'string', 'float', 'range', 'integer') %}
