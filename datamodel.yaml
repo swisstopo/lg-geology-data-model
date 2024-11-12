@@ -11,7 +11,8 @@
 #      hack to improve translations (cannot modify the XLS file)
 # 0.7  Added attribut `alias`
 # 0.8  Attribut `status` indicating the version an attribute is used (<4.0, >=4.0)
-version: "0.8"
+# 0.9  Attribute's name as in the database, `alias`for display
+version: "0.9"
 date: 2024-09-24
 
 # Model revision should change if attributes are added, deleted or changed
@@ -816,8 +817,8 @@ themes:
       value: GC_PNT_TDEF_FOLD_TYP_CD
       cardinality: 0..1
       mandatory: false
-    - name: fold_for
-      alias: TDEF_FOLD_FOR
+    - name: tdef_fold_for
+      alias: fold_for
       description:
         de: Objektform
         fr: Forme du type d'objet
@@ -1600,8 +1601,8 @@ themes:
       value: GC_LIN_PCOB_TYPE_CD
       cardinality: "1"
       mandatory: true
-    - name: altitude
-      alias: PCOB_ALTITUDE
+    - name:  pcob_altitude
+      alias: altitude
       description:
         de: Höhenangabe (m ü.M.) von Isohypsen.
         fr: Valeur altimétrique des isohypses.
@@ -1697,8 +1698,8 @@ themes:
       value: GC_LIN_PCOH_CONFINE_CD
       cardinality: 0..1
       mandatory: false
-    - name: altitude
-      alias: PCON_ALTITUDE
+    - name: pcon_altitude
+      alias: altitude
       description:
         de: Höhenangabe (m ü.M.) von Isohypsen.
         fr: Valeur altimétrique des isohypses.
@@ -1879,8 +1880,8 @@ themes:
       value: GC_EX_GEO_PNT_AEXP_STATUS_CD
       cardinality: 0..1
       mandatory: false
-    - name: depth_tot
-      alias: AEXP_DEPTH_TOT
+    - name:  aexp_depth_tot
+      alias: depth_tot
       description:
         de: Endtiefe (m ab Terrainoberfläche) der Objektart.
         fr: Profondeur totale du type d'objet (en mètres depuis la surface).
@@ -1999,8 +2000,8 @@ themes:
       value: 10502       # TODO no CD
       cardinality: 0..1
       mandatory: false
-    - name: depth_bedr
-      alias: ABOR_DEPTH_BEDR
+    - name:  abor_depth_bedr
+      alias: depth_bedr
       description:
         de: |
           Tiefe (in Meter ab Terrainoberfläche) der Felsoberfläche. (Sofern die Bohrung das Festgestein nicht erreicht, z.B. «Bohrung, Fels nicht erreicht», beträgt der Wert 999, falls die Bohrung bereits im Festgestein beginnt, beträgt der Wert 0). Falls Festgestein erreicht wurde, aber nicht klar ist, dass es sich um die Felsoberfläche handelt, beträgt der Wert 888.
@@ -2411,8 +2412,8 @@ themes:
       att_type: integer
       cardinality: 0..1
       mandatory: false
-    - name: chemistry
-      alias: HSUR_CHEMISTRY
+    - name:  hsur_chemistry
+      alias: chemistry
       description:
         de: >-
           Charakteristisches chemisches Element im Mineralwasser (z.B. Fe).
