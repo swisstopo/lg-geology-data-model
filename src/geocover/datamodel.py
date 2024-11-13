@@ -286,7 +286,7 @@ def check_attribute_in_table(cls_name, table, attributes, abrev, prefixes):
 
         if len(missing_in_model) > 0:
             logger.warning(
-                f"Class {cls_name}: elements to add to model?: {missing_in_model}"
+                f"Class {cls_name} [{abrev}]: elements to add to model?: {missing_in_model}"
             )
         if len(missing_in_table) > 0:
             logger.warning(
@@ -364,6 +364,7 @@ class Report:
     def __init__(self, config_file):
         self.config_file = config_file
         self._model = None
+        self._prefixes = []
 
     @property
     def model(self):
@@ -377,18 +378,21 @@ class Report:
             return self._model
 
     @property
-    def abrevs(self):
-        abrevs = []
+    def prefixes(self):
+        if len(self._prefixes) > 0:
+            return self._prefixes
+        prefixes = []
         for theme in self.model.get("themes", []):
             try:
                 for cls in theme.get("classes", []):
                     cls_abrev = cls.get("abrev")
                     if cls_abrev:
-                        abrevs.append(cls_abrev)
+                        prefixes.append(cls_abrev)
             except (KeyError, TypeError, IndexError) as e:
                 logger.error(f"Error processing theme '{theme}': {e}")
                 return None
-        return abrevs
+        self._prefixes = sorted(list(set(prefixes)))
+        return self._prefixes
 
     def to_json(self):
         try:
@@ -397,7 +401,7 @@ class Report:
             logger.error("Model must be a dictionary-like object with a copy() method.")
             return None
 
-        logger.debug(f"All prefixes: {self.abrevs}")
+        logger.info(f"All prefixes: {self.prefixes}")
 
         for theme in model.get("themes", []):
             try:
@@ -442,7 +446,7 @@ class Report:
                                 table_name,
                                 attributes_in_model,
                                 cls["abrev"],
-                                self.abrevs,
+                                self.prefixes,
                             )
                         except Exception as e:
                             logger.error(f"Check error: {e}")
