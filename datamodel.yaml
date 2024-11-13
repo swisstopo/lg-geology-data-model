@@ -17,8 +17,8 @@ date: 2024-11-12
 
 # Model revision should change if attributes are added, deleted or changed
 model:
-  revision: 3.9.13
-  revision_date: "2024-11-12"
+  revision: 3.9.14
+  revision_date: "2024-11-13"
 
 themes:
 - name: Rock_Bodies
@@ -1033,7 +1033,7 @@ themes:
       value: 13603        # TODO: CD not found (but approaching)
       cardinality: 0..1
       mandatory: false
-    - name: mfold_phase
+    - name: mfol_phase
       alias: phase
       description:
         de: Deformationsphase.
@@ -1042,7 +1042,7 @@ themes:
       value: GC_PNT_MFOL_PHASE_CD
       cardinality: 0..1
       mandatory: false
-    - name: mfold_phase_ref
+    - name: mfol_phase_ref
       alias: phase_ref
       description:
         de: Referenz für die Angabe der Deformationsphase.
@@ -1235,7 +1235,8 @@ themes:
       value: 12901
       cardinality: "1"
       mandatory: true
-    - name: division
+    - name: lfos_division
+      alias: division
       description:
         de: Fossilienkategorie, zu welcher die Objektinstanz gehört.
         fr: Catégorie de fossile à laquelle appartient l'objet
