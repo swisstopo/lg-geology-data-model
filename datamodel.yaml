@@ -17,8 +17,8 @@ date: 2024-11-12
 
 # Model revision should change if attributes are added, deleted or changed
 model:
-  revision: 3.9.13
-  revision_date: "2024-11-12"
+  revision: 3.9.14
+  revision_date: "2024-11-13"
 
 themes:
 - name: Rock_Bodies
@@ -524,7 +524,8 @@ themes:
       value: 15801        # changed
       cardinality: "1"
       mandatory: true
-    - name: main_mov
+    - name: gins_main_mov
+      alias: main_mov
       description:
         de: Hauptbewegungsphase
         fr: Phase de mouvement principale
@@ -575,7 +576,8 @@ themes:
       value: 11301
       cardinality: "1"
       mandatory: true
-    - name: morai_mo
+    - name: ggla_morai_mo
+      alias: morai_mo
       description:
         de: Morphologie der Moräne
         fr: Morphologie de la moraine
@@ -583,7 +585,8 @@ themes:
       value: GC_LIN_GGLA_MORAI_MO_CD
       cardinality: 0..1
       mandatory: true
-    - name: glac_typ
+    - name: ggla_glac_typ
+      alias: glac_typ
       description:
         de: Gletschertyp, auf welchen die Objektart bezogen ist
         fr: Type de glacier auquel le type d’objet est associé
@@ -591,7 +594,8 @@ themes:
       value: GC_LIN_GGLA_GLAC_TYP_CD
       cardinality: 0..1
       mandatory: true
-    - name: ice_m_p
+    - name: ggla_ice_m_p
+      alias: ice_m_p
       description:
         de: Räumlicher Gletscherstand
         fr: Stade glaciaire
@@ -599,7 +603,8 @@ themes:
       value: GC_LIN_GGLA_ICE_M_P_CD
       cardinality: 0..1
       mandatory: false
-    - name: quat_str
+    - name: ggla_quat_str
+      alias: quat_str
       description:
         de: Zeitliche quartärstratigraphische Zuordnung des Moränenwälls
         fr: >
@@ -609,14 +614,16 @@ themes:
       value: GC_LIN_GGLA_QUAT_STR_CD
       cardinality: 0..1
       mandatory: false
-    - name: ref_year
+    - name: ggla_ref_year
+      alias: ref_year
       description:
         de: Referenzjahr des älteren Gletscherstandes.
         fr: Année de référence.
       att_type: integer
       cardinality: 0..1
       mandatory: false
-    - name: source
+    - name: ggla_source
+      alias: source
       description:
         de: Quellenangabe der historischen Unterlagen
         fr: Source des données déduites à partir de données historiques.
@@ -751,7 +758,8 @@ themes:
       value: 10901
       cardinality: "1"
       mandatory: true
-    - name: age
+    - name: gall_age
+      alias: age
       description:
         de: Alter der Objektart.
         fr: Âge du type d'obje
@@ -809,7 +817,8 @@ themes:
       att_type: integer
       cardinality: 0..1
       mandatory: false
-    - name: fold_typ
+    - name: tdef_fold_typ
+      alias: fold_typ
       description:
         de: Objekttyp
         fr: Caractéristique du type d'objet
@@ -897,7 +906,8 @@ themes:
       value: 14901
       cardinality: "1"
       mandatory: true
-    - name: fault_mo
+    - name: ttec_fault_mo
+      alias: fault_mo
       description:
         de: Bewegungsrichtung des Bruchs
         fr: Mouvement de la faille
@@ -905,7 +915,8 @@ themes:
       value: GC_LIN_TTEC_FAULT_MO_CD
       cardinality: 0..1
       mandatory: false
-    - name: verti_mo
+    - name: ttect_verti_mo
+      alias: verti_mo
       description:
         de: Bewegung parallel zur Fallrichtung der Bruchfläche.
         fr: Mouvement parallèle au pendage du plan de faille
@@ -913,7 +924,8 @@ themes:
       value: GC_LIN_TTEC_VERTI_MO_CD
       cardinality: 0..1
       mandatory: false
-    - name: horiz_mo
+    - name: ttec_horiz_mo
+      alias: horiz_mo
       description:
         de: Bewegung parallel zur Streichrichtung der Bruch- oder Scherfläche
         fr: |
@@ -923,7 +935,8 @@ themes:
       value: GC_LIN_TTEC_HORIZ_MO_CD
       cardinality: 0..1
       mandatory: false
-    - name: lim_typ 
+    - name: ttec_lim_typ
+      alias: lim_typ
       description:
         de: Typ der tektonischen Grenze (Deckengrenze,Schuppengrenze, etc.)
         fr: Limite d’unité tectonique (oui / non)?
@@ -932,7 +945,7 @@ themes:
       cardinality: "1"
       mandatory: false
       status: ">=4.0"
-    - name: lim_tect 
+    - name: lim_tect
       description:
         de: Typ der tektonischen Grenze (Deckengrenze,Schuppengrenze, etc.)
         fr: Limite d’unité tectonique (oui / non)?
@@ -1004,7 +1017,8 @@ themes:
       value: 13601
       cardinality: "1"
       mandatory: true
-    - name: fold_typ
+    - name: mfol_fold_typ
+      alias: fold_typ
       description:
         de: Faltentyp
         fr: Type de plis
@@ -1019,7 +1033,8 @@ themes:
       value: 13603        # TODO: CD not found (but approaching)
       cardinality: 0..1
       mandatory: false
-    - name: phase
+    - name: mfol_phase
+      alias: phase
       description:
         de: Deformationsphase.
         fr: Phase de déformation
@@ -1027,7 +1042,8 @@ themes:
       value: GC_PNT_MFOL_PHASE_CD
       cardinality: 0..1
       mandatory: false
-    - name: phase_ref
+    - name: mfol_phase_ref
+      alias: phase_ref
       description:
         de: Referenz für die Angabe der Deformationsphase.
         fr: Référence pour les données concernant la phase de déformation.
@@ -1121,7 +1137,8 @@ themes:
       value: 13801
       cardinality: "1"
       mandatory: true
-    - name: polarity
+    - name: mpla_polarity
+      alias: polarity
       description:
         de: Position der Objektart im Raum
         fr: Polarité du type d'objet dans l'espace.
@@ -1129,7 +1146,8 @@ themes:
       value: GC_PNT_MPLA_POLARITY_CD
       cardinality: 0..1
       mandatory: false
-    - name: phase
+    - name: mpla_phase
+      alias: phase
       cardinality: 0..1
       description:
         de: Deformationsphase
@@ -1138,14 +1156,16 @@ themes:
       value: GC_PNT_MPLA_PHASE_CD
       polarity: 0..1
       mandatory: false
-    - name: phase_ref
+    - name: mpla_phase_ref
+      alias: phase_ref
       description:
         de: Referenz für die Angabe der Deformationsphase.
         fr: Référence pour les données concernant la phase de déformation.
       att_type: string
       cardinality: 0..1
       mandatory: false
-    - name: ob_dip_slo
+    - name: mpla_ob_dip_slo
+      alias: ob_dip_slo
       description:
         de: Dip slope (ja / nein)?
         fr: Dip slope (oui / non)?
@@ -1192,7 +1212,8 @@ themes:
       value: 12801
       cardinality: "1"
       mandatory: true
-    - name: type
+    - name: lano_type
+      alias: type
       cardinatity: 0..1
       description:
         de: Charakteristik der Objektart.
@@ -1200,8 +1221,8 @@ themes:
       value: 128002        # TODO: no CD
       mandatory: true
   - name: Fossils_PT
-    abrev: Lfos      # TODO: to check
-    table: GC_FOSSILS     # TODO: to check
+    abrev: Lfos
+    table: GC_FOSSILS
     description:
       de: Die Klasse Fossils_PT enthält alle Fossilfundstellen.
       fr: La classe Fossils_PT contient tous les gisements fossilifères
@@ -1214,7 +1235,8 @@ themes:
       value: 12901
       cardinality: "1"
       mandatory: true
-    - name: division
+    - name: lfos_division
+      alias: division
       description:
         de: Fossilienkategorie, zu welcher die Objektinstanz gehört.
         fr: Catégorie de fossile à laquelle appartient l'objet
@@ -1232,7 +1254,8 @@ themes:
       mandatory: false
       change: removed
       status: "<4.0"
-    - name: dat_meth
+    - name: lfos_dat_meth
+      alias: dat_meth
       description:
         de: Datierungsmethode.
         fr: Méthode de datation
@@ -1240,7 +1263,8 @@ themes:
       value: GC_FOSS_LFOS_DAT_METH_CD
       cardinality: 0..1
       mandatory: false
-    - name: status
+    - name: lfos_status
+      alias: status
       description:
         de: Zustand der Objektart
         fr: État du type d'objet
@@ -1248,7 +1272,8 @@ themes:
       value: GC_FOSS_LFOS_STATUS_CD
       cardinality: 0..1
       mandatory: false
-    - name: protected
+    - name: lfos_protected
+      alias: protected
       description:
         de: Geschützte Fossilfundstelle (ja / nein)?
         fr: Objet géologique protégé (oui / non)?
@@ -1274,7 +1299,8 @@ themes:
       value: 13201
       cardinality: "1"
       mandatory: true
-    - name: status
+    - name: lres_status
+      alias: status
       description:
         de: Zustand der Objektart
         fr: tat du type d'obje
@@ -1282,7 +1308,8 @@ themes:
       value: GC_PNT_LRES_STATUS_CD
       cardinality: 0..1
       mandatory: false
-    - name: material
+    - name: lres_material
+      alias: material
       description:
         de: Material, das mit der Objektart in Verbindung steht
         fr: Matériau associé au type d'objet
@@ -1290,7 +1317,8 @@ themes:
       value: GC_PNT_LRES_MATERIAL_CD
       cardinality: 0..1
       mandatory: false
-    - name: chemistry
+    - name: lres_chemistry
+      alias: chemistry
       description:
         de: Chemische Komponente(n) oder Mineralien, welche die Natur der Objektart
           charakterisieren.
@@ -1315,7 +1343,8 @@ themes:
       value: 13301
       cardinality: "1"
       mandatory: true
-    - name: chemistry
+    - name: lmin_chemistry
+      alias: chemistry
       description:
         de: Chemische Komponente(n), welche die Natur der Objektart charakterisieren.
         fr: |
@@ -1370,7 +1399,8 @@ themes:
       value: 13501
       cardinality: "1"
       mandatory: true
-    - name: strati
+    - name: ltyp_strati
+      alias: strati
       description:
         de: Lithostratigraphischer Zusatz zum Objekt
         fr: Complément lithostratigraphique du type d'objet
@@ -1378,7 +1408,8 @@ themes:
       value: GC_PNT_LTYP_STRATI_CD
       cardinality: 0..1
       mandatory: true
-    - name: name
+    - name: ltyp_name
+      alias: name
       description:
         de: Name der Typlokalität. / Beschreibung des geologisch relevanten Aufschlusses
         fr: |
@@ -1386,14 +1417,16 @@ themes:
       att_type: string
       cardinality: 0..1
       mandatory: true
-    - name: accessibil
+    - name: ltyp_accessibil
+      alias: accessibil
       description:
         de: Ist die Objektart zum Zeitpunkt der Aufnahme aufgeschlossen (ja / nein)?
         fr: Est-ce que le type d’objet était accessible au moment du levé de la carte
       att_type: boolean
       cardinality: 0..1
       mandatory: false
-    - name: protected
+    - name: ltyp_protected
+      alias: protected
       description:
         de: Geschütztes geologisches Objekt (ja / nein)?
         fr: Objet géologique protégé (oui / non)?
@@ -1431,7 +1464,8 @@ themes:
       value: GC_LIN_LPRO_CONG_SPE_CD
       cardinality: 0..1
       mandatory: false
-    - name: name_horiz
+    - name: lpro_name_horiz
+      alias: name_horiz
       description:
         de: Name des Leithorizonts.
         fr: Nom du horizon repère à bentonite.
@@ -1440,7 +1474,8 @@ themes:
       cardinality: 0..1
       change: new
       mandatory: false
-    - name: orig_descr
+    - name: lpro_orig_descr
+      alias: orig_descr
       description:
         de: Originalbezeichnung gemäss der Legende der zugrundeliegenden geologischen
           Karte.
@@ -1449,6 +1484,7 @@ themes:
       cardinality: 0..1
       mandatory: false
     - name: lpro_litho
+      alias: litho
       description:
         de: Materialbezeichnung (lithologische Einheit).
         fr: Unité litholstratigraphique
@@ -1478,7 +1514,7 @@ themes:
       value: 15501
       cardinality: "1"
       mandatory: true
-    - name: orig_name
+    - name: orig_name  # TODO: ORIG_ID
       description:
         de: Ursprüngliche Bezeichnung des Objektes.
         fr: ''
@@ -1502,7 +1538,8 @@ themes:
       value: 13001
       cardinality: "1"
       mandatory: true
-    - name: status
+    - name: lgeo_status
+      alias: status
       description:
         de: Zustand der Objektart.
         fr: État du type d'objet
@@ -1532,7 +1569,8 @@ themes:
       value: 14201
       cardinality: "1"
       mandatory: true
-    - name: type
+    - name: pslo_type
+      alias: type
       description:
         de: Referenzoberfläche.
         fr: Surface de référence
@@ -1563,6 +1601,7 @@ themes:
       cardinality: 0..1
       mandatory: false
     - name: pslo_formatio
+      alias: formatio
       description:
         de: Lithostratigraphische Einheit der modellierten Formation
         fr: Unité lithostratigraphique de l’horizon modélisé
@@ -1672,7 +1711,7 @@ themes:
       cardinality: 0..1
       mandatory: false
   - name: Contour_Lines_Hydro_L
-    abrev: Pcon      # TODO: to check
+    abrev: Pcoh
     table: GC_LINEAR_OBJECTS     # TODO: to check
     description:
       de: |
@@ -1698,14 +1737,15 @@ themes:
       value: GC_LIN_PCOH_CONFINE_CD
       cardinality: 0..1
       mandatory: false
-    - name: pcon_altitude
+    - name: pcoh_altitude
       alias: altitude
       description:
         de: Höhenangabe (m ü.M.) von Isohypsen.
         fr: Valeur altimétrique des isohypses.
       cardinality: "1"
       mandatory: true
-    - name: wa_table
+    - name: pcoh_wa_table
+      alias: wa_table
       description:
         de: Wasserstand.
         fr: Niveau des eaux
@@ -1716,7 +1756,7 @@ themes:
 - name: Anthropogenic_Features
   classes:
   - name: Archaeology_PT
-    abrev: Aarc      # TODO: to check
+    abrev: Aarc
     table: GC_POINT_OBJECTS     # TODO: to check
     description:
       de: Die Klasse Archaeology_PT enthält Objektarten zu einzelnen archäologischen
@@ -1738,7 +1778,8 @@ themes:
       value: GC_AARC_EPOCH_CD        # value wrong in PDF
       cardinality: 0..1
       mandatory: false
-    - name: period
+    - name: aarc_period
+      alias: period
       description:
         de: Archäologische Periode der Objektart.
         fr: Période archéologique du type d'objet
@@ -1746,7 +1787,8 @@ themes:
       value: GC_AARC_PERIOD_CD       # GeolCode wrong in PDF
       cardinality: 0..1
       mandatory: false
-    - name: age
+    - name: aarc_age
+      alias: age
       description:
         de: Archäologisches Alter der Objektart.
         fr: Âge archéologique du type d'objet
@@ -1754,7 +1796,8 @@ themes:
       value: GC_AARC_AGE_CD
       cardinality: 0..1
       mandatory: false
-    - name: type
+    - name: aarc_type
+      alias: type
       description:
         de: Art des Kultsteins.
         fr: Type de mégalithe
@@ -1780,7 +1823,8 @@ themes:
       att_type: subtype
       value: 10201
       mandatory: true
-    - name: epoch
+    - name: aarc_epoch
+      alias: epoch
       description:
         de: Archäologische Epoche der Objektart
         fr: Époque archéologique du type d'objet
@@ -1788,7 +1832,8 @@ themes:
       value: GC_AARC_EPOCH_CD        # value wrong in PDF
       cardinality: 0..1
       mandatory: false
-    - name: period
+    - name: aarc_period
+      alias: period
       description:
         de: Archäologische Periode der Objektart.
         fr: Période archéologique du type d'objet
@@ -1796,7 +1841,8 @@ themes:
       value: GC_AARC_PERIOD_CD       # GeolCode wrong in PDF
       cardinality: 0..1
       mandatory: false
-    - name: age
+    - name: aarc_age
+      alias: age
       description:
         de: Archäologisches Alter der Objektart.
         fr: Âge archéologique du type d'objet
@@ -1822,7 +1868,8 @@ themes:
       att_type: subtype
       value: 10301
       mandatory: true
-    - name: epoch
+    - name: aarc_epoch
+      alias: epoch
       description:
         de: Archäologische Epoche der Objektart
         fr: Époque archéologique du type d'objet
@@ -1830,7 +1877,8 @@ themes:
       value: GC_AARC_EPOCH_CD        # value wrong in PDF
       cardinality: 0..1
       mandatory: false
-    - name: period
+    - name: aarc_period
+      alias: period
       description:
         de: Archäologische Periode der Objektart.
         fr: Période archéologique du type d'objet
@@ -1838,7 +1886,8 @@ themes:
       value: GC_AARC_PERIOD_CD       # GeolCode wrong in PDF
       cardinality: 0..1
       mandatory: false
-    - name: age
+    - name: aarc_age
+      alias: age
       description:
         de: Archäologisches Alter der Objektart.
         fr: Âge archéologique du type d'objet
@@ -2014,14 +2063,16 @@ themes:
       att_type: float
       cardinality: 0..1
       mandatory: true
-    - name: d_c_underg
+    - name: abor_d_c_underg
+      alias: d_c_underg
       description:
         de: Bohransatzpunkt unter Terrain (ja / nein)
         fr: Forage réalisé à partir d’une galerie (oui / non)?
       att_type: boolean
       cardinality: "1"
       mandatory: true
-    - name: main_tar
+    - name: abor_main_tar
+      alias: main_tar
       description:
         de: Ziel der Sondierung.
         fr: But principal du sondage
@@ -2029,7 +2080,8 @@ themes:
       value: GC_PNT_ABOR_MAIN_TAR_CD
       cardinality: 0..1
       mandatory: false
-    - name: targ_mat
+    - name: abor_targ_mat
+      alias: targ_mat
       description:
         de: Durch die Sondierung gefördertes Material.
         fr: Matériau cible du sondage
@@ -2048,7 +2100,8 @@ themes:
       att_type: float
       cardinality: 0..1
       mandatory: false
-    - name: fm_a
+    - name: abor_depth_fm_a
+      alias: depth_fm_a
       description:
         de: >-
           Lithostratigraphische Einheit der erreichten Formation A
@@ -2058,25 +2111,28 @@ themes:
       value: GC_LITSTRAT_BED_CD       # TODO
       cardinality: 0..1
       mandatory: false
-    - name: depth_fm_a
+    - name: abor_depth_fm_b
+      alias: depth_fm_b
       description:
         de: >-
-          Tiefe (m ab Terrainoberfläche) der erreichten Formation A.
+          Tiefe (m ab Terrainoberfläche) der erreichten Formation B.
         fr: >-
           Profondeur relative à la formation A atteinte (en mètres depuis
           la surface).
       att_type: float
       cardinality: 0..1
       mandatory: false
-    - name: fm_b
+    - name: abor_fm_a
+      alias: fm_a
       description:
-        de: Lithostratigraphische Einheit der erreichten Formation B
+        de: Lithostratigraphische Einheit der erreichten Formation A
         fr: Unité lithostratigraphique de la formation B atteinte
       att_type: annex
       value: GC_LITSTRAT_BED_CD       # TODO
       cardinality: 0..1
       mandatory: false
-    - name: depth_fm_b
+    - name: abor_depth_fm_b
+      alias: depth_fm_b
       description:
         de: >-
           Tiefe (m ab Terrainoberfläche) der erreichten Formation B.
@@ -2085,7 +2141,8 @@ themes:
       att_type: float
       cardinality: 0..1
       mandatory: false
-    - name: depth_wt
+    - name: abor_depth_wt
+      alias: depth_wt
       description:
         de: >-
           Tiefe (m ab Terrainoberfläche) des Grundwasserspiegels.
@@ -2117,7 +2174,8 @@ themes:
       att_type: integer
       cardinality: 0..1
       mandatory: false
-    - name: ref_number
+    - name: abor_ref_number
+      alias: ref_number
       description:
         de: >-
           Bohrungs-ID der Objektart in einem zusätzlichen Dokument (Erläuterungen,
@@ -2127,7 +2185,8 @@ themes:
       att_type: integer
       cardinality: 0..1
       mandatory: false
-    - name: link
+    - name: abor_link
+      alias: link
       change: removed
       description:
         de: Objektnummer in der Datenbank von INFOGEOL.
@@ -2177,7 +2236,8 @@ themes:
       value: 12101
       cardinality: "1"
       mandatory: true
-    - name: status
+    - name: hcon_status
+      alias: status
       description:
         de: Zustand der Objektart.
         fr: État du type d'objet.
@@ -2185,7 +2245,8 @@ themes:
       value: GC_PNT_HCON_STATUS_CD
       cardinality: 0..1
       mandatory: false
-    - name: epoch
+    - name: hcon_epoch
+      alias: epoch
       description:
         de: Epoche der Erbauung der Objektart.
         fr: Époque de construction du type d'objet
@@ -2193,21 +2254,24 @@ themes:
       value: GC_PNT_HCON_EPOCH_CD
       cardinality: 0..1
       mandatory: false
-    - name: depth
+    - name: hcon_depth
+      alias: depth
       description:
         de: Tiefe der Objektart (m ab Terrainoberfläche).
         fr: Profondeur du type d'objet.
       att_type: float
       cardinality: 0..1
       mandatory: false
-    - name: depth_wt
+    - name: hcon_depth_wt
+      alias: depth_wt
       description:
         de: Tiefe (m ab Terrainoberfläche) des Grundwasserspiegels (Mittelwert).
         fr: Profondeur (m depuis la surface) de la nappe phréatique (valeur moyenne).
       att_type: float
       cardinality: 0..1
       mandatory: false
-    - name: mea_period
+    - name: hcon_mea_period
+      alias: mea_period
       description:
         de: Messperiode.
         fr: Période de mesure de la profondeur du niveau hydrostatique.
@@ -2234,7 +2298,8 @@ themes:
       value: 12201
       cardinality: "1"
       mandatory: true
-    - name: combi
+    - name: hcon_combi
+      alias: combi
       description:
         de: Objektart einer anderen Klasse, die mit der Objektart in Kombination vorkommen
           kann
@@ -2264,7 +2329,8 @@ themes:
       value: 12301
       cardinality: "1"
       mandatory: true
-    - name: rel_age
+    - name: hpal_rel_age
+      alias: rel_age
       description:
         de: Relatives Alter der Objektart
         fr: Age relatif du type d'objet
@@ -2273,6 +2339,7 @@ themes:
       cardinality: 0..1
       mandatory: false
     - name: hpal_chrono
+      alias: chrono
       description:
         de: Chronostratigraphische Zuordnung.
         fr: Attribution chronostratigraphique
@@ -2281,14 +2348,16 @@ themes:
       cardinality: 0..1
       change: renamed        # chrono -> HPAL_CHRONO
       mandatory: false
-    - name: ref_year
+    - name: hpal_ref_year
+      alias: ref:year
       description:
         de: Referenzjahr der ehemaligen Uferlinie.
         fr: Année de référence de l’ancienne ligne de rivage.
       att_type: integer
       cardinality: "1"
       mandatory: false
-    - name: source
+    - name: hpal_source
+      alias: source
       description:
         de: Datenquelle der historischen Unterlagen.
         fr: Source des données déduites à partir de données historiques.
@@ -2320,7 +2389,8 @@ themes:
       value: 12401
       cardinality: "1"
       mandatory: true
-    - name: combi
+    - name: hsub_combi
+      alias: combi
       description:
         de: Objektart einer anderen Klasse, die mit der Objektart in Kombination vorkommen
           kann
@@ -2362,7 +2432,8 @@ themes:
       value: 12501
       cardinality: "1"
       mandatory: true
-    - name: status
+    - name: hsur_status
+      alias: status
       description:
         de: Zustand der Objektart.
         fr: État du type d'objet
@@ -2370,7 +2441,8 @@ themes:
       value: GC_PNT_HSUR_STATUS_CD
       cardinality: 0..1
       mandatory: false
-    - name: flow_con
+    - name: hsur_flow_con
+      alias: flow_con
       description:
         de: Wasserfluss Bedingungen.
         fr: Condition d’écoulement
@@ -2378,7 +2450,8 @@ themes:
       value: GC_PNT_HSUR_FLOW_CON_CD
       cardinality: 0..1
       mandatory: false
-    - name: type
+    - name: hsur_type
+      alias: type
       description:
         de: Charakteristik der Objektart
         fr: Caractéristique du type d'objet
@@ -2386,7 +2459,8 @@ themes:
       value: GC_PNT_HSUR_TYPE_CD
       cardinality: 0..1
       mandatory: true
-    - name: dis_loca
+    - name: hsur_dis_loca
+      alias: dis_loca
       description:
         de: Ort des Wasserausflusses.
         fr: Lieu d’écoulement
@@ -2394,7 +2468,8 @@ themes:
       value: GC_PNT_HSUR_DIS_LOCA_CD
       cardinality: 0..1
       mandatory: false
-    - name: combi
+    - name: hsur_combi
+      alias: combi
       description:
         de: >-
           Objektart einer anderen Klasse, die mit der Objektart in Kombination
@@ -2405,7 +2480,8 @@ themes:
       value: GC_PNT_HSUR_COMBI_CD
       cardinality: 0..1
       mandatory: false
-    - name: temp
+    - name: hsur_temp
+      alias: temp
       description:
         de: Mittlere Wassertemperatur (°C).
         fr: Température moyenne (°C) de l'eau.
