@@ -17,7 +17,7 @@ date: 2024-11-12
 
 # Model revision should change if attributes are added, deleted or changed
 model:
-  revision: 3.9.14
+  revision: 3.9.15
   revision_date: "2024-11-13"
 
 themes:
@@ -78,7 +78,7 @@ themes:
         de: Materialbezeichnung (lithologische Einheit)
         fr: Description du matériel (unité lithologique)
       att_type: annex
-      value: GC_LITHO_UNCO_CD        # TODO  check with Stephan Table: GC_POINT_OBJECTS, field: RUNC_MAT_TYPE, domain:GC_LITHO_CD
+      value: GC_LITHO_UNCO_CD
       cardinality: 0..1
       mandatory: false
     - name: orig_descr
@@ -97,8 +97,8 @@ themes:
       cardinality: 0..1
       mandatory: false
   - name: Unconsolidated_Deposits_PLG
-    abrev: Runc      # TODO: to check
-    table: GC_UNCO_DESPOSIT     # TODO: to check
+    abrev: Runc
+    table: GC_UNCO_DESPOSIT
     description:
       de: |
         Die Klasse Unconsolidated_Deposits_PLG beinhaltet alle flächenhaft
@@ -137,9 +137,8 @@ themes:
         de: >
           Chronostratigraphische Zuordnung der Obergrenze der Kartiereinheit
           (Top)
-        fr: 'Attribution chronostratigraphique du toit de la formation  (top)
-
-          '
+        fr: >
+          Attribution chronostratigraphique du toit de la formation  (top)
       att_type: annex
       value: GC_CHRONO_CD
       cardinality: "1"
@@ -149,9 +148,8 @@ themes:
         de: >
           Chronostratigraphische Zuordnung der Untergrenze der Kartiereinheit
           (Basis)
-        fr: 'Attribution chronostratigraphique de la base de la  formation (basis)
-
-          '
+        fr: >
+          Attribution chronostratigraphique de la base de la  formation (basis)
       att_type: annex
       value: GC_CHRONO_CD
       cardinality: "1"
@@ -189,13 +187,12 @@ themes:
     - name: structur
       description:
         de: Textur des Lockergesteins
-        fr: 'Struccture de la roche meuble'
+        fr: Struccture de la roche meuble
       att_type: CD
       value: GC_UN_DEP_RUNC_STRUCTUR_CD
       cardinality: 0..1
       mandatory: false
-    - name: charact
-            # TODO Achtung charact is sometime charcat
+    - name: charact # TODO Achtung charact is sometime charcat
       description:
         de: Spezifische Eigenschaft
         fr: Charactéristique spécifique
@@ -225,8 +222,9 @@ themes:
       description:
         de: Zeitpunkt oder Zeitperiode. Zum Beispiel «1940 1943, Periode der Drainage»
           (muss präzisiert werden).
-        fr: 'Information de temps ou période. Par ex. "1940-1943: année de référence
-          de l’ancienne ligne de rivage".'
+        fr: |
+          Information de temps ou période. Par ex. "1940-1943: année de référence
+          de l’ancienne ligne de rivage".
       att_type: string
       cardinality: 0..1
       mandatory: false
@@ -395,7 +393,7 @@ themes:
     - name: sedi_str
       att_type: CD
       value: GC_SEDI_STR_CD
-      description:                                   # TODO really textur?
+      description:
         de: Textur des Sedimentgesteins
         fr: Structure sédimentaire de la roche sédimentaire
       cardinality: 0..2
@@ -403,8 +401,8 @@ themes:
     - name: sedi_tex
       att_type: CD
       value: GC_SEDI_TEX_CD
-      cardinality: 0..1          # TODO
-      description:                         # TODO: really struktur?
+      cardinality: 0..1
+      description:
         de: Sedimentstruktur
         fr: Texture de la roche sédimentaire
       mandatory: false
@@ -450,7 +448,7 @@ themes:
     - name: meta_str
       att_type: CD
       value: GC_META_STR_CD
-      description:                                       #TODO really textur
+      description:
         de: Textur des metamorphen Gesteins
         fr: Structure de la roche métamorphique
       cardinality: 0..3
@@ -612,9 +610,7 @@ themes:
       alias: quat_str
       description:
         de: Zeitliche quartärstratigraphische Zuordnung des Moränenwälls
-        fr: 'Attribution chronostratigraphique du vallum morainique au sein du Quaternaire
-
-          '
+        fr: Attribution chronostratigraphique du vallum morainique au sein du Quaternaire
       att_type: CD
       value: GC_LIN_GGLA_QUAT_STR_CD
       cardinality: 0..1
@@ -815,10 +811,9 @@ themes:
         de: |
           Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen
           aus der Horizontalen (0°) nach unten bis in die Vertikale (90°).
-        fr: 'Valeur du plongement du type d''objet (valeur en degrés, mesurée de l’horizontale
+        fr: |
+          Valeur du plongement du type d''objet (valeur en degrés, mesurée de l’horizontale
           (0°) vers le bas jusqu’à la verticale (90°))
-
-          '
       att_type: integer
       cardinality: 0..1
       mandatory: false
@@ -897,6 +892,7 @@ themes:
       value:
       cardinality: 0..1
       mandatory: false
+      change: removed
   - name: Tectonic_Boundaries_L
     abrev: Ttec      # TODO: to check
     table: GC_LINEAR_OBJECTS     # TODO: to check
@@ -937,7 +933,7 @@ themes:
       alias: horiz_mo
       description:
         de: Bewegung parallel zur Streichrichtung der Bruch- oder Scherfläche
-        fr: "Mouvement parallèle à la direction du plan de faille ou \nde cisaillement\n"
+        fr: Mouvement parallèle à la direction du plan de faille ou de cisaillement
       att_type: CD
       value: GC_LIN_TTEC_HORIZ_MO_CD
       cardinality: 0..1
@@ -952,7 +948,7 @@ themes:
       cardinality: "1"
       mandatory: false
       status: ">=4.0"
-    - name: lim_tect
+    - name: lim_tect_b
       description:
         de: Typ der tektonischen Grenze (Deckengrenze,Schuppengrenze, etc.)
         fr: Limite d’unité tectonique (oui / non)?
@@ -998,9 +994,7 @@ themes:
     - name: name
       description:
         de: Spezifischer Name der Objektart.
-        fr: 'Nom du type de l''objet
-
-          '
+        fr: Nom du type de l'objet
       att_type: string
       cardinality: 0..1
       mandatory: false
@@ -1200,7 +1194,6 @@ themes:
         fr: |-
           Valeur du plongement du type d'objet (en degrés), mesurée de l’horizontale (0°) vers le bas jusqu’à la  verticale (90°)
       cardinatity: 0..1
-
       mandatory: false
 - name: Local_Additional_Information
   classes:
@@ -1335,9 +1328,7 @@ themes:
       description:
         de: Chemische Komponente(n) oder Mineralien, welche die Natur der Objektart
           charakterisieren.
-        fr: 'Composant(s) chimique(s) caractérisant la nature du type d''objet
-
-          '
+        fr: Composant(s) chimique(s) caractérisant la nature du type d'objet
       att_type: string
       cardinality: 0..1
       mandatory: false
@@ -1362,9 +1353,7 @@ themes:
       alias: chemistry
       description:
         de: Chemische Komponente(n), welche die Natur der Objektart charakterisieren.
-        fr: 'Composant(s) chimique(s) caractérisant la nature du type d''objet.
-
-          '
+        fr: Composant(s) chimique(s) caractérisant la nature du type d'objet.
       att_type: string
       cardinality: 0..1
       mandatory: false
@@ -1428,9 +1417,7 @@ themes:
       alias: name
       description:
         de: Name der Typlokalität. / Beschreibung des geologisch relevanten Aufschlusses
-        fr: 'Nom de la localité-type. Description de l’affleurement géologique important
-
-          '
+        fr: Nom de la localité-type. Description de l’affleurement géologique important
       att_type: string
       cardinality: 0..1
       mandatory: true
@@ -1482,9 +1469,7 @@ themes:
     - name: cong_spe
       description:
         de: Charakterisation der Konglomerate nach ihrem Geröllspektrum.
-        fr: 'Caractérisation des conglomérats selon la nature des clastes
-
-          '
+        fr: Caractérisation des conglomérats selon la nature des clastes
       att_type: CD
       value: GC_LIN_LPRO_CONG_SPE_CD
       cardinality: 0..1
@@ -1543,7 +1528,7 @@ themes:
     - name: orig_name  # TODO: ORIG_ID
       description:
         de: Ursprüngliche Bezeichnung des Objektes.
-        fr: 'Description originale de l''objet'
+        fr: Description originale de l'objet
       att_type: string
       cardinality: "1"
       mandatory: false
@@ -2096,12 +2081,13 @@ themes:
       description:
         de: |
           Tiefe (in Meter ab Terrainoberfläche) der Felsoberfläche. (Sofern die Bohrung das Festgestein nicht erreicht, z.B. «Bohrung, Fels nicht erreicht», beträgt der Wert 999, falls die Bohrung bereits im Festgestein beginnt, beträgt der Wert 0). Falls Festgestein erreicht wurde, aber nicht klar ist, dass es sich um die Felsoberfläche handelt, beträgt der Wert 888.
-        fr: "Profondeur de la roche en place (en mètres depuis la \nsurface). Si l’ouvrage
+        fr: |
+          Profondeur de la roche en place (en mètres depuis la surface). Si l’ouvrage
           n’atteint pas la roche en place,  par exemple forage interrompu dans la
-          couverture quaternaire, la valeur est  999, au cas où le forage \ncommence
+          couverture quaternaire, la valeur est  999, au cas où le forage commence
           déjà dans la roche en place la valeur est 0. Si la roche solide a été atteinte,
           mais qu'il n'est pas clair qu'il s'agit de la surface de la roche, la valeur
-          est 888.\n"
+          est 888.
       att_type: float
       cardinality: 0..1
       mandatory: true
@@ -2352,10 +2338,8 @@ themes:
       description:
         de: Objektart einer anderen Klasse, die mit der Objektart in Kombination vorkommen
           kann
-        fr: 'Type d’objet d''une autre classe avec lequel le type d’objet peut être
+        fr: Type d’objet d'une autre classe avec lequel le type d’objet peut être
           combiné
-
-          '
       att_type: CD
       value: GC_LIN_HCON_COMBI_CD
       cardinality: 0..1
@@ -2400,7 +2384,7 @@ themes:
       change: renamed        # chrono -> HPAL_CHRONO
       mandatory: false
     - name: hpal_ref_year
-      alias: ref:year
+      alias: ref_year
       description:
         de: Referenzjahr der ehemaligen Uferlinie.
         fr: Année de référence de l’ancienne ligne de rivage.
@@ -2448,10 +2432,8 @@ themes:
       description:
         de: Objektart einer anderen Klasse, die mit der Objektart in Kombination vorkommen
           kann
-        fr: 'Type d’objet d''une autre classe avec lequel le type d’objet peut être
+        fr: Type d’objet d'une autre classe avec lequel le type d’objet peut être
           combiné
-
-          '
       att_type: CD
       value: GC_LIN_HSUB_COMBI_CD
       cardinality: 0..1
