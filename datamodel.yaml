@@ -325,7 +325,7 @@ themes:
           Karte
         fr: >-
           Description selon la légende de la carte géologique originale
-      cardinality: "1"
+      cardinality: 1
       mandatory: false
     - name: buried_out       # removed
       att_type: boolean
@@ -337,14 +337,14 @@ themes:
       mandatory: false
       status: "<4.0"
     - name: exotic_ele
-      value: boolean
+      att_type: boolean
       description:
         de: >-
           Handelt es sich bei der Objektart um ein exotisches Element; z.B.
           Einschluss, Linse, Tasche, Olistholith (ja / nein)?
         fr: >-
           S’agit-il d’un élément exotique (oui / non)?
-      cardinality: "1"
+      cardinality: 1
       mandatory: false
     - name: colour
       att_type: string
@@ -779,7 +779,7 @@ themes:
         Deformationsstrukturen wie lokal stark verfaltete Stellen (Fältelung) oder Orte mit ausgeprägter
         Klüftung. Ebenfalls in dieser Klasse befinden sich konstruierte Punkte wie z.B. die Orientierung
         der Faltenachsenfläche.
-      fr: |-
+      fr: |
         La classe Deformation_Structures_PT contient des structures
         de déformation tectonique observées ponctuellement, telles
         que des endroits localement très plissés (plissotement) ou
@@ -808,10 +808,10 @@ themes:
       mandatory: false
     - name: dip        # WAs 'plunge' in version 2.1
       description:
-        de: |
-          Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen
-          aus der Horizontalen (0°) nach unten bis in die Vertikale (90°).
-        fr: |
+        de: >
+          Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der
+          Horizontalen (0°) nach unten bis in die Vertikale (90°).
+        fr: >
           Valeur du plongement du type d''objet (valeur en degrés, mesurée de l’horizontale
           (0°) vers le bas jusqu’à la verticale (90°))
       att_type: integer
@@ -1084,7 +1084,7 @@ themes:
         Linearen mit direkten Feldmessungen beschreiben. Die räumliche Lage u.a. von Gletscherschliffen
         und Rutschharnischen ist ebenso Teil dieser Klasse wie die Orientierung von Streckungs- oder
         Intersektionslineationen.
-      fr: |-
+      fr: |
         La classe Lineation_PT contient des structures linéaires
         dont la position spatiale est décrite par des mesures
         directes sur le terrain. La position dans l’espace, entre
@@ -1102,21 +1102,22 @@ themes:
       mandatory: true
     - name: azimuth
       description:
-        de: >-
+        de: >
           Einfallsrichtung (Azimut) der jeweiligen Punktobjektart (z.B. Scheitellinie,
           Faltenachse). Wert in Grad (0° 359°) im Uhrzeigersinn gemessen
-        fr: >-
+        fr: >
           Azimut du type d'objet. L'azimut est mesuré depuis le  nord en degré de
           0° à 359° dans le sens des aiguilles  d'une montre
       att_type: integer
       cardinality: "1"
       mandatory: false
     - name: dip
+      att_type: integer
       description:
-        de: >-
+        de: >
           Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen
           aus der Horizontalen (0°) nach unten bis in die Vertikale (90°).
-        fr: >-
+        fr: >
           Valeur du plongement du type d'objet (en degrés), mesurée de l’horizontale
           (0°) vers le bas jusqu’à la  verticale (90°)
       cardinatity: 0..1
@@ -1758,6 +1759,7 @@ themes:
       mandatory: false
     - name: pcoh_altitude
       alias: altitude
+      att_type: integer
       description:
         de: Höhenangabe (m ü.M.) von Isohypsen.
         fr: Valeur altimétrique des isohypses
