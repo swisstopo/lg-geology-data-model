@@ -1672,7 +1672,7 @@ themes:
       cardinality: 0..1
       mandatory: false
   - name: Contour_Lines_Hydro_L
-    abrev: Pcon      # TODO: to check
+    abrev: Pcoh
     table: GC_LINEAR_OBJECTS     # TODO: to check
     description:
       de: |
