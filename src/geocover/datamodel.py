@@ -511,6 +511,34 @@ def export(datamodel, output, format):
     datamodel.export_to_excel(output)
 
 
+
+
+@click.command(name='import')
+@click.argument("datamodel", type=click.Path(exists=True))
+@click.option(
+    "--dryrun",
+    "-n",
+    help="Only test. Don't write",
+     is_flag=True,
+    default=True,
+)
+def import_model(datamodel, dryrun):
+    """Import model from JSON or XLSX format."""
+
+    from geocover import model
+
+    xlsx_file = datamodel
+    datamodel = model.Datamodel()
+
+    logger.info("Import from  Excel")
+    datamodel.import_from_excel(xlsx_file)
+
+    logger.info("Export to YAML")
+
+    datamodel.export_to_yaml("imported_model.yaml")
+
+
+
 @click.command()
 @click.argument("datamodel", type=click.Path(exists=True))
 def validate(datamodel):
@@ -778,6 +806,7 @@ datamodel.add_command(generate)
 datamodel.add_command(prettify)
 datamodel.add_command(validate)
 datamodel.add_command(export)
+datamodel.add_command(import_model)
 
 if __name__ == "__main__":
     datamodel()
