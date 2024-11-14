@@ -54,6 +54,7 @@ help:
 	@echo "  make babel    - Generate .mo translation files"
 	@echo "  make markdown - Generate markdown files"
 	@echo "  make diagram  - Generate ER diagram"
+	@echo "  make validate - Validate the datamodel against the schema"
 	@echo "  make clean    - Remove all generated files"
 	@echo "  make help     - Display this help message"
 
@@ -138,6 +139,9 @@ mds: $(foreach lang,$(LANGUAGES),$(INPUT_DIR)/$(lang)/datamodel.md)
 de: $(foreach fmt,$(FORMATS),$(OUTPUT_DIR)/de/datamodel.$(fmt))
 fr: $(foreach fmt,$(FORMATS),$(OUTPUT_DIR)/fr/datamodel.$(fmt))
 
+.PHONY: validate
+validate:
+	 datamodel validate datamodel.yaml
 
 # Clean up
 # Clean up all generated files
