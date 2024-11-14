@@ -569,6 +569,11 @@ def validate(datamodel):
         for error in errors:
             error_path = " -> ".join(str(p) for p in error.path)
             logger.error(f"Validation error at {error_path}: {error.message}")
+            error_instance = error.instance  # The actual value that caused the error
+
+            # Log the error with additional context
+            logger.error(f"Validation error at {error_path}: {error.message}")
+            logger.error(f"Invalid value: {error_instance}")
     else:
         logger.info(f"YAML file {datamodel} is valid.")
 
