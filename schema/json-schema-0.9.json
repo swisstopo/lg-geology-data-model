@@ -1,0 +1,142 @@
+{
+  "type": "object",
+  "properties": {
+    "version": {
+      "type": "string"
+    },
+    "model": {
+      "type": "object",
+      "properties": {
+        "revision": {
+          "type": "string",
+          "pattern": "^\\d+\\.\\d+\\.\\d+$"
+        },
+        "revision_date": {
+          "type": "string",
+          "format": "date"
+        }
+      },
+      "required": [
+        "revision",
+        "revision_date"
+      ]
+    },
+    "themes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "classes": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "object",
+                  "properties": {
+                    "de": {
+                      "type": "string"
+                    },
+                    "fr": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "de",
+                    "fr"
+                  ]
+                },
+                "abrev": {
+                  "type": "string"
+                },
+                "table": {
+                  "type": "string"
+                },
+                "attributes": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      },
+                      "alias": {
+                        "type": "string"
+                      },
+                      "status": {
+                        "type": "string"
+                      },
+                      "att_type": {
+                        "type": "string"
+                      },
+                      "value": {
+                        "oneOf": [
+                          {
+                            "type": "integer"
+                          },
+                          {
+                            "type": "string"
+                          }
+                        ]
+                      },
+                      "description": {
+                        "type": "object",
+                        "properties": {
+                          "de": {
+                            "type": "string"
+                          },
+                          "fr": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "de",
+                          "fr"
+                        ]
+                      },
+                      "mandatory": {
+                        "type": "boolean"
+                      },
+                      "cardinality": {
+                        "type": "string"
+
+                      },
+                      "change": {
+                        "type": "string",
+                        "enum": ["removed", "new", "renamed"]
+                      }
+                    },
+                    "required": [
+                      "name",
+                      "att_type"
+                    ]
+                  }
+                }
+              },
+              "required": [
+                "name",
+                "description",
+                "attributes"
+              ]
+            }
+          }
+        },
+        "required": [
+          "name",
+          "classes"
+        ]
+      }
+    }
+  },
+  "required": [
+    "version",
+    "model",
+    "themes"
+  ]
+}
