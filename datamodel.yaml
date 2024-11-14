@@ -891,7 +891,7 @@ themes:
         de: Genetische Beziehung.
         fr: Relation génétique
       att_type: CD       # TODO: where is the domain
-      value:
+      value: DUMMY
       cardinality: 0..1
       mandatory: false
       change: removed
@@ -980,7 +980,7 @@ themes:
       description:
         de: Aktivität der Objektart
         fr: Activité du type d'objet
-      att_type: TODO        # removed
+      att_type: CD        # removed
       change: removed
       cardinality: 0..1
       mandatory: false
@@ -1032,7 +1032,7 @@ themes:
       cardinality: 0..1
       mandatory: false
     - name: fold_for
-      att_typ: CD
+      att_type: CD
       value: GC_PNT_TDEF_FOLD_FOR_CD
       description:
         de: Faltenform
@@ -2079,12 +2079,14 @@ themes:
       value: 10501
       mandatory: true
     - name: drill_mo
+      att_type: CD
       description:
         de: Bohrmethode.
         fr: Mode de forage
-      value: 10502       # TODO no CD
+      value: dummy
       cardinality: 0..1
       mandatory: false
+      change: removed
     - name: abor_depth_bedr
       alias: depth_bedr
       description:

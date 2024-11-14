@@ -73,7 +73,9 @@
                         "type": "string"
                       },
                       "att_type": {
-                        "type": "string"
+                        "type": "string",
+                         "enum": ["CD", "table", "annex", "subtype", "integer", "float", "string", "range", "boolean"]
+
                       },
                       "value": {
                         "oneOf": [
@@ -82,6 +84,7 @@
                           },
                           {
                             "type": "string"
+
                           }
                         ]
                       },
