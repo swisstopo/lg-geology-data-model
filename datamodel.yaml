@@ -155,6 +155,7 @@ themes:
       cardinality: "1"
       mandatory: true
     - name: mat_type
+      att_type: string
       description:
         de: Materialbezeichnung (lithologische Einheit)
         fr: Description du matériel (unité lithologique)
@@ -237,6 +238,7 @@ themes:
       cardinality: 0..1
       mandatory: false
     - name: orig_descr
+      att_type: string
       description:
         de: >-
           Originalbezeichnung gemäss der Legende der zugrunde liegenden geologischen
@@ -244,7 +246,6 @@ themes:
         fr: Description selon la légende de la carte géologique originale
       value: string
       cardinality: "1"
-
       mandatory: false
   - name: Bedrock_PLG
     abrev: Rbed      # TODO: to check
@@ -265,9 +266,10 @@ themes:
       cardinality: "1"
       mandatory: true
     - name: fm_homog        # removed
+      att_type: string
       description:
         de: Gesteinsaufbau
-        fr:
+        fr: Composition de la roche
       cardinality: "1"
       change: removed
       mandatory: false
@@ -337,7 +339,7 @@ themes:
       mandatory: false
       status: "<4.0"
     - name: exotic_ele
-      value: boolean
+      att_type: boolean
       description:
         de: >-
           Handelt es sich bei der Objektart um ein exotisches Element; z.B.
@@ -1030,10 +1032,12 @@ themes:
       cardinality: 0..1
       mandatory: false
     - name: fold_for
+      att_typ: CD
+      value: GC_PNT_TDEF_FOLD_FOR_CD
       description:
         de: Faltenform
         fr: Forme du type de pli
-      value: 13603        # TODO: CD not found (but approaching)
+      value: 14605
       cardinality: 0..1
       mandatory: false
     - name: mfol_phase
@@ -1112,6 +1116,7 @@ themes:
       cardinality: "1"
       mandatory: false
     - name: dip
+      att_type: integer
       description:
         de: >-
           Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen
@@ -1188,6 +1193,7 @@ themes:
       cardinality: "1"
       mandatory: false
     - name: dip
+      att_type: integer
       description:
         de: Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus
           der Horizontalen (0°) nach unten bis in die Vertikale (90°).
@@ -1217,6 +1223,8 @@ themes:
       mandatory: true
     - name: lano_type
       alias: type
+      att_type: CD
+      value: GC_PNT_LANO_TYPE_CD
       cardinatity: 0..1
       description:
         de: Charakteristik der Objektart.
@@ -1758,6 +1766,7 @@ themes:
       mandatory: false
     - name: pcoh_altitude
       alias: altitude
+      att_type: float
       description:
         de: Höhenangabe (m ü.M.) von Isohypsen.
         fr: Valeur altimétrique des isohypses
