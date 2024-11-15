@@ -408,7 +408,7 @@ themes:
         de: Sedimentstruktur
         fr: Texture de la roche sédimentaire
       mandatory: false
-    - name: igne_text       # TODO: check typo!
+    - name: igne_tex  
       att_type: CD
       value: GC_IGNE_TEX_CD
       description:
@@ -1257,7 +1257,7 @@ themes:
       value: GC_FOSS_LFOS_DIVISION_CD
       cardinality: 0..1
       mandatory: false
-    - name: system
+    - name: system  # linked to GC_SYSTEM
       description:
         de: Fossiliengruppe.
         fr: Groupe de fossiles
@@ -1265,8 +1265,6 @@ themes:
       value: gc_system
       cardinality: 0..5
       mandatory: false
-      change: removed
-      status: "<4.0"
     - name: lfos_dat_meth
       alias: dat_meth
       description:
