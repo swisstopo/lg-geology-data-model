@@ -1261,7 +1261,7 @@ themes:
       description:
         de: Fossiliengruppe.
         fr: Groupe de fossiles
-      att_type: table
+      att_type: annex
       value: gc_system
       cardinality: 0..5
       mandatory: false
