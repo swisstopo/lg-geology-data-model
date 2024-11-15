@@ -95,10 +95,11 @@ class ColumnFK(Column):
 
 
 class Table:
-    def __init__(self, name, relation=False):
+    def __init__(self, name, relation=False, cardinality=None):
         self.name = name
         self.columns = []
         self.relation = relation
+        self.cardinality = cardinality
 
     def get_column(self, name, erase=True):
         for i, c in enumerate(self.columns):
@@ -312,8 +313,10 @@ for i, r in enumerate(relations):
         keys = {}
         keys["origin"] = get_keys(ori_keys)
         keys["destination"] = get_keys(dest_keys)
+        
+        logger.warning(f'Relationships "ManyToMany" {ori_table.name} --> {dest_table.name}')
 
-        t = Table(new_table, relation=True)
+        t = Table(new_table, relation=True, cardinality='ManyToMany')
         # t.columns.append(Column(keys["origin"]["fk"], "int"))
         # t.columns.append(Column(keys["destination"]["fk"], "int"))
         all_tables[new_table] = t
