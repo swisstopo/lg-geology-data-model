@@ -53,10 +53,16 @@ jobs:
           echo "=== RELEASE=$RELEASE ==="
 
 
-      - shell: bash -el {0}
+      - name: Pip install
+        shell: bash -el {0}
         run: pip install -e .
+        
+      - name: Validate
+        shell: bash -el {0}
+        run: make validate
 
-      - shell: bash -el {0}
+      - name: Generate graph
+        shell: bash -el {0}
         run: |
           python ./create_gv.py
     
