@@ -15,7 +15,7 @@
    width="6373.6025"
    zoomAndPan="magnify"
    id="svg1696"
-   sodipodi:docname="ER-GCOVER_mod.svg"
+   sodipodi:docname="ER-GCOVER.svg"
    inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)"
    inkscape:export-filename="/home/marco/code/github.com/lg-geology-data-model/outputs/ER-GCOVER@150.png"
    inkscape:export-xdpi="150.00371"
@@ -28,6 +28,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -45,9 +46,9 @@
      id="namedview1698"
      showgrid="false"
      inkscape:lockguides="true"
-     inkscape:zoom="0.49325281"
-     inkscape:cx="2932.2636"
-     inkscape:cy="792.46728"
+     inkscape:zoom="0.1791608"
+     inkscape:cx="1944.9004"
+     inkscape:cy="2171.2341"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
@@ -7112,42 +7113,27 @@
   </g>
   <flowRoot
      xml:space="preserve"
-     id="flowRoot2913"
-     style="fill:black;fill-opacity:1;stroke:none;font-family:sans-serif;font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;letter-spacing:0px;word-spacing:0px"><flowRegion
-       id="flowRegion2915"><rect
-         id="rect2917"
-         width="2299.428"
-         height="315.38287"
-         x="1295.9369"
-         y="3820.6523" /></flowRegion><flowPara
-       id="flowPara2919"></flowPara></flowRoot>  <flowRoot
+     id="flowRoot896"
+     style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+     transform="matrix(2.1637012,0,0,2.1637012,-1509.2477,-4437.9869)"><flowRegion
+       id="flowRegion898"><rect
+         id="rect900"
+         style="fill:#ffffff;fill-opacity:0"
+         width="1250.2734"
+         height="206.51839"
+         x="1294.9261"
+         y="3806.6362" /></flowRegion><flowPara
+       transform="matrix(2.1637012,0,0,2.1637012,-1509.2477,-4437.9869)"
+       id="flowPara898"><flowRegion
+         id="flowPara902">GeoCover November 2024</flowRegion></flowPara></flowRoot>  <flowRoot
      xml:space="preserve"
-     id="flowRoot2921"
-     style="font-style:normal;font-weight:normal;font-size:85.33333588px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"><flowRegion
-       id="flowRegion2923"
-       style="font-size:85.33333588px"><rect
-         id="rect2925"
-         width="1789.0811"
-         height="194.96408"
-         x="1542.509"
-         y="3832.1208"
-         style="font-size:85.33333588px" /></flowRegion><flowPara
-       id="flowPara2927">GEOCOVER  November 2024</flowPara></flowRoot>  <text
-     font-size="26"
-     lengthAdjust="spacing"
-     textLength="49.549801"
-     x="3995.1812"
-     y="186.9263"
-     id="text1665-0"
-     style="font-size:26px;font-family:sans-serif;fill:#000000"
-     transform="translate(-1.3961551,-9.8383659)">0..n</text>
-  <text
-     font-size="26"
-     lengthAdjust="spacing"
-     textLength="49.6133"
-     x="4041.6663"
-     y="1055.5005"
-     id="text1667-4"
-     style="font-size:26px;font-family:sans-serif;fill:#000000"
-     transform="translate(-1252.8555,-631.08123)">1..1</text>
-</svg>
+     id="flowRoot902"
+     style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+     transform="matrix(1.9006725,0,0,1.9006725,-1067.5731,-3439.9066)"><flowRegion
+       id="flowRegion904"><rect
+         id="rect906"
+         width="1763.7787"
+         height="379.5473"
+         x="1183.2946"
+         y="3812.2178" /></flowRegion><flowPara
+       id="flowPara908">GeoCover November 2024</flowPara></flowRoot></svg>
