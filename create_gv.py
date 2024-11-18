@@ -15,7 +15,7 @@ FONTNAME = "DejaVu Sans,Nimbus Sans"
 OUTPUT_DIR = "outputs"
 
 logger.remove(0)
-logger.add(sys.stderr, format="{time} {level} {message}", level="INFO")
+logger.add(sys.stderr, format="{time} {level} {message}", level="DEBUG")
 
 
 def removeprefix(prefix, lst):
@@ -120,7 +120,8 @@ class FeatureClass(Table):
         self.geometry = geo
 
 
-input_file = "inputs/geocover-schema-sde.json"
+# TODO
+input_file = "exports/geocover-schema-sde.json"
 
 basename = os.path.splitext(os.path.basename(input_file))[0]
 
@@ -164,7 +165,9 @@ for t in s["tables"].keys():
     G.add_node(short_name)  # adds node 'a'
     S.add_table(short_name)
 
-    fields = s["tables"][t].get("fields", [])
+    logger.debug(s["tables"][t])
+
+    fields = s["tables"][t]  #.get("fields", [])
 
     tt = Table(short_name)
     for field in fields:
@@ -192,7 +195,7 @@ G.node_attr["color"] = "lightcoral"
 for f in s["featclasses"].keys():
     short_name = clean(f)
 
-    fields = s["featclasses"][f]["fields"]
+    fields = s["featclasses"][f]  # ["fields"]
 
     if f.endswith("_I") or short_name in IGNORE_OBJECTS:
         logger.debug(short_name)

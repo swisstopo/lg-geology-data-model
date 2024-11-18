@@ -26,20 +26,33 @@ tables:
     primary_key: false
 - name: GC_LITHO
   columns:
-  - foreign_key:
-      name: GC_UNCO_DESPOSIT_UUID
-      type: Guid
-      reference: GC_UNCO_DESPOSIT
-  - foreign_key:
-      name: GC_LITHO_UUID
-      type: Guid
-      reference: GC_LITHO
+  - name: OBJECTID
+    type: OID
+    primary_key: false
+  - name: UUID
+    type: Guid
+    primary_key: false
+  - name: GEOL_CODE
+    type: String
+    primary_key: false
+  - name: GEOL_CODE_INT
+    type: Integer
+    primary_key: false
+  - name: GERMAN
+    type: String
+    primary_key: false
+  - name: TREE_LEVEL
+    type: Integer
+    primary_key: false
+  - name: PARENT_REF
+    type: Integer
+    primary_key: false
 - name: GC_LITSTRAT
   columns:
   - foreign_key:
-      name: GC_EXPLOIT_GEOMAT_PLG_UUID
+      name: GC_EXPLOIT_GEOMAT_PT_UUID
       type: Guid
-      reference: GC_EXPLOIT_GEOMAT_PLG
+      reference: GC_EXPLOIT_GEOMAT_PT
   - foreign_key:
       name: GC_LITSTRAT_UUID
       type: Guid
@@ -92,14 +105,27 @@ tables:
     primary_key: false
 - name: GC_LITHO_BED
   columns:
-  - foreign_key:
-      name: GC_BEDROCK_UUID
-      type: Guid
-      reference: GC_BEDROCK
-  - foreign_key:
-      name: GC_LITHO_BED_UUID
-      type: Guid
-      reference: GC_LITHO_BED
+  - name: OBJECTID
+    type: OID
+    primary_key: false
+  - name: UUID
+    type: Guid
+    primary_key: false
+  - name: GEOL_CODE
+    type: String
+    primary_key: false
+  - name: GEOL_CODE_INT
+    type: Integer
+    primary_key: false
+  - name: GERMAN
+    type: String
+    primary_key: false
+  - name: TREE_LEVEL
+    type: Integer
+    primary_key: false
+  - name: PARENT_REF
+    type: Integer
+    primary_key: false
 - name: GC_LITSTRAT_BED
   columns:
   - name: OBJECTID
@@ -229,24 +255,38 @@ tables:
       reference: GC_SYSTEM
 - name: GC_COMPOSIT
   columns:
-  - foreign_key:
-      name: GC_UNCO_DESPOSIT_UUID
-      type: Guid
-      reference: GC_UNCO_DESPOSIT
-  - foreign_key:
-      name: GC_COMPOSIT_UUID
-      type: Guid
-      reference: GC_COMPOSIT
+  - name: OBJECTID
+    type: OID
+    primary_key: false
+  - name: UUID
+    type: Guid
+    primary_key: false
+  - name: GEOL_CODE
+    type: String
+    primary_key: false
+  - name: GEOL_CODE_INT
+    type: Integer
+    primary_key: false
+  - name: GERMAN
+    type: String
+    primary_key: false
 - name: GC_ADMIXTURE
   columns:
-  - foreign_key:
-      name: GC_UNCO_DESPOSIT_UUID
-      type: Guid
-      reference: GC_UNCO_DESPOSIT
-  - foreign_key:
-      name: GC_ADMIXTURE_UUID
-      type: Guid
-      reference: GC_ADMIXTURE
+  - name: OBJECTID
+    type: OID
+    primary_key: false
+  - name: UUID
+    type: Guid
+    primary_key: false
+  - name: GEOL_CODE
+    type: String
+    primary_key: false
+  - name: GEOL_CODE_INT
+    type: Integer
+    primary_key: false
+  - name: GERMAN
+    type: String
+    primary_key: false
 - name: GC_CHARCAT
   columns:
   - foreign_key:
@@ -551,9 +591,6 @@ tables:
   - name: ABOR_REF_NUMBER
     type: Integer
     primary_key: false
-  - name: ABOR_LINK
-    type: Integer
-    primary_key: false
   - name: HCON_DEPTH
     type: Double
     primary_key: false
@@ -732,10 +769,6 @@ tables:
       name: FORM_ATT
       type: Guid
       reference: GC_BED_FORM_ATT
-  - foreign_key:
-      name: FORM_ATT
-      type: Guid
-      reference: GC_BED_FORM_ATT
 - name: GC_SURFACES
   columns:
   - name: OBJECTID
@@ -791,36 +824,16 @@ tables:
   - name: PRINTED
     type: GC_BOOLEAN_CD
     primary_key: false
-- name: GC_UNCO_DESPOSIT_GC_LITHO
+- name: GC_EXPLOIT_GEOMAT_PLG_GC_LITSTRAT
   columns:
   - foreign_key:
-      name: GC_UNCO_DESPOSIT_UUID
+      name: GC_EXPLOIT_GEOMAT_PLG_UUID
       type: Guid
-      reference: GC_UNCO_DESPOSIT
-  - foreign_key:
-      name: GC_LITHO_UUID
-      type: Guid
-      reference: GC_LITHO
-- name: GC_EXPLOIT_GEOMAT_PT_GC_LITSTRAT
-  columns:
-  - foreign_key:
-      name: GC_EXPLOIT_GEOMAT_PT_UUID
-      type: Guid
-      reference: GC_EXPLOIT_GEOMAT_PT
+      reference: GC_EXPLOIT_GEOMAT_PLG
   - foreign_key:
       name: GC_LITSTRAT_UUID
       type: Guid
       reference: GC_LITSTRAT
-- name: GC_BEDROCK_GC_LITHO_BED
-  columns:
-  - foreign_key:
-      name: GC_BEDROCK_UUID
-      type: Guid
-      reference: GC_BEDROCK
-  - foreign_key:
-      name: GC_LITHO_BED_UUID
-      type: Guid
-      reference: GC_LITHO_BED
 - name: GC_FOSSILS_GC_SYSTEM
   columns:
   - foreign_key:
@@ -831,26 +844,6 @@ tables:
       name: GC_SYSTEM_UUID
       type: Guid
       reference: GC_SYSTEM
-- name: GC_UNCO_DESPOSIT_GC_COMPOSIT
-  columns:
-  - foreign_key:
-      name: GC_UNCO_DESPOSIT_UUID
-      type: Guid
-      reference: GC_UNCO_DESPOSIT
-  - foreign_key:
-      name: GC_COMPOSIT_UUID
-      type: Guid
-      reference: GC_COMPOSIT
-- name: GC_UNCO_DESPOSIT_GC_ADMIXTURE
-  columns:
-  - foreign_key:
-      name: GC_UNCO_DESPOSIT_UUID
-      type: Guid
-      reference: GC_UNCO_DESPOSIT
-  - foreign_key:
-      name: GC_ADMIXTURE_UUID
-      type: Guid
-      reference: GC_ADMIXTURE
 - name: GC_UNCO_DESPOSIT_GC_CHARCAT
   columns:
   - foreign_key:
@@ -861,12 +854,12 @@ tables:
       name: GC_CHARCAT_UUID
       type: Guid
       reference: GC_CHARCAT
-- name: GC_EXPLOIT_GEOMAT_PLG_GC_LITSTRAT
+- name: GC_EXPLOIT_GEOMAT_PT_GC_LITSTRAT
   columns:
   - foreign_key:
-      name: GC_EXPLOIT_GEOMAT_PLG_UUID
+      name: GC_EXPLOIT_GEOMAT_PT_UUID
       type: Guid
-      reference: GC_EXPLOIT_GEOMAT_PLG
+      reference: GC_EXPLOIT_GEOMAT_PT
   - foreign_key:
       name: GC_LITSTRAT_UUID
       type: Guid
