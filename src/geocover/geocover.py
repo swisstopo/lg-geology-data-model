@@ -619,11 +619,81 @@ def export_rules(workspace, output, log_level):
         json.dump(res, f, ensure_ascii=False, indent=4)
 
 
+@geocover.command(
+    "xml_schema",
+    context_settings={"show_default": True},
+    help="Export ArcGis Pro layer symbology rules",
+)
+@click.option(
+    "-w",
+    "--workspace",
+    type=click.Path(exists=True),
+    default=DEFAULT_WORKSPACE,
+    help="ESRI SDE or GDB to export the schema",
+)
+@click.option(
+    "-o",
+    "--output",
+    type=click.Path(exists=False, file_okay=True, dir_okay=False),
+    help="Name of XML to export to",
+)
+@click.option(
+    "-l",
+    "--log-level",
+    default="INFO",
+    type=click.Choice(
+        ["DEBUG", "INFO", "WARNING", "ERROR", "CRITICAL"], case_sensitive=True
+    ),
+    help="Log level (DEBUG, INFO, WARNING, ERROR, CRITICAL)",
+)
+def xml_schema(workspace, output, log_level):
+    if not HAS_ARCPY:
+        raise click.ClickException("arcpy library is not available.")
+
+    import tempfile
+    import lxml.etree as ET
+
+    configure_logging(log_level)
+
+    export_option = "SCHEMA_ONLY"
+    storage_type = "NORMALIZED"
+    export_metadata = "NO_METADATA"
+
+ 
+    # Execute ExportXMLWorkspaceDocument
+    tmpfile_name = tempfile.mktemp() + ".xml"
+    logging.debug(f"temp file: {tmpfile_name}")
+    try:
+        arcpy.ExportXMLWorkspaceDocument_management(
+            workspace, tmpfile_name, export_option, storage_type, export_metadata
+        )
+
+        if os.path.exists(output):
+            os.remove(output)
+
+        with open(tmpfile_name, "r"):
+            xml_string = ET.parse(tmpfile_name)
+            with open(output, "w", encoding="utf-8") as temp_writer:
+                temp_writer.write(
+                    ET.tostring(
+                        xml_string.getroot(), encoding="unicode", pretty_print=True
+                    )
+                )
+
+    except Exception as e:
+        logging.error(f"Cannot export {workspace} to {output}: {e}")
+        sys.exit(2)
+
+    finally:
+        if os.path.exists(tmpfile_name):
+            os.unlink(tmpfile_name)
+
+
 # command as requiring arcpy
 export.requires_arcpy = True
 schema.requires_arcpy = True
 export_rules.requires_arcpy = True
-
+xml_schema.requires_arcpy = True
 
 geocover.add_command(export)
 geocover.add_command(schema)
@@ -631,7 +701,7 @@ geocover.add_command(export_rules)
 
 geocover.add_command(geolcode)
 geocover.add_command(filter_symbols)
-
+geocover.add_command(xml_schema)
 
 if __name__ == "__main__":
     geocover()
