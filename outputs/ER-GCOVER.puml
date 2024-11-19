@@ -1,9 +1,9 @@
-
 @startuml
 
 skinparam monochrome true
 skinparam linetype ortho
 scale 2
+
 
 !define table(x) class x << (T,#FFAAAA) >> #FFF
 !define view(x) class x << (V,#FFAAAA) >>
@@ -16,6 +16,8 @@ scale 2
 !define key(x) <b>x</b>
 hide methods
 hide stereotypes
+
+title =Geocover\nNovember 2024
 
 table(GC_CHRONO) {
 	primary_key(UUID) Guid
@@ -43,7 +45,7 @@ table(GC_LITHO) {
 }
 
 table(GC_LITSTRAT) {
-	foreign_key(GC_EXPLOIT_GEOMAT_PLG_UUID,GC_EXPLOIT_GEOMAT_PLG) Guid
+	foreign_key(GC_EXPLOIT_GEOMAT_PT_UUID,GC_EXPLOIT_GEOMAT_PT) Guid
 	foreign_key(GC_LITSTRAT_UUID,GC_LITSTRAT) Guid
 	---
 	key(OBJECTID) OID
@@ -263,7 +265,6 @@ class(GC_POINT_OBJECTS) {
 	key(ABOR_D_C_UNDERG) GC_BOOLEAN_CD
 	key(ABOR_FM_A) GC_LITSTRAT_CD
 	key(ABOR_FM_B) GC_LITSTRAT_CD
-	key(ABOR_LINK) Integer
 	key(ABOR_LITHO) GC_LITHO_CD
 	key(ABOR_MAIN_TAR) GC_PNT_ABOR_MAIN_TAR_CD
 	key(ABOR_REF_NUMBER) Integer
