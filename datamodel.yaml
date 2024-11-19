@@ -2220,6 +2220,17 @@ themes:
       att_type: integer
       cardinality: 0..1
       mandatory: false
+    - name: abor_litho
+      alias: litho
+      description:
+        de: Erreichte lithologische Einheit (im Falle von Bohrungen, die bis zum Quartär bohren)
+        fr: Unité lithologique atteinte (dans le cas de forage atteignant le quaternaire)
+      att_type: annex
+      value: GC_LITHO_CD
+      cardinality: 0..1
+      mandatory: false
+      status: ">=4.0"
+
     - name: abor_link
       alias: link
       change: removed
@@ -2229,6 +2240,7 @@ themes:
           Numéro de référence du type d'objet dans un  document annexé (notice explicative,…).
       att_type: integer
       cardinality: 0..1
+      status: "<4.0"
 
       mandatory: false
   - name: Artificial_Surface_Modifications_PLG
