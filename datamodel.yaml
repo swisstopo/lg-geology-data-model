@@ -2226,7 +2226,7 @@ themes:
         de: Erreichte lithologische Einheit (im Falle von Bohrungen, die den Fels nicht erreicht haben)
         fr: Unité lithologique atteinte (dans le cas de forage atteignant le quaternaire)
       att_type: annex
-      value: GC_LITHO_CD
+      value: GC_LITHO_UNCO_CD
       cardinality: 0..1
       mandatory: false
       status: ">=4.0"

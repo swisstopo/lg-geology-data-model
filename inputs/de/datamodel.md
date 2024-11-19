@@ -1,5 +1,5 @@
 
-# Datenmodell Geologie, Revision 3.9.11 #
+# Datenmodell Geologie, Revision 4.0.0-rc.5 #
 
 
 
@@ -167,7 +167,7 @@ Name             | Typ | Beschreibung                             |  Kard.
 **LITHO**                 | [ Tabelle ](#gc-litho-cd)  | Lithologische Beschreibung. | [1..3]
 **CHRONO_T**                 | [ Tabelle ](#gc-chrono-cd)  | Chronostratigraphische Zuordnung der Obergrenze der Kartiereinheit (Top). | [1]
 **CHRONO_B**                 | [ Tabelle ](#gc-chrono-cd)  | Chronostratigraphische Zuordnung der Untergrenze der Kartiereinheit (Basis). | [1]
-**MAT_TYPE**                 |                   | Materialbezeichnung (lithologische Einheit) | [0..3]
+**MAT_TYPE**                 | string                  | Materialbezeichnung (lithologische Einheit) | [0..3]
 **BURIED_OUT**                 | boolean                  | Wurde das Lockergestein wieder verdeckt (ja/nein)? | [1]
 **COMPOSIT**                 | [ Tabelle ](#gc-composit)  | Zusammensetzung des Lockergesteins. | [0..3]
 **ADMIXTURE**                 | [ Tabelle ](#gc-admixture)  | Beimengung. | [0..2]
@@ -177,7 +177,7 @@ Name             | Typ | Beschreibung                             |  Kard.
 **GLAC_TYPE**                 | [CD](#unconsolidated-deposits-plg-glac-type)  | Gletschertyp; Attribut nur für Moränen. | [0..1]
 **REF_YEAR**                 | string                  | Zeitpunkt oder Zeitperiode. Zum Beispiel «1940 1943, Periode der Drainage» (muss präzisiert werden). | [0..1]
 **THIN_COVER**                 | [CD](#unconsolidated-deposits-plg-thin-cover)  | Typ der geringmächtigen Lockermaterialbedeckung, wenn vorhanden.. | [0..1]
-**ORIG_DESCR**                 |                   | Originalbezeichnung gemäss der Legende der zugrunde liegenden geologischen Karte | [1]
+**ORIG_DESCR**                 | string                  | Originalbezeichnung gemäss der Legende der zugrunde liegenden geologischen Karte | [1]
 
 
 
@@ -232,6 +232,8 @@ Siehe [GC_CHRONO_CD](#gc-chrono-cd) in der Anhang
 
 #### Attribut  MAT_TYPE
 _Materialbezeichnung (lithologische Einheit)_
+
+_Datentyp :  string_
 
 
 
@@ -372,6 +374,8 @@ _Typ der geringmächtigen Lockermaterialbedeckung, wenn vorhanden._
 #### Attribut  ORIG_DESCR
 _Originalbezeichnung gemäss der Legende der zugrunde liegenden geologischen Karte_
 
+_Datentyp :  string_
+
 
 
 
@@ -391,14 +395,14 @@ Name             | Typ | Beschreibung                             |  Kard.
 **CHRONO_B**                 | [ Tabelle ](#gc-chrono-cd)  | Chronostratigraphische Zuordnung der Untergrenze der Kartiereinheit (Basis). | [1]
 **TECTO**                 | [ Tabelle ](#gc-tecto-cd)  | Tektonische Zugehörigkeit. | [1]
 **ORIG_DESCR**                 | string                  | Originalbezeichnung gemäss der Legende der zugrundeliegenden geologischen Karte | [1]
-**EXOTIC_ELE**                 |                   | Handelt es sich bei der Objektart um ein exotisches Element; z.B. Einschluss, Linse, Tasche, Olistholith (ja / nein)? | [1]
+**EXOTIC_ELE**                 | boolean                  | Handelt es sich bei der Objektart um ein exotisches Element; z.B. Einschluss, Linse, Tasche, Olistholith (ja / nein)? | [1]
 **SEDI_MAIN_COM**                 | [CD](#bedrock-plg-sedi-main-com)  | Hauptgesteinskomponente des klastischen Sedimentgesteins. | [0..1]
 **SEDI_SECO_COM**                 | [CD](#bedrock-plg-sedi-seco-com)  | Nebengesteinskomponente des Sedimentgesteins. | [0..2]
 **SEDI_BOND_MAT**                 | [CD](#bedrock-plg-sedi-bond-mat)  | Bindemittel des Sedimentgesteins. | [0..1]
 **SEDI_BEDDING**                 | [CD](#bedrock-plg-sedi-bedding)  | Schichtung des Sedimentgesteins. | [0..2]
 **SEDI_STR**                 | [CD](#bedrock-plg-sedi-str)  | Textur des Sedimentgesteins. | [0..2]
 **SEDI_TEX**                 | [CD](#bedrock-plg-sedi-tex)  | Sedimentstruktur. | [0..1]
-**IGNE_TEXT**                 | [CD](#bedrock-plg-igne-text)  | Struktur des magmatischen Gesteins. | [0..1]
+**IGNE_TEX**                 | [CD](#bedrock-plg-igne-tex)  | Struktur des magmatischen Gesteins. | [0..1]
 **IGNE_GRAIN_SI**                 | [CD](#bedrock-plg-igne-grain-si)  | Korngrösse des magmatischen Gesteins. | [0..1]
 **IGNE_AFFINITY**                 | [CD](#bedrock-plg-igne-affinity)  | Affinität zu einer magmatischen Serie.. | [0..1]
 **META_FULL_NAME**                 | string                  | Bezeichnung des metamorphen Gesteins | [0..1]
@@ -476,6 +480,8 @@ _Datentyp :  string_
 
 #### Attribut  EXOTIC_ELE
 _Handelt es sich bei der Objektart um ein exotisches Element; z.B. Einschluss, Linse, Tasche, Olistholith (ja / nein)?_
+
+_Datentyp :  boolean_
 
 
 
@@ -624,7 +630,7 @@ _Sedimentstruktur_
 
 
 
-#### Attribut  IGNE_TEXT {#bedrock-plg-igne-text}
+#### Attribut  IGNE_TEX {#bedrock-plg-igne-tex}
 _Struktur des magmatischen Gesteins_
 
 
@@ -1354,7 +1360,6 @@ Name             | Typ | Beschreibung                             |  Kard.
 --------------------------|------------|-----------------------------------------------------|-----
 **KIND**                 | subtype                  | Objektart | [1]
 **TYPE**                 | [CD](#deformation-structures-plg-type)  | Charakteristik der Objektarten. | [0..1]
-**GEN_RELA**                 | [CD](#deformation-structures-plg-gen-rela)  | Genetische Beziehung.. | [0..1]
 
 
 
@@ -1388,13 +1393,6 @@ _Charakteristik der Objektarten_
 
 
 
-#### Attribut  GEN_RELA {#deformation-structures-plg-gen-rela}
-_Genetische Beziehung._
-
-
-
-
-
 ### Klasse Tectonic_Boundaries_L (Ttec){#tectonic-boundaries-l}
 Die Klasse [Tectonic_Boundaries_L](#tectonic-boundaries-l) umfasst alle tektonischen Verwerfungen.
 
@@ -1407,7 +1405,8 @@ Name             | Typ | Beschreibung                             |  Kard.
 **FAULT_MO**                 | [CD](#tectonic-boundaries-l-fault-mo)  | Bewegungsrichtung des Bruchs. | [0..1]
 **VERTI_MO**                 | [CD](#tectonic-boundaries-l-verti-mo)  | Bewegung parallel zur Fallrichtung der Bruchfläche.. | [0..1]
 **HORIZ_MO**                 | [CD](#tectonic-boundaries-l-horiz-mo)  | Bewegung parallel zur Streichrichtung der Bruch- oder Scherfläche. | [0..1]
-**LIM_TECT**                 | boolean                  | Typ der tektonischen Grenze (Deckengrenze,Schuppengrenze, etc.) | [1]
+**LIM_TYP**                 | [CD](#tectonic-boundaries-l-lim-typ)  | Typ der tektonischen Grenze (Deckengrenze,Schuppengrenze, etc.). | [1]
+**HIERA**                 | [CD](#tectonic-boundaries-l-hiera)  | Typ der tektonischen Grenze (Deckengrenze,Schuppengrenze, etc.). | [1]
 **STATUS**                 | [CD](#tectonic-boundaries-l-status)  | Zustand der Objektart. | [1]
 **META_STA**                 | [CD](#tectonic-boundaries-l-meta-sta)  | Tektonometamorphe Chronologie der Objektart. | [0..1]
 **NAME**                 | string                  | Spezifischer Name der Objektart. | [0..1]
@@ -1476,11 +1475,31 @@ _Bewegung parallel zur Streichrichtung der Bruch- oder Scherfläche_
 
 
 
-#### Attribut  LIM_TECT
+#### Attribut  LIM_TYP {#tectonic-boundaries-l-lim-typ}
 _Typ der tektonischen Grenze (Deckengrenze,Schuppengrenze, etc.)_
 
-_Datentyp :  boolean_
 
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|14910001 | Decken trennend | délimitant des nappes     |
+|14910002 | Schuppen trennend | délimitant des écailles     |
+|999997 | unbekannt | inconnu     |
+|999998 | nicht anwendbar | non applicable     |
+
+
+
+
+#### Attribut  HIERA {#tectonic-boundaries-l-hiera}
+_Typ der tektonischen Grenze (Deckengrenze,Schuppengrenze, etc.)_
+
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|14911001 | Störung | Störung     |
+|14911002 | Teilstörungssystem | système tectonique partiel     |
+|14911003 | Grossstörungssystem | grand système tectonique     |
+|999997 | unbekannt | inconnu     |
+|999998 | nicht anwendbar | non applicable     |
 
 
 
@@ -1542,7 +1561,7 @@ Name             | Typ | Beschreibung                             |  Kard.
 --------------------------|------------|-----------------------------------------------------|-----
 **KIND**                 | subtype                  | Objektart | [1]
 **FOLD_TYP**                 | [CD](#folds-pt-fold-typ)  | Faltentyp. | [0..1]
-**FOLD_FOR**                 |                   | Faltenform | [0..1]
+**FOLD_FOR**                 | [CD](#folds-pt-fold-for)  | Faltenform. | [0..1]
 **PHASE**                 | [CD](#folds-pt-phase)  | Deformationsphase.. | [0..1]
 **PHASE_REF**                 | string                  | Referenz für die Angabe der Deformationsphase. | [0..1]
 **AZIMUTH**                 | integer                  | Einfallsrichtung (Azimut) der jeweiligen Punktobjektart (z.B. Scheitellinie, Faltenachse). Wert in Grad (0° 359°) im Uhrzeigersinn gemessen | [1]
@@ -1579,9 +1598,12 @@ _Faltentyp_
 
 
 
-#### Attribut  FOLD_FOR
+#### Attribut  FOLD_FOR {#folds-pt-fold-for}
 _Faltenform_
 
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
 
 
 
@@ -1641,7 +1663,7 @@ Name             | Typ | Beschreibung                             |  Kard.
 --------------------------|------------|-----------------------------------------------------|-----
 **KIND**                 | subtype                  | Objektart | [1]
 **AZIMUTH**                 | integer                  | Einfallsrichtung (Azimut) der jeweiligen Punktobjektart (z.B. Scheitellinie, Faltenachse). Wert in Grad (0° 359°) im Uhrzeigersinn gemessen | [1]
-**DIP**                 |                   | Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die Vertikale (90°). | []
+**DIP**                 | integer                  | Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die Vertikale (90°). | []
 
 
 
@@ -1673,6 +1695,8 @@ _Datentyp :  integer_
 #### Attribut  DIP
 _Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die Vertikale (90°)._
 
+_Datentyp :  integer_
+
 
 
 
@@ -1691,7 +1715,7 @@ Name             | Typ | Beschreibung                             |  Kard.
 **PHASE_REF**                 | string                  | Referenz für die Angabe der Deformationsphase. | [0..1]
 **OB_DIP_SLO**                 | boolean                  | Dip slope (ja / nein)? | [0..1]
 **AZIMUTH**                 | integer                  | Einfallsrichtung (Azimut) der jeweiligen Punktobjektart (z.B. Scheitellinie, Faltenachse). Wert in Grad (0° 359°) im Uhrzeigersinn gemessen | [1]
-**DIP**                 |                   | Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die Vertikale (90°). | []
+**DIP**                 | integer                  | Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die Vertikale (90°). | []
 
 
 
@@ -1772,6 +1796,8 @@ _Datentyp :  integer_
 #### Attribut  DIP
 _Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die Vertikale (90°)._
 
+_Datentyp :  integer_
+
 
 
 
@@ -1791,7 +1817,7 @@ Die Klasse [Anomalies_PT](#anomalies-pt) beinhaltet lokal beobachtete und / oder
 Name             | Typ | Beschreibung                             |  Kard.
 --------------------------|------------|-----------------------------------------------------|-----
 **KIND**                 | subtype                  | Objektart | [1]
-**TYPE**                 |                   | Charakteristik der Objektart. | []
+**TYPE**                 | [CD](#anomalies-pt-type)  | Charakteristik der Objektart.. | []
 
 
 
@@ -1809,9 +1835,12 @@ _Objektart_
 
 
 
-#### Attribut  TYPE
+#### Attribut  TYPE {#anomalies-pt-type}
 _Charakteristik der Objektart._
 
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
 
 
 
@@ -1826,7 +1855,7 @@ Name             | Typ | Beschreibung                             |  Kard.
 --------------------------|------------|-----------------------------------------------------|-----
 **KIND**                 | subtype                  | Objektart | [1]
 **DIVISION**                 | [CD](#fossils-pt-division)  | Fossilienkategorie, zu welcher die Objektinstanz gehört.. | [0..1]
-**SYSTEM**                 | table                  | Fossiliengruppe. | [0..5]
+**SYSTEM**                 | [ Tabelle ](#gc-system)  | Fossiliengruppe.. | [0..5]
 **DAT_METH**                 | [CD](#fossils-pt-dat-meth)  | Datierungsmethode.. | [0..1]
 **STATUS**                 | [CD](#fossils-pt-status)  | Zustand der Objektart. | [0..1]
 **PROTECTED**                 | boolean                  | Geschützte Fossilfundstelle (ja / nein)? | [0..1]
@@ -1865,6 +1894,8 @@ _Fossilienkategorie, zu welcher die Objektinstanz gehört._
 
 #### Attribut  SYSTEM
 _Fossiliengruppe._
+
+Siehe [gc_system](#gc-system) in der Anhang
 
 
 
@@ -2149,7 +2180,7 @@ Name             | Typ | Beschreibung                             |  Kard.
 **CONG_SPE**                 | [CD](#prominent-lithological-features-l-cong-spe)  | Charakterisation der Konglomerate nach ihrem Geröllspektrum.. | [0..1]
 **NAME_HORIZ**                 | [ Tabelle ](#gc-litstrat-bed-cd)  | Name des Leithorizonts.. | [0..1]
 **ORIG_DESCR**                 | string                  | Originalbezeichnung gemäss der Legende der zugrundeliegenden geologischen Karte. | [0..1]
-**LPRO_LITHO**                 | [ Tabelle ](#gc-litho-cd)  | Materialbezeichnung (lithologische Einheit).. | [1]
+**LITHO**                 | [ Tabelle ](#gc-litho-cd)  | Materialbezeichnung (lithologische Einheit).. | [1]
 
 
 
@@ -2200,7 +2231,7 @@ _Datentyp :  string_
 
 
 
-#### Attribut  LPRO_LITHO
+#### Attribut  LITHO
 _Materialbezeichnung (lithologische Einheit)._
 
 Siehe [GC_LITHO_CD](#gc-litho-cd) in der Anhang
@@ -2309,7 +2340,7 @@ Name             | Typ | Beschreibung                             |  Kard.
 **TYPE**                 | [CD](#slope-bedrock-pt-type)  | Referenzoberfläche.. | [1]
 **AZIMUTH**                 | integer                  | Fallrichtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad (0° bis 359°) im Uhrzeigersinn gemessen. | [0..1]
 **DIP**                 | integer                  | Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die Vertikale (90°). | [0..1]
-**PSLO_FORMATIO**                 | [ Tabelle ](#gc-litstrat-bed-cd)  | Lithostratigraphische Einheit der modellierten Formation. | [1]
+**FORMATIO**                 | [ Tabelle ](#gc-litstrat-bed-cd)  | Lithostratigraphische Einheit der modellierten Formation. | [1]
 
 
 
@@ -2358,7 +2389,7 @@ _Datentyp :  integer_
 
 
 
-#### Attribut  PSLO_FORMATIO
+#### Attribut  FORMATIO
 _Lithostratigraphische Einheit der modellierten Formation_
 
 Siehe [GC_LITSTRAT_BED_CD](#gc-litstrat-bed-cd) in der Anhang
@@ -2508,7 +2539,7 @@ Name             | Typ | Beschreibung                             |  Kard.
 --------------------------|------------|-----------------------------------------------------|-----
 **KIND**                 | subtype                  | Objektart | [1]
 **CONFINE**                 | [CD](#contour-lines-hydro-l-confine)  | Druckzustand im Grundwasserleiter.. | [0..1]
-**ALTITUDE**                 |                   | Höhenangabe (m ü.M.) von Isohypsen. | [1]
+**ALTITUDE**                 | float                  | Höhenangabe (m ü.M.) von Isohypsen. | [1]
 **WA_TABLE**                 | [CD](#contour-lines-hydro-l-wa-table)  | Wasserstand.. | [0..1]
 
 
@@ -2521,7 +2552,7 @@ _Objektart_
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
-|14001001 | Pcoh Isohypse des Grundwasserspiegels | isohypse de la surface piézométrique     |
+|14001001 | Isohypse des Grundwasserspiegels | isohypse de la surface piézométrique     |
 
 
 
@@ -2543,6 +2574,8 @@ _Druckzustand im Grundwasserleiter._
 
 #### Attribut  ALTITUDE
 _Höhenangabe (m ü.M.) von Isohypsen._
+
+_Datentyp :  float_
 
 
 
@@ -3119,20 +3152,20 @@ Rammkernsondierungen als Bohrungen aufgenommen wurden.)
 Name             | Typ | Beschreibung                             |  Kard.
 --------------------------|------------|-----------------------------------------------------|-----
 **KIND**                 | subtype                  | Objektart | []
-**DRILL_MO**                 |                   | Bohrmethode. | [0..1]
 **DEPTH_BEDR**                 | float                  | Tiefe (in Meter ab Terrainoberfläche) der Felsoberfläche. (Sofern die Bohrung das Festgestein nicht erreicht, z.B. «Bohrung, Fels nicht erreicht», beträgt der Wert 999, falls die Bohrung bereits im Festgestein beginnt, beträgt der Wert 0). Falls Festgestein erreicht wurde, aber nicht klar ist, dass es sich um die Felsoberfläche handelt, beträgt der Wert 888. | [0..1]
 **D_C_UNDERG**                 | boolean                  | Bohransatzpunkt unter Terrain (ja / nein) | [1]
 **MAIN_TAR**                 | [CD](#boreholes-pt-main-tar)  | Ziel der Sondierung.. | [0..1]
 **TARG_MAT**                 | [CD](#boreholes-pt-targ-mat)  | Durch die Sondierung gefördertes Material.. | [0..1]
 **DEPTH_TOT**                 | float                  | Gemessene Länge (Measured Depth) der Bohrung. Vgl. DM Bohrdaten. Die tatsächliche Tiefe (True Vertical Depth) ist oft nicht bekannt. | [0..1]
+**DEPTH_FM_A**                 | [ Tabelle ](#gc-litstrat-bed-cd)  | Lithostratigraphische Einheit der erreichten Formation A. | [0..1]
+**DEPTH_FM_B**                 | float                  | Tiefe (m ab Terrainoberfläche) der erreichten Formation B. | [0..1]
 **FM_A**                 | [ Tabelle ](#gc-litstrat-bed-cd)  | Lithostratigraphische Einheit der erreichten Formation A. | [0..1]
-**DEPTH_FM_A**                 | float                  | Tiefe (m ab Terrainoberfläche) der erreichten Formation A. | [0..1]
-**FM_B**                 | [ Tabelle ](#gc-litstrat-bed-cd)  | Lithostratigraphische Einheit der erreichten Formation B. | [0..1]
 **DEPTH_FM_B**                 | float                  | Tiefe (m ab Terrainoberfläche) der erreichten Formation B. | [0..1]
 **DEPTH_WT**                 | float                  | Tiefe (m ab Terrainoberfläche) des Grundwasserspiegels. | [0..1]
 **AZIMUTH**                 | integer                  | Fallrichtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad (0° 359°) im Uhrzeigersinn gemessen. | [0..1]
 **DIP**                 | integer                  | Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die Vertikale (90°). | [0..1]
 **REF_NUMBER**                 | integer                  | Bohrungs-ID der Objektart in einem zusätzlichen Dokument (Erläuterungen, ...). | [0..1]
+**LITHO**                 | [ Tabelle ](#gc-litho-unco-cd)  | Erreichte lithologische Einheit (im Falle von Bohrungen, die den Fels nicht erreicht haben). | [0..1]
 
 
 
@@ -3149,13 +3182,6 @@ _Objektart_
 |10501003 | Handsondierung | sondage à la tarière     |
 |10501004 | Rammsondierung | sondage au pénétromètre     |
 |10501005 | Rammkernsondierung | sondage par carottier battu     |
-
-
-
-
-#### Attribut  DRILL_MO
-_Bohrmethode._
-
 
 
 
@@ -3227,7 +3253,7 @@ _Datentyp :  float_
 
 
 
-#### Attribut  FM_A
+#### Attribut  DEPTH_FM_A
 _Lithostratigraphische Einheit der erreichten Formation A_
 
 Siehe [GC_LITSTRAT_BED_CD](#gc-litstrat-bed-cd) in der Anhang
@@ -3236,8 +3262,8 @@ Siehe [GC_LITSTRAT_BED_CD](#gc-litstrat-bed-cd) in der Anhang
 
 
 
-#### Attribut  DEPTH_FM_A
-_Tiefe (m ab Terrainoberfläche) der erreichten Formation A._
+#### Attribut  DEPTH_FM_B
+_Tiefe (m ab Terrainoberfläche) der erreichten Formation B._
 
 _Datentyp :  float_
 
@@ -3245,8 +3271,8 @@ _Datentyp :  float_
 
 
 
-#### Attribut  FM_B
-_Lithostratigraphische Einheit der erreichten Formation B_
+#### Attribut  FM_A
+_Lithostratigraphische Einheit der erreichten Formation A_
 
 Siehe [GC_LITSTRAT_BED_CD](#gc-litstrat-bed-cd) in der Anhang
 
@@ -3294,6 +3320,15 @@ _Datentyp :  integer_
 _Bohrungs-ID der Objektart in einem zusätzlichen Dokument (Erläuterungen, ...)._
 
 _Datentyp :  integer_
+
+
+
+
+
+#### Attribut  LITHO
+_Erreichte lithologische Einheit (im Falle von Bohrungen, die den Fels nicht erreicht haben)_
+
+Siehe [GC_LITHO_UNCO_CD](#gc-litho-unco-cd) in der Anhang
 
 
 
@@ -3484,7 +3519,7 @@ Name             | Typ | Beschreibung                             |  Kard.
 --------------------------|------------|-----------------------------------------------------|-----
 **KIND**                 | subtype                  | Objektart | [1]
 **REL_AGE**                 | [CD](#palaeohydrology-l-rel-age)  | Relatives Alter der Objektart. | [0..1]
-**HPAL_CHRONO**                 | [ Tabelle ](#gc-chrono-cd)  | Chronostratigraphische Zuordnung.. | [0..1]
+**CHRONO**                 | [ Tabelle ](#gc-chrono-cd)  | Chronostratigraphische Zuordnung.. | [0..1]
 **REF_YEAR**                 | integer                  | Referenzjahr der ehemaligen Uferlinie. | [1]
 **SOURCE**                 | string                  | Datenquelle der historischen Unterlagen. | [0..1]
 
@@ -3524,7 +3559,7 @@ _Relatives Alter der Objektart_
 
 
 
-#### Attribut  HPAL_CHRONO
+#### Attribut  CHRONO
 _Chronostratigraphische Zuordnung._
 
 Siehe [GC_CHRONO_CD](#gc-chrono-cd) in der Anhang
@@ -7921,7 +7956,7 @@ Fossiliengruppe.
 
 
 
-## Geolcodes geändert 2022-2024 
+## Anhang  Geolcodes geändert 2022-2024 
 
 
 ### GeolCodes hinzugefügt 
@@ -8354,4 +8389,6 @@ Fossiliengruppe.
 | 15203228 | Fêta-d&#39;Août-Flysch | Fêta-d&#39;Août-Formation |
 | 15203466 | Amphibolit des Ergischhorn-Ensembles | Ergischhorn-Komplex: Amphibolit |
 | 15203499 | Radiolarit der Platta-Decke | Falotta-Radiolarit |
+
+
 
