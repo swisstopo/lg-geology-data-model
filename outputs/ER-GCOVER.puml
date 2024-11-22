@@ -1,15 +1,26 @@
 @startuml
-
-skinparam monochrome true
+skinparam monochrome false
 skinparam linetype ortho
-scale 2
+skinparam backgroundcolor transparent
+skinparam rectangle {
+  roundCorner 50
+  BackGroundColor  #C8E1ED
+  LineThickness 10
+  LineColor #CEEDDB
+}
+
+skinparam TitlefontColor  #6E8894
+skinparam TitleFontSize 50
 
 
-!define table(x) class x << (T,#FFAAAA) >> #FFF
+scale 1
+
+
+!define table(x) class x << (T,#85BAA1) >> #CEEDDB
 !define view(x) class x << (V,#FFAAAA) >>
 !define ent(x) class x << (E,#FFAAAA) >>
 !define enum(x) class x << (E,#FFAAAA) >>
-!define class(x) class x << (C, #CC8888) >> #EEEBDC
+!define class(x) class x << (C,#544E61) >> #9C92A9
 
 !define primary_key(x) <b>PK: x</b>
 !define foreign_key(x,reference) <b>FK: </b>x
@@ -17,7 +28,14 @@ scale 2
 hide methods
 hide stereotypes
 
-title =Geocover\nNovember 2024
+
+
+
+
+rectangle  #C8E1ED;line:544E61;line.bold; {
+ 
+
+title GeoCover\nNovember 2024
 
 table(GC_CHRONO) {
 	primary_key(UUID) Guid
@@ -464,6 +482,8 @@ GC_UNCO_DESPOSIT_GC_CHARCAT "0..n" -- "1..1" GC_UNCO_DESPOSIT
 GC_UNCO_DESPOSIT_GC_CHARCAT "0..n" -- "1..1" GC_CHARCAT
 GC_EXPLOIT_GEOMAT_PLG_GC_LITSTRAT "0..n" -- "1..1" GC_EXPLOIT_GEOMAT_PLG
 GC_EXPLOIT_GEOMAT_PLG_GC_LITSTRAT "0..n" -- "1..1" GC_LITSTRAT
+
+}
 
 @enduml
     
