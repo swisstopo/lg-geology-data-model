@@ -1,0 +1,42 @@
+@startuml
+skinparam monochrome false
+skinparam linetype ortho
+skinparam backgroundcolor transparent
+skinparam rectangle {{
+  roundCorner 50
+  BackGroundColor  #C8E1ED
+  LineThickness 10
+  LineColor #CEEDDB
+}}
+
+skinparam TitlefontColor  #6E8894
+skinparam TitleFontSize 50
+
+
+scale 1
+
+
+!define table(x) class x << (T,#85BAA1) >> #CEEDDB
+!define view(x) class x << (V,#FFAAAA) >>
+!define ent(x) class x << (E,#FFAAAA) >>
+!define enum(x) class x << (E,#FFAAAA) >>
+!define class(x) class x << (C,#544E61) >> #9C92A9
+
+!define primary_key(x) <b>PK: x</b>
+!define foreign_key(x,reference) <b>FK: </b>x
+!define key(x) <b>x</b>
+hide methods
+hide stereotypes
+
+
+
+rectangle  #C8E1ED;line:544E61;line.bold; {{
+ 
+
+title GeoCover\nNovember 2024
+
+{content}
+
+}}
+
+@enduml

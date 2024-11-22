@@ -137,7 +137,7 @@ s = json.loads(c)
 
 all_tables = {}
 
-S = SQL2PUML()
+S = SQL2PUML(template_file="templates/template.puml")
 G = pgv.AGraph(strict=False, directed=False)
 
 G.graph_attr["label"] = "GCOVERP Schema (SDE)"
@@ -366,7 +366,7 @@ db_config = {"database": "GCOVERP", "version": 1, "tables": []}
 
 logger.info("-----------------------")
 
-SP = SQL2PUML()
+SP = SQL2PUML(template_file="templates/template.puml")
 for name, table in all_tables.items():
     logger.info(f"----{name}----")
     # logger.info()
@@ -431,3 +431,5 @@ with open(yaml_file, "w") as f:
         allow_unicode=True,
         encoding=("utf-8"),
     )
+    
+logger.info(f"Template was: {S.puml_template}")
