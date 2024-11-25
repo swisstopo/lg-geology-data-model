@@ -43,14 +43,18 @@ PANDOC_ODT_OPTIONS=
 # Help target
 help:
 	@echo "Usage:"
-	@echo "  make all     - Generate all files (PDF, DOCX, HTML and ODT for all languages)"
-	@echo "  make pdf      - Generate only PDF files for all languages"
-	@echo "  make docx     - Generate only PDF files for all languages"
+	@echo "  make all      - Generate all files (PDF, DOCX, HTML and ODT for all languages)"
+	@echo "  make pdfs     - Generate only PDF files for all languages"
+	@echo "  make docxs    - Generate only DOCX files for all languages"
+	@echo "  make odts     - Generate only ODT files for all languages"
+	@echo "  make htmls    - Generate only HTML files for all languages"
+	@echo "  make mds      - Generate only Markdown files for all languages"
 	@echo "  make de       - Generate all files (PDF, DOCX, HTML and ODT) for German"
 	@echo "  make fr       - Generate all files (PDF, DOCX, HTML and ODT) for French"
 	@echo "  make babel    - Generate .mo translation files"
 	@echo "  make markdown - Generate markdown files"
 	@echo "  make diagram  - Generate ER diagram"
+	@echo "  make validate - Validate the datamodel against the schema"
 	@echo "  make clean    - Remove all generated files"
 	@echo "  make help     - Display this help message"
 
@@ -81,20 +85,23 @@ markdown: $(MO_FILES) $(INPUTS)
 
 diagram: assets
 	python create_gv.py
+	
+$(INPUT_DIR)/datamodel.xlsx:
+	datamodel  export datamodel.yaml  -o $@
 
 
 .PHONY: all
-all: $(MO_FILES) $(INPUTS)  $(OUTPUTS) diagram
+all: $(MO_FILES) $(INPUTS)  $(OUTPUTS) diagram $(INPUT_DIR)/datamodel.xlsx
 
 # Define individual rules for each format and language
 define build_rule
 $(INPUT_DIR)/$(1)/metadata.yaml: assets $(MO_FILES)
 	mkdir -p $$(@D)
-	datamodel --lang=$(1)  -o $(INPUT_DIR) datamodel.yaml
+	datamodel generate --lang=$(1)  -o $(INPUT_DIR) datamodel.yaml
 
 $(INPUT_DIR)/$(1)/datamodel.md: assets $(MO_FILES)
 	mkdir -p $$(@D)
-	datamodel --lang=$(1) -o $(INPUT_DIR) datamodel.yaml
+	datamodel generate --lang=$(1) -o $(INPUT_DIR) datamodel.yaml
 
 $(OUTPUT_DIR)/$(1)/datamodel.pdf: $(INPUT_DIR)/$(1)/datamodel.md $(INPUT_DIR)/$(1)/metadata.yaml
 	mkdir -p $$(@D)
@@ -132,6 +139,9 @@ mds: $(foreach lang,$(LANGUAGES),$(INPUT_DIR)/$(lang)/datamodel.md)
 de: $(foreach fmt,$(FORMATS),$(OUTPUT_DIR)/de/datamodel.$(fmt))
 fr: $(foreach fmt,$(FORMATS),$(OUTPUT_DIR)/fr/datamodel.$(fmt))
 
+.PHONY: validate
+validate:
+	 datamodel validate datamodel.yaml
 
 # Clean up
 # Clean up all generated files

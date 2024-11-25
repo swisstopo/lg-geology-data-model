@@ -44,12 +44,25 @@ jobs:
           conda config --show-sources
           conda config --show
           printenv | sort
+      - name: Set Package Version
+        shell: bash -l {0}
+        run: |
+          echo "version=$(<VERSION)" >> $GITHUB_ENV
+          echo "=== PKG_VERSION=$version ==="
+          echo "RELEASE=$(python -c "import yaml; print(yaml.safe_load(open('datamodel.yaml'))['model']['revision'])")" >> $GITHUB_ENV
+          echo "=== RELEASE=$RELEASE ==="
 
 
-      - shell: bash -el {0}
+      - name: Pip install
+        shell: bash -el {0}
         run: pip install -e .
+        
+      - name: Validate
+        shell: bash -el {0}
+        run: make validate
 
-      - shell: bash -el {0}
+      - name: Generate graph
+        shell: bash -el {0}
         run: |
           python ./create_gv.py
     
@@ -66,7 +79,7 @@ jobs:
       - name: Upload Artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: document-artifacts
+          name: geology-data-model-${{ env.RELEASE }}
           path: |
             outputs/de/datamodel.pdf
             outputs/fr/datamodel.pdf
@@ -80,10 +93,10 @@ jobs:
             outputs/fr/geocover.png
             outputs/ER-GCOVER.svg
             outputs/ER-GCOVER.pdf
-            outputs/geocover-schema-sde.png
-            outputs/geocover-schema-sde.svg
             exports/coded_domains.xlsx
             exports/all_geolcode.xlsx
             exports/all_geolcode.json
             exports/geocover-schema-sde.json
+            inputs/datamodel.xlsx
+            datamodel.yaml
 

@@ -95,10 +95,11 @@ class ColumnFK(Column):
 
 
 class Table:
-    def __init__(self, name, relation=False):
+    def __init__(self, name, relation=False, cardinality=None):
         self.name = name
         self.columns = []
         self.relation = relation
+        self.cardinality = cardinality
 
     def get_column(self, name, erase=True):
         for i, c in enumerate(self.columns):
@@ -136,7 +137,7 @@ s = json.loads(c)
 
 all_tables = {}
 
-S = SQL2PUML()
+S = SQL2PUML(template_file="templates/template.puml")
 G = pgv.AGraph(strict=False, directed=False)
 
 G.graph_attr["label"] = "GCOVERP Schema (SDE)"
@@ -312,8 +313,10 @@ for i, r in enumerate(relations):
         keys = {}
         keys["origin"] = get_keys(ori_keys)
         keys["destination"] = get_keys(dest_keys)
+        
+        logger.warning(f'Relationships "ManyToMany" {ori_table.name} --> {dest_table.name}')
 
-        t = Table(new_table, relation=True)
+        t = Table(new_table, relation=True, cardinality='ManyToMany')
         # t.columns.append(Column(keys["origin"]["fk"], "int"))
         # t.columns.append(Column(keys["destination"]["fk"], "int"))
         all_tables[new_table] = t
@@ -363,7 +366,7 @@ db_config = {"database": "GCOVERP", "version": 1, "tables": []}
 
 logger.info("-----------------------")
 
-SP = SQL2PUML()
+SP = SQL2PUML(template_file="templates/template.puml")
 for name, table in all_tables.items():
     logger.info(f"----{name}----")
     # logger.info()
@@ -428,3 +431,5 @@ with open(yaml_file, "w") as f:
         allow_unicode=True,
         encoding=("utf-8"),
     )
+    
+logger.info(f"Template was: {S.puml_template}")

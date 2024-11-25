@@ -1,21 +1,41 @@
-
 @startuml
-
-skinparam monochrome true
+skinparam monochrome false
 skinparam linetype ortho
-scale 2
+skinparam backgroundcolor transparent
+skinparam rectangle {
+  roundCorner 50
+  BackGroundColor  #C8E1ED
+  LineThickness 10
+  LineColor #CEEDDB
+}
 
-!define table(x) class x << (T,#FFAAAA) >> #FFF
+skinparam TitlefontColor  #6E8894
+skinparam TitleFontSize 50
+
+
+scale 1
+
+
+!define table(x) class x << (T,#85BAA1) >> #CEEDDB
 !define view(x) class x << (V,#FFAAAA) >>
 !define ent(x) class x << (E,#FFAAAA) >>
 !define enum(x) class x << (E,#FFAAAA) >>
-!define class(x) class x << (C, #CC8888) >> #EEEBDC
+!define class(x) class x << (C,#544E61) >> #9C92A9
 
 !define primary_key(x) <b>PK: x</b>
 !define foreign_key(x,reference) <b>FK: </b>x
 !define key(x) <b>x</b>
 hide methods
 hide stereotypes
+
+
+
+
+
+rectangle  #C8E1ED;line:544E61;line.bold; {
+ 
+
+title GeoCover\nNovember 2024
 
 table(GC_CHRONO) {
 	primary_key(UUID) Guid
@@ -43,7 +63,7 @@ table(GC_LITHO) {
 }
 
 table(GC_LITSTRAT) {
-	foreign_key(GC_EXPLOIT_GEOMAT_PLG_UUID,GC_EXPLOIT_GEOMAT_PLG) Guid
+	foreign_key(GC_EXPLOIT_GEOMAT_PT_UUID,GC_EXPLOIT_GEOMAT_PT) Guid
 	foreign_key(GC_LITSTRAT_UUID,GC_LITSTRAT) Guid
 	---
 	key(OBJECTID) OID
@@ -263,7 +283,6 @@ class(GC_POINT_OBJECTS) {
 	key(ABOR_D_C_UNDERG) GC_BOOLEAN_CD
 	key(ABOR_FM_A) GC_LITSTRAT_CD
 	key(ABOR_FM_B) GC_LITSTRAT_CD
-	key(ABOR_LINK) Integer
 	key(ABOR_LITHO) GC_LITHO_CD
 	key(ABOR_MAIN_TAR) GC_PNT_ABOR_MAIN_TAR_CD
 	key(ABOR_REF_NUMBER) Integer
@@ -439,13 +458,13 @@ table(GC_EXPLOIT_GEOMAT_PLG_GC_LITSTRAT) {
 	foreign_key(GC_LITSTRAT_UUID,GC_LITSTRAT) Guid
 }
 
-GC_LITHO "0..n" -- "1..1" GC_UNCO_DESPOSIT
-GC_LITSTRAT "0..n" -- "1..1" GC_EXPLOIT_GEOMAT_PLG
-GC_LITHO_BED "0..n" -- "1..1" GC_BEDROCK
-GC_SYSTEM "0..n" -- "1..1" GC_FOSSILS
-GC_COMPOSIT "0..n" -- "1..1" GC_UNCO_DESPOSIT
-GC_ADMIXTURE "0..n" -- "1..1" GC_UNCO_DESPOSIT
-GC_CHARCAT "0..n" -- "1..1" GC_UNCO_DESPOSIT
+' GC_LITHO "0..n" -- "1..1" GC_UNCO_DESPOSIT
+' GC_LITSTRAT "0..n" -- "1..1" GC_EXPLOIT_GEOMAT_PLG
+' GC_LITHO_BED "0..n" -- "1..1" GC_BEDROCK
+' GC_SYSTEM "0..n" -- "1..1" GC_FOSSILS
+' GC_COMPOSIT "0..n" -- "1..1" GC_UNCO_DESPOSIT
+' GC_ADMIXTURE "0..n" -- "1..1" GC_UNCO_DESPOSIT
+' GC_CHARCAT "0..n" -- "1..1" GC_UNCO_DESPOSIT
 GC_BEDROCK "0..n" -- "1..1" GC_BED_FORM_ATT
 GC_UNCO_DESPOSIT_GC_LITHO "0..n" -- "1..1" GC_UNCO_DESPOSIT
 GC_UNCO_DESPOSIT_GC_LITHO "0..n" -- "1..1" GC_LITHO
@@ -463,6 +482,8 @@ GC_UNCO_DESPOSIT_GC_CHARCAT "0..n" -- "1..1" GC_UNCO_DESPOSIT
 GC_UNCO_DESPOSIT_GC_CHARCAT "0..n" -- "1..1" GC_CHARCAT
 GC_EXPLOIT_GEOMAT_PLG_GC_LITSTRAT "0..n" -- "1..1" GC_EXPLOIT_GEOMAT_PLG
 GC_EXPLOIT_GEOMAT_PLG_GC_LITSTRAT "0..n" -- "1..1" GC_LITSTRAT
+
+}
 
 @enduml
     

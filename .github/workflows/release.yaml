@@ -15,10 +15,17 @@ jobs:
     runs-on: ubuntu-latest
     needs: [build]  # require build to pass before deploy runs
     steps:
+      - name: Set Package Version
+        shell: bash -l {0}
+        run: |
+          echo "version=$(<VERSION)" >> $GITHUB_ENV
+          echo "=== PKG_VERSION=$version ==="
+          echo "RELEASE=$(python -c "import yaml; print(yaml.safe_load(open('datamodel.yaml'))['model']['revision'])")" >> $GITHUB_ENV
+          echo "=== RELEASE=$RELEASE ==="
       - name: Download assets from build
         uses: actions/download-artifact@v4
         with:
-          name: document-artifacts
+          name: geology-data-model-${{ env.RELEASE }}
       - name: Release assets
         uses: softprops/action-gh-release@v2
         env:
@@ -34,6 +41,4 @@ jobs:
             exports/coded_domains.xlsx
             exports/all_geolcode.xlsx
             exports/geocover-schema-sde.json
-            outputs/geocover-schema-sde.png
-            outputs/geocover-schema-sde.svg
 

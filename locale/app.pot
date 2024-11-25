@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-09-26 22:19+0200\n"
+"POT-Creation-Date: 2024-11-08 19:43+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,6 +16,51 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.14.0\n"
+
+#: templates/comparison_reports.j2:1
+msgid "Geolcodes geändert 2022-2024"
+msgstr ""
+
+#: templates/comparison_reports.j2:5
+msgid "GeolCodes hinzugefügt"
+msgstr ""
+
+#: templates/comparison_reports.j2:7 templates/comparison_reports.j2:19
+#: templates/comparison_reports.j2:30
+msgid "Geolcode"
+msgstr ""
+
+#: templates/comparison_reports.j2:7 templates/comparison_reports.j2:19
+msgid "Deutsch"
+msgstr ""
+
+#: templates/comparison_reports.j2:13
+msgid "Kein hinzugefügter Geolcode gefunden."
+msgstr ""
+
+#: templates/comparison_reports.j2:17
+msgid "Geolcodes entfernt"
+msgstr ""
+
+#: templates/comparison_reports.j2:25
+msgid "Kein entfernter Geolcode gefunden."
+msgstr ""
+
+#: templates/comparison_reports.j2:28
+msgid "GeolCodes geändert"
+msgstr ""
+
+#: templates/comparison_reports.j2:30
+msgid "2022"
+msgstr ""
+
+#: templates/comparison_reports.j2:30
+msgid "2024"
+msgstr ""
+
+#: templates/comparison_reports.j2:36
+msgid "Kein geänderter Geolcode gefunden."
+msgstr ""
 
 #: templates/metadata.yaml.j2:2 templates/model_markdown.j2:2
 msgid "Geological datamodel"
@@ -69,10 +114,6 @@ msgstr ""
 
 #: templates/model_markdown.j2:33
 msgid "Description"
-msgstr ""
-
-#: templates/model_markdown.j2:33
-msgid "Mandat."
 msgstr ""
 
 #: templates/model_markdown.j2:33

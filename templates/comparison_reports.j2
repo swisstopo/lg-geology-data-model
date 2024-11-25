@@ -1,0 +1,37 @@
+## {{_("Annexe")}}  {{ _( "Geolcodes geändert 2022-2024") }} 
+
+
+### {{ _( "GeolCodes hinzugefügt") }} 
+
+{% if geolcodes.added %}
+| {{ _("Geolcode") }} | {{ _("Deutsch") }} |
+|----------|--------|
+{% for row in geolcodes.added  -%}
+| {{ row['geolcode'] }} | {{ row['german'] }} |
+{% endfor %}
+{% else %}
+ {{ _( "Kein hinzugefügter Geolcode gefunden.") }} 
+{% endif %}
+
+
+### {{ _("Geolcodes entfernt") }} 
+{% if  geolcodes.removed  %}
+| {{ _("Geolcode") }} | {{ _("Deutsch") }} |
+|----------|--------|
+{% for row in geolcodes.removed -%}
+| {{ row['geolcode'] }} | {{ row['german'] }} |
+{% endfor %}
+{% else %}
+ {{ _("Kein entfernter Geolcode gefunden.") }} 
+{% endif %}
+
+### {{ _("GeolCodes geändert" ) }} 
+{% if geolcodes.changed %}
+| {{ _("Geolcode") }} | {{ _("2022") }} | {{ _("2024") }}  |
+|----------|-------------|------------|
+{% for row in geolcodes.changed  -%}
+| {{ row['geolcode'] }} | {{ row['2022'] }} | {{ row['2024'] }} |
+{% endfor %}
+{% else %}
+ {{ _("Kein geänderter Geolcode gefunden.") }} 
+{% endif %}

@@ -1,0 +1,4999 @@
+[
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_BED_CD/codedValues/15203660",
+        "value": "Frilihorn-Decke: Trias"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_BED_CD/codedValues/15203608",
+        "value": "Walliser-Sedimentabfolge"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_BED_CD/codedValues/15203663",
+        "value": "Garda-Bordon-Formation: Quarzschiefer"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_BED_CD/codedValues/15202643",
+        "value": "Camosci-Decke: sandige Trias"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_BED_CD/codedValues/15202631",
+        "value": "Urseren-Garvera-Zone: Permokarbon: Metarhyolith"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_BED_CD/codedValues/15202617",
+        "value": "Nufenen-Zone: karbonatische Trias"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_BED_CD/codedValues/15203610",
+        "value": "Südegg-Komplex: Serpentinit"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_BED_CD/codedValues/15200690",
+        "value": "Heilsberg-Bentonit"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_BED_CD/codedValues/15203661",
+        "value": "Frilihorn-Decke: Trias: Rauwacke"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_BED_CD/codedValues/15203609",
+        "value": "Südegg-Komplex: schwarzer Schiefer"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_BED_CD/codedValues/15203667",
+        "value": "Zermatt-Saas-Decke: Metagabbro"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_BED_CD/codedValues/15202644",
+        "value": "Camosci-Decke: karbonatische Trias"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_BED_CD/codedValues/15203655",
+        "value": "Gornergrat-Decke: Kalkschisfer, sandiger Marmor, Brekzie"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_BED_CD/codedValues/15203639",
+        "value": "Distulberg-Formation: Albitgneis"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_BED_CD/codedValues/15203626",
+        "value": "Pizzo-del-Vallone-Decke: Dogger-Malm"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_BED_CD/codedValues/15203665",
+        "value": "Zermatt-Saas-Decke: Eklogit"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_BED_CD/codedValues/15202623",
+        "value": "Urseren-Garvera-Zone: Dogger"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_BED_CD/codedValues/15203621",
+        "value": "Monte-Leone-Decke: sandiger Lias"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_BED_CD/codedValues/15203630",
+        "value": "Pizzo-del-Vallone-Decke: Lias"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_BED_CD/codedValues/15203647",
+        "value": "Stalden-Gneiskomplex: Ahorn-Augengneis"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_BED_CD/codedValues/15203662",
+        "value": "Garda-Bordon-Formation: Black Shales (Série feuilletée)"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_BED_CD/codedValues/15202621",
+        "value": "Nufenen-Zone: quartzitische Trias"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_BED_CD/codedValues/15203633",
+        "value": "Artsinol-Sedimentabfolge: Trias"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_BED_CD/codedValues/15202648",
+        "value": "Nufenen-Zone: Lias undiff."
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_BED_CD/codedValues/15203652",
+        "value": "Portjengrat-Decke: Dolomitmarmor"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_BED_CD/codedValues/15203634",
+        "value": "Artsinol-Sedimentabfolge: Trias: Rauwacke"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_BED_CD/codedValues/15203632",
+        "value": "Artsinol-Sedimentabfolge undiff."
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_BED_CD/codedValues/15203649",
+        "value": "Printse-Formation: Konglomerat"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_BED_CD/codedValues/15203669",
+        "value": "Zermatt-Saas-Decke: Talkschiefer"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_BED_CD/codedValues/15202640",
+        "value": "Camosci-Decke: Lias-Dogger: Granatglimmerschiefer"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_BED_CD/codedValues/15203658",
+        "value": "Gornergrat-Decke: Basischer Gang"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_BED_CD/codedValues/15206119",
+        "value": "Basisches Gestein, undifferenziert"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_BED_CD/codedValues/15203648",
+        "value": "Stalden-Gneiskomplex: Amphibolit"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_BED_CD/codedValues/15203629",
+        "value": "Pizzo-del-Vallone-Decke: Dogger-Malm: Vulkanit"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_BED_CD/codedValues/15205138",
+        "value": "Arolla-Einheit: Metagranit"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_BED_CD/codedValues/15202626",
+        "value": "Urseren-Garvera-Zone: Mittlerer Lias"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_BED_CD/codedValues/15203656",
+        "value": "Gornergrat-Decke: Trias"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_BED_CD/codedValues/15203624",
+        "value": "Monte-Leone-Decke: quarzitische Trias"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_BED_CD/codedValues/15202630",
+        "value": "Urseren-Garvera-Zone: Permokarbon: Psephit- und Psammitgneis"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_BED_CD/codedValues/15202645",
+        "value": "Urseren-Garvera-Zone: Mesozoikum undiff."
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_BED_CD/codedValues/15200688",
+        "value": "Kalter-Wangen-Formation: Konglomerat-Fazies"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_BED_CD/codedValues/15202635",
+        "value": "Gotthard-Decke: Prävariszischer Augengneis"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_BED_CD/codedValues/15202633",
+        "value": "Urseren-Garvera-Zone: Permokarbon: Graphitschiefer"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_BED_CD/codedValues/15203641",
+        "value": "Siviez-Mischabel-Decke: Aplit"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_BED_CD/codedValues/15203642",
+        "value": "Siviez-Mischabel-Decke: Pegmatit"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_BED_CD/codedValues/15203631",
+        "value": "Pizzo-del-Vallone-Decke: Trias"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_BED_CD/codedValues/15205139",
+        "value": "Arolla-Einheit: Leukokrater Granitgneis"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_BED_CD/codedValues/15203664",
+        "value": "Tsaté-Decke: Serpentinit"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_BED_CD/codedValues/15203622",
+        "value": "Monte-Leone-Decke: konglomeratischer Lias"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_BED_CD/codedValues/15202616",
+        "value": "Nufenen-Zone: phyllitische Trias"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_BED_CD/codedValues/15202637",
+        "value": "Camosci-Decke: Paragneis"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_BED_CD/codedValues/15200689",
+        "value": "Kalter-Wangen-Formation: Sandstein-Mergel-Fazies"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_BED_CD/codedValues/15200691",
+        "value": "Humlikon-Bentonit"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_BED_CD/codedValues/15203654",
+        "value": "Portjengrat-Decke: Grundgebirge"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_BED_CD/codedValues/15203613",
+        "value": "Südegg-Komplex: Brekzie"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_BED_CD/codedValues/15203668",
+        "value": "Zermatt-Saas-Decke: Rodingit"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_BED_CD/codedValues/15203620",
+        "value": "Monte-Leone-Decke: Lias"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_BED_CD/codedValues/15202632",
+        "value": "Urseren-Garvera-Zone: Permokarbon: Chloritschiefer"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_BED_CD/codedValues/15203643",
+        "value": "Lirec-Formation: leukokrater Mikroklingneis"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_BED_CD/codedValues/15203659",
+        "value": "Gornergrat-Decke: Granat-Muskovit-Schiefer"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_BED_CD/codedValues/15203615",
+        "value": "Monte-Leone-Decke: Mesozoikum undiff."
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_BED_CD/codedValues/15203645",
+        "value": "Ergischhorn-Komplex: leukokrater aplitischer Gneis"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_BED_CD/codedValues/15203650",
+        "value": "Printse-Formation: Graphitschiefer"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_BED_CD/codedValues/15203623",
+        "value": "Monte-Leone-Decke: Trias"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_BED_CD/codedValues/15202641",
+        "value": "Camosci-Decke: Lias"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_BED_CD/codedValues/15202629",
+        "value": "Urseren-Garvera-Zone: karbonatische Trias"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_BED_CD/codedValues/15202620",
+        "value": "Nufenen-Zone: karbonatische Trias: Rauwacke"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_BED_CD/codedValues/15203628",
+        "value": "Pizzo-del-Vallone-Decke: Dogger-Malm: Glimmerschiefer"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_BED_CD/codedValues/15203638",
+        "value": "Distulberg-Formation: Schiefer"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_BED_CD/codedValues/15203666",
+        "value": "Zermatt-Saas-Decke: Metapyroxenit"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_BED_CD/codedValues/15203618",
+        "value": "Monte-Leone-Decke: Dogger-Malm: Marmor"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_BED_CD/codedValues/15202642",
+        "value": "Camosci-Decke: Trias"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_BED_CD/codedValues/15203653",
+        "value": "Portjengrat-Decke: Arkose"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_BED_CD/codedValues/15203617",
+        "value": "Monte-Leone-Decke: Dogger-Malm: Glimmerschiefer"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_BED_CD/codedValues/15203670",
+        "value": "Lengenbach-Dolomitmarmor"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_BED_CD/codedValues/15203627",
+        "value": "Pizzo-del-Vallone-Decke: Dogger-Malm: Marmor"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_BED_CD/codedValues/15203619",
+        "value": "Monte-Leone-Decke: konglomeratischer Dogger"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_BED_CD/codedValues/15203612",
+        "value": "Südegg-Komplex: Marmor"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_BED_CD/codedValues/15203625",
+        "value": "Pizzo-del-Vallone-Decke: Mesozoikum undiff."
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_BED_CD/codedValues/15202619",
+        "value": "Nufenen-Zone: karbonatische Trias: Dolomitmarmor"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_BED_CD/codedValues/15203651",
+        "value": "Portjengrat-Decke: Kalzitmarmor"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_BED_CD/codedValues/15203614",
+        "value": "Südegg-Komplex: Gips"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_BED_CD/codedValues/15203611",
+        "value": "Südegg-Komplex: Albitgneis"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_BED_CD/codedValues/15202636",
+        "value": "Gotthard-Decke: Prävariszischer Paragneis"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_BED_CD/codedValues/15203635",
+        "value": "Métailler-Formation: Quarzit"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_BED_CD/codedValues/15202627",
+        "value": "Urseren-Garvera-Zone: Unterer Lias"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_BED_CD/codedValues/15202624",
+        "value": "Urseren-Garvera-Zone: Lias undiff."
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_BED_CD/codedValues/15202628",
+        "value": "Urseren-Garvera-Zone: phyllitische Trias"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_BED_CD/codedValues/15202625",
+        "value": "Urseren-Garvera-Zone: Oberer Lias"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_BED_CD/codedValues/15202634",
+        "value": "Gotthard-Decke: Prävariszischer Orthogneis"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_BED_CD/codedValues/15202618",
+        "value": "Nufenen-Zone: karbonatische Trias: Kalkmarmor"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_BED_CD/codedValues/15203637",
+        "value": "Métailler-Formation: Chloritoid-Glimmerschiefer"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_BED_CD/codedValues/15203640",
+        "value": "Barrhorn-Sedimentabfolge: Trias"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_BED_CD/codedValues/15203644",
+        "value": "Adlerflüe-Formation: leukokrater Gneis"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_BED_CD/codedValues/15202638",
+        "value": "Camosci-Decke: Lias-Dogger"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_BED_CD/codedValues/15202646",
+        "value": "Urseren-Garvera-Zone: Trias"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_BED_CD/codedValues/15202647",
+        "value": "Nufenen-Zone: Trias"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_BED_CD/codedValues/15203636",
+        "value": "Métailler-Formation: Glimmerschiefer"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_BED_CD/codedValues/15203616",
+        "value": "Monte-Leone-Decke: Dogger-Malm"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_BED_CD/codedValues/15202639",
+        "value": "Camosci-Decke: Lias-Dogger: Kalkglimmerschiefer"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_BED_CD/codedValues/15203657",
+        "value": "Gornergrat-Decke: Phengit-Albitgneis"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_BED_CD/codedValues/15202622",
+        "value": "Urseren-Garvera-Zone: Malm"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_BED_CD/codedValues/15203646",
+        "value": "Stalden-Gneiskomplex undiff."
+    },
+    {
+        "op": "remove",
+        "path": "/domains/GC_TECTO_CD/codedValues/15303026"
+    },
+    {
+        "op": "remove",
+        "path": "/domains/GC_TECTO_CD/codedValues/15304100"
+    },
+    {
+        "op": "remove",
+        "path": "/domains/GC_TECTO_CD/codedValues/15307008"
+    },
+    {
+        "op": "remove",
+        "path": "/domains/GC_TECTO_CD/codedValues/15303081"
+    },
+    {
+        "op": "remove",
+        "path": "/domains/GC_TECTO_CD/codedValues/15301026"
+    },
+    {
+        "op": "remove",
+        "path": "/domains/GC_TECTO_CD/codedValues/15303048"
+    },
+    {
+        "op": "remove",
+        "path": "/domains/GC_TECTO_CD/codedValues/15305043"
+    },
+    {
+        "op": "remove",
+        "path": "/domains/GC_TECTO_CD/codedValues/15304035"
+    },
+    {
+        "op": "remove",
+        "path": "/domains/GC_TECTO_CD/codedValues/15305031"
+    },
+    {
+        "op": "remove",
+        "path": "/domains/GC_TECTO_CD/codedValues/15304047"
+    },
+    {
+        "op": "remove",
+        "path": "/domains/GC_TECTO_CD/codedValues/15304131"
+    },
+    {
+        "op": "remove",
+        "path": "/domains/GC_TECTO_CD/codedValues/15308030"
+    },
+    {
+        "op": "remove",
+        "path": "/domains/GC_TECTO_CD/codedValues/15304150"
+    },
+    {
+        "op": "remove",
+        "path": "/domains/GC_TECTO_CD/codedValues/15304122"
+    },
+    {
+        "op": "remove",
+        "path": "/domains/GC_TECTO_CD/codedValues/15303077"
+    },
+    {
+        "op": "remove",
+        "path": "/domains/GC_TECTO_CD/codedValues/15308026"
+    },
+    {
+        "op": "remove",
+        "path": "/domains/GC_TECTO_CD/codedValues/15307003"
+    },
+    {
+        "op": "remove",
+        "path": "/domains/GC_TECTO_CD/codedValues/15303146"
+    },
+    {
+        "op": "remove",
+        "path": "/domains/GC_TECTO_CD/codedValues/15304123"
+    },
+    {
+        "op": "remove",
+        "path": "/domains/GC_TECTO_CD/codedValues/15308028"
+    },
+    {
+        "op": "remove",
+        "path": "/domains/GC_TECTO_CD/codedValues/15303110"
+    },
+    {
+        "op": "remove",
+        "path": "/domains/GC_TECTO_CD/codedValues/15306007"
+    },
+    {
+        "op": "remove",
+        "path": "/domains/GC_TECTO_CD/codedValues/15304115"
+    },
+    {
+        "op": "remove",
+        "path": "/domains/GC_TECTO_CD/codedValues/15301030"
+    },
+    {
+        "op": "remove",
+        "path": "/domains/GC_TECTO_CD/codedValues/15308002"
+    },
+    {
+        "op": "remove",
+        "path": "/domains/GC_TECTO_CD/codedValues/15301023"
+    },
+    {
+        "op": "remove",
+        "path": "/domains/GC_TECTO_CD/codedValues/15307005"
+    },
+    {
+        "op": "remove",
+        "path": "/domains/GC_TECTO_CD/codedValues/15303092"
+    },
+    {
+        "op": "remove",
+        "path": "/domains/GC_TECTO_CD/codedValues/15303154"
+    },
+    {
+        "op": "remove",
+        "path": "/domains/GC_TECTO_CD/codedValues/15306006"
+    },
+    {
+        "op": "remove",
+        "path": "/domains/GC_TECTO_CD/codedValues/15304118"
+    },
+    {
+        "op": "remove",
+        "path": "/domains/GC_TECTO_CD/codedValues/15303060"
+    },
+    {
+        "op": "remove",
+        "path": "/domains/GC_TECTO_CD/codedValues/15303075"
+    },
+    {
+        "op": "remove",
+        "path": "/domains/GC_TECTO_CD/codedValues/15304114"
+    },
+    {
+        "op": "remove",
+        "path": "/domains/GC_TECTO_CD/codedValues/15303074"
+    },
+    {
+        "op": "remove",
+        "path": "/domains/GC_TECTO_CD/codedValues/15307010"
+    },
+    {
+        "op": "remove",
+        "path": "/domains/GC_TECTO_CD/codedValues/15304142"
+    },
+    {
+        "op": "remove",
+        "path": "/domains/GC_TECTO_CD/codedValues/15303072"
+    },
+    {
+        "op": "remove",
+        "path": "/domains/GC_TECTO_CD/codedValues/15304116"
+    },
+    {
+        "op": "remove",
+        "path": "/domains/GC_TECTO_CD/codedValues/15304113"
+    },
+    {
+        "op": "remove",
+        "path": "/domains/GC_TECTO_CD/codedValues/15304130"
+    },
+    {
+        "op": "remove",
+        "path": "/domains/GC_TECTO_CD/codedValues/15303088"
+    },
+    {
+        "op": "remove",
+        "path": "/domains/GC_TECTO_CD/codedValues/15306003"
+    },
+    {
+        "op": "remove",
+        "path": "/domains/GC_TECTO_CD/codedValues/15304135"
+    },
+    {
+        "op": "remove",
+        "path": "/domains/GC_TECTO_CD/codedValues/15301027"
+    },
+    {
+        "op": "remove",
+        "path": "/domains/GC_TECTO_CD/codedValues/15303128"
+    },
+    {
+        "op": "remove",
+        "path": "/domains/GC_TECTO_CD/codedValues/15304058"
+    },
+    {
+        "op": "remove",
+        "path": "/domains/GC_TECTO_CD/codedValues/15306009"
+    },
+    {
+        "op": "remove",
+        "path": "/domains/GC_TECTO_CD/codedValues/15306008"
+    },
+    {
+        "op": "remove",
+        "path": "/domains/GC_TECTO_CD/codedValues/15303111"
+    },
+    {
+        "op": "remove",
+        "path": "/domains/GC_TECTO_CD/codedValues/15304059"
+    },
+    {
+        "op": "remove",
+        "path": "/domains/GC_TECTO_CD/codedValues/15304117"
+    },
+    {
+        "op": "remove",
+        "path": "/domains/GC_TECTO_CD/codedValues/15303145"
+    },
+    {
+        "op": "remove",
+        "path": "/domains/GC_TECTO_CD/codedValues/15307006"
+    },
+    {
+        "op": "remove",
+        "path": "/domains/GC_TECTO_CD/codedValues/15305013"
+    },
+    {
+        "op": "remove",
+        "path": "/domains/GC_TECTO_CD/codedValues/15304133"
+    },
+    {
+        "op": "remove",
+        "path": "/domains/GC_TECTO_CD/codedValues/15304111"
+    },
+    {
+        "op": "remove",
+        "path": "/domains/GC_TECTO_CD/codedValues/15301031"
+    },
+    {
+        "op": "remove",
+        "path": "/domains/GC_TECTO_CD/codedValues/15303153"
+    },
+    {
+        "op": "remove",
+        "path": "/domains/GC_TECTO_CD/codedValues/15303011"
+    },
+    {
+        "op": "remove",
+        "path": "/domains/GC_TECTO_CD/codedValues/15303149"
+    },
+    {
+        "op": "remove",
+        "path": "/domains/GC_TECTO_CD/codedValues/15303136"
+    },
+    {
+        "op": "remove",
+        "path": "/domains/GC_TECTO_CD/codedValues/15304120"
+    },
+    {
+        "op": "remove",
+        "path": "/domains/GC_TECTO_CD/codedValues/15303105"
+    },
+    {
+        "op": "remove",
+        "path": "/domains/GC_TECTO_CD/codedValues/15306002"
+    },
+    {
+        "op": "remove",
+        "path": "/domains/GC_TECTO_CD/codedValues/15307009"
+    },
+    {
+        "op": "remove",
+        "path": "/domains/GC_TECTO_CD/codedValues/15304043"
+    },
+    {
+        "op": "remove",
+        "path": "/domains/GC_TECTO_CD/codedValues/15303008"
+    },
+    {
+        "op": "remove",
+        "path": "/domains/GC_TECTO_CD/codedValues/15304129"
+    },
+    {
+        "op": "remove",
+        "path": "/domains/GC_TECTO_CD/codedValues/15304141"
+    },
+    {
+        "op": "remove",
+        "path": "/domains/GC_TECTO_CD/codedValues/15302040"
+    },
+    {
+        "op": "remove",
+        "path": "/domains/GC_TECTO_CD/codedValues/15303127"
+    },
+    {
+        "op": "remove",
+        "path": "/domains/GC_TECTO_CD/codedValues/15303150"
+    },
+    {
+        "op": "remove",
+        "path": "/domains/GC_TECTO_CD/codedValues/15303091"
+    },
+    {
+        "op": "remove",
+        "path": "/domains/GC_TECTO_CD/codedValues/15304154"
+    },
+    {
+        "op": "remove",
+        "path": "/domains/GC_TECTO_CD/codedValues/15303106"
+    },
+    {
+        "op": "remove",
+        "path": "/domains/GC_TECTO_CD/codedValues/15301022"
+    },
+    {
+        "op": "remove",
+        "path": "/domains/GC_TECTO_CD/codedValues/15307004"
+    },
+    {
+        "op": "remove",
+        "path": "/domains/GC_TECTO_CD/codedValues/15308018"
+    },
+    {
+        "op": "remove",
+        "path": "/domains/GC_TECTO_CD/codedValues/15304121"
+    },
+    {
+        "op": "remove",
+        "path": "/domains/GC_TECTO_CD/codedValues/15303073"
+    },
+    {
+        "op": "remove",
+        "path": "/domains/GC_TECTO_CD/codedValues/15302020"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15304049",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309227"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15304125",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309242"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15304158",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309144"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15305007",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309357"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15305048",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309359"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15304143",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309241"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15301145",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309030"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15304153",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309246"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309386",
+        "value": "Känozoische magmatische Gesteine"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15303086",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309131"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15304036",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309220"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15303033",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309122"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309392",
+        "value": "Bregaglia-Intrusionskörper"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15303097",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309129"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15303094",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309096"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15303119",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309112"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15305030",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309325"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15305042",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309334"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309326",
+        "value": "Madulain-Schuppen"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309317",
+        "value": "Grüenhorn-Casanna-Schuppenkomplex"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15304076",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309259"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309095",
+        "value": "Chropfsberg-Pizalun-Schuppen"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15303141",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309054"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15304013",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309180"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15304075",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309258"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15308022",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309307"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15304137",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309261"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15304070",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309255"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15303069",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309107"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15304090",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309253"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15305023",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309311"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309116",
+        "value": "Orglen-Schuppe (undifferenziert)"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309289",
+        "value": "Arosa-Zone"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15308024",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309269"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15303045",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309145"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15305054",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309354"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15303085",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309130"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309335",
+        "value": "Bardella-Roccabella-Schuppen"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15303134",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309139"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15304082",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309245"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15303152",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309071"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15303121",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309087"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15303040",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309146"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15305002",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309336"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15301149",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309047"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15303129",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309067"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15304148",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309293"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15304155",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309232"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15304019",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309192"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15303058",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309149"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15305072",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309350"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15304098",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309287"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15304146",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309291"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15303002",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309053"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309389",
+        "value": "Vulkanische Serie von Biella"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15304002",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309188"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309012",
+        "value": "Interner Faltenjura und Vorlandplateau"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309230",
+        "value": "Préalpes Médianes Plastiques"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15304099",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309288"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15306001",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309372"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15303039",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309127"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309162",
+        "value": "Sex-Mort-type slivers"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15305036",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309330"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15301148",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309046"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15304030",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309214"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15303102",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309150"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309278",
+        "value": "Châtillon-Schuppe"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15304103",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309204"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15303016",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309079"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15303131",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309133"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309379",
+        "value": "Untere Orobische Schuppen"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15304083",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309247"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15304104",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309203"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15303049",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309118"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15304127",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309250"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15305006",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309349"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15303007",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309058"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15304014",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309199"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15304067",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309264"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309363",
+        "value": "Ötztal-Deckenkomplex"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15304096",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309268"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15304050",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309236"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309208",
+        "value": "Sigiswang-Decke"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15304112",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309196"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15303122",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309088"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15304106",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309206"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309340",
+        "value": "Grosina-Decke"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15304077",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309179"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15301132",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309017"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15301141",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309027"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309164",
+        "value": "Bex-Laubhorn-type slivers"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309018",
+        "value": "Brécorens-Lucinges-Schuppe"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15303021",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309072"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309382",
+        "value": "Val-Colla-Zone"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309172",
+        "value": "Lepontikum"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15303126",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309092"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15304072",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309256"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15303100",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309049"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15304017",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309190"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309338",
+        "value": "Masuccio-Decke"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309210",
+        "value": "Oberstdorf-Decke"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15303155",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309073"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15301118",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309039"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15304053",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309239"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309383",
+        "value": "Strona-Ceneri-Zone (Oberer Orobischer Anteil)"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15303037",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309125"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309374",
+        "value": "Ivrea-Ceneri-Komplex"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309388",
+        "value": "Periadriatische magmatische Provinz"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15303147",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309108"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309007",
+        "value": "Übergangszone zwischen Abgeschertem und Autochthonem Vorlandplateau"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15303099",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309141"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15304005",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309195"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15308016",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309302"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15308025",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309276"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309063",
+        "value": "Gastern-Teilmassiv"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15303123",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309089"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15305055",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309355"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15304084",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309248"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15305018",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309371"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15303142",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309068"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309076",
+        "value": "Chaines-Subalpines-Decke"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309160",
+        "value": "Plaine-Morte-Melange"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15304085",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309251"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15304094",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309285"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15305001",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309310"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15304152",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309212"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309274",
+        "value": "Theodulgletscher-Schuppe"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15304029",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309213"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15305026",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309314"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15305051",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309351"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309358",
+        "value": "Cenoman-Randschuppe"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15301127",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309033"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309391",
+        "value": "Subvulkanischer Körper von Gandino"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15303096",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309099"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15308010",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309296"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15304027",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309201"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15303057",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309147"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15305038",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309331"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15303104",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309154"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15304012",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309178"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15304138",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309262"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15303030",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309121"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15303138",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309137"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15303029",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309119"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15303034",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309123"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15303025",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309083"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15303107",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309168"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15303140",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309056"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15304157",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309234"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309110",
+        "value": "Calanda-Schuppe (Sardona-Anteil)"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15301116",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309013"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15304080",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309243"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15301129",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309032"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15305070",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309348"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309055",
+        "value": "Mittleres Belledonne-Massiv"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15303019",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309081"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309376",
+        "value": "Strona-Ceneri-Zone (Ivrea-Ceneri-Anteil)"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15305059",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309318"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15304069",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309254"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309377",
+        "value": "Milano-Belt"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15304149",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309294"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15303018",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309082"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15308014",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309300"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309327",
+        "value": "Schlattain-Clavadatsch-Padella-Schuppen"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15304008",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309189"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15305004",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309346"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15305035",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309329"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15305057",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309315"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15303135",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309101"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15303125",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309091"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15301151",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309029"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15304065",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309235"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15301126",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309040"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15305012",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309361"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15305020",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309343"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309364",
+        "value": "Matsch-Decke"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309113",
+        "value": "Calanda-Schuppe (undifferenziert)"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15305016",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309369"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15304073",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309257"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309231",
+        "value": "Préalpes Médianes Rigides"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15304128",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309198"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15304048",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309228"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15304009",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309173"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15304093",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309273"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15304126",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309249"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309324",
+        "value": "Müsella-Schuppe"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309337",
+        "value": "Campo-Deckenkomplex"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309165",
+        "value": "Meilleret-type slivers"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15303095",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309098"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309370",
+        "value": "Tavrü-Schuppe"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15303114",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309066"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15304025",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309181"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15303116",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309060"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15303001",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309050"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15304139",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309263"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15301133",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309019"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309312",
+        "value": "Rothorn-Schwarzhorn-Deckenkomplex"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15304151",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309175"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15305060",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309319"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309111",
+        "value": "Mirutta-Schuppe (Sardona-Anteil)"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15304033",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309217"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15305009",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309360"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15303139",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309143"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15303130",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309132"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15305033",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309328"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15304156",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309233"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15304068",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309266"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15303061",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309052"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15304097",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309286"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309277",
+        "value": "Châtillon-St-Vincent-Schuppen"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15303015",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309077"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309393",
+        "value": "Novate-Intrusionskörper"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15304105",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309205"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15305015",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309368"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15304091",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309267"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15303028",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309117"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15303108",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309169"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15305024",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309313"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15301130",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309031"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15308013",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309298"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15301144",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309028"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309166",
+        "value": "Bulle-Melangezone"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15303063",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309156"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15303042",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309134"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15303041",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309128"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15301138",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309024"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15304136",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309209"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15303115",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309059"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15303124",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309090"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15303098",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309140"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309384",
+        "value": "Varesotto-Schuppen"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15304109",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309187"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15305028",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309321"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309304",
+        "value": "Seconda Zona Dioritico-Kinzigitica"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15305014",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309365"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15304018",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309191"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15301135",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309021"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15301024",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309009"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15304038",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309221"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15303113",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309064"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15303132",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309135"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15301120",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309037"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15304028",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309211"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15301131",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309016"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15303120",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309085"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15304086",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309185"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309102",
+        "value": "Tschingelhörner-Schuppen"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15301147",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309035"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15305039",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309332"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15303101",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309142"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15303103",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309152"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15303059",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309051"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15305082",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309366"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309194",
+        "value": "Garzott-Schuppen"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15303151",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309070"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15308009",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309275"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15308021",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309306"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15304132",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309176"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15305022",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309344"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309171",
+        "value": "Faucigny-Schuppen"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15308031",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309281"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15305041",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309333"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15304159",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309167"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309345",
+        "value": "Ulten-Einheit"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309390",
+        "value": "Subvulkanischer Körper vom Colle Gallo"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15304045",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309224"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309163",
+        "value": "Arveyes-type slivers"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309153",
+        "value": "Habkern-Melangezone"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15301124",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309041"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15304081",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309244"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15301025",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309010"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15305027",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309320"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15304107",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309270"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15304057",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309229"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15305052",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309352"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309226",
+        "value": "Pfunds-Decke"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15301121",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309044"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15304088",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309186"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309065",
+        "value": "Baltschieder-Gletsch-Teilmassiv"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15301139",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309025"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15304034",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309218"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15304147",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309292"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15308023",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309309"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15303068",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309157"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15303143",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309069"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15303031",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309120"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15303023",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309084"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15302042",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309003"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309385",
+        "value": "Strona-Ceneri-Zone (undifferenziert)"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15301128",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309036"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15308012",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309297"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309380",
+        "value": "Interne Giudicarie-Zone"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15304108",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309271"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15301122",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309043"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15304006",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309197"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15301150",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309048"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309387",
+        "value": "Vulkanische Serie des Hegaus"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309202",
+        "value": "Infraniesen-Melange"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309342",
+        "value": "Vinschgau-Scherzone"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15305005",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309347"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15301001",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309008"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15304145",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309290"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15303082",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309103"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15303112",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309062"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15304044",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309207"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15303055",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309148"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309075",
+        "value": "Hoch-Fulen-Schuppe"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15301123",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309045"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15304054",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309240"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15304052",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309238"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15303038",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309124"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15301137",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309023"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15304051",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309237"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15303027",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309094"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15302045",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309004"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15303144",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309104"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15303020",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309080"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15301142",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309014"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15308029",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309279"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15303044",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309126"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15301140",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309026"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15303009",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309061"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309362",
+        "value": "Phyllitgneiszone"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15308011",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309299"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15304011",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309177"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15304078",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309184"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309223",
+        "value": "Forbesch-Schuppe"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309093",
+        "value": "Fiseten-Orthalden-Schuppen"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15302043",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309005"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15303148",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309109"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309159",
+        "value": "Pillon-Melangezone"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15301146",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309034"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15301125",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309042"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15304004",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309193"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15305056",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309356"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15308027",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309280"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15305032",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309322"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15304066",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309260"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15303062",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309155"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15304089",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309252"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15303137",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309097"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15305047",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309367"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15304119",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309182"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309265",
+        "value": "Fimber-Zone"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15304031",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309215"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15308017",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309303"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15303071",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309158"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309378",
+        "value": "Externe Giudicarie-Zone"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309161",
+        "value": "Anzeinde-type slivers"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15305058",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309316"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15304010",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309174"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15306005",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309381"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15303046",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309138"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15304015",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309200"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309074",
+        "value": "Piz-d'Artgas-Schuppe"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15303078",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309151"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309341",
+        "value": "Laas-Decke"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15308015",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309301"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15303118",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309100"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309006",
+        "value": "Hegau-Bodensee-Graben"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15302046",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309002"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15306004",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309373"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15304041",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309222"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15301119",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309038"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15304026",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309183"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15304056",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309284"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309114",
+        "value": "Marchegghorn-Schuppe (undifferenziert)"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15304140",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309282"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15301143",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309015"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309011",
+        "value": "Plateaux"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309219",
+        "value": "Vals-Schuppen"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15301136",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309022"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309106",
+        "value": "Mirutta-Schuppe (Blattengrat-Anteil)"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15304134",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309308"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15303003",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309057"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15305019",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309339"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15303109",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309170"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15305029",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309323"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15303024",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309086"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15301134",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309020"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15304046",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309225"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15303017",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309078"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309105",
+        "value": "Calanda-Schuppe (Blattengrat-Anteil)"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309375",
+        "value": "Ivrea-Zone"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15304055",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309283"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309115",
+        "value": "Mirutta-Schuppe (undifferenziert)"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15303133",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309136"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15304032",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309216"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15304092",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309272"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309001",
+        "value": "Autochthones Nordalpines Vorland"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15308019",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309305"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15308001",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309295"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309394",
+        "value": "Adamello-Batholith"
+    },
+    {
+        "op": "move",
+        "from": "/domains/GC_TECTO_CD/codedValues/15305053",
+        "path": "/domains/GC_TECTO_CD/codedValues/15309353"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201592",
+        "value": "Bülach-Stand-II"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201579",
+        "value": "Etzgen-Formation"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201708",
+        "value": "Frauewald-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15203660",
+        "value": "Frilihorn-Decke: Trias"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201688",
+        "value": "Lehacker-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201702",
+        "value": "Hörndli-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201687",
+        "value": "Einschlag-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15203608",
+        "value": "Walliser-Sedimentabfolge"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201571",
+        "value": "Neuenburg-Formation"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201603",
+        "value": "Singen-Stadium"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201619",
+        "value": "Killwangen-Stadium"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201693",
+        "value": "Steinebol-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201648",
+        "value": "Zelgli-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15203663",
+        "value": "Garda-Bordon-Formation: Quarzschiefer"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15202643",
+        "value": "Camosci-Decke: sandige Trias"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15202631",
+        "value": "Urseren-Garvera-Zone: Permokarbon: Metarhyolith"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201613",
+        "value": "Stetten-Stand-II"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201705",
+        "value": "Mandach-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201643",
+        "value": "Hasenweiler-Formation"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15202617",
+        "value": "Nufenen-Zone: karbonatische Trias"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15203610",
+        "value": "Südegg-Komplex: Serpentinit"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15200690",
+        "value": "Heilsberg-Bentonit"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201602",
+        "value": "Bremgarten-II"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201635",
+        "value": "Steighalden-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15203661",
+        "value": "Frilihorn-Decke: Trias: Rauwacke"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201690",
+        "value": "Schwörstadt-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15203609",
+        "value": "Südegg-Komplex: schwarzer Schiefer"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201632",
+        "value": "Oberrüti-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201699",
+        "value": "Allschwil-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201590",
+        "value": "Bülach-Stadium"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15203667",
+        "value": "Zermatt-Saas-Decke: Metagabbro"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201640",
+        "value": "Schlatt-Formation"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201589",
+        "value": "Würenlos-Stand-II"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201572",
+        "value": "Hartheim-Member"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15203655",
+        "value": "Gornergrat-Decke: Kalkschisfer, sandiger Marmor, Brekzie"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15202644",
+        "value": "Camosci-Decke: karbonatische Trias"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15203639",
+        "value": "Distulberg-Formation: Albitgneis"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15203626",
+        "value": "Pizzo-del-Vallone-Decke: Dogger-Malm"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201689",
+        "value": "Letten-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201676",
+        "value": "Fehrental-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15203665",
+        "value": "Zermatt-Saas-Decke: Eklogit"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201685",
+        "value": "Ellenbühl-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201674",
+        "value": "Rümlang-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201695",
+        "value": "Blözen-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201670",
+        "value": "Hegenheim-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15202623",
+        "value": "Urseren-Garvera-Zone: Dogger"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15203621",
+        "value": "Monte-Leone-Decke: sandiger Lias"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15203630",
+        "value": "Pizzo-del-Vallone-Decke: Lias"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201713",
+        "value": "Schönenbuch-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201610",
+        "value": "Russikon-Seeablagerung"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15203647",
+        "value": "Stalden-Gneiskomplex: Ahorn-Augengneis"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201636",
+        "value": "Mühlbach-Formation"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201677",
+        "value": "Challeren-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15203662",
+        "value": "Garda-Bordon-Formation: Black Shales (Série feuilletée)"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15202621",
+        "value": "Nufenen-Zone: quartzitische Trias"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15203633",
+        "value": "Artsinol-Sedimentabfolge: Trias"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15202648",
+        "value": "Nufenen-Zone: Lias undiff."
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15203652",
+        "value": "Portjengrat-Decke: Dolomitmarmor"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15203634",
+        "value": "Artsinol-Sedimentabfolge: Trias: Rauwacke"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201698",
+        "value": "Binningen-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15203632",
+        "value": "Artsinol-Sedimentabfolge undiff."
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15203649",
+        "value": "Printse-Formation: Konglomerat"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15203669",
+        "value": "Zermatt-Saas-Decke: Talkschiefer"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201620",
+        "value": "Lottstetten-, Kohlschwärze- und Zelgli-Vorstoss"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201639",
+        "value": "Birstal-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15202640",
+        "value": "Camosci-Decke: Lias-Dogger: Granatglimmerschiefer"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201577",
+        "value": "Iffezheim-Formation"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201712",
+        "value": "Birlibänz-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15203658",
+        "value": "Gornergrat-Decke: Basischer Gang"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15206119",
+        "value": "Basisches Gestein, undifferenziert"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15203648",
+        "value": "Stalden-Gneiskomplex: Amphibolit"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15203629",
+        "value": "Pizzo-del-Vallone-Decke: Dogger-Malm: Vulkanit"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15205138",
+        "value": "Arolla-Einheit: Metagranit"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201700",
+        "value": "Buschwiller-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15202626",
+        "value": "Urseren-Garvera-Zone: Mittlerer Lias"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201641",
+        "value": "Illmensee-Formation"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201622",
+        "value": "\"Mittelterrasse\""
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15203656",
+        "value": "Gornergrat-Decke: Trias"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15203624",
+        "value": "Monte-Leone-Decke: quarzitische Trias"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15202630",
+        "value": "Urseren-Garvera-Zone: Permokarbon: Psephit- und Psammitgneis"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15202645",
+        "value": "Urseren-Garvera-Zone: Mesozoikum undiff."
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15200688",
+        "value": "Kalter-Wangen-Formation: Konglomerat-Fazies"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15202635",
+        "value": "Gotthard-Decke: Prävariszischer Augengneis"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15202633",
+        "value": "Urseren-Garvera-Zone: Permokarbon: Graphitschiefer"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15203641",
+        "value": "Siviez-Mischabel-Decke: Aplit"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201570",
+        "value": "Schwarzwald-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201599",
+        "value": "Zürich-Stand-II"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201633",
+        "value": "Neerach-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201694",
+        "value": "Giebenach-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201678",
+        "value": "Ausserberg-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201646",
+        "value": "Chäppeli-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201580",
+        "value": "Niederuster-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15203642",
+        "value": "Siviez-Mischabel-Decke: Pegmatit"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201614",
+        "value": "Diessenhofen-Stadium"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201595",
+        "value": "Stein-am-Rhein-Stand-II"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15203631",
+        "value": "Pizzo-del-Vallone-Decke: Trias"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201704",
+        "value": "Mühleberg-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201634",
+        "value": "Bachs-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201585",
+        "value": "Regensdorf-Stadium"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15205139",
+        "value": "Arolla-Einheit: Leukokrater Granitgneis"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201583",
+        "value": "Dübendorf-Stadium"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15203664",
+        "value": "Tsaté-Decke: Serpentinit"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201666",
+        "value": "Hundsbel-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201584",
+        "value": "Gfenn-Stadium"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201658",
+        "value": "Toktri-Formation"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201588",
+        "value": "Würenlos-Stand-I"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201626",
+        "value": "First-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201605",
+        "value": "Feuerthalen-Stand-I"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15203622",
+        "value": "Monte-Leone-Decke: konglomeratischer Lias"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201587",
+        "value": "Würenlos-Stadium"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201715",
+        "value": "Bellevue-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201568",
+        "value": "Uetliberg-Lehm"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15202616",
+        "value": "Nufenen-Zone: phyllitische Trias"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201692",
+        "value": "Bloseberg-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201598",
+        "value": "Zürich-Stand-I"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15202637",
+        "value": "Camosci-Decke: Paragneis"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15200689",
+        "value": "Kalter-Wangen-Formation: Sandstein-Mergel-Fazies"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201630",
+        "value": "Ursplen-Till"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15200691",
+        "value": "Humlikon-Bentonit"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201573",
+        "value": "Nambsheim-Member"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201628",
+        "value": "Lettenberg-Seesedimente"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201611",
+        "value": "Stetten-Stadium"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15203654",
+        "value": "Portjengrat-Decke: Grundgebirge"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201709",
+        "value": "Bolderen-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201684",
+        "value": "Etzwil-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201569",
+        "value": "Schotter der Thur"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201582",
+        "value": "Dättlikon-Stadium"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201710",
+        "value": "Seiglisten-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201629",
+        "value": "Zurzach-Formation"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15203613",
+        "value": "Südegg-Komplex: Brekzie"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201575",
+        "value": "Balgau-Member"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201663",
+        "value": "Hettenschwil-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201672",
+        "value": "Hardwald-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201673",
+        "value": "Homberg-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15203668",
+        "value": "Zermatt-Saas-Decke: Rodingit"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15203620",
+        "value": "Monte-Leone-Decke: Lias"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15202632",
+        "value": "Urseren-Garvera-Zone: Permokarbon: Chloritschiefer"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201591",
+        "value": "Bülach-Stand-I"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201624",
+        "value": "Hochterrasse, mittleres Niveau"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15203643",
+        "value": "Lirec-Formation: leukokrater Mikroklingneis"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15203659",
+        "value": "Gornergrat-Decke: Granat-Muskovit-Schiefer"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201681",
+        "value": "Bächemoos-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201657",
+        "value": "Schmerlet-Formation"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201661",
+        "value": "Geissäcker-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15203615",
+        "value": "Monte-Leone-Decke: Mesozoikum undiff."
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15203645",
+        "value": "Ergischhorn-Komplex: leukokrater aplitischer Gneis"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201703",
+        "value": "Acheberg-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15203650",
+        "value": "Printse-Formation: Graphitschiefer"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15203623",
+        "value": "Monte-Leone-Decke: Trias"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15202641",
+        "value": "Camosci-Decke: Lias"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15202629",
+        "value": "Urseren-Garvera-Zone: karbonatische Trias"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201625",
+        "value": "Hochterrasse, oberes Niveau"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201576",
+        "value": "Weinstetten-Member"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15202620",
+        "value": "Nufenen-Zone: karbonatische Trias: Rauwacke"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201697",
+        "value": "Bruederholz-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15203628",
+        "value": "Pizzo-del-Vallone-Decke: Dogger-Malm: Glimmerschiefer"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201601",
+        "value": "Bremgarten-I"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201586",
+        "value": "Seeb-Stadium"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15203638",
+        "value": "Distulberg-Formation: Schiefer"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201593",
+        "value": "Stein-am-Rhein-Stadium"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201667",
+        "value": "Laufenburg-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15203666",
+        "value": "Zermatt-Saas-Decke: Metapyroxenit"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15203618",
+        "value": "Monte-Leone-Decke: Dogger-Malm: Marmor"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15202642",
+        "value": "Camosci-Decke: Trias"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201660",
+        "value": "Birndorf-Till"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201680",
+        "value": "Buechli-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201600",
+        "value": "Bremgarten-Stadium"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15203653",
+        "value": "Portjengrat-Decke: Arkose"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201623",
+        "value": "Hochterrasse, unteres Niveau"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201669",
+        "value": "St.-Margarethen-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201617",
+        "value": "Schaffhausen-Stand-I"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201645",
+        "value": "Birndorf-, Laufenburg- und Zeiningen-Vorstoss"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201607",
+        "value": "Schlieren-Stadium"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201637",
+        "value": "Chilchberg-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201683",
+        "value": "Tannboden-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15203617",
+        "value": "Monte-Leone-Decke: Dogger-Malm: Glimmerschiefer"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201691",
+        "value": "Steppberg-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201656",
+        "value": "Schachen-Formation"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15203670",
+        "value": "Lengenbach-Dolomitmarmor"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201675",
+        "value": "Äpelöö-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201707",
+        "value": "Humbel-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15203627",
+        "value": "Pizzo-del-Vallone-Decke: Dogger-Malm: Marmor"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201615",
+        "value": "Mellingen-Stand"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201696",
+        "value": "Rütihard-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201665",
+        "value": "Schlüsselgraben-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15203612",
+        "value": "Südegg-Komplex: Marmor"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201654",
+        "value": "Obersäckingen-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201711",
+        "value": "Geispel-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201652",
+        "value": "Allmendwald-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15203619",
+        "value": "Monte-Leone-Decke: konglomeratischer Dogger"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15203625",
+        "value": "Pizzo-del-Vallone-Decke: Mesozoikum undiff."
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201714",
+        "value": "Wentzwiller-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201608",
+        "value": "Bäretswil-Seeablagerung"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201679",
+        "value": "Leibstadt-Till"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201616",
+        "value": "Schaffhausen-Stadium"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201594",
+        "value": "Stein-am-Rhein-Stand-I"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15202619",
+        "value": "Nufenen-Zone: karbonatische Trias: Dolomitmarmor"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201627",
+        "value": "Helltobel-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15203651",
+        "value": "Portjengrat-Decke: Kalzitmarmor"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201581",
+        "value": "Pfungen-Formation"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15203614",
+        "value": "Südegg-Komplex: Gips"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201701",
+        "value": "Berchenwald-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201578",
+        "value": "Mannheim-Formation"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15203611",
+        "value": "Südegg-Komplex: Albitgneis"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201664",
+        "value": "Moos-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201609",
+        "value": "Hittnau-Seeablagerung"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15202636",
+        "value": "Gotthard-Decke: Prävariszischer Paragneis"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201659",
+        "value": "Buchholz-Till"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201597",
+        "value": "Zürich-Stadium"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15203635",
+        "value": "Métailler-Formation: Quarzit"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15202627",
+        "value": "Urseren-Garvera-Zone: Unterer Lias"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201649",
+        "value": "Leibstadt-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201631",
+        "value": "Äntschberg-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201686",
+        "value": "Kegelplatz-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201682",
+        "value": "Aarberg-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201574",
+        "value": "Breisgau-Formation"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201706",
+        "value": "Duttenberg-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15202628",
+        "value": "Urseren-Garvera-Zone: phyllitische Trias"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15202624",
+        "value": "Urseren-Garvera-Zone: Lias undiff."
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201596",
+        "value": "Stein-am-Rhein-Stand-III"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15202625",
+        "value": "Urseren-Garvera-Zone: Oberer Lias"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201621",
+        "value": "Grafschaft-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15202634",
+        "value": "Gotthard-Decke: Prävariszischer Orthogneis"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15202618",
+        "value": "Nufenen-Zone: karbonatische Trias: Kalkmarmor"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201671",
+        "value": "Blotzheim-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15203637",
+        "value": "Métailler-Formation: Chloritoid-Glimmerschiefer"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201650",
+        "value": "Dogern-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15203640",
+        "value": "Barrhorn-Sedimentabfolge: Trias"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15203644",
+        "value": "Adlerflüe-Formation: leukokrater Gneis"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201647",
+        "value": "Leuggern-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15202638",
+        "value": "Camosci-Decke: Lias-Dogger"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201653",
+        "value": "Lei-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201606",
+        "value": "Feuerthalen-Stand-II"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15202646",
+        "value": "Urseren-Garvera-Zone: Trias"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201604",
+        "value": "Feuerthalen-Stadium"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15202647",
+        "value": "Nufenen-Zone: Trias"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201642",
+        "value": "Dietmanns-Formation"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15203636",
+        "value": "Métailler-Formation: Glimmerschiefer"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201612",
+        "value": "Stetten-Stand-I"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15203616",
+        "value": "Monte-Leone-Decke: Dogger-Malm"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201644",
+        "value": "Haseltal-Formation"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201655",
+        "value": "Schulerholz-Formation"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201662",
+        "value": "Bürgerwald-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15202639",
+        "value": "Camosci-Decke: Lias-Dogger: Kalkglimmerschiefer"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15203657",
+        "value": "Gornergrat-Decke: Phengit-Albitgneis"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201618",
+        "value": "Schaffhausen-Stand-II"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201651",
+        "value": "Haldenacher-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201638",
+        "value": "Frenkendorf-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201668",
+        "value": "Eilez-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15202622",
+        "value": "Urseren-Garvera-Zone: Malm"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15203646",
+        "value": "Stalden-Gneiskomplex undiff."
+    },
+    {
+        "op": "replace",
+        "path": "/domains/GC_LITSTRAT_CD/codedValues/15201050",
+        "value": "Gondiswil-Interglazial (Letztes Interglazial)"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201592",
+        "value": "Bülach-Stand-II"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201579",
+        "value": "Etzgen-Formation"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201708",
+        "value": "Frauewald-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201702",
+        "value": "Hörndli-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201688",
+        "value": "Lehacker-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201687",
+        "value": "Einschlag-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201571",
+        "value": "Neuenburg-Formation"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201693",
+        "value": "Steinebol-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201648",
+        "value": "Zelgli-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201603",
+        "value": "Singen-Stadium"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201619",
+        "value": "Killwangen-Stadium"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201705",
+        "value": "Mandach-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201613",
+        "value": "Stetten-Stand-II"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201643",
+        "value": "Hasenweiler-Formation"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201602",
+        "value": "Bremgarten-II"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201635",
+        "value": "Steighalden-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201690",
+        "value": "Schwörstadt-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201699",
+        "value": "Allschwil-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201632",
+        "value": "Oberrüti-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201590",
+        "value": "Bülach-Stadium"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201640",
+        "value": "Schlatt-Formation"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201572",
+        "value": "Hartheim-Member"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201589",
+        "value": "Würenlos-Stand-II"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201689",
+        "value": "Letten-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201676",
+        "value": "Fehrental-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201685",
+        "value": "Ellenbühl-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201674",
+        "value": "Rümlang-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201695",
+        "value": "Blözen-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201670",
+        "value": "Hegenheim-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201713",
+        "value": "Schönenbuch-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201610",
+        "value": "Russikon-Seeablagerung"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201636",
+        "value": "Mühlbach-Formation"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201677",
+        "value": "Challeren-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201698",
+        "value": "Binningen-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201639",
+        "value": "Birstal-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201620",
+        "value": "Lottstetten-, Kohlschwärze- und Zelgli-Vorstoss"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201712",
+        "value": "Birlibänz-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201577",
+        "value": "Iffezheim-Formation"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201700",
+        "value": "Buschwiller-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201641",
+        "value": "Illmensee-Formation"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201622",
+        "value": "\"Mittelterrasse\""
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201570",
+        "value": "Schwarzwald-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201599",
+        "value": "Zürich-Stand-II"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201633",
+        "value": "Neerach-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201694",
+        "value": "Giebenach-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201646",
+        "value": "Chäppeli-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201678",
+        "value": "Ausserberg-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201580",
+        "value": "Niederuster-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201614",
+        "value": "Diessenhofen-Stadium"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201595",
+        "value": "Stein-am-Rhein-Stand-II"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201704",
+        "value": "Mühleberg-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201634",
+        "value": "Bachs-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201585",
+        "value": "Regensdorf-Stadium"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201583",
+        "value": "Dübendorf-Stadium"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201666",
+        "value": "Hundsbel-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201584",
+        "value": "Gfenn-Stadium"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201658",
+        "value": "Toktri-Formation"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201588",
+        "value": "Würenlos-Stand-I"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201626",
+        "value": "First-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201605",
+        "value": "Feuerthalen-Stand-I"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201587",
+        "value": "Würenlos-Stadium"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201715",
+        "value": "Bellevue-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201568",
+        "value": "Uetliberg-Lehm"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201692",
+        "value": "Bloseberg-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201598",
+        "value": "Zürich-Stand-I"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201630",
+        "value": "Ursplen-Till"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201573",
+        "value": "Nambsheim-Member"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201628",
+        "value": "Lettenberg-Seesedimente"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201611",
+        "value": "Stetten-Stadium"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201684",
+        "value": "Etzwil-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201709",
+        "value": "Bolderen-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201569",
+        "value": "Schotter der Thur"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201582",
+        "value": "Dättlikon-Stadium"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201710",
+        "value": "Seiglisten-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201629",
+        "value": "Zurzach-Formation"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201575",
+        "value": "Balgau-Member"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201672",
+        "value": "Hardwald-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201663",
+        "value": "Hettenschwil-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201673",
+        "value": "Homberg-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201591",
+        "value": "Bülach-Stand-I"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201624",
+        "value": "Hochterrasse, mittleres Niveau"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201681",
+        "value": "Bächemoos-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201657",
+        "value": "Schmerlet-Formation"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201661",
+        "value": "Geissäcker-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201668",
+        "value": "Eilez-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201703",
+        "value": "Acheberg-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201625",
+        "value": "Hochterrasse, oberes Niveau"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201576",
+        "value": "Weinstetten-Member"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201697",
+        "value": "Bruederholz-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201586",
+        "value": "Seeb-Stadium"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201601",
+        "value": "Bremgarten-I"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201593",
+        "value": "Stein-am-Rhein-Stadium"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201667",
+        "value": "Laufenburg-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201660",
+        "value": "Birndorf-Till"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201680",
+        "value": "Buechli-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201600",
+        "value": "Bremgarten-Stadium"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201623",
+        "value": "Hochterrasse, unteres Niveau"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201669",
+        "value": "St.-Margarethen-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201617",
+        "value": "Schaffhausen-Stand-I"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201645",
+        "value": "Birndorf-, Laufenburg- und Zeiningen-Vorstoss"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201607",
+        "value": "Schlieren-Stadium"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201637",
+        "value": "Chilchberg-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201683",
+        "value": "Tannboden-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201691",
+        "value": "Steppberg-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201656",
+        "value": "Schachen-Formation"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201675",
+        "value": "Äpelöö-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201654",
+        "value": "Obersäckingen-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201707",
+        "value": "Humbel-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201615",
+        "value": "Mellingen-Stand"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201696",
+        "value": "Rütihard-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201665",
+        "value": "Schlüsselgraben-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201652",
+        "value": "Allmendwald-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201711",
+        "value": "Geispel-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201714",
+        "value": "Wentzwiller-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201608",
+        "value": "Bäretswil-Seeablagerung"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201679",
+        "value": "Leibstadt-Till"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201616",
+        "value": "Schaffhausen-Stadium"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201594",
+        "value": "Stein-am-Rhein-Stand-I"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201627",
+        "value": "Helltobel-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201701",
+        "value": "Berchenwald-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201578",
+        "value": "Mannheim-Formation"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201664",
+        "value": "Moos-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201609",
+        "value": "Hittnau-Seeablagerung"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201659",
+        "value": "Buchholz-Till"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201597",
+        "value": "Zürich-Stadium"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201649",
+        "value": "Leibstadt-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201631",
+        "value": "Äntschberg-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201686",
+        "value": "Kegelplatz-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201574",
+        "value": "Breisgau-Formation"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201682",
+        "value": "Aarberg-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201706",
+        "value": "Duttenberg-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201596",
+        "value": "Stein-am-Rhein-Stand-III"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201621",
+        "value": "Grafschaft-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201671",
+        "value": "Blotzheim-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201650",
+        "value": "Dogern-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201647",
+        "value": "Leuggern-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201653",
+        "value": "Lei-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201606",
+        "value": "Feuerthalen-Stand-II"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201604",
+        "value": "Feuerthalen-Stadium"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201642",
+        "value": "Dietmanns-Formation"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201612",
+        "value": "Stetten-Stand-I"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201644",
+        "value": "Haseltal-Formation"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201655",
+        "value": "Schulerholz-Formation"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201662",
+        "value": "Bürgerwald-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201618",
+        "value": "Schaffhausen-Stand-II"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201638",
+        "value": "Frenkendorf-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201651",
+        "value": "Haldenacher-Schotter"
+    },
+    {
+        "op": "add",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201581",
+        "value": "Pfungen-Formation"
+    },
+    {
+        "op": "replace",
+        "path": "/domains/GC_LITSTRAT_UNCO_CD/codedValues/15201050",
+        "value": "Gondiswil-Interglazial (Letztes Interglazial)"
+    },
+    {
+        "op": "replace",
+        "path": "/datetime",
+        "value": "2024-10-26T16:33:16.079719"
+    },
+    {
+        "op": "replace",
+        "path": "/featclasses/TOPGIS_GC.GC_POINT_OBJECTS/68/length",
+        "value": 8
+    },
+    {
+        "op": "replace",
+        "path": "/featclasses/TOPGIS_GC.GC_POINT_OBJECTS/68/name",
+        "value": "HCON_DEPTH"
+    },
+    {
+        "op": "replace",
+        "path": "/featclasses/TOPGIS_GC.GC_POINT_OBJECTS/68/type",
+        "value": "Double"
+    },
+    {
+        "op": "replace",
+        "path": "/featclasses/TOPGIS_GC.GC_POINT_OBJECTS/69/name",
+        "value": "HCON_DEPTH_WT"
+    },
+    {
+        "op": "replace",
+        "path": "/featclasses/TOPGIS_GC.GC_POINT_OBJECTS/70/length",
+        "value": 255
+    },
+    {
+        "op": "replace",
+        "path": "/featclasses/TOPGIS_GC.GC_POINT_OBJECTS/70/name",
+        "value": "HCON_MEA_PERIOD"
+    },
+    {
+        "op": "replace",
+        "path": "/featclasses/TOPGIS_GC.GC_POINT_OBJECTS/70/type",
+        "value": "String"
+    },
+    {
+        "op": "replace",
+        "path": "/featclasses/TOPGIS_GC.GC_POINT_OBJECTS/71/length",
+        "value": 4
+    },
+    {
+        "op": "replace",
+        "path": "/featclasses/TOPGIS_GC.GC_POINT_OBJECTS/71/name",
+        "value": "HSUR_TEMP"
+    },
+    {
+        "op": "replace",
+        "path": "/featclasses/TOPGIS_GC.GC_POINT_OBJECTS/71/type",
+        "value": "Integer"
+    },
+    {
+        "op": "replace",
+        "path": "/featclasses/TOPGIS_GC.GC_POINT_OBJECTS/72/length",
+        "value": 255
+    },
+    {
+        "op": "replace",
+        "path": "/featclasses/TOPGIS_GC.GC_POINT_OBJECTS/72/name",
+        "value": "HSUR_CHEMISTRY"
+    },
+    {
+        "op": "replace",
+        "path": "/featclasses/TOPGIS_GC.GC_POINT_OBJECTS/72/type",
+        "value": "String"
+    },
+    {
+        "op": "replace",
+        "path": "/featclasses/TOPGIS_GC.GC_POINT_OBJECTS/73/name",
+        "value": "LRES_CHEMISTRY"
+    },
+    {
+        "op": "replace",
+        "path": "/featclasses/TOPGIS_GC.GC_POINT_OBJECTS/74/name",
+        "value": "LTYP_NAME"
+    },
+    {
+        "op": "replace",
+        "path": "/featclasses/TOPGIS_GC.GC_POINT_OBJECTS/75/name",
+        "value": "MFOL_PHASE_REF"
+    },
+    {
+        "op": "replace",
+        "path": "/featclasses/TOPGIS_GC.GC_POINT_OBJECTS/76/name",
+        "value": "MPLA_PHASE_REF"
+    },
+    {
+        "op": "replace",
+        "path": "/featclasses/TOPGIS_GC.GC_POINT_OBJECTS/77/length",
+        "value": 8
+    },
+    {
+        "op": "replace",
+        "path": "/featclasses/TOPGIS_GC.GC_POINT_OBJECTS/77/name",
+        "value": "PMOD_HEIGHT"
+    },
+    {
+        "op": "replace",
+        "path": "/featclasses/TOPGIS_GC.GC_POINT_OBJECTS/77/type",
+        "value": "Double"
+    },
+    {
+        "op": "replace",
+        "path": "/featclasses/TOPGIS_GC.GC_POINT_OBJECTS/78/length",
+        "value": 255
+    },
+    {
+        "op": "replace",
+        "path": "/featclasses/TOPGIS_GC.GC_POINT_OBJECTS/78/name",
+        "value": "PMOD_MEA_PERIOD"
+    },
+    {
+        "op": "replace",
+        "path": "/featclasses/TOPGIS_GC.GC_POINT_OBJECTS/78/type",
+        "value": "String"
+    },
+    {
+        "op": "replace",
+        "path": "/featclasses/TOPGIS_GC.GC_POINT_OBJECTS/79/name",
+        "value": "RUNC_ORIG_DESCR"
+    },
+    {
+        "op": "replace",
+        "path": "/featclasses/TOPGIS_GC.GC_POINT_OBJECTS/80/name",
+        "value": "LMIS_ORIG_ID"
+    },
+    {
+        "op": "replace",
+        "path": "/featclasses/TOPGIS_GC.GC_POINT_OBJECTS/81/length",
+        "value": 8
+    },
+    {
+        "op": "replace",
+        "path": "/featclasses/TOPGIS_GC.GC_POINT_OBJECTS/81/name",
+        "value": "SHAPE"
+    },
+    {
+        "op": "replace",
+        "path": "/featclasses/TOPGIS_GC.GC_POINT_OBJECTS/81/type",
+        "value": "Geometry"
+    },
+    {
+        "op": "replace",
+        "path": "/featclasses/TOPGIS_GC.GC_POINT_OBJECTS/82/length",
+        "value": 4
+    },
+    {
+        "op": "replace",
+        "path": "/featclasses/TOPGIS_GC.GC_POINT_OBJECTS/82/name",
+        "value": "PRINTED"
+    },
+    {
+        "op": "replace",
+        "path": "/featclasses/TOPGIS_GC.GC_POINT_OBJECTS/82/domain",
+        "value": "GC_BOOLEAN_CD"
+    },
+    {
+        "op": "replace",
+        "path": "/featclasses/TOPGIS_GC.GC_POINT_OBJECTS/82/type",
+        "value": "Integer"
+    },
+    {
+        "op": "replace",
+        "path": "/featclasses/TOPGIS_GC.GC_POINT_OBJECTS/83/name",
+        "value": "ABOR_LITHO"
+    },
+    {
+        "op": "replace",
+        "path": "/featclasses/TOPGIS_GC.GC_POINT_OBJECTS/83/domain",
+        "value": "GC_LITHO_CD"
+    },
+    {
+        "op": "remove",
+        "path": "/featclasses/TOPGIS_GC.GC_POINT_OBJECTS/84"
+    }
+]
