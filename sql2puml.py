@@ -29,20 +29,7 @@ table(cityTable) {
 #from sqlparsetables import SQLParseTables
 from collections import OrderedDict
 
-class NoTableException(ValueError):
-    """
-    Exception raised when trying to add a column without first adding a table.
-    """
-    pass
-
-
-#class SQL2PUML(SQLParseTables):
-class SQL2PUML:
-    """
-    Parse SQL and convert CREATE TABLE statements to a Plant UML databse graph.
-    """
-    # Plant UML database document template.
-    puml_template = """
+DEFAULT_TEMPLATE = """
 @startuml
 
 skinparam monochrome true
@@ -63,11 +50,44 @@ hide stereotypes
 
 {}
 @enduml
+"""
+
+class NoTableException(ValueError):
     """
-    # Template structure when the SQL is parsed.
-    puml_tables = OrderedDict()
-    # Equals name of the table if processing a table.
-    current_table = None
+    Exception raised when trying to add a column without first adding a table.
+    """
+    pass
+
+
+class SQL2PUML:
+    """
+    Parse SQL and convert CREATE TABLE statements to a Plant UML database graph.
+    """
+
+    def __init__(self, puml_template=None, template_file=None):
+        """
+        Initialize the SQL2PUML parser.
+
+        :param puml_template: A custom Plant UML template string.
+        :param template_file: A filename containing the Plant UML template.
+        """
+        if puml_template and template_file:
+            raise ValueError("Specify either 'puml_template' or 'template_file', not both.")
+        
+        # Load template from a string or a file
+        if puml_template:
+            self.puml_template = puml_template
+        elif template_file:
+            with open(template_file, 'r', encoding='utf-8') as f:
+                self.puml_template = f.read()
+        else:
+            # Default template
+            self.puml_template = DEFAULT_TEMPLATE
+
+        # Data structures for parsed SQL
+        self.puml_tables = OrderedDict()
+        self.puml_enumerations = OrderedDict()
+        self.current_table = None
 
     # Template structure when the SQL is parsed.
     puml_enumerations = OrderedDict()
@@ -223,4 +243,4 @@ hide stereotypes
         content = '\n'.join(puml_lines)
 
         # Return the final PUML string.
-        return (self.puml_template.format(content))
+        return (self.puml_template.format(content=content))

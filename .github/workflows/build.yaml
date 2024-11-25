@@ -93,8 +93,6 @@ jobs:
             outputs/fr/geocover.png
             outputs/ER-GCOVER.svg
             outputs/ER-GCOVER.pdf
-            outputs/geocover-schema-sde.png
-            outputs/geocover-schema-sde.svg
             exports/coded_domains.xlsx
             exports/all_geolcode.xlsx
             exports/all_geolcode.json
