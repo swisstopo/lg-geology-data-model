@@ -6744,6 +6744,104 @@
        font-size="13">1..1</text>
   </g>
   <g
+     id="elem_GC_EXPLOIT_GEOMAT_PLG_GC_LITSTRAT"
+     transform="translate(-155.43087,97.968757)">
+    <rect
+       y="10.616"
+       x="291.17841"
+       width="28.7925"
+       style="fill:#ffffff;stroke:#181818;stroke-width:0.0449"
+       ry="0.2246"
+       rx="0.2246"
+       id="GC_EXPLOIT_GEOMAT_PLG_GC_LITSTRAT"
+       height="6.5233002"
+       codeLine="436" />
+    <circle
+       r="0.9885"
+       id="ellipse1577"
+       style="fill:#c3c3c3;stroke:#181818;stroke-width:0.0899"
+       cy="12.0538"
+       cx="292.52631" />
+    <path
+       style="fill:#000000"
+       inkscape:connector-curvature="0"
+       id="path1579"
+       d="m 292.6021,12.6604 h -0.2204 v -0.9211 h -0.2822 v -0.1924 h 0.7849 v 0.1924 h -0.2823 z" />
+    <text
+       style="font-size:1.25800002px;font-family:sans-serif;fill:#000000"
+       id="text1581"
+       y="12.4893"
+       x="293.78439"
+       textLength="25.916901"
+       lengthAdjust="spacing"
+       font-size="1.258">GC_EXPLOIT_GEOMAT_PLG_GC_LITSTRAT</text>
+    <line
+       id="line1583"
+       y2="13.4916"
+       y1="13.4916"
+       x2="319.88101"
+       x1="291.26831"
+       style="stroke:#181818;stroke-width:0.0449" />
+    <text
+       style="font-weight:bold;font-size:1.25800002px;font-family:sans-serif;fill:#000000"
+       id="text1585"
+       y="15.0187"
+       x="291.71759"
+       textLength="2.3373001"
+       lengthAdjust="spacing"
+       font-weight="bold"
+       font-size="1.258">FK:</text>
+    <text
+       style="font-size:1.25800002px;font-family:sans-serif;fill:#000000"
+       id="text1587"
+       y="15.0187"
+       x="294.49289"
+       textLength="24.0256"
+       lengthAdjust="spacing"
+       font-size="1.258">GC_EXPLOIT_GEOMAT_PLG_UUID Guid</text>
+    <text
+       style="font-weight:bold;font-size:1.25800002px;font-family:sans-serif;fill:#000000"
+       id="text1589"
+       y="16.4832"
+       x="291.71759"
+       textLength="2.3373001"
+       lengthAdjust="spacing"
+       font-weight="bold"
+       font-size="1.258">FK:</text>
+    <text
+       style="font-size:1.25800002px;font-family:sans-serif;fill:#000000"
+       id="text1591"
+       y="16.4832"
+       x="294.49289"
+       textLength="15.5234"
+       lengthAdjust="spacing"
+       font-size="1.258">GC_LITSTRAT_UUID Guid</text>
+  </g>
+  <path
+     codeLine="448"
+     d="m 224.17148,139.7147 c 0,3.65858 0,9.48359 0,13.61671"
+     id="GC_BEDROCK-GC_BED_FORM_ATT"
+     style="fill:none;stroke:#181818;stroke-width:0.04466936"
+     inkscape:connector-curvature="0" />
+  <text
+     font-size="1.1682"
+     lengthAdjust="spacing"
+     textLength="2.2263"
+     x="381.45599"
+     y="76.613098"
+     id="text1595"
+     style="font-size:1.16820002px;font-family:sans-serif;fill:#000000"
+     transform="translate(-159.49162,64.892001)">0..n</text>
+  <text
+     font-size="1.1682"
+     lengthAdjust="spacing"
+     textLength="2.2291"
+     x="381.46899"
+     y="128.97929"
+     id="text1597"
+     style="font-size:1.16820002px;font-family:sans-serif;fill:#000000"
+     transform="translate(-159.49162,22.897897)">1..1</text>
+  <g
      id="link_GC_UNCO_DESPOSIT_GC_LITHO_GC_UNCO_DESPOSIT"
      transform="translate(-1892.3983,992.0318)">
     <path
