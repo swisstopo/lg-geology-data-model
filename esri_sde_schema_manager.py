@@ -35,7 +35,8 @@ class Field:
     editable: bool = True
     alias_name: Optional[str] = None
     model_name: Optional[str] = None
-    domain: Optional[Domain] = None
+    # domain: Optional[Domain] = None
+    domain: Optional[str] = None
 
 
 @dataclass
@@ -47,6 +48,17 @@ class Dataset:
     additional_info: Dict[str, Any] = field(default_factory=dict)
     nested_datasets: List["Dataset"] = field(default_factory=list)
     fields: List[Field] = field(default_factory=list)
+
+
+def is_geocover(name):
+    if name.startswith(
+        (
+            "TOPGIS_GC",
+            "GC_",
+        )
+    ) and not name.endswith("_I"):
+        return True
+    return False
 
 
 class ESRISchemaManager:
@@ -80,25 +92,29 @@ class ESRISchemaManager:
                     "codedValues": [
         """
         # Parse coded values
+        
         if "domainName" in domain_data:
-            type_ = "codedValue"
-            domain_name = domain_data.get("domainName", "")
+                type_ = "codedValue"
+                domain_name = domain_data.get("domainName", "")
 
         else:
-            type_ = domain_data.get("type", "")
-            domain_name = domain_data.get("name", "")
+                type_ = domain_data.get("type", "")
+                domain_name = domain_data.get("name", "")
+        try:
+            coded_values = [
+                CodedValue(name=cv.get("name", ""), code=cv.get("code"))
+                for cv in domain_data.get("codedValues", [])
+            ]
 
-        coded_values = [
-            CodedValue(name=cv.get("name", ""), code=cv.get("code"))
-            for cv in domain_data.get("codedValues", [])
-        ]
-
-        return Domain(
-            type=type_,
-            name=domain_name,
-            description=domain_data.get("description", ""),
-            coded_values=coded_values,
-        )
+            return Domain(
+                type=type_,
+                name=domain_name,
+                description=domain_data.get("description", ""),
+                coded_values=coded_values,
+            )
+        except (KeyError, ValueError, TypeError) as e:
+            logger.warning(f"Error parsing domain data: {e}. Data: {domain_data}")
+            return None
 
     def _parse_domains(self) -> List[Domain]:
         """
@@ -121,14 +137,22 @@ class ESRISchemaManager:
         fields = []
         for field_data in fields_data.get("fieldArray", []):
             # Check if field has a domain reference
-            domain = None
-            domain_name = field_data.get("domain")
-            if domain_name and self._find_domain_by_name(domain_name) is None:
-                # domain = self._find_domain_by_name(domain_name)
-                if "domain" in field_data:
-                    domain = self._parse_domain(field_data["domain"])
+            domain_name = None
+            domain_data = field_data.get("domain")
+            if domain_data:
+                domain = self._parse_domain(domain_data)
 
-                    self.domains.append(domain)
+                if (
+                    domain is not None
+                    and self._find_domain_by_name(domain.name) is None
+                ):
+                    domain_name = domain.name
+                    logger.info(domain_name)
+                    if is_geocover(domain_name):
+
+                       self.domains.append(domain)
+                else:
+                    logger.info(domain_data)
 
             field = Field(
                 name=field_data.get("name", ""),
@@ -141,7 +165,7 @@ class ESRISchemaManager:
                 editable=field_data.get("editable", True),
                 alias_name=field_data.get("aliasName"),
                 model_name=field_data.get("modelName"),
-                domain=domain,
+                domain=domain_name,
             )
             fields.append(field)
 
@@ -152,29 +176,23 @@ class ESRISchemaManager:
         for dataset_data in dataset_list:
             # Create current dataset
             dataset_name = dataset_data.get("name", "")
-            if dataset_name.startswith(
-                (
-                    "TOPGIS_GC",
-                    "GC_",
+            if is_geocover(dataset_name):
+                dataset = Dataset(
+                    name=dataset_name,
+                    type=dataset_data.get("datasetType", ""),
+                    additional_info=dataset_data,
                 )
-            ):
-                if not dataset_name.endswith("_I"):
-                    dataset = Dataset(
-                        name=dataset_name,
-                        type=dataset_data.get("datasetType", ""),
-                        additional_info=dataset_data,
-                    )
 
-                    # Parse fields if present
-                    if "fields" in dataset_data:
-                        dataset.fields = self._parse_fields(dataset_data["fields"])
+                # Parse fields if present
+                if "fields" in dataset_data:
+                    dataset.fields = self._parse_fields(dataset_data["fields"])
 
-                    # Recursively parse nested datasets if present
-                    nested_datasets = dataset_data.get("datasets", [])
-                    if nested_datasets:
-                        dataset.nested_datasets = self._parse_datasets(nested_datasets)
+                # Recursively parse nested datasets if present
+                nested_datasets = dataset_data.get("datasets", [])
+                if nested_datasets:
+                    dataset.nested_datasets = self._parse_datasets(nested_datasets)
 
-                    datasets.append(dataset)
+                datasets.append(dataset)
 
         return datasets
 
@@ -480,9 +498,11 @@ def main():
     # differences = schema_manager.compare_schemas(other_schema_manager)
 
     for cd in schema_manager.domains:
-        logger.info(cd.name)
+        logger.info(f"Domain={cd.name}")
+    logger.info(f"Number of domains: {len(schema_manager.domains)}")
 
-    print(schema_manager._find_domain_by_name("GC_PNT_HCON_EPOCH_CD__"))
+    logger.info(schema_manager._find_domain_by_name("GC_PNT_HCON_EPOCH_CD"))
+    logger.info(schema_manager._find_domain_by_name("GC_CORRECTION_STATE_CD"))
 
 
 if __name__ == "__main__":
