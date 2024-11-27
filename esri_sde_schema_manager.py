@@ -50,6 +50,52 @@ class Dataset:
     fields: List[Field] = field(default_factory=list)
 
 
+@dataclass
+class RelationshipClassKey:
+    """Represents a key in a relationship class."""
+
+    dataset_type: str
+    object_key_name: str
+    class_key_name: str = ""
+    key_role: str = ""
+
+
+@dataclass
+class RelationshipClass:
+    """Represents a relationship class in the ESRI SDE schema."""
+
+    catalog_path: str
+    name: str
+    dataset_type: str
+
+    # Relationship properties
+    cardinality: str
+    notification: str
+    is_attributed: bool
+    is_composite: bool
+    is_reflexive: bool
+
+    # Class names
+    origin_class_names: List[str]
+    destination_class_names: List[str]
+
+    # Path labels
+    forward_path_label: Optional[str] = None
+    backward_path_label: Optional[str] = None
+
+    # Keys
+    origin_class_keys: List[RelationshipClassKey] = field(default_factory=list)
+    destination_class_keys: List[RelationshipClassKey] = field(default_factory=list)
+
+    # Fields (reusing the Field class from previous implementation)
+    fields: List[Field] = field(default_factory=list)
+
+    # Additional metadata
+    children_expanded: bool = False
+    raster_field_name: str = ""
+    extension_properties: Optional[Dict[str, Any]] = None
+
+
 def is_geocover(name):
     if name.startswith(
         (
@@ -68,6 +114,161 @@ class ESRISchemaManager:
 
         self.domains = self._parse_domains()
         self.datasets = self._parse_datasets(self.schema.get("datasets", []))
+
+        self.relationship_classes = self._parse_relationship_classes()
+
+    def _parse_relationship_class_keys(
+        self, keys_data: List[Dict[str, Any]]
+    ) -> List[RelationshipClassKey]:
+        """
+        Parse relationship class keys.
+
+        :param keys_data: List of key data dictionaries
+        :return: List of RelationshipClassKey objects
+        """
+        return [
+            RelationshipClassKey(
+                dataset_type=key.get("datasetType", ""),
+                object_key_name=key.get("objectKeyName", ""),
+                class_key_name=key.get("classKeyName", ""),
+                key_role=key.get("keyRole", ""),
+            )
+            for key in keys_data
+        ]
+
+    def _parse_relationship_classes(self) -> List[RelationshipClass]:
+        """
+        Parse relationship classes from the schema.
+
+        :return: List of RelationshipClass objects
+        """
+        relationship_classes = []
+
+        # Extract relationship classes from datasets
+        def extract_relationship_classes(
+            datasets: List[Dict[str, Any]],
+        ) -> List[Dict[str, Any]]:
+            rels = []
+            for dataset in datasets:
+                if dataset.get("datasetType") == "esriDTRelationshipClass":
+                    rels.append(dataset)
+                # Recursively check nested datasets
+                if "datasets" in dataset:
+                    rels.extend(extract_relationship_classes(dataset["datasets"]))
+            return rels
+
+        # Get relationship classes from the schema
+        rel_class_data = extract_relationship_classes(self.schema.get("datasets", []))
+
+        for rc in rel_class_data:
+            # Parse fields (reusing the method from previous implementation)
+            fields = self._parse_fields(rc.get("fields", {})) if "fields" in rc else []
+
+            # Extract origin and destination class names
+            origin_classes = [
+                cls.get("name", "") for cls in rc.get("originClassNames", [])
+            ]
+            destination_classes = [
+                cls.get("name", "") for cls in rc.get("destinationClassNames", [])
+            ]
+
+            relationship_class = RelationshipClass(
+                catalog_path=rc.get("catalogPath", ""),
+                name=rc.get("name", ""),
+                dataset_type=rc.get("datasetType", ""),
+                # Relationship properties
+                cardinality=rc.get("cardinality", ""),
+                notification=rc.get("notification", ""),
+                is_attributed=rc.get("isAttributed", False),
+                is_composite=rc.get("isComposite", False),
+                is_reflexive=rc.get("isReflexive", False),
+                # Class names
+                origin_class_names=origin_classes,
+                destination_class_names=destination_classes,
+                # Path labels
+                forward_path_label=rc.get("forwardPathLabel"),
+                backward_path_label=rc.get("backwardPathLabel"),
+                # Keys
+                origin_class_keys=self._parse_relationship_class_keys(
+                    rc.get("originClassKeys", [])
+                ),
+                destination_class_keys=self._parse_relationship_class_keys(
+                    rc.get("destinationClassKeys", [])
+                ),
+                # Fields
+                fields=fields,
+                # Additional metadata
+                children_expanded=rc.get("childrenExpanded", False),
+                raster_field_name=rc.get("rasterFieldName", ""),
+                extension_properties=rc.get("extensionProperties"),
+            )
+
+            relationship_classes.append(relationship_class)
+
+        return relationship_classes
+
+    def find_relationship_classes(
+        self,
+        origin_class: Optional[str] = None,
+        destination_class: Optional[str] = None,
+    ) -> List[RelationshipClass]:
+        """
+        Find relationship classes based on origin or destination classes.
+
+        :param origin_class: Name of the origin class to filter by
+        :param destination_class: Name of the destination class to filter by
+        :return: List of matching RelationshipClass objects
+        """
+        return [
+            rc
+            for rc in self.relationship_classes
+            if (not origin_class or origin_class in rc.origin_class_names)
+            and (
+                not destination_class or destination_class in rc.destination_class_names
+            )
+        ]
+
+    def get_relationship_class_by_name(self, name: str) -> Optional[RelationshipClass]:
+        """
+        Find a relationship class by its full name.
+
+        :param name: Full name of the relationship class
+        :return: RelationshipClass object or None if not found
+        """
+        return next((rc for rc in self.relationship_classes if rc.name == name), None)
+
+    def summarize_relationship_classes(self) -> Dict[str, Any]:
+        """
+        Generate a summary of relationship classes.
+
+        :return: Dictionary with relationship class summary
+        """
+        return {
+            "total_count": len(self.relationship_classes),
+            "cardinality_distribution": self._count_by_attribute("cardinality"),
+            "attributed_count": sum(
+                1 for rc in self.relationship_classes if rc.is_attributed
+            ),
+            "composite_count": sum(
+                1 for rc in self.relationship_classes if rc.is_composite
+            ),
+            "reflexive_count": sum(
+                1 for rc in self.relationship_classes if rc.is_reflexive
+            ),
+        }
+
+    def _count_by_attribute(self, attribute: str) -> Dict[str, int]:
+        """
+        Count occurrences of a specific attribute across relationship classes.
+
+        :param attribute: Name of the attribute to count
+        :return: Dictionary of attribute value counts
+        """
+        counts = {}
+        for rc in self.relationship_classes:
+            value = getattr(rc, attribute, None)
+            counts[value] = counts.get(value, 0) + 1
+        return counts
 
     def _parse_domain(self, domain_data: Dict[str, Any]) -> Domain:
         """
@@ -92,14 +293,14 @@ class ESRISchemaManager:
                     "codedValues": [
         """
         # Parse coded values
-        
+
         if "domainName" in domain_data:
-                type_ = "codedValue"
-                domain_name = domain_data.get("domainName", "")
+            type_ = "codedValue"
+            domain_name = domain_data.get("domainName", "")
 
         else:
-                type_ = domain_data.get("type", "")
-                domain_name = domain_data.get("name", "")
+            type_ = domain_data.get("type", "")
+            domain_name = domain_data.get("name", "")
         try:
             coded_values = [
                 CodedValue(name=cv.get("name", ""), code=cv.get("code"))
@@ -149,8 +350,7 @@ class ESRISchemaManager:
                     domain_name = domain.name
                     logger.info(domain_name)
                     if is_geocover(domain_name):
-
-                       self.domains.append(domain)
+                        self.domains.append(domain)
                 else:
                     logger.info(domain_data)
 
@@ -503,6 +703,24 @@ def main():
 
     logger.info(schema_manager._find_domain_by_name("GC_PNT_HCON_EPOCH_CD"))
     logger.info(schema_manager._find_domain_by_name("GC_CORRECTION_STATE_CD"))
+
+    bedrock_relationships = schema_manager.find_relationship_classes(
+        origin_class="TOPGIS_GC.GC_BEDROCK"
+    )
+    logger.info(bedrock_relationships)
+
+    # Get a specific relationship class
+    specific_relationship = schema_manager.get_relationship_class_by_name(
+        "TOPGIS_GC.GC_BEDR_LITHO_GC_LITHO_BED"
+    )
+    logger.info(specific_relationship)
+
+    # Get summary of relationship classes
+    relationship_summary = schema_manager.summarize_relationship_classes()
+    logger.info(relationship_summary)
+    
+    for relationship in schema_manager.relationship_classes:
+        logger.info(relationship.name)
 
 
 if __name__ == "__main__":
