@@ -11,6 +11,7 @@ from copy import deepcopy
 
 import click
 import pandas as pd
+import pkg_resources
 
 
 try:
@@ -134,6 +135,17 @@ def geocover(ctx):
     """Command to work with TOPGIS/GeoCover ArcSDE database or ArcGis Pro project (ArcSDE operations require `arcpy`)"""
 
     pass
+
+
+def load_plugins():
+    for entry_point in pkg_resources.iter_entry_points("geocover.plugins"):
+        print(f"Found plugin: {entry_point.name}")  # Debug line
+        try:
+            plugin = entry_point.load()
+            geocover.add_command(plugin)
+            print(f"Successfully loaded {entry_point.name}")  # Debug line
+        except Exception as e:
+            click.echo(f"Failed to load plugin {entry_point.name}: {e}")
 
 
 @geocover.command(
@@ -624,13 +636,15 @@ export.requires_arcpy = True
 schema.requires_arcpy = True
 export_rules.requires_arcpy = True
 
+load_plugins()
 
+"""
 geocover.add_command(export)
 geocover.add_command(schema)
 geocover.add_command(export_rules)
 
 geocover.add_command(geolcode)
-geocover.add_command(filter_symbols)
+geocover.add_command(filter_symbols)"""
 
 
 if __name__ == "__main__":
