@@ -19,7 +19,7 @@ setup(
     name="geocover",
     version=version,  # noqa: F821
     description="Set of tools for generating the geological datamodel "
-    "(https://www.geologieportal.ch/en/knowledge/lookup/data-models/geology-data-model.html) ",
+    "(https://www.swisstopo.admin.ch/en/geological-model-2d-geocover) ",
     long_description=long_description,
     long_description_content_type="text/markdown",
     author="swisstopo",
@@ -27,8 +27,8 @@ setup(
     maintainer_email="marc.monnerat@swisstopo.ch",
     url="https://github.com/swisstopo/lg-geology-data-model",
     license="LICENSE.txt",
-    packages=find_packages(where="src"),  # Automatically find packages under src
-    package_dir={'': 'src'},
+    packages=find_packages(where="src"), 
+    package_dir={"": "src"},
     include_package_data=True,  # Must be in included in MANIFEST.in
     package_data={
         "geocover": ["data/*.csv"],
@@ -67,6 +67,14 @@ setup(
         "console_scripts": [
             "geocover = geocover.geocover:geocover",
             "datamodel = geocover.datamodel:datamodel",
+        ],
+        "geocover.plugins": [
+            "schema=geocover.geocover:schema",
+            "tables=geocover.geocover:tables",
+            "geolcode=geocover.geocover:geolcode",
+            "filter=geocover.geocover:filter_symbols",
+            "rules=geocover.geocover:export_rules",
+        
         ],
     },
 )
