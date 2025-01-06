@@ -61,6 +61,6 @@ jobs:
         with:
           name: conda-package-${{ matrix.os }}-${{ matrix.python-version }}
           path: |
-            conda-out/noarch/geocover*.tar.bz2
+            conda-out/*/geocover*
 
 
