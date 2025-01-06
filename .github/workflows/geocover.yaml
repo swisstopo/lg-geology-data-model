@@ -16,8 +16,13 @@ on:
 
 jobs:
   build-markdown:
-    name: Build conda and pip packages
-    runs-on: "ubuntu-latest"
+    name: Build conda and pip packages (${{ matrix.python-version }}, ${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false  # Don't cancel other jobs if one fails
+      matrix:
+        os: [ ubuntu-latest, windows-latest ]
+        python-version: [ '3.12' ]
     steps:
 
       - name: Checkout code
@@ -25,8 +30,8 @@ jobs:
       - name: Install miniconda
         uses: conda-incubator/setup-miniconda@v3
         with:
-          python-version: 3.12
-          channels: conda-forge,defaults
+          python-version: ${{ matrix.python-version }}
+          channels: conda-forge,default
           channel-priority: true
           activate-environment: DATAMODEL
           environment-file: environment.yaml
@@ -47,13 +52,13 @@ jobs:
       - name: conda build
         shell: bash -el {0}
         run: |
-          $CONDA/bin/conda build --output-folder  ./conda-out/  recipe
+          $CONDA/bin/conda build  --python ${{ matrix.python-version }} --output-folder  ./conda-out/  recipe
     
 
       - name: Upload Artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: conda-package
+          name: conda-package-${{ matrix.python-version }}-${{ matrix.python-version }}
           path: |
             conda-out/noarch/geocover*.tar.bz2
 
