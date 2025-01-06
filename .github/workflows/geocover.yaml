@@ -16,7 +16,7 @@ on:
 
 jobs:
   build-markdown:
-    name: Build conda and pip packages (${{ matrix.python-version }}, ${{ matrix.os }})
+    name: Build on ${{ matrix.python-version }} and  ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false  # Don't cancel other jobs if one fails
