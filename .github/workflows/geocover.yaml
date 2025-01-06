@@ -31,10 +31,11 @@ jobs:
         uses: conda-incubator/setup-miniconda@v3
         with:
           python-version: ${{ matrix.python-version }}
-          channels: conda-forge,default
+          channels: conda-forge
           channel-priority: true
           activate-environment: DATAMODEL
           environment-file: environment.yaml
+          conda-solver: classic
 
       - name: conda install
         shell: bash -el {0}
@@ -58,7 +59,7 @@ jobs:
       - name: Upload Artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: conda-package-${{ matrix.python-version }}-${{ matrix.python-version }}
+          name: conda-package-${{ matrix.os }}-${{ matrix.python-version }}
           path: |
             conda-out/noarch/geocover*.tar.bz2
 
