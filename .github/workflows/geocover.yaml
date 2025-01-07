@@ -36,11 +36,16 @@ jobs:
           activate-environment: DATAMODEL
           conda-solver: classic
 
-      - name: conda install
+      - name: Conda install and update
         shell: bash -el {0}
         run: |
             conda install conda-build anaconda-client -y
             conda update conda
+           
+            
+     - name: Conda dependencies
+        shell: bash -el {0}
+        run: |
             conda install -y -c conda-forge  jinja2 pyyaml click geopandas pandas click loguru shapely babel jsonschema openpyxl ruamel.yaml
 
       - name: Check conda installation
@@ -52,7 +57,7 @@ jobs:
           conda config --show
           printenv | sort
 
-      - name: conda build
+      - name: Conda build
         shell: bash -el {0}
         run: |
           conda build  --python ${{ matrix.python-version }} --output-folder  ./conda-out/  recipe
