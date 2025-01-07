@@ -34,7 +34,7 @@ jobs:
           channels: conda-forge
           channel-priority: true
           activate-environment: DATAMODEL
-          environment-file: environment.yaml
+          environment-file: requirements.txt
           conda-solver: classic
 
       - name: conda install
