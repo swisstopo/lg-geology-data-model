@@ -1,0 +1,12 @@
+jinja2
+pyyaml
+click
+geopandas
+pandas
+click
+loguru
+shapely >= 2.0.0
+babel
+jsonschema
+openpyxl
+ruamel.yaml
