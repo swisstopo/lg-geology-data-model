@@ -40,7 +40,8 @@ jobs:
         shell: bash -el {0}
         run: |
             conda install conda-build anaconda-client -y
-            conda install -y jinja2 pyyaml click geopandas pandas click loguru shapely babel jsonschema openpyxl ruamel.yaml
+            conda update conda
+            conda install -y -c conda-forge  jinja2 pyyaml click geopandas pandas click loguru shapely babel jsonschema openpyxl ruamel.yaml
 
       - name: Check conda installation
         shell: bash -el {0}
