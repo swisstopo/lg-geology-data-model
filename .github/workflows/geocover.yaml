@@ -34,12 +34,13 @@ jobs:
           channels: conda-forge
           channel-priority: true
           activate-environment: DATAMODEL
-          environment-file: requirements.txt
           conda-solver: classic
 
       - name: conda install
         shell: bash -el {0}
-        run: $CONDA/bin/conda install conda-build anaconda-client -y
+        run: |
+            $CONDA/bin/conda install conda-build anaconda-client -y
+            $CONDA/bin/conda install -y jinja2 pyyaml click geopandas pandas click loguru shapely babel jsonschema openpyxl ruamel.yaml
 
       - name: Check conda installation
         shell: bash -el {0}
