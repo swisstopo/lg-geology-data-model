@@ -43,7 +43,7 @@ jobs:
             conda update conda
            
             
-     - name: Conda dependencies
+      - name: Conda dependencies
         shell: bash -el {0}
         run: |
             conda install -y -c conda-forge  jinja2 pyyaml click geopandas pandas click loguru shapely babel jsonschema openpyxl ruamel.yaml
