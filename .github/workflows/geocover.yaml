@@ -55,7 +55,7 @@ jobs:
       - name: conda build
         shell: bash -el {0}
         run: |
-          $CONDA/bin/conda build  --python ${{ matrix.python-version }} --output-folder  ./conda-out/  recipe
+          conda build  --python ${{ matrix.python-version }} --output-folder  ./conda-out/  recipe
     
 
       - name: Upload Artifacts
