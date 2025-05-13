@@ -108,17 +108,19 @@ def export_tables(output_dir, workspace):
             sys.exit(2)
         for table_name, short_name in tables:
             logging.info(table_name)
+
             sort_keys = ["GEOL_CODE_INT"]
             try:
-                df = arcgis_table_to_df(table_name, input_fields=fields)
+                df = arcgis_table_to_df(table_name, input_fields=None)
                 if "PARENT_REF" in df.columns:
                     df["PARENT_REF"] = df["PARENT_REF"].fillna(0)
                     sort_keys = ["GEOL_CODE_INT", "PARENT_REF"]
+                    common_columns = set(df.columns).intersection(sort_keys)
             except KeyError as e:
                 logging.error(f"Table {table_name} has nokey: {e}")
                 continue
-            logging.info(f"Sort keys: {sort_keys}")
-            df.sort_values(by=sort_keys, inplace=True)
+            logging.info(f"Sort keys: {common_columns}")
+            df.sort_values(by=common_columns, inplace=True)
             # df = df.reindex(df.columns.union(fields, sort=False), axis=1, fill_value=0)
             # Reorder the columns (why is it no always the same?)
             # Check for missing columns
