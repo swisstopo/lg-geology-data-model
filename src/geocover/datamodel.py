@@ -16,7 +16,7 @@ from jsonschema import Draft7Validator, ValidationError
 from jsonschema import validate as jsonschema_validate
 from loguru import logger
 
-input_dir = "exports"
+input_dir = "exports_i"
 
 output_dir = "inputs"
 
@@ -63,7 +63,10 @@ ATTRIBUTES_TO_IGNORE = [
 with open(os.path.join(input_dir, "subtypes_dict.json"), "r") as f:
     subtypes = json.load(f)"""
 
-with open("H:\code\lg-geology-data-model\exports_i\gcoveri_simple.json", "r") as f:
+with open(
+    "/home/marco/code/github.com/lg-geology-data-model/exports_i/gcoveri_simple.json",
+    "r",
+) as f:
     sde_schema = json.load(f)
     logger.info(sde_schema.keys())
     featclasses_dict = sde_schema.get("featclasses")
@@ -301,6 +304,7 @@ def check_attribute_in_table(cls_name, table, attributes, abrev, prefixes):
 
 
 def get_table_values(name):
+    geol_dict = {}
     try:
         file_path = os.path.join(input_dir, name)
         df = pd.read_csv(file_path)
@@ -318,13 +322,13 @@ def get_table_values(name):
         return geol_dict
 
     except FileNotFoundError:
-        logger.error(f"Error: The CSV file {file_path} was not found.")
+        logger.error(f"Error reading value for table {name}: The CSV file {file_path} was not found.")
     except pd.errors.EmptyDataError:
-        logger.error("Error: The CSV file is empty.")
+        logger.error("Error reading value for table {name}: The CSV file is empty.")
     except pd.errors.ParserError:
-        logger.error("Error: There was a problem parsing the CSV file.")
+        logger.error("Error reading value for table {name}: There was a problem parsing the CSV file.")
     except Exception as e:
-        logger.error(f"An unexpected error occurred: {e}: {geol_dict}, {df}")
+        logger.error(f"Error reading value for table {name}: An unexpected error occurred: {e}: {geol_dict}, {df}")
 
     return {}
 
@@ -453,21 +457,36 @@ class Report:
                                 self.prefixes,
                             )
                         except Exception as e:
-                            logger.error(f"Check error: {e}")
+                            logger.error(f"Theme, attribute check error: {e}")
 
             except (KeyError, TypeError, IndexError) as e:
                 logger.error(f"Error processing theme '{theme}': {e}")
                 return None
         for annex in model.get("annexes"):
             annex_name = annex.get("name")
-            annex_fname = annex.get("fname")
-            if annex_fname is not None:
-                pairs = get_table_values(annex_fname)
 
+            if annex.get("type_") == "list":
+                annex_fname = annex.get("fname")
+                if annex_fname is not None:
+                    pairs = get_table_values(annex_fname)
+
+                else:
+                    pairs = get_coded_values(annex_name)
+
+                annex["pairs"] = pairs
+            # table
             else:
-                pairs = get_coded_values(annex_name)
 
-            annex["pairs"] = pairs
+                try:
+                    json_data_path = os.path.join(input_dir, annex.get('fname'))
+                    print(json_data_path)
+                    with open(json_data_path, 'r') as f:
+                        data = json.loads(f.read())
+                        logger.debug(f"Big annex {data}")
+                        annex['table'] = data
+
+                except Exception as e:
+                    logger.error(f"Error processing annexe '{annex_name}': {e}")
 
         return model
 
@@ -669,8 +688,9 @@ def generate(lang, datamodel, output):
     else:
         output_dir = Path(yaml_dir).joinpath(output)
 
+
     if not os.path.isdir(os.path.join(output_dir, lang)):
-        os.makedirs(os.path.isdir(os.path.join(output_dir, lang)))
+        os.makedirs(os.path.join(output_dir, lang))
 
     logger.info(f"Markdown files ouput dir: {output_dir}")
 
@@ -696,6 +716,11 @@ def generate(lang, datamodel, output):
     prefixes = [p + " " for p in get_prefixes(model.model)]
 
     data = model.to_json()
+
+    # TODO
+    print(data['annexes'][0])
+    sys.exit()
+
     if data is None:
         raise RuntimeError("Model conversion to JSON failed, cannot proceed")
     now = datetime.datetime.now()
