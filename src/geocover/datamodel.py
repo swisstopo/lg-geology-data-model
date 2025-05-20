@@ -718,8 +718,8 @@ def generate(lang, datamodel, output):
     data = model.to_json()
 
     # TODO
-    print(data['annexes'][0])
-    sys.exit()
+    # print(data['annexes'][0])
+
 
     if data is None:
         raise RuntimeError("Model conversion to JSON failed, cannot proceed")

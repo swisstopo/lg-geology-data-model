@@ -90,6 +90,17 @@ _{{_("Datatype")}} :  {{ attr.att_type  }}_
 |{{key}} | {{value}} | {{key|tr(value)}}     |
 {% endfor %}
 {% endif %}
+
+{% if 'table' in annex -%}
+|GMU Code|Litho main| Chrono base|
+|---------------|----------------------------------------|----------------------------------------|
+{% for item in annex.table -%}
+|{{item.GEOL_MAPPING_UNIT | int  }} | {{item.LITHO_MAIN|tr(item.LITHO_MAIN)}} | {{item.CHRONO_BASE|tr(item.CHRONO_BASE)}}     |
+{% endfor %}
+{% endif %}
+
+
+
 {% endfor %}
 
 
