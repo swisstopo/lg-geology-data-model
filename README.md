@@ -70,6 +70,10 @@ Dans un prompt Python, en utilisant l'environnement `conda` par défaut `arcgis-
 
     (arcgispro-py3-clone)lg-geology-data-model>geocover  export  -w D:\connections\GCOVERP@osa.sde -l DEBUG -o ../exports
 
+Exporter les `tables` attributaires :
+
+    (arcgispro-py3-clone)python.exe .\export_tables.py -o h:\code\lg-geology-data-model/exports   -w D:\connections\GCOVERP@osa.sde --all
+
 
 2. Export de la structure Oracle : 
 
