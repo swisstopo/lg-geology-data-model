@@ -8,6 +8,8 @@ import datetime
 import logging
 from pathlib import Path
 
+from config import IGNORE_FIELDS
+
 logging.basicConfig(format="%(name)s - %(levelname)s - %(message)s", level=logging.INFO)
 
 TREE_TABLES = ["GC_LITHO", "GC_LITSTRAT", "GC_CHRONO", "GC_TECTO"]
@@ -104,7 +106,7 @@ def export_tables(output_dir, workspace, all, include_i):
             "OBJECTID",
             "GEOL_CODE_INT",
             "GEOL_CODE",
-            "GERMAN",
+            "DESCRIPTION",  # was GERMAN
             "FMAT_LITSTRAT",
             "TREE_LEVEL",
             "PARENT_REF",
@@ -146,7 +148,15 @@ def export_tables(output_dir, workspace, all, include_i):
             # Reorder columns if all required columns are present
             present_columns = [col for col in fields if col in df.columns]
 
-            df = df[present_columns]
+            # TODO: more robust way to prepare geolcode -> description table
+            if "DESCRIPTION" in present_columns or "GEOLCODE" in present_columns:
+                df = df[present_columns]
+                orientation = "columns"
+            else:
+                orientation = "records"
+
+            # TODO: only for GMU_ATT
+            df = df.drop(columns=IGNORE_FIELDS, errors="ignore")
 
             logging.info(f"Writing to excel: {table_name}: {df.columns} ")
 
@@ -154,7 +164,12 @@ def export_tables(output_dir, workspace, all, include_i):
 
             try:
                 df.to_csv(os.path.join(output_dir, f"{filename}.csv"), index=True)
-                df.to_json(os.path.join(output_dir, f"{filename}.json"), indent=4, index=True)
+                df.to_json(
+                    os.path.join(output_dir, f"{filename}.json"),
+                    indent=4,
+                    index=True,
+                    orient=orientation,
+                )
                 df.to_excel(writer, sheet_name=short_name.upper())
             except PermissionError as e:
                 logging.error(f"Permission error: {table} is probably already opened")
