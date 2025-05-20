@@ -34,8 +34,10 @@ def arcgis_table_to_df(in_fc, input_fields=None, query=""):
     :param - input_fields - fields to input to a da search cursor for retrieval
     :param - query - sql query to grab appropriate values
     :returns - pandas.DataFrame"""
-    OIDFieldName = arcpy.Describe(in_fc).OIDFieldName
+
     available_fields = [field.name for field in arcpy.ListFields(in_fc)]
+    OIDFieldName = [f.name for f in arcpy.ListFields(in_fc) if f.type == "OID"]
+    logging.debug(f"OID field: {OIDFieldName}")
     logging.debug(available_fields)
     logging.debug(input_fields)
     if input_fields:
@@ -47,7 +49,8 @@ def arcgis_table_to_df(in_fc, input_fields=None, query=""):
         row for row in arcpy.da.SearchCursor(in_fc, final_fields, where_clause=query)
     ]
     fc_dataframe = pd.DataFrame(data, columns=final_fields)
-    fc_dataframe = fc_dataframe.set_index(OIDFieldName, drop=True)
+    if len(OIDFieldName) > 0:
+        fc_dataframe = fc_dataframe.set_index(OIDFieldName, drop=True)
     return fc_dataframe
 
 
@@ -116,14 +119,12 @@ def export_tables(output_dir, workspace, all, include_i):
 
     with pd.ExcelWriter(os.path.join(output_dir, f"export_tables.xlsx")) as writer:
         for table_name, short_name in tables:
-            logging.info(table_name)
-
-            sort_keys = ["GEOL_CODE_INT"]
+            sort_keys = ["GEOL_CODE_INT", "PARENT_REF"]
             try:
                 df = arcgis_table_to_df(table_name, input_fields=None)
                 if "PARENT_REF" in df.columns and "GEOL_CODE_INT" in df.columns:
                     df["PARENT_REF"] = df["PARENT_REF"].fillna(0)
-                    sort_keys = ["GEOL_CODE_INT", "PARENT_REF"]
+
                     common_columns = set(df.columns).intersection(sort_keys)
                     logging.info(f"Sort keys: {common_columns}")
                     df.sort_values(by=common_columns, inplace=True)
@@ -131,7 +132,6 @@ def export_tables(output_dir, workspace, all, include_i):
                 logging.error(
                     f"Not sorting. Table {table_name} has no sort keys {sort_keys}: {e}"
                 )
-                continue
 
             # df = df.reindex(df.columns.union(fields, sort=False), axis=1, fill_value=0)
             # Reorder the columns (why is it no always the same?)
@@ -148,11 +148,13 @@ def export_tables(output_dir, workspace, all, include_i):
 
             df = df[present_columns]
 
-            logging.info(f"Table: {table_name}, {df.columns}")
+            logging.info(f"Writing to excel: {table_name}: {df.columns} ")
+
+            filename = "_".join([w.capitalize() for w in short_name.split("_")])
 
             try:
-                df.to_csv(os.path.join(output_dir, f"{short_name}.csv"), index=True)
-                df.to_json(os.path.join(output_dir, f"{short_name}.json"), index=True)
+                df.to_csv(os.path.join(output_dir, f"{filename}.csv"), index=True)
+                df.to_json(os.path.join(output_dir, f"{filename}.json"), index=True)
                 df.to_excel(writer, sheet_name=short_name.upper())
             except PermissionError as e:
                 logging.error(f"Permission error: {table} is probably already opened")
