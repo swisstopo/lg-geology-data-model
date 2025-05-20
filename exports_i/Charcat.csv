@@ -1,12 +1,12 @@
-OBJECTID
-7
-10
-8
-9
-1
-5
-11
-6
-4
-3
-2
+OBJECTID,DESCRIPTION
+7,sumpfig
+10,drainiert
+8,umgelagert
+9,abgebaut
+1,fossil
+5,verkittet (zementiert)
+11,künstlich bewässert (Wässermatten)
+6,verschwemmt
+4,"verfestigt (durch Überlast), konsolidiert"
+3,verwittert
+2,rezent

@@ -1,67 +1,67 @@
-OBJECTID,TREE_LEVEL,PARENT_REF
-26,2.0,15101001.0
-28,3.0,15101044.0
-30,3.0,15101044.0
-31,3.0,15101044.0
-32,3.0,15101044.0
-33,3.0,15101044.0
-34,3.0,15101050.0
-35,3.0,15101050.0
-36,3.0,15101050.0
-37,3.0,15101050.0
-38,3.0,15101050.0
-39,2.0,15101001.0
-40,3.0,15101061.0
-41,3.0,15101061.0
-42,3.0,15101061.0
-43,2.0,15101001.0
-46,3.0,15101075.0
-48,3.0,15101075.0
-49,3.0,15101003.0
-50,4.0,15101005.0
-51,4.0,15101005.0
-52,3.0,15101003.0
-53,4.0,15101012.0
-54,4.0,15101012.0
-55,4.0,15101019.0
-58,4.0,15101021.0
-59,3.0,15101026.0
-61,4.0,15101028.0
-62,4.0,15101028.0
-63,4.0,15101028.0
-64,4.0,15101028.0
-65,4.0,15101028.0
-67,4.0,15101035.0
-68,3.0,15101026.0
-69,4.0,15101039.0
-70,4.0,15101039.0
-71,4.0,15101044.0
-72,4.0,15101046.0
-73,4.0,15101046.0
-74,3.0,15101067.0
-75,4.0,15101069.0
-76,4.0,15101069.0
-77,4.0,15101069.0
-78,4.0,15101069.0
-79,3.0,15101081.0
-80,2.0,15101001.0
-81,3.0,15101081.0
-82,3.0,15101075.0
-722,,15101009.0
-1042,3.0,15101044.0
-1043,2.0,15101001.0
-1044,3.0,15101086.0
-1,1.0,
-6,2.0,15101001.0
-9,2.0,15101001.0
-10,3.0,15101001.0
-12,3.0,15101003.0
-13,3.0,15101003.0
-14,3.0,15101003.0
-16,3.0,15101003.0
-17,3.0,15101003.0
-18,3.0,15101003.0
-19,2.0,15101001.0
-21,2.0,15101001.0
-23,3.0,15101026.0
-25,3.0,15101026.0
+OBJECTID,DESCRIPTION,TREE_LEVEL,PARENT_REF
+26,"lakustrisches Sediment, undifferenziert",2.0,15101001.0
+28,detritische Verlandungsbildung,3.0,15101044.0
+30,Strandablagerungen,3.0,15101044.0
+31,lakustrisches Deltasediment,3.0,15101044.0
+32,Seebodensediment,3.0,15101044.0
+33,Seekreide,3.0,15101044.0
+34,"palustrisches Sediment, undifferenziert",3.0,15101050.0
+35,Gyttja,3.0,15101050.0
+36,Sumpf,3.0,15101050.0
+37,"Torfmoor, Torf",3.0,15101050.0
+38,Lignit (palustrisches Sediment),3.0,15101050.0
+39,"äolisches Sediment, undifferenziert",2.0,15101001.0
+40,"äolischer Sand, Flugsand",3.0,15101061.0
+41,"Löss, Lösslehm",3.0,15101061.0
+42,vulkanische Asche,3.0,15101061.0
+43,"anthropogene Elemente, undifferenziert",2.0,15101001.0
+46,geringmächtige Lockergesteinsbedeckung,3.0,15101075.0
+48,tiefgründige Verwitterungsdecke,3.0,15101075.0
+49,"Sturzablagerung, undifferenziert",3.0,15101003.0
+50,Bergsturzablagerung,4.0,15101005.0
+51,Felssturzablagerung,4.0,15101005.0
+52,"Verwitterungslehm, undifferenziert",3.0,15101003.0
+53,Plateaulehm,4.0,15101012.0
+54,"Hanglehm, Schwemmlehm",4.0,15101012.0
+55,"Moräne (Till), undifferenziert",4.0,15101019.0
+58,Moräne auf Gletscher oder Toteis (Glacier or Dead Ice covered by Till),4.0,15101021.0
+59,"glazifluviatiles Sediment, undifferenziert",3.0,15101026.0
+61,randglazialer Schotter,4.0,15101028.0
+62,glazifluviatiler Schotter,4.0,15101028.0
+63,Vorstossschotter,4.0,15101028.0
+64,Rückzugsschotter,4.0,15101028.0
+65,Stauschotter,4.0,15101028.0
+67,Murgangablagerung,4.0,15101035.0
+68,"Alluvion, undifferenziert",3.0,15101026.0
+69,fluviatiler Schotter,4.0,15101039.0
+70,Bachschutt,4.0,15101039.0
+71,"glazilakustrisches Sediment, undifferenziert",4.0,15101044.0
+72,glazilakustrisches Deltasediment,4.0,15101046.0
+73,subaquatisch abgelagerte Moräne (Waterlaid Till),4.0,15101046.0
+74,"künstliche Ablagerung, undifferenziert",3.0,15101067.0
+75,"Aufschüttung, Damm",4.0,15101069.0
+76,Auffüllung,4.0,15101069.0
+77,Deponie,4.0,15101069.0
+78,Halde,4.0,15101069.0
+79,"Quelltuff (Kalksinter, Lockergestein)",3.0,15101081.0
+80,hydrochemische Bildungen (Kalksinter),2.0,15101001.0
+81,"Travertin (Kalksinter, Lockergestein)",3.0,15101081.0
+82,In-situ-Verwitterungsschutt,3.0,15101075.0
+722,strukturierter Hangschutt,,15101009.0
+1042,Tsunamiablagerung,3.0,15101044.0
+1043,Entwässerungssediment,2.0,15101001.0
+1044,Sedimentärer Gang (clastic dike),3.0,15101086.0
+1,Lockergestein,1.0,
+6,palustrisches Sediment,2.0,15101001.0
+9,dünne Lockermaterialbedeckung,2.0,15101001.0
+10,"gravitative Sedimente und Verwitterungsbildungen, undifferenziert",3.0,15101001.0
+12,Lawinenschutt,3.0,15101003.0
+13,Hangschutt,3.0,15101003.0
+14,Blockschutt,3.0,15101003.0
+16,Blockgletscher,3.0,15101003.0
+17,zerrüttete Sackungsmasse,3.0,15101003.0
+18,Rutschmasse,3.0,15101003.0
+19,"glazigenes Sediment, undifferenziert",2.0,15101001.0
+21,"fluviatiles Sediment, undifferenziert",2.0,15101001.0
+23,gemischter Schutt,3.0,15101026.0
+25,Überschwemmungssediment,3.0,15101026.0

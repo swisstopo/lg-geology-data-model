@@ -1,706 +1,706 @@
-OBJECTID,TREE_LEVEL,PARENT_REF
-3305,,15111006.0
-3306,,15111005.0
-3307,,15111020.0
-3308,,15111020.0
-3309,,15111005.0
-3310,,15111023.0
-3311,,15111023.0
-3312,,15111025.0
-3313,,15111025.0
-3314,,15111004.0
-3315,,15111028.0
-3316,,15111028.0
-3317,,15111028.0
-3318,,15111028.0
-3319,,15111028.0
-3320,,15111028.0
-3321,,15111028.0
-3322,,15111028.0
-19,2.0,15101001.0
-21,2.0,15101001.0
-23,3.0,15101026.0
-25,3.0,15101026.0
-26,2.0,15101001.0
-28,3.0,15101044.0
-30,3.0,15101044.0
-31,3.0,15101044.0
-32,3.0,15101044.0
-33,3.0,15101044.0
-34,3.0,15101050.0
-35,3.0,15101050.0
-36,3.0,15101050.0
-37,3.0,15101050.0
-38,3.0,15101050.0
-39,2.0,15101001.0
-40,3.0,15101061.0
-41,3.0,15101061.0
-42,3.0,15101061.0
-43,2.0,15101001.0
-46,3.0,15101075.0
-48,3.0,15101075.0
-49,3.0,15101003.0
-50,4.0,15101005.0
-51,4.0,15101005.0
-52,3.0,15101003.0
-53,4.0,15101012.0
-54,4.0,15101012.0
-55,4.0,15101019.0
-58,4.0,15101021.0
-59,3.0,15101026.0
-61,4.0,15101028.0
-62,4.0,15101028.0
-63,4.0,15101028.0
-3423,,15111132.0
-3424,,15111132.0
-3425,,15111132.0
-3426,,15111132.0
-3427,,15111132.0
-3428,,15111132.0
-3429,,15111132.0
-3430,,15111132.0
-3431,,15111132.0
-3432,,15111132.0
-3433,,15111132.0
-3434,,15111132.0
-3435,,15111132.0
-3436,,15111132.0
-3437,,15111132.0
-3438,,15111132.0
-3439,,15111132.0
-3440,,15111132.0
-3493,,15111186.0
-3494,,15111186.0
-3495,,15111186.0
-3496,,15111186.0
-3497,,15111186.0
-3498,,15111186.0
-3499,,15111186.0
-3500,,15111186.0
-3501,,15111186.0
-3502,,15111186.0
-3503,,15111186.0
-3504,,15111186.0
-3505,,15111186.0
-3506,,15111186.0
-3507,,15111186.0
-3508,,15111186.0
-3509,,15111186.0
-3510,,15111186.0
-3511,,15111186.0
-3512,,15111186.0
-3513,,15111186.0
-3514,,15111186.0
-3515,,15111186.0
-3516,,15111186.0
-3517,,15111186.0
-3518,,15111186.0
-3519,,15111186.0
-3520,,15111186.0
-3521,,15111186.0
-3522,,15111186.0
-3523,,15111186.0
-3524,,15111186.0
-3525,,15111186.0
-3526,,15111186.0
-3527,,15111186.0
-3528,,15111186.0
-3529,,15111186.0
-3530,,15111186.0
-3531,,15111186.0
-3532,,15111186.0
-3533,,15111186.0
-3534,,15111186.0
-3535,,15111186.0
-3536,,15111186.0
-3537,,15111186.0
-3538,,15111186.0
-3539,,15111186.0
-3540,,15111186.0
-3541,,15111186.0
-3542,,15111186.0
-3543,,15111186.0
-3544,,15111186.0
-3545,,15111186.0
-3546,,15111186.0
-3547,,15111186.0
-3548,,15111186.0
-3549,,15111186.0
-3550,,15111186.0
-3551,,15111186.0
-3441,,15111132.0
-3442,,15111132.0
-3443,,15111132.0
-3444,,15111132.0
-3445,,15111132.0
-3446,,15111132.0
-3447,,15111132.0
-3448,,15111132.0
-3449,,15111132.0
-3450,,15111132.0
-3451,,15111132.0
-3452,,15111132.0
-3453,,15111132.0
-3454,,15111132.0
-3455,,15111132.0
-3456,,15111132.0
-3457,,15111132.0
-3458,,15111132.0
-3459,,15111132.0
-3460,,15111132.0
-3461,,15111132.0
-3462,,15111132.0
-3463,,15111132.0
-3464,,15111132.0
-3465,,15111132.0
-3466,,15111001.0
-3467,,15111002.0
-3468,,15111002.0
-3469,,15111002.0
-3470,,15111348.0
-3471,,15111468.0
-3472,,15111181.0
-3473,,15111186.0
-3474,,15111186.0
-3475,,15111186.0
-3476,,15111186.0
-3477,,15111186.0
-3478,,15111186.0
-3479,,15111186.0
-3480,,15111186.0
-3481,,15111186.0
-3482,,15111186.0
-3483,,15111186.0
-3484,,15111186.0
-3485,,15111186.0
-3486,,15111186.0
-3487,,15111186.0
-3488,,15111186.0
-3489,,15111186.0
-3490,,15111186.0
-3491,,15111186.0
-3492,,15111186.0
-3323,,15111028.0
-3324,,15111028.0
-3325,,15111028.0
-3326,,15111028.0
-3327,,15111028.0
-3328,,15111028.0
-3329,,15111003.0
-3330,,15111043.0
-3331,,15111044.0
-3332,,15111044.0
-3333,,15111044.0
-3334,,15111044.0
-3335,,15111044.0
-3336,,15111044.0
-3337,,15111044.0
-3338,,15111044.0
-3339,,15111044.0
-3340,,15111044.0
-3341,,15111044.0
-3342,,15111044.0
-3343,,15111044.0
-3344,,15111044.0
-3345,,15111044.0
-3346,,15111044.0
-3347,,15111044.0
-3348,,15111044.0
-3349,,15111044.0
-3350,,15111044.0
-3351,,15111044.0
-3352,,15111044.0
-3353,,15111044.0
-3354,,15111044.0
-3355,,15111044.0
-3356,,15111044.0
-3357,,15111044.0
-3358,,15111044.0
-6,2.0,15101001.0
-9,2.0,15101001.0
-10,3.0,15101001.0
-12,3.0,15101003.0
-13,3.0,15101003.0
-14,3.0,15101003.0
-16,3.0,15101003.0
-17,3.0,15101003.0
-18,3.0,15101003.0
-3359,,15111044.0
-3360,,15111044.0
-3361,,15111044.0
-3362,,15111044.0
-3363,,15111044.0
-3364,,15111044.0
-3365,,15111044.0
-3366,,15111044.0
-3367,,15111044.0
-3368,,15111044.0
-3369,,15111044.0
-3370,,15111044.0
-3371,,15111044.0
-3372,,15111044.0
-3373,,15111044.0
-3374,,15111044.0
-3375,,15111003.0
-3376,,15111089.0
-3377,,15111090.0
-3378,,15111090.0
-3379,,15111090.0
-3380,,15111090.0
-3381,,15111090.0
-3382,,15111090.0
-3383,,15111090.0
-3384,,15111090.0
-3385,,15111090.0
-3386,,15111090.0
-3387,,15111090.0
-3388,,15111089.0
-3389,,15111102.0
-3390,,15111102.0
-3391,,15111102.0
-3392,,15111102.0
-3393,,15111102.0
-3394,,15111102.0
-3395,,15111102.0
-3396,,15111102.0
-3397,,15111102.0
-3398,,15111102.0
-3399,,15111102.0
-3400,,15111102.0
-3401,,15111102.0
-3402,,15111102.0
-3403,,15111102.0
-3404,,15111102.0
-3405,,15111102.0
-3406,,15111102.0
-3407,,15111102.0
-3408,,15111102.0
-3409,,15111102.0
-3410,,15111102.0
-3411,,15111102.0
-3412,,15111102.0
-3413,,15111102.0
-3414,,15111102.0
-3415,,15111102.0
-3416,,15111102.0
-3417,,15111102.0
-3418,,15111089.0
-3419,,15111132.0
-3420,,15111132.0
-3421,,15111132.0
-3422,,15111132.0
-3287,,
-3288,,15111001.0
-3289,,15111002.0
-3290,,15111003.0
-3291,,15111001.0
-3292,,15111004.0
-3293,,15111006.0
-3294,,15111006.0
-3295,,15111006.0
-3296,,15111006.0
-3297,,15111006.0
-3298,,15111006.0
-3299,,15111006.0
-3300,,15111006.0
-3301,,15111006.0
-3302,,15111006.0
-3303,,15111006.0
-3304,,15111006.0
-3552,,15111186.0
-3553,,15111186.0
-3554,,15111186.0
-3555,,15111186.0
-3556,,15111186.0
-3557,,15111186.0
-3558,,15111186.0
-3559,,15111186.0
-3560,,15111186.0
-3561,,15111186.0
-3562,,15111186.0
-3563,,15111181.0
-3564,,15111277.0
-3565,,15111277.0
-3566,,15111277.0
-3567,,15111277.0
-3568,,15111277.0
-3682,,15111390.0
-3683,,15111390.0
-3684,,15111390.0
-3685,,15111390.0
-3686,,15111390.0
-3687,,15111390.0
-3688,,15111390.0
-3689,,15111390.0
-3690,,15111390.0
-3691,,15111390.0
-3692,,15111390.0
-3693,,15111390.0
-3694,,15111390.0
-3695,,15111390.0
-3696,,15111390.0
-3697,,15111390.0
-3698,,15111390.0
-3699,,15111390.0
-3700,,15111390.0
-3701,,15111390.0
-3702,,15111390.0
-3703,,15111390.0
-3704,,15111390.0
-3705,,15111390.0
-3706,,15111390.0
-3707,,15111390.0
-3708,,15111389.0
-3709,,15111422.0
-3710,,15111422.0
-3711,,15111422.0
-3712,,15111422.0
-3713,,15111422.0
-3714,,15111422.0
-3715,,15111422.0
-3716,,15111389.0
-3717,,15111430.0
-3718,,15111430.0
-3719,,15111430.0
-3720,,15111430.0
-3721,,15111430.0
-3722,,15111430.0
-3723,,15111430.0
-3724,,15111430.0
-3725,,15111430.0
-3726,,15111430.0
-3727,,15111430.0
-3728,,15111389.0
-3729,,15111442.0
-3730,,15111442.0
-3731,,15111442.0
-3732,,15111442.0
-3733,,15111442.0
-3734,,15111442.0
-3735,,15111442.0
-3736,,15111442.0
-3737,,15111442.0
-3738,,15111442.0
-3739,,15111389.0
-3759,,15111470.0
-3760,,15111470.0
-3761,,15111474.0
-3762,,15111474.0
-3763,,15111470.0
-3764,,15111468.0
-3765,,15111468.0
-3766,,15111479.0
-3767,,15111479.0
-3768,,15111479.0
-3769,,15111479.0
-3770,,15111479.0
-3771,,15111479.0
-3772,,15111468.0
-3773,,15111486.0
-3774,,15111486.0
-3775,,15111486.0
-3776,,15111486.0
-3777,,15111486.0
-3778,,15111486.0
-3779,,15111486.0
-3780,,15111486.0
-3781,,15111486.0
-3782,,15111486.0
-3783,,15111486.0
-3784,,15111486.0
-3785,,15111486.0
-3786,,15111486.0
-3787,,15111486.0
-3788,,15111486.0
-3789,,15111486.0
-3790,,15111486.0
-3791,,15111468.0
-3792,,15111505.0
-3793,,15111505.0
-3794,,15111505.0
-3795,,15111505.0
-3796,,15111468.0
-3797,,15111510.0
-3798,,15111510.0
-64,4.0,15101028.0
-65,4.0,15101028.0
-67,4.0,15101035.0
-68,3.0,15101026.0
-69,4.0,15101039.0
-70,4.0,15101039.0
-71,4.0,15101044.0
-72,4.0,15101046.0
-73,4.0,15101046.0
-74,3.0,15101067.0
-75,4.0,15101069.0
-76,4.0,15101069.0
-77,4.0,15101069.0
-78,4.0,15101069.0
-79,3.0,15101081.0
-80,2.0,15101001.0
-81,3.0,15101081.0
-3740,,15111453.0
-3741,,15111344.0
-3742,,15111455.0
-3743,,15111456.0
-3744,,15111456.0
-3745,,15111456.0
-3746,,15111456.0
-3747,,15111456.0
-3748,,15111456.0
-3749,,15111456.0
-3750,,15111456.0
-3751,,15111456.0
-3752,,15111455.0
-3753,,15111466.0
-3754,,15111455.0
-3755,,15111468.0
-3756,,15111468.0
-3757,,15111470.0
-3758,,15111471.0
-3569,,15111277.0
-3570,,15111277.0
-3571,,15111277.0
-3572,,15111277.0
-3573,,15111277.0
-3574,,15111277.0
-3575,,15111277.0
-3576,,15111277.0
-3577,,15111277.0
-3578,,15111277.0
-3579,,15111277.0
-3580,,15111277.0
-3581,,15111277.0
-3582,,15111277.0
-3583,,15111001.0
-3584,,15111299.0
-3585,,15111181.0
-3586,,15111473.0
-3587,,15111002.0
-3588,,15111301.0
-3589,,15111301.0
-3590,,15111301.0
-3591,,15111301.0
-3592,,15111301.0
-3593,,15111301.0
-3594,,15111301.0
-3595,,15111001.0
-3596,,15111181.0
-3597,,15111310.0
-3598,,15111310.0
-3599,,15111310.0
-3600,,15111310.0
-3601,,15111468.0
-3602,,15111002.0
-3603,,15111002.0
-3604,,15111317.0
-3605,,15111317.0
-3606,,15111317.0
-3607,,15111002.0
-3608,,15111002.0
-3609,,15111322.0
-3610,,15111322.0
-3611,,15111322.0
-3612,,15111322.0
-3613,,15111322.0
-3614,,15111322.0
-3615,,15111322.0
-3616,,15111322.0
-3617,,15111322.0
-3618,,15111322.0
-3619,,15111002.0
-3620,,15111333.0
-3621,,15111333.0
-3622,,15111003.0
-3623,,15111336.0
-3624,,15111336.0
-3625,,15111338.0
-3626,,15111338.0
-3627,,15111338.0
-3628,,15111338.0
-3629,,15111338.0
-3630,,15111001.0
-3631,,15111344.0
-3632,,15111344.0
-3633,,15111344.0
-3634,,15111347.0
-3635,,15111348.0
-3636,,15111348.0
-3637,,15111348.0
-3638,,15111351.0
-3639,,15111352.0
-3640,,15111352.0
-3641,,15111352.0
-3642,,15111348.0
-3643,,15111356.0
-3644,,15111356.0
-3645,,15111348.0
-3646,,15111359.0
-3647,,15111348.0
-3648,,15111361.0
-3649,,15111361.0
-3650,,15111348.0
-3651,,15111364.0
-3652,,15111364.0
-3653,,15111348.0
-3654,,15111367.0
-3655,,15111367.0
-3656,,15111367.0
-3657,,15111348.0
-3658,,15111371.0
-3659,,15111371.0
-3660,,15111348.0
-3661,,15111374.0
-407,3.0,15101075.0
-2327,,15101009.0
-2649,3.0,15101044.0
-2650,2.0,15101001.0
-2651,3.0,15101086.0
-2968,1.0,
-3662,,15111374.0
-3663,,15111348.0
-3664,,15111348.0
-3665,,15111378.0
-3666,,15111348.0
-3667,,15111347.0
-3668,,15111381.0
-3669,,15111381.0
-3670,,15111383.0
-3671,,15111383.0
-3672,,15111383.0
-3673,,15111381.0
-3674,,15111387.0
-3675,,15111347.0
-3676,,15111389.0
-3677,,15111390.0
-3678,,15111390.0
-3679,,15111390.0
-3680,,15111390.0
-3681,,15111390.0
-3799,,15111510.0
-3800,,15111510.0
-3801,,15111510.0
-3802,,15111510.0
-3803,,15111510.0
-3804,,15111510.0
-3805,,15111510.0
-3806,,15111510.0
-3807,,15111510.0
-3808,,15111510.0
-3809,,15111510.0
-3810,,15111510.0
-3811,,15111510.0
-3812,,15111510.0
-3813,,15111510.0
-3814,,15111510.0
-3815,,15111510.0
-3816,,15111510.0
-3817,,15111510.0
-3818,,15111510.0
-3819,,15111510.0
-3820,,15111510.0
-3821,,15111510.0
-3822,,15111510.0
-3823,,15111510.0
-3824,,15111510.0
-3825,,15111510.0
-3826,,15111510.0
-3827,,15111510.0
-3828,,15111510.0
-3829,,15111510.0
-3830,,15111510.0
-3831,,15111510.0
-3832,,15111510.0
-3833,,15111510.0
-3834,,15111510.0
-3835,,15111510.0
-3836,,15111510.0
-3837,,15111510.0
-3838,,15111510.0
-3839,,15111510.0
-3840,,15111510.0
-3841,,15111510.0
-3842,,15111468.0
-3843,,15111556.0
-3844,,15111556.0
-3845,,15111468.0
-3846,,15111559.0
-3847,,15111468.0
-3848,,15111561.0
-3849,,15111561.0
-3850,,15111561.0
-3851,,15111468.0
-3852,,15111565.0
-3853,,15111565.0
-3854,,15111565.0
-3855,,15111565.0
-3856,,15111565.0
-3857,,15111565.0
-3858,,15111565.0
-3859,,15111565.0
-3860,,15111565.0
-3861,,15111565.0
-3862,,15111565.0
-3863,,15111565.0
-3864,,15111565.0
-3865,,15111565.0
-3866,,15111565.0
-3867,,15111565.0
-3868,,15111565.0
-3869,,15111565.0
-3870,,15111565.0
-3871,,15111565.0
-3872,,15111565.0
-3873,,15111565.0
-3874,,15111565.0
-3875,,15111565.0
-3876,,15111565.0
-3877,,15111565.0
-3878,,15111565.0
-3879,,15111565.0
-3880,,15111565.0
-3881,,15111565.0
-3882,,15111565.0
-3883,,15111565.0
-3884,,15111565.0
-3885,,15111565.0
-3886,,15111565.0
-3887,,15111565.0
-3888,,15111565.0
-3889,,15111565.0
-3890,,15111565.0
-3891,,15111565.0
-3892,,15111565.0
-3893,,15111565.0
-3894,,15111565.0
-3895,,15111565.0
-3896,,15111565.0
-3897,,15111565.0
-3898,,15111565.0
-3899,,15111565.0
-3900,,15111565.0
-3901,,15111565.0
-3902,,15111565.0
-3903,,15111565.0
-3904,,15111565.0
-3905,,15111565.0
-3906,,15111565.0
-3907,,15111565.0
-3908,,15111565.0
-3909,,15111565.0
-3910,,15111565.0
-3911,,15111344.0
-3912,,15111625.0
-3913,,15111626.0
-3914,,15111626.0
-3915,,15111626.0
-3916,,15111625.0
-3917,,15111630.0
-3918,,15111630.0
-3919,,15111630.0
-3920,,15111630.0
-3921,,15111625.0
-3922,,15111455.0
-3923,,15111636.0
-3924,,15111636.0
-3925,,15111636.0
+OBJECTID,DESCRIPTION,TREE_LEVEL,PARENT_REF
+3305,Brekzie: siltig,,15111006.0
+3306,Brekzie: pyroklastisch,,15111005.0
+3307,Brekzie: rhyolithisch,,15111020.0
+3308,Brekzie: tuffitisch,,15111020.0
+3309,Brekzie: tektonisch,,15111005.0
+3310,Brekzie: kakiritisch,,15111023.0
+3311,Brekzie: kataklastisch,,15111023.0
+3312,Brekzie: kataklastisch-dolomitisch,,15111025.0
+3313,Brekzie: kataklastisch-kalkig,,15111025.0
+3314,Konglomerat,,15111004.0
+3315,Konglomerat: dolomitisch,,15111028.0
+3316,Konglomerat: kalkig,,15111028.0
+3317,Konglomerat: kalkig: Muscheln,,15111028.0
+3318,Konglomerat: kalkig-dolomitisch,,15111028.0
+3319,Konglomerat: kalkig-residual: Eisenpisoide,,15111028.0
+3320,Konglomerat: kristallin,,15111028.0
+3321,Konglomerat: monomikt,,15111028.0
+3322,Konglomerat: ophiolithisch,,15111028.0
+19,"glazigenes Sediment, undifferenziert",2.0,15101001.0
+21,"fluviatiles Sediment, undifferenziert",2.0,15101001.0
+23,gemischter Schutt,3.0,15101026.0
+25,Überschwemmungssediment,3.0,15101026.0
+26,"lakustrisches Sediment, undifferenziert",2.0,15101001.0
+28,detritische Verlandungsbildung,3.0,15101044.0
+30,Strandablagerungen,3.0,15101044.0
+31,lakustrisches Deltasediment,3.0,15101044.0
+32,Seebodensediment,3.0,15101044.0
+33,Seekreide,3.0,15101044.0
+34,"palustrisches Sediment, undifferenziert",3.0,15101050.0
+35,Gyttja,3.0,15101050.0
+36,Sumpf,3.0,15101050.0
+37,"Torfmoor, Torf",3.0,15101050.0
+38,Lignit (palustrisches Sediment),3.0,15101050.0
+39,"äolisches Sediment, undifferenziert",2.0,15101001.0
+40,"äolischer Sand, Flugsand",3.0,15101061.0
+41,"Löss, Lösslehm",3.0,15101061.0
+42,vulkanische Asche,3.0,15101061.0
+43,"anthropogene Elemente, undifferenziert",2.0,15101001.0
+46,geringmächtige Lockergesteinsbedeckung,3.0,15101075.0
+48,tiefgründige Verwitterungsdecke,3.0,15101075.0
+49,"Sturzablagerung, undifferenziert",3.0,15101003.0
+50,Bergsturzablagerung,4.0,15101005.0
+51,Felssturzablagerung,4.0,15101005.0
+52,"Verwitterungslehm, undifferenziert",3.0,15101003.0
+53,Plateaulehm,4.0,15101012.0
+54,"Hanglehm, Schwemmlehm",4.0,15101012.0
+55,"Moräne (Till), undifferenziert",4.0,15101019.0
+58,Moräne auf Gletscher oder Toteis (Glacier or Dead Ice covered by Till),4.0,15101021.0
+59,"glazifluviatiles Sediment, undifferenziert",3.0,15101026.0
+61,randglazialer Schotter,4.0,15101028.0
+62,glazifluviatiler Schotter,4.0,15101028.0
+63,Vorstossschotter,4.0,15101028.0
+3423,Mergelstein: Eisenooide,,15111132.0
+3424,Mergelstein: Gips,,15111132.0
+3425,Mergelstein: Glaukonit,,15111132.0
+3426,Mergelstein: Glaukonit-Bioklasten,,15111132.0
+3427,Mergelstein: Glimmer,,15111132.0
+3428,Mergelstein: kalkig,,15111132.0
+3429,Mergelstein: kalkig: Bioklasten,,15111132.0
+3430,Mergelstein: kalkig: Bitumen,,15111132.0
+3431,Mergelstein: kalkig-dolomitisch,,15111132.0
+3432,Mergelstein: kalkig: Eisenooide,,15111132.0
+3433,Mergelstein: kalkig: Glaukonit,,15111132.0
+3434,Mergelstein: kalkig: Ooide,,15111132.0
+3435,Mergelstein: kalkig-kieselig,,15111132.0
+3436,Mergelstein: kalkig-schiefrig,,15111132.0
+3437,Mergelstein: kieselig,,15111132.0
+3438,Mergelstein: Kohle,,15111132.0
+3439,Mergelstein: konglomeratisch,,15111132.0
+3440,Mergelstein: Korallen,,15111132.0
+3493,Kalkstein: Glaukonit,,15111186.0
+3494,Kalkstein: Glaukonit-Bioklasten,,15111186.0
+3495,Kalkstein: kieselig,,15111186.0
+3496,Kalkstein: kieselig: Bioklasten,,15111186.0
+3497,Kalkstein: kieselig: Bioklasten-Chert,,15111186.0
+3498,Kalkstein: kieselig: Glaukonit,,15111186.0
+3499,Kalkstein: kieselig-spätig,,15111186.0
+3500,Kalkstein: Korallen,,15111186.0
+3501,Kalkstein: kreidig,,15111186.0
+3502,Kalkstein: kreidig: Bitumen,,15111186.0
+3503,Kalkstein: kreidig: Chert,,15111186.0
+3504,Kalkstein: kreidig: Pisoide,,15111186.0
+3505,Kalkstein: kristallin,,15111186.0
+3506,Kalkstein: Limonit,,15111186.0
+3507,Kalkstein: mergelig,,15111186.0
+3508,Kalkstein: mergelig: Bioklasten,,15111186.0
+3509,Kalkstein: mergelig: Chert,,15111186.0
+3510,Kalkstein: mergelig: Glaukonit,,15111186.0
+3511,Kalkstein: mergelig: Pyrit,,15111186.0
+3512,Kalkstein: mergelig-dolomitisch,,15111186.0
+3513,Kalkstein: mergelig-kieselig,,15111186.0
+3514,Kalkstein: mergelig-schiefrig,,15111186.0
+3515,Kalkstein: mikritisch,,15111186.0
+3516,Kalkstein: mikritisch: Aptychen,,15111186.0
+3517,Kalkstein: mikritisch: Bioklasten,,15111186.0
+3518,Kalkstein: mikritisch: Bioklasten-Chert,,15111186.0
+3519,Kalkstein: mikritisch: Calpionellen,,15111186.0
+3520,Kalkstein: mikritisch: Chert,,15111186.0
+3521,Kalkstein: mikritisch: Glaukonit,,15111186.0
+3522,Kalkstein: mikritisch: Onkoide,,15111186.0
+3523,Kalkstein: mikritisch: Ooide,,15111186.0
+3524,Kalkstein: Nummuliten,,15111186.0
+3525,Kalkstein: Onkoide,,15111186.0
+3526,Kalkstein: Ooide,,15111186.0
+3527,Kalkstein: Ooide-Chert,,15111186.0
+3528,Kalkstein: pedogen-verkrustet,,15111186.0
+3529,Kalkstein: Phosphorit,,15111186.0
+3530,Kalkstein: Pisoide,,15111186.0
+3531,Kalkstein: ruditisch,,15111186.0
+3532,Kalkstein: ruditisch: Korallen,,15111186.0
+3533,Kalkstein: sandig,,15111186.0
+3534,Kalkstein: sandig: Bioklasten,,15111186.0
+3535,Kalkstein: sandig: Eisenooide,,15111186.0
+3536,Kalkstein: sandig: Glaukonit,,15111186.0
+3537,Kalkstein: sandig: Glimmer,,15111186.0
+3538,Kalkstein: sandig-kieselig,,15111186.0
+3539,Kalkstein: sandig-spätig,,15111186.0
+3540,Kalkstein: sandig-tonig,,15111186.0
+3541,Kalkstein: Schwämme,,15111186.0
+3542,Kalkstein: siltig,,15111186.0
+3543,Kalkstein: siltig: Bioklasten,,15111186.0
+3544,Kalkstein: siltig-tonig,,15111186.0
+3545,Kalkstein: spätig,,15111186.0
+3546,Kalkstein: spätig: Bioklasten,,15111186.0
+3547,Kalkstein: spätig: Bioklasten-Chert,,15111186.0
+3548,Kalkstein: spätig: Bioklasten-Glaukonit,,15111186.0
+3549,Kalkstein: spätig: Bioklasten-Ooide,,15111186.0
+3550,Kalkstein: spätig: Chert,,15111186.0
+3551,Kalkstein: spätig: Echinodermen,,15111186.0
+3441,Mergelstein: Lignit,,15111132.0
+3442,Mergelstein: Ooide,,15111132.0
+3443,Mergelstein: Phosphorit,,15111132.0
+3444,Mergelstein: sandig,,15111132.0
+3445,Mergelstein: sandig: Bioklasten,,15111132.0
+3446,Mergelstein: sandig-dolomitisch,,15111132.0
+3447,Mergelstein: sandig: Glaukonit,,15111132.0
+3448,Mergelstein: sandig: Glimmer,,15111132.0
+3449,Mergelstein: sandig: Kohle,,15111132.0
+3450,Mergelstein: sandig-kalkig,,15111132.0
+3451,Mergelstein: sandig-siltig,,15111132.0
+3452,Mergelstein: sandig-tonig,,15111132.0
+3453,Mergelstein: sandig-tonig: Glaukonit,,15111132.0
+3454,Mergelstein: schiefrig,,15111132.0
+3455,Mergelstein: schiefrig: Bitumen,,15111132.0
+3456,Mergelstein: siltig,,15111132.0
+3457,Mergelstein: siltig: Glaukonit,,15111132.0
+3458,Mergelstein: siltig: Glimmer,,15111132.0
+3459,Mergelstein: siltig-dolomitisch,,15111132.0
+3460,Mergelstein: siltig-kalkig,,15111132.0
+3461,Mergelstein: siltig-schiefrig,,15111132.0
+3462,Mergelstein: siltig-tonig,,15111132.0
+3463,Mergelstein: tonig,,15111132.0
+3464,Mergelstein: tonig: Bitumen,,15111132.0
+3465,Mergelstein: tonig: Kohle,,15111132.0
+3466,Gestein: Karbonat,,15111001.0
+3467,Gestein: sedimentär: Karbonat,,15111002.0
+3468,Gestein: pedogen: Karbonat,,15111002.0
+3469,Gestein: pedogen-verkrustet: Karbonat,,15111002.0
+3470,Gestein: vulkanisch: Karbonat,,15111348.0
+3471,Gestein: metamorph: Karbonat,,15111468.0
+3472,Kalkstein,,15111181.0
+3473,Kalkstein: Albit,,15111186.0
+3474,Kalkstein: Algen,,15111186.0
+3475,Kalkstein: arenitisch,,15111186.0
+3476,Kalkstein: arenitisch: Bioklasten,,15111186.0
+3477,Kalkstein: arenitisch: Bioklasten-Chert,,15111186.0
+3478,Kalkstein: arenitisch: Glaukonit,,15111186.0
+3479,Kalkstein: arenitisch: Ooide,,15111186.0
+3480,Kalkstein: arenitisch: Quarz,,15111186.0
+3481,Kalkstein: arenitisch-spätig,,15111186.0
+3482,Kalkstein: Bioklasten,,15111186.0
+3483,Kalkstein: Bioklasten-Chert,,15111186.0
+3484,Kalkstein: Bioklasten-Ooide,,15111186.0
+3485,Kalkstein: Bitumen,,15111186.0
+3486,Kalkstein: Bitumen-Bioklasten,,15111186.0
+3487,Kalkstein: brekziös,,15111186.0
+3488,Kalkstein: Chert,,15111186.0
+3489,Kalkstein: dolomitisch,,15111186.0
+3490,Kalkstein: dolomitisch: Bioklasten,,15111186.0
+3491,Kalkstein: Eisenmineralien,,15111186.0
+3492,Kalkstein: Eisenooide,,15111186.0
+3323,Konglomerat: polymikt,,15111028.0
+3324,Konglomerat: polymikt: Bioklasten,,15111028.0
+3325,Konglomerat: polymikt: Quarz,,15111028.0
+3326,Konglomerat: Quarz,,15111028.0
+3327,Konglomerat: pyroklastisch,,15111028.0
+3328,Konglomerat: tuffitisch,,15111028.0
+3329,Gestein: psammitisch,,15111003.0
+3330,Sandstein,,15111043.0
+3331,Sandstein: Anthrazit,,15111044.0
+3332,Sandstein: Bioklasten,,15111044.0
+3333,Sandstein: Bitumen,,15111044.0
+3334,Sandstein: dolomitisch,,15111044.0
+3335,Sandstein: Eisenmineralien,,15111044.0
+3336,Sandstein: Eisenooide,,15111044.0
+3337,Sandstein: Feldspat,,15111044.0
+3338,Sandstein: Glaukonit,,15111044.0
+3339,Sandstein: Glimmer,,15111044.0
+3340,Sandstein: Glimmer-Glaukonit,,15111044.0
+3341,Sandstein: Gips,,15111044.0
+3342,Sandstein: kalkig,,15111044.0
+3343,Sandstein: kalkig: Bioklasten,,15111044.0
+3344,Sandstein: kalkig: Glaukonit,,15111044.0
+3345,Sandstein: kalkig: Glimmer,,15111044.0
+3346,Sandstein: kalkig: Kohle,,15111044.0
+3347,Sandstein: kalkig: Muscheln,,15111044.0
+3348,Sandstein: kalkig: Nummuliten,,15111044.0
+3349,Sandstein: kalkig: Quarz,,15111044.0
+3350,Sandstein: kalkig-dolomitisch,,15111044.0
+3351,Sandstein: kalkig-kieselig,,15111044.0
+3352,Sandstein: kieselig,,15111044.0
+3353,Sandstein: Kohle,,15111044.0
+3354,Sandstein: konglomeratisch,,15111044.0
+3355,Sandstein: konglomeratisch-kalkig: Muscheln,,15111044.0
+3356,Sandstein: mergelig,,15111044.0
+3357,Sandstein: mergelig: Glaukonit,,15111044.0
+3358,Sandstein: mergelig: Glimmer,,15111044.0
+6,palustrisches Sediment,2.0,15101001.0
+9,dünne Lockermaterialbedeckung,2.0,15101001.0
+10,"gravitative Sedimente und Verwitterungsbildungen, undifferenziert",3.0,15101001.0
+12,Lawinenschutt,3.0,15101003.0
+13,Hangschutt,3.0,15101003.0
+14,Blockschutt,3.0,15101003.0
+16,Blockgletscher,3.0,15101003.0
+17,zerrüttete Sackungsmasse,3.0,15101003.0
+18,Rutschmasse,3.0,15101003.0
+3359,Sandstein: Phosphorit,,15111044.0
+3360,Sandstein: Quarz,,15111044.0
+3361,Sandstein: Quarz-Glaukonit,,15111044.0
+3362,Sandstein: Quarz-Glimmer,,15111044.0
+3363,Sandstein: siltig,,15111044.0
+3364,Sandstein: siltig-kalkig,,15111044.0
+3365,Sandstein: tonig,,15111044.0
+3366,Sandstein: tonig: Feldspat,,15111044.0
+3367,Sandstein: tonig: Glaukonit,,15111044.0
+3368,Sandstein: tonig: Glimmer,,15111044.0
+3369,Sandstein: tonig: Kohle,,15111044.0
+3370,Sandstein: tonig: Lithoklasten,,15111044.0
+3371,Sandstein: tonig-dolomitisch,,15111044.0
+3372,Sandstein: tonig-kalkig,,15111044.0
+3373,Sandstein: tonig-kalkig: Kohle,,15111044.0
+3374,Sandstein: tuffitisch,,15111044.0
+3375,Gestein: pelitisch,,15111003.0
+3376,Siltstein,,15111089.0
+3377,Siltstein: dolomitisch,,15111090.0
+3378,Siltstein: Glimmer,,15111090.0
+3379,Siltstein: kalkig,,15111090.0
+3380,Siltstein: Kohle,,15111090.0
+3381,Siltstein: mergelig,,15111090.0
+3382,Siltstein: sandig,,15111090.0
+3383,Siltstein: schiefrig,,15111090.0
+3384,Siltstein: tonig,,15111090.0
+3385,Siltstein: tonig-dolomitisch,,15111090.0
+3386,Siltstein: tonig-kalkig,,15111090.0
+3387,Siltstein: tuffitisch,,15111090.0
+3388,Tonstein,,15111089.0
+3389,Tonstein: Anthrazit,,15111102.0
+3390,Tonstein: Bitumen,,15111102.0
+3391,Tonstein: dolomitisch,,15111102.0
+3392,Tonstein: Eisenooide,,15111102.0
+3393,Tonstein: Glaukonit,,15111102.0
+3394,Tonstein: kalkig,,15111102.0
+3395,Tonstein: kalkig: Glaukonit,,15111102.0
+3396,Tonstein: kieselig,,15111102.0
+3397,Tonstein: Kohle,,15111102.0
+3398,Tonstein: mergelig,,15111102.0
+3399,Tonstein: mergelig: Bitumen,,15111102.0
+3400,Tonstein: mergelig: Glimmer,,15111102.0
+3401,Tonstein: Pyrit,,15111102.0
+3402,Tonstein: sandig,,15111102.0
+3403,Tonstein: sandig: Glimmer,,15111102.0
+3404,Tonstein: sandig: Kohle,,15111102.0
+3405,Tonstein: sandig-dolomitisch,,15111102.0
+3406,Tonstein: sandig-kalkig,,15111102.0
+3407,Tonstein: sandig-mergelig,,15111102.0
+3408,Tonstein: sandig-schiefrig,,15111102.0
+3409,Tonstein: schiefrig,,15111102.0
+3410,Tonstein: schiefrig: Anthrazit,,15111102.0
+3411,Tonstein: schiefrig: Bitumen,,15111102.0
+3412,Tonstein: siltig,,15111102.0
+3413,Tonstein: siltig: Glimmer,,15111102.0
+3414,Tonstein: siltig-dolomitisch,,15111102.0
+3415,Tonstein: siltig-kalkig,,15111102.0
+3416,Tonstein: siltig-schiefrig,,15111102.0
+3417,Tonstein: tuffitisch,,15111102.0
+3418,Mergelstein,,15111089.0
+3419,Mergelstein: Bioklasten,,15111132.0
+3420,Mergelstein: Bioklasten-Ooide,,15111132.0
+3421,Mergelstein: Bitumen,,15111132.0
+3422,Mergelstein: dolomitisch,,15111132.0
+3287,Gestein,,
+3288,Gestein: sedimentär,,15111001.0
+3289,Gestein: klastisch,,15111002.0
+3290,Gestein: psephitisch,,15111003.0
+3291,Brekzie,,15111001.0
+3292,Brekzie: sedimentär,,15111004.0
+3293,Brekzie: dolomitisch,,15111006.0
+3294,Brekzie: dolomitisch: Bitumen,,15111006.0
+3295,Brekzie: dolomitisch-polymikt,,15111006.0
+3296,Brekzie: kalkig,,15111006.0
+3297,Brekzie: kalkig: Bioklasten,,15111006.0
+3298,Brekzie: kalkig-dolomitisch,,15111006.0
+3299,Brekzie: kalkig-polymikt,,15111006.0
+3300,Brekzie: kristallin,,15111006.0
+3301,Brekzie: kristallin: polymikt,,15111006.0
+3302,Brekzie: monomikt,,15111006.0
+3303,Brekzie: polymikt,,15111006.0
+3304,Brekzie: sandig,,15111006.0
+3552,Kalkstein: spätig: Glaukonit,,15111186.0
+3553,Kalkstein: spätig: Glaukonit-Chert,,15111186.0
+3554,Kalkstein: spätig: Ooide,,15111186.0
+3555,Kalkstein: stromatolithisch,,15111186.0
+3556,Kalkstein: stromatolithisch: Eisenmineralien-Phosphorit,,15111186.0
+3557,Kalkstein: tonig,,15111186.0
+3558,Kalkstein: tonig: Bioklasten,,15111186.0
+3559,Kalkstein: tonig: Chert,,15111186.0
+3560,Kalkstein: tonig-schiefrig,,15111186.0
+3561,Kalkstein: tufig,,15111186.0
+3562,Tuff: kalkig,,15111186.0
+3563,Dolomitstein,,15111181.0
+3564,Dolomitstein: Bioklasten,,15111277.0
+3565,Dolomitstein: Bitumen,,15111277.0
+3566,Dolomitstein: kalkig,,15111277.0
+3567,Dolomitstein: kieselig,,15111277.0
+3568,Dolomitstein: mikritisch,,15111277.0
+3682,Granit: Biotit-Cordierit,,15111390.0
+3683,Granit: Biotit-Granat,,15111390.0
+3684,Granit: Biotit-Muskovit,,15111390.0
+3685,Granit: Hornblende,,15111390.0
+3686,Granit: metasomatisch,,15111390.0
+3687,Granit: mikrokristallin,,15111390.0
+3688,Granit: mikrokristallin-porphyrisch,,15111390.0
+3689,Granit: monzonitisch,,15111390.0
+3690,Granit: mylonitisch,,15111390.0
+3691,Granit: porphyrisch,,15111390.0
+3692,Granit: porphyrisch: Biotit,,15111390.0
+3693,Granit: porphyrisch: Hornblende,,15111390.0
+3694,Granit: schiefrig,,15111390.0
+3695,Granit: syenitisch,,15111390.0
+3696,Granodiorit,,15111390.0
+3697,Granodiorit: aplitisch,,15111390.0
+3698,Granodiorit: Hornblende,,15111390.0
+3699,Granodiorit: porphyrisch,,15111390.0
+3700,Granodiorit: schiefrig,,15111390.0
+3701,Monzonit,,15111390.0
+3702,Monzonit: Feldspatoid,,15111390.0
+3703,Monzonit: porphyrisch: Quarz,,15111390.0
+3704,Monzonit: Quarz,,15111390.0
+3705,Tonalit,,15111390.0
+3706,Tonalit: Biotit,,15111390.0
+3707,Tonalit: Biotit-Hornblende,,15111390.0
+3708,Gestein: syenitisch,,15111389.0
+3709,Syenit,,15111422.0
+3710,Syenit: Alkalifeldspat,,15111422.0
+3711,Syenit: Feldspatoid,,15111422.0
+3712,Syenit: Nephelin,,15111422.0
+3713,Syenit: porphyrisch: Quarz,,15111422.0
+3714,Syenit: Quarz,,15111422.0
+3715,Syenit: Quarz-Hornblende,,15111422.0
+3716,Gestein: dioritisch,,15111389.0
+3717,Diorit,,15111430.0
+3718,Diorit: Biotit-Hornblende,,15111430.0
+3719,Diorit: migmatitisch,,15111430.0
+3720,Diorit: mikrokristallin,,15111430.0
+3721,Diorit: monzonitisch,,15111430.0
+3722,Diorit: porphyrisch,,15111430.0
+3723,Diorit: Quarz,,15111430.0
+3724,Diorit: Quarz-Biotit,,15111430.0
+3725,Diorit: Quarz-Epidot,,15111430.0
+3726,Diorit: Quarz-Hornblende,,15111430.0
+3727,Diorit: schiefrig,,15111430.0
+3728,Gestein: gabbroisch,,15111389.0
+3729,Gabbro,,15111442.0
+3730,Gabbro: Hornblende,,15111442.0
+3731,Gabbro: mikrokristallin,,15111442.0
+3732,Gabbro: monzonitisch,,15111442.0
+3733,Gabbro: monzonitisch: Nephelin,,15111442.0
+3734,Gabbro: mylonitisch,,15111442.0
+3735,Gabbro: Olivin,,15111442.0
+3736,Gabbro: Omphazit,,15111442.0
+3737,Gabbro: Orthopyroxen,,15111442.0
+3738,Gabbro: Quarz,,15111442.0
+3739,Gestein: foidolitisch,,15111389.0
+3759,Kataklastit,,15111470.0
+3760,Mylonit,,15111470.0
+3761,Mylonit: kalkig,,15111474.0
+3762,Mylonit: phyllitisch,,15111474.0
+3763,Pseudotachyllit,,15111470.0
+3764,Hornfels,,15111468.0
+3765,Granofels,,15111468.0
+3766,Granofels: Albit,,15111479.0
+3767,Granofels: Granat,,15111479.0
+3768,Granofels: Kalksilikat,,15111479.0
+3769,Granofels: Olivin,,15111479.0
+3770,Granofels: Pyroxen,,15111479.0
+3771,Granofels: Silikat-Karbonat,,15111479.0
+3772,Marmor,,15111468.0
+3773,Marmor: dolomitisch,,15111486.0
+3774,Marmor: dolomitisch-schiefrig,,15111486.0
+3775,Marmor: kalkig,,15111486.0
+3776,Marmor: kalkig: Chlorit,,15111486.0
+3777,Marmor: kalkig: Serizit,,15111486.0
+3778,Marmor: kalkig-kieselig,,15111486.0
+3779,Marmor: Kalksilikat,,15111486.0
+3780,Marmor: kieselig,,15111486.0
+3781,Marmor: konglomeratisch,,15111486.0
+3782,Marmor: konglomeratisch-kalkig,,15111486.0
+3783,Marmor: metasomatisch,,15111486.0
+3784,Marmor: sandig,,15111486.0
+3785,Marmor: sandig: Bioklasten,,15111486.0
+3786,Marmor: schiefrig,,15111486.0
+3787,Marmor: Serizit,,15111486.0
+3788,Marmor: Silikat,,15111486.0
+3789,Marmor: tonig,,15111486.0
+3790,Marmor: tonig-schiefrig,,15111486.0
+3791,Quarzit,,15111468.0
+3792,Quarzit: Albit,,15111505.0
+3793,Quarzit: Chlorit,,15111505.0
+3794,Quarzit: kalkig,,15111505.0
+3795,Quarzit: Serizit,,15111505.0
+3796,Gneis,,15111468.0
+3797,Gneis: Albit,,15111510.0
+3798,Gneis: Albit-Oligoklas,,15111510.0
+64,Rückzugsschotter,4.0,15101028.0
+65,Stauschotter,4.0,15101028.0
+67,Murgangablagerung,4.0,15101035.0
+68,"Alluvion, undifferenziert",3.0,15101026.0
+69,fluviatiler Schotter,4.0,15101039.0
+70,Bachschutt,4.0,15101039.0
+71,"glazilakustrisches Sediment, undifferenziert",4.0,15101044.0
+72,glazilakustrisches Deltasediment,4.0,15101046.0
+73,subaquatisch abgelagerte Moräne (Waterlaid Till),4.0,15101046.0
+74,"künstliche Ablagerung, undifferenziert",3.0,15101067.0
+75,"Aufschüttung, Damm",4.0,15101069.0
+76,Auffüllung,4.0,15101069.0
+77,Deponie,4.0,15101069.0
+78,Halde,4.0,15101069.0
+79,"Quelltuff (Kalksinter, Lockergestein)",3.0,15101081.0
+80,hydrochemische Bildungen (Kalksinter),2.0,15101001.0
+81,"Travertin (Kalksinter, Lockergestein)",3.0,15101081.0
+3740,Foidolit,,15111453.0
+3741,Gestein: ultramafisch,,15111344.0
+3742,Peridotit,,15111455.0
+3743,Peridotit: plutonisch,,15111456.0
+3744,Peridotit: plutonisch: Klinopyroxen-Orthopyroxen,,15111456.0
+3745,Peridotit: plutonisch: Olivin,,15111456.0
+3746,Peridotit: plutonisch: Olivin-Klinopyroxen,,15111456.0
+3747,Peridotit: plutonisch: Olivin-Orthopyroxen,,15111456.0
+3748,Peridotit: metamorph,,15111456.0
+3749,Peridotit: metamorph: Hornblende,,15111456.0
+3750,Peridotit: metamorph: Phlogopit,,15111456.0
+3751,Peridotit: metamorph: Serpentin,,15111456.0
+3752,Pyroxenit,,15111455.0
+3753,Pyroxenit: plutonisch,,15111466.0
+3754,Gestein: metamorph,,15111455.0
+3755,Gestein: metasomatisch,,15111468.0
+3756,Gestein: tektonisch,,15111468.0
+3757,Kakirit,,15111470.0
+3758,Kakirit: tonig,,15111471.0
+3569,Dolomitstein: Ooide,,15111277.0
+3570,Dolomitstein: Ooide-Chert,,15111277.0
+3571,Dolomitstein: sandig,,15111277.0
+3572,Dolomitstein: sandig-siltig,,15111277.0
+3573,Dolomitstein: sandig-tonig,,15111277.0
+3574,Dolomitstein: sandig-tonig: Bitumen,,15111277.0
+3575,Dolomitstein: schiefrig,,15111277.0
+3576,Dolomitstein: siltig,,15111277.0
+3577,Dolomitstein: siltig-tonig,,15111277.0
+3578,Dolomitstein: spätig,,15111277.0
+3579,Dolomitstein: spätig: Bioklasten,,15111277.0
+3580,Dolomitstein: stromatolithisch,,15111277.0
+3581,Dolomitstein: stromatolithisch: Chert,,15111277.0
+3582,Dolomitstein: tonig,,15111277.0
+3583,Rauwacke,,15111001.0
+3584,Rauwacke: sandig,,15111299.0
+3585,Rauwacke: sedimentär,,15111181.0
+3586,Rauwacke: kataklastisch,,15111473.0
+3587,Evaporit,,15111002.0
+3588,Evaporit: Anhydrit,,15111301.0
+3589,Evaporit: Gips,,15111301.0
+3590,Evaporit: Halit,,15111301.0
+3591,Evaporit: Sulfat,,15111301.0
+3592,Evaporit: tonig,,15111301.0
+3593,Evaporit: tonig: Anhydrit,,15111301.0
+3594,Evaporit: tonig: Gips,,15111301.0
+3595,Gestein: kieselig,,15111001.0
+3596,Gestein: kieselig-sedimentär,,15111181.0
+3597,Gestein: kieselig-kryptokristallin,,15111310.0
+3598,Gestein: kieselig-pedogen,,15111310.0
+3599,Gestein: kieselig: Radiolarien,,15111310.0
+3600,Gestein: kieselig: Schwämme,,15111310.0
+3601,Gestein: kieselig-metamorph,,15111468.0
+3602,Gestein: Phosphorit,,15111002.0
+3603,Gestein: organisch,,15111002.0
+3604,Gestein: organisch: Anthrazit,,15111317.0
+3605,Gestein: organisch: Kohle,,15111317.0
+3606,Gestein: organisch: Lignit,,15111317.0
+3607,Gestein: pedogen,,15111002.0
+3608,Gestein: residual,,15111002.0
+3609,Gestein: residual: Eisenmineralien,,15111322.0
+3610,Gestein: residual: Silikat,,15111322.0
+3611,Gestein: residual: Silikat-Eisenmineralien,,15111322.0
+3612,Gestein: residual-sandig,,15111322.0
+3613,Gestein: residual-sandig: Quarz,,15111322.0
+3614,Gestein: residual-siltig,,15111322.0
+3615,Gestein: residual-tonig,,15111322.0
+3616,Gestein: residual-tonig: Eisenpisoide,,15111322.0
+3617,Gestein: residual-tonig: Kaolinit,,15111322.0
+3618,Gestein: residual-tonig: Limonit,,15111322.0
+3619,Gestein: Eisenmineralien,,15111002.0
+3620,Gestein: Eisenooide,,15111333.0
+3621,Gestein: Eisenpisoide,,15111333.0
+3622,Gestein: pyroklastisch,,15111003.0
+3623,Ignimbrit,,15111336.0
+3624,Tuff,,15111336.0
+3625,Tuff: vulkanisch,,15111338.0
+3626,Tuff: vulkanisch: Asche,,15111338.0
+3627,Tuff: vulkanisch: Kristalle,,15111338.0
+3628,Tuff: vulkanisch: Lapilli,,15111338.0
+3629,Bentonit,,15111338.0
+3630,Gestein: kristallin,,15111001.0
+3631,Gestein: saur,,15111344.0
+3632,Gestein: basisch,,15111344.0
+3633,Gestein: magmatisch,,15111344.0
+3634,Gestein: vulkanisch,,15111347.0
+3635,Gestein: vulkanisch: Karbonat,,15111348.0
+3636,Gestein: saur-vulkanisch,,15111348.0
+3637,Gestein: rhyolithisch,,15111348.0
+3638,Rhyolith,,15111351.0
+3639,Rhyolith: Alkalifeldspat,,15111352.0
+3640,Rhyolith: ignimbritisch,,15111352.0
+3641,Rhyolith: porphyrisch,,15111352.0
+3642,Gestein: dazitisch,,15111348.0
+3643,Dazit,,15111356.0
+3644,Dazit: rhyolithisch,,15111356.0
+3645,Gestein: latitisch,,15111348.0
+3646,Latit,,15111359.0
+3647,Gestein: trachytisch,,15111348.0
+3648,Trachyt,,15111361.0
+3649,Trachyt: Alkalifeldspat,,15111361.0
+3650,Gestein: andesitisch,,15111348.0
+3651,Andesit,,15111364.0
+3652,Gestein: basisch-vulkanisch,,15111364.0
+3653,Gestein: basaltisch,,15111348.0
+3654,Basalt,,15111367.0
+3655,Basalt: Olivin,,15111367.0
+3656,Basalt: verwittert: Albit,,15111367.0
+3657,Gestein: phonolithisch,,15111348.0
+3658,Phonolith,,15111371.0
+3659,Phonolith: tephritisch,,15111371.0
+3660,Gestein: tephritisch,,15111348.0
+3661,Tephrit,,15111374.0
+407,In-situ-Verwitterungsschutt,3.0,15101075.0
+2327,strukturierter Hangschutt,,15101009.0
+2649,Tsunamiablagerung,3.0,15101044.0
+2650,Entwässerungssediment,2.0,15101001.0
+2651,Sedimentärer Gang (clastic dike),3.0,15101086.0
+2968,Lockergestein,1.0,
+3662,Tephrit: phonolithisch,,15111374.0
+3663,Basanit,,15111348.0
+3664,Gestein: foiditisch,,15111348.0
+3665,Foidit,,15111378.0
+3666,Tuffit,,15111348.0
+3667,Gestein: gangartig,,15111347.0
+3668,Gestein: gangartig: Quarz,,15111381.0
+3669,Gestein: saur-gangartig,,15111381.0
+3670,Aplit,,15111383.0
+3671,Pegmatit,,15111383.0
+3672,Granophyr,,15111383.0
+3673,Gestein: basisch-gangartig,,15111381.0
+3674,Rodingit,,15111387.0
+3675,Gestein: plutonisch,,15111347.0
+3676,Gestein: granitisch,,15111389.0
+3677,Granit,,15111390.0
+3678,Granit: Alkalifeldspat,,15111390.0
+3679,Granit: aplitisch,,15111390.0
+3680,Granit: aplitisch: Granat,,15111390.0
+3681,Granit: Biotit,,15111390.0
+3799,Gneis: Aluminosilikat,,15111510.0
+3800,Gneis: Amphibol,,15111510.0
+3801,Gneis: aplitisch,,15111510.0
+3802,Gneis: augig,,15111510.0
+3803,Gneis: augig: Phengit,,15111510.0
+3804,Gneis: Biotit,,15111510.0
+3805,Gneis: Biotit-Hornblende,,15111510.0
+3806,Gneis: Biotit-Muskovit,,15111510.0
+3807,Gneis: Biotit-Plagioklas,,15111510.0
+3808,Gneis: Chlorit,,15111510.0
+3809,Gneis: dioritisch,,15111510.0
+3810,Gneis: gebändert,,15111510.0
+3811,Gneis: gebändert: Granat,,15111510.0
+3812,Gneis: Granat,,15111510.0
+3813,Gneis: granitisch,,15111510.0
+3814,Gneis: granitisch-augig,,15111510.0
+3815,Gneis: granodioritisch,,15111510.0
+3816,Gneis: granulitisch,,15111510.0
+3817,Gneis: Hornblende,,15111510.0
+3818,Gneis: Kyanit,,15111510.0
+3819,Gneis: magmatisch,,15111510.0
+3820,Gneis: magmatisch-augig,,15111510.0
+3821,Gneis: magmatisch-augig: Cordierit,,15111510.0
+3822,Gneis: metasomatisch,,15111510.0
+3823,Gneis: migmatitisch,,15111510.0
+3824,Gneis: migmatitisch: Cordierit,,15111510.0
+3825,Gneis: migmatitisch-augig,,15111510.0
+3826,Gneis: Mikroklin,,15111510.0
+3827,Gneis: Muskovit,,15111510.0
+3828,Gneis: mylonitisch,,15111510.0
+3829,Gneis: Phengit,,15111510.0
+3830,Gneis: phyllitisch,,15111510.0
+3831,Gneis: psammitisch,,15111510.0
+3832,Gneis: psephitisch,,15111510.0
+3833,Gneis: psephitisch: Phengit,,15111510.0
+3834,Gneis: schiefrig,,15111510.0
+3835,Gneis: schiefrig: Biotit,,15111510.0
+3836,Gneis: schiefrig: Chlorit,,15111510.0
+3837,Gneis: schiefrig: Hornblende,,15111510.0
+3838,Gneis: schiefrig-augig,,15111510.0
+3839,Gneis: sedimentär,,15111510.0
+3840,Gneis: Serizit,,15111510.0
+3841,Gneis: Serizit-Granat,,15111510.0
+3842,Granulit,,15111468.0
+3843,Granulit: Biotit-Granat,,15111556.0
+3844,Granulit: Feldspat-Granat,,15111556.0
+3845,Migmatit,,15111468.0
+3846,Migmatit: Cordierit,,15111559.0
+3847,Phyllit,,15111468.0
+3848,Phyllit: Graphit,,15111561.0
+3849,Phyllit: kalkig,,15111561.0
+3850,Phyllit: Quarz,,15111561.0
+3851,Schiefer,,15111468.0
+3852,Schiefer: Aktinolith,,15111565.0
+3853,Schiefer: Amphibol,,15111565.0
+3854,Schiefer: Anthrazit,,15111565.0
+3855,Schiefer: Antigorit,,15111565.0
+3856,Schiefer: augig: Glimmer,,15111565.0
+3857,Schiefer: Biotit,,15111565.0
+3858,Schiefer: Biotit-Apatit,,15111565.0
+3859,Schiefer: Chlorit,,15111565.0
+3860,Schiefer: Chlorit-Epidot,,15111565.0
+3861,Schiefer: Chlorit-Talk,,15111565.0
+3862,Schiefer: Chloritoid,,15111565.0
+3863,Schiefer: Chloritoid-Kyanit,,15111565.0
+3864,Schiefer: Glaukophan,,15111565.0
+3865,Schiefer: Glimmer,,15111565.0
+3866,Schiefer: Glimmer-Chlorit,,15111565.0
+3867,Schiefer: Glimmer-Chloritoid,,15111565.0
+3868,Schiefer: Glimmer-Granat,,15111565.0
+3869,Schiefer: Glimmer-Graphit,,15111565.0
+3870,Schiefer: Glimmer-Hornblende,,15111565.0
+3871,Schiefer: Granat,,15111565.0
+3872,Schiefer: Graphit,,15111565.0
+3873,Schiefer: Hornblende,,15111565.0
+3874,Schiefer: Hornblende-Granat,,15111565.0
+3875,Schiefer: kalkig,,15111565.0
+3876,Schiefer: kalkig: Glimmer,,15111565.0
+3877,Schiefer: kalkig: Serizit,,15111565.0
+3878,Schiefer: kalkig: Zoisit,,15111565.0
+3879,Schiefer: kieselig,,15111565.0
+3880,Schiefer: Kohle,,15111565.0
+3881,Schiefer: konglomeratisch,,15111565.0
+3882,Schiefer: konglomeratisch-kalkig,,15111565.0
+3883,Schiefer: Kyanit,,15111565.0
+3884,Schiefer: mergelig,,15111565.0
+3885,Schiefer: Muskovit-Albit,,15111565.0
+3886,Schiefer: Quarz,,15111565.0
+3887,Schiefer: Quarz-Chlorit,,15111565.0
+3888,Schiefer: Quarz-Glimmer,,15111565.0
+3889,Schiefer: Quarz-Serizit,,15111565.0
+3890,Schiefer: sandig,,15111565.0
+3891,Schiefer: sandig-kalkig,,15111565.0
+3892,Schiefer: sandig-tonig,,15111565.0
+3893,Schiefer: Serizit,,15111565.0
+3894,Schiefer: Serizit-Chlorit,,15111565.0
+3895,Schiefer: Serizit-Staurolith,,15111565.0
+3896,Schiefer: Talk,,15111565.0
+3897,Schiefer: Talk-Kyanit,,15111565.0
+3898,Schiefer: Talk-Serpentin,,15111565.0
+3899,Schiefer: Talk-Tremolit,,15111565.0
+3900,Schiefer: tonig,,15111565.0
+3901,Schiefer: tonig: Anthrazit,,15111565.0
+3902,Schiefer: tonig: Bitumen,,15111565.0
+3903,Schiefer: tonig: Graphit,,15111565.0
+3904,Schiefer: tonig-kalkig,,15111565.0
+3905,Schiefer: tonig-kieselig,,15111565.0
+3906,Schiefer: tonig-kieselig: Bitumen,,15111565.0
+3907,Schiefer: Tremolit,,15111565.0
+3908,Schiefer: Turmalin,,15111565.0
+3909,Schiefer: Zoisit,,15111565.0
+3910,Schiefer: Zoisit-Fuchsit,,15111565.0
+3911,Gestein: mafisch,,15111344.0
+3912,Prasinit,,15111625.0
+3913,Prasinit: Albit-Chlorit,,15111626.0
+3914,Prasinit: Chlorit,,15111626.0
+3915,Prasinit: schiefrig,,15111626.0
+3916,Amphibolit,,15111625.0
+3917,Amphibolit: gebändert,,15111630.0
+3918,Amphibolit: Granat,,15111630.0
+3919,Amphibolit: Hornblende,,15111630.0
+3920,Amphibolit: migmatitisch,,15111630.0
+3921,Eklogit,,15111625.0
+3922,Serpentinit,,15111455.0
+3923,Serpentinit: Antigorit,,15111636.0
+3924,Serpentinit: brekziös: Karbonat,,15111636.0
+3925,Serpentinit: Chrysotil,,15111636.0
