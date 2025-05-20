@@ -2622,51 +2622,68 @@ themes:
 # TODO: description should be taken from abbove
       mandatory: true
 annexes:
+- name: gc_geol_mapping_unit_att   # TODO: implement
+  type_: table
+  fname: Geol_Mapping_Unit_Att.json
+  description:
+    de: Kartiereinheiten
+    fr: Unités de cartographie
 - name: GC_LITSTRAT_BED_CD
+  type_: list
   description:
     de: Wertetabelle der lithostratigraphischen Einheiten
     fr: Table des valeurs des unités lithostratigraphiques
 - name: GC_LITSTRAT_UNCO_CD
+  type_: list
   description:
     de: Wertetabelle der lithostratigraphischen Einheiten
     fr: Table des valeurs des unités lithostratigraphiques
 - name: GC_LITHO_CD
+  type_: list
   description:
     de: Wertetabellen der lithologischen Beschreibung
     fr: Tables des valeurs de la description lithologique
 - name: GC_LITHO_UNCO_CD
+  type_: list
   description:
     de: Wertetabellen der lithologischen Beschreibung
     fr: Tables des valeurs de la description lithologique (roches meubles)
 
 - name: GC_CHRONO_CD
+  type_: list
   description:
     de: Wertetabelle der chronostratigraphischen Einheiten
     fr: Table des valeurs des unités chronostratigraphiques
 - name: GC_TECTO_CD
+  type_: list
   description:
     de: Wertetabelle der tektonischen Einheiten
     fr: Table des valeurs des unités tectoniques
 - name: GC_MINERAL_CD
+  type_: list
   description:
     de: Wichtiges Mineral des metamorphen Gesteins
     fr: Minéral important de la roche métamorphique
 - name: gc_admixture
+  type_: list
   fname: Admixture.json
   description:
     de: Beimengung
     fr: Incorporation
 - name: gc_composit
+  type_: list
   fname: Composit.json
   description:
     de: Zusammensetzung des Lockergesteins
     fr: Composition de la roche meuble
 - name: gc_charcat
+  type_: list
   fname: Charcat.json
   description:
     de: Spezifische Eigenschaft.
     fr: Structure sédimentaire
 - name: gc_system   # TODO: file is missing
+  type_: list
   fname: System.json
   description:
     de: Fossiliengruppe.
