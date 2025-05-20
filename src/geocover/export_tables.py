@@ -158,6 +158,9 @@ def export_tables(output_dir, workspace, all, include_i):
                 df.to_excel(writer, sheet_name=short_name.upper())
             except PermissionError as e:
                 logging.error(f"Permission error: {table} is probably already opened")
+    with open(os.path.join(output_dir, "README.txt"), "w") as f:
+        now = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        f.write(f"Tables exported  on {now}")
 
     logging.info(f"Exported {len(tables)} to {output_dir}")
 
