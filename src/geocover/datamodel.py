@@ -77,6 +77,7 @@ with open(
 
     tables_dict = tables_
 
+
 df_trad_load = pd.read_csv(
     os.path.join(input_dir, "GeolCodeText_Trad_230317.csv"), sep=";"
 )
@@ -106,6 +107,7 @@ df_trad = merged_df.drop_duplicates(subset=["GeolCodeInt"], keep="last")
 df_trad.to_excel(translation_xlsx_path, index=False, engine="openpyxl")
 
 logger.info(f"Saving file to {translation_xlsx_path} with {len(df_trad)} translations")
+
 
 
 def get_datetime_with_tz():
@@ -184,7 +186,9 @@ def create_msg(df):
 # TODO: not at the right place
 create_msg(df_trad)
 
+
 df_trad = df_trad.set_index(["GeolCodeInt"])
+
 
 
 class Translator:
@@ -376,7 +380,9 @@ def get_table_values(name):
         )
     except Exception as e:
         logger.error(
-            f"Error reading value for table {name}: An unexpected error occurred: {e}: {geol_dict}, {df_trad}"
+
+            f"Error reading value for table {name}: An unexpected error occurred: {e}: {geol_dict}"
+
         )
 
     return {}
