@@ -154,7 +154,7 @@ def export_tables(output_dir, workspace, all, include_i):
 
             try:
                 df.to_csv(os.path.join(output_dir, f"{filename}.csv"), index=True)
-                df.to_json(os.path.join(output_dir, f"{filename}.json"), index=True)
+                df.to_json(os.path.join(output_dir, f"{filename}.json"), indent=4, index=True)
                 df.to_excel(writer, sheet_name=short_name.upper())
             except PermissionError as e:
                 logging.error(f"Permission error: {table} is probably already opened")
