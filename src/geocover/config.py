@@ -41,3 +41,28 @@ tables = [
     "Litho.csv",
     "Litstrat.csv",
 ]
+
+IGNORE_FIELDS = [
+    "OPERATOR",
+    "DATEOFCREATION",
+    "DATEOFCHANGE",
+    "CREATION_YEAR",
+    "CREATION_MONTH",
+    "REVISION_YEAR",
+    "REVISION_MONTH",
+    "REASONFORCHANGE",
+    "OBJECTORIGIN",
+    "OBJECTORIGIN_YEAR",
+    "OBJECTORIGIN_MONTH",
+    "KIND",
+    "RC_ID",
+    "WU_ID",
+    "RC_ID_CREATION",
+    "WU_ID_CREATION",
+    "REVISION_QUALITY",
+    "ORIGINAL_ORIGIN",
+    "INTEGRATION_OBJECT_UUID",
+    "SHAPE.AREA",
+    "SHAPE.LEN",
+    "MORE_INFO",
+]
