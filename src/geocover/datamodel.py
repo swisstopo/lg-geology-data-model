@@ -33,7 +33,7 @@ PACKAGE_NAME = "geocover"
 
 
 ATTRIBUTES_TO_IGNORE = [
-    "PRINTED" "OBJECTORIGIN",
+    "PRINTEDOBJECTORIGIN",
     "REASONFORCHANGE",
     "ORIGINAL_ORIGIN",
     "OBJECTORIGIN_YEAR",
@@ -57,18 +57,22 @@ ATTRIBUTES_TO_IGNORE = [
 ]
 
 
-with open(os.path.join(input_dir, "coded_domains.json"), "r") as f:
+"""with open(os.path.join(input_dir, "coded_domains.json"), "r") as f:
     domains = json.load(f)
 
 with open(os.path.join(input_dir, "subtypes_dict.json"), "r") as f:
-    subtypes = json.load(f)
+    subtypes = json.load(f)"""
 
-with open(os.path.join(input_dir, "geocover-schema-sde.json"), "r") as f:
+with open("H:\code\lg-geology-data-model\exports_i\gcoveri_simple.json", "r") as f:
     sde_schema = json.load(f)
+    logger.info(sde_schema.keys())
     featclasses_dict = sde_schema.get("featclasses")
     tables_ = sde_schema.get("tables")
 
-    tables_dict = featclasses_dict | tables_
+    domains = sde_schema.get("coded_domain")
+    subtypes = sde_schema.get("subtypes")
+
+    tables_dict = tables_
 
 df = pd.read_csv(os.path.join(input_dir, "GeolCodeText_Trad_230317.csv"), sep=";")
 
@@ -511,15 +515,13 @@ def export(datamodel, output, format):
     datamodel.export_to_excel(output)
 
 
-
-
-@click.command(name='import')
+@click.command(name="import")
 @click.argument("datamodel", type=click.Path(exists=True))
 @click.option(
     "--dryrun",
     "-n",
     help="Only test. Don't write",
-     is_flag=True,
+    is_flag=True,
     default=True,
 )
 def import_model(datamodel, dryrun):
@@ -536,7 +538,6 @@ def import_model(datamodel, dryrun):
     logger.info("Export to YAML")
 
     datamodel.export_to_yaml("imported_model.yaml")
-
 
 
 @click.command()
