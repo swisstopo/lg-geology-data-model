@@ -374,6 +374,7 @@ def get_table_values(name):
         file_path = os.path.join(input_dir, name)
         # df = pd.read_csv(file_path)
 
+
         with open(file_path, "r", encoding="utf-8") as f:
             geol_dict = json.load(f)
 
@@ -391,10 +392,10 @@ def get_table_values(name):
             f"Error reading value for table {name}: The CSV file {file_path} was not found."
         )
     except pd.errors.EmptyDataError:
-        logger.error("Error reading value for table {name}: The CSV file is empty.")
+        logger.error(f"Error reading value for table {name}: The CSV file is empty.")
     except pd.errors.ParserError:
         logger.error(
-            "Error reading value for table {name}: There was a problem parsing the CSV file."
+            f"Error reading value for table {name}: There was a problem parsing the {file_path} file."
         )
     except Exception as e:
         logger.error(
