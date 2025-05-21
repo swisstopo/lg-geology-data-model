@@ -63,8 +63,10 @@ ATTRIBUTES_TO_IGNORE = [
 with open(os.path.join(input_dir, "subtypes_dict.json"), "r") as f:
     subtypes = json.load(f)"""
 
+json_struct_path = os.path.join(input_dir, "gcoveri_simple.json")
+logger.info(f"Reading Schema from {json_struct_path}")
 with open(
-    "/home/marco/code/github.com/lg-geology-data-model/exports_i/gcoveri_simple.json",
+    json_struct_path,
     "r",
 ) as f:
     sde_schema = json.load(f)
@@ -84,19 +86,12 @@ df_trad_load = pd.read_csv(
 
 columns = ["GeolCode", "GeolCodeInt", "DE", "FR"]
 
-# Create an empty DataFrame with only column definitions
-# df_trad_load = pd.DataFrame(columns=columns)
-
 # Load JSON data from a file
 with open(
     os.path.join(input_dir, "all_codes_dict.json"), "r", encoding="utf-8"
 ) as file:
     code_dict = json.load(file)
 
-'''df_codes = pd.DataFrame(list(code_dict.items()), columns=["GeolCodeInt", "DE"])
-df_codes["FR"] = df_codes["DE"]
-df_codes["GeolCode"] = ""'''
-# 2. Create a DataFrame
 df = pd.DataFrame(
     {
         "GeolCodeInt": list(code_dict.keys()),
@@ -106,9 +101,7 @@ df = pd.DataFrame(
     }
 )
 
-print(df.head())
 
-# 3. Convert the 'GeolCodeInt' column to integer type
 df["GeolCodeInt"] = df["GeolCodeInt"].astype("string")
 
 
@@ -116,14 +109,15 @@ merged_df = pd.concat([df_trad_load, df])
 merged_df = merged_df.drop(columns=["GeolCode"], errors="ignore")
 
 translation_xlsx_path = os.path.join(input_dir, "all_trads.xlsx")
-# Drop duplicates, keeping only the last occurrence of each `GEOLCODE`
+
 df_trad = merged_df.drop_duplicates(subset=["GeolCodeInt"], keep="last")
 df_trad.to_excel(translation_xlsx_path, index=False, engine="openpyxl")
 df_trad["GeolCodeInt"] = df_trad["GeolCodeInt"].astype("string")
 df_trad["DE"] = df_trad["DE"].astype("string")
 df_trad["FR"] = df_trad["FR"].astype("string")
-print(df_trad.dtypes)
+
 df_trad = df_trad.set_index(["GeolCodeInt"])
+logger.info(f"Translation file has {len(df_trad)} translations")
 logger.info(f"Saving file to {translation_xlsx_path} with {len(df_trad)} translations")
 
 
@@ -373,7 +367,6 @@ def get_table_values(name):
     try:
         file_path = os.path.join(input_dir, name)
         # df = pd.read_csv(file_path)
-
 
         with open(file_path, "r", encoding="utf-8") as f:
             geol_dict = json.load(f)
