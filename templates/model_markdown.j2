@@ -92,10 +92,10 @@ _{{_("Datatype")}} :  {{ attr.att_type  }}_
 {% endif %}
 
 {% if 'table' in annex -%}
-|GMU Code|Litho main| Chrono base|
-|---------------|----------------------------------------|----------------------------------------|
+| Code    |  GMU      |Litho main | Litho sec | Litho ter |  Formation | Chrono top | Chrono base | Correlation |
+|---------|-----------|-----------|-----------|------------|------------|-------------|-------------|
 {% for item in annex.table -%}
-|{{item.GEOL_MAPPING_UNIT | int  }} | {{item.LITHO_MAIN|tr(item.LITHO_MAIN)}} | {{item.CHRONO_BASE|tr(item.CHRONO_BASE)}}     |
+|{{item.GEOL_MAPPING_UNIT}} |{{item.GEOL_MAPPING_UNIT | string|tr(item.GEOL_MAPPING_UNIT)}} | {{item.LITHO_MAIN|string|tr(item.LITHO_MAIN)}}  | {{item.LITHO_SEC|string|tr(item.LITHO_SEC)}}   | {{item.LITHO_TER|string|tr(item.LITHO_TER)}} |  {{item.LITSTRAT_FORMATION_BANK|string|tr(item.LITSTRAT_FORMATION_BANK)}} |  {{item.CHRONO_TOP|string|tr(item.CHRONO_TOP)}}     | {{item.CHRONO_BASE|string|tr(item.CHRONO_BASE)}}   | {{item.CORRELATION|string|tr(item.CORRELATION)}}  |
 {% endfor %}
 {% endif %}
 

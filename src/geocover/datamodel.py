@@ -77,7 +77,35 @@ with open(
 
     tables_dict = tables_
 
-df = pd.read_csv(os.path.join(input_dir, "GeolCodeText_Trad_230317.csv"), sep=";")
+df_trad_load = pd.read_csv(
+    os.path.join(input_dir, "GeolCodeText_Trad_230317.csv"), sep=";"
+)
+
+columns = ["GeolCode", "GeolCodeInt", "DE", "FR"]
+
+# Create an empty DataFrame with only column definitions
+# df_trad_load = pd.DataFrame(columns=columns)
+
+# Load JSON data from a file
+with open(
+    os.path.join(input_dir, "all_codes_dict.json"), "r", encoding="utf-8"
+) as file:
+    code_dict = json.load(file)
+
+df_codes = pd.DataFrame(list(code_dict.items()), columns=["GeolCodeInt", "DE"])
+df_codes["FR"] = df_codes["DE"]
+df_codes["GeolCode"] = ""
+
+
+merged_df = pd.concat([df_trad_load, df_codes])
+merged_df = merged_df.drop(columns=["GeolCode"], errors="ignore")
+
+translation_xlsx_path = os.path.join(input_dir, "all_trads.xlsx")
+# Drop duplicates, keeping only the last occurrence of each `GEOLCODE`
+df_trad = merged_df.drop_duplicates(subset=["GeolCodeInt"], keep="last")
+df_trad.to_excel(translation_xlsx_path, index=False, engine="openpyxl")
+
+logger.info(f"Saving file to {translation_xlsx_path} with {len(df_trad)} translations")
 
 
 def get_datetime_with_tz():
@@ -118,6 +146,8 @@ def get_git_revision_short_hash() -> str:
 
 
 def create_msg(df):
+    import polib
+
     de = list(zip(df["GeolCodeInt"], df["DE"]))
 
     fr = list(zip(df["GeolCodeInt"], df["FR"]))
@@ -131,17 +161,30 @@ def create_msg(df):
         locale_dir = f"./locale/{lang}/LC_MESSAGES"
         if not os.path.isdir(locale_dir):
             os.makedirs(locale_dir)
-
-        with open(os.path.join(locale_dir, "datamodel.po"), "w", encoding="utf-8") as f:
+        po_file_path = os.path.join(locale_dir, "datamodel.po")
+        with open(po_file_path, "w", encoding="utf-8") as f:
             f.write(po_header_tpl + msgs[lang])
+
+        po = polib.pofile(po_file_path)
+        # Remove duplicates while keeping the last occurrence
+        unique_entries = {}
+        for entry in po:
+            unique_entries[entry.msgid] = (
+                entry  # Dictionary ensures only the last occurrence is kept
+            )
+        # Create a new .po file
+        new_po = polib.POFile()
+        new_po.extend(unique_entries.values())
+        new_po.save(po_file_path)
+
     with open(os.path.join("locale", "datamodel.pot"), "w", encoding="utf-8") as f:
         f.write(po_header_tpl + empty_pot)
 
 
 # TODO: not at the right place
-create_msg(df)
+create_msg(df_trad)
 
-df = df.set_index(["GeolCodeInt"])
+df_trad = df_trad.set_index(["GeolCodeInt"])
 
 
 class Translator:
@@ -164,7 +207,7 @@ class Translator:
         err = False
         if lang in ("DE", "FR"):
             try:
-                msg = df.loc[int(geol_code)]["FR"]
+                msg = df_trad.loc[int(geol_code)]["FR"]
                 # TODO: should be done in the translation XLS à ciment, à matrice
                 if msg.startswith("à "):
                     msg = msg.replace("à ", "")
@@ -307,28 +350,34 @@ def get_table_values(name):
     geol_dict = {}
     try:
         file_path = os.path.join(input_dir, name)
-        df = pd.read_csv(file_path)
+        # df = pd.read_csv(file_path)
 
         with open(file_path, "r", encoding="utf-8") as f:
-            data = json.load(f)
+            geol_dict = json.load(f)
 
-        df = pd.DataFrame(data)
+        """df = pd.DataFrame(data)
 
         # Convert to dictionary with 'GEOL_CODE_INT' as key and 'GERMAN' as value
         df["GEOL_CODE_INT"] = df["GEOL_CODE_INT"].astype(str)
 
-        geol_dict = df.set_index("GEOL_CODE_INT")["GERMAN"].to_dict()
+        geol_dict = df.set_index("GEOL_CODE_INT")["GERMAN"].to_dict()"""
 
         return geol_dict
 
     except FileNotFoundError:
-        logger.error(f"Error reading value for table {name}: The CSV file {file_path} was not found.")
+        logger.error(
+            f"Error reading value for table {name}: The CSV file {file_path} was not found."
+        )
     except pd.errors.EmptyDataError:
         logger.error("Error reading value for table {name}: The CSV file is empty.")
     except pd.errors.ParserError:
-        logger.error("Error reading value for table {name}: There was a problem parsing the CSV file.")
+        logger.error(
+            "Error reading value for table {name}: There was a problem parsing the CSV file."
+        )
     except Exception as e:
-        logger.error(f"Error reading value for table {name}: An unexpected error occurred: {e}: {geol_dict}, {df}")
+        logger.error(
+            f"Error reading value for table {name}: An unexpected error occurred: {e}: {geol_dict}, {df_trad}"
+        )
 
     return {}
 
@@ -476,14 +525,13 @@ class Report:
                 annex["pairs"] = pairs
             # table
             else:
-
                 try:
-                    json_data_path = os.path.join(input_dir, annex.get('fname'))
+                    json_data_path = os.path.join(input_dir, annex.get("fname"))
                     print(json_data_path)
-                    with open(json_data_path, 'r') as f:
+                    with open(json_data_path, "r") as f:
                         data = json.loads(f.read())
                         logger.debug(f"Big annex {data}")
-                        annex['table'] = data
+                        annex["table"] = data
 
                 except Exception as e:
                     logger.error(f"Error processing annexe '{annex_name}': {e}")
@@ -688,7 +736,6 @@ def generate(lang, datamodel, output):
     else:
         output_dir = Path(yaml_dir).joinpath(output)
 
-
     if not os.path.isdir(os.path.join(output_dir, lang)):
         os.makedirs(os.path.join(output_dir, lang))
 
@@ -719,7 +766,6 @@ def generate(lang, datamodel, output):
 
     # TODO
     # print(data['annexes'][0])
-
 
     if data is None:
         raise RuntimeError("Model conversion to JSON failed, cannot proceed")
