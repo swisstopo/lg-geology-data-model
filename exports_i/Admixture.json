@@ -1,17 +1,15 @@
 {
-    "DESCRIPTION":{
-        "7":"mit Blockschutt vermischt",
-        "10":"mit Torf",
-        "8":"mit Hangschutt vermischt",
-        "1292":"mit Schieferkohle",
-        "9":"mit Verwitterungsschutt vermischt",
-        "1":"mit L\u00f6ss",
-        "5":"mit alpinen Ger\u00f6llen",
-        "11":"mit jurassischen Ger\u00f6llen",
-        "6":"mit Block- und Geschiebestreu",
-        "4":"mit Bl\u00f6cken",
-        "3":"mit Seekreide",
-        "2":"mit L\u00f6sslehm",
-        "12":"mit Ger\u00f6llen aus Vogesen \/ Schwarzwald"
-    }
+    "14509008": "mit Hangschutt vermischt",
+    "14509002": "mit Lösslehm",
+    "14509003": "mit Seekreide",
+    "14509011": "mit jurassischen Geröllen",
+    "14509012": "mit Geröllen aus Vogesen / Schwarzwald",
+    "14509013": "mit Schieferkohle",
+    "14509001": "mit Löss",
+    "14509004": "mit Blöcken",
+    "14509005": "mit alpinen Geröllen",
+    "14509010": "mit Torf",
+    "14509009": "mit Verwitterungsschutt vermischt",
+    "14509006": "mit Block- und Geschiebestreu",
+    "14509007": "mit Blockschutt vermischt"
 }
