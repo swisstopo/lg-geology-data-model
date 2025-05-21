@@ -1,5 +1,5 @@
 
-# Modèle de donnée géologique, Révision 4.0.0-rc.5 #
+# Modèle de donnée géologique, Révision 4.1.0 #
 
 
 
@@ -3925,6 +3925,18 @@ _Type de l&#39;objet_
 
 
 
+## Annexe  GC_GEOL_MAPPING_UNIT_ATT {#gc-geol-mapping-unit-att}
+Unités de cartographie
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+
+
+
+
+
+
+
 ## Annexe  GC_LITSTRAT_BED_CD {#gc-litstrat-bed-cd}
 Table des valeurs des unités lithostratigraphiques
 
@@ -6279,6 +6291,11 @@ Table des valeurs des unités lithostratigraphiques
 |999998 | nicht anwendbar | non applicable     |
 
 
+
+
+
+
+
 ## Annexe  GC_LITSTRAT_UNCO_CD {#gc-litstrat-unco-cd}
 Table des valeurs des unités lithostratigraphiques
 
@@ -6886,6 +6903,11 @@ Table des valeurs des unités lithostratigraphiques
 |999998 | nicht anwendbar | non applicable     |
 
 
+
+
+
+
+
 ## Annexe  GC_LITHO_CD {#gc-litho-cd}
 Tables des valeurs de la description lithologique
 
@@ -7256,6 +7278,11 @@ Tables des valeurs de la description lithologique
 |999998 | nicht anwendbar | non applicable     |
 
 
+
+
+
+
+
 ## Annexe  GC_LITHO_UNCO_CD {#gc-litho-unco-cd}
 Tables des valeurs de la description lithologique (roches meubles)
 
@@ -7329,6 +7356,11 @@ Tables des valeurs de la description lithologique (roches meubles)
 |15101087 | Sedimentärer Gang (clastic dike) | filon sédimentaire     |
 |999997 | unbekannt | inconnu     |
 |999998 | nicht anwendbar | non applicable     |
+
+
+
+
+
 
 
 ## Annexe  GC_CHRONO_CD {#gc-chrono-cd}
@@ -7475,6 +7507,11 @@ Table des valeurs des unités chronostratigraphiques
 |15001153 | Archaikum | Archaikum     |
 |999997 | unbekannt | inconnu     |
 |999998 | nicht anwendbar | non applicable     |
+
+
+
+
+
 
 
 ## Annexe  GC_TECTO_CD {#gc-tecto-cd}
@@ -7880,6 +7917,11 @@ Table des valeurs des unités tectoniques
 |999998 | nicht anwendbar | non applicable     |
 
 
+
+
+
+
+
 ## Annexe  GC_MINERAL_CD {#gc-mineral-cd}
 Minéral important de la roche métamorphique
 
@@ -7972,6 +8014,11 @@ Minéral important de la roche métamorphique
 |999998 | nicht anwendbar | non applicable     |
 
 
+
+
+
+
+
 ## Annexe  GC_ADMIXTURE {#gc-admixture}
 Incorporation
 
@@ -7992,6 +8039,11 @@ Incorporation
 |14509013 | mit Schieferkohle | mit Schieferkohle     |
 
 
+
+
+
+
+
 ## Annexe  GC_COMPOSIT {#gc-composit}
 Composition de la roche meuble
 
@@ -8004,6 +8056,11 @@ Composition de la roche meuble
 |14508005 | kiesig | graveleux     |
 |14508006 | geröllreich | riche en galets     |
 |14508007 | torfig | tourbeux     |
+
+
+
+
+
 
 
 ## Annexe  GC_CHARCAT {#gc-charcat}
@@ -8022,6 +8079,11 @@ Structure sédimentaire
 |14511009 | abgebaut | exploité     |
 |14511010 | drainiert | drainé     |
 |14511011 | künstlich bewässert (Wässermatten) | inondé artificiellement (prairies irriguées)     |
+
+
+
+
+
 
 
 ## Annexe  GC_SYSTEM {#gc-system}
@@ -8049,6 +8111,11 @@ Groupe de fossile
 |12903018 | Reptilien | reptiles     |
 |12903019 | Säugetiere | mammifères     |
 |12903021 | Palynomorphe | palynomorphes     |
+
+
+
+
+
 
 
 
