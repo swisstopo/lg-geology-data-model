@@ -16,7 +16,7 @@ from jsonschema import Draft7Validator, ValidationError
 from jsonschema import validate as jsonschema_validate
 from loguru import logger
 
-input_dir = "exports"
+input_dir = "exports_i"
 
 output_dir = "inputs"
 
@@ -63,7 +63,12 @@ ATTRIBUTES_TO_IGNORE = [
 with open(os.path.join(input_dir, "subtypes_dict.json"), "r") as f:
     subtypes = json.load(f)"""
 
-with open("H:\code\lg-geology-data-model\exports_i\gcoveri_simple.json", "r") as f:
+json_struct_path = os.path.join(input_dir, "gcoveri_simple.json")
+logger.info(f"Reading Schema from {json_struct_path}")
+with open(
+    json_struct_path,
+    "r",
+) as f:
     sde_schema = json.load(f)
     logger.info(sde_schema.keys())
     featclasses_dict = sde_schema.get("featclasses")
@@ -74,7 +79,46 @@ with open("H:\code\lg-geology-data-model\exports_i\gcoveri_simple.json", "r") as
 
     tables_dict = tables_
 
-df = pd.read_csv(os.path.join(input_dir, "GeolCodeText_Trad_230317.csv"), sep=";")
+
+df_trad_load = pd.read_csv(
+    os.path.join(input_dir, "GeolCodeText_Trad_230317.csv"), sep=";"
+)
+
+columns = ["GeolCode", "GeolCodeInt", "DE", "FR"]
+
+# Load JSON data from a file
+with open(
+    os.path.join(input_dir, "all_codes_dict.json"), "r", encoding="utf-8"
+) as file:
+    code_dict = json.load(file)
+
+df = pd.DataFrame(
+    {
+        "GeolCodeInt": list(code_dict.keys()),
+        "DE": list(code_dict.values()),
+        "FR": list(code_dict.values()),  # Initialize with None values
+        "GeolCode": None,
+    }
+)
+
+
+df["GeolCodeInt"] = df["GeolCodeInt"].astype("string")
+
+
+merged_df = pd.concat([df_trad_load, df])
+merged_df = merged_df.drop(columns=["GeolCode"], errors="ignore")
+
+translation_xlsx_path = os.path.join(input_dir, "all_trads.xlsx")
+
+df_trad = merged_df.drop_duplicates(subset=["GeolCodeInt"], keep="last")
+df_trad.to_excel(translation_xlsx_path, index=False, engine="openpyxl")
+df_trad["GeolCodeInt"] = df_trad["GeolCodeInt"].astype("string")
+df_trad["DE"] = df_trad["DE"].astype("string")
+df_trad["FR"] = df_trad["FR"].astype("string")
+
+df_trad = df_trad.set_index(["GeolCodeInt"])
+logger.info(f"Translation file has {len(df_trad)} translations")
+logger.info(f"Saving file to {translation_xlsx_path} with {len(df_trad)} translations")
 
 
 def get_datetime_with_tz():
@@ -115,6 +159,8 @@ def get_git_revision_short_hash() -> str:
 
 
 def create_msg(df):
+    import polib
+
     de = list(zip(df["GeolCodeInt"], df["DE"]))
 
     fr = list(zip(df["GeolCodeInt"], df["FR"]))
@@ -128,17 +174,28 @@ def create_msg(df):
         locale_dir = f"./locale/{lang}/LC_MESSAGES"
         if not os.path.isdir(locale_dir):
             os.makedirs(locale_dir)
-
-        with open(os.path.join(locale_dir, "datamodel.po"), "w", encoding="utf-8") as f:
+        po_file_path = os.path.join(locale_dir, "datamodel.po")
+        with open(po_file_path, "w", encoding="utf-8") as f:
             f.write(po_header_tpl + msgs[lang])
+
+        po = polib.pofile(po_file_path)
+        # Remove duplicates while keeping the last occurrence
+        unique_entries = {}
+        for entry in po:
+            unique_entries[entry.msgid] = (
+                entry  # Dictionary ensures only the last occurrence is kept
+            )
+        # Create a new .po file
+        new_po = polib.POFile()
+        new_po.extend(unique_entries.values())
+        new_po.save(po_file_path)
+
     with open(os.path.join("locale", "datamodel.pot"), "w", encoding="utf-8") as f:
         f.write(po_header_tpl + empty_pot)
 
 
 # TODO: not at the right place
-create_msg(df)
-
-df = df.set_index(["GeolCodeInt"])
+# create_msg(df_trad)
 
 
 class Translator:
@@ -161,9 +218,12 @@ class Translator:
         err = False
         if lang in ("DE", "FR"):
             try:
-                msg = df.loc[int(geol_code)]["FR"]
-                # TODO: should be done in the translation XLS à ciment, à matrice
-                if msg.startswith("à "):
+                value = df_trad.loc[str(geol_code), lang]  # Try to get single cell
+                if isinstance(value, pd.Series):
+                    msg = value.iloc[0]  # Take first value if still a Series
+                else:
+                    msg = value
+                if isinstance(msg, str) and msg.startswith("à "):
                     msg = msg.replace("à ", "")
 
             except KeyError as ke:
@@ -174,7 +234,9 @@ class Translator:
 
             except Exception as e:
                 err = True
-                logger.debug(f"Unknown error while translating '{geol_code}': {e}")
+                logger.debug(
+                    f"Unknown error while translating '{geol_code}'= {msg}: {e}"
+                )
 
         return (msg, err)
 
@@ -301,30 +363,37 @@ def check_attribute_in_table(cls_name, table, attributes, abrev, prefixes):
 
 
 def get_table_values(name):
+    geol_dict = {}
     try:
         file_path = os.path.join(input_dir, name)
-        df = pd.read_csv(file_path)
+        # df = pd.read_csv(file_path)
 
         with open(file_path, "r", encoding="utf-8") as f:
-            data = json.load(f)
+            geol_dict = json.load(f)
 
-        df = pd.DataFrame(data)
+        """df = pd.DataFrame(data)
 
         # Convert to dictionary with 'GEOL_CODE_INT' as key and 'GERMAN' as value
         df["GEOL_CODE_INT"] = df["GEOL_CODE_INT"].astype(str)
 
-        geol_dict = df.set_index("GEOL_CODE_INT")["GERMAN"].to_dict()
+        geol_dict = df.set_index("GEOL_CODE_INT")["GERMAN"].to_dict()"""
 
         return geol_dict
 
     except FileNotFoundError:
-        logger.error(f"Error: The CSV file {file_path} was not found.")
+        logger.error(
+            f"Error reading value for table {name}: The CSV file {file_path} was not found."
+        )
     except pd.errors.EmptyDataError:
-        logger.error("Error: The CSV file is empty.")
+        logger.error(f"Error reading value for table {name}: The CSV file is empty.")
     except pd.errors.ParserError:
-        logger.error("Error: There was a problem parsing the CSV file.")
+        logger.error(
+            f"Error reading value for table {name}: There was a problem parsing the {file_path} file."
+        )
     except Exception as e:
-        logger.error(f"An unexpected error occurred: {e}: {geol_dict}, {df}")
+        logger.error(
+            f"Error reading value for table {name}: An unexpected error occurred: {e}: {geol_dict}"
+        )
 
     return {}
 
@@ -453,21 +522,35 @@ class Report:
                                 self.prefixes,
                             )
                         except Exception as e:
-                            logger.error(f"Check error: {e}")
+                            logger.error(f"Theme, attribute check error: {e}")
 
             except (KeyError, TypeError, IndexError) as e:
                 logger.error(f"Error processing theme '{theme}': {e}")
                 return None
         for annex in model.get("annexes"):
             annex_name = annex.get("name")
-            annex_fname = annex.get("fname")
-            if annex_fname is not None:
-                pairs = get_table_values(annex_fname)
 
+            if annex.get("type_") == "list":
+                annex_fname = annex.get("fname")
+                if annex_fname is not None:
+                    pairs = get_table_values(annex_fname)
+
+                else:
+                    pairs = get_coded_values(annex_name)
+
+                annex["pairs"] = pairs
+            # table
             else:
-                pairs = get_coded_values(annex_name)
+                try:
+                    json_data_path = os.path.join(input_dir, annex.get("fname"))
 
-            annex["pairs"] = pairs
+                    with open(json_data_path, "r") as f:
+                        data = json.loads(f.read())
+
+                        annex["table"] = data
+
+                except Exception as e:
+                    logger.error(f"Error processing annexe '{annex_name}': {e}")
 
         return model
 
@@ -670,7 +753,7 @@ def generate(lang, datamodel, output):
         output_dir = Path(yaml_dir).joinpath(output)
 
     if not os.path.isdir(os.path.join(output_dir, lang)):
-        os.makedirs(os.path.isdir(os.path.join(output_dir, lang)))
+        os.makedirs(os.path.join(output_dir, lang))
 
     logger.info(f"Markdown files ouput dir: {output_dir}")
 
@@ -696,6 +779,10 @@ def generate(lang, datamodel, output):
     prefixes = [p + " " for p in get_prefixes(model.model)]
 
     data = model.to_json()
+
+    # TODO
+    # print(data['annexes'][0])
+
     if data is None:
         raise RuntimeError("Model conversion to JSON failed, cannot proceed")
     now = datetime.datetime.now()

@@ -19,10 +19,10 @@ INPUTS = $(foreach lang,$(LANGUAGES),$(foreach fmt,$(FORMATS),$(INPUT_DIR)/$(lan
 
 
 # Options for all doc format
+# Unknown --shift-heading-level-by=-1  \
 PANDOC_OPTIONS=--standalone \
          -V papersize:a4   \
          --number-sections \
-         --shift-heading-level-by=-1  \
          --variable mainfont="DejaVu Sans" \
          -V colorlinks=true \
          -V linkcolor=teal \

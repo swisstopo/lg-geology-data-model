@@ -1,5 +1,5 @@
 
-# Datenmodell Geologie, Revision 4.0.0-rc.5 #
+# Datenmodell Geologie, Revision 4.1.0 #
 
 
 
@@ -853,8 +853,8 @@ _Objektart_
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
-|11201001 | glazitektonische Deformation | déformation glaciotectonique     |
 |11201002 | Gletschermühle, Strudelloch | marmite glaciaire, cavité d´érosion     |
+|11201001 | glazitektonische Deformation | déformation glaciotectonique     |
 
 
 
@@ -895,6 +895,7 @@ _Objektart_
 |11301007 | Blockwulst im Blockgletscher | bourrelet de glacier rocheux     |
 |11301008 | Schneehaldenmoränenwall | vallum de moraine de névé     |
 |11301009 | Verbreitungsgrenze von Geschiebe | limite de l&#39;étendue des blocs     |
+|11301010 | periglazialer Wulst im Allg. | Ggla periglazialer Wulst im Allg.     |
 
 
 
@@ -1059,6 +1060,7 @@ _Objektart_
 |11401001 | Drumlin, drumlinartige Kieskuppe | drumlin, croupe graveleuse en forme de drumlin     |
 |11401003 | Rundhöcker | roches moutonnées     |
 |11401004 | Toteisloch, Soll | doline glaciaire, soll     |
+|11401005 | Kame | Ggla Kame     |
 
 
 
@@ -1148,6 +1150,7 @@ _Objektart_
 |11301007 | Blockwulst im Blockgletscher | bourrelet de glacier rocheux     |
 |11301008 | Schneehaldenmoränenwall | vallum de moraine de névé     |
 |11301009 | Verbreitungsgrenze von Geschiebe | limite de l&#39;étendue des blocs     |
+|11301010 | periglazialer Wulst im Allg. | Ggla periglazialer Wulst im Allg.     |
 
 
 
@@ -1428,6 +1431,7 @@ _Objektart_
 |14901006 | Blattverschiebung | décrochement     |
 |14901007 | komplexe Störung | accident tectonique complexe     |
 |14901008 | Störung i. Allg. | accident tectonique en général     |
+|14901009 | neotektonischer Bruch | Ttec neotektonischer Bruch     |
 
 
 
@@ -1727,11 +1731,11 @@ _Objektart_
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
-|13801001 | Orientierung der Schichten | orientation des couches     |
 |13801002 | Orientierung eines Ganges | orientation d&#39;un filon     |
 |13801003 | Orientierung einer Bruchfläche | orientation d&#39;un plan de faille     |
 |13801004 | Orientierung der Schieferung | orientation d&#39;une schistosité     |
 |13801005 | Orientierung einer Schichtung oder Schieferung | orientation d&#39;une couche ou d&#39;une schistosité     |
+|13801001 | Orientierung der Schichten | orientation des couches     |
 |13801006 | Schüttungsrichtung | direction de transport sédimentaire     |
 
 
@@ -1964,11 +1968,11 @@ _Objektart_
 |13201001 | Mineralfundstelle | gisement de minéraux     |
 |13201002 | Gasquelle | source de gaz naturel     |
 |13201003 | Anzeichen auf Öl | indices de pétrole     |
-|13201004 | Tasche, Karsttasche, Kluft, mit Füllung von siderolithischem Sediment | poche, poche karstique, fissure, remplie de matériel sidérolithique     |
-|13201005 | Fundstelle von vulkanischem Tuffit | gisement de tuffite volcanique     |
 |13201006 | Fundstelle vulkanischer Auswürflinge (Tephra) | gisement de projections volcaniques (tephra)     |
 |13201007 | Fundstelle von Ries-Auswürflingen | gisement de projections du Ries     |
 |13201008 | Asphalt, vereinzeltes Vorkommen | asphalte, gisement isolé     |
+|13201005 | Fundstelle von vulkanischem Tuffit | gisement de tuffite volcanique     |
+|13201004 | Tasche, Karsttasche, Kluft, mit Füllung von siderolithischem Sediment | poche, poche karstique, fissure, remplie de matériel sidérolithique     |
 |13201009 | Meteoritenfundstelle | gisement de météorite     |
 
 
@@ -2626,11 +2630,7 @@ _Objektart_
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
 |10101001 | archäologische Fundstelle, Anlage, Siedlungsreste | site archéologique, station, vestiges d&#39;établissement     |
-|10101002 | Höhlensiedlung, Abri | grotte, abri sous roche     |
-|10101003 | Pfahlbauten | palafitte     |
-|10101004 | Burgstelle, Burghügel, Wachtturm | motte, emplacement d´un ancien château, d´une fortification, d&#39;un château-fort     |
 |10101005 | Gräber, Gräberfeld | tombe, site mortuaire     |
-|10101006 | Steinplattengrab | sépulture     |
 |10101007 | Grabhügel, Dolmengrab | tumulus, dolmen funéraire     |
 |10101008 | Kultstein | mégalithe     |
 |10101009 | Kalkofen | four à chaux     |
@@ -2638,6 +2638,10 @@ _Objektart_
 |10101011 | Schlackenhalde | crassier     |
 |10101012 | Glashütte | verrerie     |
 |10101013 | Schmelzofen | four à fer     |
+|10101004 | Burgstelle, Burghügel, Wachtturm | motte, emplacement d´un ancien château, d´une fortification, d&#39;un château-fort     |
+|10101002 | Höhlensiedlung, Abri | grotte, abri sous roche     |
+|10101003 | Pfahlbauten | palafitte     |
+|10101006 | Steinplattengrab | sépulture     |
 |10101015 | Abbaustelle | exploitation     |
 
 
@@ -3535,11 +3539,11 @@ _Objektart_
 |---------------|----------------------------------------|----------------------------------------|
 |12301001 | Paläotal | axe de paléovallée     |
 |12301002 | ehemalige Entwässerungsrinne | ancien chenal     |
-|12301003 | ehemalige glaziale Abflussrinne | axe d&#39;un ancien effluent glaciaire     |
 |12301004 | Trockental | vallée sèche     |
 |12301005 | ehemaliges Bachbett | ancien lit de cours d&#39;eau (ruisseau)     |
 |12301006 | Ufer eines ehemaligen Flussbetts | rive d&#39;un ancien lit de cours d&#39;eau     |
 |12301007 | ehemalige Uferlinie | ancienne ligne de rivage     |
+|12301003 | ehemalige glaziale Abflussrinne | axe d&#39;un ancien effluent glaciaire     |
 
 
 
@@ -3822,6 +3826,2345 @@ _Objektart_
 
 
 
+
+
+
+
+
+## Anhang  GC_GEOL_MAPPING_UNIT_ATT {#gc-geol-mapping-unit-att}
+Kartiereinheiten
+
+
+
+| Code    |  GMU      |Litho main | Litho sec | Litho ter |  Formation | Chrono top | Chrono base | Correlation |
+|---------|-----------|-----------|-----------|------------|------------|-------------|-------------|
+|0 |0 | 0  | 0   | 0 |  0 |  0     | 0   | 0  |
+|15203208 |Groupe de Bavugls | Dolomitstein  | Quarzit   | Konglomerat |  Bavugls-Formation |  Trias moyen     | Carbonifère   | Sedimentbedeckung  |
+|15203209 |Socle cristallin du Nolla | Gneis: schiefrig  | 0   | 0 |  0 |  Carbonifère     | Carbonifère   | Grundgebirge  |
+|15203210 |Flysch de la nappe du Falknis | Kalkstein: sandig-kieselig  | Sandstein: Quarz   | Tonstein |  0 |  Lutétien     | Yprésien   | Flysch  |
+|15203211 |Globorotalien-Schichten | Sandstein: kalkig  | Kalkstein: mergelig   | Tonstein: schiefrig |  «Globorotalien-Schichten» |  Thanétien     | Danien   | Sedimentbedeckung  |
+|15203212 |Quarzsandstein-Flysch (Gault) | Sandstein: Quarz-Glaukonit  | Kalkstein: sandig   | Konglomerat: polymikt |  «Quarzsandstein-Flysch» |  Cénomanien     | Aptien   | «Gault»  |
+|15203213 |Formation de Tristel | Kalkstein: sandig  | Brekzie: kalkig-dolomitisch   | Tonstein |  Tristel-Formation |  Aptien     | Barrémien   | Post-Rift Mesozoikum in pelagischer Fazies  |
+|15203214 |Fleckenkalk-Flysch (Neokom) | Kalkstein: mergelig  | Kalkstein: kieselig   | Tonstein: sandig |  «Fleckenkalk-Flysch» |  Barrémien     | Berriasien   | Post-Rift Mesozoikum in pelagischer Fazies  |
+|15203215 |Formation de la Jes | Kalkstein: mikritisch: Chert  | Brekzie: kalkig-dolomitisch   | Mergelstein |  Jes-Formation |  Berriasien     | Tithonien   | Post-Rift Mesozoikum in pelagischer Fazies  |
+|15203216 |Brèche du Falknis | Brekzie: polymikt  | Sandstein: kalkig   | Kalkstein: kieselig |  Falknis-Brekzie |  Tithonien     | Kimméridgien   | Post-Rift Mesozoikum in detritischer Fazies  |
+|15203217 |Formation de Sanalada | Mergelstein  | Kalkstein: mergelig   | Kalkstein: arenitisch |  Sanalada-Formation |  Kimméridgien     | Oxfordien   | Post-Rift Mesozoikum in detritischer Fazies  |
+|15203218 |Formation de Panier | Mergelstein: schiefrig  | Tonstein   | Brekzie: polymikt |  Panier-Formation |  Oxfordien     | Toarcien   | Lias-Dogger in neritischer Fazies  |
+|15203219 |Flysch de la nappe de la Suzfluh | Tonstein: schiefrig  | Sandstein   | Kalkstein: kieselig |  0 |  Yprésien     | Thanétien   | Flysch  |
+|15203220 |Calcaire de la Sulzfluh | Kalkstein: mikritisch  | Kalkstein: Ooide   | Kalkstein: arenitisch |  Sulzfluh-Kalk |  Tithonien     | Tithonien   | Malm  |
+|15203221 |Granite de la nappe de la Suzfluh | Granit  | 0   | 0 |  0 |  Paléozoïque     | Paléozoïque   | Grundgebirge  |
+|15203222 |Flysch de la nappe de la Tasna | Tonstein  | Sandstein   | 0 |  0 |  Yprésien     | Yprésien   | Flysch  |
+|15203223 |Calcaire du Steinsberg | Kalkstein: spätig: Bioklasten  | Kalkstein: sandig: Bioklasten   | 0 |  Steinsberg-Kalk |  Jurassique précoce     | Jurassique précoce   | Lias-Dogger in neritischer Fazies  |
+|15203224 |Granite de la nappe de la Tasna | Granit  | 0   | 0 |  Plattamala-Granit |  Paléozoïque     | Protérozoïque   | Variszisches Grundgebirge  |
+|15203225 |Série Rousse | Marmor: sandig  | Marmor: tonig-schiefrig   | Konglomerat |  «Série-Rousse» |  Crétacé tardif     | Cénomanien   | Couches Rouges  |
+|15203226 |Série Grise | Schiefer: kalkig  | Marmor   | Prasinit |  «Série Grise» |  Crétacé tardif     | Cénomanien   | Post-Rift Mesozoikum in pelagischer Fazies  |
+|15203227 |Série de la Garde de Bordon | Schiefer: tonig: Bitumen  | Schiefer: kalkig   | 0 |  Garda-Bordon-Formation |  Crétacé tardif     | Crétacé précoce   | Post-Rift Mesozoikum in pelagischer Fazies  |
+|15203228 |Flysch de la Fêta d&#39;Août | Schiefer: tonig  | Marmor: kalkig   | 0 |  Fêta-d&#39;Août-Formation |  Crétacé tardif     | Crétacé précoce   | Post-Rift Mesozoikum in pelagischer Fazies  |
+|15203229 |Gabbro de l&#39;Allalin | Gabbro  | Gabbro: Omphazit   | 0 |  Allalin-Gabbro |  Oxfordien     | Bathonien   | Ophiolithische Abfolge  |
+|15203230 |Mélange d&#39;Arosa | Gestein: pelitisch  | Sandstein: tonig: Lithoklasten   | 0 |  0 |  Paléogène     | Crétacé tardif   | Mélange  |
+|15203231 |Formation de la Verspala | Sandstein: tonig  | Mergelstein   | 0 |  Verspala-Formation |  Coniacien     | Cénomanien   | Post-Rift Mesozoikum in pelagischer Fazies  |
+|15203232 |Formation de Lavagna | Schiefer: kieselig  | 0   | 0 |  Lavagna-Formation |  Albien     | Aptien   | Post-Rift Mesozoikum in pelagischer Fazies  |
+|15203233 |Formation à Palombini | Schiefer: tonig-kieselig  | Marmor: kalkig-kieselig   | 0 |  «Palombini-Formation» |  Barrémien     | Tithonien   | Post-Rift Mesozoikum in pelagischer Fazies  |
+|15203234 |Calcaire à Calpionelles de la zone d&#39;Arosa | Kalkstein: mikritisch: Aptychen  | 0   | 0 |  0 |  Tithonien     | Tithonien   | Maiolica / Aptychenkalk  |
+|15203235 |Radiolarite de la zone d&#39;Arosa | Gestein: kieselig: Radiolarien  | Schiefer: kieselig   | 0 |  0 |  Kimméridgien     | Oxfordien   | Radiolarit  |
+|15203236 |Ophiolite de la zone d&#39;Arosa | Serpentinit  | Gabbro   | Basalt |  0 |  Oxfordien     | Bathonien   | Ophiolithische Abfolge  |
+|15203238 |Conglomérat de Buufal | Konglomerat: dolomitisch  | 0   | 0 |  Buufal-Konglomerat |  Priabonien     | Eocène moyen   | Mélange  |
+|15203239 |Membre de Langel | Kalkstein: Ooide  | Kalkstein: Onkoide   | 0 |  Langel-Member |  Bathonien     | Bajocien   | Syn-Rift  |
+|15203240 |Cornieule Supérieure | Rauwacke  | 0   | 0 |  «Obere Rauhwacke» (Pralet-Fm.) |  Carnien     | Carnien   | Raibl  |
+|15203241 |Gypse de la nappe des Préalpes Médianes | Evaporit: Gips  | 0   | 0 |  Clôt-la-Cime-Formation |  Trias     | Trias   | Raibl  |
+|15203242 |Couches Rouges de la nappe de la Brèche | Kalkstein: tonig  | Brekzie   | 0 |  0 |  Thanétien     | Campanien   | Couches Rouges  |
+|15203243 |Cornieule de la nappe de la Brèche | Rauwacke  | 0   | 0 |  0 |  Trias     | Trias   | Prä-Rift  |
+|15203244 |Grès du Lamperehubel | Sandstein: kalkig  | 0   | 0 |  Lamperehubel-Sandstein |  Albien     | Albien   | Flysch  |
+|15203245 |Ophiolite des Gets | Serpentinit  | Gabbro   | Basalt |  Gets-Ophiolith |  Bathonien     | Bathonien   | Ophiolithische Abfolge  |
+|15203246 |Obere Kalk- und Tonschiefer (Grava/Tomül) | Schiefer: kalkig: Glimmer  | Schiefer: tonig   | 0 |  0 |  Jurassique moyen     | Jurassique moyen   | Sedimentbedeckung  |
+|15203247 |Quarzit und quarzitische Schiefer (Grava/Tomül) | Quarzit: kalkig  | Schiefer: kalkig: Glimmer   | 0 |  0 |  Jurassique moyen     | Jurassique moyen   | Sedimentbedeckung  |
+|15203248 |Untere Kalk- und Tonschiefer (Grava/Tomül) | Schiefer: tonig  | Schiefer: kalkig   | Schiefer: sandig |  0 |  Jurassique précoce     | Jurassique précoce   | Sedimentbedeckung  |
+|15203249 |Marbre du Piz Aul | Marmor  | 0   | 0 |  Aul-Marmor |  Tithonien     | Oxfordien   | Sedimentbedeckung  |
+|15203250 |Brèche (Grava/Tomül) | Brekzie: dolomitisch  | 0   | 0 |  0 |  Jurassique précoce     | Jurassique précoce   | Sedimentbedeckung  |
+|15203251 |Gryphäenkalk | Kalkstein: sandig: Bioklasten  | 0   | 0 |  0 |  Pliensbachien     | Sinémurien   | Lias-Dogger in neritischer Fazies  |
+|15203252 |Trias nord-pennique | Quarzit  | Marmor: dolomitisch   | Sandstein: Feldspat |  0 |  Trias     | Trias   | Prä-Rift  |
+|15203253 |Orthogneiss de Zervreila | Gneis: granitisch-augig  | 0   | 0 |  Zervreila-Orthogneis |  Cisuralien     | Cisuralien   | Grundgebirge  |
+|15203254 |Gneiss oeillé du Garenstock | Gneis: augig  | 0   | 0 |  Garenstock-Augengneis |  Ordovicien     | Ordovicien   | Grundgebirge  |
+|15203255 |Adula-D.: Glimmerschiefer und Paragneis | Schiefer: Glimmer  | Gneis   | 0 |  Salahorn-Formation |  Paléozoïque     | Paléozoïque   | Grundgebirge  |
+|15203256 |Adula-D.: Amphibolit | Amphibolit  | 0   | 0 |  0 |  Paléozoïque     | Paléozoïque   | Grundgebirge  |
+|15203257 |Mélange Submédian | Evaporit: Gips  | Tonstein   | 0 |  0 |  Paléogène     | Crétacé tardif   | Mélange  |
+|15203258 |Brèche de la Truche | Brekzie: polymikt  | 0   | 0 |  Truche-Brekzie |  Eocène     | Eocène   | Mélange  |
+|15203259 |Brèche de Trom | Brekzie: polymikt  | Kalkstein: mikritisch   | 0 |  Trom-Brekzie |  Tertiaire     | Crétacé tardif   | Mélange  |
+|15203260 |Brèche d&#39;Exergillod | Brekzie  | Brekzie: kalkig: Bioklasten   | 0 |  Exergillod-Brekzie |  Jurassique tardif     | Jurassique précoce   | Mélange  |
+|15203261 |Calcaire du Troublon | Kalkstein: mikritisch: Bioklasten  | Sandstein: mergelig   | 0 |  Troublon-Kalk |  Jurassique tardif     | Jurassique tardif   | Mélange  |
+|15203262 |Calcaire noduleux de la Zünegg | Kalkstein: mergelig  | 0   | 0 |  Zünegg-Knollenkalk |  Jurassique tardif     | Jurassique tardif   | Mélange  |
+|15203263 |Formation de Hauta-Crêtaz | Kalkstein: spätig: Bioklasten  | Brekzie: kalkig   | 0 |  Hauta-Crêtaz-Formation |  Jurassique tardif     | Jurassique précoce   | Mélange  |
+|15203264 |Brèche de la Pointe de l&#39;Au | Brekzie: kalkig  | 0   | 0 |  Pointe-de-l&#39;Au-Brekzie |  Bathonien     | Bathonien   | Mélange  |
+|15203265 |Calcaire de Bonaveau | Kalkstein: sandig  | Kalkstein: sandig   | 0 |  Bonaveau-Kalk |  Toarcien     | Toarcien   | Mélange  |
+|15203266 |Calcaire du Sex du Tronc | Kalkstein: spätig: Bioklasten  | 0   | 0 |  Sex-du-Tronc-Kalk |  Sinémurien     | Sinémurien   | Mélange  |
+|15203267 |Calcaire du Sex de Grand-Herba | Kalkstein  | 0   | 0 |  Grand-Herba-Kalk |  Sinémurien     | Sinémurien   | Mélange  |
+|15203268 |Formation d&#39;Oudiou | Kalkstein: Bioklasten  | Kalkstein: kieselig-spätig   | 0 |  Oudiou-Formation |  Aalénien     | Rhétien   | Syn-Rift  |
+|15203269 |Malm de la nappe des Préalpes Médianes | Kalkstein  | Mergelstein   | 0 |  0 |  Berriasien     | Oxfordien   | Malm  |
+|15203270 |Série d&#39;Albeuve | Mergelstein: Glaukonit-Bioklasten  | 0   | 0 |  Albeuve-Serie |  Kimméridgien     | Kimméridgien   | Malm  |
+|15203271 |Couches de la Kummli | Kalkstein: mikritisch  | 0   | 0 |  Kummli-Schichten |  Berriasien     | Berriasien   | Post-Rift Mesozoikum in pelagischer Fazies  |
+|15203272 |Dogger de la nappe des Préalpes Médianes | Kalkstein  | Mergelstein   | 0 |  0 |  Callovien     | Bajocien   | Syn-Rift  |
+|15203273 |Calcaire de la Stockenflue | Kalkstein: sandig: Bioklasten  | 0   | 0 |  Stockenflue-Kalk |  Callovien     | Callovien   | Lias-Dogger in neritischer Fazies  |
+|15203274 |Membre de Mieussy | Kalkstein: arenitisch  | Kalkstein: Bioklasten   | Kalkstein: mikritisch |  Mieussy-Member |  Bathonien     | Bajocien   | Syn-Rift  |
+|15203275 |Lias de la nappe des Préalpes Médianes | Mergelstein  | Kalkstein: spätig   | Kalkstein: kieselig |  0 |  Bajocien     | Rhétien   | Syn-Rift  |
+|15203276 |Trias de la nappe des Préalpes Médianes | Dolomitstein  | Kalkstein: Bioklasten   | Gestein: pelitisch |  0 |  Ladinien     | Olénékien   | Prä-Rift  |
+|15203277 |Formation du Pralet | Dolomitstein  | Kalkstein: spätig: Bioklasten   | Tonstein |  Pralet-Formation |  Ladinien     | Ladinien   | Raibl  |
+|15203278 |Membre du Balmi | Dolomitstein  | Kalkstein: arenitisch   | Kalkstein: spätig: Echinodermen |  Balmi-Member |  Ladinien     | Ladinien   | Raibl  |
+|15203279 |Membre de la Bodeflue | Dolomitstein  | 0   | 0 |  Bodeflue-Member |  Anisien     | Anisien   | Karbonatische Trias  |
+|15203280 |Membre du Wildgrimmi | Kalkstein  | Dolomitstein   | 0 |  Wildgrimmi-Member |  Anisien     | Anisien   | Karbonatische Trias  |
+|15203281 |Cornieule Inférieure | Rauwacke  | 0   | 0 |  «Untere Rauhwacke» (St-Triphon-Fm.) |  Anisien     | Trias précoce   | Karbonatische Trias  |
+|15203282 |Mélange infra-brèche | Gestein: pelitisch  | Brekzie   | 0 |  «Infrabrèche-Melange» |  Paléogène     | Crétacé tardif   | Mélange  |
+|15203283 |Flysch du Wägital | Sandstein  | Brekzie: polymikt   | Tonstein |  Wägital-Flysch |  Yprésien     | Campanien   | Flysch  |
+|15203284 |Flysch 5 à microconglomérats siliceux | Konglomerat  | Sandstein: kieselig   | 0 |  «Flysch 5, mit kieseligen Mikrokonglomeraten» |  Lutétien     | Lutétien   | Flysch  |
+|15203285 |Flysch des Voirons | Sandstein  | Konglomerat   | Mergelstein |  0 |  Rupélien     | Eocène moyen   | Flysch  |
+|15203286 |Marne de Boëge | Mergelstein  | Sandstein   | 0 |  Boëge-Mergel |  Rupélien     | Priabonien   | Flysch  |
+|15203287 |Conglomérat du Vouan | Konglomerat  | Sandstein   | Mergelstein |  Vouan-Konglomerat |  Rupélien     | Priabonien   | Flysch  |
+|15203288 |Grès des Voirons | Sandstein  | Mergelstein   | 0 |  Voirons-Sandstein |  Priabonien     | Eocène moyen   | Flysch  |
+|15203291 |Couches Rouges de la nappe des Préalpes Médianes, indifférenciées | Kalkstein: mergelig  | Kalkstein: mikritisch   | Mergelstein |  0 |  Yprésien     | Turonien   | Couches Rouges  |
+|15203292 |Flysch de la Simme, indifférencié | Sandstein  | Gestein: pelitisch   | Konglomerat |  0 |  Santonien     | Albien   | Flysch  |
+|15203293 |Flysch de Trepsen | Brekzie: polymikt  | Sandstein   | Tonstein |  Trepsen-Flysch |  Maastrichtien     | Maastrichtien   | Flysch  |
+|15203294 |Cocco-Gneis | Gneis: granodioritisch  | 0   | 0 |  Cocco-Gneis |  Pennsylvanien     | Pennsylvanien   | Variszisches Grundgebirge  |
+|15203295 |Verzasca-Gneis | Gneis: Biotit-Muskovit  | 0   | 0 |  Verzasca-Gneis |  Cisuralien     | Pennsylvanien   | Grundgebirge  |
+|15203296 |Vogorno-Gneis | Gneis: Biotit-Muskovit  | 0   | 0 |  Vogorno-Gneis |  Cisuralien     | Pennsylvanien   | Grundgebirge  |
+|15203297 |Ruscada-Gneis | Gneis  | 0   | 0 |  Ruscada-Gneis |  Paléozoïque     | Paléozoïque   | Variszisches Grundgebirge  |
+|15203298 |Mergoscia-Gneis | Gneis: Biotit  | Gneis: migmatitisch   | 0 |  Mergoscia-Gneis |  Paléozoïque     | Paléozoïque   | Grundgebirge  |
+|15203299 |Monte-Rosa-Orthogneis | Gneis: granodioritisch  | Granodiorit   | 0 |  Monte-Rosa-Orthogneis  |  Carbonifère     | Carbonifère   | Grundgebirge  |
+|15203300 |Arblatsch-Flysch | Sandstein  | Schiefer: tonig-kalkig   | Konglomerat |  Arblatsch-Flysch |  Yprésien     | Maastrichtien   | Flysch  |
+|15203301 |Arblatsch-Flysch: Sandstein-dominierte Fazies | Sandstein  | 0   | 0 |  Arblatsch-Flysch |  Yprésien     | Yprésien   | Flysch  |
+|15203302 |Arblatsch-Flysch: Konglomerat-dominierte Fazies | Konglomerat  | 0   | 0 |  Arblatsch-Flysch |  Yprésien     | Yprésien   | Flysch  |
+|15203303 |Spegnas-Fm. | Sandstein  | Schiefer   | Kalkstein: sandig |  Spegnas-Formation |  Paléocène     | Paléocène   | Sedimentbedeckung  |
+|15203304 |Rudnal-Fm. | Kalkstein: mergelig  | Tonstein: schiefrig   | Sandstein |  Rudnal-Formation |  Maastrichtien     | Maastrichtien   | Sedimentbedeckung  |
+|15203305 |Savognin-Fm. | Rauwacke  | Evaporit: Gips   | Brekzie |  Savognin-Formation |  Mésozoïque     | Mésozoïque   | Sedimentbedeckung  |
+|15203306 |Stätzerhorn-Fm.: Bleis-Pintgas-Mb. | Kalkstein: sandig  | Schiefer: tonig   | 0 |  Bleis-Pintgas-Member |  Maastrichtien     | Santonien   | Flysch  |
+|15203307 |Stätzerhorn-Fm.: Parnegl-Mb. | Kalkstein: sandig  | Schiefer: tonig   | 0 |  Parnegl-Member |  Maastrichtien     | Santonien   | Flysch  |
+|15203308 |Stätzerhorn-Fm.: Danis-Mb. | Kalkstein: sandig  | 0   | 0 |  Danis-Member |  Maastrichtien     | Santonien   | Flysch  |
+|15203309 |Stätzerhorn-Fm.: Raschil-Mb. | Kalkstein: sandig  | Schiefer: tonig   | 0 |  Raschil-Member |  Maastrichtien     | Santonien   | Flysch  |
+|15203310 |Bruneggjoch-Fm.: Embd-Mb. | Quarzit  | Konglomerat: Quarz   | 0 |  Embd-Member |  Lopingien     | Lopingien   | Detritische Trias  |
+|15203311 |Randa-Augengneis: Bonigersee-Augengneis | Granit: porphyrisch  | Gneis: augig   | 0 |  Bonigersee-Augengneis |  Ordovicien     | Ordovicien   | Variszisches Grundgebirge  |
+|15203312 |Törbel-Gneis | Gneis  | 0   | 0 |  Törbel-Gneis |  Paléozoïque     | Paléozoïque   | Grundgebirge  |
+|15203313 |Lodano-Gneis | Gneis: gebändert  | 0   | 0 |  Lodano-Gneis |  Paléozoïque     | Paléozoïque   | Grundgebirge  |
+|15203314 |Vergeletto-Gneis | Gneis  | 0   | 0 |  Vergeletto-Gneis |  Paléozoïque     | Paléozoïque   | Grundgebirge  |
+|15203315 |Cortascia-Gneis | Gneis: Biotit-Muskovit  | 0   | 0 |  Cortascia-Gneis |  Paléozoïque     | Paléozoïque   | Grundgebirge  |
+|15203316 |Forcoletta-Gneis | Gneis: Biotit-Muskovit  | 0   | 0 |  Forcoletta-Gneis |  Paléozoïque     | Paléozoïque   | Grundgebirge  |
+|15203317 |Matorello-Gneis | Gneis  | Granodiorit   | 0 |  Matorello-Gneis |  Assélien     | Pennsylvanien tardif   | Variszisches Grundgebirge  |
+|15203318 |Complexe gneissique du Lebendun | Gneis: psephitisch  | Marmor   | Schiefer: Glimmer |  Lebendun-Komplex |  Mésozoïque     | Paléozoïque   | Grundgebirge  |
+|15203319 |Sabbione-Sandstein | Sandstein  | Gestein: vulkanisch   | 0 |  Sabbione-Sandstein |  Bathonien     | Bajocien   | Lias-Dogger in neritischer Fazies  |
+|15203320 |Socle cristallin de la nappe du Monte Leone | Gneis: augig  | Gneis   | 0 |  0 |  Paléozoïque     | Paléozoïque   | Grundgebirge  |
+|15203321 |Ganter-Gneis | Gneis: augig  | 0   | 0 |  Ganter-Gneis |  Paléozoïque     | Paléozoïque   | Variszisches Grundgebirge  |
+|15203322 |Ritter-Gneis | Gneis  | 0   | 0 |  Ritter-Gneis |  Paléozoïque     | Paléozoïque   | Variszisches Grundgebirge  |
+|15203323 |Geisspfad-Serpentinit | Serpentinit  | Peridotit   | Granofels: Pyroxen |  Geisspfad-Serpentinit |  Mésozoïque     | Paléozoïque   | Grundgebirge  |
+|15203325 |Calcschistes de l&#39;Holzerspitz | Schiefer: kalkig  | 0   | 0 |  Holzerspitz-Kalkschiefer |  Mésozoïque     | Mésozoïque   | Post-Rift  |
+|15203327 |Rinderbach-Fm. | Tonstein  | Sandstein: Quarz   | 0 |  Rinderbach-Formation |  Danien     | Danien   | Flysch  |
+|15203328 |Langenegg-Fm. | Sandstein: kalkig  | Mergelstein   | 0 |  Langenegg-Formation |  Turonien     | Cénomanien   | Flysch  |
+|15203329 |Rombach-Fm. | Brekzie: polymikt  | Mergelstein   | 0 |  Rombach-Formation |  Santonien     | Coniacien   | Flysch  |
+|15203330 |Roffna-Gneis | Gneis: granitisch  | Gneis: granitisch   | 0 |  Roffna-Gneis |  Mississippien     | Mississippien   | Variszisches Grundgebirge  |
+|15203331 |Roffna-Gneis: Porphyrische Fazies | Granit: porphyrisch  | 0   | 0 |  Roffna-Gneis |  Mississippien     | Mississippien   | Variszisches Grundgebirge  |
+|15203332 |Burgruinen-Gneis | Gneis  | Pegmatit   | 0 |  Burgruinen-Gneis |  Paléozoïque     | Paléozoïque   | Grundgebirge  |
+|15203333 |Taspegn-Gneis | Gneis: psephitisch  | 0   | 0 |  Taspegn-Gneis |  Permien     | Carbonifère   | Sedimentbedeckung  |
+|15203334 |Aigremont-Brekzie | Brekzie: polymikt  | Siltstein: schiefrig   | 0 |  Aigremont-Brekzie |  Crétacé tardif     | Crétacé tardif   | Flysch  |
+|15203335 |Sulzgrabe-Fm. | Mergelstein: kalkig  | Sandstein   | Kalkstein |  Sulzgrabe-Formation |  Crétacé précoce     | Jurassique tardif   | Post-Rift Mesozoikum in pelagischer Fazies  |
+|15203336 |Brekzien-Decke: Rhät | Schiefer: kalkig  | 0   | 0 |  0 |  Rhétien     | Rhétien   | «Rhät»  |
+|15203337 |Klippen-Decke: Siderolithischer Dogger | Tonstein  | Gestein: residual: Eisenmineralien   | Brekzie: dolomitisch |  0 |  Jurassique moyen     | Jurassique précoce   | Lias-Dogger in neritischer Fazies  |
+|15203338 |St-Triphon-Fm.: Andonces-Mb.: Silex-Niveau | Kalkstein: Chert  | 0   | 0 |  «Silex-Niveau» (St-Triphon-Fm.) |  Anisien     | Anisien   | Karbonatische Trias  |
+|15203339 |St-Triphon-Fm.: Andonces-Mb.: Mittlere Rauwacke | Rauwacke  | Dolomitstein   | Mergelstein |  «Mittlere Rauhwacke» (St-Triphon-Fm.) |  Ladinien     | Anisien   | Karbonatische Trias  |
+|15203340 |Timun-Gneiskomplex | Schiefer: Serizit-Chlorit  | Gneis   | Amphibolit |  Timun-Gneiskomplex |  Paléozoïque     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15203341 |Malenco-Serpentinit | Serpentinit  | Schiefer: Antigorit   | 0 |  Malenco-Serpentinit |  Bathonien     | Bajocien   | Ophiolithische Abfolge  |
+|15203342 |Forno-Amphibolit | Amphibolit: gebändert  | Basalt   | Brekzie: pyroklastisch |  Forno-Amphibolit |  Tithonien     | Callovien   | Ophiolithische Abfolge  |
+|15203343 |Muretto-Quarzit | Quarzit  | Schiefer: Quarz   | 0 |  Muretto-Quarzit |  Crétacé tardif     | Crétacé tardif   | Post-Rift Mesozoikum in pelagischer Fazies  |
+|15203344 |Biot-Fm.: Colerin-Konglomerat | Konglomerat  | 0   | 0 |  Colerin-Konglomerat |  Maastrichtien     | Campanien   | Flysch  |
+|15203345 |Pierre-Avoi-Melange: Brekzie | Brekzie: polymikt  | 0   | 0 |  Pierre-Avoi-Brekzie |  Mésozoïque     | Mésozoïque   | Mélange  |
+|15203346 |Dréveneuse-Bauxit | Gestein: residual  | 0   | 0 |  Dréveneuse-Bauxit |  Jurassique moyen     | Jurassique précoce   | Lias-Dogger in neritischer Fazies  |
+|15203347 |Barrhorn-Einheit: Metabauxit | Schiefer: Chloritoid-Kyanit  | 0   | 0 |  Brunnegjoch-Metabauxit |  Jurassique moyen     | Jurassique précoce   | Lias-Dogger in neritischer Fazies  |
+|15203349 |Schistes du (Piz) Terri | Schiefer: kalkig  | Schiefer: tonig   | Marmor |  Terri-Schiefer |  Jurassique moyen     | Jurassique précoce   | Sedimentbedeckung  |
+|15203350 |Wildflysch de Robièi | Siltstein  | Sandstein: kalkig: Glimmer   | Schiefer: Glimmer-Granat |  Robiei-Wildflysch |  Priabonien     | Eocène moyen   | Mélange  |
+|15203351 |Wildflysch du Pizzo Castello | Gneis  | Sandstein: kalkig   | Marmor |  Pizzo-Castello-Wildflysch |  Priabonien     | Eocène moyen   | Mélange  |
+|15203352 |Wildflysch de Tamier-Zött | Gneis  | Gestein: basisch   | 0 |  Tamier-Zött-Wildflysch |  Priabonien     | Eocène moyen   | Mélange  |
+|15203353 |Wildflysch de l&#39;Alpe Tamia-Campo | Marmor: kalkig  | 0   | 0 |  Alpe-Tamia-Campo-Wildflysch |  Priabonien     | Eocène moyen   | Mélange  |
+|15203354 |Calcschistes du Teggiolo | Schiefer: kalkig  | 0   | 0 |  Teggiolo-Kalkschiefer |  Eocène moyen     | Crétacé tardif   | Post-Rift Mesozoikum in pelagischer Fazies  |
+|15203355 |Quartzite du Mèdola | Quarzit  | Sandstein: kalkig   | Schiefer: Glimmer |  Medola-Quarzit |  Eocène moyen     | Crétacé tardif   | Post-Rift Mesozoikum in pelagischer Fazies  |
+|15203356 |Calcschiste de Pianasciom | Schiefer: kalkig  | Sandstein   | Kalkstein |  Pianasciom-Kalkschiefer |  Eocène moyen     | Crétacé tardif   | Post-Rift Mesozoikum in pelagischer Fazies  |
+|15203357 |Grès du Piano delle Creste | Sandstein: Quarz  | Sandstein: kalkig   | 0 |  Piano-delle-Creste-Sandstein |  Eocène moyen     | Crétacé tardif   | Post-Rift Mesozoikum in detritischer Fazies  |
+|15203358 |Groupe d&#39;Antabia | Marmor  | Sandstein   | Konglomerat |  0 |  Berriasien     | Jurassique précoce   | Sedimentbedeckung  |
+|15203359 |Formation des Vanis | Marmor  | Schiefer: kalkig   | 0 |  Vanis-Formation |  Berriasien     | Berriasien   | Post-Rift Mesozoikum in pelagischer Fazies  |
+|15203360 |Marbre de Sevinèra | Marmor: kalkig  | 0   | 0 |  Sevinera-Marmor |  Tithonien     | Oxfordien   | Post-Rift Mesozoikum in Plattform-Fazies  |
+|15203361 |Grès de Sevinèra | Sandstein: kalkig  | 0   | 0 |  Sevinera-Sandstein |  Callovien     | Bathonien   | Lias-Dogger in neritischer Fazies  |
+|15203362 |Conglomérat du Ri d&#39;Antabia | Konglomerat  | 0   | 0 |  Ri-d&#39;Antabia-Konglomerat |  Jurassique moyen     | Jurassique précoce   | Lias-Dogger in neritischer Fazies  |
+|15203363 |Scisti bruni (Lebendun) | Schiefer: Glimmer  | 0   | 0 |  «Scisti bruni» (Lebendun) |  Mésozoïque     | Paléozoïque   | Grundgebirge  |
+|15203364 |Gneiss basale (Lebendun) | Gneis: augig  | 0   | 0 |  Lebendun-Komplex |  Mésozoïque     | Paléozoïque   | Grundgebirge  |
+|15203365 |Orthogneiss d&#39;Antigorio | Gneis: magmatisch  | 0   | 0 |  Antigorio-Orthogneis |  Cisuralien     | Cisuralien   | Grundgebirge  |
+|15203366 |Couches-Rouges (Falknis, Sulzfluh, Tasna) | Kalkstein: mergelig  | Mergelstein   | Brekzie |  0 |  Maastrichtien     | Albien   | Couches Rouges  |
+|15203367 |Lagensandkalk | Schiefer: tonig-kalkig  | Quarzit: Chlorit   | 0 |  0 |  Jurassique précoce     | Jurassique précoce   | Sedimentbedeckung  |
+|15203368 |Série schisto-quartzitique (Pierre Avoi) | Schiefer: tonig  | Quarzit   | Schiefer: kalkig |  Pierre-Avoi-Melange |  Rupélien     | Eocène moyen   | Mélange  |
+|15203369 |Série conglomératique (Pierre Avoi) | Konglomerat  | 0   | 0 |  Pierre-Avoi-Melange |  Rupélien     | Eocène moyen   | Mélange  |
+|15203370 |Compexe de Südegg | Schiefer  | Gestein: metamorph   | 0 |  Südegg-Komplex |  Mésozoïque     | Paléozoïque   | Mélange  |
+|15203371 |Complexe de la Punta Rossa | Gneis  | Serpentinit   | Konglomerat |  Punta-Rossa-Komplex |  Mésozoïque     | Paléozoïque   | Mélange  |
+|15203372 |Schistes de Ferret | Schiefer: tonig  | Schiefer: kieselig   | Kalkstein |  Ferret-Schiefer |  Crétacé tardif     | Crétacé précoce   | Sedimentbedeckung  |
+|15203373 |Schistes basaux du (Piz) Terri | Schiefer: sandig-tonig  | 0   | 0 |  0 |  Jurassique précoce     | Jurassique précoce   | Sedimentbedeckung  |
+|15203374 |Schistes du Val Lumnezia | Schiefer  | 0   | 0 |  0 |  Crétacé     | Crétacé   | Sedimentbedeckung  |
+|15203376 |Konglomeratgneis (Terri) | Gneis: psephitisch  | 0   | 0 |  0 |  Trias précoce     | Permien   | Sedimentbedeckung  |
+|15203377 |Brèche de Garzott | Brekzie  | Kalkstein: sandig   | Quarzit |  Garzott-Brekzie |  Jurassique moyen     | Jurassique précoce   | Sedimentbedeckung  |
+|15203378 |Mélange d&#39;Areua-Bruschghorn | Gneis  | Brekzie   | 0 |  Areua-Bruschghorn-Melange |  Cénozoïque     | Paléozoïque   | Mélange  |
+|15203379 |Albitquarzit (Grava) | Quarzit: Albit  | 0   | 0 |  0 |  Jurassique moyen     | Jurassique moyen   | Sedimentbedeckung  |
+|15203380 |Basale Tonschiefer (Grava) | Schiefer: tonig  | 0   | 0 |  0 |  Mésozoïque     | Mésozoïque   | Sedimentbedeckung  |
+|15203381 |Phengitgneis (Grava) | Gneis: augig: Phengit  | 0   | 0 |  0 |  Paléozoïque     | Paléozoïque   | Sedimentbedeckung  |
+|15203382 |Formation de la Haute Pointe | Kalkstein: kieselig: Bioklasten-Chert  | Kalkstein: mergelig-schiefrig   | 0 |  Haute-Pointe-Formation |  Oxfordien     | Callovien   | Syn-Rift  |
+|15203383 |Formation des Brasses | Kalkstein: kieselig  | Kalkstein: spätig: Bioklasten   | Kalkstein: mergelig-schiefrig |  Brasses-Formation |  Bajocien     | Pliensbachien   | Syn-Rift  |
+|15203385 |Gneiss oeillé de Macugnaga | Gneis: augig  | 0   | 0 |  Macugnaga-Augengneis |  Pennsylvanien     | Pennsylvanien   | Grundgebirge  |
+|15203386 |Permien de la Zone Houillère | Schiefer: Quarz  | Konglomerat   | Sandstein |  0 |  Permien     | Permien   | Spät- bis postvariszisches Grundgebirge  |
+|15203387 |Permien quarzoschisteux de la Zone Houillère | Schiefer: Quarz  | Gneis   | 0 |  0 |  Permien     | Permien   | Spät- bis postvariszisches Grundgebirge  |
+|15203388 |Rhyolite de Ricard | Rhyolith  | 0   | 0 |  Ricard-Rhyolit |  Permien     | Permien   | Spät- bis postvariszisches Grundgebirge  |
+|15203389 |Permien conglomératique de la Zone Houillère | Konglomerat  | 0   | 0 |  0 |  Permien     | Permien   | Spät- bis postvariszisches Grundgebirge  |
+|15203390 |Série schisto-gréseuse supérieure | Schiefer: sandig  | 0   | 0 |  Printse-Formation |  Cisuralien     | Pennsylvanien   | Spät- bis postvariszisches Grundgebirge  |
+|15203391 |Série schisteuse moyenne | Schiefer: tonig  | 0   | 0 |  Printse-Formation |  Pennsylvanien     | Pennsylvanien   | Spät- bis postvariszisches Grundgebirge  |
+|15203392 |Grès de Chandoline | Sandstein  | Sandstein: konglomeratisch   | 0 |  Chandoline-Sandstein |  Pennsylvanien     | Pennsylvanien   | Spät- bis postvariszisches Grundgebirge  |
+|15203393 |Gneiss de Gälmji | Gneis  | Schiefer: Glimmer-Granat   | Amphibolit |  Gälmji-Gneis |  Permien     | Carbonifère   | Grundgebirge  |
+|15203394 |Gabbro du Scherbadung | Gabbro  | 0   | 0 |  Scherbadung-Gabbro |  Paléozoïque     | Paléozoïque   | Grundgebirge  |
+|15203395 |Gneiss oeillé des Lacerandes | Gneis: augig  | 0   | 0 |  Lacerandes-Augengneis |  Spätes Ordovizium     | Mittleres Ordovizium   | Grundgebirge  |
+|15203396 |Métapélites du Mont Mort | Schiefer: Glimmer-Granat  | Amphibolit   | 0 |  Mont-Mort-Metapelit |  Paléozoïque     | Paléozoïque   | Grundgebirge  |
+|15203397 |Schistes noirs (Pierre Avoi) | Schiefer: tonig  | 0   | 0 |  Pierre-Avoi-Melange |  Mésozoïque     | Paléozoïque   | Mélange  |
+|15203398 |Calcaire albitisé de la Dotse | Kalkstein: Albit  | 0   | 0 |  La-Dotse-Albitkalk |  Mésozoïque     | Mésozoïque   | Sedimentbedeckung  |
+|15203399 |Gneiss de Ginals | Gneis: augig  | 0   | 0 |  Ginals-Gneis |  Paléozoïque     | Protérozoïque   | Grundgebirge  |
+|15203400 |Socle cristallin de la nappe de Berisal | Gneis: Granat  | Schiefer: Glimmer-Granat   | Amphibolit |  Berisal-Gneiskomplex |  Permien     | Ordovicien   | Grundgebirge  |
+|15203401 |Gneiss oeillé de la nappe de Berisal | Gneis: augig  | 0   | 0 |  Berisal-Gneiskomplex |  Paléozoïque     | Paléozoïque   | Grundgebirge  |
+|15203402 |Socle cristallin de la nappe du Ruitor | Gneis: augig  | Schiefer: Glimmer-Granat   | Amphibolit |  Ruitor-Gneiskomplex |  Paléozoïque     | Protérozoïque   | Grundgebirge  |
+|15203403 |Gneiss du Corno | Gneis: psammitisch  | Gneis: psephitisch: Phengit   | 0 |  Corno-Gneis |  Paléozoïque     | Protérozoïque   | Grundgebirge  |
+|15203404 |Quartzite du Trias nord-pennique | Quarzit  | 0   | 0 |  0 |  Trias     | Trias   | Detritische Trias  |
+|15203405 |Socle cristallin du Briançonnais | Gneis  | 0   | 0 |  0 |  Paléozoïque     | Protérozoïque   | Grundgebirge  |
+|15203406 |Permo-Carbonifère de la nappe du Ruitor | Quarzit  | Schiefer: Quarz-Glimmer   | 0 |  Mont-Brûlé-Quarzit |  Permien     | Carbonifère   | Spät- bis postvariszisches Grundgebirge  |
+|15203407 |Permo-Carbonifère conglomératique de la nappe du Ruitor | Konglomerat  | 0   | 0 |  Plan-Palasuit-Konglomerat |  Permien     | Carbonifère   | Spät- bis postvariszisches Grundgebirge  |
+|15203408 |Schistes lustrés du Piémontais | 15111591  | Schiefer: tonig   | 0 |  0 |  Mésozoïque     | Mésozoïque   | Post-Rift Mesozoikum in pelagischer Fazies  |
+|15203409 |Métasédiments de la nappe du Tsaté | Gestein: sedimentär  | 0   | 0 |  0 |  Mésozoïque     | Mésozoïque   | Post-Rift Mesozoikum in pelagischer Fazies  |
+|15203410 |Marbre de la nappe du Tsaté | Marmor  | Brekzie   | 0 |  0 |  Jurassique tardif     | Jurassique tardif   | Maiolica / Aptychenkalk  |
+|15203411 |Métaradiolarite de la nappe du Tsaté | Gestein: kieselig: Radiolarien  | Schiefer: kieselig   | 0 |  Chanrion-Radiolarit |  Jurassique tardif     | Jurassique moyen   | Radiolarit  |
+|15203412 |Métasédiments de la nappe de Zermatt-Saas | Gestein: sedimentär  | 0   | 0 |  0 |  Mésozoïque     | Mésozoïque   | Post-Rift Mesozoikum in pelagischer Fazies  |
+|15203413 |Ophiolite du Piémontais | Serpentinit  | Gabbro   | Basalt |  0 |  Jurassique tardif     | Jurassique moyen   | Ophiolithische Abfolge  |
+|15203414 |Ophiolite de la nappe du Tsaté | Serpentinit  | Gabbro   | Basalt |  0 |  Jurassique tardif     | Jurassique moyen   | Ophiolithische Abfolge  |
+|15203415 |Métabasalte du Mont des Ritzes | Basalt  | Prasinit   | 0 |  Mont-des-Ritzes-Metabasalt |  Jurassique tardif     | Jurassique moyen   | Ophiolithische Abfolge  |
+|15203416 |Métagabbro des Aiguilles Rouges d&#39;Arolla | Gabbro  | 0   | 0 |  Aiguilles-Rouges-d&#39;Arolla-Metagabbro |  Jurassique tardif     | Jurassique moyen   | Ophiolithische Abfolge  |
+|15203417 |Brèche de Torrembey | Brekzie: kalkig  | 0   | 0 |  Torrembey-Brekzie |  Trias     | Trias   | Prä-Rift  |
+|15203418 |Marbre de la nappe de Zermatt-Saas | Marmor  | 0   | 0 |  0 |  Jurassique tardif     | Jurassique tardif   | Maiolica / Aptychenkalk  |
+|15203419 |Quartzite de la nappe de Zermatt-Saas | Quarzit  | Gestein: kieselig: Radiolarien   | 0 |  0 |  Jurassique tardif     | Jurassique moyen   | Radiolarit  |
+|15203420 |Mélange du Riffelberg | Eklogit  | Schiefer   | 0 |  Riffelberg-Melange |  Mésozoïque     | Mésozoïque   | Mélange  |
+|15203421 |Schistes lustrés de la nappe de Zermatt-Saas | 15111591  | Schiefer: tonig   | 0 |  0 |  Mésozoïque     | Mésozoïque   | Post-Rift Mesozoikum in pelagischer Fazies  |
+|15203422 |Ophiolite de la nappe de Zermatt-Saas | Serpentinit  | Gabbro   | Basalt |  0 |  Jurassique tardif     | Jurassique moyen   | Ophiolithische Abfolge  |
+|15203423 |Métabasalte du Pfulwe | Basalt  | Prasinit   | 0 |  Pfulwe-Metabasalt |  Jurassique tardif     | Jurassique moyen   | Ophiolithische Abfolge  |
+|15203424 |Ophiolite de la nappe d&#39;Antrona | Serpentinit  | Gabbro   | Basalt |  0 |  Jurassique tardif     | Jurassique moyen   | Ophiolithische Abfolge  |
+|15203425 |Gneiss du Böshorn | Gneis  | Granit   | 0 |  Böshorn-Gneis |  Paléozoïque     | Protérozoïque   | Grundgebirge  |
+|15203426 |Orthogneiss de la nappe du Monte Leone | Gneis: magmatisch  | 0   | 0 |  0 |  Permien     | Carbonifère   | Grundgebirge  |
+|15203427 |Leucogneiss de la nappe du Monte Leone | Gneis  | 0   | 0 |  0 |  Paléozoïque     | Protérozoïque   | Grundgebirge  |
+|15203428 |Hyperaugengneiss de la nappe du Monte Leone | Gneis: augig  | 0   | 0 |  0 |  Ordovicien     | Ordovicien   | Grundgebirge  |
+|15203429 |Paragneiss de la nappe du Monte Leone | Gneis: sedimentär  | 0   | 0 |  0 |  Paléozoïque     | Protérozoïque   | Grundgebirge  |
+|15203430 |Gneiss du Lebendun, arkosique | Sandstein: Feldspat  | 0   | 0 |  Lebendun-Komplex |  Mésozoïque     | Permien   | Grundgebirge  |
+|15203431 |Gneiss du Lebendun, conglomératique | Konglomerat  | 0   | 0 |  Lebendun-Komplex |  Mésozoïque     | Permien   | Grundgebirge  |
+|15203432 |Série du (Passo) Salarioli | Kalkstein  | Dolomitstein   | Serpentinit |  0 |  Trias     | Pennsylvanien   | Sedimentbedeckung  |
+|15203433 |Socle cristallin de la nappe de Ruginenta | Gneis  | Gestein: ultramafisch   | Schiefer: Glimmer-Granat |  0 |  Paléozoïque     | Protérozoïque   | Grundgebirge  |
+|15203434 |Schistes de la nappe de Ruginenta | Schiefer: Glimmer-Granat  | 0   | 0 |  0 |  Paléozoïque     | Protérozoïque   | Grundgebirge  |
+|15203435 |Paragneiss de la nappe de Ruginenta | Gneis: sedimentär  | 0   | 0 |  0 |  Paléozoïque     | Protérozoïque   | Grundgebirge  |
+|15203436 |Formation de la Preja | Quarzit  | Rauwacke   | Marmor |  Preja-Formation |  Jurassique tardif     | Trias   | Sedimentbedeckung  |
+|15203437 |Formation des Cavalli | Sandstein: tonig  | Sandstein: Quarz   | Schiefer: Glimmer |  Cavalli-Formation |  Permien     | Permien   | Sedimentbedeckung  |
+|15203438 |Série de Furgg | Sandstein: Feldspat  | Quarzit   | Marmor |  0 |  Mésozoïque     | Permien   | Sedimentbedeckung  |
+|15203439 |Granite de Mezzalama | Granit: porphyrisch  | 0   | 0 |  Mezzalama-Granit |  Guadalupien     | Cisuralien   | Grundgebirge  |
+|15203440 |Orthogneiss du Mont Rose, à grain grossier | Gneis: magmatisch  | 0   | 0 |  Monte-Rosa-Orthogneis  |  Carbonifère     | Carbonifère   | Grundgebirge  |
+|15203441 |Migmatite du Rottal | Migmatit  | 0   | 0 |  Rottal-Migmatit |  Paléozoïque     | Paléozoïque   | Grundgebirge  |
+|15203442 |Orthogneiss du Mont Rose, mylonitique | Gneis: mylonitisch  | 0   | 0 |  Monte-Rosa-Orthogneis  |  Carbonifère     | Carbonifère   | Grundgebirge  |
+|15203443 |Paragneiss de la nappe du Mont Rose | Gneis: sedimentär  | 0   | 0 |  0 |  Paléozoïque     | Protérozoïque   | Grundgebirge  |
+|15203444 |Gneiss à biotite de la nappe du Mont Rose | Gneis: Biotit  | 0   | 0 |  0 |  Paléozoïque     | Protérozoïque   | Grundgebirge  |
+|15203445 |Gneiss rubané de la nappe du Mont Rose | Gneis: gebändert  | 0   | 0 |  0 |  Paléozoïque     | Protérozoïque   | Grundgebirge  |
+|15203446 |Micaschiste de la nappe du Mont Rose | Schiefer: Glimmer  | 0   | 0 |  0 |  Paléozoïque     | Protérozoïque   | Grundgebirge  |
+|15203447 |Série du Grundberg | Marmor  | Marmor   | Dolomitstein |  0 |  Crétacé tardif     | Trias   | Sedimentbedeckung  |
+|15203449 |Orthogneiss de la nappe du Protjengrat | Gneis: magmatisch  | 0   | 0 |  Portjengrat-Orthogneis |  Paléozoïque     | Paléozoïque   | Grundgebirge  |
+|15203450 |Gneiss oeillé de Saas Fee | Gneis: augig  | 0   | 0 |  Saas-Fee-Augengneis |  Paléozoïque     | Paléozoïque   | Grundgebirge  |
+|15203451 |Migmatite de l&#39;Almagelhorn | Migmatit  | 0   | 0 |  Almagelhorn-Migmatit |  Paléozoïque     | Protérozoïque   | Grundgebirge  |
+|15203452 |Paragneiss du Weissmies | Gneis: sedimentär  | Gneis: migmatitisch   | 0 |  Weissmies-Paragneis |  Paléozoïque     | Protérozoïque   | Grundgebirge  |
+|15203453 |Orthogneiss du Mont Rose, à grain moyen | Gneis: magmatisch  | 0   | 0 |  Monte-Rosa-Orthogneis  |  Carbonifère     | Carbonifère   | Grundgebirge  |
+|15203454 |Mylonite du Stellihorn | Gneis: mylonitisch  | 0   | 0 |  Stellihorn-Mylonit |  Cénozoïque     | Paléozoïque   | Grundgebirge  |
+|15203455 |Calcschistes de la Série du Fäldbach | Schiefer: kalkig  | Schiefer: Glimmer   | 0 |  0 |  Mésozoïque     | Mésozoïque   | Post-Rift  |
+|15203456 |Dogger nord-pennique | Schiefer  | 0   | 0 |  0 |  Jurassique moyen     | Jurassique moyen   | Lias-Dogger in detritischer Fazies  |
+|15203457 |Lias nord-pennique | Kalkstein  | 0   | 0 |  0 |  Aalénien     | Jurassique précoce   | Lias-Dogger in detritischer Fazies  |
+|15203458 |Dolomie du Trias nord-pennique | Marmor: dolomitisch  | 0   | 0 |  0 |  Trias     | Trias   | Karbonatische Trias  |
+|15203459 |Paragneiss de Vagrande | Gneis: sedimentär  | Gneis: Biotit-Muskovit   | Schiefer: Glimmer |  Valgrande-Paragneis |  Paléozoïque     | Protérozoïque   | Grundgebirge  |
+|15203460 |Roches intrusives varisques du Briançonnais | Gneis: magmatisch  | 0   | 0 |  0 |  Permien     | Carbonifère   | Variszisches Grundgebirge  |
+|15203461 |Socle cristallin anté-varisque du Briançonnais | Gneis  | 0   | 0 |  0 |  Paléozoïque     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15203462 |Péridotite du Moncucco | Peridotit  | 0   | 0 |  Moncucco-Peridotit |  Mésozoïque     | Paléozoïque   | Grundgebirge  |
+|15203463 |Schistes oeillés à porphyroblastes d&#39;albite (SOPA) de la Formation de l&#39;Adlerflüe | Schiefer: augig: Glimmer  | 0   | 0 |  Adlerflüe-Formation |  Cambrien     | Protérozoïque   | Grundgebirge  |
+|15203464 |Amphibolite rubanée de la Formation de l&#39;Adlerflüe | Amphibolit: gebändert  | 0   | 0 |  Adlerflüe-Formation |  Paléozoïque     | Protérozoïque   | Grundgebirge  |
+|15203465 |Éclogite du Minugrat | Eklogit  | 0   | 0 |  Minugrat-Eklogit |  Paléozoïque     | Protérozoïque   | Grundgebirge  |
+|15203466 |Amphibolite du Complexe gneissique de l&#39;Ergischhorn | Amphibolit  | 0   | 0 |  Ergischhorn-Komplex |  Protérozoïque     | Protérozoïque   | Grundgebirge  |
+|15203467 |Roches vertes de la Formation du Distulberg | Gestein: mafisch  | 0   | 0 |  Distulberg-Formation |  Cambrien     | Cambrien   | Grundgebirge  |
+|15203468 |Prasinites de la Formation du Métailler | Prasinit  | 0   | 0 |  Métailler-Formation |  Rupélien     | Cambrien   | Grundgebirge  |
+|15203469 |Roches ultramafiques de la Formation du Métailler | Gestein: ultramafisch  | 0   | 0 |  Métailler-Formation |  Rupélien     | Cambrien   | Grundgebirge  |
+|15203470 |Gneiss albitique d&#39;Oberems | Gneis: Albit  | Rhyolith   | 0 |  Oberems-Albitgneis |  Permien     | Permien   | Variszisches Grundgebirge  |
+|15203471 |Permo-Carbonifère de la nappe de la Maggia | Schiefer  | Konglomerat   | 0 |  0 |  Permien     | Carbonifère   | Spät- bis postvariszisches Grundgebirge  |
+|15203472 |Permien de la nappe de la Maggia | Schiefer: Quarz-Glimmer  | 0   | 0 |  0 |  Permien     | Permien   | Spät- bis postvariszisches Grundgebirge  |
+|15203473 |Carbonifère de la nappe de la Maggia | Schiefer: Glimmer-Graphit  | 0   | 0 |  0 |  Carbonifère     | Carbonifère   | Spät- bis postvariszisches Grundgebirge  |
+|15203474 |Roches intrusives varisques de la nappe de la Maggia | Gestein: plutonisch  | 0   | 0 |  0 |  Permien     | Carbonifère   | Variszisches Grundgebirge  |
+|15203475 |Socle cristallin anté-varisque de la nappe de la Maggia | Gneis  | Amphibolit   | 0 |  0 |  Paléozoïque     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15203476 |Maggia-D.: Paragneis | Gneis: sedimentär  | 0   | 0 |  0 |  Paléozoïque     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15203477 |Gneiss rubané de la nappe de la Maggia | Gneis: gebändert  | 0   | 0 |  0 |  Paléozoïque     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15203478 |Gneiss oeillé de la nappe de la Maggia | Gneis: augig  | 0   | 0 |  0 |  Paléozoïque     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15203479 |Gneiss d&#39;Alpigia | Gneis: migmatitisch  | Amphibolit: migmatitisch   | 0 |  Alpigia-Gneis |  Permien     | Permien   | Grundgebirge  |
+|15203480 |zone de Gresso-Someo | Quarzit  | Marmor: kalkig   | 0 |  0 |  Mésozoïque     | Mésozoïque   | Sedimentbedeckung  |
+|15203481 |zone de Pertusio | Quarzit  | Marmor: kalkig   | 0 |  0 |  Mésozoïque     | Mésozoïque   | Sedimentbedeckung  |
+|15203482 |zone du Passo di Cristallina | Marmor  | Quarzit   | Schiefer: Glimmer-Granat |  0 |  Mésozoïque     | Mésozoïque   | Sedimentbedeckung  |
+|15203483 |Formation du Lago Scuro | Marmor: konglomeratisch  | Brekzie: kalkig   | 0 |  Lago-Scuro-Formation |  Jurassique tardif     | Jurassique moyen   | Post-Rift Mesozoikum in Plattform-Fazies  |
+|15203484 |Formation du Val Sabbia | Quarzit  | 0   | 0 |  Val-Sabbia-Formation |  Sinémurien     | Sinémurien   | Lias-Dogger in detritischer Fazies  |
+|15203485 |Formation du (Pizzo) Massari | Sandstein  | Kalkstein: sandig   | 0 |  Massari-Formation |  Pliensbachien     | Hettangien   | Lias-Dogger in detritischer Fazies  |
+|15203486 |Formation du Narèt | Schiefer: Quarz-Glimmer  | Schiefer: Glimmer-Graphit   | Marmor |  Naret-Formation |  Hettangien     | Rhétien   | Lias-Dogger in detritischer Fazies  |
+|15203487 |Serpentinite du Breithorn | Serpentinit  | 0   | 0 |  Breithorn-Serpentinit |  Jurassique tardif     | Jurassique moyen   | Ophiolithische Abfolge  |
+|15203488 |Amphibolite de Loranco | Amphibolit  | 0   | 0 |  Loranco-Amphibolit |  Jurassique tardif     | Jurassique moyen   | Ophiolithische Abfolge  |
+|15203489 |Éclogite d&#39;Andolla | Eklogit  | 0   | 0 |  Andolla-Eklogit |  Jurassique tardif     | Jurassique moyen   | Ophiolithische Abfolge  |
+|15203490 |Schistes du Roz | Schiefer: sandig-kalkig  | Schiefer: sandig   | Schiefer: tonig |  Roz-Schiefer |  Paléogène     | Crétacé tardif   | Sedimentbedeckung  |
+|15203491 |Ophiolite de la zone de Ramosch | Serpentinit  | Amphibolit   | 0 |  0 |  Crétacé précoce     | Jurassique   | Ophiolithische Abfolge  |
+|15203492 |Métasédiments de la nappe d&#39;Arosa | Schiefer  | Marmor   | Sandstein |  0 |  Crétacé tardif     | Jurassique tardif   | Post-Rift Mesozoikum in pelagischer Fazies  |
+|15203493 |Serpentinite de la Totalp | Serpentinit  | 0   | 0 |  Totalp-Serpentinit |  Oxfordien     | Bathonien   | Ophiolithische Abfolge  |
+|15203494 |Brèche de Maran | Brekzie: polymikt  | Schiefer: tonig-kieselig   | 0 |  Maran-Brekzie |  Jurassique tardif     | Jurassique tardif   | Syn-Rift  |
+|15203495 |Calcaire de Solis | Kalkstein: tonig: Chert  | 0   | 0 |  Solis-Kalk |  Jurassique tardif     | Jurassique précoce   | Sedimentbedeckung  |
+|15203496 |Métasédiments de la nappe du Platta | Gestein: sedimentär  | 0   | 0 |  0 |  Cénozoïque     | Jurassique   | Post-Rift Mesozoikum in pelagischer Fazies  |
+|15203497 |Schistes de Flix | Schiefer: tonig  | Schiefer: kieselig   | 0 |  Flix-Schichten |  Albien     | Aptien   | Post-Rift Mesozoikum in pelagischer Fazies  |
+|15203498 |Calcaire à calpionelles de la nappe du Platta | 15111233  | Mergelstein   | 0 |  0 |  Jurassique     | Jurassique   | Maiolica / Aptychenkalk  |
+|15203499 |Radiolarite de la nappe du Platta | Gestein: kieselig: Radiolarien  | Schiefer: tonig-kieselig   | Brekzie |  Falotta-Radiolarit |  Jurassique     | Jurassique   | Radiolarit  |
+|15203500 |Ophiolite de la nappe du Platta | Serpentinit  | Gabbro   | Basalt |  0 |  Jurassique tardif     | Jurassique moyen   | Ophiolithische Abfolge  |
+|15203501 |Gneiss de Vignone | Gneis  | 0   | 0 |  Vignun-Gneis |  Paléozoïque     | Paléozoïque   | Grundgebirge  |
+|15203502 |Métasédiments de la nappe de l&#39;Avers | Gestein: sedimentär  | 0   | 0 |  0 |  Cénozoïque     | Jurassique   | Post-Rift Mesozoikum in pelagischer Fazies  |
+|15203503 |Ophiolite de la nappe de l&#39;Avers | Serpentinit  | Gabbro   | Basalt |  0 |  Jurassique tardif     | Jurassique moyen   | Ophiolithische Abfolge  |
+|15203504 |Brekzie-Formation | Brekzie  | 0   | 0 |  0 |  Crétacé tardif     | Albien   | Couches Rouges  |
+|15203505 |Brèche du Minschun | Brekzie: polymikt  | 0   | 0 |  Minschun-Brekzie (Tasna) |  Aptien     | Barrémien   | Couches Rouges  |
+|15203506 |Socle cristallin de la nappe de la Tasna | Gneis: sedimentär  | Schiefer   | Migmatit |  0 |  Paléozoïque     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15203507 |Gneiss du Piz del Palo | Gneis: augig  | Gneis: gebändert   | 0 |  Piz-del-Palo-Gneis |  Paléozoïque     | Protérozoïque   | Grundgebirge  |
+|15203508 |Granite de Truzzo | Granit  | Gneis: augig   | 0 |  Truzzo-Granit |  Permien     | Carbonifère   | Variszisches Grundgebirge  |
+|15203509 |Gneiss de Rebi | Gneis  | Granit   | 0 |  Rebi-Gneis |  Paléozoïque     | Protérozoïque   | Grundgebirge  |
+|15203510 |Gabbro de Brione | Gabbro  | 0   | 0 |  Brione-Gabbro |  Paléozoïque     | Protérozoïque   | Grundgebirge  |
+|15203511 |Migmatite du Gruf | Gneis: migmatitisch  | 0   | 0 |  Gruf-Migmatit |  Paléozoïque     | Protérozoïque   | Grundgebirge  |
+|15203512 |Adula-D.: Basaler Gneis | Gneis: Biotit-Muskovit  | 0   | 0 |  0 |  Paléozoïque     | Protérozoïque   | Grundgebirge  |
+|15203513 |Gneiss du Val Chironico | Gneis: Biotit-Hornblende  | 0   | 0 |  Val-Chironico-Gneis |  Paléozoïque     | Protérozoïque   | Grundgebirge  |
+|15203514 |Gneiss de Ganna | Gneis: schiefrig-augig  | 0   | 0 |  Ganna-Gneis |  Paléozoïque     | Protérozoïque   | Grundgebirge  |
+|15203515 |Adula-D.: Albit-Oligoklasgneis | Gneis: Albit-Oligoklas  | 0   | 0 |  0 |  Paléozoïque     | Protérozoïque   | Grundgebirge  |
+|15203516 |Gneiss de Sivigia | Gneis  | Schiefer: Glimmer-Granat   | 0 |  Sivigia-Gneis |  Paléozoïque     | Protérozoïque   | Grundgebirge  |
+|15203517 |Complexe gneissique d&#39;Aula-Spruga | Gneis: Biotit  | Gneis: Hornblende   | 0 |  Aula-Spruga-Gneiskomplex |  Paléozoïque     | Protérozoïque   | Grundgebirge  |
+|15203518 |Schistes verts du Lizun | 15111629  | Gabbro   | 0 |  Lizun-Prasinit |  Jurassique tardif     | Jurassique moyen   | Ophiolithische Abfolge  |
+|15203519 |Formation des Rossi | Schiefer: Glimmer-Granat  | 0   | 0 |  Rossi-Formation |  Crétacé     | Jurassique tardif   | Post-Rift Mesozoikum in pelagischer Fazies  |
+|15203520 |Gneiss de Bosco | Gneis  | 0   | 0 |  Bosco-Gneis |  Paléozoïque     | Paléozoïque   | Grundgebirge  |
+|15203521 |Gneiss du Batnall | Gneis: augig  | 0   | 0 |  Batnall-Gneis |  Paléozoïque     | Paléozoïque   | Grundgebirge  |
+|15203522 |Seron-Fm.: Sandig-kalkige Fazies | Kalkstein: sandig: Bioklasten  | 0   | 0 |  Seron-Formation |  Maastrichtien     | Maastrichtien   | Flysch  |
+|15203523 |Seron-Fm.: Konglomerat-dominierte Fazies | Konglomerat: polymikt  | 0   | 0 |  Seron-Formation |  Maastrichtien     | Maastrichtien   | Flysch  |
+|15203524 |Frutigen-Fm.: Konglomerat-dominierte Fazies | Konglomerat: polymikt  | Sandstein   | 0 |  Frutigen-Formation |  Maastrichtien     | Maastrichtien   | Flysch  |
+|15203525 |Frutigen-Fm.: Schiefrige Fazies | Tonstein: schiefrig  | Sandstein: kalkig   | Sandstein: tonig |  Frutigen-Formation |  Maastrichtien     | Maastrichtien   | Flysch  |
+|15203526 |Gypse de la Zone Submédiane | Evaporit: Gips  | 0   | 0 |  0 |  Trias     | Trias   | Mélange  |
+|15203527 |Karpatischer Keuper | Kalkstein: Korallen  | Tonstein   | 0 |  0 |  Trias tardif     | Trias tardif   | Pelitische Trias  |
+|15203528 |Marne de Zwischenmythen | Mergelstein: sandig: Glimmer  | 0   | 0 |  Zwischenmythen-Mergel |  Trias tardif     | Trias tardif   | Pelitische Trias  |
+|15203529 |Cenomanbrekzien-Serie | Brekzie  | Tonstein: schiefrig   | Mergelstein |  «Cenomanbrekzien-Serie» |  Cénomanien     | Cénomanien   | Post-Rift Mesozoikum in detritischer Fazies  |
+|15203530 |Brèche du Bettlerjoch | Brekzie  | 0   | 0 |  Bettlerjoch-Brekzie |  Mésozoïque     | Mésozoïque   | Post-Rift Mesozoikum in detritischer Fazies  |
+|15203531 |Brèche de Bargella | Brekzie  | 0   | 0 |  Bargella-Brekzie |  Cénomanien     | Cénomanien   | Post-Rift Mesozoikum in detritischer Fazies  |
+|15203532 |Adula-D.: Kalkschiefer und Marmor | Schiefer: kalkig  | Marmor: kalkig   | 0 |  0 |  Mésozoïque     | Mésozoïque   | Post-Rift Mesozoikum in pelagischer Fazies  |
+|15203533 |Formation du Salahorn: métaplutonite | Gestein: plutonisch  | 0   | 0 |  Salahorn-Formation |  Paléozoïque     | Protérozoïque   | Grundgebirge  |
+|15203534 |Formation du Salahorn: paragneiss | Gneis: sedimentär  | 0   | 0 |  Salahorn-Formation |  Paléozoïque     | Protérozoïque   | Grundgebirge  |
+|15203535 |Adula-D.: Ultramafitit | Gestein: ultramafisch  | 0   | 0 |  0 |  Paléozoïque     | Protérozoïque   | Grundgebirge  |
+|15203536 |Cima-Lunga-D.: Kalkschiefer und Marmor | Schiefer: kalkig  | Marmor: kalkig   | 0 |  0 |  Mésozoïque     | Mésozoïque   | Post-Rift Mesozoikum in pelagischer Fazies  |
+|15203537 |Cima-Lunga-D.: Dolomitmarmor | Marmor: dolomitisch  | 0   | 0 |  0 |  Trias     | Trias   | Karbonatische Trias  |
+|15203538 |Cima-Lunga-D.: Paragneis | Gneis: sedimentär  | 0   | 0 |  0 |  Paléozoïque     | Protérozoïque   | Grundgebirge  |
+|15203539 |Gneiss de Vacarisc | Gneis  | 0   | 0 |  Vacarisc-Gneis |  Paléozoïque     | Protérozoïque   | Grundgebirge  |
+|15203540 |Gneiss de Rognoi | Gneis  | 0   | 0 |  Rognoi-Gneis |  Paléozoïque     | Protérozoïque   | Grundgebirge  |
+|15203541 |Cima-Lunga-D.: Granatit | Granofels: Granat  | 0   | 0 |  0 |  Paléozoïque     | Protérozoïque   | Grundgebirge  |
+|15203542 |Cima-Lunga-D.: Amphibolit | Amphibolit  | 0   | 0 |  0 |  Paléozoïque     | Protérozoïque   | Grundgebirge  |
+|15203543 |Cima-Lunga-D.: Eklogit | Eklogit  | 0   | 0 |  0 |  Paléozoïque     | Protérozoïque   | Grundgebirge  |
+|15203544 |Cima-Lunga-D.: Ultramafitit | Gestein: ultramafisch  | 0   | 0 |  0 |  Paléozoïque     | Protérozoïque   | Grundgebirge  |
+|15203545 |Gneiss de Personico | Gneis  | Granit   | 0 |  Personico-Gneis |  Permien     | Carbonifère   | Grundgebirge  |
+|15203546 |Gneiss de la Leventina: partie supérieure | Gneis: Biotit-Muskovit  | Granit   | 0 |  Leventina-Gneis |  Permien     | Carbonifère   | Grundgebirge  |
+|15203547 |Gneiss de la Leventina: partie inférieure | Gneis  | Granit   | 0 |  Leventina-Gneis |  Permien     | Carbonifère   | Grundgebirge  |
+|15203548 |Leventina-D.: Kalksilikatfels | Granofels: Kalksilikat  | 0   | 0 |  0 |  Paléozoïque     | Protérozoïque   | Grundgebirge  |
+|15203549 |Leventina-D.: Leukogneis | Gneis  | 0   | 0 |  0 |  Paléozoïque     | Protérozoïque   | Grundgebirge  |
+|15203550 |Leventina-D.: Paragneis | Gneis: sedimentär  | 0   | 0 |  0 |  Paléozoïque     | Protérozoïque   | Grundgebirge  |
+|15203551 |Leventina-D.: Amphibolit | Amphibolit  | 0   | 0 |  0 |  Paléozoïque     | Protérozoïque   | Grundgebirge  |
+|15203552 |Maggia-D.: Amphibolit | Amphibolit  | 0   | 0 |  0 |  Paléozoïque     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15203553 |Simano-D.: Kalkmarmor | Marmor: kalkig  | 0   | 0 |  0 |  Mésozoïque     | Mésozoïque   | Grundgebirge  |
+|15203554 |Simano-D.: Dolomitmarmor | Marmor: dolomitisch  | 0   | 0 |  0 |  Trias     | Trias   | Grundgebirge  |
+|15203555 |Simano-D.: Paragneis | Gneis: sedimentär  | 0   | 0 |  0 |  Paléozoïque     | Protérozoïque   | Grundgebirge  |
+|15203556 |Gneiss de Renten | Gneis  | 0   | 0 |  Renten-Gneis |  Paléozoïque     | Protérozoïque   | Grundgebirge  |
+|15203557 |Gneiss de Legiuna | Gneis: augig  | 0   | 0 |  Legiuna-Gneis |  Paléozoïque     | Protérozoïque   | Grundgebirge  |
+|15203558 |Simano-D.: Amphibolit | Amphibolit  | 0   | 0 |  0 |  Paléozoïque     | Protérozoïque   | Grundgebirge  |
+|15203559 |Simano-D.: Ultramafitit | Gestein: ultramafisch  | 0   | 0 |  0 |  Paléozoïque     | Protérozoïque   | Grundgebirge  |
+|15203560 |Schistes de l&#39;Alpbach | Schiefer: tonig  | Sandstein   | Kalkstein |  Alpbach-Schiefer |  Crétacé     | Crétacé   | Post-Rift Mesozoikum in pelagischer Fazies  |
+|15203561 |Arosa-D.: Gabbro | Gabbro  | 0   | 0 |  0 |  Jurassique moyen     | Jurassique moyen   | Ophiolithische Abfolge  |
+|15203562 |Klippen-Flysch | Sandstein  | Mergelstein   | 0 |  0 |  Eocène     | Eocène   | Flysch  |
+|15203563 |Couches-Rouges de klippes de Suisse centrale | Kalkstein: mergelig  | Kalkstein: mikritisch   | Mergelstein |  0 |  Maastrichtien     | Albien   | Couches Rouges  |
+|15203564 |Flysch du Wägital: partie supérieure (Paléogène) | Brekzie: polymikt  | Sandstein   | Kalkstein: siltig-tonig |  Wägital-Flysch |  Yprésien     | Yprésien   | Flysch  |
+|15203565 |Flysch du Wägital: partie inférieure (Crétacé) | Brekzie: polymikt  | Mergelstein   | Kalkstein: mikritisch |  Wägital-Flysch |  Maastrichtien     | Santonien   | Flysch  |
+|15203566 |Flysch du Wägital: partie basale, tectonisée | Sandstein  | Mergelstein   | Kalkstein: siltig-tonig |  Wägital-Flysch |  Maastrichtien     | Santonien   | Flysch  |
+|15203567 |Formations de Gibel et de Griggeli | Kalkstein: sandig  | 0   | 0 |  0 |  Oxfordien     | Bathonien   | Lias-Dogger in neritischer Fazies  |
+|15203568 |Dolomie des Préalpes Médianes | Dolomitstein  | 0   | 0 |  0 |  Trias     | Trias   | Karbonatische Trias  |
+|15203569 |Dolomie et calcaire des Préalpes Médianes | Dolomitstein  | Kalkstein   | 0 |  0 |  Trias     | Trias   | Karbonatische Trias  |
+|15203570 |Dolomie schisteuse et cornieule des Préalpes Médianes | Dolomitstein: schiefrig  | Rauwacke   | 0 |  0 |  Trias     | Trias   | Prä-Rift  |
+|15203571 |Cornieule des Préalpes Médianes | Rauwacke  | 0   | 0 |  0 |  Trias     | Trias   | Prä-Rift  |
+|15203572 |Marne gypseuse et grès des Préalpes Médianes | Mergelstein: Gips  | Sandstein   | 0 |  0 |  Trias     | Trias   | Prä-Rift  |
+|15203573 |Grès des Schlieren, tectonisé au Paléogène | Sandstein  | Siltstein   | Tonstein |  Schlieren-Sandstein |  Paléogène     | Paléogène   | Flysch  |
+|15203574 |Couches de la Leimern | Kalkstein: mergelig  | Mergelstein: kalkig   | 0 |  Leimern-Schichten |  Santonien     | Coniacien   | Couches Rouges  |
+|15203575 |Cornieule et grès quartzitique des Préalpes Médianes (Trias basal) | Rauwacke  | Sandstein: Quarz   | 0 |  0 |  Trias moyen     | Trias précoce   | Prä-Rift  |
+|15203576 |Flysch des Schlieren: masse principale (Paléogène) | Sandstein  | Siltstein   | 0 |  0 |  Yprésien     | Yprésien   | Flysch  |
+|15203577 |Lias moyen des Préalpes | Kalkstein: sandig  | Kalkstein: spätig   | 0 |  0 |  Pliensbachien     | Sinémurien   | Lias-Dogger in neritischer Fazies  |
+|15203579 |Schistes argileux de la Nolla: grès quartzitique | Sandstein: Quarz  | 0   | 0 |  Nolla-Tonschiefer |  Albien     | Aptien   | Sedimentbedeckung  |
+|15203580 |Formation du Bärenhorn: grès quartzitique | Sandstein: Quarz  | 0   | 0 |  Bärenhorn-Formation |  Barrémien     | Berriasien   | Sedimentbedeckung  |
+|15203581 |Schiste argilo-calcaire de la nappe de la Grava | Schiefer: kalkig  | 0   | 0 |  0 |  Crétacé     | Crétacé   | Sedimentbedeckung  |
+|15203582 |Schiste calcaréo-argileux de la nappe de la Grava | Schiefer: tonig  | 0   | 0 |  0 |  Crétacé     | Crétacé   | Sedimentbedeckung  |
+|15203583 |Trias de la nappe de la Grava, indifférencié | Schiefer: Serizit  | 0   | 0 |  0 |  Trias     | Trias   | Prä-Rift  |
+|15203584 |Soladier- und Verdy-Mb. | Mergelstein  | Kalkstein   | 0 |  Staldengraben-Formation |  Bajocien     | Toarcien   | Lias-Dogger in pelagischer Fazies  |
+|15203585 |Col-de-Tompey- und Bois-de-Luan-Mb. | Mergelstein  | Sandstein: kalkig   | Kalkstein: mikritisch |  0 |  Hettangien     | Hettangien   | Lias-Dogger in neritischer Fazies  |
+|15203586 |Heiti- und Rossinière-Fm. | Mergelstein  | Kalkstein: kieselig   | Kalkstein: spätig |  0 |  Bajocien     | Sinémurien   | Syn-Rift  |
+|15203587 |Coulaytes-Melange und Cuvigne-Derrey-Fm. | Tonstein  | Kalkstein   | Sandstein: tonig: Lithoklasten |  0 |  Priabonien     | Eocène moyen   | Syn-Kollision  |
+|15203588 |Langel- und Col-de-Cordon-Mb. | Kalkstein: Ooide  | Kalkstein: arenitisch   | 0 |  0 |  Callovien     | Bajocien   | Syn-Rift  |
+|15203589 |Grande-Bonavau-Fm. und Fm. spathique | Kalkstein: spätig  | Kalkstein: mikritisch   | Dolomitstein |  0 |  Aalénien     | Sinémurien   | Lias-Dogger in neritischer Fazies  |
+|15203590 |Col-de-Tompey- und Agreblierai-Mb. | Mergelstein  | Sandstein: kalkig   | Kalkstein: Ooide |  0 |  Hettangien     | Hettangien   | Lias-Dogger in neritischer Fazies  |
+|15203591 |Chavanette- und Rubli-Mb. | Brekzie  | Mergelstein   | Kalkstein |  0 |  Callovien     | Bajocien   | Lias-Dogger in neritischer Fazies  |
+|15203592 |Barrhorn-Einheit: Flysch | Sandstein  | Gestein: pelitisch   | 0 |  0 |  Lutétien     | Lutétien   | Flysch  |
+|15203593 |Barrhorn-Einheit: Couches-Rouges | Kalkstein: mergelig  | Mergelstein   | 0 |  0 |  Maastrichtien     | Cénomanien   | Couches Rouges  |
+|15203594 |Barrhorn-Einheit: Malm | Kalkstein  | Mergelstein   | 0 |  0 |  Berriasien     | Oxfordien   | Malm  |
+|15203595 |Barrhorn-Einheit: Dogger | Sandstein  | Mergelstein   | Kalkstein: Ooide |  0 |  Callovien     | Bajocien   | Lias-Dogger in neritischer Fazies  |
+|15203596 |St-Triphon- und Wiriehorn-Fm. | Kalkstein  | Dolomitstein   | 0 |  0 |  Anisien     | Olénékien   | Karbonatische Trias  |
+|15203597 |Printse-Fm. | Sandstein  | Schiefer: tonig: Anthrazit   | 0 |  Printse-Formation |  Carbonifère     | Carbonifère   | Spät- bis postvariszisches Grundgebirge  |
+|15203598 |Métailler-Fm.: Louvie-Gabbro | Gabbro  | 0   | 0 |  Louvie-Gabbro |  Spätes Ordovizium     | Mittleres Ordovizium   | Grundgebirge  |
+|15203599 |Distulberg-Fm.: Graphitschiefer | Schiefer: Graphit  | 0   | 0 |  Distulberg-Formation |  Cambrien     | Cambrien   | Grundgebirge  |
+|15203600 |Lirec-Fm.: Amphibolit | Amphibolit  | 0   | 0 |  Lirec-Formation |  Cambrien     | Cambrien   | Grundgebirge  |
+|15203601 |Ergischhorn-Komplex: Brändjispitz-Gabbro | Gabbro  | 0   | 0 |  Brändjispitz-Metagabbro |  Cambrien     | Cambrien   | Grundgebirge  |
+|15203602 |Ergischhorn-Komplex: Eklogit | Eklogit  | 0   | 0 |  Ergischhorn-Komplex |  Protérozoïque     | Protérozoïque   | Grundgebirge  |
+|15203603 |Südegg-Komplex: Prasinit | Prasinit  | Basalt   | 0 |  Südegg-Komplex |  Mésozoïque     | Mésozoïque   | Mélange  |
+|15203604 |Südegg-Komplex: Talk-Chloritschiefer | Schiefer: Chlorit-Talk  | 0   | 0 |  Südegg-Komplex |  Mésozoïque     | Mésozoïque   | Mélange  |
+|15203605 |Gurnigel-Decke: Flysch-3 | Mergelstein  | Sandstein: kalkig   | 0 |  «Flysch 3» |  Thanétien     | Danien   | Flysch  |
+|15203606 |Gurnigel-Decke: Flysch-2 | Sandstein  | Tonstein   | 0 |  «Flysch 2» |  Yprésien     | Yprésien   | Flysch  |
+|15203607 |Hellstätt-Fm. und Flysch 2a | Tonstein  | Sandstein   | Kalkstein: siltig-tonig |  0 |  Danien     | Maastrichtien   | Flysch  |
+|15203608 |Aroley-, Marmontains- und St-Chritophe-Fm. | Schiefer  | Marmor   | Quarzit |  0 |  Paléogène     | Crétacé   | Sedimentbedeckung  |
+|15203609 |Südegg-Komplex: Schwarzer Schiefer | Schiefer: tonig  | 0   | 0 |  Südegg-Komplex |  Carbonifère     | Carbonifère   | Mélange  |
+|15203610 |Südegg-Komplex: Serpentinit | Serpentinit  | 0   | 0 |  Südegg-Komplex |  Permien     | Carbonifère   | Mélange  |
+|15203611 |Südegg-Komplex: Albitgneis | Gneis: Albit  | 0   | 0 |  Südegg-Komplex |  Permien     | Permien   | Mélange  |
+|15203612 |Südegg-Komplex: Marmor | Marmor: kalkig  | Marmor: dolomitisch   | Brekzie: dolomitisch |  Südegg-Komplex |  Trias tardif     | Trias moyen   | Mélange  |
+|15203613 |Südegg-Komplex: Brekzie | Brekzie  | 0   | 0 |  Südegg-Komplex |  Jurassique     | Jurassique   | Mélange  |
+|15203614 |Südegg-Komplex: Gips | Evaporit: Gips  | 0   | 0 |  Südegg-Komplex |  Trias tardif     | Trias moyen   | Mélange  |
+|15203615 |Monte-Leone-Decke: Sedimentbedeckung | Schiefer  | Marmor   | Konglomerat |  0 |  Mésozoïque     | Mésozoïque   | Sedimentbedeckung  |
+|15203616 |Monte-Leone-Decke: Dogger-Malm | Konglomerat: polymikt  | Marmor   | Schiefer: Glimmer |  0 |  Jurassique tardif     | Jurassique moyen   | Post-Rift  |
+|15203617 |Monte-Leone-Decke: Dogger-Malm: Glimmerschiefer | Schiefer: Glimmer  | 0   | 0 |  0 |  Jurassique tardif     | Jurassique moyen   | Post-Rift  |
+|15203618 |Monte-Leone-Decke: Dogger-Malm: Marmor | Marmor  | 0   | 0 |  0 |  Jurassique tardif     | Jurassique moyen   | Post-Rift  |
+|15203619 |Monte-Leone-Decke: Dogger: Konglomerat | Konglomerat  | Sandstein   | 0 |  0 |  Jurassique tardif     | Jurassique moyen   | Syn-Rift  |
+|15203620 |Monte-Leone-Decke: Lias | Konglomerat  | Marmor   | Schiefer |  0 |  Jurassique moyen     | Jurassique précoce   | Syn-Rift  |
+|15203621 |Monte-Leone-Decke: Lias: Sandstein | Sandstein  | 0   | 0 |  0 |  Jurassique moyen     | Jurassique précoce   | Lias-Dogger in detritischer Fazies  |
+|15203622 |Monte-Leone-Decke: Lias: Konglomerat | Konglomerat  | Sandstein   | 0 |  0 |  Jurassique moyen     | Jurassique précoce   | Lias-Dogger in detritischer Fazies  |
+|15203623 |Monte-Leone-Decke: Trias | Quarzit  | Marmor   | Rauwacke |  0 |  Trias     | Trias   | Prä-Rift  |
+|15203624 |Monte-Leone-Decke: Quarzitische Trias | Quarzit  | 0   | 0 |  0 |  Trias     | Trias   | Prä-Rift  |
+|15203625 |Pizzo-del-Vallone-Decke: Sedimentbedeckung | Schiefer  | Marmor   | Sandstein |  0 |  Mésozoïque     | Mésozoïque   | Sedimentbedeckung  |
+|15203626 |Pizzo-del-Vallone-Decke: Dogger-Malm | Sandstein  | Schiefer: Glimmer   | Marmor |  0 |  Jurassique tardif     | Jurassique moyen   | Sedimentbedeckung  |
+|15203627 |Pizzo-del-Vallone-Decke: Dogger-Malm: Marmor | Marmor  | 0   | 0 |  0 |  Jurassique tardif     | Jurassique moyen   | Post-Rift Mesozoikum in Plattform-Fazies  |
+|15203628 |Pizzo-del-Vallone-Decke: Dogger-Malm: Glimmerschiefer | Schiefer: Glimmer  | 0   | 0 |  0 |  Jurassique tardif     | Jurassique moyen   | Post-Rift Mesozoikum in detritischer Fazies  |
+|15203629 |Pizzo-del-Vallone-Decke: Dogger-Malm: Vulkanit | Gestein: vulkanisch  | 0   | 0 |  0 |  Jurassique tardif     | Jurassique moyen   | Sedimentbedeckung  |
+|15203630 |Pizzo-del-Vallone-Decke: Lias | Konglomerat  | Quarzit   | Schiefer: Glimmer |  0 |  Aalénien     | Jurassique précoce   | Syn-Rift  |
+|15203631 |Pizzo-del-Vallone-Decke: Trias | Rauwacke  | Marmor   | Evaporit: Gips |  0 |  Trias     | Trias   | Prä-Rift  |
+|15203632 |Mont-Fort-Decke: Sedimentbedeckung | Brekzie  | Marmor   | Rauwacke |  0 |  Mésozoïque     | Mésozoïque   | Sedimentbedeckung  |
+|15203633 |Mont-Fort-Decke: Trias | Marmor: dolomitisch  | Marmor: kalkig   | Rauwacke |  0 |  Trias     | Trias   | Sedimentbedeckung  |
+|15203634 |Mont-Fort-Decke: Trias: Rauwacke | Rauwacke  | 0   | 0 |  0 |  Trias     | Trias   | Sedimentbedeckung  |
+|15203635 |Métailler-Fm.: Quarzit | Quarzit  | 0   | 0 |  0 |  Ordovicien     | Ordovicien   | Grundgebirge  |
+|15203636 |Métailler-Fm.: Glimmerschiefer | Schiefer: Glimmer  | 0   | 0 |  0 |  Ordovicien     | Ordovicien   | Grundgebirge  |
+|15203637 |Métailler-Fm.: Chloritoid-Glimmerschiefer | Schiefer: Glimmer-Chloritoid  | 0   | 0 |  0 |  Ordovicien     | Ordovicien   | Grundgebirge  |
+|15203638 |Distulberg-Fm.: Schiefer | Schiefer  | 0   | 0 |  0 |  Cambrien     | Cambrien   | Grundgebirge  |
+|15203639 |Distulberg-Fm.: Albitgneis | Gneis: Albit  | 0   | 0 |  0 |  Cambrien     | Cambrien   | Grundgebirge  |
+|15203640 |Barrhorn-Einheit: Trias | Dolomitstein  | Rauwacke   | 0 |  0 |  Trias     | Trias   | Karbonatische Trias  |
+|15203641 |Siviez-Mischabel-Decke: Aplit | Aplit  | 0   | 0 |  0 |  Paléozoïque     | Protérozoïque   | Grundgebirge  |
+|15203642 |Siviez-Mischabel-Decke: Pegmatit | Pegmatit  | 0   | 0 |  0 |  Paléozoïque     | Protérozoïque   | Grundgebirge  |
+|15203643 |Lirec-Fm.: Leukokrater Mikroklingneis | Gneis: Mikroklin  | 0   | 0 |  Lirec-Formation |  Cambrien     | Cambrien   | Grundgebirge  |
+|15203644 |Adlerflüe-Fm.: Leukokrater Gneiss | Gneis  | 0   | 0 |  Adlerflüe-Formation |  Cambrien     | Protérozoïque   | Grundgebirge  |
+|15203645 |Ergischhorn-Komplex: Leukokrater aplitischer Gneis | Gneis: aplitisch  | 0   | 0 |  Ergischhorn-Komplex |  Protérozoïque     | Protérozoïque   | Grundgebirge  |
+|15203646 |Stalden-Gneiskomplex | Gneis  | 0   | 0 |  Stalden-Gneis |  Paléozoïque     | Protérozoïque   | Grundgebirge  |
+|15203647 |Stalden-Gneiskomplex: Ahorn-Augengneis | Gneis: augig  | 0   | 0 |  Ahorn-Augengneiss |  Paléozoïque     | Protérozoïque   | Grundgebirge  |
+|15203648 |Stalden-Gneiskomplex: Amphibolit | Amphibolit  | 0   | 0 |  Stalden-Gneis |  Paléozoïque     | Protérozoïque   | Grundgebirge  |
+|15203649 |Printse-Fm.: Konglomerat | Konglomerat  | 0   | 0 |  Printse-Formation |  Permien     | Carbonifère   | Spät- bis postvariszisches Grundgebirge  |
+|15203650 |Printse-Fm.: Graphitschiefer | Schiefer: Graphit  | Schiefer: tonig: Anthrazit   | 0 |  Printse-Formation |  Permien     | Carbonifère   | Spät- bis postvariszisches Grundgebirge  |
+|15203651 |Portjengrat-Decke: Kalzitmarmor | Marmor: kalkig  | 0   | 0 |  0 |  Mésozoïque     | Mésozoïque   | Sedimentbedeckung  |
+|15203652 |Portjengrat-Decke: Dolomitmarmor | Marmor: dolomitisch  | 0   | 0 |  0 |  Trias     | Trias   | Sedimentbedeckung  |
+|15203653 |Portjengrat-Decke: Arkose | Sandstein: Feldspat  | 0   | 0 |  0 |  Trias     | Trias   | Prä-Rift  |
+|15203654 |Portjengrat-Decke: Grundgebirge | Gneis: migmatitisch  | Gneis   | 0 |  0 |  Paléozoïque     | Protérozoïque   | Grundgebirge  |
+|15203655 |Gornergrat-Decke: Kalkschiefer, sandiger Marmor, Brekzie | Schiefer: kalkig  | Marmor: sandig   | Brekzie |  0 |  Mésozoïque     | Mésozoïque   | Post-Rift Mesozoikum in pelagischer Fazies  |
+|15203656 |Gornergrat-Decke: Trias | Marmor: dolomitisch  | Marmor: kalkig   | Rauwacke |  0 |  Trias     | Trias   | Karbonatische Trias  |
+|15203657 |Gornergrat-Decke: Phengit-Albitgneis | Gneis: Albit  | 0   | 0 |  0 |  Paléozoïque     | Protérozoïque   | Grundgebirge  |
+|15203658 |Gornergrat-Decke: Basisches Ganggestein | Gestein: basisch-gangartig  | 0   | 0 |  0 |  Paléozoïque     | Protérozoïque   | Grundgebirge  |
+|15203659 |Gornergrat-Decke: Granat-Muskovit-Schiefer | Schiefer: Glimmer-Granat  | 0   | 0 |  0 |  Paléozoïque     | Protérozoïque   | Grundgebirge  |
+|15203660 |Frilihorn-Decke: Trias | Marmor: dolomitisch  | Marmor: kalkig   | Rauwacke |  0 |  Trias     | Trias   | Karbonatische Trias  |
+|15203661 |Frilihorn-Decke: Trias: Rauwacke | Rauwacke  | 0   | 0 |  0 |  Trias     | Trias   | Karbonatische Trias  |
+|15203662 |Garda-Bordon-Fm.: Série feuilletée | Schiefer: tonig: Bitumen  | 0   | 0 |  Garda-Bordon-Formation |  Crétacé     | Crétacé   | Post-Rift Mesozoikum in pelagischer Fazies  |
+|15203663 |Garda-Bordon-Fm.: Quarzschiefer | Schiefer: Quarz  | 0   | 0 |  Garda-Bordon-Formation |  Crétacé     | Crétacé   | Post-Rift Mesozoikum in pelagischer Fazies  |
+|15203664 |Serra-Neire-Serpentinit | Serpentinit  | 0   | 0 |  Serra-Neire-Serpentinit |  Jurassique     | Jurassique   | Ophiolithische Abfolge  |
+|15203665 |Zermatt-Saas-Decke: Eklogit | Eklogit  | 0   | 0 |  0 |  Jurassique     | Jurassique   | Ophiolithische Abfolge  |
+|15203666 |Zermatt-Saas-Decke: Metapyroxenit | 15111466  | 0   | 0 |  0 |  Jurassique     | Jurassique   | Ophiolithische Abfolge  |
+|15203667 |Zermatt-Saas-Decke: Metagabbro | Gabbro  | 0   | 0 |  0 |  Jurassique     | Jurassique   | Ophiolithische Abfolge  |
+|15203668 |Zermatt-Saas-Decke: Rodingit | Rodingit  | 0   | 0 |  0 |  Jurassique     | Jurassique   | Ophiolithische Abfolge  |
+|15203669 |Zermatt-Saas-Decke: Talkschiefer | Schiefer: Talk  | 0   | 0 |  0 |  Jurassique     | Jurassique   | Ophiolithische Abfolge  |
+|15203670 |Lengenbach-Dolomitmarmor | Marmor: dolomitisch  | 0   | 0 |  Lengenbach-Dolomitmarmor |  Trias     | Trias   | Prä-Rift  |
+|15204001 |Flysch du God Drosa | Tonstein: kieselig  | Sandstein: Feldspat   | Kalkstein: arenitisch |  God-Drosa-Flysch |  Turonien     | Cénomanien   | Flysch  |
+|15204002 |Formation de Chanèls | Kalkstein: mergelig-schiefrig  | Tonstein: kalkig: Glaukonit   | 0 |  Chanèls-Formation |  Turonien     | Aptien   | Post-Rift Mesozoikum in pelagischer Fazies  |
+|15204003 |Formation de Lech | Gestein: pelitisch  | Gestein: pelitisch   | 0 |  Lech-Formation |  Cénomanien     | Crétacé précoce   | Flysch  |
+|15204004 |Formation d&#39;Emmat | Tonstein: kieselig  | Mergelstein   | Kalkstein: mikritisch |  Emmat-Formation |  Albien     | Aptien   | Post-Rift Mesozoikum in pelagischer Fazies  |
+|15204005 |Formation du (Munt) Russenna | Kalkstein: mikritisch: Chert  | Tonstein   | Kalkstein: spätig: Bioklasten |  Russenna-Formation |  Aptien     | Tithonien   | Maiolica / Aptychenkalk  |
+|15204006 |Formation d&#39;Ammergau | Kalkstein: mikritisch: Aptychen  | 0   | 0 |  Ammergau-Formation |  Crétacé précoce     | Jurassique tardif   | Maiolica / Aptychenkalk  |
+|15204007 |Formation du Blais | Gestein: kieselig: Radiolarien  | Tonstein: kieselig   | Kalkstein: mikritisch: Bioklasten |  Blais-Radiolarit |  Tithonien     | Callovien   | Radiolarit  |
+|15204008 |Membre de Plattas | Kalkstein: mikritisch: Bioklasten-Chert  | 0   | 0 |  Plattas-Member |  Tithonien     | Tithonien   | Radiolarit  |
+|15204009 |Formation de Ruhpolding | 15111108  | 0   | 0 |  Ruhpolding-Formation |  Tithonien     | Oxfordien   | Radiolarit  |
+|15204010 |Groupe du (Piz) Saluver | Brekzie: polymikt  | Sandstein   | Tonstein |  0 |  Callovien     | Toarcien   | Lias-Dogger in neritischer Fazies  |
+|15204011 |Formation du (Piz) Saluver | Brekzie: polymikt  | Sandstein   | Tonstein: schiefrig |  Saluver-Formation |  Jurassique moyen     | Jurassique moyen   | Lias-Dogger in neritischer Fazies  |
+|15204012 |Formation de Bardella | 15111108  | Kalkstein: sandig   | Brekzie: polymikt |  Bardella-Formation |  Jurassique moyen     | Jurassique moyen   | Sedimentbedeckung  |
+|15204013 |Formation du (Piz) Salteras | 15111108  | Sandstein: Glimmer   | Brekzie: polymikt |  Salteras-Formation |  Jurassique moyen     | Jurassique moyen   | Sedimentbedeckung  |
+|15204014 |Brèche de Salamun | 15111009  | 0   | 0 |  Salamun-Brekzie |  Jurassique moyen     | Jurassique moyen   | Sedimentbedeckung  |
+|15204015 |Brèche d&#39;Err | 15111009  | 0   | 0 |  Err-Brekzie |  Jurassique moyen     | Jurassique moyen   | Sedimentbedeckung  |
+|15204016 |Formation de l&#39;Allgäu | Mergelstein  | Kalkstein: tonig   | Kalkstein: arenitisch |  Allgäu-Formation |  Callovien     | Hettangien   | Syn-Rift  |
+|15204017 |Membre du (Piz) Mezzaun | Kalkstein: kieselig  | Mergelstein   | 0 |  Mezzaun-Member |  Callovien     | Aalénien   | Syn-Rift  |
+|15204018 |Membre du (Piz) Blaisun | Mergelstein: schiefrig  | Kalkstein: kieselig   | 0 |  Blaisun-Member |  Toarcien     | Toarcien   | Syn-Rift  |
+|15204019 |Membre du (Val) Trupchun | Kalkstein: siltig  | Kalkstein: kieselig   | Brekzie: kalkig |  Trupchun-Member |  Pliensbachien     | Sinémurien   | Syn-Rift  |
+|15204020 |Formation d&#39;Agnelli | Kalkstein: kieselig  | Kalkstein: spätig: Bioklasten   | 0 |  Agnelli-Formation |  Toarcien     | Sinémurien   | Syn-Rift  |
+|15204021 |Calcaire d&#39;Adnet | Kalkstein  | Mergelstein   | 0 |  Agnelli-Formation |  Toarcien     | Sinémurien   | Syn-Rift  |
+|15204022 |Calcaire de Hierlatz | Kalkstein: spätig: Echinodermen  | 0   | 0 |  Agnelli-Formation |  Pliensbachien     | Sinémurien   | Syn-Rift  |
+|15204023 |Brèche d&#39;Alv | Brekzie: kalkig-dolomitisch  | 0   | 0 |  Alv-Brekzie |  Pliensbachien     | Sinémurien   | Lias-Dogger in neritischer Fazies  |
+|15204024 |Formation de Kössen | Tonstein  | Kalkstein: Bioklasten   | 0 |  Kössen-Formation |  Rhétien     | Norien   | «Rhät»  |
+|15204025 |Calcaire du Zirmenkopf | Kalkstein: Korallen  | Mergelstein   | 0 |  Zirmenkopf-Kalk |  Rhétien     | Norien   | «Rhät»  |
+|15204026 |Membre du (Piz) Mitgel | Kalkstein  | Dolomitstein: kalkig   | Mergelstein: siltig |  Mitgel-Member |  Rhétien     | Norien   | «Rhät»  |
+|15204027 |Membre de Ramoz | Mergelstein  | Kalkstein   | 0 |  Ramoz-Member |  Rhétien     | Norien   | «Rhät»  |
+|15204028 |Membre du Schesaplana | 15111272  | Kalkstein: Korallen   | 0 |  Schesaplana-Member |  Rhétien     | Norien   | «Rhät»  |
+|15204029 |Membre de l&#39;Alplihorn | Tonstein: schiefrig  | Kalkstein: mergelig-schiefrig   | Kalkstein |  Alplihorn-Member |  Rhétien     | Norien   | «Rhät»  |
+|15204030 |Hauptdolomit-Gruppe | Dolomitstein  | Brekzie   | 0 |  0 |  Norien     | Norien   | Hauptdolomit  |
+|15204031 |Calcaire plaqueté du (Piz) Murtèr | Kalkstein: mikritisch: Bioklasten-Chert  | Kalkstein: mergelig   | Tonstein |  Murtèr-Plattenkalk |  Norien     | Norien   | Hauptdolomit  |
+|15204032 |Dolomie du Murteret | Dolomitstein  | 0   | 0 |  Murteret-Dolomit |  Norien     | Norien   | Hauptdolomit  |
+|15204033 |Formation du (Piz dal) Diavel | Kalkstein: kieselig  | Mergelstein   | 0 |  Diavel-Formation |  Norien     | Norien   | Hauptdolomit  |
+|15204034 |Formation du (Piz) Quattervals | 15111227  | Brekzie   | Kalkstein: Bioklasten |  Quattervals-Formation |  Norien     | Norien   | Hauptdolomit  |
+|15204035 |Marne de la Crappa Mala | Mergelstein  | Tonstein   | Kalkstein: tonig |  Crappa-Mala-Mergel |  Norien     | Norien   | Hauptdolomit  |
+|15204036 |Membre de Pra Grata | Kalkstein: spätig: Chert  | Dolomitstein   | Brekzie |  Pra-Grata-Member |  Norien     | Norien   | Hauptdolomit  |
+|15204037 |Dolomie du (Val) Müschauns | Dolomitstein: spätig  | 0   | 0 |  Müschauns-Dolomit |  Norien     | Norien   | Hauptdolomit  |
+|15204038 |Groupe de Raibl | Evaporit: Gips  | Dolomitstein   | Rauwacke |  0 |  Carnien     | Ladinien   | Raibl  |
+|15204039 |Formation de Fanez | Sandstein  | Tonstein: schiefrig   | Dolomitstein: stromatolithisch |  Fanez-Formation |  Carnien     | Carnien   | Raibl  |
+|15204040 |Membre de la Valbella | Brekzie: polymikt  | 0   | 0 |  Valbella-Member |  Carnien     | Carnien   | Raibl  |
+|15204041 |Dolomie de Fanez | Dolomitstein  | 0   | 0 |  Fanez-Formation |  Carnien     | Carnien   | Raibl  |
+|15204042 |Membre du (Piz) Mezdi | Tonstein  | Kalkstein: Bioklasten-Ooide   | 0 |  Mezdi-Member |  Carnien     | Carnien   | Raibl  |
+|15204043 |Membre du Val Cluozza | Sandstein: Feldspat  | Siltstein   | Dolomitstein |  Cluozza-Member |  Carnien     | Carnien   | Raibl  |
+|15204044 |Membre de Stugl | Evaporit: Gips  | 0   | 0 |  Stugl-Gips |  Carnien     | Carnien   | Raibl  |
+|15204045 |Formation du Val Mingèr | Dolomitstein  | Rauwacke   | 0 |  Minger-Formation |  Carnien     | Ladinien   | Raibl  |
+|15204046 |Dolomie du Val Mingèr | Dolomitstein  | 0   | 0 |  Minger-Formation |  Carnien     | Ladinien   | Raibl  |
+|15204047 |Membre du Val Mora | Rauwacke  | Tonstein: schiefrig   | Dolomitstein |  Mora-Member |  Carnien     | Ladinien   | Raibl  |
+|15204048 |Formation du (Monte) Garone | Rauwacke  | Tonstein   | Dolomitstein |  Garone-Formation |  Ladinien     | Ladinien   | Karbonatische Trias  |
+|15204049 |Formation de l&#39;Arlberg | Kalkstein  | Tonstein   | Dolomitstein |  Arlberg-Formation |  Carnien     | Ladinien   | Karbonatische Trias  |
+|15204050 |Formation de la Partnach | Mergelstein: schiefrig  | Tonstein: kieselig   | 0 |  Partnach-Formation |  Ladinien     | Ladinien   | Karbonatische Trias  |
+|15204051 |Formation de l&#39;Altein | Dolomitstein  | Kalkstein: Chert   | Tonstein |  Altein-Formation |  Ladinien     | Ladinien   | Karbonatische Trias  |
+|15204052 |Membre de la Parai Alba | 15111282  | Tonstein   | Tuff: vulkanisch |  Parai-Alba-Member |  Ladinien     | Ladinien   | Karbonatische Trias  |
+|15204053 |Formation du (Piz) Prosanto | Kalkstein: Bitumen  | Dolomitstein   | Tonstein |  Prosanto-Formation |  Ladinien     | Ladinien   | Karbonatische Trias  |
+|15204054 |Formation du (Piz) Vallatscha | Dolomitstein: stromatolithisch  | Brekzie: dolomitisch   | 0 |  Vallatscha-Formation |  Ladinien     | Ladinien   | Karbonatische Trias  |
+|15204055 |Brèche du Tiaun | Brekzie  | 0   | 0 |  Tiaun-Brekzie |  Ladinien     | Ladinien   | Karbonatische Trias  |
+|15204056 |Membre du (Piz) Vallatscha | Dolomitstein  | 0   | 0 |  Vallatscha-Formation |  Ladinien     | Ladinien   | Karbonatische Trias  |
+|15204057 |Membre du (Piz) Turettas | 15111279  | Dolomitstein: Ooide   | Rauwacke |  Turettas-Member |  Ladinien     | Ladinien   | Karbonatische Trias  |
+|15204058 |Membre de la Landwasser | Dolomitstein  | 0   | 0 |  Landwasser-Member |  Ladinien     | Ladinien   | Karbonatische Trias  |
+|15204059 |Formation de S-charl | Dolomitstein  | Kalkstein   | 0 |  S-charl-Formation |  Ladinien     | Anisien   | Karbonatische Trias  |
+|15204060 |Membre du Sertig | Kalkstein  | Kalkstein: Ooide   | 0 |  Sertig-Member |  Ladinien     | Anisien   | Karbonatische Trias  |
+|15204061 |Membre de Ravais-ch | Dolomitstein  | Sandstein   | Rauwacke |  Ravais-ch-Member |  Ladinien     | Anisien   | Karbonatische Trias  |
+|15204062 |Formation de Reiflingen | Kalkstein: mikritisch  | Kalkstein: spätig: Bioklasten   | Tuffit |  Reiflingen-Formation |  Ladinien     | Anisien   | Karbonatische Trias  |
+|15204063 |Formation du (Piz) Ducan | Dolomitstein  | Dolomitstein: sandig   | Sandstein |  Ducan-Formation |  Anisien     | Anisien   | Karbonatische Trias  |
+|15204064 |Trochitendolomit-Member | 15111293  | 0   | 0 |  «Trochitendolomit-Member» |  Anisien     | Anisien   | Karbonatische Trias  |
+|15204065 |Brachiopodenkalk-Member | Kalkstein: Bioklasten-Chert  | Kalkstein: siltig-tonig   | 0 |  «Brachiopodenkalk-Member» |  Anisien     | Anisien   | Karbonatische Trias  |
+|15204066 |Eisendolomit-Member | Dolomitstein: Bioklasten  | 0   | 0 |  «Eisendolomit-Member» |  Anisien     | Anisien   | Karbonatische Trias  |
+|15204067 |Gracilis-Member | 15111286  | Dolomitstein: stromatolithisch   | 0 |  «Gracilis-Member» |  Anisien     | Anisien   | Karbonatische Trias  |
+|15204068 |Formation de Gutenstein | Kalkstein  | Dolomitstein: spätig   | 0 |  Gutenstein-Formation |  Ladinien     | Anisien   | Karbonatische Trias  |
+|15204069 |Formation de Reichenhall | 15111298  | Dolomitstein   | Brekzie: dolomitisch |  Reichenhall-Formation |  Anisien     | Olénékien   | Karbonatische Trias  |
+|15204070 |Formation du Fuorn | Sandstein: Quarz  | Siltstein   | Dolomitstein |  Fuorn-Formation |  Anisien     | Trias précoce   | Detritische Trias  |
+|15204071 |Membre de Punt la Drossa | Sandstein: kalkig  | Dolomitstein   | Rauwacke |  Punt-la-Drossa-Member |  Anisien     | Trias précoce   | Detritische Trias  |
+|15204072 |Pflanzenquarzit (Fm. du Fuorn) | Sandstein: Quarz  | 0   | 0 |  «Pflanzenquarzit» |  Anisien     | Trias précoce   | Detritische Trias  |
+|15204073 |Membre inférieur de la Fm. du Fuorn | Sandstein: kalkig  | Siltstein   | 0 |  Fuorn-Formation |  Trias précoce     | Trias précoce   | Detritische Trias  |
+|15204074 |Groupe du Val Müstair | Konglomerat  | Sandstein   | Rhyolith |  0 |  Trias précoce     | Cisuralien   | Spät- bis postvariszisches Grundgebirge  |
+|15204075 |Formation de Chazforà | Konglomerat  | Sandstein   | Siltstein |  Chazforà-Formation |  Trias précoce     | Lopingien   | Spät- bis postvariszisches Grundgebirge  |
+|15204076 |Membre du (Val) Tuors | Sandstein  | Konglomerat: Quarz   | 0 |  Tuors-Member |  Trias précoce     | Trias précoce   | Spät- bis postvariszisches Grundgebirge  |
+|15204077 |Membre du Val Püra | Brekzie  | 0   | 0 |  Val-Püra-Member |  Lopingien     | Lopingien   | Spät- bis postvariszisches Grundgebirge  |
+|15204078 |Formation de Präbichl | Konglomerat: polymikt  | Sandstein: tonig: Lithoklasten   | Tonstein: schiefrig |  Präbichl-Formation |  Trias précoce     | Permien   | Grundgebirge  |
+|15204079 |Formation de la Ruina | Rhyolith  | Dazit: rhyolithisch   | Tuff: vulkanisch |  Ruina-Formation |  Cisuralien     | Cisuralien   | Spät- bis postvariszisches Grundgebirge  |
+|15204080 |Membre du Sandhubel | Ignimbrit  | Tuff: vulkanisch   | 0 |  Sandhubel-Member |  Cisuralien     | Cisuralien   | Spät- bis postvariszisches Grundgebirge  |
+|15204081 |Membre de Bellaluna | Rhyolith  | Dazit: rhyolithisch   | 0 |  Bellaluna-Member |  Cisuralien     | Cisuralien   | Spät- bis postvariszisches Grundgebirge  |
+|15204082 |Gneiss oeillé de la Mönchalp | 15111535  | 0   | 0 |  Mönchalp-Augengneis |  Cambrien     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15204083 |Gneiss oeillé de Tschuggen | Gneis: augig  | 0   | 0 |  Tschuggen-Augengneis |  Ordovicien     | Ordovicien   | Prävariszisches Grundgebirge  |
+|15204084 |Gneiss de la Güstizia | Gneis: Muskovit  | 0   | 0 |  Güstizia-Gneis |  Ordovicien     | Ordovicien   | Prävariszisches Grundgebirge  |
+|15204085 |Gneiss oeillé de Plasseggen | Gneis: augig  | Granit   | Diorit: Quarz |  Plasseggen-Augengneis |  Paléozoïque     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15204086 |Trias de l&#39;Austroalpin | Dolomitstein  | Rauwacke   | Gestein: pelitisch |  0 |  Trias     | Trias   | Prä-Rift  |
+|15204087 |Ostalpin: Dogger | Brekzie: polymikt  | Sandstein   | Tonstein |  0 |  Jurassique moyen     | Jurassique précoce   | Lias-Dogger in neritischer Fazies  |
+|15204088 |Ostalpin: Radiolarit-Aptychenkalk | Gestein: kieselig: Radiolarien  | Kalkstein: mikritisch: Aptychen   | 0 |  0 |  Jurassique tardif     | Jurassique moyen   | Post-Rift Mesozoikum in pelagischer Fazies  |
+|15204089 |Ostalpin: Kreide | Kalkstein  | Gestein: pelitisch   | Brekzie |  0 |  Crétacé     | Crétacé   | Sedimentbedeckung  |
+|15204090 |Ostalpin: Lias | Kalkstein  | Sandstein   | Mergelstein |  0 |  Permien     | Carbonifère   | Syn-Rift  |
+|15204091 |Ostalpin: Grundgebirge | Gneis  | Schiefer   | Amphibolit |  0 |  Permien     | Protérozoïque   | Grundgebirge  |
+|15204092 |Nair-Porphyroid | Rhyolith  | Dazit: rhyolithisch   | 0 |  Nair-Porphyroid |  Carbonifère     | Carbonifère   | Spät- bis postvariszisches Grundgebirge  |
+|15204093 |Nair-Porphyroid: Lavatèra-Brekzie | 15111021  | 0   | 0 |  Lavatèra-Brekzie |  Mésozoïque     | Permien   | Spät- bis postvariszisches Grundgebirge  |
+|15204094 |Varaina-Schiefer | Andesit  | Schiefer: Chlorit   | 0 |  Varaina-Schiefer |  Carbonifère     | Carbonifère   | Spät- bis postvariszisches Grundgebirge  |
+|15204095 |Sprenkel-Schiefer | Dazit: rhyolithisch  | Tuffit   | 0 |  «Sprenkelschiefer» |  Carbonifère     | Carbonifère   | Spät- bis postvariszisches Grundgebirge  |
+|15204096 |Complexe gneissique de Fedoz | 15111525  | Schiefer   | Marmor: kalkig |  Fedoz-Gneiskomplex |  Paléozoïque     | Protérozoïque   | Grundgebirge  |
+|15204097 |Fedoz-Metagabbro | Gabbro  | Schiefer: Chlorit   | 0 |  Fedoz-Metagabbro |  Guadalupien     | Guadalupien   | Grundgebirge  |
+|15204098 |Maloja-Orthogneis | Gneis: magmatisch  | 0   | 0 |  Maloja-Orthogneis |  Paléozoïque     | Paléozoïque   | Grundgebirge  |
+|15204099 |Complexe gneissique du Maloja | Schiefer: Glimmer-Chloritoid  | Schiefer: Glimmer-Granat   | Gneis: Amphibol |  Maloja-Gneiskomplex |  Paléozoïque     | Protérozoïque   | Grundgebirge  |
+|15204100 |Ur-Brekzie | Brekzie: tektonisch  | Serpentinit: brekziös: Karbonat   | 0 |  Ur-Brekzie |  Mésozoïque     | Paléozoïque   | Ophiolithische Abfolge  |
+|15204101 |Tschima-da-Flix-Granit | Granit: porphyrisch  | 0   | 0 |  Tschima-da-Flix-Granit |  Carbonifère     | Carbonifère   | Variszisches Grundgebirge  |
+|15204102 |Granodiorite d&#39;Err | Granodiorit  | 0   | 0 |  Err-Granodiorit |  Permien     | Carbonifère   | Grundgebirge  |
+|15204103 |Filons de diabase postvarisques | 15111445  | 0   | 0 |  0 |  Permien     | Permien   | Spät- bis postvariszisches Grundgebirge  |
+|15204104 |Gneiss oeillé de la Flüela | Gneis: augig  | Granit: porphyrisch   | 0 |  Flüela-Augengneis |  Ordovicien     | Ordovicien   | Prävariszisches Grundgebirge  |
+|15204105 |Gneiss du Dorfberg | Gneis  | 0   | 0 |  Dorfberg-Gneis |  Paléozoïque     | Protérozoïque   | Grundgebirge  |
+|15204106 |Brèche du Piz Chaschauna | Brekzie: kalkig: Bioklasten  | 0   | 0 |  Chaschauna-Brekzie |  Jurassique précoce     | Jurassique précoce   | Syn-Rift  |
+|15204107 |Gneiss oeillé de la Sesvenna | Gneis: granitisch-augig  | 0   | 0 |  Sesvenna-Augengneis |  Paléozoïque     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15204108 |Granodiorite de Vaüglia | Granodiorit  | 0   | 0 |  Vaüglia-Granodiorit |  Paléozoïque     | Paléozoïque   | Grundgebirge  |
+|15204109 |Roches volcanique du Döss Radond | 15111445  | Tuff: vulkanisch   | 0 |  Döss-Radond-Vulkanite |  Carnien     | Ladinien   | Raibl  |
+|15204110 |Brèche de l&#39;Augsten | Brekzie: polymikt  | Tonstein   | 0 |  Augsten-Brekzie |  Crétacé tardif     | Crétacé tardif   | Sedimentbedeckung  |
+|15204111 |Métarhyolite du Piz Trovat | Rhyolith  | 0   | 0 |  Piz-Trovat-Metarhyolit |  Sakmarien     | Sakmarien   | Spät- bis postvariszisches Grundgebirge  |
+|15204112 |Métarhyolite du Sass Queder | Rhyolith  | 0   | 0 |  Sass-Queder-Metarhyolith |  Cisuralien     | Cisuralien   | Spät- bis postvariszisches Grundgebirge  |
+|15204113 |Orthogneiss de la Rösa | Gneis: magmatisch  | 0   | 0 |  La-Rösa-Orthogneis |  Paléozoïque     | Protérozoïque   | Grundgebirge  |
+|15204114 |Schistes du Carale | 15111580  | Schiefer: Quarz-Glimmer   | Gneis |  Carale-Schiefer |  Paléozoïque     | Protérozoïque   | Grundgebirge  |
+|15204115 |Groupe de Gosau | Konglomerat  | Sandstein   | Gestein: pelitisch |  0 |  Eocène     | Crétacé tardif   | Post-Kollision  |
+|15204116 |Serpentinite du Morteratsch | Serpentinit  | 0   | 0 |  Morteratsch-Serpentinit |  Carbonifère     | Carbonifère   | Grundgebirge  |
+|15204117 |Gneiss oeillé du Forun | Gneis: augig  | 0   | 0 |  Forun-Augengneis |  Spätes Ordovizium     | Spätes Ordovizium   | Prävariszisches Grundgebirge  |
+|15204118 |Gneiss oeillé du Piz Kesch | Gneis: augig  | Gneis: gebändert   | 0 |  Kesch-Augengneis |  Ordovicien     | Ordovicien   | Prävariszisches Grundgebirge  |
+|15204119 |socle polycyclique anté-varisque de l&#39;Austroalpin | Gneis  | Schiefer   | 0 |  0 |  Paléozoïque     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15204120 |«Jüngere Orthogneise» | Gneis: magmatisch  | 0   | 0 |  0 |  Spätes Ordovizium     | Spätes Ordovizium   | Prävariszisches Grundgebirge  |
+|15204121 |«Ältere Orthogneise» | Gneis: magmatisch  | 0   | 0 |  0 |  Cambrien     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15204122 |Orthogneiss du Val Rude | Gneis: augig  | 0   | 0 |  Val-Rude-Orthogneis |  Paléozoïque     | Protérozoïque   | Grundgebirge  |
+|15204123 |Granodiorite du Corvatsch | Granodiorit  | 0   | 0 |  Corvatsch-Granodiorit |  Carbonifère     | Carbonifère   | Grundgebirge  |
+|15204124 |Granodiorite du Julier | Granodiorit  | 0   | 0 |  Julier-Granodiorit |  Carbonifère     | Carbonifère   | Grundgebirge  |
+|15204125 |Granodiorite du Sasso Rosso | Granodiorit  | 0   | 0 |  Sasso-Rosso-Granodiorit |  Carbonifère     | Carbonifère   | Grundgebirge  |
+|15204126 |Brèche du Piz Lavinèr | Brekzie: dolomitisch  | 0   | 0 |  Lavinèr-Brekzie |  Trias     | Trias   | Karbonatische Trias  |
+|15204127 |Brèche de l&#39;Haupter | Brekzie: polymikt  | 0   | 0 |  Haupter-Brekzie |  Jurassique moyen     | Jurassique précoce   | Syn-Rift  |
+|15204130 |Groupe de Buffalora | Dolomitstein  | Kalkstein   | Mergelstein |  0 |  Ladinien     | Anisien   | Karbonatische Trias  |
+|15204132 |roches intrusives varisques de l&#39;Austroalpin | Granit  | Granodiorit   | Gabbro |  0 |  Permien     | Carbonifère   | Variszisches Grundgebirge  |
+|15204135 |orthogneiss anté-varisques de l&#39;Austroalpin | Gneis: magmatisch  | 0   | 0 |  0 |  Paléozoïque     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15204136 |paragneiss anté-varisques de l&#39;Austroalpin | Gneis: sedimentär  | 0   | 0 |  0 |  Paléozoïque     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15204137 |roches vertes anté-varisques de l&#39;Austroalpin | Prasinit  | Serpentinit   | 0 |  0 |  Paléozoïque     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15204138 |Calcaire d&#39;Uglix | Kalkstein: dolomitisch  | Tuffit   | 0 |  Uglix-Plattenkalk |  Norien     | Norien   | Hauptdolomit  |
+|15204139 |Granite du Parait Chavagl | Granit  | 0   | 0 |  Parait-Chavagl-Granit |  Permien     | Pennsylvanien   | Variszisches Grundgebirge  |
+|15204140 |Brèche de Clavadatsch | Brekzie  | 0   | 0 |  Clavadatsch-Brekzie |  Cénomanien     | Cénomanien   | Flysch  |
+|15204141 |Granodiorite du Corno di Campo | Granodiorit  | Syenit   | Gabbro |  Corno-di-Campo-Granodiorit |  Permien     | Carbonifère   | Grundgebirge  |
+|15204142 |Gabbro de Campocologno | Gabbro  | Diorit   | 0 |  Campocologno-Gabbro |  Permien     | Carbonifère   | Grundgebirge  |
+|15204143 |Orthogneiss de Celerina | Gneis: magmatisch  | 0   | 0 |  Celerina-Orthogneis |  Paléozoïque     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15204144 |Schistes du Tonale | Schiefer: Glimmer-Granat  | Gneis: Granat   | 0 |  Tonale-Schiefer |  Paléozoïque     | Protérozoïque   | Sedimentbedeckung  |
+|15204145 |Gypse du Groupe de Raibl | Evaporit: Gips  | 0   | 0 |  0 |  Carnien     | Ladinien   | Raibl  |
+|15204146 |Cornieule du Groupe de Raibl | Rauwacke  | 0   | 0 |  0 |  Carnien     | Ladinien   | Raibl  |
+|15204147 |faciès récifal de la Formation de l&#39;Arlberg | Kalkstein: Korallen  | 0   | 0 |  Arlberg-Formation |  Carnien     | Ladinien   | Karbonatische Trias  |
+|15204148 |Alpiner Muschelkalk | Kalkstein  | Dolomitstein   | 0 |  0 |  Anisien     | Anisien   | Karbonatische Trias  |
+|15204149 |Groupe de Raible: dolomite | Dolomitstein  | 0   | 0 |  0 |  Carnien     | Carnien   | Raibl  |
+|15204150 |Groupe de la Hauptdolomite: brèche dolomitique bitumineuse | 15111279  | 0   | 0 |  0 |  Norien     | Norien   | Hauptdolomit  |
+|15204151 |Groupe de Raibl des klippes de Suisse centrale | Rauwacke  | Dolomitstein   | Rauwacke |  0 |  Carnien     | Carnien   | Raibl  |
+|15200567 |OMM-J | Sandstein  | Mergelstein   | Konglomerat |  0 |  Burdigalien     | Burdigalien   | OMM  |
+|15200568 |Poudingue coquillier de Tenniken | Sandstein: kalkig: Muscheln  | Konglomerat: kalkig: Muscheln   | 0 |  Tenniken-Muschelagglomerat |  Burdigalien     | Burdigalien   | OMM  |
+|15200569 |Calcaire à Turritelles | Kalkstein: sandig: Bioklasten  | 0   | 0 |  0 |  Burdigalien     | Burdigalien   | OMM  |
+|15200570 |Calcaire grossier du Randen | Kalkstein: sandig: Bioklasten  | 0   | 0 |  Randen-Grobkalk |  Burdigalien     | Burdigalien   | OMM  |
+|15200571 |Sable à galets de Péry | Sandstein: konglomeratisch  | 0   | 0 |  Péry-Sandstein |  Burdigalien     | Burdigalien   | OMM  |
+|15200572 |Gompholite des Bayards | Brekzie: kalkig  | 0   | 0 |  Les-Bayards-Juranagelfluh |  Pliocène     | Miocène   | OSM  |
+|15200573 |Formation de Günsberg et de Vellerat, indifférenciées | Kalkstein  | Mergelstein   | 0 |  0 |  Oxfordien     | Oxfordien   | Malm  |
+|15200574 |Ornatenton-Fm.: Ancepsoolith-Sbf. | Tonstein: Eisenooide  | 0   | 0 |  Ancepsoolith-Subformation |  Callovien     | Callovien   | Malm  |
+|15200575 |Jurensismergel-Fm. | Mergelstein  | Kalkstein: mergelig   | 0 |  Jurensismergel-Formation |  Toarcien     | Toarcien   | Lias-Dogger in neritischer Fazies  |
+|15200576 |Posidonienschiefer-Fm. | Mergelstein: Bitumen  | Kalkstein   | 0 |  Posidonienschiefer-Formation |  Toarcien     | Toarcien   | Lias-Dogger in neritischer Fazies  |
+|15200577 |Amaltheenton-Fm. | Tonstein: Pyrit  | Mergelstein: kalkig   | 0 |  Amaltheenton-Formation |  Pliensbachien     | Pliensbachien   | Lias-Dogger in neritischer Fazies  |
+|15200578 |Numismalismergel-Fm. | Mergelstein  | Kalkstein: mergelig   | 0 |  Numismalismergel-Formation |  Pliensbachien     | Pliensbachien   | Lias-Dogger in neritischer Fazies  |
+|15200579 |Obtususton-Fm. | Tonstein: Pyrit  | 0   | 0 |  Obtususton-Formation |  Sinémurien     | Sinémurien   | Lias-Dogger in neritischer Fazies  |
+|15200580 |Arietenkalk-Fm. | Kalkstein: Bioklasten  | Mergelstein   | 0 |  Arietenkalk-Formation |  Sinémurien     | Sinémurien   | Lias-Dogger in neritischer Fazies  |
+|15200581 |Angulatenton-Fm. | Tonstein  | Mergelstein: Bitumen   | 0 |  Angulatenton-Formation |  Hettangien     | Hettangien   | Lias-Dogger in neritischer Fazies  |
+|15200582 |Psilonotenton-Fm. | Tonstein  | Kalkstein   | 0 |  Psilonotenton-Formation |  Hettangien     | Hettangien   | Lias-Dogger in neritischer Fazies  |
+|15200584 |Etiollets-Fm.: Tabalcon-Kalk | Kalkstein: Bioklasten  | 0   | 0 |  Tabalcon-Kalk |  Kimméridgien     | Kimméridgien   | Malm  |
+|15200585 |Bonneville-Sandstein | Sandstein: Glimmer  | Konglomerat: polymikt   | 0 |  Bonneville-Sandstein |  Rupélien     | Rupélien   | UMM  |
+|15200586 |Montauban-Mergel | Mergelstein: Glimmer  | 0   | 0 |  Montauban-Mergel |  Rupélien     | Rupélien   | UMM  |
+|15200588 |Mornex-Nagelfluh | Konglomerat: kalkig  | Sandstein   | 0 |  Mornex-Nagelfluh |  Rupélien     | Rupélien   | UMM  |
+|15200589 |USM-III bis OSM-I | Konglomerat  | Mergelstein   | 0 |  0 |  Langhien     | Burdigalien   | Molasse  |
+|15200590 |Uetliberg-Fm.: Loorenkopf-Nagelfluh | Konglomerat: kalkig-dolomitisch  | 0   | 0 |  Loorenkopf-Nagelfluh |  Serravallien     | Serravallien   | OSM  |
+|15200591 |Grand-Essert-Fm: Neuchâtel-Mb.: Oberer Teil | Kalkstein: spätig: Bioklasten-Glaukonit  | Kalkstein: Ooide   | 0 |  «Pierre Jaune Supérieure» |  Hauterivien     | Hauterivien   | Post-Rift Mesozoikum in Plattform-Fazies  |
+|15200592 |Grand-Essert-Fm: Neuchâtel-Mb.: Unterer Teil | Kalkstein: spätig: Bioklasten-Glaukonit  | Mergelstein   | 0 |  «Pierre Jaune Inférieure» |  Hauterivien     | Hauterivien   | Post-Rift Mesozoikum in Plattform-Fazies  |
+|15200593 |Chambotte-Fm.: Oberer Teil | Kalkstein: mikritisch: Bioklasten  | 0   | 0 |  Chambotte-Formation |  Valanginien     | Valanginien   | Post-Rift Mesozoikum in Plattform-Fazies  |
+|15200594 |Chambotte-Fm.: Unterer Teil | Kalkstein: mikritisch: Bioklasten  | 0   | 0 |  Chambotte-Formation |  Valanginien     | Berriasien   | Post-Rift Mesozoikum in Plattform-Fazies  |
+|15200602 |Helvetikum: Siderolithikum | Gestein: residual: Eisenmineralien  | 0   | 0 |  0 |  Bartonien     | Lutétien   | Siderolithikum  |
+|15200616 |Schwarzwald-Massiv: Grundgebirge | Gestein: metamorph  | Gestein: plutonisch   | 0 |  0 |  Paléozoïque     | Protérozoïque   | Grundgebirge  |
+|15200617 |Schwarzwald-Massiv: Variszische Intrusiva | Gestein: plutonisch  | 0   | 0 |  0 |  Paléozoïque     | Protérozoïque   | Variszisches Grundgebirge  |
+|15200618 |Calcaire d&#39;eau douce de Mümliswil | Kalkstein  | 0   | 0 |  Mümliswil-Süsswasserkalk |  Chattien précoce     | Chattien précoce   | USM  |
+|15200619 |Horizon limnique (OMM-I) | Mergelstein  | Gestein: organisch: Kohle   | 0 |  Luzern-Formation |  Burdigalien     | Burdigalien   | OMM  |
+|15200620 |Grès de Dardagny | Sandstein: Bitumen  | 0   | 0 |  Dardagny-Sandstein |  Chattien précoce     | Chattien précoce   | USM  |
+|15200621 |Napf-Fm.: Konglomerat-dominierte Fazies | Konglomerat: polymikt: Quarz  | Sandstein: Feldspat   | 0 |  Napf-Formation |  Langhien     | Burdigalien   | OSM  |
+|15200622 |Napf-Fm.: Sandstein-Mergelstein-dominierte Fazies | Sandstein: Feldspat  | Mergelstein   | 0 |  Napf-Formation |  Langhien     | Burdigalien   | OSM  |
+|15200623 |Le-Locle-Fm. | Kalkstein: kreidig  | Mergelstein: Lignit   | Tonstein |  Le-Locle-Formation |  Serravallien     | Langhien   | OSM  |
+|15200624 |Le-Locle-Fm.: Le-Verger Mb. | Kalkstein: kreidig  | Mergelstein: Lignit   | 0 |  Le-Verger-Member |  Serravallien     | Langhien   | OSM  |
+|15200625 |Le-Locle-Fm.: Combe-Girard Mb. | Kalkstein: kreidig  | 0   | 0 |  Combe-Girard-Member |  Serravallien     | Langhien   | OSM  |
+|15200626 |Crêt-du-Locle-Fm. | Mergelstein  | Konglomerat: kalkig   | 0 |  Crêt-du-Locle-Formation |  Serravallien     | Langhien   | Molasse  |
+|15200627 |Crêt-du-Locle-Fm.: Mergelfazies | Mergelstein  | 0   | 0 |  Crêt-du-Locle-Formation |  Serravallien     | Langhien   | Molasse  |
+|15200628 |St.-Gallen-Fm.: Gitzigrabe-Grobsandstein | Sandstein  | 0   | 0 |  Gitzigrabe-Grobsandstein |  Burdigalien     | Burdigalien   | OMM  |
+|15200629 |Trois-Rods-Süsswasserkalk | Kalkstein: Bioklasten  | 0   | 0 |  Trois-Rods-Süsswasserkalk |  Chattien précoce     | Chattien précoce   | USM  |
+|15200630 |Champ-Vuillerat-Süsswasserkalk | Kalkstein  | 0   | 0 |  Champ-Vuillerat-Süsswasserkalk |  Rupélien     | Priabonien   | Siderolithikum  |
+|15200631 |Bentonite de Wholusen | Bentonit  | 0   | 0 |  Wolhusen-Bentonit |  Langhien     | Burdigalien   | OSM  |
+|15200632 |Clacaire d&#39;eau douce du Gitzitobel | Kalkstein  | 0   | 0 |  Gitzitobel-Süsswasserkalk |  Langhien     | Langhien   | OSM  |
+|15200633 |Calcaire d&#39;eau douce du Wissenbach | Kalkstein  | 0   | 0 |  Wissenbach-Süsswasserkalk |  Langhien     | Langhien   | OSM  |
+|15200634 |Calcaire d&#39;eau douce de l&#39;Altbach | Kalkstein  | 0   | 0 |  Altbach-Süsswasserkalk |  Langhien     | Langhien   | OSM  |
+|15200635 |Calcaire d&#39;eau douce de Tröleten | Kalkstein  | 0   | 0 |  Tröleten-Süsswasserkalk |  Langhien     | Langhien   | OSM  |
+|15200636 |Calcaire d&#39;eau douce du Tschöplihof | Kalkstein  | 0   | 0 |  Tschöplihof-Süsswasserkalk |  Langhien     | Langhien   | OSM  |
+|15200637 |Formation du Lienegg | Konglomerat: kalkig  | Sandstein   | Mergelstein |  Lienegg-Formation |  Aquitanien     | Chattien   | USM  |
+|15200638 |Formation de l&#39;Öligraben | Konglomerat: polymikt  | Sandstein   | Mergelstein: Kohle |  Öligraben-Formation |  Chattien     | Chattien   | USM  |
+|15200639 |Formation du Studweid | Sandstein  | Mergelstein   | Konglomerat: polymikt |  Studweid-Formation |  Aquitanien     | Aquitanien   | USM  |
+|15200640 |Formation de Rossemaison | Mergelstein: siltig  | Gestein: residual   | 0 |  Rossemaison-Formation |  Rupélien     | Priabonien   | Siderolithikum  |
+|15200641 |Rhyolithe de Schwaningen-Merenbach | Rhyolith  | 0   | 0 |  Schwaningen-Merenbach-Rhyolith |  Permien     | Carbonifère   | Spät- bis postvariszisches Grundgebirge  |
+|15200642 |Granite de Schwaningen-Weizen | Granit  | 0   | 0 |  Schwaningen-Weizen-Granit |  Permien     | Carbonifère   | Spät- bis postvariszisches Grundgebirge  |
+|15200643 |Granite d&#39;Etzgen | Granit  | 0   | 0 |  Etzgen-Granit |  Permien     | Carbonifère   | Spät- bis postvariszisches Grundgebirge  |
+|15200645 |Karbonatreiche Molasse: Kalk-Dolomit-Nagelfluh | Konglomerat: kalkig-dolomitisch  | 0   | 0 |  0 |  Chattien     | Rupélien   | USM  |
+|15200646 |Mélange de Hornbüel | Sandstein  | Mergelstein   | Konglomerat |  Hornbüel-Melange |  Chattien     | Rupélien   | Mélange  |
+|15200647 |Formation du Kalter Wangen | Konglomerat: kalkig  | Sandstein   | Mergelstein |  Kalter-Wangen-Formation |  Tortonien     | Langhien   | OSM  |
+|15200648 |Poudingue de Baltersweil | Konglomerat: polymikt: Bioklasten  | 0   | 0 |  Baltersweil-Nagelfluh |  Burdigalien     | Burdigalien   | OMM  |
+|15200649 |Poudingue du Netzbachtal | Konglomerat  | 0   | 0 |  Netzbachtal-Nagelfluh |  Burdigalien     | Burdigalien   | OMM  |
+|15200650 |Formation du Rocher des Hirondelles | Kalkstein: Bioklasten  | Mergelstein   | 0 |  Rocher-des-Hirondelles-Formation |  Barrémien     | Hauterivien   | «Urgonien»  |
+|15200651 |Membre du Fort de l&#39;Ecluse | Kalkstein: Bioklasten  | Kalkstein: Ooide   | 0 |  Fort-de-l&#39;Écluse-Member |  Barrémien     | Hauterivien   | «Urgonien»  |
+|15200652 |Membre de Bôle | Mergelstein: Bioklasten  | Kalkstein: mergelig   | 0 |  Bôle-Member |  Barrémien     | Barrémien   | «Urgonien»  |
+|15200653 |Membre de Montcherand | Mergelstein  | Kalkstein: Bioklasten   | 0 |  Montcherand-Member |  Barrémien     | Hauterivien   | «Urgonien»  |
+|15200654 |Calcaire Roux | Kalkstein: spätig: Ooide  | 0   | 0 |  Vuache-Formation |  Valanginien     | Valanginien   | Post-Rift Mesozoikum in Plattform-Fazies  |
+|15200658 |Couches du Schwarzbach | Kalkstein: mergelig: Bioklasten  | Mergelstein   | 0 |  Schwarzbach-Formation |  Kimméridgien     | Kimméridgien   | Malm  |
+|15200659 |Membres de Wangen et du Letzi, indifférenciés | Kalkstein: mikritisch  | 0   | 0 |  Villigen-Formation |  Kimméridgien     | Oxfordien   | Malm  |
+|15200660 |Grand-Essert- bis Narlay-Fm. | Kalkstein  | Mergelstein   | Sandstein: Glaukonit |  0 |  Pléistocène     | Valanginien   | Post-Rift  |
+|15200661 |Goldberg- bis Vuache-Fm. | Kalkstein  | Mergelstein   | 0 |  0 |  Valanginien     | Berriasien   | Post-Rift Mesozoikum in Plattform-Fazies  |
+|15200662 |Rocher-des-Hirondelles-Fm.: Bellegarde-Bk. | Kalkstein: Bioklasten  | Mergelstein: konglomeratisch   | 0 |  Bellegarde-Bänke |  Barrémien     | Barrémien   | «Urgonien»  |
+|15200663 |Rocher-des-Hirondelles-Fm.: Serrières-Bk. | Kalkstein: Bioklasten  | 0   | 0 |  Serrières-Bank |  Barrémien     | Barrémien   | «Urgonien»  |
+|15200664 |Gorges-de-l&#39;Orbe-Fm.: Morteau-Kalk | Kalkstein: Bioklasten  | Kalkstein: Ooide   | 0 |  Morteau-Kalk |  Barrémien     | Barrémien   | «Urgonien»  |
+|15200665 |Gorges-de-l&#39;Orbe-Fm.: Montcherand-Mb.: La-Vaux-Bk. | Kalkstein: Ooide  | 0   | 0 |  La-Vaux-Bänke |  Barrémien     | Barrémien   | «Urgonien»  |
+|15200666 |Gorges-de-l&#39;Orbe-Fm.: Montcherand-Mb.: Cul-du-Nozon-Bk. | Mergelstein  | 0   | 0 |  Cul-du-Nozon-Bänke |  Hauterivien     | Hauterivien   | «Urgonien»  |
+|15200667 |Gorges-de-l&#39;Orbe-Fm.: Montcherand-Mb.: Pont-des-Pierres-Bk. | Kalkstein: mergelig: Glaukonit  | 0   | 0 |  Pont-des-Pierres-Bänke |  Hauterivien     | Hauterivien   | «Urgonien»  |
+|15200668 |Grand-Essert-Fm: Hauterive-Mb.: Censeau-Mergel | Mergelstein: Korallen  | 0   | 0 |  Censeau-Mergel |  Valanginien     | Valanginien   | Post-Rift Mesozoikum in Plattform-Fazies  |
+|15200669 |Grand-Essert-Fm: Hauterive-Mb.: Morteau-Mergel | Mergelstein: tonig  | 0   | 0 |  Morteau-Mergel |  Valanginien     | Valanginien   | Post-Rift Mesozoikum in Plattform-Fazies  |
+|15200670 |Chambotte-Fm.: Guiers-Mb.: Grande-Varappe-Bk. | Mergelstein: konglomeratisch  | 0   | 0 |  Grande-Varappe-Bank |  Valanginien     | Valanginien   | Post-Rift Mesozoikum in Plattform-Fazies  |
+|15200671 |Le-Coin-Fm. | Kalkstein: mikritisch: Chert  | Kalkstein: dolomitisch   | 0 |  Le-Coin-Formation |  Kimméridgien     | Kimméridgien   | Malm  |
+|15200672 |Bärschwil-, St-Ursanne- und Pichoux-Fm. | Kalkstein  | Mergelstein   | Tonstein |  0 |  Oxfordien     | Oxfordien   | Malm  |
+|15200673 |Passwang- bis Ifenthal-Fm. | Kalkstein  | Mergelstein   | Tonstein |  0 |  Oxfordien     | Aalénien   | Lias-Dogger in neritischer Fazies  |
+|15200674 |Calcaire à Entroques | Kalkstein: spätig: Bioklasten  | 0   | 0 |  «Calcaire à Entroques» |  Bajocien     | Bajocien   | Lias-Dogger in neritischer Fazies  |
+|15200675 |Staffelegg-Fm. und Opalinus-Ton | Mergelstein  | Tonstein   | 0 |  0 |  Aalénien     | Hettangien   | Syn-Rift  |
+|15200676 |Schafisheim-Syenit | Syenit  | Granit   | Diorit |  Schafisheim-Syenit |  Pennsylvanien     | Pennsylvanien   | Spät- bis postvariszisches Grundgebirge  |
+|15200677 |Pfaffnau-Granit | Granit: Biotit  | Diorit   | Syenit |  Pfaffnau-Granit |  Pennsylvanien     | Pennsylvanien   | Spät- bis postvariszisches Grundgebirge  |
+|15200678 |Zurzach-Granit | Granit: Biotit-Cordierit  | 0   | 0 |  Zurzach-Granit |  Pennsylvanien     | Pennsylvanien   | Spät- bis postvariszisches Grundgebirge  |
+|15200679 |Siblingen-Granit | Granit: Biotit-Cordierit  | 0   | 0 |  Siblingen-Granit |  Pennsylvanien     | Pennsylvanien   | Spät- bis postvariszisches Grundgebirge  |
+|15200680 |Lindau-Granit | Granit: Biotit-Cordierit  | 0   | 0 |  Lindau-Granit |  Mississippien     | Dévonien   | Frühvariszisches Grundgebirge  |
+|15200681 |Kreuzlingen-Granit | Granit: Biotit-Cordierit  | 0   | 0 |  Kreuzlingen-Granit |  Mississippien     | Dévonien   | Frühvariszisches Grundgebirge  |
+|15200682 |Schlächtenhaus-Schiefer | Sandstein: tonig  | Schiefer: tonig   | 0 |  Schlächtenhaus-Schiefer |  Mississippien     | Dévonien tardif   | Prä- bis frühvariszisches Grundgebirge  |
+|15200683 |Gersbach-Schiefer | Schiefer: Hornblende  | 0   | 0 |  Gersbach-Schiefer |  Ordovicien     | Ordovicien   | Prä- bis frühvariszisches Grundgebirge  |
+|15200684 |Herdern-Streifengneis | Gneis: Biotit  | 0   | 0 |  Herdern-Streifengneis |  Paléozoïque     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15200685 |Courgenay- Balsthal- und VilligenFm. | Kalkstein  | Mergelstein   | 0 |  0 |  Kimméridgien     | Oxfordien   | Malm  |
+|15200686 |Pichoux-Fm.: Korallenfazies | Kalkstein: Korallen  | Kalkstein: mergelig   | 0 |  Pichoux-Formation |  Oxfordien     | Oxfordien   | Malm  |
+|15200687 |Pichoux-Fm.: Schwammfazies | Kalkstein: Schwämme  | Kalkstein: mergelig   | Mergelstein |  Pichoux-Formation |  Oxfordien     | Oxfordien   | Malm  |
+|15200688 |Kalter-Wangen-Fm.: Konglomerat-dominierte Fazies | Konglomerat: kalkig  | Sandstein   | Mergelstein |  Kalter-Wangen-Formation |  Tortonien     | Langhien   | OSM  |
+|15200689 |Kalter-Wangen-Fm.: Sandstein-Mergelstein-dominierte Fazies | Sandstein  | Mergelstein   | Konglomerat: kalkig |  Kalter-Wangen-Formation |  Tortonien     | Langhien   | OSM  |
+|15200690 |Kalter-Wangen-Fm.: Heilsberg-Bentonit | Bentonit  | 0   | 0 |  Heilsberg-Bentonit |  Tortonien     | Langhien   | OSM  |
+|15200691 |OSM: Humlikon-Bentonit | Bentonit  | 0   | 0 |  Humlikon-Bentonit |  Tortonien     | Langhien   | OSM  |
+|15202001 |Mélange de Habkern | Mergelstein  | Tonstein   | 0 |  Habkern-Melange |  Eocène     | Crétacé tardif   | Mélange  |
+|15202002 |Mélange de Sörenberg | Mergelstein  | Tonstein   | 0 |  Sörenberg-Melange |  Priabonien     | Priabonien   | Mélange  |
+|15202003 |Mélange de Wildhaus | Mergelstein  | 0   | 0 |  Wildhaus-Melange |  Eocène     | Eocène   | Mélange  |
+|15202004 |Unités de flysch sud-helvétiques | Mergelstein  | Sandstein: kalkig   | Kalkstein: Nummuliten |  0 |  Priabonien     | Lutétien   | Flysch  |
+|15202005 |Groupe du Flysch nord-helvétique | Sandstein: tonig  | Tonstein   | 0 |  0 |  Rupélien     | Priabonien   | Flysch  |
+|15202006 |Formation de Matt | Sandstein: Quarz  | Tonstein: schiefrig   | Konglomerat: polymikt |  Matt-Formation |  Rupélien     | Rupélien   | Flysch  |
+|15202007 |Schistes ardoisiers d&#39;Engi | Tonstein: schiefrig  | Sandstein: Quarz   | 0 |  Engi-Dachschiefer |  Rupélien     | Rupélien   | Flysch  |
+|15202008 |Conglomérat du Gruontal | Konglomerat: polymikt  | Brekzie   | 0 |  Gruontal-Konglomerat |  Rupélien     | Rupélien   | Flysch  |
+|15202009 |Formation d&#39;Elm | Tonstein: schiefrig  | Sandstein: tonig   | 0 |  Elm-Formation |  Rupélien     | Priabonien   | Flysch  |
+|15202010 |Banc du Rüschenweid | Sandstein  | 0   | 0 |  Rüschenweid-Bank |  Rupélien     | Rupélien   | Flysch  |
+|15202011 |Formation de Taveyannaz | Sandstein: tonig  | Tonstein: schiefrig   | 0 |  Taveyannaz-Formation |  Rupélien     | Priabonien   | Flysch  |
+|15202012 |Paléogène de l&#39;Helvétique | Kalkstein: Bioklasten  | Sandstein   | Mergelstein |  0 |  Paléogène     | Paléogène   | Sedimentbedeckung  |
+|15202013 |Formation de Stad | Mergelstein: siltig  | 0   | 0 |  Stad-Formation |  Priabonien     | Lutétien   | «Nummulitikum»  |
+|15202014 |Calcaire de Wängen | Kalkstein: Bioklasten  | 0   | 0 |  Wängen-Kalk |  Priabonien     | Lutétien   | «Nummulitikum»  |
+|15202015 |Conglomérat du Jochstock | Konglomerat: kalkig  | Brekzie: kalkig   | Mergelstein: sandig-kalkig |  Jochstock-Konglomerat |  Priabonien     | Priabonien   | Syn-Kollision  |
+|15202016 |Formation du Sanetsch | Kalkstein: sandig: Bioklasten  | Sandstein: kalkig   | 0 |  Sanetsch-Formation |  Rupélien     | Priabonien   | «Nummulitikum»  |
+|15202017 |Calcaire de Pierredar | Kalkstein: Bioklasten  | 0   | 0 |  Pierredar-Kalk |  Rupélien     | Priabonien   | «Nummulitikum»  |
+|15202018 |Membre de Tsanfleuron | Sandstein: kalkig: Bioklasten  | Kalkstein: arenitisch   | 0 |  Tsanfleuron-Member |  Priabonien     | Priabonien   | «Nummulitikum»  |
+|15202019 |Membre des Diablerets | Kalkstein: sandig  | Mergelstein: Kohle   | 0 |  Diablerets-Member |  Priabonien précoce     | Priabonien précoce   | «Nummulitikum»  |
+|15202020 |Formation du Niederhorn | Sandstein: kalkig: Quarz  | Kalkstein: Bioklasten   | 0 |  Niederhorn-Formation |  Priabonien     | Bartonien   | «Nummulitikum»  |
+|15202021 |Calcaire de la Gemmenalp | Kalkstein: Bioklasten  | 0   | 0 |  Gemmenalp-Kalk |  Priabonien     | Bartonien   | «Nummulitikum»  |
+|15202022 |Grès du Hohgant | Sandstein: kalkig: Quarz  | Sandstein: kalkig: Bioklasten   | 0 |  Hohgant-Sandstein |  Priabonien     | Bartonien   | «Nummulitikum»  |
+|15202023 |Couches du Wagenmoos | Sandstein: Quarz  | 0   | 0 |  Wagenmoos-Bänke |  Priabonien     | Priabonien   | «Nummulitikum»  |
+|15202024 |Formation du Wildstrubel | Mergelstein: sandig-kalkig  | Sandstein: Glaukonit   | 0 |  Wildstrubel-Formation |  Priabonien     | Bartonien   | «Nummulitikum»  |
+|15202025 |Membre du Schimberg | Mergelstein: sandig  | Sandstein: Quarz   | Konglomerat |  Schimberg-Member |  Priabonien     | Priabonien   | «Nummulitikum»  |
+|15202026 |Membre du Tierberg | Sandstein: Glaukonit  | Mergelstein: sandig   | 0 |  Tierberg-Member |  Bartonien     | Bartonien   | «Nummulitikum»  |
+|15202027 |Membre du Küblibad | Sandstein: Glaukonit  | 0   | 0 |  Küblibad-Member |  Bartonien     | Bartonien   | «Nummulitikum»  |
+|15202028 |Formation du Klimsenhorn | Sandstein: Quarz  | Kalkstein: sandig   | Kalkstein: mikritisch |  Klimsenhorn-Formation |  Bartonien     | Lutétien   | «Nummulitikum»  |
+|15202029 |Membre du Fruttli | Kalkstein: mikritisch  | Sandstein: kalkig: Bioklasten   | Kalkstein: sandig: Bioklasten |  Fruttli-Member |  Lutétien     | Lutétien   | «Nummulitikum»  |
+|15202030 |Membre du Bandweg | Sandstein: Quarz  | Sandstein: kalkig   | Kalkstein |  Band-Member |  Bartonien     | Lutétien   | «Nummulitikum»  |
+|15202031 |Membre de Fräkmünt | Sandstein: Quarz-Glaukonit  | Kalkstein: mikritisch   | Sandstein: kalkig: Bioklasten |  Fräkmünt-Member |  Bartonien     | Lutétien   | «Nummulitikum»  |
+|15202032 |Membre du Bürgen(stock) | Kalkstein: mikritisch  | Kalkstein: sandig: Glaukonit   | Mergelstein: Bioklasten |  Bürgen-Formation |  Lutétien     | Lutétien   | «Nummulitikum»  |
+|15202033 |Membre du Foribach | Kalkstein: sandig: Glaukonit  | Kalkstein: mikritisch: Bioklasten   | 0 |  Foribach-Member |  Lutétien     | Lutétien   | «Nummulitikum»  |
+|15202034 |Membre du Mattgrat | Kalkstein: mikritisch: Bioklasten  | 0   | 0 |  Mattgrat-Member |  Lutétien     | Lutétien   | «Nummulitikum»  |
+|15202035 |Membre de Scharti | Sandstein: kalkig: Glaukonit  | Kalkstein: sandig: Bioklasten   | Mergelstein |  Scharti-Member |  Lutétien     | Lutétien   | «Nummulitikum»  |
+|15202036 |Formation d&#39;Euthal | Kalkstein: Nummuliten  | Sandstein: Quarz-Glaukonit   | 0 |  Euthal-Formation |  Lutétien     | Sélandien   | «Nummulitikum»  |
+|15202037 |Membre du Steinbach | Sandstein: Glaukonit  | Kalkstein: Bioklasten   | 0 |  Steinbach-Member |  Lutétien     | Lutétien   | «Nummulitikum»  |
+|15202038 |Membre d&#39;Einsiedeln | Kalkstein: Nummuliten  | Sandstein: kalkig: Glaukonit   | 0 |  Einsiedeln-Member |  Lutétien     | Yprésien   | «Nummulitikum»  |
+|15202039 |Membre de la Batöni | Sandstein: Quarz-Glaukonit  | 0   | 0 |  Batöni-Member |  Yprésien     | Thanétien   | «Nummulitikum»  |
+|15202040 |Membre de la Chruteren | Sandstein: Glaukonit  | Kalkstein: spätig: Bioklasten   | Kalkstein: Algen |  Chruteren-Member |  Yprésien     | Thanétien   | «Nummulitikum»  |
+|15202041 |Membre du Fliegenspitz | Mergelstein: sandig  | 0   | 0 |  Fliegenspitz-Member |  Thanétien     | Sélandien   | «Nummulitikum»  |
+|15202043 |Marbre de Grindelwald | Brekzie: kalkig  | 0   | 0 |  Grindelwald-Marmor |  Eocène moyen     | Eocène moyen   | Siderolithikum  |
+|15202044 |Brèche de Mürren | Brekzie: kalkig: Bioklasten  | 0   | 0 |  Mürren-Brekzie |  Priabonien     | Priabonien   | «Nummulitikum»  |
+|15202045 |Conglomérat de la Dünden | Konglomerat: kalkig-residual: Eisenpisoide  | 0   | 0 |  Dünden-Konglomerat |  Eocène moyen     | Eocène moyen   | Siderolithikum  |
+|15202046 |Marbre de Rosenlaui | Brekzie: kalkig  | 0   | 0 |  Rosenlaui-Marmor |  Eocène moyen     | Eocène moyen   | Siderolithikum  |
+|15202047 |Crétacé de l&#39;Helvétique | Kalkstein  | Mergelstein   | Sandstein |  0 |  Crétacé     | Crétacé   | Post-Rift  |
+|15202048 |Formation de Wang | Kalkstein: sandig-kieselig  | Mergelstein   | 0 |  Wang-Formation |  Maastrichtien     | Campanien   | Post-Rift Mesozoikum in pelagischer Fazies  |
+|15202049 |Marne d&#39;Amden | Mergelstein: Bioklasten  | Siltstein: kalkig   | 0 |  Amden-Mergel |  Campanien     | Santonien   | Post-Rift Mesozoikum in pelagischer Fazies  |
+|15202050 |Formation de Seewen | Kalkstein: mikritisch  | Mergelstein   | 0 |  Seewen-Formation |  Santonien     | Cénomanien   | Post-Rift Mesozoikum in pelagischer Fazies  |
+|15202051 |Membre du Choltal | Mergelstein: kalkig  | Kalkstein: mikritisch   | 0 |  Choltal-Member |  Santonien     | Santonien   | Post-Rift Mesozoikum in pelagischer Fazies  |
+|15202052 |Formation de Garschella | Sandstein: Glaukonit  | Kalkstein: spätig: Bioklasten   | Mergelstein: sandig |  Garschella-Formation |  Cénomanien     | Aptien   | «Gault»  |
+|15202053 |Membre de Selun | Sandstein: Glaukonit  | Kalkstein: sandig-tonig   | Kalkstein: sandig: Bioklasten |  Selun-Member |  Cénomanien     | Aptien   | «Gault»  |
+|15202054 |Banc du Kamm | Kalkstein: mikritisch: Bioklasten  | Kalkstein: spätig: Bioklasten   | 0 |  Kamm-Bank |  Cénomanien     | Albien   | «Gault»  |
+|15202055 |Couches de l&#39;Aubrig | Kalkstein: sandig: Glaukonit  | Sandstein: Quarz-Glaukonit   | 0 |  Aubrig-Schichten |  Cénomanien     | Albien   | «Gault»  |
+|15202056 |Banc de la Wannenalp | Sandstein: Glaukonit  | 0   | 0 |  Wannenalp-Bank |  Albien     | Albien   | «Gault»  |
+|15202057 |Couches de la Sellamatt | Kalkstein: spätig: Glaukonit  | Kalkstein: mergelig   | Siltstein: kalkig |  Sellamatt-Schichten |  Albien     | Albien   | «Gault»  |
+|15202058 |Banc du Plattenwald | Kalkstein: mikritisch: Bioklasten  | 0   | 0 |  Plattenwald-Bank |  Albien     | Aptien   | «Gault»  |
+|15202059 |Banc de la Durschlägi | Sandstein: Glaukonit  | 0   | 0 |  Durschlägi-Bank |  Albien     | Albien   | «Gault»  |
+|15202060 |Couches de la Niederi | Sandstein: Glaukonit  | 0   | 0 |  Niederi-Schichten |  Albien     | Albien   | «Gault»  |
+|15202061 |Banc du Twäriberg | Sandstein: Quarz-Glaukonit  | 0   | 0 |  Twäriberg-Bank |  Albien     | Aptien   | «Gault»  |
+|15202062 |Banc de Klaus | Sandstein: Glaukonit  | Kalkstein: mikritisch   | 0 |  Klaus-Bank |  Albien     | Aptien   | «Gault»  |
+|15202063 |Membre de Rankweil | Sandstein: Glaukonit  | 0   | 0 |  Rankweil-Member |  Albien     | Aptien   | «Gault»  |
+|15202064 |Membre de la Brisi | Sandstein: Quarz-Glaukonit  | Kalkstein: sandig: Bioklasten   | 0 |  Brisi-Member |  Aptien     | Aptien   | «Gault»  |
+|15202441 |Bretaye-Fm. | Tonstein: siltig: Glimmer  | 0   | 0 |  Formation de Bretaye |  Aalénien     | Aalénien   | Syn-Rift  |
+|15203091 |Unité du Holzerhorn | Mergelstein: sandig: Kohle  | Kalkstein: sandig: Bioklasten   | Konglomerat |  Holzerhorn-Einheit |  Callovien     | Aalénien   | Lias-Dogger in neritischer Fazies  |
+|15204128 |Permo-Carbonifère de l&#39;Austroalpin | Gestein: vulkanisch  | Gestein: sedimentär   | 0 |  0 |  Permien     | Carbonifère   | Spät- bis postvariszisches Grundgebirge  |
+|15204129 |Ostalpin: Jura | Gestein: kieselig: Radiolarien  | Kalkstein: mikritisch: Bioklasten   | Tonstein |  0 |  Jurassique     | Jurassique   | Sedimentbedeckung  |
+|15202342 |Gneiss de l&#39;Hüenerstock | Gneis: granitisch  | 0   | 0 |  Hüenerstock-Gneis |  Paléozoïque     | Paléozoïque   | Prävariszisches Grundgebirge  |
+|15202345 |Migmatite du Val Camadra | Gneis: migmatitisch  | 0   | 0 |  Val-Camadra-Migmatit |  Paléozoïque     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15202502 |Verrucano d&#39;Ilanz s.s. | Sandstein  | Konglomerat   | 0 |  0 |  Permien     | Permien   | Spät- bis postvariszisches Grundgebirge  |
+|15202503 |Buntgefleckte Schiefer (Ilanz) | Schiefer  | Phyllit   | 0 |  0 |  Permien     | Permien   | Spät- bis postvariszisches Grundgebirge  |
+|15202504 |Permien de la nappe du Tavetsch (Val Acla Mulin) | Konglomerat  | Sandstein   | Gestein: pelitisch |  0 |  Permien     | Permien   | Spät- bis postvariszisches Grundgebirge  |
+|15202254 |Sédiments permiens de la zone d&#39;Ilanz | Konglomerat  | Sandstein   | Gestein: pelitisch |  0 |  Permien     | Permien   | Spät- bis postvariszisches Grundgebirge  |
+|15202257 |zone de l&#39;Oberaar-Furka | Gneis  | 0   | 0 |  0 |  Paléozoïque     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15202258 |zone d&#39;Ausserberg-Avat | Gneis  | Migmatit   | Schiefer |  0 |  Paléozoïque     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15200596 |Helvetischer Flysch | Sandstein  | Tonstein   | 0 |  0 |  Rupélien     | Lutétien   | Flysch  |
+|15200597 |Euthal- bis Stad-Fm. | Kalkstein: Bioklasten  | Sandstein   | Mergelstein |  0 |  Priabonien     | Sélandien   | «Nummulitikum»  |
+|15200598 |Stad- und Muot-da-Rubi-Fm. | Mergelstein  | Sandstein   | 0 |  0 |  Priabonien     | Lutétien   | Sedimentbedeckung  |
+|15200599 |Euthal- bis Sanetsch-Fm. | Kalkstein: Bioklasten  | Sandstein   | Mergelstein |  0 |  Rupélien     | Sélandien   | «Nummulitikum»  |
+|15202260 |Gneiss granitique de la zone d&#39;Ausserberg-Avat | Gneis: granitisch  | 0   | 0 |  0 |  Paléozoïque     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15202261 |Paragneiss de la zone d&#39;Ausserberg-Avat | Gneis: sedimentär  | 0   | 0 |  0 |  Paléozoïque     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15202262 |zone de Clavaniev | Gestein: tektonisch  | 0   | 0 |  0 |  Paléozoïque     | Protérozoïque   | Spät- bis postvariszisches Grundgebirge  |
+|15202649 |Nufenen-Zone | Schiefer: tonig  | Schiefer: kalkig   | Quarzit |  0 |  Mésozoïque     | Mésozoïque   | Sedimentbedeckung  |
+|15202268 |zone d&#39;Ausserbinn-Piz Cavel | Gneis  | Amphibolit   | Schiefer |  0 |  Paléozoïque     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15202650 |Termen-Zone | Schiefer: tonig  | Schiefer: kalkig   | 0 |  0 |  Mésozoïque     | Mésozoïque   | Sedimentbedeckung  |
+|15203671 |Salahorn-Fm. | Schiefer: Glimmer  | Gneis: sedimentär   | 0 |  Salahorn-Formation |  Cambrien     | Cambrien   | Grundgebirge  |
+|15200607 |Etiollets- Reuchenette- und Twannbach-Fm. | Kalkstein: mikritisch  | Mergelstein   | 0 |  0 |  Tithonien     | Kimméridgien   | Malm  |
+|15200608 |Bärschwil-, St-Ursanne-, Pichoux- und Wildegg-Fm. | Mergelstein  | Kalkstein   | Tonstein |  0 |  Oxfordien     | Oxfordien   | Malm  |
+|15203672 |Col-de-Tompey- und Vudalla-Fm. | Mergelstein  | Kalkstein   | Sandstein: kalkig |  0 |  Hettangien     | Rhétien   | Lias-Dogger in neritischer Fazies  |
+|15202407 |Punteglias-Granit: Posta-Biala-Granit | Granit  | 0   | 0 |  Posta-Biala-Granit |  Mississippien moyen     | Mississippien moyen   | Prävariszisches Grundgebirge  |
+|15202280 |Mélange du Sardona | Mergelstein  | Sandstein   | 0 |  0 |  Tertiaire     | Crétacé tardif   | Mélange  |
+|15202409 |Punteglias-Granit: Val-Punteglias-Diorit | Diorit: Biotit-Hornblende  | Diorit: monzonitisch   | Monzonit: Quarz |  Val-Punteglias-Diorit |  Viséen     | Viséen   | Prävariszisches Grundgebirge  |
+|15200379 |Molasse alsacienne s.l. | Mergelstein  | Siltstein   | Sandstein: Glimmer |  «Elsässer-Molasse» |  Chattien     | Chattien   | USM  |
+|15200381 |Hauptogenstein: Mittlerer Teil | Mergelstein  | Kalkstein: mergelig   | 0 |  Hauptrogenstein |  Bathonien     | Bajocien   | Lias-Dogger in neritischer Fazies  |
+|15205001 |Groupe du Dolin | Brekzie  | Dolomitstein   | Sandstein |  0 |  Jurassique moyen     | Trias   | Sedimentbedeckung  |
+|15205002 |Brèche calcaire du Dolin | Brekzie: kalkig-dolomitisch  | 0   | 0 |  Petit-Dolin-Kalkbrekzie |  Jurassique moyen     | Jurassique précoce   | Lias-Dogger in neritischer Fazies  |
+|15205003 |zone de Roisan | Marmor  | Schiefer   | 0 |  0 |  Trias moyen     | Permien   | Sedimentbedeckung  |
+|15205004 |Série d&#39;Arolla | Gneis: gebändert  | Schiefer: Glimmer   | 0 |  0 |  Cisuralien     | Cisuralien   | Grundgebirge  |
+|15205005 |Complexe du Mont Collon | 15111449  | 0   | 0 |  Mont-Collon-Gabbro |  Cisuralien     | Cisuralien   | Variszisches Grundgebirge  |
+|15205006 |orthogneiss du Groupe d&#39;Arolla | Gneis: granitisch  | 0   | 0 |  Arolla-Orthogneis |  Permien     | Permien   | Variszisches Grundgebirge  |
+|15205007 |Série de Valpelline | 15111557  | Gneis: granulitisch   | 0 |  0 |  Paléogène     | Protérozoïque   | Grundgebirge  |
+|15205008 |Argile de Castel di Sotto | Tonstein  | Mergelstein   | Siltstein |  Castel-di-Sotto-Ton |  Zancléen     | Zancléen   | Post-Messinien  |
+|15205009 |Conglomérat de Pontegana | Konglomerat: kalkig  | Sandstein   | 0 |  Pontegana-Konglomerat |  Messinien     | Messinien   | Post-Kollision  |
+|15205010 |Groupe de la Gompholite Lombarde | Konglomerat  | Sandstein   | Tonstein |  0 |  Langhien     | Chattien   | Lombardischer Gompholit  |
+|15205011 |Conglomérat de Lucino | Konglomerat  | Sandstein   | Tonstein |  Lucino-Konglomerat |  Langhien     | Burdigalien   | Lombardischer Gompholit  |
+|15205012 |Grès de Cagno | Sandstein  | Konglomerat   | 0 |  Cagno-Sandstein |  Langhien     | Burdigalien   | Lombardischer Gompholit  |
+|15205013 |Grès du Val Grande | Sandstein  | Sandstein: konglomeratisch   | Tonstein |  Val-Grande-Sandstein |  Burdigalien     | Burdigalien   | Lombardischer Gompholit  |
+|15205014 |Pélite de Prestino | Tonstein  | Siltstein   | Sandstein |  Prestino-Pelite |  Aquitanien     | Aquitanien   | Lombardischer Gompholit  |
+|15205015 |Conglomérat de Como | Konglomerat: polymikt  | Sandstein   | Tonstein |  Como-Konglomerat |  Burdigalien     | Chattien   | Lombardischer Gompholit  |
+|15205016 |Grès de Malnate | Sandstein  | Sandstein: konglomeratisch   | Tonstein |  Malnate-Sandstein |  Burdigalien     | Burdigalien   | Lombardischer Gompholit  |
+|15205017 |Pélite du Rio dei Gioghi | Tonstein  | Siltstein   | Sandstein |  Rio-dei-Gioghi-Pelite |  Aquitanien     | Aquitanien   | Lombardischer Gompholit  |
+|15205018 |Formation de Chiasso | Tonstein  | Sandstein   | Konglomerat |  Chiasso-Formation |  Chattien     | Chattien   | Lombardischer Gompholit  |
+|15205019 |Conglomérat de Villa Olmo | Konglomerat: polymikt  | Sandstein   | Tonstein |  Villa-Olmo-Konglomerat |  Chattien     | Chattien   | Lombardischer Gompholit  |
+|15205020 |Formation de Ternate | Kalkstein: arenitisch: Bioklasten  | Mergelstein   | 0 |  Ternate-Formation |  Priabonien     | Priabonien   | Post-Kollision in pelagischer Fazies  |
+|15205021 |Formation de Brenno | Kalkstein: mikritisch  | Kalkstein: arenitisch   | 0 |  Brenno-Formation |  Maastrichtien     | Campanien   | Post-Kollision in pelagischer Fazies  |
+|15205022 |Conglomérat de Prella | Konglomerat: polymikt  | Kalkstein: arenitisch   | Kalkstein: mikritisch |  Prella-Konglomerat |  Campanien     | Campanien   | Post-Kollision in pelagischer Fazies  |
+|15205023 |Groupe du Flysch Lombard | Sandstein  | Konglomerat: polymikt   | Kalkstein |  0 |  Campanien     | Cénomanien   | Flysch  |
+|15205024 |Flysch de Bergamo | Tonstein  | Kalkstein: arenitisch   | 0 |  Bergamo-Flysch |  Campanien     | Santonien   | Flysch  |
+|15205025 |Flysch de Coldrerio | Sandstein  | Siltstein   | Mergelstein |  Coldrerio-Flysch |  Campanien     | Santonien   | Flysch  |
+|15205026 |Conglomérat de Torre | Konglomerat: polymikt  | Sandstein   | 0 |  Torre-Konglomerat |  Santonien     | Santonien   | Flysch  |
+|15205027 |Flysch du Varesotto | Sandstein  | Siltstein   | Mergelstein |  Varesotto-Flysch |  Santonien     | Cénomanien   | Flysch  |
+|15205028 |Groupe de la Scaglia Lombarda | Kalkstein: mergelig  | Mergelstein   | 0 |  0 |  Cénomanien     | Aptien   | Scaglia  |
+|15205029 |Scaglia Rossa Lombarda | Kalkstein: mergelig  | Mergelstein   | 0 |  «Scaglia Rossa Lombarda» |  Cénomanien     | Cénomanien   | Scaglia  |
+|15205030 |Scaglia Bianca Lombarda | Kalkstein: mergelig  | Mergelstein   | Tonstein: schiefrig: Bitumen |  «Scaglia Bianca Lombarda» |  Albien     | Albien   | Scaglia  |
+|15205031 |Scaglia Variegata Lombarda | Kalkstein: mergelig  | Mergelstein   | Tonstein: schiefrig: Bitumen |  «Scaglia Variegata Lombarda» |  Albien     | Aptien   | Scaglia  |
+|15202065 |Calcaire de la Brisi | Kalkstein: sandig: Bioklasten  | Kalkstein: spätig: Bioklasten   | 0 |  Brisi-Member |  Aptien     | Aptien   | «Gault»  |
+|15202066 |Grès de la Brisi | Sandstein: Quarz-Glaukonit  | 0   | 0 |  Brisi-Member |  Aptien     | Aptien   | «Gault»  |
+|15202067 |Couches du Gams | Sandstein: tonig: Glaukonit  | Mergelstein: kalkig-schiefrig   | 0 |  Gams-Schichten |  Aptien     | Aptien   | «Gault»  |
+|15202068 |Banc de la Luitere | Sandstein: mergelig: Glaukonit  | 0   | 0 |  Luitere-Bank |  Aptien     | Aptien   | «Gault»  |
+|15202069 |Membre du Freschen | Tonstein: mergelig  | Sandstein   | Kalkstein |  Freschen-Member |  Albien     | Albien   | «Gault»  |
+|15202070 |Couches du Hochkugel | Kalkstein: kieselig  | Tonstein: mergelig   | 0 |  Hochkugel-Schichten |  Aptien     | Aptien   | «Gault»  |
+|15202071 |Membre du Grünten | Mergelstein: sandig: Glaukonit  | Kalkstein: sandig   | Kalkstein: spätig: Bioklasten |  Grünten-Member |  Aptien     | Aptien   | «Gault»  |
+|15202072 |Banc du Rohrbachstein | Kalkstein: arenitisch: Glaukonit  | 0   | 0 |  Rohrbachstein-Bank |  Aptien     | Aptien   | «Gault»  |
+|15202073 |Formation du Schrattenkalk | Kalkstein: Bioklasten  | 0   | 0 |  Schrattenkalk-Formation |  Aptien     | Barrémien   | «Urgonien»  |
+|15202074 |Membre du Rawil | Kalkstein: mergelig: Bioklasten  | Mergelstein   | 0 |  Rawil-Member |  Aptien     | Aptien   | «Urgonien»  |
+|15202075 |Formation de Tierwis | Mergelstein: Glaukonit  | Kalkstein: kieselig   | 0 |  Tierwis-Formation |  Barrémien     | Hauterivien   | «Urgonien»  |
+|15202076 |Banc du Chopf | Kalkstein: sandig  | Mergelstein: Glaukonit-Bioklasten   | 0 |  Chopf-Bank |  Barrémien     | Barrémien   | «Urgonien»  |
+|15202077 |Membre du Drusberg | Mergelstein  | Kalkstein: kieselig   | 0 |  Drusberg-Member |  Barrémien     | Barrémien   | «Urgonien»  |
+|15202078 |Membre de l&#39;Altmann | Mergelstein: sandig: Glaukonit  | Kalkstein: sandig   | 0 |  Altmann-Member |  Barrémien     | Hauterivien   | «Urgonien»  |
+|15202079 |Kieselkalk Helvétique | Kalkstein: kieselig: Bioklasten  | Mergelstein: kieselig   | 0 |  15253100 |  Hauterivien     | Valanginien   | Post-Rift Mesozoikum in Plattform-Fazies  |
+|15202080 |Calcaire échinodermique du Chriesiloch | Kalkstein: spätig: Bioklasten  | 0   | 0 |  Chriesiloch-Echinodermenkalk |  Hauterivien     | Hauterivien   | Post-Rift Mesozoikum in Plattform-Fazies  |
+|15202081 |Membre de la Lidernen | Kalkstein: sandig: Glaukonit  | Mergelstein   | 0 |  Lidernen-Member |  Hauterivien     | Hauterivien   | Post-Rift Mesozoikum in Plattform-Fazies  |
+|15202082 |Banc du Gemsmättli | Kalkstein: mikritisch: Glaukonit  | Kalkstein: sandig: Bioklasten   | 0 |  Gemsmättli-Bank |  Valanginien     | Valanginien   | Post-Rift Mesozoikum in Plattform-Fazies  |
+|15202083 |Membre du Rahberg | Kalkstein: sandig: Glaukonit  | 0   | 0 |  Rahberg-Bank |  Hauterivien     | Hauterivien   | Post-Rift Mesozoikum in Plattform-Fazies  |
+|15202084 |Formation de Betlis | Kalkstein: spätig: Bioklasten-Chert  | Mergelstein   | 0 |  Betlis-Formation |  Valanginien     | Valanginien   | Post-Rift Mesozoikum in Plattform-Fazies  |
+|15202085 |Membre à Pygurus | Kalkstein: sandig-spätig  | 0   | 0 |  «Pygurus-Member» |  Valanginien     | Valanginien   | Post-Rift Mesozoikum in Plattform-Fazies  |
+|15202086 |Membre de la Spitzeren | Kalkstein  | Mergelstein   | 0 |  Spitzern-Member |  Valanginien     | Valanginien   | Post-Rift Mesozoikum in Plattform-Fazies  |
+|15202087 |Banc de Büls | Kalkstein: sandig: Glaukonit  | Mergelstein   | 0 |  Büls-Bank |  Valanginien     | Valanginien   | Post-Rift Mesozoikum in Plattform-Fazies  |
+|15202088 |Calcaire de la Sichel | Kalkstein: mikritisch: Bioklasten-Chert  | 0   | 0 |  Sichel-Kalk |  Valanginien     | Valanginien   | Post-Rift Mesozoikum in Plattform-Fazies  |
+|15202089 |Calcaire à Diphyoides | Kalkstein: mikritisch  | 0   | 0 |  15253114 |  Valanginien     | Valanginien   | Post-Rift Mesozoikum in Plattform-Fazies  |
+|15202090 |Marne de Vitznau | Mergelstein  | Kalkstein: mikritisch: Bioklasten   | 0 |  Vitznau-Mergel |  Valanginien     | Valanginien   | Post-Rift Mesozoikum in Plattform-Fazies  |
+|15202091 |Formation de l&#39;Öhrli | Kalkstein: Bioklasten-Ooide  | Kalkstein: sandig   | Mergelstein |  Öhrli-Formation |  Berriasien     | Berriasien   | Post-Rift Mesozoikum in Plattform-Fazies  |
+|15202092 |Formation de Palfris | Mergelstein: schiefrig  | Tonstein: schiefrig   | Kalkstein: Bioklasten |  Palfris-Formation |  Berriasien     | Berriasien   | Post-Rift Mesozoikum in pelagischer Fazies  |
+|15202093 |Formation du Zementstein | Mergelstein  | Kalkstein: mergelig   | Kalkstein: mikritisch |  15253121 |  Berriasien     | Berriasien   | Post-Rift Mesozoikum in pelagischer Fazies  |
+|15202094 |Membre du Graspass | Brekzie: kalkig  | Brekzie: dolomitisch   | Mergelstein |  Graspass-Member |  Berriasien     | Berriasien   | Post-Rift Mesozoikum in pelagischer Fazies  |
+|15202095 |Calcaire du Gassen(stock) | Kalkstein: arenitisch-spätig  | Kalkstein: mikritisch   | 0 |  Gassen-Kalk |  Berriasien     | Berriasien   | Post-Rift Mesozoikum in pelagischer Fazies  |
+|15202096 |Malm de l&#39;Helvétique | Kalkstein  | Mergelstein   | 0 |  0 |  Berriasien     | Callovien   | Malm  |
+|15202097 |Formation de Quinten | Kalkstein: mikritisch  | 0   | 0 |  Quinten-Formation |  Berriasien     | Oxfordien   | Malm  |
+|15202098 |Calcaire de Tros | Kalkstein: Korallen  | Kalkstein: Ooide   | 0 |  Tros-Kalk |  Berriasien     | Tithonien   | Malm  |
+|15202099 |Mergelband (Fm. de Quinten) | Mergelstein  | Kalkstein: mergelig   | 0 |  «Mergelband» (Quinten-Fm.) |  Kimméridgien     | Kimméridgien   | Malm  |
+|15202100 |Formation du Schilt | Kalkstein  | Mergelstein   | 0 |  Schilt-Formation |  Oxfordien     | Callovien   | Malm  |
+|15202101 |Membre de Mürtschen | Mergelstein: schiefrig  | Kalkstein: mikritisch   | 0 |  Mürtschen-Member |  Oxfordien     | Oxfordien   | Malm  |
+|15202102 |Marne du Schilt | Mergelstein: schiefrig  | Mergelstein: kalkig   | 0 |  Schilt-Formation |  Oxfordien     | Oxfordien   | Malm  |
+|15202103 |Calcaire du Schilt | Kalkstein  | 0   | 0 |  Schilt-Formation |  Oxfordien     | Oxfordien   | Malm  |
+|15202104 |Membre du Seeztal | Siltstein: mergelig  | Kalkstein: spätig: Bioklasten   | 0 |  Seeztal-Member |  Oxfordien     | Callovien   | Malm  |
+|15202105 |Membre des Windgällen | Kalkstein: mergelig  | Tonstein   | 0 |  Windgällen-Member |  Oxfordien     | Oxfordien   | Malm  |
+|15202106 |Dogger de l&#39;Helvétique | Kalkstein  | Mergelstein   | Sandstein |  0 |  Oxfordien     | Toarcien   | Syn-Rift  |
+|15202107 |Formation de l&#39;Erzegg | Tonstein: schiefrig  | Mergelstein: schiefrig   | 0 |  Erzegg-Formation |  Oxfordien     | Bajocien   | Lias-Dogger in pelagischer Fazies  |
+|15202108 |Formation de la Reischiben | Kalkstein: spätig: Bioklasten-Chert  | Kalkstein: sandig   | Kalkstein: mergelig |  Reischiben-Formation |  Bathonien     | Aalénien   | Lias-Dogger in neritischer Fazies  |
+|15202109 |Oolite ferrugineuse de la Blegi | Kalkstein: Eisenooide  | 0   | 0 |  Blegi-Eisenoolith |  Callovien     | Bajocien   | Lias-Dogger in neritischer Fazies  |
+|15202110 |Conglomérat de la Bannalp | Mergelstein: dolomitisch  | Konglomerat   | 0 |  Bannalp-Konglomerat |  Bajocien     | Bajocien   | Lias-Dogger in neritischer Fazies  |
+|15202111 |Horizon fossilifère de Guppen | Kalkstein: Bioklasten  | 0   | 0 |  Guppen-Fossilhorizont |  Bajocien     | Bajocien   | Lias-Dogger in neritischer Fazies  |
+|15202112 |Horizon fossilifère du Gursbach | Kalkstein: Bioklasten  | 0   | 0 |  Gursbach-Fossilhorizont |  Bajocien     | Bajocien   | Lias-Dogger in neritischer Fazies  |
+|15202113 |Formation du Hochstollen | Kalkstein: sandig-spätig  | Mergelstein: sandig   | 0 |  Hochstollen-Formation |  Bajocien     | Bajocien   | Lias-Dogger in neritischer Fazies  |
+|15202114 |Membre du Schwarzhorn | Kalkstein: sandig-kieselig  | Mergelstein   | Kalkstein: spätig: Bioklasten |  Schwarzhorn-Member |  Bajocien     | Bajocien   | Lias-Dogger in neritischer Fazies  |
+|15202115 |Membre du Bietenhorn | Mergelstein: siltig  | Tonstein: schiefrig   | Kalkstein: sandig |  Bietenhorn-Member |  Bajocien     | Bajocien   | Lias-Dogger in neritischer Fazies  |
+|15202116 |Formation du Bommerstein | Sandstein: Quarz  | Kalkstein: spätig: Bioklasten   | Tonstein: schiefrig |  Bommerstein-Formation |  Aalénien     | Toarcien   | Lias-Dogger in neritischer Fazies  |
+|15202117 |Membre de Mols | Tonstein: schiefrig  | Kalkstein: spätig: Bioklasten   | 0 |  Mols-Member |  Aalénien     | Toarcien   | Lias-Dogger in pelagischer Fazies  |
+|15202118 |Formation de Dugny | Tonstein: siltig: Glimmer  | Siltstein   | 0 |  Dugny-Formation |  Aalénien     | Toarcien   | Lias-Dogger in pelagischer Fazies  |
+|15202119 |Formation du Coroi | Tonstein: schiefrig  | Siltstein   | Sandstein |  Coroi-Formation |  Aalénien     | Aalénien   | Syn-Rift  |
+|15202120 |Lias de l&#39;Helvétique | Mergelstein  | Kalkstein   | Sandstein |  0 |  Aalénien     | Rhétien   | Lias-Dogger in neritischer Fazies  |
+|15202121 |Formation du Brunnistock | Kalkstein: sandig-spätig  | Tonstein   | 0 |  Brunnistock-Formation |  Toarcien     | Pliensbachien   | Lias-Dogger in neritischer Fazies  |
+|15202122 |Formation d&#39;Inferno | Kalkstein: mergelig-schiefrig  | Tonstein: schiefrig   | Kalkstein: spätig: Bioklasten |  Inferno-Formation |  Toarcien     | Pliensbachien   | Lias-Dogger in neritischer Fazies  |
+|15202123 |Formation des Monts Rosset | Mergelstein  | Kalkstein: spätig: Bioklasten   | 0 |  Monts-Rosset-Formation |  Toarcien     | Toarcien   | Lias-Dogger in neritischer Fazies  |
+|15202124 |Membre de la Torrentalp | Sandstein: kalkig-kieselig  | Kalkstein: mergelig   | Tonstein |  Torrentalp-Member |  Aalénien     | Pliensbachien   | Lias-Dogger in neritischer Fazies  |
+|15202125 |Formation du Sexmor | Kalkstein: spätig: Bioklasten  | Mergelstein   | Kalkstein: kieselig |  Sexmor-Formation |  Pliensbachien     | Pliensbachien   | Lias-Dogger in neritischer Fazies  |
+|15202126 |Formation du Mont Joly | Kalkstein: kieselig  | Kalkstein: spätig: Bioklasten   | Kalkstein: sandig-tonig |  Mont-Joly-Formation |  Pliensbachien     | Pliensbachien   | Lias-Dogger in neritischer Fazies  |
+|15205032 |Maiolica Lombarda | Kalkstein: mikritisch: Chert  | Tonstein   | 0 |  «Maiolica Lombarda» |  Barrémien     | Tithonien   | Maiolica / Aptychenkalk  |
+|15205033 |Groupe de la Radiolarite Lombarde | Gestein: kieselig: Radiolarien  | Kalkstein: mergelig   | 0 |  «Selcifero Lombardo» |  Tithonien     | Bajocien   | Radiolarit  |
+|15205034 |Rosso ad Aptici | Mergelstein  | Kalkstein: mergelig: Chert   | 0 |  «Rosso ad Aptici» |  Tithonien     | Kimméridgien   | Radiolarit  |
+|15205035 |Calcari a bivalvi planctonici | 15111227  | Mergelstein   | 0 |  «Calcare a bivalvi planctonici» |  Bajocien     | Aalénien   | Lias-Dogger in pelagischer Fazies  |
+|15205036 |Rosso Ammonitico Lombardo | Kalkstein: mergelig: Bioklasten  | Mergelstein   | 0 |  «Rosso Ammonitico Lombardo» |  Aalénien     | Toarcien   | Lias-Dogger in pelagischer Fazies  |
+|15205037 |Lumachelle à Posidonia alpina (Grenzposidonienschichten) | Mergelstein: Bioklasten  | 0   | 0 |  «Grenzposidonienschichten» |  Toarcien     | Toarcien   | Lias-Dogger in pelagischer Fazies  |
+|15205038 |Formation de Morbio | Kalkstein: mikritisch  | Mergelstein   | 0 |  Morbio-Formation |  Toarcien     | Pliensbachien   | Lias-Dogger in pelagischer Fazies  |
+|15205039 |Calcaire de Besazio | Kalkstein: Bioklasten  | 0   | 0 |  Besazio-Kalk |  Pliensbachien     | Pliensbachien   | Lias-Dogger in neritischer Fazies  |
+|15205040 |Formation de Moltrasio | Kalkstein: kieselig  | Mergelstein   | Brekzie |  Moltrasio-Formation |  Pliensbachien     | Sinémurien   | Lias-Dogger in neritischer Fazies  |
+|15205041 |Membre du Molino | Kalkstein: kieselig  | Mergelstein   | 0 |  Molino-Member |  Pliensbachien     | Pliensbachien   | Lias-Dogger in neritischer Fazies  |
+|15205042 |Formation de Saltrio | Kalkstein: arenitisch: Bioklasten  | 0   | 0 |  Saltrio-Formation |  Sinémurien     | Sinémurien   | Lias-Dogger in neritischer Fazies  |
+|15205043 |Macchia Vecchia | Brekzie  | 0   | 0 |  «Macchia Vecchia» |  Pliensbachien     | Hettangien   | Lias-Dogger in neritischer Fazies  |
+|15205044 |Broccatello d&#39;Arzo | Kalkstein: Bioklasten  | Brekzie   | 0 |  Broccatello d&#39;Arzo |  Sinémurien     | Hettangien   | Lias-Dogger in neritischer Fazies  |
+|15205045 |Formation de l&#39;Albenza | Kalkstein: dolomitisch  | Dolomitstein: kalkig   | Kalkstein: Ooide |  Albenza-Formation |  Hettangien     | Hettangien   | Lias-Dogger in neritischer Fazies  |
+|15205046 |Calcaire de Zu | Kalkstein: Bioklasten  | Kalkstein: mergelig   | Mergelstein |  Zu-Kalk |  Rhétien     | Norien   | Pelitische Trias  |
+|15205047 |Formation de Tremona | 15111193  | Mergelstein   | Dolomitstein |  Tremona-Formation |  Rhétien     | Rhétien   | Pelitische Trias  |
+|15205048 |Brecce Retiche | Brekzie  | 0   | 0 |  «Brecce Retiche» |  Rhétien     | Rhétien   | Pelitische Trias  |
+|15205049 |Argilite de Riva di Solto | Tonstein  | Mergelstein   | Kalkstein: mergelig |  Riva-di-Solto-Tonstein |  Norien     | Norien   | Pelitische Trias  |
+|15205050 |Dolomia Principale | Dolomitstein  | Dolomitstein: stromatolithisch   | 0 |  «Dolomia Principale» |  Norien     | Norien   | Hauptdolomit  |
+|15205051 |Marne du (Monte) Pizzella | Mergelstein  | Mergelstein: Bitumen   | Kalkstein |  Pizzella-Mergel |  Carnien     | Carnien   | Raibl  |
+|15205052 |Formation de Cunardo | Kalkstein: Chert  | 0   | 0 |  Cunardo-Formation |  Ladinien     | Ladinien   | Karbonatische Trias  |
+|15205053 |Formation de Meride | Kalkstein: tonig  | Tonstein: schiefrig: Bitumen   | Dolomitstein |  Meride-Formation |  Ladinien     | Ladinien   | Karbonatische Trias  |
+|15205054 |Kalkschieferzone (Fm. de Meride) | Schiefer: kalkig  | Kalkstein: mikritisch   | Mergelstein |  «Kalkschieferzone» (Meride-Fm.) |  Carnien     | Ladinien   | Karbonatische Trias  |
+|15205055 |Banc de Cassina | Tonstein: schiefrig: Bitumen  | Kalkstein   | Tuffit |  Cassina-Bank |  Ladinien     | Ladinien   | Karbonatische Trias  |
+|15205056 |Cava Superiore | Tonstein: schiefrig: Bitumen  | 0   | 0 |  «Cava Superiore» |  Ladinien     | Ladinien   | Karbonatische Trias  |
+|15205057 |Cava Inferiore | Tonstein: schiefrig: Bitumen  | 0   | 0 |  «Cava Inferiore» |  Ladinien     | Ladinien   | Karbonatische Trias  |
+|15205058 |Dolomie du (Monte) San Giorgio | 15111281  | 0   | 0 |  San-Giorgio-Dolomit |  Ladinien     | Ladinien   | Karbonatische Trias  |
+|15205059 |Tuffite du Val Serrata | Tuffit  | 0   | 0 |  Val-Serrata-Tuffite |  Ladinien     | Ladinien   | Karbonatische Trias  |
+|15205060 |Formation de Besano | 15111288  | Tonstein: schiefrig: Bitumen   | 0 |  Besano-Formation |  Ladinien     | Anisien   | Karbonatische Trias  |
+|15205061 |Dolomie du (Monte) San Salvatore | Dolomitstein  | 0   | 0 |  San-Salvatore-Dolomit |  Ladinien     | Anisien   | Karbonatische Trias  |
+|15205062 |Formation de Bellano | Konglomerat  | Sandstein   | 0 |  Bellano-Formation |  Anisien     | Trias précoce   | Detritische Trias  |
+|15205063 |Servino | Sandstein  | Tonstein   | 0 |  «Servino» |  Trias précoce     | Permien   | Detritische Trias  |
+|15205064 |Verrucano Lombardo | Konglomerat  | Sandstein   | Tonstein |  0 |  Changhsingien     | Changhsingien   | Spät- bis postvariszisches Grundgebirge  |
+|15205065 |Roches volcanique permienne du Sudalpin | Gestein: vulkanisch  | 0   | 0 |  0 |  Cisuralien     | Cisuralien   | Spät- bis postvariszisches Grundgebirge  |
+|15205066 |Granophyre permien du Sudalpin | Granophyr  | 0   | 0 |  0 |  Kungurien     | Kungurien   | Spät- bis postvariszisches Grundgebirge  |
+|15205067 |Andésite et dacite permiennes du Sudalpin | Andesit  | Dazit   | 0 |  0 |  Cisuralien     | Cisuralien   | Spät- bis postvariszisches Grundgebirge  |
+|15205068 |Basalte permien du Sudalpin | Basalt  | 0   | 0 |  0 |  Cisuralien     | Cisuralien   | Spät- bis postvariszisches Grundgebirge  |
+|15205069 |Tuf basal permien du Sudalpin | Tuffit  | 0   | 0 |  0 |  Cisuralien     | Cisuralien   | Spät- bis postvariszisches Grundgebirge  |
+|15205070 |Formation de Manno | Konglomerat  | Sandstein   | Schiefer: tonig: Anthrazit |  Manno-Formation |  Pennsylvanien     | Pennsylvanien   | Spät- bis postvariszisches Grundgebirge  |
+|15205071 |Südalpin: Paläogen-Neogen | Konglomerat  | Sandstein   | Gestein: pelitisch |  0 |  Tertiaire     | Tertiaire   | Sedimentbedeckung  |
+|15205072 |Südalpin: Kreide | Sandstein  | Gestein: pelitisch   | Kalkstein |  0 |  Crétacé     | Crétacé   | Sedimentbedeckung  |
+|15205073 |Südalpin: Radiolarit-Aptychenkalk | Gestein: kieselig: Radiolarien  | Kalkstein: mergelig   | 0 |  0 |  Jurassique tardif     | Jurassique tardif   | Radiolarit  |
+|15205074 |Südalpin: Dogger | 15111227  | Mergelstein   | 0 |  0 |  Jurassique moyen     | Jurassique moyen   | Lias-Dogger in pelagischer Fazies  |
+|15205075 |Südalpin: Lias | Kalkstein  | Mergelstein   | Brekzie |  0 |  Jurassique précoce     | Jurassique précoce   | Syn-Rift  |
+|15205076 |Südalpin: Trias | Dolomitstein  | Gestein: pelitisch   | Kalkstein |  0 |  Trias     | Trias   | Prä-Rift  |
+|15205077 |Südalpin: Permo-Karbon | Konglomerat  | Sandstein   | Gestein: vulkanisch |  0 |  Permien     | Carbonifère   | Spät- bis postvariszisches Grundgebirge  |
+|15205078 |Südalpin: Grundgebirge | Gneis  | Amphibolit   | 0 |  0 |  Paléozoïque     | Protérozoïque   | Grundgebirge  |
+|15205079 |roches intrusives varisques du Sudalpin | Gestein: plutonisch  | 0   | 0 |  0 |  Paléozoïque     | Paléozoïque   | Variszisches Grundgebirge  |
+|15205080 |San-Bernardo-Gneis | Gneis  | 0   | 0 |  San-Bernardo-Gneis |  Silurien     | Ordovicien   | Grundgebirge  |
+|15205081 |métasédiments anté-varisques du Sudalpin | Gneis: sedimentär  | Schiefer: Glimmer   | 0 |  0 |  Paléozoïque     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15205082 |Stabbiello-Gneis | 15111554  | 0   | 0 |  Stabbiello-Gneis |  Paléozoïque     | Protérozoïque   | Grundgebirge  |
+|15205083 |Giumello-Gneis | 15111513  | 0   | 0 |  Giumello-Gneis |  Paléozoïque     | Protérozoïque   | Grundgebirge  |
+|15205084 |Ceneri-Gneis | Gneis: Granat  | 0   | 0 |  Ceneri-Gneis |  Spätes Ordovizium     | Spätes Ordovizium   | Grundgebirge  |
+|15205085 |Südalpin: Proterozoische und paläozoische mafische und ultramafische Gesteine | Gestein: mafisch  | Gestein: ultramafisch   | 0 |  0 |  Paléozoïque     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15205086 |Mont-Morion-Granit | Granit: porphyrisch  | 0   | 0 |  Mont-Morion-Granit |  Permien     | Permien   | Variszisches Grundgebirge  |
+|15205087 |Pointe-d&#39;Otemma-Granodiorit | 15111412  | Gneis: granodioritisch   | 0 |  Pointe-d&#39;Otemma-Granodiorit |  Permien     | Permien   | Variszisches Grundgebirge  |
+|15205088 |Bouquetins-Quarzdiorit | 15111439  | Gneis: dioritisch   | 0 |  Bouquetins-Quarzdiorit |  Permien     | Permien   | Variszisches Grundgebirge  |
+|15205089 |Tête-de-Valpelline-Phyllit | Schiefer: tonig: Graphit  | 0   | 0 |  Tête-de-Valpelline-Phyllit |  Paléozoïque     | Protérozoïque   | Grundgebirge  |
+|15205090 |Arolla-Einheit: Série rubanée | Gneis: gebändert  | Gneis: granitisch   | Gneis: dioritisch |  «Série Rubanée» |  Paléozoïque     | Paléozoïque   | Variszisches Grundgebirge  |
+|15205091 |Sassa-Metagabbro | Gabbro  | Diorit   | Gestein: ultramafisch |  Sassa-Metagabbro |  Permien     | Permien   | Variszisches Grundgebirge  |
+|15205092 |Maia-Metagabbro | Gabbro: Hornblende  | 0   | 0 |  Maia-Metagabbro |  Permien     | Permien   | Variszisches Grundgebirge  |
+|15205093 |Losone-Schiefer | Schiefer: Serizit-Chlorit  | Gneis   | 0 |  Losone-Schiefer |  Mésozoïque     | Protérozoïque   | Grundgebirge  |
+|15205094 |Pizzo-Leone-Gneis | Gneis: Chlorit  | 0   | 0 |  Pizzo-Leone-Gneis |  Paléozoïque     | Paléozoïque   | Grundgebirge  |
+|15202475 |Gneiss oeillé de Bitschji | Gneis: augig  | 0   | 0 |  Bitschji-Augengneis |  Paléozoïque     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15202476 |Gneiss oeillé de Geimen | Gneis: augig  | 0   | 0 |  Geimen-Augengneis |  Paléozoïque     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15202477 |Socle polycyclique anté-varisque du massif du Mont Blanc, migmatitique | Migmatit  | Gneis   | 0 |  0 |  Paléozoïque     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15202478 |Socle polycyclique anté-varisque du massif du Mont Blanc, riche en amphibolites | Gneis: migmatitisch  | Amphibolit   | 0 |  0 |  Paléozoïque     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15202479 |Socle polycyclique anté-varisque du massif du Mont Blanc, mylonitique | Gneis: mylonitisch  | Mylonit   | 0 |  0 |  Paléozoïque     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15202480 |Microgranite de Morcles | Granit: mikrokristallin  | 0   | 0 |  Morcles-Mikrogranit |  Pennsylvanien tardif     | Pennsylvanien tardif   | Mittelvariszisches Grundgebirge  |
+|15202481 |Socle polycyclique anté-varisque du massif des Aiguilles Rouges, migmatitique | Migmatit  | Gneis   | 0 |  0 |  Paléozoïque     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15202482 |Complexe gneissique de Fully | Migmatit  | 0   | 0 |  Fully-Gneiskomplex |  Paléozoïque     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15202483 |Granite d&#39;Hinterbalm | Granit  | 0   | 0 |  Hinterbalm-Granit |  Cisuralien     | Cisuralien   | Spät- bis postvariszisches Grundgebirge  |
+|15202484 |Granite de la Balmenegg | Granit: porphyrisch: Biotit  | 0   | 0 |  Balmenegg-Granit |  Cisuralien     | Cisuralien   | Spät- bis postvariszisches Grundgebirge  |
+|15202485 |faciès d&#39;Unter-der-Flue | Granit: aplitisch  | 0   | 0 |  Unter-der-Flue-Granit |  Cisuralien     | Cisuralien   | Spät- bis postvariszisches Grundgebirge  |
+|15202486 |Granite du (Piz) Pardatschas | Granit  | Granit: mylonitisch   | 0 |  Pardatschas-Granit |  Mississippien tardif     | Mississippien tardif   | Frühvariszisches Grundgebirge  |
+|15202487 |Diorite du Rossbodenstock | Diorit: Quarz-Biotit  | 0   | 0 |  Rossbodenstock-Diorit |  Cisuralien     | Cisuralien   | Spät- bis postvariszisches Grundgebirge  |
+|15202488 |Diorite du Val da Surplattas | Diorit  | 0   | 0 |  Val-da-Surplattas-Diorit |  Mississippien     | Mississippien   | Frühvariszisches Grundgebirge  |
+|15202489 |Microgranite de Rinderbiel | Granit: mikrokristallin-porphyrisch  | 0   | 0 |  Rinderbiel-Mikrogranit |  Cisuralien     | Pennsylvanien   | Spät- bis postvariszisches Grundgebirge  |
+|15202490 |Dachquarzit (Leventina) | Quarzit  | 0   | 0 |  0 |  Trias     | Trias   | Detritische Trias  |
+|15202491 |Formation de Kapfen | Konglomerat  | Sandstein   | 0 |  Kapfen-Formation |  Lopingien     | Guadalupien   | Spät- bis postvariszisches Grundgebirge  |
+|15202492 |Grès de Kapfen | Sandstein  | 0   | 0 |  Kapfen-Formation |  Lopingien     | Guadalupien   | Spät- bis postvariszisches Grundgebirge  |
+|15202493 |Sernifite du Kärpfgipfel | Konglomerat  | 0   | 0 |  Kärpfgipfel-Sernifit |  Lopingien     | Guadalupien   | Spät- bis postvariszisches Grundgebirge  |
+|15202494 |Formation du Fulen | Tonstein: sandig-schiefrig  | 0   | 0 |  Fulen-Formation |  Permien     | Permien   | Spät- bis postvariszisches Grundgebirge  |
+|15202495 |Membre de Glattmatt | Tonstein  | Sandstein   | Brekzie |  Glattmatt-Member |  Cisuralien     | Cisuralien   | Spät- bis postvariszisches Grundgebirge  |
+|15202496 |Kératophyre du Hahnenstock | Trachyt  | 0   | 0 |  Hahnenstock-Keratophyr |  Cisuralien     | Cisuralien   | Spät- bis postvariszisches Grundgebirge  |
+|15202497 |Horizons du Sonnenberg | Sandstein: Feldspat  | Kalkstein   | Tonstein: siltig-schiefrig |  Sonnenberg-Horizonte |  Cisuralien     | Cisuralien   | Spät- bis postvariszisches Grundgebirge  |
+|15202498 |Conglomérat du Chamseeli | Konglomerat  | 0   | 0 |  Chamseeli-Konglomerat |  Cisuralien     | Cisuralien   | Spät- bis postvariszisches Grundgebirge  |
+|15202499 |Grès du Rotberg | Sandstein  | 0   | 0 |  Rotberg-Sandstein |  Cisuralien     | Cisuralien   | Spät- bis postvariszisches Grundgebirge  |
+|15202500 |Membre de Seez | Konglomerat  | 0   | 0 |  Seez-Member |  Cisuralien     | Cisuralien   | Spät- bis postvariszisches Grundgebirge  |
+|15202501 |Membre de la Gufelialp | Brekzie: siltig  | Tonstein   | Siltstein |  Gufelialp-Member |  Cisuralien     | Cisuralien   | Spät- bis postvariszisches Grundgebirge  |
+|15202505 |Microgranite de la Windgällenlücke | Granit: mikrokristallin-porphyrisch  | 0   | 0 |  Windgällen-Formation |  Pennsylvanien tardif     | Pennsylvanien tardif   | Spät- bis postvariszisches Grundgebirge  |
+|15202506 |Rhyolithe de la Sandalp | Rhyolith  | 0   | 0 |  Sandalp-Rhyolith |  Assélien     | Pennsylvanien tardif   | Spät- bis postvariszisches Grundgebirge  |
+|15202507 |Tuffitisches Member (Tscharren) | Tuffit  | 0   | 0 |  Tscharren-Formation |  Pennsylvanien tardif     | Pennsylvanien tardif   | Spät- bis postvariszisches Grundgebirge  |
+|15202508 |Ignimbritisches Member (Tscharren) | Ignimbrit  | 0   | 0 |  Tscharren-Formation |  Pennsylvanien tardif     | Pennsylvanien tardif   | Spät- bis postvariszisches Grundgebirge  |
+|15202509 |Grès du Guschakopf | Sandstein: Quarz  | 0   | 0 |  Guschakopf-Sandstein |  Paléogène     | Paléogène   | «Nummulitikum»  |
+|15202510 |Horizon du Gonzen | Kalkstein: Eisenooide  | 0   | 0 |  Gonzen-Eisenerzhorizont |  Kimméridgien     | Oxfordien   | Malm  |
+|15202511 |Schabell-Melange | Tonstein  | Mergelstein   | Sandstein |  Schabell-Melange |  Rupélien     | Priabonien   | Mélange  |
+|15202512 |Taveyannaz-Fm.: Dachschiefer-Fazies | Tonstein: schiefrig  | Sandstein: tonig   | 0 |  Taveyannaz-Formation |  Rupélien     | Priabonien   | Flysch  |
+|15202513 |Helvetischer Kieselkalk: Oberer Teil | Kalkstein: kieselig: Bioklasten  | Kalkstein: spätig: Bioklasten   | Mergelstein |  15253100 |  Hauterivien     | Hauterivien   | Post-Rift Mesozoikum in Plattform-Fazies  |
+|15202514 |Helvetischer Kieselkalk: Unterer Teil | Kalkstein: kieselig: Bioklasten  | Kalkstein: spätig: Bioklasten   | Mergelstein |  15253100 |  Hauterivien     | Valanginien   | Post-Rift Mesozoikum in Plattform-Fazies  |
+|15202515 |Helvetischer Kieselkalk: Basisschiefer | Mergelstein: kieselig  | 0   | 0 |  15253100 |  Hauterivien     | Valanginien   | Post-Rift Mesozoikum in Plattform-Fazies  |
+|15202516 |Torrenthorn-Fm.: Torrentalp-Mb.: Schiefer-Fazies | Tonstein  | Kalkstein: mergelig   | 0 |  Torrentalp-Member |  Aalénien     | Toarcien   | Lias-Dogger in neritischer Fazies  |
+|15202517 |Torrenthorn-Fm.: Torrentalp-Mb.: Spatkalk-Fazies | Kalkstein: spätig  | 0   | 0 |  Torrentalp-Member |  Toarcien     | Toarcien   | Lias-Dogger in neritischer Fazies  |
+|15202518 |Torrenthorn-Fm.: Torrentalp-Mb.: Sandstein-Fazies | Sandstein: kalkig-kieselig  | 0   | 0 |  Torrentalp-Member |  Pliensbachien     | Pliensbachien   | Lias-Dogger in neritischer Fazies  |
+|15202519 |Torrenthorn-Fm.: Galm-Mb.: Spatkalk-Fazies | Kalkstein: sandig-spätig  | 0   | 0 |  Galm-Member |  Sinémurien     | Sinémurien   | Lias-Dogger in neritischer Fazies  |
+|15202520 |Torrenthorn-Fm.: Galm-Mb.: Sandstein-Fazies | Sandstein: kalkig-kieselig  | 0   | 0 |  Galm-Member |  Pliensbachien     | Sinémurien   | Lias-Dogger in neritischer Fazies  |
+|15202521 |Meilleret-Fm.: Iserin-Konglomerat | Konglomerat: polymikt  | 0   | 0 |  Iserin-Konglomerat |  Priabonien     | Lutétien   | Flysch  |
+|15202522 |Meilleret-Fm.: Biodetritischer Kalkstein | Kalkstein: arenitisch: Bioklasten  | 0   | 0 |  Meilleret-Formation |  Priabonien     | Lutétien   | Flysch  |
+|15202523 |Meilleret-Fm.: Arkose | Sandstein: Feldspat  | Sandstein: Quarz   | 0 |  Meilleret-Formation |  Priabonien     | Lutétien   | Flysch  |
+|15202524 |Meilleret-Fm.: Basales Konglomerat | Konglomerat  | 0   | 0 |  Meilleret-Formation |  Priabonien     | Lutétien   | Flysch  |
+|15202525 |Bommerstein-Fm.: Glockhaus-Mb.: Grenzquarzit | Sandstein: Quarz  | Kalkstein: sandig-spätig   | 0 |  «Grenzquarzit» (Bommerstein-Fm.) |  Bajocien     | Aalénien   | Lias-Dogger in neritischer Fazies  |
+|15202526 |Telltistock-Granit | Granit: Biotit  | Granit: mylonitisch   | 0 |  Telltistock-Granit |  Pennsylvanien tardif     | Pennsylvanien tardif   | Spät- bis postvariszisches Grundgebirge  |
+|15202527 |Formation de l&#39;Öhrli, à infiltrations de Sidérolithique | Kalkstein  | Gestein: residual: Eisenmineralien   | 0 |  Öhrli-Formation |  Eocène     | Berriasien   | Post-Rift Mesozoikum in Plattform-Fazies  |
+|15202528 |faciès de Beesten | Granit: porphyrisch  | 0   | 0 |  Beesten-Granit |  Cisuralien     | Cisuralien   | Spät- bis postvariszisches Grundgebirge  |
+|15202529 |Diorite de Garwiidi | Diorit: Quarz-Hornblende  | 0   | 0 |  Garwiidi-Diorit |  Cisuralien     | Cisuralien   | Spät- bis postvariszisches Grundgebirge  |
+|15202530 |Granite de l&#39;Alp Crap Ner | Granit  | 0   | 0 |  Alp-Crap-Ner-Granit |  Mississippien moyen     | Mississippien moyen   | Frühvariszisches Grundgebirge  |
+|15202531 |Migmatite d&#39;Innertkirchen, à altération permienne | Gestein: residual  | Migmatit   | Gneis |  Innertkirchen-Migmatit |  Permien     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15202532 |Complexe gneissique d&#39;Erstfeld, à altération permienne | Gestein: residual  | Gneis   | 0 |  Erstfeld-Gneiskomplex |  Permien     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15202533 |Flysch du Suren | Sandstein: tonig  | Tonstein: schiefrig   | 0 |  Suren-Flysch |  Eocène moyen     | Yprésien   | Flysch  |
+|15202534 |Obere Sandsteine (Spirstock) | Sandstein: kalkig: Quarz  | Konglomerat: polymikt   | 0 |  Spirstock-Member |  Priabonien     | Priabonien   | Syn-Kollision  |
+|15202535 |Blockmergel (Spirstock) | Mergelstein: konglomeratisch  | 0   | 0 |  Spirstock-Member |  Priabonien     | Priabonien   | Syn-Kollision  |
+|15202536 |Untere Sandsteine (Spirstock) | Sandstein: Feldspat  | Mergelstein: schiefrig   | 0 |  Spirstock-Member |  Priabonien     | Priabonien   | Syn-Kollision  |
+|15202537 |Couches de Ringgenberg | Kalkstein: mikritisch  | Mergelstein: schiefrig   | 0 |  Ringgenberg-Schichten |  Valanginien     | Valanginien   | Post-Rift Mesozoikum in Plattform-Fazies  |
+|15202538 |Brèche du Malm | Brekzie: kalkig  | Brekzie: dolomitisch   | 0 |  Quinten-Formation |  Tithonien     | Kimméridgien   | Malm  |
+|15202539 |Calcaire marneux du Schattwald | Kalkstein: mergelig  | Kalkstein: mikritisch   | 0 |  Schattwald-Mergelkalk |  Crétacé précoce     | Tithonien   | Post-Rift Mesozoikum in pelagischer Fazies  |
+|15202540 |Formations d&#39;Elm et de Matt, indifférenciées | Sandstein: Quarz  | Sandstein: tonig   | Tonstein |  0 |  Rupélien     | Priabonien   | Flysch  |
+|15205095 |Fornale-Gabbro | Gabbro: Hornblende  | 0   | 0 |  Fornale-Gabbro |  Permien     | Permien   | Variszisches Grundgebirge  |
+|15205096 |Matterhorn-Gabbro | Gabbro  | 0   | 0 |  Matterhorn-Gabbro |  Permien     | Permien   | Ophiolithische Abfolge  |
+|15205097 |Berrio-Gabbro | Gabbro  | 0   | 0 |  Berrio-Gabbro |  Permien     | Permien   | Variszisches Grundgebirge  |
+|15205098 |Grand-Dolin-Brekzie | Brekzie: polymikt  | 0   | 0 |  Grand-Dolin-Brekzie |  Jurassique tardif     | Jurassique moyen   | Lias-Dogger in neritischer Fazies  |
+|15205099 |Partie supérieure du Calcaire de Meride | Kalkstein: Bitumen  | Mergelstein   | Kalkstein: mergelig |  Meride-Formation |  Ladinien     | Ladinien   | Karbonatische Trias  |
+|15205100 |Partie inférieure du Calcaire de Meride | Kalkstein  | Mergelstein: schiefrig: Bitumen   | 0 |  Meride-Formation |  Ladinien     | Ladinien   | Karbonatische Trias  |
+|15205101 |Dolomit-Band (Fm. de Meride) | Dolomitstein  | 0   | 0 |  «Dolomitband» (Meride-Fm.) |  Ladinien     | Ladinien   | Karbonatische Trias  |
+|15205102 |Calcaire du Groupe du Dolin | Kalkstein: spätig: Bioklasten  | 0   | 0 |  0 |  Jurassique précoce     | Jurassique précoce   | Lias-Dogger in neritischer Fazies  |
+|15205103 |Dolomie du Groupe du Dolin | Dolomitstein  | Kalkstein   | 0 |  0 |  Norien     | Norien   | Karbonatische Trias  |
+|15205104 |Cornieule du Groupe du Dolin | Rauwacke  | 0   | 0 |  0 |  Trias     | Trias   | Karbonatische Trias  |
+|15205105 |Quartzite du Groupe du Dolin | Sandstein: Quarz  | Konglomerat: Quarz   | 0 |  0 |  Trias     | Trias   | Detritische Trias  |
+|15205106 |Orthogneiss du Groupe d&#39;Arolla, leucocrate | Gneis: granitisch  | 0   | 0 |  Arolla-Orthogneis |  Permien     | Permien   | Variszisches Grundgebirge  |
+|15205107 |Orthogneiss du Groupe d&#39;Arolla, oeillé | Gneis: granitisch-augig  | Gneis   | 0 |  Arolla-Orthogneis |  Permien     | Permien   | Variszisches Grundgebirge  |
+|15205108 |Orthogneiss du Groupe d&#39;Arolla, mylonitique | Gneis: mylonitisch  | 0   | 0 |  Arolla-Orthogneis |  Permien     | Permien   | Variszisches Grundgebirge  |
+|15205109 |Gneiss du Groupe d&#39;Arolla, mylonitique | Gneis: mylonitisch  | 0   | 0 |  «Série Rubanée» |  Paléozoïque     | Protérozoïque   | Variszisches Grundgebirge  |
+|15205110 |Gneiss du Groupe d&#39;Arolla, micro-oeillé | Gneis: augig  | 0   | 0 |  «Série Rubanée» |  Paléozoïque     | Protérozoïque   | Variszisches Grundgebirge  |
+|15205111 |Métagranitoïde du Groupe d&#39;Arolla | Gneis: granitisch-augig  | 0   | 0 |  Arolla-Orthogneis |  Permien     | Permien   | Variszisches Grundgebirge  |
+|15205112 |Métaroche basique du Groupe d&#39;Arolla | Diorit  | Gabbro: Hornblende   | 0 |  0 |  Paléozoïque     | Protérozoïque   | Variszisches Grundgebirge  |
+|15205113 |Métaroche basique du Groupe d&#39;Arolla, mylonitique | 15111448  | Schiefer: Zoisit-Fuchsit   | 0 |  0 |  Paléozoïque     | Protérozoïque   | Variszisches Grundgebirge  |
+|15205114 |Prasinite du Groupe d&#39;Arolla | Prasinit  | 0   | 0 |  0 |  Mésozoïque     | Protérozoïque   | Grundgebirge  |
+|15205115 |Gabbro à horneblende du Groupe d&#39;Arolla | Gabbro: Hornblende  | Diorit   | 0 |  0 |  Permien     | Permien   | Grundgebirge  |
+|15205116 |Roche ultramafique du Groupe d&#39;Arolla | Gestein: ultramafisch  | Serpentinit   | 0 |  0 |  Paléozoïque     | Protérozoïque   | Grundgebirge  |
+|15205117 |Paragneiss du Groupe d&#39;Arolla | Gneis: sedimentär  | Gneis: Amphibol   | 0 |  0 |  Paléozoïque     | Protérozoïque   | Grundgebirge  |
+|15205118 |Micaschiste du Groupe d&#39;Arolla | Schiefer: Glimmer-Granat  | 0   | 0 |  0 |  Paléozoïque     | Protérozoïque   | Grundgebirge  |
+|15205119 |Mylonite du Groupe de Valpelline | Mylonit  | Schiefer: Chlorit-Epidot   | Gneis: Albit |  0 |  Paléozoïque     | Protérozoïque   | Grundgebirge  |
+|15205120 |Amphibolite du Groupe de Valpelline | Amphibolit  | 0   | 0 |  0 |  Paléozoïque     | Protérozoïque   | Grundgebirge  |
+|15205121 |Marbre du Groupe de Valpelline | Marmor: kalkig  | Marmor: Kalksilikat   | 0 |  0 |  Paléozoïque     | Protérozoïque   | Grundgebirge  |
+|15205122 |Migmatite du Groupe de Valpelline | Gneis: migmatitisch  | 0   | 0 |  0 |  Paléozoïque     | Protérozoïque   | Grundgebirge  |
+|15205123 |Marbre de Roisan | Marmor: kalkig  | Marmor: dolomitisch   | Schiefer: kalkig: Glimmer |  0 |  Trias moyen     | Permien   | Sedimentbedeckung  |
+|15205124 |Granite de Musella | Granit: porphyrisch: Hornblende  | 0   | 0 |  Musella-Granit |  Carbonifère     | Carbonifère   | Grundgebirge  |
+|15205125 |Granodiorite de la Sella | 15111412  | 0   | 0 |  Sella-Granodiorit |  Carbonifère     | Carbonifère   | Grundgebirge  |
+|15205126 |Formation de Marinelli | 15111580  | Schiefer: tonig: Graphit   | Amphibolit |  Marinelli-Formation |  Paléozoïque     | Protérozoïque   | Grundgebirge  |
+|15205127 |socle cristallin de la nappe de la Margna-Sella | Gneis  | Amphibolit   | 0 |  0 |  Paléozoïque     | Protérozoïque   | Grundgebirge  |
+|15205128 |roches intrusives de la nappe de la Margna-Sella | Granit  | Granodiorit   | 0 |  0 |  Permien     | Carbonifère   | Variszisches Grundgebirge  |
+|15205129 |socle polycyclique anté-varisque de la nappe de la Margna-Sella | Gneis  | Schiefer   | Amphibolit |  0 |  Paléozoïque     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15205130 |Métaarkose, orthogneiss anté-varisque | Gneis  | 0   | 0 |  0 |  Paléozoïque     | Protérozoïque   | Grundgebirge  |
+|15205131 |orthogneiss de la nappe de Sesia | Gneis: magmatisch  | 0   | 0 |  0 |  Permien     | Carbonifère   | Grundgebirge  |
+|15205132 |micaschiste de la nappe de Sesia | Schiefer: Glimmer  | Eklogit   | Marmor |  0 |  Paléozoïque     | Protérozoïque   | Grundgebirge  |
+|15205133 |Péridotite de Finero | Peridotit  | 0   | 0 |  Finero-Peridotit |  Permien     | Permien   | Variszisches Grundgebirge  |
+|15205134 |Complexe Mafique d&#39;Ivrée | Gabbro  | Diorit   | 0 |  0 |  Permien     | Permien   | Variszisches Grundgebirge  |
+|15205135 |Zona Dioritico-Kinzigitica | Gneis: granulitisch  | Gestein: basisch   | Marmor |  0 |  Paléozoïque     | Protérozoïque   | Grundgebirge  |
+|15205136 |orthogneiss anté-varisques du Sudalpin | Gneis: magmatisch  | 0   | 0 |  0 |  Paléozoïque     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15205137 |Formation de Pontida | Sandstein  | Tonstein   | 0 |  Pontida-Formation |  Coniacien     | Turonien   | Flysch  |
+|15205138 |Arolla-Einheit: Metagranit | Granit  | 0   | 0 |  0 |  Permien     | Permien   | Variszisches Grundgebirge  |
+|15205139 |Arolla-Einheit: Leukokrater Granitgneis | Gneis: granitisch  | 0   | 0 |  0 |  Permien     | Permien   | Variszisches Grundgebirge  |
+|15206001 |roches volcaniques cénozoïques péri-adriatiques | Gestein: vulkanisch  | 0   | 0 |  0 |  Paléogène     | Paléogène   | Periadriatisches Vulkanismus  |
+|15206002 |Intrusion de Novate | Granit  | 0   | 0 |  0 |  Miocène précoce     | Chattien   | Novate-Intrusion  |
+|15206003 |Intrusion du Bergell | Granodiorit  | Tonalit   | Granit |  0 |  Oligocène     | Oligocène   | Bregaglia-Intrusion  |
+|15206004 |Intrusion de l&#39;Adamello | Granodiorit  | Tonalit   | Granit |  0 |  Rupélien     | Priabonien   | Adamello-Intrusion  |
+|15206005 |Melirolo-Augengneis | Gneis: augig  | 0   | 0 |  Melirolo-Augengneis |  Rupélien     | Rupélien   | Bregaglia-Intrusion  |
+|15206006 |Bergell-Intrusiva: Granodioritische Fazies | Granodiorit  | 0   | 0 |  0 |  Rupélien     | Rupélien   | Bregaglia-Intrusion  |
+|15206007 |Bergell-Intrusiva: Tonalitische Fazies | Tonalit  | 0   | 0 |  0 |  Rupélien     | Rupélien   | Bregaglia-Intrusion  |
+|15206008 |Monte-Bassetta-Quarzdiorit | Diorit: Quarz  | 0   | 0 |  Monte-Bassetta-Quarzdiorit |  Rupélien     | Rupélien   | Bregaglia-Intrusion  |
+|15206009 |Sorico-Tonalit | Tonalit  | 0   | 0 |  Sorico-Tonalit |  Rupélien     | Rupélien   | Bregaglia-Intrusion  |
+|15206010 |Jorio-Tonalit | Tonalit  | 0   | 0 |  Jorio-Tonalit |  Rupélien     | Rupélien   | Bregaglia-Intrusion  |
+|15206011 |Val-Masino-Granodiorit | Granodiorit  | 0   | 0 |  Val-Masino-Granodiorit |  Rupélien     | Rupélien   | Bregaglia-Intrusion  |
+|15206012 |Alpe-Cameraccio-Granodiorit | Granodiorit  | 0   | 0 |  Alpe-Cameraccio-Granodiorit |  Rupélien     | Rupélien   | Bregaglia-Intrusion  |
+|15206013 |Monte-Rosso-Mikrogranit | Granit: mikrokristallin  | 0   | 0 |  Monte-Rosso-Mikrogranit |  Oligocène     | Oligocène   | Bregaglia-Intrusion  |
+|15206014 |Zocca-Aplit | Aplit  | 0   | 0 |  Zocca-Aplit |  Oligocène     | Oligocène   | Bregaglia-Intrusion  |
+|15206015 |San-Fedelino-Granit | Granit  | 0   | 0 |  San-Fedelino-Granit |  Chattien     | Chattien   | Novate-Intrusion  |
+|15206016 |Undifferenzierte Einheit | Gestein  | 0   | 0 |  0 |  Cénozoïque     | Protérozoïque   | 0  |
+|15206017 |Undifferenzierte lithologische Einheit: Tektonische Brekzie | Brekzie: tektonisch  | 0   | 0 |  0 |  Holocène     | Protérozoïque   | 0  |
+|15206018 |Lochsiten-Kalk | 15111475  | 0   | 0 |  Lochsiten-Kalk |  Tertiaire     | Mésozoïque   | Sedimentbedeckung  |
+|15206019 |Salleren-Brekzie | Brekzie: tektonisch  | 0   | 0 |  Salleren-Brekzie |  Tertiaire     | Mésozoïque   | Sedimentbedeckung  |
+|15206020 |Undifferenzierte lithologische Einheit | Gestein  | 0   | 0 |  0 |  Cénozoïque     | Protérozoïque   | 0  |
+|15202605 |Pfäfers-Fm. | Mergelstein  | Kalkstein: kieselig   | Sandstein: Glimmer |  Pfäfers-Formation |  Eocène     | Maastrichtien   | Flysch  |
+|15202606 |Euthal- und Bürgen-Fm. | Kalkstein  | Sandstein   | 0 |  0 |  Lutétien     | Sélandien   | «Nummulitikum»  |
+|15202607 |Amden- und Wang-Fm. | Mergelstein  | Kalkstein: sandig   | 0 |  0 |  Maastrichtien     | Santonien   | Post-Rift  |
+|15202608 |Seewen- und Amden-Fm. | Mergelstein  | Kalkstein: mikritisch   | 0 |  0 |  Campanien     | Cénomanien   | Post-Rift Mesozoikum in pelagischer Fazies  |
+|15202609 |Betlis- bis Schrattenkalk-Fm. | Kalkstein  | Mergelstein   | 0 |  0 |  Albien     | Valanginien   | Post-Rift  |
+|15202610 |Öhrli- bis Schrattenkalk-Fm. | Kalkstein  | Mergelstein   | 0 |  0 |  Crétacé précoce     | Crétacé précoce   | Post-Rift  |
+|15202611 |Bommerstein-Fm.: Basisbildungen | Brekzie  | Sandstein   | Kalkstein: spätig |  Bommerstein-Formation |  Aalénien     | Toarcien   | Lias-Dogger in neritischer Fazies  |
+|15202612 |Öhrli- und Betlis-Fm. | Kalkstein: Bioklasten  | Mergelstein   | 0 |  0 |  Valanginien     | Berriasien   | Post-Rift Mesozoikum in Plattform-Fazies  |
+|15202613 |Erzegg-Fm.: Grenzschicht | Kalkstein: mikritisch: Bioklasten  | Kalkstein: spätig: Glaukonit   | 0 |  «Grenzschicht» (Erzegg-Fm.) |  Callovien     | Bajocien   | Lias-Dogger in pelagischer Fazies  |
+|15202614 |Spitzmeilen-Fm.: Bränd-Brekzie | Brekzie: dolomitisch  | 0   | 0 |  Bränd-Brekzie |  Jurassique précoce     | Jurassique précoce   | Lias-Dogger in neritischer Fazies  |
+|15202615 |Infralias-Sandstein | Sandstein: Quarz  | Mergelstein: sandig: Bioklasten   | Tonstein: schiefrig |  «Infralias-Sandstein» |  Hettangien     | Rhétien   | «Rhät»  |
+|15202616 |Nufenen-Zone: Phyllitische Trias | Phyllit  | Schiefer   | 0 |  0 |  Trias     | Trias   | Pelitische Trias  |
+|15202617 |Nufenen-Zone: Karbonatische Trias | Marmor: kalkig  | Rauwacke   | Dolomitstein |  0 |  Trias     | Trias   | Karbonatische Trias  |
+|15202618 |Nufenen-Zone: Karbonatische Trias: Kalkmarmor | Marmor: kalkig  | 0   | 0 |  0 |  Trias     | Trias   | Karbonatische Trias  |
+|15202619 |Nufenen-Zone: Karbonatische Trias: Dolomit | Dolomitstein  | 0   | 0 |  0 |  Trias     | Trias   | Karbonatische Trias  |
+|15202620 |Nufenen-Zone: Karbonatische Trias: Rauwacke | Rauwacke  | 0   | 0 |  0 |  Trias     | Trias   | Karbonatische Trias  |
+|15202621 |Nufenen-Zone: Quarzitische Trias | Quarzit  | 0   | 0 |  0 |  Trias     | Trias   | Detritische Trias  |
+|15202622 |Urseren-Garvera-Zone: Malm | Schiefer: tonig  | 0   | 0 |  0 |  Jurassique tardif     | Jurassique tardif   | Malm  |
+|15202623 |Urseren-Garvera-Zone: Dogger | Schiefer: tonig  | 0   | 0 |  0 |  Jurassique moyen     | Jurassique moyen   | Lias-Dogger in neritischer Fazies  |
+|15202624 |Urseren-Garvera-Zone: Lias | Schiefer: tonig  | 0   | 0 |  0 |  Jurassique précoce     | Jurassique précoce   | Lias-Dogger in neritischer Fazies  |
+|15202625 |Urseren-Garvera-Zone: Oberer Lias | Schiefer: kalkig  | 0   | 0 |  0 |  Jurassique précoce     | Jurassique précoce   | Lias-Dogger in neritischer Fazies  |
+|15202626 |Urseren-Garvera-Zone: Mittlerer Lias | Schiefer: kalkig: Zoisit  | 0   | 0 |  0 |  Jurassique précoce     | Jurassique précoce   | Lias-Dogger in neritischer Fazies  |
+|15202627 |Urseren-Garvera-Zone: Unterer Lias | Sandstein: Quarz  | 0   | 0 |  0 |  Jurassique précoce     | Jurassique précoce   | Lias-Dogger in neritischer Fazies  |
+|15202628 |Urseren-Garvera-Zone: Phyllitische Trias | Phyllit  | Schiefer   | 0 |  0 |  Trias     | Trias   | Pelitische Trias  |
+|15202629 |Urseren-Garvera-Zone: Karbonatische Trias | Marmor: kalkig  | Rauwacke   | Dolomitstein |  0 |  Trias     | Trias   | Karbonatische Trias  |
+|15202630 |Urseren-Garvera-Zone: Permo-Karbon: Psephit- und Psammitgneis | Gneis: psammitisch  | Gneis: psephitisch   | 0 |  0 |  Permien     | Carbonifère   | Spät- bis postvariszisches Grundgebirge  |
+|15202631 |Urseren-Garvera-Zone: Permo-Karbon: Metarhyolith | Rhyolith  | 0   | 0 |  0 |  Permien     | Carbonifère   | Spät- bis postvariszisches Grundgebirge  |
+|15202632 |Urseren-Garvera-Zone: Permo-Karbon: Chloritschiefer | Schiefer: Chlorit  | 0   | 0 |  0 |  Permien     | Carbonifère   | Spät- bis postvariszisches Grundgebirge  |
+|15202633 |Urseren-Garvera-Zone: Permo-Karbon: Graphitschiefer | Schiefer: Graphit  | 0   | 0 |  0 |  Permien     | Carbonifère   | Spät- bis postvariszisches Grundgebirge  |
+|15202634 |Gotthard-Decke: Prävariszischer Orthogneis | Gneis: magmatisch  | 0   | 0 |  0 |  Paléozoïque     | Präkambrium   | Prävariszisches Grundgebirge  |
+|15202635 |Gotthard-Decke: Prävariszischer Augengneis | Gneis: augig  | 0   | 0 |  0 |  Paléozoïque     | Präkambrium   | Prävariszisches Grundgebirge  |
+|15202636 |Gotthard-Decke: Prävariszischer Paragneis | Gneis: sedimentär  | 0   | 0 |  0 |  Paléozoïque     | Präkambrium   | Prävariszisches Grundgebirge  |
+|15202637 |Camosci-Decke: Paragneis | Gneis: sedimentär  | 0   | 0 |  0 |  Jurassique moyen     | Jurassique moyen   | Sedimentbedeckung  |
+|15202638 |Camosci-Decke: Lias-Dogger | Schiefer: Glimmer  | Schiefer: kalkig   | 0 |  0 |  Aalénien     | Toarcien   | Syn-Rift  |
+|15202639 |Camosci-Decke: Lias-Dogger: Kalkglimmerschiefer | Schiefer: kalkig: Glimmer  | 0   | 0 |  0 |  Aalénien     | Toarcien   | Syn-Rift  |
+|15202640 |Camosci-Decke: Lias-Dogger: Granatglimmerschiefer | Schiefer: Glimmer-Granat  | 0   | 0 |  0 |  Aalénien     | Toarcien   | Syn-Rift  |
+|15202641 |Camosci-Decke: Lias | Marmor  | Quarzit   | 0 |  0 |  Jurassique précoce     | Jurassique précoce   | Lias-Dogger in neritischer Fazies  |
+|15202642 |Camosci-Decke: Trias | Marmor: dolomitisch  | Rauwacke   | Schiefer: Glimmer |  0 |  Trias     | Trias   | Prä-Rift  |
+|15202643 |Camosci-Decke: Sandige Trias | Sandstein  | 0   | 0 |  0 |  Trias     | Trias   | Detritische Trias  |
+|15202644 |Camosci-Decke: Karbonatische Trias | Dolomitstein  | Rauwacke   | 0 |  0 |  Trias     | Trias   | Karbonatische Trias  |
+|15202645 |Urseren-Garvera-Zone | Marmor  | Schiefer   | Rauwacke |  0 |  Mésozoïque     | Mésozoïque   | Sedimentbedeckung  |
+|15202646 |Urseren-Garvera-Zone: Trias | Rauwacke  | Phyllit   | Marmor |  0 |  Trias     | Trias   | Prä-Rift  |
+|15202647 |Nufenen-Zone: Trias | Rauwacke  | Phyllit   | Quarzit |  0 |  Trias     | Trias   | Prä-Rift  |
+|15202648 |Nufenen-Zone: Lias | Schiefer: tonig  | Quarzit   | Schiefer: kalkig |  0 |  Jurassique précoce     | Rhétien   | Lias-Dogger in neritischer Fazies  |
+|15203001 |Flysch du Niesen | Konglomerat  | Sandstein   | Tonstein: schiefrig |  0 |  Lutétien     | Maastrichtien   | Flysch  |
+|15203002 |Formation du Chesselbach | Sandstein  | Tonstein: schiefrig   | 0 |  Chesselbach-Formation |  Lutétien     | Paléocène   | Flysch  |
+|15203003 |Formation de Seron | Konglomerat: polymikt  | Kalkstein: sandig: Bioklasten   | 0 |  Seron-Formation |  Maastrichtien     | Maastrichtien   | Flysch  |
+|15203004 |Formation du Niesenkulm | Konglomerat  | Brekzie: kalkig   | Kalkstein: mikritisch |  Niesenkulm-Formation |  Maastrichtien     | Maastrichtien   | Flysch  |
+|15203005 |Formation de Frutigen | Konglomerat  | Sandstein: tonig-kalkig   | Tonstein: schiefrig |  Frutigen-Formation |  Maastrichtien     | Maastrichtien   | Flysch  |
+|15203006 |Formation de la Grande Eau | Tonstein  | Sandstein: kalkig   | Konglomerat: polymikt |  Grande-Eau-Formation |  Bathonien     | Aalénien   | Syn-Rift  |
+|15203007 |Membre de Langy | Sandstein: kalkig  | Tonstein   | Konglomerat |  Langy-Member |  Bathonien     | Bathonien   | Syn-Rift  |
+|15203008 |Membre de la Forclaz | Sandstein: kalkig  | Mergelstein: Bioklasten   | 0 |  Forclaz-Member |  Bathonien     | Bathonien   | Syn-Rift  |
+|15203009 |Membre des Grès de Passage | Sandstein  | 0   | 0 |  «Grès de Passage» |  Bathonien     | Bathonien   | Syn-Rift  |
+|15203010 |Membre de la Leyderry | Konglomerat: polymikt  | 0   | 0 |  Leyderry-Member |  Bathonien     | Bathonien   | Syn-Rift  |
+|15203011 |Membre de la Raverette | Konglomerat: kalkig  | Mergelstein: Glimmer   | Sandstein: kalkig |  Raverette-Member |  Bajocien     | Bajocien   | Syn-Rift  |
+|15203012 |Membre des Schistes à Miches | Tonstein: siltig: Glimmer  | 0   | 0 |  «Schistes à Miches» |  Aalénien     | Aalénien   | Syn-Rift  |
+|15203013 |Calcaire de Murgaz | Kalkstein: kieselig-spätig  | Tonstein: schiefrig   | 0 |  Murgaz-Kalk |  Sinémurien     | Sinémurien   | Syn-Rift  |
+|15203014 |Trias de la nappe du Niesen | Sandstein  | Kalkstein: dolomitisch   | Rauwacke |  0 |  Trias     | Trias   | Prä-Rift  |
+|15203015 |Formation de Chlussli | Schiefer: Chlorit  | Gneis   | 0 |  Chlussli-Formation |  Paléozoïque     | Paléozoïque   | Grundgebirge  |
+|15203016 |Mélange des Coulaytes | Tonstein  | 0   | 0 |  Coulaytes-Melange |  Priabonien     | Eocène moyen   | Mélange  |
+|15203017 |Formation de Cuvigne Derrey | Sandstein  | Mergelstein   | 0 |  Cuvigne-Derrey-Formation |  Lutétien     | Lutétien   | Flysch  |
+|15203018 |Groupe des Couches Rouges | Kalkstein: mergelig  | Kalkstein: mikritisch   | Mergelstein |  0 |  Maastrichtien     | Cénomanien   | Couches Rouges  |
+|15203019 |Formation des Chenaux Rouges | Kalkstein: mergelig  | Mergelstein   | 0 |  Chenaux-Rouges-Formation |  Yprésien     | Sélandien   | Couches Rouges  |
+|15203020 |Calcarénite de la Hochmatt | Kalkstein: arenitisch  | 0   | 0 |  Hochmatt-Kalkarenit |  Yprésien     | Sélandien   | Couches Rouges  |
+|15206021 |Undifferenzierte lithologische Einheit: Gips | Evaporit: Gips  | 0   | 0 |  0 |  Trias     | Trias   | Sedimentbedeckung  |
+|15206022 |Undifferenzierte lithologische Einheit: Rauwacke | Rauwacke  | 0   | 0 |  0 |  Trias     | Trias   | Sedimentbedeckung  |
+|15206023 |Undifferenzierte lithologische Einheit: Dolomitmarmor | Dolomitstein  | 0   | 0 |  0 |  Trias     | Trias   | Sedimentbedeckung  |
+|15206024 |Undifferenzierte lithologische Einheit: Ganggestein | Gestein: gangartig  | 0   | 0 |  0 |  Cénozoïque     | Protérozoïque   | 0  |
+|15206025 |Lias, indifférencié | Kalkstein  | Gestein: pelitisch   | 0 |  0 |  Jurassique précoce     | Jurassique précoce   | Sedimentbedeckung  |
+|15206026 |Dogger, indifférencié | Mergelstein  | Kalkstein   | Sandstein |  0 |  Jurassique moyen     | Jurassique moyen   | Sedimentbedeckung  |
+|15206027 |Malm, indifférencié | Kalkstein  | Mergelstein   | 0 |  0 |  Jurassique tardif     | Jurassique tardif   | Sedimentbedeckung  |
+|15206028 |Crétacé, indifférencié | Kalkstein  | Mergelstein   | Sandstein |  0 |  Crétacé     | Crétacé   | Sedimentbedeckung  |
+|15206029 |Trias, indifférencié | Dolomitstein  | Evaporit   | Gestein: klastisch |  0 |  Trias     | Trias   | Prä-Rift  |
+|15206030 |roche sédimentaire, indifférenciée | Gestein: sedimentär  | 0   | 0 |  0 |  Cénozoïque     | Protérozoïque   | 0  |
+|15206031 |roche cristalline, indifférenciée | Gestein: kristallin  | 0   | 0 |  0 |  Paléozoïque     | Protérozoïque   | Grundgebirge  |
+|15206032 |granite, indifférencié | Granit  | 0   | 0 |  0 |  Paléozoïque     | Paléozoïque   | Grundgebirge  |
+|15206033 |unité stratigraphique indifférenciée | Gestein  | 0   | 0 |  0 |  Cénozoïque     | Paléozoïque   | 0  |
+|15206034 |Mésozoïque, indifférencié | Gestein  | 0   | 0 |  0 |  Mésozoïque     | Mésozoïque   | Sedimentbedeckung  |
+|15206035 |rhyolite, indifférenciée | Rhyolith  | 0   | 0 |  0 |  Paléozoïque     | Paléozoïque   | Grundgebirge  |
+|15206036 |roche verte, indifférenciée | Amphibolit  | Prasinit   | 0 |  0 |  Paléozoïque     | Paléozoïque   | Grundgebirge  |
+|15206037 |amphibolite, indifférenciée | Amphibolit  | 0   | 0 |  0 |  Paléozoïque     | Paléozoïque   | Grundgebirge  |
+|15206038 |filon de quartz | Gestein: gangartig: Quarz  | 0   | 0 |  0 |  Cénozoïque     | Protérozoïque   | 0  |
+|15206039 |aplite | Aplit  | 0   | 0 |  0 |  Paléozoïque     | Paléozoïque   | Grundgebirge  |
+|15206040 |pegmatite | Pegmatit  | 0   | 0 |  0 |  Paléozoïque     | Paléozoïque   | Grundgebirge  |
+|15206041 |prasinite, indifférenciée | Prasinit  | 0   | 0 |  0 |  Cénozoïque     | Protérozoïque   | 0  |
+|15206042 |serpentinite, indifférenciée | Serpentinit  | 0   | 0 |  0 |  Cénozoïque     | Protérozoïque   | 0  |
+|15206043 |filon minéralisé | Gestein: gangartig  | 0   | 0 |  0 |  Cénozoïque     | Protérozoïque   | 0  |
+|15206044 |microgranite | Granit: mikrokristallin  | 0   | 0 |  0 |  Cénozoïque     | Protérozoïque   | Grundgebirge  |
+|15206045 |Rhétien, indifférencié | Kalkstein  | Gestein: pelitisch   | Dolomitstein |  0 |  Hettangien     | Rhétien   | «Rhät»  |
+|15206046 |calcaire biogène (Éocène) | Kalkstein: Bioklasten  | 0   | 0 |  0 |  Priabonien     | Lutétien   | «Nummulitikum»  |
+|15206047 |rodingite | Rodingit  | 0   | 0 |  0 |  Cénozoïque     | Protérozoïque   | Ophiolithische Abfolge  |
+|15206048 |filon acide | Gestein: saur-gangartig  | 0   | 0 |  0 |  Paléozoïque     | Paléozoïque   | Grundgebirge  |
+|15206049 |filon basique | Gestein: basisch-gangartig  | 0   | 0 |  0 |  Paléozoïque     | Paléozoïque   | Grundgebirge  |
+|15206050 |éclogite, indifférenciée | Eklogit  | 0   | 0 |  0 |  Paléozoïque     | Protérozoïque   | Grundgebirge  |
+|15206051 |mylonite, indifférenciée | Mylonit  | 0   | 0 |  0 |  Cénozoïque     | Protérozoïque   | 0  |
+|15206052 |roche calcsilicatée | Granofels: Kalksilikat  | 0   | 0 |  0 |  Paléozoïque     | Protérozoïque   | Grundgebirge  |
+|15206053 |marbre, indifférencié | Marmor  | 0   | 0 |  0 |  Paléozoïque     | Protérozoïque   | Grundgebirge  |
+|15206054 |brèche sédimentaire, indifférenciée | Brekzie: sedimentär  | 0   | 0 |  0 |  Mésozoïque     | Mésozoïque   | Sedimentbedeckung  |
+|15206055 |Paléozoïque, indifférencié | Gestein: sedimentär  | Gestein: magmatisch   | Gestein: metamorph |  0 |  Paléozoïque     | Paléozoïque   | Grundgebirge  |
+|15206056 |Cénozoïque, indifférencié | Gestein  | 0   | 0 |  0 |  Cénozoïque     | Cénozoïque   | Sedimentbedeckung  |
+|15206057 |roche ultramafique | Gestein: ultramafisch  | 0   | 0 |  0 |  Cénozoïque     | Protérozoïque   | 0  |
+|15206058 |roche altérée, indifférenciée | Gestein: residual  | 0   | 0 |  0 |  Holocène     | Paléozoïque   | 0  |
+|15206059 |ophicalcite, indifférenciée | Serpentinit: brekziös: Karbonat  | 0   | 0 |  0 |  Mésozoïque     | Mésozoïque   | Ophiolithische Abfolge  |
+|15206060 |talcschiste, indifférencié | Schiefer: Talk  | 0   | 0 |  0 |  Phanérozoïque     | Phanérozoïque   | Sedimentbedeckung  |
+|15206061 |microdiorite, indifférenciée | Diorit: mikrokristallin  | 0   | 0 |  0 |  Phanérozoïque     | Phanérozoïque   | 0  |
+|15206062 |quartzite, indifférenciée | Quarzit  | 0   | 0 |  0 |  Phanérozoïque     | Phanérozoïque   | 0  |
+|15206063 |schiste à zoïsite et fuchsite, indifférencié | Schiefer: Zoisit-Fuchsit  | 0   | 0 |  0 |  Phanérozoïque     | Phanérozoïque   | 0  |
+|15206064 |conglomérat, indifférencié | Konglomerat  | 0   | 0 |  0 |  Phanérozoïque     | Phanérozoïque   | Sedimentbedeckung  |
+|15206065 |schiste à glaucophane, indifférencié | Schiefer: Glaukophan  | 0   | 0 |  0 |  Phanérozoïque     | Phanérozoïque   | 0  |
+|15206066 |Bündnerschiefer, indifférencié | Schiefer: kalkig  | Schiefer: Glimmer   | 0 |  0 |  Mésozoïque     | Mésozoïque   | Sedimentbedeckung  |
+|15206067 |gneiss oeillé, indifférencié | Gneis: augig  | 0   | 0 |  0 |  Paléozoïque     | Protérozoïque   | Grundgebirge  |
+|15206068 |micaschistes à grenat, indifférencié | Schiefer: Glimmer-Granat  | 0   | 0 |  0 |  Phanérozoïque     | Phanérozoïque   | 0  |
+|15206069 |schiste à muscovite et albite, indifférencié | Schiefer: Muskovit-Albit  | 0   | 0 |  0 |  Phanérozoïque     | Phanérozoïque   | 0  |
+|15206070 |gneiss, indifférencié | Gneis  | 0   | 0 |  0 |  Phanérozoïque     | Phanérozoïque   | Grundgebirge  |
+|15206071 |schiste graphiteux, indifférencié | Schiefer: Graphit  | 0   | 0 |  0 |  Phanérozoïque     | Phanérozoïque   | 0  |
+|15206072 |micaschistes, indifférencié | Schiefer: Glimmer  | 0   | 0 |  0 |  Mésozoïque     | Protérozoïque   | 0  |
+|15206073 |Garbenschiefer, indifférencié | Schiefer  | 0   | 0 |  0 |  Mésozoïque     | Protérozoïque   | 0  |
+|15206074 |diorite, indifférenciée | Diorit  | 0   | 0 |  0 |  Paléozoïque     | Protérozoïque   | Grundgebirge  |
+|15206075 |gabbro, indifférencié | Gabbro  | 0   | 0 |  0 |  Mésozoïque     | Protérozoïque   | 0  |
+|15206076 |orthogneiss, indifférencié | Gneis: magmatisch  | 0   | 0 |  0 |  Paléozoïque     | Protérozoïque   | Grundgebirge  |
+|15206077 |paragneiss, indifférencié | Gneis: sedimentär  | 0   | 0 |  0 |  Mésozoïque     | Protérozoïque   | 0  |
+|15206078 |roche volcanique, indifférenciée | Gestein: vulkanisch  | 0   | 0 |  0 |  Cénozoïque     | Protérozoïque   | 0  |
+|15206079 |basalte, indifférencié | Basalt  | 0   | 0 |  0 |  Cénozoïque     | Protérozoïque   | 0  |
+|15206080 |Carbonifère, indifférencié | Konglomerat  | Sandstein   | Gestein: pelitisch |  0 |  Carbonifère     | Carbonifère   | Spät- bis postvariszisches Grundgebirge  |
+|15206081 |schiste chloriteux, indifférencié | Schiefer: Chlorit  | 0   | 0 |  0 |  Mésozoïque     | Protérozoïque   | 0  |
+|15206082 |phyllite, indifférenciée | Phyllit  | 0   | 0 |  0 |  Mésozoïque     | Protérozoïque   | 0  |
+|15206083 |quartzphyllite, indifférenciée | Phyllit: Quarz  | 0   | 0 |  0 |  Mésozoïque     | Protérozoïque   | 0  |
+|15206084 |Bündnerschiefer calcaires | Schiefer: kalkig  | 0   | 0 |  0 |  Mésozoïque     | Mésozoïque   | Sedimentbedeckung  |
+|15206085 |Bündnerschiefer argileux | Schiefer: tonig  | 0   | 0 |  0 |  Mésozoïque     | Mésozoïque   | Sedimentbedeckung  |
+|15206086 |migmatite, indifférenciée | Migmatit  | 0   | 0 |  0 |  Paléozoïque     | Protérozoïque   | Grundgebirge  |
+|15206087 |tonalite, indifférenciée | Tonalit  | 0   | 0 |  0 |  Cénozoïque     | Paléozoïque   | 0  |
+|15206088 |syénite, indifférenciée | Syenit  | 0   | 0 |  0 |  Paléozoïque     | Paléozoïque   | 0  |
+|15202266 |Permo-Carbonifère de la zone d&#39;Urseren-Garvera | Sandstein  | Konglomerat   | Gestein: pelitisch |  0 |  Permien     | Carbonifère   | Spät- bis postvariszisches Grundgebirge  |
+|15202267 |Complexe gneissique de Goms | Gneis  | Migmatit   | Amphibolit |  Goms-Gneiskomplex |  Paléozoïque     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15202271 |Granite du (Monte) Prosa | Granit: Biotit-Granat  | 0   | 0 |  Prosa-Granit |  Cisuralien     | Cisuralien   | Postvariszisches Grundgebirge  |
+|15202272 |Granite du Val Tremola | Granit: aplitisch  | 0   | 0 |  Val-Tremola-Granit |  Cisuralien     | Cisuralien   | Postvariszisches Grundgebirge  |
+|15202273 |Gneiss de la Leventina | Gneis: Biotit-Muskovit  | Granit: porphyrisch   | 0 |  Leventina-Gneis |  Cisuralien     | Mississippien   | Grundgebirge  |
+|15202274 |Orthogneiss de la nappe du Lukmanier | Gneis: magmatisch  | 0   | 0 |  0 |  Cisuralien     | Carbonifère   | Grundgebirge  |
+|15202275 |Paragneiss de la nappe du Lukmanier | Gneis: sedimentär  | 0   | 0 |  0 |  Paléozoïque     | Paléozoïque   | Grundgebirge  |
+|15202276 |Marbre du Val Stgira | Kalkstein: Korallen  | 0   | 0 |  Val-Stgira-Riffmarmor |  Jurassique précoce     | Jurassique précoce   | Lias-Dogger in neritischer Fazies  |
+|15202277 |Fossilmarmor | Marmor: sandig: Bioklasten  | 0   | 0 |  0 |  Pliensbachien     | Sinémurien   | Lias-Dogger in neritischer Fazies  |
+|15202278 |Trias de Fanee | Dolomitstein  | Kalkstein   | Sandstein: Quarz |  0 |  Trias tardif     | Trias précoce   | Sedimentbedeckung  |
+|15202279 |Unités de flysch ultrahelvétiques | Sandstein  | Mergelstein   | Kalkstein |  0 |  Eocène     | Eocène   | Flysch  |
+|15202281 |Formation de Martinsmad | Mergelstein: kalkig  | Kalkstein: kieselig   | Sandstein: Quarz |  Martinsmad-Formation |  Yprésien     | Maastrichtien   | Flysch  |
+|15202282 |Obere Flyschabfolge (Sardona) | Kalkstein: sandig: Bioklasten  | Sandstein: kalkig   | Tonstein: schiefrig |  «Supraquarzitischer Flysch» (Martinsmad-Fm.) |  Bartonien     | Lutétien   | Flysch  |
+|15202283 |Quartzite du Sardona | Sandstein: Quarz  | 0   | 0 |  Sardona-Member |  Yprésien     | Thanétien   | Flysch  |
+|15202284 |Untere Flyschabfolge (Sardona) | Kalkstein: sandig: Glimmer  | Kalkstein: mergelig   | Tonstein: schiefrig |  «Infraquarzitischer Flysch» (Martinsmad-Fm.) |  Danien     | Maastrichtien   | Flysch  |
+|15202285 |Formation du Meilleret | Konglomerat  | Tonstein: schiefrig   | Kalkstein: Bioklasten |  Meilleret-Formation |  Priabonien     | Lutétien   | Flysch  |
+|15202286 |Grès de Lavtina | Sandstein: kalkig: Glimmer  | Tonstein: schiefrig   | 0 |  Lavtina-Sandstein |  Priabonien     | Eocène moyen   | Flysch  |
+|15202287 |Grès du Blattengrat | Sandstein: Glimmer  | Mergelstein: schiefrig   | Kalkstein: kieselig |  Blattengrat-Sandstein |  Priabonien     | Priabonien   | Flysch  |
+|15202288 |Grès de Burg | Kalkstein: sandig  | Sandstein: kalkig   | Mergelstein |  Burg-Sandstein |  Priabonien     | Priabonien   | Flysch  |
+|15202289 |Grès du Val-d&#39;Illiez | Sandstein: tonig  | 0   | 0 |  Val-d&#39;Illiez-Sandstein |  Rupélien     | Priabonien   | Flysch  |
+|15202290 |Formation du Muot da Rubi | Mergelstein: siltig-schiefrig  | Sandstein: tonig   | 0 |  Muot-da-Rubi-Formation |  Priabonien     | Priabonien   | Syn-Kollision  |
+|15202291 |Membre du Ahornen | Sandstein: tonig: Lithoklasten  | Mergelstein   | 0 |  Ahornen-Member |  Priabonien     | Priabonien   | Syn-Kollision  |
+|15202292 |Membre du Kistenstöckli | Konglomerat  | Kalkstein: sandig: Glimmer   | Mergelstein: sandig |  Kistenstöckli-Member |  Priabonien     | Priabonien   | Syn-Kollision  |
+|15202293 |Membre du Ghölzwald | Kalkstein: sandig: Glimmer  | Sandstein: kalkig: Glimmer   | 0 |  Ghölzwald-Member |  Priabonien     | Priabonien   | Syn-Kollision  |
+|15202294 |Membre du Malor | Mergelstein  | Sandstein: Glimmer   | 0 |  Malor-Member |  Priabonien     | Priabonien   | Syn-Kollision  |
+|15202295 |Membre du Südelbach | Mergelstein  | Kalkstein: siltig   | Brekzie: polymikt |  Südelgrabe-Melange |  Priabonien     | Priabonien   | Mélange  |
+|15202296 |Conglomérat du Kleintal | Konglomerat: kalkig  | 0   | 0 |  Kleintal-Konglomerat |  Priabonien     | Lutétien   | Syn-Kollision  |
+|15202297 |Conglomérat de Rütenen | Konglomerat  | Mergelstein   | 0 |  Rütenen-Konglomerat |  Priabonien     | Lutétien   | Syn-Kollision  |
+|15202298 |Jurassique de l&#39;Helvétique | Kalkstein  | Mergelstein   | Sandstein |  0 |  Berriasien     | Rhétien   | Sedimentbedeckung  |
+|15202299 |Brèche de Wang | Brekzie  | 0   | 0 |  «Wang-Brekzie» |  Maastrichtien     | Maastrichtien   | Post-Rift Mesozoikum in pelagischer Fazies  |
+|15202300 |«Oberer Schrattenkalk» | Kalkstein: mikritisch: Bioklasten  | 0   | 0 |  «Oberer Schrattenkalk» |  Aptien     | Aptien   | «Urgonien»  |
+|15202301 |«Unterer Schrattenkalk» | Kalkstein: mikritisch: Bioklasten  | 0   | 0 |  «Unterer Schrattenkalk» |  Aptien     | Barrémien   | «Urgonien»  |
+|15202302 |«Oberer Quinten-Kalk» | Kalkstein: mikritisch  | 0   | 0 |  «Oberer Quintner Kalk» |  Berriasien     | Tithonien   | Malm  |
+|15202303 |«Unterer Quinten-Kalk» | Kalkstein: mikritisch: Chert  | 0   | 0 |  «Unterer Quintner Kalk» |  Kimméridgien     | Oxfordien   | Malm  |
+|15202304 |Oolite ferrugineuse de la Planplatte | Kalkstein: Eisenooide  | 0   | 0 |  Planplatte-Eisenoolith |  Callovien     | Callovien   | Lias-Dogger in pelagischer Fazies  |
+|15202305 |Conglomérat du Geissbach | Konglomerat  | 0   | 0 |  Geissbach-Konglomerat |  Aalénien     | Toarcien   | Lias-Dogger in neritischer Fazies  |
+|15202306 |Grès de Stöckli | Sandstein: Quarz  | Brekzie: dolomitisch   | 0 |  Stöckli-Sandstein |  Aalénien     | Toarcien   | Lias-Dogger in neritischer Fazies  |
+|15202307 |Mélange Infrapréalpin | Tonstein  | Sandstein   | Kalkstein |  «Infrapräalpines Melange» |  Priabonien     | Priabonien   | Mélange  |
+|15202308 |Mélange d&#39;Iberg | Mergelstein  | Tonstein   | 0 |  Iberg-Melange |  Eocène     | Eocène   | Mélange  |
+|15202309 |Flysch de Surbrunnen | Tonstein  | Sandstein: tonig: Lithoklasten   | 0 |  Surbrunnen-Flysch |  Thanétien     | Danien   | Flysch  |
+|15202310 |Complexe de la Roggenegg | Mergelstein  | Kalkstein   | 0 |  Roggenegg-Komplex |  Yprésien     | Trias   | Mélange  |
+|15202311 |Complexe de l&#39;Isentobel | Siltstein  | Mergelstein   | 0 |  Isentobel-Komplex |  Eocène     | Crétacé tardif   | Mélange  |
+|15202312 |Flysch der Serhalten | Tonstein  | Mergelstein   | 0 |  Serhalten-Flysch |  Eocène     | Eocène   | Mélange  |
+|15202313 |Flysch de Gwürz | Tonstein  | Sandstein: tonig   | 0 |  Gwürz-Flysch |  Paléogène     | Paléogène   | Flysch  |
+|15202314 |Flysch de Ruestel | Sandstein: tonig  | Tonstein: schiefrig   | 0 |  Ruestel-Flysch |  Yprésien     | Paléocène   | Flysch  |
+|15202315 |Flysch de la Scheidegg | Mergelstein  | Siltstein   | Sandstein: Glaukonit |  Scheidegg-Flysch |  Paléogène     | Paléogène   | Flysch  |
+|15202316 |Granite de Habkern | Granit  | 0   | 0 |  Habkern-Granit |  Paléozoïque     | Paléozoïque   | Grundgebirge  |
+|15202317 |Mélange du Gros Plané | Tonstein  | Sandstein   | 0 |  Gros-Plané-Melange |  Rupélien     | Rupélien   | Mélange  |
+|15202318 |Mélange de la Bodevena | Tonstein  | Sandstein   | 0 |  Bodevena-Melange |  Priabonien     | Crétacé tardif   | Mélange  |
+|15202319 |Flysch Subalpin | Tonstein  | Sandstein: Quarz   | 0 |  «Subalpiner Flysch» |  Rupélien     | Priabonien   | Flysch  |
+|15202320 |Formation du Torrenthorn | Sandstein: kalkig-kieselig  | Kalkstein: sandig-spätig   | Tonstein |  Torrenthorn-Formation |  Toarcien     | Sinémurien   | Lias-Dogger in neritischer Fazies  |
+|15202321 |Banc du Weissgandstöckli | Sandstein: kalkig: Glimmer  | 0   | 0 |  Weissgandstöckli-Bank |  Sinémurien     | Hettangien   | Lias-Dogger in neritischer Fazies  |
+|15202322 |Membre du (Piz) Grisch | Tonstein: siltig-schiefrig  | Kalkstein   | 0 |  Grisch-Member |  Cisuralien     | Cisuralien   | Spät- bis postvariszisches Grundgebirge  |
+|15202323 |Membre du Foostock | Tonstein: siltig-schiefrig  | 0   | 0 |  Foostock-Member |  Cisuralien     | Cisuralien   | Spät- bis postvariszisches Grundgebirge  |
+|15202324 |Formation du Murgtal | Brekzie  | Sandstein   | Tonstein: siltig-schiefrig |  Murgtal-Formation |  Cisuralien     | Cisuralien   | Spät- bis postvariszisches Grundgebirge  |
+|15202325 |Membre du Dzéman | Konglomerat  | Sandstein   | Tonstein |  Dzéman-Member |  Permien     | Permien   | Spät- bis postvariszisches Grundgebirge  |
+|15202326 |Faciès de bordure aplitique du Granite Central de l&#39;Aar | Granit: aplitisch  | 0   | 0 |  Zentraler Aare-Granit |  Cisuralien     | Cisuralien   | Spät- bis postvariszisches Grundgebirge  |
+|15202327 |Rhyolithe de la Chli Windgällen | Rhyolith: ignimbritisch  | 0   | 0 |  Windgällen-Formation |  Assélien     | Pennsylvanien tardif   | Spät- bis postvariszisches Grundgebirge  |
+|15202328 |Complexe gneissique de la Bäregg | Gneis  | Gneis: mylonitisch   | Granodiorit |  Bäregg-Gneiskomplex |  Paléozoïque     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15202329 |Complexe gneissique du Gärsthorn | Gneis: augig  | 0   | 0 |  Gärsthorn-Gneiskomplex |  Paléozoïque     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15202330 |Complexe gneissique de Sogn Placi | Gneis  | Schiefer: Glimmer   | Schiefer: tonig |  Sogn-Placi-Gneiskomplex |  Paléozoïque     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15202331 |Complexe gneissique de la Massa | Gneis: migmatitisch  | Migmatit   | Amphibolit |  Massa-Gneiskomplex |  Paléozoïque     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15206089 |tectonite, indifférenciée | Gestein: tektonisch  | 0   | 0 |  0 |  Cénozoïque     | Protérozoïque   | 0  |
+|15206090 |cornéenne, indifférenciée | Hornfels  | 0   | 0 |  0 |  Cénozoïque     | Protérozoïque   | 0  |
+|15206091 |gneiss à hornblende, indifférencié | Gneis: Hornblende  | 0   | 0 |  0 |  Paléozoïque     | Protérozoïque   | Grundgebirge  |
+|15206092 |gneiss à biotite et plagioclase, indifférencié | Gneis: Biotit-Plagioklas  | 0   | 0 |  0 |  Paléozoïque     | Protérozoïque   | Grundgebirge  |
+|15206093 |gneiss rubané, indifférencié | Gneis: gebändert  | 0   | 0 |  0 |  Paléozoïque     | Protérozoïque   | Grundgebirge  |
+|15206094 |gneiss à deux micas, indifférencié | Gneis: Biotit-Muskovit  | 0   | 0 |  0 |  Paléozoïque     | Protérozoïque   | Grundgebirge  |
+|15206095 |gneiss phyllitique, indifférencié | Gneis: phyllitisch  | 0   | 0 |  0 |  Paléozoïque     | Protérozoïque   | Grundgebirge  |
+|15206096 |péridotite, indifférencié | Peridotit  | 0   | 0 |  0 |  Mésozoïque     | Protérozoïque   | 0  |
+|15206097 |amphibolite rubanée et à blocs, indifférencié | Amphibolit  | 0   | 0 |  0 |  Mésozoïque     | Protérozoïque   | Grundgebirge  |
+|15206098 |amphibolite à grenat, indifférencié | Amphibolit: Granat  | 0   | 0 |  0 |  Mésozoïque     | Protérozoïque   | Grundgebirge  |
+|15206099 |filon diabasique, indifférencié | Basalt  | 0   | 0 |  0 |  Mésozoïque     | Protérozoïque   | 0  |
+|15206100 |Permien, indifférencié | Sandstein  | Konglomerat   | Gestein: vulkanisch |  0 |  Permien     | Permien   | Spät- bis postvariszisches Grundgebirge  |
+|15206101 |marbre calcaire, indifférencié | Marmor: kalkig  | 0   | 0 |  0 |  Mésozoïque     | Paléozoïque   | 0  |
+|15206103 |Permo-Carbonifère, indifférencié | Konglomerat  | Sandstein   | Gestein: pelitisch |  0 |  Permien     | Carbonifère   | Spät- bis postvariszisches Grundgebirge  |
+|15206104 |calcschiste, indifférencié | Schiefer: kalkig  | 0   | 0 |  0 |  Cénozoïque     | Paléozoïque   | 0  |
+|15206105 |grès, indifférencié | Sandstein  | 0   | 0 |  0 |  Cénozoïque     | Paléozoïque   | Sedimentbedeckung  |
+|15206106 |schiste argileux, indifférencié | Schiefer: tonig  | 0   | 0 |  0 |  Mésozoïque     | Protérozoïque   | 0  |
+|15206107 |radiolarite, indifférenciée | Gestein: kieselig: Radiolarien  | 0   | 0 |  0 |  Mésozoïque     | Mésozoïque   | Sedimentbedeckung  |
+|15206108 |calcaire, indifférencié | Kalkstein  | 0   | 0 |  0 |  Cénozoïque     | Paléozoïque   | Sedimentbedeckung  |
+|15206109 |gneiss conglomératique, indifférencié | Gneis: psephitisch  | 0   | 0 |  0 |  Mésozoïque     | Protérozoïque   | 0  |
+|15206110 |socle polycyclique anté-varisque, indifférencié | Gneis  | Schiefer   | Amphibolit |  0 |  Paléozoïque     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15206111 |schiste, indifférencié | Schiefer  | 0   | 0 |  0 |  Mésozoïque     | Protérozoïque   | 0  |
+|15206112 |gneiss aplitique, indifférencié | Gneis: aplitisch  | 0   | 0 |  0 |  Paléozoïque     | Protérozoïque   | Grundgebirge  |
+|15206113 |Undifferenzierte lithologische Einheit: Süsswasserkalk | Kalkstein  | 0   | 0 |  0 |  Tertiaire     | Tertiaire   | Sedimentbedeckung  |
+|15206114 |mélange tectonique | Tonstein: schiefrig  | 0   | 0 |  0 |  Néogène     | Paléogène   | Mélange  |
+|15206115 |Flysch, indifférencié | Sandstein  | Gestein: pelitisch   | 0 |  0 |  Paléogène     | Crétacé tardif   | Flysch  |
+|15206116 |Calcaire à aptychus, indiff. | Kalkstein: mikritisch: Aptychen  | 0   | 0 |  0 |  Crétacé précoce     | Jurassique tardif   | Sedimentbedeckung  |
+|15206117 |Grès quartzitique, indiff. | Sandstein: Quarz  | 0   | 0 |  0 |  Trias     | Trias   | Sedimentbedeckung  |
+|15206118 |Undifferenzierte lithologische Einheit: Mergelstein | Mergelstein  | 0   | 0 |  0 |  Cénozoïque     | Mésozoïque   | Sedimentbedeckung  |
+|15206119 |Undifferenzierte lithologische Einheit: Basisches Gestein | Gestein: basisch  | 0   | 0 |  0 |  Cénozoïque     | Präkambrium   | 0  |
+|15200001 |Formation du Twannbach | Kalkstein: mikritisch  | Dolomitstein   | Kalkstein: stromatolithisch |  Twannbach-Formation |  Tithonien     | Kimméridgien   | Malm  |
+|15200002 |Formation de Reuchenette | Kalkstein: mikritisch  | Kalkstein: Bioklasten   | Mergelstein |  Reuchenette-Formation |  Kimméridgien     | Kimméridgien   | Malm  |
+|15200003 |Formation de Courgenay | Kalkstein: mikritisch  | Kalkstein: kreidig   | 0 |  Courgenay-Formation |  Kimméridgien     | Oxfordien   | Malm  |
+|15200004 |Formation de Vellerat | Kalkstein: mergelig  | Kalkstein: mikritisch   | Mergelstein |  Vellerat-Formation |  Oxfordien     | Oxfordien   | Malm  |
+|15200005 |Formation de St-Ursanne | Kalkstein: Korallen  | Kalkstein: Ooide   | Kalkstein: arenitisch: Bioklasten |  St-Ursanne-Formation |  Oxfordien     | Oxfordien   | Malm  |
+|15200006 |Formation de Bärschwil | Tonstein: mergelig  | Mergelstein   | Kalkstein: Chert |  Bärschwil-Formation |  Oxfordien     | Oxfordien   | Malm  |
+|15200007 |Formation d&#39;Ifenthal | Mergelstein  | Kalkstein: Eisenooide   | Mergelstein: Bioklasten |  Ifenthal-Formation |  Callovien     | Bathonien   | Lias-Dogger in neritischer Fazies  |
+|15200008 |Hauptrogenstein | Kalkstein: Ooide  | Kalkstein: Bioklasten   | Mergelstein |  Hauptrogenstein |  Bathonien     | Bajocien   | Lias-Dogger in neritischer Fazies  |
+|15200009 |Formation du Passwang | Tonstein  | Mergelstein: Eisenooide   | Kalkstein: sandig: Bioklasten |  Passwang-Formation |  Bathonien     | Aalénien   | Lias-Dogger in neritischer Fazies  |
+|15200010 |Argile à Opalinus | Tonstein  | Mergelstein: siltig   | Siltstein: Glimmer |  Opalinus-Ton |  Aalénien     | Toarcien   | Lias-Dogger in pelagischer Fazies  |
+|15200011 |Formation de la Staffelegg | Mergelstein  | Kalkstein   | Sandstein: kalkig |  Staffelegg-Formation |  Toarcien     | Hettangien   | Lias-Dogger in neritischer Fazies  |
+|15200012 |Malm du Jura | Kalkstein  | Mergelstein   | 0 |  0 |  Tithonien     | Oxfordien   | Malm  |
+|15200013 |Membre de Vouglans | Kalkstein: mikritisch  | Dolomitstein   | 0 |  Vouglans-Member |  Tithonien     | Tithonien   | Malm  |
+|15200014 |Membre du Chailley | Dolomitstein  | Kalkstein: stromatolithisch   | Kalkstein: Bioklasten |  Chailley-Member |  Tithonien     | Kimméridgien   | Malm  |
+|15200015 |Marnes à Virgula supérieures | Mergelstein: Bioklasten  | 0   | 0 |  «Oberer Virgula-Mergel» |  Kimméridgien     | Kimméridgien   | Malm  |
+|15200016 |Banc à Nérinées du sommet | Kalkstein: Bioklasten  | 0   | 0 |  «Grenznerineen-Bank» |  Kimméridgien     | Kimméridgien   | Malm  |
+|15200017 |Calcaire à Cladocoropsis | Kalkstein: Bioklasten  | 0   | 0 |  «Cladocoropsis-Kalk» |  Kimméridgien     | Kimméridgien   | Malm  |
+|15200018 |Marnes à Virgula inférieures | Mergelstein: Bioklasten  | 0   | 0 |  «Unterer Virgula-Mergel» |  Kimméridgien     | Kimméridgien   | Malm  |
+|15200019 |Membre de Courtedoux | Kalkstein: Bioklasten  | 0   | 0 |  Courtedoux-Member |  Kimméridgien     | Kimméridgien   | Malm  |
+|15200020 |Membre du Banné | Mergelstein: Bioklasten  | Kalkstein: mergelig   | 0 |  Banné-Member |  Kimméridgien     | Kimméridgien   | Malm  |
+|15200021 |Membre de Vabenau | Kalkstein: mikritisch  | Kalkstein: mergelig   | 0 |  Vabenau-Member |  Kimméridgien     | Kimméridgien   | Malm  |
+|15200022 |Couches du Creugenat | Mergelstein: Bioklasten  | Kalkstein: mergelig   | 0 |  Creugenat-Schichten |  Kimméridgien     | Kimméridgien   | Malm  |
+|15200023 |Formation des Etiollets | Kalkstein: mikritisch  | Kalkstein: Korallen   | Mergelstein |  Etiollets-Formation |  Kimméridgien     | Kimméridgien   | Malm  |
+|15200024 |Complexe récifal (Fm. des Etiollets) | Kalkstein: Korallen  | Kalkstein: mikritisch   | Kalkstein: arenitisch |  «Complexe récifal» |  Kimméridgien     | Kimméridgien   | Malm  |
+|15200025 |Membre du Couvaloup | Mergelstein  | Kalkstein: mikritisch   | 0 |  Couvaloup-Member |  Kimméridgien     | Kimméridgien   | Malm  |
+|15200026 |Membre de Porrentruy | Kalkstein: kreidig  | Kalkstein: arenitisch   | 0 |  Porrentruy-Member |  Kimméridgien     | Kimméridgien   | Malm  |
+|15200027 |Membre de la May | Kalkstein: mikritisch  | 0   | 0 |  La-May-Member |  Kimméridgien     | Oxfordien   | Malm  |
+|15200028 |Membre de l&#39;Oolithe rousse | Kalkstein: Ooide  | 0   | 0 |  «Oolithe-Rousse-Member» |  Oxfordien     | Oxfordien   | Malm  |
+|15200029 |Membre de Bure | Mergelstein: kalkig  | 0   | 0 |  Bure-Member |  Oxfordien     | Oxfordien   | Malm  |
+|15200030 |Membre du Hauptmumienbank (Oolithe nuciforme) | Kalkstein: mikritisch: Onkoide  | 0   | 0 |  «Hauptmumienbank-Member» |  Oxfordien     | Oxfordien   | Malm  |
+|15200031 |Membre de Röschenz | Kalkstein: mergelig: Bioklasten  | Kalkstein: Bioklasten   | 0 |  Röschenz-Member |  Oxfordien     | Oxfordien   | Malm  |
+|15200032 |Membre du Vorbourg | Kalkstein: mikritisch  | 0   | 0 |  Vorbourg-Member |  Oxfordien     | Oxfordien   | Malm  |
+|15200033 |Membre du Tiergarten | Kalkstein: Ooide  | Kalkstein: Korallen   | 0 |  Tiergarten-Member |  Oxfordien     | Oxfordien   | Malm  |
+|15200034 |Membre de Buix | Kalkstein: kreidig: Chert  | Kalkstein: Korallen   | 0 |  Buix-Member |  Oxfordien     | Oxfordien   | Malm  |
+|15203021 |Croûte minéralisée des Chenaux Rouges | Kalkstein: stromatolithisch: Eisenmineralien-Phosphorit  | Konglomerat   | 0 |  Chenaux-Rouges-Mineralkruste |  Yprésien     | Paléocène   | Couches Rouges  |
+|15203022 |Formation des Forclettes | Kalkstein: mikritisch  | Mergelstein   | 0 |  Forclettes-Formation |  Maastrichtien     | Maastrichtien   | Couches Rouges  |
+|15203023 |Hartground de Roter Sattel | Kalkstein: stromatolithisch: Eisenmineralien-Phosphorit  | 0   | 0 |  Roter-Sattel-Hartgrund |  Sélandien     | Maastrichtien   | Couches Rouges  |
+|15203024 |Conglomérat de Beaumont | Konglomerat  | 0   | 0 |  Beaumont-Konglomerat |  Maastrichtien     | Maastrichtien   | Couches Rouges  |
+|15203025 |Calcaire des Rayes | Kalkstein: Bioklasten  | 0   | 0 |  Rayes-Kalk |  Maastrichtien     | Maastrichtien   | Couches Rouges  |
+|15203026 |Membre du Pissot | Kalkstein  | Tonstein   | 0 |  Pissot-Member |  Maastrichtien     | Maastrichtien   | Couches Rouges  |
+|15203027 |Formation de Rote Platte | Kalkstein: mikritisch  | Kalkstein: mergelig   | 0 |  Rote-Platte-Formation |  Santonien     | Turonien   | Couches Rouges  |
+|15203028 |Membre du Wildenbach | Kalkstein  | Kalkstein: tonig   | Mergelstein: schiefrig |  Wildenbach-Member |  Santonien     | Santonien   | Couches Rouges  |
+|15203029 |Hardground de Pra du Pont | Kalkstein: Glaukonit  | 0   | 0 |  Pra-du-Pont-Hartgrund |  Santonien     | Santonien   | Couches Rouges  |
+|15203030 |Membre des Rontins | Kalkstein  | Kalkstein: tonig   | Tonstein |  Rontins-Member |  Santonien     | Turonien   | Couches Rouges  |
+|15203031 |Membre d&#39;Allières | Kalkstein: tonig  | Mergelstein   | 0 |  Allières-Member |  Turonien     | Turonien   | Couches Rouges  |
+|15203032 |Calcaire de Gérignoz | Kalkstein  | 0   | 0 |  Gérignoz-Kalk |  Turonien     | Turonien   | Couches Rouges  |
+|15203033 |Calcarénite de la Plagersflue | Kalkstein: arenitisch  | 0   | 0 |  Plagersflue-Kalkarenit |  Turonien     | Turonien   | Couches Rouges  |
+|15203034 |Formation de l&#39;Intyamon | Kalkstein: tonig  | Mergelstein: Bitumen   | 0 |  Intyamon-Formation |  Turonien     | Aptien   | Post-Rift Mesozoikum in pelagischer Fazies  |
+|15203035 |Membre du Chällihorn | Kalkstein: mikritisch  | Mergelstein   | 0 |  Chällihorn-Member |  Turonien     | Cénomanien   | Post-Rift Mesozoikum in pelagischer Fazies  |
+|15203036 |Membre de la Comba d&#39;Avau | Mergelstein  | Kalkstein: mergelig: Pyrit   | Kalkstein: kieselig |  Comba-d&#39;Avau-Member |  Albien     | Aptien   | Post-Rift Mesozoikum in pelagischer Fazies  |
+|15203037 |Membre de Rodosex | Kalkstein: stromatolithisch  | Mergelstein: Bioklasten   | Kalkstein: arenitisch: Glaukonit |  Rodosex-Member |  Aptien     | Aptien   | Post-Rift Mesozoikum in pelagischer Fazies  |
+|15203038 |Formation des Sciernes d&#39;Albeuve | Kalkstein: mikritisch: Chert  | Mergelstein   | 0 |  Sciernes-d&#39;Albeuve-Formation |  Barrémien     | Berriasien   | Post-Rift Mesozoikum in pelagischer Fazies  |
+|15203039 |Formation du Moléson | Kalkstein: mikritisch  | Kalkstein: Onkoide   | Kalkstein: Bioklasten |  Moléson-Formation |  Berriasien     | Kimméridgien   | Malm  |
+|15203040 |Formation du Torrent de Lessoc | Kalkstein: tonig  | Kalkstein: kieselig   | Mergelstein |  Torrent-de-Lessoc-Formation |  Oxfordien     | Oxfordien   | Malm  |
+|15203041 |Formation du Staldengraben | Kalkstein: mergelig  | Mergelstein: schiefrig   | 0 |  Staldengraben-Formation |  Callovien     | Toarcien   | Lias-Dogger in pelagischer Fazies  |
+|15203042 |Membre du Col de Lys | Kalkstein: sandig-kieselig  | Kalkstein: spätig: Glaukonit   | Mergelstein |  Col-de-Lys-Member |  Callovien     | Callovien   | Lias-Dogger in pelagischer Fazies  |
+|15203043 |Membre du Vanil Carré | Mergelstein  | Kalkstein: sandig-spätig   | Kalkstein: Ooide |  Vanil-Carré-Member |  Bathonien     | Bajocien   | Lias-Dogger in pelagischer Fazies  |
+|15203044 |Membre du Verdy | Kalkstein: tonig  | Mergelstein: schiefrig   | 0 |  Verdy-Member |  Bajocien     | Bajocien   | Lias-Dogger in pelagischer Fazies  |
+|15203045 |Membre de Soladier | Mergelstein: schiefrig  | Kalkstein: tonig   | 0 |  Soladier-Member |  Aalénien     | Toarcien   | Lias-Dogger in pelagischer Fazies  |
+|15203046 |Formation de Sommant | Kalkstein: mikritisch  | Kalkstein: sandig: Bioklasten   | Kalkstein: Ooide |  Sommant-Formation |  Bathonien     | Bajocien   | Syn-Rift  |
+|15203047 |Formation de Rossinière | Kalkstein: spätig: Glaukonit  | 0   | 0 |  Rossinière-Formation |  Aalénien     | Toarcien   | Lias-Dogger in neritischer Fazies  |
+|15203048 |Formation de Heiti | Mergelstein  | Kalkstein: kieselig   | 0 |  Heiti-Formation |  Bajocien     | Sinémurien   | Lias-Dogger in pelagischer Fazies  |
+|15203049 |Formation de la Combe du Pissot | Tonstein: schiefrig: Bitumen  | Kalkstein: kieselig   | Mergelstein: Glaukonit |  Combe-du-Pissot-Formation |  Toarcien     | Toarcien   | Syn-Rift  |
+|15203050 |Membre des Chevalets | Kalkstein: kieselig  | Mergelstein: Glaukonit   | 0 |  Chevalets-Schichten |  Toarcien     | Toarcien   | Syn-Rift  |
+|15203051 |Membre du Creux-de-l&#39;Ours | Mergelstein: Bitumen  | Kalkstein   | 0 |  Creux-de-l&#39;Ours-Schichten |  Toarcien     | Toarcien   | Syn-Rift  |
+|15203052 |Formation du Petit Liençon | Kalkstein: kieselig  | Mergelstein: schiefrig   | 0 |  Petit-Liençon-Formation |  Pliensbachien     | Pliensbachien   | Lias-Dogger in neritischer Fazies  |
+|15203053 |Formation d&#39;Arvel | Kalkstein: spätig: Bioklasten  | Mergelstein: schiefrig   | 0 |  Arvel-Formation |  Pliensbachien     | Pliensbachien   | Lias-Dogger in neritischer Fazies  |
+|15203054 |Formation de la Grande Bonavau | Kalkstein: spätig: Glaukonit  | Kalkstein: dolomitisch: Bioklasten   | 0 |  Grande-Bonavau-Formation |  Sinémurien     | Sinémurien   | Lias-Dogger in neritischer Fazies  |
+|15203055 |Formation du Chauderon | Kalkstein: kieselig-spätig  | Mergelstein: schiefrig   | 0 |  Chauderon-Formation |  Pliensbachien     | Sinémurien   | Lias-Dogger in neritischer Fazies  |
+|15203056 |Formation de la Vudalla | Kalkstein: mikritisch  | Kalkstein: Ooide   | 0 |  Vudalla-Formation |  Hettangien     | Hettangien   | Lias-Dogger in neritischer Fazies  |
+|15203057 |Membre du Bois de Luan | Kalkstein: mikritisch  | Kalkstein: sandig: Bioklasten   | Mergelstein |  Bois-de-Luan-Member |  Hettangien     | Hettangien   | Lias-Dogger in neritischer Fazies  |
+|15203058 |Membre d&#39;Agreblierai | Kalkstein: Ooide  | 0   | 0 |  Agreblierai-Member |  Hettangien     | Hettangien   | Lias-Dogger in neritischer Fazies  |
+|15203059 |Formation du Col de Tompey | Mergelstein: dolomitisch  | Sandstein: kalkig: Glaukonit   | 0 |  Col-de-Tompey-Formation |  Hettangien     | Rhétien   | «Rhät»  |
+|15203060 |Formation de Plan Falcon | Mergelstein: schiefrig  | Kalkstein: mergelig-dolomitisch   | Kalkstein: Bioklasten-Ooide |  Plan-Falcon-Formation |  Rhétien     | Rhétien   | «Rhät»  |
+|15203061 |Dolomies Blondes | Dolomitstein  | Tonstein   | Mergelstein: dolomitisch |  «Dolomies Blondes» |  Norien     | Norien   | Hauptdolomit  |
+|15203062 |Formation de Clôt la Cime | Dolomitstein  | Evaporit: Gips   | Brekzie |  Clôt-la-Cime-Formation |  Carnien     | Carnien   | Raibl  |
+|15203066 |Formation du Griggeli | Kalkstein: kieselig  | Mergelstein   | 0 |  Griggeli-Formation |  Oxfordien     | Callovien   | Lias-Dogger in neritischer Fazies  |
+|15203067 |Calcaire siliceux des Mythen | Kalkstein: kieselig  | Mergelstein   | Kalkstein: spätig |  Mythen-Kieselkalk |  Oxfordien     | Callovien   | Lias-Dogger in neritischer Fazies  |
+|15203068 |Banc du Griggeli | Kalkstein: spätig: Bioklasten  | 0   | 0 |  «Griggeli-Bank» |  Callovien     | Callovien   | Lias-Dogger in neritischer Fazies  |
+|15203069 |Formation de Gibel | Kalkstein: kieselig-spätig  | 0   | 0 |  Gibel-Formation |  Callovien     | Bathonien   | Lias-Dogger in neritischer Fazies  |
+|15203070 |Membre de Rämsi | Brekzie: dolomitisch  | Kalkstein: Korallen   | 0 |  Rämsi-Member |  Bathonien     | Bathonien   | Lias-Dogger in neritischer Fazies  |
+|15203071 |Membre de Gibel | Kalkstein: sandig: Bioklasten  | Konglomerat   | Kalkstein: spätig: Bioklasten |  «Gibel-Member» |  Bathonien     | Bathonien   | Lias-Dogger in neritischer Fazies  |
+|15203072 |Conglomérat du Steinberg | Konglomerat  | 0   | 0 |  Steinberg-Konglomerat |  Bathonien     | Bathonien   | Lias-Dogger in neritischer Fazies  |
+|15203073 |Membre de la Musenalp | Kalkstein: spätig: Chert  | Kalkstein: Ooide   | 0 |  Musenalp-Member |  Bathonien     | Bathonien   | Lias-Dogger in neritischer Fazies  |
+|15203074 |Formation du Stanserhorn | Mergelstein  | Kalkstein: kieselig   | 0 |  Stanserhorn-Formation |  Bajocien     | Toarcien   | Lias-Dogger in pelagischer Fazies  |
+|15203075 |Couches à Zoophycos (Fm. du Stanserhorn) | Mergelstein  | Kalkstein: kieselig   | 0 |  «Zoophycos-Schichten» (Stanserhorn-Fm.) |  Bajocien     | Aalénien   | Lias-Dogger in pelagischer Fazies  |
+|15203076 |Calcaire de la Spis | Kalkstein: Onkoide  | Kalkstein: Bioklasten   | Kalkstein: Eisenmineralien |  Spis-Kalk |  Toarcien     | Toarcien   | Lias-Dogger in pelagischer Fazies  |
+|15203077 |Schistes à Posidonies (Fm. du Stanserhorn) | Tonstein: schiefrig: Bitumen  | Mergelstein   | Kalkstein |  «Posidonienschiefer» (Stanserhorn-Fm.) |  Toarcien     | Toarcien   | Lias-Dogger in pelagischer Fazies  |
+|15203078 |Formation de la Obflue | Kalkstein: kieselig  | Mergelstein: Glaukonit   | 0 |  Obflue-Formation |  Pliensbachien     | Pliensbachien   | Lias-Dogger in neritischer Fazies  |
+|15203079 |Formation de Brand | Kalkstein: spätig: Bioklasten-Chert  | Mergelstein   | 0 |  Brand-Formation |  Sinémurien     | Sinémurien   | Lias-Dogger in neritischer Fazies  |
+|15203080 |Formation du Horngraben | Kalkstein: sandig  | Mergelstein: Bioklasten   | Brekzie |  Horngraben-Formation |  Hettangien     | Hettangien   | «Rhät»  |
+|15203081 |Formation du Lückengraben | Kalkstein: dolomitisch  | Kalkstein: spätig   | Mergelstein |  Lückengraben-Formation |  Rhétien     | Rhétien   | «Rhät»  |
+|15203082 |Formation de la Dorfflüe | Kalkstein: mikritisch  | 0   | 0 |  Dorfflüe-Formation |  Berriasien     | Oxfordien   | Malm  |
+|15203083 |Microfaciès de la Gummfluh | Kalkstein: arenitisch: Bioklasten  | 0   | 0 |  Gummfluh-Mikrofazies |  Jurassique tardif     | Jurassique tardif   | Malm  |
+|15203084 |Microfaciès de Pfad | Kalkstein: Bioklasten  | 0   | 0 |  Pfad-Mikrofazies |  Jurassique tardif     | Jurassique tardif   | Malm  |
+|15203085 |Microfaciès à oncolithes (Fm. de la Dorfflüe) | Kalkstein: Onkoide  | 0   | 0 |  Rindenkorn-Mikrofazies |  Jurassique tardif     | Jurassique tardif   | Malm  |
+|15200035 |Membre du Chestel | Kalkstein: arenitisch: Bioklasten  | Kalkstein: Korallen   | Kalkstein: Ooide |  Chestel-Member |  Oxfordien     | Oxfordien   | Malm  |
+|15200036 |Pisolite de la Caquerelle | Kalkstein: Onkoide  | 0   | 0 |  15251130 |  Oxfordien     | Oxfordien   | Malm  |
+|15200037 |Membre de Grellingen | Kalkstein: mikritisch  | Kalkstein: Korallen   | 0 |  Grellingen-Member |  Oxfordien     | Oxfordien   | Malm  |
+|15200039 |Formation du Pichoux | Kalkstein: mikritisch  | Kalkstein: mergelig   | 0 |  Pichoux-Formation |  Oxfordien     | Oxfordien   | Malm  |
+|15200040 |Membre de Liesberg | Mergelstein  | Kalkstein: Chert   | 0 |  Liesberg-Member |  Oxfordien     | Oxfordien   | Malm  |
+|15200041 |Membre de Sornetan | Tonstein: mergelig  | Kalkstein   | 0 |  Sornetan-Member |  Oxfordien     | Oxfordien   | Malm  |
+|15200042 |Membre à Renggeri | Tonstein: mergelig  | Kalkstein   | 0 |  «Renggeri-Member» |  Oxfordien     | Oxfordien   | Malm  |
+|15200043 |Membre du Graitery | Mergelstein  | Kalkstein: mergelig   | 0 |  Graitery-Member |  Callovien     | Callovien   | Lias-Dogger in neritischer Fazies  |
+|15200044 |Membre de Herznach | Kalkstein: Eisenooide  | Mergelstein: Eisenooide   | 0 |  Herznach-Member |  Oxfordien     | Callovien   | Lias-Dogger in neritischer Fazies  |
+|15200045 |Banc du Schellenbrücke | Kalkstein: Eisenooide  | 0   | 0 |  Schellenbrücke-Bank |  Oxfordien     | Oxfordien   | Lias-Dogger in neritischer Fazies  |
+|15200046 |Membre de Bollement | Kalkstein: spätig: Bioklasten  | Kalkstein: arenitisch: Bioklasten-Chert   | 0 |  Bollement-Member |  Callovien     | Callovien   | Lias-Dogger in neritischer Fazies  |
+|15200047 |Membre d&#39;Ängistein | Kalkstein: spätig: Bioklasten  | Kalkstein: arenitisch: Bioklasten   | 0 |  Ängistein-Member |  Callovien     | Callovien   | Lias-Dogger in neritischer Fazies  |
+|15200048 |Banc d&#39;Unter Erli | Kalkstein: Bioklasten  | 0   | 0 |  Unter-Erli-Bank |  Callovien     | Callovien   | Lias-Dogger in neritischer Fazies  |
+|15200049 |Membre de Bözen | Mergelstein  | Kalkstein: mergelig   | 0 |  Bözen-Member |  Callovien     | Callovien   | Lias-Dogger in neritischer Fazies  |
+|15200050 |Membre de Saulcy | Mergelstein: tonig  | 0   | 0 |  Saulcy-Member |  Callovien     | Callovien   | Lias-Dogger in neritischer Fazies  |
+|15200051 |Membre du Schelmenloch | Mergelstein  | Kalkstein: mergelig   | 0 |  Schelmenloch-Member |  Callovien     | Bathonien   | Lias-Dogger in neritischer Fazies  |
+|15200052 |Banc d&#39;Anwil | Kalkstein: Eisenooide  | 0   | 0 |  Anwil-Bank |  Callovien     | Bathonien   | Lias-Dogger in neritischer Fazies  |
+|15200053 |Membre de Châtillon | Mergelstein  | Kalkstein: Bioklasten   | 0 |  Châtillon-Member |  Callovien     | Callovien   | Lias-Dogger in neritischer Fazies  |
+|15200054 |Membre de St-Braix | Kalkstein: Bioklasten-Ooide  | Mergelstein: sandig   | 0 |  St-Brais-Member |  Bathonien     | Bathonien   | Lias-Dogger in neritischer Fazies  |
+|15200055 |Dogger du Jura | Kalkstein  | Mergelstein   | Tonstein |  0 |  Oxfordien     | Toarcien   | Syn-Rift  |
+|15200056 |Lias du Jura | Mergelstein  | Kalkstein   | Tonstein |  0 |  Toarcien     | Hettangien   | Lias-Dogger in neritischer Fazies  |
+|15200057 |Spatkalk (Hauptrogenstein) | Kalkstein: spätig: Bioklasten  | 0   | 0 |  «Spatkalk» (Hauptrogenstein) |  Bathonien     | Bathonien   | Lias-Dogger in neritischer Fazies  |
+|15200058 |Pierre Blanche (Hauptrogenstein) | Kalkstein: mikritisch: Ooide  | 0   | 0 |  «Pierre Blanche» (Hauptrogenstein) |  Bathonien     | Bathonien   | Lias-Dogger in neritischer Fazies  |
+|15200059 |Couches de Movelier | Mergelstein: Bioklasten  | Mergelstein: kalkig   | 0 |  Movelier-Schichten |  Bathonien     | Bathonien   | Lias-Dogger in neritischer Fazies  |
+|15200060 |Série oolitique supérieure (Grande Oolithe) | Kalkstein: Ooide  | Kalkstein: spätig: Bioklasten   | 0 |  15251167 |  Bathonien     | Bathonien   | Lias-Dogger in neritischer Fazies  |
+|15200061 |Couches à Acuminata supérieures | Mergelstein: Bioklasten  | Kalkstein: spätig   | 0 |  «Obere Acuminata-Schichten» |  Bajocien     | Bajocien   | Lias-Dogger in neritischer Fazies  |
+|15200062 |Série oolitique inférieure (Oolithe Subcompacte) | Kalkstein: Bioklasten-Ooide  | Kalkstein: mikritisch   | 0 |  «Oolithe Subcompacte» (Hauptrogenstein) |  Bajocien     | Bajocien   | Lias-Dogger in neritischer Fazies  |
+|15200063 |Membre du Grenchenberg | Kalkstein: siltig: Bioklasten  | Mergelstein   | 0 |  Grenchenberg-Member |  Bajocien     | Bajocien   | Lias-Dogger in neritischer Fazies  |
+|15200064 |Membre de la Rothenfluh | Mergelstein: sandig: Bioklasten  | Kalkstein: sandig   | 0 |  Rothenfluh-Member |  Bajocien     | Bajocien   | Lias-Dogger in neritischer Fazies  |
+|15200065 |Membre de Brüggli | Kalkstein: sandig  | Kalkstein: Bioklasten   | Mergelstein: Eisenooide |  Brüggli-Member |  Bajocien     | Bajocien   | Lias-Dogger in neritischer Fazies  |
+|15200066 |Couches à Humphriesi | Kalkstein: Bioklasten  | Mergelstein: Eisenooide   | 0 |  «Humphriesi-Schichten» (Brüggli-Mb.) |  Bajocien     | Bajocien   | Lias-Dogger in neritischer Fazies  |
+|15200067 |Membre de Waldenburg | Tonstein  | Mergelstein   | Mergelstein: Eisenooide |  Waldenburg-Member |  Bajocien     | Bajocien   | Lias-Dogger in neritischer Fazies  |
+|15200068 |Membre du Hirnichopf | Tonstein  | Kalkstein: sandig   | Mergelstein: Eisenooide |  Hirnichopf-Member |  Bajocien     | Aalénien   | Lias-Dogger in neritischer Fazies  |
+|15200069 |Membre de Hauenstein | Tonstein  | Kalkstein: sandig   | 0 |  Hauenstein-Member |  Aalénien     | Aalénien   | Lias-Dogger in neritischer Fazies  |
+|15200070 |Membre de Sissach | Kalkstein: sandig: Glimmer  | Kalkstein: Bioklasten   | Mergelstein: Eisenooide |  Sissach-Member |  Aalénien     | Aalénien   | Lias-Dogger in neritischer Fazies  |
+|15200071 |Membre du Gross Wolf | Mergelstein: Bioklasten  | Kalkstein: mergelig   | 0 |  Gross-Wolf-Member |  Toarcien     | Toarcien   | Lias-Dogger in neritischer Fazies  |
+|15200072 |Banc d&#39;Eriwis | Kalkstein: Bioklasten  | 0   | 0 |  Eriwis-Bank |  Toarcien     | Toarcien   | Lias-Dogger in neritischer Fazies  |
+|15200073 |Banc d&#39;Erlimoos | Mergelstein: Glaukonit-Bioklasten  | 0   | 0 |  Erlimoos-Bank |  Toarcien     | Toarcien   | Lias-Dogger in neritischer Fazies  |
+|15200074 |Banc de Gipf | Mergelstein: Bioklasten  | Kalkstein: Eisenooide   | 0 |  Gipf-Bank |  Toarcien     | Toarcien   | Lias-Dogger in neritischer Fazies  |
+|15200075 |Membre de Rietheim | Mergelstein: tonig: Bitumen  | 0   | 0 |  Rietheim-Member |  Toarcien     | Toarcien   | Lias-Dogger in neritischer Fazies  |
+|15200076 |Unterer Stein (Fm. de la Staffelegg) | Kalkstein: Bitumen  | 0   | 0 |  «Unterer Stein» (Staffelegg-Fm.) |  Toarcien     | Toarcien   | Lias-Dogger in neritischer Fazies  |
+|15200077 |Membre de Rickenbach | Mergelstein: kalkig: Glaukonit  | 0   | 0 |  Rickenbach-Member |  Toarcien     | Pliensbachien   | Lias-Dogger in neritischer Fazies  |
+|15200078 |Banc de la Müsenegg | Mergelstein  | Kalkstein: mergelig   | 0 |  Müsenegg-Bank |  Pliensbachien     | Pliensbachien   | Lias-Dogger in neritischer Fazies  |
+|15200079 |Membre de Breitenmatt | Mergelstein: kalkig: Bioklasten  | Kalkstein   | 0 |  Breitenmatt-Member |  Pliensbachien     | Pliensbachien   | Lias-Dogger in neritischer Fazies  |
+|15200080 |Banc de Trasadingen | Mergelstein: kalkig  | 0   | 0 |  Trasadingen-Bank |  Pliensbachien     | Pliensbachien   | Lias-Dogger in neritischer Fazies  |
+|15200081 |Membre du Grünschholz | Mergelstein: kalkig: Glaukonit  | Kalkstein   | 0 |  Grünschholz-Member |  Pliensbachien     | Sinémurien   | Lias-Dogger in neritischer Fazies  |
+|15200082 |Membre de Frick | Tonstein  | Siltstein: Glimmer   | 0 |  Frick-Member |  Pliensbachien     | Sinémurien   | Lias-Dogger in neritischer Fazies  |
+|15200083 |Membre du Mont Terri | Mergelstein: Glimmer  | Kalkstein: mergelig   | 0 |  Mont-Terri-Member |  Pliensbachien     | Sinémurien   | Lias-Dogger in neritischer Fazies  |
+|15200084 |Membre de Fasiswald | Kalkstein: sandig  | Tonstein: siltig   | 0 |  Fasiswald-Member |  Pliensbachien     | Sinémurien   | Lias-Dogger in neritischer Fazies  |
+|15200085 |Membre du Weissenstein | Kalkstein: sandig  | Sandstein: kalkig   | 0 |  Weissenstein-Member |  Sinémurien     | Sinémurien   | Lias-Dogger in neritischer Fazies  |
+|15200086 |Membre de Beggingen | Kalkstein: arenitisch-spätig  | Tonstein   | Siltstein |  Beggingen-Member |  Sinémurien     | Hettangien   | Lias-Dogger in neritischer Fazies  |
+|15200087 |Banc de Gächlingen | Kalkstein: Eisenooide  | Kalkstein: Bioklasten   | 0 |  Gächlingen-Bank |  Sinémurien     | Sinémurien   | Lias-Dogger in neritischer Fazies  |
+|15200088 |Banc de Schleitheim | Kalkstein: Eisenooide  | Kalkstein: Bioklasten   | 0 |  Schleitheim-Bank |  Hettangien     | Hettangien   | Lias-Dogger in neritischer Fazies  |
+|15200089 |Membre du Schambelen | Tonstein: mergelig: Bitumen  | Tonstein: siltig   | 0 |  Schambelen-Member |  Hettangien     | Hettangien   | Lias-Dogger in neritischer Fazies  |
+|15200090 |Banc de Hallau | Tonstein: Bitumen  | Kalkstein: sandig: Glaukonit   | 0 |  Hallau-Bank |  Hettangien     | Hettangien   | Lias-Dogger in neritischer Fazies  |
+|15200091 |Sidérolithique du Jura | Gestein: residual: Eisenmineralien  | 0   | 0 |  0 |  Bartonien     | Lutétien   | Siderolithikum  |
+|15200092 |Formations des Gorges de l&#39;Orbe et de Vallorbe, indifférenciées | Kalkstein: Bioklasten  | Kalkstein: Ooide   | Mergelstein |  0 |  Barrémien     | Hauterivien   | «Urgonien»  |
+|15200093 |Formation de Vallorbe | Kalkstein: Bioklasten  | 0   | 0 |  Vallorbe-Member |  Barrémien     | Hauterivien   | «Urgonien»  |
+|15200094 |Membre de la Rivière | Kalkstein: mergelig  | Mergelstein   | 0 |  La-Rivière-Member |  Barrémien     | Barrémien   | «Urgonien»  |
+|15200096 |Formation des Gorges de l&#39;Orbe | Kalkstein: Ooide  | Kalkstein: Bioklasten   | Mergelstein |  Gorges-de-l&#39;Orbe-Formation |  Hauterivien     | Hauterivien   | «Urgonien»  |
+|15200097 |Formations de Pierre-Châtel, de Vions et de la Chambotte, indifférenciées | Kalkstein: mikritisch  | Kalkstein: Bioklasten-Ooide   | Mergelstein |  0 |  Valanginien     | Berriasien   | Post-Rift Mesozoikum in Plattform-Fazies  |
+|15200098 |Formation de la Chambotte | Kalkstein: mikritisch: Bioklasten  | 0   | 0 |  Chambotte-Formation |  Valanginien     | Berriasien   | Post-Rift Mesozoikum in Plattform-Fazies  |
+|15203086 |Oolite des Gastlosen | Kalkstein: Ooide  | 0   | 0 |  Gastlosen-Oolith |  Jurassique tardif     | Jurassique tardif   | Malm  |
+|15203087 |Microfaciès de la Wandfluh | Kalkstein: mikritisch: Bioklasten  | Kalkstein: Ooide   | 0 |  Wandfluh-Mikrofazies |  Jurassique tardif     | Jurassique tardif   | Malm  |
+|15203088 |Couches à Mytilus | Mergelstein: sandig: Kohle  | Kalkstein: sandig: Bioklasten   | Konglomerat |  Mytilus-Schichten |  Callovien     | Aalénien   | Lias-Dogger in neritischer Fazies  |
+|15203089 |Membre du Col de Cordon | Kalkstein: sandig  | Kalkstein: arenitisch   | Konglomerat |  Col-de-Cordon-Member |  Callovien     | Bathonien   | Lias-Dogger in neritischer Fazies  |
+|15203090 |Conglomérat de la Klus | Kalkstein: sandig: Bioklasten  | 0   | 0 |  Klus-Konglomerat |  Callovien     | Bathonien   | Lias-Dogger in neritischer Fazies  |
+|15203092 |Membre du Rubli | Kalkstein: mergelig: Bioklasten  | Kalkstein: mikritisch: Onkoide   | 0 |  Rubli-Member |  Callovien     | Bajocien   | Lias-Dogger in neritischer Fazies  |
+|15203093 |Membre de Chavanette | Konglomerat  | Mergelstein: sandig: Kohle   | 0 |  Chavanette-Member |  Bajocien     | Aalénien   | Lias-Dogger in neritischer Fazies  |
+|15203094 |Membre des Erpilles | Dolomitstein  | Brekzie: dolomitisch   | Mergelstein: schiefrig |  Erpilles-Member |  Ladinien     | Ladinien   | Raibl  |
+|15203095 |Formation du Wiriehorn | Kalkstein  | Dolomitstein   | 0 |  Wiriehorn-Formation |  Anisien     | Anisien   | Karbonatische Trias  |
+|15203096 |Formation de St-Triphon | Kalkstein  | Dolomitstein   | Tonstein |  St-Triphon-Formation |  Anisien     | Olénékien   | Karbonatische Trias  |
+|15203097 |Membre des Andonces | Kalkstein  | Kalkstein: stromatolithisch   | Tonstein |  Andonces-Member |  Anisien     | Anisien   | Karbonatische Trias  |
+|15203098 |Membre du Lessus | Kalkstein  | 0   | 0 |  Lessus-Member |  Anisien     | Anisien   | Karbonatische Trias  |
+|15203099 |Membre de Dorchaux | Dolomitstein: stromatolithisch  | Tonstein   | 0 |  Dorchaux-Member |  Anisien     | Olénékien   | Karbonatische Trias  |
+|15203100 |Mélange des Mattes | Tonstein  | Siltstein   | Sandstein |  Mattes-Melange |  Priabonien     | Priabonien   | Mélange  |
+|15203101 |Formation de la Chumi | Mergelstein: kalkig  | Sandstein   | Brekzie: polymikt |  Chumi-Formation |  Eocène moyen     | Yprésien   | Flysch  |
+|15203102 |Formation de la Joux Verte | Mergelstein  | Kalkstein: kieselig: Glaukonit   | 0 |  Joux-Verte-Formation |  Turonien     | Barrémien   | Post-Rift Mesozoikum in pelagischer Fazies  |
+|15203103 |Formation de Bonave | Kalkstein: mikritisch: Chert  | Kalkstein: arenitisch   | Brekzie |  Bonave-Formation |  Valanginien     | Tithonien   | Post-Rift Mesozoikum in pelagischer Fazies  |
+|15203104 |Brèche Supérieure | Kalkstein: mikritisch  | Brekzie: kalkig   | 0 |  «Obere Brekzie» (Brekzien-Decke) |  Tithonien     | Kimméridgien   | Lias-Dogger in neritischer Fazies  |
+|15203105 |Schistes Ardoisiers | Tonstein: kieselig  | Kalkstein: arenitisch   | 0 |  «Obere Schiefer» (Brekzien-Decke) |  Oxfordien     | Callovien   | Lias-Dogger in pelagischer Fazies  |
+|15203106 |Brèche Inférieure | Brekzie: polymikt  | Brekzie: dolomitisch   | 0 |  «Untere Brekzie» (Brekzien-Decke) |  Callovien     | Aalénien   | Lias-Dogger in neritischer Fazies  |
+|15203107 |Schistes Inférieurs | Tonstein: sandig-schiefrig  | Kalkstein: spätig   | Brekzie |  «Untere Schiefer» (Brekzien-Decke) |  Aalénien     | Sinémurien   | Lias-Dogger in neritischer Fazies  |
+|15203108 |Calcaires Inférieurs | Kalkstein: spätig: Chert  | 0   | 0 |  «Untere Kalke» (Brekzien-Decke) |  Sinémurien     | Sinémurien   | Lias-Dogger in neritischer Fazies  |
+|15203109 |Trias de la nappe de la Brèche | Dolomitstein  | Gestein: pelitisch   | Kalkstein: Bioklasten |  0 |  Trias tardif     | Trias tardif   | Prä-Rift  |
+|15203110 |Flysch du Gurnigel | Sandstein  | Mergelstein   | 0 |  0 |  Paléocène     | Maastrichtien   | Flysch  |
+|15203111 |Flysch 4 à turbidites silteuses | Mergelstein: tonig  | Sandstein: kalkig   | Sandstein: kieselig |  «Flysch 4 mit siltigen Turbiditen» |  Lutétien     | Lutétien   | Flysch  |
+|15203112 |Flysch 3b à turbidites bioclastiques | Mergelstein  | Sandstein: kalkig: Bioklasten   | 0 |  «Flysch 3b mit bioklastischen Turbiditen» |  Yprésien     | Yprésien   | Flysch  |
+|15203113 |Flysch 3a marno-gréseux | Mergelstein  | Sandstein: kalkig   | 0 |  «Flysch 3a mergelig-sandig» |  Yprésien     | Yprésien   | Flysch  |
+|15203114 |Flysch 2b à turbidites siliceuses | Sandstein: kieselig  | Sandstein: Glaukonit   | Mergelstein |  «Flysch 2b mit sandigen Turbiditen» |  Thanétien     | Thanétien   | Flysch  |
+|15203115 |Flysch 2a argilo-gréseux | Tonstein  | Sandstein: Glaukonit   | 0 |  «Flysch 2a tonig-sandig» |  Danien     | Danien   | Flysch  |
+|15203116 |Formation de Hellstätt | Tonstein  | Kalkstein: siltig-tonig   | Sandstein |  Hellstätt-Formation |  Maastrichtien     | Maastrichtien   | Flysch  |
+|15203117 |Flysch des Schlieren | Sandstein  | Siltstein   | 0 |  0 |  Yprésien     | Maastrichtien   | Flysch  |
+|15203118 |Grès des Schlieren | Sandstein: kalkig: Nummuliten  | Siltstein   | Tonstein |  Schlieren-Sandstein |  Yprésien     | Yprésien   | Flysch  |
+|15203119 |Grès de la Schoni | Sandstein: kalkig: Nummuliten  | Siltstein   | Tonstein |  Schoni-Sandstein |  Yprésien     | Yprésien   | Flysch  |
+|15203120 |Obere Tonsteinschichten (Flysch des Schlieren) | Tonstein  | Siltstein   | 0 |  «Obere Tonsteinschichten» (Schlieren-Flysch) |  Yprésien     | Yprésien   | Flysch  |
+|15203121 |Grès de Guber | Sandstein  | Siltstein   | 0 |  Guber-Sandstein |  Thanétien     | Thanétien   | Flysch  |
+|15203122 |Untere Tonsteinschichten (Flysch des Schlieren) | Tonstein  | Sandstein: Quarz   | 0 |  «Untere Tonsteinschichten» (Schlieren-Flysch) |  Paléocène     | Paléocène   | Flysch  |
+|15203123 |Flysch basal des Schlieren | Sandstein  | Siltstein   | Kalkstein: mergelig |  0 |  Maastrichtien     | Campanien   | Flysch  |
+|15203124 |Flysch d&#39;Estavannens | Sandstein: kalkig  | Mergelstein   | Tonstein |  Estavannens-Flysch |  Thanétien     | Danien   | Flysch  |
+|15203125 |Formation de Reidigen | Sandstein: Glimmer  | Tonstein   | Kalkstein: mikritisch |  Reidigen-Formation |  Danien     | Maastrichtien   | Flysch  |
+|15203126 |Formation du Biot | Sandstein: kalkig  | Kalkstein: mikritisch   | 0 |  Biot-Formation |  Maastrichtien     | Campanien   | Flysch  |
+|15203127 |Formation de Chétillon | Tonstein  | Siltstein   | Sandstein |  Chétillon-Formation |  Santonien     | Coniacien   | Flysch  |
+|15203128 |Formation des Rodomonts | Sandstein  | Mergelstein: schiefrig   | Konglomerat: polymikt |  Rodomonts-Formation |  Coniacien     | Turonien   | Flysch  |
+|15203129 |Poudingue de la Mocausa | Sandstein  | Konglomerat: polymikt   | 0 |  Mocausa-Nagelfluh |  Coniacien     | Turonien   | Flysch  |
+|15203130 |Mélange de la Tissota | Tonstein  | Mergelstein   | 0 |  Tissota-Melange |  Santonien     | Santonien   | Mélange  |
+|15203131 |Complexe de la Gueyraz | Kalkstein  | Mergelstein   | 0 |  Gueyraz-Komplex |  Crétacé tardif     | Jurassique précoce   | Mélange  |
+|15203132 |Flysch de la Weissenburg | Konglomerat: kalkig  | Sandstein: kalkig-dolomitisch   | Mergelstein |  Weissenburg-Flysch |  Santonien     | Turonien   | Flysch  |
+|15203133 |Formation de la Manche | Sandstein: siltig-kalkig  | Mergelstein   | 0 |  Manche-Formation |  Santonien     | Turonien   | Flysch  |
+|15203134 |Formation du Fouyet | Tonstein  | Kalkstein: tonig-schiefrig   | Kalkstein: sandig |  Fouyet-Formation |  Turonien     | Albien   | Flysch  |
+|15203135 |Couches à foraminifères | Kalkstein: tonig-schiefrig  | Mergelstein: schiefrig   | 0 |  «Foraminiferenschichten» (Tissota-Melange) |  Cénomanien     | Barrémien   | Post-Rift Mesozoikum in pelagischer Fazies  |
+|15203136 |Calcaires à Aptychus | Kalkstein: mikritisch: Aptychen  | 0   | 0 |  «Aptychenkalk» (Tissota-Melange) |  Barrémien     | Tithonien   | Maiolica / Aptychenkalk  |
+|15203137 |Radiolarites | Gestein: kieselig: Radiolarien  | 0   | 0 |  «Radiolarit» (Tissota-Melange) |  Kimméridgien     | Bathonien   | Radiolarit  |
+|15203138 |Calcaires à filaments | Kalkstein: Bioklasten  | Mergelstein   | 0 |  «Filamentkalk» (Tissota-Melange) |  Callovien     | Aalénien   | Lias-Dogger in pelagischer Fazies  |
+|15203139 |Calcaires spathiques | Kalkstein: spätig  | 0   | 0 |  «Spatkalk» (Tissota-Melange) |  Jurassique précoce     | Jurassique précoce   | Lias-Dogger in neritischer Fazies  |
+|15203140 |Formation du Hundsrügg | Sandstein: Glimmer  | Konglomerat   | 0 |  Hundsrügg-Formation |  Campanien     | Coniacien   | Flysch  |
+|15203141 |Formation des Perrières | Tonstein  | Kalkstein: mikritisch   | Sandstein |  Perrières-Formation |  Coniacien     | Turonien   | Flysch  |
+|15203142 |Flysch Rhénodanubien | Sandstein  | Gestein: pelitisch   | 0 |  0 |  Crétacé tardif     | Crétacé précoce   | Flysch  |
+|15203143 |Flysch du Vorarlberg | Sandstein  | Gestein: pelitisch   | Kalkstein |  0 |  Crétacé tardif     | Crétacé tardif   | Flysch  |
+|15203144 |Formation de Fanola | Tonstein: sandig-mergelig  | Brekzie: polymikt   | Sandstein: Quarz |  Fanola-Formation |  Maastrichtien     | Maastrichtien   | Flysch  |
+|15203145 |Formation de Planknerbrücke | Sandstein  | Tonstein   | Kalkstein: mikritisch |  Planknerbrücke-Formation |  Maastrichtien     | Campanien   | Flysch  |
+|15203146 |Formation de Planken | Kalkstein: mikritisch  | Kalkstein: siltig   | Mergelstein |  Planken-Formation |  Santonien     | Coniacien   | Flysch  |
+|15203147 |Formation du Reiselsberg | Sandstein  | Tonstein   | 0 |  Reiselsberg-Formation |  Turonien     | Turonien   | Flysch  |
+|15200099 |Membre du Guiers | Mergelstein: Bioklasten  | Kalkstein: mergelig   | 0 |  Guiers-Member |  Valanginien     | Valanginien   | Post-Rift Mesozoikum in Plattform-Fazies  |
+|15200100 |Formation de Vions | Kalkstein: arenitisch: Quarz  | Mergelstein   | 0 |  Vions-Formation |  Berriasien     | Berriasien   | Post-Rift Mesozoikum in Plattform-Fazies  |
+|15200101 |Formation de Pierre-Châtel | Kalkstein: mikritisch  | Kalkstein: Bioklasten-Ooide   | Mergelstein |  Pierre-Châtel-Formation |  Berriasien     | Berriasien   | Post-Rift Mesozoikum in Plattform-Fazies  |
+|15200102 |Formation du Burghorn | Kalkstein: mikritisch  | Mergelstein   | 0 |  Burghorn-Formation |  Kimméridgien     | Kimméridgien   | Malm  |
+|15200103 |Membre de Wettingen | Kalkstein: mikritisch  | Kalkstein: Chert   | 0 |  Wettingen-Member |  Kimméridgien     | Kimméridgien   | Malm  |
+|15200104 |Membre de Baden | Kalkstein: mikritisch: Glaukonit  | Mergelstein   | 0 |  Baden-Member |  Kimméridgien     | Kimméridgien   | Malm  |
+|15200105 |Formation de Villigen | Kalkstein: mikritisch  | Mergelstein   | 0 |  Villigen-Formation |  Kimméridgien     | Oxfordien   | Malm  |
+|15200106 |Membre du Wangental | Kalkstein: mikritisch  | Mergelstein   | 0 |  Wangental-Member |  Kimméridgien     | Kimméridgien   | Malm  |
+|15200107 |Membre du Letzi | Kalkstein: mikritisch  | 0   | 0 |  Letzi-Member |  Kimméridgien     | Kimméridgien   | Malm  |
+|15200108 |Knollen-Bank (Fm. de Villigen) | Kalkstein: mergelig: Glaukonit  | 0   | 0 |  «Knollen-Bank» |  Kimméridgien     | Oxfordien   | Malm  |
+|15200109 |Membre de la Küssaburg | Kalkstein: spätig: Bioklasten  | Kalkstein: mikritisch   | 0 |  Küssaburg-Member |  Oxfordien     | Oxfordien   | Malm  |
+|15200110 |Membre de Wangen | Kalkstein: mikritisch  | Kalkstein: kreidig   | 0 |  Wangen-Member |  Oxfordien     | Oxfordien   | Malm  |
+|15200111 |Membre du Hornbuck | Kalkstein: mergelig: Chert  | Mergelstein   | 0 |  Hornbuck-Member |  Oxfordien     | Oxfordien   | Malm  |
+|15200112 |Membre à Crenularis | Kalkstein: Glaukonit-Bioklasten  | 0   | 0 |  «Crenularis-Member» |  Oxfordien     | Oxfordien   | Malm  |
+|15200113 |Membre du Geissberg | Kalkstein: mikritisch  | Mergelstein   | 0 |  Geissberg-Member |  Oxfordien     | Oxfordien   | Malm  |
+|15200114 |Formation de Wildegg | Mergelstein  | Kalkstein: mergelig   | Kalkstein: mikritisch |  Wildegg-Formation |  Oxfordien     | Oxfordien   | Malm  |
+|15200115 |Membre d&#39;Effingen | Mergelstein  | Mergelstein: kalkig   | 0 |  Effingen-Member |  Oxfordien     | Oxfordien   | Malm  |
+|15200116 |Banc du Gerstenhübel | Kalkstein: mikritisch  | Kalkstein: mergelig   | 0 |  Gerstenhübel-Bank |  Oxfordien     | Oxfordien   | Malm  |
+|15200117 |Membre de Birmenstorf | Kalkstein: mikritisch: Glaukonit  | Kalkstein: mergelig   | 0 |  Birmenstorf-Member |  Oxfordien     | Oxfordien   | Malm  |
+|15200118 |Formation de Günsberg | Kalkstein: Korallen  | Kalkstein: Ooide   | Mergelstein |  Günsberg-Formation |  Oxfordien     | Oxfordien   | Malm  |
+|15200119 |Calcaire à coraux de Moutier | Kalkstein: Korallen  | Mergelstein   | 0 |  Moutier-Korallenkalk |  Oxfordien     | Oxfordien   | Malm  |
+|15200120 |Formation de Klingnau | Mergelstein  | Kalkstein: Bioklasten   | Kalkstein: Ooide |  Klingnau-Formation |  Bathonien     | Bajocien   | Lias-Dogger in neritischer Fazies  |
+|15200121 |Argile à Knorri | Tonstein  | Kalkstein: mergelig   | 0 |  «Knorri-Ton» |  Bathonien     | Bathonien   | Lias-Dogger in neritischer Fazies  |
+|15200122 |Couches à Wuerttembergica | Mergelstein  | Kalkstein: Bioklasten   | 0 |  «Wuerttembergica-Schichten» |  Bathonien     | Bathonien   | Lias-Dogger in neritischer Fazies  |
+|15200123 |Banc à Subfurcatum | Mergelstein: Bioklasten  | 0   | 0 |  «Subfurcatum-Bank» |  Bajocien     | Bajocien   | Lias-Dogger in neritischer Fazies  |
+|15200124 |Couches à Blagdeni | Kalkstein: sandig  | Mergelstein   | 0 |  «Blagdeni-Schichten» (Klingnau-Fm.) |  Bajocien     | Bajocien   | Lias-Dogger in neritischer Fazies  |
+|15200125 |Groupe du Keuper | Sandstein  | Gestein: pelitisch   | Evaporit |  0 |  Rhétien     | Ladinien   | Keuper  |
+|15200126 |Formation du Klettgau | Mergelstein  | Sandstein   | Dolomitstein |  Klettgau-Formation |  Rhétien     | Carnien   | Keuper  |
+|15200127 |Membre du Belchen | Sandstein: Quarz  | Tonstein   | 0 |  Belchen-Member |  Rhétien     | Rhétien   | Keuper  |
+|15200128 |Formation du Bänkerjoch | Tonstein  | Evaporit: Sulfat   | Evaporit: Halit |  Bänkerjoch-Formation |  Carnien     | Ladinien   | Keuper  |
+|15200129 |Groupe du Muschelkalk | Dolomitstein  | Kalkstein   | Evaporit |  0 |  Ladinien     | Anisien   | Muschelkalk  |
+|15200130 |Formation de Schinznach | Dolomitstein  | Kalkstein: Bioklasten   | Mergelstein |  Schinznach-Formation |  Ladinien     | Anisien   | Muschelkalk  |
+|15200131 |Membre d&#39;Asp | Tonstein: siltig  | Mergelstein: dolomitisch   | Dolomitstein |  Asp-Member |  Ladinien     | Ladinien   | Muschelkalk  |
+|15200132 |Membre du Stamberg | Dolomitstein  | Dolomitstein: Ooide   | Dolomitstein: Bioklasten |  Stamberg-Member |  Ladinien     | Ladinien   | Muschelkalk  |
+|15200133 |Membre de Liedertswil | Kalkstein: mikritisch  | Dolomitstein   | 0 |  Liedertswil-Member |  Ladinien     | Ladinien   | Muschelkalk  |
+|15200134 |Membre de Kienberg | Kalkstein: spätig: Bioklasten  | 0   | 0 |  Kienberg-Member |  Ladinien     | Ladinien   | Muschelkalk  |
+|15200135 |Formation de Zeglingen | Evaporit: Anhydrit  | Mergelstein   | Dolomitstein |  Zeglingen-Formation |  Anisien     | Anisien   | Muschelkalk  |
+|15200136 |Obere Sufatzone (Fm. de Zeglingen) | Evaporit: Anhydrit  | Mergelstein   | 0 |  «Obere Sufatzone» (Zeglingen-Fm.) |  Anisien     | Anisien   | Muschelkalk  |
+|15200137 |Salzlager (Fm. de Zeglingen) | Evaporit: Halit  | 0   | 0 |  «Salzlager» (Zeglingen-Fm.) |  Anisien     | Anisien   | Muschelkalk  |
+|15200138 |Untere Sulfatzone (Fm. de Zeglingen) | Evaporit: Anhydrit  | Dolomitstein   | Mergelstein |  «Untere Sulfatzone» (Zeglingen-Fm.) |  Anisien     | Anisien   | Muschelkalk  |
+|15200139 |Formation de Kaiseraugst | Dolomitstein  | Kalkstein: mergelig   | Mergelstein: Glimmer |  Kaiseraugst-Formation |  Anisien     | Anisien   | Muschelkalk  |
+|15200140 |Marne à Orbicularis | Mergelstein: kalkig: Bitumen  | Evaporit: Anhydrit   | 0 |  «Orbicularis-Mergel» |  Anisien     | Anisien   | Muschelkalk  |
+|15200141 |Wellenkalk / Wellenmergel | Kalkstein: mergelig  | Mergelstein   | 0 |  «Wellenkalk / Wellenmergel» |  Anisien     | Anisien   | Muschelkalk  |
+|15200142 |Wellendolomit | Dolomitstein  | Kalkstein   | Mergelstein |  «Wellendolomit» |  Anisien     | Anisien   | Muschelkalk  |
+|15200143 |Groupe du Buntsandstein | Sandstein  | Tonstein   | 0 |  0 |  Anisien     | Olénékien   | Buntsandstein  |
+|15200144 |Formation du Dinkelberg | Sandstein: Glimmer  | Tonstein   | 0 |  Dinkelberg-Formation |  Anisien     | Olénékien   | Buntsandstein  |
+|15200145 |Rhötton | Tonstein: siltig: Glimmer  | 0   | 0 |  «Rhötton» |  Anisien     | Anisien   | Buntsandstein  |
+|15200146 |Plattensandstein (Fm. du Dinkelberg) | Sandstein: Glimmer  | 0   | 0 |  «Plattensandstein» (Dinkelberg-Fm.) |  Anisien     | Olénékien   | Buntsandstein  |
+|15200147 |Karneol-Horizont (Fm. du Dinkelberg) | Sandstein: kieselig  | 0   | 0 |  «Karneol-Horizont» (Dinkelberg-Fm.) |  Olénékien     | Olénékien   | Buntsandstein  |
+|15200148 |Formation de Narlay | Kalkstein: kreidig: Chert  | Kalkstein: mergelig   | 0 |  Narlay-Formation |  Coniacien     | Cénomanien   | Post-Rift Mesozoikum in pelagischer Fazies  |
+|15200149 |Formation de la Perte-du-Rhône | Sandstein: Glaukonit  | Kalkstein: mergelig   | Tonstein |  Perte-du-Rhône-Formation |  Cénomanien     | Aptien   | «Gault»  |
+|15200150 |Formation du Grand Essert | Kalkstein: spätig: Bioklasten-Glaukonit  | Kalkstein: Ooide   | Mergelstein: Bioklasten |  Grand-Essert-Formation |  Hauterivien     | Valanginien   | Post-Rift Mesozoikum in Plattform-Fazies  |
+|15200151 |Membre de Neuchâtel | Kalkstein: spätig: Bioklasten-Glaukonit  | Kalkstein: Ooide   | 0 |  Neuchâtel-Member |  Hauterivien     | Hauterivien   | Post-Rift Mesozoikum in Plattform-Fazies  |
+|15200152 |Membre d&#39;Hauterive | Mergelstein: Bioklasten  | Kalkstein: spätig: Bioklasten-Glaukonit   | Mergelstein: kalkig |  Hauterive-Member |  Hauterivien     | Valanginien   | Post-Rift Mesozoikum in Plattform-Fazies  |
+|15200153 |Formation du Vuache | Kalkstein: spätig: Bioklasten-Ooide  | Mergelstein   | 0 |  Vuache-Formation |  Valanginien     | Valanginien   | Post-Rift Mesozoikum in Plattform-Fazies  |
+|15200154 |Calcaire à Alectyonia rectangularis | Kalkstein: spätig: Bioklasten  | 0   | 0 |  «Alectryonia-Kalk» |  Valanginien     | Valanginien   | Post-Rift Mesozoikum in Plattform-Fazies  |
+|15200155 |Marne d&#39;Arzier | Mergelstein: Bioklasten  | Kalkstein: mergelig   | 0 |  Arzier-Mergel |  Valanginien     | Valanginien   | Post-Rift Mesozoikum in Plattform-Fazies  |
+|15200156 |Formation du Goldberg | Mergelstein  | Kalkstein   | Brekzie: polymikt |  Goldberg-Formation |  Berriasien     | Berriasien   | Post-Rift Mesozoikum in detritischer Fazies  |
+|15200157 |Formation du Wiesental | Sandstein: Feldspat  | Sandstein: dolomitisch   | 0 |  Wiesental-Formation |  Lopingien     | Lopingien   | Spät- bis postvariszisches Grundgebirge  |
+|15200158 |Formation de Weitenau | Sandstein: Feldspat  | Konglomerat   | 0 |  Weitenau-Formation |  Lopingien     | Cisuralien   | Spät- bis postvariszisches Grundgebirge  |
+|15200159 |Formation de Weiach | Sandstein: Feldspat  | Konglomerat   | Tonstein |  Weiach-Formation |  Cisuralien     | Pennsylvanien   | Spät- bis postvariszisches Grundgebirge  |
+|15200160 |Formations de Günsberg, Vellerat, Villigen, Balsthal et Courgenay, indifférenciées | Kalkstein: mikritisch  | Kalkstein: Ooide   | Mergelstein |  0 |  Kimméridgien     | Oxfordien   | Malm  |
+|15202332 |Roches plutoniques éo-varisques du massif des Aiguilles Rouges | Gestein: plutonisch  | 0   | 0 |  0 |  Pennsylvanien     | Pennsylvanien   | Mittelvariszisches Grundgebirge  |
+|15202333 |Roches plutoniques éo-varisques du massif des Aiguilles Rouges | Gestein: plutonisch  | 0   | 0 |  0 |  Mississippien     | Mississippien   | Frühvariszisches Grundgebirge  |
+|15202334 |Socle polycyclique anté-varisque du massif des Aiguilles Rouges | Gneis  | Schiefer   | Amphibolit |  0 |  Paléozoïque     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15202335 |Gneiss des Chéserys | Gneis: Kyanit  | 0   | 0 |  Chéserys-Gneis |  Dévonien     | Paléozoïque   | Prävariszisches Grundgebirge  |
+|15202336 |Roches plutoniques tardi- à post-varisques du massif du Mont Blanc | Gestein: plutonisch  | 0   | 0 |  0 |  Cisuralien     | Pennsylvanien   | Spät- bis postvariszisches Grundgebirge  |
+|15202337 |Socle polycyclique anté-varisque du massif du Mont Blanc | Gneis  | Schiefer   | 0 |  0 |  Paléozoïque     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15202338 |Complexe gneissique de l&#39;Alp Cavradi | Gneis  | Schiefer: tonig   | Schiefer: Graphit |  Alp-Cavradi-Gneiskomplex |  Paléozoïque     | Paléozoïque   | Prä- bis frühvariszisches Grundgebirge  |
+|15202339 |Complexe gneissique de Giubine | Gneis  | Schiefer: Glimmer   | 0 |  Giubine-Gneiskomplex |  Paléozoïque     | Paléozoïque   | Prä- bis frühvariszisches Grundgebirge  |
+|15202340 |Socle polycyclique anté-varisque de la nappe du Gotthard | Gneis  | Schiefer   | 0 |  0 |  Paléozoïque     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15202341 |Gneiss d&#39;Unterwassern | Gneis  | 0   | 0 |  Unterwassern-Gneis |  Paléozoïque     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15202343 |Gneiss oeillé du Sassina | Gneis: granitisch-augig  | 0   | 0 |  Sassina-Spans-Augengneis |  Paléozoïque     | Paléozoïque   | Prävariszisches Grundgebirge  |
+|15202344 |Gneiss granitique de l&#39;Alp Ramosa | Gneis: granitisch  | 0   | 0 |  Alp-Ramosa-Granitgneis |  Paléozoïque     | Paléozoïque   | Prävariszisches Grundgebirge  |
+|15202346 |Complexe gneissique du Val Nalps | Gneis  | Amphibolit: Granat   | Gestein: ultramafisch |  Val-Nalps-Gneiskomplex |  Cambrien     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15202347 |Gneiss de Prato | Gneis  | Schiefer: Glimmer   | Amphibolit |  Prato-Gneis |  Cambrien     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15202348 |Gneiss du Distelgrat | Gneis: sedimentär  | 0   | 0 |  Distelgrat-Gneis |  Cambrien     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15202349 |Gneiss oeillé du Val Gronda | Gneis: migmatitisch-augig  | 0   | 0 |  Val-Gronda-Augengneis |  Cambrien     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15202350 |Serpentinite de la Fuorcla Paradis | Serpentinit  | 0   | 0 |  Fuorcla-Paradis-Serpentinit |  Cambrien     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15202351 |Complexe gneissique du (Piz) Paradis | Gneis: migmatitisch  | 0   | 0 |  Paradis-Gneiskomplex |  Cambrien     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15202352 |Gneiss d&#39;Oberstafel | Gneis: Biotit-Plagioklas  | 0   | 0 |  Oberstafel-Gneis |  Mittleres Ordovizium     | Frühes Ordovizium   | Prävariszisches Grundgebirge  |
+|15202353 |Gneiss du (Piz) Ganneretsch | Gneis: migmatitisch  | 0   | 0 |  Ganneretsch-Gneis |  Cambrien     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15202354 |Amphibolite de Corandoni | Amphibolit  | Schiefer: Hornblende   | Gneis |  Corandoni-Amphibolit |  Cambrien     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15202355 |Socle polycyclique anté-varisque de la nappe du Tavetsch | Gneis  | Migmatit   | Amphibolit |  0 |  Paléozoïque     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15202356 |Complexe gneissique de Rueras | Gneis: Muskovit  | 0   | 0 |  Rueras-Gneiskomplex |  Paléozoïque     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15202357 |Roches sédimentaires et volcaniques éo-varisques du massif des Aiguilles Rouges | Gestein: sedimentär  | Gestein: vulkanisch   | 0 |  0 |  Mississippien     | Mississippien   | Prä- bis frühvariszisches Grundgebirge  |
+|15202358 |Schistes de l&#39;Au d&#39;Arbignon | Tonstein: schiefrig: Anthrazit  | 0   | 0 |  Au-d&#39;Arbignon-Schiefer |  Pennsylvanien     | Pennsylvanien   | Spät- bis postvariszisches Grundgebirge  |
+|15202359 |Conglomérat de Dorénaz | Konglomerat  | 0   | 0 |  Dorénaz-Konglomerat |  Pennsylvanien     | Pennsylvanien   | Spät- bis postvariszisches Grundgebirge  |
+|15202360 |Wildflysch | Tonstein  | 0   | 0 |  0 |  Paléogène     | Paléogène   | Mélange  |
+|15202361 |Plaine-Morte-Melange | Mergelstein  | Sandstein   | 0 |  Plaine-Morte-Melange |  Tertiaire     | Crétacé tardif   | Mélange  |
+|15202362 |Mättental-Melange | Tonstein  | Mergelstein   | Sandstein |  Mättental-Melange |  Rupélien     | Priabonien   | Mélange  |
+|15202363 |Meilleret-Fm.: Höchst-Flysch | Sandstein  | 0   | 0 |  Höchst-Flysch |  Priabonien     | Eocène moyen   | Flysch  |
+|15202364 |Kiental-Melange | Tonstein  | Sandstein   | 0 |  Kiental-Melange |  Crétacé tardif     | Crétacé tardif   | Mélange  |
+|15202365 |Termen-Zone: Tonschiefer | Schiefer: Glimmer-Granat  | 0   | 0 |  0 |  Toarcien     | Pliensbachien   | Sedimentbedeckung  |
+|15202366 |Termen-Zone: Kalkschiefer | Schiefer: kalkig  | Marmor: kalkig   | 0 |  0 |  Pliensbachien     | Rhétien   | Sedimentbedeckung  |
+|15202367 |Nufenen-Zone: Knotenschiefer | Schiefer: kalkig: Zoisit  | Marmor: kalkig   | 0 |  0 |  Pliensbachien     | Pliensbachien   | Lias-Dogger in neritischer Fazies  |
+|15202368 |Nufenen-Zone: Sandstein | Sandstein: Quarz  | Schiefer: tonig-kalkig   | 0 |  0 |  Sinémurien     | Sinémurien   | Lias-Dogger in neritischer Fazies  |
+|15202369 |Nufenen-Zone: Granatschiefer | Schiefer: Glimmer-Granat  | 0   | 0 |  0 |  Sinémurien     | Rhétien   | Lias-Dogger in neritischer Fazies  |
+|15202370 |Stgir-Fm.: Unterer Teil | Tonstein: schiefrig  | Kalkstein: Bioklasten   | Kalkstein: sandig |  Stgir-Formation |  Sinémurien     | Rhétien   | Lias-Dogger in neritischer Fazies  |
+|15202371 |Stgir-Fm.: Oberer Teil | Sandstein: Quarz  | Kalkstein: sandig-spätig   | Tonstein: schiefrig |  Stgir-Formation |  Pliensbachien     | Sinémurien   | Lias-Dogger in neritischer Fazies  |
+|15202372 |Inferno-Fm.: Oberer Teil: Runcaleida-Sch. | Sandstein: Quarz  | Kalkstein: Bioklasten   | Tonstein: schiefrig |  Runcaldeida-Schichten |  Toarcien     | Pliensbachien   | Lias-Dogger in neritischer Fazies  |
+|15202373 |Inferno-Fm.: Unterer Teil: Riein-Sch. | Kalkstein: sandig  | 0   | 0 |  Riein-Schichten |  Pliensbachien     | Pliensbachien   | Lias-Dogger in neritischer Fazies  |
+|15202374 |Meierhof-Phyllit | Phyllit  | Schiefer: Serizit   | 0 |  Meierhof-Phyllit |  Permien     | Permien   | Spät- bis postvariszisches Grundgebirge  |
+|15202375 |Waltensburg-Verrucano | Rhyolith  | Sandstein   | Konglomerat |  Waltensburg-Verrucano |  Permien     | Permien   | Spät- bis postvariszisches Grundgebirge  |
+|15202376 |Ruinas Sandstein | Sandstein  | Rhyolith   | Tonstein |  Ruinas-Sandstein |  Permien     | Permien   | Spät- bis postvariszisches Grundgebirge  |
+|15202377 |Niederhorn-Fm.: Hohgant-Sandstein: Berglikehle-Bk. | Kalkstein: Bitumen  | Mergelstein: Kohle   | 0 |  Berglikehle-Bank |  Priabonien     | Priabonien   | «Nummulitikum»  |
+|15202378 |Rossplatten-Diorit | Diorit  | Granit   | 0 |  Rossplatten-Diorit |  Pennsylvanien     | Pennsylvanien   | Mittelvariszisches Grundgebirge  |
+|15202379 |Schöllenen-Diorit | Diorit  | 0   | 0 |  Schöllenen-Diorit |  Pennsylvanien tardif     | Pennsylvanien moyen   | Mittelvariszisches Grundgebirge  |
+|15202380 |Amden-Fm.: Leist-Mergel: Grotzen-Austernbank | Kalkstein: siltig: Bioklasten  | 0   | 0 |  Grotzen-Austernbank |  Campanien     | Santonien   | Post-Rift Mesozoikum in pelagischer Fazies  |
+|15202381 |Tierwis-Fm.: Hurst-Mergel | Mergelstein  | Kalkstein: mergelig   | 0 |  Hurst-Mergel |  Barrémien     | Barrémien   | «Urgonien»  |
+|15202382 |Helvetischer Kieselkalk: Palis-Bk. | Kalkstein: spätig: Echinodermen  | Kalkstein: kieselig   | 0 |  Palis-Bank |  Hauterivien     | Valanginien   | Post-Rift Mesozoikum in Plattform-Fazies  |
+|15202383 |Öhrli-Fm.: Oberer-Öhrlikalk | Kalkstein: Bioklasten-Ooide  | Kalkstein: spätig   | 0 |  «Oberer Öhrlikalk» |  Valanginien     | Berriasien   | Post-Rift Mesozoikum in Plattform-Fazies  |
+|15202384 |Öhrli-Fm.: Oberer-Öhrlimergel | Mergelstein: kalkig: Bioklasten  | 0   | 0 |  «Oberer Öhrlimergel» |  Berriasien     | Berriasien   | Post-Rift Mesozoikum in Plattform-Fazies  |
+|15202385 |Öhrli-Fm.: Unterer-Öhrlikalk | Kalkstein: sandig  | 0   | 0 |  «Unterer Öhrlikalk» |  Berriasien     | Berriasien   | Post-Rift Mesozoikum in Plattform-Fazies  |
+|15202386 |Spitzmeilen-Fm.: Oberer Teil | Kalkstein: sandig-spätig  | Kalkstein: kieselig   | Sandstein: kalkig |  Spitzmeilen-Formation |  Pliensbachien     | Sinémurien   | Lias-Dogger in neritischer Fazies  |
+|15202387 |Spitzmeilen-Fm.: Unterer Teil | Sandstein: Quarz  | Sandstein: kalkig   | Kalkstein: sandig: Eisenooide |  Spitzmeilen-Formation |  Sinémurien     | Sinémurien   | Lias-Dogger in neritischer Fazies  |
+|15202388 |Spitzmeilen-Fm.: Basaler Teil | Sandstein: Quarz  | Tonstein: schiefrig   | 0 |  Spitzmeilen-Formation |  Sinémurien     | Sinémurien   | Lias-Dogger in neritischer Fazies  |
+|15202389 |Prodkamm-Fm.: Oberer Teil | Tonstein: schiefrig  | Sandstein: kalkig   | Sandstein: Quarz |  Prodkamm-Formation |  Sinémurien     | Sinémurien   | Lias-Dogger in neritischer Fazies  |
+|15202390 |Prodkamm-Fm.: Mittlerer Teil | Tonstein: schiefrig  | Sandstein: kalkig   | Kalkstein: sandig |  Prodkamm-Formation |  Sinémurien     | Sinémurien   | Lias-Dogger in neritischer Fazies  |
+|15202391 |Prodkamm-Fm.: Unterer Teil | Kalkstein: Ooide  | Mergelstein   | Kalkstein: Bioklasten |  Prodkamm-Formation |  Sinémurien     | Sinémurien   | Lias-Dogger in neritischer Fazies  |
+|15202392 |Sandpass-Fm. | Schiefer  | Phyllit   | 0 |  Sandpass-Formation |  Artinskien     | Artinskien   | Spät- bis postvariszisches Grundgebirge  |
+|15202393 |Sanetsch-Fm.: Diablerets-Mb.: Roc-Champion-Konglomerat | Konglomerat  | 0   | 0 |  Roc-Champion-Konglomerat |  Priabonien     | Priabonien   | «Nummulitikum»  |
+|15202394 |Membre du Spirstock | Sandstein: Quarz  | Mergelstein   | 0 |  Spirstock-Member |  Priabonien     | Priabonien   | Syn-Kollision  |
+|15202395 |«Roter Seewenkalk» | Kalkstein: mikritisch  | 0   | 0 |  «Roter Seewenkalk» |  Turonien     | Turonien   | Post-Rift Mesozoikum in pelagischer Fazies  |
+|15200161 |Crétacé du Jura | Kalkstein  | Mergelstein   | Sandstein: kalkig |  0 |  Coniacien     | Berriasien   | Post-Rift  |
+|15200162 |Jurassique du Jura | Kalkstein  | Mergelstein   | Tonstein |  0 |  Tithonien     | Hettangien   | Sedimentbedeckung  |
+|15200163 |Trias du Jura | Dolomitstein  | Mergelstein   | Evaporit |  0 |  Rhétien     | Olénékien   | Prä-Rift  |
+|15200175 |Argile à pisolites ferrugineuses | Gestein: residual-tonig: Eisenpisoide  | 0   | 0 |  0 |  Rupélien     | Lutétien   | Siderolithikum  |
+|15200176 |Argile à bolus | Gestein: residual-tonig: Limonit  | 0   | 0 |  0 |  Priabonien     | Bartonien   | Siderolithikum  |
+|15200177 |Hupper | Gestein: residual-sandig: Quarz  | Gestein: residual-tonig: Kaolinit   | 0 |  0 |  Priabonien     | Eocène moyen   | Siderolithikum  |
+|15200178 |Marne à Homomyes | Mergelstein: Bioklasten  | Kalkstein: spätig   | 0 |  «Homomya-Mergel» |  Bajocien     | Bajocien   | Lias-Dogger in neritischer Fazies  |
+|15200179 |Grès des Vosges | Sandstein  | 0   | 0 |  Vogesen-Sandstein |  Olénékien     | Olénékien   | Buntsandstein  |
+|15200180 |Sable siliceux vitrifiable | Gestein: residual-sandig: Quarz  | 0   | 0 |  0 |  Priabonien     | Eocène moyen   | Siderolithikum  |
+|15200181 |Membre de Mussel | Sandstein: Glaukonit  | 0   | 0 |  Mussel-Member |  Albien     | Aptien   | «Gault»  |
+|15200182 |Membre de la Fulie | Kalkstein: mergelig  | Mergelstein   | 0 |  Fulie-Member |  Albien     | Aptien   | «Gault»  |
+|15200183 |Marne des Uttins | Mergelstein: Bioklasten  | Mergelstein: kalkig   | 0 |  Les-Uttins-Mergel |  Hauterivien     | Hauterivien   | Post-Rift Mesozoikum in Plattform-Fazies  |
+|15200184 |Zone marno-calcaire (Fm. du Grand Essert) | Mergelstein: Bioklasten  | Kalkstein: spätig: Glaukonit-Chert   | 0 |  L&#39;Ecluse-Mergelkalk |  Hauterivien     | Hauterivien   | Post-Rift Mesozoikum in Plattform-Fazies  |
+|15200185 |Marne à Bryozoaires | Mergelstein: Bioklasten  | 0   | 0 |  «Bryozoen-Mergel» |  Valanginien     | Valanginien   | Post-Rift Mesozoikum in Plattform-Fazies  |
+|15200186 |Calcaire saccharoïde | Kalkstein: kristallin  | Dolomitstein   | Rauwacke |  Twannbach-Formation |  Tithonien     | Tithonien   | Malm  |
+|15200187 |Membre de Chevenez | Kalkstein: Bioklasten  | Mergelstein: Bioklasten   | 0 |  Chevenez-Member |  Kimméridgien     | Kimméridgien   | Malm  |
+|15200188 |Formation de Balsthal | Kalkstein: Ooide  | Kalkstein: Onkoide   | Kalkstein: mikritisch |  Balsthal-Formation |  Kimméridgien     | Oxfordien   | Malm  |
+|15200189 |Membre de Ste-Vérène | Kalkstein: arenitisch: Bioklasten  | Kalkstein: kreidig   | 0 |  Verena-Member |  Kimméridgien     | Oxfordien   | Malm  |
+|15200190 |Membre de la Holzflue | Kalkstein: Ooide  | Kalkstein: mikritisch   | 0 |  Holzflue-Member |  Kimméridgien     | Oxfordien   | Malm  |
+|15200191 |Membre de Laufon | Kalkstein: mikritisch  | Kalkstein: Ooide   | Kalkstein: Onkoide |  Laufen-Member |  Oxfordien     | Oxfordien   | Malm  |
+|15200192 |Membre d&#39;Olten | Kalkstein: mikritisch: Chert  | Kalkstein: Korallen   | 0 |  Olten-Member |  Oxfordien     | Oxfordien   | Malm  |
+|15200193 |Membre du Steinibach | Kalkstein: Ooide  | 0   | 0 |  Steinibach-Member |  Oxfordien     | Oxfordien   | Malm  |
+|15200194 |Grüne Mumienbank | Kalkstein: mikritisch: Onkoide  | 0   | 0 |  «Grüne Mumienbank» |  Oxfordien     | Oxfordien   | Malm  |
+|15200195 |Banc à Pecten (Fm. de Wildegg) | Kalkstein: mergelig: Bioklasten  | Kalkstein: mikritisch   | 0 |  «Pecten-Bank» |  Oxfordien     | Oxfordien   | Malm  |
+|15200196 |Oolite à Ferrugineus | Mergelstein: Bioklasten-Ooide  | Mergelstein: kalkig   | 0 |  «Ferrugineus-Oolith» |  Bathonien     | Bathonien   | Lias-Dogger in neritischer Fazies  |
+|15200197 |Calcaire à coraux de Wittnau | Kalkstein: Korallen  | 0   | 0 |  Wittnau-Korallenkalk |  Bajocien     | Bajocien   | Lias-Dogger in neritischer Fazies  |
+|15200198 |Marne du Furcil | Mergelstein  | Kalkstein: mergelig   | 0 |  Furcil-Mergel |  Bathonien     | Bajocien   | Lias-Dogger in neritischer Fazies  |
+|15200199 |Couches à Maeandrina | Mergelstein: Bioklasten-Ooide  | 0   | 0 |  «Maeandrina-Schichten» |  Bajocien     | Bajocien   | Lias-Dogger in neritischer Fazies  |
+|15200200 |Calcaire à coraux de la Gisliflue | Kalkstein: Korallen  | Kalkstein: Bioklasten   | 0 |  Gisliflue-Korallenkalk |  Bajocien     | Bajocien   | Lias-Dogger in neritischer Fazies  |
+|15200201 |Couches à Acuminata inférieures | Kalkstein: Bioklasten  | Kalkstein: Ooide   | Mergelstein |  «Untere Acuminata-Schichten» |  Bajocien     | Bajocien   | Lias-Dogger in neritischer Fazies  |
+|15200202 |Couches à Parkinsoni | Mergelstein  | Kalkstein: Bioklasten   | 0 |  «Parkinsoni-Schichten» (Klingnau-Fm.) |  Bajocien     | Bajocien   | Lias-Dogger in neritischer Fazies  |
+|15200203 |Couches à Pecten dewalquei | Kalkstein  | Kalkstein: mergelig: Bioklasten   | 0 |  «Couches à Pecten dewalquei» |  Bajocien     | Bajocien   | Lias-Dogger in neritischer Fazies  |
+|15200204 |Couches de Brot | Mergelstein: kalkig: Bioklasten  | 0   | 0 |  Brot-Schichten |  Bajocien     | Bajocien   | Lias-Dogger in neritischer Fazies  |
+|15200205 |Banc à Comptum | Kalkstein: Eisenooide  | Kalkstein: spätig   | 0 |  «Comptum-Bank» (Passwang-Fm.) |  Aalénien     | Aalénien   | Lias-Dogger in neritischer Fazies  |
+|15200206 |Membre de Seebi | Sandstein: dolomitisch  | Dolomitstein   | Tonstein |  Seebi-Member |  Norien     | Norien   | Keuper  |
+|15200207 |Membre de la Gruhalde | Mergelstein: dolomitisch  | 0   | 0 |  Gruhalde-Member |  Norien     | Carnien   | Keuper  |
+|15200208 |Membre de Berlingen | Sandstein: kalkig  | 0   | 0 |  Berlingen-Member |  Carnien     | Carnien   | Keuper  |
+|15200209 |Membre de Gansingen | Dolomitstein: stromatolithisch  | Mergelstein: dolomitisch   | Evaporit: Sulfat |  Gansingen-Member |  Carnien     | Carnien   | Keuper  |
+|15200210 |Membre de l&#39;Ergolz | Mergelstein: siltig-dolomitisch  | Dolomitstein   | Sandstein |  Ergolz-Member |  Carnien     | Carnien   | Keuper  |
+|15200211 |Banc de Kaisten | Dolomitstein: Ooide  | 0   | 0 |  Kaisten-Bank |  Ladinien     | Ladinien   | Muschelkalk  |
+|15200212 |Banc d&#39;Eptingen | Dolomitstein: Ooide-Chert  | Kalkstein: Ooide   | 0 |  Eptingen-Bank |  Ladinien     | Ladinien   | Muschelkalk  |
+|15200213 |Banc du Dünnlenberg | Mergelstein  | 0   | 0 |  Dünnlenberg-Bank |  Anisien     | Anisien   | Muschelkalk  |
+|15200214 |Banc de Saalhof | Kalkstein: Bioklasten  | 0   | 0 |  Saalhof-Bank |  Anisien     | Anisien   | Muschelkalk  |
+|15200215 |Banc de Fützen | Kalkstein: Ooide-Chert  | 0   | 0 |  Fützen-Bank |  Anisien     | Anisien   | Muschelkalk  |
+|15200216 |Dolomitzone (Fm. de Zeglingen) | Dolomitstein: stromatolithisch: Chert  | 0   | 0 |  «Dolomitzone» (Zeglingen-Fm.) |  Anisien     | Anisien   | Muschelkalk  |
+|15200217 |Oberer Schuttfächer (Fm. de Weitenau) | Sandstein: Feldspat  | Konglomerat   | 0 |  «Oberer Schuttfächer» (Weitenau-Fm.) |  Lopingien     | Guadalupien   | Spät- bis postvariszisches Grundgebirge  |
+|15200218 |Playa-Serie (Fm. de Weitenau) | Sandstein: tonig: Glimmer  | Sandstein: tonig: Feldspat   | 0 |  «Playa-Serie» (Weitenau-Fm.) |  Lopingien     | Cisuralien   | Spät- bis postvariszisches Grundgebirge  |
+|15200219 |Unterer Schuttfächer (Fm. de Weitenau) | Sandstein: Feldspat  | Konglomerat   | Tonstein |  «Unterer Schuttfächer» (Weitenau-Fm.) |  Cisuralien     | Cisuralien   | Spät- bis postvariszisches Grundgebirge  |
+|15200220 |Roches plutoniques tardi- à postvarisques de la Forêt Noire | Gestein: plutonisch  | 0   | 0 |  0 |  Cisuralien     | Pennsylvanien   | Spät- bis postvariszisches Grundgebirge  |
+|15200221 |Permo-Carbonifère du NW de la Suisse | Sandstein  | Konglomerat   | Tonstein |  0 |  Permien     | Carbonifère   | Spät- bis postvariszisches Grundgebirge  |
+|15200222 |Quarzporphyre du Stockberg | Rhyolith  | 0   | 0 |  Stockberg-Rhyolith |  Cisuralien     | Pennsylvanien   | Spät- bis postvariszisches Grundgebirge  |
+|15200223 |Granite de la Bärhalde | Granit: Biotit-Muskovit  | 0   | 0 |  Bärhalde-Granit |  Pennsylvanien     | Pennsylvanien   | Spät- bis postvariszisches Grundgebirge  |
+|15200224 |Granite du Schluchsee | Granit: Biotit-Muskovit  | 0   | 0 |  Schluchsee-Granit |  Pennsylvanien     | Pennsylvanien   | Spät- bis postvariszisches Grundgebirge  |
+|15200225 |Granite de Säckingen | Granit: aplitisch  | 0   | 0 |  Säckingen-Granit |  Pennsylvanien     | Pennsylvanien   | Spät- bis postvariszisches Grundgebirge  |
+|15200226 |Jüngere Flussablagerungen (Fm. de Weiach) | Sandstein: Feldspat  | 0   | 0 |  «Jüngere Flussablagerungen» (Weiach-Fm.) |  Cisuralien     | Cisuralien   | Spät- bis postvariszisches Grundgebirge  |
+|15200227 |Seeablagerungen (Fm. de Weiach) | Tonstein  | 0   | 0 |  «Seeablagerungen» (Weiach-Fm.) |  Cisuralien     | Cisuralien   | Spät- bis postvariszisches Grundgebirge  |
+|15200228 |Ältere Flussablagerungen (Fm. de Weiach) | Sandstein: Feldspat  | Tonstein   | Konglomerat |  «Ältere Flussablagerungen» (Weiach-Fm.) |  Cisuralien     | Pennsylvanien   | Spät- bis postvariszisches Grundgebirge  |
+|15200229 |Kohle-Serie (Fm. de Weiach) | Sandstein  | Tonstein: Kohle   | 0 |  «Kohle-Serie» (Weiach-Fm.) |  Pennsylvanien tardif     | Pennsylvanien tardif   | Spät- bis postvariszisches Grundgebirge  |
+|15200230 |Roches plutoniques éo-variques de la Forêt Noire | Gestein: plutonisch  | 0   | 0 |  0 |  Mississippien     | Dévonien tardif   | Frühvariszisches Grundgebirge  |
+|15200231 |Granite de l&#39;Albtal | Granit: porphyrisch: Biotit  | 0   | 0 |  Albtal-Granit |  Mississippien     | Mississippien   | Frühvariszisches Grundgebirge  |
+|15200232 |Granite de Malsburg | Granit: Biotit  | 0   | 0 |  Malsburg-Granit |  Mississippien     | Mississippien   | Frühvariszisches Grundgebirge  |
+|15200233 |Granite du Blauen | Granit: Biotit  | 0   | 0 |  Blauen-Granit |  Mississippien     | Mississippien   | Frühvariszisches Grundgebirge  |
+|15200234 |Granite du Klemmbach | Granit: Biotit-Muskovit  | 0   | 0 |  Klemmbach-Granit |  Mississippien     | Dévonien tardif   | Frühvariszisches Grundgebirge  |
+|15203148 |Série basale (Fm. du Reiselsberg) | Kalkstein: mergelig  | Tonstein   | Sandstein: Glimmer |  Reiselsberg-Formation |  Turonien     | Turonien   | Flysch  |
+|15203149 |Flysch du Liechtenstein | Kalkstein: kieselig: Glaukonit  | Tonstein   | 0 |  0 |  Paléogène     | Crétacé précoce   | Flysch  |
+|15203150 |Flysch de Triesen | Kalkstein: kieselig  | Tonstein   | Brekzie: polymikt |  Triesen-Formation |  Yprésien     | Maastrichtien   | Flysch  |
+|15203151 |Flysch de Vaduz | Kalkstein: kieselig: Glaukonit  | Mergelstein   | Sandstein |  0 |  Maastrichtien     | Turonien   | Flysch  |
+|15203152 |Formation de l&#39;Eichholztobel | Kalkstein: kieselig: Glaukonit  | Mergelstein   | 0 |  Eichholztobel-Formation |  Santonien     | Coniacien   | Flysch  |
+|15203153 |Formation de Schloss | Sandstein: Glaukonit  | Kalkstein: kieselig: Glaukonit   | 0 |  Schloss-Formation |  Turonien     | Turonien   | Flysch  |
+|15203154 |Formation de Gaschlo | Sandstein: Quarz  | Kalkstein: kieselig: Glaukonit   | Mergelstein |  Gaschlo-Formation |  Maastrichtien     | Coniacien   | Flysch  |
+|15203155 |Calcaire de la Leimern | Kalkstein: mikritisch  | Mergelstein: kalkig   | 0 |  Leimern-Schichten |  Santonien     | Coniacien   | Couches Rouges  |
+|15203156 |Mélange de la Pierre Avoi | Schiefer  | Kalkstein: mergelig   | Brekzie |  Pierre-Avoi-Melange |  Rupélien     | Eocène moyen   | Mélange  |
+|15203157 |Formation de St-Christophe | Kalkstein: sandig: Glimmer  | Schiefer: kalkig   | 0 |  St-Christophe-Formation |  Crétacé tardif     | Crétacé tardif   | Post-Rift Mesozoikum in pelagischer Fazies  |
+|15203158 |Formation des Marmontains | Schiefer: tonig-kieselig: Bitumen  | Quarzit   | 0 |  Marmontains-Formation |  Cénomanien     | Aptien   | Post-Rift Mesozoikum in pelagischer Fazies  |
+|15203159 |Formation de l&#39;Aroley | Kalkstein: sandig  | Brekzie: kalkig   | 0 |  Aroley-Formation |  Aptien     | Barrémien   | Post-Rift Mesozoikum in pelagischer Fazies  |
+|15203160 |Couches de la Peula | Quarzit  | Sandstein: kalkig   | Schiefer: tonig |  Peula-Schichten |  Crétacé précoce     | Crétacé précoce   | Sedimentbedeckung  |
+|15203161 |Couches du Versoyen | Basalt  | Gabbro   | Schiefer |  Versoyen-Schichten |  Crétacé     | Crétacé   | Sedimentbedeckung  |
+|15203162 |Schistes du Prättigau | Schiefer  | 0   | 0 |  0 |  Yprésien     | Valanginien   | Sedimentbedeckung  |
+|15203163 |Formation du Ruchberg | Sandstein: Feldspat  | Schiefer: tonig   | Brekzie: polymikt |  Ruchberg-Formation |  Yprésien     | Yprésien   | Sedimentbedeckung  |
+|15203164 |Formation de l&#39;Oberälpli | Tonstein: schiefrig  | Kalkstein: sandig-kieselig   | Sandstein: Quarz-Glaukonit |  Oberälpli-Formation |  Thanétien     | Danien   | Sedimentbedeckung  |
+|15203165 |Formation de l&#39;Eggberg | Kalkstein: mergelig-schiefrig  | Brekzie: polymikt   | Kalkstein: sandig |  Eggberg-Formation |  Maastrichtien     | Maastrichtien   | Sedimentbedeckung  |
+|15203166 |Formation du Gyrenspitz | Brekzie: polymikt  | Kalkstein: sandig-kieselig   | Mergelstein: schiefrig |  Gyrenspitz-Formation |  Maastrichtien     | Campanien   | Sedimentbedeckung  |
+|15203167 |Formation de la Fadura | Kalkstein: mergelig-schiefrig  | Kalkstein: sandig-kieselig   | Brekzie |  Fadura-Formation |  Santonien     | Coniacien   | Sedimentbedeckung  |
+|15203168 |Formation du Pfävigrat | Kalkstein: sandig-kieselig  | Mergelstein   | Brekzie: polymikt |  Pfävigrat-Formation |  Turonien     | Turonien   | Sedimentbedeckung  |
+|15203169 |Formation de la Sassauna | Kalkstein: sandig-kieselig  | Tonstein: schiefrig   | Mergelstein: schiefrig |  Sassauna-Formation |  Cénomanien     | Cénomanien   | Sedimentbedeckung  |
+|15203170 |Formation de Valzeina | Tonstein: schiefrig  | Kalkstein: sandig   | 0 |  Valzeina-Formation |  Albien     | Aptien   | Sedimentbedeckung  |
+|15203171 |Formation de la Klus | Kalkstein: sandig-kieselig  | Kalkstein: spätig   | Tonstein: schiefrig |  Klus-Formation |  Barrémien     | Valanginien   | Sedimentbedeckung  |
+|15203172 |Flysch du Tomül | Schiefer: sandig-kalkig  | Schiefer: tonig   | 0 |  Stätzerhorn-Formation |  Eocène     | Crétacé tardif   | Flysch  |
+|15203173 |Hauptkonglomerat (Flysch du Tomül) | Konglomerat: kalkig  | 0   | 0 |  «Hauptkonglomerat» |  Coniacien     | Coniacien   | Flysch  |
+|15203174 |Formation du Carnusa(horn) | Sandstein: kalkig: Quarz  | Schiefer: tonig   | Konglomerat |  Carnusa-Formation |  Turonien     | Turonien   | Sedimentbedeckung  |
+|15203175 |Calcaire de Safien | Kalkstein: sandig  | 0   | 0 |  Safien-Kalk |  Turonien     | Turonien   | Sedimentbedeckung  |
+|15203176 |Calcaire de la Nolla | Schiefer: sandig-kalkig  | Schiefer: tonig   | 0 |  Nolla-Kalkschiefer |  Cénomanien     | Cénomanien   | Sedimentbedeckung  |
+|15203177 |Argillite de la Nolla | Schiefer: tonig: Bitumen  | Kalkstein: sandig   | 0 |  Nolla-Tonschiefer |  Albien     | Aptien   | Sedimentbedeckung  |
+|15203178 |Formation du Bärenhorn | Schiefer: sandig-tonig  | Schiefer: kalkig   | Prasinit |  Bärenhorn-Formation |  Barrémien     | Berriasien   | Sedimentbedeckung  |
+|15203179 |Roches vertes (Grava/Tomül) | Prasinit  | Basalt   | 0 |  0 |  Jurassique tardif     | Jurassique tardif   | Sedimentbedeckung  |
+|15203180 |Mélange du Tomül | Brekzie  | Quarzit   | Amphibolit |  0 |  Mésozoïque     | Mésozoïque   | Mélange  |
+|15203181 |Série du Tounô | Marmor  | Schiefer: tonig   | Schiefer: sandig-kalkig |  0 |  Eocène     | Trias moyen   | Sedimentbedeckung  |
+|15203182 |Série du Barrhorn | Schiefer: kalkig  | Marmor   | Dolomitstein |  0 |  Eocène     | Mésozoïque   | Sedimentbedeckung  |
+|15203183 |Formation du Bruneggjoch | Quarzit  | Konglomerat: Quarz   | 0 |  Bruneggjoch-Formation |  Trias précoce     | Lopingien   | Detritische Trias  |
+|15203184 |Membre de Sous le Rocher | Quarzit  | Konglomerat: Quarz   | Sandstein: kalkig |  Sous-le-Rocher-Member |  Trias précoce     | Lopingien   | Detritische Trias  |
+|15203185 |Gneiss oeillé de Randa | Granit: porphyrisch  | Gneis: augig   | 0 |  Randa-Augengneis |  Guadalupien     | Cisuralien   | Variszisches Grundgebirge  |
+|15203186 |Formation du Col de Chassoure | Schiefer: Quarz-Serizit  | Quarzit   | Gestein: vulkanisch |  Col-de-Chassoure-Formation |  Lopingien     | Cisuralien   | Grundgebirge  |
+|15203187 |Membre de la Gouille Verte | Schiefer: Quarz-Serizit  | Schiefer: Serizit-Chlorit   | 0 |  Gouille-Verte-Member |  Lopingien     | Lopingien   | Grundgebirge  |
+|15203188 |Membre de la Matse | Schiefer: Serizit  | Gestein: vulkanisch   | Dolomitstein |  Matse-Member |  Lopingien     | Lopingien   | Grundgebirge  |
+|15203189 |Membre de la Dent de Nendaz | Konglomerat: polymikt  | Sandstein   | Schiefer: tonig |  Dent-de-Nendaz-Member |  Lopingien     | Cisuralien   | Grundgebirge  |
+|15203190 |Membre du Goli d&#39;Aget | Konglomerat  | Sandstein: Feldspat   | Schiefer: Chlorit |  Goli-d&#39;Aget-Member |  Guadalupien     | Cisuralien   | Grundgebirge  |
+|15203191 |Membre de la Mondra | Schiefer: Quarz-Chlorit  | Schiefer: Anthrazit   | 0 |  Mondra-Member |  Cisuralien     | Cisuralien   | Grundgebirge  |
+|15203192 |Membre de Cleuson | Rhyolith  | Konglomerat   | Schiefer: Quarz |  Cleuson-Member |  Cisuralien     | Cisuralien   | Grundgebirge  |
+|15203193 |Formation du Métailler | Gneis: Chlorit  | Schiefer: Chlorit   | Prasinit |  Métailler-Formation |  Frühes Ordovizium     | Cambrien   | Grundgebirge  |
+|15203194 |Formation du Distulberg | Schiefer: Glimmer  | Prasinit: Albit-Chlorit   | Gneis |  Distulberg-Formation |  Cambrien     | Cambrien   | Grundgebirge  |
+|15203195 |Métagranophyre de Thyon | Granophyr  | 0   | 0 |  Thyon-Metagranophyr |  Cambrien     | Cambrien   | Grundgebirge  |
+|15203196 |Métagranite du Mont Rogneux | Granit: Biotit  | 0   | 0 |  Mont-Rogneux-Metagranit |  Cambrien     | Cambrien   | Grundgebirge  |
+|15203197 |Formation de Lirec | Gneis: augig  | Gneis: gebändert   | Gestein: vulkanisch |  Lirec-Formation |  Cambrien     | Cambrien   | Grundgebirge  |
+|15203198 |Formation de l&#39;Adlerflüe | Amphibolit: gebändert  | Gneis   | Schiefer: augig: Glimmer |  Adlerflüe-Formation |  Cambrien     | Protérozoïque   | Grundgebirge  |
+|15203199 |Complexe de l&#39;Ergischhorn | Gneis  | Amphibolit   | 0 |  Ergischhorn-Komplex |  Protérozoïque     | Protérozoïque   | Grundgebirge  |
+|15203200 |Flysch du Gelbhorn | Tonstein: schiefrig  | Marmor: kalkig: Serizit   | 0 |  Gelbhorn-Flysch |  Eocène     | Crétacé   | Flysch  |
+|15203201 |Groupe de l&#39;Obrist | Marmor: kalkig: Serizit  | Quarzit   | Schiefer: tonig |  Obrist-Formation |  Crétacé     | Jurassique tardif   | Sedimentbedeckung  |
+|15203202 |Brèche du Vizan | Brekzie: dolomitisch  | Sandstein: Feldspat   | 0 |  Vizan-Brekzie |  Albien     | Toarcien   | Sedimentbedeckung  |
+|15203203 |Marbre de la Tschera | Marmor: kalkig  | 0   | 0 |  Tschera-Marmor |  Tithonien     | Oxfordien   | Sedimentbedeckung  |
+|15203204 |Brèche du Wissberg | Brekzie: kalkig-dolomitisch  | Marmor: kalkig   | 0 |  Wissberg-Brekzie |  Tithonien     | Oxfordien   | Sedimentbedeckung  |
+|15203205 |Groupe de Nisellas | Schiefer: tonig  | Schiefer: sandig-kalkig   | Brekzie: kalkig-dolomitisch |  Nisellas-Formation |  Callovien     | Aalénien   | Sedimentbedeckung  |
+|15203206 |Groupe de la Tumpriv | Rauwacke  | Evaporit: Gips   | Dolomitstein |  Tumpriv-Formation |  Toarcien     | Carnien   | Sedimentbedeckung  |
+|15203207 |Groupe du Kalkberg | Dolomitstein  | Kalkstein   | 0 |  Kalkberg-Formation |  Ladinien     | Anisien   | Sedimentbedeckung  |
+|15200235 |Randgranit | Granit: Biotit-Muskovit  | 0   | 0 |  «Randgranit» |  Mississippien     | Mississippien   | Frühvariszisches Grundgebirge  |
+|15200236 |Granite des Münsterhalden | Granit  | 0   | 0 |  Münsterhalden-Granit |  Mississippien     | Mississippien   | Frühvariszisches Grundgebirge  |
+|15200237 |Granite de Schönau-Herrenschwand | Granit  | 0   | 0 |  Schönau-Herrenschwand-Granit |  Mississippien     | Dévonien tardif   | Frühvariszisches Grundgebirge  |
+|15200238 |Granite de St-Blasien | Granit: Biotit  | 0   | 0 |  St.-Blasien-Granit |  Mississippien     | Mississippien   | Frühvariszisches Grundgebirge  |
+|15200239 |Granite de Mambach | Granit  | Granodiorit   | 0 |  Mambach-Granit |  Mississippien     | Dévonien tardif   | Frühvariszisches Grundgebirge  |
+|15200240 |Granite de Lenzkirch-Steina | Granit: Biotit  | 0   | 0 |  Lenzkirch-Steina-Granit |  Mississippien     | Dévonien tardif   | Frühvariszisches Grundgebirge  |
+|15200241 |Granite du Hauenstein | Granit  | 0   | 0 |  Hauenstein-Granit |  Mississippien     | Dévonien tardif   | Frühvariszisches Grundgebirge  |
+|15200242 |Granite de Böttstein | Granit: porphyrisch: Biotit  | 0   | 0 |  Böttstein-Granit |  Mississippien     | Mississippien   | Frühvariszisches Grundgebirge  |
+|15200243 |Roches sédimentaires et volcaniques anté- à éo-varisques de la Forêt Noire | Gestein: sedimentär  | 0   | 0 |  0 |  Mississippien     | Dévonien   | Prä- bis frühvariszisches Grundgebirge  |
+|15200245 |Socle polycyclique anté-varisque de la Forêt Noire | Gneis: migmatitisch  | Gneis: magmatisch   | 0 |  0 |  Paléozoïque     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15200246 |Orthogneiss de la Forêt Noire | Gneis: magmatisch  | 0   | 0 |  0 |  Paléozoïque     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15200247 |Complexe gneissique de Todtmoos-Horbach | Gneis: migmatitisch  | Gneis: Hornblende   | 0 |  Todtmoos-Horbach-Gneiskomplex |  Paléozoïque     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15200248 |Complexe gneissique du Murgtal | Gneis: migmatitisch: Cordierit  | 0   | 0 |  Murgtal-Gneiskomplex |  Paléozoïque     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15200249 |Complexe gneissique de Laufenburg | Gneis: migmatitisch  | 0   | 0 |  Laufenburg-Gneiskomplex |  Paléozoïque     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15200250 |Migmatites de la Forêt Noire | Gneis: migmatitisch  | 0   | 0 |  0 |  Paléozoïque     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15200251 |Complexe du Wiesental-Wehratal | Gneis: migmatitisch  | 0   | 0 |  Wiesen-Wehratal-Gneiskomplex |  Paléozoïque     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15200252 |Syénite du Wehratal | Syenit  | 0   | 0 |  Wehratal-Syenit |  Paléozoïque     | Protérozoïque   | Grundgebirge  |
+|15200253 |Roches vertes de la Forêt Noire | Amphibolit  | 0   | 0 |  0 |  Paléozoïque     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15200254 |Molasse | Sandstein  | Mergelstein   | Konglomerat |  0 |  Serravallien     | Rupélien   | Molasse  |
+|15200255 |Molasse d&#39;eau douce supérieure (OSM) | Mergelstein  | Sandstein   | Konglomerat |  0 |  Serravallien     | Burdigalien   | OSM  |
+|15200256 |Couches de Tannenberg | Sandstein  | Konglomerat   | 0 |  Tannenberg-Schichten |  Tortonien     | Serravallien   | Molasse  |
+|15200257 |Couches du Pfänder | Konglomerat  | Sandstein   | Mergelstein: tonig |  Pfänder-Formation |  Serravallien     | Burdigalien tardif   | Molasse  |
+|15200258 |Formation du Napf | Konglomerat: polymikt: Quarz  | Sandstein: Feldspat   | Mergelstein |  Napf-Formation |  Langhien     | Burdigalien   | OSM  |
+|15200259 |Niveau charbonneux du Blapbach | Mergelstein: Kohle  | 0   | 0 |  Blapbach-Kohleflöz |  Burdigalien     | Burdigalien   | OSM  |
+|15200260 |Membre d&#39;Eimätteli | Mergelstein: Glimmer  | Konglomerat: ophiolithisch   | Siltstein: tonig |  Eimätteli-Member |  Burdigalien     | Burdigalien   | OSM  |
+|15200261 |Poudingue de la Schüpferegg | Konglomerat: polymikt: Quarz  | Sandstein   | Mergelstein |  Schüpferegg-Nagelfluh |  Burdigalien     | Burdigalien   | Molasse  |
+|15200262 |OSM-II | Konglomerat  | Sandstein   | 0 |  0 |  Tortonien     | Langhien   | OSM  |
+|15200263 |Roches volcaniques du Hegau | Gestein: vulkanisch  | 0   | 0 |  0 |  Messinien     | Langhien   | Hegau-Vulkanismus  |
+|15200264 |Basalte du Hegau | Basalt  | 0   | 0 |  Höwenegg-Basalt |  Messinien     | Messinien   | Hegau-Vulkanismus  |
+|15200265 |Phonolite du Hegau | 15111372  | 0   | 0 |  Hohenwiel-Phonolith |  Tortonien     | Tortonien   | Hegau-Vulkanismus  |
+|15200266 |Tuffite du Hegau | Tuffit  | 0   | 0 |  Hegau-Tuffit |  Serravallien     | Langhien   | Hegau-Vulkanismus  |
+|15200267 |Poudingue du Hörnligipfel | Konglomerat  | Mergelstein   | Sandstein |  Hörnligipfel-Nagelfluh |  Tortonien     | Tortonien   | OSM  |
+|15200268 |Brèche de la Höchegg | Brekzie: sandig  | 0   | 0 |  Höchegg-Brekzie |  Serravallien     | Serravallien   | OSM  |
+|15200269 |Marne du Hörnligubel | Mergelstein  | Sandstein: mergelig   | Konglomerat |  Hörnligubel-Mergel |  Tortonien     | Serravallien   | OSM  |
+|15200270 |Couches du Tösswald | Konglomerat: kalkig-dolomitisch  | Mergelstein   | Sandstein |  Tösswald-Member |  Serravallien     | Langhien   | OSM  |
+|15200271 |Bentonite de Bischofszell | Bentonit  | 0   | 0 |  Bischofzell-Bentonit |  Langhien     | Langhien   | OSM  |
+|15200272 |Zone d&#39;Öhningen de la région du Hörnli | Mergelstein  | Siltstein: Kohle   | Sandstein |  Hörnli-Formation |  Langhien     | Langhien   | OSM  |
+|15200273 |Couches de Krinau | Konglomerat  | Mergelstein: Kohle   | Sandstein: Glimmer |  Krinau-Member |  Langhien     | Langhien   | OSM  |
+|15200274 |Formation du Glimmersand | Sandstein: Quarz-Glimmer  | 0   | 0 |  0 |  Tortonien     | Langhien   | OSM  |
+|15200275 |Calcaire d&#39;eau douce du Fellitobel | Kalkstein  | 0   | 0 |  Fellitobel-Süsswasserkalk |  Langhien     | Langhien   | OSM  |
+|15200276 |Couches de l&#39;Üetliberg | Konglomerat: kalkig-dolomitisch  | Mergelstein   | 0 |  Uetliberg-Formation |  Serravallien     | Serravallien   | OSM  |
+|15200277 |Poudingue de l&#39;Üetliberggipfel | Konglomerat: kalkig-dolomitisch  | 0   | 0 |  Uetliberggipfel-Nagelfluh |  Serravallien     | Serravallien   | OSM  |
+|15200278 |Poudingue de l&#39;Üetliberg | Mergelstein  | 0   | 0 |  Uetliberg-Mergel |  Serravallien     | Serravallien   | OSM  |
+|15200279 |Marne de la Falätschen | Mergelstein  | 0   | 0 |  Falätschen-Mergel |  Langhien     | Langhien   | OSM  |
+|15200280 |Couches du Pfannenstiel | Mergelstein  | Sandstein   | 0 |  Pfannenstiel-Formation |  Serravallien     | Serravallien   | OSM  |
+|15200281 |Couches de Zürich | Mergelstein  | Kalkstein   | 0 |  Zürich-Formation |  Langhien     | Langhien   | OSM  |
+|15200282 |Bentonite de Leimbach | Bentonit  | 0   | 0 |  Leimbach-Bentonit |  Langhien     | Langhien   | OSM  |
+|15200283 |Calcaire d&#39;eau douce du Rütschlibach-Riedhof | Kalkstein  | 0   | 0 |  Rütschlibach-Riedhof-Süsswasserkalk |  Langhien     | Langhien   | OSM  |
+|15200284 |Bentonite de Winterthur | Bentonit  | 0   | 0 |  Winterthur-Bentonit |  Langhien     | Langhien   | OSM  |
+|15200285 |Bentonite de l&#39;Aeugstertal | Bentonit  | 0   | 0 |  Aeugstertal-Bentonit |  Langhien     | Langhien   | OSM  |
+|15200286 |Calcaire d&#39;eau douce de l&#39;Äntlisberg-Doldertobel | Kalkstein: Bitumen  | 0   | 0 |  Äntlisberg-Doldertobel-Süsswasserkalk |  Langhien     | Langhien   | OSM  |
+|15200287 |Calcaire d&#39;eau douce du Wehrenbach-Höckler | Kalkstein  | Mergelstein: Bitumen   | 0 |  Wehrenbach-Höckler-Süsswasserkalk |  Langhien     | Langhien   | OSM  |
+|15200288 |Bentonite de Küsnacht | Bentonit  | 0   | 0 |  Küsnacht-Bentonit |  Langhien     | Langhien   | OSM  |
+|15200289 |Bentonite d&#39;Urdorf | Bentonit  | 0   | 0 |  Urdorf-Bentonit |  Langhien     | Langhien   | OSM  |
+|15200290 |Niveau repère de l&#39;Appenzellergranit | Konglomerat  | Sandstein: kalkig   | Siltstein: kalkig |  «Appenzellergranit-Leitniveau» |  Langhien     | Langhien   | OSM  |
+|15200291 |Conglomérat d&#39;Abtwil | Konglomerat  | 0   | 0 |  Abtwil-Konglomerat |  Langhien     | Langhien   | OSM  |
+|15200292 |Conglomérat d&#39;Hüllistein | Konglomerat: kalkig-dolomitisch  | Brekzie   | 0 |  Hüllistein-Konglomerat |  Langhien     | Langhien   | OSM  |
+|15200293 |Conglomérat de Degersheim | Konglomerat  | Brekzie   | Kalkstein |  Degersheim-Kalknagelfluh |  Langhien     | Langhien   | OSM  |
+|15200294 |Calcaire de Meilen | Siltstein: kalkig  | Sandstein: siltig-kalkig   | Kalkstein: arenitisch |  Meilen-Kalk |  Langhien     | Langhien   | OSM  |
+|15200295 |OSM-I | Konglomerat  | Sandstein   | Mergelstein |  0 |  Langhien     | Burdigalien   | OSM  |
+|15200296 |Formation de Lichtensteig | Konglomerat: polymikt  | Sandstein   | Mergelstein |  Lichtensteig-Formation |  Langhien     | Burdigalien tardif   | OSM  |
+|15200297 |Formation du Hörnli | Konglomerat  | Sandstein   | Mergelstein |  Hörnli-Formation |  Tortonien     | Langhien   | OSM  |
+|15200298 |Formation du Guggershorn | Konglomerat: kalkig-dolomitisch  | Sandstein   | Mergelstein |  Guggershorn-Formation |  Langhien     | Burdigalien tardif   | OSM  |
+|15202127 |Membre de Galm | Sandstein: kalkig-kieselig  | Kalkstein: sandig-spätig   | 0 |  Galm-Member |  Pliensbachien     | Sinémurien   | Lias-Dogger in neritischer Fazies  |
+|15202128 |Formation du Spitzmeilen | Kalkstein: sandig  | Sandstein: kalkig   | Mergelstein |  Spitzmeilen-Formation |  Pliensbachien     | Sinémurien   | Lias-Dogger in neritischer Fazies  |
+|15202129 |Formation des Tierces | Mergelstein  | Kalkstein: mikritisch   | Kalkstein: sandig-spätig |  Tierces-Formation |  Sinémurien     | Hettangien   | Lias-Dogger in neritischer Fazies  |
+|15202130 |Formation de la Bachalp | Mergelstein: kalkig  | Kalkstein: spätig   | 0 |  Bachalp-Formation |  Sinémurien     | Hettangien   | Lias-Dogger in neritischer Fazies  |
+|15202131 |Formation du Prodkamm | Tonstein  | Mergelstein   | Sandstein: kalkig |  Prodkamm-Formation |  Sinémurien     | Hettangien   | Lias-Dogger in neritischer Fazies  |
+|15202132 |Membre à Cardinia | Tonstein: schiefrig  | Sandstein: kalkig   | Kalkstein: Bioklasten |  «Cardinia-Member» |  Sinémurien     | Hettangien   | Lias-Dogger in neritischer Fazies  |
+|15202133 |Formation du Stgir | Kalkstein: sandig  | Tonstein: schiefrig   | Sandstein: Quarz |  Stgir-Formation |  Sinémurien     | Hettangien   | Lias-Dogger in neritischer Fazies  |
+|15202134 |Trias de l&#39;Helvétique | Dolomitstein  | Sandstein   | Gestein: pelitisch |  0 |  Rhétien     | Olénékien   | Prä-Rift  |
+|15202135 |Formation des Besoëns | Sandstein: Quarz  | Kalkstein: sandig: Bioklasten   | Tonstein: schiefrig |  Besoëns-Formation |  Rhétien     | Rhétien   | «Rhät»  |
+|15202136 |Formation de Quarten | Tonstein: schiefrig  | Siltstein: schiefrig   | Dolomitstein |  Quarten-Formation |  Trias tardif     | Trias tardif   | Keuper  |
+|15202137 |Formation des Arandellys | Kalkstein: dolomitisch  | Dolomitstein   | Rauwacke |  Arandellys-Formation |  Trias tardif     | Trias moyen   | Muschelkalk  |
+|15202138 |Membre de la Griaz | Evaporit: Gips  | Rauwacke   | 0 |  Griaz-Member |  Trias tardif     | Trias tardif   | Muschelkalk  |
+|15202139 |Formation de la Röti | Dolomitstein  | Rauwacke   | Tonstein: dolomitisch |  Röti-Formation |  Carnien     | Anisien   | Muschelkalk  |
+|15202140 |Formation du Vieux Emosson | Sandstein: Quarz  | Sandstein: Feldspat   | Tonstein |  Vieux-Emosson-Formation |  Anisien     | Olénékien   | Buntsandstein  |
+|15202141 |Formation de Mels | Sandstein: Quarz  | Tonstein: schiefrig   | Dolomitstein |  Mels-Formation |  Anisien     | Olénékien   | Buntsandstein  |
+|15202142 |Permo-Carbonifère de l&#39;Helvétique | Konglomerat  | Sandstein   | Gestein: pelitisch |  0 |  Permien     | Carbonifère   | Spät- bis postvariszisches Grundgebirge  |
+|15202143 |Groupe du Verrucano | Konglomerat  | Sandstein   | Gestein: pelitisch |  0 |  Permien     | Permien   | Spät- bis postvariszisches Grundgebirge  |
+|15202144 |Verrucano de Glaris | Konglomerat  | Sandstein   | Gestein: pelitisch |  0 |  Lopingien     | Cisuralien   | Spät- bis postvariszisches Grundgebirge  |
+|15202145 |Formation de Schönbüel | Tonstein: sandig-schiefrig  | Sandstein: Quarz   | 0 |  Schönbühl-Formation |  Lopingien     | Cisuralien   | Spät- bis postvariszisches Grundgebirge  |
+|15202146 |Quartzite de Schönbüel | Sandstein: Quarz  | 0   | 0 |  Schönbühl-Formation |  Lopingien     | Cisuralien   | Spät- bis postvariszisches Grundgebirge  |
+|15202147 |Formation du Kärpf | Konglomerat  | Sandstein   | Tonstein: siltig-schiefrig |  Kärpf-Formation |  Lopingien     | Guadalupien   | Spät- bis postvariszisches Grundgebirge  |
+|15202148 |Formation du Karrenstock | Tonstein: sandig-schiefrig  | Gestein: vulkanisch   | Sandstein: konglomeratisch |  Karrenstock-Formation |  Cisuralien     | Cisuralien   | Spät- bis postvariszisches Grundgebirge  |
+|15202149 |Membre de la Chartegg | Tonstein: siltig-schiefrig  | 0   | 0 |  Chartegg-Member |  Cisuralien     | Cisuralien   | Spät- bis postvariszisches Grundgebirge  |
+|15202150 |Membre du Fuggstock | Konglomerat  | 0   | 0 |  Fuggstock-Member |  Cisuralien     | Cisuralien   | Spät- bis postvariszisches Grundgebirge  |
+|15202151 |Formation de la Mären(egg) | Tonstein: siltig-schiefrig  | Brekzie   | Sandstein |  Mären-Formation |  Cisuralien     | Cisuralien   | Spät- bis postvariszisches Grundgebirge  |
+|15202152 |Formation de l&#39;Üblital | Brekzie  | Tonstein   | Gestein: basisch-vulkanisch |  Üblital-Formation |  Cisuralien     | Cisuralien   | Spät- bis postvariszisches Grundgebirge  |
+|15202153 |Verrucano d&#39;Ilanz | Schiefer  | Gneis   | 0 |  0 |  Permien     | Permien   | Spät- bis postvariszisches Grundgebirge  |
+|15202154 |Formation de Vernayaz | Sandstein  | Tonstein   | Konglomerat |  Vernayaz-Formation |  Cisuralien     | Pennsylvanien   | Spät- bis postvariszisches Grundgebirge  |
+|15202155 |Membre de Salvan | Sandstein  | 0   | 0 |  Salvan-Member |  Cisuralien     | Pennsylvanien   | Spät- bis postvariszisches Grundgebirge  |
+|15202156 |Conglomérat de Vallorcine | Konglomerat  | 0   | 0 |  Vallorcine-Konglomerat |  Pennsylvanien     | Pennsylvanien   | Spät- bis postvariszisches Grundgebirge  |
+|15202157 |Groupe du Haslital | Gestein: plutonisch  | 0   | 0 |  0 |  Assélien     | Assélien   | Spät- bis postvariszisches Grundgebirge  |
+|15202158 |Granite de Gastern | Granit: Biotit  | 0   | 0 |  Gastern-Granit |  Assélien     | Pennsylvanien tardif   | Frühvariszisches Grundgebirge  |
+|15202159 |Granite de la Mittagflue | Granit: Biotit  | Granit: mylonitisch   | 0 |  Mittagfluh-Granit |  Cisuralien     | Cisuralien   | Spät- bis postvariszisches Grundgebirge  |
+|15202160 |Granite central de l&#39;Aar | Granit: Biotit  | Granit: schiefrig   | 0 |  Zentraler Aare-Granit |  Cisuralien     | Cisuralien   | Spät- bis postvariszisches Grundgebirge  |
+|15202161 |Granodiorite du Grimsel | Granodiorit: porphyrisch  | Granit: Biotit   | Gneis: augig |  Grimsel-Granodiorit |  Pennsylvanien tardif     | Pennsylvanien tardif   | Spät- bis postvariszisches Grundgebirge  |
+|15202162 |Granite sud-occidental de l&#39;Aar | Granit  | Granit: schiefrig   | 0 |  «Südwestlicher Aare-Granit» |  Cisuralien     | Cisuralien   | Spät- bis postvariszisches Grundgebirge  |
+|15202163 |Granodiorite de Bugnei | Granodiorit  | 0   | 0 |  Bugnei-Granodiorit |  Pennsylvanien moyen     | Pennsylvanien moyen   | Mittelvariszisches Grundgebirge  |
+|15202164 |Roches sédimentaires et volcaniques tardi- à post-varisques du massif de l&#39;Aar | Gestein: sedimentär  | Gestein: vulkanisch   | 0 |  0 |  Cisuralien     | Pennsylvanien tardif   | Spät- bis postvariszisches Grundgebirge  |
+|15202165 |Formation du Wendenjoch | Schiefer: tonig: Graphit  | Sandstein   | Konglomerat |  Wendenjoch-Formation |  Cisuralien     | Pennsylvanien tardif   | Spät- bis postvariszisches Grundgebirge  |
+|15202166 |Formation des Windgällen | Granit: mikrokristallin-porphyrisch  | Rhyolith: ignimbritisch   | Schiefer: tonig |  Windgällen-Formation |  Cisuralien     | Pennsylvanien tardif   | Spät- bis postvariszisches Grundgebirge  |
+|15202167 |Formation du Trift | Schiefer: tonig  | Konglomerat   | Gestein: pyroklastisch |  Trift-Formation |  Cisuralien     | Pennsylvanien tardif   | Spät- bis postvariszisches Grundgebirge  |
+|15202168 |Formation d&#39;Intschi | Rhyolith  | Ignimbrit   | Schiefer: tonig: Graphit |  Intschi-Formation |  Cisuralien     | Pennsylvanien tardif   | Spät- bis postvariszisches Grundgebirge  |
+|15202169 |Formation du Bifertengrätli | Konglomerat  | Sandstein: Feldspat   | Schiefer: tonig: Graphit |  Bifertengrätli-Formation |  Cisuralien     | Pennsylvanien tardif   | Spät- bis postvariszisches Grundgebirge  |
+|15202170 |Membre lacustre (Fm. du Bifertengrätli) | Sandstein  | Siltstein: schiefrig   | Tonstein |  «Lakustrisches Member» (Bifertengrätli-Fm.) |  Cisuralien     | Pennsylvanien tardif   | Spät- bis postvariszisches Grundgebirge  |
+|15202171 |Membre estuarien (Fm. du Bifertengrätli) | Konglomerat  | Sandstein   | Tonstein: Anthrazit |  «Estuarisches Member» (Bifertengrätli-Fm.) |  Cisuralien     | Pennsylvanien tardif   | Spät- bis postvariszisches Grundgebirge  |
+|15202172 |Conglomérat basal (Fm. du Bifertengrätli) | Konglomerat  | 0   | 0 |  «Basales Konglomerat» (Bifertengrätli-Fm.) |  Cisuralien     | Pennsylvanien tardif   | Spät- bis postvariszisches Grundgebirge  |
+|15202173 |Membre volcanique (Fm. du Bifertengrätli) | Konglomerat  | Sandstein: Quarz   | Tuffit |  Grünhorn-Member |  Cisuralien     | Pennsylvanien   | Spät- bis postvariszisches Grundgebirge  |
+|15202174 |Formation du Diechtergletscher | Schiefer: tonig  | Gestein: pyroklastisch   | 0 |  Diechtergletscher-Formation |  Cisuralien     | Pennsylvanien tardif   | Spät- bis postvariszisches Grundgebirge  |
+|15202175 |Formation de la Tscharren | Ignimbrit  | Tuffit   | Konglomerat |  Tscharren-Formation |  Cisuralien     | Pennsylvanien tardif   | Spät- bis postvariszisches Grundgebirge  |
+|15202177 |Groupe du Fruttstock | Gestein: plutonisch  | 0   | 0 |  0 |  Pennsylvanien moyen     | Pennsylvanien moyen   | Mittelvariszisches Grundgebirge  |
+|15202178 |Granite de la Brunni | Granit  | 0   | 0 |  Brunni-Granit |  Pennsylvanien moyen     | Pennsylvanien moyen   | Mittelvariszisches Grundgebirge  |
+|15202179 |Diorite du Düssi | Diorit  | Aplit   | Pegmatit |  Düssi-Diorit |  Pennsylvanien moyen     | Pennsylvanien moyen   | Mittelvariszisches Grundgebirge  |
+|15202180 |Granite du Munt Dado | Granit  | 0   | 0 |  Munt-Dado-Granit |  Pennsylvanien moyen     | Pennsylvanien moyen   | Mittelvariszisches Grundgebirge  |
+|15202181 |Diorite de Russein | Diorit  | 0   | 0 |  Russein-Diorit |  Pennsylvanien moyen     | Pennsylvanien précoce   | Frühvariszisches Grundgebirge  |
+|15202182 |Granite de la Voralp | Granit: Biotit  | 0   | 0 |  Voralp-Granit |  Pennsylvanien     | Pennsylvanien   | Mittelvariszisches Grundgebirge  |
+|15202183 |Groupe du Rötifirn | Gestein: plutonisch  | 0   | 0 |  0 |  Mississippien     | Mississippien   | Frühvariszisches Grundgebirge  |
+|15202184 |Granite de Punteglias | Granit: porphyrisch: Hornblende  | 0   | 0 |  Punteglias-Granit |  Mississippien moyen     | Mississippien moyen   | Prävariszisches Grundgebirge  |
+|15202185 |Granite du Tödi | Granit  | Granit: Hornblende   | 0 |  Tödi-Granit |  Mississippien moyen     | Mississippien moyen   | Frühvariszisches Grundgebirge  |
+|15202186 |Granite du (Val) Strem | Granit  | Granit: mylonitisch   | 0 |  Strem-Granit |  Cisuralien     | Pennsylvanien   | Spät- bis postvariszisches Grundgebirge  |
+|15202187 |Granodiorite de Baltschieder | Granodiorit  | 0   | 0 |  Baltschieder-Granodiorit |  Mississippien     | Mississippien   | Prävariszisches Grundgebirge  |
+|15202188 |Syénite du (Piz) Giuv | Syenit: porphyrisch: Quarz  | Monzonit: porphyrisch: Quarz   | 0 |  Giuv-Syenit |  Mississippien moyen     | Mississippien moyen   | Frühvariszisches Grundgebirge  |
+|15200299 |Calcaire d&#39;eau douce de Horgen-Käpfnach | Kalkstein  | Gestein: organisch: Kohle   | 0 |  Horgen-Käpfnach-Süsswasserkalk |  Burdigalien     | Burdigalien   | OSM  |
+|15200300 |OSM-J | Sandstein  | Kalkstein: kreidig   | Konglomerat: kalkig |  0 |  Langhien     | Burdigalien tardif   | OSM  |
+|15200301 |Formation du Bois de Raube | Konglomerat  | Sandstein   | Mergelstein |  Bois-de-Raube-Formation |  Tortonien     | Serravallien   | OSM  |
+|15200302 |Juranagelfluh (OSM-J) | Konglomerat: kalkig  | 0   | 0 |  0 |  Tortonien     | Aquitanien   | OSM  |
+|15200304 |Bentonite de la Combe Girard | Bentonit  | 0   | 0 |  Combe-Girard-Bentonit |  Langhien     | Langhien   | OSM  |
+|15200305 |Calcaire d&#39;eau douce de Vermes | Kalkstein: mikritisch: Bioklasten  | Kalkstein: Onkoide   | Mergelstein |  Vermes-Süsswasserkalk |  Langhien     | Burdigalien   | OSM  |
+|15200306 |Gompholite du Locle | Konglomerat: kalkig  | 0   | 0 |  Crêt-du-Locle-Formation |  Langhien     | Langhien   | Molasse  |
+|15200307 |Molasse marine supérieure (OMM) | Sandstein  | Mergelstein   | Konglomerat |  0 |  Burdigalien     | Aquitanien   | OMM  |
+|15200308 |OMM-II | Sandstein  | Konglomerat   | Mergelstein |  0 |  Burdigalien     | Burdigalien   | OMM  |
+|15200309 |Formation de St-Gall | Sandstein: Glaukonit  | Mergelstein   | Konglomerat |  St.-Gallen-Formation |  Burdigalien tardif     | Burdigalien   | OMM  |
+|15200310 |Grès grossier de Staffelbach | Sandstein  | 0   | 0 |  Staffelbach-Grobsandstein |  Burdigalien     | Burdigalien   | OMM  |
+|15200311 |OMM-I | Sandstein  | Konglomerat   | Mergelstein |  0 |  Burdigalien     | Aquitanien   | OMM  |
+|15200312 |Formation de Lucerne | Sandstein: Glaukonit  | Mergelstein   | Konglomerat |  Luzern-Formation |  Burdigalien     | Burdigalien   | OMM  |
+|15200313 |Grès coquillier de Safenwil | Sandstein: kalkig: Muscheln  | 0   | 0 |  Safenwil-Muschelsandstein |  Burdigalien     | Burdigalien   | OMM  |
+|15200314 |Molasse d&#39;eau douce inférieure (USM) | Sandstein  | Konglomerat   | Mergelstein |  0 |  Aquitanien     | Rupélien   | USM  |
+|15200315 |Poudingue des Höhronen | Konglomerat  | Sandstein   | Siltstein |  Höhronen-Nagelfluh |  Aquitanien     | Aquitanien   | USM  |
+|15200316 |Poudingue du Kronberg | Konglomerat: polymikt  | 0   | 0 |  Kronberg-Nagelfluh |  Aquitanien     | Aquitanien   | USM  |
+|15200317 |Grès de la Cornalle | Sandstein: kalkig  | Mergelstein: siltig   | 0 |  Cornalle-Sandstein |  Chattien tardif     | Chattien tardif   | USM  |
+|15200318 |Poudingue du Mont Pèlerin | Konglomerat: kalkig  | Mergelstein: siltig   | Sandstein: tonig |  Mont-Pèlerin-Nagelfluh |  Chattien tardif     | Chattien précoce   | USM  |
+|15200319 |Formation du Speer | Konglomerat: kalkig  | Mergelstein   | Sandstein: kalkig |  Speer-Formation |  Chattien     | Rupélien   | USM  |
+|15200320 |Formation de Thoune | Konglomerat  | Sandstein   | Mergelstein |  Thun-Formation |  Chattien tardif     | Chattien précoce   | USM  |
+|15200321 |Poudingue quartzitique de Gunten | Konglomerat: Quarz  | Sandstein   | Mergelstein |  Gunten-Nagelfluh |  Chattien     | Chattien   | USM  |
+|15200322 |Formation du Rigi | Konglomerat  | Tonstein: siltig   | 0 |  Rigi-Formation |  Chattien     | Chattien   | USM  |
+|15200323 |Poudingue de la Rigi-Scheidegg | Konglomerat: kalkig  | Mergelstein   | 0 |  Scheidegg-Nagelfluh |  Chattien     | Chattien   | USM  |
+|15200324 |Bunte Rigi-Nagelfluh | Konglomerat: kalkig-dolomitisch  | Sandstein   | Mergelstein |  «Bunte Rigi-Nagelfluh» |  Chattien     | Chattien   | USM  |
+|15200325 |Radiolaritreiche Nagelfluh (Fm. du Rigi) | Konglomerat: kalkig  | Sandstein   | Mergelstein |  «Radiolaritreiche Nagelfluh» (Rigi-Fm.) |  Chattien     | Chattien   | USM  |
+|15200326 |USM-III | Konglomerat  | Mergelstein   | 0 |  0 |  Burdigalien     | Burdigalien   | USM  |
+|15200327 |Poudingue du Sommersberg | Konglomerat  | Mergelstein   | Sandstein: kalkig |  Sommersberg-Nagelfluh |  Burdigalien     | Burdigalien   | USM  |
+|15200328 |Poudingue du Brendenbach | Mergelstein  | 0   | 0 |  Brendenbach-Mergel |  Burdigalien     | Burdigalien   | USM  |
+|15200329 |USM-II | Sandstein  | Mergelstein   | Konglomerat |  0 |  Burdigalien     | Aquitanien   | USM  |
+|15200330 |Formation de la Molasse granitique | Sandstein: Feldspat  | Mergelstein   | Konglomerat: polymikt |  «Formation der Granitischen Molasse» |  Aquitanien     | Chattien tardif   | USM  |
+|15200331 |Oberaquitane Mergelzone | Mergelstein  | Sandstein: mergelig   | Sandstein: kalkig |  «Oberaquitane Mergelzone» |  Aquitanien     | Aquitanien   | USM  |
+|15200332 |Molasse Grise de Lausanne | Sandstein: tonig-kalkig  | Mergelstein: siltig   | 0 |  «Molasse Grise de Lausanne» |  Aquitanien     | Aquitanien   | USM  |
+|15200333 |Bentonite de Bois-Genoud | Bentonit  | 0   | 0 |  Bois-Genoud-Bentonit |  Aquitanien     | Aquitanien   | USM  |
+|15200334 |Grès de Cuarny | Sandstein  | 0   | 0 |  Cuarny-Sandstein |  Aquitanien     | Aquitanien   | USM  |
+|15200335 |USM-I | Mergelstein  | Sandstein   | Konglomerat |  0 |  Chattien     | Rupélien   | USM  |
+|15200336 |Grès et Marnes Gris à Gypse | Mergelstein: Gips  | Sandstein   | Kalkstein |  «Grès et Marnes Gris à Gypse» |  Chattien     | Chattien   | USM  |
+|15200337 |Molasse à Charbon | Sandstein: kalkig  | Mergelstein: sandig   | Tonstein: Kohle |  «Molasse à Charbon» |  Chattien     | Chattien   | USM  |
+|15200338 |Molasse Rouge | Mergelstein  | Siltstein   | Sandstein: kalkig |  0 |  Chattien     | Rupélien   | USM  |
+|15200339 |Poudingue de Heuboden-Äschitannen | Konglomerat  | Mergelstein   | 0 |  Heuboden-Äschitannen-Nagelfluh |  Chattien     | Rupélien   | USM  |
+|15200340 |Formation de la Beichlen | Konglomerat: kalkig  | Sandstein   | Mergelstein |  Beichlen-Formation |  Rupélien     | Rupélien   | USM  |
+|15200341 |USM-J | Sandstein  | Mergelstein   | 0 |  0 |  Chattien     | Chattien   | USM  |
+|15200342 |Calcaire d&#39;eau douce de La Chaux | Kalkstein: kreidig: Pisoide  | 0   | 0 |  La-Chaux-Süsswasserkalk |  Aquitanien     | Aquitanien   | USM  |
+|15200343 |Molasse alsacienne s.s. | Mergelstein  | Siltstein   | Sandstein: Glimmer |  «Elsässer-Molasse» |  Chattien     | Chattien   | USM  |
+|15200344 |Calcaire d&#39;eau douce de Delémont | Kalkstein: mikritisch  | 0   | 0 |  Delémont-Süsswasserkalk |  Chattien     | Chattien   | USM  |
+|15200345 |Calcaire d&#39;eau douce de Matzendorf | Kalkstein  | 0   | 0 |  Matzendorf-Süsswasserkalk |  Chattien     | Chattien   | USM  |
+|15200346 |Calcaire d&#39;eau douce d&#39;Oensingen | Kalkstein  | 0   | 0 |  Oensingen-Süsswasserkalk |  Chattien     | Chattien   | USM  |
+|15200347 |Calcaire d&#39;eau douce de Wynau | Kalkstein  | 0   | 0 |  Wynau-Süsswasserkalk |  Chattien précoce     | Rupélien   | USM  |
+|15200348 |Molasse marine inférieure (UMM) | Mergelstein  | Sandstein   | 0 |  0 |  Rupélien     | Rupélien   | UMM  |
+|15200349 |UMM-III | Sandstein: kalkig: Glimmer  | Mergelstein   | 0 |  0 |  Rupélien     | Rupélien   | UMM  |
+|15200350 |Grès d&#39;Horw | Sandstein: kalkig: Glimmer  | Mergelstein   | 0 |  Horw-Sandstein |  Rupélien     | Rupélien   | UMM  |
+|15200351 |UMM-II | Mergelstein  | Sandstein: kalkig: Glimmer   | 0 |  0 |  Rupélien     | Rupélien   | UMM  |
+|15200352 |Marne de Grisigen | Mergelstein  | Sandstein: kalkig: Glimmer   | 0 |  Grisigen-Mergel |  Rupélien     | Rupélien   | UMM  |
+|15200353 |UMM-I | Mergelstein: tonig  | Siltstein   | Sandstein: tonig: Lithoklasten |  0 |  Rupélien     | Rupélien   | UMM  |
+|15200354 |Sous-formation de Cucloz | Sandstein: Glimmer  | Mergelstein   | Siltstein |  Cucloz-Formation |  Rupélien     | Rupélien   | UMM  |
+|15200355 |Grès de Cucloz | Sandstein: Glimmer  | Brekzie: polymikt   | 0 |  Cucloz-Sandstein |  Rupélien     | Rupélien   | UMM  |
+|15200356 |Marnes gris-souris | Mergelstein  | Siltstein   | 0 |  «Marnes gris-souris» (Cucloz-Fm.) |  Rupélien     | Rupélien   | UMM  |
+|15200357 |Schistes marno-micacés | Mergelstein: siltig: Glimmer  | Sandstein   | 0 |  «Schistes marno-micacés» (Cucloz-Fm.) |  Rupélien     | Rupélien   | UMM  |
+|15200358 |Formation de la Hilfern | Mergelstein: tonig  | Siltstein   | Sandstein |  Hilfern-Formation |  Rupélien     | Rupélien   | UMM  |
+|15200359 |Sous-formation de Rietbad | Sandstein  | Mergelstein   | Konglomerat |  Rietbad-Formation |  Rupélien     | Rupélien   | UMM  |
+|15200360 |Marne du Jordisboden | Mergelstein: Glimmer  | Sandstein   | 0 |  Jordisboden-Mergel |  Rupélien     | Rupélien   | UMM  |
+|15200361 |Grès de la Goldegg | Sandstein: Glimmer  | Konglomerat: polymikt   | 0 |  Goldegg-Sandstein |  Rupélien     | Rupélien   | UMM  |
+|15202396 |Banc de Götzis inférieur | Sandstein: Glaukonit  | 0   | 0 |  Untere Götzis-Bank |  Turonien     | Cénomanien   | Post-Rift Mesozoikum in pelagischer Fazies  |
+|15202397 |Banc du Col de la Plaine Morte | Sandstein: mergelig: Glaukonit  | 0   | 0 |  Col-de-la-Plaine-Morte-Bank |  Aptien     | Aptien   | «Gault»  |
+|15202398 |«Oberer Betliskalk» | Kalkstein: Bioklasten-Chert  | 0   | 0 |  «Oberer Betliskalk» |  Valanginien     | Valanginien   | Post-Rift Mesozoikum in Plattform-Fazies  |
+|15202399 |«Unterer Betliskalk» | Kalkstein: sandig: Bioklasten  | Kalkstein: spätig   | 0 |  «Unterer Betliskalk» |  Valanginien     | Valanginien   | Post-Rift Mesozoikum in Plattform-Fazies  |
+|15202400 |Brèche fossilifère de Vättis | Kalkstein: spätig: Bioklasten  | Kalkstein: Glaukonit   | 0 |  Vättis-Fossilbrekzie |  Toarcien     | Toarcien   | Lias-Dogger in neritischer Fazies  |
+|15202401 |Formation d&#39;Inferno, partie supérieure | Schiefer: kalkig: Zoisit  | Kalkstein: spätig: Echinodermen   | 0 |  Inferno-Formation |  Toarcien     | Pliensbachien   | Lias-Dogger in neritischer Fazies  |
+|15202402 |Formation d&#39;Inferno, partie moyenne | Schiefer: Zoisit  | Mergelstein: Bioklasten   | 0 |  Inferno-Formation |  Toarcien     | Pliensbachien   | Lias-Dogger in neritischer Fazies  |
+|15202403 |Formation d&#39;Inferno, partie inférieure | Kalkstein  | Schiefer: Zoisit   | Mergelstein: Bioklasten |  Inferno-Formation |  Toarcien     | Pliensbachien   | Lias-Dogger in neritischer Fazies  |
+|15202404 |Formation du Sexmor, partie supérieure | Kalkstein: kieselig  | Kalkstein: spätig   | Kalkstein: sandig |  Sexmor-Formation |  Pliensbachien     | Pliensbachien   | Lias-Dogger in neritischer Fazies  |
+|15202405 |Formation du Sexmor, partie inférieure | Mergelstein: kalkig  | Kalkstein: kieselig   | Kalkstein: spätig: Bioklasten |  Sexmor-Formation |  Pliensbachien     | Pliensbachien   | Lias-Dogger in neritischer Fazies  |
+|15202406 |«Leitoolith» | Kalkstein: Bioklasten-Ooide  | 0   | 0 |  «Leitoolith» (Prodkamm-Fm.) |  Sinémurien     | Sinémurien   | Lias-Dogger in neritischer Fazies  |
+|15202411 |Brèche de la Lochegg | Brekzie: kalkig: Bioklasten  | 0   | 0 |  Lochegg-Brekzie |  Eocène     | Eocène   | Syn-Kollision  |
+|15202412 |«Obere Zementsteinschichten» | Mergelstein: schiefrig  | Kalkstein: mikritisch   | 0 |  15253121 |  Berriasien     | Berriasien   | Post-Rift Mesozoikum in pelagischer Fazies  |
+|15202413 |«Untere Zementsteinschichten» | Mergelstein  | Kalkstein: mergelig   | 0 |  15253121 |  Berriasien     | Berriasien   | Post-Rift Mesozoikum in pelagischer Fazies  |
+|15202414 |«Rote Echinodermenbrekzie» | Kalkstein: spätig: Bioklasten  | 0   | 0 |  «Rote Echinodermenbrekzie» (Bommerstein-Fm.) |  Bajocien     | Aalénien   | Lias-Dogger in neritischer Fazies  |
+|15202415 |«Obere Tonschiefer» (Fm. du Bommerstein) | Tonstein: schiefrig  | Mergelstein: siltig-schiefrig   | 0 |  «Obere Tonschiefer» (Bommerstein-Fm.) |  Bajocien     | Aalénien   | Lias-Dogger in neritischer Fazies  |
+|15202416 |Membre du Glockhaus | Sandstein: Quarz  | Kalkstein: sandig: Bioklasten   | Tonstein |  Glockhaus-Member |  Bajocien     | Aalénien   | Lias-Dogger in neritischer Fazies  |
+|15202417 |«Quartzite de base» (Fm. du Coroi) | Sandstein: Quarz  | 0   | 0 |  «Basaler Quarzit» (Coroi-Fm.) |  Aalénien     | Aalénien   | Syn-Rift  |
+|15202418 |Cornieule (Fm. de la Röti) | Rauwacke  | 0   | 0 |  Röti-Formation |  Carnien     | Anisien   | Muschelkalk  |
+|15202419 |Membre du Col du Jorat | Tonstein  | Sandstein   | Dolomitstein |  Col-du-Jorat-Member |  Anisien     | Anisien   | Buntsandstein  |
+|15202420 |«Equisetenschiefer» | Tonstein: schiefrig  | Siltstein: schiefrig   | 0 |  Quarten-Formation |  Trias tardif     | Trias tardif   | Keuper  |
+|15202421 |Marne du Leist | Mergelstein  | 0   | 0 |  Leist-Mergel |  Campanien     | Santonien   | Post-Rift Mesozoikum in pelagischer Fazies  |
+|15202422 |Marne du Leiboden | Mergelstein: Bioklasten  | 0   | 0 |  Leiboden-Mergel |  Santonien     | Coniacien   | Post-Rift Mesozoikum in pelagischer Fazies  |
+|15202423 |Formation des Covayes | Mergelstein  | Kalkstein: mikritisch   | 0 |  Covayes-Formation |  Turonien     | Turonien   | Post-Rift Mesozoikum in pelagischer Fazies  |
+|15202424 |Formation du Javrex | Kalkstein: arenitisch  | Kalkstein: sandig: Glaukonit   | 0 |  Javrex-Formation |  Albien     | Aptien   | «Gault»  |
+|15202425 |«Marnes noires pyriteuses» | Mergelstein  | 0   | 0 |  Javrex-Formation |  Albien     | Aptien   | «Gault»  |
+|15202426 |«Calcaires gréso-glauconieux» | Kalkstein: sandig: Glaukonit  | Mergelstein: siltig: Glaukonit   | 0 |  Javrex-Formation |  Aptien     | Aptien   | «Gault»  |
+|15202427 |«Calcarénites beiges oolitiques» | Kalkstein: arenitisch: Bioklasten  | 0   | 0 |  Montsalvens-Kalkarenit |  Barrémien     | Barrémien   | «Urgonien»  |
+|15202429 |Formation de Villarbeney | Kalkstein: mikritisch  | Mergelstein   | 0 |  Villarbeney-Formation |  Aptien     | Berriasien   | Post-Rift Mesozoikum in pelagischer Fazies  |
+|15202430 |Membre de la Veveyse de Châtel | Kalkstein: mikritisch  | Mergelstein   | Kalkstein: kieselig |  Veveyse-de-Châtel-Member |  Barrémien     | Berriasien   | Post-Rift Mesozoikum in pelagischer Fazies  |
+|15202431 |Membre de Riondouneire | Kalkstein: mikritisch  | Mergelstein   | Kalkstein: arenitisch |  Riondouneire-Member |  Berriasien     | Berriasien   | Post-Rift Mesozoikum in pelagischer Fazies  |
+|15202432 |Formation de la Jogne | Kalkstein: mikritisch  | Mergelstein   | 0 |  Jogne-Formation |  Tithonien     | Oxfordien   | Malm  |
+|15202433 |«Calcaires bréchiques» | Brekzie: kalkig  | 0   | 0 |  Jogne-Formation |  Tithonien     | Tithonien   | Malm  |
+|15202434 |Membre des Vuavres | Kalkstein: mikritisch: Chert  | Mergelstein   | 0 |  Vuavres-Member |  Tithonien     | Kimméridgien   | Malm  |
+|15202435 |Membre de la Planière | Kalkstein: mikritisch  | Mergelstein   | 0 |  Planière-Member |  Oxfordien     | Oxfordien   | Malm  |
+|15202436 |Formation de Bifé | Tonstein: schiefrig  | Mergelstein   | Kalkstein: tonig |  Bifé-Formation |  Oxfordien     | Callovien   | Lias-Dogger in pelagischer Fazies  |
+|15202437 |«Calcaire à ciment» (Fm. de Bifé) | Kalkstein  | 0   | 0 |  Bifé-Formation |  Oxfordien     | Oxfordien   | Lias-Dogger in pelagischer Fazies  |
+|15202438 |Membre de Joux Galez | Mergelstein: Glimmer  | 0   | 0 |  Joux-Galez-Member |  Oxfordien     | Callovien   | Lias-Dogger in pelagischer Fazies  |
+|15202439 |Formation de la Pereyre | Kalkstein: spätig: Bioklasten  | Kalkstein: Ooide   | Kalkstein: sandig: Glaukonit |  Pereyres-Formation |  Bathonien     | Bathonien   | Lias-Dogger in neritischer Fazies  |
+|15202440 |Formation de Praz Couquain | Kalkstein: tonig  | Mergelstein: schiefrig   | Kalkstein: sandig: Bioklasten |  Praz-Couquain-Formation |  Bajocien     | Aalénien   | Lias-Dogger in neritischer Fazies  |
+|15202442 |Formation de la Gryonne | Mergelstein: schiefrig  | Kalkstein: mergelig   | Kalkstein: kieselig |  Gryonne-Formation |  Jurassique précoce     | Jurassique précoce   | Lias-Dogger in neritischer Fazies  |
+|15202443 |Membre du Taffon | Mergelstein: schiefrig  | Kalkstein   | 0 |  Taffon-Member |  Bajocien     | Bajocien   | Lias-Dogger in neritischer Fazies  |
+|15202444 |Membre des Saix | Sandstein  | Mergelstein: Glimmer   | Kalkstein |  Saix-Member |  Aalénien     | Aalénien   | Lias-Dogger in neritischer Fazies  |
+|15202445 |Membre du Cergnement | Kalkstein: mikritisch  | Mergelstein   | 0 |  Cergnement-Member |  Barrémien     | Barrémien   | Post-Rift Mesozoikum in pelagischer Fazies  |
+|15202446 |Flysch de la nappe d&#39;Arveyes | Mergelstein  | Sandstein: kalkig: Glimmer   | 0 |  Arveyes-Flysch |  Eocène     | Eocène   | Flysch  |
+|15202447 |Flysch de la nappe du Sex Mort | Mergelstein  | Sandstein: kalkig: Bioklasten   | 0 |  Sex-Mort-Flysch |  Priabonien     | Priabonien   | Flysch  |
+|15202448 |Méta-andésite du Maasplanggstock | Andesit  | 0   | 0 |  Maasplanggstock-Metaandesit |  Cisuralien     | Pennsylvanien tardif   | Spät- bis postvariszisches Grundgebirge  |
+|15202449 |Diorite du Dammagletscher | Diorit  | 0   | 0 |  Dammagletscher-Diorit |  Pennsylvanien tardif     | Pennsylvanien tardif   | Mittelvariszisches Grundgebirge  |
+|15202450 |Lias des Mines schisteux | Mergelstein: schiefrig  | 0   | 0 |  Gryonne-Formation |  Toarcien     | Pliensbachien   | Lias-Dogger in neritischer Fazies  |
+|15202451 |Lias des Mines calcaire | Kalkstein: kieselig  | Mergelstein   | 0 |  Gryonne-Formation |  Pliensbachien     | Hettangien   | Lias-Dogger in neritischer Fazies  |
+|15202452 |Lias des Mines basal | Kalkstein: Bioklasten  | Mergelstein: sandig: Glimmer   | 0 |  Gryonne-Formation |  Hettangien     | Rhétien   | «Rhät»  |
+|15202453 |base tectonisée du Verrucano de Glaris («Plagioklasgneis») | Schiefer: konglomeratisch  | Gneis: mylonitisch   | 0 |  0 |  Cisuralien     | Cisuralien   | Spät- bis postvariszisches Grundgebirge  |
+|15202454 |Migmatite du Chrüzlistock | Migmatit  | Gneis: migmatitisch   | 0 |  Chrüzlistock-Migmatit |  Paléozoïque     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15202455 |Complexe gneissique du Piz Cuolmet | Gneis: migmatitisch  | Gneis: gebändert   | Schiefer: Serizit-Chlorit |  Piz-Cuolmet-Gneiskomplex |  Paléozoïque     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15202456 |Pulanera-Gneiskomplex | Gneis  | Schiefer   | 0 |  Pulanera-Gneiskomplex |  Paléozoïque     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15202465 |Permo-Carbonifère du massif des Aiguilles Rouges | Konglomerat  | Sandstein   | Gestein: pelitisch |  0 |  Permien     | Pennsylvanien   | Spät- bis postvariszisches Grundgebirge  |
+|15202467 |Variszisches Kristallin des Helvetikums | Gneis  | Schiefer   | Gestein: magmatisch |  0 |  Paléozoïque     | Protérozoïque   | Variszisches Grundgebirge  |
+|15202468 |Socle polycyclique anté-varisque de l&#39;Helvétique | Gneis  | Schiefer   | 0 |  0 |  Paléozoïque     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15202469 |Socle cristallin indifférencié de l&#39;Helvétique | Gneis  | Schiefer   | Gestein: magmatisch |  0 |  Paléozoïque     | Protérozoïque   | Grundgebirge  |
+|15202472 |Complexe gneissique du Catogne | Migmatit  | Gneis: migmatitisch   | Amphibolit |  Catogne-Gneiskomplex |  Paléozoïque     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15202473 |Leucogranite des Grépillons | Granit: mikrokristallin-porphyrisch  | 0   | 0 |  Grépillons-Leukogranit |  Cisuralien     | Pennsylvanien   | Spät- bis postvariszisches Grundgebirge  |
+|15202474 |Leucogranite d&#39;Arpette | Granit: mikrokristallin  | 0   | 0 |  Arpette-Leukogranit |  Cisuralien     | Pennsylvanien   | Spät- bis postvariszisches Grundgebirge  |
+|15200362 |UMM-J | Sandstein: kalkig  | Mergelstein   | Tonstein |  0 |  Chattien     | Rupélien   | UMM  |
+|15200363 |Argile à Septaria (Septarienton) | Tonstein: mergelig: Glimmer  | Sandstein   | 0 |  «Septarienton» (UMM-J) |  Chattien     | Rupélien   | UMM  |
+|15200364 |Schistes à Poissons (Fischschiefer) | Tonstein: siltig  | Tonstein: mergelig   | 0 |  «Fischschiefer» (UMM-J) |  Rupélien     | Rupélien   | UMM  |
+|15200365 |Marnes à Foraminifères (Foraminiferenmergel) | Mergelstein: sandig: Glimmer  | 0   | 0 |  «Foraminiferenmergel» (UMM-J) |  Rupélien     | Rupélien   | UMM  |
+|15200366 |Meeressand | Sandstein: kalkig: Quarz  | Konglomerat: kalkig   | 0 |  «Meeressand» (UMM-J) |  Chattien     | Rupélien   | UMM  |
+|15200368 |Banc à Cyathula (bassin de Laufon) | Mergelstein  | 0   | 0 |  «Cyathulabank» (UMM-J) |  Rupélien     | Priabonien   | UMM  |
+|15200369 |Marne à Cyrènes | Mergelstein  | Sandstein: Glimmer   | 0 |  «Cyrenenmergel» (UMM-J) |  Chattien     | Chattien   | UMM  |
+|15200370 |Conglomérat de Porrentruy | Konglomerat: kalkig  | 0   | 0 |  Porrentruy-Konglomerat |  Rupélien     | Priabonien   | USM  |
+|15200371 |Raitsche | Kalkstein  | 0   | 0 |  Rossemaison-Formation |  Rupélien     | Priabonien   | Siderolithikum  |
+|15200373 |Gompholite d&#39;Ajoie | Brekzie: kalkig  | 0   | 0 |  Ajoie-Gompholit |  Rupélien     | Rupélien   | UMM  |
+|15200378 |Calcaire d&#39;eau douce de Tüllingen | Kalkstein: mikritisch  | Mergelstein   | 0 |  Tüllingen-Süsswasserkalk |  Chattien tardif     | Chattien tardif   | USM  |
+|15200380 |Partie supérieure du Hauptrogenstein | Kalkstein: Ooide  | Mergelstein   | 0 |  Hauptrogenstein |  Bathonien     | Bathonien   | Lias-Dogger in neritischer Fazies  |
+|15200382 |Partie inférieure du Hauptrogenstein | Kalkstein: Ooide  | Mergelstein   | 0 |  Hauptrogenstein |  Bajocien     | Bajocien   | Lias-Dogger in neritischer Fazies  |
+|15200383 |Calcaire roux marneux | Kalkstein: mergelig: Bioklasten  | 0   | 0 |  «Calcaire roux marneux» (Hauptrogenstein) |  Bajocien     | Bajocien   | Lias-Dogger in neritischer Fazies  |
+|15200384 |Membre d&#39;Ajoie | Sandstein  | Mergelstein   | Konglomerat |  Ajoie-Member |  Miocène tardif     | Miocène tardif   | OSM  |
+|15200385 |Membre du Bois de Raube | Konglomerat  | Sandstein   | Mergelstein |  Bois-de-Raube-Member |  Serravallien     | Serravallien   | OSM  |
+|15200386 |Membre du Montchaibeux | Sandstein  | Mergelstein   | 0 |  Montchaibeux-Member |  Serravallien     | Serravallien   | OSM  |
+|15200387 |Conglomérat de Daubrée | Konglomerat: kalkig-residual: Eisenpisoide  | 0   | 0 |  «Daubrée-Konglomerat» |  Priabonien     | Eocène moyen   | Siderolithikum  |
+|15200388 |Dépôts de blocs pérégrins (Wanderblock-Bildungen) | Gestein: residual  | 0   | 0 |  0 |  Pliocène     | Miocène tardif   | Post-Messinien  |
+|15200389 |Sables à galets (OMM) | Sandstein: konglomeratisch  | 0   | 0 |  0 |  Burdigalien     | Burdigalien   | OMM  |
+|15200390 |Poudingue polygénique (OMM) | Konglomerat: polymikt  | 0   | 0 |  0 |  Burdigalien     | Burdigalien   | OMM  |
+|15200391 |Zone du grès coquillier (OMM) | Sandstein: kalkig: Muscheln  | 0   | 0 |  0 |  Burdigalien     | Burdigalien   | OMM  |
+|15200392 |Molasse Grise (OMM) | Sandstein: Glimmer  | Sandstein: kalkig: Muscheln   | 0 |  0 |  Burdigalien     | Burdigalien   | OMM  |
+|15200393 |Calcaire de Daubrée | Kalkstein: Eisenooide  | 0   | 0 |  «Daubrée-Konglomerat» |  Eocène moyen     | Eocène moyen   | Siderolithikum  |
+|15200394 |Formations de la base de l&#39;USM-J | Kalkstein  | Gestein: residual: Eisenmineralien   | 0 |  0 |  Rupélien     | Priabonien   | USM  |
+|15200395 |Juranagelfluh de Laufon | Konglomerat: kalkig  | 0   | 0 |  Laufen-Juranagelfluh |  Tortonien     | Langhien   | OSM  |
+|15200396 |Juranagelfluh du Jura bâlois | Konglomerat: kalkig  | Sandstein   | Mergelstein |  Basler Juranagelfluh |  Langhien     | Langhien   | OSM  |
+|15200397 |Juranagelfluh d&#39;Argovie | Konglomerat: kalkig  | 0   | 0 |  Aargauer Juranagelfluh |  Tortonien     | Langhien   | OSM  |
+|15200399 |Couches du Jensberg | Sandstein: Glaukonit  | Mergelstein   | 0 |  Jensberg-Formation |  Burdigalien     | Burdigalien   | OMM  |
+|15200400 |Couches du Rebhubel | Sandstein: mergelig: Glimmer  | Sandstein: konglomeratisch   | Konglomerat |  Rebhubel-Schichten |  Burdigalien tardif     | Burdigalien tardif   | OMM  |
+|15200401 |Formation de Niedermatt | Sandstein  | Konglomerat: polymikt   | 0 |  Niedermatt-Formation |  Burdigalien     | Burdigalien   | OMM  |
+|15200402 |Formation du Belpberg | Sandstein  | Mergelstein   | Konglomerat |  Belpberg-Formation |  Burdigalien     | Burdigalien   | OMM  |
+|15200403 |Poudingue de la Pfadflüe | Konglomerat: kalkig  | Mergelstein   | Sandstein |  Pfadflüe-Member |  Burdigalien     | Burdigalien   | Molasse  |
+|15200404 |Poudingue calcaire de Sädel | Konglomerat: kalkig  | 0   | 0 |  Sädel-Kalknagelfluh |  Burdigalien     | Burdigalien   | OMM  |
+|15200405 |Grès coquillier d&#39;Utzigen | Sandstein: kalkig: Muscheln  | 0   | 0 |  Utzigen-Muschelsandstein |  Burdigalien     | Burdigalien   | OMM  |
+|15200406 |Poudingue quarzitique d&#39;Ulmiz | Konglomerat: Quarz  | 0   | 0 |  Ulmiz-Quarzitnagelfluh |  Burdigalien     | Burdigalien   | OMM  |
+|15200407 |Poudingue du Bütschelbach | Konglomerat  | 0   | 0 |  Bütschelbach-Nagelfluh |  Burdigalien     | Burdigalien   | OMM  |
+|15200408 |Formation de Kalchstätten | Konglomerat: kalkig  | Sandstein   | Mergelstein |  Kalchstätten-Formation |  Langhien     | Burdigalien   | Molasse  |
+|15200409 |Poudingue du Freudenberg | Konglomerat: kalkig  | 0   | 0 |  Freudenberg-Nagelfluh |  Burdigalien     | Burdigalien   | OMM  |
+|15200410 |Couches de Goldbrunnen | Mergelstein  | Sandstein   | 0 |  Goldbrunnen-Schichten |  Burdigalien     | Burdigalien   | OMM  |
+|15200411 |Poudingue de Dreilinden | Konglomerat  | 0   | 0 |  Dreilinden-Nagelfluh |  Burdigalien     | Burdigalien   | OMM  |
+|15200412 |Obere Grenznagelfluh (Fm. de Saint-Gall) | Konglomerat  | 0   | 0 |  «Obere Grenznagelfluh» |  Burdigalien     | Burdigalien   | OMM  |
+|15200413 |Formation de Kirchberg | Tonstein  | Mergelstein   | 0 |  Kirchberg-Formation |  Burdigalien tardif     | Burdigalien tardif   | Molasse  |
+|15200414 |Formation de Grimmelfingen | Tonstein  | Mergelstein   | Sandstein |  Grimmelfingen-Formation |  Burdigalien tardif     | Burdigalien tardif   | Molasse  |
+|15200415 |Couches de la Chnebelburg | Sandstein: Glaukonit  | Sandstein: kalkig: Muscheln   | Mergelstein |  Chnebelburg-Formation |  Burdigalien     | Burdigalien   | OMM  |
+|15200416 |Grès coquillier de Meinisberg | Sandstein: kalkig: Muscheln  | 0   | 0 |  Meinisberg-Muschelsandstein |  Burdigalien     | Burdigalien   | OMM  |
+|15200417 |Poudingue coquillier de Brüttelen | Sandstein: konglomeratisch-kalkig: Muscheln  | 0   | 0 |  Brüttelen-Grobsandstein |  Burdigalien     | Burdigalien   | OMM  |
+|15200418 |Formation de la Singine | Sandstein: Glaukonit  | Siltstein   | Mergelstein |  Sense-Formation |  Burdigalien     | Burdigalien   | OMM  |
+|15200419 |Couches de Montécu | Mergelstein: siltig  | 0   | 0 |  Montécu-Schichten |  Burdigalien     | Burdigalien   | OMM  |
+|15200420 |Grès coquillier de la Molière | Sandstein: kalkig: Muscheln  | 0   | 0 |  Molière-Muschelsandstein |  Burdigalien     | Burdigalien   | OMM  |
+|15200421 |Poudingue quartzitique du Scherli(grabe) | Konglomerat: Quarz  | 0   | 0 |  Scherli-Quarzitnagelfluh |  Burdigalien     | Burdigalien   | OMM  |
+|15200422 |Calcaire d&#39;eau douce de Grilly | Kalkstein  | 0   | 0 |  Grilly-Süsswasserkalk |  Rupélien     | Rupélien   | USM  |
+|15200423 |Calcaire d&#39;eau douce d&#39;Orbe | Kalkstein: Bitumen-Bioklasten  | 0   | 0 |  Orbe-Süsswasserkalk |  Rupélien     | Priabonien   | USM  |
+|15200424 |Calcaire concrétionné (USM) | Kalkstein: pedogen-verkrustet  | 0   | 0 |  0 |  Rupélien     | Priabonien   | USM  |
+|15200425 |Formation de Gümmenen | Sandstein  | Mergelstein: siltig   | 0 |  Gümmenen-Formation |  Aquitanien     | Chattien tardif   | USM  |
+|15200429 |Molasse bariolée supérieure | Mergelstein: siltig  | Sandstein   | Sandstein: kalkig |  «Obere Bunte Molasse» (USM-II) |  Aquitanien     | Aquitanien   | USM  |
+|15200430 |Calcaire d&#39;eau douce d&#39;Oberdorf | Kalkstein: kreidig  | Mergelstein   | 0 |  Oberdorf-Süsswasserkalk |  Rupélien     | Rupélien   | Siderolithikum  |
+|15200431 |Horizon limnique (OMM-II) | Mergelstein: siltig  | Kalkstein   | 0 |  St.-Gallen-Formation |  Burdigalien tardif     | Burdigalien tardif   | OMM  |
+|15200432 |Poudingue quartzitique (Fm. de Saint-Gall) | Konglomerat: Quarz  | Konglomerat: kalkig: Muscheln   | 0 |  0 |  Burdigalien     | Burdigalien   | OMM  |
+|15200433 |Conglomérat basal (Fm. de Lucerne) | Konglomerat: polymikt  | 0   | 0 |  Luzern-Formation |  Burdigalien     | Burdigalien   | OMM  |
+|15200436 |Membre de Poncin | Sandstein: Glimmer-Glaukonit  | 0   | 0 |  Poncin-Member |  Cénomanien     | Cénomanien   | «Gault»  |
+|15200437 |Grès de la Vraconne | Sandstein: Glaukonit  | Mergelstein: sandig   | 0 |  Vraconne-Sandstein |  Albien     | Albien   | «Gault»  |
+|15202541 |Formations d&#39;Elm et de Matt: grès quartzitique | Sandstein: Quarz  | 0   | 0 |  0 |  Rupélien     | Priabonien   | Flysch  |
+|15202542 |Formations d&#39;Elm et de Matt: argillite schisteuse | Tonstein: schiefrig  | 0   | 0 |  0 |  Rupélien     | Priabonien   | Flysch  |
+|15202543 |Schistes de la Schwalmern | Mergelstein: schiefrig  | 0   | 0 |  Tierwis-Formation |  Barrémien     | Barrémien   | Post-Rift Mesozoikum in pelagischer Fazies  |
+|15202544 |Calcaire de la Schwalmern | Mergelstein: kalkig-kieselig  | Kalkstein: spätig: Bioklasten   | Kalkstein: sandig |  Tierwis-Formation |  Barrémien     | Barrémien   | Post-Rift Mesozoikum in pelagischer Fazies  |
+|15202545 |Membre du Glockhaus: grès ferrugineux schisteux | Sandstein: Eisenmineralien  | 0   | 0 |  Glockhaus-Member |  Bajocien     | Aalénien   | Lias-Dogger in neritischer Fazies  |
+|15202546 |Dolomie du Trias helvétique | Dolomitstein  | 0   | 0 |  0 |  Trias     | Trias   | Karbonatische Trias  |
+|15202547 |Cornieule du Trias helvétique | Rauwacke  | 0   | 0 |  0 |  Trias     | Trias   | Prä-Rift  |
+|15202548 |Gypse du Trias helvétique | Evaporit: Gips  | 0   | 0 |  0 |  Trias     | Trias   | Prä-Rift  |
+|15202549 |Granodiorite de Baltschieder: tonalite à biotite | Tonalit: Biotit  | 0   | 0 |  Baltschieder-Granodiorit |  Mississippien     | Mississippien   | Prävariszisches Grundgebirge  |
+|15202550 |Granodiorite de Baltschieder: tonalite à biotite et horneblende | Tonalit: Biotit-Hornblende  | 0   | 0 |  Baltschieder-Granodiorit |  Mississippien     | Mississippien   | Prävariszisches Grundgebirge  |
+|15202551 |Complexe gneissique d&#39;Erstfeld: gneiss à plagioclase et biotite | Gneis: migmatitisch  | Migmatit   | 0 |  Erstfeld-Gneiskomplex |  Carbonifère     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15202552 |Complexe gneissique d&#39;Erstfeld: orthogneiss | Gneis: granitisch  | 0   | 0 |  Erstfeld-Gneiskomplex |  Carbonifère     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15202553 |Complexe gneissique d&#39;Erstfeld: migmatite | Migmatit  | 0   | 0 |  Erstfeld-Gneiskomplex |  Carbonifère     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15202554 |Complexe gneissique de Guttannnen: paragneiss | Gneis: sedimentär  | 0   | 0 |  Guttannen-Gneiskomplex |  Carbonifère     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15202555 |Complexe gneissique de Guttannnen: orthogneiss | Gneis: magmatisch  | 0   | 0 |  Guttannen-Gneiskomplex |  Carbonifère     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15202556 |Complexe gneissique de Guttannnen: schiste à chlorite et biotite | Schiefer  | Gneis   | 0 |  Guttannen-Gneiskomplex |  Carbonifère     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15202557 |Complexe gneissique de Guttannnen: schiste à séricite et chlorite | Schiefer  | Gneis   | 0 |  Guttannen-Gneiskomplex |  Carbonifère     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15202558 |Complexe gneissique du Lötschental: gneiss à muscovite | Gneis: Muskovit  | 0   | 0 |  Lötschental-Gneiskomplex |  Paléozoïque     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15202559 |Complexe gneissique du Lötschental: gneiss à biotite migmatitique | Gneis: migmatitisch  | 0   | 0 |  Lötschental-Gneiskomplex |  Paléozoïque     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15202560 |Complexe gneissique du Lötschental: schiste à chlorite | Schiefer: Chlorit  | 0   | 0 |  Lötschental-Gneiskomplex |  Paléozoïque     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15202561 |Complexe gneissique de l&#39;Ofenhorn-Stampfhorn: gneiss rubané à plagioclase et biotite | Gneis: gebändert  | Migmatit   | 0 |  Ofenhorn-Stampfhorn-Gneiskomplex |  Carbonifère     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15202562 |Complexe gneissique de l&#39;Ofenhorn-Stampfhorn: migmatite | Migmatit  | Gneis   | 0 |  Ofenhorn-Stampfhorn-Gneiskomplex |  Carbonifère     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15202563 |Complexe gneissique de l&#39;Ofenhorn-Stampfhorn: gneiss à biotite | Gneis: Biotit  | 0   | 0 |  Ofenhorn-Stampfhorn-Gneiskomplex |  Carbonifère     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15202564 |Complexe gneissique de l&#39;Ofenhorn-Stampfhorn: orthogneiss | Gneis: magmatisch  | 0   | 0 |  Ofenhorn-Stampfhorn-Gneiskomplex |  Carbonifère     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15202565 |Complexe gneissique de la Bäregg: orthogneiss mylonitique | Gneis: mylonitisch  | 0   | 0 |  Bäregg-Gneiskomplex |  Paléozoïque     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15202566 |Complexe gneissique de la Bäregg: paragneiss mylonitique | Gneis: mylonitisch  | 0   | 0 |  Bäregg-Gneiskomplex |  Paléozoïque     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15202567 |Complexe gneissique de la Bäregg: métavulcanite | Gestein: vulkanisch  | 0   | 0 |  Bäregg-Gneiskomplex |  Paléozoïque     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15202568 |Granodiorite du Grimsel: faciès aplitique de bordure | Granit: aplitisch  | 0   | 0 |  Grimsel-Granodiorit |  Cisuralien     | Cisuralien   | Spät- bis postvariszisches Grundgebirge  |
+|15202569 |Granite de la Voralp: faciès acide de bordure | Granit: aplitisch  | 0   | 0 |  Voralp-Granit |  Pennsylvanien     | Pennsylvanien   | Mittelvariszisches Grundgebirge  |
+|15202570 |Complexe gneissique de la Tamina | Gneis: migmatitisch  | 0   | 0 |  Tamina-Gneiskomplex |  Paléozoïque     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15202571 |Complexe gneissique de la Tamina: gneiss schisteux à biotite | Gneis: schiefrig: Biotit  | 0   | 0 |  Tamina-Gneiskomplex |  Paléozoïque     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15202572 |Complexe gneissique de la Tamina: mylonitique | Gneis: mylonitisch  | 0   | 0 |  Tamina-Gneiskomplex |  Paléozoïque     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15202573 |Migmatite d&#39;Innertkirchen: marbre | Marmor  | 0   | 0 |  Innertkirchen-Migmatit |  Carbonifère     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15202574 |Complexe gneissique de Guttannnen: migmatite | Migmatit  | 0   | 0 |  Guttannen-Gneiskomplex |  Carbonifère     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15202575 |Complexe gneissique de Guttannnen: avec amphibolite | Gneis: migmatitisch  | Amphibolit   | 0 |  Guttannen-Gneiskomplex |  Carbonifère     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15202576 |Complexe gneissique de Guttannnen: granite aplitique | Granit: aplitisch  | 0   | 0 |  Guttannen-Gneiskomplex |  Carbonifère     | Carbonifère   | Prävariszisches Grundgebirge  |
+|15202577 |Complexe gneissique de Guttannnen: marbre | Marmor  | 0   | 0 |  Guttannen-Gneiskomplex |  Carbonifère     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15202578 |Complexe gneissique de Guttannnen: roche ultramafique | Gestein: ultramafisch  | 0   | 0 |  Guttannen-Gneiskomplex |  Carbonifère     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15202579 |Complexe gneissique de l&#39;Ofenhorn-Stampfhorn: avec amphibolite à blocs | Gneis: migmatitisch  | Amphibolit: migmatitisch   | 0 |  Ofenhorn-Stampfhorn-Gneiskomplex |  Carbonifère     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15202580 |Complexe gneissique de l&#39;Ofenhorn-Stampfhorn: granite aplitique | Granit: aplitisch  | 0   | 0 |  Ofenhorn-Stampfhorn-Gneiskomplex |  Carbonifère     | Carbonifère   | Prävariszisches Grundgebirge  |
+|15202581 |Complexe gneissique de l&#39;Ofenhorn-Stampfhorn: amphibolite à blocs | Amphibolit: migmatitisch  | 0   | 0 |  Ofenhorn-Stampfhorn-Gneiskomplex |  Carbonifère     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15202582 |Complexe gneissique de l&#39;Ofenhorn-Stampfhorn: roche ultramafique | Gestein: ultramafisch  | 0   | 0 |  Ofenhorn-Stampfhorn-Gneiskomplex |  Carbonifère     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15202583 |Formations de Bommerstein et de Reischiben, indifférenciées | Tonstein  | Kalkstein: spätig   | Mergelstein |  0 |  Bathonien     | Toarcien   | Lias-Dogger in neritischer Fazies  |
+|15202584 |Formations de Mels et de Röti, indifférenciées | Dolomitstein  | Sandstein   | 0 |  0 |  Carnien     | Trias précoce   | Prä-Rift  |
+|15202585 |Complexe gneissique de Guttannnen: gneiss schisteux à biotite, chlorite, séricite | Gneis  | Schiefer   | 0 |  Guttannen-Gneiskomplex |  Carbonifère     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15202586 |Mélange de la Zettenalp-Trochematt | Mergelstein: schiefrig  | Sandstein   | Brekzie: kalkig: Bioklasten |  Zettenalp-Trochematt-Melange |  Eocène     | Eocène   | Mélange  |
+|15202587 |Flysch du Laubersmad | Brekzie: kristallin  | 0   | 0 |  Laubersmad-Flysch |  Priabonien     | Eocène moyen   | Flysch  |
+|15202588 |Formation de Stad, «Jüngerer Quarzsandstein» | Sandstein: Quarz  | 0   | 0 |  Stad-Formation |  Priabonien     | Eocène moyen   | «Nummulitikum»  |
+|15202589 |Membre d&#39;Einsiedeln, «Älterer Quarzsandstein» | Sandstein: Quarz  | 0   | 0 |  Einsiedeln-Member |  Eocène moyen     | Yprésien   | «Nummulitikum»  |
+|15202590 |Formation du Schrattenkalk, devenant marneuse | Kalkstein: mergelig  | Mergelstein   | 0 |  Schrattenkalk-Formation |  Aptien     | Aptien   | Post-Rift Mesozoikum in pelagischer Fazies  |
+|15202591 |Calcaire de Wängen, faciès calcaire à Lithothamnies | Kalkstein: Bioklasten  | 0   | 0 |  Wängen-Kalk |  Priabonien     | Eocène moyen   | «Nummulitikum»  |
+|15202592 |Membre d&#39;Einsiedeln, faciès calcaire à Alvéolines | Kalkstein: Nummuliten  | 0   | 0 |  Einsiedeln-Member |  Eocène moyen     | Yprésien   | «Nummulitikum»  |
+|15202593 |Grès du Hohgant, calcaire gréseux et calcaire | Kalkstein: sandig  | Kalkstein   | 0 |  Hohgant-Sandstein |  Priabonien     | Bartonien   | «Nummulitikum»  |
+|15202594 |Mélange tectonique des écailles internes d&#39;Einsiedeln | Mergelstein  | 0   | 0 |  0 |  Eocène     | Eocène   | Mélange  |
+|15202595 |Formations du Bürgen et d&#39;Euthal, indiff. | Kalkstein  | Sandstein   | Mergelstein |  0 |  Priabonien     | Lutétien   | «Nummulitikum»  |
+|15202596 |Formation de l&#39;Euthal et Membre du Steinbach, indiff. | Kalkstein: Nummuliten  | Sandstein: Glaukonit   | 0 |  0 |  Yprésien     | Thanétien   | «Nummulitikum»  |
+|15202597 |Formation de Stad (e6) | Tonstein  | 0   | 0 |  Stad-Formation |  Priabonien     | Priabonien   | «Nummulitikum»  |
+|15202598 |Formations du Stgir et d&#39;Inferno, indifférenciées | Schiefer: tonig  | Schiefer: kalkig   | Quarzit |  0 |  Jurassique précoce     | Jurassique précoce   | Lias-Dogger in neritischer Fazies  |
+|15202599 |Oberer Quintner Kalk: calcaire à coraux | Kalkstein: Korallen  | 0   | 0 |  «Oberer Quintner Kalk» |  Tithonien     | Tithonien   | Malm  |
+|15202600 |Oberer Quintner Kalk: Unterer Kalk | Kalkstein: mikritisch  | 0   | 0 |  «Oberer Quintner Kalk» |  Tithonien     | Tithonien   | Malm  |
+|15202601 |Formation du Prodkamm à Formation du Sexmor, indifférenciées | Gestein: pelitisch  | Kalkstein   | Sandstein |  0 |  Jurassique précoce     | Jurassique précoce   | Lias-Dogger in neritischer Fazies  |
+|15202602 |Formation du Plattazüg | Schiefer: Chlorit  | Phyllit   | Dazit |  Plattenzüg-Formation |  Permien     | Permien   | Spät- bis postvariszisches Grundgebirge  |
+|15202603 |Formation du Zementstein à Formation de Garschella, indifférenciées | Kalkstein  | Mergelstein   | Sandstein |  0 |  Crétacé précoce     | Crétacé précoce   | Post-Rift  |
+|15202604 |Formation d&#39;Euthal: faciès argilo-schisteux noir | Tonstein: schiefrig  | Konglomerat   | Sandstein: Quarz |  Vasanachopf-Member |  Paléocène     | Paléocène   | «Nummulitikum»  |
+|15200438 |Argile de la Presta | Tonstein: sandig  | 0   | 0 |  La-Presta-Mergel |  Albien     | Albien   | «Gault»  |
+|15200439 |Grès des Vernettes | Sandstein: Glaukonit  | 0   | 0 |  Vernettes-Sandstein |  Albien     | Albien   | «Gault»  |
+|15200440 |Banc du Ponthoud | Kalkstein: Bioklasten  | 0   | 0 |  Ponthoud-Bank |  Aptien     | Aptien   | «Gault»  |
+|15200441 |Grès de Scie Besse | Sandstein: Glaukonit  | 0   | 0 |  Scie-Besse-Sandstein |  Aptien     | Aptien   | «Gault»  |
+|15200442 |Marne du Mortier | Mergelstein  | 0   | 0 |  Mortier-Mergel |  Aptien     | Aptien   | «Gault»  |
+|15200443 |Couches de Vauglène | Mergelstein: kalkig  | 0   | 0 |  Vauglène-Bänke |  Aptien     | Aptien   | «Gault»  |
+|15200444 |Banc du Poet | Kalkstein: mergelig: Bioklasten  | 0   | 0 |  Poet-Bank |  Aptien     | Aptien   | «Gault»  |
+|15200445 |Calcaire d&#39;eau douce de Courcelon | Kalkstein  | 0   | 0 |  Courcelon-Süsswasserkalk |  Rupélien     | Priabonien   | Siderolithikum  |
+|15200446 |Calcaire concrétionné de la Erzmatt | Kalkstein: Limonit  | 0   | 0 |  Erzmatt-Krustenkalk |  Rupélien     | Priabonien   | Siderolithikum  |
+|15200447 |Calcaire d&#39;eau douce de Diegten | Kalkstein: Bioklasten  | 0   | 0 |  Diegten-Süsswasserkalk |  Rupélien     | Eocène moyen   | Siderolithikum  |
+|15200448 |Calcaire d&#39;eau douce de la Verrerie | Kalkstein: kreidig  | Mergelstein   | 0 |  La-Verrerie-Süsswasserkalk |  Rupélien     | Priabonien   | Siderolithikum  |
+|15200449 |Calcaire d&#39;eau douce de la Charrue | Kalkstein  | Mergelstein   | 0 |  La-Charrue-Süsswasserkalk |  Rupélien     | Priabonien   | Siderolithikum  |
+|15200450 |Marne à Astieria | Mergelstein: Bioklasten  | 0   | 0 |  «Astieria-Mergel» |  Valanginien     | Valanginien   | Post-Rift Mesozoikum in Plattform-Fazies  |
+|15200451 |Couches de Villers | Mergelstein  | 0   | 0 |  Villers-Schichten |  Valanginien     | Valanginien   | Post-Rift Mesozoikum in Plattform-Fazies  |
+|15200452 |Unité Moyenne Calcaire (UMC) | Kalkstein: mikritisch  | 0   | 0 |  «Unité Moyenne Calcaire» |  Berriasien     | Berriasien   | Post-Rift Mesozoikum in Plattform-Fazies  |
+|15200453 |Unité Inférieure Oolithique (UIO) | Kalkstein: Bioklasten-Ooide  | Mergelstein   | 0 |  «Unité Inférieure Oolithique» |  Berriasien     | Berriasien   | Post-Rift Mesozoikum in Plattform-Fazies  |
+|15200456 |Calcaire de Landaize | Kalkstein: Bioklasten  | 0   | 0 |  Landaize-Kalk |  Kimméridgien     | Kimméridgien   | Malm  |
+|15200457 |Oolite du Balmberg | Kalkstein: Ooide  | 0   | 0 |  Balmberg-Oolith |  Kimméridgien     | Oxfordien   | Malm  |
+|15200458 |Calcaire algaire des Hautes Roches | Kalkstein: mikritisch: Onkoide  | Kalkstein: dolomitisch   | 0 |  Hautes-Roches-Algenkalk |  Oxfordien     | Oxfordien   | Malm  |
+|15200459 |Bancs accessoires à momies | Kalkstein: Onkoide  | 0   | 0 |  Akzessorische Mumienbänke |  Oxfordien     | Oxfordien   | Malm  |
+|15200460 |Brauner Oolith | Kalkstein: Ooide  | 0   | 0 |  «Brauner Oolith» |  Oxfordien     | Oxfordien   | Malm  |
+|15200461 |Bleiglanzbank (Fm. de Kaiseraugst) | Dolomitstein  | 0   | 0 |  «Bleiglanzbank» (Kaiseraugst-Fm.) |  Anisien     | Anisien   | Muschelkalk  |
+|15200462 |Banc à Arenicolites | Kalkstein  | 0   | 0 |  «Arenicolites-Bank» |  Anisien     | Anisien   | Buntsandstein  |
+|15200463 |Diagonalschichtiger Sandstein (Fm. du Dinkelberg) | Sandstein: tonig: Glimmer  | 0   | 0 |  «Diagonalschichtiger Sandstein» (Dinkelberg-Fm.) |  Olénékien     | Olénékien   | Buntsandstein  |
+|15200464 |Membre du Leutschenberg | Kalkstein: dolomitisch  | Kalkstein: Bioklasten   | 0 |  Leutschenberg-Member |  Anisien     | Anisien   | Muschelkalk  |
+|15200465 |Granite de Schlächtenhaus | Granit: Biotit-Muskovit  | 0   | 0 |  Schlächtenhaus-Granit |  Mississippien     | Dévonien tardif   | Frühvariszisches Grundgebirge  |
+|15200466 |Complexe gneissique du Steinatal | Gneis: migmatitisch  | Amphibolit   | 0 |  Steinatal-Gneiskomplex |  Paléozoïque     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15200467 |Grenzdolomit (Fm. de Schinznach) | Dolomitstein  | 0   | 0 |  «Grenzdolomit» (Schinznach-Fm.) |  Ladinien     | Ladinien   | Muschelkalk  |
+|15200468 |Couches à Estheria (Fm. de Schinznach) | Mergelstein: Bitumen  | 0   | 0 |  «Estherien-Schichten» |  Ladinien     | Ladinien   | Muschelkalk  |
+|15200469 |Hangende-Bankkalke-Formation | Kalkstein: mikritisch  | 0   | 0 |  Hangende-Bankkalke-Formation |  Tithonien     | Tithonien   | Malm  |
+|15200470 |Zementmergel-Formation | Mergelstein  | Kalkstein   | 0 |  Zementmergel-Formation |  Tithonien     | Kimméridgien   | Malm  |
+|15200471 |Liegende-Bankkalke-Formation | Kalkstein: Bioklasten  | Mergelstein   | 0 |  Liegende-Bankkalke-Formation |  Kimméridgien     | Kimméridgien   | Malm  |
+|15200472 |Obere-Felsenkalke-Formation | Kalkstein: mikritisch  | 0   | 0 |  Obere-Felsenkalke-Formation |  Kimméridgien     | Kimméridgien   | Malm  |
+|15200473 |Untere-Felsenkalke-Formation | Kalkstein  | Mergelstein   | 0 |  Untere-Felsenkalke-Formation |  Kimméridgien     | Kimméridgien   | Malm  |
+|15200474 |Lacunosamergel-Formation | Mergelstein  | Kalkstein: mergelig   | 0 |  Lacunosamergel-Formation |  Kimméridgien     | Kimméridgien   | Malm  |
+|15200475 |Oberjura-Massenkalk-Formation | Kalkstein: Schwämme  | 0   | 0 |  Oberjura-Massenkalk-Formation |  Tithonien     | Kimméridgien   | Malm  |
+|15200476 |Lochen-Subformation | Kalkstein: Schwämme  | 0   | 0 |  Lochen-Subformation |  Kimméridgien     | Oxfordien   | Malm  |
+|15200477 |Wohlgeschichtete-Kalke-Formation | Kalkstein: mikritisch  | 0   | 0 |  Wohlgeschichtete-Kalke-Formation |  Kimméridgien     | Oxfordien   | Malm  |
+|15200478 |Impressamergel-Formation | Mergelstein: tonig  | Kalkstein: mergelig   | 0 |  Impressamergel-Formation |  Oxfordien     | Oxfordien   | Malm  |
+|15200479 |Ornatenton-Formation | Tonstein  | Mergelstein: tonig   | Kalkstein: Eisenooide |  Ornatenton-Formation |  Oxfordien     | Bathonien   | Lias-Dogger in neritischer Fazies  |
+|15200480 |Glaukonitsandmergel-Subformation | Mergelstein: sandig-tonig: Glaukonit  | 0   | 0 |  Glaukonitsandmergel-Subformation |  Oxfordien     | Oxfordien   | Lias-Dogger in neritischer Fazies  |
+|15200481 |Grenzkalk | Mergelstein: kalkig: Ooide  | 0   | 0 |  Grenzkalk |  Callovien     | Callovien   | Lias-Dogger in neritischer Fazies  |
+|15200482 |Macrocephalenoolith-Subformation | Tonstein: Eisenooide  | 0   | 0 |  Macrocephalenoolith-Subformation |  Callovien     | Bathonien   | Lias-Dogger in neritischer Fazies  |
+|15200483 |Wutach-Formation | Mergelstein: kalkig: Eisenooide  | 0   | 0 |  Wutach-Formation |  Callovien     | Bathonien   | Lias-Dogger in neritischer Fazies  |
+|15200484 |Variansmergel-Formation | Mergelstein  | Kalkstein   | 0 |  Variansmergel-Formation |  Bathonien     | Bajocien   | Lias-Dogger in neritischer Fazies  |
+|15200485 |Dentalienton-Formation | Mergelstein: tonig  | 0   | 0 |  Dentalienton-Formation |  Bathonien     | Bathonien   | Lias-Dogger in neritischer Fazies  |
+|15200486 |Hamitenton-Formation | Mergelstein: tonig  | 0   | 0 |  Hamitenton-Formation |  Bathonien     | Bajocien   | Lias-Dogger in neritischer Fazies  |
+|15200487 |Parkinsonioolith-Subformation | Kalkstein: Eisenooide  | Mergelstein: tonig   | 0 |  Parkinsonioolith-Subformation |  Bajocien     | Bajocien   | Lias-Dogger in neritischer Fazies  |
+|15200488 |Gosheim-Formation | Kalkstein: Eisenooide  | Mergelstein   | 0 |  Gosheim-Formation |  Bajocien     | Bajocien   | Lias-Dogger in neritischer Fazies  |
+|15200489 |Blagdeni-Subformation | Mergelstein  | Kalkstein   | 0 |  Blagdeni-Subformation |  Bajocien     | Bajocien   | Lias-Dogger in neritischer Fazies  |
+|15200490 |Humphriesioolith-Subformation | Mergelstein: Eisenooide  | 0   | 0 |  Humphriesioolith-Subformation |  Bajocien     | Bajocien   | Lias-Dogger in neritischer Fazies  |
+|15200491 |Wedelsandstein-Formation | Mergelstein  | Kalkstein   | 0 |  Wedelsandstein-Formation |  Bajocien     | Bajocien   | Lias-Dogger in neritischer Fazies  |
+|15200492 |Blaukalk-Subformation | Kalkstein  | Mergelstein   | 0 |  Blaukalk-Subformation |  Bajocien     | Bajocien   | Lias-Dogger in neritischer Fazies  |
+|15200493 |Murchisonaeoolith-Formation | Kalkstein: sandig  | Sandstein: kalkig   | Sandstein: Eisenooide |  Murchisonaeoolith-Formation |  Aalénien     | Aalénien   | Lias-Dogger in neritischer Fazies  |
+|15200494 |Achdorf-Formation | Tonstein: sandig: Glimmer  | Kalkstein: Ooide   | Kalkstein: Bioklasten |  Achdorf-Formation |  Aalénien     | Aalénien   | Lias-Dogger in neritischer Fazies  |
+|15200495 |Couches du Tannenwald | Konglomerat  | Sandstein   | 0 |  Tannenwald-Schichten |  Serravallien     | Serravallien   | Molasse  |
+|15200496 |Couches de la Gabelspitz | Konglomerat: polymikt: Quarz  | Sandstein   | Mergelstein |  Gabelspitz-Schichten |  Burdigalien     | Burdigalien   | Molasse  |
+|15200497 |Marne du Schallenberg | Mergelstein  | Sandstein   | Konglomerat: polymikt |  Schallenberg-Member |  Burdigalien     | Burdigalien   | Molasse  |
+|15200498 |Poudingue de Seli | Konglomerat: polymikt: Quarz  | 0   | 0 |  Seli-Nagelfluh |  Burdigalien     | Burdigalien   | Molasse  |
+|15200499 |Tuffite du Brand-Herrentisch | Tuffit  | 0   | 0 |  Brand-Herrentisch-Tuffit |  Tortonien     | Langhien   | Hegau-Vulkanismus  |
+|15200500 |Tuffite de Wangen | Tuffit  | 0   | 0 |  Wangen-Tuffit |  Serravallien     | Langhien   | Hegau-Vulkanismus  |
+|15200501 |Tuffite du Hohenolber | Tuffit  | 0   | 0 |  Hohenolber-Tuffit |  Serravallien     | Serravallien   | Hegau-Vulkanismus  |
+|15200502 |Tuffite d&#39;Eichbol | Tuffit  | 0   | 0 |  Eichbol-Tuffit |  Langhien     | Langhien   | Hegau-Vulkanismus  |
+|15202189 |Monzodiorite du (Piz) Curtin | Monzonit: Quarz  | Syenit: Quarz   | 0 |  Curtin-Monzodiorit |  Mississippien     | Mississippien   | Frühvariszisches Grundgebirge  |
+|15202190 |Syénite du Bristenstock | Syenit: Quarz-Hornblende  | 0   | 0 |  Bristenstock-Syenit |  Mississippien moyen     | Mississippien moyen   | Mittelvariszisches Grundgebirge  |
+|15202191 |Groupe de Cavardiras | Gestein: sedimentär  | 0   | 0 |  0 |  Mississippien     | Paléozoïque   | Frühvariszisches Grundgebirge  |
+|15202192 |Formation du Val Gliems | Ignimbrit  | Tuffit   | Konglomerat |  Val-Gliems-Formation |  Mississippien     | Paléozoïque   | Frühvariszisches Grundgebirge  |
+|15202193 |Formation du Bifertenfirn | Schiefer: tonig: Anthrazit  | Gneis   | 0 |  Bifertenfirn-Formation |  Mississippien     | Paléozoïque   | Frühvariszisches Grundgebirge  |
+|15202194 |Socle métamorphique polycyclique anté-varisque du massif de l&#39;Aar | Gneis  | Schiefer   | 0 |  0 |  Dévonien     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15202195 |Migmatite d&#39;Innertkirchen | Migmatit: Cordierit  | Gneis: migmatitisch   | Amphibolit |  Innertkirchen-Migmatit |  Carbonifère     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15202196 |Gneiss du Zäsenberg | Gneis  | 0   | 0 |  Zäsenberg-Gneis |  Carbonifère     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15202197 |Complexe gneissique d&#39;Erstfeld | Gneis: migmatitisch  | Gneis: granitisch   | Schiefer |  Erstfeld-Gneiskomplex |  Carbonifère     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15202198 |Complexe gneissique de Guttannen | Gneis: migmatitisch  | Migmatit   | Granofels: Kalksilikat |  Guttannen-Gneiskomplex |  Carbonifère     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15202199 |Complexe gneissique du Straligenstöckli | Granit: porphyrisch: Biotit  | Granodiorit: aplitisch   | 0 |  Straligenstöckli-Gneiskomplex |  Paléozoïque     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15202200 |Complexe gneissique du Lötschental | Gneis: migmatitisch  | Schiefer: Chlorit   | 0 |  Lötschental-Gneiskomplex |  Paléozoïque     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15202201 |Complexe gneissique de l&#39;Ofenhorn-Stampfhorn | Gneis  | Migmatit   | Schiefer |  Ofenhorn-Stampfhorn-Gneiskomplex |  Carbonifère     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15202202 |Granodiorite de Fully | Granodiorit  | Migmatit: Cordierit   | 0 |  Fully-Granodiorit |  Pennsylvanien     | Pennsylvanien   | Prävariszisches Grundgebirge  |
+|15202203 |Rhyodacite de Plex-Aboyeu | Dazit: rhyolithisch  | 0   | 0 |  Plex-Aboyeu-Rhyolith |  Pennsylvanien     | Pennsylvanien   | Spät- bis postvariszisches Grundgebirge  |
+|15202204 |Granite de Vallorcine | Granit: Biotit-Cordierit  | 0   | 0 |  Vallorcine-Granit |  Pennsylvanien     | Pennsylvanien   | Mittelvariszisches Grundgebirge  |
+|15202205 |Mylonite de Miéville | Granit: mylonitisch  | Mylonit   | 0 |  Miéville-Mylonit |  Pennsylvanien     | Pennsylvanien   | Mittelvariszisches Grundgebirge  |
+|15202206 |Granite des Montées-Pélissiers | Granit  | 0   | 0 |  Montées-Pélissiers-Granit |  Mississippien moyen     | Mississippien moyen   | Frühvariszisches Grundgebirge  |
+|15202207 |Granite de Pormenaz | Granit  | 0   | 0 |  Pormenaz-Granit |  Mississippien moyen     | Mississippien moyen   | Frühvariszisches Grundgebirge  |
+|15202210 |Micaschistes d&#39;Emosson | Gneis: schiefrig: Biotit  | Schiefer: Glimmer   | Gneis: migmatitisch |  Emosson-Gneiskomplex |  Paléozoïque     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15202211 |Orthogneiss du Luisin | Gneis: granodioritisch  | Granodiorit   | 0 |  Luisin-Orthogneis |  Ordovicien     | Ordovicien   | Prävariszisches Grundgebirge  |
+|15202212 |Complexe gneissique du Val Bérard | Gneis: magmatisch  | 0   | 0 |  Val-Bérard-Gneiskomplex |  Ordovicien     | Ordovicien   | Prävariszisches Grundgebirge  |
+|15202213 |Éclogite du Lac Cornu | Eklogit  | 0   | 0 |  Lac-Cornu-Eklogit |  Ordovicien     | Ordovicien   | Prävariszisches Grundgebirge  |
+|15202214 |Orthogneiss des Perrons | Gneis: granodioritisch  | Granodiorit   | 0 |  Perrons-Orthogneis |  Ordovicien     | Ordovicien   | Prävariszisches Grundgebirge  |
+|15202215 |Rhyolithe de la Breya | Rhyolith  | 0   | 0 |  Breya-Rhyolith |  Cisuralien     | Pennsylvanien   | Spät- bis postvariszisches Grundgebirge  |
+|15202216 |Granite du Mont Blanc | Granit  | 0   | 0 |  Mont-Blanc-Granit |  Pennsylvanien     | Pennsylvanien   | Spät- bis postvariszisches Grundgebirge  |
+|15202217 |Granite du Montenvers | Granit  | Granit: mylonitisch   | 0 |  Montenvers-Granit |  Pennsylvanien     | Pennsylvanien   | Spät- bis postvariszisches Grundgebirge  |
+|15202218 |Orthogneiss de Lognan | Gneis: augig  | Gneis: gebändert   | 0 |  Lognan-Orthogneis |  Ordovicien     | Ordovicien   | Prävariszisches Grundgebirge  |
+|15202219 |Orthogneiss des Pétoudes | Gneis: magmatisch  | 0   | 0 |  Pétoudes-Orthogneis |  Ordovicien     | Ordovicien   | Prävariszisches Grundgebirge  |
+|15202220 |Groupe de Pesciora | Gestein: plutonisch  | 0   | 0 |  0 |  Cisuralien     | Cisuralien   | Postvariszisches Grundgebirge  |
+|15202221 |Granite du Rotondo | Granit: Biotit-Granat  | 0   | 0 |  Rotondo-Granit |  Sakmarien     | Sakmarien   | Postvariszisches Grundgebirge  |
+|15202222 |Granite de la Cacciola | Granit: Biotit-Muskovit  | 0   | 0 |  Cacciola-Granit |  Cisuralien     | Cisuralien   | Postvariszisches Grundgebirge  |
+|15202223 |Diorite du Sädelhorn | Diorit  | 0   | 0 |  Sädelhorn-Diorit |  Cisuralien     | Cisuralien   | Postvariszisches Grundgebirge  |
+|15202224 |Granite du Winterhorn | Granit: aplitisch: Granat  | 0   | 0 |  Winterhorn-Granit |  Cisuralien     | Cisuralien   | Postvariszisches Grundgebirge  |
+|15202225 |Groupe du Val Lavaz | Gestein: plutonisch  | 0   | 0 |  0 |  Cisuralien     | Pennsylvanien   | Spätvariszisches Grundgebirge  |
+|15202226 |Granite de Medel | Granit: porphyrisch  | Gneis: granitisch   | 0 |  Medel-Granit |  Cisuralien     | Cisuralien   | Spätvariszisches Grundgebirge  |
+|15202227 |Granodiorite de Cristallina | Granodiorit  | 0   | 0 |  Cristallina-Granodiorit |  Cisuralien     | Pennsylvanien   | Spätvariszisches Grundgebirge  |
+|15202228 |Granite du Gamsboden | Granit: Biotit-Muskovit  | Gneis: augig   | 0 |  Gamsboden-Granit |  Cisuralien     | Pennsylvanien   | Spätvariszisches Grundgebirge  |
+|15202229 |Diorite du Val Uffiern | Diorit: Biotit-Hornblende  | 0   | 0 |  Uffiern-Diorit |  Cisuralien     | Pennsylvanien   | Spätvariszisches Grundgebirge  |
+|15202230 |Granite de la Fibbia | Granit: Biotit-Muskovit  | Gneis: augig   | 0 |  Fibbia-Granit |  Cisuralien     | Pennsylvanien   | Spätvariszisches Grundgebirge  |
+|15202231 |Groupe du Val Rondadura | Gneis: sedimentär  | Schiefer   | 0 |  0 |  Paléozoïque     | Paléozoïque   | Prä- bis frühvariszisches Grundgebirge  |
+|15202232 |Complexe gneissique du Piz Borel | Schiefer: Glimmer-Hornblende  | 0   | 0 |  Borel-Gneiskomplex |  Paléozoïque     | Paléozoïque   | Prä- bis frühvariszisches Grundgebirge  |
+|15202233 |Complexe gneissique du Piz Tenelin | Schiefer: Hornblende  | Gneis: Hornblende   | Amphibolit: Granat |  Tenelin-Gneiskomplex |  Paléozoïque     | Paléozoïque   | Prä- bis frühvariszisches Grundgebirge  |
+|15202234 |Complexe gneissique des Laiets | Gneis  | Schiefer: Glimmer   | 0 |  Laiets-Gneiskomplex |  Paléozoïque     | Paléozoïque   | Prä- bis frühvariszisches Grundgebirge  |
+|15202235 |Complexe gneissique de la Tremola | Gneis: Hornblende  | Schiefer: Hornblende-Granat   | Amphibolit |  Tremola-Gneiskomplex |  Paléozoïque     | Paléozoïque   | Prä- bis frühvariszisches Grundgebirge  |
+|15202236 |Complexe gneissique de Pontino | Schiefer: Glimmer-Hornblende  | Gneis: schiefrig: Hornblende   | Amphibolit |  Pontino-Gneiskomplex |  Paléozoïque     | Paléozoïque   | Prä- bis frühvariszisches Grundgebirge  |
+|15202237 |Complexe gneissique de Nelva | Gneis  | Schiefer: Glimmer-Granat   | Schiefer: Hornblende |  Nelva-Gneiskomplex |  Paléozoïque     | Paléozoïque   | Prä- bis frühvariszisches Grundgebirge  |
+|15202238 |Complexe gneissique du Sasso Rosso | Schiefer: Glimmer  | Gneis: schiefrig: Chlorit   | Schiefer: Hornblende |  Sasso-Rosso-Gneiskomplex |  Paléozoïque     | Paléozoïque   | Prä- bis frühvariszisches Grundgebirge  |
+|15202239 |Complexe gneissique de Prüsfa | Gneis: Granat  | Quarzit   | Rhyolith |  Prüsfa-Gneiskomplex |  Paléozoïque     | Paléozoïque   | Prä- bis frühvariszisches Grundgebirge  |
+|15202240 |Complexe du Streifengneiss | Gneis: granitisch  | Gneis: Biotit-Muskovit   | 0 |  Streifengneis-Komplex |  Llandoveryien     | Spätes Ordovizium   | Prävariszisches Grundgebirge  |
+|15202241 |Métagabbro du Chastelhorn | Amphibolit: Granat  | Gabbro   | 0 |  Chastelhorn-Metagabbro |  Mittleres Ordovizium     | Frühes Ordovizium   | Prävariszisches Grundgebirge  |
+|15202242 |Gneiss de la Gurschen(alp) | Gneis  | Schiefer   | Gneis: migmatitisch |  Gurschen-Gneis |  Paléozoïque     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15202243 |Gneiss de la Guspis | Gneis  | Schiefer   | Gneis: migmatitisch |  Guspis-Gneis |  Paléozoïque     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15202244 |Gneiss de Sorescia | Gneis  | Gneis: migmatitisch   | 0 |  Sorescia-Gneis |  Paléozoïque     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15202246 |roches granitiques | Granit  | 0   | 0 |  0 |  Paléozoïque     | Protérozoïque   | Grundgebirge  |
+|15202247 |roches volcaniques et subvolcaniques acides | Gestein: saur-vulkanisch  | 0   | 0 |  0 |  Paléozoïque     | Protérozoïque   | Grundgebirge  |
+|15202255 |Cristallin à altération permienne | Gestein: residual  | Gneis   | 0 |  0 |  Permien     | Permien   | Grundgebirge  |
+|15202256 |Formation de Goltschenried | Schiefer: Graphit  | Gneis   | 0 |  Goltschenried-Formation |  Cisuralien     | Pennsylvanien tardif   | Spät- bis postvariszisches Grundgebirge  |
+|15202263 |Granite d&#39;Engi | Granit: porphyrisch  | 0   | 0 |  Engi-Granit |  Paléozoïque     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15202264 |Complexe gneissique de Calmut | Gneis: migmatitisch  | 0   | 0 |  Calmut-Gneiskomplex |  Paléozoïque     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15202265 |Complexe gneissique du Val Pigniu | Gneis  | 0   | 0 |  Val-Pigniu-Gneiskomplex |  Protérozoïque     | Protérozoïque   | Prävariszisches Grundgebirge  |
+|15200503 |Formation d&#39;Öhningen | Mergelstein  | Gestein: vulkanisch   | 0 |  Öhningen-Formation |  Langhien     | Langhien   | OSM  |
+|15200504 |Calcaire d&#39;eau douce d&#39;Öhningen | Kalkstein  | Tonstein   | Gestein: vulkanisch |  Öhningen-Süsswasserkalk |  Langhien     | Langhien   | OSM  |
+|15200505 |Poudingue de la Ramschwag | Konglomerat: kalkig-dolomitisch  | 0   | 0 |  Ramschwag-Nagelfluh |  Langhien     | Langhien   | OSM  |
+|15200506 |Tuffite du Seerücken | Tuffit  | 0   | 0 |  Seerücken-Tuffit |  Serravallien     | Serravallien   | OSM  |
+|15200507 |Couches de Meilen | Mergelstein  | 0   | 0 |  Meilen-Formation |  Langhien     | Langhien   | OSM  |
+|15200508 |Rotzone Wulp | Bentonit  | 0   | 0 |  «Wulp-Rotzone» |  Langhien     | Langhien   | OSM  |
+|15200509 |Formation de Käpfnach | Mergelstein  | Gestein: organisch: Kohle   | 0 |  Kapfnach-Formation |  Langhien     | Burdigalien tardif   | OSM  |
+|15200510 |Juranagelfluh-Mergel | Mergelstein  | 0   | 0 |  0 |  Tortonien     | Langhien   | OSM  |
+|15200511 |Calcaire d&#39;eau douce du Golat | Kalkstein: kreidig: Bitumen  | Mergelstein   | Sandstein |  Golat-Süsswasserkalk |  Miocène moyen     | Miocène moyen   | OSM  |
+|15200512 |Petrefaktenlager (Fm. du Belpberg) | Mergelstein: Bioklasten  | Sandstein: mergelig   | 0 |  Belpberg-Formation |  Burdigalien     | Burdigalien   | OMM  |
+|15200513 |Formation du Hombach | Sandstein: Feldspat  | Mergelstein   | Konglomerat |  Hombach-Member |  Chattien tardif     | Chattien tardif   | USM  |
+|15200514 |Membre de Homberg | Sandstein: Feldspat  | Siltstein   | Mergelstein |  Homberg-Formation |  Chattien précoce     | Chattien précoce   | USM  |
+|15200515 |Poudingue du Gäbris | Konglomerat  | Sandstein   | 0 |  Gäbris-Nagelfluh |  Aquitanien     | Aquitanien   | USM  |
+|15200516 |Membre du Gstaldenbach | Mergelstein  | Konglomerat   | 0 |  Gstaldenbach-Member |  Aquitanien     | Aquitanien   | USM  |
+|15200517 |Membre de Heiden | Sandstein: kalkig  | 0   | 0 |  Heiden-Member |  Aquitanien     | Aquitanien   | USM  |
+|15200518 |Membre du Klusbach | Konglomerat  | 0   | 0 |  Klusbach-Member |  Aquitanien     | Aquitanien   | USM  |
+|15200519 |Membre de l&#39;Eggen | Sandstein  | 0   | 0 |  Eggen-Member |  Aquitanien     | Aquitanien   | USM  |
+|15200520 |Membre de Sulzbach | Sandstein: Feldspat  | Sandstein: kalkig   | Konglomerat: kalkig |  Sulzbach-Member |  Aquitanien     | Aquitanien   | USM  |
+|15200521 |Poudingue de Sulzbach | Konglomerat: kalkig  | 0   | 0 |  Sulzbach-Member |  Aquitanien     | Aquitanien   | USM  |
+|15200522 |Membre du Pfingstboden | Konglomerat: polymikt  | 0   | 0 |  Pfingstboden-Member |  Aquitanien     | Aquitanien   | USM  |
+|15200523 |Membre de la Hochfläschli | Konglomerat  | Mergelstein   | 0 |  Hochfläschli-Member |  Aquitanien     | Aquitanien   | USM  |
+|15200524 |Membre d&#39;Ennetbühl | Konglomerat  | Mergelstein   | 0 |  Ennetbühl-Member |  Aquitanien     | Aquitanien   | USM  |
+|15200525 |Membre de la Hochalp | Konglomerat: kalkig-dolomitisch  | Mergelstein   | 0 |  Hochalp-Member |  Aquitanien     | Aquitanien   | USM  |
+|15200526 |Membre de Krummenau | Mergelstein  | Konglomerat: kalkig   | Sandstein: kalkig |  Krummenau-Member |  Aquitanien     | Aquitanien   | USM  |
+|15200527 |Ältere Juranagelfluh | Konglomerat: kalkig  | Mergelstein   | 0 |  «Ältere Juranagelfluh» |  Aquitanien     | Aquitanien   | USM  |
+|15200528 |Poudingue de la Gitzischöpf | Konglomerat  | Sandstein   | Tonstein |  Gitzschöpf-Nagelfluh |  Chattien tardif     | Chattien tardif   | USM  |
+|15200529 |Marne de la Honegg | Mergelstein: sandig  | Konglomerat   | 0 |  Honegg-Mergel |  Aquitanien     | Chattien tardif   | USM  |
+|15200530 |Poudingue du Kaltbach | Konglomerat  | 0   | 0 |  Kaltbach-Nagelfluh |  Aquitanien     | Chattien tardif   | USM  |
+|15200531 |Poudingue de Hünibach | Konglomerat  | Sandstein   | Mergelstein |  Hünibach-Nagelfluh |  Chattien     | Chattien   | USM  |
+|15200532 |Formation de la Losenegg | Konglomerat: polymikt  | Sandstein   | Siltstein |  Losenegg-Formation |  Chattien     | Chattien   | USM  |
+|15200533 |Poudingue de Schwändibach | Konglomerat  | Sandstein   | Mergelstein |  Schwändibach-Nagelfluh |  Chattien précoce     | Chattien précoce   | USM  |
+|15200534 |Formation d&#39;Uerscheli | Sandstein  | Siltstein   | Konglomerat: polymikt |  Uerscheli-Formation |  Chattien précoce     | Chattien précoce   | USM  |
+|15200535 |Poudingue de Bumbach | Konglomerat  | Siltstein   | 0 |  Bumbach-Nagelfluh |  Chattien précoce     | Chattien précoce   | USM  |
+|15200536 |Kalksandstein-Serie | Sandstein: kalkig: Glimmer  | Mergelstein: sandig   | 0 |  «Untere Bunte Molasse» (USM-I) |  Chattien     | Chattien   | USM  |
+|15200537 |Couches du Gérignoz | Mergelstein  | Sandstein: Glimmer   | Tonstein: Kohle |  Gérignoz-Formation |  Aquitanien     | Chattien tardif   | USM  |
+|15200538 |Poudingue du Leuenfall | Konglomerat: kalkig  | 0   | 0 |  Leuenfall-Nagelfluh |  Chattien     | Rupélien   | USM  |
+|15200539 |Membre du Wintersberg | Mergelstein  | Sandstein: kalkig   | Konglomerat |  Wintersberg-Member |  Chattien     | Chattien   | USM  |
+|15200540 |Grès d&#39;Ebnat | Mergelstein  | Sandstein: mergelig   | Sandstein: kalkig |  Ebnat-Member |  Chattien     | Rupélien   | USM  |
+|15200541 |Grès calcaire de Rütiberg | Sandstein: kalkig  | 0   | 0 |  Rütiberg-Kalksandstein |  Chattien     | Rupélien   | USM  |
+|15200542 |Poudingue de la Pfiffegg | Konglomerat: kalkig-dolomitisch  | Sandstein   | 0 |  Pfiffegg-Nagelfluh |  Chattien     | Chattien   | USM  |
+|15200543 |Formation de Weggis | Konglomerat: kalkig-dolomitisch  | Sandstein   | Mergelstein |  Weggis-Formation |  Chattien précoce     | Rupélien   | USM  |
+|15200544 |Poudingue de la Kännelegg | Konglomerat: kalkig  | 0   | 0 |  Kännelegg-Nagelfluh |  Chattien précoce     | Rupélien   | USM  |
+|15200545 |Molasse Rouge du Pied-du-Jura | Mergelstein: sandig  | Sandstein: Glimmer   | Konglomerat: kalkig |  «Molasse Rouge des Jurasüdfusses» |  Chattien tardif     | Rupélien   | USM  |
+|15200546 |Grès de Mathod | Sandstein  | 0   | 0 |  Mathod-Sandstein |  Chattien tardif     | Chattien tardif   | USM  |
+|15200547 |Grès de Goumoëns | Sandstein  | Konglomerat: kalkig   | 0 |  Goumoëns-Sandstein |  Chattien précoce     | Chattien précoce   | USM  |
+|15200548 |Molasse Rouge de Vevey | Mergelstein: siltig: Glimmer  | Sandstein: mergelig   | 0 |  «Molasse Rouge de Vevey» |  Chattien     | Chattien   | USM  |
+|15200549 |Molasse Rouge de Monthey | Schiefer  | Sandstein   | 0 |  «Molasse Rouge de Monthey» |  Chattien     | Chattien   | USM  |
+|15200550 |Formation de la Grindelegg | Mergelstein  | Sandstein: kalkig: Glimmer   | Konglomerat: kalkig |  Grindelegg-Formation |  Chattien     | Chattien   | USM  |
+|15200551 |Couches de Tillerée | Mergelstein: tonig: Kohle  | Mergelstein: siltig   | 0 |  Tillerée-Schichten |  Aquitanien     | Chattien tardif   | USM  |
+|15200552 |Série des calcaires d&#39;eau douce et dolomie (GMGG) | Kalkstein  | Dolomitstein   | 0 |  «Grès et Marnes Gris à Gypse» |  Chattien tardif     | Chattien tardif   | USM  |
+|15200553 |Calcarénite d&#39;Oltingue | Kalkstein: arenitisch  | 0   | 0 |  Oltingue-Kalkarenit |  Rupélien     | Rupélien   | UMM  |
+|15200554 |Formation de Vaulruz (UMM-II+III indiff.) | Sandstein: kalkig: Glimmer  | Mergelstein   | 0 |  Vaulruz-Formation |  Rupélien     | Rupélien   | UMM  |
+|15200555 |Poudingue d&#39;Unter Lochsitli | Konglomerat  | 0   | 0 |  Unter-Lochsiti-Nagelfluh |  Rupélien     | Rupélien   | UMM  |
+|15200556 |Poudingue de Flühli | Konglomerat  | 0   | 0 |  Flühli-Nagelfluh |  Rupélien     | Rupélien   | UMM  |
+|15200557 |Zone der Schiefermergel (Fm. de Saint-Gall) | Mergelstein: Bioklasten  | 0   | 0 |  St.-Gallen-Formation |  Burdigalien     | Burdigalien   | OMM  |
+|15200558 |Membre de Marbach | Sandstein: Glimmer  | Mergelstein   | 0 |  Marbach-Member |  Aquitanien     | Aquitanien   | USM  |
+|15200560 |Molasse bariolée inférieure | Mergelstein: siltig  | Sandstein   | 0 |  «Untere Bunte Molasse» (USM-I) |  Chattien tardif     | Chattien tardif   | USM  |
+|15200562 |Mittlere Juranagelfluh | Konglomerat  | 0   | 0 |  Mittlere Juranagelfluh |  Langhien     | Burdigalien   | OSM  |
+|15200563 |Albstein | Kalkstein  | 0   | 0 |  Albstein |  Burdigalien     | Burdigalien   | OSM  |
+|15200564 |Graupensand | Sandstein  | 0   | 0 |  Grimmelfingen-Formation |  Burdigalien     | Burdigalien   | Molasse  |
+|15200565 |Marne à Hélicidés | Mergelstein: Bioklasten  | Tonstein   | 0 |  «Heliciden-Mergel» (OSM-J) |  Tortonien     | Langhien   | OSM  |
+|15200566 |Marne de Haldenhof | Mergelstein  | Sandstein   | 0 |  Haldenhof-Mergel |  Langhien     | Burdigalien tardif   | OSM  |
 
 
 
@@ -4381,40 +6724,40 @@ Wertetabelle der lithostratigraphischen Einheiten
 |15200571 | Péry-Geröllsande | Sable à galets de Péry     |
 |15200572 | Les-Bayards-Juranagelfluh | Gompholite des Bayards     |
 |15200573 | Günsberg- und Vellerat-Formation, undifferenziert | Formation de Günsberg et de Vellerat, indifférenciées     |
-|15200574 | Ancepsoolith-Subformation | Ancepsoolith-Subformation     |
-|15200575 | Jurensismergel-Formation | Jurensismergel-Formation     |
-|15200576 | Posidonienschiefer-Formation | Posidonienschiefer-Formation     |
-|15200577 | Amaltheenton-Formation | Amaltheenton-Formation     |
-|15200578 | Numismalismergel-Formation | Numismalismergel-Formation     |
-|15200579 | Obtususton-Formation | Obtususton-Formation     |
-|15200580 | Arietenkalk-Formation | Arietenkalk-Formation     |
-|15200581 | Angulatenton-Formation | Angulatenton-Formation     |
-|15200582 | Psilonotenton-Formation | Psilonotenton-Formation     |
+|15200574 | Ancepsoolith-Subformation | Ornatenton-Fm.: Ancepsoolith-Sbf.     |
+|15200575 | Jurensismergel-Formation | Jurensismergel-Fm.     |
+|15200576 | Posidonienschiefer-Formation | Posidonienschiefer-Fm.     |
+|15200577 | Amaltheenton-Formation | Amaltheenton-Fm.     |
+|15200578 | Numismalismergel-Formation | Numismalismergel-Fm.     |
+|15200579 | Obtususton-Formation | Obtususton-Fm.     |
+|15200580 | Arietenkalk-Formation | Arietenkalk-Fm.     |
+|15200581 | Angulatenton-Formation | Angulatenton-Fm.     |
+|15200582 | Psilonotenton-Formation | Psilonotenton-Fm.     |
 |15200583 | Bodensee-Nagelfluh | Bodensee-Nagelfluh     |
-|15200584 | Tabalcon-Kalk | Tabalcon-Kalk     |
+|15200584 | Tabalcon-Kalk | Etiollets-Fm.: Tabalcon-Kalk     |
 |15200585 | Bonneville-Sandstein | Bonneville-Sandstein     |
 |15200586 | Montauban-Mergel | Montauban-Mergel     |
 |15200587 | Montauban-Sandstein | Montauban-Sandstein     |
 |15200588 | Mornex-Nagelfluh | Mornex-Nagelfluh     |
 |15200589 | USM-III bis OSM-I | USM-III bis OSM-I     |
-|15200590 | Loorenkopf-Nagelfluh | Loorenkopf-Nagelfluh     |
-|15200591 | «Pierre Jaune Supérieure» | «Pierre Jaune Supérieure»     |
-|15200592 | «Pierre Jaune Inférieure» | «Pierre Jaune Inférieure»     |
-|15200593 | «Formation de la Chambotte Supérieure» | «Formation de la Chambotte Supérieure»     |
-|15200594 | «Formation de la Chambotte Inférieure» | «Formation de la Chambotte Inférieure»     |
-|15200616 | Kristallin der Nordschweiz | Kristallin der Nordschweiz     |
-|15200617 | Variszisches Grundgebirge der Nordschweiz | Variszisches Grundgebirge der Nordschweiz     |
+|15200590 | Loorenkopf-Nagelfluh | Uetliberg-Fm.: Loorenkopf-Nagelfluh     |
+|15200591 | «Pierre Jaune Supérieure» | Grand-Essert-Fm: Neuchâtel-Mb.: Oberer Teil     |
+|15200592 | «Pierre Jaune Inférieure» | Grand-Essert-Fm: Neuchâtel-Mb.: Unterer Teil     |
+|15200593 | «Formation de la Chambotte Supérieure» | Chambotte-Fm.: Oberer Teil     |
+|15200594 | «Formation de la Chambotte Inférieure» | Chambotte-Fm.: Unterer Teil     |
+|15200616 | Kristallin der Nordschweiz | Schwarzwald-Massiv: Grundgebirge     |
+|15200617 | Variszisches Grundgebirge der Nordschweiz | Schwarzwald-Massiv: Variszische Intrusiva     |
 |15200618 | Mümliswil-Süsswasserkalk | Calcaire d&#39;eau douce de Mümliswil     |
 |15200619 | Limnischer Horizont (OMM-I) | Horizon limnique (OMM-I)     |
 |15200620 | Dardagny-Sandstein | Grès de Dardagny     |
-|15200621 | Napf-Formation, proximale Fazies | Napf-Formation, proximale Fazies     |
-|15200622 | Napf-Formation, distale Fazies | Napf-Formation, distale Fazies     |
-|15200623 | Le-Locle-Formation | Le-Locle-Formation     |
-|15200624 | Le-Verger-Member | Le-Verger-Member     |
-|15200625 | Combe-Girard-Member | Combe-Girard-Member     |
-|15200626 | Crêt-du-Locle-Formation | Crêt-du-Locle-Formation     |
-|15200627 | Crêt-du-Locle-Formation, Mergelfazies | Crêt-du-Locle-Formation, Mergelfazies     |
-|15200628 | Gitzigrabe-Grobsandstein | Gitzigrabe-Grobsandstein     |
+|15200621 | Napf-Formation, proximale Fazies | Napf-Fm.: Konglomerat-dominierte Fazies     |
+|15200622 | Napf-Formation, distale Fazies | Napf-Fm.: Sandstein-Mergelstein-dominierte Fazies     |
+|15200623 | Le-Locle-Formation | Le-Locle-Fm.     |
+|15200624 | Le-Verger-Member | Le-Locle-Fm.: Le-Verger Mb.     |
+|15200625 | Combe-Girard-Member | Le-Locle-Fm.: Combe-Girard Mb.     |
+|15200626 | Crêt-du-Locle-Formation | Crêt-du-Locle-Fm.     |
+|15200627 | Crêt-du-Locle-Formation, Mergelfazies | Crêt-du-Locle-Fm.: Mergelfazies     |
+|15200628 | Gitzigrabe-Grobsandstein | St.-Gallen-Fm.: Gitzigrabe-Grobsandstein     |
 |15200629 | Trois-Rods-Süsswasserkalk | Trois-Rods-Süsswasserkalk     |
 |15200630 | Champ-Vuillerat-Süsswasserkalk | Champ-Vuillerat-Süsswasserkalk     |
 |15200631 | Wolhusen-Bentonit | Bentonite de Wholusen     |
@@ -4446,22 +6789,22 @@ Wertetabelle der lithostratigraphischen Einheiten
 |15200657 | Gugenmühle-Member | Membre du Gugenmühle     |
 |15200658 | Schwarzbach-Schichten | Couches du Schwarzbach     |
 |15200659 | Wangen- und Letzi-Member, undifferenziert | Membres de Wangen et du Letzi, indifférenciés     |
-|15200660 | Grand-Essert- bis Narlay-Formation, undifferenziert | Grand-Essert- bis Narlay-Formation, undifferenziert     |
-|15200661 | Goldberg- bis Vuache-Formation, undifferenziert | Goldberg- bis Vuache-Formation, undifferenziert     |
-|15200662 | Bellegarde-Bank | Bellegarde-Bank     |
-|15200663 | Serrières-Bank | Serrières-Bank     |
-|15200664 | Morteau-Bänke | Morteau-Bänke     |
-|15200665 | La-Vaux-Bank | La-Vaux-Bank     |
-|15200666 | Cul-du-Nozon-Bank | Cul-du-Nozon-Bank     |
-|15200667 | Pont-des-Pierres-Bank | Pont-des-Pierres-Bank     |
-|15200668 | Censeau-Mergel | Censeau-Mergel     |
-|15200669 | Morteau-Mergel | Morteau-Mergel     |
-|15200670 | Grande-Varappe-Bank | Grande-Varappe-Bank     |
-|15200671 | Le-Coin-Formation | Le-Coin-Formation     |
-|15200672 | Bärschwil- bis St-Ursanne-Formation, undifferenziert | Bärschwil- bis St-Ursanne-Formation, undifferenziert     |
-|15200673 | Passwang- bis Ifenthal-Formation, undifferenziert | Passwang- bis Ifenthal-Formation, undifferenziert     |
-|15200674 | «Calcaires à Entroques» | «Calcaires à Entroques»     |
-|15200675 | Staffelegg-Formation und Opalinus-Ton, undifferenziert | Staffelegg-Formation und Opalinus-Ton, undifferenziert     |
+|15200660 | Grand-Essert- bis Narlay-Formation, undifferenziert | Grand-Essert- bis Narlay-Fm.     |
+|15200661 | Goldberg- bis Vuache-Formation, undifferenziert | Goldberg- bis Vuache-Fm.     |
+|15200662 | Bellegarde-Bank | Rocher-des-Hirondelles-Fm.: Bellegarde-Bk.     |
+|15200663 | Serrières-Bank | Rocher-des-Hirondelles-Fm.: Serrières-Bk.     |
+|15200664 | Morteau-Bänke | Gorges-de-l&#39;Orbe-Fm.: Morteau-Kalk     |
+|15200665 | La-Vaux-Bank | Gorges-de-l&#39;Orbe-Fm.: Montcherand-Mb.: La-Vaux-Bk.     |
+|15200666 | Cul-du-Nozon-Bank | Gorges-de-l&#39;Orbe-Fm.: Montcherand-Mb.: Cul-du-Nozon-Bk.     |
+|15200667 | Pont-des-Pierres-Bank | Gorges-de-l&#39;Orbe-Fm.: Montcherand-Mb.: Pont-des-Pierres-Bk.     |
+|15200668 | Censeau-Mergel | Grand-Essert-Fm: Hauterive-Mb.: Censeau-Mergel     |
+|15200669 | Morteau-Mergel | Grand-Essert-Fm: Hauterive-Mb.: Morteau-Mergel     |
+|15200670 | Grande-Varappe-Bank | Chambotte-Fm.: Guiers-Mb.: Grande-Varappe-Bk.     |
+|15200671 | Le-Coin-Formation | Le-Coin-Fm.     |
+|15200672 | Bärschwil- bis St-Ursanne-Formation, undifferenziert | Bärschwil-, St-Ursanne- und Pichoux-Fm.     |
+|15200673 | Passwang- bis Ifenthal-Formation, undifferenziert | Passwang- bis Ifenthal-Fm.     |
+|15200674 | «Calcaires à Entroques» | Calcaire à Entroques     |
+|15200675 | Staffelegg-Formation und Opalinus-Ton, undifferenziert | Staffelegg-Fm. und Opalinus-Ton     |
 |15200676 | Schafisheim-Syenit | Schafisheim-Syenit     |
 |15200677 | Pfaffnau-Granit | Pfaffnau-Granit     |
 |15200678 | Zurzach-Granit | Zurzach-Granit     |
@@ -4471,13 +6814,13 @@ Wertetabelle der lithostratigraphischen Einheiten
 |15200682 | Schlächtenhaus-Schiefer | Schlächtenhaus-Schiefer     |
 |15200683 | Gersbach-Schiefer | Gersbach-Schiefer     |
 |15200684 | Herdern-Streifengneis | Herdern-Streifengneis     |
-|15200685 | Courgenay-, Balsthal- und Villigen-Formation, undifferenziert | Courgenay-, Balsthal- und Villigen-Formation, undifferenziert     |
-|15200686 | Pichoux-Formation: Korallenfazies | Pichoux-Formation: Korallenfazies     |
-|15200687 | Pichoux-Formation: Schwammfazies | Pichoux-Formation: Schwammfazies     |
-|15200688 | Kalter-Wangen-Formation: Konglomerat-Fazies | Kalter-Wangen-Formation: Konglomerat-Fazies     |
-|15200689 | Kalter-Wangen-Formation: Sandstein-Mergel-Fazies | Kalter-Wangen-Formation: Sandstein-Mergel-Fazies     |
-|15200690 | Heilsberg-Bentonit | Heilsberg-Bentonit     |
-|15200691 | Humlikon-Bentonit | Humlikon-Bentonit     |
+|15200685 | Courgenay-, Balsthal- und Villigen-Formation, undifferenziert | Courgenay- Balsthal- und VilligenFm.     |
+|15200686 | Pichoux-Formation: Korallenfazies | Pichoux-Fm.: Korallenfazies     |
+|15200687 | Pichoux-Formation: Schwammfazies | Pichoux-Fm.: Schwammfazies     |
+|15200688 | Kalter-Wangen-Formation: Konglomerat-Fazies | Kalter-Wangen-Fm.: Konglomerat-dominierte Fazies     |
+|15200689 | Kalter-Wangen-Formation: Sandstein-Mergel-Fazies | Kalter-Wangen-Fm.: Sandstein-Mergelstein-dominierte Fazies     |
+|15200690 | Heilsberg-Bentonit | Kalter-Wangen-Fm.: Heilsberg-Bentonit     |
+|15200691 | Humlikon-Bentonit | OSM: Humlikon-Bentonit     |
 |15202001 | Habkern-Melange | Mélange de Habkern     |
 |15202002 | Sörenberg-Melange | Mélange de Sörenberg     |
 |15202003 | Wildhaus-Melange | Mélange de Wildhaus     |
@@ -4827,40 +7170,40 @@ Wertetabelle der lithostratigraphischen Einheiten
 |15202357 | Prä- und Frühvariszische Sedimente und Vulkanite des Aiguilles-Rouges-Massivs | Roches sédimentaires et volcaniques éo-varisques du massif des Aiguilles Rouges     |
 |15202358 | Au-d&#39;Arbignon-Schiefer | Schistes de l&#39;Au d&#39;Arbignon     |
 |15202359 | Dorénaz-Konglomerat | Conglomérat de Dorénaz     |
-|15202360 | «Wildflysch», undifferenziert | «Wildflysch», undifferenziert     |
+|15202360 | «Wildflysch», undifferenziert | Wildflysch     |
 |15202361 | Plaine-Morte-Melange | Plaine-Morte-Melange     |
 |15202362 | Mättental-Melange | Mättental-Melange     |
-|15202363 | Höchst-Flysch | Höchst-Flysch     |
+|15202363 | Höchst-Flysch | Meilleret-Fm.: Höchst-Flysch     |
 |15202364 | Kiental-Melange | Kiental-Melange     |
-|15202365 | Termen-Tonschiefer | Termen-Tonschiefer     |
-|15202366 | Termen-Kalkschiefer | Termen-Kalkschiefer     |
-|15202367 | Nufenen-Knotenschiefer | Nufenen-Knotenschiefer     |
-|15202368 | Nufenen-Sandstein | Nufenen-Sandstein     |
-|15202369 | Nufenen-Granatschiefer | Nufenen-Granatschiefer     |
-|15202370 | Stgir-Formation, Unterer Teil | Stgir-Formation, Unterer Teil     |
-|15202371 | Stgir-Formation, Oberer Teil | Stgir-Formation, Oberer Teil     |
-|15202372 | Runcaleida-Schichten | Runcaleida-Schichten     |
-|15202373 | Riein-Schichten | Riein-Schichten     |
+|15202365 | Termen-Tonschiefer | Termen-Zone: Tonschiefer     |
+|15202366 | Termen-Kalkschiefer | Termen-Zone: Kalkschiefer     |
+|15202367 | Nufenen-Knotenschiefer | Nufenen-Zone: Knotenschiefer     |
+|15202368 | Nufenen-Sandstein | Nufenen-Zone: Sandstein     |
+|15202369 | Nufenen-Granatschiefer | Nufenen-Zone: Granatschiefer     |
+|15202370 | Stgir-Formation, Unterer Teil | Stgir-Fm.: Unterer Teil     |
+|15202371 | Stgir-Formation, Oberer Teil | Stgir-Fm.: Oberer Teil     |
+|15202372 | Runcaleida-Schichten | Inferno-Fm.: Oberer Teil: Runcaleida-Sch.     |
+|15202373 | Riein-Schichten | Inferno-Fm.: Unterer Teil: Riein-Sch.     |
 |15202374 | Meierhof-Phyllit | Meierhof-Phyllit     |
 |15202375 | Waltensburg-Verrucano | Waltensburg-Verrucano     |
-|15202376 | Ruinas-Sandstein | Ruinas-Sandstein     |
-|15202377 | Berglikehle-Bank | Berglikehle-Bank     |
+|15202376 | Ruinas-Sandstein | Ruinas Sandstein     |
+|15202377 | Berglikehle-Bank | Niederhorn-Fm.: Hohgant-Sandstein: Berglikehle-Bk.     |
 |15202378 | Rossplatten-Diorit | Rossplatten-Diorit     |
 |15202379 | Schöllenen-Diorit | Schöllenen-Diorit     |
-|15202380 | Grotzen-Austernbank | Grotzen-Austernbank     |
-|15202381 | Hurst-Mergel | Hurst-Mergel     |
-|15202382 | Palis-Member | Palis-Member     |
-|15202383 | «Oberer Öhrlikalk» | «Oberer Öhrlikalk»     |
-|15202384 | «Oberer Öhrlimergel» | «Oberer Öhrlimergel»     |
-|15202385 | «Unterer Öhrlikalk» | «Unterer Öhrlikalk»     |
-|15202386 | Spitzmeilen-Formation, Oberer Teil | Spitzmeilen-Formation, Oberer Teil     |
-|15202387 | Spitzmeilen-Formation, Unterer Teil | Spitzmeilen-Formation, Unterer Teil     |
-|15202388 | Spitzmeilen-Formation, Basaler Teil | Spitzmeilen-Formation, Basaler Teil     |
-|15202389 | Prodkamm-Formation, Oberer Teil | Prodkamm-Formation, Oberer Teil     |
-|15202390 | Prodkamm-Formation, Mittlerer Teil | Prodkamm-Formation, Mittlerer Teil     |
-|15202391 | Prodkamm-Formation, Unterer Teil | Prodkamm-Formation, Unterer Teil     |
-|15202392 | Sandpass-Formation | Sandpass-Formation     |
-|15202393 | Roc-Champion-Konglomerat | Roc-Champion-Konglomerat     |
+|15202380 | Grotzen-Austernbank | Amden-Fm.: Leist-Mergel: Grotzen-Austernbank     |
+|15202381 | Hurst-Mergel | Tierwis-Fm.: Hurst-Mergel     |
+|15202382 | Palis-Member | Helvetischer Kieselkalk: Palis-Bk.     |
+|15202383 | «Oberer Öhrlikalk» | Öhrli-Fm.: Oberer-Öhrlikalk     |
+|15202384 | «Oberer Öhrlimergel» | Öhrli-Fm.: Oberer-Öhrlimergel     |
+|15202385 | «Unterer Öhrlikalk» | Öhrli-Fm.: Unterer-Öhrlikalk     |
+|15202386 | Spitzmeilen-Formation, Oberer Teil | Spitzmeilen-Fm.: Oberer Teil     |
+|15202387 | Spitzmeilen-Formation, Unterer Teil | Spitzmeilen-Fm.: Unterer Teil     |
+|15202388 | Spitzmeilen-Formation, Basaler Teil | Spitzmeilen-Fm.: Basaler Teil     |
+|15202389 | Prodkamm-Formation, Oberer Teil | Prodkamm-Fm.: Oberer Teil     |
+|15202390 | Prodkamm-Formation, Mittlerer Teil | Prodkamm-Fm.: Mittlerer Teil     |
+|15202391 | Prodkamm-Formation, Unterer Teil | Prodkamm-Fm.: Unterer Teil     |
+|15202392 | Sandpass-Formation | Sandpass-Fm.     |
+|15202393 | Roc-Champion-Konglomerat | Sanetsch-Fm.: Diablerets-Mb.: Roc-Champion-Konglomerat     |
 |15202394 | Spirstock-Member | Membre du Spirstock     |
 |15202395 | «Roter Seewenkalk» | «Roter Seewenkalk»     |
 |15202396 | Untere Götzis-Bank | Banc de Götzis inférieur     |
@@ -4964,21 +7307,21 @@ Wertetabelle der lithostratigraphischen Einheiten
 |15202508 | Ignimbritisches Member (Tscharren) | Ignimbritisches Member (Tscharren)     |
 |15202509 | Guschakopf-Sandstein | Grès du Guschakopf     |
 |15202510 | Gonzen-Eisenerzhorizont | Horizon du Gonzen     |
-|15202511 | Schabell-Mélange | Schabell-Mélange     |
-|15202512 | Taveyannaz-Sandstein, Dachschiefer vorherrschend | Taveyannaz-Sandstein, Dachschiefer vorherrschend     |
-|15202513 | Helvetischer Kieselkalk, Oberer Teil | Helvetischer Kieselkalk, Oberer Teil     |
-|15202514 | Helvetischer Kieselkalk, Unterer Teil | Helvetischer Kieselkalk, Unterer Teil     |
-|15202515 | Helvetischer Kieselkalk, Basisschiefer | Helvetischer Kieselkalk, Basisschiefer     |
-|15202516 | Toarcienschiefer | Toarcienschiefer     |
-|15202517 | Toarcienspatkalk | Toarcienspatkalk     |
-|15202518 | Domérien-Sandstein | Domérien-Sandstein     |
-|15202519 | Pliensbachien-Spatkalk | Pliensbachien-Spatkalk     |
-|15202520 | Lotharingien-Sandstein | Lotharingien-Sandstein     |
-|15202521 | Iserin-Flysch | Iserin-Flysch     |
-|15202522 | Meilleret-Formation, Calcaires organo-détritiques | Meilleret-Formation, Calcaires organo-détritiques     |
-|15202523 | Meilleret-Formation, Arkose | Meilleret-Formation, Arkose     |
-|15202524 | Meilleret-Formation, Conglomérat basal | Meilleret-Formation, Conglomérat basal     |
-|15202525 | Grenzquarzit der Bommerstein-Formation | Grenzquarzit der Bommerstein-Formation     |
+|15202511 | Schabell-Mélange | Schabell-Melange     |
+|15202512 | Taveyannaz-Sandstein, Dachschiefer vorherrschend | Taveyannaz-Fm.: Dachschiefer-Fazies     |
+|15202513 | Helvetischer Kieselkalk, Oberer Teil | Helvetischer Kieselkalk: Oberer Teil     |
+|15202514 | Helvetischer Kieselkalk, Unterer Teil | Helvetischer Kieselkalk: Unterer Teil     |
+|15202515 | Helvetischer Kieselkalk, Basisschiefer | Helvetischer Kieselkalk: Basisschiefer     |
+|15202516 | Toarcienschiefer | Torrenthorn-Fm.: Torrentalp-Mb.: Schiefer-Fazies     |
+|15202517 | Toarcienspatkalk | Torrenthorn-Fm.: Torrentalp-Mb.: Spatkalk-Fazies     |
+|15202518 | Domérien-Sandstein | Torrenthorn-Fm.: Torrentalp-Mb.: Sandstein-Fazies     |
+|15202519 | Pliensbachien-Spatkalk | Torrenthorn-Fm.: Galm-Mb.: Spatkalk-Fazies     |
+|15202520 | Lotharingien-Sandstein | Torrenthorn-Fm.: Galm-Mb.: Sandstein-Fazies     |
+|15202521 | Iserin-Flysch | Meilleret-Fm.: Iserin-Konglomerat     |
+|15202522 | Meilleret-Formation, Calcaires organo-détritiques | Meilleret-Fm.: Biodetritischer Kalkstein     |
+|15202523 | Meilleret-Formation, Arkose | Meilleret-Fm.: Arkose     |
+|15202524 | Meilleret-Formation, Conglomérat basal | Meilleret-Fm.: Basales Konglomerat     |
+|15202525 | Grenzquarzit der Bommerstein-Formation | Bommerstein-Fm.: Glockhaus-Mb.: Grenzquarzit     |
 |15202526 | Telltistock-Granit | Telltistock-Granit     |
 |15202527 | Öhrli-Formation, von Siderolithikum durchsetzt | Formation de l&#39;Öhrli, à infiltrations de Sidérolithique     |
 |15202528 | Beesten-Fazies | faciès de Beesten     |
@@ -5058,35 +7401,35 @@ Wertetabelle der lithostratigraphischen Einheiten
 |15202602 | Plattenzüg-Formation | Formation du Plattazüg     |
 |15202603 | Zemenstein- bis Garschella-Formation, undifferenziert | Formation du Zementstein à Formation de Garschella, indifférenciées     |
 |15202604 | Vasanachopf-Member | Formation d&#39;Euthal: faciès argilo-schisteux noir     |
-|15202605 | Pfäfers-Formation | Pfäfers-Formation     |
-|15202606 | Euthal- und Bürgen-Formation, undifferenziert | Euthal- und Bürgen-Formation, undifferenziert     |
-|15202607 | Amden- und Wang-Formation, undifferenziert | Amden- und Wang-Formation, undifferenziert     |
-|15202608 | Seewen- und Amden-Formation, undifferenziert | Seewen- und Amden-Formation, undifferenziert     |
-|15202609 | Betlis- bis Schrattenkalk-Formation, undifferenziert | Betlis- bis Schrattenkalk-Formation, undifferenziert     |
-|15202610 | Öhrli- bis Schrattenkalk-Formation, undifferenziert | Öhrli- bis Schrattenkalk-Formation, undifferenziert     |
-|15202611 | Mols-Members, Basisbildungen | Mols-Members, Basisbildungen     |
-|15202612 | Öhrli- und Betlis-Formation, undifferenziert | Öhrli- und Betlis-Formation, undifferenziert     |
-|15202613 | Erzegg-Formation: Grenzschicht | Erzegg-Formation: Grenzschicht     |
-|15202614 | Bränd-Brekzie | Bränd-Brekzie     |
+|15202605 | Pfäfers-Formation | Pfäfers-Fm.     |
+|15202606 | Euthal- und Bürgen-Formation, undifferenziert | Euthal- und Bürgen-Fm.     |
+|15202607 | Amden- und Wang-Formation, undifferenziert | Amden- und Wang-Fm.     |
+|15202608 | Seewen- und Amden-Formation, undifferenziert | Seewen- und Amden-Fm.     |
+|15202609 | Betlis- bis Schrattenkalk-Formation, undifferenziert | Betlis- bis Schrattenkalk-Fm.     |
+|15202610 | Öhrli- bis Schrattenkalk-Formation, undifferenziert | Öhrli- bis Schrattenkalk-Fm.     |
+|15202611 | Mols-Members, Basisbildungen | Bommerstein-Fm.: Basisbildungen     |
+|15202612 | Öhrli- und Betlis-Formation, undifferenziert | Öhrli- und Betlis-Fm.     |
+|15202613 | Erzegg-Formation: Grenzschicht | Erzegg-Fm.: Grenzschicht     |
+|15202614 | Bränd-Brekzie | Spitzmeilen-Fm.: Bränd-Brekzie     |
 |15202615 | Infralias-Sandstein | Infralias-Sandstein     |
-|15202616 | Nufenen-Zone: phyllitische Trias | Nufenen-Zone: phyllitische Trias     |
-|15202617 | Nufenen-Zone: karbonatische Trias | Nufenen-Zone: karbonatische Trias     |
-|15202618 | Nufenen-Zone: karbonatische Trias: Kalkmarmor | Nufenen-Zone: karbonatische Trias: Kalkmarmor     |
-|15202619 | Nufenen-Zone: karbonatische Trias: Dolomitmarmor | Nufenen-Zone: karbonatische Trias: Dolomitmarmor     |
-|15202620 | Nufenen-Zone: karbonatische Trias: Rauwacke | Nufenen-Zone: karbonatische Trias: Rauwacke     |
-|15202621 | Nufenen-Zone: quartzitische Trias | Nufenen-Zone: quartzitische Trias     |
+|15202616 | Nufenen-Zone: phyllitische Trias | Nufenen-Zone: Phyllitische Trias     |
+|15202617 | Nufenen-Zone: karbonatische Trias | Nufenen-Zone: Karbonatische Trias     |
+|15202618 | Nufenen-Zone: karbonatische Trias: Kalkmarmor | Nufenen-Zone: Karbonatische Trias: Kalkmarmor     |
+|15202619 | Nufenen-Zone: karbonatische Trias: Dolomitmarmor | Nufenen-Zone: Karbonatische Trias: Dolomit     |
+|15202620 | Nufenen-Zone: karbonatische Trias: Rauwacke | Nufenen-Zone: Karbonatische Trias: Rauwacke     |
+|15202621 | Nufenen-Zone: quartzitische Trias | Nufenen-Zone: Quarzitische Trias     |
 |15202622 | Urseren-Garvera-Zone: Malm | Urseren-Garvera-Zone: Malm     |
 |15202623 | Urseren-Garvera-Zone: Dogger | Urseren-Garvera-Zone: Dogger     |
-|15202624 | Urseren-Garvera-Zone: Lias undiff. | Urseren-Garvera-Zone: Lias undiff.     |
+|15202624 | Urseren-Garvera-Zone: Lias undiff. | Urseren-Garvera-Zone: Lias     |
 |15202625 | Urseren-Garvera-Zone: Oberer Lias | Urseren-Garvera-Zone: Oberer Lias     |
 |15202626 | Urseren-Garvera-Zone: Mittlerer Lias | Urseren-Garvera-Zone: Mittlerer Lias     |
 |15202627 | Urseren-Garvera-Zone: Unterer Lias | Urseren-Garvera-Zone: Unterer Lias     |
-|15202628 | Urseren-Garvera-Zone: phyllitische Trias | Urseren-Garvera-Zone: phyllitische Trias     |
-|15202629 | Urseren-Garvera-Zone: karbonatische Trias | Urseren-Garvera-Zone: karbonatische Trias     |
-|15202630 | Urseren-Garvera-Zone: Permokarbon: Psephit- und Psammitgneis | Urseren-Garvera-Zone: Permokarbon: Psephit- und Psammitgneis     |
-|15202631 | Urseren-Garvera-Zone: Permokarbon: Metarhyolith | Urseren-Garvera-Zone: Permokarbon: Metarhyolith     |
-|15202632 | Urseren-Garvera-Zone: Permokarbon: Chloritschiefer | Urseren-Garvera-Zone: Permokarbon: Chloritschiefer     |
-|15202633 | Urseren-Garvera-Zone: Permokarbon: Graphitschiefer | Urseren-Garvera-Zone: Permokarbon: Graphitschiefer     |
+|15202628 | Urseren-Garvera-Zone: phyllitische Trias | Urseren-Garvera-Zone: Phyllitische Trias     |
+|15202629 | Urseren-Garvera-Zone: karbonatische Trias | Urseren-Garvera-Zone: Karbonatische Trias     |
+|15202630 | Urseren-Garvera-Zone: Permokarbon: Psephit- und Psammitgneis | Urseren-Garvera-Zone: Permo-Karbon: Psephit- und Psammitgneis     |
+|15202631 | Urseren-Garvera-Zone: Permokarbon: Metarhyolith | Urseren-Garvera-Zone: Permo-Karbon: Metarhyolith     |
+|15202632 | Urseren-Garvera-Zone: Permokarbon: Chloritschiefer | Urseren-Garvera-Zone: Permo-Karbon: Chloritschiefer     |
+|15202633 | Urseren-Garvera-Zone: Permokarbon: Graphitschiefer | Urseren-Garvera-Zone: Permo-Karbon: Graphitschiefer     |
 |15202634 | Gotthard-Decke: Prävariszischer Orthogneis | Gotthard-Decke: Prävariszischer Orthogneis     |
 |15202635 | Gotthard-Decke: Prävariszischer Augengneis | Gotthard-Decke: Prävariszischer Augengneis     |
 |15202636 | Gotthard-Decke: Prävariszischer Paragneis | Gotthard-Decke: Prävariszischer Paragneis     |
@@ -5096,12 +7439,12 @@ Wertetabelle der lithostratigraphischen Einheiten
 |15202640 | Camosci-Decke: Lias-Dogger: Granatglimmerschiefer | Camosci-Decke: Lias-Dogger: Granatglimmerschiefer     |
 |15202641 | Camosci-Decke: Lias | Camosci-Decke: Lias     |
 |15202642 | Camosci-Decke: Trias | Camosci-Decke: Trias     |
-|15202643 | Camosci-Decke: sandige Trias | Camosci-Decke: sandige Trias     |
-|15202644 | Camosci-Decke: karbonatische Trias | Camosci-Decke: karbonatische Trias     |
-|15202645 | Urseren-Garvera-Zone: Mesozoikum undiff. | Urseren-Garvera-Zone: Mesozoikum undiff.     |
+|15202643 | Camosci-Decke: sandige Trias | Camosci-Decke: Sandige Trias     |
+|15202644 | Camosci-Decke: karbonatische Trias | Camosci-Decke: Karbonatische Trias     |
+|15202645 | Urseren-Garvera-Zone: Mesozoikum undiff. | Urseren-Garvera-Zone     |
 |15202646 | Urseren-Garvera-Zone: Trias | Urseren-Garvera-Zone: Trias     |
 |15202647 | Nufenen-Zone: Trias | Nufenen-Zone: Trias     |
-|15202648 | Nufenen-Zone: Lias undiff. | Nufenen-Zone: Lias undiff.     |
+|15202648 | Nufenen-Zone: Lias undiff. | Nufenen-Zone: Lias     |
 |15203001 | Niesen-Flysch | Flysch du Niesen     |
 |15203002 | Chesselbach-Formation | Formation du Chesselbach     |
 |15203003 | Seron-Formation | Formation de Seron     |
@@ -5399,19 +7742,19 @@ Wertetabelle der lithostratigraphischen Einheiten
 |15203296 | Vogorno-Gneis | Vogorno-Gneis     |
 |15203297 | Ruscada-Gneis | Ruscada-Gneis     |
 |15203298 | Mergoscia-Gneis | Mergoscia-Gneis     |
-|15203299 | Monte-Rosa-Gneis | Monte-Rosa-Gneis     |
-|15203300 | «Arblatsch-Flysch» | «Arblatsch-Flysch»     |
-|15203301 | Arblatsch-Sandstein | Arblatsch-Sandstein     |
-|15203302 | «Arblatsch-Konglomerat» | «Arblatsch-Konglomerat»     |
-|15203303 | Spegnas-Formation | Spegnas-Formation     |
-|15203304 | Rudnal-Formation | Rudnal-Formation     |
-|15203305 | Savognin-Formation | Savognin-Formation     |
-|15203306 | Bleis-Pintgas-Formation | Bleis-Pintgas-Formation     |
-|15203307 | Parnegl-Formation | Parnegl-Formation     |
-|15203308 | Danis-Formation | Danis-Formation     |
-|15203309 | Raschil-Formation | Raschil-Formation     |
-|15203310 | Embd-Member | Embd-Member     |
-|15203311 | Bonigersee-Augengneis | Bonigersee-Augengneis     |
+|15203299 | Monte-Rosa-Gneis | Monte-Rosa-Orthogneis     |
+|15203300 | «Arblatsch-Flysch» | Arblatsch-Flysch     |
+|15203301 | Arblatsch-Sandstein | Arblatsch-Flysch: Sandstein-dominierte Fazies     |
+|15203302 | «Arblatsch-Konglomerat» | Arblatsch-Flysch: Konglomerat-dominierte Fazies     |
+|15203303 | Spegnas-Formation | Spegnas-Fm.     |
+|15203304 | Rudnal-Formation | Rudnal-Fm.     |
+|15203305 | Savognin-Formation | Savognin-Fm.     |
+|15203306 | Bleis-Pintgas-Formation | Stätzerhorn-Fm.: Bleis-Pintgas-Mb.     |
+|15203307 | Parnegl-Formation | Stätzerhorn-Fm.: Parnegl-Mb.     |
+|15203308 | Danis-Formation | Stätzerhorn-Fm.: Danis-Mb.     |
+|15203309 | Raschil-Formation | Stätzerhorn-Fm.: Raschil-Mb.     |
+|15203310 | Embd-Member | Bruneggjoch-Fm.: Embd-Mb.     |
+|15203311 | Bonigersee-Augengneis | Randa-Augengneis: Bonigersee-Augengneis     |
 |15203312 | Törbel-Gneis | Törbel-Gneis     |
 |15203313 | Lodano-Gneis | Lodano-Gneis     |
 |15203314 | Vergeletto-Gneis | Vergeletto-Gneis     |
@@ -5427,27 +7770,27 @@ Wertetabelle der lithostratigraphischen Einheiten
 |15203324 | Holzerspitz-Gruppe | Holzerspitz-Gruppe     |
 |15203325 | Holzerspitz-Kalkschiefer | Calcschistes de l&#39;Holzerspitz     |
 |15203326 | Fäldbach-Gruppe | Fäldbach-Gruppe     |
-|15203327 | Rinderbach-Formation | Rinderbach-Formation     |
-|15203328 | Langenegg-Formation | Langenegg-Formation     |
-|15203329 | Rombach-Formation | Rombach-Formation     |
+|15203327 | Rinderbach-Formation | Rinderbach-Fm.     |
+|15203328 | Langenegg-Formation | Langenegg-Fm.     |
+|15203329 | Rombach-Formation | Rombach-Fm.     |
 |15203330 | Roffna-Gneis | Roffna-Gneis     |
-|15203331 | «Roffna-Porphyr» | «Roffna-Porphyr»     |
+|15203331 | «Roffna-Porphyr» | Roffna-Gneis: Porphyrische Fazies     |
 |15203332 | Burgruinen-Gneis | Burgruinen-Gneis     |
 |15203333 | Taspegn-Gneis | Taspegn-Gneis     |
 |15203334 | Aigremont-Brekzie | Aigremont-Brekzie     |
-|15203335 | Sulzgrabe-Formation | Sulzgrabe-Formation     |
-|15203336 | Rhät der Brekzien-Decke | Rhät der Brekzien-Decke     |
-|15203337 | Siderolithisches Dogger der Klippen-Decke | Siderolithisches Dogger der Klippen-Decke     |
-|15203338 | «Silex-Niveau» (St-Triphon-Fm.) | «Silex-Niveau» (St-Triphon-Fm.)     |
-|15203339 | «Mittlere Rauwacke» (St-Triphon-Fm.) | «Mittlere Rauwacke» (St-Triphon-Fm.)     |
-|15203340 | Timun-Komplex | Timun-Komplex     |
+|15203335 | Sulzgrabe-Formation | Sulzgrabe-Fm.     |
+|15203336 | Rhät der Brekzien-Decke | Brekzien-Decke: Rhät     |
+|15203337 | Siderolithisches Dogger der Klippen-Decke | Klippen-Decke: Siderolithischer Dogger     |
+|15203338 | «Silex-Niveau» (St-Triphon-Fm.) | St-Triphon-Fm.: Andonces-Mb.: Silex-Niveau     |
+|15203339 | «Mittlere Rauwacke» (St-Triphon-Fm.) | St-Triphon-Fm.: Andonces-Mb.: Mittlere Rauwacke     |
+|15203340 | Timun-Komplex | Timun-Gneiskomplex     |
 |15203341 | Malenco-Serpentinit | Malenco-Serpentinit     |
 |15203342 | Forno-Amphibolit | Forno-Amphibolit     |
 |15203343 | Muretto-Quarzit | Muretto-Quarzit     |
-|15203344 | Colerin-Konglomerat | Colerin-Konglomerat     |
-|15203345 | Pierre-Avoi-Brekzie | Pierre-Avoi-Brekzie     |
+|15203344 | Colerin-Konglomerat | Biot-Fm.: Colerin-Konglomerat     |
+|15203345 | Pierre-Avoi-Brekzie | Pierre-Avoi-Melange: Brekzie     |
 |15203346 | Dréveneuse-Bauxit | Dréveneuse-Bauxit     |
-|15203347 | Bruneggjoch-Metabauxit | Bruneggjoch-Metabauxit     |
+|15203347 | Bruneggjoch-Metabauxit | Barrhorn-Einheit: Metabauxit     |
 |15203348 | Karbon der Zone-Houillère | Carbonifère de la Zone Houillère     |
 |15203349 | Terri-Schiefer | Schistes du (Piz) Terri     |
 |15203350 | Robiei-Wildflysch | Wildflysch de Robièi     |
@@ -5621,10 +7964,10 @@ Wertetabelle der lithostratigraphischen Einheiten
 |15203519 | Rossi-Formation | Formation des Rossi     |
 |15203520 | Bosco-Gneis | Gneiss de Bosco     |
 |15203521 | Batnall-Gneis | Gneiss du Batnall     |
-|15203522 | Seron-Formation, Calcschistes zoogènes | Seron-Formation, Calcschistes zoogènes     |
-|15203523 | Seron-Formation, Conglomérat moyen | Seron-Formation, Conglomérat moyen     |
-|15203524 | Frutigen-Formation, Conglomérat intermédiaire | Frutigen-Formation, Conglomérat intermédiaire     |
-|15203525 | Frutigen-Formation, Schistes inférieurs | Frutigen-Formation, Schistes inférieurs     |
+|15203522 | Seron-Formation, Calcschistes zoogènes | Seron-Fm.: Sandig-kalkige Fazies     |
+|15203523 | Seron-Formation, Conglomérat moyen | Seron-Fm.: Konglomerat-dominierte Fazies     |
+|15203524 | Frutigen-Formation, Conglomérat intermédiaire | Frutigen-Fm.: Konglomerat-dominierte Fazies     |
+|15203525 | Frutigen-Formation, Schistes inférieurs | Frutigen-Fm.: Schiefrige Fazies     |
 |15203526 | Gips der Zone Submédiane | Gypse de la Zone Submédiane     |
 |15203527 | Karpatischer Keuper | Karpatischer Keuper     |
 |15203528 | Zwischenmythen-Mergel | Marne de Zwischenmythen     |
@@ -5683,87 +8026,87 @@ Wertetabelle der lithostratigraphischen Einheiten
 |15203581 | Kalkiger Tonschiefer der Grava-Decke | Schiste argilo-calcaire de la nappe de la Grava     |
 |15203582 | Toniger Kalkschiefer der Grava-Decke | Schiste calcaréo-argileux de la nappe de la Grava     |
 |15203583 | Trias der Grava-Decke, undifferenziert | Trias de la nappe de la Grava, indifférencié     |
-|15203584 | Soladier- und Verdy-Member, undifferenziert | Soladier- und Verdy-Member, undifferenziert     |
-|15203585 | Col-de-Tompey- und Bois-de-Luan-Member, undifferenziert | Col-de-Tompey- und Bois-de-Luan-Member, undifferenziert     |
-|15203586 | Heiti- und Rossinière-Formation, undifferenziert | Heiti- und Rossinière-Formation, undifferenziert     |
-|15203587 | Coulaytes-Melange und Cuvigne-Derrey-Formation, undifferenziert | Coulaytes-Melange und Cuvigne-Derrey-Formation, undifferenziert     |
-|15203588 | Langel- und Col-de-Cordon-Member, undifferenziert | Langel- und Col-de-Cordon-Member, undifferenziert     |
-|15203589 | Grande-Bonavau-Formation und Formation spathique, undifferenziert | Grande-Bonavau-Formation und Formation spathique, undifferenziert     |
-|15203590 | Col-de-Tompey- und Agreblierai-Member, undifferenziert | Col-de-Tompey- und Agreblierai-Member, undifferenziert     |
-|15203591 | Chavanette- und Rubli-Member, undifferenziert | Chavanette- und Rubli-Member, undifferenziert     |
+|15203584 | Soladier- und Verdy-Member, undifferenziert | Soladier- und Verdy-Mb.     |
+|15203585 | Col-de-Tompey- und Bois-de-Luan-Member, undifferenziert | Col-de-Tompey- und Bois-de-Luan-Mb.     |
+|15203586 | Heiti- und Rossinière-Formation, undifferenziert | Heiti- und Rossinière-Fm.     |
+|15203587 | Coulaytes-Melange und Cuvigne-Derrey-Formation, undifferenziert | Coulaytes-Melange und Cuvigne-Derrey-Fm.     |
+|15203588 | Langel- und Col-de-Cordon-Member, undifferenziert | Langel- und Col-de-Cordon-Mb.     |
+|15203589 | Grande-Bonavau-Formation und Formation spathique, undifferenziert | Grande-Bonavau-Fm. und Fm. spathique     |
+|15203590 | Col-de-Tompey- und Agreblierai-Member, undifferenziert | Col-de-Tompey- und Agreblierai-Mb.     |
+|15203591 | Chavanette- und Rubli-Member, undifferenziert | Chavanette- und Rubli-Mb.     |
 |15203592 | Barrhorn-Einheit: Flysch | Barrhorn-Einheit: Flysch     |
 |15203593 | Barrhorn-Einheit: Couches-Rouges | Barrhorn-Einheit: Couches-Rouges     |
 |15203594 | Barrhorn-Einheit: Malm | Barrhorn-Einheit: Malm     |
 |15203595 | Barrhorn-Einheit: Dogger | Barrhorn-Einheit: Dogger     |
-|15203596 | St-Triphon- und Wiriehorn-Fm., undifferenziert | St-Triphon- und Wiriehorn-Fm., undifferenziert     |
-|15203597 | Printse-Formation | Printse-Formation     |
-|15203598 | Louvie-Gabbro | Louvie-Gabbro     |
+|15203596 | St-Triphon- und Wiriehorn-Fm., undifferenziert | St-Triphon- und Wiriehorn-Fm.     |
+|15203597 | Printse-Formation | Printse-Fm.     |
+|15203598 | Louvie-Gabbro | Métailler-Fm.: Louvie-Gabbro     |
 |15203599 | Distulberg-Fm.: Graphitschiefer | Distulberg-Fm.: Graphitschiefer     |
 |15203600 | Lirec-Fm.: Amphibolit | Lirec-Fm.: Amphibolit     |
-|15203601 | Brändjispitz-Gabbro | Brändjispitz-Gabbro     |
+|15203601 | Brändjispitz-Gabbro | Ergischhorn-Komplex: Brändjispitz-Gabbro     |
 |15203602 | Ergischhorn-Komplex: Eklogit | Ergischhorn-Komplex: Eklogit     |
 |15203603 | Südegg-Komplex: Prasinit | Südegg-Komplex: Prasinit     |
-|15203604 | Südegg-Komplex: Talkschiefer | Südegg-Komplex: Talkschiefer     |
-|15203605 | Flysch 2 | Flysch 2     |
-|15203606 | Flysch 3 | Flysch 3     |
-|15203607 | Hellstätt-Formation und Flysch 2a, undifferenziert | Hellstätt-Formation und Flysch 2a, undifferenziert     |
-|15203608 | Walliser-Sedimentabfolge | Walliser-Sedimentabfolge     |
-|15203609 | Südegg-Komplex: schwarzer Schiefer | Südegg-Komplex: schwarzer Schiefer     |
+|15203604 | Südegg-Komplex: Talkschiefer | Südegg-Komplex: Talk-Chloritschiefer     |
+|15203605 | Flysch 2 | Gurnigel-Decke: Flysch-3     |
+|15203606 | Flysch 3 | Gurnigel-Decke: Flysch-2     |
+|15203607 | Hellstätt-Formation und Flysch 2a, undifferenziert | Hellstätt-Fm. und Flysch 2a     |
+|15203608 | Walliser-Sedimentabfolge | Aroley-, Marmontains- und St-Chritophe-Fm.     |
+|15203609 | Südegg-Komplex: schwarzer Schiefer | Südegg-Komplex: Schwarzer Schiefer     |
 |15203610 | Südegg-Komplex: Serpentinit | Südegg-Komplex: Serpentinit     |
 |15203611 | Südegg-Komplex: Albitgneis | Südegg-Komplex: Albitgneis     |
 |15203612 | Südegg-Komplex: Marmor | Südegg-Komplex: Marmor     |
 |15203613 | Südegg-Komplex: Brekzie | Südegg-Komplex: Brekzie     |
 |15203614 | Südegg-Komplex: Gips | Südegg-Komplex: Gips     |
-|15203615 | Monte-Leone-Decke: Mesozoikum undiff. | Monte-Leone-Decke: Mesozoikum undiff.     |
+|15203615 | Monte-Leone-Decke: Mesozoikum undiff. | Monte-Leone-Decke: Sedimentbedeckung     |
 |15203616 | Monte-Leone-Decke: Dogger-Malm | Monte-Leone-Decke: Dogger-Malm     |
 |15203617 | Monte-Leone-Decke: Dogger-Malm: Glimmerschiefer | Monte-Leone-Decke: Dogger-Malm: Glimmerschiefer     |
 |15203618 | Monte-Leone-Decke: Dogger-Malm: Marmor | Monte-Leone-Decke: Dogger-Malm: Marmor     |
-|15203619 | Monte-Leone-Decke: konglomeratischer Dogger | Monte-Leone-Decke: konglomeratischer Dogger     |
+|15203619 | Monte-Leone-Decke: konglomeratischer Dogger | Monte-Leone-Decke: Dogger: Konglomerat     |
 |15203620 | Monte-Leone-Decke: Lias | Monte-Leone-Decke: Lias     |
-|15203621 | Monte-Leone-Decke: sandiger Lias | Monte-Leone-Decke: sandiger Lias     |
-|15203622 | Monte-Leone-Decke: konglomeratischer Lias | Monte-Leone-Decke: konglomeratischer Lias     |
+|15203621 | Monte-Leone-Decke: sandiger Lias | Monte-Leone-Decke: Lias: Sandstein     |
+|15203622 | Monte-Leone-Decke: konglomeratischer Lias | Monte-Leone-Decke: Lias: Konglomerat     |
 |15203623 | Monte-Leone-Decke: Trias | Monte-Leone-Decke: Trias     |
-|15203624 | Monte-Leone-Decke: quarzitische Trias | Monte-Leone-Decke: quarzitische Trias     |
-|15203625 | Pizzo-del-Vallone-Decke: Mesozoikum undiff. | Pizzo-del-Vallone-Decke: Mesozoikum undiff.     |
+|15203624 | Monte-Leone-Decke: quarzitische Trias | Monte-Leone-Decke: Quarzitische Trias     |
+|15203625 | Pizzo-del-Vallone-Decke: Mesozoikum undiff. | Pizzo-del-Vallone-Decke: Sedimentbedeckung     |
 |15203626 | Pizzo-del-Vallone-Decke: Dogger-Malm | Pizzo-del-Vallone-Decke: Dogger-Malm     |
 |15203627 | Pizzo-del-Vallone-Decke: Dogger-Malm: Marmor | Pizzo-del-Vallone-Decke: Dogger-Malm: Marmor     |
 |15203628 | Pizzo-del-Vallone-Decke: Dogger-Malm: Glimmerschiefer | Pizzo-del-Vallone-Decke: Dogger-Malm: Glimmerschiefer     |
 |15203629 | Pizzo-del-Vallone-Decke: Dogger-Malm: Vulkanit | Pizzo-del-Vallone-Decke: Dogger-Malm: Vulkanit     |
 |15203630 | Pizzo-del-Vallone-Decke: Lias | Pizzo-del-Vallone-Decke: Lias     |
 |15203631 | Pizzo-del-Vallone-Decke: Trias | Pizzo-del-Vallone-Decke: Trias     |
-|15203632 | Artsinol-Sedimentabfolge undiff. | Artsinol-Sedimentabfolge undiff.     |
-|15203633 | Artsinol-Sedimentabfolge: Trias | Artsinol-Sedimentabfolge: Trias     |
-|15203634 | Artsinol-Sedimentabfolge: Trias: Rauwacke | Artsinol-Sedimentabfolge: Trias: Rauwacke     |
-|15203635 | Métailler-Formation: Quarzit | Métailler-Formation: Quarzit     |
-|15203636 | Métailler-Formation: Glimmerschiefer | Métailler-Formation: Glimmerschiefer     |
-|15203637 | Métailler-Formation: Chloritoid-Glimmerschiefer | Métailler-Formation: Chloritoid-Glimmerschiefer     |
-|15203638 | Distulberg-Formation: Schiefer | Distulberg-Formation: Schiefer     |
-|15203639 | Distulberg-Formation: Albitgneis | Distulberg-Formation: Albitgneis     |
-|15203640 | Barrhorn-Sedimentabfolge: Trias | Barrhorn-Sedimentabfolge: Trias     |
+|15203632 | Artsinol-Sedimentabfolge undiff. | Mont-Fort-Decke: Sedimentbedeckung     |
+|15203633 | Artsinol-Sedimentabfolge: Trias | Mont-Fort-Decke: Trias     |
+|15203634 | Artsinol-Sedimentabfolge: Trias: Rauwacke | Mont-Fort-Decke: Trias: Rauwacke     |
+|15203635 | Métailler-Formation: Quarzit | Métailler-Fm.: Quarzit     |
+|15203636 | Métailler-Formation: Glimmerschiefer | Métailler-Fm.: Glimmerschiefer     |
+|15203637 | Métailler-Formation: Chloritoid-Glimmerschiefer | Métailler-Fm.: Chloritoid-Glimmerschiefer     |
+|15203638 | Distulberg-Formation: Schiefer | Distulberg-Fm.: Schiefer     |
+|15203639 | Distulberg-Formation: Albitgneis | Distulberg-Fm.: Albitgneis     |
+|15203640 | Barrhorn-Sedimentabfolge: Trias | Barrhorn-Einheit: Trias     |
 |15203641 | Siviez-Mischabel-Decke: Aplit | Siviez-Mischabel-Decke: Aplit     |
 |15203642 | Siviez-Mischabel-Decke: Pegmatit | Siviez-Mischabel-Decke: Pegmatit     |
-|15203643 | Lirec-Formation: leukokrater Mikroklingneis | Lirec-Formation: leukokrater Mikroklingneis     |
-|15203644 | Adlerflüe-Formation: leukokrater Gneis | Adlerflüe-Formation: leukokrater Gneis     |
-|15203645 | Ergischhorn-Komplex: leukokrater aplitischer Gneis | Ergischhorn-Komplex: leukokrater aplitischer Gneis     |
-|15203646 | Stalden-Gneiskomplex undiff. | Stalden-Gneiskomplex undiff.     |
+|15203643 | Lirec-Formation: leukokrater Mikroklingneis | Lirec-Fm.: Leukokrater Mikroklingneis     |
+|15203644 | Adlerflüe-Formation: leukokrater Gneis | Adlerflüe-Fm.: Leukokrater Gneiss     |
+|15203645 | Ergischhorn-Komplex: leukokrater aplitischer Gneis | Ergischhorn-Komplex: Leukokrater aplitischer Gneis     |
+|15203646 | Stalden-Gneiskomplex undiff. | Stalden-Gneiskomplex     |
 |15203647 | Stalden-Gneiskomplex: Ahorn-Augengneis | Stalden-Gneiskomplex: Ahorn-Augengneis     |
 |15203648 | Stalden-Gneiskomplex: Amphibolit | Stalden-Gneiskomplex: Amphibolit     |
-|15203649 | Printse-Formation: Konglomerat | Printse-Formation: Konglomerat     |
-|15203650 | Printse-Formation: Graphitschiefer | Printse-Formation: Graphitschiefer     |
+|15203649 | Printse-Formation: Konglomerat | Printse-Fm.: Konglomerat     |
+|15203650 | Printse-Formation: Graphitschiefer | Printse-Fm.: Graphitschiefer     |
 |15203651 | Portjengrat-Decke: Kalzitmarmor | Portjengrat-Decke: Kalzitmarmor     |
 |15203652 | Portjengrat-Decke: Dolomitmarmor | Portjengrat-Decke: Dolomitmarmor     |
 |15203653 | Portjengrat-Decke: Arkose | Portjengrat-Decke: Arkose     |
 |15203654 | Portjengrat-Decke: Grundgebirge | Portjengrat-Decke: Grundgebirge     |
-|15203655 | Gornergrat-Decke: Kalkschisfer, sandiger Marmor, Brekzie | Gornergrat-Decke: Kalkschisfer, sandiger Marmor, Brekzie     |
+|15203655 | Gornergrat-Decke: Kalkschisfer, sandiger Marmor, Brekzie | Gornergrat-Decke: Kalkschiefer, sandiger Marmor, Brekzie     |
 |15203656 | Gornergrat-Decke: Trias | Gornergrat-Decke: Trias     |
 |15203657 | Gornergrat-Decke: Phengit-Albitgneis | Gornergrat-Decke: Phengit-Albitgneis     |
-|15203658 | Gornergrat-Decke: Basischer Gang | Gornergrat-Decke: Basischer Gang     |
+|15203658 | Gornergrat-Decke: Basischer Gang | Gornergrat-Decke: Basisches Ganggestein     |
 |15203659 | Gornergrat-Decke: Granat-Muskovit-Schiefer | Gornergrat-Decke: Granat-Muskovit-Schiefer     |
 |15203660 | Frilihorn-Decke: Trias | Frilihorn-Decke: Trias     |
 |15203661 | Frilihorn-Decke: Trias: Rauwacke | Frilihorn-Decke: Trias: Rauwacke     |
-|15203662 | Garda-Bordon-Formation: Black Shales (Série feuilletée) | Garda-Bordon-Formation: Black Shales (Série feuilletée)     |
-|15203663 | Garda-Bordon-Formation: Quarzschiefer | Garda-Bordon-Formation: Quarzschiefer     |
-|15203664 | Tsaté-Decke: Serpentinit | Tsaté-Decke: Serpentinit     |
+|15203662 | Garda-Bordon-Formation: Black Shales (Série feuilletée) | Garda-Bordon-Fm.: Série feuilletée     |
+|15203663 | Garda-Bordon-Formation: Quarzschiefer | Garda-Bordon-Fm.: Quarzschiefer     |
+|15203664 | Tsaté-Decke: Serpentinit | Serra-Neire-Serpentinit     |
 |15203665 | Zermatt-Saas-Decke: Eklogit | Zermatt-Saas-Decke: Eklogit     |
 |15203666 | Zermatt-Saas-Decke: Metapyroxenit | Zermatt-Saas-Decke: Metapyroxenit     |
 |15203667 | Zermatt-Saas-Decke: Metagabbro | Zermatt-Saas-Decke: Metagabbro     |
@@ -5856,13 +8199,13 @@ Wertetabelle der lithostratigraphischen Einheiten
 |15204084 | Güstizia-Gneis | Gneiss de la Güstizia     |
 |15204085 | Plasseggen-Augengneis | Gneiss oeillé de Plasseggen     |
 |15204086 | Trias des Ostalpins | Trias de l&#39;Austroalpin     |
-|15204087 | Dogger des Ostalpins | Dogger des Ostalpins     |
-|15204088 | Malm des Ostalpins | Malm des Ostalpins     |
-|15204089 | Kreide des Ostalpins | Kreide des Ostalpins     |
-|15204090 | Lias des Ostalpins | Lias des Ostalpins     |
-|15204091 | Kristallin des Ostalpins | Kristallin des Ostalpins     |
+|15204087 | Dogger des Ostalpins | Ostalpin: Dogger     |
+|15204088 | Malm des Ostalpins | Ostalpin: Radiolarit-Aptychenkalk     |
+|15204089 | Kreide des Ostalpins | Ostalpin: Kreide     |
+|15204090 | Lias des Ostalpins | Ostalpin: Lias     |
+|15204091 | Kristallin des Ostalpins | Ostalpin: Grundgebirge     |
 |15204092 | Nair-Porphyroid | Nair-Porphyroid     |
-|15204093 | Lavatèra-Brekzie | Lavatèra-Brekzie     |
+|15204093 | Lavatèra-Brekzie | Nair-Porphyroid: Lavatèra-Brekzie     |
 |15204094 | Varaina-Schiefer | Varaina-Schiefer     |
 |15204095 | Sprenkel-Schiefer | Sprenkel-Schiefer     |
 |15204096 | Fedoz-Gneiskomplex | Complexe gneissique de Fedoz     |
@@ -5989,26 +8332,26 @@ Wertetabelle der lithostratigraphischen Einheiten
 |15205068 | Basalt | Basalte permien du Sudalpin     |
 |15205069 | Basaler Tuf | Tuf basal permien du Sudalpin     |
 |15205070 | Manno-Formation | Formation de Manno     |
-|15205071 | Tertiär des Südalpins | Tertiär des Südalpins     |
-|15205072 | Kreide des Südalpins | Kreide des Südalpins     |
-|15205073 | Malm des Südalpins | Malm des Südalpins     |
-|15205074 | Dogger des Südalpins | Dogger des Südalpins     |
-|15205075 | Lias des Südalpins | Lias des Südalpins     |
-|15205076 | Trias des Südalpins | Trias des Südalpins     |
-|15205077 | Permo-Karbon des Südalpins | Permo-Karbon des Südalpins     |
-|15205078 | Kristallin des Südalpins | Kristallin des Südalpins     |
+|15205071 | Tertiär des Südalpins | Südalpin: Paläogen-Neogen     |
+|15205072 | Kreide des Südalpins | Südalpin: Kreide     |
+|15205073 | Malm des Südalpins | Südalpin: Radiolarit-Aptychenkalk     |
+|15205074 | Dogger des Südalpins | Südalpin: Dogger     |
+|15205075 | Lias des Südalpins | Südalpin: Lias     |
+|15205076 | Trias des Südalpins | Südalpin: Trias     |
+|15205077 | Permo-Karbon des Südalpins | Südalpin: Permo-Karbon     |
+|15205078 | Kristallin des Südalpins | Südalpin: Grundgebirge     |
 |15205079 | Variszische Intrusiva des Südalpins | roches intrusives varisques du Sudalpin     |
 |15205080 | San-Bernardo-Gneis | San-Bernardo-Gneis     |
 |15205081 | Prävariszische Metasedimente des Südalpins | métasédiments anté-varisques du Sudalpin     |
 |15205082 | Stabbiello-Gneis | Stabbiello-Gneis     |
 |15205083 | Giumello-Gneis | Giumello-Gneis     |
 |15205084 | Ceneri-Gneis | Ceneri-Gneis     |
-|15205085 | Proterozoische und paläozoische Mafite und Ultramafite des Südalpins | Proterozoische und paläozoische Mafite und Ultramafite des Südalpins     |
+|15205085 | Proterozoische und paläozoische Mafite und Ultramafite des Südalpins | Südalpin: Proterozoische und paläozoische mafische und ultramafische Gesteine     |
 |15205086 | Mont-Morion-Granit | Mont-Morion-Granit     |
 |15205087 | Pointe-d&#39;Otemma-Granodiorit | Pointe-d&#39;Otemma-Granodiorit     |
 |15205088 | Bouquetins-Quarzdiorit | Bouquetins-Quarzdiorit     |
 |15205089 | Tête-de-Valpelline-Phyllit | Tête-de-Valpelline-Phyllit     |
-|15205090 | «Série Rubanée» | «Série Rubanée»     |
+|15205090 | «Série Rubanée» | Arolla-Einheit: Série rubanée     |
 |15205091 | Sassa-Metagabbro | Sassa-Metagabbro     |
 |15205092 | Maia-Metagabbro | Maia-Metagabbro     |
 |15205093 | Losone-Schiefer | Losone-Schiefer     |
@@ -6063,8 +8406,8 @@ Wertetabelle der lithostratigraphischen Einheiten
 |15206003 | Bergell-Intrusiva | Intrusion du Bergell     |
 |15206004 | Adamello-Intrusiva | Intrusion de l&#39;Adamello     |
 |15206005 | Melirolo-Augengneis | Melirolo-Augengneis     |
-|15206006 | Bergell-Granodiorit | Bergell-Granodiorit     |
-|15206007 | Bergell-Tonalit | Bergell-Tonalit     |
+|15206006 | Bergell-Granodiorit | Bergell-Intrusiva: Granodioritische Fazies     |
+|15206007 | Bergell-Tonalit | Bergell-Intrusiva: Tonalitische Fazies     |
 |15206008 | Monte-Bassetta-Quarzdiorit | Monte-Bassetta-Quarzdiorit     |
 |15206009 | Sorico-Tonalit | Sorico-Tonalit     |
 |15206010 | Jorio-Tonalit | Jorio-Tonalit     |
@@ -6073,15 +8416,15 @@ Wertetabelle der lithostratigraphischen Einheiten
 |15206013 | Monte-Rosso-Mikrogranit | Monte-Rosso-Mikrogranit     |
 |15206014 | Zocca-Aplit | Zocca-Aplit     |
 |15206015 | San-Fedelino-Granit | San-Fedelino-Granit     |
-|15206016 | Informelle Zuordnung | Informelle Zuordnung     |
-|15206017 | Tektonische Brekzie, undifferenziert | Tektonische Brekzie, undifferenziert     |
+|15206016 | Informelle Zuordnung | Undifferenzierte Einheit     |
+|15206017 | Tektonische Brekzie, undifferenziert | Undifferenzierte lithologische Einheit: Tektonische Brekzie     |
 |15206018 | Lochsiten-Kalk | Lochsiten-Kalk     |
 |15206019 | Salleren-Brekzie | Salleren-Brekzie     |
-|15206020 | Lithologische Einheit, undifferenziert | Lithologische Einheit, undifferenziert     |
-|15206021 | Gips, undifferenziert | Gips, undifferenziert     |
-|15206022 | Rauwacke, undifferenziert | Rauwacke, undifferenziert     |
-|15206023 | Dolomit, undifferenziert | Dolomit, undifferenziert     |
-|15206024 | Ganggesteine, undifferenziert | Ganggesteine, undifferenziert     |
+|15206020 | Lithologische Einheit, undifferenziert | Undifferenzierte lithologische Einheit     |
+|15206021 | Gips, undifferenziert | Undifferenzierte lithologische Einheit: Gips     |
+|15206022 | Rauwacke, undifferenziert | Undifferenzierte lithologische Einheit: Rauwacke     |
+|15206023 | Dolomit, undifferenziert | Undifferenzierte lithologische Einheit: Dolomitmarmor     |
+|15206024 | Ganggesteine, undifferenziert | Undifferenzierte lithologische Einheit: Ganggestein     |
 |15206025 | Lias, undifferenziert | Lias, indifférencié     |
 |15206026 | Dogger, undifferenziert | Dogger, indifférencié     |
 |15206027 | Malm, undifferenziert | Malm, indifférencié     |
@@ -6170,15 +8513,20 @@ Wertetabelle der lithostratigraphischen Einheiten
 |15206110 | Prävariszisches, polyzyklisches Grundgebirge, undifferenziert | socle polycyclique anté-varisque, indifférencié     |
 |15206111 | Schiefer, undifferenziert | schiste, indifférencié     |
 |15206112 | Aplitgneis, undifferenziert | gneiss aplitique, indifférencié     |
-|15206113 | Süsswasserkalk, undifferenziert | Süsswasserkalk, undifferenziert     |
+|15206113 | Süsswasserkalk, undifferenziert | Undifferenzierte lithologische Einheit: Süsswasserkalk     |
 |15206114 | Tektonisches Melange | mélange tectonique     |
 |15206115 | Flysch, undifferenziert | Flysch, indifférencié     |
 |15206116 | Aptychenkalk, undiff. | Calcaire à aptychus, indiff.     |
 |15206117 | Quarzsandstein, undiff. | Grès quartzitique, indiff.     |
-|15206118 | Mergelstein, undifferenziert | Mergelstein, undifferenziert     |
-|15206119 | Basisches Gestein, undifferenziert | Basisches Gestein, undifferenziert     |
+|15206118 | Mergelstein, undifferenziert | Undifferenzierte lithologische Einheit: Mergelstein     |
+|15206119 | Basisches Gestein, undifferenziert | Undifferenzierte lithologische Einheit: Basisches Gestein     |
 |999997 | unbekannt | inconnu     |
 |999998 | nicht anwendbar | non applicable     |
+
+
+
+
+
 
 
 ## Anhang  GC_LITSTRAT_UNCO_CD {#gc-litstrat-unco-cd}
@@ -6788,6 +9136,11 @@ Wertetabelle der lithostratigraphischen Einheiten
 |999998 | nicht anwendbar | non applicable     |
 
 
+
+
+
+
+
 ## Anhang  GC_LITHO_CD {#gc-litho-cd}
 Wertetabellen der lithologischen Beschreibung
 
@@ -6859,303 +9212,652 @@ Wertetabellen der lithologischen Beschreibung
 |15101085 | Tsunamiablagerung | dépôt de tsunami     |
 |15101086 | Entwässerungssediment | sédiment formé par échappement d&#39;eau     |
 |15101087 | Sedimentärer Gang (clastic dike) | filon sédimentaire     |
-|15102001 | Sedimentgestein | roche sédimentaire     |
-|15102003 | klastisches Sedimentgestein, undifferenziert | roche sédimentaire clastique, indifférenciée     |
-|15102005 | Konglomerat und Brekzie, undifferenziert (Psephit, Korngrösse: Kies, Steine und Blöcke) | conglomérat et brèche, indifférencié (psephite: classe des graviers, cailloux et blocs)     |
-|15102006 | Brekzie | brèche     |
-|15102007 | Konglomerat | poudingue     |
-|15102009 | Sandstein, undifferenziert (Psammit: Sandkorngrösse) | grès, indifférencié (psammite: classe des sables)     |
-|15102010 | Quarzsandstein | grès quartzitique     |
-|15102011 | Kalksandstein | grès calcaire     |
-|15102012 | Dolomitsandstein | grès dolomitique     |
-|15102013 | kieseliger Sandstein | grès siliceux     |
-|15102014 | mergeliger Sandstein | grès marneux     |
-|15102015 | toniger Sandstein | grès argileux     |
-|15102016 | Arkose | arkose     |
-|15102017 | Flyschsandstein, Grauwacke | grès du flysch, grauwacke     |
-|15102018 | Geröll führender Sandstein | grès à galets     |
-|15102019 | Glimmersandstein | grès micacé     |
-|15102020 | Glaukonitsandstein | grès glauconieux     |
-|15102021 | Nummulitensandstein | grès à nummulites     |
-|15102022 | Muschelsandstein | grès coquillier     |
-|15102024 | Pelit, undifferenziert | pélite, indifférenciée     |
-|15102025 | Siltstein | siltite     |
-|15102026 | Tonstein | argilite     |
-|15102027 | Mergelstein | marne     |
-|15102028 | Tonmergelstein | marne argileuse     |
-|15102029 | Kalkmergelstein | marne calcaire     |
-|15102030 | Schlammstein | mudstone     |
-|15102032 | biogenes / biochemisches / organisches Sedimentgestein, undifferenziert | roche sédim. biogène / biochimique / organique, indifférenciée     |
-|15102034 | Kalkstein, undifferenziert | calcaire, indifférencié     |
-|15102035 | Kieselkalk | calcaire siliceux     |
-|15102036 | Spatkalk | calcaire spathique     |
-|15102037 | Mikrit | calcaire micritique     |
-|15102038 | Arenit | calcarénite     |
-|15102039 | Rudit | calcirudite     |
-|15102040 | Riffkalk | calcaire récifal     |
-|15102041 | Kalkbrekzie | calcaire bréchique     |
-|15102042 | Kalkoolith | calcaire oolitique     |
-|15102043 | Nummulitenkalk | calcaire à nummulites     |
-|15102044 | Aptychenkalk | calcaire à aptychus     |
-|15102045 | biogener Kalkstein, undifferenziert | calcaire biogénique, indifférencié     |
-|15102046 | detritischer Kalk | calcaire détritique     |
-|15102047 | Süsswasserkalk | calcaire d&#39;eau douce     |
-|15102049 | Dolomit | dolomie     |
-|15102051 | kieseliges Gestein, undifferenziert | sédiment siliceux, indifférencié     |
-|15102052 | Radiolarit | radiolarite     |
-|15102053 | Spiculit | spiculite     |
-|15102054 | Hornstein, Chert | chaille, chert     |
-|15102056 | Kohle, undifferenziert | charbon, indifférencié     |
-|15102057 | Lignit (organisches Sedimentgestein) | lignite (roche sédimentaire organique)     |
-|15102058 | Steinkohle | houille     |
-|15102059 | Anthrazit | anthracite     |
-|15102061 | Eisenoolith | oolite ferrugineuse     |
-|15102063 | phosphoritreiches Gestein, undifferenziert | roche phosphatée, indifférenciée     |
-|15102064 | phosphoritreicher Sandstein | grès phosphaté     |
-|15102065 | phosphoritreicher Kalkstein | calcaire phosphaté     |
-|15102066 | phosphoritreicher Mergelstein | marne phosphatée     |
-|15102068 | chemisches Sedimentgestein, undifferenziert | roche sédimentaire chimique, indifférenciée     |
-|15102070 | Evaporit, undifferenziert | évaporite, indifférenciée     |
-|15102071 | Anhydrit | anhydrite     |
-|15102072 | Gips | gypse     |
-|15102073 | Steinsalz | sel     |
-|15102075 | Karbonat, undifferenziert | roche carbonatée, indifférenciée     |
-|15102076 | Rauwacke (Sedimentgestein) | rauwacke (roche sédimentaire)     |
-|15102077 | Quelltuff (Kalksinter, Sedimentgestein) | tuf calcaire (roche sédimentaire)     |
-|15102078 | Travertin (Kalksinter, Sedimentgestein) | travertin (roche sédimentaire)     |
-|15102080 | Residualgestein / pedogen überprägtes Gestein, undifferenziert | roche résiduelle / roche sédim. transf. par pédogenèse, indifférenciée     |
-|15102082 | Bohnerz | pisolite ferrugineuse     |
-|15102084 | siderolithische Verwitterungsbildungen | sédiment d&#39;altération sidérolithique     |
-|15102086 | silikatreiches Gestein, undifferenziert | roche silicatée, indifférenciée     |
-|15102087 | Boluston | argile à bolus     |
-|15102088 | Huppererde | hupper     |
-|15102089 | Quarzsand | sable quartzitique     |
-|15102090 | Silcrete | silcrète     |
-|15102092 | pedogenes Karbonat, undifferenziert | roche carbonatée pédogénétique, indifférenciée     |
-|15102093 | Caliche | caliche     |
-|15102094 | Krustenkalk | calcrète     |
-|15102100 | Echinodermenkalk | calcaire échinodermique     |
-|15102101 | glaukonitischer Kalkstein | calcaire glauconieux     |
-|15102102 | Lithothamniensandstein | grès à lithothamnies     |
-|15102103 | Eisensandstein | grès ferrugineux     |
-|15102104 | glaukonitischer Mergel | marne glauconieuse     |
-|15102105 | kreidiger Kalk | calcaire crayeux     |
-|15102106 | bioklastischer Kalk | calcaire bioclastique     |
-|15102107 | Mergelkalk | calcaire marneux     |
-|15102108 | eisenschüssiger Kalk | calcaire ferrugineux     |
-|15102109 | Dolomitbrekzie | brèche dolomitique     |
-|15103001 | Magmatit | roche magmatique     |
-|15103003 | Intrusivgestein, undifferenziert | roche intrusive, indifférenciée     |
-|15103005 | Tiefengestein, undifferenziert | roche plutonique, indifférenciée     |
-|15103006 | Alkalogranit | granite alcalin     |
-|15103007 | Granit | granite     |
-|15103008 | Granodiorit | granodiorite     |
-|15103009 | Quarzdiorit | diorite quartzique     |
-|15103010 | Tonalit | tonalite     |
-|15103011 | Diorit | diorite     |
-|15103012 | Syenit | syénite     |
-|15103013 | Alkalisyenit | syénite alcaline     |
-|15103014 | Quarzgabbro | gabbro quartzique     |
-|15103015 | Gabbro | gabbro     |
-|15103016 | Norit | norite     |
-|15103017 | Monzodiorit | monzodiorite     |
-|15103018 | Monzogabbro | monzogabbro     |
-|15103019 | Monzonit | monzonite     |
-|15103020 | Pyroxenit (Intrusivgestein) | pyroxénite (roche intrusive)     |
-|15103021 | Peridotit (Intrusivgestein) | péridotite (roche intrusive)     |
-|15103022 | nephelinitischer Syenit | syénite néphélinique     |
-|15103023 | Essexit | essexite     |
-|15103024 | Granophyr | granophyre     |
-|15103026 | Ganggestein, undifferenziert | roche filonienne, indifférenciée     |
-|15103027 | Mikrogranit | microgranite     |
-|15103028 | Rhyolithporphyr | porphyre rhyolitique     |
-|15103029 | Pegmatit | pegmatite     |
-|15103030 | Aplit | aplite     |
-|15103031 | Mikrodiorit | microdiorite     |
-|15103032 | Mikrogabbro | microgabbro     |
-|15103033 | Lamprophyr | lamprophyre     |
-|15103034 | Pikrit (Intrusivgestein) | picrite (roche intrusive)     |
-|15103035 | Dolerit | dolérite     |
-|15103037 | Extrusivgestein, undifferenziert | roche extrusive, indifférenciée     |
-|15103039 | Ergussgestein, undifferenziert | roche effusive, indifférenciée     |
-|15103040 | Alkalirhyolith | rhyolite alcaline     |
-|15103041 | Rhyolith | rhyolite     |
-|15103042 | Rhyodazit | rhyodacite     |
-|15103043 | Dazit | dacite     |
-|15103044 | Quarzandesit | andésite quartzique     |
-|15103045 | Andesit | andésite     |
-|15103046 | Alkalitrachyt | trachite alcaline     |
-|15103047 | Trachyt | trachite     |
-|15103048 | Basalt | basalte     |
-|15103049 | Pikrit (Effusiva) | picrite (roche effusive)     |
-|15103050 | Phonolith | phonolite     |
-|15103051 | Karbonatit | carbonatite     |
-|15103053 | pyroklastisches Gestein, undifferenziert (vulkanischer Tuff, &gt; 75 % pyroklast. Komp.) | roche pyroclastique, indifférenciée (tuf volcanique, &gt; 75 % comp. pyrocl.)     |
-|15103054 | Ignimbrit | ignimbrite     |
-|15103055 | Pyroklastische Brekzie | brèche pyroclastique     |
-|15103056 | Lapillituff | lapilli     |
-|15103057 | Kristalltuff | tuff à cristaux     |
-|15103058 | Aschentuff | cendres volcaniques     |
-|15103060 | Tuffit, undifferenziert (pyroklast. und nicht vulk. Sedimente, 75-25 % pyroklast. Komp.) | roche volcano-sédimentaire, indifférenciée (tuffite 75-25 % comp. pyrocl.)     |
-|15103061 | tuffitische Brekzie | brèche tuffitique     |
-|15103062 | tuffitisches Konglomerat | poudingue tuffitique     |
-|15103063 | tuffitischer Sandstein | grès tuffitique     |
-|15103064 | tuffitischer Siltstein | siltite tuffitique     |
-|15103065 | tuffitischer Tonstein | argilite tuffitique     |
-|15103066 | Bentonit | bentonite     |
-|15103067 | saures Ganggestein | roche filonienne acide     |
-|15103068 | basisches Ganggestein | roche filonienne basique     |
-|15103069 | Basisches Gestein | roche basique     |
-|15103070 | Ultrabasisches Gestein | roche ultrabasique     |
-|15104001 | Metamorphit | roche métamorphique     |
-|15104002 | Gestein der Störungszone | roche liée à une zone de déformation     |
-|15104003 | Gestein der Störungszone, undifferenziert | roche liée à une zone de déformation, indifférenciée     |
-|15104005 | Kakirit, undifferenziert | kakirite, indifférenciée     |
-|15104006 | Gesteinsmehl | roche pulvérisée     |
-|15104007 | Kluftletten | argile de faille     |
-|15104008 | tektonische Brekzie (kohäsionslos) | brèche de faille     |
-|15104010 | Kataklasit, undifferenziert | cataclasite, indifférenciée     |
-|15104011 | Rauwacke (Kataklasit) | rauwacke (roche cataclastique)     |
-|15104012 | tektonische Dolomitbrekzie | brèche tectonique dolomitique     |
-|15104013 | tektonische Brekzie (mit Kohäsion) | brèche tectonique     |
-|15104014 | Protokataklasit | protocataclasite     |
-|15104015 | (Meso)Kataklasit | (méso)cataclasite     |
-|15104016 | Ultrakataklasit | ultracataclasite     |
-|15104018 | Mylonit, undifferenziert | mylonite, indifférenciée     |
-|15104019 | Protomylonit | protomylonite     |
-|15104020 | Mylonit | (méso)mylonite     |
-|15104021 | Ultramylonit | ultramylonite     |
-|15104023 | Phyllonit | phyllonite     |
-|15104025 | Pseudotachylit | pseudotachylite     |
-|15104027 | Gestein der Regional- und Kontaktmetamorphose, undifferenziert | roche du métamorphisme régional et du contact, indifférenciée     |
-|15104029 | Phyllit | phyllite     |
-|15104031 | Schiefer, undifferenziert | schiste, indifférencié     |
-|15104032 | Tonschiefer (Schiefer) | ardoise, schiste ardoisier     |
-|15104033 | Serizitschiefer | séricitoschiste     |
-|15104034 | Chloritschiefer | chloritoschiste     |
-|15104035 | Glimmerschiefer | micaschiste     |
-|15104036 | Glaukophanschiefer | schiste à glaucophane     |
-|15104037 | Kalkschiefer | calcschiste     |
-|15104038 | Prasinit | prasinite     |
-|15104039 | Talkschiefer | talcschiste     |
-|15104041 | Gneis, undifferenziert | gneiss, indifférencié     |
-|15104042 | Augengneis | gneiss oeillé     |
-|15104043 | Bändergneis | gneiss rubané     |
-|15104044 | Adergneis | gneiss veiné     |
-|15104045 | Zweiglimmergneis | gneiss à deux micas     |
-|15104046 | agmatischer Gneis | gneiss agmatique     |
-|15104047 | Leptinit | leptynite     |
-|15104048 | Paragneis | paragneiss     |
-|15104049 | Orthogneis | orthogneiss     |
-|15104050 | Stronalit | stronalite     |
-|15104051 | Kinzigit | kinzigite     |
-|15104053 | Fels, undifferenziert | roche à texture granoblastique, indifférenciée     |
-|15104054 | Kalksilikatfels | roche à calcsilicates     |
-|15104055 | Marmor (Fels) | marbre (texture granoblastique)     |
-|15104056 | Karbonat- und Silikat führendes Gestein | roche à carbonates et silicates     |
-|15104057 | silikatreicher Marmor | cipolin     |
-|15104058 | Granulit | granulite     |
-|15104059 | Rodingit | rodingite     |
-|15104060 | Amphibolit | amphibolite     |
-|15104061 | Bänderamphibolit | amphibolite rubanée     |
-|15104062 | Schollenamphibolit | amphibolite à blocs     |
-|15104063 | Amphibolitgneis | gneiss amphibolitique     |
-|15104064 | Eklogit | éclogite     |
-|15104065 | Peridotit (Metamorphit) | péridotite (roche métamophique)     |
-|15104067 | Hornfels | hornfels     |
-|15104069 | Metasomatit, undifferenziert | métasomatite, indifférenciée     |
-|15104070 | Skarn | skarn     |
-|15104071 | Greisen | greisen     |
-|15104072 | Gneis mit Feldspatblasten | gneiss à blastes de feldspath     |
-|15104074 | Anatexit, undifferenziert | anatexite, indifférenciée     |
-|15104075 | Migmatit | migmatite     |
-|15104076 | Metatexit mit Fleckentextur | métatexite à structure tachetée     |
-|15104077 | Metatexit mit stromatitischer Textur | métatexite à structure stromatitique     |
-|15104078 | Metatexit mit Netztextur | métatexite à structure réticulée     |
-|15104079 | Diatexit mit nebulitischer Textur | diatexite à structure nébulitique     |
-|15104080 | Diatexit mit Schlierentextur | diatexite à structure artéritique (Schlieren)     |
-|15104081 | Diatexit mit Schollentextur | diatexite à enclaves (Schollen)     |
-|15104084 | monomineralischer Metamorphit, undifferenziert | roche métamorphique monominérale, indifférenciée     |
-|15104085 | Biotitit | biotitite     |
-|15104086 | Hornblenditit | hornblendite     |
-|15104087 | Albitit | albitite     |
-|15104088 | Pyroxenit (monomineralischer Metamorphit) | pyroxénite (roche métamorphique monominérale)     |
-|15104089 | Chloritit | chloritite     |
-|15104090 | Serpentinit | serpentinite     |
-|15104091 | Quarzit (monomineralischer Metamorphit) | quartzite (roche métamorphique monominérale)     |
-|15104092 | Metamorphit (Protolith erkennbar) | roche métamorphique (protolithe reconnaissable)     |
-|15104093 | Metamorphit (sedimentärer Protolith erkennbar) | roche métamorphique (protolithe sédimentaire reconnaissable)     |
-|15104095 | Metamorphit (magmatischer Protolith erkennbar) | roche métamorphique (protolithe magmatique reconnaissable)     |
-|15104096 | Quarzschiefer | quartzschiste     |
-|15104097 | Granat-Glimmerschiefer | micaschiste à grenat     |
-|15104098 | Grünschiefer | schiste vert     |
-|15104099 | Ophikalzit | ophicalcite     |
-|15104201 | Metasediment | métasediment     |
-|15104202 | Metapsephit | métaconglomérat     |
-|15104203 | Metabrekzie | métabrèche     |
-|15104204 | Metakonglomerat | métapoudingue     |
-|15104205 | Metasandstein | métagrès     |
-|15104206 | Quarzit (sedimentärer Protolith) | quartzite (protolithe sédimentaire)     |
-|15104207 | Metapsammit | méta-arénite     |
-|15104208 | Metaarkose | méta-arkose     |
-|15104209 | Metagrauwacke | métagrauwacke     |
-|15104210 | Geröll führender Metasandstein | métagrès à galets     |
-|15104211 | Metapelit | métapélite     |
-|15104212 | Metasiltstein | métasiltite     |
-|15104213 | Tonschiefer (sedimentärer Protolith) | méta-argilite (protolithe sédimentaire)     |
-|15104214 | Metamergel | métamarne     |
-|15104215 | Marmor (sedimentärer Protolith) | marbre (protolithe sédimentaire)     |
-|15104216 | dolomitischer Marmor | marbre dolomitique     |
-|15104217 | Metaradiolarit | métaradiolarite     |
-|15104218 | Metakarbonat | métaroche carbonatée     |
-|15104401 | Metamagmatit | métamagmatite     |
-|15104402 | metamorph überprägtes Intrusivgestein | métaroche intrusive     |
-|15104403 | Metaplutonit | métaroche plutonique     |
-|15104404 | Metaalkalogranit | métagranite alcalin     |
-|15104405 | Metagranit | métagranite     |
-|15104406 | Metagranodiorit | métagranodiorite     |
-|15104407 | Metaquarzdiorit | métadiorite quartzique     |
-|15104408 | Metatonalit | métatonalite     |
-|15104409 | Metadiorit | métadiorite     |
-|15104410 | Metasyenit | métasyénite     |
-|15104411 | Metaalkalisyenit | métasyénite alcaline     |
-|15104412 | Metaquarzgabbro | métagabbro quartzique     |
-|15104413 | Metagabbro | métagabbro     |
-|15104414 | Metanorit | métanorite     |
-|15104415 | Metamonzodiorit | métamonzodiorite     |
-|15104416 | Metamonzogabbro | métamonzogabbro     |
-|15104417 | Metamonzonit | métamonzonite     |
-|15104418 | Metapyroxenit | métapyroxénite     |
-|15104419 | Metaperidotit | métapéridotite     |
-|15104420 | nephelinitischer Metasyenit | métasyénite néphélinique     |
-|15104421 | Metaessexit | méta-essexite     |
-|15104422 | Metagranophyr | métagranophyre     |
-|15104423 | Metaganggestein | métaroche filonienne     |
-|15104424 | Metamikrogranit | métamicrogranite     |
-|15104426 | Metapegmatit | métapegmatite     |
-|15104427 | Metaaplit | méta-aplite     |
-|15104428 | Metamikrodiorit | métamicrodiorite     |
-|15104429 | Metamikrogabbro | métamicrogabbro     |
-|15104430 | Metalamprophyr | métalamprophyre     |
-|15104431 | Metapikrit | métapicrite     |
-|15104432 | Metadolerit | métadolérite     |
-|15104433 | Metaalkalirhyolith | métarhyolite alcaline     |
-|15104434 | Metarhyolith | métarhyolite     |
-|15104435 | Metarhyodazit | métarhyodacite     |
-|15104436 | Metadazit | métadacite     |
-|15104437 | Metaquarzandesit | méta-andésite quartzique     |
-|15104438 | Metaandesit | méta-andésite     |
-|15104439 | Metaalkalitrachyt | métatrachite alcaline     |
-|15104440 | Metatrachyt | métatrachite     |
-|15104441 | Metabasalt | métabasalte     |
-|15104443 | Metaphonolit | métaphonolite     |
-|15104444 | metamorph überprägtes pyroklastisches Gestein | métaroche pyroclastique     |
-|15104445 | Metaignimbrit | méta-ignimbrite     |
-|15104446 | Metavulkanit | métavulcanite     |
-|15104447 | ultramafisches Gestein | roche ultramafique     |
-|15104448 | tektonische Kalkbrekzie | brèche tectonique calcaire     |
-|999997 | unbekannt | inconnu     |
+|15111001 | Gestein | Gestein     |
+|15111002 | Gestein: sedimentär | Gestein: sedimentär     |
+|15111003 | Gestein: klastisch | Gestein: klastisch     |
+|15111004 | Gestein: psephitisch | Gestein: psephitisch     |
+|15111005 | Brekzie | Brekzie     |
+|15111006 | Brekzie: sedimentär | Brekzie: sedimentär     |
+|15111007 | Brekzie: dolomitisch | Brekzie: dolomitisch     |
+|15111008 | Brekzie: dolomitisch: Bitumen | Brekzie: dolomitisch: Bitumen     |
+|15111009 | Brekzie: dolomitisch-polymikt | Brekzie: dolomitisch-polymikt     |
+|15111010 | Brekzie: kalkig | Brekzie: kalkig     |
+|15111011 | Brekzie: kalkig: Bioklasten | Brekzie: kalkig: Bioklasten     |
+|15111012 | Brekzie: kalkig-dolomitisch | Brekzie: kalkig-dolomitisch     |
+|15111013 | Brekzie: kalkig-polymikt | Brekzie: kalkig-polymikt     |
+|15111014 | Brekzie: kristallin | Brekzie: kristallin     |
+|15111015 | Brekzie: kristallin: polymikt | Brekzie: kristallin: polymikt     |
+|15111016 | Brekzie: monomikt | Brekzie: monomikt     |
+|15111017 | Brekzie: polymikt | Brekzie: polymikt     |
+|15111018 | Brekzie: sandig | Brekzie: sandig     |
+|15111019 | Brekzie: siltig | Brekzie: siltig     |
+|15111020 | Brekzie: pyroklastisch | Brekzie: pyroklastisch     |
+|15111021 | Brekzie: rhyolithisch | Brekzie: rhyolithisch     |
+|15111022 | Brekzie: tuffitisch | Brekzie: tuffitisch     |
+|15111023 | Brekzie: tektonisch | Brekzie: tektonisch     |
+|15111024 | Brekzie: kakiritisch | Brekzie: kakiritisch     |
+|15111025 | Brekzie: kataklastisch | Brekzie: kataklastisch     |
+|15111026 | Brekzie: kataklastisch-dolomitisch | Brekzie: kataklastisch-dolomitisch     |
+|15111027 | Brekzie: kataklastisch-kalkig | Brekzie: kataklastisch-kalkig     |
+|15111028 | Konglomerat | Konglomerat     |
+|15111029 | Konglomerat: dolomitisch | Konglomerat: dolomitisch     |
+|15111030 | Konglomerat: kalkig | Konglomerat: kalkig     |
+|15111031 | Konglomerat: kalkig: Muscheln | Konglomerat: kalkig: Muscheln     |
+|15111032 | Konglomerat: kalkig-dolomitisch | Konglomerat: kalkig-dolomitisch     |
+|15111033 | Konglomerat: kalkig-residual: Eisenpisoide | Konglomerat: kalkig-residual: Eisenpisoide     |
+|15111034 | Konglomerat: kristallin | Konglomerat: kristallin     |
+|15111035 | Konglomerat: monomikt | Konglomerat: monomikt     |
+|15111036 | Konglomerat: ophiolithisch | Konglomerat: ophiolithisch     |
+|15111037 | Konglomerat: polymikt | Konglomerat: polymikt     |
+|15111038 | Konglomerat: polymikt: Bioklasten | Konglomerat: polymikt: Bioklasten     |
+|15111039 | Konglomerat: polymikt: Quarz | Konglomerat: polymikt: Quarz     |
+|15111040 | Konglomerat: Quarz | Konglomerat: Quarz     |
+|15111041 | Konglomerat: pyroklastisch | Konglomerat: pyroklastisch     |
+|15111042 | Konglomerat: tuffitisch | Konglomerat: tuffitisch     |
+|15111043 | Gestein: psammitisch | Gestein: psammitisch     |
+|15111044 | Sandstein | Sandstein     |
+|15111045 | Sandstein: Anthrazit | Sandstein: Anthrazit     |
+|15111046 | Sandstein: Bioklasten | Sandstein: Bioklasten     |
+|15111047 | Sandstein: Bitumen | Sandstein: Bitumen     |
+|15111048 | Sandstein: dolomitisch | Sandstein: dolomitisch     |
+|15111049 | Sandstein: Eisenmineralien | Sandstein: Eisenmineralien     |
+|15111050 | Sandstein: Eisenooide | Sandstein: Eisenooide     |
+|15111051 | Sandstein: Feldspat | Sandstein: Feldspat     |
+|15111052 | Sandstein: Glaukonit | Sandstein: Glaukonit     |
+|15111053 | Sandstein: Glimmer | Sandstein: Glimmer     |
+|15111054 | Sandstein: Glimmer-Glaukonit | Sandstein: Glimmer-Glaukonit     |
+|15111055 | Sandstein: Gips | Sandstein: Gips     |
+|15111056 | Sandstein: kalkig | Sandstein: kalkig     |
+|15111057 | Sandstein: kalkig: Bioklasten | Sandstein: kalkig: Bioklasten     |
+|15111058 | Sandstein: kalkig: Glaukonit | Sandstein: kalkig: Glaukonit     |
+|15111059 | Sandstein: kalkig: Glimmer | Sandstein: kalkig: Glimmer     |
+|15111060 | Sandstein: kalkig: Kohle | Sandstein: kalkig: Kohle     |
+|15111061 | Sandstein: kalkig: Muscheln | Sandstein: kalkig: Muscheln     |
+|15111062 | Sandstein: kalkig: Nummuliten | Sandstein: kalkig: Nummuliten     |
+|15111063 | Sandstein: kalkig: Quarz | Sandstein: kalkig: Quarz     |
+|15111064 | Sandstein: kalkig-dolomitisch | Sandstein: kalkig-dolomitisch     |
+|15111065 | Sandstein: kalkig-kieselig | Sandstein: kalkig-kieselig     |
+|15111066 | Sandstein: kieselig | Sandstein: kieselig     |
+|15111067 | Sandstein: Kohle | Sandstein: Kohle     |
+|15111068 | Sandstein: konglomeratisch | Sandstein: konglomeratisch     |
+|15111069 | Sandstein: konglomeratisch-kalkig: Muscheln | Sandstein: konglomeratisch-kalkig: Muscheln     |
+|15111070 | Sandstein: mergelig | Sandstein: mergelig     |
+|15111071 | Sandstein: mergelig: Glaukonit | Sandstein: mergelig: Glaukonit     |
+|15111072 | Sandstein: mergelig: Glimmer | Sandstein: mergelig: Glimmer     |
+|15111073 | Sandstein: Phosphorit | Sandstein: Phosphorit     |
+|15111074 | Sandstein: Quarz | Sandstein: Quarz     |
+|15111075 | Sandstein: Quarz-Glaukonit | Sandstein: Quarz-Glaukonit     |
+|15111076 | Sandstein: Quarz-Glimmer | Sandstein: Quarz-Glimmer     |
+|15111077 | Sandstein: siltig | Sandstein: siltig     |
+|15111078 | Sandstein: siltig-kalkig | Sandstein: siltig-kalkig     |
+|15111079 | Sandstein: tonig | Sandstein: tonig     |
+|15111080 | Sandstein: tonig: Feldspat | Sandstein: tonig: Feldspat     |
+|15111081 | Sandstein: tonig: Glaukonit | Sandstein: tonig: Glaukonit     |
+|15111082 | Sandstein: tonig: Glimmer | Sandstein: tonig: Glimmer     |
+|15111083 | Sandstein: tonig: Kohle | Sandstein: tonig: Kohle     |
+|15111084 | Sandstein: tonig: Lithoklasten | Sandstein: tonig: Lithoklasten     |
+|15111085 | Sandstein: tonig-dolomitisch | Sandstein: tonig-dolomitisch     |
+|15111086 | Sandstein: tonig-kalkig | Sandstein: tonig-kalkig     |
+|15111087 | Sandstein: tonig-kalkig: Kohle | Sandstein: tonig-kalkig: Kohle     |
+|15111088 | Sandstein: tuffitisch | Sandstein: tuffitisch     |
+|15111089 | Gestein: pelitisch | Gestein: pelitisch     |
+|15111090 | Siltstein | Siltstein     |
+|15111091 | Siltstein: dolomitisch | Siltstein: dolomitisch     |
+|15111092 | Siltstein: Glimmer | Siltstein: Glimmer     |
+|15111093 | Siltstein: kalkig | Siltstein: kalkig     |
+|15111094 | Siltstein: Kohle | Siltstein: Kohle     |
+|15111095 | Siltstein: mergelig | Siltstein: mergelig     |
+|15111096 | Siltstein: sandig | Siltstein: sandig     |
+|15111097 | Siltstein: schiefrig | Siltstein: schiefrig     |
+|15111098 | Siltstein: tonig | Siltstein: tonig     |
+|15111099 | Siltstein: tonig-dolomitisch | Siltstein: tonig-dolomitisch     |
+|15111100 | Siltstein: tonig-kalkig | Siltstein: tonig-kalkig     |
+|15111101 | Siltstein: tuffitisch | Siltstein: tuffitisch     |
+|15111102 | Tonstein | Tonstein     |
+|15111103 | Tonstein: Anthrazit | Tonstein: Anthrazit     |
+|15111104 | Tonstein: Bitumen | Tonstein: Bitumen     |
+|15111105 | Tonstein: dolomitisch | Tonstein: dolomitisch     |
+|15111106 | Tonstein: Eisenooide | Tonstein: Eisenooide     |
+|15111107 | Tonstein: Glaukonit | Tonstein: Glaukonit     |
+|15111108 | Tonstein: kalkig | Tonstein: kalkig     |
+|15111109 | Tonstein: kalkig: Glaukonit | Tonstein: kalkig: Glaukonit     |
+|15111110 | Tonstein: kieselig | Tonstein: kieselig     |
+|15111111 | Tonstein: Kohle | Tonstein: Kohle     |
+|15111112 | Tonstein: mergelig | Tonstein: mergelig     |
+|15111113 | Tonstein: mergelig: Bitumen | Tonstein: mergelig: Bitumen     |
+|15111114 | Tonstein: mergelig: Glimmer | Tonstein: mergelig: Glimmer     |
+|15111115 | Tonstein: Pyrit | Tonstein: Pyrit     |
+|15111116 | Tonstein: sandig | Tonstein: sandig     |
+|15111117 | Tonstein: sandig: Glimmer | Tonstein: sandig: Glimmer     |
+|15111118 | Tonstein: sandig: Kohle | Tonstein: sandig: Kohle     |
+|15111119 | Tonstein: sandig-dolomitisch | Tonstein: sandig-dolomitisch     |
+|15111120 | Tonstein: sandig-kalkig | Tonstein: sandig-kalkig     |
+|15111121 | Tonstein: sandig-mergelig | Tonstein: sandig-mergelig     |
+|15111122 | Tonstein: sandig-schiefrig | Tonstein: sandig-schiefrig     |
+|15111123 | Tonstein: schiefrig | Tonstein: schiefrig     |
+|15111124 | Tonstein: schiefrig: Anthrazit | Tonstein: schiefrig: Anthrazit     |
+|15111125 | Tonstein: schiefrig: Bitumen | Tonstein: schiefrig: Bitumen     |
+|15111126 | Tonstein: siltig | Tonstein: siltig     |
+|15111127 | Tonstein: siltig: Glimmer | Tonstein: siltig: Glimmer     |
+|15111128 | Tonstein: siltig-dolomitisch | Tonstein: siltig-dolomitisch     |
+|15111129 | Tonstein: siltig-kalkig | Tonstein: siltig-kalkig     |
+|15111130 | Tonstein: siltig-schiefrig | Tonstein: siltig-schiefrig     |
+|15111131 | Tonstein: tuffitisch | Tonstein: tuffitisch     |
+|15111132 | Mergelstein | Mergelstein     |
+|15111133 | Mergelstein: Bioklasten | Mergelstein: Bioklasten     |
+|15111134 | Mergelstein: Bioklasten-Ooide | Mergelstein: Bioklasten-Ooide     |
+|15111135 | Mergelstein: Bitumen | Mergelstein: Bitumen     |
+|15111136 | Mergelstein: dolomitisch | Mergelstein: dolomitisch     |
+|15111137 | Mergelstein: Eisenooide | Mergelstein: Eisenooide     |
+|15111138 | Mergelstein: Gips | Mergelstein: Gips     |
+|15111139 | Mergelstein: Glaukonit | Mergelstein: Glaukonit     |
+|15111140 | Mergelstein: Glaukonit-Bioklasten | Mergelstein: Glaukonit-Bioklasten     |
+|15111141 | Mergelstein: Glimmer | Mergelstein: Glimmer     |
+|15111142 | Mergelstein: kalkig | Mergelstein: kalkig     |
+|15111143 | Mergelstein: kalkig: Bioklasten | Mergelstein: kalkig: Bioklasten     |
+|15111144 | Mergelstein: kalkig: Bitumen | Mergelstein: kalkig: Bitumen     |
+|15111145 | Mergelstein: kalkig-dolomitisch | Mergelstein: kalkig-dolomitisch     |
+|15111146 | Mergelstein: kalkig: Eisenooide | Mergelstein: kalkig: Eisenooide     |
+|15111147 | Mergelstein: kalkig: Glaukonit | Mergelstein: kalkig: Glaukonit     |
+|15111148 | Mergelstein: kalkig: Ooide | Mergelstein: kalkig: Ooide     |
+|15111149 | Mergelstein: kalkig-kieselig | Mergelstein: kalkig-kieselig     |
+|15111150 | Mergelstein: kalkig-schiefrig | Mergelstein: kalkig-schiefrig     |
+|15111151 | Mergelstein: kieselig | Mergelstein: kieselig     |
+|15111152 | Mergelstein: Kohle | Mergelstein: Kohle     |
+|15111153 | Mergelstein: konglomeratisch | Mergelstein: konglomeratisch     |
+|15111154 | Mergelstein: Korallen | Mergelstein: Korallen     |
+|15111155 | Mergelstein: Lignit | Mergelstein: Lignit     |
+|15111156 | Mergelstein: Ooide | Mergelstein: Ooide     |
+|15111157 | Mergelstein: Phosphorit | Mergelstein: Phosphorit     |
+|15111158 | Mergelstein: sandig | Mergelstein: sandig     |
+|15111159 | Mergelstein: sandig: Bioklasten | Mergelstein: sandig: Bioklasten     |
+|15111160 | Mergelstein: sandig-dolomitisch | Mergelstein: sandig-dolomitisch     |
+|15111161 | Mergelstein: sandig: Glaukonit | Mergelstein: sandig: Glaukonit     |
+|15111162 | Mergelstein: sandig: Glimmer | Mergelstein: sandig: Glimmer     |
+|15111163 | Mergelstein: sandig: Kohle | Mergelstein: sandig: Kohle     |
+|15111164 | Mergelstein: sandig-kalkig | Mergelstein: sandig-kalkig     |
+|15111165 | Mergelstein: sandig-siltig | Mergelstein: sandig-siltig     |
+|15111166 | Mergelstein: sandig-tonig | Mergelstein: sandig-tonig     |
+|15111167 | Mergelstein: sandig-tonig: Glaukonit | Mergelstein: sandig-tonig: Glaukonit     |
+|15111168 | Mergelstein: schiefrig | Mergelstein: schiefrig     |
+|15111169 | Mergelstein: schiefrig: Bitumen | Mergelstein: schiefrig: Bitumen     |
+|15111170 | Mergelstein: siltig | Mergelstein: siltig     |
+|15111171 | Mergelstein: siltig: Glaukonit | Mergelstein: siltig: Glaukonit     |
+|15111172 | Mergelstein: siltig: Glimmer | Mergelstein: siltig: Glimmer     |
+|15111173 | Mergelstein: siltig-dolomitisch | Mergelstein: siltig-dolomitisch     |
+|15111174 | Mergelstein: siltig-kalkig | Mergelstein: siltig-kalkig     |
+|15111175 | Mergelstein: siltig-schiefrig | Mergelstein: siltig-schiefrig     |
+|15111176 | Mergelstein: siltig-tonig | Mergelstein: siltig-tonig     |
+|15111177 | Mergelstein: tonig | Mergelstein: tonig     |
+|15111178 | Mergelstein: tonig: Bitumen | Mergelstein: tonig: Bitumen     |
+|15111179 | Mergelstein: tonig: Kohle | Mergelstein: tonig: Kohle     |
+|15111180 | Gestein: Karbonat | Gestein: Karbonat     |
+|15111181 | Gestein: sedimentär: Karbonat | Gestein: sedimentär: Karbonat     |
+|15111182 | Gestein: pedogen: Karbonat | Gestein: pedogen: Karbonat     |
+|15111183 | Gestein: pedogen-verkrustet: Karbonat | Gestein: pedogen-verkrustet: Karbonat     |
+|15111184 | Gestein: vulkanisch: Karbonat | Gestein: vulkanisch: Karbonat     |
+|15111185 | Gestein: metamorph: Karbonat | Gestein: metamorph: Karbonat     |
+|15111186 | Kalkstein | Kalkstein     |
+|15111187 | Kalkstein: Albit | Kalkstein: Albit     |
+|15111188 | Kalkstein: Algen | Kalkstein: Algen     |
+|15111189 | Kalkstein: arenitisch | Kalkstein: arenitisch     |
+|15111190 | Kalkstein: arenitisch: Bioklasten | Kalkstein: arenitisch: Bioklasten     |
+|15111191 | Kalkstein: arenitisch: Bioklasten-Chert | Kalkstein: arenitisch: Bioklasten-Chert     |
+|15111192 | Kalkstein: arenitisch: Glaukonit | Kalkstein: arenitisch: Glaukonit     |
+|15111193 | Kalkstein: arenitisch: Ooide | Kalkstein: arenitisch: Ooide     |
+|15111194 | Kalkstein: arenitisch: Quarz | Kalkstein: arenitisch: Quarz     |
+|15111195 | Kalkstein: arenitisch-spätig | Kalkstein: arenitisch-spätig     |
+|15111196 | Kalkstein: Bioklasten | Kalkstein: Bioklasten     |
+|15111197 | Kalkstein: Bioklasten-Chert | Kalkstein: Bioklasten-Chert     |
+|15111198 | Kalkstein: Bioklasten-Ooide | Kalkstein: Bioklasten-Ooide     |
+|15111199 | Kalkstein: Bitumen | Kalkstein: Bitumen     |
+|15111200 | Kalkstein: Bitumen-Bioklasten | Kalkstein: Bitumen-Bioklasten     |
+|15111201 | Kalkstein: brekziös | Kalkstein: brekziös     |
+|15111202 | Kalkstein: Chert | Kalkstein: Chert     |
+|15111203 | Kalkstein: dolomitisch | Kalkstein: dolomitisch     |
+|15111204 | Kalkstein: dolomitisch: Bioklasten | Kalkstein: dolomitisch: Bioklasten     |
+|15111205 | Kalkstein: Eisenmineralien | Kalkstein: Eisenmineralien     |
+|15111206 | Kalkstein: Eisenooide | Kalkstein: Eisenooide     |
+|15111207 | Kalkstein: Glaukonit | Kalkstein: Glaukonit     |
+|15111208 | Kalkstein: Glaukonit-Bioklasten | Kalkstein: Glaukonit-Bioklasten     |
+|15111209 | Kalkstein: kieselig | Kalkstein: kieselig     |
+|15111210 | Kalkstein: kieselig: Bioklasten | Kalkstein: kieselig: Bioklasten     |
+|15111211 | Kalkstein: kieselig: Bioklasten-Chert | Kalkstein: kieselig: Bioklasten-Chert     |
+|15111212 | Kalkstein: kieselig: Glaukonit | Kalkstein: kieselig: Glaukonit     |
+|15111213 | Kalkstein: kieselig-spätig | Kalkstein: kieselig-spätig     |
+|15111214 | Kalkstein: Korallen | Kalkstein: Korallen     |
+|15111215 | Kalkstein: kreidig | Kalkstein: kreidig     |
+|15111216 | Kalkstein: kreidig: Bitumen | Kalkstein: kreidig: Bitumen     |
+|15111217 | Kalkstein: kreidig: Chert | Kalkstein: kreidig: Chert     |
+|15111218 | Kalkstein: kreidig: Pisoide | Kalkstein: kreidig: Pisoide     |
+|15111219 | Kalkstein: kristallin | Kalkstein: kristallin     |
+|15111220 | Kalkstein: Limonit | Kalkstein: Limonit     |
+|15111221 | Kalkstein: mergelig | Kalkstein: mergelig     |
+|15111222 | Kalkstein: mergelig: Bioklasten | Kalkstein: mergelig: Bioklasten     |
+|15111223 | Kalkstein: mergelig: Chert | Kalkstein: mergelig: Chert     |
+|15111224 | Kalkstein: mergelig: Glaukonit | Kalkstein: mergelig: Glaukonit     |
+|15111225 | Kalkstein: mergelig: Pyrit | Kalkstein: mergelig: Pyrit     |
+|15111226 | Kalkstein: mergelig-dolomitisch | Kalkstein: mergelig-dolomitisch     |
+|15111227 | Kalkstein: mergelig-kieselig | Kalkstein: mergelig-kieselig     |
+|15111228 | Kalkstein: mergelig-schiefrig | Kalkstein: mergelig-schiefrig     |
+|15111229 | Kalkstein: mikritisch | Kalkstein: mikritisch     |
+|15111230 | Kalkstein: mikritisch: Aptychen | Kalkstein: mikritisch: Aptychen     |
+|15111231 | Kalkstein: mikritisch: Bioklasten | Kalkstein: mikritisch: Bioklasten     |
+|15111232 | Kalkstein: mikritisch: Bioklasten-Chert | Kalkstein: mikritisch: Bioklasten-Chert     |
+|15111233 | Kalkstein: mikritisch: Calpionellen | Kalkstein: mikritisch: Calpionellen     |
+|15111234 | Kalkstein: mikritisch: Chert | Kalkstein: mikritisch: Chert     |
+|15111235 | Kalkstein: mikritisch: Glaukonit | Kalkstein: mikritisch: Glaukonit     |
+|15111236 | Kalkstein: mikritisch: Onkoide | Kalkstein: mikritisch: Onkoide     |
+|15111237 | Kalkstein: mikritisch: Ooide | Kalkstein: mikritisch: Ooide     |
+|15111238 | Kalkstein: Nummuliten | Kalkstein: Nummuliten     |
+|15111239 | Kalkstein: Onkoide | Kalkstein: Onkoide     |
+|15111240 | Kalkstein: Ooide | Kalkstein: Ooide     |
+|15111241 | Kalkstein: Ooide-Chert | Kalkstein: Ooide-Chert     |
+|15111242 | Kalkstein: pedogen-verkrustet | Kalkstein: pedogen-verkrustet     |
+|15111243 | Kalkstein: Phosphorit | Kalkstein: Phosphorit     |
+|15111244 | Kalkstein: Pisoide | Kalkstein: Pisoide     |
+|15111245 | Kalkstein: ruditisch | Kalkstein: ruditisch     |
+|15111246 | Kalkstein: ruditisch: Korallen | Kalkstein: ruditisch: Korallen     |
+|15111247 | Kalkstein: sandig | Kalkstein: sandig     |
+|15111248 | Kalkstein: sandig: Bioklasten | Kalkstein: sandig: Bioklasten     |
+|15111249 | Kalkstein: sandig: Eisenooide | Kalkstein: sandig: Eisenooide     |
+|15111250 | Kalkstein: sandig: Glaukonit | Kalkstein: sandig: Glaukonit     |
+|15111251 | Kalkstein: sandig: Glimmer | Kalkstein: sandig: Glimmer     |
+|15111252 | Kalkstein: sandig-kieselig | Kalkstein: sandig-kieselig     |
+|15111253 | Kalkstein: sandig-spätig | Kalkstein: sandig-spätig     |
+|15111254 | Kalkstein: sandig-tonig | Kalkstein: sandig-tonig     |
+|15111255 | Kalkstein: Schwämme | Kalkstein: Schwämme     |
+|15111256 | Kalkstein: siltig | Kalkstein: siltig     |
+|15111257 | Kalkstein: siltig: Bioklasten | Kalkstein: siltig: Bioklasten     |
+|15111258 | Kalkstein: siltig-tonig | Kalkstein: siltig-tonig     |
+|15111259 | Kalkstein: spätig | Kalkstein: spätig     |
+|15111260 | Kalkstein: spätig: Bioklasten | Kalkstein: spätig: Bioklasten     |
+|15111261 | Kalkstein: spätig: Bioklasten-Chert | Kalkstein: spätig: Bioklasten-Chert     |
+|15111262 | Kalkstein: spätig: Bioklasten-Glaukonit | Kalkstein: spätig: Bioklasten-Glaukonit     |
+|15111263 | Kalkstein: spätig: Bioklasten-Ooide | Kalkstein: spätig: Bioklasten-Ooide     |
+|15111264 | Kalkstein: spätig: Chert | Kalkstein: spätig: Chert     |
+|15111265 | Kalkstein: spätig: Echinodermen | Kalkstein: spätig: Echinodermen     |
+|15111266 | Kalkstein: spätig: Glaukonit | Kalkstein: spätig: Glaukonit     |
+|15111267 | Kalkstein: spätig: Glaukonit-Chert | Kalkstein: spätig: Glaukonit-Chert     |
+|15111268 | Kalkstein: spätig: Ooide | Kalkstein: spätig: Ooide     |
+|15111269 | Kalkstein: stromatolithisch | Kalkstein: stromatolithisch     |
+|15111270 | Kalkstein: stromatolithisch: Eisenmineralien-Phosphorit | Kalkstein: stromatolithisch: Eisenmineralien-Phosphorit     |
+|15111271 | Kalkstein: tonig | Kalkstein: tonig     |
+|15111272 | Kalkstein: tonig: Bioklasten | Kalkstein: tonig: Bioklasten     |
+|15111273 | Kalkstein: tonig: Chert | Kalkstein: tonig: Chert     |
+|15111274 | Kalkstein: tonig-schiefrig | Kalkstein: tonig-schiefrig     |
+|15111275 | Kalkstein: tufig | Kalkstein: tufig     |
+|15111276 | Tuff: kalkig | Tuff: kalkig     |
+|15111277 | Dolomitstein | Dolomitstein     |
+|15111278 | Dolomitstein: Bioklasten | Dolomitstein: Bioklasten     |
+|15111279 | Dolomitstein: Bitumen | Dolomitstein: Bitumen     |
+|15111280 | Dolomitstein: kalkig | Dolomitstein: kalkig     |
+|15111281 | Dolomitstein: kieselig | Dolomitstein: kieselig     |
+|15111282 | Dolomitstein: mikritisch | Dolomitstein: mikritisch     |
+|15111283 | Dolomitstein: Ooide | Dolomitstein: Ooide     |
+|15111284 | Dolomitstein: Ooide-Chert | Dolomitstein: Ooide-Chert     |
+|15111285 | Dolomitstein: sandig | Dolomitstein: sandig     |
+|15111286 | Dolomitstein: sandig-siltig | Dolomitstein: sandig-siltig     |
+|15111287 | Dolomitstein: sandig-tonig | Dolomitstein: sandig-tonig     |
+|15111288 | Dolomitstein: sandig-tonig: Bitumen | Dolomitstein: sandig-tonig: Bitumen     |
+|15111289 | Dolomitstein: schiefrig | Dolomitstein: schiefrig     |
+|15111290 | Dolomitstein: siltig | Dolomitstein: siltig     |
+|15111291 | Dolomitstein: siltig-tonig | Dolomitstein: siltig-tonig     |
+|15111292 | Dolomitstein: spätig | Dolomitstein: spätig     |
+|15111293 | Dolomitstein: spätig: Bioklasten | Dolomitstein: spätig: Bioklasten     |
+|15111294 | Dolomitstein: stromatolithisch | Dolomitstein: stromatolithisch     |
+|15111295 | Dolomitstein: stromatolithisch: Chert | Dolomitstein: stromatolithisch: Chert     |
+|15111296 | Dolomitstein: tonig | Dolomitstein: tonig     |
+|15111297 | Rauwacke | Rauwacke     |
+|15111298 | Rauwacke: sandig | Rauwacke: sandig     |
+|15111299 | Rauwacke: sedimentär | Rauwacke: sedimentär     |
+|15111300 | Rauwacke: kataklastisch | Rauwacke: kataklastisch     |
+|15111301 | Evaporit | Evaporit     |
+|15111302 | Evaporit: Anhydrit | Evaporit: Anhydrit     |
+|15111303 | Evaporit: Gips | Evaporit: Gips     |
+|15111304 | Evaporit: Halit | Evaporit: Halit     |
+|15111305 | Evaporit: Sulfat | Evaporit: Sulfat     |
+|15111306 | Evaporit: tonig | Evaporit: tonig     |
+|15111307 | Evaporit: tonig: Anhydrit | Evaporit: tonig: Anhydrit     |
+|15111308 | Evaporit: tonig: Gips | Evaporit: tonig: Gips     |
+|15111309 | Gestein: kieselig | Gestein: kieselig     |
+|15111310 | Gestein: kieselig-sedimentär | Gestein: kieselig-sedimentär     |
+|15111311 | Gestein: kieselig-kryptokristallin | Gestein: kieselig-kryptokristallin     |
+|15111312 | Gestein: kieselig-pedogen | Gestein: kieselig-pedogen     |
+|15111313 | Gestein: kieselig: Radiolarien | Gestein: kieselig: Radiolarien     |
+|15111314 | Gestein: kieselig: Schwämme | Gestein: kieselig: Schwämme     |
+|15111315 | Gestein: kieselig-metamorph | Gestein: kieselig-metamorph     |
+|15111316 | Gestein: Phosphorit | Gestein: Phosphorit     |
+|15111317 | Gestein: organisch | Gestein: organisch     |
+|15111318 | Gestein: organisch: Anthrazit | Gestein: organisch: Anthrazit     |
+|15111319 | Gestein: organisch: Kohle | Gestein: organisch: Kohle     |
+|15111320 | Gestein: organisch: Lignit | Gestein: organisch: Lignit     |
+|15111321 | Gestein: pedogen | Gestein: pedogen     |
+|15111322 | Gestein: residual | Gestein: residual     |
+|15111323 | Gestein: residual: Eisenmineralien | Gestein: residual: Eisenmineralien     |
+|15111324 | Gestein: residual: Silikat | Gestein: residual: Silikat     |
+|15111325 | Gestein: residual: Silikat-Eisenmineralien | Gestein: residual: Silikat-Eisenmineralien     |
+|15111326 | Gestein: residual-sandig | Gestein: residual-sandig     |
+|15111327 | Gestein: residual-sandig: Quarz | Gestein: residual-sandig: Quarz     |
+|15111328 | Gestein: residual-siltig | Gestein: residual-siltig     |
+|15111329 | Gestein: residual-tonig | Gestein: residual-tonig     |
+|15111330 | Gestein: residual-tonig: Eisenpisoide | Gestein: residual-tonig: Eisenpisoide     |
+|15111331 | Gestein: residual-tonig: Kaolinit | Gestein: residual-tonig: Kaolinit     |
+|15111332 | Gestein: residual-tonig: Limonit | Gestein: residual-tonig: Limonit     |
+|15111333 | Gestein: Eisenmineralien | Gestein: Eisenmineralien     |
+|15111334 | Gestein: Eisenooide | Gestein: Eisenooide     |
+|15111335 | Gestein: Eisenpisoide | Gestein: Eisenpisoide     |
+|15111336 | Gestein: pyroklastisch | Gestein: pyroklastisch     |
+|15111337 | Ignimbrit | Ignimbrit     |
+|15111338 | Tuff | Tuff     |
+|15111339 | Tuff: vulkanisch | Tuff: vulkanisch     |
+|15111340 | Tuff: vulkanisch: Asche | Tuff: vulkanisch: Asche     |
+|15111341 | Tuff: vulkanisch: Kristalle | Tuff: vulkanisch: Kristalle     |
+|15111342 | Tuff: vulkanisch: Lapilli | Tuff: vulkanisch: Lapilli     |
+|15111343 | Bentonit | Bentonit     |
+|15111344 | Gestein: kristallin | Gestein: kristallin     |
+|15111345 | Gestein: saur | Gestein: saur     |
+|15111346 | Gestein: basisch | Gestein: basisch     |
+|15111347 | Gestein: magmatisch | Gestein: magmatisch     |
+|15111348 | Gestein: vulkanisch | Gestein: vulkanisch     |
+|15111349 | Gestein: vulkanisch: Karbonat | Gestein: vulkanisch: Karbonat     |
+|15111350 | Gestein: saur-vulkanisch | Gestein: saur-vulkanisch     |
+|15111351 | Gestein: rhyolithisch | Gestein: rhyolithisch     |
+|15111352 | Rhyolith | Rhyolith     |
+|15111353 | Rhyolith: Alkalifeldspat | Rhyolith: Alkalifeldspat     |
+|15111354 | Rhyolith: ignimbritisch | Rhyolith: ignimbritisch     |
+|15111355 | Rhyolith: porphyrisch | Rhyolith: porphyrisch     |
+|15111356 | Gestein: dazitisch | Gestein: dazitisch     |
+|15111357 | Dazit | Dazit     |
+|15111358 | Dazit: rhyolithisch | Dazit: rhyolithisch     |
+|15111359 | Gestein: latitisch | Gestein: latitisch     |
+|15111360 | Latit | Latit     |
+|15111361 | Gestein: trachytisch | Gestein: trachytisch     |
+|15111362 | Trachyt | Trachyt     |
+|15111363 | Trachyt: Alkalifeldspat | Trachyt: Alkalifeldspat     |
+|15111364 | Gestein: andesitisch | Gestein: andesitisch     |
+|15111365 | Andesit | Andesit     |
+|15111366 | Gestein: basisch-vulkanisch | Gestein: basisch-vulkanisch     |
+|15111367 | Gestein: basaltisch | Gestein: basaltisch     |
+|15111368 | Basalt | Basalt     |
+|15111369 | Basalt: Olivin | Basalt: Olivin     |
+|15111370 | Basalt: verwittert: Albit | Basalt: verwittert: Albit     |
+|15111371 | Gestein: phonolithisch | Gestein: phonolithisch     |
+|15111372 | Phonolith | Phonolith     |
+|15111373 | Phonolith: tephritisch | Phonolith: tephritisch     |
+|15111374 | Gestein: tephritisch | Gestein: tephritisch     |
+|15111375 | Tephrit | Tephrit     |
+|15111376 | Tephrit: phonolithisch | Tephrit: phonolithisch     |
+|15111377 | Basanit | Basanit     |
+|15111378 | Gestein: foiditisch | Gestein: foiditisch     |
+|15111379 | Foidit | Foidit     |
+|15111380 | Tuffit | Tuffit     |
+|15111381 | Gestein: gangartig | Gestein: gangartig     |
+|15111382 | Gestein: gangartig: Quarz | Gestein: gangartig: Quarz     |
+|15111383 | Gestein: saur-gangartig | Gestein: saur-gangartig     |
+|15111384 | Aplit | Aplit     |
+|15111385 | Pegmatit | Pegmatit     |
+|15111386 | Granophyr | Granophyr     |
+|15111387 | Gestein: basisch-gangartig | Gestein: basisch-gangartig     |
+|15111388 | Rodingit | Rodingit     |
+|15111389 | Gestein: plutonisch | Gestein: plutonisch     |
+|15111390 | Gestein: granitisch | Gestein: granitisch     |
+|15111391 | Granit | Granit     |
+|15111392 | Granit: Alkalifeldspat | Granit: Alkalifeldspat     |
+|15111393 | Granit: aplitisch | Granit: aplitisch     |
+|15111394 | Granit: aplitisch: Granat | Granit: aplitisch: Granat     |
+|15111395 | Granit: Biotit | Granit: Biotit     |
+|15111396 | Granit: Biotit-Cordierit | Granit: Biotit-Cordierit     |
+|15111397 | Granit: Biotit-Granat | Granit: Biotit-Granat     |
+|15111398 | Granit: Biotit-Muskovit | Granit: Biotit-Muskovit     |
+|15111399 | Granit: Hornblende | Granit: Hornblende     |
+|15111400 | Granit: metasomatisch | Granit: metasomatisch     |
+|15111401 | Granit: mikrokristallin | Granit: mikrokristallin     |
+|15111402 | Granit: mikrokristallin-porphyrisch | Granit: mikrokristallin-porphyrisch     |
+|15111403 | Granit: monzonitisch | Granit: monzonitisch     |
+|15111404 | Granit: mylonitisch | Granit: mylonitisch     |
+|15111405 | Granit: porphyrisch | Granit: porphyrisch     |
+|15111406 | Granit: porphyrisch: Biotit | Granit: porphyrisch: Biotit     |
+|15111407 | Granit: porphyrisch: Hornblende | Granit: porphyrisch: Hornblende     |
+|15111408 | Granit: schiefrig | Granit: schiefrig     |
+|15111409 | Granit: syenitisch | Granit: syenitisch     |
+|15111410 | Granodiorit | Granodiorit     |
+|15111411 | Granodiorit: aplitisch | Granodiorit: aplitisch     |
+|15111412 | Granodiorit: Hornblende | Granodiorit: Hornblende     |
+|15111413 | Granodiorit: porphyrisch | Granodiorit: porphyrisch     |
+|15111414 | Granodiorit: schiefrig | Granodiorit: schiefrig     |
+|15111415 | Monzonit | Monzonit     |
+|15111416 | Monzonit: Feldspatoid | Monzonit: Feldspatoid     |
+|15111417 | Monzonit: porphyrisch: Quarz | Monzonit: porphyrisch: Quarz     |
+|15111418 | Monzonit: Quarz | Monzonit: Quarz     |
+|15111419 | Tonalit | Tonalit     |
+|15111420 | Tonalit: Biotit | Tonalit: Biotit     |
+|15111421 | Tonalit: Biotit-Hornblende | Tonalit: Biotit-Hornblende     |
+|15111422 | Gestein: syenitisch | Gestein: syenitisch     |
+|15111423 | Syenit | Syenit     |
+|15111424 | Syenit: Alkalifeldspat | Syenit: Alkalifeldspat     |
+|15111425 | Syenit: Feldspatoid | Syenit: Feldspatoid     |
+|15111426 | Syenit: Nephelin | Syenit: Nephelin     |
+|15111427 | Syenit: porphyrisch: Quarz | Syenit: porphyrisch: Quarz     |
+|15111428 | Syenit: Quarz | Syenit: Quarz     |
+|15111429 | Syenit: Quarz-Hornblende | Syenit: Quarz-Hornblende     |
+|15111430 | Gestein: dioritisch | Gestein: dioritisch     |
+|15111431 | Diorit | Diorit     |
+|15111432 | Diorit: Biotit-Hornblende | Diorit: Biotit-Hornblende     |
+|15111433 | Diorit: migmatitisch | Diorit: migmatitisch     |
+|15111434 | Diorit: mikrokristallin | Diorit: mikrokristallin     |
+|15111435 | Diorit: monzonitisch | Diorit: monzonitisch     |
+|15111436 | Diorit: porphyrisch | Diorit: porphyrisch     |
+|15111437 | Diorit: Quarz | Diorit: Quarz     |
+|15111438 | Diorit: Quarz-Biotit | Diorit: Quarz-Biotit     |
+|15111439 | Diorit: Quarz-Epidot | Diorit: Quarz-Epidot     |
+|15111440 | Diorit: Quarz-Hornblende | Diorit: Quarz-Hornblende     |
+|15111441 | Diorit: schiefrig | Diorit: schiefrig     |
+|15111442 | Gestein: gabbroisch | Gestein: gabbroisch     |
+|15111443 | Gabbro | Gabbro     |
+|15111444 | Gabbro: Hornblende | Gabbro: Hornblende     |
+|15111445 | Gabbro: mikrokristallin | Gabbro: mikrokristallin     |
+|15111446 | Gabbro: monzonitisch | Gabbro: monzonitisch     |
+|15111447 | Gabbro: monzonitisch: Nephelin | Gabbro: monzonitisch: Nephelin     |
+|15111448 | Gabbro: mylonitisch | Gabbro: mylonitisch     |
+|15111449 | Gabbro: Olivin | Gabbro: Olivin     |
+|15111450 | Gabbro: Omphazit | Gabbro: Omphazit     |
+|15111451 | Gabbro: Orthopyroxen | Gabbro: Orthopyroxen     |
+|15111452 | Gabbro: Quarz | Gabbro: Quarz     |
+|15111453 | Gestein: foidolitisch | Gestein: foidolitisch     |
+|15111454 | Foidolit | Foidolit     |
+|15111455 | Gestein: ultramafisch | Gestein: ultramafisch     |
+|15111456 | Peridotit | Peridotit     |
+|15111457 | Peridotit: plutonisch | Peridotit: plutonisch     |
+|15111458 | Peridotit: plutonisch: Klinopyroxen-Orthopyroxen | Peridotit: plutonisch: Klinopyroxen-Orthopyroxen     |
+|15111459 | Peridotit: plutonisch: Olivin | Peridotit: plutonisch: Olivin     |
+|15111460 | Peridotit: plutonisch: Olivin-Klinopyroxen | Peridotit: plutonisch: Olivin-Klinopyroxen     |
+|15111461 | Peridotit: plutonisch: Olivin-Orthopyroxen | Peridotit: plutonisch: Olivin-Orthopyroxen     |
+|15111462 | Peridotit: metamorph | Peridotit: metamorph     |
+|15111463 | Peridotit: metamorph: Hornblende | Peridotit: metamorph: Hornblende     |
+|15111464 | Peridotit: metamorph: Phlogopit | Peridotit: metamorph: Phlogopit     |
+|15111465 | Peridotit: metamorph: Serpentin | Peridotit: metamorph: Serpentin     |
+|15111466 | Pyroxenit | Pyroxenit     |
+|15111467 | Pyroxenit: plutonisch | Pyroxenit: plutonisch     |
+|15111468 | Gestein: metamorph | Gestein: metamorph     |
+|15111469 | Gestein: metasomatisch | Gestein: metasomatisch     |
+|15111470 | Gestein: tektonisch | Gestein: tektonisch     |
+|15111471 | Kakirit | Kakirit     |
+|15111472 | Kakirit: tonig | Kakirit: tonig     |
+|15111473 | Kataklastit | Kataklastit     |
+|15111474 | Mylonit | Mylonit     |
+|15111475 | Mylonit: kalkig | Mylonit: kalkig     |
+|15111476 | Mylonit: phyllitisch | Mylonit: phyllitisch     |
+|15111477 | Pseudotachyllit | Pseudotachyllit     |
+|15111478 | Hornfels | Hornfels     |
+|15111479 | Granofels | Granofels     |
+|15111480 | Granofels: Albit | Granofels: Albit     |
+|15111481 | Granofels: Granat | Granofels: Granat     |
+|15111482 | Granofels: Kalksilikat | Granofels: Kalksilikat     |
+|15111483 | Granofels: Olivin | Granofels: Olivin     |
+|15111484 | Granofels: Pyroxen | Granofels: Pyroxen     |
+|15111485 | Granofels: Silikat-Karbonat | Granofels: Silikat-Karbonat     |
+|15111486 | Marmor | Marmor     |
+|15111487 | Marmor: dolomitisch | Marmor: dolomitisch     |
+|15111488 | Marmor: dolomitisch-schiefrig | Marmor: dolomitisch-schiefrig     |
+|15111489 | Marmor: kalkig | Marmor: kalkig     |
+|15111490 | Marmor: kalkig: Chlorit | Marmor: kalkig: Chlorit     |
+|15111491 | Marmor: kalkig: Serizit | Marmor: kalkig: Serizit     |
+|15111492 | Marmor: kalkig-kieselig | Marmor: kalkig-kieselig     |
+|15111493 | Marmor: Kalksilikat | Marmor: Kalksilikat     |
+|15111494 | Marmor: kieselig | Marmor: kieselig     |
+|15111495 | Marmor: konglomeratisch | Marmor: konglomeratisch     |
+|15111496 | Marmor: konglomeratisch-kalkig | Marmor: konglomeratisch-kalkig     |
+|15111497 | Marmor: metasomatisch | Marmor: metasomatisch     |
+|15111498 | Marmor: sandig | Marmor: sandig     |
+|15111499 | Marmor: sandig: Bioklasten | Marmor: sandig: Bioklasten     |
+|15111500 | Marmor: schiefrig | Marmor: schiefrig     |
+|15111501 | Marmor: Serizit | Marmor: Serizit     |
+|15111502 | Marmor: Silikat | Marmor: Silikat     |
+|15111503 | Marmor: tonig | Marmor: tonig     |
+|15111504 | Marmor: tonig-schiefrig | Marmor: tonig-schiefrig     |
+|15111505 | Quarzit | Quarzit     |
+|15111506 | Quarzit: Albit | Quarzit: Albit     |
+|15111507 | Quarzit: Chlorit | Quarzit: Chlorit     |
+|15111508 | Quarzit: kalkig | Quarzit: kalkig     |
+|15111509 | Quarzit: Serizit | Quarzit: Serizit     |
+|15111510 | Gneis | Gneis     |
+|15111511 | Gneis: Albit | Gneis: Albit     |
+|15111512 | Gneis: Albit-Oligoklas | Gneis: Albit-Oligoklas     |
+|15111513 | Gneis: Aluminosilikat | Gneis: Aluminosilikat     |
+|15111514 | Gneis: Amphibol | Gneis: Amphibol     |
+|15111515 | Gneis: aplitisch | Gneis: aplitisch     |
+|15111516 | Gneis: augig | Gneis: augig     |
+|15111517 | Gneis: augig: Phengit | Gneis: augig: Phengit     |
+|15111518 | Gneis: Biotit | Gneis: Biotit     |
+|15111519 | Gneis: Biotit-Hornblende | Gneis: Biotit-Hornblende     |
+|15111520 | Gneis: Biotit-Muskovit | Gneis: Biotit-Muskovit     |
+|15111521 | Gneis: Biotit-Plagioklas | Gneis: Biotit-Plagioklas     |
+|15111522 | Gneis: Chlorit | Gneis: Chlorit     |
+|15111523 | Gneis: dioritisch | Gneis: dioritisch     |
+|15111524 | Gneis: gebändert | Gneis: gebändert     |
+|15111525 | Gneis: gebändert: Granat | Gneis: gebändert: Granat     |
+|15111526 | Gneis: Granat | Gneis: Granat     |
+|15111527 | Gneis: granitisch | Gneis: granitisch     |
+|15111528 | Gneis: granitisch-augig | Gneis: granitisch-augig     |
+|15111529 | Gneis: granodioritisch | Gneis: granodioritisch     |
+|15111530 | Gneis: granulitisch | Gneis: granulitisch     |
+|15111531 | Gneis: Hornblende | Gneis: Hornblende     |
+|15111532 | Gneis: Kyanit | Gneis: Kyanit     |
+|15111533 | Gneis: magmatisch | Gneis: magmatisch     |
+|15111534 | Gneis: magmatisch-augig | Gneis: magmatisch-augig     |
+|15111535 | Gneis: magmatisch-augig: Cordierit | Gneis: magmatisch-augig: Cordierit     |
+|15111536 | Gneis: metasomatisch | Gneis: metasomatisch     |
+|15111537 | Gneis: migmatitisch | Gneis: migmatitisch     |
+|15111538 | Gneis: migmatitisch: Cordierit | Gneis: migmatitisch: Cordierit     |
+|15111539 | Gneis: migmatitisch-augig | Gneis: migmatitisch-augig     |
+|15111540 | Gneis: Mikroklin | Gneis: Mikroklin     |
+|15111541 | Gneis: Muskovit | Gneis: Muskovit     |
+|15111542 | Gneis: mylonitisch | Gneis: mylonitisch     |
+|15111543 | Gneis: Phengit | Gneis: Phengit     |
+|15111544 | Gneis: phyllitisch | Gneis: phyllitisch     |
+|15111545 | Gneis: psammitisch | Gneis: psammitisch     |
+|15111546 | Gneis: psephitisch | Gneis: psephitisch     |
+|15111547 | Gneis: psephitisch: Phengit | Gneis: psephitisch: Phengit     |
+|15111548 | Gneis: schiefrig | Gneis: schiefrig     |
+|15111549 | Gneis: schiefrig: Biotit | Gneis: schiefrig: Biotit     |
+|15111550 | Gneis: schiefrig: Chlorit | Gneis: schiefrig: Chlorit     |
+|15111551 | Gneis: schiefrig: Hornblende | Gneis: schiefrig: Hornblende     |
+|15111552 | Gneis: schiefrig-augig | Gneis: schiefrig-augig     |
+|15111553 | Gneis: sedimentär | Gneis: sedimentär     |
+|15111554 | Gneis: Serizit | Gneis: Serizit     |
+|15111555 | Gneis: Serizit-Granat | Gneis: Serizit-Granat     |
+|15111556 | Granulit | Granulit     |
+|15111557 | Granulit: Biotit-Granat | Granulit: Biotit-Granat     |
+|15111558 | Granulit: Feldspat-Granat | Granulit: Feldspat-Granat     |
+|15111559 | Migmatit | Migmatit     |
+|15111560 | Migmatit: Cordierit | Migmatit: Cordierit     |
+|15111561 | Phyllit | Phyllit     |
+|15111562 | Phyllit: Graphit | Phyllit: Graphit     |
+|15111563 | Phyllit: kalkig | Phyllit: kalkig     |
+|15111564 | Phyllit: Quarz | Phyllit: Quarz     |
+|15111565 | Schiefer | Schiefer     |
+|15111566 | Schiefer: Aktinolith | Schiefer: Aktinolith     |
+|15111567 | Schiefer: Amphibol | Schiefer: Amphibol     |
+|15111568 | Schiefer: Anthrazit | Schiefer: Anthrazit     |
+|15111569 | Schiefer: Antigorit | Schiefer: Antigorit     |
+|15111570 | Schiefer: augig: Glimmer | Schiefer: augig: Glimmer     |
+|15111571 | Schiefer: Biotit | Schiefer: Biotit     |
+|15111572 | Schiefer: Biotit-Apatit | Schiefer: Biotit-Apatit     |
+|15111573 | Schiefer: Chlorit | Schiefer: Chlorit     |
+|15111574 | Schiefer: Chlorit-Epidot | Schiefer: Chlorit-Epidot     |
+|15111575 | Schiefer: Chlorit-Talk | Schiefer: Chlorit-Talk     |
+|15111576 | Schiefer: Chloritoid | Schiefer: Chloritoid     |
+|15111577 | Schiefer: Chloritoid-Kyanit | Schiefer: Chloritoid-Kyanit     |
+|15111578 | Schiefer: Glaukophan | Schiefer: Glaukophan     |
+|15111579 | Schiefer: Glimmer | Schiefer: Glimmer     |
+|15111580 | Schiefer: Glimmer-Chlorit | Schiefer: Glimmer-Chlorit     |
+|15111581 | Schiefer: Glimmer-Chloritoid | Schiefer: Glimmer-Chloritoid     |
+|15111582 | Schiefer: Glimmer-Granat | Schiefer: Glimmer-Granat     |
+|15111583 | Schiefer: Glimmer-Graphit | Schiefer: Glimmer-Graphit     |
+|15111584 | Schiefer: Glimmer-Hornblende | Schiefer: Glimmer-Hornblende     |
+|15111585 | Schiefer: Granat | Schiefer: Granat     |
+|15111586 | Schiefer: Graphit | Schiefer: Graphit     |
+|15111587 | Schiefer: Hornblende | Schiefer: Hornblende     |
+|15111588 | Schiefer: Hornblende-Granat | Schiefer: Hornblende-Granat     |
+|15111589 | Schiefer: kalkig | Schiefer: kalkig     |
+|15111590 | Schiefer: kalkig: Glimmer | Schiefer: kalkig: Glimmer     |
+|15111591 | Schiefer: kalkig: Serizit | Schiefer: kalkig: Serizit     |
+|15111592 | Schiefer: kalkig: Zoisit | Schiefer: kalkig: Zoisit     |
+|15111593 | Schiefer: kieselig | Schiefer: kieselig     |
+|15111594 | Schiefer: Kohle | Schiefer: Kohle     |
+|15111595 | Schiefer: konglomeratisch | Schiefer: konglomeratisch     |
+|15111596 | Schiefer: konglomeratisch-kalkig | Schiefer: konglomeratisch-kalkig     |
+|15111597 | Schiefer: Kyanit | Schiefer: Kyanit     |
+|15111598 | Schiefer: mergelig | Schiefer: mergelig     |
+|15111599 | Schiefer: Muskovit-Albit | Schiefer: Muskovit-Albit     |
+|15111600 | Schiefer: Quarz | Schiefer: Quarz     |
+|15111601 | Schiefer: Quarz-Chlorit | Schiefer: Quarz-Chlorit     |
+|15111602 | Schiefer: Quarz-Glimmer | Schiefer: Quarz-Glimmer     |
+|15111603 | Schiefer: Quarz-Serizit | Schiefer: Quarz-Serizit     |
+|15111604 | Schiefer: sandig | Schiefer: sandig     |
+|15111605 | Schiefer: sandig-kalkig | Schiefer: sandig-kalkig     |
+|15111606 | Schiefer: sandig-tonig | Schiefer: sandig-tonig     |
+|15111607 | Schiefer: Serizit | Schiefer: Serizit     |
+|15111608 | Schiefer: Serizit-Chlorit | Schiefer: Serizit-Chlorit     |
+|15111609 | Schiefer: Serizit-Staurolith | Schiefer: Serizit-Staurolith     |
+|15111610 | Schiefer: Talk | Schiefer: Talk     |
+|15111611 | Schiefer: Talk-Kyanit | Schiefer: Talk-Kyanit     |
+|15111612 | Schiefer: Talk-Serpentin | Schiefer: Talk-Serpentin     |
+|15111613 | Schiefer: Talk-Tremolit | Schiefer: Talk-Tremolit     |
+|15111614 | Schiefer: tonig | Schiefer: tonig     |
+|15111615 | Schiefer: tonig: Anthrazit | Schiefer: tonig: Anthrazit     |
+|15111616 | Schiefer: tonig: Bitumen | Schiefer: tonig: Bitumen     |
+|15111617 | Schiefer: tonig: Graphit | Schiefer: tonig: Graphit     |
+|15111618 | Schiefer: tonig-kalkig | Schiefer: tonig-kalkig     |
+|15111619 | Schiefer: tonig-kieselig | Schiefer: tonig-kieselig     |
+|15111620 | Schiefer: tonig-kieselig: Bitumen | Schiefer: tonig-kieselig: Bitumen     |
+|15111621 | Schiefer: Tremolit | Schiefer: Tremolit     |
+|15111622 | Schiefer: Turmalin | Schiefer: Turmalin     |
+|15111623 | Schiefer: Zoisit | Schiefer: Zoisit     |
+|15111624 | Schiefer: Zoisit-Fuchsit | Schiefer: Zoisit-Fuchsit     |
+|15111625 | Gestein: mafisch | Gestein: mafisch     |
+|15111626 | Prasinit | Prasinit     |
+|15111627 | Prasinit: Albit-Chlorit | Prasinit: Albit-Chlorit     |
+|15111628 | Prasinit: Chlorit | Prasinit: Chlorit     |
+|15111629 | Prasinit: schiefrig | Prasinit: schiefrig     |
+|15111630 | Amphibolit | Amphibolit     |
+|15111631 | Amphibolit: gebändert | Amphibolit: gebändert     |
+|15111632 | Amphibolit: Granat | Amphibolit: Granat     |
+|15111633 | Amphibolit: Hornblende | Amphibolit: Hornblende     |
+|15111634 | Amphibolit: migmatitisch | Amphibolit: migmatitisch     |
+|15111635 | Eklogit | Eklogit     |
+|15111636 | Serpentinit | Serpentinit     |
+|15111637 | Serpentinit: Antigorit | Serpentinit: Antigorit     |
+|15111638 | Serpentinit: brekziös: Karbonat | Serpentinit: brekziös: Karbonat     |
+|15111639 | Serpentinit: Chrysotil | Serpentinit: Chrysotil     |
 |999998 | nicht anwendbar | non applicable     |
+|999997 | unbekannt | inconnu     |
+
+
+
+
+
 
 
 ## Anhang  GC_LITHO_UNCO_CD {#gc-litho-unco-cd}
@@ -7229,8 +9931,13 @@ Wertetabellen der lithologischen Beschreibung
 |15101085 | Tsunamiablagerung | dépôt de tsunami     |
 |15101086 | Entwässerungssediment | sédiment formé par échappement d&#39;eau     |
 |15101087 | Sedimentärer Gang (clastic dike) | filon sédimentaire     |
-|999997 | unbekannt | inconnu     |
 |999998 | nicht anwendbar | non applicable     |
+|999997 | unbekannt | inconnu     |
+
+
+
+
+
 
 
 ## Anhang  GC_CHRONO_CD {#gc-chrono-cd}
@@ -7377,6 +10084,11 @@ Wertetabelle der chronostratigraphischen Einheiten
 |15001153 | Archaikum | Archaikum     |
 |999997 | unbekannt | inconnu     |
 |999998 | nicht anwendbar | non applicable     |
+
+
+
+
+
 
 
 ## Anhang  GC_TECTO_CD {#gc-tecto-cd}
@@ -7782,6 +10494,11 @@ Wertetabelle der tektonischen Einheiten
 |999998 | nicht anwendbar | non applicable     |
 
 
+
+
+
+
+
 ## Anhang  GC_MINERAL_CD {#gc-mineral-cd}
 Wichtiges Mineral des metamorphen Gesteins
 
@@ -7874,24 +10591,34 @@ Wichtiges Mineral des metamorphen Gesteins
 |999998 | nicht anwendbar | non applicable     |
 
 
+
+
+
+
+
 ## Anhang  GC_ADMIXTURE {#gc-admixture}
 Beimengung
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
-|14509001 | mit Löss | avec loess     |
+|14509008 | mit Hangschutt vermischt | mélangé à des éboulis     |
 |14509002 | mit Lösslehm | avec loess argileux     |
 |14509003 | mit Seekreide | avec craie lacustre     |
-|14509004 | mit Blöcken | avec blocs     |
-|14509005 | mit alpinen Geröllen | avec galets alpins     |
-|14509006 | mit Block- und Geschiebestreu | parsemé de blocs     |
-|14509007 | mit Blockschutt vermischt | mélangé à des dépôts d&#39;éboulement     |
-|14509008 | mit Hangschutt vermischt | mélangé à des éboulis     |
-|14509009 | mit Verwitterungsschutt vermischt | mélangé à des résidus d&#39;altération     |
-|14509010 | mit Torf | avec tourbe     |
 |14509011 | mit jurassischen Geröllen | avec galets jurassiens     |
 |14509012 | mit Geröllen aus Vogesen / Schwarzwald | avec galets des Vosges / de la Forêt Noire     |
 |14509013 | mit Schieferkohle | mit Schieferkohle     |
+|14509001 | mit Löss | avec loess     |
+|14509004 | mit Blöcken | avec blocs     |
+|14509005 | mit alpinen Geröllen | avec galets alpins     |
+|14509010 | mit Torf | avec tourbe     |
+|14509009 | mit Verwitterungsschutt vermischt | mélangé à des résidus d&#39;altération     |
+|14509006 | mit Block- und Geschiebestreu | parsemé de blocs     |
+|14509007 | mit Blockschutt vermischt | mélangé à des dépôts d&#39;éboulement     |
+
+
+
+
+
 
 
 ## Anhang  GC_COMPOSIT {#gc-composit}
@@ -7899,13 +10626,18 @@ Zusammensetzung des Lockergesteins
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
-|14508001 | tonig | argileux     |
 |14508002 | lehmig | limoneux     |
 |14508003 | siltig | silteux     |
+|14508001 | tonig | argileux     |
 |14508004 | sandig | sableux     |
 |14508005 | kiesig | graveleux     |
 |14508006 | geröllreich | riche en galets     |
 |14508007 | torfig | tourbeux     |
+
+
+
+
+
 
 
 ## Anhang  GC_CHARCAT {#gc-charcat}
@@ -7913,17 +10645,22 @@ Spezifische Eigenschaft.
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
-|14511001 | fossil | fossile     |
+|14511008 | umgelagert | remanié     |
 |14511002 | rezent | récent     |
 |14511003 | verwittert | altéré     |
+|14511011 | künstlich bewässert (Wässermatten) | inondé artificiellement (prairies irriguées)     |
+|14511001 | fossil | fossile     |
 |14511004 | verfestigt (durch Überlast), konsolidiert | consolidé (par surcharge)     |
 |14511005 | verkittet (zementiert) | cimenté     |
+|14511010 | drainiert | drainé     |
+|14511009 | abgebaut | exploité     |
 |14511006 | verschwemmt | délavé     |
 |14511007 | sumpfig | marécageux     |
-|14511008 | umgelagert | remanié     |
-|14511009 | abgebaut | exploité     |
-|14511010 | drainiert | drainé     |
-|14511011 | künstlich bewässert (Wässermatten) | inondé artificiellement (prairies irriguées)     |
+
+
+
+
+
 
 
 ## Anhang  GC_SYSTEM {#gc-system}
@@ -7931,26 +10668,31 @@ Fossiliengruppe.
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
-|12903001 | Vertebraten | vertébrés     |
+|12903008 | Holz | bois     |
+|12903021 | Palynomorphe | palynomorphes     |
 |12903002 | Ostrakoden | ostracodes     |
 |12903003 | Gastropoden | gastéropodes     |
-|12903004 | Foraminiferen | foraminifères     |
-|12903005 | Algen | algues     |
-|12903006 | Blätter | feuilles     |
-|12903007 | Gräser | graminées     |
-|12903008 | Holz | bois     |
-|12903009 | Ammoniten | ammonites     |
-|12903010 | Schwämme | éponges     |
 |12903011 | Korallen | coraux     |
 |12903012 | Brachiopoden | brachiopodes     |
-|12903013 | Mollusken | mollusques     |
-|12903014 | Cephalopoden | céphalopodes     |
-|12903015 | Bivalven | bivalves     |
+|12903001 | Vertebraten | vertébrés     |
 |12903016 | Echinodermen | échinodermes     |
 |12903017 | Fische | poissons     |
-|12903018 | Reptilien | reptiles     |
 |12903019 | Säugetiere | mammifères     |
-|12903021 | Palynomorphe | palynomorphes     |
+|12903004 | Foraminiferen | foraminifères     |
+|12903014 | Cephalopoden | céphalopodes     |
+|12903015 | Bivalven | bivalves     |
+|12903005 | Algen | algues     |
+|12903010 | Schwämme | éponges     |
+|12903009 | Ammoniten | ammonites     |
+|12903013 | Mollusken | mollusques     |
+|12903006 | Blätter | feuilles     |
+|12903007 | Gräser | graminées     |
+|12903018 | Reptilien | reptiles     |
+
+
+
+
+
 
 
 

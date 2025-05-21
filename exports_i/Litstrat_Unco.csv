@@ -1,599 +1,599 @@
-OBJECTID,DESCRIPTION,TREE_LEVEL,PARENT_REF
-82,Birrfeld- und Klettgau-Paläoböden,3.0,15201050.0
-83,Klettgau-Schotter,2.0,15201003.0
-84,Obere Klettgauschotter,3.0,15201045.0
-85,Glazi-lakustrische Serie,3.0,15201045.0
-86,Mittlere Klettgauschotter,3.0,15201045.0
-87,Untere Klettgauschotter,3.0,15201045.0
-88,Enge-Schotter,2.0,15201003.0
-89,Attiswil-Schotter,2.0,15201003.0
-90,Lommiswil-Schotter,3.0,15201160.0
-91,Oensingen-Moos-Lehm,2.0,15201003.0
-92,Berken-Schotter,2.0,15201003.0
-93,Berken-Sand,2.0,15201003.0
-94,Schwarzhäusern-Lehm,2.0,15201003.0
-95,Käppelihof-Schotter,2.0,15201003.0
-96,Aarburg-Schotter,2.0,15201003.0
-97,Tuileries-Formation,2.0,15201003.0
-98,Grandson-Formation,2.0,15201003.0
-99,Poissine-Formation,2.0,15201003.0
-100,Beringen-Eiszeit,2.0,15201003.0
-101,Surbtal-Lehm,3.0,15201053.0
-102,Surbtal-Till,3.0,15201053.0
-103,Surbtal-Schotter,3.0,15201053.0
-104,Fislisbach-Schotter,3.0,15201053.0
-105,Entfelden-Schotter,3.0,15201053.0
-106,Aarau-Schotter,3.0,15201053.0
-107,Suhr-Schotter,3.0,15201053.0
-108,Veltheim-Schotter,3.0,15201053.0
-109,Stüsslingen-Schotter,3.0,15201053.0
-110,Langwiesen-Vergletscherung,3.0,15201053.0
-111,Langwiesen-Vorstoss,4.0,15201059.0
-112,Schaffhausen-Schotter,5.0,15201060.0
-113,Reuenthal-Vorstoss,4.0,15201059.0
-114,Lupfig-Schotter,5.0,15201062.0
-115,Löhningen-Engiwald-Vergletscherung,3.0,15201053.0
-116,Engiwald-Vorstoss,4.0,15201064.0
-117,Rüfenach-Vorstoss,4.0,15201064.0
-118,Reusstal-Sand,5.0,15201066.0
-119,Reusstal-Lehm,5.0,15201066.0
-120,Löhningen-Vorstoss,4.0,15201064.0
-121,Remigen-Vorstoss,4.0,15201064.0
-122,Hausen-Lehm,5.0,15201068.0
-123,Hausen-Moräne,5.0,15201068.0
-124,Remigen-Schotter,5.0,15201068.0
-125,Meikirch-Interglazial,2.0,15201003.0
-126,Ältere Beckenfüllungen,2.0,15201003.0
-127,Hagenholz-Eiszeit,2.0,15201003.0
-128,Ruckfeld-Schotter,3.0,15201072.0
-129,Hagenholz-Vergletscherung,3.0,15201072.0
-130,Hagenholz-Vorstoss,3.0,15201072.0
-131,Aathal-Schotter,4.0,15201074.0
-132,Pfyn-Vorstoss,3.0,15201072.0
-133,Ittingen-Schotter,4.0,15201076.0
-134,Ryhirt-Formation,3.0,15201072.0
-135,Geisslingen-Schotter,3.0,15201072.0
-136,Habsburg-Hagenholz-Interglazial,2.0,15201003.0
-137,Möhlinerfeld-Paläoboden,3.0,15201080.0
-138,Habsburg-Eiszeit,2.0,15201003.0
-139,Gränichen-Schotter,3.0,15201082.0
-140,Roggehuse-Schotter,3.0,15201082.0
-141,Buerfeld-Schotter,3.0,15201082.0
-142,Habsburg-Vergletscherung,3.0,15201082.0
-143,Habsburg-Vorstoss,4.0,15201086.0
-144,Habsburg-Schotter,5.0,15201087.0
-145,Endingen-Schotter,5.0,15201087.0
-146,Unterschlatt-Vorstoss,4.0,15201086.0
-147,Thalgut-Interglazial,2.0,15201003.0
-148,Möhlin-Eiszeit (Grösste Eiszeit),2.0,15201003.0
-149,Möhlin-Vergletscherung,3.0,15201091.0
-150,Möhlin-Vorstoss,4.0,15201092.0
-151,Bünten-Till,5.0,15201093.0
-152,Schleitheim-Vorstoss,4.0,15201092.0
-153,Tiefere Deckenschotter,1.0,
-154,Fisibach-Schotter,2.0,15201004.0
-155,Bärengraben-Schotter und -Till,2.0,15201004.0
-156,Iberig-Schotterkomplex,2.0,15201004.0
-157,Obere Iberigschotter,3.0,15201098.0
-158,Oberer Till,3.0,15201098.0
-1,Rhein- und Aareschotter,2.0,15201319.0
-2,Juraschotter,1.0,
-3,Alte Doubsschotter,1.0,
-4,Wutach-Schotter,2.0,15201319.0
-5,Merenbach-Schotter,1.0,
-6,Malmkalk-Schotter der Randen-Täler,1.0,
-7,Niederterrasse,1.0,
-8,Birrfeld-Eiszeit (Letzte Eiszeit),2.0,15201002.0
-9,LGM-Rückzug,3.0,15201006.0
-10,Solothurn-Stadium,4.0,15201008.0
-11,Zürich-Stein-Bremgarten-Stadien,4.0,15201008.0
-12,Untere Singen-Terrasse,5.0,15201129.0
-13,Schlieren-Diessenhofen-Stetten-Stadien,4.0,15201008.0
-14,Obere Singen-Terrasse,5.0,15201131.0
-15,Rheinau-Terrasse,4.0,15201008.0
-16,Nohl-Terrasse,4.0,15201008.0
-17,Altenburg-Fulach-Terrasse,5.0,15201131.0
-18,Aare-Schotter,4.0,15201008.0
-19,Schüss-Schotter,4.0,15201008.0
-20,Orvin-Schotter,4.0,15201008.0
-21,Seeablagerungen von Frinvillier und Rondchâtel,4.0,15201008.0
-22,Stauschotter von Diessbach,4.0,15201008.0
-23,Mély-Formation,4.0,15201008.0
-24,"Last Glacial Maximum (LGM), undiff.",3.0,15201006.0
-25,Kiessande von Madretsch,4.0,15201007.0
-26,Seeland-Schotter,4.0,15201007.0
-27,Emme-Schotter,4.0,15201007.0
-28,Gäu-Schotter,4.0,15201007.0
-29,Flumenthal-Lehm,4.0,15201007.0
-30,Killwangen-Schaffhausen-Mellingen-Stadium,4.0,15201007.0
-31,Munot-Terrasse,5.0,15201147.0
-32,Stokar-Terrasse,5.0,15201147.0
-33,Breite-Terrasse,5.0,15201147.0
-34,Maximalstand (Kilwangen-Schaffhausen-Stadium),5.0,15201147.0
-35,Birmenstorf-Vergletscherung (2. LGM-Vorstoss),3.0,15201006.0
-36,Wettingen-Vorstoss,4.0,15201009.0
-37,Flüefeld-Schotter,5.0,15201010.0
-38,Altberg-Till,5.0,15201010.0
-39,Birmenstorf-Vorstoss,4.0,15201009.0
-40,Birr-Schotter,5.0,15201013.0
-41,Oberhard-Till,5.0,15201013.0
-42,Wehntal-Schotter,5.0,15201013.0
-43,Seon-Vorstoss,4.0,15201009.0
-44,Berg-Schotter,5.0,15201016.0
-45,Fornholz-Till,5.0,15201016.0
-46,Bick-Till,4.0,15201009.0
-47,Flüe-Till,4.0,15201009.0
-48,Wettingen-Schotter,4.0,15201009.0
-49,Gontenschwil-Vorstoss,4.0,15201009.0
-50,Gontenschwil-Till,5.0,15201019.0
-51,Staffelbach-Vorstoss,4.0,15201009.0
-52,Staffelbach-Schotter,5.0,15201021.0
-53,Staffelbach-Till,5.0,15201021.0
-54,Lindmühle-Vergletscherung (1. LGM-Vorstoss),3.0,15201006.0
-55,Otelfingen-Vorstoss,4.0,15201024.0
-56,Tägerhard-Schotter,5.0,15201025.0
-57,Lindmühle-Vorstoss,4.0,15201024.0
-58,Ämmert-Schotter,5.0,15201027.0
-59,Ämmert-Till,5.0,15201027.0
-60,Emmet-Vorstoss,4.0,15201024.0
-61,Gündelmoos-Lehm,5.0,15201030.0
-62,Igliste-Schotter,5.0,15201030.0
-63,Niderholz-Till,5.0,15201030.0
-64,Zetzwil-Vorstoss,4.0,15201024.0
-65,Zetzwil-Till,5.0,15201034.0
-66,Kirchleerau-Vorstoss,4.0,15201024.0
-67,Kirchleerau-Till,5.0,15201036.0
-68,Gossau-Interstadial,3.0,15201006.0
-69,Mülligen-Paläoboden,4.0,15201038.0
-70,Niederweningen-Formation,4.0,15201038.0
-71,Hombrechtikon-Vergletscherung (Frühletzteiszeitliche Vergl.),3.0,15201006.0
-72,Mülligen-Schotter,4.0,15201041.0
-73,2. letzteiszeitlischs Vorstoss,4.0,15201041.0
-74,1. letzteiszeitlischs Vorstoss,4.0,15201041.0
-75,"Ältere Ablagerungen, undifferenziert",1.0,
-76,Bersturzmasse von Selzach,2.0,15201001.0
-77,Plateauschotter,2.0,15201001.0
-78,La-Côte-Schotter,2.0,15201001.0
-79,Hochterrasse,1.0,
-80,Gondiswil-Interglazial (Letztes Interglazial),2.0,15201003.0
-81,Flurlingen-Quelltuff,3.0,15201050.0
-199,Menzingen-Schotter,2.0,15201002.0
-200,La-Tuffière-Schotter,3.0,15201006.0
-201,Gontenschwil-Lehm,4.0,15201008.0
-202,Mooslerau-Lehm,4.0,15201008.0
-203,Triengen-Schotter,4.0,15201008.0
-204,Triengen-Lehm,4.0,15201008.0
-205,Sihl-Schotter,4.0,15201008.0
-206,Haselbach-Schotter,4.0,15201008.0
-207,Jonen-Schotter,4.0,15201008.0
-208,Aabach-Schotter,4.0,15201008.0
-209,Starrberg-Schotter,4.0,15201008.0
-210,Port-Stauschotter,4.0,15201008.0
-211,Rempen-Stauschotter,4.0,15201008.0
-212,Dagmersellen-Vorstoss,4.0,15201009.0
-213,Oftringen-Schotter,5.0,15201214.0
-214,Zelg-Schotter,2.0,15201003.0
-215,Forst-Schotter,2.0,15201003.0
-216,Raintal-Deltaschotter,2.0,15201003.0
-217,Kleinhöchstetten-Kies-Sand-Komplex,2.0,15201003.0
-218,Krauchthal-Schotter,2.0,15201003.0
-219,Brandflue-Schotter,2.0,15201003.0
-220,Küsnacht-Schotter,2.0,15201003.0
-221,Chatzenstrick-Schotter,2.0,15201003.0
-222,Rabennest-Schotter,2.0,15201003.0
-223,Ratengütsch-Schotter,2.0,15201003.0
-224,Scherenspitz-Schotter,2.0,15201003.0
-225,Walsenhaus-Schotter,2.0,15201003.0
-226,Richterswil-Seeton,2.0,15201003.0
-227,Schwanden-Schotter,2.0,15201003.0
-228,Reidbach-Schotter,2.0,15201003.0
-229,Zell-Schotterkomplex,2.0,15201249.0
-230,Gubel-Schotter,2.0,15201003.0
-231,Chälen-Schotter,2.0,15201003.0
-232,Chälen-Till,2.0,15201003.0
-233,Sihlsprung-Schotter,2.0,15201003.0
-234,Kollbrunn-Schotter,2.0,15201003.0
-235,Walenberg-Schotter,2.0,15201003.0
-236,Ritteren-Schotterkomplex,2.0,15201003.0
-237,Vorholz-Schotter,3.0,15201053.0
-1204,Hahni-Schotter,2.0,15201003.0
-1466,Ceppo,1.0,
-1467,Novazzano-Sand,2.0,15201458.0
-1468,"Löss, undifferenziert",1.0,
-1469,Bergsturzablagerungen vom Stützwald,6.0,15201311.0
-1786,Untergrabehüsli-Schotter,5.0,15201249.0
-1787,Reuss-Schotterkomplex,2.0,15201002.0
-1788,Rufswil-Schotter,6.0,15201231.0
-1789,Rütimatt-Schotter,3.0,15201006.0
-1790,Mooretal-Schotter,2.0,15201002.0
-1791,Birkenhof-Formation,3.0,15201423.0
-1792,Zeiningen-Till,4.0,15201462.0
-1793,Höhenschotter,2.0,15201001.0
-1794,Böschmatt-Schotter,3.0,15201464.0
-1795,Bramegg-Schotter,3.0,15201464.0
-1796,Kaltenegg-Schotter,3.0,15201464.0
-1797,Steinhuserberg-Schotter,3.0,15201464.0
-1798,Büelm-Schotter,4.0,15201008.0
-1799,Büel-Schotter,5.0,15201322.0
-1800,Bünten-Schotter,5.0,15201429.0
-1801,Durnagel-Schotter,5.0,15201322.0
-1802,Dürrenroth-Schotter,5.0,15201249.0
-1803,Egghüsli-Schotter,3.0,15201006.0
-1804,Emmental-Schotter,3.0,15201006.0
-1805,Ergolztal-Schotter,5.0,15201410.0
-1806,Gammenthal-Schotter,2.0,15201001.0
-1807,Gondiswil-Formation,6.0,15201231.0
-1808,Hasewald-Schotter,3.0,15201006.0
-1809,Hirzmatt-Schotter,3.0,15201006.0
-1810,Mettlen-Schotter,3.0,15201006.0
-1811,Möhlinerfeld-Schotter,3.0,15201423.0
-1812,Muttenfeld-Schotter,5.0,15201249.0
-1813,Nidfurn-Schotter,3.0,15201406.0
-1814,Oberhöhe-Grundmoräne,2.0,15201001.0
-1815,Obermoos-Schotter,3.0,15201006.0
-1816,Schwanderholzwald-Schotter,2.0,15201001.0
-1817,Schwande-Seebodensedimente,3.0,15201006.0
-1818,Soppensee-Seebodensedimente,5.0,15201249.0
-1819,Speicherboden-Lokalmoräne,3.0,15201006.0
-1820,terrasse lémanique de 10 m,6.0,15201450.0
-1821,terrasse lémanique de 3 m,6.0,15201450.0
-1822,Untere Zeller Schotter,6.0,15201231.0
-1823,Öflingen-Schotter,3.0,15201423.0
-1824,Untertreie-Schotter,4.0,15201008.0
-1825,Wallbach-Schotter,3.0,15201423.0
-1826,Werthenstein-Schotter,3.0,15201006.0
-1827,Willburg-Formation,3.0,15201423.0
-1828,Wilzigen-Seebodensedimente,2.0,15201001.0
-1829,Rottal-Schotter,4.0,15201008.0
-1830,Hagnau-Niveau,2.0,15201002.0
-1831,Reusstal-Seebodensediment,2.0,15201002.0
-1832,Wyna-Schotter,2.0,15201002.0
-1833,Rickenbach-Schotter,2.0,15201002.0
-1834,Ermensee-Schotter,2.0,15201002.0
-1835,Rüdelwald-Schotter,5.0,15201249.0
-1836,Ämmet-Schotter,2.0,15201003.0
-1837,Homberg-Till,2.0,15201003.0
-1838,Lindenberg-Till,2.0,15201003.0
-1839,Heubeerihübel-Schotter,5.0,15201005.0
-1840,Ritzhans-Schotter,3.0,15201053.0
-1841,Unterdorf-Schotter,3.0,15201053.0
-1842,Schönegg-Formation,3.0,15201053.0
-1843,Säckingen-Schotter,3.0,15201082.0
-1844,Bruderhäusle-Schotter,3.0,15201082.0
-1845,Mumpf-Schotter,3.0,15201082.0
-1846,Riedmatt-Schotter,3.0,15201082.0
-1847,Beuggen-Schotter,3.0,15201082.0
-1848,Feldhof-Schotter,3.0,15201082.0
-1849,Spärgacher-Schotter,5.0,15201333.0
-2106,Wagenmoos-Till,2.0,15201249.0
-2107,Niderstalden-Schotter,2.0,15201002.0
-2108,Zulgtal-Schotter,2.0,15201002.0
-2109,Spiez-Schotter,2.0,15201002.0
-2110,Hahni-Till,2.0,15201003.0
-2426,Bergsturzablagerung von Ralligen (im Thunersee),2.0,15201311.0
-2746,"Niederterrassenschotter, oberste Terrasse",2.0,15201002.0
-2747,"Tiefere Deckenschotter, unteres Niveau",2.0,15201004.0
-238,Gutsch-Schotter,3.0,15201053.0
-239,Junkerenwald-Schotter,3.0,15201053.0
-240,Chräjeloch-Schotter,3.0,15201053.0
-241,Butteberg-Schotter,3.0,15201053.0
-242,Höchi-Schotter,3.0,15201053.0
-243,Heitere-Schotter,3.0,15201082.0
-244,Holziken-Schotter,3.0,15201082.0
-245,Ruedertal-Schotter,3.0,15201082.0
-246,Bänkel-Schotter,3.0,15201082.0
-247,"Quartär, undifferenziert",1.0,
-248,"Deckenschotter, undifferenziert",1.0,
-249,Girenbad-Schotter,2.0,15201250.0
-250,Sagenbach-Schotter,2.0,15201004.0
-251,Schrotzburg-Schotter,2.0,15201004.0
-252,Schrotzburg-Till,2.0,15201004.0
-253,Bohlingen-Schotter,2.0,15201004.0
-254,Bannholz-Schotter,2.0,15201004.0
-255,Hungerbol-Schotter,2.0,15201004.0
-256,Chilchstapfen-Schotter,2.0,15201005.0
-826,Ofenloch-Karstfüllung,2.0,15201333.0
-827,Wurmsbach-Deltaablagerungen,4.0,15201008.0
-828,Oeschinensee-Bergsturzablagerungen,4.0,15201008.0
-829,Fisistock-Bergsturzablagerungen,4.0,15201008.0
-830,Bire-Bergsturzablagerungen,4.0,15201008.0
-831,Hasle-Schotter,4.0,15201008.0
-832,Fankhusgrabe-Schotter,4.0,15201008.0
-833,Rossgaden-Schotter,2.0,15201001.0
-834,Grundtal-Schotter,3.0,15201050.0
-835,Murg-Schieferkohle,3.0,15201050.0
-836,Oberricken-Schotter,2.0,15201003.0
-837,Haslentobel-Schotter,2.0,15201003.0
-838,Aatal-Seebodenlehm,2.0,15201003.0
-839,Eschenbach-Formation,2.0,15201003.0
-840,Oberkirch-Seebodenlehm,2.0,15201003.0
-841,Günterstall-Schotter,2.0,15201003.0
-842,Gublen-Schotter,2.0,15201003.0
-843,Unter-Buechwald-Schotter,2.0,15201003.0
-844,Regelstein-Till,2.0,15201003.0
-845,Halden-Seeablagerungen,2.0,15201003.0
-846,Schafbüel-Formation,2.0,15201003.0
-847,Unteres-Huttenbüel-Schotter,2.0,15201003.0
-848,Winden-Schieferkohle,2.0,15201003.0
-849,Tiefenwinkel-Seebodensedimente,2.0,15201003.0
-850,Uznach-Schieferkohle,2.0,15201003.0
-851,Embrach-Seeablagerungen,2.0,15201003.0
-1146,Bergsturzablagerungen von Sierre,2.0,15201311.0
-1147,Bergsturzablagerungen von Chiètres,2.0,15201311.0
-1148,Bergsturzablagerungen von Chessel-Noville,2.0,15201311.0
-1149,Bergsturzablagerungen von Novalles-Vugelles,2.0,15201311.0
-1150,Bergsturzablagerungen von Gwelber-Laui-Weid,2.0,15201311.0
-1151,Bergsturzablagerungen von Castasegna,2.0,15201311.0
-1152,Bergsturzablagerungen von Sogno,2.0,15201311.0
-1153,Bergsturzablagerungen von Prapan,2.0,15201311.0
-1154,Bergsturzablagerungen von Schaingels,2.0,15201311.0
-1155,Bergsturzablagerungen von Mutta,2.0,15201311.0
-1156,Bergsturzablagerungen von Brienz,2.0,15201311.0
-1157,Bergsturzablagerungen von Flims,2.0,15201311.0
-1158,Bergsturzablagerungen von Brüsis,2.0,15201311.0
-1159,Bergsturzablagerungen vom Chapf,2.0,15201311.0
-1160,Bergsturzablagerungen von Derborence,2.0,15201311.0
-1161,Bergsturzablagerungen vom Drussetschawald,2.0,15201311.0
-1162,Bergsturzablagerungen vom Delenwald,2.0,15201311.0
-1163,Bergsturzablagerungen von Elm,2.0,15201311.0
-1164,Bergsturzablagerungen von Goldau,2.0,15201311.0
-1165,Bergsturzablagerungen von Iragell,2.0,15201311.0
-1166,Bergsturzablagerungen vom Kernwald,2.0,15201311.0
-1167,Bergsturzablagerungen von Triesenberg,2.0,15201311.0
-1168,Bonaduz-Formation,2.0,15201311.0
-1169,Bonfol-Ton,3.0,15201124.0
-1170,Bergsturzablagerungen von Tamins,2.0,15201311.0
-1171,Informell benannte Bergsturzablagerungen,1.0,
-1172,Informell benannte künstliche Ablagerungen,1.0,
-1173,Künstliche Ablagerungen des Bahnhofs Brig,2.0,15201312.0
-1174,Künstliche Ablagerungen Golar,2.0,15201312.0
-1175,Künstliche Ablagerungen der Gamsenried-Deponie,2.0,15201312.0
-1176,Künstliche Ablagerungen des Riedertals,2.0,15201312.0
-1177,Informell benannte Sackungsmassen,1.0,
-1178,Sackungsmasse des Heinzenbergs,2.0,15201317.0
-1179,Informell benannte fluviatile Schotter,1.0,
-1180,Schotter und Sand der Rhône,2.0,15201319.0
-1181,Schotter und Sand der Vispa,2.0,15201319.0
-1182,Informell benannter Bachschutt,1.0,
-1183,Bachschutt des Baltschiederbachs,2.0,15201322.0
-1184,Bachschutt des Bietschbachs,2.0,15201322.0
-1185,Bachschutt des Chelchbachs,2.0,15201322.0
-1186,Bachschutt der Gamsa,2.0,15201322.0
-1187,Bachschutt des Jolibachs,2.0,15201322.0
-1188,Bachschutt der Lonza,2.0,15201322.0
-1189,Bachschutt der Saltina,2.0,15201322.0
-1190,Bachschutt der Vispa,2.0,15201322.0
-1191,Bachschutt der Gürbe,2.0,15201322.0
-1192,Bachschutt des Lombachs,2.0,15201322.0
-1193,Pliozäne Ablagerungen,1.0,
-1194,Stockesee-Sediment,4.0,15201008.0
-1195,Strätligen-Till,4.0,15201008.0
-1196,Bärenholz-Till,4.0,15201008.0
-1197,Wässerifluh-Formation,4.0,15201008.0
-1198,Schlyffi-Till,3.0,15201006.0
-1199,Brüggstutz-Schotter,3.0,15201006.0
-1200,Guntelsei-Till,4.0,15201007.0
-1201,Guntelsei-Schotter,3.0,15201006.0
-1202,Steghalden-Schotter,2.0,15201003.0
-1203,Glütschtal-Formation,2.0,15201003.0
-159,Mittlere Iberigschotter,3.0,15201098.0
-160,Untere Iberigschotter,3.0,15201098.0
-161,Unterer Till,3.0,15201098.0
-162,Wolfacher-Schotter und -Till,2.0,15201004.0
-163,Fornech-Schotter,2.0,15201004.0
-164,Höhere Deckenschotter,1.0,
-165,Forenirchel-Schotter,2.0,15201005.0
-166,Steig-Schotter,2.0,15201005.0
-167,Irchel-Schotterkomplex,2.0,15201005.0
-168,Obere Irchelschotter,3.0,15201108.0
-170,Irchel-Dolomitschotter,3.0,15201108.0
-171,Mittlere Irchelschotter,3.0,15201108.0
-172,Untere Irchelschotter,3.0,15201108.0
-173,Langacher-Schotter,2.0,15201005.0
-174,Dürn-Formation,2.0,15201005.0
-175,Degermoos-Schotter,2.0,15201005.0
-176,Ebnet-Schotter,2.0,15201005.0
-177,Wannen-Schotter,2.0,15201005.0
-178,Egghalden-Schotter,2.0,15201005.0
-179,Buechen-Formation,2.0,15201005.0
-180,Feusi-Schotter,2.0,15201005.0
-181,Lindenhau-Schotter,2.0,15201005.0
-182,Egg-Schotter,2.0,15201005.0
-183,Sundgau-Schotter,2.0,15201333.0
-184,Mischschotter,3.0,15201124.0
-185,Weisse Serie,2.0,15201333.0
-186,Münsingen-Schotterkomplex,1.0,
-187,Alterswil-Schotter,2.0,15201002.0
-188,Karlsruhe-Schotter,2.0,15201002.0
-189,Chisetal-Schotter,2.0,15201002.0
-190,Grauholz-Schotter,2.0,15201002.0
-191,Trachslau-Schotter,2.0,15201002.0
-192,Bennau-Schotter,2.0,15201002.0
-193,Hütten-Schotter,2.0,15201002.0
-194,Schnabelsberg-Stauchotter,2.0,15201002.0
-195,Einsiedeln-Lehm,2.0,15201002.0
-196,Willisau-Schotter,2.0,15201249.0
-197,Wolhusen-Schotter,2.0,15201002.0
-198,Wiggen-Schotter,2.0,15201002.0
-3429,Hittnau-Seeablagerung,5.0,15201607.0
-3430,Russikon-Seeablagerung,5.0,15201607.0
-3431,Stetten-Stadium,4.0,15201008.0
-3432,Stetten-Stand-I,5.0,15201611.0
-3433,Stetten-Stand-II,5.0,15201611.0
-3434,Diessenhofen-Stadium,4.0,15201008.0
-3435,Mellingen-Stand,5.0,15201151.0
-3436,Schaffhausen-Stadium,5.0,15201151.0
-3437,Schaffhausen-Stand-I,6.0,15201616.0
-3438,Schaffhausen-Stand-II,6.0,15201616.0
-3439,Killwangen-Stadium,5.0,15201151.0
-3440,"Lottstetten-, Kohlschwärze- und Zelgli-Vorstoss",4.0,15201024.0
-3441,Grafschaft-Schotter,4.0,15201024.0
-3442,"""Mittelterrasse""",2.0,15201001.0
-3443,Stein-am-Rhein-Stadium,4.0,15201008.0
-3444,"Hochterrasse, mittleres Niveau",2.0,15201003.0
-3445,"Hochterrasse, oberes Niveau",2.0,15201003.0
-3446,First-Schotter,2.0,15201003.0
-3447,Helltobel-Schotter,2.0,15201003.0
-3448,Lettenberg-Seesedimente,2.0,15201003.0
-3449,Stein-am-Rhein-Stand-I,5.0,15201593.0
-3450,Ursplen-Till,2.0,15201003.0
-3451,Äntschberg-Schotter,2.0,15201003.0
-3452,Oberrüti-Schotter,2.0,15201003.0
-3453,Neerach-Schotter,2.0,15201003.0
-3454,Bachs-Schotter,2.0,15201003.0
-3455,Steighalden-Schotter,2.0,15201003.0
-3456,Mühlbach-Formation,2.0,15201003.0
-3457,Chilchberg-Schotter,2.0,15201003.0
-3458,Frenkendorf-Schotter,2.0,15201003.0
-3459,Birstal-Schotter,2.0,15201003.0
-3460,Schlatt-Formation,3.0,15201053.0
-3461,Illmensee-Formation,4.0,15201064.0
-3462,Dietmanns-Formation,4.0,15201064.0
-3463,Hasenweiler-Formation,4.0,15201064.0
-3464,Haseltal-Formation,4.0,15201064.0
-3465,"Birndorf-, Laufenburg- und Zeiningen-Vorstoss",4.0,15201064.0
-3466,Chäppeli-Schotter,5.0,15201645.0
-3467,Leuggern-Schotter,5.0,15201645.0
-3468,Zelgli-Schotter,5.0,15201645.0
-3469,Leibstadt-Schotter,5.0,15201645.0
-3470,Dogern-Schotter,5.0,15201645.0
-3471,Haldenacher-Schotter,5.0,15201645.0
-3472,Allmendwald-Schotter,5.0,15201645.0
-3473,Zürich-Stand-I,5.0,15201597.0
-3474,Obersäckingen-Schotter,5.0,15201645.0
-3475,Schulerholz-Formation,5.0,15201645.0
-3476,Schachen-Formation,5.0,15201645.0
-3477,Schmerlet-Formation,5.0,15201645.0
-3478,Toktri-Formation,5.0,15201645.0
-3479,Buchholz-Till,5.0,15201645.0
-3480,Birndorf-Till,5.0,15201645.0
-3481,Geissäcker-Schotter,4.0,15201074.0
-3482,Bürgerwald-Schotter,4.0,15201074.0
-3483,Hettenschwil-Schotter,4.0,15201074.0
-3484,Moos-Schotter,4.0,15201074.0
-3485,Bremgarten-Stadium,4.0,15201008.0
-3486,Hundsbel-Schotter,4.0,15201074.0
-3487,Laufenburg-Schotter,4.0,15201074.0
-3488,Eilez-Schotter,4.0,15201074.0
-3489,St.-Margarethen-Schotter,4.0,15201074.0
-3490,Hegenheim-Schotter,4.0,15201074.0
-3491,Blotzheim-Schotter,4.0,15201074.0
-3492,Hardwald-Schotter,4.0,15201074.0
-3493,Homberg-Schotter,4.0,15201074.0
-3494,Rümlang-Schotter,4.0,15201074.0
-3495,Äpelöö-Schotter,3.0,15201082.0
-3496,Fehrental-Schotter,3.0,15201082.0
-3497,Challeren-Schotter,3.0,15201082.0
-3498,Ausserberg-Schotter,3.0,15201082.0
-3499,Leibstadt-Till,5.0,15201093.0
-3500,Buechli-Schotter,2.0,15201004.0
-3501,Bächemoos-Schotter,2.0,15201004.0
-3502,Aarberg-Schotter,2.0,15201004.0
-3503,Singen-Stadium,4.0,15201008.0
-3504,Etzwil-Schotter,2.0,15201004.0
-3505,Ellenbühl-Schotter,2.0,15201004.0
-3506,Kegelplatz-Schotter,2.0,15201004.0
-3507,Einschlag-Schotter,2.0,15201004.0
-3508,Lehacker-Schotter,2.0,15201004.0
-3509,Letten-Schotter,2.0,15201004.0
-3510,Schwörstadt-Schotter,2.0,15201004.0
-3511,Steppberg-Schotter,2.0,15201004.0
-3512,Bloseberg-Schotter,2.0,15201004.0
-3513,Steinebol-Schotter,2.0,15201004.0
-3514,Giebenach-Schotter,2.0,15201004.0
-3515,Blözen-Schotter,2.0,15201004.0
-3516,Rütihard-Schotter,2.0,15201004.0
-3517,Bruederholz-Schotter,2.0,15201004.0
-3518,Binningen-Schotter,2.0,15201004.0
-3519,Allschwil-Schotter,2.0,15201004.0
-3520,Buschwiller-Schotter,2.0,15201004.0
-3521,Feuerthalen-Stand-II,5.0,15201604.0
-3522,Hörndli-Schotter,2.0,15201005.0
-3523,Acheberg-Schotter,2.0,15201005.0
-3524,Mühleberg-Schotter,2.0,15201005.0
-3525,Mandach-Schotter,2.0,15201005.0
-3526,Duttenberg-Schotter,2.0,15201005.0
-3527,Schlieren-Stadium,4.0,15201008.0
-3528,Frauewald-Schotter,2.0,15201005.0
-3529,Bolderen-Schotter,2.0,15201005.0
-3530,Seiglisten-Schotter,2.0,15201005.0
-3531,Geispel-Schotter,2.0,15201005.0
-3532,Bäretswil-Seeablagerung,5.0,15201607.0
-3533,Berchenwald-Schotter,2.0,15201005.0
-2748,"Tiefere Deckenschotter, oberes Niveau",2.0,15201004.0
-2749,Kunkels-Formation,1.0,
-2750,Alluvion von Ransun,1.0,
-2751,Rüdlingen-Till,4.0,15201007.0
-2752,Niklaushalden-Formation,4.0,15201007.0
-2753,Saxegrabe-Schotter,4.0,15201074.0
-2754,Zweidlen-Schotter,4.0,15201074.0
-2755,Burgacher-Schotter,4.0,15201074.0
-2756,Chatzenstig-Schotter,4.0,15201074.0
-2757,Wasterkingen-Schotter,3.0,15201082.0
-2758,Tubeschwanz-Schotter,3.0,15201082.0
-2759,Weisweil-Schotter,3.0,15201082.0
-2760,Paradiesgärtli-Schotter,3.0,15201082.0
-2761,Stetten-Schotter,4.0,15201064.0
-2762,Volken-Lehm,4.0,15201007.0
-2763,Weiach-Schotter,5.0,15201060.0
-2764,Rheinau-Till,4.0,15201007.0
-2765,Ellikerholz-Formation,4.0,15201007.0
-2766,Eggholz-Formation,4.0,15201007.0
-2767,Bannhalden-Schotter,4.0,15201007.0
-2768,Balm-Schotter,5.0,15201060.0
-2769,Windlach-Till,4.0,15201064.0
-2770,Südranden-Till,4.0,15201064.0
-2771,Schlossbuck-Schotter,4.0,15201064.0
-2772,Risibüel-Schotter,4.0,15201064.0
-2773,"Schmerlet- und Toktri-Formation, undifferenziert",4.0,15201064.0
-2774,"Niederterrassenschotter, tiefere Niveaus",2.0,15201002.0
-2775,Hasli-Formation,3.0,15201108.0
-2776,Bergsturzablagerung von Bargis,1.0,
-2777,Bergsturzablagerung von Fidaz,1.0,
-2778,Stadel-Till,4.0,15201007.0
-2779,"Niederterrassenschotter, zweitoberste Terrasse",2.0,15201002.0
-3066,Plaffeien-Seetone,3.0,15201007.0
-3067,Plasselb-Stauschotter,4.0,15201008.0
-3386,Humbel-Schotter,2.0,15201005.0
-3387,"Hochterrasse, unteres Niveau",2.0,15201003.0
-3388,Birlibänz-Schotter,2.0,15201005.0
-3389,Wentzwiller-Schotter,2.0,15201005.0
-3390,Zurzach-Formation,2.0,15201003.0
-3391,Bellevue-Schotter,2.0,15201005.0
-3392,Schönenbuch-Schotter,2.0,15201005.0
-3393,Lei-Schotter,5.0,15201645.0
-3394,Tannboden-Schotter,2.0,15201004.0
-3395,Schlüsselgraben-Schotter,4.0,15201074.0
-3396,Uetliberg-Lehm,,15201400.0
-3397,Schotter der Thur,,15201400.0
-3398,Schwarzwald-Schotter,2.0,15201249.0
-3399,Neuenburg-Formation,3.0,15201534.0
-3400,Hartheim-Member,4.0,15201571.0
-3401,Nambsheim-Member,4.0,15201571.0
-3402,Breisgau-Formation,1.0,
-3403,Balgau-Member,2.0,15201574.0
-3404,Weinstetten-Member,2.0,15201574.0
-3405,Iffezheim-Formation,1.0,
-3406,Mannheim-Formation,1.0,
-3407,Etzgen-Formation,3.0,15201534.0
-3408,Niederuster-Schotter,4.0,15201008.0
-3409,Pfungen-Formation,4.0,15201008.0
-3410,Dättlikon-Stadium,4.0,15201008.0
-3411,Dübendorf-Stadium,4.0,15201008.0
-3412,Gfenn-Stadium,4.0,15201008.0
-3413,Regensdorf-Stadium,4.0,15201008.0
-3414,Seeb-Stadium,4.0,15201008.0
-3415,Würenlos-Stadium,4.0,15201008.0
-3416,Würenlos-Stand-I,5.0,15201587.0
-3417,Würenlos-Stand-II,5.0,15201587.0
-3418,Bülach-Stadium,4.0,15201008.0
-3419,Bülach-Stand-I,5.0,15201590.0
-3420,Bülach-Stand-II,5.0,15201590.0
-3421,Stein-am-Rhein-Stand-II,5.0,15201593.0
-3422,Stein-am-Rhein-Stand-III,5.0,15201593.0
-3423,Zürich-Stadium,4.0,15201008.0
-3424,Zürich-Stand-II,5.0,15201597.0
-3425,Bremgarten-I,5.0,15201600.0
-3426,Bremgarten-II,5.0,15201600.0
-3427,Feuerthalen-Stadium,4.0,15201008.0
-3428,Feuerthalen-Stand-I,5.0,15201604.0
+OBJECTID,UUID,OPERATOR,DATEOFCREATION,DATEOFCHANGE,CREATION_YEAR,CREATION_MONTH,REVISION_YEAR,REVISION_MONTH,REASONFORCHANGE,OBJECTORIGIN,OBJECTORIGIN_YEAR,OBJECTORIGIN_MONTH,RC_ID,WU_ID,RC_ID_CREATION,WU_ID_CREATION,REVISION_QUALITY,ORIGINAL_ORIGIN,INTEGRATION_OBJECT_UUID,TREE_LEVEL,PARENT_REF,DESCRIPTION,GEOLCODE
+82,{CCB15E0E-98F6-4432-AEB2-2FFC3473DF62},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,3.0,15201050.0,Birrfeld- und Klettgau-Paläoböden,15201052
+83,{B12DBC6D-F9DF-4D26-85D4-E5A3CC04B49F},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,2.0,15201003.0,Klettgau-Schotter,15201045
+84,{9465341A-B0A2-4AB3-83EE-0C22753DE0A9},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,3.0,15201045.0,Obere Klettgauschotter,15201046
+85,{8C5957B8-F0AE-4764-B35C-8A6D951DBBC7},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,3.0,15201045.0,Glazi-lakustrische Serie,15201047
+86,{9FA89194-223E-4840-A4F1-1928D93860A3},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,3.0,15201045.0,Mittlere Klettgauschotter,15201048
+87,{66F9AA9D-D47A-43A2-8734-F1EB0893C209},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,3.0,15201045.0,Untere Klettgauschotter,15201049
+88,{26839B46-2AAB-4E62-A110-8542BDEDF0B4},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,2.0,15201003.0,Enge-Schotter,15201159
+89,{D8A59E04-7D92-4181-A9E3-44B082E956AB},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,2.0,15201003.0,Attiswil-Schotter,15201160
+90,{32A766D2-22F9-40DA-9178-90712B5407B4},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,3.0,15201160.0,Lommiswil-Schotter,15201161
+91,{C424A1B2-4928-469D-AFA7-F109A8B7E38F},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,2.0,15201003.0,Oensingen-Moos-Lehm,15201162
+92,{DE280D91-09A4-422C-8269-C350837D4FC8},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,2.0,15201003.0,Berken-Schotter,15201163
+93,{6FEAECB9-DD26-4FC0-8EE6-F9711AB46DDD},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,2.0,15201003.0,Berken-Sand,15201164
+94,{580E1C10-FE8E-4D3C-BCAD-743DFF756666},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,2.0,15201003.0,Schwarzhäusern-Lehm,15201165
+95,{2CE1986B-598E-4B5F-BBDA-89938E6DC56E},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,2.0,15201003.0,Käppelihof-Schotter,15201166
+96,{7744B5BE-3722-40EB-9E3B-E513C16FD0F0},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,2.0,15201003.0,Aarburg-Schotter,15201167
+97,{F0AB65BF-F6F3-4C0F-A6D7-A7A2CAB8C189},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,2.0,15201003.0,Tuileries-Formation,15201168
+98,{5A296D10-0DFB-45E8-B07A-B4C27978C99E},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,2.0,15201003.0,Grandson-Formation,15201169
+99,{E6EBFF13-A322-4732-87E8-59E92B7CDB98},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,2.0,15201003.0,Poissine-Formation,15201170
+100,{61DA0B9D-19C2-4B0B-BBA7-BA6B5B63F376},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,2.0,15201003.0,Beringen-Eiszeit,15201053
+101,{623AEBBA-4CE2-43B2-B660-033D39B787F4},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,3.0,15201053.0,Surbtal-Lehm,15201171
+102,{AFCB0D01-222E-4599-A8C4-DBA2038A846A},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,3.0,15201053.0,Surbtal-Till,15201172
+103,{E8FB4DEB-D2E7-423A-9D44-28C82A14B537},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,3.0,15201053.0,Surbtal-Schotter,15201173
+104,{A7278120-C82C-4410-B5FE-6C99D9FE0ED2},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,3.0,15201053.0,Fislisbach-Schotter,15201174
+105,{4373F929-F335-4B95-82DE-771CB611D9D2},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,3.0,15201053.0,Entfelden-Schotter,15201054
+106,{AB0F0992-F9A7-4F3E-A51A-BBF60E1044BE},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,3.0,15201053.0,Aarau-Schotter,15201055
+107,{95CA3418-DBCA-45D1-B09C-7AE087B7B011},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,3.0,15201053.0,Suhr-Schotter,15201056
+108,{80F3F1B3-ED78-4D36-BC55-5A983D05D7B6},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,3.0,15201053.0,Veltheim-Schotter,15201057
+109,{1583392D-F0D2-4FF0-B584-02C11FB45A52},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,3.0,15201053.0,Stüsslingen-Schotter,15201058
+110,{17253487-DE29-43C3-B602-8D173B21416D},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,3.0,15201053.0,Langwiesen-Vergletscherung,15201059
+111,{9CBC4982-094B-437C-B40C-C0741B33D503},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,4.0,15201059.0,Langwiesen-Vorstoss,15201060
+112,{6B168CF8-03AE-4755-B4B6-7C6A36922677},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,5.0,15201060.0,Schaffhausen-Schotter,15201061
+113,{760A06C1-FE9F-461C-A095-0527CC8B72BE},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,4.0,15201059.0,Reuenthal-Vorstoss,15201062
+114,{52E2349B-30ED-44EF-951A-13A1D36C75DD},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,5.0,15201062.0,Lupfig-Schotter,15201063
+115,{DA183C76-BDF1-4624-AA0E-2ED642F48316},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,3.0,15201053.0,Löhningen-Engiwald-Vergletscherung,15201064
+116,{08D23D94-9773-4B4F-963D-A5F8CFE78398},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,4.0,15201064.0,Engiwald-Vorstoss,15201065
+117,{0A202E2D-45CA-46BD-9968-5DEABF7970F6},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,4.0,15201064.0,Rüfenach-Vorstoss,15201066
+118,{E574F37B-1ADA-41E3-AE13-9D872B389888},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,5.0,15201066.0,Reusstal-Sand,15201175
+119,{BD9BD7E1-62F9-4F17-AF97-630E71148254},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,5.0,15201066.0,Reusstal-Lehm,15201176
+120,{E64087EF-A4B0-4FFF-92C9-8B69B4EB8812},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,4.0,15201064.0,Löhningen-Vorstoss,15201067
+121,{FF24CB0E-2021-465C-BFAB-40118721DFF6},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,4.0,15201064.0,Remigen-Vorstoss,15201068
+122,{2C3CD1A2-8ECA-4E07-B7C8-57DF94754FF3},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,5.0,15201068.0,Hausen-Lehm,15201177
+123,{D84A7E33-089E-44B7-B904-3AD8BEC8F7B0},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,5.0,15201068.0,Hausen-Moräne,15201178
+124,{76371AA8-036A-4A09-9C09-AF95BCE69D5F},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,5.0,15201068.0,Remigen-Schotter,15201069
+125,{A3DEF08C-D187-4E1D-95CD-2FECA8D0AF2B},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,2.0,15201003.0,Meikirch-Interglazial,15201070
+126,{48791B9C-3656-4925-A8CE-3EB156427CC2},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,2.0,15201003.0,Ältere Beckenfüllungen,15201071
+127,{554AC55A-162B-4103-812A-D81EB76D4DA0},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,2.0,15201003.0,Hagenholz-Eiszeit,15201072
+128,{7CE42CC3-D01F-467F-B417-20B4DA077E49},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,3.0,15201072.0,Ruckfeld-Schotter,15201179
+129,{BB858D3B-3DE8-4C12-84F0-7493F19F9B58},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,3.0,15201072.0,Hagenholz-Vergletscherung,15201073
+130,{B3EC14CB-3299-4BB3-AECE-6BD988438FD7},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,3.0,15201072.0,Hagenholz-Vorstoss,15201074
+131,{751E0881-5C74-4911-8AA8-E9B4C80B949E},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,4.0,15201074.0,Aathal-Schotter,15201075
+132,{B251A526-C0C3-40CE-8D03-444F207B96E4},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,3.0,15201072.0,Pfyn-Vorstoss,15201076
+133,{CD96FE97-5C52-4C8A-A97D-8E8741AE38A8},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,4.0,15201076.0,Ittingen-Schotter,15201077
+134,{B7E3E56B-66C3-47D2-BFA5-78B1BC6B5459},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,3.0,15201072.0,Ryhirt-Formation,15201078
+135,{9F16835E-7C96-42BB-B56E-ABEAEE8DB124},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,3.0,15201072.0,Geisslingen-Schotter,15201079
+136,{61FCC6CF-0A9D-4573-9A65-4BE268AAE86A},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,2.0,15201003.0,Habsburg-Hagenholz-Interglazial,15201080
+137,{FACFEF35-4DE9-4D97-A941-4450197A6101},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,3.0,15201080.0,Möhlinerfeld-Paläoboden,15201081
+138,{D10DD9A1-1256-4468-9E7F-DE732E2658DC},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,2.0,15201003.0,Habsburg-Eiszeit,15201082
+139,{1C6ADB48-4450-454D-9362-9595B40C93F5},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,3.0,15201082.0,Gränichen-Schotter,15201083
+140,{1A7A795D-2903-46EC-AD88-2C25DFC7C0A3},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,3.0,15201082.0,Roggehuse-Schotter,15201084
+141,{FBD609E4-382E-4FE5-9F8A-0F9E3E4E0F41},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,3.0,15201082.0,Buerfeld-Schotter,15201085
+142,{013BB4B0-A996-4363-A862-99FFDA9B3936},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,3.0,15201082.0,Habsburg-Vergletscherung,15201086
+143,{733AF664-0E0B-42DE-90E2-3AC8ACBBB98F},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,4.0,15201086.0,Habsburg-Vorstoss,15201087
+144,{E202C379-0175-4FAE-A484-0DA26B730527},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,5.0,15201087.0,Habsburg-Schotter,15201088
+145,{64642B12-E9FA-4CCE-AB2D-EF2A115F4D76},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,5.0,15201087.0,Endingen-Schotter,15201180
+146,{D531E142-F521-48A2-9BCE-F75260313E3E},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,4.0,15201086.0,Unterschlatt-Vorstoss,15201089
+147,{4BA41035-DEBD-4736-ACF9-52EC8561E1B3},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,2.0,15201003.0,Thalgut-Interglazial,15201090
+148,{DD1F9F5F-1660-453B-9D6E-6740F5FFB2F7},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,2.0,15201003.0,Möhlin-Eiszeit (Grösste Eiszeit),15201091
+149,{33194FB7-7F11-47E9-B6C4-9B055254BD27},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,3.0,15201091.0,Möhlin-Vergletscherung,15201092
+150,{2E277163-4715-4D84-BBE1-83C62F7815DE},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,4.0,15201092.0,Möhlin-Vorstoss,15201093
+151,{8E82C718-84CB-4883-A95D-413010A062D6},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,5.0,15201093.0,Bünten-Till,15201094
+152,{B2FA66EF-3B00-4DBE-B192-CC3E48D899DE},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,4.0,15201092.0,Schleitheim-Vorstoss,15201095
+153,{2E568E1C-70E5-4964-8901-12CF63FEA2DA},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,1.0,0.0,Tiefere Deckenschotter,15201004
+154,{B650DF3D-FBF2-4692-9031-37212F58CE24},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,2.0,15201004.0,Fisibach-Schotter,15201096
+155,{F297E206-3B64-4AFE-ADDB-E75FB15797E5},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,2.0,15201004.0,Bärengraben-Schotter und -Till,15201097
+156,{8745F76E-01C4-46D7-A53B-CD72B990C36C},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,2.0,15201004.0,Iberig-Schotterkomplex,15201098
+157,{6FAE30F1-BDF0-4E19-AA2D-623B29710436},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,3.0,15201098.0,Obere Iberigschotter,15201099
+158,{D8BA6AE8-7498-4B48-97AC-9D37C2F4415A},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,3.0,15201098.0,Oberer Till,15201100
+1,{F3069B39-B8B8-4D5A-8A9A-0F33C4E4C12F},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,2.0,15201319.0,Rhein- und Aareschotter,15201181
+2,{0B126F76-E97C-433B-9CA2-5C84263950C9},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,1.0,0.0,Juraschotter,15201182
+3,{4C2BE3FA-55D1-455E-BCBC-8FF71B0755AE},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,1.0,0.0,Alte Doubsschotter,15201183
+4,{DB2AF9F9-E100-46FB-AF72-02F695071ECC},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,2.0,15201319.0,Wutach-Schotter,15201184
+5,{1A9017F1-D6AE-4C42-B409-F55EF45D4E4E},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,1.0,0.0,Merenbach-Schotter,15201185
+6,{542F9E52-FFE9-4EEB-BF47-7FCB1FE73EAC},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,1.0,0.0,Malmkalk-Schotter der Randen-Täler,15201186
+7,{47D1F553-66EB-4980-8746-B66D875C9B04},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,1.0,0.0,Niederterrasse,15201002
+8,{AE435A57-CA23-4826-AC74-CD5A949B37B5},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,2.0,15201002.0,Birrfeld-Eiszeit (Letzte Eiszeit),15201006
+9,{955E4DC0-FE2C-4AED-843C-70EA90BA7D8E},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,3.0,15201006.0,LGM-Rückzug,15201008
+10,{96932A63-5A5A-4280-A0AC-648D8E5B117A},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,4.0,15201008.0,Solothurn-Stadium,15201187
+11,{78EB0763-A66D-444E-A78D-1661AEADF0C9},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,4.0,15201008.0,Zürich-Stein-Bremgarten-Stadien,15201129
+12,{23E1ED54-C27D-485E-A03C-10AEC089D84D},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,5.0,15201129.0,Untere Singen-Terrasse,15201130
+13,{BEB131F7-9A70-4B1B-BF84-274CC1CAED14},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,4.0,15201008.0,Schlieren-Diessenhofen-Stetten-Stadien,15201131
+14,{3FD9FF4C-104D-4D32-87E6-8C37D899A309},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,5.0,15201131.0,Obere Singen-Terrasse,15201132
+15,{08513542-5DB5-4396-A38A-1BC33A6F5CE1},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,4.0,15201008.0,Rheinau-Terrasse,15201133
+16,{C8675AE0-1BA3-4173-8264-FB661425E60A},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,4.0,15201008.0,Nohl-Terrasse,15201134
+17,{A6A2585A-6484-4037-AA3D-27D22D36881F},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,5.0,15201131.0,Altenburg-Fulach-Terrasse,15201135
+18,{68FFB15E-4997-4842-89B9-71E83323EAD9},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,4.0,15201008.0,Aare-Schotter,15201136
+19,{173F992E-80B1-4AE0-B874-B0C3FDB40A45},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,4.0,15201008.0,Schüss-Schotter,15201137
+20,{359C0477-DB27-4F00-AA76-53BDD46A2A85},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,4.0,15201008.0,Orvin-Schotter,15201138
+21,{F0CA3F87-2AAD-4232-BD9B-34A25718BA04},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,4.0,15201008.0,Seeablagerungen von Frinvillier und Rondchâtel,15201139
+22,{A949FBA5-025C-4267-B17D-8D123BC364A7},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,4.0,15201008.0,Stauschotter von Diessbach,15201140
+23,{207AA807-05AC-4A92-B188-753BF6B5A451},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,4.0,15201008.0,Mély-Formation,15201141
+24,{7791C789-F016-4830-9A19-52507C27A53E},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,3.0,15201006.0,"Last Glacial Maximum (LGM), undiff.",15201007
+25,{4743C98E-DA24-4D00-A75B-CB1D16B91F8E},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,4.0,15201007.0,Kiessande von Madretsch,15201142
+26,{59322F98-CECF-4468-A349-5E6031C5473D},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,4.0,15201007.0,Seeland-Schotter,15201143
+27,{1ECCAB5D-7236-45A5-BA2D-79EF3E9DF1FA},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,4.0,15201007.0,Emme-Schotter,15201144
+28,{A75FE931-9AB8-4DBE-876B-EC2C8BB6BBAD},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,4.0,15201007.0,Gäu-Schotter,15201145
+29,{6C2A89B7-4F81-4532-AB9E-C1DB8AB24DA6},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,4.0,15201007.0,Flumenthal-Lehm,15201146
+30,{C1569CA1-BA86-4157-895D-6583255DAA20},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,4.0,15201007.0,Killwangen-Schaffhausen-Mellingen-Stadium,15201147
+31,{EB54D14B-2B08-4558-ADC7-6B18BC501C47},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,5.0,15201147.0,Munot-Terrasse,15201148
+32,{85854E36-F5A7-4DEC-862F-D6E4E0BF4F54},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,5.0,15201147.0,Stokar-Terrasse,15201149
+33,{5E6A0DF9-A6CE-4310-88B8-6B9E87735D1E},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,5.0,15201147.0,Breite-Terrasse,15201150
+34,{670D2322-376D-4D7E-B6CE-77F4E7A9A3F5},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,5.0,15201147.0,Maximalstand (Kilwangen-Schaffhausen-Stadium),15201151
+35,{7AE435ED-AE2E-45B9-8432-31B206BF2CDE},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,3.0,15201006.0,Birmenstorf-Vergletscherung (2. LGM-Vorstoss),15201009
+36,{0A09754F-7A45-4030-9927-2FE80432522E},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,4.0,15201009.0,Wettingen-Vorstoss,15201010
+37,{3AB46646-CE35-4D4C-BD8F-61C610418B3E},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,5.0,15201010.0,Flüefeld-Schotter,15201011
+38,{ED47EF1E-46B0-403C-8CE1-65EC8B0D3400},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,5.0,15201010.0,Altberg-Till,15201012
+39,{91ABD87B-DA64-46C1-AE66-E2A35CE62A12},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,4.0,15201009.0,Birmenstorf-Vorstoss,15201013
+40,{48B26CEF-CBE1-4AE6-8234-4B511BB244A1},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,5.0,15201013.0,Birr-Schotter,15201014
+41,{A9C8F6C7-1B9E-4872-BEF8-E0BDD11389C0},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,5.0,15201013.0,Oberhard-Till,15201015
+42,{B5E00A47-46EC-44C5-A62F-F0A8B083993D},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,5.0,15201013.0,Wehntal-Schotter,15201152
+43,{9515D9E9-8A19-49D4-9C53-4C0F9C7EDF90},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,4.0,15201009.0,Seon-Vorstoss,15201016
+44,{8F6AED86-006E-4DE1-A75C-C04C47601554},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,5.0,15201016.0,Berg-Schotter,15201017
+45,{DA700E16-0BEE-4C8D-B452-3D2E53C0223E},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,5.0,15201016.0,Fornholz-Till,15201018
+46,{DF3929EA-5470-4624-A5EA-82567017F294},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,4.0,15201009.0,Bick-Till,15201153
+47,{BA8DAE9D-7439-47AA-A6A0-485DA6617F9A},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,4.0,15201009.0,Flüe-Till,15201154
+48,{87612C80-2E95-47FA-97C9-BB5C5E5AD22B},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,4.0,15201009.0,Wettingen-Schotter,15201155
+49,{CD9BF4D1-4CAE-4662-9007-8E7BE0ED0429},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,4.0,15201009.0,Gontenschwil-Vorstoss,15201019
+50,{659DE322-6E27-4F34-9CC7-7F20CD28ADFC},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,5.0,15201019.0,Gontenschwil-Till,15201020
+51,{AC89807A-73D5-462A-9D62-87117C0EAB96},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,4.0,15201009.0,Staffelbach-Vorstoss,15201021
+52,{EB48E267-60B8-47E9-A3C5-8AB265FAFFA9},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,5.0,15201021.0,Staffelbach-Schotter,15201022
+53,{D0FB5BDA-0669-436D-997C-ED05A7A60131},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,5.0,15201021.0,Staffelbach-Till,15201023
+54,{1CE852DD-F6AD-49B6-BA30-2FF5BE5B07E3},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,3.0,15201006.0,Lindmühle-Vergletscherung (1. LGM-Vorstoss),15201024
+55,{03B41799-66CC-46C7-97EA-174BA7245E32},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,4.0,15201024.0,Otelfingen-Vorstoss,15201025
+56,{647F256F-2A15-430B-95E3-B072ACCF2EA1},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,5.0,15201025.0,Tägerhard-Schotter,15201026
+57,{9EF1377D-2EAF-4A68-8402-491557D7C8FE},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,4.0,15201024.0,Lindmühle-Vorstoss,15201027
+58,{39518702-4148-485E-995E-7F4E01A6D94C},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,5.0,15201027.0,Ämmert-Schotter,15201028
+59,{A7A0BC9B-4251-424E-AD6C-1BB4915DBCDE},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,5.0,15201027.0,Ämmert-Till,15201029
+60,{C674019F-3873-4FE4-A93B-ABDDF506FF0D},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,4.0,15201024.0,Emmet-Vorstoss,15201030
+61,{A828CEDE-F9CE-49F3-81C6-29EE994C8EB3},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,5.0,15201030.0,Gündelmoos-Lehm,15201031
+62,{862432C8-D1ED-4755-B1D4-D2BFE2690298},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,5.0,15201030.0,Igliste-Schotter,15201032
+63,{3198B475-6E30-48F6-BFC7-C44C8E85502C},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,5.0,15201030.0,Niderholz-Till,15201033
+64,{4C72E157-428F-45ED-A5FA-CD601A6755CB},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,4.0,15201024.0,Zetzwil-Vorstoss,15201034
+65,{916179A0-E8BE-4299-A328-1BAB4543E84E},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,5.0,15201034.0,Zetzwil-Till,15201035
+66,{22DD2584-C2FB-4642-AD1B-FA3199EEF97E},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,4.0,15201024.0,Kirchleerau-Vorstoss,15201036
+67,{A5FA0019-719F-454F-AA2E-804645541E00},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,5.0,15201036.0,Kirchleerau-Till,15201037
+68,{9025CF7A-74FB-4506-8A61-D151C22BD7A6},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,3.0,15201006.0,Gossau-Interstadial,15201038
+69,{9EA41DF5-0467-4B52-BF6F-F369D350FECA},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,4.0,15201038.0,Mülligen-Paläoboden,15201039
+70,{DC490973-6CF5-4711-8E79-0BB4A15DA013},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,4.0,15201038.0,Niederweningen-Formation,15201040
+71,{F398A8C0-5B3A-4A54-AAC9-777E3A1D8F0C},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,3.0,15201006.0,Hombrechtikon-Vergletscherung (Frühletzteiszeitliche Vergl.),15201041
+72,{B860ED00-3086-471F-96E6-F95965222167},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,4.0,15201041.0,Mülligen-Schotter,15201042
+73,{B0C19CF4-FA97-441A-AED4-5EDAE17D9B00},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,4.0,15201041.0,2. letzteiszeitlischs Vorstoss,15201043
+74,{DF599DE5-DC39-4714-8836-EEE650262C60},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,4.0,15201041.0,1. letzteiszeitlischs Vorstoss,15201044
+75,{53CDE306-D570-4141-BB7F-0BDD9A1B3CED},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,1.0,0.0,"Ältere Ablagerungen, undifferenziert",15201001
+76,{D6A615C3-2CAA-4E45-AC2E-5447AF2BA1C5},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,2.0,15201001.0,Bersturzmasse von Selzach,15201156
+77,{AB7F32AA-C2CA-465F-9F03-BEEA5E00B24A},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,2.0,15201001.0,Plateauschotter,15201157
+78,{75C796A9-CFA3-4FC9-8A52-DD93C4D08035},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,2.0,15201001.0,La-Côte-Schotter,15201158
+79,{49B12F87-A25A-4CD8-80BA-9CE72EEE4A5D},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,1.0,0.0,Hochterrasse,15201003
+80,{31395361-3C04-46B9-AF50-20ED92F10189},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,2.0,15201003.0,Gondiswil-Interglazial (Letztes Interglazial),15201050
+81,{8C7B1B65-C2DD-4222-9B70-822BD6FE44C4},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,3.0,15201050.0,Flurlingen-Quelltuff,15201051
+199,{29E98BE1-7BB1-440D-B709-DB26BFFF9B86},,2017-04-18 14:55:57.000000,2017-04-18 14:55:57.000000,,,,,,,,,,,,,,,,2.0,15201002.0,Menzingen-Schotter,15201201
+200,{AB49B7D9-1D0F-4E46-8826-01844B8E3CEB},,2017-04-18 14:57:04.000000,2017-04-18 14:57:04.000000,,,,,,,,,,,,,,,,3.0,15201006.0,La-Tuffière-Schotter,15201202
+201,{594E6EA7-F16E-4A87-BA30-F45F6CA3571C},,2017-04-18 14:58:10.000000,2017-04-18 14:58:10.000000,,,,,,,,,,,,,,,,4.0,15201008.0,Gontenschwil-Lehm,15201203
+202,{2C2BA4CE-6F6F-43A7-B6DE-3654F2B4B523},,2017-04-18 14:59:16.000000,2017-04-18 14:59:16.000000,,,,,,,,,,,,,,,,4.0,15201008.0,Mooslerau-Lehm,15201204
+203,{4067ACAF-51F4-4DAE-820E-8742CFBA8DF4},,2017-04-18 15:00:23.000000,2017-04-18 15:00:23.000000,,,,,,,,,,,,,,,,4.0,15201008.0,Triengen-Schotter,15201205
+204,{02198A54-D441-4C8F-A492-D0042B29AF60},,2017-04-18 15:01:30.000001,2017-04-18 15:01:30.000001,,,,,,,,,,,,,,,,4.0,15201008.0,Triengen-Lehm,15201206
+205,{777B6EFE-BB5B-4EE4-961B-3E965D76D7E0},,2017-04-18 15:02:36.000000,2017-04-18 15:02:36.000000,,,,,,,,,,,,,,,,4.0,15201008.0,Sihl-Schotter,15201207
+206,{FBF136B0-3E0C-43E6-9895-036D6FA50AF3},,2017-04-18 15:03:43.000000,2017-04-18 15:03:43.000000,,,,,,,,,,,,,,,,4.0,15201008.0,Haselbach-Schotter,15201208
+207,{46CB5137-4DBB-4A77-A183-A6CD1FEECE26},,2017-04-18 15:04:49.000001,2017-04-18 15:04:49.000001,,,,,,,,,,,,,,,,4.0,15201008.0,Jonen-Schotter,15201209
+208,{29176DA3-15DA-4151-8114-DE1719FBC171},,2017-04-18 15:05:56.000000,2017-04-18 15:05:56.000000,,,,,,,,,,,,,,,,4.0,15201008.0,Aabach-Schotter,15201210
+209,{211FDC8B-CE41-4B22-9966-573C87D8A2B6},,2017-04-18 15:07:03.000000,2017-04-18 15:07:03.000000,,,,,,,,,,,,,,,,4.0,15201008.0,Starrberg-Schotter,15201211
+210,{03146825-B3D5-4593-8A73-B1BEF92C5B2D},,2017-04-18 15:08:10.000000,2017-04-18 15:08:10.000000,,,,,,,,,,,,,,,,4.0,15201008.0,Port-Stauschotter,15201212
+211,{EB503678-81BF-42EB-8F6F-D810C4D81A89},,2017-04-18 15:09:18.000001,2017-04-18 15:09:18.000001,,,,,,,,,,,,,,,,4.0,15201008.0,Rempen-Stauschotter,15201213
+212,{22A1DEFF-2D6F-4AA2-818D-E7B522FDF1A0},,2017-04-18 15:10:25.000001,2017-04-18 15:10:25.000001,,,,,,,,,,,,,,,,4.0,15201009.0,Dagmersellen-Vorstoss,15201214
+213,{11AF5BE5-E514-4D5F-B129-77533ADB30FB},,2017-04-18 15:11:32.000000,2017-04-18 15:11:32.000000,,,,,,,,,,,,,,,,5.0,15201214.0,Oftringen-Schotter,15201215
+214,{2BF05FCB-05A0-4565-A94E-42A7B808551F},,2017-04-18 15:12:39.000000,2017-04-18 15:12:39.000000,,,,,,,,,,,,,,,,2.0,15201003.0,Zelg-Schotter,15201216
+215,{F8537B8C-0CA9-482A-861C-E3F1B8FE0E4C},,2017-04-18 15:13:46.000000,2017-04-18 15:13:46.000000,,,,,,,,,,,,,,,,2.0,15201003.0,Forst-Schotter,15201217
+216,{43083F21-9B1A-4DEE-9FAE-7949027C9D40},,2017-04-18 15:14:53.000000,2017-04-18 15:14:53.000000,,,,,,,,,,,,,,,,2.0,15201003.0,Raintal-Deltaschotter,15201218
+217,{7FA6A7A3-57F5-4791-ACC1-A5CB440E8A6A},,2017-04-18 15:16:00.000000,2017-04-18 15:16:00.000000,,,,,,,,,,,,,,,,2.0,15201003.0,Kleinhöchstetten-Kies-Sand-Komplex,15201219
+218,{60A17AED-7369-45F6-93F5-B809F4FA0155},,2017-04-18 15:17:07.000000,2017-04-18 15:17:07.000000,,,,,,,,,,,,,,,,2.0,15201003.0,Krauchthal-Schotter,15201220
+219,{54E380AA-AE42-4CE8-A091-BD7DB6441493},,2017-04-18 15:18:14.000000,2017-04-18 15:18:14.000000,,,,,,,,,,,,,,,,2.0,15201003.0,Brandflue-Schotter,15201221
+220,{7DB2B94B-1506-4B51-801A-1390EF0FE6D4},,2017-04-18 15:19:21.000000,2017-04-18 15:19:21.000000,,,,,,,,,,,,,,,,2.0,15201003.0,Küsnacht-Schotter,15201222
+221,{02D8DE72-507F-4460-8153-0D6B5A7F560E},,2017-04-18 15:20:28.000000,2017-04-18 15:20:28.000000,,,,,,,,,,,,,,,,2.0,15201003.0,Chatzenstrick-Schotter,15201223
+222,{4878D3EA-DBBF-41F7-BA20-EB5F33CFC070},,2017-04-18 15:21:36.000000,2017-04-18 15:21:36.000000,,,,,,,,,,,,,,,,2.0,15201003.0,Rabennest-Schotter,15201224
+223,{C94DD3FA-3C07-4C8C-9F9A-C29C50E3B72F},,2017-04-18 15:22:43.000000,2017-04-18 15:22:43.000000,,,,,,,,,,,,,,,,2.0,15201003.0,Ratengütsch-Schotter,15201225
+224,{2671D1A0-F558-4BAC-849E-C1754E47A52A},,2017-04-18 15:23:50.000000,2017-04-18 15:23:50.000000,,,,,,,,,,,,,,,,2.0,15201003.0,Scherenspitz-Schotter,15201226
+225,{8AC4EA00-19A5-4983-A46C-7B8EA4259956},,2017-04-18 15:24:58.000000,2017-04-18 15:24:58.000000,,,,,,,,,,,,,,,,2.0,15201003.0,Walsenhaus-Schotter,15201227
+226,{F726BF2C-6949-4944-848F-1C448C998CF0},,2017-04-18 15:26:05.000000,2017-04-18 15:26:05.000000,,,,,,,,,,,,,,,,2.0,15201003.0,Richterswil-Seeton,15201228
+227,{7C2CDDF7-15FC-4EBE-995B-FED5A5768E6B},,2017-04-18 15:27:13.000000,2017-04-18 15:27:13.000000,,,,,,,,,,,,,,,,2.0,15201003.0,Schwanden-Schotter,15201229
+228,{DDC3C23D-8596-4B45-A381-63F8D68C8B7A},,2017-04-18 15:28:20.000000,2017-04-18 15:28:20.000000,,,,,,,,,,,,,,,,2.0,15201003.0,Reidbach-Schotter,15201230
+229,{375FBE48-ED08-488F-A866-2DAA6B587037},,2017-04-18 15:29:28.000001,2017-04-18 15:29:28.000001,,,,,,,,,,,,,,,,2.0,15201249.0,Zell-Schotterkomplex,15201231
+230,{E522D28C-E2B1-4459-8054-5C708223B132},,2017-04-18 15:30:36.000000,2017-04-18 15:30:36.000000,,,,,,,,,,,,,,,,2.0,15201003.0,Gubel-Schotter,15201232
+231,{E86A9072-CF16-4190-88D9-4C63CB817AEE},,2017-04-18 15:31:44.000000,2017-04-18 15:31:44.000000,,,,,,,,,,,,,,,,2.0,15201003.0,Chälen-Schotter,15201233
+232,{6722FB8C-016C-43B5-9A96-414344636590},,2017-04-18 15:32:51.000000,2017-04-18 15:32:51.000000,,,,,,,,,,,,,,,,2.0,15201003.0,Chälen-Till,15201234
+233,{3BECB8BE-D284-43BE-B5D4-267192EA8345},,2017-04-18 15:33:59.000000,2017-04-18 15:33:59.000000,,,,,,,,,,,,,,,,2.0,15201003.0,Sihlsprung-Schotter,15201235
+234,{ED5210C5-4AEE-4EBA-A352-789A9FD287F9},,2017-04-18 15:35:07.000001,2017-04-18 15:35:07.000001,,,,,,,,,,,,,,,,2.0,15201003.0,Kollbrunn-Schotter,15201236
+235,{A36525AE-8648-4BFB-97F3-B873DB36289B},,2017-04-18 15:36:14.000001,2017-04-18 15:36:14.000001,,,,,,,,,,,,,,,,2.0,15201003.0,Walenberg-Schotter,15201237
+236,{E80D1DCD-BC35-46DD-8101-7095451E4655},,2017-04-18 15:37:22.000000,2017-04-18 15:37:22.000000,,,,,,,,,,,,,,,,2.0,15201003.0,Ritteren-Schotterkomplex,15201238
+237,{12D128B2-CAF8-4A8A-B7C9-197390F3F7B5},,2017-04-18 15:38:30.000000,2017-04-18 15:38:30.000000,,,,,,,,,,,,,,,,3.0,15201053.0,Vorholz-Schotter,15201239
+1204,{891B5A25-A792-417D-8BB1-2FDD433F5DA7},,2018-10-03 16:05:48.000000,2018-10-03 16:05:48.000000,,,,,,,,,,,,,,,,2.0,15201003.0,Hahni-Schotter,15201344
+1466,{572B06CE-5CCD-4A78-9FFD-2CBB5FBE5C6D},,2019-08-12 13:00:16.000000,2019-08-12 13:00:16.000000,,,,,,,,,,,,,,,,1.0,0.0,Ceppo,15201458
+1467,{8BA77E84-2E32-4E37-8D50-D65FFA175AD9},,2019-08-12 13:00:16.000000,2019-08-12 13:00:16.000000,,,,,,,,,,,,,,,,2.0,15201458.0,Novazzano-Sand,15201459
+1468,{CC83697F-47B9-428C-B3EE-FA39B58DCAA0},,2019-08-12 13:00:17.000000,2019-08-12 13:00:17.000000,,,,,,,,,,,,,,,,1.0,0.0,"Löss, undifferenziert",15201444
+1469,{6B9BED2C-3AFB-40CF-BDEE-C759E9C4EA08},,2019-08-12 16:50:13.000000,2019-08-12 16:50:13.000000,,,,,,,,,,,,,,,,6.0,15201311.0,Bergsturzablagerungen vom Stützwald,15201460
+1786,{1683184E-4F62-4C33-AA5E-DE2372B47D02},,2020-09-20 01:51:10.000000,2020-09-20 01:51:10.000000,,,,,,,,,,,,,,,,5.0,15201249.0,Untergrabehüsli-Schotter,15201499
+1787,{B3D161CB-0DDC-43B4-ACFE-EFE0CE0E59B9},,2020-09-20 01:51:12.000000,2020-09-20 01:51:12.000000,,,,,,,,,,,,,,,,2.0,15201002.0,Reuss-Schotterkomplex,15201505
+1788,{1ED6B327-50F6-4D43-B425-C5EEB6BDE964},,2020-09-20 01:51:14.000000,2020-09-20 01:51:14.000000,,,,,,,,,,,,,,,,6.0,15201231.0,Rufswil-Schotter,15201490
+1789,{3EC33D93-1134-43B5-B7EB-1CB64D7200FF},,2020-09-20 01:51:16.000001,2020-09-20 01:51:16.000001,,,,,,,,,,,,,,,,3.0,15201006.0,Rütimatt-Schotter,15201491
+1790,{B264764A-A636-475D-B378-6E07D24790DF},,2020-09-20 01:51:18.000000,2020-09-20 01:51:18.000000,,,,,,,,,,,,,,,,2.0,15201002.0,Mooretal-Schotter,15201511
+1791,{E6180E19-34E2-4348-924D-1782A87439C5},,2020-09-20 01:51:20.000000,2020-09-20 01:51:20.000000,,,,,,,,,,,,,,,,3.0,15201423.0,Birkenhof-Formation,15201462
+1792,{3504195C-7A37-4522-895F-E23E3F4B98D4},,2020-09-20 01:51:22.000000,2020-09-20 01:51:22.000000,,,,,,,,,,,,,,,,4.0,15201462.0,Zeiningen-Till,15201463
+1793,{3B3271EC-3F3C-46D7-B0EF-B012BD964F4D},,2020-09-20 01:51:25.000000,2020-09-20 01:51:25.000000,,,,,,,,,,,,,,,,2.0,15201001.0,Höhenschotter,15201464
+1794,{01EF62FB-FCC7-403E-B69F-FB4B9EEE7E7B},,2020-09-20 01:51:27.000000,2020-09-20 01:51:27.000000,,,,,,,,,,,,,,,,3.0,15201464.0,Böschmatt-Schotter,15201465
+1795,{FD92B65D-C99F-48CF-8ECC-3CDAB4508F04},,2020-09-20 01:51:29.000000,2020-09-20 01:51:29.000000,,,,,,,,,,,,,,,,3.0,15201464.0,Bramegg-Schotter,15201466
+1796,{DAC1F594-4E4C-4E7C-A649-003917A59601},,2020-09-20 01:51:31.000000,2020-09-20 01:51:31.000000,,,,,,,,,,,,,,,,3.0,15201464.0,Kaltenegg-Schotter,15201467
+1797,{41E26B27-F5B6-42EB-90F8-B04F24A9D402},,2020-09-20 01:51:33.000000,2020-09-20 01:51:33.000000,,,,,,,,,,,,,,,,3.0,15201464.0,Steinhuserberg-Schotter,15201468
+1798,{2B0D160C-C407-43CC-AF5F-42BFF6589672},,2020-09-20 01:51:35.000000,2020-09-20 01:51:35.000000,,,,,,,,,,,,,,,,4.0,15201008.0,Büelm-Schotter,15201469
+1799,{6EDCFA70-8FD0-4A5C-BB8E-67ED43270D16},,2020-09-20 01:51:37.000000,2020-09-20 01:51:37.000000,,,,,,,,,,,,,,,,5.0,15201322.0,Büel-Schotter,15201470
+1800,{FF49FF60-BD68-4E20-A742-118E8B14A9CF},,2020-09-20 01:51:40.000001,2020-09-20 01:51:40.000001,,,,,,,,,,,,,,,,5.0,15201429.0,Bünten-Schotter,15201471
+1801,{F9D66169-5F16-4070-B50F-02EE2BC2AD80},,2020-09-20 01:51:42.000000,2020-09-20 01:51:42.000000,,,,,,,,,,,,,,,,5.0,15201322.0,Durnagel-Schotter,15201472
+1802,{0F0FAB93-FAAB-4357-B699-8FF6D17CDCF2},,2020-09-20 01:51:44.000000,2020-09-20 01:51:44.000000,,,,,,,,,,,,,,,,5.0,15201249.0,Dürrenroth-Schotter,15201473
+1803,{2DC0683F-3A0C-4C00-BF4A-AF8C83986984},,2020-09-20 01:51:46.000000,2020-09-20 01:51:46.000000,,,,,,,,,,,,,,,,3.0,15201006.0,Egghüsli-Schotter,15201474
+1804,{5589E96B-857F-42E5-B2F9-4148DAAF6E59},,2020-09-20 01:51:48.000001,2020-09-20 01:51:48.000001,,,,,,,,,,,,,,,,3.0,15201006.0,Emmental-Schotter,15201475
+1805,{F80DB099-CA4C-448A-BC5D-203CEB6EAE96},,2020-09-20 01:51:50.000000,2020-09-20 01:51:50.000000,,,,,,,,,,,,,,,,5.0,15201410.0,Ergolztal-Schotter,15201476
+1806,{45A8B4DC-21C7-4DB3-916C-DA8941612451},,2020-09-20 01:51:52.000000,2020-09-20 01:51:52.000000,,,,,,,,,,,,,,,,2.0,15201001.0,Gammenthal-Schotter,15201477
+1807,{70F1BA27-CE8C-4B08-AE80-5AFC31ED2304},,2020-09-20 01:51:55.000000,2020-09-20 01:51:55.000000,,,,,,,,,,,,,,,,6.0,15201231.0,Gondiswil-Formation,15201478
+1808,{C7A581A2-0FCA-4547-A439-7D8C53EDE3DA},,2020-09-20 01:51:57.000000,2020-09-20 01:51:57.000000,,,,,,,,,,,,,,,,3.0,15201006.0,Hasewald-Schotter,15201479
+1809,{252B3BF6-342E-4A54-A93C-34F4A9E4B118},,2020-09-20 01:51:59.000001,2020-09-20 01:51:59.000001,,,,,,,,,,,,,,,,3.0,15201006.0,Hirzmatt-Schotter,15201480
+1810,{0D15A576-3766-4BA5-B227-7DCDB7063209},,2020-09-20 01:52:01.000000,2020-09-20 01:52:01.000000,,,,,,,,,,,,,,,,3.0,15201006.0,Mettlen-Schotter,15201481
+1811,{8A64BAF5-F879-4B93-A335-7D2BCCAAED29},,2020-09-20 01:52:03.000000,2020-09-20 01:52:03.000000,,,,,,,,,,,,,,,,3.0,15201423.0,Möhlinerfeld-Schotter,15201482
+1812,{AB098BF0-B05C-40C7-98B7-3B561731D835},,2020-09-20 01:52:05.000000,2020-09-20 01:52:05.000000,,,,,,,,,,,,,,,,5.0,15201249.0,Muttenfeld-Schotter,15201483
+1813,{BA175C89-14B0-4A85-93D8-C2167E6D92D5},,2020-09-20 01:52:07.000001,2020-09-20 01:52:07.000001,,,,,,,,,,,,,,,,3.0,15201406.0,Nidfurn-Schotter,15201484
+1814,{D2012DA2-FF24-4518-8DC1-4F6C129E2108},,2020-09-20 01:52:10.000000,2020-09-20 01:52:10.000000,,,,,,,,,,,,,,,,2.0,15201001.0,Oberhöhe-Grundmoräne,15201485
+1815,{B45DD45F-4E69-42F0-B13B-DCD439B7AB97},,2020-09-20 01:52:12.000000,2020-09-20 01:52:12.000000,,,,,,,,,,,,,,,,3.0,15201006.0,Obermoos-Schotter,15201486
+1816,{47C4D67F-8A66-4226-B561-B473449FDCFB},,2020-09-20 01:52:14.000000,2020-09-20 01:52:14.000000,,,,,,,,,,,,,,,,2.0,15201001.0,Schwanderholzwald-Schotter,15201492
+1817,{3B72A2BC-AB0B-489D-B90D-6C05478F3557},,2020-09-20 01:52:16.000000,2020-09-20 01:52:16.000000,,,,,,,,,,,,,,,,3.0,15201006.0,Schwande-Seebodensedimente,15201493
+1818,{FE367C06-663D-4A25-8CD6-80B21E2D56C6},,2020-09-20 01:52:18.000000,2020-09-20 01:52:18.000000,,,,,,,,,,,,,,,,5.0,15201249.0,Soppensee-Seebodensedimente,15201494
+1819,{9AFF8D11-F200-4BB5-B0AD-FEF21B088B07},,2020-09-20 01:52:20.000000,2020-09-20 01:52:20.000000,,,,,,,,,,,,,,,,3.0,15201006.0,Speicherboden-Lokalmoräne,15201495
+1820,{6BAF7C3C-4AD9-4324-85A3-0D89A096E337},,2020-09-20 01:52:23.000001,2020-09-20 01:52:23.000001,,,,,,,,,,,,,,,,6.0,15201450.0,terrasse lémanique de 10 m,15201496
+1821,{29E4F761-BB93-457C-8CB0-7561E8F56D88},,2020-09-20 01:52:25.000000,2020-09-20 01:52:25.000000,,,,,,,,,,,,,,,,6.0,15201450.0,terrasse lémanique de 3 m,15201497
+1822,{EE95178E-8597-43D4-BE80-060B5BFE1A8A},,2020-09-20 01:52:27.000000,2020-09-20 01:52:27.000000,,,,,,,,,,,,,,,,6.0,15201231.0,Untere Zeller Schotter,15201498
+1823,{E2551234-80D5-4935-9E1C-44C6D8C38D31},,2020-09-20 01:52:29.000000,2020-09-20 01:52:29.000000,,,,,,,,,,,,,,,,3.0,15201423.0,Öflingen-Schotter,15201487
+1824,{C22862C2-C02A-4D57-AF94-E0A6BB61E3BB},,2020-09-20 01:52:31.000000,2020-09-20 01:52:31.000000,,,,,,,,,,,,,,,,4.0,15201008.0,Untertreie-Schotter,15201500
+1825,{AEE9A150-B6A6-4A1C-A7B3-5BAB81CF9100},,2020-09-20 01:52:33.000000,2020-09-20 01:52:33.000000,,,,,,,,,,,,,,,,3.0,15201423.0,Wallbach-Schotter,15201501
+1826,{4F5FFD25-DD0D-4FAC-AC47-0184573D8519},,2020-09-20 01:52:35.000000,2020-09-20 01:52:35.000000,,,,,,,,,,,,,,,,3.0,15201006.0,Werthenstein-Schotter,15201502
+1827,{ADA73736-DB52-4FC2-8626-E90C846829F0},,2020-09-20 01:52:37.000000,2020-09-20 01:52:37.000000,,,,,,,,,,,,,,,,3.0,15201423.0,Willburg-Formation,15201503
+1828,{8E869913-3089-463A-85FB-DED3E743EEE5},,2020-09-20 01:52:40.000000,2020-09-20 01:52:40.000000,,,,,,,,,,,,,,,,2.0,15201001.0,Wilzigen-Seebodensedimente,15201504
+1829,{E706D955-41A1-4505-A1A1-CFB0AA852A6F},,2020-09-20 01:52:42.000001,2020-09-20 01:52:42.000001,,,,,,,,,,,,,,,,4.0,15201008.0,Rottal-Schotter,15201488
+1830,{5C6FFE59-5E47-4C29-ADA2-02A2F2337028},,2020-09-20 01:52:44.000000,2020-09-20 01:52:44.000000,,,,,,,,,,,,,,,,2.0,15201002.0,Hagnau-Niveau,15201506
+1831,{C854EE34-5403-465B-B23A-4AEB1014D33B},,2020-09-20 01:52:46.000000,2020-09-20 01:52:46.000000,,,,,,,,,,,,,,,,2.0,15201002.0,Reusstal-Seebodensediment,15201507
+1832,{6A34FABD-5CC3-4B1E-9769-95F6C3CD68EF},,2020-09-20 01:52:48.000000,2020-09-20 01:52:48.000000,,,,,,,,,,,,,,,,2.0,15201002.0,Wyna-Schotter,15201508
+1833,{66162C5E-A49C-4DDD-9AA9-375C4DFA3D75},,2020-09-20 01:52:50.000001,2020-09-20 01:52:50.000001,,,,,,,,,,,,,,,,2.0,15201002.0,Rickenbach-Schotter,15201509
+1834,{70A8883F-53DA-4902-8034-3C4BAE0416B5},,2020-09-20 01:52:52.000000,2020-09-20 01:52:52.000000,,,,,,,,,,,,,,,,2.0,15201002.0,Ermensee-Schotter,15201510
+1835,{B9A6F916-EF0A-4A9B-944D-A728F56F5F4D},,2020-09-20 01:52:54.000000,2020-09-20 01:52:54.000000,,,,,,,,,,,,,,,,5.0,15201249.0,Rüdelwald-Schotter,15201489
+1836,{9A01B538-ACDD-431F-81DB-71524D589E8E},,2020-09-20 01:52:57.000000,2020-09-20 01:52:57.000000,,,,,,,,,,,,,,,,2.0,15201003.0,Ämmet-Schotter,15201512
+1837,{80ABC726-612D-45E8-9413-02CA553FD0ED},,2020-09-20 01:52:59.000000,2020-09-20 01:52:59.000000,,,,,,,,,,,,,,,,2.0,15201003.0,Homberg-Till,15201513
+1838,{68B2833B-D81F-4C7B-84CE-8162749566C5},,2020-09-20 01:53:01.000000,2020-09-20 01:53:01.000000,,,,,,,,,,,,,,,,2.0,15201003.0,Lindenberg-Till,15201514
+1839,{8E85FCB8-DC33-4D28-A6F0-A7812F98FCE1},,2020-09-20 01:53:03.000000,2020-09-20 01:53:03.000000,,,,,,,,,,,,,,,,5.0,15201005.0,Heubeerihübel-Schotter,15201515
+1840,{A5F2FC97-D9F4-47E8-846D-5FB28AA9062F},,2020-09-20 01:53:05.000000,2020-09-20 01:53:05.000000,,,,,,,,,,,,,,,,3.0,15201053.0,Ritzhans-Schotter,15201516
+1841,{86E21FE8-F180-4D7C-908A-3C680DDE9A22},,2020-09-20 01:53:07.000000,2020-09-20 01:53:07.000000,,,,,,,,,,,,,,,,3.0,15201053.0,Unterdorf-Schotter,15201517
+1842,{646B0096-6803-4658-AD55-3B079D8D7401},,2020-09-20 01:53:09.000000,2020-09-20 01:53:09.000000,,,,,,,,,,,,,,,,3.0,15201053.0,Schönegg-Formation,15201518
+1843,{9B9A1B2F-316A-423A-B602-242EEE02364C},,2020-09-20 01:53:12.000000,2020-09-20 01:53:12.000000,,,,,,,,,,,,,,,,3.0,15201082.0,Säckingen-Schotter,15201519
+1844,{FF1A031D-B4B6-4480-8E48-669C303E84F7},,2020-09-20 01:53:14.000000,2020-09-20 01:53:14.000000,,,,,,,,,,,,,,,,3.0,15201082.0,Bruderhäusle-Schotter,15201520
+1845,{6E02A18E-59E3-4082-930D-24962F88B30A},,2020-09-20 01:53:16.000000,2020-09-20 01:53:16.000000,,,,,,,,,,,,,,,,3.0,15201082.0,Mumpf-Schotter,15201521
+1846,{101A717B-74C0-43E4-AB91-5E86439919DA},,2020-09-20 01:53:18.000000,2020-09-20 01:53:18.000000,,,,,,,,,,,,,,,,3.0,15201082.0,Riedmatt-Schotter,15201522
+1847,{2B805C81-24BF-46CF-B291-74EE425572C2},,2020-09-20 01:53:20.000000,2020-09-20 01:53:20.000000,,,,,,,,,,,,,,,,3.0,15201082.0,Beuggen-Schotter,15201523
+1848,{34F2E45A-6F3B-4554-B4FA-41AD2FAB8334},,2020-09-20 01:53:22.000000,2020-09-20 01:53:22.000000,,,,,,,,,,,,,,,,3.0,15201082.0,Feldhof-Schotter,15201524
+1849,{11525AE3-8783-4F76-A30B-0A97124D3BF1},,2020-09-20 01:53:24.000000,2020-09-20 01:53:24.000000,,,,,,,,,,,,,,,,5.0,15201333.0,Spärgacher-Schotter,15201525
+2106,{9001B3CA-4DDF-450C-9E6E-D3087F6F346C},,2022-01-15 01:08:31.000000,2022-01-15 01:08:31.000000,,,,,,,,,,,,,,,,2.0,15201249.0,Wagenmoos-Till,15201526
+2107,{F2454B25-7654-4E51-B8BA-11FFA5345ADA},,2022-01-15 01:08:32.000000,2022-01-15 01:08:32.000000,,,,,,,,,,,,,,,,2.0,15201002.0,Niderstalden-Schotter,15201527
+2108,{9C1DB4BD-9EB6-4CD1-AC8D-CCE54D7142E8},,2022-01-15 01:08:33.000001,2022-01-15 01:08:33.000001,,,,,,,,,,,,,,,,2.0,15201002.0,Zulgtal-Schotter,15201528
+2109,{4B5601D1-DB85-4EDD-8C32-31B1CE16E398},,2022-01-15 01:08:34.000000,2022-01-15 01:08:34.000000,,,,,,,,,,,,,,,,2.0,15201002.0,Spiez-Schotter,15201529
+2110,{CB769F8A-211A-45C9-9F36-33BF8BCE18E3},,2022-01-15 01:08:35.000000,2022-01-15 01:08:35.000000,,,,,,,,,,,,,,,,2.0,15201003.0,Hahni-Till,15201530
+2426,{BCB95F90-3944-42EF-AAAD-36C317C6A00B},,2022-05-25 15:18:02.000000,2022-05-25 15:18:02.000000,,,,,,,,,,,,,,,,2.0,15201311.0,Bergsturzablagerung von Ralligen (im Thunersee),15201531
+2746,{0C56AF45-3443-4E97-8393-D69DF9197176},,2022-12-05 19:29:45.000001,2022-12-05 19:29:45.000001,,,,,,,,,,,,,,,,2.0,15201002.0,"Niederterrassenschotter, oberste Terrasse",15201536
+2747,{D099A0B0-D144-4629-ACED-E3C5D56CECDF},,2022-12-05 19:29:46.000000,2022-12-05 19:29:46.000000,,,,,,,,,,,,,,,,2.0,15201004.0,"Tiefere Deckenschotter, unteres Niveau",15201537
+238,{5EFE4034-AEDF-4B0C-8182-CABB41D41F79},,2017-04-18 15:39:38.000000,2017-04-18 15:39:38.000000,,,,,,,,,,,,,,,,3.0,15201053.0,Gutsch-Schotter,15201240
+239,{70020D7C-C7F7-45A2-8FF5-1B0FEBE13739},,2017-04-18 15:40:46.000000,2017-04-18 15:40:46.000000,,,,,,,,,,,,,,,,3.0,15201053.0,Junkerenwald-Schotter,15201241
+240,{60502494-8876-40BD-BED6-144DDB0097C5},,2017-04-18 15:41:54.000000,2017-04-18 15:41:54.000000,,,,,,,,,,,,,,,,3.0,15201053.0,Chräjeloch-Schotter,15201242
+241,{6C0C544D-6450-484D-9BB5-2AA9C1417C80},,2017-04-18 15:43:02.000000,2017-04-18 15:43:02.000000,,,,,,,,,,,,,,,,3.0,15201053.0,Butteberg-Schotter,15201243
+242,{7CFA085E-4C2F-4DE4-8AD6-85E31C25F061},,2017-04-18 15:44:10.000001,2017-04-18 15:44:10.000001,,,,,,,,,,,,,,,,3.0,15201053.0,Höchi-Schotter,15201244
+243,{4FE82A91-0BD1-4B32-992C-17906235B201},,2017-04-18 15:45:18.000000,2017-04-18 15:45:18.000000,,,,,,,,,,,,,,,,3.0,15201082.0,Heitere-Schotter,15201245
+244,{CBFAF959-E459-4632-883A-BF490DFEF40E},,2017-04-18 15:46:26.000000,2017-04-18 15:46:26.000000,,,,,,,,,,,,,,,,3.0,15201082.0,Holziken-Schotter,15201246
+245,{1B1CF083-6D92-46C3-B5F1-7A023026B915},,2017-04-18 15:47:35.000000,2017-04-18 15:47:35.000000,,,,,,,,,,,,,,,,3.0,15201082.0,Ruedertal-Schotter,15201247
+246,{A938C758-3AD6-4F2A-902A-275FDA033C44},,2017-04-18 15:48:43.000000,2017-04-18 15:48:43.000000,,,,,,,,,,,,,,,,3.0,15201082.0,Bänkel-Schotter,15201248
+247,{E2A92A70-3773-4751-B258-22BDED841FAA},,2017-04-18 15:49:51.000000,2017-04-18 15:49:51.000000,,,,,,,,,,,,,,,,1.0,0.0,"Quartär, undifferenziert",15201249
+248,{C7E238FC-E67D-410F-8CE3-144026257575},,2017-04-18 15:50:59.000001,2017-04-18 15:50:59.000001,,,,,,,,,,,,,,,,1.0,0.0,"Deckenschotter, undifferenziert",15201250
+249,{CD3EC09A-8121-4EA9-945B-1B99C864E0E6},,2017-04-18 15:52:08.000000,2017-04-18 15:52:08.000000,,,,,,,,,,,,,,,,2.0,15201250.0,Girenbad-Schotter,15201251
+250,{DB53CE77-71E7-4CC7-BB30-A6F473E6D7B0},,2017-04-18 15:53:16.000001,2017-04-18 15:53:16.000001,,,,,,,,,,,,,,,,2.0,15201004.0,Sagenbach-Schotter,15201252
+251,{57111D0D-34C8-404C-A098-36CB6D10C558},,2017-04-18 15:54:24.000000,2017-04-18 15:54:24.000000,,,,,,,,,,,,,,,,2.0,15201004.0,Schrotzburg-Schotter,15201253
+252,{4156F997-5525-43E3-B0D0-1DA45471EFDC},,2017-04-18 15:55:33.000001,2017-04-18 15:55:33.000001,,,,,,,,,,,,,,,,2.0,15201004.0,Schrotzburg-Till,15201254
+253,{5B15532D-45FA-481D-8EB2-756698AF507F},,2017-04-18 15:56:42.000000,2017-04-18 15:56:42.000000,,,,,,,,,,,,,,,,2.0,15201004.0,Bohlingen-Schotter,15201255
+254,{9A19317E-8D9E-43E4-98A5-7A957A02798F},,2017-04-18 15:57:50.000000,2017-04-18 15:57:50.000000,,,,,,,,,,,,,,,,2.0,15201004.0,Bannholz-Schotter,15201256
+255,{91341F51-A0F6-4B79-B567-50AB5D776E7F},,2017-04-18 15:58:59.000000,2017-04-18 15:58:59.000000,,,,,,,,,,,,,,,,2.0,15201004.0,Hungerbol-Schotter,15201257
+256,{D077777E-5D74-4DA4-93F8-D00B7C1435F3},,2017-04-18 16:01:29.000000,2017-04-18 16:01:29.000000,,,,,,,,,,,,,,,,2.0,15201005.0,Chilchstapfen-Schotter,15201258
+826,{62C07FE5-D09E-4CA2-9111-BAFAC52F974B},,2018-03-08 08:32:24.000000,2018-03-08 08:32:24.000000,,,,,,,,,,,,,,,,2.0,15201333.0,Ofenloch-Karstfüllung,15201259
+827,{EC07F501-B5BC-4AF8-B16C-CF0ABE6429AA},,2018-03-08 08:33:18.000000,2018-03-08 08:33:18.000000,,,,,,,,,,,,,,,,4.0,15201008.0,Wurmsbach-Deltaablagerungen,15201260
+828,{67C515FB-D3A4-41BD-8688-348FDFE2F2BA},,2018-03-08 08:34:12.000000,2018-03-08 08:34:12.000000,,,,,,,,,,,,,,,,4.0,15201008.0,Oeschinensee-Bergsturzablagerungen,15201261
+829,{D72CFFCE-F1D9-4CC4-8F7A-20D7C77B9801},,2018-03-08 08:35:04.000000,2018-03-08 08:35:04.000000,,,,,,,,,,,,,,,,4.0,15201008.0,Fisistock-Bergsturzablagerungen,15201262
+830,{6F1DCB61-0DBD-4337-B30B-325D12A2D9D8},,2018-03-08 08:35:55.000000,2018-03-08 08:35:55.000000,,,,,,,,,,,,,,,,4.0,15201008.0,Bire-Bergsturzablagerungen,15201263
+831,{2EB89144-D4B6-4DB9-8802-92FF92A86DF0},,2018-03-08 08:36:45.000000,2018-03-08 08:36:45.000000,,,,,,,,,,,,,,,,4.0,15201008.0,Hasle-Schotter,15201264
+832,{04AFE3DE-703D-4323-AAD5-7AFC6CF83EB8},,2018-03-08 08:37:36.000000,2018-03-08 08:37:36.000000,,,,,,,,,,,,,,,,4.0,15201008.0,Fankhusgrabe-Schotter,15201265
+833,{5D1FFF94-EEA4-415A-9E1B-F24CF15C1B75},,2018-03-08 08:38:27.000000,2018-03-08 08:38:27.000000,,,,,,,,,,,,,,,,2.0,15201001.0,Rossgaden-Schotter,15201266
+834,{35FBE191-7F35-45C3-ABF6-ACFAFA92605E},,2018-03-08 08:39:18.000000,2018-03-08 08:39:18.000000,,,,,,,,,,,,,,,,3.0,15201050.0,Grundtal-Schotter,15201267
+835,{C7EA76C5-C7AE-469C-BB7D-9322C7F7FB00},,2018-03-08 08:40:11.000000,2018-03-08 08:40:11.000000,,,,,,,,,,,,,,,,3.0,15201050.0,Murg-Schieferkohle,15201268
+836,{809AD1B1-BF83-490D-AE54-92CD68920550},,2018-03-08 08:41:01.000001,2018-03-08 08:41:01.000001,,,,,,,,,,,,,,,,2.0,15201003.0,Oberricken-Schotter,15201269
+837,{6FDDC39B-FEB0-4406-AF98-3D4EA55C1584},,2018-03-08 08:41:52.000001,2018-03-08 08:41:52.000001,,,,,,,,,,,,,,,,2.0,15201003.0,Haslentobel-Schotter,15201270
+838,{380CD268-19BD-4337-BF01-0680C1B49FC4},,2018-03-08 08:42:43.000001,2018-03-08 08:42:43.000001,,,,,,,,,,,,,,,,2.0,15201003.0,Aatal-Seebodenlehm,15201271
+839,{7BDF52CB-18F8-4BB2-8A25-9CEAE45E730D},,2018-03-08 08:43:33.000000,2018-03-08 08:43:33.000000,,,,,,,,,,,,,,,,2.0,15201003.0,Eschenbach-Formation,15201272
+840,{382DF140-9E75-41AC-ABF8-5AC8B7096B64},,2018-03-08 08:44:23.000000,2018-03-08 08:44:23.000000,,,,,,,,,,,,,,,,2.0,15201003.0,Oberkirch-Seebodenlehm,15201273
+841,{4453E4C8-208E-4785-90D6-24CD579AF718},,2018-03-08 08:45:14.000000,2018-03-08 08:45:14.000000,,,,,,,,,,,,,,,,2.0,15201003.0,Günterstall-Schotter,15201274
+842,{D09B6F80-7C38-4EA3-A8D4-B06DF2C4C0FD},,2018-03-08 08:46:05.000000,2018-03-08 08:46:05.000000,,,,,,,,,,,,,,,,2.0,15201003.0,Gublen-Schotter,15201275
+843,{28F552CC-6D15-46D5-8C49-1562C7D8EF71},,2018-03-08 08:46:59.000000,2018-03-08 08:46:59.000000,,,,,,,,,,,,,,,,2.0,15201003.0,Unter-Buechwald-Schotter,15201276
+844,{F2C9CA5D-15D0-473E-9858-99526F08A441},,2018-03-08 08:47:53.000000,2018-03-08 08:47:53.000000,,,,,,,,,,,,,,,,2.0,15201003.0,Regelstein-Till,15201277
+845,{A26AB3DE-F54E-46EB-A783-B136128F3939},,2018-03-08 08:48:46.000000,2018-03-08 08:48:46.000000,,,,,,,,,,,,,,,,2.0,15201003.0,Halden-Seeablagerungen,15201278
+846,{9F6332D1-5BBE-4C3E-9AA1-DE49259DD7BA},,2018-03-08 08:49:39.000000,2018-03-08 08:49:39.000000,,,,,,,,,,,,,,,,2.0,15201003.0,Schafbüel-Formation,15201279
+847,{8869E4C2-7B46-4C2C-8DDB-E2FC66C8C9B2},,2018-03-08 08:50:30.000000,2018-03-08 08:50:30.000000,,,,,,,,,,,,,,,,2.0,15201003.0,Unteres-Huttenbüel-Schotter,15201280
+848,{F2E30A53-5365-4EBF-A34F-8BFBD28225EC},,2018-03-08 08:51:23.000000,2018-03-08 08:51:23.000000,,,,,,,,,,,,,,,,2.0,15201003.0,Winden-Schieferkohle,15201281
+849,{3E7AAAA8-615C-4A2E-BE1B-D1A6183EAFE9},,2018-03-08 08:52:18.000000,2018-03-08 08:52:18.000000,,,,,,,,,,,,,,,,2.0,15201003.0,Tiefenwinkel-Seebodensedimente,15201282
+850,{59FDC079-BC72-42B5-97E5-464607165767},,2018-03-08 08:53:12.000000,2018-03-08 08:53:12.000000,,,,,,,,,,,,,,,,2.0,15201003.0,Uznach-Schieferkohle,15201283
+851,{D6D752C3-68F3-411B-986C-E4E4460F68C6},,2018-03-08 08:54:06.000000,2018-03-08 08:54:06.000000,,,,,,,,,,,,,,,,2.0,15201003.0,Embrach-Seeablagerungen,15201284
+1146,{8A5B4A48-CA82-45FB-8FC3-21D576D8B7D1},,2018-10-03 16:04:53.000000,2018-10-03 16:04:53.000000,,,,,,,,,,,,,,,,2.0,15201311.0,Bergsturzablagerungen von Sierre,15201286
+1147,{AA4A01F2-D7F3-40B8-A7BD-E676C7F6455E},,2018-10-03 16:04:54.000000,2018-10-03 16:04:54.000000,,,,,,,,,,,,,,,,2.0,15201311.0,Bergsturzablagerungen von Chiètres,15201287
+1148,{237B2613-CAB3-465D-8AC3-F838520DBFF7},,2018-10-03 16:04:55.000000,2018-10-03 16:04:55.000000,,,,,,,,,,,,,,,,2.0,15201311.0,Bergsturzablagerungen von Chessel-Noville,15201288
+1149,{88B0AFB3-018A-4D11-897B-F7B3BA3AD3B7},,2018-10-03 16:04:56.000000,2018-10-03 16:04:56.000000,,,,,,,,,,,,,,,,2.0,15201311.0,Bergsturzablagerungen von Novalles-Vugelles,15201289
+1150,{6C492D29-2165-470F-9E5D-F978B0D0F2E0},,2018-10-03 16:04:57.000000,2018-10-03 16:04:57.000000,,,,,,,,,,,,,,,,2.0,15201311.0,Bergsturzablagerungen von Gwelber-Laui-Weid,15201290
+1151,{C6953F7F-8AFD-47DB-A6BA-BF7CC708A37A},,2018-10-03 16:04:58.000001,2018-10-03 16:04:58.000001,,,,,,,,,,,,,,,,2.0,15201311.0,Bergsturzablagerungen von Castasegna,15201291
+1152,{B2605B22-1942-40DF-A733-95764CAAB336},,2018-10-03 16:04:59.000000,2018-10-03 16:04:59.000000,,,,,,,,,,,,,,,,2.0,15201311.0,Bergsturzablagerungen von Sogno,15201292
+1153,{46AB8FD3-5263-4618-86F9-222E8725D10B},,2018-10-03 16:05:00.000000,2018-10-03 16:05:00.000000,,,,,,,,,,,,,,,,2.0,15201311.0,Bergsturzablagerungen von Prapan,15201293
+1154,{80E4B4FE-8CBA-4552-88CA-6651001F3985},,2018-10-03 16:05:00.000000,2018-10-03 16:05:00.000000,,,,,,,,,,,,,,,,2.0,15201311.0,Bergsturzablagerungen von Schaingels,15201294
+1155,{0A0C4044-357F-46C1-9A6B-0E3B7BB420AE},,2018-10-03 16:05:02.000000,2018-10-03 16:05:02.000000,,,,,,,,,,,,,,,,2.0,15201311.0,Bergsturzablagerungen von Mutta,15201295
+1156,{7A89651E-F1E9-4A3F-9AA9-C0ADF279086F},,2018-10-03 16:05:03.000000,2018-10-03 16:05:03.000000,,,,,,,,,,,,,,,,2.0,15201311.0,Bergsturzablagerungen von Brienz,15201296
+1157,{BA1EDFC8-710B-4DDC-8ECC-CF6E07E7A17D},,2018-10-03 16:05:04.000000,2018-10-03 16:05:04.000000,,,,,,,,,,,,,,,,2.0,15201311.0,Bergsturzablagerungen von Flims,15201297
+1158,{4E28367B-425F-41C8-967C-23C3240C601F},,2018-10-03 16:05:05.000000,2018-10-03 16:05:05.000000,,,,,,,,,,,,,,,,2.0,15201311.0,Bergsturzablagerungen von Brüsis,15201298
+1159,{C0BBF2DE-F5A9-4956-9BA3-B4F8A2000374},,2018-10-03 16:05:06.000001,2018-10-03 16:05:06.000001,,,,,,,,,,,,,,,,2.0,15201311.0,Bergsturzablagerungen vom Chapf,15201299
+1160,{38B010B6-40FB-40C6-A3C2-2FC2D6EAC866},,2018-10-03 16:05:07.000000,2018-10-03 16:05:07.000000,,,,,,,,,,,,,,,,2.0,15201311.0,Bergsturzablagerungen von Derborence,15201300
+1161,{9AEBBB1A-72BE-4C47-80F5-F26B08409A24},,2018-10-03 16:05:07.000000,2018-10-03 16:05:07.000000,,,,,,,,,,,,,,,,2.0,15201311.0,Bergsturzablagerungen vom Drussetschawald,15201301
+1162,{69945350-2492-4F84-937C-801CA9D932B7},,2018-10-03 16:05:08.000000,2018-10-03 16:05:08.000000,,,,,,,,,,,,,,,,2.0,15201311.0,Bergsturzablagerungen vom Delenwald,15201302
+1163,{A9219FE4-8E2C-4484-A728-A5A7E8568911},,2018-10-03 16:05:09.000000,2018-10-03 16:05:09.000000,,,,,,,,,,,,,,,,2.0,15201311.0,Bergsturzablagerungen von Elm,15201303
+1164,{B1E6E5C6-FDA8-47A2-9B18-630976293103},,2018-10-03 16:05:10.000000,2018-10-03 16:05:10.000000,,,,,,,,,,,,,,,,2.0,15201311.0,Bergsturzablagerungen von Goldau,15201304
+1165,{753F377A-DC7D-40D7-B4B5-F59B8BC6AD8B},,2018-10-03 16:05:11.000000,2018-10-03 16:05:11.000000,,,,,,,,,,,,,,,,2.0,15201311.0,Bergsturzablagerungen von Iragell,15201305
+1166,{627A6E6F-97C4-413E-BE53-F095CAA92CEE},,2018-10-03 16:05:12.000000,2018-10-03 16:05:12.000000,,,,,,,,,,,,,,,,2.0,15201311.0,Bergsturzablagerungen vom Kernwald,15201306
+1167,{EB5DD5B2-D9E5-4ABB-88D3-03C3093439A3},,2018-10-03 16:05:13.000000,2018-10-03 16:05:13.000000,,,,,,,,,,,,,,,,2.0,15201311.0,Bergsturzablagerungen von Triesenberg,15201307
+1168,{08CF6297-6D90-4406-9F70-CB186A5D86C1},,2018-10-03 16:05:14.000001,2018-10-03 16:05:14.000001,,,,,,,,,,,,,,,,2.0,15201311.0,Bonaduz-Formation,15201308
+1169,{36DBABB2-9DD0-4A67-9B3B-744E1F37EF8B},,2018-10-03 16:05:15.000000,2018-10-03 16:05:15.000000,,,,,,,,,,,,,,,,3.0,15201124.0,Bonfol-Ton,15201309
+1170,{946B2034-C158-4572-B477-65FE2FD319DD},,2018-10-03 16:05:16.000000,2018-10-03 16:05:16.000000,,,,,,,,,,,,,,,,2.0,15201311.0,Bergsturzablagerungen von Tamins,15201310
+1171,{13A9E5D6-51BB-470A-A3D4-87F5C7D75EEF},,2018-10-03 16:05:17.000000,2018-10-03 16:05:17.000000,,,,,,,,,,,,,,,,1.0,0.0,Informell benannte Bergsturzablagerungen,15201311
+1172,{7C96336C-12ED-46BA-B9A5-33DC6835A4F1},,2018-10-03 16:05:18.000000,2018-10-03 16:05:18.000000,,,,,,,,,,,,,,,,1.0,0.0,Informell benannte künstliche Ablagerungen,15201312
+1173,{C316BA3E-047A-4550-8378-099036A9B3ED},,2018-10-03 16:05:19.000000,2018-10-03 16:05:19.000000,,,,,,,,,,,,,,,,2.0,15201312.0,Künstliche Ablagerungen des Bahnhofs Brig,15201313
+1174,{0CF79B88-96A1-49E9-84D2-FAE2AD73A4D2},,2018-10-03 16:05:20.000000,2018-10-03 16:05:20.000000,,,,,,,,,,,,,,,,2.0,15201312.0,Künstliche Ablagerungen Golar,15201314
+1175,{859D94F8-844B-4E79-8FC0-AF5B39DF0C5E},,2018-10-03 16:05:21.000000,2018-10-03 16:05:21.000000,,,,,,,,,,,,,,,,2.0,15201312.0,Künstliche Ablagerungen der Gamsenried-Deponie,15201315
+1176,{D4BA3CB9-5A88-4BC5-A0FD-D4EAC61188FD},,2018-10-03 16:05:22.000001,2018-10-03 16:05:22.000001,,,,,,,,,,,,,,,,2.0,15201312.0,Künstliche Ablagerungen des Riedertals,15201316
+1177,{03BDB66C-0E40-4CFB-AA34-5C650AC4B1A7},,2018-10-03 16:05:23.000000,2018-10-03 16:05:23.000000,,,,,,,,,,,,,,,,1.0,0.0,Informell benannte Sackungsmassen,15201317
+1178,{408E11A0-1B27-46FC-A5FC-1273DF55EE2F},,2018-10-03 16:05:23.000000,2018-10-03 16:05:23.000000,,,,,,,,,,,,,,,,2.0,15201317.0,Sackungsmasse des Heinzenbergs,15201318
+1179,{56269F6F-C945-4BFE-8732-5AA6BA9466C7},,2018-10-03 16:05:24.000000,2018-10-03 16:05:24.000000,,,,,,,,,,,,,,,,1.0,0.0,Informell benannte fluviatile Schotter,15201319
+1180,{3AFC72D0-8DD2-42CC-96C2-E4753964752A},,2018-10-03 16:05:25.000000,2018-10-03 16:05:25.000000,,,,,,,,,,,,,,,,2.0,15201319.0,Schotter und Sand der Rhône,15201320
+1181,{5C28676C-284D-4770-BC8F-4B7DB17F273A},,2018-10-03 16:05:26.000000,2018-10-03 16:05:26.000000,,,,,,,,,,,,,,,,2.0,15201319.0,Schotter und Sand der Vispa,15201321
+1182,{521CDD18-1726-46AC-85E8-ADAFCED97760},,2018-10-03 16:05:27.000000,2018-10-03 16:05:27.000000,,,,,,,,,,,,,,,,1.0,0.0,Informell benannter Bachschutt,15201322
+1183,{CE5E2C99-477A-48CC-9BA6-8D057B99EA51},,2018-10-03 16:05:28.000000,2018-10-03 16:05:28.000000,,,,,,,,,,,,,,,,2.0,15201322.0,Bachschutt des Baltschiederbachs,15201323
+1184,{4CCAF059-6C3C-4117-9F1D-C9F820A4B4FD},,2018-10-03 16:05:29.000000,2018-10-03 16:05:29.000000,,,,,,,,,,,,,,,,2.0,15201322.0,Bachschutt des Bietschbachs,15201324
+1185,{24A282E3-B647-4EA2-8376-C21383AA92B5},,2018-10-03 16:05:30.000000,2018-10-03 16:05:30.000000,,,,,,,,,,,,,,,,2.0,15201322.0,Bachschutt des Chelchbachs,15201325
+1186,{25D11141-9F13-4538-8821-3E6B3B410D8D},,2018-10-03 16:05:31.000000,2018-10-03 16:05:31.000000,,,,,,,,,,,,,,,,2.0,15201322.0,Bachschutt der Gamsa,15201326
+1187,{BBD1F39C-9013-431F-9A76-502884604CEF},,2018-10-03 16:05:32.000000,2018-10-03 16:05:32.000000,,,,,,,,,,,,,,,,2.0,15201322.0,Bachschutt des Jolibachs,15201327
+1188,{CF750CFA-D282-4FB0-8060-D551D9BB8F1C},,2018-10-03 16:05:34.000000,2018-10-03 16:05:34.000000,,,,,,,,,,,,,,,,2.0,15201322.0,Bachschutt der Lonza,15201328
+1189,{754006CB-1F5E-49E1-BF2A-BF3B5B6D4C9C},,2018-10-03 16:05:35.000000,2018-10-03 16:05:35.000000,,,,,,,,,,,,,,,,2.0,15201322.0,Bachschutt der Saltina,15201329
+1190,{464CE379-0AB0-4379-B1E8-6F743F3AE7C1},,2018-10-03 16:05:36.000000,2018-10-03 16:05:36.000000,,,,,,,,,,,,,,,,2.0,15201322.0,Bachschutt der Vispa,15201330
+1191,{404E36D1-C468-4137-AFCF-5C034165FE96},,2018-10-03 16:05:36.000000,2018-10-03 16:05:36.000000,,,,,,,,,,,,,,,,2.0,15201322.0,Bachschutt der Gürbe,15201331
+1192,{9FEF8A08-5BCA-4E68-8251-D90E12550F0D},,2018-10-03 16:05:37.000000,2018-10-03 16:05:37.000000,,,,,,,,,,,,,,,,2.0,15201322.0,Bachschutt des Lombachs,15201332
+1193,{1449E128-010F-452C-828D-266C2A24BD85},,2018-10-03 16:05:38.000000,2018-10-03 16:05:38.000000,,,,,,,,,,,,,,,,1.0,0.0,Pliozäne Ablagerungen,15201333
+1194,{25EE47AE-A30D-475B-8325-17DCF41449B1},,2018-10-03 16:05:39.000000,2018-10-03 16:05:39.000000,,,,,,,,,,,,,,,,4.0,15201008.0,Stockesee-Sediment,15201334
+1195,{820CA20A-5817-461E-BCC9-406C04FE41DD},,2018-10-03 16:05:40.000000,2018-10-03 16:05:40.000000,,,,,,,,,,,,,,,,4.0,15201008.0,Strätligen-Till,15201335
+1196,{A6CC92F9-128A-42A2-96FF-D89887776A28},,2018-10-03 16:05:41.000001,2018-10-03 16:05:41.000001,,,,,,,,,,,,,,,,4.0,15201008.0,Bärenholz-Till,15201336
+1197,{5A9B9852-C257-41DF-863C-C7C3A8DC9891},,2018-10-03 16:05:42.000000,2018-10-03 16:05:42.000000,,,,,,,,,,,,,,,,4.0,15201008.0,Wässerifluh-Formation,15201337
+1198,{7E8B62F5-7E32-4932-891F-E2F6E9881B19},,2018-10-03 16:05:43.000000,2018-10-03 16:05:43.000000,,,,,,,,,,,,,,,,3.0,15201006.0,Schlyffi-Till,15201338
+1199,{CC53215A-E932-4362-9578-19DD41128822},,2018-10-03 16:05:44.000000,2018-10-03 16:05:44.000000,,,,,,,,,,,,,,,,3.0,15201006.0,Brüggstutz-Schotter,15201339
+1200,{EF74DAC4-1699-491A-8D99-4CA8F4F62571},,2018-10-03 16:05:45.000000,2018-10-03 16:05:45.000000,,,,,,,,,,,,,,,,4.0,15201007.0,Guntelsei-Till,15201340
+1201,{EE64D90F-CDF7-41EC-BD37-962B54C39692},,2018-10-03 16:05:45.000000,2018-10-03 16:05:45.000000,,,,,,,,,,,,,,,,3.0,15201006.0,Guntelsei-Schotter,15201341
+1202,{24154FEC-3B79-4041-AF27-2BA99BB674DC},,2018-10-03 16:05:46.000000,2018-10-03 16:05:46.000000,,,,,,,,,,,,,,,,2.0,15201003.0,Steghalden-Schotter,15201342
+1203,{68971644-47E0-4443-A420-5E1FFDE14CE7},,2018-10-03 16:05:47.000000,2018-10-03 16:05:47.000000,,,,,,,,,,,,,,,,2.0,15201003.0,Glütschtal-Formation,15201343
+159,{D2DFC4C0-AC82-4B67-99D3-2BB657B345BD},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,3.0,15201098.0,Mittlere Iberigschotter,15201101
+160,{2C62E78C-D887-49A8-92C2-D86FA47C5D03},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,3.0,15201098.0,Untere Iberigschotter,15201102
+161,{B1AD99DB-AB50-4054-8741-6F92ADF39054},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,3.0,15201098.0,Unterer Till,15201103
+162,{B9E822C7-82ED-404E-8802-F33472F5B273},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,2.0,15201004.0,Wolfacher-Schotter und -Till,15201104
+163,{76573101-B6B3-4FFC-A041-655E5B1EC99D},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,2.0,15201004.0,Fornech-Schotter,15201105
+164,{1C231DF1-54DA-4D2C-9741-DC49BEA4B3B1},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,1.0,0.0,Höhere Deckenschotter,15201005
+165,{6622852E-9E03-4AE2-842E-ECC876C9B1A9},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,2.0,15201005.0,Forenirchel-Schotter,15201106
+166,{551A50EE-D267-4504-8AD6-2247F4A6E9DB},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,2.0,15201005.0,Steig-Schotter,15201107
+167,{AEFDAB15-7C5F-4343-96F1-FC656D1CDD12},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,2.0,15201005.0,Irchel-Schotterkomplex,15201108
+168,{409FF9A5-78A0-44DA-A74A-489C1EC96ECD},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,3.0,15201108.0,Obere Irchelschotter,15201109
+170,{A308FBF1-E7FD-4446-B25F-F16C3421984E},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,3.0,15201108.0,Irchel-Dolomitschotter,15201111
+171,{0CC09EA5-BAA2-45D6-A2D2-E45B61AA6458},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,3.0,15201108.0,Mittlere Irchelschotter,15201112
+172,{A65DC57A-5C41-43E4-9A27-6D69E21B5341},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,3.0,15201108.0,Untere Irchelschotter,15201113
+173,{E7300995-D707-45E2-A8B3-93517D8DB00B},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,2.0,15201005.0,Langacher-Schotter,15201114
+174,{EDAADA39-CA81-4C18-93C3-B3E52B5CAFEE},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,2.0,15201005.0,Dürn-Formation,15201115
+175,{5336BAE2-0F61-454E-9FB8-97E895F00998},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,2.0,15201005.0,Degermoos-Schotter,15201116
+176,{9E37D3B3-CCE1-4F1B-8713-1BA77E37F509},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,2.0,15201005.0,Ebnet-Schotter,15201117
+177,{BAF1084B-C3F3-4D03-990B-17E956A6FF1F},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,2.0,15201005.0,Wannen-Schotter,15201118
+178,{8B859FA6-CBED-4E1E-B55B-FA974B65BB49},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,2.0,15201005.0,Egghalden-Schotter,15201119
+179,{94A7B1A3-57F4-4C5D-866F-EDBFC3507899},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,2.0,15201005.0,Buechen-Formation,15201120
+180,{1098E46F-FE57-4031-9443-932EF7DF4F04},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,2.0,15201005.0,Feusi-Schotter,15201121
+181,{8C4C7F1B-5EE0-4C37-9052-B28C8CA1F13A},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,2.0,15201005.0,Lindenhau-Schotter,15201122
+182,{23928FD6-4784-44F0-A43F-210C4F523B73},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,2.0,15201005.0,Egg-Schotter,15201123
+183,{008403B7-7B70-4640-97BB-AA0093F42767},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,2.0,15201333.0,Sundgau-Schotter,15201124
+184,{CD32F898-7A6D-45A8-BB75-FDD723228A0F},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,3.0,15201124.0,Mischschotter,15201125
+185,{3E185562-F60B-4EA6-B1C3-91BF17CBB520},,2016-01-01 00:00:00.000000,2016-01-01 00:00:00.000000,,,,,,,,,,,,,,,,2.0,15201333.0,Weisse Serie,15201126
+186,{6CB42C02-C4CC-4CDA-8A74-A269D6385590},,2017-04-18 14:41:36.000001,2017-04-18 14:41:36.000001,,,,,,,,,,,,,,,,1.0,0.0,Münsingen-Schotterkomplex,15201188
+187,{719D4A99-680C-4633-9702-C57182CC006B},,2017-04-18 14:42:42.000000,2017-04-18 14:42:42.000000,,,,,,,,,,,,,,,,2.0,15201002.0,Alterswil-Schotter,15201189
+188,{05180FFC-6210-41D3-A262-1DB381232E53},,2017-04-18 14:43:49.000000,2017-04-18 14:43:49.000000,,,,,,,,,,,,,,,,2.0,15201002.0,Karlsruhe-Schotter,15201190
+189,{00F93DF2-9B39-4653-AFA6-6939FE27BD28},,2017-04-18 14:44:55.000001,2017-04-18 14:44:55.000001,,,,,,,,,,,,,,,,2.0,15201002.0,Chisetal-Schotter,15201191
+190,{3FC87625-2BE6-4651-8783-487972A606B6},,2017-04-18 14:46:01.000000,2017-04-18 14:46:01.000000,,,,,,,,,,,,,,,,2.0,15201002.0,Grauholz-Schotter,15201192
+191,{DFFECBF4-7B36-4E30-B713-9AA2C952EEC5},,2017-04-18 14:47:07.000000,2017-04-18 14:47:07.000000,,,,,,,,,,,,,,,,2.0,15201002.0,Trachslau-Schotter,15201193
+192,{2C4D9E49-E9B3-40C4-9EF6-DBFD0264C1E9},,2017-04-18 14:48:13.000000,2017-04-18 14:48:13.000000,,,,,,,,,,,,,,,,2.0,15201002.0,Bennau-Schotter,15201194
+193,{1B382D74-AA50-4B4A-97AC-8ED65F72265A},,2017-04-18 14:49:19.000000,2017-04-18 14:49:19.000000,,,,,,,,,,,,,,,,2.0,15201002.0,Hütten-Schotter,15201195
+194,{B560A09E-14D1-4FD1-8269-FEB9B20BCB49},,2017-04-18 14:50:25.000000,2017-04-18 14:50:25.000000,,,,,,,,,,,,,,,,2.0,15201002.0,Schnabelsberg-Stauchotter,15201196
+195,{61A01CC9-D70D-4BB7-9D4F-7010C1CCCFAB},,2017-04-18 14:51:32.000000,2017-04-18 14:51:32.000000,,,,,,,,,,,,,,,,2.0,15201002.0,Einsiedeln-Lehm,15201197
+196,{25C520A8-8469-476B-973F-15CAA4FC8605},,2017-04-18 14:52:38.000000,2017-04-18 14:52:38.000000,,,,,,,,,,,,,,,,2.0,15201249.0,Willisau-Schotter,15201198
+197,{EB39D959-AC58-4CF8-83E6-6C83CD5E670E},,2017-04-18 14:53:44.000000,2017-04-18 14:53:44.000000,,,,,,,,,,,,,,,,2.0,15201002.0,Wolhusen-Schotter,15201199
+198,{EF76BEEC-FB3B-486B-9420-7547F79B4B54},,2017-04-18 14:54:51.000000,2017-04-18 14:54:51.000000,,,,,,,,,,,,,,,,2.0,15201002.0,Wiggen-Schotter,15201200
+3429,{1558DC80-BB46-4660-93E4-1ABA3A8BEA88},,2024-10-26 03:56:28.000000,2024-10-26 03:56:28.000000,,,,,,,,,,,,,,,,5.0,15201607.0,Hittnau-Seeablagerung,15201609
+3430,{4D5A2387-4085-48B4-BC23-115BAA2817BE},,2024-10-26 03:56:29.000000,2024-10-26 03:56:29.000000,,,,,,,,,,,,,,,,5.0,15201607.0,Russikon-Seeablagerung,15201610
+3431,{576BE71C-C951-4642-AC29-39174777ED3B},,2024-10-26 03:56:29.000000,2024-10-26 03:56:29.000000,,,,,,,,,,,,,,,,4.0,15201008.0,Stetten-Stadium,15201611
+3432,{3DF01D8D-11B1-4A10-9F18-F86CE3945090},,2024-10-26 03:56:30.000000,2024-10-26 03:56:30.000000,,,,,,,,,,,,,,,,5.0,15201611.0,Stetten-Stand-I,15201612
+3433,{AE567E05-9A26-4CBF-9E76-F47FF8C0CC71},,2024-10-26 03:56:30.000000,2024-10-26 03:56:30.000000,,,,,,,,,,,,,,,,5.0,15201611.0,Stetten-Stand-II,15201613
+3434,{220773C6-BFE0-4EB5-95BA-C7CF4D507F77},,2024-10-26 03:56:31.000000,2024-10-26 03:56:31.000000,,,,,,,,,,,,,,,,4.0,15201008.0,Diessenhofen-Stadium,15201614
+3435,{E41D49CC-F30C-4B06-85AA-BC4915C0B4CE},,2024-10-26 03:56:31.000000,2024-10-26 03:56:31.000000,,,,,,,,,,,,,,,,5.0,15201151.0,Mellingen-Stand,15201615
+3436,{CA411C2E-F6C1-498A-8DF1-157FCC3B3418},,2024-10-26 03:56:32.000000,2024-10-26 03:56:32.000000,,,,,,,,,,,,,,,,5.0,15201151.0,Schaffhausen-Stadium,15201616
+3437,{81EC9E73-C63D-424A-88B1-0D5CF5329C77},,2024-10-26 03:56:32.000000,2024-10-26 03:56:32.000000,,,,,,,,,,,,,,,,6.0,15201616.0,Schaffhausen-Stand-I,15201617
+3438,{BE3B09FD-9891-4433-99FE-3802C668959A},,2024-10-26 03:56:33.000000,2024-10-26 03:56:33.000000,,,,,,,,,,,,,,,,6.0,15201616.0,Schaffhausen-Stand-II,15201618
+3439,{54EEC7C7-7711-49FF-8EBB-6CABEF5E3720},,2024-10-26 03:56:33.000000,2024-10-26 03:56:33.000000,,,,,,,,,,,,,,,,5.0,15201151.0,Killwangen-Stadium,15201619
+3440,{84F9672A-F83C-4D9F-9388-923CB298B61E},,2024-10-26 03:56:34.000000,2024-10-26 03:56:34.000000,,,,,,,,,,,,,,,,4.0,15201024.0,"Lottstetten-, Kohlschwärze- und Zelgli-Vorstoss",15201620
+3441,{9FE51FDA-059D-42CC-BA2B-E85100741F5A},,2024-10-26 03:56:34.000000,2024-10-26 03:56:34.000000,,,,,,,,,,,,,,,,4.0,15201024.0,Grafschaft-Schotter,15201621
+3442,{AB347F26-8B9A-41F0-8179-821972E56AC5},,2024-10-26 03:56:35.000001,2024-10-26 03:56:35.000001,,,,,,,,,,,,,,,,2.0,15201001.0,"""Mittelterrasse""",15201622
+3443,{6F158AC1-F714-4C1E-9CBA-2321F0C79762},,2024-10-26 03:56:35.000001,2024-10-26 03:56:35.000001,,,,,,,,,,,,,,,,4.0,15201008.0,Stein-am-Rhein-Stadium,15201593
+3444,{9DC4C446-ED94-4FB8-83FA-320ED6EFB9F7},,2024-10-26 03:56:36.000000,2024-10-26 03:56:36.000000,,,,,,,,,,,,,,,,2.0,15201003.0,"Hochterrasse, mittleres Niveau",15201624
+3445,{A77CFFA4-409F-4011-8F6E-292FF0DB22A4},,2024-10-26 03:56:36.000000,2024-10-26 03:56:36.000000,,,,,,,,,,,,,,,,2.0,15201003.0,"Hochterrasse, oberes Niveau",15201625
+3446,{4F644FBF-2112-4DA5-83A6-72D0862CB0D4},,2024-10-26 03:56:37.000000,2024-10-26 03:56:37.000000,,,,,,,,,,,,,,,,2.0,15201003.0,First-Schotter,15201626
+3447,{FD668D87-7612-4C6C-8A2A-D388AA0A346A},,2024-10-26 03:56:37.000000,2024-10-26 03:56:37.000000,,,,,,,,,,,,,,,,2.0,15201003.0,Helltobel-Schotter,15201627
+3448,{0EDC3E56-8BF1-4AD6-A657-FB818C5ED4D6},,2024-10-26 03:56:38.000000,2024-10-26 03:56:38.000000,,,,,,,,,,,,,,,,2.0,15201003.0,Lettenberg-Seesedimente,15201628
+3449,{274DE86C-1819-4FDB-B465-103FFDB3909B},,2024-10-26 03:56:38.000000,2024-10-26 03:56:38.000000,,,,,,,,,,,,,,,,5.0,15201593.0,Stein-am-Rhein-Stand-I,15201594
+3450,{DCBBEB95-8231-4AC2-B255-CC5FD4DFA23B},,2024-10-26 03:56:39.000000,2024-10-26 03:56:39.000000,,,,,,,,,,,,,,,,2.0,15201003.0,Ursplen-Till,15201630
+3451,{3EAB0AC5-1E7A-4622-B218-1382B9B63762},,2024-10-26 03:56:39.000000,2024-10-26 03:56:39.000000,,,,,,,,,,,,,,,,2.0,15201003.0,Äntschberg-Schotter,15201631
+3452,{89C45B5D-7CD4-47DE-84BF-118DC8932ADE},,2024-10-26 03:56:40.000000,2024-10-26 03:56:40.000000,,,,,,,,,,,,,,,,2.0,15201003.0,Oberrüti-Schotter,15201632
+3453,{EFEFA898-C54D-44C5-B8DB-E72326BAC1CF},,2024-10-26 03:56:40.000000,2024-10-26 03:56:40.000000,,,,,,,,,,,,,,,,2.0,15201003.0,Neerach-Schotter,15201633
+3454,{AB58DC07-CF04-4999-8E38-A742C9BC3941},,2024-10-26 03:56:41.000000,2024-10-26 03:56:41.000000,,,,,,,,,,,,,,,,2.0,15201003.0,Bachs-Schotter,15201634
+3455,{C1DF86A8-D64E-4658-B8FA-2C3664B0B023},,2024-10-26 03:56:41.000000,2024-10-26 03:56:41.000000,,,,,,,,,,,,,,,,2.0,15201003.0,Steighalden-Schotter,15201635
+3456,{138E53B9-38F1-404C-8C16-56A4293CDFC2},,2024-10-26 03:56:42.000000,2024-10-26 03:56:42.000000,,,,,,,,,,,,,,,,2.0,15201003.0,Mühlbach-Formation,15201636
+3457,{73708923-853F-4A05-83D0-20A40E94F841},,2024-10-26 03:56:42.000000,2024-10-26 03:56:42.000000,,,,,,,,,,,,,,,,2.0,15201003.0,Chilchberg-Schotter,15201637
+3458,{ADB9C7A3-D2B7-43C4-9B43-3035DD83CA34},,2024-10-26 03:56:43.000001,2024-10-26 03:56:43.000001,,,,,,,,,,,,,,,,2.0,15201003.0,Frenkendorf-Schotter,15201638
+3459,{C84F0824-BA04-4212-9C44-1A1C8FBC5BE2},,2024-10-26 03:56:43.000001,2024-10-26 03:56:43.000001,,,,,,,,,,,,,,,,2.0,15201003.0,Birstal-Schotter,15201639
+3460,{1E7F4A9B-780F-4444-8307-883F398E56C4},,2024-10-26 03:56:43.000001,2024-10-26 03:56:43.000001,,,,,,,,,,,,,,,,3.0,15201053.0,Schlatt-Formation,15201640
+3461,{7A4DB5F4-2D1E-4353-86B3-65EE8F9B3579},,2024-10-26 03:56:44.000000,2024-10-26 03:56:44.000000,,,,,,,,,,,,,,,,4.0,15201064.0,Illmensee-Formation,15201641
+3462,{42824A7B-FD5C-4A45-8A33-B05B1C9C9EF8},,2024-10-26 03:56:44.000000,2024-10-26 03:56:44.000000,,,,,,,,,,,,,,,,4.0,15201064.0,Dietmanns-Formation,15201642
+3463,{64453FF6-7660-4240-BAC0-4F1D820BD5C8},,2024-10-26 03:56:45.000000,2024-10-26 03:56:45.000000,,,,,,,,,,,,,,,,4.0,15201064.0,Hasenweiler-Formation,15201643
+3464,{BD64FD8F-F5A8-4D8D-A535-7414D01BECD3},,2024-10-26 03:56:45.000000,2024-10-26 03:56:45.000000,,,,,,,,,,,,,,,,4.0,15201064.0,Haseltal-Formation,15201644
+3465,{0A875856-E54E-4617-A31B-F96A6C8D378D},,2024-10-26 03:56:46.000000,2024-10-26 03:56:46.000000,,,,,,,,,,,,,,,,4.0,15201064.0,"Birndorf-, Laufenburg- und Zeiningen-Vorstoss",15201645
+3466,{EAF6FA42-CA24-4240-9054-4CD6B7E6089E},,2024-10-26 03:56:46.000000,2024-10-26 03:56:46.000000,,,,,,,,,,,,,,,,5.0,15201645.0,Chäppeli-Schotter,15201646
+3467,{977AFDA1-48F0-44E3-B140-C40C4EFB21FA},,2024-10-26 03:56:47.000000,2024-10-26 03:56:47.000000,,,,,,,,,,,,,,,,5.0,15201645.0,Leuggern-Schotter,15201647
+3468,{6208D936-4510-412B-965E-0A43EA4B0806},,2024-10-26 03:56:47.000000,2024-10-26 03:56:47.000000,,,,,,,,,,,,,,,,5.0,15201645.0,Zelgli-Schotter,15201648
+3469,{1CA8BD9F-E81E-46F1-BC7B-42459A6DFC23},,2024-10-26 03:56:48.000000,2024-10-26 03:56:48.000000,,,,,,,,,,,,,,,,5.0,15201645.0,Leibstadt-Schotter,15201649
+3470,{30ECC31D-838D-428A-ABD9-839B18AA6ADF},,2024-10-26 03:56:48.000000,2024-10-26 03:56:48.000000,,,,,,,,,,,,,,,,5.0,15201645.0,Dogern-Schotter,15201650
+3471,{8DA3BD68-91EC-41FB-A931-7217AD35AB43},,2024-10-26 03:56:49.000000,2024-10-26 03:56:49.000000,,,,,,,,,,,,,,,,5.0,15201645.0,Haldenacher-Schotter,15201651
+3472,{41069A66-E636-49B4-8602-3B804016F984},,2024-10-26 03:56:49.000000,2024-10-26 03:56:49.000000,,,,,,,,,,,,,,,,5.0,15201645.0,Allmendwald-Schotter,15201652
+3473,{BFED0063-97B3-423A-954F-F14C14480E20},,2024-10-26 03:56:50.000000,2024-10-26 03:56:50.000000,,,,,,,,,,,,,,,,5.0,15201597.0,Zürich-Stand-I,15201598
+3474,{7D3F71F2-B9EB-413C-A5AE-F300EEBA937E},,2024-10-26 03:56:50.000000,2024-10-26 03:56:50.000000,,,,,,,,,,,,,,,,5.0,15201645.0,Obersäckingen-Schotter,15201654
+3475,{745957D7-4925-4069-B516-0EB490E687F9},,2024-10-26 03:56:51.000001,2024-10-26 03:56:51.000001,,,,,,,,,,,,,,,,5.0,15201645.0,Schulerholz-Formation,15201655
+3476,{E2B0031E-E2B4-4ECB-A700-1A0A3C77ECEC},,2024-10-26 03:56:51.000001,2024-10-26 03:56:51.000001,,,,,,,,,,,,,,,,5.0,15201645.0,Schachen-Formation,15201656
+3477,{7428E8A3-3A69-4716-94F8-6516BE3F6749},,2024-10-26 03:56:51.000001,2024-10-26 03:56:51.000001,,,,,,,,,,,,,,,,5.0,15201645.0,Schmerlet-Formation,15201657
+3478,{05276137-6EAB-4991-B546-D215BDCEC3E4},,2024-10-26 03:56:52.000000,2024-10-26 03:56:52.000000,,,,,,,,,,,,,,,,5.0,15201645.0,Toktri-Formation,15201658
+3479,{ACAEB7FC-EDC3-40DF-8A44-828E3FE52217},,2024-10-26 03:56:52.000000,2024-10-26 03:56:52.000000,,,,,,,,,,,,,,,,5.0,15201645.0,Buchholz-Till,15201659
+3480,{BF9DB5BD-3377-418B-A0AE-611DBA2D8D30},,2024-10-26 03:56:53.000000,2024-10-26 03:56:53.000000,,,,,,,,,,,,,,,,5.0,15201645.0,Birndorf-Till,15201660
+3481,{32779C64-3C17-4B19-9A60-238F9C45991F},,2024-10-26 03:56:53.000000,2024-10-26 03:56:53.000000,,,,,,,,,,,,,,,,4.0,15201074.0,Geissäcker-Schotter,15201661
+3482,{37226670-73C6-4288-B670-C88A3B84C90A},,2024-10-26 03:56:54.000000,2024-10-26 03:56:54.000000,,,,,,,,,,,,,,,,4.0,15201074.0,Bürgerwald-Schotter,15201662
+3483,{9CF2B7F6-A2E8-4319-80DF-1499D1FB1600},,2024-10-26 03:56:54.000000,2024-10-26 03:56:54.000000,,,,,,,,,,,,,,,,4.0,15201074.0,Hettenschwil-Schotter,15201663
+3484,{7F05C9F9-686A-4DAA-85DF-6F0DA8D38B5E},,2024-10-26 03:56:55.000000,2024-10-26 03:56:55.000000,,,,,,,,,,,,,,,,4.0,15201074.0,Moos-Schotter,15201664
+3485,{CF7309FA-EB9C-4ECB-8D8A-D0EB7441C6AA},,2024-10-26 03:56:55.000000,2024-10-26 03:56:55.000000,,,,,,,,,,,,,,,,4.0,15201008.0,Bremgarten-Stadium,15201600
+3486,{894DDF46-95E8-4700-97E9-954CE725DC20},,2024-10-26 03:56:56.000000,2024-10-26 03:56:56.000000,,,,,,,,,,,,,,,,4.0,15201074.0,Hundsbel-Schotter,15201666
+3487,{B7D4B383-9FF7-4FD8-8275-4AB8CDE78DB3},,2024-10-26 03:56:56.000000,2024-10-26 03:56:56.000000,,,,,,,,,,,,,,,,4.0,15201074.0,Laufenburg-Schotter,15201667
+3488,{71332171-463F-4A22-A1BE-5BE0E3154C66},,2024-10-26 03:56:57.000000,2024-10-26 03:56:57.000000,,,,,,,,,,,,,,,,4.0,15201074.0,Eilez-Schotter,15201668
+3489,{92D897F1-4C66-4023-A34F-0F00D20380D5},,2024-10-26 03:56:57.000000,2024-10-26 03:56:57.000000,,,,,,,,,,,,,,,,4.0,15201074.0,St.-Margarethen-Schotter,15201669
+3490,{C969D6DA-30C3-4148-AEAD-9CA7041BB187},,2024-10-26 03:56:58.000000,2024-10-26 03:56:58.000000,,,,,,,,,,,,,,,,4.0,15201074.0,Hegenheim-Schotter,15201670
+3491,{A8C42294-84C5-4E3D-B6D3-8B3F9E1072B5},,2024-10-26 03:56:58.000000,2024-10-26 03:56:58.000000,,,,,,,,,,,,,,,,4.0,15201074.0,Blotzheim-Schotter,15201671
+3492,{DD916492-E742-4D39-9AD8-58CF47EBCB95},,2024-10-26 03:56:59.000000,2024-10-26 03:56:59.000000,,,,,,,,,,,,,,,,4.0,15201074.0,Hardwald-Schotter,15201672
+3493,{8A81626A-704D-4883-BB68-554320CAA8F9},,2024-10-26 03:56:59.000000,2024-10-26 03:56:59.000000,,,,,,,,,,,,,,,,4.0,15201074.0,Homberg-Schotter,15201673
+3494,{9D965DD7-0886-4B4E-A797-771C2790BA7D},,2024-10-26 03:56:59.000000,2024-10-26 03:56:59.000000,,,,,,,,,,,,,,,,4.0,15201074.0,Rümlang-Schotter,15201674
+3495,{F0B6ACBC-C3F1-444C-856E-11D055904C96},,2024-10-26 03:57:00.000000,2024-10-26 03:57:00.000000,,,,,,,,,,,,,,,,3.0,15201082.0,Äpelöö-Schotter,15201675
+3496,{A26F6C8E-5ECE-4C0B-83EB-9B8AFC4CEDC9},,2024-10-26 03:57:00.000000,2024-10-26 03:57:00.000000,,,,,,,,,,,,,,,,3.0,15201082.0,Fehrental-Schotter,15201676
+3497,{4B019AD5-5E61-4A82-848F-B83DC3CB30A7},,2024-10-26 03:57:01.000000,2024-10-26 03:57:01.000000,,,,,,,,,,,,,,,,3.0,15201082.0,Challeren-Schotter,15201677
+3498,{2DA3ED34-2430-4D4D-A36A-BCB907FE248F},,2024-10-26 03:57:01.000000,2024-10-26 03:57:01.000000,,,,,,,,,,,,,,,,3.0,15201082.0,Ausserberg-Schotter,15201678
+3499,{37C4EF21-3636-499F-BA8D-6A016F690BFF},,2024-10-26 03:57:02.000001,2024-10-26 03:57:02.000001,,,,,,,,,,,,,,,,5.0,15201093.0,Leibstadt-Till,15201679
+3500,{424DE3E8-B688-4846-AC24-8236674CF0AB},,2024-10-26 03:57:02.000001,2024-10-26 03:57:02.000001,,,,,,,,,,,,,,,,2.0,15201004.0,Buechli-Schotter,15201680
+3501,{2833E069-9F3A-4318-95DF-E7D4CF2CAC21},,2024-10-26 03:57:03.000000,2024-10-26 03:57:03.000000,,,,,,,,,,,,,,,,2.0,15201004.0,Bächemoos-Schotter,15201681
+3502,{B89D35D5-E0DC-45A3-A5D3-96293773B678},,2024-10-26 03:57:03.000000,2024-10-26 03:57:03.000000,,,,,,,,,,,,,,,,2.0,15201004.0,Aarberg-Schotter,15201682
+3503,{45CF33FF-927F-44E3-A463-2E37C200ADD8},,2024-10-26 03:57:04.000000,2024-10-26 03:57:04.000000,,,,,,,,,,,,,,,,4.0,15201008.0,Singen-Stadium,15201603
+3504,{54FD1EE9-646B-4205-92E0-0B1232CA15B8},,2024-10-26 03:57:04.000000,2024-10-26 03:57:04.000000,,,,,,,,,,,,,,,,2.0,15201004.0,Etzwil-Schotter,15201684
+3505,{36D3486D-85B5-4F0E-A4A8-13B7C8271DFD},,2024-10-26 03:57:05.000000,2024-10-26 03:57:05.000000,,,,,,,,,,,,,,,,2.0,15201004.0,Ellenbühl-Schotter,15201685
+3506,{A9A3D8B2-628F-455D-9006-20EE0170426C},,2024-10-26 03:57:05.000000,2024-10-26 03:57:05.000000,,,,,,,,,,,,,,,,2.0,15201004.0,Kegelplatz-Schotter,15201686
+3507,{431556F1-4D9B-49C0-AE11-70674907180E},,2024-10-26 03:57:05.000000,2024-10-26 03:57:05.000000,,,,,,,,,,,,,,,,2.0,15201004.0,Einschlag-Schotter,15201687
+3508,{06093321-E459-4BA5-834F-9AE18E3E3236},,2024-10-26 03:57:06.000000,2024-10-26 03:57:06.000000,,,,,,,,,,,,,,,,2.0,15201004.0,Lehacker-Schotter,15201688
+3509,{09FC48CA-E036-48D0-84ED-F6FA6D017E95},,2024-10-26 03:57:06.000000,2024-10-26 03:57:06.000000,,,,,,,,,,,,,,,,2.0,15201004.0,Letten-Schotter,15201689
+3510,{C32FF8E8-7D2B-4C1E-81F8-F533394C3D1C},,2024-10-26 03:57:07.000000,2024-10-26 03:57:07.000000,,,,,,,,,,,,,,,,2.0,15201004.0,Schwörstadt-Schotter,15201690
+3511,{C27AC32F-B015-458A-9752-4BE8C73F6C67},,2024-10-26 03:57:07.000000,2024-10-26 03:57:07.000000,,,,,,,,,,,,,,,,2.0,15201004.0,Steppberg-Schotter,15201691
+3512,{3A1C94F3-EF08-4129-B273-BF9BB7C589BC},,2024-10-26 03:57:08.000000,2024-10-26 03:57:08.000000,,,,,,,,,,,,,,,,2.0,15201004.0,Bloseberg-Schotter,15201692
+3513,{FFB388E7-39D8-4853-B14D-2600DBF79F06},,2024-10-26 03:57:08.000000,2024-10-26 03:57:08.000000,,,,,,,,,,,,,,,,2.0,15201004.0,Steinebol-Schotter,15201693
+3514,{B1719A61-75E0-4145-8ADF-168BF565D5E5},,2024-10-26 03:57:08.000000,2024-10-26 03:57:08.000000,,,,,,,,,,,,,,,,2.0,15201004.0,Giebenach-Schotter,15201694
+3515,{4E7E3619-A09C-40CD-BD1E-9C5CD9B881BA},,2024-10-26 03:57:09.000000,2024-10-26 03:57:09.000000,,,,,,,,,,,,,,,,2.0,15201004.0,Blözen-Schotter,15201695
+3516,{475B1A1A-4875-4355-A0E4-AABFB85AA7CE},,2024-10-26 03:57:09.000000,2024-10-26 03:57:09.000000,,,,,,,,,,,,,,,,2.0,15201004.0,Rütihard-Schotter,15201696
+3517,{D4231605-F67C-4D9D-8C91-310F4ECCAA69},,2024-10-26 03:57:10.000001,2024-10-26 03:57:10.000001,,,,,,,,,,,,,,,,2.0,15201004.0,Bruederholz-Schotter,15201697
+3518,{877DC893-7F9D-475A-B466-6C0D64449A14},,2024-10-26 03:57:10.000001,2024-10-26 03:57:10.000001,,,,,,,,,,,,,,,,2.0,15201004.0,Binningen-Schotter,15201698
+3519,{9BF473DD-893D-47FC-BDA0-2BAA35D2CCFD},,2024-10-26 03:57:11.000000,2024-10-26 03:57:11.000000,,,,,,,,,,,,,,,,2.0,15201004.0,Allschwil-Schotter,15201699
+3520,{89EB8F01-A8A2-44F0-91B2-116E959F1B6D},,2024-10-26 03:57:11.000000,2024-10-26 03:57:11.000000,,,,,,,,,,,,,,,,2.0,15201004.0,Buschwiller-Schotter,15201700
+3521,{AC96187D-BE35-4746-9D11-D1AA099EA66C},,2024-10-26 03:57:12.000000,2024-10-26 03:57:12.000000,,,,,,,,,,,,,,,,5.0,15201604.0,Feuerthalen-Stand-II,15201606
+3522,{CAB7EC81-DE1F-4C4E-B9B8-DA72C20B8540},,2024-10-26 03:57:12.000000,2024-10-26 03:57:12.000000,,,,,,,,,,,,,,,,2.0,15201005.0,Hörndli-Schotter,15201702
+3523,{F88CBB04-A1ED-40D9-BF2F-B0C1CEA6B5F5},,2024-10-26 03:57:13.000000,2024-10-26 03:57:13.000000,,,,,,,,,,,,,,,,2.0,15201005.0,Acheberg-Schotter,15201703
+3524,{B1DB09F1-DAA5-472C-BD1B-082E0CA12BB1},,2024-10-26 03:57:13.000000,2024-10-26 03:57:13.000000,,,,,,,,,,,,,,,,2.0,15201005.0,Mühleberg-Schotter,15201704
+3525,{EA2DB2DF-3F61-46FE-8F43-A293F3184097},,2024-10-26 03:57:13.000000,2024-10-26 03:57:13.000000,,,,,,,,,,,,,,,,2.0,15201005.0,Mandach-Schotter,15201705
+3526,{59950822-BCB2-420F-B50A-3F008E6317C2},,2024-10-26 03:57:14.000000,2024-10-26 03:57:14.000000,,,,,,,,,,,,,,,,2.0,15201005.0,Duttenberg-Schotter,15201706
+3527,{FDBF9E38-FF7E-457C-9393-1E7E296D0F4E},,2024-10-26 03:57:14.000000,2024-10-26 03:57:14.000000,,,,,,,,,,,,,,,,4.0,15201008.0,Schlieren-Stadium,15201607
+3528,{C697371C-8048-4C4C-8937-247C33BE3F6E},,2024-10-26 03:57:15.000000,2024-10-26 03:57:15.000000,,,,,,,,,,,,,,,,2.0,15201005.0,Frauewald-Schotter,15201708
+3529,{5DF38054-C6EC-4EDF-A324-A473C68122BA},,2024-10-26 03:57:15.000000,2024-10-26 03:57:15.000000,,,,,,,,,,,,,,,,2.0,15201005.0,Bolderen-Schotter,15201709
+3530,{B736B520-A871-4850-A1F1-B8BA99F312BA},,2024-10-26 03:57:16.000000,2024-10-26 03:57:16.000000,,,,,,,,,,,,,,,,2.0,15201005.0,Seiglisten-Schotter,15201710
+3531,{3C69B12B-86C6-497A-8DDE-FA8BB226C8AB},,2024-10-26 03:57:16.000000,2024-10-26 03:57:16.000000,,,,,,,,,,,,,,,,2.0,15201005.0,Geispel-Schotter,15201711
+3532,{22F539CC-D508-4105-A3CC-D2A244DC859D},,2024-10-26 03:57:16.000000,2024-10-26 03:57:16.000000,,,,,,,,,,,,,,,,5.0,15201607.0,Bäretswil-Seeablagerung,15201608
+3533,{35B8D351-E99D-4C9F-A4C1-AB5ED7811713},,2024-10-26 03:57:17.000000,2024-10-26 03:57:17.000000,,,,,,,,,,,,,,,,2.0,15201005.0,Berchenwald-Schotter,15201701
+2748,{12A87330-A785-483D-BF01-92E26DDD1105},,2022-12-05 19:29:47.000000,2022-12-05 19:29:47.000000,,,,,,,,,,,,,,,,2.0,15201004.0,"Tiefere Deckenschotter, oberes Niveau",15201538
+2749,{FF8F625B-35F9-42D5-BC86-2B6DD1690984},,2022-12-05 19:29:48.000000,2022-12-05 19:29:48.000000,,,,,,,,,,,,,,,,1.0,0.0,Kunkels-Formation,15201539
+2750,{099E1538-691C-400E-9144-978B6E2F102F},,2022-12-05 19:29:49.000000,2022-12-05 19:29:49.000000,,,,,,,,,,,,,,,,1.0,0.0,Alluvion von Ransun,15201540
+2751,{8C27A38A-2B87-4178-816A-A18134BD75EC},,2022-12-05 19:29:50.000000,2022-12-05 19:29:50.000000,,,,,,,,,,,,,,,,4.0,15201007.0,Rüdlingen-Till,15201541
+2752,{9FD7C65A-BECA-4E52-B8C8-A816CC9CFE80},,2022-12-05 19:29:51.000000,2022-12-05 19:29:51.000000,,,,,,,,,,,,,,,,4.0,15201007.0,Niklaushalden-Formation,15201542
+2753,{0E2C80D4-592C-4809-B430-2EB6B2E3D6CF},,2022-12-05 19:29:52.000000,2022-12-05 19:29:52.000000,,,,,,,,,,,,,,,,4.0,15201074.0,Saxegrabe-Schotter,15201556
+2754,{EC8B9E8F-B1CA-4688-836C-23325C55E5F5},,2022-12-05 19:29:53.000001,2022-12-05 19:29:53.000001,,,,,,,,,,,,,,,,4.0,15201074.0,Zweidlen-Schotter,15201557
+2755,{F1B0778E-B476-44ED-9816-891FF9DDE294},,2022-12-05 19:29:54.000000,2022-12-05 19:29:54.000000,,,,,,,,,,,,,,,,4.0,15201074.0,Burgacher-Schotter,15201558
+2756,{0F91D7F8-886C-4800-8424-76E0E1BEB78B},,2022-12-05 19:29:55.000000,2022-12-05 19:29:55.000000,,,,,,,,,,,,,,,,4.0,15201074.0,Chatzenstig-Schotter,15201559
+2757,{1C4FC13A-AC5F-465A-8739-E01DD9522587},,2022-12-05 19:29:56.000000,2022-12-05 19:29:56.000000,,,,,,,,,,,,,,,,3.0,15201082.0,Wasterkingen-Schotter,15201560
+2758,{8DD458B0-E116-494F-9556-EF7AA2722A26},,2022-12-05 19:29:57.000000,2022-12-05 19:29:57.000000,,,,,,,,,,,,,,,,3.0,15201082.0,Tubeschwanz-Schotter,15201562
+2759,{FA7A30AB-BC1E-47F0-A176-5FED2829698E},,2022-12-05 19:29:58.000000,2022-12-05 19:29:58.000000,,,,,,,,,,,,,,,,3.0,15201082.0,Weisweil-Schotter,15201563
+2760,{F6C094FB-9D85-4A19-A96E-1477A0CDE235},,2022-12-05 19:29:59.000000,2022-12-05 19:29:59.000000,,,,,,,,,,,,,,,,3.0,15201082.0,Paradiesgärtli-Schotter,15201561
+2761,{D7FF7AC5-11C6-4BBE-9132-8C5545C4E928},,2022-12-05 19:30:00.000000,2022-12-05 19:30:00.000000,,,,,,,,,,,,,,,,4.0,15201064.0,Stetten-Schotter,15201565
+2762,{1471E0B1-B970-4A19-B73B-425B5D008215},,2022-12-05 19:30:01.000000,2022-12-05 19:30:01.000000,,,,,,,,,,,,,,,,4.0,15201007.0,Volken-Lehm,15201544
+2763,{1726BA9B-711A-4BBF-B717-2916E79642BC},,2022-12-05 19:30:02.000000,2022-12-05 19:30:02.000000,,,,,,,,,,,,,,,,5.0,15201060.0,Weiach-Schotter,15201549
+2764,{B2E40988-AA0D-4F37-B34A-7B913DBBD9E7},,2022-12-05 19:30:03.000000,2022-12-05 19:30:03.000000,,,,,,,,,,,,,,,,4.0,15201007.0,Rheinau-Till,15201545
+2765,{6545C530-3D38-4C03-A65E-BB581B93514A},,2022-12-05 19:30:04.000001,2022-12-05 19:30:04.000001,,,,,,,,,,,,,,,,4.0,15201007.0,Ellikerholz-Formation,15201546
+2766,{96AA3E7E-9A0E-445D-8E07-02C2F5F8CB6B},,2022-12-05 19:30:05.000000,2022-12-05 19:30:05.000000,,,,,,,,,,,,,,,,4.0,15201007.0,Eggholz-Formation,15201547
+2767,{844AD64D-C14B-4616-9373-A239A996274A},,2022-12-05 19:30:06.000000,2022-12-05 19:30:06.000000,,,,,,,,,,,,,,,,4.0,15201007.0,Bannhalden-Schotter,15201548
+2768,{D04B4A5F-C82F-44A5-B0D1-F3BD319D0F13},,2022-12-05 19:30:07.000000,2022-12-05 19:30:07.000000,,,,,,,,,,,,,,,,5.0,15201060.0,Balm-Schotter,15201550
+2769,{BC1442E2-E23E-42A3-B6FD-18430DC9AFF2},,2022-12-05 19:30:08.000000,2022-12-05 19:30:08.000000,,,,,,,,,,,,,,,,4.0,15201064.0,Windlach-Till,15201551
+2770,{2D498D95-FA20-4B23-ABFE-AA395678FF9B},,2022-12-05 19:30:09.000000,2022-12-05 19:30:09.000000,,,,,,,,,,,,,,,,4.0,15201064.0,Südranden-Till,15201552
+2771,{4CDB2EF6-6D52-4925-B28C-690689DCF353},,2022-12-05 19:30:10.000000,2022-12-05 19:30:10.000000,,,,,,,,,,,,,,,,4.0,15201064.0,Schlossbuck-Schotter,15201553
+2772,{BD82089F-4420-4287-82EE-F3B84E4F1C55},,2022-12-05 19:30:11.000000,2022-12-05 19:30:11.000000,,,,,,,,,,,,,,,,4.0,15201064.0,Risibüel-Schotter,15201554
+2773,{7BA34871-4045-4FD6-A5C0-F4A9B0430E07},,2022-12-05 19:30:12.000001,2022-12-05 19:30:12.000001,,,,,,,,,,,,,,,,4.0,15201064.0,"Schmerlet- und Toktri-Formation, undifferenziert",15201555
+2774,{735E296C-B750-4520-A7FD-DF5D8A12FF11},,2022-12-05 19:30:13.000000,2022-12-05 19:30:13.000000,,,,,,,,,,,,,,,,2.0,15201002.0,"Niederterrassenschotter, tiefere Niveaus",15201534
+2775,{4CB5011C-65F0-43A0-932D-0484BDF2EBFF},,2022-12-05 19:30:15.000000,2022-12-05 19:30:15.000000,,,,,,,,,,,,,,,,3.0,15201108.0,Hasli-Formation,15201564
+2776,{C7B77F1B-E920-4DD0-A1B1-11965565A9DA},,2022-12-05 19:30:16.000000,2022-12-05 19:30:16.000000,,,,,,,,,,,,,,,,1.0,0.0,Bergsturzablagerung von Bargis,15201532
+2777,{21AA2041-5C00-4A0E-BED8-36B63D2846F7},,2022-12-05 19:30:17.000000,2022-12-05 19:30:17.000000,,,,,,,,,,,,,,,,1.0,0.0,Bergsturzablagerung von Fidaz,15201533
+2778,{A7E09AC0-3C6E-47A2-89C3-5E6BADABA83F},,2022-12-05 19:30:18.000000,2022-12-05 19:30:18.000000,,,,,,,,,,,,,,,,4.0,15201007.0,Stadel-Till,15201543
+2779,{C792AE77-EA28-462E-8DD2-5ED4F4F2E45B},,2022-12-05 19:30:19.000000,2022-12-05 19:30:19.000000,,,,,,,,,,,,,,,,2.0,15201002.0,"Niederterrassenschotter, zweitoberste Terrasse",15201535
+3066,{7E87B313-2329-48E4-BE7D-E630AECC95F4},,2024-04-03 16:34:30.000001,2024-04-03 16:34:30.000001,,,,,,,,,,,,,,,,3.0,15201007.0,Plaffeien-Seetone,15201566
+3067,{11D3A302-3394-49BA-BF91-7F34B7AB0454},,2024-04-03 16:34:31.000000,2024-04-03 16:34:31.000000,,,,,,,,,,,,,,,,4.0,15201008.0,Plasselb-Stauschotter,15201567
+3386,{8EAC7D48-96E7-4947-A55F-5CAE3D84A364},,2024-10-26 03:56:06.000000,2024-10-26 03:56:06.000000,,,,,,,,,,,,,,,,2.0,15201005.0,Humbel-Schotter,15201707
+3387,{1235C180-9AFF-4D0F-98E1-A620F8331445},,2024-10-26 03:56:07.000000,2024-10-26 03:56:07.000000,,,,,,,,,,,,,,,,2.0,15201003.0,"Hochterrasse, unteres Niveau",15201623
+3388,{6C94D817-8F34-4833-9006-726E6B403D75},,2024-10-26 03:56:08.000001,2024-10-26 03:56:08.000001,,,,,,,,,,,,,,,,2.0,15201005.0,Birlibänz-Schotter,15201712
+3389,{6E31243C-CA3B-49A7-8209-68634FE72395},,2024-10-26 03:56:08.000001,2024-10-26 03:56:08.000001,,,,,,,,,,,,,,,,2.0,15201005.0,Wentzwiller-Schotter,15201714
+3390,{A4DCC665-18A7-40D4-9296-A21DCA4DCF2F},,2024-10-26 03:56:09.000000,2024-10-26 03:56:09.000000,,,,,,,,,,,,,,,,2.0,15201003.0,Zurzach-Formation,15201629
+3391,{F366C032-42CC-4466-8B31-99E87CAAF0BE},,2024-10-26 03:56:09.000000,2024-10-26 03:56:09.000000,,,,,,,,,,,,,,,,2.0,15201005.0,Bellevue-Schotter,15201715
+3392,{12E2D6C5-98F9-45AF-8554-D2D5F4B96D68},,2024-10-26 03:56:10.000000,2024-10-26 03:56:10.000000,,,,,,,,,,,,,,,,2.0,15201005.0,Schönenbuch-Schotter,15201713
+3393,{745B41D2-CF67-49B3-8E42-EDBE0EFF7AE1},,2024-10-26 03:56:10.000000,2024-10-26 03:56:10.000000,,,,,,,,,,,,,,,,5.0,15201645.0,Lei-Schotter,15201653
+3394,{D4958A6B-6D3F-405A-9DFD-20E7BAA81113},,2024-10-26 03:56:11.000000,2024-10-26 03:56:11.000000,,,,,,,,,,,,,,,,2.0,15201004.0,Tannboden-Schotter,15201683
+3395,{AD18D724-A519-4E32-9328-56ED0FD0155D},,2024-10-26 03:56:11.000000,2024-10-26 03:56:11.000000,,,,,,,,,,,,,,,,4.0,15201074.0,Schlüsselgraben-Schotter,15201665
+3396,{93D2BB7C-AE35-4E01-A5AA-0080AB30BCBA},,2024-10-26 03:56:12.000000,2024-10-26 03:56:12.000000,,,,,,,,,,,,,,,,,15201400.0,Uetliberg-Lehm,15201568
+3397,{7FF104B7-B057-4DB5-9F0B-2F7AB77D5B7C},,2024-10-26 03:56:12.000000,2024-10-26 03:56:12.000000,,,,,,,,,,,,,,,,,15201400.0,Schotter der Thur,15201569
+3398,{1B761D24-2AAF-4FEF-92C0-91381BE6A313},,2024-10-26 03:56:13.000000,2024-10-26 03:56:13.000000,,,,,,,,,,,,,,,,2.0,15201249.0,Schwarzwald-Schotter,15201570
+3399,{C0D5D28F-D50C-4767-B89E-CAD14C5730CF},,2024-10-26 03:56:13.000000,2024-10-26 03:56:13.000000,,,,,,,,,,,,,,,,3.0,15201534.0,Neuenburg-Formation,15201571
+3400,{D9C8DE8D-5D20-4171-B554-B80AF67B2A19},,2024-10-26 03:56:14.000000,2024-10-26 03:56:14.000000,,,,,,,,,,,,,,,,4.0,15201571.0,Hartheim-Member,15201572
+3401,{CC3F6A53-A335-44B6-BB1D-D8AD8F8EA3B0},,2024-10-26 03:56:14.000000,2024-10-26 03:56:14.000000,,,,,,,,,,,,,,,,4.0,15201571.0,Nambsheim-Member,15201573
+3402,{AE28ADE0-11A8-444E-AC44-56B6DA0B83F1},,2024-10-26 03:56:15.000000,2024-10-26 03:56:15.000000,,,,,,,,,,,,,,,,1.0,0.0,Breisgau-Formation,15201574
+3403,{30056646-8198-4AF2-A687-7AB5448408FF},,2024-10-26 03:56:15.000000,2024-10-26 03:56:15.000000,,,,,,,,,,,,,,,,2.0,15201574.0,Balgau-Member,15201575
+3404,{4B5B1166-3596-47CF-A56E-2AB45A61855B},,2024-10-26 03:56:16.000000,2024-10-26 03:56:16.000000,,,,,,,,,,,,,,,,2.0,15201574.0,Weinstetten-Member,15201576
+3405,{632C1AAB-D53F-4F1D-9B42-C1A731380D6A},,2024-10-26 03:56:16.000000,2024-10-26 03:56:16.000000,,,,,,,,,,,,,,,,1.0,0.0,Iffezheim-Formation,15201577
+3406,{840AE191-21DC-4DFB-AFE9-E7A64BB22801},,2024-10-26 03:56:17.000000,2024-10-26 03:56:17.000000,,,,,,,,,,,,,,,,1.0,0.0,Mannheim-Formation,15201578
+3407,{1D89F035-1D84-40A3-ACC3-0311515C4907},,2024-10-26 03:56:17.000000,2024-10-26 03:56:17.000000,,,,,,,,,,,,,,,,3.0,15201534.0,Etzgen-Formation,15201579
+3408,{2BEB17B7-6FAA-4CB6-8BBB-46021BA95047},,2024-10-26 03:56:18.000000,2024-10-26 03:56:18.000000,,,,,,,,,,,,,,,,4.0,15201008.0,Niederuster-Schotter,15201580
+3409,{94701DA1-56C4-475E-93D8-EAB58A539741},,2024-10-26 03:56:18.000000,2024-10-26 03:56:18.000000,,,,,,,,,,,,,,,,4.0,15201008.0,Pfungen-Formation,15201581
+3410,{B210BF6E-A0DF-40FF-938D-F1192C27660F},,2024-10-26 03:56:19.000001,2024-10-26 03:56:19.000001,,,,,,,,,,,,,,,,4.0,15201008.0,Dättlikon-Stadium,15201582
+3411,{7B726DF7-F41D-405D-B23F-3A4C4F225733},,2024-10-26 03:56:19.000001,2024-10-26 03:56:19.000001,,,,,,,,,,,,,,,,4.0,15201008.0,Dübendorf-Stadium,15201583
+3412,{7CC6C606-B6A3-4785-A003-F11CFB520FD2},,2024-10-26 03:56:20.000000,2024-10-26 03:56:20.000000,,,,,,,,,,,,,,,,4.0,15201008.0,Gfenn-Stadium,15201584
+3413,{ED1D5700-1B1E-4BC9-A1F0-1BBEB1EBBB80},,2024-10-26 03:56:20.000000,2024-10-26 03:56:20.000000,,,,,,,,,,,,,,,,4.0,15201008.0,Regensdorf-Stadium,15201585
+3414,{E1FC9EA6-A5DB-4CB1-B6DA-3314A763C82D},,2024-10-26 03:56:21.000000,2024-10-26 03:56:21.000000,,,,,,,,,,,,,,,,4.0,15201008.0,Seeb-Stadium,15201586
+3415,{A118A726-C3AD-440F-805C-F5F43472D347},,2024-10-26 03:56:21.000000,2024-10-26 03:56:21.000000,,,,,,,,,,,,,,,,4.0,15201008.0,Würenlos-Stadium,15201587
+3416,{F914DAB9-D4D2-4DC0-9338-7C5C19F6BA61},,2024-10-26 03:56:22.000000,2024-10-26 03:56:22.000000,,,,,,,,,,,,,,,,5.0,15201587.0,Würenlos-Stand-I,15201588
+3417,{CD1AED57-3ABA-4C2F-B83C-97FEDB89B9C1},,2024-10-26 03:56:22.000000,2024-10-26 03:56:22.000000,,,,,,,,,,,,,,,,5.0,15201587.0,Würenlos-Stand-II,15201589
+3418,{5F16E844-662E-4671-88E4-414A7C7B6A88},,2024-10-26 03:56:23.000000,2024-10-26 03:56:23.000000,,,,,,,,,,,,,,,,4.0,15201008.0,Bülach-Stadium,15201590
+3419,{D6D3DD03-299B-4975-BC50-A1A29DE3F9E7},,2024-10-26 03:56:23.000000,2024-10-26 03:56:23.000000,,,,,,,,,,,,,,,,5.0,15201590.0,Bülach-Stand-I,15201591
+3420,{A16C4B01-BF76-4AA8-9F01-10575D9E1D61},,2024-10-26 03:56:24.000000,2024-10-26 03:56:24.000000,,,,,,,,,,,,,,,,5.0,15201590.0,Bülach-Stand-II,15201592
+3421,{62B077CD-FE69-45B1-B9ED-276664D0D81E},,2024-10-26 03:56:24.000000,2024-10-26 03:56:24.000000,,,,,,,,,,,,,,,,5.0,15201593.0,Stein-am-Rhein-Stand-II,15201595
+3422,{72AC5515-B386-4E3E-9EB0-EAD4130C1955},,2024-10-26 03:56:25.000000,2024-10-26 03:56:25.000000,,,,,,,,,,,,,,,,5.0,15201593.0,Stein-am-Rhein-Stand-III,15201596
+3423,{BDE3714C-1A3A-47D0-BE3B-13D461286478},,2024-10-26 03:56:25.000000,2024-10-26 03:56:25.000000,,,,,,,,,,,,,,,,4.0,15201008.0,Zürich-Stadium,15201597
+3424,{F3105814-F8A7-4CA6-A8A6-479DC9F8B4A8},,2024-10-26 03:56:26.000000,2024-10-26 03:56:26.000000,,,,,,,,,,,,,,,,5.0,15201597.0,Zürich-Stand-II,15201599
+3425,{1EDEE27A-F75C-47AA-A664-97EDC1375F10},,2024-10-26 03:56:26.000000,2024-10-26 03:56:26.000000,,,,,,,,,,,,,,,,5.0,15201600.0,Bremgarten-I,15201601
+3426,{6FEE6A44-DAE9-4382-9569-4114D7537A36},,2024-10-26 03:56:27.000001,2024-10-26 03:56:27.000001,,,,,,,,,,,,,,,,5.0,15201600.0,Bremgarten-II,15201602
+3427,{0892AEE6-1515-4AD5-B55C-45965228DFC3},,2024-10-26 03:56:27.000001,2024-10-26 03:56:27.000001,,,,,,,,,,,,,,,,4.0,15201008.0,Feuerthalen-Stadium,15201604
+3428,{C44369BB-31B6-4C01-9AF2-3C639D7DB95B},,2024-10-26 03:56:28.000000,2024-10-26 03:56:28.000000,,,,,,,,,,,,,,,,5.0,15201604.0,Feuerthalen-Stand-I,15201605

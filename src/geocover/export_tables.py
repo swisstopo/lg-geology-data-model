@@ -4,6 +4,7 @@ import os
 import sys
 import click
 import datetime
+import json
 
 import logging
 from pathlib import Path
@@ -19,6 +20,17 @@ TABLES = ["GC_CHARCAT", "GC_ADMIXTURE", "GC_COMPOSIT"]
 ALL_TABLES = TABLES + TREE_TABLES
 
 DEFAULT_WORKSPACE = r"h:/connections/GCOVERP@osa.sde"
+
+COLUMN_TYPE_MAPPING = {
+    "LITSTRAT_FORMATION_BANK": int,
+    "GEOL_MAPPING_UNIT": int,
+    "CHRONO_TOP": int,
+    "CHRONO_BASE": int,
+    "LITHO_MAIN": int,
+    "LITHO_SEC": int,
+    "LITHO_TER": int,
+    "CORRELATION": int,
+}
 
 try:
     curdir = os.path.join(os.path.dirname(os.path.realpath(__file__)), "..")
@@ -101,17 +113,29 @@ def export_tables(output_dir, workspace, all, include_i):
         except PermissionError as e:
             logging.error(f"Cannot create {output_dir}")
 
-    fields = list(
-        (
-            "OBJECTID",
-            "GEOL_CODE_INT",
-            "GEOL_CODE",
-            "DESCRIPTION",  # was GERMAN
-            "FMAT_LITSTRAT",
-            "TREE_LEVEL",
-            "PARENT_REF",
-        )
-    )
+    """
+    GC_CHRONO =                  'TREE_LEVEL', 'PARENT_REF', 'DESCRIPTION', 'GEOLCODE'
+    GC_LITHO =                   'TREE_LEVEL', 'PARENT_REF', 'DESCRIPTION', 'GEOLCODE'
+    GC_LITHO_UNCO =              'TREE_LEVEL', 'PARENT_REF', 'DESCRIPTION', 'GEOLCODE'
+     GC_LITHO_BED =              'TREE_LEVEL', 'PARENT_REF', 'DESCRIPTION', 'GEOLCODE'
+    GC_TECTO =                   'TREE_LEVEL', 'PARENT_REF', 'DESCRIPTION', 'GEOLCODE'
+    GC_LITSTRAT_BED =            'TREE_LEVEL', 'PARENT_REF', 'DESCRIPTION', 'GEOLCODE
+    GC_LITSTRAT_UNCO =           'TREE_LEVEL', 'PARENT_REF', 'DESCRIPTION', 'GEOLCODE
+    
+    GC_CHARCAT =                 'TREE_LEVEL', 'PARENT_REF', 'DESCRIPTION', 'GEOLCODE
+    GC_LITSTRAT_FORMATION_BANK = 'TREE_LEVEL',       'PARENT_REF', 'DESCRIPTION', 'GEOLCODE'
+    
+       
+    GC_GEOL_MAPPING_UNIT_ATT =   'LITSTRAT_FORMATION_BANK',  'GEOL_MAPPING_UNIT', 'CHRONO_TOP', 'CHRONO_BASE', 'LITHO_MAIN',  'LITHO_SEC', 'LITHO_TER', 'CORRELATION'
+       
+    GC_COMPOSIT =                'DESCRIPTION', 'GEOLCODE'
+    GC_SYSTEM =                  'DESCRIPTION', 'GEOLCODE'
+    GC_ADMIXTURE =               'DESCRIPTION', 'GEOLCODE'
+    
+    
+    """
+
+    fields = list(("DESCRIPTION", "GEOLCODE"))
 
     logging.info(f"Writting to {output_dir}")
 
@@ -121,10 +145,10 @@ def export_tables(output_dir, workspace, all, include_i):
 
     with pd.ExcelWriter(os.path.join(output_dir, f"export_tables.xlsx")) as writer:
         for table_name, short_name in tables:
-            sort_keys = ["GEOL_CODE_INT", "PARENT_REF"]
+            sort_keys = ["GEOLCODE", "PARENT_REF"]
             try:
                 df = arcgis_table_to_df(table_name, input_fields=None)
-                if "PARENT_REF" in df.columns and "GEOL_CODE_INT" in df.columns:
+                if "PARENT_REF" in df.columns and "GEOLCODE" in df.columns:
                     df["PARENT_REF"] = df["PARENT_REF"].fillna(0)
 
                     common_columns = set(df.columns).intersection(sort_keys)
@@ -141,35 +165,54 @@ def export_tables(output_dir, workspace, all, include_i):
             missing_fields = [col for col in fields if col not in df.columns]
 
             if missing_fields:
-                logging.warning(
-                    f"The following columns {missing_fields} are missing from {table_name} "
-                )
+                logging.warning(f"== Table {table_name} ==")
+                logging.warning(f"Missing columns: {missing_fields}")
+                logging.warning(f"Available columns:  {df.columns} ")
 
             # Reorder columns if all required columns are present
             present_columns = [col for col in fields if col in df.columns]
 
+            # logging.info(df.head())
+
+            filename = "_".join([w.capitalize() for w in short_name.split("_")])
+            json_path = os.path.join(output_dir, f"{filename}.json")
+            csv_path = os.path.join(output_dir, f"{filename}.csv")
+
+            df.to_csv(csv_path, index=True)
             # TODO: more robust way to prepare geolcode -> description table
-            if "DESCRIPTION" in present_columns or "GEOLCODE" in present_columns:
+            if "DESCRIPTION" in present_columns and "GEOLCODE" in present_columns:
                 df = df[present_columns]
-                orientation = "columns"
+                df = df[["GEOLCODE", "DESCRIPTION"]]
+                df.set_index("GEOLCODE", drop=True)
+
+                simple_dict = dict(df.values)
+                logging.info(f"Writing {len(df)} features to {json_path}")
+
+                with open(json_path, "w", encoding="utf-8") as f:
+                    json.dump(simple_dict, f, ensure_ascii=False, indent=4)
+
+            # GMU_ATT
             else:
                 orientation = "records"
+                # TODO: only for GMU_ATT
+                df = df.drop(columns=IGNORE_FIELDS, errors="ignore")
 
-            # TODO: only for GMU_ATT
-            df = df.drop(columns=IGNORE_FIELDS, errors="ignore")
+                required_columns = set(COLUMN_TYPE_MAPPING.keys())
+                existing_columns = set(df.columns)
+                missing_columns = required_columns - existing_columns
+
+                if not missing_columns:
+                    df = df.fillna(0).astype(COLUMN_TYPE_MAPPING)
+                df.to_json(
+                    json_path,
+                    indent=4,
+                    index=True,
+                    orient="records",
+                )
 
             logging.info(f"Writing to excel: {table_name}: {df.columns} ")
 
-            filename = "_".join([w.capitalize() for w in short_name.split("_")])
-
             try:
-                df.to_csv(os.path.join(output_dir, f"{filename}.csv"), index=True)
-                df.to_json(
-                    os.path.join(output_dir, f"{filename}.json"),
-                    indent=4,
-                    index=True,
-                    orient=orientation,
-                )
                 df.to_excel(writer, sheet_name=short_name.upper())
             except PermissionError as e:
                 logging.error(f"Permission error: {table} is probably already opened")

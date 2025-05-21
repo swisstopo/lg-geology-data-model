@@ -1,642 +1,642 @@
-OBJECTID,DESCRIPTION,TREE_LEVEL,PARENT_REF
-3864,Brekzie: siltig,,15111006.0
-3865,Brekzie: pyroklastisch,,15111005.0
-3866,Brekzie: rhyolithisch,,15111020.0
-3867,Brekzie: tuffitisch,,15111020.0
-3868,Brekzie: tektonisch,,15111005.0
-3869,Brekzie: kakiritisch,,15111023.0
-3870,Brekzie: kataklastisch,,15111023.0
-3871,Brekzie: kataklastisch-dolomitisch,,15111025.0
-3872,Brekzie: kataklastisch-kalkig,,15111025.0
-3873,Konglomerat,,15111004.0
-3874,Konglomerat: dolomitisch,,15111028.0
-3875,Konglomerat: kalkig,,15111028.0
-3876,Konglomerat: kalkig: Muscheln,,15111028.0
-3877,Konglomerat: kalkig-dolomitisch,,15111028.0
-3878,Konglomerat: kalkig-residual: Eisenpisoide,,15111028.0
-3879,Konglomerat: kristallin,,15111028.0
-3880,Konglomerat: monomikt,,15111028.0
-3881,Konglomerat: ophiolithisch,,15111028.0
-3976,Tonstein: tuffitisch,,15111102.0
-3977,Mergelstein,,15111089.0
-3978,Mergelstein: Bioklasten,,15111132.0
-3979,Mergelstein: Bioklasten-Ooide,,15111132.0
-3980,Mergelstein: Bitumen,,15111132.0
-3981,Mergelstein: dolomitisch,,15111132.0
-3982,Mergelstein: Eisenooide,,15111132.0
-3983,Mergelstein: Gips,,15111132.0
-3984,Mergelstein: Glaukonit,,15111132.0
-3985,Mergelstein: Glaukonit-Bioklasten,,15111132.0
-3986,Mergelstein: Glimmer,,15111132.0
-3987,Mergelstein: kalkig,,15111132.0
-3988,Mergelstein: kalkig: Bioklasten,,15111132.0
-3989,Mergelstein: kalkig: Bitumen,,15111132.0
-3990,Mergelstein: kalkig-dolomitisch,,15111132.0
-3991,Mergelstein: kalkig: Eisenooide,,15111132.0
-3992,Mergelstein: kalkig: Glaukonit,,15111132.0
-4045,Kalkstein: Bitumen-Bioklasten,,15111186.0
-4046,Kalkstein: brekziös,,15111186.0
-4047,Kalkstein: Chert,,15111186.0
-4048,Kalkstein: dolomitisch,,15111186.0
-4049,Kalkstein: dolomitisch: Bioklasten,,15111186.0
-4050,Kalkstein: Eisenmineralien,,15111186.0
-4051,Kalkstein: Eisenooide,,15111186.0
-4052,Kalkstein: Glaukonit,,15111186.0
-4053,Kalkstein: Glaukonit-Bioklasten,,15111186.0
-4054,Kalkstein: kieselig,,15111186.0
-4055,Kalkstein: kieselig: Bioklasten,,15111186.0
-4056,Kalkstein: kieselig: Bioklasten-Chert,,15111186.0
-4057,Kalkstein: kieselig: Glaukonit,,15111186.0
-4058,Kalkstein: kieselig-spätig,,15111186.0
-4059,Kalkstein: Korallen,,15111186.0
-4060,Kalkstein: kreidig,,15111186.0
-4061,Kalkstein: kreidig: Bitumen,,15111186.0
-4062,Kalkstein: kreidig: Chert,,15111186.0
-4063,Kalkstein: kreidig: Pisoide,,15111186.0
-4064,Kalkstein: kristallin,,15111186.0
-4065,Kalkstein: Limonit,,15111186.0
-4066,Kalkstein: mergelig,,15111186.0
-4067,Kalkstein: mergelig: Bioklasten,,15111186.0
-4068,Kalkstein: mergelig: Chert,,15111186.0
-4069,Kalkstein: mergelig: Glaukonit,,15111186.0
-4070,Kalkstein: mergelig: Pyrit,,15111186.0
-4071,Kalkstein: mergelig-dolomitisch,,15111186.0
-4072,Kalkstein: mergelig-kieselig,,15111186.0
-4073,Kalkstein: mergelig-schiefrig,,15111186.0
-4074,Kalkstein: mikritisch,,15111186.0
-4075,Kalkstein: mikritisch: Aptychen,,15111186.0
-4076,Kalkstein: mikritisch: Bioklasten,,15111186.0
-4077,Kalkstein: mikritisch: Bioklasten-Chert,,15111186.0
-4078,Kalkstein: mikritisch: Calpionellen,,15111186.0
-4079,Kalkstein: mikritisch: Chert,,15111186.0
-4080,Kalkstein: mikritisch: Glaukonit,,15111186.0
-4081,Kalkstein: mikritisch: Onkoide,,15111186.0
-4082,Kalkstein: mikritisch: Ooide,,15111186.0
-4083,Kalkstein: Nummuliten,,15111186.0
-4084,Kalkstein: Onkoide,,15111186.0
-4085,Kalkstein: Ooide,,15111186.0
-4086,Kalkstein: Ooide-Chert,,15111186.0
-4087,Kalkstein: pedogen-verkrustet,,15111186.0
-4088,Kalkstein: Phosphorit,,15111186.0
-4089,Kalkstein: Pisoide,,15111186.0
-4090,Kalkstein: ruditisch,,15111186.0
-4091,Kalkstein: ruditisch: Korallen,,15111186.0
-4092,Kalkstein: sandig,,15111186.0
-4093,Kalkstein: sandig: Bioklasten,,15111186.0
-4094,Kalkstein: sandig: Eisenooide,,15111186.0
-4095,Kalkstein: sandig: Glaukonit,,15111186.0
-4096,Kalkstein: sandig: Glimmer,,15111186.0
-4097,Kalkstein: sandig-kieselig,,15111186.0
-4098,Kalkstein: sandig-spätig,,15111186.0
-3993,Mergelstein: kalkig: Ooide,,15111132.0
-3994,Mergelstein: kalkig-kieselig,,15111132.0
-3995,Mergelstein: kalkig-schiefrig,,15111132.0
-3996,Mergelstein: kieselig,,15111132.0
-3997,Mergelstein: Kohle,,15111132.0
-3998,Mergelstein: konglomeratisch,,15111132.0
-3999,Mergelstein: Korallen,,15111132.0
-4000,Mergelstein: Lignit,,15111132.0
-4001,Mergelstein: Ooide,,15111132.0
-4002,Mergelstein: Phosphorit,,15111132.0
-4003,Mergelstein: sandig,,15111132.0
-4004,Mergelstein: sandig: Bioklasten,,15111132.0
-4005,Mergelstein: sandig-dolomitisch,,15111132.0
-4006,Mergelstein: sandig: Glaukonit,,15111132.0
-4007,Mergelstein: sandig: Glimmer,,15111132.0
-4008,Mergelstein: sandig: Kohle,,15111132.0
-4009,Mergelstein: sandig-kalkig,,15111132.0
-4010,Mergelstein: sandig-siltig,,15111132.0
-4011,Mergelstein: sandig-tonig,,15111132.0
-4012,Mergelstein: sandig-tonig: Glaukonit,,15111132.0
-4013,Mergelstein: schiefrig,,15111132.0
-4014,Mergelstein: schiefrig: Bitumen,,15111132.0
-4015,Mergelstein: siltig,,15111132.0
-4016,Mergelstein: siltig: Glaukonit,,15111132.0
-4017,Mergelstein: siltig: Glimmer,,15111132.0
-4018,Mergelstein: siltig-dolomitisch,,15111132.0
-4019,Mergelstein: siltig-kalkig,,15111132.0
-4020,Mergelstein: siltig-schiefrig,,15111132.0
-4021,Mergelstein: siltig-tonig,,15111132.0
-4022,Mergelstein: tonig,,15111132.0
-4023,Mergelstein: tonig: Bitumen,,15111132.0
-4024,Mergelstein: tonig: Kohle,,15111132.0
-4025,Gestein: Karbonat,,15111001.0
-4026,Gestein: sedimentär: Karbonat,,15111002.0
-4027,Gestein: pedogen: Karbonat,,15111002.0
-4028,Gestein: pedogen-verkrustet: Karbonat,,15111002.0
-4029,Gestein: vulkanisch: Karbonat,,15111348.0
-4030,Gestein: metamorph: Karbonat,,15111468.0
-4031,Kalkstein,,15111181.0
-4032,Kalkstein: Albit,,15111186.0
-4033,Kalkstein: Algen,,15111186.0
-4034,Kalkstein: arenitisch,,15111186.0
-4035,Kalkstein: arenitisch: Bioklasten,,15111186.0
-4036,Kalkstein: arenitisch: Bioklasten-Chert,,15111186.0
-4037,Kalkstein: arenitisch: Glaukonit,,15111186.0
-4038,Kalkstein: arenitisch: Ooide,,15111186.0
-4039,Kalkstein: arenitisch: Quarz,,15111186.0
-4040,Kalkstein: arenitisch-spätig,,15111186.0
-4041,Kalkstein: Bioklasten,,15111186.0
-4042,Kalkstein: Bioklasten-Chert,,15111186.0
-4043,Kalkstein: Bioklasten-Ooide,,15111186.0
-4044,Kalkstein: Bitumen,,15111186.0
-3882,Konglomerat: polymikt,,15111028.0
-3883,Konglomerat: polymikt: Bioklasten,,15111028.0
-3884,Konglomerat: polymikt: Quarz,,15111028.0
-3885,Konglomerat: Quarz,,15111028.0
-3886,Konglomerat: pyroklastisch,,15111028.0
-3887,Konglomerat: tuffitisch,,15111028.0
-3888,Gestein: psammitisch,,15111003.0
-3889,Sandstein,,15111043.0
-3890,Sandstein: Anthrazit,,15111044.0
-3891,Sandstein: Bioklasten,,15111044.0
-3892,Sandstein: Bitumen,,15111044.0
-3893,Sandstein: dolomitisch,,15111044.0
-3894,Sandstein: Eisenmineralien,,15111044.0
-3895,Sandstein: Eisenooide,,15111044.0
-3896,Sandstein: Feldspat,,15111044.0
-3897,Sandstein: Glaukonit,,15111044.0
-3898,Sandstein: Glimmer,,15111044.0
-3899,Sandstein: Glimmer-Glaukonit,,15111044.0
-3900,Sandstein: Gips,,15111044.0
-3901,Sandstein: kalkig,,15111044.0
-3902,Sandstein: kalkig: Bioklasten,,15111044.0
-3903,Sandstein: kalkig: Glaukonit,,15111044.0
-3904,Sandstein: kalkig: Glimmer,,15111044.0
-3905,Sandstein: kalkig: Kohle,,15111044.0
-3906,Sandstein: kalkig: Muscheln,,15111044.0
-3907,Sandstein: kalkig: Nummuliten,,15111044.0
-3908,Sandstein: kalkig: Quarz,,15111044.0
-3909,Sandstein: kalkig-dolomitisch,,15111044.0
-3910,Sandstein: kalkig-kieselig,,15111044.0
-3911,Sandstein: kieselig,,15111044.0
-3912,Sandstein: Kohle,,15111044.0
-3913,Sandstein: konglomeratisch,,15111044.0
-3914,Sandstein: konglomeratisch-kalkig: Muscheln,,15111044.0
-3915,Sandstein: mergelig,,15111044.0
-3916,Sandstein: mergelig: Glaukonit,,15111044.0
-3917,Sandstein: mergelig: Glimmer,,15111044.0
-3918,Sandstein: Phosphorit,,15111044.0
-3919,Sandstein: Quarz,,15111044.0
-3920,Sandstein: Quarz-Glaukonit,,15111044.0
-3921,Sandstein: Quarz-Glimmer,,15111044.0
-3922,Sandstein: siltig,,15111044.0
-3923,Sandstein: siltig-kalkig,,15111044.0
-3924,Sandstein: tonig,,15111044.0
-3925,Sandstein: tonig: Feldspat,,15111044.0
-3926,Sandstein: tonig: Glaukonit,,15111044.0
-3927,Sandstein: tonig: Glimmer,,15111044.0
-3928,Sandstein: tonig: Kohle,,15111044.0
-3929,Sandstein: tonig: Lithoklasten,,15111044.0
-3930,Sandstein: tonig-dolomitisch,,15111044.0
-3931,Sandstein: tonig-kalkig,,15111044.0
-3932,Sandstein: tonig-kalkig: Kohle,,15111044.0
-3933,Sandstein: tuffitisch,,15111044.0
-3934,Gestein: pelitisch,,15111003.0
-3935,Siltstein,,15111089.0
-3936,Siltstein: dolomitisch,,15111090.0
-3937,Siltstein: Glimmer,,15111090.0
-3938,Siltstein: kalkig,,15111090.0
-3939,Siltstein: Kohle,,15111090.0
-3940,Siltstein: mergelig,,15111090.0
-3941,Siltstein: sandig,,15111090.0
-3942,Siltstein: schiefrig,,15111090.0
-3943,Siltstein: tonig,,15111090.0
-3944,Siltstein: tonig-dolomitisch,,15111090.0
-3945,Siltstein: tonig-kalkig,,15111090.0
-3946,Siltstein: tuffitisch,,15111090.0
-3947,Tonstein,,15111089.0
-3948,Tonstein: Anthrazit,,15111102.0
-3949,Tonstein: Bitumen,,15111102.0
-3950,Tonstein: dolomitisch,,15111102.0
-3951,Tonstein: Eisenooide,,15111102.0
-3952,Tonstein: Glaukonit,,15111102.0
-3953,Tonstein: kalkig,,15111102.0
-3954,Tonstein: kalkig: Glaukonit,,15111102.0
-3955,Tonstein: kieselig,,15111102.0
-3956,Tonstein: Kohle,,15111102.0
-3957,Tonstein: mergelig,,15111102.0
-3958,Tonstein: mergelig: Bitumen,,15111102.0
-3959,Tonstein: mergelig: Glimmer,,15111102.0
-3960,Tonstein: Pyrit,,15111102.0
-3961,Tonstein: sandig,,15111102.0
-3962,Tonstein: sandig: Glimmer,,15111102.0
-3963,Tonstein: sandig: Kohle,,15111102.0
-3964,Tonstein: sandig-dolomitisch,,15111102.0
-3965,Tonstein: sandig-kalkig,,15111102.0
-3966,Tonstein: sandig-mergelig,,15111102.0
-3967,Tonstein: sandig-schiefrig,,15111102.0
-3968,Tonstein: schiefrig,,15111102.0
-3969,Tonstein: schiefrig: Anthrazit,,15111102.0
-3970,Tonstein: schiefrig: Bitumen,,15111102.0
-3971,Tonstein: siltig,,15111102.0
-3972,Tonstein: siltig: Glimmer,,15111102.0
-3973,Tonstein: siltig-dolomitisch,,15111102.0
-3974,Tonstein: siltig-kalkig,,15111102.0
-3975,Tonstein: siltig-schiefrig,,15111102.0
-3846,Gestein,,
-3847,Gestein: sedimentär,,15111001.0
-3848,Gestein: klastisch,,15111002.0
-3849,Gestein: psephitisch,,15111003.0
-3850,Brekzie,,15111001.0
-3851,Brekzie: sedimentär,,15111004.0
-3852,Brekzie: dolomitisch,,15111006.0
-3853,Brekzie: dolomitisch: Bitumen,,15111006.0
-3854,Brekzie: dolomitisch-polymikt,,15111006.0
-3855,Brekzie: kalkig,,15111006.0
-3856,Brekzie: kalkig: Bioklasten,,15111006.0
-3857,Brekzie: kalkig-dolomitisch,,15111006.0
-3858,Brekzie: kalkig-polymikt,,15111006.0
-3859,Brekzie: kristallin,,15111006.0
-3860,Brekzie: kristallin: polymikt,,15111006.0
-3861,Brekzie: monomikt,,15111006.0
-3862,Brekzie: polymikt,,15111006.0
-3863,Brekzie: sandig,,15111006.0
-4099,Kalkstein: sandig-tonig,,15111186.0
-4100,Kalkstein: Schwämme,,15111186.0
-4101,Kalkstein: siltig,,15111186.0
-4102,Kalkstein: siltig: Bioklasten,,15111186.0
-4103,Kalkstein: siltig-tonig,,15111186.0
-4104,Kalkstein: spätig,,15111186.0
-4105,Kalkstein: spätig: Bioklasten,,15111186.0
-4106,Kalkstein: spätig: Bioklasten-Chert,,15111186.0
-4107,Kalkstein: spätig: Bioklasten-Glaukonit,,15111186.0
-4108,Kalkstein: spätig: Bioklasten-Ooide,,15111186.0
-4109,Kalkstein: spätig: Chert,,15111186.0
-4110,Kalkstein: spätig: Echinodermen,,15111186.0
-4111,Kalkstein: spätig: Glaukonit,,15111186.0
-4112,Kalkstein: spätig: Glaukonit-Chert,,15111186.0
-4113,Kalkstein: spätig: Ooide,,15111186.0
-4114,Kalkstein: stromatolithisch,,15111186.0
-4247,Granit: mikrokristallin-porphyrisch,,15111390.0
-4248,Granit: monzonitisch,,15111390.0
-4249,Granit: mylonitisch,,15111390.0
-4250,Granit: porphyrisch,,15111390.0
-4251,Granit: porphyrisch: Biotit,,15111390.0
-4252,Granit: porphyrisch: Hornblende,,15111390.0
-4253,Granit: schiefrig,,15111390.0
-4254,Granit: syenitisch,,15111390.0
-4255,Granodiorit,,15111390.0
-4256,Granodiorit: aplitisch,,15111390.0
-4257,Granodiorit: Hornblende,,15111390.0
-4258,Granodiorit: porphyrisch,,15111390.0
-4259,Granodiorit: schiefrig,,15111390.0
-4260,Monzonit,,15111390.0
-4261,Monzonit: Feldspatoid,,15111390.0
-4262,Monzonit: porphyrisch: Quarz,,15111390.0
-4263,Monzonit: Quarz,,15111390.0
-4264,Tonalit,,15111390.0
-4265,Tonalit: Biotit,,15111390.0
-4266,Tonalit: Biotit-Hornblende,,15111390.0
-4267,Gestein: syenitisch,,15111389.0
-4268,Syenit,,15111422.0
-4269,Syenit: Alkalifeldspat,,15111422.0
-4270,Syenit: Feldspatoid,,15111422.0
-4271,Syenit: Nephelin,,15111422.0
-4272,Syenit: porphyrisch: Quarz,,15111422.0
-4273,Syenit: Quarz,,15111422.0
-4274,Syenit: Quarz-Hornblende,,15111422.0
-4275,Gestein: dioritisch,,15111389.0
-4276,Diorit,,15111430.0
-4277,Diorit: Biotit-Hornblende,,15111430.0
-4278,Diorit: migmatitisch,,15111430.0
-4279,Diorit: mikrokristallin,,15111430.0
-4280,Diorit: monzonitisch,,15111430.0
-4281,Diorit: porphyrisch,,15111430.0
-4282,Diorit: Quarz,,15111430.0
-4283,Diorit: Quarz-Biotit,,15111430.0
-4284,Diorit: Quarz-Epidot,,15111430.0
-4285,Diorit: Quarz-Hornblende,,15111430.0
-4286,Diorit: schiefrig,,15111430.0
-4287,Gestein: gabbroisch,,15111389.0
-4288,Gabbro,,15111442.0
-4289,Gabbro: Hornblende,,15111442.0
-4290,Gabbro: mikrokristallin,,15111442.0
-4291,Gabbro: monzonitisch,,15111442.0
-4292,Gabbro: monzonitisch: Nephelin,,15111442.0
-4293,Gabbro: mylonitisch,,15111442.0
-4294,Gabbro: Olivin,,15111442.0
-4295,Gabbro: Omphazit,,15111442.0
-4296,Gabbro: Orthopyroxen,,15111442.0
-4297,Gabbro: Quarz,,15111442.0
-4298,Gestein: foidolitisch,,15111389.0
-4299,Foidolit,,15111453.0
-4300,Gestein: ultramafisch,,15111344.0
-4301,Peridotit,,15111455.0
-3229,méta-bauxite,,
-3527,,,
-4319,Mylonit,,15111470.0
-4320,Mylonit: kalkig,,15111474.0
-4321,Mylonit: phyllitisch,,15111474.0
-4322,Pseudotachyllit,,15111470.0
-4323,Hornfels,,15111468.0
-4324,Granofels,,15111468.0
-4325,Granofels: Albit,,15111479.0
-4326,Granofels: Granat,,15111479.0
-4327,Granofels: Kalksilikat,,15111479.0
-4328,Granofels: Olivin,,15111479.0
-4329,Granofels: Pyroxen,,15111479.0
-4330,Granofels: Silikat-Karbonat,,15111479.0
-4331,Marmor,,15111468.0
-4332,Marmor: dolomitisch,,15111486.0
-4333,Marmor: dolomitisch-schiefrig,,15111486.0
-4334,Marmor: kalkig,,15111486.0
-4335,Marmor: kalkig: Chlorit,,15111486.0
-4336,Marmor: kalkig: Serizit,,15111486.0
-4337,Marmor: kalkig-kieselig,,15111486.0
-4338,Marmor: Kalksilikat,,15111486.0
-4302,Peridotit: plutonisch,,15111456.0
-4303,Peridotit: plutonisch: Klinopyroxen-Orthopyroxen,,15111456.0
-4304,Peridotit: plutonisch: Olivin,,15111456.0
-4305,Peridotit: plutonisch: Olivin-Klinopyroxen,,15111456.0
-4306,Peridotit: plutonisch: Olivin-Orthopyroxen,,15111456.0
-4307,Peridotit: metamorph,,15111456.0
-4308,Peridotit: metamorph: Hornblende,,15111456.0
-4309,Peridotit: metamorph: Phlogopit,,15111456.0
-4310,Peridotit: metamorph: Serpentin,,15111456.0
-4311,Pyroxenit,,15111455.0
-4312,Pyroxenit: plutonisch,,15111466.0
-4313,Gestein: metamorph,,15111455.0
-4314,Gestein: metasomatisch,,15111468.0
-4315,Gestein: tektonisch,,15111468.0
-4316,Kakirit,,15111470.0
-4317,Kakirit: tonig,,15111471.0
-4318,Kataklastit,,15111470.0
-4115,Kalkstein: stromatolithisch: Eisenmineralien-Phosphorit,,15111186.0
-4116,Kalkstein: tonig,,15111186.0
-4117,Kalkstein: tonig: Bioklasten,,15111186.0
-4118,Kalkstein: tonig: Chert,,15111186.0
-4119,Kalkstein: tonig-schiefrig,,15111186.0
-4120,Kalkstein: tufig,,15111186.0
-4121,Tuff: kalkig,,15111186.0
-4122,Dolomitstein,,15111181.0
-4123,Dolomitstein: Bioklasten,,15111277.0
-4124,Dolomitstein: Bitumen,,15111277.0
-4125,Dolomitstein: kalkig,,15111277.0
-4126,Dolomitstein: kieselig,,15111277.0
-4127,Dolomitstein: mikritisch,,15111277.0
-4128,Dolomitstein: Ooide,,15111277.0
-4129,Dolomitstein: Ooide-Chert,,15111277.0
-4130,Dolomitstein: sandig,,15111277.0
-4131,Dolomitstein: sandig-siltig,,15111277.0
-4132,Dolomitstein: sandig-tonig,,15111277.0
-4133,Dolomitstein: sandig-tonig: Bitumen,,15111277.0
-4134,Dolomitstein: schiefrig,,15111277.0
-4135,Dolomitstein: siltig,,15111277.0
-4136,Dolomitstein: siltig-tonig,,15111277.0
-4137,Dolomitstein: spätig,,15111277.0
-4138,Dolomitstein: spätig: Bioklasten,,15111277.0
-4139,Dolomitstein: stromatolithisch,,15111277.0
-4140,Dolomitstein: stromatolithisch: Chert,,15111277.0
-4141,Dolomitstein: tonig,,15111277.0
-4142,Rauwacke,,15111001.0
-4143,Rauwacke: sandig,,15111299.0
-4144,Rauwacke: sedimentär,,15111181.0
-4145,Rauwacke: kataklastisch,,15111473.0
-4146,Evaporit,,15111002.0
-4147,Evaporit: Anhydrit,,15111301.0
-4148,Evaporit: Gips,,15111301.0
-4149,Evaporit: Halit,,15111301.0
-4150,Evaporit: Sulfat,,15111301.0
-4151,Evaporit: tonig,,15111301.0
-4152,Evaporit: tonig: Anhydrit,,15111301.0
-4153,Evaporit: tonig: Gips,,15111301.0
-4154,Gestein: kieselig,,15111001.0
-4155,Gestein: kieselig-sedimentär,,15111181.0
-4156,Gestein: kieselig-kryptokristallin,,15111310.0
-4157,Gestein: kieselig-pedogen,,15111310.0
-4158,Gestein: kieselig: Radiolarien,,15111310.0
-4159,Gestein: kieselig: Schwämme,,15111310.0
-4160,Gestein: kieselig-metamorph,,15111468.0
-4161,Gestein: Phosphorit,,15111002.0
-4162,Gestein: organisch,,15111002.0
-4163,Gestein: organisch: Anthrazit,,15111317.0
-4164,Gestein: organisch: Kohle,,15111317.0
-4165,Gestein: organisch: Lignit,,15111317.0
-4166,Gestein: pedogen,,15111002.0
-4167,Gestein: residual,,15111002.0
-4168,Gestein: residual: Eisenmineralien,,15111322.0
-4169,Gestein: residual: Silikat,,15111322.0
-4170,Gestein: residual: Silikat-Eisenmineralien,,15111322.0
-4171,Gestein: residual-sandig,,15111322.0
-4172,Gestein: residual-sandig: Quarz,,15111322.0
-4173,Gestein: residual-siltig,,15111322.0
-4174,Gestein: residual-tonig,,15111322.0
-4175,Gestein: residual-tonig: Eisenpisoide,,15111322.0
-4176,Gestein: residual-tonig: Kaolinit,,15111322.0
-4177,Gestein: residual-tonig: Limonit,,15111322.0
-4178,Gestein: Eisenmineralien,,15111002.0
-4179,Gestein: Eisenooide,,15111333.0
-4180,Gestein: Eisenpisoide,,15111333.0
-4181,Gestein: pyroklastisch,,15111003.0
-4182,Ignimbrit,,15111336.0
-4183,Tuff,,15111336.0
-4184,Tuff: vulkanisch,,15111338.0
-4185,Tuff: vulkanisch: Asche,,15111338.0
-4186,Tuff: vulkanisch: Kristalle,,15111338.0
-4187,Tuff: vulkanisch: Lapilli,,15111338.0
-4188,Bentonit,,15111338.0
-4189,Gestein: kristallin,,15111001.0
-4190,Gestein: saur,,15111344.0
-4191,Gestein: basisch,,15111344.0
-4192,Gestein: magmatisch,,15111344.0
-4193,Gestein: vulkanisch,,15111347.0
-4194,Gestein: vulkanisch: Karbonat,,15111348.0
-4195,Gestein: saur-vulkanisch,,15111348.0
-4196,Gestein: rhyolithisch,,15111348.0
-4197,Rhyolith,,15111351.0
-4198,Rhyolith: Alkalifeldspat,,15111352.0
-4199,Rhyolith: ignimbritisch,,15111352.0
-4200,Rhyolith: porphyrisch,,15111352.0
-4201,Gestein: dazitisch,,15111348.0
-4202,Dazit,,15111356.0
-4203,Dazit: rhyolithisch,,15111356.0
-4204,Gestein: latitisch,,15111348.0
-4205,Latit,,15111359.0
-4206,Gestein: trachytisch,,15111348.0
-4207,Trachyt,,15111361.0
-4208,Trachyt: Alkalifeldspat,,15111361.0
-4209,Gestein: andesitisch,,15111348.0
-4210,Andesit,,15111364.0
-4211,Gestein: basisch-vulkanisch,,15111364.0
-4212,Gestein: basaltisch,,15111348.0
-4213,Basalt,,15111367.0
-4214,Basalt: Olivin,,15111367.0
-4215,Basalt: verwittert: Albit,,15111367.0
-4216,Gestein: phonolithisch,,15111348.0
-4217,Phonolith,,15111371.0
-4218,Phonolith: tephritisch,,15111371.0
-4219,Gestein: tephritisch,,15111348.0
-4220,Tephrit,,15111374.0
-4221,Tephrit: phonolithisch,,15111374.0
-4222,Basanit,,15111348.0
-4223,Gestein: foiditisch,,15111348.0
-4224,Foidit,,15111378.0
-4225,Tuffit,,15111348.0
-4226,Gestein: gangartig,,15111347.0
-4227,Gestein: gangartig: Quarz,,15111381.0
-4228,Gestein: saur-gangartig,,15111381.0
-4229,Aplit,,15111383.0
-4230,Pegmatit,,15111383.0
-4231,Granophyr,,15111383.0
-4232,Gestein: basisch-gangartig,,15111381.0
-4233,Rodingit,,15111387.0
-4234,Gestein: plutonisch,,15111347.0
-4235,Gestein: granitisch,,15111389.0
-4236,Granit,,15111390.0
-4237,Granit: Alkalifeldspat,,15111390.0
-4238,Granit: aplitisch,,15111390.0
-4239,Granit: aplitisch: Granat,,15111390.0
-4240,Granit: Biotit,,15111390.0
-4241,Granit: Biotit-Cordierit,,15111390.0
-4242,Granit: Biotit-Granat,,15111390.0
-4243,Granit: Biotit-Muskovit,,15111390.0
-4244,Granit: Hornblende,,15111390.0
-4245,Granit: metasomatisch,,15111390.0
-4246,Granit: mikrokristallin,,15111390.0
-4339,Marmor: kieselig,,15111486.0
-4340,Marmor: konglomeratisch,,15111486.0
-4341,Marmor: konglomeratisch-kalkig,,15111486.0
-4342,Marmor: metasomatisch,,15111486.0
-4343,Marmor: sandig,,15111486.0
-4344,Marmor: sandig: Bioklasten,,15111486.0
-4345,Marmor: schiefrig,,15111486.0
-4346,Marmor: Serizit,,15111486.0
-4347,Marmor: Silikat,,15111486.0
-4348,Marmor: tonig,,15111486.0
-4349,Marmor: tonig-schiefrig,,15111486.0
-4350,Quarzit,,15111468.0
-4351,Quarzit: Albit,,15111505.0
-4352,Quarzit: Chlorit,,15111505.0
-4353,Quarzit: kalkig,,15111505.0
-4354,Quarzit: Serizit,,15111505.0
-4355,Gneis,,15111468.0
-4356,Gneis: Albit,,15111510.0
-4357,Gneis: Albit-Oligoklas,,15111510.0
-4358,Gneis: Aluminosilikat,,15111510.0
-4359,Gneis: Amphibol,,15111510.0
-4360,Gneis: aplitisch,,15111510.0
-4361,Gneis: augig,,15111510.0
-4362,Gneis: augig: Phengit,,15111510.0
-4363,Gneis: Biotit,,15111510.0
-4364,Gneis: Biotit-Hornblende,,15111510.0
-4365,Gneis: Biotit-Muskovit,,15111510.0
-4366,Gneis: Biotit-Plagioklas,,15111510.0
-4367,Gneis: Chlorit,,15111510.0
-4368,Gneis: dioritisch,,15111510.0
-4369,Gneis: gebändert,,15111510.0
-4370,Gneis: gebändert: Granat,,15111510.0
-4371,Gneis: Granat,,15111510.0
-4372,Gneis: granitisch,,15111510.0
-4373,Gneis: granitisch-augig,,15111510.0
-4374,Gneis: granodioritisch,,15111510.0
-4375,Gneis: granulitisch,,15111510.0
-4376,Gneis: Hornblende,,15111510.0
-4377,Gneis: Kyanit,,15111510.0
-4378,Gneis: magmatisch,,15111510.0
-4379,Gneis: magmatisch-augig,,15111510.0
-4380,Gneis: magmatisch-augig: Cordierit,,15111510.0
-4381,Gneis: metasomatisch,,15111510.0
-4382,Gneis: migmatitisch,,15111510.0
-4383,Gneis: migmatitisch: Cordierit,,15111510.0
-4384,Gneis: migmatitisch-augig,,15111510.0
-4385,Gneis: Mikroklin,,15111510.0
-4386,Gneis: Muskovit,,15111510.0
-4387,Gneis: mylonitisch,,15111510.0
-4388,Gneis: Phengit,,15111510.0
-4389,Gneis: phyllitisch,,15111510.0
-4390,Gneis: psammitisch,,15111510.0
-4391,Gneis: psephitisch,,15111510.0
-4392,Gneis: psephitisch: Phengit,,15111510.0
-4393,Gneis: schiefrig,,15111510.0
-4394,Gneis: schiefrig: Biotit,,15111510.0
-4395,Gneis: schiefrig: Chlorit,,15111510.0
-4396,Gneis: schiefrig: Hornblende,,15111510.0
-4397,Gneis: schiefrig-augig,,15111510.0
-4398,Gneis: sedimentär,,15111510.0
-4399,Gneis: Serizit,,15111510.0
-4400,Gneis: Serizit-Granat,,15111510.0
-4401,Granulit,,15111468.0
-4402,Granulit: Biotit-Granat,,15111556.0
-4403,Granulit: Feldspat-Granat,,15111556.0
-4404,Migmatit,,15111468.0
-4405,Migmatit: Cordierit,,15111559.0
-4406,Phyllit,,15111468.0
-4407,Phyllit: Graphit,,15111561.0
-4408,Phyllit: kalkig,,15111561.0
-4409,Phyllit: Quarz,,15111561.0
-4410,Schiefer,,15111468.0
-4411,Schiefer: Aktinolith,,15111565.0
-4412,Schiefer: Amphibol,,15111565.0
-4413,Schiefer: Anthrazit,,15111565.0
-4414,Schiefer: Antigorit,,15111565.0
-4415,Schiefer: augig: Glimmer,,15111565.0
-4416,Schiefer: Biotit,,15111565.0
-4417,Schiefer: Biotit-Apatit,,15111565.0
-4418,Schiefer: Chlorit,,15111565.0
-4419,Schiefer: Chlorit-Epidot,,15111565.0
-4420,Schiefer: Chlorit-Talk,,15111565.0
-4421,Schiefer: Chloritoid,,15111565.0
-4422,Schiefer: Chloritoid-Kyanit,,15111565.0
-4423,Schiefer: Glaukophan,,15111565.0
-4424,Schiefer: Glimmer,,15111565.0
-4425,Schiefer: Glimmer-Chlorit,,15111565.0
-4426,Schiefer: Glimmer-Chloritoid,,15111565.0
-4427,Schiefer: Glimmer-Granat,,15111565.0
-4428,Schiefer: Glimmer-Graphit,,15111565.0
-4429,Schiefer: Glimmer-Hornblende,,15111565.0
-4430,Schiefer: Granat,,15111565.0
-4431,Schiefer: Graphit,,15111565.0
-4432,Schiefer: Hornblende,,15111565.0
-4433,Schiefer: Hornblende-Granat,,15111565.0
-4434,Schiefer: kalkig,,15111565.0
-4435,Schiefer: kalkig: Glimmer,,15111565.0
-4436,Schiefer: kalkig: Serizit,,15111565.0
-4437,Schiefer: kalkig: Zoisit,,15111565.0
-4438,Schiefer: kieselig,,15111565.0
-4439,Schiefer: Kohle,,15111565.0
-4440,Schiefer: konglomeratisch,,15111565.0
-4441,Schiefer: konglomeratisch-kalkig,,15111565.0
-4442,Schiefer: Kyanit,,15111565.0
-4443,Schiefer: mergelig,,15111565.0
-4444,Schiefer: Muskovit-Albit,,15111565.0
-4445,Schiefer: Quarz,,15111565.0
-4446,Schiefer: Quarz-Chlorit,,15111565.0
-4447,Schiefer: Quarz-Glimmer,,15111565.0
-4448,Schiefer: Quarz-Serizit,,15111565.0
-4449,Schiefer: sandig,,15111565.0
-4450,Schiefer: sandig-kalkig,,15111565.0
-4451,Schiefer: sandig-tonig,,15111565.0
-4452,Schiefer: Serizit,,15111565.0
-4453,Schiefer: Serizit-Chlorit,,15111565.0
-4454,Schiefer: Serizit-Staurolith,,15111565.0
-4455,Schiefer: Talk,,15111565.0
-4456,Schiefer: Talk-Kyanit,,15111565.0
-4457,Schiefer: Talk-Serpentin,,15111565.0
-4458,Schiefer: Talk-Tremolit,,15111565.0
-4459,Schiefer: tonig,,15111565.0
-4460,Schiefer: tonig: Anthrazit,,15111565.0
-4461,Schiefer: tonig: Bitumen,,15111565.0
-4462,Schiefer: tonig: Graphit,,15111565.0
-4463,Schiefer: tonig-kalkig,,15111565.0
-4464,Schiefer: tonig-kieselig,,15111565.0
-4465,Schiefer: tonig-kieselig: Bitumen,,15111565.0
-4466,Schiefer: Tremolit,,15111565.0
-4467,Schiefer: Turmalin,,15111565.0
-4468,Schiefer: Zoisit,,15111565.0
-4469,Schiefer: Zoisit-Fuchsit,,15111565.0
-4470,Gestein: mafisch,,15111344.0
-4471,Prasinit,,15111625.0
-4472,Prasinit: Albit-Chlorit,,15111626.0
-4473,Prasinit: Chlorit,,15111626.0
-4474,Prasinit: schiefrig,,15111626.0
-4475,Amphibolit,,15111625.0
-4476,Amphibolit: gebändert,,15111630.0
-4477,Amphibolit: Granat,,15111630.0
-4478,Amphibolit: Hornblende,,15111630.0
-4479,Amphibolit: migmatitisch,,15111630.0
-4480,Eklogit,,15111625.0
-4481,Serpentinit,,15111455.0
-4482,Serpentinit: Antigorit,,15111636.0
-4483,Serpentinit: brekziös: Karbonat,,15111636.0
-4484,Serpentinit: Chrysotil,,15111636.0
+OBJECTID,UUID,OPERATOR,DATEOFCREATION,DATEOFCHANGE,CREATION_YEAR,CREATION_MONTH,REVISION_YEAR,REVISION_MONTH,REASONFORCHANGE,OBJECTORIGIN,OBJECTORIGIN_YEAR,OBJECTORIGIN_MONTH,RC_ID,WU_ID,RC_ID_CREATION,WU_ID_CREATION,REVISION_QUALITY,ORIGINAL_ORIGIN,INTEGRATION_OBJECT_UUID,TREE_LEVEL,PARENT_REF,DESCRIPTION,GEOLCODE
+3864,{65544714-7290-4B5E-B51F-D1CF7C034CB6},,2025-05-19 22:23:15.000001,2025-05-19 22:23:15.000001,,,,,,,,,,,,,,,,,15111006.0,Brekzie: siltig,15111019.0
+3865,{F01D78E7-44FA-4F0C-895D-A3246755D487},,2025-05-19 22:23:16.000000,2025-05-19 22:23:16.000000,,,,,,,,,,,,,,,,,15111005.0,Brekzie: pyroklastisch,15111020.0
+3866,{CBEB2A0B-D234-49E4-B330-CC850745DF8A},,2025-05-19 22:23:16.000000,2025-05-19 22:23:16.000000,,,,,,,,,,,,,,,,,15111020.0,Brekzie: rhyolithisch,15111021.0
+3867,{9021BE6B-14FA-47FF-860C-46C1B7D59211},,2025-05-19 22:23:16.000000,2025-05-19 22:23:16.000000,,,,,,,,,,,,,,,,,15111020.0,Brekzie: tuffitisch,15111022.0
+3868,{546A1DD2-BBBD-4CE5-BB63-ED22C4222C7A},,2025-05-19 22:23:17.000000,2025-05-19 22:23:17.000000,,,,,,,,,,,,,,,,,15111005.0,Brekzie: tektonisch,15111023.0
+3869,{6DA0E6D6-DBCB-41C3-9796-B7338582D3B3},,2025-05-19 22:23:17.000000,2025-05-19 22:23:17.000000,,,,,,,,,,,,,,,,,15111023.0,Brekzie: kakiritisch,15111024.0
+3870,{800FA257-739A-404D-ABEE-7670686DE06F},,2025-05-19 22:23:17.000000,2025-05-19 22:23:17.000000,,,,,,,,,,,,,,,,,15111023.0,Brekzie: kataklastisch,15111025.0
+3871,{8FEFA685-F532-4C6D-B89B-8A09B8146D0F},,2025-05-19 22:23:18.000000,2025-05-19 22:23:18.000000,,,,,,,,,,,,,,,,,15111025.0,Brekzie: kataklastisch-dolomitisch,15111026.0
+3872,{BB6012FF-7F7E-401F-9798-D1D28DE9AB92},,2025-05-19 22:23:18.000000,2025-05-19 22:23:18.000000,,,,,,,,,,,,,,,,,15111025.0,Brekzie: kataklastisch-kalkig,15111027.0
+3873,{128BE81E-7667-40CE-917E-CD6DBC739BF1},,2025-05-19 22:23:18.000000,2025-05-19 22:23:18.000000,,,,,,,,,,,,,,,,,15111004.0,Konglomerat,15111028.0
+3874,{4C1BDD67-DA8A-4B00-89DC-8F9DCB609182},,2025-05-19 22:23:19.000000,2025-05-19 22:23:19.000000,,,,,,,,,,,,,,,,,15111028.0,Konglomerat: dolomitisch,15111029.0
+3875,{4E06AEDA-38E2-457D-8439-C0E482F0C965},,2025-05-19 22:23:19.000000,2025-05-19 22:23:19.000000,,,,,,,,,,,,,,,,,15111028.0,Konglomerat: kalkig,15111030.0
+3876,{C810B15D-B678-47BC-B625-71F16FE2F2EE},,2025-05-19 22:23:19.000000,2025-05-19 22:23:19.000000,,,,,,,,,,,,,,,,,15111028.0,Konglomerat: kalkig: Muscheln,15111031.0
+3877,{15B04D02-B2AE-42E6-B312-0AB4F7252F42},,2025-05-19 22:23:19.000000,2025-05-19 22:23:19.000000,,,,,,,,,,,,,,,,,15111028.0,Konglomerat: kalkig-dolomitisch,15111032.0
+3878,{C1B96534-FA0B-4BB9-A3E7-23B4C973B18F},,2025-05-19 22:23:20.000000,2025-05-19 22:23:20.000000,,,,,,,,,,,,,,,,,15111028.0,Konglomerat: kalkig-residual: Eisenpisoide,15111033.0
+3879,{F850F24D-C8E6-4F89-9709-9FC77BDB34A8},,2025-05-19 22:23:20.000000,2025-05-19 22:23:20.000000,,,,,,,,,,,,,,,,,15111028.0,Konglomerat: kristallin,15111034.0
+3880,{90D0CEF3-2684-4077-82B2-AC217B962A9F},,2025-05-19 22:23:20.000000,2025-05-19 22:23:20.000000,,,,,,,,,,,,,,,,,15111028.0,Konglomerat: monomikt,15111035.0
+3881,{AD117F7A-AE2C-4CFE-97A6-7E717744C735},,2025-05-19 22:23:21.000000,2025-05-19 22:23:21.000000,,,,,,,,,,,,,,,,,15111028.0,Konglomerat: ophiolithisch,15111036.0
+3976,{93A2ABA6-538A-4672-974C-4E38FF22E5D5},,2025-05-19 22:23:51.000000,2025-05-19 22:23:51.000000,,,,,,,,,,,,,,,,,15111102.0,Tonstein: tuffitisch,15111131.0
+3977,{19822317-DA34-453C-B423-B52BADF35FFE},,2025-05-19 22:23:51.000000,2025-05-19 22:23:51.000000,,,,,,,,,,,,,,,,,15111089.0,Mergelstein,15111132.0
+3978,{E6052CA4-2B32-45B9-8A7C-879EAEC65515},,2025-05-19 22:23:52.000000,2025-05-19 22:23:52.000000,,,,,,,,,,,,,,,,,15111132.0,Mergelstein: Bioklasten,15111133.0
+3979,{A119C5D6-E82D-42EF-A35D-26623D637D3D},,2025-05-19 22:23:52.000000,2025-05-19 22:23:52.000000,,,,,,,,,,,,,,,,,15111132.0,Mergelstein: Bioklasten-Ooide,15111134.0
+3980,{BD86E018-1A79-4432-9443-95FFB2600821},,2025-05-19 22:23:52.000000,2025-05-19 22:23:52.000000,,,,,,,,,,,,,,,,,15111132.0,Mergelstein: Bitumen,15111135.0
+3981,{EB6583B8-5AC8-402B-9099-16C8A1A2B467},,2025-05-19 22:23:53.000000,2025-05-19 22:23:53.000000,,,,,,,,,,,,,,,,,15111132.0,Mergelstein: dolomitisch,15111136.0
+3982,{FC6E279E-EAB7-479A-86E3-241DDE936118},,2025-05-19 22:23:53.000000,2025-05-19 22:23:53.000000,,,,,,,,,,,,,,,,,15111132.0,Mergelstein: Eisenooide,15111137.0
+3983,{D335C841-6B16-4A7E-90C0-032E1C509BE7},,2025-05-19 22:23:53.000000,2025-05-19 22:23:53.000000,,,,,,,,,,,,,,,,,15111132.0,Mergelstein: Gips,15111138.0
+3984,{30930F49-E55D-4078-A081-59275CDA9346},,2025-05-19 22:23:54.000000,2025-05-19 22:23:54.000000,,,,,,,,,,,,,,,,,15111132.0,Mergelstein: Glaukonit,15111139.0
+3985,{9DA54E04-2C21-4776-AA84-6E1CDE09CD63},,2025-05-19 22:23:54.000000,2025-05-19 22:23:54.000000,,,,,,,,,,,,,,,,,15111132.0,Mergelstein: Glaukonit-Bioklasten,15111140.0
+3986,{67EE360D-1D69-45C1-A1C1-51AAAED4F814},,2025-05-19 22:23:54.000000,2025-05-19 22:23:54.000000,,,,,,,,,,,,,,,,,15111132.0,Mergelstein: Glimmer,15111141.0
+3987,{015E6B70-516D-4737-8F2C-96E83C900EB4},,2025-05-19 22:23:55.000000,2025-05-19 22:23:55.000000,,,,,,,,,,,,,,,,,15111132.0,Mergelstein: kalkig,15111142.0
+3988,{36A56071-3B59-41BC-87F1-1394D9269D07},,2025-05-19 22:23:55.000000,2025-05-19 22:23:55.000000,,,,,,,,,,,,,,,,,15111132.0,Mergelstein: kalkig: Bioklasten,15111143.0
+3989,{8DA6DFCD-9576-40E1-9899-0CE7FB02A39D},,2025-05-19 22:23:55.000000,2025-05-19 22:23:55.000000,,,,,,,,,,,,,,,,,15111132.0,Mergelstein: kalkig: Bitumen,15111144.0
+3990,{88ACE3D9-DC1E-4C20-9B97-64A2D1ABE8C1},,2025-05-19 22:23:55.000000,2025-05-19 22:23:55.000000,,,,,,,,,,,,,,,,,15111132.0,Mergelstein: kalkig-dolomitisch,15111145.0
+3991,{335AB2ED-CF85-4999-A45F-EFF936C4C78D},,2025-05-19 22:23:56.000000,2025-05-19 22:23:56.000000,,,,,,,,,,,,,,,,,15111132.0,Mergelstein: kalkig: Eisenooide,15111146.0
+3992,{00316EE2-A08E-4BAA-BA42-410703F56123},,2025-05-19 22:23:56.000000,2025-05-19 22:23:56.000000,,,,,,,,,,,,,,,,,15111132.0,Mergelstein: kalkig: Glaukonit,15111147.0
+4045,{C9551A35-3239-4BD2-A014-22CCA9BDA8CB},,2025-05-19 22:24:13.000000,2025-05-19 22:24:13.000000,,,,,,,,,,,,,,,,,15111186.0,Kalkstein: Bitumen-Bioklasten,15111200.0
+4046,{BB918D31-C14C-4B58-AD10-81C968381DA4},,2025-05-19 22:24:14.000000,2025-05-19 22:24:14.000000,,,,,,,,,,,,,,,,,15111186.0,Kalkstein: brekziös,15111201.0
+4047,{6D9F0133-393F-4594-AF2C-33CF657507EE},,2025-05-19 22:24:14.000000,2025-05-19 22:24:14.000000,,,,,,,,,,,,,,,,,15111186.0,Kalkstein: Chert,15111202.0
+4048,{529F68E9-ADB9-43C3-ADD6-33338E310994},,2025-05-19 22:24:14.000000,2025-05-19 22:24:14.000000,,,,,,,,,,,,,,,,,15111186.0,Kalkstein: dolomitisch,15111203.0
+4049,{BDCAC40C-7B39-4F69-A09C-658DC96152B8},,2025-05-19 22:24:15.000000,2025-05-19 22:24:15.000000,,,,,,,,,,,,,,,,,15111186.0,Kalkstein: dolomitisch: Bioklasten,15111204.0
+4050,{B3487F08-ABA8-48EA-8963-E98B71FCCEA0},,2025-05-19 22:24:15.000000,2025-05-19 22:24:15.000000,,,,,,,,,,,,,,,,,15111186.0,Kalkstein: Eisenmineralien,15111205.0
+4051,{FA5ED9E6-2351-4C42-AA3A-94E298FC2ACE},,2025-05-19 22:24:15.000000,2025-05-19 22:24:15.000000,,,,,,,,,,,,,,,,,15111186.0,Kalkstein: Eisenooide,15111206.0
+4052,{6F7CF0FD-9837-464B-8ED5-0AE7016C60CB},,2025-05-19 22:24:15.000000,2025-05-19 22:24:15.000000,,,,,,,,,,,,,,,,,15111186.0,Kalkstein: Glaukonit,15111207.0
+4053,{31AEDD27-5EEE-463B-B41F-AEB47AC9ABD8},,2025-05-19 22:24:16.000000,2025-05-19 22:24:16.000000,,,,,,,,,,,,,,,,,15111186.0,Kalkstein: Glaukonit-Bioklasten,15111208.0
+4054,{DC2AAEB7-B292-40B0-A977-5460CBB07B11},,2025-05-19 22:24:16.000000,2025-05-19 22:24:16.000000,,,,,,,,,,,,,,,,,15111186.0,Kalkstein: kieselig,15111209.0
+4055,{4D375B39-5924-482A-8C7A-5D4FE3A9C0BC},,2025-05-19 22:24:16.000000,2025-05-19 22:24:16.000000,,,,,,,,,,,,,,,,,15111186.0,Kalkstein: kieselig: Bioklasten,15111210.0
+4056,{5448BCAF-A799-4C33-B855-2B06D5DE7347},,2025-05-19 22:24:17.000001,2025-05-19 22:24:17.000001,,,,,,,,,,,,,,,,,15111186.0,Kalkstein: kieselig: Bioklasten-Chert,15111211.0
+4057,{DFDBD5FC-1C55-4488-B018-644C7CF78682},,2025-05-19 22:24:17.000001,2025-05-19 22:24:17.000001,,,,,,,,,,,,,,,,,15111186.0,Kalkstein: kieselig: Glaukonit,15111212.0
+4058,{51A60833-51D7-4E08-96CC-A2E8948983E6},,2025-05-19 22:24:17.000001,2025-05-19 22:24:17.000001,,,,,,,,,,,,,,,,,15111186.0,Kalkstein: kieselig-spätig,15111213.0
+4059,{DEDF2FCF-EE4D-4F56-A9C6-9330C45F6C75},,2025-05-19 22:24:18.000000,2025-05-19 22:24:18.000000,,,,,,,,,,,,,,,,,15111186.0,Kalkstein: Korallen,15111214.0
+4060,{8E67C574-861B-40CD-A7BC-3BD215EAA82C},,2025-05-19 22:24:18.000000,2025-05-19 22:24:18.000000,,,,,,,,,,,,,,,,,15111186.0,Kalkstein: kreidig,15111215.0
+4061,{A10C87AC-E098-4CC1-8C4F-B7EAC8D551B4},,2025-05-19 22:24:18.000000,2025-05-19 22:24:18.000000,,,,,,,,,,,,,,,,,15111186.0,Kalkstein: kreidig: Bitumen,15111216.0
+4062,{2D8FDBF1-A577-4EF5-84F0-D57ED2EB4AC3},,2025-05-19 22:24:19.000000,2025-05-19 22:24:19.000000,,,,,,,,,,,,,,,,,15111186.0,Kalkstein: kreidig: Chert,15111217.0
+4063,{F58E857B-2C40-48A1-9D69-5712770FC1EF},,2025-05-19 22:24:19.000000,2025-05-19 22:24:19.000000,,,,,,,,,,,,,,,,,15111186.0,Kalkstein: kreidig: Pisoide,15111218.0
+4064,{8E775918-570F-4F9A-970C-2D37F179C08A},,2025-05-19 22:24:19.000000,2025-05-19 22:24:19.000000,,,,,,,,,,,,,,,,,15111186.0,Kalkstein: kristallin,15111219.0
+4065,{520616C8-0F59-4938-8F33-48DB81269A6B},,2025-05-19 22:24:20.000000,2025-05-19 22:24:20.000000,,,,,,,,,,,,,,,,,15111186.0,Kalkstein: Limonit,15111220.0
+4066,{E8376344-6CFA-4F01-97AE-E454EA90C47B},,2025-05-19 22:24:20.000000,2025-05-19 22:24:20.000000,,,,,,,,,,,,,,,,,15111186.0,Kalkstein: mergelig,15111221.0
+4067,{97BC9487-4A13-4CFB-9638-A6F5E75EFB69},,2025-05-19 22:24:20.000000,2025-05-19 22:24:20.000000,,,,,,,,,,,,,,,,,15111186.0,Kalkstein: mergelig: Bioklasten,15111222.0
+4068,{917620BB-BC2E-45DB-9B9B-5F594D10A76F},,2025-05-19 22:24:21.000000,2025-05-19 22:24:21.000000,,,,,,,,,,,,,,,,,15111186.0,Kalkstein: mergelig: Chert,15111223.0
+4069,{0EE3803E-2D3F-4390-9FAD-DE1E0F692EC9},,2025-05-19 22:24:21.000000,2025-05-19 22:24:21.000000,,,,,,,,,,,,,,,,,15111186.0,Kalkstein: mergelig: Glaukonit,15111224.0
+4070,{F982AA11-BD29-4257-9F5D-FBD75E0C4E1A},,2025-05-19 22:24:21.000000,2025-05-19 22:24:21.000000,,,,,,,,,,,,,,,,,15111186.0,Kalkstein: mergelig: Pyrit,15111225.0
+4071,{514F3835-1172-4DE3-A33E-23C83DBAF7A8},,2025-05-19 22:24:21.000000,2025-05-19 22:24:21.000000,,,,,,,,,,,,,,,,,15111186.0,Kalkstein: mergelig-dolomitisch,15111226.0
+4072,{3B679A41-A6F6-4B3B-98DE-AD3A5D21AAD3},,2025-05-19 22:24:22.000000,2025-05-19 22:24:22.000000,,,,,,,,,,,,,,,,,15111186.0,Kalkstein: mergelig-kieselig,15111227.0
+4073,{A97AC36D-E82F-4E01-B576-A6201D365CC1},,2025-05-19 22:24:22.000000,2025-05-19 22:24:22.000000,,,,,,,,,,,,,,,,,15111186.0,Kalkstein: mergelig-schiefrig,15111228.0
+4074,{0BF7F700-8F35-465A-9176-525EDC3A0B5B},,2025-05-19 22:24:22.000000,2025-05-19 22:24:22.000000,,,,,,,,,,,,,,,,,15111186.0,Kalkstein: mikritisch,15111229.0
+4075,{66065CD6-1ABB-4B07-ACCB-00BE317A4AC9},,2025-05-19 22:24:23.000000,2025-05-19 22:24:23.000000,,,,,,,,,,,,,,,,,15111186.0,Kalkstein: mikritisch: Aptychen,15111230.0
+4076,{FA73F0E1-B3C8-43A3-BA5F-8497DFEF0B73},,2025-05-19 22:24:23.000000,2025-05-19 22:24:23.000000,,,,,,,,,,,,,,,,,15111186.0,Kalkstein: mikritisch: Bioklasten,15111231.0
+4077,{09D9F6FB-3E59-4498-A046-7EB44C58D3E3},,2025-05-19 22:24:23.000000,2025-05-19 22:24:23.000000,,,,,,,,,,,,,,,,,15111186.0,Kalkstein: mikritisch: Bioklasten-Chert,15111232.0
+4078,{1BA0A331-D05C-4089-BBAC-44F0A2486FE2},,2025-05-19 22:24:24.000000,2025-05-19 22:24:24.000000,,,,,,,,,,,,,,,,,15111186.0,Kalkstein: mikritisch: Calpionellen,15111233.0
+4079,{06DE1B75-8F11-428E-85B2-91C42B12EEC8},,2025-05-19 22:24:24.000000,2025-05-19 22:24:24.000000,,,,,,,,,,,,,,,,,15111186.0,Kalkstein: mikritisch: Chert,15111234.0
+4080,{7C6083FE-91ED-4F36-8A9B-53608C8A41E0},,2025-05-19 22:24:24.000000,2025-05-19 22:24:24.000000,,,,,,,,,,,,,,,,,15111186.0,Kalkstein: mikritisch: Glaukonit,15111235.0
+4081,{63A12CD9-AE54-42C9-801C-AB0B665F8519},,2025-05-19 22:24:25.000001,2025-05-19 22:24:25.000001,,,,,,,,,,,,,,,,,15111186.0,Kalkstein: mikritisch: Onkoide,15111236.0
+4082,{D5704B96-7194-4133-A53A-FF77A179E5F8},,2025-05-19 22:24:25.000001,2025-05-19 22:24:25.000001,,,,,,,,,,,,,,,,,15111186.0,Kalkstein: mikritisch: Ooide,15111237.0
+4083,{1E72CE14-0BBE-4966-8FDA-D4C90CF8A508},,2025-05-19 22:24:25.000001,2025-05-19 22:24:25.000001,,,,,,,,,,,,,,,,,15111186.0,Kalkstein: Nummuliten,15111238.0
+4084,{6EA495DD-E7F5-4595-9E59-48891337CE3A},,2025-05-19 22:24:26.000000,2025-05-19 22:24:26.000000,,,,,,,,,,,,,,,,,15111186.0,Kalkstein: Onkoide,15111239.0
+4085,{0C2399A0-94A5-4C7E-8309-6230CBF54FB3},,2025-05-19 22:24:26.000000,2025-05-19 22:24:26.000000,,,,,,,,,,,,,,,,,15111186.0,Kalkstein: Ooide,15111240.0
+4086,{C5620DAB-61F1-432E-A20D-725AA960EA73},,2025-05-19 22:24:26.000000,2025-05-19 22:24:26.000000,,,,,,,,,,,,,,,,,15111186.0,Kalkstein: Ooide-Chert,15111241.0
+4087,{2880D844-1C84-4D61-92D5-6734252B77FF},,2025-05-19 22:24:27.000000,2025-05-19 22:24:27.000000,,,,,,,,,,,,,,,,,15111186.0,Kalkstein: pedogen-verkrustet,15111242.0
+4088,{EDBD73CA-4E86-421A-82CA-8EF61C154FB5},,2025-05-19 22:24:27.000000,2025-05-19 22:24:27.000000,,,,,,,,,,,,,,,,,15111186.0,Kalkstein: Phosphorit,15111243.0
+4089,{82FD8149-E1D4-4287-8164-E4E667055002},,2025-05-19 22:24:27.000000,2025-05-19 22:24:27.000000,,,,,,,,,,,,,,,,,15111186.0,Kalkstein: Pisoide,15111244.0
+4090,{E1E75FF8-528A-433C-BCFC-E8AFB534B9A2},,2025-05-19 22:24:28.000000,2025-05-19 22:24:28.000000,,,,,,,,,,,,,,,,,15111186.0,Kalkstein: ruditisch,15111245.0
+4091,{7297C308-0508-4306-9B96-952E1E41063A},,2025-05-19 22:24:28.000000,2025-05-19 22:24:28.000000,,,,,,,,,,,,,,,,,15111186.0,Kalkstein: ruditisch: Korallen,15111246.0
+4092,{C052132A-9DBB-49CA-BB3D-06BFFD8439E6},,2025-05-19 22:24:28.000000,2025-05-19 22:24:28.000000,,,,,,,,,,,,,,,,,15111186.0,Kalkstein: sandig,15111247.0
+4093,{DE167766-5809-48EE-ACD7-11AC14D58DFE},,2025-05-19 22:24:29.000000,2025-05-19 22:24:29.000000,,,,,,,,,,,,,,,,,15111186.0,Kalkstein: sandig: Bioklasten,15111248.0
+4094,{88C81862-F3BD-451A-963C-343EEF1A5D1C},,2025-05-19 22:24:29.000000,2025-05-19 22:24:29.000000,,,,,,,,,,,,,,,,,15111186.0,Kalkstein: sandig: Eisenooide,15111249.0
+4095,{19E49A03-F333-4D9D-BC09-E89FD91CCF09},,2025-05-19 22:24:29.000000,2025-05-19 22:24:29.000000,,,,,,,,,,,,,,,,,15111186.0,Kalkstein: sandig: Glaukonit,15111250.0
+4096,{F068B918-6F85-47C1-8AEC-B8DA37A808A2},,2025-05-19 22:24:30.000000,2025-05-19 22:24:30.000000,,,,,,,,,,,,,,,,,15111186.0,Kalkstein: sandig: Glimmer,15111251.0
+4097,{2E42F1EB-473D-4922-AE4B-13F1FAB5C9F0},,2025-05-19 22:24:30.000000,2025-05-19 22:24:30.000000,,,,,,,,,,,,,,,,,15111186.0,Kalkstein: sandig-kieselig,15111252.0
+4098,{415E25EA-A74C-42BF-9F53-54150EB9D885},,2025-05-19 22:24:30.000000,2025-05-19 22:24:30.000000,,,,,,,,,,,,,,,,,15111186.0,Kalkstein: sandig-spätig,15111253.0
+3993,{301C7A7B-7323-4379-A397-779C45671D1C},,2025-05-19 22:23:56.000000,2025-05-19 22:23:56.000000,,,,,,,,,,,,,,,,,15111132.0,Mergelstein: kalkig: Ooide,15111148.0
+3994,{52F8526B-6843-45EE-A8AE-70DF1FACDE5B},,2025-05-19 22:23:57.000000,2025-05-19 22:23:57.000000,,,,,,,,,,,,,,,,,15111132.0,Mergelstein: kalkig-kieselig,15111149.0
+3995,{5C6486E9-7095-43F1-BA21-14B64887AC4A},,2025-05-19 22:23:57.000000,2025-05-19 22:23:57.000000,,,,,,,,,,,,,,,,,15111132.0,Mergelstein: kalkig-schiefrig,15111150.0
+3996,{31F3AD94-3657-4EA3-AF94-763CC3AD4024},,2025-05-19 22:23:57.000000,2025-05-19 22:23:57.000000,,,,,,,,,,,,,,,,,15111132.0,Mergelstein: kieselig,15111151.0
+3997,{14E660E4-8FE9-495C-A9C0-D0397BAE978D},,2025-05-19 22:23:58.000001,2025-05-19 22:23:58.000001,,,,,,,,,,,,,,,,,15111132.0,Mergelstein: Kohle,15111152.0
+3998,{ABAF8FAE-684F-418D-AE54-89A8081FB69F},,2025-05-19 22:23:58.000001,2025-05-19 22:23:58.000001,,,,,,,,,,,,,,,,,15111132.0,Mergelstein: konglomeratisch,15111153.0
+3999,{C0B8E4AB-65EE-4210-B93E-257067A9B14B},,2025-05-19 22:23:58.000001,2025-05-19 22:23:58.000001,,,,,,,,,,,,,,,,,15111132.0,Mergelstein: Korallen,15111154.0
+4000,{DA4D2C33-7597-4CB9-8F16-7CB205253E0C},,2025-05-19 22:23:59.000000,2025-05-19 22:23:59.000000,,,,,,,,,,,,,,,,,15111132.0,Mergelstein: Lignit,15111155.0
+4001,{C26AA60B-B24E-41E3-AA4C-A6E445B1FC2B},,2025-05-19 22:23:59.000000,2025-05-19 22:23:59.000000,,,,,,,,,,,,,,,,,15111132.0,Mergelstein: Ooide,15111156.0
+4002,{7608AFB4-7C1E-4274-A5FF-083D1E3962AD},,2025-05-19 22:23:59.000000,2025-05-19 22:23:59.000000,,,,,,,,,,,,,,,,,15111132.0,Mergelstein: Phosphorit,15111157.0
+4003,{2EB0D106-9D40-4704-A84F-63447AAC5541},,2025-05-19 22:24:00.000000,2025-05-19 22:24:00.000000,,,,,,,,,,,,,,,,,15111132.0,Mergelstein: sandig,15111158.0
+4004,{BE01BA32-466F-4D2F-9A0F-2BA6C60CED3B},,2025-05-19 22:24:00.000000,2025-05-19 22:24:00.000000,,,,,,,,,,,,,,,,,15111132.0,Mergelstein: sandig: Bioklasten,15111159.0
+4005,{88C84888-D77E-442D-AE15-2EA07AC0A288},,2025-05-19 22:24:00.000000,2025-05-19 22:24:00.000000,,,,,,,,,,,,,,,,,15111132.0,Mergelstein: sandig-dolomitisch,15111160.0
+4006,{41751C9C-E41E-441A-924A-3ACF9E87EE1E},,2025-05-19 22:24:01.000000,2025-05-19 22:24:01.000000,,,,,,,,,,,,,,,,,15111132.0,Mergelstein: sandig: Glaukonit,15111161.0
+4007,{0657141C-3C16-435B-A0C1-A6A0F0FDD843},,2025-05-19 22:24:01.000000,2025-05-19 22:24:01.000000,,,,,,,,,,,,,,,,,15111132.0,Mergelstein: sandig: Glimmer,15111162.0
+4008,{8305CE67-9D93-4624-8607-F40DE950D91B},,2025-05-19 22:24:01.000000,2025-05-19 22:24:01.000000,,,,,,,,,,,,,,,,,15111132.0,Mergelstein: sandig: Kohle,15111163.0
+4009,{CE88965B-BC2E-49AA-A216-397CDF9EF602},,2025-05-19 22:24:02.000000,2025-05-19 22:24:02.000000,,,,,,,,,,,,,,,,,15111132.0,Mergelstein: sandig-kalkig,15111164.0
+4010,{77413762-E517-4288-A3B2-75781D8819D5},,2025-05-19 22:24:02.000000,2025-05-19 22:24:02.000000,,,,,,,,,,,,,,,,,15111132.0,Mergelstein: sandig-siltig,15111165.0
+4011,{67B35277-4252-439B-B243-5FF8A48F9404},,2025-05-19 22:24:02.000000,2025-05-19 22:24:02.000000,,,,,,,,,,,,,,,,,15111132.0,Mergelstein: sandig-tonig,15111166.0
+4012,{5772C951-80A0-4373-ACFD-3FD05BCDA8E4},,2025-05-19 22:24:03.000000,2025-05-19 22:24:03.000000,,,,,,,,,,,,,,,,,15111132.0,Mergelstein: sandig-tonig: Glaukonit,15111167.0
+4013,{3FCD7CA5-5FFA-4D5B-BBF8-AE808F8D00E6},,2025-05-19 22:24:03.000000,2025-05-19 22:24:03.000000,,,,,,,,,,,,,,,,,15111132.0,Mergelstein: schiefrig,15111168.0
+4014,{CB23A426-8C21-4643-B760-9AB16125F067},,2025-05-19 22:24:03.000000,2025-05-19 22:24:03.000000,,,,,,,,,,,,,,,,,15111132.0,Mergelstein: schiefrig: Bitumen,15111169.0
+4015,{D83C5086-0CFD-44B3-A077-E1C4716148E2},,2025-05-19 22:24:04.000000,2025-05-19 22:24:04.000000,,,,,,,,,,,,,,,,,15111132.0,Mergelstein: siltig,15111170.0
+4016,{622532E6-19B1-4FEF-A3C2-CD4DFDD3C2B4},,2025-05-19 22:24:04.000000,2025-05-19 22:24:04.000000,,,,,,,,,,,,,,,,,15111132.0,Mergelstein: siltig: Glaukonit,15111171.0
+4017,{9690B043-708B-48F4-87DE-D3AB6847463E},,2025-05-19 22:24:04.000000,2025-05-19 22:24:04.000000,,,,,,,,,,,,,,,,,15111132.0,Mergelstein: siltig: Glimmer,15111172.0
+4018,{820E95B4-8960-441B-B789-847910ED984A},,2025-05-19 22:24:05.000000,2025-05-19 22:24:05.000000,,,,,,,,,,,,,,,,,15111132.0,Mergelstein: siltig-dolomitisch,15111173.0
+4019,{652AC8FA-D635-4E26-93B7-90036766FABA},,2025-05-19 22:24:05.000000,2025-05-19 22:24:05.000000,,,,,,,,,,,,,,,,,15111132.0,Mergelstein: siltig-kalkig,15111174.0
+4020,{A807988A-B241-440C-98EE-98E2B99493FB},,2025-05-19 22:24:05.000000,2025-05-19 22:24:05.000000,,,,,,,,,,,,,,,,,15111132.0,Mergelstein: siltig-schiefrig,15111175.0
+4021,{C2EE9D7E-B910-43D1-BB53-C9F6D4ED7D37},,2025-05-19 22:24:06.000000,2025-05-19 22:24:06.000000,,,,,,,,,,,,,,,,,15111132.0,Mergelstein: siltig-tonig,15111176.0
+4022,{7C4DA182-C8BA-487C-84CB-5A8D4AB9E356},,2025-05-19 22:24:06.000000,2025-05-19 22:24:06.000000,,,,,,,,,,,,,,,,,15111132.0,Mergelstein: tonig,15111177.0
+4023,{E7447F63-FA4B-4727-8443-681160036070},,2025-05-19 22:24:06.000000,2025-05-19 22:24:06.000000,,,,,,,,,,,,,,,,,15111132.0,Mergelstein: tonig: Bitumen,15111178.0
+4024,{3D0EB7E1-C0DD-4EDC-AF80-B61EE67247F0},,2025-05-19 22:24:07.000000,2025-05-19 22:24:07.000000,,,,,,,,,,,,,,,,,15111132.0,Mergelstein: tonig: Kohle,15111179.0
+4025,{E36BC0F1-194A-4C50-AD61-6676181E5797},,2025-05-19 22:24:07.000000,2025-05-19 22:24:07.000000,,,,,,,,,,,,,,,,,15111001.0,Gestein: Karbonat,15111180.0
+4026,{D583C5AE-2AC6-44F2-90CD-3465C99E66D2},,2025-05-19 22:24:07.000000,2025-05-19 22:24:07.000000,,,,,,,,,,,,,,,,,15111002.0,Gestein: sedimentär: Karbonat,15111181.0
+4027,{110D0170-2981-4F5F-BD93-08965DF385E8},,2025-05-19 22:24:08.000000,2025-05-19 22:24:08.000000,,,,,,,,,,,,,,,,,15111002.0,Gestein: pedogen: Karbonat,15111182.0
+4028,{BB4FC0A0-3565-4050-BC68-D17342DE79CA},,2025-05-19 22:24:08.000000,2025-05-19 22:24:08.000000,,,,,,,,,,,,,,,,,15111002.0,Gestein: pedogen-verkrustet: Karbonat,15111183.0
+4029,{2487BED8-41D4-4F93-8FCE-9388802958A6},,2025-05-19 22:24:08.000000,2025-05-19 22:24:08.000000,,,,,,,,,,,,,,,,,15111348.0,Gestein: vulkanisch: Karbonat,15111184.0
+4030,{5D2C0FBE-974C-459D-94B6-2148B4001A6D},,2025-05-19 22:24:09.000001,2025-05-19 22:24:09.000001,,,,,,,,,,,,,,,,,15111468.0,Gestein: metamorph: Karbonat,15111185.0
+4031,{990F5518-1FC8-4DF6-BEB0-0D1BD49E62C8},,2025-05-19 22:24:09.000001,2025-05-19 22:24:09.000001,,,,,,,,,,,,,,,,,15111181.0,Kalkstein,15111186.0
+4032,{0EC03BDD-3322-47CB-9874-9A95276ADADA},,2025-05-19 22:24:09.000001,2025-05-19 22:24:09.000001,,,,,,,,,,,,,,,,,15111186.0,Kalkstein: Albit,15111187.0
+4033,{01F5290F-9DBD-4452-8CA6-14B26A08D56C},,2025-05-19 22:24:09.000001,2025-05-19 22:24:09.000001,,,,,,,,,,,,,,,,,15111186.0,Kalkstein: Algen,15111188.0
+4034,{33330248-6F5A-4DF8-8EBD-FD34E54AFF4F},,2025-05-19 22:24:10.000000,2025-05-19 22:24:10.000000,,,,,,,,,,,,,,,,,15111186.0,Kalkstein: arenitisch,15111189.0
+4035,{5B79F17B-D247-4CF1-8A51-DEE61C1B4C91},,2025-05-19 22:24:10.000000,2025-05-19 22:24:10.000000,,,,,,,,,,,,,,,,,15111186.0,Kalkstein: arenitisch: Bioklasten,15111190.0
+4036,{C2E73682-2E8F-443C-8856-81C5B7F0E8EA},,2025-05-19 22:24:10.000000,2025-05-19 22:24:10.000000,,,,,,,,,,,,,,,,,15111186.0,Kalkstein: arenitisch: Bioklasten-Chert,15111191.0
+4037,{BE193354-3E1F-4D3A-B718-EC8B24BD77CC},,2025-05-19 22:24:11.000000,2025-05-19 22:24:11.000000,,,,,,,,,,,,,,,,,15111186.0,Kalkstein: arenitisch: Glaukonit,15111192.0
+4038,{896C7777-AFC0-4A6F-982E-2511708F13AB},,2025-05-19 22:24:11.000000,2025-05-19 22:24:11.000000,,,,,,,,,,,,,,,,,15111186.0,Kalkstein: arenitisch: Ooide,15111193.0
+4039,{B336AA6A-AA69-4191-864D-3E8411CA85F7},,2025-05-19 22:24:11.000000,2025-05-19 22:24:11.000000,,,,,,,,,,,,,,,,,15111186.0,Kalkstein: arenitisch: Quarz,15111194.0
+4040,{F2BEBDF2-2012-477D-A23E-A63DDF135074},,2025-05-19 22:24:12.000000,2025-05-19 22:24:12.000000,,,,,,,,,,,,,,,,,15111186.0,Kalkstein: arenitisch-spätig,15111195.0
+4041,{40B131BD-A136-40A5-91A7-69E5FECA7F4A},,2025-05-19 22:24:12.000000,2025-05-19 22:24:12.000000,,,,,,,,,,,,,,,,,15111186.0,Kalkstein: Bioklasten,15111196.0
+4042,{D0EEA41F-908B-4B7E-BDBB-4E94906903C0},,2025-05-19 22:24:12.000000,2025-05-19 22:24:12.000000,,,,,,,,,,,,,,,,,15111186.0,Kalkstein: Bioklasten-Chert,15111197.0
+4043,{513B4C8E-0614-48D4-A311-E73F29B98A50},,2025-05-19 22:24:13.000000,2025-05-19 22:24:13.000000,,,,,,,,,,,,,,,,,15111186.0,Kalkstein: Bioklasten-Ooide,15111198.0
+4044,{EC3DF4AC-2C13-4816-83F5-A692120AB4A8},,2025-05-19 22:24:13.000000,2025-05-19 22:24:13.000000,,,,,,,,,,,,,,,,,15111186.0,Kalkstein: Bitumen,15111199.0
+3882,{FDC3C1DA-421F-4C63-82D6-35604A717BE1},,2025-05-19 22:23:21.000000,2025-05-19 22:23:21.000000,,,,,,,,,,,,,,,,,15111028.0,Konglomerat: polymikt,15111037.0
+3883,{7DA2C43F-9DD1-4BD2-8619-F8D20ACA3E07},,2025-05-19 22:23:22.000000,2025-05-19 22:23:22.000000,,,,,,,,,,,,,,,,,15111028.0,Konglomerat: polymikt: Bioklasten,15111038.0
+3884,{7F9F685F-2BAE-4CF0-95DC-38770DD24110},,2025-05-19 22:23:22.000000,2025-05-19 22:23:22.000000,,,,,,,,,,,,,,,,,15111028.0,Konglomerat: polymikt: Quarz,15111039.0
+3885,{A732F654-A9C1-4605-8DE7-85DAA9E62825},,2025-05-19 22:23:22.000000,2025-05-19 22:23:22.000000,,,,,,,,,,,,,,,,,15111028.0,Konglomerat: Quarz,15111040.0
+3886,{56FA378B-D03B-4C20-8F35-F54A88F11DD6},,2025-05-19 22:23:23.000000,2025-05-19 22:23:23.000000,,,,,,,,,,,,,,,,,15111028.0,Konglomerat: pyroklastisch,15111041.0
+3887,{1CAF80CE-75B6-4C7B-9305-273234BA8CE9},,2025-05-19 22:23:23.000000,2025-05-19 22:23:23.000000,,,,,,,,,,,,,,,,,15111028.0,Konglomerat: tuffitisch,15111042.0
+3888,{5E1BCB23-BFCB-4F1E-9F95-674F1130FA4B},,2025-05-19 22:23:23.000000,2025-05-19 22:23:23.000000,,,,,,,,,,,,,,,,,15111003.0,Gestein: psammitisch,15111043.0
+3889,{A228221A-2409-44C6-A5EF-28F26A252AB6},,2025-05-19 22:23:24.000000,2025-05-19 22:23:24.000000,,,,,,,,,,,,,,,,,15111043.0,Sandstein,15111044.0
+3890,{6262F83B-0560-4ACC-98C5-4875FFBE9A97},,2025-05-19 22:23:24.000000,2025-05-19 22:23:24.000000,,,,,,,,,,,,,,,,,15111044.0,Sandstein: Anthrazit,15111045.0
+3891,{F412F78B-0000-43E8-B099-379D9E6B721C},,2025-05-19 22:23:24.000000,2025-05-19 22:23:24.000000,,,,,,,,,,,,,,,,,15111044.0,Sandstein: Bioklasten,15111046.0
+3892,{A056235A-41DD-4757-BD6C-D0B07AA0E5CC},,2025-05-19 22:23:25.000000,2025-05-19 22:23:25.000000,,,,,,,,,,,,,,,,,15111044.0,Sandstein: Bitumen,15111047.0
+3893,{9109A723-4F4E-4311-8A33-7C00741726EC},,2025-05-19 22:23:25.000000,2025-05-19 22:23:25.000000,,,,,,,,,,,,,,,,,15111044.0,Sandstein: dolomitisch,15111048.0
+3894,{32B1C04D-4639-4372-A2C2-B07545865A42},,2025-05-19 22:23:25.000000,2025-05-19 22:23:25.000000,,,,,,,,,,,,,,,,,15111044.0,Sandstein: Eisenmineralien,15111049.0
+3895,{C219ACE2-2B6B-4C76-B0D8-5DE08A72A34A},,2025-05-19 22:23:26.000001,2025-05-19 22:23:26.000001,,,,,,,,,,,,,,,,,15111044.0,Sandstein: Eisenooide,15111050.0
+3896,{12403BD5-1381-437E-A408-329A7BAF7C98},,2025-05-19 22:23:26.000001,2025-05-19 22:23:26.000001,,,,,,,,,,,,,,,,,15111044.0,Sandstein: Feldspat,15111051.0
+3897,{55A4E855-1C50-4A4C-A0B2-45F2D130C5AF},,2025-05-19 22:23:26.000001,2025-05-19 22:23:26.000001,,,,,,,,,,,,,,,,,15111044.0,Sandstein: Glaukonit,15111052.0
+3898,{0A637B45-2452-44D3-9BCB-8BFC9B084A13},,2025-05-19 22:23:26.000001,2025-05-19 22:23:26.000001,,,,,,,,,,,,,,,,,15111044.0,Sandstein: Glimmer,15111053.0
+3899,{FAC80C0C-D553-410D-BB87-064169FA816D},,2025-05-19 22:23:27.000000,2025-05-19 22:23:27.000000,,,,,,,,,,,,,,,,,15111044.0,Sandstein: Glimmer-Glaukonit,15111054.0
+3900,{6F686324-3550-4673-A6B6-65B160544C27},,2025-05-19 22:23:27.000000,2025-05-19 22:23:27.000000,,,,,,,,,,,,,,,,,15111044.0,Sandstein: Gips,15111055.0
+3901,{6227D05E-CE25-4DCF-8764-66A922BB2F7C},,2025-05-19 22:23:27.000000,2025-05-19 22:23:27.000000,,,,,,,,,,,,,,,,,15111044.0,Sandstein: kalkig,15111056.0
+3902,{18C79307-1CC4-4BD3-AB68-560748224205},,2025-05-19 22:23:28.000000,2025-05-19 22:23:28.000000,,,,,,,,,,,,,,,,,15111044.0,Sandstein: kalkig: Bioklasten,15111057.0
+3903,{D8C06A7B-5A69-498D-B617-0D96F6A98F0B},,2025-05-19 22:23:28.000000,2025-05-19 22:23:28.000000,,,,,,,,,,,,,,,,,15111044.0,Sandstein: kalkig: Glaukonit,15111058.0
+3904,{59C4BA91-8A49-4DFE-AF65-79DFF8036706},,2025-05-19 22:23:28.000000,2025-05-19 22:23:28.000000,,,,,,,,,,,,,,,,,15111044.0,Sandstein: kalkig: Glimmer,15111059.0
+3905,{30AC9B1F-5BF7-483C-A883-FB44D241DBF2},,2025-05-19 22:23:29.000000,2025-05-19 22:23:29.000000,,,,,,,,,,,,,,,,,15111044.0,Sandstein: kalkig: Kohle,15111060.0
+3906,{713DB302-1C42-4F0F-8E43-6188956AD025},,2025-05-19 22:23:29.000000,2025-05-19 22:23:29.000000,,,,,,,,,,,,,,,,,15111044.0,Sandstein: kalkig: Muscheln,15111061.0
+3907,{54A4606B-1B09-498C-B269-05552CC74AE2},,2025-05-19 22:23:29.000000,2025-05-19 22:23:29.000000,,,,,,,,,,,,,,,,,15111044.0,Sandstein: kalkig: Nummuliten,15111062.0
+3908,{A7E1C100-81DB-4397-ACE7-794054213266},,2025-05-19 22:23:30.000000,2025-05-19 22:23:30.000000,,,,,,,,,,,,,,,,,15111044.0,Sandstein: kalkig: Quarz,15111063.0
+3909,{E20A105F-61A1-4E52-B1D1-F75A550FF1F8},,2025-05-19 22:23:30.000000,2025-05-19 22:23:30.000000,,,,,,,,,,,,,,,,,15111044.0,Sandstein: kalkig-dolomitisch,15111064.0
+3910,{D7E0BDCC-521B-43FF-8CA3-40E00B41AF12},,2025-05-19 22:23:30.000000,2025-05-19 22:23:30.000000,,,,,,,,,,,,,,,,,15111044.0,Sandstein: kalkig-kieselig,15111065.0
+3911,{60FED351-6F79-42F8-80F2-F99560279D30},,2025-05-19 22:23:31.000000,2025-05-19 22:23:31.000000,,,,,,,,,,,,,,,,,15111044.0,Sandstein: kieselig,15111066.0
+3912,{EAC1CD4D-B7B2-45C3-A394-D715C61E2498},,2025-05-19 22:23:31.000000,2025-05-19 22:23:31.000000,,,,,,,,,,,,,,,,,15111044.0,Sandstein: Kohle,15111067.0
+3913,{9DF411E3-7A68-4559-BB6B-1D84E2FE0B60},,2025-05-19 22:23:31.000000,2025-05-19 22:23:31.000000,,,,,,,,,,,,,,,,,15111044.0,Sandstein: konglomeratisch,15111068.0
+3914,{B9CA1580-2CE0-4BD1-AE02-57F16549E53F},,2025-05-19 22:23:32.000000,2025-05-19 22:23:32.000000,,,,,,,,,,,,,,,,,15111044.0,Sandstein: konglomeratisch-kalkig: Muscheln,15111069.0
+3915,{34AF9B3B-1C1A-4002-ABE7-E3662BFC0C00},,2025-05-19 22:23:32.000000,2025-05-19 22:23:32.000000,,,,,,,,,,,,,,,,,15111044.0,Sandstein: mergelig,15111070.0
+3916,{F88A486E-7D62-4AB6-B4A4-84090639069E},,2025-05-19 22:23:32.000000,2025-05-19 22:23:32.000000,,,,,,,,,,,,,,,,,15111044.0,Sandstein: mergelig: Glaukonit,15111071.0
+3917,{A64A10AB-11E8-4794-8693-51B162356A0C},,2025-05-19 22:23:33.000000,2025-05-19 22:23:33.000000,,,,,,,,,,,,,,,,,15111044.0,Sandstein: mergelig: Glimmer,15111072.0
+3918,{D570D11B-09EE-4ED1-94F5-3CB43A461CF4},,2025-05-19 22:23:33.000000,2025-05-19 22:23:33.000000,,,,,,,,,,,,,,,,,15111044.0,Sandstein: Phosphorit,15111073.0
+3919,{8B66391D-175D-4DB4-817E-32701239EEF3},,2025-05-19 22:23:33.000000,2025-05-19 22:23:33.000000,,,,,,,,,,,,,,,,,15111044.0,Sandstein: Quarz,15111074.0
+3920,{CC096DCD-3B9C-4E26-AED8-181F7EB46CD9},,2025-05-19 22:23:34.000001,2025-05-19 22:23:34.000001,,,,,,,,,,,,,,,,,15111044.0,Sandstein: Quarz-Glaukonit,15111075.0
+3921,{CF554162-9536-4FAC-8E52-B11BF97E37BE},,2025-05-19 22:23:34.000001,2025-05-19 22:23:34.000001,,,,,,,,,,,,,,,,,15111044.0,Sandstein: Quarz-Glimmer,15111076.0
+3922,{B1ABC3D4-6878-446F-A46A-B78A2229F440},,2025-05-19 22:23:34.000001,2025-05-19 22:23:34.000001,,,,,,,,,,,,,,,,,15111044.0,Sandstein: siltig,15111077.0
+3923,{BAA792D3-C995-497C-9C1C-1E2FEDD86365},,2025-05-19 22:23:35.000000,2025-05-19 22:23:35.000000,,,,,,,,,,,,,,,,,15111044.0,Sandstein: siltig-kalkig,15111078.0
+3924,{6235242A-CD71-41A2-A291-4D277D58F48C},,2025-05-19 22:23:35.000000,2025-05-19 22:23:35.000000,,,,,,,,,,,,,,,,,15111044.0,Sandstein: tonig,15111079.0
+3925,{98458467-A8B1-470C-A79A-E466DBDEF64C},,2025-05-19 22:23:35.000000,2025-05-19 22:23:35.000000,,,,,,,,,,,,,,,,,15111044.0,Sandstein: tonig: Feldspat,15111080.0
+3926,{138ACC25-50B3-4189-B588-089F3EB8D4AB},,2025-05-19 22:23:35.000000,2025-05-19 22:23:35.000000,,,,,,,,,,,,,,,,,15111044.0,Sandstein: tonig: Glaukonit,15111081.0
+3927,{5A80490D-3AAF-491C-AC9B-67735EA87102},,2025-05-19 22:23:36.000000,2025-05-19 22:23:36.000000,,,,,,,,,,,,,,,,,15111044.0,Sandstein: tonig: Glimmer,15111082.0
+3928,{36F14E21-796E-4D69-BDD5-BFFD80BB628F},,2025-05-19 22:23:36.000000,2025-05-19 22:23:36.000000,,,,,,,,,,,,,,,,,15111044.0,Sandstein: tonig: Kohle,15111083.0
+3929,{F2439AA2-700D-4853-AD68-5BFF34C587B5},,2025-05-19 22:23:36.000000,2025-05-19 22:23:36.000000,,,,,,,,,,,,,,,,,15111044.0,Sandstein: tonig: Lithoklasten,15111084.0
+3930,{E09F5A2C-C554-4705-A19B-C9096B82B497},,2025-05-19 22:23:37.000000,2025-05-19 22:23:37.000000,,,,,,,,,,,,,,,,,15111044.0,Sandstein: tonig-dolomitisch,15111085.0
+3931,{74C9ED33-B283-4632-BB67-D259DD579938},,2025-05-19 22:23:37.000000,2025-05-19 22:23:37.000000,,,,,,,,,,,,,,,,,15111044.0,Sandstein: tonig-kalkig,15111086.0
+3932,{B10D4C53-20CB-4495-9AF1-46CADD51AB59},,2025-05-19 22:23:37.000000,2025-05-19 22:23:37.000000,,,,,,,,,,,,,,,,,15111044.0,Sandstein: tonig-kalkig: Kohle,15111087.0
+3933,{00F250B0-BB10-4271-810F-C30FAD3BFAF1},,2025-05-19 22:23:38.000000,2025-05-19 22:23:38.000000,,,,,,,,,,,,,,,,,15111044.0,Sandstein: tuffitisch,15111088.0
+3934,{A973464E-6907-488D-A8C3-CE0D9A678B69},,2025-05-19 22:23:38.000000,2025-05-19 22:23:38.000000,,,,,,,,,,,,,,,,,15111003.0,Gestein: pelitisch,15111089.0
+3935,{C311D81D-8C63-44C9-885C-A962C61E94DB},,2025-05-19 22:23:38.000000,2025-05-19 22:23:38.000000,,,,,,,,,,,,,,,,,15111089.0,Siltstein,15111090.0
+3936,{28881177-0E4B-4616-A4B1-3DAC23E44834},,2025-05-19 22:23:39.000000,2025-05-19 22:23:39.000000,,,,,,,,,,,,,,,,,15111090.0,Siltstein: dolomitisch,15111091.0
+3937,{B6D512A0-E32A-4198-BB83-56F5B885F80B},,2025-05-19 22:23:39.000000,2025-05-19 22:23:39.000000,,,,,,,,,,,,,,,,,15111090.0,Siltstein: Glimmer,15111092.0
+3938,{8D31C2BD-6F66-455F-B86C-7F8688480AC1},,2025-05-19 22:23:39.000000,2025-05-19 22:23:39.000000,,,,,,,,,,,,,,,,,15111090.0,Siltstein: kalkig,15111093.0
+3939,{25E819BD-5FA6-4C55-94D5-4A827BBA67E8},,2025-05-19 22:23:40.000000,2025-05-19 22:23:40.000000,,,,,,,,,,,,,,,,,15111090.0,Siltstein: Kohle,15111094.0
+3940,{3B68B596-F276-4974-9184-5F5EF07E1444},,2025-05-19 22:23:40.000000,2025-05-19 22:23:40.000000,,,,,,,,,,,,,,,,,15111090.0,Siltstein: mergelig,15111095.0
+3941,{94B29D81-FB61-47E8-8BBE-59D37290DCBA},,2025-05-19 22:23:40.000000,2025-05-19 22:23:40.000000,,,,,,,,,,,,,,,,,15111090.0,Siltstein: sandig,15111096.0
+3942,{BCF99E37-4E54-4235-AAC7-CA12F6A5D9B1},,2025-05-19 22:23:41.000000,2025-05-19 22:23:41.000000,,,,,,,,,,,,,,,,,15111090.0,Siltstein: schiefrig,15111097.0
+3943,{C3F96B18-4DA6-4D76-AA87-F0DFE85DBF9D},,2025-05-19 22:23:41.000000,2025-05-19 22:23:41.000000,,,,,,,,,,,,,,,,,15111090.0,Siltstein: tonig,15111098.0
+3944,{71C3E219-6CB3-439B-B2D2-7439934EC3C1},,2025-05-19 22:23:41.000000,2025-05-19 22:23:41.000000,,,,,,,,,,,,,,,,,15111090.0,Siltstein: tonig-dolomitisch,15111099.0
+3945,{E2AFA942-3EC1-450D-90B1-B4C720B3F7EF},,2025-05-19 22:23:41.000000,2025-05-19 22:23:41.000000,,,,,,,,,,,,,,,,,15111090.0,Siltstein: tonig-kalkig,15111100.0
+3946,{3F808FD8-9098-49E6-9764-B855B2EFF55B},,2025-05-19 22:23:42.000001,2025-05-19 22:23:42.000001,,,,,,,,,,,,,,,,,15111090.0,Siltstein: tuffitisch,15111101.0
+3947,{314E044C-91C0-4E14-9857-9F7D26C3F781},,2025-05-19 22:23:42.000001,2025-05-19 22:23:42.000001,,,,,,,,,,,,,,,,,15111089.0,Tonstein,15111102.0
+3948,{364DAEE0-E8DD-4A80-A66C-F8B39EFA2E33},,2025-05-19 22:23:42.000001,2025-05-19 22:23:42.000001,,,,,,,,,,,,,,,,,15111102.0,Tonstein: Anthrazit,15111103.0
+3949,{AE6E9019-DDE8-482E-B80D-32BBB4812E14},,2025-05-19 22:23:43.000000,2025-05-19 22:23:43.000000,,,,,,,,,,,,,,,,,15111102.0,Tonstein: Bitumen,15111104.0
+3950,{E3304476-A522-4C29-8134-6C20024B92B9},,2025-05-19 22:23:43.000000,2025-05-19 22:23:43.000000,,,,,,,,,,,,,,,,,15111102.0,Tonstein: dolomitisch,15111105.0
+3951,{6AD6A038-524D-4207-9852-B217F3AED788},,2025-05-19 22:23:43.000000,2025-05-19 22:23:43.000000,,,,,,,,,,,,,,,,,15111102.0,Tonstein: Eisenooide,15111106.0
+3952,{43963F3A-39FC-4D77-88BE-08ACC9DA5E86},,2025-05-19 22:23:44.000000,2025-05-19 22:23:44.000000,,,,,,,,,,,,,,,,,15111102.0,Tonstein: Glaukonit,15111107.0
+3953,{55A4BB78-622C-474F-9CB2-58B6557917BC},,2025-05-19 22:23:44.000000,2025-05-19 22:23:44.000000,,,,,,,,,,,,,,,,,15111102.0,Tonstein: kalkig,15111108.0
+3954,{0BEB1D4E-C1D2-4956-9D7D-DF98D4C11526},,2025-05-19 22:23:44.000000,2025-05-19 22:23:44.000000,,,,,,,,,,,,,,,,,15111102.0,Tonstein: kalkig: Glaukonit,15111109.0
+3955,{F11DB93C-2934-485F-89EB-23E3CB94551F},,2025-05-19 22:23:44.000000,2025-05-19 22:23:44.000000,,,,,,,,,,,,,,,,,15111102.0,Tonstein: kieselig,15111110.0
+3956,{932359D2-3E5D-41DC-9ADF-1744F200D4CB},,2025-05-19 22:23:45.000000,2025-05-19 22:23:45.000000,,,,,,,,,,,,,,,,,15111102.0,Tonstein: Kohle,15111111.0
+3957,{05560EE4-8906-434D-8BB1-A7E7B0286945},,2025-05-19 22:23:45.000000,2025-05-19 22:23:45.000000,,,,,,,,,,,,,,,,,15111102.0,Tonstein: mergelig,15111112.0
+3958,{5E89D415-28C4-4055-AF0D-55C42EAD8B01},,2025-05-19 22:23:45.000000,2025-05-19 22:23:45.000000,,,,,,,,,,,,,,,,,15111102.0,Tonstein: mergelig: Bitumen,15111113.0
+3959,{EE783B39-2AB5-4B65-9DE6-AB97252D4A92},,2025-05-19 22:23:46.000000,2025-05-19 22:23:46.000000,,,,,,,,,,,,,,,,,15111102.0,Tonstein: mergelig: Glimmer,15111114.0
+3960,{CE2CA242-C8D0-4FCC-9E23-1430C377F560},,2025-05-19 22:23:46.000000,2025-05-19 22:23:46.000000,,,,,,,,,,,,,,,,,15111102.0,Tonstein: Pyrit,15111115.0
+3961,{6CB093AE-7E23-473D-BAB6-39F66AD43804},,2025-05-19 22:23:46.000000,2025-05-19 22:23:46.000000,,,,,,,,,,,,,,,,,15111102.0,Tonstein: sandig,15111116.0
+3962,{AA9E2B0E-D94C-4322-9AC5-0794A020CEEF},,2025-05-19 22:23:47.000000,2025-05-19 22:23:47.000000,,,,,,,,,,,,,,,,,15111102.0,Tonstein: sandig: Glimmer,15111117.0
+3963,{6C6144A8-197A-4B7A-9B8C-0030C02554EA},,2025-05-19 22:23:47.000000,2025-05-19 22:23:47.000000,,,,,,,,,,,,,,,,,15111102.0,Tonstein: sandig: Kohle,15111118.0
+3964,{99CC25E6-EDC3-40F6-93BF-27A22E8A4072},,2025-05-19 22:23:47.000000,2025-05-19 22:23:47.000000,,,,,,,,,,,,,,,,,15111102.0,Tonstein: sandig-dolomitisch,15111119.0
+3965,{6E33591C-4917-441E-8503-9D2B14ABBD5C},,2025-05-19 22:23:48.000000,2025-05-19 22:23:48.000000,,,,,,,,,,,,,,,,,15111102.0,Tonstein: sandig-kalkig,15111120.0
+3966,{8C8C8919-CDE2-41D6-8D2F-FA2B80757524},,2025-05-19 22:23:48.000000,2025-05-19 22:23:48.000000,,,,,,,,,,,,,,,,,15111102.0,Tonstein: sandig-mergelig,15111121.0
+3967,{92F6E797-CEC9-47F0-961B-D9287226C0D3},,2025-05-19 22:23:48.000000,2025-05-19 22:23:48.000000,,,,,,,,,,,,,,,,,15111102.0,Tonstein: sandig-schiefrig,15111122.0
+3968,{0344AE32-E890-4B49-8969-FF4A5DBA8FAB},,2025-05-19 22:23:49.000000,2025-05-19 22:23:49.000000,,,,,,,,,,,,,,,,,15111102.0,Tonstein: schiefrig,15111123.0
+3969,{E2BD75C3-0025-4F39-A962-902AD3C35171},,2025-05-19 22:23:49.000000,2025-05-19 22:23:49.000000,,,,,,,,,,,,,,,,,15111102.0,Tonstein: schiefrig: Anthrazit,15111124.0
+3970,{6A9DEAD2-6355-4282-BDE0-EC5C90FBFDF2},,2025-05-19 22:23:49.000000,2025-05-19 22:23:49.000000,,,,,,,,,,,,,,,,,15111102.0,Tonstein: schiefrig: Bitumen,15111125.0
+3971,{CC28523C-2760-4D3C-90D9-6B39A3F7AF75},,2025-05-19 22:23:49.000000,2025-05-19 22:23:49.000000,,,,,,,,,,,,,,,,,15111102.0,Tonstein: siltig,15111126.0
+3972,{55723569-822C-4B23-A4EA-C6D50A93704C},,2025-05-19 22:23:50.000001,2025-05-19 22:23:50.000001,,,,,,,,,,,,,,,,,15111102.0,Tonstein: siltig: Glimmer,15111127.0
+3973,{82045AAD-0E43-4C6E-ABBE-0ABBEB57E7F3},,2025-05-19 22:23:50.000001,2025-05-19 22:23:50.000001,,,,,,,,,,,,,,,,,15111102.0,Tonstein: siltig-dolomitisch,15111128.0
+3974,{0663D9B0-1BC1-4D6F-927A-EE38AEE0AA2B},,2025-05-19 22:23:50.000001,2025-05-19 22:23:50.000001,,,,,,,,,,,,,,,,,15111102.0,Tonstein: siltig-kalkig,15111129.0
+3975,{A5637AE9-B5BD-4DCE-B219-47ECCA914797},,2025-05-19 22:23:51.000000,2025-05-19 22:23:51.000000,,,,,,,,,,,,,,,,,15111102.0,Tonstein: siltig-schiefrig,15111130.0
+3846,{6D295161-D165-4005-A9F5-4EE2ECAF811B},,2025-05-19 22:23:09.000000,2025-05-19 22:23:09.000000,,,,,,,,,,,,,,,,,0.0,Gestein,15111001.0
+3847,{B0B78F3F-0760-4C23-B4E9-1BECD8E1E052},,2025-05-19 22:23:10.000000,2025-05-19 22:23:10.000000,,,,,,,,,,,,,,,,,15111001.0,Gestein: sedimentär,15111002.0
+3848,{BFCF7908-EEAD-4D9C-BABD-335C37943239},,2025-05-19 22:23:10.000000,2025-05-19 22:23:10.000000,,,,,,,,,,,,,,,,,15111002.0,Gestein: klastisch,15111003.0
+3849,{966E6160-7D85-4690-B596-B8E8C2655643},,2025-05-19 22:23:10.000000,2025-05-19 22:23:10.000000,,,,,,,,,,,,,,,,,15111003.0,Gestein: psephitisch,15111004.0
+3850,{D7690B9A-2F55-4014-B2FF-C26E32EFAAA5},,2025-05-19 22:23:11.000000,2025-05-19 22:23:11.000000,,,,,,,,,,,,,,,,,15111001.0,Brekzie,15111005.0
+3851,{9389FFA2-8A4D-43CF-876F-CAAE890273AE},,2025-05-19 22:23:11.000000,2025-05-19 22:23:11.000000,,,,,,,,,,,,,,,,,15111004.0,Brekzie: sedimentär,15111006.0
+3852,{749D4B8F-22DA-4DCE-926C-026E3BD48439},,2025-05-19 22:23:11.000000,2025-05-19 22:23:11.000000,,,,,,,,,,,,,,,,,15111006.0,Brekzie: dolomitisch,15111007.0
+3853,{32611E12-95CB-4571-8AA6-E6B70B225AE4},,2025-05-19 22:23:12.000000,2025-05-19 22:23:12.000000,,,,,,,,,,,,,,,,,15111006.0,Brekzie: dolomitisch: Bitumen,15111008.0
+3854,{47CB4547-C9B7-438A-AC20-084339949D51},,2025-05-19 22:23:12.000000,2025-05-19 22:23:12.000000,,,,,,,,,,,,,,,,,15111006.0,Brekzie: dolomitisch-polymikt,15111009.0
+3855,{853697E3-C487-4AE5-A56C-E12D3BD51D58},,2025-05-19 22:23:12.000000,2025-05-19 22:23:12.000000,,,,,,,,,,,,,,,,,15111006.0,Brekzie: kalkig,15111010.0
+3856,{6FC6711F-6D8C-4251-BBE9-62C4C1473F83},,2025-05-19 22:23:13.000000,2025-05-19 22:23:13.000000,,,,,,,,,,,,,,,,,15111006.0,Brekzie: kalkig: Bioklasten,15111011.0
+3857,{77691684-A564-49E3-8A61-94D81DB45731},,2025-05-19 22:23:13.000000,2025-05-19 22:23:13.000000,,,,,,,,,,,,,,,,,15111006.0,Brekzie: kalkig-dolomitisch,15111012.0
+3858,{F0A7F009-A0B4-4C28-956A-36CA8C530DA4},,2025-05-19 22:23:13.000000,2025-05-19 22:23:13.000000,,,,,,,,,,,,,,,,,15111006.0,Brekzie: kalkig-polymikt,15111013.0
+3859,{1D4DAAC7-089D-43B8-9E18-FADEA3B2CB05},,2025-05-19 22:23:14.000000,2025-05-19 22:23:14.000000,,,,,,,,,,,,,,,,,15111006.0,Brekzie: kristallin,15111014.0
+3860,{22825C48-8135-4696-8AB7-92997F715E24},,2025-05-19 22:23:14.000000,2025-05-19 22:23:14.000000,,,,,,,,,,,,,,,,,15111006.0,Brekzie: kristallin: polymikt,15111015.0
+3861,{7DC7FA94-0F67-4495-A4DE-073C549B996B},,2025-05-19 22:23:14.000000,2025-05-19 22:23:14.000000,,,,,,,,,,,,,,,,,15111006.0,Brekzie: monomikt,15111016.0
+3862,{37E8A7CF-FAD6-430F-B581-B0EE01A91CE8},,2025-05-19 22:23:15.000001,2025-05-19 22:23:15.000001,,,,,,,,,,,,,,,,,15111006.0,Brekzie: polymikt,15111017.0
+3863,{6CB0A846-4419-4222-8B72-5B804BFD9189},,2025-05-19 22:23:15.000001,2025-05-19 22:23:15.000001,,,,,,,,,,,,,,,,,15111006.0,Brekzie: sandig,15111018.0
+4099,{01CE2635-E9F1-4E16-96C1-05112C657DED},,2025-05-19 22:24:31.000000,2025-05-19 22:24:31.000000,,,,,,,,,,,,,,,,,15111186.0,Kalkstein: sandig-tonig,15111254.0
+4100,{9562B3BB-1A0A-40B3-A32D-B74E6FAA0821},,2025-05-19 22:24:31.000000,2025-05-19 22:24:31.000000,,,,,,,,,,,,,,,,,15111186.0,Kalkstein: Schwämme,15111255.0
+4101,{3C074ADF-4B5A-43E0-B6E2-072F6635A418},,2025-05-19 22:24:31.000000,2025-05-19 22:24:31.000000,,,,,,,,,,,,,,,,,15111186.0,Kalkstein: siltig,15111256.0
+4102,{04E96374-9CDF-4C5E-ABD7-7C36BF511802},,2025-05-19 22:24:32.000000,2025-05-19 22:24:32.000000,,,,,,,,,,,,,,,,,15111186.0,Kalkstein: siltig: Bioklasten,15111257.0
+4103,{940C9A47-CFA0-4AEB-807C-804450E9D352},,2025-05-19 22:24:32.000000,2025-05-19 22:24:32.000000,,,,,,,,,,,,,,,,,15111186.0,Kalkstein: siltig-tonig,15111258.0
+4104,{AEC6FA13-8A64-41E3-8C1D-C9527E042F28},,2025-05-19 22:24:32.000000,2025-05-19 22:24:32.000000,,,,,,,,,,,,,,,,,15111186.0,Kalkstein: spätig,15111259.0
+4105,{4CEB8169-28CE-4059-B5B2-D602F1DE6EBC},,2025-05-19 22:24:33.000001,2025-05-19 22:24:33.000001,,,,,,,,,,,,,,,,,15111186.0,Kalkstein: spätig: Bioklasten,15111260.0
+4106,{7223E51F-F5D4-41D6-AFFF-301F21990C7D},,2025-05-19 22:24:33.000001,2025-05-19 22:24:33.000001,,,,,,,,,,,,,,,,,15111186.0,Kalkstein: spätig: Bioklasten-Chert,15111261.0
+4107,{C0D34046-069B-4AA5-A8C4-7D99447CF294},,2025-05-19 22:24:33.000001,2025-05-19 22:24:33.000001,,,,,,,,,,,,,,,,,15111186.0,Kalkstein: spätig: Bioklasten-Glaukonit,15111262.0
+4108,{99ED2C3C-4C4E-491A-8F37-4BCA4F1C5D91},,2025-05-19 22:24:34.000000,2025-05-19 22:24:34.000000,,,,,,,,,,,,,,,,,15111186.0,Kalkstein: spätig: Bioklasten-Ooide,15111263.0
+4109,{902B0C4F-DA69-4D7B-BFF1-FE49BF811716},,2025-05-19 22:24:34.000000,2025-05-19 22:24:34.000000,,,,,,,,,,,,,,,,,15111186.0,Kalkstein: spätig: Chert,15111264.0
+4110,{61AC4546-374F-4453-BA5A-0F7AE7F4DE90},,2025-05-19 22:24:34.000000,2025-05-19 22:24:34.000000,,,,,,,,,,,,,,,,,15111186.0,Kalkstein: spätig: Echinodermen,15111265.0
+4111,{FA49ABF0-C6ED-4305-BA56-AC22237AF14B},,2025-05-19 22:24:35.000000,2025-05-19 22:24:35.000000,,,,,,,,,,,,,,,,,15111186.0,Kalkstein: spätig: Glaukonit,15111266.0
+4112,{06E8DFB1-972C-4EA3-9656-58604B82077B},,2025-05-19 22:24:35.000000,2025-05-19 22:24:35.000000,,,,,,,,,,,,,,,,,15111186.0,Kalkstein: spätig: Glaukonit-Chert,15111267.0
+4113,{3F5FF93E-D6DE-4592-97B7-3F8F9D2D526C},,2025-05-19 22:24:35.000000,2025-05-19 22:24:35.000000,,,,,,,,,,,,,,,,,15111186.0,Kalkstein: spätig: Ooide,15111268.0
+4114,{12BEDCB9-A124-458F-AFC1-A0F45442D77B},,2025-05-19 22:24:36.000000,2025-05-19 22:24:36.000000,,,,,,,,,,,,,,,,,15111186.0,Kalkstein: stromatolithisch,15111269.0
+4247,{EB995CEA-5A4F-481A-BE00-F97A6E327420},,2025-05-19 22:25:22.000000,2025-05-19 22:25:22.000000,,,,,,,,,,,,,,,,,15111390.0,Granit: mikrokristallin-porphyrisch,15111402.0
+4248,{53F46FD8-FEA1-4DED-8EE4-D56ACBB15EB2},,2025-05-19 22:25:22.000000,2025-05-19 22:25:22.000000,,,,,,,,,,,,,,,,,15111390.0,Granit: monzonitisch,15111403.0
+4249,{6E2E9B75-E595-4DA9-842A-B33392F3C82D},,2025-05-19 22:25:23.000000,2025-05-19 22:25:23.000000,,,,,,,,,,,,,,,,,15111390.0,Granit: mylonitisch,15111404.0
+4250,{8EB9B7AF-FEBC-4B96-B4A7-181C230008B5},,2025-05-19 22:25:23.000000,2025-05-19 22:25:23.000000,,,,,,,,,,,,,,,,,15111390.0,Granit: porphyrisch,15111405.0
+4251,{F724DE7F-7079-4058-990F-76241466BE51},,2025-05-19 22:25:23.000000,2025-05-19 22:25:23.000000,,,,,,,,,,,,,,,,,15111390.0,Granit: porphyrisch: Biotit,15111406.0
+4252,{60346D05-D1EE-4D3F-8507-BEA76115397C},,2025-05-19 22:25:24.000000,2025-05-19 22:25:24.000000,,,,,,,,,,,,,,,,,15111390.0,Granit: porphyrisch: Hornblende,15111407.0
+4253,{E2ACAEAF-B561-4CA0-979B-72898DE23D2C},,2025-05-19 22:25:24.000000,2025-05-19 22:25:24.000000,,,,,,,,,,,,,,,,,15111390.0,Granit: schiefrig,15111408.0
+4254,{39FE3DC0-75BF-44EF-A086-469F49780EF5},,2025-05-19 22:25:25.000000,2025-05-19 22:25:25.000000,,,,,,,,,,,,,,,,,15111390.0,Granit: syenitisch,15111409.0
+4255,{06D08187-A395-4B75-8D8B-8633D4CD975E},,2025-05-19 22:25:25.000000,2025-05-19 22:25:25.000000,,,,,,,,,,,,,,,,,15111390.0,Granodiorit,15111410.0
+4256,{8F02918B-991F-44E5-B568-F1E81C760F50},,2025-05-19 22:25:25.000000,2025-05-19 22:25:25.000000,,,,,,,,,,,,,,,,,15111390.0,Granodiorit: aplitisch,15111411.0
+4257,{22550A93-7178-4E56-ADE8-38704BABFA08},,2025-05-19 22:25:26.000000,2025-05-19 22:25:26.000000,,,,,,,,,,,,,,,,,15111390.0,Granodiorit: Hornblende,15111412.0
+4258,{BEDD92AE-22F1-478A-AFC9-ADE8E6921C54},,2025-05-19 22:25:26.000000,2025-05-19 22:25:26.000000,,,,,,,,,,,,,,,,,15111390.0,Granodiorit: porphyrisch,15111413.0
+4259,{4CFD32F8-BFD9-49A0-AFEC-8D3532C773A4},,2025-05-19 22:25:26.000000,2025-05-19 22:25:26.000000,,,,,,,,,,,,,,,,,15111390.0,Granodiorit: schiefrig,15111414.0
+4260,{455852FD-89E0-49D8-9A56-E6C60783780C},,2025-05-19 22:25:27.000001,2025-05-19 22:25:27.000001,,,,,,,,,,,,,,,,,15111390.0,Monzonit,15111415.0
+4261,{D4CB4646-D0DB-4B27-822C-8A26BEC3FD24},,2025-05-19 22:25:27.000001,2025-05-19 22:25:27.000001,,,,,,,,,,,,,,,,,15111390.0,Monzonit: Feldspatoid,15111416.0
+4262,{61F230A4-A945-4F64-AB98-BF11E296865E},,2025-05-19 22:25:27.000001,2025-05-19 22:25:27.000001,,,,,,,,,,,,,,,,,15111390.0,Monzonit: porphyrisch: Quarz,15111417.0
+4263,{A517D379-6E03-4078-8E8C-066227A431CD},,2025-05-19 22:25:28.000000,2025-05-19 22:25:28.000000,,,,,,,,,,,,,,,,,15111390.0,Monzonit: Quarz,15111418.0
+4264,{3613B029-94C0-474E-862F-9AD28C11163A},,2025-05-19 22:25:28.000000,2025-05-19 22:25:28.000000,,,,,,,,,,,,,,,,,15111390.0,Tonalit,15111419.0
+4265,{B59C1D4E-192A-49ED-A72C-3C2A77B25C1A},,2025-05-19 22:25:29.000000,2025-05-19 22:25:29.000000,,,,,,,,,,,,,,,,,15111390.0,Tonalit: Biotit,15111420.0
+4266,{61239D02-98E6-4F0E-B61B-2247FE4EE324},,2025-05-19 22:25:29.000000,2025-05-19 22:25:29.000000,,,,,,,,,,,,,,,,,15111390.0,Tonalit: Biotit-Hornblende,15111421.0
+4267,{756107F5-4823-49F4-8866-C7189045B5A8},,2025-05-19 22:25:29.000000,2025-05-19 22:25:29.000000,,,,,,,,,,,,,,,,,15111389.0,Gestein: syenitisch,15111422.0
+4268,{B8097530-2F39-40C3-B0C0-EE4A0C5B6C6A},,2025-05-19 22:25:30.000000,2025-05-19 22:25:30.000000,,,,,,,,,,,,,,,,,15111422.0,Syenit,15111423.0
+4269,{AD84E75C-6904-4A5C-9397-E1F9442F501F},,2025-05-19 22:25:30.000000,2025-05-19 22:25:30.000000,,,,,,,,,,,,,,,,,15111422.0,Syenit: Alkalifeldspat,15111424.0
+4270,{6EF47890-B53D-44E0-8AED-6EA3B794ECF7},,2025-05-19 22:25:30.000000,2025-05-19 22:25:30.000000,,,,,,,,,,,,,,,,,15111422.0,Syenit: Feldspatoid,15111425.0
+4271,{9FB2BE2C-8586-41D5-8D01-9B67980DC0C6},,2025-05-19 22:25:31.000000,2025-05-19 22:25:31.000000,,,,,,,,,,,,,,,,,15111422.0,Syenit: Nephelin,15111426.0
+4272,{361B7994-38C6-414A-919D-29E848491CBF},,2025-05-19 22:25:31.000000,2025-05-19 22:25:31.000000,,,,,,,,,,,,,,,,,15111422.0,Syenit: porphyrisch: Quarz,15111427.0
+4273,{E7F225F9-B501-45F9-8CD8-316E2AF2CD83},,2025-05-19 22:25:31.000000,2025-05-19 22:25:31.000000,,,,,,,,,,,,,,,,,15111422.0,Syenit: Quarz,15111428.0
+4274,{3EC23E3E-9687-4D0E-AB26-2A02C90A3E93},,2025-05-19 22:25:32.000000,2025-05-19 22:25:32.000000,,,,,,,,,,,,,,,,,15111422.0,Syenit: Quarz-Hornblende,15111429.0
+4275,{4094565C-6267-448D-99D1-FCA78B1F2989},,2025-05-19 22:25:32.000000,2025-05-19 22:25:32.000000,,,,,,,,,,,,,,,,,15111389.0,Gestein: dioritisch,15111430.0
+4276,{558C647A-7B0A-4518-B3C5-A50942FA188E},,2025-05-19 22:25:32.000000,2025-05-19 22:25:32.000000,,,,,,,,,,,,,,,,,15111430.0,Diorit,15111431.0
+4277,{77E1885B-B316-451B-9632-CA8FEBCB29C6},,2025-05-19 22:25:33.000000,2025-05-19 22:25:33.000000,,,,,,,,,,,,,,,,,15111430.0,Diorit: Biotit-Hornblende,15111432.0
+4278,{AFD39835-5F06-417C-AE3B-8589D88B9F54},,2025-05-19 22:25:33.000000,2025-05-19 22:25:33.000000,,,,,,,,,,,,,,,,,15111430.0,Diorit: migmatitisch,15111433.0
+4279,{1E9E88AF-0FDB-4802-BDAE-2092223226A3},,2025-05-19 22:25:33.000000,2025-05-19 22:25:33.000000,,,,,,,,,,,,,,,,,15111430.0,Diorit: mikrokristallin,15111434.0
+4280,{0B52A5D1-7A06-44F7-80CD-7C4839AD270F},,2025-05-19 22:25:34.000000,2025-05-19 22:25:34.000000,,,,,,,,,,,,,,,,,15111430.0,Diorit: monzonitisch,15111435.0
+4281,{2B3013A0-D42B-4E44-B698-AD0D4EA3EA43},,2025-05-19 22:25:34.000000,2025-05-19 22:25:34.000000,,,,,,,,,,,,,,,,,15111430.0,Diorit: porphyrisch,15111436.0
+4282,{E36CED8D-54FE-4BBE-8379-A7F8EEC45C3A},,2025-05-19 22:25:34.000000,2025-05-19 22:25:34.000000,,,,,,,,,,,,,,,,,15111430.0,Diorit: Quarz,15111437.0
+4283,{E23AB810-EEF6-49A5-8B73-80F8735DF483},,2025-05-19 22:25:35.000001,2025-05-19 22:25:35.000001,,,,,,,,,,,,,,,,,15111430.0,Diorit: Quarz-Biotit,15111438.0
+4284,{CF5FA449-993C-408B-AB79-2670137ECC1B},,2025-05-19 22:25:35.000001,2025-05-19 22:25:35.000001,,,,,,,,,,,,,,,,,15111430.0,Diorit: Quarz-Epidot,15111439.0
+4285,{EACB7A23-2580-475B-94A7-A2E46758F6EF},,2025-05-19 22:25:35.000001,2025-05-19 22:25:35.000001,,,,,,,,,,,,,,,,,15111430.0,Diorit: Quarz-Hornblende,15111440.0
+4286,{34F8B6C4-0E28-472C-8A62-FDC8970BE1A7},,2025-05-19 22:25:36.000000,2025-05-19 22:25:36.000000,,,,,,,,,,,,,,,,,15111430.0,Diorit: schiefrig,15111441.0
+4287,{D775CDEE-754D-417A-9C8D-26FF5D21A4CC},,2025-05-19 22:25:36.000000,2025-05-19 22:25:36.000000,,,,,,,,,,,,,,,,,15111389.0,Gestein: gabbroisch,15111442.0
+4288,{796A860C-2203-4955-B8C3-EB0B06EF4306},,2025-05-19 22:25:36.000000,2025-05-19 22:25:36.000000,,,,,,,,,,,,,,,,,15111442.0,Gabbro,15111443.0
+4289,{2714F663-2691-4D85-B1D4-A80D3C17436D},,2025-05-19 22:25:37.000000,2025-05-19 22:25:37.000000,,,,,,,,,,,,,,,,,15111442.0,Gabbro: Hornblende,15111444.0
+4290,{CBF76BC1-D8E2-4CB8-9338-4ED0B264D5CC},,2025-05-19 22:25:37.000000,2025-05-19 22:25:37.000000,,,,,,,,,,,,,,,,,15111442.0,Gabbro: mikrokristallin,15111445.0
+4291,{292D5844-8E53-468A-8FE8-236CED47F180},,2025-05-19 22:25:38.000000,2025-05-19 22:25:38.000000,,,,,,,,,,,,,,,,,15111442.0,Gabbro: monzonitisch,15111446.0
+4292,{D56351D2-E129-427A-B022-1D60F9543FDB},,2025-05-19 22:25:38.000000,2025-05-19 22:25:38.000000,,,,,,,,,,,,,,,,,15111442.0,Gabbro: monzonitisch: Nephelin,15111447.0
+4293,{592CCBC8-B9D2-464B-B771-8C85CD78A1B2},,2025-05-19 22:25:38.000000,2025-05-19 22:25:38.000000,,,,,,,,,,,,,,,,,15111442.0,Gabbro: mylonitisch,15111448.0
+4294,{2BA0FFA0-414C-4DEE-9B3C-52E5E16FCFD4},,2025-05-19 22:25:39.000000,2025-05-19 22:25:39.000000,,,,,,,,,,,,,,,,,15111442.0,Gabbro: Olivin,15111449.0
+4295,{0D36B6E6-403D-43AC-9626-A977F02424CA},,2025-05-19 22:25:39.000000,2025-05-19 22:25:39.000000,,,,,,,,,,,,,,,,,15111442.0,Gabbro: Omphazit,15111450.0
+4296,{A044A384-1B5B-4CF0-80B9-A797C211BB54},,2025-05-19 22:25:39.000000,2025-05-19 22:25:39.000000,,,,,,,,,,,,,,,,,15111442.0,Gabbro: Orthopyroxen,15111451.0
+4297,{31EA51A8-892C-4698-96C5-B2EA5C3E9965},,2025-05-19 22:25:40.000000,2025-05-19 22:25:40.000000,,,,,,,,,,,,,,,,,15111442.0,Gabbro: Quarz,15111452.0
+4298,{B430E06D-EE5B-408E-886D-372E9C657888},,2025-05-19 22:25:40.000000,2025-05-19 22:25:40.000000,,,,,,,,,,,,,,,,,15111389.0,Gestein: foidolitisch,15111453.0
+4299,{7E9D7B49-4085-4623-8F11-C3EA2C53D064},,2025-05-19 22:25:40.000000,2025-05-19 22:25:40.000000,,,,,,,,,,,,,,,,,15111453.0,Foidolit,15111454.0
+4300,{E1E6192E-6C3F-41F8-987D-6F46B40C8E67},,2025-05-19 22:25:41.000000,2025-05-19 22:25:41.000000,,,,,,,,,,,,,,,,,15111344.0,Gestein: ultramafisch,15111455.0
+4301,{F14F274A-F8EA-4170-9C0F-5C392148C7FE},,2025-05-19 22:25:41.000000,2025-05-19 22:25:41.000000,,,,,,,,,,,,,,,,,15111455.0,Peridotit,15111456.0
+3229,{5F4A21F5-1C82-49C1-BF23-338C01F3CA21},PanteAdrie,2025-01-13 15:05:56.000000,2025-01-13 15:05:56.000000,2024.0,3.0,2024.0,3.0,200.0,200.0,2024.0,3.0,1039977.0,1167813.0,1039977.0,1167813.0,,,,,0.0,méta-bauxite,
+3527,{8EF78693-DCBD-4696-8EFA-E35A6B6E6508},BrailLuc,2025-02-03 17:38:01.000000,2025-02-03 17:38:01.000000,2024.0,3.0,2024.0,3.0,200.0,200.0,2024.0,3.0,1039977.0,1167853.0,1039977.0,1167853.0,,,,,0.0,,
+4319,{0CEC537D-B445-4B23-994B-39889CECB12A},,2025-05-19 22:25:48.000000,2025-05-19 22:25:48.000000,,,,,,,,,,,,,,,,,15111470.0,Mylonit,15111474.0
+4320,{D9FC5DF0-75DE-4E5C-988C-18A39AE90506},,2025-05-19 22:25:48.000000,2025-05-19 22:25:48.000000,,,,,,,,,,,,,,,,,15111474.0,Mylonit: kalkig,15111475.0
+4321,{465FC06D-C95C-48D8-A1B1-530EFCE62580},,2025-05-19 22:25:48.000000,2025-05-19 22:25:48.000000,,,,,,,,,,,,,,,,,15111474.0,Mylonit: phyllitisch,15111476.0
+4322,{66747BEE-437D-47EA-BB8C-6F9A8CF0B508},,2025-05-19 22:25:49.000000,2025-05-19 22:25:49.000000,,,,,,,,,,,,,,,,,15111470.0,Pseudotachyllit,15111477.0
+4323,{8F4ADEA8-9FA8-4DBA-BE32-E8724E426FB8},,2025-05-19 22:25:49.000000,2025-05-19 22:25:49.000000,,,,,,,,,,,,,,,,,15111468.0,Hornfels,15111478.0
+4324,{B489E492-654F-46EF-80F4-7CC1CF22415E},,2025-05-19 22:25:49.000000,2025-05-19 22:25:49.000000,,,,,,,,,,,,,,,,,15111468.0,Granofels,15111479.0
+4325,{D2EFBE63-3F79-4ADF-9EBA-B50D1D4A77CE},,2025-05-19 22:25:50.000000,2025-05-19 22:25:50.000000,,,,,,,,,,,,,,,,,15111479.0,Granofels: Albit,15111480.0
+4326,{190D23AF-E885-41C3-9379-D2760FFE0B78},,2025-05-19 22:25:50.000000,2025-05-19 22:25:50.000000,,,,,,,,,,,,,,,,,15111479.0,Granofels: Granat,15111481.0
+4327,{00CC9F08-E5B8-469A-9EBA-49D11729ACA5},,2025-05-19 22:25:51.000001,2025-05-19 22:25:51.000001,,,,,,,,,,,,,,,,,15111479.0,Granofels: Kalksilikat,15111482.0
+4328,{5009A206-06FC-4690-95FB-7CBDC1E85244},,2025-05-19 22:25:51.000001,2025-05-19 22:25:51.000001,,,,,,,,,,,,,,,,,15111479.0,Granofels: Olivin,15111483.0
+4329,{40C3E875-70A0-4D79-8F63-22CD3F6C0DE4},,2025-05-19 22:25:51.000001,2025-05-19 22:25:51.000001,,,,,,,,,,,,,,,,,15111479.0,Granofels: Pyroxen,15111484.0
+4330,{C53CC0FB-EF3A-4CA5-8C8B-82870121BCB6},,2025-05-19 22:25:52.000000,2025-05-19 22:25:52.000000,,,,,,,,,,,,,,,,,15111479.0,Granofels: Silikat-Karbonat,15111485.0
+4331,{275FCFA3-2588-44C3-B0E3-C8F5C4FC9721},,2025-05-19 22:25:52.000000,2025-05-19 22:25:52.000000,,,,,,,,,,,,,,,,,15111468.0,Marmor,15111486.0
+4332,{0E135FD3-2FED-4C24-8E9A-A7BB7CF572BA},,2025-05-19 22:25:52.000000,2025-05-19 22:25:52.000000,,,,,,,,,,,,,,,,,15111486.0,Marmor: dolomitisch,15111487.0
+4333,{769837FB-A12D-40DD-A44B-A08F9C1C6CA9},,2025-05-19 22:25:53.000000,2025-05-19 22:25:53.000000,,,,,,,,,,,,,,,,,15111486.0,Marmor: dolomitisch-schiefrig,15111488.0
+4334,{4EE86D09-3A56-4D63-9837-0640DACAD1CE},,2025-05-19 22:25:53.000000,2025-05-19 22:25:53.000000,,,,,,,,,,,,,,,,,15111486.0,Marmor: kalkig,15111489.0
+4335,{82CFC274-3820-4A9D-850C-1CCAA44CCCF1},,2025-05-19 22:25:53.000000,2025-05-19 22:25:53.000000,,,,,,,,,,,,,,,,,15111486.0,Marmor: kalkig: Chlorit,15111490.0
+4336,{6B50B653-3C78-40E1-AB64-DCD60B1BAA10},,2025-05-19 22:25:54.000000,2025-05-19 22:25:54.000000,,,,,,,,,,,,,,,,,15111486.0,Marmor: kalkig: Serizit,15111491.0
+4337,{D7A8C69E-1AB0-4E55-AF45-C63BBAB56A80},,2025-05-19 22:25:54.000000,2025-05-19 22:25:54.000000,,,,,,,,,,,,,,,,,15111486.0,Marmor: kalkig-kieselig,15111492.0
+4338,{D2221B8F-1443-4C9E-A747-220746D70306},,2025-05-19 22:25:55.000000,2025-05-19 22:25:55.000000,,,,,,,,,,,,,,,,,15111486.0,Marmor: Kalksilikat,15111493.0
+4302,{02A6DE72-6D37-488C-A19B-7386A33DD552},,2025-05-19 22:25:42.000000,2025-05-19 22:25:42.000000,,,,,,,,,,,,,,,,,15111456.0,Peridotit: plutonisch,15111457.0
+4303,{3DC7041F-BF16-418C-AAEA-5066165937EF},,2025-05-19 22:25:42.000000,2025-05-19 22:25:42.000000,,,,,,,,,,,,,,,,,15111456.0,Peridotit: plutonisch: Klinopyroxen-Orthopyroxen,15111458.0
+4304,{875403B2-DD0A-4A28-8E2C-206400306D3D},,2025-05-19 22:25:42.000000,2025-05-19 22:25:42.000000,,,,,,,,,,,,,,,,,15111456.0,Peridotit: plutonisch: Olivin,15111459.0
+4305,{B4C92B48-B913-447E-950D-0C691D772757},,2025-05-19 22:25:43.000001,2025-05-19 22:25:43.000001,,,,,,,,,,,,,,,,,15111456.0,Peridotit: plutonisch: Olivin-Klinopyroxen,15111460.0
+4306,{83DCA576-640E-4409-8659-422D410F8633},,2025-05-19 22:25:43.000001,2025-05-19 22:25:43.000001,,,,,,,,,,,,,,,,,15111456.0,Peridotit: plutonisch: Olivin-Orthopyroxen,15111461.0
+4307,{CE0ED48F-838C-4424-AEDB-695DE81BAA82},,2025-05-19 22:25:43.000001,2025-05-19 22:25:43.000001,,,,,,,,,,,,,,,,,15111456.0,Peridotit: metamorph,15111462.0
+4308,{B96A7487-C286-4EDB-8C2B-EEE4574CA186},,2025-05-19 22:25:44.000000,2025-05-19 22:25:44.000000,,,,,,,,,,,,,,,,,15111456.0,Peridotit: metamorph: Hornblende,15111463.0
+4309,{9DAA1D07-FB1C-4DAA-991F-7D58E8AD632E},,2025-05-19 22:25:44.000000,2025-05-19 22:25:44.000000,,,,,,,,,,,,,,,,,15111456.0,Peridotit: metamorph: Phlogopit,15111464.0
+4310,{3AA70FF2-4A85-4BD0-A198-18696D2D0BF2},,2025-05-19 22:25:45.000000,2025-05-19 22:25:45.000000,,,,,,,,,,,,,,,,,15111456.0,Peridotit: metamorph: Serpentin,15111465.0
+4311,{82F5CAC8-7213-431D-A690-EFB52E817510},,2025-05-19 22:25:45.000000,2025-05-19 22:25:45.000000,,,,,,,,,,,,,,,,,15111455.0,Pyroxenit,15111466.0
+4312,{97F67ADA-1C5C-4B8A-A5C2-AA6734D9FDEB},,2025-05-19 22:25:45.000000,2025-05-19 22:25:45.000000,,,,,,,,,,,,,,,,,15111466.0,Pyroxenit: plutonisch,15111467.0
+4313,{2200A303-D58A-4B0A-ADA5-10AA6F9E4937},,2025-05-19 22:25:46.000000,2025-05-19 22:25:46.000000,,,,,,,,,,,,,,,,,15111455.0,Gestein: metamorph,15111468.0
+4314,{778331F1-779A-4106-B015-B94D3B240D9E},,2025-05-19 22:25:46.000000,2025-05-19 22:25:46.000000,,,,,,,,,,,,,,,,,15111468.0,Gestein: metasomatisch,15111469.0
+4315,{3AE80AE2-AD8E-4ABD-90BC-882759A10C79},,2025-05-19 22:25:46.000000,2025-05-19 22:25:46.000000,,,,,,,,,,,,,,,,,15111468.0,Gestein: tektonisch,15111470.0
+4316,{5E105468-1643-4D6F-A68E-AD45F90E874C},,2025-05-19 22:25:47.000000,2025-05-19 22:25:47.000000,,,,,,,,,,,,,,,,,15111470.0,Kakirit,15111471.0
+4317,{70173608-3842-4D45-A396-FB2262A15566},,2025-05-19 22:25:47.000000,2025-05-19 22:25:47.000000,,,,,,,,,,,,,,,,,15111471.0,Kakirit: tonig,15111472.0
+4318,{8D1134A3-F9AA-44BF-B40F-F6307E2DA446},,2025-05-19 22:25:47.000000,2025-05-19 22:25:47.000000,,,,,,,,,,,,,,,,,15111470.0,Kataklastit,15111473.0
+4115,{C149D4F4-F918-4F34-9663-BE4FE5FEA3D3},,2025-05-19 22:24:36.000000,2025-05-19 22:24:36.000000,,,,,,,,,,,,,,,,,15111186.0,Kalkstein: stromatolithisch: Eisenmineralien-Phosphorit,15111270.0
+4116,{0353A057-2099-491B-A5BE-063B07B4E4AE},,2025-05-19 22:24:36.000000,2025-05-19 22:24:36.000000,,,,,,,,,,,,,,,,,15111186.0,Kalkstein: tonig,15111271.0
+4117,{EF6DD3C1-1B4C-42C1-9F1B-4E4B126AB9D0},,2025-05-19 22:24:37.000000,2025-05-19 22:24:37.000000,,,,,,,,,,,,,,,,,15111186.0,Kalkstein: tonig: Bioklasten,15111272.0
+4118,{DCB3A4A6-9F18-4F1E-9171-A3ED7088B521},,2025-05-19 22:24:37.000000,2025-05-19 22:24:37.000000,,,,,,,,,,,,,,,,,15111186.0,Kalkstein: tonig: Chert,15111273.0
+4119,{45F80643-CCA4-4167-A1E2-86B1F546473B},,2025-05-19 22:24:37.000000,2025-05-19 22:24:37.000000,,,,,,,,,,,,,,,,,15111186.0,Kalkstein: tonig-schiefrig,15111274.0
+4120,{AA9C7B61-38B9-4A6B-BBFA-C5F61FE43915},,2025-05-19 22:24:38.000000,2025-05-19 22:24:38.000000,,,,,,,,,,,,,,,,,15111186.0,Kalkstein: tufig,15111275.0
+4121,{F684D338-1EF1-4531-AA26-DAF1642BF9E0},,2025-05-19 22:24:38.000000,2025-05-19 22:24:38.000000,,,,,,,,,,,,,,,,,15111186.0,Tuff: kalkig,15111276.0
+4122,{EAE0B521-0268-47BA-BFD6-EA640459A5FB},,2025-05-19 22:24:38.000000,2025-05-19 22:24:38.000000,,,,,,,,,,,,,,,,,15111181.0,Dolomitstein,15111277.0
+4123,{A407B04D-C04D-4B28-AA96-B21A444FEBC1},,2025-05-19 22:24:39.000000,2025-05-19 22:24:39.000000,,,,,,,,,,,,,,,,,15111277.0,Dolomitstein: Bioklasten,15111278.0
+4124,{3EC28B30-EACC-4139-9E63-F406AE224C33},,2025-05-19 22:24:39.000000,2025-05-19 22:24:39.000000,,,,,,,,,,,,,,,,,15111277.0,Dolomitstein: Bitumen,15111279.0
+4125,{E7B6212E-261C-49D4-9E24-A7121C4D8F67},,2025-05-19 22:24:40.000000,2025-05-19 22:24:40.000000,,,,,,,,,,,,,,,,,15111277.0,Dolomitstein: kalkig,15111280.0
+4126,{18D440CC-C87A-4496-91E4-DC4585D1E3A7},,2025-05-19 22:24:40.000000,2025-05-19 22:24:40.000000,,,,,,,,,,,,,,,,,15111277.0,Dolomitstein: kieselig,15111281.0
+4127,{8F73D22C-9942-454C-BD89-F768484F9C5F},,2025-05-19 22:24:40.000000,2025-05-19 22:24:40.000000,,,,,,,,,,,,,,,,,15111277.0,Dolomitstein: mikritisch,15111282.0
+4128,{00DFDD23-39EB-43AF-A653-5D16A581729E},,2025-05-19 22:24:41.000000,2025-05-19 22:24:41.000000,,,,,,,,,,,,,,,,,15111277.0,Dolomitstein: Ooide,15111283.0
+4129,{AD5F714B-6296-467D-93A7-19792B4751CF},,2025-05-19 22:24:41.000000,2025-05-19 22:24:41.000000,,,,,,,,,,,,,,,,,15111277.0,Dolomitstein: Ooide-Chert,15111284.0
+4130,{45751720-131C-4A18-B3AF-E63CB1479268},,2025-05-19 22:24:41.000000,2025-05-19 22:24:41.000000,,,,,,,,,,,,,,,,,15111277.0,Dolomitstein: sandig,15111285.0
+4131,{8D97AD51-E04B-4CDF-8FEC-D54054A22981},,2025-05-19 22:24:42.000000,2025-05-19 22:24:42.000000,,,,,,,,,,,,,,,,,15111277.0,Dolomitstein: sandig-siltig,15111286.0
+4132,{E91DE6F7-0234-4134-AB75-4172F3436803},,2025-05-19 22:24:42.000000,2025-05-19 22:24:42.000000,,,,,,,,,,,,,,,,,15111277.0,Dolomitstein: sandig-tonig,15111287.0
+4133,{78E0C228-0E98-4CF1-8C9D-D1B3407149D7},,2025-05-19 22:24:42.000000,2025-05-19 22:24:42.000000,,,,,,,,,,,,,,,,,15111277.0,Dolomitstein: sandig-tonig: Bitumen,15111288.0
+4134,{8793E8A5-FFC1-4E59-9422-EB3D74719333},,2025-05-19 22:24:43.000000,2025-05-19 22:24:43.000000,,,,,,,,,,,,,,,,,15111277.0,Dolomitstein: schiefrig,15111289.0
+4135,{D72088D9-EA3E-4FC2-B7AB-661D0672FE19},,2025-05-19 22:24:43.000000,2025-05-19 22:24:43.000000,,,,,,,,,,,,,,,,,15111277.0,Dolomitstein: siltig,15111290.0
+4136,{F47C1143-464C-4C87-AB98-EE2E3EBA9816},,2025-05-19 22:24:44.000001,2025-05-19 22:24:44.000001,,,,,,,,,,,,,,,,,15111277.0,Dolomitstein: siltig-tonig,15111291.0
+4137,{709A445A-1F39-486C-88FB-2BA2487B602B},,2025-05-19 22:24:44.000001,2025-05-19 22:24:44.000001,,,,,,,,,,,,,,,,,15111277.0,Dolomitstein: spätig,15111292.0
+4138,{4ED88C9E-55BA-4A4C-8E52-E4B077CE3BCA},,2025-05-19 22:24:44.000001,2025-05-19 22:24:44.000001,,,,,,,,,,,,,,,,,15111277.0,Dolomitstein: spätig: Bioklasten,15111293.0
+4139,{B5A2B7E5-CA32-4B4B-8C5F-8F0FE84FD6FE},,2025-05-19 22:24:45.000000,2025-05-19 22:24:45.000000,,,,,,,,,,,,,,,,,15111277.0,Dolomitstein: stromatolithisch,15111294.0
+4140,{49793385-B554-4BE8-8598-DCEAC8906E5F},,2025-05-19 22:24:45.000000,2025-05-19 22:24:45.000000,,,,,,,,,,,,,,,,,15111277.0,Dolomitstein: stromatolithisch: Chert,15111295.0
+4141,{CAC6A1D3-E4D0-4F27-A308-071F50F451E5},,2025-05-19 22:24:45.000000,2025-05-19 22:24:45.000000,,,,,,,,,,,,,,,,,15111277.0,Dolomitstein: tonig,15111296.0
+4142,{6938E63C-BA69-40E0-97C5-6F35D40A550D},,2025-05-19 22:24:46.000000,2025-05-19 22:24:46.000000,,,,,,,,,,,,,,,,,15111001.0,Rauwacke,15111297.0
+4143,{52D1656C-73BA-4F41-96F5-F4E7AF7ED169},,2025-05-19 22:24:46.000000,2025-05-19 22:24:46.000000,,,,,,,,,,,,,,,,,15111299.0,Rauwacke: sandig,15111298.0
+4144,{EC9A889F-05F8-4F0A-A1E8-0CB30F2BD7DA},,2025-05-19 22:24:46.000000,2025-05-19 22:24:46.000000,,,,,,,,,,,,,,,,,15111181.0,Rauwacke: sedimentär,15111299.0
+4145,{26AE93BE-F9E9-4A55-897F-75A5AC988270},,2025-05-19 22:24:47.000000,2025-05-19 22:24:47.000000,,,,,,,,,,,,,,,,,15111473.0,Rauwacke: kataklastisch,15111300.0
+4146,{33B23DA4-01A8-4624-9D64-B6884B978557},,2025-05-19 22:24:47.000000,2025-05-19 22:24:47.000000,,,,,,,,,,,,,,,,,15111002.0,Evaporit,15111301.0
+4147,{7FF7B8CD-E791-4747-BB30-82426BDE27C9},,2025-05-19 22:24:47.000000,2025-05-19 22:24:47.000000,,,,,,,,,,,,,,,,,15111301.0,Evaporit: Anhydrit,15111302.0
+4148,{BA0C750C-3463-453D-9A07-1B7023B56F48},,2025-05-19 22:24:48.000000,2025-05-19 22:24:48.000000,,,,,,,,,,,,,,,,,15111301.0,Evaporit: Gips,15111303.0
+4149,{39241749-CFA6-4D50-9418-FC65896F85A3},,2025-05-19 22:24:48.000000,2025-05-19 22:24:48.000000,,,,,,,,,,,,,,,,,15111301.0,Evaporit: Halit,15111304.0
+4150,{BBD9CCF1-06B0-4BA7-A48D-E462502F17FC},,2025-05-19 22:24:48.000000,2025-05-19 22:24:48.000000,,,,,,,,,,,,,,,,,15111301.0,Evaporit: Sulfat,15111305.0
+4151,{7BE99EB2-1476-4474-9E0E-EF50C37B2C48},,2025-05-19 22:24:49.000000,2025-05-19 22:24:49.000000,,,,,,,,,,,,,,,,,15111301.0,Evaporit: tonig,15111306.0
+4152,{201C5A91-5F79-4A0C-A911-A4CDFD6041B7},,2025-05-19 22:24:49.000000,2025-05-19 22:24:49.000000,,,,,,,,,,,,,,,,,15111301.0,Evaporit: tonig: Anhydrit,15111307.0
+4153,{7835A01B-7D02-4AEE-A442-11270C4F8F39},,2025-05-19 22:24:50.000000,2025-05-19 22:24:50.000000,,,,,,,,,,,,,,,,,15111301.0,Evaporit: tonig: Gips,15111308.0
+4154,{952F3B83-ECE0-4EF5-9EBB-561A45F4E649},,2025-05-19 22:24:50.000000,2025-05-19 22:24:50.000000,,,,,,,,,,,,,,,,,15111001.0,Gestein: kieselig,15111309.0
+4155,{9C0EA62C-F957-4855-8105-976F0D680D18},,2025-05-19 22:24:50.000000,2025-05-19 22:24:50.000000,,,,,,,,,,,,,,,,,15111181.0,Gestein: kieselig-sedimentär,15111310.0
+4156,{F5CE1F86-225D-4F73-A28C-8A19DFC691E0},,2025-05-19 22:24:51.000000,2025-05-19 22:24:51.000000,,,,,,,,,,,,,,,,,15111310.0,Gestein: kieselig-kryptokristallin,15111311.0
+4157,{C09882A7-10FE-4C6D-8179-49ECDA615F95},,2025-05-19 22:24:51.000000,2025-05-19 22:24:51.000000,,,,,,,,,,,,,,,,,15111310.0,Gestein: kieselig-pedogen,15111312.0
+4158,{FA614DE4-1A05-4ED0-976C-14DE9D46E328},,2025-05-19 22:24:51.000000,2025-05-19 22:24:51.000000,,,,,,,,,,,,,,,,,15111310.0,Gestein: kieselig: Radiolarien,15111313.0
+4159,{464629DA-F385-4EF0-891E-1A5EF3A7A88F},,2025-05-19 22:24:52.000001,2025-05-19 22:24:52.000001,,,,,,,,,,,,,,,,,15111310.0,Gestein: kieselig: Schwämme,15111314.0
+4160,{BE9C0124-DE8E-4539-83C7-1E6B9C8A3714},,2025-05-19 22:24:52.000001,2025-05-19 22:24:52.000001,,,,,,,,,,,,,,,,,15111468.0,Gestein: kieselig-metamorph,15111315.0
+4161,{9D059296-E2FE-4E41-9BAB-59AD391860DD},,2025-05-19 22:24:52.000001,2025-05-19 22:24:52.000001,,,,,,,,,,,,,,,,,15111002.0,Gestein: Phosphorit,15111316.0
+4162,{1FBDEF9E-7CE8-4A6C-912B-A07A9E065CD5},,2025-05-19 22:24:53.000000,2025-05-19 22:24:53.000000,,,,,,,,,,,,,,,,,15111002.0,Gestein: organisch,15111317.0
+4163,{AD36E6A9-44D0-4120-AA66-41D7A6226CE3},,2025-05-19 22:24:53.000000,2025-05-19 22:24:53.000000,,,,,,,,,,,,,,,,,15111317.0,Gestein: organisch: Anthrazit,15111318.0
+4164,{68FDC4AA-ED7D-46DD-831D-6451990F5A54},,2025-05-19 22:24:53.000000,2025-05-19 22:24:53.000000,,,,,,,,,,,,,,,,,15111317.0,Gestein: organisch: Kohle,15111319.0
+4165,{A9BC50B0-12E2-43B2-AFE1-B0CD776EC249},,2025-05-19 22:24:54.000000,2025-05-19 22:24:54.000000,,,,,,,,,,,,,,,,,15111317.0,Gestein: organisch: Lignit,15111320.0
+4166,{C002776D-1DBB-4370-8D5B-45BB36C5775D},,2025-05-19 22:24:54.000000,2025-05-19 22:24:54.000000,,,,,,,,,,,,,,,,,15111002.0,Gestein: pedogen,15111321.0
+4167,{319BE984-F14A-49EF-ADC3-56BF19A13330},,2025-05-19 22:24:55.000000,2025-05-19 22:24:55.000000,,,,,,,,,,,,,,,,,15111002.0,Gestein: residual,15111322.0
+4168,{3CA68284-44F1-45A3-A0D6-F69A0E2AAC58},,2025-05-19 22:24:55.000000,2025-05-19 22:24:55.000000,,,,,,,,,,,,,,,,,15111322.0,Gestein: residual: Eisenmineralien,15111323.0
+4169,{4EB5A365-438D-4699-8316-96CDF16BCD5D},,2025-05-19 22:24:55.000000,2025-05-19 22:24:55.000000,,,,,,,,,,,,,,,,,15111322.0,Gestein: residual: Silikat,15111324.0
+4170,{220E9FB9-12AC-4F0C-8470-11690E5F3530},,2025-05-19 22:24:56.000000,2025-05-19 22:24:56.000000,,,,,,,,,,,,,,,,,15111322.0,Gestein: residual: Silikat-Eisenmineralien,15111325.0
+4171,{BB7C10F1-8EB1-41CA-8564-D0172F3CF52C},,2025-05-19 22:24:56.000000,2025-05-19 22:24:56.000000,,,,,,,,,,,,,,,,,15111322.0,Gestein: residual-sandig,15111326.0
+4172,{9C427E3A-80DD-41E7-8DCB-B76873EA3F99},,2025-05-19 22:24:56.000000,2025-05-19 22:24:56.000000,,,,,,,,,,,,,,,,,15111322.0,Gestein: residual-sandig: Quarz,15111327.0
+4173,{207693B9-7266-48FF-809F-F2E27594007A},,2025-05-19 22:24:57.000000,2025-05-19 22:24:57.000000,,,,,,,,,,,,,,,,,15111322.0,Gestein: residual-siltig,15111328.0
+4174,{743F4F7F-09E2-45CA-917F-2F22A0A77D50},,2025-05-19 22:24:57.000000,2025-05-19 22:24:57.000000,,,,,,,,,,,,,,,,,15111322.0,Gestein: residual-tonig,15111329.0
+4175,{31CB9C3C-745E-475A-93D0-B3AF36F13189},,2025-05-19 22:24:57.000000,2025-05-19 22:24:57.000000,,,,,,,,,,,,,,,,,15111322.0,Gestein: residual-tonig: Eisenpisoide,15111330.0
+4176,{81443487-BA72-4871-933E-FA4B8736A713},,2025-05-19 22:24:58.000000,2025-05-19 22:24:58.000000,,,,,,,,,,,,,,,,,15111322.0,Gestein: residual-tonig: Kaolinit,15111331.0
+4177,{DAAE97EF-1DD3-4124-81EC-E47C60211D1C},,2025-05-19 22:24:58.000000,2025-05-19 22:24:58.000000,,,,,,,,,,,,,,,,,15111322.0,Gestein: residual-tonig: Limonit,15111332.0
+4178,{BA95A770-EE73-4C1B-B2F0-A7195B0EA451},,2025-05-19 22:24:58.000000,2025-05-19 22:24:58.000000,,,,,,,,,,,,,,,,,15111002.0,Gestein: Eisenmineralien,15111333.0
+4179,{926687C9-4EBA-452D-A823-D80D9C021CB9},,2025-05-19 22:24:59.000000,2025-05-19 22:24:59.000000,,,,,,,,,,,,,,,,,15111333.0,Gestein: Eisenooide,15111334.0
+4180,{114ACE92-DBEA-4CAE-AF9A-39A2F503BE3E},,2025-05-19 22:24:59.000000,2025-05-19 22:24:59.000000,,,,,,,,,,,,,,,,,15111333.0,Gestein: Eisenpisoide,15111335.0
+4181,{2A20CC48-1B39-42F4-A305-441F58E7CCA0},,2025-05-19 22:25:00.000001,2025-05-19 22:25:00.000001,,,,,,,,,,,,,,,,,15111003.0,Gestein: pyroklastisch,15111336.0
+4182,{DB09CBD6-4F46-43E6-BE09-BA6D6B847559},,2025-05-19 22:25:00.000001,2025-05-19 22:25:00.000001,,,,,,,,,,,,,,,,,15111336.0,Ignimbrit,15111337.0
+4183,{E8EB52F7-815E-4C05-B84F-E2C61F161FD9},,2025-05-19 22:25:00.000001,2025-05-19 22:25:00.000001,,,,,,,,,,,,,,,,,15111336.0,Tuff,15111338.0
+4184,{0112E6CD-CC16-4878-9FA7-BC013C2BCAF9},,2025-05-19 22:25:01.000000,2025-05-19 22:25:01.000000,,,,,,,,,,,,,,,,,15111338.0,Tuff: vulkanisch,15111339.0
+4185,{4F43F6AE-138E-4E8B-9B44-D631786AA303},,2025-05-19 22:25:01.000000,2025-05-19 22:25:01.000000,,,,,,,,,,,,,,,,,15111338.0,Tuff: vulkanisch: Asche,15111340.0
+4186,{CC554012-87A5-4CF3-8493-50A5EFF7FE1A},,2025-05-19 22:25:01.000000,2025-05-19 22:25:01.000000,,,,,,,,,,,,,,,,,15111338.0,Tuff: vulkanisch: Kristalle,15111341.0
+4187,{28D34EFE-B339-4A67-BC36-C21BE0E07E90},,2025-05-19 22:25:02.000000,2025-05-19 22:25:02.000000,,,,,,,,,,,,,,,,,15111338.0,Tuff: vulkanisch: Lapilli,15111342.0
+4188,{4EF53853-F62A-42E7-8EFD-AF0FFBD35350},,2025-05-19 22:25:02.000000,2025-05-19 22:25:02.000000,,,,,,,,,,,,,,,,,15111338.0,Bentonit,15111343.0
+4189,{143D5157-E210-409C-AAAA-2CB06ECE6750},,2025-05-19 22:25:02.000000,2025-05-19 22:25:02.000000,,,,,,,,,,,,,,,,,15111001.0,Gestein: kristallin,15111344.0
+4190,{0BB3BE85-7A7D-42FF-B489-4716E924A035},,2025-05-19 22:25:03.000000,2025-05-19 22:25:03.000000,,,,,,,,,,,,,,,,,15111344.0,Gestein: saur,15111345.0
+4191,{83906833-3B10-43FF-B711-A47847D77794},,2025-05-19 22:25:03.000000,2025-05-19 22:25:03.000000,,,,,,,,,,,,,,,,,15111344.0,Gestein: basisch,15111346.0
+4192,{AA183192-1F6D-43DF-9ADD-0EFD6B127364},,2025-05-19 22:25:03.000000,2025-05-19 22:25:03.000000,,,,,,,,,,,,,,,,,15111344.0,Gestein: magmatisch,15111347.0
+4193,{E10B7093-0F14-4A74-BD50-73BBA56C672A},,2025-05-19 22:25:04.000000,2025-05-19 22:25:04.000000,,,,,,,,,,,,,,,,,15111347.0,Gestein: vulkanisch,15111348.0
+4194,{EB089D85-20F2-495E-A5AF-4894ED6786F6},,2025-05-19 22:25:04.000000,2025-05-19 22:25:04.000000,,,,,,,,,,,,,,,,,15111348.0,Gestein: vulkanisch: Karbonat,15111349.0
+4195,{AB806CF7-5BF6-4835-BD62-40D722290724},,2025-05-19 22:25:04.000000,2025-05-19 22:25:04.000000,,,,,,,,,,,,,,,,,15111348.0,Gestein: saur-vulkanisch,15111350.0
+4196,{6EDE61FD-D8E5-48C7-BA41-723F2D1990EE},,2025-05-19 22:25:05.000000,2025-05-19 22:25:05.000000,,,,,,,,,,,,,,,,,15111348.0,Gestein: rhyolithisch,15111351.0
+4197,{5817C40A-8CFD-473F-B208-291D89E53EF1},,2025-05-19 22:25:05.000000,2025-05-19 22:25:05.000000,,,,,,,,,,,,,,,,,15111351.0,Rhyolith,15111352.0
+4198,{0EB6B0A2-4099-4921-803F-FBC982E8F94D},,2025-05-19 22:25:05.000000,2025-05-19 22:25:05.000000,,,,,,,,,,,,,,,,,15111352.0,Rhyolith: Alkalifeldspat,15111353.0
+4199,{3A1DFC81-FB9C-45D8-A881-F7278CA3C1B1},,2025-05-19 22:25:06.000000,2025-05-19 22:25:06.000000,,,,,,,,,,,,,,,,,15111352.0,Rhyolith: ignimbritisch,15111354.0
+4200,{B6D54F56-11E9-49E2-A688-69B1F1C36374},,2025-05-19 22:25:06.000000,2025-05-19 22:25:06.000000,,,,,,,,,,,,,,,,,15111352.0,Rhyolith: porphyrisch,15111355.0
+4201,{CB26B840-E57F-4779-975E-8EF429FE5112},,2025-05-19 22:25:06.000000,2025-05-19 22:25:06.000000,,,,,,,,,,,,,,,,,15111348.0,Gestein: dazitisch,15111356.0
+4202,{EF5CEB29-7A34-4962-9403-FC7893CBEE4A},,2025-05-19 22:25:07.000000,2025-05-19 22:25:07.000000,,,,,,,,,,,,,,,,,15111356.0,Dazit,15111357.0
+4203,{56154810-68E4-4DF4-A546-496E4B02AA0A},,2025-05-19 22:25:07.000000,2025-05-19 22:25:07.000000,,,,,,,,,,,,,,,,,15111356.0,Dazit: rhyolithisch,15111358.0
+4204,{7A6B7937-881C-4625-8EE2-9D909C230F5E},,2025-05-19 22:25:07.000000,2025-05-19 22:25:07.000000,,,,,,,,,,,,,,,,,15111348.0,Gestein: latitisch,15111359.0
+4205,{C60D9609-8425-4F5A-8BC5-08C07AB1CFB4},,2025-05-19 22:25:08.000001,2025-05-19 22:25:08.000001,,,,,,,,,,,,,,,,,15111359.0,Latit,15111360.0
+4206,{8D7A77E2-4868-4DC8-AC81-25FE777DBE3D},,2025-05-19 22:25:08.000001,2025-05-19 22:25:08.000001,,,,,,,,,,,,,,,,,15111348.0,Gestein: trachytisch,15111361.0
+4207,{B2610A92-55A9-4F11-B5CB-BF402E5A17D9},,2025-05-19 22:25:09.000000,2025-05-19 22:25:09.000000,,,,,,,,,,,,,,,,,15111361.0,Trachyt,15111362.0
+4208,{3FDC4EF9-33B5-4F58-BF20-593B9E63AEC3},,2025-05-19 22:25:09.000000,2025-05-19 22:25:09.000000,,,,,,,,,,,,,,,,,15111361.0,Trachyt: Alkalifeldspat,15111363.0
+4209,{DEF2C7BD-0DBB-4E82-9ED6-494B8B514E56},,2025-05-19 22:25:09.000000,2025-05-19 22:25:09.000000,,,,,,,,,,,,,,,,,15111348.0,Gestein: andesitisch,15111364.0
+4210,{065417C6-5AA4-4E9D-81E2-CDAF067B488D},,2025-05-19 22:25:09.000000,2025-05-19 22:25:09.000000,,,,,,,,,,,,,,,,,15111364.0,Andesit,15111365.0
+4211,{CAB96C9A-4C45-4A1D-B810-BAE440972DC1},,2025-05-19 22:25:10.000000,2025-05-19 22:25:10.000000,,,,,,,,,,,,,,,,,15111364.0,Gestein: basisch-vulkanisch,15111366.0
+4212,{612401DC-4CD1-4C74-AB0D-0362F81DDAAE},,2025-05-19 22:25:10.000000,2025-05-19 22:25:10.000000,,,,,,,,,,,,,,,,,15111348.0,Gestein: basaltisch,15111367.0
+4213,{B8E9E87C-CB37-46E6-8E1F-9F16DE947271},,2025-05-19 22:25:10.000000,2025-05-19 22:25:10.000000,,,,,,,,,,,,,,,,,15111367.0,Basalt,15111368.0
+4214,{44263D70-AA4B-40F2-A0E4-413DFA209ED0},,2025-05-19 22:25:11.000000,2025-05-19 22:25:11.000000,,,,,,,,,,,,,,,,,15111367.0,Basalt: Olivin,15111369.0
+4215,{3A7715A4-A100-46A1-944C-69A2DD24CBE2},,2025-05-19 22:25:11.000000,2025-05-19 22:25:11.000000,,,,,,,,,,,,,,,,,15111367.0,Basalt: verwittert: Albit,15111370.0
+4216,{FF5101EA-8D64-40FE-858E-3AD252184A0E},,2025-05-19 22:25:11.000000,2025-05-19 22:25:11.000000,,,,,,,,,,,,,,,,,15111348.0,Gestein: phonolithisch,15111371.0
+4217,{49460903-9751-4DC6-B344-D219942A6873},,2025-05-19 22:25:12.000000,2025-05-19 22:25:12.000000,,,,,,,,,,,,,,,,,15111371.0,Phonolith,15111372.0
+4218,{59F41E9C-0169-4BBB-BF9D-6B93F6FB68A2},,2025-05-19 22:25:12.000000,2025-05-19 22:25:12.000000,,,,,,,,,,,,,,,,,15111371.0,Phonolith: tephritisch,15111373.0
+4219,{003E8453-10F8-46F3-864D-A230E818CF64},,2025-05-19 22:25:12.000000,2025-05-19 22:25:12.000000,,,,,,,,,,,,,,,,,15111348.0,Gestein: tephritisch,15111374.0
+4220,{981132FA-723E-4AA6-82C7-7DB09010F13A},,2025-05-19 22:25:13.000000,2025-05-19 22:25:13.000000,,,,,,,,,,,,,,,,,15111374.0,Tephrit,15111375.0
+4221,{9772710A-D318-4598-926C-1526970F7920},,2025-05-19 22:25:13.000000,2025-05-19 22:25:13.000000,,,,,,,,,,,,,,,,,15111374.0,Tephrit: phonolithisch,15111376.0
+4222,{AC4C6B25-6FF0-4D8E-81E4-DC504CDA5EB2},,2025-05-19 22:25:13.000000,2025-05-19 22:25:13.000000,,,,,,,,,,,,,,,,,15111348.0,Basanit,15111377.0
+4223,{D50EC0DA-15F0-4968-8F6F-B5B41EBC00EE},,2025-05-19 22:25:14.000000,2025-05-19 22:25:14.000000,,,,,,,,,,,,,,,,,15111348.0,Gestein: foiditisch,15111378.0
+4224,{90C24F0F-B52C-4F9B-A25F-865815F2CA4D},,2025-05-19 22:25:14.000000,2025-05-19 22:25:14.000000,,,,,,,,,,,,,,,,,15111378.0,Foidit,15111379.0
+4225,{64D924CF-9F49-46A4-BF41-9804988DC2F6},,2025-05-19 22:25:14.000000,2025-05-19 22:25:14.000000,,,,,,,,,,,,,,,,,15111348.0,Tuffit,15111380.0
+4226,{F0AAFF2C-364C-4D39-A430-CAD37CA8A7A8},,2025-05-19 22:25:15.000000,2025-05-19 22:25:15.000000,,,,,,,,,,,,,,,,,15111347.0,Gestein: gangartig,15111381.0
+4227,{2229E3F7-CFF4-4AE4-B81F-165D3423D5D9},,2025-05-19 22:25:15.000000,2025-05-19 22:25:15.000000,,,,,,,,,,,,,,,,,15111381.0,Gestein: gangartig: Quarz,15111382.0
+4228,{63F9BD54-45B2-439E-B964-0A91C61F6735},,2025-05-19 22:25:15.000000,2025-05-19 22:25:15.000000,,,,,,,,,,,,,,,,,15111381.0,Gestein: saur-gangartig,15111383.0
+4229,{4637F7E4-6D71-4FB4-B3B5-2ED72F6397CC},,2025-05-19 22:25:16.000001,2025-05-19 22:25:16.000001,,,,,,,,,,,,,,,,,15111383.0,Aplit,15111384.0
+4230,{53B882B3-E50C-4066-923C-BD686AB5B1D8},,2025-05-19 22:25:16.000001,2025-05-19 22:25:16.000001,,,,,,,,,,,,,,,,,15111383.0,Pegmatit,15111385.0
+4231,{9A00415A-2F4B-403F-9F22-70CAEAEF7247},,2025-05-19 22:25:16.000001,2025-05-19 22:25:16.000001,,,,,,,,,,,,,,,,,15111383.0,Granophyr,15111386.0
+4232,{00B49522-3D8A-4DEE-A46B-FBF91FE94952},,2025-05-19 22:25:17.000000,2025-05-19 22:25:17.000000,,,,,,,,,,,,,,,,,15111381.0,Gestein: basisch-gangartig,15111387.0
+4233,{14AD816D-B516-486A-9F99-B750E33C711E},,2025-05-19 22:25:17.000000,2025-05-19 22:25:17.000000,,,,,,,,,,,,,,,,,15111387.0,Rodingit,15111388.0
+4234,{8429A4DA-1A99-4806-A1CF-2C46426F9D45},,2025-05-19 22:25:17.000000,2025-05-19 22:25:17.000000,,,,,,,,,,,,,,,,,15111347.0,Gestein: plutonisch,15111389.0
+4235,{EABEDAE7-9D3C-4EE4-AC19-6212F80282E1},,2025-05-19 22:25:18.000000,2025-05-19 22:25:18.000000,,,,,,,,,,,,,,,,,15111389.0,Gestein: granitisch,15111390.0
+4236,{A3865112-5512-434A-B6F2-AB4E9E09D7B1},,2025-05-19 22:25:18.000000,2025-05-19 22:25:18.000000,,,,,,,,,,,,,,,,,15111390.0,Granit,15111391.0
+4237,{AB82DD7A-D915-43BB-8529-CAA509572E1E},,2025-05-19 22:25:18.000000,2025-05-19 22:25:18.000000,,,,,,,,,,,,,,,,,15111390.0,Granit: Alkalifeldspat,15111392.0
+4238,{30947C6A-E77D-4C3B-9194-110A31ABE443},,2025-05-19 22:25:19.000000,2025-05-19 22:25:19.000000,,,,,,,,,,,,,,,,,15111390.0,Granit: aplitisch,15111393.0
+4239,{767FEE44-6E9E-4F68-9E10-477FCD519F6C},,2025-05-19 22:25:19.000000,2025-05-19 22:25:19.000000,,,,,,,,,,,,,,,,,15111390.0,Granit: aplitisch: Granat,15111394.0
+4240,{AB0EABD1-DE9E-4E06-9558-8F37F21FE6B1},,2025-05-19 22:25:19.000000,2025-05-19 22:25:19.000000,,,,,,,,,,,,,,,,,15111390.0,Granit: Biotit,15111395.0
+4241,{1206F718-C256-4F66-AF44-1301DD2690D8},,2025-05-19 22:25:20.000000,2025-05-19 22:25:20.000000,,,,,,,,,,,,,,,,,15111390.0,Granit: Biotit-Cordierit,15111396.0
+4242,{E724C94E-07EA-4857-A2DA-428E45672789},,2025-05-19 22:25:20.000000,2025-05-19 22:25:20.000000,,,,,,,,,,,,,,,,,15111390.0,Granit: Biotit-Granat,15111397.0
+4243,{1E1639E1-D668-48BB-BC72-E9637E2E1D02},,2025-05-19 22:25:21.000000,2025-05-19 22:25:21.000000,,,,,,,,,,,,,,,,,15111390.0,Granit: Biotit-Muskovit,15111398.0
+4244,{036E52E2-52B2-4F5E-98DF-FB8837F3F935},,2025-05-19 22:25:21.000000,2025-05-19 22:25:21.000000,,,,,,,,,,,,,,,,,15111390.0,Granit: Hornblende,15111399.0
+4245,{886E6257-6CB2-493A-8374-FF34DEA73C97},,2025-05-19 22:25:21.000000,2025-05-19 22:25:21.000000,,,,,,,,,,,,,,,,,15111390.0,Granit: metasomatisch,15111400.0
+4246,{AEA5B347-D975-49C8-BCF4-6AEE18EEE89B},,2025-05-19 22:25:22.000000,2025-05-19 22:25:22.000000,,,,,,,,,,,,,,,,,15111390.0,Granit: mikrokristallin,15111401.0
+4339,{10A38CCB-C3D9-42C2-ABB5-B36BDB2AFA72},,2025-05-19 22:25:55.000000,2025-05-19 22:25:55.000000,,,,,,,,,,,,,,,,,15111486.0,Marmor: kieselig,15111494.0
+4340,{00413738-B294-4E39-B8D4-40A49C52C72C},,2025-05-19 22:25:55.000000,2025-05-19 22:25:55.000000,,,,,,,,,,,,,,,,,15111486.0,Marmor: konglomeratisch,15111495.0
+4341,{988C8FAD-FD71-4D1C-AA7E-F836A3EC1BED},,2025-05-19 22:25:56.000000,2025-05-19 22:25:56.000000,,,,,,,,,,,,,,,,,15111486.0,Marmor: konglomeratisch-kalkig,15111496.0
+4342,{EF0F50B8-D384-43EC-8E37-66D5744749A9},,2025-05-19 22:25:56.000000,2025-05-19 22:25:56.000000,,,,,,,,,,,,,,,,,15111486.0,Marmor: metasomatisch,15111497.0
+4343,{1AF0182E-837E-4761-9146-991D9FD5FB5F},,2025-05-19 22:25:56.000000,2025-05-19 22:25:56.000000,,,,,,,,,,,,,,,,,15111486.0,Marmor: sandig,15111498.0
+4344,{29324266-0DB2-4ABF-8623-4512BC248170},,2025-05-19 22:25:57.000000,2025-05-19 22:25:57.000000,,,,,,,,,,,,,,,,,15111486.0,Marmor: sandig: Bioklasten,15111499.0
+4345,{4E2403DD-1660-46EB-86B1-BA2578986EE7},,2025-05-19 22:25:57.000000,2025-05-19 22:25:57.000000,,,,,,,,,,,,,,,,,15111486.0,Marmor: schiefrig,15111500.0
+4346,{7E5170F8-774E-418D-8803-8BE592F314FB},,2025-05-19 22:25:57.000000,2025-05-19 22:25:57.000000,,,,,,,,,,,,,,,,,15111486.0,Marmor: Serizit,15111501.0
+4347,{EBC49325-17A6-43A4-B099-818E3A219377},,2025-05-19 22:25:58.000000,2025-05-19 22:25:58.000000,,,,,,,,,,,,,,,,,15111486.0,Marmor: Silikat,15111502.0
+4348,{79788530-B7F3-45E7-93C0-62394F2BF536},,2025-05-19 22:25:58.000000,2025-05-19 22:25:58.000000,,,,,,,,,,,,,,,,,15111486.0,Marmor: tonig,15111503.0
+4349,{43D6AA4C-9FE9-4D44-9388-97165D7FCDEE},,2025-05-19 22:25:59.000001,2025-05-19 22:25:59.000001,,,,,,,,,,,,,,,,,15111486.0,Marmor: tonig-schiefrig,15111504.0
+4350,{F1D5B37B-D53F-4F54-84DF-E38B47BC504B},,2025-05-19 22:25:59.000001,2025-05-19 22:25:59.000001,,,,,,,,,,,,,,,,,15111468.0,Quarzit,15111505.0
+4351,{C1D49A26-272F-477E-8AED-DEF78E98CC74},,2025-05-19 22:25:59.000001,2025-05-19 22:25:59.000001,,,,,,,,,,,,,,,,,15111505.0,Quarzit: Albit,15111506.0
+4352,{F3FEC526-D664-4CE4-8413-119E21C3B4D1},,2025-05-19 22:26:00.000000,2025-05-19 22:26:00.000000,,,,,,,,,,,,,,,,,15111505.0,Quarzit: Chlorit,15111507.0
+4353,{02FD33C6-9B30-4A38-A6B0-65E949F60D4F},,2025-05-19 22:26:00.000000,2025-05-19 22:26:00.000000,,,,,,,,,,,,,,,,,15111505.0,Quarzit: kalkig,15111508.0
+4354,{3F5C9BC2-424A-4D15-9E51-4AB367030DE3},,2025-05-19 22:26:00.000000,2025-05-19 22:26:00.000000,,,,,,,,,,,,,,,,,15111505.0,Quarzit: Serizit,15111509.0
+4355,{FEA15A4E-CF94-4500-8CDD-63BEA3723B5B},,2025-05-19 22:26:01.000000,2025-05-19 22:26:01.000000,,,,,,,,,,,,,,,,,15111468.0,Gneis,15111510.0
+4356,{4D9F557D-2FE0-4608-A82A-1007C73BC173},,2025-05-19 22:26:01.000000,2025-05-19 22:26:01.000000,,,,,,,,,,,,,,,,,15111510.0,Gneis: Albit,15111511.0
+4357,{1F71B3FC-B0A5-49D3-BEE8-59A8C1925429},,2025-05-19 22:26:01.000000,2025-05-19 22:26:01.000000,,,,,,,,,,,,,,,,,15111510.0,Gneis: Albit-Oligoklas,15111512.0
+4358,{BC5F2A71-83F3-4BE8-9C0A-690F846DBB03},,2025-05-19 22:26:02.000001,2025-05-19 22:26:02.000001,,,,,,,,,,,,,,,,,15111510.0,Gneis: Aluminosilikat,15111513.0
+4359,{DDBBF1B1-2F4F-4603-A030-0AABCD2535B6},,2025-05-19 22:26:02.000001,2025-05-19 22:26:02.000001,,,,,,,,,,,,,,,,,15111510.0,Gneis: Amphibol,15111514.0
+4360,{899200D9-FDC3-4FC2-B559-09FB89BB38CB},,2025-05-19 22:26:02.000001,2025-05-19 22:26:02.000001,,,,,,,,,,,,,,,,,15111510.0,Gneis: aplitisch,15111515.0
+4361,{81F26413-81D0-444D-82E0-27596A42F6D4},,2025-05-19 22:26:03.000000,2025-05-19 22:26:03.000000,,,,,,,,,,,,,,,,,15111510.0,Gneis: augig,15111516.0
+4362,{AFA7EA75-D872-4254-8837-32A7946C5A5D},,2025-05-19 22:26:03.000000,2025-05-19 22:26:03.000000,,,,,,,,,,,,,,,,,15111510.0,Gneis: augig: Phengit,15111517.0
+4363,{0AD6D3C5-ECF5-467A-9CD4-86C1E9DE6578},,2025-05-19 22:26:03.000000,2025-05-19 22:26:03.000000,,,,,,,,,,,,,,,,,15111510.0,Gneis: Biotit,15111518.0
+4364,{774EB08F-065A-4CBE-903F-485E46305295},,2025-05-19 22:26:04.000000,2025-05-19 22:26:04.000000,,,,,,,,,,,,,,,,,15111510.0,Gneis: Biotit-Hornblende,15111519.0
+4365,{70CC686A-C103-4303-AEC6-10CBE4A8CD07},,2025-05-19 22:26:04.000000,2025-05-19 22:26:04.000000,,,,,,,,,,,,,,,,,15111510.0,Gneis: Biotit-Muskovit,15111520.0
+4366,{9D369A37-9D97-42FC-8FE3-0F7A620AFD72},,2025-05-19 22:26:04.000000,2025-05-19 22:26:04.000000,,,,,,,,,,,,,,,,,15111510.0,Gneis: Biotit-Plagioklas,15111521.0
+4367,{9EFD2F34-C272-4DBE-B023-AA43B40F839E},,2025-05-19 22:26:05.000000,2025-05-19 22:26:05.000000,,,,,,,,,,,,,,,,,15111510.0,Gneis: Chlorit,15111522.0
+4368,{2F846B8E-6915-45D3-BAC4-B8CF07DBF6DF},,2025-05-19 22:26:05.000000,2025-05-19 22:26:05.000000,,,,,,,,,,,,,,,,,15111510.0,Gneis: dioritisch,15111523.0
+4369,{5B4BFADC-D707-4E01-B4FD-04F725A01391},,2025-05-19 22:26:06.000000,2025-05-19 22:26:06.000000,,,,,,,,,,,,,,,,,15111510.0,Gneis: gebändert,15111524.0
+4370,{BBC89015-C9E7-402D-846D-2A88A5041400},,2025-05-19 22:26:06.000000,2025-05-19 22:26:06.000000,,,,,,,,,,,,,,,,,15111510.0,Gneis: gebändert: Granat,15111525.0
+4371,{A447F77C-09DD-4A00-9B84-3F926E77900E},,2025-05-19 22:26:06.000000,2025-05-19 22:26:06.000000,,,,,,,,,,,,,,,,,15111510.0,Gneis: Granat,15111526.0
+4372,{2CDCE323-F108-484D-BE15-72447F12F8BF},,2025-05-19 22:26:06.000000,2025-05-19 22:26:06.000000,,,,,,,,,,,,,,,,,15111510.0,Gneis: granitisch,15111527.0
+4373,{EFD76C33-71D3-4037-9DB7-2D4B6E2FEC72},,2025-05-19 22:26:07.000000,2025-05-19 22:26:07.000000,,,,,,,,,,,,,,,,,15111510.0,Gneis: granitisch-augig,15111528.0
+4374,{3567A8CC-58A9-4DC2-84C7-872E1F092D6B},,2025-05-19 22:26:07.000000,2025-05-19 22:26:07.000000,,,,,,,,,,,,,,,,,15111510.0,Gneis: granodioritisch,15111529.0
+4375,{E7543D67-8626-41C4-B94F-A8C2A824B304},,2025-05-19 22:26:08.000000,2025-05-19 22:26:08.000000,,,,,,,,,,,,,,,,,15111510.0,Gneis: granulitisch,15111530.0
+4376,{88F5A6FD-D72A-4359-B898-5684A2D05DF4},,2025-05-19 22:26:08.000000,2025-05-19 22:26:08.000000,,,,,,,,,,,,,,,,,15111510.0,Gneis: Hornblende,15111531.0
+4377,{D2A774BA-8CBF-4CAB-89EE-F82F2C95C4A3},,2025-05-19 22:26:08.000000,2025-05-19 22:26:08.000000,,,,,,,,,,,,,,,,,15111510.0,Gneis: Kyanit,15111532.0
+4378,{4716DA43-B88F-4562-B085-EFDE34D2C16B},,2025-05-19 22:26:09.000000,2025-05-19 22:26:09.000000,,,,,,,,,,,,,,,,,15111510.0,Gneis: magmatisch,15111533.0
+4379,{BFCFF71A-6805-443D-904C-263718834C30},,2025-05-19 22:26:09.000000,2025-05-19 22:26:09.000000,,,,,,,,,,,,,,,,,15111510.0,Gneis: magmatisch-augig,15111534.0
+4380,{32639F77-C5AF-488F-8E3F-FBB2AFE9D65C},,2025-05-19 22:26:09.000000,2025-05-19 22:26:09.000000,,,,,,,,,,,,,,,,,15111510.0,Gneis: magmatisch-augig: Cordierit,15111535.0
+4381,{F0E43E5B-ABFB-47EF-9448-FF367B5EDF65},,2025-05-19 22:26:10.000001,2025-05-19 22:26:10.000001,,,,,,,,,,,,,,,,,15111510.0,Gneis: metasomatisch,15111536.0
+4382,{2B98BCF3-BEFD-4044-B387-6E88E89F75BE},,2025-05-19 22:26:10.000001,2025-05-19 22:26:10.000001,,,,,,,,,,,,,,,,,15111510.0,Gneis: migmatitisch,15111537.0
+4383,{17C5A0A4-8500-435A-BB23-278300E3E924},,2025-05-19 22:26:10.000001,2025-05-19 22:26:10.000001,,,,,,,,,,,,,,,,,15111510.0,Gneis: migmatitisch: Cordierit,15111538.0
+4384,{988658CF-2AF7-4B14-9028-ABBFF8B5FBC8},,2025-05-19 22:26:11.000000,2025-05-19 22:26:11.000000,,,,,,,,,,,,,,,,,15111510.0,Gneis: migmatitisch-augig,15111539.0
+4385,{41409473-C2B6-479A-BA00-CB2E36474614},,2025-05-19 22:26:11.000000,2025-05-19 22:26:11.000000,,,,,,,,,,,,,,,,,15111510.0,Gneis: Mikroklin,15111540.0
+4386,{7D6A6203-EA95-47B3-893B-5583931FFE5D},,2025-05-19 22:26:11.000000,2025-05-19 22:26:11.000000,,,,,,,,,,,,,,,,,15111510.0,Gneis: Muskovit,15111541.0
+4387,{F68E2E63-8325-4206-8728-96EBC8BE5517},,2025-05-19 22:26:11.000000,2025-05-19 22:26:11.000000,,,,,,,,,,,,,,,,,15111510.0,Gneis: mylonitisch,15111542.0
+4388,{9C8182A3-C641-4EC4-9824-DB01EDC20C8E},,2025-05-19 22:26:12.000000,2025-05-19 22:26:12.000000,,,,,,,,,,,,,,,,,15111510.0,Gneis: Phengit,15111543.0
+4389,{591F860D-ADD4-4C03-B65D-E37222C55759},,2025-05-19 22:26:12.000000,2025-05-19 22:26:12.000000,,,,,,,,,,,,,,,,,15111510.0,Gneis: phyllitisch,15111544.0
+4390,{7526CF0B-37D3-40B5-A6B2-66BF1635D8C2},,2025-05-19 22:26:12.000000,2025-05-19 22:26:12.000000,,,,,,,,,,,,,,,,,15111510.0,Gneis: psammitisch,15111545.0
+4391,{4AA76AAB-9C68-4E28-A873-8503B6B0B8D0},,2025-05-19 22:26:13.000000,2025-05-19 22:26:13.000000,,,,,,,,,,,,,,,,,15111510.0,Gneis: psephitisch,15111546.0
+4392,{8AEF513B-B628-4771-A35D-F1712E6EFF74},,2025-05-19 22:26:13.000000,2025-05-19 22:26:13.000000,,,,,,,,,,,,,,,,,15111510.0,Gneis: psephitisch: Phengit,15111547.0
+4393,{7EBEC67D-86FA-434D-9232-017128FDE594},,2025-05-19 22:26:13.000000,2025-05-19 22:26:13.000000,,,,,,,,,,,,,,,,,15111510.0,Gneis: schiefrig,15111548.0
+4394,{C12FCF19-A5E5-4FA0-BA77-D16E30A9F999},,2025-05-19 22:26:14.000000,2025-05-19 22:26:14.000000,,,,,,,,,,,,,,,,,15111510.0,Gneis: schiefrig: Biotit,15111549.0
+4395,{49283B7F-6155-4D31-8C18-4E7D7B403429},,2025-05-19 22:26:14.000000,2025-05-19 22:26:14.000000,,,,,,,,,,,,,,,,,15111510.0,Gneis: schiefrig: Chlorit,15111550.0
+4396,{9ECB74FD-9C65-48F8-8BFC-972F0AA5F6BD},,2025-05-19 22:26:14.000000,2025-05-19 22:26:14.000000,,,,,,,,,,,,,,,,,15111510.0,Gneis: schiefrig: Hornblende,15111551.0
+4397,{50F84904-2D45-44B7-8382-121625E6D6C5},,2025-05-19 22:26:15.000000,2025-05-19 22:26:15.000000,,,,,,,,,,,,,,,,,15111510.0,Gneis: schiefrig-augig,15111552.0
+4398,{0C02C990-ED84-476F-B272-177BA1304681},,2025-05-19 22:26:15.000000,2025-05-19 22:26:15.000000,,,,,,,,,,,,,,,,,15111510.0,Gneis: sedimentär,15111553.0
+4399,{7BDABCAC-B741-4C4D-B412-360B68E27B3E},,2025-05-19 22:26:15.000000,2025-05-19 22:26:15.000000,,,,,,,,,,,,,,,,,15111510.0,Gneis: Serizit,15111554.0
+4400,{9397DE97-F457-447C-B2DE-1B4EB65FFA4A},,2025-05-19 22:26:16.000000,2025-05-19 22:26:16.000000,,,,,,,,,,,,,,,,,15111510.0,Gneis: Serizit-Granat,15111555.0
+4401,{D482DFFE-AF7D-4494-AF6C-F145102A0014},,2025-05-19 22:26:16.000000,2025-05-19 22:26:16.000000,,,,,,,,,,,,,,,,,15111468.0,Granulit,15111556.0
+4402,{CAEF3165-5DFD-48AF-BF6C-7391069EBE18},,2025-05-19 22:26:16.000000,2025-05-19 22:26:16.000000,,,,,,,,,,,,,,,,,15111556.0,Granulit: Biotit-Granat,15111557.0
+4403,{689C9E39-77AE-43B6-836D-E76C0D8C5351},,2025-05-19 22:26:17.000000,2025-05-19 22:26:17.000000,,,,,,,,,,,,,,,,,15111556.0,Granulit: Feldspat-Granat,15111558.0
+4404,{85C19BAF-CF4C-4A20-AB29-9B2DEFA15584},,2025-05-19 22:26:17.000000,2025-05-19 22:26:17.000000,,,,,,,,,,,,,,,,,15111468.0,Migmatit,15111559.0
+4405,{CABF4E17-D247-410B-B8A9-AF4E207C5DB8},,2025-05-19 22:26:17.000000,2025-05-19 22:26:17.000000,,,,,,,,,,,,,,,,,15111559.0,Migmatit: Cordierit,15111560.0
+4406,{30A5C137-7345-4D03-96C9-26E4B68C8E97},,2025-05-19 22:26:18.000001,2025-05-19 22:26:18.000001,,,,,,,,,,,,,,,,,15111468.0,Phyllit,15111561.0
+4407,{ABFC9CBA-CB6C-4610-ADF6-8B7E633B271B},,2025-05-19 22:26:18.000001,2025-05-19 22:26:18.000001,,,,,,,,,,,,,,,,,15111561.0,Phyllit: Graphit,15111562.0
+4408,{D98C03E0-C184-421C-B4C1-BE28E32A6A23},,2025-05-19 22:26:18.000001,2025-05-19 22:26:18.000001,,,,,,,,,,,,,,,,,15111561.0,Phyllit: kalkig,15111563.0
+4409,{8C94D51F-A343-466F-A291-98553867F8DC},,2025-05-19 22:26:19.000000,2025-05-19 22:26:19.000000,,,,,,,,,,,,,,,,,15111561.0,Phyllit: Quarz,15111564.0
+4410,{DC8FA493-3C43-4094-84EF-06F3E54695D4},,2025-05-19 22:26:19.000000,2025-05-19 22:26:19.000000,,,,,,,,,,,,,,,,,15111468.0,Schiefer,15111565.0
+4411,{D674B181-F281-48AA-A8EC-DF7D82806B62},,2025-05-19 22:26:20.000000,2025-05-19 22:26:20.000000,,,,,,,,,,,,,,,,,15111565.0,Schiefer: Aktinolith,15111566.0
+4412,{B3BF00B1-4275-4324-821A-79649B35E717},,2025-05-19 22:26:20.000000,2025-05-19 22:26:20.000000,,,,,,,,,,,,,,,,,15111565.0,Schiefer: Amphibol,15111567.0
+4413,{5C428748-22C6-4232-8B2C-F6F7694BD4F9},,2025-05-19 22:26:20.000000,2025-05-19 22:26:20.000000,,,,,,,,,,,,,,,,,15111565.0,Schiefer: Anthrazit,15111568.0
+4414,{E36F612E-B95A-4CE5-9816-AFA99B2AC01F},,2025-05-19 22:26:21.000000,2025-05-19 22:26:21.000000,,,,,,,,,,,,,,,,,15111565.0,Schiefer: Antigorit,15111569.0
+4415,{76A2E932-42A6-4B41-9187-1217413E1043},,2025-05-19 22:26:21.000000,2025-05-19 22:26:21.000000,,,,,,,,,,,,,,,,,15111565.0,Schiefer: augig: Glimmer,15111570.0
+4416,{42FC5677-1C7F-4B15-A71F-D52D0F24976B},,2025-05-19 22:26:21.000000,2025-05-19 22:26:21.000000,,,,,,,,,,,,,,,,,15111565.0,Schiefer: Biotit,15111571.0
+4417,{8247076C-C4AD-494C-B73F-7E644A5ABA0E},,2025-05-19 22:26:22.000000,2025-05-19 22:26:22.000000,,,,,,,,,,,,,,,,,15111565.0,Schiefer: Biotit-Apatit,15111572.0
+4418,{46987D8F-E61C-40AB-A7B5-A94A0EB887F9},,2025-05-19 22:26:22.000000,2025-05-19 22:26:22.000000,,,,,,,,,,,,,,,,,15111565.0,Schiefer: Chlorit,15111573.0
+4419,{43C78041-88E4-498F-AD66-8E1718120D74},,2025-05-19 22:26:22.000000,2025-05-19 22:26:22.000000,,,,,,,,,,,,,,,,,15111565.0,Schiefer: Chlorit-Epidot,15111574.0
+4420,{3F9741A3-8DAC-4302-B3E0-536229648E3D},,2025-05-19 22:26:23.000000,2025-05-19 22:26:23.000000,,,,,,,,,,,,,,,,,15111565.0,Schiefer: Chlorit-Talk,15111575.0
+4421,{68B8954B-A7AB-41DC-A60D-6D7D24C8D17E},,2025-05-19 22:26:23.000000,2025-05-19 22:26:23.000000,,,,,,,,,,,,,,,,,15111565.0,Schiefer: Chloritoid,15111576.0
+4422,{21677DCB-447E-408E-AF35-3BF563021A6D},,2025-05-19 22:26:23.000000,2025-05-19 22:26:23.000000,,,,,,,,,,,,,,,,,15111565.0,Schiefer: Chloritoid-Kyanit,15111577.0
+4423,{470ACD80-A3BE-462B-90EF-7DA4A40E9019},,2025-05-19 22:26:24.000000,2025-05-19 22:26:24.000000,,,,,,,,,,,,,,,,,15111565.0,Schiefer: Glaukophan,15111578.0
+4424,{365C9E26-BC7E-4D26-894F-15572DDC77CC},,2025-05-19 22:26:24.000000,2025-05-19 22:26:24.000000,,,,,,,,,,,,,,,,,15111565.0,Schiefer: Glimmer,15111579.0
+4425,{148D405E-6AF2-42C8-80E6-1B26BFB6162E},,2025-05-19 22:26:24.000000,2025-05-19 22:26:24.000000,,,,,,,,,,,,,,,,,15111565.0,Schiefer: Glimmer-Chlorit,15111580.0
+4426,{E46291BF-9A6A-49EC-AF07-1D622862B720},,2025-05-19 22:26:25.000000,2025-05-19 22:26:25.000000,,,,,,,,,,,,,,,,,15111565.0,Schiefer: Glimmer-Chloritoid,15111581.0
+4427,{55668BF7-BCCB-421A-90D2-E97F312B9744},,2025-05-19 22:26:25.000000,2025-05-19 22:26:25.000000,,,,,,,,,,,,,,,,,15111565.0,Schiefer: Glimmer-Granat,15111582.0
+4428,{57A0A03A-DD7F-45E6-8106-72B139DFA3AE},,2025-05-19 22:26:25.000000,2025-05-19 22:26:25.000000,,,,,,,,,,,,,,,,,15111565.0,Schiefer: Glimmer-Graphit,15111583.0
+4429,{3E5E75ED-1520-47C8-856C-0C1C40A4BB47},,2025-05-19 22:26:26.000001,2025-05-19 22:26:26.000001,,,,,,,,,,,,,,,,,15111565.0,Schiefer: Glimmer-Hornblende,15111584.0
+4430,{43CB3948-1A2A-4B59-B8AD-FE4875F98847},,2025-05-19 22:26:26.000001,2025-05-19 22:26:26.000001,,,,,,,,,,,,,,,,,15111565.0,Schiefer: Granat,15111585.0
+4431,{5B563227-5BED-4CEB-9249-04583798E1A3},,2025-05-19 22:26:26.000001,2025-05-19 22:26:26.000001,,,,,,,,,,,,,,,,,15111565.0,Schiefer: Graphit,15111586.0
+4432,{724FE34A-5516-425A-933B-F9E625D5E818},,2025-05-19 22:26:27.000000,2025-05-19 22:26:27.000000,,,,,,,,,,,,,,,,,15111565.0,Schiefer: Hornblende,15111587.0
+4433,{9B8D0365-860D-478E-BA60-3E16A0384661},,2025-05-19 22:26:27.000000,2025-05-19 22:26:27.000000,,,,,,,,,,,,,,,,,15111565.0,Schiefer: Hornblende-Granat,15111588.0
+4434,{00226CC0-5D8B-4AAE-A0BB-37B28CCED4EB},,2025-05-19 22:26:27.000000,2025-05-19 22:26:27.000000,,,,,,,,,,,,,,,,,15111565.0,Schiefer: kalkig,15111589.0
+4435,{B949067B-35E6-452C-BCBA-7C334BAAE3B3},,2025-05-19 22:26:28.000000,2025-05-19 22:26:28.000000,,,,,,,,,,,,,,,,,15111565.0,Schiefer: kalkig: Glimmer,15111590.0
+4436,{116E6968-4D80-4C91-91AA-688A0574166E},,2025-05-19 22:26:28.000000,2025-05-19 22:26:28.000000,,,,,,,,,,,,,,,,,15111565.0,Schiefer: kalkig: Serizit,15111591.0
+4437,{B040C881-EBC9-43D8-9642-21A5FB6CF50C},,2025-05-19 22:26:28.000000,2025-05-19 22:26:28.000000,,,,,,,,,,,,,,,,,15111565.0,Schiefer: kalkig: Zoisit,15111592.0
+4438,{B2D1F3A0-CCC1-4C93-AC62-D38551BC13B0},,2025-05-19 22:26:29.000000,2025-05-19 22:26:29.000000,,,,,,,,,,,,,,,,,15111565.0,Schiefer: kieselig,15111593.0
+4439,{5079C15D-426F-4732-A09C-7AE70351F005},,2025-05-19 22:26:29.000000,2025-05-19 22:26:29.000000,,,,,,,,,,,,,,,,,15111565.0,Schiefer: Kohle,15111594.0
+4440,{93E5523B-0234-4FF8-9E17-DA91446D58D5},,2025-05-19 22:26:29.000000,2025-05-19 22:26:29.000000,,,,,,,,,,,,,,,,,15111565.0,Schiefer: konglomeratisch,15111595.0
+4441,{ED4ED458-5BFC-43AF-BFD8-73D909DD56DB},,2025-05-19 22:26:29.000000,2025-05-19 22:26:29.000000,,,,,,,,,,,,,,,,,15111565.0,Schiefer: konglomeratisch-kalkig,15111596.0
+4442,{0C406A54-8CCD-4BEA-87D4-8D36174EFB06},,2025-05-19 22:26:30.000000,2025-05-19 22:26:30.000000,,,,,,,,,,,,,,,,,15111565.0,Schiefer: Kyanit,15111597.0
+4443,{F28D8E25-2CD4-4B51-9A08-F6A78CC59438},,2025-05-19 22:26:30.000000,2025-05-19 22:26:30.000000,,,,,,,,,,,,,,,,,15111565.0,Schiefer: mergelig,15111598.0
+4444,{6BC0D5A9-6DC2-4143-A5A9-67462CE03211},,2025-05-19 22:26:30.000000,2025-05-19 22:26:30.000000,,,,,,,,,,,,,,,,,15111565.0,Schiefer: Muskovit-Albit,15111599.0
+4445,{FA542677-8252-455A-8BD4-32C86B2ED163},,2025-05-19 22:26:31.000000,2025-05-19 22:26:31.000000,,,,,,,,,,,,,,,,,15111565.0,Schiefer: Quarz,15111600.0
+4446,{266A46D7-F384-48B8-975D-51A705D59606},,2025-05-19 22:26:31.000000,2025-05-19 22:26:31.000000,,,,,,,,,,,,,,,,,15111565.0,Schiefer: Quarz-Chlorit,15111601.0
+4447,{3BB33B07-348F-411E-9ADE-351841E3A24A},,2025-05-19 22:26:32.000000,2025-05-19 22:26:32.000000,,,,,,,,,,,,,,,,,15111565.0,Schiefer: Quarz-Glimmer,15111602.0
+4448,{D6624AD7-55C1-4C75-B47E-B46D78351B5E},,2025-05-19 22:26:32.000000,2025-05-19 22:26:32.000000,,,,,,,,,,,,,,,,,15111565.0,Schiefer: Quarz-Serizit,15111603.0
+4449,{6BC54BE0-A360-4908-A034-F1C50086BB59},,2025-05-19 22:26:32.000000,2025-05-19 22:26:32.000000,,,,,,,,,,,,,,,,,15111565.0,Schiefer: sandig,15111604.0
+4450,{FF05F4C6-656C-4521-ACC7-D0B581162385},,2025-05-19 22:26:33.000000,2025-05-19 22:26:33.000000,,,,,,,,,,,,,,,,,15111565.0,Schiefer: sandig-kalkig,15111605.0
+4451,{544B098B-82F7-494D-B752-510E77436F19},,2025-05-19 22:26:33.000000,2025-05-19 22:26:33.000000,,,,,,,,,,,,,,,,,15111565.0,Schiefer: sandig-tonig,15111606.0
+4452,{251453DF-EB33-4633-940B-48BF62961B12},,2025-05-19 22:26:33.000000,2025-05-19 22:26:33.000000,,,,,,,,,,,,,,,,,15111565.0,Schiefer: Serizit,15111607.0
+4453,{38D82FEC-6EDC-4A2E-A286-C4B26C481C71},,2025-05-19 22:26:34.000001,2025-05-19 22:26:34.000001,,,,,,,,,,,,,,,,,15111565.0,Schiefer: Serizit-Chlorit,15111608.0
+4454,{953E4E92-B7E7-40B9-958D-02CD412484BB},,2025-05-19 22:26:34.000001,2025-05-19 22:26:34.000001,,,,,,,,,,,,,,,,,15111565.0,Schiefer: Serizit-Staurolith,15111609.0
+4455,{A8C23E08-5A09-4D6D-82FA-081FCA28BA9B},,2025-05-19 22:26:34.000001,2025-05-19 22:26:34.000001,,,,,,,,,,,,,,,,,15111565.0,Schiefer: Talk,15111610.0
+4456,{5ADE0011-1A90-4185-AFDA-213170A9C75C},,2025-05-19 22:26:35.000000,2025-05-19 22:26:35.000000,,,,,,,,,,,,,,,,,15111565.0,Schiefer: Talk-Kyanit,15111611.0
+4457,{A1D975EB-0952-44F8-81DA-FF5BD2E1D526},,2025-05-19 22:26:35.000000,2025-05-19 22:26:35.000000,,,,,,,,,,,,,,,,,15111565.0,Schiefer: Talk-Serpentin,15111612.0
+4458,{D6128E5C-E5FA-48D6-BA2F-B1D79973320E},,2025-05-19 22:26:35.000000,2025-05-19 22:26:35.000000,,,,,,,,,,,,,,,,,15111565.0,Schiefer: Talk-Tremolit,15111613.0
+4459,{FAA199E9-A5A9-406F-87E5-C48A0E65EEBF},,2025-05-19 22:26:36.000000,2025-05-19 22:26:36.000000,,,,,,,,,,,,,,,,,15111565.0,Schiefer: tonig,15111614.0
+4460,{14FA05ED-350D-4230-AE74-8256E8DCBB8B},,2025-05-19 22:26:36.000000,2025-05-19 22:26:36.000000,,,,,,,,,,,,,,,,,15111565.0,Schiefer: tonig: Anthrazit,15111615.0
+4461,{4D736029-09A0-4385-A51A-F0FA2542ECF0},,2025-05-19 22:26:37.000000,2025-05-19 22:26:37.000000,,,,,,,,,,,,,,,,,15111565.0,Schiefer: tonig: Bitumen,15111616.0
+4462,{C023602B-74AB-48F2-90EC-AF7261FCBD75},,2025-05-19 22:26:37.000000,2025-05-19 22:26:37.000000,,,,,,,,,,,,,,,,,15111565.0,Schiefer: tonig: Graphit,15111617.0
+4463,{081F5BAF-3E2B-47CB-AA59-EB17690395FB},,2025-05-19 22:26:38.000000,2025-05-19 22:26:38.000000,,,,,,,,,,,,,,,,,15111565.0,Schiefer: tonig-kalkig,15111618.0
+4464,{DBD2A366-EADA-41A0-9614-DA3AFBB3D3AA},,2025-05-19 22:26:38.000000,2025-05-19 22:26:38.000000,,,,,,,,,,,,,,,,,15111565.0,Schiefer: tonig-kieselig,15111619.0
+4465,{89BEBF05-28BC-4E7C-B8E1-4EC2DAFD7EC1},,2025-05-19 22:26:38.000000,2025-05-19 22:26:38.000000,,,,,,,,,,,,,,,,,15111565.0,Schiefer: tonig-kieselig: Bitumen,15111620.0
+4466,{B1CC9A17-3CDD-4B12-94A0-D2E1A2CB8B44},,2025-05-19 22:26:39.000000,2025-05-19 22:26:39.000000,,,,,,,,,,,,,,,,,15111565.0,Schiefer: Tremolit,15111621.0
+4467,{A04751DE-BB95-4682-932D-945D3FAD9E0E},,2025-05-19 22:26:39.000000,2025-05-19 22:26:39.000000,,,,,,,,,,,,,,,,,15111565.0,Schiefer: Turmalin,15111622.0
+4468,{89A6F94B-F60A-459D-900A-E603F736FEA5},,2025-05-19 22:26:39.000000,2025-05-19 22:26:39.000000,,,,,,,,,,,,,,,,,15111565.0,Schiefer: Zoisit,15111623.0
+4469,{6F3100BB-8F81-46F8-A42A-31525F9E8FB6},,2025-05-19 22:26:40.000000,2025-05-19 22:26:40.000000,,,,,,,,,,,,,,,,,15111565.0,Schiefer: Zoisit-Fuchsit,15111624.0
+4470,{95A2CD45-57AC-406F-8411-013F7395BFB5},,2025-05-19 22:26:40.000000,2025-05-19 22:26:40.000000,,,,,,,,,,,,,,,,,15111344.0,Gestein: mafisch,15111625.0
+4471,{0843CC3F-5DE0-48F3-9871-ED0F22C70F25},,2025-05-19 22:26:41.000000,2025-05-19 22:26:41.000000,,,,,,,,,,,,,,,,,15111625.0,Prasinit,15111626.0
+4472,{8010B244-D3F7-4690-B53C-F02BBDC22406},,2025-05-19 22:26:41.000000,2025-05-19 22:26:41.000000,,,,,,,,,,,,,,,,,15111626.0,Prasinit: Albit-Chlorit,15111627.0
+4473,{E7BD13D8-EB4A-45F1-8341-6D02E4D6C079},,2025-05-19 22:26:42.000000,2025-05-19 22:26:42.000000,,,,,,,,,,,,,,,,,15111626.0,Prasinit: Chlorit,15111628.0
+4474,{24E3C286-08F9-4874-9800-15333783FCA9},,2025-05-19 22:26:42.000000,2025-05-19 22:26:42.000000,,,,,,,,,,,,,,,,,15111626.0,Prasinit: schiefrig,15111629.0
+4475,{B103FDD2-1D41-49B3-824D-0CA87A3CF4DC},,2025-05-19 22:26:43.000000,2025-05-19 22:26:43.000000,,,,,,,,,,,,,,,,,15111625.0,Amphibolit,15111630.0
+4476,{E103D904-16B7-41E3-BEBB-21B7F7FD256F},,2025-05-19 22:26:43.000000,2025-05-19 22:26:43.000000,,,,,,,,,,,,,,,,,15111630.0,Amphibolit: gebändert,15111631.0
+4477,{573C5D73-E4FB-47B7-B70D-DECB1369860E},,2025-05-19 22:26:44.000000,2025-05-19 22:26:44.000000,,,,,,,,,,,,,,,,,15111630.0,Amphibolit: Granat,15111632.0
+4478,{EC41B7C0-514E-4131-BEE3-BAAECB6CB1E7},,2025-05-19 22:26:44.000000,2025-05-19 22:26:44.000000,,,,,,,,,,,,,,,,,15111630.0,Amphibolit: Hornblende,15111633.0
+4479,{EC30CC58-69E1-428E-87EC-E057EB685788},,2025-05-19 22:26:45.000001,2025-05-19 22:26:45.000001,,,,,,,,,,,,,,,,,15111630.0,Amphibolit: migmatitisch,15111634.0
+4480,{C7415847-0C0D-4432-8929-5B26DD50BEF4},,2025-05-19 22:26:45.000001,2025-05-19 22:26:45.000001,,,,,,,,,,,,,,,,,15111625.0,Eklogit,15111635.0
+4481,{2305A006-3CE2-47FD-9F9C-DD6DC18D9F66},,2025-05-19 22:26:46.000000,2025-05-19 22:26:46.000000,,,,,,,,,,,,,,,,,15111455.0,Serpentinit,15111636.0
+4482,{D5CF5585-10BC-45E5-A557-63A467F713C1},,2025-05-19 22:26:46.000000,2025-05-19 22:26:46.000000,,,,,,,,,,,,,,,,,15111636.0,Serpentinit: Antigorit,15111637.0
+4483,{728ED657-F8AA-449F-9CB2-0008B49F6217},,2025-05-19 22:26:47.000000,2025-05-19 22:26:47.000000,,,,,,,,,,,,,,,,,15111636.0,Serpentinit: brekziös: Karbonat,15111638.0
+4484,{DB5CAA67-49D1-46D9-8D20-608B97AAA102},,2025-05-19 22:26:47.000000,2025-05-19 22:26:47.000000,,,,,,,,,,,,,,,,,15111636.0,Serpentinit: Chrysotil,15111639.0

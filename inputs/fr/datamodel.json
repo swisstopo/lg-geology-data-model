@@ -1,9 +1,9 @@
 {
-    "version": "0.9",
-    "date": "2024-11-19T11:36:41.591239",
+    "version": "0.10",
+    "date": "2025-05-21T19:33:24.361800",
     "model": {
-        "revision": "4.0.0-rc.5",
-        "revision_date": "2024-11-19"
+        "revision": "4.1.0",
+        "revision_date": "2025-05-20"
     },
     "themes": [
         {
@@ -4115,7 +4115,18 @@
     ],
     "annexes": [
         {
+            "name": "gc_geol_mapping_unit_att",
+            "type_": "table",
+            "fname": "Geol_Mapping_Unit_Att.json",
+            "description": {
+                "de": "Kartiereinheiten",
+                "fr": "Unit\u00e9s de cartographie"
+            },
+            "pairs": {}
+        },
+        {
             "name": "GC_LITSTRAT_BED_CD",
+            "type_": "list",
             "description": {
                 "de": "Wertetabelle der lithostratigraphischen Einheiten",
                 "fr": "Table des valeurs des unit\u00e9s lithostratigraphiques"
@@ -6472,6 +6483,7 @@
         },
         {
             "name": "GC_LITSTRAT_UNCO_CD",
+            "type_": "list",
             "description": {
                 "de": "Wertetabelle der lithostratigraphischen Einheiten",
                 "fr": "Table des valeurs des unit\u00e9s lithostratigraphiques"
@@ -7081,6 +7093,7 @@
         },
         {
             "name": "GC_LITHO_CD",
+            "type_": "list",
             "description": {
                 "de": "Wertetabellen der lithologischen Beschreibung",
                 "fr": "Tables des valeurs de la description lithologique"
@@ -7453,6 +7466,7 @@
         },
         {
             "name": "GC_LITHO_UNCO_CD",
+            "type_": "list",
             "description": {
                 "de": "Wertetabellen der lithologischen Beschreibung",
                 "fr": "Tables des valeurs de la description lithologique (roches meubles)"
@@ -7530,6 +7544,7 @@
         },
         {
             "name": "GC_CHRONO_CD",
+            "type_": "list",
             "description": {
                 "de": "Wertetabelle der chronostratigraphischen Einheiten",
                 "fr": "Table des valeurs des unit\u00e9s chronostratigraphiques"
@@ -7678,6 +7693,7 @@
         },
         {
             "name": "GC_TECTO_CD",
+            "type_": "list",
             "description": {
                 "de": "Wertetabelle der tektonischen Einheiten",
                 "fr": "Table des valeurs des unit\u00e9s tectoniques"
@@ -8083,6 +8099,7 @@
         },
         {
             "name": "GC_MINERAL_CD",
+            "type_": "list",
             "description": {
                 "de": "Wichtiges Mineral des metamorphen Gesteins",
                 "fr": "Min\u00e9ral important de la roche m\u00e9tamorphique"
@@ -8177,6 +8194,7 @@
         },
         {
             "name": "gc_admixture",
+            "type_": "list",
             "fname": "Admixture.json",
             "description": {
                 "de": "Beimengung",
@@ -8200,6 +8218,7 @@
         },
         {
             "name": "gc_composit",
+            "type_": "list",
             "fname": "Composit.json",
             "description": {
                 "de": "Zusammensetzung des Lockergesteins",
@@ -8217,6 +8236,7 @@
         },
         {
             "name": "gc_charcat",
+            "type_": "list",
             "fname": "Charcat.json",
             "description": {
                 "de": "Spezifische Eigenschaft.",
@@ -8238,6 +8258,7 @@
         },
         {
             "name": "gc_system",
+            "type_": "list",
             "fname": "System.json",
             "description": {
                 "de": "Fossiliengruppe.",
@@ -8267,7 +8288,7 @@
             }
         }
     ],
-    "hash": "e9970e9",
+    "hash": "232d8ba",
     "geolcodes": {
         "added": [
             {
