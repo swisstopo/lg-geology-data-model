@@ -79,6 +79,9 @@ _{{_("Datatype")}} :  {{ attr.att_type  }}_
 
 {% for annex in annexes -%}
 
+{% if 'table' in annex -%}
+\blandscape
+{% endif %}
 
 ## {{_("Annexe")}}  {{ annex.name |upper}} {{ '{#'}}{{annex.name | slugify}}{{'}'}}
 {{ annex.description[lang] }}
@@ -97,6 +100,7 @@ _{{_("Datatype")}} :  {{ attr.att_type  }}_
 {% for item in annex.table -%}
 |{{item.GEOL_MAPPING_UNIT}} |{{item.GEOL_MAPPING_UNIT | string|tr(item.GEOL_MAPPING_UNIT)}} | {{item.LITHO_MAIN|string|tr(item.LITHO_MAIN)}}  | {{item.LITHO_SEC|string|tr(item.LITHO_SEC)}}   | {{item.LITHO_TER|string|tr(item.LITHO_TER)}} |  {{item.LITSTRAT_FORMATION_BANK|string|tr(item.LITSTRAT_FORMATION_BANK)}} |  {{item.CHRONO_TOP|string|tr(item.CHRONO_TOP)}}     | {{item.CHRONO_BASE|string|tr(item.CHRONO_BASE)}}   | {{item.CORRELATION|string|tr(item.CORRELATION)}}  |
 {% endfor %}
+\elandscape
 {% endif %}
 
 
