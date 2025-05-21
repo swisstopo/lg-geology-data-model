@@ -93,21 +93,38 @@ with open(
 ) as file:
     code_dict = json.load(file)
 
-df_codes = pd.DataFrame(list(code_dict.items()), columns=["GeolCodeInt", "DE"])
+'''df_codes = pd.DataFrame(list(code_dict.items()), columns=["GeolCodeInt", "DE"])
 df_codes["FR"] = df_codes["DE"]
-df_codes["GeolCode"] = ""
+df_codes["GeolCode"] = ""'''
+# 2. Create a DataFrame
+df = pd.DataFrame(
+    {
+        "GeolCodeInt": list(code_dict.keys()),
+        "DE": list(code_dict.values()),
+        "FR": list(code_dict.values()),  # Initialize with None values
+        "GeolCode": None,
+    }
+)
+
+print(df.head())
+
+# 3. Convert the 'GeolCodeInt' column to integer type
+df["GeolCodeInt"] = df["GeolCodeInt"].astype("string")
 
 
-merged_df = pd.concat([df_trad_load, df_codes])
+merged_df = pd.concat([df_trad_load, df])
 merged_df = merged_df.drop(columns=["GeolCode"], errors="ignore")
 
 translation_xlsx_path = os.path.join(input_dir, "all_trads.xlsx")
 # Drop duplicates, keeping only the last occurrence of each `GEOLCODE`
 df_trad = merged_df.drop_duplicates(subset=["GeolCodeInt"], keep="last")
 df_trad.to_excel(translation_xlsx_path, index=False, engine="openpyxl")
-
+df_trad["GeolCodeInt"] = df_trad["GeolCodeInt"].astype("string")
+df_trad["DE"] = df_trad["DE"].astype("string")
+df_trad["FR"] = df_trad["FR"].astype("string")
+print(df_trad.dtypes)
+df_trad = df_trad.set_index(["GeolCodeInt"])
 logger.info(f"Saving file to {translation_xlsx_path} with {len(df_trad)} translations")
-
 
 
 def get_datetime_with_tz():
@@ -184,11 +201,7 @@ def create_msg(df):
 
 
 # TODO: not at the right place
-create_msg(df_trad)
-
-
-df_trad = df_trad.set_index(["GeolCodeInt"])
-
+# create_msg(df_trad)
 
 
 class Translator:
@@ -211,9 +224,12 @@ class Translator:
         err = False
         if lang in ("DE", "FR"):
             try:
-                msg = df_trad.loc[int(geol_code)]["FR"]
-                # TODO: should be done in the translation XLS à ciment, à matrice
-                if msg.startswith("à "):
+                value = df_trad.loc[str(geol_code), lang]  # Try to get single cell
+                if isinstance(value, pd.Series):
+                    msg = value.iloc[0]  # Take first value if still a Series
+                else:
+                    msg = value
+                if isinstance(msg, str) and msg.startswith("à "):
                     msg = msg.replace("à ", "")
 
             except KeyError as ke:
@@ -224,7 +240,9 @@ class Translator:
 
             except Exception as e:
                 err = True
-                logger.debug(f"Unknown error while translating '{geol_code}': {e}")
+                logger.debug(
+                    f"Unknown error while translating '{geol_code}'= {msg}: {e}"
+                )
 
         return (msg, err)
 
@@ -380,9 +398,7 @@ def get_table_values(name):
         )
     except Exception as e:
         logger.error(
-
             f"Error reading value for table {name}: An unexpected error occurred: {e}: {geol_dict}"
-
         )
 
     return {}
@@ -533,10 +549,10 @@ class Report:
             else:
                 try:
                     json_data_path = os.path.join(input_dir, annex.get("fname"))
-                    print(json_data_path)
+
                     with open(json_data_path, "r") as f:
                         data = json.loads(f.read())
-                        logger.debug(f"Big annex {data}")
+
                         annex["table"] = data
 
                 except Exception as e:
