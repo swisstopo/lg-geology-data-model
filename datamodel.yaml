@@ -274,55 +274,7 @@ themes:
       cardinality: "1"
       change: removed
       mandatory: false
-    - name: GEOL_MAPPING_UNIT_ATT  # check
-      description:
-        de: Kartographische Einheiten
-        fr: Unités cartographique
-      att_type: annex
-      value: GEOL_MAPPING_UNIT_ATT_CD
-      cardinality: "1"
-      mandatory: true
-    - name: LITSTRAT_FORMATION_BANK  # check
-      description:
-        de: -
-        fr: -
-      att_type: annex
-      value: GC_LITSTRAT_FORMATION_BANK_CD
-      cardinality: "1"
-      mandatory: true   # TDODO: really?
-    - name: litstrat
-      description:
-        de: Lithostratigraphische Einheit
-        fr: Description lithostratigraphique
-      att_type: annex
-      value: GC_LITSTRAT_BED_CD
-      cardinality: "1"
-      mandatory: false
-    - name: litho_main
-      att_type: annex
-      value: GC_LITHO_CD
-      description:
-        de: Lithologische Beschreibung
-        fr: Description lithologique
-      cardinality: "1"
-      mandatory: true
-    - name: litho_sec
-      att_type: annex
-      value: GC_LITHO_CD
-      description:
-        de: Lithologische Beschreibung
-        fr: Description lithologique
-      cardinality: "1"
-      mandatory: false
-    - name: litho_ter
-      att_type: annex
-      value: GC_LITHO_CD
-      description:
-        de: Lithologische Beschreibung
-        fr: Description lithologique
-      cardinality: "1"
-      mandatory: false
-    - name: chrono_top   # TODO: new name
+    - name: rbed_chrono_t   # TODO: new name
       att_type: annex
       value: GC_CHRONO_CD
       description:
@@ -333,7 +285,7 @@ themes:
           Attribution chronostratigraphique du toit de la  formation (top)
       cardinality: "1"
       mandatory: true
-    - name: chrono_base  # new name
+    - name: rbed_chrono_b  # new name
       att_type: annex
       value: GC_CHRONO_CD
       description:
@@ -352,6 +304,83 @@ themes:
         fr: Attribution tectonique
       cardinality: "1"
       mandatory: true
+    - name: GEOL_MAPPING_UNIT_ATT  # check
+      description:
+        de: Kartographische Einheiten
+        fr: Unités cartographique
+      att_type: annex
+      value: GEOL_MAPPING_UNIT_ATT_CD
+      cardinality: "1"
+      mandatory: true
+    - name: LITSTRAT_FORMATION_BANK  # check
+      description:
+        de:  todo
+        fr:  -todo-
+      att_type: annex
+      value: GC_LITSTRAT_FORMATION_BANK_CD
+      cardinality: "1"
+      mandatory: true   # TDODO: really?
+      origin: GC_GEOL_MAPPING_UNIT_ATT
+    - name: chrono_top   # TODO: new name
+      att_type: annex
+      value: GC_CHRONO_CD
+      description:
+         de: >-
+                Chronostratigraphische Zuordnung der Obergrenze der Kartiereinheit
+                (Top)
+         fr: >-
+               Attribution chronostratigraphique du toit de la  formation (top)
+      cardinality: "1"
+      mandatory: true
+      origin: GC_GEOL_MAPPING_UNIT_ATT
+    - name: chrono_bottom   # TODO: new name
+      att_type: annex
+      value: GC_CHRONO_CD
+      description:
+            de: >-
+              Chronostratigraphische Zuordnung der Obergrenze der Kartiereinheit
+              (Top)
+            fr: >-
+              Attribution chronostratigraphique du toit de la  formation (top)
+      cardinality: "1"
+      mandatory: true
+      origin: GC_GEOL_MAPPING_UNIT_ATT
+    - name: litstrat   # Removed
+      description:
+        de: Lithostratigraphische Einheit
+        fr: Description lithostratigraphique
+      att_type: annex
+      value: GC_LITSTRAT_BED_CD
+      cardinality: "1"
+      change: removed
+      mandatory: false
+    - name: litho_main
+      att_type: annex
+      value: GC_LITHO_CD
+      description:
+        de: Lithologische Beschreibung
+        fr: Description lithologique
+      cardinality: "1"
+      mandatory: true
+      origin: GC_GEOL_MAPPING_UNIT_ATT
+    - name: litho_sec
+      att_type: annex
+      value: GC_LITHO_CD
+      description:
+        de: Lithologische Beschreibung
+        fr: Description lithologique
+      cardinality: "1"
+      mandatory: false
+      origin: GC_GEOL_MAPPING_UNIT_ATT
+    - name: litho_ter
+      att_type: annex
+      value: GC_LITHO_CD
+      description:
+        de: Lithologische Beschreibung
+        fr: Description lithologique
+      cardinality: "1"
+      mandatory: false
+      origin: GC_GEOL_MAPPING_UNIT_ATT
     - name: correlation
       att_type: annex
       value: GC_CORRELATION_CD
@@ -360,6 +389,7 @@ themes:
         fr: Correlation
       cardinality: "1"
       mandatory: true
+      origin: GC_GEOL_MAPPING_UNIT_ATT
     - name: orig_descr
       att_type: string
       description:
@@ -379,7 +409,7 @@ themes:
       change: removed
       mandatory: false
       status: "<4.0"
-    - name: exotic_ele
+    - name: rbed_exotic_ele
       att_type: boolean
       description:
         de: >-
@@ -399,7 +429,7 @@ themes:
       cardinality: 0..1
       change: removed
       mandatory: false
-    - name: sedi_main_com
+    - name: sedi_main_com   # Removed
       att_type: CD
       value: GC_MAIN_COM_CD
       description:
@@ -409,7 +439,8 @@ themes:
           Composant principal de la roche sédimentaire clastique
       cardinality: 0..1
       mandatory: false
-    - name: sedi_seco_com
+      change: removed
+    - name: sedi_seco_com  # Removed
       att_type: CD
       value: GC_SECO_COM_CD
       description:
@@ -417,7 +448,8 @@ themes:
         fr: Composant secondaire de la roche sédimentaire
       cardinality: 0..2
       mandatory: false
-    - name: sedi_bond_mat
+      change: removed
+    - name: sedi_bond_mat   # Removed
       att_type: CD
       value: GC_BOND_MAT_CD
       description:
@@ -425,7 +457,8 @@ themes:
         fr: Ciment de la roche sédimentaire
       cardinality: 0..1
       mandatory: false
-    - name: sedi_bedding
+      change: removed
+    - name: sedi_bedding   # Removed
       att_type: CD
       value: GC_BEDDING_CD
       description:
@@ -433,7 +466,8 @@ themes:
         fr: Matrice ou ciment de la roche sédimentaire
       cardinality: 0..2
       mandatory: false
-    - name: sedi_str
+      change: removed
+    - name: sedi_str   # Removed
       att_type: CD
       value: GC_SEDI_STR_CD
       description:
@@ -441,7 +475,8 @@ themes:
         fr: Structure sédimentaire de la roche sédimentaire
       cardinality: 0..2
       mandatory: false
-    - name: sedi_tex
+      change: removed
+    - name: sedi_tex   # Removed
       att_type: CD
       value: GC_SEDI_TEX_CD
       cardinality: 0..1
@@ -449,7 +484,8 @@ themes:
         de: Sedimentstruktur
         fr: Texture de la roche sédimentaire
       mandatory: false
-    - name: igne_tex  
+      change: removed
+    - name: igne_tex    # Removed
       att_type: CD
       value: GC_IGNE_TEX_CD
       description:
@@ -457,7 +493,8 @@ themes:
         fr: Texture de la roche magmatique
       cardinality: 0..1
       mandatory: false
-    - name: igne_grain_si
+      change: removed
+    - name: igne_grain_si   # Removed
       att_type: CD
       value: GC_GRAIN_SI_CD
       cardinality: 0..1
@@ -465,7 +502,8 @@ themes:
         de: Korngrösse des magmatischen Gesteins
         fr: Granulométrie de la roche magmatique
       mandatory: false
-    - name: igne_affinity
+      change: removed
+    - name: igne_affinity   # Removed
       att_type: CD
       value: GC_AFFINITY_CD
       cardinality: 0..1
@@ -473,14 +511,16 @@ themes:
         de: Affinität zu einer magmatischen Serie.
         fr: Affinité avec une série magmatique
       mandatory: false
-    - name: meta_full_name
+      change: removed
+    - name: meta_full_name   # Removed
       att_type: string
       description:
         de: Bezeichnung des metamorphen Gesteins
         fr: Description de la roche métamorphique
       cardinality: 0..1
       mandatory: false
-    - name: meta_mineral
+      change: removed
+    - name: meta_mineral  # Removed
       att_type: annex
       value: GC_MINERAL_CD
       description:
@@ -488,7 +528,8 @@ themes:
         fr: Minéral important de la roche métamorphique
       cardinality: 0..3
       mandatory: false
-    - name: meta_str
+      change: removed
+    - name: meta_str   # Removed
       att_type: CD
       value: GC_META_STR_CD
       description:
@@ -496,6 +537,7 @@ themes:
         fr: Structure de la roche métamorphique
       cardinality: 0..3
       mandatory: false
+      change: removed
 - name: Geomorphology
   classes:
   - name: Instability_Structures_PT
@@ -2671,7 +2713,7 @@ annexes:
     fr: Unités de cartographie
 - name: GC_GEOL_MAPPING_UNIT_CD
   type_: list
-  fname: Geol_Mapping_Unit.json.json
+  fname: Geol_Mapping_Unit.json
   description:
     de: Kartiereinheiten
     fr: Unités de cartographie
@@ -2684,6 +2726,7 @@ annexes:
 
 - name: GC_LITSTRAT_FORMATION_BANK_CD
   type: list
+  fname: Litstrat_Formation_Bank.json
   description:
     de: blabla
     fr: blabla
