@@ -35,13 +35,15 @@ def removeprefix(prefix, lst):
 
 def clean(s):
     if isinstance(s, list):
-        cleaned = list(map(lambda x: x.replace("TOPGIS_GC.", ""), s))
+        cleaned = s
+        # cleaned = list(map(lambda x: x.replace("TOPGIS_GC.", ""), s))
         if len(cleaned) == 1:
             return cleaned[0]
         else:
             return cleaned
     else:
-        return s.replace("TOPGIS_GC.", "")
+        return s
+        # return s.replace("TOPGIS_GC.", "")
 
 
 IGNORE_FIELDS = [
@@ -236,10 +238,11 @@ for i, r in enumerate(relations):
     rr = db_schema["relationships"][r]
     cr = clean(r)
     short_name = clean(r)
-    logger.info(f"======== Relationship {short_name}===============")
+    logger.info(f"------- Relationship {short_name} ----------")
+    logger.info(rr)
     cardinality = rr["cardinality"]
-    origin = clean(rr["origin"])
-    destination = clean(rr["destination"])
+    origin_name = clean(rr["origin"])
+    destination_name = clean(rr["destination"])
     fwd_label = rr.get(
         "forwardPathLabel",
         str(i),
@@ -253,21 +256,23 @@ for i, r in enumerate(relations):
     else:
         rev_lbl = "1"
 
-    if cardinality == "OneToMany":
-        ori_table = all_tables.get(origin)
-        dest_table = all_tables.get(destination)
+    if "OneToMany" in cardinality:
+        logger.info("  One to Many")
+        ori_table = all_tables.get(origin_name)
+        dest_table = all_tables.get(destination_name)
         keys = rr.get("originClassKeys")
+        logger.info(f"origin keys: {keys}")
         pri_key = None
         fk_key = None
         for k in keys:
-            role = k["role"]
-            name = k["name"]
-            if role == "OriginPrimary":
+            role = k["keyRole"]
+            name = k["objectKeyName"]
+            if "OriginPrimary" in role:
                 pri_key = name
             else:
                 fk_key = name
         if fk_key is None or pri_key is None:
-            logger.error("ERROR")
+            logger.error(f"ERROR: key ")
             continue
 
         # fk = ColumnFK(name, type_, reference
@@ -276,19 +281,20 @@ for i, r in enumerate(relations):
         logger.debug(f"FK: {pri_key}", [col.name for col in ori_table.columns], kk)
         if kk is not None:
             type_ = kk.type_
-            col = ColumnFK(fk_key, type_, origin)
+            col = ColumnFK(fk_key, type_, origin_name)
             dest_table.columns.append(col)
 
-            all_tables[destination] = dest_table
+            all_tables[destination_name] = dest_table
 
-    if cardinality == "ManyToMany":
-        new_table = f"{origin}_{destination}"  # tiret not allowed
+    if "ManyToMany" in cardinality:
+        new_table = f"{origin_name}_{destination_name}"  # tiret not allowed
         logger.info(f"New name: '{new_table}', original: '{cr}'")
         if new_table in all_tables.keys():
             logger.info(f'Discarding Relationships "ManyToMany" {new_table}')
             continue
-        ori_table = all_tables.get(origin)
-        dest_table = all_tables.get(destination)
+        logger.info(origin_name)
+        ori_table = all_tables.get(origin_name)
+        dest_table = all_tables.get(destination_name)
         ori_keys = rr.get("originClassKeys")
         dest_keys = rr.get("destinationClassKeys")
         pri_key = None
@@ -297,8 +303,8 @@ for i, r in enumerate(relations):
         def get_keys(keys):
             d = {}
             for k in keys:
-                role = k["role"]
-                name = k["name"]
+                role = k["keyRole"]
+                name = k["objectKeyName"]
                 if "Primary" in role:
                     d["pk"] = name
                 else:
@@ -310,7 +316,7 @@ for i, r in enumerate(relations):
         keys["destination"] = get_keys(dest_keys)
 
         logger.warning(
-            f'Relationships "ManyToMany" {ori_table.name} --> {dest_table.name}'
+            f'Relationships "ManyToMany" {origin_name} --> {destination_name}'
         )
 
         table = Table(new_table, relation=True, cardinality="ManyToMany")
@@ -320,32 +326,48 @@ for i, r in enumerate(relations):
 
         # fk = ColumnFK(name, type_, reference
 
-        ori_pk = ori_table.get_column(keys["origin"]["pk"], erase=False)
-        logger.debug(f"FK: {ori_pk}", [col.name for col in ori_table.columns], ori_pk)
+        if ori_table:
+            ori_pk = ori_table.get_column(keys["origin"]["pk"], erase=False)
+            logger.debug(
+                f"FK: {ori_pk}", [col.name for col in ori_table.columns], ori_pk
+            )
+    else:
+        logger.warning(f"Cannot find config for {origin_name}")
         if ori_pk is not None:
             type_ = ori_pk.type_
-            col = ColumnFK(keys["origin"]["fk"], type_, origin)
-            table.columns.append(col)
+            logger.info(f"{ori_pk}, {keys}")
+            fk_name = None
+            for k in keys:
+                if "esriRelKeyRoleOriginForeign" in k.get("keyRole", ""):
+                    fk_name = k.get("objectKeyName")
+                    break
+            if fk_name:
+                # col = ColumnFK(keys["origin"]["fk"], type_, origin_name)
+                col = ColumnFK(fk_name, type_, origin_name)
 
-        dest_pk = ori_table.get_column(keys["destination"]["pk"], erase=False)
+                table.columns.append(col)
+
+        # dest_pk = ori_table.get_column(keys["destination"]["pk"], erase=False)
+        dest_pk = ori_table.get_column(ori_pk, erase=False)
         logger.debug(
             f"FK: {dest_pk}", [col.name for col in dest_table.columns], dest_pk
         )
         if dest_pk is not None:
             type_ = dest_pk.type_
-            col = ColumnFK(keys["destination"]["fk"], type_, destination)
+            col = ColumnFK(keys["destination"]["fk"], type_, destination_name)
             table.columns.append(col)
 
-        all_tables[destination] = table
+        all_tables[destination_name] = table
 
 
 db_config = {"database": "GCOVERP", "version": 1, "tables": []}
 
-logger.info("-----------------------")
+logger.info("------------ttt-----------")
+
 
 Sql2PUML = SQL2PUML(template_file="templates/template.puml", data=data)
 for name, table in all_tables.items():
-    if not name.startswith("GC_"):
+    if "GC_" not in name:
         continue
     logger.info(f"===== TABLE: {name} =====")
     # logger.info()
@@ -359,7 +381,7 @@ for name, table in all_tables.items():
     for col in table.columns:
         c = {}
         if isinstance(col, ColumnFK):
-            logger.info("    {col.name} is foreign")
+            logger.info(f"    {col.name} is foreign")
             Sql2PUML.add_column_foreign(col.name, col.type_, col.reference)
             c = {
                 "foreign_key": {
@@ -374,7 +396,7 @@ for name, table in all_tables.items():
                 logger.info(f"    PK: {col.name}")
                 Sql2PUML.add_column_primary(col.name, col.type_)
             else:
-                logger.info(f"    {col.name} is not foreign {type(col)}")
+                logger.info(f"    {col.name}")
                 Sql2PUML.add_column(col.name, col.type_)
             c = {"name": col.name, "type": col.type_, "primary_key": primary}
         table_object["columns"].append(c)
@@ -416,3 +438,8 @@ logger.debug(f"Template was: {Sql2PUML.puml_template}")
 
 logger.info(f"Writing PUML diagram to {puml_file}")
 logger.info(f"Writing YAML structure to {yaml_file}")
+
+# TOPGIS_GC.GC_BEDROCK "0..n" -- "1..1" TOPGIS_GC.GC_GEOL_MAPPING_UNIT_ATT
+# class(TOPGIS_GC.GC_BEDROCK) {
+# 	foreign_key(GEOL_MAPPING_UNIT_ATT_UUID,TOPGIS_GC.GC_GEOL_MAPPING_UNIT_ATT) GUID
+# }
