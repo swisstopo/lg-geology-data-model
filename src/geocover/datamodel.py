@@ -522,7 +522,9 @@ class Report:
                                 self.prefixes,
                             )
                         except Exception as e:
-                            logger.error(f"Theme, attribute check error: {e}")
+                            logger.error(
+                                f"Theme: {cls_name}, attribute {attributes_in_model} check error: {e}"
+                            )
 
             except (KeyError, TypeError, IndexError) as e:
                 logger.error(f"Error processing theme '{theme}': {e}")
