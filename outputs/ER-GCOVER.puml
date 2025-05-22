@@ -4,23 +4,26 @@ skinparam linetype ortho
 skinparam backgroundcolor transparent
 skinparam rectangle {
   roundCorner 50
-  BackGroundColor  #C8E1ED
+  BackGroundColor #FEFAE0
   LineThickness 10
   LineColor #CEEDDB
 }
 
-skinparam TitlefontColor  #6E8894
+skinparam TitlefontColor  #CCD5AE
 skinparam TitleFontSize 50
 
 
 scale 1
 
+' Color scheme https://colorhunt.co/palette/eaebd0da6c6ccd5656af3e3e
+' #EAEBD0 #DA6C6C #CD5656 #AF3E3E
 
-!define table(x) class x << (T,#85BAA1) >> #CEEDDB
+
+!define table(x) class x << (T,#CCD5AE) >> #E9EDC9
 !define view(x) class x << (V,#FFAAAA) >>
 !define ent(x) class x << (E,#FFAAAA) >>
 !define enum(x) class x << (E,#FFAAAA) >>
-!define class(x) class x << (C,#544E61) >> #9C92A9
+!define class(x) class x << (C,#D4A373) >> #FAEDCD
 
 !define primary_key(x) <b>PK: x</b>
 !define foreign_key(x,reference) <b>FK: </b>x
@@ -30,122 +33,85 @@ hide stereotypes
 
 
 
-
-
-rectangle  #C8E1ED;line:544E61;line.bold; {
+rectangle   #FEFAE0;line:CD5656;line.bold; {
  
 
-title GeoCover\nNovember 2024
+title GeoCover 5.0\nMai 2025
 
 table(GC_CHRONO) {
 	primary_key(UUID) Guid
 	---
 	key(OBJECTID) OID
-	key(UUID) Guid
 	key(GEOL_CODE) String
 	key(GEOL_CODE_INT) Integer
 	key(GERMAN) String
-	key(PARENT_REF) Integer
 	key(TREE_LEVEL) Integer
+	key(PARENT_REF) Integer
 }
 
 table(GC_LITHO) {
 	foreign_key(GC_UNCO_DESPOSIT_UUID,GC_UNCO_DESPOSIT) Guid
 	foreign_key(GC_LITHO_UUID,GC_LITHO) Guid
-	---
-	key(OBJECTID) OID
-	key(UUID) Guid
-	key(GEOL_CODE) String
-	key(GEOL_CODE_INT) Integer
-	key(GERMAN) String
-	key(PARENT_REF) Integer
-	key(TREE_LEVEL) Integer
 }
 
 table(GC_LITSTRAT) {
-	foreign_key(GC_EXPLOIT_GEOMAT_PT_UUID,GC_EXPLOIT_GEOMAT_PT) Guid
+	foreign_key(GC_EXPLOIT_GEOMAT_PLG_UUID,GC_EXPLOIT_GEOMAT_PLG) Guid
 	foreign_key(GC_LITSTRAT_UUID,GC_LITSTRAT) Guid
-	---
-	key(OBJECTID) OID
-	key(UUID) Guid
-	key(GEOL_CODE) String
-	key(GEOL_CODE_INT) Integer
-	key(GERMAN) String
-	key(PARENT_REF) Integer
-	key(TREE_LEVEL) Integer
 }
 
 table(GC_TECTO) {
 	primary_key(UUID) Guid
 	---
 	key(OBJECTID) OID
-	key(UUID) Guid
 	key(GEOL_CODE) String
 	key(GEOL_CODE_INT) Integer
 	key(GERMAN) String
-	key(PARENT_REF) Integer
 	key(TREE_LEVEL) Integer
+	key(PARENT_REF) Integer
 }
 
 table(GC_LITHO_UNCO) {
 	primary_key(UUID) Guid
 	---
 	key(OBJECTID) OID
-	key(UUID) Guid
 	key(GEOL_CODE) String
 	key(GEOL_CODE_INT) Integer
 	key(GERMAN) String
-	key(PARENT_REF) Integer
 	key(TREE_LEVEL) Integer
+	key(PARENT_REF) Integer
 }
 
 table(GC_LITHO_BED) {
 	foreign_key(GC_BEDROCK_UUID,GC_BEDROCK) Guid
 	foreign_key(GC_LITHO_BED_UUID,GC_LITHO_BED) Guid
-	---
-	key(OBJECTID) OID
-	key(UUID) Guid
-	key(GEOL_CODE) String
-	key(GEOL_CODE_INT) Integer
-	key(GERMAN) String
-	key(PARENT_REF) Integer
-	key(TREE_LEVEL) Integer
 }
 
 table(GC_LITSTRAT_BED) {
 	primary_key(UUID) Guid
 	---
 	key(OBJECTID) OID
-	key(UUID) Guid
 	key(GEOL_CODE) String
 	key(GEOL_CODE_INT) Integer
 	key(GERMAN) String
-	key(PARENT_REF) Integer
 	key(TREE_LEVEL) Integer
+	key(PARENT_REF) Integer
 }
 
 table(GC_LITSTRAT_UNCO) {
 	primary_key(UUID) Guid
 	---
 	key(OBJECTID) OID
-	key(UUID) Guid
 	key(GEOL_CODE) String
 	key(GEOL_CODE_INT) Integer
 	key(GERMAN) String
-	key(PARENT_REF) Integer
 	key(TREE_LEVEL) Integer
+	key(PARENT_REF) Integer
 }
 
 table(GC_BED_FORM_ATT) {
 	primary_key(UUID) Guid
 	---
 	key(OBJECTID) OID
-	key(UUID) Guid
-	key(FMAT_IGNE_AFFINITY) GC_AFFINITY_CD
-	key(FMAT_IGNE_GRAIN_SI) GC_GRAIN_SI_CD
-	key(FMAT_IGNE_TEX) GC_IGNE_TEX_CD
-	key(FMAT_LITSTRAT) GC_LITSTRAT_BED_CD
-	key(FMAT_META_FULL_NAME) String
 	key(FMAT_META_MINERAL1) GC_MINERAL_CD
 	key(FMAT_META_MINERAL2) GC_MINERAL_CD
 	key(FMAT_META_MINERAL3) GC_MINERAL_CD
@@ -162,213 +128,190 @@ table(GC_BED_FORM_ATT) {
 	key(FMAT_SEDI_STR2) GC_SEDI_STR_CD
 	key(FMAT_SEDI_TEX1) GC_SEDI_TEX_CD
 	key(FMAT_SEDI_TEX2) GC_SEDI_TEX_CD
+	key(FMAT_IGNE_TEX) GC_IGNE_TEX_CD
+	key(FMAT_IGNE_GRAIN_SI) GC_GRAIN_SI_CD
+	key(FMAT_IGNE_AFFINITY) GC_AFFINITY_CD
+	key(FMAT_META_FULL_NAME) String
+	key(FMAT_LITSTRAT) GC_LITSTRAT_BED_CD
 }
 
 table(GC_SYSTEM) {
 	foreign_key(GC_FOSSILS_UUID,GC_FOSSILS) Guid
 	foreign_key(GC_SYSTEM_UUID,GC_SYSTEM) Guid
-	---
-	key(OBJECTID) OID
-	key(UUID) Guid
-	key(GEOL_CODE) String
-	key(GEOL_CODE_INT) Integer
-	key(GERMAN) String
 }
 
 table(GC_COMPOSIT) {
 	foreign_key(GC_UNCO_DESPOSIT_UUID,GC_UNCO_DESPOSIT) Guid
 	foreign_key(GC_COMPOSIT_UUID,GC_COMPOSIT) Guid
-	---
-	key(OBJECTID) OID
-	key(UUID) Guid
-	key(GEOL_CODE) String
-	key(GEOL_CODE_INT) Integer
-	key(GERMAN) String
 }
 
 table(GC_ADMIXTURE) {
 	foreign_key(GC_UNCO_DESPOSIT_UUID,GC_UNCO_DESPOSIT) Guid
 	foreign_key(GC_ADMIXTURE_UUID,GC_ADMIXTURE) Guid
-	---
-	key(OBJECTID) OID
-	key(UUID) Guid
-	key(GEOL_CODE) String
-	key(GEOL_CODE_INT) Integer
-	key(GERMAN) String
 }
 
 table(GC_CHARCAT) {
 	foreign_key(GC_UNCO_DESPOSIT_UUID,GC_UNCO_DESPOSIT) Guid
 	foreign_key(GC_CHARCAT_UUID,GC_CHARCAT) Guid
-	---
-	key(OBJECTID) OID
-	key(UUID) Guid
-	key(GEOL_CODE) String
-	key(GEOL_CODE_INT) Integer
-	key(GERMAN) String
 }
 
 class(GC_EXPLOIT_GEOMAT_PLG) {
 	primary_key(UUID) Guid
 	---
 	key(OBJECTID) OID
-	key(UUID) Guid
+	key(SYMBOL) String
 	key(AEXP_STATUS) GC_EX_GEO_PLG_AEXP_STATUS_CD
 	key(AEXP_TARG_MAT) GC_EX_GEO_PLG_AEXP_TARG_MAT_CD
 	key(SHAPE) Geometry
-	key(SYMBOL) String
 }
 
 class(GC_LINEAR_OBJECTS) {
 	primary_key(UUID) Guid
 	---
 	key(OBJECTID) OID
-	key(UUID) Guid
-	key(AARC_AGE) GC_AARC_AGE_CD
+	key(SYMBOL) String
+	key(HPAL_CHRONO) GC_CHRONO_CD
+	key(LPRO_LITHO) GC_LITHO_CD
+	key(PCOB_FORMATIO) GC_LITSTRAT_BED_CD
 	key(AARC_EPOCH) GC_AARC_EPOCH_CD
 	key(AARC_PERIOD) GC_AARC_PERIOD_CD
+	key(AARC_AGE) GC_AARC_AGE_CD
 	key(AEXP_STATUS) GC_LIN_AEXP_STATUS_CD
 	key(GALL_AGE) GC_LIN_GALL_AGE_CD
+	key(GGLA_MORAI_MO) GC_LIN_GGLA_MORAI_MO_CD
 	key(GGLA_GLAC_TYP) GC_LIN_GGLA_GLAC_TYP_CD
 	key(GGLA_ICE_M_P) GC_LIN_GGLA_ICE_M_P_CD
-	key(GGLA_MORAI_MO) GC_LIN_GGLA_MORAI_MO_CD
 	key(GGLA_QUAT_STR) GC_LIN_GGLA_QUAT_STR_CD
-	key(GGLA_REF_YEAR) Integer
-	key(GGLA_SOURCE) String
 	key(HCON_COMBI) GC_LIN_HCON_COMBI_CD
-	key(HPAL_CHRONO) GC_CHRONO_CD
-	key(HPAL_REF_YEAR) Integer
 	key(HPAL_REL_AGE) GC_LIN_HPAL_REL_AGE_CD
-	key(HPAL_SOURCE) String
 	key(HSUB_COMBI) GC_LIN_HSUB_COMBI_CD
 	key(LGEO_STATUS) GC_LIN_LGEO_STATUS_CD
-	key(LMIN_CHEMISTRY) String
 	key(LPRO_CONG_SPE) GC_LIN_LPRO_CONG_SPE_CD
-	key(LPRO_LITHO) GC_LITHO_CD
 	key(LPRO_NAME_HORIZ) GC_LITSTRAT_BED_CD
-	key(LPRO_ORIG_DESCR) String
-	key(PCOB_ALTITUDE) Double
-	key(PCOB_FORMATIO) GC_LITSTRAT_BED_CD
 	key(PCOB_TYPE) GC_LIN_PCOB_TYPE_CD
-	key(PCOH_ALTITUDE) Double
 	key(PCOH_CONFINE) GC_LIN_PCOH_CONFINE_CD
 	key(PCOH_WA_TABLE) GC_LIN_PCOH_WA_TABLE_CD
-	key(PRINTED) GC_BOOLEAN_CD
-	key(SHAPE) Geometry
-	key(SYMBOL) String
 	key(TTEC_FAULT_MO) GC_LIN_TTEC_FAULT_MO_CD
-	key(TTEC_HIERA) GC_LIN_TTEC_HIERA_CD
-	key(TTEC_HORIZ_MO) GC_LIN_TTEC_HORIZ_MO_CD
-	key(TTEC_LIM_TYP) GC_LIN_TTEC_LIM_TYP
-	key(TTEC_META_STA) GC_LIN_TTEC_META_STA_CD
-	key(TTEC_NAME) String
-	key(TTEC_STATUS) GC_LIN_TTEC_STATUS_CD
 	key(TTEC_VERTI_MO) GC_LIN_TTEC_VERTI_MO_CD
+	key(TTEC_HORIZ_MO) GC_LIN_TTEC_HORIZ_MO_CD
+	key(TTEC_STATUS) GC_LIN_TTEC_STATUS_CD
+	key(TTEC_META_STA) GC_LIN_TTEC_META_STA_CD
+	key(GGLA_REF_YEAR) Integer
+	key(GGLA_SOURCE) String
+	key(HPAL_REF_YEAR) Integer
+	key(HPAL_SOURCE) String
+	key(LPRO_ORIG_DESCR) String
+	key(LMIN_CHEMISTRY) String
+	key(PCOB_ALTITUDE) Double
+	key(PCOH_ALTITUDE) Double
+	key(TTEC_NAME) String
+	key(SHAPE) Geometry
+	key(PRINTED) GC_BOOLEAN_CD
+	key(TTEC_LIM_TYP) GC_LIN_TTEC_LIM_TYP
+	key(TTEC_HIERA) GC_LIN_TTEC_HIERA_CD
 }
 
 class(GC_POINT_OBJECTS) {
 	primary_key(UUID) Guid
 	---
 	key(OBJECTID) OID
-	key(UUID) Guid
-	key(AARC_AGE) GC_AARC_AGE_CD
-	key(AARC_EPOCH) GC_AARC_EPOCH_CD
-	key(AARC_PERIOD) GC_AARC_PERIOD_CD
-	key(AARC_TYPE) GC_PNT_AARC_TYPE_CD
-	key(ABOR_DEPTH_BEDR) Double
-	key(ABOR_DEPTH_FM_A) Double
-	key(ABOR_DEPTH_FM_B) Double
-	key(ABOR_DEPTH_TOT) Double
-	key(ABOR_DEPTH_WT) Double
-	key(ABOR_D_C_UNDERG) GC_BOOLEAN_CD
+	key(SYMBOL) String
+	key(RUNC_MAT_TYPE) GC_LITHO_CD
 	key(ABOR_FM_A) GC_LITSTRAT_CD
 	key(ABOR_FM_B) GC_LITSTRAT_CD
-	key(ABOR_LITHO) GC_LITHO_CD
+	key(PSLO_FORMATIO) GC_LITSTRAT_BED_CD
+	key(AARC_EPOCH) GC_AARC_EPOCH_CD
+	key(AARC_PERIOD) GC_AARC_PERIOD_CD
+	key(AARC_AGE) GC_AARC_AGE_CD
+	key(AARC_TYPE) GC_PNT_AARC_TYPE_CD
 	key(ABOR_MAIN_TAR) GC_PNT_ABOR_MAIN_TAR_CD
-	key(ABOR_REF_NUMBER) Integer
 	key(ABOR_TARG_MAT) GC_PNT_ABOR_TARG_MAT_CD
-	key(AZIMUTH) Integer
-	key(DIP) Integer
+	key(ABOR_D_C_UNDERG) GC_BOOLEAN_CD
 	key(GKAR_ICE_CAVE) GC_BOOLEAN_CD
-	key(HCON_DEPTH) Double
-	key(HCON_DEPTH_WT) Double
-	key(HCON_EPOCH) GC_PNT_HCON_EPOCH_CD
-	key(HCON_MEA_PERIOD) String
 	key(HCON_STATUS) GC_PNT_HCON_STATUS_CD
-	key(HSUR_CHEMISTRY) String
-	key(HSUR_COMBI) GC_PNT_HSUR_COMBI_CD
-	key(HSUR_DIS_LOCA) GC_PNT_HSUR_DIS_LOCA_CD
-	key(HSUR_FLOW_CON) GC_PNT_HSUR_FLOW_CON_CD
+	key(HCON_EPOCH) GC_PNT_HCON_EPOCH_CD
 	key(HSUR_STATUS) GC_PNT_HSUR_STATUS_CD
-	key(HSUR_TEMP) Integer
+	key(HSUR_FLOW_CON) GC_PNT_HSUR_FLOW_CON_CD
 	key(HSUR_TYPE) GC_PNT_HSUR_TYPE_CD
+	key(HSUR_DIS_LOCA) GC_PNT_HSUR_DIS_LOCA_CD
+	key(HSUR_COMBI) GC_PNT_HSUR_COMBI_CD
 	key(LANO_TYPE) GC_PNT_LANO_TYPE_CD
-	key(LMIS_ORIG_ID) String
-	key(LRES_CHEMISTRY) String
-	key(LRES_MATERIAL) GC_PNT_LRES_MATERIAL_CD
 	key(LRES_STATUS) GC_PNT_LRES_STATUS_CD
-	key(LTYP_ACCESSIBIL) GC_BOOLEAN_CD
-	key(LTYP_NAME) String
-	key(LTYP_PROTECTED) GC_BOOLEAN_CD
+	key(LRES_MATERIAL) GC_PNT_LRES_MATERIAL_CD
 	key(LTYP_STRATI) GC_PNT_LTYP_STRATI_CD
+	key(LTYP_ACCESSIBIL) GC_BOOLEAN_CD
+	key(LTYP_PROTECTED) GC_BOOLEAN_CD
 	key(MFOL_FOLD_TYP) GC_PNT_MFOL_FOLD_TYP_CD
 	key(MFOL_PHASE) GC_PNT_MFOL_PHASE_CD
-	key(MFOL_PHASE_REF) String
-	key(MPLA_OB_DIP_SLO) GC_BOOLEAN_CD
-	key(MPLA_PHASE) GC_PNT_MPLA_PHASE_CD
-	key(MPLA_PHASE_REF) String
 	key(MPLA_POLARITY) GC_PNT_MPLA_POLARITY_CD
+	key(MPLA_PHASE) GC_PNT_MPLA_PHASE_CD
+	key(MPLA_OB_DIP_SLO) GC_BOOLEAN_CD
+	key(PSLO_TYPE) GC_PNT_PSLO_TYPE_CD
+	key(RUNC_STATUS) GC_PNT_RUNC_STATUS_CD
+	key(RUNC_ROCK_TYP) GC_PNT_RUNC_ROCK_TYP_CD
+	key(RUNC_ROCK_SPE) GC_LITSTRAT_BED_CD
+	key(RUNC_PROTECTED) GC_BOOLEAN_CD
+	key(TDEF_FOLD_TYP) GC_PNT_TDEF_FOLD_TYP_CD
+	key(TDEF_FOLD_FOR) GC_PNT_TDEF_FOLD_FOR_CD
+	key(ABOR_DEPTH_BEDR) Double
+	key(ABOR_DEPTH_TOT) Double
+	key(ABOR_DEPTH_FM_A) Double
+	key(ABOR_DEPTH_FM_B) Double
+	key(ABOR_DEPTH_WT) Double
+	key(AZIMUTH) Integer
+	key(DIP) Integer
+	key(ABOR_REF_NUMBER) Integer
+	key(ABOR_LINK) Integer
+	key(HCON_DEPTH) Double
+	key(HCON_DEPTH_WT) Double
+	key(HCON_MEA_PERIOD) String
+	key(HSUR_TEMP) Integer
+	key(HSUR_CHEMISTRY) String
+	key(LRES_CHEMISTRY) String
+	key(LTYP_NAME) String
+	key(MFOL_PHASE_REF) String
+	key(MPLA_PHASE_REF) String
 	key(PMOD_HEIGHT) Double
 	key(PMOD_MEA_PERIOD) String
-	key(PRINTED) GC_BOOLEAN_CD
-	key(PSLO_FORMATIO) GC_LITSTRAT_BED_CD
-	key(PSLO_TYPE) GC_PNT_PSLO_TYPE_CD
-	key(RUNC_MAT_TYPE) GC_LITHO_CD
 	key(RUNC_ORIG_DESCR) String
-	key(RUNC_PROTECTED) GC_BOOLEAN_CD
-	key(RUNC_ROCK_SPE) GC_LITSTRAT_BED_CD
-	key(RUNC_ROCK_TYP) GC_PNT_RUNC_ROCK_TYP_CD
-	key(RUNC_STATUS) GC_PNT_RUNC_STATUS_CD
+	key(LMIS_ORIG_ID) String
 	key(SHAPE) Geometry
-	key(SYMBOL) String
-	key(TDEF_FOLD_FOR) GC_PNT_TDEF_FOLD_FOR_CD
-	key(TDEF_FOLD_TYP) GC_PNT_TDEF_FOLD_TYP_CD
+	key(PRINTED) GC_BOOLEAN_CD
+	key(ABOR_LITHO) GC_LITHO_CD
 }
 
 class(GC_FOSSILS) {
 	primary_key(UUID) Guid
 	---
 	key(OBJECTID) OID
-	key(UUID) Guid
-	key(LFOS_DAT_METH) GC_FOSS_LFOS_DAT_METH_CD
-	key(LFOS_DIVISION) GC_FOSS_LFOS_DIVISION_CD
-	key(LFOS_PROTECTED) GC_BOOLEAN_CD
-	key(LFOS_STATUS) GC_FOSS_LFOS_STATUS_CD
-	key(PRINTED) GC_BOOLEAN_CD
-	key(SHAPE) Geometry
 	key(SYMBOL) String
+	key(LFOS_DIVISION) GC_FOSS_LFOS_DIVISION_CD
+	key(LFOS_DAT_METH) GC_FOSS_LFOS_DAT_METH_CD
+	key(LFOS_STATUS) GC_FOSS_LFOS_STATUS_CD
+	key(LFOS_PROTECTED) GC_BOOLEAN_CD
+	key(SHAPE) Geometry
+	key(PRINTED) GC_BOOLEAN_CD
 }
 
 class(GC_UNCO_DESPOSIT) {
 	primary_key(UUID) Guid
 	---
 	key(OBJECTID) OID
-	key(UUID) Guid
-	key(RUNC_BURIED_OUT) GC_BOOLEAN_CD
-	key(RUNC_CHRONO_B) GC_CHRONO_CD
+	key(SYMBOL) String
 	key(RUNC_CHRONO_T) GC_CHRONO_CD
-	key(RUNC_GLAC_TYP) GC_UN_DEP_RUNC_GLAC_TYP_CD
-	key(RUNC_HARMOS_REV) GC_HARMOS_REV_CD
-	key(RUNC_INDEX) String
+	key(RUNC_CHRONO_B) GC_CHRONO_CD
 	key(RUNC_LITHO) GC_LITHO_UNCO_CD
 	key(RUNC_LITSTRAT) GC_LITSTRAT_UNCO_CD
+	key(RUNC_HARMOS_REV) GC_HARMOS_REV_CD
+	key(RUNC_STRUCTUR) GC_UN_DEP_RUNC_STRUCTUR_CD
 	key(RUNC_MORPHOLO) GC_UN_DEP_RUNC_MORPHOLO_CD
+	key(RUNC_GLAC_TYP) GC_UN_DEP_RUNC_GLAC_TYP_CD
+	key(RUNC_THIN_COV) GC_UN_DEP_RUNC_THIN_COV_CD
+	key(RUNC_BURIED_OUT) GC_BOOLEAN_CD
 	key(RUNC_ORIG_DESCR) String
 	key(RUNC_REF_YEAR) String
-	key(RUNC_STRUCTUR) GC_UN_DEP_RUNC_STRUCTUR_CD
-	key(RUNC_THIN_COV) GC_UN_DEP_RUNC_THIN_COV_CD
+	key(RUNC_INDEX) String
 	key(SHAPE) Geometry
-	key(SYMBOL) String
 }
 
 class(GC_BEDROCK) {
@@ -376,46 +319,43 @@ class(GC_BEDROCK) {
 	foreign_key(FORM_ATT,GC_BED_FORM_ATT) Guid
 	---
 	key(OBJECTID) OID
-	key(UUID) Guid
-	key(FORM_ATT) Guid
+	key(SYMBOL) String
+	key(RBED_CHRONO_T) GC_CHRONO_CD
 	key(RBED_CHRONO_B) GC_CHRONO_CD
 	key(RBED_CHRONO_B_LOC) GC_CHRONO_CD
-	key(RBED_CHRONO_T) GC_CHRONO_CD
 	key(RBED_CHRONO_T_LOC) GC_CHRONO_CD
-	key(RBED_EXOTIC_ELE) GC_BOOLEAN_CD
-	key(RBED_HARMOS_REV) GC_HARMOS_REV_CD
-	key(RBED_INDEX) String
-	key(RBED_ORIG_DESCR) String
 	key(RBED_TECTO) GC_TECTO_CD
+	key(RBED_HARMOS_REV) GC_HARMOS_REV_CD
+	key(RBED_EXOTIC_ELE) GC_BOOLEAN_CD
+	key(RBED_ORIG_DESCR) String
+	key(RBED_INDEX) String
+	key(FORM_ATT) Guid
 	key(SHAPE) Geometry
-	key(SYMBOL) String
 }
 
 class(GC_SURFACES) {
 	primary_key(UUID) Guid
 	---
 	key(OBJECTID) OID
-	key(UUID) Guid
-	key(AARC_AGE) GC_AARC_AGE_CD
+	key(SYMBOL) String
 	key(AARC_EPOCH) GC_AARC_EPOCH_CD
 	key(AARC_PERIOD) GC_AARC_PERIOD_CD
+	key(AARC_AGE) GC_AARC_AGE_CD
 	key(GINS_MAIN_MOV) GC_SURF_GINS_MAIN_MOV_CD
-	key(SHAPE) Geometry
-	key(SYMBOL) String
 	key(TDEF_TYPE) GC_SURF_TDEF_TYPE_CD
+	key(SHAPE) Geometry
 }
 
 class(GC_EXPLOIT_GEOMAT_PT) {
 	primary_key(UUID) Guid
 	---
 	key(OBJECTID) OID
-	key(UUID) Guid
-	key(AEXP_DEPTH_TOT) Double
+	key(SYMBOL) String
 	key(AEXP_STATUS) GC_EX_GEO_PNT_AEXP_STATUS_CD
 	key(AEXP_TARG_MAT) GC_EX_GEO_PNT_AEXP_TARG_MAT_CD
-	key(PRINTED) GC_BOOLEAN_CD
+	key(AEXP_DEPTH_TOT) Double
 	key(SHAPE) Geometry
-	key(SYMBOL) String
+	key(PRINTED) GC_BOOLEAN_CD
 }
 
 table(GC_UNCO_DESPOSIT_GC_LITHO) {
@@ -458,13 +398,7 @@ table(GC_EXPLOIT_GEOMAT_PLG_GC_LITSTRAT) {
 	foreign_key(GC_LITSTRAT_UUID,GC_LITSTRAT) Guid
 }
 
-' GC_LITHO "0..n" -- "1..1" GC_UNCO_DESPOSIT
-' GC_LITSTRAT "0..n" -- "1..1" GC_EXPLOIT_GEOMAT_PLG
-' GC_LITHO_BED "0..n" -- "1..1" GC_BEDROCK
-' GC_SYSTEM "0..n" -- "1..1" GC_FOSSILS
-' GC_COMPOSIT "0..n" -- "1..1" GC_UNCO_DESPOSIT
-' GC_ADMIXTURE "0..n" -- "1..1" GC_UNCO_DESPOSIT
-' GC_CHARCAT "0..n" -- "1..1" GC_UNCO_DESPOSIT
+
 GC_BEDROCK "0..n" -- "1..1" GC_BED_FORM_ATT
 GC_UNCO_DESPOSIT_GC_LITHO "0..n" -- "1..1" GC_UNCO_DESPOSIT
 GC_UNCO_DESPOSIT_GC_LITHO "0..n" -- "1..1" GC_LITHO
@@ -483,7 +417,7 @@ GC_UNCO_DESPOSIT_GC_CHARCAT "0..n" -- "1..1" GC_CHARCAT
 GC_EXPLOIT_GEOMAT_PLG_GC_LITSTRAT "0..n" -- "1..1" GC_EXPLOIT_GEOMAT_PLG
 GC_EXPLOIT_GEOMAT_PLG_GC_LITSTRAT "0..n" -- "1..1" GC_LITSTRAT
 
+
 }
 
 @enduml
-    

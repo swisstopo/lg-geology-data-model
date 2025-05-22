@@ -24,7 +24,7 @@ data = {
     "table_color": "#CCD5AE",
     "table_bg": "#E9EDC9",
     "class_bg": "#FAEDCD",
-    "class_color": "#FAEDCD",
+    "class_color": "#D4A373",
     "rectangle_color": "CD5656",
 }  # without #
 
