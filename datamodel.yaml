@@ -274,6 +274,22 @@ themes:
       cardinality: "1"
       change: removed
       mandatory: false
+    - name: GEOL_MAPPING_UNIT_ATT  # check
+      description:
+        de: Kartographische Einheiten
+        fr: Unités cartographique
+      att_type: annex
+      value: GEOL_MAPPING_UNIT_ATT_CD
+      cardinality: "1"
+      mandatory: true
+    - name: LITSTRAT_FORMATION_BANK  # check
+      description:
+        de: -
+        fr: -
+      att_type: annex
+      value: GC_LITSTRAT_FORMATION_BANK_CD
+      cardinality: "1"
+      mandatory: true   # TDODO: really?
     - name: litstrat
       description:
         de: Lithostratigraphische Einheit
@@ -282,7 +298,15 @@ themes:
       value: GC_LITSTRAT_BED_CD
       cardinality: "1"
       mandatory: false
-    - name: litho
+    - name: litho_main
+      att_type: annex
+      value: GC_LITHO_CD
+      description:
+        de: Lithologische Beschreibung
+        fr: Description lithologique
+      cardinality: "1"
+      mandatory: true
+    - name: litho_sec
       att_type: annex
       value: GC_LITHO_CD
       description:
@@ -290,7 +314,15 @@ themes:
         fr: Description lithologique
       cardinality: "1"
       mandatory: false
-    - name: chrono_t
+    - name: litho_ter
+      att_type: annex
+      value: GC_LITHO_CD
+      description:
+        de: Lithologische Beschreibung
+        fr: Description lithologique
+      cardinality: "1"
+      mandatory: false
+    - name: chrono_top   # TODO: new name
       att_type: annex
       value: GC_CHRONO_CD
       description:
@@ -301,7 +333,7 @@ themes:
           Attribution chronostratigraphique du toit de la  formation (top)
       cardinality: "1"
       mandatory: true
-    - name: chrono_b
+    - name: chrono_base  # new name
       att_type: annex
       value: GC_CHRONO_CD
       description:
@@ -318,6 +350,14 @@ themes:
       description:
         de: Tektonische Zugehörigkeit
         fr: Attribution tectonique
+      cardinality: "1"
+      mandatory: true
+    - name: correlation
+      att_type: annex
+      value: GC_CORRELATION_CD
+      description:
+        de: Korrelation
+        fr: Correlation
       cardinality: "1"
       mandatory: true
     - name: orig_descr
@@ -2146,7 +2186,7 @@ themes:
         fr: >-
           Profondeur relative à la formation A atteinte (en mètres depuis la surface)
       att_type: annex
-      value: GC_LITSTRAT_BED_CD       # TODO
+      value: GC_GEOL_MAPPING_UNIT_CD       # TODO: new GMU
       cardinality: 0..1
       mandatory: false
     - name: abor_depth_fm_b
@@ -2165,7 +2205,7 @@ themes:
         de: Lithostratigraphische Einheit der erreichten Formation A
         fr: Unité lithostratigraphique de la formation A atteinte
       att_type: annex
-      value: GC_LITSTRAT_BED_CD       # TODO
+      value: GC_GEOL_MAPPING_UNIT_CD   # TODO: new GMU
       cardinality: 0..1
       mandatory: false
     - name: abor_depth_fm_b
@@ -2629,12 +2669,31 @@ annexes:
   description:
     de: Kartiereinheiten
     fr: Unités de cartographie
-- name: GC_LITSTRAT_BED_CD
+- name: GC_GEOL_MAPPING_UNIT_CD
+  type_: list
+  fname: Geol_Mapping_Unit.json.json
+  description:
+    de: Kartiereinheiten
+    fr: Unités de cartographie
+- name: GC_CORRELATION_CD
+  type_: list
+  fname: Correlation.json
+  description:
+    de: Korrelation
+    fr: Correlation
+
+- name: GC_LITSTRAT_FORMATION_BANK_CD
+  type: list
+  description:
+    de: blabla
+    fr: blabla
+
+- name: GC_LITSTRAT_BED_CD  #TODO: to remove?
   type_: list
   description:
     de: Wertetabelle der lithostratigraphischen Einheiten
     fr: Table des valeurs des unités lithostratigraphiques
-- name: GC_LITSTRAT_UNCO_CD
+- name: GC_LITSTRAT_UNCO_CD     #TODO: to remove?
   type_: list
   description:
     de: Wertetabelle der lithostratigraphischen Einheiten
