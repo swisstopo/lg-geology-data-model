@@ -3,7 +3,7 @@
 import os
 import sys
 import json
-import pygraphviz as pgv
+
 import yaml
 
 from loguru import logger
@@ -132,9 +132,9 @@ class FeatureClass(Table):
 
 
 # TODO
-input_file = "inputs/geocover-schema-sde.json"
+# input_file = "inputs/geocover-schema-sde.json"
 
-inpur_file = "exports_i/gcoveri_simple.json"
+input_file = "exports_i/gcoveri_simple.json"
 
 basename = os.path.splitext(os.path.basename(input_file))[0]
 
@@ -143,44 +143,35 @@ output_file = os.path.join(OUTPUT_DIR, basename + ".png")
 dotfile = os.path.join(OUTPUT_DIR, basename + ".dot")
 
 
-with open(input_file, "r") as f:
-    c = f.read()
+with open(input_file, "r") as field_name:
+    c = field_name.read()
 
 
-s = json.loads(c)
+db_schema = json.loads(c)
+
+if db_schema.get("version") != 2:
+    logger.error("Wrong schema version. Exiting...")
+    sys.exit(2)
 
 all_tables = {}
 
-S = SQL2PUML(template_file="templates/template.puml", data=data)
-G = pgv.AGraph(strict=False, directed=False)
-
-G.graph_attr["label"] = "GCOVERP Schema (SDE)"
-G.graph_attr["fontname"] = FONTNAME
-G.graph_attr["fontsize"] = 50
-G.graph_attr["labelloc"] = "t"
+# SQL_graph = SQL2PUML(template_file="templates/template.puml", data=data)
 
 
-G.node_attr["shape"] = "box"
-G.node_attr["style"] = "filled"
-G.node_attr["color"] = "lightblue"
-G.node_attr["fontname"] = FONTNAME
-
-G.edge_attr["len"] = 2.00
-G.edge_attr["fontname"] = FONTNAME
-
-
-for t in s["tables"].keys():
-    short_name = clean(t)
-    if t.endswith("_I") or short_name in IGNORE_OBJECTS:
+for table_name in db_schema["tables"].keys():
+    short_name = clean(table_name)
+    if table_name.endswith("_I") or short_name in IGNORE_OBJECTS:
         continue
 
     logger.info(f"====Table {short_name}====")
-    G.add_node(short_name)  # adds node 'a'
-    S.add_table(short_name)
 
-    fields = s["tables"][t].get("fields", [])
+    # SQL_graph.add_table(short_name)
 
-    tt = Table(short_name)
+    fields = db_schema["tables"][table_name].get(
+        "fields", []
+    )  # TODO shoud be fields: []
+
+    table_object = Table(short_name)
     for field in fields:
         name = field.get("name")
         if name in IGNORE_FIELDS:
@@ -190,31 +181,30 @@ for t in s["tables"].keys():
             if field.get("domain") is not None
             else field.get("type")
         )
-        S.add_column(name, typ)
+        # SQL_graph.add_column(name, typ)
         if name.lower() == "uuid":
             primary = True
         else:
             primary = False
 
-        tt.columns.append(Column(name, typ, primary=primary))
-    all_tables[short_name] = tt
+        table_object.columns.append(Column(name, typ, primary=primary))
+    all_tables[short_name] = table_object
 
-    logger.info(tt)
+    logger.info(table_object)
 
 
-G.node_attr["color"] = "lightcoral"
-for f in s["featclasses"].keys():
-    short_name = clean(f)
+for field_name in db_schema["featclasses"].keys():
+    short_name = clean(field_name)
 
-    fields = s["featclasses"][f]["fields"]
+    fields = db_schema["featclasses"][field_name]["fields"]
 
-    if f.endswith("_I") or short_name in IGNORE_OBJECTS:
+    if field_name.endswith("_I") or short_name in IGNORE_OBJECTS:
         logger.debug(short_name)
         continue
     logger.info(f"========FeatureClass {short_name}===============")
-    G.add_node(short_name)  # adds node 'a'
-    S.add_table(short_name)
-    t = FeatureClass(short_name, "Geometry")
+
+    # SQL_graph.add_table(short_name)
+    featclass = FeatureClass(short_name, "Geometry")
     for field in fields:
         name = field.get("name")
         if name in IGNORE_FIELDS:
@@ -228,31 +218,25 @@ for f in s["featclasses"].keys():
             if field.get("domain") is not None
             else field.get("type")
         )
-        S.add_column(name, typ)
-        t.columns.append(Column(name, typ, primary=primary))
-    all_tables[short_name] = t
-
-G.node_attr["color"] = "lightgrey"
-G.node_attr["style"] = "filled"
-G.node_attr["shape"] = "diamond"
+        # SQL_graph.add_column(name, typ)
+        featclass.columns.append(Column(name, typ, primary=primary))
+    all_tables[short_name] = featclass
 
 
-relations = [r for r in s["relationships"].keys() if not r.endswith("_I")]
+relations = [r for r in db_schema["relationships"].keys() if not r.endswith("_I")]
 
 for i, r in enumerate(relations):
     cr = clean(r)
 
-    rr = s["relationships"][r]
+    rr = db_schema["relationships"][r]
     cardinality = rr["cardinality"]
 
-    G.add_node(rr.get("forwardPathLabel", str(i)))
-
 
 for i, r in enumerate(relations):
-    rr = s["relationships"][r]
+    rr = db_schema["relationships"][r]
     cr = clean(r)
     short_name = clean(r)
-    logger.info(f"========Relationship {short_name}===============")
+    logger.info(f"======== Relationship {short_name}===============")
     cardinality = rr["cardinality"]
     origin = clean(rr["origin"])
     destination = clean(rr["destination"])
@@ -268,9 +252,6 @@ for i, r in enumerate(relations):
         rev_lbl = "m"
     else:
         rev_lbl = "1"
-    # print(short_name, f"({cardinality}):", origin, "-->", destination)
-    G.add_edge(origin, fwd_label, label=fwd_lbl)
-    G.add_edge(fwd_label, destination, label=rev_lbl)
 
     if cardinality == "OneToMany":
         ori_table = all_tables.get(origin)
@@ -332,10 +313,10 @@ for i, r in enumerate(relations):
             f'Relationships "ManyToMany" {ori_table.name} --> {dest_table.name}'
         )
 
-        t = Table(new_table, relation=True, cardinality="ManyToMany")
+        table = Table(new_table, relation=True, cardinality="ManyToMany")
         # t.columns.append(Column(keys["origin"]["fk"], "int"))
         # t.columns.append(Column(keys["destination"]["fk"], "int"))
-        all_tables[new_table] = t
+        all_tables[new_table] = table
 
         # fk = ColumnFK(name, type_, reference
 
@@ -344,7 +325,7 @@ for i, r in enumerate(relations):
         if ori_pk is not None:
             type_ = ori_pk.type_
             col = ColumnFK(keys["origin"]["fk"], type_, origin)
-            t.columns.append(col)
+            table.columns.append(col)
 
         dest_pk = ori_table.get_column(keys["destination"]["pk"], erase=False)
         logger.debug(
@@ -353,51 +334,33 @@ for i, r in enumerate(relations):
         if dest_pk is not None:
             type_ = dest_pk.type_
             col = ColumnFK(keys["destination"]["fk"], type_, destination)
-            t.columns.append(col)
+            table.columns.append(col)
 
-        all_tables[destination] = t
+        all_tables[destination] = table
 
-
-G.layout()  # default to neato
-G.layout(prog="neato")  # use dot
-
-G.draw(output_file)  # write previously positioned graph to PNG file
-# G.draw("file.ps", prog="circo")  # use circo to position, write PS file
-G.draw(os.path.join(OUTPUT_DIR, basename + ".svg"))
-G.write(dotfile)
-
-
-logger.info(
-    "Generate with: dot -Tpng -Kneato -Gsize=8.3,11.7\! -Gdpi=254 -o{} {}".format(
-        output_file, dotfile
-    )
-)
-
-import pprint
-
-from ruamel.yaml import YAML
-from collections import OrderedDict
 
 db_config = {"database": "GCOVERP", "version": 1, "tables": []}
 
 logger.info("-----------------------")
 
-SP = SQL2PUML(template_file="templates/template.puml", data=data)
+Sql2PUML = SQL2PUML(template_file="templates/template.puml", data=data)
 for name, table in all_tables.items():
-    logger.info(f"----{name}----")
+    if not name.startswith("GC_"):
+        continue
+    logger.info(f"===== TABLE: {name} =====")
     # logger.info()
 
-    if SP.puml_tables.get(name) is not None:
-        SP.current_table = name
+    if Sql2PUML.puml_tables.get(name) is not None:
+        Sql2PUML.current_table = name
     else:
-        SP.add_table(name)
-    tt = {"name": name, "columns": []}
+        Sql2PUML.add_table(name)
+    table_object = {"name": name, "columns": []}
     # pprint.pprint(table.columns)
     for col in table.columns:
         c = {}
         if isinstance(col, ColumnFK):
-            # print(f"{col.name} is foreign")
-            SP.add_column_foreign(col.name, col.type_, col.reference)
+            logger.info("    {col.name} is foreign")
+            Sql2PUML.add_column_foreign(col.name, col.type_, col.reference)
             c = {
                 "foreign_key": {
                     "name": col.name,
@@ -408,47 +371,48 @@ for name, table in all_tables.items():
 
         else:
             if col.primary is True:
-                logger.debug(f"PK: {col.name}")
-                SP.add_column_primary(col.name, col.type_)
+                logger.info(f"    PK: {col.name}")
+                Sql2PUML.add_column_primary(col.name, col.type_)
             else:
-                # print(f"{col.name} is not foreign {type(col)}")
-                SP.add_column(col.name, col.type_)
+                logger.info(f"    {col.name} is not foreign {type(col)}")
+                Sql2PUML.add_column(col.name, col.type_)
             c = {"name": col.name, "type": col.type_, "primary_key": primary}
-        tt["columns"].append(c)
-    db_config["tables"].append(tt)
+        table_object["columns"].append(c)
+    db_config["tables"].append(table_object)
 
-coded_domains = s.get("domains")
+coded_domains = db_schema.get("coded_domain")
 for name in coded_domains.keys():
-    logger.info(f"----{name}----")
+    # logger.info(f"----{name}----")
     domain_dict = coded_domains[name]
-    SP.add_enum(name, domain_dict)
+    Sql2PUML.add_enum(name, domain_dict)
 
 # pprint.pprint(db_config)
 
-for table_name, table in S.puml_tables.items():
-    for t in ("default", "primary", "foreign"):
-        for fk in table[t].keys():
-            logger.debug(f"{table_name}, {t}, {fk}")
+# Only debug?
+# for table_name, table in SQL_graph.puml_tables.items():
+#     for t in ("default", "primary", "foreign"):
+#         for fk in table[t].keys():
+#             logger.debug(f"{table_name}, {t}, {fk}")
 
 puml_file = os.path.join(OUTPUT_DIR, "ER-GCOVER.puml")
 
 
-with open(puml_file, "w") as f:
-    f.write(SP.transform())
+with open(puml_file, "w") as field_name:
+    field_name.write(Sql2PUML.transform())
 
 yaml_file = os.path.join(OUTPUT_DIR, "GCOVERP.yaml")
 
-with open(yaml_file, "w") as f:
+with open(yaml_file, "w") as field_name:
     yaml.dump(
         db_config,
-        f,
+        field_name,
         default_flow_style=False,
         sort_keys=False,
         allow_unicode=True,
         encoding=("utf-8"),
     )
 
-logger.debug(f"Template was: {S.puml_template}")
+logger.debug(f"Template was: {Sql2PUML.puml_template}")
 
 logger.info(f"Writing PUML diagram to {puml_file}")
 logger.info(f"Writing YAML structure to {yaml_file}")
