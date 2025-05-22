@@ -17,6 +17,17 @@ OUTPUT_DIR = "outputs"
 logger.remove(0)
 logger.add(sys.stderr, format="{time} {level} {message}", level="INFO")
 
+# https://coolors.co/palette/ccd5ae-e9edc9-fefae0-faedcd-d4a373
+
+data = {
+    "bg_color": "#FEFAE0",
+    "table_color": "#CCD5AE",
+    "table_bg": "#E9EDC9",
+    "class_bg": "#FAEDCD",
+    "class_color": "#FAEDCD",
+    "rectangle_color": "CD5656",
+}  # without #
+
 
 def removeprefix(prefix, lst):
     return [i.replace(prefix, "") for i in lst]
@@ -120,7 +131,10 @@ class FeatureClass(Table):
         self.geometry = geo
 
 
+# TODO
 input_file = "inputs/geocover-schema-sde.json"
+
+inpur_file = "exports_i/gcoveri_simple.json"
 
 basename = os.path.splitext(os.path.basename(input_file))[0]
 
@@ -137,7 +151,7 @@ s = json.loads(c)
 
 all_tables = {}
 
-S = SQL2PUML(template_file="templates/template.puml")
+S = SQL2PUML(template_file="templates/template.puml", data=data)
 G = pgv.AGraph(strict=False, directed=False)
 
 G.graph_attr["label"] = "GCOVERP Schema (SDE)"
@@ -313,10 +327,12 @@ for i, r in enumerate(relations):
         keys = {}
         keys["origin"] = get_keys(ori_keys)
         keys["destination"] = get_keys(dest_keys)
-        
-        logger.warning(f'Relationships "ManyToMany" {ori_table.name} --> {dest_table.name}')
 
-        t = Table(new_table, relation=True, cardinality='ManyToMany')
+        logger.warning(
+            f'Relationships "ManyToMany" {ori_table.name} --> {dest_table.name}'
+        )
+
+        t = Table(new_table, relation=True, cardinality="ManyToMany")
         # t.columns.append(Column(keys["origin"]["fk"], "int"))
         # t.columns.append(Column(keys["destination"]["fk"], "int"))
         all_tables[new_table] = t
@@ -366,7 +382,7 @@ db_config = {"database": "GCOVERP", "version": 1, "tables": []}
 
 logger.info("-----------------------")
 
-SP = SQL2PUML(template_file="templates/template.puml")
+SP = SQL2PUML(template_file="templates/template.puml", data=data)
 for name, table in all_tables.items():
     logger.info(f"----{name}----")
     # logger.info()
@@ -415,13 +431,13 @@ for table_name, table in S.puml_tables.items():
             logger.debug(f"{table_name}, {t}, {fk}")
 
 puml_file = os.path.join(OUTPUT_DIR, "ER-GCOVER.puml")
-logger.info(f"Writing PUML diagram to {puml_file}")
+
 
 with open(puml_file, "w") as f:
     f.write(SP.transform())
 
 yaml_file = os.path.join(OUTPUT_DIR, "GCOVERP.yaml")
-logger.info(f"Writing YAML structure to {yaml_file}")
+
 with open(yaml_file, "w") as f:
     yaml.dump(
         db_config,
@@ -431,5 +447,8 @@ with open(yaml_file, "w") as f:
         allow_unicode=True,
         encoding=("utf-8"),
     )
-    
-logger.info(f"Template was: {S.puml_template}")
+
+logger.debug(f"Template was: {S.puml_template}")
+
+logger.info(f"Writing PUML diagram to {puml_file}")
+logger.info(f"Writing YAML structure to {yaml_file}")

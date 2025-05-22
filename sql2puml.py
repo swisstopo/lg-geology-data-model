@@ -64,7 +64,7 @@ class SQL2PUML:
     Parse SQL and convert CREATE TABLE statements to a Plant UML database graph.
     """
 
-    def __init__(self, puml_template=None, template_file=None):
+    def __init__(self, puml_template=None, template_file=None, data={}):
         """
         Initialize the SQL2PUML parser.
 
@@ -88,6 +88,7 @@ class SQL2PUML:
         self.puml_tables = OrderedDict()
         self.puml_enumerations = OrderedDict()
         self.current_table = None
+        self.data = data
 
     # Template structure when the SQL is parsed.
     puml_enumerations = OrderedDict()
@@ -241,6 +242,7 @@ class SQL2PUML:
 
         # Join all output lines separated by new lines.
         content = '\n'.join(puml_lines)
+        self.data['content'] = content
 
         # Return the final PUML string.
-        return (self.puml_template.format(content=content))
+        return (self.puml_template.format(**self.data))
