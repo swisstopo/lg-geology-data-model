@@ -132,9 +132,9 @@ class FeatureClass(Table):
 
 
 # TODO
-input_file = "inputs/geocover-schema-sde.json"
+# input_file = "inputs/geocover-schema-sde.json"
 
-inpur_file = "exports_i/gcoveri_simple.json"
+input_file = "exports_i/gcoveri_simple.json"
 
 basename = os.path.splitext(os.path.basename(input_file))[0]
 
@@ -143,11 +143,12 @@ output_file = os.path.join(OUTPUT_DIR, basename + ".png")
 dotfile = os.path.join(OUTPUT_DIR, basename + ".dot")
 
 
-with open(input_file, "r") as f:
-    c = f.read()
 
 
-s = json.loads(c)
+logger.info(f"Reading Schema from {input_file}")
+with open( input_file,  "r") as f:
+    s = json.load(f)
+
 
 all_tables = {}
 
@@ -357,7 +358,7 @@ for i, r in enumerate(relations):
 
         all_tables[destination] = t
 
-
+'''
 G.layout()  # default to neato
 G.layout(prog="neato")  # use dot
 
@@ -372,7 +373,7 @@ logger.info(
         output_file, dotfile
     )
 )
-
+'''
 import pprint
 
 from ruamel.yaml import YAML
@@ -417,7 +418,9 @@ for name, table in all_tables.items():
         tt["columns"].append(c)
     db_config["tables"].append(tt)
 
-coded_domains = s.get("domains")
+
+logger.info(s)
+coded_domains = s.get("coded_domain")
 for name in coded_domains.keys():
     logger.info(f"----{name}----")
     domain_dict = coded_domains[name]
@@ -425,7 +428,7 @@ for name in coded_domains.keys():
 
 # pprint.pprint(db_config)
 
-for table_name, table in S.puml_tables.items():
+for table_name, table in SP.puml_tables.items():
     for t in ("default", "primary", "foreign"):
         for fk in table[t].keys():
             logger.debug(f"{table_name}, {t}, {fk}")
@@ -434,7 +437,7 @@ puml_file = os.path.join(OUTPUT_DIR, "ER-GCOVER.puml")
 
 
 with open(puml_file, "w") as f:
-    f.write(SP.transform())
+    f.write(S.transform())
 
 yaml_file = os.path.join(OUTPUT_DIR, "GCOVERP.yaml")
 
@@ -448,7 +451,7 @@ with open(yaml_file, "w") as f:
         encoding=("utf-8"),
     )
 
-logger.debug(f"Template was: {S.puml_template}")
+logger.debug(f"Template was: {SP.puml_template}")
 
 logger.info(f"Writing PUML diagram to {puml_file}")
 logger.info(f"Writing YAML structure to {yaml_file}")
