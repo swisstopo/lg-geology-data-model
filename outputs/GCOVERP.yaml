@@ -1,290 +1,305 @@
 database: GCOVERP
 version: 1
 tables:
-- name: GC_CHRONO
+- name: TOPGIS_GC.GC_LITHO_UNCO
   columns:
   - name: OBJECTID
     type: OID
     primary_key: false
   - name: UUID
-    type: Guid
-    primary_key: false
-  - name: GEOL_CODE
-    type: String
-    primary_key: false
-  - name: GEOL_CODE_INT
-    type: Integer
-    primary_key: false
-  - name: GERMAN
-    type: String
-    primary_key: false
+    type: GUID
+    primary_key: true
   - name: TREE_LEVEL
     type: Integer
     primary_key: false
   - name: PARENT_REF
     type: Integer
     primary_key: false
-- name: GC_LITHO
-  columns:
-  - foreign_key:
-      name: GC_UNCO_DESPOSIT_UUID
-      type: Guid
-      reference: GC_UNCO_DESPOSIT
-  - foreign_key:
-      name: GC_LITHO_UUID
-      type: Guid
-      reference: GC_LITHO
-- name: GC_LITSTRAT
-  columns:
-  - foreign_key:
-      name: GC_EXPLOIT_GEOMAT_PLG_UUID
-      type: Guid
-      reference: GC_EXPLOIT_GEOMAT_PLG
-  - foreign_key:
-      name: GC_LITSTRAT_UUID
-      type: Guid
-      reference: GC_LITSTRAT
-- name: GC_TECTO
+  - name: DESCRIPTION
+    type: String
+    primary_key: false
+  - name: GEOLCODE
+    type: Integer
+    primary_key: false
+- name: TOPGIS_GC.GC_LITHO_BED
   columns:
   - name: OBJECTID
     type: OID
     primary_key: false
   - name: UUID
-    type: Guid
-    primary_key: false
-  - name: GEOL_CODE
-    type: String
-    primary_key: false
-  - name: GEOL_CODE_INT
-    type: Integer
-    primary_key: false
-  - name: GERMAN
-    type: String
-    primary_key: false
+    type: GUID
+    primary_key: true
   - name: TREE_LEVEL
     type: Integer
     primary_key: false
   - name: PARENT_REF
     type: Integer
     primary_key: false
-- name: GC_LITHO_UNCO
+  - name: DESCRIPTION
+    type: String
+    primary_key: false
+  - name: GEOLCODE
+    type: Integer
+    primary_key: false
+- name: TOPGIS_GC.GC_LITSTRAT_BED
   columns:
   - name: OBJECTID
     type: OID
     primary_key: false
   - name: UUID
-    type: Guid
-    primary_key: false
-  - name: GEOL_CODE
-    type: String
-    primary_key: false
-  - name: GEOL_CODE_INT
-    type: Integer
-    primary_key: false
-  - name: GERMAN
-    type: String
-    primary_key: false
+    type: GUID
+    primary_key: true
   - name: TREE_LEVEL
     type: Integer
     primary_key: false
   - name: PARENT_REF
     type: Integer
     primary_key: false
-- name: GC_LITHO_BED
-  columns:
-  - foreign_key:
-      name: GC_BEDROCK_UUID
-      type: Guid
-      reference: GC_BEDROCK
-  - foreign_key:
-      name: GC_LITHO_BED_UUID
-      type: Guid
-      reference: GC_LITHO_BED
-- name: GC_LITSTRAT_BED
+  - name: DESCRIPTION
+    type: String
+    primary_key: false
+  - name: GEOLCODE
+    type: Integer
+    primary_key: false
+- name: TOPGIS_GC.GC_LITSTRAT_UNCO
   columns:
   - name: OBJECTID
     type: OID
     primary_key: false
   - name: UUID
-    type: Guid
-    primary_key: false
-  - name: GEOL_CODE
-    type: String
-    primary_key: false
-  - name: GEOL_CODE_INT
-    type: Integer
-    primary_key: false
-  - name: GERMAN
-    type: String
-    primary_key: false
+    type: GUID
+    primary_key: true
   - name: TREE_LEVEL
     type: Integer
     primary_key: false
   - name: PARENT_REF
     type: Integer
     primary_key: false
-- name: GC_LITSTRAT_UNCO
+  - name: DESCRIPTION
+    type: String
+    primary_key: false
+  - name: GEOLCODE
+    type: Integer
+    primary_key: false
+- name: TOPGIS_GC.GC_GEOL_MAPPING_UNIT_ATT
   columns:
   - name: OBJECTID
     type: OID
     primary_key: false
   - name: UUID
-    type: Guid
+    type: GUID
+    primary_key: true
+  - name: LITSTRAT_FORMATION_BANK
+    type: GC_LITSTRAT_FORMATION_BANK_CD
     primary_key: false
-  - name: GEOL_CODE
+  - name: GEOL_MAPPING_UNIT
+    type: GC_GEOL_MAPPING_UNIT_CD
+    primary_key: false
+  - name: CHRONO_TOP
+    type: GC_CHRONO_CD
+    primary_key: false
+  - name: CHRONO_BOTTOM
+    type: GC_CHRONO_CD
+    primary_key: false
+  - name: LITHO_MAIN
+    type: GC_LITHO_CD
+    primary_key: false
+  - name: LITHO_SEC
+    type: GC_LITHO_CD
+    primary_key: false
+  - name: LITHO_TER
+    type: GC_LITHO_CD
+    primary_key: false
+  - name: CORRELATION
+    type: GC_CORRELATION_CD
+    primary_key: false
+- name: TOPGIS_GC.GC_SYSTEM
+  columns:
+  - name: OBJECTID
+    type: OID
+    primary_key: false
+  - name: UUID
+    type: GUID
+    primary_key: true
+  - name: DESCRIPTION
     type: String
     primary_key: false
-  - name: GEOL_CODE_INT
+  - name: GEOLCODE
     type: Integer
     primary_key: false
-  - name: GERMAN
+- name: TOPGIS_GC.GC_COMPOSIT
+  columns:
+  - name: OBJECTID
+    type: OID
+    primary_key: false
+  - name: UUID
+    type: GUID
+    primary_key: true
+  - name: DESCRIPTION
     type: String
     primary_key: false
+  - name: GEOLCODE
+    type: Integer
+    primary_key: false
+- name: TOPGIS_GC.GC_ADMIXTURE
+  columns:
+  - name: OBJECTID
+    type: OID
+    primary_key: false
+  - name: UUID
+    type: GUID
+    primary_key: true
+  - name: DESCRIPTION
+    type: String
+    primary_key: false
+  - name: GEOLCODE
+    type: Integer
+    primary_key: false
+- name: TOPGIS_GC.GC_CHARCAT
+  columns:
+  - name: OBJECTID
+    type: OID
+    primary_key: false
+  - name: UUID
+    type: GUID
+    primary_key: true
+  - name: DESCRIPTION
+    type: String
+    primary_key: false
+  - name: GEOLCODE
+    type: Integer
+    primary_key: false
+- name: TOPGIS_GC.GC_CHRONO
+  columns:
+  - name: OBJECTID
+    type: OID
+    primary_key: false
+  - name: UUID
+    type: GUID
+    primary_key: true
   - name: TREE_LEVEL
     type: Integer
     primary_key: false
   - name: PARENT_REF
     type: Integer
     primary_key: false
-- name: GC_BED_FORM_ATT
-  columns:
-  - name: OBJECTID
-    type: OID
-    primary_key: false
-  - name: UUID
-    type: Guid
-    primary_key: false
-  - name: FMAT_META_MINERAL1
-    type: GC_MINERAL_CD
-    primary_key: false
-  - name: FMAT_META_MINERAL2
-    type: GC_MINERAL_CD
-    primary_key: false
-  - name: FMAT_META_MINERAL3
-    type: GC_MINERAL_CD
-    primary_key: false
-  - name: FMAT_META_STR1
-    type: GC_META_STR_CD
-    primary_key: false
-  - name: FMAT_META_STR2
-    type: GC_META_STR_CD
-    primary_key: false
-  - name: FMAT_META_STR3
-    type: GC_META_STR_CD
-    primary_key: false
-  - name: FMAT_SEDI_BEDDING1
-    type: GC_BEDDING_CD
-    primary_key: false
-  - name: FMAT_SEDI_BEDDING2
-    type: GC_BEDDING_CD
-    primary_key: false
-  - name: FMAT_SEDI_BOND_MAT
-    type: GC_BOND_MAT_CD
-    primary_key: false
-  - name: FMAT_SEDI_MAIN_COM
-    type: GC_MAIN_COM_CD
-    primary_key: false
-  - name: FMAT_SEDI_SECO_COM1
-    type: GC_SECO_COM_CD
-    primary_key: false
-  - name: FMAT_SEDI_SECO_COM2
-    type: GC_SECO_COM_CD
-    primary_key: false
-  - name: FMAT_SEDI_STR1
-    type: GC_SEDI_STR_CD
-    primary_key: false
-  - name: FMAT_SEDI_STR2
-    type: GC_SEDI_STR_CD
-    primary_key: false
-  - name: FMAT_SEDI_TEX1
-    type: GC_SEDI_TEX_CD
-    primary_key: false
-  - name: FMAT_SEDI_TEX2
-    type: GC_SEDI_TEX_CD
-    primary_key: false
-  - name: FMAT_IGNE_TEX
-    type: GC_IGNE_TEX_CD
-    primary_key: false
-  - name: FMAT_IGNE_GRAIN_SI
-    type: GC_GRAIN_SI_CD
-    primary_key: false
-  - name: FMAT_IGNE_AFFINITY
-    type: GC_AFFINITY_CD
-    primary_key: false
-  - name: FMAT_META_FULL_NAME
+  - name: DESCRIPTION
     type: String
     primary_key: false
-  - name: FMAT_LITSTRAT
-    type: GC_LITSTRAT_BED_CD
+  - name: GEOLCODE
+    type: Integer
     primary_key: false
-- name: GC_SYSTEM
-  columns:
-  - foreign_key:
-      name: GC_FOSSILS_UUID
-      type: Guid
-      reference: GC_FOSSILS
-  - foreign_key:
-      name: GC_SYSTEM_UUID
-      type: Guid
-      reference: GC_SYSTEM
-- name: GC_COMPOSIT
-  columns:
-  - foreign_key:
-      name: GC_UNCO_DESPOSIT_UUID
-      type: Guid
-      reference: GC_UNCO_DESPOSIT
-  - foreign_key:
-      name: GC_COMPOSIT_UUID
-      type: Guid
-      reference: GC_COMPOSIT
-- name: GC_ADMIXTURE
-  columns:
-  - foreign_key:
-      name: GC_UNCO_DESPOSIT_UUID
-      type: Guid
-      reference: GC_UNCO_DESPOSIT
-  - foreign_key:
-      name: GC_ADMIXTURE_UUID
-      type: Guid
-      reference: GC_ADMIXTURE
-- name: GC_CHARCAT
-  columns:
-  - foreign_key:
-      name: GC_UNCO_DESPOSIT_UUID
-      type: Guid
-      reference: GC_UNCO_DESPOSIT
-  - foreign_key:
-      name: GC_CHARCAT_UUID
-      type: Guid
-      reference: GC_CHARCAT
-- name: GC_EXPLOIT_GEOMAT_PLG
+- name: TOPGIS_GC.GC_LITHO
   columns:
   - name: OBJECTID
     type: OID
     primary_key: false
   - name: UUID
-    type: Guid
+    type: GUID
+    primary_key: true
+  - name: TREE_LEVEL
+    type: Integer
     primary_key: false
-  - name: SYMBOL
+  - name: PARENT_REF
+    type: Integer
+    primary_key: false
+  - name: DESCRIPTION
     type: String
     primary_key: false
-  - name: AEXP_STATUS
-    type: GC_EX_GEO_PLG_AEXP_STATUS_CD
+  - name: GEOLCODE
+    type: Integer
     primary_key: false
-  - name: AEXP_TARG_MAT
-    type: GC_EX_GEO_PLG_AEXP_TARG_MAT_CD
-    primary_key: false
-  - name: SHAPE
-    type: Geometry
-    primary_key: false
-- name: GC_LINEAR_OBJECTS
+- name: TOPGIS_GC.GC_GEOL_MAPPING_UNIT
   columns:
   - name: OBJECTID
     type: OID
     primary_key: false
   - name: UUID
-    type: Guid
+    type: GUID
+    primary_key: true
+  - name: TREE_LEVEL
+    type: Integer
     primary_key: false
+  - name: DESCRIPTION
+    type: String
+    primary_key: false
+  - name: GEOLCODE
+    type: Integer
+    primary_key: false
+- name: TOPGIS_GC.GC_TECTO
+  columns:
+  - name: OBJECTID
+    type: OID
+    primary_key: false
+  - name: UUID
+    type: GUID
+    primary_key: true
+  - name: TREE_LEVEL
+    type: Integer
+    primary_key: false
+  - name: PARENT_REF
+    type: Integer
+    primary_key: false
+  - name: DESCRIPTION
+    type: String
+    primary_key: false
+  - name: GEOLCODE
+    type: Integer
+    primary_key: false
+- name: TOPGIS_GC.GC_CORRELATION
+  columns:
+  - name: OBJECTID
+    type: OID
+    primary_key: false
+  - name: UUID
+    type: GUID
+    primary_key: true
+  - name: TREE_LEVEL
+    type: Integer
+    primary_key: false
+  - name: PARENT_REF
+    type: Integer
+    primary_key: false
+  - name: DESCRIPTION
+    type: String
+    primary_key: false
+  - name: GEOLCODE
+    type: Integer
+    primary_key: false
+- name: TOPGIS_GC.GC_LITSTRAT_FORMATION_BANK
+  columns:
+  - name: OBJECTID
+    type: OID
+    primary_key: false
+  - name: UUID
+    type: GUID
+    primary_key: true
+  - name: TREE_LEVEL
+    type: Integer
+    primary_key: false
+  - name: PARENT_REF
+    type: Integer
+    primary_key: false
+  - name: DESCRIPTION
+    type: String
+    primary_key: false
+  - name: GEOLCODE
+    type: Integer
+    primary_key: false
+- name: TOPGIS_GC.GC_BEDROCK
+  columns:
+  - foreign_key:
+      name: GEOL_MAPPING_UNIT_ATT_UUID
+      type: GUID
+      reference: TOPGIS_GC.GC_GEOL_MAPPING_UNIT_ATT
+- name: TOPGIS_GC.GC_LINEAR_OBJECTS
+  columns:
+  - name: OBJECTID
+    type: OID
+    primary_key: false
+  - name: UUID
+    type: GUID
+    primary_key: true
   - name: SYMBOL
     type: String
     primary_key: false
@@ -405,14 +420,60 @@ tables:
   - name: TTEC_HIERA
     type: GC_LIN_TTEC_HIERA_CD
     primary_key: false
-- name: GC_POINT_OBJECTS
+- name: TOPGIS_GC.GC_EXPLOIT_GEOMAT_PT
   columns:
   - name: OBJECTID
     type: OID
     primary_key: false
   - name: UUID
-    type: Guid
+    type: GUID
+    primary_key: true
+  - name: SYMBOL
+    type: String
     primary_key: false
+  - name: AEXP_STATUS
+    type: GC_EX_GEO_PNT_AEXP_STATUS_CD
+    primary_key: false
+  - name: AEXP_TARG_MAT
+    type: GC_EX_GEO_PNT_AEXP_TARG_MAT_CD
+    primary_key: false
+  - name: AEXP_DEPTH_TOT
+    type: Double
+    primary_key: false
+  - name: SHAPE
+    type: Geometry
+    primary_key: false
+  - name: PRINTED
+    type: GC_BOOLEAN_CD
+    primary_key: false
+- name: TOPGIS_GC.GC_EXPLOIT_GEOMAT_PLG
+  columns:
+  - name: OBJECTID
+    type: OID
+    primary_key: false
+  - name: UUID
+    type: GUID
+    primary_key: true
+  - name: SYMBOL
+    type: String
+    primary_key: false
+  - name: AEXP_STATUS
+    type: GC_EX_GEO_PLG_AEXP_STATUS_CD
+    primary_key: false
+  - name: AEXP_TARG_MAT
+    type: GC_EX_GEO_PLG_AEXP_TARG_MAT_CD
+    primary_key: false
+  - name: SHAPE
+    type: Geometry
+    primary_key: false
+- name: TOPGIS_GC.GC_POINT_OBJECTS
+  columns:
+  - name: OBJECTID
+    type: OID
+    primary_key: false
+  - name: UUID
+    type: GUID
+    primary_key: true
   - name: SYMBOL
     type: String
     primary_key: false
@@ -420,10 +481,10 @@ tables:
     type: GC_LITHO_CD
     primary_key: false
   - name: ABOR_FM_A
-    type: GC_LITSTRAT_CD
+    type: GC_GEOL_MAPPING_UNIT_CD
     primary_key: false
   - name: ABOR_FM_B
-    type: GC_LITSTRAT_CD
+    type: GC_GEOL_MAPPING_UNIT_CD
     primary_key: false
   - name: PSLO_FORMATIO
     type: GC_LITSTRAT_BED_CD
@@ -551,9 +612,6 @@ tables:
   - name: ABOR_REF_NUMBER
     type: Integer
     primary_key: false
-  - name: ABOR_LINK
-    type: Integer
-    primary_key: false
   - name: HCON_DEPTH
     type: Double
     primary_key: false
@@ -602,43 +660,14 @@ tables:
   - name: ABOR_LITHO
     type: GC_LITHO_CD
     primary_key: false
-- name: GC_FOSSILS
+- name: TOPGIS_GC.GC_UNCO_DESPOSIT
   columns:
   - name: OBJECTID
     type: OID
     primary_key: false
   - name: UUID
-    type: Guid
-    primary_key: false
-  - name: SYMBOL
-    type: String
-    primary_key: false
-  - name: LFOS_DIVISION
-    type: GC_FOSS_LFOS_DIVISION_CD
-    primary_key: false
-  - name: LFOS_DAT_METH
-    type: GC_FOSS_LFOS_DAT_METH_CD
-    primary_key: false
-  - name: LFOS_STATUS
-    type: GC_FOSS_LFOS_STATUS_CD
-    primary_key: false
-  - name: LFOS_PROTECTED
-    type: GC_BOOLEAN_CD
-    primary_key: false
-  - name: SHAPE
-    type: Geometry
-    primary_key: false
-  - name: PRINTED
-    type: GC_BOOLEAN_CD
-    primary_key: false
-- name: GC_UNCO_DESPOSIT
-  columns:
-  - name: OBJECTID
-    type: OID
-    primary_key: false
-  - name: UUID
-    type: Guid
-    primary_key: false
+    type: GUID
+    primary_key: true
   - name: SYMBOL
     type: String
     primary_key: false
@@ -684,66 +713,58 @@ tables:
   - name: SHAPE
     type: Geometry
     primary_key: false
-- name: GC_BEDROCK
+- name: TOPGIS_GC.GC_MAPSHEET
   columns:
   - name: OBJECTID
     type: OID
     primary_key: false
   - name: UUID
-    type: Guid
-    primary_key: false
-  - name: SYMBOL
+    type: GUID
+    primary_key: true
+  - name: MSH_MAP_TITLE
     type: String
     primary_key: false
-  - name: RBED_CHRONO_T
-    type: GC_CHRONO_CD
+  - name: MSH_MAP_NBR
+    type: Integer
     primary_key: false
-  - name: RBED_CHRONO_B
-    type: GC_CHRONO_CD
-    primary_key: false
-  - name: RBED_CHRONO_B_LOC
-    type: GC_CHRONO_CD
-    primary_key: false
-  - name: RBED_CHRONO_T_LOC
-    type: GC_CHRONO_CD
-    primary_key: false
-  - name: RBED_TECTO
-    type: GC_TECTO_CD
-    primary_key: false
-  - name: RBED_HARMOS_REV
-    type: GC_HARMOS_REV_CD
-    primary_key: false
-  - name: RBED_EXOTIC_ELE
-    type: GC_BOOLEAN_CD
-    primary_key: false
-  - name: RBED_ORIG_DESCR
+  - name: MSH_MAP_SCALE
     type: String
     primary_key: false
-  - name: RBED_INDEX
+  - name: MSH_BASIS_TOPO
     type: String
     primary_key: false
-  - name: FORM_ATT
-    type: Guid
+  - name: MSH_AUTHOR
+    type: String
+    primary_key: false
+  - name: MSH_OWNER
+    type: String
+    primary_key: false
+  - name: MSH_MAPPING_PERIOD
+    type: String
+    primary_key: false
+  - name: MSH_PUBL_YEAR
+    type: Integer
+    primary_key: false
+  - name: MSH_BASIS_VECT
+    type: String
     primary_key: false
   - name: SHAPE
     type: Geometry
     primary_key: false
-  - foreign_key:
-      name: FORM_ATT
-      type: Guid
-      reference: GC_BED_FORM_ATT
-  - foreign_key:
-      name: FORM_ATT
-      type: Guid
-      reference: GC_BED_FORM_ATT
-- name: GC_SURFACES
+  - name: MSH_MORE_INFO
+    type: String
+    primary_key: false
+  - name: MSH_TOPO_NR
+    type: Integer
+    primary_key: false
+- name: TOPGIS_GC.GC_SURFACES
   columns:
   - name: OBJECTID
     type: OID
     primary_key: false
   - name: UUID
-    type: Guid
-    primary_key: false
+    type: GUID
+    primary_key: true
   - name: SYMBOL
     type: String
     primary_key: false
@@ -765,25 +786,28 @@ tables:
   - name: SHAPE
     type: Geometry
     primary_key: false
-- name: GC_EXPLOIT_GEOMAT_PT
+- name: TOPGIS_GC.GC_FOSSILS
   columns:
   - name: OBJECTID
     type: OID
     primary_key: false
   - name: UUID
-    type: Guid
-    primary_key: false
+    type: GUID
+    primary_key: true
   - name: SYMBOL
     type: String
     primary_key: false
-  - name: AEXP_STATUS
-    type: GC_EX_GEO_PNT_AEXP_STATUS_CD
+  - name: LFOS_DIVISION
+    type: GC_FOSS_LFOS_DIVISION_CD
     primary_key: false
-  - name: AEXP_TARG_MAT
-    type: GC_EX_GEO_PNT_AEXP_TARG_MAT_CD
+  - name: LFOS_DAT_METH
+    type: GC_FOSS_LFOS_DAT_METH_CD
     primary_key: false
-  - name: AEXP_DEPTH_TOT
-    type: Double
+  - name: LFOS_STATUS
+    type: GC_FOSS_LFOS_STATUS_CD
+    primary_key: false
+  - name: LFOS_PROTECTED
+    type: GC_BOOLEAN_CD
     primary_key: false
   - name: SHAPE
     type: Geometry
@@ -791,83 +815,23 @@ tables:
   - name: PRINTED
     type: GC_BOOLEAN_CD
     primary_key: false
-- name: GC_UNCO_DESPOSIT_GC_LITHO
+- name: TOPGIS_GC.GC_EXPLOIT_GEOMAT_PLG_TOPGIS_GC.GC_GEOL_MAPPING_UNIT
+  columns: []
+- name: TOPGIS_GC.GC_EXPLOIT_GEOMAT_PT_TOPGIS_GC.GC_GEOL_MAPPING_UNIT
+  columns: []
+- name: TOPGIS_GC.GC_BEDROCK_TOPGIS_GC.GC_LITHO_BED
+  columns: []
+- name: TOPGIS_GC.GC_FOSSILS_TOPGIS_GC.GC_SYSTEM
+  columns: []
+- name: TOPGIS_GC.GC_UNCO_DESPOSIT_TOPGIS_GC.GC_COMPOSIT
+  columns: []
+- name: TOPGIS_GC.GC_UNCO_DESPOSIT_TOPGIS_GC.GC_ADMIXTURE
+  columns: []
+- name: TOPGIS_GC.GC_UNCO_DESPOSIT_TOPGIS_GC.GC_CHARCAT
+  columns: []
+- name: TOPGIS_GC.GC_UNCO_DESPOSIT_TOPGIS_GC.GC_LITHO
   columns:
   - foreign_key:
-      name: GC_UNCO_DESPOSIT_UUID
-      type: Guid
-      reference: GC_UNCO_DESPOSIT
-  - foreign_key:
-      name: GC_LITHO_UUID
-      type: Guid
-      reference: GC_LITHO
-- name: GC_EXPLOIT_GEOMAT_PT_GC_LITSTRAT
-  columns:
-  - foreign_key:
-      name: GC_EXPLOIT_GEOMAT_PT_UUID
-      type: Guid
-      reference: GC_EXPLOIT_GEOMAT_PT
-  - foreign_key:
-      name: GC_LITSTRAT_UUID
-      type: Guid
-      reference: GC_LITSTRAT
-- name: GC_BEDROCK_GC_LITHO_BED
-  columns:
-  - foreign_key:
-      name: GC_BEDROCK_UUID
-      type: Guid
-      reference: GC_BEDROCK
-  - foreign_key:
-      name: GC_LITHO_BED_UUID
-      type: Guid
-      reference: GC_LITHO_BED
-- name: GC_FOSSILS_GC_SYSTEM
-  columns:
-  - foreign_key:
-      name: GC_FOSSILS_UUID
-      type: Guid
-      reference: GC_FOSSILS
-  - foreign_key:
-      name: GC_SYSTEM_UUID
-      type: Guid
-      reference: GC_SYSTEM
-- name: GC_UNCO_DESPOSIT_GC_COMPOSIT
-  columns:
-  - foreign_key:
-      name: GC_UNCO_DESPOSIT_UUID
-      type: Guid
-      reference: GC_UNCO_DESPOSIT
-  - foreign_key:
-      name: GC_COMPOSIT_UUID
-      type: Guid
-      reference: GC_COMPOSIT
-- name: GC_UNCO_DESPOSIT_GC_ADMIXTURE
-  columns:
-  - foreign_key:
-      name: GC_UNCO_DESPOSIT_UUID
-      type: Guid
-      reference: GC_UNCO_DESPOSIT
-  - foreign_key:
-      name: GC_ADMIXTURE_UUID
-      type: Guid
-      reference: GC_ADMIXTURE
-- name: GC_UNCO_DESPOSIT_GC_CHARCAT
-  columns:
-  - foreign_key:
-      name: GC_UNCO_DESPOSIT_UUID
-      type: Guid
-      reference: GC_UNCO_DESPOSIT
-  - foreign_key:
-      name: GC_CHARCAT_UUID
-      type: Guid
-      reference: GC_CHARCAT
-- name: GC_EXPLOIT_GEOMAT_PLG_GC_LITSTRAT
-  columns:
-  - foreign_key:
-      name: GC_EXPLOIT_GEOMAT_PLG_UUID
-      type: Guid
-      reference: GC_EXPLOIT_GEOMAT_PLG
-  - foreign_key:
-      name: GC_LITSTRAT_UUID
-      type: Guid
-      reference: GC_LITSTRAT
+      name: GEOL_MAPPING_UNIT_ATT_UUID
+      type: GUID
+      reference: TOPGIS_GC.GC_GEOL_MAPPING_UNIT_ATT

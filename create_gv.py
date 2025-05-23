@@ -3,7 +3,7 @@
 import os
 import sys
 import json
-import pygraphviz as pgv
+
 import yaml
 
 from loguru import logger
@@ -35,13 +35,15 @@ def removeprefix(prefix, lst):
 
 def clean(s):
     if isinstance(s, list):
-        cleaned = list(map(lambda x: x.replace("TOPGIS_GC.", ""), s))
+        cleaned = s
+        # cleaned = list(map(lambda x: x.replace("TOPGIS_GC.", ""), s))
         if len(cleaned) == 1:
             return cleaned[0]
         else:
             return cleaned
     else:
-        return s.replace("TOPGIS_GC.", "")
+        return s
+        # return s.replace("TOPGIS_GC.", "")
 
 
 IGNORE_FIELDS = [
@@ -144,44 +146,38 @@ dotfile = os.path.join(OUTPUT_DIR, basename + ".dot")
 
 
 
-
 logger.info(f"Reading Schema from {input_file}")
-with open( input_file,  "r") as f:
-    s = json.load(f)
+
+with open(input_file, "r") as f:
+    c = f.read()
+
+
+db_schema = json.loads(c)
+
+if db_schema.get("version") != 2:
+    logger.error("Wrong schema version. Exiting...")
+    sys.exit(2)
 
 
 all_tables = {}
 
-S = SQL2PUML(template_file="templates/template.puml", data=data)
-G = pgv.AGraph(strict=False, directed=False)
-
-G.graph_attr["label"] = "GCOVERP Schema (SDE)"
-G.graph_attr["fontname"] = FONTNAME
-G.graph_attr["fontsize"] = 50
-G.graph_attr["labelloc"] = "t"
+# SQL_graph = SQL2PUML(template_file="templates/template.puml", data=data)
 
 
-G.node_attr["shape"] = "box"
-G.node_attr["style"] = "filled"
-G.node_attr["color"] = "lightblue"
-G.node_attr["fontname"] = FONTNAME
-
-G.edge_attr["len"] = 2.00
-G.edge_attr["fontname"] = FONTNAME
-
-
-for t in s["tables"].keys():
-    short_name = clean(t)
-    if t.endswith("_I") or short_name in IGNORE_OBJECTS:
+for table_name in db_schema["tables"].keys():
+    short_name = clean(table_name)
+    if table_name.endswith("_I") or short_name in IGNORE_OBJECTS:
         continue
 
     logger.info(f"====Table {short_name}====")
-    G.add_node(short_name)  # adds node 'a'
-    S.add_table(short_name)
 
-    fields = s["tables"][t].get("fields", [])
+    # SQL_graph.add_table(short_name)
 
-    tt = Table(short_name)
+    fields = db_schema["tables"][table_name].get(
+        "fields", []
+    )  # TODO shoud be fields: []
+
+    table_object = Table(short_name)
     for field in fields:
         name = field.get("name")
         if name in IGNORE_FIELDS:
@@ -191,31 +187,30 @@ for t in s["tables"].keys():
             if field.get("domain") is not None
             else field.get("type")
         )
-        S.add_column(name, typ)
+        # SQL_graph.add_column(name, typ)
         if name.lower() == "uuid":
             primary = True
         else:
             primary = False
 
-        tt.columns.append(Column(name, typ, primary=primary))
-    all_tables[short_name] = tt
+        table_object.columns.append(Column(name, typ, primary=primary))
+    all_tables[short_name] = table_object
 
-    logger.info(tt)
+    logger.info(table_object)
 
 
-G.node_attr["color"] = "lightcoral"
-for f in s["featclasses"].keys():
-    short_name = clean(f)
+for field_name in db_schema["featclasses"].keys():
+    short_name = clean(field_name)
 
-    fields = s["featclasses"][f]["fields"]
+    fields = db_schema["featclasses"][field_name]["fields"]
 
-    if f.endswith("_I") or short_name in IGNORE_OBJECTS:
+    if field_name.endswith("_I") or short_name in IGNORE_OBJECTS:
         logger.debug(short_name)
         continue
     logger.info(f"========FeatureClass {short_name}===============")
-    G.add_node(short_name)  # adds node 'a'
-    S.add_table(short_name)
-    t = FeatureClass(short_name, "Geometry")
+
+    # SQL_graph.add_table(short_name)
+    featclass = FeatureClass(short_name, "Geometry")
     for field in fields:
         name = field.get("name")
         if name in IGNORE_FIELDS:
@@ -229,34 +224,29 @@ for f in s["featclasses"].keys():
             if field.get("domain") is not None
             else field.get("type")
         )
-        S.add_column(name, typ)
-        t.columns.append(Column(name, typ, primary=primary))
-    all_tables[short_name] = t
-
-G.node_attr["color"] = "lightgrey"
-G.node_attr["style"] = "filled"
-G.node_attr["shape"] = "diamond"
+        # SQL_graph.add_column(name, typ)
+        featclass.columns.append(Column(name, typ, primary=primary))
+    all_tables[short_name] = featclass
 
 
-relations = [r for r in s["relationships"].keys() if not r.endswith("_I")]
+relations = [r for r in db_schema["relationships"].keys() if not r.endswith("_I")]
 
 for i, r in enumerate(relations):
     cr = clean(r)
 
-    rr = s["relationships"][r]
+    rr = db_schema["relationships"][r]
     cardinality = rr["cardinality"]
-
-    G.add_node(rr.get("forwardPathLabel", str(i)))
 
 
 for i, r in enumerate(relations):
-    rr = s["relationships"][r]
+    rr = db_schema["relationships"][r]
     cr = clean(r)
     short_name = clean(r)
-    logger.info(f"========Relationship {short_name}===============")
+    logger.info(f"------- Relationship {short_name} ----------")
+    logger.info(rr)
     cardinality = rr["cardinality"]
-    origin = clean(rr["origin"])
-    destination = clean(rr["destination"])
+    origin_name = clean(rr["origin"])
+    destination_name = clean(rr["destination"])
     fwd_label = rr.get(
         "forwardPathLabel",
         str(i),
@@ -269,25 +259,24 @@ for i, r in enumerate(relations):
         rev_lbl = "m"
     else:
         rev_lbl = "1"
-    # print(short_name, f"({cardinality}):", origin, "-->", destination)
-    G.add_edge(origin, fwd_label, label=fwd_lbl)
-    G.add_edge(fwd_label, destination, label=rev_lbl)
 
-    if cardinality == "OneToMany":
-        ori_table = all_tables.get(origin)
-        dest_table = all_tables.get(destination)
+    if "OneToMany" in cardinality:
+        logger.info("  One to Many")
+        ori_table = all_tables.get(origin_name)
+        dest_table = all_tables.get(destination_name)
         keys = rr.get("originClassKeys")
+        logger.info(f"origin keys: {keys}")
         pri_key = None
         fk_key = None
         for k in keys:
-            role = k["role"]
-            name = k["name"]
-            if role == "OriginPrimary":
+            role = k["keyRole"]
+            name = k["objectKeyName"]
+            if "OriginPrimary" in role:
                 pri_key = name
             else:
                 fk_key = name
         if fk_key is None or pri_key is None:
-            logger.error("ERROR")
+            logger.error(f"ERROR: key ")
             continue
 
         # fk = ColumnFK(name, type_, reference
@@ -296,19 +285,20 @@ for i, r in enumerate(relations):
         logger.debug(f"FK: {pri_key}", [col.name for col in ori_table.columns], kk)
         if kk is not None:
             type_ = kk.type_
-            col = ColumnFK(fk_key, type_, origin)
+            col = ColumnFK(fk_key, type_, origin_name)
             dest_table.columns.append(col)
 
-            all_tables[destination] = dest_table
+            all_tables[destination_name] = dest_table
 
-    if cardinality == "ManyToMany":
-        new_table = f"{origin}_{destination}"  # tiret not allowed
+    if "ManyToMany" in cardinality:
+        new_table = f"{origin_name}_{destination_name}"  # tiret not allowed
         logger.info(f"New name: '{new_table}', original: '{cr}'")
         if new_table in all_tables.keys():
             logger.info(f'Discarding Relationships "ManyToMany" {new_table}')
             continue
-        ori_table = all_tables.get(origin)
-        dest_table = all_tables.get(destination)
+        logger.info(origin_name)
+        ori_table = all_tables.get(origin_name)
+        dest_table = all_tables.get(destination_name)
         ori_keys = rr.get("originClassKeys")
         dest_keys = rr.get("destinationClassKeys")
         pri_key = None
@@ -317,8 +307,8 @@ for i, r in enumerate(relations):
         def get_keys(keys):
             d = {}
             for k in keys:
-                role = k["role"]
-                name = k["name"]
+                role = k["keyRole"]
+                name = k["objectKeyName"]
                 if "Primary" in role:
                     d["pk"] = name
                 else:
@@ -330,33 +320,49 @@ for i, r in enumerate(relations):
         keys["destination"] = get_keys(dest_keys)
 
         logger.warning(
-            f'Relationships "ManyToMany" {ori_table.name} --> {dest_table.name}'
+            f'Relationships "ManyToMany" {origin_name} --> {destination_name}'
         )
 
-        t = Table(new_table, relation=True, cardinality="ManyToMany")
+        table = Table(new_table, relation=True, cardinality="ManyToMany")
         # t.columns.append(Column(keys["origin"]["fk"], "int"))
         # t.columns.append(Column(keys["destination"]["fk"], "int"))
-        all_tables[new_table] = t
+        all_tables[new_table] = table
 
         # fk = ColumnFK(name, type_, reference
 
-        ori_pk = ori_table.get_column(keys["origin"]["pk"], erase=False)
-        logger.debug(f"FK: {ori_pk}", [col.name for col in ori_table.columns], ori_pk)
+        if ori_table:
+            ori_pk = ori_table.get_column(keys["origin"]["pk"], erase=False)
+            logger.debug(
+                f"FK: {ori_pk}", [col.name for col in ori_table.columns], ori_pk
+            )
+    else:
+        logger.warning(f"Cannot find config for {origin_name}")
         if ori_pk is not None:
             type_ = ori_pk.type_
-            col = ColumnFK(keys["origin"]["fk"], type_, origin)
-            t.columns.append(col)
+            logger.info(f"{ori_pk}, {keys}")
+            fk_name = None
+            for k in keys:
+                if "esriRelKeyRoleOriginForeign" in k.get("keyRole", ""):
+                    fk_name = k.get("objectKeyName")
+                    break
+            if fk_name:
+                # col = ColumnFK(keys["origin"]["fk"], type_, origin_name)
+                col = ColumnFK(fk_name, type_, origin_name)
 
-        dest_pk = ori_table.get_column(keys["destination"]["pk"], erase=False)
+                table.columns.append(col)
+
+        # dest_pk = ori_table.get_column(keys["destination"]["pk"], erase=False)
+        dest_pk = ori_table.get_column(ori_pk, erase=False)
         logger.debug(
             f"FK: {dest_pk}", [col.name for col in dest_table.columns], dest_pk
         )
         if dest_pk is not None:
             type_ = dest_pk.type_
-            col = ColumnFK(keys["destination"]["fk"], type_, destination)
-            t.columns.append(col)
+            col = ColumnFK(keys["destination"]["fk"], type_, destination_name)
+            table.columns.append(col)
 
-        all_tables[destination] = t
+        all_tables[destination_name] = table
+
 
 '''
 G.layout()  # default to neato
@@ -379,26 +385,30 @@ import pprint
 from ruamel.yaml import YAML
 from collections import OrderedDict
 
+
 db_config = {"database": "GCOVERP", "version": 1, "tables": []}
 
-logger.info("-----------------------")
+logger.info("------------ttt-----------")
 
-SP = SQL2PUML(template_file="templates/template.puml", data=data)
+
+Sql2PUML = SQL2PUML(template_file="templates/template.puml", data=data)
 for name, table in all_tables.items():
-    logger.info(f"----{name}----")
+    if "GC_" not in name:
+        continue
+    logger.info(f"===== TABLE: {name} =====")
     # logger.info()
 
-    if SP.puml_tables.get(name) is not None:
-        SP.current_table = name
+    if Sql2PUML.puml_tables.get(name) is not None:
+        Sql2PUML.current_table = name
     else:
-        SP.add_table(name)
-    tt = {"name": name, "columns": []}
+        Sql2PUML.add_table(name)
+    table_object = {"name": name, "columns": []}
     # pprint.pprint(table.columns)
     for col in table.columns:
         c = {}
         if isinstance(col, ColumnFK):
-            # print(f"{col.name} is foreign")
-            SP.add_column_foreign(col.name, col.type_, col.reference)
+            logger.info(f"    {col.name} is foreign")
+            Sql2PUML.add_column_foreign(col.name, col.type_, col.reference)
             c = {
                 "foreign_key": {
                     "name": col.name,
@@ -409,49 +419,61 @@ for name, table in all_tables.items():
 
         else:
             if col.primary is True:
-                logger.debug(f"PK: {col.name}")
-                SP.add_column_primary(col.name, col.type_)
+                logger.info(f"    PK: {col.name}")
+                Sql2PUML.add_column_primary(col.name, col.type_)
             else:
-                # print(f"{col.name} is not foreign {type(col)}")
-                SP.add_column(col.name, col.type_)
+                logger.info(f"    {col.name}")
+                Sql2PUML.add_column(col.name, col.type_)
             c = {"name": col.name, "type": col.type_, "primary_key": primary}
-        tt["columns"].append(c)
-    db_config["tables"].append(tt)
+        table_object["columns"].append(c)
+    db_config["tables"].append(table_object)
 
 
-logger.info(s)
-coded_domains = s.get("coded_domain")
+coded_domains = db_schema.get("coded_domain")
+
 for name in coded_domains.keys():
-    logger.info(f"----{name}----")
+    # logger.info(f"----{name}----")
     domain_dict = coded_domains[name]
-    SP.add_enum(name, domain_dict)
+    Sql2PUML.add_enum(name, domain_dict)
 
 # pprint.pprint(db_config)
 
-for table_name, table in SP.puml_tables.items():
-    for t in ("default", "primary", "foreign"):
-        for fk in table[t].keys():
-            logger.debug(f"{table_name}, {t}, {fk}")
+
+# Only debug?
+# for table_name, table in SQL_graph.puml_tables.items():
+#     for t in ("default", "primary", "foreign"):
+#         for fk in table[t].keys():
+#             logger.debug(f"{table_name}, {t}, {fk}")
+
 
 puml_file = os.path.join(OUTPUT_DIR, "ER-GCOVER.puml")
 
 
-with open(puml_file, "w") as f:
-    f.write(S.transform())
+
+with open(puml_file, "w") as field_name:
+    field_name.write(Sql2PUML.transform())
+
 
 yaml_file = os.path.join(OUTPUT_DIR, "GCOVERP.yaml")
 
-with open(yaml_file, "w") as f:
+with open(yaml_file, "w") as field_name:
     yaml.dump(
         db_config,
-        f,
+        field_name,
         default_flow_style=False,
         sort_keys=False,
         allow_unicode=True,
         encoding=("utf-8"),
     )
 
-logger.debug(f"Template was: {SP.puml_template}")
+
+logger.debug(f"Template was: {Sql2PUML.puml_template}")
+
 
 logger.info(f"Writing PUML diagram to {puml_file}")
 logger.info(f"Writing YAML structure to {yaml_file}")
+
+# TOPGIS_GC.GC_BEDROCK "0..n" -- "1..1" TOPGIS_GC.GC_GEOL_MAPPING_UNIT_ATT
+# class(TOPGIS_GC.GC_BEDROCK) {
+# 	foreign_key(GEOL_MAPPING_UNIT_ATT_UUID,TOPGIS_GC.GC_GEOL_MAPPING_UNIT_ATT) GUID
+# }
