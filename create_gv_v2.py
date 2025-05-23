@@ -12,7 +12,6 @@ from sql2puml import SQL2PUML
 from typing import Union, List
 
 
-
 FONTNAME = "DejaVu Sans,Nimbus Sans"
 
 OUTPUT_DIR = "outputs"
@@ -49,7 +48,9 @@ def clean(s):
         # return s.replace("TOPGIS_GC.", "")
 
 
-def remove_prefix(text: Union[str, List[str]], prefix: str = "TOPGIS_GC.") -> Union[str, List[str]]:
+def remove_prefix(
+    text: Union[str, List[str]], prefix: str = "TOPGIS_GC."
+) -> Union[str, List[str]]:
     """
     Remove a prefix from a string or list of strings while preserving the original type.
 
@@ -62,7 +63,7 @@ def remove_prefix(text: Union[str, List[str]], prefix: str = "TOPGIS_GC.") -> Un
     """
 
     def _remove_single_prefix(s: str) -> str:
-        return s[len(prefix):] if s.startswith(prefix) else s
+        return s[len(prefix) :] if s.startswith(prefix) else s
 
     if isinstance(text, str):
         return _remove_single_prefix(text)
@@ -71,6 +72,7 @@ def remove_prefix(text: Union[str, List[str]], prefix: str = "TOPGIS_GC.") -> Un
         return cleaned[0] if len(cleaned) == 1 else cleaned
     else:
         return text
+
 
 IGNORE_FIELDS = [
     "OPERATOR",
@@ -98,7 +100,7 @@ IGNORE_FIELDS = [
 ]
 
 
-IGNORE_OBJECTS = clean(
+IGNORE_OBJECTS = remove_prefix(
     [
         "DELIVERY_MANAGER.TOPDV_RELEASE_CHANGES",
         "TOPGIS_GC.GC_CONFLICT_ROW",
@@ -113,19 +115,29 @@ IGNORE_OBJECTS = clean(
         "GC_VERSION",
         "GC_MAPSHEET",
         "GC_CONFLICT_ROW",
-        "TOPGIS_GC.GC_ERRORS_ROW"
+        "TOPGIS_GC.GC_ERRORS_ROW",
     ]
 )
 
 # Helper classes for better data organization
 from collections import namedtuple
 
-RelationshipInfo = namedtuple('RelationshipInfo', [
-    'name', 'cardinality', 'origin_name', 'destination_name',
-    'forward_label', 'origin_keys', 'destination_keys'
-])
+RelationshipInfo = namedtuple(
+    "RelationshipInfo",
+    [
+        "name",
+        "cardinality",
+        "origin_name",
+        "destination_name",
+        "forward_label",
+        "origin_keys",
+        "destination_keys",
+    ],
+)
 
-KeyMapping = namedtuple('KeyMapping', ['primary_key', 'foreign_key'])
+KeyMapping = namedtuple("KeyMapping", ["primary_key", "foreign_key"])
+
+
 class Column:
     def __init__(self, name, type_, primary=False):
         self.name = name
@@ -193,6 +205,7 @@ if db_schema.get("version") != 2:
 
 all_tables = {}
 
+
 # SQL_graph = SQL2PUML(template_file="templates/template.puml", data=data)
 def process_database_tables(db_schema, ignore_objects, ignore_fields, logger):
     """
@@ -217,7 +230,7 @@ def process_database_tables(db_schema, ignore_objects, ignore_fields, logger):
             ignore_objects,
             ignore_fields,
             logger,
-            is_spatial=False
+            is_spatial=False,
         )
 
     # Process spatial feature classes
@@ -228,14 +241,20 @@ def process_database_tables(db_schema, ignore_objects, ignore_fields, logger):
             ignore_objects,
             ignore_fields,
             logger,
-            is_spatial=True
+            is_spatial=True,
         )
 
     return processed_tables
 
 
-def _process_table_collection(table_collection, processed_tables, ignore_objects, ignore_fields, logger,
-                              is_spatial=False):
+def _process_table_collection(
+    table_collection,
+    processed_tables,
+    ignore_objects,
+    ignore_fields,
+    logger,
+    is_spatial=False,
+):
     """Process a collection of tables or feature classes."""
     table_type = "Feature Class" if is_spatial else "Table"
 
@@ -248,7 +267,9 @@ def _process_table_collection(table_collection, processed_tables, ignore_objects
         logger.info(f"====Processing {table_type}: {clean_table_name}====")
 
         table_fields = table_collection[raw_table_name].get("fields", [])
-        table_object = _create_table_with_columns(clean_table_name, table_fields, ignore_fields, is_spatial)
+        table_object = _create_table_with_columns(
+            clean_table_name, table_fields, ignore_fields, is_spatial
+        )
 
         processed_tables[clean_table_name] = table_object
         logger.info(table_object)
@@ -261,10 +282,14 @@ def _should_skip_table(raw_table_name, clean_table_name, ignore_objects):
     return is_internal_table or is_ignored_table
 
 
-def _create_table_with_columns(table_name, table_fields, ignore_fields, is_spatial=False):
+def _create_table_with_columns(
+    table_name, table_fields, ignore_fields, is_spatial=False
+):
     """Create a Table object and populate it with processed columns."""
     # Create table with spatial indicator if it's a feature class
-    table_object = Table(table_name, is_spatial=is_spatial) if is_spatial else Table(table_name)
+    table_object = (
+        Table(table_name, is_spatial=is_spatial) if is_spatial else Table(table_name)
+    )
 
     for field_definition in table_fields:
         column = _process_table_field(field_definition, ignore_fields, is_spatial)
@@ -303,9 +328,9 @@ def _process_table_field(field_definition, ignore_fields, is_spatial=False):
 
     # Check if this is a geometry field (common in feature classes)
     is_geometry_field = (
-            is_spatial and
-            field_type and
-            ("geometry" in field_type.lower() or "shape" in field_name.lower())
+        is_spatial
+        and field_type
+        and ("geometry" in field_type.lower() or "shape" in field_name.lower())
     )
 
     # Mark geometry fields differently for PlantUML visualization
@@ -340,7 +365,8 @@ def process_database_relationships(db_schema, all_tables, logger):
         clean_relationship_name = clean(relationship_name)
 
         logger.info(
-            f"------- Processing Relationship {relationship_index + 1}/{len(valid_relationships)}: {clean_relationship_name} ----------")
+            f"------- Processing Relationship {relationship_index + 1}/{len(valid_relationships)}: {clean_relationship_name} ----------"
+        )
         logger.info(f"Cardinality: {relationship_data.get('cardinality', 'Unknown')}")
 
         _process_single_relationship(
@@ -348,7 +374,7 @@ def process_database_relationships(db_schema, all_tables, logger):
             clean_relationship_name,
             relationship_index,
             all_tables,
-            logger
+            logger,
         )
 
     return all_tables
@@ -363,7 +389,9 @@ def _get_valid_relationships(db_schema):
     ]
 
 
-def _process_single_relationship(relationship_data, relationship_name, relationship_index, all_tables, logger):
+def _process_single_relationship(
+    relationship_data, relationship_name, relationship_index, all_tables, logger
+):
     """Process a single relationship based on its cardinality type."""
     cardinality = relationship_data["cardinality"]
     origin_table_name = remove_prefix(relationship_data["origin"])
@@ -374,12 +402,16 @@ def _process_single_relationship(relationship_data, relationship_name, relations
         cardinality=cardinality,
         origin_name=origin_table_name,
         destination_name=destination_table_name,
-        forward_label=relationship_data.get("forwardPathLabel", str(relationship_index)),
+        forward_label=relationship_data.get(
+            "forwardPathLabel", str(relationship_index)
+        ),
         origin_keys=relationship_data.get("originClassKeys", []),
-        destination_keys=relationship_data.get("destinationClassKeys", [])
+        destination_keys=relationship_data.get("destinationClassKeys", []),
     )
 
-    logger.info(f"  Origin: {origin_table_name} -> Destination: {destination_table_name}")
+    logger.info(
+        f"  Origin: {origin_table_name} -> Destination: {destination_table_name}"
+    )
 
     if "OneToMany" in cardinality:
         _handle_one_to_many_relationship(relationship_info, all_tables, logger)
@@ -388,7 +420,9 @@ def _process_single_relationship(relationship_data, relationship_name, relations
     elif "OneToOne" in cardinality:
         _handle_one_to_one_relationship(relationship_info, all_tables, logger)
     else:
-        logger.warning(f"Unsupported cardinality type: {cardinality} for relationship {relationship_name}")
+        logger.warning(
+            f"Unsupported cardinality type: {cardinality} for relationship {relationship_name}"
+        )
 
 
 def _handle_one_to_one_relationship(relationship_info, all_tables, logger):
@@ -407,7 +441,8 @@ def _handle_one_to_many_relationship(relationship_info, all_tables, logger):
 
     if not origin_table or not destination_table:
         logger.error(
-            f"Missing table(s): origin={relationship_info.origin_name}, dest={relationship_info.destination_name}")
+            f"Missing table(s): origin={relationship_info.origin_name}, dest={relationship_info.destination_name}"
+        )
         return
 
     key_mapping = _extract_key_mapping(relationship_info.origin_keys, logger)
@@ -417,29 +452,37 @@ def _handle_one_to_many_relationship(relationship_info, all_tables, logger):
     # Get the primary key column from origin table to determine foreign key type
     primary_key_column = origin_table.get_column(key_mapping.primary_key, erase=False)
     if not primary_key_column:
-        logger.error(f"Primary key '{key_mapping.primary_key}' not found in origin table")
+        logger.error(
+            f"Primary key '{key_mapping.primary_key}' not found in origin table"
+        )
         return
 
     # Add foreign key column to destination table
     foreign_key_column = ColumnFK(
         name=key_mapping.foreign_key,
         type_=primary_key_column.type_,
-        reference=relationship_info.origin_name
+        reference=relationship_info.origin_name,
     )
     destination_table.columns.append(foreign_key_column)
     all_tables[relationship_info.destination_name] = destination_table
 
-    logger.debug(f"Added FK: {key_mapping.foreign_key} -> {relationship_info.origin_name}")
+    logger.debug(
+        f"Added FK: {key_mapping.foreign_key} -> {relationship_info.origin_name}"
+    )
 
 
 def _handle_many_to_many_relationship(relationship_info, all_tables, logger):
     """Handle ManyToMany relationship by creating junction table."""
-    junction_table_name = f"{relationship_info.origin_name}_{relationship_info.destination_name}"
+    junction_table_name = (
+        f"{relationship_info.origin_name}_{relationship_info.destination_name}"
+    )
     logger.info(f"  Processing Many-to-Many relationship")
     logger.info(f"  Creating junction table: '{junction_table_name}'")
 
     if junction_table_name in all_tables:
-        logger.info(f'  Junction table "{junction_table_name}" already exists - skipping')
+        logger.info(
+            f'  Junction table "{junction_table_name}" already exists - skipping'
+        )
         return
 
     origin_table = all_tables.get(relationship_info.origin_name)
@@ -450,49 +493,79 @@ def _handle_many_to_many_relationship(relationship_info, all_tables, logger):
         return
 
     if not destination_table:
-        logger.warning(f"  Destination table '{relationship_info.destination_name}' not found")
+        logger.warning(
+            f"  Destination table '{relationship_info.destination_name}' not found"
+        )
         return
 
     # Extract key information for both sides of the relationship
-    origin_key_mapping = _extract_key_mapping(relationship_info.origin_keys, logger, "origin")
-    destination_key_mapping = _extract_key_mapping(relationship_info.destination_keys, logger, "destination")
+    origin_key_mapping = _extract_key_mapping(
+        relationship_info.origin_keys, logger, "origin"
+    )
+    destination_key_mapping = _extract_key_mapping(
+        relationship_info.destination_keys, logger, "destination"
+    )
 
     # Create junction table
     junction_table = Table(junction_table_name, relation=True, cardinality="ManyToMany")
 
     # Add foreign key columns from both tables
     success_origin = _add_foreign_key_to_junction_table(
-        junction_table, origin_table, origin_key_mapping,
-        relationship_info.origin_name, relationship_info.origin_keys, logger, "origin"
+        junction_table,
+        origin_table,
+        origin_key_mapping,
+        relationship_info.origin_name,
+        relationship_info.origin_keys,
+        logger,
+        "origin",
     )
 
     success_destination = _add_foreign_key_to_junction_table(
-        junction_table, destination_table, destination_key_mapping,
-        relationship_info.destination_name, relationship_info.destination_keys, logger, "destination"
+        junction_table,
+        destination_table,
+        destination_key_mapping,
+        relationship_info.destination_name,
+        relationship_info.destination_keys,
+        logger,
+        "destination",
     )
 
     if success_origin or success_destination:
         all_tables[junction_table_name] = junction_table
         logger.info(f"  Successfully created junction table: {junction_table_name}")
     else:
-        logger.error(f"  Failed to create junction table: {junction_table_name} - no valid foreign keys found")
+        logger.error(
+            f"  Failed to create junction table: {junction_table_name} - no valid foreign keys found"
+        )
 
 
-def _add_foreign_key_to_junction_table(junction_table, source_table, key_mapping, source_table_name, source_keys,
-                                       logger, table_role):
+def _add_foreign_key_to_junction_table(
+    junction_table,
+    source_table,
+    key_mapping,
+    source_table_name,
+    source_keys,
+    logger,
+    table_role,
+):
     """Add a foreign key column to the junction table from a source table."""
     if not source_table:
-        logger.warning(f"  {table_role.capitalize()} table '{source_table_name}' not found")
+        logger.warning(
+            f"  {table_role.capitalize()} table '{source_table_name}' not found"
+        )
         return False
 
     if not key_mapping:
-        logger.warning(f"  No key mapping found for {table_role} table '{source_table_name}'")
+        logger.warning(
+            f"  No key mapping found for {table_role} table '{source_table_name}'"
+        )
         return False
 
     primary_key_column = source_table.get_column(key_mapping.primary_key, erase=False)
     if not primary_key_column:
         logger.warning(
-            f"  Primary key '{key_mapping.primary_key}' not found in {table_role} table '{source_table_name}'")
+            f"  Primary key '{key_mapping.primary_key}' not found in {table_role} table '{source_table_name}'"
+        )
         return False
 
     # Look for specific foreign key name in the relationship keys
@@ -504,13 +577,17 @@ def _add_foreign_key_to_junction_table(junction_table, source_table, key_mapping
         foreign_key_column = ColumnFK(
             name=foreign_key_name,
             type_=primary_key_column.type_,
-            reference=source_table_name
+            reference=source_table_name,
         )
         junction_table.columns.append(foreign_key_column)
-        logger.debug(f"  Added FK to junction table: {foreign_key_name} -> {source_table_name}")
+        logger.debug(
+            f"  Added FK to junction table: {foreign_key_name} -> {source_table_name}"
+        )
         return True
     else:
-        logger.warning(f"  No foreign key name found for {table_role} table '{source_table_name}'")
+        logger.warning(
+            f"  No foreign key name found for {table_role} table '{source_table_name}'"
+        )
         return False
 
 
@@ -556,65 +633,76 @@ def _extract_key_mapping(key_definitions, logger, table_role=""):
                 foreign_key = key_name
 
     if not primary_key and not foreign_key:
-        logger.error(f"  No valid keys found for {table_role} table - Primary: {primary_key}, Foreign: {foreign_key}")
+        logger.error(
+            f"  No valid keys found for {table_role} table - Primary: {primary_key}, Foreign: {foreign_key}"
+        )
         return None
 
     # If we have primary key but no foreign key, use primary key name as foreign key base
     if primary_key and not foreign_key:
         foreign_key = primary_key
 
-    logger.debug(f"  Extracted keys for {table_role}: Primary='{primary_key}', Foreign='{foreign_key}'")
+    logger.debug(
+        f"  Extracted keys for {table_role}: Primary='{primary_key}', Foreign='{foreign_key}'"
+    )
     return KeyMapping(primary_key=primary_key, foreign_key=foreign_key)
 
 
 # Helper classes for better data organization
 from collections import namedtuple
 
-RelationshipInfo = namedtuple('RelationshipInfo', [
-    'name', 'cardinality', 'origin_name', 'destination_name',
-    'forward_label', 'origin_keys', 'destination_keys'
-])
+RelationshipInfo = namedtuple(
+    "RelationshipInfo",
+    [
+        "name",
+        "cardinality",
+        "origin_name",
+        "destination_name",
+        "forward_label",
+        "origin_keys",
+        "destination_keys",
+    ],
+)
 
-KeyMapping = namedtuple('KeyMapping', ['primary_key', 'foreign_key'])
+KeyMapping = namedtuple("KeyMapping", ["primary_key", "foreign_key"])
 
 
-def generate_puml_diagram(all_tables, coded_domains=None, diagram_title="Database Schema", logger=None):
+def generate_puml_diagram(
+    all_tables, diagram_title="Database Schema", logger=None, **kwargs
+):
     """
-    Generate PlantUML diagram from processed database tables and coded domains.
+    Generate PlantUML diagram from processed database tables with configurable styling.
 
     Args:
         all_tables: Dictionary of table_name -> Table objects
-        coded_domains: Dictionary of coded domains (enumerations) from db_schema
         diagram_title: Title for the PlantUML diagram
         logger: Optional logger for debugging
+        **kwargs: Styling parameters (colors, fonts, etc.)
 
     Returns:
         str: Complete PlantUML diagram as string
     """
     if logger:
-        logger.info(
-            f"Generating PlantUML diagram for {len(all_tables)} tables and {len(coded_domains or {})} coded domains")
+        logger.info(f"Generating PlantUML diagram for {len(all_tables)} tables")
 
     puml_lines = []
 
-    # PlantUML header with styling
-    puml_lines.extend(_generate_header(diagram_title))
-
-    # Generate coded domains (enumerations)
-    if coded_domains:
-        domain_lines = _generate_coded_domains(coded_domains)
-        puml_lines.extend(domain_lines)
-        puml_lines.append("")
+    # Generate header with styling config
+    header_lines, config = _generate_header(diagram_title, **kwargs)
+    puml_lines.extend(header_lines)
 
     # Generate table definitions
     for table_name, table_object in all_tables.items():
-        table_puml = _generate_table_definition(table_name, table_object)
+        table_puml = _generate_table_definition(table_name, table_object, config)
         puml_lines.extend(table_puml)
         puml_lines.append("")
 
     # Generate relationships
     relationship_lines = _generate_relationships(all_tables)
     puml_lines.extend(relationship_lines)
+
+    # Ugly, end rectangle
+    puml_lines.append("}")
 
     # PlantUML footer
     puml_lines.append("@enduml")
@@ -623,69 +711,109 @@ def generate_puml_diagram(all_tables, coded_domains=None, diagram_title="Databas
 
     if logger:
         logger.info("PlantUML diagram generation completed")
-        logger.debug(f"Generated diagram:\n{diagram}")
 
     return diagram
 
 
-def _generate_header(diagram_title):
-    """Generate PlantUML header with universal color styling."""
+def _generate_header(diagram_title, **kwargs):
+    """Generate PlantUML header with customizable styling parameters."""
+    defaults = {
+        "font_size": 10,
+        "line_type": "ortho",
+        "line_color": "#E1F5FE",
+        "font_color": "#E1F5FE",
+        "theme": "plain",
+        "regular_table_color": "#E1F5FE",
+        "spatial_table_color": "#E8F5E8",
+        "junction_table_color": "#FFF8E1",
+        "relation_table_color": "#F3E5F5",
+        "bg_color": "#F3E5F5",
+    }
+
+    config = {**defaults, **kwargs}
+
     header_lines = [
         "@startuml",
-        "!theme plain",
+        f"!theme {config['theme']}",
         "",
-        "' Universal styling that works with all PlantUML renderers",
-        "skinparam linetype ortho",  # Square/orthogonal lines
-        "skinparam defaultFontSize 10",
+        f"skinparam linetype {config['line_type']}",
+        f"skinparam defaultFontSize {config['font_size']}",
+        "skinparam rectangle {",
+        "  roundCorner 50",
+        f"  BackGroundColor {config['bg_color']}",
+        "  LineThickness 10",
+        f"  LineColor {config['line_color']}",
+        "}",
         "",
-        f"title {diagram_title}",
+        f"skinparam TitlefontColor  {config['line_color']}",
+        f"skinparam TitleFontSize {config['font_size'] * 3}",
         "",
+        "scale 1",
+        "",
+        f"rectangle   {config['bg_color']};line:CD5656;line.bold; {{",
     ]
-    return header_lines
+
+    if config.get("bg_color"):
+        header_lines.append(f"skinparam backgroundColor {config['bg_color']}")
+
+    header_lines.extend(["", f"title {diagram_title}", ""])
+
+    return header_lines, config
 
 
-def _generate_table_definition(table_name, table_object):
-    """Generate PlantUML definition for a single table with inline colors and clean names."""
+def _generate_table_definition(table_name, table_object, config):
+    """Generate PlantUML definition for a single table with configurable colors."""
     lines = []
 
-    # Clean table name by removing schema prefixes for display and alias
     display_name = _clean_table_name_for_display(table_name)
     alias_name = _clean_table_name_for_alias(table_name)
 
-    # Determine table type and apply inline colors
-    if hasattr(table_object, 'relation') and table_object.relation:
-        # Junction table - yellow background
-        if hasattr(table_object, 'cardinality') and table_object.cardinality == "ManyToMany":
-            lines.append(f"entity \"{display_name}\" as {alias_name} <<junction>> #FFF8E1 {{")
+    # Apply configurable colors based on table type
+    if hasattr(table_object, "relation") and table_object.relation:
+        if (
+            hasattr(table_object, "cardinality")
+            and table_object.cardinality == "ManyToMany"
+        ):
+            lines.append(
+                f"entity \"{display_name}\" as {alias_name} <<junction>> {config['junction_table_color']} {{"
+            )
         else:
-            lines.append(f"entity \"{display_name}\" as {alias_name} <<relation>> #F3E5F5 {{")
-    elif hasattr(table_object, 'is_spatial') and table_object.is_spatial:
-        # Feature class - green background with spatial icon
-        lines.append(f"entity \"{display_name} 🗺️\" as {alias_name} <<spatial>> #E8F5E8 {{")
+            lines.append(
+                f"entity \"{display_name}\" as {alias_name} <<relation>> {config['relation_table_color']} {{"
+            )
+    elif hasattr(table_object, "is_spatial") and table_object.is_spatial:
+        lines.append(
+            f"entity \"{display_name} 🗺️\" as {alias_name} <<spatial>> {config['spatial_table_color']} {{"
+        )
     else:
-        # Regular table - blue background with table icon
-        lines.append(f"entity \"{display_name} 📋\" as {alias_name} #E1F5FE {{")
+        lines.append(
+            f"entity \"{display_name} 📋\" as {alias_name} {config['regular_table_color']} {{"
+        )
 
     # Add columns
-    if hasattr(table_object, 'columns') and table_object.columns:
-        # Group columns by type for better organization
+    if hasattr(table_object, "columns") and table_object.columns:
         primary_keys = []
         foreign_keys = []
         geometry_columns = []
         regular_columns = []
 
         for column in table_object.columns:
-            if getattr(column, 'primary', False):
+            if getattr(column, "primary", False):
                 primary_keys.append(column)
-            elif hasattr(column, 'reference'):
+            elif hasattr(column, "reference"):
                 foreign_keys.append(column)
-            elif hasattr(column, 'type_') and column.type_ and '[GEOMETRY]' in str(column.type_):
+            elif (
+                hasattr(column, "type_")
+                and column.type_
+                and "[GEOMETRY]" in str(column.type_)
+            ):
                 geometry_columns.append(column)
             else:
                 regular_columns.append(column)
 
-        # Add columns in order: PK, regular columns, geometry columns, FK
-        all_ordered_columns = primary_keys + regular_columns + geometry_columns + foreign_keys
+        all_ordered_columns = (
+            primary_keys + regular_columns + geometry_columns + foreign_keys
+        )
 
         if primary_keys:
             lines.append("  --")
@@ -694,8 +822,9 @@ def _generate_table_definition(table_name, table_object):
             column_line = _format_column_definition(column)
             lines.append(f"  {column_line}")
 
-            # Add separator after primary keys and before foreign keys
-            if column in primary_keys and (regular_columns or geometry_columns or foreign_keys):
+            if column in primary_keys and (
+                regular_columns or geometry_columns or foreign_keys
+            ):
                 lines.append("  --")
             elif column in geometry_columns and foreign_keys:
                 lines.append("  --")
@@ -703,191 +832,120 @@ def _generate_table_definition(table_name, table_object):
         lines.append("  -- No columns defined --")
 
     lines.append("}")
-
     return lines
-
-
-def _clean_table_name_for_display(table_name):
-    """Clean table name for display by removing schema prefixes."""
-    # Remove common schema prefixes
-    if '.' in table_name:
-        parts = table_name.split('.')
-        # If it starts with TOPGIS_GC or similar schema, remove it
-        if len(parts) >= 2 and parts[0].upper().startswith('TOPGIS'):
-            return '.'.join(parts[1:])  # Remove first part
-        elif len(parts) >= 2:
-            return parts[-1]  # Just use the last part (table name)
-
-    return table_name
-
-
-def _clean_table_name_for_alias(table_name):
-    """Clean table name for use as PlantUML alias (no dots, spaces, or special chars)."""
-    # Replace dots, spaces, and special characters with underscores
-    clean_name = table_name.replace('.', '_').replace(' ', '_').replace('-', '_')
-    # Remove any remaining special characters except alphanumeric and underscore
-    clean_name = ''.join(c for c in clean_name if c.isalnum() or c == '_')
-    return clean_name
-
-
-def _generate_coded_domains(coded_domains):
-    """Generate PlantUML enum definitions for coded domains with inline colors."""
-    domain_lines = ["' Coded Domains (Enumerations)"]
-
-    for domain_name, domain_data in coded_domains.items():
-        clean_domain_name = remove_prefix(domain_name) if 'remove_prefix' in globals() else domain_name.replace(' ', '_')  # was clean
-
-        # Orange background for enums
-        domain_lines.append(f"enum {clean_domain_name} #FFF3E0 {{")
-
-        # Extract coded values
-        coded_values = domain_data.get('codedValues', [])
-        if coded_values:
-            for coded_value in coded_values:
-                code = coded_value.get('code', 'UNKNOWN')
-                name = coded_value.get('name', str(code))
-                # Format: CODE : "Description"
-                domain_lines.append(f"  {code} : \"{name}\"")
-        else:
-            domain_lines.append("  -- No coded values --")
-
-        domain_lines.append("}")
-        domain_lines.append("")
-
-    return domain_lines
 
 
 def _format_column_definition(column):
     """Format a single column definition for PlantUML with enhanced styling."""
-    # Get column properties
-    name = getattr(column, 'name', 'unknown')
-    type_ = getattr(column, 'type_', 'unknown')
-    is_primary = getattr(column, 'primary', False)
-    is_foreign_key = hasattr(column, 'reference')
+    name = getattr(column, "name", "unknown")
+    type_ = getattr(column, "type_", "unknown")
+    is_primary = getattr(column, "primary", False)
+    is_foreign_key = hasattr(column, "reference")
 
-    # Format type (remove [GEOMETRY] prefix for cleaner display)
-    display_type = type_.replace('[GEOMETRY] ', '') if type_ else 'unknown'
+    display_type = type_.replace("[GEOMETRY] ", "") if type_ else "unknown"
 
-    # Build column definition with icons and enhanced formatting
     if is_primary:
-        # Primary key with key icon
-        column_def = f"🔑 **{name}** : {display_type} <<PK>>"
+        return f"🔑 **{name}** : {display_type} <<PK>>"
     elif is_foreign_key:
-        # Foreign key with link icon
-        reference = getattr(column, 'reference', 'unknown')
-        column_def = f"🔗 {name} : {display_type} <<FK➜{reference}>>"
+        reference = getattr(column, "reference", "unknown")
+        clean_reference = _clean_table_name_for_display(reference)
+        return f"🔗 {name} : {display_type} <<FK➜{clean_reference}>>"
     else:
-        # Check for special column types
-        if type_ and '[GEOMETRY]' in str(type_):
-            # Geometry column with map icon
-            column_def = f"🗺️ {name} : {display_type} <<GEOMETRY>>"
-        elif name.lower() in ['created_at', 'updated_at', 'date', 'timestamp']:
-            # Date/time columns with clock icon
-            column_def = f"🕐 {name} : {display_type}"
-        elif name.lower() in ['email', 'mail']:
-            # Email columns with mail icon
-            column_def = f"📧 {name} : {display_type}"
-        elif name.lower() in ['phone', 'telephone', 'mobile']:
-            # Phone columns with phone icon
-            column_def = f"📱 {name} : {display_type}"
-        elif name.lower() in ['url', 'website', 'link']:
-            # URL columns with link icon
-            column_def = f"🌐 {name} : {display_type}"
-        elif 'status' in name.lower() or 'state' in name.lower():
-            # Status columns with status icon
-            column_def = f"📊 {name} : {display_type}"
+        if type_ and "[GEOMETRY]" in str(type_):
+            return f"🗺️ {name} : {display_type} <<GEOMETRY>>"
+        elif name.lower() in ["created_at", "updated_at", "date", "timestamp"]:
+            return f"🕐 {name} : {display_type}"
+        elif name.lower() in ["email", "mail"]:
+            return f"📧 {name} : {display_type}"
+        elif name.lower() in ["phone", "telephone", "mobile"]:
+            return f"📱 {name} : {display_type}"
+        elif name.lower() in ["url", "website", "link"]:
+            return f"🌐 {name} : {display_type}"
+        elif "status" in name.lower() or "state" in name.lower():
+            return f"📊 {name} : {display_type}"
         else:
-            # Regular column
-            column_def = f"  {name} : {display_type}"
-
-    return column_def
+            return f"  {name} : {display_type}"
 
 
 def _generate_relationships(all_tables):
-    """Generate PlantUML relationship definitions with orthogonal lines."""
-    relationship_lines = []
-    relationship_lines.append("' Relationships (with orthogonal lines)")
-
+    """Generate PlantUML relationship definitions with clean aliases."""
+    relationship_lines = ["' Relationships"]
     processed_relationships = set()
 
     for table_name, table_object in all_tables.items():
-        if not hasattr(table_object, 'columns'):
+        if not hasattr(table_object, "columns"):
             continue
 
+        table_alias = _clean_table_name_for_alias(table_name)
+
         for column in table_object.columns:
-            if hasattr(column, 'reference'):
+            if hasattr(column, "reference"):
                 reference_table = column.reference
+                reference_alias = _clean_table_name_for_alias(reference_table)
 
-                rel_id = f"{reference_table}->{table_name}"
-                reverse_rel_id = f"{table_name}->{reference_table}"
+                rel_id = f"{reference_alias}->{table_alias}"
+                reverse_rel_id = f"{table_alias}->{reference_alias}"
 
-                if rel_id not in processed_relationships and reverse_rel_id not in processed_relationships:
-                    # Enhanced relationship notation with cardinality
-                    if hasattr(table_object, 'relation') and table_object.relation:
-                        if hasattr(table_object, 'cardinality') and table_object.cardinality == "ManyToMany":
-                            # Many-to-many through junction table
-                            relationship_lines.append(f"{reference_table} ||--o{{ {table_name} : \"M:N junction\"")
+                if (
+                    rel_id not in processed_relationships
+                    and reverse_rel_id not in processed_relationships
+                ):
+                    if hasattr(table_object, "relation") and table_object.relation:
+                        if (
+                            hasattr(table_object, "cardinality")
+                            and table_object.cardinality == "ManyToMany"
+                        ):
+                            relationship_lines.append(
+                                f'{reference_alias} ||--o{{ {table_alias} : "1:n"'
+                            )
                         else:
-                            # Other relation types
-                            relationship_lines.append(f"{reference_table} ||--|| {table_name} : \"relation\"")
+                            relationship_lines.append(
+                                f"{reference_alias} ||--|| {table_alias}"
+                            )
                     else:
-                        # One-to-many relationship
-                        column_name = getattr(column, 'name', 'fk')
-                        relationship_lines.append(f"{reference_table} ||--o{{ {table_name} : \"{column_name}\"")
+                        column_name = getattr(column, "name", "fk")
+                        relationship_lines.append(
+                            f'{reference_alias} ||--o{{ {table_alias} : "{column_name}"'
+                        )
 
                     processed_relationships.add(rel_id)
 
     return relationship_lines
 
 
-def _detect_many_to_many_relationships(all_tables):
-    """
-    Detect many-to-many relationships through junction tables.
-    This is a helper function that could be used for more sophisticated relationship detection.
-    """
-    many_to_many_relationships = []
-
-    for table_name, table_object in all_tables.items():
-        if hasattr(table_object, 'relation') and table_object.relation:
-            # This is a junction table
-            foreign_keys = [
-                col for col in getattr(table_object, 'columns', [])
-                if hasattr(col, 'reference')
-            ]
-
-            if len(foreign_keys) == 2:
-                # Classic many-to-many junction table
-                table1 = foreign_keys[0].reference
-                table2 = foreign_keys[1].reference
-                many_to_many_relationships.append((table1, table2, table_name))
-
-    return many_to_many_relationships
+def _clean_table_name_for_display(table_name):
+    """Clean table name for display by removing schema prefixes."""
+    if "." in table_name:
+        parts = table_name.split(".")
+        if len(parts) >= 2 and parts[0].upper().startswith("TOPGIS"):
+            return ".".join(parts[1:])
+        elif len(parts) >= 2:
+            return parts[-1]
+    return table_name
 
 
-# Enhanced convenience function to save diagram to file
-def save_puml_diagram(all_tables, coded_domains=None, filename="database_schema.puml", diagram_title="Database Schema",
-                      logger=None):
-    """
-    Generate and save enhanced PlantUML diagram to file.
+def _clean_table_name_for_alias(table_name):
+    """Clean table name for use as PlantUML alias."""
+    clean_name = table_name.replace(".", "_").replace(" ", "_").replace("-", "_")
+    return "".join(c for c in clean_name if c.isalnum() or c == "_")
 
-    Args:
-        all_tables: Dictionary of table_name -> Table objects
-        coded_domains: Dictionary of coded domains from db_schema
-        filename: Output filename
-        diagram_title: Title for the diagram
-        logger: Optional logger
 
-    Returns:
-        str: The generated PlantUML content
-    """
-    puml_content = generate_puml_diagram(all_tables, coded_domains, diagram_title, logger)
+def save_puml_diagram(
+    all_tables,
+    filename="database_schema.puml",
+    diagram_title="Database Schema",
+    logger=None,
+    **kwargs,
+):
+    """Generate and save PlantUML diagram to file with custom styling."""
+    puml_content = generate_puml_diagram(all_tables, diagram_title, logger, **kwargs)
 
     try:
-        with open(filename, 'w', encoding='utf-8') as f:
+        with open(filename, "w", encoding="utf-8") as f:
             f.write(puml_content)
 
         if logger:
-            logger.info(f"Enhanced PlantUML diagram saved to: {filename}")
+            logger.info(f"PlantUML diagram saved to: {filename}")
     except Exception as e:
         if logger:
             logger.error(f"Failed to save PlantUML diagram: {e}")
@@ -896,64 +954,32 @@ def save_puml_diagram(all_tables, coded_domains=None, filename="database_schema.
     return puml_content
 
 
-def process_coded_domains(db_schema, ignore_domains=None, logger=None):
-    """
-    Process coded domains from database schema.
-
-    Args:
-        db_schema: Database schema JSON containing coded domain definitions
-        ignore_domains: Set of domain names to skip (optional)
-        logger: Logger instance for debugging
-
-    Returns:
-        dict: Dictionary of processed coded domains
-    """
-    if "domains" not in db_schema:
-        if logger:
-            logger.info("No coded domains found in schema")
-        return {}
-
-    ignore_domains = ignore_domains or set()
-    processed_domains = {}
-
-    domains = db_schema["domains"]
-    if logger:
-        logger.info(f"Processing {len(domains)} coded domains")
-
-    for domain_name, domain_data in domains.items():
-        if domain_name in ignore_domains:
-            continue
-
-        # Only process coded value domains (enumerations)
-        domain_type = domain_data.get("type", "")
-        if "codedvalue" in domain_type.lower() or "coded" in domain_type.lower():
-            clean_domain_name = remove_prefix(domain_name) if 'remove_prefix' in globals() else domain_name  # clean
-            processed_domains[clean_domain_name] = domain_data
-
-            if logger:
-                coded_values_count = len(domain_data.get('codedValues', []))
-                logger.debug(f"  Processed domain '{clean_domain_name}' with {coded_values_count} coded values")
-
-    if logger:
-        logger.info(f"Processed {len(processed_domains)} coded domains")
-
-    return processed_domains
-
 from pprint import pprint
+
 all_tables = process_database_tables(db_schema, IGNORE_OBJECTS, IGNORE_FIELDS, logger)
 
 
-all_tables  = process_database_relationships(db_schema, all_tables, logger)
+all_tables = process_database_relationships(db_schema, all_tables, logger)
 
 pprint(all_tables)
 
-#coded_domains = process_coded_domains(db_schema, domain_prefix='GC_', logger=logger)
+# coded_domains = process_coded_domains(db_schema, domain_prefix='GC_', logger=logger)
 # pprint(coded_domains)
 # Generate PlantUML diagram
 
-puml_diagram = generate_puml_diagram(all_tables, diagram_title="Geocover Schema v4.1\nMai 2025", logger=logger)
+diagram = generate_puml_diagram(all_tables, "My Database")
 
+# Custom styling
+diagram = generate_puml_diagram(
+    all_tables,
+    "Geocover 5.0 May 2025",
+    font_size=12,
+    spatial_table_color="#ECA77F",
+    regular_table_color="#F4C8A6",
+    theme="plain",
+    bg_color="#F5DEBC",
+)
 
+with open("database_schema.puml", "w") as f:
+    f.write(diagram)
 # Or save to file
-
-save_puml_diagram(all_tables, coded_domains=None, filename="database_schema.puml", diagram_title="GeoCover Schema\nMai 2025", logger=logger)
