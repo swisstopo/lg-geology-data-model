@@ -1,5 +1,5 @@
 ---
-title: Datenmodell Geologie, Revision 4.1.0 (232d8ba) 
+title: Geological datamodel, Revision 4.1.0 (5379256) 
 subtitle: Beschreibung und Datenkatalog
 author: Bundesamt für Landestopographie swisstopo
 date:  Mai 2025
@@ -17,7 +17,10 @@ lang: de
 # Custom LaTeX headers
 # Left-align all tables
 header-includes: |
-    \usepackage[margins=raggedright]{floatrow} 
+    \usepackage[margins=raggedright]{floatrow}
+    \usepackage{pdflscape}
+    \newcommand{\blandscape}{\begin{landscape}}
+    \newcommand{\elandscape}{\end{landscape}}
 
 
 fontsize: 9pt
