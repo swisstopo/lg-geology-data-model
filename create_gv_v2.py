@@ -9,6 +9,9 @@ import yaml
 from loguru import logger
 
 from sql2puml import SQL2PUML
+from typing import Union, List
+
+
 
 FONTNAME = "DejaVu Sans,Nimbus Sans"
 
@@ -45,6 +48,29 @@ def clean(s):
         return s
         # return s.replace("TOPGIS_GC.", "")
 
+
+def remove_prefix(text: Union[str, List[str]], prefix: str = "TOPGIS_GC.") -> Union[str, List[str]]:
+    """
+    Remove a prefix from a string or list of strings while preserving the original type.
+
+    Args:
+        text: String or list of strings to process
+        prefix: Prefix to remove (default: "TOPGIS_GC.")
+
+    Returns:
+        Cleaned string or list of strings with prefix removed
+    """
+
+    def _remove_single_prefix(s: str) -> str:
+        return s[len(prefix):] if s.startswith(prefix) else s
+
+    if isinstance(text, str):
+        return _remove_single_prefix(text)
+    elif isinstance(text, list):
+        cleaned = [_remove_single_prefix(s) for s in text]
+        return cleaned[0] if len(cleaned) == 1 else cleaned
+    else:
+        return text
 
 IGNORE_FIELDS = [
     "OPERATOR",
@@ -214,7 +240,7 @@ def _process_table_collection(table_collection, processed_tables, ignore_objects
     table_type = "Feature Class" if is_spatial else "Table"
 
     for raw_table_name in table_collection.keys():
-        clean_table_name = clean(raw_table_name)
+        clean_table_name = remove_prefix(raw_table_name)  # was clean
 
         if _should_skip_table(raw_table_name, clean_table_name, ignore_objects):
             continue
@@ -340,8 +366,8 @@ def _get_valid_relationships(db_schema):
 def _process_single_relationship(relationship_data, relationship_name, relationship_index, all_tables, logger):
     """Process a single relationship based on its cardinality type."""
     cardinality = relationship_data["cardinality"]
-    origin_table_name = clean(relationship_data["origin"])
-    destination_table_name = clean(relationship_data["destination"])
+    origin_table_name = remove_prefix(relationship_data["origin"])
+    destination_table_name = remove_prefix(relationship_data["destination"])
 
     relationship_info = RelationshipInfo(
         name=relationship_name,
@@ -551,25 +577,14 @@ RelationshipInfo = namedtuple('RelationshipInfo', [
 
 KeyMapping = namedtuple('KeyMapping', ['primary_key', 'foreign_key'])
 
-from pprint import pprint
-all_tables = process_database_tables(db_schema, IGNORE_OBJECTS, IGNORE_FIELDS, logger)
 
-
-all_tables  = process_database_relationships(db_schema, all_tables, logger)
-
-pprint(all_tables)
-
-
-
-
-
-
-def generate_puml_diagram(all_tables, diagram_title="Database Schema", logger=None):
+def generate_puml_diagram(all_tables, coded_domains=None, diagram_title="Database Schema", logger=None):
     """
-    Generate PlantUML diagram from processed database tables.
+    Generate PlantUML diagram from processed database tables and coded domains.
 
     Args:
         all_tables: Dictionary of table_name -> Table objects
+        coded_domains: Dictionary of coded domains (enumerations) from db_schema
         diagram_title: Title for the PlantUML diagram
         logger: Optional logger for debugging
 
@@ -577,15 +592,19 @@ def generate_puml_diagram(all_tables, diagram_title="Database Schema", logger=No
         str: Complete PlantUML diagram as string
     """
     if logger:
-        logger.info(f"Generating PlantUML diagram for {len(all_tables)} tables")
+        logger.info(
+            f"Generating PlantUML diagram for {len(all_tables)} tables and {len(coded_domains or {})} coded domains")
 
     puml_lines = []
 
-    # PlantUML header
-    puml_lines.append("@startuml")
-    puml_lines.append(f"!theme plain")
-    puml_lines.append(f"title {diagram_title}")
-    puml_lines.append("")
+    # PlantUML header with styling
+    puml_lines.extend(_generate_header(diagram_title))
+
+    # Generate coded domains (enumerations)
+    if coded_domains:
+        domain_lines = _generate_coded_domains(coded_domains)
+        puml_lines.extend(domain_lines)
+        puml_lines.append("")
 
     # Generate table definitions
     for table_name, table_object in all_tables.items():
@@ -609,29 +628,77 @@ def generate_puml_diagram(all_tables, diagram_title="Database Schema", logger=No
     return diagram
 
 
+def _generate_header(diagram_title):
+    """Generate PlantUML header with universal color styling."""
+    header_lines = [
+        "@startuml",
+        "!theme plain",
+        "",
+        "' Universal styling that works with all PlantUML renderers",
+        "skinparam linetype ortho",  # Square/orthogonal lines
+        "skinparam defaultFontSize 10",
+        "",
+        f"title {diagram_title}",
+        "",
+    ]
+    return header_lines
+
+
 def _generate_table_definition(table_name, table_object):
-    """Generate PlantUML definition for a single table."""
+    """Generate PlantUML definition for a single table with inline colors and clean names."""
     lines = []
 
-    # Determine table type and styling
+    # Clean table name by removing schema prefixes for display and alias
+    display_name = _clean_table_name_for_display(table_name)
+    alias_name = _clean_table_name_for_alias(table_name)
+
+    # Determine table type and apply inline colors
     if hasattr(table_object, 'relation') and table_object.relation:
-        # Junction table styling
+        # Junction table - yellow background
         if hasattr(table_object, 'cardinality') and table_object.cardinality == "ManyToMany":
-            lines.append(f"entity {table_name} <<junction>> {{")
+            lines.append(f"entity \"{display_name}\" as {alias_name} <<junction>> #FFF8E1 {{")
         else:
-            lines.append(f"entity {table_name} <<relation>> {{")
+            lines.append(f"entity \"{display_name}\" as {alias_name} <<relation>> #F3E5F5 {{")
     elif hasattr(table_object, 'is_spatial') and table_object.is_spatial:
-        # Feature class styling
-        lines.append(f"entity {table_name} <<spatial>> {{")
+        # Feature class - green background with spatial icon
+        lines.append(f"entity \"{display_name} 🗺️\" as {alias_name} <<spatial>> #E8F5E8 {{")
     else:
-        # Regular table
-        lines.append(f"entity {table_name} {{")
+        # Regular table - blue background with table icon
+        lines.append(f"entity \"{display_name} 📋\" as {alias_name} #E1F5FE {{")
 
     # Add columns
     if hasattr(table_object, 'columns') and table_object.columns:
+        # Group columns by type for better organization
+        primary_keys = []
+        foreign_keys = []
+        geometry_columns = []
+        regular_columns = []
+
         for column in table_object.columns:
+            if getattr(column, 'primary', False):
+                primary_keys.append(column)
+            elif hasattr(column, 'reference'):
+                foreign_keys.append(column)
+            elif hasattr(column, 'type_') and column.type_ and '[GEOMETRY]' in str(column.type_):
+                geometry_columns.append(column)
+            else:
+                regular_columns.append(column)
+
+        # Add columns in order: PK, regular columns, geometry columns, FK
+        all_ordered_columns = primary_keys + regular_columns + geometry_columns + foreign_keys
+
+        if primary_keys:
+            lines.append("  --")
+
+        for column in all_ordered_columns:
             column_line = _format_column_definition(column)
             lines.append(f"  {column_line}")
+
+            # Add separator after primary keys and before foreign keys
+            if column in primary_keys and (regular_columns or geometry_columns or foreign_keys):
+                lines.append("  --")
+            elif column in geometry_columns and foreign_keys:
+                lines.append("  --")
     else:
         lines.append("  -- No columns defined --")
 
@@ -640,65 +707,133 @@ def _generate_table_definition(table_name, table_object):
     return lines
 
 
+def _clean_table_name_for_display(table_name):
+    """Clean table name for display by removing schema prefixes."""
+    # Remove common schema prefixes
+    if '.' in table_name:
+        parts = table_name.split('.')
+        # If it starts with TOPGIS_GC or similar schema, remove it
+        if len(parts) >= 2 and parts[0].upper().startswith('TOPGIS'):
+            return '.'.join(parts[1:])  # Remove first part
+        elif len(parts) >= 2:
+            return parts[-1]  # Just use the last part (table name)
+
+    return table_name
+
+
+def _clean_table_name_for_alias(table_name):
+    """Clean table name for use as PlantUML alias (no dots, spaces, or special chars)."""
+    # Replace dots, spaces, and special characters with underscores
+    clean_name = table_name.replace('.', '_').replace(' ', '_').replace('-', '_')
+    # Remove any remaining special characters except alphanumeric and underscore
+    clean_name = ''.join(c for c in clean_name if c.isalnum() or c == '_')
+    return clean_name
+
+
+def _generate_coded_domains(coded_domains):
+    """Generate PlantUML enum definitions for coded domains with inline colors."""
+    domain_lines = ["' Coded Domains (Enumerations)"]
+
+    for domain_name, domain_data in coded_domains.items():
+        clean_domain_name = remove_prefix(domain_name) if 'remove_prefix' in globals() else domain_name.replace(' ', '_')  # was clean
+
+        # Orange background for enums
+        domain_lines.append(f"enum {clean_domain_name} #FFF3E0 {{")
+
+        # Extract coded values
+        coded_values = domain_data.get('codedValues', [])
+        if coded_values:
+            for coded_value in coded_values:
+                code = coded_value.get('code', 'UNKNOWN')
+                name = coded_value.get('name', str(code))
+                # Format: CODE : "Description"
+                domain_lines.append(f"  {code} : \"{name}\"")
+        else:
+            domain_lines.append("  -- No coded values --")
+
+        domain_lines.append("}")
+        domain_lines.append("")
+
+    return domain_lines
+
+
 def _format_column_definition(column):
-    """Format a single column definition for PlantUML."""
+    """Format a single column definition for PlantUML with enhanced styling."""
     # Get column properties
     name = getattr(column, 'name', 'unknown')
     type_ = getattr(column, 'type_', 'unknown')
     is_primary = getattr(column, 'primary', False)
-    is_foreign_key = hasattr(column, 'reference')  # Assuming ColumnFK has reference attribute
+    is_foreign_key = hasattr(column, 'reference')
 
     # Format type (remove [GEOMETRY] prefix for cleaner display)
     display_type = type_.replace('[GEOMETRY] ', '') if type_ else 'unknown'
 
-    # Build column definition
+    # Build column definition with icons and enhanced formatting
     if is_primary:
-        # Primary key
-        column_def = f"* **{name}** : {display_type} <<PK>>"
+        # Primary key with key icon
+        column_def = f"🔑 **{name}** : {display_type} <<PK>>"
     elif is_foreign_key:
-        # Foreign key
+        # Foreign key with link icon
         reference = getattr(column, 'reference', 'unknown')
-        column_def = f"* {name} : {display_type} <<FK to {reference}>>"
+        column_def = f"🔗 {name} : {display_type} <<FK➜{reference}>>"
     else:
-        # Regular column
-        if type_ and '[GEOMETRY]' in type_:
-            column_def = f"  {name} : {display_type} <<GEOMETRY>>"
+        # Check for special column types
+        if type_ and '[GEOMETRY]' in str(type_):
+            # Geometry column with map icon
+            column_def = f"🗺️ {name} : {display_type} <<GEOMETRY>>"
+        elif name.lower() in ['created_at', 'updated_at', 'date', 'timestamp']:
+            # Date/time columns with clock icon
+            column_def = f"🕐 {name} : {display_type}"
+        elif name.lower() in ['email', 'mail']:
+            # Email columns with mail icon
+            column_def = f"📧 {name} : {display_type}"
+        elif name.lower() in ['phone', 'telephone', 'mobile']:
+            # Phone columns with phone icon
+            column_def = f"📱 {name} : {display_type}"
+        elif name.lower() in ['url', 'website', 'link']:
+            # URL columns with link icon
+            column_def = f"🌐 {name} : {display_type}"
+        elif 'status' in name.lower() or 'state' in name.lower():
+            # Status columns with status icon
+            column_def = f"📊 {name} : {display_type}"
         else:
+            # Regular column
             column_def = f"  {name} : {display_type}"
 
     return column_def
 
 
 def _generate_relationships(all_tables):
-    """Generate PlantUML relationship definitions based on foreign keys."""
+    """Generate PlantUML relationship definitions with orthogonal lines."""
     relationship_lines = []
-    relationship_lines.append("' Relationships")
+    relationship_lines.append("' Relationships (with orthogonal lines)")
 
-    processed_relationships = set()  # Avoid duplicate relationships
+    processed_relationships = set()
 
     for table_name, table_object in all_tables.items():
         if not hasattr(table_object, 'columns'):
             continue
 
         for column in table_object.columns:
-            if hasattr(column, 'reference'):  # This is a foreign key
+            if hasattr(column, 'reference'):
                 reference_table = column.reference
 
-                # Create relationship identifier to avoid duplicates
                 rel_id = f"{reference_table}->{table_name}"
                 reverse_rel_id = f"{table_name}->{reference_table}"
 
                 if rel_id not in processed_relationships and reverse_rel_id not in processed_relationships:
-                    # Determine relationship type
+                    # Enhanced relationship notation with cardinality
                     if hasattr(table_object, 'relation') and table_object.relation:
-                        # Junction table - many-to-many relationship
                         if hasattr(table_object, 'cardinality') and table_object.cardinality == "ManyToMany":
-                            relationship_lines.append(f"{reference_table} ||--o{{ {table_name}")
+                            # Many-to-many through junction table
+                            relationship_lines.append(f"{reference_table} ||--o{{ {table_name} : \"M:N junction\"")
                         else:
-                            relationship_lines.append(f"{reference_table} ||--|| {table_name}")
+                            # Other relation types
+                            relationship_lines.append(f"{reference_table} ||--|| {table_name} : \"relation\"")
                     else:
-                        # Regular foreign key - one-to-many relationship
-                        relationship_lines.append(f"{reference_table} ||--o{{ {table_name}")
+                        # One-to-many relationship
+                        column_name = getattr(column, 'name', 'fk')
+                        relationship_lines.append(f"{reference_table} ||--o{{ {table_name} : \"{column_name}\"")
 
                     processed_relationships.add(rel_id)
 
@@ -729,13 +864,15 @@ def _detect_many_to_many_relationships(all_tables):
     return many_to_many_relationships
 
 
-# Convenience function to save diagram to file
-def save_puml_diagram(all_tables, filename="database_schema.puml", diagram_title="Database Schema", logger=None):
+# Enhanced convenience function to save diagram to file
+def save_puml_diagram(all_tables, coded_domains=None, filename="database_schema.puml", diagram_title="Database Schema",
+                      logger=None):
     """
-    Generate and save PlantUML diagram to file.
+    Generate and save enhanced PlantUML diagram to file.
 
     Args:
         all_tables: Dictionary of table_name -> Table objects
+        coded_domains: Dictionary of coded domains from db_schema
         filename: Output filename
         diagram_title: Title for the diagram
         logger: Optional logger
@@ -743,14 +880,14 @@ def save_puml_diagram(all_tables, filename="database_schema.puml", diagram_title
     Returns:
         str: The generated PlantUML content
     """
-    puml_content = generate_puml_diagram(all_tables, diagram_title, logger)
+    puml_content = generate_puml_diagram(all_tables, coded_domains, diagram_title, logger)
 
     try:
         with open(filename, 'w', encoding='utf-8') as f:
             f.write(puml_content)
 
         if logger:
-            logger.info(f"PlantUML diagram saved to: {filename}")
+            logger.info(f"Enhanced PlantUML diagram saved to: {filename}")
     except Exception as e:
         if logger:
             logger.error(f"Failed to save PlantUML diagram: {e}")
@@ -758,9 +895,65 @@ def save_puml_diagram(all_tables, filename="database_schema.puml", diagram_title
 
     return puml_content
 
+
+def process_coded_domains(db_schema, ignore_domains=None, logger=None):
+    """
+    Process coded domains from database schema.
+
+    Args:
+        db_schema: Database schema JSON containing coded domain definitions
+        ignore_domains: Set of domain names to skip (optional)
+        logger: Logger instance for debugging
+
+    Returns:
+        dict: Dictionary of processed coded domains
+    """
+    if "domains" not in db_schema:
+        if logger:
+            logger.info("No coded domains found in schema")
+        return {}
+
+    ignore_domains = ignore_domains or set()
+    processed_domains = {}
+
+    domains = db_schema["domains"]
+    if logger:
+        logger.info(f"Processing {len(domains)} coded domains")
+
+    for domain_name, domain_data in domains.items():
+        if domain_name in ignore_domains:
+            continue
+
+        # Only process coded value domains (enumerations)
+        domain_type = domain_data.get("type", "")
+        if "codedvalue" in domain_type.lower() or "coded" in domain_type.lower():
+            clean_domain_name = remove_prefix(domain_name) if 'remove_prefix' in globals() else domain_name  # clean
+            processed_domains[clean_domain_name] = domain_data
+
+            if logger:
+                coded_values_count = len(domain_data.get('codedValues', []))
+                logger.debug(f"  Processed domain '{clean_domain_name}' with {coded_values_count} coded values")
+
+    if logger:
+        logger.info(f"Processed {len(processed_domains)} coded domains")
+
+    return processed_domains
+
+from pprint import pprint
+all_tables = process_database_tables(db_schema, IGNORE_OBJECTS, IGNORE_FIELDS, logger)
+
+
+all_tables  = process_database_relationships(db_schema, all_tables, logger)
+
+pprint(all_tables)
+
+#coded_domains = process_coded_domains(db_schema, domain_prefix='GC_', logger=logger)
+# pprint(coded_domains)
 # Generate PlantUML diagram
-puml_diagram = generate_puml_diagram(all_tables, "My Database Schema", logger)
-print(puml_diagram)
+
+puml_diagram = generate_puml_diagram(all_tables, diagram_title="Geocover Schema v4.1\nMai 2025", logger=logger)
+
 
 # Or save to file
-save_puml_diagram(all_tables, "my_schema.puml", "My Database Schema", logger)
+
+save_puml_diagram(all_tables, coded_domains=None, filename="database_schema.puml", diagram_title="GeoCover Schema\nMai 2025", logger=logger)
