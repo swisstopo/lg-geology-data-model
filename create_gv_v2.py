@@ -558,94 +558,209 @@ all_tables = process_database_tables(db_schema, IGNORE_OBJECTS, IGNORE_FIELDS, l
 all_tables  = process_database_relationships(db_schema, all_tables, logger)
 
 pprint(all_tables)
-sys.exit()
 
 
 
 
 
-db_config = {"database": "GCOVERP", "version": 1, "tables": []}
 
-logger.info("------------ttt-----------")
+def generate_puml_diagram(all_tables, diagram_title="Database Schema", logger=None):
+    """
+    Generate PlantUML diagram from processed database tables.
+
+    Args:
+        all_tables: Dictionary of table_name -> Table objects
+        diagram_title: Title for the PlantUML diagram
+        logger: Optional logger for debugging
+
+    Returns:
+        str: Complete PlantUML diagram as string
+    """
+    if logger:
+        logger.info(f"Generating PlantUML diagram for {len(all_tables)} tables")
+
+    puml_lines = []
+
+    # PlantUML header
+    puml_lines.append("@startuml")
+    puml_lines.append(f"!theme plain")
+    puml_lines.append(f"title {diagram_title}")
+    puml_lines.append("")
+
+    # Generate table definitions
+    for table_name, table_object in all_tables.items():
+        table_puml = _generate_table_definition(table_name, table_object)
+        puml_lines.extend(table_puml)
+        puml_lines.append("")
+
+    # Generate relationships
+    relationship_lines = _generate_relationships(all_tables)
+    puml_lines.extend(relationship_lines)
+
+    # PlantUML footer
+    puml_lines.append("@enduml")
+
+    diagram = "\n".join(puml_lines)
+
+    if logger:
+        logger.info("PlantUML diagram generation completed")
+        logger.debug(f"Generated diagram:\n{diagram}")
+
+    return diagram
 
 
-Sql2PUML = SQL2PUML(template_file="templates/template.puml", data=data)
-for name, table in all_tables.items():
-    if "GC_" not in name:
-        continue
-    logger.info(f"===== TABLE: {name} =====")
-    # logger.info()
+def _generate_table_definition(table_name, table_object):
+    """Generate PlantUML definition for a single table."""
+    lines = []
 
-    if Sql2PUML.puml_tables.get(name) is not None:
-        Sql2PUML.current_table = name
-    else:
-        Sql2PUML.add_table(name)
-    table_object = {"name": name, "columns": []}
-    # pprint.pprint(table.columns)
-    for col in table.columns:
-        c = {}
-        if isinstance(col, ColumnFK):
-            logger.info(f"    {col.name} is foreign {col.reference}")
-            Sql2PUML.add_column_foreign(col.name, col.type_, col.reference)
-            c = {
-                "foreign_key": {
-                    "name": col.name,
-                    "type": col.type_,
-                    "reference": col.reference,
-                }
-            }
-
+    # Determine table type and styling
+    if hasattr(table_object, 'relation') and table_object.relation:
+        # Junction table styling
+        if hasattr(table_object, 'cardinality') and table_object.cardinality == "ManyToMany":
+            lines.append(f"entity {table_name} <<junction>> {{")
         else:
-            if col.primary is True:
-                logger.info(f"    PK: {col.name}")
-                Sql2PUML.add_column_primary(col.name, col.type_)
-                primary = True
-            else:
-                logger.info(f"    {col.name}")
-                Sql2PUML.add_column(col.name, col.type_)
-                primary = False
-            c = {"name": col.name, "type": col.type_, "primary_key": primary}
-        table_object["columns"].append(c)
-    db_config["tables"].append(table_object)
+            lines.append(f"entity {table_name} <<relation>> {{")
+    elif hasattr(table_object, 'is_spatial') and table_object.is_spatial:
+        # Feature class styling
+        lines.append(f"entity {table_name} <<spatial>> {{")
+    else:
+        # Regular table
+        lines.append(f"entity {table_name} {{")
 
-coded_domains = db_schema.get("coded_domain")
-for name in coded_domains.keys():
-    # logger.info(f"----{name}----")
-    domain_dict = coded_domains[name]
-    Sql2PUML.add_enum(name, domain_dict)
+    # Add columns
+    if hasattr(table_object, 'columns') and table_object.columns:
+        for column in table_object.columns:
+            column_line = _format_column_definition(column)
+            lines.append(f"  {column_line}")
+    else:
+        lines.append("  -- No columns defined --")
 
-# pprint.pprint(db_config)
+    lines.append("}")
 
-# Only debug?
-# for table_name, table in SQL_graph.puml_tables.items():
-#     for t in ("default", "primary", "foreign"):
-#         for fk in table[t].keys():
-#             logger.debug(f"{table_name}, {t}, {fk}")
-
-puml_file = os.path.join(OUTPUT_DIR, "ER-GCOVER.puml")
+    return lines
 
 
-with open(puml_file, "w") as field_name:
-    field_name.write(Sql2PUML.transform())
+def _format_column_definition(column):
+    """Format a single column definition for PlantUML."""
+    # Get column properties
+    name = getattr(column, 'name', 'unknown')
+    type_ = getattr(column, 'type_', 'unknown')
+    is_primary = getattr(column, 'primary', False)
+    is_foreign_key = hasattr(column, 'reference')  # Assuming ColumnFK has reference attribute
 
-yaml_file = os.path.join(OUTPUT_DIR, "GCOVERP.yaml")
+    # Format type (remove [GEOMETRY] prefix for cleaner display)
+    display_type = type_.replace('[GEOMETRY] ', '') if type_ else 'unknown'
 
-with open(yaml_file, "w") as field_name:
-    yaml.dump(
-        db_config,
-        field_name,
-        default_flow_style=False,
-        sort_keys=False,
-        allow_unicode=True,
-        encoding=("utf-8"),
-    )
+    # Build column definition
+    if is_primary:
+        # Primary key
+        column_def = f"* **{name}** : {display_type} <<PK>>"
+    elif is_foreign_key:
+        # Foreign key
+        reference = getattr(column, 'reference', 'unknown')
+        column_def = f"* {name} : {display_type} <<FK to {reference}>>"
+    else:
+        # Regular column
+        if type_ and '[GEOMETRY]' in type_:
+            column_def = f"  {name} : {display_type} <<GEOMETRY>>"
+        else:
+            column_def = f"  {name} : {display_type}"
 
-logger.debug(f"Template was: {Sql2PUML.puml_template}")
+    return column_def
 
-logger.info(f"Writing PUML diagram to {puml_file}")
-logger.info(f"Writing YAML structure to {yaml_file}")
 
-# TOPGIS_GC.GC_BEDROCK "0..n" -- "1..1" TOPGIS_GC.GC_GEOL_MAPPING_UNIT_ATT
-# class(TOPGIS_GC.GC_BEDROCK) {
-# 	foreign_key(GEOL_MAPPING_UNIT_ATT_UUID,TOPGIS_GC.GC_GEOL_MAPPING_UNIT_ATT) GUID
-# }
+def _generate_relationships(all_tables):
+    """Generate PlantUML relationship definitions based on foreign keys."""
+    relationship_lines = []
+    relationship_lines.append("' Relationships")
+
+    processed_relationships = set()  # Avoid duplicate relationships
+
+    for table_name, table_object in all_tables.items():
+        if not hasattr(table_object, 'columns'):
+            continue
+
+        for column in table_object.columns:
+            if hasattr(column, 'reference'):  # This is a foreign key
+                reference_table = column.reference
+
+                # Create relationship identifier to avoid duplicates
+                rel_id = f"{reference_table}->{table_name}"
+                reverse_rel_id = f"{table_name}->{reference_table}"
+
+                if rel_id not in processed_relationships and reverse_rel_id not in processed_relationships:
+                    # Determine relationship type
+                    if hasattr(table_object, 'relation') and table_object.relation:
+                        # Junction table - many-to-many relationship
+                        if hasattr(table_object, 'cardinality') and table_object.cardinality == "ManyToMany":
+                            relationship_lines.append(f"{reference_table} ||--o{{ {table_name}")
+                        else:
+                            relationship_lines.append(f"{reference_table} ||--|| {table_name}")
+                    else:
+                        # Regular foreign key - one-to-many relationship
+                        relationship_lines.append(f"{reference_table} ||--o{{ {table_name}")
+
+                    processed_relationships.add(rel_id)
+
+    return relationship_lines
+
+
+def _detect_many_to_many_relationships(all_tables):
+    """
+    Detect many-to-many relationships through junction tables.
+    This is a helper function that could be used for more sophisticated relationship detection.
+    """
+    many_to_many_relationships = []
+
+    for table_name, table_object in all_tables.items():
+        if hasattr(table_object, 'relation') and table_object.relation:
+            # This is a junction table
+            foreign_keys = [
+                col for col in getattr(table_object, 'columns', [])
+                if hasattr(col, 'reference')
+            ]
+
+            if len(foreign_keys) == 2:
+                # Classic many-to-many junction table
+                table1 = foreign_keys[0].reference
+                table2 = foreign_keys[1].reference
+                many_to_many_relationships.append((table1, table2, table_name))
+
+    return many_to_many_relationships
+
+
+# Convenience function to save diagram to file
+def save_puml_diagram(all_tables, filename="database_schema.puml", diagram_title="Database Schema", logger=None):
+    """
+    Generate and save PlantUML diagram to file.
+
+    Args:
+        all_tables: Dictionary of table_name -> Table objects
+        filename: Output filename
+        diagram_title: Title for the diagram
+        logger: Optional logger
+
+    Returns:
+        str: The generated PlantUML content
+    """
+    puml_content = generate_puml_diagram(all_tables, diagram_title, logger)
+
+    try:
+        with open(filename, 'w', encoding='utf-8') as f:
+            f.write(puml_content)
+
+        if logger:
+            logger.info(f"PlantUML diagram saved to: {filename}")
+    except Exception as e:
+        if logger:
+            logger.error(f"Failed to save PlantUML diagram: {e}")
+        raise
+
+    return puml_content
+
+# Generate PlantUML diagram
+puml_diagram = generate_puml_diagram(all_tables, "My Database Schema", logger)
+print(puml_diagram)
+
+# Or save to file
+save_puml_diagram(all_tables, "my_schema.puml", "My Database Schema", logger)
