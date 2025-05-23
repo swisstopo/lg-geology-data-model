@@ -219,7 +219,9 @@ class SQL2PUML:
         # Run through all foreign keys and crete the table relations.
         for table_name, table in self.puml_tables.items():
             for fk  in table['foreign'].values():
-                foreign_table = fk[1].split('.')[0]
+                print(fk)
+                foreign_table = fk[1].split('.')[0]  # TODO why
+                foreign_table = fk[1]
                 if foreign_table != table_name:
                     puml_lines.append('{} "0..n" -- "1..1" {}'.format(table_name, foreign_table))
         puml_lines.append('')
