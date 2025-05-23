@@ -801,13 +801,13 @@ def generate(lang, datamodel, output):
         extensions=["jinja2.ext.i18n"],
     )
 
-    # TODO: only one language
+    # TODO: remove Babel?
     locale_dir = os.path.join(yaml_dir, "locale")
     logger.info(locale_dir)
-    translations = Translations.load(locale_dir, [lang], "datamodel")
-    ui_translations = Translations.load(locale_dir, [lang], "app")
+    mod_translations = Translations.load(locale_dir, [lang], "datamodel")
+    translations = Translations.load(locale_dir, [lang], "app")
 
-    translations.merge(ui_translations)
+    # translations.merge(mod_translations)
     data["lang"] = lang
     data["date"] = now
     data["hash"] = get_git_revision_short_hash()
@@ -857,6 +857,7 @@ def generate(lang, datamodel, output):
 
         return p.sub(r"**\1**", input)
 
+    # Used instead of babel
     translator = Translator()
 
     env.filters["slugify"] = slugify
@@ -875,7 +876,7 @@ def generate(lang, datamodel, output):
 
     def render_template_with_locale(template_name, data, locale):
         template = env.get_template(template_name)
-        return template.render(data, locale=locale)
+        return template.render(data,  locale=locale)
 
     markdown_fname = os.path.join(output_dir, lang, f"{project_name}.md")
     logger.info(f"Generating {markdown_fname}")
