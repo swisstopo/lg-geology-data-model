@@ -2,11 +2,11 @@
 import datetime
 import json
 import os
-import pprint
-import re
 import subprocess
 import sys
 import threading
+from typing import Dict, Any, Optional
+from pathlib import Path
 
 import click
 import pandas as pd
@@ -17,11 +17,17 @@ from jsonschema import validate as jsonschema_validate
 from loguru import logger
 import traceback
 
+from config import ATTRIBUTES_TO_IGNORE
+
 INPUT_DIR = "exports_i"
 
 output_dir = "inputs"
 
-LOG_FILENAME = "datamodel.log"
+LOG_DIR = 'log'
+if not os.path.isdir(LOG_DIR):
+    os.makedirs(LOG_DIR)
+
+LOG_FILENAME = os.path.join(LOG_DIR, "datamodel.log")
 
 logger.remove()
 logger.add(sys.stderr, level="INFO")
@@ -33,29 +39,7 @@ logger.add(LOG_FILENAME, backtrace=False, level="DEBUG")
 PACKAGE_NAME = "geocover"
 
 
-ATTRIBUTES_TO_IGNORE = [
-    "PRINTEDOBJECTORIGIN",
-    "REASONFORCHANGE",
-    "ORIGINAL_ORIGIN",
-    "OBJECTORIGIN_YEAR",
-    "OBJECTORIGIN_MONTH",
-    "CREATION_YEAR",
-    "CREATION_MONTH",
-    "REVISION_YEAR",
-    "REVISION_MONTH",
-    "DATEOFCREATION",
-    "DATEOFCHANGE",
-    "OPERATOR",
-    "UUID",
-    "SHAPE",
-    "RC_ID_CREATION",
-    "REVISION_QUALITY",
-    "SHAPE.LEN",
-    "SHAPE.AREA",
-    "RC_ID",
-    "WU_ID",
-    "WU_ID_CREATION",
-]
+
 
 
 """with open(os.path.join(input_dir, "coded_domains.json"), "r") as f:
@@ -123,6 +107,36 @@ logger.info(f"Translation file has {len(df_trad)} translations")
 logger.info(f"Saving file to {translation_xlsx_path} with {len(df_trad)} translations")
 """
 
+class SDESchema:
+    def __init__(self, json_path: str):
+        self.json_path = Path(json_path)
+        self._raw_data = self._load_json()
+        self.featclasses = self._raw_data.get("featclasses", {})
+        self.tables = self._raw_data.get("tables", {})
+        self.coded_domains = self._raw_data.get("coded_domain", {})
+        self.subtypes = self._raw_data.get("subtypes", {})
+
+    def _load_json(self) -> Dict[str, Any]:
+        """Load and validate JSON schema."""
+        try:
+            with open(self.json_path, "r") as f:
+                return json.load(f)
+        except FileNotFoundError:
+            raise ValueError(f"Schema file not found: {self.json_path}")
+        except json.JSONDecodeError:
+            raise ValueError(f"Invalid JSON in schema file: {self.json_path}")
+
+    def get_table_fields(self, table_name: str) -> Dict[str, Any]:
+        """Get all fields of a table."""
+        return self.tables.get(table_name, {}).get("fields", {})
+
+    def list_all_tables(self) -> list[str]:
+        """Return all table names."""
+        return list(self.tables.keys())
+
+    def get_domain_values(self, domain_name: str) -> Optional[Dict[str, str]]:
+        """Get coded domain values (e.g., {'1': 'Yes', '0': 'No'})."""
+        return self.coded_domains.get(domain_name)
 
 def load_translation_dataframe(input_dir: str) -> pd.DataFrame:
     """
@@ -236,7 +250,7 @@ def get_git_revision_short_hash() -> str:
         .strip()
     )
 
-
+# TODO: to be removed
 def create_msg(df):
     import polib
 
@@ -273,7 +287,7 @@ def create_msg(df):
         f.write(po_header_tpl + empty_pot)
 
 
-# TODO: not at the right place
+# TODO: to be removed
 # create_msg(df_trad)
 
 
