@@ -1,11 +1,11 @@
 Modèle de données géologiques
 =============================
 
-Le but de ces outils est de créer de manière plus au moins automatique le [modèle de données géologiques](https://www.geologieportal.ch/fr/connaissance/consulter/modeles-de-donnees/modele-de-donnees-geologiques.html), en
+Le but de ces outils est de créer de manière plus au moins automatique le [modèle de données géologiques](https://www.swisstopo.admin.ch/fr/modele-geologique-2d-geocover), en
 particulier la liste des valeurs attributaires possibles, et le modèle physique issu de ESRI ArcSDE.
 
-Les exports de la base de données ArcSDE sont dans `exports`, les fichiers intermédiaires `markdown` dans `inputs`
-et les différents formats du modèle final dans `outputs`.
+Les exports de la base de données ArcSDE sont dans `exports`, les fichiers intermédiaires nécessaires pour la génération
+des documents finaux, comme `markdown` dans `inputs` et les différents formats du modèle final dans `outputs`.
 
 * Pour l'instant, le modèle est disponible en allemand et en français.
 * Plusieurs formats sont disponbiles : `datamodel.pdf`, ainsi que sous forme de fichier `.docx`, `.html` et `.odt`.
@@ -22,21 +22,12 @@ base de données ESRI ArcSDE n'est bien entendu pas possible.
 
 ## Windows
 
-Open a Python Command Prompt windows and clone the default ESRI ArcGis `conda` environnement
-
-    (arcgispro-py3) C:\Program Files\ArcGIS\Pro\bin\Python\envs\arcgispro-py3>conda create --clone arcgispro-py3 --prefix C:\LegacySW\envs\arcgispro-py3_clone
-
-Deactivate the default environment
-
-    (arcgispro-py3) C:\Program Files\ArcGIS\Pro\bin\Python\envs\arcgispro-py3> deactivate
-
-Activate the newly created cloned environment
-
-    C:\Program Files\ArcGIS\Pro\bin\Python\envs\arcgispro-py3> activate C:\LegacySW\envs\arcgispro-py3_clone
+Create a new `conda` environment by cloning `arcgispro-py3` if you need to export data from ArcSDE (obvious). To
+generate the models, you don't need `arcpy`,
 
 Install the package
 
-    (arcgispro-py3) C:\LegacySW\envs\arcgispro-py3_clone> conda install swisstopo::geocover
+    (arcgispro-py3) D:\conda\envs\arcgispro-py3_clone> conda install swisstopo::geocover
 
 To generate de final documents from the `markdown` sources, you need `pandoc`. As _pandoc.exe_ is a standalone binary on
 Windows, simply download it and unzip it into _C:\LegacySW_ (see the latest available version on  [Pandoc](https://github.com/jgm/pandoc/releases) ).
@@ -77,7 +68,9 @@ Exporter les `tables` attributaires :
 
 2. Export de la structure Oracle : 
 
-Dans ArcGis Pro, charger et exécuter le script : `export_oracle_tables.py`
+Dans ArcGis Pro, charger et exécuter le script : 
+
+    export_oracle_tables.py
 
 3. Export des champs obligatoires :
 
@@ -164,7 +157,7 @@ Convertir en PDF (A3)
 
 # Autres fonctions
 
-## Extraire les règles utiisées dans layerfiles d'un projet ESRI ArcGis Pro
+## Extraire les règles utilisées dans layerfiles d'un projet ESRI ArcGis Pro
 
     geocover rules -l INFO
 
