@@ -177,8 +177,11 @@ def load_translation_dataframe(input_dir: str) -> pd.DataFrame:
         pd.DataFrame: Translation dataframe with GeolCodeInt as index and DE/FR translations
     """
     # File paths
+    # Inputs
     csv_path = os.path.join(input_dir, "GeolCodeText_Trad_230317.csv")
+    # TODO: All new GMU codes found in the XLSX table (generations ?
     json_path = os.path.join(input_dir, "all_codes_dict.json")
+    # Ouputs
     xlsx_path = os.path.join(input_dir, "all_trads.xlsx")
 
     try:
