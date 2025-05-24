@@ -79,11 +79,7 @@ with open(
     subtypes = sde_schema.get("subtypes")
 
 
-
-
-
-
-'''
+"""
 df_trad_load = pd.read_csv(
     os.path.join(input_dir, "GeolCodeText_Trad_230317.csv"), sep=";"
 )
@@ -125,7 +121,7 @@ df.loc[df["GeolCodeInt"] == 0, ["DE", "FR"]] = ["-", "-"]
 df_trad = df_trad.set_index(["GeolCodeInt"])
 logger.info(f"Translation file has {len(df_trad)} translations")
 logger.info(f"Saving file to {translation_xlsx_path} with {len(df_trad)} translations")
-'''
+"""
 
 
 def load_translation_dataframe(input_dir: str) -> pd.DataFrame:
@@ -152,11 +148,13 @@ def load_translation_dataframe(input_dir: str) -> pd.DataFrame:
             code_dict = json.load(file)
 
         # Create DataFrame from JSON dict
-        df_from_json = pd.DataFrame({
-            "GeolCodeInt": code_dict.keys(),
-            "DE": code_dict.values(),
-            "FR": code_dict.values()  # Will be updated later if needed
-        })
+        df_from_json = pd.DataFrame(
+            {
+                "GeolCodeInt": code_dict.keys(),
+                "DE": code_dict.values(),
+                "FR": code_dict.values(),  # Will be updated later if needed
+            }
+        )
 
         # Convert columns to string type
         df_from_json["GeolCodeInt"] = df_from_json["GeolCodeInt"].astype("string")
@@ -168,11 +166,18 @@ def load_translation_dataframe(input_dir: str) -> pd.DataFrame:
 
         # Clean and process the merged DataFrame
         df_trad = (
-            merged_df
-            .drop(columns=["GeolCode"], errors="ignore")  # Remove unwanted column if exists
-            .drop_duplicates(subset=["GeolCodeInt"], keep="last")  # Keep last occurrence of duplicates
-            .assign(DE=lambda x: x["DE"].replace("0", "-"))  # Replace '0' with '-' in DE
-            .assign(FR=lambda x: x["FR"].replace("0", "-"))  # Replace '0' with '-' in FR
+            merged_df.drop(
+                columns=["GeolCode"], errors="ignore"
+            )  # Remove unwanted column if exists
+            .drop_duplicates(
+                subset=["GeolCodeInt"], keep="last"
+            )  # Keep last occurrence of duplicates
+            .assign(
+                DE=lambda x: x["DE"].replace("0", "-")
+            )  # Replace '0' with '-' in DE
+            .assign(
+                FR=lambda x: x["FR"].replace("0", "-")
+            )  # Replace '0' with '-' in FR
             .set_index("GeolCodeInt")  # Set index
         )
 
@@ -292,8 +297,8 @@ class Translator:
         msg = fallback
         err = False
         if lang in ("DE", "FR"):
-            if str(geol_code) == '0':  # Convert to string for comparison
-                return ('–', False)
+            if str(geol_code) == "0":  # Convert to string for comparison
+                return ("–", False)
             try:
                 value = self.df_trad.loc[str(geol_code), lang]  # Try to get single cell
                 if isinstance(value, pd.Series):
@@ -302,8 +307,7 @@ class Translator:
                     msg = value
                 # Handle both string '0' and integer 0 cases
                 if isinstance(msg, str) and msg.startswith("à "):
-                        msg = msg.replace("à ", "")
-
+                    msg = msg.replace("à ", "")
 
             except KeyError as ke:
                 err = True
@@ -371,14 +375,10 @@ def check_attribute_in_table(cls_name, table, attributes, abrev, prefixes):
 
     table_name = "TOPGIS_GC." + table.upper()
 
-
-
     table_dict = featclasses_dict.get(table_name)
 
     if table_dict:
         attributes_dict = featclasses_dict.get(table_name).get("fields")
-
-
 
     table_attributes = [d.get("name", "").upper() for d in attributes_dict]
 
@@ -435,7 +435,6 @@ def check_attribute_in_table(cls_name, table, attributes, abrev, prefixes):
 
         except Exception as e:
             logger.error(f"{e}")
-
 
         if len(missing_in_model) > 0:
             logger.warning(
@@ -977,7 +976,7 @@ def generate(lang, datamodel, output, input):
 
     def render_template_with_locale(template_name, data, locale):
         template = env.get_template(template_name)
-        return template.render(data,  locale=locale)
+        return template.render(data, locale=locale)
 
     markdown_fname = os.path.join(output_dir, lang, f"{project_name}.md")
     logger.info(f"Generating {markdown_fname}")
