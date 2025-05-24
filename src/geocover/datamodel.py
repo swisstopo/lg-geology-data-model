@@ -19,11 +19,14 @@ import traceback
 
 from config import ATTRIBUTES_TO_IGNORE
 
-INPUT_DIR = "exports_i"
 
-output_dir = "inputs"
+PACKAGE_NAME = "geocover"
+# Source files, like SDE schema, tables exports, domains lists, etc.
+SOURCES_DIR = "exports_i"
+# Directory for generated markdown files, used an `input` for `pandoc`
+MARKDOWN_DIR = "inputs"
+LOG_DIR = "log"
 
-LOG_DIR = 'log'
 if not os.path.isdir(LOG_DIR):
     os.makedirs(LOG_DIR)
 
@@ -36,11 +39,6 @@ if os.path.isfile(LOG_FILENAME):
     os.remove(LOG_FILENAME)
 logger.add(LOG_FILENAME, backtrace=False, level="DEBUG")
 
-PACKAGE_NAME = "geocover"
-
-
-
-
 
 """with open(os.path.join(input_dir, "coded_domains.json"), "r") as f:
     domains = json.load(f)
@@ -48,7 +46,7 @@ PACKAGE_NAME = "geocover"
 with open(os.path.join(input_dir, "subtypes_dict.json"), "r") as f:
     subtypes = json.load(f)"""
 
-json_struct_path = os.path.join(INPUT_DIR, "gcoveri_simple.json")
+"""json_struct_path = os.path.join(INPUT_DIR, "gcoveri_simple.json")
 logger.info(f"Reading Schema from {json_struct_path}")
 with open(
     json_struct_path,
@@ -61,7 +59,7 @@ with open(
 
     domains = sde_schema.get("coded_domain")
     subtypes = sde_schema.get("subtypes")
-
+"""
 
 """
 df_trad_load = pd.read_csv(
@@ -107,6 +105,7 @@ logger.info(f"Translation file has {len(df_trad)} translations")
 logger.info(f"Saving file to {translation_xlsx_path} with {len(df_trad)} translations")
 """
 
+
 class SDESchema:
     def __init__(self, json_path: str):
         self.json_path = Path(json_path)
@@ -134,9 +133,32 @@ class SDESchema:
         """Return all table names."""
         return list(self.tables.keys())
 
+    def get_featclass_fields(self, featclass_name: str) -> Dict[str, Any]:
+        """Get all fields of a table."""
+        return self.featclasses.get(featclass_name, {}).get("fields", {})
+
+    def list_all_featclasses(self) -> list[str]:
+        """Return all feature classes names."""
+        return list(self.featclasses.keys())
+
     def get_domain_values(self, domain_name: str) -> Optional[Dict[str, str]]:
         """Get coded domain values (e.g., {'1': 'Yes', '0': 'No'})."""
         return self.coded_domains.get(domain_name)
+
+
+try:
+    sde_schema = SDESchema(os.path.join(SOURCES_DIR, "gcoveri_simple.json"))
+    logger.info(sde_schema.list_all_featclasses())
+    logger.info(sde_schema.get_featclass_fields("TOPGIS_GC.GC_BEDROCK"))
+
+    featclasses_dict = sde_schema.featclasses
+    tables_dict = sde_schema.tables
+
+    domains = sde_schema.coded_domains
+    subtypes = sde_schema.subtypes
+except ValueError as e:
+    logger.error(f"Error loading schema: {e}")
+
 
 def load_translation_dataframe(input_dir: str) -> pd.DataFrame:
     """
@@ -249,6 +271,7 @@ def get_git_revision_short_hash() -> str:
         .decode("ascii")
         .strip()
     )
+
 
 # TODO: to be removed
 def create_msg(df):
@@ -465,7 +488,7 @@ def check_attribute_in_table(cls_name, table, attributes, abrev, prefixes):
 def get_table_values(name):
     geol_dict = {}
     try:
-        file_path = os.path.join(INPUT_DIR, name)
+        file_path = os.path.join(SOURCES_DIR, name)
         # df = pd.read_csv(file_path)
 
         with open(file_path, "r", encoding="utf-8") as f:
@@ -645,7 +668,7 @@ class Report:
             # table
             else:
                 try:
-                    json_data_path = os.path.join(INPUT_DIR, annex.get("fname"))
+                    json_data_path = os.path.join(SOURCES_DIR, annex.get("fname"))
 
                     with open(json_data_path, "r") as f:
                         data = json.loads(f.read())
@@ -822,14 +845,14 @@ def prettify(datamodel):
     "--output",
     "-o",
     type=click.Path(file_okay=False),
-    default="inputs",
+    default=MARKDOWN_DIR,
     help="Directory for output markdown files",
 )
 @click.option(
     "--input",
     "-i",
     type=click.Path(file_okay=False),
-    default=INPUT_DIR,
+    default=SOURCES_DIR,
     help="Directory for files sources (translation, codes, etc.)",
 )
 @click.argument("datamodel", type=click.Path(exists=True))
