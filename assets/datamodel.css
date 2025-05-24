@@ -28,6 +28,18 @@ margin-right:auto;
 margin-left:0px
 }
 
+figure { 
+    display: flex;
+    flex-direction: column; /* Stack image & caption vertically */
+    align-items: center; /* Center only the image */
+    text-align: center; /* Ensure caption is centered */
+}
+
+figcaption {
+  margin-top: 10px; /* Adds spacing between image & caption */
+  font-style: italic; /* Optional: improves readability */
+}
+
 h2 + p + table thead tr  {
     background-color: #555555;
     color: #ffffff;
