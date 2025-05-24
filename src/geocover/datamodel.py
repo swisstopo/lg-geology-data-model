@@ -17,7 +17,10 @@ from jsonschema import validate as jsonschema_validate
 from loguru import logger
 import traceback
 
-from config import ATTRIBUTES_TO_IGNORE
+try:
+    from geocover.config import ATTRIBUTES_TO_IGNORE
+except ImportError:
+    from config import ATTRIBUTES_TO_IGNORE
 
 
 PACKAGE_NAME = "geocover"
