@@ -139,7 +139,39 @@
           "classes"
         ]
       }
+    },
+    "annexes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "type_": {
+            "type": "string",
+            "enum": ["table", "list"]
+          },
+          "fname": {
+            "type": "string"
+          },
+          "description": {
+            "type": "object",
+            "properties": {
+              "de": {
+                "type": "string"
+              },
+              "fr": {
+                "type": "string"
+              }
+            },
+            "required": ["de", "fr"]
+          }
+        },
+        "required": ["name", "type_", "description"]
+      }
     }
+
   },
   "required": [
     "version",

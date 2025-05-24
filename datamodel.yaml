@@ -21,6 +21,11 @@ model:
   revision: 4.1.0
   revision_date: "2025-05-20"
 
+# Annexe
+# Some CD are alreday defined in the simplifed JSON report
+# Long list annex must be load directly from file.
+# Annexe type: `list` code with `DE` and `FR` translation
+#              `table` special case for the GMU table
 themes:
 - name: Rock_Bodies
   classes:
