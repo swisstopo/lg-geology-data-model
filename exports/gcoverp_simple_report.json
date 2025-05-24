@@ -22927,21 +22927,29 @@
             "originClassKeys": [
                 {
                     "objectKeyName": "UUID",
-                    "keyRole": "OriginPrimary"
+                    "keyRole": "OriginPrimary",
+                    "classKeyName": "",
+                    "datasetType": "RelationshipClassKey"
                 },
                 {
                     "objectKeyName": "GC_EXPLOIT_GEOMAT_PLG_UUID",
-                    "keyRole": "OriginForeign"
+                    "keyRole": "OriginForeign",
+                    "classKeyName": "",
+                    "datasetType": "RelationshipClassKey"
                 }
             ],
             "destinationClassKeys": [
                 {
                     "objectKeyName": "UUID",
-                    "keyRole": "DestinationPrimary"
+                    "keyRole": "DestinationPrimary",
+                    "classKeyName": "",
+                    "datasetType": "RelationshipClassKey"
                 },
                 {
                     "objectKeyName": "GC_GEOL_MAPPING_UNIT_UUID",
-                    "keyRole": "DestinationForeign"
+                    "keyRole": "DestinationForeign",
+                    "classKeyName": "",
+                    "datasetType": "RelationshipClassKey"
                 }
             ],
             "is_attributed": null,
@@ -22961,21 +22969,29 @@
             "originClassKeys": [
                 {
                     "objectKeyName": "UUID",
-                    "keyRole": "OriginPrimary"
+                    "keyRole": "OriginPrimary",
+                    "classKeyName": "",
+                    "datasetType": "RelationshipClassKey"
                 },
                 {
                     "objectKeyName": "GC_EXPLOIT_GEOMAT_PLG_UUID",
-                    "keyRole": "OriginForeign"
+                    "keyRole": "OriginForeign",
+                    "classKeyName": "",
+                    "datasetType": "RelationshipClassKey"
                 }
             ],
             "destinationClassKeys": [
                 {
                     "objectKeyName": "UUID",
-                    "keyRole": "DestinationPrimary"
+                    "keyRole": "DestinationPrimary",
+                    "classKeyName": "",
+                    "datasetType": "RelationshipClassKey"
                 },
                 {
                     "objectKeyName": "GC_GEOL_MAPPING_UNIT_UUID",
-                    "keyRole": "DestinationForeign"
+                    "keyRole": "DestinationForeign",
+                    "classKeyName": "",
+                    "datasetType": "RelationshipClassKey"
                 }
             ],
             "is_attributed": null,
@@ -22995,21 +23011,29 @@
             "originClassKeys": [
                 {
                     "objectKeyName": "UUID",
-                    "keyRole": "OriginPrimary"
+                    "keyRole": "OriginPrimary",
+                    "classKeyName": "",
+                    "datasetType": "RelationshipClassKey"
                 },
                 {
                     "objectKeyName": "GC_EXPLOIT_GEOMAT_PT_UUID",
-                    "keyRole": "OriginForeign"
+                    "keyRole": "OriginForeign",
+                    "classKeyName": "",
+                    "datasetType": "RelationshipClassKey"
                 }
             ],
             "destinationClassKeys": [
                 {
                     "objectKeyName": "UUID",
-                    "keyRole": "DestinationPrimary"
+                    "keyRole": "DestinationPrimary",
+                    "classKeyName": "",
+                    "datasetType": "RelationshipClassKey"
                 },
                 {
                     "objectKeyName": "GC_GEOL_MAPPING_UNIT_UUID",
-                    "keyRole": "DestinationForeign"
+                    "keyRole": "DestinationForeign",
+                    "classKeyName": "",
+                    "datasetType": "RelationshipClassKey"
                 }
             ],
             "is_attributed": null,
@@ -23029,21 +23053,29 @@
             "originClassKeys": [
                 {
                     "objectKeyName": "UUID",
-                    "keyRole": "OriginPrimary"
+                    "keyRole": "OriginPrimary",
+                    "classKeyName": "",
+                    "datasetType": "RelationshipClassKey"
                 },
                 {
                     "objectKeyName": "GC_EXPLOIT_GEOMAT_PT_UUID",
-                    "keyRole": "OriginForeign"
+                    "keyRole": "OriginForeign",
+                    "classKeyName": "",
+                    "datasetType": "RelationshipClassKey"
                 }
             ],
             "destinationClassKeys": [
                 {
                     "objectKeyName": "UUID",
-                    "keyRole": "DestinationPrimary"
+                    "keyRole": "DestinationPrimary",
+                    "classKeyName": "",
+                    "datasetType": "RelationshipClassKey"
                 },
                 {
                     "objectKeyName": "GC_GEOL_MAPPING_UNIT_UUID",
-                    "keyRole": "DestinationForeign"
+                    "keyRole": "DestinationForeign",
+                    "classKeyName": "",
+                    "datasetType": "RelationshipClassKey"
                 }
             ],
             "is_attributed": null,
@@ -23063,21 +23095,29 @@
             "originClassKeys": [
                 {
                     "objectKeyName": "UUID",
-                    "keyRole": "OriginPrimary"
+                    "keyRole": "OriginPrimary",
+                    "classKeyName": "",
+                    "datasetType": "RelationshipClassKey"
                 },
                 {
                     "objectKeyName": "GC_BEDROCK_UUID",
-                    "keyRole": "OriginForeign"
+                    "keyRole": "OriginForeign",
+                    "classKeyName": "",
+                    "datasetType": "RelationshipClassKey"
                 }
             ],
             "destinationClassKeys": [
                 {
                     "objectKeyName": "UUID",
-                    "keyRole": "DestinationPrimary"
+                    "keyRole": "DestinationPrimary",
+                    "classKeyName": "",
+                    "datasetType": "RelationshipClassKey"
                 },
                 {
                     "objectKeyName": "GC_LITHO_BED_UUID",
-                    "keyRole": "DestinationForeign"
+                    "keyRole": "DestinationForeign",
+                    "classKeyName": "",
+                    "datasetType": "RelationshipClassKey"
                 }
             ],
             "is_attributed": null,
@@ -23097,21 +23137,29 @@
             "originClassKeys": [
                 {
                     "objectKeyName": "UUID",
-                    "keyRole": "OriginPrimary"
+                    "keyRole": "OriginPrimary",
+                    "classKeyName": "",
+                    "datasetType": "RelationshipClassKey"
                 },
                 {
                     "objectKeyName": "GC_BEDROCK_UUID",
-                    "keyRole": "OriginForeign"
+                    "keyRole": "OriginForeign",
+                    "classKeyName": "",
+                    "datasetType": "RelationshipClassKey"
                 }
             ],
             "destinationClassKeys": [
                 {
                     "objectKeyName": "UUID",
-                    "keyRole": "DestinationPrimary"
+                    "keyRole": "DestinationPrimary",
+                    "classKeyName": "",
+                    "datasetType": "RelationshipClassKey"
                 },
                 {
                     "objectKeyName": "GC_LITHO_BED_UUID",
-                    "keyRole": "DestinationForeign"
+                    "keyRole": "DestinationForeign",
+                    "classKeyName": "",
+                    "datasetType": "RelationshipClassKey"
                 }
             ],
             "is_attributed": null,
@@ -23131,21 +23179,29 @@
             "originClassKeys": [
                 {
                     "objectKeyName": "UUID",
-                    "keyRole": "OriginPrimary"
+                    "keyRole": "OriginPrimary",
+                    "classKeyName": "",
+                    "datasetType": "RelationshipClassKey"
                 },
                 {
                     "objectKeyName": "GC_FOSSILS_UUID",
-                    "keyRole": "OriginForeign"
+                    "keyRole": "OriginForeign",
+                    "classKeyName": "",
+                    "datasetType": "RelationshipClassKey"
                 }
             ],
             "destinationClassKeys": [
                 {
                     "objectKeyName": "UUID",
-                    "keyRole": "DestinationPrimary"
+                    "keyRole": "DestinationPrimary",
+                    "classKeyName": "",
+                    "datasetType": "RelationshipClassKey"
                 },
                 {
                     "objectKeyName": "GC_SYSTEM_UUID",
-                    "keyRole": "DestinationForeign"
+                    "keyRole": "DestinationForeign",
+                    "classKeyName": "",
+                    "datasetType": "RelationshipClassKey"
                 }
             ],
             "is_attributed": null,
@@ -23165,21 +23221,29 @@
             "originClassKeys": [
                 {
                     "objectKeyName": "UUID",
-                    "keyRole": "OriginPrimary"
+                    "keyRole": "OriginPrimary",
+                    "classKeyName": "",
+                    "datasetType": "RelationshipClassKey"
                 },
                 {
                     "objectKeyName": "GC_FOSSILS_UUID",
-                    "keyRole": "OriginForeign"
+                    "keyRole": "OriginForeign",
+                    "classKeyName": "",
+                    "datasetType": "RelationshipClassKey"
                 }
             ],
             "destinationClassKeys": [
                 {
                     "objectKeyName": "UUID",
-                    "keyRole": "DestinationPrimary"
+                    "keyRole": "DestinationPrimary",
+                    "classKeyName": "",
+                    "datasetType": "RelationshipClassKey"
                 },
                 {
                     "objectKeyName": "GC_SYSTEM_UUID",
-                    "keyRole": "DestinationForeign"
+                    "keyRole": "DestinationForeign",
+                    "classKeyName": "",
+                    "datasetType": "RelationshipClassKey"
                 }
             ],
             "is_attributed": null,
@@ -23199,21 +23263,29 @@
             "originClassKeys": [
                 {
                     "objectKeyName": "UUID",
-                    "keyRole": "OriginPrimary"
+                    "keyRole": "OriginPrimary",
+                    "classKeyName": "",
+                    "datasetType": "RelationshipClassKey"
                 },
                 {
                     "objectKeyName": "GC_UNCO_DESPOSIT_UUID",
-                    "keyRole": "OriginForeign"
+                    "keyRole": "OriginForeign",
+                    "classKeyName": "",
+                    "datasetType": "RelationshipClassKey"
                 }
             ],
             "destinationClassKeys": [
                 {
                     "objectKeyName": "UUID",
-                    "keyRole": "DestinationPrimary"
+                    "keyRole": "DestinationPrimary",
+                    "classKeyName": "",
+                    "datasetType": "RelationshipClassKey"
                 },
                 {
                     "objectKeyName": "GC_COMPOSIT_UUID",
-                    "keyRole": "DestinationForeign"
+                    "keyRole": "DestinationForeign",
+                    "classKeyName": "",
+                    "datasetType": "RelationshipClassKey"
                 }
             ],
             "is_attributed": null,
@@ -23233,21 +23305,29 @@
             "originClassKeys": [
                 {
                     "objectKeyName": "UUID",
-                    "keyRole": "OriginPrimary"
+                    "keyRole": "OriginPrimary",
+                    "classKeyName": "",
+                    "datasetType": "RelationshipClassKey"
                 },
                 {
                     "objectKeyName": "GC_UNCO_DESPOSIT_UUID",
-                    "keyRole": "OriginForeign"
+                    "keyRole": "OriginForeign",
+                    "classKeyName": "",
+                    "datasetType": "RelationshipClassKey"
                 }
             ],
             "destinationClassKeys": [
                 {
                     "objectKeyName": "UUID",
-                    "keyRole": "DestinationPrimary"
+                    "keyRole": "DestinationPrimary",
+                    "classKeyName": "",
+                    "datasetType": "RelationshipClassKey"
                 },
                 {
                     "objectKeyName": "GC_COMPOSIT_UUID",
-                    "keyRole": "DestinationForeign"
+                    "keyRole": "DestinationForeign",
+                    "classKeyName": "",
+                    "datasetType": "RelationshipClassKey"
                 }
             ],
             "is_attributed": null,
@@ -23267,21 +23347,29 @@
             "originClassKeys": [
                 {
                     "objectKeyName": "UUID",
-                    "keyRole": "OriginPrimary"
+                    "keyRole": "OriginPrimary",
+                    "classKeyName": "",
+                    "datasetType": "RelationshipClassKey"
                 },
                 {
                     "objectKeyName": "GC_UNCO_DESPOSIT_UUID",
-                    "keyRole": "OriginForeign"
+                    "keyRole": "OriginForeign",
+                    "classKeyName": "",
+                    "datasetType": "RelationshipClassKey"
                 }
             ],
             "destinationClassKeys": [
                 {
                     "objectKeyName": "UUID",
-                    "keyRole": "DestinationPrimary"
+                    "keyRole": "DestinationPrimary",
+                    "classKeyName": "",
+                    "datasetType": "RelationshipClassKey"
                 },
                 {
                     "objectKeyName": "GC_ADMIXTURE_UUID",
-                    "keyRole": "DestinationForeign"
+                    "keyRole": "DestinationForeign",
+                    "classKeyName": "",
+                    "datasetType": "RelationshipClassKey"
                 }
             ],
             "is_attributed": null,
@@ -23301,21 +23389,29 @@
             "originClassKeys": [
                 {
                     "objectKeyName": "UUID",
-                    "keyRole": "OriginPrimary"
+                    "keyRole": "OriginPrimary",
+                    "classKeyName": "",
+                    "datasetType": "RelationshipClassKey"
                 },
                 {
                     "objectKeyName": "GC_UNCO_DESPOSIT_UUID",
-                    "keyRole": "OriginForeign"
+                    "keyRole": "OriginForeign",
+                    "classKeyName": "",
+                    "datasetType": "RelationshipClassKey"
                 }
             ],
             "destinationClassKeys": [
                 {
                     "objectKeyName": "UUID",
-                    "keyRole": "DestinationPrimary"
+                    "keyRole": "DestinationPrimary",
+                    "classKeyName": "",
+                    "datasetType": "RelationshipClassKey"
                 },
                 {
                     "objectKeyName": "GC_ADMIXTURE_UUID",
-                    "keyRole": "DestinationForeign"
+                    "keyRole": "DestinationForeign",
+                    "classKeyName": "",
+                    "datasetType": "RelationshipClassKey"
                 }
             ],
             "is_attributed": null,
@@ -23335,21 +23431,29 @@
             "originClassKeys": [
                 {
                     "objectKeyName": "UUID",
-                    "keyRole": "OriginPrimary"
+                    "keyRole": "OriginPrimary",
+                    "classKeyName": "",
+                    "datasetType": "RelationshipClassKey"
                 },
                 {
                     "objectKeyName": "GC_UNCO_DESPOSIT_UUID",
-                    "keyRole": "OriginForeign"
+                    "keyRole": "OriginForeign",
+                    "classKeyName": "",
+                    "datasetType": "RelationshipClassKey"
                 }
             ],
             "destinationClassKeys": [
                 {
                     "objectKeyName": "UUID",
-                    "keyRole": "DestinationPrimary"
+                    "keyRole": "DestinationPrimary",
+                    "classKeyName": "",
+                    "datasetType": "RelationshipClassKey"
                 },
                 {
                     "objectKeyName": "GC_CHARCAT_UUID",
-                    "keyRole": "DestinationForeign"
+                    "keyRole": "DestinationForeign",
+                    "classKeyName": "",
+                    "datasetType": "RelationshipClassKey"
                 }
             ],
             "is_attributed": null,
@@ -23369,21 +23473,29 @@
             "originClassKeys": [
                 {
                     "objectKeyName": "UUID",
-                    "keyRole": "OriginPrimary"
+                    "keyRole": "OriginPrimary",
+                    "classKeyName": "",
+                    "datasetType": "RelationshipClassKey"
                 },
                 {
                     "objectKeyName": "GC_UNCO_DESPOSIT_UUID",
-                    "keyRole": "OriginForeign"
+                    "keyRole": "OriginForeign",
+                    "classKeyName": "",
+                    "datasetType": "RelationshipClassKey"
                 }
             ],
             "destinationClassKeys": [
                 {
                     "objectKeyName": "UUID",
-                    "keyRole": "DestinationPrimary"
+                    "keyRole": "DestinationPrimary",
+                    "classKeyName": "",
+                    "datasetType": "RelationshipClassKey"
                 },
                 {
                     "objectKeyName": "GC_CHARCAT_UUID",
-                    "keyRole": "DestinationForeign"
+                    "keyRole": "DestinationForeign",
+                    "classKeyName": "",
+                    "datasetType": "RelationshipClassKey"
                 }
             ],
             "is_attributed": null,
@@ -23403,21 +23515,29 @@
             "originClassKeys": [
                 {
                     "objectKeyName": "UUID",
-                    "keyRole": "OriginPrimary"
+                    "keyRole": "OriginPrimary",
+                    "classKeyName": "",
+                    "datasetType": "RelationshipClassKey"
                 },
                 {
                     "objectKeyName": "GC_UNCO_DESPOSIT_UUID",
-                    "keyRole": "OriginForeign"
+                    "keyRole": "OriginForeign",
+                    "classKeyName": "",
+                    "datasetType": "RelationshipClassKey"
                 }
             ],
             "destinationClassKeys": [
                 {
                     "objectKeyName": "UUID",
-                    "keyRole": "DestinationPrimary"
+                    "keyRole": "DestinationPrimary",
+                    "classKeyName": "",
+                    "datasetType": "RelationshipClassKey"
                 },
                 {
                     "objectKeyName": "GC_LITHO_UUID",
-                    "keyRole": "DestinationForeign"
+                    "keyRole": "DestinationForeign",
+                    "classKeyName": "",
+                    "datasetType": "RelationshipClassKey"
                 }
             ],
             "is_attributed": null,
@@ -23437,21 +23557,29 @@
             "originClassKeys": [
                 {
                     "objectKeyName": "UUID",
-                    "keyRole": "OriginPrimary"
+                    "keyRole": "OriginPrimary",
+                    "classKeyName": "",
+                    "datasetType": "RelationshipClassKey"
                 },
                 {
                     "objectKeyName": "GC_UNCO_DESPOSIT_UUID",
-                    "keyRole": "OriginForeign"
+                    "keyRole": "OriginForeign",
+                    "classKeyName": "",
+                    "datasetType": "RelationshipClassKey"
                 }
             ],
             "destinationClassKeys": [
                 {
                     "objectKeyName": "UUID",
-                    "keyRole": "DestinationPrimary"
+                    "keyRole": "DestinationPrimary",
+                    "classKeyName": "",
+                    "datasetType": "RelationshipClassKey"
                 },
                 {
                     "objectKeyName": "GC_LITHO_UUID",
-                    "keyRole": "DestinationForeign"
+                    "keyRole": "DestinationForeign",
+                    "classKeyName": "",
+                    "datasetType": "RelationshipClassKey"
                 }
             ],
             "is_attributed": null,
@@ -23471,11 +23599,15 @@
             "originClassKeys": [
                 {
                     "objectKeyName": "UUID",
-                    "keyRole": "OriginPrimary"
+                    "keyRole": "OriginPrimary",
+                    "classKeyName": "",
+                    "datasetType": "RelationshipClassKey"
                 },
                 {
                     "objectKeyName": "GEOL_MAPPING_UNIT_ATT_UUID",
-                    "keyRole": "OriginForeign"
+                    "keyRole": "OriginForeign",
+                    "classKeyName": "",
+                    "datasetType": "RelationshipClassKey"
                 }
             ],
             "destinationClassKeys": [],
@@ -23496,11 +23628,15 @@
             "originClassKeys": [
                 {
                     "objectKeyName": "UUID",
-                    "keyRole": "OriginPrimary"
+                    "keyRole": "OriginPrimary",
+                    "classKeyName": "",
+                    "datasetType": "RelationshipClassKey"
                 },
                 {
                     "objectKeyName": "CONFLICT_ID",
-                    "keyRole": "OriginForeign"
+                    "keyRole": "OriginForeign",
+                    "classKeyName": "",
+                    "datasetType": "RelationshipClassKey"
                 }
             ],
             "destinationClassKeys": [],
