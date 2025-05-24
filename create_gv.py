@@ -4,13 +4,11 @@ import os
 import sys
 import json
 
-import yaml
-
 from loguru import logger
 
-from sql2puml import SQL2PUML
-from typing import Union, List
 
+from typing import Union, List
+from collections import namedtuple
 
 FONTNAME = "DejaVu Sans,Nimbus Sans"
 
@@ -120,7 +118,7 @@ IGNORE_OBJECTS = remove_prefix(
 )
 
 # Helper classes for better data organization
-from collections import namedtuple
+
 
 RelationshipInfo = namedtuple(
     "RelationshipInfo",
