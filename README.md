@@ -52,8 +52,14 @@ Le script `datamodel` qui génère le fichier _markdown_ n'a besoin que des libr
 
 ## Extraction des données
 
-1. Creation des fichiers JSON/YAML contenant les _coded domains_ et la liste des _subtypes_ directement depuis
-   la base de donnée ArcSDE
+
+### Struc base de données SDE
+
+Générer un raport au format JSON avec l'outils `The Generate Schema Report geoprocessing tool` dans ESRI ArcGis Pro 
+
+Simplifier ce rapport JSON au moyen du script `parse_json.py` et copier le résultats dans le répertoire `exports`
+
+### Exporter les tables attributaires
 
 Dans un prompt Python, en utilisant l'environnement `conda` par défaut `arcgis-py3` :
 
