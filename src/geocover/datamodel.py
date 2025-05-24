@@ -2,11 +2,11 @@
 import datetime
 import json
 import os
-import pprint
-import re
 import subprocess
 import sys
 import threading
+from typing import Dict, Any, Optional
+from pathlib import Path
 
 import click
 import pandas as pd
@@ -15,12 +15,25 @@ import yaml
 from jsonschema import Draft7Validator, ValidationError
 from jsonschema import validate as jsonschema_validate
 from loguru import logger
+import traceback
 
-input_dir = "exports_i"
+try:
+    from geocover.config import ATTRIBUTES_TO_IGNORE
+except ImportError:
+    from config import ATTRIBUTES_TO_IGNORE
 
-output_dir = "inputs"
 
-LOG_FILENAME = "datamodel.log"
+PACKAGE_NAME = "geocover"
+# Source files, like SDE schema, tables exports, domains lists, etc.
+SOURCES_DIR = "exports_i"
+# Directory for generated markdown files, used an `input` for `pandoc`
+MARKDOWN_DIR = "inputs"
+LOG_DIR = "log"
+
+if not os.path.isdir(LOG_DIR):
+    os.makedirs(LOG_DIR)
+
+LOG_FILENAME = os.path.join(LOG_DIR, "datamodel.log")
 
 logger.remove()
 logger.add(sys.stderr, level="INFO")
@@ -29,33 +42,6 @@ if os.path.isfile(LOG_FILENAME):
     os.remove(LOG_FILENAME)
 logger.add(LOG_FILENAME, backtrace=False, level="DEBUG")
 
-PACKAGE_NAME = "geocover"
-
-
-ATTRIBUTES_TO_IGNORE = [
-    "PRINTEDOBJECTORIGIN",
-    "REASONFORCHANGE",
-    "ORIGINAL_ORIGIN",
-    "OBJECTORIGIN_YEAR",
-    "OBJECTORIGIN_MONTH",
-    "CREATION_YEAR",
-    "CREATION_MONTH",
-    "REVISION_YEAR",
-    "REVISION_MONTH",
-    "DATEOFCREATION",
-    "DATEOFCHANGE",
-    "OPERATOR",
-    "UUID",
-    "SHAPE",
-    "RC_ID_CREATION",
-    "REVISION_QUALITY",
-    "SHAPE.LEN",
-    "SHAPE.AREA",
-    "RC_ID",
-    "WU_ID",
-    "WU_ID_CREATION",
-]
-
 
 """with open(os.path.join(input_dir, "coded_domains.json"), "r") as f:
     domains = json.load(f)
@@ -63,7 +49,7 @@ ATTRIBUTES_TO_IGNORE = [
 with open(os.path.join(input_dir, "subtypes_dict.json"), "r") as f:
     subtypes = json.load(f)"""
 
-json_struct_path = os.path.join(input_dir, "gcoveri_simple.json")
+"""json_struct_path = os.path.join(INPUT_DIR, "gcoveri_simple.json")
 logger.info(f"Reading Schema from {json_struct_path}")
 with open(
     json_struct_path,
@@ -72,14 +58,13 @@ with open(
     sde_schema = json.load(f)
     logger.info(sde_schema.keys())
     featclasses_dict = sde_schema.get("featclasses")
-    tables_ = sde_schema.get("tables")
+    tables_dict = sde_schema.get("tables")
 
     domains = sde_schema.get("coded_domain")
     subtypes = sde_schema.get("subtypes")
+"""
 
-    tables_dict = tables_
-
-
+"""
 df_trad_load = pd.read_csv(
     os.path.join(input_dir, "GeolCodeText_Trad_230317.csv"), sep=";"
 )
@@ -116,9 +101,142 @@ df_trad["GeolCodeInt"] = df_trad["GeolCodeInt"].astype("string")
 df_trad["DE"] = df_trad["DE"].astype("string")
 df_trad["FR"] = df_trad["FR"].astype("string")
 
+df.loc[df["GeolCodeInt"] == 0, ["DE", "FR"]] = ["-", "-"]
+
 df_trad = df_trad.set_index(["GeolCodeInt"])
 logger.info(f"Translation file has {len(df_trad)} translations")
 logger.info(f"Saving file to {translation_xlsx_path} with {len(df_trad)} translations")
+"""
+
+
+class SDESchema:
+    def __init__(self, json_path: str):
+        self.json_path = Path(json_path)
+        self._raw_data = self._load_json()
+        self.featclasses = self._raw_data.get("featclasses", {})
+        self.tables = self._raw_data.get("tables", {})
+        self.coded_domains = self._raw_data.get("coded_domain", {})
+        self.subtypes = self._raw_data.get("subtypes", {})
+
+    def _load_json(self) -> Dict[str, Any]:
+        """Load and validate JSON schema."""
+        try:
+            with open(self.json_path, "r") as f:
+                return json.load(f)
+        except FileNotFoundError:
+            raise ValueError(f"Schema file not found: {self.json_path}")
+        except json.JSONDecodeError:
+            raise ValueError(f"Invalid JSON in schema file: {self.json_path}")
+
+    def get_table_fields(self, table_name: str) -> Dict[str, Any]:
+        """Get all fields of a table."""
+        return self.tables.get(table_name, {}).get("fields", {})
+
+    def list_all_tables(self) -> list[str]:
+        """Return all table names."""
+        return list(self.tables.keys())
+
+    def get_featclass_fields(self, featclass_name: str) -> Dict[str, Any]:
+        """Get all fields of a table."""
+        return self.featclasses.get(featclass_name, {}).get("fields", {})
+
+    def list_all_featclasses(self) -> list[str]:
+        """Return all feature classes names."""
+        return list(self.featclasses.keys())
+
+    def get_domain_values(self, domain_name: str) -> Optional[Dict[str, str]]:
+        """Get coded domain values (e.g., {'1': 'Yes', '0': 'No'})."""
+        return self.coded_domains.get(domain_name)
+
+
+try:
+    sde_schema = SDESchema(os.path.join(SOURCES_DIR, "gcoveri_simple.json"))
+    logger.info(sde_schema.list_all_featclasses())
+    logger.info(sde_schema.get_featclass_fields("TOPGIS_GC.GC_BEDROCK"))
+
+    featclasses_dict = sde_schema.featclasses
+    tables_dict = sde_schema.tables
+
+    domains = sde_schema.coded_domains
+    subtypes = sde_schema.subtypes
+except ValueError as e:
+    logger.error(f"Error loading schema: {e}")
+
+
+def load_translation_dataframe(input_dir: str) -> pd.DataFrame:
+    """
+    Load and merge translation data from CSV and JSON files, then return a cleaned translation DataFrame.
+
+    Args:
+        input_dir: Directory containing the input files
+
+    Returns:
+        pd.DataFrame: Translation dataframe with GeolCodeInt as index and DE/FR translations
+    """
+    # File paths
+    csv_path = os.path.join(input_dir, "GeolCodeText_Trad_230317.csv")
+    json_path = os.path.join(input_dir, "all_codes_dict.json")
+    xlsx_path = os.path.join(input_dir, "all_trads.xlsx")
+
+    try:
+        # Load CSV data
+        df_trad_load = pd.read_csv(csv_path, sep=";")
+
+        # Load JSON data and convert to DataFrame
+        with open(json_path, "r", encoding="utf-8") as file:
+            code_dict = json.load(file)
+
+        # Create DataFrame from JSON dict
+        df_from_json = pd.DataFrame(
+            {
+                "GeolCodeInt": code_dict.keys(),
+                "DE": code_dict.values(),
+                "FR": code_dict.values(),  # Will be updated later if needed
+            }
+        )
+
+        # Convert columns to string type
+        df_from_json["GeolCodeInt"] = df_from_json["GeolCodeInt"].astype("string")
+        df_from_json["DE"] = df_from_json["DE"].astype("string")
+        df_from_json["FR"] = df_from_json["FR"].astype("string")
+
+        # Merge DataFrames
+        merged_df = pd.concat([df_trad_load, df_from_json])
+
+        # Clean and process the merged DataFrame
+        df_trad = (
+            merged_df.drop(
+                columns=["GeolCode"], errors="ignore"
+            )  # Remove unwanted column if exists
+            .drop_duplicates(
+                subset=["GeolCodeInt"], keep="last"
+            )  # Keep last occurrence of duplicates
+            .assign(
+                DE=lambda x: x["DE"].replace("0", "-")
+            )  # Replace '0' with '-' in DE
+            .assign(
+                FR=lambda x: x["FR"].replace("0", "-")
+            )  # Replace '0' with '-' in FR
+            .set_index("GeolCodeInt")  # Set index
+        )
+
+        # Save to Excel
+        df_trad.to_excel(xlsx_path, index=True, engine="openpyxl")
+
+        logger.info(f"Translation file has {len(df_trad)} translations")
+        logger.info(f"Saved translation file to {xlsx_path}")
+
+        return df_trad
+
+    except FileNotFoundError as e:
+        logger.error(f"Input file not found: {e}")
+        raise
+    except json.JSONDecodeError as e:
+        logger.error(f"Error parsing JSON file: {e}")
+        raise
+    except Exception as e:
+        logger.error(f"Unexpected error loading translation data: {e}")
+        raise
 
 
 def get_datetime_with_tz():
@@ -158,6 +276,7 @@ def get_git_revision_short_hash() -> str:
     )
 
 
+# TODO: to be removed
 def create_msg(df):
     import polib
 
@@ -194,15 +313,16 @@ def create_msg(df):
         f.write(po_header_tpl + empty_pot)
 
 
-# TODO: not at the right place
+# TODO: to be removed
 # create_msg(df_trad)
 
 
 class Translator:
-    def __init__(self):
+    def __init__(self, df_trad):
         self.failed_translations = 0
         self.failed_strings = []
         self._lock = threading.Lock()  # Ensures thread safety
+        self.df_trad = df_trad
 
     def translate(self, geol_code, text, lang="FR"):
         translated_text, _err = self._translate(geol_code, text, lang)
@@ -217,12 +337,15 @@ class Translator:
         msg = fallback
         err = False
         if lang in ("DE", "FR"):
+            if str(geol_code) == "0":  # Convert to string for comparison
+                return ("–", False)
             try:
-                value = df_trad.loc[str(geol_code), lang]  # Try to get single cell
+                value = self.df_trad.loc[str(geol_code), lang]  # Try to get single cell
                 if isinstance(value, pd.Series):
                     msg = value.iloc[0]  # Take first value if still a Series
                 else:
                     msg = value
+                # Handle both string '0' and integer 0 cases
                 if isinstance(msg, str) and msg.startswith("à "):
                     msg = msg.replace("à ", "")
 
@@ -292,7 +415,10 @@ def check_attribute_in_table(cls_name, table, attributes, abrev, prefixes):
 
     table_name = "TOPGIS_GC." + table.upper()
 
-    attributes_dict = tables_dict.get(table_name)
+    table_dict = featclasses_dict.get(table_name)
+
+    if table_dict:
+        attributes_dict = featclasses_dict.get(table_name).get("fields")
 
     table_attributes = [d.get("name", "").upper() for d in attributes_dict]
 
@@ -365,7 +491,7 @@ def check_attribute_in_table(cls_name, table, attributes, abrev, prefixes):
 def get_table_values(name):
     geol_dict = {}
     try:
-        file_path = os.path.join(input_dir, name)
+        file_path = os.path.join(SOURCES_DIR, name)
         # df = pd.read_csv(file_path)
 
         with open(file_path, "r", encoding="utf-8") as f:
@@ -523,8 +649,9 @@ class Report:
                             )
                         except Exception as e:
                             logger.error(
-                                f"Theme: {cls_name}, attribute {attributes_in_model} check error: {e}"
+                                f"Theme: {cls_name}, attributes {attributes_in_model} not found in {table_name} check error: {e}"
                             )
+                            logger.error(traceback.format_exc())
 
             except (KeyError, TypeError, IndexError) as e:
                 logger.error(f"Error processing theme '{theme}': {e}")
@@ -544,7 +671,7 @@ class Report:
             # table
             else:
                 try:
-                    json_data_path = os.path.join(input_dir, annex.get("fname"))
+                    json_data_path = os.path.join(SOURCES_DIR, annex.get("fname"))
 
                     with open(json_data_path, "r") as f:
                         data = json.loads(f.read())
@@ -721,11 +848,18 @@ def prettify(datamodel):
     "--output",
     "-o",
     type=click.Path(file_okay=False),
-    default="inputs",
+    default=MARKDOWN_DIR,
     help="Directory for output markdown files",
 )
+@click.option(
+    "--input",
+    "-i",
+    type=click.Path(file_okay=False),
+    default=SOURCES_DIR,
+    help="Directory for files sources (translation, codes, etc.)",
+)
 @click.argument("datamodel", type=click.Path(exists=True))
-def generate(lang, datamodel, output):
+def generate(lang, datamodel, output, input):
     """
     Generate a markdown document from the DATAMODEL YAML-file.
     """
@@ -858,7 +992,13 @@ def generate(lang, datamodel, output):
         return p.sub(r"**\1**", input)
 
     # Used instead of babel
-    translator = Translator()
+    try:
+        df_translations = load_translation_dataframe(input)
+        # Now you can use df_translations for your translations
+    except Exception as e:
+        # Handle error case
+        print(f"Failed to load translations: {e}")
+    translator = Translator(df_translations)
 
     env.filters["slugify"] = slugify
     env.filters["highlight"] = highlight
@@ -876,7 +1016,7 @@ def generate(lang, datamodel, output):
 
     def render_template_with_locale(template_name, data, locale):
         template = env.get_template(template_name)
-        return template.render(data,  locale=locale)
+        return template.render(data, locale=locale)
 
     markdown_fname = os.path.join(output_dir, lang, f"{project_name}.md")
     logger.info(f"Generating {markdown_fname}")

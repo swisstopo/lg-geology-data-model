@@ -309,7 +309,7 @@ themes:
         de: Kartographische Einheiten
         fr: Unités cartographique
       att_type: annex
-      value: GEOL_MAPPING_UNIT_ATT_CD
+      value: GC_GEOL_MAPPING_UNIT_ATT  # TODO or GC_GEOL_MAPPING_UNIT_CD?
       cardinality: "1"
       mandatory: true
     - name: LITSTRAT_FORMATION_BANK  # check
@@ -2705,7 +2705,7 @@ themes:
 # TODO: description should be taken from abbove
       mandatory: true
 annexes:
-- name: gc_geol_mapping_unit_att   # TODO: implement
+- name: GC_GEOL_MAPPING_UNIT_ATT   # TODO: implement
   type_: table
   fname: Geol_Mapping_Unit_Att.json
   description:
@@ -2725,7 +2725,7 @@ annexes:
     fr: Correlation
 
 - name: GC_LITSTRAT_FORMATION_BANK_CD
-  type: list
+  type_: list
   fname: Litstrat_Formation_Bank.json
   description:
     de: blabla
