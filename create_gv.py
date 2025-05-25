@@ -720,7 +720,7 @@ def generate_puml_diagram(
     puml_lines.extend(
         [
             "' Position core entities in center",
-            "GCUNCO_DESPOSIT -[hidden]down- GC_BEDROCK",
+            "GC_UNCO_DESPOSIT -[hidden]down- GC_BEDROCK",
             "",
         ]
     )
@@ -782,6 +782,8 @@ def _generate_header(diagram_title, **kwargs):
         f"skinparam linetype {config['line_type']}",
         "skinparam backgroundcolor white",
         f"skinparam defaultFontSize {config['font_size']}",
+        'skinparam defaultFontName "Sans-Serif"',
+        "",
         "skinparam rectangle {",
         "  roundCorner 50",
         f"  BackGroundColor {config['bg_color']}",
@@ -889,11 +891,11 @@ def _format_column_definition(column):
     display_type = type_.replace("[GEOMETRY] ", "") if type_ else "unknown"
 
     if is_primary:
-        return f"🔑 **{name}** : {display_type} <<PK>>"
+        return f" **{name}** : {display_type} <<PK>>"  # 🔑 is nice
     elif is_foreign_key:
         reference = getattr(column, "reference", "unknown")
         clean_reference = _clean_table_name_for_display(reference)
-        return f"{name} : {display_type} <<FK➜{clean_reference}>>"
+        return f"{name} : {display_type} <<FK->{clean_reference}>>"  # was ➜
     else:
         if type_ and "[GEOMETRY]" in str(type_):
             return f"{name} : {display_type} <<GEOMETRY>>"
