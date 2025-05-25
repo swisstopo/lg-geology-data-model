@@ -9,6 +9,7 @@ from loguru import logger
 
 from typing import Union, List
 from collections import namedtuple
+import yaml
 
 FONTNAME = "DejaVu Sans,Nimbus Sans"
 
@@ -27,6 +28,26 @@ data = {
     "class_color": "#D4A373",
     "rectangle_color": "CD5656",
 }  # without #
+
+
+def get_release_number(model_path="datamodel.yaml"):
+    version = "Unknown"
+    try:
+        with open(model_path, "r") as file:
+            data = yaml.safe_load(file)
+
+        version = data.get("model", {}).get("revision", "Unknown")
+    except Exception as e:
+        logger.error(f"Cannot determine version from model {model_path}")
+
+    return version
+
+
+def format_version(version):
+    parts = version.split(".")
+    if len(parts) >= 2:
+        return ".".join(parts[:2])  #
+    return version
 
 
 def removeprefix(prefix, lst):
@@ -694,6 +715,15 @@ def generate_puml_diagram(
         table_puml = _generate_table_definition(table_name, table_object, config)
         puml_lines.extend(table_puml)
         puml_lines.append("")
+    # TODO: ugly
+
+    puml_lines.extend(
+        [
+            "' Position core entities in center",
+            "GC_UNCO_DESPOSIT -[hidden]down- GC_BEDROCK",
+            "",
+        ]
+    )
 
     # Generate relationships
     relationship_lines = _generate_relationships(all_tables)
@@ -726,6 +756,10 @@ def _generate_header(diagram_title, **kwargs):
         "junction_table_color": "#FFF8E1",
         "relation_table_color": "#F3E5F5",
         "bg_color": "#F3E5F5",
+        "page_width": "420mm",  # A3 landscape width
+        "page_height": "297mm",  # A3 landscape height
+        "layout_direction": "left to right direction",
+        "core_entities": ["BEDROCK", "UNCO_DEPOSIT"],  # Your core entities
     }
 
     config = {**defaults, **kwargs}
@@ -734,9 +768,22 @@ def _generate_header(diagram_title, **kwargs):
         "@startuml",
         f"!theme {config['theme']}",
         "",
+        f"skinparam pageWidth {config['page_width']}",
+        f"skinparam pageHeight {config['page_height']}",
+        "skinparam dpi 150",
+        "",
+        f"{config['layout_direction']}",
+        "",
+        "' Optimized for A3 landscape with centered core entities",
+        "skinparam linetype ortho",
+        "skinparam nodesep 40",
+        "skinparam ranksep 60",
+        "skinparam minClassWidth 100",
         f"skinparam linetype {config['line_type']}",
         "skinparam backgroundcolor white",
         f"skinparam defaultFontSize {config['font_size']}",
+        'skinparam defaultFontName "Sans-Serif"',
+        "",
         "skinparam rectangle {",
         "  roundCorner 50",
         f"  BackGroundColor {config['bg_color']}",
@@ -748,6 +795,9 @@ def _generate_header(diagram_title, **kwargs):
         f"skinparam TitleFontSize {config['font_size'] * 3}",
         "",
         "scale 1",
+        "' Manual layout control - place core entities in center",
+        "!define GC_BEDROCK_POS (150, 200)",
+        "!define GC_UNCO_DESPOSIT_POS (200, 400)",
         "",
         f"rectangle   {config['bg_color']};line:CD5656;line.bold; {{",
     ]
@@ -841,11 +891,11 @@ def _format_column_definition(column):
     display_type = type_.replace("[GEOMETRY] ", "") if type_ else "unknown"
 
     if is_primary:
-        return f"🔑 **{name}** : {display_type} <<PK>>"
+        return f" **{name}** : {display_type} <<PK>>"  # 🔑 is nice
     elif is_foreign_key:
         reference = getattr(column, "reference", "unknown")
         clean_reference = _clean_table_name_for_display(reference)
-        return f"{name} : {display_type} <<FK➜{clean_reference}>>"
+        return f"{name} : {display_type} <<FK->{clean_reference}>>"  # was ➜
     else:
         if type_ and "[GEOMETRY]" in str(type_):
             return f"{name} : {display_type} <<GEOMETRY>>"
@@ -892,7 +942,7 @@ def _generate_relationships(all_tables):
                             and table_object.cardinality == "ManyToMany"
                         ):
                             relationship_lines.append(
-                                f'{reference_alias} ||--o{{ {table_alias} : "1:n"'
+                                f'{reference_alias} ||--right--o{{ {table_alias} : "1:n"'
                             )
                         else:
                             relationship_lines.append(
@@ -901,7 +951,7 @@ def _generate_relationships(all_tables):
                     else:
                         column_name = getattr(column, "name", "fk")
                         relationship_lines.append(
-                            f'{reference_alias} ||--o{{ {table_alias} : "{column_name}"'
+                            f'{reference_alias} ||--right--o{{ {table_alias} : "{column_name}"'
                         )
 
                     processed_relationships.add(rel_id)
@@ -962,9 +1012,10 @@ def main():
     pprint(all_tables)
 
     # Custom styling
+    version = format_version(get_release_number())
     diagram = generate_puml_diagram(
         all_tables,
-        "Geocover 5.0 May 2025",
+        f"Geocover {version} May 2025",
         font_size=12,
         spatial_table_color="#ECA77F",
         regular_table_color="#F4C8A6",

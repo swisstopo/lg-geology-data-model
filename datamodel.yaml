@@ -12,13 +12,13 @@
 # 0.7  Added attribut `alias`
 # 0.8  Attribut `status` indicating the version an attribute is used (<4.0, >=4.0)
 # 0.9  Attribute's name as in the database, `alias`for display
-# 0.10 Content 'KE'
+# 0.10 Attribute `origin` for joined table. Special `annex` type `table` for 'KE' codes
 version: "0.10"
-date: 2024-11-12
+date: 2025-05-25
 
 # Model revision should change if attributes are added, deleted or changed
 model:
-  revision: 4.1.0
+  revision: '4.1.0'
   revision_date: "2025-05-20"
 
 # Annexe

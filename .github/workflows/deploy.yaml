@@ -23,7 +23,9 @@ jobs:
           echo "version=$(<VERSION)" >> $GITHUB_ENV
           echo "=== PKG_VERSION=$version ==="
           echo "RELEASE=$(python -c "import yaml; print(yaml.safe_load(open('datamodel.yaml'))['model']['revision'])")" >> $GITHUB_ENV
-          echo "=== RELEASE=$RELEASE ==="
+          echo "SHORT_RELEASE=$(echo '4.0.0' | cut -d'.' -f1,2)" >> $GITHUB_ENV
+          echo "=== RELEASE=${{ env.RELEASE }} ==="
+          echo "=== SHORT=${{ env.SHORT_RELEASE }} ==="
     - name: Download assets from build
       uses: actions/download-artifact@v4
       with:
@@ -37,6 +39,6 @@ jobs:
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         AWS_REGION: 'eu-central-1'
         S3_BUCKET: ${{ secrets.AWS_BUCKET }}
-        S3_KEY: datamodel/${{ env.RELEASE }}
+        S3_KEY: datamodel/${{ env.SHORT_RELEASE }}
         FILE: './outputs'
 
