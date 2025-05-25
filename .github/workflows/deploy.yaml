@@ -24,8 +24,8 @@ jobs:
           echo "=== PKG_VERSION=$version ==="
           echo "RELEASE=$(python -c "import yaml; print(yaml.safe_load(open('datamodel.yaml'))['model']['revision'])")" >> $GITHUB_ENV
           echo "SHORT_RELEASE=$(echo '4.0.0' | cut -d'.' -f1,2)" >> $GITHUB_ENV
-          echo "=== RELEASE=$RELEASE ==="
-          echo "=== SHORT=SHORT_RELEASE ==="
+          echo "=== RELEASE=${{ env.RELEASE }} ==="
+          echo "=== SHORT=${{ env.SHORT_RELEASE }} ==="
     - name: Download assets from build
       uses: actions/download-artifact@v4
       with:
