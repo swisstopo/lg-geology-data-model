@@ -1,1 +1,363 @@
-Old: (Meso)Kataklasit → New: ❌ No direct replacement foundOld: Adergneis → New: ❌ No direct replacement foundOld: agmatischer Gneis → New: ❌ No direct replacement foundOld: Albitit → New: ❌ No direct replacement foundOld: Alkalirhyolith → New: ❌ No direct replacement foundOld: Alkalisyenit → New: ❌ No direct replacement foundOld: Alkalitrachyt → New: ❌ No direct replacement foundOld: Alkalogranit → New: ❌ No direct replacement foundOld: Alluvion, undifferenziert → New: Alluvion, undifferenziertOld: Amphibolit → New: ❌ No direct replacement foundOld: Amphibolitgneis → New: ❌ No direct replacement foundOld: Anatexit, undifferenziert → New: ❌ No direct replacement foundOld: Andesit → New: ❌ No direct replacement foundOld: Anhydrit → New: ❌ No direct replacement foundOld: Anthrazit → New: ❌ No direct replacement foundOld: anthropogene Elemente, undifferenziert → New: anthropogene Elemente, undifferenziertOld: Ã¤olischer Sand, Flugsand → New: Ã¤olischer Sand, FlugsandOld: Ã¤olisches Sediment, undifferenziert → New: Ã¤olisches Sediment, undifferenziertOld: Aplit → New: ❌ No direct replacement foundOld: Aptychenkalk → New: ❌ No direct replacement foundOld: Arenit → New: ❌ No direct replacement foundOld: Arkose → New: ❌ No direct replacement foundOld: Aschentuff → New: ❌ No direct replacement foundOld: AuffÃ¼llung → New: AuffÃ¼llungOld: AufschÃ¼ttung, Damm → New: AufschÃ¼ttung, DammOld: Augengneis → New: ❌ No direct replacement foundOld: Bachschutt → New: BachschuttOld: BÃ¤nderamphibolit → New: ❌ No direct replacement foundOld: BÃ¤ndergneis → New: ❌ No direct replacement foundOld: Basalt → New: ❌ No direct replacement foundOld: basisches Ganggestein → New: ❌ No direct replacement foundOld: Basisches Gestein → New: ❌ No direct replacement foundOld: Bentonit → New: ❌ No direct replacement foundOld: Bergsturzablagerung → New: BergsturzablagerungOld: biogener Kalkstein, undifferenziert → New: ❌ No direct replacement foundOld: biogenes / biochemisches / organisches Sedimentgestein, undifferenziert → New: ❌ No direct replacement foundOld: bioklastischer Kalk → New: ❌ No direct replacement foundOld: Biotitit → New: ❌ No direct replacement foundOld: Blockgletscher → New: BlockgletscherOld: Blockschutt → New: BlockschuttOld: Bohnerz → New: ❌ No direct replacement foundOld: Boluston → New: ❌ No direct replacement foundOld: Brekzie → New: ❌ No direct replacement foundOld: Caliche → New: ❌ No direct replacement foundOld: chemisches Sedimentgestein, undifferenziert → New: ❌ No direct replacement foundOld: Chloritit → New: ❌ No direct replacement foundOld: Chloritschiefer → New: ❌ No direct replacement foundOld: Dazit → New: ❌ No direct replacement foundOld: Deponie → New: DeponieOld: detritische Verlandungsbildung → New: detritische VerlandungsbildungOld: detritischer Kalk → New: ❌ No direct replacement foundOld: Diatexit mit nebulitischer Textur → New: ❌ No direct replacement foundOld: Diatexit mit Schlierentextur → New: ❌ No direct replacement foundOld: Diatexit mit Schollentextur → New: ❌ No direct replacement foundOld: Diorit → New: ❌ No direct replacement foundOld: Dolerit → New: ❌ No direct replacement foundOld: Dolomit → New: ❌ No direct replacement foundOld: Dolomitbrekzie → New: ❌ No direct replacement foundOld: dolomitischer Marmor → New: ❌ No direct replacement foundOld: Dolomitsandstein → New: ❌ No direct replacement foundOld: dÃ¼nne Lockermaterialbedeckung → New: dÃ¼nne LockermaterialbedeckungOld: Echinodermenkalk → New: ❌ No direct replacement foundOld: Eisenoolith → New: ❌ No direct replacement foundOld: Eisensandstein → New: ❌ No direct replacement foundOld: eisenschÃ¼ssiger Kalk → New: ❌ No direct replacement foundOld: Eklogit → New: ❌ No direct replacement foundOld: EntwÃ¤sserungssediment → New: EntwÃ¤sserungssedimentOld: Ergussgestein, undifferenziert → New: ❌ No direct replacement foundOld: Essexit → New: ❌ No direct replacement foundOld: Evaporit, undifferenziert → New: ❌ No direct replacement foundOld: Extrusivgestein, undifferenziert → New: ❌ No direct replacement foundOld: Fels, undifferenziert → New: ❌ No direct replacement foundOld: Felssturzablagerung → New: FelssturzablagerungOld: fluviatiler Schotter → New: fluviatiler SchotterOld: fluviatiles Sediment, undifferenziert → New: fluviatiles Sediment, undifferenziertOld: Flyschsandstein, Grauwacke → New: ❌ No direct replacement foundOld: Gabbro → New: ❌ No direct replacement foundOld: Ganggestein, undifferenziert → New: ❌ No direct replacement foundOld: gemischter Schutt → New: gemischter SchuttOld: geringmÃ¤chtige Lockergesteinsbedeckung → New: geringmÃ¤chtige LockergesteinsbedeckungOld: GerÃ¶ll fÃ¼hrender Metasandstein → New: ❌ No direct replacement foundOld: GerÃ¶ll fÃ¼hrender Sandstein → New: ❌ No direct replacement foundOld: Gestein der Regional- und Kontaktmetamorphose, undifferenziert → New: ❌ No direct replacement foundOld: Gestein der StÃ¶rungszone → New: ❌ No direct replacement foundOld: Gestein der StÃ¶rungszone, undifferenziert → New: ❌ No direct replacement foundOld: Gesteinsmehl → New: ❌ No direct replacement foundOld: Gips → New: ❌ No direct replacement foundOld: glaukonitischer Kalkstein → New: ❌ No direct replacement foundOld: glaukonitischer Mergel → New: ❌ No direct replacement foundOld: Glaukonitsandstein → New: ❌ No direct replacement foundOld: Glaukophanschiefer → New: ❌ No direct replacement foundOld: glazifluviatiler Schotter → New: glazifluviatiler SchotterOld: glazifluviatiles Sediment, undifferenziert → New: glazifluviatiles Sediment, undifferenziertOld: glazigenes Sediment, undifferenziert → New: glazigenes Sediment, undifferenziertOld: glazilakustrisches Deltasediment → New: glazilakustrisches DeltasedimentOld: glazilakustrisches Sediment, undifferenziert → New: glazilakustrisches Sediment, undifferenziertOld: Glimmersandstein → New: ❌ No direct replacement foundOld: Glimmerschiefer → New: ❌ No direct replacement foundOld: Gneis mit Feldspatblasten → New: ❌ No direct replacement foundOld: Gneis, undifferenziert → New: ❌ No direct replacement foundOld: Granat-Glimmerschiefer → New: ❌ No direct replacement foundOld: Granit → New: ❌ No direct replacement foundOld: Granodiorit → New: ❌ No direct replacement foundOld: Granophyr → New: ❌ No direct replacement foundOld: Granulit → New: ❌ No direct replacement foundOld: gravitative Sedimente und Verwitterungsbildungen, undifferenziert → New: gravitative Sedimente und Verwitterungsbildungen, undifferenziertOld: Greisen → New: ❌ No direct replacement foundOld: GrÃ¼nschiefer → New: ❌ No direct replacement foundOld: Gyttja → New: GyttjaOld: Halde → New: HaldeOld: Hanglehm, Schwemmlehm → New: Hanglehm, SchwemmlehmOld: Hangschutt → New: HangschuttOld: Hornblenditit → New: ❌ No direct replacement foundOld: Hornfels → New: ❌ No direct replacement foundOld: Hornstein, Chert → New: ❌ No direct replacement foundOld: Huppererde → New: ❌ No direct replacement foundOld: hydrochemische Bildungen (Kalksinter) → New: hydrochemische Bildungen (Kalksinter)Old: Ignimbrit → New: ❌ No direct replacement foundOld: In-situ-Verwitterungsschutt → New: In-situ-VerwitterungsschuttOld: Intrusivgestein, undifferenziert → New: ❌ No direct replacement foundOld: Kakirit, undifferenziert → New: ❌ No direct replacement foundOld: Kalkbrekzie → New: ❌ No direct replacement foundOld: Kalkmergelstein → New: ❌ No direct replacement foundOld: Kalkoolith → New: ❌ No direct replacement foundOld: Kalksandstein → New: ❌ No direct replacement foundOld: Kalkschiefer → New: ❌ No direct replacement foundOld: Kalksilikatfels → New: ❌ No direct replacement foundOld: Kalkstein, undifferenziert → New: ❌ No direct replacement foundOld: Karbonat- und Silikat fÃ¼hrendes Gestein → New: ❌ No direct replacement foundOld: Karbonat, undifferenziert → New: ❌ No direct replacement foundOld: Karbonatit → New: ❌ No direct replacement foundOld: Kataklasit, undifferenziert → New: ❌ No direct replacement foundOld: kieseliger Sandstein → New: ❌ No direct replacement foundOld: kieseliges Gestein, undifferenziert → New: ❌ No direct replacement foundOld: Kieselkalk → New: ❌ No direct replacement foundOld: Kinzigit → New: ❌ No direct replacement foundOld: klastisches Sedimentgestein, undifferenziert → New: ❌ No direct replacement foundOld: Kluftletten → New: ❌ No direct replacement foundOld: Kohle, undifferenziert → New: ❌ No direct replacement foundOld: Konglomerat → New: ❌ No direct replacement foundOld: Konglomerat und Brekzie, undifferenziert (Psephit, KorngrÃ¶sse: Kies, Steine und BlÃ¶cke) → New: ❌ No direct replacement foundOld: kreidiger Kalk → New: ❌ No direct replacement foundOld: Kristalltuff → New: ❌ No direct replacement foundOld: Krustenkalk → New: ❌ No direct replacement foundOld: kÃ¼nstliche Ablagerung, undifferenziert → New: kÃ¼nstliche Ablagerung, undifferenziertOld: lakustrisches Deltasediment → New: lakustrisches DeltasedimentOld: lakustrisches Sediment, undifferenziert → New: lakustrisches Sediment, undifferenziertOld: Lamprophyr → New: ❌ No direct replacement foundOld: Lapillituff → New: ❌ No direct replacement foundOld: Lawinenschutt → New: LawinenschuttOld: Leptinit → New: ❌ No direct replacement foundOld: Lignit (organisches Sedimentgestein) → New: ❌ No direct replacement foundOld: Lignit (palustrisches Sediment) → New: Lignit (palustrisches Sediment)Old: Lithothamniensandstein → New: ❌ No direct replacement foundOld: Lockergestein → New: LockergesteinOld: LÃ¶ss, LÃ¶sslehm → New: LÃ¶ss, LÃ¶sslehmOld: Magmatit → New: ❌ No direct replacement foundOld: Marmor (Fels) → New: ❌ No direct replacement foundOld: Marmor (sedimentÃ¤rer Protolith) → New: ❌ No direct replacement foundOld: mergeliger Sandstein → New: ❌ No direct replacement foundOld: Mergelkalk → New: ❌ No direct replacement foundOld: Mergelstein → New: ❌ No direct replacement foundOld: Metaalkalirhyolith → New: ❌ No direct replacement foundOld: Metaalkalisyenit → New: ❌ No direct replacement foundOld: Metaalkalitrachyt → New: ❌ No direct replacement foundOld: Metaalkalogranit → New: ❌ No direct replacement foundOld: Metaandesit → New: ❌ No direct replacement foundOld: Metaaplit → New: ❌ No direct replacement foundOld: Metaarkose → New: ❌ No direct replacement foundOld: Metabasalt → New: ❌ No direct replacement foundOld: Metabrekzie → New: ❌ No direct replacement foundOld: Metadazit → New: ❌ No direct replacement foundOld: Metadiorit → New: ❌ No direct replacement foundOld: Metadolerit → New: ❌ No direct replacement foundOld: Metaessexit → New: ❌ No direct replacement foundOld: Metagabbro → New: ❌ No direct replacement foundOld: Metaganggestein → New: ❌ No direct replacement foundOld: Metagranit → New: ❌ No direct replacement foundOld: Metagranodiorit → New: ❌ No direct replacement foundOld: Metagranophyr → New: ❌ No direct replacement foundOld: Metagrauwacke → New: ❌ No direct replacement foundOld: Metaignimbrit → New: ❌ No direct replacement foundOld: Metakarbonat → New: ❌ No direct replacement foundOld: Metakonglomerat → New: ❌ No direct replacement foundOld: Metalamprophyr → New: ❌ No direct replacement foundOld: Metamagmatit → New: ❌ No direct replacement foundOld: Metamergel → New: ❌ No direct replacement foundOld: Metamikrodiorit → New: ❌ No direct replacement foundOld: Metamikrogabbro → New: ❌ No direct replacement foundOld: Metamikrogranit → New: ❌ No direct replacement foundOld: Metamonzodiorit → New: ❌ No direct replacement foundOld: Metamonzogabbro → New: ❌ No direct replacement foundOld: Metamonzonit → New: ❌ No direct replacement foundOld: metamorph Ã¼berprÃ¤gtes Intrusivgestein → New: ❌ No direct replacement foundOld: metamorph Ã¼berprÃ¤gtes pyroklastisches Gestein → New: ❌ No direct replacement foundOld: Metamorphit → New: ❌ No direct replacement foundOld: Metamorphit (magmatischer Protolith erkennbar) → New: ❌ No direct replacement foundOld: Metamorphit (Protolith erkennbar) → New: ❌ No direct replacement foundOld: Metamorphit (sedimentÃ¤rer Protolith erkennbar) → New: ❌ No direct replacement foundOld: Metanorit → New: ❌ No direct replacement foundOld: Metapegmatit → New: ❌ No direct replacement foundOld: Metapelit → New: ❌ No direct replacement foundOld: Metaperidotit → New: ❌ No direct replacement foundOld: Metaphonolit → New: ❌ No direct replacement foundOld: Metapikrit → New: ❌ No direct replacement foundOld: Metaplutonit → New: ❌ No direct replacement foundOld: Metapsammit → New: ❌ No direct replacement foundOld: Metapsephit → New: ❌ No direct replacement foundOld: Metapyroxenit → New: ❌ No direct replacement foundOld: Metaquarzandesit → New: ❌ No direct replacement foundOld: Metaquarzdiorit → New: ❌ No direct replacement foundOld: Metaquarzgabbro → New: ❌ No direct replacement foundOld: Metaradiolarit → New: ❌ No direct replacement foundOld: Metarhyodazit → New: ❌ No direct replacement foundOld: Metarhyolith → New: ❌ No direct replacement foundOld: Metasandstein → New: ❌ No direct replacement foundOld: Metasediment → New: ❌ No direct replacement foundOld: Metasiltstein → New: ❌ No direct replacement foundOld: Metasomatit, undifferenziert → New: ❌ No direct replacement foundOld: Metasyenit → New: ❌ No direct replacement foundOld: Metatexit mit Fleckentextur → New: ❌ No direct replacement foundOld: Metatexit mit Netztextur → New: ❌ No direct replacement foundOld: Metatexit mit stromatitischer Textur → New: ❌ No direct replacement foundOld: Metatonalit → New: ❌ No direct replacement foundOld: Metatrachyt → New: ❌ No direct replacement foundOld: Metavulkanit → New: ❌ No direct replacement foundOld: Migmatit → New: ❌ No direct replacement foundOld: Mikrit → New: ❌ No direct replacement foundOld: Mikrodiorit → New: ❌ No direct replacement foundOld: Mikrogabbro → New: ❌ No direct replacement foundOld: Mikrogranit → New: ❌ No direct replacement foundOld: monomineralischer Metamorphit, undifferenziert → New: ❌ No direct replacement foundOld: Monzodiorit → New: ❌ No direct replacement foundOld: Monzogabbro → New: ❌ No direct replacement foundOld: Monzonit → New: ❌ No direct replacement foundOld: MorÃ¤ne (Till), undifferenziert → New: MorÃ¤ne (Till), undifferenziertOld: MorÃ¤ne auf Gletscher oder Toteis (Glacier or Dead Ice covered by Till) → New: MorÃ¤ne auf Gletscher oder Toteis (Glacier or Dead Ice covered by Till)Old: Murgangablagerung → New: MurgangablagerungOld: Muschelsandstein → New: ❌ No direct replacement foundOld: Mylonit → New: ❌ No direct replacement foundOld: Mylonit, undifferenziert → New: ❌ No direct replacement foundOld: nephelinitischer Metasyenit → New: ❌ No direct replacement foundOld: nephelinitischer Syenit → New: ❌ No direct replacement foundOld: Norit → New: ❌ No direct replacement foundOld: Nummulitenkalk → New: ❌ No direct replacement foundOld: Nummulitensandstein → New: ❌ No direct replacement foundOld: Ophikalzit → New: ❌ No direct replacement foundOld: Orthogneis → New: ❌ No direct replacement foundOld: palustrisches Sediment → New: palustrisches SedimentOld: palustrisches Sediment, undifferenziert → New: palustrisches Sediment, undifferenziertOld: Paragneis → New: ❌ No direct replacement foundOld: pedogenes Karbonat, undifferenziert → New: ❌ No direct replacement foundOld: Pegmatit → New: ❌ No direct replacement foundOld: Pelit, undifferenziert → New: ❌ No direct replacement foundOld: Peridotit (Intrusivgestein) → New: ❌ No direct replacement foundOld: Peridotit (Metamorphit) → New: ❌ No direct replacement foundOld: Phonolith → New: ❌ No direct replacement foundOld: phosphoritreicher Kalkstein → New: ❌ No direct replacement foundOld: phosphoritreicher Mergelstein → New: ❌ No direct replacement foundOld: phosphoritreicher Sandstein → New: ❌ No direct replacement foundOld: phosphoritreiches Gestein, undifferenziert → New: ❌ No direct replacement foundOld: Phyllit → New: ❌ No direct replacement foundOld: Phyllonit → New: ❌ No direct replacement foundOld: Pikrit (Effusiva) → New: ❌ No direct replacement foundOld: Pikrit (Intrusivgestein) → New: ❌ No direct replacement foundOld: Plateaulehm → New: PlateaulehmOld: Prasinit → New: ❌ No direct replacement foundOld: Protokataklasit → New: ❌ No direct replacement foundOld: Protomylonit → New: ❌ No direct replacement foundOld: Pseudotachylit → New: ❌ No direct replacement foundOld: Pyroklastische Brekzie → New: ❌ No direct replacement foundOld: pyroklastisches Gestein, undifferenziert (vulkanischer Tuff, > 75 % pyroklast. Komp.) → New: ❌ No direct replacement foundOld: Pyroxenit (Intrusivgestein) → New: ❌ No direct replacement foundOld: Pyroxenit (monomineralischer Metamorphit) → New: ❌ No direct replacement foundOld: Quarzandesit → New: ❌ No direct replacement foundOld: Quarzdiorit → New: ❌ No direct replacement foundOld: Quarzgabbro → New: ❌ No direct replacement foundOld: Quarzit (monomineralischer Metamorphit) → New: ❌ No direct replacement foundOld: Quarzit (sedimentÃ¤rer Protolith) → New: ❌ No direct replacement foundOld: Quarzsand → New: ❌ No direct replacement foundOld: Quarzsandstein → New: ❌ No direct replacement foundOld: Quarzschiefer → New: ❌ No direct replacement foundOld: Quelltuff (Kalksinter, Lockergestein) → New: Quelltuff (Kalksinter, Lockergestein)Old: Quelltuff (Kalksinter, Sedimentgestein) → New: ❌ No direct replacement foundOld: Radiolarit → New: ❌ No direct replacement foundOld: randglazialer Schotter → New: randglazialer SchotterOld: Rauwacke (Kataklasit) → New: ❌ No direct replacement foundOld: Rauwacke (Sedimentgestein) → New: ❌ No direct replacement foundOld: Residualgestein / pedogen Ã¼berprÃ¤gtes Gestein, undifferenziert → New: ❌ No direct replacement foundOld: Rhyodazit → New: ❌ No direct replacement foundOld: Rhyolith → New: ❌ No direct replacement foundOld: Rhyolithporphyr → New: ❌ No direct replacement foundOld: Riffkalk → New: ❌ No direct replacement foundOld: Rodingit → New: ❌ No direct replacement foundOld: RÃ¼ckzugsschotter → New: RÃ¼ckzugsschotterOld: Rudit → New: ❌ No direct replacement foundOld: Rutschmasse → New: RutschmasseOld: Sandstein, undifferenziert (Psammit: SandkorngrÃ¶sse) → New: ❌ No direct replacement foundOld: saures Ganggestein → New: ❌ No direct replacement foundOld: Schiefer, undifferenziert → New: ❌ No direct replacement foundOld: Schlammstein → New: ❌ No direct replacement foundOld: Schollenamphibolit → New: ❌ No direct replacement foundOld: SedimentÃ¤rer Gang (clastic dike) → New: SedimentÃ¤rer Gang (clastic dike)Old: Sedimentgestein → New: ❌ No direct replacement foundOld: Seebodensediment → New: SeebodensedimentOld: Seekreide → New: SeekreideOld: Serizitschiefer → New: ❌ No direct replacement foundOld: Serpentinit → New: ❌ No direct replacement foundOld: siderolithische Verwitterungsbildungen → New: ❌ No direct replacement foundOld: Silcrete → New: ❌ No direct replacement foundOld: silikatreicher Marmor → New: ❌ No direct replacement foundOld: silikatreiches Gestein, undifferenziert → New: ❌ No direct replacement foundOld: Siltstein → New: ❌ No direct replacement foundOld: Skarn → New: ❌ No direct replacement foundOld: Spatkalk → New: ❌ No direct replacement foundOld: Spiculit → New: ❌ No direct replacement foundOld: Stauschotter → New: StauschotterOld: Steinkohle → New: ❌ No direct replacement foundOld: Steinsalz → New: ❌ No direct replacement foundOld: Strandablagerungen → New: StrandablagerungenOld: Stronalit → New: ❌ No direct replacement foundOld: strukturierter Hangschutt → New: strukturierter HangschuttOld: Sturzablagerung, undifferenziert → New: Sturzablagerung, undifferenziertOld: subaquatisch abgelagerte MorÃ¤ne (Waterlaid Till) → New: subaquatisch abgelagerte MorÃ¤ne (Waterlaid Till)Old: Sumpf → New: SumpfOld: SÃ¼sswasserkalk → New: ❌ No direct replacement foundOld: Syenit → New: ❌ No direct replacement foundOld: Talkschiefer → New: ❌ No direct replacement foundOld: tektonische Brekzie (kohÃ¤sionslos) → New: ❌ No direct replacement foundOld: tektonische Brekzie (mit KohÃ¤sion) → New: ❌ No direct replacement foundOld: tektonische Dolomitbrekzie → New: ❌ No direct replacement foundOld: tektonische Kalkbrekzie → New: ❌ No direct replacement foundOld: Tiefengestein, undifferenziert → New: ❌ No direct replacement foundOld: tiefgrÃ¼ndige Verwitterungsdecke → New: tiefgrÃ¼ndige VerwitterungsdeckeOld: Tonalit → New: ❌ No direct replacement foundOld: toniger Sandstein → New: ❌ No direct replacement foundOld: Tonmergelstein → New: ❌ No direct replacement foundOld: Tonschiefer (Schiefer) → New: ❌ No direct replacement foundOld: Tonschiefer (sedimentÃ¤rer Protolith) → New: ❌ No direct replacement foundOld: Tonstein → New: ❌ No direct replacement foundOld: Torfmoor, Torf → New: Torfmoor, TorfOld: Trachyt → New: ❌ No direct replacement foundOld: Travertin (Kalksinter, Lockergestein) → New: Travertin (Kalksinter, Lockergestein)Old: Travertin (Kalksinter, Sedimentgestein) → New: ❌ No direct replacement foundOld: Tsunamiablagerung → New: TsunamiablagerungOld: Tuffit, undifferenziert (pyroklast. und nicht vulk. Sedimente, 75-25 % pyroklast. Komp.) → New: ❌ No direct replacement foundOld: tuffitische Brekzie → New: ❌ No direct replacement foundOld: tuffitischer Sandstein → New: ❌ No direct replacement foundOld: tuffitischer Siltstein → New: ❌ No direct replacement foundOld: tuffitischer Tonstein → New: ❌ No direct replacement foundOld: tuffitisches Konglomerat → New: ❌ No direct replacement foundOld: Ãœberschwemmungssediment → New: ÃœberschwemmungssedimentOld: Ultrabasisches Gestein → New: ❌ No direct replacement foundOld: Ultrakataklasit → New: ❌ No direct replacement foundOld: ultramafisches Gestein → New: ❌ No direct replacement foundOld: Ultramylonit → New: ❌ No direct replacement foundOld: Verwitterungslehm, undifferenziert → New: Verwitterungslehm, undifferenziertOld: Vorstossschotter → New: VorstossschotterOld: vulkanische Asche → New: vulkanische AscheOld: zerrÃ¼ttete Sackungsmasse → New: zerrÃ¼ttete SackungsmasseOld: Zweiglimmergneis → New: ❌ No direct replacement foundOld: Unknown → New: UnknownOld: Not applicable → New: Not applicable
+Old: (Meso)Kataklasit → New: ❌ No direct replacement found
+Old: Adergneis → New: ❌ No direct replacement found
+Old: agmatischer Gneis → New: ❌ No direct replacement found
+Old: Albitit → New: ❌ No direct replacement found
+Old: Alkalirhyolith → New: ❌ No direct replacement found
+Old: Alkalisyenit → New: ❌ No direct replacement found
+Old: Alkalitrachyt → New: ❌ No direct replacement found
+Old: Alkalogranit → New: ❌ No direct replacement found
+Old: Alluvion, undifferenziert → New: Alluvion, undifferenziert
+Old: Amphibolit → New: ❌ No direct replacement found
+Old: Amphibolitgneis → New: ❌ No direct replacement found
+Old: Anatexit, undifferenziert → New: ❌ No direct replacement found
+Old: Andesit → New: ❌ No direct replacement found
+Old: Anhydrit → New: ❌ No direct replacement found
+Old: Anthrazit → New: ❌ No direct replacement found
+Old: anthropogene Elemente, undifferenziert → New: anthropogene Elemente, undifferenziert
+Old: Ã¤olischer Sand, Flugsand → New: Ã¤olischer Sand, Flugsand
+Old: Ã¤olisches Sediment, undifferenziert → New: Ã¤olisches Sediment, undifferenziert
+Old: Aplit → New: ❌ No direct replacement found
+Old: Aptychenkalk → New: ❌ No direct replacement found
+Old: Arenit → New: ❌ No direct replacement found
+Old: Arkose → New: ❌ No direct replacement found
+Old: Aschentuff → New: ❌ No direct replacement found
+Old: AuffÃ¼llung → New: AuffÃ¼llung
+Old: AufschÃ¼ttung, Damm → New: AufschÃ¼ttung, Damm
+Old: Augengneis → New: ❌ No direct replacement found
+Old: Bachschutt → New: Bachschutt
+Old: BÃ¤nderamphibolit → New: ❌ No direct replacement found
+Old: BÃ¤ndergneis → New: ❌ No direct replacement found
+Old: Basalt → New: ❌ No direct replacement found
+Old: basisches Ganggestein → New: ❌ No direct replacement found
+Old: Basisches Gestein → New: ❌ No direct replacement found
+Old: Bentonit → New: ❌ No direct replacement found
+Old: Bergsturzablagerung → New: Bergsturzablagerung
+Old: biogener Kalkstein, undifferenziert → New: ❌ No direct replacement found
+Old: biogenes / biochemisches / organisches Sedimentgestein, undifferenziert → New: ❌ No direct replacement found
+Old: bioklastischer Kalk → New: ❌ No direct replacement found
+Old: Biotitit → New: ❌ No direct replacement found
+Old: Blockgletscher → New: Blockgletscher
+Old: Blockschutt → New: Blockschutt
+Old: Bohnerz → New: ❌ No direct replacement found
+Old: Boluston → New: ❌ No direct replacement found
+Old: Brekzie → New: ❌ No direct replacement found
+Old: Caliche → New: ❌ No direct replacement found
+Old: chemisches Sedimentgestein, undifferenziert → New: ❌ No direct replacement found
+Old: Chloritit → New: ❌ No direct replacement found
+Old: Chloritschiefer → New: ❌ No direct replacement found
+Old: Dazit → New: ❌ No direct replacement found
+Old: Deponie → New: Deponie
+Old: detritische Verlandungsbildung → New: detritische Verlandungsbildung
+Old: detritischer Kalk → New: ❌ No direct replacement found
+Old: Diatexit mit nebulitischer Textur → New: ❌ No direct replacement found
+Old: Diatexit mit Schlierentextur → New: ❌ No direct replacement found
+Old: Diatexit mit Schollentextur → New: ❌ No direct replacement found
+Old: Diorit → New: ❌ No direct replacement found
+Old: Dolerit → New: ❌ No direct replacement found
+Old: Dolomit → New: ❌ No direct replacement found
+Old: Dolomitbrekzie → New: ❌ No direct replacement found
+Old: dolomitischer Marmor → New: ❌ No direct replacement found
+Old: Dolomitsandstein → New: ❌ No direct replacement found
+Old: dÃ¼nne Lockermaterialbedeckung → New: dÃ¼nne Lockermaterialbedeckung
+Old: Echinodermenkalk → New: ❌ No direct replacement found
+Old: Eisenoolith → New: ❌ No direct replacement found
+Old: Eisensandstein → New: ❌ No direct replacement found
+Old: eisenschÃ¼ssiger Kalk → New: ❌ No direct replacement found
+Old: Eklogit → New: ❌ No direct replacement found
+Old: EntwÃ¤sserungssediment → New: EntwÃ¤sserungssediment
+Old: Ergussgestein, undifferenziert → New: ❌ No direct replacement found
+Old: Essexit → New: ❌ No direct replacement found
+Old: Evaporit, undifferenziert → New: ❌ No direct replacement found
+Old: Extrusivgestein, undifferenziert → New: ❌ No direct replacement found
+Old: Fels, undifferenziert → New: ❌ No direct replacement found
+Old: Felssturzablagerung → New: Felssturzablagerung
+Old: fluviatiler Schotter → New: fluviatiler Schotter
+Old: fluviatiles Sediment, undifferenziert → New: fluviatiles Sediment, undifferenziert
+Old: Flyschsandstein, Grauwacke → New: ❌ No direct replacement found
+Old: Gabbro → New: ❌ No direct replacement found
+Old: Ganggestein, undifferenziert → New: ❌ No direct replacement found
+Old: gemischter Schutt → New: gemischter Schutt
+Old: geringmÃ¤chtige Lockergesteinsbedeckung → New: geringmÃ¤chtige Lockergesteinsbedeckung
+Old: GerÃ¶ll fÃ¼hrender Metasandstein → New: ❌ No direct replacement found
+Old: GerÃ¶ll fÃ¼hrender Sandstein → New: ❌ No direct replacement found
+Old: Gestein der Regional- und Kontaktmetamorphose, undifferenziert → New: ❌ No direct replacement found
+Old: Gestein der StÃ¶rungszone → New: ❌ No direct replacement found
+Old: Gestein der StÃ¶rungszone, undifferenziert → New: ❌ No direct replacement found
+Old: Gesteinsmehl → New: ❌ No direct replacement found
+Old: Gips → New: ❌ No direct replacement found
+Old: glaukonitischer Kalkstein → New: ❌ No direct replacement found
+Old: glaukonitischer Mergel → New: ❌ No direct replacement found
+Old: Glaukonitsandstein → New: ❌ No direct replacement found
+Old: Glaukophanschiefer → New: ❌ No direct replacement found
+Old: glazifluviatiler Schotter → New: glazifluviatiler Schotter
+Old: glazifluviatiles Sediment, undifferenziert → New: glazifluviatiles Sediment, undifferenziert
+Old: glazigenes Sediment, undifferenziert → New: glazigenes Sediment, undifferenziert
+Old: glazilakustrisches Deltasediment → New: glazilakustrisches Deltasediment
+Old: glazilakustrisches Sediment, undifferenziert → New: glazilakustrisches Sediment, undifferenziert
+Old: Glimmersandstein → New: ❌ No direct replacement found
+Old: Glimmerschiefer → New: ❌ No direct replacement found
+Old: Gneis mit Feldspatblasten → New: ❌ No direct replacement found
+Old: Gneis, undifferenziert → New: ❌ No direct replacement found
+Old: Granat-Glimmerschiefer → New: ❌ No direct replacement found
+Old: Granit → New: ❌ No direct replacement found
+Old: Granodiorit → New: ❌ No direct replacement found
+Old: Granophyr → New: ❌ No direct replacement found
+Old: Granulit → New: ❌ No direct replacement found
+Old: gravitative Sedimente und Verwitterungsbildungen, undifferenziert → New: gravitative Sedimente und Verwitterungsbildungen, undifferenziert
+Old: Greisen → New: ❌ No direct replacement found
+Old: GrÃ¼nschiefer → New: ❌ No direct replacement found
+Old: Gyttja → New: Gyttja
+Old: Halde → New: Halde
+Old: Hanglehm, Schwemmlehm → New: Hanglehm, Schwemmlehm
+Old: Hangschutt → New: Hangschutt
+Old: Hornblenditit → New: ❌ No direct replacement found
+Old: Hornfels → New: ❌ No direct replacement found
+Old: Hornstein, Chert → New: ❌ No direct replacement found
+Old: Huppererde → New: ❌ No direct replacement found
+Old: hydrochemische Bildungen (Kalksinter) → New: hydrochemische Bildungen (Kalksinter)
+Old: Ignimbrit → New: ❌ No direct replacement found
+Old: In-situ-Verwitterungsschutt → New: In-situ-Verwitterungsschutt
+Old: Intrusivgestein, undifferenziert → New: ❌ No direct replacement found
+Old: Kakirit, undifferenziert → New: ❌ No direct replacement found
+Old: Kalkbrekzie → New: ❌ No direct replacement found
+Old: Kalkmergelstein → New: ❌ No direct replacement found
+Old: Kalkoolith → New: ❌ No direct replacement found
+Old: Kalksandstein → New: ❌ No direct replacement found
+Old: Kalkschiefer → New: ❌ No direct replacement found
+Old: Kalksilikatfels → New: ❌ No direct replacement found
+Old: Kalkstein, undifferenziert → New: ❌ No direct replacement found
+Old: Karbonat- und Silikat fÃ¼hrendes Gestein → New: ❌ No direct replacement found
+Old: Karbonat, undifferenziert → New: ❌ No direct replacement found
+Old: Karbonatit → New: ❌ No direct replacement found
+Old: Kataklasit, undifferenziert → New: ❌ No direct replacement found
+Old: kieseliger Sandstein → New: ❌ No direct replacement found
+Old: kieseliges Gestein, undifferenziert → New: ❌ No direct replacement found
+Old: Kieselkalk → New: ❌ No direct replacement found
+Old: Kinzigit → New: ❌ No direct replacement found
+Old: klastisches Sedimentgestein, undifferenziert → New: ❌ No direct replacement found
+Old: Kluftletten → New: ❌ No direct replacement found
+Old: Kohle, undifferenziert → New: ❌ No direct replacement found
+Old: Konglomerat → New: ❌ No direct replacement found
+Old: Konglomerat und Brekzie, undifferenziert (Psephit, KorngrÃ¶sse: Kies, Steine und BlÃ¶cke) → New: ❌ No direct replacement found
+Old: kreidiger Kalk → New: ❌ No direct replacement found
+Old: Kristalltuff → New: ❌ No direct replacement found
+Old: Krustenkalk → New: ❌ No direct replacement found
+Old: kÃ¼nstliche Ablagerung, undifferenziert → New: kÃ¼nstliche Ablagerung, undifferenziert
+Old: lakustrisches Deltasediment → New: lakustrisches Deltasediment
+Old: lakustrisches Sediment, undifferenziert → New: lakustrisches Sediment, undifferenziert
+Old: Lamprophyr → New: ❌ No direct replacement found
+Old: Lapillituff → New: ❌ No direct replacement found
+Old: Lawinenschutt → New: Lawinenschutt
+Old: Leptinit → New: ❌ No direct replacement found
+Old: Lignit (organisches Sedimentgestein) → New: ❌ No direct replacement found
+Old: Lignit (palustrisches Sediment) → New: Lignit (palustrisches Sediment)
+Old: Lithothamniensandstein → New: ❌ No direct replacement found
+Old: Lockergestein → New: Lockergestein
+Old: LÃ¶ss, LÃ¶sslehm → New: LÃ¶ss, LÃ¶sslehm
+Old: Magmatit → New: ❌ No direct replacement found
+Old: Marmor (Fels) → New: ❌ No direct replacement found
+Old: Marmor (sedimentÃ¤rer Protolith) → New: ❌ No direct replacement found
+Old: mergeliger Sandstein → New: ❌ No direct replacement found
+Old: Mergelkalk → New: ❌ No direct replacement found
+Old: Mergelstein → New: ❌ No direct replacement found
+Old: Metaalkalirhyolith → New: ❌ No direct replacement found
+Old: Metaalkalisyenit → New: ❌ No direct replacement found
+Old: Metaalkalitrachyt → New: ❌ No direct replacement found
+Old: Metaalkalogranit → New: ❌ No direct replacement found
+Old: Metaandesit → New: ❌ No direct replacement found
+Old: Metaaplit → New: ❌ No direct replacement found
+Old: Metaarkose → New: ❌ No direct replacement found
+Old: Metabasalt → New: ❌ No direct replacement found
+Old: Metabrekzie → New: ❌ No direct replacement found
+Old: Metadazit → New: ❌ No direct replacement found
+Old: Metadiorit → New: ❌ No direct replacement found
+Old: Metadolerit → New: ❌ No direct replacement found
+Old: Metaessexit → New: ❌ No direct replacement found
+Old: Metagabbro → New: ❌ No direct replacement found
+Old: Metaganggestein → New: ❌ No direct replacement found
+Old: Metagranit → New: ❌ No direct replacement found
+Old: Metagranodiorit → New: ❌ No direct replacement found
+Old: Metagranophyr → New: ❌ No direct replacement found
+Old: Metagrauwacke → New: ❌ No direct replacement found
+Old: Metaignimbrit → New: ❌ No direct replacement found
+Old: Metakarbonat → New: ❌ No direct replacement found
+Old: Metakonglomerat → New: ❌ No direct replacement found
+Old: Metalamprophyr → New: ❌ No direct replacement found
+Old: Metamagmatit → New: ❌ No direct replacement found
+Old: Metamergel → New: ❌ No direct replacement found
+Old: Metamikrodiorit → New: ❌ No direct replacement found
+Old: Metamikrogabbro → New: ❌ No direct replacement found
+Old: Metamikrogranit → New: ❌ No direct replacement found
+Old: Metamonzodiorit → New: ❌ No direct replacement found
+Old: Metamonzogabbro → New: ❌ No direct replacement found
+Old: Metamonzonit → New: ❌ No direct replacement found
+Old: metamorph Ã¼berprÃ¤gtes Intrusivgestein → New: ❌ No direct replacement found
+Old: metamorph Ã¼berprÃ¤gtes pyroklastisches Gestein → New: ❌ No direct replacement found
+Old: Metamorphit → New: ❌ No direct replacement found
+Old: Metamorphit (magmatischer Protolith erkennbar) → New: ❌ No direct replacement found
+Old: Metamorphit (Protolith erkennbar) → New: ❌ No direct replacement found
+Old: Metamorphit (sedimentÃ¤rer Protolith erkennbar) → New: ❌ No direct replacement found
+Old: Metanorit → New: ❌ No direct replacement found
+Old: Metapegmatit → New: ❌ No direct replacement found
+Old: Metapelit → New: ❌ No direct replacement found
+Old: Metaperidotit → New: ❌ No direct replacement found
+Old: Metaphonolit → New: ❌ No direct replacement found
+Old: Metapikrit → New: ❌ No direct replacement found
+Old: Metaplutonit → New: ❌ No direct replacement found
+Old: Metapsammit → New: ❌ No direct replacement found
+Old: Metapsephit → New: ❌ No direct replacement found
+Old: Metapyroxenit → New: ❌ No direct replacement found
+Old: Metaquarzandesit → New: ❌ No direct replacement found
+Old: Metaquarzdiorit → New: ❌ No direct replacement found
+Old: Metaquarzgabbro → New: ❌ No direct replacement found
+Old: Metaradiolarit → New: ❌ No direct replacement found
+Old: Metarhyodazit → New: ❌ No direct replacement found
+Old: Metarhyolith → New: ❌ No direct replacement found
+Old: Metasandstein → New: ❌ No direct replacement found
+Old: Metasediment → New: ❌ No direct replacement found
+Old: Metasiltstein → New: ❌ No direct replacement found
+Old: Metasomatit, undifferenziert → New: ❌ No direct replacement found
+Old: Metasyenit → New: ❌ No direct replacement found
+Old: Metatexit mit Fleckentextur → New: ❌ No direct replacement found
+Old: Metatexit mit Netztextur → New: ❌ No direct replacement found
+Old: Metatexit mit stromatitischer Textur → New: ❌ No direct replacement found
+Old: Metatonalit → New: ❌ No direct replacement found
+Old: Metatrachyt → New: ❌ No direct replacement found
+Old: Metavulkanit → New: ❌ No direct replacement found
+Old: Migmatit → New: ❌ No direct replacement found
+Old: Mikrit → New: ❌ No direct replacement found
+Old: Mikrodiorit → New: ❌ No direct replacement found
+Old: Mikrogabbro → New: ❌ No direct replacement found
+Old: Mikrogranit → New: ❌ No direct replacement found
+Old: monomineralischer Metamorphit, undifferenziert → New: ❌ No direct replacement found
+Old: Monzodiorit → New: ❌ No direct replacement found
+Old: Monzogabbro → New: ❌ No direct replacement found
+Old: Monzonit → New: ❌ No direct replacement found
+Old: MorÃ¤ne (Till), undifferenziert → New: MorÃ¤ne (Till), undifferenziert
+Old: MorÃ¤ne auf Gletscher oder Toteis (Glacier or Dead Ice covered by Till) → New: MorÃ¤ne auf Gletscher oder Toteis (Glacier or Dead Ice covered by Till)
+Old: Murgangablagerung → New: Murgangablagerung
+Old: Muschelsandstein → New: ❌ No direct replacement found
+Old: Mylonit → New: ❌ No direct replacement found
+Old: Mylonit, undifferenziert → New: ❌ No direct replacement found
+Old: nephelinitischer Metasyenit → New: ❌ No direct replacement found
+Old: nephelinitischer Syenit → New: ❌ No direct replacement found
+Old: Norit → New: ❌ No direct replacement found
+Old: Nummulitenkalk → New: ❌ No direct replacement found
+Old: Nummulitensandstein → New: ❌ No direct replacement found
+Old: Ophikalzit → New: ❌ No direct replacement found
+Old: Orthogneis → New: ❌ No direct replacement found
+Old: palustrisches Sediment → New: palustrisches Sediment
+Old: palustrisches Sediment, undifferenziert → New: palustrisches Sediment, undifferenziert
+Old: Paragneis → New: ❌ No direct replacement found
+Old: pedogenes Karbonat, undifferenziert → New: ❌ No direct replacement found
+Old: Pegmatit → New: ❌ No direct replacement found
+Old: Pelit, undifferenziert → New: ❌ No direct replacement found
+Old: Peridotit (Intrusivgestein) → New: ❌ No direct replacement found
+Old: Peridotit (Metamorphit) → New: ❌ No direct replacement found
+Old: Phonolith → New: ❌ No direct replacement found
+Old: phosphoritreicher Kalkstein → New: ❌ No direct replacement found
+Old: phosphoritreicher Mergelstein → New: ❌ No direct replacement found
+Old: phosphoritreicher Sandstein → New: ❌ No direct replacement found
+Old: phosphoritreiches Gestein, undifferenziert → New: ❌ No direct replacement found
+Old: Phyllit → New: ❌ No direct replacement found
+Old: Phyllonit → New: ❌ No direct replacement found
+Old: Pikrit (Effusiva) → New: ❌ No direct replacement found
+Old: Pikrit (Intrusivgestein) → New: ❌ No direct replacement found
+Old: Plateaulehm → New: Plateaulehm
+Old: Prasinit → New: ❌ No direct replacement found
+Old: Protokataklasit → New: ❌ No direct replacement found
+Old: Protomylonit → New: ❌ No direct replacement found
+Old: Pseudotachylit → New: ❌ No direct replacement found
+Old: Pyroklastische Brekzie → New: ❌ No direct replacement found
+Old: pyroklastisches Gestein, undifferenziert (vulkanischer Tuff, > 75 % pyroklast. Komp.) → New: ❌ No direct replacement found
+Old: Pyroxenit (Intrusivgestein) → New: ❌ No direct replacement found
+Old: Pyroxenit (monomineralischer Metamorphit) → New: ❌ No direct replacement found
+Old: Quarzandesit → New: ❌ No direct replacement found
+Old: Quarzdiorit → New: ❌ No direct replacement found
+Old: Quarzgabbro → New: ❌ No direct replacement found
+Old: Quarzit (monomineralischer Metamorphit) → New: ❌ No direct replacement found
+Old: Quarzit (sedimentÃ¤rer Protolith) → New: ❌ No direct replacement found
+Old: Quarzsand → New: ❌ No direct replacement found
+Old: Quarzsandstein → New: ❌ No direct replacement found
+Old: Quarzschiefer → New: ❌ No direct replacement found
+Old: Quelltuff (Kalksinter, Lockergestein) → New: Quelltuff (Kalksinter, Lockergestein)
+Old: Quelltuff (Kalksinter, Sedimentgestein) → New: ❌ No direct replacement found
+Old: Radiolarit → New: ❌ No direct replacement found
+Old: randglazialer Schotter → New: randglazialer Schotter
+Old: Rauwacke (Kataklasit) → New: ❌ No direct replacement found
+Old: Rauwacke (Sedimentgestein) → New: ❌ No direct replacement found
+Old: Residualgestein / pedogen Ã¼berprÃ¤gtes Gestein, undifferenziert → New: ❌ No direct replacement found
+Old: Rhyodazit → New: ❌ No direct replacement found
+Old: Rhyolith → New: ❌ No direct replacement found
+Old: Rhyolithporphyr → New: ❌ No direct replacement found
+Old: Riffkalk → New: ❌ No direct replacement found
+Old: Rodingit → New: ❌ No direct replacement found
+Old: RÃ¼ckzugsschotter → New: RÃ¼ckzugsschotter
+Old: Rudit → New: ❌ No direct replacement found
+Old: Rutschmasse → New: Rutschmasse
+Old: Sandstein, undifferenziert (Psammit: SandkorngrÃ¶sse) → New: ❌ No direct replacement found
+Old: saures Ganggestein → New: ❌ No direct replacement found
+Old: Schiefer, undifferenziert → New: ❌ No direct replacement found
+Old: Schlammstein → New: ❌ No direct replacement found
+Old: Schollenamphibolit → New: ❌ No direct replacement found
+Old: SedimentÃ¤rer Gang (clastic dike) → New: SedimentÃ¤rer Gang (clastic dike)
+Old: Sedimentgestein → New: ❌ No direct replacement found
+Old: Seebodensediment → New: Seebodensediment
+Old: Seekreide → New: Seekreide
+Old: Serizitschiefer → New: ❌ No direct replacement found
+Old: Serpentinit → New: ❌ No direct replacement found
+Old: siderolithische Verwitterungsbildungen → New: ❌ No direct replacement found
+Old: Silcrete → New: ❌ No direct replacement found
+Old: silikatreicher Marmor → New: ❌ No direct replacement found
+Old: silikatreiches Gestein, undifferenziert → New: ❌ No direct replacement found
+Old: Siltstein → New: ❌ No direct replacement found
+Old: Skarn → New: ❌ No direct replacement found
+Old: Spatkalk → New: ❌ No direct replacement found
+Old: Spiculit → New: ❌ No direct replacement found
+Old: Stauschotter → New: Stauschotter
+Old: Steinkohle → New: ❌ No direct replacement found
+Old: Steinsalz → New: ❌ No direct replacement found
+Old: Strandablagerungen → New: Strandablagerungen
+Old: Stronalit → New: ❌ No direct replacement found
+Old: strukturierter Hangschutt → New: strukturierter Hangschutt
+Old: Sturzablagerung, undifferenziert → New: Sturzablagerung, undifferenziert
+Old: subaquatisch abgelagerte MorÃ¤ne (Waterlaid Till) → New: subaquatisch abgelagerte MorÃ¤ne (Waterlaid Till)
+Old: Sumpf → New: Sumpf
+Old: SÃ¼sswasserkalk → New: ❌ No direct replacement found
+Old: Syenit → New: ❌ No direct replacement found
+Old: Talkschiefer → New: ❌ No direct replacement found
+Old: tektonische Brekzie (kohÃ¤sionslos) → New: ❌ No direct replacement found
+Old: tektonische Brekzie (mit KohÃ¤sion) → New: ❌ No direct replacement found
+Old: tektonische Dolomitbrekzie → New: ❌ No direct replacement found
+Old: tektonische Kalkbrekzie → New: ❌ No direct replacement found
+Old: Tiefengestein, undifferenziert → New: ❌ No direct replacement found
+Old: tiefgrÃ¼ndige Verwitterungsdecke → New: tiefgrÃ¼ndige Verwitterungsdecke
+Old: Tonalit → New: ❌ No direct replacement found
+Old: toniger Sandstein → New: ❌ No direct replacement found
+Old: Tonmergelstein → New: ❌ No direct replacement found
+Old: Tonschiefer (Schiefer) → New: ❌ No direct replacement found
+Old: Tonschiefer (sedimentÃ¤rer Protolith) → New: ❌ No direct replacement found
+Old: Tonstein → New: ❌ No direct replacement found
+Old: Torfmoor, Torf → New: Torfmoor, Torf
+Old: Trachyt → New: ❌ No direct replacement found
+Old: Travertin (Kalksinter, Lockergestein) → New: Travertin (Kalksinter, Lockergestein)
+Old: Travertin (Kalksinter, Sedimentgestein) → New: ❌ No direct replacement found
+Old: Tsunamiablagerung → New: Tsunamiablagerung
+Old: Tuffit, undifferenziert (pyroklast. und nicht vulk. Sedimente, 75-25 % pyroklast. Komp.) → New: ❌ No direct replacement found
+Old: tuffitische Brekzie → New: ❌ No direct replacement found
+Old: tuffitischer Sandstein → New: ❌ No direct replacement found
+Old: tuffitischer Siltstein → New: ❌ No direct replacement found
+Old: tuffitischer Tonstein → New: ❌ No direct replacement found
+Old: tuffitisches Konglomerat → New: ❌ No direct replacement found
+Old: Ãœberschwemmungssediment → New: Ãœberschwemmungssediment
+Old: Ultrabasisches Gestein → New: ❌ No direct replacement found
+Old: Ultrakataklasit → New: ❌ No direct replacement found
+Old: ultramafisches Gestein → New: ❌ No direct replacement found
+Old: Ultramylonit → New: ❌ No direct replacement found
+Old: Verwitterungslehm, undifferenziert → New: Verwitterungslehm, undifferenziert
+Old: Vorstossschotter → New: Vorstossschotter
+Old: vulkanische Asche → New: vulkanische Asche
+Old: zerrÃ¼ttete Sackungsmasse → New: zerrÃ¼ttete Sackungsmasse
+Old: Zweiglimmergneis → New: ❌ No direct replacement found
+Old: Unknown → New: Unknown
+Old: Not applicable → New: Not applicable
