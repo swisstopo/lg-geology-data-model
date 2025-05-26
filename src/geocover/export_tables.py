@@ -9,15 +9,32 @@ import json
 import logging
 from pathlib import Path
 
-from config import IGNORE_FIELDS
+try:
+    from config import IGNORE_FIELDS
+except ModuleNotFoundError as e:
+    from geocover.config import IGNORE_FIELDS
 
 logging.basicConfig(format="%(name)s - %(levelname)s - %(message)s", level=logging.INFO)
 
-TREE_TABLES = ["GC_LITHO", "GC_LITSTRAT", "GC_CHRONO", "GC_TECTO"]
+TREE_TABLES = [
+    "GC_LITHO",
+    "GC_LITSTRAT",
+    "GC_CHRONO",
+    "GC_TECTO",
+    "GC_LITSTRAT_FORMATION_BANK",
+]
 
-TABLES = ["GC_CHARCAT", "GC_ADMIXTURE", "GC_COMPOSIT"]
+TABLES = [
+    "GC_CHARCAT",
+    "GC_ADMIXTURE",
+    "GC_COMPOSIT",
+    "GC_GEOL_MAPPING_UNIT",
+    "GC_LITSTRAT_UNCO",
+    "GC_CORRELATION",
+]
 
 ALL_TABLES = TABLES + TREE_TABLES
+
 
 DEFAULT_WORKSPACE = r"h:/connections/GCOVERP@osa.sde"
 
