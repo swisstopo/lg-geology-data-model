@@ -25,7 +25,7 @@ except ImportError:
 
 PACKAGE_NAME = "geocover"
 # Source files, like SDE schema, tables exports, domains lists, etc.
-SOURCES_DIR = "exports"
+SOURCES_DIR = "exports/2025_05_26"  # TODO
 # Directory for generated markdown files, used an `input` for `pandoc`
 MARKDOWN_DIR = "inputs"
 LOG_DIR = "log"
@@ -152,18 +152,17 @@ class SDESchema:
         return self.coded_domains.get(domain_name)
 
 
-try:
-    sde_schema = SDESchema(os.path.join(SOURCES_DIR, SIMPLIFIED_SDE_SCHEMA))
-    logger.info(sde_schema.list_all_featclasses())
-    logger.info(sde_schema.get_featclass_fields("TOPGIS_GC.GC_BEDROCK"))
+def get_sde_schema(source_dir):
+    sde_schema = None
+    try:
+        sde_schema = SDESchema(os.path.join(source_dir, SIMPLIFIED_SDE_SCHEMA))
+        logger.info(sde_schema.list_all_featclasses())
+        logger.info(sde_schema.get_featclass_fields("TOPGIS_GC.GC_BEDROCK"))
 
-    featclasses_dict = sde_schema.featclasses
-    tables_dict = sde_schema.tables
-
-    domains = sde_schema.coded_domains
-    subtypes = sde_schema.subtypes
-except ValueError as e:
-    logger.error(f"Error loading schema: {e}")
+        return sde_schema
+    except ValueError as e:
+        logger.error(f"Error loading schema: {e}")
+        return sde_schema
 
 
 def load_translation_dataframe(input_dir: str) -> pd.DataFrame:
@@ -530,7 +529,7 @@ def get_table_values(name):
     return {}
 
 
-def get_subtype(value):
+def get_subtype(subtypes, value):
     res = {}
 
     keys = [x for x in subtypes if str(x).startswith(str(value))]
@@ -566,10 +565,11 @@ class DatetimeEncoder(json.JSONEncoder):
 
 
 class Report:
-    def __init__(self, config_file):
+    def __init__(self, config_file, sde_schema=None):
         self.config_file = config_file
         self._model = None
         self._prefixes = []
+        self.sde_schema = sde_schema
 
     @property
     def model(self):
@@ -639,7 +639,9 @@ class Report:
                                 pairs = get_coded_values(value)
 
                             if att_type == "subtype" and value is not None:
-                                pairs = get_subtype(value)
+                                pairs = get_subtype(
+                                    self.sde_schema.subtypes, value
+                                )  # TODO
 
                             if pairs is not None:
                                 att["pairs"] = pairs
@@ -901,10 +903,16 @@ def generate(lang, datamodel, output, input):
 
     project_name = Path(yaml_file).stem
     try:
-        model = Report(yaml_file)
+        model = Report(yaml_file, sde_schema=sde_schema)
 
     except Exception as e:
-        logger.error(f"Cannot read/parse datamodel: {yaml_file}")
+        logger.error(f"Cannot read/parse datamodel: {yaml_file}: {e}")
+
+    sde_schema = get_sde_schema(input)
+    featclasses_dict = sde_schema.featclasses
+    tables_dict = sde_schema.tables
+    domains = sde_schema.coded_domains
+    subtypes = sde_schema.subtypes
 
     # Geolcode
     xlsx_file = os.path.join(yaml_dir, "exports", "comparison_results.xlsx")
@@ -933,6 +941,11 @@ def generate(lang, datamodel, output, input):
     data["geolcodes"]["added"] = added_rows_dict
     data["geolcodes"]["removed"] = removed_rows_dict
     data["geolcodes"]["changed"] = changed_rows_dict
+
+    #
+    with open(os.path.join(input, "SCHEMA_CHANGES_4.0-4.1.json"), "r") as f:
+        esri_diff_dict = json.load(f)
+        data["changes"] = esri_diff_dict
 
     loader = jinja2.FileSystemLoader(os.path.join(yaml_dir, "templates"))
     env = jinja2.Environment(
