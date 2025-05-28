@@ -17,15 +17,20 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
-    - name: Set Package Version
+    - name: Set releases variables
       shell: bash
       run: |
-          echo "version=$(<VERSION)" >> $GITHUB_ENV
-          echo "=== PKG_VERSION=$version ==="
-          echo "RELEASE=$(python -c "import yaml; print(yaml.safe_load(open('datamodel.yaml'))['model']['revision'])")" >> $GITHUB_ENV
-          echo "SHORT_RELEASE=$(echo '4.0.0' | cut -d'.' -f1,2)" >> $GITHUB_ENV
-          echo "=== RELEASE=${{ env.RELEASE }} ==="
-          echo "=== SHORT=${{ env.SHORT_RELEASE }} ==="
+        RELEASE=$(python -c "import yaml; print(yaml.safe_load(open('datamodel.yaml'))['model']['revision'])")
+        echo "RELEASE=$RELEASE" >> $GITHUB_ENV
+        echo "SHORT_RELEASE=$(echo $RELEASE | cut -d'.' -f1,2)" >> $GITHUB_ENV
+        echo "version=$(<VERSION)" >> $GITHUB_ENV
+
+    - name: Print release variables
+      shell: bash
+      run: |
+        echo "=== PKG_VERSION=${{ env.version }} ==="
+        echo "=== RELEASE=${{ env.RELEASE }} ==="
+        echo "=== SHORT=${{ env.SHORT_RELEASE }} ==="
     - name: Download assets from build
       uses: actions/download-artifact@v4
       with:
