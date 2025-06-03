@@ -203,7 +203,7 @@ class FeatureClass(Table):
 # TODO
 # input_file = "inputs/geocover-schema-sde.json"
 
-input_file = "exports_i/gcoveri_simple.json"
+input_file = "exports/2025-05-26/GCOVERP_export_simple.json"
 
 basename = os.path.splitext(os.path.basename(input_file))[0]
 

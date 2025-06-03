@@ -25,7 +25,7 @@ except ImportError:
 
 PACKAGE_NAME = "geocover"
 # Source files, like SDE schema, tables exports, domains lists, etc.
-SOURCES_DIR = "exports/2025_05_26"  # TODO
+SOURCES_DIR = "exports/2025-05-26"  # TODO
 # Directory for generated markdown files, used an `input` for `pandoc`
 MARKDOWN_DIR = "inputs"
 LOG_DIR = "log"

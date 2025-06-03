@@ -1,0 +1,67 @@
+OBJECTID,GEOL_CODE_INT,GEOL_CODE,GERMAN,TREE_LEVEL,PARENT_REF
+1,15101001,Vlit401001,Lockergestein,1.0,0.0
+42,15101065,Vlit401065,vulkanische Asche,3.0,15101061.0
+53,15101013,Vlit401013,Plateaulehm,4.0,15101012.0
+48,15101078,Vlit401078,tiefgründige Verwitterungsdecke,3.0,15101075.0
+59,15101028,Vlit401028,"glazifluviatiles Sediment, undifferenziert",3.0,15101026.0
+25,15101042,Vlit401042,Überschwemmungssediment,3.0,15101026.0
+75,15101070,Vlit401070,"Aufschüttung, Damm",4.0,15101069.0
+36,15101052,Vlit401052,Sumpf,3.0,15101050.0
+78,15101073,Vlit401073,Halde,4.0,15101069.0
+76,15101071,Vlit401071,Auffüllung,4.0,15101069.0
+16,15101015,Vlit401015,Blockgletscher,3.0,15101003.0
+23,15101035,Vlit401035,gemischter Schutt,3.0,15101026.0
+55,15101021,Vlit401021,"Moräne (Till), undifferenziert",4.0,15101019.0
+13,15101009,Vlit401009,Hangschutt,3.0,15101003.0
+68,15101039,Vlit401039,"Alluvion, undifferenziert",3.0,15101026.0
+34,15101051,Vlit401051,"palustrisches Sediment, undifferenziert",3.0,15101050.0
+61,15101030,Vlit401030,randglazialer Schotter,4.0,15101028.0
+64,15101033,Vlit401033,Rückzugsschotter,4.0,15101028.0
+82,15101083,Vlit401083,In-situ-Verwitterungsschutt,3.0,15101075.0
+14,15101010,Vlit401010,Blockschutt,3.0,15101003.0
+54,15101014,Vlit401014,"Hanglehm, Schwemmlehm",4.0,15101012.0
+51,15101007,Vlit401007,Felssturzablagerung,4.0,15101005.0
+63,15101032,Vlit401032,Vorstossschotter,4.0,15101028.0
+32,15101058,Vlit401058,Seebodensediment,3.0,15101044.0
+12,15101008,Vlit401008,Lawinenschutt,3.0,15101003.0
+70,15101041,Vlit401041,Bachschutt,4.0,15101039.0
+40,15101062,Vlit401062,"äolischer Sand, Flugsand",3.0,15101061.0
+37,15101053,Vlit401053,"Torfmoor, Torf",3.0,15101050.0
+67,15101037,Vlit401037,Murgangablagerung,4.0,15101035.0
+28,15101049,Vlit401049,detritische Verlandungsbildung,3.0,15101044.0
+41,15101063,Vlit401063,"Löss, Lösslehm",3.0,15101061.0
+74,15101069,Vlit401069,"künstliche Ablagerung, undifferenziert",3.0,15101067.0
+35,15101079,Vlit401079,Gyttja,3.0,15101050.0
+65,15101034,Vlit401034,Stauschotter,4.0,15101028.0
+50,15101006,Vlit401006,Bergsturzablagerung,4.0,15101005.0
+52,15101012,Vlit401012,"Verwitterungslehm, undifferenziert",3.0,15101003.0
+77,15101072,Vlit401072,Deponie,4.0,15101069.0
+71,15101046,Vlit401046,"glazilakustrisches Sediment, undifferenziert",4.0,15101044.0
+46,15101076,Vlit401076,geringmächtige Lockergesteinsbedeckung,3.0,15101075.0
+58,15101024,Vlit401024,Moräne auf Gletscher oder Toteis (Glacier or Dead Ice covered by Till),4.0,15101021.0
+33,15101059,Vlit401059,Seekreide,3.0,15101044.0
+30,15101056,Vlit401056,Strandablagerungen,3.0,15101044.0
+73,15101048,Vlit401048,subaquatisch abgelagerte Moräne (Waterlaid Till),4.0,15101046.0
+18,15101017,Vlit401017,Rutschmasse,3.0,15101003.0
+49,15101005,Vlit401005,"Sturzablagerung, undifferenziert",3.0,15101003.0
+72,15101047,Vlit401047,glazilakustrisches Deltasediment,4.0,15101046.0
+6,15101050,Vlit401050,palustrisches Sediment,2.0,15101001.0
+31,15101057,Vlit401057,lakustrisches Deltasediment,3.0,15101044.0
+17,15101016,Vlit401016,zerrüttete Sackungsmasse,3.0,15101003.0
+10,15101003,Vlit401003,"gravitative Sedimente und Verwitterungsbildungen, undifferenziert",3.0,15101001.0
+1043,15101086,Vlit401086,Entwässerungssediment,2.0,15101001.0
+79,15101080,Vlit401080,"Quelltuff (Kalksinter, Lockergestein)",3.0,15101081.0
+38,15101054,Vlit401054,Lignit (palustrisches Sediment),3.0,15101050.0
+21,15101026,Vlit401026,"fluviatiles Sediment, undifferenziert",2.0,15101001.0
+26,15101044,Vlit401044,"lakustrisches Sediment, undifferenziert",2.0,15101001.0
+1042,15101085,Vlit401085,Tsunamiablagerung,3.0,15101044.0
+81,15101082,Vlit401082,"Travertin (Kalksinter, Lockergestein)",3.0,15101081.0
+69,15101040,Vlit401040,fluviatiler Schotter,4.0,15101039.0
+722,15101084,Vlit401084,strukturierter Hangschutt,,15101009.0
+1044,15101087,Vlit401087,Sedimentärer Gang (clastic dike),3.0,15101086.0
+62,15101031,Vlit401031,glazifluviatiler Schotter,4.0,15101028.0
+39,15101061,Vlit401061,"äolisches Sediment, undifferenziert",2.0,15101001.0
+19,15101019,Vlit401019,"glazigenes Sediment, undifferenziert",2.0,15101001.0
+80,15101081,Vlit401081,hydrochemische Bildungen (Kalksinter),2.0,15101001.0
+43,15101067,Vlit401067,"anthropogene Elemente, undifferenziert",2.0,15101001.0
+9,15101075,Vlit401075,dünne Lockermaterialbedeckung,2.0,15101001.0
