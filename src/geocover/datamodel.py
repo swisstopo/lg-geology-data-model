@@ -1045,11 +1045,20 @@ def generate(lang, datamodel, output, input_dir):
         template = env.get_template(template_name)
         return template.render(data, locale=locale)
 
+    # DM
     markdown_fname = os.path.join(output_dir, lang, f"{project_name}.md")
     logger.info(f"Generating {markdown_fname}")
     with open(markdown_fname, "w", encoding="utf-8") as f:
         rendered = render_template_with_locale("model_markdown.j2", data, locale)
         f.write(rendered)
+
+    # Changes to DM
+    migration_dm_fname = os.path.join(output_dir, lang, f"{project_name}_migrations.md")
+    logger.info(f"Generating {migration_dm_fname}")
+    with open(migration_dm_fname, "w", encoding="utf-8") as f:
+        rendered = render_template_with_locale("model_migrations.j2", data, locale)
+        f.write(rendered)
+
 
     # Metadata
     metadata_fname = os.path.join(output_dir, lang, f"metadata.yaml")
