@@ -317,39 +317,39 @@ themes:
       value: GC_GEOL_MAPPING_UNIT_ATT  # TODO or GC_GEOL_MAPPING_UNIT_CD?
       cardinality: "1"
       mandatory: true
-    - name: LITSTRAT_FORMATION_BANK  # check
+    - name: litstrat_formation_bank  # check
       description:
-        de:  todo
+        de:  -todo-
         fr:  -todo-
       att_type: annex
       value: GC_LITSTRAT_FORMATION_BANK_CD
       cardinality: "1"
       mandatory: true   # TDODO: really?
       origin: GC_GEOL_MAPPING_UNIT_ATT
-    - name: chrono_top   # TODO: new name
-      att_type: annex
-      value: GC_CHRONO_CD
-      description:
-         de: >-
-                Chronostratigraphische Zuordnung der Obergrenze der Kartiereinheit
-                (Top)
-         fr: >-
-               Attribution chronostratigraphique du toit de la  formation (top)
-      cardinality: "1"
-      mandatory: true
-      origin: GC_GEOL_MAPPING_UNIT_ATT
-    - name: chrono_bottom   # TODO: new name
-      att_type: annex
-      value: GC_CHRONO_CD
-      description:
-            de: >-
-              Chronostratigraphische Zuordnung der Obergrenze der Kartiereinheit
-              (Top)
-            fr: >-
-              Attribution chronostratigraphique du toit de la  formation (top)
-      cardinality: "1"
-      mandatory: true
-      origin: GC_GEOL_MAPPING_UNIT_ATT
+#    - name: chrono_top   # TODO: new name
+#      att_type: annex
+#      value: GC_CHRONO_CD
+#      description:
+#         de: >-
+#                Chronostratigraphische Zuordnung der Obergrenze der Kartiereinheit
+#                (Top)
+#         fr: >-
+#               Attribution chronostratigraphique du toit de la  formation (top)
+#      cardinality: "1"
+#      mandatory: true
+#      origin: GC_GEOL_MAPPING_UNIT_ATT
+#    - name: chrono_bottom
+#      att_type: annex
+#      value: GC_CHRONO_CD
+#      description:
+#            de: >-
+#              Chronostratigraphische Zuordnung der Obergrenze der Kartiereinheit
+#              (Top)
+#            fr: >-
+#              Attribution chronostratigraphique du toit de la  formation (top)
+#      cardinality: "1"
+#      mandatory: true
+#      origin: GC_GEOL_MAPPING_UNIT_ATT
     - name: litstrat   # Removed
       description:
         de: Lithostratigraphische Einheit
@@ -359,43 +359,43 @@ themes:
       cardinality: "1"
       change: removed
       mandatory: false
-    - name: litho_main
-      att_type: annex
-      value: GC_LITHO_CD
-      description:
-        de: Lithologische Beschreibung
-        fr: Description lithologique
-      cardinality: "1"
-      mandatory: true
-      origin: GC_GEOL_MAPPING_UNIT_ATT
-    - name: litho_sec
-      att_type: annex
-      value: GC_LITHO_CD
-      description:
-        de: Lithologische Beschreibung
-        fr: Description lithologique
-      cardinality: "1"
-      mandatory: false
-      origin: GC_GEOL_MAPPING_UNIT_ATT
-    - name: litho_ter
-      att_type: annex
-      value: GC_LITHO_CD
-      description:
-        de: Lithologische Beschreibung
-        fr: Description lithologique
-      cardinality: "1"
-      mandatory: false
-      origin: GC_GEOL_MAPPING_UNIT_ATT
-    - name: correlation
-      att_type: annex
-      value: GC_CORRELATION_CD
-      description:
-        de: Korrelation
-        fr: Correlation
-      cardinality: "1"
-      mandatory: true
-      origin: GC_GEOL_MAPPING_UNIT_ATT
-    - name: orig_descr
+#    - name: litho_main
+#      att_type: annex
+#      value: GC_LITHO_CD
+#      description:
+#        de: Lithologische Beschreibung
+#        fr: Description lithologique
+#      cardinality: "1"
+#      mandatory: true
+#      origin: GC_GEOL_MAPPING_UNIT_ATT
+#    - name: litho_sec
+#      att_type: annex
+#      value: GC_LITHO_CD
+#      description:
+#        de: Lithologische Beschreibung
+#        fr: Description lithologique
+#      cardinality: "1"
+#      mandatory: false
+#      origin: GC_GEOL_MAPPING_UNIT_ATT
+#    - name: litho_ter
+#      att_type: annex
+#      value: GC_LITHO_CD
+#      description:
+#        de: Lithologische Beschreibung
+#        fr: Description lithologique
+#      cardinality: "1"
+#      mandatory: false
+#      origin: GC_GEOL_MAPPING_UNIT_ATT
+#    - name: correlation
+#      att_type: annex
+#      value: GC_CORRELATION_CD
+#      description:
+#        de: Korrelation
+#        fr: Correlation
+#      cardinality: "1"
+#      mandatory: true
+#      origin: GC_GEOL_MAPPING_UNIT_ATT
+    - name: description
       att_type: string
       description:
         de: >-
@@ -405,7 +405,7 @@ themes:
           Description selon la légende de la carte géologique originale
       cardinality: "1"
       mandatory: false
-      change: removed
+      change: renamed
     - name: buried_out       # removed
       att_type: boolean
       description:
