@@ -254,8 +254,8 @@ themes:
       cardinality: "1"
       mandatory: false
   - name: Bedrock_PLG
-    abrev: Rbed      # TODO: to check
-    table: GC_BEDROCK     # TODO: to check
+    abrev: Rbed      #
+    table: GC_BEDROCK
     description:
       de: >-
         Die Klasse Bedrock_PLG enthält alle lithostratigraphischen Festgesteinseinheiten.
@@ -405,6 +405,7 @@ themes:
           Description selon la légende de la carte géologique originale
       cardinality: "1"
       mandatory: false
+      change: removed
     - name: buried_out       # removed
       att_type: boolean
       description:
@@ -1574,7 +1575,7 @@ themes:
         de: Name des Leithorizonts.
         fr: Nom du horizon repère
       att_type: annex
-      value: GC_LITSTRAT_BED_CD        # TODO: was 13103, now field: LPRO_NAME_HORIZ
+      value: GC_GEOL_MAPPING_UNIT_CD        # TODO: was 13103, now field: LPRO_NAME_HORIZ
       cardinality: 0..1
       change: new
       mandatory: false
@@ -1714,7 +1715,7 @@ themes:
         de: Lithostratigraphische Einheit der modellierten Formation
         fr: Unité lithostratigraphique de l’horizon modélisé
       att_type: annex
-      value: GC_LITSTRAT_BED_CD        # TODO:  coded domain field; PSLO_FORMATIO", CD:  "GC_LITSTRAT_BED_CD"
+      value: GC_GEOL_MAPPING_UNIT_CD        # TODO:  coded domain field; PSLO_FORMATIO", CD:  "GC_LITSTRAT_BED_CD"
       cardinality: "1"
       change: renamed        # from litstrat to PSLO_FORMATIO
 
@@ -1763,7 +1764,7 @@ themes:
         de: Lithostratigraphische Einheit der modellierten Formation
         fr: Unité lithostratigraphique de la formation modelisée
       att_type: annex
-      value: GC_LITSTRAT_BED_CD        # TODO: renammed? field: "PCOB_FORMATIO", CD "GC_LITSTRAT_BED_CD"
+      value: GC_GEOL_MAPPING_UNIT_CD        # TODO: renammed? field: "PCOB_FORMATIO", CD "GC_LITSTRAT_BED_CD"
       cardinality: "1"
       mandatory: false
   - name: Modelled_Water_Table_PT
@@ -2036,7 +2037,7 @@ themes:
         de: Abgebaute lithostratigraphische Einheit.
         fr: Unité lithostratigraphique exploitée
       att_type: annex
-      value: GC_LITSTRAT_BED_CD       # TODO: check
+      value: GC_GEOL_MAPPING_UNIT_CD       # TODO: check
       cardinality: 0..*
       mandatory: false
     - name: status
@@ -2116,7 +2117,7 @@ themes:
         de: Abgebaute lithostratigraphische Einheit.
         fr: Unité lithostratigraphique exploitée
       att_type: annex
-      value: GC_LITSTRAT_BED_CD       # TODO: check
+      value: GC_GEOL_MAPPING_UNIT_CD       # TODO: check
       cardinality: 1..*
       mandatory: false
     - name: status
@@ -2736,12 +2737,12 @@ annexes:
     de: blabla
     fr: blabla
 
-- name: GC_LITSTRAT_BED_CD  #TODO: to remove?
-  type_: list
-  description:
-    de: Wertetabelle der lithostratigraphischen Einheiten
-    fr: Table des valeurs des unités lithostratigraphiques
-- name: GC_LITSTRAT_UNCO_CD     #TODO: to remove?
+#- name: GC_LITSTRAT_BED_CD  #TODO: to remove?  GC_GEOL_MAPPING_UNIT_CD
+#  type_: list
+#  description:
+#    de: Wertetabelle der lithostratigraphischen Einheiten
+#    fr: Table des valeurs des unités lithostratigraphiques
+- name: GC_LITSTRAT_UNCO_CD     #TODO: to remove later
   type_: list
   description:
     de: Wertetabelle der lithostratigraphischen Einheiten
