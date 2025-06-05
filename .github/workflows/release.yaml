@@ -45,6 +45,6 @@ jobs:
             outputs/fr/datamodel.pdf
             outputs/de/datamodel.docx
             outputs/fr/datamodel.docx
-            outputs/ER-GCOVER.pdf
+            outputs/ER-GCOVER.svg
 
 
