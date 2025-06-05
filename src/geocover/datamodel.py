@@ -1059,6 +1059,14 @@ def generate(lang, datamodel, output, input_dir):
         rendered = render_template_with_locale("metadata.yaml.j2", data, locale)
         f.write(rendered)
 
+    # Metadata
+    changes_report_fname = os.path.join(output_dir, lang, f"change_report.md")
+    logger.info(f"Generating change report {changes_report_fname}")
+    with open(changes_report_fname, "w", encoding="utf-8") as f:
+        # f.write(template.render(data))
+        rendered = render_template_with_locale("change_report.j2", data, locale)
+        f.write(rendered)
+
     logger.info(f"Failed translations: {translator.get_failed_count()}")
     logger.debug(f"Failed strings: {translator.get_failed_strings()}")
 
