@@ -279,7 +279,7 @@ themes:
       cardinality: "1"
       change: removed
       mandatory: false
-    - name: rbed_chrono_t   # TODO: new name
+    - name: rbed_chrono_t
       att_type: annex
       value: GC_CHRONO_CD
       description:
@@ -290,7 +290,8 @@ themes:
           Attribution chronostratigraphique du toit de la  formation (top)
       cardinality: "1"
       mandatory: true
-    - name: rbed_chrono_b  # new name
+      change: removed   # removed 4.1
+    - name: rbed_chrono_b  
       att_type: annex
       value: GC_CHRONO_CD
       description:
@@ -301,6 +302,7 @@ themes:
           Attribution chronostratigraphique de la base de la  formation (base)
       cardinality: "1"
       mandatory: true
+      change: removed  # removed 4.1
     - name: tecto
       att_type: annex
       value: GC_TECTO_CD
