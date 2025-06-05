@@ -70,10 +70,15 @@ jobs:
       - name: Build all targets
         shell: bash -el {0}
         run: make cleanall all
-      - name: Generate PlantUML Diagrams
+      - name: Generate SVG from PUML diagram
         uses: rotaract/plantuml-action@v1
         with:
           format: svg
+          pattern: outputs/ER-GCOVER.puml
+      - name: Generate PDF from PUML diagram
+        uses: rotaract/plantuml-action@v1
+        with:
+          format: pdf
           pattern: outputs/ER-GCOVER.puml
 
       
