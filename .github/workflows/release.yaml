@@ -47,7 +47,5 @@ jobs:
             outputs/fr/datamodel.docx
             outputs/ER-GCOVER.svg
             outputs/ER-GCOVER.pdf
-            exports/coded_domains.xlsx
-            exports/all_geolcode.xlsx
-            exports/geocover-schema-sde.json
+            exports/2025-05-26/GCOVERP_export_simple.json
 
