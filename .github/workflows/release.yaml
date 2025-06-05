@@ -34,6 +34,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: geology-data-model-${{ env.RELEASE }}
+          path: ./temp-artifacts
 
       - name: Release assets
         uses: softprops/action-gh-release@v2
@@ -41,10 +42,10 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
         with:
           files: |
-            outputs/de/datamodel.pdf
-            outputs/fr/datamodel.pdf
-            outputs/de/datamodel.docx
-            outputs/fr/datamodel.docx
-            outputs/ER-GCOVER.svg
+            temp-artifacts/outputs/de/datamodel.pdf
+            temp-artifacts/outputs/fr/datamodel.pdf
+            temp-artifacts/outputs/de/datamodel.docx
+            temp-artifacts/outputs/fr/datamodel.docx
+            temp-artifacts/outputs/ER-GCOVER.svg
 
 
