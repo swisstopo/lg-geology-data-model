@@ -45,6 +45,8 @@ jobs:
           cp temp-artifacts/outputs/de/datamodel.docx release-assets/datamodel-de.docx
           cp temp-artifacts/outputs/fr/datamodel.docx release-assets/datamodel-fr.docx
           cp temp-artifacts/outputs/ER-GCOVER.svg release-assets/ER-GCOVER.svg
+          cp temp-artifacts/outputs/ER-GCOVER.pdf release-assets/ER-GCOVER.pdf
+          cp temp-artifacts/exports/2025-05-26/GCOVERP_export_simple.json release-assets/simple_esri_report.json
           # List files to verify
           ls -la release-assets/
 
@@ -59,5 +61,7 @@ jobs:
             release-assets/datamodel-de.docx
             release-assets/datamodel-fr.docx
             release-assets/ER-GCOVER.svg
+            release-assets/ER-GCOVER.pdf
+            release-assets/simple_esri_report.json
 
 
