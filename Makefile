@@ -18,6 +18,7 @@ MO_FILES = $(foreach lang,$(LANGUAGES),$(LOCALE_DIR)/$(lang)/LC_MESSAGES/datamod
 INPUTS = $(foreach lang,$(LANGUAGES),$(foreach fmt,$(FORMATS),$(INPUT_DIR)/$(lang)/datamodel.md))
 
 
+
 # Options for all doc format
 # Unknown --shift-heading-level-by=-1  \
 PANDOC_OPTIONS=--standalone \
@@ -67,6 +68,9 @@ assets:
 	$(CP) assets/geocover.png $(OUTPUT_DIR)/de
 	$(CP) assets/geocover.png $(OUTPUT_DIR)/fr
 	$(CP) assets/geocover.png .
+	$(CP) assets/model.png $(OUTPUT_DIR)/de
+	$(CP) assets/model.png $(OUTPUT_DIR)/fr
+	$(CP) assets/model.png .
 
 babel: $(MO_FILES)
 
