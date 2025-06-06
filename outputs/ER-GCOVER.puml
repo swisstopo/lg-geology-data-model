@@ -1,13 +1,9 @@
 @startuml
 !theme plain
-
 skinparam pageWidth 420mm
 skinparam pageHeight 297mm
 skinparam dpi 150
-
 left to right direction
-
-' Optimized for A3 landscape with centered core entities
 skinparam linetype ortho
 skinparam nodesep 40
 skinparam ranksep 60
@@ -17,452 +13,406 @@ skinparam backgroundcolor white
 skinparam defaultFontSize 12
 skinparam defaultFontName "Sans-Serif"
 
-skinparam rectangle {
-  roundCorner 50
-  BackGroundColor #F5DEBC
-  LineThickness 10
-  LineColor #E1F5FE
+title Gecover 4.1 —  June 2025
+
+skinparam class {
+    BackgroundColor #FFFFCC
+    BorderColor Black
+    ArrowColor Black
 }
 
-skinparam TitlefontColor  #ECA77F
-skinparam TitleFontSize 36
 
-scale 1
-' Manual layout control - place core entities in center
-!define GC_BEDROCK_POS (150, 200)
-!define GC_UNCO_DESPOSIT_POS (200, 400)
+skinparam legend {
+backgroundColor  # GhostWhite
+ entrySeparator  # GhostWhite
+}
+legend top left
+ **Legend**
+  <:key:> = Primary Key
+  <:link:> = Foreign Key
+  <:globe_with_meridians:> = Geometry Field
+|  Entitiy  |= Color   |
+|= Tables |<#E1F5FE>  |
+|= Feature Classes |<#E8F5E8>  |
+|= Junction Tables |<#FFF8E1>  |
+|= Domains |<#F3E5F5>  |
+endlegend
 
-rectangle   #F5DEBC;line:CD5656;line.bold; {
-
-title Geocover 4.1 May 2025
-
-entity "GC_LITHO_UNCO " as GC_LITHO_UNCO #F4C8A6 {
-  --
-   **UUID** : GUID <<PK>>
-  --
-  OBJECTID : OID
-  TREE_LEVEL : Integer
-  PARENT_REF : Integer
-  DESCRIPTION : String
-  GEOLCODE : Integer
+entity "GC_LITSTRAT_UNCO " as GC_LITSTRAT_UNCO <<Table>> #E1F5FE {
+  + {field} <:key:><b>OBJECTID</b> : esriFieldTypeOID <<PK>>
+  + UUID : esriFieldTypeGUID
+  + TREE_LEVEL : esriFieldTypeInteger
+  + PARENT_REF : esriFieldTypeInteger
+  + DESCRIPTION : esriFieldTypeString
+  + GEOLCODE : esriFieldTypeInteger
 }
 
-entity "GC_LITHO_BED " as GC_LITHO_BED #F4C8A6 {
-  --
-   **UUID** : GUID <<PK>>
-  --
-  OBJECTID : OID
-  TREE_LEVEL : Integer
-  PARENT_REF : Integer
-  DESCRIPTION : String
-  GEOLCODE : Integer
+entity "GC_GEOL_MAPPING_UNIT_ATT " as GC_GEOL_MAPPING_UNIT_ATT <<Table>> #E1F5FE {
+  + {field} <:key:><b>OBJECTID</b> : esriFieldTypeOID <<PK>>
+  + UUID : esriFieldTypeGUID
+  + LITSTRAT_FORMATION_BANK : esriFieldTypeInteger <<domain:GC_LITSTRAT_FORMATION_BANK_CD>>
+  + GEOL_MAPPING_UNIT : esriFieldTypeInteger <<domain:GC_GEOL_MAPPING_UNIT_CD>>
+  + CHRONO_TOP : esriFieldTypeInteger <<domain:GC_CHRONO_CD>>
+  + CHRONO_BASE : esriFieldTypeInteger <<domain:GC_CHRONO_CD>>
+  + LITHO_MAIN : esriFieldTypeInteger <<domain:GC_LITHO_CD>>
+  + LITHO_SEC : esriFieldTypeInteger <<domain:GC_LITHO_CD>>
+  + LITHO_TER : esriFieldTypeInteger <<domain:GC_LITHO_CD>>
+  + CORRELATION : esriFieldTypeInteger <<domain:GC_CORRELATION_CD>>
 }
 
-entity "GC_LITSTRAT_BED " as GC_LITSTRAT_BED #F4C8A6 {
-  --
-   **UUID** : GUID <<PK>>
-  --
-  OBJECTID : OID
-  TREE_LEVEL : Integer
-  PARENT_REF : Integer
-  DESCRIPTION : String
-  GEOLCODE : Integer
+entity "GC_SYSTEM " as GC_SYSTEM <<Table>> #E1F5FE {
+  + {field} <:key:><b>OBJECTID</b> : esriFieldTypeOID <<PK>>
+  + UUID : esriFieldTypeGUID
+  + DESCRIPTION : esriFieldTypeString
+  + GEOLCODE : esriFieldTypeInteger
 }
 
-entity "GC_LITSTRAT_UNCO " as GC_LITSTRAT_UNCO #F4C8A6 {
-  --
-   **UUID** : GUID <<PK>>
-  --
-  OBJECTID : OID
-  TREE_LEVEL : Integer
-  PARENT_REF : Integer
-  DESCRIPTION : String
-  GEOLCODE : Integer
+entity "GC_COMPOSIT " as GC_COMPOSIT <<Table>> #E1F5FE {
+  + {field} <:key:><b>OBJECTID</b> : esriFieldTypeOID <<PK>>
+  + UUID : esriFieldTypeGUID
+  + DESCRIPTION : esriFieldTypeString
+  + GEOLCODE : esriFieldTypeInteger
 }
 
-entity "GC_GEOL_MAPPING_UNIT_ATT " as GC_GEOL_MAPPING_UNIT_ATT #F4C8A6 {
-  --
-   **UUID** : GUID <<PK>>
-  --
-  OBJECTID : OID
-  LITSTRAT_FORMATION_BANK : GC_LITSTRAT_FORMATION_BANK_CD
-  GEOL_MAPPING_UNIT : GC_GEOL_MAPPING_UNIT_CD
-  CHRONO_TOP : GC_CHRONO_CD
-  CHRONO_BOTTOM : GC_CHRONO_CD
-  LITHO_MAIN : GC_LITHO_CD
-  LITHO_SEC : GC_LITHO_CD
-  LITHO_TER : GC_LITHO_CD
-  CORRELATION : GC_CORRELATION_CD
+entity "GC_ADMIXTURE " as GC_ADMIXTURE <<Table>> #E1F5FE {
+  + {field} <:key:><b>OBJECTID</b> : esriFieldTypeOID <<PK>>
+  + UUID : esriFieldTypeGUID
+  + DESCRIPTION : esriFieldTypeString
+  + GEOLCODE : esriFieldTypeInteger
 }
 
-entity "GC_SYSTEM " as GC_SYSTEM #F4C8A6 {
-  --
-   **UUID** : GUID <<PK>>
-  --
-  OBJECTID : OID
-  DESCRIPTION : String
-  GEOLCODE : Integer
+entity "GC_CHARCAT " as GC_CHARCAT <<Table>> #E1F5FE {
+  + {field} <:key:><b>OBJECTID</b> : esriFieldTypeOID <<PK>>
+  + UUID : esriFieldTypeGUID
+  + DESCRIPTION : esriFieldTypeString
+  + GEOLCODE : esriFieldTypeInteger
 }
 
-entity "GC_COMPOSIT " as GC_COMPOSIT #F4C8A6 {
-  --
-   **UUID** : GUID <<PK>>
-  --
-  OBJECTID : OID
-  DESCRIPTION : String
-  GEOLCODE : Integer
+entity "GC_CHRONO " as GC_CHRONO <<Table>> #E1F5FE {
+  + {field} <:key:><b>OBJECTID</b> : esriFieldTypeOID <<PK>>
+  + UUID : esriFieldTypeGUID
+  + TREE_LEVEL : esriFieldTypeInteger
+  + PARENT_REF : esriFieldTypeInteger
+  + DESCRIPTION : esriFieldTypeString
+  + GEOLCODE : esriFieldTypeInteger
 }
 
-entity "GC_ADMIXTURE " as GC_ADMIXTURE #F4C8A6 {
-  --
-   **UUID** : GUID <<PK>>
-  --
-  OBJECTID : OID
-  DESCRIPTION : String
-  GEOLCODE : Integer
+entity "GC_LITHO " as GC_LITHO <<Table>> #E1F5FE {
+  + {field} <:key:><b>OBJECTID</b> : esriFieldTypeOID <<PK>>
+  + UUID : esriFieldTypeGUID
+  + TREE_LEVEL : esriFieldTypeInteger
+  + PARENT_REF : esriFieldTypeInteger
+  + DESCRIPTION : esriFieldTypeString
+  + GEOLCODE : esriFieldTypeInteger
 }
 
-entity "GC_CHARCAT " as GC_CHARCAT #F4C8A6 {
-  --
-   **UUID** : GUID <<PK>>
-  --
-  OBJECTID : OID
-  DESCRIPTION : String
-  GEOLCODE : Integer
+entity "GC_GEOL_MAPPING_UNIT " as GC_GEOL_MAPPING_UNIT <<Table>> #E1F5FE {
+  + {field} <:key:><b>OBJECTID</b> : esriFieldTypeOID <<PK>>
+  + UUID : esriFieldTypeGUID
+  + TREE_LEVEL : esriFieldTypeInteger
+  + DESCRIPTION : esriFieldTypeString
+  + GEOLCODE : esriFieldTypeInteger
 }
 
-entity "GC_CHRONO " as GC_CHRONO #F4C8A6 {
-  --
-   **UUID** : GUID <<PK>>
-  --
-  OBJECTID : OID
-  TREE_LEVEL : Integer
-  PARENT_REF : Integer
-  DESCRIPTION : String
-  GEOLCODE : Integer
+entity "GC_TECTO " as GC_TECTO <<Table>> #E1F5FE {
+  + {field} <:key:><b>OBJECTID</b> : esriFieldTypeOID <<PK>>
+  + UUID : esriFieldTypeGUID
+  + TREE_LEVEL : esriFieldTypeInteger
+  + PARENT_REF : esriFieldTypeInteger
+  + DESCRIPTION : esriFieldTypeString
+  + GEOLCODE : esriFieldTypeInteger
 }
 
-entity "GC_LITHO " as GC_LITHO #F4C8A6 {
-  --
-   **UUID** : GUID <<PK>>
-  --
-  OBJECTID : OID
-  TREE_LEVEL : Integer
-  PARENT_REF : Integer
-  DESCRIPTION : String
-  GEOLCODE : Integer
+entity "GC_LITHO_UNCO " as GC_LITHO_UNCO <<Table>> #E1F5FE {
+  + {field} <:key:><b>OBJECTID</b> : esriFieldTypeOID <<PK>>
+  + UUID : esriFieldTypeGUID
+  + TREE_LEVEL : esriFieldTypeInteger
+  + PARENT_REF : esriFieldTypeInteger
+  + DESCRIPTION : esriFieldTypeString
+  + GEOLCODE : esriFieldTypeInteger
 }
 
-entity "GC_GEOL_MAPPING_UNIT " as GC_GEOL_MAPPING_UNIT #F4C8A6 {
-  --
-   **UUID** : GUID <<PK>>
-  --
-  OBJECTID : OID
-  TREE_LEVEL : Integer
-  DESCRIPTION : String
-  GEOLCODE : Integer
+entity "GC_CORRELATION " as GC_CORRELATION <<Table>> #E1F5FE {
+  + {field} <:key:><b>OBJECTID</b> : esriFieldTypeOID <<PK>>
+  + UUID : esriFieldTypeGUID
+  + TREE_LEVEL : esriFieldTypeInteger
+  + PARENT_REF : esriFieldTypeInteger
+  + DESCRIPTION : esriFieldTypeString
+  + GEOLCODE : esriFieldTypeInteger
 }
 
-entity "GC_TECTO " as GC_TECTO #F4C8A6 {
-  --
-   **UUID** : GUID <<PK>>
-  --
-  OBJECTID : OID
-  TREE_LEVEL : Integer
-  PARENT_REF : Integer
-  DESCRIPTION : String
-  GEOLCODE : Integer
+entity "GC_LITSTRAT_FORMATION_BANK " as GC_LITSTRAT_FORMATION_BANK <<Table>> #E1F5FE {
+  + {field} <:key:><b>OBJECTID</b> : esriFieldTypeOID <<PK>>
+  + UUID : esriFieldTypeGUID
+  + TREE_LEVEL : esriFieldTypeInteger
+  + PARENT_REF : esriFieldTypeInteger
+  + DESCRIPTION : esriFieldTypeString
+  + GEOLCODE : esriFieldTypeInteger
 }
 
-entity "GC_CORRELATION " as GC_CORRELATION #F4C8A6 {
-  --
-   **UUID** : GUID <<PK>>
-  --
-  OBJECTID : OID
-  TREE_LEVEL : Integer
-  PARENT_REF : Integer
-  DESCRIPTION : String
-  GEOLCODE : Integer
+entity "GC_BEDROCK " as GC_BEDROCK <<Featureclass>> #E8F5E8   {
+  + {field} <:key:><b>OBJECTID</b> : esriFieldTypeOID <<PK>>
+  + UUID : esriFieldTypeGUID
+  + SYMBOL : esriFieldTypeString
+  + RBED_EXOTIC_ELE : esriFieldTypeInteger <<domain:GC_BOOLEAN_CD>>
+  + SHAPE : esriFieldTypeGeometry
+  + TECTO : esriFieldTypeInteger <<domain:GC_TECTO_CD>>
+  + DESCRIPTION : esriFieldTypeString
+  + GEOL_MAPPING_UNIT_ATT_UUID : esriFieldTypeGUID
 }
 
-entity "GC_LITSTRAT_FORMATION_BANK " as GC_LITSTRAT_FORMATION_BANK #F4C8A6 {
-  --
-   **UUID** : GUID <<PK>>
-  --
-  OBJECTID : OID
-  TREE_LEVEL : Integer
-  PARENT_REF : Integer
-  DESCRIPTION : String
-  GEOLCODE : Integer
+entity "GC_LINEAR_OBJECTS " as GC_LINEAR_OBJECTS <<Featureclass>> #E8F5E8   {
+  + {field} <:key:><b>OBJECTID</b> : esriFieldTypeOID <<PK>>
+  + UUID : esriFieldTypeGUID
+  + SYMBOL : esriFieldTypeString
+  + HPAL_CHRONO : esriFieldTypeInteger <<domain:GC_CHRONO_CD>>
+  + LPRO_LITHO : esriFieldTypeInteger <<domain:GC_LITHO_CD>>
+  + PCOB_FORMATIO : esriFieldTypeInteger <<domain:GC_GEOL_MAPPING_UNIT_CD>>
+  + AARC_EPOCH : esriFieldTypeInteger <<domain:GC_AARC_EPOCH_CD>>
+  + AARC_PERIOD : esriFieldTypeInteger <<domain:GC_AARC_PERIOD_CD>>
+  + AARC_AGE : esriFieldTypeInteger <<domain:GC_AARC_AGE_CD>>
+  + AEXP_STATUS : esriFieldTypeInteger <<domain:GC_LIN_AEXP_STATUS_CD>>
+  + GALL_AGE : esriFieldTypeInteger <<domain:GC_LIN_GALL_AGE_CD>>
+  + GGLA_MORAI_MO : esriFieldTypeInteger <<domain:GC_LIN_GGLA_MORAI_MO_CD>>
+  + GGLA_GLAC_TYP : esriFieldTypeInteger <<domain:GC_LIN_GGLA_GLAC_TYP_CD>>
+  + GGLA_ICE_M_P : esriFieldTypeInteger <<domain:GC_LIN_GGLA_ICE_M_P_CD>>
+  + GGLA_QUAT_STR : esriFieldTypeInteger <<domain:GC_LIN_GGLA_QUAT_STR_CD>>
+  + HCON_COMBI : esriFieldTypeInteger <<domain:GC_LIN_HCON_COMBI_CD>>
+  + HPAL_REL_AGE : esriFieldTypeInteger <<domain:GC_LIN_HPAL_REL_AGE_CD>>
+  + HSUB_COMBI : esriFieldTypeInteger <<domain:GC_LIN_HSUB_COMBI_CD>>
+  + LGEO_STATUS : esriFieldTypeInteger <<domain:GC_LIN_LGEO_STATUS_CD>>
+  + LPRO_CONG_SPE : esriFieldTypeInteger <<domain:GC_LIN_LPRO_CONG_SPE_CD>>
+  + LPRO_NAME_HORIZ : esriFieldTypeInteger <<domain:GC_GEOL_MAPPING_UNIT_CD>>
+  + PCOB_TYPE : esriFieldTypeInteger <<domain:GC_LIN_PCOB_TYPE_CD>>
+  + PCOH_CONFINE : esriFieldTypeInteger <<domain:GC_LIN_PCOH_CONFINE_CD>>
+  + PCOH_WA_TABLE : esriFieldTypeInteger <<domain:GC_LIN_PCOH_WA_TABLE_CD>>
+  + TTEC_FAULT_MO : esriFieldTypeInteger <<domain:GC_LIN_TTEC_FAULT_MO_CD>>
+  + TTEC_VERTI_MO : esriFieldTypeInteger <<domain:GC_LIN_TTEC_VERTI_MO_CD>>
+  + TTEC_HORIZ_MO : esriFieldTypeInteger <<domain:GC_LIN_TTEC_HORIZ_MO_CD>>
+  + TTEC_STATUS : esriFieldTypeInteger <<domain:GC_LIN_TTEC_STATUS_CD>>
+  + TTEC_META_STA : esriFieldTypeInteger <<domain:GC_LIN_TTEC_META_STA_CD>>
+  + GGLA_REF_YEAR : esriFieldTypeInteger
+  + GGLA_SOURCE : esriFieldTypeString
+  + HPAL_REF_YEAR : esriFieldTypeInteger
+  + HPAL_SOURCE : esriFieldTypeString
+  + LPRO_ORIG_DESCR : esriFieldTypeString
+  + LMIN_CHEMISTRY : esriFieldTypeString
+  + PCOB_ALTITUDE : esriFieldTypeDouble
+  + PCOH_ALTITUDE : esriFieldTypeDouble
+  + TTEC_NAME : esriFieldTypeString
+  + SHAPE : esriFieldTypeGeometry
+  + PRINTED : esriFieldTypeInteger <<domain:GC_BOOLEAN_CD>>
+  + TTEC_LIM_TYP : esriFieldTypeInteger <<domain:GC_LIN_TTEC_LIM_TYP>>
+  + TTEC_HIERA : esriFieldTypeInteger <<domain:GC_LIN_TTEC_HIERA_CD>>
 }
 
-entity "GC_BEDROCK " as GC_BEDROCK <<spatial>> #ECA77F {
-  --
-   **UUID** : GUID <<PK>>
-  --
-  OBJECTID : OID
-  SYMBOL : String
-  RBED_CHRONO_T : GC_CHRONO_CD
-  RBED_CHRONO_B : GC_CHRONO_CD
-  RBED_EXOTIC_ELE : GC_BOOLEAN_CD
-  TECTO : GC_TECTO_CD
-  DESCRIPTION : String
-  GEOL_MAPPING_UNIT_ATT_UUID : GUID
-  SHAPE : Geometry <<GEOMETRY>>
-  --
-  GEOL_MAPPING_UNIT_ATT_UUID : GUID <<FK->GC_GEOL_MAPPING_UNIT_ATT>>
+entity "GC_EXPLOIT_GEOMAT_PT " as GC_EXPLOIT_GEOMAT_PT <<Featureclass>> #E8F5E8   {
+  + {field} <:key:><b>OBJECTID</b> : esriFieldTypeOID <<PK>>
+  + UUID : esriFieldTypeGUID
+  + SYMBOL : esriFieldTypeString
+  + AEXP_STATUS : esriFieldTypeInteger <<domain:GC_EX_GEO_PNT_AEXP_STATUS_CD>>
+  + AEXP_TARG_MAT : esriFieldTypeInteger <<domain:GC_EX_GEO_PNT_AEXP_TARG_MAT_CD>>
+  + AEXP_DEPTH_TOT : esriFieldTypeDouble
+  + SHAPE : esriFieldTypeGeometry
+  + PRINTED : esriFieldTypeInteger <<domain:GC_BOOLEAN_CD>>
 }
 
-entity "GC_LINEAR_OBJECTS " as GC_LINEAR_OBJECTS <<spatial>> #ECA77F {
-  --
-   **UUID** : GUID <<PK>>
-  --
-  OBJECTID : OID
-  SYMBOL : String
-  HPAL_CHRONO : GC_CHRONO_CD
-  LPRO_LITHO : GC_LITHO_CD
-  PCOB_FORMATIO : GC_LITSTRAT_BED_CD
-  AARC_EPOCH : GC_AARC_EPOCH_CD
-  AARC_PERIOD : GC_AARC_PERIOD_CD
-  AARC_AGE : GC_AARC_AGE_CD
-  AEXP_STATUS : GC_LIN_AEXP_STATUS_CD
-  GALL_AGE : GC_LIN_GALL_AGE_CD
-  GGLA_MORAI_MO : GC_LIN_GGLA_MORAI_MO_CD
-  GGLA_GLAC_TYP : GC_LIN_GGLA_GLAC_TYP_CD
-  GGLA_ICE_M_P : GC_LIN_GGLA_ICE_M_P_CD
-  GGLA_QUAT_STR : GC_LIN_GGLA_QUAT_STR_CD
-  HCON_COMBI : GC_LIN_HCON_COMBI_CD
-  HPAL_REL_AGE : GC_LIN_HPAL_REL_AGE_CD
-  HSUB_COMBI : GC_LIN_HSUB_COMBI_CD
-  LGEO_STATUS : GC_LIN_LGEO_STATUS_CD
-  LPRO_CONG_SPE : GC_LIN_LPRO_CONG_SPE_CD
-  LPRO_NAME_HORIZ : GC_LITSTRAT_BED_CD
-  PCOB_TYPE : GC_LIN_PCOB_TYPE_CD
-  PCOH_CONFINE : GC_LIN_PCOH_CONFINE_CD
-  PCOH_WA_TABLE : GC_LIN_PCOH_WA_TABLE_CD
-  TTEC_FAULT_MO : GC_LIN_TTEC_FAULT_MO_CD
-  TTEC_VERTI_MO : GC_LIN_TTEC_VERTI_MO_CD
-  TTEC_HORIZ_MO : GC_LIN_TTEC_HORIZ_MO_CD
-  TTEC_STATUS : GC_LIN_TTEC_STATUS_CD
-  TTEC_META_STA : GC_LIN_TTEC_META_STA_CD
-  GGLA_REF_YEAR : Integer
-  GGLA_SOURCE : String
-  HPAL_REF_YEAR : Integer
-  HPAL_SOURCE : String
-  LPRO_ORIG_DESCR : String
-  LMIN_CHEMISTRY : String
-  PCOB_ALTITUDE : Double
-  PCOH_ALTITUDE : Double
-  TTEC_NAME : String
-  PRINTED : GC_BOOLEAN_CD
-  TTEC_LIM_TYP : GC_LIN_TTEC_LIM_TYP
-  TTEC_HIERA : GC_LIN_TTEC_HIERA_CD
-  SHAPE : Geometry <<GEOMETRY>>
+entity "GC_EXPLOIT_GEOMAT_PLG " as GC_EXPLOIT_GEOMAT_PLG <<Featureclass>> #E8F5E8   {
+  + {field} <:key:><b>OBJECTID</b> : esriFieldTypeOID <<PK>>
+  + UUID : esriFieldTypeGUID
+  + SYMBOL : esriFieldTypeString
+  + AEXP_STATUS : esriFieldTypeInteger <<domain:GC_EX_GEO_PLG_AEXP_STATUS_CD>>
+  + AEXP_TARG_MAT : esriFieldTypeInteger <<domain:GC_EX_GEO_PLG_AEXP_TARG_MAT_CD>>
+  + SHAPE : esriFieldTypeGeometry
 }
 
-entity "GC_EXPLOIT_GEOMAT_PT " as GC_EXPLOIT_GEOMAT_PT <<spatial>> #ECA77F {
-  --
-   **UUID** : GUID <<PK>>
-  --
-  OBJECTID : OID
-  SYMBOL : String
-  AEXP_STATUS : GC_EX_GEO_PNT_AEXP_STATUS_CD
-  AEXP_TARG_MAT : GC_EX_GEO_PNT_AEXP_TARG_MAT_CD
-  AEXP_DEPTH_TOT : Double
-  PRINTED : GC_BOOLEAN_CD
-  SHAPE : Geometry <<GEOMETRY>>
+entity "GC_POINT_OBJECTS " as GC_POINT_OBJECTS <<Featureclass>> #E8F5E8   {
+  + {field} <:key:><b>OBJECTID</b> : esriFieldTypeOID <<PK>>
+  + UUID : esriFieldTypeGUID
+  + SYMBOL : esriFieldTypeString
+  + RUNC_MAT_TYPE : esriFieldTypeInteger <<domain:GC_LITHO_CD>>
+  + ABOR_FM_A : esriFieldTypeInteger <<domain:GC_GEOL_MAPPING_UNIT_CD>>
+  + ABOR_FM_B : esriFieldTypeInteger <<domain:GC_GEOL_MAPPING_UNIT_CD>>
+  + PSLO_FORMATIO : esriFieldTypeInteger <<domain:GC_GEOL_MAPPING_UNIT_CD>>
+  + AARC_EPOCH : esriFieldTypeInteger <<domain:GC_AARC_EPOCH_CD>>
+  + AARC_PERIOD : esriFieldTypeInteger <<domain:GC_AARC_PERIOD_CD>>
+  + AARC_AGE : esriFieldTypeInteger <<domain:GC_AARC_AGE_CD>>
+  + AARC_TYPE : esriFieldTypeInteger <<domain:GC_PNT_AARC_TYPE_CD>>
+  + ABOR_MAIN_TAR : esriFieldTypeInteger <<domain:GC_PNT_ABOR_MAIN_TAR_CD>>
+  + ABOR_TARG_MAT : esriFieldTypeInteger <<domain:GC_PNT_ABOR_TARG_MAT_CD>>
+  + ABOR_D_C_UNDERG : esriFieldTypeInteger <<domain:GC_BOOLEAN_CD>>
+  + GKAR_ICE_CAVE : esriFieldTypeInteger <<domain:GC_BOOLEAN_CD>>
+  + HCON_STATUS : esriFieldTypeInteger <<domain:GC_PNT_HCON_STATUS_CD>>
+  + HCON_EPOCH : esriFieldTypeInteger <<domain:GC_PNT_HCON_EPOCH_CD>>
+  + HSUR_STATUS : esriFieldTypeInteger <<domain:GC_PNT_HSUR_STATUS_CD>>
+  + HSUR_FLOW_CON : esriFieldTypeInteger <<domain:GC_PNT_HSUR_FLOW_CON_CD>>
+  + HSUR_TYPE : esriFieldTypeInteger <<domain:GC_PNT_HSUR_TYPE_CD>>
+  + HSUR_DIS_LOCA : esriFieldTypeInteger <<domain:GC_PNT_HSUR_DIS_LOCA_CD>>
+  + HSUR_COMBI : esriFieldTypeInteger <<domain:GC_PNT_HSUR_COMBI_CD>>
+  + LANO_TYPE : esriFieldTypeInteger <<domain:GC_PNT_LANO_TYPE_CD>>
+  + LRES_STATUS : esriFieldTypeInteger <<domain:GC_PNT_LRES_STATUS_CD>>
+  + LRES_MATERIAL : esriFieldTypeInteger <<domain:GC_PNT_LRES_MATERIAL_CD>>
+  + LTYP_STRATI : esriFieldTypeInteger <<domain:GC_PNT_LTYP_STRATI_CD>>
+  + LTYP_ACCESSIBIL : esriFieldTypeInteger <<domain:GC_BOOLEAN_CD>>
+  + LTYP_PROTECTED : esriFieldTypeInteger <<domain:GC_BOOLEAN_CD>>
+  + MFOL_FOLD_TYP : esriFieldTypeInteger <<domain:GC_PNT_MFOL_FOLD_TYP_CD>>
+  + MFOL_PHASE : esriFieldTypeInteger <<domain:GC_PNT_MFOL_PHASE_CD>>
+  + MPLA_POLARITY : esriFieldTypeInteger <<domain:GC_PNT_MPLA_POLARITY_CD>>
+  + MPLA_PHASE : esriFieldTypeInteger <<domain:GC_PNT_MPLA_PHASE_CD>>
+  + MPLA_OB_DIP_SLO : esriFieldTypeInteger <<domain:GC_BOOLEAN_CD>>
+  + PSLO_TYPE : esriFieldTypeInteger <<domain:GC_PNT_PSLO_TYPE_CD>>
+  + RUNC_STATUS : esriFieldTypeInteger <<domain:GC_PNT_RUNC_STATUS_CD>>
+  + RUNC_ROCK_TYP : esriFieldTypeInteger <<domain:GC_PNT_RUNC_ROCK_TYP_CD>>
+  + RUNC_ROCK_SPE : esriFieldTypeInteger <<domain:GC_GEOL_MAPPING_UNIT_CD>>
+  + RUNC_PROTECTED : esriFieldTypeInteger <<domain:GC_BOOLEAN_CD>>
+  + TDEF_FOLD_TYP : esriFieldTypeInteger <<domain:GC_PNT_TDEF_FOLD_TYP_CD>>
+  + TDEF_FOLD_FOR : esriFieldTypeInteger <<domain:GC_PNT_TDEF_FOLD_FOR_CD>>
+  + ABOR_DEPTH_BEDR : esriFieldTypeDouble
+  + ABOR_DEPTH_TOT : esriFieldTypeDouble
+  + ABOR_DEPTH_FM_A : esriFieldTypeDouble
+  + ABOR_DEPTH_FM_B : esriFieldTypeDouble
+  + ABOR_DEPTH_WT : esriFieldTypeDouble
+  + AZIMUTH : esriFieldTypeInteger
+  + DIP : esriFieldTypeInteger
+  + ABOR_REF_NUMBER : esriFieldTypeInteger
+  + HCON_DEPTH : esriFieldTypeDouble
+  + HCON_DEPTH_WT : esriFieldTypeDouble
+  + HCON_MEA_PERIOD : esriFieldTypeString
+  + HSUR_TEMP : esriFieldTypeInteger
+  + HSUR_CHEMISTRY : esriFieldTypeString
+  + LRES_CHEMISTRY : esriFieldTypeString
+  + LTYP_NAME : esriFieldTypeString
+  + MFOL_PHASE_REF : esriFieldTypeString
+  + MPLA_PHASE_REF : esriFieldTypeString
+  + PMOD_HEIGHT : esriFieldTypeDouble
+  + PMOD_MEA_PERIOD : esriFieldTypeString
+  + RUNC_ORIG_DESCR : esriFieldTypeString
+  + LMIS_ORIG_ID : esriFieldTypeString
+  + SHAPE : esriFieldTypeGeometry
+  + PRINTED : esriFieldTypeInteger <<domain:GC_BOOLEAN_CD>>
+  + ABOR_LITHO : esriFieldTypeInteger <<domain:GC_LITHO_CD>>
 }
 
-entity "GC_EXPLOIT_GEOMAT_PLG " as GC_EXPLOIT_GEOMAT_PLG <<spatial>> #ECA77F {
-  --
-   **UUID** : GUID <<PK>>
-  --
-  OBJECTID : OID
-  SYMBOL : String
-  AEXP_STATUS : GC_EX_GEO_PLG_AEXP_STATUS_CD
-  AEXP_TARG_MAT : GC_EX_GEO_PLG_AEXP_TARG_MAT_CD
-  SHAPE : Geometry <<GEOMETRY>>
+entity "GC_UNCO_DESPOSIT " as GC_UNCO_DESPOSIT <<Featureclass>> #E8F5E8   {
+  + {field} <:key:><b>OBJECTID</b> : esriFieldTypeOID <<PK>>
+  + UUID : esriFieldTypeGUID
+  + SYMBOL : esriFieldTypeString
+  + RUNC_CHRONO_T : esriFieldTypeInteger <<domain:GC_CHRONO_CD>>
+  + RUNC_CHRONO_B : esriFieldTypeInteger <<domain:GC_CHRONO_CD>>
+  + RUNC_LITHO : esriFieldTypeInteger <<domain:GC_LITHO_UNCO_CD>>
+  + RUNC_LITSTRAT : esriFieldTypeInteger <<domain:GC_GEOL_MAPPING_UNIT_CD>>
+  + RUNC_HARMOS_REV : esriFieldTypeInteger <<domain:GC_HARMOS_REV_CD>>
+  + RUNC_STRUCTUR : esriFieldTypeInteger <<domain:GC_UN_DEP_RUNC_STRUCTUR_CD>>
+  + RUNC_MORPHOLO : esriFieldTypeInteger <<domain:GC_UN_DEP_RUNC_MORPHOLO_CD>>
+  + RUNC_GLAC_TYP : esriFieldTypeInteger <<domain:GC_UN_DEP_RUNC_GLAC_TYP_CD>>
+  + RUNC_THIN_COV : esriFieldTypeInteger <<domain:GC_UN_DEP_RUNC_THIN_COV_CD>>
+  + RUNC_BURIED_OUT : esriFieldTypeInteger <<domain:GC_BOOLEAN_CD>>
+  + RUNC_ORIG_DESCR : esriFieldTypeString
+  + RUNC_REF_YEAR : esriFieldTypeString
+  + RUNC_INDEX : esriFieldTypeString
+  + SHAPE : esriFieldTypeGeometry
 }
 
-entity "GC_POINT_OBJECTS " as GC_POINT_OBJECTS <<spatial>> #ECA77F {
-  --
-   **UUID** : GUID <<PK>>
-  --
-  OBJECTID : OID
-  SYMBOL : String
-  RUNC_MAT_TYPE : GC_LITHO_CD
-  ABOR_FM_A : GC_GEOL_MAPPING_UNIT_CD
-  ABOR_FM_B : GC_GEOL_MAPPING_UNIT_CD
-  PSLO_FORMATIO : GC_LITSTRAT_BED_CD
-  AARC_EPOCH : GC_AARC_EPOCH_CD
-  AARC_PERIOD : GC_AARC_PERIOD_CD
-  AARC_AGE : GC_AARC_AGE_CD
-  AARC_TYPE : GC_PNT_AARC_TYPE_CD
-  ABOR_MAIN_TAR : GC_PNT_ABOR_MAIN_TAR_CD
-  ABOR_TARG_MAT : GC_PNT_ABOR_TARG_MAT_CD
-  ABOR_D_C_UNDERG : GC_BOOLEAN_CD
-  GKAR_ICE_CAVE : GC_BOOLEAN_CD
-  HCON_STATUS : GC_PNT_HCON_STATUS_CD
-  HCON_EPOCH : GC_PNT_HCON_EPOCH_CD
-  HSUR_STATUS : GC_PNT_HSUR_STATUS_CD
-  HSUR_FLOW_CON : GC_PNT_HSUR_FLOW_CON_CD
-  HSUR_TYPE : GC_PNT_HSUR_TYPE_CD
-  HSUR_DIS_LOCA : GC_PNT_HSUR_DIS_LOCA_CD
-  HSUR_COMBI : GC_PNT_HSUR_COMBI_CD
-  LANO_TYPE : GC_PNT_LANO_TYPE_CD
-  LRES_STATUS : GC_PNT_LRES_STATUS_CD
-  LRES_MATERIAL : GC_PNT_LRES_MATERIAL_CD
-  LTYP_STRATI : GC_PNT_LTYP_STRATI_CD
-  LTYP_ACCESSIBIL : GC_BOOLEAN_CD
-  LTYP_PROTECTED : GC_BOOLEAN_CD
-  MFOL_FOLD_TYP : GC_PNT_MFOL_FOLD_TYP_CD
-  MFOL_PHASE : GC_PNT_MFOL_PHASE_CD
-  MPLA_POLARITY : GC_PNT_MPLA_POLARITY_CD
-  MPLA_PHASE : GC_PNT_MPLA_PHASE_CD
-  MPLA_OB_DIP_SLO : GC_BOOLEAN_CD
-  PSLO_TYPE : GC_PNT_PSLO_TYPE_CD
-  RUNC_STATUS : GC_PNT_RUNC_STATUS_CD
-  RUNC_ROCK_TYP : GC_PNT_RUNC_ROCK_TYP_CD
-  RUNC_ROCK_SPE : GC_LITSTRAT_BED_CD
-  RUNC_PROTECTED : GC_BOOLEAN_CD
-  TDEF_FOLD_TYP : GC_PNT_TDEF_FOLD_TYP_CD
-  TDEF_FOLD_FOR : GC_PNT_TDEF_FOLD_FOR_CD
-  ABOR_DEPTH_BEDR : Double
-  ABOR_DEPTH_TOT : Double
-  ABOR_DEPTH_FM_A : Double
-  ABOR_DEPTH_FM_B : Double
-  ABOR_DEPTH_WT : Double
-  AZIMUTH : Integer
-  DIP : Integer
-  ABOR_REF_NUMBER : Integer
-  HCON_DEPTH : Double
-  HCON_DEPTH_WT : Double
-  HCON_MEA_PERIOD : String
-  HSUR_TEMP : Integer
-  HSUR_CHEMISTRY : String
-  LRES_CHEMISTRY : String
-  LTYP_NAME : String
-  MFOL_PHASE_REF : String
-  MPLA_PHASE_REF : String
-  PMOD_HEIGHT : Double
-  PMOD_MEA_PERIOD : String
-  RUNC_ORIG_DESCR : String
-  LMIS_ORIG_ID : String
-  PRINTED : GC_BOOLEAN_CD
-  ABOR_LITHO : GC_LITHO_CD
-  SHAPE : Geometry <<GEOMETRY>>
+entity "GC_MAPSHEET " as GC_MAPSHEET <<Featureclass>> #E8F5E8   {
+  + {field} <:key:><b>OBJECTID</b> : esriFieldTypeOID <<PK>>
+  + UUID : esriFieldTypeGUID
+  + MSH_MAP_TITLE : esriFieldTypeString
+  + MSH_MAP_NBR : esriFieldTypeInteger
+  + MSH_MAP_SCALE : esriFieldTypeString
+  + MSH_BASIS_TOPO : esriFieldTypeString
+  + MSH_AUTHOR : esriFieldTypeString
+  + MSH_OWNER : esriFieldTypeString
+  + MSH_MAPPING_PERIOD : esriFieldTypeString
+  + MSH_PUBL_YEAR : esriFieldTypeInteger
+  + MSH_BASIS_VECT : esriFieldTypeString
+  + SHAPE : esriFieldTypeGeometry
+  + MSH_MORE_INFO : esriFieldTypeString
+  + MSH_TOPO_NR : esriFieldTypeInteger
 }
 
-entity "GC_UNCO_DESPOSIT " as GC_UNCO_DESPOSIT <<spatial>> #ECA77F {
-  --
-   **UUID** : GUID <<PK>>
-  --
-  OBJECTID : OID
-  SYMBOL : String
-  RUNC_CHRONO_T : GC_CHRONO_CD
-  RUNC_CHRONO_B : GC_CHRONO_CD
-  RUNC_LITHO : GC_LITHO_UNCO_CD
-  RUNC_LITSTRAT : GC_LITSTRAT_UNCO_CD
-  RUNC_HARMOS_REV : GC_HARMOS_REV_CD
-  RUNC_STRUCTUR : GC_UN_DEP_RUNC_STRUCTUR_CD
-  RUNC_MORPHOLO : GC_UN_DEP_RUNC_MORPHOLO_CD
-  RUNC_GLAC_TYP : GC_UN_DEP_RUNC_GLAC_TYP_CD
-  RUNC_THIN_COV : GC_UN_DEP_RUNC_THIN_COV_CD
-  RUNC_BURIED_OUT : GC_BOOLEAN_CD
-  RUNC_ORIG_DESCR : String
-  RUNC_REF_YEAR : String
-  RUNC_INDEX : String
-  SHAPE : Geometry <<GEOMETRY>>
+entity "GC_SURFACES " as GC_SURFACES <<Featureclass>> #E8F5E8   {
+  + {field} <:key:><b>OBJECTID</b> : esriFieldTypeOID <<PK>>
+  + UUID : esriFieldTypeGUID
+  + SYMBOL : esriFieldTypeString
+  + AARC_EPOCH : esriFieldTypeInteger <<domain:GC_AARC_EPOCH_CD>>
+  + AARC_PERIOD : esriFieldTypeInteger <<domain:GC_AARC_PERIOD_CD>>
+  + AARC_AGE : esriFieldTypeInteger <<domain:GC_AARC_AGE_CD>>
+  + GINS_MAIN_MOV : esriFieldTypeInteger <<domain:GC_SURF_GINS_MAIN_MOV_CD>>
+  + TDEF_TYPE : esriFieldTypeInteger <<domain:GC_SURF_TDEF_TYPE_CD>>
+  + SHAPE : esriFieldTypeGeometry
 }
 
-entity "GC_SURFACES " as GC_SURFACES <<spatial>> #ECA77F {
-  --
-   **UUID** : GUID <<PK>>
-  --
-  OBJECTID : OID
-  SYMBOL : String
-  AARC_EPOCH : GC_AARC_EPOCH_CD
-  AARC_PERIOD : GC_AARC_PERIOD_CD
-  AARC_AGE : GC_AARC_AGE_CD
-  GINS_MAIN_MOV : GC_SURF_GINS_MAIN_MOV_CD
-  TDEF_TYPE : GC_SURF_TDEF_TYPE_CD
-  SHAPE : Geometry <<GEOMETRY>>
+entity "GC_FOSSILS " as GC_FOSSILS <<Featureclass>> #E8F5E8   {
+  + {field} <:key:><b>OBJECTID</b> : esriFieldTypeOID <<PK>>
+  + UUID : esriFieldTypeGUID
+  + SYMBOL : esriFieldTypeString
+  + LFOS_DIVISION : esriFieldTypeInteger <<domain:GC_FOSS_LFOS_DIVISION_CD>>
+  + LFOS_DAT_METH : esriFieldTypeInteger <<domain:GC_FOSS_LFOS_DAT_METH_CD>>
+  + LFOS_STATUS : esriFieldTypeInteger <<domain:GC_FOSS_LFOS_STATUS_CD>>
+  + LFOS_PROTECTED : esriFieldTypeInteger <<domain:GC_BOOLEAN_CD>>
+  + SHAPE : esriFieldTypeGeometry
+  + PRINTED : esriFieldTypeInteger <<domain:GC_BOOLEAN_CD>>
 }
 
-entity "GC_FOSSILS " as GC_FOSSILS <<spatial>> #ECA77F {
-  --
-   **UUID** : GUID <<PK>>
-  --
-  OBJECTID : OID
-  SYMBOL : String
-  LFOS_DIVISION : GC_FOSS_LFOS_DIVISION_CD
-  LFOS_DAT_METH : GC_FOSS_LFOS_DAT_METH_CD
-  LFOS_STATUS : GC_FOSS_LFOS_STATUS_CD
-  LFOS_PROTECTED : GC_BOOLEAN_CD
-  PRINTED : GC_BOOLEAN_CD
-  SHAPE : Geometry <<GEOMETRY>>
+' Junction Tables for Many-to-Many Relationships
+class TOPGIS_GC_GC_FOSS_SYSTEM_GC_SYSTEM_JT as "GC_FOSS_SYSTEM_GC_SYSTEM (Junction)"  #FFF8E1 {
+  .. Junction Table ..
+  + <b>🔑🔗 GC_FOSSILS_ID</b> : UUID → GC_FOSSILS
+  + <b>🔑🔗 GC_SYSTEM_ID</b> : UUID → GC_SYSTEM
 }
 
-entity "GC_EXPLOIT_GEOMAT_PLG_GC_GEOL_MAPPING_UNIT" as GC_EXPLOIT_GEOMAT_PLG_GC_GEOL_MAPPING_UNIT <<junction>> #FFF8E1 {
-  GC_EXPLOIT_GEOMAT_PLG_UUID : GUID <<FK->GC_EXPLOIT_GEOMAT_PLG>>
-  GC_GEOL_MAPPING_UNIT_UUID : GUID <<FK->GC_GEOL_MAPPING_UNIT>>
+class TOPGIS_GC_GC_UN_DEP_COMPOSIT_GC_COMPOS_JT as "GC_UN_DEP_COMPOSIT_GC_COMPOS (Junction)"  #FFF8E1 {
+  .. Junction Table ..
+  + <b>🔑🔗 GC_UNCO_DESPOSIT_ID</b> : UUID → GC_UNCO_DESPOSIT
+  + <b>🔑🔗 GC_COMPOSIT_ID</b> : UUID → GC_COMPOSIT
 }
 
-entity "GC_EXPLOIT_GEOMAT_PT_GC_GEOL_MAPPING_UNIT" as GC_EXPLOIT_GEOMAT_PT_GC_GEOL_MAPPING_UNIT <<junction>> #FFF8E1 {
-  GC_EXPLOIT_GEOMAT_PT_UUID : GUID <<FK->GC_EXPLOIT_GEOMAT_PT>>
-  GC_GEOL_MAPPING_UNIT_UUID : GUID <<FK->GC_GEOL_MAPPING_UNIT>>
+class TOPGIS_GC_GC_UN_DEP_ADMIXTUR_GC_ADMIXT_JT as "GC_UN_DEP_ADMIXTUR_GC_ADMIXT (Junction)"  #FFF8E1 {
+  .. Junction Table ..
+  + <b>🔑🔗 GC_UNCO_DESPOSIT_ID</b> : UUID → GC_UNCO_DESPOSIT
+  + <b>🔑🔗 GC_ADMIXTURE_ID</b> : UUID → GC_ADMIXTURE
 }
 
-entity "GC_BEDROCK_GC_LITHO_BED" as GC_BEDROCK_GC_LITHO_BED <<junction>> #FFF8E1 {
-  GC_BEDROCK_UUID : GUID <<FK->GC_BEDROCK>>
-  GC_LITHO_BED_UUID : GUID <<FK->GC_LITHO_BED>>
+class TOPGIS_GC_GC_UN_DEP_CHARACT_GC_CHARCAT_JT as "GC_UN_DEP_CHARACT_GC_CHARCAT (Junction)"  #FFF8E1 {
+  .. Junction Table ..
+  + <b>🔑🔗 GC_UNCO_DESPOSIT_ID</b> : UUID → GC_UNCO_DESPOSIT
+  + <b>🔑🔗 GC_CHARCAT_ID</b> : UUID → GC_CHARCAT
 }
 
-entity "GC_FOSSILS_GC_SYSTEM" as GC_FOSSILS_GC_SYSTEM <<junction>> #FFF8E1 {
-  GC_FOSSILS_UUID : GUID <<FK->GC_FOSSILS>>
-  GC_SYSTEM_UUID : GUID <<FK->GC_SYSTEM>>
+class TOPGIS_GC_GC_UN_DEP_MAT_TYPE_GC_LITHO_JT as "GC_UN_DEP_MAT_TYPE_GC_LITHO (Junction)"  #FFF8E1 {
+  .. Junction Table ..
+  + <b>🔑🔗 GC_UNCO_DESPOSIT_ID</b> : UUID → GC_UNCO_DESPOSIT
+  + <b>🔑🔗 GC_LITHO_ID</b> : UUID → GC_LITHO
 }
 
-entity "GC_UNCO_DESPOSIT_GC_COMPOSIT" as GC_UNCO_DESPOSIT_GC_COMPOSIT <<junction>> #FFF8E1 {
-  GC_UNCO_DESPOSIT_UUID : GUID <<FK->GC_UNCO_DESPOSIT>>
-  GC_COMPOSIT_UUID : GUID <<FK->GC_COMPOSIT>>
+class TOPGIS_GC_GC_EX_GEO_PLG_EXP_UNIT_GC_GMU_JT as "GC_EX_GEO_PLG_EXP_UNIT_GC_GMU (Junction)"  #FFF8E1 {
+  .. Junction Table ..
+  + <b>🔑🔗 GC_EXPLOIT_GEOMAT_PLG_ID</b> : UUID → GC_EXPLOIT_GEOMAT_PLG
+  + <b>🔑🔗 GC_GEOL_MAPPING_UNIT_ID</b> : UUID → GC_GEOL_MAPPING_UNIT
 }
 
-entity "GC_UNCO_DESPOSIT_GC_ADMIXTURE" as GC_UNCO_DESPOSIT_GC_ADMIXTURE <<junction>> #FFF8E1 {
-  GC_UNCO_DESPOSIT_UUID : GUID <<FK->GC_UNCO_DESPOSIT>>
-  GC_ADMIXTURE_UUID : GUID <<FK->GC_ADMIXTURE>>
+class TOPGIS_GC_GC_EX_GEO_PNT_EXP_UNIT_GC_GMU_JT as "GC_EX_GEO_PNT_EXP_UNIT_GC_GMU (Junction)"  #FFF8E1 {
+  .. Junction Table ..
+  + <b>🔑🔗 GC_EXPLOIT_GEOMAT_PT_ID</b> : UUID → GC_EXPLOIT_GEOMAT_PT
+  + <b>🔑🔗 GC_GEOL_MAPPING_UNIT_ID</b> : UUID → GC_GEOL_MAPPING_UNIT
 }
-
-entity "GC_UNCO_DESPOSIT_GC_CHARCAT" as GC_UNCO_DESPOSIT_GC_CHARCAT <<junction>> #FFF8E1 {
-  GC_UNCO_DESPOSIT_UUID : GUID <<FK->GC_UNCO_DESPOSIT>>
-  GC_CHARCAT_UUID : GUID <<FK->GC_CHARCAT>>
-}
-
-entity "GC_UNCO_DESPOSIT_GC_LITHO" as GC_UNCO_DESPOSIT_GC_LITHO <<junction>> #FFF8E1 {
-  GC_UNCO_DESPOSIT_UUID : GUID <<FK->GC_UNCO_DESPOSIT>>
-  GC_LITHO_UUID : GUID <<FK->GC_LITHO>>
-}
-
-' Position core entities in center
-GC_UNCO_DESPOSIT -[hidden]down- GC_BEDROCK
 
 ' Relationships
-GC_GEOL_MAPPING_UNIT_ATT ||--right--o{ GC_BEDROCK : "GEOL_MAPPING_UNIT_ATT_UUID"
-GC_EXPLOIT_GEOMAT_PLG ||--right--o{ GC_EXPLOIT_GEOMAT_PLG_GC_GEOL_MAPPING_UNIT : "1:n"
-GC_GEOL_MAPPING_UNIT ||--right--o{ GC_EXPLOIT_GEOMAT_PLG_GC_GEOL_MAPPING_UNIT : "1:n"
-GC_EXPLOIT_GEOMAT_PT ||--right--o{ GC_EXPLOIT_GEOMAT_PT_GC_GEOL_MAPPING_UNIT : "1:n"
-GC_GEOL_MAPPING_UNIT ||--right--o{ GC_EXPLOIT_GEOMAT_PT_GC_GEOL_MAPPING_UNIT : "1:n"
-GC_BEDROCK ||--right--o{ GC_BEDROCK_GC_LITHO_BED : "1:n"
-GC_LITHO_BED ||--right--o{ GC_BEDROCK_GC_LITHO_BED : "1:n"
-GC_FOSSILS ||--right--o{ GC_FOSSILS_GC_SYSTEM : "1:n"
-GC_SYSTEM ||--right--o{ GC_FOSSILS_GC_SYSTEM : "1:n"
-GC_UNCO_DESPOSIT ||--right--o{ GC_UNCO_DESPOSIT_GC_COMPOSIT : "1:n"
-GC_COMPOSIT ||--right--o{ GC_UNCO_DESPOSIT_GC_COMPOSIT : "1:n"
-GC_UNCO_DESPOSIT ||--right--o{ GC_UNCO_DESPOSIT_GC_ADMIXTURE : "1:n"
-GC_ADMIXTURE ||--right--o{ GC_UNCO_DESPOSIT_GC_ADMIXTURE : "1:n"
-GC_UNCO_DESPOSIT ||--right--o{ GC_UNCO_DESPOSIT_GC_CHARCAT : "1:n"
-GC_CHARCAT ||--right--o{ GC_UNCO_DESPOSIT_GC_CHARCAT : "1:n"
-GC_UNCO_DESPOSIT ||--right--o{ GC_UNCO_DESPOSIT_GC_LITHO : "1:n"
-GC_LITHO ||--right--o{ GC_UNCO_DESPOSIT_GC_LITHO : "1:n"
-}
+GC_FOSSILS ||--o{ TOPGIS_GC_GC_FOSS_SYSTEM_GC_SYSTEM_JT : "has many"
+TOPGIS_GC_GC_FOSS_SYSTEM_GC_SYSTEM_JT }o--|| GC_SYSTEM : "references"
+GC_UNCO_DESPOSIT ||--o{ TOPGIS_GC_GC_UN_DEP_COMPOSIT_GC_COMPOS_JT : "has many"
+TOPGIS_GC_GC_UN_DEP_COMPOSIT_GC_COMPOS_JT }o--|| GC_COMPOSIT : "references"
+GC_UNCO_DESPOSIT ||--o{ TOPGIS_GC_GC_UN_DEP_ADMIXTUR_GC_ADMIXT_JT : "has many"
+TOPGIS_GC_GC_UN_DEP_ADMIXTUR_GC_ADMIXT_JT }o--|| GC_ADMIXTURE : "references"
+GC_UNCO_DESPOSIT ||--o{ TOPGIS_GC_GC_UN_DEP_CHARACT_GC_CHARCAT_JT : "has many"
+TOPGIS_GC_GC_UN_DEP_CHARACT_GC_CHARCAT_JT }o--|| GC_CHARCAT : "references"
+GC_UNCO_DESPOSIT ||--o{ TOPGIS_GC_GC_UN_DEP_MAT_TYPE_GC_LITHO_JT : "has many"
+TOPGIS_GC_GC_UN_DEP_MAT_TYPE_GC_LITHO_JT }o--|| GC_LITHO : "references"
+GC_EXPLOIT_GEOMAT_PLG ||--o{ TOPGIS_GC_GC_EX_GEO_PLG_EXP_UNIT_GC_GMU_JT : "has many"
+TOPGIS_GC_GC_EX_GEO_PLG_EXP_UNIT_GC_GMU_JT }o--|| GC_GEOL_MAPPING_UNIT : "references"
+GC_EXPLOIT_GEOMAT_PT ||--o{ TOPGIS_GC_GC_EX_GEO_PNT_EXP_UNIT_GC_GMU_JT : "has many"
+TOPGIS_GC_GC_EX_GEO_PNT_EXP_UNIT_GC_GMU_JT }o--|| GC_GEOL_MAPPING_UNIT : "references"
+
+GC_GEOL_MAPPING_UNIT_ATT ||--o{ GC_BEDROCK : "Geol Mapping Unit Att - Bedrock"
+
 @enduml
