@@ -62,10 +62,11 @@ jobs:
         shell: bash -el {0}
         run: make validate
 
-      - name: Generate graph
+      - name: NOT Generate graph
         shell: bash -el {0}
         run: |
-          python ./create_gv.py
+          echo "--NOT GENERATING --"
+          # python ./create_gv.py
     
       - name: Build all targets
         shell: bash -el {0}
