@@ -69,7 +69,10 @@ jobs:
     
       - name: Build all targets
         shell: bash -el {0}
-        run: make cleanall all
+        run: |
+             make cleanall all
+             # make diagram
+             
 
       - name: Generate PDF from PUML diagram
         uses: rotaract/plantuml-action@v1

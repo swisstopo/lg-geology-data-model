@@ -95,7 +95,7 @@ $(INPUT_DIR)/datamodel.xlsx:
 
 
 .PHONY: all
-all: $(MO_FILES) $(INPUTS)  $(OUTPUTS) diagram $(INPUT_DIR)/datamodel.xlsx
+all: $(MO_FILES) $(INPUTS)  $(OUTPUTS)  $(INPUT_DIR)/datamodel.xlsx
 
 # Define individual rules for each format and language
 define build_rule
