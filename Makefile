@@ -16,8 +16,10 @@ OUTPUTS = $(foreach lang,$(LANGUAGES),$(foreach fmt,$(FORMATS),$(OUTPUT_DIR)/$(l
 # Define the list of required .mo files for each language
 MO_FILES = $(foreach lang,$(LANGUAGES),$(LOCALE_DIR)/$(lang)/LC_MESSAGES/datamodel.mo $(LOCALE_DIR)/$(lang)/LC_MESSAGES/app.mo)
 INPUTS = $(foreach lang,$(LANGUAGES),$(foreach fmt,$(FORMATS),$(INPUT_DIR)/$(lang)/datamodel.md))
+CLEAN_PDFS = $(shell find outputs -name "*.pdf" -not -name "ER-GCOVER.pdf")
 
 
+$(info clean pdfs = $(CLEAN_PDFS))
 
 # Options for all doc format
 # Unknown --shift-heading-level-by=-1  \
@@ -88,6 +90,7 @@ markdown: $(MO_FILES) $(INPUTS)
 
 
 diagram: assets
+	rm -rf $(OUTPUT_DIR)/ER-GCOVER.*
 	python create_gv.py
 	
 $(INPUT_DIR)/datamodel.xlsx:
@@ -153,13 +156,19 @@ validate:
 cleanall: clean cleaninputs cleanpdf cleanodt cleanhtml cleandocx
 
 clean:
-	rm -rf $(OUTPUT_DIR)/*
 	find $(LOCALE_DIR) -name "*.mo" -delete
 
 # Clean up only generated PDF files
 .PHONY: cleanpdf
 cleanpdf:
-	find $(OUTPUT_DIR) -name "*.pdf" -delete
+	@echo "Deleting all PDFs except ER-GCOVER.pdf..."
+	@if [ -n "$(CLEAN_PDFS)" ]; then \
+		rm $(CLEAN_PDFS); \
+	else \
+		echo "No other PDFs to delete."; \
+	fi
+
+
 
 # Clean up only generated ODT files
 .PHONY: cleanodt
