@@ -74,6 +74,7 @@ jobs:
                  token: ${{ secrets.TOKEN }}
                  tag: ${{ github.ref_name }} # github.ref_name directly gives the tag name (e.g., v1.0.0)
                  name: Release ${{ github.ref_name }}
+                 allowUpdates: true
 
                  # Optional: The body/description of the release notes.
                  # You can include dynamic content, commit messages, or static text.
