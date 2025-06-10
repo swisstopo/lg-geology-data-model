@@ -52,6 +52,10 @@ jobs:
           cp temp-artifacts/${{ env.SOURCES_DIR }}/gcoverp_export_simple.json release-assets/gcoverp_export_simple.json
           # List files to verify
           ls -la release-assets/
+      - name: Ensure file handles are properly closed
+        run: |
+           # Ensure all files are properly closed before upload
+           find release-assets -type f -exec bash -c 'exec 3<>"{}"' \;
 
       - name: Release assets (batch 1)
         uses: softprops/action-gh-release@v2
