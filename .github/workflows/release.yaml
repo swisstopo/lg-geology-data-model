@@ -62,8 +62,8 @@ jobs:
               exec 3>&-
            done
       - name: Get tag name
-          id: get_tag
-          run: echo "TAG=${GITHUB_REF#refs/tags/}" >> $GITHUB_OUTPUT
+        id: get_tag
+        run: echo "TAG=${GITHUB_REF#refs/tags/}" >> $GITHUB_OUTPUT
       - name: Create GitHub Release
         id: create_release
         uses: actions/create-release@v1
