@@ -11,6 +11,31 @@ from pathlib import Path
 from typing import Dict, List, Union, Tuple
 import pandas as pd
 
+import gettext
+from pathlib import Path
+
+
+def load_existing_translations(locale_dir="locale", domain="app"):
+    """Load existing translations from locale directory"""
+    translations = {}
+
+    # Find all available languages
+    for lang_dir in Path(locale_dir).iterdir():
+        if not lang_dir.is_dir():
+            continue
+
+        lang = lang_dir.name
+        try:
+            # Load the MO file
+            mo_path = lang_dir / "LC_MESSAGES" / f"{domain}.mo"
+            if mo_path.exists():
+                with open(mo_path, "rb") as f:
+                    translations[lang] = gettext.GNUTranslations(f)
+        except Exception as e:
+            print(f"Error loading {mo_path}: {e}")
+
+    return translations
+
 
 def find_files(directories: Union[str, List[str]], extensions: List[str]):
     """Search for files with given extensions in directories."""
@@ -25,35 +50,42 @@ def find_files(directories: Union[str, List[str]], extensions: List[str]):
 
 
 def extract_jinja_translations(template_path: Path) -> List[Dict[str, str]]:
-    """Extract translatable strings from Jinja2 template with file context."""
+    """Extract translatable strings from Jinja2 template with line numbers."""
     with open(template_path, "r", encoding="utf-8") as f:
-        source_code = f.read()
+        source_code = f.readlines()  # Read as lines to get line numbers
 
     patterns = [
         r'_\("([^"]*)"\)',
         r"_\\('([^']*)'\\)",
         r'gettext\("([^"]*)"\)',
         r"gettext\\('([^']*)'\\)",
-        r'{% trans %}(.*?){% endtrans %}',
+        r"{% trans %}(.*?){% endtrans %}",
     ]
 
     messages = []
+
+    # Convert back to single string for regex matching
+    full_text = "".join(source_code)
+
     for pattern in patterns:
-        matches = re.findall(pattern, source_code, re.DOTALL)
+        # Find all matches in the full text
+        matches = re.finditer(pattern, full_text, re.DOTALL)
+
         for match in matches:
-            if isinstance(match, tuple):
-                match = match[0]
-            msg = match.strip()
-            if msg:  # Skip empty strings
-                print(msg)
-                messages.append({
-                    "msg_id": f"jinja:{template_path}:{msg}",
-                    "source": str(template_path),
-                    "text": msg,
-                    "type": "jinja",
-                    "de": msg,
-                    "fr": msg
-                })
+            if match.groups():
+                msg = match.group(1).strip()
+                if msg:
+                    # Calculate line number
+                    line_no = full_text[: match.start()].count("\n") + 1
+                    messages.append(
+                        {
+                            "msg_id": f"{msg}",
+                            "source": f"jinja:{template_path}:{line_no}",
+                            "type": "jinja",
+                            "de": "",
+                            "fr": "",
+                        }
+                    )
 
     return messages
 
@@ -79,15 +111,16 @@ def extract_yaml_translations(yaml_path: Path) -> List[Dict[str, str]]:
                 if key in ["de", "fr"] and isinstance(value, str):
                     # Find or create entry for this message
                     msg_id = current_path.replace(".", " > ")
-                    existing = next((t for t in translations if t["msg_id"] == msg_id), None)
+                    existing = next(
+                        (t for t in translations if t["msg_id"] == msg_id), None
+                    )
                     if not existing:
                         existing = {
                             "msg_id": msg_id,
                             "source": str(yaml_path),
                             "type": "yaml",
                             "de": "",
-                            "fr": ""
-
+                            "fr": "",
                         }
                         translations.append(existing)
                     existing[key] = value.strip()
@@ -97,7 +130,11 @@ def extract_yaml_translations(yaml_path: Path) -> List[Dict[str, str]]:
             for item in d:
                 if isinstance(item, dict) and "name" in item:
                     # Use the 'name' field as part of the path if available
-                    new_path = f"{current_path}.{item['name']}" if current_path else item['name']
+                    new_path = (
+                        f"{current_path}.{item['name']}"
+                        if current_path
+                        else item["name"]
+                    )
                     extract_from_dict(item, new_path)
                 else:
                     extract_from_dict(item, current_path)
@@ -115,13 +152,40 @@ def extract_all_translations(directories: Union[str, List[str]]):
         all_translations.extend(extract_jinja_translations(j2_file))
 
     # Process YAML files
-    for yaml_file in find_files(directories, ["yml", "yaml"]):
+    # TODO
+    for yaml_file in [
+        Path("datamodel.yaml")
+    ]:  # find_files(directories, ["yml", "yaml"]):
         all_translations.extend(extract_yaml_translations(yaml_file))
 
     return all_translations
 
 
-def save_to_excel(translations: List[Dict[str, str]], output_file: str = "translations.xlsx"):
+def apply_existing_translations(df, existing_translations):
+    """Fill in existing translations from .mo files"""
+    # Create columns for each language if they don't exist
+    for lang in existing_translations.keys():
+        if lang not in df.columns:
+            df[lang] = ""
+
+    # For each row, try to find existing translations
+    for index, row in df.iterrows():
+        msg_id = row["msg_id"]
+        for lang, trans in existing_translations.items():
+            # Only fill if the target column is empty
+            if pd.isna(row[lang]) or row[lang] == "":
+                # Get translation (returns original if not found)
+                translated = trans.gettext(msg_id)
+                print(msg_id, translated)
+                if translated != msg_id:  # Only update if translation exists
+                    df.at[index, lang] = translated
+
+    return df
+
+
+def save_to_excel(
+    translations: List[Dict[str, str]], output_file: str = "translations.xlsx"
+):
     """Save translations to Excel file with msg_id, de, fr columns."""
     # Convert to DataFrame
     df = pd.DataFrame(translations)
@@ -133,35 +197,27 @@ def save_to_excel(translations: List[Dict[str, str]], output_file: str = "transl
     # Drop duplicates based on msg_id, keeping the first occurrence
     df = df.drop_duplicates(subset=["msg_id"], keep="first")
 
+    # Load existing translations and apply them
+    existing_translations = load_existing_translations()
+    df = apply_existing_translations(df, existing_translations)
+
     # Save to Excel
     df.to_excel(output_file, index=False)
     print(f"Saved translations to {output_file}")
 
 
-
-
 # Example usage
 def main():
-    translations_path = 'translations.xlsx'
-    translations = extract_all_translations(["templates", "."])  # Add your directories here
-
-
+    translations_path = "translations.xlsx"
+    translations = extract_all_translations(["templates"])  # Add your directories here
 
     # Print some examples
-    print("Sample translations:")
+    """print("Sample translations:")
     for i, t in enumerate(translations[:5]):
-        print(f"{i + 1}. {t}")
-
+        print(f"{i + 1}. {t}")"""
 
     save_to_excel(translations, output_file=translations_path)
 
 
-
-
-
-
-
-
-
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
