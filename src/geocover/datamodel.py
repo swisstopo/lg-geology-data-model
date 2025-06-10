@@ -26,7 +26,7 @@ except ImportError:
 PACKAGE_NAME = "geocover"
 EXPORTS_DIR = "exports"
 # Source files, like SDE schema, tables exports, domains lists, etc.
-SOURCES_DIR = yaml.safe_load(open("datamodel.yaml"))["model"]["revision"]
+SOURCES_DIR = yaml.safe_load(open("datamodel.yaml"))["model"]["sources_dir"]
 # Directory for generated markdown files, used an `input` for `pandoc`
 MARKDOWN_DIR = "inputs"
 LOG_DIR = "log"
@@ -852,7 +852,7 @@ def prettify(datamodel):
         logger.error(f"An unexpected error occurred: {e}")
 
 
-@click.command()
+@click.command("generate", context_settings={"show_default": True})
 @click.option(
     "--lang",
     prompt="Language to generate",
