@@ -65,12 +65,12 @@ jobs:
         id: get_tag
         run: echo "TAG=${GITHUB_REF#refs/tags/}" >> $GITHUB_OUTPUT
           # Step 3: Create GitHub Release and upload artifacts using ncipollo/release-action
-               - name: Create GitHub Release
-          # Use the ncipollo/release-action. It's good practice to pin to a specific version.
-               uses: ncipollo/release-action@v1.16.0 # Ensure you use a recent, stable version
+      - name: Create GitHub Release
+        # Use the ncipollo/release-action. It's good practice to pin to a specific version.
+        uses: ncipollo/release-action@v1.16.0
 
-          # Define inputs for the action using the 'with' keyword
-               with:
+        # Define inputs for the action using the 'with' keyword
+        with:
                  token: ${{ secrets.TOKEN }}
                  tag: ${{ github.ref_name }} # github.ref_name directly gives the tag name (e.g., v1.0.0)
                  name: Release ${{ github.ref_name }}
