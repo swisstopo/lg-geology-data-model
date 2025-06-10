@@ -61,14 +61,17 @@ jobs:
               exec 3<>"$file"
               exec 3>&-
            done
+      - name: Get tag name
+          id: get_tag
+          run: echo "TAG=${GITHUB_REF#refs/tags/}" >> $GITHUB_OUTPUT
       - name: Create GitHub Release
         id: create_release
         uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
         with:
-          tag_name: ${{ env.RELEASE }}
-          release_name: Release ${{ env.RELEASE }}
+          tag_name: ${{ steps.get_tag.outputs.TAG }}
+          release_name: Release ${{ steps.get_tag.outputs.TAG }}
           draft: false
           prerelease: false
 
@@ -80,13 +83,13 @@ jobs:
           RELEASE_TAG="${{ steps.get_tag.outputs.TAG }}"
 
           # Upload each file individually
-          gh release upload ${{ env.RELEASE }} release-assets/datamodel-de.pdf --clobber
-          gh release upload ${{ env.RELEASE }} release-assets/datamodel-fr.pdf --clobber
-          gh release upload ${{ env.RELEASE }} release-assets/datamodel-de.docx --clobber
-          gh release upload ${{ env.RELEASE }} release-assets/datamodel-fr.docx --clobber
-          gh release upload ${{ env.RELEASE }} release-assets/ER-GCOVER.svg --clobber
-          gh release upload ${{ env.RELEASE }} release-assets/ER-GCOVER.pdf --clobber
-          gh release upload ${{ env.RELEASE }} release-assets/gcoverp_export_simple.json --clobber
+          gh release upload "$RELEASE_TAG" release-assets/datamodel-de.pdf --clobber
+          gh release upload "$RELEASE_TAG" release-assets/datamodel-fr.pdf --clobber
+          gh release upload "$RELEASE_TAG" release-assets/datamodel-de.docx --clobber
+          gh release upload "$RELEASE_TAG" release-assets/datamodel-fr.docx --clobber
+          gh release upload "$RELEASE_TAG" release-assets/ER-GCOVER.svg --clobber
+          gh release upload "$RELEASE_TAG" release-assets/ER-GCOVER.pdf --clobber
+          gh release upload "$RELEASE_TAG" release-assets/gcoverp_export_simple.json --clobber
 
       - name: Release assets (batch 1)
         uses: softprops/action-gh-release@v2.3.0
