@@ -53,7 +53,7 @@ jobs:
           # List files to verify
           ls -la release-assets/
 
-      - name: Release assets
+      - name: Release assets (batch 1)
         uses: softprops/action-gh-release@v2
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
@@ -63,8 +63,15 @@ jobs:
             release-assets/datamodel-fr.pdf
             release-assets/datamodel-de.docx
             release-assets/datamodel-fr.docx
-            release-assets/ER-GCOVER.svg
-            release-assets/ER-GCOVER.pdf
-            release-assets/gcoverp_export_simple.json
+
+      - name: Release assets (batch 2)
+        uses: softprops/action-gh-release@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}
+        with:
+          files: |
+             release-assets/ER-GCOVER.svg
+             release-assets/ER-GCOVER.pdf
+             release-assets/gcoverp_export_simple.json
 
 
