@@ -156,13 +156,14 @@ class SDESchema:
 def get_sde_schema(source_dir):
     sde_schema = None
     try:
-        sde_schema = SDESchema(os.path.join(source_dir, SIMPLIFIED_SDE_SCHEMA))
+        schema_file_path = os.path.join(source_dir, SIMPLIFIED_SDE_SCHEMA)
+        sde_schema = SDESchema(schema_file_path)
         logger.info(sde_schema.list_all_featclasses())
         logger.info(sde_schema.get_featclass_fields("TOPGIS_GC.GC_BEDROCK"))
 
         return sde_schema
     except ValueError as e:
-        logger.error(f"Error loading schema: {e}")
+        logger.error(f"Error loading schema from {schema_file_path}: {e}")
         return sde_schema
 
 
