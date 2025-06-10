@@ -14,6 +14,8 @@ jobs:
   release:
     runs-on: ubuntu-latest
     needs: [build]  # require build to pass before deploy runs
+    permissions:
+      contents: write # Grant write permission for creating releases and uploading assets
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -59,6 +61,32 @@ jobs:
               exec 3<>"$file"
               exec 3>&-
            done
+      - name: Create GitHub Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}
+        with:
+          tag_name: ${{ env.RELEASE }}
+          release_name: Release ${{ env.RELEASE }}
+          draft: false
+          prerelease: false
+
+      - name: Upload Release Assets using gh CLI
+        env:
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}
+        run: |
+          # The tag name from the release event or extracted from GITHUB_REF
+          RELEASE_TAG="${{ steps.get_tag.outputs.TAG }}"
+
+          # Upload each file individually
+          gh release upload ${{ env.RELEASE }} release-assets/datamodel-de.pdf --clobber
+          gh release upload ${{ env.RELEASE }} release-assets/datamodel-fr.pdf --clobber
+          gh release upload ${{ env.RELEASE }} release-assets/datamodel-de.docx --clobber
+          gh release upload ${{ env.RELEASE }} release-assets/datamodel-fr.docx --clobber
+          gh release upload ${{ env.RELEASE }} release-assets/ER-GCOVER.svg --clobber
+          gh release upload ${{ env.RELEASE }} release-assets/ER-GCOVER.pdf --clobber
+          gh release upload ${{ env.RELEASE }} release-assets/gcoverp_export_simple.json --clobber
 
       - name: Release assets (batch 1)
         uses: softprops/action-gh-release@v2.3.0
