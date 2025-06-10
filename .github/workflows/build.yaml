@@ -52,6 +52,8 @@ jobs:
           echo "=== PKG_VERSION=$version ==="
           echo "RELEASE=$(python -c "import yaml; print(yaml.safe_load(open('datamodel.yaml'))['model']['revision'])")" >> $GITHUB_ENV
           echo "=== RELEASE=$RELEASE ==="
+          SOURCES_DIR=$(python -c "import yaml; print(yaml.safe_load(open('datamodel.yaml'))['model']['sources_dir'])")
+          echo "SOURCES_DIR=$SOURCES_DIR" >> $GITHUB_ENV
 
 
       - name: Pip install
@@ -108,6 +110,6 @@ jobs:
             outputs/fr/geocover.png
             outputs/ER-GCOVER.svg
             outputs/ER-GCOVER.pdf
-            exports/2025-05-26/GCOVERP_export_simple.json
+            ${{ env.SOURCES_DIR }}/gcoverp_export_simple.json 
             datamodel.yaml
 
