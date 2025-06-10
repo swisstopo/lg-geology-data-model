@@ -328,30 +328,30 @@ themes:
       cardinality: "1"
       mandatory: true   # TDODO: really?
       origin: GC_GEOL_MAPPING_UNIT_ATT
-#    - name: chrono_top   # TODO: new name
-#      att_type: annex
-#      value: GC_CHRONO_CD
-#      description:
-#         de: >-
-#                Chronostratigraphische Zuordnung der Obergrenze der Kartiereinheit
-#                (Top)
-#         fr: >-
-#               Attribution chronostratigraphique du toit de la  formation (top)
-#      cardinality: "1"
-#      mandatory: true
-#      origin: GC_GEOL_MAPPING_UNIT_ATT
-#    - name: chrono_bottom
-#      att_type: annex
-#      value: GC_CHRONO_CD
-#      description:
-#            de: >-
-#              Chronostratigraphische Zuordnung der Obergrenze der Kartiereinheit
-#              (Top)
-#            fr: >-
-#              Attribution chronostratigraphique du toit de la  formation (top)
-#      cardinality: "1"
-#      mandatory: true
-#      origin: GC_GEOL_MAPPING_UNIT_ATT
+    - name: chrono_top   # TODO: new name
+      att_type: annex
+      value: GC_CHRONO_CD
+      description:
+         de: >-
+                Chronostratigraphische Zuordnung der Obergrenze der Kartiereinheit
+                (Top)
+         fr: >-
+               Attribution chronostratigraphique du toit de la  formation (top)
+      cardinality: "1"
+      mandatory: true
+      origin: GC_GEOL_MAPPING_UNIT_ATT
+    - name: chrono_bottom
+      att_type: annex
+      value: GC_CHRONO_CD
+      description:
+            de: >-
+              Chronostratigraphische Zuordnung der Obergrenze der Kartiereinheit
+              (Top)
+            fr: >-
+              Attribution chronostratigraphique du toit de la  formation (top)
+      cardinality: "1"
+      mandatory: true
+      origin: GC_GEOL_MAPPING_UNIT_ATT
     - name: litstrat   # Removed
       description:
         de: Lithostratigraphische Einheit
@@ -361,42 +361,42 @@ themes:
       cardinality: "1"
       change: removed
       mandatory: false
-#    - name: litho_main
-#      att_type: annex
-#      value: GC_LITHO_CD
-#      description:
-#        de: Lithologische Beschreibung
-#        fr: Description lithologique
-#      cardinality: "1"
-#      mandatory: true
-#      origin: GC_GEOL_MAPPING_UNIT_ATT
-#    - name: litho_sec
-#      att_type: annex
-#      value: GC_LITHO_CD
-#      description:
-#        de: Lithologische Beschreibung
-#        fr: Description lithologique
-#      cardinality: "1"
-#      mandatory: false
-#      origin: GC_GEOL_MAPPING_UNIT_ATT
-#    - name: litho_ter
-#      att_type: annex
-#      value: GC_LITHO_CD
-#      description:
-#        de: Lithologische Beschreibung
-#        fr: Description lithologique
-#      cardinality: "1"
-#      mandatory: false
-#      origin: GC_GEOL_MAPPING_UNIT_ATT
-#    - name: correlation
-#      att_type: annex
-#      value: GC_CORRELATION_CD
-#      description:
-#        de: Korrelation
-#        fr: Correlation
-#      cardinality: "1"
-#      mandatory: true
-#      origin: GC_GEOL_MAPPING_UNIT_ATT
+    - name: litho_main
+      att_type: annex
+      value: GC_LITHO_CD
+      description:
+        de: Lithologische Beschreibung
+        fr: Description lithologique
+      cardinality: "1"
+      mandatory: true
+      origin: GC_GEOL_MAPPING_UNIT_ATT
+    - name: litho_sec
+      att_type: annex
+      value: GC_LITHO_CD
+      description:
+        de: Lithologische Beschreibung
+        fr: Description lithologique
+      cardinality: "1"
+      mandatory: false
+      origin: GC_GEOL_MAPPING_UNIT_ATT
+    - name: litho_ter
+      att_type: annex
+      value: GC_LITHO_CD
+      description:
+        de: Lithologische Beschreibung
+        fr: Description lithologique
+      cardinality: "1"
+      mandatory: false
+      origin: GC_GEOL_MAPPING_UNIT_ATT
+    - name: correlation
+      att_type: annex
+      value: GC_CORRELATION_CD
+      description:
+        de: Korrelation
+        fr: Correlation
+      cardinality: "1"
+      mandatory: false
+      origin: GC_GEOL_MAPPING_UNIT_ATT
     - name: description
       att_type: string
       description:
