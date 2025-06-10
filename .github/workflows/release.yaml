@@ -64,16 +64,30 @@ jobs:
       - name: Get tag name
         id: get_tag
         run: echo "TAG=${GITHUB_REF#refs/tags/}" >> $GITHUB_OUTPUT
-      - name: Create GitHub Release
-        id: create_release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.TOKEN }}
-        with:
-          tag_name: ${{ steps.get_tag.outputs.TAG }}
-          release_name: Release ${{ steps.get_tag.outputs.TAG }}
-          draft: false
-          prerelease: false
+          # Step 3: Create GitHub Release and upload artifacts using ncipollo/release-action
+               - name: Create GitHub Release
+          # Use the ncipollo/release-action. It's good practice to pin to a specific version.
+               uses: ncipollo/release-action@v1.16.0 # Ensure you use a recent, stable version
+
+          # Define inputs for the action using the 'with' keyword
+               with:
+                 token: ${{ secrets.TOKEN }}
+                 tag: ${{ github.ref_name }} # github.ref_name directly gives the tag name (e.g., v1.0.0)
+                 name: Release ${{ github.ref_name }}
+
+                 # Optional: The body/description of the release notes.
+                 # You can include dynamic content, commit messages, or static text.
+                 # Here, we're using a multiline string for readability.
+                 body: |
+                   ## Release Notes for ${{ github.ref_name }}
+                   
+                   This is an automated release.
+                   
+                 draft: false
+                 prerelease: false
+                 artifacts: |
+                   release-assets/*
+             
 
       - name: Upload Release Assets using gh CLI
         env:
