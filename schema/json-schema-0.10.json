@@ -14,11 +14,15 @@
         "revision_date": {
           "type": "string",
           "format": "date"
+        },
+        "sources_dir": {
+          "type": "string"
         }
       },
       "required": [
         "revision",
-        "revision_date"
+        "revision_date",
+        "sources_dir"
       ]
     },
     "themes": {
