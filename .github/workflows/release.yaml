@@ -55,10 +55,13 @@ jobs:
       - name: Ensure file handles are properly closed
         run: |
            # Ensure all files are properly closed before upload
-           find release-assets -type f -exec bash -c 'exec 3<>"{}"' \;
+           for file in release-assets/*; do
+              exec 3<>"$file"
+              exec 3>&-
+           done
 
       - name: Release assets (batch 1)
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@v2.3.0
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
         with:
@@ -69,7 +72,7 @@ jobs:
             release-assets/datamodel-fr.docx
 
       - name: Release assets (batch 2)
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@v2.3.0
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
         with:
