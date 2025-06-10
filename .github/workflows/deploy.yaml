@@ -21,9 +21,11 @@ jobs:
       shell: bash
       run: |
         RELEASE=$(python -c "import yaml; print(yaml.safe_load(open('datamodel.yaml'))['model']['revision'])")
+        SOURCES_DIR=$(python -c "import yaml; print(yaml.safe_load(open('datamodel.yaml'))['model']['sources_dir'])")
         echo "RELEASE=$RELEASE" >> $GITHUB_ENV
         echo "SHORT_RELEASE=$(echo $RELEASE | cut -d'.' -f1,2)" >> $GITHUB_ENV
         echo "version=$(<VERSION)" >> $GITHUB_ENV
+        echo "SOURCES_DIR=$SOURCES_DIR" >> $GITHUB_ENV
 
     - name: Print release variables
       shell: bash
@@ -31,6 +33,7 @@ jobs:
         echo "=== PKG_VERSION=${{ env.version }} ==="
         echo "=== RELEASE=${{ env.RELEASE }} ==="
         echo "=== SHORT=${{ env.SHORT_RELEASE }} ==="
+        echo "=== SOURCES_DIR=${{ env.SOURCES_DIR }} ==="
     - name: Download assets from build
       uses: actions/download-artifact@v4
       with:
