@@ -140,7 +140,7 @@ jobs:
                  #  ## Release Notes for ${{ github.ref_name }}
                  #
                  #  This is an automated release.
-                 body_path: ${{ steps.release_info.outputs.release_body_path }}
+                 bodyFile: ${{ steps.release_info.outputs.release_body_path }}
                  draft: false
                  prerelease: false
                  artifacts: |
