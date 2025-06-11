@@ -19,6 +19,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - name: Set releases variables
         shell: bash
         run: |
@@ -35,6 +37,61 @@ jobs:
           echo "=== RELEASE=${{ env.RELEASE }} ==="
           echo "=== SHORT=${{ env.SHORT_RELEASE }} ==="
           echo "=== SOURCES_DIR=${{ env.SOURCES_DIR }} ==="
+      - name: Get previous release tag and generate release body
+        shell: bash
+        id: release_info # Assign an ID to this step to reference its outputs
+        run: |
+            # Extract the current tag name from the GitHub reference
+            CURRENT_TAG="${{ github.ref_name }}"
+            
+            # Get the second most recent tag, which is typically the "previous" release tag.
+            # '--sort=-v:refname' sorts tags by version in descending order.
+            # 'sed -n 2p' prints the second line.
+            PREVIOUS_TAG=$(git tag --sort=-v:refname | sed -n 2p)
+            
+            echo "Current Tag: $CURRENT_TAG"
+            echo "Previous Tag: $PREVIOUS_TAG"
+            
+            # Initialize the release body with a header for the current release
+            RELEASE_BODY_CONTENT="## Release Notes for $CURRENT_TAG\n\n"
+            
+            # Conditionally add content based on whether a previous tag exists
+            if [ -n "$PREVIOUS_TAG" ]; then
+              RELEASE_BODY_CONTENT+="### Changes since $PREVIOUS_TAG:\n"
+              # Get commit messages between the previous tag and the current tag.
+              # '--pretty=format:"* %s"' formats each commit as a bullet point with its subject.
+              COMMITS=$(git log --pretty=format:"* %s" "$PREVIOUS_TAG".."$CURRENT_TAG")
+              if [ -n "$COMMITS" ]; then
+                RELEASE_BODY_CONTENT+="$COMMITS\n\n"
+              else
+                RELEASE_BODY_CONTENT+="No specific changes found between $PREVIOUS_TAG and $CURRENT_TAG.\n\n"
+              fi
+            else
+              # If no previous tag, this is likely the first release.
+              RELEASE_BODY_CONTENT+="### Initial Release\n"
+              RELEASE_BODY_CONTENT+="This is the very first release for this project!\n\n"
+              # Optionally, list initial commits for the first release
+              COMMITS=$(git log --pretty=format:"* %s" "$CURRENT_TAG")
+              if [ -n "$COMMITS" ]; then
+                RELEASE_BODY_CONTENT+="Initial commits:\n$COMMITS\n\n"
+              fi
+            fi
+            
+            RELEASE_BODY_CONTENT+="See attached artifacts for more details."
+            
+            # Write the generated release body content to a temporary file.
+            # This is necessary because multi-line outputs cannot be directly
+            # passed through step outputs easily, but `ncipollo/release-action`
+            # supports reading from a file via `body_path`.
+            echo "$RELEASE_BODY_CONTENT" > .release_body.txt
+            
+            # Set the previous tag as an output of this step, which can be used
+            # in subsequent steps if needed.
+            echo "previous_tag=$PREVIOUS_TAG" >> "$GITHUB_OUTPUT"
+            # Set the path to the generated release body file as an output.
+            echo "release_body_path=.release_body.txt" >> "$GITHUB_OUTPUT"
+          # Ensure bash is used for shell commands for consistent behavior
+
       - name: Download assets from build
         uses: actions/download-artifact@v4
         with:
@@ -79,11 +136,11 @@ jobs:
                  # Optional: The body/description of the release notes.
                  # You can include dynamic content, commit messages, or static text.
                  # Here, we're using a multiline string for readability.
-                 body: |
-                   ## Release Notes for ${{ github.ref_name }}
-                   
-                   This is an automated release.
-                   
+                 # body: |
+                 #  ## Release Notes for ${{ github.ref_name }}
+                 #
+                 #  This is an automated release.
+                 body_path: ${{ steps.release_info.outputs.release_body_path }}
                  draft: false
                  prerelease: false
                  artifacts: |
