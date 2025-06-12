@@ -235,6 +235,7 @@ def load_translation_dataframe(input_dir: str) -> pd.DataFrame:
         )
 
         # Save to Excel
+        logger.info(f"Saving all translations to {xlsx_path}")
         df_trad.to_excel(xlsx_path, index=True, engine="openpyxl")
 
         logger.info(f"Translation file has {len(df_trad)} translations")
@@ -1045,7 +1046,7 @@ def generate(lang, datamodel, output, input_dir):
     env.filters["format_date_locale"] = format_date_locale
     env.filters["remove_prefix"] = remove_prefix
     env.filters["attribute_name"] = attribute_name
-    env.filters["strip_final_dot"]= strip_final_dot
+    env.filters["strip_final_dot"] = strip_final_dot
 
     temp = env.get_template("model_markdown.j2")
 

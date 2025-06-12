@@ -38,9 +38,9 @@
 {%- if attr.att_type == 'CD' -%}{% set slug = "%s-%s" % (cls.name, attr|attribute_name) -%}
 {%- elif attr.att_type == 'annex' -%}{% set slug, location = attr.value, 'vgl. Anhang %s' % attr.value %}{% set see_annex = 'Die möglichen Werte sind in der Tabelle %s im Anhang dieses Dokumentes verfügbar.' % attr.value %}{%- else -%}{% set slug = None %}{% endif -%}
 {%- if (slug != None) and (attr.att_type == 'CD') -%}
-**{{ attr |attribute_name|upper  }}**                 | [{{_("CodedDomain")}}](#{{slug| slugify}})  | {{ attr.description[lang]|trim }}. | [{{ attr.cardinality}}]
+**{{ attr |attribute_name|upper  }}**                 | [{{_("CodedDomain")}}](#{{slug| slugify}})  | {{ attr.description[lang]|trim|strip_final_dot }}. | [{{ attr.cardinality}}]
 {%elif (slug != None) and (attr.att_type == 'annex') -%}
-**{{ attr | attribute_name |upper  }}**                 | [ {{_("Table")}} ](#{{slug| slugify}})  | {{ attr.description[lang]|trim }}. | [{{ attr.cardinality}}]
+**{{ attr | attribute_name |upper  }}**                 | [ {{_("Table")}} ](#{{slug| slugify}})  | {{ attr.description[lang]|trim|strip_final_dot}}. | [{{ attr.cardinality}}]
 {% else -%}
 **{{ attr | attribute_name |upper  }}**                 | {{attr.att_type}}                  | {{ attr.description[lang]|trim|strip_final_dot }} | [{{ attr.cardinality}}]
 {% endif -%}
