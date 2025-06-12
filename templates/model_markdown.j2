@@ -42,7 +42,7 @@
 {%elif (slug != None) and (attr.att_type == 'annex') -%}
 **{{ attr | attribute_name |upper  }}**                 | [ {{_("Table")}} ](#{{slug| slugify}})  | {{ attr.description[lang]|trim }}. | [{{ attr.cardinality}}]
 {% else -%}
-**{{ attr | attribute_name |upper  }}**                 | {{attr.att_type}}                  | {{ attr.description[lang]|trim }} | [{{ attr.cardinality}}]
+**{{ attr | attribute_name |upper  }}**                 | {{attr.att_type}}                  | {{ attr.description[lang]|trim|strip_final_dot }} | [{{ attr.cardinality}}]
 {% endif -%}
 {% endif -%}
 {% endfor %}

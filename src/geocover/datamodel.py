@@ -998,6 +998,9 @@ def generate(lang, datamodel, output, input_dir):
                 return value[len(prefix) :]
         return value
 
+    def strip_final_dot(value):
+        return value.rstrip(".")
+
     # Define the custom filter function
     def format_date_locale(value, format="MMMM yyyy", locale="de_CH"):
         return babel.dates.format_date(date=value, format=format, locale=locale)
@@ -1042,6 +1045,7 @@ def generate(lang, datamodel, output, input_dir):
     env.filters["format_date_locale"] = format_date_locale
     env.filters["remove_prefix"] = remove_prefix
     env.filters["attribute_name"] = attribute_name
+    env.filters["strip_final_dot"]= strip_final_dot
 
     temp = env.get_template("model_markdown.j2")
 
