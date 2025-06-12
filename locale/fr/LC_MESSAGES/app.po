@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2024-11-08 19:43+0100\n"
-"PO-Revision-Date: 2024-11-08 20:26+0100\n"
+"PO-Revision-Date: 2025-06-12 10:45+0200\n"
 "Last-Translator: \n"
 "Language: fr\n"
 "Language-Team: \n"
@@ -66,7 +66,7 @@ msgstr "Aucun geolcode modifié trouvé"
 
 #: templates/metadata.yaml.j2:2 templates/model_markdown.j2:2
 msgid "Geological datamodel"
-msgstr "Modèle de donnée géologique"
+msgstr "Modèle de donnée géologique 2D (GeoCover)"
 
 #: templates/metadata.yaml.j2:2
 #, fuzzy, python-format
@@ -79,7 +79,9 @@ msgstr "Description et catalogue de donnée"
 
 #: templates/metadata.yaml.j2:4
 msgid "Bundesamt für Landestopographie swisstopo"
-msgstr "Office fédéral de topographie swisstopo"
+msgstr ""
+"Service géologique national\n"
+"Office fédéral de topographie swisstopo"
 
 #: templates/metadata.yaml.j2:14
 msgid "Geologische Landesaufnahme der Schweiz"
