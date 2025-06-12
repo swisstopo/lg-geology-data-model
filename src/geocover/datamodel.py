@@ -182,6 +182,7 @@ def load_translation_dataframe(input_dir: str) -> pd.DataFrame:
     csv_path = os.path.join(input_dir, "GeolCodeText_Trad_230317.csv")
     # TODO: All new GMU codes found in the XLSX table (generations ?
     json_path = os.path.join(input_dir, "all_codes_dict.json")
+    # Translation only in templates, and trying to move translation from datamodel.yaml
     translation_xlsx_path = "translations.xlsx"
     # Ouputs
     xlsx_path = os.path.join(input_dir, "all_trads.xlsx")
@@ -193,10 +194,12 @@ def load_translation_dataframe(input_dir: str) -> pd.DataFrame:
         )
         df_app_trad.columns = df_app_trad.columns.str.upper()
         df_app_trad.rename(columns={"MSG_ID": "GeolCodeInt"}, inplace=True)
-        # Load CSV data
+        df_app_trad["GeolCodeInt"] = df_app_trad["GeolCodeInt"].astype("string")
+
+        # Load Alan's CSV data
         df_trad_load = pd.read_csv(csv_path, sep=";")
 
-        # Load JSON data and convert to DataFrame
+        # Load all Coded Domains data and convert to DataFrame
         with open(json_path, "r", encoding="utf-8") as file:
             code_dict = json.load(file)
 
@@ -214,8 +217,18 @@ def load_translation_dataframe(input_dir: str) -> pd.DataFrame:
         df_from_json["DE"] = df_from_json["DE"].astype("string")
         df_from_json["FR"] = df_from_json["FR"].astype("string")
 
+        logger.info(f"Number translations in 'translation.xlsx': {len(df_app_trad)} ")
+        logger.info(
+            f"Number translations in 'all_codes_dict.json': {len(df_from_json)} "
+        )
+        logger.info(
+            f"Number translations in 'GeolCodeText_Trad_230317.csv': {len(df_trad_load)} "
+        )
+
         # Merge DataFrames
-        merged_df = pd.concat([df_trad_load, df_from_json, df_app_trad])
+        merged_df = pd.concat([df_from_json, df_trad_load, df_app_trad])
+
+        merged_df["GeolCodeInt"] = merged_df["GeolCodeInt"].astype("string")
 
         # Clean and process the merged DataFrame
         df_trad = (
@@ -231,11 +244,12 @@ def load_translation_dataframe(input_dir: str) -> pd.DataFrame:
             .assign(
                 FR=lambda x: x["FR"].replace("0", "-")
             )  # Replace '0' with '-' in FR
+            .sort_values(by=["GeolCodeInt"])
             .set_index("GeolCodeInt")  # Set index
         )
 
         # Save to Excel
-        logger.info(f"Saving all translations to {xlsx_path}")
+
         df_trad.to_excel(xlsx_path, index=True, engine="openpyxl")
 
         logger.info(f"Translation file has {len(df_trad)} translations")
@@ -340,8 +354,20 @@ class Translator:
         self.df_trad = df_trad
 
     def translate(self, geol_code, text, lang="FR"):
-        translated_text, _err = self._translate(geol_code, text, lang)
-        if _err:
+        """
+        Public method to translate with error tracking.
+
+        Args:
+            geol_code: The geological code to translate
+            text: Fallback text if translation fails
+            lang: Target language ("FR" or "DE")
+
+        Returns:
+            str: Translated text or fallback
+        """
+        translated_text, err = self._translate(geol_code, text, lang)
+
+        if err:
             with self._lock:
                 self.failed_translations += 1
                 self.failed_strings.append(text)
@@ -349,40 +375,117 @@ class Translator:
         return translated_text
 
     def _translate(self, geol_code, fallback, lang):
+        """
+        Internal translation method with intelligent fallback logic.
+
+        Priority order:
+        1. Requested language (FR or DE)
+        2. German (DE) if French was requested but not available
+        3. French (FR) if German was requested but not available
+        4. Original fallback message
+
+        Args:
+            geol_code: The geological code to translate
+            fallback: Default message if no translation found
+            lang: Requested language ("FR" or "DE")
+
+        Returns:
+            tuple: (translated_message, error_occurred)
+        """
         msg = fallback
         err = False
-        if lang in ("DE", "FR"):
-            if str(geol_code) == "0":  # Convert to string for comparison
-                return ("–", False)
-            try:
-                value = self.df_trad.loc[str(geol_code), lang]  # Try to get single cell
-                if isinstance(value, pd.Series):
-                    msg = value.iloc[0]  # Take first value if still a Series
-                else:
-                    msg = value
-                # Handle both string '0' and integer 0 cases
-                if isinstance(msg, str) and msg.startswith("à "):
-                    msg = msg.replace("à ", "")
 
-            except KeyError as ke:
-                err = True
-                logger.debug(
-                    f"GeolCode not found while translating '{geol_code}': {ke}"
-                )
+        # Handle special case for code "0"
+        if str(geol_code) == "0":
+            return ("–", False)
 
-            except Exception as e:
-                err = True
-                logger.debug(
-                    f"Unknown error while translating '{geol_code}'= {msg}: {e}"
+        # Only process supported languages
+        if lang not in ("DE", "FR"):
+            return (msg, False)
+
+        try:
+            geol_code_str = str(geol_code)
+
+            # Try primary language first
+            primary_msg = self._get_translation(geol_code_str, lang)
+            if primary_msg is not None:
+                return (self._clean_message(primary_msg), False)
+
+            # Try fallback language (German if French requested, French if German requested)
+            fallback_lang = "DE" if lang == "FR" else "FR"
+            fallback_msg = self._get_translation(geol_code_str, fallback_lang)
+            if fallback_msg is not None:
+                logger.warning(
+                    f"Using {fallback_lang} fallback for geol_code '{geol_code}' (requested: {lang})"
                 )
+                return (self._clean_message(fallback_msg), False)
+
+            # No translation found in either language
+            err = True
+            logger.error(
+                f"No translation found for geol_code '{geol_code}' in {lang} or {fallback_lang}"
+            )
+
+        except Exception as e:
+            err = True
+            logger.error(f"Error translating geol_code '{geol_code}': {e}")
 
         return (msg, err)
 
+    def _get_translation(self, geol_code_str, language):
+        """
+        Helper method to get translation for a specific language.
+
+        Args:
+            geol_code_str: Geological code as string
+            language: Language code ("FR" or "DE")
+
+        Returns:
+            str or None: Translation if found and valid, None otherwise
+        """
+        try:
+            value = self.df_trad.loc[geol_code_str, language]
+
+            # Handle Series (multiple matches)
+            if isinstance(value, pd.Series):
+                value = value.iloc[0]
+
+            # Check if translation is valid (not empty, not NaN, not just whitespace)
+            if pd.isna(value) or str(value).strip() == "":
+                return None
+
+            return str(value)
+
+        except KeyError:
+            return None
+
+    def _clean_message(self, message):
+        """
+        Clean up translation message by removing unwanted prefixes.
+
+        Args:
+            message: Raw translation message
+
+        Returns:
+            str: Cleaned message
+        """
+        if isinstance(message, str) and message.startswith("à "):
+            return message.replace("à ", "")
+        return message
+
     def get_failed_count(self):
+        """Get the number of failed translations."""
         return self.failed_translations
 
     def get_failed_strings(self):
+        """Get the list of strings that failed to translate."""
         return self.failed_strings
+
+    def reset_failed_stats(self):
+        """Reset the failed translation statistics."""
+        with self._lock:
+            self.failed_translations = 0
+            self.failed_strings = []
 
 
 # Custom sort key
