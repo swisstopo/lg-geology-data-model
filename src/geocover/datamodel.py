@@ -182,10 +182,17 @@ def load_translation_dataframe(input_dir: str) -> pd.DataFrame:
     csv_path = os.path.join(input_dir, "GeolCodeText_Trad_230317.csv")
     # TODO: All new GMU codes found in the XLSX table (generations ?
     json_path = os.path.join(input_dir, "all_codes_dict.json")
+    translation_xlsx_path = "translations.xlsx"
     # Ouputs
     xlsx_path = os.path.join(input_dir, "all_trads.xlsx")
 
     try:
+        # Load application translations
+        df_app_trad = pd.read_excel(
+            translation_xlsx_path, usecols=["msg_id", "de", "fr"]
+        )
+        df_app_trad.columns = df_app_trad.columns.str.upper()
+        df_app_trad.rename(columns={"MSG_ID": "GeolCodeInt"}, inplace=True)
         # Load CSV data
         df_trad_load = pd.read_csv(csv_path, sep=";")
 
@@ -208,7 +215,7 @@ def load_translation_dataframe(input_dir: str) -> pd.DataFrame:
         df_from_json["FR"] = df_from_json["FR"].astype("string")
 
         # Merge DataFrames
-        merged_df = pd.concat([df_trad_load, df_from_json])
+        merged_df = pd.concat([df_trad_load, df_from_json, df_app_trad])
 
         # Clean and process the merged DataFrame
         df_trad = (
