@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2024-11-08 19:43+0100\n"
-"PO-Revision-Date: 2025-06-12 10:47+0200\n"
+"PO-Revision-Date: 2025-06-12 10:55+0200\n"
 "Last-Translator: \n"
 "Language: de\n"
 "Language-Team: \n"
@@ -79,9 +79,7 @@ msgstr "Beschreibung und Datenkatalog"
 
 #: templates/metadata.yaml.j2:4
 msgid "Bundesamt für Landestopographie swisstopo"
-msgstr ""
-"Landesgeologie\n"
-"Bundesamt für Landestopographie swisstopo"
+msgstr "Landesgeologie — Bundesamt für Landestopographie swisstopo"
 
 #: templates/metadata.yaml.j2:14
 msgid "Geologische Landesaufnahme der Schweiz"
