@@ -43,7 +43,7 @@ if not os.path.isdir(LOG_DIR):
 LOG_FILENAME = os.path.join(LOG_DIR, "datamodel.log")
 
 logger.remove()
-logger.add(sys.stderr, level="INFO")
+logger.add(sys.stdout, level="INFO")
 
 if os.path.isfile(LOG_FILENAME):
     os.remove(LOG_FILENAME)
@@ -620,6 +620,19 @@ class Report:
                                 pairs = get_subtype(
                                     self.sde_schema.subtypes, value
                                 )  # TODO
+
+                            # Short tables are treated like some CD
+                            # TODO
+                            if att_type == "table":
+                                for annex in model.get("annexes"):
+                                    if (
+                                        att_name.lower()
+                                        in annex.get("name", "").lower()
+                                    ):  # TODO: not very robust
+                                        annex_fname = annex.get("fname")
+                                        logger.info(f" Founbd {annex_fname}")
+                                        pairs = get_table_values(annex_fname)
+                                        break
 
                             if pairs is not None:
                                 att["pairs"] = pairs

@@ -13,6 +13,7 @@
 # 0.8  Attribut `status` indicating the version an attribute is used (<4.0, >=4.0)
 # 0.9  Attribute's name as in the database, `alias`for display
 # 0.10 Attribute `origin` for joined table. Special `annex` type `table` for 'KE' codes. source_dir
+# 0.11 Display some 'table' in text (not annexe)
 version: "0.10"
 date: 2025-05-25
 
@@ -181,7 +182,7 @@ themes:
       description:
         de: Zusammensetzung des Lockergesteins
         fr: Composition de la roche meuble
-      # att_type: annex   # TODO
+      att_type: table   # TODO
       value: gc_composit
       cardinality: 0..3
       mandatory: false
@@ -189,7 +190,7 @@ themes:
       description:
         de: Beimengung
         fr: Incorporation
-      # att_type: annex
+      att_type: table
       value: gc_admixture
       cardinality: 0..2
       mandatory: false
@@ -205,7 +206,7 @@ themes:
       description:
         de: Spezifische Eigenschaft
         fr: Charactéristique spécifique
-      att_type: annex
+      att_type: table
       value: gc_charcat
       cardinality: 0..3
       mandatory: false
@@ -1354,8 +1355,9 @@ themes:
       description:
         de: Fossiliengruppe.
         fr: Groupe de fossiles
-      att_type: annex
+      # att_type: annex # should be listed
       value: gc_system
+      att_type: table
       cardinality: 0..5
       mandatory: false
     - name: lfos_dat_meth

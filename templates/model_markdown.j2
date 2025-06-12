@@ -55,7 +55,7 @@
 #### {{_("Attribute")}}  {{ attr |attribute_name|upper}}
 {%- if attr.att_type == 'CD' %} {{ '{#'}}{{slug| slugify}}{{'}'}}{% endif %}
 _{{ attr.description[lang]|trim|highlight}}_
-{% if attr.att_type in ('boolean', 'string', 'float', 'range', 'integer') %}
+{% if attr.att_type in ('boolean', 'string', 'float', 'range', 'integer','table') %}
 _{{_("Datatype")}} :  {{ attr.att_type  }}_
 {% endif %}
 {%- if attr.att_type == 'annex' %}
