@@ -280,7 +280,7 @@ themes:
       cardinality: "1"
       change: removed
       mandatory: false
-    - name: rbed_chrono_t
+    - name: chrono_t
       att_type: annex
       value: GC_CHRONO_CD
       description:
@@ -292,7 +292,7 @@ themes:
       cardinality: "1"
       mandatory: true
       change: removed   # removed 4.1
-    - name: rbed_chrono_b  
+    - name: chrono_b
       att_type: annex
       value: GC_CHRONO_CD
       description:
@@ -418,7 +418,7 @@ themes:
       change: removed
       mandatory: false
       status: "<4.0"
-    - name: rbed_exotic_ele
+    - name: exotic_ele
       att_type: boolean
       description:
         de: >-
