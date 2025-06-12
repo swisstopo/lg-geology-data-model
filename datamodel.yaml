@@ -137,7 +137,7 @@ themes:
         fr: Description lithologique
       att_type: annex
       value: GC_LITHO_CD
-      cardinality: 1..3
+      cardinality: "1"
       mandatory: true
     - name: chrono_t
       description:
@@ -162,7 +162,8 @@ themes:
       cardinality: "1"
       mandatory: true
     - name: mat_type
-      att_type: string
+      att_type: annex
+      value: GC_LITHO_CD
       description:
         de: Materialbezeichnung (lithologische Einheit)
         fr: Description du matériel (unité lithologique)
@@ -180,15 +181,15 @@ themes:
       description:
         de: Zusammensetzung des Lockergesteins
         fr: Composition de la roche meuble
-      att_type: annex
+      # att_type: annex   # TODO
       value: gc_composit
       cardinality: 0..3
       mandatory: false
-    - name: admixture
+    - name: admixture  # TODO plus en annexe
       description:
         de: Beimengung
         fr: Incorporation
-      att_type: annex
+      # att_type: annex
       value: gc_admixture
       cardinality: 0..2
       mandatory: false
@@ -230,7 +231,7 @@ themes:
       description:
         de: Zeitpunkt oder Zeitperiode. Zum Beispiel «1940 1943, Periode der Drainage»
           (muss präzisiert werden).
-        fr: |
+        fr: >-
           Information de temps ou période. Par ex. "1940-1943: année de référence
           de l’ancienne ligne de rivage".
       att_type: string
@@ -241,7 +242,7 @@ themes:
       value: GC_UN_DEP_RUNC_THIN_COV_CD
       description:
         de: Typ der geringmächtigen Lockermaterialbedeckung, wenn vorhanden.
-        fr: Couverture meuble pelliculaire
+        fr: Type de couverture meuble pelliculaire
       cardinality: 0..1
       mandatory: false
     - name: orig_descr
@@ -260,7 +261,7 @@ themes:
     description:
       de: >-
         Die Klasse Bedrock_PLG enthält alle lithostratigraphischen Festgesteinseinheiten.
-      fr: |-
+      fr: >-
         La classe Bedrock_PLG regroupe toutes les unités
         lithostratigraphiques de roches consolidées.
     attributes:
