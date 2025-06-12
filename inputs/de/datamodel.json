@@ -1,9 +1,10 @@
 {
     "version": "0.10",
-    "date": "2025-06-05T15:00:47.192054",
+    "date": "2025-06-12T14:54:30.564344",
     "model": {
         "revision": "4.1.0",
-        "revision_date": "2025-05-20"
+        "revision_date": "2025-05-20",
+        "sources_dir": "exports/2025-05-26"
     },
     "themes": [
         {
@@ -193,7 +194,7 @@
                             },
                             "att_type": "annex",
                             "value": "GC_LITHO_CD",
-                            "cardinality": "1..3",
+                            "cardinality": "1",
                             "mandatory": true
                         },
                         {
@@ -220,12 +221,12 @@
                         },
                         {
                             "name": "mat_type",
-                            "att_type": "string",
+                            "att_type": "annex",
+                            "value": "Lithostratigraphic_Units_Litho",
                             "description": {
                                 "de": "Materialbezeichnung (lithologische Einheit)",
                                 "fr": "Description du mat\u00e9riel (unit\u00e9 lithologique)"
                             },
-                            "value": "Lithostratigraphic_Units_Litho",
                             "cardinality": "0..3",
                             "mandatory": false
                         },
@@ -245,7 +246,6 @@
                                 "de": "Zusammensetzung des Lockergesteins",
                                 "fr": "Composition de la roche meuble"
                             },
-                            "att_type": "annex",
                             "value": "gc_composit",
                             "cardinality": "0..3",
                             "mandatory": false
@@ -256,7 +256,6 @@
                                 "de": "Beimengung",
                                 "fr": "Incorporation"
                             },
-                            "att_type": "annex",
                             "value": "gc_admixture",
                             "cardinality": "0..2",
                             "mandatory": false
@@ -354,7 +353,7 @@
                             "name": "ref_year",
                             "description": {
                                 "de": "Zeitpunkt oder Zeitperiode. Zum Beispiel \u00ab1940 1943, Periode der Drainage\u00bb (muss pr\u00e4zisiert werden).",
-                                "fr": "Information de temps ou p\u00e9riode. Par ex. \"1940-1943: ann\u00e9e de r\u00e9f\u00e9rence\nde l\u2019ancienne ligne de rivage\".\n"
+                                "fr": "Information de temps ou p\u00e9riode. Par ex. \"1940-1943: ann\u00e9e de r\u00e9f\u00e9rence de l\u2019ancienne ligne de rivage\"."
                             },
                             "att_type": "string",
                             "cardinality": "0..1",
@@ -366,7 +365,7 @@
                             "value": "GC_UN_DEP_RUNC_THIN_COV_CD",
                             "description": {
                                 "de": "Typ der geringm\u00e4chtigen Lockermaterialbedeckung, wenn vorhanden.",
-                                "fr": "Couverture meuble pelliculaire"
+                                "fr": "Type de couverture meuble pelliculaire"
                             },
                             "cardinality": "0..1",
                             "mandatory": false,
@@ -400,7 +399,7 @@
                     "table": "GC_BEDROCK",
                     "description": {
                         "de": "Die Klasse Bedrock_PLG enth\u00e4lt alle lithostratigraphischen Festgesteinseinheiten.",
-                        "fr": "La classe Bedrock_PLG regroupe toutes les unit\u00e9s\nlithostratigraphiques de roches consolid\u00e9es."
+                        "fr": "La classe Bedrock_PLG regroupe toutes les unit\u00e9s lithostratigraphiques de roches consolid\u00e9es."
                     },
                     "attributes": [
                         {
@@ -429,7 +428,7 @@
                             "mandatory": false
                         },
                         {
-                            "name": "rbed_chrono_t",
+                            "name": "chrono_t",
                             "att_type": "annex",
                             "value": "GC_CHRONO_CD",
                             "description": {
@@ -437,10 +436,11 @@
                                 "fr": "Attribution chronostratigraphique du toit de la  formation (top)"
                             },
                             "cardinality": "1",
-                            "mandatory": true
+                            "mandatory": true,
+                            "change": "removed"
                         },
                         {
-                            "name": "rbed_chrono_b",
+                            "name": "chrono_b",
                             "att_type": "annex",
                             "value": "GC_CHRONO_CD",
                             "description": {
@@ -448,7 +448,8 @@
                                 "fr": "Attribution chronostratigraphique de la base de la  formation (base)"
                             },
                             "cardinality": "1",
-                            "mandatory": true
+                            "mandatory": true,
+                            "change": "removed"
                         },
                         {
                             "name": "tecto",
@@ -475,11 +476,35 @@
                         {
                             "name": "litstrat_formation_bank",
                             "description": {
-                                "de": "-todo-",
-                                "fr": "-todo-"
+                                "de": "Lithostratigraphische Formation",
+                                "fr": "Formation lithostratigraphique"
                             },
                             "att_type": "annex",
                             "value": "GC_LITSTRAT_FORMATION_BANK_CD",
+                            "cardinality": "1",
+                            "mandatory": true,
+                            "origin": "GC_GEOL_MAPPING_UNIT_ATT"
+                        },
+                        {
+                            "name": "chrono_top",
+                            "att_type": "annex",
+                            "value": "GC_CHRONO_CD",
+                            "description": {
+                                "de": "Chronostratigraphische Zuordnung der Obergrenze der Kartiereinheit (Top)",
+                                "fr": "Attribution chronostratigraphique du toit de la  formation (top)"
+                            },
+                            "cardinality": "1",
+                            "mandatory": true,
+                            "origin": "GC_GEOL_MAPPING_UNIT_ATT"
+                        },
+                        {
+                            "name": "chrono_base",
+                            "att_type": "annex",
+                            "value": "GC_CHRONO_CD",
+                            "description": {
+                                "de": "Chronostratigraphische Zuordnung der Obergrenze der Kartiereinheit (Top)",
+                                "fr": "Attribution chronostratigraphique de la base de la formation"
+                            },
                             "cardinality": "1",
                             "mandatory": true,
                             "origin": "GC_GEOL_MAPPING_UNIT_ATT"
@@ -495,6 +520,54 @@
                             "cardinality": "1",
                             "change": "removed",
                             "mandatory": false
+                        },
+                        {
+                            "name": "litho_main",
+                            "att_type": "annex",
+                            "value": "GC_LITHO_CD",
+                            "description": {
+                                "de": "Lithologische Beschreibung",
+                                "fr": "Description lithologique principale"
+                            },
+                            "cardinality": "1",
+                            "mandatory": true,
+                            "origin": "GC_GEOL_MAPPING_UNIT_ATT"
+                        },
+                        {
+                            "name": "litho_sec",
+                            "att_type": "annex",
+                            "value": "GC_LITHO_CD",
+                            "description": {
+                                "de": "Lithologische Beschreibung",
+                                "fr": "Description lithologique secondaire"
+                            },
+                            "cardinality": "1",
+                            "mandatory": false,
+                            "origin": "GC_GEOL_MAPPING_UNIT_ATT"
+                        },
+                        {
+                            "name": "litho_ter",
+                            "att_type": "annex",
+                            "value": "GC_LITHO_CD",
+                            "description": {
+                                "de": "Lithologische Beschreibung",
+                                "fr": "Description lithologique tertiaire"
+                            },
+                            "cardinality": "1",
+                            "mandatory": false,
+                            "origin": "GC_GEOL_MAPPING_UNIT_ATT"
+                        },
+                        {
+                            "name": "correlation",
+                            "att_type": "annex",
+                            "value": "GC_CORRELATION_CD",
+                            "description": {
+                                "de": "Korrelation",
+                                "fr": "Correlation"
+                            },
+                            "cardinality": "1",
+                            "mandatory": false,
+                            "origin": "GC_GEOL_MAPPING_UNIT_ATT"
                         },
                         {
                             "name": "description",
@@ -520,13 +593,13 @@
                             "status": "<4.0"
                         },
                         {
-                            "name": "rbed_exotic_ele",
+                            "name": "exotic_ele",
                             "att_type": "boolean",
                             "description": {
                                 "de": "Handelt es sich bei der Objektart um ein exotisches Element; z.B. Einschluss, Linse, Tasche, Olistholith (ja / nein)?",
                                 "fr": "S\u2019agit-il d\u2019un \u00e9l\u00e9ment exotique (oui / non)?"
                             },
-                            "cardinality": "1",
+                            "cardinality": "0..1",
                             "mandatory": false
                         },
                         {
@@ -36438,7 +36511,7 @@
             }
         }
     ],
-    "hash": "1ddfbb4",
+    "hash": "a4ae0e6",
     "geolcodes": {
         "added": [
             {
