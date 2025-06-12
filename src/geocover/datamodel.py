@@ -1000,7 +1000,11 @@ def generate(lang, datamodel, output, input_dir):
         return value
 
     def strip_final_dot(value):
-        return value.rstrip(".")
+        ori = value
+        modified = value.rstrip(".")
+        if ori != modified:
+            logger.info(f"FOUND: {modified}")
+        return modified
 
     # Define the custom filter function
     def format_date_locale(value, format="MMMM yyyy", locale="de_CH"):
