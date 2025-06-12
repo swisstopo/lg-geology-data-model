@@ -323,8 +323,8 @@ themes:
       mandatory: true
     - name: litstrat_formation_bank  # check
       description:
-        de:  -todo-
-        fr:  -todo-
+        de:  Lithostratigraphische Formation
+        fr:  Formation lithostratigraphique
       att_type: annex
       value: GC_LITSTRAT_FORMATION_BANK_CD
       cardinality: "1"
@@ -342,7 +342,7 @@ themes:
       cardinality: "1"
       mandatory: true
       origin: GC_GEOL_MAPPING_UNIT_ATT
-    - name: chrono_bottom
+    - name: chrono_base
       att_type: annex
       value: GC_CHRONO_CD
       description:
@@ -350,7 +350,7 @@ themes:
               Chronostratigraphische Zuordnung der Obergrenze der Kartiereinheit
               (Top)
             fr: >-
-              Attribution chronostratigraphique du toit de la  formation (top)
+              Attribution chronostratigraphique de la base de la formation
       cardinality: "1"
       mandatory: true
       origin: GC_GEOL_MAPPING_UNIT_ATT
@@ -368,7 +368,7 @@ themes:
       value: GC_LITHO_CD
       description:
         de: Lithologische Beschreibung
-        fr: Description lithologique
+        fr: Description lithologique principale
       cardinality: "1"
       mandatory: true
       origin: GC_GEOL_MAPPING_UNIT_ATT
@@ -377,7 +377,7 @@ themes:
       value: GC_LITHO_CD
       description:
         de: Lithologische Beschreibung
-        fr: Description lithologique
+        fr: Description lithologique secondaire
       cardinality: "1"
       mandatory: false
       origin: GC_GEOL_MAPPING_UNIT_ATT
@@ -386,7 +386,7 @@ themes:
       value: GC_LITHO_CD
       description:
         de: Lithologische Beschreibung
-        fr: Description lithologique
+        fr: Description lithologique tertiaire
       cardinality: "1"
       mandatory: false
       origin: GC_GEOL_MAPPING_UNIT_ATT
@@ -427,7 +427,7 @@ themes:
           Einschluss, Linse, Tasche, Olistholith (ja / nein)?
         fr: >-
           S’agit-il d’un élément exotique (oui / non)?
-      cardinality: "1"
+      cardinality: 0..1
       mandatory: false
     - name: colour
       att_type: string
