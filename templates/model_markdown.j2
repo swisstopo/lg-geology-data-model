@@ -1,5 +1,5 @@
-
-# {{ _("Geological datamodel") }}, {{ _("Revision %(name)s", name=model.revision) }} #
+{# From metadata.yaml   #}
+{#     # {{ _("Geological datamodel") }}, {{ _("Revision %(name)s", name=model.revision) }} #    #}
 
 
 
@@ -18,13 +18,13 @@
 {% set themeloop = loop %}
 
 
-## {{_("Theme")}} {{ theme.name |upper}}
+# {{_("Theme")}} {{ theme.name |upper}}
 
 {% for cls in theme.classes -%}
 
 
 
-### {{_("Class")}} {{ cls.name }} {% if cls.abrev -%}({{cls.abrev}}){% endif -%}  {{ '{#'}}{{cls.name | slugify}}{{'}'}}
+## {{_("Class")}} {{ cls.name }} {% if cls.abrev -%}({{cls.abrev}}){% endif -%}  {{ '{#'}}{{cls.name | slugify}}{{'}'}}
 {{ cls.description[lang]| trim|highlight}}
 
 
