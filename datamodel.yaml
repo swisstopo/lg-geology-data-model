@@ -905,10 +905,10 @@ themes:
       mandatory: false
     - name: dip        # WAs 'plunge' in version 2.1
       description:
-        de: |
+        de: >-
           Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen
           aus der Horizontalen (0°) nach unten bis in die Vertikale (90°).
-        fr: |
+        fr: >-
           Valeur du plongement du type d''objet (valeur en degrés, mesurée de l’horizontale
           (0°) vers le bas jusqu’à la verticale (90°))
       att_type: integer
@@ -937,10 +937,10 @@ themes:
     abrev: Tdef      # TODO: to check
     table: GC_LINEAR_OBJECTS     # TODO: to check
     description:
-      de: |
+      de: >-
         Die Klasse Deformation_Structures_L enthält linienförmige tektonische Deformationsstrukturen,
         wie den Verlauf des Faltenscharniers.
-      fr: |-
+      fr: >-
         La classe Deformation_Structures_L regroupe les structures
         linéaires de déformations tectoniques comme le tracé d’une
         charnière de pli.
@@ -957,10 +957,10 @@ themes:
     abrev: Tdef      # TODO: to check
     table: GC_SURFACES     # TODO: to check
     description:
-      de: |
+      de: >-
         In der Klasse Deformation_Structures_PLG befinden sich tektonisch geprägte Zonen wie
         tektonisierte Zonen oder Kluftzonen.
-      fr: |-
+      fr: >-
         Dans la classe Deformation_Structures_PLG se trouvent les
         régions marquées par des structures tectoniques à grande
         échelle comme les zones tectonisées ou les zones diaclasées.
@@ -994,9 +994,9 @@ themes:
     abrev: Ttec      # TODO: to check
     table: GC_LINEAR_OBJECTS     # TODO: to check
     description:
-      de: |
+      de: >-
         Die Klasse Tectonic_Boundaries_L umfasst alle tektonischen Verwerfungen.
-      fr: |-
+      fr: >-
         La classe Tectonic_Boundaries_L comprend toutes les
         accidents tectoniques.
     attributes:
@@ -1101,10 +1101,10 @@ themes:
     abrev: Mfol      # TODO: to check
     table: GC_POINT_OBJECTS     # TODO: to check
     description:
-      de: |
+      de: >-
         Die Klasse Folds_PT enthält Objektarten, welche die räumliche Lage von verfalteten geologischen
         Objekten (mit direkten Feldmessungen) beschreiben.
-      fr: |-
+      fr: >-
         La classe Folds_PT contient les objets qui décrivent la
         position spatiale d’objets géologiques plissés (par des
         mesures prises directement sur le terrain).
@@ -1178,12 +1178,12 @@ themes:
     abrev: Mlin      # TODO: to check
     table: GC_POINT_OBJECTS     # TODO: to check
     description:
-      de: |
+      de: >-
         In der Klasse Lineation_PT finden sich Objektarten, welche die räumliche Lage von diversen
         Linearen mit direkten Feldmessungen beschreiben. Die räumliche Lage u.a. von Gletscherschliffen
         und Rutschharnischen ist ebenso Teil dieser Klasse wie die Orientierung von Streckungs- oder
         Intersektionslineationen.
-      fr: |-
+      fr: >-
         La classe Lineation_PT contient des structures linéaires
         dont la position spatiale est décrite par des mesures
         directes sur le terrain. La position dans l’espace, entre
@@ -1225,10 +1225,10 @@ themes:
     abrev: Mpla      # TODO: to check
     table: GC_POINT_OBJECTS     # TODO: to check
     description:
-      de: >
+      de: >-
         Die Klasse Planar_Structures_PT enthält Objektarten, welche die räumliche
         Lage von planaren Strukturen mit direkten Feldmessungen beschreiben.
-      fr: |-
+      fr: >-
         La classe Planar_Structures_PT contient des types d'objets
         qui décrivent la position des structures planaires avec des
         mesures directes sur le terrain.
@@ -1292,8 +1292,9 @@ themes:
       description:
         de: Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus
           der Horizontalen (0°) nach unten bis in die Vertikale (90°).
-        fr: |-
-          Valeur du plongement du type d'objet (en degrés), mesurée de l’horizontale (0°) vers le bas jusqu’à la  verticale (90°)
+        fr: >-
+          Valeur du plongement du type d'objet (en degrés), mesurée de
+          l’horizontale (0°) vers le bas jusqu’à la  verticale (90°)
       cardinatity: 0..1
       mandatory: false
 - name: Local_Additional_Information
@@ -1331,7 +1332,7 @@ themes:
     table: GC_FOSSILS
     description:
       de: Die Klasse Fossils_PT enthält alle Fossilfundstellen.
-      fr: |-
+      fr: >-
         La classe Fossils_PT contient tous les gisements.
         fossilifères
     attributes:
@@ -1391,10 +1392,10 @@ themes:
     abrev: Lres
     table: GC_POINT_OBJECTS     # TODO: to check
     description:
-      de: |
+      de: >-
         Die Klasse Indication_of_Resources_PT beinhaltet Fundstellen von vulkanischen, mineralischen
         und nicht-mineralischen Rohstoffen.
-      fr: |-
+      fr: >-
         La classe Indication_of_Resources_PT regroupe les gisements
         de minéraux, de gaz, d’hydrocarbures et de matériel
         volcanique
@@ -1464,7 +1465,7 @@ themes:
     table: GC_POINT_OBJECTS     # TODO: to check
     description:
       de: Die Klasse Sedimentary_Structures_PT enthält beobachtete Sedimentstrukturen.
-      fr: |-
+      fr: >-
         La classe Sedimentary_Structures_PT contient la description
         des structures sédimentaires observées.
     attributes:
@@ -1490,10 +1491,10 @@ themes:
     abrev: Ltyp      # TODO: to check
     table: GC_POINT_OBJECTS     # TODO: to check
     description:
-      de: |
+      de: >-
         Die Klasse Type_Localities_PT beinhaltet diejenigen Objektarten, die Typusprofile oder wichtige
         geologische Aufschlüsse beschreiben.
-      fr: |-
+      fr: >-
         La classe Type_Localities_PT regroupe les types d’objets qui
         décrivent les profiles-types ou les affleurements
         géologiques importants.
@@ -1545,13 +1546,13 @@ themes:
     abrev: Lpro      # TODO: to check
     table: GC_LINEAR_OBJECTS     # TODO: to check
     description:
-      de: |
+      de: >-
         In der Klasse Prominent_Lithological_Features_L befinden sich linienförmige Gesteinshorizonte.
         Diese Gesteinshorizonte haben lediglich Hinweischarakter (z.B. «markante Sandsteinbank» innerhalb
         von Wechsellagerungen von Sandstein und Mergel) und sind von den Leithorizonten (z.B.
         «Spatkalk im Hauptrogenstein») zu unterschieden. Leithorizonte befinden sich im Thema Rock Bodies.
 
-      fr: |-
+      fr: >-
         La classe Prominent_Lithological_Features_L contient des
         horizons rocheux linéaires. Ces horizons rocheux n'ont qu'un
         caractère indicatif (par ex. « banc de grès marquant » au
@@ -1609,11 +1610,11 @@ themes:
     abrev: Lmis      # TODO: to check
     table: GC_POINT_OBJECTS     # TODO: to check
     description:
-      de: |
+      de: >-
         Die Klasse Miscellaneous_PT ist für lokale, sehr spezielle geologische Objekte reserviert, die für die
         Gesamtheit der geologischen Daten irrelevant sind und deshalb im Datenmodell Geologie nicht
         standardisiert werden
-      fr: |-
+      fr: >-
         La classe Miscellaneous_PT est réservée aux objets locaux
         très particuliers qui ne sont pas pertinents pour l’ensemble
         des données géologiques. Par conséquent ils ne sont pas
@@ -1667,10 +1668,10 @@ themes:
     abrev: Pslo      # TODO: to check
     table: GC_POINT_OBJECTS     # TODO: to check
     description:
-      de: |
+      de: >-
         Die Klasse Slope_Bedrock_PT enthält Punktinformationen aus Modellierungen des Festgestein-
         verlaufs im Untergrund.
-      fr: |-
+      fr: >-
         La classe Slope_Bedrock_PT contient des informations
         ponctuelles provenant de la modélisation de l’orientation
         d’horizons lithologiques des roches consolidées dans le
@@ -1731,11 +1732,11 @@ themes:
     abrev: Pcob
     table: GC_LINEAR_OBJECTS     # TODO: to check
     description:
-      de: |
+      de: >-
         Die Klasse Contour_Lines_Bedrock_L beinhaltet Isohypsen, die sich auf den Verlauf des Fest-
         gesteins beziehen und die das Resultat von Modellierungen darstellen. U.a. befinden sich die Iso-
         hypsen der Felsoberfläche in dieser Klasse.
-      fr: |-
+      fr: >-
         La classe Contour_Lines_Bedrock_L contient les isohypses qui
         décrivent la géométrie des roches consolidées dans le sous-
         sol et sont le résultat d’une modélisation. Dans cette
@@ -1778,10 +1779,10 @@ themes:
     abrev: Pmod      # TODO: to check
     table: GC_POINT_OBJECTS     # TODO: to check
     description:
-      de: |
+      de: >-
         Die Klasse Modelled_Water_Table_PT enthält Punktinformationen aus Modellierungen des
         Grundwasserspiegels.
-      fr: |-
+      fr: >-
         La classe Modelled_Water_Table_PT contient des informations
         ponctuelles provenant de la modélisation du niveau
         piézométrique d’une nappe libre.
@@ -1834,10 +1835,10 @@ themes:
     abrev: Pcoh
     table: GC_LINEAR_OBJECTS     # TODO: to check
     description:
-      de: |
+      de: >-
         In der Klasse Contour_Lines_Hydro_L befinden sich die Isohypsen, die sich auf das Grundwasser
         beziehen.
-      fr: |-
+      fr: >-
         Dans la classe Contour_Lines_Hydro_L se trouvent les
         isohypses qui décrivent la surface d’une nappe d’eau
         souterraine.
@@ -1883,7 +1884,7 @@ themes:
     description:
       de: Die Klasse Archaeology_PT enthält Objektarten zu einzelnen archäologischen
         Relikten.
-      fr: |-
+      fr: >-
         La classe Archaeology_PT regroupe les sites archéologiques.
     attributes:
     - name: kind
@@ -1935,7 +1936,7 @@ themes:
       de: |
         Die Klasse Archaeology_L umfasst linienförmige archäologische Elemente. Historische Strassen,
         Hohlwege oder Befestigungsgräben sind Teile dieser Klasse.
-      fr: |-
+      fr: >-
         La classe Archaeology_L contient les éléments archéologiques
         de forme linéaire. Les routes historiques, les chemins creux
         et les fossés de fortification font partie de cette classe.
@@ -1981,7 +1982,7 @@ themes:
       de: |
         Die Klasse Archaeology_PLG beinhaltet archäologische Relikte (z.B. römisches Castrum), die ein
         grösseres Gebiet (Fläche) abdecken.
-      fr: |-
+      fr: >-
         Dans la classe Archaeology_PLG se trouvent les vestiges
         archéologiques (p.ex. le Castrum romain) qui recouvrent une
         surface importante.
@@ -2027,7 +2028,7 @@ themes:
       de: |
         Die Klasse Exploitation_Geomaterials_PT enthält punktförmige Angaben zu Abbaustellen von
         Geomaterialien.
-      fr: |-
+      fr: >-
         La classe Exploitation_Geomaterials_PT contient des
         informations ponctuelles sur les sites d’exploitation de
         matériaux géologiques.
@@ -2079,7 +2080,7 @@ themes:
       de: |
         Die Klasse Exploitation_Geomaterials_L beinhaltet linienförmige Informationen zum Abbau von
         Geomaterialien (z.B. Verlauf der Abbaufront).
-      fr: |-
+      fr: >-
         La classe Exploitation_Geomaterials_L contient les objets de
         forme linéaire liés aux sites d’exploitation de matériaux
         géologiques (p.ex. le front de taille).
@@ -2107,7 +2108,7 @@ themes:
       de: |
         Die Klasse Exploitation_Geomaterials_PLG enthält Flächen, wo zur Zeit der geologischen
         Aufnahmen Geomaterialien abgebaut wurden.
-      fr: |-
+      fr: >-
         La classe Exploitation_Geomaterials_PLG contient les
         surfaces d’exploitation de géomatériaux, telles qu’elles
         étaient au moment du levé de la carte géologique.
@@ -2346,11 +2347,11 @@ themes:
     abrev: Aart      # TODO: to check
     table: GC_SURFACES     # TODO: to check
     description:
-      de: |
+      de: >-
         Die Klasse Artificial_Surface_Modifications_PLG enthält bedeutende künstliche Veränderungen
         des Geländes (Golfplatz, Skigebiet, etc.), die zur Folge haben, dass das ursprüngliche Relief nicht
         mehr zu erkennen ist, was bei einer geomorphologischen Deutung zu falschen Schlüssen führen könnte.
-      fr: |-
+      fr: >-
         La classe Artificial_Surface_Modifications_PLG contient des
         modifications artificielles importantes du terrain (terrain
         de golf, domaine skiable, etc.) qui ont pour conséquence que
@@ -2372,10 +2373,10 @@ themes:
     abrev: Hcon      # TODO: to check
     table: GC_POINT_OBJECTS     # TODO: to check
     description:
-      de: |
+      de: >-
         Die Klasse Construction_PT beinhaltet Wasserbauten wie Grundwasserfassungen und Zisternen.
         Desweiteren kommen in dieser Klasse auch Messgeräte wie Piezometer und Limnigraphen vor.
-      fr: |-
+      fr: >-
         Dans la classe Construction_PT se trouvent les constructions
         hydriques, comme les captages dans la nappe phréatique et
         les citernes. Les instruments de mesure comme les
@@ -2436,10 +2437,10 @@ themes:
     abrev: Hcon      # TODO: to check
     table: GC_LINEAR_OBJECTS     # TODO: to check
     description:
-      de: |
+      de: >-
         Die Klasse Construction_L enthält linienförmige Wasserbauten wie den Wasserfassungsstollen,
         welcher mit Objektarten der Klasse Surface_Water_PT kombiniert werden kann.
-      fr: |-
+      fr: >-
         Dans la classe Construction_L se trouvent les constructions
         hydriques de forme linéaire comme les galeries de captage
         d’eau, qui peuvent être combinées avec les types d’objets de
@@ -2468,10 +2469,10 @@ themes:
     abrev: Hpal      # TODO: to check
     table: GC_LINEAR_OBJECTS     # TODO: to check
     description:
-      de: |
+      de: >-
         In der Klasse Palaeohydrology_L befinden sich alle linienförmigen Objektarten, welche einen
         gewissen Bezug zu einem ehemaligen Gewässer aufweisen.
-      fr: |-
+      fr: >-
         La classe Palaeohydrology_L contient tous les types d’objets
         de forme linéaire, indiquant le tracé d’un cours d’eau dans
         le passé.
@@ -2524,12 +2525,12 @@ themes:
     abrev: Hsub      # TODO: to check
     table: GC_LINEAR_OBJECTS     # TODO: to check
     description:
-      de: |
+      de: >-
         In der Klasse Subsurface_Water_L befinden sich linienförmigen Objektarten, welche einen
         unterirdischen Gewässerlauf anzeigen.
 
         Der genaue Verlauf des unterirdischen Gewässerlaufes ist meistens vermutet.
-      fr: |-
+      fr: >-
         Dans la classe Subsurface_Water_L se trouvent les objets de
         forme linéaire qui représentent les cours d’eau souterrains.
         Le parcours exact des cours d’eau souterrains est presque
@@ -2562,13 +2563,13 @@ themes:
     abrev: Hsur      # TODO: to check
     table: GC_POINT_OBJECTS     # TODO: to check
     description:
-      de: |
+      de: >-
         Die Klasse Surface_Water_PT umfasst lokal (punktuell) beobachtete Oberflächengewässer, wie
         natürliche Wasseraustritts- und Versickerungsstellen. Zudem befindet sich die Objektart Steilstufe
         in Bachrinne, Wasserfall in dieser Klasse, die eine spezielle Stelle in Fliessgewässern markiert und
         die durch die darunterliegende Geologie bedingt ist.
 
-      fr: |-
+      fr: >-
         La classe Surface_Water_PT comprend les eaux de surface
         locales (ponctuelles) comme les sources et les pertes d’un
         cours d’eau. On y trouve également des types d’objets
@@ -2695,11 +2696,11 @@ themes:
     abrev: Hsur      # TODO: to check
     table: GC_SURFACES     # TODO: to check
     description:
-      de: |
+      de: >-
         Die Klasse Surface_Water_PLG beinhaltet oberflächliche Wasserspeicher wie Gletscher, Seen und
         Flüsse.
 
-      fr: |-
+      fr: >-
         La classe Surface_Water_PLG regroupe toutes les
         accumulations d’eaux superficielles comme les glaciers, les
         lacs et les rivières qui masquent les unités géologiques
