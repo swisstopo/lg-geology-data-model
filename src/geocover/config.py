@@ -15,10 +15,10 @@ abreviations = [
     "Lano",
     "Lfos",
     "Lgeo",
-    "Lind",
     "Lmin",
     "Lmis",
     "Lpro",
+    "Lres"
     "Lsed",
     "Ltyp",
     "Mfol",
@@ -35,7 +35,7 @@ abreviations = [
 
 tables = [
     "Admixtures.csv",
-    "Cahrcat.csv",
+    "Charcat.csv",
     "Chrono.csv",
     "Composit.csv",
     "Litho.csv",

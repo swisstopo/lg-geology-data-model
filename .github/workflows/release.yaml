@@ -83,7 +83,7 @@ jobs:
             # This is necessary because multi-line outputs cannot be directly
             # passed through step outputs easily, but `ncipollo/release-action`
             # supports reading from a file via `body_path`.
-            echo "$RELEASE_BODY_CONTENT" > .release_body.txt
+            echo -e "$RELEASE_BODY_CONTENT" > .release_body.txt
             
             # Set the previous tag as an output of this step, which can be used
             # in subsequent steps if needed.

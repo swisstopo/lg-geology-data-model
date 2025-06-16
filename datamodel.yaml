@@ -13,6 +13,7 @@
 # 0.8  Attribut `status` indicating the version an attribute is used (<4.0, >=4.0)
 # 0.9  Attribute's name as in the database, `alias`for display
 # 0.10 Attribute `origin` for joined table. Special `annex` type `table` for 'KE' codes. source_dir
+# 0.11 Display some 'table' in text (not annexe)
 version: "0.10"
 date: 2025-05-25
 
@@ -137,7 +138,7 @@ themes:
         fr: Description lithologique
       att_type: annex
       value: GC_LITHO_CD
-      cardinality: 1..3
+      cardinality: "1"
       mandatory: true
     - name: chrono_t
       description:
@@ -162,7 +163,8 @@ themes:
       cardinality: "1"
       mandatory: true
     - name: mat_type
-      att_type: string
+      att_type: annex
+      value: GC_LITHO_CD
       description:
         de: Materialbezeichnung (lithologische Einheit)
         fr: Description du matériel (unité lithologique)
@@ -180,15 +182,15 @@ themes:
       description:
         de: Zusammensetzung des Lockergesteins
         fr: Composition de la roche meuble
-      att_type: annex
+      att_type: table   # TODO
       value: gc_composit
       cardinality: 0..3
       mandatory: false
-    - name: admixture
+    - name: admixture  # TODO plus en annexe
       description:
         de: Beimengung
         fr: Incorporation
-      att_type: annex
+      att_type: table
       value: gc_admixture
       cardinality: 0..2
       mandatory: false
@@ -204,7 +206,7 @@ themes:
       description:
         de: Spezifische Eigenschaft
         fr: Charactéristique spécifique
-      att_type: annex
+      att_type: table
       value: gc_charcat
       cardinality: 0..3
       mandatory: false
@@ -228,11 +230,12 @@ themes:
       mandatory: false
     - name: ref_year
       description:
-        de: Zeitpunkt oder Zeitperiode. Zum Beispiel «1940 1943, Periode der Drainage»
+        de: >- 
+          Zeitpunkt oder Zeitperiode. Zum Beispiel «1940 1943, Periode der Drainage»
           (muss präzisiert werden).
-        fr: |
-          Information de temps ou période. Par ex. "1940-1943: année de référence
-          de l’ancienne ligne de rivage".
+        fr: >-
+          Information de temps ou période. Par ex. "1940-1943: année de
+          référence de l’ancienne ligne de rivage".
       att_type: string
       cardinality: 0..1
       mandatory: false
@@ -241,7 +244,7 @@ themes:
       value: GC_UN_DEP_RUNC_THIN_COV_CD
       description:
         de: Typ der geringmächtigen Lockermaterialbedeckung, wenn vorhanden.
-        fr: Couverture meuble pelliculaire
+        fr: Type de couverture meuble pelliculaire
       cardinality: 0..1
       mandatory: false
     - name: orig_descr
@@ -260,7 +263,7 @@ themes:
     description:
       de: >-
         Die Klasse Bedrock_PLG enthält alle lithostratigraphischen Festgesteinseinheiten.
-      fr: |-
+      fr: >-
         La classe Bedrock_PLG regroupe toutes les unités
         lithostratigraphiques de roches consolidées.
     attributes:
@@ -280,7 +283,7 @@ themes:
       cardinality: "1"
       change: removed
       mandatory: false
-    - name: rbed_chrono_t
+    - name: chrono_t
       att_type: annex
       value: GC_CHRONO_CD
       description:
@@ -292,7 +295,7 @@ themes:
       cardinality: "1"
       mandatory: true
       change: removed   # removed 4.1
-    - name: rbed_chrono_b  
+    - name: chrono_b
       att_type: annex
       value: GC_CHRONO_CD
       description:
@@ -322,8 +325,8 @@ themes:
       mandatory: true
     - name: litstrat_formation_bank  # check
       description:
-        de:  -todo-
-        fr:  -todo-
+        de:  Lithostratigraphische Formation
+        fr:  Formation lithostratigraphique
       att_type: annex
       value: GC_LITSTRAT_FORMATION_BANK_CD
       cardinality: "1"
@@ -341,7 +344,7 @@ themes:
       cardinality: "1"
       mandatory: true
       origin: GC_GEOL_MAPPING_UNIT_ATT
-    - name: chrono_bottom
+    - name: chrono_base
       att_type: annex
       value: GC_CHRONO_CD
       description:
@@ -349,7 +352,7 @@ themes:
               Chronostratigraphische Zuordnung der Obergrenze der Kartiereinheit
               (Top)
             fr: >-
-              Attribution chronostratigraphique du toit de la  formation (top)
+              Attribution chronostratigraphique de la base de la formation
       cardinality: "1"
       mandatory: true
       origin: GC_GEOL_MAPPING_UNIT_ATT
@@ -367,7 +370,7 @@ themes:
       value: GC_LITHO_CD
       description:
         de: Lithologische Beschreibung
-        fr: Description lithologique
+        fr: Description lithologique principale
       cardinality: "1"
       mandatory: true
       origin: GC_GEOL_MAPPING_UNIT_ATT
@@ -376,7 +379,7 @@ themes:
       value: GC_LITHO_CD
       description:
         de: Lithologische Beschreibung
-        fr: Description lithologique
+        fr: Description lithologique secondaire
       cardinality: "1"
       mandatory: false
       origin: GC_GEOL_MAPPING_UNIT_ATT
@@ -385,7 +388,7 @@ themes:
       value: GC_LITHO_CD
       description:
         de: Lithologische Beschreibung
-        fr: Description lithologique
+        fr: Description lithologique tertiaire
       cardinality: "1"
       mandatory: false
       origin: GC_GEOL_MAPPING_UNIT_ATT
@@ -418,7 +421,7 @@ themes:
       change: removed
       mandatory: false
       status: "<4.0"
-    - name: rbed_exotic_ele
+    - name: exotic_ele
       att_type: boolean
       description:
         de: >-
@@ -426,7 +429,7 @@ themes:
           Einschluss, Linse, Tasche, Olistholith (ja / nein)?
         fr: >-
           S’agit-il d’un élément exotique (oui / non)?
-      cardinality: "1"
+      cardinality: 0..1
       mandatory: false
     - name: colour
       att_type: string
@@ -868,12 +871,12 @@ themes:
     abrev: Tdef
     table: GC_POINT_OBJECTS     # TODO: to check
     description:
-      de: |
+      de: >-
         Die Klasse Deformation_Structures_PT beinhaltet punktuell beobachtete tektonische
         Deformationsstrukturen wie lokal stark verfaltete Stellen (Fältelung) oder Orte mit ausgeprägter
         Klüftung. Ebenfalls in dieser Klasse befinden sich konstruierte Punkte wie z.B. die Orientierung
         der Faltenachsenfläche.
-      fr: |-
+      fr: >-
         La classe Deformation_Structures_PT contient des structures
         de déformation tectonique observées ponctuellement, telles
         que des endroits localement très plissés (plissotement) ou
@@ -1329,7 +1332,7 @@ themes:
     description:
       de: Die Klasse Fossils_PT enthält alle Fossilfundstellen.
       fr: |-
-        La classe Fossils_PT contient tous les gisements
+        La classe Fossils_PT contient tous les gisements.
         fossilifères
     attributes:
     - name: kind
@@ -1353,8 +1356,9 @@ themes:
       description:
         de: Fossiliengruppe.
         fr: Groupe de fossiles
-      att_type: annex
+      # att_type: annex # should be listed
       value: gc_system
+      att_type: table
       cardinality: 0..5
       mandatory: false
     - name: lfos_dat_meth
@@ -1576,7 +1580,7 @@ themes:
       alias: name_horiz
       description:
         de: Name des Leithorizonts.
-        fr: Nom du horizon repère
+        fr: Nom de l'horizon repère
       att_type: annex
       value: GC_GEOL_MAPPING_UNIT_CD        # TODO: was 13103, now field: LPRO_NAME_HORIZ
       cardinality: 0..1
@@ -2150,11 +2154,11 @@ themes:
     abrev: Abor      # TODO: to check
     table: GC_POINT_OBJECTS     # TODO: to check
     description:
-      de: |
+      de: >-
         Die Klasse Boreholes_PT beinhaltet Bohrungen und Sondierungen. (Auf alten gedruckten Karten
         wurde die Art der Sondierung nicht immer unterschieden. Es kann daher sein, dass in alten Karten
         Rammkernsondierungen als Bohrungen aufgenommen wurden.)
-      fr: |-
+      fr: >-
         La classe Boreholes_PT regroupe les forages et les sondages.
         (Sur les anciennes cartes imprimées, le genre d’objet
         n’était pas toujours distingué. D’ailleurs, il se peut que
@@ -2180,9 +2184,12 @@ themes:
     - name: abor_depth_bedr
       alias: depth_bedr
       description:
-        de: |
-          Tiefe (in Meter ab Terrainoberfläche) der Felsoberfläche. (Sofern die Bohrung das Festgestein nicht erreicht, z.B. «Bohrung, Fels nicht erreicht», beträgt der Wert 999, falls die Bohrung bereits im Festgestein beginnt, beträgt der Wert 0). Falls Festgestein erreicht wurde, aber nicht klar ist, dass es sich um die Felsoberfläche handelt, beträgt der Wert 888.
-        fr: |
+        de: >-
+          Tiefe (in Meter ab Terrainoberfläche) der Felsoberfläche. (Sofern die Bohrung das Festgestein nicht erreicht, 
+          z.B. «Bohrung, Fels nicht erreicht», beträgt der Wert 999, falls die Bohrung bereits im Festgestein beginnt, 
+          beträgt der Wert 0). Falls Festgestein erreicht wurde, aber nicht klar ist, dass es sich um die Felsoberfläche 
+          handelt, beträgt der Wert 888.
+        fr: >-
           Profondeur de la roche en place (en mètres depuis la surface). Si l’ouvrage
           n’atteint pas la roche en place,  par exemple forage interrompu dans la
           couverture quaternaire, la valeur est  999, au cas où le forage commence

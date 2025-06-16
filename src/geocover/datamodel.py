@@ -17,10 +17,13 @@ from jsonschema import validate as jsonschema_validate
 from loguru import logger
 import traceback
 
+
 try:
     from geocover.config import ATTRIBUTES_TO_IGNORE
+    from geocover.translator import Translator
 except ImportError:
     from config import ATTRIBUTES_TO_IGNORE
+    from translator import Translator
 
 
 PACKAGE_NAME = "geocover"
@@ -40,7 +43,7 @@ if not os.path.isdir(LOG_DIR):
 LOG_FILENAME = os.path.join(LOG_DIR, "datamodel.log")
 
 logger.remove()
-logger.add(sys.stderr, level="INFO")
+logger.add(sys.stdout, level="INFO")
 
 if os.path.isfile(LOG_FILENAME):
     os.remove(LOG_FILENAME)
@@ -182,14 +185,24 @@ def load_translation_dataframe(input_dir: str) -> pd.DataFrame:
     csv_path = os.path.join(input_dir, "GeolCodeText_Trad_230317.csv")
     # TODO: All new GMU codes found in the XLSX table (generations ?
     json_path = os.path.join(input_dir, "all_codes_dict.json")
+    # Translation only in templates, and trying to move translation from datamodel.yaml
+    translation_xlsx_path = "translations.xlsx"
     # Ouputs
     xlsx_path = os.path.join(input_dir, "all_trads.xlsx")
 
     try:
-        # Load CSV data
+        # Load application translations
+        df_app_trad = pd.read_excel(
+            translation_xlsx_path, usecols=["msg_id", "de", "fr"]
+        )
+        df_app_trad.columns = df_app_trad.columns.str.upper()
+        df_app_trad.rename(columns={"MSG_ID": "GeolCodeInt"}, inplace=True)
+        df_app_trad["GeolCodeInt"] = df_app_trad["GeolCodeInt"].astype("string")
+
+        # Load Alan's CSV data
         df_trad_load = pd.read_csv(csv_path, sep=";")
 
-        # Load JSON data and convert to DataFrame
+        # Load all Coded Domains data and convert to DataFrame
         with open(json_path, "r", encoding="utf-8") as file:
             code_dict = json.load(file)
 
@@ -207,8 +220,18 @@ def load_translation_dataframe(input_dir: str) -> pd.DataFrame:
         df_from_json["DE"] = df_from_json["DE"].astype("string")
         df_from_json["FR"] = df_from_json["FR"].astype("string")
 
+        logger.info(f"Number translations in 'translation.xlsx': {len(df_app_trad)} ")
+        logger.info(
+            f"Number translations in 'all_codes_dict.json': {len(df_from_json)} "
+        )
+        logger.info(
+            f"Number translations in 'GeolCodeText_Trad_230317.csv': {len(df_trad_load)} "
+        )
+
         # Merge DataFrames
-        merged_df = pd.concat([df_trad_load, df_from_json])
+        merged_df = pd.concat([df_from_json, df_trad_load, df_app_trad])
+
+        merged_df["GeolCodeInt"] = merged_df["GeolCodeInt"].astype("string")
 
         # Clean and process the merged DataFrame
         df_trad = (
@@ -224,10 +247,12 @@ def load_translation_dataframe(input_dir: str) -> pd.DataFrame:
             .assign(
                 FR=lambda x: x["FR"].replace("0", "-")
             )  # Replace '0' with '-' in FR
+            .sort_values(by=["GeolCodeInt"])
             .set_index("GeolCodeInt")  # Set index
         )
 
         # Save to Excel
+
         df_trad.to_excel(xlsx_path, index=True, engine="openpyxl")
 
         logger.info(f"Translation file has {len(df_trad)} translations")
@@ -322,59 +347,6 @@ def create_msg(df):
 
 # TODO: to be removed
 # create_msg(df_trad)
-
-
-class Translator:
-    def __init__(self, df_trad):
-        self.failed_translations = 0
-        self.failed_strings = []
-        self._lock = threading.Lock()  # Ensures thread safety
-        self.df_trad = df_trad
-
-    def translate(self, geol_code, text, lang="FR"):
-        translated_text, _err = self._translate(geol_code, text, lang)
-        if _err:
-            with self._lock:
-                self.failed_translations += 1
-                self.failed_strings.append(text)
-
-        return translated_text
-
-    def _translate(self, geol_code, fallback, lang):
-        msg = fallback
-        err = False
-        if lang in ("DE", "FR"):
-            if str(geol_code) == "0":  # Convert to string for comparison
-                return ("–", False)
-            try:
-                value = self.df_trad.loc[str(geol_code), lang]  # Try to get single cell
-                if isinstance(value, pd.Series):
-                    msg = value.iloc[0]  # Take first value if still a Series
-                else:
-                    msg = value
-                # Handle both string '0' and integer 0 cases
-                if isinstance(msg, str) and msg.startswith("à "):
-                    msg = msg.replace("à ", "")
-
-            except KeyError as ke:
-                err = True
-                logger.debug(
-                    f"GeolCode not found while translating '{geol_code}': {ke}"
-                )
-
-            except Exception as e:
-                err = True
-                logger.debug(
-                    f"Unknown error while translating '{geol_code}'= {msg}: {e}"
-                )
-
-        return (msg, err)
-
-    def get_failed_count(self):
-        return self.failed_translations
-
-    def get_failed_strings(self):
-        return self.failed_strings
 
 
 # Custom sort key
@@ -648,6 +620,19 @@ class Report:
                                 pairs = get_subtype(
                                     self.sde_schema.subtypes, value
                                 )  # TODO
+
+                            # Short tables are treated like some CD
+                            # TODO
+                            if att_type == "table":
+                                for annex in model.get("annexes"):
+                                    if (
+                                        att_name.lower()
+                                        in annex.get("name", "").lower()
+                                    ):  # TODO: not very robust
+                                        annex_fname = annex.get("fname")
+                                        logger.info(f" Founbd {annex_fname}")
+                                        pairs = get_table_values(annex_fname)
+                                        break
 
                             if pairs is not None:
                                 att["pairs"] = pairs
@@ -991,6 +976,13 @@ def generate(lang, datamodel, output, input_dir):
                 return value[len(prefix) :]
         return value
 
+    def strip_final_dot(value):
+        ori = value
+        modified = value.strip().rstrip(".")
+        if ori != modified:
+            logger.info(f"FOUND: {modified}")
+        return modified
+
     # Define the custom filter function
     def format_date_locale(value, format="MMMM yyyy", locale="de_CH"):
         return babel.dates.format_date(date=value, format=format, locale=locale)
@@ -1035,6 +1027,7 @@ def generate(lang, datamodel, output, input_dir):
     env.filters["format_date_locale"] = format_date_locale
     env.filters["remove_prefix"] = remove_prefix
     env.filters["attribute_name"] = attribute_name
+    env.filters["strip_final_dot"] = strip_final_dot
 
     temp = env.get_template("model_markdown.j2")
 
