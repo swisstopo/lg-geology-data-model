@@ -2153,11 +2153,11 @@ themes:
     abrev: Abor      # TODO: to check
     table: GC_POINT_OBJECTS     # TODO: to check
     description:
-      de: |
+      de: >-
         Die Klasse Boreholes_PT beinhaltet Bohrungen und Sondierungen. (Auf alten gedruckten Karten
         wurde die Art der Sondierung nicht immer unterschieden. Es kann daher sein, dass in alten Karten
         Rammkernsondierungen als Bohrungen aufgenommen wurden.)
-      fr: |-
+      fr: >-
         La classe Boreholes_PT regroupe les forages et les sondages.
         (Sur les anciennes cartes imprimées, le genre d’objet
         n’était pas toujours distingué. D’ailleurs, il se peut que
@@ -2183,9 +2183,12 @@ themes:
     - name: abor_depth_bedr
       alias: depth_bedr
       description:
-        de: |
-          Tiefe (in Meter ab Terrainoberfläche) der Felsoberfläche. (Sofern die Bohrung das Festgestein nicht erreicht, z.B. «Bohrung, Fels nicht erreicht», beträgt der Wert 999, falls die Bohrung bereits im Festgestein beginnt, beträgt der Wert 0). Falls Festgestein erreicht wurde, aber nicht klar ist, dass es sich um die Felsoberfläche handelt, beträgt der Wert 888.
-        fr: |
+        de: >-
+          Tiefe (in Meter ab Terrainoberfläche) der Felsoberfläche. (Sofern die Bohrung das Festgestein nicht erreicht, 
+          z.B. «Bohrung, Fels nicht erreicht», beträgt der Wert 999, falls die Bohrung bereits im Festgestein beginnt, 
+          beträgt der Wert 0). Falls Festgestein erreicht wurde, aber nicht klar ist, dass es sich um die Felsoberfläche 
+          handelt, beträgt der Wert 888.
+        fr: >-
           Profondeur de la roche en place (en mètres depuis la surface). Si l’ouvrage
           n’atteint pas la roche en place,  par exemple forage interrompu dans la
           couverture quaternaire, la valeur est  999, au cas où le forage commence
