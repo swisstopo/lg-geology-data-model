@@ -4,6 +4,7 @@ import json
 import os
 import subprocess
 import sys
+import importlib
 import threading
 from typing import Dict, Any, Optional
 from pathlib import Path
@@ -18,12 +19,26 @@ from loguru import logger
 import traceback
 
 
-try:
-    from geocover.config import ATTRIBUTES_TO_IGNORE
-    from geocover.translator import Translator
-except ImportError:
-    from config import ATTRIBUTES_TO_IGNORE
-    from translator import Translator
+def dynamic_import(module_name, attr_name):
+    try:
+        module = importlib.import_module(module_name)
+        attr = getattr(module, attr_name)
+        logger.debug(f"Successfully imported '{attr_name}' from '{module_name}'")
+        return attr
+    except ModuleNotFoundError:
+        logger.warning(f"Module '{module_name}' not found.")
+    except AttributeError:
+        logger.warning(f"Attribute '{attr_name}' not found in '{module_name}'.")
+    return None
+
+
+ATTRIBUTES_TO_IGNORE = dynamic_import(
+    "geocover.config", "ATTRIBUTES_TO_IGNORE"
+) or dynamic_import("config", "ATTRIBUTES_TO_IGNORE")
+
+Translator = dynamic_import("geocover.translator", "Translator") or dynamic_import(
+    "translator", "Translator"
+)
 
 
 PACKAGE_NAME = "geocover"
@@ -114,6 +129,13 @@ df_trad = df_trad.set_index(["GeolCodeInt"])
 logger.info(f"Translation file has {len(df_trad)} translations")
 logger.info(f"Saving file to {translation_xlsx_path} with {len(df_trad)} translations")
 """
+
+
+def simplify_version(version_str):
+    parts = version_str.split(".")
+    if len(parts) >= 2:
+        return ".".join(parts[:2])
+    return version_str
 
 
 class SDESchema:
@@ -556,6 +578,7 @@ class Report:
                 self._model = yaml.load(f, Loader=yaml.FullLoader)
                 self._model["date"] = str(datetime.date.today())
                 self._model["hash"] = get_git_revision_short_hash()
+
             return self._model
 
     @property
@@ -598,9 +621,12 @@ class Report:
                         return None
                     table_name = cls.get("table")
                     attributes = cls.get("attributes")
-                    cls["abrev"] = (
-                        f"{theme['name'][0].upper()}{cls['name'][0:3].lower()}"
-                    )
+                    abrev = cls.get("abrev", "")
+                    if abrev == "":
+                        logger.error(f"Using default abrev: {cls_name}")
+                        abrev = f"{theme['name'][0].upper()}{cls['name'][0:3].lower()}"
+                    cls["abrev"] = abrev
+
                     if attributes:
                         attributes_in_model = []
                         for att in attributes:
@@ -959,6 +985,7 @@ def generate(lang, datamodel, output, input_dir):
     data["lang"] = lang
     data["date"] = now
     data["hash"] = get_git_revision_short_hash()
+    data["model"]["short_revision"] = simplify_version(data["model"]["revision"])
     locale = lang
 
     # logger.info(json.dumps(data, indent=4,  cls=DatetimeEncoder))
@@ -1032,7 +1059,7 @@ def generate(lang, datamodel, output, input_dir):
     temp = env.get_template("model_markdown.j2")
 
     json_fname = os.path.join(output_dir, lang, f"{project_name}.json")
-    logger.info(f"Generating {json_fname}")
+    logger.info(f"Generating JSON from model {json_fname}")
     with open(json_fname, "w", encoding="utf-8") as f:
         f.write(json.dumps(data, indent=4, cls=DatetimeEncoder))
 

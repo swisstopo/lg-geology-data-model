@@ -1,8 +1,8 @@
 ---
-title: {{ _("Geological datamodel") }}, {{ _("Revision %(name)s", name=model.short_revision) }}
-subtitle: {{_("Beschreibung und Datenkatalog")}}
-author: {{_("Bundesamt für Landestopographie swisstopo")}}
-date:  {{ date | format_date_locale('MMMM yyyy', lang) }} ({{hash}})
+title: Modèle de donnée géologique 2D (GeoCover), Révision 4.1
+subtitle: Description et catalogue de donnée
+author: Service géologique national — Office fédéral de topographie swisstopo
+date:  juin 2025 (3cbfb70)
 keywords:
   - "GeoCover"
   - "Metadata"
@@ -11,8 +11,8 @@ keywords:
   - "Vector data"
   - "Geology"
   - "Switzerland"
-subject: {{_("Geologische Landesaufnahme der Schweiz")}}
-lang: {{lang}}
+subject: Levé géologique de la Suisse
+lang: fr
 
 # Custom LaTeX headers
 # Left-align all tables
@@ -35,4 +35,3 @@ papersize: a4
 mainfont: "DejaVu Sans"
 
 ---
-

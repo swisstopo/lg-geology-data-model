@@ -5,7 +5,7 @@
 
 
 
-![Auszug aus Geocover und Beispiel für die Darstellung](geocover.png "Figure alt text")
+![Extrait de GeoCover et exemple de représentation](geocover.png "Figure alt text")
 
 
 
@@ -17,30 +17,35 @@
 
 
 
-# Thema ROCK_BODIES
+# Thème ROCK_BODIES
 
-## Klasse Unconsolidated_Deposits_PT (Runc){#unconsolidated-deposits-pt}
-Die Klasse [Unconsolidated_Deposits_PT](#unconsolidated-deposits-pt) umfasst einzelne Gesteine (Korngrösse: Steine bis Blöcke), die durch gravitative, glaziale oder anthropogene Transportprozesse an ihren heutigen Ort gelangten, respektive sich an Ort und Stelle durch Verwitterung des umliegenden Gesteins gebildet haben.
+## Classe Unconsolidated_Deposits_PT (Runc){#unconsolidated-deposits-pt}
+La classe [Unconsolidated_Deposits_PT](#unconsolidated-deposits-pt) comprend les volumes
+rocheux individualisés (de taille variable, des galets aux
+blocs) qui ont été transportés par des processus
+gravitaires, glaciaires ou anthropogéniques jusqu’à leur
+position actuelle, ou dégagés sur place par dégradation de
+la roche sous-jacente.
 
 
 
 
-Name             | Typ | Beschreibung                             |  Kard.
+Nom             | Type | Description                             |  Card.
 --------------------------|------------|-----------------------------------------------------|-----
-**KIND**                 | subtype                  | Objektart | [1]
-**STATUS**                 | [CD](#unconsolidated-deposits-pt-status)  | Zustand der Objektart. | [1]
-**ROCK_TYPE**                 | [CD](#unconsolidated-deposits-pt-rock-type)  | Gesteinstyp. | [0..1]
-**ROCK_SPE**                 | [CD](#unconsolidated-deposits-pt-rock-spe)  | Bezeichnung des Leitgesteins. | [0..1]
-**MAT_TYPE**                 | [ Tabelle ](#gc-litho-unco-cd)  | Materialbezeichnung (lithologische Einheit). | [0..1]
-**ORIG_DESCR**                 | string                  | Originalbezeichnung gemäss der Legende der zugrundeliegenden geologischen Karte | [0..1]
-**PROTECTED**                 | boolean                  | Geschützt: ja/nein | [0..1]
+**KIND**                 | subtype                  | Type de l&#39;objet | [1]
+**STATUS**                 | [CD](#unconsolidated-deposits-pt-status)  | État du type d&#39;objet | [1]
+**ROCK_TYPE**                 | [CD](#unconsolidated-deposits-pt-rock-type)  | Type de roche | [0..1]
+**ROCK_SPE**                 | [CD](#unconsolidated-deposits-pt-rock-spe)  | Description de la roche repère | [0..1]
+**MAT_TYPE**                 | [ Table ](#gc-litho-unco-cd)  | Description du matériel (unité lithologique) | [0..1]
+**ORIG_DESCR**                 | string                  | Description selon la carte géologique originale | [0..1]
+**PROTECTED**                 | boolean                  | Objet géologique protégé (oui / non)? | [0..1]
 
 
 
 
 
 #### Attribut  KIND
-_Objektart_
+_Type de l&#39;objet_
 
 
 |GeolCode|Deutsch|Français|
@@ -58,7 +63,7 @@ _Objektart_
 
 
 #### Attribut  STATUS {#unconsolidated-deposits-pt-status}
-_Zustand der Objektart_
+_État du type d&#39;objet_
 
 
 |GeolCode|Deutsch|Français|
@@ -74,7 +79,7 @@ _Zustand der Objektart_
 
 
 #### Attribut  ROCK_TYPE {#unconsolidated-deposits-pt-rock-type}
-_Gesteinstyp_
+_Type de roche_
 
 
 |GeolCode|Deutsch|Français|
@@ -89,7 +94,7 @@ _Gesteinstyp_
 
 
 #### Attribut  ROCK_SPE {#unconsolidated-deposits-pt-rock-spe}
-_Bezeichnung des Leitgesteins._
+_Description de la roche repère_
 
 
 |GeolCode|Deutsch|Français|
@@ -127,64 +132,64 @@ _Bezeichnung des Leitgesteins._
 
 
 #### Attribut  MAT_TYPE
-_Materialbezeichnung (lithologische Einheit)_
+_Description du matériel (unité lithologique)_
 
-Siehe [GC_LITHO_UNCO_CD](#gc-litho-unco-cd) in der Anhang
+Voir [GC_LITHO_UNCO_CD](#gc-litho-unco-cd) dans l'annexe
 
 
 
 
 
 #### Attribut  ORIG_DESCR
-_Originalbezeichnung gemäss der Legende der zugrundeliegenden geologischen Karte_
+_Description selon la carte géologique originale_
 
-_Datentyp :  string_
+_Type de donnée :  string_
 
 
 
 
 
 #### Attribut  PROTECTED
-_Geschützt: ja/nein_
+_Objet géologique protégé (oui / non)?_
 
-_Datentyp :  boolean_
-
-
-
-
-
-## Klasse Unconsolidated_Deposits_PLG (Runc){#unconsolidated-deposits-plg}
-Die Klasse [Unconsolidated_Deposits_PLG](#unconsolidated-deposits-plg) beinhaltet alle flächenhaft
-ausgeschiedenen Lockergesteine.
+_Type de donnée :  boolean_
 
 
 
 
-Name             | Typ | Beschreibung                             |  Kard.
+
+## Classe Unconsolidated_Deposits_PLG (Runc){#unconsolidated-deposits-plg}
+La classe [Unconsolidated_Deposits_PLG](#unconsolidated-deposits-plg) contient toutes les
+dépôts de roches meubles.
+
+
+
+
+Nom             | Type | Description                             |  Card.
 --------------------------|------------|-----------------------------------------------------|-----
-**KIND**                 | subtype                  | Objektart | [1]
-**LITSTRAT**                 | [ Tabelle ](#gc-litstrat-unco-cd)  | Lithostratigraphische Einheit. | [1]
-**LITHO**                 | [ Tabelle ](#gc-litho-cd)  | Lithologische Beschreibung. | [1]
-**CHRONO_T**                 | [ Tabelle ](#gc-chrono-cd)  | Chronostratigraphische Zuordnung der Obergrenze der Kartiereinheit (Top). | [1]
-**CHRONO_B**                 | [ Tabelle ](#gc-chrono-cd)  | Chronostratigraphische Zuordnung der Untergrenze der Kartiereinheit (Basis). | [1]
-**MAT_TYPE**                 | [ Tabelle ](#lithostratigraphic-units-litho)  | Materialbezeichnung (lithologische Einheit). | [0..3]
-**BURIED_OUT**                 | boolean                  | Wurde das Lockergestein wieder verdeckt (ja/nein)? | [1]
-**COMPOSIT**                 |                   | Zusammensetzung des Lockergesteins | [0..3]
-**ADMIXTURE**                 |                   | Beimengung | [0..2]
-**STRUCTUR**                 | [CD](#unconsolidated-deposits-plg-structur)  | Textur des Lockergesteins. | [0..1]
-**CHARACT**                 | [ Tabelle ](#gc-charcat)  | Spezifische Eigenschaft. | [0..3]
-**MORPHOLO**                 | [CD](#unconsolidated-deposits-plg-morpholo)  | Morphologie der Lockergesteinseinheit. | [0..1]
-**GLAC_TYPE**                 | [CD](#unconsolidated-deposits-plg-glac-type)  | Gletschertyp; Attribut nur für Moränen. | [0..1]
-**REF_YEAR**                 | string                  | Zeitpunkt oder Zeitperiode. Zum Beispiel «1940 1943, Periode der Drainage» (muss präzisiert werden) | [0..1]
-**THIN_COVER**                 | [CD](#unconsolidated-deposits-plg-thin-cover)  | Typ der geringmächtigen Lockermaterialbedeckung, wenn vorhanden. | [0..1]
-**ORIG_DESCR**                 | string                  | Originalbezeichnung gemäss der Legende der zugrunde liegenden geologischen Karte | [1]
+**KIND**                 | subtype                  | Type de l&#39;objet | [1]
+**LITSTRAT**                 | [ Table ](#gc-litstrat-unco-cd)  | Description lithostratigraphique | [1]
+**LITHO**                 | [ Table ](#gc-litho-cd)  | Description lithologique | [1]
+**CHRONO_T**                 | [ Table ](#gc-chrono-cd)  | Attribution chronostratigraphique du toit de la formation  (top) | [1]
+**CHRONO_B**                 | [ Table ](#gc-chrono-cd)  | Attribution chronostratigraphique de la base de la  formation (basis) | [1]
+**MAT_TYPE**                 | [ Table ](#lithostratigraphic-units-litho)  | Description du matériel (unité lithologique) | [0..3]
+**BURIED_OUT**                 | boolean                  | Est-ce que la roche consolidée est recouvert (oui / non)? | [1]
+**COMPOSIT**                 | table                  | Composition de la roche meuble | [0..3]
+**ADMIXTURE**                 | table                  | Incorporation | [0..2]
+**STRUCTUR**                 | [CD](#unconsolidated-deposits-plg-structur)  | Struccture de la roche meuble | [0..1]
+**CHARACT**                 | table                  | Charactéristique spécifique | [0..3]
+**MORPHOLO**                 | [CD](#unconsolidated-deposits-plg-morpholo)  | Morphologie de l’unité de roche meuble | [0..1]
+**GLAC_TYPE**                 | [CD](#unconsolidated-deposits-plg-glac-type)  | Type de glacier auquel le type d’objet est associé. Cet  attribut n’est valable que pour des moraines | [0..1]
+**REF_YEAR**                 | string                  | Information de temps ou période. Par ex. &#34;1940-1943: année de référence de l’ancienne ligne de rivage&#34; | [0..1]
+**THIN_COVER**                 | [CD](#unconsolidated-deposits-plg-thin-cover)  | Type de couverture meuble pelliculaire | [0..1]
+**ORIG_DESCR**                 | string                  | Description selon la légende de la carte géologique originale | [1]
 
 
 
 
 
 #### Attribut  KIND
-_Objektart_
+_Type de l&#39;objet_
 
 
 |GeolCode|Deutsch|Français|
@@ -195,75 +200,105 @@ _Objektart_
 
 
 #### Attribut  LITSTRAT
-_Lithostratigraphische Einheit._
+_Description lithostratigraphique_
 
-Siehe [GC_LITSTRAT_UNCO_CD](#gc-litstrat-unco-cd) in der Anhang
+Voir [GC_LITSTRAT_UNCO_CD](#gc-litstrat-unco-cd) dans l'annexe
 
 
 
 
 
 #### Attribut  LITHO
-_Lithologische Beschreibung_
+_Description lithologique_
 
-Siehe [GC_LITHO_CD](#gc-litho-cd) in der Anhang
+Voir [GC_LITHO_CD](#gc-litho-cd) dans l'annexe
 
 
 
 
 
 #### Attribut  CHRONO_T
-_Chronostratigraphische Zuordnung der Obergrenze der Kartiereinheit (Top)_
+_Attribution chronostratigraphique du toit de la formation  (top)_
 
-Siehe [GC_CHRONO_CD](#gc-chrono-cd) in der Anhang
+Voir [GC_CHRONO_CD](#gc-chrono-cd) dans l'annexe
 
 
 
 
 
 #### Attribut  CHRONO_B
-_Chronostratigraphische Zuordnung der Untergrenze der Kartiereinheit (Basis)_
+_Attribution chronostratigraphique de la base de la  formation (basis)_
 
-Siehe [GC_CHRONO_CD](#gc-chrono-cd) in der Anhang
+Voir [GC_CHRONO_CD](#gc-chrono-cd) dans l'annexe
 
 
 
 
 
 #### Attribut  MAT_TYPE
-_Materialbezeichnung (lithologische Einheit)_
+_Description du matériel (unité lithologique)_
 
-Siehe [Lithostratigraphic_Units_Litho](#lithostratigraphic-units-litho) in der Anhang
+Voir [Lithostratigraphic_Units_Litho](#lithostratigraphic-units-litho) dans l'annexe
 
 
 
 
 
 #### Attribut  BURIED_OUT
-_Wurde das Lockergestein wieder verdeckt (ja/nein)?_
+_Est-ce que la roche consolidée est recouvert (oui / non)?_
 
-_Datentyp :  boolean_
+_Type de donnée :  boolean_
 
 
 
 
 
 #### Attribut  COMPOSIT
-_Zusammensetzung des Lockergesteins_
+_Composition de la roche meuble_
 
+_Type de donnée :  table_
+
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|14508004 | sandig | sableux     |
+|14508002 | lehmig | limoneux     |
+|14508001 | tonig | argileux     |
+|14508006 | geröllreich | riche en galets     |
+|14508007 | torfig | tourbeux     |
+|14508003 | siltig | silteux     |
+|14508005 | kiesig | graveleux     |
 
 
 
 
 #### Attribut  ADMIXTURE
-_Beimengung_
+_Incorporation_
 
+_Type de donnée :  table_
+
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|14509008 | mit Hangschutt vermischt | mélangé à des éboulis     |
+|14509010 | mit Torf | avec tourbe     |
+|14509004 | mit Blöcken | avec blocs     |
+|14509013 | mit Schieferkohle | 14509013     |
+|14509002 | mit Lösslehm | avec loess argileux     |
+|14509011 | mit jurassischen Geröllen | avec galets jurassiens     |
+|14509012 | mit Geröllen aus Vogesen / Schwarzwald | avec galets des Vosges / de la Forêt Noire     |
+|14509001 | mit Löss | avec loess     |
+|14509006 | mit Block- und Geschiebestreu | parsemé de blocs     |
+|14509007 | mit Blockschutt vermischt | mélangé à des dépôts d&#39;éboulement     |
+|14509003 | mit Seekreide | avec craie lacustre     |
+|14509005 | mit alpinen Geröllen | avec galets alpins     |
+|14509009 | mit Verwitterungsschutt vermischt | mélangé à des résidus d&#39;altération     |
 
 
 
 
 #### Attribut  STRUCTUR {#unconsolidated-deposits-plg-structur}
-_Textur des Lockergesteins_
+_Struccture de la roche meuble_
 
 
 |GeolCode|Deutsch|Français|
@@ -287,16 +322,16 @@ _Textur des Lockergesteins_
 
 
 #### Attribut  CHARACT
-_Spezifische Eigenschaft_
+_Charactéristique spécifique_
 
-Siehe [gc_charcat](#gc-charcat) in der Anhang
+_Type de donnée :  table_
 
 
 
 
 
 #### Attribut  MORPHOLO {#unconsolidated-deposits-plg-morpholo}
-_Morphologie der Lockergesteinseinheit_
+_Morphologie de l’unité de roche meuble_
 
 
 |GeolCode|Deutsch|Français|
@@ -316,7 +351,7 @@ _Morphologie der Lockergesteinseinheit_
 
 
 #### Attribut  GLAC_TYPE {#unconsolidated-deposits-plg-glac-type}
-_Gletschertyp; Attribut nur für Moränen_
+_Type de glacier auquel le type d’objet est associé. Cet  attribut n’est valable que pour des moraines._
 
 
 |GeolCode|Deutsch|Français|
@@ -341,16 +376,16 @@ _Gletschertyp; Attribut nur für Moränen_
 
 
 #### Attribut  REF_YEAR
-_Zeitpunkt oder Zeitperiode. Zum Beispiel «1940 1943, Periode der Drainage» (muss präzisiert werden)._
+_Information de temps ou période. Par ex. &#34;1940-1943: année de référence de l’ancienne ligne de rivage&#34;._
 
-_Datentyp :  string_
+_Type de donnée :  string_
 
 
 
 
 
 #### Attribut  THIN_COVER {#unconsolidated-deposits-plg-thin-cover}
-_Typ der geringmächtigen Lockermaterialbedeckung, wenn vorhanden._
+_Type de couverture meuble pelliculaire_
 
 
 |GeolCode|Deutsch|Français|
@@ -368,41 +403,41 @@ _Typ der geringmächtigen Lockermaterialbedeckung, wenn vorhanden._
 
 
 #### Attribut  ORIG_DESCR
-_Originalbezeichnung gemäss der Legende der zugrunde liegenden geologischen Karte_
+_Description selon la légende de la carte géologique originale_
 
-_Datentyp :  string_
-
-
-
-
-
-## Klasse Bedrock_PLG (Rbed){#bedrock-plg}
-Die Klasse [Bedrock_PLG](#bedrock-plg) enthält alle lithostratigraphischen Festgesteinseinheiten.
+_Type de donnée :  string_
 
 
 
 
-Name             | Typ | Beschreibung                             |  Kard.
+
+## Classe Bedrock_PLG (Rbed){#bedrock-plg}
+La classe [Bedrock_PLG](#bedrock-plg) regroupe toutes les unités lithostratigraphiques de roches consolidées.
+
+
+
+
+Nom             | Type | Description                             |  Card.
 --------------------------|------------|-----------------------------------------------------|-----
-**KIND**                 | subtype                  | Objektart | [1]
-**TECTO**                 | [ Tabelle ](#gc-tecto-cd)  | Tektonische Zugehörigkeit. | [1]
-**GEOL_MAPPING_UNIT_ATT**                 | [ Tabelle ](#gc-geol-mapping-unit-att)  | Kartographische Einheiten. | [1]
-**LITSTRAT_FORMATION_BANK**                 | [ Tabelle ](#gc-litstrat-formation-bank-cd)  | Lithostratigraphische Formation. | [1]
-**CHRONO_TOP**                 | [ Tabelle ](#gc-chrono-cd)  | Chronostratigraphische Zuordnung der Obergrenze der Kartiereinheit (Top). | [1]
-**CHRONO_BASE**                 | [ Tabelle ](#gc-chrono-cd)  | Chronostratigraphische Zuordnung der Obergrenze der Kartiereinheit (Top). | [1]
-**LITHO_MAIN**                 | [ Tabelle ](#gc-litho-cd)  | Lithologische Beschreibung. | [1]
-**LITHO_SEC**                 | [ Tabelle ](#gc-litho-cd)  | Lithologische Beschreibung. | [1]
-**LITHO_TER**                 | [ Tabelle ](#gc-litho-cd)  | Lithologische Beschreibung. | [1]
-**CORRELATION**                 | [ Tabelle ](#gc-correlation-cd)  | Korrelation. | [1]
-**DESCRIPTION**                 | string                  | Originalbezeichnung gemäss der Legende der zugrundeliegenden geologischen Karte | [1]
-**EXOTIC_ELE**                 | boolean                  | Handelt es sich bei der Objektart um ein exotisches Element; z.B. Einschluss, Linse, Tasche, Olistholith (ja / nein)? | [0..1]
+**KIND**                 | subtype                  | Type de l&#39;objet | [1]
+**TECTO**                 | [ Table ](#gc-tecto-cd)  | Attribution tectonique | [1]
+**GEOL_MAPPING_UNIT_ATT**                 | [ Table ](#gc-geol-mapping-unit-att)  | Unités cartographique | [1]
+**LITSTRAT_FORMATION_BANK**                 | [ Table ](#gc-litstrat-formation-bank-cd)  | Formation lithostratigraphique | [1]
+**CHRONO_TOP**                 | [ Table ](#gc-chrono-cd)  | Attribution chronostratigraphique du toit de la  formation (top) | [1]
+**CHRONO_BASE**                 | [ Table ](#gc-chrono-cd)  | Attribution chronostratigraphique de la base de la formation | [1]
+**LITHO_MAIN**                 | [ Table ](#gc-litho-cd)  | Description lithologique principale | [1]
+**LITHO_SEC**                 | [ Table ](#gc-litho-cd)  | Description lithologique secondaire | [1]
+**LITHO_TER**                 | [ Table ](#gc-litho-cd)  | Description lithologique tertiaire | [1]
+**CORRELATION**                 | [ Table ](#gc-correlation-cd)  | Correlation | [1]
+**DESCRIPTION**                 | string                  | Description selon la légende de la carte géologique originale | [1]
+**EXOTIC_ELE**                 | boolean                  | S’agit-il d’un élément exotique (oui / non)? | [0..1]
 
 
 
 
 
 #### Attribut  KIND
-_Objektart_
+_Type de l&#39;objet_
 
 
 |GeolCode|Deutsch|Français|
@@ -413,101 +448,99 @@ _Objektart_
 
 
 #### Attribut  TECTO
-_Tektonische Zugehörigkeit_
+_Attribution tectonique_
 
-Siehe [GC_TECTO_CD](#gc-tecto-cd) in der Anhang
+Voir [GC_TECTO_CD](#gc-tecto-cd) dans l'annexe
 
 
 
 
 
 #### Attribut  GEOL_MAPPING_UNIT_ATT
-_Kartographische Einheiten_
+_Unités cartographique_
 
-Siehe [GC_GEOL_MAPPING_UNIT_ATT](#gc-geol-mapping-unit-att) in der Anhang
+Voir [GC_GEOL_MAPPING_UNIT_ATT](#gc-geol-mapping-unit-att) dans l'annexe
 
 
 
 
 
 #### Attribut  LITSTRAT_FORMATION_BANK
-_Lithostratigraphische Formation_
+_Formation lithostratigraphique_
 
-Siehe [GC_LITSTRAT_FORMATION_BANK_CD](#gc-litstrat-formation-bank-cd) in der Anhang
+Voir [GC_LITSTRAT_FORMATION_BANK_CD](#gc-litstrat-formation-bank-cd) dans l'annexe
 
 
 
 
 
 #### Attribut  CHRONO_TOP
-_Chronostratigraphische Zuordnung der Obergrenze der Kartiereinheit (Top)_
+_Attribution chronostratigraphique du toit de la  formation (top)_
 
-Siehe [GC_CHRONO_CD](#gc-chrono-cd) in der Anhang
+Voir [GC_CHRONO_CD](#gc-chrono-cd) dans l'annexe
 
 
 
 
 
 #### Attribut  CHRONO_BASE
-_Chronostratigraphische Zuordnung der Obergrenze der Kartiereinheit (Top)_
+_Attribution chronostratigraphique de la base de la formation_
 
-Siehe [GC_CHRONO_CD](#gc-chrono-cd) in der Anhang
+Voir [GC_CHRONO_CD](#gc-chrono-cd) dans l'annexe
 
 
 
 
 
 #### Attribut  LITHO_MAIN
-_Lithologische Beschreibung_
+_Description lithologique principale_
 
-Siehe [GC_LITHO_CD](#gc-litho-cd) in der Anhang
+Voir [GC_LITHO_CD](#gc-litho-cd) dans l'annexe
 
 
 
 
 
 #### Attribut  LITHO_SEC
-_Lithologische Beschreibung_
+_Description lithologique secondaire_
 
-Siehe [GC_LITHO_CD](#gc-litho-cd) in der Anhang
+Voir [GC_LITHO_CD](#gc-litho-cd) dans l'annexe
 
 
 
 
 
 #### Attribut  LITHO_TER
-_Lithologische Beschreibung_
+_Description lithologique tertiaire_
 
-Siehe [GC_LITHO_CD](#gc-litho-cd) in der Anhang
+Voir [GC_LITHO_CD](#gc-litho-cd) dans l'annexe
 
 
 
 
 
 #### Attribut  CORRELATION
-_Korrelation_
+_Correlation_
 
-Siehe [GC_CORRELATION_CD](#gc-correlation-cd) in der Anhang
+Voir [GC_CORRELATION_CD](#gc-correlation-cd) dans l'annexe
 
 
 
 
 
 #### Attribut  DESCRIPTION
-_Originalbezeichnung gemäss der Legende der zugrundeliegenden geologischen Karte_
+_Description selon la légende de la carte géologique originale_
 
-_Datentyp :  string_
+_Type de donnée :  string_
 
 
 
 
 
 #### Attribut  EXOTIC_ELE
-_Handelt es sich bei der Objektart um ein exotisches Element; z.B. Einschluss, Linse, Tasche, Olistholith (ja / nein)?_
+_S’agit-il d’un élément exotique (oui / non)?_
 
-_Datentyp :  boolean_
-
-
+_Type de donnée :  boolean_
 
 
 
@@ -515,26 +548,31 @@ _Datentyp :  boolean_
 
 
 
-# Thema GEOMORPHOLOGY
-
-## Klasse Instability_Structures_PT (Gins){#instability-structures-pt}
-Die Klasse [Instability_Structures_PT](#instability-structures-pt) enthält lokal beobachtete Hinweise auf Hanginstabilitäten
-(Rutschungen), die räumlich nicht abgegrenzt werden können. Wenn möglich, sollen instabile
-Gesteinsmassen durch Polygone erfasst werden (Klasse Instabilities_PLG).
 
 
+# Thème GEOMORPHOLOGY
+
+## Classe Instability_Structures_PT (Gins){#instability-structures-pt}
+La classe [Instability_Structures_PT](#instability-structures-pt) contient des indications
+sur des instabilités de pentes (glissements) observés
+localement, qui ne peuvent pas être délimités spatialement.
+Cependant, lorsque cela est possible, les masses de roches
+instables doivent être saisies comme polygones (classe
+Instabilities_PLG).
 
 
-Name             | Typ | Beschreibung                             |  Kard.
+
+
+Nom             | Type | Description                             |  Card.
 --------------------------|------------|-----------------------------------------------------|-----
-**KIND**                 | subtype                  | Objektart | [1]
+**KIND**                 | subtype                  | Type de l&#39;objet | [1]
 
 
 
 
 
 #### Attribut  KIND
-_Objektart_
+_Type de l&#39;objet_
 
 
 |GeolCode|Deutsch|Français|
@@ -544,23 +582,24 @@ _Objektart_
 
 
 
-## Klasse Instability_Structures_L (Gins){#instability-structures-l}
-Die Klasse [Instability_Structures_L](#instability-structures-l) umfasst linienförmige Morphologien, die sich als Folge von
-Hanginstabilitäten an der Oberfläche ausgebildet haben.
+## Classe Instability_Structures_L (Gins){#instability-structures-l}
+La classe [Instability_Structures_L](#instability-structures-l) comprend les morphologies
+linéaires qui se sont formées en surface à la suite
+d&#39;instabilités de pente.
 
 
 
 
-Name             | Typ | Beschreibung                             |  Kard.
+Nom             | Type | Description                             |  Card.
 --------------------------|------------|-----------------------------------------------------|-----
-**KIND**                 | subtype                  | Objektart | [1]
+**KIND**                 | subtype                  | Type de l&#39;objet | [1]
 
 
 
 
 
 #### Attribut  KIND
-_Objektart_
+_Type de l&#39;objet_
 
 
 |GeolCode|Deutsch|Français|
@@ -573,27 +612,30 @@ _Objektart_
 
 
 
-## Klasse Instabilities_PLG (Gins){#instabilities-plg}
-Die Klasse [Instabilities_PLG](#instabilities-plg) beinhaltet alle Polygone, die Gebiete mit instabilen
-Festgesteinen oder Lockergestein begrenzen. In dieser Klasse werden die Prozessräume
-der verschiedenen Typen von gleitenden Massenbewegungsprozessen ausgeschieden; die
-eigentlichen Gesteinskörper oder Lockergesteinsablagerungen, die von Massenbewegungsprozessen
-betroffen bzw. gebildet worden sind, werden in der Klasse [Bedrock_PLG](#bedrock-plg) beschrieben.
+## Classe Instabilities_PLG (Gins){#instabilities-plg}
+La classe [Instabilities_PLG](#instabilities-plg) contient tous les polygones qui
+délimitent les zones de roches solides ou meubles instables.
+Cette classe délimite les espaces de processus des
+différents types de processus de mouvements de masse; les
+corps rocheux ou les dépôts de roche meuble proprement dits,
+qui ont été affectés ou formés par des processus de
+mouvement de masse, sont décrits dans les classes
+Bedrock_PLG et/ou Unconsolidated_Deposits_PLG.
 
 
 
 
-Name             | Typ | Beschreibung                             |  Kard.
+Nom             | Type | Description                             |  Card.
 --------------------------|------------|-----------------------------------------------------|-----
-**KIND**                 | subtype                  | Objektart | [1]
-**MAIN_MOV**                 | [CD](#instabilities-plg-main-mov)  | Hauptbewegungsphase. | [0..1]
+**KIND**                 | subtype                  | Type de l&#39;objet | [1]
+**MAIN_MOV**                 | [CD](#instabilities-plg-main-mov)  | Phase de mouvement principale | [0..1]
 
 
 
 
 
 #### Attribut  KIND
-_Objektart_
+_Type de l&#39;objet_
 
 
 |GeolCode|Deutsch|Français|
@@ -607,7 +649,7 @@ _Objektart_
 
 
 #### Attribut  MAIN_MOV {#instabilities-plg-main-mov}
-_Hauptbewegungsphase_
+_Phase de mouvement principale_
 
 
 |GeolCode|Deutsch|Français|
@@ -620,24 +662,25 @@ _Hauptbewegungsphase_
 
 
 
-## Klasse Glacial_Structures_PT (Ggla){#glacial-structures-pt}
-Die Klasse [Glacial_Structures_PT](#glacial-structures-pt) enthält Objektarten, welche die ehemalige Anwesenheit eines
-Gletschers punktuell dokumentieren (Gletscherschliff ist ein räumlich orientiertes Objekt und
-befindet sich deshalb in der Klasse Lineation_PT).
+## Classe Glacial_Structures_PT (Ggla){#glacial-structures-pt}
+La classe [Glacial_Structures_PT](#glacial-structures-pt) contient des types d’objets
+qui montrent ponctuellement la présence dans le passé d’un
+glacier (les stries glaciaires sont des objets orientés et
+se trouvent en conséquence dans la classe Lineation_PT.)
 
 
 
 
-Name             | Typ | Beschreibung                             |  Kard.
+Nom             | Type | Description                             |  Card.
 --------------------------|------------|-----------------------------------------------------|-----
-**KIND**                 | subtype                  | Objektart | [1]
+**KIND**                 | subtype                  | Type de l&#39;objet | [1]
 
 
 
 
 
 #### Attribut  KIND
-_Objektart_
+_Type de l&#39;objet_
 
 
 |GeolCode|Deutsch|Français|
@@ -648,29 +691,30 @@ _Objektart_
 
 
 
-## Klasse Glacial_and_Periglacial_Structures_L (Ggla){#glacial-and-periglacial-structures-l}
-Die Klasse [Glacial_and_Periglacial_Structures_L](#glacial-and-periglacial-structures-l) enthält linienförmige Strukturen, die auf ein
-glaziales oder periglaziales Bildungsmilieu hindeuten.
+## Classe Glacial_and_Periglacial_Structures_L (Ggla){#glacial-and-periglacial-structures-l}
+La classe [Glacial_and_Periglacial_Structures_L](#glacial-and-periglacial-structures-l) contient des
+structures linéaires qui indiquent un milieu de formation
+glaciaire ou périglaciaire.
 
 
 
 
-Name             | Typ | Beschreibung                             |  Kard.
+Nom             | Type | Description                             |  Card.
 --------------------------|------------|-----------------------------------------------------|-----
-**KIND**                 | subtype                  | Objektart | [1]
-**MORAI_MO**                 | [CD](#glacial-and-periglacial-structures-l-morai-mo)  | Morphologie der Moräne. | [0..1]
-**GLAC_TYP**                 | [CD](#glacial-and-periglacial-structures-l-glac-typ)  | Gletschertyp, auf welchen die Objektart bezogen ist. | [0..1]
-**ICE_M_P**                 | [CD](#glacial-and-periglacial-structures-l-ice-m-p)  | Räumlicher Gletscherstand. | [0..1]
-**QUAT_STR**                 | [CD](#glacial-and-periglacial-structures-l-quat-str)  | Zeitliche quartärstratigraphische Zuordnung des Moränenwälls. | [0..1]
-**REF_YEAR**                 | integer                  | Referenzjahr des älteren Gletscherstandes | [0..1]
-**SOURCE**                 | string                  | Quellenangabe der historischen Unterlagen | [0..1]
+**KIND**                 | subtype                  | Type de l&#39;objet | [1]
+**MORAI_MO**                 | [CD](#glacial-and-periglacial-structures-l-morai-mo)  | Morphologie de la moraine | [0..1]
+**GLAC_TYP**                 | [CD](#glacial-and-periglacial-structures-l-glac-typ)  | Type de glacier auquel le type d’objet est associé | [0..1]
+**ICE_M_P**                 | [CD](#glacial-and-periglacial-structures-l-ice-m-p)  | Stade glaciaire | [0..1]
+**QUAT_STR**                 | [CD](#glacial-and-periglacial-structures-l-quat-str)  | Attribution chronostratigraphique du vallum morainique au sein du Quaternaire | [0..1]
+**REF_YEAR**                 | integer                  | Année de référence | [0..1]
+**SOURCE**                 | string                  | Source des données déduites à partir de données historiques | [0..1]
 
 
 
 
 
 #### Attribut  KIND
-_Objektart_
+_Type de l&#39;objet_
 
 
 |GeolCode|Deutsch|Français|
@@ -690,7 +734,7 @@ _Objektart_
 
 
 #### Attribut  MORAI_MO {#glacial-and-periglacial-structures-l-morai-mo}
-_Morphologie der Moräne_
+_Morphologie de la moraine_
 
 
 |GeolCode|Deutsch|Français|
@@ -704,7 +748,7 @@ _Morphologie der Moräne_
 
 
 #### Attribut  GLAC_TYP {#glacial-and-periglacial-structures-l-glac-typ}
-_Gletschertyp, auf welchen die Objektart bezogen ist_
+_Type de glacier auquel le type d’objet est associé_
 
 
 |GeolCode|Deutsch|Français|
@@ -718,7 +762,7 @@ _Gletschertyp, auf welchen die Objektart bezogen ist_
 
 
 #### Attribut  ICE_M_P {#glacial-and-periglacial-structures-l-ice-m-p}
-_Räumlicher Gletscherstand_
+_Stade glaciaire_
 
 
 |GeolCode|Deutsch|Français|
@@ -789,7 +833,7 @@ _Räumlicher Gletscherstand_
 
 
 #### Attribut  QUAT_STR {#glacial-and-periglacial-structures-l-quat-str}
-_Zeitliche quartärstratigraphische Zuordnung des Moränenwälls_
+_Attribution chronostratigraphique du vallum morainique au sein du Quaternaire_
 
 
 |GeolCode|Deutsch|Français|
@@ -809,39 +853,41 @@ _Zeitliche quartärstratigraphische Zuordnung des Moränenwälls_
 
 
 #### Attribut  REF_YEAR
-_Referenzjahr des älteren Gletscherstandes._
+_Année de référence._
 
-_Datentyp :  integer_
+_Type de donnée :  integer_
 
 
 
 
 
 #### Attribut  SOURCE
-_Quellenangabe der historischen Unterlagen_
+_Source des données déduites à partir de données historiques_
 
-_Datentyp :  string_
-
-
-
-
-
-## Klasse Glacial_Structures_PLG (Ggla){#glacial-structures-plg}
-Die Klasse [Glacial_Structures_PLG](#glacial-structures-plg) umfasst flächenhafte glaziale Landschaftsformen, die durch basales Fliessen des Gletschereises oder dessen Abschmelzen entstanden sind.
+_Type de donnée :  string_
 
 
 
 
-Name             | Typ | Beschreibung                             |  Kard.
+
+## Classe Glacial_Structures_PLG (Ggla){#glacial-structures-plg}
+La classe [Glacial_Structures_PLG](#glacial-structures-plg) regroupe les formes du
+paysage d’origine glaciaire qui se sont formées par
+écoulement basal de la glace du glacier ou par sa fonte.
+
+
+
+
+Nom             | Type | Description                             |  Card.
 --------------------------|------------|-----------------------------------------------------|-----
-**KIND**                 | subtype                  | Objektart | [1]
+**KIND**                 | subtype                  | Type de l&#39;objet | [1]
 
 
 
 
 
 #### Attribut  KIND
-_Objektart_
+_Type de l&#39;objet_
 
 
 |GeolCode|Deutsch|Français|
@@ -854,23 +900,24 @@ _Objektart_
 
 
 
-## Klasse Erosional_Structures_PT (Gero){#erosional-structures-pt}
-Die Klasse [Erosional_Structures_PT](#erosional-structures-pt) beinhaltet lokale Landschaftselemente, die sich im Laufe der
-Zeit unter Einwirkung von diversen Erosionsprozessen gebildet haben.
+## Classe Erosional_Structures_PT (Gero){#erosional-structures-pt}
+La classe [Erosional_Structures_PT](#erosional-structures-pt) contient des éléments
+locaux du paysage qui se sont formés au cours du temps sous
+l’influence de processus érosifs.
 
 
 
 
-Name             | Typ | Beschreibung                             |  Kard.
+Nom             | Type | Description                             |  Card.
 --------------------------|------------|-----------------------------------------------------|-----
-**KIND**                 | subtype                  | Objektart | [1]
+**KIND**                 | subtype                  | Type de l&#39;objet | [1]
 
 
 
 
 
 #### Attribut  KIND
-_Objektart_
+_Type de l&#39;objet_
 
 
 |GeolCode|Deutsch|Français|
@@ -880,23 +927,24 @@ _Objektart_
 
 
 
-## Klasse Erosional_Structures_L (Gero){#erosional-structures-l}
-Die Klasse [Erosional_Structures_L](#erosional-structures-l) enthält linienförmige erosive Formen wie Erosionsränder im
-Allgemeinen oder Terrassenkanten.
+## Classe Erosional_Structures_L (Gero){#erosional-structures-l}
+La classe [Erosional_Structures_L](#erosional-structures-l) contient des formes
+érosives linéaires telles que les bords d&#39;érosion en général
+ou les bords de terrasses.
 
 
 
 
-Name             | Typ | Beschreibung                             |  Kard.
+Nom             | Type | Description                             |  Card.
 --------------------------|------------|-----------------------------------------------------|-----
-**KIND**                 | subtype                  | Objektart | [1]
+**KIND**                 | subtype                  | Type de l&#39;objet | [1]
 
 
 
 
 
 #### Attribut  KIND
-_Objektart_
+_Type de l&#39;objet_
 
 
 |GeolCode|Deutsch|Français|
@@ -908,24 +956,26 @@ _Objektart_
 
 
 
-## Klasse Karstic_Structures_PT (Gkar){#karstic-structures-pt}
-Die Klasse [Karstic_Structures_PT](#karstic-structures-pt) beinhaltet Karstphänomene, die punktförmig dargestellt werden.
-Darunter fallen u.a. der Ponor oder der Eingang zu einer Höhle.
+## Classe Karstic_Structures_PT (Gkar){#karstic-structures-pt}
+La classe [Karstic_Structures_PT](#karstic-structures-pt) regroupe les phénomènes
+karstiques qui sont représentés par des formes ponctuelles.
+Elle contient entre autres le ponor ou l’entrée d’une
+grotte.
 
 
 
 
-Name             | Typ | Beschreibung                             |  Kard.
+Nom             | Type | Description                             |  Card.
 --------------------------|------------|-----------------------------------------------------|-----
-**KIND**                 | subtype                  | Objektart | [1]
-**ICE_CAVE**                 | boolean                  | Eisgrotte (ja / nein) | [0..1]
+**KIND**                 | subtype                  | Type de l&#39;objet | [1]
+**ICE_CAVE**                 | boolean                  | S’agit-il d’une glacière (oui / non) | [0..1]
 
 
 
 
 
 #### Attribut  KIND
-_Objektart_
+_Type de l&#39;objet_
 
 
 |GeolCode|Deutsch|Français|
@@ -945,30 +995,31 @@ _Objektart_
 
 
 #### Attribut  ICE_CAVE
-_Eisgrotte (ja / nein)_
+_S’agit-il d’une glacière (oui / non)_
 
-_Datentyp :  boolean_
-
-
-
-
-
-## Klasse Karstic_Structures_PLG (Gkar){#karstic-structures-plg}
-Die Klasse [Karstic_Structures_PLG](#karstic-structures-plg) umfasst flächenhafte Karstformen wie Dolinen oder Poljen.
+_Type de donnée :  boolean_
 
 
 
 
-Name             | Typ | Beschreibung                             |  Kard.
+
+## Classe Karstic_Structures_PLG (Gkar){#karstic-structures-plg}
+La classe [Karstic_Structures_PLG](#karstic-structures-plg) comprend les formes
+karstiques surfaciques telles que les dolines ou les poljés.
+
+
+
+
+Nom             | Type | Description                             |  Card.
 --------------------------|------------|-----------------------------------------------------|-----
-**KIND**                 | subtype                  | Objektart | [1]
+**KIND**                 | subtype                  | Type de l&#39;objet | [1]
 
 
 
 
 
 #### Attribut  KIND
-_Objektart_
+_Type de l&#39;objet_
 
 
 |GeolCode|Deutsch|Français|
@@ -981,24 +1032,24 @@ _Objektart_
 
 
 
-## Klasse Alluvial_and_Lacustrine_Structures_L (Gall){#alluvial-and-lacustrine-structures-l}
-Die Klasse [Alluvial_and_Lacustrine_Structures_L](#alluvial-and-lacustrine-structures-l) beinhaltet linienförmige Morphologien
-fluviatilen oder lakustrischen Ursprungs.
+## Classe Alluvial_and_Lacustrine_Structures_L (Gall){#alluvial-and-lacustrine-structures-l}
+La classe [Alluvial_and_Lacustrine_Structures_L](#alluvial-and-lacustrine-structures-l) contient les
+morphologies linéaires d’origine fluviatile ou lacustre.
 
 
 
 
-Name             | Typ | Beschreibung                             |  Kard.
+Nom             | Type | Description                             |  Card.
 --------------------------|------------|-----------------------------------------------------|-----
-**KIND**                 | subtype                  | Objektart | [1]
-**AGE**                 | [CD](#alluvial-and-lacustrine-structures-l-age)  | Alter der Objektart. | [0..1]
+**KIND**                 | subtype                  | Type de l&#39;objet | [1]
+**AGE**                 | [CD](#alluvial-and-lacustrine-structures-l-age)  | Âge du type d&#39;obje | [0..1]
 
 
 
 
 
 #### Attribut  KIND
-_Objektart_
+_Type de l&#39;objet_
 
 
 |GeolCode|Deutsch|Français|
@@ -1010,7 +1061,7 @@ _Objektart_
 
 
 #### Attribut  AGE {#alluvial-and-lacustrine-structures-l-age}
-_Alter der Objektart._
+_Âge du type d&#39;obje_
 
 
 |GeolCode|Deutsch|Français|
@@ -1027,32 +1078,29 @@ _Alter der Objektart._
 
 
 
-# Thema TECTONICS
+# Thème TECTONICS
 
-## Klasse Deformation_Structures_PT (Tdef){#deformation-structures-pt}
-Die Klasse [Deformation_Structures_PT](#deformation-structures-pt) beinhaltet punktuell beobachtete tektonische
-Deformationsstrukturen wie lokal stark verfaltete Stellen (Fältelung) oder Orte mit ausgeprägter
-Klüftung. Ebenfalls in dieser Klasse befinden sich konstruierte Punkte wie z.B. die Orientierung
-der Faltenachsenfläche.
+## Classe Deformation_Structures_PT (Tdef){#deformation-structures-pt}
+La classe [Deformation_Structures_PT](#deformation-structures-pt) contient des structures de déformation tectonique observées ponctuellement, telles que des endroits localement très plissés (plissotement) ou des endroits avec une fissuration marquée. Cette classe contient également des points construits, tels que l&#39;orientation de la surface de l&#39;axe des plis.
 
 
 
 
-Name             | Typ | Beschreibung                             |  Kard.
+Nom             | Type | Description                             |  Card.
 --------------------------|------------|-----------------------------------------------------|-----
-**KIND**                 | subtype                  | Objektart | [1]
-**AZIMUTH**                 | integer                  | Fallrichtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad von 0° bis 359° im Uhrzeigersinn gemessen | [0..1]
-**DIP**                 | integer                  | Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen
-aus der Horizontalen (0°) nach unten bis in die Vertikale (90°) | [0..1]
-**FOLD_TYP**                 | [CD](#deformation-structures-pt-fold-typ)  | Objekttyp. | [0..1]
-**FOLD_FOR**                 | [CD](#deformation-structures-pt-fold-for)  | Objektform. | [0..1]
+**KIND**                 | subtype                  | Type de l&#39;objet | [1]
+**AZIMUTH**                 | integer                  | Azimut du type d&#39;objet. L&#39;azimut est mesuré depuis le  nord en degré de 0° à 359° dans le sens des aiguilles  d&#39;une montre | [0..1]
+**DIP**                 | integer                  | Valeur du plongement du type d&#39;&#39;objet (valeur en degrés, mesurée de l’horizontale
+(0°) vers le bas jusqu’à la verticale (90°)) | [0..1]
+**FOLD_TYP**                 | [CD](#deformation-structures-pt-fold-typ)  | Caractéristique du type d&#39;objet | [0..1]
+**FOLD_FOR**                 | [CD](#deformation-structures-pt-fold-for)  | Forme du type d&#39;objet | [0..1]
 
 
 
 
 
 #### Attribut  KIND
-_Objektart_
+_Type de l&#39;objet_
 
 
 |GeolCode|Deutsch|Français|
@@ -1069,26 +1117,26 @@ _Objektart_
 
 
 #### Attribut  AZIMUTH
-_Fallrichtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad von 0° bis 359° im Uhrzeigersinn gemessen._
+_Azimut du type d&#39;objet. L&#39;azimut est mesuré depuis le  nord en degré de 0° à 359° dans le sens des aiguilles  d&#39;une montre_
 
-_Datentyp :  integer_
+_Type de donnée :  integer_
 
 
 
 
 
 #### Attribut  DIP
-_Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen
-aus der Horizontalen (0°) nach unten bis in die Vertikale (90°)._
+_Valeur du plongement du type d&#39;&#39;objet (valeur en degrés, mesurée de l’horizontale
+(0°) vers le bas jusqu’à la verticale (90°))_
 
-_Datentyp :  integer_
+_Type de donnée :  integer_
 
 
 
 
 
 #### Attribut  FOLD_TYP {#deformation-structures-pt-fold-typ}
-_Objekttyp_
+_Caractéristique du type d&#39;objet_
 
 
 |GeolCode|Deutsch|Français|
@@ -1102,7 +1150,7 @@ _Objekttyp_
 
 
 #### Attribut  FOLD_FOR {#deformation-structures-pt-fold-for}
-_Objektform_
+_Forme du type d&#39;objet_
 
 
 |GeolCode|Deutsch|Français|
@@ -1115,23 +1163,24 @@ _Objektform_
 
 
 
-## Klasse Deformation_Structures_L (Tdef){#deformation-structures-l}
-Die Klasse [Deformation_Structures_L](#deformation-structures-l) enthält linienförmige tektonische Deformationsstrukturen,
-wie den Verlauf des Faltenscharniers.
+## Classe Deformation_Structures_L (Tdef){#deformation-structures-l}
+La classe [Deformation_Structures_L](#deformation-structures-l) regroupe les structures
+linéaires de déformations tectoniques comme le tracé d’une
+charnière de pli.
 
 
 
 
-Name             | Typ | Beschreibung                             |  Kard.
+Nom             | Type | Description                             |  Card.
 --------------------------|------------|-----------------------------------------------------|-----
-**KIND**                 | subtype                  | Objektart | [1]
+**KIND**                 | subtype                  | Type de l&#39;objet | [1]
 
 
 
 
 
 #### Attribut  KIND
-_Objektart_
+_Type de l&#39;objet_
 
 
 |GeolCode|Deutsch|Français|
@@ -1141,24 +1190,25 @@ _Objektart_
 
 
 
-## Klasse Deformation_Structures_PLG (Tdef){#deformation-structures-plg}
-In der Klasse [Deformation_Structures_PLG](#deformation-structures-plg) befinden sich tektonisch geprägte Zonen wie
-tektonisierte Zonen oder Kluftzonen.
+## Classe Deformation_Structures_PLG (Tdef){#deformation-structures-plg}
+Dans la classe [Deformation_Structures_PLG](#deformation-structures-plg) se trouvent les
+régions marquées par des structures tectoniques à grande
+échelle comme les zones tectonisées ou les zones diaclasées.
 
 
 
 
-Name             | Typ | Beschreibung                             |  Kard.
+Nom             | Type | Description                             |  Card.
 --------------------------|------------|-----------------------------------------------------|-----
-**KIND**                 | subtype                  | Objektart | [1]
-**TYPE**                 | [CD](#deformation-structures-plg-type)  | Charakteristik der Objektarten. | [0..1]
+**KIND**                 | subtype                  | Type de l&#39;objet | [1]
+**TYPE**                 | [CD](#deformation-structures-plg-type)  | Caractéristique du type d&#39;objet | [0..1]
 
 
 
 
 
 #### Attribut  KIND
-_Objektart_
+_Type de l&#39;objet_
 
 
 |GeolCode|Deutsch|Français|
@@ -1170,7 +1220,7 @@ _Objektart_
 
 
 #### Attribut  TYPE {#deformation-structures-plg-type}
-_Charakteristik der Objektarten_
+_Caractéristique du type d&#39;objet_
 
 
 |GeolCode|Deutsch|Français|
@@ -1185,30 +1235,31 @@ _Charakteristik der Objektarten_
 
 
 
-## Klasse Tectonic_Boundaries_L (Ttec){#tectonic-boundaries-l}
-Die Klasse [Tectonic_Boundaries_L](#tectonic-boundaries-l) umfasst alle tektonischen Verwerfungen.
+## Classe Tectonic_Boundaries_L (Ttec){#tectonic-boundaries-l}
+La classe [Tectonic_Boundaries_L](#tectonic-boundaries-l) comprend toutes les
+accidents tectoniques.
 
 
 
 
-Name             | Typ | Beschreibung                             |  Kard.
+Nom             | Type | Description                             |  Card.
 --------------------------|------------|-----------------------------------------------------|-----
-**KIND**                 | subtype                  | Objektart | [1]
-**FAULT_MO**                 | [CD](#tectonic-boundaries-l-fault-mo)  | Bewegungsrichtung des Bruchs. | [0..1]
-**VERTI_MO**                 | [CD](#tectonic-boundaries-l-verti-mo)  | Bewegung parallel zur Fallrichtung der Bruchfläche. | [0..1]
-**HORIZ_MO**                 | [CD](#tectonic-boundaries-l-horiz-mo)  | Bewegung parallel zur Streichrichtung der Bruch- oder Scherfläche. | [0..1]
-**LIM_TYP**                 | [CD](#tectonic-boundaries-l-lim-typ)  | Typ der tektonischen Grenze (Deckengrenze,Schuppengrenze, etc.). | [1]
-**HIERA**                 | [CD](#tectonic-boundaries-l-hiera)  | Typ der tektonischen Grenze (Deckengrenze,Schuppengrenze, etc.). | [1]
-**STATUS**                 | [CD](#tectonic-boundaries-l-status)  | Zustand der Objektart. | [1]
-**META_STA**                 | [CD](#tectonic-boundaries-l-meta-sta)  | Tektonometamorphe Chronologie der Objektart. | [0..1]
-**NAME**                 | string                  | Spezifischer Name der Objektart | [0..1]
+**KIND**                 | subtype                  | Type de l&#39;objet | [1]
+**FAULT_MO**                 | [CD](#tectonic-boundaries-l-fault-mo)  | Mouvement de la faille | [0..1]
+**VERTI_MO**                 | [CD](#tectonic-boundaries-l-verti-mo)  | Mouvement parallèle au pendage du plan de faille | [0..1]
+**HORIZ_MO**                 | [CD](#tectonic-boundaries-l-horiz-mo)  | Mouvement parallèle à la direction du plan de faille ou de cisaillement | [0..1]
+**LIM_TYP**                 | [CD](#tectonic-boundaries-l-lim-typ)  | Type de limite tectonique | [1]
+**HIERA**                 | [CD](#tectonic-boundaries-l-hiera)  | Hiérarchie de l&#39;accident tectonique | [1]
+**STATUS**                 | [CD](#tectonic-boundaries-l-status)  | État du type d&#39;objet | [1]
+**META_STA**                 | [CD](#tectonic-boundaries-l-meta-sta)  | Chronologie tecto-métamorphique du type d’objet | [0..1]
+**NAME**                 | string                  | Nom du type de l&#39;objet | [0..1]
 
 
 
 
 
 #### Attribut  KIND
-_Objektart_
+_Type de l&#39;objet_
 
 
 |GeolCode|Deutsch|Français|
@@ -1226,7 +1277,7 @@ _Objektart_
 
 
 #### Attribut  FAULT_MO {#tectonic-boundaries-l-fault-mo}
-_Bewegungsrichtung des Bruchs_
+_Mouvement de la faille_
 
 
 |GeolCode|Deutsch|Français|
@@ -1241,7 +1292,7 @@ _Bewegungsrichtung des Bruchs_
 
 
 #### Attribut  VERTI_MO {#tectonic-boundaries-l-verti-mo}
-_Bewegung parallel zur Fallrichtung der Bruchfläche._
+_Mouvement parallèle au pendage du plan de faille_
 
 
 |GeolCode|Deutsch|Français|
@@ -1255,7 +1306,7 @@ _Bewegung parallel zur Fallrichtung der Bruchfläche._
 
 
 #### Attribut  HORIZ_MO {#tectonic-boundaries-l-horiz-mo}
-_Bewegung parallel zur Streichrichtung der Bruch- oder Scherfläche_
+_Mouvement parallèle à la direction du plan de faille ou de cisaillement_
 
 
 |GeolCode|Deutsch|Français|
@@ -1269,7 +1320,7 @@ _Bewegung parallel zur Streichrichtung der Bruch- oder Scherfläche_
 
 
 #### Attribut  LIM_TYP {#tectonic-boundaries-l-lim-typ}
-_Typ der tektonischen Grenze (Deckengrenze,Schuppengrenze, etc.)_
+_Type de limite tectonique_
 
 
 |GeolCode|Deutsch|Français|
@@ -1283,7 +1334,7 @@ _Typ der tektonischen Grenze (Deckengrenze,Schuppengrenze, etc.)_
 
 
 #### Attribut  HIERA {#tectonic-boundaries-l-hiera}
-_Typ der tektonischen Grenze (Deckengrenze,Schuppengrenze, etc.)_
+_Hiérarchie de l&#39;accident tectonique_
 
 
 |GeolCode|Deutsch|Français|
@@ -1298,7 +1349,7 @@ _Typ der tektonischen Grenze (Deckengrenze,Schuppengrenze, etc.)_
 
 
 #### Attribut  STATUS {#tectonic-boundaries-l-status}
-_Zustand der Objektart_
+_État du type d&#39;objet_
 
 
 |GeolCode|Deutsch|Français|
@@ -1314,7 +1365,7 @@ _Zustand der Objektart_
 
 
 #### Attribut  META_STA {#tectonic-boundaries-l-meta-sta}
-_Tektonometamorphe Chronologie der Objektart_
+_Chronologie tecto-métamorphique du type d’objet_
 
 
 |GeolCode|Deutsch|Français|
@@ -1329,11 +1380,9 @@ _Tektonometamorphe Chronologie der Objektart_
 
 
 #### Attribut  NAME
-_Spezifischer Name der Objektart._
+_Nom du type de l&#39;objet_
 
-_Datentyp :  string_
-
-
+_Type de donnée :  string_
 
 
 
@@ -1341,31 +1390,34 @@ _Datentyp :  string_
 
 
 
-# Thema MEASUREMENTS_SPATIAL_ORIENTATION
-
-## Klasse Folds_PT (Mfol){#folds-pt}
-Die Klasse [Folds_PT](#folds-pt) enthält Objektarten, welche die räumliche Lage von verfalteten geologischen
-Objekten (mit direkten Feldmessungen) beschreiben.
 
 
+# Thème MEASUREMENTS_SPATIAL_ORIENTATION
+
+## Classe Folds_PT (Mfol){#folds-pt}
+La classe [Folds_PT](#folds-pt) contient les objets qui décrivent la
+position spatiale d’objets géologiques plissés (par des
+mesures prises directement sur le terrain).
 
 
-Name             | Typ | Beschreibung                             |  Kard.
+
+
+Nom             | Type | Description                             |  Card.
 --------------------------|------------|-----------------------------------------------------|-----
-**KIND**                 | subtype                  | Objektart | [1]
-**FOLD_TYP**                 | [CD](#folds-pt-fold-typ)  | Faltentyp. | [0..1]
-**FOLD_FOR**                 | [CD](#folds-pt-fold-for)  | Faltenform. | [0..1]
-**PHASE**                 | [CD](#folds-pt-phase)  | Deformationsphase. | [0..1]
-**PHASE_REF**                 | string                  | Referenz für die Angabe der Deformationsphase | [0..1]
-**AZIMUTH**                 | integer                  | Einfallsrichtung (Azimut) der jeweiligen Punktobjektart (z.B. Scheitellinie, Faltenachse). Wert in Grad (0° 359°) im Uhrzeigersinn gemessen | [1]
-**DIP**                 | integer                  | Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die Vertikale (90°) | [0..1]
+**KIND**                 | subtype                  | Type de l&#39;objet | [1]
+**FOLD_TYP**                 | [CD](#folds-pt-fold-typ)  | Type de pli | [0..1]
+**FOLD_FOR**                 | [CD](#folds-pt-fold-for)  | Forme du type de pli | [0..1]
+**PHASE**                 | [CD](#folds-pt-phase)  | Phase de déformation | [0..1]
+**PHASE_REF**                 | string                  | Référence pour les données concernant la phase de déformation | [0..1]
+**AZIMUTH**                 | integer                  | Azimut du type d&#39;objet. L&#39;azimut est mesuré depuis le  nord en degré de 0° à 359° dans le sens des aiguilles  d&#39;une montre | [1]
+**DIP**                 | integer                  | Valeur du plongement du type d&#39;objet (en degrés), mesurée de l’horizontale (0°) vers le bas jusqu’à la  verticale (90°) | [0..1]
 
 
 
 
 
 #### Attribut  KIND
-_Objektart_
+_Type de l&#39;objet_
 
 
 |GeolCode|Deutsch|Français|
@@ -1378,7 +1430,7 @@ _Objektart_
 
 
 #### Attribut  FOLD_TYP {#folds-pt-fold-typ}
-_Faltentyp_
+_Type de pli_
 
 
 |GeolCode|Deutsch|Français|
@@ -1392,7 +1444,7 @@ _Faltentyp_
 
 
 #### Attribut  FOLD_FOR {#folds-pt-fold-for}
-_Faltenform_
+_Forme du type de pli_
 
 
 |GeolCode|Deutsch|Français|
@@ -1402,7 +1454,7 @@ _Faltenform_
 
 
 #### Attribut  PHASE {#folds-pt-phase}
-_Deformationsphase._
+_Phase de déformation_
 
 
 |GeolCode|Deutsch|Français|
@@ -1417,53 +1469,55 @@ _Deformationsphase._
 
 
 #### Attribut  PHASE_REF
-_Referenz für die Angabe der Deformationsphase._
+_Référence pour les données concernant la phase de déformation_
 
-_Datentyp :  string_
+_Type de donnée :  string_
 
 
 
 
 
 #### Attribut  AZIMUTH
-_Einfallsrichtung (Azimut) der jeweiligen Punktobjektart (z.B. Scheitellinie, Faltenachse). Wert in Grad (0° 359°) im Uhrzeigersinn gemessen_
+_Azimut du type d&#39;objet. L&#39;azimut est mesuré depuis le  nord en degré de 0° à 359° dans le sens des aiguilles  d&#39;une montre._
 
-_Datentyp :  integer_
+_Type de donnée :  integer_
 
 
 
 
 
 #### Attribut  DIP
-_Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die Vertikale (90°)._
+_Valeur du plongement du type d&#39;objet (en degrés), mesurée de l’horizontale (0°) vers le bas jusqu’à la  verticale (90°)_
 
-_Datentyp :  integer_
-
-
-
-
-
-## Klasse Lineation_PT (Mlin){#lineation-pt}
-In der Klasse [Lineation_PT](#lineation-pt) finden sich Objektarten, welche die räumliche Lage von diversen
-Linearen mit direkten Feldmessungen beschreiben. Die räumliche Lage u.a. von Gletscherschliffen
-und Rutschharnischen ist ebenso Teil dieser Klasse wie die Orientierung von Streckungs- oder
-Intersektionslineationen.
+_Type de donnée :  integer_
 
 
 
 
-Name             | Typ | Beschreibung                             |  Kard.
+
+## Classe Lineation_PT (Mlin){#lineation-pt}
+La classe [Lineation_PT](#lineation-pt) contient des structures linéaires
+dont la position spatiale est décrite par des mesures
+directes sur le terrain. La position dans l’espace, entre
+autre de stries glaciaires et de tectoglyphes, fait aussi
+partie de cette classe tout comme l’orientation de la
+linéation d’intersection ou de linéation d’étirement.
+
+
+
+
+Nom             | Type | Description                             |  Card.
 --------------------------|------------|-----------------------------------------------------|-----
-**KIND**                 | subtype                  | Objektart | [1]
-**AZIMUTH**                 | integer                  | Einfallsrichtung (Azimut) der jeweiligen Punktobjektart (z.B. Scheitellinie, Faltenachse). Wert in Grad (0° 359°) im Uhrzeigersinn gemessen | [1]
-**DIP**                 | integer                  | Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die Vertikale (90°) | []
+**KIND**                 | subtype                  | Type de l&#39;objet | [1]
+**AZIMUTH**                 | integer                  | Azimut du type d&#39;objet. L&#39;azimut est mesuré depuis le  nord en degré de 0° à 359° dans le sens des aiguilles  d&#39;une montre | [1]
+**DIP**                 | integer                  | Valeur du plongement du type d&#39;objet (en degrés), mesurée de l’horizontale (0°) vers le bas jusqu’à la  verticale (90°) | []
 
 
 
 
 
 #### Attribut  KIND
-_Objektart_
+_Type de l&#39;objet_
 
 
 |GeolCode|Deutsch|Français|
@@ -1477,45 +1531,47 @@ _Objektart_
 
 
 #### Attribut  AZIMUTH
-_Einfallsrichtung (Azimut) der jeweiligen Punktobjektart (z.B. Scheitellinie, Faltenachse). Wert in Grad (0° 359°) im Uhrzeigersinn gemessen_
+_Azimut du type d&#39;objet. L&#39;azimut est mesuré depuis le  nord en degré de 0° à 359° dans le sens des aiguilles  d&#39;une montre_
 
-_Datentyp :  integer_
+_Type de donnée :  integer_
 
 
 
 
 
 #### Attribut  DIP
-_Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die Vertikale (90°)._
+_Valeur du plongement du type d&#39;objet (en degrés), mesurée de l’horizontale (0°) vers le bas jusqu’à la  verticale (90°)_
 
-_Datentyp :  integer_
-
-
-
-
-
-## Klasse Planar_Structures_PT (Mpla){#planar-structures-pt}
-Die Klasse [Planar_Structures_PT](#planar-structures-pt) enthält Objektarten, welche die räumliche Lage von planaren Strukturen mit direkten Feldmessungen beschreiben.
+_Type de donnée :  integer_
 
 
 
 
-Name             | Typ | Beschreibung                             |  Kard.
+
+## Classe Planar_Structures_PT (Mpla){#planar-structures-pt}
+La classe [Planar_Structures_PT](#planar-structures-pt) contient des types d&#39;objets
+qui décrivent la position des structures planaires avec des
+mesures directes sur le terrain.
+
+
+
+
+Nom             | Type | Description                             |  Card.
 --------------------------|------------|-----------------------------------------------------|-----
-**KIND**                 | subtype                  | Objektart | [1]
-**POLARITY**                 | [CD](#planar-structures-pt-polarity)  | Position der Objektart im Raum. | [0..1]
-**PHASE**                 | [CD](#planar-structures-pt-phase)  | Deformationsphase. | [0..1]
-**PHASE_REF**                 | string                  | Referenz für die Angabe der Deformationsphase | [0..1]
-**OB_DIP_SLO**                 | boolean                  | Dip slope (ja / nein)? | [0..1]
-**AZIMUTH**                 | integer                  | Einfallsrichtung (Azimut) der jeweiligen Punktobjektart (z.B. Scheitellinie, Faltenachse). Wert in Grad (0° 359°) im Uhrzeigersinn gemessen | [1]
-**DIP**                 | integer                  | Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die Vertikale (90°) | []
+**KIND**                 | subtype                  | Type de l&#39;objet | [1]
+**POLARITY**                 | [CD](#planar-structures-pt-polarity)  | Polarité du type d&#39;objet dans l&#39;espace | [0..1]
+**PHASE**                 | [CD](#planar-structures-pt-phase)  | Phase de déformation | [0..1]
+**PHASE_REF**                 | string                  | Référence pour les données concernant la phase de déformation | [0..1]
+**OB_DIP_SLO**                 | boolean                  | Dip slope (oui / non)? | [0..1]
+**AZIMUTH**                 | integer                  | Azimut du type d&#39;objet. L&#39;azimut est mesuré depuis le  nord en degré de 0° à 359° dans le sens des aiguilles  d&#39;une montre | [1]
+**DIP**                 | integer                  | Valeur du plongement du type d&#39;objet (en degrés), mesurée de l’horizontale (0°) vers le bas jusqu’à la  verticale (90°) | []
 
 
 
 
 
 #### Attribut  KIND
-_Objektart_
+_Type de l&#39;objet_
 
 
 |GeolCode|Deutsch|Français|
@@ -1531,7 +1587,7 @@ _Objektart_
 
 
 #### Attribut  POLARITY {#planar-structures-pt-polarity}
-_Position der Objektart im Raum_
+_Polarité du type d&#39;objet dans l&#39;espace_
 
 
 |GeolCode|Deutsch|Français|
@@ -1545,7 +1601,7 @@ _Position der Objektart im Raum_
 
 
 #### Attribut  PHASE {#planar-structures-pt-phase}
-_Deformationsphase_
+_Phase de déformation_
 
 
 |GeolCode|Deutsch|Français|
@@ -1560,38 +1616,36 @@ _Deformationsphase_
 
 
 #### Attribut  PHASE_REF
-_Referenz für die Angabe der Deformationsphase._
+_Référence pour les données concernant la phase de déformation_
 
-_Datentyp :  string_
+_Type de donnée :  string_
 
 
 
 
 
 #### Attribut  OB_DIP_SLO
-_Dip slope (ja / nein)?_
+_Dip slope (oui / non)?_
 
-_Datentyp :  boolean_
+_Type de donnée :  boolean_
 
 
 
 
 
 #### Attribut  AZIMUTH
-_Einfallsrichtung (Azimut) der jeweiligen Punktobjektart (z.B. Scheitellinie, Faltenachse). Wert in Grad (0° 359°) im Uhrzeigersinn gemessen_
+_Azimut du type d&#39;objet. L&#39;azimut est mesuré depuis le  nord en degré de 0° à 359° dans le sens des aiguilles  d&#39;une montre_
 
-_Datentyp :  integer_
+_Type de donnée :  integer_
 
 
 
 
 
 #### Attribut  DIP
-_Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die Vertikale (90°)._
+_Valeur du plongement du type d&#39;objet (en degrés), mesurée de l’horizontale (0°) vers le bas jusqu’à la  verticale (90°)_
 
-_Datentyp :  integer_
-
-
+_Type de donnée :  integer_
 
 
 
@@ -1599,25 +1653,28 @@ _Datentyp :  integer_
 
 
 
-# Thema LOCAL_ADDITIONAL_INFORMATION
-
-## Klasse Anomalies_PT (Lano){#anomalies-pt}
-Die Klasse [Anomalies_PT](#anomalies-pt) beinhaltet lokal beobachtete und / oder gemessene Anomalien.
 
 
+# Thème LOCAL_ADDITIONAL_INFORMATION
+
+## Classe Anomalies_PT (Lano){#anomalies-pt}
+La classe [Anomalies_PT](#anomalies-pt) contient des anomalies observées et /
+ou mesurées localement.
 
 
-Name             | Typ | Beschreibung                             |  Kard.
+
+
+Nom             | Type | Description                             |  Card.
 --------------------------|------------|-----------------------------------------------------|-----
-**KIND**                 | subtype                  | Objektart | [1]
-**TYPE**                 | [CD](#anomalies-pt-type)  | Charakteristik der Objektart. | []
+**KIND**                 | subtype                  | Type de l&#39;objet | [1]
+**TYPE**                 | [CD](#anomalies-pt-type)  | Caractéristique du type d&#39;objet | []
 
 
 
 
 
 #### Attribut  KIND
-_Objektart_
+_Type de l&#39;objet_
 
 
 |GeolCode|Deutsch|Français|
@@ -1629,7 +1686,7 @@ _Objektart_
 
 
 #### Attribut  TYPE {#anomalies-pt-type}
-_Charakteristik der Objektart._
+_Caractéristique du type d&#39;objet_
 
 
 |GeolCode|Deutsch|Français|
@@ -1638,27 +1695,28 @@ _Charakteristik der Objektart._
 
 
 
-## Klasse Fossils_PT (Lfos){#fossils-pt}
-Die Klasse [Fossils_PT](#fossils-pt) enthält alle Fossilfundstellen.
+## Classe Fossils_PT (Lfos){#fossils-pt}
+La classe [Fossils_PT](#fossils-pt) contient tous les gisements.
+fossilifères
 
 
 
 
-Name             | Typ | Beschreibung                             |  Kard.
+Nom             | Type | Description                             |  Card.
 --------------------------|------------|-----------------------------------------------------|-----
-**KIND**                 | subtype                  | Objektart | [1]
-**DIVISION**                 | [CD](#fossils-pt-division)  | Fossilienkategorie, zu welcher die Objektinstanz gehört. | [0..1]
-**SYSTEM**                 | [ Tabelle ](#gc-system)  | Fossiliengruppe. | [0..5]
-**DAT_METH**                 | [CD](#fossils-pt-dat-meth)  | Datierungsmethode. | [0..1]
-**STATUS**                 | [CD](#fossils-pt-status)  | Zustand der Objektart. | [0..1]
-**PROTECTED**                 | boolean                  | Geschützte Fossilfundstelle (ja / nein)? | [0..1]
+**KIND**                 | subtype                  | Type de l&#39;objet | [1]
+**DIVISION**                 | [CD](#fossils-pt-division)  | Catégorie de fossile à laquelle appartient l&#39;objet | [0..1]
+**SYSTEM**                 | table                  | Groupe de fossiles | [0..5]
+**DAT_METH**                 | [CD](#fossils-pt-dat-meth)  | Méthode de datation | [0..1]
+**STATUS**                 | [CD](#fossils-pt-status)  | État du type d&#39;objet | [0..1]
+**PROTECTED**                 | boolean                  | Objet géologique protégé (oui / non)? | [0..1]
 
 
 
 
 
 #### Attribut  KIND
-_Objektart_
+_Type de l&#39;objet_
 
 
 |GeolCode|Deutsch|Français|
@@ -1669,7 +1727,7 @@ _Objektart_
 
 
 #### Attribut  DIVISION {#fossils-pt-division}
-_Fossilienkategorie, zu welcher die Objektinstanz gehört._
+_Catégorie de fossile à laquelle appartient l&#39;objet_
 
 
 |GeolCode|Deutsch|Français|
@@ -1686,16 +1744,39 @@ _Fossilienkategorie, zu welcher die Objektinstanz gehört._
 
 
 #### Attribut  SYSTEM
-_Fossiliengruppe._
+_Groupe de fossiles_
 
-Siehe [gc_system](#gc-system) in der Anhang
+_Type de donnée :  table_
 
+
+|GeolCode|Deutsch|Français|
+|---------------|----------------------------------------|----------------------------------------|
+|12903008 | Holz | bois     |
+|12903010 | Schwämme | éponges     |
+|12903018 | Reptilien | reptiles     |
+|12903004 | Foraminiferen | foraminifères     |
+|12903013 | Mollusken | mollusques     |
+|12903002 | Ostrakoden | ostracodes     |
+|12903015 | Bivalven | bivalves     |
+|12903021 | Palynomorphe | palynomorphes     |
+|12903011 | Korallen | coraux     |
+|12903012 | Brachiopoden | brachiopodes     |
+|12903001 | Vertebraten | vertébrés     |
+|12903019 | Säugetiere | mammifères     |
+|12903006 | Blätter | feuilles     |
+|12903007 | Gräser | graminées     |
+|12903016 | Echinodermen | échinodermes     |
+|12903003 | Gastropoden | gastéropodes     |
+|12903005 | Algen | algues     |
+|12903009 | Ammoniten | ammonites     |
+|12903014 | Cephalopoden | céphalopodes     |
+|12903017 | Fische | poissons     |
 
 
 
 
 #### Attribut  DAT_METH {#fossils-pt-dat-meth}
-_Datierungsmethode._
+_Méthode de datation_
 
 
 |GeolCode|Deutsch|Français|
@@ -1708,7 +1789,7 @@ _Datierungsmethode._
 
 
 #### Attribut  STATUS {#fossils-pt-status}
-_Zustand der Objektart_
+_État du type d&#39;objet_
 
 
 |GeolCode|Deutsch|Français|
@@ -1722,34 +1803,35 @@ _Zustand der Objektart_
 
 
 #### Attribut  PROTECTED
-_Geschützte Fossilfundstelle (ja / nein)?_
+_Objet géologique protégé (oui / non)?_
 
-_Datentyp :  boolean_
-
-
-
-
-
-## Klasse Indication_of_Resources_PT (Lind){#indication-of-resources-pt}
-Die Klasse [Indication_of_Resources_PT](#indication-of-resources-pt) beinhaltet Fundstellen von vulkanischen, mineralischen
-und nicht-mineralischen Rohstoffen.
+_Type de donnée :  boolean_
 
 
 
 
-Name             | Typ | Beschreibung                             |  Kard.
+
+## Classe Indication_of_Resources_PT (Lres){#indication-of-resources-pt}
+La classe [Indication_of_Resources_PT](#indication-of-resources-pt) regroupe les gisements
+de minéraux, de gaz, d’hydrocarbures et de matériel
+volcanique
+
+
+
+
+Nom             | Type | Description                             |  Card.
 --------------------------|------------|-----------------------------------------------------|-----
-**KIND**                 | subtype                  | Objektart | [1]
-**STATUS**                 | [CD](#indication-of-resources-pt-status)  | Zustand der Objektart. | [0..1]
-**MATERIAL**                 | [CD](#indication-of-resources-pt-material)  | Material, das mit der Objektart in Verbindung steht. | [0..1]
-**CHEMISTRY**                 | string                  | Chemische Komponente(n) oder Mineralien, welche die Natur der Objektart charakterisieren | [0..1]
+**KIND**                 | subtype                  | Type de l&#39;objet | [1]
+**STATUS**                 | [CD](#indication-of-resources-pt-status)  | Etat du type d&#39;objet | [0..1]
+**MATERIAL**                 | [CD](#indication-of-resources-pt-material)  | Matériau associé au type d&#39;objet | [0..1]
+**CHEMISTRY**                 | string                  | Composant(s) chimique(s) caractérisant la nature du type d&#39;objet | [0..1]
 
 
 
 
 
 #### Attribut  KIND
-_Objektart_
+_Type de l&#39;objet_
 
 
 |GeolCode|Deutsch|Français|
@@ -1768,7 +1850,7 @@ _Objektart_
 
 
 #### Attribut  STATUS {#indication-of-resources-pt-status}
-_Zustand der Objektart_
+_Etat du type d&#39;objet_
 
 
 |GeolCode|Deutsch|Français|
@@ -1782,7 +1864,7 @@ _Zustand der Objektart_
 
 
 #### Attribut  MATERIAL {#indication-of-resources-pt-material}
-_Material, das mit der Objektart in Verbindung steht_
+_Matériau associé au type d&#39;objet_
 
 
 |GeolCode|Deutsch|Français|
@@ -1799,31 +1881,32 @@ _Material, das mit der Objektart in Verbindung steht_
 
 
 #### Attribut  CHEMISTRY
-_Chemische Komponente(n) oder Mineralien, welche die Natur der Objektart charakterisieren._
+_Composant(s) chimique(s) caractérisant la nature du type d&#39;objet_
 
-_Datentyp :  string_
-
-
-
-
-
-## Klasse Mineralised_Zone_L (Lmin){#mineralised-zone-l}
-Die Klasse [Mineralised_Zone_L](#mineralised-zone-l) beinhaltet Vererzungszonen.
+_Type de donnée :  string_
 
 
 
 
-Name             | Typ | Beschreibung                             |  Kard.
+
+## Classe Mineralised_Zone_L (Lmin){#mineralised-zone-l}
+La classe [Mineralised_Zone_L](#mineralised-zone-l) contient les zones
+minéralisées.
+
+
+
+
+Nom             | Type | Description                             |  Card.
 --------------------------|------------|-----------------------------------------------------|-----
-**KIND**                 | subtype                  | Objektart | [1]
-**CHEMISTRY**                 | string                  | Chemische Komponente(n), welche die Natur der Objektart charakterisieren | [0..1]
+**KIND**                 | subtype                  | Type de l&#39;objet | [1]
+**CHEMISTRY**                 | string                  | Composant(s) chimique(s) caractérisant la nature du type d&#39;objet | [0..1]
 
 
 
 
 
 #### Attribut  KIND
-_Objektart_
+_Type de l&#39;objet_
 
 
 |GeolCode|Deutsch|Français|
@@ -1834,31 +1917,32 @@ _Objektart_
 
 
 #### Attribut  CHEMISTRY
-_Chemische Komponente(n), welche die Natur der Objektart charakterisieren._
+_Composant(s) chimique(s) caractérisant la nature du type d&#39;objet._
 
-_Datentyp :  string_
-
-
-
-
-
-## Klasse Sedimentary_Structures_PT (Lsed){#sedimentary-structures-pt}
-Die Klasse [Sedimentary_Structures_PT](#sedimentary-structures-pt) enthält beobachtete Sedimentstrukturen.
+_Type de donnée :  string_
 
 
 
 
-Name             | Typ | Beschreibung                             |  Kard.
+
+## Classe Sedimentary_Structures_PT (Lsed){#sedimentary-structures-pt}
+La classe [Sedimentary_Structures_PT](#sedimentary-structures-pt) contient la description
+des structures sédimentaires observées.
+
+
+
+
+Nom             | Type | Description                             |  Card.
 --------------------------|------------|-----------------------------------------------------|-----
-**KIND**                 | subtype                  | Objektart | [1]
-**AZIMUTH**                 | integer                  | Orientierung des Symbols. Wert in Grad (0° bis 359°) im Uhrzeigersinn gemessen | [0..1]
+**KIND**                 | subtype                  | Type de l&#39;objet | [1]
+**AZIMUTH**                 | integer                  | Azimut du type d&#39;objet. L&#39;azimut est mesuré depuis le  nord en degré de 0° à 359° dans le sens des aiguilles  d&#39;une montre | [0..1]
 
 
 
 
 
 #### Attribut  KIND
-_Objektart_
+_Type de l&#39;objet_
 
 
 |GeolCode|Deutsch|Français|
@@ -1874,35 +1958,36 @@ _Objektart_
 
 
 #### Attribut  AZIMUTH
-_Orientierung des Symbols. Wert in Grad (0° bis 359°) im Uhrzeigersinn gemessen._
+_Azimut du type d&#39;objet. L&#39;azimut est mesuré depuis le  nord en degré de 0° à 359° dans le sens des aiguilles  d&#39;une montre._
 
-_Datentyp :  integer_
-
-
-
-
-
-## Klasse Type_Localities_PT (Ltyp){#type-localities-pt}
-Die Klasse [Type_Localities_PT](#type-localities-pt) beinhaltet diejenigen Objektarten, die Typusprofile oder wichtige
-geologische Aufschlüsse beschreiben.
+_Type de donnée :  integer_
 
 
 
 
-Name             | Typ | Beschreibung                             |  Kard.
+
+## Classe Type_Localities_PT (Ltyp){#type-localities-pt}
+La classe [Type_Localities_PT](#type-localities-pt) regroupe les types d’objets qui
+décrivent les profiles-types ou les affleurements
+géologiques importants.
+
+
+
+
+Nom             | Type | Description                             |  Card.
 --------------------------|------------|-----------------------------------------------------|-----
-**KIND**                 | subtype                  | Objektart | [1]
-**STRATI**                 | [CD](#type-localities-pt-strati)  | Lithostratigraphischer Zusatz zum Objekt. | [0..1]
-**NAME**                 | string                  | Name der Typlokalität. / Beschreibung des geologisch relevanten Aufschlusses | [0..1]
-**ACCESSIBIL**                 | boolean                  | Ist die Objektart zum Zeitpunkt der Aufnahme aufgeschlossen (ja / nein)? | [0..1]
-**PROTECTED**                 | boolean                  | Geschütztes geologisches Objekt (ja / nein)? | [0..1]
+**KIND**                 | subtype                  | Type de l&#39;objet | [1]
+**STRATI**                 | [CD](#type-localities-pt-strati)  | Complément lithostratigraphique du type d&#39;objet | [0..1]
+**NAME**                 | string                  | Nom de la localité-type. Description de l’affleurement géologique important | [0..1]
+**ACCESSIBIL**                 | boolean                  | Est-ce que le type d’objet était accessible au moment du levé de la carte (oui / non)? | [0..1]
+**PROTECTED**                 | boolean                  | Objet géologique protégé (oui / non)? | [0..1]
 
 
 
 
 
 #### Attribut  KIND
-_Objektart_
+_Type de l&#39;objet_
 
 
 |GeolCode|Deutsch|Français|
@@ -1914,7 +1999,7 @@ _Objektart_
 
 
 #### Attribut  STRATI {#type-localities-pt-strati}
-_Lithostratigraphischer Zusatz zum Objekt_
+_Complément lithostratigraphique du type d&#39;objet_
 
 
 |GeolCode|Deutsch|Français|
@@ -1932,55 +2017,58 @@ _Lithostratigraphischer Zusatz zum Objekt_
 
 
 #### Attribut  NAME
-_Name der Typlokalität. / Beschreibung des geologisch relevanten Aufschlusses_
+_Nom de la localité-type. Description de l’affleurement géologique important_
 
-_Datentyp :  string_
+_Type de donnée :  string_
 
 
 
 
 
 #### Attribut  ACCESSIBIL
-_Ist die Objektart zum Zeitpunkt der Aufnahme aufgeschlossen (ja / nein)?_
+_Est-ce que le type d’objet était accessible au moment du levé de la carte (oui / non)?_
 
-_Datentyp :  boolean_
+_Type de donnée :  boolean_
 
 
 
 
 
 #### Attribut  PROTECTED
-_Geschütztes geologisches Objekt (ja / nein)?_
+_Objet géologique protégé (oui / non)?_
 
-_Datentyp :  boolean_
-
-
-
-
-
-## Klasse Prominent_Lithological_Features_L (Lpro){#prominent-lithological-features-l}
-In der Klasse [Prominent_Lithological_Features_L](#prominent-lithological-features-l) befinden sich linienförmige Gesteinshorizonte.
-Diese Gesteinshorizonte haben lediglich Hinweischarakter (z.B. «markante Sandsteinbank» innerhalb
-von Wechsellagerungen von Sandstein und Mergel) und sind von den Leithorizonten (z.B.
-«Spatkalk im Hauptrogenstein») zu unterschieden. Leithorizonte befinden sich im Thema Rock Bodies.
+_Type de donnée :  boolean_
 
 
 
 
-Name             | Typ | Beschreibung                             |  Kard.
+
+## Classe Prominent_Lithological_Features_L (Lpro){#prominent-lithological-features-l}
+La classe [Prominent_Lithological_Features_L](#prominent-lithological-features-l) contient des
+horizons rocheux linéaires. Ces horizons rocheux n&#39;ont qu&#39;un
+caractère indicatif (par ex. « banc de grès marquant » au
+sein de d&#39;alternances de grès et de marnes) et sont séparés
+des horizons directeurs (par ex. &#34;calcaire spathique dans le
+Hauptrogenstein&#34;). Les horizons marqueurs se trouvent dans
+le thème Rock Bodies.
+
+
+
+
+Nom             | Type | Description                             |  Card.
 --------------------------|------------|-----------------------------------------------------|-----
-**KIND**                 | subtype                  | Objektart | [1]
-**CONG_SPE**                 | [CD](#prominent-lithological-features-l-cong-spe)  | Charakterisation der Konglomerate nach ihrem Geröllspektrum. | [0..1]
-**NAME_HORIZ**                 | [ Tabelle ](#gc-geol-mapping-unit-cd)  | Name des Leithorizonts. | [0..1]
-**ORIG_DESCR**                 | string                  | Originalbezeichnung gemäss der Legende der zugrundeliegenden geologischen Karte | [0..1]
-**LITHO**                 | [ Tabelle ](#gc-litho-cd)  | Materialbezeichnung (lithologische Einheit). | [1]
+**KIND**                 | subtype                  | Type de l&#39;objet | [1]
+**CONG_SPE**                 | [CD](#prominent-lithological-features-l-cong-spe)  | Caractérisation des conglomérats selon la nature des clastes | [0..1]
+**NAME_HORIZ**                 | [ Table ](#gc-geol-mapping-unit-cd)  | Nom de l&#39;horizon repère | [0..1]
+**ORIG_DESCR**                 | string                  | Description selon la légende de la carte géologique originale | [0..1]
+**LITHO**                 | [ Table ](#gc-litho-cd)  | Description du  matériel (unité lithologique) | [1]
 
 
 
 
 
 #### Attribut  KIND
-_Objektart_
+_Type de l&#39;objet_
 
 
 |GeolCode|Deutsch|Français|
@@ -1991,7 +2079,7 @@ _Objektart_
 
 
 #### Attribut  CONG_SPE {#prominent-lithological-features-l-cong-spe}
-_Charakterisation der Konglomerate nach ihrem Geröllspektrum._
+_Caractérisation des conglomérats selon la nature des clastes_
 
 
 |GeolCode|Deutsch|Français|
@@ -2007,51 +2095,52 @@ _Charakterisation der Konglomerate nach ihrem Geröllspektrum._
 
 
 #### Attribut  NAME_HORIZ
-_Name des Leithorizonts._
+_Nom de l&#39;horizon repère_
 
-Siehe [GC_GEOL_MAPPING_UNIT_CD](#gc-geol-mapping-unit-cd) in der Anhang
+Voir [GC_GEOL_MAPPING_UNIT_CD](#gc-geol-mapping-unit-cd) dans l'annexe
 
 
 
 
 
 #### Attribut  ORIG_DESCR
-_Originalbezeichnung gemäss der Legende der zugrundeliegenden geologischen Karte._
+_Description selon la légende de la carte géologique originale_
 
-_Datentyp :  string_
+_Type de donnée :  string_
 
 
 
 
 
 #### Attribut  LITHO
-_Materialbezeichnung (lithologische Einheit)._
+_Description du  matériel (unité lithologique)_
 
-Siehe [GC_LITHO_CD](#gc-litho-cd) in der Anhang
-
-
-
-
-
-## Klasse Miscellaneous_PT (Lmis){#miscellaneous-pt}
-Die Klasse [Miscellaneous_PT](#miscellaneous-pt) ist für lokale, sehr spezielle geologische Objekte reserviert, die für die
-Gesamtheit der geologischen Daten irrelevant sind und deshalb im Datenmodell Geologie nicht
-standardisiert werden
+Voir [GC_LITHO_CD](#gc-litho-cd) dans l'annexe
 
 
 
 
-Name             | Typ | Beschreibung                             |  Kard.
+
+## Classe Miscellaneous_PT (Lmis){#miscellaneous-pt}
+La classe [Miscellaneous_PT](#miscellaneous-pt) est réservée aux objets locaux
+très particuliers qui ne sont pas pertinents pour l’ensemble
+des données géologiques. Par conséquent ils ne sont pas
+standardisés dans le Modèle de données géologiques.
+
+
+
+
+Nom             | Type | Description                             |  Card.
 --------------------------|------------|-----------------------------------------------------|-----
-**KIND**                 | subtype                  | Objektart | [1]
-**ORIG_NAME**                 | string                  | Ursprüngliche Bezeichnung des Objektes | [1]
+**KIND**                 | subtype                  | Type de l&#39;objet | [1]
+**ORIG_NAME**                 | string                  | Description originale de l&#39;objet | [1]
 
 
 
 
 
 #### Attribut  KIND
-_Objektart_
+_Type de l&#39;objet_
 
 
 |GeolCode|Deutsch|Français|
@@ -2062,31 +2151,32 @@ _Objektart_
 
 
 #### Attribut  ORIG_NAME
-_Ursprüngliche Bezeichnung des Objektes._
+_Description originale de l&#39;objet_
 
-_Datentyp :  string_
-
-
-
-
-
-## Klasse Geological_Outlines_L (Lgeo){#geological-outlines-l}
-Die Klasse [Geological_Outlines_L](#geological-outlines-l) beinhaltet geologische Konturen.
+_Type de donnée :  string_
 
 
 
 
-Name             | Typ | Beschreibung                             |  Kard.
+
+## Classe Geological_Outlines_L (Lgeo){#geological-outlines-l}
+La classe [Geological_Outlines_L](#geological-outlines-l) contient les contours
+géologiques.
+
+
+
+
+Nom             | Type | Description                             |  Card.
 --------------------------|------------|-----------------------------------------------------|-----
-**KIND**                 | subtype                  | Objektart | [1]
-**STATUS**                 | [CD](#geological-outlines-l-status)  | Zustand der Objektart. | [0..1]
+**KIND**                 | subtype                  | Type de l&#39;objet | [1]
+**STATUS**                 | [CD](#geological-outlines-l-status)  | État du type d&#39;objet | [0..1]
 
 
 
 
 
 #### Attribut  KIND
-_Objektart_
+_Type de l&#39;objet_
 
 
 |GeolCode|Deutsch|Français|
@@ -2097,7 +2187,7 @@ _Objektart_
 
 
 #### Attribut  STATUS {#geological-outlines-l-status}
-_Zustand der Objektart._
+_État du type d&#39;objet_
 
 
 |GeolCode|Deutsch|Français|
@@ -2118,29 +2208,31 @@ _Zustand der Objektart._
 
 
 
-# Thema PARAMETER_AND_MODELLING
+# Thème PARAMETER_AND_MODELLING
 
-## Klasse Slope_Bedrock_PT (Pslo){#slope-bedrock-pt}
-Die Klasse [Slope_Bedrock_PT](#slope-bedrock-pt) enthält Punktinformationen aus Modellierungen des Festgestein-
-verlaufs im Untergrund.
+## Classe Slope_Bedrock_PT (Pslo){#slope-bedrock-pt}
+La classe [Slope_Bedrock_PT](#slope-bedrock-pt) contient des informations
+ponctuelles provenant de la modélisation de l’orientation
+d’horizons lithologiques des roches consolidées dans le
+sous-sol ou de surfaces d’érosion.
 
 
 
 
-Name             | Typ | Beschreibung                             |  Kard.
+Nom             | Type | Description                             |  Card.
 --------------------------|------------|-----------------------------------------------------|-----
-**KIND**                 | subtype                  | Objektart | [1]
-**TYPE**                 | [CD](#slope-bedrock-pt-type)  | Referenzoberfläche. | [1]
-**AZIMUTH**                 | integer                  | Fallrichtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad (0° bis 359°) im Uhrzeigersinn gemessen | [0..1]
-**DIP**                 | integer                  | Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die Vertikale (90°) | [0..1]
-**FORMATIO**                 | [ Tabelle ](#gc-geol-mapping-unit-cd)  | Lithostratigraphische Einheit der modellierten Formation. | [1]
+**KIND**                 | subtype                  | Type de l&#39;objet | [1]
+**TYPE**                 | [CD](#slope-bedrock-pt-type)  | Surface de référence | [1]
+**AZIMUTH**                 | integer                  | Azimut du type d&#39;objet. L&#39;azimut est mesuré depuis le  nord en degré de 0° à 359° dans le sens des aiguilles d&#39;une montre | [0..1]
+**DIP**                 | integer                  | Valeur du plongement du type d&#39;objet (en degrés), mesurée de l’horizontale (0°) vers le bas jusqu’à la  verticale (90°) | [0..1]
+**FORMATIO**                 | [ Table ](#gc-geol-mapping-unit-cd)  | Unité lithostratigraphique de l’horizon modélisé | [1]
 
 
 
 
 
 #### Attribut  KIND
-_Objektart_
+_Type de l&#39;objet_
 
 
 |GeolCode|Deutsch|Français|
@@ -2151,7 +2243,7 @@ _Objektart_
 
 
 #### Attribut  TYPE {#slope-bedrock-pt-type}
-_Referenzoberfläche._
+_Surface de référence_
 
 
 |GeolCode|Deutsch|Français|
@@ -2165,53 +2257,55 @@ _Referenzoberfläche._
 
 
 #### Attribut  AZIMUTH
-_Fallrichtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad (0° bis 359°) im Uhrzeigersinn gemessen._
+_Azimut du type d&#39;objet. L&#39;azimut est mesuré depuis le  nord en degré de 0° à 359° dans le sens des aiguilles d&#39;une montre_
 
-_Datentyp :  integer_
+_Type de donnée :  integer_
 
 
 
 
 
 #### Attribut  DIP
-_Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die Vertikale (90°)._
+_Valeur du plongement du type d&#39;objet (en degrés), mesurée de l’horizontale (0°) vers le bas jusqu’à la  verticale (90°)_
 
-_Datentyp :  integer_
+_Type de donnée :  integer_
 
 
 
 
 
 #### Attribut  FORMATIO
-_Lithostratigraphische Einheit der modellierten Formation_
+_Unité lithostratigraphique de l’horizon modélisé_
 
-Siehe [GC_GEOL_MAPPING_UNIT_CD](#gc-geol-mapping-unit-cd) in der Anhang
-
-
-
-
-
-## Klasse Contour_Lines_Bedrock_L (Pcon){#contour-lines-bedrock-l}
-Die Klasse [Contour_Lines_Bedrock_L](#contour-lines-bedrock-l) beinhaltet Isohypsen, die sich auf den Verlauf des Fest-
-gesteins beziehen und die das Resultat von Modellierungen darstellen. U.a. befinden sich die Iso-
-hypsen der Felsoberfläche in dieser Klasse.
+Voir [GC_GEOL_MAPPING_UNIT_CD](#gc-geol-mapping-unit-cd) dans l'annexe
 
 
 
 
-Name             | Typ | Beschreibung                             |  Kard.
+
+## Classe Contour_Lines_Bedrock_L (Pcob){#contour-lines-bedrock-l}
+La classe [Contour_Lines_Bedrock_L](#contour-lines-bedrock-l) contient les isohypses qui
+décrivent la géométrie des roches consolidées dans le sous-
+sol et sont le résultat d’une modélisation. Dans cette
+classe se trouvent entre autres les isohypses de la surface
+du substratum rocheux.
+
+
+
+
+Nom             | Type | Description                             |  Card.
 --------------------------|------------|-----------------------------------------------------|-----
-**KIND**                 | subtype                  | Objektart | [1]
-**TYPE**                 | [CD](#contour-lines-bedrock-l-type)  | Referenzoberfläche. | [1]
-**ALTITUDE**                 | float                  | Höhenangabe (m ü.M.) von Isohypsen | [1]
-**LITSTRAT**                 | [ Tabelle ](#gc-geol-mapping-unit-cd)  | Lithostratigraphische Einheit der modellierten Formation. | [1]
+**KIND**                 | subtype                  | Type de l&#39;objet | [1]
+**TYPE**                 | [CD](#contour-lines-bedrock-l-type)  | Surface de référence | [1]
+**ALTITUDE**                 | float                  | Valeur altimétrique des isohypses | [1]
+**LITSTRAT**                 | [ Table ](#gc-geol-mapping-unit-cd)  | Unité lithostratigraphique de la formation modelisée | [1]
 
 
 
 
 
 #### Attribut  KIND
-_Objektart_
+_Type de l&#39;objet_
 
 
 |GeolCode|Deutsch|Français|
@@ -2222,7 +2316,7 @@ _Objektart_
 
 
 #### Attribut  TYPE {#contour-lines-bedrock-l-type}
-_Referenzoberfläche._
+_Surface de référence_
 
 
 |GeolCode|Deutsch|Français|
@@ -2237,44 +2331,45 @@ _Referenzoberfläche._
 
 
 #### Attribut  ALTITUDE
-_Höhenangabe (m ü.M.) von Isohypsen._
+_Valeur altimétrique des isohypses_
 
-_Datentyp :  float_
+_Type de donnée :  float_
 
 
 
 
 
 #### Attribut  LITSTRAT
-_Lithostratigraphische Einheit der modellierten Formation_
+_Unité lithostratigraphique de la formation modelisée_
 
-Siehe [GC_GEOL_MAPPING_UNIT_CD](#gc-geol-mapping-unit-cd) in der Anhang
-
-
-
-
-
-## Klasse Modelled_Water_Table_PT (Pmod){#modelled-water-table-pt}
-Die Klasse [Modelled_Water_Table_PT](#modelled-water-table-pt) enthält Punktinformationen aus Modellierungen des
-Grundwasserspiegels.
+Voir [GC_GEOL_MAPPING_UNIT_CD](#gc-geol-mapping-unit-cd) dans l'annexe
 
 
 
 
-Name             | Typ | Beschreibung                             |  Kard.
+
+## Classe Modelled_Water_Table_PT (Pmod){#modelled-water-table-pt}
+La classe [Modelled_Water_Table_PT](#modelled-water-table-pt) contient des informations
+ponctuelles provenant de la modélisation du niveau
+piézométrique d’une nappe libre.
+
+
+
+
+Nom             | Type | Description                             |  Card.
 --------------------------|------------|-----------------------------------------------------|-----
-**KIND**                 | subtype                  | Objektart | [1]
-**AZIMUTH**                 | integer                  | Fallrichtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad (0° bis 359°) im Uhrzeigersinn gemessen | [0..1]
-**DIP**                 | integer                  | Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die Vertikale (90°) | [0..1]
-**HEIGHT**                 | float                  | Kote des Grundwasserspiegels (m ü.M.) | [0..1]
-**MEA_PERIOD**                 | range                  | Messperiode | [0..1]
+**KIND**                 | subtype                  | Type de l&#39;objet | [1]
+**AZIMUTH**                 | integer                  | Azimut du type d&#39;objet. L&#39;azimut est mesuré depuis le  nord en degré de 0° à 359° dans le sens des aiguilles  d&#39;une montre | [0..1]
+**DIP**                 | integer                  | Valeur du plongement du type d&#39;objet (en degrés), mesurée de l’horizontale (0°) vers le bas jusqu’à la  verticale (90°) | [0..1]
+**HEIGHT**                 | float                  | Cote de la nappe phréatique | [0..1]
+**MEA_PERIOD**                 | range                  | Période de mesure de la profondeur du niveau hydrostatique | [0..1]
 
 
 
 
 
 #### Attribut  KIND
-_Objektart_
+_Type de l&#39;objet_
 
 
 |GeolCode|Deutsch|Français|
@@ -2286,61 +2381,62 @@ _Objektart_
 
 
 #### Attribut  AZIMUTH
-_Fallrichtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad (0° bis 359°) im Uhrzeigersinn gemessen._
+_Azimut du type d&#39;objet. L&#39;azimut est mesuré depuis le  nord en degré de 0° à 359° dans le sens des aiguilles  d&#39;une montre_
 
-_Datentyp :  integer_
+_Type de donnée :  integer_
 
 
 
 
 
 #### Attribut  DIP
-_Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die Vertikale (90°)._
+_Valeur du plongement du type d&#39;objet (en degrés), mesurée de l’horizontale (0°) vers le bas jusqu’à la  verticale (90°)_
 
-_Datentyp :  integer_
+_Type de donnée :  integer_
 
 
 
 
 
 #### Attribut  HEIGHT
-_Kote des Grundwasserspiegels (m ü.M.)._
+_Cote de la nappe phréatique_
 
-_Datentyp :  float_
+_Type de donnée :  float_
 
 
 
 
 
 #### Attribut  MEA_PERIOD
-_Messperiode._
+_Période de mesure de la profondeur du niveau hydrostatique_
 
-_Datentyp :  range_
-
-
-
-
-
-## Klasse Contour_Lines_Hydro_L (Pcon){#contour-lines-hydro-l}
-In der Klasse [Contour_Lines_Hydro_L](#contour-lines-hydro-l) befinden sich die Isohypsen, die sich auf das Grundwasser
-beziehen.
+_Type de donnée :  range_
 
 
 
 
-Name             | Typ | Beschreibung                             |  Kard.
+
+## Classe Contour_Lines_Hydro_L (Pcoh){#contour-lines-hydro-l}
+Dans la classe [Contour_Lines_Hydro_L](#contour-lines-hydro-l) se trouvent les
+isohypses qui décrivent la surface d’une nappe d’eau
+souterraine.
+
+
+
+
+Nom             | Type | Description                             |  Card.
 --------------------------|------------|-----------------------------------------------------|-----
-**KIND**                 | subtype                  | Objektart | [1]
-**CONFINE**                 | [CD](#contour-lines-hydro-l-confine)  | Druckzustand im Grundwasserleiter. | [0..1]
-**ALTITUDE**                 | float                  | Höhenangabe (m ü.M.) von Isohypsen | [1]
-**WA_TABLE**                 | [CD](#contour-lines-hydro-l-wa-table)  | Wasserstand. | [0..1]
+**KIND**                 | subtype                  | Type de l&#39;objet | [1]
+**CONFINE**                 | [CD](#contour-lines-hydro-l-confine)  | État de la pression dans l’aquifère | [0..1]
+**ALTITUDE**                 | float                  | Valeur altimétrique des isohypses | [1]
+**WA_TABLE**                 | [CD](#contour-lines-hydro-l-wa-table)  | Niveau des eaux | [0..1]
 
 
 
 
 
 #### Attribut  KIND
-_Objektart_
+_Type de l&#39;objet_
 
 
 |GeolCode|Deutsch|Français|
@@ -2351,7 +2447,7 @@ _Objektart_
 
 
 #### Attribut  CONFINE {#contour-lines-hydro-l-confine}
-_Druckzustand im Grundwasserleiter._
+_État de la pression dans l’aquifère_
 
 
 |GeolCode|Deutsch|Français|
@@ -2366,16 +2462,16 @@ _Druckzustand im Grundwasserleiter._
 
 
 #### Attribut  ALTITUDE
-_Höhenangabe (m ü.M.) von Isohypsen._
+_Valeur altimétrique des isohypses_
 
-_Datentyp :  float_
+_Type de donnée :  float_
 
 
 
 
 
 #### Attribut  WA_TABLE {#contour-lines-hydro-l-wa-table}
-_Wasserstand._
+_Niveau des eaux_
 
 
 |GeolCode|Deutsch|Français|
@@ -2392,28 +2488,28 @@ _Wasserstand._
 
 
 
-# Thema ANTHROPOGENIC_FEATURES
+# Thème ANTHROPOGENIC_FEATURES
 
-## Klasse Archaeology_PT (Aarc){#archaeology-pt}
-Die Klasse [Archaeology_PT](#archaeology-pt) enthält Objektarten zu einzelnen archäologischen Relikten.
-
-
+## Classe Archaeology_PT (Aarc){#archaeology-pt}
+La classe [Archaeology_PT](#archaeology-pt) regroupe les sites archéologiques.
 
 
-Name             | Typ | Beschreibung                             |  Kard.
+
+
+Nom             | Type | Description                             |  Card.
 --------------------------|------------|-----------------------------------------------------|-----
-**KIND**                 | subtype                  | Objektart | []
-**EPOCH**                 | [CD](#archaeology-pt-epoch)  | Archäologische Epoche der Objektart. | [0..1]
-**PERIOD**                 | [CD](#archaeology-pt-period)  | Archäologische Periode der Objektart. | [0..1]
-**AGE**                 | [CD](#archaeology-pt-age)  | Archäologisches Alter der Objektart. | [0..1]
-**TYPE**                 | [CD](#archaeology-pt-type)  | Art des Kultsteins. | [0..1]
+**KIND**                 | subtype                  | Type de l&#39;objet | []
+**EPOCH**                 | [CD](#archaeology-pt-epoch)  | Époque archéologique du type d&#39;objet | [0..1]
+**PERIOD**                 | [CD](#archaeology-pt-period)  | Période archéologique du type d&#39;objet | [0..1]
+**AGE**                 | [CD](#archaeology-pt-age)  | Âge archéologique du type d&#39;objet | [0..1]
+**TYPE**                 | [CD](#archaeology-pt-type)  | Type de mégalithe | [0..1]
 
 
 
 
 
 #### Attribut  KIND
-_Objektart_
+_Type de l&#39;objet_
 
 
 |GeolCode|Deutsch|Français|
@@ -2437,7 +2533,7 @@ _Objektart_
 
 
 #### Attribut  EPOCH {#archaeology-pt-epoch}
-_Archäologische Epoche der Objektart_
+_Époque archéologique du type d&#39;objet_
 
 
 |GeolCode|Deutsch|Français|
@@ -2451,7 +2547,7 @@ _Archäologische Epoche der Objektart_
 
 
 #### Attribut  PERIOD {#archaeology-pt-period}
-_Archäologische Periode der Objektart._
+_Période archéologique du type d&#39;objet_
 
 
 |GeolCode|Deutsch|Français|
@@ -2469,7 +2565,7 @@ _Archäologische Periode der Objektart._
 
 
 #### Attribut  AGE {#archaeology-pt-age}
-_Archäologisches Alter der Objektart._
+_Âge archéologique du type d&#39;objet_
 
 
 |GeolCode|Deutsch|Français|
@@ -2489,7 +2585,7 @@ _Archäologisches Alter der Objektart._
 
 
 #### Attribut  TYPE {#archaeology-pt-type}
-_Art des Kultsteins._
+_Type de mégalithe_
 
 
 |GeolCode|Deutsch|Français|
@@ -2502,26 +2598,27 @@ _Art des Kultsteins._
 
 
 
-## Klasse Archaeology_L (Aarc){#archaeology-l}
-Die Klasse [Archaeology_L](#archaeology-l) umfasst linienförmige archäologische Elemente. Historische Strassen,
-Hohlwege oder Befestigungsgräben sind Teile dieser Klasse.
+## Classe Archaeology_L (Aarc){#archaeology-l}
+La classe [Archaeology_L](#archaeology-l) contient les éléments archéologiques
+de forme linéaire. Les routes historiques, les chemins creux
+et les fossés de fortification font partie de cette classe.
 
 
 
 
-Name             | Typ | Beschreibung                             |  Kard.
+Nom             | Type | Description                             |  Card.
 --------------------------|------------|-----------------------------------------------------|-----
-**KIND**                 | subtype                  | Objektart | []
-**EPOCH**                 | [CD](#archaeology-l-epoch)  | Archäologische Epoche der Objektart. | [0..1]
-**PERIOD**                 | [CD](#archaeology-l-period)  | Archäologische Periode der Objektart. | [0..1]
-**AGE**                 | [CD](#archaeology-l-age)  | Archäologisches Alter der Objektart. | [0..1]
+**KIND**                 | subtype                  | Type de l&#39;objet | []
+**EPOCH**                 | [CD](#archaeology-l-epoch)  | Époque archéologique du type d&#39;objet | [0..1]
+**PERIOD**                 | [CD](#archaeology-l-period)  | Période archéologique du type d&#39;objet | [0..1]
+**AGE**                 | [CD](#archaeology-l-age)  | Âge archéologique du type d&#39;objet | [0..1]
 
 
 
 
 
 #### Attribut  KIND
-_Objektart_
+_Type de l&#39;objet_
 
 
 |GeolCode|Deutsch|Français|
@@ -2538,7 +2635,7 @@ _Objektart_
 
 
 #### Attribut  EPOCH {#archaeology-l-epoch}
-_Archäologische Epoche der Objektart_
+_Époque archéologique du type d&#39;objet_
 
 
 |GeolCode|Deutsch|Français|
@@ -2552,7 +2649,7 @@ _Archäologische Epoche der Objektart_
 
 
 #### Attribut  PERIOD {#archaeology-l-period}
-_Archäologische Periode der Objektart._
+_Période archéologique du type d&#39;objet_
 
 
 |GeolCode|Deutsch|Français|
@@ -2570,7 +2667,7 @@ _Archäologische Periode der Objektart._
 
 
 #### Attribut  AGE {#archaeology-l-age}
-_Archäologisches Alter der Objektart._
+_Âge archéologique du type d&#39;objet_
 
 
 |GeolCode|Deutsch|Français|
@@ -2589,26 +2686,27 @@ _Archäologisches Alter der Objektart._
 
 
 
-## Klasse Archaeology_PLG (Aarc){#archaeology-plg}
-Die Klasse [Archaeology_PLG](#archaeology-plg) beinhaltet archäologische Relikte (z.B. römisches Castrum), die ein
-grösseres Gebiet (Fläche) abdecken.
+## Classe Archaeology_PLG (Aarc){#archaeology-plg}
+Dans la classe [Archaeology_PLG](#archaeology-plg) se trouvent les vestiges
+archéologiques (p.ex. le Castrum romain) qui recouvrent une
+surface importante.
 
 
 
 
-Name             | Typ | Beschreibung                             |  Kard.
+Nom             | Type | Description                             |  Card.
 --------------------------|------------|-----------------------------------------------------|-----
-**KIND**                 | subtype                  | Objektart | []
-**EPOCH**                 | [CD](#archaeology-plg-epoch)  | Archäologische Epoche der Objektart. | [0..1]
-**PERIOD**                 | [CD](#archaeology-plg-period)  | Archäologische Periode der Objektart. | [0..1]
-**AGE**                 | [CD](#archaeology-plg-age)  | Archäologisches Alter der Objektart. | [0..1]
+**KIND**                 | subtype                  | Type de l&#39;objet | []
+**EPOCH**                 | [CD](#archaeology-plg-epoch)  | Époque archéologique du type d&#39;objet | [0..1]
+**PERIOD**                 | [CD](#archaeology-plg-period)  | Période archéologique du type d&#39;objet | [0..1]
+**AGE**                 | [CD](#archaeology-plg-age)  | Âge archéologique du type d&#39;objet | [0..1]
 
 
 
 
 
 #### Attribut  KIND
-_Objektart_
+_Type de l&#39;objet_
 
 
 |GeolCode|Deutsch|Français|
@@ -2620,7 +2718,7 @@ _Objektart_
 
 
 #### Attribut  EPOCH {#archaeology-plg-epoch}
-_Archäologische Epoche der Objektart_
+_Époque archéologique du type d&#39;objet_
 
 
 |GeolCode|Deutsch|Français|
@@ -2634,7 +2732,7 @@ _Archäologische Epoche der Objektart_
 
 
 #### Attribut  PERIOD {#archaeology-plg-period}
-_Archäologische Periode der Objektart._
+_Période archéologique du type d&#39;objet_
 
 
 |GeolCode|Deutsch|Français|
@@ -2652,7 +2750,7 @@ _Archäologische Periode der Objektart._
 
 
 #### Attribut  AGE {#archaeology-plg-age}
-_Archäologisches Alter der Objektart._
+_Âge archéologique du type d&#39;objet_
 
 
 |GeolCode|Deutsch|Français|
@@ -2671,27 +2769,28 @@ _Archäologisches Alter der Objektart._
 
 
 
-## Klasse Exploitation_Geomaterials_PT (Aexp){#exploitation-geomaterials-pt}
-Die Klasse [Exploitation_Geomaterials_PT](#exploitation-geomaterials-pt) enthält punktförmige Angaben zu Abbaustellen von
-Geomaterialien.
+## Classe Exploitation_Geomaterials_PT (Aexp){#exploitation-geomaterials-pt}
+La classe [Exploitation_Geomaterials_PT](#exploitation-geomaterials-pt) contient des
+informations ponctuelles sur les sites d’exploitation de
+matériaux géologiques.
 
 
 
 
-Name             | Typ | Beschreibung                             |  Kard.
+Nom             | Type | Description                             |  Card.
 --------------------------|------------|-----------------------------------------------------|-----
-**KIND**                 | subtype                  | Objektart | []
-**EXP_UNIT**                 | [ Tabelle ](#gc-geol-mapping-unit-cd)  | Abgebaute lithostratigraphische Einheit. | [0..*]
-**STATUS**                 | [CD](#exploitation-geomaterials-pt-status)  | Abbaustatus. | [0..1]
-**DEPTH_TOT**                 | float                  | Endtiefe (m ab Terrainoberfläche) der Objektart | [0..1]
-**TARG_MAT**                 | [CD](#exploitation-geomaterials-pt-targ-mat)  | Abgebautes Material. | [0..1]
+**KIND**                 | subtype                  | Type de l&#39;objet | []
+**EXP_UNIT**                 | [ Table ](#gc-geol-mapping-unit-cd)  | Unité lithostratigraphique exploitée | [0..*]
+**STATUS**                 | [CD](#exploitation-geomaterials-pt-status)  | État de l&#39;exploitation | [0..1]
+**DEPTH_TOT**                 | float                  | Profondeur totale du type d&#39;objet (en mètres depuis la surface) | [0..1]
+**TARG_MAT**                 | [CD](#exploitation-geomaterials-pt-targ-mat)  | Matériau exploité | [0..1]
 
 
 
 
 
 #### Attribut  KIND
-_Objektart_
+_Type de l&#39;objet_
 
 
 |GeolCode|Deutsch|Français|
@@ -2707,16 +2806,16 @@ _Objektart_
 
 
 #### Attribut  EXP_UNIT
-_Abgebaute lithostratigraphische Einheit._
+_Unité lithostratigraphique exploitée_
 
-Siehe [GC_GEOL_MAPPING_UNIT_CD](#gc-geol-mapping-unit-cd) in der Anhang
+Voir [GC_GEOL_MAPPING_UNIT_CD](#gc-geol-mapping-unit-cd) dans l'annexe
 
 
 
 
 
 #### Attribut  STATUS {#exploitation-geomaterials-pt-status}
-_Abbaustatus._
+_État de l&#39;exploitation_
 
 
 |GeolCode|Deutsch|Français|
@@ -2732,16 +2831,16 @@ _Abbaustatus._
 
 
 #### Attribut  DEPTH_TOT
-_Endtiefe (m ab Terrainoberfläche) der Objektart._
+_Profondeur totale du type d&#39;objet (en mètres depuis la surface)._
 
-_Datentyp :  float_
+_Type de donnée :  float_
 
 
 
 
 
 #### Attribut  TARG_MAT {#exploitation-geomaterials-pt-targ-mat}
-_Abgebautes Material._
+_Matériau exploité._
 
 
 |GeolCode|Deutsch|Français|
@@ -2792,24 +2891,25 @@ _Abgebautes Material._
 
 
 
-## Klasse Exploitation_Geomaterials_L (Aexp){#exploitation-geomaterials-l}
-Die Klasse [Exploitation_Geomaterials_L](#exploitation-geomaterials-l) beinhaltet linienförmige Informationen zum Abbau von
-Geomaterialien (z.B. Verlauf der Abbaufront).
+## Classe Exploitation_Geomaterials_L (Aexp){#exploitation-geomaterials-l}
+La classe [Exploitation_Geomaterials_L](#exploitation-geomaterials-l) contient les objets de
+forme linéaire liés aux sites d’exploitation de matériaux
+géologiques (p.ex. le front de taille).
 
 
 
 
-Name             | Typ | Beschreibung                             |  Kard.
+Nom             | Type | Description                             |  Card.
 --------------------------|------------|-----------------------------------------------------|-----
-**KIND**                 | subtype                  | Objektart | []
-**STATUS**                 | [CD](#exploitation-geomaterials-l-status)  | Abbaustatus. | [0..1]
+**KIND**                 | subtype                  | Type de l&#39;objet | []
+**STATUS**                 | [CD](#exploitation-geomaterials-l-status)  | État de l&#39;exploitation | [0..1]
 
 
 
 
 
 #### Attribut  KIND
-_Objektart_
+_Type de l&#39;objet_
 
 
 |GeolCode|Deutsch|Français|
@@ -2821,7 +2921,7 @@ _Objektart_
 
 
 #### Attribut  STATUS {#exploitation-geomaterials-l-status}
-_Abbaustatus._
+_État de l&#39;exploitation_
 
 
 |GeolCode|Deutsch|Français|
@@ -2836,27 +2936,28 @@ _Abbaustatus._
 
 
 
-## Klasse Exploitation_Geomaterials_PLG (Aexp){#exploitation-geomaterials-plg}
-Die Klasse [Exploitation_Geomaterials_PLG](#exploitation-geomaterials-plg) enthält Flächen, wo zur Zeit der geologischen
-Aufnahmen Geomaterialien abgebaut wurden.
+## Classe Exploitation_Geomaterials_PLG (Aexp){#exploitation-geomaterials-plg}
+La classe [Exploitation_Geomaterials_PLG](#exploitation-geomaterials-plg) contient les
+surfaces d’exploitation de géomatériaux, telles qu’elles
+étaient au moment du levé de la carte géologique.
 
 
 
 
-Name             | Typ | Beschreibung                             |  Kard.
+Nom             | Type | Description                             |  Card.
 --------------------------|------------|-----------------------------------------------------|-----
-**KIND**                 | subtype                  | Objektart | []
-**EXP_UNIT**                 | [ Tabelle ](#gc-geol-mapping-unit-cd)  | Abgebaute lithostratigraphische Einheit. | [1..*]
-**STATUS**                 | [CD](#exploitation-geomaterials-plg-status)  | Abbaustatus. | [0..1]
-**DEPTH_TOT**                 | float                  | Endtiefe (m ab Terrainoberfläche) der Objektart | [0..1]
-**TARG_MAT**                 | [CD](#exploitation-geomaterials-plg-targ-mat)  | Abgebautes Material. | [0..1]
+**KIND**                 | subtype                  | Type de l&#39;objet | []
+**EXP_UNIT**                 | [ Table ](#gc-geol-mapping-unit-cd)  | Unité lithostratigraphique exploitée | [1..*]
+**STATUS**                 | [CD](#exploitation-geomaterials-plg-status)  | État de l&#39;exploitation | [0..1]
+**DEPTH_TOT**                 | float                  | Profondeur totale du type d&#39;objet (en mètres depuis la surface) | [0..1]
+**TARG_MAT**                 | [CD](#exploitation-geomaterials-plg-targ-mat)  | Matériel exploité | [0..1]
 
 
 
 
 
 #### Attribut  KIND
-_Objektart_
+_Type de l&#39;objet_
 
 
 |GeolCode|Deutsch|Français|
@@ -2868,16 +2969,16 @@ _Objektart_
 
 
 #### Attribut  EXP_UNIT
-_Abgebaute lithostratigraphische Einheit._
+_Unité lithostratigraphique exploitée_
 
-Siehe [GC_GEOL_MAPPING_UNIT_CD](#gc-geol-mapping-unit-cd) in der Anhang
+Voir [GC_GEOL_MAPPING_UNIT_CD](#gc-geol-mapping-unit-cd) dans l'annexe
 
 
 
 
 
 #### Attribut  STATUS {#exploitation-geomaterials-plg-status}
-_Abbaustatus._
+_État de l&#39;exploitation_
 
 
 |GeolCode|Deutsch|Français|
@@ -2893,16 +2994,16 @@ _Abbaustatus._
 
 
 #### Attribut  DEPTH_TOT
-_Endtiefe (m ab Terrainoberfläche) der Objektart._
+_Profondeur totale du type d&#39;objet (en mètres depuis la surface)_
 
-_Datentyp :  float_
+_Type de donnée :  float_
 
 
 
 
 
 #### Attribut  TARG_MAT {#exploitation-geomaterials-plg-targ-mat}
-_Abgebautes Material._
+_Matériel exploité._
 
 
 |GeolCode|Deutsch|Français|
@@ -2934,38 +3035,36 @@ _Abgebautes Material._
 
 
 
-## Klasse Boreholes_PT (Abor){#boreholes-pt}
-Die Klasse [Boreholes_PT](#boreholes-pt) beinhaltet Bohrungen und Sondierungen. (Auf alten gedruckten Karten
-wurde die Art der Sondierung nicht immer unterschieden. Es kann daher sein, dass in alten Karten
-Rammkernsondierungen als Bohrungen aufgenommen wurden.)
+## Classe Boreholes_PT (Abor){#boreholes-pt}
+La classe [Boreholes_PT](#boreholes-pt) regroupe les forages et les sondages. (Sur les anciennes cartes imprimées, le genre d’objet n’était pas toujours distingué. D’ailleurs, il se peut que sur les anciennes cartes, les sondages par carottier battu aient été classés en tant que forages.)
 
 
 
 
-Name             | Typ | Beschreibung                             |  Kard.
+Nom             | Type | Description                             |  Card.
 --------------------------|------------|-----------------------------------------------------|-----
-**KIND**                 | subtype                  | Objektart | []
-**DEPTH_BEDR**                 | float                  | Tiefe (in Meter ab Terrainoberfläche) der Felsoberfläche. (Sofern die Bohrung das Festgestein nicht erreicht, z.B. «Bohrung, Fels nicht erreicht», beträgt der Wert 999, falls die Bohrung bereits im Festgestein beginnt, beträgt der Wert 0). Falls Festgestein erreicht wurde, aber nicht klar ist, dass es sich um die Felsoberfläche handelt, beträgt der Wert 888 | [0..1]
-**D_C_UNDERG**                 | boolean                  | Bohransatzpunkt unter Terrain (ja / nein) | [1]
-**MAIN_TAR**                 | [CD](#boreholes-pt-main-tar)  | Ziel der Sondierung. | [0..1]
-**TARG_MAT**                 | [CD](#boreholes-pt-targ-mat)  | Durch die Sondierung gefördertes Material. | [0..1]
-**DEPTH_TOT**                 | float                  | Gemessene Länge (Measured Depth) der Bohrung. Vgl. DM Bohrdaten. Die tatsächliche Tiefe (True Vertical Depth) ist oft nicht bekannt | [0..1]
-**DEPTH_FM_A**                 | [ Tabelle ](#gc-geol-mapping-unit-cd)  | Lithostratigraphische Einheit der erreichten Formation A. | [0..1]
-**DEPTH_FM_B**                 | float                  | Tiefe (m ab Terrainoberfläche) der erreichten Formation B | [0..1]
-**FM_A**                 | [ Tabelle ](#gc-geol-mapping-unit-cd)  | Lithostratigraphische Einheit der erreichten Formation A. | [0..1]
-**DEPTH_FM_B**                 | float                  | Tiefe (m ab Terrainoberfläche) der erreichten Formation B | [0..1]
-**DEPTH_WT**                 | float                  | Tiefe (m ab Terrainoberfläche) des Grundwasserspiegels | [0..1]
-**AZIMUTH**                 | integer                  | Fallrichtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad (0° 359°) im Uhrzeigersinn gemessen | [0..1]
-**DIP**                 | integer                  | Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die Vertikale (90°) | [0..1]
-**REF_NUMBER**                 | integer                  | Bohrungs-ID der Objektart in einem zusätzlichen Dokument (Erläuterungen, ...) | [0..1]
-**LITHO**                 | [ Tabelle ](#gc-litho-unco-cd)  | Erreichte lithologische Einheit (im Falle von Bohrungen, die den Fels nicht erreicht haben). | [0..1]
+**KIND**                 | subtype                  | Type de l&#39;objet | []
+**DEPTH_BEDR**                 | float                  | Profondeur de la roche en place (en mètres depuis la surface). Si l’ouvrage n’atteint pas la roche en place,  par exemple forage interrompu dans la couverture quaternaire, la valeur est  999, au cas où le forage commence déjà dans la roche en place la valeur est 0. Si la roche solide a été atteinte, mais qu&#39;il n&#39;est pas clair qu&#39;il s&#39;agit de la surface de la roche, la valeur est 888 | [0..1]
+**D_C_UNDERG**                 | boolean                  | Forage réalisé à partir d’une galerie (oui / non)? | [1]
+**MAIN_TAR**                 | [CD](#boreholes-pt-main-tar)  | But principal du sondage | [0..1]
+**TARG_MAT**                 | [CD](#boreholes-pt-targ-mat)  | Matériau cible du sondage | [0..1]
+**DEPTH_TOT**                 | float                  | Profondeur totale du type d&#39;objet (en mètres depuis la surface) | [0..1]
+**DEPTH_FM_A**                 | [ Table ](#gc-geol-mapping-unit-cd)  | Profondeur relative à la formation A atteinte (en mètres depuis la surface) | [0..1]
+**DEPTH_FM_B**                 | float                  | Profondeur de la formation B atteinte (en mètres depuis  la surface) | [0..1]
+**FM_A**                 | [ Table ](#gc-geol-mapping-unit-cd)  | Unité lithostratigraphique de la formation A atteinte | [0..1]
+**DEPTH_FM_B**                 | float                  | Profondeur de la formation B atteinte (en mètres depuis  la surface) | [0..1]
+**DEPTH_WT**                 | float                  | Profondeur (m depuis la surface) de la nappe phréatique (valeur moyenne) | [0..1]
+**AZIMUTH**                 | integer                  | Azimut du type d&#39;objet. L&#39;azimut est mesuré depuis le nord en degré de 0° à 359° dans le sens des aiguilles d&#39;une montre | [0..1]
+**DIP**                 | integer                  | Valeur du plongement du type d&#39;objet (en degrés), mesurée de l’horizontale (0°) vers le bas jusqu’à la  verticale (90°) | [0..1]
+**REF_NUMBER**                 | integer                  | Numéro de référence du type d&#39;objet dans un  document annexé (notice explicative,…) | [0..1]
+**LITHO**                 | [ Table ](#gc-litho-unco-cd)  | Unité lithologique atteinte (dans le cas de forage atteignant le quaternaire) | [0..1]
 
 
 
 
 
 #### Attribut  KIND
-_Objektart_
+_Type de l&#39;objet_
 
 
 |GeolCode|Deutsch|Français|
@@ -2980,25 +3079,25 @@ _Objektart_
 
 
 #### Attribut  DEPTH_BEDR
-_Tiefe (in Meter ab Terrainoberfläche) der Felsoberfläche. (Sofern die Bohrung das Festgestein nicht erreicht, z.B. «Bohrung, Fels nicht erreicht», beträgt der Wert 999, falls die Bohrung bereits im Festgestein beginnt, beträgt der Wert 0). Falls Festgestein erreicht wurde, aber nicht klar ist, dass es sich um die Felsoberfläche handelt, beträgt der Wert 888._
+_Profondeur de la roche en place (en mètres depuis la surface). Si l’ouvrage n’atteint pas la roche en place,  par exemple forage interrompu dans la couverture quaternaire, la valeur est  999, au cas où le forage commence déjà dans la roche en place la valeur est 0. Si la roche solide a été atteinte, mais qu&#39;il n&#39;est pas clair qu&#39;il s&#39;agit de la surface de la roche, la valeur est 888._
 
-_Datentyp :  float_
+_Type de donnée :  float_
 
 
 
 
 
 #### Attribut  D_C_UNDERG
-_Bohransatzpunkt unter Terrain (ja / nein)_
+_Forage réalisé à partir d’une galerie (oui / non)?_
 
-_Datentyp :  boolean_
+_Type de donnée :  boolean_
 
 
 
 
 
 #### Attribut  MAIN_TAR {#boreholes-pt-main-tar}
-_Ziel der Sondierung._
+_But principal du sondage_
 
 
 |GeolCode|Deutsch|Français|
@@ -3019,7 +3118,7 @@ _Ziel der Sondierung._
 
 
 #### Attribut  TARG_MAT {#boreholes-pt-targ-mat}
-_Durch die Sondierung gefördertes Material._
+_Matériau cible du sondage_
 
 
 |GeolCode|Deutsch|Français|
@@ -3038,113 +3137,116 @@ _Durch die Sondierung gefördertes Material._
 
 
 #### Attribut  DEPTH_TOT
-_Gemessene Länge (Measured Depth) der Bohrung. Vgl. DM Bohrdaten. Die tatsächliche Tiefe (True Vertical Depth) ist oft nicht bekannt._
+_Profondeur totale du type d&#39;objet (en mètres depuis la surface)_
 
-_Datentyp :  float_
+_Type de donnée :  float_
 
 
 
 
 
 #### Attribut  DEPTH_FM_A
-_Lithostratigraphische Einheit der erreichten Formation A_
+_Profondeur relative à la formation A atteinte (en mètres depuis la surface)_
 
-Siehe [GC_GEOL_MAPPING_UNIT_CD](#gc-geol-mapping-unit-cd) in der Anhang
+Voir [GC_GEOL_MAPPING_UNIT_CD](#gc-geol-mapping-unit-cd) dans l'annexe
 
 
 
 
 
 #### Attribut  DEPTH_FM_B
-_Tiefe (m ab Terrainoberfläche) der erreichten Formation B._
+_Profondeur de la formation B atteinte (en mètres depuis  la surface)_
 
-_Datentyp :  float_
+_Type de donnée :  float_
 
 
 
 
 
 #### Attribut  FM_A
-_Lithostratigraphische Einheit der erreichten Formation A_
+_Unité lithostratigraphique de la formation A atteinte_
 
-Siehe [GC_GEOL_MAPPING_UNIT_CD](#gc-geol-mapping-unit-cd) in der Anhang
+Voir [GC_GEOL_MAPPING_UNIT_CD](#gc-geol-mapping-unit-cd) dans l'annexe
 
 
 
 
 
 #### Attribut  DEPTH_FM_B
-_Tiefe (m ab Terrainoberfläche) der erreichten Formation B._
+_Profondeur de la formation B atteinte (en mètres depuis  la surface)_
 
-_Datentyp :  float_
+_Type de donnée :  float_
 
 
 
 
 
 #### Attribut  DEPTH_WT
-_Tiefe (m ab Terrainoberfläche) des Grundwasserspiegels._
+_Profondeur (m depuis la surface) de la nappe phréatique (valeur moyenne)_
 
-_Datentyp :  float_
+_Type de donnée :  float_
 
 
 
 
 
 #### Attribut  AZIMUTH
-_Fallrichtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad (0° 359°) im Uhrzeigersinn gemessen._
+_Azimut du type d&#39;objet. L&#39;azimut est mesuré depuis le nord en degré de 0° à 359° dans le sens des aiguilles d&#39;une montre._
 
-_Datentyp :  integer_
+_Type de donnée :  integer_
 
 
 
 
 
 #### Attribut  DIP
-_Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus der Horizontalen (0°) nach unten bis in die Vertikale (90°)._
+_Valeur du plongement du type d&#39;objet (en degrés), mesurée de l’horizontale (0°) vers le bas jusqu’à la  verticale (90°)_
 
-_Datentyp :  integer_
+_Type de donnée :  integer_
 
 
 
 
 
 #### Attribut  REF_NUMBER
-_Bohrungs-ID der Objektart in einem zusätzlichen Dokument (Erläuterungen, ...)._
+_Numéro de référence du type d&#39;objet dans un  document annexé (notice explicative,…)_
 
-_Datentyp :  integer_
+_Type de donnée :  integer_
 
 
 
 
 
 #### Attribut  LITHO
-_Erreichte lithologische Einheit (im Falle von Bohrungen, die den Fels nicht erreicht haben)_
+_Unité lithologique atteinte (dans le cas de forage atteignant le quaternaire)_
 
-Siehe [GC_LITHO_UNCO_CD](#gc-litho-unco-cd) in der Anhang
-
-
-
-
-
-## Klasse Artificial_Surface_Modifications_PLG (Aart){#artificial-surface-modifications-plg}
-Die Klasse [Artificial_Surface_Modifications_PLG](#artificial-surface-modifications-plg) enthält bedeutende künstliche Veränderungen
-des Geländes (Golfplatz, Skigebiet, etc.), die zur Folge haben, dass das ursprüngliche Relief nicht
-mehr zu erkennen ist, was bei einer geomorphologischen Deutung zu falschen Schlüssen führen könnte.
+Voir [GC_LITHO_UNCO_CD](#gc-litho-unco-cd) dans l'annexe
 
 
 
 
-Name             | Typ | Beschreibung                             |  Kard.
+
+## Classe Artificial_Surface_Modifications_PLG (Aart){#artificial-surface-modifications-plg}
+La classe [Artificial_Surface_Modifications_PLG](#artificial-surface-modifications-plg) contient des
+modifications artificielles importantes du terrain (terrain
+de golf, domaine skiable, etc.) qui ont pour conséquence que
+le relief original n&#39;est plus reconnaissable, ce qui
+pourrait conduire à des conclusions erronées lors d&#39;une
+interprétation géomorphologique.
+
+
+
+
+Nom             | Type | Description                             |  Card.
 --------------------------|------------|-----------------------------------------------------|-----
-**KIND**                 | subtype                  | Objektart | [1]
+**KIND**                 | subtype                  | Type de l&#39;objet | [1]
 
 
 
 
 
 #### Attribut  KIND
-_Objektart_
+_Type de l&#39;objet_
 
 
 |GeolCode|Deutsch|Français|
@@ -3163,30 +3265,33 @@ _Objektart_
 
 
 
-# Thema HYDROGEOLOGY
+# Thème HYDROGEOLOGY
 
-## Klasse Construction_PT (Hcon){#construction-pt}
-Die Klasse [Construction_PT](#construction-pt) beinhaltet Wasserbauten wie Grundwasserfassungen und Zisternen.
-Desweiteren kommen in dieser Klasse auch Messgeräte wie Piezometer und Limnigraphen vor.
+## Classe Construction_PT (Hcon){#construction-pt}
+Dans la classe [Construction_PT](#construction-pt) se trouvent les constructions
+hydriques, comme les captages dans la nappe phréatique et
+les citernes. Les instruments de mesure comme les
+piézomètres et les limnigraphes appartiennent également à
+cette classe.
 
 
 
 
-Name             | Typ | Beschreibung                             |  Kard.
+Nom             | Type | Description                             |  Card.
 --------------------------|------------|-----------------------------------------------------|-----
-**KIND**                 | subtype                  | Objektart | [1]
-**STATUS**                 | [CD](#construction-pt-status)  | Zustand der Objektart. | [0..1]
-**EPOCH**                 | [CD](#construction-pt-epoch)  | Epoche der Erbauung der Objektart. | [0..1]
-**DEPTH**                 | float                  | Tiefe der Objektart (m ab Terrainoberfläche) | [0..1]
-**DEPTH_WT**                 | float                  | Tiefe (m ab Terrainoberfläche) des Grundwasserspiegels (Mittelwert) | [0..1]
-**MEA_PERIOD**                 | range                  | Messperiode | [0..1]
+**KIND**                 | subtype                  | Type de l&#39;objet | [1]
+**STATUS**                 | [CD](#construction-pt-status)  | État du type d&#39;objet | [0..1]
+**EPOCH**                 | [CD](#construction-pt-epoch)  | Époque de construction du type d&#39;objet | [0..1]
+**DEPTH**                 | float                  | Profondeur du type d&#39;objet | [0..1]
+**DEPTH_WT**                 | float                  | Profondeur (m depuis la surface) de la nappe phréatique (valeur moyenne) | [0..1]
+**MEA_PERIOD**                 | range                  | Période de mesure de la profondeur du niveau hydrostatique | [0..1]
 
 
 
 
 
 #### Attribut  KIND
-_Objektart_
+_Type de l&#39;objet_
 
 
 |GeolCode|Deutsch|Français|
@@ -3203,7 +3308,7 @@ _Objektart_
 
 
 #### Attribut  STATUS {#construction-pt-status}
-_Zustand der Objektart._
+_État du type d&#39;objet_
 
 
 |GeolCode|Deutsch|Français|
@@ -3217,7 +3322,7 @@ _Zustand der Objektart._
 
 
 #### Attribut  EPOCH {#construction-pt-epoch}
-_Epoche der Erbauung der Objektart._
+_Époque de construction du type d&#39;objet_
 
 
 |GeolCode|Deutsch|Français|
@@ -3232,50 +3337,52 @@ _Epoche der Erbauung der Objektart._
 
 
 #### Attribut  DEPTH
-_Tiefe der Objektart (m ab Terrainoberfläche)._
+_Profondeur du type d&#39;objet_
 
-_Datentyp :  float_
+_Type de donnée :  float_
 
 
 
 
 
 #### Attribut  DEPTH_WT
-_Tiefe (m ab Terrainoberfläche) des Grundwasserspiegels (Mittelwert)._
+_Profondeur (m depuis la surface) de la nappe phréatique (valeur moyenne)_
 
-_Datentyp :  float_
+_Type de donnée :  float_
 
 
 
 
 
 #### Attribut  MEA_PERIOD
-_Messperiode._
+_Période de mesure de la profondeur du niveau hydrostatique_
 
-_Datentyp :  range_
-
-
-
-
-
-## Klasse Construction_L (Hcon){#construction-l}
-Die Klasse [Construction_L](#construction-l) enthält linienförmige Wasserbauten wie den Wasserfassungsstollen,
-welcher mit Objektarten der Klasse [Surface_Water_PT](#surface-water-pt) kombiniert werden kann.
+_Type de donnée :  range_
 
 
 
 
-Name             | Typ | Beschreibung                             |  Kard.
+
+## Classe Construction_L (Hcon){#construction-l}
+Dans la classe [Construction_L](#construction-l) se trouvent les constructions
+hydriques de forme linéaire comme les galeries de captage
+d’eau, qui peuvent être combinées avec les types d’objets de
+la classe Surface_Water_PT.
+
+
+
+
+Nom             | Type | Description                             |  Card.
 --------------------------|------------|-----------------------------------------------------|-----
-**KIND**                 | subtype                  | Objektart | [1]
-**COMBI**                 | [CD](#construction-l-combi)  | Objektart einer anderen Klasse, die mit der Objektart in Kombination vorkommen kann. | [0..1]
+**KIND**                 | subtype                  | Type de l&#39;objet | [1]
+**COMBI**                 | [CD](#construction-l-combi)  | Type d’objet d&#39;une autre classe avec lequel le type d’objet peut être combiné | [0..1]
 
 
 
 
 
 #### Attribut  KIND
-_Objektart_
+_Type de l&#39;objet_
 
 
 |GeolCode|Deutsch|Français|
@@ -3287,7 +3394,7 @@ _Objektart_
 
 
 #### Attribut  COMBI {#construction-l-combi}
-_Objektart einer anderen Klasse, die mit der Objektart in Kombination vorkommen kann_
+_Type d’objet d&#39;une autre classe avec lequel le type d’objet peut être combiné_
 
 
 |GeolCode|Deutsch|Français|
@@ -3301,27 +3408,28 @@ _Objektart einer anderen Klasse, die mit der Objektart in Kombination vorkommen 
 
 
 
-## Klasse Palaeohydrology_L (Hpal){#palaeohydrology-l}
-In der Klasse [Palaeohydrology_L](#palaeohydrology-l) befinden sich alle linienförmigen Objektarten, welche einen
-gewissen Bezug zu einem ehemaligen Gewässer aufweisen.
+## Classe Palaeohydrology_L (Hpal){#palaeohydrology-l}
+La classe [Palaeohydrology_L](#palaeohydrology-l) contient tous les types d’objets
+de forme linéaire, indiquant le tracé d’un cours d’eau dans
+le passé.
 
 
 
 
-Name             | Typ | Beschreibung                             |  Kard.
+Nom             | Type | Description                             |  Card.
 --------------------------|------------|-----------------------------------------------------|-----
-**KIND**                 | subtype                  | Objektart | [1]
-**REL_AGE**                 | [CD](#palaeohydrology-l-rel-age)  | Relatives Alter der Objektart. | [0..1]
-**CHRONO**                 | [ Tabelle ](#gc-chrono-cd)  | Chronostratigraphische Zuordnung. | [0..1]
-**REF_YEAR**                 | integer                  | Referenzjahr der ehemaligen Uferlinie | [1]
-**SOURCE**                 | string                  | Datenquelle der historischen Unterlagen | [0..1]
+**KIND**                 | subtype                  | Type de l&#39;objet | [1]
+**REL_AGE**                 | [CD](#palaeohydrology-l-rel-age)  | Age relatif du type d&#39;objet | [0..1]
+**CHRONO**                 | [ Table ](#gc-chrono-cd)  | Attribution chronostratigraphique | [0..1]
+**REF_YEAR**                 | integer                  | Année de référence de l’ancienne ligne de rivage | [1]
+**SOURCE**                 | string                  | Source des données déduites à partir de données historiques | [0..1]
 
 
 
 
 
 #### Attribut  KIND
-_Objektart_
+_Type de l&#39;objet_
 
 
 |GeolCode|Deutsch|Français|
@@ -3338,7 +3446,7 @@ _Objektart_
 
 
 #### Attribut  REL_AGE {#palaeohydrology-l-rel-age}
-_Relatives Alter der Objektart_
+_Age relatif du type d&#39;objet_
 
 
 |GeolCode|Deutsch|Français|
@@ -3353,52 +3461,56 @@ _Relatives Alter der Objektart_
 
 
 #### Attribut  CHRONO
-_Chronostratigraphische Zuordnung._
+_Attribution chronostratigraphique_
 
-Siehe [GC_CHRONO_CD](#gc-chrono-cd) in der Anhang
+Voir [GC_CHRONO_CD](#gc-chrono-cd) dans l'annexe
 
 
 
 
 
 #### Attribut  REF_YEAR
-_Referenzjahr der ehemaligen Uferlinie._
+_Année de référence de l’ancienne ligne de rivage._
 
-_Datentyp :  integer_
+_Type de donnée :  integer_
 
 
 
 
 
 #### Attribut  SOURCE
-_Datenquelle der historischen Unterlagen._
+_Source des données déduites à partir de données historiques_
 
-_Datentyp :  string_
-
-
-
-
-
-## Klasse Subsurface_Water_L (Hsub){#subsurface-water-l}
-In der Klasse [Subsurface_Water_L](#subsurface-water-l) befinden sich linienförmigen Objektarten, welche einen
-unterirdischen Gewässerlauf anzeigen.
-
-Der genaue Verlauf des unterirdischen Gewässerlaufes ist meistens vermutet.
+_Type de donnée :  string_
 
 
 
 
-Name             | Typ | Beschreibung                             |  Kard.
+
+## Classe Subsurface_Water_L (Hsub){#subsurface-water-l}
+Dans la classe [Subsurface_Water_L](#subsurface-water-l) se trouvent les objets de
+forme linéaire qui représentent les cours d’eau souterrains.
+Le parcours exact des cours d’eau souterrains est presque
+toujours supposé. Il est déduit à partir de quelques données
+d’études de systèmes de captage. Les essais de traçage
+seront mentionnées dans la notice explicative, lorsqu’elle
+existe. Les cours d’eau souterrains peuvent être combinés
+avec les objets de la classe Surface_Water_PT.
+
+
+
+
+Nom             | Type | Description                             |  Card.
 --------------------------|------------|-----------------------------------------------------|-----
-**KIND**                 | subtype                  | Objektart | [1]
-**COMBI**                 | [CD](#subsurface-water-l-combi)  | Objektart einer anderen Klasse, die mit der Objektart in Kombination vorkommen kann. | [0..1]
+**KIND**                 | subtype                  | Type de l&#39;objet | [1]
+**COMBI**                 | [CD](#subsurface-water-l-combi)  | Type d’objet d&#39;une autre classe avec lequel le type d’objet peut être combiné | [0..1]
 
 
 
 
 
 #### Attribut  KIND
-_Objektart_
+_Type de l&#39;objet_
 
 
 |GeolCode|Deutsch|Français|
@@ -3409,7 +3521,7 @@ _Objektart_
 
 
 #### Attribut  COMBI {#subsurface-water-l-combi}
-_Objektart einer anderen Klasse, die mit der Objektart in Kombination vorkommen kann_
+_Type d’objet d&#39;une autre classe avec lequel le type d’objet peut être combiné_
 
 
 |GeolCode|Deutsch|Français|
@@ -3422,33 +3534,46 @@ _Objektart einer anderen Klasse, die mit der Objektart in Kombination vorkommen 
 
 
 
-## Klasse Surface_Water_PT (Hsur){#surface-water-pt}
-Die Klasse [Surface_Water_PT](#surface-water-pt) umfasst lokal (punktuell) beobachtete Oberflächengewässer, wie
-natürliche Wasseraustritts- und Versickerungsstellen. Zudem befindet sich die Objektart Steilstufe
-in Bachrinne, Wasserfall in dieser Klasse, die eine spezielle Stelle in Fliessgewässern markiert und
-die durch die darunterliegende Geologie bedingt ist.
+## Classe Surface_Water_PT (Hsur){#surface-water-pt}
+La classe [Surface_Water_PT](#surface-water-pt) comprend les eaux de surface
+locales (ponctuelles) comme les sources et les pertes d’un
+cours d’eau. On y trouve également des types d’objets
+particuliers comme les cascades et les rapides, lesquels
+marquent des positions spécifiques du cours d’eau qui sont à
+relier avec la géologie sous-jacente. Une source est décrite
+comme «source thermale» lorsque l’eau y atteint une
+température annuelle moyenne ≥ 20°C. L’attribut «Temp» est
+associé à ce type de source et se limite en règle générale à
+la température moyenne de l’eau. Par conséquent aucune
+donnée d’analyse chimique n’est indiquée pour cet attribut.
+Par «source minérale», on entend une source avec une
+concentration minérale dans l’eau ≥ 1g / l ou une
+concentration en CO2 ≥ 250 mg / l. L’attribut «Chemistry»
+est associé à ce type de source. Il indique l’élément
+caractéristique principal de l’eau minérale et non le
+chimisme complet de l’eau
 
 
 
 
-Name             | Typ | Beschreibung                             |  Kard.
+Nom             | Type | Description                             |  Card.
 --------------------------|------------|-----------------------------------------------------|-----
-**KIND**                 | subtype                  | Objektart | [1]
-**STATUS**                 | [CD](#surface-water-pt-status)  | Zustand der Objektart. | [0..1]
-**FLOW_CON**                 | [CD](#surface-water-pt-flow-con)  | Wasserfluss Bedingungen. | [0..1]
-**TYPE**                 | [CD](#surface-water-pt-type)  | Charakteristik der Objektart. | [0..1]
-**DIS_LOCA**                 | [CD](#surface-water-pt-dis-loca)  | Ort des Wasserausflusses. | [0..1]
-**COMBI**                 | [CD](#surface-water-pt-combi)  | Objektart einer anderen Klasse, die mit der Objektart in Kombination vorkommen kann. | [0..1]
-**TEMP**                 | integer                  | Mittlere Wassertemperatur (°C) | [0..1]
-**CHEMISTRY**                 | string                  | Charakteristisches chemisches Element im Mineralwasser (z.B. Fe) | [0..1]
-**AZIMUTH**                 | integer                  | Richtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad (0° bis 359°) im Uhrzeigersinn gemessen | [0..1]
+**KIND**                 | subtype                  | Type de l&#39;objet | [1]
+**STATUS**                 | [CD](#surface-water-pt-status)  | État du type d&#39;objet | [0..1]
+**FLOW_CON**                 | [CD](#surface-water-pt-flow-con)  | Condition d’écoulement | [0..1]
+**TYPE**                 | [CD](#surface-water-pt-type)  | Caractéristique du type d&#39;objet | [0..1]
+**DIS_LOCA**                 | [CD](#surface-water-pt-dis-loca)  | Lieu d’écoulement | [0..1]
+**COMBI**                 | [CD](#surface-water-pt-combi)  | Type d’objet d&#39;une autre classe avec lequel le type  d’objet peut être combiné | [0..1]
+**TEMP**                 | integer                  | Température moyenne (°C) de l&#39;eau | [0..1]
+**CHEMISTRY**                 | string                  | Element chimique caractéristique dans l’eau minérale | [0..1]
+**AZIMUTH**                 | integer                  | Azimut du type d&#39;objet. L&#39;azimut est mesuré depuis le  nord en degré de 0° à 359° dans le sens des aiguilles  d&#39;une montre | [0..1]
 
 
 
 
 
 #### Attribut  KIND
-_Objektart_
+_Type de l&#39;objet_
 
 
 |GeolCode|Deutsch|Français|
@@ -3464,7 +3589,7 @@ _Objektart_
 
 
 #### Attribut  STATUS {#surface-water-pt-status}
-_Zustand der Objektart._
+_État du type d&#39;objet_
 
 
 |GeolCode|Deutsch|Français|
@@ -3478,7 +3603,7 @@ _Zustand der Objektart._
 
 
 #### Attribut  FLOW_CON {#surface-water-pt-flow-con}
-_Wasserfluss Bedingungen._
+_Condition d’écoulement_
 
 
 |GeolCode|Deutsch|Français|
@@ -3493,7 +3618,7 @@ _Wasserfluss Bedingungen._
 
 
 #### Attribut  TYPE {#surface-water-pt-type}
-_Charakteristik der Objektart_
+_Caractéristique du type d&#39;objet_
 
 
 |GeolCode|Deutsch|Français|
@@ -3508,7 +3633,7 @@ _Charakteristik der Objektart_
 
 
 #### Attribut  DIS_LOCA {#surface-water-pt-dis-loca}
-_Ort des Wasserausflusses._
+_Lieu d’écoulement_
 
 
 |GeolCode|Deutsch|Français|
@@ -3521,7 +3646,7 @@ _Ort des Wasserausflusses._
 
 
 #### Attribut  COMBI {#surface-water-pt-combi}
-_Objektart einer anderen Klasse, die mit der Objektart in Kombination vorkommen kann_
+_Type d’objet d&#39;une autre classe avec lequel le type  d’objet peut être combiné_
 
 
 |GeolCode|Deutsch|Français|
@@ -3535,48 +3660,49 @@ _Objektart einer anderen Klasse, die mit der Objektart in Kombination vorkommen 
 
 
 #### Attribut  TEMP
-_Mittlere Wassertemperatur (°C)._
+_Température moyenne (°C) de l&#39;eau_
 
-_Datentyp :  integer_
+_Type de donnée :  integer_
 
 
 
 
 
 #### Attribut  CHEMISTRY
-_Charakteristisches chemisches Element im Mineralwasser (z.B. Fe)._
+_Element chimique caractéristique dans l’eau minérale_
 
-_Datentyp :  string_
+_Type de donnée :  string_
 
 
 
 
 
 #### Attribut  AZIMUTH
-_Richtung (Azimut) der jeweiligen Punktobjektart. Wert in Grad (0° bis 359°) im Uhrzeigersinn gemessen._
+_Azimut du type d&#39;objet. L&#39;azimut est mesuré depuis le  nord en degré de 0° à 359° dans le sens des aiguilles  d&#39;une montre_
 
-_Datentyp :  integer_
-
-
-
-
-
-## Klasse Surface_Water_L (Hsur){#surface-water-l}
-In der Klasse [Surface_Water_L](#surface-water-l) sind linienförmige Oberflächengewässer (Quellhorizonte) beschrieben.
+_Type de donnée :  integer_
 
 
 
 
-Name             | Typ | Beschreibung                             |  Kard.
+
+## Classe Surface_Water_L (Hsur){#surface-water-l}
+Dans la classe [Surface_Water_L](#surface-water-l) sont décrit les niveaux de
+sources (de forme linéaire)
+
+
+
+
+Nom             | Type | Description                             |  Card.
 --------------------------|------------|-----------------------------------------------------|-----
-**KIND**                 | subtype                  | Objektart | [1]
+**KIND**                 | subtype                  | Type de l&#39;objet | [1]
 
 
 
 
 
 #### Attribut  KIND
-_Objektart_
+_Type de l&#39;objet_
 
 
 |GeolCode|Deutsch|Français|
@@ -3587,23 +3713,26 @@ _Objektart_
 
 
 
-## Klasse Surface_Water_PLG (Hsur){#surface-water-plg}
-Die Klasse [Surface_Water_PLG](#surface-water-plg) beinhaltet oberflächliche Wasserspeicher wie Gletscher, Seen und
-Flüsse.
+## Classe Surface_Water_PLG (Hsur){#surface-water-plg}
+La classe [Surface_Water_PLG](#surface-water-plg) regroupe toutes les
+accumulations d’eaux superficielles comme les glaciers, les
+lacs et les rivières qui masquent les unités géologiques
+sous-jacentes. Le modèle complet du réseau hydrique ne fait
+pas partie du Modèle de données géologiques.
 
 
 
 
-Name             | Typ | Beschreibung                             |  Kard.
+Nom             | Type | Description                             |  Card.
 --------------------------|------------|-----------------------------------------------------|-----
-**KIND**                 | subtype                  | Objektart | [1]
+**KIND**                 | subtype                  | Type de l&#39;objet | [1]
 
 
 
 
 
 #### Attribut  KIND
-_Objektart_
+_Type de l&#39;objet_
 
 
 |GeolCode|Deutsch|Français|
@@ -3616,15 +3745,14 @@ _Objektart_
 
 
 
-
-
+# Annexes
 
 
 \blandscape
 
 
-## Anhang  GC_GEOL_MAPPING_UNIT_ATT {#gc-geol-mapping-unit-att}
-Kartiereinheiten
+## Annexe  GC_GEOL_MAPPING_UNIT_ATT {#gc-geol-mapping-unit-att}
+Unités de cartographie
 
 
 
@@ -5964,8 +6092,8 @@ Kartiereinheiten
 
 
 
-## Anhang  GC_GEOL_MAPPING_UNIT_CD {#gc-geol-mapping-unit-cd}
-Kartiereinheiten
+## Annexe  GC_GEOL_MAPPING_UNIT_CD {#gc-geol-mapping-unit-cd}
+Unités de cartographie
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -8883,8 +9011,8 @@ Kartiereinheiten
 
 
 
-## Anhang  GC_CORRELATION_CD {#gc-correlation-cd}
-Korrelation
+## Annexe  GC_CORRELATION_CD {#gc-correlation-cd}
+Correlation
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -8969,7 +9097,7 @@ Korrelation
 
 
 
-## Anhang  GC_LITSTRAT_FORMATION_BANK_CD {#gc-litstrat-formation-bank-cd}
+## Annexe  GC_LITSTRAT_FORMATION_BANK_CD {#gc-litstrat-formation-bank-cd}
 blabla
 
 |GeolCode|Deutsch|Français|
@@ -10519,8 +10647,8 @@ blabla
 
 
 
-## Anhang  GC_LITSTRAT_UNCO_CD {#gc-litstrat-unco-cd}
-Wertetabelle der lithostratigraphischen Einheiten
+## Annexe  GC_LITSTRAT_UNCO_CD {#gc-litstrat-unco-cd}
+Table des valeurs des unités lithostratigraphiques
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -11133,8 +11261,8 @@ Wertetabelle der lithostratigraphischen Einheiten
 
 
 
-## Anhang  GC_LITHO_CD {#gc-litho-cd}
-Wertetabellen der lithologischen Beschreibung
+## Annexe  GC_LITHO_CD {#gc-litho-cd}
+Tables des valeurs de la description lithologique
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -11854,8 +11982,8 @@ Wertetabellen der lithologischen Beschreibung
 
 
 
-## Anhang  GC_LITHO_UNCO_CD {#gc-litho-unco-cd}
-Wertetabellen der lithologischen Beschreibung
+## Annexe  GC_LITHO_UNCO_CD {#gc-litho-unco-cd}
+Tables des valeurs de la description lithologique (roches meubles)
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -11936,8 +12064,8 @@ Wertetabellen der lithologischen Beschreibung
 
 
 
-## Anhang  GC_CHRONO_CD {#gc-chrono-cd}
-Wertetabelle der chronostratigraphischen Einheiten
+## Annexe  GC_CHRONO_CD {#gc-chrono-cd}
+Table des valeurs des unités chronostratigraphiques
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -12089,8 +12217,8 @@ Wertetabelle der chronostratigraphischen Einheiten
 
 
 
-## Anhang  GC_TECTO_CD {#gc-tecto-cd}
-Wertetabelle der tektonischen Einheiten
+## Annexe  GC_TECTO_CD {#gc-tecto-cd}
+Table des valeurs des unités tectoniques
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -12499,8 +12627,8 @@ Wertetabelle der tektonischen Einheiten
 
 
 
-## Anhang  GC_MINERAL_CD {#gc-mineral-cd}
-Wichtiges Mineral des metamorphen Gesteins
+## Annexe  GC_MINERAL_CD {#gc-mineral-cd}
+Minéral important de la roche métamorphique
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -12598,8 +12726,8 @@ Wichtiges Mineral des metamorphen Gesteins
 
 
 
-## Anhang  GC_ADMIXTURE {#gc-admixture}
-Beimengung
+## Annexe  GC_ADMIXTURE {#gc-admixture}
+Incorporation
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -12625,8 +12753,8 @@ Beimengung
 
 
 
-## Anhang  GC_COMPOSIT {#gc-composit}
-Zusammensetzung des Lockergesteins
+## Annexe  GC_COMPOSIT {#gc-composit}
+Composition de la roche meuble
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -12646,8 +12774,8 @@ Zusammensetzung des Lockergesteins
 
 
 
-## Anhang  GC_CHARCAT {#gc-charcat}
-Spezifische Eigenschaft.
+## Annexe  GC_CHARCAT {#gc-charcat}
+Structure sédimentaire
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
@@ -12671,8 +12799,8 @@ Spezifische Eigenschaft.
 
 
 
-## Anhang  GC_SYSTEM {#gc-system}
-Fossiliengruppe.
+## Annexe  GC_SYSTEM {#gc-system}
+Groupe de fossile
 
 |GeolCode|Deutsch|Français|
 |---------------|----------------------------------------|----------------------------------------|
