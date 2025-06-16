@@ -76,6 +76,9 @@ _{{_("Datatype")}} :  {{ attr.att_type  }}_
 {% endfor %}
 
 
+{%- if annexes != None -%}
+# {{ _("Annexes") }}
+{% endif %}
 
 {% for annex in annexes -%}
 
