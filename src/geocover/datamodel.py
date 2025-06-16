@@ -19,30 +19,25 @@ from loguru import logger
 import traceback
 
 
-def strict_import(module_name, attr_name):
+def dynamic_import(module_name, attr_name):
     try:
         module = importlib.import_module(module_name)
         attr = getattr(module, attr_name)
         logger.debug(f"Successfully imported '{attr_name}' from '{module_name}'")
         return attr
-    except ModuleNotFoundError as e:
-        logger.error(f"Module '{module_name}' not found.")
-        raise e
-    except AttributeError as e:
-        logger.error(f"Attribute '{attr_name}' not found in module '{module_name}'.")
-        raise e
+    except ModuleNotFoundError:
+        logger.warning(f"Module '{module_name}' not found.")
+    except AttributeError:
+        logger.warning(f"Attribute '{attr_name}' not found in '{module_name}'.")
+    return None
 
 
-ATTRIBUTES_TO_IGNORE = (
-    strict_import("geocover.config", "ATTRIBUTES_TO_IGNORE")
-    if importlib.util.find_spec("geocover.config")
-    else strict_import("config", "ATTRIBUTES_TO_IGNORE")
-)
+ATTRIBUTES_TO_IGNORE = dynamic_import(
+    "geocover.config", "ATTRIBUTES_TO_IGNORE"
+) or dynamic_import("config", "ATTRIBUTES_TO_IGNORE")
 
-Translator = (
-    strict_import("geocover.translator", "Translator")
-    if importlib.util.find_spec("geocover.translator")
-    else strict_import("translator", "Translator")
+Translator = dynamic_import("geocover.translator", "Translator") or dynamic_import(
+    "translator", "Translator"
 )
 
 
@@ -618,9 +613,12 @@ class Report:
                         return None
                     table_name = cls.get("table")
                     attributes = cls.get("attributes")
-                    cls["abrev"] = (
-                        f"{theme['name'][0].upper()}{cls['name'][0:3].lower()}"
-                    )
+                    abrev = cls.get("abrev", "")
+                    if abrev == "":
+                        logger.error(f"Using default abrev: {cls_name}")
+                        abrev = f"{theme['name'][0].upper()}{cls['name'][0:3].lower()}"
+                    cls["abrev"] = abrev
+
                     if attributes:
                         attributes_in_model = []
                         for att in attributes:
@@ -1052,7 +1050,7 @@ def generate(lang, datamodel, output, input_dir):
     temp = env.get_template("model_markdown.j2")
 
     json_fname = os.path.join(output_dir, lang, f"{project_name}.json")
-    logger.info(f"Generating {json_fname}")
+    logger.info(f"Generating JSON from model {json_fname}")
     with open(json_fname, "w", encoding="utf-8") as f:
         f.write(json.dumps(data, indent=4, cls=DatetimeEncoder))
 
