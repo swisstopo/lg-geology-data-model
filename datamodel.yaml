@@ -230,11 +230,12 @@ themes:
       mandatory: false
     - name: ref_year
       description:
-        de: Zeitpunkt oder Zeitperiode. Zum Beispiel «1940 1943, Periode der Drainage»
+        de: >- 
+          Zeitpunkt oder Zeitperiode. Zum Beispiel «1940 1943, Periode der Drainage»
           (muss präzisiert werden).
         fr: >-
-          Information de temps ou période. Par ex. "1940-1943: année de référence
-          de l’ancienne ligne de rivage".
+          Information de temps ou période. Par ex. "1940-1943: année de
+          référence de l’ancienne ligne de rivage".
       att_type: string
       cardinality: 0..1
       mandatory: false
@@ -870,12 +871,12 @@ themes:
     abrev: Tdef
     table: GC_POINT_OBJECTS     # TODO: to check
     description:
-      de: |
+      de: >-
         Die Klasse Deformation_Structures_PT beinhaltet punktuell beobachtete tektonische
         Deformationsstrukturen wie lokal stark verfaltete Stellen (Fältelung) oder Orte mit ausgeprägter
         Klüftung. Ebenfalls in dieser Klasse befinden sich konstruierte Punkte wie z.B. die Orientierung
         der Faltenachsenfläche.
-      fr: |-
+      fr: >-
         La classe Deformation_Structures_PT contient des structures
         de déformation tectonique observées ponctuellement, telles
         que des endroits localement très plissés (plissotement) ou
@@ -1331,7 +1332,7 @@ themes:
     description:
       de: Die Klasse Fossils_PT enthält alle Fossilfundstellen.
       fr: |-
-        La classe Fossils_PT contient tous les gisements
+        La classe Fossils_PT contient tous les gisements.
         fossilifères
     attributes:
     - name: kind
@@ -1579,7 +1580,7 @@ themes:
       alias: name_horiz
       description:
         de: Name des Leithorizonts.
-        fr: Nom du horizon repère
+        fr: Nom de l'horizon repère
       att_type: annex
       value: GC_GEOL_MAPPING_UNIT_CD        # TODO: was 13103, now field: LPRO_NAME_HORIZ
       cardinality: 0..1
