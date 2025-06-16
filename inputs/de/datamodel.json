@@ -1,9 +1,9 @@
 {
     "version": "0.10",
-    "date": "2025-06-16T11:36:21.466963",
+    "date": "2025-06-16T21:05:51.668651",
     "model": {
         "revision": "4.1.0",
-        "revision_date": "2025-05-20",
+        "revision_date": "2025-05-26",
         "sources_dir": "exports/2025-05-26"
     },
     "themes": [
@@ -2250,7 +2250,7 @@
                 },
                 {
                     "name": "Indication_of_Resources_PT",
-                    "abrev": "Lind",
+                    "abrev": "Lres",
                     "table": "GC_POINT_OBJECTS",
                     "description": {
                         "de": "Die Klasse Indication_of_Resources_PT beinhaltet Fundstellen von vulkanischen, mineralischen\nund nicht-mineralischen Rohstoffen.\n",
@@ -2734,7 +2734,7 @@
                 },
                 {
                     "name": "Contour_Lines_Bedrock_L",
-                    "abrev": "Pcon",
+                    "abrev": "Pcob",
                     "table": "GC_LINEAR_OBJECTS",
                     "description": {
                         "de": "Die Klasse Contour_Lines_Bedrock_L beinhaltet Isohypsen, die sich auf den Verlauf des Fest-\ngesteins beziehen und die das Resultat von Modellierungen darstellen. U.a. befinden sich die Iso-\nhypsen der Felsoberfl\u00e4che in dieser Klasse.\n",
@@ -2865,7 +2865,7 @@
                 },
                 {
                     "name": "Contour_Lines_Hydro_L",
-                    "abrev": "Pcon",
+                    "abrev": "Pcoh",
                     "table": "GC_LINEAR_OBJECTS",
                     "description": {
                         "de": "In der Klasse Contour_Lines_Hydro_L befinden sich die Isohypsen, die sich auf das Grundwasser\nbeziehen.\n",
@@ -36559,7 +36559,7 @@
             }
         }
     ],
-    "hash": "58625f3",
+    "hash": "22a336d",
     "geolcodes": {
         "added": [
             {
