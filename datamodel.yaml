@@ -65,20 +65,20 @@ themes:
         fr: État du type d'objet
       cardinality: "1"
       mandatory: false
-    - name: rock_type
-      att_type: CD
-      value: GC_PNT_RUNC_ROCK_TYP_CD
-      description:
-        de: Gesteinstyp
-        fr: Type de roche
-      cardinality: 0..1
-      mandatory: false
     - name: rock_spe
       att_type: CD
       value: GC_PNT_RUNC_ROCK_SPE_CD
       description:
         de: Bezeichnung des Leitgesteins.
         fr: Description de la roche repère
+      cardinality: 0..1
+      mandatory: false
+    - name: rock_type
+      att_type: CD
+      value: GC_PNT_RUNC_ROCK_TYP_CD
+      description:
+        de: Gesteinstyp
+        fr: Type de roche
       cardinality: 0..1
       mandatory: false
     - name: mat_type        # TODO type
