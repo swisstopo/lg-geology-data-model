@@ -131,6 +131,13 @@ logger.info(f"Saving file to {translation_xlsx_path} with {len(df_trad)} transla
 """
 
 
+def simplify_version(version_str):
+    parts = version_str.split(".")
+    if len(parts) >= 2:
+        return ".".join(parts[:2])
+    return version_str
+
+
 class SDESchema:
     def __init__(self, json_path: str):
         self.json_path = Path(json_path)
@@ -571,6 +578,7 @@ class Report:
                 self._model = yaml.load(f, Loader=yaml.FullLoader)
                 self._model["date"] = str(datetime.date.today())
                 self._model["hash"] = get_git_revision_short_hash()
+
             return self._model
 
     @property
@@ -977,6 +985,7 @@ def generate(lang, datamodel, output, input_dir):
     data["lang"] = lang
     data["date"] = now
     data["hash"] = get_git_revision_short_hash()
+    data["model"]["short_revision"] = simplify_version(data["model"]["revision"])
     locale = lang
 
     # logger.info(json.dumps(data, indent=4,  cls=DatetimeEncoder))
