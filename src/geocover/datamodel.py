@@ -4,6 +4,7 @@ import json
 import os
 import subprocess
 import sys
+import importlib
 import threading
 from typing import Dict, Any, Optional
 from pathlib import Path
@@ -18,12 +19,31 @@ from loguru import logger
 import traceback
 
 
-try:
-    from geocover.config import ATTRIBUTES_TO_IGNORE
-    from geocover.translator import Translator
-except ImportError:
-    from config import ATTRIBUTES_TO_IGNORE
-    from translator import Translator
+def strict_import(module_name, attr_name):
+    try:
+        module = importlib.import_module(module_name)
+        attr = getattr(module, attr_name)
+        logger.debug(f"Successfully imported '{attr_name}' from '{module_name}'")
+        return attr
+    except ModuleNotFoundError as e:
+        logger.error(f"Module '{module_name}' not found.")
+        raise e
+    except AttributeError as e:
+        logger.error(f"Attribute '{attr_name}' not found in module '{module_name}'.")
+        raise e
+
+
+ATTRIBUTES_TO_IGNORE = (
+    strict_import("geocover.config", "ATTRIBUTES_TO_IGNORE")
+    if importlib.util.find_spec("geocover.config")
+    else strict_import("config", "ATTRIBUTES_TO_IGNORE")
+)
+
+Translator = (
+    strict_import("geocover.translator", "Translator")
+    if importlib.util.find_spec("geocover.translator")
+    else strict_import("translator", "Translator")
+)
 
 
 PACKAGE_NAME = "geocover"
