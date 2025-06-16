@@ -978,7 +978,7 @@ def generate(lang, datamodel, output, input_dir):
 
     def strip_final_dot(value):
         ori = value
-        modified = value.rstrip(".")
+        modified = value.strip().rstrip(".")
         if ori != modified:
             logger.info(f"FOUND: {modified}")
         return modified
