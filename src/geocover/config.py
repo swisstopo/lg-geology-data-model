@@ -15,7 +15,6 @@ abreviations = [
     "Lano",
     "Lfos",
     "Lgeo",
-    "Lind",
     "Lmin",
     "Lmis",
     "Lpro",
