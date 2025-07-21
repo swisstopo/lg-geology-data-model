@@ -207,6 +207,9 @@ def load_translation_dataframe(input_dir: str) -> pd.DataFrame:
     csv_path = os.path.join(input_dir, "GeolCodeText_Trad_230317.csv")
     # TODO: All new GMU codes found in the XLSX table (generations ?
     json_path = os.path.join(input_dir, "all_codes_dict.json")
+    # New table
+    new_translations_path = os.path.join(input_dir, "2025b_GeolCodeText_Trad.xlsx")
+
     # Translation only in templates, and trying to move translation from datamodel.yaml
     translation_xlsx_path = "translations.xlsx"
     # Ouputs
@@ -223,6 +226,9 @@ def load_translation_dataframe(input_dir: str) -> pd.DataFrame:
 
         # Load Alan's CSV data
         df_trad_load = pd.read_csv(csv_path, sep=";")
+
+        # Load new Alan's file
+        df_new_trad = pd.read_excel(new_translations_path, sheet_name="Tabelle1")
 
         # Load all Coded Domains data and convert to DataFrame
         with open(json_path, "r", encoding="utf-8") as file:
@@ -249,9 +255,12 @@ def load_translation_dataframe(input_dir: str) -> pd.DataFrame:
         logger.info(
             f"Number translations in 'GeolCodeText_Trad_230317.csv': {len(df_trad_load)} "
         )
+        logger.info(
+            f"Number translations in '{new_translations_path}': {len(df_new_trad)} "
+        )
 
         # Merge DataFrames
-        merged_df = pd.concat([df_from_json, df_trad_load, df_app_trad])
+        merged_df = pd.concat([df_from_json, df_trad_load, df_app_trad, df_new_trad])
 
         merged_df["GeolCodeInt"] = merged_df["GeolCodeInt"].astype("string")
 
@@ -1058,6 +1067,7 @@ def generate(lang, datamodel, output, input_dir):
 
     temp = env.get_template("model_markdown.j2")
 
+    
     json_fname = os.path.join(output_dir, lang, f"{project_name}.json")
     logger.info(f"Generating JSON from model {json_fname}")
     with open(json_fname, "w", encoding="utf-8") as f:
