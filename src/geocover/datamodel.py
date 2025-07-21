@@ -210,7 +210,7 @@ def load_translation_dataframe(input_dir: str, dataframes=[]) -> pd.DataFrame:
     # New table
     new_translations_path = os.path.join(input_dir, "2025b_GeolCodeText_Trad.xlsx")
     # Custom Chrono CSV
-    custom_chrono_path = os.path.join(input_dir, "geolcode_chrono-csv")
+    custom_chrono_path = os.path.join(input_dir, "geolcode_chrono.csv")
 
     # Translation only in templates, and trying to move translation from datamodel.yaml
     translation_xlsx_path = "translations.xlsx"
