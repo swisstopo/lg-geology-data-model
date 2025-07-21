@@ -209,6 +209,8 @@ def load_translation_dataframe(input_dir: str, dataframes=[]) -> pd.DataFrame:
     json_path = os.path.join(input_dir, "all_codes_dict.json")
     # New table
     new_translations_path = os.path.join(input_dir, "2025b_GeolCodeText_Trad.xlsx")
+    # Custom Chrono CSV
+    custom_chrono_path = os.path.join(input_dir, "geolcode_chrono-csv")
 
     # Translation only in templates, and trying to move translation from datamodel.yaml
     translation_xlsx_path = "translations.xlsx"
@@ -229,6 +231,9 @@ def load_translation_dataframe(input_dir: str, dataframes=[]) -> pd.DataFrame:
 
         # Load new Alan's file
         df_new_trad = pd.read_excel(new_translations_path, sheet_name="Tabelle1")
+
+        # Custom Chrono
+        chrono_df = pd.read_csv(custom_chrono_path)
 
         # Load all Coded Domains data and convert to DataFrame
         with open(json_path, "r", encoding="utf-8") as file:
@@ -259,7 +264,8 @@ def load_translation_dataframe(input_dir: str, dataframes=[]) -> pd.DataFrame:
 
         # Merge DataFrames
         merged_df = pd.concat(
-            dataframes + [df_from_json, df_trad_load, df_app_trad, df_new_trad]
+            dataframes
+            + [df_from_json, df_trad_load, df_app_trad, df_new_trad, chrono_df]
         )
 
         merged_df["GeolCodeInt"] = merged_df["GeolCodeInt"].astype("string")
