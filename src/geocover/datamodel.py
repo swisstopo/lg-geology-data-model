@@ -192,7 +192,7 @@ def get_sde_schema(source_dir):
         return sde_schema
 
 
-def load_translation_dataframe(input_dir: str) -> pd.DataFrame:
+def load_translation_dataframe(input_dir: str, dataframes=[]) -> pd.DataFrame:
     """
     Load and merge translation data from CSV and JSON files, then return a cleaned translation DataFrame.
 
@@ -249,9 +249,7 @@ def load_translation_dataframe(input_dir: str) -> pd.DataFrame:
         df_from_json["FR"] = df_from_json["FR"].astype("string")
 
         logger.info(f"Number translations in 'translation.xlsx': {len(df_app_trad)} ")
-        logger.info(
-            f"Number translations in 'all_codes_dict.json': {len(df_from_json)} "
-        )
+        logger.info(f"Number translations in '{json_path}': {len(df_from_json)} ")
         logger.info(
             f"Number translations in 'GeolCodeText_Trad_230317.csv': {len(df_trad_load)} "
         )
@@ -260,7 +258,9 @@ def load_translation_dataframe(input_dir: str) -> pd.DataFrame:
         )
 
         # Merge DataFrames
-        merged_df = pd.concat([df_from_json, df_trad_load, df_app_trad, df_new_trad])
+        merged_df = pd.concat(
+            dataframes + [df_from_json, df_trad_load, df_app_trad, df_new_trad]
+        )
 
         merged_df["GeolCodeInt"] = merged_df["GeolCodeInt"].astype("string")
 
@@ -1048,10 +1048,37 @@ def generate(lang, datamodel, output, input_dir):
 
         return p.sub(r"**\1**", input)
 
+    def get_domains_df(domains):
+        geolcode = []
+        labels = []
+
+        for field_data in domains.values():
+            if field_data.get("type") == "CodedValue":
+                for k, v in field_data.get("codedValues", {}).items():
+                    if int(k) > 1e6:
+                        geolcode.append(k)
+                        labels.append(v)
+
+        # 🐼 Create DataFrame
+        df = pd.DataFrame({"GeolCodeInt": geolcode, "DE": labels})
+
+        return df
+
     # Used instead of babel
     try:
-        df_translations = load_translation_dataframe(input_dir)
+        geolcodes, descr = zip(*subtypes.items())
+        geolcodes = list(geolcodes)
+        descr = list(descr)
+        subtypes_df = pd.DataFrame(
+            {"GeolCodeInt": geolcodes, "DE": map(remove_prefix, descr)}
+        )
+        domains_df = get_domains_df(domains)
+
+        df_translations = load_translation_dataframe(
+            input_dir, dataframes=[subtypes_df, domains_df]
+        )
         # Now you can use df_translations for your translations
+
     except Exception as e:
         # Handle error case
         print(f"Failed to load translations: {e}")
@@ -1067,7 +1094,6 @@ def generate(lang, datamodel, output, input_dir):
 
     temp = env.get_template("model_markdown.j2")
 
-    
     json_fname = os.path.join(output_dir, lang, f"{project_name}.json")
     logger.info(f"Generating JSON from model {json_fname}")
     with open(json_fname, "w", encoding="utf-8") as f:

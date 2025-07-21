@@ -64,18 +64,21 @@ class Translator:
 
         try:
             geol_code_str = str(geol_code)
+            logger.debug(f"   {geol_code_str}")
 
             # Try primary language first
             primary_msg = self._get_translation(geol_code_str, lang)
-            if primary_msg is not None:
+
+            if primary_msg is not None and primary_msg != geol_code_str:
                 return (self._clean_message(primary_msg), False)
 
             # Try fallback language (German if French requested, French if German requested)
             fallback_lang = "DE" if lang == "FR" else "FR"
             fallback_msg = self._get_translation(geol_code_str, fallback_lang)
+
             if fallback_msg is not None:
                 logger.warning(
-                    f"Using {fallback_lang} fallback for geol_code '{geol_code}' (requested: {lang})"
+                    f"Using {fallback_lang} fallback as '{fallback_msg}' for geol_code '{geol_code}' (requested: {lang})"
                 )
                 return (self._clean_message(fallback_msg), False)
 
