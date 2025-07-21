@@ -12,7 +12,7 @@ class Translator:
         self._lock = threading.Lock()  # Ensures thread safety
         self.df_trad = df_trad
 
-    def translate(self, geol_code, text, lang="FR"):
+    def translate(self, geol_code, lang="FR"):
         """
         Public method to translate with error tracking.
 
@@ -24,7 +24,7 @@ class Translator:
         Returns:
             str: Translated text or fallback
         """
-        translated_text, err = self._translate(geol_code, text, lang)
+        translated_text, err = self._translate(geol_code, lang)
 
         if err:
             with self._lock:
@@ -33,7 +33,7 @@ class Translator:
 
         return translated_text
 
-    def _translate(self, geol_code, fallback, lang):
+    def _translate(self, geol_code, lang):
         """
         Internal translation method with intelligent fallback logic.
 
@@ -51,7 +51,7 @@ class Translator:
         Returns:
             tuple: (translated_message, error_occurred)
         """
-        msg = fallback
+        msg = str(geol_code)
         err = False
 
         # Handle special case for code "0"
@@ -60,6 +60,7 @@ class Translator:
 
         # Only process supported languages
         if lang not in ("DE", "FR"):
+            logger.debug(f"Unknow lang: {lang}")
             return (msg, False)
 
         try:
@@ -84,9 +85,9 @@ class Translator:
 
             # No translation found in either language
             err = True
-            logger.error(
-                f"No translation found for geol_code '{geol_code}' in {lang} or {fallback_lang}"
-            )
+            # logger.error(
+            #    f"No translation found for geol_code '{geol_code}' in {lang} or {fallback_lang}"
+            #)
 
         except Exception as e:
             err = True

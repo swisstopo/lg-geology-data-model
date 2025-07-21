@@ -1090,9 +1090,18 @@ def generate(lang, datamodel, output, input_dir):
         print(f"Failed to load translations: {e}")
     translator = Translator(df_translations)
 
+    def translate_filter(geol_code):
+        return translator.translate(geol_code,  lang=lang.upper())
+    
+
+    #print(translator.translate('15001085', lang='DE'))
+    #print(translate_filter('15001085'))
+
+
+
     env.filters["slugify"] = slugify
     env.filters["highlight"] = highlight
-    env.filters["tr"] = translator.translate
+    env.filters["tr"] = translate_filter
     env.filters["format_date_locale"] = format_date_locale
     env.filters["remove_prefix"] = remove_prefix
     env.filters["attribute_name"] = attribute_name
