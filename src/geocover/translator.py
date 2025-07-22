@@ -12,7 +12,7 @@ class Translator:
         Initialize translator with geological codes dataframe.
 
         Args:
-            df_trad (pd.DataFrame): DataFrame with columns ['ID', 'German', 'French']
+            df_trad (pd.DataFrame): DataFrame with columns ['GeolCodeInt', 'DE', 'FR']
                                    or similar structure for translations
         """
         self.failed_translations = 0

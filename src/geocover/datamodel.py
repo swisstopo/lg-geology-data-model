@@ -262,10 +262,23 @@ def load_translation_dataframe(input_dir: str, dataframes=[]) -> pd.DataFrame:
             f"Number translations in '{new_translations_path}': {len(df_new_trad)} "
         )
 
+        new_rows = [
+            {"GeolCodeInt": "999997", "DE": "unbekannt", "FR": "inconnu"},
+            {"GeolCodeInt": "999998", "DE": "nicht anwendbar", "FR": "pas applicable"},
+        ]
+        special_code_df = pd.DataFrame(new_rows)
+
         # Merge DataFrames
         merged_df = pd.concat(
             dataframes
-            + [df_from_json, df_trad_load, df_app_trad, df_new_trad, chrono_df]
+            + [
+                df_from_json,
+                df_trad_load,
+                df_app_trad,
+                df_new_trad,
+                chrono_df,
+                special_code_df,
+            ]
         )
 
         merged_df["GeolCodeInt"] = merged_df["GeolCodeInt"].astype("string")
