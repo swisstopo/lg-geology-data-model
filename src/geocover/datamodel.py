@@ -1088,20 +1088,30 @@ def generate(lang, datamodel, output, input_dir):
     except Exception as e:
         # Handle error case
         print(f"Failed to load translations: {e}")
+
+    print(df_translations.columns)
     translator = Translator(df_translations)
 
     def translate_filter(geol_code):
-        return translator.translate(geol_code,  lang=lang.upper())
-    
+        """Translate geological code to default language."""
+        return translator.translate(geol_code, lang=lang.upper())
 
-    #print(translator.translate('15001085', lang='DE'))
-    #print(translate_filter('15001085'))
+    def translate_de_filter(geol_code):
+        """Translate geological code to German."""
+        return translator.translate(geol_code, lang="DE")
 
+    def translate_fr_filter(geol_code):
+        """Translate geological code to French."""
+        return translator.translate(geol_code, lang="FR")
 
+    # print(translator.translate('15001085', lang='DE'))
+    # print(translate_filter('15001085'))
 
     env.filters["slugify"] = slugify
     env.filters["highlight"] = highlight
     env.filters["tr"] = translate_filter
+    env.filters["tr_de"] = translate_de_filter
+    env.filters["tr_fr"] = translate_fr_filter
     env.filters["format_date_locale"] = format_date_locale
     env.filters["remove_prefix"] = remove_prefix
     env.filters["attribute_name"] = attribute_name
@@ -1150,8 +1160,10 @@ def generate(lang, datamodel, output, input_dir):
         rendered = render_template_with_locale("changes_report.j2", data, locale)
         f.write(rendered)
 
-    logger.info(f"Failed translations: {translator.get_failed_count()}")
-    logger.debug(f"Failed strings: {translator.get_failed_strings()}")
+    logger.info(
+        f"Failed translations: {translator.get_translation_stats()['failed_translations']}"
+    )
+    # logger.debug(f"Failed strings: {translator.get_failed_strings()}")
 
 
 # Add the sub-commands to the main command group
