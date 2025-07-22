@@ -1,39 +1,87 @@
 import pandas as pd
 import logging
 import threading
+import sys
 
 from loguru import logger
 
 
 class Translator:
     def __init__(self, df_trad):
+        """
+        Initialize translator with geological codes dataframe.
+
+        Args:
+            df_trad (pd.DataFrame): DataFrame with columns ['GeolCodeInt', 'DE', 'FR']
+                                   or similar structure for translations
+        """
         self.failed_translations = 0
         self.failed_strings = []
-        self._lock = threading.Lock()  # Ensures thread safety
+        self._lock = threading.Lock()
         self.df_trad = df_trad
 
-    def translate(self, geol_code, text, lang="FR"):
+        # Create lookup dictionaries for faster access
+        self._create_lookup_dicts()
+
+        # sys.exit()
+
+    def _create_lookup_dicts(self):
+        """Create lookup dictionaries from the translation dataframe."""
+        self.translations = {}
+
+        if self.df_trad is not None and not self.df_trad.empty:
+            # Check if GeolCodeInt is the index, otherwise look for it as a column
+            if self.df_trad.index.name == "GeolCodeInt":
+                # Index is already set to GeolCodeInt - perfect!
+                for geol_code_int, row in self.df_trad.iterrows():
+                    code = str(geol_code_int)
+                    self.translations[code] = {
+                        "DE": row.get("DE") if pd.notna(row.get("DE", None)) else None,
+                        "FR": row.get("FR") if pd.notna(row.get("FR", None)) else None,
+                    }
+            else:
+                # Fallback to column-based approach
+                if "GeolCodeInt" in self.df_trad.columns:
+                    for _, row in self.df_trad.iterrows():
+                        code = str(row["GeolCodeInt"])
+                        self.translations[code] = {
+                            "DE": row.get("DE")
+                            if pd.notna(row.get("DE", None))
+                            else None,
+                            "FR": row.get("FR")
+                            if pd.notna(row.get("FR", None))
+                            else None,
+                        }
+                else:
+                    logger.warning(
+                        "Neither GeolCodeInt index nor column found in dataframe"
+                    )
+
+        logger.debug(self.translations)
+
+        logger.info(f"Loaded {len(self.translations)} translation entries")
+
+    def translate(self, geol_code, lang="FR"):
         """
-        Public method to translate with error tracking.
+        Public method to translate geological codes with error tracking.
 
         Args:
             geol_code: The geological code to translate
-            text: Fallback text if translation fails
             lang: Target language ("FR" or "DE")
 
         Returns:
-            str: Translated text or fallback
+            str: Translated text or original code if translation fails
         """
-        translated_text, err = self._translate(geol_code, text, lang)
+        translated_text, err = self._translate(geol_code, lang)
 
         if err:
             with self._lock:
                 self.failed_translations += 1
-                self.failed_strings.append(text)
+                self.failed_strings.append(str(geol_code))  # Fixed: was 'text'
 
         return translated_text
 
-    def _translate(self, geol_code, fallback, lang):
+    def _translate(self, geol_code, lang):
         """
         Internal translation method with intelligent fallback logic.
 
@@ -41,17 +89,16 @@ class Translator:
         1. Requested language (FR or DE)
         2. German (DE) if French was requested but not available
         3. French (FR) if German was requested but not available
-        4. Original fallback message
+        4. Original geological code
 
         Args:
             geol_code: The geological code to translate
-            fallback: Default message if no translation found
             lang: Requested language ("FR" or "DE")
 
         Returns:
             tuple: (translated_message, error_occurred)
         """
-        msg = fallback
+        msg = str(geol_code)
         err = False
 
         # Handle special case for code "0"
@@ -60,67 +107,61 @@ class Translator:
 
         # Only process supported languages
         if lang not in ("DE", "FR"):
+            logger.debug(f"Unknown lang: {lang}")
             return (msg, False)
 
         try:
             geol_code_str = str(geol_code)
+            logger.debug(f"Translating: {geol_code_str}")
 
             # Try primary language first
             primary_msg = self._get_translation(geol_code_str, lang)
-            if primary_msg is not None:
+
+            if primary_msg is not None and primary_msg != geol_code_str:
                 return (self._clean_message(primary_msg), False)
 
-            # Try fallback language (German if French requested, French if German requested)
+            # Try fallback language
             fallback_lang = "DE" if lang == "FR" else "FR"
             fallback_msg = self._get_translation(geol_code_str, fallback_lang)
+
             if fallback_msg is not None:
                 logger.warning(
-                    f"Using {fallback_lang} fallback for geol_code '{geol_code}' (requested: {lang})"
+                    f"Using {fallback_lang} fallback '{fallback_msg}' for code '{geol_code}' (requested: {lang})"
                 )
                 return (self._clean_message(fallback_msg), False)
 
             # No translation found in either language
             err = True
-            logger.error(
-                f"No translation found for geol_code '{geol_code}' in {lang} or {fallback_lang}"
+            logger.debug(
+                f"No translation found for code '{geol_code}' in {lang} or {fallback_lang}"
             )
 
         except Exception as e:
             err = True
-            logger.error(f"Error translating geol_code '{geol_code}': {e}")
+            logger.error(f"Error translating code '{geol_code}': {e}")
 
         return (msg, err)
 
-    def _get_translation(self, geol_code_str, language):
+    def _get_translation(self, geol_code_str, lang):
         """
-        Helper method to get translation for a specific language.
+        Get translation for a specific code and language.
 
         Args:
-            geol_code_str: Geological code as string
-            language: Language code ("FR" or "DE")
+            geol_code_str: String representation of geological code
+            lang: Language code ("DE" or "FR")
 
         Returns:
-            str or None: Translation if found and valid, None otherwise
+            str or None: Translation if found, None otherwise
         """
-        try:
-            value = self.df_trad.loc[geol_code_str, language]
-
-            # Handle Series (multiple matches)
-            if isinstance(value, pd.Series):
-                value = value.iloc[0]
-
-            # Check if translation is valid (not empty, not NaN, not just whitespace)
-            if pd.isna(value) or str(value).strip() == "":
-                return None
-
-            return str(value)
-
-        except KeyError:
-            return None
+        if geol_code_str in self.translations:
+            translation = self.translations[geol_code_str].get(lang)
+            if translation and str(translation).strip():
+                return translation
+        return None
 
     def _clean_message(self, message):
         """
-        Clean up translation message by removing unwanted prefixes.
+        Clean and format the translated message.
 
         Args:
             message: Raw translation message
@@ -128,20 +169,33 @@ class Translator:
         Returns:
             str: Cleaned message
         """
-        if isinstance(message, str) and message.startswith("à "):
-            return message.replace("à ", "")
-        return message
+        if message is None:
+            return ""
 
-    def get_failed_count(self):
-        """Get the number of failed translations."""
-        return self.failed_translations
+        # Convert to string and strip whitespace
+        cleaned = str(message).strip()
 
-    def get_failed_strings(self):
-        """Get the list of strings that failed to translate."""
-        return self.failed_strings
+        # Remove any extra spaces
+        cleaned = " ".join(cleaned.split())
 
-    def reset_failed_stats(self):
-        """Reset the failed translation statistics."""
+        return cleaned
+
+    def get_translation_stats(self):
+        """
+        Get statistics about translation failures.
+
+        Returns:
+            dict: Statistics including failed count and failed strings
+        """
+        with self._lock:
+            return {
+                "failed_translations": self.failed_translations,
+                "failed_strings": self.failed_strings.copy(),
+                "total_codes_loaded": len(self.translations),
+            }
+
+    def reset_stats(self):
+        """Reset translation failure statistics."""
         with self._lock:
             self.failed_translations = 0
             self.failed_strings = []

@@ -192,7 +192,7 @@ def get_sde_schema(source_dir):
         return sde_schema
 
 
-def load_translation_dataframe(input_dir: str) -> pd.DataFrame:
+def load_translation_dataframe(input_dir: str, dataframes=[]) -> pd.DataFrame:
     """
     Load and merge translation data from CSV and JSON files, then return a cleaned translation DataFrame.
 
@@ -207,6 +207,11 @@ def load_translation_dataframe(input_dir: str) -> pd.DataFrame:
     csv_path = os.path.join(input_dir, "GeolCodeText_Trad_230317.csv")
     # TODO: All new GMU codes found in the XLSX table (generations ?
     json_path = os.path.join(input_dir, "all_codes_dict.json")
+    # New table
+    new_translations_path = os.path.join(input_dir, "2025b_GeolCodeText_Trad.xlsx")
+    # Custom Chrono CSV
+    custom_chrono_path = os.path.join(input_dir, "geolcode_chrono.csv")
+
     # Translation only in templates, and trying to move translation from datamodel.yaml
     translation_xlsx_path = "translations.xlsx"
     # Ouputs
@@ -223,6 +228,12 @@ def load_translation_dataframe(input_dir: str) -> pd.DataFrame:
 
         # Load Alan's CSV data
         df_trad_load = pd.read_csv(csv_path, sep=";")
+
+        # Load new Alan's file
+        df_new_trad = pd.read_excel(new_translations_path, sheet_name="Tabelle1")
+
+        # Custom Chrono
+        chrono_df = pd.read_csv(custom_chrono_path)
 
         # Load all Coded Domains data and convert to DataFrame
         with open(json_path, "r", encoding="utf-8") as file:
@@ -243,15 +254,32 @@ def load_translation_dataframe(input_dir: str) -> pd.DataFrame:
         df_from_json["FR"] = df_from_json["FR"].astype("string")
 
         logger.info(f"Number translations in 'translation.xlsx': {len(df_app_trad)} ")
-        logger.info(
-            f"Number translations in 'all_codes_dict.json': {len(df_from_json)} "
-        )
+        logger.info(f"Number translations in '{json_path}': {len(df_from_json)} ")
         logger.info(
             f"Number translations in 'GeolCodeText_Trad_230317.csv': {len(df_trad_load)} "
         )
+        logger.info(
+            f"Number translations in '{new_translations_path}': {len(df_new_trad)} "
+        )
+
+        new_rows = [
+            {"GeolCodeInt": "999997", "DE": "unbekannt", "FR": "inconnu"},
+            {"GeolCodeInt": "999998", "DE": "nicht anwendbar", "FR": "pas applicable"},
+        ]
+        special_code_df = pd.DataFrame(new_rows)
 
         # Merge DataFrames
-        merged_df = pd.concat([df_from_json, df_trad_load, df_app_trad])
+        merged_df = pd.concat(
+            dataframes
+            + [
+                df_from_json,
+                df_trad_load,
+                df_app_trad,
+                df_new_trad,
+                chrono_df,
+                special_code_df,
+            ]
+        )
 
         merged_df["GeolCodeInt"] = merged_df["GeolCodeInt"].astype("string")
 
@@ -1039,18 +1067,64 @@ def generate(lang, datamodel, output, input_dir):
 
         return p.sub(r"**\1**", input)
 
+    def get_domains_df(domains):
+        geolcode = []
+        labels = []
+
+        for field_data in domains.values():
+            if field_data.get("type") == "CodedValue":
+                for k, v in field_data.get("codedValues", {}).items():
+                    if int(k) > 1e6:
+                        geolcode.append(k)
+                        labels.append(v)
+
+        # 🐼 Create DataFrame
+        df = pd.DataFrame({"GeolCodeInt": geolcode, "DE": labels})
+
+        return df
+
     # Used instead of babel
     try:
-        df_translations = load_translation_dataframe(input_dir)
+        geolcodes, descr = zip(*subtypes.items())
+        geolcodes = list(geolcodes)
+        descr = list(descr)
+        subtypes_df = pd.DataFrame(
+            {"GeolCodeInt": geolcodes, "DE": map(remove_prefix, descr)}
+        )
+        domains_df = get_domains_df(domains)
+
+        df_translations = load_translation_dataframe(
+            input_dir, dataframes=[subtypes_df, domains_df]
+        )
         # Now you can use df_translations for your translations
+
     except Exception as e:
         # Handle error case
         print(f"Failed to load translations: {e}")
+
+    print(df_translations.columns)
     translator = Translator(df_translations)
+
+    def translate_filter(geol_code):
+        """Translate geological code to default language."""
+        return translator.translate(geol_code, lang=lang.upper())
+
+    def translate_de_filter(geol_code):
+        """Translate geological code to German."""
+        return translator.translate(geol_code, lang="DE")
+
+    def translate_fr_filter(geol_code):
+        """Translate geological code to French."""
+        return translator.translate(geol_code, lang="FR")
+
+    # print(translator.translate('15001085', lang='DE'))
+    # print(translate_filter('15001085'))
 
     env.filters["slugify"] = slugify
     env.filters["highlight"] = highlight
-    env.filters["tr"] = translator.translate
+    env.filters["tr"] = translate_filter
+    env.filters["tr_de"] = translate_de_filter
+    env.filters["tr_fr"] = translate_fr_filter
     env.filters["format_date_locale"] = format_date_locale
     env.filters["remove_prefix"] = remove_prefix
     env.filters["attribute_name"] = attribute_name
@@ -1099,8 +1173,10 @@ def generate(lang, datamodel, output, input_dir):
         rendered = render_template_with_locale("changes_report.j2", data, locale)
         f.write(rendered)
 
-    logger.info(f"Failed translations: {translator.get_failed_count()}")
-    logger.debug(f"Failed strings: {translator.get_failed_strings()}")
+    logger.info(
+        f"Failed translations: {translator.get_translation_stats()['failed_translations']}"
+    )
+    # logger.debug(f"Failed strings: {translator.get_failed_strings()}")
 
 
 # Add the sub-commands to the main command group
