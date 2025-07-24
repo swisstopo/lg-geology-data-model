@@ -350,12 +350,39 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit"'''
 
 
+def get_git_revision_info():
+    """Get git revision info and determine if this is a release version."""
+    try:
+        # Get short hash
+        hash_short = (
+            subprocess.check_output(["git", "rev-parse", "--short", "HEAD"])
+            .decode("ascii")
+            .strip()
+        )
+
+        # Check if current commit is tagged (indicates release)
+        try:
+            tag = (
+                subprocess.check_output(
+                    ["git", "describe", "--exact-match", "--tags", "HEAD"],
+                    stderr=subprocess.DEVNULL,
+                )
+                .decode("ascii")
+                .strip()
+            )
+            is_release = True
+        except subprocess.CalledProcessError:
+            is_release = False
+            tag = None
+
+        return {"hash": hash_short, "is_release": is_release, "tag": tag}
+    except subprocess.CalledProcessError:
+        return {"hash": "unknown", "is_release": False, "tag": None}
+
+
 def get_git_revision_short_hash() -> str:
-    return (
-        subprocess.check_output(["git", "rev-parse", "--short", "HEAD"])
-        .decode("ascii")
-        .strip()
-    )
+    """Backward compatibility function."""
+    return get_git_revision_info()["hash"]
 
 
 # TODO: to be removed
