@@ -38,7 +38,7 @@ OPTIONS_de = --metadata lang=de  --metadata-file=$(INPUT_DIR)/de/metadata.yaml -
 OPTIONS_fr = --metadata lang=fr  --metadata-file=$(INPUT_DIR)/fr/metadata.yaml -V lang=fr
 
 # format specific options
-PANDOC_HTML_OPTIONS=  --to html5 --toc  --toc-depth=3  --include-in-header  $(INPUT_DIR)/de/headers.html  --include-after-body=assets/sortable.html  --css $(CSS)
+PANDOC_HTML_OPTIONS=  --to html5 --toc  --toc-depth=3  --include-in-header=$(INPUT_DIR)/de/headers.html  --include-after-body=assets/sortable.html  --css $(CSS)
 PANDOC_PDF_OPTIONS=--pdf-engine=xelatex
 PANDOC_DOCX_OPTIONS=
 PANDOC_ODT_OPTIONS=
