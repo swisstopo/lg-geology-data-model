@@ -1195,7 +1195,7 @@ def generate(lang, datamodel, output, input_dir):
     logger.info(f"Generating {html_headers_fname}")
     with open(html_headers_fname, "w", encoding="utf-8") as f:
         # f.write(template.render(data))
-        rendered = render_template_with_locale("html.headers.j2", data, locale)
+        rendered = render_template_with_locale("headers.html.j2", data, locale)
         f.write(rendered)
 
     # Metadata
