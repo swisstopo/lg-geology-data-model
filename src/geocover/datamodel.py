@@ -633,6 +633,7 @@ class Report:
                 self._model = yaml.load(f, Loader=yaml.FullLoader)
                 self._model["date"] = str(datetime.date.today())
                 self._model["hash"] = get_git_revision_short_hash()
+                self._model["git_info"] = get_git_revision_info()
 
             return self._model
 
