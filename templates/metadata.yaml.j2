@@ -24,9 +24,9 @@ lang: {{lang}}
 {# PDF metadata fields (not visible in document body) #}
 creator: swisstopo
 description: |
-    version: {{ git_info.tag }}
-    git hash: {{ git_info.hash }}
+    git_hash: {{ git_info.hash }}
     date: {{date }}
+    version: {{ git_info.tag }}
 
 {% if git_info.is_release and git_info.tag %}
 version: {{ git_info.tag }}
@@ -41,6 +41,13 @@ header-includes: |
     \usepackage{pdflscape}
     \newcommand{\blandscape}{\begin{landscape}}
     \newcommand{\elandscape}{\end{landscape}}
+    \usepackage{hyperref}
+    \usepackage{hyperref}
+    \hypersetup{
+      pdfinfo={ModelRevision={{model.short_revision}},
+               GitTag={{ git_info.tag }},
+               GitHash={{ git_info.hash }},
+               BuildDate={{ date.isoformat() }} }}
 
 
 fontsize: 9pt
