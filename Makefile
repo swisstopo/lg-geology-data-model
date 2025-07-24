@@ -38,7 +38,7 @@ OPTIONS_de = --metadata lang=de  --metadata-file=$(INPUT_DIR)/de/metadata.yaml -
 OPTIONS_fr = --metadata lang=fr  --metadata-file=$(INPUT_DIR)/fr/metadata.yaml -V lang=fr
 
 # format specific options
-PANDOC_HTML_OPTIONS=  --to html5 --toc  --toc-depth=3  --include-after-body=assets/sortable.html  --css $(CSS)
+PANDOC_HTML_OPTIONS=  --to html5 --toc  --toc-depth=3  --include-in-header=$(INPUT_DIR)/de/headers.html  --include-after-body=assets/sortable.html  --css $(CSS)
 PANDOC_PDF_OPTIONS=--pdf-engine=xelatex
 PANDOC_DOCX_OPTIONS=
 PANDOC_ODT_OPTIONS=
@@ -102,6 +102,10 @@ all: $(MO_FILES) $(INPUTS)  $(OUTPUTS)  $(INPUT_DIR)/datamodel.xlsx
 
 # Define individual rules for each format and language
 define build_rule
+$(INPUT_DIR)/$(1)/headers.html: assets $(MO_FILES)
+	mkdir -p $$(@D)
+	datamodel generate --lang=$(1)  -o $(INPUT_DIR) datamodel.yaml
+
 $(INPUT_DIR)/$(1)/metadata.yaml: assets $(MO_FILES)
 	mkdir -p $$(@D)
 	datamodel generate --lang=$(1)  -o $(INPUT_DIR) datamodel.yaml
@@ -122,7 +126,7 @@ $(OUTPUT_DIR)/$(1)/datamodel.odt: $(INPUT_DIR)/$(1)/datamodel.md $(INPUT_DIR)/$(
 	mkdir -p $$(@D)
 	$(PANDOC) $(PANDOC_OPTIONS) $(OPTIONS_$1) $(PANDOC_ODT_OPTIONS) -o $$@ $$<
 
-$(OUTPUT_DIR)/$(1)/datamodel.html: $(INPUT_DIR)/$(1)/datamodel.md $(INPUT_DIR)/$(1)/metadata.yaml
+$(OUTPUT_DIR)/$(1)/datamodel.html: $(INPUT_DIR)/$(1)/datamodel.md $(INPUT_DIR)/$(1)/metadata.yaml $(INPUT_DIR)/$(1)/headers.html
 	mkdir -p $$(@D)
 	$(PANDOC) $(PANDOC_OPTIONS) $(OPTIONS_$1) $(PANDOC_HTML_OPTIONS) -o $$@ $$<
 endef

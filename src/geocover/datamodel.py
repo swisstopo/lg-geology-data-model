@@ -350,12 +350,39 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit"'''
 
 
+def get_git_revision_info():
+    """Get git revision info and determine if this is a release version."""
+    try:
+        # Get short hash
+        hash_short = (
+            subprocess.check_output(["git", "rev-parse", "--short", "HEAD"])
+            .decode("ascii")
+            .strip()
+        )
+
+        # Check if current commit is tagged (indicates release)
+        try:
+            tag = (
+                subprocess.check_output(
+                    ["git", "describe", "--exact-match", "--tags", "HEAD"],
+                    stderr=subprocess.DEVNULL,
+                )
+                .decode("ascii")
+                .strip()
+            )
+            is_release = True
+        except subprocess.CalledProcessError:
+            is_release = False
+            tag = None
+
+        return {"hash": hash_short, "is_release": is_release, "tag": tag}
+    except subprocess.CalledProcessError:
+        return {"hash": "unknown", "is_release": False, "tag": None}
+
+
 def get_git_revision_short_hash() -> str:
-    return (
-        subprocess.check_output(["git", "rev-parse", "--short", "HEAD"])
-        .decode("ascii")
-        .strip()
-    )
+    """Backward compatibility function."""
+    return get_git_revision_info()["hash"]
 
 
 # TODO: to be removed
@@ -606,6 +633,7 @@ class Report:
                 self._model = yaml.load(f, Loader=yaml.FullLoader)
                 self._model["date"] = str(datetime.date.today())
                 self._model["hash"] = get_git_revision_short_hash()
+                self._model["git_info"] = get_git_revision_info()
 
             return self._model
 
@@ -1161,6 +1189,13 @@ def generate(lang, datamodel, output, input_dir):
     with open(metadata_fname, "w", encoding="utf-8") as f:
         # f.write(template.render(data))
         rendered = render_template_with_locale("metadata.yaml.j2", data, locale)
+        f.write(rendered)
+    # HTML headers
+    html_headers_fname = os.path.join(output_dir, lang, f"headers.html")
+    logger.info(f"Generating {html_headers_fname}")
+    with open(html_headers_fname, "w", encoding="utf-8") as f:
+        # f.write(template.render(data))
+        rendered = render_template_with_locale("headers.html.j2", data, locale)
         f.write(rendered)
 
     # Metadata
