@@ -23,7 +23,11 @@ subject: {{_("Geologische Landesaufnahme der Schweiz")}}
 lang: {{lang}}
 {# PDF metadata fields (not visible in document body) #}
 creator: swisstopo
-subject: {{_("Geological Data Model")}}
+description: |
+    version: {{ git_info.tag }}
+    git hash: {{ git_info.hash }}
+    date: {{date }}
+
 {% if git_info.is_release and git_info.tag %}
 version: {{ git_info.tag }}
 {% else %}
