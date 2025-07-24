@@ -1190,6 +1190,13 @@ def generate(lang, datamodel, output, input_dir):
         # f.write(template.render(data))
         rendered = render_template_with_locale("metadata.yaml.j2", data, locale)
         f.write(rendered)
+    # HTML headers
+    html_headers_fname = os.path.join(output_dir, lang, f"header.html")
+    logger.info(f"Generating {html_headers_fname}")
+    with open(html_headers_fname, "w", encoding="utf-8") as f:
+        # f.write(template.render(data))
+        rendered = render_template_with_locale("html.headers.j2", data, locale)
+        f.write(rendered)
 
     # Metadata
     changes_report_fname = os.path.join(
