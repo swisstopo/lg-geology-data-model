@@ -23,7 +23,7 @@ jobs:
       - name: Set up TeX Live
         run: |
           sudo apt-get update
-          sudo apt-get install -y texlive-xetex texlive-fonts-recommended texlive-plain-generic
+          sudo apt-get install -y texlive-xetex texlive-fonts-recommended texlive-plain-generic poppler-utils
 
       - name: Install Pandoc
         run: sudo apt-get install -y pandoc
@@ -86,7 +86,7 @@ jobs:
       - name: Install rsvg-convert
         run: |
           sudo apt-get update
-          sudo apt-get install -y librsvg2-bin
+          sudo apt-get install -y librsvg2-bin 
 
       - name: Convert SVG to PDF
         run: |
