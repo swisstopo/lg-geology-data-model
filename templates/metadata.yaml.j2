@@ -44,10 +44,13 @@ header-includes: |
     \usepackage{hyperref}
     \usepackage{hyperref}
     \hypersetup{
-      pdfinfo={ModelRevision={{model.short_revision}},
-               GitTag={{ git_info.tag }},
-               GitHash={{ git_info.hash }},
-               BuildDate={{ date.isoformat() }} }}
+      pdfinfo={
+        ModelRevision={{ model.short_revision | default('unknown') }},
+        {% if git_info and git_info.tag %}GitTag={{ git_info.tag }},{% endif %}
+        {% if git_info and git_info.hash %}GitHash={{ git_info.hash }},{% endif %}
+        BuildDate={{ date.isoformat() if date else 'unknown' }}
+      }
+    }
 
 
 fontsize: 9pt

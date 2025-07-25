@@ -75,6 +75,7 @@ jobs:
         run: |
              make cleanall all
              # make diagram
+             make validate-metadata
              
 
       - name: Generate PDF from PUML diagram
