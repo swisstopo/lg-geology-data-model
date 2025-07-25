@@ -804,7 +804,7 @@ def export(datamodel, output, format):
 
     datamodel = model.Datamodel()
     datamodel.import_from_yaml(yaml_path)
-    logger.info("Export to Excel")
+    logger.info(f"Export model to {format} '{output}")
     # datamodel.export_to_yaml("output.yaml")
     datamodel.export_to_excel(output)
 
@@ -1063,7 +1063,7 @@ def generate(lang, datamodel, output, input_dir):
         ori = value
         modified = value.strip().rstrip(".")
         if ori != modified:
-            logger.info(f"FOUND: {modified}")
+            logger.debug(f"FOUND: {modified}")
         return modified
 
     # Define the custom filter function
@@ -1171,28 +1171,28 @@ def generate(lang, datamodel, output, input_dir):
 
     # DM
     markdown_fname = os.path.join(output_dir, lang, f"{project_name}.md")
-    logger.info(f"Generating {markdown_fname}")
+    logger.info(f"Generating Markdown {markdown_fname}")
     with open(markdown_fname, "w", encoding="utf-8") as f:
         rendered = render_template_with_locale("model_markdown.j2", data, locale)
         f.write(rendered)
 
     # Changes to DM
     migration_dm_fname = os.path.join(output_dir, lang, f"{project_name}_migrations.md")
-    logger.info(f"Generating {migration_dm_fname}")
+    logger.info(f"Generating changes/diffs to datamodel  {migration_dm_fname}")
     with open(migration_dm_fname, "w", encoding="utf-8") as f:
         rendered = render_template_with_locale("model_migrations.j2", data, locale)
         f.write(rendered)
 
     # Metadata
     metadata_fname = os.path.join(output_dir, lang, f"metadata.yaml")
-    logger.info(f"Generating {metadata_fname}")
+    logger.info(f"Generating metadata  {metadata_fname}")
     with open(metadata_fname, "w", encoding="utf-8") as f:
         # f.write(template.render(data))
         rendered = render_template_with_locale("metadata.yaml.j2", data, locale)
         f.write(rendered)
     # HTML headers
     html_headers_fname = os.path.join(output_dir, lang, f"headers.html")
-    logger.info(f"Generating {html_headers_fname}")
+    logger.info(f"Generating HTML metadata {html_headers_fname}")
     with open(html_headers_fname, "w", encoding="utf-8") as f:
         # f.write(template.render(data))
         rendered = render_template_with_locale("headers.html.j2", data, locale)
@@ -1211,7 +1211,6 @@ def generate(lang, datamodel, output, input_dir):
     logger.info(
         f"Failed translations: {translator.get_translation_stats()['failed_translations']}"
     )
-    # logger.debug(f"Failed strings: {translator.get_failed_strings()}")
 
 
 # Add the sub-commands to the main command group
