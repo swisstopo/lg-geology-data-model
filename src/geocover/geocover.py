@@ -238,6 +238,7 @@ def export(output_dir, workspace, log_level):
         encoder.to_serializable_dict(tables_dict),
         os.path.join(output_dir, "tables.json"),
     )
+    sort_keys = ["PARENT_REf", "GEOL_CODE_INT"]
     with pd.ExcelWriter(os.path.join(output_dir, f"export_tables.xlsx")) as writer:
         for table_name, df in so.tree_tables.items():
             logger.info(table_name)
@@ -245,10 +246,12 @@ def export(output_dir, workspace, log_level):
             prefix, short_name = table_name.split(".")
             short_name = short_name.replace("GC_", "").capitalize()
 
-            if set(["PARENT_REf", "GEOL_CODE_INT"]).issubset(df.columns):
+            common_columns = set(df.columns).intersection(sort_keys)
+
+            if len(common_columns)>0:
                 try:
                     df["PARENT_REF"] = df["PARENT_REF"].fillna(0)
-                    df.sort_values(by=["GEOL_CODE_INT", "PARENT_REF"], inplace=True)
+                    df.sort_values(by=common_columns, inplace=True)
                 except KeyError as e:
                     logger.error(f"Table {table_name} has nokey: {e}")
                     continue

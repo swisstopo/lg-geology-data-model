@@ -12,14 +12,22 @@
 # 0.7  Added attribut `alias`
 # 0.8  Attribut `status` indicating the version an attribute is used (<4.0, >=4.0)
 # 0.9  Attribute's name as in the database, `alias`for display
-version: "0.9"
-date: 2024-11-12
+# 0.10 Attribute `origin` for joined table. Special `annex` type `table` for 'KE' codes. source_dir
+# 0.11 Display some 'table' in text (not annexe)
+version: "0.10"
+date: 2025-05-26
 
 # Model revision should change if attributes are added, deleted or changed
 model:
-  revision: 4.0.0
-  revision_date: "2024-11-25"
+  revision: '4.1.0'
+  revision_date: "2025-05-26"
+  sources_dir: "exports/2025-05-26"
 
+# Annexe
+# Some CD are alreday defined in the simplifed JSON report
+# Long list annex must be load directly from file.
+# Annexe type: `list` code with `DE` and `FR` translation
+#              `table` special case for the GMU table
 themes:
 - name: Rock_Bodies
   classes:
@@ -57,20 +65,20 @@ themes:
         fr: État du type d'objet
       cardinality: "1"
       mandatory: false
-    - name: rock_type
-      att_type: CD
-      value: GC_PNT_RUNC_ROCK_TYP_CD
-      description:
-        de: Gesteinstyp
-        fr: Type de roche
-      cardinality: 0..1
-      mandatory: false
     - name: rock_spe
       att_type: CD
       value: GC_PNT_RUNC_ROCK_SPE_CD
       description:
         de: Bezeichnung des Leitgesteins.
         fr: Description de la roche repère
+      cardinality: 0..1
+      mandatory: false
+    - name: rock_type
+      att_type: CD
+      value: GC_PNT_RUNC_ROCK_TYP_CD
+      description:
+        de: Gesteinstyp
+        fr: Type de roche
       cardinality: 0..1
       mandatory: false
     - name: mat_type        # TODO type
@@ -130,7 +138,7 @@ themes:
         fr: Description lithologique
       att_type: annex
       value: GC_LITHO_CD
-      cardinality: 1..3
+      cardinality: "1"
       mandatory: true
     - name: chrono_t
       description:
@@ -155,7 +163,8 @@ themes:
       cardinality: "1"
       mandatory: true
     - name: mat_type
-      att_type: string
+      att_type: annex
+      value: GC_LITHO_CD
       description:
         de: Materialbezeichnung (lithologische Einheit)
         fr: Description du matériel (unité lithologique)
@@ -173,15 +182,15 @@ themes:
       description:
         de: Zusammensetzung des Lockergesteins
         fr: Composition de la roche meuble
-      att_type: annex
+      att_type: table   # TODO
       value: gc_composit
       cardinality: 0..3
       mandatory: false
-    - name: admixture
+    - name: admixture  # TODO plus en annexe
       description:
         de: Beimengung
         fr: Incorporation
-      att_type: annex
+      att_type: table
       value: gc_admixture
       cardinality: 0..2
       mandatory: false
@@ -197,7 +206,7 @@ themes:
       description:
         de: Spezifische Eigenschaft
         fr: Charactéristique spécifique
-      att_type: annex
+      att_type: table
       value: gc_charcat
       cardinality: 0..3
       mandatory: false
@@ -221,11 +230,12 @@ themes:
       mandatory: false
     - name: ref_year
       description:
-        de: Zeitpunkt oder Zeitperiode. Zum Beispiel «1940 1943, Periode der Drainage»
+        de: >- 
+          Zeitpunkt oder Zeitperiode. Zum Beispiel «1940 1943, Periode der Drainage»
           (muss präzisiert werden).
-        fr: |
-          Information de temps ou période. Par ex. "1940-1943: année de référence
-          de l’ancienne ligne de rivage".
+        fr: >-
+          Information de temps ou période. Par ex. "1940-1943: année de
+          référence de l’ancienne ligne de rivage".
       att_type: string
       cardinality: 0..1
       mandatory: false
@@ -234,7 +244,7 @@ themes:
       value: GC_UN_DEP_RUNC_THIN_COV_CD
       description:
         de: Typ der geringmächtigen Lockermaterialbedeckung, wenn vorhanden.
-        fr: Couverture meuble pelliculaire
+        fr: Type de couverture meuble pelliculaire
       cardinality: 0..1
       mandatory: false
     - name: orig_descr
@@ -248,12 +258,12 @@ themes:
       cardinality: "1"
       mandatory: false
   - name: Bedrock_PLG
-    abrev: Rbed      # TODO: to check
-    table: GC_BEDROCK     # TODO: to check
+    abrev: Rbed      #
+    table: GC_BEDROCK
     description:
       de: >-
         Die Klasse Bedrock_PLG enthält alle lithostratigraphischen Festgesteinseinheiten.
-      fr: |-
+      fr: >-
         La classe Bedrock_PLG regroupe toutes les unités
         lithostratigraphiques de roches consolidées.
     attributes:
@@ -273,22 +283,6 @@ themes:
       cardinality: "1"
       change: removed
       mandatory: false
-    - name: litstrat
-      description:
-        de: Lithostratigraphische Einheit
-        fr: Description lithostratigraphique
-      att_type: annex
-      value: GC_LITSTRAT_BED_CD
-      cardinality: "1"
-      mandatory: false
-    - name: litho
-      att_type: annex
-      value: GC_LITHO_CD
-      description:
-        de: Lithologische Beschreibung
-        fr: Description lithologique
-      cardinality: "1"
-      mandatory: false
     - name: chrono_t
       att_type: annex
       value: GC_CHRONO_CD
@@ -300,6 +294,7 @@ themes:
           Attribution chronostratigraphique du toit de la  formation (top)
       cardinality: "1"
       mandatory: true
+      change: removed   # removed 4.1
     - name: chrono_b
       att_type: annex
       value: GC_CHRONO_CD
@@ -311,6 +306,7 @@ themes:
           Attribution chronostratigraphique de la base de la  formation (base)
       cardinality: "1"
       mandatory: true
+      change: removed  # removed 4.1
     - name: tecto
       att_type: annex
       value: GC_TECTO_CD
@@ -319,7 +315,93 @@ themes:
         fr: Attribution tectonique
       cardinality: "1"
       mandatory: true
-    - name: orig_descr
+    - name: GEOL_MAPPING_UNIT_ATT  # check
+      description:
+        de: Kartographische Einheiten
+        fr: Unités cartographique
+      att_type: annex
+      value: GC_GEOL_MAPPING_UNIT_ATT  # TODO or GC_GEOL_MAPPING_UNIT_CD?
+      cardinality: "1"
+      mandatory: true
+    - name: litstrat_formation_bank  # check
+      description:
+        de:  Lithostratigraphische Formation
+        fr:  Formation lithostratigraphique
+      att_type: annex
+      value: GC_LITSTRAT_FORMATION_BANK_CD
+      cardinality: "1"
+      mandatory: true   # TDODO: really?
+      origin: GC_GEOL_MAPPING_UNIT_ATT
+    - name: chrono_top   # TODO: new name
+      att_type: annex
+      value: GC_CHRONO_CD
+      description:
+         de: >-
+                Chronostratigraphische Zuordnung der Obergrenze der Kartiereinheit
+                (Top)
+         fr: >-
+               Attribution chronostratigraphique du toit de la  formation (top)
+      cardinality: "1"
+      mandatory: true
+      origin: GC_GEOL_MAPPING_UNIT_ATT
+    - name: chrono_base
+      att_type: annex
+      value: GC_CHRONO_CD
+      description:
+            de: >-
+              Chronostratigraphische Zuordnung der Obergrenze der Kartiereinheit
+              (Top)
+            fr: >-
+              Attribution chronostratigraphique de la base de la formation
+      cardinality: "1"
+      mandatory: true
+      origin: GC_GEOL_MAPPING_UNIT_ATT
+    - name: litstrat   # Removed
+      description:
+        de: Lithostratigraphische Einheit
+        fr: Description lithostratigraphique
+      att_type: annex
+      value: GC_LITSTRAT_BED_CD
+      cardinality: "1"
+      change: removed
+      mandatory: false
+    - name: litho_main
+      att_type: annex
+      value: GC_LITHO_CD
+      description:
+        de: Lithologische Beschreibung
+        fr: Description lithologique principale
+      cardinality: "1"
+      mandatory: true
+      origin: GC_GEOL_MAPPING_UNIT_ATT
+    - name: litho_sec
+      att_type: annex
+      value: GC_LITHO_CD
+      description:
+        de: Lithologische Beschreibung
+        fr: Description lithologique secondaire
+      cardinality: "1"
+      mandatory: false
+      origin: GC_GEOL_MAPPING_UNIT_ATT
+    - name: litho_ter
+      att_type: annex
+      value: GC_LITHO_CD
+      description:
+        de: Lithologische Beschreibung
+        fr: Description lithologique tertiaire
+      cardinality: "1"
+      mandatory: false
+      origin: GC_GEOL_MAPPING_UNIT_ATT
+    - name: correlation
+      att_type: annex
+      value: GC_CORRELATION_CD
+      description:
+        de: Korrelation
+        fr: Correlation
+      cardinality: "1"
+      mandatory: false
+      origin: GC_GEOL_MAPPING_UNIT_ATT
+    - name: description
       att_type: string
       description:
         de: >-
@@ -329,6 +411,7 @@ themes:
           Description selon la légende de la carte géologique originale
       cardinality: "1"
       mandatory: false
+      change: renamed
     - name: buried_out       # removed
       att_type: boolean
       description:
@@ -346,7 +429,7 @@ themes:
           Einschluss, Linse, Tasche, Olistholith (ja / nein)?
         fr: >-
           S’agit-il d’un élément exotique (oui / non)?
-      cardinality: "1"
+      cardinality: 0..1
       mandatory: false
     - name: colour
       att_type: string
@@ -358,7 +441,7 @@ themes:
       cardinality: 0..1
       change: removed
       mandatory: false
-    - name: sedi_main_com
+    - name: sedi_main_com   # Removed
       att_type: CD
       value: GC_MAIN_COM_CD
       description:
@@ -368,7 +451,8 @@ themes:
           Composant principal de la roche sédimentaire clastique
       cardinality: 0..1
       mandatory: false
-    - name: sedi_seco_com
+      change: removed
+    - name: sedi_seco_com  # Removed
       att_type: CD
       value: GC_SECO_COM_CD
       description:
@@ -376,7 +460,8 @@ themes:
         fr: Composant secondaire de la roche sédimentaire
       cardinality: 0..2
       mandatory: false
-    - name: sedi_bond_mat
+      change: removed
+    - name: sedi_bond_mat   # Removed
       att_type: CD
       value: GC_BOND_MAT_CD
       description:
@@ -384,7 +469,8 @@ themes:
         fr: Ciment de la roche sédimentaire
       cardinality: 0..1
       mandatory: false
-    - name: sedi_bedding
+      change: removed
+    - name: sedi_bedding   # Removed
       att_type: CD
       value: GC_BEDDING_CD
       description:
@@ -392,7 +478,8 @@ themes:
         fr: Matrice ou ciment de la roche sédimentaire
       cardinality: 0..2
       mandatory: false
-    - name: sedi_str
+      change: removed
+    - name: sedi_str   # Removed
       att_type: CD
       value: GC_SEDI_STR_CD
       description:
@@ -400,7 +487,8 @@ themes:
         fr: Structure sédimentaire de la roche sédimentaire
       cardinality: 0..2
       mandatory: false
-    - name: sedi_tex
+      change: removed
+    - name: sedi_tex   # Removed
       att_type: CD
       value: GC_SEDI_TEX_CD
       cardinality: 0..1
@@ -408,7 +496,8 @@ themes:
         de: Sedimentstruktur
         fr: Texture de la roche sédimentaire
       mandatory: false
-    - name: igne_tex  
+      change: removed
+    - name: igne_tex    # Removed
       att_type: CD
       value: GC_IGNE_TEX_CD
       description:
@@ -416,7 +505,8 @@ themes:
         fr: Texture de la roche magmatique
       cardinality: 0..1
       mandatory: false
-    - name: igne_grain_si
+      change: removed
+    - name: igne_grain_si   # Removed
       att_type: CD
       value: GC_GRAIN_SI_CD
       cardinality: 0..1
@@ -424,7 +514,8 @@ themes:
         de: Korngrösse des magmatischen Gesteins
         fr: Granulométrie de la roche magmatique
       mandatory: false
-    - name: igne_affinity
+      change: removed
+    - name: igne_affinity   # Removed
       att_type: CD
       value: GC_AFFINITY_CD
       cardinality: 0..1
@@ -432,14 +523,16 @@ themes:
         de: Affinität zu einer magmatischen Serie.
         fr: Affinité avec une série magmatique
       mandatory: false
-    - name: meta_full_name
+      change: removed
+    - name: meta_full_name   # Removed
       att_type: string
       description:
         de: Bezeichnung des metamorphen Gesteins
         fr: Description de la roche métamorphique
       cardinality: 0..1
       mandatory: false
-    - name: meta_mineral
+      change: removed
+    - name: meta_mineral  # Removed
       att_type: annex
       value: GC_MINERAL_CD
       description:
@@ -447,7 +540,8 @@ themes:
         fr: Minéral important de la roche métamorphique
       cardinality: 0..3
       mandatory: false
-    - name: meta_str
+      change: removed
+    - name: meta_str   # Removed
       att_type: CD
       value: GC_META_STR_CD
       description:
@@ -455,6 +549,7 @@ themes:
         fr: Structure de la roche métamorphique
       cardinality: 0..3
       mandatory: false
+      change: removed
 - name: Geomorphology
   classes:
   - name: Instability_Structures_PT
@@ -776,12 +871,12 @@ themes:
     abrev: Tdef
     table: GC_POINT_OBJECTS     # TODO: to check
     description:
-      de: |
+      de: >-
         Die Klasse Deformation_Structures_PT beinhaltet punktuell beobachtete tektonische
         Deformationsstrukturen wie lokal stark verfaltete Stellen (Fältelung) oder Orte mit ausgeprägter
         Klüftung. Ebenfalls in dieser Klasse befinden sich konstruierte Punkte wie z.B. die Orientierung
         der Faltenachsenfläche.
-      fr: |-
+      fr: >-
         La classe Deformation_Structures_PT contient des structures
         de déformation tectonique observées ponctuellement, telles
         que des endroits localement très plissés (plissotement) ou
@@ -810,10 +905,10 @@ themes:
       mandatory: false
     - name: dip        # WAs 'plunge' in version 2.1
       description:
-        de: |
+        de: >-
           Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen
           aus der Horizontalen (0°) nach unten bis in die Vertikale (90°).
-        fr: |
+        fr: >-
           Valeur du plongement du type d''objet (valeur en degrés, mesurée de l’horizontale
           (0°) vers le bas jusqu’à la verticale (90°))
       att_type: integer
@@ -842,10 +937,10 @@ themes:
     abrev: Tdef      # TODO: to check
     table: GC_LINEAR_OBJECTS     # TODO: to check
     description:
-      de: |
+      de: >-
         Die Klasse Deformation_Structures_L enthält linienförmige tektonische Deformationsstrukturen,
         wie den Verlauf des Faltenscharniers.
-      fr: |-
+      fr: >-
         La classe Deformation_Structures_L regroupe les structures
         linéaires de déformations tectoniques comme le tracé d’une
         charnière de pli.
@@ -862,10 +957,10 @@ themes:
     abrev: Tdef      # TODO: to check
     table: GC_SURFACES     # TODO: to check
     description:
-      de: |
+      de: >-
         In der Klasse Deformation_Structures_PLG befinden sich tektonisch geprägte Zonen wie
         tektonisierte Zonen oder Kluftzonen.
-      fr: |-
+      fr: >-
         Dans la classe Deformation_Structures_PLG se trouvent les
         régions marquées par des structures tectoniques à grande
         échelle comme les zones tectonisées ou les zones diaclasées.
@@ -899,9 +994,9 @@ themes:
     abrev: Ttec      # TODO: to check
     table: GC_LINEAR_OBJECTS     # TODO: to check
     description:
-      de: |
+      de: >-
         Die Klasse Tectonic_Boundaries_L umfasst alle tektonischen Verwerfungen.
-      fr: |-
+      fr: >-
         La classe Tectonic_Boundaries_L comprend toutes les
         accidents tectoniques.
     attributes:
@@ -1006,10 +1101,10 @@ themes:
     abrev: Mfol      # TODO: to check
     table: GC_POINT_OBJECTS     # TODO: to check
     description:
-      de: |
+      de: >-
         Die Klasse Folds_PT enthält Objektarten, welche die räumliche Lage von verfalteten geologischen
         Objekten (mit direkten Feldmessungen) beschreiben.
-      fr: |-
+      fr: >-
         La classe Folds_PT contient les objets qui décrivent la
         position spatiale d’objets géologiques plissés (par des
         mesures prises directement sur le terrain).
@@ -1083,12 +1178,12 @@ themes:
     abrev: Mlin      # TODO: to check
     table: GC_POINT_OBJECTS     # TODO: to check
     description:
-      de: |
+      de: >-
         In der Klasse Lineation_PT finden sich Objektarten, welche die räumliche Lage von diversen
         Linearen mit direkten Feldmessungen beschreiben. Die räumliche Lage u.a. von Gletscherschliffen
         und Rutschharnischen ist ebenso Teil dieser Klasse wie die Orientierung von Streckungs- oder
         Intersektionslineationen.
-      fr: |-
+      fr: >-
         La classe Lineation_PT contient des structures linéaires
         dont la position spatiale est décrite par des mesures
         directes sur le terrain. La position dans l’espace, entre
@@ -1130,10 +1225,10 @@ themes:
     abrev: Mpla      # TODO: to check
     table: GC_POINT_OBJECTS     # TODO: to check
     description:
-      de: >
+      de: >-
         Die Klasse Planar_Structures_PT enthält Objektarten, welche die räumliche
         Lage von planaren Strukturen mit direkten Feldmessungen beschreiben.
-      fr: |-
+      fr: >-
         La classe Planar_Structures_PT contient des types d'objets
         qui décrivent la position des structures planaires avec des
         mesures directes sur le terrain.
@@ -1197,8 +1292,9 @@ themes:
       description:
         de: Einfallswert der jeweiligen Punktobjektart. Wert in Grad gemessen aus
           der Horizontalen (0°) nach unten bis in die Vertikale (90°).
-        fr: |-
-          Valeur du plongement du type d'objet (en degrés), mesurée de l’horizontale (0°) vers le bas jusqu’à la  verticale (90°)
+        fr: >-
+          Valeur du plongement du type d'objet (en degrés), mesurée de
+          l’horizontale (0°) vers le bas jusqu’à la  verticale (90°)
       cardinatity: 0..1
       mandatory: false
 - name: Local_Additional_Information
@@ -1236,8 +1332,8 @@ themes:
     table: GC_FOSSILS
     description:
       de: Die Klasse Fossils_PT enthält alle Fossilfundstellen.
-      fr: |-
-        La classe Fossils_PT contient tous les gisements
+      fr: >-
+        La classe Fossils_PT contient tous les gisements.
         fossilifères
     attributes:
     - name: kind
@@ -1261,8 +1357,9 @@ themes:
       description:
         de: Fossiliengruppe.
         fr: Groupe de fossiles
-      att_type: annex
+      # att_type: annex # should be listed
       value: gc_system
+      att_type: table
       cardinality: 0..5
       mandatory: false
     - name: lfos_dat_meth
@@ -1295,10 +1392,10 @@ themes:
     abrev: Lres
     table: GC_POINT_OBJECTS     # TODO: to check
     description:
-      de: |
+      de: >-
         Die Klasse Indication_of_Resources_PT beinhaltet Fundstellen von vulkanischen, mineralischen
         und nicht-mineralischen Rohstoffen.
-      fr: |-
+      fr: >-
         La classe Indication_of_Resources_PT regroupe les gisements
         de minéraux, de gaz, d’hydrocarbures et de matériel
         volcanique
@@ -1368,7 +1465,7 @@ themes:
     table: GC_POINT_OBJECTS     # TODO: to check
     description:
       de: Die Klasse Sedimentary_Structures_PT enthält beobachtete Sedimentstrukturen.
-      fr: |-
+      fr: >-
         La classe Sedimentary_Structures_PT contient la description
         des structures sédimentaires observées.
     attributes:
@@ -1394,10 +1491,10 @@ themes:
     abrev: Ltyp      # TODO: to check
     table: GC_POINT_OBJECTS     # TODO: to check
     description:
-      de: |
+      de: >-
         Die Klasse Type_Localities_PT beinhaltet diejenigen Objektarten, die Typusprofile oder wichtige
         geologische Aufschlüsse beschreiben.
-      fr: |-
+      fr: >-
         La classe Type_Localities_PT regroupe les types d’objets qui
         décrivent les profiles-types ou les affleurements
         géologiques importants.
@@ -1449,13 +1546,13 @@ themes:
     abrev: Lpro      # TODO: to check
     table: GC_LINEAR_OBJECTS     # TODO: to check
     description:
-      de: |
+      de: >-
         In der Klasse Prominent_Lithological_Features_L befinden sich linienförmige Gesteinshorizonte.
         Diese Gesteinshorizonte haben lediglich Hinweischarakter (z.B. «markante Sandsteinbank» innerhalb
         von Wechsellagerungen von Sandstein und Mergel) und sind von den Leithorizonten (z.B.
         «Spatkalk im Hauptrogenstein») zu unterschieden. Leithorizonte befinden sich im Thema Rock Bodies.
 
-      fr: |-
+      fr: >-
         La classe Prominent_Lithological_Features_L contient des
         horizons rocheux linéaires. Ces horizons rocheux n'ont qu'un
         caractère indicatif (par ex. « banc de grès marquant » au
@@ -1484,9 +1581,9 @@ themes:
       alias: name_horiz
       description:
         de: Name des Leithorizonts.
-        fr: Nom du horizon repère
+        fr: Nom de l'horizon repère
       att_type: annex
-      value: GC_LITSTRAT_BED_CD        # TODO: was 13103, now field: LPRO_NAME_HORIZ
+      value: GC_GEOL_MAPPING_UNIT_CD        # TODO: was 13103, now field: LPRO_NAME_HORIZ
       cardinality: 0..1
       change: new
       mandatory: false
@@ -1513,11 +1610,11 @@ themes:
     abrev: Lmis      # TODO: to check
     table: GC_POINT_OBJECTS     # TODO: to check
     description:
-      de: |
+      de: >-
         Die Klasse Miscellaneous_PT ist für lokale, sehr spezielle geologische Objekte reserviert, die für die
         Gesamtheit der geologischen Daten irrelevant sind und deshalb im Datenmodell Geologie nicht
         standardisiert werden
-      fr: |-
+      fr: >-
         La classe Miscellaneous_PT est réservée aux objets locaux
         très particuliers qui ne sont pas pertinents pour l’ensemble
         des données géologiques. Par conséquent ils ne sont pas
@@ -1571,10 +1668,10 @@ themes:
     abrev: Pslo      # TODO: to check
     table: GC_POINT_OBJECTS     # TODO: to check
     description:
-      de: |
+      de: >-
         Die Klasse Slope_Bedrock_PT enthält Punktinformationen aus Modellierungen des Festgestein-
         verlaufs im Untergrund.
-      fr: |-
+      fr: >-
         La classe Slope_Bedrock_PT contient des informations
         ponctuelles provenant de la modélisation de l’orientation
         d’horizons lithologiques des roches consolidées dans le
@@ -1626,7 +1723,7 @@ themes:
         de: Lithostratigraphische Einheit der modellierten Formation
         fr: Unité lithostratigraphique de l’horizon modélisé
       att_type: annex
-      value: GC_LITSTRAT_BED_CD        # TODO:  coded domain field; PSLO_FORMATIO", CD:  "GC_LITSTRAT_BED_CD"
+      value: GC_GEOL_MAPPING_UNIT_CD        # TODO:  coded domain field; PSLO_FORMATIO", CD:  "GC_LITSTRAT_BED_CD"
       cardinality: "1"
       change: renamed        # from litstrat to PSLO_FORMATIO
 
@@ -1635,11 +1732,11 @@ themes:
     abrev: Pcob
     table: GC_LINEAR_OBJECTS     # TODO: to check
     description:
-      de: |
+      de: >-
         Die Klasse Contour_Lines_Bedrock_L beinhaltet Isohypsen, die sich auf den Verlauf des Fest-
         gesteins beziehen und die das Resultat von Modellierungen darstellen. U.a. befinden sich die Iso-
         hypsen der Felsoberfläche in dieser Klasse.
-      fr: |-
+      fr: >-
         La classe Contour_Lines_Bedrock_L contient les isohypses qui
         décrivent la géométrie des roches consolidées dans le sous-
         sol et sont le résultat d’une modélisation. Dans cette
@@ -1675,17 +1772,17 @@ themes:
         de: Lithostratigraphische Einheit der modellierten Formation
         fr: Unité lithostratigraphique de la formation modelisée
       att_type: annex
-      value: GC_LITSTRAT_BED_CD        # TODO: renammed? field: "PCOB_FORMATIO", CD "GC_LITSTRAT_BED_CD"
+      value: GC_GEOL_MAPPING_UNIT_CD        # TODO: renammed? field: "PCOB_FORMATIO", CD "GC_LITSTRAT_BED_CD"
       cardinality: "1"
       mandatory: false
   - name: Modelled_Water_Table_PT
     abrev: Pmod      # TODO: to check
     table: GC_POINT_OBJECTS     # TODO: to check
     description:
-      de: |
+      de: >-
         Die Klasse Modelled_Water_Table_PT enthält Punktinformationen aus Modellierungen des
         Grundwasserspiegels.
-      fr: |-
+      fr: >-
         La classe Modelled_Water_Table_PT contient des informations
         ponctuelles provenant de la modélisation du niveau
         piézométrique d’une nappe libre.
@@ -1738,10 +1835,10 @@ themes:
     abrev: Pcoh
     table: GC_LINEAR_OBJECTS     # TODO: to check
     description:
-      de: |
+      de: >-
         In der Klasse Contour_Lines_Hydro_L befinden sich die Isohypsen, die sich auf das Grundwasser
         beziehen.
-      fr: |-
+      fr: >-
         Dans la classe Contour_Lines_Hydro_L se trouvent les
         isohypses qui décrivent la surface d’une nappe d’eau
         souterraine.
@@ -1787,7 +1884,7 @@ themes:
     description:
       de: Die Klasse Archaeology_PT enthält Objektarten zu einzelnen archäologischen
         Relikten.
-      fr: |-
+      fr: >-
         La classe Archaeology_PT regroupe les sites archéologiques.
     attributes:
     - name: kind
@@ -1839,7 +1936,7 @@ themes:
       de: |
         Die Klasse Archaeology_L umfasst linienförmige archäologische Elemente. Historische Strassen,
         Hohlwege oder Befestigungsgräben sind Teile dieser Klasse.
-      fr: |-
+      fr: >-
         La classe Archaeology_L contient les éléments archéologiques
         de forme linéaire. Les routes historiques, les chemins creux
         et les fossés de fortification font partie de cette classe.
@@ -1885,7 +1982,7 @@ themes:
       de: |
         Die Klasse Archaeology_PLG beinhaltet archäologische Relikte (z.B. römisches Castrum), die ein
         grösseres Gebiet (Fläche) abdecken.
-      fr: |-
+      fr: >-
         Dans la classe Archaeology_PLG se trouvent les vestiges
         archéologiques (p.ex. le Castrum romain) qui recouvrent une
         surface importante.
@@ -1931,7 +2028,7 @@ themes:
       de: |
         Die Klasse Exploitation_Geomaterials_PT enthält punktförmige Angaben zu Abbaustellen von
         Geomaterialien.
-      fr: |-
+      fr: >-
         La classe Exploitation_Geomaterials_PT contient des
         informations ponctuelles sur les sites d’exploitation de
         matériaux géologiques.
@@ -1948,7 +2045,7 @@ themes:
         de: Abgebaute lithostratigraphische Einheit.
         fr: Unité lithostratigraphique exploitée
       att_type: annex
-      value: GC_LITSTRAT_BED_CD       # TODO: check
+      value: GC_GEOL_MAPPING_UNIT_CD       # TODO: check
       cardinality: 0..*
       mandatory: false
     - name: status
@@ -1983,7 +2080,7 @@ themes:
       de: |
         Die Klasse Exploitation_Geomaterials_L beinhaltet linienförmige Informationen zum Abbau von
         Geomaterialien (z.B. Verlauf der Abbaufront).
-      fr: |-
+      fr: >-
         La classe Exploitation_Geomaterials_L contient les objets de
         forme linéaire liés aux sites d’exploitation de matériaux
         géologiques (p.ex. le front de taille).
@@ -2011,7 +2108,7 @@ themes:
       de: |
         Die Klasse Exploitation_Geomaterials_PLG enthält Flächen, wo zur Zeit der geologischen
         Aufnahmen Geomaterialien abgebaut wurden.
-      fr: |-
+      fr: >-
         La classe Exploitation_Geomaterials_PLG contient les
         surfaces d’exploitation de géomatériaux, telles qu’elles
         étaient au moment du levé de la carte géologique.
@@ -2028,7 +2125,7 @@ themes:
         de: Abgebaute lithostratigraphische Einheit.
         fr: Unité lithostratigraphique exploitée
       att_type: annex
-      value: GC_LITSTRAT_BED_CD       # TODO: check
+      value: GC_GEOL_MAPPING_UNIT_CD       # TODO: check
       cardinality: 1..*
       mandatory: false
     - name: status
@@ -2058,11 +2155,11 @@ themes:
     abrev: Abor      # TODO: to check
     table: GC_POINT_OBJECTS     # TODO: to check
     description:
-      de: |
+      de: >-
         Die Klasse Boreholes_PT beinhaltet Bohrungen und Sondierungen. (Auf alten gedruckten Karten
         wurde die Art der Sondierung nicht immer unterschieden. Es kann daher sein, dass in alten Karten
         Rammkernsondierungen als Bohrungen aufgenommen wurden.)
-      fr: |-
+      fr: >-
         La classe Boreholes_PT regroupe les forages et les sondages.
         (Sur les anciennes cartes imprimées, le genre d’objet
         n’était pas toujours distingué. D’ailleurs, il se peut que
@@ -2088,9 +2185,12 @@ themes:
     - name: abor_depth_bedr
       alias: depth_bedr
       description:
-        de: |
-          Tiefe (in Meter ab Terrainoberfläche) der Felsoberfläche. (Sofern die Bohrung das Festgestein nicht erreicht, z.B. «Bohrung, Fels nicht erreicht», beträgt der Wert 999, falls die Bohrung bereits im Festgestein beginnt, beträgt der Wert 0). Falls Festgestein erreicht wurde, aber nicht klar ist, dass es sich um die Felsoberfläche handelt, beträgt der Wert 888.
-        fr: |
+        de: >-
+          Tiefe (in Meter ab Terrainoberfläche) der Felsoberfläche. (Sofern die Bohrung das Festgestein nicht erreicht, 
+          z.B. «Bohrung, Fels nicht erreicht», beträgt der Wert 999, falls die Bohrung bereits im Festgestein beginnt, 
+          beträgt der Wert 0). Falls Festgestein erreicht wurde, aber nicht klar ist, dass es sich um die Felsoberfläche 
+          handelt, beträgt der Wert 888.
+        fr: >-
           Profondeur de la roche en place (en mètres depuis la surface). Si l’ouvrage
           n’atteint pas la roche en place,  par exemple forage interrompu dans la
           couverture quaternaire, la valeur est  999, au cas où le forage commence
@@ -2145,7 +2245,7 @@ themes:
         fr: >-
           Profondeur relative à la formation A atteinte (en mètres depuis la surface)
       att_type: annex
-      value: GC_LITSTRAT_BED_CD       # TODO
+      value: GC_GEOL_MAPPING_UNIT_CD       # TODO: new GMU
       cardinality: 0..1
       mandatory: false
     - name: abor_depth_fm_b
@@ -2164,7 +2264,7 @@ themes:
         de: Lithostratigraphische Einheit der erreichten Formation A
         fr: Unité lithostratigraphique de la formation A atteinte
       att_type: annex
-      value: GC_LITSTRAT_BED_CD       # TODO
+      value: GC_GEOL_MAPPING_UNIT_CD   # TODO: new GMU
       cardinality: 0..1
       mandatory: false
     - name: abor_depth_fm_b
@@ -2247,11 +2347,11 @@ themes:
     abrev: Aart      # TODO: to check
     table: GC_SURFACES     # TODO: to check
     description:
-      de: |
+      de: >-
         Die Klasse Artificial_Surface_Modifications_PLG enthält bedeutende künstliche Veränderungen
         des Geländes (Golfplatz, Skigebiet, etc.), die zur Folge haben, dass das ursprüngliche Relief nicht
         mehr zu erkennen ist, was bei einer geomorphologischen Deutung zu falschen Schlüssen führen könnte.
-      fr: |-
+      fr: >-
         La classe Artificial_Surface_Modifications_PLG contient des
         modifications artificielles importantes du terrain (terrain
         de golf, domaine skiable, etc.) qui ont pour conséquence que
@@ -2273,10 +2373,10 @@ themes:
     abrev: Hcon      # TODO: to check
     table: GC_POINT_OBJECTS     # TODO: to check
     description:
-      de: |
+      de: >-
         Die Klasse Construction_PT beinhaltet Wasserbauten wie Grundwasserfassungen und Zisternen.
         Desweiteren kommen in dieser Klasse auch Messgeräte wie Piezometer und Limnigraphen vor.
-      fr: |-
+      fr: >-
         Dans la classe Construction_PT se trouvent les constructions
         hydriques, comme les captages dans la nappe phréatique et
         les citernes. Les instruments de mesure comme les
@@ -2337,10 +2437,10 @@ themes:
     abrev: Hcon      # TODO: to check
     table: GC_LINEAR_OBJECTS     # TODO: to check
     description:
-      de: |
+      de: >-
         Die Klasse Construction_L enthält linienförmige Wasserbauten wie den Wasserfassungsstollen,
         welcher mit Objektarten der Klasse Surface_Water_PT kombiniert werden kann.
-      fr: |-
+      fr: >-
         Dans la classe Construction_L se trouvent les constructions
         hydriques de forme linéaire comme les galeries de captage
         d’eau, qui peuvent être combinées avec les types d’objets de
@@ -2369,10 +2469,10 @@ themes:
     abrev: Hpal      # TODO: to check
     table: GC_LINEAR_OBJECTS     # TODO: to check
     description:
-      de: |
+      de: >-
         In der Klasse Palaeohydrology_L befinden sich alle linienförmigen Objektarten, welche einen
         gewissen Bezug zu einem ehemaligen Gewässer aufweisen.
-      fr: |-
+      fr: >-
         La classe Palaeohydrology_L contient tous les types d’objets
         de forme linéaire, indiquant le tracé d’un cours d’eau dans
         le passé.
@@ -2425,12 +2525,12 @@ themes:
     abrev: Hsub      # TODO: to check
     table: GC_LINEAR_OBJECTS     # TODO: to check
     description:
-      de: |
+      de: >-
         In der Klasse Subsurface_Water_L befinden sich linienförmigen Objektarten, welche einen
         unterirdischen Gewässerlauf anzeigen.
 
         Der genaue Verlauf des unterirdischen Gewässerlaufes ist meistens vermutet.
-      fr: |-
+      fr: >-
         Dans la classe Subsurface_Water_L se trouvent les objets de
         forme linéaire qui représentent les cours d’eau souterrains.
         Le parcours exact des cours d’eau souterrains est presque
@@ -2463,13 +2563,13 @@ themes:
     abrev: Hsur      # TODO: to check
     table: GC_POINT_OBJECTS     # TODO: to check
     description:
-      de: |
+      de: >-
         Die Klasse Surface_Water_PT umfasst lokal (punktuell) beobachtete Oberflächengewässer, wie
         natürliche Wasseraustritts- und Versickerungsstellen. Zudem befindet sich die Objektart Steilstufe
         in Bachrinne, Wasserfall in dieser Klasse, die eine spezielle Stelle in Fliessgewässern markiert und
         die durch die darunterliegende Geologie bedingt ist.
 
-      fr: |-
+      fr: >-
         La classe Surface_Water_PT comprend les eaux de surface
         locales (ponctuelles) comme les sources et les pertes d’un
         cours d’eau. On y trouve également des types d’objets
@@ -2596,11 +2696,11 @@ themes:
     abrev: Hsur      # TODO: to check
     table: GC_SURFACES     # TODO: to check
     description:
-      de: |
+      de: >-
         Die Klasse Surface_Water_PLG beinhaltet oberflächliche Wasserspeicher wie Gletscher, Seen und
         Flüsse.
 
-      fr: |-
+      fr: >-
         La classe Surface_Water_PLG regroupe toutes les
         accumulations d’eaux superficielles comme les glaciers, les
         lacs et les rivières qui masquent les unités géologiques
@@ -2622,51 +2722,88 @@ themes:
 # TODO: description should be taken from abbove
       mandatory: true
 annexes:
-- name: GC_LITSTRAT_BED_CD
+- name: GC_GEOL_MAPPING_UNIT_ATT   # TODO: implement
+  type_: table
+  fname: Geol_Mapping_Unit_Att.json
   description:
-    de: Wertetabelle der lithostratigraphischen Einheiten
-    fr: Table des valeurs des unités lithostratigraphiques
-- name: GC_LITSTRAT_UNCO_CD
+    de: Kartiereinheiten
+    fr: Unités de cartographie
+- name: GC_GEOL_MAPPING_UNIT_CD
+  type_: list
+  fname: Geol_Mapping_Unit.json
+  description:
+    de: Kartiereinheiten
+    fr: Unités de cartographie
+- name: GC_CORRELATION_CD
+  type_: list
+  fname: Correlation.json
+  description:
+    de: Korrelation
+    fr: Correlation
+
+- name: GC_LITSTRAT_FORMATION_BANK_CD
+  type_: list
+  fname: Litstrat_Formation_Bank.json
+  description:
+    de: blabla
+    fr: blabla
+
+#- name: GC_LITSTRAT_BED_CD  #TODO: to remove?  GC_GEOL_MAPPING_UNIT_CD
+#  type_: list
+#  description:
+#    de: Wertetabelle der lithostratigraphischen Einheiten
+#    fr: Table des valeurs des unités lithostratigraphiques
+- name: GC_LITSTRAT_UNCO_CD     #TODO: to remove later
+  type_: list
   description:
     de: Wertetabelle der lithostratigraphischen Einheiten
     fr: Table des valeurs des unités lithostratigraphiques
 - name: GC_LITHO_CD
+  type_: list
   description:
     de: Wertetabellen der lithologischen Beschreibung
     fr: Tables des valeurs de la description lithologique
 - name: GC_LITHO_UNCO_CD
+  type_: list
   description:
     de: Wertetabellen der lithologischen Beschreibung
     fr: Tables des valeurs de la description lithologique (roches meubles)
 
 - name: GC_CHRONO_CD
+  type_: list
   description:
     de: Wertetabelle der chronostratigraphischen Einheiten
     fr: Table des valeurs des unités chronostratigraphiques
 - name: GC_TECTO_CD
+  type_: list
   description:
     de: Wertetabelle der tektonischen Einheiten
     fr: Table des valeurs des unités tectoniques
 - name: GC_MINERAL_CD
+  type_: list
   description:
     de: Wichtiges Mineral des metamorphen Gesteins
     fr: Minéral important de la roche métamorphique
 - name: gc_admixture
+  type_: list
   fname: Admixture.json
   description:
     de: Beimengung
     fr: Incorporation
 - name: gc_composit
+  type_: list
   fname: Composit.json
   description:
     de: Zusammensetzung des Lockergesteins
     fr: Composition de la roche meuble
 - name: gc_charcat
+  type_: list
   fname: Charcat.json
   description:
     de: Spezifische Eigenschaft.
     fr: Structure sédimentaire
 - name: gc_system   # TODO: file is missing
+  type_: list
   fname: System.json
   description:
     de: Fossiliengruppe.

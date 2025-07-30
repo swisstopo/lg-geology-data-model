@@ -12,6 +12,7 @@ on:
       - master
       - develop
       - 'releases/**'
+      - schema_gmu
 
 
 jobs:
@@ -22,7 +23,7 @@ jobs:
       - name: Set up TeX Live
         run: |
           sudo apt-get update
-          sudo apt-get install -y texlive-xetex texlive-fonts-recommended texlive-plain-generic
+          sudo apt-get install -y texlive-xetex texlive-fonts-recommended texlive-plain-generic poppler-utils
 
       - name: Install Pandoc
         run: sudo apt-get install -y pandoc
@@ -51,6 +52,8 @@ jobs:
           echo "=== PKG_VERSION=$version ==="
           echo "RELEASE=$(python -c "import yaml; print(yaml.safe_load(open('datamodel.yaml'))['model']['revision'])")" >> $GITHUB_ENV
           echo "=== RELEASE=$RELEASE ==="
+          SOURCES_DIR=$(python -c "import yaml; print(yaml.safe_load(open('datamodel.yaml'))['model']['sources_dir'])")
+          echo "SOURCES_DIR=$SOURCES_DIR" >> $GITHUB_ENV
 
 
       - name: Pip install
@@ -61,21 +64,36 @@ jobs:
         shell: bash -el {0}
         run: make validate
 
-      - name: Generate graph
+      - name: NOT Generate graph
         shell: bash -el {0}
         run: |
-          python ./create_gv.py
+          echo "--NOT GENERATING --"
+          # python ./create_gv.py
     
       - name: Build all targets
         shell: bash -el {0}
-        run: make cleanall all
-      - name: Generate PlantUML Diagrams
+        run: |
+             make cleanall all
+             # make diagram
+             make validate-metadata
+             
+
+      - name: Generate PDF from PUML diagram
         uses: rotaract/plantuml-action@v1
         with:
           format: svg
           pattern: outputs/ER-GCOVER.puml
+      - name: Install rsvg-convert
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y librsvg2-bin 
 
-      
+      - name: Convert SVG to PDF
+        run: |
+          # Convert SVG to PDF (maintains vector format)
+          rsvg-convert -f pdf -o outputs/ER-GCOVER.pdf outputs/ER-GCOVER.svg
+
+
       - name: Upload Artifacts
         uses: actions/upload-artifact@v4
         with:
@@ -93,10 +111,6 @@ jobs:
             outputs/fr/geocover.png
             outputs/ER-GCOVER.svg
             outputs/ER-GCOVER.pdf
-            exports/coded_domains.xlsx
-            exports/all_geolcode.xlsx
-            exports/all_geolcode.json
-            exports/geocover-schema-sde.json
-            inputs/datamodel.xlsx
+            ${{ env.SOURCES_DIR }}/gcoverp_export_simple.json 
             datamodel.yaml
 

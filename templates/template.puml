@@ -4,23 +4,26 @@ skinparam linetype ortho
 skinparam backgroundcolor transparent
 skinparam rectangle {{
   roundCorner 50
-  BackGroundColor  #C8E1ED
+  BackGroundColor {bg_color}
   LineThickness 10
   LineColor #CEEDDB
 }}
 
-skinparam TitlefontColor  #6E8894
+skinparam TitlefontColor  {table_color}
 skinparam TitleFontSize 50
 
 
 scale 1
 
+' Color scheme https://colorhunt.co/palette/eaebd0da6c6ccd5656af3e3e
+' #EAEBD0 #DA6C6C #CD5656 #AF3E3E
 
-!define table(x) class x << (T,#85BAA1) >> #CEEDDB
+
+!define table(x) class x << (T,{table_color}) >> {table_bg}
 !define view(x) class x << (V,#FFAAAA) >>
 !define ent(x) class x << (E,#FFAAAA) >>
 !define enum(x) class x << (E,#FFAAAA) >>
-!define class(x) class x << (C,#544E61) >> #9C92A9
+!define class(x) class x << (C,{class_color}) >> {class_bg}
 
 !define primary_key(x) <b>PK: x</b>
 !define foreign_key(x,reference) <b>FK: </b>x
@@ -30,10 +33,10 @@ hide stereotypes
 
 
 
-rectangle  #C8E1ED;line:544E61;line.bold; {{
+rectangle   {bg_color};line:{rectangle_color};line.bold; {{
  
 
-title GeoCover\nNovember 2024
+title GeoCover 5.0\nMai 2025
 
 {content}
 

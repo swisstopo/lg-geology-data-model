@@ -2,6 +2,7 @@
 __pycache__
 *.pyc
 *.log
+log/
 
 .idea
 output/Thumbs.db

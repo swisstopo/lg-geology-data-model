@@ -1,0 +1,185 @@
+{
+  "type": "object",
+  "properties": {
+    "version": {
+      "type": "string"
+    },
+    "model": {
+      "type": "object",
+      "properties": {
+        "revision": {
+          "type": "string",
+          "pattern": "^\\d+\\.\\d+\\.\\d+$"
+        },
+        "revision_date": {
+          "type": "string",
+          "format": "date"
+        },
+        "sources_dir": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "revision",
+        "revision_date",
+        "sources_dir"
+      ]
+    },
+    "themes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "classes": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "object",
+                  "properties": {
+                    "de": {
+                      "type": "string"
+                    },
+                    "fr": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "de",
+                    "fr"
+                  ]
+                },
+                "abrev": {
+                  "type": "string"
+                },
+                "table": {
+                  "type": "string"
+                },
+                "attributes": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      },
+                      "alias": {
+                        "type": "string"
+                      },
+                      "status": {
+                        "type": "string"
+                      },
+                      "att_type": {
+                        "type": "string",
+                         "enum": ["CD", "table", "annex", "subtype", "integer", "float", "string", "range", "boolean", "table"]
+
+                      },
+                      "value": {
+                        "oneOf": [
+                          {
+                            "type": "integer"
+                          },
+                          {
+                            "type": "string"
+
+                          }
+                        ]
+                      },
+                      "description": {
+                        "type": "object",
+                        "properties": {
+                          "de": {
+                            "type": "string"
+                          },
+                          "fr": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "de",
+                          "fr"
+                        ]
+                      },
+                      "mandatory": {
+                        "type": "boolean"
+                      },
+                      "cardinality": {
+                        "type": "string"
+
+                      },
+                      "change": {
+                        "type": "string",
+                        "enum": ["removed", "new", "renamed"]
+                      },
+                      "origin": {
+                        "type": "string"
+
+                      }
+                    },
+                    "required": [
+                      "name",
+                      "att_type"
+                    ]
+                  }
+                }
+              },
+              "required": [
+                "name",
+                "description",
+                "attributes"
+              ]
+            }
+          }
+        },
+        "required": [
+          "name",
+          "classes"
+        ]
+      }
+    },
+    "annexes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "type_": {
+            "type": "string",
+            "enum": ["table", "list"]
+          },
+          "fname": {
+            "type": "string"
+          },
+          "description": {
+            "type": "object",
+            "properties": {
+              "de": {
+                "type": "string"
+              },
+              "fr": {
+                "type": "string"
+              }
+            },
+            "required": ["de", "fr"]
+          }
+        },
+        "required": ["name", "type_", "description"]
+      }
+    }
+
+  },
+  "required": [
+    "version",
+    "model",
+    "themes"
+  ]
+}

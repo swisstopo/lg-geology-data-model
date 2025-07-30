@@ -16,13 +16,16 @@ OUTPUTS = $(foreach lang,$(LANGUAGES),$(foreach fmt,$(FORMATS),$(OUTPUT_DIR)/$(l
 # Define the list of required .mo files for each language
 MO_FILES = $(foreach lang,$(LANGUAGES),$(LOCALE_DIR)/$(lang)/LC_MESSAGES/datamodel.mo $(LOCALE_DIR)/$(lang)/LC_MESSAGES/app.mo)
 INPUTS = $(foreach lang,$(LANGUAGES),$(foreach fmt,$(FORMATS),$(INPUT_DIR)/$(lang)/datamodel.md))
+CLEAN_PDFS = $(shell find outputs -name "*.pdf" -not -name "ER-GCOVER.pdf")
 
+
+$(info clean pdfs = $(CLEAN_PDFS))
 
 # Options for all doc format
+# Unknown --shift-heading-level-by=-1  \
 PANDOC_OPTIONS=--standalone \
          -V papersize:a4   \
          --number-sections \
-         --shift-heading-level-by=-1  \
          --variable mainfont="DejaVu Sans" \
          -V colorlinks=true \
          -V linkcolor=teal \
@@ -35,7 +38,7 @@ OPTIONS_de = --metadata lang=de  --metadata-file=$(INPUT_DIR)/de/metadata.yaml -
 OPTIONS_fr = --metadata lang=fr  --metadata-file=$(INPUT_DIR)/fr/metadata.yaml -V lang=fr
 
 # format specific options
-PANDOC_HTML_OPTIONS=--to html5 --toc-depth=2  --toc  --css $(CSS)
+PANDOC_HTML_OPTIONS=  --to html5 --toc  --toc-depth=3  --include-in-header=$(INPUT_DIR)/de/headers.html  --include-after-body=assets/sortable.html  --css $(CSS)
 PANDOC_PDF_OPTIONS=--pdf-engine=xelatex
 PANDOC_DOCX_OPTIONS=
 PANDOC_ODT_OPTIONS=
@@ -43,20 +46,22 @@ PANDOC_ODT_OPTIONS=
 # Help target
 help:
 	@echo "Usage:"
-	@echo "  make all      - Generate all files (PDF, DOCX, HTML and ODT for all languages)"
-	@echo "  make pdfs     - Generate only PDF files for all languages"
-	@echo "  make docxs    - Generate only DOCX files for all languages"
-	@echo "  make odts     - Generate only ODT files for all languages"
-	@echo "  make htmls    - Generate only HTML files for all languages"
-	@echo "  make mds      - Generate only Markdown files for all languages"
-	@echo "  make de       - Generate all files (PDF, DOCX, HTML and ODT) for German"
-	@echo "  make fr       - Generate all files (PDF, DOCX, HTML and ODT) for French"
-	@echo "  make babel    - Generate .mo translation files"
-	@echo "  make markdown - Generate markdown files"
-	@echo "  make diagram  - Generate ER diagram"
-	@echo "  make validate - Validate the datamodel against the schema"
-	@echo "  make clean    - Remove all generated files"
-	@echo "  make help     - Display this help message"
+	@echo "  make all                - Generate all files (PDF, DOCX, HTML and ODT for all languages)"
+	@echo "  make pdfs               - Generate only PDF files for all languages"
+	@echo "  make docxs              - Generate only DOCX files for all languages"
+	@echo "  make odts               - Generate only ODT files for all languages"
+	@echo "  make htmls              - Generate only HTML files for all languages"
+	@echo "  make mds                - Generate only Markdown files for all languages"
+	@echo "  make de                 - Generate all files (PDF, DOCX, HTML and ODT) for German"
+	@echo "  make fr                 - Generate all files (PDF, DOCX, HTML and ODT) for French"
+	@echo "  make babel              - Generate .mo translation files"
+	@echo "  make markdown           - Generate markdown files"
+	@echo "  make diagram            - Generate ER diagram"
+	@echo "  make validate           - Validate the datamodel against the schema"
+	@echo "  make check-metadata     - Check the model metadata"
+	@echo "  make validate-metadata  - Validate the datamodel metadata"
+	@echo "  make clean              - Remove all generated files"
+	@echo "  make help               - Display this help message"
 
 .PHONY: assets
 assets:
@@ -67,6 +72,9 @@ assets:
 	$(CP) assets/geocover.png $(OUTPUT_DIR)/de
 	$(CP) assets/geocover.png $(OUTPUT_DIR)/fr
 	$(CP) assets/geocover.png .
+	$(CP) assets/model.png $(OUTPUT_DIR)/de
+	$(CP) assets/model.png $(OUTPUT_DIR)/fr
+	$(CP) assets/model.png .
 
 babel: $(MO_FILES)
 
@@ -84,6 +92,7 @@ markdown: $(MO_FILES) $(INPUTS)
 
 
 diagram: assets
+	rm -rf $(OUTPUT_DIR)/ER-GCOVER.*
 	python create_gv.py
 	
 $(INPUT_DIR)/datamodel.xlsx:
@@ -91,10 +100,14 @@ $(INPUT_DIR)/datamodel.xlsx:
 
 
 .PHONY: all
-all: $(MO_FILES) $(INPUTS)  $(OUTPUTS) diagram $(INPUT_DIR)/datamodel.xlsx
+all: $(MO_FILES) $(INPUTS)  $(OUTPUTS)  $(INPUT_DIR)/datamodel.xlsx
 
 # Define individual rules for each format and language
 define build_rule
+$(INPUT_DIR)/$(1)/headers.html: assets $(MO_FILES)
+	mkdir -p $$(@D)
+	datamodel generate --lang=$(1)  -o $(INPUT_DIR) datamodel.yaml
+
 $(INPUT_DIR)/$(1)/metadata.yaml: assets $(MO_FILES)
 	mkdir -p $$(@D)
 	datamodel generate --lang=$(1)  -o $(INPUT_DIR) datamodel.yaml
@@ -115,7 +128,7 @@ $(OUTPUT_DIR)/$(1)/datamodel.odt: $(INPUT_DIR)/$(1)/datamodel.md $(INPUT_DIR)/$(
 	mkdir -p $$(@D)
 	$(PANDOC) $(PANDOC_OPTIONS) $(OPTIONS_$1) $(PANDOC_ODT_OPTIONS) -o $$@ $$<
 
-$(OUTPUT_DIR)/$(1)/datamodel.html: $(INPUT_DIR)/$(1)/datamodel.md $(INPUT_DIR)/$(1)/metadata.yaml
+$(OUTPUT_DIR)/$(1)/datamodel.html: $(INPUT_DIR)/$(1)/datamodel.md $(INPUT_DIR)/$(1)/metadata.yaml $(INPUT_DIR)/$(1)/headers.html
 	mkdir -p $$(@D)
 	$(PANDOC) $(PANDOC_OPTIONS) $(OPTIONS_$1) $(PANDOC_HTML_OPTIONS) -o $$@ $$<
 endef
@@ -143,19 +156,59 @@ fr: $(foreach fmt,$(FORMATS),$(OUTPUT_DIR)/fr/datamodel.$(fmt))
 validate:
 	 datamodel validate datamodel.yaml
 
+# Check metadata in all generated PDFs
+.PHONY: check-metadata
+check-metadata:
+	@echo "=== PDF Metadata Check ==="
+	@for pdf in $(CLEAN_PDFS); do \
+		if [ -f "$$pdf" ]; then \
+			echo; \
+			echo "$$(basename $$pdf)"; \
+			pdfinfo -custom "$$pdf" | grep -E "(ModelRevision|GitHash|GitTag|BuildDate|BuildContext):" | sed 's/^/  /' || echo "  No custom metadata found"; \
+		fi; \
+	done
+
+.PHONY: validate-metadata
+validate-metadata:
+	@echo "=== Metadata Validation ==="
+	@missing=0; \
+	for pdf in $(CLEAN_PDFS); do \
+		if [ -f "$$pdf" ]; then \
+			echo -n "Checking $$(basename $$pdf)... "; \
+			if pdfinfo -custom "$$pdf" | grep -q "ModelRevision:"; then \
+				echo "✓"; \
+			else \
+				echo "✗ Missing ModelRevision"; \
+				missing=$$((missing + 1)); \
+			fi; \
+		fi; \
+	done; \
+	if [ $$missing -eq 0 ]; then \
+		echo "All PDFs have required metadata ✓"; \
+	else \
+		echo "$$missing PDFs missing metadata ✗"; \
+		exit 1; \
+	fi
+
 # Clean up
 # Clean up all generated files
 .PHONY: clean cleanall
 cleanall: clean cleaninputs cleanpdf cleanodt cleanhtml cleandocx
 
 clean:
-	rm -rf $(OUTPUT_DIR)/*
 	find $(LOCALE_DIR) -name "*.mo" -delete
 
 # Clean up only generated PDF files
 .PHONY: cleanpdf
 cleanpdf:
-	find $(OUTPUT_DIR) -name "*.pdf" -delete
+	@echo "Deleting all PDFs except ER-GCOVER.pdf..."
+	@if [ -n "$(CLEAN_PDFS)" ]; then \
+		rm $(CLEAN_PDFS); \
+	else \
+		echo "No other PDFs to delete."; \
+	fi
+
+
 
 # Clean up only generated ODT files
 .PHONY: cleanodt

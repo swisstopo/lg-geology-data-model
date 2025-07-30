@@ -1,0 +1,82 @@
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Rendre toutes les tables triables
+    const tables = document.querySelectorAll('table');
+    
+    tables.forEach(table => {
+        const headers = table.querySelectorAll('thead th');
+        const tbody = table.querySelector('tbody');
+        
+        if (!tbody || headers.length === 0) return;
+        
+        // Ajouter les attributs data-sortable aux en-têtes
+        headers.forEach((header, index) => {
+            header.setAttribute('data-sortable', 'true');
+            header.setAttribute('data-column', index);
+            
+            // Détecter le type de données (nombre vs texte)
+            const firstDataCell = tbody.querySelector(`tr td:nth-child(${index + 1})`);
+            if (firstDataCell) {
+                const cellText = firstDataCell.textContent.trim();
+                const isNumber = !isNaN(parseFloat(cellText)) && isFinite(cellText) && cellText !== '–' && cellText !== '';
+                header.setAttribute('data-type', isNumber ? 'number' : 'text');
+            } else {
+                header.setAttribute('data-type', 'text');
+            }
+            
+            // Ajouter l'événement de clic
+            header.addEventListener('click', function() {
+                sortTable(table, index, header.getAttribute('data-type'));
+            });
+        });
+    });
+    
+    function sortTable(table, column, type) {
+        const tbody = table.querySelector('tbody');
+        const rows = Array.from(tbody.querySelectorAll('tr'));
+        const header = table.querySelector(`th[data-column="${column}"]`);
+        
+        // Déterminer la direction du tri
+        let direction = 'asc';
+        if (header.classList.contains('sort-asc')) {
+            direction = 'desc';
+        }
+        
+        // Nettoyer les classes de tri précédentes
+        table.querySelectorAll('th').forEach(h => {
+            h.classList.remove('sort-asc', 'sort-desc');
+        });
+        
+        // Ajouter la nouvelle classe de tri
+        header.classList.add(`sort-${direction}`);
+        
+        // Trier les lignes
+        rows.sort((a, b) => {
+            const aText = a.cells[column].textContent.trim();
+            const bText = b.cells[column].textContent.trim();
+            
+            // Gérer les valeurs vides
+            if (aText === '–' || aText === '') return 1;
+            if (bText === '–' || bText === '') return -1;
+            
+            let comparison = 0;
+            
+            if (type === 'number') {
+                const aNum = parseFloat(aText) || 0;
+                const bNum = parseFloat(bText) || 0;
+                comparison = aNum - bNum;
+            } else {
+                comparison = aText.localeCompare(bText, 'fr', { 
+                    numeric: true, 
+                    sensitivity: 'base' 
+                });
+            }
+            
+            return direction === 'asc' ? comparison : -comparison;
+        });
+        
+        // Réinsérer les lignes triées
+        rows.forEach(row => tbody.appendChild(row));
+    }
+});
+</script>

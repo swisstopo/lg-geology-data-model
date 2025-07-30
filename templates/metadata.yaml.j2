@@ -1,8 +1,13 @@
 ---
-title: {{ _("Geological datamodel") }}, {{ _("Revision %(name)s (%(hash)s)", name=model.revision, hash=hash) }} 
+title: {{ _("Geological datamodel") }}, {{ _("Revision %(name)s", name=model.short_revision) }}
 subtitle: {{_("Beschreibung und Datenkatalog")}}
 author: {{_("Bundesamt für Landestopographie swisstopo")}}
-date:  {{ date | format_date_locale('MMMM yyyy', lang) }}
+{# Conditionally show hash in date field for development versions #}
+{% if git_info.is_release %}
+date: {{ date | format_date_locale('MMMM yyyy', lang) }}
+{% else %}
+date: {{ date | format_date_locale('MMMM yyyy', lang) }} (dev-{{git_info.hash}})
+{% endif %}
 keywords:
   - "GeoCover"
   - "Metadata"
@@ -11,13 +16,40 @@ keywords:
   - "Vector data"
   - "Geology"
   - "Switzerland"
+  {% if not git_info.is_release %}
+  - development
+{% endif %}
 subject: {{_("Geologische Landesaufnahme der Schweiz")}}
 lang: {{lang}}
+{# PDF metadata fields (not visible in document body) #}
+creator: swisstopo
+description: |
+    git_hash: {{ git_info.hash }}
+    date: {{date }}
+    version: {{ git_info.tag }}
+
+{% if git_info.is_release and git_info.tag %}
+version: {{ git_info.tag }}
+{% else %}
+version: {{ git_info.hash }}
+{% endif %}
 
 # Custom LaTeX headers
 # Left-align all tables
 header-includes: |
-    \usepackage[margins=raggedright]{floatrow} 
+    \usepackage[margins=raggedright]{floatrow}
+    \usepackage{pdflscape}
+    \newcommand{\blandscape}{\begin{landscape}}
+    \newcommand{\elandscape}{\end{landscape}}
+    \usepackage{hyperref}
+    \hypersetup{
+      pdfinfo={
+        ModelRevision={{ model.short_revision | default('unknown') }},
+        {% if git_info and git_info.tag %}GitTag={{ git_info.tag }},{% endif -%}
+        {% if git_info and git_info.hash %}GitHash={{ git_info.hash }},{% endif -%}
+        BuildDate={{ date.isoformat() if date else 'unknown' }}
+      }
+    }
 
 
 fontsize: 9pt
@@ -32,4 +64,6 @@ papersize: a4
 mainfont: "DejaVu Sans"
 
 ---
+
+
 
