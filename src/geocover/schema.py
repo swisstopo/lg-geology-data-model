@@ -55,7 +55,7 @@ gc_filter = lambda x: "GC_" in x and not x.endswith("_I") and x not in EXCLUDE_T
 
 gc_prefix_filter = lambda x: "GC_" in x.name
 
-table_filter = lambda x: x in TREE_TABLES
+table_filter = lambda x: x  in TREE_TABLES
 
 
 class GeocoverSchema:
@@ -170,16 +170,19 @@ class GeocoverSchema:
         for table_name in list(filter(table_filter, self.__tables_list)):
             logging.info(table_name)
 
-            sort_keys = ["GEOL_CODE_INT"]
+            sort_keys = ["GEOL_CODE_INT", "PARENT_REF"]
+
             try:
                 df = utils.arcgis_table_to_df(table_name, input_fields=TREE_TABLE_FIELD)
+                common_sort_keys = set(df.columns).intersection(sort_keys)
                 if "PARENT_REF" in df.columns:
                     df["PARENT_REF"] = df["PARENT_REF"].fillna(0)
-                    sort_keys = ["GEOL_CODE_INT", "PARENT_REF"]
-                df.sort_values(by=sort_keys, inplace=True)
+
+                if len(common_sort_keys) > 0:
+                    df.sort_values(by=common_sort_keys, inplace=True)
                 self.__tables[table_name] = df
             except KeyError as e:
-                logging.error(f"Table {table_name} has nokey: {e}")
+                logging.error(f"Table {table_name} has no key: {e}")
                 continue
 
         return self.__tables

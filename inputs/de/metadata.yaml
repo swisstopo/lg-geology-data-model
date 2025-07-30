@@ -1,8 +1,8 @@
 ---
-title: Datenmodell Geologie, Revision 4.0.0-rc.5 (e9970e9) 
+title: 2D Datenmodell Geologie (GeoCover), Revision 4.1
 subtitle: Beschreibung und Datenkatalog
-author: Bundesamt für Landestopographie swisstopo
-date:  November 2024
+author: Landesgeologie — Bundesamt für Landestopographie swisstopo
+date:  Juni 2025 (3cbfb70)
 keywords:
   - "GeoCover"
   - "Metadata"
@@ -17,7 +17,10 @@ lang: de
 # Custom LaTeX headers
 # Left-align all tables
 header-includes: |
-    \usepackage[margins=raggedright]{floatrow} 
+    \usepackage[margins=raggedright]{floatrow}
+    \usepackage{pdflscape}
+    \newcommand{\blandscape}{\begin{landscape}}
+    \newcommand{\elandscape}{\end{landscape}}
 
 
 fontsize: 9pt

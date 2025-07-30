@@ -11,6 +11,7 @@ from copy import deepcopy
 
 import click
 import pandas as pd
+import pkg_resources
 
 
 try:
@@ -136,6 +137,17 @@ def geocover(ctx):
     pass
 
 
+def load_plugins():
+    for entry_point in pkg_resources.iter_entry_points("geocover.plugins"):
+        print(f"Found plugin: {entry_point.name}")  # Debug line
+        try:
+            plugin = entry_point.load()
+            geocover.add_command(plugin)
+            print(f"Successfully loaded {entry_point.name}")  # Debug line
+        except Exception as e:
+            click.echo(f"Failed to load plugin {entry_point.name}: {e}")
+
+
 @geocover.command(
     "export",
     context_settings={"show_default": True},
@@ -226,6 +238,7 @@ def export(output_dir, workspace, log_level):
         encoder.to_serializable_dict(tables_dict),
         os.path.join(output_dir, "tables.json"),
     )
+    sort_keys = ["PARENT_REf", "GEOL_CODE_INT"]
     with pd.ExcelWriter(os.path.join(output_dir, f"export_tables.xlsx")) as writer:
         for table_name, df in so.tree_tables.items():
             logger.info(table_name)
@@ -233,10 +246,12 @@ def export(output_dir, workspace, log_level):
             prefix, short_name = table_name.split(".")
             short_name = short_name.replace("GC_", "").capitalize()
 
-            if set(["PARENT_REf", "GEOL_CODE_INT"]).issubset(df.columns):
+            common_columns = set(df.columns).intersection(sort_keys)
+
+            if len(common_columns)>0:
                 try:
                     df["PARENT_REF"] = df["PARENT_REF"].fillna(0)
-                    df.sort_values(by=["GEOL_CODE_INT", "PARENT_REF"], inplace=True)
+                    df.sort_values(by=common_columns, inplace=True)
                 except KeyError as e:
                     logger.error(f"Table {table_name} has nokey: {e}")
                     continue
@@ -624,13 +639,15 @@ export.requires_arcpy = True
 schema.requires_arcpy = True
 export_rules.requires_arcpy = True
 
+load_plugins()
 
+"""
 geocover.add_command(export)
 geocover.add_command(schema)
 geocover.add_command(export_rules)
 
 geocover.add_command(geolcode)
-geocover.add_command(filter_symbols)
+geocover.add_command(filter_symbols)"""
 
 
 if __name__ == "__main__":

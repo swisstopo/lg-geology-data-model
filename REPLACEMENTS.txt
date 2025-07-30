@@ -1,0 +1,363 @@
+Old: [15104015] (Meso)Kataklasit → New:  ❌ No direct replacement found
+Old: [15104044] Adergneis → New:  ❌ No direct replacement found
+Old: [15104046] agmatischer Gneis → New:  ❌ No direct replacement found
+Old: [15104087] Albitit → New:  ❌ No direct replacement found
+Old: [15103040] Alkalirhyolith → New:  ❌ No direct replacement found
+Old: [15103013] Alkalisyenit → New:  ❌ No direct replacement found
+Old: [15103046] Alkalitrachyt → New:  ❌ No direct replacement found
+Old: [15103006] Alkalogranit → New:  ❌ No direct replacement found
+Old: [15101039] Alluvion, undifferenziert → New:   ✅ Alluvion, undifferenziert
+Old: [15104060] Amphibolit → New:  ❌ No direct replacement found
+Old: [15104063] Amphibolitgneis → New:  ❌ No direct replacement found
+Old: [15104074] Anatexit, undifferenziert → New:  ❌ No direct replacement found
+Old: [15103045] Andesit → New:  ❌ No direct replacement found
+Old: [15102071] Anhydrit → New:  ❌ No direct replacement found
+Old: [15102059] Anthrazit → New:  ❌ No direct replacement found
+Old: [15101067] anthropogene Elemente, undifferenziert → New:   ✅ anthropogene Elemente, undifferenziert
+Old: [15101062] äolischer Sand, Flugsand → New:   ✅ äolischer Sand, Flugsand
+Old: [15101061] äolisches Sediment, undifferenziert → New:   ✅ äolisches Sediment, undifferenziert
+Old: [15103030] Aplit → New:  ❌ No direct replacement found
+Old: [15102044] Aptychenkalk → New:  ❌ No direct replacement found
+Old: [15102038] Arenit → New:  ❌ No direct replacement found
+Old: [15102016] Arkose → New:  ❌ No direct replacement found
+Old: [15103058] Aschentuff → New:  ❌ No direct replacement found
+Old: [15101071] Auffüllung → New:   ✅ Auffüllung
+Old: [15101070] Aufschüttung, Damm → New:   ✅ Aufschüttung, Damm
+Old: [15104042] Augengneis → New:  ❌ No direct replacement found
+Old: [15101041] Bachschutt → New:   ✅ Bachschutt
+Old: [15104061] Bänderamphibolit → New:  ❌ No direct replacement found
+Old: [15104043] Bändergneis → New:  ❌ No direct replacement found
+Old: [15103048] Basalt → New:  ❌ No direct replacement found
+Old: [15103068] basisches Ganggestein → New:  ❌ No direct replacement found
+Old: [15103069] Basisches Gestein → New:  ❌ No direct replacement found
+Old: [15103066] Bentonit → New:  ❌ No direct replacement found
+Old: [15101006] Bergsturzablagerung → New:   ✅ Bergsturzablagerung
+Old: [15102045] biogener Kalkstein, undifferenziert → New:  ❌ No direct replacement found
+Old: [15102032] biogenes / biochemisches / organisches Sedimentgestein, undifferenziert → New:  ❌ No direct replacement found
+Old: [15102106] bioklastischer Kalk → New:  ❌ No direct replacement found
+Old: [15104085] Biotitit → New:  ❌ No direct replacement found
+Old: [15101015] Blockgletscher → New:   ✅ Blockgletscher
+Old: [15101010] Blockschutt → New:   ✅ Blockschutt
+Old: [15102082] Bohnerz → New:  ❌ No direct replacement found
+Old: [15102087] Boluston → New:  ❌ No direct replacement found
+Old: [15102006] Brekzie → New:  ❌ No direct replacement found
+Old: [15102093] Caliche → New:  ❌ No direct replacement found
+Old: [15102068] chemisches Sedimentgestein, undifferenziert → New:  ❌ No direct replacement found
+Old: [15104089] Chloritit → New:  ❌ No direct replacement found
+Old: [15104034] Chloritschiefer → New:  ❌ No direct replacement found
+Old: [15103043] Dazit → New:  ❌ No direct replacement found
+Old: [15101072] Deponie → New:   ✅ Deponie
+Old: [15101049] detritische Verlandungsbildung → New:   ✅ detritische Verlandungsbildung
+Old: [15102046] detritischer Kalk → New:  ❌ No direct replacement found
+Old: [15104079] Diatexit mit nebulitischer Textur → New:  ❌ No direct replacement found
+Old: [15104080] Diatexit mit Schlierentextur → New:  ❌ No direct replacement found
+Old: [15104081] Diatexit mit Schollentextur → New:  ❌ No direct replacement found
+Old: [15103011] Diorit → New:  ❌ No direct replacement found
+Old: [15103035] Dolerit → New:  ❌ No direct replacement found
+Old: [15102049] Dolomit → New:  ❌ No direct replacement found
+Old: [15102109] Dolomitbrekzie → New:  ❌ No direct replacement found
+Old: [15104216] dolomitischer Marmor → New:  ❌ No direct replacement found
+Old: [15102012] Dolomitsandstein → New:  ❌ No direct replacement found
+Old: [15101075] dünne Lockermaterialbedeckung → New:   ✅ dünne Lockermaterialbedeckung
+Old: [15102100] Echinodermenkalk → New:  ❌ No direct replacement found
+Old: [15102061] Eisenoolith → New:  ❌ No direct replacement found
+Old: [15102103] Eisensandstein → New:  ❌ No direct replacement found
+Old: [15102108] eisenschüssiger Kalk → New:  ❌ No direct replacement found
+Old: [15104064] Eklogit → New:  ❌ No direct replacement found
+Old: [15101086] Entwässerungssediment → New:   ✅ Entwässerungssediment
+Old: [15103039] Ergussgestein, undifferenziert → New:  ❌ No direct replacement found
+Old: [15103023] Essexit → New:  ❌ No direct replacement found
+Old: [15102070] Evaporit, undifferenziert → New:  ❌ No direct replacement found
+Old: [15103037] Extrusivgestein, undifferenziert → New:  ❌ No direct replacement found
+Old: [15104053] Fels, undifferenziert → New:  ❌ No direct replacement found
+Old: [15101007] Felssturzablagerung → New:   ✅ Felssturzablagerung
+Old: [15101040] fluviatiler Schotter → New:   ✅ fluviatiler Schotter
+Old: [15101026] fluviatiles Sediment, undifferenziert → New:   ✅ fluviatiles Sediment, undifferenziert
+Old: [15102017] Flyschsandstein, Grauwacke → New:  ❌ No direct replacement found
+Old: [15103015] Gabbro → New:  ❌ No direct replacement found
+Old: [15103026] Ganggestein, undifferenziert → New:  ❌ No direct replacement found
+Old: [15101035] gemischter Schutt → New:   ✅ gemischter Schutt
+Old: [15101076] geringmächtige Lockergesteinsbedeckung → New:   ✅ geringmächtige Lockergesteinsbedeckung
+Old: [15104210] Geröll führender Metasandstein → New:  ❌ No direct replacement found
+Old: [15102018] Geröll führender Sandstein → New:  ❌ No direct replacement found
+Old: [15104027] Gestein der Regional- und Kontaktmetamorphose, undifferenziert → New:  ❌ No direct replacement found
+Old: [15104002] Gestein der Störungszone → New:  ❌ No direct replacement found
+Old: [15104003] Gestein der Störungszone, undifferenziert → New:  ❌ No direct replacement found
+Old: [15104006] Gesteinsmehl → New:  ❌ No direct replacement found
+Old: [15102072] Gips → New:  ❌ No direct replacement found
+Old: [15102101] glaukonitischer Kalkstein → New:  ❌ No direct replacement found
+Old: [15102104] glaukonitischer Mergel → New:  ❌ No direct replacement found
+Old: [15102020] Glaukonitsandstein → New:  ❌ No direct replacement found
+Old: [15104036] Glaukophanschiefer → New:  ❌ No direct replacement found
+Old: [15101031] glazifluviatiler Schotter → New:   ✅ glazifluviatiler Schotter
+Old: [15101028] glazifluviatiles Sediment, undifferenziert → New:   ✅ glazifluviatiles Sediment, undifferenziert
+Old: [15101019] glazigenes Sediment, undifferenziert → New:   ✅ glazigenes Sediment, undifferenziert
+Old: [15101047] glazilakustrisches Deltasediment → New:   ✅ glazilakustrisches Deltasediment
+Old: [15101046] glazilakustrisches Sediment, undifferenziert → New:   ✅ glazilakustrisches Sediment, undifferenziert
+Old: [15102019] Glimmersandstein → New:  ❌ No direct replacement found
+Old: [15104035] Glimmerschiefer → New:  ❌ No direct replacement found
+Old: [15104072] Gneis mit Feldspatblasten → New:  ❌ No direct replacement found
+Old: [15104041] Gneis, undifferenziert → New:  ❌ No direct replacement found
+Old: [15104097] Granat-Glimmerschiefer → New:  ❌ No direct replacement found
+Old: [15103007] Granit → New:  ❌ No direct replacement found
+Old: [15103008] Granodiorit → New:  ❌ No direct replacement found
+Old: [15103024] Granophyr → New:  ❌ No direct replacement found
+Old: [15104058] Granulit → New:  ❌ No direct replacement found
+Old: [15101003] gravitative Sedimente und Verwitterungsbildungen, undifferenziert → New:   ✅ gravitative Sedimente und Verwitterungsbildungen, undifferenziert
+Old: [15104071] Greisen → New:  ❌ No direct replacement found
+Old: [15104098] Grünschiefer → New:  ❌ No direct replacement found
+Old: [15101079] Gyttja → New:   ✅ Gyttja
+Old: [15101073] Halde → New:   ✅ Halde
+Old: [15101014] Hanglehm, Schwemmlehm → New:   ✅ Hanglehm, Schwemmlehm
+Old: [15101009] Hangschutt → New:   ✅ Hangschutt
+Old: [15104086] Hornblenditit → New:  ❌ No direct replacement found
+Old: [15104067] Hornfels → New:  ❌ No direct replacement found
+Old: [15102054] Hornstein, Chert → New:  ❌ No direct replacement found
+Old: [15102088] Huppererde → New:  ❌ No direct replacement found
+Old: [15101081] hydrochemische Bildungen (Kalksinter) → New:   ✅ hydrochemische Bildungen (Kalksinter)
+Old: [15103054] Ignimbrit → New:  ❌ No direct replacement found
+Old: [15101083] In-situ-Verwitterungsschutt → New:   ✅ In-situ-Verwitterungsschutt
+Old: [15103003] Intrusivgestein, undifferenziert → New:  ❌ No direct replacement found
+Old: [15104005] Kakirit, undifferenziert → New:  ❌ No direct replacement found
+Old: [15102041] Kalkbrekzie → New:  ❌ No direct replacement found
+Old: [15102029] Kalkmergelstein → New:  ❌ No direct replacement found
+Old: [15102042] Kalkoolith → New:  ❌ No direct replacement found
+Old: [15102011] Kalksandstein → New:  ❌ No direct replacement found
+Old: [15104037] Kalkschiefer → New:  ❌ No direct replacement found
+Old: [15104054] Kalksilikatfels → New:  ❌ No direct replacement found
+Old: [15102034] Kalkstein, undifferenziert → New:  ❌ No direct replacement found
+Old: [15104056] Karbonat- und Silikat führendes Gestein → New:  ❌ No direct replacement found
+Old: [15102075] Karbonat, undifferenziert → New:  ❌ No direct replacement found
+Old: [15103051] Karbonatit → New:  ❌ No direct replacement found
+Old: [15104010] Kataklasit, undifferenziert → New:  ❌ No direct replacement found
+Old: [15102013] kieseliger Sandstein → New:  ❌ No direct replacement found
+Old: [15102051] kieseliges Gestein, undifferenziert → New:  ❌ No direct replacement found
+Old: [15102035] Kieselkalk → New:  ❌ No direct replacement found
+Old: [15104051] Kinzigit → New:  ❌ No direct replacement found
+Old: [15102003] klastisches Sedimentgestein, undifferenziert → New:  ❌ No direct replacement found
+Old: [15104007] Kluftletten → New:  ❌ No direct replacement found
+Old: [15102056] Kohle, undifferenziert → New:  ❌ No direct replacement found
+Old: [15102007] Konglomerat → New:  ❌ No direct replacement found
+Old: [15102005] Konglomerat und Brekzie, undifferenziert (Psephit, Korngrösse: Kies, Steine und Blöcke) → New:  ❌ No direct replacement found
+Old: [15102105] kreidiger Kalk → New:  ❌ No direct replacement found
+Old: [15103057] Kristalltuff → New:  ❌ No direct replacement found
+Old: [15102094] Krustenkalk → New:  ❌ No direct replacement found
+Old: [15101069] künstliche Ablagerung, undifferenziert → New:   ✅ künstliche Ablagerung, undifferenziert
+Old: [15101057] lakustrisches Deltasediment → New:   ✅ lakustrisches Deltasediment
+Old: [15101044] lakustrisches Sediment, undifferenziert → New:   ✅ lakustrisches Sediment, undifferenziert
+Old: [15103033] Lamprophyr → New:  ❌ No direct replacement found
+Old: [15103056] Lapillituff → New:  ❌ No direct replacement found
+Old: [15101008] Lawinenschutt → New:   ✅ Lawinenschutt
+Old: [15104047] Leptinit → New:  ❌ No direct replacement found
+Old: [15102057] Lignit (organisches Sedimentgestein) → New:  ❌ No direct replacement found
+Old: [15101054] Lignit (palustrisches Sediment) → New:   ✅ Lignit (palustrisches Sediment)
+Old: [15102102] Lithothamniensandstein → New:  ❌ No direct replacement found
+Old: [15101001] Lockergestein → New:   ✅ Lockergestein
+Old: [15101063] Löss, Lösslehm → New:   ✅ Löss, Lösslehm
+Old: [15103001] Magmatit → New:  ❌ No direct replacement found
+Old: [15104055] Marmor (Fels) → New:  ❌ No direct replacement found
+Old: [15104215] Marmor (sedimentärer Protolith) → New:  ❌ No direct replacement found
+Old: [15102014] mergeliger Sandstein → New:  ❌ No direct replacement found
+Old: [15102107] Mergelkalk → New:  ❌ No direct replacement found
+Old: [15102027] Mergelstein → New:  ❌ No direct replacement found
+Old: [15104433] Metaalkalirhyolith → New:  ❌ No direct replacement found
+Old: [15104411] Metaalkalisyenit → New:  ❌ No direct replacement found
+Old: [15104439] Metaalkalitrachyt → New:  ❌ No direct replacement found
+Old: [15104404] Metaalkalogranit → New:  ❌ No direct replacement found
+Old: [15104438] Metaandesit → New:  ❌ No direct replacement found
+Old: [15104427] Metaaplit → New:  ❌ No direct replacement found
+Old: [15104208] Metaarkose → New:  ❌ No direct replacement found
+Old: [15104441] Metabasalt → New:  ❌ No direct replacement found
+Old: [15104203] Metabrekzie → New:  ❌ No direct replacement found
+Old: [15104436] Metadazit → New:  ❌ No direct replacement found
+Old: [15104409] Metadiorit → New:  ❌ No direct replacement found
+Old: [15104432] Metadolerit → New:  ❌ No direct replacement found
+Old: [15104421] Metaessexit → New:  ❌ No direct replacement found
+Old: [15104413] Metagabbro → New:  ❌ No direct replacement found
+Old: [15104423] Metaganggestein → New:  ❌ No direct replacement found
+Old: [15104405] Metagranit → New:  ❌ No direct replacement found
+Old: [15104406] Metagranodiorit → New:  ❌ No direct replacement found
+Old: [15104422] Metagranophyr → New:  ❌ No direct replacement found
+Old: [15104209] Metagrauwacke → New:  ❌ No direct replacement found
+Old: [15104445] Metaignimbrit → New:  ❌ No direct replacement found
+Old: [15104218] Metakarbonat → New:  ❌ No direct replacement found
+Old: [15104204] Metakonglomerat → New:  ❌ No direct replacement found
+Old: [15104430] Metalamprophyr → New:  ❌ No direct replacement found
+Old: [15104401] Metamagmatit → New:  ❌ No direct replacement found
+Old: [15104214] Metamergel → New:  ❌ No direct replacement found
+Old: [15104428] Metamikrodiorit → New:  ❌ No direct replacement found
+Old: [15104429] Metamikrogabbro → New:  ❌ No direct replacement found
+Old: [15104424] Metamikrogranit → New:  ❌ No direct replacement found
+Old: [15104415] Metamonzodiorit → New:  ❌ No direct replacement found
+Old: [15104416] Metamonzogabbro → New:  ❌ No direct replacement found
+Old: [15104417] Metamonzonit → New:  ❌ No direct replacement found
+Old: [15104402] metamorph überprägtes Intrusivgestein → New:  ❌ No direct replacement found
+Old: [15104444] metamorph überprägtes pyroklastisches Gestein → New:  ❌ No direct replacement found
+Old: [15104001] Metamorphit → New:  ❌ No direct replacement found
+Old: [15104095] Metamorphit (magmatischer Protolith erkennbar) → New:  ❌ No direct replacement found
+Old: [15104092] Metamorphit (Protolith erkennbar) → New:  ❌ No direct replacement found
+Old: [15104093] Metamorphit (sedimentärer Protolith erkennbar) → New:  ❌ No direct replacement found
+Old: [15104414] Metanorit → New:  ❌ No direct replacement found
+Old: [15104426] Metapegmatit → New:  ❌ No direct replacement found
+Old: [15104211] Metapelit → New:  ❌ No direct replacement found
+Old: [15104419] Metaperidotit → New:  ❌ No direct replacement found
+Old: [15104443] Metaphonolit → New:  ❌ No direct replacement found
+Old: [15104431] Metapikrit → New:  ❌ No direct replacement found
+Old: [15104403] Metaplutonit → New:  ❌ No direct replacement found
+Old: [15104207] Metapsammit → New:  ❌ No direct replacement found
+Old: [15104202] Metapsephit → New:  ❌ No direct replacement found
+Old: [15104418] Metapyroxenit → New:  ❌ No direct replacement found
+Old: [15104437] Metaquarzandesit → New:  ❌ No direct replacement found
+Old: [15104407] Metaquarzdiorit → New:  ❌ No direct replacement found
+Old: [15104412] Metaquarzgabbro → New:  ❌ No direct replacement found
+Old: [15104217] Metaradiolarit → New:  ❌ No direct replacement found
+Old: [15104435] Metarhyodazit → New:  ❌ No direct replacement found
+Old: [15104434] Metarhyolith → New:  ❌ No direct replacement found
+Old: [15104205] Metasandstein → New:  ❌ No direct replacement found
+Old: [15104201] Metasediment → New:  ❌ No direct replacement found
+Old: [15104212] Metasiltstein → New:  ❌ No direct replacement found
+Old: [15104069] Metasomatit, undifferenziert → New:  ❌ No direct replacement found
+Old: [15104410] Metasyenit → New:  ❌ No direct replacement found
+Old: [15104076] Metatexit mit Fleckentextur → New:  ❌ No direct replacement found
+Old: [15104078] Metatexit mit Netztextur → New:  ❌ No direct replacement found
+Old: [15104077] Metatexit mit stromatitischer Textur → New:  ❌ No direct replacement found
+Old: [15104408] Metatonalit → New:  ❌ No direct replacement found
+Old: [15104440] Metatrachyt → New:  ❌ No direct replacement found
+Old: [15104446] Metavulkanit → New:  ❌ No direct replacement found
+Old: [15104075] Migmatit → New:  ❌ No direct replacement found
+Old: [15102037] Mikrit → New:  ❌ No direct replacement found
+Old: [15103031] Mikrodiorit → New:  ❌ No direct replacement found
+Old: [15103032] Mikrogabbro → New:  ❌ No direct replacement found
+Old: [15103027] Mikrogranit → New:  ❌ No direct replacement found
+Old: [15104084] monomineralischer Metamorphit, undifferenziert → New:  ❌ No direct replacement found
+Old: [15103017] Monzodiorit → New:  ❌ No direct replacement found
+Old: [15103018] Monzogabbro → New:  ❌ No direct replacement found
+Old: [15103019] Monzonit → New:  ❌ No direct replacement found
+Old: [15101021] Moräne (Till), undifferenziert → New:   ✅ Moräne (Till), undifferenziert
+Old: [15101024] Moräne auf Gletscher oder Toteis (Glacier or Dead Ice covered by Till) → New:   ✅ Moräne auf Gletscher oder Toteis (Glacier or Dead Ice covered by Till)
+Old: [15101037] Murgangablagerung → New:   ✅ Murgangablagerung
+Old: [15102022] Muschelsandstein → New:  ❌ No direct replacement found
+Old: [15104020] Mylonit → New:  ❌ No direct replacement found
+Old: [15104018] Mylonit, undifferenziert → New:  ❌ No direct replacement found
+Old: [15104420] nephelinitischer Metasyenit → New:  ❌ No direct replacement found
+Old: [15103022] nephelinitischer Syenit → New:  ❌ No direct replacement found
+Old: [15103016] Norit → New:  ❌ No direct replacement found
+Old: [15102043] Nummulitenkalk → New:  ❌ No direct replacement found
+Old: [15102021] Nummulitensandstein → New:  ❌ No direct replacement found
+Old: [15104099] Ophikalzit → New:  ❌ No direct replacement found
+Old: [15104049] Orthogneis → New:  ❌ No direct replacement found
+Old: [15101050] palustrisches Sediment → New:   ✅ palustrisches Sediment
+Old: [15101051] palustrisches Sediment, undifferenziert → New:   ✅ palustrisches Sediment, undifferenziert
+Old: [15104048] Paragneis → New:  ❌ No direct replacement found
+Old: [15102092] pedogenes Karbonat, undifferenziert → New:  ❌ No direct replacement found
+Old: [15103029] Pegmatit → New:  ❌ No direct replacement found
+Old: [15102024] Pelit, undifferenziert → New:  ❌ No direct replacement found
+Old: [15103021] Peridotit (Intrusivgestein) → New:  ❌ No direct replacement found
+Old: [15104065] Peridotit (Metamorphit) → New:  ❌ No direct replacement found
+Old: [15103050] Phonolith → New:  ❌ No direct replacement found
+Old: [15102065] phosphoritreicher Kalkstein → New:  ❌ No direct replacement found
+Old: [15102066] phosphoritreicher Mergelstein → New:  ❌ No direct replacement found
+Old: [15102064] phosphoritreicher Sandstein → New:  ❌ No direct replacement found
+Old: [15102063] phosphoritreiches Gestein, undifferenziert → New:  ❌ No direct replacement found
+Old: [15104029] Phyllit → New:  ❌ No direct replacement found
+Old: [15104023] Phyllonit → New:  ❌ No direct replacement found
+Old: [15103049] Pikrit (Effusiva) → New:  ❌ No direct replacement found
+Old: [15103034] Pikrit (Intrusivgestein) → New:  ❌ No direct replacement found
+Old: [15101013] Plateaulehm → New:   ✅ Plateaulehm
+Old: [15104038] Prasinit → New:  ❌ No direct replacement found
+Old: [15104014] Protokataklasit → New:  ❌ No direct replacement found
+Old: [15104019] Protomylonit → New:  ❌ No direct replacement found
+Old: [15104025] Pseudotachylit → New:  ❌ No direct replacement found
+Old: [15103055] Pyroklastische Brekzie → New:  ❌ No direct replacement found
+Old: [15103053] pyroklastisches Gestein, undifferenziert (vulkanischer Tuff, > 75 % pyroklast. Komp.) → New:  ❌ No direct replacement found
+Old: [15103020] Pyroxenit (Intrusivgestein) → New:  ❌ No direct replacement found
+Old: [15104088] Pyroxenit (monomineralischer Metamorphit) → New:  ❌ No direct replacement found
+Old: [15103044] Quarzandesit → New:  ❌ No direct replacement found
+Old: [15103009] Quarzdiorit → New:  ❌ No direct replacement found
+Old: [15103014] Quarzgabbro → New:  ❌ No direct replacement found
+Old: [15104091] Quarzit (monomineralischer Metamorphit) → New:  ❌ No direct replacement found
+Old: [15104206] Quarzit (sedimentärer Protolith) → New:  ❌ No direct replacement found
+Old: [15102089] Quarzsand → New:  ❌ No direct replacement found
+Old: [15102010] Quarzsandstein → New:  ❌ No direct replacement found
+Old: [15104096] Quarzschiefer → New:  ❌ No direct replacement found
+Old: [15101080] Quelltuff (Kalksinter, Lockergestein) → New:   ✅ Quelltuff (Kalksinter, Lockergestein)
+Old: [15102077] Quelltuff (Kalksinter, Sedimentgestein) → New:  ❌ No direct replacement found
+Old: [15102052] Radiolarit → New:  ❌ No direct replacement found
+Old: [15101030] randglazialer Schotter → New:   ✅ randglazialer Schotter
+Old: [15104011] Rauwacke (Kataklasit) → New:  ❌ No direct replacement found
+Old: [15102076] Rauwacke (Sedimentgestein) → New:  ❌ No direct replacement found
+Old: [15102080] Residualgestein / pedogen überprägtes Gestein, undifferenziert → New:  ❌ No direct replacement found
+Old: [15103042] Rhyodazit → New:  ❌ No direct replacement found
+Old: [15103041] Rhyolith → New:  ❌ No direct replacement found
+Old: [15103028] Rhyolithporphyr → New:  ❌ No direct replacement found
+Old: [15102040] Riffkalk → New:  ❌ No direct replacement found
+Old: [15104059] Rodingit → New:  ❌ No direct replacement found
+Old: [15101033] Rückzugsschotter → New:   ✅ Rückzugsschotter
+Old: [15102039] Rudit → New:  ❌ No direct replacement found
+Old: [15101017] Rutschmasse → New:   ✅ Rutschmasse
+Old: [15102009] Sandstein, undifferenziert (Psammit: Sandkorngrösse) → New:  ❌ No direct replacement found
+Old: [15103067] saures Ganggestein → New:  ❌ No direct replacement found
+Old: [15104031] Schiefer, undifferenziert → New:  ❌ No direct replacement found
+Old: [15102030] Schlammstein → New:  ❌ No direct replacement found
+Old: [15104062] Schollenamphibolit → New:  ❌ No direct replacement found
+Old: [15101087] Sedimentärer Gang (clastic dike) → New:   ✅ Sedimentärer Gang (clastic dike)
+Old: [15102001] Sedimentgestein → New:  ❌ No direct replacement found
+Old: [15101058] Seebodensediment → New:   ✅ Seebodensediment
+Old: [15101059] Seekreide → New:   ✅ Seekreide
+Old: [15104033] Serizitschiefer → New:  ❌ No direct replacement found
+Old: [15104090] Serpentinit → New:  ❌ No direct replacement found
+Old: [15102084] siderolithische Verwitterungsbildungen → New:  ❌ No direct replacement found
+Old: [15102090] Silcrete → New:  ❌ No direct replacement found
+Old: [15104057] silikatreicher Marmor → New:  ❌ No direct replacement found
+Old: [15102086] silikatreiches Gestein, undifferenziert → New:  ❌ No direct replacement found
+Old: [15102025] Siltstein → New:  ❌ No direct replacement found
+Old: [15104070] Skarn → New:  ❌ No direct replacement found
+Old: [15102036] Spatkalk → New:  ❌ No direct replacement found
+Old: [15102053] Spiculit → New:  ❌ No direct replacement found
+Old: [15101034] Stauschotter → New:   ✅ Stauschotter
+Old: [15102058] Steinkohle → New:  ❌ No direct replacement found
+Old: [15102073] Steinsalz → New:  ❌ No direct replacement found
+Old: [15101056] Strandablagerungen → New:   ✅ Strandablagerungen
+Old: [15104050] Stronalit → New:  ❌ No direct replacement found
+Old: [15101084] strukturierter Hangschutt → New:   ✅ strukturierter Hangschutt
+Old: [15101005] Sturzablagerung, undifferenziert → New:   ✅ Sturzablagerung, undifferenziert
+Old: [15101048] subaquatisch abgelagerte Moräne (Waterlaid Till) → New:   ✅ subaquatisch abgelagerte Moräne (Waterlaid Till)
+Old: [15101052] Sumpf → New:   ✅ Sumpf
+Old: [15102047] Süsswasserkalk → New:  ❌ No direct replacement found
+Old: [15103012] Syenit → New:  ❌ No direct replacement found
+Old: [15104039] Talkschiefer → New:  ❌ No direct replacement found
+Old: [15104008] tektonische Brekzie (kohäsionslos) → New:  ❌ No direct replacement found
+Old: [15104013] tektonische Brekzie (mit Kohäsion) → New:  ❌ No direct replacement found
+Old: [15104012] tektonische Dolomitbrekzie → New:  ❌ No direct replacement found
+Old: [15104448] tektonische Kalkbrekzie → New:  ❌ No direct replacement found
+Old: [15103005] Tiefengestein, undifferenziert → New:  ❌ No direct replacement found
+Old: [15101078] tiefgründige Verwitterungsdecke → New:   ✅ tiefgründige Verwitterungsdecke
+Old: [15103010] Tonalit → New:  ❌ No direct replacement found
+Old: [15102015] toniger Sandstein → New:  ❌ No direct replacement found
+Old: [15102028] Tonmergelstein → New:  ❌ No direct replacement found
+Old: [15104032] Tonschiefer (Schiefer) → New:  ❌ No direct replacement found
+Old: [15104213] Tonschiefer (sedimentärer Protolith) → New:  ❌ No direct replacement found
+Old: [15102026] Tonstein → New:  ❌ No direct replacement found
+Old: [15101053] Torfmoor, Torf → New:   ✅ Torfmoor, Torf
+Old: [15103047] Trachyt → New:  ❌ No direct replacement found
+Old: [15101082] Travertin (Kalksinter, Lockergestein) → New:   ✅ Travertin (Kalksinter, Lockergestein)
+Old: [15102078] Travertin (Kalksinter, Sedimentgestein) → New:  ❌ No direct replacement found
+Old: [15101085] Tsunamiablagerung → New:   ✅ Tsunamiablagerung
+Old: [15103060] Tuffit, undifferenziert (pyroklast. und nicht vulk. Sedimente, 75-25 % pyroklast. Komp.) → New:  ❌ No direct replacement found
+Old: [15103061] tuffitische Brekzie → New:  ❌ No direct replacement found
+Old: [15103063] tuffitischer Sandstein → New:  ❌ No direct replacement found
+Old: [15103064] tuffitischer Siltstein → New:  ❌ No direct replacement found
+Old: [15103065] tuffitischer Tonstein → New:  ❌ No direct replacement found
+Old: [15103062] tuffitisches Konglomerat → New:  ❌ No direct replacement found
+Old: [15101042] Überschwemmungssediment → New:   ✅ Überschwemmungssediment
+Old: [15103070] Ultrabasisches Gestein → New:  ❌ No direct replacement found
+Old: [15104016] Ultrakataklasit → New:  ❌ No direct replacement found
+Old: [15104447] ultramafisches Gestein → New:  ❌ No direct replacement found
+Old: [15104021] Ultramylonit → New:  ❌ No direct replacement found
+Old: [15101012] Verwitterungslehm, undifferenziert → New:   ✅ Verwitterungslehm, undifferenziert
+Old: [15101032] Vorstossschotter → New:   ✅ Vorstossschotter
+Old: [15101065] vulkanische Asche → New:   ✅ vulkanische Asche
+Old: [15101016] zerrüttete Sackungsmasse → New:   ✅ zerrüttete Sackungsmasse
+Old: [15104045] Zweiglimmergneis → New:  ❌ No direct replacement found
+Old: [999997] Unknown → New:   ✅ Unknown
+Old: [999998] Not applicable → New:   ✅ Not applicable

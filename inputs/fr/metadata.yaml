@@ -1,8 +1,8 @@
 ---
-title: Modèle de donnée géologique, Révision 4.0.0-rc.5 (e9970e9) 
+title: Modèle de donnée géologique 2D (GeoCover), Révision 4.1
 subtitle: Description et catalogue de donnée
-author: Office fédéral de topographie swisstopo
-date:  novembre 2024
+author: Service géologique national — Office fédéral de topographie swisstopo
+date:  juin 2025 (3cbfb70)
 keywords:
   - "GeoCover"
   - "Metadata"
@@ -17,7 +17,10 @@ lang: fr
 # Custom LaTeX headers
 # Left-align all tables
 header-includes: |
-    \usepackage[margins=raggedright]{floatrow} 
+    \usepackage[margins=raggedright]{floatrow}
+    \usepackage{pdflscape}
+    \newcommand{\blandscape}{\begin{landscape}}
+    \newcommand{\elandscape}{\end{landscape}}
 
 
 fontsize: 9pt
