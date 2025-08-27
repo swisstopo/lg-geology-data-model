@@ -19,9 +19,9 @@ date: 2025-05-26
 
 # Model revision should change if attributes are added, deleted or changed
 model:
-  revision: '4.1.0'
-  revision_date: "2025-05-26"
-  sources_dir: "exports/2025-05-26"
+  revision: '4.1.1'
+  revision_date: "2025-08-26"
+  sources_dir: "exports/2025-08-26"
 
 # Annexe
 # Some CD are alreday defined in the simplifed JSON report
