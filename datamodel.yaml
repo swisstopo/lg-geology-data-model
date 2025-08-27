@@ -808,7 +808,7 @@ themes:
         de: Objektart
         fr: Type de l'objet
       att_type: subtype
-      value: 11301
+      value: 11901
       cardinality: "1"
       mandatory: true
     - name: ice_cave
