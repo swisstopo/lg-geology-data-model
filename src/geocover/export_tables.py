@@ -29,6 +29,7 @@ TABLES = [
     "GC_ADMIXTURE",
     "GC_COMPOSIT",
     "GC_GEOL_MAPPING_UNIT",
+    "GC_GEOL_MAPPING_UNIT_ATT",
     "GC_LITSTRAT_UNCO",
     "GC_CORRELATION",
 ]
@@ -181,7 +182,7 @@ def export_tables(output_dir, workspace, all, include_i):
             # Check for missing columns
             missing_fields = [col for col in fields if col not in df.columns]
 
-            if missing_fields:
+            if 'GC_GEOL_MAPPING_UNIT_ATT' not in table_name and missing_fields:
                 logging.warning(f"== Table {table_name} ==")
                 logging.warning(f"Missing columns: {missing_fields}")
                 logging.warning(f"Available columns:  {df.columns} ")
@@ -210,24 +211,29 @@ def export_tables(output_dir, workspace, all, include_i):
 
             # GMU_ATT
             else:
-                orientation = "records"
-                # TODO: only for GMU_ATT
-                df = df.drop(columns=IGNORE_FIELDS, errors="ignore")
+                try:
+                  orientation = "records"
+                  # TODO: only for GMU_ATT
+                  df = df.drop(columns=IGNORE_FIELDS, errors="ignore")
 
-                required_columns = set(COLUMN_TYPE_MAPPING.keys())
-                existing_columns = set(df.columns)
-                missing_columns = required_columns - existing_columns
+                  required_columns = set(COLUMN_TYPE_MAPPING.keys())
+                  existing_columns = set(df.columns)
+                  missing_columns = required_columns - existing_columns
 
-                if not missing_columns:
+                  if not missing_columns:
                     df = df.fillna(0).astype(COLUMN_TYPE_MAPPING)
-                df.to_json(
+
+                  df.to_json(
                     json_path,
                     indent=4,
-                    index=True,
+                    index=False,
                     orient="records",
-                )
+                 )
 
-            logging.info(f"Writing to excel: {table_name}: {df.columns} ")
+                  logging.info(f"Writing to excel: {table_name}: {df.columns} ")
+                except ValueError as e:
+                    logging.error(f"Error writing  {table_name} to {json_path}: {str(e)}")
+
 
             try:
                 df.to_excel(writer, sheet_name=short_name.upper())
