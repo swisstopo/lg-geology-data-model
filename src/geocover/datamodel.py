@@ -207,7 +207,7 @@ def load_translation_dataframe(input_dir: str, dataframes=[]) -> pd.DataFrame:
     csv_path = os.path.join(input_dir, "GeolCodeText_Trad_230317.csv")
     # TODO: All new GMU codes found in the XLSX table (generations ?
     json_path = os.path.join(input_dir, "all_codes_dict.json")
-    # New table
+    # New table  TODO use GeolCodeText_Trad_2025.xlsx with EN and IT
     new_translations_path = os.path.join(input_dir, "2025b_GeolCodeText_Trad.xlsx")
     # Custom Chrono CSV
     custom_chrono_path = os.path.join(input_dir, "geolcode_chrono.csv")
