@@ -44,7 +44,8 @@ header-includes: |
     \usepackage{hyperref}
     \hypersetup{
       pdfinfo={
-        ModelRevision={{ model.short_revision | default('unknown') }},
+        ModelRevision={{ model.revision | default('unknown') }},
+        ModelShortRevision={{ model.short_revision | default('unknown') }},
         {% if git_info and git_info.tag %}GitTag={{ git_info.tag }},{% endif -%}
         {% if git_info and git_info.hash %}GitHash={{ git_info.hash }},{% endif -%}
         BuildDate={{ date.isoformat() if date else 'unknown' }}

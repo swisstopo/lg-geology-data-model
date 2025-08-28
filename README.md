@@ -50,151 +50,165 @@ Le script `datamodel` qui génère le fichier _markdown_ n'a besoin que des libr
 
 # Utilisation
 
-## Extraction des données
+Ce guide décrit les étapes nécessaires pour générer une nouvelle version du modèle de données géologiques en utilisant
+les outils `gcover` et `geocover`
 
+## Préparation
 
-### Struc base de données SDE
+### 1. Création du répertoire de données
 
-Générer un raport au format JSON avec l'outils `The Generate Schema Report geoprocessing tool` dans ESRI ArcGis Pro 
+Créez un nouveau répertoire pour stocker les exports de la version :
 
-Simplifier ce rapport JSON au moyen du script `parse_json.py` et copier le résultats dans le répertoire `exports`
+```bash
+mkdir -p exports/<RELEASE-DIR>
+```
 
-### Exporter les tables attributaires
+**Exemple :** `mkdir -p exports/2025-08-26`
 
-Dans un prompt Python, en utilisant l'environnement `conda` par défaut `arcgis-py3` :
+### 2. Configuration du modèle
 
-    (arcgispro-py3-clone)> cd H:\code\lg-geology-data-model
+Modifiez le fichier `datamodel.yaml` pour spécifier la nouvelle version et le répertoire source :
 
-    (arcgispro-py3-clone)lg-geology-data-model>geocover  export  -w D:\connections\GCOVERP@osa.sde -l DEBUG -o ../exports
+```yaml
+# Le numéro de révision du modèle doit être modifié lorsque des attributs sont ajoutés, supprimés ou modifiés
+model:
+  revision: '4.1.1'
+  revision_date: "2025-08-26"
+  sources_dir: "exports/2025-08-26"
+```
 
-Exporter les `tables` attributaires :
+### 3. Installation de l'outil
 
-    (arcgispro-py3-clone)python.exe .\export_tables.py -o h:\code\lg-geology-data-model/exports   -w D:\connections\GCOVERP@osa.sde --all
+Si ce n'est pas déjà fait, installez l'outil `gcover` :
 
+**Avec conda (recommandé) :**
+```bash
+conda install gcover
+```
 
-2. Export de la structure Oracle : 
+**Avec pip :**
+```bash
+pip install gcover
+```
 
-Dans ArcGis Pro, charger et exécuter le script : 
+## Export des données
 
-    export_oracle_tables.py
+### 1. Export du schéma de données
 
-3. Export des champs obligatoires :
+Exportez le schéma complet depuis la base de données ArcSDE :
 
-    python export_mandatory.py
+```bash
+gcover schema extract \
+  --filter-prefix "GC_" \
+  --output exports/<RELEASE-DIR>/GCOVERP.json \
+  "D:\connections\GCOVERP@osa.sde"
+```
 
-## Traductions
+### 2. Transformation en version simplifiée
 
-Extraction des chaînes de caractères  pour traduction :
+Convertissez le schéma complet en version simplifiée :
 
-    pybabel extract -F babel.cfg -o locale/app.pot .
+```bash
+gcover schema transform-simple \
+  exports/<RELEASE-DIR>/GCOVERP.json \
+  -o exports/<RELEASE-DIR>/gcoverp_export_simple.json
+```
 
-Fusion des catalogues (`app` et `datamodel`):
+### 3. Export des tables annexes
 
-    pybabel update -i locale/app.pot -d locale -D app
-    pybabel update -i locale/datamodel.pot -d locale -D datamodel
+Exportez toutes les tables de référence nécessaires :
 
-Edition des fichiers .po dans `PoEdit` par exemple
-    
+```bash
+gcover schema export-tables \
+  -w "H:/connections/GCOVERP@osa.sde" \
+  -o exports/<RELEASE-DIR> \
+  --all-tables
+```
 
-Compiler les catalogues (`app` et `datamodel`) :
-    
-    pybabel compile --domain=app --directory=locale --use-fuzzy
+**Cette commande génère les fichiers suivants :**
+- `Geol_Mapping_Unit_Att.json`
+- `Geol_Mapping_Unit.json` 
+- `Correlation.json`
+- `Admixture.json`
+- `Composit.json`
+- `Charcat.json`
+- `System.json`
 
+### 4. Ajout des fichiers statiques
 
-## Création du fichier Markdown source
+Copiez manuellement les fichiers statiques suivants dans le répertoire `exports/<RELEASE-DIR>/` :
 
-Le script _datamodel_ combine les informations de la configuration _datamodel.yaml_  avec _coded_domains.json_ , _subtypes.json_ et le fichier de traduction.
-Le résultat est le fichier _Marcdown_ _fr/datamodel.md_ ou _de/datamodel.md_
+> **Note :** Ces fichiers seront bientôt intégrés automatiquement dans le processus
 
-    datamodel --lang de  datamodel.yaml
+- `geolcode_chrono.csv`
+- `GeolCodeText_Trad_230317.csv`
+- `SCHEMA_CHANGES_4.0-4.1.json`
+- `all_codes_dict.json`
 
-## Génération des différents formats
+## Génération des documents
 
-simply use the latest https://github.com/swisstopo/lg-geology-data-model/releases
+### Génération des PDF
 
-### Linux
+Une fois tous les exports terminés, générez les documents finaux :
 
-Use `make`
+```bash
+make pdfs
+```
 
-    make pdfs # or all
+Cette commande produit les fichiers PDF dans les langues configurées (français, allemand).
 
-Creation d'un fichier PDF (possible uniquement avec une installation complète de _LaTeX_)
+## Vérification de la qualité
 
-    pandoc -s --pdf-engine=xelatex  \
-         -V papersize:a4  \
-         --number-sections \
-         --shift-heading-level-by=-1  \
-         --metadata-file=metadata.yaml \
-         --variable mainfont="DejaVu Sans" \
-         -V colorlinks=true \
-         -V linkcolor=teal \
-         -V urlcolor=teal \
-         -V toccolor=gray \
-         -o de/datamodel.pdf de/datamodel.md
+### Validation des métadonnées PDF
 
-Idem, mais pour un fichier Microsoft Word (.docx)
+Vérifiez que les métadonnées du PDF généré sont correctes :
 
-     C:\LegacySW\pandoc-3.1.13\pandoc.exe -s -V papersize:a4 --number-sections --shift-heading-level-by=-1
-     --metadata-file=metadata.yaml  --variable mainfont="DejaVu Sans"  -o datamodel.docx datamodel.md
+```bash
+exiftool outputs/fr/datamodel.pdf
+```
 
-For HTML
+**Sortie attendue :**
+```
+ExifTool Version Number         : 12.40
+File Name                       : datamodel.pdf
+Language                        : fr
+Page Count                      : 425
+Title                           : Modèle de donnée géologique 2D (GeoCover), Révision 4.1
+Subject                         : Levé géologique de la Suisse
+Author                          : Service géologique national — Office fédéral de topographie swisstopo
+Keywords                        : GeoCover, Metadata, Model, GIS, Vector data, Geology, Switzerland, development
+Model Revision                  : 4.1.1
+Model Short Revision            : 4.1
+Git Hash                        : a858a3b
+Create Date                     : 2025:08:27 21:41:58+03:00
+```
 
-Sur Linux...
+## Notes importantes
 
-    C:\LegacySW\pandoc-3.1.13\pandoc.exe  --toc --number-sections  --shift-heading-level-by=-1 --css datamodel.css 
-                  --metadata-file=metadata.yaml   --variable mainfont="Sans"  -o datamodel.html datamodel.md
+- **Pré-requis :** L'export des données nécessite un accès à la base de données ArcSDE et l'environnement ArcGIS Pro avec `arcpy`
+- **Durée :** Le processus complet peut prendre plusieurs minutes selon la taille de la base de données
+- **Sauvegarde :** Il est recommandé de sauvegarder les exports précédents avant de générer une nouvelle version
+- **Validation :** Vérifiez toujours les fichiers générés avant de les publier
 
+## Résolution de problèmes
 
-# Génération du schema ER de la base de donnée SDE
+### Erreurs communes
 
-Générer le fichier `PlantUML`  avec :
+1. **Connexion à la base de données impossible :**
+   - Vérifiez la chaîne de connexion ArcSDE
+   - Assurez-vous que l'environnement ArcGIS Pro est actif
 
-    python create_gv.py 
-    
-Convertir en fichier SVG avec p.ex. https://www.planttext.com/
+2. **Fichiers manquants :**
+   - Vérifiez que tous les fichiers statiques ont été copiés
+   - Contrôlez les permissions sur le répertoire de sortie
 
-Convertir en image :
+3. **Erreur lors de la génération PDF :**
+   - Vérifiez que `pandoc` et XeLaTeX sont installés
+   - Contrôlez la syntaxe du fichier `datamodel.yaml`
 
-    convert  ER-GCOVER.svg ER-GCOVER.png
+### Contact
 
-Convertir en PDF (A3)
+En cas de problème, consultez la documentation technique ou contactez l'équipe de développement (geocover@swisstopo.ch).
 
-    cairosvg  -o ER-GCOVER.pdf    --background '#EEEEFF' --output-width   4191   --output-height 2972 ER-GCOVER.svg
 
-# Autres fonctions
-
-## Extraire les règles utilisées dans layerfiles d'un projet ESRI ArcGis Pro
-
-    geocover rules -l INFO
-
-## Compter les features dans un périmètre donné
-
-Le fichier contenant les règles (`layer_symbols_rules.json`) a été généré avec la commande `geocover rules`.
-
-With an arbitrary polyon (GeoJSON or ESRI Shapefile)
-
-    geocover filter --geometry san_bernardino.geojson  --gdb-path  I:\backup\GCOVER\daily\20240425_0300_2030-12-31.gdb   --ouput  san_bernardino.json
-
-
-Or with a bounding box:
-
-
-    geocover filter --bbox 2760000,1146000,2777500,1158000  --gdb-path  I:\backup\GCOVER\daily\20240425_0300_2030-12-31.gdb   --ouput  san_bernardino.xlsx
-
-The ouput format is either `JSON`or `CSV` depending on the file extension of the ouput file (`.csv`, `.xlsx` or `.json` )
-
-## Migration de schema
-
-
-### Dumping schema
-
-Exécuter la commande suivante avant et après la migration de schéma
-
-    geocover schema --workspace  D:/connections/GCOVERP@osa.sde  --ouput dumps/PRODUCTION
-    
-### Différences
-
-La commande suivante permet d'afficher les différences avant et après la migration :
-
-    jsondiff --indent  4 --preserve-unicode dumps/PRODUCTION/geocover-schema-sde-2024-10-24.json  dumps/PRODUCTION/geocover-schema-sde-2024-10-26.json  > production-diff-october-2024.txt
 
