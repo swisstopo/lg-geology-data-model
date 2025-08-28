@@ -207,8 +207,8 @@ def load_translation_dataframe(input_dir: str, dataframes=[]) -> pd.DataFrame:
     csv_path = os.path.join(input_dir, "GeolCodeText_Trad_230317.csv")
     # TODO: All new GMU codes found in the XLSX table (generations ?
     json_path = os.path.join(input_dir, "all_codes_dict.json")
-    # New table
-    new_translations_path = os.path.join(input_dir, "2025b_GeolCodeText_Trad.xlsx")
+    # New table  TODO use GeolCodeText_Trad_2025.xlsx with EN and IT
+    new_translations_path = os.path.join(input_dir, "GeolCodeText_Trad_2025.xlsx")
     # Custom Chrono CSV
     custom_chrono_path = os.path.join(input_dir, "geolcode_chrono.csv")
 
@@ -474,6 +474,8 @@ def check_attribute_in_table(
     table_name = "TOPGIS_GC." + table.upper()
 
     table_dict = featclasses_dict.get(table_name)
+    logger.debug(f"Table name: {table_name}")
+    logger.debug(f"Table dict: {table_dict}")
 
     if table_dict:
         attributes_dict = featclasses_dict.get(table_name).get("fields")

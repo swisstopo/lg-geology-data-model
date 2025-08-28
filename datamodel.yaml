@@ -14,14 +14,14 @@
 # 0.9  Attribute's name as in the database, `alias`for display
 # 0.10 Attribute `origin` for joined table. Special `annex` type `table` for 'KE' codes. source_dir
 # 0.11 Display some 'table' in text (not annexe)
-version: "0.10"
-date: 2025-05-26
+version: "0.11"
+date: 2025-09-01
 
 # Model revision should change if attributes are added, deleted or changed
 model:
-  revision: '4.1.0'
-  revision_date: "2025-05-26"
-  sources_dir: "exports/2025-05-26"
+  revision: '4.1.1'
+  revision_date: "2025-08-26"
+  sources_dir: "exports/2025-08-26"
 
 # Annexe
 # Some CD are alreday defined in the simplifed JSON report
@@ -808,7 +808,7 @@ themes:
         de: Objektart
         fr: Type de l'objet
       att_type: subtype
-      value: 11301
+      value: 11901
       cardinality: "1"
       mandatory: true
     - name: ice_cave
