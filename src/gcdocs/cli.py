@@ -13,7 +13,7 @@ from .core.generator import MarkdownGenerator
 from .core.validator import ModelValidator
 from .translation.translator import TranslationManager
 from .exporters.xlsx import XLSXExporter
-
+import traceback
 
 @click.group()
 @click.option('--debug', is_flag=True, help='Enable debug logging')
@@ -82,6 +82,9 @@ def generate(ctx, lang, datamodel, output, input_dir):
         click.echo(f"❌ File not found: {e}")
         sys.exit(1)
     except Exception as e:
+        tb = sys.exc_info()[2]
+        tbinfo = traceback.format_tb(tb)[0]
+
         logger.error(f"Generation failed: {e}")
         click.echo(f"❌ Generation failed: {e}")
         if ctx.obj.get('debug'):
