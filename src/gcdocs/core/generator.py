@@ -509,8 +509,7 @@ class MarkdownGenerator:
 
 
         try:
-            logger.info(rendered_content)
-
+           
 
 
             # Write markdown file
