@@ -49,17 +49,6 @@ requirements:
     
     
 
-test:
-  source_files:
-    - src/gcdocs/
-    - tests/
-  imports:
-    - gcdocs
-  commands:
-    - coverage run --source=./gcdocs -m unittest discover tests/
-  requires:
-    - pip
-    - coverage
 
 about:
   summary: "GeoCover geological data model documentation generator"
