@@ -534,7 +534,7 @@ class MarkdownGenerator:
 
             # HTML headers
 
-            html_headers_fname = output_path / lang / f"headers.html"
+            html_headers_fname = output_path / f"headers.html"
 
             with open(html_headers_fname, "w", encoding="utf-8") as f:
                 template = env.get_template("headers.html.j2")
