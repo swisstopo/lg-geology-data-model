@@ -6,6 +6,7 @@ OUTPUT_DIR = outputs
 LOCALE_DIR = locale
 
 PANDOC=/usr/bin/pandoc
+GCDOCS=gcdocs
 RM=/bin/rm
 CP=/usr/bin/cp
 
@@ -96,7 +97,7 @@ diagram: assets
 	python create_gv.py
 	
 $(INPUT_DIR)/datamodel.xlsx:
-	datamodel  export datamodel.yaml  -o $@
+	$(GCDOCS)  export datamodel.yaml  -o $@
 
 
 .PHONY: all
@@ -106,15 +107,15 @@ all: $(MO_FILES) $(INPUTS)  $(OUTPUTS)  $(INPUT_DIR)/datamodel.xlsx
 define build_rule
 $(INPUT_DIR)/$(1)/headers.html: assets $(MO_FILES)
 	mkdir -p $$(@D)
-	datamodel generate --lang=$(1)  -o $(INPUT_DIR) datamodel.yaml
+	$(GCDOCS)  generate --lang=$(1)  -o $(INPUT_DIR) datamodel.yaml
 
 $(INPUT_DIR)/$(1)/metadata.yaml: assets $(MO_FILES)
 	mkdir -p $$(@D)
-	datamodel generate --lang=$(1)  -o $(INPUT_DIR) datamodel.yaml
+	$(GCDOCS)  generate --lang=$(1)  -o $(INPUT_DIR) datamodel.yaml
 
 $(INPUT_DIR)/$(1)/datamodel.md: assets $(MO_FILES)
 	mkdir -p $$(@D)
-	datamodel generate --lang=$(1) -o $(INPUT_DIR) datamodel.yaml
+	$(GCDOCS)  generate --lang=$(1) -o $(INPUT_DIR) datamodel.yaml
 
 $(OUTPUT_DIR)/$(1)/datamodel.pdf: $(INPUT_DIR)/$(1)/datamodel.md $(INPUT_DIR)/$(1)/metadata.yaml
 	mkdir -p $$(@D)
@@ -154,7 +155,7 @@ fr: $(foreach fmt,$(FORMATS),$(OUTPUT_DIR)/fr/datamodel.$(fmt))
 
 .PHONY: validate
 validate:
-	 datamodel validate datamodel.yaml
+	 $(GCDOCS)  validate datamodel.yaml
 
 # Check metadata in all generated PDFs
 .PHONY: check-metadata

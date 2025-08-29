@@ -17,8 +17,9 @@ build:
   number: 0
   script: python -m pip install . --no-deps -vv
   entry_points:
-    - geocover = geocover.geocover:geocover
-    - datamodel = geocover.datamodel:datamodel
+    - gcdocs = gcdocs.cli:gcdocs
+    - datamodel = gcdocs.cli:datamodel
+
 
 requirements:
   build:
@@ -49,12 +50,12 @@ requirements:
 
 test:
   source_files:
-    - src/geocover/
+    - src/gcdocs/
     - tests/
   imports:
     - geocover
   commands:
-    - coverage run --source=./geocover -m unittest discover tests/
+    - coverage run --source=./gcdocs -m unittest discover tests/
   requires:
     - pip
     - coverage
