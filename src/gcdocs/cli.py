@@ -93,6 +93,47 @@ def generate(ctx, lang, datamodel, output, input_dir):
 
 
 @gcdocs.command()
+@click.option('--lang', type=click.Choice(['de', 'fr'], case_sensitive=False), required=True)
+@click.option('--format', type=click.Choice(['pdf', 'docx', 'both'], case_sensitive=False), default='pdf')
+@click.option('--input-dir', '-i',
+              type=click.Path(),
+              help='Input dir path')
+@click.argument('datamodel', type=click.Path(exists=True))
+@click.pass_context
+def build(ctx, lang, format, datamodel, input_dir):
+    """Generate Markdown AND convert to PDF/DOCX (requires pandoc)
+
+    This is a convenience command that combines 'generate' + pandoc.
+    For more control, use 'gcdocs generate' + 'make pdfs'.
+    """
+    from .exporters.pdf import PandocPDFExporter
+    INPUT_DIR='toto'
+
+    # First generate Markdown
+    ctx.invoke(generate, lang=lang, datamodel=datamodel, input_dir='exports/2025-08-26', output=INPUT_DIR)
+
+    # Then convert with pandoc
+    exporter = PandocPDFExporter()
+
+    if not exporter.is_available():
+        click.echo("💡 Install pandoc or use the Makefile:")
+        click.echo("   make pdfs")
+        return
+
+    input_dir = Path(INPUT_DIR) / lang
+    markdown_file = input_dir / 'datamodel.md'
+    metadata_file = input_dir / 'metadata.yaml'
+
+    if format in ['pdf', 'both']:
+        output_file = input_dir / 'datamodel.pdf'
+        exporter.export_pdf(markdown_file, output_file, metadata_file)
+
+    if format in ['docx', 'both']:
+        output_file = input_dir / 'datamodel.docx'
+        exporter.export_docx(markdown_file, output_file, metadata_file)
+
+
+@gcdocs.command()
 @click.argument('datamodel', type=click.Path(exists=True))
 @click.pass_context
 def validate(ctx, datamodel):
