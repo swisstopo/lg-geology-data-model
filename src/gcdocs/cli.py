@@ -318,6 +318,53 @@ def translations(ctx, input_dir, output_dir):
 
 
 @gcdocs.command()
+@click.option('--input-dir', '-i',
+              type=click.Path(exists=True, file_okay=False),
+              default='exports',
+              help='Directory containing translation files')
+@click.option('--output', '-o',
+              type=click.Path(),
+              help='Output file for merged translations')
+@click.option('--stats', is_flag=True,
+              help='Show translation statistics')
+@click.pass_context
+def merge_translations(ctx, input_dir, output, stats):
+    """Merge and manage translation files"""
+    try:
+        config = GeoDataConfig(input_dir)
+
+        if stats:
+            # Show statistics
+            translation_stats = config.get_translation_stats()
+            click.echo("📊 Translation Statistics:")
+            click.echo(f"   Total entries: {translation_stats['total_entries']}")
+            click.echo(f"   German translations: {translation_stats['german_translations']}")
+            click.echo(f"   French translations: {translation_stats['french_translations']}")
+            click.echo(f"   Missing German: {translation_stats['missing_german']}")
+            click.echo(f"   Missing French: {translation_stats['missing_french']}")
+            click.echo(f"   Complete entries: {translation_stats['complete_entries']}")
+
+        if output:
+            # Save merged translations
+            output_path = config.save_merged_translations(output)
+            click.echo(f"✓ Saved merged translations to {output_path}")
+
+        if not stats and not output:
+            # Just show what files were found
+            translation_df = config.translation_df
+            click.echo(f"✓ Loaded {len(translation_df)} translations from multiple sources")
+            click.echo("💡 Use --stats to see detailed statistics")
+            click.echo("💡 Use --output FILE.xlsx to save merged translations")
+
+    except Exception as e:
+        logger.error(f"Translation merge failed: {e}")
+        click.echo(f"❌ Translation merge failed: {e}")
+        if ctx.obj.get('debug'):
+            raise
+        sys.exit(1)
+
+
+@gcdocs.command()
 def deps():
     """Check if required dependencies are available"""
     import shutil
