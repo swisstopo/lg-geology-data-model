@@ -1,13 +1,14 @@
-{% set data = load_setup_py_data(setup_file='../setup.py', from_recipe_dir=True) %}
-{% set name = data.get('name') %}
-{% set version = data.get('version') %}
-{% set summary = data.get('description') %}
-{% set description = data.get('long_description') %}
-{% set python_requires = data.get('python_requires') %}
+
+{% set summary = load_file_data('pyproject.toml') %}
+
+{% set version_match = load_file_regex(
+  load_file="VERSION",
+  regex_pattern='(.+)') %}
+{% set version = version_match[1] %}
 
 package:
-  name: {{ name }}
-  version: {{ version }}
+  name:  gcdocs
+  version: {{  version }}
 
 source:
   path: ..
@@ -23,14 +24,14 @@ build:
 
 requirements:
   build:
-    - python {{ python_requires }}
+    - python
     - pip
     - setuptools
     - wheel
 
 
   run:
-    - python {{ python_requires }}
+    - python
     - jinja2
     - pyyaml
     - click
@@ -61,8 +62,8 @@ test:
     - coverage
 
 about:
-  summary: {{ summary }}
-  description: {{ summary }}
+  summary: "GeoCover geological data model documentation generator"
+  description: "GeoCover geological data model documentation generator"
   home: https://github.com/swisstopo/lg-geology-data-model
   license: BSD
   dev_url: https://github.com/swisstopo/lg-geology-data-model/src/master/
