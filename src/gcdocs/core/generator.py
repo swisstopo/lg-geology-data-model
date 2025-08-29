@@ -21,6 +21,7 @@ import babel.dates
 from ..config import GeoDataConfig
 from ..translation.translator import SimpleTranslator, create_translator
 
+
 def get_short_revision(version_str):
     parts = version_str.split(".")
     digits = []
@@ -32,9 +33,12 @@ def get_short_revision(version_str):
             break
 
     if len(digits) < 2:
-        raise ValueError(f"Not enough significant digits in version string: '{version_str}'")
+        raise ValueError(
+            f"Not enough significant digits in version string: '{version_str}'"
+        )
 
     return ".".join(map(str, digits))
+
 
 def get_git_revision_info():
     """Get git revision info and determine if this is a release version."""
@@ -91,7 +95,7 @@ class MarkdownGenerator:
             if model:
                 revision = model.get("revision")
                 short_revision = get_short_revision(revision)
-                self._model['model']['short_revision'] = short_revision
+                self._model["model"]["short_revision"] = short_revision
 
             self._model["date"] = str(datetime.date.today())
 
@@ -187,13 +191,21 @@ class MarkdownGenerator:
                     data = json.load(f)
 
                 # Check if data is already a simple key-value dict (like your Admixture.json)
-                if isinstance(data, dict) and all(isinstance(v, str) for v in data.values()):
+                if isinstance(data, dict) and all(
+                    isinstance(v, str) for v in data.values()
+                ):
                     # It's already a simple mapping, just return it
-                    logger.debug(f"Loaded simple mapping from {file_path}: {len(data)} entries")
+                    logger.debug(
+                        f"Loaded simple mapping from {file_path}: {len(data)} entries"
+                    )
                     return data
 
                 # If it's a list of records (like from database export)
-                elif isinstance(data, list) and len(data) > 0 and isinstance(data[0], dict):
+                elif (
+                    isinstance(data, list)
+                    and len(data) > 0
+                    and isinstance(data[0], dict)
+                ):
                     df = pd.DataFrame(data)
 
                     # Try to find the right columns
@@ -209,15 +221,21 @@ class MarkdownGenerator:
                     if geol_code_col and german_col:
                         df[geol_code_col] = df[geol_code_col].astype(str)
                         result = df.set_index(geol_code_col)[german_col].to_dict()
-                        logger.debug(f"Loaded table data from {file_path}: {len(result)} entries")
+                        logger.debug(
+                            f"Loaded table data from {file_path}: {len(result)} entries"
+                        )
                         return result
                     else:
-                        logger.warning(f"Could not find GEOL_CODE_INT and GERMAN columns in {file_path}")
+                        logger.warning(
+                            f"Could not find GEOL_CODE_INT and GERMAN columns in {file_path}"
+                        )
                         return {}
 
                 # Fallback: try to convert whatever it is
                 else:
-                    logger.warning(f"Unexpected data format in {file_path}, returning empty dict")
+                    logger.warning(
+                        f"Unexpected data format in {file_path}, returning empty dict"
+                    )
                     return {}
 
             else:
@@ -226,7 +244,9 @@ class MarkdownGenerator:
 
         except Exception as e:
             logger.error(f"Error loading table values from {name}: {e}")
-            logger.debug(f"File path attempted: {self.config.input_dir / f'{name}.json'}")
+            logger.debug(
+                f"File path attempted: {self.config.input_dir / f'{name}.json'}"
+            )
             return {}
 
     def _get_subtype_values(self, value: str) -> Dict[str, str]:
@@ -319,10 +339,10 @@ class MarkdownGenerator:
                         if att.get("change", "") != "removed":
                             attributes_in_model.append(att_name)
                         # TODO missing attribute
-                        if not att.get('change'):
-                            att['change'] = ''
-                        if not att.get('cardinality'):
-                            att['cardinality'] = ''
+                        if not att.get("change"):
+                            att["change"] = ""
+                        if not att.get("cardinality"):
+                            att["cardinality"] = ""
 
                     # Check consistency with database
                     if table_name:
@@ -339,7 +359,7 @@ class MarkdownGenerator:
             annex_fname = annex.get("fname")
             annex_type = annex.get("type_")
 
-            if annex_fname and annex_type == 'list':
+            if annex_fname and annex_type == "list":
                 # Load from file
                 pairs = self._get_table_values(annex_fname.replace(".json", ""))
             else:
@@ -378,7 +398,7 @@ class MarkdownGenerator:
         env = jinja2.Environment(
             autoescape=True,
             loader=loader,
-            undefined=jinja2.StrictUndefined  # This is the magic line!
+            undefined=jinja2.StrictUndefined,  # This is the magic line!
         )
 
         # Add custom filters (simplified versions from original)
@@ -442,17 +462,17 @@ class MarkdownGenerator:
         def translate_de_filter(geol_code):
             """Translate geological code to German."""
             translator = self._get_translator()
-            return translator.translate(geol_code, 'missing', lang="DE")
+            return translator.translate(geol_code, "missing", lang="DE")
 
         def translate_fr_filter(geol_code):
             """Translate geological code to French."""
             translator = self._get_translator()
-            return translator.translate(geol_code,'missing',  lang="FR")
+            return translator.translate(geol_code, "missing", lang="FR")
 
         def translate_ui(text, **kwargs):
-          # Simulate translation (you can hook into any i18n system here)
-          translated = text  # Replace with actual translation logic if needed
-          return translated % kwargs if kwargs else translated
+            # Simulate translation (you can hook into any i18n system here)
+            translated = text  # Replace with actual translation logic if needed
+            return translated % kwargs if kwargs else translated
 
         # TODO
         env.globals["_"] = translate_ui
@@ -471,8 +491,6 @@ class MarkdownGenerator:
         # Ensure output directory exists
         output_path = Path(output_dir) / lang
         output_path.mkdir(parents=True, exist_ok=True)
-
-
 
         # Write JSON file (for debugging/reference)
         json_file = output_path / f"{Path(model_file).stem}.json"
@@ -495,29 +513,34 @@ class MarkdownGenerator:
             template = env.get_template("model_markdown.j2")
             rendered_content = template.render(model_data)
         except jinja2.UndefinedError as e:
-                logger.error(f"❌ Missing variable: {e}")
-                logger.error("Available variables:")
-                for key in model_data.keys():
-                    logger.error(f"  - {key}: {type(model_data[key])}")
-                raise
+            logger.error(f"❌ Missing variable: {e}")
+            logger.error("Available variables:")
+            for key in model_data.keys():
+                logger.error(f"  - {key}: {type(model_data[key])}")
+            raise
         except Exception as e:
-                logger.error(f"❌ Template error: {e}")
-                logger.error(f"Error type: {type(e)}")
-                import traceback
-                logger.error(traceback.format_exc())
-                raise
+            logger.error(f"❌ Template error: {e}")
+            logger.error(f"Error type: {type(e)}")
+            import traceback
 
+            logger.error(traceback.format_exc())
+            raise
 
         try:
-           
-
-
             # Write markdown file
             md_file = output_path / f"{Path(model_file).stem}.md"
             with open(md_file, "w", encoding="utf-8") as f:
                 f.write(rendered_content)
 
+            # HTML headers
 
+            html_headers_fname = output_path / lang / f"headers.html"
+
+            with open(html_headers_fname, "w", encoding="utf-8") as f:
+                template = env.get_template("headers.html.j2")
+                rendered_content = template.render(model_data)
+                f.write(rendered_content)
+                logger.info(f"Generating HTML metadata {html_headers_fname}")
 
             # Generate metadata file
             metadata_template = (
@@ -535,9 +558,6 @@ class MarkdownGenerator:
             return output_path
 
         except Exception as e:
-          import traceback
+            import traceback
 
-          logger.error(f"Generation failed: {traceback.format_exc()}")
-
-
-
+            logger.error(f"Generation failed: {traceback.format_exc()}")
