@@ -101,7 +101,8 @@ $(INPUT_DIR)/datamodel.xlsx:
 
 
 .PHONY: all
-all: $(MO_FILES) $(INPUTS)  $(OUTPUTS)  $(INPUT_DIR)/datamodel.xlsx
+all: $(MO_FILES) $(INPUTS)  $(OUTPUTS)
+# TODO readd  $(INPUT_DIR)/datamodel.xlsx
 
 # Define individual rules for each format and language
 define build_rule
