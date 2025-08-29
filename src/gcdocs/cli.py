@@ -324,7 +324,7 @@ def translations(ctx, input_dir, output_dir):
               help='Directory containing translation files')
 @click.option('--output', '-o',
               type=click.Path(),
-              help='Output file for merged translations')
+              help='Output xlsx file for merged translations')
 @click.option('--stats', is_flag=True,
               help='Show translation statistics')
 @click.pass_context

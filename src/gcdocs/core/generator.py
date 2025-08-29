@@ -19,7 +19,7 @@ import datetime
 import babel.dates
 
 from ..config import GeoDataConfig
-from ..translation.translator import SimpleTranslator, create_translator
+from ..translation.translator import SimpleTranslator, create_simple_translator, create_translator
 
 
 def get_short_revision(version_str):
@@ -146,10 +146,10 @@ class MarkdownGenerator:
             self._prefixes = sorted(list(set(prefixes)))
         return self._prefixes
 
-    def _get_translator(self) -> SimpleTranslator:
+    def _get_simple_translator(self) -> SimpleTranslator:
         """Get or create translator instance"""
         if self._translator is None:
-            self._translator = create_translator(self.config.translation_df)
+            self._translator = create_simple_translator(self.config.translation_df)
         return self._translator
 
     def _get_coded_values(self, domain_name: str) -> Dict[str, str]:
@@ -284,7 +284,7 @@ class MarkdownGenerator:
     def process_model(self, model_file: str) -> Dict[str, Any]:
         """Process the datamodel file and enrich with database info (from original to_json method)"""
         model = self.load_model(model_file)
-        translator = self._get_translator()
+        translator = self._get_simple_translator()
 
         logger.info(f"Processing model with prefixes: {self.prefixes}")
 
@@ -449,25 +449,29 @@ class MarkdownGenerator:
             return p.sub(r"**\1**", input)
 
         # TODO translation fall back is too easy
-        def translate_filter(geol_code, fallback_text, target_lang="FR"):
-            translator = self._get_translator()
+        '''def translate_filter(geol_code, fallback_text, target_lang="FR"):
+            translator = self._get_simple_translator()
             return translator.translate(
                 str(geol_code), fallback_text, target_lang.upper()
-            )
+            )'''
 
-        '''def translate_filter(geol_code):
+        def translate_filter(geol_code):
             """Translate geological code to default language."""
-            return translator.translate(geol_code, lang=lang.upper())'''
+
+
+            translator = self._get_translator()
+            return translator.translate(geol_code, lang=lang.upper())
 
         def translate_de_filter(geol_code):
             """Translate geological code to German."""
             translator = self._get_translator()
-            return translator.translate(geol_code, "missing", lang="DE")
+            logger.info(translator)
+            return translator.translate(geol_code, lang="DE")
 
         def translate_fr_filter(geol_code):
             """Translate geological code to French."""
             translator = self._get_translator()
-            return translator.translate(geol_code, "missing", lang="FR")
+            return translator.translate(geol_code,  lang="FR")
 
         def translate_ui(text, **kwargs):
             # Simulate translation (you can hook into any i18n system here)
@@ -561,3 +565,9 @@ class MarkdownGenerator:
             import traceback
 
             logger.error(f"Generation failed: {traceback.format_exc()}")
+
+if __name__ ==  '__main__':
+    config = GeoDataConfig('../../exports')
+    translator = create_simple_translator(config.translation_df)
+    result = translator.translate("14509013", "fallback", "FR")
+    print(result)
