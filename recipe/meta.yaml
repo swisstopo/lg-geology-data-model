@@ -51,8 +51,8 @@ requirements:
 
 
 about:
-  summary: "GeoCover geological data model documentation generator"
-  description: "GeoCover geological data model documentation generator"
+  summary: "Documentation Generator for Geological 2D Data Model (Geocover)"
+  description: "Documentation Generator for Geological 2D Data Model (Geocover)"
   home: https://github.com/swisstopo/lg-geology-data-model
   license: BSD
   dev_url: https://github.com/swisstopo/lg-geology-data-model/src/master/
