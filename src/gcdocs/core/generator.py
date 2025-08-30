@@ -370,14 +370,24 @@ class MarkdownGenerator:
             annex_fname = annex.get("fname")
             annex_type = annex.get("type_")
 
-            if annex_fname and annex_type == "list":
-                # Load from file
-                pairs = self._get_table_values(annex_fname.replace(".json", ""))
-            else:
-                # Load from coded domain
-                pairs = self._get_coded_values(annex_name)
+            if annex_type == "list":
+                if annex_fname:
+                  # Load from file
+                  pairs = self._get_table_values(annex_fname.replace(".json", ""))
+                else:
+                  # Load from coded domain
+                  pairs = self._get_coded_values(annex_name)
 
-            annex["pairs"] = pairs
+                annex["pairs"] = pairs
+                # table
+            elif annex_type == "table":
+                data = self._get_annex_values(annex_fname.replace(".json", ""))
+                if data:
+                    annex["table"] = data
+
+
+            else:
+                logger.error(f"Unknown annex type: {annex_type}")
 
         # Add translation statistics
         if translator:
@@ -386,6 +396,24 @@ class MarkdownGenerator:
                 logger.debug(f"Failed translations: {translator.get_failed_strings()}")
 
         return model
+
+    def _get_annex_values(self, name: str) -> Dict[str, str]:
+        """Get values from table files (from original get_table_values function)"""
+        try:
+            file_path = self.config.input_dir / f"{name}.json"
+
+            if file_path.exists():
+                with open(file_path, "r", encoding="utf-8") as f:
+                    data = json.load(f)
+
+                return data
+
+        except Exception as e:
+            logger.error(f"Error loading table values from {name}: {e}")
+            logger.debug(
+                f"File path attempted: {self.config.input_dir / f'{name}.json'}"
+            )
+            return None
 
     def generate_markdown(self, model_file: str, lang: str, output_dir: str):
         """Generate Markdown documentation"""
