@@ -1,8 +1,9 @@
 LANGUAGES = de fr
 FORMATS = pdf odt docx html
 
-INPUT_DIR = inputs
-OUTPUT_DIR = outputs
+EXPORT_DIR ?= exports
+INPUT_DIR ?= inputs
+OUTPUT_DIR ?= outputs
 LOCALE_DIR = locale
 
 PANDOC=/usr/bin/pandoc
@@ -108,15 +109,15 @@ all: $(MO_FILES) $(INPUTS)  $(OUTPUTS)
 define build_rule
 $(INPUT_DIR)/$(1)/headers.html: assets $(MO_FILES)
 	mkdir -p $$(@D)
-	$(GCDOCS)  generate --lang=$(1)  -o $(INPUT_DIR) datamodel.yaml
+	$(GCDOCS)  generate --lang=$(1)  -i $(EXPORT_DIR) -o $(INPUT_DIR) datamodel.yaml
 
 $(INPUT_DIR)/$(1)/metadata.yaml: assets $(MO_FILES)
 	mkdir -p $$(@D)
-	$(GCDOCS)  generate --lang=$(1)  -o $(INPUT_DIR) datamodel.yaml
+	$(GCDOCS)  generate --lang=$(1)  -i $(EXPORT_DIR) -o $(INPUT_DIR) datamodel.yaml
 
 $(INPUT_DIR)/$(1)/datamodel.md: assets $(MO_FILES)
 	mkdir -p $$(@D)
-	$(GCDOCS)  generate --lang=$(1) -o $(INPUT_DIR) datamodel.yaml
+	$(GCDOCS)  generate --lang=$(1) -i $(EXPORT_DIR) -o $(INPUT_DIR) datamodel.yaml
 
 $(OUTPUT_DIR)/$(1)/datamodel.pdf: $(INPUT_DIR)/$(1)/datamodel.md $(INPUT_DIR)/$(1)/metadata.yaml
 	mkdir -p $$(@D)

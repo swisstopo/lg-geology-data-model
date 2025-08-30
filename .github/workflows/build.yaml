@@ -69,13 +69,27 @@ jobs:
         run: |
           echo "--NOT GENERATING --"
           # python ./create_gv.py
-    
+
+      - name: Extract sources_dir from YAML
+        id: get_sources_dir
+        run: |
+          import yaml
+          with open("config.yaml") as f:
+          data = yaml.safe_load(f)
+          print(f"::set-output name=dir::{data['model']['sources_dir']}")
+        shell: python
+
+      - name: Use sources_dir
+        run: echo "Directory is ${{ steps.get_sources_dir.outputs.dir }}"
+
+
+
       - name: Build all targets
         shell: bash -el {0}
         run: |
-             make cleanall all
+             EXPORT_DIR=${{ steps.get_sources_dir.outputs.dir }} make cleanall all
              # make diagram
-             make validate-metadata
+             EXPORT_DIR=${{ steps.get_sources_dir.outputs.dir }} make validate-metadata
              
 
       - name: Generate PDF from PUML diagram
