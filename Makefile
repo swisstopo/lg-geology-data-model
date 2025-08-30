@@ -15,8 +15,6 @@ CSS = datamodel.css
 
 # Define targets for each language and format
 OUTPUTS = $(foreach lang,$(LANGUAGES),$(foreach fmt,$(FORMATS),$(OUTPUT_DIR)/$(lang)/datamodel.$(fmt)))
-# Define the list of required .mo files for each language
-MO_FILES = $(foreach lang,$(LANGUAGES),$(LOCALE_DIR)/$(lang)/LC_MESSAGES/datamodel.mo $(LOCALE_DIR)/$(lang)/LC_MESSAGES/app.mo)
 INPUTS = $(foreach lang,$(LANGUAGES),$(foreach fmt,$(FORMATS),$(INPUT_DIR)/$(lang)/datamodel.md))
 CLEAN_PDFS = $(shell find outputs -name "*.pdf" -not -name "ER-GCOVER.pdf")
 
@@ -56,7 +54,6 @@ help:
 	@echo "  make mds                - Generate only Markdown files for all languages"
 	@echo "  make de                 - Generate all files (PDF, DOCX, HTML and ODT) for German"
 	@echo "  make fr                 - Generate all files (PDF, DOCX, HTML and ODT) for French"
-	@echo "  make babel              - Generate .mo translation files"
 	@echo "  make markdown           - Generate markdown files"
 	@echo "  make diagram            - Generate ER diagram"
 	@echo "  make validate           - Validate the datamodel against the schema"
@@ -77,8 +74,6 @@ assets:
 	$(CP) assets/model.png $(OUTPUT_DIR)/de
 	$(CP) assets/model.png $(OUTPUT_DIR)/fr
 	$(CP) assets/model.png .
-
-babel: $(MO_FILES)
 
 
 # Rule to compile .mo files if missing
@@ -102,20 +97,20 @@ $(INPUT_DIR)/datamodel.xlsx:
 
 
 .PHONY: all
-all: $(MO_FILES) $(INPUTS)  $(OUTPUTS)
+all:  $(INPUTS)  $(OUTPUTS)
 # TODO readd  $(INPUT_DIR)/datamodel.xlsx
 
 # Define individual rules for each format and language
 define build_rule
-$(INPUT_DIR)/$(1)/headers.html: assets $(MO_FILES)
+$(INPUT_DIR)/$(1)/headers.html: assets
 	mkdir -p $$(@D)
 	$(GCDOCS)  generate --lang=$(1)  -i $(EXPORT_DIR) -o $(INPUT_DIR) datamodel.yaml
 
-$(INPUT_DIR)/$(1)/metadata.yaml: assets $(MO_FILES)
+$(INPUT_DIR)/$(1)/metadata.yaml: assets
 	mkdir -p $$(@D)
 	$(GCDOCS)  generate --lang=$(1)  -i $(EXPORT_DIR) -o $(INPUT_DIR) datamodel.yaml
 
-$(INPUT_DIR)/$(1)/datamodel.md: assets $(MO_FILES)
+$(INPUT_DIR)/$(1)/datamodel.md: assets
 	mkdir -p $$(@D)
 	$(GCDOCS)  generate --lang=$(1) -i $(EXPORT_DIR) -o $(INPUT_DIR) datamodel.yaml
 
