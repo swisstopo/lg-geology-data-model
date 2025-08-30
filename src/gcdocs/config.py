@@ -12,6 +12,98 @@ from loguru import logger
 
 AVAILABLE_LANGUAGES = ["de", "fr"]
 
+abreviations = [
+    "Aarc",
+    "Aart",
+    "Abor",
+    "Aexp",
+    "Gall",
+    "Gero",
+    "Ggla",
+    "Gins",
+    "Gkar",
+    "Hcon",
+    "Hpal",
+    "Hsub",
+    "Hsur",
+    "Lano",
+    "Lfos",
+    "Lgeo",
+    "Lmin",
+    "Lmis",
+    "Lpro",
+    "LresLsed",
+    "Ltyp",
+    "Mfol",
+    "Mlin",
+    "Mpla",
+    "Pcon",
+    "Pmod",
+    "Pslo",
+    "Rbed",
+    "Runc",
+    "Tdef",
+    "Ttec",
+]
+
+tables = [
+    "Admixtures.csv",
+    "Charcat.csv",
+    "Chrono.csv",
+    "Composit.csv",
+    "Litho.csv",
+    "Litstrat.csv",
+]
+
+IGNORE_FIELDS = [
+    "OPERATOR",
+    "DATEOFCREATION",
+    "DATEOFCHANGE",
+    "CREATION_YEAR",
+    "CREATION_MONTH",
+    "REVISION_YEAR",
+    "REVISION_MONTH",
+    "REASONFORCHANGE",
+    "OBJECTORIGIN",
+    "OBJECTORIGIN_YEAR",
+    "OBJECTORIGIN_MONTH",
+    "KIND",
+    "RC_ID",
+    "WU_ID",
+    "RC_ID_CREATION",
+    "WU_ID_CREATION",
+    "REVISION_QUALITY",
+    "ORIGINAL_ORIGIN",
+    "INTEGRATION_OBJECT_UUID",
+    "SHAPE.AREA",
+    "SHAPE.LEN",
+    "MORE_INFO",
+]
+
+ATTRIBUTES_TO_IGNORE = [
+    "CREATION_MONTH",
+    "CREATION_YEAR",
+    "DATEOFCHANGE",
+    "DATEOFCREATION",
+    "OBJECTORIGIN_MONTH",
+    "OBJECTORIGIN_YEAR",
+    "OPERATOR",
+    "ORIGINAL_ORIGIN",
+    "PRINTEDOBJECTORIGIN",
+    "RC_ID",
+    "RC_ID_CREATION",
+    "REASONFORCHANGE",
+    "REVISION_MONTH",
+    "REVISION_QUALITY",
+    "REVISION_YEAR",
+    "SHAPE",
+    "SHAPE.AREA",
+    "SHAPE.LEN",
+    "UUID",
+    "WU_ID",
+    "WU_ID_CREATION",
+]
+
 
 class GeoDataConfig:
     """Configuration class that loads and manages geological data"""
@@ -182,7 +274,7 @@ class GeoDataConfig:
                         "DE": "nicht anwendbar",
                         "FR": "pas applicable",
                     },
-                    {"GeolCodeInt": "11401005",  "DE": "Kame", "FR": "kame"}
+                    {"GeolCodeInt": "11401005", "DE": "Kame", "FR": "kame"},
                 ]
             )
             special_codes["GeolCodeInt"] = special_codes["GeolCodeInt"].astype("string")
