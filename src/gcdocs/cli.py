@@ -9,12 +9,39 @@ import os
 from pathlib import Path
 from loguru import logger
 
-from .config import GeoDataConfig, get_default_config
+from .config import GeoDataConfig, get_default_config, AVAILABLE_LANGUAGES
 from .core.generator import MarkdownGenerator
 from .core.validator import ModelValidator
 from .translation.translator import TranslationManager
 from .exporters.xlsx import XLSXExporter
 import traceback
+
+
+def parse_langs(ctx, param, value):
+    if not value:
+        raise click.BadParameter("You must provide at least one language.")
+    langs = [v.strip().lower() for v in value.split(",")]
+
+    invalid = [lang for lang in langs if lang not in AVAILABLE_LANGUAGES]
+    if invalid:
+        raise click.BadParameter(f"Invalid language(s): {', '.join(invalid)}")
+    return langs
+
+
+@click.command()
+@click.option(
+    "--lang",
+    callback=parse_langs,
+    required=True,
+    help="Comma-separated list of languages (e.g., de,fr)",
+)
+def generate_docs(lang):
+    """
+    Generate documentation in one or more languages.
+    """
+    for language in lang:
+        click.echo(f"Generating docs for: {language}")
+        # Your generation logic here
 
 
 @click.group()
@@ -48,8 +75,9 @@ def gcdocs(ctx, debug, logfile):
 @gcdocs.command()
 @click.option(
     "--lang",
-    type=click.Choice(["de", "fr"], case_sensitive=False),
+    # type=click.Choice(["de", "fr"], case_sensitive=False),
     required=True,
+    callback=parse_langs,
     help="Language for document generation",
 )
 @click.option(
@@ -89,9 +117,9 @@ def generate(ctx, lang, datamodel, output, input_dir):
 
         # Generate documentation
         generator = MarkdownGenerator(config)
-        output_path = generator.generate_markdown(datamodel, lang.lower(), output)
-
-        click.echo(f"✓ Generated Markdown documentation in {output_path}")
+        for lg in lang:
+            output_path = generator.generate_markdown(datamodel, lg.lower(), output)
+            click.echo(f"✓ Generated Markdown documentation in {output_path}")
         click.echo("💡 Next steps:")
         click.echo("   make pdfs    # Generate PDF with pandoc")
         click.echo("   make docx    # Generate DOCX with pandoc")

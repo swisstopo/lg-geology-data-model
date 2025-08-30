@@ -10,6 +10,8 @@ from pathlib import Path
 from typing import Dict, Any, Optional
 from loguru import logger
 
+AVAILABLE_LANGUAGES = ["de", "fr"]
+
 
 class GeoDataConfig:
     """Configuration class that loads and manages geological data"""
@@ -116,8 +118,6 @@ class GeoDataConfig:
             dataframes = []
 
             code_dict = self.domains
-            logger.debug("======")
-            logger.debug(code_dict)
 
             # 1. Load JSON coded domains (fallback German -> French)
             code_dict = self.domains
