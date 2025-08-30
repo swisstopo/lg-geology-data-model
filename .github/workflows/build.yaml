@@ -75,7 +75,7 @@ jobs:
         run: |
           import yaml
           with open("datamodel.yaml") as f:
-          data = yaml.safe_load(f)
+              data = yaml.safe_load(f)
           print(f"::set-output name=dir::{data['model']['sources_dir']}")
         shell: python
 
