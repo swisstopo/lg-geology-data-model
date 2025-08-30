@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "gcdocs"
 dynamic = ["version"]
-description = "GeoCover geological data model documentation generator"
+description = "Documentation Generator for Geological 2D Data Model (Geocover)"
 readme = "README.md"
 requires-python = ">=3.9"
 license = "BSD-3-Clause"
