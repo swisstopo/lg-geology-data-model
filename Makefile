@@ -4,7 +4,7 @@ FORMATS = pdf odt docx html
 EXPORT_DIR ?= exports
 INPUT_DIR ?= inputs
 OUTPUT_DIR ?= outputs
-LOCALE_DIR = locale
+
 
 PANDOC=/usr/bin/pandoc
 GCDOCS=gcdocs
@@ -59,7 +59,7 @@ help:
 	@echo "  make validate           - Validate the datamodel against the schema"
 	@echo "  make check-metadata     - Check the model metadata"
 	@echo "  make validate-metadata  - Validate the datamodel metadata"
-	@echo "  make clean              - Remove all generated files"
+	@echo "  make cleanall           - Remove all generated files"
 	@echo "  make help               - Display this help message"
 
 .PHONY: assets
@@ -76,14 +76,6 @@ assets:
 	$(CP) assets/model.png .
 
 
-# Rule to compile .mo files if missing
-$(LOCALE_DIR)/%/LC_MESSAGES/datamodel.mo: $(LOCALE_DIR)/%/LC_MESSAGES/datamodel.po
-	mkdir -p $(@D)
-	pybabel compile --domain=datamodel --directory=locale --use-fuzzy
-
-$(LOCALE_DIR)/%/LC_MESSAGES/app.mo: $(LOCALE_DIR)/%/LC_MESSAGES/app.po
-	mkdir -p $(@D)
-	pybabel compile --domain=app --directory=locale --use-fuzzy
 
 markdown: $(MO_FILES) $(INPUTS)
 
@@ -190,11 +182,9 @@ validate-metadata:
 
 # Clean up
 # Clean up all generated files
-.PHONY: clean cleanall
-cleanall: clean cleaninputs cleanpdf cleanodt cleanhtml cleandocx
+.PHONY:  cleanall
+cleanall: cleaninputs cleanpdf cleanodt cleanhtml cleandocx
 
-clean:
-	find $(LOCALE_DIR) -name "*.mo" -delete
 
 # Clean up only generated PDF files
 .PHONY: cleanpdf
