@@ -165,12 +165,17 @@ class MarkdownGenerator:
 
     def _get_coded_values(self, domain_name: str) -> Dict[str, str]:
         """Get coded values from domain (from original get_coded_values function)"""
-        domains = self.config.domains
+        # TODO: should be a function
+        # domains = self.config.domains
 
-        if domain_name in domains:
+        domains = self.config.sde_schema.get("coded_domain", {})
+
+        if domain_name in domains.keys():
             domain = domains.get(domain_name)
             if domain.get("type") == "CodedValue":
                 coded_values = domain.get("codedValues", {})
+
+                logger.info(f"Domain: {domain_name} - {len(coded_values)}")
 
                 # Handle special codes (from original custom_sort_key logic)
                 if "999997" in coded_values:
@@ -189,13 +194,19 @@ class MarkdownGenerator:
                         return float("inf")
 
                 return dict(sorted(coded_values.items(), key=sort_key))
+        else:
+            logger.error(f"Coded domain {domain_name} data not found")
 
         return {}
 
-    def _get_table_values(self, name: str) -> Dict[str, str]:
+    def _get_table_values(
+        self, name: str, file_name: Optional[str] = None
+    ) -> Dict[str, str]:
         """Get values from table files (from original get_table_values function)"""
         try:
-            file_path = self.config.input_dir / f"{name}.json"
+            if not file_name:
+                file_name = f"{name}.json"
+            file_path = self.config.input_dir / file_name
 
             if file_path.exists():
                 with open(file_path, "r", encoding="utf-8") as f:
@@ -250,7 +261,7 @@ class MarkdownGenerator:
                     return {}
 
             else:
-                logger.warning(f"Table file not found: {file_path}")
+                logger.error(f"Table {name} file not found: {file_path}")
                 return {}
 
         except Exception as e:
@@ -342,7 +353,9 @@ class MarkdownGenerator:
                             if att_value.endswith("_CD"):
                                 pairs = self._get_coded_values(att_value)
                             else:
-                                pairs = self._get_table_values(att_value)
+                                # TODO: special case
+                                if "GC_GEOL_MAPPING_UNIT_ATT" not in att_value:
+                                    pairs = self._get_table_values(att_value)
 
                         if pairs:
                             att["pairs"] = pairs
@@ -369,15 +382,27 @@ class MarkdownGenerator:
             annex_name = annex.get("name")
             annex_fname = annex.get("fname")
             annex_type = annex.get("type_")
+            logger.info(f"Annex: {annex_name} - {annex_type}")
 
-            if annex_fname and annex_type == "list":
-                # Load from file
-                pairs = self._get_table_values(annex_fname.replace(".json", ""))
+            if annex_type == "list":
+                if annex_fname:
+                    # Load from file
+                    pairs = self._get_table_values(annex_name, annex_fname)
+                else:
+                    # Load from coded domain
+                    pairs = self._get_coded_values(annex_name)
+
+                annex["pairs"] = pairs
+                # table
+            elif annex_type == "table":
+                data = self._get_annex_values(annex_fname)
+                if data:
+                    annex["table"] = data
+                else:
+                    logger.error(f"No data for annexe table: {annex_name}")
+
             else:
-                # Load from coded domain
-                pairs = self._get_coded_values(annex_name)
-
-            annex["pairs"] = pairs
+                logger.error(f"Unknown annex type: {annex_type}")
 
         # Add translation statistics
         if translator:
@@ -386,6 +411,26 @@ class MarkdownGenerator:
                 logger.debug(f"Failed translations: {translator.get_failed_strings()}")
 
         return model
+
+    def _get_annex_values(self, file_name: str) -> Dict[str, str]:
+        """Get values from table files (from original get_table_values function)"""
+        try:
+            file_path = self.config.input_dir / file_name
+
+            logger.info(file_path)
+
+            if file_path.exists():
+                with open(file_path, "r", encoding="utf-8") as f:
+                    data = json.load(f)
+
+                return data
+
+        except Exception as e:
+            logger.error(f"Error loading table values from {name}: {e}")
+            logger.debug(
+                f"File path attempted: {self.config.input_dir / f'{name}.json'}"
+            )
+            return None
 
     def generate_markdown(self, model_file: str, lang: str, output_dir: str):
         """Generate Markdown documentation"""
