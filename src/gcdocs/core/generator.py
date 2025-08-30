@@ -192,10 +192,14 @@ class MarkdownGenerator:
 
         return {}
 
-    def _get_table_values(self, name: str) -> Dict[str, str]:
+    def _get_table_values(
+        self, name: str, file_name: Optional[str] = None
+    ) -> Dict[str, str]:
         """Get values from table files (from original get_table_values function)"""
         try:
-            file_path = self.config.input_dir / f"{name}.json"
+            if not file_name:
+                file_name = f"{name}.json"
+            file_path = self.config.input_dir / file_name
 
             if file_path.exists():
                 with open(file_path, "r", encoding="utf-8") as f:
@@ -250,7 +254,7 @@ class MarkdownGenerator:
                     return {}
 
             else:
-                logger.warning(f"Table file not found: {file_path}")
+                logger.error(f"Table {name} file not found: {file_path}")
                 return {}
 
         except Exception as e:
@@ -342,7 +346,9 @@ class MarkdownGenerator:
                             if att_value.endswith("_CD"):
                                 pairs = self._get_coded_values(att_value)
                             else:
-                                pairs = self._get_table_values(att_value)
+                                # TODO: special case
+                                if "GC_GEOL_MAPPING_UNIT_ATT" not in att_value:
+                                    pairs = self._get_table_values(att_value)
 
                         if pairs:
                             att["pairs"] = pairs
@@ -369,22 +375,24 @@ class MarkdownGenerator:
             annex_name = annex.get("name")
             annex_fname = annex.get("fname")
             annex_type = annex.get("type_")
+            logger.info(f"Annex: {annex_name} - {annex_type}")
 
             if annex_type == "list":
                 if annex_fname:
-                  # Load from file
-                  pairs = self._get_table_values(annex_fname.replace(".json", ""))
+                    # Load from file
+                    pairs = self._get_table_values(annex_name, annex_fname)
                 else:
-                  # Load from coded domain
-                  pairs = self._get_coded_values(annex_name)
+                    # Load from coded domain
+                    pairs = self._get_coded_values(annex_name)
 
                 annex["pairs"] = pairs
                 # table
             elif annex_type == "table":
-                data = self._get_annex_values(annex_fname.replace(".json", ""))
+                data = self._get_annex_values(annex_fname)
                 if data:
                     annex["table"] = data
-
+                else:
+                    logger.error(f"No data for annexe table: {annex_name}")
 
             else:
                 logger.error(f"Unknown annex type: {annex_type}")
@@ -397,10 +405,12 @@ class MarkdownGenerator:
 
         return model
 
-    def _get_annex_values(self, name: str) -> Dict[str, str]:
+    def _get_annex_values(self, file_name: str) -> Dict[str, str]:
         """Get values from table files (from original get_table_values function)"""
         try:
-            file_path = self.config.input_dir / f"{name}.json"
+            file_path = self.config.input_dir / file_name
+
+            logger.info(file_path)
 
             if file_path.exists():
                 with open(file_path, "r", encoding="utf-8") as f:
