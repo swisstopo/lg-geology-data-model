@@ -4,7 +4,7 @@ FORMATS = pdf odt docx html
 EXPORT_DIR ?= exports
 INPUT_DIR ?= inputs
 OUTPUT_DIR ?= outputs
-LOCALE_DIR = locale
+
 
 PANDOC=/usr/bin/pandoc
 GCDOCS=gcdocs
@@ -15,8 +15,6 @@ CSS = datamodel.css
 
 # Define targets for each language and format
 OUTPUTS = $(foreach lang,$(LANGUAGES),$(foreach fmt,$(FORMATS),$(OUTPUT_DIR)/$(lang)/datamodel.$(fmt)))
-# Define the list of required .mo files for each language
-MO_FILES = $(foreach lang,$(LANGUAGES),$(LOCALE_DIR)/$(lang)/LC_MESSAGES/datamodel.mo $(LOCALE_DIR)/$(lang)/LC_MESSAGES/app.mo)
 INPUTS = $(foreach lang,$(LANGUAGES),$(foreach fmt,$(FORMATS),$(INPUT_DIR)/$(lang)/datamodel.md))
 CLEAN_PDFS = $(shell find outputs -name "*.pdf" -not -name "ER-GCOVER.pdf")
 
@@ -56,13 +54,12 @@ help:
 	@echo "  make mds                - Generate only Markdown files for all languages"
 	@echo "  make de                 - Generate all files (PDF, DOCX, HTML and ODT) for German"
 	@echo "  make fr                 - Generate all files (PDF, DOCX, HTML and ODT) for French"
-	@echo "  make babel              - Generate .mo translation files"
 	@echo "  make markdown           - Generate markdown files"
 	@echo "  make diagram            - Generate ER diagram"
 	@echo "  make validate           - Validate the datamodel against the schema"
 	@echo "  make check-metadata     - Check the model metadata"
 	@echo "  make validate-metadata  - Validate the datamodel metadata"
-	@echo "  make clean              - Remove all generated files"
+	@echo "  make cleanall           - Remove all generated files"
 	@echo "  make help               - Display this help message"
 
 .PHONY: assets
@@ -78,17 +75,7 @@ assets:
 	$(CP) assets/model.png $(OUTPUT_DIR)/fr
 	$(CP) assets/model.png .
 
-babel: $(MO_FILES)
 
-
-# Rule to compile .mo files if missing
-$(LOCALE_DIR)/%/LC_MESSAGES/datamodel.mo: $(LOCALE_DIR)/%/LC_MESSAGES/datamodel.po
-	mkdir -p $(@D)
-	pybabel compile --domain=datamodel --directory=locale --use-fuzzy
-
-$(LOCALE_DIR)/%/LC_MESSAGES/app.mo: $(LOCALE_DIR)/%/LC_MESSAGES/app.po
-	mkdir -p $(@D)
-	pybabel compile --domain=app --directory=locale --use-fuzzy
 
 markdown: $(MO_FILES) $(INPUTS)
 
@@ -102,20 +89,20 @@ $(INPUT_DIR)/datamodel.xlsx:
 
 
 .PHONY: all
-all: $(MO_FILES) $(INPUTS)  $(OUTPUTS)
+all:  $(INPUTS)  $(OUTPUTS)
 # TODO readd  $(INPUT_DIR)/datamodel.xlsx
 
 # Define individual rules for each format and language
 define build_rule
-$(INPUT_DIR)/$(1)/headers.html: assets $(MO_FILES)
+$(INPUT_DIR)/$(1)/headers.html: assets
 	mkdir -p $$(@D)
 	$(GCDOCS)  generate --lang=$(1)  -i $(EXPORT_DIR) -o $(INPUT_DIR) datamodel.yaml
 
-$(INPUT_DIR)/$(1)/metadata.yaml: assets $(MO_FILES)
+$(INPUT_DIR)/$(1)/metadata.yaml: assets
 	mkdir -p $$(@D)
 	$(GCDOCS)  generate --lang=$(1)  -i $(EXPORT_DIR) -o $(INPUT_DIR) datamodel.yaml
 
-$(INPUT_DIR)/$(1)/datamodel.md: assets $(MO_FILES)
+$(INPUT_DIR)/$(1)/datamodel.md: assets
 	mkdir -p $$(@D)
 	$(GCDOCS)  generate --lang=$(1) -i $(EXPORT_DIR) -o $(INPUT_DIR) datamodel.yaml
 
@@ -195,11 +182,9 @@ validate-metadata:
 
 # Clean up
 # Clean up all generated files
-.PHONY: clean cleanall
-cleanall: clean cleaninputs cleanpdf cleanodt cleanhtml cleandocx
+.PHONY:  cleanall
+cleanall: cleaninputs cleanpdf cleanodt cleanhtml cleandocx
 
-clean:
-	find $(LOCALE_DIR) -name "*.mo" -delete
 
 # Clean up only generated PDF files
 .PHONY: cleanpdf
