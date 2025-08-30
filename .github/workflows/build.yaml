@@ -12,7 +12,7 @@ on:
       - master
       - develop
       - 'releases/**'
-      - schema_gmu
+      - refactor_gcdocs
 
 
 jobs:
