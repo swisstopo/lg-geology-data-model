@@ -5,6 +5,7 @@ Separated from business logic - only handles commands and arguments
 
 import click
 import sys
+import os
 from pathlib import Path
 from loguru import logger
 
@@ -15,39 +16,57 @@ from .translation.translator import TranslationManager
 from .exporters.xlsx import XLSXExporter
 import traceback
 
+
 @click.group()
-@click.option('--debug', is_flag=True, help='Enable debug logging')
+@click.option("--debug", is_flag=True, help="Enable debug logging")
+@click.option(
+    "--logfile", type=click.Path(), default=None, help="Optional path to log file"
+)
 @click.pass_context
-def gcdocs(ctx, debug):
+def gcdocs(ctx, debug, logfile):
     """GeoCover geological data model documentation generator
 
     Generate Markdown documentation from GeoCover geological data models.
     Use 'make pdfs' afterwards for PDF/DOCX export with pandoc.
     """
-    # Setup logging
-    if debug:
-        logger.remove()
-        logger.add(sys.stderr, level="DEBUG")
+    color_supported = sys.stderr.isatty() and os.name != "nt"
+
+    logger.remove()  # Remove default handler
+
+    # Always log to stderr at INFO level
+    logger.add(sys.stderr, level="DEBUG" if debug else "INFO", colorize=color_supported)
+
+    # If logfile is provided, log to file at DEBUG level
+    if logfile:
+        logger.add(logfile, level="DEBUG", rotation="10 MB", retention="10 days")
 
     # Store config in context
     ctx.ensure_object(dict)
-    ctx.obj['config'] = get_default_config()
+    ctx.obj["config"] = get_default_config()
 
 
 @gcdocs.command()
-@click.option('--lang',
-              type=click.Choice(['de', 'fr'], case_sensitive=False),
-              required=True,
-              help='Language for document generation')
-@click.option('--output', '-o',
-              type=click.Path(file_okay=False),
-              default='inputs',
-              help='Output directory for Markdown files')
-@click.option('--input-dir', '-i',
-              type=click.Path(exists=True, file_okay=False),
-              default='exports',
-              help='Directory containing input JSON files')
-@click.argument('datamodel', type=click.Path(exists=True))
+@click.option(
+    "--lang",
+    type=click.Choice(["de", "fr"], case_sensitive=False),
+    required=True,
+    help="Language for document generation",
+)
+@click.option(
+    "--output",
+    "-o",
+    type=click.Path(file_okay=False),
+    default="inputs",
+    help="Output directory for Markdown files",
+)
+@click.option(
+    "--input-dir",
+    "-i",
+    type=click.Path(exists=True, file_okay=False),
+    default="exports",
+    help="Directory containing input JSON files",
+)
+@click.argument("datamodel", type=click.Path(exists=True))
 @click.pass_context
 def generate(ctx, lang, datamodel, output, input_dir):
     """Generate Markdown documentation from YAML datamodel
@@ -87,18 +106,22 @@ def generate(ctx, lang, datamodel, output, input_dir):
 
         logger.error(f"Generation failed: {e}")
         click.echo(f"❌ Generation failed: {e}")
-        if ctx.obj.get('debug'):
+        if ctx.obj.get("debug"):
             raise
         sys.exit(1)
 
 
 @gcdocs.command()
-@click.option('--lang', type=click.Choice(['de', 'fr'], case_sensitive=False), required=True)
-@click.option('--format', type=click.Choice(['pdf', 'docx', 'both'], case_sensitive=False), default='pdf')
-@click.option('--input-dir', '-i',
-              type=click.Path(),
-              help='Input dir path')
-@click.argument('datamodel', type=click.Path(exists=True))
+@click.option(
+    "--lang", type=click.Choice(["de", "fr"], case_sensitive=False), required=True
+)
+@click.option(
+    "--format",
+    type=click.Choice(["pdf", "docx", "both"], case_sensitive=False),
+    default="pdf",
+)
+@click.option("--input-dir", "-i", type=click.Path(), help="Input dir path")
+@click.argument("datamodel", type=click.Path(exists=True))
 @click.pass_context
 def build(ctx, lang, format, datamodel, input_dir):
     """Generate Markdown AND convert to PDF/DOCX (requires pandoc)
@@ -107,10 +130,17 @@ def build(ctx, lang, format, datamodel, input_dir):
     For more control, use 'gcdocs generate' + 'make pdfs'.
     """
     from .exporters.pdf import PandocPDFExporter
-    INPUT_DIR='toto'
+
+    INPUT_DIR = "toto"
 
     # First generate Markdown
-    ctx.invoke(generate, lang=lang, datamodel=datamodel, input_dir='exports/2025-08-26', output=INPUT_DIR)
+    ctx.invoke(
+        generate,
+        lang=lang,
+        datamodel=datamodel,
+        input_dir="exports/2025-08-26",
+        output=INPUT_DIR,
+    )
 
     # Then convert with pandoc
     exporter = PandocPDFExporter()
@@ -121,20 +151,20 @@ def build(ctx, lang, format, datamodel, input_dir):
         return
 
     input_dir = Path(INPUT_DIR) / lang
-    markdown_file = input_dir / 'datamodel.md'
-    metadata_file = input_dir / 'metadata.yaml'
+    markdown_file = input_dir / "datamodel.md"
+    metadata_file = input_dir / "metadata.yaml"
 
-    if format in ['pdf', 'both']:
-        output_file = input_dir / 'datamodel.pdf'
+    if format in ["pdf", "both"]:
+        output_file = input_dir / "datamodel.pdf"
         exporter.export_pdf(markdown_file, output_file, metadata_file)
 
-    if format in ['docx', 'both']:
-        output_file = input_dir / 'datamodel.docx'
+    if format in ["docx", "both"]:
+        output_file = input_dir / "datamodel.docx"
         exporter.export_docx(markdown_file, output_file, metadata_file)
 
 
 @gcdocs.command()
-@click.argument('datamodel', type=click.Path(exists=True))
+@click.argument("datamodel", type=click.Path(exists=True))
 @click.pass_context
 def validate(ctx, datamodel):
     """Validate GeoCover datamodel against JSON schema"""
@@ -152,20 +182,21 @@ def validate(ctx, datamodel):
     except Exception as e:
         logger.error(f"Validation failed: {e}")
         click.echo(f"❌ Validation failed: {e}")
-        if ctx.obj.get('debug'):
+        if ctx.obj.get("debug"):
             raise
         sys.exit(1)
 
 
 @gcdocs.command()
-@click.argument('datamodel', type=click.Path(exists=True))
-@click.option('--format', '-f',
-              type=click.Choice(['xlsx', 'json'], case_sensitive=False),
-              default='xlsx',
-              help='Export format')
-@click.option('--output', '-o',
-              type=click.Path(),
-              help='Output file path')
+@click.argument("datamodel", type=click.Path(exists=True))
+@click.option(
+    "--format",
+    "-f",
+    type=click.Choice(["xlsx", "json"], case_sensitive=False),
+    default="xlsx",
+    help="Export format",
+)
+@click.option("--output", "-o", type=click.Path(), help="Output file path")
 @click.pass_context
 def export(ctx, datamodel, format, output):
     """Export GeoCover datamodel to Excel/JSON formats"""
@@ -173,16 +204,17 @@ def export(ctx, datamodel, format, output):
         # Auto-generate output filename if not provided
         if not output:
             stem = Path(datamodel).stem
-            suffix = 'xlsx' if format.lower() == 'xlsx' else 'json'
+            suffix = "xlsx" if format.lower() == "xlsx" else "json"
             output = f"{stem}.{suffix}"
 
-        if format.lower() == 'xlsx':
+        if format.lower() == "xlsx":
             exporter = XLSXExporter()
             exporter.export(datamodel, output)
         else:
             # JSON export - just copy the processed model
             from .core.generator import MarkdownGenerator
-            config = ctx.obj['config']
+
+            config = ctx.obj["config"]
             generator = MarkdownGenerator(config)
             model_data = generator.process_model(datamodel)
 
@@ -194,24 +226,24 @@ def export(ctx, datamodel, format, output):
                     return obj.isoformat()
                 raise TypeError(f"Object {obj} is not JSON serializable")
 
-            with open(output, 'w', encoding='utf-8') as f:
-                json.dump(model_data, f, indent=4, ensure_ascii=False, default=json_encoder)
+            with open(output, "w", encoding="utf-8") as f:
+                json.dump(
+                    model_data, f, indent=4, ensure_ascii=False, default=json_encoder
+                )
 
         click.echo(f"✓ Exported to {output}")
 
     except Exception as e:
         logger.error(f"Export failed: {e}")
         click.echo(f"❌ Export failed: {e}")
-        if ctx.obj.get('debug'):
+        if ctx.obj.get("debug"):
             raise
         sys.exit(1)
 
 
 @gcdocs.command()
-@click.argument('input_file', type=click.Path(exists=True))
-@click.option('--output', '-o',
-              type=click.Path(),
-              help='Output YAML file')
+@click.argument("input_file", type=click.Path(exists=True))
+@click.option("--output", "-o", type=click.Path(), help="Output YAML file")
 @click.pass_context
 def convert(ctx, input_file, output):
     """Convert Excel/JSON to YAML datamodel"""
@@ -219,7 +251,7 @@ def convert(ctx, input_file, output):
         from .core.model import DataModelConverter
 
         if not output:
-            output = Path(input_file).with_suffix('.yaml')
+            output = Path(input_file).with_suffix(".yaml")
 
         converter = DataModelConverter()
         converter.to_yaml(input_file, output)
@@ -229,13 +261,13 @@ def convert(ctx, input_file, output):
     except Exception as e:
         logger.error(f"Conversion failed: {e}")
         click.echo(f"❌ Conversion failed: {e}")
-        if ctx.obj.get('debug'):
+        if ctx.obj.get("debug"):
             raise
         sys.exit(1)
 
 
 @gcdocs.command()
-@click.argument('datamodel', type=click.Path(exists=True))
+@click.argument("datamodel", type=click.Path(exists=True))
 @click.pass_context
 def prettify(ctx, datamodel):
     """Prettify/format the YAML datamodel file"""
@@ -268,7 +300,7 @@ def prettify(ctx, datamodel):
 
         set_block_style(data)
 
-        with open(datamodel, 'w') as f:
+        with open(datamodel, "w") as f:
             yaml.dump(data, f)
 
         click.echo(f"✓ Prettified {datamodel}")
@@ -276,20 +308,26 @@ def prettify(ctx, datamodel):
     except Exception as e:
         logger.error(f"Prettify failed: {e}")
         click.echo(f"❌ Prettify failed: {e}")
-        if ctx.obj.get('debug'):
+        if ctx.obj.get("debug"):
             raise
         sys.exit(1)
 
 
 @gcdocs.command()
-@click.option('--input-dir', '-i',
-              type=click.Path(exists=True, file_okay=False),
-              default='exports',
-              help='Directory containing translation CSV')
-@click.option('--output-dir', '-o',
-              type=click.Path(file_okay=False),
-              default='locale',
-              help='Output directory for PO files')
+@click.option(
+    "--input-dir",
+    "-i",
+    type=click.Path(exists=True, file_okay=False),
+    default="exports",
+    help="Directory containing translation CSV",
+)
+@click.option(
+    "--output-dir",
+    "-o",
+    type=click.Path(file_okay=False),
+    default="locale",
+    help="Output directory for PO files",
+)
 @click.pass_context
 def translations(ctx, input_dir, output_dir):
     """Generate PO translation files from CSV data"""
@@ -304,7 +342,7 @@ def translations(ctx, input_dir, output_dir):
         click.echo(f"✓ Generated translation files in {output_dir}")
         click.echo("Files created:")
         for lang in po_files.keys():
-            if lang == 'pot':
+            if lang == "pot":
                 click.echo(f"   - {output_dir}/datamodel.pot (template)")
             else:
                 click.echo(f"   - {output_dir}/{lang}/LC_MESSAGES/datamodel.po")
@@ -312,21 +350,23 @@ def translations(ctx, input_dir, output_dir):
     except Exception as e:
         logger.error(f"Translation generation failed: {e}")
         click.echo(f"❌ Translation generation failed: {e}")
-        if ctx.obj.get('debug'):
+        if ctx.obj.get("debug"):
             raise
         sys.exit(1)
 
 
 @gcdocs.command()
-@click.option('--input-dir', '-i',
-              type=click.Path(exists=True, file_okay=False),
-              default='exports',
-              help='Directory containing translation files')
-@click.option('--output', '-o',
-              type=click.Path(),
-              help='Output xlsx file for merged translations')
-@click.option('--stats', is_flag=True,
-              help='Show translation statistics')
+@click.option(
+    "--input-dir",
+    "-i",
+    type=click.Path(exists=True, file_okay=False),
+    default="exports",
+    help="Directory containing translation files",
+)
+@click.option(
+    "--output", "-o", type=click.Path(), help="Output xlsx file for merged translations"
+)
+@click.option("--stats", is_flag=True, help="Show translation statistics")
 @click.pass_context
 def merge_translations(ctx, input_dir, output, stats):
     """Merge and manage translation files"""
@@ -338,8 +378,12 @@ def merge_translations(ctx, input_dir, output, stats):
             translation_stats = config.get_translation_stats()
             click.echo("📊 Translation Statistics:")
             click.echo(f"   Total entries: {translation_stats['total_entries']}")
-            click.echo(f"   German translations: {translation_stats['german_translations']}")
-            click.echo(f"   French translations: {translation_stats['french_translations']}")
+            click.echo(
+                f"   German translations: {translation_stats['german_translations']}"
+            )
+            click.echo(
+                f"   French translations: {translation_stats['french_translations']}"
+            )
             click.echo(f"   Missing German: {translation_stats['missing_german']}")
             click.echo(f"   Missing French: {translation_stats['missing_french']}")
             click.echo(f"   Complete entries: {translation_stats['complete_entries']}")
@@ -352,14 +396,16 @@ def merge_translations(ctx, input_dir, output, stats):
         if not stats and not output:
             # Just show what files were found
             translation_df = config.translation_df
-            click.echo(f"✓ Loaded {len(translation_df)} translations from multiple sources")
+            click.echo(
+                f"✓ Loaded {len(translation_df)} translations from multiple sources"
+            )
             click.echo("💡 Use --stats to see detailed statistics")
             click.echo("💡 Use --output FILE.xlsx to save merged translations")
 
     except Exception as e:
         logger.error(f"Translation merge failed: {e}")
         click.echo(f"❌ Translation merge failed: {e}")
-        if ctx.obj.get('debug'):
+        if ctx.obj.get("debug"):
             raise
         sys.exit(1)
 
@@ -376,12 +422,15 @@ def deps():
     click.echo("✓ Python dependencies: OK")
 
     # Check pandoc
-    pandoc_path = shutil.which('pandoc')
+    pandoc_path = shutil.which("pandoc")
     if pandoc_path:
         try:
-            result = subprocess.run([pandoc_path, '--version'],
-                                    capture_output=True, text=True)
-            version = result.stdout.split('\n')[0] if result.returncode == 0 else "unknown"
+            result = subprocess.run(
+                [pandoc_path, "--version"], capture_output=True, text=True
+            )
+            version = (
+                result.stdout.split("\n")[0] if result.returncode == 0 else "unknown"
+            )
             click.echo(f"✓ pandoc: {version}")
         except Exception:
             click.echo("❓ pandoc: found but version check failed")
@@ -391,7 +440,7 @@ def deps():
         click.echo("   Required for PDF/DOCX generation")
 
     # Check Make
-    make_path = shutil.which('make')
+    make_path = shutil.which("make")
     if make_path:
         click.echo("✓ make: available")
     else:
@@ -418,5 +467,5 @@ def datamodel(ctx):
     ctx.exit(1)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     gcdocs()

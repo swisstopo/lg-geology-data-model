@@ -25,6 +25,38 @@ class GeoDataConfig:
     @property
     def domains(self) -> Dict[str, Any]:
         """Load coded domains (replaces global 'domains')"""
+
+        def extract_coded_values(data):
+            """
+            Extracts and flattens all codedValues from coded_domain entries
+            whose keys start with 'GC_'.
+
+            Returns:
+                dict: A flat dictionary of code-value pairs.
+            """
+            coded = data.get("coded_domain", {})
+
+            flat = {
+                code: label
+                for domain_key, domain_data in coded.items()
+                if domain_key.startswith("GC_")
+                for code, label in domain_data.get("codedValues", {}).items()
+            }
+
+            return dict(sorted(flat.items(), key=lambda item: int(item[0])))
+
+        if self._domains is None:
+            self._domains = extract_coded_values(self.sde_schema)
+            domains_file = self.input_dir / "coded_domains.json"
+            if not domains_file.exists():
+                with open(domains_file, "w", encoding="utf-8") as f:
+                    json.dump(self._domains, f, indent=4)
+                    logger.info(f"Saved domains to {domains_file}")
+        return self._domains
+
+    '''@property
+    def domains(self) -> Dict[str, Any]:
+        """Load coded domains (replaces global 'domains')"""
         if self._domains is None:
             domains_file = self.input_dir / "coded_domains.json"
             if not domains_file.exists():
@@ -33,7 +65,7 @@ class GeoDataConfig:
             with open(domains_file, "r") as f:
                 self._domains = json.load(f)
             logger.info(f"Loaded domains from {domains_file}")
-        return self._domains
+        return self._domains'''
 
     @property
     def subtypes(self) -> Dict[str, Any]:
@@ -83,42 +115,50 @@ class GeoDataConfig:
         try:
             dataframes = []
 
-            # 1. Load CSV translation file (legacy/main source)
+            code_dict = self.domains
+            logger.debug("======")
+            logger.debug(code_dict)
+
+            # 1. Load JSON coded domains (fallback German -> French)
+            code_dict = self.domains
+            if code_dict:
+                df_json = pd.DataFrame(
+                    {
+                        "GeolCodeInt": list(code_dict.keys()),
+                        "DE": list(code_dict.values()),
+                        "FR": list(
+                            code_dict.values()
+                        ),  # Use German as fallback for French
+                    }
+                )
+                df_json["GeolCodeInt"] = df_json["GeolCodeInt"].astype("string")
+                df_json["source"] = "coded_domains"
+                dataframes.append(df_json)
+                logger.debug(f"Loaded JSON translations: {len(df_json)} entries")
+
+            """# 2. Load CSV translation file (legacy/main source)
             csv_file = self._find_file("GeolCodeText_Trad_230317.csv")
             if csv_file:
                 df_csv = pd.read_csv(csv_file, sep=";")
                 df_csv["GeolCodeInt"] = df_csv["GeolCodeInt"].astype("string")
                 dataframes.append(df_csv)
-                logger.debug(f"Loaded CSV translations: {len(df_csv)} entries")
+                logger.debug(f"Loaded CSV translations: {len(df_csv)} entries")"""
 
-            # 2. Load new Excel translations (if available)
+            # 3. Load new Excel translations (if available)
             excel_file = self._find_file("GeolCodeText_Trad_2025.xlsx")
             if excel_file:
                 df_excel = pd.read_excel(excel_file, sheet_name="Tabelle1")
                 df_excel["GeolCodeInt"] = df_excel["GeolCodeInt"].astype("string")
+                df_excel["source"] = "GeolCodeText_Trad_2025"
                 dataframes.append(df_excel)
                 logger.debug(f"Loaded Excel translations: {len(df_excel)} entries")
-
-            # 3. Load JSON coded domains (fallback German -> French)
-            json_file = self._find_file("all_codes_dict.json")
-            if json_file:
-                with open(json_file, "r", encoding="utf-8") as f:
-                    code_dict = json.load(f)
-
-                df_json = pd.DataFrame({
-                    "GeolCodeInt": list(code_dict.keys()),
-                    "DE": list(code_dict.values()),
-                    "FR": list(code_dict.values())  # Use German as fallback for French
-                })
-                df_json["GeolCodeInt"] = df_json["GeolCodeInt"].astype("string")
-                dataframes.append(df_json)
-                logger.debug(f"Loaded JSON translations: {len(df_json)} entries")
 
             # 4. Load custom chronology translations (if available)
             chrono_file = self._find_file("geolcode_chrono.csv")
             if chrono_file:
                 df_chrono = pd.read_csv(chrono_file)
                 df_chrono["GeolCodeInt"] = df_chrono["GeolCodeInt"].astype("string")
+                df_chrono["source"] = "geolcode_chrono"
                 dataframes.append(df_chrono)
                 logger.debug(f"Loaded chrono translations: {len(df_chrono)} entries")
 
@@ -129,14 +169,21 @@ class GeoDataConfig:
                 df_app.columns = df_app.columns.str.upper()
                 df_app.rename(columns={"MSG_ID": "GeolCodeInt"}, inplace=True)
                 df_app["GeolCodeInt"] = df_app["GeolCodeInt"].astype("string")
+                df_app["source"] = "translations"
                 dataframes.append(df_app)
                 logger.debug(f"Loaded app translations: {len(df_app)} entries")
 
             # 6. Add special hardcoded values
-            special_codes = pd.DataFrame([
-                {"GeolCodeInt": "999997", "DE": "unbekannt", "FR": "inconnu"},
-                {"GeolCodeInt": "999998", "DE": "nicht anwendbar", "FR": "pas applicable"},
-            ])
+            special_codes = pd.DataFrame(
+                [
+                    {"GeolCodeInt": "999997", "DE": "unbekannt", "FR": "inconnu"},
+                    {
+                        "GeolCodeInt": "999998",
+                        "DE": "nicht anwendbar",
+                        "FR": "pas applicable",
+                    },
+                ]
+            )
             special_codes["GeolCodeInt"] = special_codes["GeolCodeInt"].astype("string")
             dataframes.append(special_codes)
 
@@ -147,19 +194,33 @@ class GeoDataConfig:
             # Merge all dataframes
             merged_df = pd.concat(dataframes, ignore_index=True)
 
+            # TODO debug
+            """output_path = Path('toto')/ "all_merged.xlsx"
+            merged_df.to_excel(output_path, index=True, engine="openpyxl")
+            logger.debug(f"Saved merged translations to {output_path}")
+            logger.debug(f"Entries:  {len(merged_df)}")"""
+
             # Clean and process
             translation_df = self._clean_translation_data(merged_df)
 
-            logger.info(f"Loaded merged translations: {len(translation_df)} total entries")
+            logger.debug(
+                f"Loaded merged translations: {len(translation_df)} total entries"
+            )
             return translation_df
 
         except Exception as e:
             logger.error(f"Failed to load translation data: {e}")
             # Return minimal DataFrame with special codes
-            return pd.DataFrame([
-                {"GeolCodeInt": "999997", "DE": "unbekannt", "FR": "inconnu"},
-                {"GeolCodeInt": "999998", "DE": "nicht anwendbar", "FR": "pas applicable"},
-            ]).set_index("GeolCodeInt")
+            return pd.DataFrame(
+                [
+                    {"GeolCodeInt": "999997", "DE": "unbekannt", "FR": "inconnu"},
+                    {
+                        "GeolCodeInt": "999998",
+                        "DE": "nicht anwendbar",
+                        "FR": "pas applicable",
+                    },
+                ]
+            ).set_index("GeolCodeInt")
 
     def _find_file(self, filename: str) -> Optional[Path]:
         """Find a file in the input directory or package data"""
@@ -171,6 +232,7 @@ class GeoDataConfig:
         # Try package data directory
         try:
             from importlib import resources
+
             with resources.path("gcdocs.data", filename) as data_path:
                 if data_path.exists():
                     return data_path
@@ -182,7 +244,7 @@ class GeoDataConfig:
         if current_path.exists():
             return current_path
 
-        logger.debug(f"Translation file not found: {filename}")
+        logger.error(f"Translation file not found: {filename}")
         return None
 
     def _clean_translation_data(self, merged_df: pd.DataFrame) -> pd.DataFrame:
@@ -196,12 +258,18 @@ class GeoDataConfig:
         # Clean the data
         cleaned_df = (
             merged_df[required_cols]  # Select only required columns
-            .drop_duplicates(subset=["GeolCodeInt"], keep="last")  # Remove duplicates, keep latest
+            .drop_duplicates(
+                subset=["GeolCodeInt"], keep="last"
+            )  # Remove duplicates, keep latest
             .assign(
                 # Convert all to string and clean
                 GeolCodeInt=lambda x: x["GeolCodeInt"].astype("string"),
-                DE=lambda x: x["DE"].astype("string").replace(["0", "nan", "None"], "-"),
-                FR=lambda x: x["FR"].astype("string").replace(["0", "nan", "None"], "-")
+                DE=lambda x: x["DE"]
+                .astype("string")
+                .replace(["0", "nan", "None"], "-"),
+                FR=lambda x: x["FR"]
+                .astype("string")
+                .replace(["0", "nan", "None"], "-"),
             )
             .query("GeolCodeInt != '' and GeolCodeInt != 'nan'")  # Remove empty codes
             .sort_values("GeolCodeInt")
@@ -221,12 +289,18 @@ class GeoDataConfig:
         # Clean the data
         cleaned_df = (
             merged_df[required_cols]  # Select only required columns
-            .drop_duplicates(subset=["GeolCodeInt"], keep="last")  # Remove duplicates, keep latest
+            .drop_duplicates(
+                subset=["GeolCodeInt"], keep="last"
+            )  # Remove duplicates, keep latest
             .assign(
                 # Convert all to string and clean
                 GeolCodeInt=lambda x: x["GeolCodeInt"].astype("string"),
-                DE=lambda x: x["DE"].astype("string").replace(["0", "nan", "None"], "-"),
-                FR=lambda x: x["FR"].astype("string").replace(["0", "nan", "None"], "-")
+                DE=lambda x: x["DE"]
+                .astype("string")
+                .replace(["0", "nan", "None"], "-"),
+                FR=lambda x: x["FR"]
+                .astype("string")
+                .replace(["0", "nan", "None"], "-"),
             )
             .query("GeolCodeInt != '' and GeolCodeInt != 'nan'")  # Remove empty codes
             .sort_values("GeolCodeInt")
@@ -269,16 +343,20 @@ class GeoDataConfig:
         if not custom_translations:
             return
 
-        custom_df = pd.DataFrame.from_dict(custom_translations, orient='index')
-        custom_df.index.name = 'GeolCodeInt'
-        custom_df.index = custom_df.index.astype('string')
+        custom_df = pd.DataFrame.from_dict(custom_translations, orient="index")
+        custom_df.index.name = "GeolCodeInt"
+        custom_df.index = custom_df.index.astype("string")
 
         # Merge with existing data (custom translations take precedence)
-        current_df = self._translation_df if self._translation_df is not None else pd.DataFrame()
+        current_df = (
+            self._translation_df if self._translation_df is not None else pd.DataFrame()
+        )
 
         if len(current_df) > 0:
             # Update existing entries and add new ones
-            self._translation_df = pd.concat([current_df, custom_df]).groupby(level=0).last()
+            self._translation_df = (
+                pd.concat([current_df, custom_df]).groupby(level=0).last()
+            )
         else:
             self._translation_df = custom_df
 
@@ -289,9 +367,9 @@ class GeoDataConfig:
         try:
             # Trigger loading of all properties
             # TODO
-            '''
+            """
             _ = self.domains
-            '''
+            """
             _ = self.subtypes
             _ = self.sde_schema
             _ = self.translation_df

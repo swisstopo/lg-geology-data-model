@@ -11,14 +11,18 @@ import logging
 import threading
 import sys
 
+SUPPORTED_LANGUAGES = ("DE", "FR")
+
+
 class SimpleTranslator:
     """Simplified translator using CSV mapping (replaces complex Translator class)"""
 
     def __init__(self, translation_df: pd.DataFrame):
         self.translation_df = translation_df
         self.failed_translations: List[str] = []
+
     def __repr__(self):
-        return f"<SimpleTranslator>"
+        return f"<SimpleTranslator: {len(self.translation_df)} translations>"
 
     def translate(self, geol_code: str, fallback: str, lang: str = "FR") -> str:
         """
@@ -43,7 +47,11 @@ class SimpleTranslator:
             translated = self.translation_df.loc[code_int, lang]
 
             # Clean up French translations (remove "à " prefix)
-            if lang == "FR" and isinstance(translated, str) and translated.startswith("à "):
+            if (
+                lang == "FR"
+                and isinstance(translated, str)
+                and translated.startswith("à ")
+            ):
                 translated = translated.replace("à ", "")
 
             return translated
@@ -71,7 +79,9 @@ class TranslationManager:
     """Manager for translation operations"""
 
     @staticmethod
-    def create_po_files(translation_df: pd.DataFrame, package_name: str = "gcdocs") -> Dict[str, str]:
+    def create_po_files(
+        translation_df: pd.DataFrame, package_name: str = "gcdocs"
+    ) -> Dict[str, str]:
         """
         Create PO files for translation (simplified version)
         Returns dict of language -> po_content
@@ -81,7 +91,7 @@ class TranslationManager:
         now = datetime.now()
         tz_str = now.strftime("%Y-%m-%d %H:%M%z")
 
-        po_header_template = f'''# GeoCover Data Model Translations
+        po_header_template = f"""# GeoCover Data Model Translations
 # Copyright (C) 2024 swisstopo
 # This file is distributed under the same license as the {package_name} package.
 #
@@ -96,11 +106,11 @@ msgstr ""
 "MIME-Version: 1.0\\n"
 "Content-Type: text/plain; charset=utf-8\\n"
 "Content-Transfer-Encoding: 8bit\\n"
-'''
+"""
 
         po_files = {}
 
-        for lang in ['de', 'fr']:
+        for lang in ["de", "fr"]:
             lang_col = lang.upper()
             if lang_col not in translation_df.columns:
                 continue
@@ -111,7 +121,7 @@ msgstr ""
                 if pd.notna(translation):
                     entries.append(f'\nmsgid "{geol_code}"\nmsgstr "{translation}"')
 
-            po_content = po_header_template + ''.join(entries)
+            po_content = po_header_template + "".join(entries)
             po_files[lang] = po_content
 
         # Also create POT template
@@ -119,8 +129,8 @@ msgstr ""
         for geol_code in translation_df.index:
             pot_entries.append(f'\nmsgid "{geol_code}"\nmsgstr ""')
 
-        pot_content = po_header_template + ''.join(pot_entries)
-        po_files['pot'] = pot_content
+        pot_content = po_header_template + "".join(pot_entries)
+        po_files["pot"] = pot_content
 
         return po_files
 
@@ -130,11 +140,11 @@ msgstr ""
         import os
 
         for lang, content in po_files.items():
-            if lang == 'pot':
+            if lang == "pot":
                 # Write POT template
                 pot_path = os.path.join(output_dir, "datamodel.pot")
                 os.makedirs(os.path.dirname(pot_path), exist_ok=True)
-                with open(pot_path, 'w', encoding='utf-8') as f:
+                with open(pot_path, "w", encoding="utf-8") as f:
                     f.write(content)
                 logger.info(f"Created POT template: {pot_path}")
             else:
@@ -142,9 +152,10 @@ msgstr ""
                 po_dir = os.path.join(output_dir, lang, "LC_MESSAGES")
                 os.makedirs(po_dir, exist_ok=True)
                 po_path = os.path.join(po_dir, "datamodel.po")
-                with open(po_path, 'w', encoding='utf-8') as f:
+                with open(po_path, "w", encoding="utf-8") as f:
                     f.write(content)
                 logger.info(f"Created PO file: {po_path}")
+
 
 class Translator:
     def __init__(self, df_trad):
@@ -156,7 +167,7 @@ class Translator:
                                    or similar structure for translations
         """
         self.failed_translations = 0
-        self.failed_strings : List[str] = []
+        self.failed_strings: List[str] = []
         self._lock = threading.Lock()
         self.df_trad = df_trad
 
@@ -164,7 +175,7 @@ class Translator:
         self._create_lookup_dicts()
 
     def __repr__(self):
-            return f"<SimpleTranslator>"
+        return f"<Translator: {len(self.df_trad)} translations>"
 
     def get_failed_count(self) -> int:
         """Get number of failed translations"""
@@ -181,6 +192,8 @@ class Translator:
     def _create_lookup_dicts(self):
         """Create lookup dictionaries from the translation dataframe."""
         self.translations = {}
+
+        logger.debug(f"Translation dataframe:  {len(self.df_trad)}")
 
         if self.df_trad is not None and not self.df_trad.empty:
             # Check if GeolCodeInt is the index, otherwise look for it as a column
@@ -210,9 +223,7 @@ class Translator:
                         "Neither GeolCodeInt index nor column found in dataframe"
                     )
 
-        logger.debug(self.translations)
-
-        logger.info(f"Loaded {len(self.translations)} translation entries")
+        logger.debug(f"Lookup dict with {len(self.translations)} translation entries")
 
     def translate(self, geol_code, lang="FR"):
         """
@@ -259,18 +270,19 @@ class Translator:
             return ("–", False)
 
         # Only process supported languages
-        if lang not in ("DE", "FR"):
-            logger.debug(f"Unknown lang: {lang}")
+        if lang not in SUPPORTED_LANGUAGES:
+            logger.error(f"Unknown lang: {lang}")
             return (msg, False)
 
         try:
             geol_code_str = str(geol_code)
-            logger.debug(f"Translating: {geol_code_str}")
-
             # Try primary language first
             primary_msg = self._get_translation(geol_code_str, lang)
 
             if primary_msg is not None and primary_msg != geol_code_str:
+                logger.debug(
+                    f"Translating into {lang}: {geol_code_str} -> {primary_msg}"
+                )
                 return (self._clean_message(primary_msg), False)
 
             # Try fallback language
@@ -279,13 +291,13 @@ class Translator:
 
             if fallback_msg is not None:
                 logger.warning(
-                    f"Using {fallback_lang} fallback '{fallback_msg}' for code '{geol_code}' (requested: {lang})"
+                    f"Using {fallback_lang} fallback: '{geol_code}' -> '{fallback_msg}' (requested: {lang})"
                 )
                 return (self._clean_message(fallback_msg), False)
 
             # No translation found in either language
             err = True
-            logger.debug(
+            logger.error(
                 f"No translation found for code '{geol_code}' in {lang} or {fallback_lang}"
             )
 
@@ -353,12 +365,15 @@ class Translator:
             # self.failed_translations = 0
             self.failed_strings = []
 
+
 def create_simple_translator(translation_df: pd.DataFrame) -> SimpleTranslator:
     """Factory function to create translator"""
     return SimpleTranslator(translation_df)
 
+
 def create_translator(translation_df: pd.DataFrame) -> SimpleTranslator:
     """Factory function to create translator"""
+    logger.debug(len(translation_df))
     return Translator(translation_df)
 
 
@@ -373,6 +388,8 @@ def create_test_data():
     }
 
     df = pd.DataFrame.from_dict(data, orient="index")
+    df.index.name = "GeolCodeInt"  # Rename the index
+    df.index = df.index.astype(str)  # Convert index to string
     print("Test DataFrame:")
     print(df)
     print()
@@ -390,33 +407,43 @@ def run_tests():
 
     # Test 1: Normal translations (both languages available)
     print("1. Normal translations:")
-    print(f"  FR 10002001: '{translator.translate('10002001', 'fallback_text', 'FR')}'")
-    print(f"  DE 10002001: '{translator.translate('10002001', 'fallback_text', 'DE')}'")
+    print(f"  FR 10002001: '{translator.translate('10002001', 'FR')}'")
+    print(f"  DE 10002001: '{translator.translate('10002001', 'DE')}'")
     print()
 
     # Test 2: French fallback to German (FR missing)
     print("2. French fallback to German:")
-    print(f"  FR 10003002: '{translator.translate('10003002', 'fallback_text', 'FR')}'")
+    print(f"  FR 10003002: '{translator.translate('10003002', 'FR')}'")
     print()
 
     # Test 3: German fallback to French (DE missing)
     print("3. German fallback to French:")
-    print(f"  DE 10003003: '{translator.translate('10003003', 'fallback_text', 'DE')}'")
+    print(f"  DE 10003003: '{translator.translate('10003003', 'DE')}'")
     print()
 
     # Test 4: Complete failure (code doesn't exist)
     print("4. Complete failure (unknown code):")
-    print(f"  FR 99999999: '{translator.translate('99999999', 'fallback_text', 'FR')}'")
+    print(f"  FR 99999999: '{translator.translate('99999999', 'FR')}'")
     print()
 
     # Test 5: Special case (code "0")
     print("5. Special case (code '0'):")
-    print(f"  FR 0: '{translator.translate('0', 'fallback_text', 'FR')}'")
+    print(f"  FR 0: '{translator.translate('0', 'FR')}'")
     print()
 
     # Test 6: Unsupported language
     print("6. Unsupported language:")
-    print(f"  EN 10002001: '{translator.translate('10002001', 'fallback_text', 'EN')}'")
+    print(f"  EN 10002001: '{translator.translate('10002001', 'EN')}'")
+    print()
+
+    # Test 7: Unsupported language
+    print("7. Hardcoded values (unbekannt):")
+    print(f"  DE 999997: '{translator.translate('999997', 'DE')}'")
+    print()
+
+    # Test 8: Unsupported language
+    print("8. Hardcoded values (non applicable):")
+    print(f"  FR 999998: '{translator.translate('999998', 'FR')}'")
     print()
 
     # Test 7: Check error statistics
@@ -424,9 +451,6 @@ def run_tests():
     print(f"  Failed translations: {translator.get_failed_count()}")
     print(f"  Failed strings: {translator.get_failed_strings()}")
     print()
-
-
-
 
 
 if __name__ == "__main__":
