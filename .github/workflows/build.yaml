@@ -74,7 +74,7 @@ jobs:
         id: get_sources_dir
         run: |
           import yaml
-          with open("config.yaml") as f:
+          with open("datamodel.yaml") as f:
           data = yaml.safe_load(f)
           print(f"::set-output name=dir::{data['model']['sources_dir']}")
         shell: python
