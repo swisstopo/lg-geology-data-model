@@ -1,13 +1,108 @@
+[build-system]
+requires = ["setuptools>=77.0", "wheel"]
+build-backend = "setuptools.build_meta"
 
-[tool.versioningit.vcs]
-# The method key:
-method = "git"  # <- The method name
+[project]
+name = "gcdocs"
+dynamic = ["version"]
+description = "Documentation Generator for Geological 2D Data Model (Geocover)"
+readme = "README.md"
+requires-python = ">=3.9"
+license = "BSD-3-Clause"
+authors = [{name = "swisstopo", email = "geocover@swisstopo.ch"}]
+keywords = ["geology", "documentation", "geocover"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: GIS",
+    "Topic :: Documentation",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+]
 
-# Parameters to pass to the method:
-match = ["*"]
-default-tag = "0.0.0"
+dependencies = [
+    "click>=8.0",
+    "pyyaml>=6.0", 
+    "jinja2>=3.0",
+    "pandas>=1.5",
+    "openpyxl>=3.0",
+    "jsonschema>=4.0",
+    "loguru>=0.6",
+    "ruamel.yaml>=0.17.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-cov>=4.0",
+    "ruff>=0.1.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/swisstopo/lg-geology-data-model"
+Repository = "https://github.com/swisstopo/lg-geology-data-model"
+Issues = "https://github.com/swisstopo/lg-geology-data-model/issues"
+
+[project.scripts]
+gcdocs = "gcdocs.cli:gcdocs"
+datamodel = "gcdocs.cli:datamodel"
+
+[tool.setuptools.dynamic]
+version = {file = "VERSION"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["gcdocs*"]
+
+[tool.setuptools.package-data]
+gcdocs = [
+    "templates/*.j2",
+    "schemas/*.json", 
+    "locale/*/LC_MESSAGES/*.po",
+    "locale/*/LC_MESSAGES/*.mo",
+    "data/*.csv",
+]
+
+[tool.ruff]
+line-length = 88
+target-version = "py38"
+src = ["src"]
+
+[tool.ruff.lint]
+select = [
+    "E",   # pycodestyle errors
+    "W",   # pycodestyle warnings
+    "F",   # pyflakes
+    "I",   # isort
+    "B",   # flake8-bugbear
+    "C4",  # flake8-comprehensions
+    "UP",  # pyupgrade
+]
+ignore = [
+    "E501", # line too long, handled by formatter
+]
+
+[tool.ruff.lint.isort]
+known-first-party = ["gcdocs"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+line-ending = "auto"
 
 [tool.pytest.ini_options]
+testpaths = ["tests"]
 addopts = [
-    "--import-mode=importlib",
+    "--strict-markers",
+    "--cov=gcdocs", 
+    "--cov-report=term-missing",
 ]
+
+[tool.coverage.run]
+source = ["src"]
+omit = ["*/tests/*"]

@@ -55,6 +55,7 @@ jobs:
         with:
           name: conda-package
           path: |
-            conda-out/noarch/geocover*.tar.bz2
+            conda-out/noarch/gcdocs*.conda
+   
 
 
