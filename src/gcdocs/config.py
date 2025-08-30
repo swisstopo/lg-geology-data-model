@@ -182,6 +182,7 @@ class GeoDataConfig:
                         "DE": "nicht anwendbar",
                         "FR": "pas applicable",
                     },
+                    {"GeolCodeInt": "11401005",  "DE": "Kame", "FR": "kame"}
                 ]
             )
             special_codes["GeolCodeInt"] = special_codes["GeolCodeInt"].astype("string")

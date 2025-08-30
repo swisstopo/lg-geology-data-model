@@ -168,7 +168,6 @@ themes:
       description:
         de: Materialbezeichnung (lithologische Einheit)
         fr: Description du matériel (unité lithologique)
-      value: Lithostratigraphic_Units_Litho
       cardinality: 0..3
       mandatory: false
     - name: buried_out
