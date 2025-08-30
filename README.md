@@ -16,9 +16,10 @@ des documents finaux, comme `markdown` dans `inputs` et les différents formats 
 
 # Installation
 
-L'outil est disponbile comme paquets sur `anaconda.org` et `pypi.org`. La génération des fichiers finaux à partir des `exports`
-est possible dans n'importe quel environnement, mais l'export des données nécessite `arcpy`et un accès à la base ESRI ArcSDE.
-base de données ESRI ArcSDE n'est bien entendu pas possible.
+L'outil `gcdocs` est disponbile comme paquets sur `anaconda.org` et `pypi.org`. La génération des fichiers finaux à partir des `exports`
+est possible dans n'importe quel environnement, mais l'export des données à partir de l'ESRI Enterprise Database (SDE)
+nécessite `arcpy` et un accès à la base ESRI ArcSDE.
+
 
 ## Windows
 
@@ -27,7 +28,7 @@ generate the models, you don't need `arcpy`,
 
 Install the package
 
-    (arcgispro-py3) D:\conda\envs\arcgispro-py3_clone> conda install swisstopo::geocover
+    (arcgispro-py3) D:\conda\envs\arcgispro-py3_clone> conda install swisstopo::gcover
 
 To generate de final documents from the `markdown` sources, you need `pandoc`. As _pandoc.exe_ is a standalone binary on
 Windows, simply download it and unzip it into _C:\LegacySW_ (see the latest available version on  [Pandoc](https://github.com/jgm/pandoc/releases) ).
@@ -42,10 +43,9 @@ You need `pandoc` and a fully-fledge `XeLaTeX` installation. Install it with `ap
 
 Create a `conda` environement as normal and install the package:
 
-    conda install swisstopo::geocover
+    conda install swisstopo::gcover
 
-The subcommand of `geocover` requiring `arcpy` are not available on Linux. The 
-Le script `datamodel` qui génère le fichier _markdown_ n'a besoin que des libraries de base sus-mentionnées.
+The subcommand of `gcover` requiring `arcpy` are not available on Linux. The 
 
 
 # Utilisation
@@ -79,16 +79,16 @@ model:
 
 ### 3. Installation de l'outil
 
-Si ce n'est pas déjà fait, installez l'outil `gcover` :
+Si ce n'est pas déjà fait, installez des outils `gcdocs` et `gcover` :
 
 **Avec conda (recommandé) :**
 ```bash
-conda install gcover
+conda install swisstopo::gcdocs  swisstopo::gcover
 ```
 
 **Avec pip :**
 ```bash
-pip install gcover
+pip install gcdocs
 ```
 
 ## Export des données
@@ -141,11 +141,16 @@ Copiez manuellement les fichiers statiques suivants dans le répertoire `exports
 > **Note :** Ces fichiers seront bientôt intégrés automatiquement dans le processus
 
 - `geolcode_chrono.csv`
-- `GeolCodeText_Trad_230317.csv`
+- `GeolCodeText_Trad_2025.xlsx`
 - `SCHEMA_CHANGES_4.0-4.1.json`
-- `all_codes_dict.json`
 
 ## Génération des documents
+
+### Génération du fichier Markdown
+
+```commandline
+ gcdocs generate -i exports/2025-08-26/  -o inputs --lang fr,de  datamodel.yaml
+```
 
 ### Génération des PDF
 
@@ -153,6 +158,10 @@ Une fois tous les exports terminés, générez les documents finaux :
 
 ```bash
 make pdfs
+```
+or
+```commandline
+gcdocs build --lang de --format pdf --input-dir inputs
 ```
 
 Cette commande produit les fichiers PDF dans les langues configurées (français, allemand).
