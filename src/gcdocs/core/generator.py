@@ -165,12 +165,17 @@ class MarkdownGenerator:
 
     def _get_coded_values(self, domain_name: str) -> Dict[str, str]:
         """Get coded values from domain (from original get_coded_values function)"""
-        domains = self.config.domains
+        # TODO: should be a function
+        # domains = self.config.domains
 
-        if domain_name in domains:
+        domains = self.config.sde_schema.get("coded_domain", {})
+
+        if domain_name in domains.keys():
             domain = domains.get(domain_name)
             if domain.get("type") == "CodedValue":
                 coded_values = domain.get("codedValues", {})
+
+                logger.info(f"Domain: {domain_name} - {len(coded_values)}")
 
                 # Handle special codes (from original custom_sort_key logic)
                 if "999997" in coded_values:
@@ -189,6 +194,8 @@ class MarkdownGenerator:
                         return float("inf")
 
                 return dict(sorted(coded_values.items(), key=sort_key))
+        else:
+            logger.error(f"Coded domain {domain_name} data not found")
 
         return {}
 
