@@ -11,7 +11,7 @@ import logging
 import threading
 import sys
 
-SUPPORTED_LANGUAGES = ("DE", "FR")
+SUPPORTED_LANGUAGES = ("DE", "FR", "IT", "EN")
 
 
 class SimpleTranslator:
@@ -21,8 +21,8 @@ class SimpleTranslator:
         self.translation_df = translation_df
         self.failed_translations: List[str] = []
 
-    def __repr__(self):
-        return f"<SimpleTranslator: {len(self.translation_df)} translations>"
+    def __str__(self):
+        return f"<SimpleTranslator: {len(self.translation_df)} translations, lang: {self.translation_df.columns}>"
 
     def translate(self, geol_code: str, fallback: str, lang: str = "FR") -> str:
         """
@@ -36,7 +36,7 @@ class SimpleTranslator:
         Returns:
             Translated text or fallback
         """
-        if lang not in ("DE", "FR"):
+        if lang not in SUPPORTED_LANGUAGES:
             return fallback
 
         try:
@@ -110,7 +110,7 @@ msgstr ""
 
         po_files = {}
 
-        for lang in ["de", "fr"]:
+        for lang in SUPPORTED_LANGUAGES:
             lang_col = lang.upper()
             if lang_col not in translation_df.columns:
                 continue
@@ -175,7 +175,7 @@ class Translator:
         self._create_lookup_dicts()
 
     def __repr__(self):
-        return f"<Translator: {len(self.df_trad)} translations>"
+        return f"<Translator: {len(self.df_trad)} translations, langs: {self.df_trad.columns}>"
 
     def get_failed_count(self) -> int:
         """Get number of failed translations"""
@@ -204,6 +204,8 @@ class Translator:
                     self.translations[code] = {
                         "DE": row.get("DE") if pd.notna(row.get("DE", None)) else None,
                         "FR": row.get("FR") if pd.notna(row.get("FR", None)) else None,
+                        "IT": row.get("IT") if pd.notna(row.get("IT", None)) else None,
+                        "EN": row.get("EN") if pd.notna(row.get("EN", None)) else None,
                     }
             else:
                 # Fallback to column-based approach
@@ -216,6 +218,12 @@ class Translator:
                             else None,
                             "FR": row.get("FR")
                             if pd.notna(row.get("FR", None))
+                            else None,
+                            "IT": row.get("IT")
+                            if pd.notna(row.get("IT", None))
+                            else None,
+                            "EN": row.get("EN")
+                            if pd.notna(row.get("EN", None))
                             else None,
                         }
                 else:
@@ -286,7 +294,15 @@ class Translator:
                 return (self._clean_message(primary_msg), False)
 
             # Try fallback language
-            fallback_lang = "DE" if lang == "FR" else "FR"
+            fallback_lang = (
+                "DE"
+                if lang
+                in (
+                    "FR",
+                    "EN",
+                )
+                else "FR"
+            )
             fallback_msg = self._get_translation(geol_code_str, fallback_lang)
 
             if fallback_msg is not None:

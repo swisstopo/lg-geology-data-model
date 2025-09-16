@@ -26,6 +26,7 @@ from ..translation.translator import (
     create_translator,
 )
 
+from gcdocs.core.encoder import CustomEncoder
 from gcdocs.translation.translator import (
     create_translator,
 )  # Your existing geological code translator
@@ -102,20 +103,15 @@ class EnhancedMarkdownGenerator:
 
         # Initialize geological code translator (existing)
         self.geol_translator = create_translator(config.translation_df)
-
+        self._translator = self.geol_translator
         # Initialize model translation manager (new)
         translations_dir = Path.cwd() / "translations"
         self.model_translator = HierarchicalTranslationManager(str(translations_dir))
         self.model_translator.load_translations()
         # logger.info(self.model_translator.translations['de'])
 
-        self.model_tm = self.model_translator
+        self.model_tm = self.model_translator  # TODO why two
         self.model_processor = ModelProcessor(self.model_tm, self.geol_translator)
-
-        # logger.info(config.translation_df)
-
-        # TODO
-        logger.info("========= generate_markdown ======= ")
 
     # TODO
     def _get_current_date(self):
@@ -136,17 +132,11 @@ class EnhancedMarkdownGenerator:
                 return super().default(obj)
 
         # CRITICAL: Convert to template-compatible format
+        output_dir = Path(output_dir)
         processed_data = self._ensure_template_compatibility(yaml_data, language)
-
-        with open("final_data.json", "w", encoding="utf-8") as f:
-            f.write(json.dumps(processed_data, indent=4, cls=DateEncoder))
 
         # Continue with your existing processing
         final_data = self.process_model_data(processed_data, language)
-
-        from gcdocs.core.encoder import CustomEncoder
-
-        logger.info(CustomEncoder.to_json(processed_data, indent=4))
 
         return self._render_markdown(final_data, language, output_dir)
 
@@ -290,8 +280,6 @@ class EnhancedMarkdownGenerator:
         Render markdown using your existing Jinja2 template system
         This part stays mostly the same as your current implementation
         """
-
-        # TODO
 
         import jinja2
         from jinja2 import Environment, FileSystemLoader
@@ -449,25 +437,18 @@ class EnhancedMarkdownGenerator:
 
         # Write JSON file (for debugging/reference)
         json_file = output_path / "datamodel_data.json"
+        logger.info(f"Saving to {json_file}")
         with open(json_file, "w", encoding="utf-8") as f:
-            # Custom encoder for datetime objects
-            import json
-            from datetime import datetime, date
+            f.write(CustomEncoder.to_json(model_data, indent=4))
 
-            def json_encoder(obj):
-                if isinstance(obj, (datetime, date)):
-                    return obj.isoformat()
-                raise TypeError(f"Object {obj} is not JSON serializable")
-
-            json.dump(model_data, f, indent=4, ensure_ascii=False, default=json_encoder)
-
-            logger.info(f"Saving model data as JSON: {json_file}")
+        csv_file = output_path / "translation_data.csv"
+        logger.info(f"Saving to {csv_file}")
+        with open(csv_file, "w", encoding="utf=8") as file:
+            self.geol_translator.df_trad.to_csv(file)
 
         try:
             # Render template
             template = env.get_template("model_markdown.j2")
-
-            logger.info(model_data)
 
             rendered_content = template.render(model_data)
         except jinja2.UndefinedError as e:
@@ -857,7 +838,6 @@ class EnhancedMarkdownGenerator:
     def process_model(self, model_file: str) -> Dict[str, Any]:
         """Process the datamodel file and enrich with database info (from original to_json method)"""
         model = self.load_model(model_file)
-        translator = self._get_translator()  # TODO or get_simple
 
         logger.info(f"Processing model with prefixes: {self.prefixes}")
 
@@ -884,7 +864,7 @@ class EnhancedMarkdownGenerator:
             return None
 
     # TODO: copied
-    def generate_markdown__(self, model_file: str, lang: str, output_dir: str):
+    '''def generate_markdown__(self, model_file: str, lang: str, output_dir: str):
         """Generate Markdown documentation"""
         import jinja2
         from datetime import datetime
@@ -1079,13 +1059,13 @@ class EnhancedMarkdownGenerator:
         except Exception as e:
             import traceback
 
-            logger.error(f"Generation failed: {traceback.format_exc()}")
+            logger.error(f"Generation failed: {traceback.format_exc()}")'''
 
 
 # -------------
 
-
-class MarkdownGenerator:
+# TODO erase
+'''class MarkdownGeneratorZZZZZ:
     """Main document generator (refactored from Report class)"""
 
     def __init__(self, config: Optional[GeoDataConfig] = None):
@@ -1427,8 +1407,7 @@ class MarkdownGenerator:
         try:
             file_path = self.config.input_dir / file_name
 
-            logger.info(file_path)
-
+      
             if file_path.exists():
                 with open(file_path, "r", encoding="utf-8") as f:
                     data = json.load(f)
@@ -1530,7 +1509,6 @@ class MarkdownGenerator:
         def translate_de_filter(geol_code):
             """Translate geological code to German."""
             translator = self._get_translator()
-            logger.info(translator)
             return translator.translate(geol_code, lang="DE")
 
         def translate_fr_filter(geol_code):
@@ -1634,7 +1612,7 @@ class MarkdownGenerator:
         except Exception as e:
             import traceback
 
-            logger.error(f"Generation failed: {traceback.format_exc()}")
+            logger.error(f"Generation failed: {traceback.format_exc()}")'''
 
 
 if __name__ == "__main__":

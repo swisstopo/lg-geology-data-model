@@ -13,7 +13,7 @@ import yaml
 from loguru import logger
 
 from .config import AVAILABLE_LANGUAGES, GeoDataConfig, get_default_config
-from .core.generator import MarkdownGenerator, EnhancedMarkdownGenerator
+from .core.generator import EnhancedMarkdownGenerator
 from .core.validator import ModelValidator
 from .exporters.xlsx import XLSXExporter, EnhancedXLSXExporter
 from .translation.model_translator import (
@@ -250,7 +250,7 @@ def export(ctx, datamodel, format, output):
             exporter.export(datamodel, output)
         else:
             # JSON export - just copy the processed model
-            from .core.generator import MarkdownGenerator, EnhancedMarkdownGenerator
+            # TODO from .core.generator import MarkdownGenerator, EnhancedMarkdownGenerator
 
             config = ctx.obj["config"]
             # TODO generator = MarkdownGenerator(config)

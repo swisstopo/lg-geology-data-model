@@ -13,7 +13,6 @@ from loguru import logger
 AVAILABLE_LANGUAGES = ["de", "fr", "it", "en"]
 
 
-
 def parse_langs(ctx, param, value):
     if not value:
         raise click.BadParameter("You must provide at least one language.")
@@ -23,6 +22,7 @@ def parse_langs(ctx, param, value):
     if invalid:
         raise click.BadParameter(f"Invalid language(s): {', '.join(invalid)}")
     return langs
+
 
 abreviations = [
     "Aarc",
@@ -280,13 +280,27 @@ class GeoDataConfig:
             # 6. Add special hardcoded values
             special_codes = pd.DataFrame(
                 [
-                    {"GeolCodeInt": "999997", "DE": "unbekannt", "FR": "inconnu"},
+                    {
+                        "GeolCodeInt": "999997",
+                        "DE": "unbekannt",
+                        "FR": "inconnu",
+                        "IT": "sconosciuto",
+                        "EN": "unknown",
+                    },
                     {
                         "GeolCodeInt": "999998",
                         "DE": "nicht anwendbar",
                         "FR": "pas applicable",
+                        "IT": "non applicabile",
+                        "EN": "not applicable",
                     },
-                    {"GeolCodeInt": "11401005", "DE": "Kame", "FR": "kame"},
+                    {
+                        "GeolCodeInt": "11401005",
+                        "DE": "Kame",
+                        "FR": "kame",
+                        "IT": "kame",
+                        "EN": "kame",
+                    },
                 ]
             )
             special_codes["GeolCodeInt"] = special_codes["GeolCodeInt"].astype("string")
@@ -294,7 +308,7 @@ class GeoDataConfig:
 
             if not dataframes:
                 logger.warning("No translation files found, creating empty DataFrame")
-                return pd.DataFrame(columns=["DE", "FR"]).astype("string")
+                return pd.DataFrame(columns=AVAILABLE_LANGUAGES).astype("string")
 
             # Merge all dataframes
             merged_df = pd.concat(dataframes, ignore_index=True)
@@ -323,6 +337,8 @@ class GeoDataConfig:
                         "GeolCodeInt": "999998",
                         "DE": "nicht anwendbar",
                         "FR": "pas applicable",
+                        "IT": "non applicabile",
+                        "EN": "not applicable",
                     },
                 ]
             ).set_index("GeolCodeInt")
@@ -355,7 +371,7 @@ class GeoDataConfig:
     def _clean_translation_data(self, merged_df: pd.DataFrame) -> pd.DataFrame:
         """Clean and process the merged translation DataFrame"""
         # Ensure required columns exist
-        required_cols = ["GeolCodeInt", "DE", "FR"]
+        required_cols = ["GeolCodeInt", "DE", "FR", "IT", "EN"]
         for col in required_cols:
             if col not in merged_df.columns:
                 merged_df[col] = ""
@@ -375,6 +391,12 @@ class GeoDataConfig:
                 FR=lambda x: x["FR"]
                 .astype("string")
                 .replace(["0", "nan", "None"], "-"),
+                IT=lambda x: x["IT"]
+                .astype("string")
+                .replace(["0", "nan", "None"], "-"),
+                EN=lambda x: x["EN"]
+                .astype("string")
+                .replace(["0", "nan", "None"], "-"),
             )
             .query("GeolCodeInt != '' and GeolCodeInt != 'nan'")  # Remove empty codes
             .sort_values("GeolCodeInt")
@@ -383,7 +405,7 @@ class GeoDataConfig:
 
         return cleaned_df
 
-    def _clean_translation_data(self, merged_df: pd.DataFrame) -> pd.DataFrame:
+    '''def _clean_translation_data(self, merged_df: pd.DataFrame) -> pd.DataFrame:
         """Clean and process the merged translation DataFrame"""
         # Ensure required columns exist
         required_cols = ["GeolCodeInt", "DE", "FR"]
@@ -412,7 +434,7 @@ class GeoDataConfig:
             .set_index("GeolCodeInt")
         )
 
-        return cleaned_df
+        return cleaned_df'''
 
     def save_merged_translations(self, output_path: Optional[str] = None) -> Path:
         """Save the merged translation DataFrame to Excel"""
@@ -424,6 +446,7 @@ class GeoDataConfig:
         translation_df = self.translation_df
         translation_df.to_excel(output_path, index=True, engine="openpyxl")
         logger.info(f"Saved merged translations to {output_path}")
+        s
         return output_path
 
     def get_translation_stats(self) -> Dict[str, Any]:
