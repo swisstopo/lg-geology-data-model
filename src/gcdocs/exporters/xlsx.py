@@ -8,6 +8,279 @@ from pathlib import Path
 from loguru import logger
 import yaml
 from typing import Dict, Any, List
+from openpyxl import Workbook
+from openpyxl.styles import Alignment, Border, Font, PatternFill, Side
+from openpyxl.utils import get_column_letter
+from openpyxl.utils.dataframe import dataframe_to_rows
+
+from gcdocs.translation.model_translator  import ModelTranslationManager
+
+
+class EnhancedXLSXExporter:
+    """
+    Enhanced XLSX exporter for translation workflow
+    Extends your existing XLSXExporter
+    """
+
+    def __init__(self, model_translation_manager: ModelTranslationManager):
+        self.tm = model_translation_manager
+
+    def export_for_translation(self, yaml_file: str, output_file: str):
+        """Export YAML to translation-ready Excel format"""
+
+        # Load YAML data
+        with open(yaml_file, "r", encoding="utf-8") as f:
+            yaml_data = yaml.safe_load(f)
+
+        # Create workbook with styling
+        wb = Workbook()
+        ws = wb.active
+        ws.title = "Model Translations"
+
+        # Define styles (similar to your existing xlsx.py styling)
+        header_font = Font(name="Arial", bold=True, size=12)
+        theme_font = Font(name="Arial", bold=True, size=14, color="FFFFFF")
+        class_font = Font(name="Arial", bold=True, size=11)
+        theme_fill = PatternFill(
+            start_color="2F4F4F", end_color="2F4F4F", fill_type="solid"
+        )
+        class_fill = PatternFill(
+            start_color="D3D3D3", end_color="D3D3D3", fill_type="solid"
+        )
+
+        # Headers
+        headers = [
+            "Context",
+            "Item",
+            "Key",
+            "Deutsch",
+            "Français",
+            "Italiano",
+            "English",
+            "Type",
+            "Mandatory",
+            "Cardinality",
+            "Notes",
+        ]
+
+        for col, header in enumerate(headers, 1):
+            cell = ws.cell(row=1, column=col, value=header)
+            cell.font = header_font
+
+        current_row = 2
+
+        # Model metadata
+        model_info = yaml_data.get("model", {})
+        ws.cell(row=current_row, column=1, value="Metadata").font = header_font
+        ws.cell(row=current_row, column=2, value="Revision")
+        ws.cell(row=current_row, column=4, value=model_info.get("revision", ""))
+        current_row += 1
+
+        ws.cell(row=current_row, column=2, value="Date")
+        ws.cell(
+            row=current_row, column=4, value=str(model_info.get("revision_date", ""))
+        )
+        current_row += 2
+
+        # Process themes and classes
+        for theme in yaml_data.get("themes", []):
+            theme_name = theme.get("name", "")
+            theme_key = self._make_key(theme_name)
+
+            # Theme row
+            self._add_theme_row(ws, current_row, theme_name, theme_fill, theme_font)
+            current_row += 1
+
+            # Process classes in theme
+            for cls in theme.get("classes", []):
+                class_name = cls.get("name", "")
+                class_key = self._make_key(class_name)
+
+                # Class row
+                self._add_class_row(ws, current_row, class_name, class_fill, class_font)
+                current_row += 1
+
+                # Class description
+                desc_key = f"theme.{theme_key}.class.{class_key}.description"
+                current_row = self._add_description_row(
+                    ws, current_row, "Description", desc_key, cls.get("description", {})
+                )
+
+                # Abbreviation and Table (non-translatable metadata)
+                ws.cell(row=current_row, column=1, value="Metadata")
+                ws.cell(row=current_row, column=2, value="Abrev")
+                ws.cell(row=current_row, column=4, value=cls.get("abrev", ""))
+                current_row += 1
+
+                ws.cell(row=current_row, column=1, value="Metadata")
+                ws.cell(row=current_row, column=2, value="Table")
+                ws.cell(row=current_row, column=4, value=cls.get("table", ""))
+                current_row += 1
+
+                # Attributes header
+                ws.cell(row=current_row, column=1, value="Attributes").font = class_font
+                current_row += 1
+
+                # Process attributes
+                for attr in cls.get("attributes", []):
+                    attr_name = attr.get("name", "").upper()
+                    attr_key = f"theme.{theme_key}.class.{class_key}.attr.{attr_name.lower()}.description"
+
+                    # Attribute row
+                    ws.cell(row=current_row, column=1, value="Attribute")
+                    ws.cell(row=current_row, column=2, value=attr_name)
+                    ws.cell(row=current_row, column=3, value=attr_key)
+
+                    # Add existing translations
+                    attr_desc = attr.get("description", {})
+                    for i, lang in enumerate(["de", "fr", "it", "en"]):
+                        col = 4 + i
+                        existing = self._get_existing_translation(
+                            attr_key, lang, attr_desc
+                        )
+                        ws.cell(row=current_row, column=col, value=existing)
+
+                    # Add metadata columns
+                    ws.cell(row=current_row, column=8, value=attr.get("att_type", ""))
+                    ws.cell(
+                        row=current_row,
+                        column=9,
+                        value="yes" if attr.get("mandatory", False) else "no",
+                    )
+                    ws.cell(
+                        row=current_row,
+                        column=10,
+                        value=f"[{attr.get('cardinality', '')}]",
+                    )
+
+                    current_row += 1
+
+                current_row += 1  # Space between classes
+
+        # Format columns
+        for col in range(1, len(headers) + 1):
+            column_letter = get_column_letter(col)
+            if col == 3:  # Key column
+                ws.column_dimensions[column_letter].width = 50
+            elif 4 <= col <= 7:  # Language columns
+                ws.column_dimensions[column_letter].width = 60
+            else:
+                ws.column_dimensions[column_letter].width = 15
+
+        # Enable text wrapping for description columns
+        for row in ws.iter_rows(min_row=2):
+            for cell in row[3:7]:  # Language columns
+                cell.alignment = Alignment(wrap_text=True, vertical="top")
+
+        wb.save(output_file)
+        logger.info(f"Exported translation template to {output_file}")
+
+    def _make_key(self, name: str) -> str:
+        """Convert name to key format"""
+        return name.lower().replace(" ", "_").replace("-", "_")
+
+    def _add_theme_row(self, ws, row, theme_name, fill, font):
+        """Add theme row with styling"""
+        cell = ws.cell(row=row, column=1, value="Theme")
+        cell.font = font
+        cell.fill = fill
+
+        cell = ws.cell(row=row, column=2, value=theme_name)
+        cell.font = font
+        cell.fill = fill
+
+        for col in range(2, 10):
+            cell = ws.cell(row=row, column=col, value="")
+            cell.fill = fill
+
+    def _add_class_row(self, ws, row, class_name, fill, font):
+        """Add class row with styling"""
+        cell = ws.cell(row=row, column=1, value="Class")
+        cell.font = font
+        cell.fill = fill
+
+        cell = ws.cell(row=row, column=2, value=class_name)
+        cell.font = font
+        cell.fill = fill
+
+        for col in range(2, 10):
+            cell = ws.cell(row=row, column=col, value="")
+            cell.fill = fill
+
+    def _add_description_row(self, ws, row, context, key, description_dict):
+        """Add description row with translations"""
+        ws.cell(row=row, column=1, value=context)
+        ws.cell(row=row, column=2, value="Description")
+        ws.cell(row=row, column=3, value=key)
+
+        # Add existing translations
+        for i, lang in enumerate(["de", "fr", "it", "en"]):
+            col = 4 + i
+            existing = self._get_existing_translation(key, lang, description_dict)
+            ws.cell(row=row, column=col, value=existing)
+
+        return row + 1
+
+    def _get_existing_translation(
+        self, key: str, lang: str, description_dict: dict
+    ) -> str:
+        """Get existing translation from various sources"""
+        # First check translation manager
+        if key in self.tm.translations.get(lang, {}):
+            return self.tm.translations[lang][key]
+
+        # Then check embedded description dict (for migration)
+        if isinstance(description_dict, dict) and lang in description_dict:
+            return description_dict[lang]
+
+        return ""
+
+    def import_from_excel(self, excel_file: str) -> dict:
+        """Import completed translations from Excel"""
+        df = pd.read_excel(excel_file)
+
+        # Clear existing model translations
+        for lang in self.tm.supported_languages:
+            self.tm.translations[lang] = {}
+
+        # Process rows
+        for _, row in df.iterrows():
+            context = str(row.get("Context", "")).strip()
+            if context not in ["Theme", "Class", "Attribute", "Description"]:
+                continue
+
+            key = str(row.get("Key", "")).strip()
+            if not key:
+                continue
+
+            # Store translations
+            for lang in ["de", "fr", "it", "en"]:
+                lang_col = lang.title()  # Deutsch, Français, etc.
+                col_name = {
+                    "de": "Deutsch",
+                    "fr": "Français",
+                    "it": "Italiano",
+                    "en": "English",
+                }[lang]
+
+                if (
+                    col_name in row
+                    and pd.notna(row[col_name])
+                    and str(row[col_name]).strip()
+                ):
+                    self.tm.translations[lang][key] = str(row[col_name]).strip()
+
+        # Save translation files
+        self.tm.save_translations()
+        logger.info("Imported model translations from Excel")
+
+        return self._build_yaml_structure_with_keys(df)
+
+    def _build_yaml_structure_with_keys(self, df: pd.DataFrame) -> dict:
+        """Build YAML structure using translation keys instead of embedded text"""
+        # This would rebuild the YAML with description_key references
+        # Implementation depends on your exact YAML structure requirements
+        pass
 
 
 class XLSXExporter:

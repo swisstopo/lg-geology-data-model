@@ -10,7 +10,19 @@ from pathlib import Path
 from typing import Dict, Any, Optional
 from loguru import logger
 
-AVAILABLE_LANGUAGES = ["de", "fr"]
+AVAILABLE_LANGUAGES = ["de", "fr", "it", "en"]
+
+
+
+def parse_langs(ctx, param, value):
+    if not value:
+        raise click.BadParameter("You must provide at least one language.")
+    langs = [v.strip().lower() for v in value.split(",")]
+
+    invalid = [lang for lang in langs if lang not in AVAILABLE_LANGUAGES]
+    if invalid:
+        raise click.BadParameter(f"Invalid language(s): {', '.join(invalid)}")
+    return langs
 
 abreviations = [
     "Aarc",

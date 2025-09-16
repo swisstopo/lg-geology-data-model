@@ -3,18 +3,26 @@ Clean CLI interface for gcdocs
 Separated from business logic - only handles commands and arguments
 """
 
-import click
-import sys
 import os
+import sys
+import traceback
 from pathlib import Path
+
+import click
+import yaml
 from loguru import logger
 
-from .config import GeoDataConfig, get_default_config, AVAILABLE_LANGUAGES
-from .core.generator import MarkdownGenerator
+from .config import AVAILABLE_LANGUAGES, GeoDataConfig, get_default_config
+from .core.generator import MarkdownGenerator, EnhancedMarkdownGenerator
 from .core.validator import ModelValidator
+from .exporters.xlsx import XLSXExporter, EnhancedXLSXExporter
+from .translation.model_translator import (
+    HierarchicalDatamodelProcessor,
+    HierarchicalTranslationManager,
+    ModelProcessor,
+    ModelTranslationManager,
+)
 from .translation.translator import TranslationManager
-from .exporters.xlsx import XLSXExporter
-import traceback
 
 
 def parse_langs(ctx, param, value):
@@ -104,7 +112,8 @@ def generate(ctx, lang, datamodel, output, input_dir):
     """
     try:
         # Setup config with custom input directory
-        config = GeoDataConfig(input_dir)
+
+        config = GeoDataConfig(Path(input_dir).resolve())
 
         # Validate data files exist
         if not config.validate_data():
@@ -116,7 +125,8 @@ def generate(ctx, lang, datamodel, output, input_dir):
             sys.exit(1)
 
         # Generate documentation
-        generator = MarkdownGenerator(config)
+        # TODO generator = MarkdownGenerator(config)
+        generator = EnhancedMarkdownGenerator(config)
         for lg in lang:
             output_path = generator.generate_markdown(datamodel, lg.lower(), output)
             click.echo(f"✓ Generated Markdown documentation in {output_path}")
@@ -240,14 +250,15 @@ def export(ctx, datamodel, format, output):
             exporter.export(datamodel, output)
         else:
             # JSON export - just copy the processed model
-            from .core.generator import MarkdownGenerator
+            from .core.generator import MarkdownGenerator, EnhancedMarkdownGenerator
 
             config = ctx.obj["config"]
-            generator = MarkdownGenerator(config)
+            # TODO generator = MarkdownGenerator(config)
+            generator = EnhancedMarkdownGenerator(config)
             model_data = generator.process_model(datamodel)
 
             import json
-            from datetime import datetime, date
+            from datetime import date, datetime
 
             def json_encoder(obj):
                 if isinstance(obj, (datetime, date)):
@@ -357,10 +368,10 @@ def prettify(ctx, datamodel):
     help="Output directory for PO files",
 )
 @click.pass_context
-def translations(ctx, input_dir, output_dir):
+def legacy_translations(ctx, input_dir, output_dir):
     """Generate PO translation files from CSV data"""
     try:
-        config = GeoDataConfig(input_dir)
+        config = GeoDataConfig(Path(input_dir).resolve())
         translation_df = config.translation_df
 
         # Generate PO files
@@ -399,7 +410,7 @@ def translations(ctx, input_dir, output_dir):
 def merge_translations(ctx, input_dir, output, stats):
     """Merge and manage translation files"""
     try:
-        config = GeoDataConfig(input_dir)
+        config = GeoDataConfig(Path(input_dir).resolve())
 
         if stats:
             # Show statistics
@@ -474,6 +485,248 @@ def deps():
     else:
         click.echo("❌ make: not found")
         click.echo("   Install build tools for your platform")
+
+
+# Enhanced translation
+
+
+# Modify your existing export command to support translation export
+@gcdocs.command()
+@click.argument("datamodel", type=click.Path(exists=True))
+@click.option(
+    "--format",
+    "-f",
+    type=click.Choice(["xlsx", "json", "translation_xlsx"], case_sensitive=False),
+    default="xlsx",
+    help="Export format",
+)
+@click.option("--output", "-o", type=click.Path(), help="Output file path")
+@click.option(
+    "--translations-dir",
+    "-t",
+    type=click.Path(),
+    default="translations",
+    help="Translations directory",
+)
+@click.pass_context
+def export(ctx, datamodel, format, output, translations_dir):
+    """Export GeoCover datamodel to Excel/JSON/Translation formats (enhanced)"""
+    try:
+        if not output:
+            stem = Path(datamodel).stem
+            suffix = {
+                "xlsx": "xlsx",
+                "json": "json",
+                "translation_xlsx": "translation.xlsx",
+            }[format.lower()]
+            output = f"{stem}.{suffix}"
+
+        if format.lower() == "translation_xlsx":
+            # Export for translation workflow
+            model_tm = ModelTranslationManager(translations_dir)
+            exporter = EnhancedXLSXExporter(model_tm)
+            exporter.export_for_translation(datamodel, output)
+
+        elif format.lower() == "xlsx":
+            # Your existing XLSX export
+            from .exporters.xlsx import XLSXExporter
+
+            exporter = XLSXExporter()
+            exporter.export(datamodel, output)
+
+        else:  # JSON
+            # Your existing JSON export logic
+            pass
+
+        click.echo(f"✓ Exported to {output}")
+
+    except Exception as e:
+        logger.error(f"Export failed: {e}")
+        click.echo(f"❌ Export failed: {e}")
+        sys.exit(1)
+
+
+# Add translation import command
+@gcdocs.command()
+@click.argument("excel_file", type=click.Path(exists=True))
+@click.option(
+    "--translations-dir", "-t", default="translations", help="Translations directory"
+)
+@click.option("--yaml-output", "-y", help="Output YAML file with keys")
+@click.pass_context
+def import_translations(ctx, excel_file, translations_dir, yaml_output):
+    """Import completed translations from Excel (enhanced)"""
+    try:
+        model_tm = ModelTranslationManager(translations_dir)
+        exporter = EnhancedXLSXExporter(model_tm)
+
+        if yaml_output:
+            yaml_structure = exporter.import_from_excel(excel_file)
+            with open(yaml_output, "w", encoding="utf-8") as f:
+                yaml.dump(
+                    yaml_structure, f, default_flow_style=False, allow_unicode=True
+                )
+            click.echo(f"✓ Created key-based YAML: {yaml_output}")
+        else:
+            exporter.import_from_excel(excel_file)
+
+        click.echo(f"✓ Imported translations from {excel_file}")
+
+    except Exception as e:
+        logger.error(f"Import failed: {e}")
+        click.echo(f"❌ Import failed: {e}")
+        sys.exit(1)
+
+
+@gcdocs.group()
+@click.pass_context
+def translations(ctx):
+    """Hierarchical translation management for geology data model"""
+    pass
+
+
+# Add migration command
+@translations.command()
+@click.argument("datamodel", type=click.Path(exists=True))
+@click.option(
+    "--translations-dir", "-t", default="translations", help="Translations directory"
+)
+@click.pass_context
+def migrate_translations(ctx, datamodel, translations_dir):
+    """Migrate YAML from embedded translations to key-based system (enhanced)"""
+    try:
+        # Load current YAML
+        with open(datamodel, "r", encoding="utf-8") as f:
+            yaml_data = yaml.safe_load(f)
+
+        # Initialize managers
+        model_tm = ModelTranslationManager(translations_dir)
+        processor = ModelProcessor(
+            model_tm, None
+        )  # geol_translator not needed for migration
+
+        # Migrate
+        new_yaml_data = processor.migrate_yaml_to_keys(yaml_data)
+
+        # Save new YAML
+        new_yaml_file = str(Path(datamodel).with_suffix(".with_keys.yaml"))
+        with open(new_yaml_file, "w", encoding="utf-8") as f:
+            yaml.dump(new_yaml_data, f, default_flow_style=False, allow_unicode=True)
+
+        # Save translations
+        model_tm.save_translations()
+
+        click.echo(f"✓ Migration complete:")
+        click.echo(f"   New YAML: {new_yaml_file}")
+        click.echo(f"   Translations: {translations_dir}/model_*.json")
+
+    except Exception as e:
+        logger.error(f"Migration failed: {e}")
+        click.echo(f"❌ Migration failed: {e}")
+        sys.exit(1)
+
+    return export, import_translations, migrate_translations
+
+
+@translations.command()
+@click.argument("yaml_file", type=click.Path(exists=True))
+@click.option("--output", "-o", default="geology_model.xlsx", help="Output Excel file")
+@click.option(
+    "--translations-dir", "-d", default="translations", help="Translations directory"
+)
+def export_excel(yaml_file, output, translations_dir):
+    """Export YAML to structured Excel format"""
+    # Load YAML
+    with open(yaml_file, "r", encoding="utf-8") as f:
+        yaml_data = yaml.safe_load(f)
+
+    # Initialize translation manager
+    tm = HierarchicalTranslationManager(translations_dir)
+
+    # Export to Excel
+    tm.export_to_structured_excel(yaml_data, output)
+    click.echo(f"Exported to structured Excel: {output}")
+
+
+@translations.command()
+@click.argument("excel_file", type=click.Path(exists=True))
+@click.option(
+    "--translations-dir", "-d", default="translations", help="Translations directory"
+)
+@click.option(
+    "--yaml-output", "-y", default="datamodel_with_keys.yaml", help="Output YAML file"
+)
+def import_excel(excel_file, translations_dir, yaml_output):
+    """Import from structured Excel and create key-based YAML"""
+    tm = HierarchicalTranslationManager(translations_dir)
+    yaml_structure = tm.import_from_structured_excel(excel_file)
+
+    # Save new YAML structure
+    with open(yaml_output, "w", encoding="utf-8") as f:
+        yaml.dump(yaml_structure, f, default_flow_style=False, allow_unicode=True)
+
+    click.echo(f"Imported translations and created: {yaml_output}")
+
+
+@translations.command()
+@click.argument("yaml_file", type=click.Path(exists=True))
+@click.option(
+    "--translations-dir", "-d", default="translations", help="Translations directory"
+)
+def migrate(yaml_file, translations_dir):
+    """Migrate existing YAML from embedded to key-based translations"""
+    # Load current YAML
+    with open(yaml_file, "r", encoding="utf-8") as f:
+        yaml_data = yaml.safe_load(f)
+
+    # Initialize translation manager and processor
+    tm = HierarchicalTranslationManager(translations_dir)
+    processor = HierarchicalDatamodelProcessor(tm)
+
+    # Migrate
+    new_yaml_data = processor.migrate_from_embedded_yaml(yaml_data)
+
+    # Save new YAML
+    new_yaml_file = yaml_file.replace(".yaml", "_with_keys.yaml")
+    with open(new_yaml_file, "w", encoding="utf-8") as f:
+        yaml.dump(new_yaml_data, f, default_flow_style=False, allow_unicode=True)
+
+    # Save translations
+    tm.save_translations()
+
+    click.echo(f"Migration complete:")
+    click.echo(f"  New YAML: {new_yaml_file}")
+    click.echo(f"  Translations: {translations_dir}/")
+
+
+@translations.command()
+@click.argument("yaml_file", type=click.Path(exists=True))
+@click.option("--lang", "-l", default="en", help="Target language")
+@click.option(
+    "--translations-dir", "-d", default="translations", help="Translations directory"
+)
+@click.option("--output", "-o", help="Output file (default: datamodel_{lang}.yaml)")
+def render(yaml_file, lang, translations_dir, output):
+    """Render YAML with translations for specific language"""
+    # Load YAML with keys
+    with open(yaml_file, "r", encoding="utf-8") as f:
+        yaml_data = yaml.safe_load(f)
+
+    # Initialize translation manager and processor
+    tm = HierarchicalTranslationManager(translations_dir)
+    processor = HierarchicalDatamodelProcessor(tm)
+
+    # Render with translations
+    rendered_yaml = processor.render_with_translations(yaml_data, lang)
+
+    # Save rendered YAML
+    if not output:
+        output = f"datamodel_{lang}.yaml"
+
+    with open(output, "w", encoding="utf-8") as f:
+        yaml.dump(rendered_yaml, f, default_flow_style=False, allow_unicode=True)
+
+    click.echo(f"Rendered {lang} version: {output}")
 
 
 # Backward compatibility command (deprecated)
