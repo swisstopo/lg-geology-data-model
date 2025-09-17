@@ -73,9 +73,6 @@ class ModelTranslationManager:
                 )
 
 
-
-
-
 class ModelProcessor:
     """
     Processes YAML models with translation support
@@ -335,7 +332,10 @@ class HierarchicalTranslationManager:
 
                 # Class description
                 desc_key = f"theme.{theme_key}.class.{class_key}.description"
-                ws.cell(row=current_row, column=1, value="Description")
+                cell = ws.cell(row=current_row, column=1, value="Description")
+                cell.alignment = Alignment(wrap_text=True, vertical="top")
+                ws.row_dimensions[current_row].height = 60  # TODO make it dynamic
+
                 ws.cell(
                     row=current_row,
                     column=3,

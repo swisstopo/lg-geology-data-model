@@ -236,7 +236,7 @@ def validate(ctx, datamodel):
 )
 @click.option("--output", "-o", type=click.Path(), help="Output file path")
 @click.pass_context
-def export(ctx, datamodel, format, output):
+def legacy_export(ctx, datamodel, format, output):
     """Export GeoCover datamodel to Excel/JSON formats"""
     try:
         # Auto-generate output filename if not provided
