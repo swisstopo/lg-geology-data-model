@@ -15,6 +15,8 @@ from openpyxl.styles import Alignment, Border, Font, PatternFill, Side
 from openpyxl.utils import get_column_letter
 from openpyxl.utils.dataframe import dataframe_to_rows
 
+from loguru import logger
+
 # Update your config.py to include the new languages
 AVAILABLE_LANGUAGES = ["de", "fr", "it", "en"]  # Extended from your current DE/FR
 
@@ -572,11 +574,19 @@ class HierarchicalTranslationManager:
                 # Class description
                 key = f"theme.{current_theme}.class.{current_class}.description"
                 self._store_translations(key, row)
-            elif row_type == "" and name_attr and current_theme and current_class:
+            elif (
+                (row_type == "" or row_type == "nan")
+                and name_attr
+                and current_theme
+                and current_class
+            ):
                 # Attribute
                 attr_name = name_attr.lower()
                 key = f"theme.{current_theme}.class.{current_class}.attr.{attr_name}.description"
+                logger.debug(f"Attribute: {current_class} - {attr_name}")
                 self._store_translations(key, row)
+            else:
+                logger.warning(f"Unkonw row type: {row_type}")
 
         # Save translation files
         self.save_translations()
