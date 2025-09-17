@@ -586,7 +586,7 @@ def translations(ctx):
 
 
 # Add migration command
-@translations.command()
+@translations.command(name="migrate")
 @click.argument("datamodel", type=click.Path(exists=True))
 @click.option(
     "--translations-dir", "-t", default="translations", help="Translations directory"
@@ -666,6 +666,45 @@ def import_excel(excel_file, translations_dir, yaml_output):
         yaml.dump(yaml_structure, f, default_flow_style=False, allow_unicode=True)
 
     click.echo(f"Imported translations and created: {yaml_output}")
+
+
+@translations.command(name="status")
+@click.option("--translations-dir", "-t", default="translations")
+def translation_status(translations_dir):
+    """Show translation completion status"""
+    tm = HierarchicalTranslationManager(translations_dir)
+    stats = tm.get_translation_status()
+
+    click.echo("📊 Translation Status:")
+    click.echo()
+    for lang, data in stats.items():
+        percentage = data["percentage"]
+        status_icon = "✅" if percentage == 100 else "🔄" if percentage > 0 else "❌"
+        click.echo(
+            f"  {status_icon} {lang.upper()}: {data['translated']}/{data['total']} ({percentage}%)"
+        )
+
+    click.echo()
+    click.echo(
+        "💡 Use 'gcdocs export-missing --lang it' to get missing translations for Italian"
+    )
+
+
+@translations.command(name="test")
+@click.argument("key")
+@click.option("--lang", default="de")
+@click.option("--translations-dir", "-t", default="translations")
+def test_translation(key, lang, translations_dir):
+    """Test translation lookup with fallbacks"""
+    tm = HierarchicalTranslationManager(translations_dir)
+
+    click.echo(f"🔍 Testing translation for key: {key}")
+    click.echo()
+
+    for test_lang in ["de", "fr", "it", "en"]:
+        result = tm.get_translation(key, test_lang)
+        status = "✅" if key in tm.translations.get(test_lang, {}) else "🔄 (fallback)"
+        click.echo(f"  {test_lang.upper()}: {result} {status}")
 
 
 @translations.command()

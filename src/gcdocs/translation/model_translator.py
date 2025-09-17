@@ -224,19 +224,99 @@ class HierarchicalTranslationManager:
                 self.translations[lang] = {}
                 logging.warning(f"Translation file for {lang} not found")
 
-    def get_translation(self, key: str, lang: str, fallback_lang: str = "en") -> str:
-        """Get translation for a hierarchical key"""
-        if lang in self.translations and key in self.translations[lang]:
-            return self.translations[lang][key]
-        elif (
-            fallback_lang in self.translations
-            and key in self.translations[fallback_lang]
-        ):
-            logging.warning(f"Using fallback {fallback_lang} for key '{key}' in {lang}")
-            return self.translations[fallback_lang][key]
+    def get_translation(
+        self, key: str, target_lang: str, fallback_text: str = ""
+    ) -> str:
+        """
+        Get translation with intelligent fallback logic
+
+        Priority order:
+        1. Target language (e.g., 'it')
+        2. German ('de') - primary fallback
+        3. French ('fr') - secondary fallback
+        4. English ('en') - tertiary fallback
+        5. Fallback text or [MISSING] indicator
+        """
+
+        # 1. Try target language first
+        if target_lang in self.translations and key in self.translations[target_lang]:
+            translation = self.translations[target_lang][key]
+            if translation and translation.strip():
+                return translation.strip()
+
+        # 2. Try German fallback (most complete)
+        if target_lang not in ["de", "it"] and key in self.translations.get("de", {}):
+            german_text = self.translations["de"][key]
+            if german_text and german_text.strip():
+                logger.debug(f"Using German fallback for {key} ({target_lang})")
+                return german_text.strip()
+
+        # 3. Try French fallback
+        if target_lang not in ["de", "fr"] and key in self.translations.get("fr", {}):
+            french_text = self.translations["fr"][key]
+            if french_text and french_text.strip():
+                logger.debug(f"Using French fallback for {key} ({target_lang})")
+                return french_text.strip()
+
+        # 4. Try English fallback
+        if target_lang != "en" and key in self.translations.get("en", {}):
+            english_text = self.translations["en"][key]
+            if english_text and english_text.strip():
+                logger.debug(f"Using English fallback for {key} ({target_lang})")
+                return english_text.strip()
+
+        # 5. Use fallback text or show missing indicator
+        if fallback_text and fallback_text.strip():
+            logger.warning(
+                f"No translation found for key '{key}' in {target_lang}, using fallback"
+            )
+            return fallback_text.strip()
         else:
-            logging.error(f"Missing translation for key '{key}' in {lang}")
-            return f"[MISSING: {key}]"
+            logger.error(f"Missing translation for key '{key}' in {target_lang}")
+            return f"[MISSING {target_lang.upper()}: {key.split('.')[-1]}]"
+
+    def get_translation_status(self) -> Dict[str, Dict[str, int]]:
+        """Get translation completion statistics"""
+
+        # Get all unique keys across all languages
+        all_keys = set()
+        for lang_dict in self.translations.values():
+            all_keys.update(lang_dict.keys())
+
+        stats = {}
+        for lang in self.supported_languages:
+            translated_keys = set(self.translations.get(lang, {}).keys())
+            stats[lang] = {
+                "translated": len(translated_keys),
+                "total": len(all_keys),
+                "percentage": round(len(translated_keys) / len(all_keys) * 100, 1)
+                if all_keys
+                else 0,
+                "missing": len(all_keys - translated_keys),
+            }
+
+        return stats
+
+    def get_missing_translations(self, target_lang: str) -> Dict[str, str]:
+        """Get list of missing translations for a language with fallback text"""
+
+        # Get all keys from other languages
+        all_keys = set()
+        for lang, translations in self.translations.items():
+            if lang != target_lang:
+                all_keys.update(translations.keys())
+
+        # Find missing keys
+        existing_keys = set(self.translations.get(target_lang, {}).keys())
+        missing_keys = all_keys - existing_keys
+
+        # Get fallback text for missing keys
+        missing_with_fallback = {}
+        for key in missing_keys:
+            fallback = self.get_translation(key, "de")  # Use German as fallback source
+            missing_with_fallback[key] = fallback
+
+        return missing_with_fallback
 
     def export_to_structured_excel(self, yaml_data: dict, output_file: str):
         """Export YAML data to structured Excel format with translations"""
