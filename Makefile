@@ -1,4 +1,4 @@
-LANGUAGES = de fr
+LANGUAGES = de fr it en
 FORMATS = pdf odt docx html
 
 EXPORT_DIR ?= exports

@@ -135,8 +135,20 @@ class EnhancedMarkdownGenerator:
         output_dir = Path(output_dir)
         processed_data = self._ensure_template_compatibility(yaml_data, language)
 
+        output_path = output_dir / language
+
+        json_file = output_path / "processed_data.json"
+        logger.info(f"Saving to {json_file}")
+        with open(json_file, "w", encoding="utf-8") as f:
+            f.write(CustomEncoder.to_json(processed_data, indent=4))
+
         # Continue with your existing processing
         final_data = self.process_model_data(processed_data, language)
+
+        json_file = output_path / "final_data.json"
+        logger.info(f"Saving to {json_file}")
+        with open(json_file, "w", encoding="utf-8") as f:
+            f.write(CustomEncoder.to_json(final_data, indent=4))
 
         return self._render_markdown(final_data, language, output_dir)
 
@@ -335,7 +347,7 @@ class EnhancedMarkdownGenerator:
         env = jinja2.Environment(
             autoescape=True,
             loader=loader,
-            undefined=jinja2.StrictUndefined,  # This is the magic line!
+            undefined=jinja2.DebugUndefined,  # StrictUndefined,  # This is the magic line!
         )
 
         def slugify(input):
