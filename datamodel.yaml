@@ -48,6 +48,13 @@ themes:
         gravitaires, glaciaires ou anthropogéniques jusqu’à leur
         position actuelle, ou dégagés sur place par dégradation de
         la roche sous-jacente.
+      it: |-
+        La classe Unconsolidated_Deposits_PT comprende i volumi 
+        rocciosi individualizzati (di dimensioni variabili, dai 
+        ciottoli ai blocchi) che sono stati trasportati da processi
+        gravitazionali, glaciali o antropogenici fino alla loro
+        posizione attuale, o liberati sul posto dal degrado della
+        roccia sottostante.
     attributes:
     - name: kind
       att_type: subtype
@@ -63,6 +70,7 @@ themes:
       description:
         de: Zustand der Objektart
         fr: État du type d'objet
+        it: Stato del tipo di oggetto
       cardinality: "1"
       mandatory: false
     - name: rock_spe
@@ -71,6 +79,7 @@ themes:
       description:
         de: Bezeichnung des Leitgesteins.
         fr: Description de la roche repère
+        it: Denominazione della roccia guida
       cardinality: 0..1
       mandatory: false
     - name: rock_type

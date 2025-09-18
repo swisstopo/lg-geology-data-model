@@ -18,6 +18,7 @@ import subprocess
 import datetime
 import babel.dates
 
+
 from ..config import GeoDataConfig
 from ..translation.translator import (
     SimpleTranslator,
@@ -38,6 +39,16 @@ from gcdocs.translation.model_translator import (
 from loguru import logger
 import yaml
 from pathlib import Path
+
+from ..config import AVAILABLE_LANGUAGES
+
+
+# TODO: should use `add_custom_translations`
+def get_lang_name(lang):
+
+    names = {'de': 'Deutsch', 'fr': 'Français', 'it': 'Italiano', 'en': 'English'}
+
+    return names.get(lang.lower(), 'unknown')
 
 
 def get_short_revision(version_str):
@@ -103,8 +114,9 @@ class EnhancedMarkdownGenerator:
 
         # Initialize geological code translator (existing)
         self.geol_translator = create_translator(config.translation_df)
+
         self._translator = self.geol_translator
-        # Initialize model translation manager (new)
+        # Initialize model translation manager (new) TODO
         translations_dir = Path.cwd() / "translations"
         self.model_translator = HierarchicalTranslationManager(str(translations_dir))
         self.model_translator.load_translations()
@@ -120,6 +132,8 @@ class EnhancedMarkdownGenerator:
     def generate_markdown(self, datamodel_file: str, language: str, output_dir: str):
         """Enhanced generate with model translation support"""
 
+        logger.debug(f"Loading model from {datamodel_file}")
+
         with open(datamodel_file, "r", encoding="utf-8") as f:
             yaml_data = yaml.safe_load(f)
 
@@ -133,20 +147,31 @@ class EnhancedMarkdownGenerator:
 
         # CRITICAL: Convert to template-compatible format
         output_dir = Path(output_dir)
+        # TODO, what is the translation source the YAML or JSON?
+        #
         processed_data = self._ensure_template_compatibility(yaml_data, language)
 
-        output_path = output_dir / language
+        #logger.debug(f"Model compatility:\n{processed_data}")
 
+        output_path = output_dir / language
+        # Create dir, otherwise silently fails
+        output_path.mkdir(parents=True, exist_ok=True)
+
+        # TODO
         json_file = output_path / "processed_data.json"
-        logger.info(f"Saving to {json_file}")
+        logger.info(f"Saving 'processed' to {json_file}")
+
+
         with open(json_file, "w", encoding="utf-8") as f:
             f.write(CustomEncoder.to_json(processed_data, indent=4))
+            f.write(str(processed_data))
+
 
         # Continue with your existing processing
         final_data = self.process_model_data(processed_data, language)
 
         json_file = output_path / "final_data.json"
-        logger.info(f"Saving to {json_file}")
+        logger.info(f"Saving  'final' to {json_file}")
         with open(json_file, "w", encoding="utf-8") as f:
             f.write(CustomEncoder.to_json(final_data, indent=4))
 
@@ -159,7 +184,9 @@ class EnhancedMarkdownGenerator:
             if isinstance(item, dict):
                 new_item = {}
                 for key, value in item.items():
+
                     if key == "description_key" and isinstance(value, str):
+
                         # Convert translation key to template-compatible structure
                         translated_text = self.model_translator.get_translation(
                             value, language
@@ -178,8 +205,15 @@ class EnhancedMarkdownGenerator:
                         }
 
                     elif key == "description" and isinstance(value, dict):
-                        # Already in correct format, keep as is
+                        # Already in correct format, only adding language
                         new_item[key] = value
+                        default_value = value.get('de','')
+                        for lang in ['it', 'en']:
+                            if lang not in new_item[key]:
+                                new_item[key][lang] = default_value
+
+
+
 
                     elif key == "description" and isinstance(value, str):
                         # Single string - convert to nested structure
@@ -199,6 +233,7 @@ class EnhancedMarkdownGenerator:
                 return [process_item(sub_item) for sub_item in item]
             else:
                 return item
+
 
         return process_item(yaml_data)
 
@@ -253,15 +288,22 @@ class EnhancedMarkdownGenerator:
                             att["pairs"] = pairs
 
                         # Process geological codes in the pairs using your existing translator
+                        # traduction OK
+                        # TODO: what is the goal here
                         if "pairs" in att and att["pairs"]:
                             translated_pairs = {}
                             for code, description in att["pairs"].items():
                                 # Use your existing geological code translator
+                                #  def translate(self, geol_code: str, fallback: str, lang: str = "FR")
                                 translated_desc = self.geol_translator.translate(
-                                    code, language.upper()
-                                )
+                                    code, 'IT') # language.upper()
+
+                                logger.debug(f"code: {code}, desc: {description}, it: {translated_desc}")
+
                                 translated_pairs[code] = translated_desc
                             att["translated_pairs"] = translated_pairs
+                            att["pairs"] = translated_pairs
+
 
         # Process annexes (your existing logic)
         for annex in data.get("annexes", []):
@@ -312,6 +354,7 @@ class EnhancedMarkdownGenerator:
         model_data = self._process_model(data)  # add missing fields
         model_data["lang"] = lang
         model_data["date"] = datetime.now()
+        model_data["current_lang"] = get_lang_name(lang)
 
         import subprocess
 
@@ -395,18 +438,13 @@ class EnhancedMarkdownGenerator:
 
             return p.sub(r"**\1**", input)
 
-        # TODO translation fall back is too easy
-        """def translate_filter(geol_code, fallback_text, target_lang="FR"):
-            translator = self._get_simple_translator()
-            return translator.translate(
-                str(geol_code), fallback_text, target_lang.upper()
-            )"""
 
-        def translate_filter(geol_code):
+        def translate_filter(geol_code, **kwargs):
             """Translate geological code to default language."""
 
+
             translator = self._get_translator()
-            return translator.translate(geol_code, lang=lang.upper())
+            return translator.translate(geol_code, lang=lang.upper(), **kwargs)
 
         def translate_de_filter(geol_code):
             """Translate geological code to German."""
@@ -419,25 +457,37 @@ class EnhancedMarkdownGenerator:
             translator = self._get_translator()
             return translator.translate(geol_code, lang="FR")
 
+        def translate_it_filter(geol_code):
+            """Translate geological code to French."""
+            translator = self._get_translator()
+            return translator.translate(geol_code, lang="IT")
+
+        def translate_en_filter(geol_code):
+            """Translate geological code to French."""
+            translator = self._get_translator()
+            return translator.translate(geol_code, lang="EN")
+
+        # TODO add placeholder à-la babel
         def translate_ui(text, **kwargs):
-            # Simulate translation (you can hook into any i18n system here)
-            translated = text  # Replace with actual translation logic if needed
-            return translated % kwargs if kwargs else translated
+            translator = self._get_translator()
+            return translator.translate(text, lang=lang.upper(), **kwargs)
 
         # Add your existing filters
         env.filters["slugify"] = slugify
         env.filters["highlight"] = highlight
         # Note: Remove the old 'tr' filter since translations are now in the data
 
-        # TODO
+
         env.globals["_"] = translate_ui
 
         env.filters["slugify"] = slugify
         env.filters["highlight"] = highlight
         env.filters["tr"] = translate_filter
-        # TODO
+
         env.filters["tr_de"] = translate_de_filter
         env.filters["tr_fr"] = translate_fr_filter
+        env.filters["tr_it"] = translate_it_filter
+        env.filters["tr_en"] = translate_en_filter
         env.filters["format_date_locale"] = format_date_locale
         env.filters["remove_prefix"] = remove_prefix
         env.filters["attribute_name"] = attribute_name
@@ -598,8 +648,6 @@ class EnhancedMarkdownGenerator:
 
     def _get_coded_values(self, domain_name: str) -> Dict[str, str]:
         """Get coded values from domain (from original get_coded_values function)"""
-        # TODO: should be a function
-        # domains = self.config.domains
 
         domains = self.config.sde_schema.get("coded_domain", {})
 

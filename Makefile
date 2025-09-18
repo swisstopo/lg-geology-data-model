@@ -36,6 +36,7 @@ PANDOC_OPTIONS=--standalone \
 # Define language-specific options
 OPTIONS_de = --metadata lang=de  --metadata-file=$(INPUT_DIR)/de/metadata.yaml -V lang=de
 OPTIONS_fr = --metadata lang=fr  --metadata-file=$(INPUT_DIR)/fr/metadata.yaml -V lang=fr
+OPTIONS_it = --metadata lang=it  --metadata-file=$(INPUT_DIR)/it/metadata.yaml -V lang=it
 
 # format specific options
 PANDOC_HTML_OPTIONS=  --to html5 --toc  --toc-depth=3  --include-in-header=$(INPUT_DIR)/de/headers.html  --include-after-body=assets/sortable.html  --css $(CSS)
@@ -54,6 +55,8 @@ help:
 	@echo "  make mds                - Generate only Markdown files for all languages"
 	@echo "  make de                 - Generate all files (PDF, DOCX, HTML and ODT) for German"
 	@echo "  make fr                 - Generate all files (PDF, DOCX, HTML and ODT) for French"
+	@echo "  make it                 - Generate all files (PDF, DOCX, HTML and ODT) for Italian"
+	@echo "  make en                 - Generate all files (PDF, DOCX, HTML and ODT) for English"
 	@echo "  make markdown           - Generate markdown files"
 	@echo "  make diagram            - Generate ER diagram"
 	@echo "  make validate           - Validate the datamodel against the schema"
@@ -138,9 +141,11 @@ mds: $(foreach lang,$(LANGUAGES),$(INPUT_DIR)/$(lang)/datamodel.md)
 
 
 # Targets for building specific languages
-.PHONY: de fr it
+.PHONY: de fr it en
 de: $(foreach fmt,$(FORMATS),$(OUTPUT_DIR)/de/datamodel.$(fmt))
 fr: $(foreach fmt,$(FORMATS),$(OUTPUT_DIR)/fr/datamodel.$(fmt))
+it: $(foreach fmt,$(FORMATS),$(OUTPUT_DIR)/it/datamodel.$(fmt))
+en: $(foreach fmt,$(FORMATS),$(OUTPUT_DIR)/en/datamodel.$(fmt))
 
 .PHONY: validate
 validate:
@@ -217,3 +222,5 @@ cleanhtml:
 cleaninputs:
 	rm -rf $(INPUT_DIR)/de/*
 	rm -rf $(INPUT_DIR)/fr/*
+	rm -rf $(INPUT_DIR)/it/*
+	rm -rf $(INPUT_DIR)/en/*

@@ -78,6 +78,7 @@ def gcdocs(ctx, debug, logfile):
     # Store config in context
     ctx.ensure_object(dict)
     ctx.obj["config"] = get_default_config()
+    ctx.obj["debug"] = debug
 
 
 @gcdocs.command()
@@ -127,6 +128,8 @@ def generate(ctx, lang, datamodel, output, input_dir):
         # Generate documentation
         # TODO generator = MarkdownGenerator(config)
         generator = EnhancedMarkdownGenerator(config)
+        if ctx.obj.get('debug'):
+            logger.debug(f"Translation dir: {generator.model_translator.translations_dir}")
         for lg in lang:
             output_path = generator.generate_markdown(datamodel, lg.lower(), output)
             click.echo(f"✓ Generated Markdown documentation in {output_path}")
@@ -151,7 +154,9 @@ def generate(ctx, lang, datamodel, output, input_dir):
 
 @gcdocs.command()
 @click.option(
-    "--lang", type=click.Choice(["de", "fr"], case_sensitive=False), required=True
+    "--lang",
+    type=click.Choice(AVAILABLE_LANGUAGES, case_sensitive=False),
+    required=True,
 )
 @click.option(
     "--format",
@@ -176,7 +181,7 @@ def build(ctx, lang, format, datamodel, input_dir):
         generate,
         lang=lang,
         datamodel=datamodel,
-        input_dir="exports/2025-08-26",
+        input_dir=input_dir,  # "exports/2025-08-26",
         output=INPUT_DIR,
     )
 
@@ -409,22 +414,32 @@ def legacy_translations(ctx, input_dir, output_dir):
 @click.pass_context
 def merge_translations(ctx, input_dir, output, stats):
     """Merge and manage translation files"""
+    debug = ctx.obj.get("debug", False)
     try:
         config = GeoDataConfig(Path(input_dir).resolve())
 
         if stats:
             # Show statistics
             translation_stats = config.get_translation_stats()
+
             click.echo("📊 Translation Statistics:")
             click.echo(f"   Total entries: {translation_stats['total_entries']}")
             click.echo(
-                f"   German translations: {translation_stats['german_translations']}"
+                f"   German translations: {translation_stats['de_translations']}"
             )
             click.echo(
-                f"   French translations: {translation_stats['french_translations']}"
+                f"   French translations: {translation_stats['fr_translations']}"
             )
-            click.echo(f"   Missing German: {translation_stats['missing_german']}")
-            click.echo(f"   Missing French: {translation_stats['missing_french']}")
+            click.echo(
+                f"   Italian translations: {translation_stats['it_translations']}"
+            )
+            click.echo(
+                f"   English translations: {translation_stats['en_translations']}"
+            )
+            click.echo(f"   Missing German: {translation_stats['missing_de']}")
+            click.echo(f"   Missing French: {translation_stats['missing_fr']}")
+            click.echo(f"   Missing Italian: {translation_stats['missing_it']}")
+            click.echo(f"   Missing English: {translation_stats['missing_en']}")
             click.echo(f"   Complete entries: {translation_stats['complete_entries']}")
 
         if output:
@@ -442,9 +457,13 @@ def merge_translations(ctx, input_dir, output, stats):
             click.echo("💡 Use --output FILE.xlsx to save merged translations")
 
     except Exception as e:
+        import traceback
+
         logger.error(f"Translation merge failed: {e}")
         click.echo(f"❌ Translation merge failed: {e}")
+
         if ctx.obj.get("debug"):
+            click.echo(traceback.print_exc())
             raise
         sys.exit(1)
 

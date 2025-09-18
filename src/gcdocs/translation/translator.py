@@ -233,48 +233,69 @@ class Translator:
 
         logger.debug(f"Lookup dict with {len(self.translations)} translation entries")
 
-    def translate(self, geol_code, lang="FR"):
+    # TODO: No translation found for code 'Revision %(name)s' in IT or FR
+    def translate(self, text, lang="FR", **kwargs):
         """
-        Public method to translate geological codes with error tracking.
+        Public method to translate geological codes or formatted strings.
 
         Args:
-            geol_code: The geological code to translate
+            text: The geological code or string to translate
             lang: Target language ("FR" or "DE")
+            **kwargs: Named parameters for string formatting (e.g., name=value)
 
         Returns:
-            str: Translated text or original code if translation fails
+            str: Translated and formatted text, or original if translation fails
+
+        Examples:
+            translate("12345", "FR")  # Simple code translation
+            translate("Revision %(name)s", "FR", name="2024-v1")  # Formatted string
         """
-        translated_text, err = self._translate(geol_code, lang)
+        translated_text, err = self._translate(text, lang)
 
         if err:
             with self._lock:
-                # self.failed_translations += 1
-                self.failed_strings.append(str(geol_code))  # Fixed: was 'text'
+                self.failed_strings.append(str(text))
+
+        # Apply formatting if kwargs provided
+        if kwargs:
+            try:
+                translated_text = translated_text % kwargs
+            except (KeyError, ValueError, TypeError) as e:
+                logger.warning(f"Failed to format '{translated_text}' with {kwargs}: {e}")
+                # Fallback: try to format original text
+                try:
+                    translated_text = str(text) % kwargs
+                except Exception:
+                    pass  # Keep translated_text as-is
 
         return translated_text
 
-    def _translate(self, geol_code, lang):
+    def _translate(self, text, lang):
         """
         Internal translation method with intelligent fallback logic.
+
+        Handles both:
+        - Simple geological codes (e.g., "12345")
+        - Template strings with placeholders (e.g., "Revision %(name)s")
 
         Priority order:
         1. Requested language (FR or DE)
         2. German (DE) if French was requested but not available
         3. French (FR) if German was requested but not available
-        4. Original geological code
+        4. Original text
 
         Args:
-            geol_code: The geological code to translate
+            text: The geological code or string to translate
             lang: Requested language ("FR" or "DE")
 
         Returns:
             tuple: (translated_message, error_occurred)
         """
-        msg = str(geol_code)
+        msg = str(text)
         err = False
 
         # Handle special case for code "0"
-        if str(geol_code) == "0":
+        if str(text) == "0":
             return ("–", False)
 
         # Only process supported languages
@@ -283,45 +304,38 @@ class Translator:
             return (msg, False)
 
         try:
-            geol_code_str = str(geol_code)
-            # Try primary language first
-            primary_msg = self._get_translation(geol_code_str, lang)
+            text_str = str(text)
 
-            if primary_msg is not None and primary_msg != geol_code_str:
-                logger.debug(
-                    f"Translating into {lang}: {geol_code_str} -> {primary_msg}"
-                )
+            # Try primary language first
+            primary_msg = self._get_translation(text_str, lang)
+
+            if primary_msg is not None and primary_msg != text_str:
+                logger.debug(f"Translating into {lang}: {text_str} -> {primary_msg}")
                 return (self._clean_message(primary_msg), False)
 
             # Try fallback language
-            fallback_lang = (
-                "DE"
-                if lang
-                in (
-                    "FR",
-                    "EN",
-                )
-                else "FR"
-            )
-            fallback_msg = self._get_translation(geol_code_str, fallback_lang)
+            fallback_lang = "DE" if lang in ("FR", "EN") else "FR"
+            fallback_msg = self._get_translation(text_str, fallback_lang)
 
             if fallback_msg is not None:
                 logger.warning(
-                    f"Using {fallback_lang} fallback: '{geol_code}' -> '{fallback_msg}' (requested: {lang})"
+                    f"Using {fallback_lang} fallback: '{text}' -> '{fallback_msg}' "
+                    f"(requested: {lang})"
                 )
                 return (self._clean_message(fallback_msg), False)
 
             # No translation found in either language
             err = True
             logger.error(
-                f"No translation found for code '{geol_code}' in {lang} or {fallback_lang}"
+                f"No translation found for '{text}' in {lang} or {fallback_lang}"
             )
 
         except Exception as e:
             err = True
-            logger.error(f"Error translating code '{geol_code}': {e}")
+            logger.error(f"Error translating '{text}': {e}")
 
         return (msg, err)
+
 
     def _get_translation(self, geol_code_str, lang):
         """

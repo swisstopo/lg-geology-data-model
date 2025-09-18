@@ -224,7 +224,7 @@ class HierarchicalTranslationManager:
                     self.translations[lang] = json.load(f)
             else:
                 self.translations[lang] = {}
-                logging.warning(f"Translation file for {lang} not found")
+                logger.warning(f"Translation file for {lang} not found")
 
     def get_translation(
         self, key: str, target_lang: str, fallback_text: str = ""

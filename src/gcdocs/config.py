@@ -9,6 +9,10 @@ import pandas as pd
 from pathlib import Path
 from typing import Dict, Any, Optional
 from loguru import logger
+from rich.console import Console
+
+console = Console()
+
 
 AVAILABLE_LANGUAGES = ["de", "fr", "it", "en"]
 
@@ -218,10 +222,10 @@ class GeoDataConfig:
 
     def _load_merged_translations(self) -> pd.DataFrame:
         """Load and merge translation data from multiple sources"""
+        logger.debug("=== Loading translations ===")
         try:
             dataframes = []
 
-            code_dict = self.domains
 
             # 1. Load JSON coded domains (fallback German -> French)
             code_dict = self.domains
@@ -235,6 +239,8 @@ class GeoDataConfig:
                         ),  # Use German as fallback for French
                     }
                 )
+                df_json["IT"] = None
+                df_json["EN"] = None
                 df_json["GeolCodeInt"] = df_json["GeolCodeInt"].astype("string")
                 df_json["source"] = "coded_domains"
                 dataframes.append(df_json)
@@ -255,7 +261,8 @@ class GeoDataConfig:
                 df_excel["GeolCodeInt"] = df_excel["GeolCodeInt"].astype("string")
                 df_excel["source"] = "GeolCodeText_Trad_2025"
                 dataframes.append(df_excel)
-                logger.debug(f"Loaded Excel translations: {len(df_excel)} entries")
+                logger.debug(df_excel.head(5))
+                logger.info(f"Loaded Excel translations from {excel_file.resolve()}: {len(df_excel)} entries")
 
             # 4. Load custom chronology translations (if available)
             chrono_file = self._find_file("geolcode_chrono.csv")
@@ -264,18 +271,36 @@ class GeoDataConfig:
                 df_chrono["GeolCodeInt"] = df_chrono["GeolCodeInt"].astype("string")
                 df_chrono["source"] = "geolcode_chrono"
                 dataframes.append(df_chrono)
-                logger.debug(f"Loaded chrono translations: {len(df_chrono)} entries")
+                logger.debug(df_chrono.head(5))
+                logger.info(f"Loaded chrono translations from {chrono_file.resolve()}: {len(df_chrono)} entries")
 
             # 5. Load application UI translations (if available)
             app_translations = self._find_file("translations.xlsx")
             if app_translations:
-                df_app = pd.read_excel(app_translations, usecols=["msg_id", "de", "fr"])
+                df_app = pd.read_excel(app_translations, usecols=["msg_id", "de", "fr", "it", "en"])
                 df_app.columns = df_app.columns.str.upper()
                 df_app.rename(columns={"MSG_ID": "GeolCodeInt"}, inplace=True)
                 df_app["GeolCodeInt"] = df_app["GeolCodeInt"].astype("string")
+
+                df_app = pd.concat([
+                    df_app,
+                    pd.DataFrame([ {
+                            "GeolCodeInt": "current_lang",
+                            "DE": "Deutsch",
+                            "FR": "Français",
+                            "IT": "Italiano",
+                            "EN": "English",
+                        }])
+                ], ignore_index=True)
+
+
+
+
                 df_app["source"] = "translations"
                 dataframes.append(df_app)
-                logger.debug(f"Loaded app translations: {len(df_app)} entries")
+                logger.debug(df_app.head(5))
+
+                logger.info(f"Loaded app translations from {app_translations.resolve()}: {len(df_app)} entries")
 
             # 6. Add special hardcoded values
             special_codes = pd.DataFrame(
@@ -304,6 +329,7 @@ class GeoDataConfig:
                 ]
             )
             special_codes["GeolCodeInt"] = special_codes["GeolCodeInt"].astype("string")
+            special_codes['source'] = 'special'
             dataframes.append(special_codes)
 
             if not dataframes:
@@ -313,14 +339,9 @@ class GeoDataConfig:
             # Merge all dataframes
             merged_df = pd.concat(dataframes, ignore_index=True)
 
-            # TODO debug
-            """output_path = Path('toto')/ "all_merged.xlsx"
-            merged_df.to_excel(output_path, index=True, engine="openpyxl")
-            logger.debug(f"Saved merged translations to {output_path}")
-            logger.debug(f"Entries:  {len(merged_df)}")"""
 
             # Clean and process
-            translation_df = self._clean_translation_data(merged_df)
+            translation_df = self._clean_translation_data(merged_df, debug_export=True)
 
             logger.debug(
                 f"Loaded merged translations: {len(translation_df)} total entries"
@@ -346,6 +367,8 @@ class GeoDataConfig:
     def _find_file(self, filename: str) -> Optional[Path]:
         """Find a file in the input directory or package data"""
         # Try input directory first
+        current_path = None
+
         file_path = self.input_dir / filename
         if file_path.exists():
             return file_path
@@ -356,6 +379,7 @@ class GeoDataConfig:
 
             with resources.path("gcdocs.data", filename) as data_path:
                 if data_path.exists():
+
                     return data_path
         except (ImportError, FileNotFoundError):
             pass
@@ -363,78 +387,102 @@ class GeoDataConfig:
         # Try current directory
         current_path = Path(filename)
         if current_path.exists():
+            
             return current_path
 
         logger.error(f"Translation file not found: {filename}")
         return None
 
-    def _clean_translation_data(self, merged_df: pd.DataFrame) -> pd.DataFrame:
-        """Clean and process the merged translation DataFrame"""
-        # Ensure required columns exist
-        required_cols = ["GeolCodeInt", "DE", "FR", "IT", "EN"]
+    def _clean_translation_data(self, merged_df: pd.DataFrame, debug_export: bool = False) -> pd.DataFrame:
+        """Clean and process the merged translation DataFrame
+
+        Args:
+            merged_df: DataFrame to clean
+            debug_export: If True, export discarded data to Excel files
+        """
+        from datetime import datetime
+
+        required_cols = ["GeolCodeInt", "DE", "FR", "IT", "EN", "source"]
         for col in required_cols:
             if col not in merged_df.columns:
                 merged_df[col] = ""
 
-        # Clean the data
-        cleaned_df = (
-            merged_df[required_cols]  # Select only required columns
-            .drop_duplicates(
-                subset=["GeolCodeInt"], keep="last"
-            )  # Remove duplicates, keep latest
-            .assign(
-                # Convert all to string and clean
+        initial_count = len(merged_df)
+        df_work = merged_df[required_cols].copy()
+
+        # === DEBUG: Export duplicates ===
+        if debug_export:
+            timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+            debug_file = self.input_dir / f"debug_discarded_{timestamp}.xlsx"
+
+            # Find duplicates (those that will be removed)
+            duplicates = df_work[df_work.duplicated(subset=["GeolCodeInt"], keep="last")]
+
+            # Apply deduplication to continue
+            df_deduped = df_work.drop_duplicates(subset=["GeolCodeInt"], keep="last")
+
+            # Apply cleaning transformations
+            df_cleaned = df_deduped.assign(
                 GeolCodeInt=lambda x: x["GeolCodeInt"].astype("string"),
-                DE=lambda x: x["DE"]
-                .astype("string")
-                .replace(["0", "nan", "None"], "-"),
-                FR=lambda x: x["FR"]
-                .astype("string")
-                .replace(["0", "nan", "None"], "-"),
-                IT=lambda x: x["IT"]
-                .astype("string")
-                .replace(["0", "nan", "None"], "-"),
-                EN=lambda x: x["EN"]
-                .astype("string")
-                .replace(["0", "nan", "None"], "-"),
+                source=lambda x: x["source"].astype("string"),
+                DE=lambda x: x["DE"].astype("string").replace(["0", "nan", "None"], "-"),
+                FR=lambda x: x["FR"].astype("string").replace(["0", "nan", "None"], "-"),
+                IT=lambda x: x["IT"].astype("string").replace(["0", "nan", "None"], "-"),
+                EN=lambda x: x["EN"].astype("string").replace(["0", "nan", "None"], "-"),
             )
-            .query("GeolCodeInt != '' and GeolCodeInt != 'nan'")  # Remove empty codes
+
+            # Find empty codes (those that will be removed)
+            empty_codes = df_cleaned[
+                (df_cleaned["GeolCodeInt"] == "") | (df_cleaned["GeolCodeInt"] == "nan")
+                ]
+
+            # Create summary
+            summary_data = {
+                "Category": ["Initial rows", "Duplicates removed", "Empty codes removed", "Final rows"],
+                "Count": [
+                    initial_count,
+                    len(duplicates),
+                    len(empty_codes),
+                    len(df_cleaned) - len(empty_codes)
+                ]
+            }
+            summary_df = pd.DataFrame(summary_data)
+
+            # Write to Excel with multiple sheets
+            with pd.ExcelWriter(debug_file, engine='openpyxl') as writer:
+                summary_df.to_excel(writer, sheet_name="Summary", index=False)
+
+                if len(duplicates) > 0:
+                    duplicates.to_excel(writer, sheet_name="Duplicates", index=False)
+
+                if len(empty_codes) > 0:
+                    empty_codes.to_excel(writer, sheet_name="Empty_Codes", index=False)
+
+            logger.info(f"Debug data exported to: {debug_file}")
+            logger.info(f"  - Duplicates: {len(duplicates)}")
+            logger.info(f"  - Empty codes: {len(empty_codes)}")
+            logger.info(f"  - Total discarded: {len(duplicates) + len(empty_codes)}")
+
+        # === Normal cleaning process ===
+        cleaned_df = (
+            df_work
+            .drop_duplicates(subset=["GeolCodeInt"], keep="last")
+            .assign(
+                GeolCodeInt=lambda x: x["GeolCodeInt"].astype("string"),
+                source=lambda x: x["source"].astype("string"),
+                DE=lambda x: x["DE"].astype("string").replace(["0", "nan", "None"], "-"),
+                FR=lambda x: x["FR"].astype("string").replace(["0", "nan", "None"], "-"),
+                IT=lambda x: x["IT"].astype("string").replace(["0", "nan", "None"], "-"),
+                EN=lambda x: x["EN"].astype("string").replace(["0", "nan", "None"], "-"),
+            )
+            .query("GeolCodeInt != '' and GeolCodeInt != 'nan'")
             .sort_values("GeolCodeInt")
             .set_index("GeolCodeInt")
         )
 
         return cleaned_df
 
-    '''def _clean_translation_data(self, merged_df: pd.DataFrame) -> pd.DataFrame:
-        """Clean and process the merged translation DataFrame"""
-        # Ensure required columns exist
-        required_cols = ["GeolCodeInt", "DE", "FR"]
-        for col in required_cols:
-            if col not in merged_df.columns:
-                merged_df[col] = ""
 
-        # Clean the data
-        cleaned_df = (
-            merged_df[required_cols]  # Select only required columns
-            .drop_duplicates(
-                subset=["GeolCodeInt"], keep="last"
-            )  # Remove duplicates, keep latest
-            .assign(
-                # Convert all to string and clean
-                GeolCodeInt=lambda x: x["GeolCodeInt"].astype("string"),
-                DE=lambda x: x["DE"]
-                .astype("string")
-                .replace(["0", "nan", "None"], "-"),
-                FR=lambda x: x["FR"]
-                .astype("string")
-                .replace(["0", "nan", "None"], "-"),
-            )
-            .query("GeolCodeInt != '' and GeolCodeInt != 'nan'")  # Remove empty codes
-            .sort_values("GeolCodeInt")
-            .set_index("GeolCodeInt")
-        )
-
-        return cleaned_df'''
 
     def save_merged_translations(self, output_path: Optional[str] = None) -> Path:
         """Save the merged translation DataFrame to Excel"""
@@ -446,21 +494,64 @@ class GeoDataConfig:
         translation_df = self.translation_df
         translation_df.to_excel(output_path, index=True, engine="openpyxl")
         logger.info(f"Saved merged translations to {output_path}")
-        s
+
         return output_path
 
     def get_translation_stats(self) -> Dict[str, Any]:
         """Get statistics about the loaded translations"""
         df = self.translation_df
 
-        return {
-            "total_entries": len(df),
-            "german_translations": len(df[df["DE"] != "-"]),
-            "french_translations": len(df[df["FR"] != "-"]),
-            "missing_german": len(df[df["DE"] == "-"]),
-            "missing_french": len(df[df["FR"] == "-"]),
-            "complete_entries": len(df[(df["DE"] != "-") & (df["FR"] != "-")]),
-        }
+        if df is None or df.empty:
+            return self._get_empty_stats()
+
+        languages = ["DE", "FR", "IT", "EN"]
+
+        # Validate columns
+        for lang in languages:
+            if lang not in df.columns:
+                raise ValueError(f"Missing required column: {lang}")
+
+        # Create boolean masks for missing values
+        missing_masks = {}
+        present_masks = {}
+
+        for lang in languages:
+            # Combine multiple missing conditions
+            missing_mask = (
+                (df[lang] == "-")
+                | (df[lang] == "")
+                | df[lang].isna()
+                | (
+                    df[lang].isnull()
+                    if hasattr(df[lang], "isnull")
+                    else pd.isnull(df[lang])
+                )
+            )
+            missing_masks[lang] = missing_mask
+            present_masks[lang] = ~missing_mask
+
+        # Calculate complete entries (all languages present)
+        complete_mask = (
+            present_masks["DE"]
+            & present_masks["FR"]
+            & present_masks["IT"]
+            & present_masks["EN"]
+        )
+        complete_entries = complete_mask.sum()
+        total_entries = len(df)
+
+        stats = {"total_entries": total_entries}
+
+        # Add translations and missing counts for each language
+        for lang in languages:
+            stats[f"{lang.lower()}_translations"] = present_masks[lang].sum()
+            stats[f"missing_{lang.lower()}"] = missing_masks[lang].sum()
+
+        # Add complete and missing translation counts
+        stats["complete_entries"] = complete_entries
+        stats["missing_translation"] = total_entries - complete_entries
+
+        return stats
 
     def add_custom_translations(self, custom_translations: Dict[str, Dict[str, str]]):
         """Add custom translations to the existing DataFrame
