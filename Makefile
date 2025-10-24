@@ -37,6 +37,7 @@ PANDOC_OPTIONS=--standalone \
 OPTIONS_de = --metadata lang=de  --metadata-file=$(INPUT_DIR)/de/metadata.yaml -V lang=de
 OPTIONS_fr = --metadata lang=fr  --metadata-file=$(INPUT_DIR)/fr/metadata.yaml -V lang=fr
 OPTIONS_it = --metadata lang=it  --metadata-file=$(INPUT_DIR)/it/metadata.yaml -V lang=it
+OPTIONS_en = --metadata lang=en  --metadata-file=$(INPUT_DIR)/en/metadata.yaml -V lang=en
 
 # format specific options
 PANDOC_HTML_OPTIONS=  --to html5 --toc  --toc-depth=3  --include-in-header=$(INPUT_DIR)/de/headers.html  --include-after-body=assets/sortable.html  --css $(CSS)
@@ -69,13 +70,21 @@ help:
 assets:
 	mkdir -p $(OUTPUT_DIR)/de
 	mkdir -p $(OUTPUT_DIR)/fr
+	mkdir -p $(OUTPUT_DIR)/it
+	mkdir -p $(OUTPUT_DIR)/en
 	$(CP) assets/$(CSS) $(OUTPUT_DIR)/de
 	$(CP) assets/$(CSS) $(OUTPUT_DIR)/fr
+	$(CP) assets/$(CSS) $(OUTPUT_DIR)/it
+	$(CP) assets/$(CSS) $(OUTPUT_DIR)/en
 	$(CP) assets/geocover.png $(OUTPUT_DIR)/de
 	$(CP) assets/geocover.png $(OUTPUT_DIR)/fr
+	$(CP) assets/geocover.png $(OUTPUT_DIR)/it
+	$(CP) assets/geocover.png $(OUTPUT_DIR)/en
 	$(CP) assets/geocover.png .
 	$(CP) assets/model.png $(OUTPUT_DIR)/de
 	$(CP) assets/model.png $(OUTPUT_DIR)/fr
+	$(CP) assets/model.png $(OUTPUT_DIR)/it
+	$(CP) assets/model.png $(OUTPUT_DIR)/en
 	$(CP) assets/model.png .
 
 
