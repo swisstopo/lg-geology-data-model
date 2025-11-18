@@ -142,22 +142,26 @@ editable_fill = PatternFill(start_color="FFF2CC", end_color="FFF2CC", fill_type=
 # HELPER FUNCTIONS
 # =================================================================
 
-def create_reference_sheet(wb, sheet_name, data_dict, sort_by_code=True):
+def create_reference_sheet(wb, sheet_name, data_dict):
     ws = wb.create_sheet(sheet_name)
     ws['A1'], ws['B1'], ws['C1'] = "Code", "Label", "Display"
     for col in ['A1', 'B1', 'C1']:
         ws[col].fill = header_fill
         ws[col].font = header_font
-    
-    items = sorted(data_dict.items(), key=lambda x: int(x[0])) if sort_by_code else data_dict.items()
-    
+
+    # Sort by Label ascending, but push codes < 1e6 to the end
+    items = sorted(
+        data_dict.items(),
+        key=lambda x: (int(x[0]) < 1_000_000, str(x[1]))
+    )
+
     row = 2
     for code, label in items:
         ws[f'A{row}'] = int(code)
         ws[f'B{row}'] = str(label)
         ws[f'C{row}'] = f"{code}: {label}"
         row += 1
-    
+
     return row - 1
 
 def add_dropdown(ws, col_range, ref_sheet, ref_range, prompt_text, title):
