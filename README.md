@@ -150,6 +150,14 @@ Copiez manuellement les fichiers statiques suivants dans le répertoire `exports
 
 ## Génération des documents
 
+### Fichier XLSX pour le mapping des attributs
+
+```commandline
+python scripts/geology_tool_v4.0_with_cd_attributes.py
+```
+Le fichier sera écrit dans : _outputs/geology_mapping_tool_v4.0.xlsx_
+
+
 ### Génération du fichier Markdown
 
 ```commandline
