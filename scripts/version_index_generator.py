@@ -9,6 +9,9 @@ import json
 import os
 import sys
 import click
+import json
+import os
+import sys
 from datetime import datetime
 from collections import defaultdict
 from typing import List, Dict, Any
@@ -468,6 +471,7 @@ def main(no_upload):
     if not bucket_name:
         print("No bucket found. Exisiting")
         sys.exit(2)
+
     profile_name = os.getenv("AWS_PROFILE")  # None for default profile in CI
     cloudfront_domain = os.getenv(
         "CLOUDFRONT_DOMAIN", "dubious.cloud"
@@ -536,6 +540,7 @@ def main(no_upload):
     else:
         with open("index.html", "w") as f:
             f.write(html_content)
+
 
 
 if __name__ == "__main__":
