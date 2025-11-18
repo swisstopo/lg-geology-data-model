@@ -5,14 +5,14 @@ Geology Mapping Tool Generator - Version 4.0
 Intégration automatique des attributs CD depuis datamodel.yaml
 """
 
-from openpyxl import Workbook
-from openpyxl.worksheet.datavalidation import DataValidation
-from openpyxl.styles import PatternFill, Font
 import json
 import os
-import yaml
-from rich.console import Console
 
+import yaml
+from openpyxl import Workbook
+from openpyxl.styles import Font, PatternFill
+from openpyxl.worksheet.datavalidation import DataValidation
+from rich.console import Console
 
 console = Console()
 
@@ -411,6 +411,10 @@ widths = [15, 50, 20, 40, 15, 50, 35, 35, 35, 35, 35]
 for i, width in enumerate(widths, start=1):
     ws_bedrock.column_dimensions[chr(64 + i)].width = width
 
+# Hide
+for col in ["C", "E"]:
+    ws_bedrock.column_dimensions[col].hidden = True
+
 add_dropdown(
     ws_bedrock,
     "B2:B1000",
@@ -476,6 +480,9 @@ for col, header in enumerate(headers_unco, start=1):
     cell.fill = header_fill
     cell.font = header_font
 
+for col in ["C", "E", "G", "I"]:
+    ws_unco.column_dimensions[col].hidden = True
+
 for i in range(1, 10):
     ws_unco.column_dimensions[chr(64 + i)].width = 15 if i in [1, 3, 5, 7, 9] else 50
 
@@ -532,82 +539,6 @@ for row_num in range(2, 1001):
 for idx, code in enumerate(["UNCO_001", "UNCO_002"], start=2):
     ws_unco[f"A{idx}"] = code
 
-"""# FOSSILS_PT
-ws_fossils = wb.create_sheet("Fossils_PT", 2)
-headers_fossils = [
-    "User_Code",
-    "DIVISION_Display",
-    "DIVISION",
-    "SYSTEM_1_Display",
-    "SYSTEM_1",
-    "SYSTEM_2_Display",
-    "SYSTEM_2",
-    "SYSTEM_3_Display",
-    "SYSTEM_3",
-]
-for col, header in enumerate(headers_fossils, start=1):
-    cell = ws_fossils.cell(1, col, header)
-    cell.fill = header_fill
-    cell.font = header_font
-
-for i in range(1, 9):
-    ws_fossils.column_dimensions[chr(64 + i)].width = 15 if i in [1, 3, 5, 7] else 35
-
-if "GC_FOSS_LFOS_DIVISION_CD" in cd_refs:
-    ref_info = cd_refs["GC_FOSS_LFOS_DIVISION_CD"]
-    add_dropdown(
-        ws_fossils,
-        "B2:B1000",
-        ref_info["sheet_name"],
-        f"C$2:C${ref_info['last_row']}",
-        "Division de fossile",
-        "DIVISION",
-    )
-
-add_dropdown(
-    ws_fossils,
-    "D2:D1000",
-    "Ref_System",
-    f"C$2:C${system_last_row}",
-    "Système fossile (1)",
-    "SYSTEM_1",
-)
-add_dropdown(
-    ws_fossils,
-    "F2:F1000",
-    "Ref_System",
-    f"C$2:C${system_last_row}",
-    "Système fossile (2)",
-    "SYSTEM_2",
-)
-add_dropdown(
-    ws_fossils,
-    "H2:H1000",
-    "Ref_System",
-    f"C$2:C${system_last_row}",
-    "Système fossile (3)",
-    "SYSTEM_3",
-)
-
-for row_num in range(2, 1001):
-    for col in ["A", "B", "D", "F", "H"]:
-        ws_fossils[f"{col}{row_num}"].fill = editable_fill
-
-    ws_fossils[f"C{row_num}"] = (
-        f'=IF(B{row_num}="","",VALUE(LEFT(B{row_num},FIND(":",B{row_num})-1)))'
-    )
-    ws_fossils[f"E{row_num}"] = (
-        f'=IF(D{row_num}="","",VALUE(LEFT(D{row_num},FIND(":",D{row_num})-1)))'
-    )
-    ws_fossils[f"G{row_num}"] = (
-        f'=IF(F{row_num}="","",VALUE(LEFT(F{row_num},FIND(":",F{row_num})-1)))'
-    )
-    ws_fossils[f"I{row_num}"] = (
-        f'=IF(H{row_num}="","",VALUE(LEFT(H{row_num},FIND(":",H{row_num})-1)))'
-    )
-
-for idx, code in enumerate(["FOSSIL_001", "FOSSIL_002"], start=2):
-    ws_fossils[f"A{idx}"] = code"""
 
 print("   ✅ Bedrock, Unconsolidated créés")
 
@@ -649,7 +580,19 @@ for prefix, class_name in classes_config:
 
     # Set column widths
     for i in range(1, len(headers) + 1):
-        ws.column_dimensions[chr(64 + i)].width = 20 if i <= 3 else 35
+        head_name = None
+        try:
+            head_name = headers[i - 1]
+            print(f"{i} / {head_name}")
+        except Exception as e:
+            print(e)
+        if head_name and (
+            head_name in ("Notes", "User_Code") or head_name.endswith("_Display")
+        ):
+            ws.column_dimensions[chr(64 + i)].width = 20 if i <= 3 else 35
+        else:
+            ws.column_dimensions[chr(64 + i)].hidden = True
+            # ws.column_dimensions[chr(64 + i)].width = 9
 
     # Add KIND dropdown if available
     if class_name in subtype_refs:
