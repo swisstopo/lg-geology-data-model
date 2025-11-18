@@ -16,6 +16,55 @@ from rich.console import Console
 
 console = Console()
 
+name_mapping = {
+    "Unconsolidated_Deposits_PT": "Deposits_PT",
+    "Instability_Structures_PT": "Instability_PT",
+    "Instability_Structures_L": "Instability_L",
+    "Instabilities_PLG": "Instability_PLG",
+    "Glacial_Structures_PT": "Glacial_PT",
+    "Glacial_and_Periglacial_Structu": "Glacial/Periglacial",
+    "Glacial_Structures_PLG": "Glacial_PLG",
+    "Erosional_Structures_PT": "Erosion_PT",
+    "Erosional_Structures_L": "Erosion_L",
+    "Karstic_Structures_PT": "Karst_PT",
+    "Karstic_Structures_PLG": "Karst_PLG",
+    "Alluvial_and_Lacustrine_Structu": "Alluvial/Lacustrine",
+    "Deformation_Structures_PT": "Deformation_PT",
+    "Deformation_Structures_L": "Deformation_L",
+    "Deformation_Structures_PLG": "Deformation_PLG",
+    "Tectonic_Boundaries_L": "Tectonic_L",
+    "Folds_PT": "Folds_PT",
+    "Lineation_PT": "Lineation_PT",
+    "Planar_Structures_PT": "Planar_PT",
+    "Anomalies_PT": "Anomaly_PT",
+    "Indication_of_Resources_PT": "Resources_PT",
+    "Mineralised_Zone_L": "Mineral_L",
+    "Sedimentary_Structures_PT": "Sediment_PT",
+    "Type_Localities_PT": "Locality_PT",
+    "Prominent_Lithological_Features": "Lithology",
+    "Miscellaneous_PT": "Misc_PT",
+    "Geological_Outlines_L": "Geology_L",
+    "Slope_Bedrock_PT": "Slope_PT",
+    "Contour_Lines_Bedrock_L": "Contour_Bedrock_L",
+    "Modelled_Water_Table_PT": "WaterTable_PT",
+    "Contour_Lines_Hydro_L": "Contour_Hydro_L",
+    "Archaeology_PT": "Arch_PT",
+    "Archaeology_L": "Arch_L",
+    "Archaeology_PLG": "Arch_PLG",
+    "Exploitation_Geomaterials_PT": "Geomaterials_PT",
+    "Exploitation_Geomaterials_L": "Geomaterials_L",
+    "Exploitation_Geomaterials_PLG": "Geomaterials_PLG",
+    "Boreholes_PT": "Boreholes_PT",
+    "Artificial_Surface_Modification": "Surface_Mod",
+    "Construction_PT": "Construct_PT",
+    "Construction_L": "Construct_L",
+    "Palaeohydrology_L": "PalaeoHydro_L",
+    "Subsurface_Water_L": "SubWater_L",
+    "Surface_Water_PT": "SurfWater_PT",
+    "Surface_Water_L": "SurfWater_L",
+    "Surface_Water_PLG": "SurfWater_PLG",
+}
+
 
 print("=" * 70)
 print("  🪨 GEOLOGY MAPPING TOOL GENERATOR v4.0")
@@ -273,6 +322,7 @@ classes_config = [
 # Adding more classes
 
 classes_config = [
+    ("12901", "Fossils_PT"),
     ("14401", "Unconsolidated_Deposits_PT"),
     ("11601", "Instability_Structures_PT"),
     ("11701", "Instability_Structures_L"),
@@ -482,7 +532,7 @@ for row_num in range(2, 1001):
 for idx, code in enumerate(["UNCO_001", "UNCO_002"], start=2):
     ws_unco[f"A{idx}"] = code
 
-# FOSSILS_PT
+"""# FOSSILS_PT
 ws_fossils = wb.create_sheet("Fossils_PT", 2)
 headers_fossils = [
     "User_Code",
@@ -557,21 +607,23 @@ for row_num in range(2, 1001):
     )
 
 for idx, code in enumerate(["FOSSIL_001", "FOSSIL_002"], start=2):
-    ws_fossils[f"A{idx}"] = code
+    ws_fossils[f"A{idx}"] = code"""
 
-print("   ✅ Bedrock, Unconsolidated, Fossils créés")
+print("   ✅ Bedrock, Unconsolidated créés")
 
 # =================================================================
 # 16 SEPARATE SHEETS FOR LINEAR CLASSES WITH CD ATTRIBUTES
 # =================================================================
 print("\n📏 Création des feuilles pour classes linéaires avec attributs CD...")
 
-sheet_idx = 3
+sheet_idx = 2  # no more fossils
 for prefix, class_name in classes_config:
     sheet_idx += 1
 
     # Truncate sheet name if > 31 characters
     sheet_name = class_name[:31] if len(class_name) > 31 else class_name
+    # Shorten sheet name
+    sheet_name = name_mapping.get(class_name, class_name)
 
     ws = wb.create_sheet(sheet_name, sheet_idx)
 
