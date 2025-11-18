@@ -114,6 +114,8 @@ def extract_jinja_translations(template_path: Path) -> List[Dict[str, str]]:
                             "type": "jinja",
                             "de": "",
                             "fr": "",
+                            "it": "",
+                            "en": "",
                         }
                     )
 
@@ -151,6 +153,8 @@ def extract_yaml_translations(yaml_path: Path) -> List[Dict[str, str]]:
                             "type": "yaml",
                             "de": "",
                             "fr": "",
+                            "it": "",
+                            "en": "",
                         }
                         translations.append(existing)
                     existing[key] = value.strip()
@@ -219,7 +223,7 @@ def save_to_excel(
     df = pd.DataFrame(translations)
 
     # Reorder columns and select only the ones we want
-    columns = ["msg_id", "de", "fr", "source", "type"]
+    columns = ["msg_id", "de", "fr", "it", "en", "source", "type"]
     df = df[[col for col in columns if col in df.columns]]
 
     # Drop duplicates based on msg_id, keeping the first occurrence

@@ -63,10 +63,10 @@ _{{_("Datatype")}} :  {{ attr.att_type  }}_
 {% endif %}
 
 {% if 'pairs' in attr -%}
-|GeolCode|Deutsch|Français|
+|GeolCode|Deutsch|{{current_lang}}|
 |---------------|----------------------------------------|----------------------------------------|
 {% for key, value in attr.pairs.items() -%}
-|{{key}} | {{value|remove_prefix}} | {{key|tr_fr}}     |
+|{{key}} | {{value|remove_prefix}} | {{key|tr}}     |
 {% endfor %}
 {% endif %}
 
@@ -90,10 +90,10 @@ _{{_("Datatype")}} :  {{ attr.att_type  }}_
 {{ annex.description[lang] }}
 
 {% if 'pairs' in annex -%}
-|GeolCode|Deutsch|Français|
+|GeolCode|Deutsch|{{current_lang}}|
 |---------------|----------------------------------------|----------------------------------------|
 {% for key, value in annex.pairs.items() -%}
-|{{key}} | {{value}} | {{key|tr_fr}}     |
+|{{key}} | {{value}} | {{key|tr}}     |
 {% endfor %}
 {% endif %}
 

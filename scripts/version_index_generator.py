@@ -4,6 +4,11 @@ Script to generate an HTML index page for available datamodel versions in S3 buc
 """
 
 import boto3
+import sys
+import json
+import os
+import sys
+import click
 import json
 import os
 import sys
@@ -456,11 +461,17 @@ def upload_to_s3(
         sys.exit(1)
 
 
-def main():
+@click.command("process")
+@click.option("--no-upload", is_flag=True, help="Skip web format conversion")
+def main(no_upload):
     """Main function"""
 
     # Configuration - can be overridden by environment variables
     bucket_name = os.getenv("S3_BUCKET")
+    if not bucket_name:
+        print("No bucket found. Exisiting")
+        sys.exit(2)
+
     profile_name = os.getenv("AWS_PROFILE")  # None for default profile in CI
     cloudfront_domain = os.getenv(
         "CLOUDFRONT_DOMAIN", "dubious.cloud"
@@ -511,20 +522,25 @@ def main():
     )
 
     # Upload to S3
-    index_key = f"{prefix}index.html"
-    print(f"⬆️  Uploading index page...")
-    upload_to_s3(s3_client, bucket_name, html_content, index_key)
+    if not no_upload:
+        index_key = f"{prefix}index.html"
+        print(f"⬆️  Uploading index page...")
+        upload_to_s3(s3_client, bucket_name, html_content, index_key)
 
-    print("🎉 Done!")
+        print("🎉 Done!")
 
-    if cloudfront_domain:
-        print(
-            f"🌐 Index page available at: https://{cloudfront_domain}/{prefix}index.html"
-        )
+        if cloudfront_domain:
+            print(
+                f"🌐 Index page available at: https://{cloudfront_domain}/{prefix}index.html"
+            )
+        else:
+            print(
+                f"🌐 Index page available at: https://{bucket_name}.s3.amazonaws.com/{index_key}"
+            )
     else:
-        print(
-            f"🌐 Index page available at: https://{bucket_name}.s3.amazonaws.com/{index_key}"
-        )
+        with open("index.html", "w") as f:
+            f.write(html_content)
+
 
 
 if __name__ == "__main__":
