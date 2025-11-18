@@ -66,11 +66,11 @@ name_mapping = {
 }
 
 
-print("=" * 70)
-print("  🪨 GEOLOGY MAPPING TOOL GENERATOR v4.0")
-print("  📋 Intégration automatique des attributs CD")
-print("=" * 70)
-print("\n📊 Chargement des données du projet...")
+console.print("=" * 70)
+console.print("  🪨 GEOLOGY MAPPING TOOL GENERATOR v4.0")
+console.print("  📋 Intégration automatique des attributs CD")
+console.print("=" * 70)
+console.print("\n📊 Chargement des données du projet...")
 
 PROJECT_PATH = "../exports/2025-10-24"
 
@@ -80,20 +80,20 @@ def load_json(filename):
     try:
         with open(filepath, "r", encoding="utf-8") as f:
             data = json.load(f)
-            print(
+            console.print(
                 f"   ✅ {filename}: {len(data) if isinstance(data, (dict, list)) else 'OK'}"
             )
             return data
     except FileNotFoundError:
-        print(f"   ⚠️  {filename}: NON TROUVÉ")
+        console.print(f"   ⚠️  {filename}: NON TROUVÉ")
         return {} if "Att" not in filename else []
     except Exception as e:
-        print(f"   ❌ {filename}: ERREUR - {e}")
+        console.print(f"   ❌ {filename}: ERREUR - {e}")
         return {} if "Att" not in filename else []
 
 
 # Load datamodel.yaml
-print("\n📋 Chargement du datamodel.yaml...")
+console.print("\n📋 Chargement du datamodel.yaml...")
 datamodel_path = "datamodel.yaml"
 class_cd_attributes = {}
 PROJECT_PATH = None
@@ -106,7 +106,7 @@ try:
     if model:
         PROJECT_PATH = model.get("sources_dir")
         if not os.path.isdir(PROJECT_PATH):
-            print(f"Non existing {PROJECT_PATH}. Exiting")
+            console.print(f"Non existing {PROJECT_PATH}. Exiting")
 
             sys.exit(2)
 
@@ -120,7 +120,7 @@ try:
                 name = attr.get("name")
                 if name == "kind":
                     val = attr.get("value")
-                    # print(f"('{val}','{class_name}'),")
+                    # console.print(f"('{val}','{class_name}'),")
                 if attr.get("att_type") == "CD":
                     cd_domain = attr.get("value", "")
                     # Ignore dummy/N/A domains
@@ -138,12 +138,12 @@ try:
             if cd_attrs:
                 class_cd_attributes[class_name] = cd_attrs
 
-    print(
+    console.print(
         f"   ✅ Datamodel chargé: {len(class_cd_attributes)} classes avec attributs CD"
     )
 
 except Exception as e:
-    print(f"   ❌ Erreur lors du chargement du datamodel: {e}")
+    console.print(f"   ❌ Erreur lors du chargement du datamodel: {e}")
     import traceback
 
     traceback.print_exc()
@@ -170,18 +170,18 @@ try:
 
     if "subtypes" in gcoverp_data:
         subtypes = gcoverp_data["subtypes"]
-        print(f"   ✅ Subtypes chargés: {len(subtypes)} entrées")
+        console.print(f"   ✅ Subtypes chargés: {len(subtypes)} entrées")
 
     if "coded_domain" in gcoverp_data:
         for domain_name, domain_data in gcoverp_data["coded_domain"].items():
             if isinstance(domain_data, dict) and "codedValues" in domain_data:
                 coded_domains[domain_name] = domain_data["codedValues"]
-        print(f"   ✅ Coded domains chargés: {len(coded_domains)} domaines")
+        console.print(f"   ✅ Coded domains chargés: {len(coded_domains)} domaines")
 
 except FileNotFoundError:
-    print(f"   ⚠️  gcoverp_export_simple.json NON TROUVÉ")
+    console.print(f"   ⚠️  gcoverp_export_simple.json NON TROUVÉ")
 except Exception as e:
-    print(f"   ❌ Erreur lors du chargement: {e}")
+    console.print(f"   ❌ Erreur lors du chargement: {e}")
     import traceback
 
     traceback.print_exc()
@@ -282,7 +282,7 @@ for att in geol_mapping_unit_att:
     row += 1
 
 # Create reference sheets for all coded domains
-print("\n📋 Création des feuilles pour coded domains...")
+console.print("\n📋 Création des feuilles pour coded domains...")
 cd_refs = {}
 
 for cd_name, cd_values in coded_domains.items():
@@ -292,34 +292,14 @@ for cd_name, cd_values in coded_domains.items():
             last_row = create_reference_sheet(wb, ref_name, cd_values)
             cd_refs[cd_name] = {"sheet_name": ref_name, "last_row": last_row}
         except Exception as e:
-            print(f"   ⚠️  Impossible de créer {ref_name}: {e}")
+            console.print(f"   ⚠️  Impossible de créer {ref_name}: {e}")
 
-print(f"   ✅ {len(cd_refs)} feuilles de coded domains créées")
+console.print(f"   ✅ {len(cd_refs)} feuilles de coded domains créées")
 
 # Extract subtypes by prefix
-print("\n📋 Extraction des subtypes par classe...")
+console.print("\n📋 Extraction des subtypes par classe...")
 
 # Map class prefixes to their data
-classes_config = [
-    ("14901", "Tectonic_Boundaries_L"),
-    ("11701", "Instability_Structures_L"),
-    ("11301", "Glacial_and_Periglacial_Structures_L"),
-    ("11101", "Erosional_Structures_L"),
-    ("10901", "Alluvial_and_Lacustrine_Structures_L"),
-    ("14701", "Deformation_Structures_L"),
-    ("13301", "Mineralised_Zone_L"),
-    ("13101", "Prominent_Lithological_Features_L"),
-    ("13001", "Geological_Outlines_L"),
-    ("13901", "Contour_Lines_Bedrock_L"),
-    ("14001", "Contour_Lines_Hydro_L"),
-    ("10701", "Exploitation_Geomaterials_L"),
-    ("12201", "Construction_L"),
-    ("12601", "Surface_Water_L"),
-    ("12402", "Subsurface_Water_L"),
-    ("12301", "Palaeohydrology_L"),
-]
-
-# Adding more classes
 
 classes_config = [
     ("12901", "Fossils_PT"),
@@ -378,14 +358,14 @@ for prefix, class_name in classes_config:
     if kind_values:
         ref_name = f"Ref_KIND_{class_name}"[:31]
         subtype_refs[class_name] = create_reference_sheet(wb, ref_name, kind_values)
-        print(f"   ✅ {ref_name}: {len(kind_values)} KINDs")
+        console.print(f"   ✅ {ref_name}: {len(kind_values)} KINDs")
 
-print(f"\n✅ Total: {len(subtype_refs)} feuilles de subtypes créées")
+console.print(f"\n✅ Total: {len(subtype_refs)} feuilles de subtypes créées")
 
 # =================================================================
 # MAIN SHEETS (Bedrock, Unconsolidated, Fossils)
 # =================================================================
-print("\n🪨 Création des feuilles principales...")
+console.print("\n🪨 Création des feuilles principales...")
 
 # BEDROCK_PLG
 ws_bedrock = wb.create_sheet("Bedrock_PLG", 0)
@@ -540,12 +520,12 @@ for idx, code in enumerate(["UNCO_001", "UNCO_002"], start=2):
     ws_unco[f"A{idx}"] = code
 
 
-print("   ✅ Bedrock, Unconsolidated créés")
+console.print("   ✅ Bedrock, Unconsolidated créés")
 
 # =================================================================
-# 16 SEPARATE SHEETS FOR LINEAR CLASSES WITH CD ATTRIBUTES
+# SEPARATE SHEETS FOR OTHER CLASSES WITH CD ATTRIBUTES
 # =================================================================
-print("\n📏 Création des feuilles pour classes linéaires avec attributs CD...")
+console.print("\n📏 Création des feuilles pour classes avec attributs CD...")
 
 sheet_idx = 2  # no more fossils
 for prefix, class_name in classes_config:
@@ -555,6 +535,8 @@ for prefix, class_name in classes_config:
     sheet_name = class_name[:31] if len(class_name) > 31 else class_name
     # Shorten sheet name
     sheet_name = name_mapping.get(class_name, class_name)
+
+    console.print(f"   ✅ {sheet_name} (class_name)")
 
     ws = wb.create_sheet(sheet_name, sheet_idx)
 
@@ -583,9 +565,9 @@ for prefix, class_name in classes_config:
         head_name = None
         try:
             head_name = headers[i - 1]
-            print(f"{i} / {head_name}")
+            console.print(f"     {chr(64 + i)} - {head_name}")
         except Exception as e:
-            print(e)
+            console.print(e)
         if head_name and (
             head_name in ("Notes", "User_Code") or head_name.endswith("_Display")
         ):
@@ -628,7 +610,7 @@ for prefix, class_name in classes_config:
         col_idx += 2  # Skip _Display and code columns
 
     # Add formulas and styling
-    for row_num in range(2, 1001):
+    for row_num in range(2, 1001):  # TODO is enough
         # User_Code and KIND_Display editable
         ws[f"A{row_num}"].fill = editable_fill
         ws[f"B{row_num}"].fill = editable_fill
@@ -661,7 +643,7 @@ for prefix, class_name in classes_config:
     ws["A2"] = f"{class_name.upper().replace('_', '')[:10]}_001"
 
     cd_count = len(cd_attrs)
-    print(f"   ✅ {sheet_name} ({cd_count} attributs CD)")
+    console.print(f"     CD attributs: {cd_count}")
 
 # =================================================================
 # FINALIZATION
@@ -673,14 +655,14 @@ if "Sheet" in wb.sheetnames:
 output_path = "outputs/geology_mapping_tool_v4.0.xlsx"
 wb.save(output_path)
 
-print("\n" + "=" * 70)
-print("  ✅ VERSION 4.0 - AVEC ATTRIBUTS CD!")
-print("=" * 70)
-print(f"\n📁 Fichier: {output_path}")
-print(f"\n📊 Structure:")
-print(f"   - 3 feuilles principales (Bedrock, Unconsolidated, Fossils)")
-print(f"   - 16 feuilles pour classes linéaires avec attributs CD")
-print(f"   - {len(subtype_refs)} feuilles de référence KIND")
-print(f"   - {len(cd_refs)} feuilles de coded domains")
-print(f"   - Total: {len(wb.sheetnames)} feuilles")
-print("\n" + "=" * 70)
+console.print("\n" + "=" * 70)
+console.print("  ✅ VERSION 4.0 - AVEC ATTRIBUTS CD!")
+console.print("=" * 70)
+console.print(f"\n📚 Fichier: {output_path}")
+console.print(f"\n📊 Structure:")
+console.print(f"   - 2 feuilles principales (Bedrock et Unconsolidated)")
+console.print(f"   - {len(classes_config)} feuilles pour classes linéaires avec attributs CD")
+console.print(f"   - {len(subtype_refs)} feuilles de référence KIND")
+console.print(f"   - {len(cd_refs)} feuilles de coded domains")
+console.print(f"   - Total: {len(wb.sheetnames)} feuilles")
+console.print("\n" + "=" * 70)
