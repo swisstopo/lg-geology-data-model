@@ -135,4 +135,6 @@ jobs:
             outputs/ER-GCOVER.pdf
             ${{ env.SOURCES_DIR }}/gcoverp_export_simple.json 
             datamodel.yaml
+            outputs/geology_mapping_tool*.xlsx
+
 
