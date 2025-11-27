@@ -52,6 +52,15 @@ Créez un environnement `conda` comme d'habitude et installez le paquet :
 Les sous-commandes de `gcover` nécessitant `arcpy` ne sont évidemment pas disponibles sous Linux.
 
 
+
+# Fichier XLSX pour le mapping des attributs
+
+```commandline
+python scripts/geology_tool_v4.0_with_cd_attributes.py
+```
+Le fichier sera écrit dans : _outputs/geology_mapping_tool_v4.0.xlsx_
+
+
 # Utilisation
 
 Ce guide décrit les étapes nécessaires pour générer une nouvelle version du modèle de données géologiques en utilisant
@@ -126,7 +135,21 @@ Exportez toutes les tables de référence nécessaires :
 gcover schema export-tables \
   -w "H:/connections/GCOVERP@osa.sde" \
   -o exports/<RELEASE-DIR> \
-  --all-tables
+  --gc-tables-only
+  
+📋 Scanning for tables...
+📊 Found 11 tables to export
+  • TOPGIS_GC.GC_CHRONO → CHRONO
+  • TOPGIS_GC.GC_LITHO → LITHO
+  • TOPGIS_GC.GC_GEOL_MAPPING_UNIT → GEOL_MAPPING_UNIT
+  • TOPGIS_GC.GC_TECTO → TECTO
+  • TOPGIS_GC.GC_LITSTRAT_UNCO → LITSTRAT_UNCO
+  • TOPGIS_GC.GC_GEOL_MAPPING_UNIT_ATT → GEOL_MAPPING_UNIT_ATT
+  • TOPGIS_GC.GC_COMPOSIT → COMPOSIT
+  • TOPGIS_GC.GC_ADMIXTURE → ADMIXTURE
+  • TOPGIS_GC.GC_CHARCAT → CHARCAT
+  • TOPGIS_GC.GC_CORRELATION → CORRELATION
+  • TOPGIS_GC.GC_LITSTRAT_FORMATION_BANK → LITSTRAT_FORMATION_BANK
 ```
 
 **Cette commande génère les fichiers suivants :**
@@ -137,6 +160,12 @@ gcover schema export-tables \
 - `Composit.json`
 - `Charcat.json`
 - `System.json`
+
+
+### 4. Différences
+
+    gcover schema diff  -o R15_R16.json    --format json   exports/2025-11-25/geocover-schema-sde.json \
+        exports/2025-11-26/geocover-schema-sde.json
 
 ### 4. Ajout des fichiers statiques
 
@@ -149,13 +178,6 @@ Copiez manuellement les fichiers statiques suivants dans le répertoire `exports
 - `SCHEMA_CHANGES_4.0-4.1.json`
 
 ## Génération des documents
-
-### Fichier XLSX pour le mapping des attributs
-
-```commandline
-python scripts/geology_tool_v4.0_with_cd_attributes.py
-```
-Le fichier sera écrit dans : _outputs/geology_mapping_tool_v4.0.xlsx_
 
 
 ### Génération du fichier Markdown
@@ -211,25 +233,8 @@ Create Date                     : 2025:08:27 21:41:58+03:00
 - **Sauvegarde :** Il est recommandé de sauvegarder les exports précédents avant de générer une nouvelle version
 - **Validation :** Vérifiez toujours les fichiers générés avant de les publier
 
-## Résolution de problèmes
 
-### Erreurs communes
 
-1. **Connexion à la base de données impossible :**
-   - Vérifiez la chaîne de connexion ArcSDE
-   - Assurez-vous que l'environnement ArcGIS Pro est actif
-
-2. **Fichiers manquants :**
-   - Vérifiez que tous les fichiers statiques ont été copiés
-   - Contrôlez les permissions sur le répertoire de sortie
-
-3. **Erreur lors de la génération PDF :**
-   - Vérifiez que `pandoc` et XeLaTeX sont installés
-   - Contrôlez la syntaxe du fichier `datamodel.yaml`
-
-### Contact
-
-En cas de problème, consultez la documentation technique ou contactez l'équipe de développement (geocover@swisstopo.ch).
 
 
 
