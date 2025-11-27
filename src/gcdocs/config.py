@@ -226,7 +226,6 @@ class GeoDataConfig:
         try:
             dataframes = []
 
-
             # 1. Load JSON coded domains (fallback German -> French)
             code_dict = self.domains
             if code_dict:
@@ -255,14 +254,16 @@ class GeoDataConfig:
                 logger.debug(f"Loaded CSV translations: {len(df_csv)} entries")"""
 
             # 3. Load new Excel translations (if available)
-            excel_file = self._find_file("GeolCodeText_Trad_2025.xlsx")
+            excel_file = self._find_file("2025c_GeolCodeText_Trad.xlsx")
             if excel_file:
                 df_excel = pd.read_excel(excel_file, sheet_name="Tabelle1")
                 df_excel["GeolCodeInt"] = df_excel["GeolCodeInt"].astype("string")
-                df_excel["source"] = "GeolCodeText_Trad_2025"
+                df_excel["source"] = "2025c_GeolCodeText_Trad"
                 dataframes.append(df_excel)
                 logger.debug(df_excel.head(5))
-                logger.info(f"Loaded Excel translations from {excel_file.resolve()}: {len(df_excel)} entries")
+                logger.info(
+                    f"Loaded Excel translations from {excel_file.resolve()}: {len(df_excel)} entries"
+                )
 
             # 4. Load custom chronology translations (if available)
             chrono_file = self._find_file("geolcode_chrono.csv")
@@ -272,35 +273,45 @@ class GeoDataConfig:
                 df_chrono["source"] = "geolcode_chrono"
                 dataframes.append(df_chrono)
                 logger.debug(df_chrono.head(5))
-                logger.info(f"Loaded chrono translations from {chrono_file.resolve()}: {len(df_chrono)} entries")
+                logger.info(
+                    f"Loaded chrono translations from {chrono_file.resolve()}: {len(df_chrono)} entries"
+                )
 
             # 5. Load application UI translations (if available)
             app_translations = self._find_file("translations.xlsx")
             if app_translations:
-                df_app = pd.read_excel(app_translations, usecols=["msg_id", "de", "fr", "it", "en"])
+                df_app = pd.read_excel(
+                    app_translations, usecols=["msg_id", "de", "fr", "it", "en"]
+                )
                 df_app.columns = df_app.columns.str.upper()
                 df_app.rename(columns={"MSG_ID": "GeolCodeInt"}, inplace=True)
                 df_app["GeolCodeInt"] = df_app["GeolCodeInt"].astype("string")
 
-                df_app = pd.concat([
-                    df_app,
-                    pd.DataFrame([ {
-                            "GeolCodeInt": "current_lang",
-                            "DE": "Deutsch",
-                            "FR": "Français",
-                            "IT": "Italiano",
-                            "EN": "English",
-                        }])
-                ], ignore_index=True)
-
-
-
+                df_app = pd.concat(
+                    [
+                        df_app,
+                        pd.DataFrame(
+                            [
+                                {
+                                    "GeolCodeInt": "current_lang",
+                                    "DE": "Deutsch",
+                                    "FR": "Français",
+                                    "IT": "Italiano",
+                                    "EN": "English",
+                                }
+                            ]
+                        ),
+                    ],
+                    ignore_index=True,
+                )
 
                 df_app["source"] = "translations"
                 dataframes.append(df_app)
                 logger.debug(df_app.head(5))
 
-                logger.info(f"Loaded app translations from {app_translations.resolve()}: {len(df_app)} entries")
+                logger.info(
+                    f"Loaded app translations from {app_translations.resolve()}: {len(df_app)} entries"
+                )
 
             # 6. Add special hardcoded values
             special_codes = pd.DataFrame(
@@ -329,7 +340,7 @@ class GeoDataConfig:
                 ]
             )
             special_codes["GeolCodeInt"] = special_codes["GeolCodeInt"].astype("string")
-            special_codes['source'] = 'special'
+            special_codes["source"] = "special"
             dataframes.append(special_codes)
 
             if not dataframes:
@@ -338,7 +349,6 @@ class GeoDataConfig:
 
             # Merge all dataframes
             merged_df = pd.concat(dataframes, ignore_index=True)
-
 
             # Clean and process
             translation_df = self._clean_translation_data(merged_df, debug_export=True)
@@ -379,7 +389,6 @@ class GeoDataConfig:
 
             with resources.path("gcdocs.data", filename) as data_path:
                 if data_path.exists():
-
                     return data_path
         except (ImportError, FileNotFoundError):
             pass
@@ -387,13 +396,14 @@ class GeoDataConfig:
         # Try current directory
         current_path = Path(filename)
         if current_path.exists():
-            
             return current_path
 
         logger.error(f"Translation file not found: {filename}")
         return None
 
-    def _clean_translation_data(self, merged_df: pd.DataFrame, debug_export: bool = False) -> pd.DataFrame:
+    def _clean_translation_data(
+        self, merged_df: pd.DataFrame, debug_export: bool = False
+    ) -> pd.DataFrame:
         """Clean and process the merged translation DataFrame
 
         Args:
@@ -416,7 +426,9 @@ class GeoDataConfig:
             debug_file = self.input_dir / f"debug_discarded_{timestamp}.xlsx"
 
             # Find duplicates (those that will be removed)
-            duplicates = df_work[df_work.duplicated(subset=["GeolCodeInt"], keep="last")]
+            duplicates = df_work[
+                df_work.duplicated(subset=["GeolCodeInt"], keep="last")
+            ]
 
             # Apply deduplication to continue
             df_deduped = df_work.drop_duplicates(subset=["GeolCodeInt"], keep="last")
@@ -425,31 +437,44 @@ class GeoDataConfig:
             df_cleaned = df_deduped.assign(
                 GeolCodeInt=lambda x: x["GeolCodeInt"].astype("string"),
                 source=lambda x: x["source"].astype("string"),
-                DE=lambda x: x["DE"].astype("string").replace(["0", "nan", "None"], "-"),
-                FR=lambda x: x["FR"].astype("string").replace(["0", "nan", "None"], "-"),
-                IT=lambda x: x["IT"].astype("string").replace(["0", "nan", "None"], "-"),
-                EN=lambda x: x["EN"].astype("string").replace(["0", "nan", "None"], "-"),
+                DE=lambda x: x["DE"]
+                .astype("string")
+                .replace(["0", "nan", "None"], "-"),
+                FR=lambda x: x["FR"]
+                .astype("string")
+                .replace(["0", "nan", "None"], "-"),
+                IT=lambda x: x["IT"]
+                .astype("string")
+                .replace(["0", "nan", "None"], "-"),
+                EN=lambda x: x["EN"]
+                .astype("string")
+                .replace(["0", "nan", "None"], "-"),
             )
 
             # Find empty codes (those that will be removed)
             empty_codes = df_cleaned[
                 (df_cleaned["GeolCodeInt"] == "") | (df_cleaned["GeolCodeInt"] == "nan")
-                ]
+            ]
 
             # Create summary
             summary_data = {
-                "Category": ["Initial rows", "Duplicates removed", "Empty codes removed", "Final rows"],
+                "Category": [
+                    "Initial rows",
+                    "Duplicates removed",
+                    "Empty codes removed",
+                    "Final rows",
+                ],
                 "Count": [
                     initial_count,
                     len(duplicates),
                     len(empty_codes),
-                    len(df_cleaned) - len(empty_codes)
-                ]
+                    len(df_cleaned) - len(empty_codes),
+                ],
             }
             summary_df = pd.DataFrame(summary_data)
 
             # Write to Excel with multiple sheets
-            with pd.ExcelWriter(debug_file, engine='openpyxl') as writer:
+            with pd.ExcelWriter(debug_file, engine="openpyxl") as writer:
                 summary_df.to_excel(writer, sheet_name="Summary", index=False)
 
                 if len(duplicates) > 0:
@@ -465,15 +490,22 @@ class GeoDataConfig:
 
         # === Normal cleaning process ===
         cleaned_df = (
-            df_work
-            .drop_duplicates(subset=["GeolCodeInt"], keep="last")
+            df_work.drop_duplicates(subset=["GeolCodeInt"], keep="last")
             .assign(
                 GeolCodeInt=lambda x: x["GeolCodeInt"].astype("string"),
                 source=lambda x: x["source"].astype("string"),
-                DE=lambda x: x["DE"].astype("string").replace(["0", "nan", "None"], "-"),
-                FR=lambda x: x["FR"].astype("string").replace(["0", "nan", "None"], "-"),
-                IT=lambda x: x["IT"].astype("string").replace(["0", "nan", "None"], "-"),
-                EN=lambda x: x["EN"].astype("string").replace(["0", "nan", "None"], "-"),
+                DE=lambda x: x["DE"]
+                .astype("string")
+                .replace(["0", "nan", "None"], "-"),
+                FR=lambda x: x["FR"]
+                .astype("string")
+                .replace(["0", "nan", "None"], "-"),
+                IT=lambda x: x["IT"]
+                .astype("string")
+                .replace(["0", "nan", "None"], "-"),
+                EN=lambda x: x["EN"]
+                .astype("string")
+                .replace(["0", "nan", "None"], "-"),
             )
             .query("GeolCodeInt != '' and GeolCodeInt != 'nan'")
             .sort_values("GeolCodeInt")
@@ -481,8 +513,6 @@ class GeoDataConfig:
         )
 
         return cleaned_df
-
-
 
     def save_merged_translations(self, output_path: Optional[str] = None) -> Path:
         """Save the merged translation DataFrame to Excel"""
