@@ -21,7 +21,7 @@ date: 2025-09-01
 # 4.1.0    KE pour Bedrock
 # 4.1.1    Minor translations bugs
 # 4.1.2    Adding new lang: it and en (partial support)
-# 4.2.0    Update CD  (26-11-2025)
+# 4.2.0    Update CD  (26-11-2025) + New translations
 model:
   revision: '4.2.0'
   revision_date: "2025-11-26"
