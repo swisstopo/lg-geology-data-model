@@ -236,6 +236,15 @@ def generate_html(
             font-size: 0.8rem;
             margin-left: 1rem;
         }}
+        
+        .draft-badge {{
+            background: #ff9900;
+            color: white;
+            padding: 0.2rem 0.6rem;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            margin-left: 1rem;
+        }}
 
         .language-section {{
             padding: 1rem 1.5rem;
@@ -353,8 +362,8 @@ def generate_html(
     lang_config = {
         "de": {"name": "Deutsch", "code": "DE"},
         "fr": {"name": "Français", "code": "FR"},
-        "it": {"name": "Italiano", "code": "IT"},
-        "en": {"name": "English", "code": "EN"},
+        "it": {"name": "Italiano", "code": "IT", "status": "draft"},
+        "en": {"name": "English", "code": "EN", "status": "draft"},
         "root": {"name": "Fichiers communs", "code": "📄"},
     }
 
@@ -395,11 +404,15 @@ def generate_html(
                         lang, {"name": lang.title(), "code": lang.upper()}
                     )
 
+                    draft_badge = (
+                        '<span class="draft-badge">DRAFT</span>' if lang_info.get("status") == 'draft' else ""
+                    )
+
                     html += f"""
             <div class="language-section">
                 <div class="language-header">
                     <span class="language-code">{lang_info["code"]}</span>
-                    {lang_info["name"]}
+                    {lang_info["name"]} {draft_badge}
                 </div>
                 <div class="files-grid">
                     """
