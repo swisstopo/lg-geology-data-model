@@ -667,7 +667,7 @@ def export_excel(yaml_file, output, translations_dir):
     click.echo(f"Exported to structured Excel: {output}")
 
 
-@translations.command()
+@translations.command( context_settings={'show_default': True})
 @click.argument("excel_file", type=click.Path(exists=True))
 @click.option(
     "--translations-dir", "-d", default="translations", help="Translations directory"
@@ -687,7 +687,7 @@ def import_excel(excel_file, translations_dir, yaml_output):
     click.echo(f"Imported translations and created: {yaml_output}")
 
 
-@translations.command(name="status")
+@translations.command(name="status", context_settings={'show_default': True})
 @click.option("--translations-dir", "-t", default="translations")
 def translation_status(translations_dir):
     """Show translation completion status"""
