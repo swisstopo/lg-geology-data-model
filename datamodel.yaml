@@ -610,7 +610,7 @@ themes:
       mandatory: true
   - name: Instabilities_PLG
     abrev: Gins      # TODO: to check
-    table: GC_BEDROCK     # TODO: to check
+    table: GC_SURFACES     # TODO: to check
     description:
       de: |
         Die Klasse Instabilities_PLG beinhaltet alle Polygone, die Gebiete mit instabilen
