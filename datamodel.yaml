@@ -22,10 +22,11 @@ date: 2025-09-01
 # 4.1.1    Minor translations bugs
 # 4.1.2    Adding new lang: it and en (partial support)
 # 4.2.0    Update CD  (26-11-2025) + New translations
+# 4.3.0    Update CD (11-02-2026) for R16
 model:
-  revision: '4.2.0'
-  revision_date: "2025-11-26"
-  sources_dir: "exports/2025-11-26"
+  revision: '4.3.0'
+  revision_date: "2026-02-12"
+  sources_dir: "exports/2026-02-12"
 
 # Annexe
 # Some CD are alreday defined in the simplifed JSON report

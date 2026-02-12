@@ -286,6 +286,67 @@ def legacy_export(ctx, datamodel, format, output):
 
 
 @gcdocs.command()
+@click.argument("json_file", type=click.Path(exists=True))
+@click.option("-o", "--output", type=click.Path(), help="Output JSON file (default: stdout)")
+@click.pass_context
+def extract_subtypes(ctx, json_file: str, output: str | None):
+    """Extract subtypeCode → subtypeName mappings from ESRI GDB JSON export."""
+    import json
+    from datetime import datetime
+
+    with open(json_file, 'r', encoding='utf-8') as f:
+        data = json.load(f)
+
+    if not output:
+        output_dir = Path(json_file).parent
+        output = output_dir / "subtypes_dict.json"
+
+    subtypes_dict = {}
+
+    def find_subtypes(obj):
+        if isinstance(obj, dict):
+            if 'subtypes' in obj and isinstance(obj['subtypes'], list):
+                for subtype in obj['subtypes']:
+                    if 'subtypeCode' in subtype and 'subtypeName' in subtype:
+                        subtypes_dict[str(subtype['subtypeCode'])] = subtype['subtypeName']
+            for value in obj.values():
+                find_subtypes(value)
+        elif isinstance(obj, list):
+            for item in obj:
+                find_subtypes(item)
+
+    find_subtypes(data)
+
+    result = {
+        "date": datetime.now().strftime("%H:%M:%S-%d-%m-%Y"),
+        "database": {
+            "workspace": {
+                "ConnectionString": "",
+                "WorkspaceFactoryProgID": "esriDataSourcesGDB.SdeWorkspaceFactory",
+                "WorkspaceType": "RemoteDatabase"
+            },
+            "connection": {
+                "Server": "GCOVERP",
+                "Instance": "sde:oracle11g:GCOVERP",
+                "Version": "SDE.DEFAULT"
+            }
+        }
+    }
+
+    for code in sorted(subtypes_dict.keys(), key=lambda x: int(x)):
+        result[code] = subtypes_dict[code]
+
+    json_output = json.dumps(result, indent=4, ensure_ascii=False)
+
+    if output:
+        with open(output, 'w', encoding='utf-8') as f:
+            f.write(json_output)
+        click.echo(f"Exported {len(subtypes_dict)} subtypes to {output}")
+    else:
+        click.echo(json_output)
+
+
+@gcdocs.command()
 @click.argument("input_file", type=click.Path(exists=True))
 @click.option("--output", "-o", type=click.Path(), help="Output YAML file")
 @click.pass_context

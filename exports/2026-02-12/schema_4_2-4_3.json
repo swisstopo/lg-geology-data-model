@@ -1,0 +1,1885 @@
+{
+  "summary": {
+    "domains": {
+      "added": 0,
+      "removed": 0,
+      "modified": 5
+    },
+    "tables": {
+      "added": 0,
+      "removed": 0,
+      "modified": 0
+    },
+    "feature_classes": {
+      "added": 0,
+      "removed": 0,
+      "modified": 0
+    },
+    "relationships": {
+      "added": 0,
+      "removed": 0,
+      "modified": 0
+    },
+    "subtypes": {
+      "added": 0,
+      "removed": 0,
+      "modified": 0
+    }
+  },
+  "coded_value_summary": {
+    "total": {
+      "added": 269,
+      "removed": 1,
+      "modified": 65
+    },
+    "by_domain": {
+      "GC_LITSTRAT_FORMATION_BANK_CD": {
+        "added": 14,
+        "removed": 0,
+        "modified": 0
+      },
+      "GC_GEOL_MAPPING_UNIT_CD": {
+        "added": 248,
+        "removed": 0,
+        "modified": 59
+      },
+      "GC_TECTO_CD": {
+        "added": 5,
+        "removed": 0,
+        "modified": 0
+      },
+      "GC_CORRELATION_CD": {
+        "added": 2,
+        "removed": 0,
+        "modified": 6
+      },
+      "GC_LITHO_CD": {
+        "added": 0,
+        "removed": 1,
+        "modified": 0
+      }
+    }
+  },
+  "changes": {
+    "domains": [
+      {
+        "change_type": "modified",
+        "name": "GC_LITSTRAT_FORMATION_BANK_CD",
+        "coded_value_changes": [
+          {
+            "code": "15255352",
+            "change_type": "added",
+            "new_name": "Predarossa-Formation"
+          },
+          {
+            "code": "15255343",
+            "change_type": "added",
+            "new_name": "Läira-Augengneis"
+          },
+          {
+            "code": "15255344",
+            "change_type": "added",
+            "new_name": "Lägh-da-Cam-Formation"
+          },
+          {
+            "code": "15255351",
+            "change_type": "added",
+            "new_name": "Tscheischhorn-Formation"
+          },
+          {
+            "code": "15255349",
+            "change_type": "added",
+            "new_name": "Mäder-Formation"
+          },
+          {
+            "code": "15255342",
+            "change_type": "added",
+            "new_name": "Plän-Vest-Formation"
+          },
+          {
+            "code": "15255346",
+            "change_type": "added",
+            "new_name": "Valle-di-Lei-Formation"
+          },
+          {
+            "code": "15255350",
+            "change_type": "added",
+            "new_name": "Piot-Formation"
+          },
+          {
+            "code": "15256022",
+            "change_type": "added",
+            "new_name": "Chastè-Gneis"
+          },
+          {
+            "code": "15255348",
+            "change_type": "added",
+            "new_name": "Wengahorn-Formation"
+          },
+          {
+            "code": "15255347",
+            "change_type": "added",
+            "new_name": "Val-da-Roda-Augengneis"
+          },
+          {
+            "code": "15255345",
+            "change_type": "added",
+            "new_name": "Russapass-Formation"
+          },
+          {
+            "code": "15201716",
+            "change_type": "added",
+            "new_name": "Ennerberg-Schotter"
+          },
+          {
+            "code": "15256023",
+            "change_type": "added",
+            "new_name": "Lunghin-Augengneis"
+          }
+        ],
+        "coded_value_summary": {
+          "added": 14,
+          "removed": 0,
+          "modified": 0
+        }
+      },
+      {
+        "change_type": "modified",
+        "name": "GC_GEOL_MAPPING_UNIT_CD",
+        "coded_value_changes": [
+          {
+            "code": "15203869",
+            "change_type": "added",
+            "new_name": "Avers-Decke: Wengahorn-Fm. undiff."
+          },
+          {
+            "code": "15203761",
+            "change_type": "added",
+            "new_name": "Sambuco-Decke: Quarten-Fm."
+          },
+          {
+            "code": "15203830",
+            "change_type": "added",
+            "new_name": "SurettaDecke: Trias: Dolomitmarmor"
+          },
+          {
+            "code": "15205170",
+            "change_type": "added",
+            "new_name": "Maloja-Teildecke: Lunghin-Augengneis"
+          },
+          {
+            "code": "15203831",
+            "change_type": "added",
+            "new_name": "Suretta-Decke: Trias: Dolomitbrekzie"
+          },
+          {
+            "code": "15203825",
+            "change_type": "added",
+            "new_name": "Suretta-Decke: Lägh-da-Cam-Fm.: Dolomitschiefer"
+          },
+          {
+            "code": "15203798",
+            "change_type": "added",
+            "new_name": "Arblatsch-Zone: Basisches Gestein"
+          },
+          {
+            "code": "15203802",
+            "change_type": "added",
+            "new_name": "Tambo-Decke: Sedimentbedeckung"
+          },
+          {
+            "code": "15205175",
+            "change_type": "added",
+            "new_name": "Maloja-Teildecke: Fedoz-Gneiskomplex: Amphibolit"
+          },
+          {
+            "code": "15203817",
+            "change_type": "added",
+            "new_name": "Tambo-Decke: Paragneise und -schiefer"
+          },
+          {
+            "code": "15204154",
+            "change_type": "added",
+            "new_name": "Unterostalpin: Metapsammit mit Dolomitbrekzienlagen"
+          },
+          {
+            "code": "15205180",
+            "change_type": "added",
+            "new_name": "Fora-Teildecke: Trias: Dolomitmarmor"
+          },
+          {
+            "code": "15203901",
+            "change_type": "added",
+            "new_name": "Rossi-Fm.: Kalzitmarmor"
+          },
+          {
+            "code": "15202686",
+            "change_type": "added",
+            "new_name": "Bürgen-, Klimsenhorn- und Wildstrubel-Fm."
+          },
+          {
+            "code": "15203844",
+            "change_type": "added",
+            "new_name": "Suretta-Decke: Saures Ganggestein"
+          },
+          {
+            "code": "15203778",
+            "change_type": "added",
+            "new_name": "Simano-Decke: Quarz-Glimmerschiefer: mit Granat"
+          },
+          {
+            "code": "15203797",
+            "change_type": "added",
+            "new_name": "Savognin-Fm.: Manziel-Gips"
+          },
+          {
+            "code": "15203792",
+            "change_type": "added",
+            "new_name": "Arblatsch-Zone: Kalkschiefer und kieselige Marmor"
+          },
+          {
+            "code": "15203883",
+            "change_type": "added",
+            "new_name": "Avers-Decke: Prasinit"
+          },
+          {
+            "code": "15203789",
+            "change_type": "added",
+            "new_name": "Bedretto-Zone: Kalkmarmor"
+          },
+          {
+            "code": "15203813",
+            "change_type": "added",
+            "new_name": "Tambo-Decke: Plän-Vest-Fm."
+          },
+          {
+            "code": "15204162",
+            "change_type": "added",
+            "new_name": "Bernina-Deckenkomplex: Alkalifeldspatgranit und Syenit"
+          },
+          {
+            "code": "15203854",
+            "change_type": "added",
+            "new_name": "Suretta-Decke: Augengneis undiff."
+          },
+          {
+            "code": "15206126",
+            "change_type": "added",
+            "new_name": "Undifferenzierte stratigraphische Einheit: Trias: Rauwacke"
+          },
+          {
+            "code": "15203788",
+            "change_type": "added",
+            "new_name": "Bedretto-Zone: Konglomerat: polymikt"
+          },
+          {
+            "code": "15203892",
+            "change_type": "added",
+            "new_name": "Piz-Lizun-Komplex: Basalt"
+          },
+          {
+            "code": "15205183",
+            "change_type": "added",
+            "new_name": "Fora-Teildecke: Permo-Trias: Quarzit"
+          },
+          {
+            "code": "15202683",
+            "change_type": "added",
+            "new_name": "Aiguilles-Rouges-Massiv: Variszisches Grundgebirge"
+          },
+          {
+            "code": "15202685",
+            "change_type": "added",
+            "new_name": "Mont-Blanc-Massiv: Variszische Grundgebirge"
+          },
+          {
+            "code": "15203885",
+            "change_type": "added",
+            "new_name": "Avers-Decke: Prasint: Glaukophan"
+          },
+          {
+            "code": "15203843",
+            "change_type": "added",
+            "new_name": "Suretta-Decke: Grundgebirge"
+          },
+          {
+            "code": "15205158",
+            "change_type": "added",
+            "new_name": "Maloja-Teildecke: Paragneis und -schiefer (nördlich der Engadiner Linie)"
+          },
+          {
+            "code": "15205156",
+            "change_type": "added",
+            "new_name": "Maloja-Teildecke: Biotit-Serizitschiefer"
+          },
+          {
+            "code": "15202679",
+            "change_type": "added",
+            "new_name": "Palfris-Fm. und Vitznau-Mergel"
+          },
+          {
+            "code": "15203865",
+            "change_type": "added",
+            "new_name": "Suretta-Decke: Amphibolit undiff."
+          },
+          {
+            "code": "15203786",
+            "change_type": "added",
+            "new_name": "Bedretto-Zone: Quarzit bis Quarzphyllit"
+          },
+          {
+            "code": "15205157",
+            "change_type": "added",
+            "new_name": "Maloja-Teildecke: Serizitschiefer"
+          },
+          {
+            "code": "15203769",
+            "change_type": "added",
+            "new_name": "Sambuco-Decke: Alkalifeldspatgneis"
+          },
+          {
+            "code": "15205188",
+            "change_type": "added",
+            "new_name": "Fora-Teildecke: Variszisches Grundgebirge"
+          },
+          {
+            "code": "15205161",
+            "change_type": "added",
+            "new_name": "Maloja-Teildecke: Dunkler Phyllit"
+          },
+          {
+            "code": "15203899",
+            "change_type": "added",
+            "new_name": "Rossi-Fm.: Andalusit-Granat-Chloritoidschiefer"
+          },
+          {
+            "code": "15203806",
+            "change_type": "added",
+            "new_name": "Tambo-Decke: Trias: Dolomitmarmor"
+          },
+          {
+            "code": "15205179",
+            "change_type": "added",
+            "new_name": "Fora-Teildecke: Karbonatische Trias"
+          },
+          {
+            "code": "15205192",
+            "change_type": "added",
+            "new_name": "Fora-Teildecke: Fedoz-Metagabbro: Ferrogabbro"
+          },
+          {
+            "code": "15206120",
+            "change_type": "added",
+            "new_name": "Bregaglia-Intrusiva: Saures Ganggestein"
+          },
+          {
+            "code": "15205141",
+            "change_type": "added",
+            "new_name": "Maloja-Teildecke: Sedimentbedeckung"
+          },
+          {
+            "code": "15203867",
+            "change_type": "added",
+            "new_name": "Suretta-Decke: Amphibolit: kontaktmetamorph"
+          },
+          {
+            "code": "15202682",
+            "change_type": "added",
+            "new_name": "Aiguilles-Rouges-Massiv: Grundgebirge"
+          },
+          {
+            "code": "15203828",
+            "change_type": "added",
+            "new_name": "Suretta-Decke: Kalzitmarmor"
+          },
+          {
+            "code": "15203787",
+            "change_type": "added",
+            "new_name": "Bedretto-Zone: Metaarkose bis Gneis"
+          },
+          {
+            "code": "15203868",
+            "change_type": "added",
+            "new_name": "Suretta-Decke: Serpentinit"
+          },
+          {
+            "code": "15203832",
+            "change_type": "added",
+            "new_name": "Suretta-Decke: Trias: Rauwacke"
+          },
+          {
+            "code": "15203794",
+            "change_type": "added",
+            "new_name": "Aptychenkalk"
+          },
+          {
+            "code": "15205150",
+            "change_type": "added",
+            "new_name": "Maloja-Teildecke: Trias: Rauwacke"
+          },
+          {
+            "code": "15203859",
+            "change_type": "added",
+            "new_name": "Suretta-Decke: Albitischer Gneis"
+          },
+          {
+            "code": "15205147",
+            "change_type": "added",
+            "new_name": "Maloja-Teildecke: Trias: Kalzitmarmor"
+          },
+          {
+            "code": "15205152",
+            "change_type": "added",
+            "new_name": "Maloja-Teildecke: Permo-Trias: Quarzit"
+          },
+          {
+            "code": "15203826",
+            "change_type": "added",
+            "new_name": "Suretta-Decke: Kieseliger Kalkmarmor"
+          },
+          {
+            "code": "15204161",
+            "change_type": "added",
+            "new_name": "Unterostalpin: Granitporphyr"
+          },
+          {
+            "code": "15205185",
+            "change_type": "added",
+            "new_name": "Fora-Teildecke: Biotit-Serizitschiefer"
+          },
+          {
+            "code": "15203893",
+            "change_type": "added",
+            "new_name": "Piz-Lizun-Komplex: Basalt: Glaukophan"
+          },
+          {
+            "code": "15203771",
+            "change_type": "added",
+            "new_name": "Sambuco-Decke: Amphibolit und Hornblendefels"
+          },
+          {
+            "code": "15203908",
+            "change_type": "added",
+            "new_name": "Malenco-Ultramafitit: Ophikalzit"
+          },
+          {
+            "code": "15202684",
+            "change_type": "added",
+            "new_name": "Mont-Blanc-Massiv: Grundgebirge"
+          },
+          {
+            "code": "15203882",
+            "change_type": "added",
+            "new_name": "Avers-Decke: Basalt"
+          },
+          {
+            "code": "15203812",
+            "change_type": "added",
+            "new_name": "Tambo-Decke: Permo-Trias: Konglomeratischer Quarzit"
+          },
+          {
+            "code": "15205177",
+            "change_type": "added",
+            "new_name": "Maloja-Teildecke: Fedoz-Gneiskomplex: Pegmatit"
+          },
+          {
+            "code": "15203905",
+            "change_type": "added",
+            "new_name": "Forno-Amphibolit: Porphyrische Fazies"
+          },
+          {
+            "code": "15205145",
+            "change_type": "added",
+            "new_name": "Maloja-Teildecke: kieseliger Kalzitmarmor [Agnelli-Fm.?]"
+          },
+          {
+            "code": "15205172",
+            "change_type": "added",
+            "new_name": "Maloja-Teildecke: Prävariszisches Grundgebirge"
+          },
+          {
+            "code": "15203781",
+            "change_type": "added",
+            "new_name": "Gruf-Komplex: Kalksilikatfels"
+          },
+          {
+            "code": "15203889",
+            "change_type": "added",
+            "new_name": "Piz-Lizun-Komplex: Quarzgang"
+          },
+          {
+            "code": "15203919",
+            "change_type": "added",
+            "new_name": "Platta-Decke: Altkristallin"
+          },
+          {
+            "code": "15203838",
+            "change_type": "added",
+            "new_name": "Suretta-Decke: Russapass-Fm.: Karbonatlinsen"
+          },
+          {
+            "code": "15203837",
+            "change_type": "added",
+            "new_name": "Suretta-Decke: Russapass-Fm. undiff."
+          },
+          {
+            "code": "15203848",
+            "change_type": "added",
+            "new_name": "Suretta-Decke: Valle-di-Lei-Fm.: Prasinit"
+          },
+          {
+            "code": "15203920",
+            "change_type": "added",
+            "new_name": "Staldengraben-Fm.: Soladier-Mb. und Creux-de-l'Ours-Mb."
+          },
+          {
+            "code": "15205166",
+            "change_type": "added",
+            "new_name": "Maloja-Teildecke: Variszischer Hellglimmergneis"
+          },
+          {
+            "code": "15203887",
+            "change_type": "added",
+            "new_name": "Avers-Decke: Serpentinit"
+          },
+          {
+            "code": "15203776",
+            "change_type": "added",
+            "new_name": "Simano-Decke: Quarzit: konglomeratisch"
+          },
+          {
+            "code": "15203863",
+            "change_type": "added",
+            "new_name": "Suretta-Decke: Granat-Glimmerschiefer"
+          },
+          {
+            "code": "15202680",
+            "change_type": "added",
+            "new_name": "Helvetikum: Trias: Gipsmergel"
+          },
+          {
+            "code": "15203881",
+            "change_type": "added",
+            "new_name": "Avers-Decke: Quarzschiefer"
+          },
+          {
+            "code": "15203829",
+            "change_type": "added",
+            "new_name": "Suretta-Decke: Karbonatische Trias"
+          },
+          {
+            "code": "15205154",
+            "change_type": "added",
+            "new_name": "Maloja-Teildecke: Grundgebirge"
+          },
+          {
+            "code": "15203810",
+            "change_type": "added",
+            "new_name": "Tambo-Decke: Permo-Trias: Quarzit"
+          },
+          {
+            "code": "15203912",
+            "change_type": "added",
+            "new_name": "Platta-Decke: Basalt"
+          },
+          {
+            "code": "15203774",
+            "change_type": "added",
+            "new_name": "Simano-Decke: Trias: Rauwacke"
+          },
+          {
+            "code": "15203764",
+            "change_type": "added",
+            "new_name": "Sambuco-Decke: Quarz-Glimmerschiefer"
+          },
+          {
+            "code": "15206125",
+            "change_type": "added",
+            "new_name": "Undifferenzierte stratigraphische Einheit: Trias: Gips"
+          },
+          {
+            "code": "15203866",
+            "change_type": "added",
+            "new_name": "Suretta-Decke: Granatamphibolit"
+          },
+          {
+            "code": "15203819",
+            "change_type": "added",
+            "new_name": "Tambo-Decke: Amphibolit"
+          },
+          {
+            "code": "15203894",
+            "change_type": "added",
+            "new_name": "Piz-Lizun-Komplex: Gabbro"
+          },
+          {
+            "code": "15203768",
+            "change_type": "added",
+            "new_name": "Sambuco-Decke: Paragneis bis Glimmerschiefer: mit Hornblende"
+          },
+          {
+            "code": "15203880",
+            "change_type": "added",
+            "new_name": "Avers-Decke: Kalzitmarmor"
+          },
+          {
+            "code": "15203824",
+            "change_type": "added",
+            "new_name": "Suretta-Decke: Lägh-da-Cam-Fm.: Quarz-Glimmerschiefer"
+          },
+          {
+            "code": "15203800",
+            "change_type": "added",
+            "new_name": "Grande-Bonavau-Fm.: Echinodermenbrekzie"
+          },
+          {
+            "code": "15203860",
+            "change_type": "added",
+            "new_name": "Suretta-Decke: Mylonitischer Gneis"
+          },
+          {
+            "code": "15203816",
+            "change_type": "added",
+            "new_name": "Tambo-Decke: Läira-Augengneis"
+          },
+          {
+            "code": "15205146",
+            "change_type": "added",
+            "new_name": "Maloja-Teildecke: Karbonatische Trias"
+          },
+          {
+            "code": "15203814",
+            "change_type": "added",
+            "new_name": "Tambo-Decke: Grundgebirge"
+          },
+          {
+            "code": "15203911",
+            "change_type": "added",
+            "new_name": "Platta-Decke: Hyaloklastit"
+          },
+          {
+            "code": "15203845",
+            "change_type": "added",
+            "new_name": "Suretta-Decke: Basisches Ganggestein"
+          },
+          {
+            "code": "15203879",
+            "change_type": "added",
+            "new_name": "Avers-Decke: Predarossa-Fm.: Dolomit"
+          },
+          {
+            "code": "15203808",
+            "change_type": "added",
+            "new_name": "Tambo-Decke: Trias: Evaporitgestein"
+          },
+          {
+            "code": "15203842",
+            "change_type": "added",
+            "new_name": "Suretta-Decke: Russapass-Fm.: Quarz-Glimmerschiefer"
+          },
+          {
+            "code": "15203760",
+            "change_type": "added",
+            "new_name": "San-Giorgio-Schuppe: Horblendegarbenschiefer"
+          },
+          {
+            "code": "15203809",
+            "change_type": "added",
+            "new_name": "Tambo-Decke: Detritische (Permo-)Trias"
+          },
+          {
+            "code": "15203783",
+            "change_type": "added",
+            "new_name": "Bedretto-Zone: Kalkglimmerschiefer"
+          },
+          {
+            "code": "15203757",
+            "change_type": "added",
+            "new_name": "San-Giorgio-Schuppe: Quarz-Glimmerschiefer"
+          },
+          {
+            "code": "15206123",
+            "change_type": "added",
+            "new_name": "Bregaglia-Intrusiva: Granodioritische Fazies: feinkörnig"
+          },
+          {
+            "code": "15203841",
+            "change_type": "added",
+            "new_name": "Suretta-Decke: Russapass-Fm.: Chloritoid-Quarzschiefer "
+          },
+          {
+            "code": "15203772",
+            "change_type": "added",
+            "new_name": "Sambuco-Decke: Ultramafitit"
+          },
+          {
+            "code": "15205162",
+            "change_type": "added",
+            "new_name": "Maloja-Teildecke: Paragneis und -schiefer (westlich des Septimer-Bruchs)"
+          },
+          {
+            "code": "15204155",
+            "change_type": "added",
+            "new_name": "Saluver-Fm.: Sandstein-Fazies"
+          },
+          {
+            "code": "15203891",
+            "change_type": "added",
+            "new_name": "Piz-Lizun-Komplex: Basisches Ganggestein"
+          },
+          {
+            "code": "15205171",
+            "change_type": "added",
+            "new_name": "Maloja-Teildecke: Fedoz-Metagabbro: Orthopyroxen-Chlorit-Amphibolfels"
+          },
+          {
+            "code": "15203815",
+            "change_type": "added",
+            "new_name": "Tambo-Decke: Truzzo-Granit: Augengneis"
+          },
+          {
+            "code": "15203914",
+            "change_type": "added",
+            "new_name": "Platta-Decke: Gabbro"
+          },
+          {
+            "code": "15203902",
+            "change_type": "added",
+            "new_name": "Rossi-Fm.: Kalksilikatfels"
+          },
+          {
+            "code": "15203804",
+            "change_type": "added",
+            "new_name": "Tambo-Decke: Kalzitmarmor"
+          },
+          {
+            "code": "15203773",
+            "change_type": "added",
+            "new_name": "Simano-Decke: Trias: Dolomitmarmor: mit Phlogopit"
+          },
+          {
+            "code": "15203777",
+            "change_type": "added",
+            "new_name": "Simano-Decke: Quarz-Glimmerschiefer"
+          },
+          {
+            "code": "15205142",
+            "change_type": "added",
+            "new_name": "Maloja-Teildecke: Kalzitmarmor [Emmat-Fm.?]"
+          },
+          {
+            "code": "15203833",
+            "change_type": "added",
+            "new_name": "Suretta-Decke: Detritische (Permo-)Trias"
+          },
+          {
+            "code": "15203870",
+            "change_type": "added",
+            "new_name": "Avers-Decke: Wengahorn-Fm.: Kristallinschuppe"
+          },
+          {
+            "code": "15205155",
+            "change_type": "added",
+            "new_name": "Maloja-Teildecke: Glimmerschiefer (mit Trias-Linsen; südlich der Engadiner Linie)"
+          },
+          {
+            "code": "15203910",
+            "change_type": "added",
+            "new_name": "Platta-Decke: Riebeckit-Albitschiefer"
+          },
+          {
+            "code": "15203846",
+            "change_type": "added",
+            "new_name": "Suretta-Decke: Valle-di-Lei-Fm. undiff."
+          },
+          {
+            "code": "15203791",
+            "change_type": "added",
+            "new_name": "Spegnas-Fm.: Bunte Schiefer"
+          },
+          {
+            "code": "15203855",
+            "change_type": "added",
+            "new_name": "Suretta-Decke: Val-da-Roda-Augengneis "
+          },
+          {
+            "code": "15205184",
+            "change_type": "added",
+            "new_name": "Fora-Teildecke: Grundgebirge"
+          },
+          {
+            "code": "15203796",
+            "change_type": "added",
+            "new_name": "Savognin-Fm.: Dolomit, Rauwacke"
+          },
+          {
+            "code": "15205178",
+            "change_type": "added",
+            "new_name": "Fora-Teildecke: Sedimentbedeckung"
+          },
+          {
+            "code": "15205148",
+            "change_type": "added",
+            "new_name": "Maloja-Teildecke: Trias: Dolomitmarmor"
+          },
+          {
+            "code": "15204165",
+            "change_type": "added",
+            "new_name": "Unterostalpin: Chlorit-Muskovit-Quarzschiefer"
+          },
+          {
+            "code": "15204157",
+            "change_type": "added",
+            "new_name": "Unterostalpin: Trias: Dolomit"
+          },
+          {
+            "code": "15203823",
+            "change_type": "added",
+            "new_name": "Suretta-Decke: Lägh-da-Cam-Fm.: Chloritschiefer"
+          },
+          {
+            "code": "15203907",
+            "change_type": "added",
+            "new_name": "Forno-Amphibolit: mit Fe-Cu-Vererzungen"
+          },
+          {
+            "code": "15206121",
+            "change_type": "added",
+            "new_name": "Bregaglia-Intrusiva: «Minestronit»"
+          },
+          {
+            "code": "15203903",
+            "change_type": "added",
+            "new_name": "Rossi-Fm.: Quarzit"
+          },
+          {
+            "code": "15205176",
+            "change_type": "added",
+            "new_name": "Maloja-Teildecke: Fedoz-Gneiskomplex: Granatamphibolit"
+          },
+          {
+            "code": "15203853",
+            "change_type": "added",
+            "new_name": "Suretta-Decke: Orthogneis undiff."
+          },
+          {
+            "code": "15205169",
+            "change_type": "added",
+            "new_name": "Maloja-Teildecke: «Chastè-Gneis»"
+          },
+          {
+            "code": "15205189",
+            "change_type": "added",
+            "new_name": "Fora-Teildecke: Variszischer Hellglimmergneis"
+          },
+          {
+            "code": "15204164",
+            "change_type": "added",
+            "new_name": "Bernina-Deckenkomplex: Diorit"
+          },
+          {
+            "code": "15205190",
+            "change_type": "added",
+            "new_name": "Fora-Teildecke: Variszischer Biotit-führender Hellglimmergneis"
+          },
+          {
+            "code": "15203896",
+            "change_type": "added",
+            "new_name": "Muretto-Quarzit: Diopsid-Quarzschiefer und Kalksilikatmarmor"
+          },
+          {
+            "code": "15203871",
+            "change_type": "added",
+            "new_name": "Avers-Decke: Mäder-Fm."
+          },
+          {
+            "code": "15203820",
+            "change_type": "added",
+            "new_name": "Suretta-Decke: Sedimentbedeckung"
+          },
+          {
+            "code": "15203782",
+            "change_type": "added",
+            "new_name": "Gruf-Komplex: Amphibolit"
+          },
+          {
+            "code": "15205181",
+            "change_type": "added",
+            "new_name": "Fora-Teildecke: Trias: Rauwacke"
+          },
+          {
+            "code": "15203915",
+            "change_type": "added",
+            "new_name": "Platta-Decke: Serpentinit"
+          },
+          {
+            "code": "15203890",
+            "change_type": "added",
+            "new_name": "Piz-Lizun-Komplex: Saures Ganggestein"
+          },
+          {
+            "code": "15202681",
+            "change_type": "added",
+            "new_name": "Aiguilles-Rouges-Massiv: Autochthone Sedimentbedeckung"
+          },
+          {
+            "code": "15203807",
+            "change_type": "added",
+            "new_name": "Tambo-Decke: Trias: Rauwacke"
+          },
+          {
+            "code": "15203873",
+            "change_type": "added",
+            "new_name": "Avers-Decke: Tscheischhorn-Fm. undiff."
+          },
+          {
+            "code": "15203862",
+            "change_type": "added",
+            "new_name": "Suretta-Decke: Zweiglimmer-Paragneis"
+          },
+          {
+            "code": "15203888",
+            "change_type": "added",
+            "new_name": "Avers-Decke: Talkschiefer"
+          },
+          {
+            "code": "15203827",
+            "change_type": "added",
+            "new_name": "Suretta-Decke: Dunkler Kalkschiefer"
+          },
+          {
+            "code": "15203913",
+            "change_type": "added",
+            "new_name": "Platta-Decke: Basalt: mit Pillow-Struktur"
+          },
+          {
+            "code": "15203918",
+            "change_type": "added",
+            "new_name": "Platta-Decke: Ophikalzit"
+          },
+          {
+            "code": "15203849",
+            "change_type": "added",
+            "new_name": "Suretta-Decke: Valle-di-Lei-Fm.: Dunkle Schiefer"
+          },
+          {
+            "code": "15203878",
+            "change_type": "added",
+            "new_name": "Avers-Decke: Predarossa-Fm.: Granat-Chloritoid-Glimmerschiefer"
+          },
+          {
+            "code": "15203767",
+            "change_type": "added",
+            "new_name": "Sambuco-Decke: Paragneis bis Glimmerschiefer: mit Staurolith und Disthen"
+          },
+          {
+            "code": "15203886",
+            "change_type": "added",
+            "new_name": "Avers-Decke: Gabbro"
+          },
+          {
+            "code": "15203790",
+            "change_type": "added",
+            "new_name": "Spegnas-Fm.: Sandstein"
+          },
+          {
+            "code": "15203763",
+            "change_type": "added",
+            "new_name": "Sambuco-Decke: Muskovit-Graphitschiefer"
+          },
+          {
+            "code": "15204158",
+            "change_type": "added",
+            "new_name": "Unterostalpin: Trias: Rauwacke"
+          },
+          {
+            "code": "15205159",
+            "change_type": "added",
+            "new_name": "Maloja-Teildecke: Quarz-Hellglimmerschiefer"
+          },
+          {
+            "code": "15203795",
+            "change_type": "added",
+            "new_name": "Radiolarit"
+          },
+          {
+            "code": "15204159",
+            "change_type": "added",
+            "new_name": "Ostalpin: Aplit"
+          },
+          {
+            "code": "15203803",
+            "change_type": "added",
+            "new_name": "Tambo-Decke: Marmor undiff."
+          },
+          {
+            "code": "15203904",
+            "change_type": "added",
+            "new_name": "Forno-Amphibolit: Pillow-Basalt"
+          },
+          {
+            "code": "15203856",
+            "change_type": "added",
+            "new_name": "Suretta-Decke: Hellglimmer-Orthogneis"
+          },
+          {
+            "code": "15203851",
+            "change_type": "added",
+            "new_name": "Suretta-Decke: Valle-di-Lei-Fm.: Granat-Chloritoid-Muskovitschiefer"
+          },
+          {
+            "code": "15203780",
+            "change_type": "added",
+            "new_name": "Simano-Decke: Quarz-Glimmerschiefer: mit Staurolith und Disthen"
+          },
+          {
+            "code": "15203858",
+            "change_type": "added",
+            "new_name": "Suretta-Decke: Glimmerschiefer und Paragneise"
+          },
+          {
+            "code": "15203811",
+            "change_type": "added",
+            "new_name": "Tambo-Decke: Permo-Trias: Tafelquarzit"
+          },
+          {
+            "code": "15203758",
+            "change_type": "added",
+            "new_name": "San-Giorgio-Schuppe: Quarz-Glimmerschiefer: mit Biotitgarben"
+          },
+          {
+            "code": "15206122",
+            "change_type": "added",
+            "new_name": "Bregaglia-Intrusiva: Basisches Ganggestein"
+          },
+          {
+            "code": "15203779",
+            "change_type": "added",
+            "new_name": "Simano-Decke: Quarz-Glimmerschiefer: mit Disthen"
+          },
+          {
+            "code": "15203759",
+            "change_type": "added",
+            "new_name": "San-Giorgio-Schuppe: Granat-Glimmerschiefer"
+          },
+          {
+            "code": "15205186",
+            "change_type": "added",
+            "new_name": "Fora-Teildecke: Amphibolit"
+          },
+          {
+            "code": "15203801",
+            "change_type": "added",
+            "new_name": "Grande-Bonavau-Fm.: Dolomitbrekzie"
+          },
+          {
+            "code": "15202678",
+            "change_type": "added",
+            "new_name": "Garschella-Fm.: Brisi- und Selun-Mb."
+          },
+          {
+            "code": "15203877",
+            "change_type": "added",
+            "new_name": "Avers-Decke: Predarossa-Fm.: mit Fuchsit"
+          },
+          {
+            "code": "15203765",
+            "change_type": "added",
+            "new_name": "Sambuco-Decke: Paragneis bis Glimmerschiefer"
+          },
+          {
+            "code": "15205167",
+            "change_type": "added",
+            "new_name": "Maloja-Teildecke: Variszischer Augengneis"
+          },
+          {
+            "code": "15200706",
+            "change_type": "added",
+            "new_name": "Cucloz-Fm.: Marnes gris-souris und Schistes marno-micacés"
+          },
+          {
+            "code": "15203805",
+            "change_type": "added",
+            "new_name": "Tambo-Decke: Karbonatische Trias"
+          },
+          {
+            "code": "15203857",
+            "change_type": "added",
+            "new_name": "Suretta-Decke: Zweiglimmer-Orthogneis"
+          },
+          {
+            "code": "15205144",
+            "change_type": "added",
+            "new_name": "Maloja-Teildecke: Kalkglimmerschiefer [Saluver-Fm.?]"
+          },
+          {
+            "code": "15205143",
+            "change_type": "added",
+            "new_name": "Maloja-Teildecke: Quarzschiefer [Blais-Fm.?]"
+          },
+          {
+            "code": "15203834",
+            "change_type": "added",
+            "new_name": "Suretta-Decke: Permo-Trias: Quarzit"
+          },
+          {
+            "code": "15203898",
+            "change_type": "added",
+            "new_name": "Rossi-Fm.: Andalusit-Granat-Biotitschiefer"
+          },
+          {
+            "code": "15203916",
+            "change_type": "added",
+            "new_name": "Platta-Decke: Serpentinit: Pyroxen"
+          },
+          {
+            "code": "15203872",
+            "change_type": "added",
+            "new_name": "Avers-Decke: Piot-Fm."
+          },
+          {
+            "code": "15203822",
+            "change_type": "added",
+            "new_name": "Suretta-Decke: Lägh-da-Cam-Fm.: Kalkglimmerschiefer"
+          },
+          {
+            "code": "15205174",
+            "change_type": "added",
+            "new_name": "Maloja-Teildecke: Fedoz-Gneiskomplex: Kalzitmarmor"
+          },
+          {
+            "code": "15203917",
+            "change_type": "added",
+            "new_name": "Platta-Decke: Rodingit"
+          },
+          {
+            "code": "15204153",
+            "change_type": "added",
+            "new_name": "Unterostalpin: Kataklastit"
+          },
+          {
+            "code": "15203876",
+            "change_type": "added",
+            "new_name": "Avers-Decke: Predarossa-Fm. undiff."
+          },
+          {
+            "code": "15203770",
+            "change_type": "added",
+            "new_name": "Sambuco-Decke: Bändergneis"
+          },
+          {
+            "code": "15203850",
+            "change_type": "added",
+            "new_name": "Suretta-Decke: Valle-di-Lei-Fm.: Granat-Muskovitschiefer"
+          },
+          {
+            "code": "15203909",
+            "change_type": "added",
+            "new_name": "Platta-Decke: Kalk- und Tonschiefer"
+          },
+          {
+            "code": "15204156",
+            "change_type": "added",
+            "new_name": "Saluver-Fm.: Brekziöse Fazies"
+          },
+          {
+            "code": "15203864",
+            "change_type": "added",
+            "new_name": "Suretta-Decke: Marmor"
+          },
+          {
+            "code": "15203847",
+            "change_type": "added",
+            "new_name": "Suretta-Decke: Valle-di-Lei-Fm.: Oberer Teil"
+          },
+          {
+            "code": "15203874",
+            "change_type": "added",
+            "new_name": "Avers-Decke: Tscheischhorn-Fm.: Phyllit"
+          },
+          {
+            "code": "15205187",
+            "change_type": "added",
+            "new_name": "Fora-Teildecke: Ultramafitit"
+          },
+          {
+            "code": "15205173",
+            "change_type": "added",
+            "new_name": "Maloja-Teildecke: Fedoz-Gneiskomplex: Granat-Glimmerschiefer"
+          },
+          {
+            "code": "15203895",
+            "change_type": "added",
+            "new_name": "Piz-Lizun-Komplex: Serpentinit"
+          },
+          {
+            "code": "15203766",
+            "change_type": "added",
+            "new_name": "Sambuco-Decke: Paragneis bis Glimmerschiefer: mit Granat"
+          },
+          {
+            "code": "15203775",
+            "change_type": "added",
+            "new_name": "Simano-Decke: Serizitquarzit"
+          },
+          {
+            "code": "15203785",
+            "change_type": "added",
+            "new_name": "Bedretto-Zone: Granatphyllit bis -glimmerschiefer"
+          },
+          {
+            "code": "15203836",
+            "change_type": "added",
+            "new_name": "Suretta-Decke: Permo-Trias: Konglomeratischer Quarzit"
+          },
+          {
+            "code": "15203884",
+            "change_type": "added",
+            "new_name": "Avers-Decke: Prasinit: Fuchsit"
+          },
+          {
+            "code": "15203900",
+            "change_type": "added",
+            "new_name": "Rossi-Fm.: Dolomit"
+          },
+          {
+            "code": "15205182",
+            "change_type": "added",
+            "new_name": "Fora-Teildecke: Detritische (Permo-)Trias"
+          },
+          {
+            "code": "15205164",
+            "change_type": "added",
+            "new_name": "Maloja-Teildecke: Ultramafitit"
+          },
+          {
+            "code": "15203897",
+            "change_type": "added",
+            "new_name": "Muretto-Quarzit: Quarz-Biotit-Plagioklasschiefer"
+          },
+          {
+            "code": "15206124",
+            "change_type": "added",
+            "new_name": "Bregaglia-Intrusiva: Granodioritische Fazies: mit Xenolithen"
+          },
+          {
+            "code": "15205151",
+            "change_type": "added",
+            "new_name": "Maloja-Teildecke: Detritische (Permo-)Trias"
+          },
+          {
+            "code": "15205163",
+            "change_type": "added",
+            "new_name": "Maloja-Teildecke: Amphibolit"
+          },
+          {
+            "code": "15203784",
+            "change_type": "added",
+            "new_name": "Bedretto-Zone: Kalkglimmerschiefer: mit Skapolith"
+          },
+          {
+            "code": "15203875",
+            "change_type": "added",
+            "new_name": "Avers-Decke: Tscheischhorn-Fm.: Dolomit"
+          },
+          {
+            "code": "15205160",
+            "change_type": "added",
+            "new_name": "Maloja-Teildecke: Quarzphyllit"
+          },
+          {
+            "code": "15203818",
+            "change_type": "added",
+            "new_name": "Tambo-Decke: Granat-Glimmerschiefer"
+          },
+          {
+            "code": "15203906",
+            "change_type": "added",
+            "new_name": "Forno-Amphibolit: mit Epidotlagen"
+          },
+          {
+            "code": "15203840",
+            "change_type": "added",
+            "new_name": "Suretta-Decke: Russapass-Fm.: Hellglimmergneis"
+          },
+          {
+            "code": "15203839",
+            "change_type": "added",
+            "new_name": "Suretta-Decke: Russapass-Fm.: Glaukophanphyllit"
+          },
+          {
+            "code": "15203861",
+            "change_type": "added",
+            "new_name": "Suretta-Decke: Granat-Paragneis"
+          },
+          {
+            "code": "15205165",
+            "change_type": "added",
+            "new_name": "Maloja-Teildecke: Variszisches Grundgebirge"
+          },
+          {
+            "code": "15203793",
+            "change_type": "added",
+            "new_name": "Val-Gronda-Schuppe: Phyllit und Tonschiefer"
+          },
+          {
+            "code": "15205149",
+            "change_type": "added",
+            "new_name": "Maloja-Teildecke: Trias: Dolomitbrekzie"
+          },
+          {
+            "code": "15205168",
+            "change_type": "added",
+            "new_name": "Maloja-Teildecke: Variszischer Zweiglimmergneis"
+          },
+          {
+            "code": "15203821",
+            "change_type": "added",
+            "new_name": "Suretta-Decke: Lägh-da-Cam-Fm. undiff."
+          },
+          {
+            "code": "15205140",
+            "change_type": "added",
+            "new_name": "Dent-Blanche-Decke: Grundgebirge"
+          },
+          {
+            "code": "15204160",
+            "change_type": "added",
+            "new_name": "Ostalpin: Basisches Ganggestein"
+          },
+          {
+            "code": "15204163",
+            "change_type": "added",
+            "new_name": "Bernina-Deckenkomplex: Granodiorit"
+          },
+          {
+            "code": "15205153",
+            "change_type": "added",
+            "new_name": "Maloja-Teildecke: Permo-Trias: Schiefer"
+          },
+          {
+            "code": "15203762",
+            "change_type": "added",
+            "new_name": "Sambuco-Decke: Röti-Fm."
+          },
+          {
+            "code": "15204166",
+            "change_type": "added",
+            "new_name": "Roccabella-Schuppe: Chlorit-Muskovit-Quarzschiefer"
+          },
+          {
+            "code": "15203835",
+            "change_type": "added",
+            "new_name": "Suretta-Decke: Permo-Trias: Tafelquarzit"
+          },
+          {
+            "code": "15205191",
+            "change_type": "added",
+            "new_name": "Fora-Teildecke: Fedoz-Metagabbro"
+          },
+          {
+            "code": "15203799",
+            "change_type": "added",
+            "new_name": "Grande-Bonavau-Fm.: Belemnitenbrekzie"
+          },
+          {
+            "code": "15203852",
+            "change_type": "added",
+            "new_name": "Suretta-Decke: Valle-di-Lei-Fm.: Unterer Teil"
+          },
+          {
+            "code": "15204098",
+            "change_type": "modified",
+            "old_name": "Maloja-Orthogneis",
+            "new_name": "Maloja-Teildecke: Maloja-Orthogneis"
+          },
+          {
+            "code": "15203287",
+            "change_type": "modified",
+            "old_name": "Vouan-Konglomerat",
+            "new_name": "Voirons-Flysch: Vouan-Konglomerat"
+          },
+          {
+            "code": "15203317",
+            "change_type": "modified",
+            "old_name": "Matorello-Gneis",
+            "new_name": "Sambuco-Decke: Matorello-Gneis"
+          },
+          {
+            "code": "15203454",
+            "change_type": "modified",
+            "old_name": "Stellihorn-Mylonit",
+            "new_name": "Monte-Rosa-Decke: Stellihorn-Mylonit"
+          },
+          {
+            "code": "15203112",
+            "change_type": "modified",
+            "old_name": "Gurnigel-Decke: Flysch-3b",
+            "new_name": "Gurnigel-Flysch: Flysch-3b"
+          },
+          {
+            "code": "15203286",
+            "change_type": "modified",
+            "old_name": "Boëge-Mergel",
+            "new_name": "Voirons-Flysch: Boëge-Mergel"
+          },
+          {
+            "code": "15203725",
+            "change_type": "modified",
+            "old_name": "Preja-Fm.: Trias",
+            "new_name": "Monte-Rosa-Decke: Preja-Fm.: Trias"
+          },
+          {
+            "code": "15203385",
+            "change_type": "modified",
+            "old_name": "Macugnaga-Augengneis",
+            "new_name": "Monte-Rosa-Decke: Macugnaga-Augengneis"
+          },
+          {
+            "code": "15203005",
+            "change_type": "modified",
+            "old_name": "Frutigen-Fm.",
+            "new_name": "Niesen-Flysch: Frutigen-Fm."
+          },
+          {
+            "code": "15203115",
+            "change_type": "modified",
+            "old_name": "Gurnigel-Decke: Flysch-2a",
+            "new_name": "Gurnigel-Flysch: Flysch-2a"
+          },
+          {
+            "code": "15203118",
+            "change_type": "modified",
+            "old_name": "Schlieren-Sandstein",
+            "new_name": "Schlieren-Flysch: Schlieren-Sandstein"
+          },
+          {
+            "code": "15204099",
+            "change_type": "modified",
+            "old_name": "Maloja-Gneiskomplex",
+            "new_name": "Maloja-Teildecke: Maloja-Gneiskomplex"
+          },
+          {
+            "code": "15203123",
+            "change_type": "modified",
+            "old_name": "Schlieren-Decke: Basaler Flysch",
+            "new_name": "Schlieren-Flysch: Basaler Flysch"
+          },
+          {
+            "code": "15203288",
+            "change_type": "modified",
+            "old_name": "Voirons-Sandstein",
+            "new_name": "Voirons-Flysch: Voirons-Sandstein"
+          },
+          {
+            "code": "15203441",
+            "change_type": "modified",
+            "old_name": "Rottal-Migmatit",
+            "new_name": "Monte-Rosa-Decke: Rottal-Migmatit"
+          },
+          {
+            "code": "15203001",
+            "change_type": "modified",
+            "old_name": "Niesen-Decke: Flysch",
+            "new_name": "Niesen-Flysch undiff."
+          },
+          {
+            "code": "15204096",
+            "change_type": "modified",
+            "old_name": "Fedoz-Gneiskomplex",
+            "new_name": "Maloja-Teildecke: Fedoz-Gneiskomplex"
+          },
+          {
+            "code": "15203334",
+            "change_type": "modified",
+            "old_name": "Aigremont-Brekzie",
+            "new_name": "Niesen-Flysch: Aigremont-Brekzie"
+          },
+          {
+            "code": "15203606",
+            "change_type": "modified",
+            "old_name": "Gurnigel-Decke: Flysch-2",
+            "new_name": "Gurnigel-Flysch: Flysch-2"
+          },
+          {
+            "code": "15203116",
+            "change_type": "modified",
+            "old_name": "Hellstätt-Fm.",
+            "new_name": "Gurnigel-Flysch: Hellstätt-Fm."
+          },
+          {
+            "code": "15203605",
+            "change_type": "modified",
+            "old_name": "Gurnigel-Decke: Flysch-3",
+            "new_name": "Gurnigel-Flysch: Flysch-3"
+          },
+          {
+            "code": "15203004",
+            "change_type": "modified",
+            "old_name": "Niesenkulm-Fm.",
+            "new_name": "Niesen-Flysch: Niesenkulm-Fm."
+          },
+          {
+            "code": "15203340",
+            "change_type": "modified",
+            "old_name": "Timun-Gneiskomplex",
+            "new_name": "Suretta-Decke: Timun-Gneiskomplex"
+          },
+          {
+            "code": "15203755",
+            "change_type": "modified",
+            "old_name": "Turba-Mylonitzone",
+            "new_name": "Turba-Mylonit"
+          },
+          {
+            "code": "15203341",
+            "change_type": "modified",
+            "old_name": "Malenco-Serpentinit",
+            "new_name": "Malenco-Ultramafitit: Serpentinit"
+          },
+          {
+            "code": "15203114",
+            "change_type": "modified",
+            "old_name": "Gurnigel-Decke: Flysch-2b",
+            "new_name": "Gurnigel-Flysch: Flysch-2b"
+          },
+          {
+            "code": "15203331",
+            "change_type": "modified",
+            "old_name": "Roffna-Gneis: Porphyrische Fazies",
+            "new_name": "Suretta-Decke: Roffna-Gneis: Porphyrische Fazies"
+          },
+          {
+            "code": "15203283",
+            "change_type": "modified",
+            "old_name": "Wägital-Decke: Flysch",
+            "new_name": "Wägital-Flysch undiff."
+          },
+          {
+            "code": "15203003",
+            "change_type": "modified",
+            "old_name": "Seron-Fm.",
+            "new_name": "Niesen-Flysch: Seron-Fm."
+          },
+          {
+            "code": "15203497",
+            "change_type": "modified",
+            "old_name": "Flix-Sch.",
+            "new_name": "Platta-Decke: Flix-Schichten"
+          },
+          {
+            "code": "15203522",
+            "change_type": "modified",
+            "old_name": "Seron-Fm.: Sandig-kalkige Fazies",
+            "new_name": "Niesen-Flysch: Seron-Fm.: Sandig-kalkige Fazies"
+          },
+          {
+            "code": "15204097",
+            "change_type": "modified",
+            "old_name": "Fedoz-Metagabbro",
+            "new_name": "Maloja-Teildecke: Fedoz-Metagabbro"
+          },
+          {
+            "code": "15203119",
+            "change_type": "modified",
+            "old_name": "Schoni-Sandstein",
+            "new_name": "Schlieren-Flysch: Schoni-Sandstein"
+          },
+          {
+            "code": "15203518",
+            "change_type": "modified",
+            "old_name": "Lizun-Grünschiefer",
+            "new_name": "Piz-Lizun-Komplex"
+          },
+          {
+            "code": "15203608",
+            "change_type": "modified",
+            "old_name": "Aroley-, Marmontains- und St-Chritophe-Fm.",
+            "new_name": "Aroley-, Marmontains- und St-Christophe-Fm."
+          },
+          {
+            "code": "15203498",
+            "change_type": "modified",
+            "old_name": "Platta-Decke: Calpionellenkalk",
+            "new_name": "Platta-Decke: Kalzitmarmor"
+          },
+          {
+            "code": "15203257",
+            "change_type": "modified",
+            "old_name": "Zone Submédiane: Melange",
+            "new_name": "Zone Submédiane: Melange: Mergel und Sandstein"
+          },
+          {
+            "code": "15203508",
+            "change_type": "modified",
+            "old_name": "Truzzo-Granit",
+            "new_name": "Tambo-Decke: Truzzo-Granit"
+          },
+          {
+            "code": "15203002",
+            "change_type": "modified",
+            "old_name": "Chesselbach-Fm.",
+            "new_name": "Niesen-Flysch: Chesselbach-Fm."
+          },
+          {
+            "code": "15203330",
+            "change_type": "modified",
+            "old_name": "Roffna-Gneis",
+            "new_name": "Suretta-Decke: Roffna-Gneis"
+          },
+          {
+            "code": "15203499",
+            "change_type": "modified",
+            "old_name": "Falotta-Radiolarit",
+            "new_name": "Platta-Decke: Falotta-Radiolarit"
+          },
+          {
+            "code": "15203285",
+            "change_type": "modified",
+            "old_name": "Voirons-Decke: Flysch",
+            "new_name": "Voirons-Flysch undiff."
+          },
+          {
+            "code": "15203550",
+            "change_type": "modified",
+            "old_name": "Leventina-Einheit: Paragneis",
+            "new_name": "Leventina-Einheit: Paragneis bis Granat-Glimmerschiefer"
+          },
+          {
+            "code": "15203117",
+            "change_type": "modified",
+            "old_name": "Schlieren-Decke: Flysch",
+            "new_name": "Schlieren-Flysch undiff."
+          },
+          {
+            "code": "15203120",
+            "change_type": "modified",
+            "old_name": "Schoni-Sandstein: Oberer Tonstein",
+            "new_name": "Schlieren-Flysch: Schoni-Sandstein: Oberer Tonstein"
+          },
+          {
+            "code": "15203436",
+            "change_type": "modified",
+            "old_name": "Preja-Fm.",
+            "new_name": "Monte-Rosa-Decke: Preja-Fm."
+          },
+          {
+            "code": "15203524",
+            "change_type": "modified",
+            "old_name": "Frutigen-Fm.: Konglomerat-dominierte Fazies",
+            "new_name": "Niesen-Flysch: Frutigen-Fm.: Konglomerat-dominierte Fazies"
+          },
+          {
+            "code": "15203113",
+            "change_type": "modified",
+            "old_name": "Gurnigel-Decke: Flysch-3a",
+            "new_name": "Gurnigel-Flysch: Flysch-3a"
+          },
+          {
+            "code": "15203284",
+            "change_type": "modified",
+            "old_name": "Gurnigel-Decke: Flysch-5",
+            "new_name": "Gurnigel-Flysch: Flysch-5"
+          },
+          {
+            "code": "15203437",
+            "change_type": "modified",
+            "old_name": "Cavalli-Fm.",
+            "new_name": "Monte-Rosa-Decke: Cavalli-Fm."
+          },
+          {
+            "code": "15203523",
+            "change_type": "modified",
+            "old_name": "Seron-Fm.: Konglomerat-dominierte Fazies",
+            "new_name": "Niesen-Flysch: Seron-Fm.: Konglomerat-dominierte Fazies"
+          },
+          {
+            "code": "15203526",
+            "change_type": "modified",
+            "old_name": "Zone Submédiane: Gips",
+            "new_name": "Zone Submédiane: Melange: Gips"
+          },
+          {
+            "code": "15203121",
+            "change_type": "modified",
+            "old_name": "Guber-Sandstein",
+            "new_name": "Schlieren-Flysch: Guber-Sandstein"
+          },
+          {
+            "code": "15203110",
+            "change_type": "modified",
+            "old_name": "Gurnigel-Decke: Flysch",
+            "new_name": "Gurnigel-Flysch undiff."
+          },
+          {
+            "code": "15203607",
+            "change_type": "modified",
+            "old_name": "Hellstätt-Fm. und Flysch 2a",
+            "new_name": "Gurnigel-Flysch: Hellstätt-Fm. und Flysch 2a"
+          },
+          {
+            "code": "15203111",
+            "change_type": "modified",
+            "old_name": "Gurnigel-Decke: Flysch-4",
+            "new_name": "Gurnigel-Flysch: Flysch-4"
+          },
+          {
+            "code": "15203122",
+            "change_type": "modified",
+            "old_name": "Guber-Sandstein: Unterer Tonstein",
+            "new_name": "Schlieren-Flysch: Guber-Sandstein: Unterer Tonstein"
+          },
+          {
+            "code": "15203724",
+            "change_type": "modified",
+            "old_name": "Preja-Fm.: Jura",
+            "new_name": "Monte-Rosa-Decke: Preja-Fm.: Jura"
+          },
+          {
+            "code": "15203525",
+            "change_type": "modified",
+            "old_name": "Frutigen-Fm.: Schiefrige Fazies",
+            "new_name": "Niesen-Flysch: Frutigen-Fm.: Schiefrige Fazies"
+          }
+        ],
+        "coded_value_summary": {
+          "added": 248,
+          "removed": 0,
+          "modified": 59
+        }
+      },
+      {
+        "change_type": "modified",
+        "name": "GC_TECTO_CD",
+        "coded_value_changes": [
+          {
+            "code": "15309417",
+            "change_type": "added",
+            "new_name": "Monte-del-Forno-Einheit"
+          },
+          {
+            "code": "15309419",
+            "change_type": "added",
+            "new_name": "Livizung-Einheit"
+          },
+          {
+            "code": "15309418",
+            "change_type": "added",
+            "new_name": "Val-Malenco-Einheit"
+          },
+          {
+            "code": "15309415",
+            "change_type": "added",
+            "new_name": "Arlos-Schuppe"
+          },
+          {
+            "code": "15309416",
+            "change_type": "added",
+            "new_name": "Piz-Lizun-Einheit"
+          }
+        ],
+        "coded_value_summary": {
+          "added": 5,
+          "removed": 0,
+          "modified": 0
+        }
+      },
+      {
+        "change_type": "modified",
+        "name": "GC_CORRELATION_CD",
+        "coded_value_changes": [
+          {
+            "code": "15283200",
+            "change_type": "added",
+            "new_name": "Alpines Metamorphismus"
+          },
+          {
+            "code": "15283100",
+            "change_type": "added",
+            "new_name": "Alpiner orogenetischer Zyklus"
+          },
+          {
+            "code": "15285005",
+            "change_type": "modified",
+            "old_name": "OSM",
+            "new_name": "Obere Süsswassermolasse (OSM)"
+          },
+          {
+            "code": "15285041",
+            "change_type": "modified",
+            "old_name": "Ophiolithische Abfolge",
+            "new_name": "Tethys Ophiolithische Abfolge"
+          },
+          {
+            "code": "15287001",
+            "change_type": "modified",
+            "old_name": "Grundgebirge",
+            "new_name": "Präalpines Grundgebirge"
+          },
+          {
+            "code": "15285018",
+            "change_type": "modified",
+            "old_name": "UMM",
+            "new_name": "Untere Meeresmolasse (UMM)"
+          },
+          {
+            "code": "15285010",
+            "change_type": "modified",
+            "old_name": "OMM",
+            "new_name": "Obere Meeresmolasse (OMM)"
+          },
+          {
+            "code": "15285013",
+            "change_type": "modified",
+            "old_name": "USM",
+            "new_name": "Untere Süsswassermolasse (USM)"
+          }
+        ],
+        "coded_value_summary": {
+          "added": 2,
+          "removed": 0,
+          "modified": 6
+        }
+      },
+      {
+        "change_type": "modified",
+        "name": "GC_LITHO_CD",
+        "coded_value_changes": [
+          {
+            "code": "15111184",
+            "change_type": "removed",
+            "old_name": "Gestein: vulkanisch: Karbonat"
+          }
+        ],
+        "coded_value_summary": {
+          "added": 0,
+          "removed": 1,
+          "modified": 0
+        }
+      }
+    ],
+    "tables": [],
+    "feature_classes": [],
+    "relationships": [],
+    "subtypes": []
+  },
+  "has_changes": true,
+  "metadata": {
+    "old_schema_name": "GCOVERP@osa.sde",
+    "new_schema_name": "GCOVERP@osa.sde",
+    "comparison_date": "2026-02-12T11:34:53.432734",
+    "old_schema_backup_date": null,
+    "old_schema_backup_info": "Unknown",
+    "old_schema_age_days": null,
+    "new_schema_backup_date": null,
+    "new_schema_backup_info": "Unknown",
+    "new_schema_age_days": null,
+    "comparison": {
+      "time_difference": null,
+      "backup_type_same": true,
+      "reference_date_same": true,
+      "complexity_difference": null,
+      "version_same": true
+    }
+  }
+}
