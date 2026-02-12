@@ -254,11 +254,12 @@ class GeoDataConfig:
                 logger.debug(f"Loaded CSV translations: {len(df_csv)} entries")"""
 
             # 3. Load new Excel translations (if available)
-            excel_file = self._find_file("2025c_GeolCodeText_Trad.xlsx")
+            trad_fname = "_GeolCodeText_Trad.xlsx"
+            excel_file = self._find_file(trad_fname)
             if excel_file:
                 df_excel = pd.read_excel(excel_file, sheet_name="Tabelle1")
                 df_excel["GeolCodeInt"] = df_excel["GeolCodeInt"].astype("string")
-                df_excel["source"] = "2025c_GeolCodeText_Trad"
+                df_excel["source"] = trad_fname
                 dataframes.append(df_excel)
                 logger.debug(df_excel.head(5))
                 logger.info(
