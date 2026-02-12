@@ -3,6 +3,7 @@ name: Generate markdown and PDF documents
 
 on:
   workflow_call:
+  workflow_dispatch:
   push:
     branches:
       - master
