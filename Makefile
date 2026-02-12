@@ -1,11 +1,13 @@
-LANGUAGES = de fr
+LANGUAGES = de fr it en
 FORMATS = pdf odt docx html
 
-INPUT_DIR = inputs
-OUTPUT_DIR = outputs
-LOCALE_DIR = locale
+EXPORT_DIR ?= exports
+INPUT_DIR ?= inputs
+OUTPUT_DIR ?= outputs
+
 
 PANDOC=/usr/bin/pandoc
+GCDOCS=gcdocs
 RM=/bin/rm
 CP=/usr/bin/cp
 
@@ -13,8 +15,6 @@ CSS = datamodel.css
 
 # Define targets for each language and format
 OUTPUTS = $(foreach lang,$(LANGUAGES),$(foreach fmt,$(FORMATS),$(OUTPUT_DIR)/$(lang)/datamodel.$(fmt)))
-# Define the list of required .mo files for each language
-MO_FILES = $(foreach lang,$(LANGUAGES),$(LOCALE_DIR)/$(lang)/LC_MESSAGES/datamodel.mo $(LOCALE_DIR)/$(lang)/LC_MESSAGES/app.mo)
 INPUTS = $(foreach lang,$(LANGUAGES),$(foreach fmt,$(FORMATS),$(INPUT_DIR)/$(lang)/datamodel.md))
 CLEAN_PDFS = $(shell find outputs -name "*.pdf" -not -name "ER-GCOVER.pdf")
 
@@ -36,6 +36,8 @@ PANDOC_OPTIONS=--standalone \
 # Define language-specific options
 OPTIONS_de = --metadata lang=de  --metadata-file=$(INPUT_DIR)/de/metadata.yaml -V lang=de
 OPTIONS_fr = --metadata lang=fr  --metadata-file=$(INPUT_DIR)/fr/metadata.yaml -V lang=fr
+OPTIONS_it = --metadata lang=it  --metadata-file=$(INPUT_DIR)/it/metadata.yaml -V lang=it
+OPTIONS_en = --metadata lang=en  --metadata-file=$(INPUT_DIR)/en/metadata.yaml -V lang=en
 
 # format specific options
 PANDOC_HTML_OPTIONS=  --to html5 --toc  --toc-depth=3  --include-in-header=$(INPUT_DIR)/de/headers.html  --include-after-body=assets/sortable.html  --css $(CSS)
@@ -54,39 +56,38 @@ help:
 	@echo "  make mds                - Generate only Markdown files for all languages"
 	@echo "  make de                 - Generate all files (PDF, DOCX, HTML and ODT) for German"
 	@echo "  make fr                 - Generate all files (PDF, DOCX, HTML and ODT) for French"
-	@echo "  make babel              - Generate .mo translation files"
+	@echo "  make it                 - Generate all files (PDF, DOCX, HTML and ODT) for Italian"
+	@echo "  make en                 - Generate all files (PDF, DOCX, HTML and ODT) for English"
 	@echo "  make markdown           - Generate markdown files"
 	@echo "  make diagram            - Generate ER diagram"
 	@echo "  make validate           - Validate the datamodel against the schema"
 	@echo "  make check-metadata     - Check the model metadata"
 	@echo "  make validate-metadata  - Validate the datamodel metadata"
-	@echo "  make clean              - Remove all generated files"
+	@echo "  make cleanall           - Remove all generated files"
 	@echo "  make help               - Display this help message"
 
 .PHONY: assets
 assets:
 	mkdir -p $(OUTPUT_DIR)/de
 	mkdir -p $(OUTPUT_DIR)/fr
+	mkdir -p $(OUTPUT_DIR)/it
+	mkdir -p $(OUTPUT_DIR)/en
 	$(CP) assets/$(CSS) $(OUTPUT_DIR)/de
 	$(CP) assets/$(CSS) $(OUTPUT_DIR)/fr
+	$(CP) assets/$(CSS) $(OUTPUT_DIR)/it
+	$(CP) assets/$(CSS) $(OUTPUT_DIR)/en
 	$(CP) assets/geocover.png $(OUTPUT_DIR)/de
 	$(CP) assets/geocover.png $(OUTPUT_DIR)/fr
+	$(CP) assets/geocover.png $(OUTPUT_DIR)/it
+	$(CP) assets/geocover.png $(OUTPUT_DIR)/en
 	$(CP) assets/geocover.png .
 	$(CP) assets/model.png $(OUTPUT_DIR)/de
 	$(CP) assets/model.png $(OUTPUT_DIR)/fr
+	$(CP) assets/model.png $(OUTPUT_DIR)/it
+	$(CP) assets/model.png $(OUTPUT_DIR)/en
 	$(CP) assets/model.png .
 
-babel: $(MO_FILES)
 
-
-# Rule to compile .mo files if missing
-$(LOCALE_DIR)/%/LC_MESSAGES/datamodel.mo: $(LOCALE_DIR)/%/LC_MESSAGES/datamodel.po
-	mkdir -p $(@D)
-	pybabel compile --domain=datamodel --directory=locale --use-fuzzy
-
-$(LOCALE_DIR)/%/LC_MESSAGES/app.mo: $(LOCALE_DIR)/%/LC_MESSAGES/app.po
-	mkdir -p $(@D)
-	pybabel compile --domain=app --directory=locale --use-fuzzy
 
 markdown: $(MO_FILES) $(INPUTS)
 
@@ -96,25 +97,26 @@ diagram: assets
 	python create_gv.py
 	
 $(INPUT_DIR)/datamodel.xlsx:
-	datamodel  export datamodel.yaml  -o $@
+	$(GCDOCS)  export datamodel.yaml  -o $@
 
 
 .PHONY: all
-all: $(MO_FILES) $(INPUTS)  $(OUTPUTS)  $(INPUT_DIR)/datamodel.xlsx
+all:  $(INPUTS)  $(OUTPUTS)
+# TODO readd  $(INPUT_DIR)/datamodel.xlsx
 
 # Define individual rules for each format and language
 define build_rule
-$(INPUT_DIR)/$(1)/headers.html: assets $(MO_FILES)
+$(INPUT_DIR)/$(1)/headers.html: assets
 	mkdir -p $$(@D)
-	datamodel generate --lang=$(1)  -o $(INPUT_DIR) datamodel.yaml
+	$(GCDOCS)  generate --lang=$(1)  -i $(EXPORT_DIR) -o $(INPUT_DIR) datamodel.yaml
 
-$(INPUT_DIR)/$(1)/metadata.yaml: assets $(MO_FILES)
+$(INPUT_DIR)/$(1)/metadata.yaml: assets
 	mkdir -p $$(@D)
-	datamodel generate --lang=$(1)  -o $(INPUT_DIR) datamodel.yaml
+	$(GCDOCS)  generate --lang=$(1)  -i $(EXPORT_DIR) -o $(INPUT_DIR) datamodel.yaml
 
-$(INPUT_DIR)/$(1)/datamodel.md: assets $(MO_FILES)
+$(INPUT_DIR)/$(1)/datamodel.md: assets
 	mkdir -p $$(@D)
-	datamodel generate --lang=$(1) -o $(INPUT_DIR) datamodel.yaml
+	$(GCDOCS)  generate --lang=$(1) -i $(EXPORT_DIR) -o $(INPUT_DIR) datamodel.yaml
 
 $(OUTPUT_DIR)/$(1)/datamodel.pdf: $(INPUT_DIR)/$(1)/datamodel.md $(INPUT_DIR)/$(1)/metadata.yaml
 	mkdir -p $$(@D)
@@ -148,13 +150,15 @@ mds: $(foreach lang,$(LANGUAGES),$(INPUT_DIR)/$(lang)/datamodel.md)
 
 
 # Targets for building specific languages
-.PHONY: de fr it
+.PHONY: de fr it en
 de: $(foreach fmt,$(FORMATS),$(OUTPUT_DIR)/de/datamodel.$(fmt))
 fr: $(foreach fmt,$(FORMATS),$(OUTPUT_DIR)/fr/datamodel.$(fmt))
+it: $(foreach fmt,$(FORMATS),$(OUTPUT_DIR)/it/datamodel.$(fmt))
+en: $(foreach fmt,$(FORMATS),$(OUTPUT_DIR)/en/datamodel.$(fmt))
 
 .PHONY: validate
 validate:
-	 datamodel validate datamodel.yaml
+	 $(GCDOCS)  validate datamodel.yaml
 
 # Check metadata in all generated PDFs
 .PHONY: check-metadata
@@ -192,11 +196,9 @@ validate-metadata:
 
 # Clean up
 # Clean up all generated files
-.PHONY: clean cleanall
-cleanall: clean cleaninputs cleanpdf cleanodt cleanhtml cleandocx
+.PHONY:  cleanall
+cleanall: cleaninputs cleanpdf cleanodt cleanhtml cleandocx
 
-clean:
-	find $(LOCALE_DIR) -name "*.mo" -delete
 
 # Clean up only generated PDF files
 .PHONY: cleanpdf
@@ -229,3 +231,5 @@ cleanhtml:
 cleaninputs:
 	rm -rf $(INPUT_DIR)/de/*
 	rm -rf $(INPUT_DIR)/fr/*
+	rm -rf $(INPUT_DIR)/it/*
+	rm -rf $(INPUT_DIR)/en/*

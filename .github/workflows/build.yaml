@@ -12,7 +12,7 @@ on:
       - master
       - develop
       - 'releases/**'
-      - schema_gmu
+      - refactor_gcdocs
 
 
 jobs:
@@ -69,13 +69,27 @@ jobs:
         run: |
           echo "--NOT GENERATING --"
           # python ./create_gv.py
-    
+
+      - name: Extract sources_dir from YAML
+        id: get_sources_dir
+        run: |
+          import yaml
+          with open("datamodel.yaml") as f:
+              data = yaml.safe_load(f)
+          print(f"::set-output name=dir::{data['model']['sources_dir']}")
+        shell: python
+
+      - name: Use sources_dir
+        run: echo "Directory is ${{ steps.get_sources_dir.outputs.dir }}"
+
+
+
       - name: Build all targets
         shell: bash -el {0}
         run: |
-             make cleanall all
+             EXPORT_DIR=${{ steps.get_sources_dir.outputs.dir }} make cleanall all
              # make diagram
-             make validate-metadata
+             EXPORT_DIR=${{ steps.get_sources_dir.outputs.dir }} make validate-metadata
              
 
       - name: Generate PDF from PUML diagram
@@ -101,16 +115,26 @@ jobs:
           path: |
             outputs/de/datamodel.pdf
             outputs/fr/datamodel.pdf
+            outputs/it/datamodel.pdf
+            outputs/en/datamodel.pdf
             outputs/de/datamodel.docx
             outputs/fr/datamodel.docx
             outputs/fr/datamodel.html
             outputs/de/datamodel.html
+            outputs/it/datamodel.html
+            outputs/en/datamodel.html
             outputs/de/datamodel.css
             outputs/fr/datamodel.css
+            outputs/it/datamodel.css
+            outputs/en/datamodel.css
             outputs/de/geocover.png
             outputs/fr/geocover.png
+            outputs/it/geocover.png
+            outputs/en/geocover.png
             outputs/ER-GCOVER.svg
             outputs/ER-GCOVER.pdf
             ${{ env.SOURCES_DIR }}/gcoverp_export_simple.json 
             datamodel.yaml
+            outputs/geology_mapping_tool*.xlsx
+
 

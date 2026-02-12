@@ -18,10 +18,14 @@ version: "0.11"
 date: 2025-09-01
 
 # Model revision should change if attributes are added, deleted or changed
+# 4.1.0    KE pour Bedrock
+# 4.1.1    Minor translations bugs
+# 4.1.2    Adding new lang: it and en (partial support)
+# 4.2.0    Update CD  (26-11-2025) + New translations
 model:
-  revision: '4.1.1'
-  revision_date: "2025-08-26"
-  sources_dir: "exports/2025-08-26"
+  revision: '4.2.0'
+  revision_date: "2025-11-26"
+  sources_dir: "exports/2025-11-26"
 
 # Annexe
 # Some CD are alreday defined in the simplifed JSON report
@@ -48,6 +52,13 @@ themes:
         gravitaires, glaciaires ou anthropogéniques jusqu’à leur
         position actuelle, ou dégagés sur place par dégradation de
         la roche sous-jacente.
+      it: |-
+        La classe Unconsolidated_Deposits_PT comprende i volumi 
+        rocciosi individualizzati (di dimensioni variabili, dai 
+        ciottoli ai blocchi) che sono stati trasportati da processi
+        gravitazionali, glaciali o antropogenici fino alla loro
+        posizione attuale, o liberati sul posto dal degrado della
+        roccia sottostante.
     attributes:
     - name: kind
       att_type: subtype
@@ -63,6 +74,7 @@ themes:
       description:
         de: Zustand der Objektart
         fr: État du type d'objet
+        it: Stato del tipo di oggetto
       cardinality: "1"
       mandatory: false
     - name: rock_spe
@@ -71,6 +83,7 @@ themes:
       description:
         de: Bezeichnung des Leitgesteins.
         fr: Description de la roche repère
+        it: Denominazione della roccia guida
       cardinality: 0..1
       mandatory: false
     - name: rock_type
@@ -168,7 +181,6 @@ themes:
       description:
         de: Materialbezeichnung (lithologische Einheit)
         fr: Description du matériel (unité lithologique)
-      value: Lithostratigraphic_Units_Litho
       cardinality: 0..3
       mandatory: false
     - name: buried_out
@@ -598,7 +610,7 @@ themes:
       mandatory: true
   - name: Instabilities_PLG
     abrev: Gins      # TODO: to check
-    table: GC_BEDROCK     # TODO: to check
+    table: GC_SURFACES     # TODO: to check
     description:
       de: |
         Die Klasse Instabilities_PLG beinhaltet alle Polygone, die Gebiete mit instabilen
