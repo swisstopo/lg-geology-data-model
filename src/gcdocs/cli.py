@@ -3,25 +3,30 @@ Clean CLI interface for gcdocs
 Separated from business logic - only handles commands and arguments
 """
 
+import csv
+import json
 import os
 import sys
 import traceback
+from datetime import datetime
 from pathlib import Path
+from typing import Optional
 
 import click
 import yaml
 from loguru import logger
 
+from gcdocs.helpers import (extract_coded_domains,
+                            extract_subtypes_from_schema, write_output)
+
 from .config import AVAILABLE_LANGUAGES, GeoDataConfig, get_default_config
 from .core.generator import EnhancedMarkdownGenerator
 from .core.validator import ModelValidator
-from .exporters.xlsx import XLSXExporter, EnhancedXLSXExporter
-from .translation.model_translator import (
-    HierarchicalDatamodelProcessor,
-    HierarchicalTranslationManager,
-    ModelProcessor,
-    ModelTranslationManager,
-)
+from .exporters.xlsx import EnhancedXLSXExporter, XLSXExporter
+from .translation.model_translator import (HierarchicalDatamodelProcessor,
+                                           HierarchicalTranslationManager,
+                                           ModelProcessor,
+                                           ModelTranslationManager)
 from .translation.translator import TranslationManager
 
 
@@ -128,8 +133,10 @@ def generate(ctx, lang, datamodel, output, input_dir):
         # Generate documentation
         # TODO generator = MarkdownGenerator(config)
         generator = EnhancedMarkdownGenerator(config)
-        if ctx.obj.get('debug'):
-            logger.debug(f"Translation dir: {generator.model_translator.translations_dir}")
+        if ctx.obj.get("debug"):
+            logger.debug(
+                f"Translation dir: {generator.model_translator.translations_dir}"
+            )
         for lg in lang:
             output_path = generator.generate_markdown(datamodel, lg.lower(), output)
             click.echo(f"✓ Generated Markdown documentation in {output_path}")
@@ -287,63 +294,145 @@ def legacy_export(ctx, datamodel, format, output):
 
 @gcdocs.command()
 @click.argument("json_file", type=click.Path(exists=True))
-@click.option("-o", "--output", type=click.Path(), help="Output JSON file (default: stdout)")
+@click.option(
+    "-o",
+    "--output",
+    type=click.Path(),
+    help="Output file (default: <input>_codes.<format>)",
+)
+@click.option(
+    "--mode",
+    type=click.Choice(["combined", "domains", "subtypes"], case_sensitive=False),
+    default="combined",
+    help="Extraction mode: combined (default), domains only, or subtypes only",
+)
+@click.option(
+    "--format",
+    "-f",
+    type=click.Choice(["json", "csv", "xlsx"], case_sensitive=False),
+    default="json",
+    help="Output format: json (default), csv, or xlsx",
+)
+@click.option(
+    "--prefix",
+    type=str,
+    default="GC_",
+    help="Coded domain prefix filter (default: GC_, use '' for all domains)",
+)
+@click.option(
+    "--sort/--no-sort",
+    "do_sort",
+    default=True,
+    help="Sort output by numeric key (default: sorted)",
+)
+@click.option(
+    "--with-metadata/--no-metadata",
+    default=False,
+    help="Include extraction metadata in output",
+)
 @click.pass_context
-def extract_subtypes(ctx, json_file: str, output: str | None):
-    """Extract subtypeCode → subtypeName mappings from ESRI GDB JSON export."""
-    import json
-    from datetime import datetime
+def extract(
+    ctx,
+    json_file: str,
+    output: str,
+    mode: str,
+    format: str,
+    prefix: str,
+    do_sort: bool,
+    with_metadata: bool,
+):
+    """Extract coded domains and/or subtypes from ESRI SDE JSON export.
 
-    with open(json_file, 'r', encoding='utf-8') as f:
-        data = json.load(f)
+    Modes:
+      - combined: Extract both coded domains and subtypes (default)
+      - domains: Extract only coded domains
+      - subtypes: Extract only subtypes
 
-    if not output:
-        output_dir = Path(json_file).parent
-        output = output_dir / "subtypes_dict.json"
+    Formats:
+      - json: JSON file with {code: label} pairs (default)
+      - csv: CSV file with code;label columns
+      - xlsx: Excel file with code/label columns
 
-    subtypes_dict = {}
+    Examples:
+      gcdocs extract schema.json                            # Combined, JSON
+      gcdocs extract schema.json -f csv                     # Combined, CSV
+      gcdocs extract schema.json -f xlsx --mode subtypes    # Subtypes, Excel
+      gcdocs extract schema.json --mode domains --prefix "" # All domains
+      gcdocs extract schema.json -o codes.json --sort
+    """
+    try:
+        json_path = Path(json_file)
 
-    def find_subtypes(obj):
-        if isinstance(obj, dict):
-            if 'subtypes' in obj and isinstance(obj['subtypes'], list):
-                for subtype in obj['subtypes']:
-                    if 'subtypeCode' in subtype and 'subtypeName' in subtype:
-                        subtypes_dict[str(subtype['subtypeCode'])] = subtype['subtypeName']
-            for value in obj.values():
-                find_subtypes(value)
-        elif isinstance(obj, list):
-            for item in obj:
-                find_subtypes(item)
+        with open(json_path, "r", encoding="utf-8") as f:
+            data = json.load(f)
 
-    find_subtypes(data)
+        result = {}
+        stats = {"domains": 0, "subtypes": 0}
 
-    result = {
-        "date": datetime.now().strftime("%H:%M:%S-%d-%m-%Y"),
-        "database": {
-            "workspace": {
-                "ConnectionString": "",
-                "WorkspaceFactoryProgID": "esriDataSourcesGDB.SdeWorkspaceFactory",
-                "WorkspaceType": "RemoteDatabase"
-            },
-            "connection": {
-                "Server": "GCOVERP",
-                "Instance": "sde:oracle11g:GCOVERP",
-                "Version": "SDE.DEFAULT"
-            }
+        # Extract based on mode
+        if mode in ("combined", "domains"):
+            domains = extract_coded_domains(data, prefix=prefix, sorted_output=False)
+            result.update(domains)
+            stats["domains"] = len(domains)
+            logger.info(
+                f"Extracted {len(domains)} coded domain values (prefix: '{prefix or 'none'}')"
+            )
+
+        if mode in ("combined", "subtypes"):
+            subtypes = extract_subtypes_from_schema(data, sorted_output=False)
+            result.update(subtypes)
+            stats["subtypes"] = len(subtypes)
+            logger.info(f"Extracted {len(subtypes)} subtypes")
+
+        # Sort if requested
+        if do_sort:
+            try:
+                result = dict(sorted(result.items(), key=lambda x: int(x[0])))
+            except ValueError:
+                result = dict(sorted(result.items()))
+
+        # Prepare metadata
+        metadata = {
+            "extracted_at": datetime.now().isoformat(),
+            "source_file": str(json_path.name),
+            "mode": mode,
+            "format": format,
+            "prefix": prefix if mode != "subtypes" else None,
+            "coded_domains_count": stats["domains"],
+            "subtypes_count": stats["subtypes"],
+            "total_count": len(result),
         }
-    }
 
-    for code in sorted(subtypes_dict.keys(), key=lambda x: int(x)):
-        result[code] = subtypes_dict[code]
+        # Determine output path
+        if not output:
+            suffix = {
+                "combined": "_codes",
+                "domains": "_domains",
+                "subtypes": "_subtypes",
+            }[mode]
+            output = json_path.with_name(f"{json_path.stem}{suffix}.{format}")
+        else:
+            output = Path(output)
 
-    json_output = json.dumps(result, indent=4, ensure_ascii=False)
+        # Write output using appropriate format
+        write_output(
+            result, output, format, with_metadata=with_metadata, metadata=metadata
+        )
 
-    if output:
-        with open(output, 'w', encoding='utf-8') as f:
-            f.write(json_output)
-        click.echo(f"Exported {len(subtypes_dict)} subtypes to {output}")
-    else:
-        click.echo(json_output)
+        click.echo(f"✓ Extracted {len(result)} entries to {output}")
+        if mode == "combined":
+            click.echo(f"   - Coded domains: {stats['domains']}")
+            click.echo(f"   - Subtypes: {stats['subtypes']}")
+
+    except json.JSONDecodeError as e:
+        click.echo(f"❌ Invalid JSON file: {e}")
+        raise SystemExit(1)
+    except Exception as e:
+        logger.error(f"Extraction failed: {e}")
+        click.echo(f"❌ Extraction failed: {e}")
+        if ctx.obj and ctx.obj.get("debug"):
+            raise
+        raise SystemExit(1)
 
 
 @gcdocs.command()
@@ -728,7 +817,7 @@ def export_excel(yaml_file, output, translations_dir):
     click.echo(f"Exported to structured Excel: {output}")
 
 
-@translations.command( context_settings={'show_default': True})
+@translations.command(context_settings={"show_default": True})
 @click.argument("excel_file", type=click.Path(exists=True))
 @click.option(
     "--translations-dir", "-d", default="translations", help="Translations directory"
@@ -748,7 +837,7 @@ def import_excel(excel_file, translations_dir, yaml_output):
     click.echo(f"Imported translations and created: {yaml_output}")
 
 
-@translations.command(name="status", context_settings={'show_default': True})
+@translations.command(name="status", context_settings={"show_default": True})
 @click.option("--translations-dir", "-t", default="translations")
 def translation_status(translations_dir):
     """Show translation completion status"""
