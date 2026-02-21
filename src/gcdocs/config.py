@@ -277,6 +277,8 @@ class GeoDataConfig:
                 logger.info(
                     f"Loaded chrono translations from {chrono_file.resolve()}: {len(df_chrono)} entries"
                 )
+            else:
+                logger.warning(f"No file `geolcode_chrono.csv` found" )
 
             # 5. Load application UI translations (if available)
             app_translations = self._find_file("translations.xlsx")
@@ -354,13 +356,16 @@ class GeoDataConfig:
             # Clean and process
             translation_df = self._clean_translation_data(merged_df, debug_export=True)
 
-            logger.debug(
+            logger.info(
                 f"Loaded merged translations: {len(translation_df)} total entries"
             )
             return translation_df
 
         except Exception as e:
+            import traceback
             logger.error(f"Failed to load translation data: {e}")
+            logger.error(traceback.format_exc())
+
             # Return minimal DataFrame with special codes
             return pd.DataFrame(
                 [
