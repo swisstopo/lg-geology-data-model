@@ -130,6 +130,12 @@ def generate(ctx, lang, datamodel, output, input_dir):
             click.echo("   - geocover-schema-sde.json")
             sys.exit(1)
 
+        # Save translation
+        translation_df = config.translation_df
+        translation_path = Path(input_dir) / "geolcodes_translated.xlsx"
+        translation_df.to_excel(translation_path)
+
+
         # Generate documentation
         # TODO generator = MarkdownGenerator(config)
         generator = EnhancedMarkdownGenerator(config)
@@ -144,6 +150,7 @@ def generate(ctx, lang, datamodel, output, input_dir):
         click.echo("   make pdfs    # Generate PDF with pandoc")
         click.echo("   make docx    # Generate DOCX with pandoc")
         click.echo("   make all     # Generate all formats")
+        click.echo(f"Translations: {translation_path}")
 
     except FileNotFoundError as e:
         click.echo(f"❌ File not found: {e}")
