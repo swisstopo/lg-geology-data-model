@@ -23,8 +23,9 @@ date: 2025-09-01
 # 4.1.2    Adding new lang: it and en (partial support)
 # 4.2.0    Update CD  (26-11-2025) + New translations
 # 4.3.0    Update CD (11-02-2026) for R16
+# 4.3.1    Second column of German document is now French (not German)
 model:
-  revision: '4.3.0'
+  revision: '4.3.1'
   revision_date: "2026-02-12"
   sources_dir: "exports/2026-02-12"
 

@@ -63,10 +63,10 @@ _{{_("Datatype")}} :  {{ attr.att_type  }}_
 {% endif %}
 
 {% if 'pairs' in attr -%}
-|GeolCode|Deutsch|{{current_lang}}|
+|GeolCode|Deutsch|{% if lang == 'de' %}Français{% else %}{{current_lang}}{% endif %}|
 |---------------|----------------------------------------|----------------------------------------|
 {% for key, value in attr.pairs.items() -%}
-|{{key}} | {{value|remove_prefix}} | {{key|tr}}     |
+|{{key}} | {{value|remove_prefix}} | {% if lang == 'de' %}{{key|tr_fr}}{% else %}{{key|tr}}{% endif %}     |
 {% endfor %}
 {% endif %}
 
@@ -90,12 +90,13 @@ _{{_("Datatype")}} :  {{ attr.att_type  }}_
 {{ annex.description[lang] }}
 
 {% if 'pairs' in annex -%}
-|GeolCode|Deutsch|{{current_lang}}|
+|GeolCode|Deutsch|{% if lang == 'de' %}Français{% else %}{{current_lang}}{% endif %}|
 |---------------|----------------------------------------|----------------------------------------|
 {% for key, value in annex.pairs.items() -%}
-|{{key}} | {{value}} | {{key|tr}}     |
+|{{key}} | {{value}} | {% if lang == 'de' %}{{key|tr_fr}}{% else %}{{key|tr}}{% endif %} |
 {% endfor %}
 {% endif %}
+
 
 {% if 'table' in annex -%}
 | Code    |  GMU      |{{_("Litho main")}} | {{_("Litho sec")}} | {{_("Litho ter")}}|  {{_("Formation")}} | {{_("Chrono base")}}| {{_("Chrono top")}} | {{_("Correlation")}} |
