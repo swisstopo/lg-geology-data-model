@@ -309,7 +309,7 @@ class Translator:
             # Try primary language first
             primary_msg = self._get_translation(text_str, lang)
 
-            if primary_msg is not None and primary_msg != text_str:
+            if primary_msg is not None:  # TODO: using `and primary_msg != text_str`
                 logger.debug(f"Translating into {lang}: {text_str} -> {primary_msg}")
                 return (self._clean_message(primary_msg), False)
 

@@ -656,7 +656,7 @@ class EnhancedMarkdownGenerator:
             if domain.get("type") == "CodedValue":
                 coded_values = domain.get("codedValues", {})
 
-                logger.info(f"Domain: {domain_name} - {len(coded_values)}")
+                logger.debug(f"Domain: {domain_name} - {len(coded_values)}")
 
                 # Handle special codes (from original custom_sort_key logic)
                 if "999997" in coded_values:
