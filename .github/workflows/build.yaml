@@ -98,6 +98,11 @@ jobs:
              EXPORT_DIR=${{ steps.get_sources_dir.outputs.dir }} make cleanall all
              # make diagram
              EXPORT_DIR=${{ steps.get_sources_dir.outputs.dir }} make validate-metadata
+
+      - name: Build diff report
+        shell: bash -el {0}
+        run: |
+              make diff diff-reports
              
 
       - name: Generate PDF from PUML diagram
@@ -142,6 +147,7 @@ jobs:
             outputs/en/geocover.png
             outputs/ER-GCOVER.svg
             outputs/ER-GCOVER.pdf
+            ouputs/202*.pdf
             ${{ env.SOURCES_DIR }}/gcoverp_export_simple.json 
             datamodel.yaml
             outputs/geology_mapping_tool*.xlsx

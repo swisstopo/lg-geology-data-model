@@ -1,0 +1,63 @@
+---
+title: 2D Geological Data Model (GeoCover)
+subtitle: Difference against previous version
+author: Federal Office of Topography swisstopo - National Geological Survey
+
+
+date: March 2026
+
+keywords:
+  - "GeoCover"
+  - "Metadata"
+  - "Model"
+  - "GIS"
+  - "Vector data"
+  - "Geology"
+  - "Switzerland"
+  
+  - development
+
+subject: Geological Survey of Switzerland
+lang: en
+
+creator: swisstopo
+description: |
+    git_hash: d433599
+    date: 2026-03-30 21:10:09.203753
+    version: None
+
+
+version: d433599
+
+
+# Custom LaTeX headers
+# Left-align all tables
+header-includes: |
+    \usepackage[margins=raggedright]{floatrow}
+    \usepackage{pdflscape}
+    \newcommand{\blandscape}{\begin{landscape}}
+    \newcommand{\elandscape}{\end{landscape}}
+    \usepackage{hyperref}
+    \hypersetup{
+      pdfinfo={
+        ModelRevision=4.3.1,
+        ModelShortRevision=4.3,
+        GitHash=d433599,BuildDate=2026-03-30T21:10:09.203753
+      }
+    }
+
+
+fontsize: 9pt
+geometry: "left=3cm,right=2cm,top=3cm,bottom=3cm"
+colorlinks: true
+linkcolor: teal
+urlcolor: teal
+toccolor: gray
+
+# PDF
+papersize: a4
+mainfont: "DejaVu Sans"
+
+---
+
+
