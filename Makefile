@@ -19,7 +19,7 @@ INPUTS = $(foreach lang,$(LANGUAGES),$(foreach fmt,$(FORMATS),$(INPUT_DIR)/$(lan
 CLEAN_PDFS = $(shell find outputs -name "*.pdf" -not -name "ER-GCOVER.pdf")
 
 
-$(info clean pdfs = $(CLEAN_PDFS))
+# $(info clean pdfs = $(CLEAN_PDFS))
 
 # Options for all doc format
 # Unknown --shift-heading-level-by=-1  \
@@ -88,7 +88,10 @@ assets:
 	$(CP) assets/model.png .
 
 $(OUTPUT_DIR):
-    @mkdir -p $(OUTPUT_DIR)
+	@mkdir -p $(OUTPUT_DIR)
+
+$(OUTPUT_DIR)/%: assets
+
 
 markdown: $(MO_FILES) $(INPUTS)
 
