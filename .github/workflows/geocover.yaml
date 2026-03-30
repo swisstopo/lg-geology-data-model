@@ -48,7 +48,7 @@ jobs:
         shell: bash -el {0}
         run: |
           $CONDA/bin/conda build --output-folder  ./conda-out/  recipe
-    
+
 
       - name: Upload Artifacts
         uses: actions/upload-artifact@v7
@@ -56,6 +56,5 @@ jobs:
           name: conda-package
           path: |
             conda-out/noarch/gcdocs*.conda
-   
 
 
