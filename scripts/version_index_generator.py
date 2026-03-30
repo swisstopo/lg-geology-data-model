@@ -482,7 +482,7 @@ def main(no_upload):
     # Configuration - can be overridden by environment variables
     bucket_name = os.getenv("S3_BUCKET")
     if not bucket_name:
-        print("No bucket found. Exisiting")
+        print("No bucket found. Try setting `S3_BUCKET` and or `AWS_PROFILE` variables. Exiting...")
         sys.exit(2)
 
     profile_name = os.getenv("AWS_PROFILE")  # None for default profile in CI
