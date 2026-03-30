@@ -75,9 +75,16 @@ jobs:
         id: get_sources_dir
         run: |
           import yaml
+          import os
+
           with open("datamodel.yaml") as f:
               data = yaml.safe_load(f)
-          print(f"::set-output name=dir::{data['model']['sources_dir']}")
+
+          # Get the path to the output file from the environment
+          output_file = os.environ['GITHUB_OUTPUT']
+
+          with open(output_file, 'a') as fh:
+              print(f"dir={data['model']['sources_dir']}", file=fh)
         shell: python
 
       - name: Use sources_dir
