@@ -87,7 +87,8 @@ assets:
 	$(CP) assets/model.png $(OUTPUT_DIR)/en
 	$(CP) assets/model.png .
 
-
+$(OUTPUT_DIR):
+    @mkdir -p $(OUTPUT_DIR)
 
 markdown: $(MO_FILES) $(INPUTS)
 
@@ -101,7 +102,7 @@ $(INPUT_DIR)/datamodel.xlsx:
 
 
 .PHONY: all
-all:  $(INPUTS)  $(OUTPUTS)
+all:  $(OUTPUT_DIR) $(INPUTS)  $(OUTPUTS)
 # TODO readd  $(INPUT_DIR)/datamodel.xlsx
 
 # Define individual rules for each format and language
@@ -214,17 +215,17 @@ cleanpdf:
 
 # Clean up only generated ODT files
 .PHONY: cleanodt
-cleanodt:
+cleanodt: $(OUTPUT_DIR)
 	find $(OUTPUT_DIR) -name "*.odt" -delete
 
 # Clean up only generated DOCX files
 .PHONY: cleandocx
-cleandocx:
+cleandocx: $(OUTPUT_DIR)
 	find $(OUTPUT_DIR) -name "*.docx" -delete
 
 # Clean up only generated HTML, CSS, and image files
 .PHONY: cleanhtml
-cleanhtml:
+cleanhtml: $(OUTPUT_DIR)
 	find $(OUTPUT_DIR) -type f \( -name "*.html" -o -name "*.css" -o -name "*.png" -o -name "*.jpg" -o -name "*.jpeg" \) -delete
 
 .PHONY: cleaninputs
