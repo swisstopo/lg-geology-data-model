@@ -13,7 +13,7 @@ on:
       - master
       - develop
       - 'releases/**'
-      - refactor_gcdocs
+      - refactoring_directories
 
 
 jobs:
@@ -29,7 +29,7 @@ jobs:
       - name: Install Pandoc
         run: sudo apt-get install -y pandoc
       - name: Checkout coded_domains
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
       - name: Install miniconda
         uses: conda-incubator/setup-miniconda@v3
         with:
@@ -75,9 +75,16 @@ jobs:
         id: get_sources_dir
         run: |
           import yaml
+          import os
+
           with open("datamodel.yaml") as f:
               data = yaml.safe_load(f)
-          print(f"::set-output name=dir::{data['model']['sources_dir']}")
+
+          # Get the path to the output file from the environment
+          output_file = os.environ['GITHUB_OUTPUT']
+
+          with open(output_file, 'a') as fh:
+              print(f"dir={data['model']['sources_dir']}", file=fh)
         shell: python
 
       - name: Use sources_dir
@@ -111,7 +118,7 @@ jobs:
 
 
       - name: Upload Artifacts
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: geology-data-model-${{ env.RELEASE }}
           path: |

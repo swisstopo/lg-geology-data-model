@@ -19,7 +19,7 @@ jobs:
       contents: write # Grant write permission for creating releases and uploading assets
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           fetch-depth: 0
       - name: Set releases variables
