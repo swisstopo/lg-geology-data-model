@@ -138,6 +138,11 @@ endef
 # Apply the build_rule for each language
 $(foreach lang,$(LANGUAGES),$(eval $(call build_rule,$(lang))))
 
+diff-docs:
+	$(PANDOC) $(PANDOC_OPTIONS) --metadata-file=$(EXPORT_DIR)/2026-02-12/diff.yaml  $(PANDOC_DOCX_OPTIONS) -o $(OUTPUT_DIR)/schema_4_2-4_3.docx    $(EXPORT_DIR)/2026-02-12/schema_4_2-4_3.md
+	$(PANDOC) $(PANDOC_OPTIONS) --metadata-file=$(EXPORT_DIR)/2026-02-12/diff.yaml   $(PANDOC_PDF_OPTIONS) -o $(OUTPUT_DIR)/schema_4_2-4_3.pdf    $(EXPORT_DIR)/2026-02-12/schema_4_2-4_3.md
+
+
 
 
 # Targets for building specific formats
