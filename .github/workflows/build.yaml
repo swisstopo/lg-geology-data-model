@@ -147,7 +147,8 @@ jobs:
             outputs/en/geocover.png
             outputs/ER-GCOVER.svg
             outputs/ER-GCOVER.pdf
-            ouputs/202*.pdf
+            outputs/202*.pdf
+            outputs/202*.docx
             ${{ env.SOURCES_DIR }}/gcoverp_export_simple.json 
             datamodel.yaml
             outputs/geology_mapping_tool*.xlsx
