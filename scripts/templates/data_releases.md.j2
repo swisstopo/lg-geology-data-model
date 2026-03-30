@@ -43,25 +43,22 @@ mainfontoptions:
 {% if pub %}
 ## {{ r.get("release", "?") }}
 
-
-{% if pub %}
-**Publication date:** {{ pub }}  {% endif %}
-
+**Publication date:** {{ pub }}
 {% if sv %}
-**Schema version:** v{{ sv }}  {% if schema_info and schema_info.get("git_tag") %} (`{{ schema_info.get("git_tag") }}`)  {% endif %}
+**Schema version:** v{{ sv }}{% if schema_info and schema_info.get("git_tag") %} (`{{ schema_info.get("git_tag") }}`) {% endif %}
 {% endif %}
-
 {% if exp %}
-**Data state (SDE backup):** {{ exp }}  {% endif %}
-
-{% if notes %}
-\faExclamationTriangle  {{ notes | trim }}
+**Data state (SDE backup):** {{ exp }}
 {% endif %}
 
+{# General Release Notes #}
+{% if notes %}
+\faExclamationTriangle\  {{ notes | trim }}
+{% endif %}
 
 {% set new_data = r.get("new_data") or [] %}
 {% if new_data %}
-### \faMap  New / Updated Map Sheets
+### \faMap\  New / Updated Map Sheets
 
 {% set with_sheet    = new_data | selectattr("sheet") | list %}
 {% set without_sheet = new_data | rejectattr("sheet") | list %}
@@ -81,26 +78,40 @@ mainfontoptions:
 _No new map sheets in this release._
 
 {% endif %}
+
+{# --- Schema Section with Legacy Logic --- #}
 {% if schema_info %}
+### \faWrench\  Schema Changes in v{{ sv }}
+
+{% if schema_info.get("legacy_transition") %}
+\begin{tcolorbox}[colback=gray!5, colframe=gray!50, arc=0mm]
+\faHistory\  \textbf{Notice:} This schema version follows a manually edited predecessor.
+Automatic change tracking is only partially available. Please compare with the previous model version manually.
+\end{tcolorbox}
+{% endif %}
+
 {% set changes = schema_info.get("changes") or [] %}
 {% if changes | length > 0 %}
-### \faWrench Schema Changes in v{{ sv }}
-
 {% for ch in changes %}
+{% if ch.get("note") %}
+_{{ ch.get("note") }}_
+{% else %}
 - **`{{ ch.get("class", "?") }}`**{% if ch.get("attribute") %} / `{{ ch.get("attribute") }}`{% endif %} — `{{ ch.get("type", "?") }}`
 {% set parts = [ch.get("description_de"), ch.get("description_fr")] | select | list %}
-{% if parts %}  
+{% if parts %}
   {{ parts | join(" / ") | trim }}
+{% endif %}
 {% endif %}
 {% endfor %}
 
+\smallskip
 > See `SCHEMA_CHANGES.md` for full details and motivation.
 
-{% elif schema_info is not none %}
+{% elif not schema_info.get("legacy_transition") %}
 _No schema changes in v{{ sv }}._
+{% endif %}
+{% endif %}
 
-{% endif %}
-{% endif %}
 {% endif %} {# end pub #}
 
 {% endfor %}

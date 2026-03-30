@@ -56,5 +56,3 @@ jobs:
           name: conda-package
           path: |
             conda-out/noarch/gcdocs*.conda
-
-

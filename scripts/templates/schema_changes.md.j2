@@ -29,29 +29,35 @@ mainfontoptions:
 > Major/minor version bumps (x.y.0) introduce schema changes.
 > Patch versions (x.y.z) are code/tooling only — see `CHANGELOG.md`.
 
-
-
 {% for sv in schema_versions %}
 ## Model v{{ sv.get("version", "?") }}{% if sv.get("model_transition") %} _({{ sv.get("model_transition") }})_{% endif %}
 
-{% set date   = sv.get("date") %}
-{% set tag    = sv.get("git_tag") %}
-{% set note   = sv.get("note") %}
-{% set trans  = sv.get("model_transition") %}
+{% set date    = sv.get("date") %}
+{% set tag     = sv.get("git_tag") %}
+{% set note    = sv.get("note") %}
 {% set used_by = sv.get("_used_by") or [] %}
-{% if date %}**Schema date:** {{ date }}
-{% endif %}
-{% if tag %}**Git tag:** `{{ tag }}`
-{% endif %}
-{% if used_by %}**Used by releases:** {{ used_by | join(", ") }}
+
+{% if date %}**Schema date:** {{ date }} \\ {% endif %}
+{% if tag %}**Git tag:** `{{ tag }}` \\ {% endif %}
+{% if used_by %}**Used by releases:** {{ used_by | join(", ") }}{% endif %}
+
+{# 1. Legacy Transition Warning (Standalone) #}
+{% if sv.get("legacy_transition") %}
+\begin{tcolorbox}[colback=gray!5, colframe=gray!50, arc=0mm]
+\faHistory\  \textbf{Notice:} Previous versions were maintained manually.
+For a complete overview of changes, please compare this document directly
+with the previous model version.
+\end{tcolorbox}
 {% endif %}
 
+{# 2. General Note #}
 {% if note %}
-\faInfoCircle  {{ note | trim }}
-
+\faInfoCircle\  {{ note | trim }}
 {% endif %}
+
+{# 3. Changes Logic #}
 {% set changes = sv.get("changes") or [] %}
-{% if changes | length == 0 %}
+{% if changes | length == 0 and not sv.get("legacy_transition") %}
 _No structured schema changes recorded for this version._
 
 {% else %}
@@ -63,6 +69,7 @@ _No structured schema changes recorded for this version._
 {% set desc_fr    = ch.get("description_fr") %}
 {% set motivation = ch.get("motivation") %}
 {% set values     = ch.get("values") or [] %}
+
 ### `{{ cls }}`{% if attr %} — `{{ attr }}`{% endif %}
 
 **Type:** `{{ ctype }}`
@@ -78,27 +85,31 @@ _No structured schema changes recorded for this version._
 | | |
 |-|-|
 | **From** | `{{ ch.get("from", "?") }}` |
-| **To**   | `{{ ch.get("to",   "?") }}` |
+| **To** | `{{ ch.get("to",   "?") }}` |
 
 {% set parts = [desc_de, desc_fr] | select | list %}
-{% if parts %}{{ parts | join(" / ") | trim }}
+{% if parts %}
+
+{{ parts | join(" / ") | trim }}
 {% endif %}
 
 {% else %}
 {% set parts = [desc_de, desc_fr] | select | list %}
-{% if parts %}{{ parts | join(" / ") | trim }}
+{% if parts %}
+{{ parts | join(" / ") | trim }}
+{% endif %}
 {% endif %}
 
-{% endif %}
 {% if motivation %}
-\faLightbulb[regular]  **Motivation:** {{ motivation | trim }}
-
+\faLightbulb[regular]\ \textbf{Motivation:} {{ motivation | trim }}
 {% endif %}
+
 {% endfor %}
 {% endif %}
 
 
 {% endfor %}
+
 ## Change Type Reference
 
 | Type | Meaning |

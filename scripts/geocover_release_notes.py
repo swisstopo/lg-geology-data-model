@@ -115,16 +115,17 @@ def validate_schema(data: dict) -> list[str]:
             seen.add(v)
         for j, ch in enumerate(sv.get("changes") or []):
             cloc = f"{loc}.changes[{j}]"
-            if not ch.get("class"):
+            if not ch.get("note"):
+              if not ch.get("class"):
                 errors.append(f"{cloc}: missing 'class'")
-            t = ch.get("type")
-            if not t:
+              t = ch.get("type")
+              if not t:
                 errors.append(f"{cloc}: missing 'type'")
-            elif t not in KNOWN_TYPES:
+              elif t not in KNOWN_TYPES:
                 errors.append(f"{cloc}: unknown type '{t}'")
-            if t == "value_added" and not ch.get("values"):
+              if t == "value_added" and not ch.get("values"):
                 errors.append(f"{cloc}: 'value_added' requires a 'values' list")
-            if t == "domain_source_changed":
+              if t == "domain_source_changed":
                 for field in ("from", "to"):
                     if not ch.get(field):
                         errors.append(f"{cloc}: 'domain_source_changed' requires '{field}'")
