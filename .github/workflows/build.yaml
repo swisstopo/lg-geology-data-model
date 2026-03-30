@@ -97,7 +97,7 @@ jobs:
         uses: rotaract/plantuml-action@v1
         with:
           format: svg
-          pattern: outputs/ER-GCOVER.puml
+          pattern: assets/ER-GCOVER.puml
       - name: Install rsvg-convert
         run: |
           sudo apt-get update
@@ -106,7 +106,8 @@ jobs:
       - name: Convert SVG to PDF
         run: |
           # Convert SVG to PDF (maintains vector format)
-          rsvg-convert -f pdf -o outputs/ER-GCOVER.pdf outputs/ER-GCOVER.svg
+          rsvg-convert -f pdf -o outputs/ER-GCOVER.pdf assets/ER-GCOVER.svg
+          cp assets/ER-GCOVER.svg outputs/ER-GCOVER.svg
 
 
       - name: Upload Artifacts

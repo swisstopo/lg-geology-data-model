@@ -1,7 +1,7 @@
 LANGUAGES = de fr it en
 FORMATS = pdf odt docx html
 
-EXPORT_DIR ?= exports
+EXPORT_DIR ?= sources
 INPUT_DIR ?= inputs
 OUTPUT_DIR ?= outputs
 
