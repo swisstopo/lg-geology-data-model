@@ -18,6 +18,7 @@ CSS = datamodel.css
 OUTPUTS = $(foreach lang,$(LANGUAGES),$(foreach fmt,$(FORMATS),$(OUTPUT_DIR)/$(lang)/datamodel.$(fmt)))
 INPUTS = $(foreach lang,$(LANGUAGES),$(foreach fmt,$(FORMATS),$(INPUT_DIR)/$(lang)/datamodel.md))
 CLEAN_PDFS = $(shell find outputs -name "*.pdf" -not -name "ER-GCOVER.pdf")
+LOGO := Logo_RGB_farbig_positiv.png
 
 
 
@@ -102,10 +103,10 @@ assets:
 	$(CP) assets/model.png $(OUTPUT_DIR)/it
 	$(CP) assets/model.png $(OUTPUT_DIR)/en
 	$(CP) assets/model.png .
-	$(CP) assets/Logo_RGB_farbig_positiv.png $(INPUT_DIR)/en
-	$(CP) assets/Logo_RGB_farbig_positiv.png $(INPUT_DIR)/de
-	$(CP) assets/Logo_RGB_farbig_positiv.png $(INPUT_DIR)/fr
-	$(CP) assets/Logo_RGB_farbig_positiv.png $(INPUT_DIR)/it
+	$(CP) -f assets/$(LOGO) $(INPUT_DIR)/en/$(LOGO)
+	$(CP) -f assets/$(LOGO)  $(INPUT_DIR)/de/$(LOGO)
+	$(CP) -f assets/$(LOGO)  $(INPUT_DIR)/fr/$(LOGO)
+	$(CP) -f assets/$(LOGO)  $(INPUT_DIR)/it/$(LOGO)
 
 
 
