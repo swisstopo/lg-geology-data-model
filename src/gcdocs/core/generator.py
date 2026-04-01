@@ -557,6 +557,20 @@ class EnhancedMarkdownGenerator:
                     f.write(metadata_content)
                     logger.info(f"Generating Markdown metadata {metadata_file}")
 
+            # CD Bund template
+            tex_env = jinja2.Environment(
+                variable_start_string='[[',
+                variable_end_string=']]',
+                block_start_string='[%',
+                block_end_string='%]',
+                loader=loader
+            )
+            tex_template = tex_env.get_template("cd-header.tex.j2")
+            tex_fname = output_path / "cd-header.tex"
+            with open(tex_fname, "w", encoding="utf-8") as f:
+                f.write(tex_template.render(model_data))
+            logger.info(f"Generating TeX CD/CI headers: {metadata_file}")
+
             translator = self._get_translator()
             logger.info(
                 f"Failed translations: {translator.get_translation_stats()['failed_translations']}"

@@ -45,7 +45,8 @@ PANDOC_OPTIONS=--standalone \
          -V colorlinks=true \
          -V linkcolor=teal \
          -V urlcolor=teal \
-         -V toccolor=gray
+         -V toccolor=gray \
+         --resource-path=.:assets
 
 
 # Define language-specific options
@@ -101,6 +102,12 @@ assets:
 	$(CP) assets/model.png $(OUTPUT_DIR)/it
 	$(CP) assets/model.png $(OUTPUT_DIR)/en
 	$(CP) assets/model.png .
+	$(CP) assets/Logo_RGB_farbig_positiv.png $(INPUT_DIR)/en
+	$(CP) assets/Logo_RGB_farbig_positiv.png $(INPUT_DIR)/de
+	$(CP) assets/Logo_RGB_farbig_positiv.png $(INPUT_DIR)/fr
+	$(CP) assets/Logo_RGB_farbig_positiv.png $(INPUT_DIR)/it
+
+
 
 $(OUTPUT_DIR):
 	@mkdir -p $(OUTPUT_DIR)
@@ -139,7 +146,7 @@ $(INPUT_DIR)/$(1)/datamodel.md: assets
 
 $(OUTPUT_DIR)/$(1)/datamodel.pdf: $(INPUT_DIR)/$(1)/datamodel.md $(INPUT_DIR)/$(1)/metadata.yaml
 	mkdir -p $$(@D)
-	$(PANDOC) $(PANDOC_OPTIONS) $(OPTIONS_$1) $(PANDOC_PDF_OPTIONS) -o $$@ $$<
+	$(PANDOC) $(PANDOC_OPTIONS) $(OPTIONS_$1) $(PANDOC_PDF_OPTIONS) --include-in-header=$(INPUT_DIR)/de/cd-header.tex --resource-path=.:assets  -o $$@ $$<
 
 $(OUTPUT_DIR)/$(1)/datamodel.docx: $(INPUT_DIR)/$(1)/datamodel.md $(INPUT_DIR)/$(1)/metadata.yaml
 	mkdir -p $$(@D)

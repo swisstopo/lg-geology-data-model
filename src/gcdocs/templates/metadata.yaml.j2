@@ -36,21 +36,7 @@ version: {{ git_info.hash }}
 
 # Custom LaTeX headers
 # Left-align all tables
-header-includes: |
-    \usepackage[margins=raggedright]{floatrow}
-    \usepackage{pdflscape}
-    \newcommand{\blandscape}{\begin{landscape}}
-    \newcommand{\elandscape}{\end{landscape}}
-    \usepackage{hyperref}
-    \hypersetup{
-      pdfinfo={
-        ModelRevision={{ model.revision | default('unknown') }},
-        ModelShortRevision={{ model.short_revision | default('unknown') }},
-        {% if git_info and git_info.tag %}GitTag={{ git_info.tag }},{% endif -%}
-        {% if git_info and git_info.hash %}GitHash={{ git_info.hash }},{% endif -%}
-        BuildDate={{ date.isoformat() if date else 'unknown' }}
-      }
-    }
+
 
 
 fontsize: 9pt
