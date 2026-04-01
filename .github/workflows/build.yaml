@@ -41,6 +41,7 @@ jobs:
       - name: Check conda installation
         shell: bash -el {0}
         run: |
+          conda install conda-forge::pandoc -y
           conda info
           conda list
           conda config --show-sources
