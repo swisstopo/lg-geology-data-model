@@ -29,22 +29,22 @@ description: |
 
 version: d433599
 
+header-includes:
+
+
 
 # Custom LaTeX headers
 # Left-align all tables
 header-includes: |
-    \usepackage[margins=raggedright]{floatrow}
-    \usepackage{pdflscape}
-    \newcommand{\blandscape}{\begin{landscape}}
-    \newcommand{\elandscape}{\end{landscape}}
-    \usepackage{hyperref}
-    \hypersetup{
-      pdfinfo={
-        ModelRevision=4.3.1,
-        ModelShortRevision=4.3,
-        GitHash=d433599,BuildDate=2026-03-30T21:10:09.203753
-      }
-    }
+  \usepackage{graphicx}
+  \usepackage{titling}
+  \pretitle{%
+    \begin{minipage}[b]{0.5\textwidth}
+      \raggedright
+      \includegraphics[width=2in]{cd_bund.png}
+    \end{minipage}%
+    
+  }
 
 
 fontsize: 9pt
