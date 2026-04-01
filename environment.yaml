@@ -13,6 +13,10 @@ dependencies:
   - jinja2
   - pygraphviz
   - pandoc
-  - pip
+  - babel
+  - click
+  - matplotlib
+  - ruamel.yaml
+  - requests
   - pip:
 prefix: /home/marc-monnerat-u1/anaconda3/envs/datamodel
