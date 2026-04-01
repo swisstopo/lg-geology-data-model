@@ -41,9 +41,8 @@ jobs:
       - name: Check conda installation
         shell: bash -el {0}
         run: |
-          conda install conda-forge::pandoc -y
-          conda install -c conda-forge gdal>=3.11 -y
-          conda install swisstopo::gcover -y
+          conda install -c conda-forge  pandoc gdal>=3.11 -y
+          conda install -c swisstopo    "matplotlib>=0.8.0"  -y
           conda info
           conda list
           conda config --show-sources
