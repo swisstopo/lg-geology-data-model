@@ -38,16 +38,25 @@ jobs:
           channel-priority: true
           activate-environment: DATAMODEL
           environment-file: environment.yaml
+
+
+      - name: Install gcover and pandoc
+        shell: bash -el {0}
+        run: |
+          conda install -c conda-forge  pandoc gdal>=3.11 -y
+          conda install -c swisstopo    "gcover>=0.8.0"  -y
+          gcover --version
+          pandoc -v
       - name: Check conda installation
         shell: bash -el {0}
         run: |
           conda install -c conda-forge  pandoc gdal>=3.11 -y
-          conda install -c swisstopo    "matplotlib>=0.8.0"  -y
           conda info
           conda list
           conda config --show-sources
           conda config --show
           printenv | sort
+
       - name: Set Package Version
         shell: bash -l {0}
         run: |
