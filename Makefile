@@ -89,6 +89,10 @@ assets:
 	mkdir -p $(OUTPUT_DIR)/fr
 	mkdir -p $(OUTPUT_DIR)/it
 	mkdir -p $(OUTPUT_DIR)/en
+	mkdir -p $(INPUT_DIR)/de
+	mkdir -p $(INPUT_DIR)/fr
+	mkdir -p $(INPUT_DIR)/it
+	mkdir -p $(INPUT_DIR)/en
 	$(CP) assets/$(CSS) $(OUTPUT_DIR)/de
 	$(CP) assets/$(CSS) $(OUTPUT_DIR)/fr
 	$(CP) assets/$(CSS) $(OUTPUT_DIR)/it
@@ -103,10 +107,10 @@ assets:
 	$(CP) assets/model.png $(OUTPUT_DIR)/it
 	$(CP) assets/model.png $(OUTPUT_DIR)/en
 	$(CP) assets/model.png .
-	$(CP) -f assets/$(LOGO) $(INPUT_DIR)/en/$(LOGO)
-	$(CP) -f assets/$(LOGO)  $(INPUT_DIR)/de/$(LOGO)
-	$(CP) -f assets/$(LOGO)  $(INPUT_DIR)/fr/$(LOGO)
-	$(CP) -f assets/$(LOGO)  $(INPUT_DIR)/it/$(LOGO)
+	$(CP) -f assets/$(LOGO) $(INPUT_DIR)/en/
+	$(CP) -f assets/$(LOGO)  $(INPUT_DIR)/de/
+	$(CP) -f assets/$(LOGO)  $(INPUT_DIR)/fr/
+	$(CP) -f assets/$(LOGO)  $(INPUT_DIR)/it/
 
 
 
