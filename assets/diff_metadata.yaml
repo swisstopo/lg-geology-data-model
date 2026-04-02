@@ -29,22 +29,15 @@ description: |
 
 version: d433599
 
-header-includes:
 
 
 
 # Custom LaTeX headers
 # Left-align all tables
 header-includes: |
-  \usepackage{graphicx}
-  \usepackage{titling}
-  \pretitle{%
-    \begin{minipage}[b]{0.5\textwidth}
-      \raggedright
-      \includegraphics[width=2in]{cd_bund.png}
-    \end{minipage}%
-    
-  }
+   \usepackage{anyfontsize}
+   \fontsize{9pt}{11pt}\selectfont
+
 
 
 fontsize: 9pt
@@ -56,7 +49,11 @@ toccolor: gray
 
 # PDF
 papersize: a4
-mainfont: "DejaVu Sans"
+mainfont: "Liberation Sans"
+mainfontoptions:
+  - BoldFont=Noto Sans Bold
+  - ItalicFont=Noto Sans Italic
+  - BoldItalicFont=Noto Sans Bold Italic
 
 ---
 
