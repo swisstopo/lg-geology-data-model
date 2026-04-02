@@ -1,6 +1,7 @@
 LANGUAGES = de fr it en
 FORMATS = pdf odt docx html
 
+# Define the directories
 EXPORT_DIR ?= sources
 INPUT_DIR ?= inputs
 OUTPUT_DIR ?= outputs
@@ -17,6 +18,21 @@ CSS = datamodel.css
 OUTPUTS = $(foreach lang,$(LANGUAGES),$(foreach fmt,$(FORMATS),$(OUTPUT_DIR)/$(lang)/datamodel.$(fmt)))
 INPUTS = $(foreach lang,$(LANGUAGES),$(foreach fmt,$(FORMATS),$(INPUT_DIR)/$(lang)/datamodel.md))
 CLEAN_PDFS = $(shell find outputs -name "*.pdf" -not -name "ER-GCOVER.pdf")
+LOGO := Logo_RGB_farbig_positiv.png
+
+
+
+# regex: 4 digits, dash, 2 digits, dash, 2 digits
+DATE_PATTERN := ^[0-9]{4}-[0-9]{2}-[0-9]{2}$$
+
+# 1. ls -1: List files
+# 2. grep -E: Filter only those matching the date pattern
+# 3. sort: Put them in chronological order
+# 4. tail -n 2: Get the last two
+LAST_TWO := $(shell ls -1 $(EXPORT_DIR) | grep -E '$(DATE_PATTERN)' | sort | tail -n 2)
+
+V1 ?= $(word 1, $(LAST_TWO))
+V2 ?= $(word 2, $(LAST_TWO))
 
 
 # $(info clean pdfs = $(CLEAN_PDFS))
@@ -30,7 +46,8 @@ PANDOC_OPTIONS=--standalone \
          -V colorlinks=true \
          -V linkcolor=teal \
          -V urlcolor=teal \
-         -V toccolor=gray
+         -V toccolor=gray \
+         --resource-path=.:assets
 
 
 # Define language-specific options
@@ -72,6 +89,10 @@ assets:
 	mkdir -p $(OUTPUT_DIR)/fr
 	mkdir -p $(OUTPUT_DIR)/it
 	mkdir -p $(OUTPUT_DIR)/en
+	mkdir -p $(INPUT_DIR)/de
+	mkdir -p $(INPUT_DIR)/fr
+	mkdir -p $(INPUT_DIR)/it
+	mkdir -p $(INPUT_DIR)/en
 	$(CP) assets/$(CSS) $(OUTPUT_DIR)/de
 	$(CP) assets/$(CSS) $(OUTPUT_DIR)/fr
 	$(CP) assets/$(CSS) $(OUTPUT_DIR)/it
@@ -86,6 +107,12 @@ assets:
 	$(CP) assets/model.png $(OUTPUT_DIR)/it
 	$(CP) assets/model.png $(OUTPUT_DIR)/en
 	$(CP) assets/model.png .
+	$(CP) -f assets/$(LOGO) $(INPUT_DIR)/en/
+	$(CP) -f assets/$(LOGO)  $(INPUT_DIR)/de/
+	$(CP) -f assets/$(LOGO)  $(INPUT_DIR)/fr/
+	$(CP) -f assets/$(LOGO)  $(INPUT_DIR)/it/
+
+
 
 $(OUTPUT_DIR):
 	@mkdir -p $(OUTPUT_DIR)
@@ -124,7 +151,7 @@ $(INPUT_DIR)/$(1)/datamodel.md: assets
 
 $(OUTPUT_DIR)/$(1)/datamodel.pdf: $(INPUT_DIR)/$(1)/datamodel.md $(INPUT_DIR)/$(1)/metadata.yaml
 	mkdir -p $$(@D)
-	$(PANDOC) $(PANDOC_OPTIONS) $(OPTIONS_$1) $(PANDOC_PDF_OPTIONS) -o $$@ $$<
+	$(PANDOC) $(PANDOC_OPTIONS) $(OPTIONS_$1) $(PANDOC_PDF_OPTIONS) --include-in-header=$(INPUT_DIR)/$(1)/cd-header.tex --resource-path=.:assets  -o $$@ $$<
 
 $(OUTPUT_DIR)/$(1)/datamodel.docx: $(INPUT_DIR)/$(1)/datamodel.md $(INPUT_DIR)/$(1)/metadata.yaml
 	mkdir -p $$(@D)
@@ -159,6 +186,36 @@ de: $(foreach fmt,$(FORMATS),$(OUTPUT_DIR)/de/datamodel.$(fmt))
 fr: $(foreach fmt,$(FORMATS),$(OUTPUT_DIR)/fr/datamodel.$(fmt))
 it: $(foreach fmt,$(FORMATS),$(OUTPUT_DIR)/it/datamodel.$(fmt))
 en: $(foreach fmt,$(FORMATS),$(OUTPUT_DIR)/en/datamodel.$(fmt))
+
+
+
+
+
+.PHONY: diff diff-pdf diff-docx diff-reports
+
+diff: $(OUTPUT_DIR) $(OUTPUT_DIR)/$(V1)_$(V2).md
+
+diff-reports: $(OUTPUT_DIR)   $(OUTPUT_DIR)/$(V1)_$(V2).pdf $(OUTPUT_DIR)/$(V1)_$(V2).docx
+
+$(INPUT_DIR)/en/cd-header.tex: mds
+
+$(OUTPUT_DIR)/$(V1)_$(V2).md:
+	@echo "Comparing $(V1) against $(V2)..."
+	gcover  schema diff \
+		-o $(OUTPUT_DIR)/$(V1)_$(V2).md \
+		--format markdown \
+		--old-schema-version $(V1) \
+		--new-schema-version $(V2) \
+		$(EXPORT_DIR)/$(V1)/geocover-schema-sde.json \
+		$(EXPORT_DIR)/$(V2)/geocover-schema-sde.json
+
+$(OUTPUT_DIR)/$(V1)_$(V2).pdf: $(OUTPUT_DIR)/$(V1)_$(V2).md
+	$(PANDOC) $(PANDOC_OPTIONS)  $(PANDOC_PDF_OPTIONS)  -V documentclass=extarticle -V fontsize=8pt \
+  --metadata-file=assets/diff_metadata.yaml  --include-in-header=$(INPUT_DIR)/en/cd-header.tex  -o $(OUTPUT_DIR)/$(V1)_$(V2).pdf $(OUTPUT_DIR)/$(V1)_$(V2).md
+
+$(OUTPUT_DIR)/$(V1)_$(V2).docx: $(OUTPUT_DIR)/$(V1)_$(V2).md
+	$(PANDOC) $(PANDOC_OPTIONS)  $(PANDOC_DOCX_OPTIONS)  -o $(OUTPUT_DIR)/$(V1)_$(V2).docx $(OUTPUT_DIR)/$(V1)_$(V2).md
+
 
 .PHONY: validate
 validate:
