@@ -355,6 +355,7 @@ class EnhancedMarkdownGenerator:
         model_data["lang"] = lang
         model_data["date"] = datetime.now()
         model_data["current_lang"] = get_lang_name(lang)
+        model_data["assets_dir"] = str(output_path.resolve())
 
         import subprocess
 
@@ -556,6 +557,27 @@ class EnhancedMarkdownGenerator:
                 with open(metadata_file, "w", encoding="utf-8") as f:
                     f.write(metadata_content)
                     logger.info(f"Generating Markdown metadata {metadata_file}")
+
+            # CD Bund template
+            tex_env = jinja2.Environment(
+                variable_start_string='[[',
+                variable_end_string=']]',
+                block_start_string='[%',
+                block_end_string='%]',
+                loader=loader
+            )
+            tex_env.globals["_"] = translate_ui
+            tex_env.filters["tr"] = translate_filter
+            tex_env.filters["tr_de"] = translate_de_filter
+            tex_env.filters["tr_fr"] = translate_fr_filter
+            tex_env.filters["tr_it"] = translate_it_filter
+            tex_env.filters["tr_en"] = translate_en_filter
+            tex_template = tex_env.get_template("cd-header.tex.j2")
+            tex_fname = output_path / "cd-header.tex"
+            with open(tex_fname, "w", encoding="utf-8") as f:
+                f.write(tex_template.render(model_data))
+            logger.info(f"Generating TeX CD/CI headers: {tex_fname}")
+
 
             translator = self._get_translator()
             logger.info(
