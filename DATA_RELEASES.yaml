@@ -1,0 +1,73 @@
+# DATA_RELEASES.yaml
+# Publication log for GeoCover geodata releases.
+# Append new entries at the top. Never modify past entries.
+# schema_version references SCHEMA_CHANGES.yaml → schema_versions[].version
+
+releases:
+
+  - release: "R17"
+    publication_date: "2026-05-31"
+    schema_version: ~
+    schema_export_date: ~
+    new_data: []
+    release_notes: ~
+
+  - release: "R16"
+    publication_date: "2026-03-30"
+    schema_version: "4.3.1"
+    schema_export_date: "2026-02-16"
+    new_data:
+      - { name: "Dent-de-Morcles", sheet: 58   }
+      - { name: "Frick-Laufenburg", sheet: 110  }
+      - { name: "Gruyères",         sheet: 115  }
+      - { name: "Winterthur",       sheet: 140  }
+      - { name: "Nesslau",          sheet: 141  }
+      - { name: "Ricken",           sheet: 142  }
+      - { name: "Bülach",           sheet: 151  }
+      - { name: "Damvant",          sheet: 1084 }
+    release_notes: ~
+
+  - release: "R15"
+    publication_date: "2025-12-01"
+    schema_version: "4.2"
+    schema_export_date: "2025-10-21"
+    new_data:
+      - { name: "Bellelay"       }
+      - { name: "Chasseral"      }
+      - { name: "Les Diablerets" }
+    release_notes: >
+      Hsur_See and Hsur_Glacier removed from surface table data.
+      Schema removal to follow in a future release.
+
+  - release: "R14"
+    publication_date: "2025-08-27"
+    schema_version: "4.1"
+    schema_export_date: ~
+    new_data:
+      - { name: "Guggisberg" }
+      - { name: "Boltigen"   }
+      - { name: "Lausanne"   }
+      - { name: "Echallens"  }
+      - { name: "Passwang"   }
+      - { name: "Arlesheim"  }
+      - { name: "Basel"      }
+      - { name: "Eglisau"    }
+      - { name: "Reichenau"  }
+      - { name: "Saas"       }
+    release_notes: "Model transition 4.0 → 4.1 — voir diff_4.0-4.1.pdf"
+
+  - release: "R13"
+    publication_date: "2024-09-10"
+    schema_version: "4.0"
+    schema_export_date: ~
+    new_data:
+      - { name: "Vättis (GA25)"              }
+      - { name: "corrections région Monthey" }
+    release_notes: ~
+
+  - release: "R12"
+    publication_date: "2024-04-30"
+    schema_version: "3.0"
+    schema_export_date: ~
+    new_data: []
+    release_notes: ~

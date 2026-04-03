@@ -139,6 +139,10 @@ jobs:
         shell: bash -el {0}
         run: make diff-reports V1=${{ env.V1 }} V2=${{ env.V2 }}
 
+      - name: Generate release notes
+        shell: bash -el {0}
+        run: make release-notes
+
 
       
       
@@ -188,5 +192,7 @@ jobs:
             ${{ env.SOURCES_DIR }}/gcoverp_export_simple.json 
             datamodel.yaml
             outputs/geology_mapping_tool*.xlsx
+            outputs/DATA_RELEASES.pdf
+            outputs/SCHEMA_CHANGES.pdf
 
 

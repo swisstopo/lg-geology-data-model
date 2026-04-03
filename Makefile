@@ -39,26 +39,20 @@ V2 ?= $(word 2, $(LAST_TWO))
 
 # Options for all doc format
 # Unknown --shift-heading-level-by=-1  \
-PANDOC_OPTIONS=--standalone \
-         -V papersize:a4   \
-         --number-sections \
-         --variable mainfont="DejaVu Sans" \
-         -V colorlinks=true \
-         -V linkcolor=teal \
-         -V urlcolor=teal \
-         -V toccolor=gray \
-         --resource-path=.:assets
+
+PANDOC_OPTIONS := --standalone \
+                 --resource-path=.:assets
 
 
 # Define language-specific options
-OPTIONS_de = --metadata lang=de  --metadata-file=$(INPUT_DIR)/de/metadata.yaml -V lang=de
-OPTIONS_fr = --metadata lang=fr  --metadata-file=$(INPUT_DIR)/fr/metadata.yaml -V lang=fr
-OPTIONS_it = --metadata lang=it  --metadata-file=$(INPUT_DIR)/it/metadata.yaml -V lang=it
-OPTIONS_en = --metadata lang=en  --metadata-file=$(INPUT_DIR)/en/metadata.yaml -V lang=en
+OPTIONS_de = --metadata lang=de  --metadata-file=$(INPUT_DIR)/de/metadata.yaml -V lang=de --number-sections
+OPTIONS_fr = --metadata lang=fr  --metadata-file=$(INPUT_DIR)/fr/metadata.yaml -V lang=fr --number-sections
+OPTIONS_it = --metadata lang=it  --metadata-file=$(INPUT_DIR)/it/metadata.yaml -V lang=it --number-sections
+OPTIONS_en = --metadata lang=en  --metadata-file=$(INPUT_DIR)/en/metadata.yaml -V lang=en --number-sections
 
 # format specific options
 PANDOC_HTML_OPTIONS=  --to html5 --toc  --toc-depth=3  --include-in-header=$(INPUT_DIR)/de/headers.html  --include-after-body=assets/sortable.html  --css $(CSS)
-PANDOC_PDF_OPTIONS=--pdf-engine=xelatex
+PANDOC_PDF_OPTIONS=--pdf-engine=xelatex  --pdf-engine-opt=--halt-on-error
 PANDOC_DOCX_OPTIONS=
 PANDOC_ODT_OPTIONS=
 
@@ -187,8 +181,47 @@ fr: $(foreach fmt,$(FORMATS),$(OUTPUT_DIR)/fr/datamodel.$(fmt))
 it: $(foreach fmt,$(FORMATS),$(OUTPUT_DIR)/it/datamodel.$(fmt))
 en: $(foreach fmt,$(FORMATS),$(OUTPUT_DIR)/en/datamodel.$(fmt))
 
+.PHONY: schema-changes-md schema-changes-pdf data-releases-md data-releases-pdf release-notes
 
+# High-level targets
+schema-changes-md: $(OUTPUT_DIR)/SCHEMA_CHANGES.md
+schema-changes-pdf: $(OUTPUT_DIR)/SCHEMA_CHANGES.pdf
+data-releases-md: $(OUTPUT_DIR)/DATA_RELEASES.md
+data-releases-pdf: $(OUTPUT_DIR)/DATA_RELEASES.pdf
+release-notes: schema-changes-pdf data-releases-pdf
 
+# Rule for Schema Markdown
+$(OUTPUT_DIR)/SCHEMA_CHANGES.md:
+	python scripts/geocover_release_notes.py schema \
+		--template-dir scripts/templates \
+		--output $@ --schema-file SCHEMA_CHANGES.yaml --data-file DATA_RELEASES.yaml
+
+# Rule for Schema PDF
+$(OUTPUT_DIR)/SCHEMA_CHANGES.pdf: $(OUTPUT_DIR)/SCHEMA_CHANGES.md
+	$(PANDOC) $(PANDOC_OPTIONS) $(PANDOC_PDF_OPTIONS) \
+		--include-in-header=$(INPUT_DIR)/en/cd-header.tex -o $@ $<
+
+# Rule for Data Release Markdown
+$(OUTPUT_DIR)/DATA_RELEASES.md:
+	python scripts/geocover_release_notes.py data \
+		--template-dir scripts/templates \
+		--output $@
+
+# Rule for Data Release PDF
+$(OUTPUT_DIR)/DATA_RELEASES.pdf: $(OUTPUT_DIR)/DATA_RELEASES.md
+	$(PANDOC) $(PANDOC_OPTIONS) $(PANDOC_PDF_OPTIONS) \
+		--include-in-header=$(INPUT_DIR)/en/cd-header.tex -o $@ $<
+
+release-notes: schema-changes-pdf data-releases-pdf
+
+validate-release-files:
+	python scripts/geocover_release_notes.py both --validate
+
+clean-releases:
+	rm -f $(OUTPUT_DIR)/DATA_RELEASES.pdf
+	rm -f $(OUTPUT_DIR)/DATA_RELEASES.md
+	rm -f $(OUTPUT_DIR)/SCHEMA_CHANGES.pdf
+	rm -f $(OUTPUT_DIR)/SCHEMA_CHANGES.md
 
 
 .PHONY: diff diff-pdf diff-docx diff-reports
@@ -215,6 +248,8 @@ $(OUTPUT_DIR)/$(V1)_$(V2).pdf: $(OUTPUT_DIR)/$(V1)_$(V2).md
 
 $(OUTPUT_DIR)/$(V1)_$(V2).docx: $(OUTPUT_DIR)/$(V1)_$(V2).md
 	$(PANDOC) $(PANDOC_OPTIONS)  $(PANDOC_DOCX_OPTIONS)  -o $(OUTPUT_DIR)/$(V1)_$(V2).docx $(OUTPUT_DIR)/$(V1)_$(V2).md
+
+
 
 
 .PHONY: validate
