@@ -181,7 +181,7 @@ fr: $(foreach fmt,$(FORMATS),$(OUTPUT_DIR)/fr/datamodel.$(fmt))
 it: $(foreach fmt,$(FORMATS),$(OUTPUT_DIR)/it/datamodel.$(fmt))
 en: $(foreach fmt,$(FORMATS),$(OUTPUT_DIR)/en/datamodel.$(fmt))
 
-.PHONY: schema-changes-md schema-changes-pdf data-releases-md data-releases-pdf release-notes
+.PHONY: schema-changes-md schema-changes-pdf data-releases-md data-releases-pdf release-notes clean-releases  validate-release-files release-notes
 
 # High-level targets
 schema-changes-md: $(OUTPUT_DIR)/SCHEMA_CHANGES.md
@@ -197,7 +197,7 @@ $(OUTPUT_DIR)/SCHEMA_CHANGES.md:
 		--output $@ --schema-file SCHEMA_CHANGES.yaml --data-file DATA_RELEASES.yaml
 
 # Rule for Schema PDF
-$(OUTPUT_DIR)/SCHEMA_CHANGES.pdf: $(OUTPUT_DIR)/SCHEMA_CHANGES.md
+$(OUTPUT_DIR)/SCHEMA_CHANGES.pdf: $(OUTPUT_DIR)/SCHEMA_CHANGES.md $(INPUT_DIR)/en/cd-header.tex
 	$(PANDOC) $(PANDOC_OPTIONS) $(PANDOC_PDF_OPTIONS) \
 		--include-in-header=$(INPUT_DIR)/en/cd-header.tex -o $@ $<
 
@@ -208,7 +208,7 @@ $(OUTPUT_DIR)/DATA_RELEASES.md:
 		--output $@
 
 # Rule for Data Release PDF
-$(OUTPUT_DIR)/DATA_RELEASES.pdf: $(OUTPUT_DIR)/DATA_RELEASES.md
+$(OUTPUT_DIR)/DATA_RELEASES.pdf: $(OUTPUT_DIR)/DATA_RELEASES.md $(INPUT_DIR)/en/cd-header.tex
 	$(PANDOC) $(PANDOC_OPTIONS) $(PANDOC_PDF_OPTIONS) \
 		--include-in-header=$(INPUT_DIR)/en/cd-header.tex -o $@ $<
 
