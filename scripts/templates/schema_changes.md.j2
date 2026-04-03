@@ -47,7 +47,7 @@ mainfontoptions:
 {% endif %}
 
 {% if note %}
-> ℹ️ {{ note | trim }}
+\faInfoCircle  {{ note | trim }}
 
 {% endif %}
 {% set changes = sv.get("changes") or [] %}
@@ -91,7 +91,7 @@ _No structured schema changes recorded for this version._
 
 {% endif %}
 {% if motivation %}
-> 💡 **Motivation:** {{ motivation | trim }}
+\faLightbulb[regular]  **Motivation:** {{ motivation | trim }}
 
 {% endif %}
 {% endfor %}
