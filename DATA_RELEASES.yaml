@@ -6,7 +6,7 @@
 releases:
 
   - release: "R17"
-    publication_date: "2026-05-31"
+    publication_date: ~
     schema_version: ~
     schema_export_date: ~
     new_data: []

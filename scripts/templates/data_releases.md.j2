@@ -33,13 +33,17 @@ mainfontoptions:
 
 
 {% for r in releases %}
-## {{ r.get("release", "?") }}
 
 {% set pub    = r.get("publication_date") %}
 {% set sv     = r.get("schema_version") %}
 {% set exp    = r.get("schema_export_date") %}
 {% set notes  = r.get("release_notes") %}
 {% set schema_info = r.get("_schema_info") %}
+
+{% if pub %}
+## {{ r.get("release", "?") }}
+
+
 {% if pub %}
 **Publication date:** {{ pub }}  {% endif %}
 
@@ -97,6 +101,6 @@ _No schema changes in v{{ sv }}._
 
 {% endif %}
 {% endif %}
-
+{% endif %} {# end pub #}
 
 {% endfor %}
