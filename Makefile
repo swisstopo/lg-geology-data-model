@@ -79,32 +79,32 @@ help:
 
 .PHONY: assets
 assets:
-	mkdir -p $(OUTPUT_DIR)/de
-	mkdir -p $(OUTPUT_DIR)/fr
-	mkdir -p $(OUTPUT_DIR)/it
-	mkdir -p $(OUTPUT_DIR)/en
-	mkdir -p $(INPUT_DIR)/de
-	mkdir -p $(INPUT_DIR)/fr
-	mkdir -p $(INPUT_DIR)/it
-	mkdir -p $(INPUT_DIR)/en
-	$(CP) assets/$(CSS) $(OUTPUT_DIR)/de
-	$(CP) assets/$(CSS) $(OUTPUT_DIR)/fr
-	$(CP) assets/$(CSS) $(OUTPUT_DIR)/it
-	$(CP) assets/$(CSS) $(OUTPUT_DIR)/en
-	$(CP) assets/geocover.png $(OUTPUT_DIR)/de
-	$(CP) assets/geocover.png $(OUTPUT_DIR)/fr
-	$(CP) assets/geocover.png $(OUTPUT_DIR)/it
-	$(CP) assets/geocover.png $(OUTPUT_DIR)/en
-	$(CP) assets/geocover.png .
-	$(CP) assets/model.png $(OUTPUT_DIR)/de
-	$(CP) assets/model.png $(OUTPUT_DIR)/fr
-	$(CP) assets/model.png $(OUTPUT_DIR)/it
-	$(CP) assets/model.png $(OUTPUT_DIR)/en
-	$(CP) assets/model.png .
-	$(CP) -f assets/$(LOGO) $(INPUT_DIR)/en/
-	$(CP) -f assets/$(LOGO)  $(INPUT_DIR)/de/
-	$(CP) -f assets/$(LOGO)  $(INPUT_DIR)/fr/
-	$(CP) -f assets/$(LOGO)  $(INPUT_DIR)/it/
+	@mkdir -p $(OUTPUT_DIR)/de
+	@mkdir -p $(OUTPUT_DIR)/fr
+	@mkdir -p $(OUTPUT_DIR)/it
+	@mkdir -p $(OUTPUT_DIR)/en
+	@mkdir -p $(INPUT_DIR)/de
+	@mkdir -p $(INPUT_DIR)/fr
+	@mkdir -p $(INPUT_DIR)/it
+	@mkdir -p $(INPUT_DIR)/en
+	@$(CP) assets/$(CSS) $(OUTPUT_DIR)/de
+	@$(CP) assets/$(CSS) $(OUTPUT_DIR)/fr
+	@$(CP) assets/$(CSS) $(OUTPUT_DIR)/it
+	@$(CP) assets/$(CSS) $(OUTPUT_DIR)/en
+	@$(CP) assets/geocover.png $(OUTPUT_DIR)/de
+	@$(CP) assets/geocover.png $(OUTPUT_DIR)/fr
+	@$(CP) assets/geocover.png $(OUTPUT_DIR)/it
+	@$(CP) assets/geocover.png $(OUTPUT_DIR)/en
+	@$(CP) assets/geocover.png .
+	@$(CP) assets/model.png $(OUTPUT_DIR)/de
+	@$(CP) assets/model.png $(OUTPUT_DIR)/fr
+	@$(CP) assets/model.png $(OUTPUT_DIR)/it
+	@$(CP) assets/model.png $(OUTPUT_DIR)/en
+	@$(CP) assets/model.png .
+	@$(CP) -f assets/$(LOGO) $(INPUT_DIR)/en/
+	@$(CP) -f assets/$(LOGO)  $(INPUT_DIR)/de/
+	@$(CP) -f assets/$(LOGO)  $(INPUT_DIR)/fr/
+	@$(CP) -f assets/$(LOGO)  $(INPUT_DIR)/it/
 
 
 
@@ -180,6 +180,13 @@ de: $(foreach fmt,$(FORMATS),$(OUTPUT_DIR)/de/datamodel.$(fmt))
 fr: $(foreach fmt,$(FORMATS),$(OUTPUT_DIR)/fr/datamodel.$(fmt))
 it: $(foreach fmt,$(FORMATS),$(OUTPUT_DIR)/it/datamodel.$(fmt))
 en: $(foreach fmt,$(FORMATS),$(OUTPUT_DIR)/en/datamodel.$(fmt))
+
+
+
+#.PHONY: cover-image
+
+cover-image:
+	@python ./scripts/generate_cover_image.py
 
 .PHONY: schema-changes-md schema-changes-pdf data-releases-md data-releases-pdf release-notes clean-releases  validate-release-files release-notes
 
