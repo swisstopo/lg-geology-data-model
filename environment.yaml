@@ -18,5 +18,9 @@ dependencies:
   - matplotlib
   - ruamel.yaml
   - requests
+  - pytest>=7.0
+  - pytest-cov
+  - flask>=2.3.0
+  - tabulate>=0.9.0
   - pip:
 prefix: /home/marc-monnerat-u1/anaconda3/envs/datamodel
