@@ -1,0 +1,38 @@
+# .github/workflows/auto-tag.yaml
+name: Auto-tag on version bump
+
+on:
+  push:
+    branches: [master]
+    paths: [release.yaml]
+
+jobs:
+  create-tag:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 2
+
+      - name: Check for version change
+        id: version
+        run: |
+          NEW=$(python -c "import yaml; print(yaml.safe_load(open('release.yaml'))['model']['revision'])")
+          OLD=$(git show HEAD~1:release.yaml 2>/dev/null | python -c "import yaml,sys; print(yaml.safe_load(sys.stdin).get('model',{}).get('revision',''))" || echo "")
+          
+          echo "new=$NEW" >> $GITHUB_OUTPUT
+          if [ "$NEW" != "$OLD" ]; then
+            echo "changed=true" >> $GITHUB_OUTPUT
+            echo "📦 Version bump: $OLD → $NEW"
+          else
+            echo "changed=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Create tag
+        if: steps.version.outputs.changed == 'true'
+        run: |
+          VERSION=${{ steps.version.outputs.new }}
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git tag -a "v$VERSION" -m "Release $VERSION"
+          git push origin "v$VERSION"

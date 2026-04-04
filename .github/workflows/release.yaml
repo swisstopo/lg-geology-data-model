@@ -25,12 +25,31 @@ jobs:
       - name: Set releases variables
         shell: bash
         run: |
-          RELEASE=$(python -c "import yaml; print(yaml.safe_load(open('datamodel.yaml'))['model']['revision'])")
-          SOURCES_DIR=$(python -c "import yaml; print(yaml.safe_load(open('datamodel.yaml'))['model']['sources_dir'])")
+          # To this (with fallback for transition period):
+          if [ -f "release.yaml" ]; then
+            RELEASE=$(python -c "import yaml; print(yaml.safe_load(open('release.yaml'))['model']['revision'])")
+            SOURCES_DIR=$(python -c "import yaml; print(yaml.safe_load(open('release.yaml'))['model']['sources_dir'])")
+          else
+            RELEASE=$(python -c "import yaml; print(yaml.safe_load(open('datamodel.yaml'))['model']['revision'])")
+            SOURCES_DIR=$(python -c "import yaml; print(yaml.safe_load(open('datamodel.yaml'))['model']['sources_dir'])")
+          fi
           echo "RELEASE=$RELEASE" >> $GITHUB_ENV
           echo "SOURCES_DIR=$SOURCES_DIR" >> $GITHUB_ENV
           echo "SHORT_RELEASE=$(echo $RELEASE | cut -d'.' -f1,2)" >> $GITHUB_ENV
           echo "version=$(<VERSION)" >> $GITHUB_ENV
+
+      - name: Validate tag matches release.yaml
+        shell: bash
+        run: |
+          TAG_VERSION="${GITHUB_REF_NAME#v}"  # v4.2.0 → 4.2.0
+          if [ "$RELEASE" != "$TAG_VERSION" ]; then
+            echo "❌ Tag ($TAG_VERSION) doesn't match release.yaml ($RELEASE)"
+            echo "   Did you forget to update release.yaml before tagging?"
+            exit 1
+          fi
+          echo "✅ Tag and release.yaml both at version $RELEASE"
+          
+
       - name: Print release variables
         shell: bash
         run: |

@@ -106,6 +106,10 @@ assets:
 	@$(CP) -f assets/$(LOGO)  $(INPUT_DIR)/fr/
 	@$(CP) -f assets/$(LOGO)  $(INPUT_DIR)/it/
 
+$(OUTPUT_DIR):
+	@mkdir -p $(OUTPUT_DIR)
+
+$(OUTPUT_DIR)/%: assets
 
 
 $(OUTPUT_DIR):
@@ -120,7 +124,7 @@ markdown: $(MO_FILES) $(INPUTS)
 diagram: assets
 	rm -rf $(OUTPUT_DIR)/ER-GCOVER.*
 	python create_gv.py
-	
+
 $(INPUT_DIR)/datamodel.xlsx:
 	$(GCDOCS)  export datamodel.yaml  -o $@
 
