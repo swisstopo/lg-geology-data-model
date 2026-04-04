@@ -121,7 +121,7 @@ def generate(ctx, lang, datamodel, output, input_dir):
 
         config = GeoDataConfig(Path(input_dir).resolve())
 
-        # Validate data files exist
+        # Validate data files exist  # TODO
         if not config.validate_data():
             click.echo("❌ Missing required data files in input directory")
             click.echo(f"   Expected files in {input_dir}:")

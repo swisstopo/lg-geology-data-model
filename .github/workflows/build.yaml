@@ -110,10 +110,10 @@ jobs:
 
 
 
-      - name: Build all targets
+      - name: Build PDF, HTML and DOCX targets
         shell: bash -el {0}
         run: |
-             EXPORT_DIR=${{ steps.get_sources_dir.outputs.dir }} make cleanall all
+             EXPORT_DIR=${{ steps.get_sources_dir.outputs.dir }} make cleanall mds pdfs htmls docxs
              # make diagram
              EXPORT_DIR=${{ steps.get_sources_dir.outputs.dir }} make validate-metadata
 
@@ -173,6 +173,7 @@ jobs:
         uses: actions/upload-artifact@v7
         with:
           name: geology-data-model-${{ env.RELEASE }}
+          if-no-files-found: error
           path: |
             outputs/de/datamodel.pdf
             outputs/fr/datamodel.pdf
@@ -195,7 +196,7 @@ jobs:
             outputs/ER-GCOVER.svg
             outputs/ER-GCOVER.pdf
             outputs/${{ env.V1 }}_${{ env.V2 }}.pdf
-            ${{ env.SOURCES_DIR }}/gcoverp_export_simple.json
+            ${{ env.SOURCES_DIR }}/gcover-schema-simple.json
             datamodel.yaml
             outputs/geology_mapping_tool*.xlsx
             outputs/DATA_RELEASES.pdf

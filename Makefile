@@ -105,6 +105,7 @@ assets:
 	@$(CP) -f assets/$(LOGO)  $(INPUT_DIR)/de/
 	@$(CP) -f assets/$(LOGO)  $(INPUT_DIR)/fr/
 	@$(CP) -f assets/$(LOGO)  $(INPUT_DIR)/it/
+	@$(CP)  -f excel/geology_mapping_tool_v3.1_separate.xlsx  $(OUTPUT_DIR)
 
 $(OUTPUT_DIR):
 	@mkdir -p $(OUTPUT_DIR)
