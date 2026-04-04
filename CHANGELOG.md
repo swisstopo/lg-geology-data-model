@@ -1,10 +1,15 @@
 # Changelog
 
 
-## [4.3.2] - 2026-04-03
+## [4.3.2] - 2026-04-04
+### Fixed
+- Deprecated GitHub Action runners
 ### Added
-- CD Bund header for PDF documents
+- CD Bund header for PDF documents (model, schema diff, release notes)
 - Tracking changes in `CHANGELOG.md`, `SCHEMA_VERSION.yaml` and `DATA_RELEASE.yaml`
+- Release on merge to `master`
+- generate the model schema diff doc and reports (incorporated into artefacts)
+
 
 ## [4.3.1] - 2026-03-25
 ### Fixed
