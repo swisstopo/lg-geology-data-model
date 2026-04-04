@@ -192,7 +192,7 @@ jobs:
           ls -la release-assets/
 
       - name: Create GitHub Release
-        uses: ncipollo/release-action@v1.16.0
+        uses: ncipollo/release-action@v1.21.0
         with:
           token: ${{ secrets.TOKEN }}
           tag: ${{ env.TAG_NAME }}
