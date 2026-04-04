@@ -112,9 +112,6 @@ $(OUTPUT_DIR):
 $(OUTPUT_DIR)/%: assets
 
 
-$(OUTPUT_DIR):
-	@mkdir -p $(OUTPUT_DIR)
-
 $(OUTPUT_DIR)/%: assets
 
 
@@ -263,9 +260,12 @@ $(OUTPUT_DIR)/$(V1)_$(V2).docx: $(OUTPUT_DIR)/$(V1)_$(V2).md
 
 
 
-.PHONY: validate
+.PHONY: validate test
 validate:
 	 $(GCDOCS)  validate datamodel.yaml
+
+test:
+	python -m pytest tests/test_gcdocs_smoke.py -v --no-cov 2>&1
 
 # Check metadata in all generated PDFs
 .PHONY: check-metadata
