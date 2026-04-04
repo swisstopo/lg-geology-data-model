@@ -10,6 +10,14 @@ from pathlib import Path
 from typing import Dict, Any, Optional
 from loguru import logger
 from rich.console import Console
+from pathlib import Path
+from typing import Any
+
+from pathlib import Path
+from typing import Any
+
+import yaml
+
 
 console = Console()
 
@@ -119,6 +127,90 @@ ATTRIBUTES_TO_IGNORE = [
     "WU_ID",
     "WU_ID_CREATION",
 ]
+
+"""
+Configuration loader that merges datamodel.yaml with release.yaml.
+
+Usage:
+    from geocover.config import load_config
+
+    config = load_config()
+    # config["model"]["revision"] comes from release.yaml
+    # config["themes"], config["annexes"] come from datamodel.yaml
+
+This allows release metadata to be updated automatically without
+touching the main data model definition.
+"""
+
+
+
+def load_config(
+        datamodel_path: Path | str = "datamodel.yaml",
+        release_path: Path | str = "release.yaml",
+) -> dict[str, Any]:
+    """
+    Load and merge configuration from datamodel.yaml and release.yaml.
+
+    Priority: release.yaml values override datamodel.yaml for the 'model' section.
+
+    Returns:
+        Merged configuration dictionary
+    """
+    datamodel_path = Path(datamodel_path)
+    release_path = Path(release_path)
+
+    # Load main datamodel
+    if not datamodel_path.exists():
+        raise FileNotFoundError(f"Required file not found: {datamodel_path}")
+
+    with open(datamodel_path) as f:
+        config = yaml.safe_load(f)
+
+    # Merge release config if it exists
+    if release_path.exists():
+        with open(release_path) as f:
+            release_config = yaml.safe_load(f)
+
+        # Override model section with release values
+        if "model" in release_config:
+            if "model" not in config:
+                config["model"] = {}
+            config["model"].update(release_config["model"])
+
+    return config
+
+
+def get_sources_dir(config: dict | None = None) -> Path:
+    """Get the sources directory path from config."""
+    if config is None:
+        config = load_config()
+
+    sources_dir = config.get("model", {}).get("sources_dir", "")
+    if not sources_dir:
+        raise ValueError("sources_dir not configured")
+
+    return Path(sources_dir)
+
+
+def get_revision(config: dict | None = None) -> str:
+    """Get the current revision from config."""
+    if config is None:
+        config = load_config()
+
+    return config.get("model", {}).get("revision", "0.0.0")
+
+
+# For backwards compatibility: load config on import if used as drop-in
+def load_datamodel(path: Path | str = "datamodel.yaml") -> dict[str, Any]:
+    """
+    Backwards-compatible loader.
+
+    If release.yaml exists alongside the datamodel, it will be merged.
+    """
+    datamodel_path = Path(path)
+    release_path = datamodel_path.parent / "release.yaml"
+
+    return load_config(datamodel_path, release_path)
 
 
 class GeoDataConfig:

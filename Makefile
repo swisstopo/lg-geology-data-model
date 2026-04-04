@@ -21,7 +21,6 @@ CLEAN_PDFS = $(shell find outputs -name "*.pdf" -not -name "ER-GCOVER.pdf")
 LOGO := Logo_RGB_farbig_positiv.png
 
 
-
 # regex: 4 digits, dash, 2 digits, dash, 2 digits
 DATE_PATTERN := ^[0-9]{4}-[0-9]{2}-[0-9]{2}$$
 
@@ -70,6 +69,7 @@ help:
 	@echo "  make it                 - Generate all files (PDF, DOCX, HTML and ODT) for Italian"
 	@echo "  make en                 - Generate all files (PDF, DOCX, HTML and ODT) for English"
 	@echo "  make markdown           - Generate markdown files"
+	@echo "  make release-notes      - Gemerate release notes"
 	@echo "  make diagram            - Generate ER diagram"
 	@echo "  make validate           - Validate the datamodel against the schema"
 	@echo "  make check-metadata     - Check the model metadata"
