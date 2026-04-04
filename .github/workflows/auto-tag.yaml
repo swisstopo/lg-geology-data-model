@@ -2,6 +2,8 @@
 name: Auto-tag on version bump
 
 on:
+  workflow_call:
+  workflow_dispatch:
   push:
     branches: [master]
     paths: [release.yaml]
