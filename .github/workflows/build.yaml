@@ -73,7 +73,7 @@ jobs:
 
       - name: Pip install
         shell: bash -el {0}
-        run: pip install -e .
+        run: pip install -e ".[dev]"
 
       - name: Validate datamodel.yaml
         shell: bash -el {0}
