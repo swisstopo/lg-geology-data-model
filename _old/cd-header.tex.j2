@@ -1,0 +1,39 @@
+\usepackage[margins=raggedright]{floatrow}
+    \usepackage{pdflscape}
+    \usepackage{fontawesome5}
+    \newcommand{\blandscape}{\begin{landscape}}
+    \newcommand{\elandscape}{\end{landscape}}
+    \usepackage{hyperref}
+    \usepackage[export]{adjustbox}
+    \usepackage{lastpage}
+    \usepackage{titling}
+    \hypersetup{
+  pdfinfo={
+    ModelRevision=[[ model.revision | default('unknown') ]],
+    ModelShortRevision=[[ model.short_revision | default('unknown') ]],
+    [%- if git_info and git_info.tag %]
+    GitTag=[[ git_info.tag ]],
+    [%- endif %]
+    [%- if git_info and git_info.hash %]
+    GitHash=[[ git_info.hash ]],
+    [%- endif %]
+    BuildDate=[[ date.isoformat() if date else 'unknown' ]]
+  }
+}
+\usepackage{graphicx}
+\usepackage{titling}
+\setlength{\droptitle}{-2cm}   % ← pull up, adjust to taste
+\newcommand{\swisstopoheader}[1]{%
+  \begin{minipage}[t]{0.38\textwidth}%
+    \raggedright\vspace{0pt}%
+    \includegraphics[width=2in]{[[ assets_dir ]]/Logo_RGB_farbig_positiv.png}%
+  \end{minipage}%
+  \hfill%
+  \begin{minipage}[t]{0.58\textwidth}%
+    \raggedright\vspace{5pt}%
+    \footnotesize\sffamily%
+    \textbf{[[ _("Bundesamt für Landestopographie swisstopo")| trim ]]}\\%
+    #1%
+  \end{minipage}}
+\pretitle{\swisstopoheader{[[ _("National Geological Survey")|trim ]]}\vskip 5em\begin{center}\LARGE\bfseries}
+\posttitle{\end{center}\vskip 4em}

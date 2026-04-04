@@ -8,3 +8,9 @@ log/
 output/Thumbs.db
 *.egg-info
 
+# Generated build artifacts
+inputs/
+outputs/
+
+# Debug files in sources
+sources/*/debug_discarded_*.xlsx

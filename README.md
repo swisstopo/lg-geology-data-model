@@ -16,36 +16,49 @@ des documents finaux, comme `markdown` dans `inputs` et les différents formats 
 
 # Installation
 
-L'outil est disponbile comme paquets sur `anaconda.org` et `pypi.org`. La génération des fichiers finaux à partir des `exports`
-est possible dans n'importe quel environnement, mais l'export des données nécessite `arcpy`et un accès à la base ESRI ArcSDE.
-base de données ESRI ArcSDE n'est bien entendu pas possible.
+Les outils `gcdocs` (génération de la documentation) et `gcover` (exports à partir de ESRI ArcSDE, mais pas que) sont
+disponbiles comme paquets sur `anaconda.org` et `pypi.org`. La génération des fichiers finaux à partir des `exports`
+est possible dans n'importe quel environnement, mais l'export des données à partir de l'ESRI Enterprise Database (SDE)
+nécessite `arcpy` et un accès à cette même base (donc exclusivement Windows. Il est toutefois possible de générer cet
+export à partir d'une FileGDB (backup).
+
 
 ## Windows
 
-Create a new `conda` environment by cloning `arcgispro-py3` if you need to export data from ArcSDE (obvious). To
-generate the models, you don't need `arcpy`,
+Créez un nouvel environnement `conda` en clonant `arcgispro-py3` si vous devez exporter des données depuis ArcSDE (évident).  
+Pour générer les modèles, vous n'avez pas besoin de `arcpy`.
 
-Install the package
+Installez le paquet :
 
-    (arcgispro-py3) D:\conda\envs\arcgispro-py3_clone> conda install swisstopo::geocover
+    (arcgispro-py3) D:\conda\envs\arcgispro-py3_clone> conda install -c swisstopo gcover gcdocs
 
-To generate de final documents from the `markdown` sources, you need `pandoc`. As _pandoc.exe_ is a standalone binary on
-Windows, simply download it and unzip it into _C:\LegacySW_ (see the latest available version on  [Pandoc](https://github.com/jgm/pandoc/releases) ).
+Pour générer les documents finaux à partir des sources `markdown`, vous avez besoin de `pandoc`.  
+Comme _pandoc.exe_ est un binaire autonome sous Windows, téléchargez-le simplement et décompressez-le dans _C:\LegacySW_  
+(voir la dernière version disponible sur [Pandoc](https://github.com/jgm/pandoc/releases)).
 
-Pour tester l'installation (le numéro de version peut être différent):
+Pour tester l'installation (le numéro de version peut varier) :
 
     C:\LegacySW\pandoc-3.1.13\pandoc.exe --version
-    
+
 ## Linux
 
-You need `pandoc` and a fully-fledge `XeLaTeX` installation. Install it with `apt-get`, `yum`, etc.
+Vous avez besoin de `pandoc` et d'une installation complète de `XeLaTeX`.  
+Installez-la avec `apt-get`, `yum`, etc.
 
-Create a `conda` environement as normal and install the package:
+Créez un environnement `conda` comme d'habitude et installez le paquet :
 
-    conda install swisstopo::geocover
+    conda install -c gcover gcdocs
 
-The subcommand of `geocover` requiring `arcpy` are not available on Linux. The 
-Le script `datamodel` qui génère le fichier _markdown_ n'a besoin que des libraries de base sus-mentionnées.
+Les sous-commandes de `gcover` nécessitant `arcpy` ne sont évidemment pas disponibles sous Linux.
+
+
+
+# Fichier XLSX pour le mapping des attributs
+
+```commandline
+python scripts/geology_tool_v4.0_with_cd_attributes.py
+```
+Le fichier sera écrit dans : _outputs/geology_mapping_tool_v4.0.xlsx_
 
 
 # Utilisation
@@ -79,16 +92,16 @@ model:
 
 ### 3. Installation de l'outil
 
-Si ce n'est pas déjà fait, installez l'outil `gcover` :
+Si ce n'est pas déjà fait, installez des outils `gcdocs` et `gcover` :
 
 **Avec conda (recommandé) :**
 ```bash
-conda install gcover
+conda install -c swisstopo gcdocs  gcover
 ```
 
 **Avec pip :**
 ```bash
-pip install gcover
+pip install gcdocs gcover
 ```
 
 ## Export des données
@@ -106,7 +119,7 @@ gcover schema extract \
 
 ### 2. Transformation en version simplifiée
 
-Convertissez le schéma complet en version simplifiée :
+Convertissez le schéma complet ESRI en version simplifiée :
 
 ```bash
 gcover schema transform-simple \
@@ -122,7 +135,21 @@ Exportez toutes les tables de référence nécessaires :
 gcover schema export-tables \
   -w "H:/connections/GCOVERP@osa.sde" \
   -o exports/<RELEASE-DIR> \
-  --all-tables
+  --gc-tables-only
+  
+📋 Scanning for tables...
+📊 Found 11 tables to export
+  • TOPGIS_GC.GC_CHRONO → CHRONO
+  • TOPGIS_GC.GC_LITHO → LITHO
+  • TOPGIS_GC.GC_GEOL_MAPPING_UNIT → GEOL_MAPPING_UNIT
+  • TOPGIS_GC.GC_TECTO → TECTO
+  • TOPGIS_GC.GC_LITSTRAT_UNCO → LITSTRAT_UNCO
+  • TOPGIS_GC.GC_GEOL_MAPPING_UNIT_ATT → GEOL_MAPPING_UNIT_ATT
+  • TOPGIS_GC.GC_COMPOSIT → COMPOSIT
+  • TOPGIS_GC.GC_ADMIXTURE → ADMIXTURE
+  • TOPGIS_GC.GC_CHARCAT → CHARCAT
+  • TOPGIS_GC.GC_CORRELATION → CORRELATION
+  • TOPGIS_GC.GC_LITSTRAT_FORMATION_BANK → LITSTRAT_FORMATION_BANK
 ```
 
 **Cette commande génère les fichiers suivants :**
@@ -134,6 +161,12 @@ gcover schema export-tables \
 - `Charcat.json`
 - `System.json`
 
+
+### 4. Différences
+
+    gcover schema diff  -o R15_R16.json    --format json   exports/2025-11-25/geocover-schema-sde.json \
+        exports/2025-11-26/geocover-schema-sde.json
+
 ### 4. Ajout des fichiers statiques
 
 Copiez manuellement les fichiers statiques suivants dans le répertoire `exports/<RELEASE-DIR>/` :
@@ -141,11 +174,17 @@ Copiez manuellement les fichiers statiques suivants dans le répertoire `exports
 > **Note :** Ces fichiers seront bientôt intégrés automatiquement dans le processus
 
 - `geolcode_chrono.csv`
-- `GeolCodeText_Trad_230317.csv`
+- `GeolCodeText_Trad_2025.xlsx`
 - `SCHEMA_CHANGES_4.0-4.1.json`
-- `all_codes_dict.json`
 
 ## Génération des documents
+
+
+### Génération du fichier Markdown
+
+```commandline
+ gcdocs generate -i exports/2025-08-26/  -o inputs --lang fr,de  datamodel.yaml
+```
 
 ### Génération des PDF
 
@@ -153,6 +192,10 @@ Une fois tous les exports terminés, générez les documents finaux :
 
 ```bash
 make pdfs
+```
+or
+```commandline
+gcdocs build --lang de --format pdf --input-dir inputs
 ```
 
 Cette commande produit les fichiers PDF dans les langues configurées (français, allemand).
@@ -190,25 +233,8 @@ Create Date                     : 2025:08:27 21:41:58+03:00
 - **Sauvegarde :** Il est recommandé de sauvegarder les exports précédents avant de générer une nouvelle version
 - **Validation :** Vérifiez toujours les fichiers générés avant de les publier
 
-## Résolution de problèmes
 
-### Erreurs communes
 
-1. **Connexion à la base de données impossible :**
-   - Vérifiez la chaîne de connexion ArcSDE
-   - Assurez-vous que l'environnement ArcGIS Pro est actif
-
-2. **Fichiers manquants :**
-   - Vérifiez que tous les fichiers statiques ont été copiés
-   - Contrôlez les permissions sur le répertoire de sortie
-
-3. **Erreur lors de la génération PDF :**
-   - Vérifiez que `pandoc` et XeLaTeX sont installés
-   - Contrôlez la syntaxe du fichier `datamodel.yaml`
-
-### Contact
-
-En cas de problème, consultez la documentation technique ou contactez l'équipe de développement (geocover@swisstopo.ch).
 
 
 
