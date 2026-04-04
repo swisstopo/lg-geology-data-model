@@ -27,7 +27,7 @@ date: 2025-09-01
 model:
   revision: '4.3.1'
   revision_date: "2026-02-12"
-  sources_dir: "exports/2026-02-12"
+  sources_dir: "sources/2026-02-12"
 
 # Annexe
 # Some CD are alreday defined in the simplifed JSON report
@@ -2730,8 +2730,8 @@ themes:
       cardinality: "1"
 
 # Two distincts sources for annexes:
-# - `name`ending with `_CD` is a coded domain (file `exports/coded_domains.json`)
-# - Other `name` expected a JSON file `exports/<name>.json` with the give
+# - `name`ending with `_CD` is a coded domain (file `sources/coded_domains.json`)
+# - Other `name` expected a JSON file `sources/<name>.json` with the give
 #   value (see `get_table_values` method)
 # TODO: description should be taken from abbove
       mandatory: true

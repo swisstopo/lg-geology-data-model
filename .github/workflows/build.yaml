@@ -13,7 +13,7 @@ on:
       - master
       - develop
       - 'releases/**'
-      - refactor_gcdocs
+      - refactoring_directories
 
 
 jobs:
@@ -24,12 +24,12 @@ jobs:
       - name: Set up TeX Live
         run: |
           sudo apt-get update
-          sudo apt-get install -y texlive-xetex texlive-fonts-recommended texlive-plain-generic poppler-utils
+          sudo apt-get install -y texlive-xetex texlive-fonts-recommended texlive-plain-generic poppler-utils fonts-noto-core fonts-liberation texlive-fonts-extra
 
       - name: Install Pandoc
         run: sudo apt-get install -y pandoc
       - name: Checkout coded_domains
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
       - name: Install miniconda
         uses: conda-incubator/setup-miniconda@v3
         with:
@@ -38,14 +38,26 @@ jobs:
           channel-priority: true
           activate-environment: DATAMODEL
           environment-file: environment.yaml
+
+
+      - name: Install gcover and pandoc
+        shell: bash -el {0}
+        run: |
+          conda install -c conda-forge  pandoc gdal -y
+          conda install -c swisstopo    "gcover>=0.8.0"  -y
+          mkdir -p  /home/runner/.config/gcover && touch /home/runner/.config/gcover/config.yaml
+          gcover --version
+          pandoc -v
       - name: Check conda installation
         shell: bash -el {0}
         run: |
+          conda install -c conda-forge  pandoc gdal>=3.11 -y
           conda info
           conda list
           conda config --show-sources
           conda config --show
           printenv | sort
+
       - name: Set Package Version
         shell: bash -l {0}
         run: |
@@ -75,9 +87,16 @@ jobs:
         id: get_sources_dir
         run: |
           import yaml
+          import os
+
           with open("datamodel.yaml") as f:
               data = yaml.safe_load(f)
-          print(f"::set-output name=dir::{data['model']['sources_dir']}")
+
+          # Get the path to the output file from the environment
+          output_file = os.environ['GITHUB_OUTPUT']
+
+          with open(output_file, 'a') as fh:
+              print(f"dir={data['model']['sources_dir']}", file=fh)
         shell: python
 
       - name: Use sources_dir
@@ -91,13 +110,47 @@ jobs:
              EXPORT_DIR=${{ steps.get_sources_dir.outputs.dir }} make cleanall all
              # make diagram
              EXPORT_DIR=${{ steps.get_sources_dir.outputs.dir }} make validate-metadata
-             
 
+      - name: Create gcover config file
+        run: |
+          mkdir -p config
+          cat > config/config.yaml <<'EOF'
+          global:
+            s3:
+              bucket: "swisstopo-gcover-assets"
+            mapserver: ~          # explicit null — satisfies Pydantic v2's requirement
+
+          gdb:
+              base_paths:
+                RC1: /data/gdb/RC1.gdb
+                RC2: /data/gdb/RC2.gdb
+          EOF
+
+      - name: Resolve V1 and V2 from exports directory
+        shell: bash -el {0}
+        run: |
+          LAST_TWO=$(ls -1 sources/ | grep -E '^[0-9]{4}-[0-9]{2}-[0-9]{2}$' | sort | tail -n 2)
+          V1=$(echo "$LAST_TWO" | head -n 1)
+          V2=$(echo "$LAST_TWO" | tail -n 1)
+          echo "V1=$V1" >> $GITHUB_ENV
+          echo "V2=$V2" >> $GITHUB_ENV
+
+      - name: Generate diff report
+        shell: bash -el {0}
+        run: make diff-reports V1=${{ env.V1 }} V2=${{ env.V2 }}
+
+      - name: Generate release notes
+        shell: bash -el {0}
+        run: make release-notes
+
+
+      
+      
       - name: Generate PDF from PUML diagram
         uses: rotaract/plantuml-action@v1
         with:
           format: svg
-          pattern: outputs/ER-GCOVER.puml
+          pattern: assets/ER-GCOVER.puml
       - name: Install rsvg-convert
         run: |
           sudo apt-get update
@@ -106,11 +159,12 @@ jobs:
       - name: Convert SVG to PDF
         run: |
           # Convert SVG to PDF (maintains vector format)
-          rsvg-convert -f pdf -o outputs/ER-GCOVER.pdf outputs/ER-GCOVER.svg
+          rsvg-convert -f pdf -o outputs/ER-GCOVER.pdf assets/ER-GCOVER.svg
+          cp assets/ER-GCOVER.svg outputs/ER-GCOVER.svg
 
 
       - name: Upload Artifacts
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: geology-data-model-${{ env.RELEASE }}
           path: |
@@ -133,9 +187,12 @@ jobs:
             outputs/it/geocover.png
             outputs/en/geocover.png
             outputs/ER-GCOVER.svg
-            outputs/ER-GCOVER.pdf
+            outputs/ER-GCOVER.pdft
+            outputs/${{ env.V1 }}_${{ env.V2 }}.pdf
             ${{ env.SOURCES_DIR }}/gcoverp_export_simple.json 
             datamodel.yaml
             outputs/geology_mapping_tool*.xlsx
+            outputs/DATA_RELEASES.pdf
+            outputs/SCHEMA_CHANGES.pdf
 
 

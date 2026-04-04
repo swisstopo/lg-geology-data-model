@@ -21,9 +21,9 @@ jobs:
     steps:
 
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
       - name: Install miniconda
-        uses: conda-incubator/setup-miniconda@v3
+        uses: conda-incubator/setup-miniconda@v3.3.0
         with:
           python-version: 3.12
           channels: conda-forge,defaults
@@ -48,14 +48,11 @@ jobs:
         shell: bash -el {0}
         run: |
           $CONDA/bin/conda build --output-folder  ./conda-out/  recipe
-    
+
 
       - name: Upload Artifacts
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: conda-package
           path: |
             conda-out/noarch/gcdocs*.conda
-   
-
-
