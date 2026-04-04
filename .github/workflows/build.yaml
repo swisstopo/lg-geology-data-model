@@ -8,12 +8,14 @@ on:
     branches:
       - master
       - 'releases/**'
+      - 'release/**'
   pull_request:
     branches:
       - master
       - develop
       - 'releases/**'
-      - refactoring_directories
+      - 'release/**'
+
 
 
 jobs:
@@ -71,11 +73,15 @@ jobs:
 
       - name: Pip install
         shell: bash -el {0}
-        run: pip install -e .
+        run: pip install -e ".[dev]"
 
-      - name: Validate
+      - name: Validate datamodel.yaml
         shell: bash -el {0}
         run: make validate
+
+      - name: Test
+        shell: bash -el {0}
+        run: make test
 
       - name: NOT Generate graph
         shell: bash -el {0}

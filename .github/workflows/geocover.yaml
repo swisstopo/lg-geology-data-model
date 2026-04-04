@@ -35,6 +35,18 @@ jobs:
         shell: bash -el {0}
         run: $CONDA/bin/conda install conda-build anaconda-client -y
 
+      - name: Pip install
+        shell: bash -el {0}
+        run: pip install -e ".[dev]"
+
+      - name: Validate datamodel.yaml
+        shell: bash -el {0}
+        run: make validate
+
+      - name: Test
+        shell: bash -el {0}
+        run: make test
+        
       - name: Check conda installation
         shell: bash -el {0}
         run: |
