@@ -72,7 +72,7 @@ jobs:
       - name: Pip install
         shell: bash -el {0}
         run: pip install -e .
-        
+
       - name: Validate
         shell: bash -el {0}
         run: make validate
@@ -144,8 +144,8 @@ jobs:
         run: make release-notes
 
 
-      
-      
+
+
       - name: Generate PDF from PUML diagram
         uses: rotaract/plantuml-action@v1
         with:
@@ -154,7 +154,7 @@ jobs:
       - name: Install rsvg-convert
         run: |
           sudo apt-get update
-          sudo apt-get install -y librsvg2-bin 
+          sudo apt-get install -y librsvg2-bin
 
       - name: Convert SVG to PDF
         run: |
@@ -187,9 +187,9 @@ jobs:
             outputs/it/geocover.png
             outputs/en/geocover.png
             outputs/ER-GCOVER.svg
-            outputs/ER-GCOVER.pdft
+            outputs/ER-GCOVER.pdf
             outputs/${{ env.V1 }}_${{ env.V2 }}.pdf
-            ${{ env.SOURCES_DIR }}/gcoverp_export_simple.json 
+            ${{ env.SOURCES_DIR }}/gcoverp_export_simple.json
             datamodel.yaml
             outputs/geology_mapping_tool*.xlsx
             outputs/DATA_RELEASES.pdf
