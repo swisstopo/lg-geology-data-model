@@ -1,20 +1,23 @@
 #!/usr/bin/env python3
 """
-Script to generate an HTML index page for available datamodel versions in S3 bucket
+Script to generate an HTML index page for available datamodel versions in S3 bucket.
+
+Versioning convention:
+  x.y   = schema version  (what users and geologists care about)
+  x.y.z = tooling/patch version  (what gets physically stored in S3)
+
+The index groups all x.y.z patches under their x.y parent and displays
+files from the latest patch — similar to a symlink from x.y → x.y.z.
 """
 
 import boto3
 import sys
 import json
 import os
-import sys
 import click
-import json
-import os
-import sys
+from collections import defaultdict, OrderedDict
 from datetime import datetime
-from collections import defaultdict
-from typing import List, Dict, Any
+from typing import List, Dict, Any, Tuple
 
 
 def get_s3_client(profile_name: str = None):
@@ -26,24 +29,21 @@ def get_s3_client(profile_name: str = None):
 
 
 def parse_version(version_str: str) -> tuple:
-    """Parse version string into comparable tuple"""
+    """Parse version string into comparable tuple for sorting"""
     import re
 
-    # Split version into parts (numbers and non-numbers)
     parts = re.findall(r"\d+|\D+", version_str)
     result = []
-
     for part in parts:
         if part.isdigit():
-            result.append((0, int(part)))  # (type, value) - 0 for numbers
+            result.append((0, int(part)))
         else:
-            result.append((1, part))  # (type, value) - 1 for strings
-
+            result.append((1, part))
     return tuple(result)
 
 
 def list_versions(s3_client, bucket_name: str, prefix: str = "datamodel/") -> List[str]:
-    """List all version directories in the S3 bucket"""
+    """List all version directories in the S3 bucket (returns full x.y.z versions)"""
     versions = []
 
     try:
@@ -55,12 +55,11 @@ def list_versions(s3_client, bucket_name: str, prefix: str = "datamodel/") -> Li
         for page in page_iterator:
             if "CommonPrefixes" in page:
                 for prefix_info in page["CommonPrefixes"]:
-                    # Extract version from prefix (remove datamodel/ and trailing /)
                     version = prefix_info["Prefix"].replace(prefix, "").rstrip("/")
-                    if version:  # Skip empty strings
+                    if version:
                         versions.append(version)
 
-        # Sort versions using semantic versioning (newest first)
+        # Sort newest first
         versions.sort(key=parse_version, reverse=True)
 
     except Exception as e:
@@ -70,14 +69,35 @@ def list_versions(s3_client, bucket_name: str, prefix: str = "datamodel/") -> Li
     return versions
 
 
+def group_versions_by_minor(versions: List[str]) -> "OrderedDict[str, List[str]]":
+    """
+    Group x.y.z patch versions under their x.y schema version key.
+
+    Input  (already sorted newest-first): ["1.3.1", "1.3.0", "1.2.4", "1.2.3"]
+    Output (OrderedDict, insertion order = newest schema first):
+        {
+            "1.3": ["1.3.1", "1.3.0"],
+            "1.2": ["1.2.4", "1.2.3"],
+        }
+
+    Versions that don't follow x.y.z (e.g. legacy "x.y" keys still in S3)
+    are kept as-is under their own key so nothing is silently dropped.
+    """
+    groups: OrderedDict = OrderedDict()
+    for v in versions:
+        parts = v.split(".")
+        minor_key = ".".join(parts[:2]) if len(parts) >= 3 else v
+        groups.setdefault(minor_key, []).append(v)
+    return groups
+
+
 def get_files_for_version(
     s3_client, bucket_name: str, version: str, prefix: str = "datamodel/"
 ) -> Dict[str, List[Dict[str, Any]]]:
-    """Get list of files for a specific version, organized by language"""
+    """Get list of files for a specific version, organised by language"""
     version_prefix = f"{prefix}{version}/"
     files_by_lang = {"root": [], "de": [], "fr": [], "it": [], "en": []}
 
-    # File extensions to exclude
     excluded_extensions = {".css", ".map"}
 
     try:
@@ -90,40 +110,27 @@ def get_files_for_version(
                     key = obj["Key"]
                     filename = key.split("/")[-1]
 
-                    # Skip directory markers, hidden files, and excluded file types
                     if (
                         key.endswith("/")
                         or filename.startswith(".")
-                        or any(
-                            filename.lower().endswith(ext)
-                            for ext in excluded_extensions
-                        )
+                        or any(filename.lower().endswith(ext) for ext in excluded_extensions)
                     ):
                         continue
 
-                    # Determine language from path
                     path_parts = key.replace(version_prefix, "").split("/")
-                    lang = "root"  # Default to root
-
-                    if len(path_parts) > 1 and path_parts[0] in [
-                        "de",
-                        "fr",
-                        "it",
-                        "en",
-                    ]:
+                    lang = "root"
+                    if len(path_parts) > 1 and path_parts[0] in ("de", "fr", "it", "en"):
                         lang = path_parts[0]
 
-                    file_info = {
+                    files_by_lang[lang].append({
                         "name": filename,
                         "key": key,
                         "size": obj["Size"],
                         "last_modified": obj["LastModified"],
                         "lang": lang,
                         "path": "/".join(path_parts),
-                    }
-                    files_by_lang[lang].append(file_info)
+                    })
 
-        # Sort files by name for each language
         for lang in files_by_lang:
             files_by_lang[lang].sort(key=lambda x: x["name"])
 
@@ -134,7 +141,7 @@ def get_files_for_version(
 
 
 def format_file_size(size_bytes: int) -> str:
-    """Format file size in human readable format"""
+    """Format file size in human-readable form"""
     if size_bytes == 0:
         return "0 B"
     size_names = ["B", "KB", "MB", "GB"]
@@ -146,7 +153,7 @@ def format_file_size(size_bytes: int) -> str:
 
 
 def get_file_type_icon(filename: str) -> str:
-    """Get icon/badge for file type"""
+    """Return an emoji icon for the file type"""
     ext = filename.lower().split(".")[-1] if "." in filename else ""
     icons = {
         "pdf": "📄",
@@ -167,13 +174,20 @@ def generate_html(
     bucket_name: str,
     cloudfront_domain: str = "dubious.cloud",
 ) -> str:
-    """Generate HTML content for the index page"""
+    """
+    Generate the HTML index page.
 
-    # Use provided domain, default to dubious.cloud, or fallback to S3 if explicitly set to None
-    if cloudfront_domain:
-        base_url = f"https://{cloudfront_domain}"
-    else:
-        base_url = f"https://{bucket_name}.s3.amazonaws.com"
+    `versions` is the flat sorted list of x.y.z strings.
+    `version_files` is keyed by x.y.z (full patch version).
+
+    Versions are displayed grouped by x.y schema version; files are served
+    from the latest x.y.z patch in each group.
+    """
+    base_url = (
+        f"https://{cloudfront_domain}"
+        if cloudfront_domain
+        else f"https://{bucket_name}.s3.amazonaws.com"
+    )
 
     html = f"""<!DOCTYPE html>
 <html lang="fr">
@@ -226,6 +240,10 @@ def generate_html(
             padding: 1rem 1.5rem;
             font-size: 1.3rem;
             font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            flex-wrap: wrap;
         }}
 
         .latest-badge {{
@@ -234,9 +252,8 @@ def generate_html(
             padding: 0.2rem 0.6rem;
             border-radius: 12px;
             font-size: 0.8rem;
-            margin-left: 1rem;
         }}
-        
+
         .draft-badge {{
             background: #ff9900;
             color: white;
@@ -244,6 +261,52 @@ def generate_html(
             border-radius: 12px;
             font-size: 0.8rem;
             margin-left: 1rem;
+        }}
+
+        /* Patch pill — pushed to the right */
+        .patch-info {{
+            margin-left: auto;
+            font-size: 0.75rem;
+            font-weight: normal;
+            font-family: monospace;
+            opacity: 0.80;
+            white-space: nowrap;
+        }}
+
+        .patch-info summary {{
+            cursor: pointer;
+            list-style: none;
+            padding: 0.15rem 0.5rem;
+            border: 1px solid rgba(255,255,255,0.35);
+            border-radius: 10px;
+            user-select: none;
+        }}
+
+        .patch-info summary::-webkit-details-marker {{ display: none; }}
+
+        .patch-info[open] summary {{
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+        }}
+
+        .patch-list {{
+            position: absolute;
+            right: 1.5rem;
+            background: #2c3e50;
+            border: 1px solid rgba(255,255,255,0.35);
+            border-top: none;
+            border-radius: 0 0 8px 8px;
+            padding: 0.4rem 0.6rem;
+            z-index: 10;
+        }}
+
+        .patch-list li {{
+            list-style: none;
+            padding: 0.1rem 0;
+        }}
+
+        .patch-wrapper {{
+            position: relative;
         }}
 
         .language-section {{
@@ -358,54 +421,68 @@ def generate_html(
     <main>
 """
 
-    # Language configuration
     lang_config = {
-        "de": {"name": "Deutsch", "code": "DE"},
-        "fr": {"name": "Français", "code": "FR"},
-        "it": {"name": "Italiano", "code": "IT", "status": "draft"},
-        "en": {"name": "English", "code": "EN", "status": "draft"},
+        "de":   {"name": "Deutsch",         "code": "DE"},
+        "fr":   {"name": "Français",         "code": "FR"},
+        "it":   {"name": "Italiano",         "code": "IT", "status": "draft"},
+        "en":   {"name": "English",          "code": "EN", "status": "draft"},
         "root": {"name": "Fichiers communs", "code": "📄"},
     }
 
     if not versions:
         html += """
         <div class="version-card">
-            <div class="no-files">
-                Aucune version disponible pour le moment.
-            </div>
+            <div class="no-files">Aucune version disponible pour le moment.</div>
         </div>
         """
     else:
-        for i, version in enumerate(versions):
-            files_by_lang = version_files.get(version, {})
-            latest_badge = (
-                '<span class="latest-badge">DERNIÈRE</span>' if i == 0 else ""
-            )
+        groups = group_versions_by_minor(versions)
+
+        for i, (minor_version, patches) in enumerate(groups.items()):
+            # Files always come from the latest patch in this schema group
+            latest_patch = patches[0]
+            files_by_lang = version_files.get(latest_patch, {})
+
+            latest_badge = '<span class="latest-badge">DERNIÈRE</span>' if i == 0 else ""
+
+            # Build the patch pill (collapsible <details> when multiple patches exist)
+            if len(patches) == 1:
+                patch_html = (
+                    f'<span class="patch-info" title="Version de déploiement">🔧 {patches[0]}</span>'
+                )
+            else:
+                items = "".join(f"<li>{p}</li>" for p in patches)
+                patch_html = f"""
+                    <div class="patch-wrapper">
+                        <details class="patch-info">
+                            <summary>🔧 {patches[0]} (+{len(patches) - 1})</summary>
+                            <ul class="patch-list">{items}</ul>
+                        </details>
+                    </div>"""
 
             html += f"""
         <div class="version-card">
             <div class="version-header">
-                Version {version}{latest_badge}
+                Version {minor_version}
+                {latest_badge}
+                {patch_html}
             </div>
             """
 
-            # Check if we have any files
-            total_files = sum(len(files) for files in files_by_lang.values())
+            total_files = sum(len(f) for f in files_by_lang.values())
 
             if total_files == 0:
                 html += '<div class="no-files">Aucun fichier disponible pour cette version.</div>'
             else:
-                # Display files by language
                 for lang, files in files_by_lang.items():
-                    if not files:  # Skip empty language sections
+                    if not files:
                         continue
 
-                    lang_info = lang_config.get(
-                        lang, {"name": lang.title(), "code": lang.upper()}
-                    )
-
+                    lang_info = lang_config.get(lang, {"name": lang.title(), "code": lang.upper()})
                     draft_badge = (
-                        '<span class="draft-badge">DRAFT</span>' if lang_info.get("status") == 'draft' else ""
+                        '<span class="draft-badge">DRAFT</span>'
+                        if lang_info.get("status") == "draft"
+                        else ""
                     )
 
                     html += f"""
@@ -420,10 +497,7 @@ def generate_html(
                     for file_info in files:
                         icon = get_file_type_icon(file_info["name"])
                         size = format_file_size(file_info["size"])
-
-                        # Use CloudFront domain if provided
                         file_url = f"{base_url}/{file_info['key']}"
-
                         html += f"""
                     <a href="{file_url}" class="file-item" target="_blank">
                         <div class="file-icon">{icon}</div>
@@ -439,7 +513,7 @@ def generate_html(
             </div>
                     """
 
-            html += "</div>"
+            html += "</div>"  # end version-card
 
     html += f"""
     </main>
@@ -466,7 +540,7 @@ def upload_to_s3(
             Key=key,
             Body=html_content.encode("utf-8"),
             ContentType="text/html",
-            CacheControl="max-age=300",  # Cache for 5 minutes
+            CacheControl="max-age=300",  # 5 minutes
         )
         print(f"✅ Successfully uploaded {key} to s3://{bucket_name}/{key}")
     except Exception as e:
@@ -475,85 +549,70 @@ def upload_to_s3(
 
 
 @click.command("process")
-@click.option("--no-upload", is_flag=True, help="Skip web format conversion")
+@click.option("--no-upload", is_flag=True, help="Write index.html locally instead of uploading")
 def main(no_upload):
-    """Main function"""
+    """Generate and upload the version index page."""
 
-    # Configuration - can be overridden by environment variables
     bucket_name = os.getenv("S3_BUCKET")
     if not bucket_name:
-        print("No bucket found. Exisiting")
+        print("No bucket found. Set variable `S3_BUCKET`. Exiting.")
         sys.exit(2)
 
-    profile_name = os.getenv("AWS_PROFILE")  # None for default profile in CI
-    cloudfront_domain = os.getenv(
-        "CLOUDFRONT_DOMAIN", "dubious.cloud"
-    )  # Default to dubious.cloud
+    profile_name = os.getenv("AWS_PROFILE")
+    cloudfront_domain = os.getenv("CLOUDFRONT_DOMAIN", "dubious.cloud")
     prefix = os.getenv("S3_PREFIX", "datamodel/")
 
-    # Allow disabling CloudFront by setting CLOUDFRONT_DOMAIN to empty string or 'none'
     if cloudfront_domain in ("", "none", "None"):
         cloudfront_domain = None
 
-    # Use profile only if not in CI environment
     if os.getenv("CI"):
         profile_name = None
 
     print(f"🔍 Scanning bucket: {bucket_name}")
     print(f"📁 Prefix: {prefix}")
 
-    # Initialize S3 client
     s3_client = get_s3_client(profile_name)
 
-    # List all versions
+    # --- list all x.y.z directories ---
     print("📋 Listing versions...")
     versions = list_versions(s3_client, bucket_name, prefix)
-    print(f"✅ Found {len(versions)} versions: {', '.join(versions)}")
+    print(f"✅ Found {len(versions)} patch version(s): {', '.join(versions)}")
 
-    # Get files for each version
-    print("📂 Scanning files for each version...")
-    version_files = {}
+    groups = group_versions_by_minor(versions)
+    print(f"📐 Schema versions (x.y): {', '.join(groups.keys())}")
+
+    # --- fetch file listings for every x.y.z (needed for the latest-patch display) ---
+    print("📂 Scanning files for each patch version...")
+    version_files: Dict[str, Dict] = {}
     for version in versions:
         files_by_lang = get_files_for_version(s3_client, bucket_name, version, prefix)
         version_files[version] = files_by_lang
 
-        # Count total files across all languages
-        total_files = sum(len(files) for files in files_by_lang.values())
-        lang_summary = []
-        for lang, files in files_by_lang.items():
-            if files:
-                lang_summary.append(f"{lang}: {len(files)}")
+        total = sum(len(f) for f in files_by_lang.values())
+        lang_summary = [f"{l}: {len(f)}" for l, f in files_by_lang.items() if f]
+        print(f"  📋 {version}: {total} files ({', '.join(lang_summary)})")
 
-        print(
-            f"  📋 Version {version}: {total_files} files ({', '.join(lang_summary)})"
-        )
-
-    # Generate HTML
+    # --- generate ---
     print("🎨 Generating HTML...")
-    html_content = generate_html(
-        versions, version_files, bucket_name, cloudfront_domain
-    )
+    html_content = generate_html(versions, version_files, bucket_name, cloudfront_domain)
 
-    # Upload to S3
+    # --- upload or write locally ---
     if not no_upload:
         index_key = f"{prefix}index.html"
-        print(f"⬆️  Uploading index page...")
+        print("⬆️  Uploading index page...")
         upload_to_s3(s3_client, bucket_name, html_content, index_key)
-
         print("🎉 Done!")
-
-        if cloudfront_domain:
-            print(
-                f"🌐 Index page available at: https://{cloudfront_domain}/{prefix}index.html"
-            )
-        else:
-            print(
-                f"🌐 Index page available at: https://{bucket_name}.s3.amazonaws.com/{index_key}"
-            )
+        target = (
+            f"https://{cloudfront_domain}/{index_key}"
+            if cloudfront_domain
+            else f"https://{bucket_name}.s3.amazonaws.com/{index_key}"
+        )
+        print(f"🌐 {target}")
     else:
-        with open("index.html", "w") as f:
+        out = "index.html"
+        with open(out, "w") as f:
             f.write(html_content)
-
+        print(f"💾 Written locally to {out}")
 
 
 if __name__ == "__main__":
