@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ t.page_title }}</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .header h1 {
+            margin: 0 0 0.5rem 0;
+            font-size: 2.5rem;
+        }
+
+        .header p {
+            margin: 0;
+            opacity: 0.9;
+            font-size: 1.1rem;
+        }
+
+        .version-card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+        }
+
+        .version-header {
+            background: #34495e;
+            color: white;
+            padding: 1rem 1.5rem;
+            font-size: 1.3rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        .latest-badge {
+            background: #e74c3c;
+            color: white;
+            padding: 0.2rem 0.6rem;
+            border-radius: 12px;
+            font-size: 0.8rem;
+        }
+
+        .draft-badge {
+            background: #ff9900;
+            color: white;
+            padding: 0.2rem 0.6rem;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            margin-left: 1rem;
+        }
+
+        .patch-info {
+            margin-left: auto;
+            font-size: 0.75rem;
+            font-weight: normal;
+            font-family: monospace;
+            opacity: 0.80;
+            white-space: nowrap;
+        }
+
+        .patch-info summary {
+            cursor: pointer;
+            list-style: none;
+            padding: 0.15rem 0.5rem;
+            border: 1px solid rgba(255,255,255,0.35);
+            border-radius: 10px;
+            user-select: none;
+        }
+
+        .patch-info summary::-webkit-details-marker { display: none; }
+
+        .patch-info[open] summary {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+
+        .patch-wrapper {
+            position: relative;
+        }
+
+        .patch-list {
+            position: absolute;
+            right: 0;
+            background: #2c3e50;
+            border: 1px solid rgba(255,255,255,0.35);
+            border-top: none;
+            border-radius: 0 0 8px 8px;
+            padding: 0.4rem 0.6rem;
+            z-index: 10;
+            min-width: 8rem;
+        }
+
+        .patch-list li {
+            list-style: none;
+            padding: 0.1rem 0;
+        }
+
+        .language-section {
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .language-section:last-child {
+            border-bottom: none;
+        }
+
+        .language-header {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+            display: flex;
+            align-items: center;
+        }
+
+        .language-code {
+            background: #3498db;
+            color: white;
+            padding: 0.3rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            margin-right: 0.8rem;
+            min-width: 2rem;
+            text-align: center;
+        }
+
+        .files-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1rem;
+        }
+
+        .file-item {
+            display: flex;
+            align-items: center;
+            padding: 0.8rem;
+            background: #f8f9fa;
+            border-radius: 6px;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s ease;
+        }
+
+        .file-item:hover {
+            background: #e9ecef;
+            transform: translateY(-2px);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+
+        .file-icon {
+            font-size: 1.5rem;
+            margin-right: 0.8rem;
+        }
+
+        .file-info { flex: 1; }
+
+        .file-name {
+            font-weight: 500;
+            margin-bottom: 0.2rem;
+        }
+
+        .file-details {
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        .no-files {
+            text-align: center;
+            padding: 2rem;
+            color: #666;
+            font-style: italic;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #ddd;
+            color: #666;
+        }
+
+        .github-link {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background: #333;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+
+        .github-link:hover { background: #555; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>{{ t.page_heading }}</h1>
+        <p>{{ t.page_subtitle }}</p>
+    </div>
+
+    <main>
+    {% if not groups %}
+        <div class="version-card">
+            <div class="no-files">{{ t.no_versions }}</div>
+        </div>
+    {% else %}
+        {% for minor_version, patches in groups.items() %}
+        {% set latest_patch = patches[0] %}
+        {% set files_by_lang = version_files[latest_patch] %}
+        {% set total_files = namespace(n=0) %}
+        {% for lang_files in files_by_lang.values() %}{% set total_files.n = total_files.n + lang_files | length %}{% endfor %}
+
+        <div class="version-card">
+            <div class="version-header">
+                {{ t.version_label }} {{ minor_version }}
+                {% if loop.first %}<span class="latest-badge">{{ t.badge_latest }}</span>{% endif %}
+
+                {# Patch pill — right-aligned #}
+                {% if patches | length == 1 %}
+                <span class="patch-info" title="{{ t.patch_tooltip }}">🔧 {{ patches[0] }}</span>
+                {% else %}
+                <div class="patch-wrapper">
+                    <details class="patch-info">
+                        <summary title="{{ t.patch_tooltip }}">🔧 {{ patches[0] }} (+{{ patches | length - 1 }})</summary>
+                        <ul class="patch-list">
+                            {% for p in patches %}<li>{{ p }}</li>{% endfor %}
+                        </ul>
+                    </details>
+                </div>
+                {% endif %}
+            </div>
+
+            {% if total_files.n == 0 %}
+            <div class="no-files">{{ t.no_files }}</div>
+            {% else %}
+                {% for lang_key in ["de", "fr", "it", "en", "root"] %}
+                {% set files = files_by_lang.get(lang_key, []) %}
+                {% if files %}
+                {% set lang_info = lang_config[lang_key] %}
+                <div class="language-section">
+                    <div class="language-header">
+                        <span class="language-code">{{ lang_info.code }}</span>
+                        {{ lang_info.name }}
+                        {% if lang_info.get("status") == "draft" %}
+                        <span class="draft-badge">{{ t.badge_draft }}</span>
+                        {% endif %}
+                    </div>
+                    <div class="files-grid">
+                        {% for file_info in files %}
+                        <a href="{{ base_url }}/{{ file_info.key }}" class="file-item" target="_blank">
+                            <div class="file-icon">{{ file_info.icon }}</div>
+                            <div class="file-info">
+                                <div class="file-name">{{ file_info.name }}</div>
+                                <div class="file-details">{{ file_info.size_fmt }}</div>
+                            </div>
+                        </a>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endif %}
+                {% endfor %}
+            {% endif %}
+        </div>
+        {% endfor %}
+    {% endif %}
+    </main>
+
+    <footer class="footer">
+        <p>{{ t.footer_generated.replace("{date}", generated_at) }}</p>
+        <a href="https://github.com/swisstopo/lg-geology-data-model" class="github-link">
+            📂 {{ t.footer_github }}
+        </a>
+    </footer>
+</body>
+</html>
