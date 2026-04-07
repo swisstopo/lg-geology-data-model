@@ -223,6 +223,11 @@ $(OUTPUT_DIR)/DATA_RELEASES.pdf: $(OUTPUT_DIR)/DATA_RELEASES.md $(INPUT_DIR)/en/
 
 release-notes: schema-changes-pdf data-releases-pdf
 
+excel-mapping: $(OUTPUT_DIR)/geology_mapping_tool_v4.0.xlsx
+
+$(OUTPUT_DIR)/geology_mapping_tool_v4.0.xlsx:
+	python ./scripts/geology_mapping_tool.py
+
 validate-release-files:
 	python scripts/geocover_release_notes.py both --validate
 
