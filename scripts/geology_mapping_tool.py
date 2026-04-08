@@ -434,9 +434,9 @@ def build_class_sheet(
 @click.version_option(__version__)
 @click.argument("datamodel", default="datamodel.yaml",
                 type=click.Path(exists=True, dir_okay=False, path_type=Path))
-@click.option("--output", "-o", default="outputs/geology_mapping_tool_v4.0.xlsx",
+@click.option("--output", "-o", default="outputs/geology_mapping_tool.xlsx",
               type=click.Path(path_type=Path),
-              help="Output Excel file  [default: outputs/geology_mapping_tool_v4.0.xlsx]",
+              help="Output Excel file  [default: outputs/geology_mapping_tool.xlsx]",
               show_default=False)
 @click.option("--sources-dir", "-s", default=None,
               type=click.Path(exists=True, file_okay=False, path_type=Path),

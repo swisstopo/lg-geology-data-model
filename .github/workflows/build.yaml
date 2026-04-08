@@ -202,4 +202,3 @@ jobs:
             outputs/geology_mapping_tool*.xlsx
             outputs/DATA_RELEASES.pdf
             outputs/SCHEMA_CHANGES.pdf
-            outputs/geology_mapping_tool_v4.0.xlsx

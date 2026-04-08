@@ -105,7 +105,6 @@ assets:
 	@$(CP) -f assets/$(LOGO)  $(INPUT_DIR)/de/
 	@$(CP) -f assets/$(LOGO)  $(INPUT_DIR)/fr/
 	@$(CP) -f assets/$(LOGO)  $(INPUT_DIR)/it/
-	@$(CP)  -f excel/geology_mapping_tool_v3.1_separate.xlsx  $(OUTPUT_DIR)
 
 $(OUTPUT_DIR):
 	@mkdir -p $(OUTPUT_DIR)
@@ -223,9 +222,9 @@ $(OUTPUT_DIR)/DATA_RELEASES.pdf: $(OUTPUT_DIR)/DATA_RELEASES.md $(INPUT_DIR)/en/
 
 release-notes: schema-changes-pdf data-releases-pdf
 
-excel-mapping: $(OUTPUT_DIR)/geology_mapping_tool_v4.0.xlsx
+excel-mapping: $(OUTPUT_DIR)/geology_mapping_tool.xlsx
 
-$(OUTPUT_DIR)/geology_mapping_tool_v4.0.xlsx:
+$(OUTPUT_DIR)/geology_mapping_tool.xlsx:
 	python ./scripts/geology_mapping_tool.py
 
 validate-release-files:
