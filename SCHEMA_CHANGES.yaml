@@ -6,6 +6,11 @@
 # Cross-reference: DATA_RELEASES.yaml references these via schema_version.
 
 schema_versions:
+  - version: "4.3.3"
+    git_tag: "v4.3.3"
+    date: "2026-04-26"
+    note: "Patch release — tooling fixes only (Excel Mapping Tool, minor version management issues). Schema export date is the SDE state used for R16."
+
   - version: "4.3.2"
     git_tag: "v4.3.2"
     date: "2026-04-04"
