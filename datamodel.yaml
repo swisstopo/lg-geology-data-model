@@ -26,7 +26,7 @@ date: 2025-09-01
 # 4.3.1    Second column of German document is now French (not German)
 # 4.3.2    Tool update (CD Bund header and various release notes and schema diff documents)
 model:
-  revision: '4.3.2'
+  revision: '4.3.3'
   revision_date: "2026-04-04"
   sources_dir: "sources/2026-02-12"
 
