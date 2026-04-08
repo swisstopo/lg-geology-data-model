@@ -95,7 +95,7 @@ jobs:
           import yaml
           import os
 
-          with open("datamodel.yaml") as f:
+          with open("release.yaml") as f:
               data = yaml.safe_load(f)
 
           # Get the path to the output file from the environment

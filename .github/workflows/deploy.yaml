@@ -18,8 +18,8 @@ jobs:
     - name: Set releases variables
       shell: bash
       run: |
-        RELEASE=$(python -c "import yaml; print(yaml.safe_load(open('datamodel.yaml'))['model']['revision'])")
-        SOURCES_DIR=$(python -c "import yaml; print(yaml.safe_load(open('datamodel.yaml'))['model']['sources_dir'])")
+        RELEASE=$(python -c "import yaml; print(yaml.safe_load(open('release.yaml'))['model']['revision'])")
+        SOURCES_DIR=$(python -c "import yaml; print(yaml.safe_load(open('release.yaml'))['model']['sources_dir'])")
         echo "RELEASE=$RELEASE" >> $GITHUB_ENV
         echo "SHORT_RELEASE=$(echo $RELEASE | cut -d'.' -f1,2)" >> $GITHUB_ENV
         echo "version=$(<VERSION)" >> $GITHUB_ENV
