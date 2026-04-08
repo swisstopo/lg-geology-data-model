@@ -149,8 +149,9 @@ jobs:
         shell: bash -el {0}
         run: make release-notes
 
-
-
+      - name: Generate Excel mapping tool
+        shell: bash -el {0}
+        run: make excel-mapping
 
       - name: Generate PDF from PUML diagram
         uses: rotaract/plantuml-action@v1
@@ -201,5 +202,3 @@ jobs:
             outputs/geology_mapping_tool*.xlsx
             outputs/DATA_RELEASES.pdf
             outputs/SCHEMA_CHANGES.pdf
-
-
