@@ -171,7 +171,7 @@ jobs:
           cp temp-artifacts/outputs/DATA_RELEASES.pdf release-assets/DATA_RELEASES.pdf
           cp temp-artifacts/outputs/SCHEMA_CHANGES.pdf release-assets/SCHEMA_CHANGES.pdf
           cp temp-artifacts/outputs/*.pdf  release-assets/
-          cp temp-artifacts/${{ env.SOURCES_DIR }}/gcoverp_export_simple.json release-assets/gcoverp_export_simple.json
+          cp temp-artifacts/${{ env.SOURCES_DIR }}/gcover-schema-simple.json release-assets/gcover-schema-simple.json
 
           echo "📦 Release assets:"
           ls -la release-assets/
