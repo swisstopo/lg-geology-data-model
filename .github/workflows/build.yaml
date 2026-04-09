@@ -3,10 +3,14 @@ name: Generate markdown and PDF documents
 
 on:
   workflow_call:
+    inputs:
+      is_release_build:
+        description: 'True for production releases (clean version in document metadata, no dev suffix)'
+        type: boolean
+        default: false
   workflow_dispatch:
   push:
     branches:
-      - master
       - 'releases/**'
       - 'release/**'
   pull_request:
@@ -60,16 +64,33 @@ jobs:
           conda config --show
           printenv | sort
 
-      - name: Set Package Version
+      - name: Set version info
         shell: bash -l {0}
         run: |
           echo "version=$(<VERSION)" >> $GITHUB_ENV
-          echo "=== PKG_VERSION=$version ==="
-          echo "RELEASE=$(python -c "import yaml; print(yaml.safe_load(open('datamodel.yaml'))['model']['revision'])")" >> $GITHUB_ENV
-          echo "=== RELEASE=$RELEASE ==="
-          SOURCES_DIR=$(python -c "import yaml; print(yaml.safe_load(open('datamodel.yaml'))['model']['sources_dir'])")
+          RELEASE=$(python -c "import yaml; print(yaml.safe_load(open('release.yaml'))['model']['revision'])")
+          SOURCES_DIR=$(python -c "import yaml; print(yaml.safe_load(open('release.yaml'))['model']['sources_dir'])")
+          echo "RELEASE=$RELEASE" >> $GITHUB_ENV
           echo "SOURCES_DIR=$SOURCES_DIR" >> $GITHUB_ENV
+          IS_RELEASE="${{ inputs.is_release_build }}"
+          if [ "$IS_RELEASE" = "true" ]; then
+            echo "DEV_SUFFIX=" >> $GITHUB_ENV
+          else
+            echo "DEV_SUFFIX=-dev${{ github.run_number }}" >> $GITHUB_ENV
+          fi
+          echo "=== RELEASE=$RELEASE IS_RELEASE=$IS_RELEASE ==="
 
+      - name: Inject dev suffix into document metadata
+        if: env.DEV_SUFFIX != ''
+        shell: python
+        run: |
+          import yaml
+          with open("release.yaml") as f:
+              data = yaml.safe_load(f)
+          data["model"]["revision"] = data["model"]["revision"] + "${{ env.DEV_SUFFIX }}"
+          with open("release.yaml", "w") as f:
+              yaml.dump(data, f, default_flow_style=False)
+          print(f"Dev revision for metadata: {data['model']['revision']}")
 
       - name: Pip install
         shell: bash -el {0}
@@ -89,33 +110,12 @@ jobs:
           echo "--NOT GENERATING --"
           # python ./create_gv.py
 
-      - name: Extract sources_dir from YAML
-        id: get_sources_dir
-        run: |
-          import yaml
-          import os
-
-          with open("release.yaml") as f:
-              data = yaml.safe_load(f)
-
-          # Get the path to the output file from the environment
-          output_file = os.environ['GITHUB_OUTPUT']
-
-          with open(output_file, 'a') as fh:
-              print(f"dir={data['model']['sources_dir']}", file=fh)
-        shell: python
-
-      - name: Use sources_dir
-        run: echo "Directory is ${{ steps.get_sources_dir.outputs.dir }}"
-
-
-
       - name: Build PDF, HTML and DOCX targets
         shell: bash -el {0}
         run: |
-             EXPORT_DIR=${{ steps.get_sources_dir.outputs.dir }} make cleanall mds pdfs htmls docxs
+             EXPORT_DIR=${{ env.SOURCES_DIR }} make cleanall mds pdfs htmls docxs
              # make diagram
-             EXPORT_DIR=${{ steps.get_sources_dir.outputs.dir }} make validate-metadata
+             EXPORT_DIR=${{ env.SOURCES_DIR }} make validate-metadata
 
       - name: Create gcover config file
         run: |
