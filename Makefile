@@ -9,6 +9,7 @@ OUTPUT_DIR ?= outputs
 
 PANDOC=/usr/bin/pandoc
 GCDOCS=gcdocs
+GCOVER=gcover
 RM=/bin/rm
 CP=/usr/bin/cp
 
@@ -247,7 +248,18 @@ diff: $(OUTPUT_DIR) $(OUTPUT_DIR)/$(V1)_$(V2).md $(OUTPUT_DIR)/$(V1)_$(V2).html
 
 diff-reports: $(OUTPUT_DIR)   $(OUTPUT_DIR)/$(V1)_$(V2).pdf $(OUTPUT_DIR)/$(V1)_$(V2).docx $(OUTPUT_DIR)/$(V1)_$(V2).html
 
-$(INPUT_DIR)/en/cd-header.tex: mds
+$(INPUT_DIR)/en/cd-header.tex:
+
+
+.PHONE: schema-simple
+
+schema-simple: $(EXPORT_DIR)/$(V2)/gcover-schema-simple.json
+
+
+$(EXPORT_DIR)/$(V2)/gcover-schema-simple.json:
+	$(GCOVER) schema transform --pretty --show-summary --output $@  sources/$(V2)/geocover-schema-sde.json
+
+
 
 $(OUTPUT_DIR)/$(V1)_$(V2).html:
 	@echo "Comparing $(V1) against $(V2)..."
