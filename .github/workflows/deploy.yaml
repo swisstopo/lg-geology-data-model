@@ -2,40 +2,36 @@ name: Upload artifacts to S3
 
 on:
   workflow_dispatch:
-  push:
-    tags:
-      - "v*.*.*"
+    inputs:
+      version:
+        description: 'Release version (e.g., 4.3.3)'
+        required: true
+      sources_dir:
+        description: 'Sources directory path (e.g., sources/2026-02-12)'
+        required: true
+  workflow_call:
+    inputs:
+      version:
+        type: string
+        required: true
+      sources_dir:
+        type: string
+        required: true
 
 jobs:
-  build:
-    uses: ./.github/workflows/build.yaml  # use the callable build job to run build
   deploy:
     runs-on: ubuntu-latest
-    needs: [build]  # require build to pass before deploy runs
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v6
-    - name: Set releases variables
-      shell: bash
-      run: |
-        RELEASE=$(python -c "import yaml; print(yaml.safe_load(open('datamodel.yaml'))['model']['revision'])")
-        SOURCES_DIR=$(python -c "import yaml; print(yaml.safe_load(open('datamodel.yaml'))['model']['sources_dir'])")
-        echo "RELEASE=$RELEASE" >> $GITHUB_ENV
-        echo "SHORT_RELEASE=$(echo $RELEASE | cut -d'.' -f1,2)" >> $GITHUB_ENV
-        echo "version=$(<VERSION)" >> $GITHUB_ENV
-        echo "SOURCES_DIR=$SOURCES_DIR" >> $GITHUB_ENV
-
     - name: Print release variables
-      shell: bash
       run: |
-        echo "=== PKG_VERSION=${{ env.version }} ==="
-        echo "=== RELEASE=${{ env.RELEASE }} ==="
-        echo "=== SHORT=${{ env.SHORT_RELEASE }} ==="
-        echo "=== SOURCES_DIR=${{ env.SOURCES_DIR }} ==="
-    - name: Download assets from build
+        echo "=== RELEASE=${{ inputs.version }} ==="
+        echo "=== SOURCES_DIR=${{ inputs.sources_dir }} ==="
+
+    - name: Download artifacts from build
       uses: actions/download-artifact@v8
       with:
-          name: geology-data-model-${{ env.RELEASE }}
+        name: geology-data-model-${{ inputs.version }}
+
     - name: Upload folder to bucket
       uses: a-sync/s3-uploader@master
       with:
@@ -45,7 +41,5 @@ jobs:
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         AWS_REGION: 'eu-central-1'
         S3_BUCKET: ${{ secrets.AWS_BUCKET }}
-        S3_KEY: datamodel/${{ env.RELEASE }}
-
+        S3_KEY: datamodel/${{ inputs.version }}
         FILE: './outputs'
-

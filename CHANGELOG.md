@@ -1,6 +1,12 @@
 # Changelog
 
 
+## [4.3.3] - 2026-04-26
+### Added
+- Improved `Geology Mapping Tools` (mapping code between input data and this model)
+- Improved minor version management on AWS S3
+- Added the `HOWTO_REALEASE.md`
+
 ## [4.3.2] - 2026-04-04
 ### Fixed
 - Deprecated GitHub Action runners
