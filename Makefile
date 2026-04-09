@@ -76,6 +76,10 @@ help:
 	@echo "  make validate-metadata  - Validate the datamodel metadata"
 	@echo "  make cleanall           - Remove all generated files"
 	@echo "  make help               - Display this help message"
+	@echo ""
+	@echo "VARIABLES:"
+	@echo "  V1=$(V1)"
+	@echo "  V2=$(V2)"
 
 .PHONY: assets
 assets:
@@ -222,6 +226,11 @@ $(OUTPUT_DIR)/DATA_RELEASES.pdf: $(OUTPUT_DIR)/DATA_RELEASES.md $(INPUT_DIR)/en/
 
 release-notes: schema-changes-pdf data-releases-pdf
 
+excel-mapping: $(OUTPUT_DIR)/geology_mapping_tool.xlsx
+
+$(OUTPUT_DIR)/geology_mapping_tool.xlsx:
+	python ./scripts/geology_mapping_tool.py
+
 validate-release-files:
 	python scripts/geocover_release_notes.py both --validate
 
@@ -234,11 +243,21 @@ clean-releases:
 
 .PHONY: diff diff-pdf diff-docx diff-reports
 
-diff: $(OUTPUT_DIR) $(OUTPUT_DIR)/$(V1)_$(V2).md
+diff: $(OUTPUT_DIR) $(OUTPUT_DIR)/$(V1)_$(V2).md $(OUTPUT_DIR)/$(V1)_$(V2).html
 
-diff-reports: $(OUTPUT_DIR)   $(OUTPUT_DIR)/$(V1)_$(V2).pdf $(OUTPUT_DIR)/$(V1)_$(V2).docx
+diff-reports: $(OUTPUT_DIR)   $(OUTPUT_DIR)/$(V1)_$(V2).pdf $(OUTPUT_DIR)/$(V1)_$(V2).docx $(OUTPUT_DIR)/$(V1)_$(V2).html
 
 $(INPUT_DIR)/en/cd-header.tex: mds
+
+$(OUTPUT_DIR)/$(V1)_$(V2).html:
+	@echo "Comparing $(V1) against $(V2)..."
+	gcover  schema diff \
+		-o $(OUTPUT_DIR)/$(V1)_$(V2).html \
+		--format html \
+		--old-schema-version $(V1) \
+		--new-schema-version $(V2) \
+		$(EXPORT_DIR)/$(V1)/geocover-schema-sde.json \
+		$(EXPORT_DIR)/$(V2)/geocover-schema-sde.json
 
 $(OUTPUT_DIR)/$(V1)_$(V2).md:
 	@echo "Comparing $(V1) against $(V2)..."

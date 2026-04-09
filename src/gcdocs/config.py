@@ -286,7 +286,7 @@ class GeoDataConfig:
     def sde_schema(self) -> Dict[str, Any]:
         """Load SDE schema (replaces global 'sde_schema')"""
         if self._sde_schema is None:
-            schema_file = self.input_dir / "gcoverp_export_simple.json"
+            schema_file = self.input_dir / "geocover-schema-sde.json"   # ESRI or simple
             if not schema_file.exists():
                 raise FileNotFoundError(f"Schema file not found: {schema_file}")
 

@@ -289,6 +289,8 @@ def shared_options(f):
             help="Validate YAML and exit."),
         click.option("--no-summary", is_flag=True, default=False,
             help="Skip the Rich summary table."),
+        click.option("--dry-run", is_flag=True, default=False,
+                     help="Don't write to file"),
     ]):
         f = decorator(f)
     return f
@@ -313,7 +315,7 @@ def cli():
     type=click.Path(path_type=Path),
     default="SCHEMA_CHANGES.md", show_default=True)
 def schema(schema_path, release_path, tmpl_dir, latest, stdout,
-           validate_only, no_summary, filter_version, output_path):
+           validate_only, no_summary, filter_version, output_path, dry_run):
     """Render schema version changelog from SCHEMA_CHANGES.yaml."""
 
     console.rule("[bold cyan]Schema changes[/bold cyan]")
@@ -340,9 +342,11 @@ def schema(schema_path, release_path, tmpl_dir, latest, stdout,
     if not no_summary:
         print_schema_summary(schema_versions)
 
-    tmpl = resolve_tmpl_dir(tmpl_dir) / "schema_changes.md.j2"
-    content = render(tmpl, schema_versions=schema_versions)
-    write_or_print(content, output_path, stdout)
+    if not dry_run:
+
+        tmpl = resolve_tmpl_dir(tmpl_dir) / "schema_changes.md.j2"
+        content = render(tmpl, schema_versions=schema_versions)
+        write_or_print(content, output_path, stdout)
 
 
 @cli.command()
@@ -353,7 +357,7 @@ def schema(schema_path, release_path, tmpl_dir, latest, stdout,
     type=click.Path(path_type=Path),
     default="DATA_RELEASES.md", show_default=True)
 def data(schema_path, release_path, tmpl_dir, latest, stdout,
-         validate_only, no_summary, filter_release, output_path):
+         validate_only, no_summary, filter_release, output_path, dry_run):
     """Render data release log from DATA_RELEASES.yaml."""
 
     console.rule("[bold cyan]Data releases[/bold cyan]")
@@ -398,7 +402,7 @@ def data(schema_path, release_path, tmpl_dir, latest, stdout,
 @click.option("--data-output", type=click.Path(path_type=Path),
     default="DATA_RELEASES.md", show_default=True)
 def both(schema_path, release_path, tmpl_dir, latest, stdout,
-         validate_only, no_summary, schema_output, data_output):
+         validate_only, no_summary, schema_output, data_output, dry_run):
     """Render both schema changelog and data release log."""
 
     console.rule("[bold cyan]Schema changes + Data releases[/bold cyan]")
@@ -433,6 +437,7 @@ def both(schema_path, release_path, tmpl_dir, latest, stdout,
         click.echo("\n---\n")
         click.echo(data_content)
     else:
+      if not dry_run:
         schema_output.write_text(schema_content, encoding="utf-8")
         data_output.write_text(data_content,   encoding="utf-8")
         console.print(f"[green]✓[/green] Written [bold]{schema_output}[/bold]")
