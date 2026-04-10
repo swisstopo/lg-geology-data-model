@@ -7,7 +7,7 @@ INPUT_DIR ?= inputs
 OUTPUT_DIR ?= outputs
 
 
-PANDOC=$(which pandoc)
+PANDOC := $(shell which pandoc)
 GCDOCS=gcdocs
 GCOVER=gcover
 RM=/bin/rm
@@ -79,6 +79,7 @@ help:
 	@echo "  make help               - Display this help message"
 	@echo ""
 	@echo "VARIABLES:"
+	@echo "  pandoc=$(PANDOC)"
 	@echo "  V1=$(V1)"
 	@echo "  V2=$(V2)"
 
