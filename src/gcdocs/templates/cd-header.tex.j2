@@ -1,28 +1,29 @@
+% Stub for hyperref >= 7.00g: \xmpquote is only defined when hyperxmp is loaded.
+% Without this, pdfkeywords causes "Undefined control sequence \xmpquote".
+\providecommand{\xmpquote}[1]{#1}
 \usepackage[margins=raggedright]{floatrow}
     \usepackage{pdflscape}
     \usepackage{fontawesome5}
     \usepackage{tcolorbox}
     \newcommand{\blandscape}{\begin{landscape}}
     \newcommand{\elandscape}{\end{landscape}}
-    \usepackage{hyperref}
     \usepackage[export]{adjustbox}
     \usepackage{lastpage}
     \usepackage{titling}
-    \hypersetup{
-  pdfinfo={
-    ModelRevision=[[ model.revision | default('unknown') ]],
-    ModelShortRevision=[[ model.short_revision | default('unknown') ]],
-    [%- if git_info and git_info.tag %]
-    GitTag=[[ git_info.tag ]],
-    [%- endif %]
-    [%- if git_info and git_info.hash %]
-    GitHash=[[ git_info.hash ]],
-    [%- endif %]
-    BuildDate=[[ date.isoformat() if date else 'unknown' ]]
-  }
-}
+    \AtBeginDocument{%
+      \special{pdf: docinfo <<
+        /ModelRevision ([[ model.revision | default('unknown') ]])
+        /ModelShortRevision ([[ model.short_revision | default('unknown') ]])
+        [%- if git_info and git_info.tag %]
+        /GitTag ([[ git_info.tag ]])
+        [%- endif %]
+        [%- if git_info and git_info.hash %]
+        /GitHash ([[ git_info.hash ]])
+        [%- endif %]
+        /BuildDate ([[ date.isoformat() if date else 'unknown' ]])
+      >>}%
+    }
 \usepackage{graphicx}
-\usepackage{titling}
 \setlength{\droptitle}{-2cm}   % ← pull up, adjust to taste
 \newcommand{\swisstopoheader}[1]{%
   \begin{minipage}[t]{0.38\textwidth}%

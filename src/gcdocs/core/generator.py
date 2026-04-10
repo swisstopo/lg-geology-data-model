@@ -571,6 +571,8 @@ class EnhancedMarkdownGenerator:
                 variable_end_string=']]',
                 block_start_string='[%',
                 block_end_string='%]',
+                comment_start_string='[#',
+                comment_end_string='#]',
                 loader=loader
             )
             tex_env.globals["_"] = translate_ui
