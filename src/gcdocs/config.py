@@ -378,8 +378,8 @@ class GeoDataConfig:
             else:
                 logger.warning(f"No file `geolcode_chrono.csv` found" )
 
-            # 5. Load application UI translations (if available)
-            app_translations = self._find_file("translations.xlsx")
+            # 5. Load application UI translations from package locale dir
+            app_translations = self._get_locale_file("app.xlsx")
             if app_translations:
                 df_app = pd.read_excel(
                     app_translations, usecols=["msg_id", "de", "fr", "it", "en"]
@@ -504,6 +504,25 @@ class GeoDataConfig:
             return current_path
 
         logger.error(f"Translation file not found: {filename}")
+        return None
+
+    def _get_locale_file(self, filename: str) -> Optional[Path]:
+        """Return the path to a file bundled in gcdocs/locale/."""
+        try:
+            from importlib import resources
+
+            with resources.path("gcdocs.locale", filename) as p:
+                if p.exists():
+                    return p
+        except (ImportError, FileNotFoundError, TypeError):
+            pass
+
+        # Fallback for editable installs: resolve relative to this file
+        fallback = Path(__file__).parent / "locale" / filename
+        if fallback.exists():
+            return fallback
+
+        logger.error(f"Locale file not found: {filename}")
         return None
 
     def _clean_translation_data(
