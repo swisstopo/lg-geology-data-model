@@ -7,8 +7,9 @@ INPUT_DIR ?= inputs
 OUTPUT_DIR ?= outputs
 
 
-PANDOC=/usr/bin/pandoc
+PANDOC := $(shell which pandoc)
 GCDOCS=gcdocs
+GCOVER=gcover
 RM=/bin/rm
 CP=/usr/bin/cp
 
@@ -78,6 +79,7 @@ help:
 	@echo "  make help               - Display this help message"
 	@echo ""
 	@echo "VARIABLES:"
+	@echo "  pandoc=$(PANDOC)"
 	@echo "  V1=$(V1)"
 	@echo "  V2=$(V2)"
 
@@ -144,7 +146,7 @@ $(INPUT_DIR)/$(1)/metadata.yaml: assets
 	mkdir -p $$(@D)
 	$(GCDOCS)  generate --lang=$(1)  -i $(EXPORT_DIR) -o $(INPUT_DIR) datamodel.yaml
 
-$(INPUT_DIR)/$(1)/datamodel.md: assets
+$(INPUT_DIR)/$(1)/datamodel.md: assets extract-subtypes extract-domains
 	mkdir -p $$(@D)
 	$(GCDOCS)  generate --lang=$(1) -i $(EXPORT_DIR) -o $(INPUT_DIR) datamodel.yaml
 
@@ -247,7 +249,28 @@ diff: $(OUTPUT_DIR) $(OUTPUT_DIR)/$(V1)_$(V2).md $(OUTPUT_DIR)/$(V1)_$(V2).html
 
 diff-reports: $(OUTPUT_DIR)   $(OUTPUT_DIR)/$(V1)_$(V2).pdf $(OUTPUT_DIR)/$(V1)_$(V2).docx $(OUTPUT_DIR)/$(V1)_$(V2).html
 
-$(INPUT_DIR)/en/cd-header.tex: mds
+$(INPUT_DIR)/en/cd-header.tex:
+
+
+.PHONE: schema-simple extract-subtypes extract-domains
+
+schema-simple: $(EXPORT_DIR)/$(V2)/gcover-schema-simple.json
+
+extract-subtypes: $(EXPORT_DIR)/$(V2)/subtypes_dict.json
+
+extract-domains: $(EXPORT_DIR)/$(V2)/coded_domains.json
+
+
+$(EXPORT_DIR)/$(V2)/gcover-schema-simple.json:
+	$(GCOVER) schema transform --pretty --show-summary --output $@  sources/$(V2)/geocover-schema-sde.json
+
+$(EXPORT_DIR)/$(V2)/subtypes_dict.json:
+	$(GCDOCS) extract --mode subtypes -f json -o $@  sources/$(V2)/geocover-schema-sde.json
+
+$(EXPORT_DIR)/$(V2)/coded_domains.json:
+	$(GCDOCS) extract --mode domains -f json -o $@  sources/$(V2)/geocover-schema-sde.json
+
+
 
 $(OUTPUT_DIR)/$(V1)_$(V2).html:
 	@echo "Comparing $(V1) against $(V2)..."

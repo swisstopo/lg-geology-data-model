@@ -25,17 +25,14 @@ lang: {{lang}}
 creator: swisstopo
 description: |
     git_hash: {{ git_info.hash }}
-    date: {{date }}
-    version: {{ git_info.tag }}
+    date: {{ date }}
+    version: {{ git_info.tag or git_info.hash }}
 
 {% if git_info.is_release and git_info.tag %}
-version: {{ git_info.tag }}
+version: "{{ git_info.tag }}"
 {% else %}
-version: {{ git_info.hash }}
+version: "{{ git_info.hash }}"
 {% endif %}
-
-# Custom LaTeX headers
-# Left-align all tables
 
 
 mainfont: "Noto Sans"

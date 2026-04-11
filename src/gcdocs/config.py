@@ -216,8 +216,14 @@ def load_datamodel(path: Path | str = "datamodel.yaml") -> dict[str, Any]:
 class GeoDataConfig:
     """Configuration class that loads and manages geological data"""
 
-    def __init__(self, input_dir: str = "exports"):
-        self.input_dir = Path(input_dir)
+    def __init__(self, input_dir: str | Path | None = None):
+        if input_dir is None:
+            config = load_config()
+            sources_dir = config.get("model", {}).get("sources_dir", "sources")
+            self.input_dir = Path(sources_dir)
+            logger.debug(f"input_dir from release.yaml: {self.input_dir}")
+        else:
+            self.input_dir = Path(input_dir)
         self._domains: Optional[Dict[str, Any]] = None
         self._subtypes: Optional[Dict[str, Any]] = None
         self._sde_schema: Optional[Dict[str, Any]] = None
@@ -478,6 +484,7 @@ class GeoDataConfig:
         current_path = None
 
         file_path = self.input_dir / filename
+        logger.info(f"Looking for {filename} in {self.input_dir}")
         if file_path.exists():
             return file_path
 
