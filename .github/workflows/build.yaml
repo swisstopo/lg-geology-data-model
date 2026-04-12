@@ -26,6 +26,11 @@ jobs:
   build-markdown:
     name: Generating Markdown files
     runs-on: "ubuntu-latest"
+    services:
+      kroki:
+        image: yuzutech/kroki
+        ports:
+          - 1234:8000
     steps:
       - name: Checkout code
         uses: actions/checkout@v6
@@ -117,17 +122,10 @@ jobs:
         shell: bash -el {0}
         run: make test
 
-      - name: NOT Generate graph
-        shell: bash -el {0}
-        run: |
-          echo "--NOT GENERATING --"
-          # python ./create_gv.py
-
       - name: Build PDF, HTML and DOCX targets
         shell: bash -el {0}
         run: |
              EXPORT_DIR=${{ env.SOURCES_DIR }} make cleanall mds pdfs htmls docxs
-             # make diagram
              EXPORT_DIR=${{ env.SOURCES_DIR }} make validate-metadata
 
       - name: Create gcover config file
@@ -154,6 +152,16 @@ jobs:
           echo "V1=$V1" >> $GITHUB_ENV
           echo "V2=$V2" >> $GITHUB_ENV
 
+      - name: Generate ER diagram (PlantUML)
+        shell: bash -el {0}
+        run: make diagram V2=${{ env.V2 }}
+
+      - name: Render diagram to SVG and PDF via Kroki
+        shell: bash -el {0}
+        run: |
+          make puml-svg PUML_FILE=outputs/diagram.puml KROKI_URL=http://localhost:1234
+          make puml-pdf PUML_FILE=outputs/diagram.puml
+
       - name: Generate diff report
         shell: bash -el {0}
         run: make diff-reports V1=${{ env.V1 }} V2=${{ env.V2 }}
@@ -165,17 +173,6 @@ jobs:
       - name: Generate Excel mapping tool
         shell: bash -el {0}
         run: make excel-mapping
-
-      - name: Generate PDF from PUML diagram
-        uses: rotaract/plantuml-action@v1
-        with:
-          format: svg
-          pattern: assets/ER-GCOVER.puml
-      - name: Convert SVG to PDF
-        run: |
-          # Convert SVG to PDF (maintains vector format)
-          rsvg-convert -f pdf -o outputs/ER-GCOVER.pdf assets/ER-GCOVER.svg
-          cp assets/ER-GCOVER.svg outputs/ER-GCOVER.svg
 
 
       - name: Upload Artifacts
@@ -202,8 +199,8 @@ jobs:
             outputs/fr/geocover.png
             outputs/it/geocover.png
             outputs/en/geocover.png
-            outputs/ER-GCOVER.svg
-            outputs/ER-GCOVER.pdf
+            outputs/diagram.svg
+            outputs/diagram.pdf
             outputs/${{ env.V1 }}_${{ env.V2 }}.pdf
             ${{ env.SOURCES_DIR }}/gcover-schema-simple.json
             datamodel.yaml

@@ -44,6 +44,15 @@ make puml-pdf PUML_FILE=outputs/diagram.puml
 
 Output files: `outputs/diagram.svg` and `outputs/diagram.pdf`.
 
+## CI (GitHub Actions)
+
+The `build.yaml` workflow runs Kroki as a service container and generates the diagram automatically:
+
+1. Kroki starts as a service (`yuzutech/kroki`, mapped to `localhost:1234`)
+2. `make diagram` generates `outputs/diagram.puml` from the SDE schema
+3. `make puml-svg` and `make puml-pdf` render it via Kroki
+4. `outputs/diagram.svg` and `outputs/diagram.pdf` are uploaded as release artifacts
+
 ## Overriding defaults
 
 | Variable          | Default                  | Description                       |
