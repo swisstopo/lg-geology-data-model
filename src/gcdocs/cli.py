@@ -131,8 +131,10 @@ def generate(ctx, lang, datamodel, output, input_dir):
 
         # Save translation
         translation_df = config.translation_df
-        translation_path = config.input_dir / "geolcodes_translated.xlsx"
+        translation_xlsx_path = config.input_dir / "geolcodes_translated.xlsx"
         translation_df.to_excel(translation_path)
+        translation_csv_path = config.input_dir / "geolcodes_translated.csv"
+        translation_df.to_csv(translation_path)
 
 
         # Generate documentation
