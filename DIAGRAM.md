@@ -6,7 +6,7 @@ The ER diagram is generated from the SDE schema as a PlantUML file, then rendere
 
 - **Docker** — to run the Kroki rendering server
 - **rsvg-convert** — to convert SVG to PDF (`librsvg2-bin` on Debian/Ubuntu)
-- **gcover** — to generate the `.puml` file from the SDE schema
+- **gcover** — to generate the `.puml` file from the SDE schema (gcover>=0.8.3)
 
 ```bash
 # Install rsvg-convert (Linux)

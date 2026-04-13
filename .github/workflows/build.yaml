@@ -68,7 +68,7 @@ jobs:
         shell: bash -el {0}
         run: |
           conda install -c conda-forge  pandoc gdal -y
-          conda install -c swisstopo    "gcover>=0.8.0"  -y
+          conda install -c swisstopo    "gcover>=0.8.3"  -y
           mkdir -p  /home/runner/.config/gcover && touch /home/runner/.config/gcover/config.yaml
           gcover --version
           pandoc -v
