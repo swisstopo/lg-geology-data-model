@@ -42,7 +42,7 @@ jobs:
           key: apt-texlive-${{ runner.os }}-v1
           restore-keys: apt-texlive-${{ runner.os }}-
 
-      - name: Install TeX Live and system dependencies
+      - name: Install TeX Live and system dependencies  # removed  texlive-fonts-extra
         run: |
           # Switch away from the slow Azure mirror
           sudo sed -i 's|http://azure.archive.ubuntu.com/ubuntu|http://archive.ubuntu.com/ubuntu|g' \
@@ -52,8 +52,21 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y \
             tar \
-            texlive-xetex texlive-fonts-recommended texlive-plain-generic texlive-fonts-extra \
+            texlive-xetex texlive-fonts-recommended texlive-plain-generic \
             poppler-utils fonts-noto-core fonts-liberation librsvg2-bin
+
+      - name: Cache tlmgr user packages
+        uses: actions/cache@v5.0.4
+        with:
+          path: ~/texmf
+          key: tlmgr-2023-fontawesome5-v1
+
+      - name: Install required LaTeX packages
+        run: |
+          tlmgr init-usertree || true
+          tlmgr option repository https://ftp.math.utah.edu/pub/tex/historic/systems/texlive/2023/tlnet-final
+          tlmgr install fontawesome5
+
       - name: Install miniconda
         uses: conda-incubator/setup-miniconda@v3.3.0
         with:
