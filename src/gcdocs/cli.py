@@ -131,8 +131,10 @@ def generate(ctx, lang, datamodel, output, input_dir):
 
         # Save translation
         translation_df = config.translation_df
-        translation_path = config.input_dir / "geolcodes_translated.xlsx"
-        translation_df.to_excel(translation_path)
+        translation_xlsx_path = config.input_dir / "geolcodes_translated.xlsx"
+        translation_df.to_excel(translation_xlsx_path)
+        translation_csv_path = config.input_dir / "geolcodes_translated.csv"
+        translation_df.to_csv(translation_csv_path)
 
 
         # Generate documentation
@@ -149,7 +151,7 @@ def generate(ctx, lang, datamodel, output, input_dir):
         click.echo("   make pdfs    # Generate PDF with pandoc")
         click.echo("   make docx    # Generate DOCX with pandoc")
         click.echo("   make all     # Generate all formats")
-        click.echo(f"Translations: {translation_path}")
+        click.echo(f"Translations: {translation_csv_path} or {translation_xlsx_path}")
 
     except FileNotFoundError as e:
         click.echo(f"❌ File not found: {e}")

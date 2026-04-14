@@ -24,15 +24,7 @@ schema_versions:
         description_de: "Neue subtypes  „Faltenscharnier“ und „Achsenspur einer Synklinale bzw. Synform“"
         description_fr: "Nouveaux sous-types « Charnières de plis » et « Axe d'une synclinale ou d'une synforme »"
         motivation: >
-          See GeoCover 2D Fachgruppe discussion         
-
-      - class: "Mapsheet_PLG"
-        attribute: ~
-        type: "class_removed"
-        description_de: "Feature class GC_MAPSHEET wurde entfernt"
-        description_fr: "La feature class GC_MAPSHEET est supprimées"
-        motivation: >
-          The class was only used for orientation and was updated too frequently for schema updates.
+           These features are very helpful for understanding the structural framework of the area. See GeoCover 2D Fachgruppe discussion  (24.11.2025)       
 
       - class: "Bedrock_PLG"
         attribute: "Geol_Mapping_Unit, Tecto, Litho, Litstrat_Formation_Bank, Correlation"

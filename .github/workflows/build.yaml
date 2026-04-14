@@ -26,6 +26,11 @@ jobs:
   build-markdown:
     name: Generating Markdown files
     runs-on: "ubuntu-latest"
+    services:
+      kroki:
+        image: yuzutech/kroki
+        ports:
+          - 1234:8000
     steps:
       - name: Checkout code
         uses: actions/checkout@v6
@@ -37,7 +42,7 @@ jobs:
           key: apt-texlive-${{ runner.os }}-v1
           restore-keys: apt-texlive-${{ runner.os }}-
 
-      - name: Install TeX Live and system dependencies
+      - name: Install TeX Live and system dependencies  # removed  texlive-fonts-extra
         run: |
           # Switch away from the slow Azure mirror
           sudo sed -i 's|http://azure.archive.ubuntu.com/ubuntu|http://archive.ubuntu.com/ubuntu|g' \
@@ -47,8 +52,21 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y \
             tar \
-            texlive-xetex texlive-fonts-recommended texlive-plain-generic texlive-fonts-extra \
+            texlive-xetex texlive-fonts-recommended texlive-plain-generic \
             poppler-utils fonts-noto-core fonts-liberation librsvg2-bin
+
+      - name: Cache tlmgr user packages
+        uses: actions/cache@v5.0.4
+        with:
+          path: ~/texmf
+          key: tlmgr-2023-fontawesome5-v1
+
+      - name: Install required LaTeX packages
+        run: |
+          tlmgr init-usertree || true
+          tlmgr option repository https://ftp.math.utah.edu/pub/tex/historic/systems/texlive/2023/tlnet-final
+          tlmgr install fontawesome5
+
       - name: Install miniconda
         uses: conda-incubator/setup-miniconda@v3.3.0
         with:
@@ -63,7 +81,7 @@ jobs:
         shell: bash -el {0}
         run: |
           conda install -c conda-forge  pandoc gdal -y
-          conda install -c swisstopo    "gcover>=0.8.0"  -y
+          conda install -c swisstopo    "gcover>=0.8.3"  -y
           mkdir -p  /home/runner/.config/gcover && touch /home/runner/.config/gcover/config.yaml
           gcover --version
           pandoc -v
@@ -117,17 +135,10 @@ jobs:
         shell: bash -el {0}
         run: make test
 
-      - name: NOT Generate graph
-        shell: bash -el {0}
-        run: |
-          echo "--NOT GENERATING --"
-          # python ./create_gv.py
-
       - name: Build PDF, HTML and DOCX targets
         shell: bash -el {0}
         run: |
              EXPORT_DIR=${{ env.SOURCES_DIR }} make cleanall mds pdfs htmls docxs
-             # make diagram
              EXPORT_DIR=${{ env.SOURCES_DIR }} make validate-metadata
 
       - name: Create gcover config file
@@ -154,6 +165,16 @@ jobs:
           echo "V1=$V1" >> $GITHUB_ENV
           echo "V2=$V2" >> $GITHUB_ENV
 
+      - name: Generate ER diagram (PlantUML)
+        shell: bash -el {0}
+        run: make diagram V2=${{ env.V2 }}
+
+      - name: Render diagram to SVG and PDF via Kroki
+        shell: bash -el {0}
+        run: |
+          make puml-svg PUML_FILE=outputs/diagram.puml KROKI_URL=http://localhost:1234
+          make puml-pdf PUML_FILE=outputs/diagram.puml
+
       - name: Generate diff report
         shell: bash -el {0}
         run: make diff-reports V1=${{ env.V1 }} V2=${{ env.V2 }}
@@ -165,17 +186,6 @@ jobs:
       - name: Generate Excel mapping tool
         shell: bash -el {0}
         run: make excel-mapping
-
-      - name: Generate PDF from PUML diagram
-        uses: rotaract/plantuml-action@v1
-        with:
-          format: svg
-          pattern: assets/ER-GCOVER.puml
-      - name: Convert SVG to PDF
-        run: |
-          # Convert SVG to PDF (maintains vector format)
-          rsvg-convert -f pdf -o outputs/ER-GCOVER.pdf assets/ER-GCOVER.svg
-          cp assets/ER-GCOVER.svg outputs/ER-GCOVER.svg
 
 
       - name: Upload Artifacts
@@ -202,8 +212,8 @@ jobs:
             outputs/fr/geocover.png
             outputs/it/geocover.png
             outputs/en/geocover.png
-            outputs/ER-GCOVER.svg
-            outputs/ER-GCOVER.pdf
+            outputs/diagram.svg
+            outputs/diagram.pdf
             outputs/${{ env.V1 }}_${{ env.V2 }}.pdf
             ${{ env.SOURCES_DIR }}/gcover-schema-simple.json
             datamodel.yaml
