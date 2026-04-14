@@ -294,23 +294,6 @@ class EnhancedMarkdownGenerator:
                         if pairs is not None:
                             att["pairs"] = pairs
 
-                        # Process geological codes in the pairs using your existing translator
-                        # traduction OK
-                        # TODO: what is the goal here
-                        if "pairs" in att and att["pairs"]:
-                            translated_pairs = {}
-                            for code, description in att["pairs"].items():
-                                # Use your existing geological code translator
-                                #  def translate(self, geol_code: str, fallback: str, lang: str = "FR")
-                                translated_desc = self.geol_translator.translate(
-                                    code, 'IT') # language.upper()
-
-                                logger.debug(f"code: {code}, desc: {description}, it: {translated_desc}")
-
-                                translated_pairs[code] = translated_desc
-                            att["translated_pairs"] = translated_pairs
-                            att["pairs"] = translated_pairs
-
 
         # Process annexes (your existing logic)
         for annex in data.get("annexes", []):
@@ -686,38 +669,51 @@ class EnhancedMarkdownGenerator:
         return self._translator
 
     def _get_coded_values(self, domain_name: str) -> Dict[str, str]:
-        """Get coded values from domain (from original get_coded_values function)"""
+        """Get coded values from domain.
 
-        domains = self.config.sde_schema.get("coded_domain", {})
+        Handles the current geocover-schema-sde.json structure where domains is a
+        list of objects: {"name": "GC_FOO_CD", "type": "codedValue",
+        "codedValues": [{"name": "label", "code": 123}, ...]}.
+        """
+        schema = self.config.sde_schema
 
-        if domain_name in domains.keys():
-            domain = domains.get(domain_name)
-            if domain.get("type") == "CodedValue":
-                coded_values = domain.get("codedValues", {})
+        # Current structure: top-level "domains" is a list
+        domain = None
+        for d in schema.get("domains", []):
+            if d.get("name") == domain_name and d.get("type") in ("codedValue", "CodedValue"):
+                domain = d
+                break
 
-                logger.debug(f"Domain: {domain_name} - {len(coded_values)}")
-
-                # Handle special codes (from original custom_sort_key logic)
-                if "999997" in coded_values:
-                    coded_values["999997"] = "unbekannt"
-                if "999998" in coded_values:
-                    coded_values["999998"] = "nicht anwendbar"
-
-                # Sort with special handling for 999997, 999998
-                def sort_key(item):
-                    key, _ = item
-                    if key in ["999997", "999998"]:
-                        return float("inf")
-                    try:
-                        return int(key)
-                    except ValueError:
-                        return float("inf")
-
-                return dict(sorted(coded_values.items(), key=sort_key))
-        else:
+        if domain is None:
             logger.error(f"Coded domain {domain_name} data not found")
+            return {}
 
-        return {}
+        raw = domain.get("codedValues", [])
+        # Convert list of {name, code} objects → {str(code): name}
+        if isinstance(raw, list):
+            coded_values = {str(item["code"]): item["name"] for item in raw}
+        else:
+            # Legacy dict format {code: label} — keep as-is
+            coded_values = dict(raw)
+
+        logger.debug(f"Domain: {domain_name} - {len(coded_values)}")
+
+        # Handle special codes
+        if "999997" in coded_values:
+            coded_values["999997"] = "unbekannt"
+        if "999998" in coded_values:
+            coded_values["999998"] = "nicht anwendbar"
+
+        def sort_key(item):
+            key, _ = item
+            if key in ["999997", "999998"]:
+                return float("inf")
+            try:
+                return int(key)
+            except ValueError:
+                return float("inf")
+
+        return dict(sorted(coded_values.items(), key=sort_key))
 
     def _get_table_values(
         self, name: str, file_name: Optional[str] = None

@@ -236,22 +236,31 @@ class GeoDataConfig:
 
         def extract_coded_values(data):
             """
-            Extracts and flattens all codedValues from coded_domain entries
-            whose keys start with 'GC_'.
+            Extracts and flattens all codedValues from GC_ domains.
+
+            Handles the geocover-schema-sde.json structure where "domains" is a list
+            of {"name", "type", "codedValues": [{"name": label, "code": int}, ...]}.
 
             Returns:
-                dict: A flat dictionary of code-value pairs.
+                dict: A flat {str(code): label} dictionary sorted by code.
             """
-            coded = data.get("coded_domain", {})
+            flat = {}
+            for domain in data.get("domains", []):
+                if not domain.get("name", "").startswith("GC_"):
+                    continue
+                if domain.get("type") not in ("codedValue", "CodedValue"):
+                    continue
+                raw = domain.get("codedValues", [])
+                if isinstance(raw, list):
+                    for item in raw:
+                        flat[str(item["code"])] = item["name"]
+                else:
+                    flat.update({str(k): v for k, v in raw.items()})
 
-            flat = {
-                code: label
-                for domain_key, domain_data in coded.items()
-                if domain_key.startswith("GC_")
-                for code, label in domain_data.get("codedValues", {}).items()
-            }
-
-            return dict(sorted(flat.items(), key=lambda item: int(item[0])))
+            try:
+                return dict(sorted(flat.items(), key=lambda item: int(item[0])))
+            except (ValueError, TypeError):
+                return flat
 
         if self._domains is None:
             self._domains = extract_coded_values(self.sde_schema)
