@@ -2,7 +2,7 @@ LANGUAGES = de fr it en
 FORMATS = pdf odt docx html
 
 # Define the directories
-EXPORT_DIR ?= sources
+EXPORT_DIR ?= $(shell python -c "import yaml; print(yaml.safe_load(open('release.yaml'))['model']['sources_dir'])")
 INPUT_DIR ?= inputs
 OUTPUT_DIR ?= outputs
 
@@ -17,7 +17,7 @@ RESET  := \033[0m
 
 
 PANDOC := $(shell which pandoc)
-GCDOCS=gcdocs
+GCDOCS ?= $(shell which gcdocs 2>/dev/null || find $(HOME)/miniconda3 $(HOME)/anaconda3 -name gcdocs -type f 2>/dev/null | head -1)
 GCOVER=gcover
 RM=/bin/rm
 CP=/usr/bin/cp
