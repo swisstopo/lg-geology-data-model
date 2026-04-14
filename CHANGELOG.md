@@ -1,7 +1,11 @@
 # Changelog
 
+## [4.4.0] -2026-04-14
+### Added
+- Generation of the ER diagram
 
-## [4.3.3] - 2026-04-26
+
+## [4.3.3] - 2026-04-09
 ### Added
 - Improved `Geology Mapping Tools` (mapping code between input data and this model)
 - Improved minor version management on AWS S3

@@ -63,7 +63,8 @@ include = ["gcdocs*"]
 [tool.setuptools.package-data]
 gcdocs = [
     "templates/*.j2",
-    "schemas/*.json", 
+    "schemas/*.json",
+    "locale/*.xlsx",
     "locale/*/LC_MESSAGES/*.po",
     "locale/*/LC_MESSAGES/*.mo",
     "data/*.csv",
