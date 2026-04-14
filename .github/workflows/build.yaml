@@ -100,9 +100,9 @@ jobs:
         run: |
           echo "version=$(<VERSION)" >> $GITHUB_ENV
           RELEASE=$(python -c "import yaml; print(yaml.safe_load(open('release.yaml'))['model']['revision'])")
-          SOURCES_DIR=$(python -c "import yaml; print(yaml.safe_load(open('release.yaml'))['model']['sources_dir'])")
+          EXPORT_DIR=$(python -c "import yaml; print(yaml.safe_load(open('release.yaml'))['model']['sources_dir'])")
           echo "RELEASE=$RELEASE" >> $GITHUB_ENV
-          echo "SOURCES_DIR=$SOURCES_DIR" >> $GITHUB_ENV
+          echo "EXPORT_DIR=$EXPORT_DIR" >> $GITHUB_ENV
           IS_RELEASE="${{ inputs.is_release_build }}"
           if [ "$IS_RELEASE" = "true" ]; then
             echo "DEV_SUFFIX=" >> $GITHUB_ENV
@@ -138,8 +138,8 @@ jobs:
       - name: Build PDF, HTML and DOCX targets
         shell: bash -el {0}
         run: |
-             EXPORT_DIR=${{ env.SOURCES_DIR }} make cleanall mds pdfs htmls docxs
-             EXPORT_DIR=${{ env.SOURCES_DIR }} make validate-metadata
+             make cleanall mds pdfs htmls docxs
+             make validate-metadata
 
       - name: Create gcover config file
         run: |
@@ -215,7 +215,7 @@ jobs:
             outputs/diagram.svg
             outputs/diagram.pdf
             outputs/${{ env.V1 }}_${{ env.V2 }}.pdf
-            ${{ env.SOURCES_DIR }}/gcover-schema-simple.json
+            ${{ env.EXPORT_DIR }}/gcover-schema-simple.json
             datamodel.yaml
             outputs/geology_mapping_tool*.xlsx
             outputs/DATA_RELEASES.pdf

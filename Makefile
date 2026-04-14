@@ -2,7 +2,10 @@ LANGUAGES = de fr it en
 FORMATS = pdf odt docx html
 
 # Define the directories
-EXPORT_DIR ?= sources
+# SOURCES_DIR: base dir containing all timestamped release subdirs (e.g. sources/)
+SOURCES_DIR ?= sources
+# EXPORT_DIR: the specific release dir for the current version (e.g. sources/2026-04-14)
+EXPORT_DIR ?= $(shell python -c "import yaml; print(yaml.safe_load(open('release.yaml'))['model']['sources_dir'])")
 INPUT_DIR ?= inputs
 OUTPUT_DIR ?= outputs
 
@@ -17,7 +20,7 @@ RESET  := \033[0m
 
 
 PANDOC := $(shell which pandoc)
-GCDOCS=gcdocs
+GCDOCS ?= $(shell which gcdocs 2>/dev/null || find $(HOME)/miniconda3 $(HOME)/anaconda3 -name gcdocs -type f 2>/dev/null | head -1)
 GCOVER=gcover
 RM=/bin/rm
 CP=/usr/bin/cp
@@ -46,7 +49,7 @@ DATE_PATTERN := ^[0-9]{4}-[0-9]{2}-[0-9]{2}$$
 # 2. grep -E: Filter only those matching the date pattern
 # 3. sort: Put them in chronological order
 # 4. tail -n 2: Get the last two
-LAST_TWO := $(shell ls -1 $(EXPORT_DIR) | grep -E '$(DATE_PATTERN)' | sort | tail -n 2)
+LAST_TWO := $(shell ls -1 $(SOURCES_DIR) | grep -E '$(DATE_PATTERN)' | sort | tail -n 2)
 
 V1 ?= $(word 1, $(LAST_TWO))
 V2 ?= $(word 2, $(LAST_TWO))
@@ -145,7 +148,7 @@ markdown: $(MO_FILES) $(INPUTS)
 diagram: assets
 	rm -rf $(OUTPUT_DIR)/ER-GCOVER.*
 	# python create_gv.py
-	gcover schema diagram --output $(OUTPUT_DIR)/diagram.puml   --no-domains  --title "GeoCover 2D Schema $(RELEASE)"  $(EXPORT_DIR)/$(V2)/geocover-schema-sde.json
+	gcover schema diagram --output $(OUTPUT_DIR)/diagram.puml   --no-domains  --title "GeoCover 2D Schema $(RELEASE)"  $(EXPORT_DIR)/geocover-schema-sde.json
 
 diagram-pdf:
 	  java -jar /usr/share/plantuml/plantuml.jar  -tpdf $(OUTPUT_DIR)/diagram.puml
@@ -300,21 +303,21 @@ $(INPUT_DIR)/en/cd-header.tex:
 
 .PHONE: schema-simple extract-subtypes extract-domains
 
-schema-simple: $(EXPORT_DIR)/$(V2)/gcover-schema-simple.json
+schema-simple: $(EXPORT_DIR)/gcover-schema-simple.json
 
-extract-subtypes: $(EXPORT_DIR)/$(V2)/subtypes_dict.json
+extract-subtypes: $(EXPORT_DIR)/subtypes_dict.json
 
-extract-domains: $(EXPORT_DIR)/$(V2)/coded_domains.json
+extract-domains: $(EXPORT_DIR)/coded_domains.json
 
 
-$(EXPORT_DIR)/$(V2)/gcover-schema-simple.json:
-	$(GCOVER) schema transform --pretty --show-summary --output $@  sources/$(V2)/geocover-schema-sde.json
+$(EXPORT_DIR)/gcover-schema-simple.json:
+	$(GCOVER) schema transform --pretty --show-summary --output $@  $(EXPORT_DIR)/geocover-schema-sde.json
 
-$(EXPORT_DIR)/$(V2)/subtypes_dict.json:
-	$(GCDOCS) extract --mode subtypes -f json -o $@  sources/$(V2)/geocover-schema-sde.json
+$(EXPORT_DIR)/subtypes_dict.json:
+	$(GCDOCS) extract --mode subtypes -f json -o $@  $(EXPORT_DIR)/geocover-schema-sde.json
 
-$(EXPORT_DIR)/$(V2)/coded_domains.json:
-	$(GCDOCS) extract --mode domains -f json -o $@  sources/$(V2)/geocover-schema-sde.json
+$(EXPORT_DIR)/coded_domains.json:
+	$(GCDOCS) extract --mode domains -f json -o $@  $(EXPORT_DIR)/geocover-schema-sde.json
 
 
 
@@ -325,8 +328,8 @@ $(OUTPUT_DIR)/$(V1)_$(V2).html:
 		--format html \
 		--old-schema-version $(V1) \
 		--new-schema-version $(V2) \
-		$(EXPORT_DIR)/$(V1)/geocover-schema-sde.json \
-		$(EXPORT_DIR)/$(V2)/geocover-schema-sde.json
+		$(SOURCES_DIR)/$(V1)/geocover-schema-sde.json \
+		$(SOURCES_DIR)/$(V2)/geocover-schema-sde.json
 
 $(OUTPUT_DIR)/$(V1)_$(V2).md:
 	@echo "Comparing $(V1) against $(V2)..."
@@ -335,8 +338,8 @@ $(OUTPUT_DIR)/$(V1)_$(V2).md:
 		--format markdown \
 		--old-schema-version $(V1) \
 		--new-schema-version $(V2) \
-		$(EXPORT_DIR)/$(V1)/geocover-schema-sde.json \
-		$(EXPORT_DIR)/$(V2)/geocover-schema-sde.json
+		$(SOURCES_DIR)/$(V1)/geocover-schema-sde.json \
+		$(SOURCES_DIR)/$(V2)/geocover-schema-sde.json
 
 $(OUTPUT_DIR)/$(V1)_$(V2).pdf: $(OUTPUT_DIR)/$(V1)_$(V2).md
 	$(PANDOC) $(PANDOC_OPTIONS)  $(PANDOC_PDF_OPTIONS)  -V documentclass=extarticle -V fontsize=8pt \

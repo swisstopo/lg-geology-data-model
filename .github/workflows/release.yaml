@@ -41,11 +41,11 @@ jobs:
         run: |
           NEW=$(python -c "import yaml; print(yaml.safe_load(open('release.yaml'))['model']['revision'])")
           OLD=$(git show HEAD~1:release.yaml 2>/dev/null | python -c "import yaml,sys; print(yaml.safe_load(sys.stdin).get('model',{}).get('revision',''))" || echo "")
-          SOURCES_DIR=$(python -c "import yaml; print(yaml.safe_load(open('release.yaml'))['model']['sources_dir'])")
+          EXPORT_DIR=$(python -c "import yaml; print(yaml.safe_load(open('release.yaml'))['model']['sources_dir'])")
 
           echo "version=$NEW" >> $GITHUB_OUTPUT
           echo "tag_name=v$NEW" >> $GITHUB_OUTPUT
-          echo "sources_dir=$SOURCES_DIR" >> $GITHUB_OUTPUT
+          echo "sources_dir=$EXPORT_DIR" >> $GITHUB_OUTPUT
 
           if [ "$NEW" != "$OLD" ]; then
             echo "should_release=true" >> $GITHUB_OUTPUT
@@ -106,7 +106,7 @@ jobs:
     env:
       RELEASE: ${{ needs.check-version.outputs.version }}
       TAG_NAME: ${{ needs.check-version.outputs.tag_name }}
-      SOURCES_DIR: ${{ needs.check-version.outputs.sources_dir }}
+      EXPORT_DIR: ${{ needs.check-version.outputs.sources_dir }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v6
@@ -117,7 +117,7 @@ jobs:
         run: |
           echo "=== RELEASE=${{ env.RELEASE }} ==="
           echo "=== TAG_NAME=${{ env.TAG_NAME }} ==="
-          echo "=== SOURCES_DIR=${{ env.SOURCES_DIR }} ==="
+          echo "=== SOURCES_DIR=${{ env.EXPORT_DIR }} ==="
 
       - name: Generate release notes
         id: release_info
@@ -166,12 +166,10 @@ jobs:
           cp temp-artifacts/outputs/fr/datamodel.pdf release-assets/datamodel-fr.pdf
           cp temp-artifacts/outputs/de/datamodel.docx release-assets/datamodel-de.docx
           cp temp-artifacts/outputs/fr/datamodel.docx release-assets/datamodel-fr.docx
-          cp temp-artifacts/outputs/ER-GCOVER.svg release-assets/ER-GCOVER.svg
-          cp temp-artifacts/outputs/ER-GCOVER.pdf release-assets/ER-GCOVER.pdf
           cp temp-artifacts/outputs/DATA_RELEASES.pdf release-assets/DATA_RELEASES.pdf
           cp temp-artifacts/outputs/SCHEMA_CHANGES.pdf release-assets/SCHEMA_CHANGES.pdf
           cp temp-artifacts/outputs/*.pdf  release-assets/
-          cp temp-artifacts/${{ env.SOURCES_DIR }}/gcover-schema-simple.json release-assets/gcover-schema-simple.json
+          cp temp-artifacts/${{ env.EXPORT_DIR }}/gcover-schema-simple.json release-assets/gcover-schema-simple.json
 
           echo "📦 Release assets:"
           ls -la release-assets/

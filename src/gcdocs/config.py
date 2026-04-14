@@ -236,22 +236,47 @@ class GeoDataConfig:
 
         def extract_coded_values(data):
             """
-            Extracts and flattens all codedValues from coded_domain entries
-            whose keys start with 'GC_'.
+            Extracts and flattens all codedValues from GC_ domains into a single
+            {str(code): label} dict.
 
-            Returns:
-                dict: A flat dictionary of code-value pairs.
+            Supports two ESRI schema variants:
+            - New: data["domains"] — list of {name, type,
+                   codedValues: [{name: label, code: int}, ...]}
+            - Old: data["coded_domain"] — dict keyed by domain name, each entry
+                   {type, codedValues: {code: label}}
             """
-            coded = data.get("coded_domain", {})
+            flat = {}
 
-            flat = {
-                code: label
-                for domain_key, domain_data in coded.items()
-                if domain_key.startswith("GC_")
-                for code, label in domain_data.get("codedValues", {}).items()
-            }
+            # New structure: "domains" list
+            for domain in data.get("domains", []):
+                if not domain.get("name", "").startswith("GC_"):
+                    continue
+                if domain.get("type") not in ("codedValue", "CodedValue"):
+                    continue
+                raw = domain.get("codedValues", [])
+                if isinstance(raw, list):
+                    for item in raw:
+                        flat[str(item["code"])] = item["name"]
+                else:
+                    flat.update({str(k): v for k, v in raw.items()})
 
-            return dict(sorted(flat.items(), key=lambda item: int(item[0])))
+            # Old structure: "coded_domain" dict (fallback / legacy)
+            for domain_name, domain in data.get("coded_domain", {}).items():
+                if not domain_name.startswith("GC_"):
+                    continue
+                if domain.get("type") not in ("CodedValue", "codedValue"):
+                    continue
+                raw = domain.get("codedValues", {})
+                if isinstance(raw, list):
+                    for item in raw:
+                        flat[str(item["code"])] = item["name"]
+                else:
+                    flat.update({str(k): v for k, v in raw.items()})
+
+            try:
+                return dict(sorted(flat.items(), key=lambda item: int(item[0])))
+            except (ValueError, TypeError):
+                return flat
 
         if self._domains is None:
             self._domains = extract_coded_values(self.sde_schema)
@@ -299,6 +324,14 @@ class GeoDataConfig:
             with open(schema_file, "r") as f:
                 self._sde_schema = json.load(f)
             logger.info(f"Loaded SDE schema from {schema_file}")
+
+            dataset_type = self._sde_schema.get("datasetType")
+            if dataset_type != "DEWorkspace":
+                logger.warning(
+                    f"{schema_file.name}: expected ESRI DEWorkspace schema "
+                    f"(datasetType='DEWorkspace'), got {dataset_type!r}. "
+                    "Coded domains may not load correctly."
+                )
         return self._sde_schema
 
     @property
