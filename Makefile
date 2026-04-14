@@ -7,18 +7,36 @@ INPUT_DIR ?= inputs
 OUTPUT_DIR ?= outputs
 
 
-PANDOC=/usr/bin/pandoc
+# ANSI color codes
+RED    := \033[31m
+GREEN  := \033[32m
+YELLOW := \033[33m
+BLUE   := \033[34m
+BOLD   := \033[1m
+RESET  := \033[0m
+
+
+PANDOC := $(shell which pandoc)
 GCDOCS=gcdocs
+GCOVER=gcover
 RM=/bin/rm
 CP=/usr/bin/cp
 
 CSS = datamodel.css
+
+KROKI_URL         ?= http://localhost:1234
+KROKI_CONTAINER   ?= kroki
+PUML_FILE         ?= diagram.puml
+PUML_SVG          := $(PUML_FILE:.puml=.svg)
+PUML_PDF          := $(PUML_FILE:.puml=.pdf)
 
 # Define targets for each language and format
 OUTPUTS = $(foreach lang,$(LANGUAGES),$(foreach fmt,$(FORMATS),$(OUTPUT_DIR)/$(lang)/datamodel.$(fmt)))
 INPUTS = $(foreach lang,$(LANGUAGES),$(foreach fmt,$(FORMATS),$(INPUT_DIR)/$(lang)/datamodel.md))
 CLEAN_PDFS = $(shell find outputs -name "*.pdf" -not -name "ER-GCOVER.pdf")
 LOGO := Logo_RGB_farbig_positiv.png
+
+RELEASE=$(shell python -c "import yaml; print(yaml.safe_load(open('release.yaml'))['model']['revision'])")
 
 
 # regex: 4 digits, dash, 2 digits, dash, 2 digits
@@ -78,8 +96,10 @@ help:
 	@echo "  make help               - Display this help message"
 	@echo ""
 	@echo "VARIABLES:"
+	@echo "  pandoc=$(PANDOC)"
 	@echo "  V1=$(V1)"
 	@echo "  V2=$(V2)"
+	@echo "  RELEASE=$(RELEASE)"
 
 .PHONY: assets
 assets:
@@ -124,7 +144,35 @@ markdown: $(MO_FILES) $(INPUTS)
 
 diagram: assets
 	rm -rf $(OUTPUT_DIR)/ER-GCOVER.*
-	python create_gv.py
+	# python create_gv.py
+	gcover schema diagram --output $(OUTPUT_DIR)/diagram.puml   --no-domains  --title "GeoCover 2D Schema $(RELEASE)"  $(EXPORT_DIR)/$(V2)/geocover-schema-sde.json
+
+diagram-pdf:
+	  java -jar /usr/share/plantuml/plantuml.jar  -tpdf $(OUTPUT_DIR)/diagram.puml
+
+
+.PHONY: kroki-up kroki-down puml-svg puml-pdf
+
+kroki-up: ## Start the Kroki rendering server (detached Docker container)
+	docker run -d --rm --name $(KROKI_CONTAINER) -p 1234:8000 yuzutech/kroki
+	@echo "$(GREEN)Kroki server started at $(KROKI_URL)$(RESET)"
+
+kroki-down: ## Stop the Kroki rendering server
+	docker stop $(KROKI_CONTAINER)
+	@echo "$(YELLOW)Kroki server stopped$(RESET)"
+
+puml-svg: ## Convert PUML_FILE to SVG via local kroki (e.g. make puml-svg PUML_FILE=out.puml)
+	curl -s -X POST $(KROKI_URL)/plantuml/svg \
+		-H "Content-Type: text/plain" \
+		--data-binary @$(PUML_FILE) \
+		-o $(PUML_SVG)
+
+	@echo "$(GREEN)SVG written to $(PUML_SVG)$(RESET)"
+
+puml-pdf: puml-svg ## Convert PUML_FILE to PDF via SVG + rsvg-convert
+	rsvg-convert -f pdf -o $(PUML_PDF) $(PUML_SVG)
+	@echo "$(GREEN)PDF written to $(PUML_PDF)$(RESET)"
+
 
 $(INPUT_DIR)/datamodel.xlsx:
 	$(GCDOCS)  export datamodel.yaml  -o $@
@@ -144,7 +192,7 @@ $(INPUT_DIR)/$(1)/metadata.yaml: assets
 	mkdir -p $$(@D)
 	$(GCDOCS)  generate --lang=$(1)  -i $(EXPORT_DIR) -o $(INPUT_DIR) datamodel.yaml
 
-$(INPUT_DIR)/$(1)/datamodel.md: assets
+$(INPUT_DIR)/$(1)/datamodel.md: assets extract-subtypes extract-domains
 	mkdir -p $$(@D)
 	$(GCDOCS)  generate --lang=$(1) -i $(EXPORT_DIR) -o $(INPUT_DIR) datamodel.yaml
 
@@ -247,7 +295,28 @@ diff: $(OUTPUT_DIR) $(OUTPUT_DIR)/$(V1)_$(V2).md $(OUTPUT_DIR)/$(V1)_$(V2).html
 
 diff-reports: $(OUTPUT_DIR)   $(OUTPUT_DIR)/$(V1)_$(V2).pdf $(OUTPUT_DIR)/$(V1)_$(V2).docx $(OUTPUT_DIR)/$(V1)_$(V2).html
 
-$(INPUT_DIR)/en/cd-header.tex: mds
+$(INPUT_DIR)/en/cd-header.tex:
+
+
+.PHONE: schema-simple extract-subtypes extract-domains
+
+schema-simple: $(EXPORT_DIR)/$(V2)/gcover-schema-simple.json
+
+extract-subtypes: $(EXPORT_DIR)/$(V2)/subtypes_dict.json
+
+extract-domains: $(EXPORT_DIR)/$(V2)/coded_domains.json
+
+
+$(EXPORT_DIR)/$(V2)/gcover-schema-simple.json:
+	$(GCOVER) schema transform --pretty --show-summary --output $@  sources/$(V2)/geocover-schema-sde.json
+
+$(EXPORT_DIR)/$(V2)/subtypes_dict.json:
+	$(GCDOCS) extract --mode subtypes -f json -o $@  sources/$(V2)/geocover-schema-sde.json
+
+$(EXPORT_DIR)/$(V2)/coded_domains.json:
+	$(GCDOCS) extract --mode domains -f json -o $@  sources/$(V2)/geocover-schema-sde.json
+
+
 
 $(OUTPUT_DIR)/$(V1)_$(V2).html:
 	@echo "Comparing $(V1) against $(V2)..."

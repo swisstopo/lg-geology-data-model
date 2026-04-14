@@ -6,6 +6,41 @@
 # Cross-reference: DATA_RELEASES.yaml references these via schema_version.
 
 schema_versions:
+  - version: "4.4.0"
+    git_tag: "v4.4.0"
+    date: "2026-04-14"
+    note: "Schema update for new data in Ticino (Grono and Hinterrhein)"
+    changes:
+      - class: "Surfaces_PLG"
+        attribute: ~
+        type: "hierarchy_changed"
+        description_de: "Alle hydrologischen `subtypes` for (Gletscher, Seen und Flüsse) wurden entfernt"
+        description_fr: "Toutes les `subtypes` pour les surfaces hydrologiques (glaciers, lacs et rivières) ont été supprimées"
+        motivation: >
+          As the surfaces themselves have been deleted in `v4.3.0` these `subtypes`are not needed anymore.
+      - class: "Linear_Objects"
+        attribute: ~
+        type: "hierarchy_changed"
+        description_de: "Neue subtypes  „Faltenscharnier“ und „Achsenspur einer Synklinale bzw. Synform“"
+        description_fr: "Nouveaux sous-types « Charnières de plis » et « Axe d'une synclinale ou d'une synforme »"
+        motivation: >
+           These features are very helpful for understanding the structural framework of the area. See GeoCover 2D Fachgruppe discussion  (24.11.2025)       
+
+      - class: "Bedrock_PLG"
+        attribute: "Geol_Mapping_Unit, Tecto, Litho, Litstrat_Formation_Bank, Correlation"
+        type: "hierarchy_changed"
+        description_de: "Hinzugefügte, gelöschte Objekte und/oder modifizierte Hierarchie"
+        description_fr: "Objets de listes de valeurs supprimés et/ou hiérarchie modifiée"
+        motivation: >
+          New categories for importing mapsheet Grono and Hinterrhein
+
+      - class: "Unco_Deposits_PLG"
+        attribute: "Litstrat_Unco,Litho_Unco"
+        type: "hierarchy_changed"
+        description_de: "Hinzugefügte, gelöschte Objekte und/oder modifizierte Hierarchie"
+        description_fr: "Objets de listes de valeurs supprimés et/ou hiérarchie modifiée"
+        motivation: ~
+
   - version: "4.3.3"
     git_tag: "v4.3.3"
     date: "2026-04-26"

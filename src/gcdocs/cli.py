@@ -104,9 +104,9 @@ def gcdocs(ctx, debug, logfile):
 @click.option(
     "--input-dir",
     "-i",
-    type=click.Path(exists=True, file_okay=False),
-    default="exports",
-    help="Directory containing input JSON files",
+    type=click.Path(file_okay=False),
+    default=None,
+    help="Directory containing input JSON files (default: model.sources_dir from release.yaml)",
 )
 @click.argument("datamodel", type=click.Path(exists=True))
 @click.pass_context
@@ -118,13 +118,12 @@ def generate(ctx, lang, datamodel, output, input_dir):
     """
     try:
         # Setup config with custom input directory
-
-        config = GeoDataConfig(Path(input_dir).resolve())
+        config = GeoDataConfig(Path(input_dir).resolve() if input_dir else None)
 
         # Validate data files exist  # TODO
         if not config.validate_data():
             click.echo("❌ Missing required data files in input directory")
-            click.echo(f"   Expected files in {input_dir}:")
+            click.echo(f"   Expected files in {config.input_dir}:")
             click.echo("   - coded_domains.json")
             click.echo("   - subtypes_dict.json")
             click.echo("   - geocover-schema-sde.json")
@@ -132,8 +131,10 @@ def generate(ctx, lang, datamodel, output, input_dir):
 
         # Save translation
         translation_df = config.translation_df
-        translation_path = Path(input_dir) / "geolcodes_translated.xlsx"
-        translation_df.to_excel(translation_path)
+        translation_xlsx_path = config.input_dir / "geolcodes_translated.xlsx"
+        translation_df.to_excel(translation_xlsx_path)
+        translation_csv_path = config.input_dir / "geolcodes_translated.csv"
+        translation_df.to_csv(translation_csv_path)
 
 
         # Generate documentation
@@ -150,7 +151,7 @@ def generate(ctx, lang, datamodel, output, input_dir):
         click.echo("   make pdfs    # Generate PDF with pandoc")
         click.echo("   make docx    # Generate DOCX with pandoc")
         click.echo("   make all     # Generate all formats")
-        click.echo(f"Translations: {translation_path}")
+        click.echo(f"Translations: {translation_csv_path} or {translation_xlsx_path}")
 
     except FileNotFoundError as e:
         click.echo(f"❌ File not found: {e}")

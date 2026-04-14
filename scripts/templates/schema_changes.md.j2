@@ -37,8 +37,11 @@ mainfontoptions:
 {% set note    = sv.get("note") %}
 {% set used_by = sv.get("_used_by") or [] %}
 
-{% if date %}**Schema date:** {{ date }} \\ {% endif %}
-{% if tag %}**Git tag:** `{{ tag }}` \\ {% endif %}
+{% if date %}**Schema date:** {{ date }}
+{% endif %}
+{% if tag %}**Git tag:** `{{ tag }}`
+
+{% endif %}
 {% if used_by %}**Used by releases:** {{ used_by | join(", ") }}{% endif %}
 
 {# 1. Legacy Transition Warning (Standalone) #}
@@ -52,7 +55,17 @@ with the previous model version.
 
 {# 2. General Note #}
 {% if note %}
-\faInfoCircle\  {{ note | trim }}
+\begin{tcolorbox}[
+    colback=green!5,        % light green background
+    colframe=green!40!black,% darker green border
+    arc=1mm,                % rounded corners
+    boxrule=0.8pt,          % border thickness
+    left=2mm, right=2mm,    % inner padding
+    top=1mm, bottom=1mm
+]
+\faInfoCircle\ {{ note | trim }}
+\end{tcolorbox}
+
 {% endif %}
 
 {# 3. Changes Logic #}
