@@ -1,6 +1,11 @@
 # Changelog
 
-## [4.4.0] -2026-04-14
+## [4.4.1] - 2026-04-14
+### Fixed
+- Missing coded domains
+- Release all artefacts
+
+## [4.4.0] - 2026-04-14
 ### Added
 - Generation of the ER diagram
 
