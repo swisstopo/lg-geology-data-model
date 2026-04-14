@@ -148,7 +148,7 @@ markdown: $(MO_FILES) $(INPUTS)
 diagram: assets
 	rm -rf $(OUTPUT_DIR)/ER-GCOVER.*
 	# python create_gv.py
-	gcover schema diagram --output $(OUTPUT_DIR)/diagram.puml   --no-domains  --title "GeoCover 2D Schema $(RELEASE)"  $(EXPORT_DIR)/$(V2)/geocover-schema-sde.json
+	gcover schema diagram --output $(OUTPUT_DIR)/diagram.puml   --no-domains  --title "GeoCover 2D Schema $(RELEASE)"  $(EXPORT_DIR)/geocover-schema-sde.json
 
 diagram-pdf:
 	  java -jar /usr/share/plantuml/plantuml.jar  -tpdf $(OUTPUT_DIR)/diagram.puml
