@@ -236,21 +236,37 @@ class GeoDataConfig:
 
         def extract_coded_values(data):
             """
-            Extracts and flattens all codedValues from GC_ domains.
+            Extracts and flattens all codedValues from GC_ domains into a single
+            {str(code): label} dict.
 
-            Handles the geocover-schema-sde.json structure where "domains" is a list
-            of {"name", "type", "codedValues": [{"name": label, "code": int}, ...]}.
-
-            Returns:
-                dict: A flat {str(code): label} dictionary sorted by code.
+            Supports two ESRI schema variants:
+            - New: data["domains"] — list of {name, type,
+                   codedValues: [{name: label, code: int}, ...]}
+            - Old: data["coded_domain"] — dict keyed by domain name, each entry
+                   {type, codedValues: {code: label}}
             """
             flat = {}
+
+            # New structure: "domains" list
             for domain in data.get("domains", []):
                 if not domain.get("name", "").startswith("GC_"):
                     continue
                 if domain.get("type") not in ("codedValue", "CodedValue"):
                     continue
                 raw = domain.get("codedValues", [])
+                if isinstance(raw, list):
+                    for item in raw:
+                        flat[str(item["code"])] = item["name"]
+                else:
+                    flat.update({str(k): v for k, v in raw.items()})
+
+            # Old structure: "coded_domain" dict (fallback / legacy)
+            for domain_name, domain in data.get("coded_domain", {}).items():
+                if not domain_name.startswith("GC_"):
+                    continue
+                if domain.get("type") not in ("CodedValue", "codedValue"):
+                    continue
+                raw = domain.get("codedValues", {})
                 if isinstance(raw, list):
                     for item in raw:
                         flat[str(item["code"])] = item["name"]
@@ -308,6 +324,14 @@ class GeoDataConfig:
             with open(schema_file, "r") as f:
                 self._sde_schema = json.load(f)
             logger.info(f"Loaded SDE schema from {schema_file}")
+
+            dataset_type = self._sde_schema.get("datasetType")
+            if dataset_type != "DEWorkspace":
+                logger.warning(
+                    f"{schema_file.name}: expected ESRI DEWorkspace schema "
+                    f"(datasetType='DEWorkspace'), got {dataset_type!r}. "
+                    "Coded domains may not load correctly."
+                )
         return self._sde_schema
 
     @property

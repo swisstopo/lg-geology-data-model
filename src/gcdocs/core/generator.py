@@ -669,32 +669,42 @@ class EnhancedMarkdownGenerator:
         return self._translator
 
     def _get_coded_values(self, domain_name: str) -> Dict[str, str]:
-        """Get coded values from domain.
+        """Get coded values for a named domain.
 
-        Handles the current geocover-schema-sde.json structure where domains is a
-        list of objects: {"name": "GC_FOO_CD", "type": "codedValue",
-        "codedValues": [{"name": "label", "code": 123}, ...]}.
+        Supports two ESRI schema variants:
+        - New: schema["domains"] — list of {name, type,
+               codedValues: [{name: label, code: int}, ...]}
+        - Old: schema["coded_domain"] — dict keyed by domain name, each entry
+               {type, codedValues: {code: label}}
         """
         schema = self.config.sde_schema
 
-        # Current structure: top-level "domains" is a list
+        # New structure: "domains" list
         domain = None
         for d in schema.get("domains", []):
             if d.get("name") == domain_name and d.get("type") in ("codedValue", "CodedValue"):
                 domain = d
                 break
 
-        if domain is None:
-            logger.error(f"Coded domain {domain_name} data not found")
-            return {}
-
-        raw = domain.get("codedValues", [])
-        # Convert list of {name, code} objects → {str(code): name}
-        if isinstance(raw, list):
-            coded_values = {str(item["code"]): item["name"] for item in raw}
+        if domain is not None:
+            raw = domain.get("codedValues", [])
+            coded_values = (
+                {str(item["code"]): item["name"] for item in raw}
+                if isinstance(raw, list)
+                else dict(raw)
+            )
         else:
-            # Legacy dict format {code: label} — keep as-is
-            coded_values = dict(raw)
+            # Old structure: "coded_domain" dict
+            domain = schema.get("coded_domain", {}).get(domain_name)
+            if domain is None or domain.get("type") not in ("CodedValue", "codedValue"):
+                logger.error(f"Coded domain {domain_name} data not found")
+                return {}
+            raw = domain.get("codedValues", {})
+            coded_values = (
+                {str(item["code"]): item["name"] for item in raw}
+                if isinstance(raw, list)
+                else dict(raw)
+            )
 
         logger.debug(f"Domain: {domain_name} - {len(coded_values)}")
 
