@@ -36,7 +36,7 @@ jobs:
         uses: actions/checkout@v6
 
       - name: Cache apt packages
-        uses: actions/cache@v5.0.4
+        uses: actions/cache@v5.0.5
         with:
           path: /var/cache/apt/archives
           key: apt-texlive-${{ runner.os }}-v1
@@ -56,7 +56,7 @@ jobs:
             poppler-utils fonts-noto-core fonts-liberation librsvg2-bin
 
       - name: Cache tlmgr user packages
-        uses: actions/cache@v5.0.4
+        uses: actions/cache@v5.0.5
         with:
           path: ~/texmf
           key: tlmgr-2023-fontawesome5-v1
