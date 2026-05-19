@@ -54,6 +54,18 @@ LAST_TWO := $(shell ls -1 $(SOURCES_DIR) | grep -E '$(DATE_PATTERN)' | sort | ta
 V1 ?= $(word 1, $(LAST_TWO))
 V2 ?= $(word 2, $(LAST_TWO))
 
+# The Generic Function
+# $(1) = Variable Name (for display)
+# $(2) = Path to check
+define check_file
+        @printf "  %-28s %-50s " "$(1):" "$(2)"
+        @if [ -e "$(2)" ]; then \
+                printf "$(GREEN)[FOUND]$(RESET)\n"; \
+        else \
+                printf "$(RED)[NOT FOUND]$(RESET)\n"; \
+        fi
+endef
+
 
 # $(info clean pdfs = $(CLEAN_PDFS))
 
@@ -103,6 +115,9 @@ help:
 	@echo "  V1=$(V1)"
 	@echo "  V2=$(V2)"
 	@echo "  RELEASE=$(RELEASE)"
+	@echo "  SOURCES=$(SOURCES_DIR)/$(V2)"
+	$(call check_file,geocover-schema-sde.json,$(EXPORT_DIR)/geocover-schema-sde.json)
+	$(call check_file,Geol_Mapping_Unit.json,$(EXPORT_DIR)/Geol_Mapping_Unit.json)
 
 .PHONY: assets
 assets:
