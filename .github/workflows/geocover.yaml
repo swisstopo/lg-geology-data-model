@@ -33,7 +33,7 @@ jobs:
 
       - name: conda install
         shell: bash -el {0}
-        run: $CONDA/bin/conda install conda-build anaconda-client -y
+        run: $CONDA/bin/conda install -n base conda-build anaconda-client -y
 
       - name: Pip install
         shell: bash -el {0}
