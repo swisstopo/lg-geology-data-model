@@ -140,9 +140,16 @@ DATA_ROWS = 1000  # number of data rows per sheet
 # ---------------------------------------------------------------------------
 
 def load_datamodel(datamodel_path: Path) -> tuple[Path, dict]:
-    """Parse datamodel.yaml; return (sources_dir, {class_name: [cd_attr_dicts]})."""
+    """Parse datamodel.yaml (merged with release.yaml if present); return (sources_dir, {class_name: [cd_attr_dicts]})."""
     with open(datamodel_path, encoding="utf-8") as f:
         datamodel = yaml.safe_load(f)
+
+    release_path = datamodel_path.parent / "release.yaml"
+    if release_path.exists():
+        with open(release_path, encoding="utf-8") as f:
+            release_config = yaml.safe_load(f)
+        if "model" in release_config:
+            datamodel.setdefault("model", {}).update(release_config["model"])
 
     model = datamodel.get("model", {})
     sources_dir = Path(model["sources_dir"])
@@ -187,27 +194,59 @@ def load_json(sources_dir: Path, filename: str, *, is_list: bool = False):
 
 
 def load_gcoverp(sources_dir: Path) -> tuple[dict, dict]:
-    """Load coded domains and subtypes from gcoverp_export_simple.json."""
-    gcoverp_file = sources_dir / "gcoverp_export_simple.json"
+    """Load coded domains and subtypes.
+
+    Tries gcover-schema-simple.json first (new format, coded_domains key with
+    coded_values list), then falls back to gcoverp_export_simple.json (old format,
+    coded_domain key with codedValues dict).
+    """
     coded_domains: dict = {}
     subtypes: dict = {}
 
-    try:
-        with open(gcoverp_file, encoding="utf-8") as f:
-            gcoverp_data = json.load(f)
+    new_file = sources_dir / "gcover-schema-simple.json"
+    old_file = sources_dir / "gcoverp_export_simple.json"
 
-        subtypes = gcoverp_data.get("subtypes", {})
-        console.print(f"   [green]✓[/] subtypes: {len(subtypes)} entries")
+    if new_file.exists():
+        filename = new_file.name
+        try:
+            with open(new_file, encoding="utf-8") as f:
+                data = json.load(f)
 
-        for domain_name, domain_data in gcoverp_data.get("coded_domain", {}).items():
-            if isinstance(domain_data, dict) and "codedValues" in domain_data:
-                coded_domains[domain_name] = domain_data["codedValues"]
-        console.print(f"   [green]✓[/] coded domains: {len(coded_domains)} domains")
+            # subtypes live in subtypes_dict.json; new schema groups them by FC
+            subtypes_raw = data.get("subtypes", {})
+            for fc_data in subtypes_raw.values():
+                for entry in fc_data.get("subtypes", []):
+                    subtypes[str(entry["code"])] = entry["name"]
+            console.print(f"   [green]✓[/] subtypes ({filename}): {len(subtypes)} entries")
 
-    except FileNotFoundError:
-        console.print(f"   [yellow]⚠[/]  gcoverp_export_simple.json: not found")
-    except Exception as e:
-        console.print(f"   [red]✗[/]  gcoverp_export_simple.json: {e}")
+            for domain_name, domain_data in data.get("coded_domains", {}).items():
+                cv = domain_data.get("coded_values", [])
+                if cv:
+                    coded_domains[domain_name] = {str(e["code"]): e["name"] for e in cv}
+            console.print(f"   [green]✓[/] coded domains ({filename}): {len(coded_domains)} domains")
+
+        except Exception as e:
+            console.print(f"   [red]✗[/]  {filename}: {e}")
+
+    elif old_file.exists():
+        filename = old_file.name
+        try:
+            with open(old_file, encoding="utf-8") as f:
+                data = json.load(f)
+
+            subtypes = data.get("subtypes", {})
+            console.print(f"   [green]✓[/] subtypes ({filename}): {len(subtypes)} entries")
+
+            for domain_name, domain_data in data.get("coded_domain", {}).items():
+                if isinstance(domain_data, dict) and "codedValues" in domain_data:
+                    coded_domains[domain_name] = domain_data["codedValues"]
+            console.print(f"   [green]✓[/] coded domains ({filename}): {len(coded_domains)} domains")
+
+        except Exception as e:
+            console.print(f"   [red]✗[/]  {filename}: {e}")
+
+    else:
+        console.print("   [yellow]⚠[/]  neither gcover-schema-simple.json nor gcoverp_export_simple.json found")
 
     return coded_domains, subtypes
 
@@ -317,7 +356,8 @@ def build_bedrock_sheet(wb: Workbook, gmu_last_row: int, tecto_last_row: int) ->
 
 
 def build_unco_sheet(wb: Workbook, litstrat_unco_last_row: int,
-                     litho_last_row: int, chrono_last_row: int) -> None:
+                     litho_last_row: int, chrono_last_row: int,
+                     cd_refs: dict | None = None) -> None:
     ws = wb.create_sheet("Unconsolidated_Deposits_PLG", 1)
     headers = [
         "User_Code",
@@ -325,13 +365,14 @@ def build_unco_sheet(wb: Workbook, litstrat_unco_last_row: int,
         "LITHO_Display", "LITHO",
         "CHRONO_TOP_Display", "CHRONO_TOP",
         "CHRONO_BASE_Display", "CHRONO_BASE",
+        "MORPHOLO_Display", "MORPHOLO",
     ]
     for i, h in enumerate(headers, 1):
         _set_header(ws, i, h)
-    for col in ["C", "E", "G", "I"]:
+    for col in ["C", "E", "G", "I", "K"]:
         ws.column_dimensions[col].hidden = True
-    for i in range(1, 10):
-        ws.column_dimensions[_col(i)].width = 15 if i in (1, 3, 5, 7, 9) else 50
+    for i in range(1, 12):
+        ws.column_dimensions[_col(i)].width = 15 if i in (1, 3, 5, 7, 9, 11) else 50
 
     add_dropdown(ws, f"B2:B{DATA_ROWS}", "Ref_LithoStratUnco",
                  f"C$2:C${litstrat_unco_last_row}", "Sélectionnez une unité", "LITSTRAT")
@@ -342,13 +383,20 @@ def build_unco_sheet(wb: Workbook, litstrat_unco_last_row: int,
     add_dropdown(ws, f"H2:H{DATA_ROWS}", "Ref_Chrono",
                  f"C$2:C${chrono_last_row}", "Chronostratigraphie (base)", "CHRONO_BASE")
 
+    morpholo_domain = "GC_UN_DEP_RUNC_MORPHOLO_CD"
+    if cd_refs and morpholo_domain in cd_refs:
+        ref_info = cd_refs[morpholo_domain]
+        add_dropdown(ws, f"J2:J{DATA_ROWS}", ref_info["sheet_name"],
+                     f"C$2:C${ref_info['last_row']}", "Morphologie de l'unité de roche meuble", "MORPHOLO")
+
     for row in range(2, DATA_ROWS + 1):
-        for col in ["A", "B", "D", "F", "H"]:
+        for col in ["A", "B", "D", "F", "H", "J"]:
             ws[f"{col}{row}"].fill = EDITABLE_FILL
         ws[f"C{row}"] = _extract_code_formula("B", row)
         ws[f"E{row}"] = _extract_code_formula("D", row)
         ws[f"G{row}"] = _extract_code_formula("F", row)
         ws[f"I{row}"] = _extract_code_formula("H", row)
+        ws[f"K{row}"] = _extract_code_formula("J", row)
 
     for i, code in enumerate(["UNCO_001", "UNCO_002"], 2):
         ws[f"A{i}"] = code
@@ -534,7 +582,7 @@ def main(datamodel: Path, output: Path, sources_dir: Path | None) -> None:
     # Main sheets: Bedrock + Unconsolidated
     console.print("\n[bold]Building main sheets…")
     build_bedrock_sheet(wb, gmu_last_row, tecto_last_row)
-    build_unco_sheet(wb, litstrat_unco_last_row, litho_last_row, chrono_last_row)
+    build_unco_sheet(wb, litstrat_unco_last_row, litho_last_row, chrono_last_row, cd_refs)
     console.print("   [green]✓[/] Bedrock_PLG, Unconsolidated_Deposits_PLG")
 
     # Per-class sheets
