@@ -5,7 +5,13 @@ FORMATS = pdf odt docx html
 # SOURCES_DIR: base dir containing all timestamped release subdirs (e.g. sources/)
 SOURCES_DIR ?= sources
 # EXPORT_DIR: the specific release dir for the current version (e.g. sources/2026-04-14)
-EXPORT_DIR ?= $(shell python -c "import yaml; print(yaml.safe_load(open('release.yaml'))['model']['sources_dir'])")
+# NOTE: computed with := (not ?=) inside the ifeq guard below so the $(shell ...) call
+# runs exactly once per make invocation instead of once per textual reference — this
+# variable is expanded multiple times by the per-language $(eval $(call build_rule,...))
+# below, and a plain "?=" (recursively-expanded) re-runs the shell command every time.
+ifeq ($(origin EXPORT_DIR), undefined)
+EXPORT_DIR := $(shell python -c "import yaml; print(yaml.safe_load(open('release.yaml'))['model']['sources_dir'])")
+endif
 INPUT_DIR ?= inputs
 OUTPUT_DIR ?= outputs
 
@@ -20,7 +26,11 @@ RESET  := \033[0m
 
 
 PANDOC := $(shell which pandoc)
-GCDOCS ?= $(shell which gcdocs 2>/dev/null || find $(HOME)/miniconda3 $(HOME)/anaconda3 -name gcdocs -type f 2>/dev/null | head -1)
+# Same reasoning as EXPORT_DIR above: compute once via := inside the guard, not on
+# every reference. The find-over-miniconda3 fallback is especially costly to repeat.
+ifeq ($(origin GCDOCS), undefined)
+GCDOCS := $(shell which gcdocs 2>/dev/null || find $(HOME)/miniconda3 $(HOME)/anaconda3 -name gcdocs -type f 2>/dev/null | head -1)
+endif
 GCOVER=gcover
 RM=/bin/rm
 CP=/usr/bin/cp
@@ -36,10 +46,10 @@ PUML_PDF          := $(PUML_FILE:.puml=.pdf)
 # Define targets for each language and format
 OUTPUTS = $(foreach lang,$(LANGUAGES),$(foreach fmt,$(FORMATS),$(OUTPUT_DIR)/$(lang)/datamodel.$(fmt)))
 INPUTS = $(foreach lang,$(LANGUAGES),$(foreach fmt,$(FORMATS),$(INPUT_DIR)/$(lang)/datamodel.md))
-CLEAN_PDFS = $(shell find outputs -name "*.pdf" -not -name "ER-GCOVER.pdf")
+CLEAN_PDFS := $(shell find outputs -name "*.pdf" -not -name "ER-GCOVER.pdf")
 LOGO := Logo_RGB_farbig_positiv.png
 
-RELEASE=$(shell python -c "import yaml; print(yaml.safe_load(open('release.yaml'))['model']['revision'])")
+RELEASE := $(shell python -c "import yaml; print(yaml.safe_load(open('release.yaml'))['model']['revision'])")
 
 
 # regex: 4 digits, dash, 2 digits, dash, 2 digits
