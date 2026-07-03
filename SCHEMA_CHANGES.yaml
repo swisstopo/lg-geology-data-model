@@ -10,6 +10,30 @@ schema_versions:
     git_tag: "v4.5.0"
     date: "2026-07-02"
     note: ""
+    changes:
+      - class: "Bedrock_PLG"
+        attribute: "Correlation, Chrono, Litho, Litstrat_Formation_Bank, Geol_Mapping_Unit, Tecto"
+        type: "hierarchy_changed"
+        description_de: >
+          Hinzugefügte, gelöschte und modifizierte Listenwerte in den Bedrock-Attributen
+          (Geol_Mapping_Unit: +79/-1/~7, Tecto: +8/~1, Chrono: +6, Litstrat_Formation_Bank: +12/-1/~1,
+          Litho: +5, Correlation: +1)
+        description_fr: >
+          Objets de listes de valeurs ajoutés, supprimés et modifiés dans les attributs Bedrock
+          (Geol_Mapping_Unit : +79/-1/~7, Tecto : +8/~1, Chrono : +6, Litstrat_Formation_Bank : +12/-1/~1,
+          Litho : +5, Correlation : +1)
+        motivation: New categories for importing new mapsheets
+
+      - class: "Unco_Deposits_PLG"
+        attribute: "Litho_Unco, Litstrat_Unco"
+        type: "hierarchy_changed"
+        description_de: >
+          Umfangreiche Erweiterung der lithostratigraphischen Liste für Lockergesteine
+          (Litstrat_Unco: +251/~1) und der Lithologie (Litho_Unco: +5)
+        description_fr: >
+          Extension importante de la liste lithostratigraphique des dépôts meubles
+          (Litstrat_Unco : +251/~1) et de la lithologie (Litho_Unco : +5)
+        motivation: ~ # TODO: domain expert to fill in — see outputs/2026-04-14_2026-07-02.md for the full value-level diff
 
   - version: "4.4.1"
     git_tag: "v4.4.1"

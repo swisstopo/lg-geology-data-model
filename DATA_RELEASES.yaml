@@ -20,18 +20,18 @@ releases:
     schema_export_date: "2026-04-14"
     data_export_date: "2026-05-18"
     new_data:
-      - { name: "Muotatal",    sheet: 127 },
-      - { name: "Einsiedeln",  sheet: 129 },
-      - { name: "Urseren",     sheet: 133 },
-      - { name: "Meiental",    sheet: 146 },
-      - { name: "Amsteg",      sheet: 160 },
-      - { name: "Elm",         sheet: 173 },
-      - { name: "Vättis",      sheet: 178 },
-      - { name: "Beckenried",  sheet: 1171 },
-      - { name: "Schiers",     sheet: 1176 },
-      - { name: "Sörenberg",   sheet: 1189 },
-      - { name: "Biasca",      sheet: 1273 },
-      - { name: "Val Bregaglia", sheet: 1276 },
+      - { name: "Muotatal",    sheet: 127 }
+      - { name: "Einsiedeln",  sheet: 129 }
+      - { name: "Urseren",     sheet: 133 }
+      - { name: "Meiental",    sheet: 146 }
+      - { name: "Amsteg",      sheet: 160 }
+      - { name: "Elm",         sheet: 173 }
+      - { name: "Vättis",      sheet: 178 }
+      - { name: "Beckenried",  sheet: 1171 }
+      - { name: "Schiers",     sheet: 1176 }
+      - { name: "Sörenberg",   sheet: 1189 }
+      - { name: "Biasca",      sheet: 1273 }
+      - { name: "Val Bregaglia", sheet: 1276 }
 
     release_notes: >
       Mapsheet Campodolcion merged with Val Bregaglia
