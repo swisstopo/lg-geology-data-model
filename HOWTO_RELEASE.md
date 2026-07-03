@@ -119,11 +119,36 @@ GeolCodeText_Trad_230317.csv
 
 ### 1.8 Generate cover images
 
-Change the PDF cover image with every big release (easier to identify each release)
+Change the figure image with every big release (easier to identify each release — it's the
+map extract shown on page 1 of the doc, not an actual PDF cover page).
 
 ```bash
 python scripts/generate_cover_image.py
+# or via make:
+make cover-image
 ```
+
+This fetches a random map extract from the GeoCover WMS (`https://wms.dubious.cloud`) and
+writes a **timestamped** file to `assets/geocover_<YYYYMMDD-HHMMSS>.png` — it never touches
+`assets/geocover.png` directly. Re-run it a few times if the random location looks bad (e.g.
+mostly water/lake or an empty map sheet).
+
+To actually use it in the docs:
+
+1. Open the timestamped file and pick the one you like.
+2. Overwrite the committed asset with it:
+   ```bash
+   cp assets/geocover_<YYYYMMDD-HHMMSS>.png assets/geocover.png
+   ```
+3. Delete the leftover timestamped file(s) — only `assets/geocover.png` is tracked/referenced.
+4. Commit `assets/geocover.png` in Step 6 along with the other release files.
+
+`assets/geocover.png` is the file actually wired into the build: it's referenced by filename
+in `src/gcdocs/templates/model_markdown.j2` (`![...](geocover.png ...)`), and the `assets`
+Makefile target (a dependency of `make pdfs`/`make all`) copies it into `outputs/{de,fr,it,en}/`
+(and the repo root) so pandoc/xelatex can find it next to the generated Markdown at build time.
+Nothing regenerates `assets/geocover.png` automatically — if you skip step 2 above, the release
+ships with the previous release's image.
 
 ---
 
@@ -154,12 +179,42 @@ releases:
     publication_date: "2026-03-30"
     schema_version: "4.3.1"          # must match revision in release.yaml
     schema_export_date: "2026-02-16"
+    data_export_date: "2026-03-01"   # ← date the geodata was extracted from the DB
     new_data:
       - { name: "Winterthur", sheet: 140 }
       - { name: "Nesslau",    sheet: 141 }
       # ... all updated map sheets
     release_notes: ~                  # or a short note if relevant
 ```
+
+#### Finding the `new_data` list (updated map sheets)
+
+`GC_Sources_PA.xlsx` (under `delivery/<RELEASE>/Excels/` in the derivations data tree)
+tracks one row per map sheet, including a `Release` column that tags the release each row
+was last touched in. Use it — **do not** rely on a plain added/removed row diff, since sheets
+get renamed or merged between releases and that shows up as spurious adds/removes.
+
+```bash
+conda activate GEO13
+cd <path-to-lg-gcover>
+python scripts/diff_xlsx.py \
+  delivery/<NEW-RELEASE>/Excels/GC_Sources_PA.xlsx \
+  delivery/<PREV-RELEASE>/Excels/GC_Sources_PA.xlsx \
+  --no-unchanged
+```
+
+Then:
+
+1. In the **new** file, filter rows where `Release == "<NEW-RELEASE>"` — these are the
+   candidate updated sheets (`MSH_MAP_TITLE` = name, `MSH_MAP_NBR` = sheet number).
+2. Cross-check each candidate against the `diff_xlsx.py` output. A row that shows as both
+   "removed" (old name) and "added"/`Release`-tagged (new name) with the **same sheet
+   number** is a **rename**, not a new sheet — exclude it from `new_data`.
+3. For sheets that disappear entirely (removed, no matching new row), check with the data
+   owner whether they were merged into a neighboring sheet — note it in `release_notes`
+   rather than silently dropping it (e.g. R17: `Campodolcino` merged into `Val Bregaglia`).
+
+This is how the R17 `new_data` list (12 sheets) and its `release_notes` entry were derived.
 
 ### 2.3 `SCHEMA_CHANGES.yaml` — append only if model version is `x.y.0`
 
