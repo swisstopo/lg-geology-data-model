@@ -2,20 +2,45 @@
 # Publication log for GeoCover geodata releases.
 # Append new entries at the top. Never modify past entries.
 # schema_version references SCHEMA_CHANGES.yaml → schema_versions[].version
+# data_export_date: when the geodata itself was extracted from the production DB
+#   (may differ from schema_export_date, which tracks the SDE schema export)
 
 releases:
-
-  - release: "R17"
+  - release: "R18"
     publication_date: ~
     schema_version: ~
     schema_export_date: ~
-    new_data: []
+    new_data: [ ]
     release_notes: ~
+
+
+  - release: "R17"
+    publication_date: "2026-06-25"
+    schema_version: 4.4.1
+    schema_export_date: "2026-04-14"
+    data_export_date: "2026-05-18"
+    new_data:
+      - { name: "Muotatal",    sheet: 127 },
+      - { name: "Einsiedeln",  sheet: 129 },
+      - { name: "Urseren",     sheet: 133 },
+      - { name: "Meiental",    sheet: 146 },
+      - { name: "Amsteg",      sheet: 160 },
+      - { name: "Elm",         sheet: 173 },
+      - { name: "Vättis",      sheet: 178 },
+      - { name: "Beckenried",  sheet: 1171 },
+      - { name: "Schiers",     sheet: 1176 },
+      - { name: "Sörenberg",   sheet: 1189 },
+      - { name: "Biasca",      sheet: 1273 },
+      - { name: "Val Bregaglia", sheet: 1276 },
+
+    release_notes: >
+      Mapsheet Campodolcion merged with Val Bregaglia
 
   - release: "R16"
     publication_date: "2026-03-30"
     schema_version: "4.3.1"
     schema_export_date: "2026-02-16"
+    data_export_date: ~
     new_data:
       - { name: "Dent-de-Morcles", sheet: 58   }
       - { name: "Frick-Laufenburg", sheet: 110  }
@@ -31,6 +56,7 @@ releases:
     publication_date: "2025-12-01"
     schema_version: "4.2.0"
     schema_export_date: "2025-10-21"
+    data_export_date: ~
     new_data:
       - { name: "Bellelay"       }
       - { name: "Chasseral"      }
@@ -43,6 +69,7 @@ releases:
     publication_date: "2025-08-27"
     schema_version: "4.1.0"
     schema_export_date: "2025-08-26"
+    data_export_date: ~
     new_data:
       - { name: "Guggisberg" }
       - { name: "Boltigen"   }
@@ -60,6 +87,7 @@ releases:
     publication_date: "2024-09-10"
     schema_version: "4.0.0"
     schema_export_date: "2024-12-31"
+    data_export_date: ~
     new_data:
       - { name: "Vättis (GA25)"              }
       - { name: "corrections région Monthey" }
@@ -69,5 +97,6 @@ releases:
     publication_date: "2024-04-30"
     schema_version: "3.0"
     schema_export_date: ~
+    data_export_date: ~
     new_data: []
     release_notes: ~
