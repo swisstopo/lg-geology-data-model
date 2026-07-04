@@ -1,39 +1,88 @@
 # HOWTO — GeoCover Datamodel Release
 
 This document describes the full procedure for publishing a new GeoCover 2D datamodel release.
-It covers both a **schema release** (model version bump, e.g. `4.1 → 4.2`) and a **data-only release**
-(new map sheets, same schema, e.g. `R14 → R15`).
+
+## Two independent questions
+
+A "release" here really means: did you update `release.yaml` and push. What else you touch depends
+on two independent yes/no questions — you can answer yes to either, both, or neither:
+
+| Did this change... | If yes, you need | Skip if no |
+|---|---|---|
+| the **model structure** (attributes, coded domain values, subtypes)? | a `x.y.0` version bump + new entry in `SCHEMA_CHANGES.yaml` | `SCHEMA_CHANGES.yaml` |
+| **published data** (new/updated map sheets)? | a new `R<n>` entry in `DATA_RELEASES.yaml` | `DATA_RELEASES.yaml` |
+
+Real examples from this repo's history:
+- **`R17`** — data release only. New map sheets, but it reuses the already-published `4.4.1`
+  schema (a patch). No new `SCHEMA_CHANGES.yaml` entry.
+- **`4.4.0`** — schema release only. New categories for Ticino (Grono/Hinterrhein) landed in
+  the model, but no new `R`-numbered map-sheet publication happened alongside it.
+- **`4.3.1`–`4.3.3`** — neither. Pure code/tooling/doc fixes (`x.y.z`, `z>0`), logged only in
+  `CHANGELOG.md`.
+
+`release.yaml` (`model.revision` / `model.revision_date` / `model.sources_dir`) is updated on
+**every** release regardless — it just points the build at whichever schema snapshot the docs
+should be generated from.
 
 > **Versioning rule:**
 > - `x.y.0` — schema changed → entry required in `SCHEMA_CHANGES.yaml`
-> - `x.y.z` — code/tooling fixes only → entry in `CHANGELOG.md` only, no schema entry
+> - `x.y.z` (`z > 0`) — code/tooling fixes only → entry in `CHANGELOG.md` only, no schema entry
+
+---
+
+## What's committed vs. what's generated
+
+This trips people up, so it's worth stating explicitly. `outputs/`, `inputs/`, and the repo-root
+copies of `SCHEMA_CHANGES.md`/`DATA_RELEASES.md` are all **gitignored**. CI rebuilds all of it
+fresh on every push and uploads the results as GitHub Release assets — none of it is ever
+committed. Don't `git add` anything under `outputs/`/`inputs/`.
+
+| Path | Committed? | What it is |
+|---|---|---|
+| `sources/<DATE>/*.json` | ✅ | Raw SDE export for one dated snapshot |
+| `release.yaml` | ✅ | Build config — which `sources/<DATE>/` and `model.revision` to build from |
+| `DATA_RELEASES.yaml` | ✅ | Source of truth for the data-release log |
+| `SCHEMA_CHANGES.yaml` | ✅ | Source of truth for the schema-change log |
+| `CHANGELOG.md` | ✅ | Human-readable changelog |
+| `assets/geocover.png` | ✅ | Cover figure embedded in the PDF |
+| `inputs/`, `outputs/` | ❌ (gitignored) | Generated Markdown/PDF/DOCX/HTML — built by `make`, uploaded by CI as release assets |
+| `SCHEMA_CHANGES.md`, `DATA_RELEASES.md` (repo root) | ❌ (gitignored) | Optional local preview copies only — see note below |
+
+`outputs/SCHEMA_CHANGES.md` / `outputs/DATA_RELEASES.md` (produced by `make schema-changes-md` /
+`make data-releases-md`) are what actually feed the PDF build (`make schema-changes-pdf` /
+`make data-releases-pdf`). A root-level `SCHEMA_CHANGES.md` only exists if someone ran the
+generator manually with `--output SCHEMA_CHANGES.md`; it's a convenience preview, not part of
+the required flow, and isn't committed.
 
 ---
 
 ## Overview
 
 ```
-Step 1  Create exports directory and extract data from SDE    (Windows / ArcGIS Pro)
-Step 2  Update release metadata files                          (any machine)
-Step 3  Edit documentation files                               (any machine)
-Step 4  Generate PDFs, diff reports, release notes             (Linux / CI)
-Step 5  Validate output                                        (any machine)
-Step 6  Open PR → merge to master → GitHub Actions publishes   (GitHub)
+Step 1  Export data from SDE                                    (Windows / ArcGIS Pro)
+Step 2  Update release metadata files                            (any machine)
+Step 3  Edit documentation files                                 (any machine)
+Step 4  Generate PDFs, diff reports, release notes                (Linux / CI)
+Step 5  Validate output                                          (any machine)
+Step 6  Open PR → merge to master → GitHub Actions publishes     (GitHub)
 ```
 
 ---
 
 ## Step 1 — Export data from SDE (Windows, requires `arcpy`)
 
-All export commands run on Windows with ArcGIS Pro. The target directory uses the SDE export date,
-not the publication date.
+Only needed if you're producing a **new dated snapshot** — i.e. a schema release, or a data
+release with new map sheets. A pure patch release (`x.y.z`, tooling-only) usually reuses the
+existing `sources/<DATE>/` and skips this whole step.
+
+The target directory is named after the **SDE export date**, not the publication date.
 
 ### 1.1 Create the export directory
 
 ```bash
-mkdir -p exports/<RELEASE-DIR>
+mkdir -p sources/<RELEASE-DIR>
 # Example:
-mkdir -p exports/2026-02-16
+mkdir -p sources/2026-07-02
 ```
 
 ### 1.2 Install `gcover` (if not already installed)
@@ -46,39 +95,48 @@ conda install swisstopo::gcover
 pip install gcover
 ```
 
-### 1.3 Extract the full SDE schema
+### 1.3 Extract the full SDE schema — *requires arcpy/SDE connection*
 
 ```bash
 gcover schema extract \
   --filter-prefix "GC_" \
-  --output exports/<RELEASE-DIR>/geocover-schema-sde.json \
+  --output sources/<RELEASE-DIR>/geocover-schema-sde.json \
   "D:\connections\GCOVERP@osa.sde"
 ```
 
-### 1.4 Transform to simplified schema
+Everything after this point is a pure JSON→JSON transform — it doesn't need arcpy or an SDE
+connection, so it can run on Linux (or the same Windows box) once
+`sources/<RELEASE-DIR>/geocover-schema-sde.json` exists.
+
+### 1.4 Generate the simplified schema JSON — *`make` equivalent*
+
+This is the file CI copies into the GitHub Release as `gcover-schema-simple.json` — a
+convenience export for third parties who want the schema without the raw ArcSDE payload.
 
 ```bash
-gcover schema transform-simple \
-  exports/<RELEASE-DIR>/geocover-schema-sde.json \
-  -o exports/<RELEASE-DIR>/gcoverp_export_simple.json
+EXPORT_DIR=sources/<RELEASE-DIR> make schema-simple
 ```
 
-> **Note:** Check whether `gcoverp_export_simple.json` is still required by the current pipeline
-> or superseded by the coded domains extraction below.
+(Equivalent to `gcover schema transform --pretty --show-summary --output
+sources/<RELEASE-DIR>/gcover-schema-simple.json sources/<RELEASE-DIR>/geocover-schema-sde.json`.)
 
-### 1.5 Export annex tables
+> Don't confuse this with `gcover schema transform-simple` (a different subcommand, different
+> output format/filename `gcoverp_export_simple.json`) — that one is legacy and nothing in this
+> pipeline reads it anymore.
+
+### 1.5 Export annex tables — *requires arcpy/SDE connection*
 
 ```bash
 gcover schema export-tables \
   -w "H:/connections/GCOVERP@osa.sde" \
-  -o exports/<RELEASE-DIR> \
+  -o sources/<RELEASE-DIR> \
   --all-tables
 ```
 
 Generates:
 
 ```
-exports/<RELEASE-DIR>/
+sources/<RELEASE-DIR>/
   Geol_Mapping_Unit_Att.json
   Geol_Mapping_Unit.json
   Correlation.json
@@ -88,34 +146,27 @@ exports/<RELEASE-DIR>/
   System.json
 ```
 
-### 1.6 Extract coded domains and subtypes
+### 1.6 Extract coded domains and subtypes — *usually automatic, `make` equivalent if needed*
+
+You normally **don't need to run this manually**: `coded_domains.json` and `subtypes_dict.json`
+are prerequisites of the Markdown-generation rule, so `make mds`/`make pdfs`/`make all` in
+Step 4 generates them automatically if missing. Run it by hand only to inspect the files early
+or debug a generation failure:
 
 ```bash
-# Combined coded domains (replaces all_codes_dict.json)
-gcdocs extract \
-  --mode combined \
-  -f json \
-  -o exports/<RELEASE-DIR>/coded_domains.json \
-  exports/<RELEASE-DIR>/geocover-schema-sde.json
-
-# Subtypes
-gcdocs extract \
-  --mode subtypes \
-  -f json \
-  -o exports/<RELEASE-DIR>/subtypes_dict.json \
-  exports/<RELEASE-DIR>/geocover-schema-sde.json
+EXPORT_DIR=sources/<RELEASE-DIR> make extract-domains    # → coded_domains.json
+EXPORT_DIR=sources/<RELEASE-DIR> make extract-subtypes   # → subtypes_dict.json
 ```
 
 ### 1.7 Add static supporting files
 
-Copy the following files into `exports/<RELEASE-DIR>/` (these will be automated in a future release):
+Copy the following files into `sources/<RELEASE-DIR>/` (these will be automated in a future
+release):
 
 ```
 geolcode_chrono.csv
 GeolCodeText_Trad_230317.csv
 ```
-
-> `all_codes_dict.json` — generate with `gcdocs extract --mode combined` (see 1.6 above).
 
 ### 1.8 Generate cover images
 
@@ -123,15 +174,16 @@ Change the figure image with every big release (easier to identify each release 
 map extract shown on page 1 of the doc, not an actual PDF cover page).
 
 ```bash
-python scripts/generate_cover_image.py
-# or via make:
 make cover-image
+# equivalently: python scripts/generate_cover_image.py
+# or with a fixed extent instead of a random one:
+python scripts/generate_cover_image.py --bbox MINX,MINY,MAXX,MAXY
 ```
 
-This fetches a random map extract from the GeoCover WMS (`https://wms.dubious.cloud`) and
-writes a **timestamped** file to `assets/geocover_<YYYYMMDD-HHMMSS>.png` — it never touches
-`assets/geocover.png` directly. Re-run it a few times if the random location looks bad (e.g.
-mostly water/lake or an empty map sheet).
+This fetches a map extract from the GeoCover WMS and writes a **timestamped** file to
+`assets/geocover_<YYYYMMDD-HHMMSS>.png` — it never touches `assets/geocover.png` directly.
+Re-run it a few times if the random location looks bad (e.g. mostly water/lake or an empty
+map sheet).
 
 To actually use it in the docs:
 
@@ -146,9 +198,9 @@ To actually use it in the docs:
 `assets/geocover.png` is the file actually wired into the build: it's referenced by filename
 in `src/gcdocs/templates/model_markdown.j2` (`![...](geocover.png ...)`), and the `assets`
 Makefile target (a dependency of `make pdfs`/`make all`) copies it into `outputs/{de,fr,it,en}/`
-(and the repo root) so pandoc/xelatex can find it next to the generated Markdown at build time.
-Nothing regenerates `assets/geocover.png` automatically — if you skip step 2 above, the release
-ships with the previous release's image.
+so pandoc/xelatex can find it next to the generated Markdown at build time. Nothing regenerates
+`assets/geocover.png` automatically — if you skip step 2 above, the release ships with the
+previous release's image.
 
 ---
 
@@ -156,36 +208,40 @@ ships with the previous release's image.
 
 These files are the source of truth for the release. Edit them in order.
 
-### 2.1 `release.yaml` — current build config
-
-Update the three fields that change with every release:
+### 2.1 `release.yaml` — always, every release
 
 ```yaml
 model:
-  revision: '4.3.1'            # ← bump according to versioning rule above
-  revision_date: "2026-02-16"  # ← SDE export date (= exports/<RELEASE-DIR>)
-  sources_dir: "exports/2026-02-16"
-
-geodata:
-  release: "R16"               # ← geodata release identifier
-  publication_date: "2026-03-30"
+  revision: '4.5.0'            # ← bump according to the versioning rule above
+  revision_date: "2026-07-02"  # ← SDE export date (= sources/<RELEASE-DIR>)
+  sources_dir: "sources/2026-07-02"
 ```
 
-### 2.2 `DATA_RELEASES.yaml` — append a new entry at the top
+That's the entire file — it no longer has a `geodata:` section (removed; `DATA_RELEASES.yaml`
+now owns the `release`/`publication_date` fields per-entry, see below).
+
+### 2.2 `DATA_RELEASES.yaml` — only for a data release (new/updated map sheets)
+
+Skip this file entirely if you're not publishing new map sheets. Otherwise, append a new entry
+at the top:
 
 ```yaml
 releases:
-  - release: "R16"
-    publication_date: "2026-03-30"
-    schema_version: "4.3.1"          # must match revision in release.yaml
-    schema_export_date: "2026-02-16"
-    data_export_date: "2026-03-01"   # ← date the geodata was extracted from the DB
+  - release: "R17"
+    publication_date: "2026-06-25"
+    schema_version: "4.4.1"           # whatever schema_version applies now — may be pre-existing
+    schema_export_date: "2026-04-14"  # SDE schema export date (from SCHEMA_CHANGES.yaml)
+    data_export_date: "2026-05-18"    # ← date the geodata itself was extracted from the DB
     new_data:
       - { name: "Winterthur", sheet: 140 }
       - { name: "Nesslau",    sheet: 141 }
       # ... all updated map sheets
     release_notes: ~                  # or a short note if relevant
 ```
+
+`schema_export_date` and `data_export_date` are often different dates — the former is when the
+SDE *schema* was exported, the latter is when the *geodata itself* was pulled from the
+production DB for this specific release.
 
 #### Finding the `new_data` list (updated map sheets)
 
@@ -216,29 +272,32 @@ Then:
 
 This is how the R17 `new_data` list (12 sheets) and its `release_notes` entry were derived.
 
-### 2.3 `SCHEMA_CHANGES.yaml` — append only if model version is `x.y.0`
+### 2.3 `SCHEMA_CHANGES.yaml` — only for a schema release (`x.y.0`)
 
-If this is a patch release (`x.y.z`), skip this file entirely.
-
-If schema changed, prepend a new entry:
+Skip this file entirely if the model structure didn't change. Otherwise, prepend a new entry:
 
 ```yaml
 schema_versions:
-  - version: "4.3.0"          # must match revision in release.yaml
-    git_tag: "v4.3.0"
-    date: "2026-02-16"
-    model_transition: "4.2 -> 4.3"   # only if major/minor bump
+  - version: "4.5.0"          # must match revision in release.yaml
+    git_tag: "v4.5.0"
+    date: "2026-07-02"
+    model_transition: "4.4 -> 4.5"   # only if major/minor bump
     changes:
-      - class: "GC_LINEAR_OBJECTS"
-        attribute: "KIND"
-        type: "value_added"
-        values:
-          - { de: "...", fr: "..." }
+      - class: "Bedrock_PLG"
+        attribute: "Geol_Mapping_Unit, Tecto"
+        type: "hierarchy_changed"
+        description_de: "..."
+        description_fr: "..."
         motivation: >
-          Why this change was made.
+          Why this change was made — this needs real domain-expert context; don't
+          leave it blank or invent a rationale. Cross-check the value-level detail
+          with `make diff` / `make diff-reports` (see Step 4) before writing it.
 ```
 
 See the change type reference at the bottom of `SCHEMA_CHANGES.md` for valid `type` values.
+`attribute` should list the actual field names the changed domain(s) are used on — check
+`sources/<RELEASE-DIR>/geocover-schema-sde.json` for each field's `domain.domainName` if unsure,
+don't guess from the class name alone.
 
 ---
 
@@ -247,10 +306,10 @@ See the change type reference at the bottom of `SCHEMA_CHANGES.md` for valid `ty
 | File | When to edit |
 |------|-------------|
 | `CHANGELOG.md` | Every release — add entry under new version heading |
-| `SCHEMA_CHANGES.yaml` | Schema releases only (`x.y.0`) |
-| `DATA_RELEASES.yaml` | Every release |
 | `release.yaml` | Every release |
-| `datamodel.yaml` | Only if model structure code changes |
+| `SCHEMA_CHANGES.yaml` | Schema releases only (`x.y.0`) |
+| `DATA_RELEASES.yaml` | Data releases only (new/updated map sheets) |
+| `datamodel.yaml` | Only if model structure *code* changes (not schema content) |
 
 `CHANGELOG.md` entry format:
 
@@ -266,30 +325,42 @@ See the change type reference at the bottom of `SCHEMA_CHANGES.md` for valid `ty
 
 ## Step 4 — Generate output files
 
-Run all generation steps on Linux (or let CI handle them after merge).
+Run all generation steps on Linux (or let CI handle them after merge). **Order matters**:
+`make pdfs` must run before `release-notes`/`diff-reports`, since those depend on
+`inputs/en/cd-header.tex`, which is only produced as a side effect of per-language generation.
 
 ```bash
-# Generate PDFs (all languages)
+# Generate PDFs (all languages) — also generates cd-header.tex, needed below
 make pdfs
 
-# Generate schema diff reports (PDF + DOCX)
+# Generate schema diff reports (PDF + DOCX + HTML), comparing the last two dated sources/ dirs
 make diff-reports
 
-# Generate SCHEMA_CHANGES.md and DATA_RELEASES.md from YAML sources
+# Generate SCHEMA_CHANGES.md/.pdf and DATA_RELEASES.md/.pdf from the YAML sources
 make release-notes
 ```
 
-Individual targets if needed:
+Individual targets if you only need one piece:
 
 ```bash
-# Schema changelog only
-python scripts/geocover_release_notes.py schema
+make schema-changes-md    # outputs/SCHEMA_CHANGES.md only (no PDF)
+make data-releases-md     # outputs/DATA_RELEASES.md only (no PDF)
+make schema-changes-pdf   # outputs/SCHEMA_CHANGES.pdf
+make data-releases-pdf    # outputs/DATA_RELEASES.pdf
+make diff                 # Markdown + HTML schema diff only (no PDF/DOCX)
+```
 
-# Data release log only
-python scripts/geocover_release_notes.py data
+`make diff`/`make diff-reports` compare `V1`/`V2`, which default to the two most recent dated
+`sources/` directories. Override explicitly if needed: `make diff-reports V1=2026-04-14
+V2=2026-07-02`. Read the generated `outputs/<V1>_<V2>.md` diff before writing a
+`SCHEMA_CHANGES.yaml` entry (Step 2.3) — it's the ground truth for exactly which domains/values
+changed.
 
-# Latest release only (for announcements)
-python scripts/geocover_release_notes.py data --latest --stdout
+No `make` target exists yet for the "single release, stdout" announcement mode — use the
+script directly for that:
+
+```bash
+python scripts/geocover_release_notes.py data   --latest --stdout
 python scripts/geocover_release_notes.py schema --latest --stdout
 ```
 
@@ -300,8 +371,10 @@ python scripts/geocover_release_notes.py schema --latest --stdout
 ### 5.1 Validate YAML files
 
 ```bash
-python scripts/geocover_release_notes.py both --validate
+make validate-release-files
 ```
+
+(Equivalent to `python scripts/geocover_release_notes.py both --validate`.)
 
 ### 5.2 Check PDF metadata
 
@@ -321,6 +394,13 @@ Git Hash                : <short hash>
 Create Date             : 2026:03:25 ...
 ```
 
+Or check every generated PDF at once:
+
+```bash
+make check-metadata       # print custom metadata for every outputs/*/datamodel.pdf
+make validate-metadata    # fail if any PDF is missing ModelRevision
+```
+
 ### 5.3 Check generated Markdown
 
 ```bash
@@ -332,14 +412,21 @@ python scripts/geocover_release_notes.py data --latest --stdout --no-summary
 
 ## Step 6 — Open PR and publish
 
-```bash
-# Stage everything
-git add exports/<RELEASE-DIR>/
-git add release.yaml DATA_RELEASES.yaml SCHEMA_CHANGES.yaml CHANGELOG.md
-git add SCHEMA_CHANGES.md DATA_RELEASES.md   # generated files
+Only stage files that are actually tracked (see "What's committed vs. what's generated" above)
+— never `outputs/`, `inputs/`, or the gitignored root `SCHEMA_CHANGES.md`/`DATA_RELEASES.md`.
 
-git commit -m "release: R16 / model v4.3.1"
-git push origin release/r16
+```bash
+# Stage the sources snapshot (only if you produced a new one in Step 1)
+git add sources/<RELEASE-DIR>/
+
+# Stage whichever metadata files you touched — always release.yaml, plus:
+git add release.yaml CHANGELOG.md
+git add DATA_RELEASES.yaml    # data release only
+git add SCHEMA_CHANGES.yaml   # schema release only
+git add assets/geocover.png   # if you updated the cover image (Step 1.8)
+
+git commit -m "release: R17 / model v4.5.0"
+git push origin release/r17
 ```
 
 Open a PR against `master`. The GitHub Actions workflow triggers on PR to build and validate.
@@ -347,13 +434,14 @@ On merge to `master`, the release workflow:
 
 1. Reads `release.yaml` to get `model.revision`
 2. Checks that a Git tag `v<revision>` does not already exist
-3. Builds all PDFs and diff reports
-4. Creates the GitHub Release with tag `v4.3.1` and attaches all artifacts
+3. Builds all PDFs and diff reports (fresh — nothing from your local `outputs/`/`inputs/` is used)
+4. Creates the GitHub Release with tag `v4.5.0` and attaches all artifacts (PDFs, DOCX,
+   `gcover-schema-simple.json`, `SCHEMA_CHANGES.pdf`, `DATA_RELEASES.pdf`, ...)
 5. Updates the package on `anaconda.org` / `pypi.org`
 
 > **RC workflow:** if you need a release candidate before merging, push a tag manually:
 > ```bash
-> git tag v4.3.1-rc.1 && git push origin v4.3.1-rc.1
+> git tag v4.5.0-rc.1 && git push origin v4.5.0-rc.1
 > ```
 > RC tags trigger a build but do **not** update `DATA_RELEASES.yaml` or `SCHEMA_CHANGES.yaml`
 > and are not considered by `--latest`.
@@ -363,16 +451,17 @@ On merge to `master`, the release workflow:
 ## Quick checklist
 
 ```
-[ ] exports/<RELEASE-DIR>/ populated and committed
-[ ] release.yaml updated (revision, revision_date, sources_dir, geodata.release)
-[ ] DATA_RELEASES.yaml — new entry prepended
-[ ] SCHEMA_CHANGES.yaml — new entry prepended (schema releases only)
+[ ] sources/<RELEASE-DIR>/ populated and committed         (only if new SDE export)
+[ ] release.yaml updated (revision, revision_date, sources_dir)
+[ ] DATA_RELEASES.yaml — new entry prepended                (data release only)
+[ ] SCHEMA_CHANGES.yaml — new entry prepended                (schema release only)
+[ ] assets/geocover.png updated                              (if changed, Step 1.8)
 [ ] CHANGELOG.md — new entry added
-[ ] make pdfs         → outputs/*/datamodel.pdf generated
-[ ] make diff-reports → outputs/*_*.pdf/.docx generated
-[ ] make release-notes → SCHEMA_CHANGES.md / DATA_RELEASES.md regenerated
-[ ] exiftool check passes
-[ ] python scripts/geocover_release_notes.py both --validate passes
+[ ] make pdfs           → outputs/*/datamodel.pdf generated
+[ ] make diff-reports   → outputs/*_*.pdf/.docx generated
+[ ] make release-notes  → outputs/SCHEMA_CHANGES.{md,pdf} / DATA_RELEASES.{md,pdf} regenerated
+[ ] make validate-metadata passes
+[ ] make validate-release-files passes
 [ ] PR opened, CI green, reviewed
 [ ] Merged to master → GitHub Release created automatically
 ```
