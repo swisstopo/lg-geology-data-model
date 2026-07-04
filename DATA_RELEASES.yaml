@@ -8,8 +8,9 @@
 releases:
   - release: "R18"
     publication_date: ~
-    schema_version: ~
-    schema_export_date: ~
+    schema_version: 4.5.0
+    schema_export_date: "2026-07-02"
+    data_export_date: ~
     new_data: [ ]
     release_notes: ~
 
@@ -34,7 +35,7 @@ releases:
       - { name: "Val Bregaglia", sheet: 1276 }
 
     release_notes: >
-      Mapsheet Campodolcion merged with Val Bregaglia
+      Mapsheet Campodolcino merged with Val Bregaglia
 
   - release: "R16"
     publication_date: "2026-03-30"
