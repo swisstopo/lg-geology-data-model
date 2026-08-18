@@ -78,5 +78,43 @@ document.addEventListener('DOMContentLoaded', function() {
         // Réinsérer les lignes triées
         rows.forEach(row => tbody.appendChild(row));
     }
+
+    // Mobile TOC toggle: pandoc's nav#TOC becomes an off-canvas panel
+    // below 960px (see datamodel.css); inject the button that reveals it.
+    const toc = document.getElementById('TOC');
+    if (toc) {
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'navbtn';
+        btn.textContent = 'Contents';
+        btn.setAttribute('aria-controls', 'TOC');
+        btn.setAttribute('aria-expanded', 'false');
+        btn.addEventListener('click', () => {
+            const open = toc.classList.toggle('open');
+            btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+        document.body.insertBefore(btn, toc);
+
+        toc.addEventListener('click', (e) => {
+            if (e.target.tagName === 'A' && toc.classList.contains('open')) {
+                toc.classList.remove('open');
+                btn.setAttribute('aria-expanded', 'false');
+            }
+        });
+    }
+
+    // Back-to-top affordance once the reader has scrolled past the header.
+    const totop = document.createElement('a');
+    totop.href = '#';
+    totop.className = 'totop';
+    totop.textContent = '↑ Top';
+    totop.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+    document.body.appendChild(totop);
+    window.addEventListener('scroll', () => {
+        totop.classList.toggle('on', window.scrollY > 600);
+    }, { passive: true });
 });
 </script>
