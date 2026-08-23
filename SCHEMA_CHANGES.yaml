@@ -34,7 +34,9 @@ schema_versions:
         description_fr: >
           Extension importante de la liste lithostratigraphique des dépôts meubles
           (Litstrat_Unco : +251/~1) et de la lithologie (Litho_Unco : +5)
-        motivation: ~ # TODO: domain expert to fill in — see outputs/2026-04-14_2026-08-20.md for the full value-level diff
+        motivation: >
+          Réf. procès-verbal, Séance du groupe 2D du 2026-06-22 — voir
+          outputs/2026-04-14_2026-08-20.md pour le détail complet des valeurs ajoutées/modifiées.
 
       - class: "Unconsolidated_Deposits_PT"
         attribute: "runc_geol_mapping_unit"
@@ -47,9 +49,10 @@ schema_versions:
           le type d'objet Runc à l'unité de cartographie géologique (GMU).
         motivation: >
           Ajouté pour faciliter le remplacement prévu du domaine `rock_spe`
-          (GC_PNT_RUNC_ROCK_SPE_CD) par le domaine GMU — cf. procès-verbal du groupe
-          Fachgruppe GeoCover 2D. Le mapping des anciennes valeurs ROCK_SPE vers GMU
-          reste à faire ; `rock_spe` n'a pas encore été retiré du schéma physique.
+          (GC_PNT_RUNC_ROCK_SPE_CD) par le domaine GMU. Le mapping des anciennes
+          valeurs ROCK_SPE vers GMU reste à faire ; `rock_spe` n'a pas encore été
+          retiré du schéma physique. Réf. procès-verbal, Séance du groupe 2D du
+          2026-06-22.
 
       - class: "Type_Localities_PT"
         attribute: "ltyp_geol_mapping_unit"
@@ -66,6 +69,7 @@ schema_versions:
           (affleurement recouvert par un dépôt artificiel). Rappel du processus:
           à la création d'un tel objet, toujours compléter par l'ajout d'une surface
           de type Aart (dépôt artificiel) signalant que l'affleurement n'est plus visible.
+          Réf. procès-verbal, Séance du groupe 2D du 2026-06-22.
 
       - class: "Unconsolidated_Deposits_PT"
         attribute: "mat_type"
@@ -80,6 +84,7 @@ schema_versions:
           Les objets "Bloc exotique" (kind=14401009) peuvent être de nature
           lithologique non représentée dans la liste restreinte des dépôts
           meubles ; il faut pouvoir choisir dans la liste complète (unco + Bedrock).
+          Réf. procès-verbal, Séance du groupe 2D du 2026-06-22.
 
       - class: "Unconsolidated_Deposits_PT"
         attribute: "kind"
@@ -89,8 +94,8 @@ schema_versions:
         motivation: >
           Nouvel objet "Bloc exotique" décidé en Fachgruppe GeoCover 2D — bloc de nature
           lithologique différente de son environnement, transporté (glaciaire, gravitaire
-          ou anthropogène). Objet potentiellement protégé.
-        motivation: ~ # TODO: domain expert to fill in
+          ou anthropogène). Objet potentiellement protégé. Réf. procès-verbal, Séance du
+          groupe 2D du 2026-06-22.
 
   - version: "4.4.1"
     git_tag: "v4.4.1"
