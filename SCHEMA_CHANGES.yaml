@@ -36,6 +36,62 @@ schema_versions:
           (Litstrat_Unco : +251/~1) et de la lithologie (Litho_Unco : +5)
         motivation: ~ # TODO: domain expert to fill in — see outputs/2026-04-14_2026-08-20.md for the full value-level diff
 
+      - class: "Unconsolidated_Deposits_PT"
+        attribute: "runc_geol_mapping_unit"
+        type: "attribute_added"
+        description_de: >
+          Neues Attribut `runc_geol_mapping_unit` (Feld RUNC_GEOL_MAPPING_UNIT) zur
+          Verknüpfung der Objektart Runc mit der Kartiereinheit (KE/GMU).
+        description_fr: >
+          Nouvel attribut `runc_geol_mapping_unit` (champ RUNC_GEOL_MAPPING_UNIT) reliant
+          le type d'objet Runc à l'unité de cartographie géologique (GMU).
+        motivation: >
+          Ajouté pour faciliter le remplacement prévu du domaine `rock_spe`
+          (GC_PNT_RUNC_ROCK_SPE_CD) par le domaine GMU — cf. procès-verbal du groupe
+          Fachgruppe GeoCover 2D. Le mapping des anciennes valeurs ROCK_SPE vers GMU
+          reste à faire ; `rock_spe` n'a pas encore été retiré du schéma physique.
+
+      - class: "Type_Localities_PT"
+        attribute: "ltyp_geol_mapping_unit"
+        type: "attribute_added"
+        description_de: >
+          Neues Attribut `ltyp_geol_mapping_unit` (Feld LTYP_GEOL_MAPPING_UNIT) zur
+          Verknüpfung der Objektart Ltyp mit der Kartiereinheit (GMU).
+        description_fr: >
+          Nouvel attribut `ltyp_geol_mapping_unit` (champ LTYP_GEOL_MAPPING_UNIT) reliant
+          le type d'objet Ltyp à l'unité de cartographie géologique (GMU).
+        motivation: >
+          Permet de documenter le GMU des objets "affleurement géol. important"
+          (kind=13501001) réutilisés pour le cas "wiederverdeckter Aufschluss"
+          (affleurement recouvert par un dépôt artificiel). Rappel du processus:
+          à la création d'un tel objet, toujours compléter par l'ajout d'une surface
+          de type Aart (dépôt artificiel) signalant que l'affleurement n'est plus visible.
+
+      - class: "Unconsolidated_Deposits_PT"
+        attribute: "mat_type"
+        type: "attribute_relinked"
+        description_de: >
+          Domäne von `mat_type` erweitert: GC_LITHO_UNCO_CD → GC_LITHO_CD
+          (vollständige Liste Lockergestein + Festgestein).
+        description_fr: >
+          Domaine de `mat_type` élargi : GC_LITHO_UNCO_CD → GC_LITHO_CD
+          (liste complète dépôts meubles + roche en place).
+        motivation: >
+          Les objets "Bloc exotique" (kind=14401009) peuvent être de nature
+          lithologique non représentée dans la liste restreinte des dépôts
+          meubles ; il faut pouvoir choisir dans la liste complète (unco + Bedrock).
+
+      - class: "Unconsolidated_Deposits_PT"
+        attribute: "kind"
+        type: "value_added"
+        values:
+          - { de: "Runc exotischer Block", fr: "Bloc exotique" }
+        motivation: >
+          Nouvel objet "Bloc exotique" décidé en Fachgruppe GeoCover 2D — bloc de nature
+          lithologique différente de son environnement, transporté (glaciaire, gravitaire
+          ou anthropogène). Objet potentiellement protégé.
+        motivation: ~ # TODO: domain expert to fill in
+
   - version: "4.4.1"
     git_tag: "v4.4.1"
     date: "2026-04-26"
