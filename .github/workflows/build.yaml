@@ -64,7 +64,7 @@ jobs:
       - name: Install required LaTeX packages
         run: |
           tlmgr init-usertree || true
-          tlmgr option repository https://ftp.math.utah.edu/pub/tex/historic/systems/texlive/2023/tlnet-final
+          tlmgr option repository https://texlive.info/historic/systems/texlive/2023/tlnet-final
           tlmgr install fontawesome5
 
       - name: Install miniconda
