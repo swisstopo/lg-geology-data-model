@@ -25,10 +25,11 @@ date: 2025-09-01
 # 4.3.0    Update CD (11-02-2026) for R16
 # 4.3.1    Second column of German document is now French (not German)
 # 4.3.2    Tool update (CD Bund header and various release notes and schema diff documents)
+# 4.5.0    Added runc_geol_mapping_unit to Unconsolidated_Deposits_PT, and ltyp_geol_mapping_unit to Type_Localities_PT
 model:
-  revision: '4.3.3'
-  revision_date: "2026-04-04"
-  sources_dir: "sources/2026-02-12"
+  revision: '4.5.0'
+  revision_date: "2026-08-20"
+  sources_dir: "sources/2026-08-20"
 
 # Annexe
 # Some CD are alreday defined in the simplifed JSON report
@@ -102,8 +103,18 @@ themes:
         de: Materialbezeichnung (lithologische Einheit)
         fr: Description du matériel (unité lithologique)
       att_type: annex
-      value: GC_LITHO_UNCO_CD
+      value: GC_LITHO_CD  # widened from GC_LITHO_UNCO_CD to the full unco+bedrock list — Runc "Bloc exotique" objects need bedrock lithologies too
       cardinality: 0..1
+      mandatory: false
+    - name: runc_geol_mapping_unit
+      alias: geol_mapping_unit
+      description:
+        de: Lithostratigraphische Kartiereinheit (KE) des Objekts.
+        fr: Unité de cartographie lithostratigraphique (GMU) du type d'objet
+      att_type: annex
+      value: GC_GEOL_MAPPING_UNIT_CD
+      cardinality: 0..1
+      change: new
       mandatory: false
     - name: orig_descr
       description:
@@ -1531,6 +1542,16 @@ themes:
       value: GC_PNT_LTYP_STRATI_CD
       cardinality: 0..1
       mandatory: true
+    - name: ltyp_geol_mapping_unit  # TODO: check description wording
+      alias: geol_mapping_unit
+      description:
+        de: Lithostratigraphische Kartiereinheit (KE) des Objekts.
+        fr: Unité de cartographie lithostratigraphique (GMU) du type d'objet
+      att_type: annex
+      value: GC_GEOL_MAPPING_UNIT_CD
+      cardinality: 0..1
+      change: new
+      mandatory: false
     - name: ltyp_name
       alias: name
       description:
