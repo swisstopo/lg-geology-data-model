@@ -104,11 +104,23 @@ Automatic change tracking is only partially available. Please compare with the p
 {% for ch in changes %}
 {% if ch.get("note") %}
 _{{ ch.get("note") }}_
+
 {% else %}
-- **`{{ ch.get("class", "?") }}`**{% if ch.get("attribute") %} / `{{ ch.get("attribute") }}`{% endif %} — `{{ ch.get("type", "?") }}`
-{% set parts = [ch.get("description_de"), ch.get("description_fr")] | select | list %}
-{% if parts %}
-  {{ parts | join(" / ") | trim }}
+#### `{{ ch.get("class", "?") }}` — `{{ ch.get("type", "?") }}`
+
+{% set attr = ch.get("attribute") %}
+{% if attr %}
+{% set attr_list = attr.split(",") | map("trim") | join("`, `") %}
+**Attributes:** `{{ attr_list }}`
+
+{% endif %}
+{% if ch.get("description_de") %}
+**DE:** {{ ch.get("description_de") | trim }}
+
+{% endif %}
+{% if ch.get("description_fr") %}
+**FR:** {{ ch.get("description_fr") | trim }}
+
 {% endif %}
 {% endif %}
 {% endfor %}
