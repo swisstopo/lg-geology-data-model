@@ -454,12 +454,71 @@ On merge to `master`, the release workflow:
    `gcover-schema-simple.json`, `SCHEMA_CHANGES.pdf`, `DATA_RELEASES.pdf`, ...)
 5. Updates the package on `anaconda.org` / `pypi.org`
 
-> **RC workflow:** if you need a release candidate before merging, push a tag manually:
-> ```bash
-> git tag v4.5.0-rc.1 && git push origin v4.5.0-rc.1
-> ```
-> RC tags trigger a build but do **not** update `DATA_RELEASES.yaml` or `SCHEMA_CHANGES.yaml`
-> and are not considered by `--latest`.
+## Step 7 — Manual release-candidate (RC) build
+
+Use this to get real CI-built artifacts in front of a reviewer *before* merging to `master` —
+e.g. to sanity-check PDF output on an actual tag. This is a **fully manual** process end to
+end: no workflow in `.github/workflows/*.yaml` triggers on tag push (all four only fire on
+`push: branches: [...]`, `pull_request`, `workflow_dispatch`, or `workflow_call`), so nothing
+happens automatically once you push an RC tag — you drive every step below yourself.
+
+RC tags/releases do **not** update `DATA_RELEASES.yaml` or `SCHEMA_CHANGES.yaml`, and are not
+considered by `--latest` in `scripts/geocover_release_notes.py`.
+
+### 7.1 Trigger the build
+
+`build.yaml` can be dispatched manually against any ref, including a tag that doesn't exist as
+a branch:
+
+```bash
+gh workflow run build.yaml --ref v4.5.0-rc.2
+gh run list --workflow=build.yaml --limit 5   # find the run you just triggered
+gh run watch <RUN-ID>                         # optional: stream status until it finishes
+```
+
+### 7.2 Download the build artifact
+
+The workflow uploads everything as a **single** artifact named `geology-data-model-<revision>`,
+with the directory structure preserved: `outputs/<lang>/datamodel.{pdf,docx,html,css}`,
+`outputs/geology_mapping_tool.xlsx`, `outputs/{DATA_RELEASES,SCHEMA_CHANGES}.pdf`,
+`outputs/<V1>_<V2>.pdf` (schema diff), `sources/<DATE>/gcover-schema-simple.json`, and
+`datamodel.yaml`. Download it straight into `release-assets/` — `gh run download` nests a
+single artifact one level deep, so you get `release-assets/geology-data-model-<revision>/...`:
+
+```bash
+gh run download <RUN-ID> -D release-assets
+```
+
+### 7.3 Flatten into `release-assets/`
+
+`gh release create`/`gh release upload` only accept flat files (no subdirectories), and the
+four `outputs/<lang>/datamodel.pdf` files would otherwise collide on the same filename.
+`scripts/flatten_release_assets.sh` copies each language's PDF/DOCX up to
+`release-assets/datamodel-<lang>.<ext>`, copies the rest up as-is, then removes the now-empty
+`geology-data-model-<revision>/` folder:
+
+```bash
+scripts/flatten_release_assets.sh release-assets
+```
+
+`en`/`it` never get a `.docx` — the build workflow only generates DOCX for `de`/`fr` (see the
+`Upload Artifacts` step in `.github/workflows/build.yaml`) — so you'll end up with 4 PDFs but
+only 2 DOCX files. That's expected, not a bug.
+
+### 7.4 Tag and publish the GitHub Release
+
+```bash
+git tag v4.5.0-rc.1 && git push origin v4.5.0-rc.1
+gh release create v4.5.0-rc.1 release-assets/* --title "Release v4.5.0-rc.1"
+# gh auto-marks it as a prerelease from the "-rc.N" tag suffix
+```
+
+To replace assets on the same RC without re-tagging (e.g. after fixing something and
+re-running the build), repeat 7.1–7.3 against a new run, then:
+
+```bash
+gh release upload v4.5.0-rc.1 release-assets/* --clobber
+```
 
 ---
 
