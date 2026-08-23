@@ -270,6 +270,7 @@ def create_reference_sheet(wb: Workbook, sheet_name: str, data_dict: dict) -> in
     # Push codes < 1_000_000 to the end; sort the rest alphabetically by label
     items = sorted(data_dict.items(), key=lambda x: (int(x[0]) < 1_000_000, str(x[1])))
 
+    row = 1  # header row; stays 1 if data_dict is empty (no data rows written)
     for row, (code, label) in enumerate(items, start=2):
         ws.cell(row, 1, int(code))
         ws.cell(row, 2, str(label))
