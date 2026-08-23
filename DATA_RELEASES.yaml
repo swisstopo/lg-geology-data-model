@@ -7,11 +7,31 @@
 
 releases:
   - release: "R18"
-    publication_date: ~
+    publication_date: "2026-10-28"
     schema_version: 4.5.0
-    schema_export_date: "2026-07-02"
-    data_export_date: ~
-    new_data: [ ]
+    schema_export_date: "2026-08-20"
+    data_export_date: "2026-08-11"
+    new_data:
+      - { name: "Andelfingen",     sheet: 52   }
+      - { name: "Baden",           sheet: 120  }
+      - { name: "Beatenberg",      sheet: 171  }
+      - { name: "Brienz",          sheet: 170  }
+      - { name: "Château-d'Oex",   sheet: 144  }
+      - { name: "Engelberg",       sheet: 1191 }
+      - { name: "Greina",          sheet: 136  }
+      - { name: "Hauenstein",      sheet: 158  }
+      - { name: "Hinterrhein",     sheet: 1254 }
+      - { name: "Hitzkirch",       sheet: 168  }
+      - { name: "Ibergeregg",      sheet: 175  }
+      - { name: "Monthey",         sheet: 37   }
+      - { name: "Moudon",          sheet: 103  }
+      - { name: "Saas",            sheet: 1329 }
+      - { name: "Solothurn",       sheet: 72   }
+      - { name: "St Maurice",      sheet: 8    }
+      - { name: "St. Niklaus",     sheet: 71   }
+      - { name: "Thun",            sheet: 177  }
+      - { name: "Thusis",          sheet: 154  }
+      - { name: "Wohlen",          sheet: 50   }
     release_notes: ~
 
 
@@ -21,18 +41,18 @@ releases:
     schema_export_date: "2026-04-14"
     data_export_date: "2026-05-18"
     new_data:
-      - { name: "Muotatal",    sheet: 127 }
-      - { name: "Einsiedeln",  sheet: 129 }
-      - { name: "Urseren",     sheet: 133 }
-      - { name: "Meiental",    sheet: 146 }
       - { name: "Amsteg",      sheet: 160 }
-      - { name: "Elm",         sheet: 173 }
-      - { name: "Vättis",      sheet: 178 }
       - { name: "Beckenried",  sheet: 1171 }
+      - { name: "Biasca",      sheet: 1273 }
+      - { name: "Einsiedeln",  sheet: 129 }
+      - { name: "Elm",         sheet: 173 }
+      - { name: "Meiental",    sheet: 146 }
+      - { name: "Muotathal",   sheet: 127 }
       - { name: "Schiers",     sheet: 1176 }
       - { name: "Sörenberg",   sheet: 1189 }
-      - { name: "Biasca",      sheet: 1273 }
+      - { name: "Urseren",     sheet: 133 }
       - { name: "Val Bregaglia", sheet: 1276 }
+      - { name: "Vättis",      sheet: 178 }
 
     release_notes: >
       Mapsheet Campodolcino merged with Val Bregaglia

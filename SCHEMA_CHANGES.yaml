@@ -8,7 +8,8 @@
 schema_versions:
   - version: "4.5.0"
     git_tag: "v4.5.0"
-    date: "2026-07-02"
+    date: "2026-08-20"
+    model_transition: "4.4.1 -> 4.5"
     note: ""
     changes:
       - class: "Bedrock_PLG"
@@ -33,7 +34,7 @@ schema_versions:
         description_fr: >
           Extension importante de la liste lithostratigraphique des dépôts meubles
           (Litstrat_Unco : +251/~1) et de la lithologie (Litho_Unco : +5)
-        motivation: ~ # TODO: domain expert to fill in — see outputs/2026-04-14_2026-07-02.md for the full value-level diff
+        motivation: ~ # TODO: domain expert to fill in — see outputs/2026-04-14_2026-08-20.md for the full value-level diff
 
   - version: "4.4.1"
     git_tag: "v4.4.1"
