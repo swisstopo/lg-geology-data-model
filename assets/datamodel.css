@@ -61,9 +61,16 @@ html {
   }
 }
 
+/* Reference site wraps content in a `.wrap` (sidebar offset) + `<main>`
+   (max-width: 80rem, margin: 0 auto) pair. Pandoc's default HTML5 output has
+   no such wrapper — body carries both jobs, so the centering that `margin:
+   0 auto` gives `<main>` there has to be reproduced by hand here: offset past
+   the fixed sidebar, then add half of whatever's left over past 80rem so the
+   column centers in the remaining space instead of hugging the sidebar. */
 body {
   margin: 0;
-  margin-left: var(--nav-w);
+  margin-left: calc(var(--nav-w) + max(0px, (100vw - var(--nav-w) - 80rem) / 2));
+  max-width: 80rem;
   padding: 0 clamp(1.25rem, 4vw, 3.4rem) 8rem;
   background: var(--paper);
   color: var(--ink);
