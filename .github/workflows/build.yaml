@@ -187,6 +187,10 @@ jobs:
         shell: bash -el {0}
         run: make excel-mapping
 
+      - name: Generate geolcodes export
+        shell: bash -el {0}
+        run: make geolcodes-xlsx
+
 
       - name: Upload Artifacts
         uses: actions/upload-artifact@v7
@@ -218,5 +222,6 @@ jobs:
             ${{ env.EXPORT_DIR }}/gcover-schema-simple.json
             datamodel.yaml
             outputs/geology_mapping_tool*.xlsx
+            outputs/all_geolcode.xlsx
             outputs/DATA_RELEASES.pdf
             outputs/SCHEMA_CHANGES.pdf

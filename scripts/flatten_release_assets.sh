@@ -31,6 +31,7 @@ cp "$ART_DIR"/outputs/DATA_RELEASES.pdf \
    "$ART_DIR"/outputs/SCHEMA_CHANGES.pdf \
    "$ART_DIR"/outputs/diagram.pdf \
    "$ART_DIR"/outputs/geology_mapping_tool.xlsx \
+   "$ART_DIR"/outputs/all_geolcode.xlsx \
    "$DEST"/
 
 # Schema diff report: outputs/<V1>_<V2>.pdf — name varies per release.

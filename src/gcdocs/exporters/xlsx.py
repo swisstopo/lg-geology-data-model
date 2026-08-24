@@ -14,6 +14,7 @@ from openpyxl.utils import get_column_letter
 from openpyxl.utils.dataframe import dataframe_to_rows
 
 from gcdocs.translation.model_translator  import ModelTranslationManager
+from gcdocs.config import GeoDataConfig
 
 
 class EnhancedXLSXExporter:
@@ -513,3 +514,80 @@ class DataModelImporter:
         yaml_data['themes'] = list(themes.values())
 
         return yaml_data
+
+
+def export_all_geolcodes(config: GeoDataConfig, output_path: str | Path) -> int:
+    """
+    Export every coded-domain value and subtype value into one flat,
+    deduplicated table: geolcode, its DE/FR/IT/EN translations, and which
+    domain(s)/subtype family reference it (comma-joined "source" column).
+
+    Successor to the old, now-broken `geocover/all_geolcodes.py` dump — same
+    shape (geolcode + a "source" column of contributing domains/subtypes),
+    built from `GeoDataConfig` instead of a static translation CSV.
+
+    Returns the number of rows written.
+    """
+    sources_by_code: Dict[int, set] = {}
+
+    for domain in config.sde_schema.get("domains", []):
+        if domain.get("type") not in ("codedValue", "CodedValue"):
+            continue
+        name = domain.get("name", "")
+        if not name.startswith("GC_"):
+            continue
+        for cv in domain.get("codedValues", []):
+            code = cv.get("code")
+            if code is None:
+                continue
+            sources_by_code.setdefault(int(code), set()).add(name)
+
+    for code in config.subtypes:
+        try:
+            sources_by_code.setdefault(int(code), set()).add("subtype")
+        except (TypeError, ValueError):
+            continue
+
+    translations = config.translation_df
+
+    records = []
+    for code in sorted(sources_by_code):
+        row = {
+            "geolcode": code,
+            "DE": None,
+            "FR": None,
+            "IT": None,
+            "EN": None,
+            "source": ",".join(sorted(sources_by_code[code])),
+        }
+        if str(code) in translations.index:
+            tr = translations.loc[str(code)]
+            row["DE"], row["FR"], row["IT"], row["EN"] = (
+                tr.get("DE"),
+                tr.get("FR"),
+                tr.get("IT"),
+                tr.get("EN"),
+            )
+        records.append(row)
+
+    df = pd.DataFrame.from_records(
+        records, columns=["geolcode", "DE", "FR", "IT", "EN", "source"]
+    )
+
+    output_path = Path(output_path)
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+
+    with pd.ExcelWriter(output_path, engine="openpyxl") as writer:
+        df.to_excel(writer, index=False, sheet_name="GeolCodes")
+        ws = writer.sheets["GeolCodes"]
+        ws.freeze_panes = "A2"
+        header_fill = PatternFill(
+            start_color="1F6B80", end_color="1F6B80", fill_type="solid"
+        )
+        for cell in ws[1]:
+            cell.font = Font(bold=True, color="FFFFFF")
+            cell.fill = header_fill
+        for col, width in {"A": 12, "B": 42, "C": 42, "D": 42, "E": 42, "F": 46}.items():
+            ws.column_dimensions[col].width = width
+
+    return len(df)
