@@ -348,6 +348,12 @@ excel-mapping: $(OUTPUT_DIR)/geology_mapping_tool.xlsx
 $(OUTPUT_DIR)/geology_mapping_tool.xlsx:
 	python ./scripts/geology_mapping_tool.py
 
+## geolcodes-xlsx: Generate outputs/all_geolcode.xlsx (every coded-domain/subtype value, flat)
+geolcodes-xlsx: $(OUTPUT_DIR)/all_geolcode.xlsx
+
+$(OUTPUT_DIR)/all_geolcode.xlsx:
+	$(GCDOCS) export-geolcodes -i $(EXPORT_DIR) -o $@
+
 
 ### Schema diff reports
 .PHONY: diff diff-pdf diff-docx diff-reports

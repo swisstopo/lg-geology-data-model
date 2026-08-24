@@ -480,10 +480,11 @@ gh run watch <RUN-ID>                         # optional: stream status until it
 
 The workflow uploads everything as a **single** artifact named `geology-data-model-<revision>`,
 with the directory structure preserved: `outputs/<lang>/datamodel.{pdf,docx,html,css}`,
-`outputs/geology_mapping_tool.xlsx`, `outputs/{DATA_RELEASES,SCHEMA_CHANGES}.pdf`,
-`outputs/<V1>_<V2>.pdf` (schema diff), `sources/<DATE>/gcover-schema-simple.json`, and
-`datamodel.yaml`. Download it straight into `release-assets/` — `gh run download` nests a
-single artifact one level deep, so you get `release-assets/geology-data-model-<revision>/...`:
+`outputs/geology_mapping_tool.xlsx`, `outputs/all_geolcode.xlsx`,
+`outputs/{DATA_RELEASES,SCHEMA_CHANGES}.pdf`, `outputs/<V1>_<V2>.pdf` (schema diff),
+`sources/<DATE>/gcover-schema-simple.json`, and `datamodel.yaml`. Download it straight into
+`release-assets/` — `gh run download` nests a single artifact one level deep, so you get
+`release-assets/geology-data-model-<revision>/...`:
 
 ```bash
 gh run download <RUN-ID> -D release-assets

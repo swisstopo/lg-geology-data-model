@@ -171,6 +171,7 @@ jobs:
           cp temp-artifacts/outputs/*.pdf  release-assets/
           cp temp-artifacts/${{ env.EXPORT_DIR }}/gcover-schema-simple.json release-assets/gcover-schema-simple.json
           cp temp-artifacts/outputs/geology_mapping_tool*.xlsx release-assets/
+          cp temp-artifacts/outputs/all_geolcode.xlsx release-assets/
 
           echo "📦 Release assets:"
           ls -la release-assets/

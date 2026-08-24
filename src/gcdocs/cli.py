@@ -443,6 +443,57 @@ def extract(
         raise SystemExit(1)
 
 
+@gcdocs.command("export-geolcodes")
+@click.option(
+    "--input-dir",
+    "-i",
+    type=click.Path(file_okay=False),
+    default=None,
+    help="Directory containing coded_domains/subtypes/schema JSON "
+    "(default: model.sources_dir from release.yaml)",
+)
+@click.option(
+    "--output",
+    "-o",
+    type=click.Path(),
+    default="all_geolcode.xlsx",
+    help="Output XLSX path (default: all_geolcode.xlsx)",
+)
+@click.pass_context
+def export_geolcodes(ctx, input_dir, output):
+    """Export every coded-domain/subtype value to one flat XLSX.
+
+    One row per geolcode: DE/FR/IT/EN translations plus a "source" column
+    listing which domain(s)/subtype family use it. Successor to the old
+    (broken) geocover/all_geolcodes.py dump.
+    """
+    from .exporters.xlsx import export_all_geolcodes
+
+    try:
+        config = GeoDataConfig(Path(input_dir).resolve() if input_dir else None)
+
+        if not config.validate_data():
+            click.echo("❌ Missing required data files in input directory")
+            click.echo(f"   Expected files in {config.input_dir}:")
+            click.echo("   - coded_domains.json")
+            click.echo("   - subtypes_dict.json")
+            click.echo("   - geocover-schema-sde.json")
+            sys.exit(1)
+
+        count = export_all_geolcodes(config, output)
+        click.echo(f"✓ Exported {count} geolcodes to {output}")
+
+    except FileNotFoundError as e:
+        click.echo(f"❌ File not found: {e}")
+        sys.exit(1)
+    except Exception as e:
+        logger.error(f"Geolcodes export failed: {e}")
+        click.echo(f"❌ Geolcodes export failed: {e}")
+        if ctx.obj.get("debug"):
+            raise
+        sys.exit(1)
+
+
 @gcdocs.command()
 @click.argument("input_file", type=click.Path(exists=True))
 @click.option("--output", "-o", type=click.Path(), help="Output YAML file")
