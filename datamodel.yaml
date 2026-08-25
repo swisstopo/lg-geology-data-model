@@ -57,8 +57,8 @@ themes:
         position actuelle, ou dégagés sur place par dégradation de
         la roche sous-jacente.
       it: |-
-        La classe Unconsolidated_Deposits_PT comprende i volumi 
-        rocciosi individualizzati (di dimensioni variabili, dai 
+        La classe Unconsolidated_Deposits_PT comprende i volumi
+        rocciosi individualizzati (di dimensioni variabili, dai
         ciottoli ai blocchi) che sono stati trasportati da processi
         gravitazionali, glaciali o antropogenici fino alla loro
         posizione attuale, o liberati sul posto dal degrado della
@@ -223,7 +223,7 @@ themes:
     - name: structur
       description:
         de: Textur des Lockergesteins
-        fr: Struccture de la roche meuble
+        fr: Structure de la roche meuble
       att_type: CD
       value: GC_UN_DEP_RUNC_STRUCTUR_CD
       cardinality: 0..1
@@ -231,7 +231,7 @@ themes:
     - name: charact # TODO Achtung charact is sometime charcat
       description:
         de: Spezifische Eigenschaft
-        fr: Charactéristique spécifique
+        fr: Caractéristique spécifique
       att_type: table
       value: gc_charcat
       cardinality: 0..3
@@ -256,7 +256,7 @@ themes:
       mandatory: false
     - name: ref_year
       description:
-        de: >- 
+        de: >-
           Zeitpunkt oder Zeitperiode. Zum Beispiel «1940 1943, Periode der Drainage»
           (muss präzisiert werden).
         fr: >-
@@ -885,7 +885,7 @@ themes:
       alias: age
       description:
         de: Alter der Objektart.
-        fr: Âge du type d'obje
+        fr: Âge du type d'objet
       att_type: CD
       value: GC_LIN_GALL_AGE_CD
       cardinality: 0..1
@@ -1438,7 +1438,7 @@ themes:
       alias: status
       description:
         de: Zustand der Objektart
-        fr: Etat du type d'objet
+        fr: État du type d'objet
       att_type: CD
       value: GC_PNT_LRES_STATUS_CD
       cardinality: 0..1
@@ -1806,7 +1806,7 @@ themes:
     - name: litstrat
       description:
         de: Lithostratigraphische Einheit der modellierten Formation
-        fr: Unité lithostratigraphique de la formation modelisée
+        fr: Unité lithostratigraphique de la formation modélisée
       att_type: annex
       value: GC_GEOL_MAPPING_UNIT_CD        # TODO: renammed? field: "PCOB_FORMATIO", CD "GC_LITSTRAT_BED_CD"
       cardinality: "1"
@@ -2222,9 +2222,9 @@ themes:
       alias: depth_bedr
       description:
         de: >-
-          Tiefe (in Meter ab Terrainoberfläche) der Felsoberfläche. (Sofern die Bohrung das Festgestein nicht erreicht, 
-          z.B. «Bohrung, Fels nicht erreicht», beträgt der Wert 999, falls die Bohrung bereits im Festgestein beginnt, 
-          beträgt der Wert 0). Falls Festgestein erreicht wurde, aber nicht klar ist, dass es sich um die Felsoberfläche 
+          Tiefe (in Meter ab Terrainoberfläche) der Felsoberfläche. (Sofern die Bohrung das Festgestein nicht erreicht,
+          z.B. «Bohrung, Fels nicht erreicht», beträgt der Wert 999, falls die Bohrung bereits im Festgestein beginnt,
+          beträgt der Wert 0). Falls Festgestein erreicht wurde, aber nicht klar ist, dass es sich um die Felsoberfläche
           handelt, beträgt der Wert 888.
         fr: >-
           Profondeur de la roche en place (en mètres depuis la surface). Si l’ouvrage
@@ -2694,7 +2694,7 @@ themes:
         de: >-
           Charakteristisches chemisches Element im Mineralwasser (z.B. Fe).
         fr: >-
-          Element chimique caractéristique dans l’eau minérale
+          Élément chimique caractéristique dans l’eau minérale
       att_type: string
       cardinality: 0..1
       mandatory: false
