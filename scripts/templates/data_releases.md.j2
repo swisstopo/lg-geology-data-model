@@ -37,18 +37,27 @@ mainfontoptions:
 {% set pub    = r.get("publication_date") %}
 {% set sv     = r.get("schema_version") %}
 {% set exp    = r.get("schema_export_date") %}
+{% set data_exp = r.get("data_export_date") %}
 {% set notes  = r.get("release_notes") %}
 {% set schema_info = r.get("_schema_info") %}
+{% set git_tag_suffix = " (`" ~ schema_info.get("git_tag") ~ "`)" if (schema_info and schema_info.get("git_tag")) else "" %}
 
 {% if pub %}
 ## {{ r.get("release", "?") }}
 
 **Publication date:** {{ pub }}
+
 {% if sv %}
-**Schema version:** v{{ sv }}{% if schema_info and schema_info.get("git_tag") %} (`{{ schema_info.get("git_tag") }}`) {% endif %}
+**Schema version:** v{{ sv }}{{ git_tag_suffix }}
+
 {% endif %}
 {% if exp %}
-**Data state (SDE backup):** {{ exp }}
+**Schema export date (SDE):** {{ exp }}
+
+{% endif %}
+{% if data_exp %}
+**Data state (SDE backup):** {{ data_exp }}
+
 {% endif %}
 
 {# General Release Notes #}
@@ -95,11 +104,23 @@ Automatic change tracking is only partially available. Please compare with the p
 {% for ch in changes %}
 {% if ch.get("note") %}
 _{{ ch.get("note") }}_
+
 {% else %}
-- **`{{ ch.get("class", "?") }}`**{% if ch.get("attribute") %} / `{{ ch.get("attribute") }}`{% endif %} — `{{ ch.get("type", "?") }}`
-{% set parts = [ch.get("description_de"), ch.get("description_fr")] | select | list %}
-{% if parts %}
-  {{ parts | join(" / ") | trim }}
+#### `{{ ch.get("class", "?") }}` — `{{ ch.get("type", "?") }}`
+
+{% set attr = ch.get("attribute") %}
+{% if attr %}
+{% set attr_list = attr.split(",") | map("trim") | join("`, `") %}
+**Attributes:** `{{ attr_list }}`
+
+{% endif %}
+{% if ch.get("description_de") %}
+**DE:** {{ ch.get("description_de") | trim }}
+
+{% endif %}
+{% if ch.get("description_fr") %}
+**FR:** {{ ch.get("description_fr") | trim }}
+
 {% endif %}
 {% endif %}
 {% endfor %}

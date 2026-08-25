@@ -83,8 +83,13 @@ _No structured schema changes recorded for this version._
 {% set motivation = ch.get("motivation") %}
 {% set values     = ch.get("values") or [] %}
 
-### `{{ cls }}`{% if attr %} — `{{ attr }}`{% endif %}
+### `{{ cls }}`
 
+{% if attr %}
+{% set attr_list = attr.split(",") | map("trim") | join("`, `") %}
+**Attributes:** `{{ attr_list }}`
+
+{% endif %}
 **Type:** `{{ ctype }}`
 
 {% if ctype == "value_added" and values %}
@@ -100,19 +105,15 @@ _No structured schema changes recorded for this version._
 | **From** | `{{ ch.get("from", "?") }}` |
 | **To** | `{{ ch.get("to",   "?") }}` |
 
-{% set parts = [desc_de, desc_fr] | select | list %}
-{% if parts %}
-
-{{ parts | join(" / ") | trim }}
 {% endif %}
+{% if desc_de %}
+**DE:** {{ desc_de | trim }}
 
-{% else %}
-{% set parts = [desc_de, desc_fr] | select | list %}
-{% if parts %}
-{{ parts | join(" / ") | trim }}
 {% endif %}
-{% endif %}
+{% if desc_fr %}
+**FR:** {{ desc_fr | trim }}
 
+{% endif %}
 {% if motivation %}
 \faLightbulb[regular]\ \textbf{Motivation:} {{ motivation | trim }}
 {% endif %}

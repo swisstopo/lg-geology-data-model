@@ -1,5 +1,10 @@
 # Changelog
 
+## [4.5.0] - 2026-07-02
+### Fixed
+- Don't use `_I_Sbutypes`
+- Auto-generate help sections and doc
+
 ## [4.4.1] - 2026-04-14
 ### Fixed
 - Missing coded domains

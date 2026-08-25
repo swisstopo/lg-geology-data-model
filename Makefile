@@ -5,7 +5,13 @@ FORMATS = pdf odt docx html
 # SOURCES_DIR: base dir containing all timestamped release subdirs (e.g. sources/)
 SOURCES_DIR ?= sources
 # EXPORT_DIR: the specific release dir for the current version (e.g. sources/2026-04-14)
-EXPORT_DIR ?= $(shell python -c "import yaml; print(yaml.safe_load(open('release.yaml'))['model']['sources_dir'])")
+# NOTE: computed with := (not ?=) inside the ifeq guard below so the $(shell ...) call
+# runs exactly once per make invocation instead of once per textual reference — this
+# variable is expanded multiple times by the per-language $(eval $(call build_rule,...))
+# below, and a plain "?=" (recursively-expanded) re-runs the shell command every time.
+ifeq ($(origin EXPORT_DIR), undefined)
+EXPORT_DIR := $(shell python -c "import yaml; print(yaml.safe_load(open('release.yaml'))['model']['sources_dir'])")
+endif
 INPUT_DIR ?= inputs
 OUTPUT_DIR ?= outputs
 
@@ -20,7 +26,11 @@ RESET  := \033[0m
 
 
 PANDOC := $(shell which pandoc)
-GCDOCS ?= $(shell which gcdocs 2>/dev/null || find $(HOME)/miniconda3 $(HOME)/anaconda3 -name gcdocs -type f 2>/dev/null | head -1)
+# Same reasoning as EXPORT_DIR above: compute once via := inside the guard, not on
+# every reference. The find-over-miniconda3 fallback is especially costly to repeat.
+ifeq ($(origin GCDOCS), undefined)
+GCDOCS := $(shell which gcdocs 2>/dev/null || find $(HOME)/miniconda3 $(HOME)/anaconda3 -name gcdocs -type f 2>/dev/null | head -1)
+endif
 GCOVER=gcover
 RM=/bin/rm
 CP=/usr/bin/cp
@@ -36,10 +46,10 @@ PUML_PDF          := $(PUML_FILE:.puml=.pdf)
 # Define targets for each language and format
 OUTPUTS = $(foreach lang,$(LANGUAGES),$(foreach fmt,$(FORMATS),$(OUTPUT_DIR)/$(lang)/datamodel.$(fmt)))
 INPUTS = $(foreach lang,$(LANGUAGES),$(foreach fmt,$(FORMATS),$(INPUT_DIR)/$(lang)/datamodel.md))
-CLEAN_PDFS = $(shell find outputs -name "*.pdf" -not -name "ER-GCOVER.pdf")
+CLEAN_PDFS := $(shell find outputs -name "*.pdf" -not -name "ER-GCOVER.pdf")
 LOGO := Logo_RGB_farbig_positiv.png
 
-RELEASE=$(shell python -c "import yaml; print(yaml.safe_load(open('release.yaml'))['model']['revision'])")
+RELEASE := $(shell python -c "import yaml; print(yaml.safe_load(open('release.yaml'))['model']['revision'])")
 
 
 # regex: 4 digits, dash, 2 digits, dash, 2 digits
@@ -88,117 +98,54 @@ PANDOC_PDF_OPTIONS=--pdf-engine=xelatex  --pdf-engine-opt=--halt-on-error
 PANDOC_DOCX_OPTIONS=
 PANDOC_ODT_OPTIONS=
 
-# Help target
+# === Help ===
+# Auto-generated from "### Group" and "## target: description" comments below —
+# add both when you add a new target so it shows up here.
+.PHONY: help
 help:
-	@echo "Usage:"
-	@echo "  make all                - Generate all files (PDF, DOCX, HTML and ODT for all languages)"
-	@echo "  make pdfs               - Generate only PDF files for all languages"
-	@echo "  make docxs              - Generate only DOCX files for all languages"
-	@echo "  make odts               - Generate only ODT files for all languages"
-	@echo "  make htmls              - Generate only HTML files for all languages"
-	@echo "  make mds                - Generate only Markdown files for all languages"
-	@echo "  make de                 - Generate all files (PDF, DOCX, HTML and ODT) for German"
-	@echo "  make fr                 - Generate all files (PDF, DOCX, HTML and ODT) for French"
-	@echo "  make it                 - Generate all files (PDF, DOCX, HTML and ODT) for Italian"
-	@echo "  make en                 - Generate all files (PDF, DOCX, HTML and ODT) for English"
-	@echo "  make markdown           - Generate markdown files"
-	@echo "  make release-notes      - Gemerate release notes"
-	@echo "  make diagram            - Generate ER diagram"
-	@echo "  make validate           - Validate the datamodel against the schema"
-	@echo "  make check-metadata     - Check the model metadata"
-	@echo "  make validate-metadata  - Validate the datamodel metadata"
-	@echo "  make cleanall           - Remove all generated files"
-	@echo "  make help               - Display this help message"
-	@echo ""
-	@echo "VARIABLES:"
-	@echo "  pandoc=$(PANDOC)"
-	@echo "  V1=$(V1)"
-	@echo "  V2=$(V2)"
-	@echo "  RELEASE=$(RELEASE)"
-	@echo "  SOURCES=$(SOURCES_DIR)/$(V2)"
+	@printf "$(BOLD)Usage: make [target]$(RESET)\n\n"
+	@awk '/^### / { printf "\n$(YELLOW)%s$(RESET)\n", substr($$0, 5) } \
+	      /^## /  { printf "  %-28s %s\n", $$2, substr($$0, index($$0, $$3)) }' \
+	      $(MAKEFILE_LIST) | sed 's/://'
+	@printf "\n$(BOLD)$(YELLOW)VARIABLES:$(RESET)\n"
+	@printf "  %-28s %s\n" "pandoc:" "$(PANDOC)"
+	@printf "  %-28s %s\n" "V1:" "$(V1)"
+	@printf "  %-28s %s\n" "V2:" "$(V2)"
+	@printf "  %-28s %s\n" "RELEASE:" "$(RELEASE)"
+	@printf "  %-28s %s\n" "SOURCES:" "$(SOURCES_DIR)/$(V2)"
 	$(call check_file,geocover-schema-sde.json,$(EXPORT_DIR)/geocover-schema-sde.json)
 	$(call check_file,Geol_Mapping_Unit.json,$(EXPORT_DIR)/Geol_Mapping_Unit.json)
 
-.PHONY: assets
-assets:
-	@mkdir -p $(OUTPUT_DIR)/de
-	@mkdir -p $(OUTPUT_DIR)/fr
-	@mkdir -p $(OUTPUT_DIR)/it
-	@mkdir -p $(OUTPUT_DIR)/en
-	@mkdir -p $(INPUT_DIR)/de
-	@mkdir -p $(INPUT_DIR)/fr
-	@mkdir -p $(INPUT_DIR)/it
-	@mkdir -p $(INPUT_DIR)/en
-	@$(CP) assets/$(CSS) $(OUTPUT_DIR)/de
-	@$(CP) assets/$(CSS) $(OUTPUT_DIR)/fr
-	@$(CP) assets/$(CSS) $(OUTPUT_DIR)/it
-	@$(CP) assets/$(CSS) $(OUTPUT_DIR)/en
-	@$(CP) assets/geocover.png $(OUTPUT_DIR)/de
-	@$(CP) assets/geocover.png $(OUTPUT_DIR)/fr
-	@$(CP) assets/geocover.png $(OUTPUT_DIR)/it
-	@$(CP) assets/geocover.png $(OUTPUT_DIR)/en
-	@$(CP) assets/geocover.png .
-	@$(CP) assets/model.png $(OUTPUT_DIR)/de
-	@$(CP) assets/model.png $(OUTPUT_DIR)/fr
-	@$(CP) assets/model.png $(OUTPUT_DIR)/it
-	@$(CP) assets/model.png $(OUTPUT_DIR)/en
-	@$(CP) assets/model.png .
-	@$(CP) -f assets/$(LOGO) $(INPUT_DIR)/en/
-	@$(CP) -f assets/$(LOGO)  $(INPUT_DIR)/de/
-	@$(CP) -f assets/$(LOGO)  $(INPUT_DIR)/fr/
-	@$(CP) -f assets/$(LOGO)  $(INPUT_DIR)/it/
-
-$(OUTPUT_DIR):
-	@mkdir -p $(OUTPUT_DIR)
-
-$(OUTPUT_DIR)/%: assets
-
-
-$(OUTPUT_DIR)/%: assets
-
-
-markdown: $(MO_FILES) $(INPUTS)
-
-
-diagram: assets
-	rm -rf $(OUTPUT_DIR)/ER-GCOVER.*
-	# python create_gv.py
-	gcover schema diagram --output $(OUTPUT_DIR)/diagram.puml   --no-domains  --title "GeoCover 2D Schema $(RELEASE)"  $(EXPORT_DIR)/geocover-schema-sde.json
-
-diagram-pdf:
-	  java -jar /usr/share/plantuml/plantuml.jar  -tpdf $(OUTPUT_DIR)/diagram.puml
-
-
-.PHONY: kroki-up kroki-down puml-svg puml-pdf
-
-kroki-up: ## Start the Kroki rendering server (detached Docker container)
-	docker run -d --rm --name $(KROKI_CONTAINER) -p 1234:8000 yuzutech/kroki
-	@echo "$(GREEN)Kroki server started at $(KROKI_URL)$(RESET)"
-
-kroki-down: ## Stop the Kroki rendering server
-	docker stop $(KROKI_CONTAINER)
-	@echo "$(YELLOW)Kroki server stopped$(RESET)"
-
-puml-svg: ## Convert PUML_FILE to SVG via local kroki (e.g. make puml-svg PUML_FILE=out.puml)
-	curl -s -X POST $(KROKI_URL)/plantuml/svg \
-		-H "Content-Type: text/plain" \
-		--data-binary @$(PUML_FILE) \
-		-o $(PUML_SVG)
-
-	@echo "$(GREEN)SVG written to $(PUML_SVG)$(RESET)"
-
-puml-pdf: puml-svg ## Convert PUML_FILE to PDF via SVG + rsvg-convert
-	rsvg-convert -f pdf -o $(PUML_PDF) $(PUML_SVG)
-	@echo "$(GREEN)PDF written to $(PUML_PDF)$(RESET)"
-
-
-$(INPUT_DIR)/datamodel.xlsx:
-	$(GCDOCS)  export datamodel.yaml  -o $@
-
-
+### Documentation build
+## all: Generate all files (PDF, DOCX, HTML and ODT) for all languages
 .PHONY: all
 all:  $(OUTPUT_DIR) $(INPUTS)  $(OUTPUTS)
 # TODO readd  $(INPUT_DIR)/datamodel.xlsx
+
+## pdfs: Generate only PDF files for all languages
+## odts: Generate only ODT files for all languages
+## htmls: Generate only HTML files for all languages
+## docxs: Generate only DOCX files for all languages
+## mds: Generate only Markdown files for all languages
+.PHONY: pdfs odts htmls docxs mds
+pdfs: $(foreach lang,$(LANGUAGES),$(OUTPUT_DIR)/$(lang)/datamodel.pdf)
+odts: $(foreach lang,$(LANGUAGES),$(OUTPUT_DIR)/$(lang)/datamodel.odt)
+htmls: $(foreach lang,$(LANGUAGES),$(OUTPUT_DIR)/$(lang)/datamodel.html)
+docxs: $(foreach lang,$(LANGUAGES),$(OUTPUT_DIR)/$(lang)/datamodel.docx)
+mds: $(foreach lang,$(LANGUAGES),$(INPUT_DIR)/$(lang)/datamodel.md)
+
+## markdown: Generate markdown files
+markdown: $(MO_FILES) $(INPUTS)
+
+## de: Generate all files (PDF, DOCX, HTML and ODT) for German
+## fr: Generate all files (PDF, DOCX, HTML and ODT) for French
+## it: Generate all files (PDF, DOCX, HTML and ODT) for Italian
+## en: Generate all files (PDF, DOCX, HTML and ODT) for English
+.PHONY: de fr it en
+de: $(foreach fmt,$(FORMATS),$(OUTPUT_DIR)/de/datamodel.$(fmt))
+fr: $(foreach fmt,$(FORMATS),$(OUTPUT_DIR)/fr/datamodel.$(fmt))
+it: $(foreach fmt,$(FORMATS),$(OUTPUT_DIR)/it/datamodel.$(fmt))
+en: $(foreach fmt,$(FORMATS),$(OUTPUT_DIR)/en/datamodel.$(fmt))
 
 # Define individual rules for each format and language
 define build_rule
@@ -234,34 +181,124 @@ endef
 # Apply the build_rule for each language
 $(foreach lang,$(LANGUAGES),$(eval $(call build_rule,$(lang))))
 
+$(OUTPUT_DIR):
+	@mkdir -p $(OUTPUT_DIR)
+
+$(OUTPUT_DIR)/%: assets
 
 
-# Targets for building specific formats
-.PHONY: pdfs odts htmls docxs mds
-pdfs: $(foreach lang,$(LANGUAGES),$(OUTPUT_DIR)/$(lang)/datamodel.pdf)
-odts: $(foreach lang,$(LANGUAGES),$(OUTPUT_DIR)/$(lang)/datamodel.odt)
-htmls: $(foreach lang,$(LANGUAGES),$(OUTPUT_DIR)/$(lang)/datamodel.html)
-docxs: $(foreach lang,$(LANGUAGES),$(OUTPUT_DIR)/$(lang)/datamodel.docx)
-mds: $(foreach lang,$(LANGUAGES),$(INPUT_DIR)/$(lang)/datamodel.md)
+$(OUTPUT_DIR)/%: assets
 
 
-# Targets for building specific languages
-.PHONY: de fr it en
-de: $(foreach fmt,$(FORMATS),$(OUTPUT_DIR)/de/datamodel.$(fmt))
-fr: $(foreach fmt,$(FORMATS),$(OUTPUT_DIR)/fr/datamodel.$(fmt))
-it: $(foreach fmt,$(FORMATS),$(OUTPUT_DIR)/it/datamodel.$(fmt))
-en: $(foreach fmt,$(FORMATS),$(OUTPUT_DIR)/en/datamodel.$(fmt))
+$(INPUT_DIR)/datamodel.xlsx:
+	$(GCDOCS)  export datamodel.yaml  -o $@
 
 
+### Assets
+## assets: Copy CSS, cover images and logo into inputs/ and outputs/ for every language
+.PHONY: assets
+assets:
+	@mkdir -p $(OUTPUT_DIR)/de
+	@mkdir -p $(OUTPUT_DIR)/fr
+	@mkdir -p $(OUTPUT_DIR)/it
+	@mkdir -p $(OUTPUT_DIR)/en
+	@mkdir -p $(INPUT_DIR)/de
+	@mkdir -p $(INPUT_DIR)/fr
+	@mkdir -p $(INPUT_DIR)/it
+	@mkdir -p $(INPUT_DIR)/en
+	@$(CP) assets/$(CSS) $(OUTPUT_DIR)/de
+	@$(CP) assets/$(CSS) $(OUTPUT_DIR)/fr
+	@$(CP) assets/$(CSS) $(OUTPUT_DIR)/it
+	@$(CP) assets/$(CSS) $(OUTPUT_DIR)/en
+	@$(CP) assets/geocover.png $(OUTPUT_DIR)/de
+	@$(CP) assets/geocover.png $(OUTPUT_DIR)/fr
+	@$(CP) assets/geocover.png $(OUTPUT_DIR)/it
+	@$(CP) assets/geocover.png $(OUTPUT_DIR)/en
+	@$(CP) assets/geocover.png .
+	@$(CP) assets/model.png $(OUTPUT_DIR)/de
+	@$(CP) assets/model.png $(OUTPUT_DIR)/fr
+	@$(CP) assets/model.png $(OUTPUT_DIR)/it
+	@$(CP) assets/model.png $(OUTPUT_DIR)/en
+	@$(CP) assets/model.png .
+	@$(CP) -f assets/$(LOGO) $(INPUT_DIR)/en/
+	@$(CP) -f assets/$(LOGO)  $(INPUT_DIR)/de/
+	@$(CP) -f assets/$(LOGO)  $(INPUT_DIR)/fr/
+	@$(CP) -f assets/$(LOGO)  $(INPUT_DIR)/it/
 
-#.PHONY: cover-image
-
+## cover-image: Regenerate the docs cover figure from the GeoCover WMS (see scripts/generate_cover_image.py --help)
 cover-image:
 	@python ./scripts/generate_cover_image.py
 
+
+### Schema & diagram
+## diagram: Generate ER diagram (outputs/diagram.puml) from the SDE schema export
+diagram: assets
+	rm -rf $(OUTPUT_DIR)/ER-GCOVER.*
+	# python create_gv.py
+	gcover schema diagram --output $(OUTPUT_DIR)/diagram.puml   --no-domains  --title "GeoCover 2D Schema $(RELEASE)"  $(EXPORT_DIR)/geocover-schema-sde.json
+
+## diagram-pdf: Render outputs/diagram.puml to PDF via the local PlantUML jar
+diagram-pdf:
+	  java -jar /usr/share/plantuml/plantuml.jar  -tpdf $(OUTPUT_DIR)/diagram.puml
+
+## schema-simple: Generate the simplified schema JSON (gcover-schema-simple.json)
+## extract-subtypes: Extract subtypes_dict.json from the SDE schema export
+## extract-domains: Extract coded_domains.json from the SDE schema export
+.PHONE: schema-simple extract-subtypes extract-domains
+
+schema-simple: $(EXPORT_DIR)/gcover-schema-simple.json
+
+extract-subtypes: $(EXPORT_DIR)/subtypes_dict.json
+
+extract-domains: $(EXPORT_DIR)/coded_domains.json
+
+
+$(EXPORT_DIR)/gcover-schema-simple.json:
+	$(GCOVER) schema transform --pretty --show-summary --output $@  $(EXPORT_DIR)/geocover-schema-sde.json
+
+$(EXPORT_DIR)/subtypes_dict.json:
+	$(GCDOCS) extract --mode subtypes -f json -o $@  $(EXPORT_DIR)/geocover-schema-sde.json
+
+$(EXPORT_DIR)/coded_domains.json:
+	$(GCDOCS) extract --mode domains -f json -o $@  $(EXPORT_DIR)/geocover-schema-sde.json
+
+
+### Kroki (PlantUML rendering)
+.PHONY: kroki-up kroki-down puml-svg puml-pdf
+
+## kroki-up: Start the Kroki rendering server (detached Docker container)
+kroki-up:
+	docker run -d --rm --name $(KROKI_CONTAINER) -p 1234:8000 yuzutech/kroki
+	@echo "$(GREEN)Kroki server started at $(KROKI_URL)$(RESET)"
+
+## kroki-down: Stop the Kroki rendering server
+kroki-down:
+	docker stop $(KROKI_CONTAINER)
+	@echo "$(YELLOW)Kroki server stopped$(RESET)"
+
+## puml-svg: Convert PUML_FILE to SVG via local kroki (e.g. make puml-svg PUML_FILE=out.puml)
+puml-svg:
+	curl -s -X POST $(KROKI_URL)/plantuml/svg \
+		-H "Content-Type: text/plain" \
+		--data-binary @$(PUML_FILE) \
+		-o $(PUML_SVG)
+
+	@echo "$(GREEN)SVG written to $(PUML_SVG)$(RESET)"
+
+## puml-pdf: Convert PUML_FILE to PDF via SVG + rsvg-convert
+puml-pdf: puml-svg
+	rsvg-convert -f pdf -o $(PUML_PDF) $(PUML_SVG)
+	@echo "$(GREEN)PDF written to $(PUML_PDF)$(RESET)"
+
+
+### Release notes
 .PHONY: schema-changes-md schema-changes-pdf data-releases-md data-releases-pdf release-notes clean-releases  validate-release-files release-notes
 
-# High-level targets
+## schema-changes-md: Generate outputs/SCHEMA_CHANGES.md from SCHEMA_CHANGES.yaml
+## schema-changes-pdf: Render SCHEMA_CHANGES.md to PDF
+## data-releases-md: Generate outputs/DATA_RELEASES.md from DATA_RELEASES.yaml
+## data-releases-pdf: Render DATA_RELEASES.md to PDF
+## release-notes: Generate schema-changes-pdf and data-releases-pdf
 schema-changes-md: $(OUTPUT_DIR)/SCHEMA_CHANGES.md
 schema-changes-pdf: $(OUTPUT_DIR)/SCHEMA_CHANGES.pdf
 data-releases-md: $(OUTPUT_DIR)/DATA_RELEASES.md
@@ -292,14 +329,11 @@ $(OUTPUT_DIR)/DATA_RELEASES.pdf: $(OUTPUT_DIR)/DATA_RELEASES.md $(INPUT_DIR)/en/
 
 release-notes: schema-changes-pdf data-releases-pdf
 
-excel-mapping: $(OUTPUT_DIR)/geology_mapping_tool.xlsx
-
-$(OUTPUT_DIR)/geology_mapping_tool.xlsx:
-	python ./scripts/geology_mapping_tool.py
-
+## validate-release-files: Validate DATA_RELEASES.yaml and SCHEMA_CHANGES.yaml
 validate-release-files:
 	python scripts/geocover_release_notes.py both --validate
 
+## clean-releases: Remove generated SCHEMA_CHANGES/DATA_RELEASES markdown and PDF
 clean-releases:
 	rm -f $(OUTPUT_DIR)/DATA_RELEASES.pdf
 	rm -f $(OUTPUT_DIR)/DATA_RELEASES.md
@@ -307,33 +341,30 @@ clean-releases:
 	rm -f $(OUTPUT_DIR)/SCHEMA_CHANGES.md
 
 
+### Excel export
+## excel-mapping: Generate outputs/geology_mapping_tool.xlsx
+excel-mapping: $(OUTPUT_DIR)/geology_mapping_tool.xlsx
+
+$(OUTPUT_DIR)/geology_mapping_tool.xlsx:
+	python ./scripts/geology_mapping_tool.py
+
+## geolcodes-xlsx: Generate outputs/all_geolcode.xlsx (every coded-domain/subtype value, flat)
+geolcodes-xlsx: $(OUTPUT_DIR)/all_geolcode.xlsx
+
+$(OUTPUT_DIR)/all_geolcode.xlsx:
+	$(GCDOCS) export-geolcodes -i $(EXPORT_DIR) -o $@
+
+
+### Schema diff reports
 .PHONY: diff diff-pdf diff-docx diff-reports
 
+## diff: Generate Markdown + HTML schema diff between V1 and V2 (default: last two dated sources/ dirs)
 diff: $(OUTPUT_DIR) $(OUTPUT_DIR)/$(V1)_$(V2).md $(OUTPUT_DIR)/$(V1)_$(V2).html
 
+## diff-reports: Generate PDF + DOCX + HTML schema diff between V1 and V2
 diff-reports: $(OUTPUT_DIR)   $(OUTPUT_DIR)/$(V1)_$(V2).pdf $(OUTPUT_DIR)/$(V1)_$(V2).docx $(OUTPUT_DIR)/$(V1)_$(V2).html
 
 $(INPUT_DIR)/en/cd-header.tex:
-
-
-.PHONE: schema-simple extract-subtypes extract-domains
-
-schema-simple: $(EXPORT_DIR)/gcover-schema-simple.json
-
-extract-subtypes: $(EXPORT_DIR)/subtypes_dict.json
-
-extract-domains: $(EXPORT_DIR)/coded_domains.json
-
-
-$(EXPORT_DIR)/gcover-schema-simple.json:
-	$(GCOVER) schema transform --pretty --show-summary --output $@  $(EXPORT_DIR)/geocover-schema-sde.json
-
-$(EXPORT_DIR)/subtypes_dict.json:
-	$(GCDOCS) extract --mode subtypes -f json -o $@  $(EXPORT_DIR)/geocover-schema-sde.json
-
-$(EXPORT_DIR)/coded_domains.json:
-	$(GCDOCS) extract --mode domains -f json -o $@  $(EXPORT_DIR)/geocover-schema-sde.json
-
 
 
 $(OUTPUT_DIR)/$(V1)_$(V2).html:
@@ -364,16 +395,18 @@ $(OUTPUT_DIR)/$(V1)_$(V2).docx: $(OUTPUT_DIR)/$(V1)_$(V2).md
 	$(PANDOC) $(PANDOC_OPTIONS)  $(PANDOC_DOCX_OPTIONS)  -o $(OUTPUT_DIR)/$(V1)_$(V2).docx $(OUTPUT_DIR)/$(V1)_$(V2).md
 
 
-
-
+### Validation & tests
 .PHONY: validate test
+
+## validate: Validate the datamodel against the schema
 validate:
 	 $(GCDOCS)  validate datamodel.yaml
 
+## test: Run the gcdocs smoke tests
 test:
 	python -m pytest tests/test_gcdocs_smoke.py -v --no-cov 2>&1
 
-# Check metadata in all generated PDFs
+## check-metadata: Print custom PDF metadata (ModelRevision, GitHash, ...) for every generated PDF
 .PHONY: check-metadata
 check-metadata:
 	@echo "=== PDF Metadata Check ==="
@@ -385,6 +418,7 @@ check-metadata:
 		fi; \
 	done
 
+## validate-metadata: Fail if any generated PDF is missing ModelRevision metadata
 .PHONY: validate-metadata
 validate-metadata:
 	@echo "=== Metadata Validation ==="
@@ -407,13 +441,12 @@ validate-metadata:
 		exit 1; \
 	fi
 
-# Clean up
-# Clean up all generated files
+### Clean up
+## cleanall: Remove all generated files (inputs + pdf/odt/html/docx outputs)
 .PHONY:  cleanall
 cleanall: cleaninputs cleanpdf cleanodt cleanhtml cleandocx
 
-
-# Clean up only generated PDF files
+## cleanpdf: Delete all generated PDFs except ER-GCOVER.pdf
 .PHONY: cleanpdf
 cleanpdf:
 	@echo "Deleting all PDFs except ER-GCOVER.pdf..."
@@ -423,23 +456,22 @@ cleanpdf:
 		echo "No other PDFs to delete."; \
 	fi
 
-
-
-# Clean up only generated ODT files
+## cleanodt: Delete all generated ODT files
 .PHONY: cleanodt
 cleanodt: $(OUTPUT_DIR)
 	find $(OUTPUT_DIR) -name "*.odt" -delete
 
-# Clean up only generated DOCX files
+## cleandocx: Delete all generated DOCX files
 .PHONY: cleandocx
 cleandocx: $(OUTPUT_DIR)
 	find $(OUTPUT_DIR) -name "*.docx" -delete
 
-# Clean up only generated HTML, CSS, and image files
+## cleanhtml: Delete generated HTML, CSS and image files
 .PHONY: cleanhtml
 cleanhtml: $(OUTPUT_DIR)
 	find $(OUTPUT_DIR) -type f \( -name "*.html" -o -name "*.css" -o -name "*.png" -o -name "*.jpg" -o -name "*.jpeg" \) -delete
 
+## cleaninputs: Remove everything under inputs/{de,fr,it,en}/
 .PHONY: cleaninputs
 cleaninputs:
 	rm -rf $(INPUT_DIR)/de/*

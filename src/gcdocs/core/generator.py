@@ -872,14 +872,11 @@ class EnhancedMarkdownGenerator:
                         elif att_type == "subtype" and att_value:
                             pairs = self._get_subtype_values(att_value)
 
-                        # Get annex table values
-                        elif att_type == "annex" and att_value:
-                            if att_value.endswith("_CD"):
-                                pairs = self._get_coded_values(att_value)
-                            else:
-                                # TODO: special case
-                                if "GC_GEOL_MAPPING_UNIT_ATT" not in att_value:
-                                    pairs = self._get_table_values(att_value)
+                        # Note: att_type == "annex" intentionally has no per-attribute
+                        # pairs — the template links to the shared table rendered once
+                        # in the Annexes section (see model_markdown.j2) instead of
+                        # duplicating potentially large domains under every attribute
+                        # that references them.
 
                         if pairs:
                             att["pairs"] = pairs

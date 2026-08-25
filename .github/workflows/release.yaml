@@ -170,6 +170,8 @@ jobs:
           cp temp-artifacts/outputs/SCHEMA_CHANGES.pdf release-assets/SCHEMA_CHANGES.pdf
           cp temp-artifacts/outputs/*.pdf  release-assets/
           cp temp-artifacts/${{ env.EXPORT_DIR }}/gcover-schema-simple.json release-assets/gcover-schema-simple.json
+          cp temp-artifacts/outputs/geology_mapping_tool*.xlsx release-assets/
+          cp temp-artifacts/outputs/all_geolcode.xlsx release-assets/
 
           echo "📦 Release assets:"
           ls -la release-assets/
@@ -177,7 +179,7 @@ jobs:
       - name: Create GitHub Release
         uses: ncipollo/release-action@v1.21.0
         with:
-          token: ${{ secrets.TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           tag: ${{ env.TAG_NAME }}
           name: Release ${{ env.TAG_NAME }}
           bodyFile: ${{ steps.release_info.outputs.release_body_path }}
@@ -188,7 +190,7 @@ jobs:
 
       - name: Upload assets with gh CLI (backup)
         env:
-          GITHUB_TOKEN: ${{ secrets.TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           TAG="${{ env.TAG_NAME }}"
 
