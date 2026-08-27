@@ -75,7 +75,16 @@ def get_short_revision(version_str):
 
 
 def get_git_revision_info():
-    """Get git revision info and determine if this is a release version."""
+    """Get git revision info and determine if this is a release version.
+
+    Release status prefers the CI-computed IS_RELEASE_BUILD/RELEASE_TAG env
+    vars (set by .github/workflows/build.yaml from check-version's output)
+    over re-deriving it from `git describe --exact-match --tags HEAD`: in the
+    release workflow, this build job runs in parallel with the `create-tag`
+    job (both only `needs: check-version`), so the tag reliably doesn't exist
+    yet on this checkout when this runs. Falls back to the tag-based check
+    for local/manual runs, where those env vars aren't set.
+    """
     try:
         # Get short hash
         hash_short = (
@@ -83,6 +92,12 @@ def get_git_revision_info():
             .decode("ascii")
             .strip()
         )
+
+        env_is_release = os.environ.get("IS_RELEASE_BUILD")
+        if env_is_release is not None:
+            is_release = env_is_release.strip().lower() == "true"
+            tag = os.environ.get("RELEASE_TAG") if is_release else None
+            return {"hash": hash_short, "is_release": is_release, "tag": tag}
 
         # Check if current commit is tagged (indicates release)
         try:

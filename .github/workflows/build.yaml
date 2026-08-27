@@ -109,6 +109,13 @@ jobs:
           else
             echo "DEV_SUFFIX=-dev${{ github.run_number }}" >> $GITHUB_ENV
           fi
+          # Passed straight to gcdocs generate (see get_git_revision_info() in
+          # generator.py) instead of letting it re-derive release status from
+          # `git describe --exact-match --tags HEAD`: this job runs in parallel
+          # with the `create-tag` job (both only `needs: check-version`), so the
+          # tag reliably doesn't exist yet on this checkout at PDF-build time.
+          echo "IS_RELEASE_BUILD=$IS_RELEASE" >> $GITHUB_ENV
+          echo "RELEASE_TAG=v$RELEASE" >> $GITHUB_ENV
           echo "=== RELEASE=$RELEASE IS_RELEASE=$IS_RELEASE ==="
 
       - name: Inject dev suffix into document metadata

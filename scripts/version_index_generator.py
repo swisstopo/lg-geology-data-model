@@ -10,8 +10,8 @@ Versioning convention
 The index groups all x.y.z patches under their x.y parent and renders
 files from the latest patch — conceptually a symlink x.y → newest x.y.z.
 
-Translations are loaded from  <repo_root>/translation.xlsx  (sheet
-"translations", columns: msg_id | de | fr | it | en).
+Translations are loaded from  <repo_root>/scripts/translations.xlsx  (first
+sheet, columns: msg_id | de | fr | it | en).
 
 Usage
 -----
@@ -43,7 +43,7 @@ from jinja2 import Environment, FileSystemLoader, select_autoescape
 SCRIPT_DIR = Path(__file__).resolve().parent          # …/scripts/
 REPO_ROOT   = SCRIPT_DIR.parent                       # …/ (project root)
 TEMPLATE_DIR = SCRIPT_DIR / "templates"
-TRANSLATION_FILE = REPO_ROOT / "translations.xlsx"
+TRANSLATION_FILE = SCRIPT_DIR / "translations.xlsx"
 
 
 # ---------------------------------------------------------------------------
@@ -104,9 +104,21 @@ def get_s3_client(profile_name: str = None):
     return session.client("s3")
 
 
+def normalize_version(version_str: str) -> str:
+    """
+    Strip a leading 'v'/'V'. Some releases got a second, stray upload under
+    a 'v'-prefixed key (e.g. "v4.5.0") from a human manually re-running
+    deploy.yaml's workflow_dispatch and typing the version the way a git tag
+    looks — alongside the pipeline-authoritative, always-unprefixed one
+    (e.g. "4.5.0") that release.yaml's automated deploy job writes. This
+    normalizes both to the same value so they're recognized as one release.
+    """
+    return version_str[1:] if version_str[:1] in ("v", "V") else version_str
+
+
 def parse_version(version_str: str) -> tuple:
-    """Parse version string into a sortable tuple."""
-    parts = re.findall(r"\d+|\D+", version_str)
+    """Parse version string into a sortable tuple (ignoring a leading 'v')."""
+    parts = re.findall(r"\d+|\D+", normalize_version(version_str))
     return tuple(
         (0, int(p)) if p.isdigit() else (1, p)
         for p in parts
@@ -144,8 +156,8 @@ def group_versions_by_minor(versions: List[str]) -> "OrderedDict[str, List[str]]
     """
     groups: OrderedDict = OrderedDict()
     for v in versions:
-        parts = v.split(".")
-        key = ".".join(parts[:2]) if len(parts) >= 3 else v
+        parts = normalize_version(v).split(".")
+        key = ".".join(parts[:2]) if len(parts) >= 3 else normalize_version(v)
         groups.setdefault(key, []).append(v)
     return groups
 
@@ -214,6 +226,31 @@ def get_files_for_version(
         print(f"Error listing files for version {version}: {exc}")
 
     return files_by_lang
+
+
+def _latest_modified(files_by_lang: Dict[str, List[Dict[str, Any]]]) -> datetime:
+    times = [f["last_modified"] for files in files_by_lang.values() for f in files]
+    return max(times) if times else datetime.min.replace(tzinfo=timezone.utc)
+
+
+def dedupe_by_normalized_version(
+    versions: List[str], version_files: Dict[str, Dict[str, List[Dict[str, Any]]]]
+) -> List[str]:
+    """
+    Collapse a "v"-prefixed / unprefixed pair for the same release (see
+    normalize_version()) into a single entry, keeping whichever was actually
+    uploaded most recently — i.e. preferring the pipeline-authoritative
+    upload over a stale stray one when both exist, without hardcoding which
+    literal form "wins".
+    """
+    best: Dict[str, str] = {}
+    for v in versions:
+        norm = normalize_version(v)
+        current = best.get(norm)
+        if current is None or _latest_modified(version_files[v]) > _latest_modified(version_files[current]):
+            best[norm] = v
+    winners = set(best.values())
+    return [v for v in versions if v in winners]
 
 
 # ---------------------------------------------------------------------------
@@ -329,9 +366,6 @@ def main(lang: str, no_upload: bool):
     versions = list_versions(s3_client, bucket_name, prefix)
     print(f"✅ {len(versions)} patch version(s): {', '.join(versions)}")
 
-    groups = group_versions_by_minor(versions)
-    print(f"📐 Schema versions (x.y): {', '.join(groups.keys())}")
-
     # --- Scan files for every patch version ---
     print("📂 Scanning files …")
     version_files: Dict[str, Dict] = {}
@@ -341,6 +375,17 @@ def main(lang: str, no_upload: bool):
         total = sum(len(f) for f in files_by_lang.values())
         summary = ", ".join(f"{l}: {len(f)}" for l, f in files_by_lang.items() if f)
         print(f"  📋 {version}: {total} file(s) ({summary})")
+
+    # --- Dedupe "v"-prefixed / unprefixed pairs, keeping the freshest upload ---
+    deduped = dedupe_by_normalized_version(versions, version_files)
+    dropped = [v for v in versions if v not in deduped]
+    if dropped:
+        print(f"🧹 Dropped {len(dropped)} stray duplicate(s): {', '.join(dropped)}")
+    versions = deduped
+    version_files = {v: version_files[v] for v in versions}
+
+    groups = group_versions_by_minor(versions)
+    print(f"📐 Schema versions (x.y): {', '.join(groups.keys())}")
 
     # --- Render ---
     print("🎨 Rendering template …")
