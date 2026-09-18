@@ -104,15 +104,37 @@ pip install gcover
 ### 1.3 Extract the full SDE schema — *requires arcpy/SDE connection*
 
 ```bash
-gcover schema extract \
+gcover --env production schema extract \
   --filter-prefix "GC_" \
-  --output sources/<RELEASE-DIR>/geocover-schema-sde.json \
-  "D:\connections\GCOVERP@osa.sde"
+  --output sources/<RELEASE-DIR> \
+  "Y:\connections\GCOVERP@osa.sde"
+```
+
+Run `gcover schema extract --help` for the full option list; the ones that matter here:
+
+| Option | Meaning |
+|---|---|
+| `SOURCE` (positional) | SDE connection file or `.gdb` path |
+| `-o, --output` | Output **directory** (not a file path — see naming below) |
+| `-n, --name` | Report base name (default: `schema_report_<source-stem>`) |
+| `-f, --format` | `json` (default) / `html` / `xml` — repeatable |
+| `--filter-prefix` | Only include tables/classes whose name starts with this prefix — use `"GC_"` |
+| `--remove-prefix` / `--keep-prefix` | Strip the prefix from names in the output (default: `--keep-prefix`) |
+
+The command writes `<output>/<name>.json` (e.g. `schema_report_GCOVERP@osa.json`), **not**
+`geocover-schema-sde.json` — rename/copy it after extraction:
+
+```bash
+mv sources/<RELEASE-DIR>/schema_report_*.json sources/<RELEASE-DIR>/geocover-schema-sde.json
 ```
 
 Everything after this point is a pure JSON→JSON transform — it doesn't need arcpy or an SDE
 connection, so it can run on Linux (or the same Windows box) once
 `sources/<RELEASE-DIR>/geocover-schema-sde.json` exists.
+
+> A working reference wrapper for both this step and §1.5 exists at
+> `../lg-gcover/scripts/task_export_schema.ps1` (adjust the conda env path, workspace, and
+> output dir at the top before running it).
 
 ### 1.4 Generate the simplified schema JSON — *`make` equivalent*
 
@@ -137,24 +159,49 @@ sources/<RELEASE-DIR>/gcover-schema-simple.json sources/<RELEASE-DIR>/geocover-s
 ### 1.5 Export annex tables — *requires arcpy/SDE connection*
 
 ```bash
-gcover schema export-tables \
-  -w "H:/connections/GCOVERP@osa.sde" \
-  -o sources/<RELEASE-DIR> \
-  --all-tables
+gcover --env production schema export-tables \
+  --gc-tables-only \
+  --exclude-incremental \
+  --format json \
+  --output-dir sources/<RELEASE-DIR> \
+  --workspace "Y:\connections\GCOVERP@osa.sde"
 ```
 
-Generates:
+Run `gcover schema export-tables --help` for the full option list; the ones that matter here:
+
+| Option | Meaning |
+|---|---|
+| `-w, --workspace` | SDE connection string or `.gdb` path (required) |
+| `-o, --output-dir` | Output directory (default: current directory) |
+| `--all-tables` / `--gc-tables-only` | All tables in the workspace, or only the 12 `GC_*` annex tables below (default: `--gc-tables-only`) |
+| `--include-incremental` / `--exclude-incremental` | Include tables with an `_I` suffix (default: `--exclude-incremental`) |
+| `-f, --format` | `excel` / `csv` / `json` — repeatable (default: `excel` + `json`); use `-f json` only, since that's the only format the release actually needs |
+| `--table-filter` | Export only specific tables (repeatable), e.g. `--table-filter GC_LITHO --table-filter GC_CHRONO` |
+| `--dry-run` | List what would be exported without writing anything |
+
+With `--gc-tables-only` (the default), it exports these 12 tables — one JSON file each, plus
+a `README.txt` manifest — from `TOPGIS_GC.GC_<NAME>`:
 
 ```
 sources/<RELEASE-DIR>/
-  Geol_Mapping_Unit_Att.json
-  Geol_Mapping_Unit.json
-  Correlation.json
   Admixture.json
-  Composit.json
   Charcat.json
+  Chrono.json
+  Composit.json
+  Correlation.json
+  Geol_Mapping_Unit.json
+  Geol_Mapping_Unit_Att.json
+  Litho.json
+  Litstrat_Formation_Bank.json
+  Litstrat_Unco.json
   System.json
+  Tecto.json
+  README.txt
 ```
+
+> Don't pass `--all-tables` for a routine release — it also pulls in every non-`GC_` table in
+> the workspace (large, mostly irrelevant to the datamodel docs). The `task_export_schema.ps1`
+> wrapper referenced above uses the `--gc-tables-only` default deliberately.
 
 ### 1.6 Extract coded domains and subtypes — *usually automatic, `make` equivalent if needed*
 
