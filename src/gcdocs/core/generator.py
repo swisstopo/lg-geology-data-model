@@ -295,9 +295,17 @@ class EnhancedMarkdownGenerator:
                         att_type = att.get("att_type")
                         value = att.get("value")
 
+                        # Removed attributes are never rendered (see model_markdown.j2's
+                        # `attr.change != 'removed'` guard) and often carry a stale/
+                        # placeholder `value` (e.g. "DUMMY") left over from when the
+                        # domain was pulled out - don't look it up, it's not real.
+                        removed = att.get("change") == "removed"
+
                         # Your existing logic for coded domains, subtypes, etc.
                         pairs = None
-                        if att_type == "CD" and value is not None:
+                        if removed:
+                            pass
+                        elif att_type == "CD" and value is not None:
                             pairs = self._get_coded_values(
                                 value
                             )  # Your existing method
@@ -878,9 +886,14 @@ class EnhancedMarkdownGenerator:
                         att_value = att.get("value")
 
                         pairs = None
+                        removed = att.get("change") == "removed"
 
-                        # Get coded domain values
-                        if att_type == "CD" and att_value:
+                        # Get coded domain values (skip removed attributes - they
+                        # often carry a stale placeholder `value`, e.g. "DUMMY",
+                        # and are never rendered - see model_markdown.j2)
+                        if removed:
+                            pass
+                        elif att_type == "CD" and att_value:
                             pairs = self._get_coded_values(att_value)
 
                         # Get subtype values
