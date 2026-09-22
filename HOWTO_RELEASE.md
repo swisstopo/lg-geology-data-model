@@ -475,7 +475,7 @@ Only stage files that are actually tracked (see "What's committed vs. what's gen
 ```bash
 # Stage the sources snapshot (only if you produced a new one in Step 1).
 # `git add sources/<RELEASE-DIR>/` stages the whole directory — .gitignore only
-# excludes debug_discarded_*.xlsx, so review `git status` first and drop anything
+# excludes debug_discarded*.xlsx, so review `git status` first and drop anything
 # matching the ❌ rows in the table above (coded_domains.json, subtypes_dict.json,
 # gcoverp_export_simple.json, GCOVERP@osa.*, schema.zip, exported_tables_*.xlsx)
 # with `git restore --staged <file>` before committing.
