@@ -1,5 +1,9 @@
 # Changelog
 
+## [4.6.0] - 2026-09-15
+### Fixed
+- Documenting `gcover schema`  tables and schema extraction
+
 ## [4.5.0] - 2026-07-02
 ### Fixed
 - Don't use `_I_Sbutypes`

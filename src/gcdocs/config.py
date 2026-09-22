@@ -567,8 +567,6 @@ class GeoDataConfig:
             merged_df: DataFrame to clean
             debug_export: If True, export discarded data to Excel files
         """
-        from datetime import datetime
-
         required_cols = ["GeolCodeInt", "DE", "FR", "IT", "EN", "source"]
         for col in required_cols:
             if col not in merged_df.columns:
@@ -579,8 +577,10 @@ class GeoDataConfig:
 
         # === DEBUG: Export duplicates ===
         if debug_export:
-            timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-            debug_file = self.input_dir / f"debug_discarded_{timestamp}.xlsx"
+            # Fixed filename (no timestamp): each call overwrites the same file
+            # instead of piling up one per `gcdocs generate` invocation (there are
+            # several per `make pdfs` run - one per language, sometimes more).
+            debug_file = self.input_dir / "debug_discarded.xlsx"
 
             # Find duplicates (those that will be removed)
             duplicates = df_work[
