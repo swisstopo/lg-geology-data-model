@@ -587,9 +587,9 @@ class EnhancedMarkdownGenerator:
 
 
             translator = self._get_translator()
-            logger.info(
-                f"Failed translations: {translator.get_translation_stats()['failed_translations']}"
-            )
+            stats = translator.get_translation_stats()
+            logger.info(f"Failed translations: {stats['failed_translations']}")
+            logger.info(f"Fallback-language translations used: {stats['fallback_translations']}")
             return output_path
 
         except Exception as e:
@@ -949,6 +949,9 @@ class EnhancedMarkdownGenerator:
                 logger.debug(
                     f"Failed translations: {self.geol_translator.get_failed_strings()}"
                 )
+            logger.info(
+                f"Fallback-language translations used: {self.geol_translator.get_fallback_count()}"
+            )
 
         return model
 
