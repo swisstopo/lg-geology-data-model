@@ -322,6 +322,16 @@ class EnhancedMarkdownGenerator:
         for annex in data.get("annexes", []):
             annex_name = annex.get("name")
             annex_fname = annex.get("fname")
+
+            # `type_: table` annexes (e.g. GC_GEOL_MAPPING_UNIT_ATT) are raw join
+            # tables, not GEOL_CODE_INT/GERMAN-style glossaries - `_get_table_values`
+            # can't parse them (wrong columns) and `annex["pairs"]` is never what
+            # renders them anyway. `_process_model()` (called later, from
+            # `_render_markdown`) loads them correctly into `annex["table"]` via
+            # `_get_annex_values()`. Leave them alone here.
+            if annex.get("type_") == "table":
+                continue
+
             if annex_fname is not None:
                 pairs = self._get_table_values(annex_fname)  # Your existing method
             else:
