@@ -49,6 +49,7 @@ releases:
       - { name: "Meiental",    sheet: 146 }
       - { name: "Muotathal",   sheet: 127 }
       - { name: "Schiers",     sheet: 1176 }
+      - { name: "Sissach-Rheinfelden", sheet: 161 }
       - { name: "Sörenberg",   sheet: 1189 }
       - { name: "Urseren",     sheet: 133 }
       - { name: "Val Bregaglia", sheet: 1276 }
