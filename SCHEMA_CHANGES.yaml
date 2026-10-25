@@ -6,6 +6,12 @@
 # Cross-reference: DATA_RELEASES.yaml references these via schema_version.
 
 schema_versions:
+  - version: "4.6.0"
+    git_tag: "v4.6.0"
+    date: "2026-09-15"
+    model_transition: "4.5 -> 4.6"
+    note: ""
+    changes:
   - version: "4.5.0"
     git_tag: "v4.5.0"
     date: "2026-08-20"

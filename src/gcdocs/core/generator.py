@@ -295,9 +295,17 @@ class EnhancedMarkdownGenerator:
                         att_type = att.get("att_type")
                         value = att.get("value")
 
+                        # Removed attributes are never rendered (see model_markdown.j2's
+                        # `attr.change != 'removed'` guard) and often carry a stale/
+                        # placeholder `value` (e.g. "DUMMY") left over from when the
+                        # domain was pulled out - don't look it up, it's not real.
+                        removed = att.get("change") == "removed"
+
                         # Your existing logic for coded domains, subtypes, etc.
                         pairs = None
-                        if att_type == "CD" and value is not None:
+                        if removed:
+                            pass
+                        elif att_type == "CD" and value is not None:
                             pairs = self._get_coded_values(
                                 value
                             )  # Your existing method
@@ -314,6 +322,16 @@ class EnhancedMarkdownGenerator:
         for annex in data.get("annexes", []):
             annex_name = annex.get("name")
             annex_fname = annex.get("fname")
+
+            # `type_: table` annexes (e.g. GC_GEOL_MAPPING_UNIT_ATT) are raw join
+            # tables, not GEOL_CODE_INT/GERMAN-style glossaries - `_get_table_values`
+            # can't parse them (wrong columns) and `annex["pairs"]` is never what
+            # renders them anyway. `_process_model()` (called later, from
+            # `_render_markdown`) loads them correctly into `annex["table"]` via
+            # `_get_annex_values()`. Leave them alone here.
+            if annex.get("type_") == "table":
+                continue
+
             if annex_fname is not None:
                 pairs = self._get_table_values(annex_fname)  # Your existing method
             else:
@@ -587,9 +605,9 @@ class EnhancedMarkdownGenerator:
 
 
             translator = self._get_translator()
-            logger.info(
-                f"Failed translations: {translator.get_translation_stats()['failed_translations']}"
-            )
+            stats = translator.get_translation_stats()
+            logger.info(f"Failed translations: {stats['failed_translations']}")
+            logger.info(f"Fallback-language translations used: {stats['fallback_translations']}")
             return output_path
 
         except Exception as e:
@@ -878,9 +896,14 @@ class EnhancedMarkdownGenerator:
                         att_value = att.get("value")
 
                         pairs = None
+                        removed = att.get("change") == "removed"
 
-                        # Get coded domain values
-                        if att_type == "CD" and att_value:
+                        # Get coded domain values (skip removed attributes - they
+                        # often carry a stale placeholder `value`, e.g. "DUMMY",
+                        # and are never rendered - see model_markdown.j2)
+                        if removed:
+                            pass
+                        elif att_type == "CD" and att_value:
                             pairs = self._get_coded_values(att_value)
 
                         # Get subtype values
@@ -949,6 +972,9 @@ class EnhancedMarkdownGenerator:
                 logger.debug(
                     f"Failed translations: {self.geol_translator.get_failed_strings()}"
                 )
+            logger.info(
+                f"Fallback-language translations used: {self.geol_translator.get_fallback_count()}"
+            )
 
         return model
 

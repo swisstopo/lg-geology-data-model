@@ -158,6 +158,11 @@ msgstr ""
 
 
 class Translator:
+    # Log the first N fallback-language uses at WARNING; beyond that, only count
+    # them (still visible at DEBUG) so a run with hundreds of legitimately-missing
+    # translations doesn't flood the console.
+    FALLBACK_LOG_LIMIT = 10
+
     def __init__(self, df_trad):
         """
         Initialize translator with geological codes dataframe.
@@ -168,6 +173,8 @@ class Translator:
         """
         self.failed_translations = 0
         self.failed_strings: List[str] = []
+        self.fallback_count = 0
+        self.fallback_examples: List[str] = []
         self._lock = threading.Lock()
         self.df_trad = df_trad
 
@@ -184,6 +191,10 @@ class Translator:
     def get_failed_strings(self) -> List[str]:
         """Get list of failed translation strings"""
         return self.failed_strings.copy()
+
+    def get_fallback_count(self) -> int:
+        """Get number of translations served from the fallback language"""
+        return self.fallback_count
 
     def clear_failures(self):
         """Clear failed translation tracking"""
@@ -318,10 +329,25 @@ class Translator:
             fallback_msg = self._get_translation(text_str, fallback_lang)
 
             if fallback_msg is not None:
-                logger.warning(
+                fallback_note = (
                     f"Using {fallback_lang} fallback: '{text}' -> '{fallback_msg}' "
                     f"(requested: {lang})"
                 )
+                with self._lock:
+                    self.fallback_count += 1
+                    count = self.fallback_count
+                    if count <= self.FALLBACK_LOG_LIMIT:
+                        self.fallback_examples.append(fallback_note)
+                if count <= self.FALLBACK_LOG_LIMIT:
+                    logger.warning(fallback_note)
+                    if count == self.FALLBACK_LOG_LIMIT:
+                        logger.warning(
+                            f"... further fallback translations will only be counted, "
+                            f"not logged individually (see the summary at the end of the run, "
+                            f"or re-run with -v for the full list)"
+                        )
+                else:
+                    logger.debug(fallback_note)
                 return (self._clean_message(fallback_msg), False)
 
             # No translation found in either language
@@ -386,6 +412,7 @@ class Translator:
             return {
                 "failed_translations": len(self.failed_strings),
                 "failed_strings": self.failed_strings.copy(),
+                "fallback_translations": self.fallback_count,
                 "total_codes_loaded": len(self.translations),
             }
 

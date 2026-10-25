@@ -13,7 +13,7 @@ inputs/
 outputs/
 
 # Debug files in sources
-sources/*/debug_discarded_*.xlsx
+sources/*/debug_discarded*.xlsx
 
 SCHEMA_CHANGES.md
 DATA_RELEASES.md
