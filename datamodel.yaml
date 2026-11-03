@@ -1158,7 +1158,6 @@ themes:
       description:
         de: Faltenform
         fr: Forme du type de pli
-      value: 14605
       cardinality: 0..1
       mandatory: false
     - name: mfol_phase
@@ -1347,11 +1346,10 @@ themes:
       alias: type
       att_type: CD
       value: GC_PNT_LANO_TYPE_CD
-      cardinatity: 0..1
+      cardinality: 0..1
       description:
         de: Charakteristik der Objektart.
         fr: Caractéristique du type d'objet
-      value: 128002        # TODO: no CD
       mandatory: true
   - name: Fossils_PT
     abrev: Lfos

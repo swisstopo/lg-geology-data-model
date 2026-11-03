@@ -45,6 +45,13 @@ Pour tester l'installation (le numéro de version peut varier) :
 Vous avez besoin de `pandoc` et d'une installation complète de `XeLaTeX`.  
 Installez-la avec `apt-get`, `yum`, etc.
 
+Sous Debian/Ubuntu, les paquets suivants sont nécessaires pour la génération des PDF
+(`babel` est utilisé par pandoc ≥ 3.1 pour la langue, et `fontawesome5` pour les icônes) :
+
+    sudo apt install pandoc texlive-xetex texlive-lang-european texlive-lang-german texlive-fonts-extra
+
+Vérification : `kpsewhich ngerman.ldf fontawesome5.sty` doit afficher deux chemins.
+
 Créez un environnement `conda` comme d'habitude et installez le paquet :
 
     conda install -c gcover gcdocs
