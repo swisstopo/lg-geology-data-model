@@ -33,7 +33,7 @@ dependencies = [
     "jsonschema>=4.0",
     "loguru>=0.6",
     "ruamel.yaml>=0.17.0",
-    "rich==14.0.0",
+    "rich==15.0.0",
     "dateparser>=1.2.0",
 ]
 
