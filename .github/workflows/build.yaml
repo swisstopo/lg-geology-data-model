@@ -55,17 +55,31 @@ jobs:
             texlive-xetex texlive-fonts-recommended texlive-plain-generic \
             poppler-utils fonts-noto-core fonts-liberation librsvg2-bin
 
-      - name: Cache tlmgr user packages
+      # fontawesome5 is not in the slim texlive packages above (it lives in
+      # texlive-fonts-extra, ~1.8 GB). Install it straight from CTAN into
+      # TEXMFHOME so it works with whatever TeX Live the runner ships
+      # (the old tlmgr + historic-2023 repo broke when ubuntu-latest moved to 2025).
+      # xelatex only needs the .sty/.fd files and the OpenType fonts.
+      - name: Cache fontawesome5
+        id: fa5-cache
         uses: actions/cache@v6.1.0
         with:
           path: ~/texmf
-          key: tlmgr-2023-fontawesome5-v1
+          key: fontawesome5-ctan-v1
 
-      - name: Install required LaTeX packages
+      - name: Install fontawesome5 from CTAN
+        if: steps.fa5-cache.outputs.cache-hit != 'true'
         run: |
-          tlmgr init-usertree || true
-          tlmgr option repository https://texlive.info/historic/systems/texlive/2023/tlnet-final
-          tlmgr install fontawesome5
+          set -euo pipefail
+          curl -fsSL --retry 3 -o /tmp/fontawesome5.zip https://mirrors.ctan.org/fonts/fontawesome5.zip
+          unzip -q /tmp/fontawesome5.zip -d /tmp
+          T="$HOME/texmf"
+          mkdir -p "$T/tex/latex/fontawesome5" "$T/fonts/opentype/public/fontawesome5"
+          cp /tmp/fontawesome5/tex/* "$T/tex/latex/fontawesome5/"
+          cp /tmp/fontawesome5/opentype/* "$T/fonts/opentype/public/fontawesome5/"
+
+      - name: Check fontawesome5 is found
+        run: kpsewhich fontawesome5.sty
 
       - name: Install miniconda
         uses: conda-incubator/setup-miniconda@v4.0.1
