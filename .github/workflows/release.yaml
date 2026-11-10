@@ -3,7 +3,7 @@
 #
 # Triggers:
 #   1. Any push to master → always builds (dev suffix in metadata when no version bump)
-#   2. Push to master with version bump in release.yaml → full release (tag + GitHub Release + S3)
+#   2. Push to master whose release.yaml revision has no v<revision> tag yet → full release (tag + GitHub Release + S3)
 #   3. workflow_dispatch → manual trigger (build only, no release unless version bumped)
 #
 # Note: no tags trigger here — create-tag pushes a tag but that must NOT re-trigger this
@@ -33,26 +33,26 @@ jobs:
       should_release: ${{ steps.info.outputs.should_release }}
     steps:
       - uses: actions/checkout@v7
-        with:
-          fetch-depth: 2
 
       - name: Determine release info
         id: info
         run: |
           NEW=$(python -c "import yaml; print(yaml.safe_load(open('release.yaml'))['model']['revision'])")
-          OLD=$(git show HEAD~1:release.yaml 2>/dev/null | python -c "import yaml,sys; print(yaml.safe_load(sys.stdin).get('model',{}).get('revision',''))" || echo "")
           EXPORT_DIR=$(python -c "import yaml; print(yaml.safe_load(open('release.yaml'))['model']['sources_dir'])")
+          TAG="v$NEW"
 
           echo "version=$NEW" >> $GITHUB_OUTPUT
-          echo "tag_name=v$NEW" >> $GITHUB_OUTPUT
+          echo "tag_name=$TAG" >> $GITHUB_OUTPUT
           echo "sources_dir=$EXPORT_DIR" >> $GITHUB_OUTPUT
 
-          if [ "$NEW" != "$OLD" ]; then
-            echo "should_release=true" >> $GITHUB_OUTPUT
-            echo "📦 Version bump detected: $OLD → $NEW"
-          else
+          # Release iff the tag for this revision doesn't exist on the remote yet.
+          # (Independent of commit history: robust to repeated/odd merges.)
+          if git ls-remote --exit-code --tags origin "refs/tags/$TAG" >/dev/null 2>&1; then
             echo "should_release=false" >> $GITHUB_OUTPUT
-            echo "ℹ️ No version change — dev build only"
+            echo "ℹ️ Tag $TAG already exists — dev build only"
+          else
+            echo "should_release=true" >> $GITHUB_OUTPUT
+            echo "📦 Tag $TAG not found — releasing $NEW"
           fi
 
   # ==========================================================================
