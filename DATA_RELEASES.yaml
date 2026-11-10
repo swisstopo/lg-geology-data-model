@@ -11,7 +11,16 @@ releases:
     schema_version: 4.6.0
     schema_export_date: "2026-09-15"
     data_export_date: "2026-11-10"
-    new_data: ~
+    new_data:
+      - { name: "Bivio",        sheet: 124  }
+      - { name: "Osogna",       sheet: 1293 }
+      - { name: "Piz Bernina",  sheet: 119  }
+      - { name: "Raron",        sheet: 153  }
+      - { name: "Spitzmeilen",  sheet: 1154 }
+      - { name: "St. Moritz",   sheet: 118  }
+      - { name: "Uster",        sheet: 128  }
+      - { name: "Zweisimmen",   sheet: 1246 }
+      - { name: "Zürich",       sheet: 90   }
     release_notes: ~
 
   - release: "R18"
