@@ -12,6 +12,28 @@ schema_versions:
     model_transition: "4.5 -> 4.6"
     note: ""
     changes:
+      - class: "Bedrock_PLG"
+        attribute: "Geol_Mapping_Unit, Tecto, Litho, Litstrat_Formation_Bank"
+        type: "hierarchy_changed"
+        description_de: >
+          Hinzugefügte und modifizierte Listenwerte in den Bedrock-Attributen
+          (Geol_Mapping_Unit: +49/~22, Litstrat_Formation_Bank: +15, Tecto: +2, Litho: +1).
+          Umbenennung «Zermatt-Saas-Decke» → «Zermatt-Saas-Fee-Decke» in 17 Kartiereinheiten.
+        description_fr: >
+          Objets de listes de valeurs ajoutés et modifiés dans les attributs Bedrock
+          (Geol_Mapping_Unit : +49/~22, Litstrat_Formation_Bank : +15, Tecto : +2, Litho : +1).
+          Renommage « Zermatt-Saas-Decke » → « Zermatt-Saas-Fee-Decke » dans 17 unités de cartographie.
+        motivation: New categories for importing new mapsheets
+
+      - class: "Unco_Deposits_PLG"
+        attribute: "Litho_Unco, Litstrat_Unco"
+        type: "hierarchy_changed"
+        description_de: >
+          Hinzugefügte Listenwerte für Lockergesteine (Litstrat_Unco: +2, Litho_Unco: +1)
+        description_fr: >
+          Objets de listes de valeurs ajoutés pour les dépôts meubles
+          (Litstrat_Unco : +2, Litho_Unco : +1)
+        motivation: New categories for importing new mapsheets
   - version: "4.5.0"
     git_tag: "v4.5.0"
     date: "2026-08-20"
