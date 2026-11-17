@@ -2301,14 +2301,13 @@ themes:
       value: GC_GEOL_MAPPING_UNIT_CD   # TODO: new GMU
       cardinality: 0..1
       mandatory: false
-    - name: abor_depth_fm_b
-      alias: depth_fm_b
+    - name: abor_fm_b
+      alias: fm_b
       description:
-        de: >-
-          Tiefe (m ab Terrainoberfläche) der erreichten Formation B.
-        fr: >-
-          Profondeur de la formation B atteinte (en mètres depuis  la surface)
-      att_type: float
+        de: Lithostratigraphische Einheit der erreichten Formation B
+        fr: Unité lithostratigraphique de la formation B atteinte
+      att_type: annex
+      value: GC_GEOL_MAPPING_UNIT_CD
       cardinality: 0..1
       mandatory: false
     - name: abor_depth_wt
